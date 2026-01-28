@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= isEdit ? 'Edit Post' : 'Create New Post' %> - BichonWebsite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">BichonWebsite</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/admin">Dashboard</a>
+                <a href="/admin/posts">Manage Posts</a>
+                <a href="/admin/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="admin-header">
+            <h1><%= isEdit ? 'Edit Post' : 'Create New Post' %></h1>
+            <a href="/admin/posts" class="btn">&larr; Back to Posts</a>
+        </div>
+
+        <% if (typeof error !== 'undefined' && error) { %>
+            <div class="message message-error">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <div class="box">
+            <form action="<%= isEdit ? '/admin/posts/edit/' + post.id : '/admin/posts/new' %>" method="POST">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" value="<%= isEdit ? post.title : '' %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" required><%= isEdit ? post.content : '' %></textarea>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" class="btn btn-primary"><%= isEdit ? 'Update Post' : 'Create Post' %></button>
+                    <a href="/admin/posts" class="btn">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

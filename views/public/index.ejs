@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BichonWebsite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">BichonWebsite</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <% if (isAuthenticated) { %>
+                    <a href="/admin">Dashboard</a>
+                    <a href="/admin/posts">Manage Posts</a>
+                    <a href="/admin/logout">Logout</a>
+                <% } else { %>
+                    <a href="/admin/login">Admin</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="box">
+            <h1>Welcome to BichonWebsite</h1>
+            <p>A simple blog platform</p>
+        </header>
+
+        <% if (posts && posts.length > 0) { %>
+            <ul class="post-list">
+                <% posts.forEach(post => { %>
+                    <li class="post-item">
+                        <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+                        <div class="post-meta">
+                            Posted on <%= new Date(post.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                        </div>
+                        <p class="post-excerpt">
+                            <%= post.content.substring(0, 200) %><%= post.content.length > 200 ? '...' : '' %>
+                        </p>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <div class="box">
+                <p>No posts yet. Check back later!</p>
+            </div>
+        <% } %>
+    </div>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

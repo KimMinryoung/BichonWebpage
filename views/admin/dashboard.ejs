@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BichonWebsite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">BichonWebsite</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/admin">Dashboard</a>
+                <a href="/admin/posts">Manage Posts</a>
+                <a href="/admin/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <a href="/admin/posts/new" class="btn btn-primary">Create New Post</a>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number"><%= stats.totalPosts %></div>
+                <div class="stat-label">Total Posts</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number"><%= stats.recentPosts %></div>
+                <div class="stat-label">Posts This Month</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Quick Actions</h2>
+            <p style="margin-top: 15px;">
+                <a href="/admin/posts/new" class="btn">Create New Post</a>
+                <a href="/admin/posts" class="btn">Manage All Posts</a>
+                <a href="/" class="btn">View Website</a>
+            </p>
+        </div>
+
+        <% if (recentPosts && recentPosts.length > 0) { %>
+            <div class="box">
+                <h2>Recent Posts</h2>
+                <table class="posts-table" style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% recentPosts.forEach(post => { %>
+                            <tr>
+                                <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
+                                <td><%= new Date(post.created_at).toLocaleDateString() %></td>
+                                <td class="actions">
+                                    <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">Edit</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        <% } %>
+    </div>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

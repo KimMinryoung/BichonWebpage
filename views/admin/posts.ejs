@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Posts - BichonWebsite</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">BichonWebsite</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/admin">Dashboard</a>
+                <a href="/admin/posts">Manage Posts</a>
+                <a href="/admin/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="admin-header">
+            <h1>Manage Posts</h1>
+            <a href="/admin/posts/new" class="btn btn-primary">Create New Post</a>
+        </div>
+
+        <% if (typeof message !== 'undefined' && message) { %>
+            <div class="message message-<%= messageType || 'success' %>">
+                <%= message %>
+            </div>
+        <% } %>
+
+        <% if (posts && posts.length > 0) { %>
+            <div class="box">
+                <table class="posts-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Created</th>
+                            <th>Updated</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% posts.forEach(post => { %>
+                            <tr>
+                                <td><%= post.id %></td>
+                                <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
+                                <td><%= new Date(post.created_at).toLocaleDateString() %></td>
+                                <td><%= new Date(post.updated_at).toLocaleDateString() %></td>
+                                <td class="actions">
+                                    <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">Edit</a>
+                                    <form action="/admin/posts/delete/<%= post.id %>" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                                        <button type="submit" class="btn btn-small btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        <% } else { %>
+            <div class="box">
+                <p>No posts yet. <a href="/admin/posts/new">Create your first post</a>.</p>
+            </div>
+        <% } %>
+    </div>
+
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
+    </footer>
+</body>
+</html>
