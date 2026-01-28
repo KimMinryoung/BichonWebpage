@@ -1,6 +1,9 @@
 # Environment variables
 .env
 
+# Database setup (contains credentials)
+setup.sql
+
 # Dependencies
 node_modules/
 
