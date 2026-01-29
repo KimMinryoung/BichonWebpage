@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const db = require('../config/database');
+const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
 
 // Login page
@@ -39,7 +40,12 @@ router.post('/login', redirectIfAuthenticated, async (req, res) => {
 
         res.redirect('/admin');
     } catch (error) {
-        console.error('Login error:', error);
+        if (isConnectionError(error)) {
+            console.error('[DB Connection Failed] Login - Database connection failed:', error.message);
+            console.error('[DB Connection Failed] Login - Error code:', error.code);
+        } else {
+            console.error('Login error:', error);
+        }
         res.render('admin/login', { error: 'An error occurred. Please try again.' });
     }
 });
@@ -129,7 +135,12 @@ router.post('/posts/new', requireAuth, async (req, res) => {
         );
         res.redirect('/admin/posts?message=Post created successfully');
     } catch (error) {
-        console.error('Error creating post:', error);
+        if (isConnectionError(error)) {
+            console.error('[DB Connection Failed] Create Post - Database connection failed:', error.message);
+            console.error('[DB Connection Failed] Create Post - Error code:', error.code);
+        } else {
+            console.error('Error creating post:', error);
+        }
         res.render('admin/edit-post', {
             isEdit: false,
             post: { title, content },
@@ -179,7 +190,12 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
 
         res.redirect('/admin/posts?message=Post updated successfully');
     } catch (error) {
-        console.error('Error updating post:', error);
+        if (isConnectionError(error)) {
+            console.error('[DB Connection Failed] Update Post - Database connection failed:', error.message);
+            console.error('[DB Connection Failed] Update Post - Error code:', error.code);
+        } else {
+            console.error('Error updating post:', error);
+        }
         res.render('admin/edit-post', {
             isEdit: true,
             post: { id: postId, title, content },
