@@ -14,8 +14,8 @@ router.post('/login', redirectIfAuthenticated, async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        const [admins] = await db.query(
-            'SELECT * FROM admins WHERE username = ?',
+        const { rows: admins } = await db.query(
+            'SELECT * FROM admins WHERE username = $1',
             [username]
         );
 
@@ -56,18 +56,18 @@ router.get('/logout', (req, res) => {
 // Dashboard
 router.get('/', requireAuth, async (req, res) => {
     try {
-        const [totalResult] = await db.query('SELECT COUNT(*) as count FROM posts');
+        const { rows: totalResult } = await db.query('SELECT COUNT(*) as count FROM posts');
 
         const startOfMonth = new Date();
         startOfMonth.setDate(1);
         startOfMonth.setHours(0, 0, 0, 0);
 
-        const [recentResult] = await db.query(
-            'SELECT COUNT(*) as count FROM posts WHERE created_at >= ?',
+        const { rows: recentResult } = await db.query(
+            'SELECT COUNT(*) as count FROM posts WHERE created_at >= $1',
             [startOfMonth]
         );
 
-        const [recentPosts] = await db.query(
+        const { rows: recentPosts } = await db.query(
             'SELECT id, title, created_at FROM posts ORDER BY created_at DESC LIMIT 5'
         );
 
@@ -90,7 +90,7 @@ router.get('/', requireAuth, async (req, res) => {
 // Posts management
 router.get('/posts', requireAuth, async (req, res) => {
     try {
-        const [posts] = await db.query(
+        const { rows: posts } = await db.query(
             'SELECT * FROM posts ORDER BY created_at DESC'
         );
         res.render('admin/posts', {
@@ -123,7 +123,7 @@ router.post('/posts/new', requireAuth, async (req, res) => {
 
     try {
         await db.query(
-            'INSERT INTO posts (title, content) VALUES (?, ?)',
+            'INSERT INTO posts (title, content) VALUES ($1, $2)',
             [title, content]
         );
         res.redirect('/admin/posts?message=Post created successfully');
@@ -140,7 +140,7 @@ router.post('/posts/new', requireAuth, async (req, res) => {
 // Edit post form
 router.get('/posts/edit/:id', requireAuth, async (req, res) => {
     try {
-        const [posts] = await db.query('SELECT * FROM posts WHERE id = ?', [req.params.id]);
+        const { rows: posts } = await db.query('SELECT * FROM posts WHERE id = $1', [req.params.id]);
 
         if (posts.length === 0) {
             return res.redirect('/admin/posts?message=Post not found&type=error');
@@ -167,12 +167,12 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
     }
 
     try {
-        const [result] = await db.query(
-            'UPDATE posts SET title = ?, content = ? WHERE id = ?',
+        const result = await db.query(
+            'UPDATE posts SET title = $1, content = $2 WHERE id = $3',
             [title, content, postId]
         );
 
-        if (result.affectedRows === 0) {
+        if (result.rowCount === 0) {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
@@ -190,9 +190,9 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
 // Delete post
 router.post('/posts/delete/:id', requireAuth, async (req, res) => {
     try {
-        const [result] = await db.query('DELETE FROM posts WHERE id = ?', [req.params.id]);
+        const result = await db.query('DELETE FROM posts WHERE id = $1', [req.params.id]);
 
-        if (result.affectedRows === 0) {
+        if (result.rowCount === 0) {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 

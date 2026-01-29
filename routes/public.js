@@ -5,7 +5,7 @@ const db = require('../config/database');
 // Homepage - List all posts
 router.get('/', async (req, res) => {
     try {
-        const [posts] = await db.query(
+        const { rows: posts } = await db.query(
             'SELECT id, title, content, created_at FROM posts ORDER BY created_at DESC'
         );
         res.render('public/index', { posts });
@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
 // Single post view
 router.get('/post/:id', async (req, res) => {
     try {
-        const [posts] = await db.query(
-            'SELECT * FROM posts WHERE id = ?',
+        const { rows: posts } = await db.query(
+            'SELECT * FROM posts WHERE id = $1',
             [req.params.id]
         );
 
