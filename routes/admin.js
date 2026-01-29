@@ -24,6 +24,7 @@ router.post('/login', redirectIfAuthenticated, async (req, res) => {
         }
 
         const admin = admins[0];
+
         const validPassword = await bcrypt.compare(password, admin.password_hash);
 
         if (!validPassword) {

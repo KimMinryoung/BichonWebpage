@@ -39,7 +39,6 @@
                             <th>ID</th>
                             <th>Title</th>
                             <th>Created</th>
-                            <th>Updated</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -49,7 +48,6 @@
                                 <td><%= post.id %></td>
                                 <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
                                 <td><%= new Date(post.created_at).toLocaleDateString() %></td>
-                                <td><%= new Date(post.updated_at).toLocaleDateString() %></td>
                                 <td class="actions">
                                     <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">Edit</a>
                                     <form action="/admin/posts/delete/<%= post.id %>" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this post?');">
