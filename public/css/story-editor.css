@@ -9,7 +9,8 @@
     flex: 1;
     gap: 20px;
     margin-top: 20px;
-    min-height: 0; /* Important for flex child scrolling */
+    min-height: 0;
+    /* Important for flex child scrolling */
 }
 
 /* Sidebar */
@@ -102,7 +103,7 @@
 }
 
 .editor-textarea {
-    flex: 1;
+    min-height: 150px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
     line-height: 1.5;
@@ -110,6 +111,7 @@
     resize: none;
     border: 1px solid #ccc;
     border-radius: 4px;
+    overflow-y: hidden;
 }
 
 /* Placeholder */
@@ -147,6 +149,7 @@
     .editor-layout {
         flex-direction: column;
     }
+
     .editor-sidebar {
         width: 100%;
         height: 200px;
@@ -155,9 +158,11 @@
         padding-right: 0;
         padding-bottom: 20px;
     }
+
     .editor-sections {
         grid-template-columns: 1fr;
     }
+
     .full-height {
         height: auto;
     }

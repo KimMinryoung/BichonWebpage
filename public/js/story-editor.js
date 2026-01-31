@@ -74,9 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     editorPane.style.display = 'flex';
                     editorPlaceholder.style.display = 'none';
+
+                    // Trigger auto-resize
+                    autoResize(sceneScript);
+                    autoResize(sceneActions);
                 }
             });
     }
+
+    function autoResize(textarea) {
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    [sceneScript, sceneActions].forEach(textarea => {
+        textarea.addEventListener('input', () => autoResize(textarea));
+    });
 
     function showPlaceholder() {
         editorPane.style.display = 'none';
