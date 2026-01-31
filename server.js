@@ -37,9 +37,11 @@ app.use((req, res, next) => {
 // Routes
 const publicRoutes = require('./routes/public');
 const adminRoutes = require('./routes/admin');
+const storyApiRoutes = require('./routes/story-api');
 
 app.use('/', publicRoutes);
 app.use('/admin', adminRoutes);
+app.use('/api/story', storyApiRoutes);
 
 // 404 handler
 app.use((req, res) => {

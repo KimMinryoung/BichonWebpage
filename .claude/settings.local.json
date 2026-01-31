@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(where:*)",
+      "Bash(dir \"C:\\\\Program Files\\\\MariaDB*\")",
+      "Bash(dir \"C:\\\\Program Files \\(x86\\)\\\\MariaDB*\")",
+      "Bash(\"C:\\\\Program Files\\\\MariaDB 12.1\\\\bin\\\\mysql.exe\" -u root -p -e \"source C:/Users/DESKTOP/Documents/GitHub/BichonWebsite/setup.sql\")",
+      "Bash(\"C:\\\\Program Files\\\\MariaDB 12.1\\\\bin\\\\mysql.exe\" -u root -piwillkill!you -e \"USE bichon_website; SHOW TABLES; SELECT * FROM admins; SELECT * FROM posts;\")",
+      "Bash(npm start)",
+      "Bash(node -e:*)",
+      "Bash(\"C:\\\\Program Files\\\\MariaDB 12.1\\\\bin\\\\mysql.exe\" -u root -piwillkill!you -e \"USE bichon_website; UPDATE admins SET password_hash = ''$2b$10$HO3bGnIJW.jF.oZ/h6k14O2fz59ToZVPyzwk1iHa/.0r/pUxfVxf6'' WHERE username = ''admin'';\")",
+      "Bash(\"C:\\\\Program Files\\\\MariaDB 12.1\\\\bin\\\\mysql.exe\" -u root -piwillkill!you -e \"USE bichon_website; SELECT id, username FROM admins;\")",
+      "Bash(\"C:\\\\Program Files\\\\MariaDB 12.1\\\\bin\\\\mysql.exe\" -u root -piwillkill!you -e \"USE bichon_website; SELECT password_hash FROM admins WHERE username = ''admin'';\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(dir:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(gh auth login:*)",
+      "Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth login)",
+      "Bash(git filter-branch:*)",
+      "Bash(git stash:*)",
+      "Bash(FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git push:*)",
+      "Bash(npm audit fix:*)",
+      "Bash(nslookup:*)"
+    ]
+  }
+}

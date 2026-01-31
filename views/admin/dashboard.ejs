@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - BichonWebsite</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <nav>
         <div class="nav-content">
@@ -27,11 +29,15 @@
 
         <div class="stats-grid">
             <div class="stat-box">
-                <div class="stat-number"><%= stats.totalPosts %></div>
+                <div class="stat-number">
+                    <%= stats.totalPosts %>
+                </div>
                 <div class="stat-label">Total Posts</div>
             </div>
             <div class="stat-box">
-                <div class="stat-number"><%= stats.recentPosts %></div>
+                <div class="stat-number">
+                    <%= stats.recentPosts %>
+                </div>
                 <div class="stat-label">Posts This Month</div>
             </div>
         </div>
@@ -41,11 +47,12 @@
             <p style="margin-top: 15px;">
                 <a href="/admin/posts/new" class="btn">Create New Post</a>
                 <a href="/admin/posts" class="btn">Manage All Posts</a>
+                <a href="/admin/story-editor" class="btn btn-primary">Open Story Editor</a>
                 <a href="/" class="btn">View Website</a>
             </p>
         </div>
 
-        <% if (recentPosts && recentPosts.length > 0) { %>
+        <% if (recentPosts && recentPosts.length> 0) { %>
             <div class="box">
                 <h2>Recent Posts</h2>
                 <table class="posts-table" style="margin-top: 15px;">
@@ -57,23 +64,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% recentPosts.forEach(post => { %>
+                        <% recentPosts.forEach(post=> { %>
                             <tr>
-                                <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
-                                <td><%= new Date(post.created_at).toLocaleDateString() %></td>
+                                <td><a href="/post/<%= post.id %>">
+                                        <%= post.title %>
+                                    </a></td>
+                                <td>
+                                    <%= new Date(post.created_at).toLocaleDateString() %>
+                                </td>
                                 <td class="actions">
                                     <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">Edit</a>
                                 </td>
                             </tr>
-                        <% }) %>
+                            <% }) %>
                     </tbody>
                 </table>
             </div>
-        <% } %>
+            <% } %>
     </div>
 
     <footer>
         <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

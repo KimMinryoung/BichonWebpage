@@ -204,4 +204,12 @@ router.post('/posts/delete/:id', requireAuth, async (req, res) => {
     }
 });
 
+// Story Editor
+router.get('/story-editor', requireAuth, (req, res) => {
+    res.render('admin/story-editor', {
+        title: 'Story Editor',
+        adminUser: req.session.adminUser
+    });
+});
+
 module.exports = router;

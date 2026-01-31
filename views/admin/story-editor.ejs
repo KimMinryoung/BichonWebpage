@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Editor - BichonWebsite</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/story-editor.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="logo">BichonWebsite</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/admin">Dashboard</a>
+                <a href="/admin/posts">Manage Posts</a>
+                <a href="/admin/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container full-height">
+        <div class="admin-header">
+            <h1>Story Editor</h1>
+            <div id="status-message" class="status-message"></div>
+        </div>
+
+        <div class="editor-layout">
+            <!-- Sidebar: File and Scene List -->
+            <div class="editor-sidebar">
+                <div class="sidebar-section">
+                    <h3>Files</h3>
+                    <select id="file-select" class="form-control">
+                        <option value="">Select a file...</option>
+                    </select>
+                </div>
+                <div class="sidebar-section scrollable" id="scene-list-container">
+                    <h3>Scenes</h3>
+                    <ul id="scene-list" class="scene-list">
+                        <!-- Scenes populated by JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main: Scene Content Editor -->
+            <div class="editor-main" id="editor-pane" style="display: none;">
+                <div class="scene-header">
+                    <h2 id="current-scene-id">Select a scene</h2>
+                    <div class="scene-meta">
+                        <label>Location:</label>
+                        <input type="text" id="scene-location" class="form-control-inline">
+                    </div>
+                    <button id="save-btn" class="btn btn-primary">Save Changes</button>
+                </div>
+
+                <div class="editor-sections">
+                    <div class="editor-section">
+                        <h3>Script (one per line)</h3>
+                        <textarea id="scene-script" class="form-control editor-textarea"></textarea>
+                    </div>
+                    <div class="editor-section">
+                        <h3>Actions (one per line)</h3>
+                        <textarea id="scene-actions" class="form-control editor-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-placeholder" id="editor-placeholder">
+                <p>Select a file and a scene to start editing.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/story-editor.js"></script>
+</body>
+</html>
