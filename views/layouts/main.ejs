@@ -1,27 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= typeof title !== 'undefined' ? title + ' - BichonWebsite' : 'BichonWebsite' %></title>
-    <link rel="stylesheet" href="/css/style.css">
+    <%- include('../partials/head') %>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <a href="/" class="logo">BichonWebsite</a>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <% if (isAuthenticated) { %>
-                    <a href="/admin">Dashboard</a>
-                    <a href="/admin/posts">Manage Posts</a>
-                    <a href="/admin/logout">Logout</a>
-                <% } else { %>
-                    <a href="/admin/login">Admin</a>
-                <% } %>
-            </div>
-        </div>
-    </nav>
+    <%- include('../partials/nav') %>
 
     <div class="container">
         <% if (typeof message !== 'undefined' && message) { %>
@@ -33,8 +16,6 @@
         <%- typeof body !== 'undefined' ? body : '' %>
     </div>
 
-    <footer>
-        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
-    </footer>
+    <%- include('../partials/footer') %>
 </body>
 </html>

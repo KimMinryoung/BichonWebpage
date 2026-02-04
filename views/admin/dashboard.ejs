@@ -1,30 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - BichonWebsite</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <% pageTitle = strings.admin.dashboard %>
+    <%- include('../partials/head') %>
 </head>
-
 <body>
-    <nav>
-        <div class="nav-content">
-            <a href="/" class="logo">BichonWebsite</a>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/admin">Dashboard</a>
-                <a href="/admin/posts">Manage Posts</a>
-                <a href="/admin/logout">Logout</a>
-            </div>
-        </div>
-    </nav>
+    <%- include('../partials/nav') %>
 
     <div class="container">
         <div class="admin-header">
-            <h1>Admin Dashboard</h1>
-            <a href="/admin/posts/new" class="btn btn-primary">Create New Post</a>
+            <h1><%= strings.admin.dashboard %></h1>
+            <a href="/admin/posts/new" class="btn btn-primary"><%= strings.admin.createPost %></a>
         </div>
 
         <div class="stats-grid">
@@ -32,60 +18,53 @@
                 <div class="stat-number">
                     <%= stats.totalPosts %>
                 </div>
-                <div class="stat-label">Total Posts</div>
+                <div class="stat-label"><%= strings.admin.totalPosts %></div>
             </div>
             <div class="stat-box">
                 <div class="stat-number">
                     <%= stats.recentPosts %>
                 </div>
-                <div class="stat-label">Posts This Month</div>
+                <div class="stat-label"><%= strings.admin.recentPosts %></div>
             </div>
         </div>
 
         <div class="box">
-            <h2>Quick Actions</h2>
+            <h2><%= strings.admin.quickActions %></h2>
             <p style="margin-top: 15px;">
-                <a href="/admin/posts/new" class="btn">Create New Post</a>
-                <a href="/admin/posts" class="btn">Manage All Posts</a>
-                <a href="/admin/story-editor" class="btn btn-primary">Open Story Editor</a>
-                <a href="/" class="btn">View Website</a>
+                <a href="/admin/posts/new" class="btn"><%= strings.admin.createPost %></a>
+                <a href="/admin/posts" class="btn"><%= strings.admin.managePosts %></a>
+                <a href="/admin/story-editor" class="btn btn-primary"><%= strings.admin.storyEditor %></a>
+                <a href="/" class="btn"><%= strings.admin.viewSite %></a>
             </p>
         </div>
 
-        <% if (recentPosts && recentPosts.length> 0) { %>
+        <% if (recentPosts && recentPosts.length > 0) { %>
             <div class="box">
-                <h2>Recent Posts</h2>
+                <h2><%= strings.admin.recentPostsTitle %></h2>
                 <table class="posts-table" style="margin-top: 15px;">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Created</th>
-                            <th>Actions</th>
+                            <th><%= strings.admin.postTitle %></th>
+                            <th><%= strings.admin.postCreated %></th>
+                            <th><%= strings.admin.postActions %></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% recentPosts.forEach(post=> { %>
+                        <% recentPosts.forEach(post => { %>
                             <tr>
-                                <td><a href="/post/<%= post.id %>">
-                                        <%= post.title %>
-                                    </a></td>
-                                <td>
-                                    <%= new Date(post.created_at).toLocaleDateString() %>
-                                </td>
+                                <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
+                                <td><%= new Date(post.created_at).toLocaleDateString('ko-KR') %></td>
                                 <td class="actions">
-                                    <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">Edit</a>
+                                    <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small"><%= strings.admin.edit %></a>
                                 </td>
                             </tr>
-                            <% }) %>
+                        <% }) %>
                     </tbody>
                 </table>
             </div>
-            <% } %>
+        <% } %>
     </div>
 
-    <footer>
-        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
-    </footer>
+    <%- include('../partials/footer') %>
 </body>
-
 </html>

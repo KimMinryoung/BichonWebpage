@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login - BichonWebsite</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <% pageTitle = strings.login.title %>
+    <%- include('../partials/head') %>
 </head>
 <body>
     <nav>
         <div class="nav-content">
-            <a href="/" class="logo">BichonWebsite</a>
+            <a href="/" class="logo"><%= strings.siteName %></a>
             <div class="nav-links">
-                <a href="/">Home</a>
+                <a href="/"><%= strings.nav.home %></a>
             </div>
         </div>
     </nav>
 
     <div class="login-container">
         <div class="login-box">
-            <h1>Admin Login</h1>
+            <h1><%= strings.login.title %></h1>
 
             <% if (typeof error !== 'undefined' && error) { %>
                 <div class="message message-error">
@@ -28,21 +26,19 @@
 
             <form action="/admin/login" method="POST">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username"><%= strings.login.username %></label>
                     <input type="text" id="username" name="username" required autofocus>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password"><%= strings.login.password %></label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;"><%= strings.login.submit %></button>
             </form>
 
         </div>
     </div>
 
-    <footer>
-        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
-    </footer>
+    <%- include('../partials/footer') %>
 </body>
 </html>

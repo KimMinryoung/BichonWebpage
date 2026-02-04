@@ -1,28 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= isEdit ? 'Edit Post' : 'Create New Post' %> - BichonWebsite</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <% pageTitle = isEdit ? strings.admin.editPost : strings.admin.newPost %>
+    <%- include('../partials/head') %>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <a href="/" class="logo">BichonWebsite</a>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/admin">Dashboard</a>
-                <a href="/admin/posts">Manage Posts</a>
-                <a href="/admin/logout">Logout</a>
-            </div>
-        </div>
-    </nav>
+    <%- include('../partials/nav') %>
 
     <div class="container">
         <div class="admin-header">
-            <h1><%= isEdit ? 'Edit Post' : 'Create New Post' %></h1>
-            <a href="/admin/posts" class="btn">&larr; Back to Posts</a>
+            <h1><%= isEdit ? strings.admin.editPost : strings.admin.newPost %></h1>
+            <a href="/admin/posts" class="btn">&larr; <%= strings.admin.backToPosts %></a>
         </div>
 
         <% if (typeof error !== 'undefined' && error) { %>
@@ -34,23 +22,21 @@
         <div class="box">
             <form action="<%= isEdit ? '/admin/posts/edit/' + post.id : '/admin/posts/new' %>" method="POST">
                 <div class="form-group">
-                    <label for="title">Title</label>
+                    <label for="title"><%= strings.admin.titleLabel %></label>
                     <input type="text" id="title" name="title" value="<%= isEdit ? post.title : '' %>" required>
                 </div>
                 <div class="form-group">
-                    <label for="content">Content</label>
+                    <label for="content"><%= strings.admin.contentLabel %></label>
                     <textarea id="content" name="content" required><%= isEdit ? post.content : '' %></textarea>
                 </div>
                 <div style="display: flex; gap: 10px;">
-                    <button type="submit" class="btn btn-primary"><%= isEdit ? 'Update Post' : 'Create Post' %></button>
-                    <a href="/admin/posts" class="btn">Cancel</a>
+                    <button type="submit" class="btn btn-primary"><%= isEdit ? strings.admin.update : strings.admin.create %></button>
+                    <a href="/admin/posts" class="btn"><%= strings.admin.cancel %></a>
                 </div>
             </form>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; <%= new Date().getFullYear() %> BichonWebsite. All rights reserved.</p>
-    </footer>
+    <%- include('../partials/footer') %>
 </body>
 </html>

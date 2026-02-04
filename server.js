@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
+const strings = require('./config/strings');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,10 +34,11 @@ app.use(session({
     }
 }));
 
-// Make session available in all views
+// Make session and strings available in all views
 app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
     res.locals.adminUser = req.session.adminUser || null;
+    res.locals.strings = strings;
     next();
 });
 
@@ -53,8 +55,8 @@ app.get('/health', (req, res) => { res.status(200).send('ok'); });
 // 404 handler
 app.use((req, res) => {
     res.status(404).render('layouts/main', {
-        title: '404 - Page Not Found',
-        body: '<div class="box"><h1>404</h1><p>Page not found.</p><a href="/">Go back home</a></div>'
+        pageTitle: '404',
+        body: `<div class="box"><h1>404</h1><p>${strings.error.notFound}</p><a href="/">${strings.error.backHome}</a></div>`
     });
 });
 
@@ -62,8 +64,8 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).render('layouts/main', {
-        title: 'Error',
-        body: '<div class="box"><h1>Error</h1><p>Something went wrong.</p><a href="/">Go back home</a></div>'
+        pageTitle: 'Error',
+        body: `<div class="box"><h1>Error</h1><p>${strings.error.serverError}</p><a href="/">${strings.error.backHome}</a></div>`
     });
 });
 
