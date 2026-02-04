@@ -48,6 +48,7 @@ const storyApiRoutes = require('./routes/story-api');
 app.use('/', publicRoutes);
 app.use('/admin', adminRoutes);
 app.use('/api/story', storyApiRoutes);
+app.get('/health', (req, res) => { res.status(200).send('ok'); });
 
 // 404 handler
 app.use((req, res) => {
