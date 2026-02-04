@@ -2,8 +2,10 @@ require('dotenv').config();
 
 const express = require('express');
 const session = require('express-session');
+const pgSession = require('connect-pg-simple')(session);
 const path = require('path');
 const strings = require('./config/strings');
+const pool = require('./config/database');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,6 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Session configuration
 app.use(session({
+    store: new pgSession({
+        pool: pool,
+        tableName: 'user_sessions',
+        createTableIfMissing: true
+    }),
     secret: process.env.SESSION_SECRET || 'default-secret-change-in-production',
     resave: false,
     saveUninitialized: false,

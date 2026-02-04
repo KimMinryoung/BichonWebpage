@@ -9,13 +9,19 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-pg-simple": "^10.0.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
     "express-session": "^1.18.0",
     "pg": "^8.13.0"
   },
-  "keywords": ["blog", "express", "postgresql", "supabase"],
+  "keywords": [
+    "blog",
+    "express",
+    "postgresql",
+    "supabase"
+  ],
   "author": "",
   "license": "ISC"
 }
