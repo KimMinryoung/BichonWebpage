@@ -46,6 +46,36 @@ app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
     res.locals.adminUser = req.session.adminUser || null;
     res.locals.strings = strings;
+    res.locals.truncateHtml = function(html, maxLen) {
+        var result = '';
+        var textLen = 0;
+        var openTags = [];
+        var i = 0;
+        while (i < html.length && textLen < maxLen) {
+            if (html[i] === '<') {
+                var end = html.indexOf('>', i);
+                if (end === -1) break;
+                var tag = html.substring(i, end + 1);
+                var closing = tag[1] === '/';
+                if (closing) {
+                    openTags.pop();
+                } else if (!tag.endsWith('/>') && !tag.startsWith('<!')) {
+                    var name = tag.match(/^<\s*([a-zA-Z][a-zA-Z0-9]*)/);
+                    if (name) openTags.push(name[1]);
+                }
+                result += tag;
+                i = end + 1;
+            } else {
+                result += html[i];
+                textLen++;
+                i++;
+            }
+        }
+        var truncated = textLen < html.replace(/<[^>]*>/g, '').length;
+        while (openTags.length) result += '</' + openTags.pop() + '>';
+        if (truncated) result += '...';
+        return result;
+    };
     next();
 });
 
