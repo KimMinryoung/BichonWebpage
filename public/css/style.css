@@ -323,6 +323,36 @@ footer {
     border-top: 1px solid #333;
 }
 
+/* Link Toolbar & Modal */
+.link-toolbar {
+    margin-bottom: 8px;
+}
+
+.link-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.link-modal {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 24px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.link-modal h3 {
+    margin-bottom: 16px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {

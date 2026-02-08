@@ -188,7 +188,7 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
-        res.redirect('/admin/posts?message=Post updated successfully');
+        res.redirect('/post/' + postId);
     } catch (error) {
         if (isConnectionError(error)) {
             console.error('[DB Connection Failed] Update Post - Database connection failed:', error.message);

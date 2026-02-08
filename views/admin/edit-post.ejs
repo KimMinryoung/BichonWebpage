@@ -27,7 +27,33 @@
                 </div>
                 <div class="form-group">
                     <label for="content"><%= strings.admin.contentLabel %></label>
+                    <div class="link-toolbar">
+                        <button type="button" id="insertLinkBtn" class="btn btn-small" title="<%= strings.admin.insertLink %>">&#x1F517; <%= strings.admin.insertLink %></button>
+                    </div>
                     <textarea id="content" name="content" required><%= isEdit ? post.content : '' %></textarea>
+                </div>
+
+                <!-- 링크 삽입 모달 -->
+                <div id="linkOverlay" class="link-overlay" style="display:none;">
+                    <div class="link-modal">
+                        <h3><%= strings.admin.insertLink %></h3>
+                        <div class="form-group">
+                            <label for="linkUrl"><%= strings.admin.linkUrl %></label>
+                            <input type="text" id="linkUrl" placeholder="https://">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkTitle"><%= strings.admin.linkTitle %></label>
+                            <input type="text" id="linkTitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkText"><%= strings.admin.linkText %></label>
+                            <input type="text" id="linkText">
+                        </div>
+                        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                            <button type="button" id="linkInsertBtn" class="btn btn-primary"><%= strings.admin.linkInsert %></button>
+                            <button type="button" id="linkCancelBtn" class="btn"><%= strings.admin.linkCancel %></button>
+                        </div>
+                    </div>
                 </div>
                 <div style="display: flex; gap: 10px;">
                     <button type="submit" class="btn btn-primary"><%= isEdit ? strings.admin.update : strings.admin.create %></button>
@@ -38,5 +64,45 @@
     </div>
 
     <%- include('../partials/footer') %>
+
+    <script>
+    (function() {
+        var content = document.getElementById('content');
+        var overlay = document.getElementById('linkOverlay');
+        var urlInput = document.getElementById('linkUrl');
+        var titleInput = document.getElementById('linkTitle');
+        var textInput = document.getElementById('linkText');
+        var selStart, selEnd;
+
+        document.getElementById('insertLinkBtn').addEventListener('click', function() {
+            selStart = content.selectionStart;
+            selEnd = content.selectionEnd;
+            var selected = content.value.substring(selStart, selEnd);
+            urlInput.value = '';
+            titleInput.value = '';
+            textInput.value = selected || '';
+            overlay.style.display = 'flex';
+            urlInput.focus();
+        });
+
+        document.getElementById('linkInsertBtn').addEventListener('click', function() {
+            var url = urlInput.value.trim();
+            if (!url) { urlInput.focus(); return; }
+            var title = titleInput.value.trim();
+            var text = textInput.value.trim() || url;
+            var tag = '<a href="' + url + '" target="_blank"' + (title ? ' title="' + title + '"' : '') + '>' + text + '</a>';
+            var before = content.value.substring(0, selStart);
+            var after = content.value.substring(selEnd);
+            content.value = before + tag + after;
+            var cursorPos = selStart + tag.length;
+            content.setSelectionRange(cursorPos, cursorPos);
+            content.focus();
+            overlay.style.display = 'none';
+        });
+
+        function closeModal() { overlay.style.display = 'none'; }
+        document.getElementById('linkCancelBtn').addEventListener('click', closeModal);
+    })();
+    </script>
 </body>
 </html>
