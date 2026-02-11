@@ -15,6 +15,13 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Chat page
+router.get('/chat', (req, res) => {
+    res.render('public/chat', {
+        chatApiUrl: process.env.CHAT_API_URL || 'https://cyber-lenin-api.onrender.com'
+    });
+});
+
 // Single post view
 router.get('/post/:id', async (req, res) => {
     try {

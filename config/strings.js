@@ -7,6 +7,7 @@ module.exports = {
 
     nav: {
         home: '대문',
+        chat: '사이버-레닌',
         dashboard: '계기판',
         posts: '게시물 관리',
         logout: '나가기',
@@ -87,6 +88,15 @@ module.exports = {
         script: '대본 (한 줄에 하나씩)',
         actions: '선택지 (한 줄에 하나씩)',
         placeholder: '파일과 장면을 선택해서 편집을 시작하세요.'
+    },
+
+    // 채팅 페이지
+    chat: {
+        title: '사이버-레닌',
+        placeholder: '레닌 동지에게 질문하세요...',
+        send: '전송',
+        thinking: '동지가 생각 중...',
+        error: '오류가 발생했습니다. 다시 시도해주세요.'
     },
 
     // 에러 페이지

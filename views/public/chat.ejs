@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <header class="box">
+            <h1><%= strings.chat.title %></h1>
+        </header>
+
+        <div class="chat-box" id="chatBox"></div>
+
+        <form class="chat-input-row" id="chatForm">
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="<%= strings.chat.placeholder %>"
+                autocomplete="off"
+            />
+            <button type="submit" class="btn btn-primary" id="chatSend">
+                <%= strings.chat.send %>
+            </button>
+        </form>
+    </div>
+
+    <%- include('../partials/footer') %>
+
+    <script>
+        var API_URL = '<%= chatApiUrl %>';
+        var STRINGS = {
+            thinking: '<%= strings.chat.thinking %>',
+            error: '<%= strings.chat.error %>'
+        };
+    </script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
