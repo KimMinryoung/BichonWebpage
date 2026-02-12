@@ -29,8 +29,8 @@
         chatInput.value = '';
         setLoading(true);
 
-        var aiDiv = appendMessage(STRINGS.thinking, 'chat-message-ai');
-        var started = false;
+        var logDiv = appendMessage(STRINGS.thinking, 'chat-message-log');
+        var aiDiv = null;
 
         try {
             var res = await fetch(API_URL + '/chat', {
@@ -61,20 +61,21 @@
 
                     try {
                         var data = JSON.parse(jsonStr);
-                        if (data.token) {
-                            if (!started) {
-                                aiDiv.textContent = '';
-                                started = true;
-                            }
-                            aiDiv.textContent += data.token;
+                        if (data.type === 'log') {
+                            logDiv.textContent = data.content;
                             chatBox.scrollTop = chatBox.scrollHeight;
+                        } else if (data.type === 'answer') {
+                            logDiv.remove();
+                            aiDiv = appendMessage(data.content, 'chat-message-ai');
                         }
                     } catch (_) {}
                 }
             }
         } catch (err) {
-            aiDiv.textContent = STRINGS.error;
-            aiDiv.classList.add('chat-message-error');
+            logDiv.remove();
+            var errDiv = aiDiv || appendMessage('', 'chat-message-ai');
+            errDiv.textContent = STRINGS.error;
+            errDiv.classList.add('chat-message-error');
         }
 
         setLoading(false);
