@@ -445,6 +445,13 @@ footer {
         gap: 5px;
     }
 
+    .posts-table .actions .btn-small {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        white-space: nowrap;
+        height: auto;
+    }
+
     .chat-message {
         max-width: 90%;
     }

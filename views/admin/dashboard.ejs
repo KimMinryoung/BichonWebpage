@@ -30,8 +30,7 @@
 
         <div class="box">
             <h2><%= strings.admin.quickActions %></h2>
-            <p style="margin-top: 15px;">
-                <a href="/admin/posts/new" class="btn"><%= strings.admin.createPost %></a>
+            <p style="margin-top: 15px; text-align: center;">
                 <a href="/admin/posts" class="btn"><%= strings.admin.managePosts %></a>
                 <a href="/admin/story-editor" class="btn btn-primary"><%= strings.admin.storyEditor %></a>
                 <a href="/admin/chat-logs" class="btn"><%= strings.admin.chatLogs %></a>
@@ -45,18 +44,23 @@
                 <table class="posts-table" style="margin-top: 15px;">
                     <thead>
                         <tr>
+                            <th><%= strings.admin.postId %></th>
                             <th><%= strings.admin.postTitle %></th>
                             <th><%= strings.admin.postCreated %></th>
                             <th><%= strings.admin.postActions %></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% recentPosts.forEach(post => { %>
+                        <% recentPosts.slice(0, 5).forEach(post => { %>
                             <tr>
+                                <td><%= post.id %></td>
                                 <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
                                 <td><%= new Date(post.created_at).toLocaleDateString('ko-KR') %></td>
                                 <td class="actions">
                                     <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small"><%= strings.admin.edit %></a>
+                                    <form action="/admin/posts/delete/<%= post.id %>" method="POST" style="display: inline;" onsubmit="return confirm('<%= strings.admin.deleteConfirm %>');">
+                                        <button type="submit" class="btn btn-small btn-danger"><%= strings.admin.delete %></button>
+                                    </form>
                                 </td>
                             </tr>
                         <% }) %>

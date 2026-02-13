@@ -6,7 +6,6 @@
             <a href="/chat"><%= strings.nav.chat %></a>
             <% if (isAuthenticated) { %>
                 <a href="/admin"><%= strings.nav.dashboard %></a>
-                <a href="/admin/posts"><%= strings.nav.posts %></a>
                 <a href="/admin/logout"><%= strings.nav.logout %></a>
             <% } else { %>
                 <a href="/admin/login"><%= strings.nav.login %></a>
