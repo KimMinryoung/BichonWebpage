@@ -220,6 +220,13 @@ router.post('/posts/delete/:id', requireAuth, async (req, res) => {
     }
 });
 
+// Chat Logs
+router.get('/chat-logs', requireAuth, (req, res) => {
+    res.render('admin/chat-logs', {
+        chatApiUrl: process.env.CHAT_API_URL || 'https://cyber-lenin-api.onrender.com'
+    });
+});
+
 // Story Editor
 router.get('/story-editor', requireAuth, (req, res) => {
     res.render('admin/story-editor', {

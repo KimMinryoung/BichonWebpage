@@ -73,7 +73,15 @@ module.exports = {
         linkTitle: '툴팁',
         linkText: '텍스트',
         linkInsert: '삽입',
-        linkCancel: '취소'
+        linkCancel: '취소',
+
+        // 채팅 로그
+        chatLogs: '채팅 로그',
+        chatLogsFilterAll: '전체',
+        chatLogsFilterCasual: '일상 대화',
+        chatLogsFilterVectorstore: '지식 검색',
+        chatLogsRefresh: '새로고침',
+        chatLogsLoading: '불러오는 중...'
     },
 
     // 스토리 편집기
