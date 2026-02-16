@@ -208,7 +208,7 @@
             var html = '';
             filtered.forEach(function(log, i) {
                 var routeClass = log.route === 'casual' ? 'route-casual' : 'route-vectorstore';
-                var routeLabel = log.route === 'casual' ? 'Casual' : 'Vectorstore';
+                var routeLabel = log.route === 'casual' ? '일상대화' : '진지한 대화';
 
                 html += '<div class="log-card">';
                 html += '<div class="log-card-header">';
@@ -216,24 +216,25 @@
                 html += '<span class="route-badge ' + routeClass + '">' + routeLabel + '</span>';
                 html += '</div>';
 
-                html += '<div class="log-label">Query</div>';
+                html += '<div class="log-label">질문</div>';
                 html += '<div class="log-query">' + escapeHtml(log.user_query) + '</div>';
 
-                html += '<div class="log-label">Answer</div>';
+                html += '<div class="log-label">답변</div>';
                 html += '<div class="log-answer">' + escapeHtml(log.bot_answer) + '</div>';
 
                 html += '<div class="log-meta">';
-                html += '<span>Docs: ' + (log.documents_count || 0) + '</span>';
-                html += '<span>Web: ' + (log.web_search_used ? 'Yes' : 'No') + '</span>';
+                html += '<span>이용 문헌: ' + (log.documents_count || 0) + '개</span>';
+                html += '<span>웹 검색: ' + (log.web_search_used ? '함' : '하지 않음') + '</span>';
                 html += '</div>';
 
                 if (log.strategy || (log.processing_logs && log.processing_logs.length > 0)) {
                     var detailId = 'detail-' + i;
-                    html += '<button class="log-details-toggle" onclick="toggleDetails(\'' + detailId + '\')">Details</button>';
+                    html += '<button class="log-details-toggle" onclick="toggleDetails(\'' + detailId + '\')">생각 과정</button>';
                     html += '<div class="log-details" id="' + detailId + '">';
                     if (log.strategy) {
-                        html += '<div class="log-label">Strategy</div>';
-                        html += '<pre>' + escapeHtml(log.strategy) + '</pre>';
+                        //processing_logs에도 strategy 값이 포함되어 나오기 때문에 출력 생략
+                        //html += '<div class="log-label">Strategy</div>';
+                        //html += '<pre>' + escapeHtml(log.strategy) + '</pre>';
                     }
                     if (log.processing_logs && log.processing_logs.length > 0) {
                         html += '<div class="log-label" style="margin-top:8px">Processing Logs</div>';
