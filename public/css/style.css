@@ -385,12 +385,71 @@ footer {
     color: #f0f0f0;
 }
 
+.chat-message-ai p:last-child {
+    margin-bottom: 0; /* 마지막 문단의 아래 여백 제거 */
+}
+
+.chat-message-ai code {
+    background-color: #333;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.chat-message-ai pre {
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;         /* 코드가 길면 옆으로 스크롤 */
+    margin: 10px 0;
+}
+
+.chat-message-ai pre code {
+    background-color: transparent; /* 중복 배경 제거 */
+    padding: 0;
+    color: #f0f0f0;
+}
+
+.chat-message-ai a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+.chat-message-ai a:hover {
+    text-decoration: underline;
+}
+
 .chat-message-log {
     background-color: #111;
     border: 1px solid #2a2a2a;
     color: #888;
-    font-size: 0.85em;
+    font-size: 0.9em;
     font-style: italic;
+    padding: 10px 15px;
+    line-height: 1.4;
+}
+
+.chat-message-log p, 
+.chat-message-log ul, 
+.chat-message-log ol {
+    margin: 2px 0; font-size: 0.9em; color: #aaa;
+}
+
+.chat-message-log ul, 
+.chat-message-log ol {
+    padding-left: 20px;
+}
+
+.chat-message-log li {
+    margin-bottom: 2px;
+}
+
+.chat-message-log > *:last-child {
+    margin-bottom: 0;
+}
+
+.chat-message-log code {
+    background: #2c2c2c; color: #ffca28;
 }
 
 .chat-message-error {

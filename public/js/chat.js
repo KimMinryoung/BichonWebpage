@@ -8,7 +8,22 @@
     function appendMessage(text, className) {
         var div = document.createElement('div');
         div.className = 'chat-message ' + className;
-        div.textContent = text;
+        if(className === 'chat-message-ai'){
+            // AI 답변의 마크다운을 HTML 문자열로 변환
+            var dirtyHTML = marked.parse(text);
+            // (보안-XSS 방어) 변환된 HTML에서 위험한 스크립트 제거
+            var cleanHTML = DOMPurify.sanitize(dirtyHTML, {ADD_ATTR: ['target']});
+            div.innerHTML = cleanHTML;
+            // --- 답변 내 링크 클릭시 새 탭 열기 로직
+            var links = div.querySelectorAll('a'); // div 안의 모든 링크(a 태그) 선택
+                links.forEach(function(link) {
+                link.setAttribute('target', '_blank');    // 새 탭에서 열기
+                link.setAttribute('rel', 'noopener noreferrer'); // 보안 강화 (권장)
+            });
+        } else {
+            // 인간이 입력한 메시지는 텍스트 그대로 출력
+            div.textContent = text;
+        }
         chatBox.appendChild(div);
         chatBox.scrollTop = chatBox.scrollHeight;
         return div;
@@ -44,6 +59,7 @@
             var reader = res.body.getReader();
             var decoder = new TextDecoder();
             var buffer = '';
+            var accumulatedLog = ""; // 로그를 계속 쌓아둘 변수
 
             while (true) {
                 var result = await reader.read();
@@ -61,21 +77,45 @@
 
                     try {
                         var data = JSON.parse(jsonStr);
+                        
                         if (data.type === 'log') {
-                            logDiv.textContent = data.content;
+                            // 1. 새로운 로그 조각을 기존 로그에 추가
+                            accumulatedLog += data.content +"\n";
+                            
+                            // 2. 전체 누적된 로그를 마크다운으로 변환
+                            /*var dirtyHTML = marked.parse(accumulatedLog);
+                            var cleanHTML = DOMPurify.sanitize(dirtyHTML, {ADD_ATTR: ['target']});
+                            
+                            // 3. 로그 박스에 업데이트
+                            logDiv.innerHTML = cleanHTML;
+                            var links = logDiv.querySelectorAll('a'); // div 안의 모든 링크(a 태그) 선택
+                                links.forEach(function(link) {
+                                link.setAttribute('target', '_blank');    // 새 탭에서 열기
+                                link.setAttribute('rel', 'noopener noreferrer'); // 보안 강화
+                            });*/
+                            
+                            // 스크롤 조절
                             chatBox.scrollTop = chatBox.scrollHeight;
                         } else if (data.type === 'answer') {
-                            logDiv.remove();
+                            // 답변이 오면 로그 변수 초기화 및 로그창 제거
+                            accumulatedLog = "";
+                            if (logDiv) logDiv.remove();
+                            
                             aiDiv = appendMessage(data.content, 'chat-message-ai');
                         }
-                    } catch (_) {}
+                    } catch (err) {
+                        throw new Error(STRINGS.error);
+                    }
                 }
             }
         } catch (err) {
-            logDiv.remove();
-            var errDiv = aiDiv || appendMessage('', 'chat-message-ai');
+            console.error("Chat Error: ", err);
+            var errDiv = (typeof aiDiv !== 'undefined' && aiDiv) ? aiDiv : appendMessage('', 'chat-message-ai');
             errDiv.textContent = STRINGS.error;
             errDiv.classList.add('chat-message-error');
+            
+            // 에러 발생 시 최하단으로 스크롤
+            chatBox.scrollTop = chatBox.scrollHeight;
         }
 
         setLoading(false);
