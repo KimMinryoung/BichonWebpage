@@ -79,20 +79,9 @@
                         var data = JSON.parse(jsonStr);
                         
                         if (data.type === 'log') {
-                            // 1. 새로운 로그 조각을 기존 로그에 추가
+                            // 새로운 로그 조각을 기존 로그에 추가
                             accumulatedLog += data.content +"\n";
-                            
-                            // 2. 전체 누적된 로그를 마크다운으로 변환
-                            /*var dirtyHTML = marked.parse(accumulatedLog);
-                            var cleanHTML = DOMPurify.sanitize(dirtyHTML, {ADD_ATTR: ['target']});
-                            
-                            // 3. 로그 박스에 업데이트
-                            logDiv.innerHTML = cleanHTML;
-                            var links = logDiv.querySelectorAll('a'); // div 안의 모든 링크(a 태그) 선택
-                                links.forEach(function(link) {
-                                link.setAttribute('target', '_blank');    // 새 탭에서 열기
-                                link.setAttribute('rel', 'noopener noreferrer'); // 보안 강화
-                            });*/
+                            logDiv.textContent = accumulatedLog;
                             
                             // 스크롤 조절
                             chatBox.scrollTop = chatBox.scrollHeight;
