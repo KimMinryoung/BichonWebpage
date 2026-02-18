@@ -82,15 +82,20 @@
                             // 새로운 로그 조각을 기존 로그에 추가
                             accumulatedLog += data.content +"\n";
                             logDiv.textContent = accumulatedLog;
-                            
+
                             // 스크롤 조절
                             chatBox.scrollTop = chatBox.scrollHeight;
                         } else if (data.type === 'answer') {
                             // 답변이 오면 로그 변수 초기화 및 로그창 제거
                             accumulatedLog = "";
                             if (logDiv) logDiv.remove();
-                            
+
                             aiDiv = appendMessage(data.content, 'chat-message-ai');
+                        } else if (data.type === 'error') {
+                            if (logDiv) logDiv.remove();
+                            var errMsg = appendMessage(data.content, 'chat-message-ai');
+                            errMsg.classList.add('chat-message-error');
+                            chatBox.scrollTop = chatBox.scrollHeight;
                         }
                     } catch (err) {
                         throw new Error(STRINGS.error);
