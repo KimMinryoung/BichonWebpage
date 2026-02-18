@@ -400,6 +400,8 @@ footer {
     max-width: none;
     width: 100%;
     padding: 8px 20px;
+    /* Push content above the system navigation bar (Android/iOS bottom bar) */
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
 }
 
 .chat-page nav .nav-content {
