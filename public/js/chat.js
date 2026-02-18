@@ -5,6 +5,13 @@
     var chatSend = document.getElementById('chatSend');
     var busy = false;
 
+    // 탭별 고유 세션 ID — 탭을 닫으면 초기화, 새로고침해도 유지
+    var sessionId = sessionStorage.getItem('chatSessionId');
+    if (!sessionId) {
+        sessionId = 'tab-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
+        sessionStorage.setItem('chatSessionId', sessionId);
+    }
+
     function appendMessage(text, className) {
         var div = document.createElement('div');
         div.className = 'chat-message ' + className;
@@ -51,7 +58,7 @@
             var res = await fetch(API_URL + '/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: message })
+                body: JSON.stringify({ message: message, session_id: sessionId })
             });
 
             if (!res.ok) throw new Error(res.statusText);
