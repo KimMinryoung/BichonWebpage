@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        document.body.style.overflow = 'hidden';
         // Set --vh to the visual viewport height (excludes browser toolbar).
         // Run before layout to avoid a flash of incorrect height.
         function setVH() {
@@ -43,7 +44,6 @@
             });
         });
     </script>
-
     <div class="chat-page">
         <%- include('../partials/nav') %>
 
