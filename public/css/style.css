@@ -385,8 +385,8 @@ footer {
     height: 100dvh;
     height: var(--vh, 100dvh);
     overflow: hidden;
-    /* Shrink content area above system nav bar.
-       env() handles iOS and newer Android Chrome; --safe-bottom is the JS fallback. */
+    /* Shrink content area above gesture nav bar overlay.
+       --safe-bottom is set by JS after load; env() handles iOS/newer Android. */
     padding-bottom: var(--safe-bottom, env(safe-area-inset-bottom, 0px));
 }
 
@@ -410,7 +410,7 @@ footer {
 }
 
 .chat-page footer {
-    flex-shrink: 0;
+    display: none;
 }
 
 /* Chat */

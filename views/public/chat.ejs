@@ -15,22 +15,30 @@
             document.documentElement.style.setProperty('--vh', h + 'px');
         }
 
-        // Measure the system nav bar height once at startup, before keyboard ever appears.
-        // On Android with gesture nav overlay, window.innerHeight includes the gesture area
-        // while visualViewport.height excludes it — the gap is the nav bar height.
-        // Only update on orientation change (not on resize, which fires when keyboard opens).
-        function initSafeBottom() {
-            var vv = window.visualViewport;
-            if (vv) {
-                var gap = Math.max(0, window.innerHeight - vv.height);
-                document.documentElement.style.setProperty('--safe-bottom', gap + 'px');
-            }
-        }
-
         setVH();
-        initSafeBottom();
         (window.visualViewport || window).addEventListener('resize', setVH);
-        window.addEventListener('orientationchange', function() { setVH(); initSafeBottom(); });
+        window.addEventListener('orientationchange', setVH);
+
+        // After load: set --safe-bottom to keep content above the gesture nav overlay.
+        // env(safe-area-inset-bottom) handles iOS and newer Android Chrome.
+        // Fallback: if env() returns 0 and browser is in edge-to-edge mode
+        // (outerHeight ≈ screen.height), the gesture nav overlays the viewport bottom,
+        // so apply a standard 34px offset.
+        window.addEventListener('load', function() {
+            requestAnimationFrame(function() {
+                var probe = document.createElement('div');
+                probe.style.cssText = 'position:fixed;bottom:0;left:0;height:env(safe-area-inset-bottom,0px);min-height:0;pointer-events:none;visibility:hidden';
+                document.body.appendChild(probe);
+                var envVal = probe.getBoundingClientRect().height;
+                document.body.removeChild(probe);
+
+                var safeBottom = envVal;
+                if (safeBottom === 0 && window.outerHeight >= window.screen.height * 0.99) {
+                    safeBottom = 34;
+                }
+                document.documentElement.style.setProperty('--safe-bottom', safeBottom + 'px');
+            });
+        });
     </script>
     <%- include('../partials/nav') %>
 
