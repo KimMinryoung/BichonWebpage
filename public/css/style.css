@@ -385,6 +385,9 @@ footer {
     height: 100dvh;
     height: var(--vh, 100dvh);
     overflow: hidden;
+    /* Shrink content area above system nav bar.
+       env() handles iOS and newer Android Chrome; --safe-bottom is the JS fallback. */
+    padding-bottom: var(--safe-bottom, env(safe-area-inset-bottom, 0px));
 }
 
 .chat-page nav {
@@ -400,8 +403,6 @@ footer {
     max-width: none;
     width: 100%;
     padding: 8px 20px;
-    /* Push content above the system navigation bar (Android/iOS bottom bar) */
-    padding-bottom: max(8px, env(safe-area-inset-bottom));
 }
 
 .chat-page nav .nav-content {

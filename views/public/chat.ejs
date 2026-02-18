@@ -10,12 +10,27 @@
         // window.innerHeight correctly excludes the browser toolbar on mobile.
         // Run before layout to avoid a flash of incorrect height.
         function setVH() {
-            var h = (window.visualViewport ? window.visualViewport.height : window.innerHeight);
+            var vv = window.visualViewport;
+            var h = vv ? vv.height : window.innerHeight;
             document.documentElement.style.setProperty('--vh', h + 'px');
         }
+
+        // Measure the system nav bar height once at startup, before keyboard ever appears.
+        // On Android with gesture nav overlay, window.innerHeight includes the gesture area
+        // while visualViewport.height excludes it — the gap is the nav bar height.
+        // Only update on orientation change (not on resize, which fires when keyboard opens).
+        function initSafeBottom() {
+            var vv = window.visualViewport;
+            if (vv) {
+                var gap = Math.max(0, window.innerHeight - vv.height);
+                document.documentElement.style.setProperty('--safe-bottom', gap + 'px');
+            }
+        }
+
         setVH();
+        initSafeBottom();
         (window.visualViewport || window).addEventListener('resize', setVH);
-        window.addEventListener('orientationchange', setVH);
+        window.addEventListener('orientationchange', function() { setVH(); initSafeBottom(); });
     </script>
     <%- include('../partials/nav') %>
 
