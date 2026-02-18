@@ -6,6 +6,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
 </head>
 <body class="chat-page">
+    <script>
+        // window.innerHeight correctly excludes the browser toolbar on mobile.
+        // Run before layout to avoid a flash of incorrect height.
+        function setVH() {
+            document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
+        }
+        setVH();
+        window.addEventListener('resize', setVH);
+        window.addEventListener('orientationchange', setVH);
+    </script>
     <%- include('../partials/nav') %>
 
     <div class="container">

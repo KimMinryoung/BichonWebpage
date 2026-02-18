@@ -375,19 +375,16 @@ footer {
     margin-bottom: 16px;
 }
 
-/* Chat page layout: fill viewport */
+/* Chat page layout: fill viewport.
+   --vh is set via JS to window.innerHeight (px), which correctly excludes
+   the mobile browser toolbar. Falls back to 100dvh then 100vh if JS is off. */
 .chat-page {
     display: flex;
     flex-direction: column;
+    height: 100vh;
     height: 100dvh;
-    height: 100vh; /* fallback for older browsers */
+    height: var(--vh, 100dvh);
     overflow: hidden;
-}
-
-@supports (height: 100dvh) {
-    .chat-page {
-        height: 100dvh;
-    }
 }
 
 .chat-page nav {
