@@ -5,9 +5,9 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
 </head>
-<body class="chat-page">
+<body>
     <script>
-        // window.innerHeight correctly excludes the browser toolbar on mobile.
+        // Set --vh to the visual viewport height (excludes browser toolbar).
         // Run before layout to avoid a flash of incorrect height.
         function setVH() {
             var vv = window.visualViewport;
@@ -19,13 +19,9 @@
         (window.visualViewport || window).addEventListener('resize', setVH);
         window.addEventListener('orientationchange', setVH);
 
-        // After load: set --safe-bottom to keep content above the gesture nav overlay.
-        // env(safe-area-inset-bottom) handles iOS and newer Android Chrome.
-        // Fallback: if env() returns 0 and browser is in edge-to-edge mode
-        // (outerHeight ≈ screen.height), the gesture nav overlays the viewport bottom,
-        // so apply a standard 34px offset.
         window.addEventListener('load', function() {
             requestAnimationFrame(function() {
+                // Probe env(safe-area-inset-bottom) via a real element.
                 var probe = document.createElement('div');
                 probe.style.cssText = 'position:fixed;bottom:0;left:0;height:env(safe-area-inset-bottom,0px);min-height:0;pointer-events:none;visibility:hidden';
                 document.body.appendChild(probe);
@@ -34,35 +30,43 @@
 
                 var safeBottom = envVal;
                 if (safeBottom === 0 && window.outerHeight >= window.screen.height * 0.99) {
+                    // env() unavailable but browser is edge-to-edge: gesture nav overlays viewport.
                     safeBottom = 34;
                 }
-                document.documentElement.style.setProperty('--safe-bottom', safeBottom + 'px');
+
+                // Apply margin-bottom directly to the input row.
+                // The .chat-page is now a <div> (not body), so its flex layout
+                // properly constrains children and margin-bottom moves the input up.
+                var inputRow = document.querySelector('.chat-input-row');
+                inputRow.style.marginBottom = safeBottom + 'px';
+
             });
         });
     </script>
-    <%- include('../partials/nav') %>
 
-    <div class="container">
-        <header class="box compact-header">
-            <h1><%= strings.chat.title %></h1>
-        </header>
+    <div class="chat-page">
+        <%- include('../partials/nav') %>
 
-        <div class="chat-box" id="chatBox"></div>
+        <div class="container">
+            <header class="box compact-header">
+                <h1><%= strings.chat.title %></h1>
+            </header>
 
-        <form class="chat-input-row" id="chatForm">
-            <input
-                type="text"
-                id="chatInput"
-                placeholder="<%= strings.chat.placeholder %>"
-                autocomplete="off"
-            />
-            <button type="submit" class="btn btn-primary" id="chatSend">
-                <%= strings.chat.send %>
-            </button>
-        </form>
+            <div class="chat-box" id="chatBox"></div>
+
+            <form class="chat-input-row" id="chatForm">
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="<%= strings.chat.placeholder %>"
+                    autocomplete="off"
+                />
+                <button type="submit" class="btn btn-primary" id="chatSend">
+                    <%= strings.chat.send %>
+                </button>
+            </form>
+        </div>
     </div>
-
-    <%- include('../partials/footer') %>
 
     <script>
         var API_URL = '<%= chatApiUrl %>';

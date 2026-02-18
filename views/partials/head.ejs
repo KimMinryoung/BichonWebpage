@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title><%= typeof pageTitle !== 'undefined' && pageTitle ? pageTitle + ' - ' + strings.siteName : strings.siteName %></title>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=<%= Date.now() %>">
 <% if (typeof extraCss !== 'undefined' && extraCss) { %>
 <link rel="stylesheet" href="<%= extraCss %>">
 <% } %>
