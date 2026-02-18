@@ -10,10 +10,11 @@
         // window.innerHeight correctly excludes the browser toolbar on mobile.
         // Run before layout to avoid a flash of incorrect height.
         function setVH() {
-            document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
+            var h = (window.visualViewport ? window.visualViewport.height : window.innerHeight);
+            document.documentElement.style.setProperty('--vh', h + 'px');
         }
         setVH();
-        window.addEventListener('resize', setVH);
+        (window.visualViewport || window).addEventListener('resize', setVH);
         window.addEventListener('orientationchange', setVH);
     </script>
     <%- include('../partials/nav') %>
