@@ -622,6 +622,6 @@ footer {
     }
 
     .chat-box {
-        min-height: 300px;
+        min-height: 0;
     }
 }
