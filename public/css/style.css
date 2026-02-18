@@ -379,8 +379,15 @@ footer {
 .chat-page {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100dvh;
+    height: 100vh; /* fallback for older browsers */
     overflow: hidden;
+}
+
+@supports (height: 100dvh) {
+    .chat-page {
+        height: 100dvh;
+    }
 }
 
 .chat-page nav {
