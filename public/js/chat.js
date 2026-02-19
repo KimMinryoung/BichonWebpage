@@ -58,7 +58,7 @@
     if (historyBtn) {
         historyBtn.addEventListener('click', function () {
             historyBtn.disabled = true;
-            loadHistory().finally(function () { historyBtn.disabled = false; });
+            loadHistory().finally(function () { historyBtn.style.display = 'none'; });
         });
     }
 
