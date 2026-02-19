@@ -23,6 +23,7 @@
     var userId = getUserId();
 
     var inHistoryMode = false;
+    var originalPlaceholder = chatInput.placeholder;
 
     async function loadHistory() {
         try {
@@ -68,7 +69,9 @@
                 // → History mode: disable input, load history, rename button
                 setLoading(true);
                 await loadHistory();
+                historyBtn.classList.add('btn-primary');
                 historyBtn.textContent = '채팅 재개';
+                chatInput.placeholder = "'채팅 재개'를 클릭하면 대화 모드로 돌아갑니다";
                 inHistoryMode = true;
             } else {
                 // → Chat mode: remove history container, enable input, scroll to bottom
@@ -76,7 +79,9 @@
                 if (container) container.remove();
                 setLoading(false);
                 chatBox.scrollTop = chatBox.scrollHeight;
+                historyBtn.classList.remove('btn-primary');
                 historyBtn.textContent = '이전 대화';
+                chatInput.placeholder = originalPlaceholder;
                 inHistoryMode = false;
             }
 
