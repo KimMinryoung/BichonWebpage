@@ -22,32 +22,37 @@
     }
     var userId = getUserId();
 
+    var inHistoryMode = false;
+
     async function loadHistory() {
         try {
             var res = await fetch(API_URL + '/history?fingerprint=' + encodeURIComponent(userId) + '&limit=50');
             if (!res.ok) return;
             var data = await res.json();
 
-            var fragment = document.createDocumentFragment();
+            // Wrap all history in one container so it can be removed cleanly
+            var container = document.createElement('div');
+            container.id = 'historyContainer';
+
             var sep = document.createElement('div');
             sep.className = 'chat-history-separator';
             sep.textContent = data.history.length > 0 ? '── 이전 대화 기록 ──' : '── 이전 대화 기록이 없습니다 ──';
-            fragment.appendChild(sep);
+            container.appendChild(sep);
 
             for (var i = 0; i < data.history.length; i++) {
                 var item = data.history[i];
                 var userMsg = document.createElement('div');
                 userMsg.className = 'chat-message chat-message-user';
                 userMsg.textContent = item.user_query;
-                fragment.appendChild(userMsg);
+                container.appendChild(userMsg);
 
                 var aiMsg = document.createElement('div');
                 aiMsg.className = 'chat-message chat-message-ai';
                 aiMsg.innerHTML = DOMPurify.sanitize(marked.parse(item.bot_answer), {ADD_ATTR: ['target']});
-                fragment.appendChild(aiMsg);
+                container.appendChild(aiMsg);
             }
 
-            chatBox.insertBefore(fragment, chatBox.firstChild);
+            chatBox.insertBefore(container, chatBox.firstChild);
             chatBox.scrollTop = 0;
         } catch (err) {
             console.error('History load error:', err);
@@ -56,9 +61,26 @@
 
     var historyBtn = document.getElementById('historyBtn');
     if (historyBtn) {
-        historyBtn.addEventListener('click', function () {
+        historyBtn.addEventListener('click', async function () {
             historyBtn.disabled = true;
-            loadHistory().finally(function () { historyBtn.style.display = 'none'; });
+
+            if (!inHistoryMode) {
+                // → History mode: disable input, load history, rename button
+                setLoading(true);
+                await loadHistory();
+                historyBtn.textContent = '채팅 재개';
+                inHistoryMode = true;
+            } else {
+                // → Chat mode: remove history container, enable input, scroll to bottom
+                var container = document.getElementById('historyContainer');
+                if (container) container.remove();
+                setLoading(false);
+                chatBox.scrollTop = chatBox.scrollHeight;
+                historyBtn.textContent = '이전 대화';
+                inHistoryMode = false;
+            }
+
+            historyBtn.disabled = false;
         });
     }
 
