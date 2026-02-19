@@ -12,6 +12,56 @@
         sessionStorage.setItem('chatSessionId', sessionId);
     }
 
+    // 고유 사용자 ID — localStorage에 영구 저장 (서버 재시작 후에도 유지, 탭 간 공유)
+    function getUserId() {
+        var stored = localStorage.getItem('cl_user_id');
+        if (stored) return stored;
+        var uid = crypto.randomUUID();
+        localStorage.setItem('cl_user_id', uid);
+        return uid;
+    }
+    var userId = getUserId();
+
+    async function loadHistory() {
+        try {
+            var res = await fetch(API_URL + '/history?fingerprint=' + encodeURIComponent(userId) + '&limit=50');
+            if (!res.ok) return;
+            var data = await res.json();
+
+            var fragment = document.createDocumentFragment();
+            var sep = document.createElement('div');
+            sep.className = 'chat-history-separator';
+            sep.textContent = data.history.length > 0 ? '── 이전 대화 기록 ──' : '── 이전 대화 기록이 없습니다 ──';
+            fragment.appendChild(sep);
+
+            for (var i = 0; i < data.history.length; i++) {
+                var item = data.history[i];
+                var userMsg = document.createElement('div');
+                userMsg.className = 'chat-message chat-message-user';
+                userMsg.textContent = item.user_query;
+                fragment.appendChild(userMsg);
+
+                var aiMsg = document.createElement('div');
+                aiMsg.className = 'chat-message chat-message-ai';
+                aiMsg.innerHTML = DOMPurify.sanitize(marked.parse(item.bot_answer), {ADD_ATTR: ['target']});
+                fragment.appendChild(aiMsg);
+            }
+
+            chatBox.insertBefore(fragment, chatBox.firstChild);
+            chatBox.scrollTop = 0;
+        } catch (err) {
+            console.error('History load error:', err);
+        }
+    }
+
+    var historyBtn = document.getElementById('historyBtn');
+    if (historyBtn) {
+        historyBtn.addEventListener('click', function () {
+            historyBtn.disabled = true;
+            loadHistory().finally(function () { historyBtn.disabled = false; });
+        });
+    }
+
     function appendMessage(text, className) {
         var div = document.createElement('div');
         div.className = 'chat-message ' + className;
@@ -58,7 +108,11 @@
             var res = await fetch(API_URL + '/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: message, session_id: sessionId })
+                body: JSON.stringify({
+                    message: message,
+                    session_id: sessionId,
+                    fingerprint: userId,
+                }),
             });
 
             if (!res.ok) throw new Error(res.statusText);
