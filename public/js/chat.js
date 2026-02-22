@@ -4,6 +4,8 @@
     var chatInput = document.getElementById('chatInput');
     var chatSend = document.getElementById('chatSend');
     var busy = false;
+    var originalTitle = document.title;
+    var hiddenDuringRequest = false;
 
     // 탭별 고유 세션 ID — 탭을 닫으면 초기화, 새로고침해도 유지
     var sessionId = sessionStorage.getItem('chatSessionId');
@@ -21,6 +23,16 @@
         return uid;
     }
     var userId = getUserId();
+
+    // Page Visibility API: notify via title when answer arrives while hidden; scroll on return
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') {
+            if (busy) hiddenDuringRequest = true;
+        } else {
+            document.title = originalTitle;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    });
 
     var inHistoryMode = false;
     var originalPlaceholder = chatInput.placeholder;
@@ -126,6 +138,7 @@
 
         appendMessage(message, 'chat-message-user');
         chatInput.value = '';
+        hiddenDuringRequest = false;
         setLoading(true);
 
         var logDiv = appendMessage(STRINGS.thinking, 'chat-message-log');
@@ -179,6 +192,9 @@
                             if (logDiv) logDiv.remove();
 
                             aiDiv = appendMessage(data.content, 'chat-message-ai');
+                            if (document.visibilityState === 'hidden') {
+                                document.title = '💬 답변 도착 — ' + originalTitle;
+                            }
                         } else if (data.type === 'error') {
                             if (logDiv) logDiv.remove();
                             var errMsg = appendMessage(data.content, 'chat-message-ai');
@@ -193,9 +209,11 @@
         } catch (err) {
             console.error("Chat Error: ", err);
             var errDiv = (typeof aiDiv !== 'undefined' && aiDiv) ? aiDiv : appendMessage('', 'chat-message-ai');
-            errDiv.textContent = STRINGS.error;
+            errDiv.textContent = hiddenDuringRequest
+                ? STRINGS.error + ' 다른 탭에 있는 동안 연결이 끊겼을 수 있습니다. "이전 대화" 버튼으로 답변을 확인해 보세요.'
+                : STRINGS.error;
             errDiv.classList.add('chat-message-error');
-            
+
             // 에러 발생 시 최하단으로 스크롤
             chatBox.scrollTop = chatBox.scrollHeight;
         }
