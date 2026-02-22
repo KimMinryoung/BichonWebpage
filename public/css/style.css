@@ -76,6 +76,28 @@ nav .nav-links a:hover {
     text-decoration: none;
 }
 
+/* buttons grid */
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 한 줄에 1개씩 */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 모바일: (1줄에 2개) */
+@media (min-width: 300px) {
+    .quick-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 데스크탑/넓은 화면: (1줄에 4개) */
+@media (min-width: 800px) {
+    .quick-actions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 /* Header */
 header {
     margin-bottom: 15px;
@@ -293,12 +315,14 @@ form {
 .posts-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .posts-table th,
 .posts-table td {
+    vertical-align: top;
     padding: 12px;
-    text-align: left;
+    text-align: middle;
     border-bottom: 1px solid #333;
 }
 
@@ -311,9 +335,15 @@ form {
     background-color: #1a1a1a;
 }
 
-.posts-table .actions {
+.posts-table td.actions {
+    display: table-cell;
+    gap: 5px;
+}
+
+.action-group{
     display: flex;
-    gap: 10px;
+    gap: 5px;
+    flex-wrap: wrap;
 }
 
 /* Messages */

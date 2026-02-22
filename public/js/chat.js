@@ -33,7 +33,7 @@
         recovering = true;
         errDiv.textContent = '연결이 끊겼습니다. 답변을 복구하는 중...';
 
-        var delays = [2000, 4000, 8000, 15000];
+        var delays = [2000, 4000, 8000];
         for (var i = 0; i < delays.length; i++) {
             await new Promise(function (resolve) { setTimeout(resolve, delays[i]); });
             try {
@@ -44,6 +44,7 @@
                 for (var j = 0; j < history.length; j++) {
                     if (history[j].user_query === msg) {
                         errDiv.remove();
+                        if (logDiv) logDiv.remove();
                         appendMessage(history[j].bot_answer, 'chat-message-ai');
                         chatBox.scrollTop = chatBox.scrollHeight;
                         if (document.visibilityState === 'hidden') {

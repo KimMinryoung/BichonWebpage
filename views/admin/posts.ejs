@@ -24,10 +24,10 @@
                 <table class="posts-table">
                     <thead>
                         <tr>
-                            <th><%= strings.admin.postId %></th>
-                            <th><%= strings.admin.postTitle %></th>
-                            <th><%= strings.admin.postCreated %></th>
-                            <th><%= strings.admin.postActions %></th>
+                            <th style="width: 10%;"><%= strings.admin.postId %></th>
+                            <th style="width: 50%;"><%= strings.admin.postTitle %></th>
+                            <th style="width: 20%;"><%= strings.admin.postCreated %></th>
+                            <th style="width: 20%;"><%= strings.admin.postActions %></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,10 +37,16 @@
                                 <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
                                 <td><%= new Date(post.created_at).toLocaleDateString('ko-KR') %></td>
                                 <td class="actions">
-                                    <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small"><%= strings.admin.edit %></a>
-                                    <form action="/admin/posts/delete/<%= post.id %>" method="POST" style="display: inline;" onsubmit="return confirm('<%= strings.admin.deleteConfirm %>');">
-                                        <button type="submit" class="btn btn-small btn-danger"><%= strings.admin.delete %></button>
-                                    </form>
+                                    <div class="action-group">
+                                        <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">
+                                            <%= strings.admin.edit %>
+                                        </a>
+                                        <form action="/admin/posts/delete/<%= post.id %>" method="POST" style="margin: 0;" onsubmit="return confirm('<%= strings.admin.deleteConfirm %>');">
+                                            <button type="submit" class="btn btn-small btn-danger">
+                                                <%= strings.admin.delete %>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         <% }) %>
