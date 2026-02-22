@@ -6,6 +6,9 @@
     var busy = false;
     var originalTitle = document.title;
     var hiddenDuringRequest = false;
+    var streamDied = false;
+    var recovering = false;
+    var recoveryContext = null; // { message, errorDiv } — set in catch, read by visibilitychange
 
     // 탭별 고유 세션 ID — 탭을 닫으면 초기화, 새로고침해도 유지
     var sessionId = sessionStorage.getItem('chatSessionId');
@@ -24,6 +27,41 @@
     }
     var userId = getUserId();
 
+    // Recovery: poll /history after a background connection drop to find the completed answer
+    async function tryRecoverFromHistory(msg, errDiv) {
+        if (recovering) return;
+        recovering = true;
+        errDiv.textContent = '연결이 끊겼습니다. 답변을 복구하는 중...';
+
+        var delays = [2000, 4000, 8000, 15000];
+        for (var i = 0; i < delays.length; i++) {
+            await new Promise(function (resolve) { setTimeout(resolve, delays[i]); });
+            try {
+                var res = await fetch(API_URL + '/history?fingerprint=' + encodeURIComponent(userId) + '&limit=10');
+                if (!res.ok) continue;
+                var data = await res.json();
+                var history = data.history || [];
+                for (var j = 0; j < history.length; j++) {
+                    if (history[j].user_query === msg) {
+                        errDiv.remove();
+                        appendMessage(history[j].bot_answer, 'chat-message-ai');
+                        chatBox.scrollTop = chatBox.scrollHeight;
+                        if (document.visibilityState === 'hidden') {
+                            document.title = '💬 답변 도착 — ' + originalTitle;
+                        }
+                        recovering = false;
+                        return;
+                    }
+                }
+            } catch (e) { /* network error during poll — try again */ }
+        }
+
+        // All attempts failed — show manual fallback
+        errDiv.textContent = STRINGS.error + ' 다른 탭에 있는 동안 연결이 끊겼습니다. "이전 대화" 버튼으로 답변을 확인해 보세요.';
+        errDiv.classList.add('chat-message-error');
+        recovering = false;
+    }
+
     // Page Visibility API: notify via title when answer arrives while hidden; scroll on return
     document.addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'hidden') {
@@ -31,6 +69,10 @@
         } else {
             document.title = originalTitle;
             chatBox.scrollTop = chatBox.scrollHeight;
+            // If stream died while we were away, try to recover the answer from history
+            if (streamDied && hiddenDuringRequest && recoveryContext) {
+                tryRecoverFromHistory(recoveryContext.message, recoveryContext.errorDiv);
+            }
         }
     });
 
@@ -139,6 +181,9 @@
         appendMessage(message, 'chat-message-user');
         chatInput.value = '';
         hiddenDuringRequest = false;
+        streamDied = false;
+        recovering = false;
+        recoveryContext = null;
         setLoading(true);
 
         var logDiv = appendMessage(STRINGS.thinking, 'chat-message-log');
@@ -208,13 +253,24 @@
             }
         } catch (err) {
             console.error("Chat Error: ", err);
+            streamDied = true;
             var errDiv = (typeof aiDiv !== 'undefined' && aiDiv) ? aiDiv : appendMessage('', 'chat-message-ai');
-            errDiv.textContent = hiddenDuringRequest
-                ? STRINGS.error + ' 다른 탭에 있는 동안 연결이 끊겼을 수 있습니다. "이전 대화" 버튼으로 답변을 확인해 보세요.'
-                : STRINGS.error;
-            errDiv.classList.add('chat-message-error');
 
-            // 에러 발생 시 최하단으로 스크롤
+            if (hiddenDuringRequest) {
+                // Stream died while tab was hidden — attempt to recover answer from history.
+                // Store context so visibilitychange can trigger recovery if tab is still hidden.
+                recoveryContext = { message: message, errorDiv: errDiv };
+                if (document.visibilityState === 'visible') {
+                    tryRecoverFromHistory(message, errDiv);
+                } else {
+                    // Tab still hidden: show placeholder; visibilitychange → visible will start recovery
+                    errDiv.textContent = '연결이 끊겼습니다. 탭으로 돌아오면 답변을 복구합니다...';
+                }
+            } else {
+                errDiv.textContent = STRINGS.error;
+                errDiv.classList.add('chat-message-error');
+            }
+
             chatBox.scrollTop = chatBox.scrollHeight;
         }
 
