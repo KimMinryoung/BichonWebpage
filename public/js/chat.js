@@ -28,7 +28,7 @@
     var userId = getUserId();
 
     // Recovery: poll /history after a background connection drop to find the completed answer
-    async function tryRecoverFromHistory(msg, errDiv) {
+    async function tryRecoverFromHistory(msg, errDiv, logDiv) {
         if (recovering) return;
         recovering = true;
         errDiv.textContent = '연결이 끊겼습니다. 답변을 복구하는 중...';
@@ -72,7 +72,7 @@
             chatBox.scrollTop = chatBox.scrollHeight;
             // If stream died while we were away, try to recover the answer from history
             if (streamDied && hiddenDuringRequest && recoveryContext) {
-                tryRecoverFromHistory(recoveryContext.message, recoveryContext.errorDiv);
+                tryRecoverFromHistory(recoveryContext.message, recoveryContext.errorDiv, recoveryContext.logDiv);
             }
         }
     });
@@ -83,7 +83,7 @@
     async function loadHistory() {
         try {
             var res = await fetch(API_URL + '/history?fingerprint=' + encodeURIComponent(userId) + '&limit=50');
-            if (!res.ok) return;
+            if (!res.ok) throw new Error('서버 응답 오류');
             var data = await res.json();
 
             // Wrap all history in one container so it can be removed cleanly
@@ -110,8 +110,21 @@
 
             chatBox.insertBefore(container, chatBox.firstChild);
             chatBox.scrollTop = 0;
+            return true;
         } catch (err) {
             console.error('History load error:', err);
+            var errorNote = document.createElement('div');
+            errorNote.className = 'chat-message chat-message-log chat-message-error';
+            errorNote.style.textAlign = 'center';
+            errorNote.textContent = '⚠️ 대화 기록을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.';
+            
+            // historyContainer 대신 에러 메시지 임시 삽입
+            chatBox.insertBefore(errorNote, chatBox.firstChild);
+            
+            // 3초 후 에러 메시지 삭제
+            setTimeout(() => errorNote.remove(), 3000);
+            
+            return false;
         }
     }
 
@@ -123,11 +136,16 @@
             if (!inHistoryMode) {
                 // → History mode: disable input, load history, rename button
                 setLoading(true);
-                await loadHistory();
-                historyBtn.classList.add('btn-primary');
-                historyBtn.textContent = '채팅 재개';
-                chatInput.placeholder = "'채팅 재개'를 클릭하면 대화 모드로 돌아갑니다";
-                inHistoryMode = true;
+                var success = await loadHistory();
+                if (success) {
+                    historyBtn.classList.add('btn-primary');
+                    historyBtn.textContent = '채팅 재개';
+                    chatInput.placeholder = "'채팅 재개'를 클릭하면 대화 모드로 돌아갑니다";
+                    inHistoryMode = true;
+                }
+                 else {
+                    setLoading(false);
+                 }
             } else {
                 // → Chat mode: remove history container, enable input, scroll to bottom
                 var container = document.getElementById('historyContainer');
@@ -260,7 +278,7 @@
             if (hiddenDuringRequest) {
                 // Stream died while tab was hidden — attempt to recover answer from history.
                 // Store context so visibilitychange can trigger recovery if tab is still hidden.
-                recoveryContext = { message: message, errorDiv: errDiv };
+                recoveryContext = { message: message, errorDiv: errDiv, logDiv: logDiv };
                 if (document.visibilityState === 'visible') {
                     tryRecoverFromHistory(message, errDiv);
                 } else {
