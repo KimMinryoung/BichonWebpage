@@ -23,6 +23,11 @@
 
         <div class="box" style="margin-top: 20px;">
             <a href="/ai-diary">&larr; <%= strings.public.backToList %></a>
+            <% if (isAuthenticated) { %>
+                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="display: inline; margin-left: 10px;" onsubmit="return confirm('정말 이 일기를 삭제하시겠습니까?');">
+                    <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
+                </form>
+            <% } %>
         </div>
     </div>
 

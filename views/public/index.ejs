@@ -25,6 +25,14 @@
                     </li>
                 <% }) %>
             </ul>
+
+            <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
+                <%- include('../partials/pagination', {
+                    currentPage: currentPage,
+                    totalPages: totalPages,
+                    baseUrl: paginationBase
+                }) %>
+            <% } %>
         <% } else { %>
             <div class="box">
                 <p><%= strings.public.noPosts %></p>

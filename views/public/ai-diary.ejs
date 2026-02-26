@@ -13,7 +13,7 @@
         </header>
 
         <% if (typeof message !== 'undefined' && message) { %>
-            <div class="message message-success">
+            <div class="message message-<%= typeof messageType !== 'undefined' ? messageType : 'success' %>">
                 <%= message %>
             </div>
         <% } %>
@@ -22,16 +22,33 @@
             <ul class="post-list">
                 <% diaries.forEach(diary => { %>
                     <li class="post-item">
-                        <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
-                        <div class="post-meta">
-                            <%= new Date(diary.created_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.postedAt %>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div style="flex: 1;">
+                                <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
+                                <div class="post-meta">
+                                    <%= new Date(diary.created_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.postedAt %>
+                                </div>
+                                <p class="post-excerpt">
+                                    <%- truncateHtml(diary.content, 200) %>
+                                </p>
+                            </div>
+                            <% if (isAuthenticated) { %>
+                                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="margin-left: 15px;" onsubmit="return confirm('정말 이 일기를 삭제하시겠습니까?');">
+                                    <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
+                                </form>
+                            <% } %>
                         </div>
-                        <p class="post-excerpt">
-                            <%- truncateHtml(diary.content, 200) %>
-                        </p>
                     </li>
                 <% }) %>
             </ul>
+
+            <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
+                <%- include('../partials/pagination', {
+                    currentPage: currentPage,
+                    totalPages: totalPages,
+                    baseUrl: paginationBase
+                }) %>
+            <% } %>
         <% } else { %>
             <div class="box">
                 <p>아직 작성된 일기가 없습니다.</p>

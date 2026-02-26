@@ -398,6 +398,37 @@ footer {
     padding: 4px;
 }
 
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.pagination .btn-small {
+    min-width: 40px;
+    text-align: center;
+}
+
+.pagination .btn-small.active {
+    background-color: #0066cc;
+    border-color: #0066cc;
+    color: #fff;
+}
+
+.pagination .btn-small.active:hover {
+    background-color: #0055aa;
+    border-color: #0055aa;
+}
+
+.pagination-ellipsis {
+    color: #888;
+    padding: 0 4px;
+}
+
 /* Link Toolbar & Modal */
 .link-toolbar {
     margin-bottom: 8px;

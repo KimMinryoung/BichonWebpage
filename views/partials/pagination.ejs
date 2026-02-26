@@ -1,0 +1,30 @@
+<%
+var pagination = require('../config/paginationHelper')(currentPage, totalPages);
+%>
+<div class="pagination">
+    <% if (pagination.showPrev) { %>
+        <a href="<%= baseUrl %><%= currentPage - 1 %>" class="btn btn-small">이전</a>
+    <% } %>
+
+    <% if (pagination.showFirst) { %>
+        <a href="<%= baseUrl %>1" class="btn btn-small">1</a>
+        <% if (pagination.hasPrevEllipsis) { %>
+            <span class="pagination-ellipsis">...</span>
+        <% } %>
+    <% } %>
+
+    <% pagination.pages.forEach(function(page) { %>
+        <a href="<%= baseUrl %><%= page %>" class="btn btn-small<%= page === currentPage ? ' active' : '' %>"><%= page %></a>
+    <% }); %>
+
+    <% if (pagination.showLast) { %>
+        <% if (pagination.hasNextEllipsis) { %>
+            <span class="pagination-ellipsis">...</span>
+        <% } %>
+        <a href="<%= baseUrl %><%= totalPages %>" class="btn btn-small"><%= totalPages %></a>
+    <% } %>
+
+    <% if (pagination.showNext) { %>
+        <a href="<%= baseUrl %><%= currentPage + 1 %>" class="btn btn-small">다음</a>
+    <% } %>
+</div>
