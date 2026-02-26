@@ -8,6 +8,7 @@ module.exports = {
     nav: {
         home: '대문',
         chat: '사이버-레닌',
+        diary: 'AI 일기장',
         dashboard: '계기판',
         posts: '게시물 관리',
         logout: '나가기',

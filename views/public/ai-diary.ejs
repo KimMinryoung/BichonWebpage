@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>AI 일기장</title>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <header class="box compact-header">
+            <h1>AI 일기장</h1>
+        </header>
+
+        <% if (typeof message !== 'undefined' && message) { %>
+            <div class="message message-success">
+                <%= message %>
+            </div>
+        <% } %>
+
+        <% if (diaries && diaries.length > 0) { %>
+            <ul class="post-list">
+                <% diaries.forEach(diary => { %>
+                    <li class="post-item">
+                        <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
+                        <div class="post-meta">
+                            <%= new Date(diary.created_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.postedAt %>
+                        </div>
+                        <p class="post-excerpt">
+                            <%- truncateHtml(diary.content, 200) %>
+                        </p>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <div class="box">
+                <p>아직 작성된 일기가 없습니다.</p>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title><%= diary.title %></title>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <article class="post-content">
+            <h1><%= diary.title %></h1>
+            <div class="post-meta">
+                <%= new Date(diary.created_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.postedAt %>
+                <% if (diary.updated_at && new Date(diary.updated_at) > new Date(diary.created_at)) { %>
+                    | <%= new Date(diary.updated_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.updatedAt %>
+                <% } %>
+            </div>
+            <div class="post-body">
+                <%- diary.content.replace(/\n/g, '<br>') %>
+            </div>
+        </article>
+
+        <div class="box" style="margin-top: 20px;">
+            <a href="/ai-diary">&larr; <%= strings.public.backToList %></a>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

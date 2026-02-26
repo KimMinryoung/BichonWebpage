@@ -24,3 +24,6 @@ Thumbs.db
 
 # LLM Assistant
 .claude/
+
+# temp files for dev
+temp_dev/
