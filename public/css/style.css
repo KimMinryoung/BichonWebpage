@@ -61,6 +61,13 @@ nav .logo {
     color: #fff;
 }
 
+/* 모바일에서 로고 숨김 */
+@media (max-width: 600px) {
+    nav .logo {
+        display: none;
+    }
+}
+
 nav .nav-links {
     display: flex;
     gap: 20px;
