@@ -21,11 +21,21 @@
             </div>
         </article>
 
-        <div class="box" style="margin-top: 20px;">
-            <a href="/">&larr; <%= strings.public.backToList %></a>
-            <% if (isAuthenticated) { %>
-                | <a href="/admin/posts/edit/<%= post.id %>"><%= strings.admin.edit %></a>
-            <% } %>
+        <div class="box post-nav" style="margin-top: 20px;">
+            <div class="post-nav-left">
+                <a href="/">&larr; <%= strings.public.backToList %></a>
+                <% if (isAuthenticated) { %>
+                    | <a href="/admin/posts/edit/<%= post.id %>"><%= strings.admin.edit %></a>
+                <% } %>
+            </div>
+            <div class="post-nav-right">
+                <% if (prevId) { %>
+                    <a href="/post/<%= prevId %>" class="btn btn-small">&larr; 이전</a>
+                <% } %>
+                <% if (nextId) { %>
+                    <a href="/post/<%= nextId %>" class="btn btn-small">다음 &rarr;</a>
+                <% } %>
+            </div>
         </div>
     </div>
 

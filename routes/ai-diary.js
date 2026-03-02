@@ -51,7 +51,19 @@ router.get('/:id', async (req, res) => {
             });
         }
 
-        res.render('public/ai-diary-view', { diary: diaries[0] });
+        const diary = diaries[0];
+
+        // 이전 글 (더 오래된 글) / 다음 글 (더 새로운 글) 조회
+        // AND id != $2: JS Date의 밀리초 정밀도와 PostgreSQL 마이크로초 정밀도 차이로 자기 자신이 매칭되는 것을 방지
+        const [prevResult, nextResult] = await Promise.all([
+            db.query('SELECT id FROM ai_diary WHERE created_at < $1 AND id != $2 ORDER BY created_at DESC LIMIT 1', [diary.created_at, diary.id]),
+            db.query('SELECT id FROM ai_diary WHERE created_at > $1 AND id != $2 ORDER BY created_at ASC LIMIT 1', [diary.created_at, diary.id])
+        ]);
+
+        const prevId = prevResult.rows.length > 0 ? prevResult.rows[0].id : null;
+        const nextId = nextResult.rows.length > 0 ? nextResult.rows[0].id : null;
+
+        res.render('public/ai-diary-view', { diary, prevId, nextId });
     } catch (error) {
         console.error('Error fetching diary:', error);
         res.status(500).render('layouts/main', {

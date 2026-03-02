@@ -646,6 +646,26 @@ footer {
     white-space: nowrap;
 }
 
+/* Post Navigation (prev/next) */
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.post-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-nav-right {
+    display: flex;
+    gap: 8px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {
