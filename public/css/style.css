@@ -47,6 +47,14 @@ nav {
     margin-bottom: 30px;
 }
 
+nav:has(+ .admin-bar) {
+    margin-bottom: 0;
+}
+
+.admin-bar {
+    border-top: none;
+}
+
 nav .nav-content {
     display: flex;
     justify-content: space-between;
@@ -71,6 +79,7 @@ nav .logo {
 nav .nav-links {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 nav .nav-links a {
@@ -448,6 +457,16 @@ footer {
     color: #666;
     font-size: 0.8rem;
     border-top: 1px solid #333;
+}
+
+.stealth-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.stealth-link:hover {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Compact footer for chat page */

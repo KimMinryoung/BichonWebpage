@@ -1,5 +1,5 @@
 <footer>
-    <p><%= strings.footer.copyright.replace('{year}', new Date().getFullYear()) %></p>
+    <p><%- strings.footer.copyright.replace('{year}', new Date().getFullYear()).replace(strings.siteName, '<a href="/admin/login" class="stealth-link">' + strings.siteName + '</a>') %></p>
 </footer>
 <script>
 document.querySelectorAll('.local-date').forEach(function(el) {
