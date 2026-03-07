@@ -9,6 +9,9 @@ const Game = {
         // Load sprite assets (real PNGs or generated fallbacks)
         await Assets.load(Renderer.getApp());
 
+        // Environment needs to be drawn after assets are ready (ground texture generation)
+        Renderer.initEnvironment();
+
         Events.init();
         Entities.init();
         Intervention.init();

@@ -17,6 +17,7 @@ const SPRITE_MANIFEST = {
     // 'tree': 'tree.png',
     // 'streetlight': 'streetlight.png',
     // 'cloud': 'cloud.png',
+    'ground' : 'ground-concrete.png',
 };
 
 const textures = {};

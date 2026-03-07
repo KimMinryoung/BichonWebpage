@@ -37,7 +37,9 @@ const Renderer = {
     },
 
     _drawGround() {
-        groundTexture = this._generateGroundTexture();
+        // Use loaded ground asset if available, otherwise generate procedurally
+        const loadedTex = Assets.get('ground');
+        groundTexture = loadedTex || this._generateGroundTexture();
 
         groundContainer = new PIXI.Container();
         camera.addChild(groundContainer);
@@ -183,7 +185,7 @@ const Renderer = {
 
         for (let i = 0; i < groundStrips.length; i++) {
             const strip = groundStrips[i];
-            strip.tilePosition.y = strip._baseTPY - groundScrollOffset * strip._scaleY;
+            strip.tilePosition.y = strip._baseTPY + groundScrollOffset * strip._scaleY;
         }
 
         // Sky color from state
