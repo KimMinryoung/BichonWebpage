@@ -11,9 +11,9 @@
         <article class="post-content">
             <h1><%= post.title %></h1>
             <div class="post-meta">
-                <%= new Date(post.created_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.postedAt %>
+                <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                 <% if (post.updated_at && post.updated_at > post.created_at) { %>
-                    | <%= new Date(post.updated_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.updatedAt %>
+                    | <time class="local-date" datetime="<%= new Date(post.updated_at).toISOString() %>" data-suffix="<%= strings.public.updatedAt %>"></time>
                 <% } %>
             </div>
             <div class="post-body">

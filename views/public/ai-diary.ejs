@@ -26,7 +26,7 @@
                             <div style="flex: 1;">
                                 <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
                                 <div class="post-meta">
-                                    <%= new Date(diary.created_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.postedAt %>
+                                    <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                                 </div>
                                 <p class="post-excerpt">
                                     <%- truncateHtml(diary.content, 200) %>

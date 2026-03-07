@@ -35,7 +35,7 @@
                             <tr>
                                 <td><%= post.id %></td>
                                 <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
-                                <td><%= new Date(post.created_at).toLocaleDateString('ko-KR') %></td>
+                                <td><time class="local-date-short" datetime="<%= new Date(post.created_at).toISOString() %>"></time></td>
                                 <td class="actions">
                                     <div class="action-group">
                                         <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">

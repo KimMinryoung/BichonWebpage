@@ -1,3 +1,14 @@
 <footer>
     <p><%= strings.footer.copyright.replace('{year}', new Date().getFullYear()) %></p>
 </footer>
+<script>
+document.querySelectorAll('.local-date').forEach(function(el) {
+    var d = new Date(el.getAttribute('datetime'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    el.textContent = d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) + suffix;
+});
+document.querySelectorAll('.local-date-short').forEach(function(el) {
+    var d = new Date(el.getAttribute('datetime'));
+    el.textContent = d.toLocaleDateString('ko-KR');
+});
+</script>

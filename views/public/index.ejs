@@ -17,7 +17,7 @@
                     <li class="post-item">
                         <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
                         <div class="post-meta">
-                            <%= new Date(post.created_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) %><%= strings.public.postedAt %>
+                            <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                         </div>
                         <p class="post-excerpt">
                             <%- truncateHtml(post.content, 200) %>
