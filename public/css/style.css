@@ -83,6 +83,57 @@ nav .nav-links a:hover {
     text-decoration: none;
 }
 
+.lang-dropdown {
+    position: relative;
+    margin-left: auto;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.lang-btn:hover {
+    background-color: #333;
+    text-decoration: none;
+}
+
+.lang-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #1a1a1a;
+    border: 1px solid #555;
+    z-index: 100;
+}
+
+.lang-menu.show {
+    display: block;
+}
+
+.lang-menu a {
+    display: block;
+    padding: 8px 12px;
+    color: #f0f0f0;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.lang-menu a:hover {
+    background-color: #333;
+}
+
+.lang-menu a.active {
+    background-color: #333;
+    font-weight: bold;
+}
+
 /* buttons grid */
 .quick-actions-grid {
     display: grid;
@@ -691,7 +742,8 @@ footer {
         gap: 8px;
     }
 
-    nav .nav-links a {
+    nav .nav-links a,
+    nav .nav-links .lang-btn {
         padding: 3px 6px;
         font-size: 0.85rem;
     }

@@ -58,7 +58,7 @@
         }
 
         // All attempts failed — show manual fallback
-        errDiv.textContent = STRINGS.error + ' 다른 탭에 있는 동안 연결이 끊겼습니다. "이전 대화" 버튼으로 답변을 확인해 보세요.';
+        errDiv.textContent = STRINGS.error + ' ' + STRINGS.disconnectError;
         errDiv.classList.add('chat-message-error');
         recovering = false;
     }

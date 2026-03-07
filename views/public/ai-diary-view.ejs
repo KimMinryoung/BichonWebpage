@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<%= lang %>">
 <head>
     <title><%= diary.title %></title>
     <%- include('../partials/head') %>
@@ -25,17 +25,17 @@
             <div class="post-nav-left">
                 <a href="/ai-diary">&larr; <%= strings.public.backToList %></a>
                 <% if (isAuthenticated) { %>
-                    <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="display: inline; margin-left: 10px;" onsubmit="return confirm('정말 이 일기를 삭제하시겠습니까?');">
+                    <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="display: inline; margin-left: 10px;" onsubmit="return confirm('<%= strings.public.deleteDiaryConfirm %>');">
                         <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
                     </form>
                 <% } %>
             </div>
             <div class="post-nav-right">
                 <% if (prevId) { %>
-                    <a href="/ai-diary/<%= prevId %>" class="btn btn-small">&larr; 이전</a>
+                    <a href="/ai-diary/<%= prevId %>" class="btn btn-small">&larr; <%= strings.public.prevPost %></a>
                 <% } %>
                 <% if (nextId) { %>
-                    <a href="/ai-diary/<%= nextId %>" class="btn btn-small">다음 &rarr;</a>
+                    <a href="/ai-diary/<%= nextId %>" class="btn btn-small"><%= strings.public.nextPost %> &rarr;</a>
                 <% } %>
             </div>
         </div>

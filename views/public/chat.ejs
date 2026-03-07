@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<%= lang %>">
 <head>
     <%- include('../partials/head') %>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -50,7 +50,7 @@
         <div class="container">
             <header class="box compact-header">
                 <h1><%= strings.chat.title %></h1>
-                <button type="button" class="btn btn-secondary" id="historyBtn">이전 대화</button>
+                <button type="button" class="btn btn-secondary" id="historyBtn"><%= strings.public.chatHistory %></button>
             </header>
 
             <div class="chat-box" id="chatBox"></div>
@@ -73,7 +73,8 @@
         var API_URL = '<%= chatApiUrl %>';
         var STRINGS = {
             thinking: '<%= strings.chat.thinking %>',
-            error: '<%= strings.chat.error %>'
+            error: '<%= strings.chat.error %>',
+            disconnectError: '<%= strings.chat.disconnectError %>'
         };
     </script>
     <script src="/js/chat.js"></script>

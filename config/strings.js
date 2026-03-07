@@ -1,7 +1,7 @@
 // 사이트 전체에서 사용되는 텍스트 상수
 // 텍스트를 수정하려면 이 파일만 수정하면 됩니다.
 
-module.exports = {
+const ko = {
     siteName: '비숑집',
     siteTagline: '비숑의 아늑한 집',
 
@@ -24,7 +24,12 @@ module.exports = {
         noPosts: '글이 아직 없다.',
         postedAt: '에 올림',
         updatedAt: '에 고침',
-        backToList: '목록'
+        backToList: '목록',
+        noDiaries: '아직 작성된 일기가 없습니다.',
+        deleteDiaryConfirm: '정말 이 일기를 삭제하시겠습니까?',
+        chatHistory: '이전 대화',
+        prevPost: '이전',
+        nextPost: '다음'
     },
 
     // 로그인 페이지
@@ -105,7 +110,8 @@ module.exports = {
         placeholder: '레닌 동지에게 질문하세요...',
         send: '전송',
         thinking: '동지가 생각 중...',
-        error: '오류가 발생했습니다. 다시 시도해주세요.'
+        error: '오류가 발생했습니다. 다시 시도해주세요.',
+        disconnectError: '다른 탭에 있는 동안 연결이 끊겼습니다. "이전 대화" 버튼으로 답변을 확인해 보세요.'
     },
 
     // 에러 페이지
@@ -115,3 +121,116 @@ module.exports = {
         backHome: '대문으로 돌아가기'
     }
 };
+
+const en = {
+    siteName: 'Bichon House',
+    siteTagline: "Bichon's Cozy Home",
+
+    nav: {
+        home: 'Home',
+        chat: 'Cyber-Lenin',
+        diary: 'AI Diary',
+        dashboard: 'Dashboard',
+        posts: 'Manage Posts',
+        logout: 'Logout',
+        login: 'Admin'
+    },
+
+    footer: {
+        copyright: '🄯 {year} Bichon House. All rights reversed.'
+    },
+
+    public: {
+        noPosts: 'No posts yet.',
+        postedAt: ', posted',
+        updatedAt: ', updated',
+        backToList: 'List',
+        noDiaries: 'No diary entries yet.',
+        deleteDiaryConfirm: 'Are you sure you want to delete this diary entry?',
+        chatHistory: 'History',
+        prevPost: 'Prev',
+        nextPost: 'Next'
+    },
+
+    login: {
+        title: 'Admin Login',
+        username: 'Username',
+        password: 'Password',
+        submit: 'Login'
+    },
+
+    admin: {
+        dashboard: 'Dashboard',
+        createPost: 'New Post',
+        managePosts: 'Manage Posts',
+        totalPosts: 'Total Posts',
+        recentPosts: 'Posts This Month',
+        quickActions: 'Quick Actions',
+        viewSite: 'View Site',
+        storyEditor: 'Story Editor',
+        recentPostsTitle: 'Recent Posts',
+
+        postId: 'ID',
+        postTitle: 'Title',
+        postCreated: 'Created',
+        postActions: 'Actions',
+        edit: 'Edit',
+        delete: 'Delete',
+        deleteConfirm: 'Are you sure you want to delete this post?',
+        noPostsYet: 'No posts yet.',
+        createFirst: 'Create your first post',
+
+        editPost: 'Edit Post',
+        newPost: 'New Post',
+        backToPosts: 'Back to list',
+        titleLabel: 'Title',
+        contentLabel: 'Content',
+        update: 'Update',
+        create: 'Create',
+        cancel: 'Cancel',
+
+        insertLink: 'Insert Link',
+        linkUrl: 'URL',
+        linkTitle: 'Tooltip',
+        linkText: 'Text',
+        linkInsert: 'Insert',
+        linkCancel: 'Cancel',
+
+        chatLogs: 'Chat Logs',
+        chatLogsFilterAll: 'All',
+        chatLogsFilterCasual: 'Casual',
+        chatLogsFilterVectorstore: 'Knowledge Search',
+        chatLogsRefresh: 'Refresh',
+        chatLogsLoading: 'Loading...'
+    },
+
+    storyEditor: {
+        title: 'Story Editor',
+        files: 'Files',
+        selectFile: 'Select file...',
+        scenes: 'Scenes',
+        selectScene: 'Select a scene',
+        location: 'Location',
+        save: 'Save',
+        script: 'Script (one per line)',
+        actions: 'Choices (one per line)',
+        placeholder: 'Select a file and scene to start editing.'
+    },
+
+    chat: {
+        title: 'Cyber-Lenin',
+        placeholder: 'Ask Comrade Lenin...',
+        send: 'Send',
+        thinking: 'Comrade is thinking...',
+        error: 'An error occurred. Please try again.',
+        disconnectError: 'Disconnected while you were on another tab. Check the "History" button for the answer.'
+    },
+
+    error: {
+        notFound: 'Page not found.',
+        serverError: 'Something went wrong.',
+        backHome: 'Back to home'
+    }
+};
+
+module.exports = { ko, en };

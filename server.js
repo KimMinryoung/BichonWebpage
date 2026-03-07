@@ -4,7 +4,8 @@ const express = require('express');
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const path = require('path');
-const strings = require('./config/strings');
+const allStrings = require('./config/strings');
+const cookieParser = require('cookie-parser');
 const pool = require('./config/database');
 
 const app = express();
@@ -23,6 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
 
 // Session configuration
 app.use(session({
@@ -45,7 +47,9 @@ app.use(session({
 app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
     res.locals.adminUser = req.session.adminUser || null;
-    res.locals.strings = strings;
+    var lang = req.cookies.lang === 'en' ? 'en' : 'ko';
+    res.locals.lang = lang;
+    res.locals.strings = allStrings[lang];
     res.locals.truncateHtml = function(html, maxLen) {
         var result = '';
         var textLen = 0;
@@ -97,7 +101,7 @@ app.get('/health', (req, res) => { res.status(200).send('ok'); });
 app.use((req, res) => {
     res.status(404).render('layouts/main', {
         pageTitle: '404',
-        body: `<div class="box"><h1>404</h1><p>${strings.error.notFound}</p><a href="/">${strings.error.backHome}</a></div>`
+        body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/">${res.locals.strings.error.backHome}</a></div>`
     });
 });
 
@@ -106,7 +110,7 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).render('layouts/main', {
         pageTitle: 'Error',
-        body: `<div class="box"><h1>Error</h1><p>${strings.error.serverError}</p><a href="/">${strings.error.backHome}</a></div>`
+        body: `<div class="box"><h1>Error</h1><p>${res.locals.strings.error.serverError}</p><a href="/">${res.locals.strings.error.backHome}</a></div>`
     });
 });
 

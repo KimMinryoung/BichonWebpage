@@ -11,6 +11,33 @@
             <% } else { %>
                 <a href="/admin/login"><%= strings.nav.login %></a>
             <% } %>
+            <div class="lang-dropdown">
+                <button type="button" class="lang-btn" id="langBtn">&#x1F310;<%= lang === 'en' ? 'English' : 'Korean' %></button>
+                <div class="lang-menu" id="langMenu">
+                    <a href="#" data-lang="ko" class="<%= lang === 'ko' ? 'active' : '' %>">Korean</a>
+                    <a href="#" data-lang="en" class="<%= lang === 'en' ? 'active' : '' %>">English</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
+<script>
+(function() {
+    var btn = document.getElementById('langBtn');
+    var menu = document.getElementById('langMenu');
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+    });
+    document.addEventListener('click', function() {
+        menu.classList.remove('show');
+    });
+    menu.addEventListener('click', function(e) {
+        if (e.target.dataset.lang) {
+            e.preventDefault();
+            document.cookie = 'lang=' + e.target.dataset.lang + ';path=/;max-age=31536000';
+            location.reload();
+        }
+    });
+})();
+</script>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<%= lang %>">
 <head>
-    <title>AI 일기장</title>
+    <title><%= strings.nav.diary %></title>
     <%- include('../partials/head') %>
 </head>
 <body>
@@ -9,7 +9,7 @@
 
     <div class="container">
         <header class="box compact-header">
-            <h1>AI 일기장</h1>
+            <h1><%= strings.nav.diary %></h1>
         </header>
 
         <% if (typeof message !== 'undefined' && message) { %>
@@ -33,7 +33,7 @@
                                 </p>
                             </div>
                             <% if (isAuthenticated) { %>
-                                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="margin-left: 15px;" onsubmit="return confirm('정말 이 일기를 삭제하시겠습니까?');">
+                                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="margin-left: 15px;" onsubmit="return confirm('<%= strings.public.deleteDiaryConfirm %>');">
                                     <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
                                 </form>
                             <% } %>
@@ -51,7 +51,7 @@
             <% } %>
         <% } else { %>
             <div class="box">
-                <p>아직 작성된 일기가 없습니다.</p>
+                <p><%= strings.public.noDiaries %></p>
             </div>
         <% } %>
     </div>

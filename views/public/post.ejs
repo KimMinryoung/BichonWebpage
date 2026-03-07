@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<%= lang %>">
 <head>
     <% pageTitle = post.title %>
     <%- include('../partials/head') %>
@@ -30,10 +30,10 @@
             </div>
             <div class="post-nav-right">
                 <% if (prevId) { %>
-                    <a href="/post/<%= prevId %>" class="btn btn-small">&larr; 이전</a>
+                    <a href="/post/<%= prevId %>" class="btn btn-small">&larr; <%= strings.public.prevPost %></a>
                 <% } %>
                 <% if (nextId) { %>
-                    <a href="/post/<%= nextId %>" class="btn btn-small">다음 &rarr;</a>
+                    <a href="/post/<%= nextId %>" class="btn btn-small"><%= strings.public.nextPost %> &rarr;</a>
                 <% } %>
             </div>
         </div>
