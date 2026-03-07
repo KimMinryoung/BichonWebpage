@@ -7,15 +7,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body class="game-page">
-    <a id="back-btn" href="/"><%= lang === 'en' ? 'Exit' : '종료' %></a>
-
-    <div id="game-canvas-container"></div>
-    <div id="game-choices"></div>
-    <div id="game-ending"></div>
-
-    <div id="game-rotate-prompt">
-        <div class="rotate-icon">&#x1F4F1;</div>
-        <div><%= lang === 'en' ? 'Please rotate your device' : '기기를 가로로 회전해주세요' %></div>
+    <div id="game-wrapper">
+        <a id="back-btn" href="/"><%= lang === 'en' ? 'Exit' : '종료' %></a>
+        <div id="game-canvas-container"></div>
+        <div id="game-choices"></div>
+        <div id="game-ending"></div>
     </div>
 
     <script>var GAME_LANG = '<%= lang %>';</script>

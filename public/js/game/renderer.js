@@ -6,17 +6,67 @@ let groundContainer = null;
 let groundStrips = [];
 let groundTexture = null;
 let groundScrollOffset = 0;
+// No longer subtracting safe inset from dimensions — the gesture nav
+// overlays the viewport bottom, it doesn't reduce available space.
 
 const GROUND_STRIP_HEIGHT = 4;
 
+// Use visualViewport when available (mobile) for accurate dimensions
+// that exclude browser chrome (URL bar, gesture nav bar).
+function vpWidth() {
+    const vv = window.visualViewport;
+    return vv ? vv.width : window.innerWidth;
+}
+function vpHeight() {
+    const vv = window.visualViewport;
+    return vv ? vv.height : window.innerHeight;
+}
+function _isPortrait() {
+    return vpHeight() > vpWidth();
+}
+
+// In portrait mode the CSS wrapper is rotated 90deg, so the game's
+// logical width is the viewport height and vice-versa.
+function gameWidth() {
+    return _isPortrait() ? vpHeight() : vpWidth();
+}
+function gameHeight() {
+    return _isPortrait() ? vpWidth() : vpHeight();
+}
+
+// Size and position the wrapper element via inline styles.
+function _syncWrapper() {
+    const wrapper = document.getElementById('game-wrapper');
+    if (!wrapper) return;
+
+    const vw = vpWidth();
+    const vh = vpHeight();
+
+    if (_isPortrait()) {
+        // Rotated: wrapper width = viewport height, height = viewport width
+        wrapper.style.width = vh + 'px';
+        wrapper.style.height = vw + 'px';
+        wrapper.style.transformOrigin = 'top left';
+        wrapper.style.transform = 'translateX(' + vw + 'px) rotate(90deg)';
+    } else {
+        wrapper.style.width = vw + 'px';
+        wrapper.style.height = vh + 'px';
+        wrapper.style.transform = '';
+        wrapper.style.transformOrigin = '';
+    }
+}
+
 const Renderer = {
     setup() {
+        _syncWrapper();
+
         PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
         app = new PIXI.Application({
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: gameWidth(),
+            height: gameHeight(),
             backgroundColor: CONFIG.colors.skyPeace,
             resolution: window.devicePixelRatio || 1,
+            autoDensity: true,
         });
         document.getElementById('game-canvas-container').appendChild(app.view);
 
@@ -28,7 +78,12 @@ const Renderer = {
 
         this._createFlash();
 
-        window.addEventListener('resize', () => this._onResize());
+        // Listen on visualViewport (mobile-accurate) and fallback to window
+        const resizeTarget = window.visualViewport || window;
+        resizeTarget.addEventListener('resize', () => this._onResize());
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => this._onResize(), 200);
+        });
     },
 
     initEnvironment() {
@@ -37,7 +92,6 @@ const Renderer = {
     },
 
     _drawGround() {
-        // Use loaded ground asset if available, otherwise generate procedurally
         const loadedTex = Assets.get('ground');
         groundTexture = loadedTex || this._generateGroundTexture();
 
@@ -55,25 +109,13 @@ const Renderer = {
         const stripWidth = app.screen.width + CONFIG.world.overscan * 2;
         const numStrips = Math.ceil(groundHeight / GROUND_STRIP_HEIGHT);
 
-        // PixiJS TilingSprite texture coordinate formula:
-        //   texCoord = (localPos - tilePosition) / (tileScale * textureSize)
-        //
-        // For vertical lines to be straight: all strips must have the same
-        // tilePosition.x so that texCoord=0 falls at the same screen position.
-        //
-        // For horizontal lines to be seamless: cumulative texture Y tracking
-        // converted properly through the tileScale.
-
-        let cumulativeTexY = 0; // accumulated texture pixels from horizon downward
-        const texSize = groundTexture.width; // texture is square
+        let cumulativeTexY = 0;
 
         for (let i = 0; i < numStrips; i++) {
             const screenY = centerY + i * GROUND_STRIP_HEIGHT;
             const depth = (i + 1) / numStrips;
 
-            // X scale: linear with depth (wider tiles near camera)
             const scaleX = depth * 4.0;
-            // Y scale: quadratic (ground stretches more near camera)
             const scaleY = (depth * depth * 3.0) + 0.05;
 
             const strip = new PIXI.TilingSprite(groundTexture, stripWidth, GROUND_STRIP_HEIGHT);
@@ -81,23 +123,14 @@ const Renderer = {
             strip.y = screenY;
             strip.tileScale.set(scaleX, scaleY);
 
-            // X alignment: tilePosition.x is in local pixel space.
-            // Setting it to (centerX + overscan) makes texCoord=0 fall at screen center
-            // for ALL strips regardless of scaleX → vertical lines stay straight.
             strip.tilePosition.x = centerX + CONFIG.world.overscan;
 
-            // Y alignment: convert cumulative texture coordinate to tilePosition.
-            // At strip top (localY=0), we want texCoord = cumulativeTexY / texSize:
-            //   cumulativeTexY / texSize = (0 - tilePosition.y) / (scaleY * texSize)
-            //   tilePosition.y = -cumulativeTexY * scaleY
             strip._baseTPY = -cumulativeTexY * scaleY;
             strip._scaleY = scaleY;
             strip.tilePosition.y = strip._baseTPY;
 
-            // Advance cumulative texture Y by how many texture pixels this strip covers
             cumulativeTexY += GROUND_STRIP_HEIGHT / scaleY;
 
-            // Fog: fade out horizon strips to hide moiré artifacts
             strip.alpha = Math.min(1, depth * 4);
 
             groundContainer.addChild(strip);
@@ -109,12 +142,10 @@ const Renderer = {
         const size = 64;
         const g = new PIXI.Graphics();
 
-        // Base gray concrete
         g.beginFill(0x8A8A88);
         g.drawRect(0, 0, size, size);
         g.endFill();
 
-        // Surface variation — scattered lighter and darker pixels
         for (let i = 0; i < 60; i++) {
             const px = Math.floor(Math.random() * size);
             const py = Math.floor(Math.random() * size);
@@ -124,7 +155,6 @@ const Renderer = {
             g.endFill();
         }
 
-        // Cracks — thin dark lines
         g.lineStyle(1, 0x5A5A58);
         g.moveTo(8, 0);
         g.lineTo(12, 18);
@@ -149,17 +179,21 @@ const Renderer = {
 
     _drawSun() {
         const sunTex = Assets.get('sun');
+        // Position sun proportionally: 70% right, 15% from top
+        const sunX = app.screen.width * 0.7;
+        const sunY = app.screen.height * 0.15;
+
         if (sunTex) {
             const sun = new PIXI.Sprite(sunTex);
             sun.anchor.set(0.5, 0.5);
-            sun.x = centerX + 150;
-            sun.y = centerY - 250;
+            sun.x = sunX;
+            sun.y = sunY;
             sun.scale.set(0.5);
             camera.addChild(sun);
         } else {
             const sun = new PIXI.Graphics();
             sun.beginFill(CONFIG.colors.sun);
-            sun.drawRect(centerX + 150, centerY - 250, 50, 50);
+            sun.drawRect(sunX - 25, sunY - 25, 50, 50);
             sun.endFill();
             camera.addChild(sun);
         }
@@ -175,7 +209,11 @@ const Renderer = {
     },
 
     _onResize() {
-        app.renderer.resize(window.innerWidth, window.innerHeight);
+        _syncWrapper();
+
+        const w = gameWidth();
+        const h = gameHeight();
+        app.renderer.resize(w, h);
         centerX = app.screen.width / 2;
         centerY = app.screen.height / 2;
 
@@ -192,8 +230,7 @@ const Renderer = {
         camera.x = (Math.random() - 0.5) * STATE.shake;
         camera.y = (Math.random() - 0.5) * STATE.shake;
 
-        // Scroll ground: advance texture offset, convert through scaleY per strip.
-        // Multiplying by scaleY makes near strips (large scaleY) move faster on screen.
+        // Scroll ground
         groundScrollOffset += STATE.speed * 0.02;
 
         for (let i = 0; i < groundStrips.length; i++) {
