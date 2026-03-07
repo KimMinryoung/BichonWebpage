@@ -88,12 +88,14 @@ const publicRoutes = require('./routes/public');
 const adminRoutes = require('./routes/admin');
 const storyApiRoutes = require('./routes/story-api');
 const aiDiaryRoutes = require('./routes/ai-diary');
+const gameRoutes = require('./routes/game');
 const apiAiDiaryRoutes = require('./routes/api/ai-diary');
 
 app.use('/', publicRoutes);
 app.use('/admin', adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
+app.use('/game', gameRoutes);
 app.use('/api/ai-diary', apiAiDiaryRoutes);
 app.get('/health', (req, res) => { res.status(200).send('ok'); });
 

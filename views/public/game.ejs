@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+    <style>
+        body { margin: 0; overflow: hidden; background: #000; }
+        canvas { display: block; }
+        #back-btn {
+            position: fixed; top: 12px; left: 12px; z-index: 100;
+            background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 14px; font-size: 14px; cursor: pointer; border-radius: 4px;
+            font-family: inherit; text-decoration: none;
+        }
+        #back-btn:hover { background: rgba(0,0,0,0.7); }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <a id="back-btn" href="/">&#x2190; <%= strings.nav.game === 'Web Game' ? 'Exit' : '종료' %></a>
+
+    <script>
+        const CONFIG = {
+            world: { maxZ: 2000, overscan: 200 },
+            colors: {
+                sky: 0x87CEEB, ground: 0xB09B82, horizon: 0x8A7862, sun: 0xFFFDE7,
+                buildingLight: 0xD3D3D3, buildingDark: 0xC2B2A4, buildingShadow: 0x998877,
+                towerBody: 0x778899, towerShadow: 0x556677, window: 0x334455,
+                flakBase: 0x333333, flakExplosion: 0xFF5500, screenFlash: 0xFFFFFF
+            },
+            counts: { buildings: 60, flaks: 15 },
+            sizes: { buildingWidthMin: 100, buildingWidthMax: 300, buildingHeightMin: 100, buildingHeightMax: 400 }
+        };
+
+        const STATE = { speed: 10, focalLength: 400, shake: 0 };
+
+        PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
+        const app = new PIXI.Application({
+            width: window.innerWidth, height: window.innerHeight,
+            backgroundColor: CONFIG.colors.sky,
+            resolution: window.devicePixelRatio || 1,
+        });
+        document.body.appendChild(app.view);
+
+        const camera = new PIXI.Container();
+        app.stage.addChild(camera);
+        const centerX = app.screen.width / 2;
+        const centerY = app.screen.height / 2;
+
+        const ground = new PIXI.Graphics();
+        ground.beginFill(CONFIG.colors.ground);
+        ground.drawRect(-CONFIG.world.overscan, centerY, app.screen.width + CONFIG.world.overscan * 2, app.screen.height + CONFIG.world.overscan);
+        ground.endFill();
+        camera.addChild(ground);
+
+        const horizon = new PIXI.Graphics();
+        horizon.lineStyle(2, CONFIG.colors.horizon);
+        horizon.moveTo(-CONFIG.world.overscan, centerY);
+        horizon.lineTo(app.screen.width + CONFIG.world.overscan * 2, centerY);
+        camera.addChild(horizon);
+
+        const sun = new PIXI.Graphics();
+        sun.beginFill(CONFIG.colors.sun);
+        sun.drawRect(centerX + 150, centerY - 300, 60, 60);
+        sun.endFill();
+        camera.addChild(sun);
+
+        const entities = [];
+
+        function createBuilding(isTower) {
+            const gfx = new PIXI.Graphics();
+            const w = isTower ? 60 : Math.random() * (CONFIG.sizes.buildingWidthMax - CONFIG.sizes.buildingWidthMin) + CONFIG.sizes.buildingWidthMin;
+            const h = isTower ? 800 : Math.random() * (CONFIG.sizes.buildingHeightMax - CONFIG.sizes.buildingHeightMin) + CONFIG.sizes.buildingHeightMin;
+            const bodyColor = isTower ? CONFIG.colors.towerBody : (Math.random() > 0.5 ? CONFIG.colors.buildingLight : CONFIG.colors.buildingDark);
+            const shadowColor = isTower ? CONFIG.colors.towerShadow : CONFIG.colors.buildingShadow;
+            gfx.beginFill(bodyColor);
+            gfx.drawRect(-w/2, -h, w, h);
+            gfx.beginFill(shadowColor);
+            gfx.drawRect(-w/2, -h, w/4, h);
+            gfx.endFill();
+            gfx.beginFill(CONFIG.colors.window, 0.7);
+            for (let i = 0; i < 3; i++) gfx.drawRect(-w/4 + i*(w/4), -h*0.8, 4, 4);
+            gfx.endFill();
+            return gfx;
+        }
+
+        for (let i = 0; i < CONFIG.counts.buildings; i++) {
+            const sprite = createBuilding(false);
+            entities.push({
+                sprite, x: (Math.random() - 0.5) * 6000 + (Math.random() > 0.5 ? 1500 : -1500),
+                y: 800, z: Math.random() * CONFIG.world.maxZ, type: 'building'
+            });
+            camera.addChild(sprite);
+        }
+
+        const towerSprite = createBuilding(true);
+        entities.push({ sprite: towerSprite, x: 0, y: 800, z: CONFIG.world.maxZ * 0.9, type: 'tower' });
+        camera.addChild(towerSprite);
+
+        for (let i = 0; i < CONFIG.counts.flaks; i++) {
+            const gfx = new PIXI.Graphics();
+            gfx.beginFill(CONFIG.colors.flakBase);
+            gfx.drawCircle(0, 0, 8);
+            gfx.endFill();
+            entities.push({
+                sprite: gfx, x: (Math.random() - 0.5) * 4000,
+                y: (Math.random() - 0.5) * 2000 - 300,
+                z: Math.random() * CONFIG.world.maxZ, type: 'flak',
+                explosionZ: Math.random() * (CONFIG.world.maxZ * 0.4)
+            });
+            camera.addChild(gfx);
+        }
+
+        const flash = new PIXI.Graphics();
+        flash.beginFill(CONFIG.colors.screenFlash);
+        flash.drawRect(0, 0, app.screen.width, app.screen.height);
+        flash.endFill();
+        flash.alpha = 0;
+        app.stage.addChild(flash);
+
+        app.ticker.add(() => {
+            camera.x = (Math.random() - 0.5) * STATE.shake;
+            camera.y = (Math.random() - 0.5) * STATE.shake;
+            entities.forEach(e => {
+                e.z -= STATE.speed;
+                if (e.z <= 1) {
+                    e.z += CONFIG.world.maxZ;
+                    if (e.type === 'building') {
+                        e.x = (Math.random() - 0.5) * 6000 + (Math.random() > 0.5 ? 1500 : -1500);
+                    } else if (e.type === 'flak') {
+                        e.x = (Math.random() - 0.5) * 4000;
+                        e.sprite.alpha = 1;
+                        e.sprite.scale.set(1);
+                        e.sprite.tint = 0xFFFFFF;
+                        e.explosionZ = Math.random() * (CONFIG.world.maxZ * 0.4);
+                    }
+                }
+                const scale = STATE.focalLength / e.z;
+                e.sprite.x = centerX + e.x * scale;
+                e.sprite.y = centerY + e.y * scale;
+                if (e.type !== 'flak') {
+                    e.sprite.scale.set(scale);
+                    e.sprite.alpha = Math.min(1, (CONFIG.world.maxZ - e.z) / (CONFIG.world.maxZ * 0.5));
+                } else {
+                    if (e.z < e.explosionZ && e.sprite.alpha === 1) {
+                        e.sprite.tint = CONFIG.colors.flakExplosion;
+                        gsap.to(e.sprite, { alpha: 0, scaleX: 12, scaleY: 12, duration: 0.2, ease: "power2.out" });
+                    } else if (e.sprite.alpha === 1) {
+                        e.sprite.scale.set(scale * 1.5);
+                    }
+                }
+            });
+        });
+
+        const tl = gsap.timeline();
+        tl.to(STATE, { speed: 40, duration: 4, ease: "power1.in" })
+          .to(STATE, { speed: 120, focalLength: 150, shake: 15, duration: 3, ease: "power2.in" }, ">")
+          .to(flash, { alpha: 0.4, duration: 0.1, yoyo: true, repeat: 15 }, "<")
+          .to(STATE, { speed: 250, focalLength: 50, shake: 40, duration: 3 }, ">")
+          .to(flash, { alpha: 1, duration: 1.5, ease: "power4.in" }, "+=1.5");
+    </script>
+</body>
+</html>
