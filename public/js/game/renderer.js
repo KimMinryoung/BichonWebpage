@@ -95,33 +95,47 @@ const Renderer = {
             // Advance cumulative texture Y by how many texture pixels this strip covers
             cumulativeTexY += GROUND_STRIP_HEIGHT / scaleY;
 
+            // Fog: fade out horizon strips to hide moiré artifacts
+            strip.alpha = Math.min(1, depth * 4);
+
             groundContainer.addChild(strip);
             groundStrips.push(strip);
         }
     },
 
     _generateGroundTexture() {
-        // Debug grid — will be replaced with cracked concrete once verified
         const size = 64;
         const g = new PIXI.Graphics();
 
-        g.beginFill(0x999999);
+        // Base gray concrete
+        g.beginFill(0x8A8A88);
         g.drawRect(0, 0, size, size);
         g.endFill();
 
-        g.lineStyle(1, 0x666666);
-        for (let i = 0; i <= size; i += 8) {
-            g.moveTo(i, 0);
-            g.lineTo(i, size);
-            g.moveTo(0, i);
-            g.lineTo(size, i);
+        // Surface variation — scattered lighter and darker pixels
+        for (let i = 0; i < 60; i++) {
+            const px = Math.floor(Math.random() * size);
+            const py = Math.floor(Math.random() * size);
+            const shade = Math.random() > 0.5 ? 0x7E7E7C : 0x949492;
+            g.beginFill(shade);
+            g.drawRect(px, py, 1, 1);
+            g.endFill();
         }
 
-        g.lineStyle(2, 0x444444);
-        g.moveTo(size / 2, 0);
-        g.lineTo(size / 2, size);
-        g.moveTo(0, size / 2);
-        g.lineTo(size, size / 2);
+        // Cracks — thin dark lines
+        g.lineStyle(1, 0x5A5A58);
+        g.moveTo(8, 0);
+        g.lineTo(12, 18);
+        g.lineTo(10, 32);
+        g.lineTo(15, 48);
+        g.moveTo(40, 10);
+        g.lineTo(38, 28);
+        g.lineTo(44, 40);
+        g.lineTo(42, 56);
+        g.moveTo(20, 44);
+        g.lineTo(34, 46);
+        g.moveTo(50, 0);
+        g.lineTo(52, 14);
 
         const tex = app.renderer.generateTexture(g, {
             scaleMode: PIXI.SCALE_MODES.NEAREST,
