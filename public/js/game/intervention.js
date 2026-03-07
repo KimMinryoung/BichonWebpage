@@ -4,6 +4,23 @@ let choiceContainer, endingOverlay;
 let activeTimeout = null;
 let preSlowdownSpeed = 0;
 
+const ENDING_I18N = {
+    en: {
+        hope:        { title: 'HOPE', subtitle: 'The city endures.' },
+        catastrophe: { title: 'CATASTROPHE', subtitle: 'The city falls silent.' },
+        restart: 'Restart'
+    },
+    ko: {
+        hope:        { title: '희망', subtitle: '도시는 견뎌냈습니다.' },
+        catastrophe: { title: '재앙', subtitle: '도시가 침묵에 잠깁니다.' },
+        restart: '다시 시작'
+    }
+};
+
+function getEndingLang() {
+    return (typeof GAME_LANG !== 'undefined' && GAME_LANG === 'ko') ? 'ko' : 'en';
+}
+
 const Intervention = {
     init() {
         // Choice buttons container
@@ -37,6 +54,9 @@ const Intervention = {
         // Show visual event on canvas
         if (point.visual) Events.show(point.visual);
 
+        // Play alarm sound
+        Sound.playAlarm();
+
         // Bullet-time slowdown
         preSlowdownSpeed = STATE.speed;
         gsap.to(STATE, {
@@ -61,6 +81,10 @@ const Intervention = {
             btn.className = 'game-choice-btn';
             btn.textContent = choice.label;
             btn.addEventListener('click', () => this._selectChoice(choice, point));
+            btn.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                this._selectChoice(choice, point);
+            });
             // Stagger appearance
             btn.style.animationDelay = (i * 0.1) + 's';
             btnRow.appendChild(btn);
@@ -84,6 +108,14 @@ const Intervention = {
         STATE.choices.push(choice.id);
         if (choice.correct) STATE.correctChoices++;
 
+        // Sound feedback
+        if (choice.correct) {
+            Sound.playResolve();
+        } else {
+            Sound.playImpact();
+        }
+        Sound.playClick();
+
         // Visual consequence on canvas
         if (point.visual) Events.resolve(point.visual, choice.correct);
 
@@ -98,6 +130,7 @@ const Intervention = {
         activeTimeout = null;
         // Penalty for not choosing
         STATE.entropyRate += point.missedPenalty;
+        Sound.playImpact();
         if (point.visual) Events.resolve(point.visual, false);
         this._hideChoices();
     },
@@ -118,19 +151,23 @@ const Intervention = {
         STATE.running = false;
         endingOverlay.innerHTML = '';
 
+        const lang = getEndingLang();
+        const strings = ENDING_I18N[lang];
+        const ending = strings[type] || strings.catastrophe;
+
         const msg = document.createElement('div');
         msg.className = 'ending-message';
-
-        if (type === 'hope') {
-            msg.innerHTML = '<h2>HOPE</h2><p>The city endures.</p>';
-        } else {
-            msg.innerHTML = '<h2>CATASTROPHE</h2><p>The city falls silent.</p>';
-        }
+        msg.innerHTML = '<h2>' + ending.title + '</h2><p>' + ending.subtitle + '</p>';
 
         const restartBtn = document.createElement('button');
         restartBtn.className = 'game-choice-btn';
-        restartBtn.textContent = 'Restart';
+        restartBtn.textContent = strings.restart;
         restartBtn.addEventListener('click', () => {
+            endingOverlay.classList.remove('visible');
+            Game.restart();
+        });
+        restartBtn.addEventListener('touchend', (e) => {
+            e.preventDefault();
             endingOverlay.classList.remove('visible');
             Game.restart();
         });

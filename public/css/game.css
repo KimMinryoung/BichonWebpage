@@ -3,9 +3,14 @@ body.game-page {
     margin: 0;
     overflow: hidden;
     background: #000;
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 body.game-page canvas {
     display: block;
+    touch-action: none;
 }
 
 /* Back button */
@@ -94,13 +99,16 @@ body.game-page canvas {
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
     border: 2px solid rgba(255, 255, 255, 0.6);
-    padding: 12px 28px;
+    padding: 14px 30px;
     font-size: 16px;
     font-family: inherit;
     cursor: pointer;
     border-radius: 6px;
     animation: choiceFadeIn 0.3s ease both;
     transition: background 0.15s, border-color 0.15s;
+    min-height: 48px;
+    min-width: 48px;
+    -webkit-tap-highlight-color: transparent;
 }
 .game-choice-btn:hover {
     background: rgba(255, 255, 255, 0.2);
@@ -147,4 +155,31 @@ body.game-page canvas {
     font-size: 18px;
     margin-bottom: 24px;
     opacity: 0.8;
+}
+
+/* Mobile landscape: larger touch targets, tighter layout */
+@media (max-height: 500px) and (orientation: landscape) {
+    .game-choice-prompt {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+    .game-choice-btn {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+    #game-choices {
+        bottom: 10%;
+        gap: 10px;
+    }
+    .game-choice-row {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .ending-message h2 {
+        font-size: 28px;
+    }
+    .ending-message p {
+        font-size: 15px;
+    }
 }

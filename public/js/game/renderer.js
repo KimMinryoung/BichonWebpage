@@ -182,6 +182,9 @@ const Renderer = {
         if (groundContainer) {
             this._buildStrips();
         }
+        if (typeof Effects !== 'undefined') {
+            Effects.onResize(app);
+        }
     },
 
     applyEffects() {

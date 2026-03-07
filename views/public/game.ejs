@@ -18,12 +18,15 @@
         <div><%= lang === 'en' ? 'Please rotate your device' : '기기를 가로로 회전해주세요' %></div>
     </div>
 
+    <script>var GAME_LANG = '<%= lang %>';</script>
     <script src="/js/game/config.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/state.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/renderer.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/assets.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/entities.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/events.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/effects.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/sound.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/scenes/seoul.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/timeline.js?v=<%= Date.now() %>"></script>
     <script src="/js/game/intervention.js?v=<%= Date.now() %>"></script>

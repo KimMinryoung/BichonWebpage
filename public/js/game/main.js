@@ -15,6 +15,8 @@ const Game = {
         Events.init();
         Entities.init();
         Intervention.init();
+        Sound.init();
+        Effects.init(Renderer.getApp(), Renderer.getCamera());
 
         // Load Seoul scene
         currentScene = SceneSeoul;
@@ -45,6 +47,8 @@ const Game = {
         Timeline.check();
         Intervention.check();
         Renderer.applyEffects();
+        Sound.updatePhase(STATE.phase);
+        Effects.update(Renderer.getApp());
     },
 
     restart() {
@@ -56,6 +60,7 @@ const Game = {
         Timeline.reset();
         Events.reset();
         Intervention.reset();
+        Sound.reset();
 
         // Reset flash
         Renderer.getFlash().alpha = 0;
