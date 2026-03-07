@@ -3,8 +3,12 @@
 let currentScene = null;
 
 const Game = {
-    init() {
+    async init() {
         Renderer.setup();
+
+        // Load sprite assets (real PNGs or generated fallbacks)
+        await Assets.load(Renderer.getApp());
+
         Events.init();
         Entities.init();
         Intervention.init();
@@ -23,7 +27,7 @@ const Game = {
         if (!STATE.running) return;
 
         // Advance entropy
-        const dt = delta / 60; // PixiJS ticker delta is in frames, normalize to seconds
+        const dt = delta / 60;
         STATE.entropy += STATE.entropyRate * dt;
         if (STATE.entropy < 0) STATE.entropy = 0;
 
