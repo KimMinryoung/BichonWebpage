@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "sprite:generate": "node tools/sprite-pipeline.js generate",
+    "sprite:process": "node tools/sprite-pipeline.js process",
+    "sprite:batch": "node tools/sprite-pipeline.js batch",
+    "sprite:list": "node tools/sprite-pipeline.js list"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -24,5 +28,9 @@
     "supabase"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@google/genai": "^1.44.0",
+    "sharp": "^0.34.5"
+  }
 }

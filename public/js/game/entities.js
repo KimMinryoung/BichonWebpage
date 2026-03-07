@@ -7,11 +7,11 @@ const entityList = [];
 // z-projection scale is multiplied by a size factor so pixel sprites
 // appear at a reasonable world size.
 const ENTITY_SCALE = {
-    building: 8,
-    tower: 12,
-    tree: 5,
-    streetlight: 5,
-    cloud: 6
+    building: 3,
+    tower: 4,
+    tree: 1.6,
+    streetlight: 1.6,
+    cloud: 2
 };
 
 const Entities = {

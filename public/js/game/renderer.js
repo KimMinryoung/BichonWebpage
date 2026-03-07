@@ -148,11 +148,21 @@ const Renderer = {
     },
 
     _drawSun() {
-        const sun = new PIXI.Graphics();
-        sun.beginFill(CONFIG.colors.sun);
-        sun.drawRect(centerX + 150, centerY - 250, 50, 50);
-        sun.endFill();
-        camera.addChild(sun);
+        const sunTex = Assets.get('sun');
+        if (sunTex) {
+            const sun = new PIXI.Sprite(sunTex);
+            sun.anchor.set(0.5, 0.5);
+            sun.x = centerX + 150;
+            sun.y = centerY - 250;
+            sun.scale.set(0.5);
+            camera.addChild(sun);
+        } else {
+            const sun = new PIXI.Graphics();
+            sun.beginFill(CONFIG.colors.sun);
+            sun.drawRect(centerX + 150, centerY - 250, 50, 50);
+            sun.endFill();
+            camera.addChild(sun);
+        }
     },
 
     _createFlash() {

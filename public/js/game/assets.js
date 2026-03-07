@@ -9,15 +9,15 @@
 
 const SPRITE_MANIFEST = {
     // key: path relative to /img/game/
-    // Add entries here as you create real sprites:
-    // 'building-modern': 'building-modern.png',
-    // 'building-glass': 'building-glass.png',
-    // 'building-apartment': 'building-apartment.png',
-    // 'namsan-tower': 'namsan-tower.png',
-    // 'tree': 'tree.png',
-    // 'streetlight': 'streetlight.png',
-    // 'cloud': 'cloud.png',
-    'ground' : 'ground-concrete.png',
+    'building-modern': 'building-modern.png',
+    'building-glass': 'building-glass.png',
+    'building-apartment': 'building-apartment.png',
+    'namsan-tower': 'namsan-tower.png',
+    'tree': 'tree.png',
+    'streetlight': 'streetlight.png',
+    'cloud': 'cloud.png',
+    'sun': 'sun.png',
+    'ground': 'ground.png',
 };
 
 const textures = {};
