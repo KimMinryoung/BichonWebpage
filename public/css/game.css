@@ -58,21 +58,37 @@ body.game-page canvas {
     }
 }
 
-/* Choice buttons overlay */
+/* Choice overlay */
 #game-choices {
     position: fixed;
-    bottom: 20%;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 150;
     display: none;
-    gap: 16px;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 14px;
 }
 #game-choices.visible {
     display: flex;
+}
+.game-choice-prompt {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    max-width: 500px;
+    animation: choiceFadeIn 0.3s ease both;
+}
+.game-choice-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
 }
 .game-choice-btn {
     background: rgba(0, 0, 0, 0.7);

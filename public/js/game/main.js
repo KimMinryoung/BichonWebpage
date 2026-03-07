@@ -5,6 +5,7 @@ let currentScene = null;
 const Game = {
     init() {
         Renderer.setup();
+        Events.init();
         Entities.init();
         Intervention.init();
 
@@ -46,6 +47,7 @@ const Game = {
 
         resetState();
         Timeline.reset();
+        Events.reset();
         Intervention.reset();
 
         // Reset flash

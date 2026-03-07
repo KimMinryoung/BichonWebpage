@@ -34,6 +34,9 @@ const Intervention = {
     },
 
     _showChoices(point) {
+        // Show visual event on canvas
+        if (point.visual) Events.show(point.visual);
+
         // Bullet-time slowdown
         preSlowdownSpeed = STATE.speed;
         gsap.to(STATE, {
@@ -42,8 +45,17 @@ const Intervention = {
             ease: 'power2.out'
         });
 
-        // Build choice buttons
+        // Build prompt and choice buttons
         choiceContainer.innerHTML = '';
+        if (point.prompt) {
+            const promptEl = document.createElement('div');
+            promptEl.className = 'game-choice-prompt';
+            promptEl.textContent = point.prompt;
+            choiceContainer.appendChild(promptEl);
+        }
+        const btnRow = document.createElement('div');
+        btnRow.className = 'game-choice-row';
+        choiceContainer.appendChild(btnRow);
         point.choices.forEach((choice, i) => {
             const btn = document.createElement('button');
             btn.className = 'game-choice-btn';
@@ -51,7 +63,7 @@ const Intervention = {
             btn.addEventListener('click', () => this._selectChoice(choice, point));
             // Stagger appearance
             btn.style.animationDelay = (i * 0.1) + 's';
-            choiceContainer.appendChild(btn);
+            btnRow.appendChild(btn);
         });
         choiceContainer.classList.add('visible');
 
@@ -72,6 +84,9 @@ const Intervention = {
         STATE.choices.push(choice.id);
         if (choice.correct) STATE.correctChoices++;
 
+        // Visual consequence on canvas
+        if (point.visual) Events.resolve(point.visual, choice.correct);
+
         // Visual feedback
         const flash = Renderer.getFlash();
         gsap.to(flash, { alpha: 0.15, duration: 0.1, yoyo: true, repeat: 1 });
@@ -83,6 +98,7 @@ const Intervention = {
         activeTimeout = null;
         // Penalty for not choosing
         STATE.entropyRate += point.missedPenalty;
+        if (point.visual) Events.resolve(point.visual, false);
         this._hideChoices();
     },
 
