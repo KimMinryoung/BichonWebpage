@@ -6,7 +6,7 @@ const entityList = [];
 const bgList = [];       // background scenery (not road-anchored)
 
 const ENTITY_SCALE = {
-    building: 6,
+    building: 8,
     tower: 4,
     tree: 1.6,
     streetlight: 1.6,
@@ -81,13 +81,15 @@ const Entities = {
             const offset = side * (PLACEMENT.building.minOff + Math.random() * (PLACEMENT.building.maxOff - PLACEMENT.building.minOff));
 
             const sprite = Assets.createSprite(key);
+
+            const relativeSize = (key === 'building-glass') ? 3 : 1;
             entityList.push({
                 sprite,
                 segmentIndex: segIdx,
                 roadOffset: offset,
                 type: 'building',
                 fsm: 'normal',
-                baseScale: ENTITY_SCALE.building,
+                baseScale: ENTITY_SCALE.building * relativeSize,
                 elevation: 0
             });
             camera.addChild(sprite);
@@ -101,7 +103,7 @@ const Entities = {
         bgList.push({
             sprite: tower,
             baseX: 0.35,       // fraction of screen width
-            baseY: 0.18,       // fraction of screen height (above horizon)
+            baseY: 0,       // fraction of screen height (above horizon)
             parallaxFactor: 0.6,
             type: 'tower',
             fsm: 'normal',
@@ -148,7 +150,7 @@ const Entities = {
             if (bg.type === 'tower') {
                 // Tower rises from the horizon — anchor bottom at horizon line
                 // Stronger parallax + tracks playerX lateral drift
-                const lateralShift = -STATE.playerX * 0.15;
+                const lateralShift = -STATE.playerX * 0.1;
                 bg.sprite.x = bg.baseX * sw + parallaxShift * bg.parallaxFactor + lateralShift;
                 bg.sprite.y = horizonY;  // bottom-anchored sprite sits on horizon
                 bg.sprite.scale.set(bg.baseScale);
@@ -200,7 +202,7 @@ const Entities = {
             e.sprite.scale.set(Math.max(0.01, scale));
 
             // Fade by fog
-            e.sprite.alpha = Math.max(0, 1 - proj.fog * proj.fog);
+            e.sprite.alpha = Math.max(0, 1 - proj.fog * proj.fog * 0.5);
 
             // Z-index for depth sorting
             e.sprite.zIndex = -segDist;
