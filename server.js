@@ -7,6 +7,8 @@ const path = require('path');
 const allStrings = require('./config/strings');
 const cookieParser = require('cookie-parser');
 const pool = require('./config/database');
+const csrfProtection = require('./middleware/csrf');
+const sanitizeHtml = require('sanitize-html');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -43,6 +45,9 @@ app.use(session({
     }
 }));
 
+// CSRF protection (exclude API-key-authenticated routes)
+app.use(csrfProtection(['/api/ai-diary']));
+
 // Make session and strings available in all views
 app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
@@ -50,6 +55,15 @@ app.use((req, res, next) => {
     var lang = req.cookies.lang === 'en' ? 'en' : 'ko';
     res.locals.lang = lang;
     res.locals.strings = allStrings[lang];
+    res.locals.sanitize = function(html) {
+        return sanitizeHtml(html, {
+            allowedTags: ['a', 'br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'code', 'pre'],
+            allowedAttributes: {
+                'a': ['href', 'title', 'target']
+            },
+            allowedSchemes: ['http', 'https']
+        });
+    };
     res.locals.truncateHtml = function(html, maxLen) {
         var result = '';
         var textLen = 0;

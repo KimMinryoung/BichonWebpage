@@ -107,9 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
         saveBtn.disabled = true;
         saveBtn.textContent = 'Saving...';
 
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         fetch(`/api/story/scene/${currentSceneId}`, {
             method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken },
             body: JSON.stringify({ script, actions, location })
         })
             .then(res => res.json())

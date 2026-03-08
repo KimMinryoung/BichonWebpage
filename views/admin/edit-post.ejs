@@ -21,6 +21,7 @@
 
         <div class="box">
             <form action="<%= isEdit ? '/admin/posts/edit/' + post.id : '/admin/posts/new' %>" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="form-group">
                     <label for="title"><%= strings.admin.titleLabel %></label>
                     <input type="text" id="title" name="title" value="<%= isEdit ? post.title : '' %>" required>

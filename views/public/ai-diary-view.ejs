@@ -17,7 +17,7 @@
                 <% } %>
             </div>
             <div class="post-body">
-                <%- diary.content.replace(/\n/g, '<br>') %>
+                <%- sanitize(diary.content).replace(/\n/g, '<br>') %>
             </div>
         </article>
 
@@ -26,6 +26,7 @@
                 <a href="/ai-diary">&larr; <%= strings.public.backToList %></a>
                 <% if (isAuthenticated) { %>
                     <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="display: inline; margin-left: 10px;" onsubmit="return confirm('<%= strings.public.deleteDiaryConfirm %>');">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
                     </form>
                 <% } %>

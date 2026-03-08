@@ -20,7 +20,7 @@
                             <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                         </div>
                         <p class="post-excerpt">
-                            <%- truncateHtml(post.content, 200) %>
+                            <%- truncateHtml(sanitize(post.content), 200) %>
                         </p>
                     </li>
                 <% }) %>

@@ -42,6 +42,7 @@
                                             <%= strings.admin.edit %>
                                         </a>
                                         <form action="/admin/posts/delete/<%= post.id %>" method="POST" style="margin: 0;" onsubmit="return confirm('<%= strings.admin.deleteConfirm %>');">
+                                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                             <button type="submit" class="btn btn-small btn-danger">
                                                 <%= strings.admin.delete %>
                                             </button>

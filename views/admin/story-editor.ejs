@@ -4,6 +4,7 @@
     <% pageTitle = strings.storyEditor.title %>
     <% extraCss = '/css/story-editor.css' %>
     <%- include('../partials/head') %>
+    <meta name="csrf-token" content="<%= csrfToken %>">
 </head>
 <body>
     <%- include('../partials/nav') %>
