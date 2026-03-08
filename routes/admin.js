@@ -1,9 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const rateLimit = require('express-rate-limit');
 const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
+
+// Rate limiter for login attempts: 5 attempts per 15 minutes per IP
+const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    standardHeaders: true,
+    legacyHeaders: false,
+    handler: (req, res) => {
+        res.render('admin/login', {
+            error: 'Too many login attempts. Please try again after 15 minutes.'
+        });
+    }
+});
 
 // Login page
 router.get('/login', redirectIfAuthenticated, (req, res) => {
@@ -11,7 +25,7 @@ router.get('/login', redirectIfAuthenticated, (req, res) => {
 });
 
 // Login handler
-router.post('/login', redirectIfAuthenticated, async (req, res) => {
+router.post('/login', loginLimiter, redirectIfAuthenticated, async (req, res) => {
     const { username, password } = req.body;
 
     try {
