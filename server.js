@@ -53,7 +53,7 @@ app.use(session({
         tableName: 'user_sessions',
         createTableIfMissing: true
     }),
-    secret: process.env.SESSION_SECRET || 'default-secret-change-in-production',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

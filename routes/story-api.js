@@ -12,7 +12,7 @@ router.get('/files', requireAuth, async (req, res) => {
         res.json({ success: true, files: rows.map(r => r.file_path) });
     } catch (error) {
         console.error('Error fetching story files:', error);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: 'Internal server error' });
     }
 });
 
@@ -27,7 +27,7 @@ router.get('/scenes/*', requireAuth, async (req, res) => {
         res.json({ success: true, scenes: rows });
     } catch (error) {
         console.error('Error fetching scenes for file:', error);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: 'Internal server error' });
     }
 });
 
@@ -44,7 +44,7 @@ router.get('/scene/:sceneId', requireAuth, async (req, res) => {
         res.json({ success: true, details: rows[0] });
     } catch (error) {
         console.error('Error fetching scene details:', error);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: 'Internal server error' });
     }
 });
 
@@ -68,7 +68,7 @@ router.put('/scene/:sceneId', requireAuth, async (req, res) => {
         res.json({ success: true, message: 'Scene updated successfully' });
     } catch (error) {
         console.error('Error updating scene:', error);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: 'Internal server error' });
     }
 });
 
