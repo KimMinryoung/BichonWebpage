@@ -185,7 +185,8 @@ const EVENT_BUILDERS = {
                 splash.drawCircle(0, 40, 5);
                 splash.endFill();
                 obj.addChild(splash);
-                gsap.to(splash, { scaleX: 8, scaleY: 3, alpha: 0, duration: 0.6, delay: 0.5 });
+                gsap.to(splash.scale, { x: 8, y: 3, duration: 0.6, delay: 0.5 });
+                gsap.to(splash, { alpha: 0, duration: 0.6, delay: 0.5 });
 
                 gsap.to(obj, { alpha: 0, duration: 0.5, delay: 2, onComplete: () => Events.clear() });
             }
@@ -306,7 +307,8 @@ const EVENT_BUILDERS = {
                 dust.endFill();
                 dust.alpha = 0;
                 obj.addChild(dust);
-                gsap.to(dust, { alpha: 1, scaleX: 2.5, scaleY: 1.5, duration: 1, delay: 0.8 });
+                gsap.to(dust.scale, { x: 2.5, y: 1.5, duration: 1, delay: 0.8 });
+                gsap.to(dust, { alpha: 1, duration: 1, delay: 0.8 });
                 gsap.to(dust, { alpha: 0, duration: 1, delay: 2 });
                 gsap.to(obj, { alpha: 0, duration: 0.5, delay: 3, onComplete: () => Events.clear() });
             }
@@ -422,7 +424,8 @@ const EVENT_BUILDERS = {
                 });
                 if (spark) {
                     gsap.killTweensOf(spark);
-                    gsap.to(spark, { alpha: 1, scaleX: 3, scaleY: 3, duration: 0.2, yoyo: true, repeat: 2 });
+                    gsap.to(spark.scale, { x: 3, y: 3, duration: 0.2, yoyo: true, repeat: 2 });
+                    gsap.to(spark, { alpha: 1, duration: 0.2, yoyo: true, repeat: 2 });
                     gsap.to(spark, { alpha: 0, duration: 0.3, delay: 0.6 });
                 }
                 // Darkness overlay
