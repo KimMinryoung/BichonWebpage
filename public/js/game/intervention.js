@@ -103,8 +103,8 @@ const Intervention = {
             activeTimeout = null;
         }
 
-        // Apply effect
-        STATE.entropyRate += choice.entropyDelta;
+        // Apply effect (clamp rate >= 0 so entropy only slows, never reverses)
+        STATE.entropyRate = Math.max(0, STATE.entropyRate + choice.entropyDelta);
         STATE.choices.push(choice.id);
         if (choice.correct) STATE.correctChoices++;
 

@@ -2,7 +2,7 @@
 
 const STATE = {
     // Camera & motion
-    speed: 10,
+    speed: 40,
     focalLength: 400,
     shake: 0,
 
@@ -23,7 +23,7 @@ const STATE = {
 };
 
 function resetState() {
-    STATE.speed = 10;
+    STATE.speed = 25;
     STATE.focalLength = 400;
     STATE.shake = 0;
     STATE.skyR = 0x87;

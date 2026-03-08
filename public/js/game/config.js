@@ -70,9 +70,9 @@ const CONFIG = {
 
     // Visual params per phase (GSAP tweens toward these)
     phaseVisuals: {
-        peace:       { speed: 10,  focalLength: 400, shake: 0  },
-        tension:     { speed: 25,  focalLength: 300, shake: 2  },
-        crisis:      { speed: 50,  focalLength: 200, shake: 8  },
+        peace:       { speed: 40,  focalLength: 400, shake: 0  },
+        tension:     { speed: 50,  focalLength: 300, shake: 2  },
+        crisis:      { speed: 75,  focalLength: 200, shake: 8  },
         catastrophe: { speed: 100, focalLength: 100, shake: 20 },
         hope:        { speed: 15,  focalLength: 350, shake: 1  }
     },

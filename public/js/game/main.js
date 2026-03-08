@@ -31,9 +31,11 @@ const Game = {
     _tick(delta) {
         if (!STATE.running) return;
 
-        // Advance entropy
+        // Advance entropy (only allow decrease during ended sequence)
         const dt = delta / 60;
+        const prevEntropy = STATE.entropy;
         STATE.entropy += STATE.entropyRate * dt;
+        if (!STATE.ended && STATE.entropy < prevEntropy) STATE.entropy = prevEntropy;
         if (STATE.entropy < 0) STATE.entropy = 0;
 
         // Update phase
