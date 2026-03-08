@@ -18,7 +18,7 @@ const ENDING_I18N = {
 };
 
 function getEndingLang() {
-    return (typeof GAME_LANG !== 'undefined' && GAME_LANG === 'ko') ? 'ko' : 'en';
+    return document.documentElement.lang === 'ko' ? 'ko' : 'en';
 }
 
 const Intervention = {

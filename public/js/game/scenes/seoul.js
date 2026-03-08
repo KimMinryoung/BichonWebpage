@@ -1,5 +1,5 @@
 // Seoul scene definition: intervention points for the 1-minute demo.
-// Supports en/ko via GAME_LANG set from EJS template.
+// Supports en/ko via <html lang> attribute.
 
 const SCENE_I18N = {
     en: {
@@ -33,7 +33,7 @@ const SCENE_I18N = {
 };
 
 function getSceneText(key) {
-    const lang = (typeof GAME_LANG !== 'undefined' && GAME_LANG === 'ko') ? 'ko' : 'en';
+    const lang = document.documentElement.lang === 'ko' ? 'ko' : 'en';
     return SCENE_I18N[lang][key];
 }
 

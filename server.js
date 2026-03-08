@@ -4,7 +4,6 @@ const express = require('express');
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const path = require('path');
-const crypto = require('crypto');
 const allStrings = require('./config/strings');
 const cookieParser = require('cookie-parser');
 const pool = require('./config/database');
@@ -30,31 +29,22 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
-// Generate per-request nonce for CSP
-app.use((req, res, next) => {
-    res.locals.nonce = crypto.randomBytes(16).toString('base64');
-    next();
-});
-
 // Security headers
-app.use((req, res, next) => {
-    helmet({
-        contentSecurityPolicy: {
-            directives: {
-                defaultSrc: ["'self'"],
-                scriptSrc: ["'self'", (req, res) => `'nonce-${res.locals.nonce}'`,
-                    'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com'],
-                styleSrc: ["'self'", (req, res) => `'nonce-${res.locals.nonce}'`],
-                imgSrc: ["'self'", 'data:'],
-                connectSrc: ["'self'", 'https://*.onrender.com'],
-                fontSrc: ["'self'"],
-                objectSrc: ["'none'"],
-                frameAncestors: ["'none'"]
-            }
-        },
-        crossOriginEmbedderPolicy: false
-    })(req, res, next);
-});
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com'],
+            styleSrc: ["'self'"],
+            imgSrc: ["'self'", 'data:'],
+            connectSrc: ["'self'", 'https://*.onrender.com'],
+            fontSrc: ["'self'"],
+            objectSrc: ["'none'"],
+            frameAncestors: ["'none'"]
+        }
+    },
+    crossOriginEmbedderPolicy: false
+}));
 
 // Session configuration
 app.use(session({

@@ -4,46 +4,13 @@
     <%- include('../partials/head') %>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <meta name="api-url" content="<%= chatApiUrl %>">
+    <meta name="str-thinking" content="<%= strings.chat.thinking %>">
+    <meta name="str-error" content="<%= strings.chat.error %>">
+    <meta name="str-disconnect" content="<%= strings.chat.disconnectError %>">
 </head>
 <body>
-    <script nonce="<%= nonce %>">
-        document.body.style.overflow = 'hidden';
-        // Set --vh to the visual viewport height (excludes browser toolbar).
-        // Run before layout to avoid a flash of incorrect height.
-        function setVH() {
-            var vv = window.visualViewport;
-            var h = vv ? vv.height : window.innerHeight;
-            document.documentElement.style.setProperty('--vh', h + 'px');
-        }
-
-        setVH();
-        (window.visualViewport || window).addEventListener('resize', setVH);
-        window.addEventListener('orientationchange', setVH);
-
-        window.addEventListener('load', function() {
-            requestAnimationFrame(function() {
-                // Probe env(safe-area-inset-bottom) via a real element.
-                var probe = document.createElement('div');
-                probe.style.cssText = 'position:fixed;bottom:0;left:0;height:env(safe-area-inset-bottom,0px);min-height:0;pointer-events:none;visibility:hidden';
-                document.body.appendChild(probe);
-                var envVal = probe.getBoundingClientRect().height;
-                document.body.removeChild(probe);
-
-                var safeBottom = envVal;
-                if (safeBottom === 0 && window.outerHeight >= window.screen.height * 0.99) {
-                    // env() unavailable but browser is edge-to-edge: gesture nav overlays viewport.
-                    safeBottom = 34;
-                }
-
-                // Apply margin-bottom directly to the input row.
-                // The .chat-page is now a <div> (not body), so its flex layout
-                // properly constrains children and margin-bottom moves the input up.
-                var inputRow = document.querySelector('.chat-input-row');
-                inputRow.style.marginBottom = safeBottom + 'px';
-
-            });
-        });
-    </script>
+    <script src="/js/chat-viewport.js"></script>
     <div class="chat-page">
         <%- include('../partials/nav') %>
 
@@ -69,14 +36,6 @@
         </div>
     </div>
 
-    <script nonce="<%= nonce %>">
-        var API_URL = '<%= chatApiUrl %>';
-        var STRINGS = {
-            thinking: '<%= strings.chat.thinking %>',
-            error: '<%= strings.chat.error %>',
-            disconnectError: '<%= strings.chat.disconnectError %>'
-        };
-    </script>
     <script src="/js/chat.js"></script>
 </body>
 </html>

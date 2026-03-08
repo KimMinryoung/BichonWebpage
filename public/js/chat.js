@@ -1,4 +1,11 @@
 (function () {
+    var API_URL = document.querySelector('meta[name="api-url"]').content;
+    var STRINGS = {
+        thinking: document.querySelector('meta[name="str-thinking"]').content,
+        error: document.querySelector('meta[name="str-error"]').content,
+        disconnectError: document.querySelector('meta[name="str-disconnect"]').content
+    };
+
     var chatBox = document.getElementById('chatBox');
     var chatForm = document.getElementById('chatForm');
     var chatInput = document.getElementById('chatInput');
