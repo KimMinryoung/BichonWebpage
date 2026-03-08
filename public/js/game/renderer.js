@@ -6,6 +6,7 @@ let groundContainer = null;
 let groundStrips = [];
 let groundTexture = null;
 let groundScrollOffset = 0;
+let sunSprite = null;
 // No longer subtracting safe inset from dimensions — the gesture nav
 // overlays the viewport bottom, it doesn't reduce available space.
 
@@ -115,8 +116,8 @@ const Renderer = {
             const screenY = centerY + i * GROUND_STRIP_HEIGHT;
             const depth = (i + 1) / numStrips;
 
-            const scaleX = depth * 4.0;
-            const scaleY = (depth * depth * 3.0) + 0.05;
+            const scaleX = depth * 1.0;
+            const scaleY = (depth * depth * 0.75) + 0.01;
 
             const strip = new PIXI.TilingSprite(groundTexture, stripWidth, GROUND_STRIP_HEIGHT);
             strip.x = -CONFIG.world.overscan;
@@ -179,24 +180,22 @@ const Renderer = {
 
     _drawSun() {
         const sunTex = Assets.get('sun');
-        // Position sun proportionally: 70% right, 15% from top
         const sunX = app.screen.width * 0.7;
         const sunY = app.screen.height * 0.15;
 
         if (sunTex) {
-            const sun = new PIXI.Sprite(sunTex);
-            sun.anchor.set(0.5, 0.5);
-            sun.x = sunX;
-            sun.y = sunY;
-            sun.scale.set(0.5);
-            camera.addChild(sun);
+            sunSprite = new PIXI.Sprite(sunTex);
+            sunSprite.anchor.set(0.5, 0.5);
+            sunSprite.scale.set(0.5);
         } else {
-            const sun = new PIXI.Graphics();
-            sun.beginFill(CONFIG.colors.sun);
-            sun.drawRect(sunX - 25, sunY - 25, 50, 50);
-            sun.endFill();
-            camera.addChild(sun);
+            sunSprite = new PIXI.Graphics();
+            sunSprite.beginFill(CONFIG.colors.sun);
+            sunSprite.drawRect(-25, -25, 50, 50);
+            sunSprite.endFill();
         }
+        sunSprite.x = sunX;
+        sunSprite.y = sunY;
+        camera.addChild(sunSprite);
     },
 
     _createFlash() {
@@ -236,6 +235,34 @@ const Renderer = {
         for (let i = 0; i < groundStrips.length; i++) {
             const strip = groundStrips[i];
             strip.tilePosition.y = strip._baseTPY + groundScrollOffset * strip._scaleY;
+        }
+
+        // Sun position & tint: sets by entropy ~65, hidden before sky goes dark
+        if (sunSprite) {
+            // Sun completes its descent over entropy 0–65 (before catastrophe)
+            const t = Math.min(1, STATE.entropy / 65);
+            const startX = app.screen.width * 0.7;
+            const endX = app.screen.width * 0.85;
+            const startY = app.screen.height * 0.15;
+            const endY = centerY + 40; // sink below horizon
+            sunSprite.x = startX + (endX - startX) * t;
+            sunSprite.y = startY + (endY - startY) * t;
+            // Tint: white → warm orange → deep red → fade out
+            if (t < 0.4) {
+                sunSprite.tint = 0xFFFDE7;
+                sunSprite.alpha = 1;
+            } else if (t < 0.75) {
+                const p = (t - 0.4) / 0.35;
+                const r = 0xFF;
+                const g = Math.round(0xFD - p * 0x7D);
+                const b = Math.round(0xE7 - p * 0xC7);
+                sunSprite.tint = (r << 16) | (g << 8) | b;
+                sunSprite.alpha = 1;
+            } else {
+                const p = (t - 0.75) / 0.25;
+                sunSprite.tint = 0xFF4010;
+                sunSprite.alpha = Math.max(0, 1 - p);
+            }
         }
 
         // Sky color from state
