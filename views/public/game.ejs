@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/game.css?v=<%= Date.now() %>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="game-page">
+    <div id="game-wrapper">
+        <a id="back-btn" href="/"><%= lang === 'en' ? 'Exit' : '종료' %></a>
+        <div id="game-canvas-container"></div>
+        <div id="game-choices"></div>
+        <div id="game-ending"></div>
+    </div>
+
+    <script>var GAME_LANG = '<%= lang %>';</script>
+    <script src="/js/game/config.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/state.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/renderer.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/assets.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/entities.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/events.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/effects.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/sound.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/scenes/seoul.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/timeline.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/intervention.js?v=<%= Date.now() %>"></script>
+    <script src="/js/game/main.js?v=<%= Date.now() %>"></script>
+</body>
+</html>
