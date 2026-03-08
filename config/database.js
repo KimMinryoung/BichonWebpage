@@ -7,7 +7,7 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'bichon_website',
     max: 10,
-    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : false
+    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
 
 // DB 연결 실패 이벤트 리스너
