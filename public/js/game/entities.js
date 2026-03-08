@@ -132,6 +132,9 @@ const Entities = {
 
             // FSM-based visual changes
             this._updateEntityVisuals(e);
+
+            // Set zIndex so PixiJS sorts closer entities on top
+            e.sprite.zIndex = -e.z;
         }
     },
 

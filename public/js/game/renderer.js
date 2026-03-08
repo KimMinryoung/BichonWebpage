@@ -72,6 +72,7 @@ const Renderer = {
         document.getElementById('game-canvas-container').appendChild(app.view);
 
         camera = new PIXI.Container();
+        camera.sortableChildren = true;
         app.stage.addChild(camera);
 
         centerX = app.screen.width / 2;
@@ -97,6 +98,7 @@ const Renderer = {
         groundTexture = loadedTex || this._generateGroundTexture();
 
         groundContainer = new PIXI.Container();
+        groundContainer.zIndex = -5000; // behind entities, in front of sun
         camera.addChild(groundContainer);
 
         this._buildStrips();
@@ -195,6 +197,7 @@ const Renderer = {
         }
         sunSprite.x = sunX;
         sunSprite.y = sunY;
+        sunSprite.zIndex = -10000; // behind ground and all entities
         camera.addChild(sunSprite);
     },
 
