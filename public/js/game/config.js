@@ -77,6 +77,29 @@ const CONFIG = {
         hope:        { speed: 15,  focalLength: 350, shake: 1  }
     },
 
+    // Pseudo-3D road (OutRun / Slipstream style)
+    road: {
+        segmentLength: 200,     // world units per segment
+        visibleSegments: 200,   // draw distance
+        roadWidth: 2200,        // road half-width in world units
+        shoulderWidth: 600,     // shoulder half-width beyond road edge
+        lanes: 3,
+        rumbleWidth: 100,       // rumble strip width
+        cameraHeight: 1000,     // camera Y above road
+        cameraDepth: 0.84,      // 1/tan(fov/2) — ~60° FOV
+        centrifugal: 30,        // how much curve pushes camera sideways
+        totalSegments: 1600,    // loop length
+        fogDensity: 5,          // higher = more distant fog
+        // Color pairs [even, odd] for alternating stripe effect
+        colors: {
+            road:    [0x6B6B6B, 0x696969],
+            grass:   [0x10AA10, 0x009A00],
+            rumble:  [0xFF0000, 0xFFFFFF],
+            lane:    0xCCCCCC,
+            shoulder:[0xBB5500, 0xCC6600]
+        }
+    },
+
     timing: {
         sessionDuration: 60,    // seconds for phase 1
         entropyRate: 1.67,      // per second (100 / 60)

@@ -1,61 +1,10 @@
-// PixiJS application setup, camera container, environment drawing, screen effects.
-// Ground uses Mode 7-style scanline strips with correct 3D perspective mapping.
+// PixiJS application setup, camera container, pseudo-3D road rendering, screen effects.
+// Road uses segment-based projection (OutRun/Slipstream style) with curves + hills.
 
 let app, camera, flash, centerX, centerY;
-let groundContainer = null;
-let groundStrips = [];
-let groundTexture = null;
-let groundScrollOffset = 0;
+let roadGfx = null;         // PIXI.Graphics for road drawing
 let sunSprite = null;
-// No longer subtracting safe inset from dimensions — the gesture nav
-// overlays the viewport bottom, it doesn't reduce available space.
-
-const GROUND_STRIP_HEIGHT = 4;
-
-// Use visualViewport when available (mobile) for accurate dimensions
-// that exclude browser chrome (URL bar, gesture nav bar).
-function vpWidth() {
-    const vv = window.visualViewport;
-    return vv ? vv.width : window.innerWidth;
-}
-function vpHeight() {
-    const vv = window.visualViewport;
-    return vv ? vv.height : window.innerHeight;
-}
-function _isPortrait() {
-    return vpHeight() > vpWidth();
-}
-
-// In portrait mode the CSS wrapper is rotated 90deg, so the game's
-// logical width is the viewport height and vice-versa.
-function gameWidth() {
-    return _isPortrait() ? vpHeight() : vpWidth();
-}
-function gameHeight() {
-    return _isPortrait() ? vpWidth() : vpHeight();
-}
-
-// Size and position the wrapper element via inline styles.
-function _syncWrapper() {
-    const wrapper = document.getElementById('game-wrapper');
-    if (!wrapper) return;
-
-    const vw = vpWidth();
-    const vh = vpHeight();
-
-    if (_isPortrait()) {
-        // Rotated: wrapper width = viewport height, height = viewport width
-        wrapper.style.width = vh + 'px';
-        wrapper.style.height = vw + 'px';
-        wrapper.style.transformOrigin = 'top left';
-        wrapper.style.transform = 'translateX(' + vw + 'px) rotate(90deg)';
-    } else {
-        wrapper.style.width = vw + 'px';
-        wrapper.style.height = vh + 'px';
-        wrapper.style.transform = '';
-        wrapper.style.transformOrigin = '';
-    }
-}
+let bgContainer = null;     // background parallax container
 
 const Renderer = {
     setup() {
@@ -80,7 +29,6 @@ const Renderer = {
 
         this._createFlash();
 
-        // Listen on visualViewport (mobile-accurate) and fallback to window
         const resizeTarget = window.visualViewport || window;
         resizeTarget.addEventListener('resize', () => this._onResize());
         window.addEventListener('orientationchange', () => {
@@ -89,95 +37,22 @@ const Renderer = {
     },
 
     initEnvironment() {
-        this._drawGround();
+        this._initRoadGraphics();
+        this._initBackground();
         this._drawSun();
     },
 
-    _drawGround() {
-        const loadedTex = Assets.get('ground');
-        groundTexture = loadedTex || this._generateGroundTexture();
-
-        groundContainer = new PIXI.Container();
-        groundContainer.zIndex = -5000; // behind entities, in front of sun
-        camera.addChild(groundContainer);
-
-        this._buildStrips();
+    _initRoadGraphics() {
+        roadGfx = new PIXI.Graphics();
+        roadGfx.zIndex = -5000;
+        camera.addChild(roadGfx);
     },
 
-    _buildStrips() {
-        groundContainer.removeChildren();
-        groundStrips = [];
-
-        const groundHeight = app.screen.height - centerY + CONFIG.world.overscan;
-        const stripWidth = app.screen.width + CONFIG.world.overscan * 2;
-        const numStrips = Math.ceil(groundHeight / GROUND_STRIP_HEIGHT);
-
-        let cumulativeTexY = 0;
-
-        for (let i = 0; i < numStrips; i++) {
-            const screenY = centerY + i * GROUND_STRIP_HEIGHT;
-            const depth = (i + 1) / numStrips;
-
-            const scaleX = depth * 1.0;
-            const scaleY = (depth * depth * 0.75) + 0.01;
-
-            const strip = new PIXI.TilingSprite(groundTexture, stripWidth, GROUND_STRIP_HEIGHT);
-            strip.x = -CONFIG.world.overscan;
-            strip.y = screenY;
-            strip.tileScale.set(scaleX, scaleY);
-
-            strip.tilePosition.x = centerX + CONFIG.world.overscan;
-
-            strip._baseTPY = -cumulativeTexY * scaleY;
-            strip._scaleY = scaleY;
-            strip.tilePosition.y = strip._baseTPY;
-
-            cumulativeTexY += GROUND_STRIP_HEIGHT / scaleY;
-
-            strip.alpha = Math.min(1, depth * 4);
-
-            groundContainer.addChild(strip);
-            groundStrips.push(strip);
-        }
-    },
-
-    _generateGroundTexture() {
-        const size = 64;
-        const g = new PIXI.Graphics();
-
-        g.beginFill(0x8A8A88);
-        g.drawRect(0, 0, size, size);
-        g.endFill();
-
-        for (let i = 0; i < 60; i++) {
-            const px = Math.floor(Math.random() * size);
-            const py = Math.floor(Math.random() * size);
-            const shade = Math.random() > 0.5 ? 0x7E7E7C : 0x949492;
-            g.beginFill(shade);
-            g.drawRect(px, py, 1, 1);
-            g.endFill();
-        }
-
-        g.lineStyle(1, 0x5A5A58);
-        g.moveTo(8, 0);
-        g.lineTo(12, 18);
-        g.lineTo(10, 32);
-        g.lineTo(15, 48);
-        g.moveTo(40, 10);
-        g.lineTo(38, 28);
-        g.lineTo(44, 40);
-        g.lineTo(42, 56);
-        g.moveTo(20, 44);
-        g.lineTo(34, 46);
-        g.moveTo(50, 0);
-        g.lineTo(52, 14);
-
-        const tex = app.renderer.generateTexture(g, {
-            scaleMode: PIXI.SCALE_MODES.NEAREST,
-            resolution: 1
-        });
-        g.destroy();
-        return tex;
+    _initBackground() {
+        // Background container for parallax elements (mountains, distant buildings)
+        bgContainer = new PIXI.Container();
+        bgContainer.zIndex = -9000;
+        camera.addChild(bgContainer);
     },
 
     _drawSun() {
@@ -197,7 +72,7 @@ const Renderer = {
         }
         sunSprite.x = sunX;
         sunSprite.y = sunY;
-        sunSprite.zIndex = -10000; // behind ground and all entities
+        sunSprite.zIndex = -10000;
         camera.addChild(sunSprite);
     },
 
@@ -210,20 +85,110 @@ const Renderer = {
         app.stage.addChild(flash);
     },
 
-    _onResize() {
-        _syncWrapper();
+    // Draw the road each frame using projected segments
+    drawRoad(projected) {
+        if (!roadGfx || projected.length < 2) return;
 
-        const w = gameWidth();
-        const h = gameHeight();
-        app.renderer.resize(w, h);
-        centerX = app.screen.width / 2;
-        centerY = app.screen.height / 2;
+        const sw = app.screen.width;
+        const sh = app.screen.height;
+        const rc = CONFIG.road.colors;
+        const rumbleW = CONFIG.road.rumbleWidth;
+        const shoulderW = CONFIG.road.shoulderWidth;
 
-        if (groundContainer) {
-            this._buildStrips();
+        roadGfx.clear();
+
+        // Fill sky-to-ground below horizon with grass
+        if (projected.length > 0) {
+            const horizon = projected[projected.length - 1];
+            const horizonY = Math.max(0, horizon.y);
+            roadGfx.beginFill(rc.grass[0]);
+            roadGfx.drawRect(0, horizonY, sw, sh - horizonY);
+            roadGfx.endFill();
         }
-        if (typeof Effects !== 'undefined') {
-            Effects.onResize(app);
+
+        // Draw segments from far to near (painter's algorithm)
+        for (let n = projected.length - 2; n >= 0; n--) {
+            const curr = projected[n];
+            const prev = projected[n + 1]; // farther segment
+
+            if (curr.clip && prev.clip) continue;
+            // Skip only if BOTH are off-screen (near segments extend below screen, that's OK)
+            if (prev.y > sh * 2 && curr.y > sh * 2) continue;
+
+            const isEven = (curr.index % 2) === 0;
+
+            const currW = curr.w;
+            const prevW = prev.w;
+            const currRumble = currW * (1 + rumbleW / CONFIG.road.roadWidth);
+            const prevRumble = prevW * (1 + rumbleW / CONFIG.road.roadWidth);
+            const currShoulder = currW * (1 + (rumbleW + shoulderW) / CONFIG.road.roadWidth);
+            const prevShoulder = prevW * (1 + (rumbleW + shoulderW) / CONFIG.road.roadWidth);
+
+            // Grass
+            const grassColor = isEven ? rc.grass[0] : rc.grass[1];
+            roadGfx.beginFill(grassColor);
+            roadGfx.moveTo(0, prev.y);
+            roadGfx.lineTo(sw, prev.y);
+            roadGfx.lineTo(sw, curr.y);
+            roadGfx.lineTo(0, curr.y);
+            roadGfx.endFill();
+
+            // Shoulder
+            const shoulderColor = isEven ? rc.shoulder[0] : rc.shoulder[1];
+            roadGfx.beginFill(shoulderColor);
+            roadGfx.moveTo(prev.x - prevShoulder, prev.y);
+            roadGfx.lineTo(prev.x + prevShoulder, prev.y);
+            roadGfx.lineTo(curr.x + currShoulder, curr.y);
+            roadGfx.lineTo(curr.x - currShoulder, curr.y);
+            roadGfx.endFill();
+
+            // Rumble strips
+            const rumbleColor = isEven ? rc.rumble[0] : rc.rumble[1];
+            roadGfx.beginFill(rumbleColor);
+            roadGfx.moveTo(prev.x - prevRumble, prev.y);
+            roadGfx.lineTo(prev.x + prevRumble, prev.y);
+            roadGfx.lineTo(curr.x + currRumble, curr.y);
+            roadGfx.lineTo(curr.x - currRumble, curr.y);
+            roadGfx.endFill();
+
+            // Road surface
+            const roadColor = isEven ? rc.road[0] : rc.road[1];
+            roadGfx.beginFill(roadColor);
+            roadGfx.moveTo(prev.x - prevW, prev.y);
+            roadGfx.lineTo(prev.x + prevW, prev.y);
+            roadGfx.lineTo(curr.x + currW, curr.y);
+            roadGfx.lineTo(curr.x - currW, curr.y);
+            roadGfx.endFill();
+
+            // Lane markings (dashed — only on even segments for dashes)
+            if (isEven && curr.scale > 0.001) {
+                const laneW = Math.max(1, currW * 0.02);
+                for (let lane = 1; lane < CONFIG.road.lanes; lane++) {
+                    const lanePos = -1 + (2 * lane / CONFIG.road.lanes);
+                    const cx = curr.x + currW * lanePos;
+                    const px = prev.x + prevW * lanePos;
+                    roadGfx.beginFill(rc.lane);
+                    roadGfx.moveTo(px - laneW * 0.5, prev.y);
+                    roadGfx.lineTo(px + laneW * 0.5, prev.y);
+                    roadGfx.lineTo(cx + laneW * 0.5, curr.y);
+                    roadGfx.lineTo(cx - laneW * 0.5, curr.y);
+                    roadGfx.endFill();
+                }
+            }
+
+            // Fog overlay (semi-transparent sky color blended over far segments)
+            if (prev.fog > 0.05) {
+                const fogAlpha = prev.fog * prev.fog; // quadratic for softer near, stronger far
+                const skyColor = (Math.round(STATE.skyR) << 16)
+                               | (Math.round(STATE.skyG) << 8)
+                               | Math.round(STATE.skyB);
+                roadGfx.beginFill(skyColor, fogAlpha);
+                roadGfx.moveTo(0, prev.y);
+                roadGfx.lineTo(sw, prev.y);
+                roadGfx.lineTo(sw, curr.y);
+                roadGfx.lineTo(0, curr.y);
+                roadGfx.endFill();
+            }
         }
     },
 
@@ -232,23 +197,16 @@ const Renderer = {
         camera.x = (Math.random() - 0.5) * STATE.shake;
         camera.y = (Math.random() - 0.5) * STATE.shake;
 
-        // Scroll ground
-        groundScrollOffset += STATE.speed * 0.02;
-
-        for (let i = 0; i < groundStrips.length; i++) {
-            const strip = groundStrips[i];
-            strip.tilePosition.y = strip._baseTPY + groundScrollOffset * strip._scaleY;
-        }
-
-        // Sun position & tint: sets by entropy ~65, hidden before sky goes dark
+        // Background parallax: shift sun and bg opposite to curve
         if (sunSprite) {
-            // Sun completes its descent over entropy 0–65 (before catastrophe)
+            const parallaxShift = -STATE.curveDelta * STATE.speed * 0.3;
+            // Sun position & tint: sets by entropy ~65
             const t = Math.min(1, STATE.entropy / 65);
-            const startX = app.screen.width * 0.7;
+            const baseX = app.screen.width * 0.7;
             const endX = app.screen.width * 0.85;
             const startY = app.screen.height * 0.15;
-            const endY = centerY + 40; // sink below horizon
-            sunSprite.x = startX + (endX - startX) * t;
+            const endY = centerY + 40;
+            sunSprite.x = (baseX + (endX - baseX) * t) + parallaxShift;
             sunSprite.y = startY + (endY - startY) * t;
             // Tint: white → warm orange → deep red → fade out
             if (t < 0.4) {
@@ -275,8 +233,62 @@ const Renderer = {
         app.renderer.background.color = skyColor;
     },
 
+    _onResize() {
+        _syncWrapper();
+
+        const w = gameWidth();
+        const h = gameHeight();
+        app.renderer.resize(w, h);
+        centerX = app.screen.width / 2;
+        centerY = app.screen.height / 2;
+
+        if (typeof Effects !== 'undefined') {
+            Effects.onResize(app);
+        }
+    },
+
     getApp() { return app; },
     getCamera() { return camera; },
     getFlash() { return flash; },
-    getCenter() { return { x: centerX, y: centerY }; }
+    getCenter() { return { x: centerX, y: centerY }; },
+    getRoadGfx() { return roadGfx; }
 };
+
+// --- Viewport helpers (unchanged) ---
+
+function vpWidth() {
+    const vv = window.visualViewport;
+    return vv ? vv.width : window.innerWidth;
+}
+function vpHeight() {
+    const vv = window.visualViewport;
+    return vv ? vv.height : window.innerHeight;
+}
+function _isPortrait() {
+    return vpHeight() > vpWidth();
+}
+function gameWidth() {
+    return _isPortrait() ? vpHeight() : vpWidth();
+}
+function gameHeight() {
+    return _isPortrait() ? vpWidth() : vpHeight();
+}
+function _syncWrapper() {
+    const wrapper = document.getElementById('game-wrapper');
+    if (!wrapper) return;
+
+    const vw = vpWidth();
+    const vh = vpHeight();
+
+    if (_isPortrait()) {
+        wrapper.style.width = vh + 'px';
+        wrapper.style.height = vw + 'px';
+        wrapper.style.transformOrigin = 'top left';
+        wrapper.style.transform = 'translateX(' + vw + 'px) rotate(90deg)';
+    } else {
+        wrapper.style.width = vw + 'px';
+        wrapper.style.height = vh + 'px';
+        wrapper.style.transform = '';
+        wrapper.style.transformOrigin = '';
+    }
+}

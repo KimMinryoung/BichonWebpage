@@ -9,7 +9,10 @@ const Game = {
         // Load sprite assets (real PNGs or generated fallbacks)
         await Assets.load(Renderer.getApp());
 
-        // Environment needs to be drawn after assets are ready (ground texture generation)
+        // Initialize road geometry (must happen before entities)
+        Road.init();
+
+        // Environment needs to be drawn after assets are ready
         Renderer.initEnvironment();
 
         Events.init();
@@ -44,13 +47,25 @@ const Game = {
         else if (STATE.entropy < CONFIG.phases.catastrophe.min) STATE.phase = 'crisis';
         else STATE.phase = 'catastrophe';
 
+        // Advance road position and compute centrifugal drift
+        Road.update(dt);
+
+        // Project road segments to screen
+        const app = Renderer.getApp();
+        const projected = Road.project(app.screen.width, app.screen.height);
+
+        // Draw road
+        Renderer.drawRoad(projected);
+
+        // Update entities anchored to road segments
+        Entities.update(dt, projected);
+
         // Core systems
-        Entities.update(dt);
         Timeline.check();
         Intervention.check();
         Renderer.applyEffects();
         Sound.updatePhase(STATE.phase);
-        Effects.update(Renderer.getApp());
+        Effects.update(app);
     },
 
     restart() {
@@ -67,11 +82,16 @@ const Game = {
         // Reset flash
         Renderer.getFlash().alpha = 0;
 
-        // Reset entity visuals
+        // Reset entity visuals (road entities + background scenery)
         const entities = Entities.getList();
         for (let i = 0; i < entities.length; i++) {
             entities[i].sprite.tint = 0xFFFFFF;
             entities[i].fsm = 'normal';
+        }
+        const bgEntities = Entities.getBgList();
+        for (let i = 0; i < bgEntities.length; i++) {
+            bgEntities[i].sprite.tint = 0xFFFFFF;
+            bgEntities[i].fsm = 'normal';
         }
 
         STATE.running = true;

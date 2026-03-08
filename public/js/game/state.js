@@ -19,7 +19,12 @@ const STATE = {
     // Player
     choices: [],
     interventionIndex: 0,
-    correctChoices: 0
+    correctChoices: 0,
+
+    // Road position
+    roadPosition: 0,    // camera Z along track (world units)
+    playerX: 0,         // lateral offset from road center
+    curveDelta: 0       // current curve intensity (for centrifugal + parallax)
 };
 
 function resetState() {
@@ -37,4 +42,7 @@ function resetState() {
     STATE.choices = [];
     STATE.interventionIndex = 0;
     STATE.correctChoices = 0;
+    STATE.roadPosition = 0;
+    STATE.playerX = 0;
+    STATE.curveDelta = 0;
 }
