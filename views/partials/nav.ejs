@@ -22,7 +22,10 @@
             <a href="/admin"><%= strings.nav.dashboard %></a>
             <a href="/admin/posts"><%= strings.nav.posts %></a>
             <a href="/game"><%= strings.nav.game %></a>
-            <a href="/admin/logout"><%= strings.nav.logout %></a>
+            <form action="/admin/logout" method="POST" style="display:inline;margin:0;">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="nav-logout-btn"><%= strings.nav.logout %></button>
+            </form>
         </div>
     </div>
 </nav>

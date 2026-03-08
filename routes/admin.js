@@ -70,7 +70,7 @@ router.post('/login', loginLimiter, redirectIfAuthenticated, async (req, res) =>
 });
 
 // Logout
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             console.error('Logout error:', err);

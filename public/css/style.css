@@ -92,6 +92,19 @@ nav .nav-links a:hover {
     text-decoration: none;
 }
 
+.nav-logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: #f0f0f0;
+    padding: 5px 10px;
+}
+
+.nav-logout-btn:hover {
+    background-color: #333;
+}
+
 .lang-dropdown {
     position: relative;
     margin-left: auto;
@@ -762,7 +775,8 @@ footer {
     }
 
     nav .nav-links a,
-    nav .nav-links .lang-btn {
+    nav .nav-links .lang-btn,
+    nav .nav-links .nav-logout-btn {
         padding: 3px 6px;
         font-size: 0.85rem;
     }
