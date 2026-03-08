@@ -98,13 +98,13 @@ const Entities = {
         // ── Background scenery (fixed back panel with parallax) ──
 
         // Namsan Tower — fixed landmark on the horizon
+        // Uses perspective-correct parallax: shift = cameraDepth / towerZ
         const tower = Assets.createSprite('namsan-tower');
         tower.zIndex = -8000;
         bgList.push({
             sprite: tower,
-            baseX: 0.35,       // fraction of screen width
-            baseY: 0,       // fraction of screen height (above horizon)
-            parallaxFactor: 0.6,
+            worldX: -3000,     // fixed world X position (left of road center)
+            worldZ: 80000,     // virtual distance (beyond draw distance but not infinity)
             type: 'tower',
             fsm: 'normal',
             baseScale: 1.8
@@ -118,9 +118,9 @@ const Entities = {
             sprite.zIndex = -8500;
             bgList.push({
                 sprite,
-                baseX: 0.1 + (i / CONFIG.counts.clouds) * 0.85,  // spread across sky
+                baseX: 0.1 + (i / CONFIG.counts.clouds) * 0.85,
                 baseY: 0.08 + Math.random() * 0.25,
-                parallaxFactor: 0.2 + Math.random() * 0.3,
+                worldZ: 150000 + Math.random() * 100000,  // very far (near-infinite)
                 type: 'cloud',
                 fsm: 'normal',
                 baseScale: 0.8 + Math.random() * 0.6
@@ -134,13 +134,18 @@ const Entities = {
         const sw = Renderer.getApp().screen.width;
         const sh = Renderer.getApp().screen.height;
 
-        // ── Background scenery: fixed positions + curve parallax ──
-        const parallaxShift = -STATE.curveDelta * STATE.speed * 0.4;
+        // ── Background scenery ──
+        const cameraDepth = CONFIG.road.cameraDepth;
 
         // Horizon Y from farthest projected segment (tower sits here)
-        let horizonY = sh * 0.45;  // fallback
+        let horizonY = sh * 0.45;
+        // Accumulated curve offset and Z at the draw-distance horizon
+        let horizonDx = 0;
+        let horizonZ = CONFIG.road.visibleSegments * CONFIG.road.segmentLength;
         if (projected && projected.length > 0) {
             horizonY = projected[projected.length - 1].y;
+            horizonDx = projected.horizonDx || 0;
+            horizonZ = projected.horizonZ || horizonZ;
         }
 
         for (let i = 0; i < bgList.length; i++) {
@@ -148,16 +153,21 @@ const Entities = {
             bg.sprite.visible = true;
 
             if (bg.type === 'tower') {
-                // Tower rises from the horizon — anchor bottom at horizon line
-                // Stronger parallax + tracks playerX lateral drift
-                const lateralShift = -STATE.playerX * 0.1;
-                bg.sprite.x = bg.baseX * sw + parallaxShift * bg.parallaxFactor + lateralShift;
-                bg.sprite.y = horizonY;  // bottom-anchored sprite sits on horizon
+                // Perspective-correct parallax:
+                // scale = cameraDepth / worldZ (same formula as road projection)
+                // Extrapolate curve offset beyond draw distance proportionally
+                const towerScale = cameraDepth / bg.worldZ;
+                const curveDx = horizonDx * (bg.worldZ / horizonZ);
+                const towerScreenX = (sw / 2) + towerScale * (bg.worldX - STATE.playerX + curveDx) * sw / 2;
+
+                bg.sprite.x = towerScreenX;
+                bg.sprite.y = horizonY;
                 bg.sprite.scale.set(bg.baseScale);
                 this._updateEntityVisuals(bg);
             } else {
-                // Clouds: fixed in sky, gentle parallax
-                bg.sprite.x = bg.baseX * sw + parallaxShift * bg.parallaxFactor;
+                // Clouds: very far (effectively infinite Z), gentle curve parallax
+                const cloudCurveShift = -horizonDx * (cameraDepth / (bg.worldZ || 200000)) * sw / 2;
+                bg.sprite.x = bg.baseX * sw + cloudCurveShift;
                 bg.sprite.y = bg.baseY * sh;
                 bg.sprite.scale.set(bg.baseScale);
             }

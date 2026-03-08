@@ -155,6 +155,10 @@ const Road = {
             });
         }
 
+        // Attach horizon info for background parallax calculations
+        projected.horizonDx = dx;       // total accumulated curve offset at draw distance
+        projected.horizonZ = visible * segLen;  // world Z of farthest segment
+
         return projected;
     },
 
