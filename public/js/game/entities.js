@@ -193,9 +193,16 @@ const Entities = {
             e.sprite.visible = true;
 
             // Position relative to road segment
-            const screenX = proj.x + proj.w * e.roadOffset;
+            let screenX = proj.x + proj.w * e.roadOffset;
             const screenY = proj.y - e.elevation * proj.scale * sh;
-            const scale = proj.scale * e.baseScale * 2500;
+            const scale = proj.scale * e.baseScale * sw * 2;
+
+            // Push buildings outward by half their rendered width
+            // so the inner edge doesn't overlap the road
+            if (e.type === 'building') {
+                const halfW = e.sprite.texture.width * Math.abs(scale) * 0.5;
+                screenX += (e.roadOffset > 0 ? 1 : -1) * halfW;
+            }
 
             e.sprite.x = screenX;
             e.sprite.y = screenY;
