@@ -46,13 +46,18 @@ router.post('/login', loginLimiter, redirectIfAuthenticated, async (req, res) =>
             return res.render('admin/login', { error: 'Invalid username or password' });
         }
 
-        req.session.isAuthenticated = true;
-        req.session.adminUser = {
-            id: admin.id,
-            username: admin.username
-        };
-
-        res.redirect('/admin');
+        req.session.regenerate(function(err) {
+            if (err) {
+                console.error('Session regenerate error:', err);
+                return res.render('admin/login', { error: 'An error occurred. Please try again.' });
+            }
+            req.session.isAuthenticated = true;
+            req.session.adminUser = {
+                id: admin.id,
+                username: admin.username
+            };
+            res.redirect('/admin');
+        });
     } catch (error) {
         if (isConnectionError(error)) {
             console.error('[DB Connection Failed] Login - Database connection failed:', error.message);
