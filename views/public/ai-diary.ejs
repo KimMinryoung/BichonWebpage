@@ -33,7 +33,7 @@
                                 </p>
                             </div>
                             <% if (isAuthenticated) { %>
-                                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="margin-left: 15px;" onsubmit="return confirm('<%= strings.public.deleteDiaryConfirm %>');">
+                                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="margin-left: 15px;" data-confirm="<%= strings.public.deleteDiaryConfirm %>">
                                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                     <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
                                 </form>

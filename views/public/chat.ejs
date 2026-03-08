@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
 </head>
 <body>
-    <script>
+    <script nonce="<%= nonce %>">
         document.body.style.overflow = 'hidden';
         // Set --vh to the visual viewport height (excludes browser toolbar).
         // Run before layout to avoid a flash of incorrect height.
@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <script>
+    <script nonce="<%= nonce %>">
         var API_URL = '<%= chatApiUrl %>';
         var STRINGS = {
             thinking: '<%= strings.chat.thinking %>',

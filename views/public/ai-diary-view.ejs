@@ -25,7 +25,7 @@
             <div class="post-nav-left">
                 <a href="/ai-diary">&larr; <%= strings.public.backToList %></a>
                 <% if (isAuthenticated) { %>
-                    <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="display: inline; margin-left: 10px;" onsubmit="return confirm('<%= strings.public.deleteDiaryConfirm %>');">
+                    <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="display: inline; margin-left: 10px;" data-confirm="<%= strings.public.deleteDiaryConfirm %>">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
                     </form>

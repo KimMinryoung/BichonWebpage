@@ -1,14 +1,4 @@
 <footer>
     <p><%- strings.footer.copyright.replace('{year}', new Date().getFullYear()).replace(strings.siteName, '<a href="/admin/login" class="stealth-link">' + strings.siteName + '</a>') %></p>
 </footer>
-<script>
-document.querySelectorAll('.local-date').forEach(function(el) {
-    var d = new Date(el.getAttribute('datetime'));
-    var suffix = el.getAttribute('data-suffix') || '';
-    el.textContent = d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) + suffix;
-});
-document.querySelectorAll('.local-date-short').forEach(function(el) {
-    var d = new Date(el.getAttribute('datetime'));
-    el.textContent = d.toLocaleDateString('ko-KR');
-});
-</script>
+<script src="/js/common.js"></script>
