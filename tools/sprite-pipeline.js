@@ -432,52 +432,64 @@ async function batchProcess(dirPath) {
 // 7. Glow extraction — extract emissive pixels from base sprites
 // ---------------------------------------------------------------------------
 
-// Per-type glow extraction rules.
-// `detect(r,g,b,a)` returns true for pixels that should glow.
-// `recolor` (optional) replaces detected pixel colors — used for buildings
-// where daytime windows are DARK but need to become bright warm glow.
+// Per-type glow rules.
+// `isWindow(r,g,b,a)` — deterministic detection of "window" pixels to patch/extract.
+// `recolor` — glow layer output color (if omitted, keeps original pixel color).
+// `litChance` — probability a detected window appears lit in glow (default 1.0).
+// `patchable` — if true, patch-base will replace these pixels with wall color.
 const GLOW_RULES = {
-    // Buildings: daytime sprites have dark window pixels (lum < 70).
-    // Detect them and recolor to warm yellow. Random 70% lit for realism.
     'building-modern': {
-        detect: (r, g, b, a) => {
+        isWindow: (r, g, b, a) => {
             if (a < 128) return false;
             const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-            return lum < 70 && Math.random() < 0.7;
+            return lum < 70;
         },
         recolor: { r: 255, g: 238, b: 170 },  // #FFEEAA warm window
+        erode: 1,       // shrink detected regions by 1px → only window interiors
+        litChance: 1.0,
+        dimAlpha: 0.3,
+        dimRatio: 0.4,
     },
     'building-glass': {
-        detect: (r, g, b, a) => {
+        isWindow: (r, g, b, a) => {
             if (a < 128) return false;
             const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-            // Glass building: bright reflective panels (lum 150+) glow cyan-white
-            return lum > 150 && Math.random() < 0.5;
+            return lum > 200;
         },
         recolor: { r: 200, g: 240, b: 255 },  // cool white-cyan glow
+        erode: 0,
+        litChance: 1.0,
+        dimAlpha: 0.25,
+        dimRatio: 0.5,
     },
     'building-apartment': {
-        detect: (r, g, b, a) => {
+        isWindow: (r, g, b, a) => {
             if (a < 128) return false;
             const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-            return lum < 55 && Math.random() < 0.7;
+            return lum < 45;
         },
         recolor: { r: 255, g: 220, b: 150 },  // warmer amber window
+        erode: 0,       // apartment windows are small (~2px), erosion would delete them
+        litChance: 1.0,
+        dimAlpha: 0.3,
+        dimRatio: 0.3,
     },
-    // Streetlight: extract the bright warm lamp pixels as-is
     'streetlight': {
-        detect: (r, g, b, a) => {
+        isWindow: (r, g, b, a) => {
             if (a < 128) return false;
             const lum = 0.299 * r + 0.587 * g + 0.114 * b;
             return lum > 120 && r > 160 && g > 120 && (r + g) > (b * 3);
         },
+        litChance: 1.0,
+        patchable: false,
     },
-    // Namsan tower: extract the red beacon pixels as-is
     'namsan-tower': {
-        detect: (r, g, b, a) => {
+        isWindow: (r, g, b, a) => {
             if (a < 128) return false;
             return r > 180 && g < 120 && b < 120;
         },
+        litChance: 1.0,
+        patchable: false,
     },
 };
 
@@ -505,31 +517,60 @@ async function extractGlow(inputPath, spriteKey) {
     const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
     const { width, height, channels } = info;
 
-    const out = Buffer.alloc(width * height * 4); // start fully transparent
-    let kept = 0;
-    const rc = rule.recolor;
-
+    // Build binary mask of detected window pixels
+    const mask = new Uint8Array(width * height);
     for (let i = 0; i < width * height; i++) {
         const off = i * channels;
-        const r = data[off], g = data[off + 1], b = data[off + 2], a = data[off + 3];
+        mask[i] = rule.isWindow(data[off], data[off + 1], data[off + 2], data[off + 3]) ? 1 : 0;
+    }
 
-        if (rule.detect(r, g, b, a)) {
-            const oOff = i * 4;
-            if (rc) {
-                // Recolor to glow color (e.g. dark windows → warm yellow)
-                out[oOff] = rc.r;
-                out[oOff + 1] = rc.g;
-                out[oOff + 2] = rc.b;
-                out[oOff + 3] = a;
-            } else {
-                // Keep original color (e.g. red beacon stays red)
-                out[oOff] = r;
-                out[oOff + 1] = g;
-                out[oOff + 2] = b;
-                out[oOff + 3] = a;
+    // Erode mask: shrink by N pixels (only keep pixels whose NxN neighborhood is all window)
+    const erodeN = rule.erode || 0;
+    if (erodeN > 0) {
+        const eroded = new Uint8Array(width * height);
+        for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+                let allWindow = true;
+                for (let dy = -erodeN; dy <= erodeN && allWindow; dy++) {
+                    for (let dx = -erodeN; dx <= erodeN && allWindow; dx++) {
+                        const nx = x + dx, ny = y + dy;
+                        if (nx < 0 || nx >= width || ny < 0 || ny >= height || !mask[ny * width + nx]) {
+                            allWindow = false;
+                        }
+                    }
+                }
+                eroded[y * width + x] = allWindow ? 1 : 0;
             }
-            kept++;
         }
+        mask.set(eroded);
+    }
+
+    const out = Buffer.alloc(width * height * 4);
+    let kept = 0;
+    const rc = rule.recolor;
+    const dimAlpha = rule.dimAlpha != null ? rule.dimAlpha : 0;
+    const dimRatio = rule.dimRatio != null ? rule.dimRatio : 0;
+
+    for (let i = 0; i < width * height; i++) {
+        if (!mask[i]) continue;
+
+        const off = i * channels;
+        const a = data[off + 3];
+        const oOff = i * 4;
+        const isDim = dimRatio > 0 && Math.random() < dimRatio;
+        const outAlpha = isDim ? Math.round(a * dimAlpha) : a;
+
+        if (rc) {
+            out[oOff] = rc.r;
+            out[oOff + 1] = rc.g;
+            out[oOff + 2] = rc.b;
+        } else {
+            out[oOff] = data[off];
+            out[oOff + 1] = data[off + 1];
+            out[oOff + 2] = data[off + 2];
+        }
+        out[oOff + 3] = outAlpha;
+        kept++;
     }
 
     const total = width * height;
@@ -570,6 +611,127 @@ async function generateGlows(keys) {
 }
 
 // ---------------------------------------------------------------------------
+// 8. Patch base sprites — replace window pixels with dominant wall color
+// ---------------------------------------------------------------------------
+
+// Find the dominant opaque color (most frequent non-window, non-transparent pixel)
+function findWallColor(data, width, height, channels, isWindowFn) {
+    const counts = {};
+    for (let i = 0; i < width * height; i++) {
+        const off = i * channels;
+        const r = data[off], g = data[off + 1], b = data[off + 2], a = data[off + 3];
+        if (a < 128) continue;
+        if (isWindowFn(r, g, b, a)) continue;
+        // Quantize to reduce noise (group similar colors)
+        const qr = Math.round(r / 8) * 8;
+        const qg = Math.round(g / 8) * 8;
+        const qb = Math.round(b / 8) * 8;
+        const key = `${qr},${qg},${qb}`;
+        counts[key] = (counts[key] || 0) + 1;
+    }
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    if (sorted.length === 0) return { r: 128, g: 128, b: 128 };
+    const [rr, gg, bb] = sorted[0][0].split(',').map(Number);
+    return { r: rr, g: gg, b: bb };
+}
+
+// patch-base does TWO things in one pass (before window data is lost):
+//   1. Extracts glow layer from detected window pixels → saves <key>-glow.png
+//   2. Fills those window pixels with wall color in base → overwrites <key>.png
+async function patchBase(spriteKey) {
+    const rule = GLOW_RULES[spriteKey];
+    if (!rule || !rule.patchable) {
+        console.log(`  ${spriteKey}: not patchable — skipping`);
+        return null;
+    }
+
+    const basePath = path.join(CONFIG.outputDir, `${spriteKey}.png`);
+    if (!fs.existsSync(basePath)) {
+        console.error(`  Base sprite not found: ${basePath} — skipping`);
+        return null;
+    }
+
+    console.log(`Patching base: ${spriteKey}`);
+
+    const image = sharp(basePath).ensureAlpha();
+    const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
+    const { width, height, channels } = info;
+
+    const wallColor = findWallColor(data, width, height, channels, rule.isWindow);
+    console.log(`  Wall color: rgb(${wallColor.r}, ${wallColor.g}, ${wallColor.b})`);
+
+    const baseOut = Buffer.from(data);
+    const glowOut = Buffer.alloc(width * height * 4);  // transparent
+    let patched = 0;
+    let glowKept = 0;
+    const rc = rule.recolor;
+    const dimAlpha = rule.dimAlpha != null ? rule.dimAlpha : 0;
+    const dimRatio = rule.dimRatio != null ? rule.dimRatio : 0;
+
+    for (let i = 0; i < width * height; i++) {
+        const off = i * channels;
+        const r = baseOut[off], g = baseOut[off + 1], b = baseOut[off + 2], a = baseOut[off + 3];
+
+        if (rule.isWindow(r, g, b, a)) {
+            // Fill base with wall color
+            baseOut[off] = wallColor.r;
+            baseOut[off + 1] = wallColor.g;
+            baseOut[off + 2] = wallColor.b;
+            patched++;
+
+            // Glow layer: all windows covered, dim ones get lower alpha
+            const isDim = dimRatio > 0 && Math.random() < dimRatio;
+            const outAlpha = isDim ? Math.round(a * dimAlpha) : a;
+            const oOff = i * 4;
+            glowOut[oOff] = rc ? rc.r : r;
+            glowOut[oOff + 1] = rc ? rc.g : g;
+            glowOut[oOff + 2] = rc ? rc.b : b;
+            glowOut[oOff + 3] = outAlpha;
+            glowKept++;
+        }
+    }
+
+    const total = width * height;
+    console.log(`  ${patched} window pixels filled with wall (${((patched / total) * 100).toFixed(1)}%)`);
+    console.log(`  ${glowKept} glow pixels kept (${((glowKept / total) * 100).toFixed(1)}%)`);
+
+    // Save patched base
+    const patchedBuf = await sharp(baseOut, { raw: { width, height, channels } })
+        .png().toBuffer();
+    fs.writeFileSync(basePath, patchedBuf);
+    console.log(`  Base overwritten: ${basePath}`);
+
+    // Save glow layer
+    const glowBuf = await sharp(glowOut, { raw: { width, height, channels: 4 } })
+        .png().toBuffer();
+    const glowPath = path.join(CONFIG.outputDir, `${spriteKey}-glow.png`);
+    fs.writeFileSync(glowPath, glowBuf);
+    console.log(`  Glow saved: ${glowPath}\n`);
+
+    return basePath;
+}
+
+async function patchBases(keys) {
+    const patchableKeys = keys.filter(k => GLOW_RULES[k] && GLOW_RULES[k].patchable);
+    if (patchableKeys.length === 0) {
+        console.log('No patchable sprites in the selection.');
+        return;
+    }
+
+    console.log(`Patching ${patchableKeys.length} base sprite(s) + generating glow layers...\n`);
+
+    let success = 0;
+    for (const key of patchableKeys) {
+        const result = await patchBase(key);
+        if (result) success++;
+    }
+
+    console.log('='.repeat(50));
+    console.log(`Patch complete: ${success}/${patchableKeys.length} sprites processed.`);
+    console.log('Both base sprites and glow layers updated.\n');
+}
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 function sleep(ms) {
@@ -597,6 +759,13 @@ Usage:
 
   node tools/sprite-pipeline.js batch <directory>
       Post-process all PNGs in a directory. Files named <sprite-key>.png.
+
+  node tools/sprite-pipeline.js patch-base [key...]
+      Remove dark window pixels from base sprites (fill with wall color).
+      Only applies to patchable sprites (buildings). Run glow after this.
+
+  node tools/sprite-pipeline.js patch-base --all
+      Patch all patchable base sprites.
 
   node tools/sprite-pipeline.js glow [key...]
       Extract glow layers from existing base sprites (bright/warm pixels only).
@@ -695,6 +864,22 @@ async function main() {
                 process.exit(1);
             }
             await batchProcess(dir);
+            break;
+        }
+
+        case 'patch-base': {
+            let keys;
+            if (args.all) {
+                keys = GLOW_SPRITES;
+            } else {
+                keys = args._.slice(1);
+                if (keys.length === 0) {
+                    console.error('Error: Specify sprite keys or use --all.');
+                    console.error(`Patchable: ${GLOW_SPRITES.filter(k => GLOW_RULES[k].patchable).join(', ')}`);
+                    process.exit(1);
+                }
+            }
+            await patchBases(keys);
             break;
         }
 

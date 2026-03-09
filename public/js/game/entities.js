@@ -170,8 +170,11 @@ const Entities = {
         const sw = Renderer.getApp().screen.width;
         const sh = Renderer.getApp().screen.height;
 
-        // Glow intensity: ramps up from tension onward (0 in peace, 1 in catastrophe)
-        const glowAlpha = Math.max(0, Math.min(1, (STATE.entropy - 20) / 55));
+        // Glow intensity: only visible once scene is dark enough for lights to matter
+        // Peace/tension (0-50): 0 — still daylight, glow invisible
+        // Crisis (50-75): ramps 0→1 — sky darkens, lights emerge
+        // Catastrophe (75+): 1.0 — full darkness, vivid glow
+        const glowAlpha = Math.max(0, Math.min(1, (STATE.entropy - 50) / 25));
 
         // ── Background scenery ──
         const cameraDepth = CONFIG.road.cameraDepth;
