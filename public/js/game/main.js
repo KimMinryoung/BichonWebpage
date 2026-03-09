@@ -15,8 +15,8 @@ const Game = {
         // Environment needs to be drawn after assets are ready
         Renderer.initEnvironment();
 
-        Events.init();
         Entities.init();
+        Events.init();
         Intervention.init();
         Sound.init();
         Effects.init(Renderer.getApp(), Renderer.getCamera());
@@ -86,12 +86,20 @@ const Game = {
         const entities = Entities.getList();
         for (let i = 0; i < entities.length; i++) {
             entities[i].sprite.tint = 0xFFFFFF;
+            entities[i].sprite.rotation = 0;
             entities[i].fsm = 'normal';
+            if (entities[i].glowSprite) {
+                entities[i].glowSprite.rotation = 0;
+            }
         }
         const bgEntities = Entities.getBgList();
         for (let i = 0; i < bgEntities.length; i++) {
             bgEntities[i].sprite.tint = 0xFFFFFF;
+            bgEntities[i].sprite.rotation = 0;
             bgEntities[i].fsm = 'normal';
+            if (bgEntities[i].glowSprite) {
+                bgEntities[i].glowSprite.rotation = 0;
+            }
         }
 
         STATE.running = true;
