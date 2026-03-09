@@ -18,6 +18,12 @@ const SPRITE_MANIFEST = {
     'cloud': 'cloud.png',
     'sun': 'sun.png',
     'ground': 'ground.png',
+    // Glow layers (emissive — bypass color grading filter)
+    'building-modern-glow': 'building-modern-glow.png',
+    'building-glass-glow': 'building-glass-glow.png',
+    'building-apartment-glow': 'building-apartment-glow.png',
+    'namsan-tower-glow': 'namsan-tower-glow.png',
+    'streetlight-glow': 'streetlight-glow.png',
 };
 
 const textures = {};
@@ -60,6 +66,13 @@ const Assets = {
         if (!textures['tree'])               textures['tree']               = this._genTree(app);
         if (!textures['streetlight'])        textures['streetlight']        = this._genStreetlight(app);
         if (!textures['cloud'])              textures['cloud']              = this._genCloud(app);
+
+        // Glow layer fallbacks (emissive — only the lit parts on transparent bg)
+        if (!textures['building-modern-glow'])    textures['building-modern-glow']    = this._genBuildingGlow(app, 24, 40);
+        if (!textures['building-glass-glow'])     textures['building-glass-glow']     = this._genBuildingGlow(app, 20, 48);
+        if (!textures['building-apartment-glow']) textures['building-apartment-glow'] = this._genBuildingGlow(app, 28, 36);
+        if (!textures['namsan-tower-glow'])       textures['namsan-tower-glow']       = this._genNamsanTowerGlow(app);
+        if (!textures['streetlight-glow'])        textures['streetlight-glow']        = this._genStreetlightGlow(app);
     },
 
     // --- Pixel art generators (placeholder fallbacks) ---
@@ -213,6 +226,77 @@ const Assets = {
         const tex = app.renderer.generateTexture(g, {
             scaleMode: PIXI.SCALE_MODES.NEAREST,
             resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    // --- Glow layer generators (emissive textures — lit parts only on transparent bg) ---
+    // Same dimensions as base sprites so they overlay perfectly.
+
+    _genBuildingGlow(app, w, h) {
+        const g = new PIXI.Graphics();
+        const winOn = 0xFFEEAA;
+        const winSize = 2;
+        const gap = 4;
+        const marginX = 3;
+        const marginY = 3;
+
+        // Only the lit windows — same grid as _genBuilding but skip dark ones
+        for (let row = marginY; row < h - 2; row += gap) {
+            for (let col = marginX; col < w - 2; col += gap) {
+                if (Math.random() > 0.3) {
+                    g.beginFill(winOn);
+                    g.drawRect(col, row, winSize, winSize);
+                    g.endFill();
+                }
+            }
+        }
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1,
+            region: new PIXI.Rectangle(0, 0, w, h)
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genNamsanTowerGlow(app) {
+        const g = new PIXI.Graphics();
+        // Red beacon only (matches base tower dimensions: 32x80)
+        g.beginFill(0xFF3333);
+        g.drawRect(15, 1, 2, 2);
+        g.endFill();
+        // Beacon halo
+        g.beginFill(0xFF5555, 0.5);
+        g.drawRect(14, 0, 4, 4);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1,
+            region: new PIXI.Rectangle(0, 0, 32, 80)
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genStreetlightGlow(app) {
+        const g = new PIXI.Graphics();
+        // Lamp glow only (matches base streetlight dimensions: ~8x24)
+        g.beginFill(0xFFDD88);
+        g.drawRect(6, 3, 2, 2);
+        g.endFill();
+        // Soft halo around lamp
+        g.beginFill(0xFFDD88, 0.4);
+        g.drawRect(5, 2, 4, 4);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1,
+            region: new PIXI.Rectangle(0, 0, 8, 24)
         });
         g.destroy();
         return tex;

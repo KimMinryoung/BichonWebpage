@@ -1,7 +1,7 @@
 // PixiJS application setup, camera container, pseudo-3D road rendering, screen effects.
 // Road uses segment-based projection (OutRun/Slipstream style) with curves + hills.
 
-let app, camera, flash, centerX, centerY;
+let app, camera, cameraGlow, flash, centerX, centerY;
 let roadGfx = null;         // PIXI.Graphics for road drawing
 let sunSprite = null;
 let bgContainer = null;     // background parallax container
@@ -23,6 +23,12 @@ const Renderer = {
         camera = new PIXI.Container();
         camera.sortableChildren = true;
         app.stage.addChild(camera);
+
+        // Glow layer: sits above camera, bypasses ColorMatrixFilter.
+        // Emissive sprites (window lights, lamp glow, beacon) go here with ADD blend.
+        cameraGlow = new PIXI.Container();
+        cameraGlow.sortableChildren = true;
+        app.stage.addChild(cameraGlow);
 
         centerX = app.screen.width / 2;
         centerY = app.screen.height / 2;
@@ -193,9 +199,13 @@ const Renderer = {
     },
 
     applyEffects() {
-        // Camera shake
-        camera.x = (Math.random() - 0.5) * STATE.shake;
-        camera.y = (Math.random() - 0.5) * STATE.shake;
+        // Camera shake (sync both layers)
+        const shakeX = (Math.random() - 0.5) * STATE.shake;
+        const shakeY = (Math.random() - 0.5) * STATE.shake;
+        camera.x = shakeX;
+        camera.y = shakeY;
+        cameraGlow.x = shakeX;
+        cameraGlow.y = shakeY;
 
         // Background parallax: shift sun and bg opposite to curve
         if (sunSprite) {
@@ -249,6 +259,7 @@ const Renderer = {
 
     getApp() { return app; },
     getCamera() { return camera; },
+    getCameraGlow() { return cameraGlow; },
     getFlash() { return flash; },
     getCenter() { return { x: centerX, y: centerY }; },
     getRoadGfx() { return roadGfx; }
