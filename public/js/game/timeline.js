@@ -4,12 +4,13 @@ let currentPhase = 'peace';
 let phaseTween = null;
 
 // Sky color targets per phase (RGB components for smooth tweening)
+// Endesga 64 sky color targets per phase
 const SKY_COLORS = {
-    peace:       { r: 0x87, g: 0xCE, b: 0xEB },
-    tension:     { r: 0xD4, g: 0xA5, b: 0x74 },
-    crisis:      { r: 0xCC, g: 0x44, b: 0x22 },
-    catastrophe: { r: 0x1A, g: 0x05, b: 0x05 },
-    hope:        { r: 0xFF, g: 0xD7, b: 0x00 }
+    peace:       { r: 0x4B, g: 0x7D, b: 0xC8 },  // #4b7dc8
+    tension:     { r: 0xE6, g: 0x9C, b: 0x69 },  // #e69c69
+    crisis:      { r: 0xC6, g: 0x45, b: 0x24 },  // #c64524
+    catastrophe: { r: 0x0E, g: 0x07, b: 0x1B },  // #0e071b
+    hope:        { r: 0xFF, g: 0xC8, b: 0x25 }   // #ffc825
 };
 
 const Timeline = {

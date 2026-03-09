@@ -87,10 +87,10 @@ tools/
   - Bullet-time slowdown during choices
   - Timeout penalty for missed choices
   - Choice logging and correct-choice counting for ending determination
-- [x] Visual events — Canvas-drawn situation graphics per intervention
-  - Bridge: crack animation, repair glow / collapse + debris + splash
-  - Quake: swaying buildings, ground cracks, evacuation dots / building collapse + dust
-  - Blackout: flickering windows + sparking power line, restoration wave / total darkness
+- [x] Visual events — In-world effects on actual game objects (no separate overlay panels)
+  - Bridge: road crack overlay + danger tint + shake boost / debris from road
+  - Quake: actual road-anchored buildings sway + ground crack lines / buildings tilt & collapse
+  - Blackout: glow sprites flicker erratically + spark / power restore wave or total darkness
 - [x] Landscape lock — Portrait detection, rotate prompt overlay
 - [x] Endings — Catastrophe (flash whiteout) + Hope (golden dawn), restart button
 - [x] Nav integration — "Web Game" / "웹 게임" link in site navigation
@@ -143,8 +143,8 @@ init()
   -> assets.load()           # load PNGs or generate fallbacks
   -> road.init()             # build track geometry (curves + hills)
   -> renderer.initEnvironment()  # road graphics + sun (needs textures ready)
-  -> events.init()
   -> entities.init()         # anchor entities to road segments
+  -> events.init()           # event layer (needs entities ready)
   -> intervention.init()
   -> ticker.add(tick)
 
@@ -190,18 +190,28 @@ SPRITE_MANIFEST = {
   'cloud': 'cloud.png',
   'sun': 'sun.png',
   'ground': 'ground.png',
+  // Glow layers (emissive — bypass color grading)
+  'building-modern-glow': 'building-modern-glow.png',
+  'building-glass-glow': 'building-glass-glow.png',
+  'building-apartment-glow': 'building-apartment-glow.png',
+  'namsan-tower-glow': 'namsan-tower-glow.png',
+  'streetlight-glow': 'streetlight-glow.png',
 };
 ```
 - `Assets.load(app)` — loads real PNGs from manifest, generates fallbacks for missing
 - `Assets.createSprite(key)` — returns PIXI.Sprite with bottom-center anchor
 - Fallbacks: pixel art generated via PIXI.Graphics → generateTexture()
+- Glow layer textures (`*-glow` keys) for emissive sprites that bypass color grading
 
 **Generation pipeline (tools/sprite-pipeline.js):**
 - `node tools/sprite-pipeline.js generate --all` — generates all sprites via Gemini 2.5 Flash
 - `node tools/sprite-pipeline.js generate <key>` — generate specific sprite(s)
 - `node tools/sprite-pipeline.js batch <dir>` — post-process existing raw images
 - `node tools/sprite-pipeline.js process <file> --sprite <key>` — process single image
+- `node tools/sprite-pipeline.js glow --all` — extract glow layers from base sprites (window/beacon/lamp detection + erosion + recolor)
+- `node tools/sprite-pipeline.js patch-base --all` — remove dark windows from base sprites (fill with wall color) + generate glow in one pass
 - Pipeline steps: Gemini generation → auto-detect BG color → remove BG → trim → nearest-neighbor scale to 128x128 → bottom-center canvas → palette reduction (16 colors)
+- Glow extraction: per-type detection rules → binary mask → erosion → recolor → dimAlpha variation
 - `noTrim` flag for texture tiles (ground) skips BG removal, uses edge-to-edge prompt
 - Raw AI outputs saved in `public/img/game/raw/`, processed outputs in `public/img/game/`
 - Requires `GEMINI_API_KEY` environment variable
@@ -224,9 +234,15 @@ Pseudo-3D road system (OutRun / Slipstream style):
 
 ### 5. Renderer (renderer.js)
 
+**Two camera containers** (emissive layer separation):
+- `camera` — base sprites, gets ColorMatrixFilter (desaturates in crisis/catastrophe)
+- `cameraGlow` — emissive sprites (ADD blend), bypasses color grading, stays vivid
+- Both synced for camera shake
+
 **Z-layer ordering** (via `sortableChildren` on camera):
 - Sun: `zIndex = -10000` (behind everything)
 - Road graphics: `zIndex = -5000` (behind entities)
+- Event overlays: `zIndex = -4999` (road cracks, danger tints)
 - Entities: `zIndex = -segDist` (depth-sorted, closer = on top)
 
 **Road drawing** (`drawRoad(projected)`):
@@ -252,6 +268,10 @@ Two categories: **road-anchored** and **background scenery**.
 - Scale: `proj.scale * baseScale * screenWidth * 2` (responsive to viewport size)
 - Visibility culled by projected segment range and fog
 - ENTITY_SCALE: building 8, tree 1.6, streetlight 1.6
+- Glow sprites: paired emissive layer in `cameraGlow` with `BLEND_MODES.ADD`
+  - Alpha ramps with entropy: `(entropy - 50) / 25` (invisible in peace/tension, full in catastrophe)
+  - Synced position/scale/zIndex with base sprite each frame
+  - Namsan beacon pulses via `sin(Date.now())`
 
 **Background scenery** — fixed in back panel with perspective-correct parallax:
 - Namsan Tower: `worldX=-3000, worldZ=80000`, bottom-anchored at horizon Y
@@ -265,7 +285,12 @@ Two categories: **road-anchored** and **background scenery**.
 ### 6. Visual Events (events.js)
 
 EVENT_BUILDERS registry with create/animate/resolve methods per event type.
-Drawn on a dedicated eventLayer between camera and flash.
+Events manipulate in-world objects instead of drawing separate overlay panels:
+- **Bridge**: road crack overlay (PIXI.Graphics on eventLayer), shake boost, danger tint
+- **Quake**: actual building entity sprites sway via GSAP rotation, glow sprites synced
+- **Blackout**: glow sprites flicker erratically, spark effect on road
+- Resolve: correct → restore/heal animations; wrong → collapse/darken/die animations
+- All tweens tracked in `activeEvent.tweens[]` for cleanup; entity state restored on clear
 
 ### 7. Intervention (intervention.js)
 

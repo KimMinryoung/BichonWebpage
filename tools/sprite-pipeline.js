@@ -336,6 +336,85 @@ async function reducePalette(inputBuffer, numColors = CONFIG.defaultPalette) {
 }
 
 // ---------------------------------------------------------------------------
+// 6b. Endesga 64 palette — nearest-color remapping
+// ---------------------------------------------------------------------------
+// https://lospec.com/palette-list/endesga-64
+const ENDESGA64 = [
+    [0xff, 0x00, 0x40], [0x13, 0x13, 0x13], [0x1b, 0x1b, 0x1b], [0x27, 0x27, 0x27],
+    [0x3c, 0x3c, 0x3c], [0x5a, 0x5a, 0x5a], [0x8b, 0x8b, 0x8b], [0xb2, 0xb2, 0xb2],
+    [0xff, 0xff, 0xff], [0xc7, 0xcf, 0xdd], [0x92, 0xa1, 0xb9], [0x65, 0x73, 0x92],
+    [0x42, 0x4c, 0x6e], [0x2a, 0x2f, 0x4e], [0x1a, 0x19, 0x32], [0x0e, 0x07, 0x1b],
+    [0x1c, 0x12, 0x1c], [0x39, 0x1f, 0x21], [0x5d, 0x2c, 0x28], [0x8a, 0x48, 0x36],
+    [0xbf, 0x6f, 0x4a], [0xe6, 0x9c, 0x69], [0xf6, 0xca, 0x9f], [0xf9, 0xe6, 0xcf],
+    [0xed, 0xab, 0x50], [0xe0, 0x74, 0x38], [0xc6, 0x45, 0x24], [0x8e, 0x25, 0x1d],
+    [0xff, 0x50, 0x00], [0xed, 0x76, 0x14], [0xff, 0xa2, 0x14], [0xff, 0xc8, 0x25],
+    [0xff, 0xeb, 0x57], [0xd3, 0xfc, 0x7e], [0x99, 0xe6, 0x5f], [0x5a, 0xc5, 0x4f],
+    [0x33, 0x98, 0x4b], [0x1e, 0x6f, 0x50], [0x0e, 0x45, 0x3a], [0x0a, 0x3c, 0x27],
+    [0x06, 0x3b, 0x36], [0x08, 0x55, 0x4a], [0x0b, 0x7a, 0x5f], [0x4b, 0x7d, 0xc8],
+    [0x32, 0x6d, 0xb3], [0x20, 0x54, 0x93], [0x14, 0x3b, 0x68], [0x0c, 0x26, 0x5e],
+    [0x09, 0x18, 0x49], [0x0f, 0x11, 0x2b], [0x2b, 0x15, 0x44], [0x48, 0x1a, 0x5e],
+    [0x75, 0x2f, 0x7e], [0xa2, 0x3e, 0x8c], [0xcf, 0x57, 0x97], [0xed, 0x8d, 0xb0],
+    [0xe8, 0xa1, 0xef], [0xc2, 0x6d, 0xef], [0xa0, 0x47, 0xd7], [0x79, 0x29, 0xb2],
+    [0x56, 0x14, 0x8d], [0x37, 0x0f, 0x61], [0x24, 0x06, 0x47], [0x0f, 0x02, 0x2b],
+];
+
+// sRGB -> CIE Lab conversion for perceptual color distance
+function rgbToLab(r, g, b) {
+    // sRGB to linear
+    let rl = r / 255, gl = g / 255, bl = b / 255;
+    rl = rl > 0.04045 ? Math.pow((rl + 0.055) / 1.055, 2.4) : rl / 12.92;
+    gl = gl > 0.04045 ? Math.pow((gl + 0.055) / 1.055, 2.4) : gl / 12.92;
+    bl = bl > 0.04045 ? Math.pow((bl + 0.055) / 1.055, 2.4) : bl / 12.92;
+    // Linear RGB to XYZ (D65)
+    let x = (rl * 0.4124564 + gl * 0.3575761 + bl * 0.1804375) / 0.95047;
+    let y = (rl * 0.2126729 + gl * 0.7151522 + bl * 0.0721750);
+    let z = (rl * 0.0193339 + gl * 0.1191920 + bl * 0.9503041) / 1.08883;
+    // XYZ to Lab
+    const f = t => t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116;
+    x = f(x); y = f(y); z = f(z);
+    return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+}
+
+// Pre-compute Lab values for the palette
+const ENDESGA64_LAB = ENDESGA64.map(([r, g, b]) => rgbToLab(r, g, b));
+
+async function remapToEndesga64(inputBuffer) {
+    const image = sharp(inputBuffer).ensureAlpha();
+    const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
+    const { width, height, channels } = info;
+
+    const out = Buffer.from(data);
+
+    for (let i = 0; i < width * height; i++) {
+        const off = i * channels;
+        const a = data[off + 3];
+        if (a < 1) continue;  // skip fully transparent
+
+        const [L, A, B] = rgbToLab(data[off], data[off + 1], data[off + 2]);
+        let bestDist = Infinity;
+        let bestIdx = 0;
+
+        for (let j = 0; j < ENDESGA64_LAB.length; j++) {
+            const dL = L - ENDESGA64_LAB[j][0];
+            const dA = A - ENDESGA64_LAB[j][1];
+            const dB = B - ENDESGA64_LAB[j][2];
+            const dist = dL * dL + dA * dA + dB * dB;
+            if (dist < bestDist) {
+                bestDist = dist;
+                bestIdx = j;
+            }
+        }
+
+        out[off]     = ENDESGA64[bestIdx][0];
+        out[off + 1] = ENDESGA64[bestIdx][1];
+        out[off + 2] = ENDESGA64[bestIdx][2];
+        // alpha unchanged
+    }
+
+    return sharp(out, { raw: { width, height, channels } }).png().toBuffer();
+}
+
+// ---------------------------------------------------------------------------
 // Full post-processing pipeline: bg remove -> trim -> scale -> canvas -> palette
 // ---------------------------------------------------------------------------
 async function processImage(inputPath, spriteKey, options = {}) {
@@ -379,8 +458,13 @@ async function processImage(inputPath, spriteKey, options = {}) {
         buf = await placeOnCanvas(buf, def.width, def.height);
     }
 
-    console.log(`  Reducing palette to ${numColors} colors...`);
-    buf = await reducePalette(buf, numColors);
+    if (options.palette === 'endesga64') {
+        console.log('  Remapping to Endesga 64 palette...');
+        buf = await remapToEndesga64(buf);
+    } else {
+        console.log(`  Reducing palette to ${numColors} colors...`);
+        buf = await reducePalette(buf, numColors);
+    }
 
     fs.mkdirSync(CONFIG.outputDir, { recursive: true });
     const outPath = path.join(CONFIG.outputDir, `${spriteKey}.png`);
@@ -437,56 +521,65 @@ async function batchProcess(dirPath) {
 // `recolor` — glow layer output color (if omitted, keeps original pixel color).
 // `litChance` — probability a detected window appears lit in glow (default 1.0).
 // `patchable` — if true, patch-base will replace these pixels with wall color.
+// Helper: match pixel against a set of exact Endesga 64 RGB values
+function _matchesColors(r, g, b, colorSet) {
+    for (let i = 0; i < colorSet.length; i++) {
+        if (r === colorSet[i][0] && g === colorSet[i][1] && b === colorSet[i][2]) return true;
+    }
+    return false;
+}
+
 const GLOW_RULES = {
     'building-modern': {
+        // Dark blue window pixels: #2a2f4e, #143b68
         isWindow: (r, g, b, a) => {
             if (a < 128) return false;
-            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-            return lum < 70;
+            return _matchesColors(r, g, b, [[42,47,78],[20,59,104]]);
         },
-        recolor: { r: 255, g: 238, b: 170 },  // #FFEEAA warm window
-        erode: 1,       // shrink detected regions by 1px → only window interiors
+        recolor: { r: 255, g: 235, b: 87 },   // #ffeb57 Endesga warm yellow
+        erode: 1,
         litChance: 1.0,
         dimAlpha: 0.3,
         dimRatio: 0.4,
     },
     'building-glass': {
+        // Bright glass panels: #4b7dc8, #326db3
         isWindow: (r, g, b, a) => {
             if (a < 128) return false;
-            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-            return lum > 200;
+            return _matchesColors(r, g, b, [[75,125,200],[50,109,179]]);
         },
-        recolor: { r: 200, g: 240, b: 255 },  // cool white-cyan glow
+        recolor: { r: 199, g: 207, b: 221 },   // #c7cfdd Endesga cool white
         erode: 0,
         litChance: 1.0,
         dimAlpha: 0.25,
         dimRatio: 0.5,
     },
     'building-apartment': {
+        // Dark window pixels: #272727, #1b1b1b
         isWindow: (r, g, b, a) => {
             if (a < 128) return false;
-            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-            return lum < 45;
+            return _matchesColors(r, g, b, [[39,39,39],[27,27,27]]);
         },
-        recolor: { r: 255, g: 220, b: 150 },  // warmer amber window
-        erode: 0,       // apartment windows are small (~2px), erosion would delete them
+        recolor: { r: 237, g: 171, b: 80 },    // #edab50 Endesga warm amber
+        erode: 0,
         litChance: 1.0,
         dimAlpha: 0.3,
         dimRatio: 0.3,
     },
     'streetlight': {
+        // Warm lamp pixels: #e69c69, #edab50, #f6ca9f, #f9e6cf
         isWindow: (r, g, b, a) => {
             if (a < 128) return false;
-            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-            return lum > 120 && r > 160 && g > 120 && (r + g) > (b * 3);
+            return _matchesColors(r, g, b, [[230,156,105],[237,171,80],[246,202,159],[249,230,207]]);
         },
         litChance: 1.0,
         patchable: false,
     },
     'namsan-tower': {
+        // Red beacon: #ff0040, plus orange accent #ffa214
         isWindow: (r, g, b, a) => {
             if (a < 128) return false;
-            return r > 180 && g < 120 && b < 120;
+            return _matchesColors(r, g, b, [[255,0,64],[255,162,20]]);
         },
         litChance: 1.0,
         patchable: false,
@@ -773,6 +866,12 @@ Usage:
   node tools/sprite-pipeline.js glow --all
       Extract glow layers for all supported sprites.
 
+  node tools/sprite-pipeline.js remap [key...] [--palette endesga64]
+      Remap existing sprite PNGs to a named palette (default: endesga64).
+
+  node tools/sprite-pipeline.js remap --all
+      Remap all sprites to the palette.
+
   node tools/sprite-pipeline.js list
       List all sprite definitions and their target sizes.
 
@@ -782,6 +881,7 @@ Glow keys:   ${GLOW_SPRITES.join(', ')}
 Options:
   --colors N      Number of palette colors (default: ${CONFIG.defaultPalette})
   --tolerance N   Background removal tolerance (default: ${CONFIG.bgTolerance})
+  --palette NAME  Use named palette instead of quantization (available: endesga64)
 `);
 }
 
@@ -794,6 +894,8 @@ function parseArgs(argv) {
             args.colors = parseInt(argv[++i], 10);
         } else if (argv[i] === '--tolerance' && argv[i + 1]) {
             args.tolerance = parseInt(argv[++i], 10);
+        } else if (argv[i] === '--palette' && argv[i + 1]) {
+            args.palette = argv[++i];
         } else if (argv[i] === '--all') {
             args.all = true;
         } else if (!argv[i].startsWith('--')) {
@@ -852,6 +954,7 @@ async function main() {
             await processImage(path.resolve(file), args.sprite, {
                 colors: args.colors,
                 tolerance: args.tolerance,
+                palette: args.palette,
             });
             break;
         }
@@ -880,6 +983,40 @@ async function main() {
                 }
             }
             await patchBases(keys);
+            break;
+        }
+
+        case 'remap': {
+            const paletteName = args.palette || 'endesga64';
+            if (paletteName !== 'endesga64') {
+                console.error(`Unknown palette: "${paletteName}". Available: endesga64`);
+                process.exit(1);
+            }
+            let keys;
+            if (args.all) {
+                keys = Object.keys(SPRITES);
+            } else {
+                keys = args._.slice(1);
+                if (keys.length === 0) {
+                    console.error('Error: Specify sprite keys or use --all.');
+                    console.error(`Available: ${Object.keys(SPRITES).join(', ')}`);
+                    process.exit(1);
+                }
+            }
+            console.log(`Remapping ${keys.length} sprite(s) to ${paletteName} palette...\n`);
+            for (const key of keys) {
+                const spritePath = path.join(CONFIG.outputDir, `${key}.png`);
+                if (!fs.existsSync(spritePath)) {
+                    console.warn(`  ${key}: not found at ${spritePath} — skipping`);
+                    continue;
+                }
+                console.log(`  Remapping: ${key}`);
+                const buf = fs.readFileSync(spritePath);
+                const remapped = await remapToEndesga64(buf);
+                fs.writeFileSync(spritePath, remapped);
+                console.log(`  -> ${spritePath}`);
+            }
+            console.log('\nRemap complete.');
             break;
         }
 

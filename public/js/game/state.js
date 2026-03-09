@@ -7,7 +7,7 @@ const STATE = {
     shake: 0,
 
     // Sky color components (tweened individually for smooth interpolation)
-    skyR: 0x87, skyG: 0xCE, skyB: 0xEB,
+    skyR: 0x4B, skyG: 0x7D, skyB: 0xC8,
 
     // Progression
     entropy: 0,
@@ -31,9 +31,9 @@ function resetState() {
     STATE.speed = 25;
     STATE.focalLength = 400;
     STATE.shake = 0;
-    STATE.skyR = 0x87;
-    STATE.skyG = 0xCE;
-    STATE.skyB = 0xEB;
+    STATE.skyR = 0x4B;
+    STATE.skyG = 0x7D;
+    STATE.skyB = 0xC8;
     STATE.entropy = 0;
     STATE.entropyRate = CONFIG.timing.entropyRate;
     STATE.phase = 'peace';

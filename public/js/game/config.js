@@ -8,39 +8,39 @@ const CONFIG = {
     },
 
     colors: {
-        // Phase-based sky colors (interpolated via GSAP)
-        skyPeace: 0x87CEEB,
-        skyTension: 0xD4A574,
-        skyCrisis: 0xCC4422,
-        skyCatastrophe: 0x1A0505,
-        skyHope: 0xFFD700,
+        // Phase-based sky colors — Endesga 64 palette
+        skyPeace: 0x4B7DC8,        // bright blue (#4b7dc8)
+        skyTension: 0xE69C69,      // warm sunset (#e69c69)
+        skyCrisis: 0xC64524,       // deep red (#c64524)
+        skyCatastrophe: 0x0E071B,  // near-black purple (#0e071b)
+        skyHope: 0xFFC825,         // golden yellow (#ffc825)
 
-        ground: 0x888888,       // asphalt gray
-        horizon: 0x666666,
-        sun: 0xFFFDE7,
+        ground: 0x5A5A5A,          // Endesga mid-gray
+        horizon: 0x3C3C3C,         // Endesga dark gray
+        sun: 0xFFEB57,             // Endesga pale yellow
 
-        // Seoul buildings
-        buildingModern: 0xCCCCCC,
-        buildingGlass: 0x88AACC,
-        buildingApartment: 0xDDCCBB,
-        buildingShadow: 0x777777,
-        windowLit: 0xFFEEAA,
-        windowDark: 0x334455,
+        // Seoul buildings — Endesga 64
+        buildingModern: 0xC7CFDD,
+        buildingGlass: 0x92A1B9,
+        buildingApartment: 0xF6CA9F,
+        buildingShadow: 0x5A5A5A,
+        windowLit: 0xFFEB57,
+        windowDark: 0x2A2F4E,
 
-        // Namsan Tower
-        towerBody: 0xBBBBBB,
-        towerShadow: 0x888888,
-        towerLight: 0xFF3333,   // red beacon light
+        // Namsan Tower — Endesga 64
+        towerBody: 0xB2B2B2,
+        towerShadow: 0x8B8B8B,
+        towerLight: 0xFF0040,      // Endesga red
 
-        // Street level
-        treeFoliage: 0x558844,
-        treeTrunk: 0x665544,
-        streetlight: 0x999999,
-        streetlightGlow: 0xFFDD88,
+        // Street level — Endesga 64
+        treeFoliage: 0x33984B,
+        treeTrunk: 0x5D2C28,
+        streetlight: 0x8B8B8B,
+        streetlightGlow: 0xEDAB50,
 
-        // Crisis objects
-        smoke: 0x444444,
-        fire: 0xFF5500,
+        // Crisis objects — Endesga 64
+        smoke: 0x3C3C3C,
+        fire: 0xFF5000,
         screenFlash: 0xFFFFFF
     },
 
@@ -90,13 +90,13 @@ const CONFIG = {
         centrifugal: 30,        // how much curve pushes camera sideways
         totalSegments: 1600,    // loop length
         fogDensity: 5,          // higher = more distant fog
-        // Color pairs [even, odd] for alternating stripe effect
+        // Color pairs [even, odd] — Endesga 64 palette
         colors: {
-            road:    [0x6B6B6B, 0x696969],
-            grass:   [0x10AA10, 0x009A00],
-            rumble:  [0xFF0000, 0xFFFFFF],
-            lane:    0xCCCCCC,
-            shoulder:[0xBB5500, 0xCC6600]
+            road:    [0x5A5A5A, 0x3C3C3C],
+            grass:   [0x5AC54F, 0x33984B],
+            rumble:  [0xFF0040, 0xFFFFFF],
+            lane:    0xC7CFDD,
+            shoulder:[0xE07438, 0xED7614]
         }
     },
 
