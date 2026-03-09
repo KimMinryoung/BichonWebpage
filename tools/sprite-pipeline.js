@@ -429,6 +429,147 @@ async function batchProcess(dirPath) {
 }
 
 // ---------------------------------------------------------------------------
+// 7. Glow extraction — extract emissive pixels from base sprites
+// ---------------------------------------------------------------------------
+
+// Per-type glow extraction rules.
+// `detect(r,g,b,a)` returns true for pixels that should glow.
+// `recolor` (optional) replaces detected pixel colors — used for buildings
+// where daytime windows are DARK but need to become bright warm glow.
+const GLOW_RULES = {
+    // Buildings: daytime sprites have dark window pixels (lum < 70).
+    // Detect them and recolor to warm yellow. Random 70% lit for realism.
+    'building-modern': {
+        detect: (r, g, b, a) => {
+            if (a < 128) return false;
+            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+            return lum < 70 && Math.random() < 0.7;
+        },
+        recolor: { r: 255, g: 238, b: 170 },  // #FFEEAA warm window
+    },
+    'building-glass': {
+        detect: (r, g, b, a) => {
+            if (a < 128) return false;
+            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+            // Glass building: bright reflective panels (lum 150+) glow cyan-white
+            return lum > 150 && Math.random() < 0.5;
+        },
+        recolor: { r: 200, g: 240, b: 255 },  // cool white-cyan glow
+    },
+    'building-apartment': {
+        detect: (r, g, b, a) => {
+            if (a < 128) return false;
+            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+            return lum < 55 && Math.random() < 0.7;
+        },
+        recolor: { r: 255, g: 220, b: 150 },  // warmer amber window
+    },
+    // Streetlight: extract the bright warm lamp pixels as-is
+    'streetlight': {
+        detect: (r, g, b, a) => {
+            if (a < 128) return false;
+            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+            return lum > 120 && r > 160 && g > 120 && (r + g) > (b * 3);
+        },
+    },
+    // Namsan tower: extract the red beacon pixels as-is
+    'namsan-tower': {
+        detect: (r, g, b, a) => {
+            if (a < 128) return false;
+            return r > 180 && g < 120 && b < 120;
+        },
+    },
+};
+
+// Sprites that have a glow layer
+const GLOW_SPRITES = Object.keys(GLOW_RULES);
+
+async function extractGlow(inputPath, spriteKey) {
+    const rule = GLOW_RULES[spriteKey];
+    if (!rule) {
+        console.error(`  No glow rule for "${spriteKey}" — skipping`);
+        return null;
+    }
+
+    const basePath = path.join(CONFIG.outputDir, `${spriteKey}.png`);
+    const srcPath = inputPath || basePath;
+
+    if (!fs.existsSync(srcPath)) {
+        console.error(`  Base sprite not found: ${srcPath} — skipping`);
+        return null;
+    }
+
+    console.log(`Extracting glow: ${spriteKey}`);
+
+    const image = sharp(srcPath).ensureAlpha();
+    const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
+    const { width, height, channels } = info;
+
+    const out = Buffer.alloc(width * height * 4); // start fully transparent
+    let kept = 0;
+    const rc = rule.recolor;
+
+    for (let i = 0; i < width * height; i++) {
+        const off = i * channels;
+        const r = data[off], g = data[off + 1], b = data[off + 2], a = data[off + 3];
+
+        if (rule.detect(r, g, b, a)) {
+            const oOff = i * 4;
+            if (rc) {
+                // Recolor to glow color (e.g. dark windows → warm yellow)
+                out[oOff] = rc.r;
+                out[oOff + 1] = rc.g;
+                out[oOff + 2] = rc.b;
+                out[oOff + 3] = a;
+            } else {
+                // Keep original color (e.g. red beacon stays red)
+                out[oOff] = r;
+                out[oOff + 1] = g;
+                out[oOff + 2] = b;
+                out[oOff + 3] = a;
+            }
+            kept++;
+        }
+    }
+
+    const total = width * height;
+    const pct = ((kept / total) * 100).toFixed(1);
+    console.log(`  ${kept}/${total} pixels kept (${pct}%)`);
+
+    if (kept === 0) {
+        console.warn(`  Warning: no glowing pixels found! Check the glow rule for ${spriteKey}.`);
+        return null;
+    }
+
+    const glowBuf = await sharp(out, { raw: { width, height, channels: 4 } })
+        .png()
+        .toBuffer();
+
+    const outKey = `${spriteKey}-glow`;
+    const outPath = path.join(CONFIG.outputDir, `${outKey}.png`);
+    fs.writeFileSync(outPath, glowBuf);
+    console.log(`  Output: ${outPath} (${width}x${height})\n`);
+
+    return outPath;
+}
+
+async function generateGlows(keys) {
+    console.log(`Extracting glow layers for ${keys.length} sprite(s)...\n`);
+
+    let success = 0;
+    for (const key of keys) {
+        const result = await extractGlow(null, key);
+        if (result) success++;
+    }
+
+    console.log('='.repeat(50));
+    console.log(`Glow extraction complete: ${success}/${keys.length} glow layers created.`);
+    if (success > 0) {
+        console.log(`Output: ${CONFIG.outputDir}/`);
+    }
+}
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 function sleep(ms) {
@@ -457,10 +598,17 @@ Usage:
   node tools/sprite-pipeline.js batch <directory>
       Post-process all PNGs in a directory. Files named <sprite-key>.png.
 
+  node tools/sprite-pipeline.js glow [key...]
+      Extract glow layers from existing base sprites (bright/warm pixels only).
+
+  node tools/sprite-pipeline.js glow --all
+      Extract glow layers for all supported sprites.
+
   node tools/sprite-pipeline.js list
       List all sprite definitions and their target sizes.
 
 Sprite keys: ${Object.keys(SPRITES).join(', ')}
+Glow keys:   ${GLOW_SPRITES.join(', ')}
 
 Options:
   --colors N      Number of palette colors (default: ${CONFIG.defaultPalette})
@@ -547,6 +695,22 @@ async function main() {
                 process.exit(1);
             }
             await batchProcess(dir);
+            break;
+        }
+
+        case 'glow': {
+            let keys;
+            if (args.all) {
+                keys = GLOW_SPRITES;
+            } else {
+                keys = args._.slice(1);
+                if (keys.length === 0) {
+                    console.error('Error: Specify sprite keys or use --all.');
+                    console.error(`Available glow keys: ${GLOW_SPRITES.join(', ')}`);
+                    process.exit(1);
+                }
+            }
+            await generateGlows(keys);
             break;
         }
 
