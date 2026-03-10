@@ -38,6 +38,7 @@ const STATE = {
     curveDelta: 0,
 
     // Camera
+    cameraElevation: 0,     // smoothed road elevation the camera sits on
     cameraRoll: 0,          // bank into curves (radians)
 
     // AI light beam
@@ -84,6 +85,7 @@ function resetState() {
     STATE.roadPosition = 0;
     STATE.playerX = 0;
     STATE.curveDelta = 0;
+    STATE.cameraElevation = 0;
     STATE.cameraRoll = 0;
     STATE.aiBeamAlpha = 0.6;
     STATE.aiBeamWidth = 1.0;

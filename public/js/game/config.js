@@ -156,12 +156,15 @@ const CONFIG = {
         totalSegments: 1600,
         fogDensity: 5,
 
+        // Hill physics
+        hill: {
+            cameraFollow: 0.15      // how quickly camera elevation tracks road (0-1)
+        },
+
         // Curve camera: train follows track, roll provides banking feel
         curve: {
             rollScale: 0.05,        // bank angle (radians per unit curve)
             rollSmoothing: 0.10,    // responsive banking
-            yawScale: 180,          // vanishing point shift into curve (pixels)
-            yawSmoothing: 0.12,     // responsive look-ahead
         },
 
         // Default colors (overridden per-act by getRoadColors())

@@ -1,6 +1,8 @@
 // Pseudo-3D track system (Slipstream style).
 // Camera rides the front of a train — follows the track like a roller coaster.
-// No lateral drift. Camera yaw follows track direction via look-ahead dx.
+// Curves: look-ahead yaw shifts vanishing point so mid-distance road stays centered.
+// Hills: each segment has a Y elevation; camera tracks the surface, creating
+//        visible slopes, crests, and valleys purely through projection math.
 // Camera roll provides banking feel on curves.
 
 let segments = [];
@@ -28,34 +30,60 @@ const Road = {
 
         trackLength = total * segLen;
 
-        // ── Track layout: curves only (no hills) ──
+        // ═══════════════════════════════════════════
+        //  Track layout: curves + hills interleaved
+        // ═══════════════════════════════════════════
 
-        // Act 1: Gentle introduction
+        // Act 1: Gentle introduction — ease the player in
         this._addCurve(30, 60, 0.5);
+        this._addHill(40, 80, 1200);           // gradual climb
         this._addCurve(100, 80, -0.8);
+        this._addHill(120, 60, -800);          // descent into valley
 
-        // Act 2: Acceleration
+        // Act 2: Acceleration — bigger features
+        this._addHill(200, 100, 2000);         // long sustained climb
         this._addCurve(200, 120, 1.2);
+        this._addHill(310, 50, -1800);         // steep plunge off the summit
         this._addCurve(340, 60, -0.8);
+        this._addHill(370, 40, 800);           // quick crest
+        this._addHill(415, 35, -700);          // quick dip
         this._addCurve(400, 70, 1.0);
         this._addCurve(450, 90, -1.5);
+        this._addHill(460, 80, 1500);          // climb into Act 3
 
-        // Act 3: Chaotic
+        // Act 3: Chaotic — dramatic terrain
         this._addCurve(540, 50, 1.4);
+        this._addHill(550, 60, -2500);         // stomach-dropping plunge
         this._addCurve(620, 50, -0.6);
+        this._addHill(630, 30, 1000);          // quick crest
+        this._addHill(665, 25, -900);          // sharp dip
         this._addCurve(690, 80, -0.8);
+        this._addHill(700, 100, 2200);         // big roller-coaster climb
         this._addCurve(780, 100, 1.6);
+        this._addHill(810, 50, -2000);         // huge drop
+        // Washboard hills
+        this._addHill(870, 20, 600);
+        this._addHill(895, 20, -700);
+        this._addHill(920, 20, 600);
         this._addCurve(920, 50, -1.8);
+        this._addHill(950, 60, -1200);         // valley before Act 4
 
-        // Act 4: Eerie
+        // Act 4: Eerie — gentle undulation
         this._addCurve(1020, 50, 0.6);
+        this._addHill(1030, 80, 800);          // slow rise
         this._addCurve(1080, 60, -0.8);
+        this._addHill(1110, 60, -600);         // gentle descent
         this._addCurve(1150, 40, 0.5);
+        this._addHill(1180, 50, 500);          // undulation
+        this._addHill(1235, 40, -400);
         this._addCurve(1250, 70, -0.7);
 
-        // Act 5: Finale
+        // Act 5: Finale — grand climb and plunge
+        this._addHill(1350, 120, 3000);        // tallest hill on track
         this._addCurve(1410, 100, 1.3);
+        this._addHill(1480, 70, -2800);        // massive final drop
         this._addCurve(1530, 60, -0.9);
+        this._addHill(1555, 40, 600);          // gentle rise back to baseline
     },
 
     _addCurve(startIdx, length, intensity) {
@@ -65,18 +93,28 @@ const Road = {
         }
     },
 
+    _addHill(startIdx, length, height) {
+        for (let i = startIdx; i < startIdx + length && i < segments.length; i++) {
+            const t = (i - startIdx) / length;
+            segments[i].y += height * Math.sin(t * Math.PI);
+        }
+    },
+
     // Project all visible segments from camera position.
     project(screenW, screenH) {
         const segLen = CONFIG.road.segmentLength;
         const total = segments.length;
         const cameraDepth = CONFIG.road.cameraDepth;
-        const cameraH = CONFIG.road.cameraHeight;
+        const baseCameraH = CONFIG.road.cameraHeight;
+
+        // Camera sits on the road surface + cameraHeight above it
+        const cameraY = baseCameraH + STATE.cameraElevation;
 
         const baseIdx = Math.floor(STATE.roadPosition / segLen);
         const visible = CONFIG.road.visibleSegments;
 
         // ── Look-ahead yaw: accumulate curve dx for next N segments ──
-        // This shifts the vanishing point so the road at look-ahead distance
+        // Shifts the vanishing point so the road at look-ahead distance
         // stays centered, giving the effect of the camera rotating into curves.
         const yawLookDist = 40;
         let yawDx = 0;
@@ -104,10 +142,16 @@ const Road = {
 
             const scale = cameraDepth / worldZ;
 
-            // Vanishing point shifted by look-ahead so mid-distance road stays centered.
-            // Near segments barely move; far segments show the curve ahead.
+            // X: vanishing point shifted by look-ahead yaw
             const projX = vanishX + scale * (-dx) * screenW / 2;
-            const projY = (screenH / 2) + scale * cameraH * screenH / 2;
+
+            // Y: camera rides the road surface.
+            // cameraY - seg.y = height difference between camera and this segment.
+            // Positive = camera above segment = segment below horizon = larger projY.
+            // When approaching a hill, distant segments have higher seg.y → they
+            // appear above the nearby road → visible upward slope.
+            const projY = (screenH / 2) + scale * (cameraY - seg.y) * screenH / 2;
+
             const projW = scale * CONFIG.road.roadWidth * screenW / 2;
 
             seg.screen.x = projX;
@@ -117,6 +161,8 @@ const Road = {
 
             const fogT = Math.min(1, n / (visible * 0.7));
 
+            // Hill clipping: if a segment is below a closer hill crest on screen,
+            // it's hidden behind the crest.
             let clip = false;
             if (projY < clipY) {
                 clipY = projY;
@@ -132,7 +178,7 @@ const Road = {
                 w: projW,
                 scale: scale,
                 curve: seg.curve,
-                elevation: 0,
+                elevation: seg.y,
                 fog: fogT,
                 clip: clip
             });
@@ -161,6 +207,10 @@ const Road = {
         // Curve handling — train on rails
         STATE.curveDelta = seg.curve;
         STATE.playerX = 0;
+
+        // Camera elevation: smoothly follow the road surface
+        const followRate = CONFIG.road.hill.cameraFollow;
+        STATE.cameraElevation += (seg.y - STATE.cameraElevation) * followRate;
 
         // Camera roll: bank into curves
         const curveConf = CONFIG.road.curve;
