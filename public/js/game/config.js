@@ -163,8 +163,8 @@ const CONFIG = {
 
         // Curve camera: train follows track, roll provides banking feel
         curve: {
-            rollScale: 0.05,        // bank angle (radians per unit curve)
-            rollSmoothing: 0.10,    // responsive banking
+            rollScale: 0.12,        // bank angle (radians per unit curve) — ~12° max
+            rollSmoothing: 0.08,    // smooth banking with slight lag
         },
 
         // Default colors (overridden per-act by getRoadColors())

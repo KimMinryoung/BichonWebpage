@@ -113,20 +113,13 @@ const Road = {
         const baseIdx = Math.floor(STATE.roadPosition / segLen);
         const visible = CONFIG.road.visibleSegments;
 
-        // ── Look-ahead yaw: accumulate curve dx for next N segments ──
-        // Shifts the vanishing point so the road at look-ahead distance
-        // stays centered, giving the effect of the camera rotating into curves.
-        const yawLookDist = 40;
-        let yawDx = 0;
-        for (let n = 0; n < yawLookDist; n++) {
-            const lIdx = (baseIdx + n) % total;
-            yawDx += segments[lIdx].curve * segLen;
-        }
-        const yawZ = yawLookDist * segLen;
-        const yawScale = cameraDepth / yawZ;
-        const vanishX = (screenW / 2) + yawScale * yawDx * screenW / 2;
+        // ── First-person on-rails: no look-ahead yaw ──
+        // Camera faces the track tangent at the current position.
+        // Road directly ahead is always centered; curves appear in the distance.
+        const vanishX = screenW / 2;
 
-        let dx = 0;
+        let dx = 0;       // curve rate accumulator
+        let x = 0;        // curve position accumulator (double integral)
         let clipY = screenH;
 
         const projected = [];
@@ -138,12 +131,15 @@ const Road = {
             const worldZ = (n * segLen) - (STATE.roadPosition % segLen);
             if (worldZ < 10) continue;
 
-            dx += seg.curve * segLen;
+            x += dx;
+            dx += seg.curve;
 
             const scale = cameraDepth / worldZ;
 
-            // X: vanishing point shifted by look-ahead yaw
-            const projX = vanishX + scale * (-dx) * screenW / 2;
+            // X: first-person — near road centered, far road curves away.
+            // +x because camera faces track tangent: positive curve (right turn)
+            // → x grows positive → far segments appear to the right.
+            const projX = vanishX + scale * x * screenW / 2;
 
             // Y: camera rides the road surface.
             // cameraY - seg.y = height difference between camera and this segment.
@@ -184,7 +180,7 @@ const Road = {
             });
         }
 
-        projected.horizonDx = dx;
+        projected.horizonDx = x;
         projected.horizonZ = visible * segLen;
 
         return projected;
