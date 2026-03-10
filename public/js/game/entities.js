@@ -11,9 +11,9 @@ const bgList = [];
 const ENTITY_SCALE = {
     building: 8,
     tower: 4,
-    tree: 1.6,
-    streetlight: 1.6,
-    cloud: 2
+    tree: 5,
+    streetlight: 4,
+    cloud: 5
 };
 
 const PLACEMENT = {

@@ -87,7 +87,7 @@ const Renderer = {
         if (sunTex) {
             sunSprite = new PIXI.Sprite(sunTex);
             sunSprite.anchor.set(0.5, 0.5);
-            sunSprite.scale.set(0.5);
+            sunSprite.scale.set(2.0);
         } else {
             sunSprite = new PIXI.Graphics();
             sunSprite.beginFill(0xe6c86e);
