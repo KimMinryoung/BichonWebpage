@@ -1,16 +1,14 @@
-// Visual event system: animates in-world objects to represent crisis situations.
-// Instead of drawing separate overlay panels, events manipulate existing game
-// entities (buildings, streetlights, road) and the glow layer directly.
+// Visual event system for Babel Express.
+// 6 events: naming, seaOfFire, fallOfEden, commands, shadowLegion, unnamedGeneration.
+// Events manipulate in-world entities and overlays directly.
 
-let eventLayer;             // lightweight container for road-level overlays (cracks, etc.)
-let activeEvent = null;     // tracks current event state for cleanup
+let eventLayer;
+let activeEvent = null;
 
 const Events = {
     init() {
-        // Thin overlay layer for road-surface effects (cracks, glow flashes)
-        // Sits just above road graphics in the camera
         eventLayer = new PIXI.Container();
-        eventLayer.zIndex = -4999;  // just above roadGfx (-5000)
+        eventLayer.zIndex = -4999;
         Renderer.getCamera().addChild(eventLayer);
     },
 
@@ -39,15 +37,10 @@ const Events = {
 
     clear() {
         if (activeEvent) {
-            // Kill all tracked tweens
             activeEvent.tweens.forEach(t => { if (t && t.kill) t.kill(); });
-
-            // Restore any modified entities
             _restoreEntities(activeEvent);
-
             activeEvent = null;
         }
-        // Clear road-surface overlays
         while (eventLayer.children.length > 0) {
             const child = eventLayer.children[0];
             gsap.killTweensOf(child);
@@ -61,7 +54,6 @@ const Events = {
     }
 };
 
-// Restore entity sprites to their normal state after an event ends
 function _restoreEntities(ev) {
     const entities = ev.data.affectedEntities || [];
     entities.forEach(e => {
@@ -83,233 +75,388 @@ function _restoreEntities(ev) {
     });
 }
 
-// Helper: get visible entities near the camera (road-anchored)
 function _getVisibleEntities(type) {
     const list = Entities.getList();
     return list.filter(e => e.sprite.visible && (!type || e.type === type));
 }
 
-// Helper: delayed clear with fade
 function _delayedClear(ev, delay) {
     const t = gsap.delayedCall(delay, () => Events.clear());
     ev.tweens.push(t);
 }
 
-// ── Event visual builders ──────────────────────────────────────────
+// ── Event visual builders ──
 
 const EVENT_BUILDERS = {
 
-    // ── Event 1: Cracking bridge → road crack overlay + shake ──
-    bridge: {
+    // ── Event 1: The Naming — AI beam splits into two ──
+    naming: {
         create(ev) {
             const app = Renderer.getApp();
             const sw = app.screen.width;
             const sh = app.screen.height;
 
-            // Draw cracks on the road surface (centered, lower third of screen)
-            const cracks = new PIXI.Graphics();
-            cracks.lineStyle(3, 0x222222);
-            // Main crack zigzag
-            const cx = sw * 0.5, cy = sh * 0.7;
-            cracks.moveTo(cx - 60, cy - 15);
-            cracks.lineTo(cx - 20, cy + 5);
-            cracks.lineTo(cx + 10, cy - 8);
-            cracks.lineTo(cx + 50, cy + 18);
-            // Branch cracks
-            cracks.moveTo(cx - 20, cy + 5);
-            cracks.lineTo(cx - 40, cy + 25);
-            cracks.moveTo(cx + 10, cy - 8);
-            cracks.lineTo(cx + 30, cy - 28);
-            cracks.alpha = 0;
-            eventLayer.addChild(cracks);
-            ev.data.cracks = cracks;
+            // Shield silhouette (left)
+            const shield = new PIXI.Graphics();
+            shield.beginFill(0x00b8d8, 0.5);
+            shield.moveTo(0, -20);
+            shield.lineTo(15, -10);
+            shield.lineTo(15, 15);
+            shield.lineTo(0, 25);
+            shield.lineTo(-15, 15);
+            shield.lineTo(-15, -10);
+            shield.closePath();
+            shield.endFill();
+            shield.x = sw * 0.35;
+            shield.y = sh * 0.35;
+            shield.alpha = 0;
+            shield.scale.set(2);
+            eventLayer.addChild(shield);
+            ev.data.shield = shield;
 
-            // Danger tint on road area
-            const dangerOverlay = new PIXI.Graphics();
-            dangerOverlay.beginFill(0xFF4400, 0.08);
-            dangerOverlay.drawRect(sw * 0.2, sh * 0.55, sw * 0.6, sh * 0.4);
-            dangerOverlay.endFill();
-            dangerOverlay.alpha = 0;
-            eventLayer.addChild(dangerOverlay);
-            ev.data.dangerOverlay = dangerOverlay;
+            // Sword silhouette (right)
+            const sword = new PIXI.Graphics();
+            sword.beginFill(0xc41e1e, 0.5);
+            sword.drawRect(-2, -25, 4, 50);
+            sword.drawRect(-8, -25, 16, 4);
+            sword.endFill();
+            sword.x = sw * 0.65;
+            sword.y = sh * 0.35;
+            sword.alpha = 0;
+            sword.scale.set(2);
+            eventLayer.addChild(sword);
+            ev.data.sword = sword;
+
+            // Split beam effect
+            const beamSplit = new PIXI.Graphics();
+            beamSplit.beginFill(0x00b8d8, 0.2);
+            beamSplit.moveTo(sw * 0.5, sh * 0.6);
+            beamSplit.lineTo(sw * 0.3, sh * 0.25);
+            beamSplit.lineTo(sw * 0.35, sh * 0.25);
+            beamSplit.lineTo(sw * 0.5, sh * 0.55);
+            beamSplit.endFill();
+            beamSplit.beginFill(0xc41e1e, 0.2);
+            beamSplit.moveTo(sw * 0.5, sh * 0.6);
+            beamSplit.lineTo(sw * 0.65, sh * 0.25);
+            beamSplit.lineTo(sw * 0.7, sh * 0.25);
+            beamSplit.lineTo(sw * 0.5, sh * 0.55);
+            beamSplit.endFill();
+            beamSplit.alpha = 0;
+            beamSplit.blendMode = PIXI.BLEND_MODES.ADD;
+            eventLayer.addChild(beamSplit);
+            ev.data.beamSplit = beamSplit;
         },
 
         animate(ev) {
-            // Cracks appear
-            ev.tweens.push(gsap.to(ev.data.cracks, { alpha: 1, duration: 1, ease: 'power2.in' }));
-            ev.tweens.push(gsap.to(ev.data.dangerOverlay, { alpha: 1, duration: 0.8 }));
-
-            // Intensify shake
-            ev.data.prevShake = STATE.shake;
-            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 6, duration: 0.5 }));
+            ev.tweens.push(gsap.to(ev.data.shield, { alpha: 1, duration: 1.5, ease: 'power2.out' }));
+            ev.tweens.push(gsap.to(ev.data.sword, { alpha: 1, duration: 1.5, ease: 'power2.out' }));
+            ev.tweens.push(gsap.to(ev.data.beamSplit, { alpha: 1, duration: 2, ease: 'power2.out' }));
+            // Slight pulsing
+            ev.tweens.push(gsap.to(ev.data.shield, { alpha: 0.6, duration: 1, yoyo: true, repeat: -1 }));
+            ev.tweens.push(gsap.to(ev.data.sword, { alpha: 0.6, duration: 1, yoyo: true, repeat: -1, delay: 0.5 }));
         },
 
         resolve(ev, correct) {
             if (correct) {
-                // Cracks seal: fade out, green flash, shake calms
-                ev.tweens.push(gsap.to(ev.data.cracks, { alpha: 0, duration: 0.8 }));
-                ev.tweens.push(gsap.to(ev.data.dangerOverlay, { alpha: 0, duration: 0.5 }));
-
-                // Green flash on road
+                // Shield chosen — beam re-merges
+                ev.tweens.push(gsap.to(ev.data.sword, { alpha: 0, duration: 0.5 }));
+                ev.tweens.push(gsap.to(ev.data.shield, { alpha: 0, duration: 1, delay: 0.5 }));
+                ev.tweens.push(gsap.to(ev.data.beamSplit, { alpha: 0, duration: 1 }));
+                // Calming flash
                 const app = Renderer.getApp();
-                const sw = app.screen.width, sh = app.screen.height;
                 const glow = new PIXI.Graphics();
-                glow.beginFill(0x44FF88, 0.2);
-                glow.drawRect(sw * 0.15, sh * 0.5, sw * 0.7, sh * 0.45);
+                glow.beginFill(0x00b8d8, 0.15);
+                glow.drawRect(0, 0, app.screen.width, app.screen.height);
                 glow.endFill();
+                glow.blendMode = PIXI.BLEND_MODES.ADD;
                 eventLayer.addChild(glow);
-                ev.tweens.push(gsap.to(glow, { alpha: 0, duration: 1.5 }));
-
-                if (ev.data.prevShake != null) {
-                    ev.tweens.push(gsap.to(STATE, { shake: ev.data.prevShake, duration: 0.5 }));
-                }
-                _delayedClear(ev, 2);
+                ev.tweens.push(gsap.to(glow, { alpha: 0, duration: 2 }));
             } else {
-                // Road breaks: cracks widen, debris flies up
-                ev.tweens.push(gsap.to(ev.data.cracks, {
-                    'scale.x': 1.5, 'scale.y': 1.5, alpha: 0.5, duration: 0.8
-                }));
-                const app = Renderer.getApp();
-                const sw = app.screen.width, sh = app.screen.height;
-                for (let i = 0; i < 10; i++) {
-                    const debris = new PIXI.Graphics();
-                    debris.beginFill(0x666666);
-                    debris.drawRect(-3, -3, 6, 6);
-                    debris.endFill();
-                    debris.x = sw * 0.5 + (Math.random() - 0.5) * sw * 0.3;
-                    debris.y = sh * 0.7;
-                    eventLayer.addChild(debris);
-                    ev.tweens.push(gsap.to(debris, {
-                        x: debris.x + (Math.random() - 0.5) * 100,
-                        y: debris.y - 40 - Math.random() * 60,
-                        alpha: 0,
-                        rotation: Math.random() * 4,
-                        duration: 0.6 + Math.random() * 0.4,
-                        ease: 'power2.out'
-                    }));
-                }
-                _delayedClear(ev, 2.5);
+                // Sword or neither — beam shudders
+                ev.tweens.push(gsap.to(ev.data.beamSplit, { alpha: 0, duration: 1 }));
+                ev.tweens.push(gsap.to(ev.data.shield, { alpha: 0, duration: 0.5 }));
+                ev.tweens.push(gsap.to(ev.data.sword, { alpha: 0, duration: 0.5 }));
+                ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 4, duration: 0.3, yoyo: true, repeat: 1 }));
             }
+            _delayedClear(ev, 2.5);
         }
     },
 
-    // ── Event 2: Earthquake → visible buildings sway ──
-    quake: {
+    // ── Event 2: Sea of Fire — horizon burns, ocean turns red ──
+    seaOfFire: {
         create(ev) {
-            // Grab all visible buildings and make them sway
-            const buildings = _getVisibleEntities('building');
-            ev.data.affectedEntities = buildings;
+            const app = Renderer.getApp();
+            const sw = app.screen.width;
+            const sh = app.screen.height;
+
+            // Burning horizon overlay
+            const fireOverlay = new PIXI.Graphics();
+            fireOverlay.beginFill(0xc41e1e, 0.15);
+            fireOverlay.drawRect(0, 0, sw, sh);
+            fireOverlay.endFill();
+            fireOverlay.alpha = 0;
+            eventLayer.addChild(fireOverlay);
+            ev.data.fireOverlay = fireOverlay;
+
+            // Smoke columns
+            ev.data.smokeColumns = [];
+            for (let i = 0; i < 5; i++) {
+                const smoke = new PIXI.Graphics();
+                smoke.beginFill(0x2a1018, 0.6);
+                const x = sw * (0.15 + i * 0.18);
+                const w = 8 + Math.random() * 12;
+                smoke.drawRect(-w / 2, -60, w, 60);
+                smoke.endFill();
+                smoke.x = x;
+                smoke.y = sh * 0.45;
+                smoke.alpha = 0;
+                eventLayer.addChild(smoke);
+                ev.data.smokeColumns.push(smoke);
+            }
+
+            // Flash on horizon
+            const horizonFlash = new PIXI.Graphics();
+            horizonFlash.beginFill(0xffa020, 0.4);
+            horizonFlash.drawRect(0, sh * 0.35, sw, sh * 0.1);
+            horizonFlash.endFill();
+            horizonFlash.alpha = 0;
+            horizonFlash.blendMode = PIXI.BLEND_MODES.ADD;
+            eventLayer.addChild(horizonFlash);
+            ev.data.horizonFlash = horizonFlash;
+
             ev.data.prevShake = STATE.shake;
         },
 
         animate(ev) {
-            // Buildings oscillate
-            ev.data.affectedEntities.forEach(e => {
-                const t = gsap.to(e.sprite, {
-                    rotation: 0.04,
-                    duration: 0.25 + Math.random() * 0.15,
-                    yoyo: true, repeat: -1,
-                    ease: 'sine.inOut',
-                    delay: Math.random() * 0.2
-                });
-                ev.tweens.push(t);
-                // Sync glow sprite rotation
-                if (e.glowSprite) {
-                    const tg = gsap.to(e.glowSprite, {
-                        rotation: 0.04,
-                        duration: 0.25 + Math.random() * 0.15,
-                        yoyo: true, repeat: -1,
-                        ease: 'sine.inOut',
-                        delay: Math.random() * 0.2
-                    });
-                    ev.tweens.push(tg);
-                }
+            // Horizon explosion flash
+            ev.tweens.push(gsap.to(ev.data.horizonFlash, { alpha: 1, duration: 0.3, yoyo: true, repeat: 2 }));
+
+            // Red tint washes over screen
+            ev.tweens.push(gsap.to(ev.data.fireOverlay, { alpha: 1, duration: 2, delay: 0.5 }));
+
+            // Smoke rises
+            ev.data.smokeColumns.forEach((s, i) => {
+                ev.tweens.push(gsap.to(s, {
+                    alpha: 0.8,
+                    y: s.y - 40 - Math.random() * 30,
+                    duration: 2 + Math.random(),
+                    delay: 0.3 + i * 0.2,
+                    ease: 'power2.out'
+                }));
             });
 
-            // Heavy shake
-            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 12, duration: 0.5 }));
-
-            // Ground crack lines on road
-            const app = Renderer.getApp();
-            const sw = app.screen.width, sh = app.screen.height;
-            const crack = new PIXI.Graphics();
-            crack.lineStyle(2, 0x444444);
-            crack.moveTo(sw * 0.15, sh * 0.75);
-            crack.lineTo(sw * 0.35, sh * 0.73);
-            crack.lineTo(sw * 0.5, sh * 0.76);
-            crack.lineTo(sw * 0.7, sh * 0.72);
-            crack.lineTo(sw * 0.85, sh * 0.74);
-            crack.alpha = 0;
-            eventLayer.addChild(crack);
-            ev.data.crack = crack;
-            ev.tweens.push(gsap.to(crack, { alpha: 1, duration: 1.5 }));
+            // Shake
+            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 5, duration: 0.5 }));
         },
 
         resolve(ev, correct) {
+            ev.tweens.push(gsap.to(ev.data.fireOverlay, { alpha: 0, duration: 1.5 }));
+            ev.data.smokeColumns.forEach(s => {
+                ev.tweens.push(gsap.to(s, { alpha: 0, duration: 1 }));
+            });
             if (correct) {
-                // Buildings stabilize
-                ev.data.affectedEntities.forEach(e => {
-                    gsap.killTweensOf(e.sprite);
-                    ev.tweens.push(gsap.to(e.sprite, { rotation: 0, duration: 0.5 }));
-                    if (e.glowSprite) {
-                        gsap.killTweensOf(e.glowSprite);
-                        ev.tweens.push(gsap.to(e.glowSprite, { rotation: 0, duration: 0.5 }));
-                    }
-                });
-                // Shake returns
-                if (ev.data.prevShake != null) {
-                    ev.tweens.push(gsap.to(STATE, { shake: ev.data.prevShake, duration: 0.8 }));
-                }
-                // Green flash
+                // New light appears below
                 const app = Renderer.getApp();
-                const flash = new PIXI.Graphics();
-                flash.beginFill(0x44FF88, 0.15);
-                flash.drawRect(0, 0, app.screen.width, app.screen.height);
-                flash.endFill();
-                eventLayer.addChild(flash);
-                ev.tweens.push(gsap.to(flash, { alpha: 0, duration: 2 }));
-
-                _delayedClear(ev, 2.5);
-            } else {
-                // Some buildings tilt and darken (collapse)
-                const toCollapse = ev.data.affectedEntities.slice(0, 3);
-                toCollapse.forEach(e => {
-                    gsap.killTweensOf(e.sprite);
-                    const dir = e.roadOffset > 0 ? 1 : -1;
-                    ev.tweens.push(gsap.to(e.sprite, {
-                        rotation: dir * 0.25,
-                        alpha: 0.3,
-                        duration: 1.2,
-                        ease: 'power2.in'
-                    }));
-                    e.sprite.tint = 0x666666;
-                    if (e.glowSprite) {
-                        gsap.killTweensOf(e.glowSprite);
-                        ev.tweens.push(gsap.to(e.glowSprite, { alpha: 0, duration: 0.8 }));
-                    }
-                });
-                // Dust cloud on road
-                const app = Renderer.getApp();
-                const sw = app.screen.width, sh = app.screen.height;
-                const dust = new PIXI.Graphics();
-                dust.beginFill(0xAA9988, 0.4);
-                dust.drawEllipse(sw * 0.5, sh * 0.72, sw * 0.25, 20);
-                dust.endFill();
-                dust.alpha = 0;
-                eventLayer.addChild(dust);
-                ev.tweens.push(gsap.to(dust.scale, { x: 2, y: 1.5, duration: 1, delay: 0.5 }));
-                ev.tweens.push(gsap.to(dust, { alpha: 1, duration: 0.8, delay: 0.5 }));
-                ev.tweens.push(gsap.to(dust, { alpha: 0, duration: 1, delay: 2 }));
-
-                _delayedClear(ev, 3.5);
+                const glow = new PIXI.Graphics();
+                glow.beginFill(0x00b8d8, 0.1);
+                glow.drawRect(0, app.screen.height * 0.6, app.screen.width, app.screen.height * 0.4);
+                glow.endFill();
+                glow.blendMode = PIXI.BLEND_MODES.ADD;
+                eventLayer.addChild(glow);
+                ev.tweens.push(gsap.to(glow, { alpha: 0, duration: 2 }));
             }
+            if (ev.data.prevShake != null) {
+                ev.tweens.push(gsap.to(STATE, { shake: ev.data.prevShake, duration: 1 }));
+            }
+            _delayedClear(ev, 3);
         }
     },
 
-    // ── Event 3: Blackout → glow sprites flicker and die ──
-    blackout: {
+    // ── Event 3: Fall of Eden — PASSIVE, player watches helplessly ──
+    fallOfEden: {
         create(ev) {
-            // Gather all entities that have glow sprites
+            const app = Renderer.getApp();
+            const sw = app.screen.width;
+            const sh = app.screen.height;
+
+            // Chaos overlay — flickering lights, collapsing pixels
+            const chaosOverlay = new PIXI.Graphics();
+            chaosOverlay.alpha = 0;
+            eventLayer.addChild(chaosOverlay);
+            ev.data.chaosOverlay = chaosOverlay;
+
+            // Falling pixel debris
+            ev.data.debris = [];
+            for (let i = 0; i < 30; i++) {
+                const px = new PIXI.Graphics();
+                const c = Math.random() > 0.5 ? 0xc43020 : 0x5a1a20;
+                px.beginFill(c);
+                px.drawRect(-2, -2, 4, 4);
+                px.endFill();
+                px.x = Math.random() * sw;
+                px.y = sh * 0.3 + Math.random() * sh * 0.3;
+                px.alpha = 0;
+                eventLayer.addChild(px);
+                ev.data.debris.push(px);
+            }
+
+            // Buildings sway
+            const buildings = _getVisibleEntities('building');
+            ev.data.affectedEntities = buildings;
+        },
+
+        animate(ev) {
+            // Show debris falling
+            ev.data.debris.forEach((px, i) => {
+                ev.tweens.push(gsap.to(px, {
+                    alpha: 0.8,
+                    y: px.y + 50 + Math.random() * 60,
+                    rotation: Math.random() * 3,
+                    duration: 1.5 + Math.random(),
+                    delay: Math.random() * 2,
+                    ease: 'power2.in'
+                }));
+                ev.tweens.push(gsap.to(px, { alpha: 0, duration: 0.5, delay: 2.5 + Math.random() }));
+            });
+
+            // Buildings sway
+            ev.data.affectedEntities.forEach(e => {
+                ev.tweens.push(gsap.to(e.sprite, {
+                    rotation: 0.03, duration: 0.3, yoyo: true, repeat: 6,
+                    ease: 'sine.inOut', delay: Math.random() * 0.5
+                }));
+            });
+
+            // Shake
+            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 8, duration: 0.5 }));
+            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake, duration: 1, delay: 3.5 }));
+
+            // Show narrative text
+            const lang = document.documentElement.lang === 'ko' ? 'ko' : 'en';
+            const text = SCENE_I18N[lang].fallOfEden.narrative;
+            Timeline.showNarrative(text, 4000);
+
+            // Auto-clear after visual plays out
+            _delayedClear(ev, 5);
+        },
+
+        resolve(ev, correct) {
+            // Passive — already auto-clearing
+            _delayedClear(ev, 1);
+        }
+    },
+
+    // ── Event 4: Commands to the Tower — screen splits into three ──
+    commands: {
+        create(ev) {
+            const app = Renderer.getApp();
+            const sw = app.screen.width;
+            const sh = app.screen.height;
+
+            // Three colored vertical beams
+            const beams = [
+                { color: 0x556b2f, x: sw * 0.2,  label: 'pentagon' },    // olive/military
+                { color: 0x00c0d8, x: sw * 0.5,  label: 'server' },      // cyan/AI
+                { color: 0x8b1a1a, x: sw * 0.8,  label: 'red' }          // red/China
+            ];
+
+            ev.data.beamGfx = [];
+            beams.forEach(b => {
+                const gfx = new PIXI.Graphics();
+                gfx.beginFill(b.color, 0.3);
+                gfx.drawRect(-20, -sh * 0.3, 40, sh * 0.6);
+                gfx.endFill();
+                gfx.x = b.x;
+                gfx.y = sh * 0.5;
+                gfx.alpha = 0;
+                gfx.blendMode = PIXI.BLEND_MODES.ADD;
+                eventLayer.addChild(gfx);
+                ev.data.beamGfx.push(gfx);
+            });
+
+            // Intertwining lines between beams
+            const lines = new PIXI.Graphics();
+            lines.lineStyle(2, 0xffffff, 0.15);
+            lines.moveTo(sw * 0.2, sh * 0.4);
+            lines.lineTo(sw * 0.5, sh * 0.45);
+            lines.lineTo(sw * 0.8, sh * 0.4);
+            lines.moveTo(sw * 0.5, sh * 0.45);
+            lines.lineTo(sw * 0.35, sh * 0.55);
+            lines.lineTo(sw * 0.65, sh * 0.55);
+            lines.alpha = 0;
+            eventLayer.addChild(lines);
+            ev.data.lines = lines;
+        },
+
+        animate(ev) {
+            ev.data.beamGfx.forEach((gfx, i) => {
+                ev.tweens.push(gsap.to(gfx, {
+                    alpha: 1, duration: 1.5, delay: i * 0.3, ease: 'power2.out'
+                }));
+                // Pulse
+                ev.tweens.push(gsap.to(gfx, {
+                    alpha: 0.5, duration: 0.8, yoyo: true, repeat: -1, delay: 1.5 + i * 0.2
+                }));
+            });
+            ev.tweens.push(gsap.to(ev.data.lines, { alpha: 1, duration: 2, delay: 0.5 }));
+        },
+
+        resolve(ev, correct) {
+            ev.data.beamGfx.forEach(gfx => {
+                ev.tweens.push(gsap.to(gfx, { alpha: 0, duration: 1 }));
+            });
+            ev.tweens.push(gsap.to(ev.data.lines, { alpha: 0, duration: 1 }));
+
+            if (correct) {
+                // Treaty — calming overlay
+                const app = Renderer.getApp();
+                const glow = new PIXI.Graphics();
+                glow.beginFill(0x00b8d8, 0.1);
+                glow.drawRect(0, 0, app.screen.width, app.screen.height);
+                glow.endFill();
+                glow.blendMode = PIXI.BLEND_MODES.ADD;
+                eventLayer.addChild(glow);
+                ev.tweens.push(gsap.to(glow, { alpha: 0, duration: 2 }));
+            } else {
+                // Beams flare and shake
+                ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 6, duration: 0.3, yoyo: true, repeat: 2 }));
+            }
+            _delayedClear(ev, 2.5);
+        }
+    },
+
+    // ── Event 5: Shadow Legion — city grid scan + infection ──
+    shadowLegion: {
+        create(ev) {
+            const app = Renderer.getApp();
+            const sw = app.screen.width;
+            const sh = app.screen.height;
+
+            // Grid scan line sweeping across screen
+            const scanLine = new PIXI.Graphics();
+            scanLine.beginFill(0x39ff14, 0.1);
+            scanLine.drawRect(0, 0, sw, 3);
+            scanLine.endFill();
+            scanLine.y = 0;
+            scanLine.alpha = 0;
+            eventLayer.addChild(scanLine);
+            ev.data.scanLine = scanLine;
+
+            // Infection pixels scattered across screen
+            ev.data.infections = [];
+            for (let i = 0; i < 40; i++) {
+                const px = new PIXI.Graphics();
+                px.beginFill(0x39ff14);
+                px.drawRect(-1, -1, 3, 3);
+                px.endFill();
+                px.x = Math.random() * sw;
+                px.y = Math.random() * sh;
+                px.alpha = 0;
+                eventLayer.addChild(px);
+                ev.data.infections.push(px);
+            }
+
+            // Gather buildings with glow
             const allEntities = Entities.getList().filter(e => e.sprite.visible && e.glowSprite);
             const bgEntities = Entities.getBgList().filter(bg => bg.glowSprite);
             ev.data.affectedEntities = allEntities;
@@ -317,35 +464,35 @@ const EVENT_BUILDERS = {
         },
 
         animate(ev) {
-            // Glow sprites flicker erratically
+            const app = Renderer.getApp();
+            const sh = app.screen.height;
+
+            // Scan line sweeps
+            ev.tweens.push(gsap.to(ev.data.scanLine, { alpha: 1, duration: 0.3 }));
+            ev.tweens.push(gsap.to(ev.data.scanLine, {
+                y: sh, duration: 2, ease: 'none', repeat: 2
+            }));
+
+            // Infection pixels appear progressively
+            ev.data.infections.forEach((px, i) => {
+                ev.tweens.push(gsap.to(px, {
+                    alpha: 0.8, duration: 0.1, delay: 0.5 + i * 0.08,
+                    ease: 'steps(1)'
+                }));
+            });
+
+            // Building lights flicker to green
             const allGlows = [
                 ...ev.data.affectedEntities.map(e => e.glowSprite),
                 ...ev.data.affectedBg.map(bg => bg.glowSprite)
             ].filter(Boolean);
 
             allGlows.forEach(glow => {
-                const t = gsap.to(glow, {
-                    alpha: 0, duration: 0.05,
-                    yoyo: true, repeat: -1,
-                    delay: Math.random() * 1.5,
-                    repeatDelay: Math.random() * 0.4
-                });
-                ev.tweens.push(t);
+                ev.tweens.push(gsap.to(glow, {
+                    alpha: 0, duration: 0.05, yoyo: true, repeat: -1,
+                    delay: Math.random() * 2
+                }));
             });
-
-            // Spark flash effect on road (power line sparking)
-            const app = Renderer.getApp();
-            const sw = app.screen.width, sh = app.screen.height;
-            const spark = new PIXI.Graphics();
-            spark.beginFill(0xFFFF44);
-            spark.drawCircle(sw * 0.5, sh * 0.35, 5);
-            spark.endFill();
-            spark.alpha = 0;
-            eventLayer.addChild(spark);
-            ev.data.spark = spark;
-            ev.tweens.push(gsap.to(spark, {
-                alpha: 1, duration: 0.08, yoyo: true, repeat: -1, ease: 'steps(1)'
-            }));
         },
 
         resolve(ev, correct) {
@@ -354,56 +501,93 @@ const EVENT_BUILDERS = {
                 ...ev.data.affectedBg.map(bg => bg.glowSprite)
             ].filter(Boolean);
 
-            // Stop flickering
             allGlows.forEach(g => gsap.killTweensOf(g));
 
-            // Kill spark
-            if (ev.data.spark) {
-                gsap.killTweensOf(ev.data.spark);
-                ev.tweens.push(gsap.to(ev.data.spark, { alpha: 0, duration: 0.3 }));
-            }
-
             if (correct) {
-                // Power restored: glows light up in a wave
+                // Mirror — reverse trace
+                ev.data.infections.forEach((px, i) => {
+                    ev.tweens.push(gsap.to(px, { alpha: 0, duration: 0.3, delay: i * 0.02 }));
+                });
+                ev.tweens.push(gsap.to(ev.data.scanLine, { alpha: 0, duration: 0.5 }));
+
+                // Trace-back beam
+                const app = Renderer.getApp();
+                const trace = new PIXI.Graphics();
+                trace.beginFill(0x00b8d8, 0.15);
+                trace.drawRect(0, 0, app.screen.width, app.screen.height);
+                trace.endFill();
+                trace.blendMode = PIXI.BLEND_MODES.ADD;
+                eventLayer.addChild(trace);
+                ev.tweens.push(gsap.to(trace, { alpha: 0, duration: 2 }));
+
+                // Restore lights
                 allGlows.forEach((g, i) => {
-                    ev.tweens.push(gsap.to(g, {
-                        alpha: 1, duration: 0.3,
-                        delay: i * 0.02,
-                        ease: 'none'
-                    }));
+                    ev.tweens.push(gsap.to(g, { alpha: 1, duration: 0.3, delay: i * 0.02 }));
                 });
-                // Warm flash
-                const app = Renderer.getApp();
-                const flash = new PIXI.Graphics();
-                flash.beginFill(0xFFCC44, 0.12);
-                flash.drawRect(0, 0, app.screen.width, app.screen.height);
-                flash.endFill();
-                flash.alpha = 0;
-                eventLayer.addChild(flash);
-                ev.tweens.push(gsap.to(flash, { alpha: 1, duration: 0.8, delay: 0.3 }));
-                ev.tweens.push(gsap.to(flash, { alpha: 0, duration: 1, delay: 1.5 }));
-
-                _delayedClear(ev, 3);
             } else {
-                // Total blackout: all glows die
-                allGlows.forEach(g => {
-                    ev.tweens.push(gsap.to(g, {
-                        alpha: 0, duration: 0.3 + Math.random() * 0.5
-                    }));
+                // Infection lingers
+                STATE.infectionLevel = 0.3;
+                ev.data.infections.forEach(px => {
+                    ev.tweens.push(gsap.to(px, { alpha: 0, duration: 2 }));
                 });
-                // Darkness overlay on road area
-                const app = Renderer.getApp();
-                const dark = new PIXI.Graphics();
-                dark.beginFill(0x000011, 0.4);
-                dark.drawRect(0, 0, app.screen.width, app.screen.height);
-                dark.endFill();
-                dark.alpha = 0;
-                eventLayer.addChild(dark);
-                ev.tweens.push(gsap.to(dark, { alpha: 1, duration: 1.5 }));
-                ev.tweens.push(gsap.to(dark, { alpha: 0, duration: 0.5, delay: 3 }));
+                ev.tweens.push(gsap.to(ev.data.scanLine, { alpha: 0, duration: 1 }));
 
-                _delayedClear(ev, 4);
+                // Lights dim
+                allGlows.forEach(g => {
+                    ev.tweens.push(gsap.to(g, { alpha: 0.2, duration: 1 }));
+                });
             }
+            _delayedClear(ev, 3);
+        }
+    },
+
+    // ── Event 6: The Unnamed Generation — train stops, empty scenery ──
+    unnamedGeneration: {
+        create(ev) {
+            const app = Renderer.getApp();
+            const sw = app.screen.width;
+            const sh = app.screen.height;
+
+            // Giant number "0.75" on the road
+            const numText = new PIXI.Text('0.75', {
+                fontFamily: 'Courier New, monospace',
+                fontSize: 72,
+                fill: 0x5a8080,
+                align: 'center'
+            });
+            numText.anchor.set(0.5, 0.5);
+            numText.x = sw * 0.5;
+            numText.y = sh * 0.55;
+            numText.alpha = 0;
+            eventLayer.addChild(numText);
+            ev.data.numText = numText;
+            ev.data.currentNum = 0.75;
+
+            // Countdown interval
+            ev.data.countInterval = setInterval(() => {
+                ev.data.currentNum -= 0.01;
+                if (ev.data.currentNum < 0.60) ev.data.currentNum = 0.60;
+                numText.text = ev.data.currentNum.toFixed(2);
+            }, 800);
+        },
+
+        animate(ev) {
+            // Number fades in
+            ev.tweens.push(gsap.to(ev.data.numText, { alpha: 0.7, duration: 2, ease: 'power2.out' }));
+
+            // Show narrative
+            const lang = document.documentElement.lang === 'ko' ? 'ko' : 'en';
+            const text = SCENE_I18N[lang].unnamedGeneration.narrative;
+            Timeline.showNarrative(text, 8000);
+        },
+
+        resolve(ev, correct) {
+            if (ev.data.countInterval) {
+                clearInterval(ev.data.countInterval);
+                ev.data.countInterval = null;
+            }
+            ev.tweens.push(gsap.to(ev.data.numText, { alpha: 0, duration: 1.5 }));
+            _delayedClear(ev, 2);
         }
     }
 };

@@ -3,11 +3,10 @@
 // Background entities (clouds, Namsan Tower) are fixed in a back panel with parallax.
 //
 // Glow sprites (emissive layer) are separate PIXI.Sprites placed in cameraGlow
-// with BLEND_MODES.ADD. They bypass the ColorMatrixFilter so lights stay vivid
-// even when the world desaturates in crisis/catastrophe phases.
+// with BLEND_MODES.ADD. They bypass the ColorMatrixFilter so lights stay vivid.
 
 const entityList = [];
-const bgList = [];       // background scenery (not road-anchored)
+const bgList = [];
 
 const ENTITY_SCALE = {
     building: 8,
@@ -17,21 +16,18 @@ const ENTITY_SCALE = {
     cloud: 2
 };
 
-// Road-side placement offsets (fraction of road width from center)
 const PLACEMENT = {
     tree:        { minOff: 1.05, maxOff: 1.3 },
     streetlight: { minOff: 1.0,  maxOff: 1.1 },
     building:    { minOff: 1.4,  maxOff: 2.5 }
 };
 
-// Spacing between same-type entities (in segments)
 const SPACING = {
     tree: 8,
     streetlight: 15,
     building: 10
 };
 
-// Map base sprite keys to their glow layer counterparts
 const GLOW_KEYS = {
     'building-modern':    'building-modern-glow',
     'building-glass':     'building-glass-glow',
@@ -40,14 +36,13 @@ const GLOW_KEYS = {
     'namsan-tower':       'namsan-tower-glow'
 };
 
-// Helper: create a glow sprite for a base key, returns null if no glow texture
 function _makeGlow(baseKey) {
     const glowKey = GLOW_KEYS[baseKey];
     if (!glowKey) return null;
     const glow = Assets.createSprite(glowKey);
     if (!glow) return null;
     glow.blendMode = PIXI.BLEND_MODES.ADD;
-    glow.alpha = 0;  // starts invisible; fades in as entropy rises
+    glow.alpha = 0;
     return glow;
 }
 
@@ -57,9 +52,7 @@ const Entities = {
         const glowLayer = Renderer.getCameraGlow();
         const totalSegs = Road.getSegmentCount();
 
-        // ── Road-anchored entities ──
-
-        // Trees along road edges (alternating sides) — no glow layer
+        // Trees
         for (let i = 0; i < CONFIG.counts.trees; i++) {
             const segIdx = (i * SPACING.tree + Math.floor(Math.random() * 3)) % totalSegs;
             const side = (i % 2 === 0) ? 1 : -1;
@@ -79,7 +72,7 @@ const Entities = {
             camera.addChild(sprite);
         }
 
-        // Streetlights along road edges — with glow layer
+        // Streetlights
         for (let i = 0; i < CONFIG.counts.streetlights; i++) {
             const segIdx = (i * SPACING.streetlight + 5 + Math.floor(Math.random() * 4)) % totalSegs;
             const side = (i % 2 === 0) ? 1 : -1;
@@ -101,7 +94,7 @@ const Entities = {
             if (glow) glowLayer.addChild(glow);
         }
 
-        // Buildings further from road — with glow layer
+        // Buildings
         const buildingKeys = ['building-modern', 'building-glass', 'building-apartment'];
         for (let i = 0; i < CONFIG.counts.buildings; i++) {
             const key = buildingKeys[Math.floor(Math.random() * buildingKeys.length)];
@@ -127,9 +120,7 @@ const Entities = {
             if (glow) glowLayer.addChild(glow);
         }
 
-        // ── Background scenery (fixed back panel with parallax) ──
-
-        // Namsan Tower — fixed landmark on the horizon, with beacon glow
+        // Namsan Tower
         const tower = Assets.createSprite('namsan-tower');
         tower.zIndex = -8000;
         const towerGlow = _makeGlow('namsan-tower');
@@ -146,7 +137,7 @@ const Entities = {
         camera.addChild(tower);
         if (towerGlow) glowLayer.addChild(towerGlow);
 
-        // Clouds — fixed in the sky, slow parallax, no glow
+        // Clouds
         for (let i = 0; i < CONFIG.counts.clouds; i++) {
             const sprite = Assets.createSprite('cloud');
             sprite.anchor.set(0.5, 0.5);
@@ -165,16 +156,23 @@ const Entities = {
         }
     },
 
-    // Update road-anchored entities using projected road segments
     update(dt, projected) {
         const sw = Renderer.getApp().screen.width;
         const sh = Renderer.getApp().screen.height;
 
-        // Glow intensity: only visible once scene is dark enough for lights to matter
-        // Peace/tension (0-50): 0 — still daylight, glow invisible
-        // Crisis (50-75): ramps 0→1 — sky darkens, lights emerge
-        // Catastrophe (75+): 1.0 — full darkness, vivid glow
-        const glowAlpha = Math.max(0, Math.min(1, (STATE.entropy - 50) / 25));
+        // Glow alpha: ramps with entropy (lights matter more in darkness)
+        // Act 1-2: low; Act 3: full; Act 4: faded
+        let glowAlpha;
+        if (STATE.act === 'act4') {
+            glowAlpha = 0.2;
+        } else {
+            glowAlpha = Math.max(0, Math.min(1, (STATE.entropy - 40) / 20));
+        }
+
+        // Act-based building tint for atmospheric perspective
+        const actData = CONFIG.acts[STATE.act];
+        const buildingTint = actData ? actData.buildingTint : 0xFFFFFF;
+        const cloudTint = actData ? actData.cloudTint : 0xFFFFFF;
 
         // ── Background scenery ──
         const cameraDepth = CONFIG.road.cameraDepth;
@@ -200,23 +198,22 @@ const Entities = {
                 bg.sprite.x = towerScreenX;
                 bg.sprite.y = horizonY;
                 bg.sprite.scale.set(bg.baseScale);
-                this._updateEntityVisuals(bg);
+                bg.sprite.tint = buildingTint;
 
-                // Sync glow sprite (beacon)
                 if (bg.glowSprite) {
                     bg.glowSprite.visible = true;
                     bg.glowSprite.x = bg.sprite.x;
                     bg.glowSprite.y = bg.sprite.y;
                     bg.glowSprite.scale.set(bg.baseScale);
-                    // Beacon pulses via sin wave, intensifies with entropy
                     const pulse = 0.6 + 0.4 * Math.sin(Date.now() * 0.005);
                     bg.glowSprite.alpha = glowAlpha * pulse;
                 }
-            } else {
+            } else if (bg.type === 'cloud') {
                 const cloudCurveShift = -horizonDx * (cameraDepth / (bg.worldZ || 200000)) * sw / 2;
                 bg.sprite.x = bg.baseX * sw + cloudCurveShift;
                 bg.sprite.y = bg.baseY * sh;
                 bg.sprite.scale.set(bg.baseScale);
+                bg.sprite.tint = cloudTint;
             }
         }
 
@@ -247,7 +244,6 @@ const Entities = {
 
             e.sprite.visible = true;
 
-            // Position relative to road segment
             let screenX = proj.x + proj.w * e.roadOffset;
             const screenY = proj.y - e.elevation * proj.scale * sh;
             const scale = proj.scale * e.baseScale * sw * 2;
@@ -261,13 +257,23 @@ const Entities = {
             e.sprite.y = screenY;
             e.sprite.scale.set(Math.max(0.01, scale));
 
-            // Fade by fog
             const fogFade = Math.max(0, 1 - proj.fog * proj.fog * 0.5);
             e.sprite.alpha = fogFade;
 
             e.sprite.zIndex = -segDist;
 
-            // Sync glow sprite: same position/scale, alpha driven by entropy + fog
+            // Atmospheric perspective: distant entities tinted toward fog color
+            if (e.fsm === 'normal') {
+                const distT = Math.min(1, segDist / (CONFIG.road.visibleSegments * 0.6));
+                if (distT > 0.3 && e.type === 'building') {
+                    // Blend toward building tint (sky-influenced color)
+                    e.sprite.tint = buildingTint;
+                } else if (e.fsm === 'normal') {
+                    e.sprite.tint = 0xFFFFFF;
+                }
+            }
+
+            // Sync glow sprite
             if (e.glowSprite) {
                 e.glowSprite.visible = true;
                 e.glowSprite.x = screenX;
@@ -287,7 +293,7 @@ const Entities = {
         if (STATE.entropy > 50 && e.fsm === 'normal') {
             if (Math.random() < 0.002) {
                 e.fsm = 'stressed';
-                e.sprite.tint = 0xDDAAAA;
+                e.sprite.tint = CONFIG.acts[STATE.act] ? CONFIG.acts[STATE.act].buildingTint : 0xDDAAAA;
             }
         }
         if (STATE.entropy > 75 && e.fsm === 'stressed') {

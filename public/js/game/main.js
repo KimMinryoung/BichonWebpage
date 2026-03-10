@@ -6,13 +6,9 @@ const Game = {
     async init() {
         Renderer.setup();
 
-        // Load sprite assets (real PNGs or generated fallbacks)
         await Assets.load(Renderer.getApp());
 
-        // Initialize road geometry (must happen before entities)
         Road.init();
-
-        // Environment needs to be drawn after assets are ready
         Renderer.initEnvironment();
 
         Entities.init();
@@ -21,7 +17,7 @@ const Game = {
         Sound.init();
         Effects.init(Renderer.getApp(), Renderer.getCamera());
 
-        // Load Seoul scene
+        // Load Babel Express scene
         currentScene = SceneSeoul;
 
         // Start game loop
@@ -34,18 +30,16 @@ const Game = {
     _tick(delta) {
         if (!STATE.running) return;
 
-        // Advance entropy (only allow decrease during ended sequence)
         const dt = delta / 60;
         const prevEntropy = STATE.entropy;
-        STATE.entropy += STATE.entropyRate * dt;
+
+        // Advance entropy (but not when train is stopped)
+        if (!STATE.trainStopped) {
+            STATE.entropy += STATE.entropyRate * dt;
+        }
         if (!STATE.ended && STATE.entropy < prevEntropy) STATE.entropy = prevEntropy;
         if (STATE.entropy < 0) STATE.entropy = 0;
-
-        // Update phase
-        if (STATE.entropy < CONFIG.phases.tension.min) STATE.phase = 'peace';
-        else if (STATE.entropy < CONFIG.phases.crisis.min) STATE.phase = 'tension';
-        else if (STATE.entropy < CONFIG.phases.catastrophe.min) STATE.phase = 'crisis';
-        else STATE.phase = 'catastrophe';
+        if (STATE.entropy > 100) STATE.entropy = 100;
 
         // Advance road position and compute centrifugal drift
         Road.update(dt);
@@ -56,6 +50,9 @@ const Game = {
 
         // Draw road
         Renderer.drawRoad(projected);
+
+        // Draw AI light beam on road
+        Renderer.drawAIBeam(projected);
 
         // Update entities anchored to road segments
         Entities.update(dt, projected);
@@ -69,7 +66,6 @@ const Game = {
     },
 
     restart() {
-        // Kill all GSAP tweens
         gsap.killTweensOf(STATE);
         gsap.killTweensOf(Renderer.getFlash());
 
@@ -79,10 +75,9 @@ const Game = {
         Intervention.reset();
         Sound.reset();
 
-        // Reset flash
         Renderer.getFlash().alpha = 0;
 
-        // Reset entity visuals (road entities + background scenery)
+        // Reset entity visuals
         const entities = Entities.getList();
         for (let i = 0; i < entities.length; i++) {
             entities[i].sprite.tint = 0xFFFFFF;
@@ -106,7 +101,6 @@ const Game = {
     }
 };
 
-// Boot when DOM is ready
 window.addEventListener('load', () => {
     Game.init();
 });

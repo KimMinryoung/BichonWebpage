@@ -1,5 +1,5 @@
 // Procedural sound effects and ambient audio via Web Audio API.
-// No external audio files needed — everything is synthesized.
+// Per-act drone parameters for Babel Express atmosphere.
 
 let ctx;
 let masterGain;
@@ -8,16 +8,16 @@ let droneLFO, droneLFOGain;
 let currentSoundPhase = null;
 
 const DRONE_PHASES = {
-    peace:       { freq: 80,  vol: 0.06, lfo: 0.3,  detune: 0   },
-    tension:     { freq: 100, vol: 0.10, lfo: 1.2,  detune: 50  },
-    crisis:      { freq: 130, vol: 0.15, lfo: 3.0,  detune: 150 },
-    catastrophe: { freq: 160, vol: 0.22, lfo: 8.0,  detune: 400 },
-    hope:        { freq: 65,  vol: 0.05, lfo: 0.2,  detune: -50 }
+    act1: { freq: 70,  vol: 0.05, lfo: 0.2,  detune: 0   },    // quiet dawn hum
+    act2: { freq: 100, vol: 0.10, lfo: 1.5,  detune: 80  },    // rising tension
+    act3: { freq: 140, vol: 0.16, lfo: 4.0,  detune: 200 },    // chaotic
+    act4: { freq: 50,  vol: 0.04, lfo: 0.1,  detune: -30 },    // near silence, emptiness
+    act5: { freq: 180, vol: 0.22, lfo: 8.0,  detune: 500 },    // climax
+    hope: { freq: 65,  vol: 0.05, lfo: 0.2,  detune: -50 }
 };
 
 const Sound = {
     init() {
-        // Create audio context on first user interaction (browser policy)
         const resume = () => {
             if (!ctx) {
                 ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -33,24 +33,21 @@ const Sound = {
     },
 
     _startDrone() {
-        // Base drone oscillator
         droneOsc = ctx.createOscillator();
         droneOsc.type = 'sawtooth';
-        droneOsc.frequency.value = 80;
+        droneOsc.frequency.value = 70;
 
         droneGain = ctx.createGain();
         droneGain.gain.value = 0;
 
-        // Low-pass filter for warmth
         const filter = ctx.createBiquadFilter();
         filter.type = 'lowpass';
         filter.frequency.value = 200;
         filter.Q.value = 2;
 
-        // LFO for pulsing
         droneLFO = ctx.createOscillator();
         droneLFO.type = 'sine';
-        droneLFO.frequency.value = 0.3;
+        droneLFO.frequency.value = 0.2;
         droneLFOGain = ctx.createGain();
         droneLFOGain.gain.value = 0.03;
 
@@ -69,7 +66,7 @@ const Sound = {
         if (!ctx || phase === currentSoundPhase) return;
         currentSoundPhase = phase;
 
-        const p = DRONE_PHASES[phase] || DRONE_PHASES.peace;
+        const p = DRONE_PHASES[phase] || DRONE_PHASES.act1;
         const t = ctx.currentTime;
 
         droneOsc.frequency.linearRampToValueAtTime(p.freq, t + 2);
@@ -78,7 +75,6 @@ const Sound = {
         droneLFO.frequency.linearRampToValueAtTime(p.lfo, t + 2);
     },
 
-    // Short UI click sound for choice buttons
     playClick() {
         if (!ctx) return;
         const osc = ctx.createOscillator();
@@ -93,7 +89,6 @@ const Sound = {
         osc.stop(ctx.currentTime + 0.1);
     },
 
-    // Impact thud for wrong choices / collapses
     playImpact() {
         if (!ctx) return;
         const osc = ctx.createOscillator();
@@ -109,7 +104,6 @@ const Sound = {
         osc.stop(ctx.currentTime + 0.5);
     },
 
-    // Bright chime for correct choices
     playResolve() {
         if (!ctx) return;
         [523, 659, 784].forEach((freq, i) => {
@@ -126,7 +120,6 @@ const Sound = {
         });
     },
 
-    // Alarm tone for intervention appearance
     playAlarm() {
         if (!ctx) return;
         const osc = ctx.createOscillator();
@@ -149,6 +142,22 @@ const Sound = {
         lfo.start();
         osc.stop(ctx.currentTime + 0.8);
         lfo.stop(ctx.currentTime + 0.8);
+    },
+
+    // Train screech sound for Act 4 stop
+    playTrainStop() {
+        if (!ctx) return;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.value = 2000;
+        osc.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 1.5);
+        gain.gain.value = 0.1;
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.5);
+        osc.connect(gain);
+        gain.connect(masterGain);
+        osc.start();
+        osc.stop(ctx.currentTime + 1.5);
     },
 
     reset() {

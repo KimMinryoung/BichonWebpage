@@ -1,10 +1,13 @@
 // PixiJS application setup, camera container, pseudo-3D road rendering, screen effects.
-// Road uses segment-based projection (OutRun/Slipstream style) with curves + hills.
+// Sky gradient, AI light beam, narrative text overlay, atmospheric perspective.
 
 let app, camera, cameraGlow, flash, centerX, centerY;
-let roadGfx = null;         // PIXI.Graphics for road drawing
+let roadGfx = null;
 let sunSprite = null;
-let bgContainer = null;     // background parallax container
+let bgContainer = null;
+let skyGfx = null;         // sky gradient graphics
+let aiBeamGfx = null;      // AI light beam on road
+let narrativeEl = null;    // DOM element for narrative text
 
 const Renderer = {
     setup() {
@@ -14,7 +17,7 @@ const Renderer = {
         app = new PIXI.Application({
             width: gameWidth(),
             height: gameHeight(),
-            backgroundColor: CONFIG.colors.skyPeace,
+            backgroundColor: 0x141430,
             resolution: window.devicePixelRatio || 1,
             autoDensity: true,
         });
@@ -24,8 +27,6 @@ const Renderer = {
         camera.sortableChildren = true;
         app.stage.addChild(camera);
 
-        // Glow layer: sits above camera, bypasses ColorMatrixFilter.
-        // Emissive sprites (window lights, lamp glow, beacon) go here with ADD blend.
         cameraGlow = new PIXI.Container();
         cameraGlow.sortableChildren = true;
         app.stage.addChild(cameraGlow);
@@ -35,6 +36,9 @@ const Renderer = {
 
         this._createFlash();
 
+        // Narrative text DOM element
+        narrativeEl = document.getElementById('game-narrative');
+
         const resizeTarget = window.visualViewport || window;
         resizeTarget.addEventListener('resize', () => this._onResize());
         window.addEventListener('orientationchange', () => {
@@ -43,9 +47,17 @@ const Renderer = {
     },
 
     initEnvironment() {
+        this._initSkyGraphics();
         this._initRoadGraphics();
+        this._initAIBeam();
         this._initBackground();
         this._drawSun();
+    },
+
+    _initSkyGraphics() {
+        skyGfx = new PIXI.Graphics();
+        skyGfx.zIndex = -12000;
+        camera.addChild(skyGfx);
     },
 
     _initRoadGraphics() {
@@ -54,8 +66,14 @@ const Renderer = {
         camera.addChild(roadGfx);
     },
 
+    _initAIBeam() {
+        aiBeamGfx = new PIXI.Graphics();
+        aiBeamGfx.zIndex = -4998;
+        aiBeamGfx.blendMode = PIXI.BLEND_MODES.ADD;
+        camera.addChild(aiBeamGfx);
+    },
+
     _initBackground() {
-        // Background container for parallax elements (mountains, distant buildings)
         bgContainer = new PIXI.Container();
         bgContainer.zIndex = -9000;
         camera.addChild(bgContainer);
@@ -72,38 +90,82 @@ const Renderer = {
             sunSprite.scale.set(0.5);
         } else {
             sunSprite = new PIXI.Graphics();
-            sunSprite.beginFill(CONFIG.colors.sun);
+            sunSprite.beginFill(0xe6c86e);
             sunSprite.drawRect(-25, -25, 50, 50);
             sunSprite.endFill();
         }
         sunSprite.x = sunX;
         sunSprite.y = sunY;
-        sunSprite.zIndex = -10000;
+        sunSprite.zIndex = -11000;
         camera.addChild(sunSprite);
     },
 
     _createFlash() {
         flash = new PIXI.Graphics();
-        flash.beginFill(CONFIG.colors.screenFlash);
+        flash.beginFill(0xFFFFFF);
         flash.drawRect(0, 0, app.screen.width, app.screen.height);
         flash.endFill();
         flash.alpha = 0;
         app.stage.addChild(flash);
     },
 
-    // Draw the road each frame using projected segments
+    // Draw 3-stop sky gradient
+    _drawSky() {
+        if (!skyGfx) return;
+        const sw = app.screen.width;
+        const sh = app.screen.height;
+
+        skyGfx.clear();
+
+        const topColor = (Math.round(STATE.skyTopR) << 16) | (Math.round(STATE.skyTopG) << 8) | Math.round(STATE.skyTopB);
+        const midColor = (Math.round(STATE.skyMidR) << 16) | (Math.round(STATE.skyMidG) << 8) | Math.round(STATE.skyMidB);
+        const botColor = (Math.round(STATE.skyBotR) << 16) | (Math.round(STATE.skyBotG) << 8) | Math.round(STATE.skyBotB);
+
+        // Draw sky in bands (pixelated gradient — fits the aesthetic)
+        const bands = 24;
+        const bandH = Math.ceil(sh / bands);
+        for (let i = 0; i < bands; i++) {
+            const t = i / (bands - 1);
+            let r, g, b;
+            if (t < 0.5) {
+                // Top to mid
+                const p = t * 2;
+                r = STATE.skyTopR + (STATE.skyMidR - STATE.skyTopR) * p;
+                g = STATE.skyTopG + (STATE.skyMidG - STATE.skyTopG) * p;
+                b = STATE.skyTopB + (STATE.skyMidB - STATE.skyTopB) * p;
+            } else {
+                // Mid to bottom
+                const p = (t - 0.5) * 2;
+                r = STATE.skyMidR + (STATE.skyBotR - STATE.skyMidR) * p;
+                g = STATE.skyMidG + (STATE.skyBotG - STATE.skyMidG) * p;
+                b = STATE.skyMidB + (STATE.skyBotB - STATE.skyMidB) * p;
+            }
+            const c = (Math.round(r) << 16) | (Math.round(g) << 8) | Math.round(b);
+            skyGfx.beginFill(c);
+            skyGfx.drawRect(0, i * bandH, sw, bandH + 1);
+            skyGfx.endFill();
+        }
+
+        // Background color for areas not covered
+        app.renderer.background.color = topColor;
+    },
+
+    // Draw road each frame using projected segments
     drawRoad(projected) {
         if (!roadGfx || projected.length < 2) return;
 
         const sw = app.screen.width;
         const sh = app.screen.height;
-        const rc = CONFIG.road.colors;
+        const rc = getRoadColors(STATE.act);
         const rumbleW = CONFIG.road.rumbleWidth;
         const shoulderW = CONFIG.road.shoulderWidth;
+        const edgeColor = (Math.round(STATE.roadEdgeR) << 16)
+                        | (Math.round(STATE.roadEdgeG) << 8)
+                        | Math.round(STATE.roadEdgeB);
 
         roadGfx.clear();
 
-        // Fill sky-to-ground below horizon with grass
+        // Fill below horizon with grass
         if (projected.length > 0) {
             const horizon = projected[projected.length - 1];
             const horizonY = Math.max(0, horizon.y);
@@ -112,13 +174,17 @@ const Renderer = {
             roadGfx.endFill();
         }
 
+        // Fog/atmospheric color
+        const fogColor = (Math.round(STATE.fogR) << 16)
+                       | (Math.round(STATE.fogG) << 8)
+                       | Math.round(STATE.fogB);
+
         // Draw segments from far to near (painter's algorithm)
         for (let n = projected.length - 2; n >= 0; n--) {
             const curr = projected[n];
-            const prev = projected[n + 1]; // farther segment
+            const prev = projected[n + 1];
 
             if (curr.clip && prev.clip) continue;
-            // Skip only if BOTH are off-screen (near segments extend below screen, that's OK)
             if (prev.y > sh * 2 && curr.y > sh * 2) continue;
 
             const isEven = (curr.index % 2) === 0;
@@ -148,8 +214,8 @@ const Renderer = {
             roadGfx.lineTo(curr.x - currShoulder, curr.y);
             roadGfx.endFill();
 
-            // Rumble strips
-            const rumbleColor = isEven ? rc.rumble[0] : rc.rumble[1];
+            // Rumble strips — single accent color on even, road-dark on odd
+            const rumbleColor = isEven ? edgeColor : rc.road[1];
             roadGfx.beginFill(rumbleColor);
             roadGfx.moveTo(prev.x - prevRumble, prev.y);
             roadGfx.lineTo(prev.x + prevRumble, prev.y);
@@ -166,7 +232,19 @@ const Renderer = {
             roadGfx.lineTo(curr.x - currW, curr.y);
             roadGfx.endFill();
 
-            // Lane markings (dashed — only on even segments for dashes)
+            // Track cracks (entropy-driven distortion on road surface)
+            if (STATE.trackCrackLevel > 0 && isEven && curr.scale > 0.005) {
+                const crackAlpha = Math.min(0.6, STATE.trackCrackLevel * 0.6);
+                const crackW = currW * 0.02 * (1 + STATE.trackCrackLevel * 2);
+                roadGfx.beginFill(0x111111, crackAlpha);
+                // Random-ish crack line on the road
+                const seed = curr.index * 7 % 13;
+                const offX = (seed / 13 - 0.5) * currW * 0.8;
+                roadGfx.drawRect(curr.x + offX, curr.y, crackW, Math.abs(curr.y - prev.y) + 1);
+                roadGfx.endFill();
+            }
+
+            // Lane markings (dashed)
             if (isEven && curr.scale > 0.001) {
                 const laneW = Math.max(1, currW * 0.02);
                 for (let lane = 1; lane < CONFIG.road.lanes; lane++) {
@@ -182,13 +260,10 @@ const Renderer = {
                 }
             }
 
-            // Fog overlay (semi-transparent sky color blended over far segments)
+            // Atmospheric fog overlay
             if (prev.fog > 0.05) {
-                const fogAlpha = prev.fog * prev.fog; // quadratic for softer near, stronger far
-                const skyColor = (Math.round(STATE.skyR) << 16)
-                               | (Math.round(STATE.skyG) << 8)
-                               | Math.round(STATE.skyB);
-                roadGfx.beginFill(skyColor, fogAlpha);
+                const fogAlpha = prev.fog * prev.fog;
+                roadGfx.beginFill(fogColor, fogAlpha);
                 roadGfx.moveTo(0, prev.y);
                 roadGfx.lineTo(sw, prev.y);
                 roadGfx.lineTo(sw, curr.y);
@@ -198,8 +273,71 @@ const Renderer = {
         }
     },
 
+    // Draw AI light beam ahead on the road
+    drawAIBeam(projected) {
+        if (!aiBeamGfx || projected.length < 10) return;
+        aiBeamGfx.clear();
+
+        if (STATE.aiBeamAlpha < 0.01) return;
+
+        const beamColor = STATE.aiBeamColor;
+        const beamWidth = STATE.aiBeamWidth;
+
+        // Draw beam as a series of bright segments on the road center, fading into distance
+        const startSeg = 5;
+        const endSeg = Math.min(80, projected.length - 2);
+
+        for (let n = startSeg; n < endSeg; n++) {
+            const curr = projected[n];
+            const prev = projected[n + 1];
+            if (!curr || !prev || curr.clip || prev.clip) continue;
+
+            const distT = (n - startSeg) / (endSeg - startSeg);
+            // Beam narrows toward distance, widens near camera
+            const w = curr.w * 0.08 * beamWidth * (1 - distT * 0.7);
+            // Alpha: brightest in middle distance, fades near and far
+            const nearFade = Math.min(1, (n - startSeg) / 10);
+            const farFade = 1 - distT;
+            const alpha = STATE.aiBeamAlpha * nearFade * farFade * 0.5;
+
+            if (alpha < 0.01) continue;
+
+            // Core beam (thin bright line)
+            aiBeamGfx.beginFill(beamColor, alpha);
+            aiBeamGfx.moveTo(prev.x - w * 0.3, prev.y);
+            aiBeamGfx.lineTo(prev.x + w * 0.3, prev.y);
+            aiBeamGfx.lineTo(curr.x + w * 0.3, curr.y);
+            aiBeamGfx.lineTo(curr.x - w * 0.3, curr.y);
+            aiBeamGfx.endFill();
+
+            // Glow halo (wider, dimmer)
+            aiBeamGfx.beginFill(beamColor, alpha * 0.25);
+            aiBeamGfx.moveTo(prev.x - w, prev.y);
+            aiBeamGfx.lineTo(prev.x + w, prev.y);
+            aiBeamGfx.lineTo(curr.x + w, curr.y);
+            aiBeamGfx.lineTo(curr.x - w, curr.y);
+            aiBeamGfx.endFill();
+        }
+
+        // Pulsing time-based modulation
+        const pulse = 0.8 + 0.2 * Math.sin(Date.now() * 0.003);
+        aiBeamGfx.alpha = pulse;
+    },
+
+    // Update narrative text overlay
+    updateNarrative() {
+        if (!narrativeEl) return;
+        if (STATE.narrativeAlpha > 0.01 && STATE.narrativeText) {
+            narrativeEl.textContent = STATE.narrativeText;
+            narrativeEl.style.opacity = Math.min(1, STATE.narrativeAlpha);
+            narrativeEl.style.display = 'block';
+        } else {
+            narrativeEl.style.display = 'none';
+        }
+    },
+
     applyEffects() {
-        // Camera shake (sync both layers)
+        // Camera shake
         const shakeX = (Math.random() - 0.5) * STATE.shake;
         const shakeY = (Math.random() - 0.5) * STATE.shake;
         camera.x = shakeX;
@@ -207,42 +345,46 @@ const Renderer = {
         cameraGlow.x = shakeX;
         cameraGlow.y = shakeY;
 
-        // Background parallax: shift sun and bg opposite to curve + hill pitch
+        // Sun position & tint based on act progression
         if (sunSprite) {
             const parallaxShift = -STATE.curveDelta * STATE.speed * 0.3;
-            // Sun position & tint: sets by entropy ~65
-            const t = Math.min(1, STATE.entropy / 65);
+            const hillParallax = STATE.cameraPitch * 0.6;
+
+            // Sun visible in Act 1 and early Act 2, then fades
+            const t = Math.min(1, STATE.entropy / 50);
             const baseX = app.screen.width * 0.7;
             const endX = app.screen.width * 0.85;
             const startY = app.screen.height * 0.15;
             const endY = centerY + 40;
-            // Hill pitch shifts the sun/horizon vertically (looking up → sun moves down)
-            const hillParallax = STATE.cameraPitch * 0.6;
+
             sunSprite.x = (baseX + (endX - baseX) * t) + parallaxShift;
             sunSprite.y = startY + (endY - startY) * t + hillParallax;
-            // Tint: white → warm orange → deep red → fade out
-            if (t < 0.4) {
-                sunSprite.tint = 0xFFFDE7;
+
+            if (STATE.act === 'act1') {
+                sunSprite.tint = 0xc4a060;
                 sunSprite.alpha = 1;
-            } else if (t < 0.75) {
-                const p = (t - 0.4) / 0.35;
-                const r = 0xFF;
-                const g = Math.round(0xFD - p * 0x7D);
-                const b = Math.round(0xE7 - p * 0xC7);
+            } else if (STATE.act === 'act2') {
+                const p = (STATE.entropy - 20) / 27;
+                const r = 0xe0;
+                const g = Math.round(0x70 - p * 0x50);
+                const b = Math.round(0x20 - p * 0x18);
                 sunSprite.tint = (r << 16) | (g << 8) | b;
-                sunSprite.alpha = 1;
+                sunSprite.alpha = Math.max(0, 1 - p * 1.2);
+            } else if (STATE.act === 'act4') {
+                // Overexposed white sun
+                sunSprite.tint = 0xf0ebe0;
+                sunSprite.alpha = 0.6;
+                sunSprite.y = app.screen.height * 0.3 + hillParallax;
             } else {
-                const p = (t - 0.75) / 0.25;
-                sunSprite.tint = 0xFF4010;
-                sunSprite.alpha = Math.max(0, 1 - p);
+                sunSprite.alpha = 0;
             }
         }
 
-        // Sky color from state
-        const skyColor = (Math.round(STATE.skyR) << 16)
-                       | (Math.round(STATE.skyG) << 8)
-                       | Math.round(STATE.skyB);
-        app.renderer.background.color = skyColor;
+        // Draw sky gradient
+        this._drawSky();
+
+        // Update narrative text
+        this.updateNarrative();
     },
 
     _onResize() {
@@ -267,7 +409,7 @@ const Renderer = {
     getRoadGfx() { return roadGfx; }
 };
 
-// --- Viewport helpers (unchanged) ---
+// --- Viewport helpers ---
 
 function vpWidth() {
     const vv = window.visualViewport;
