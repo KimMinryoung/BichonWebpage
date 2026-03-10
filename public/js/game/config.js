@@ -170,7 +170,7 @@ const CONFIG = {
         curve: {
             rollScale: 0.04,        // max roll angle per unit curve intensity (radians)
             rollSmoothing: 0.08,    // how quickly roll adjusts (0-1, lower = smoother)
-            yawScale: 800,          // world-space look-ahead into curve (shifts vanishing point)
+            yawScale: 200,          // pixels: vanishing point shift per unit curve intensity
             yawSmoothing: 0.10,     // how quickly yaw adjusts (higher = more responsive)
         },
 

@@ -154,8 +154,9 @@ const Road = {
             const scale = cameraDepth / worldZ;
 
             // Project to screen coordinates
-            // X: center + lateral offset (playerX drift - curve offset - yaw look-ahead)
-            const projX = (screenW / 2) + scale * (STATE.playerX - dx + STATE.cameraYaw) * screenW / 2;
+            // X: vanishing point shifts into curve (yaw), then perspective offset from road curves
+            const vanishX = (screenW / 2) + STATE.cameraYaw;
+            const projX = vanishX + scale * (STATE.playerX - dx) * screenW / 2;
             // Y: camera follows road elevation, so nearby flat segments stay centered
             // but distant segments at different elevations reveal the terrain ahead
             const projY = (screenH / 2) + scale * (cameraH - seg.y) * screenH / 2 + pitchOffset;
@@ -252,8 +253,8 @@ const Road = {
         const targetRoll = -seg.curve * curveConf.rollScale;
         STATE.cameraRoll += (targetRoll - STATE.cameraRoll) * curveConf.rollSmoothing;
 
-        // --- Camera yaw (look into the turn — shifts vanishing point in projection) ---
-        // Uses world-space offset so the entire road bends toward the turn
+        // --- Camera yaw (look into the turn — shifts vanishing point on screen) ---
+        // Pixel offset: positive curve (right) → vanishing point shifts right
         const targetYaw = seg.curve * curveConf.yawScale;
         STATE.cameraYaw += (targetYaw - STATE.cameraYaw) * curveConf.yawSmoothing;
     },
