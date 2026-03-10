@@ -113,20 +113,25 @@ const Road = {
         const baseIdx = Math.floor(STATE.roadPosition / segLen);
         const visible = CONFIG.road.visibleSegments;
 
-        // ── Look-ahead yaw: accumulate curve dx for next N segments ──
+        // ── Look-ahead yaw: double integration for curve following ──
         // Shifts the vanishing point so the road at look-ahead distance
         // stays centered, giving the effect of the camera rotating into curves.
+        // Uses double integration (x += dx; dx += curve) matching the
+        // per-segment projection so the centering is exact.
         const yawLookDist = 40;
         let yawDx = 0;
+        let yawX = 0;
         for (let n = 0; n < yawLookDist; n++) {
             const lIdx = (baseIdx + n) % total;
-            yawDx += segments[lIdx].curve * segLen;
+            yawX += yawDx;
+            yawDx += segments[lIdx].curve;
         }
         const yawZ = yawLookDist * segLen;
         const yawScale = cameraDepth / yawZ;
-        const vanishX = (screenW / 2) + yawScale * yawDx * screenW / 2;
+        const vanishX = (screenW / 2) + yawScale * yawX * screenW / 2;
 
-        let dx = 0;
+        let dx = 0;       // curve rate accumulator
+        let x = 0;        // curve position accumulator (double integral)
         let clipY = screenH;
 
         const projected = [];
@@ -138,12 +143,14 @@ const Road = {
             const worldZ = (n * segLen) - (STATE.roadPosition % segLen);
             if (worldZ < 10) continue;
 
-            dx += seg.curve * segLen;
+            x += dx;
+            dx += seg.curve;
 
             const scale = cameraDepth / worldZ;
 
-            // X: vanishing point shifted by look-ahead yaw
-            const projX = vanishX + scale * (-dx) * screenW / 2;
+            // X: double integration produces scale*x ∝ n (visible curve)
+            // instead of scale*dx = constant (flat shifted line)
+            const projX = vanishX + scale * (-x) * screenW / 2;
 
             // Y: camera rides the road surface.
             // cameraY - seg.y = height difference between camera and this segment.
@@ -184,7 +191,7 @@ const Road = {
             });
         }
 
-        projected.horizonDx = dx;
+        projected.horizonDx = x;
         projected.horizonZ = visible * segLen;
 
         return projected;
