@@ -207,7 +207,7 @@ const Renderer = {
         cameraGlow.x = shakeX;
         cameraGlow.y = shakeY;
 
-        // Background parallax: shift sun and bg opposite to curve
+        // Background parallax: shift sun and bg opposite to curve + hill pitch
         if (sunSprite) {
             const parallaxShift = -STATE.curveDelta * STATE.speed * 0.3;
             // Sun position & tint: sets by entropy ~65
@@ -216,8 +216,10 @@ const Renderer = {
             const endX = app.screen.width * 0.85;
             const startY = app.screen.height * 0.15;
             const endY = centerY + 40;
+            // Hill pitch shifts the sun/horizon vertically (looking up → sun moves down)
+            const hillParallax = STATE.cameraPitch * 0.6;
             sunSprite.x = (baseX + (endX - baseX) * t) + parallaxShift;
-            sunSprite.y = startY + (endY - startY) * t;
+            sunSprite.y = startY + (endY - startY) * t + hillParallax;
             // Tint: white → warm orange → deep red → fade out
             if (t < 0.4) {
                 sunSprite.tint = 0xFFFDE7;

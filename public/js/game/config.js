@@ -90,6 +90,18 @@ const CONFIG = {
         centrifugal: 30,        // how much curve pushes camera sideways
         totalSegments: 1600,    // loop length
         fogDensity: 5,          // higher = more distant fog
+
+        // Hill physics (Slipstream-style roller coaster feel)
+        hill: {
+            speedEffect: 600,       // slope→speed multiplier (higher = more effect)
+            speedMin: 0.55,         // minimum speed ratio on steep uphill
+            speedMax: 1.5,          // maximum speed ratio on steep downhill
+            cameraFollow: 0.1,      // how quickly camera elevation follows road (0–1)
+            pitchScale: 800,        // camera pitch from slope (higher = more dramatic horizon shift)
+            pitchSmoothing: 0.07,   // how quickly pitch adjusts
+            slopeSmoothing: 0.12,   // how quickly slope reading adjusts
+        },
+
         // Color pairs [even, odd] — Endesga 64 palette
         colors: {
             road:    [0x5A5A5A, 0x3C3C3C],

@@ -24,7 +24,13 @@ const STATE = {
     // Road position
     roadPosition: 0,    // camera Z along track (world units)
     playerX: 0,         // lateral offset from road center
-    curveDelta: 0       // current curve intensity (for centrifugal + parallax)
+    curveDelta: 0,      // current curve intensity (for centrifugal + parallax)
+
+    // Hill physics (Slipstream-style)
+    hillSlope: 0,           // smoothed current slope of road
+    hillSpeedMod: 1,        // speed multiplier from slope (< 1 = uphill, > 1 = downhill)
+    cameraElevation: 0,     // camera Y offset tracking road elevation
+    cameraPitch: 0           // horizon shift from slope (positive = looking up)
 };
 
 function resetState() {
@@ -45,4 +51,8 @@ function resetState() {
     STATE.roadPosition = 0;
     STATE.playerX = 0;
     STATE.curveDelta = 0;
+    STATE.hillSlope = 0;
+    STATE.hillSpeedMod = 1;
+    STATE.cameraElevation = 0;
+    STATE.cameraPitch = 0;
 }
