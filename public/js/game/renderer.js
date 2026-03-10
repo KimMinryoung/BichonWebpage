@@ -341,7 +341,7 @@ const Renderer = {
         const shakeX = (Math.random() - 0.5) * STATE.shake;
         const shakeY = (Math.random() - 0.5) * STATE.shake;
 
-        // Camera roll (bank into curves) — yaw is applied in road projection
+        // Camera roll (bank into curves)
         const roll = STATE.cameraRoll || 0;
 
         camera.rotation = roll;
@@ -355,7 +355,6 @@ const Renderer = {
         // Sun position & tint based on act progression
         if (sunSprite) {
             const parallaxShift = -STATE.curveDelta * STATE.speed * 0.3;
-            const hillParallax = STATE.cameraPitch * 0.6;
 
             // Sun visible in Act 1 and early Act 2, then fades
             const t = Math.min(1, STATE.entropy / 50);
@@ -365,7 +364,7 @@ const Renderer = {
             const endY = centerY + 40;
 
             sunSprite.x = (baseX + (endX - baseX) * t) + parallaxShift;
-            sunSprite.y = startY + (endY - startY) * t + hillParallax;
+            sunSprite.y = startY + (endY - startY) * t ;
 
             if (STATE.act === 'act1') {
                 sunSprite.tint = 0xc4a060;
@@ -381,7 +380,7 @@ const Renderer = {
                 // Overexposed white sun
                 sunSprite.tint = 0xf0ebe0;
                 sunSprite.alpha = 0.6;
-                sunSprite.y = app.screen.height * 0.3 + hillParallax;
+                sunSprite.y = app.screen.height * 0.3 ;
             } else {
                 sunSprite.alpha = 0;
             }

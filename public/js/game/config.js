@@ -152,26 +152,16 @@ const CONFIG = {
         rumbleWidth: 100,
         cameraHeight: 1000,
         cameraDepth: 0.84,
-        centrifugal: 30,
+        centrifugal: 0,         // train on rails — no lateral drift
         totalSegments: 1600,
         fogDensity: 5,
 
-        hill: {
-            speedEffect: 600,
-            speedMin: 0.55,
-            speedMax: 1.5,
-            cameraFollow: 0.1,
-            pitchScale: 800,
-            pitchSmoothing: 0.07,
-            slopeSmoothing: 0.12,
-        },
-
-        // Curve camera physics (vehicle-like banking and look-ahead)
+        // Curve camera: train follows track, roll provides banking feel
         curve: {
-            rollScale: 0.04,        // max roll angle per unit curve intensity (radians)
-            rollSmoothing: 0.08,    // how quickly roll adjusts (0-1, lower = smoother)
-            yawScale: 200,          // pixels: vanishing point shift per unit curve intensity
-            yawSmoothing: 0.10,     // how quickly yaw adjusts (higher = more responsive)
+            rollScale: 0.05,        // bank angle (radians per unit curve)
+            rollSmoothing: 0.10,    // responsive banking
+            yawScale: 180,          // vanishing point shift into curve (pixels)
+            yawSmoothing: 0.12,     // responsive look-ahead
         },
 
         // Default colors (overridden per-act by getRoadColors())

@@ -37,13 +37,8 @@ const STATE = {
     playerX: 0,
     curveDelta: 0,
 
-    // Hill physics
-    hillSlope: 0,
-    hillSpeedMod: 1,
-    cameraElevation: 0,
-    cameraPitch: 0,
+    // Camera
     cameraRoll: 0,          // bank into curves (radians)
-    cameraYaw: 0,           // look into turn direction (pixels)
 
     // AI light beam
     aiBeamAlpha: 0.6,
@@ -89,12 +84,7 @@ function resetState() {
     STATE.roadPosition = 0;
     STATE.playerX = 0;
     STATE.curveDelta = 0;
-    STATE.hillSlope = 0;
-    STATE.hillSpeedMod = 1;
-    STATE.cameraElevation = 0;
-    STATE.cameraPitch = 0;
     STATE.cameraRoll = 0;
-    STATE.cameraYaw = 0;
     STATE.aiBeamAlpha = 0.6;
     STATE.aiBeamWidth = 1.0;
     STATE.aiBeamColor = 0x00b8d8;
