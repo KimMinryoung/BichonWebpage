@@ -42,6 +42,8 @@ const STATE = {
     hillSpeedMod: 1,
     cameraElevation: 0,
     cameraPitch: 0,
+    cameraRoll: 0,          // bank into curves (radians)
+    cameraYaw: 0,           // look into turn direction (pixels)
 
     // AI light beam
     aiBeamAlpha: 0.6,
@@ -91,6 +93,8 @@ function resetState() {
     STATE.hillSpeedMod = 1;
     STATE.cameraElevation = 0;
     STATE.cameraPitch = 0;
+    STATE.cameraRoll = 0;
+    STATE.cameraYaw = 0;
     STATE.aiBeamAlpha = 0.6;
     STATE.aiBeamWidth = 1.0;
     STATE.aiBeamColor = 0x00b8d8;

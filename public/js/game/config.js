@@ -166,6 +166,14 @@ const CONFIG = {
             slopeSmoothing: 0.12,
         },
 
+        // Curve camera physics (vehicle-like banking and look-ahead)
+        curve: {
+            rollScale: 0.04,        // max roll angle per unit curve intensity (radians)
+            rollSmoothing: 0.08,    // how quickly roll adjusts (0-1, lower = smoother)
+            yawScale: 60,           // pixels of horizontal look-ahead per unit curve
+            yawSmoothing: 0.06,     // how quickly yaw adjusts
+        },
+
         // Default colors (overridden per-act by getRoadColors())
         colors: {
             road:    [0x18182e, 0x28284a],

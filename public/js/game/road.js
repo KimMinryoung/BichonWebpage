@@ -239,13 +239,22 @@ const Road = {
         const targetPitch = STATE.hillSlope * hill.pitchScale;
         STATE.cameraPitch += (targetPitch - STATE.cameraPitch) * hill.pitchSmoothing;
 
-        // --- Curve handling (unchanged) ---
+        // --- Curve handling ---
         STATE.curveDelta = seg.curve;
 
         // Centrifugal drift: curve pushes camera sideways
         STATE.playerX += seg.curve * CONFIG.road.centrifugal * STATE.speed * STATE.hillSpeedMod * dt;
         // Spring back toward center
         STATE.playerX *= 0.97;
+
+        // --- Camera roll (bank into curves like a vehicle on banked track) ---
+        const curveConf = CONFIG.road.curve;
+        const targetRoll = -seg.curve * curveConf.rollScale;
+        STATE.cameraRoll += (targetRoll - STATE.cameraRoll) * curveConf.rollSmoothing;
+
+        // --- Camera yaw (look into the turn direction) ---
+        const targetYaw = -seg.curve * curveConf.yawScale;
+        STATE.cameraYaw += (targetYaw - STATE.cameraYaw) * curveConf.yawSmoothing;
     },
 
     getSegment(idx) {

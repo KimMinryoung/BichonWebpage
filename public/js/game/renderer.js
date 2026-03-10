@@ -340,10 +340,18 @@ const Renderer = {
         // Camera shake
         const shakeX = (Math.random() - 0.5) * STATE.shake;
         const shakeY = (Math.random() - 0.5) * STATE.shake;
-        camera.x = shakeX;
-        camera.y = shakeY;
-        cameraGlow.x = shakeX;
-        cameraGlow.y = shakeY;
+
+        // Camera roll (bank) + yaw (look into turn)
+        const roll = STATE.cameraRoll || 0;
+        const yaw = STATE.cameraYaw || 0;
+
+        camera.rotation = roll;
+        camera.pivot.set(centerX, centerY);
+        camera.position.set(centerX + shakeX + yaw, centerY + shakeY);
+
+        cameraGlow.rotation = roll;
+        cameraGlow.pivot.set(centerX, centerY);
+        cameraGlow.position.set(centerX + shakeX + yaw, centerY + shakeY);
 
         // Sun position & tint based on act progression
         if (sunSprite) {
