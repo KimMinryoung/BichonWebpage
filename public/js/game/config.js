@@ -170,8 +170,8 @@ const CONFIG = {
         curve: {
             rollScale: 0.04,        // max roll angle per unit curve intensity (radians)
             rollSmoothing: 0.08,    // how quickly roll adjusts (0-1, lower = smoother)
-            yawScale: 60,           // pixels of horizontal look-ahead per unit curve
-            yawSmoothing: 0.06,     // how quickly yaw adjusts
+            yawScale: 800,          // world-space look-ahead into curve (shifts vanishing point)
+            yawSmoothing: 0.10,     // how quickly yaw adjusts (higher = more responsive)
         },
 
         // Default colors (overridden per-act by getRoadColors())

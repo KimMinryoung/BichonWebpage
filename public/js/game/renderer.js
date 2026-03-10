@@ -341,17 +341,16 @@ const Renderer = {
         const shakeX = (Math.random() - 0.5) * STATE.shake;
         const shakeY = (Math.random() - 0.5) * STATE.shake;
 
-        // Camera roll (bank) + yaw (look into turn)
+        // Camera roll (bank into curves) — yaw is applied in road projection
         const roll = STATE.cameraRoll || 0;
-        const yaw = STATE.cameraYaw || 0;
 
         camera.rotation = roll;
         camera.pivot.set(centerX, centerY);
-        camera.position.set(centerX + shakeX + yaw, centerY + shakeY);
+        camera.position.set(centerX + shakeX, centerY + shakeY);
 
         cameraGlow.rotation = roll;
         cameraGlow.pivot.set(centerX, centerY);
-        cameraGlow.position.set(centerX + shakeX + yaw, centerY + shakeY);
+        cameraGlow.position.set(centerX + shakeX, centerY + shakeY);
 
         // Sun position & tint based on act progression
         if (sunSprite) {
