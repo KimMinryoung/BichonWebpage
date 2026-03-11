@@ -106,9 +106,9 @@ const CONFIG = {
     },
 
     counts: {
-        buildings: 50,
-        trees: 20,
-        streetlights: 15,
+        buildings: 160,
+        trees: 80,
+        streetlights: 50,
         clouds: 8
     },
 
@@ -150,8 +150,8 @@ const CONFIG = {
         shoulderWidth: 600,
         lanes: 3,
         rumbleWidth: 100,
-        cameraHeight: 600,          // low altitude — broomstick skimming rooftops
-        cameraDepth: 1.8,           // narrow FOV (telephoto) — more realistic perspective
+        cameraHeight: 800,          // low-ish altitude — broomstick above rooftops
+        cameraDepth: 3.0,           // tight telephoto FOV — realistic urban perspective
         centrifugal: 0,
         totalSegments: 1600,
         fogDensity: 5,
