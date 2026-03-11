@@ -57,7 +57,10 @@ const STATE = {
     trackCrackLevel: 0,   // 0 = pristine, 1 = fully cracked
 
     // Infection pixels (Act 3 Shadow Legion aftermath)
-    infectionLevel: 0
+    infectionLevel: 0,
+
+    // Landscape biome: 'city', 'sea', 'tehran', 'desolate'
+    biome: 'city'
 };
 
 function resetState() {
@@ -95,4 +98,5 @@ function resetState() {
     STATE.roadEdgeR = 0xc4; STATE.roadEdgeG = 0xa0; STATE.roadEdgeB = 0x60;
     STATE.trackCrackLevel = 0;
     STATE.infectionLevel = 0;
+    STATE.biome = 'city';
 }

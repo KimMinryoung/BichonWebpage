@@ -97,6 +97,34 @@ const CONFIG = {
         }
     },
 
+    // ── Biome ground colors (override grass per landscape) ──
+    biomes: {
+        city: null,          // uses default act grass colors
+        sea: {
+            // Persian Gulf — dark teal water with sunset reflection
+            act2: { dark: 0x0c2030, light: 0x183848, reflect: 0x3a1828 },
+            // Fallback for other acts
+            default: { dark: 0x0a1828, light: 0x142838 }
+        },
+        tehran: {
+            // Sandy desert city ground
+            dark: 0x3a2820, light: 0x4a3828
+        },
+        desolate: {
+            // Empty, washed-out ground (Act 4)
+            dark: 0xa0987a, light: 0xc0b898
+        }
+    },
+
+    // ── Entity visibility per biome ──
+    // true = visible, false = hidden
+    biomeEntities: {
+        city:     { building: true,  tree: true,  streetlight: true,  crow: true, lantern: true, balloon: true },
+        sea:      { building: false, tree: false, streetlight: false, crow: true, lantern: false, balloon: false },
+        tehran:   { building: true,  tree: false, streetlight: true,  crow: true, lantern: false, balloon: false },
+        desolate: { building: false, tree: false, streetlight: true,  crow: false, lantern: false, balloon: false }
+    },
+
     // Ending accent palettes
     endings: {
         transparent: { accent: 0x00c8e8, bg: 0x003848, flash: 0xffffff },
@@ -191,13 +219,31 @@ const CONFIG = {
     }
 };
 
-// Returns road colors for current act
+// Returns road colors for current act, with biome ground override
 function getRoadColors(act) {
     const a = CONFIG.acts[act];
     if (!a) return CONFIG.road.colors;
+
+    let grassDark = a.grass.dark;
+    let grassLight = a.grass.light;
+
+    // Override ground color based on biome
+    const biome = STATE.biome;
+    if (biome === 'sea') {
+        const seaColors = CONFIG.biomes.sea[act] || CONFIG.biomes.sea.default;
+        grassDark = seaColors.dark;
+        grassLight = seaColors.light;
+    } else if (biome === 'tehran') {
+        grassDark = CONFIG.biomes.tehran.dark;
+        grassLight = CONFIG.biomes.tehran.light;
+    } else if (biome === 'desolate') {
+        grassDark = CONFIG.biomes.desolate.dark;
+        grassLight = CONFIG.biomes.desolate.light;
+    }
+
     return {
         road:     [a.road.dark, a.road.light],
-        grass:    [a.grass.dark, a.grass.light],
+        grass:    [grassDark, grassLight],
         rumble:   [a.rumble.a, a.rumble.b],
         lane:     a.lane,
         shoulder: [a.shoulder.a, a.shoulder.b]

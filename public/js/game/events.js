@@ -103,6 +103,10 @@ function _restoreEntities(ev) {
     savedElevations.forEach(({ entity, elevation }) => {
         entity.elevation = elevation;
     });
+    // Restore biome if event changed it
+    if (ev.data.prevBiome) {
+        STATE.biome = ev.data.prevBiome;
+    }
 }
 
 function _getVisibleEntities(type) {
@@ -297,24 +301,29 @@ const EVENT_BUILDERS = {
 
     // ════════════════════════════════════════════════
     //  Event 3: Fall of Eden — PASSIVE
-    //  Buildings sway. Crows scatter wildly.
-    //  Lanterns flicker and die. Stars flash erratically.
+    //  Biome switches to Tehran. Buildings sway.
+    //  Crows scatter wildly. Stars flash erratically.
     // ════════════════════════════════════════════════
     fallOfEden: {
         create(ev) {
+            // Save previous biome and switch to Tehran cityscape
+            ev.data.prevBiome = STATE.biome;
+            STATE.biome = 'tehran';
+
+            // Now gather entities (buildings become visible due to tehran biome)
             const buildings = _getVisibleEntities('building');
             const crows = _getVisibleEntities('crow');
-            const lanterns = _getVisibleEntities('lantern');
+            const streetlights = _getVisibleEntities('streetlight');
             const stars = _getVisibleBg('star');
 
-            ev.data.affectedEntities = [...buildings, ...crows, ...lanterns];
+            ev.data.affectedEntities = [...buildings, ...crows, ...streetlights];
             ev.data.affectedBg = stars;
         },
 
         animate(ev) {
             const buildings = ev.data.affectedEntities.filter(e => e.type === 'building');
             const crows = ev.data.affectedEntities.filter(e => e.type === 'crow');
-            const lanterns = ev.data.affectedEntities.filter(e => e.type === 'lantern');
+            const streetlights = ev.data.affectedEntities.filter(e => e.type === 'streetlight');
 
             // Buildings sway
             buildings.forEach(e => {
@@ -335,12 +344,8 @@ const EVENT_BUILDERS = {
                 ev.tweens.push(_tweenTint(e.sprite, 0xc43020, 1, { delay: Math.random() * 0.5 }));
             });
 
-            // Lanterns flicker and dim
-            lanterns.forEach(e => {
-                ev.tweens.push(gsap.to(e.sprite, {
-                    alpha: 0.2, duration: 0.15, yoyo: true, repeat: 12,
-                    delay: Math.random() * 1
-                }));
+            // Streetlights flicker (Tehran chaos)
+            streetlights.forEach(e => {
                 if (e.glowSprite) {
                     ev.tweens.push(gsap.to(e.glowSprite, {
                         alpha: 0, duration: 0.1, yoyo: true, repeat: -1,
@@ -370,6 +375,10 @@ const EVENT_BUILDERS = {
         },
 
         resolve(ev, correct) {
+            // Restore biome back to sea (still in Act 2)
+            if (ev.data.prevBiome) {
+                STATE.biome = ev.data.prevBiome;
+            }
             _delayedClear(ev, 1);
         }
     },

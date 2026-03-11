@@ -391,6 +391,14 @@ const Entities = {
                 continue;
             }
 
+            // Biome visibility: hide entity types not in current biome
+            const biomeVis = CONFIG.biomeEntities[STATE.biome];
+            if (biomeVis && biomeVis[e.type] === false) {
+                e.sprite.visible = false;
+                if (e.glowSprite) e.glowSprite.visible = false;
+                continue;
+            }
+
             e.sprite.visible = true;
 
             let screenX = proj.x + proj.w * e.roadOffset;

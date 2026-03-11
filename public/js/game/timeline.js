@@ -44,6 +44,17 @@ const Timeline = {
             STATE.aiBeamAlpha = Math.max(0.1, 0.6 - (e - 73) / 17 * 0.5);
         }
 
+        // Biome transitions per act
+        if (newAct === 'act1') {
+            STATE.biome = 'city';       // Seoul → Silicon Valley
+        } else if (newAct === 'act2') {
+            STATE.biome = 'sea';        // Persian Gulf
+        } else if (newAct === 'act3') {
+            STATE.biome = 'city';       // Washington D.C. → Seoul
+        } else if (newAct === 'act4') {
+            STATE.biome = 'desolate';   // Empty landscapes
+        }
+
         // Check ending conditions in Act 5
         if (newAct === 'act5' && !STATE.ended) {
             this._triggerEnding();
