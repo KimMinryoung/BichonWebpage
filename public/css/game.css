@@ -1,4 +1,13 @@
 /* Game page styles */
+
+/* Hide all text UI until narrative is finalized */
+#game-narrative,
+#game-choices,
+#game-choices.visible,
+#game-ending,
+#game-ending.visible {
+    display: none !important;
+}
 body.game-page {
     margin: 0;
     overflow: hidden;
