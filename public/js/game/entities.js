@@ -17,9 +17,9 @@ const ENTITY_SCALE = {
 };
 
 const PLACEMENT = {
-    tree:        { minOff: 0.4, maxOff: 1.3 },   // some trees right on the roadside
-    streetlight: { minOff: 0.85, maxOff: 1.05 },  // line the road edges
-    building:    { minOff: 1.3,  maxOff: 2.2 }    // dense but not blocking the road view
+    tree:        { minOff: 0.15, maxOff: 1.3 },   // can appear close to flight path
+    streetlight: { minOff: 0.3,  maxOff: 1.05 },  // scattered around the flight path
+    building:    { minOff: 0.6,  maxOff: 2.2 }    // fly between buildings — canyon feel
 };
 
 const SPACING = {
