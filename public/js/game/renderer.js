@@ -268,20 +268,22 @@ const Renderer = {
     },
 
     applyEffects() {
-        // Camera shake
+        // Camera shake + hover bob (aerial floating feel)
         const shakeX = (Math.random() - 0.5) * STATE.shake;
         const shakeY = (Math.random() - 0.5) * STATE.shake;
+        const time = Date.now() * 0.002;
+        const hoverY = Math.sin(time) * 15;
 
         // Camera roll (bank into curves)
         const roll = STATE.cameraRoll || 0;
 
         camera.rotation = roll;
         camera.pivot.set(centerX, centerY);
-        camera.position.set(centerX + shakeX, centerY + shakeY);
+        camera.position.set(centerX + shakeX, centerY + shakeY + hoverY);
 
         cameraGlow.rotation = roll;
         cameraGlow.pivot.set(centerX, centerY);
-        cameraGlow.position.set(centerX + shakeX, centerY + shakeY);
+        cameraGlow.position.set(centerX + shakeX, centerY + shakeY + hoverY);
 
         // Sun position & tint based on act progression
         if (sunSprite) {
