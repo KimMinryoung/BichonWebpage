@@ -18,12 +18,19 @@ const SPRITE_MANIFEST = {
     'cloud': 'cloud.png',
     'sun': 'sun.png',
     'ground': 'ground.png',
+    // Aerial entities (witch flight path)
+    'crow': 'crow.png',
+    'lantern': 'lantern.png',
+    'balloon': 'balloon.png',
+    'moon': 'moon.png',
+    'star': 'star.png',
     // Glow layers (emissive — bypass color grading filter)
     'building-modern-glow': 'building-modern-glow.png',
     'building-glass-glow': 'building-glass-glow.png',
     'building-apartment-glow': 'building-apartment-glow.png',
     'namsan-tower-glow': 'namsan-tower-glow.png',
     'streetlight-glow': 'streetlight-glow.png',
+    'lantern-glow': 'lantern-glow.png',
 };
 
 const textures = {};
@@ -66,6 +73,11 @@ const Assets = {
         if (!textures['tree'])               textures['tree']               = this._genTree(app);
         if (!textures['streetlight'])        textures['streetlight']        = this._genStreetlight(app);
         if (!textures['cloud'])              textures['cloud']              = this._genCloud(app);
+        if (!textures['crow'])               textures['crow']               = this._genCrow(app);
+        if (!textures['lantern'])            textures['lantern']            = this._genLantern(app);
+        if (!textures['balloon'])            textures['balloon']            = this._genBalloon(app);
+        if (!textures['moon'])               textures['moon']               = this._genMoon(app);
+        if (!textures['star'])               textures['star']               = this._genStar(app);
 
         // Glow layer fallbacks (emissive — only the lit parts on transparent bg)
         if (!textures['building-modern-glow'])    textures['building-modern-glow']    = this._genBuildingGlow(app, 24, 40);
@@ -73,6 +85,7 @@ const Assets = {
         if (!textures['building-apartment-glow']) textures['building-apartment-glow'] = this._genBuildingGlow(app, 28, 36);
         if (!textures['namsan-tower-glow'])       textures['namsan-tower-glow']       = this._genNamsanTowerGlow(app);
         if (!textures['streetlight-glow'])        textures['streetlight-glow']        = this._genStreetlightGlow(app);
+        if (!textures['lantern-glow'])            textures['lantern-glow']            = this._genLanternGlow(app);
     },
 
     // --- Pixel art generators (placeholder fallbacks) ---
@@ -297,6 +310,159 @@ const Assets = {
             scaleMode: PIXI.SCALE_MODES.NEAREST,
             resolution: 1,
             region: new PIXI.Rectangle(0, 0, 8, 24)
+        });
+        g.destroy();
+        return tex;
+    },
+
+    // --- Aerial entity generators (witch flight) ---
+
+    _genCrow(app) {
+        const g = new PIXI.Graphics();
+        // Simple bird silhouette — V-shaped wings
+        g.beginFill(0x222222);
+        // Body
+        g.drawRect(4, 3, 4, 2);
+        // Left wing
+        g.drawRect(0, 1, 3, 1);
+        g.drawRect(1, 2, 2, 1);
+        // Right wing
+        g.drawRect(9, 1, 3, 1);
+        g.drawRect(9, 2, 2, 1);
+        g.endFill();
+        // Eye
+        g.beginFill(0xFFFFFF);
+        g.drawRect(6, 3, 1, 1);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genLantern(app) {
+        const g = new PIXI.Graphics();
+        // Paper lantern — warm glow
+        // String
+        g.beginFill(0x888888);
+        g.drawRect(4, 0, 1, 3);
+        g.endFill();
+        // Lantern body
+        g.beginFill(0xCC4422);
+        g.drawRect(2, 3, 5, 7);
+        g.endFill();
+        // Inner glow
+        g.beginFill(0xFF8844, 0.8);
+        g.drawRect(3, 4, 3, 5);
+        g.endFill();
+        // Bottom
+        g.beginFill(0x996633);
+        g.drawRect(3, 10, 3, 1);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genLanternGlow(app) {
+        const g = new PIXI.Graphics();
+        // Warm glow halo (matches lantern dimensions: 9x11)
+        g.beginFill(0xFF8844, 0.8);
+        g.drawRect(3, 4, 3, 5);
+        g.endFill();
+        g.beginFill(0xFF8844, 0.3);
+        g.drawRect(1, 2, 7, 9);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1,
+            region: new PIXI.Rectangle(0, 0, 9, 11)
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genBalloon(app) {
+        const g = new PIXI.Graphics();
+        // Hot air balloon
+        // Envelope (round top)
+        g.beginFill(0xDD5533);
+        g.drawRect(4, 0, 12, 4);
+        g.drawRect(2, 4, 16, 8);
+        g.drawRect(4, 12, 12, 4);
+        g.endFill();
+        // Stripe
+        g.beginFill(0xEECC44);
+        g.drawRect(2, 6, 16, 3);
+        g.endFill();
+        // Basket ropes
+        g.beginFill(0x886644);
+        g.drawRect(6, 16, 1, 4);
+        g.drawRect(13, 16, 1, 4);
+        g.endFill();
+        // Basket
+        g.beginFill(0x886644);
+        g.drawRect(5, 20, 10, 4);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genMoon(app) {
+        const g = new PIXI.Graphics();
+        // Crescent moon
+        g.beginFill(0xEEEECC);
+        g.drawRect(4, 0, 16, 4);
+        g.drawRect(2, 4, 20, 4);
+        g.drawRect(0, 8, 24, 8);
+        g.drawRect(2, 16, 20, 4);
+        g.drawRect(4, 20, 16, 4);
+        g.endFill();
+        // Dark part (crescent cutout)
+        g.beginFill(0x000000, 0);
+        g.endFill();
+        // Shadow to make crescent shape
+        g.beginFill(0x141430, 0.95);
+        g.drawRect(8, 2, 12, 4);
+        g.drawRect(10, 6, 12, 4);
+        g.drawRect(10, 10, 12, 4);
+        g.drawRect(8, 14, 12, 4);
+        g.drawRect(8, 18, 10, 4);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genStar(app) {
+        const g = new PIXI.Graphics();
+        // Tiny star — 3x3 cross
+        g.beginFill(0xFFFFDD);
+        g.drawRect(1, 0, 1, 1);
+        g.drawRect(0, 1, 3, 1);
+        g.drawRect(1, 2, 1, 1);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
         });
         g.destroy();
         return tex;

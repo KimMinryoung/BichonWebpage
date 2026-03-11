@@ -109,7 +109,11 @@ const CONFIG = {
         buildings: 160,
         trees: 80,
         streetlights: 50,
-        clouds: 8
+        clouds: 8,
+        crows: 60,
+        lanterns: 40,
+        balloons: 15,
+        stars: 30
     },
 
     sizes: {
