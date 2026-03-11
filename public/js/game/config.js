@@ -219,27 +219,18 @@ const CONFIG = {
     }
 };
 
-// Returns road colors for current act, with biome ground override
+// Returns road colors for current act, using tweened ground colors from STATE
 function getRoadColors(act) {
     const a = CONFIG.acts[act];
     if (!a) return CONFIG.road.colors;
 
-    let grassDark = a.grass.dark;
-    let grassLight = a.grass.light;
-
-    // Override ground color based on biome
-    const biome = STATE.biome;
-    if (biome === 'sea') {
-        const seaColors = CONFIG.biomes.sea[act] || CONFIG.biomes.sea.default;
-        grassDark = seaColors.dark;
-        grassLight = seaColors.light;
-    } else if (biome === 'tehran') {
-        grassDark = CONFIG.biomes.tehran.dark;
-        grassLight = CONFIG.biomes.tehran.light;
-    } else if (biome === 'desolate') {
-        grassDark = CONFIG.biomes.desolate.dark;
-        grassLight = CONFIG.biomes.desolate.light;
-    }
+    // Ground colors are smoothly tweened in STATE (set by tweenBiomeGround)
+    const grassDark = (Math.round(STATE.groundDarkR) << 16)
+                    | (Math.round(STATE.groundDarkG) << 8)
+                    | Math.round(STATE.groundDarkB);
+    const grassLight = (Math.round(STATE.groundLightR) << 16)
+                     | (Math.round(STATE.groundLightG) << 8)
+                     | Math.round(STATE.groundLightB);
 
     return {
         road:     [a.road.dark, a.road.light],
@@ -248,4 +239,48 @@ function getRoadColors(act) {
         lane:     a.lane,
         shoulder: [a.shoulder.a, a.shoulder.b]
     };
+}
+
+// Resolve target ground colors for a biome+act combination
+function _getGroundTarget(biome, act) {
+    const a = CONFIG.acts[act];
+    if (!a) return null;
+
+    let dark, light;
+    if (biome === 'sea') {
+        const seaColors = CONFIG.biomes.sea[act] || CONFIG.biomes.sea.default;
+        dark = seaColors.dark;
+        light = seaColors.light;
+    } else if (biome === 'tehran') {
+        dark = CONFIG.biomes.tehran.dark;
+        light = CONFIG.biomes.tehran.light;
+    } else if (biome === 'desolate') {
+        dark = CONFIG.biomes.desolate.dark;
+        light = CONFIG.biomes.desolate.light;
+    } else {
+        // city — use act's default grass
+        dark = a.grass.dark;
+        light = a.grass.light;
+    }
+    return {
+        groundDarkR:  (dark >> 16) & 0xFF,
+        groundDarkG:  (dark >> 8) & 0xFF,
+        groundDarkB:  dark & 0xFF,
+        groundLightR: (light >> 16) & 0xFF,
+        groundLightG: (light >> 8) & 0xFF,
+        groundLightB: light & 0xFF
+    };
+}
+
+// Smoothly tween ground colors when biome changes
+let _biomeTween = null;
+function tweenBiomeGround(biome, act, duration) {
+    const target = _getGroundTarget(biome, act);
+    if (!target) return;
+    if (_biomeTween) _biomeTween.kill();
+    _biomeTween = gsap.to(STATE, {
+        ...target,
+        duration: duration || 4,
+        ease: 'power2.inOut'
+    });
 }

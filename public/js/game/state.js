@@ -60,7 +60,11 @@ const STATE = {
     infectionLevel: 0,
 
     // Landscape biome: 'city', 'sea', 'tehran', 'desolate'
-    biome: 'city'
+    biome: 'city',
+
+    // Ground colors (tweened for smooth biome transitions)
+    groundDarkR: 0x1a, groundDarkG: 0x30, groundDarkB: 0x28,
+    groundLightR: 0x2e, groundLightG: 0x58, groundLightB: 0x40
 };
 
 function resetState() {
@@ -99,4 +103,11 @@ function resetState() {
     STATE.trackCrackLevel = 0;
     STATE.infectionLevel = 0;
     STATE.biome = 'city';
+    const g1 = CONFIG.acts.act1.grass;
+    STATE.groundDarkR = (g1.dark >> 16) & 0xFF;
+    STATE.groundDarkG = (g1.dark >> 8) & 0xFF;
+    STATE.groundDarkB = g1.dark & 0xFF;
+    STATE.groundLightR = (g1.light >> 16) & 0xFF;
+    STATE.groundLightG = (g1.light >> 8) & 0xFF;
+    STATE.groundLightB = g1.light & 0xFF;
 }

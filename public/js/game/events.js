@@ -106,6 +106,7 @@ function _restoreEntities(ev) {
     // Restore biome if event changed it
     if (ev.data.prevBiome) {
         STATE.biome = ev.data.prevBiome;
+        tweenBiomeGround(ev.data.prevBiome, STATE.act, 2);
     }
 }
 
@@ -306,9 +307,10 @@ const EVENT_BUILDERS = {
     // ════════════════════════════════════════════════
     fallOfEden: {
         create(ev) {
-            // Save previous biome and switch to Tehran cityscape
+            // Save previous biome and transition to Tehran cityscape
             ev.data.prevBiome = STATE.biome;
             STATE.biome = 'tehran';
+            tweenBiomeGround('tehran', STATE.act, 3);
 
             // Now gather entities (buildings become visible due to tehran biome)
             const buildings = _getVisibleEntities('building');
@@ -378,6 +380,7 @@ const EVENT_BUILDERS = {
             // Restore biome back to sea (still in Act 2)
             if (ev.data.prevBiome) {
                 STATE.biome = ev.data.prevBiome;
+                tweenBiomeGround(ev.data.prevBiome, STATE.act, 3);
             }
             _delayedClear(ev, 1);
         }
