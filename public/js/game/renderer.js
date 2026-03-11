@@ -8,6 +8,7 @@ let bgContainer = null;
 let skyGfx = null;         // sky gradient graphics
 let aiBeamGfx = null;      // AI light beam on road
 let narrativeEl = null;    // DOM element for narrative text
+let _groundTopY = 0;       // Y where ground starts (updated by drawRoad, read by _drawSky)
 
 const Renderer = {
     setup() {
@@ -109,12 +110,16 @@ const Renderer = {
         app.stage.addChild(flash);
     },
 
-    // Draw 3-stop sky gradient (fills down to horizon line)
-    _drawSky() {
+    // Draw 3-stop sky gradient (fills down to horizon line, extends to cover slope gaps)
+    _drawSky(groundTop) {
         if (!skyGfx) return;
         const sw = app.screen.width;
         const sh = app.screen.height;
-        const horizonY = sh * (CONFIG.road.horizonLine || 0.65);
+        const nominalHorizon = sh * (CONFIG.road.horizonLine || 0.65);
+
+        // Extend sky down to whichever is lower: the fixed horizon or the actual
+        // ground top (which shifts down on downhill slopes, creating a gap).
+        const horizonY = Math.max(nominalHorizon, groundTop || 0);
 
         skyGfx.clear();
 
@@ -161,6 +166,7 @@ const Renderer = {
         if (projected.length > 0) {
             const horizon = projected[projected.length - 1];
             const horizonY = Math.max(0, horizon.y);
+            _groundTopY = horizonY;   // store for sky to extend down to
             roadGfx.beginFill(rc.grass[0]);
             roadGfx.drawRect(0, horizonY, sw, sh - horizonY);
             roadGfx.endFill();
@@ -319,8 +325,8 @@ const Renderer = {
             }
         }
 
-        // Draw sky gradient
-        this._drawSky();
+        // Draw sky gradient (extends to ground top to prevent slope gaps)
+        this._drawSky(_groundTopY);
 
         // Update narrative text
         this.updateNarrative();
