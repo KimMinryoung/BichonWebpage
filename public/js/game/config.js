@@ -150,12 +150,12 @@ const CONFIG = {
         shoulderWidth: 600,
         lanes: 3,
         rumbleWidth: 100,
-        cameraHeight: 1000,         // height above flight path segments
-        cameraDepth: 0.84,
+        cameraHeight: 600,          // low altitude — broomstick skimming rooftops
+        cameraDepth: 1.8,           // narrow FOV (telephoto) — more realistic perspective
         centrifugal: 0,
         totalSegments: 1600,
         fogDensity: 5,
-        horizonLine: 0.65,          // horizon at 65% down screen (more sky)
+        horizonLine: 0.30,          // horizon at 30% down screen (sky ~30%, ground ~70%)
 
         // Hill physics
         hill: {
