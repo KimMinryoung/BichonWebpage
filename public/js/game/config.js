@@ -142,7 +142,7 @@ const CONFIG = {
         hope:     { speed: 15,  focalLength: 350, shake: 1, motionBlur: 0 }
     },
 
-    // Pseudo-3D road (OutRun / Slipstream style)
+    // Pseudo-3D flight path (After Burner style — aerial on-rails)
     road: {
         segmentLength: 200,
         visibleSegments: 200,
@@ -150,11 +150,12 @@ const CONFIG = {
         shoulderWidth: 600,
         lanes: 3,
         rumbleWidth: 100,
-        cameraHeight: 1000,
+        cameraHeight: 1000,         // height above flight path segments
         cameraDepth: 0.84,
-        centrifugal: 0,         // train on rails — no lateral drift
+        centrifugal: 0,
         totalSegments: 1600,
         fogDensity: 5,
+        horizonLine: 0.65,          // horizon at 65% down screen (more sky)
 
         // Hill physics
         hill: {

@@ -1,8 +1,8 @@
-// Pseudo-3D track system (Slipstream style).
-// Camera rides the front of a train — follows the track like a roller coaster.
-// Curves: look-ahead yaw shifts vanishing point so mid-distance road stays centered.
-// Hills: each segment has a Y elevation; camera tracks the surface, creating
-//        visible slopes, crests, and valleys purely through projection math.
+// Pseudo-3D flight path system (After Burner style).
+// Camera flies along an invisible track high above the ground.
+// Curves: double-integrated lateral offset creates visible flight path curvature.
+// Hills: each segment has a Y elevation; camera tracks the flight path, creating
+//        climbs, dives, and altitude changes purely through projection math.
 // Camera roll provides banking feel on curves.
 
 let segments = [];
@@ -117,6 +117,7 @@ const Road = {
         // Camera faces the track tangent at the current position.
         // Road directly ahead is always centered; curves appear in the distance.
         const vanishX = screenW / 2;
+        const horizonY = screenH * (CONFIG.road.horizonLine || 0.65);
 
         let dx = 0;       // curve rate accumulator
         let x = 0;        // curve position accumulator (double integral)
@@ -141,12 +142,10 @@ const Road = {
             // → x grows positive → far segments appear to the right.
             const projX = vanishX + scale * x * screenW / 2;
 
-            // Y: camera rides the road surface.
-            // cameraY - seg.y = height difference between camera and this segment.
-            // Positive = camera above segment = segment below horizon = larger projY.
-            // When approaching a hill, distant segments have higher seg.y → they
-            // appear above the nearby road → visible upward slope.
-            const projY = (screenH / 2) + scale * (cameraY - seg.y) * screenH / 2;
+            // Y: horizon pushed down for aerial perspective.
+            // cameraY - seg.y = altitude difference between camera and segment.
+            // Ground appears far below; climbs/dives shift the flight path.
+            const projY = horizonY + scale * (cameraY - seg.y) * screenH / 2;
 
             const projW = scale * CONFIG.road.roadWidth * screenW / 2;
 
