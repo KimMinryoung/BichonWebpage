@@ -109,32 +109,29 @@ const Renderer = {
         app.stage.addChild(flash);
     },
 
-    // Draw 3-stop sky gradient
+    // Draw 3-stop sky gradient (fills down to horizon line)
     _drawSky() {
         if (!skyGfx) return;
         const sw = app.screen.width;
         const sh = app.screen.height;
+        const horizonY = sh * (CONFIG.road.horizonLine || 0.65);
 
         skyGfx.clear();
 
         const topColor = (Math.round(STATE.skyTopR) << 16) | (Math.round(STATE.skyTopG) << 8) | Math.round(STATE.skyTopB);
-        const midColor = (Math.round(STATE.skyMidR) << 16) | (Math.round(STATE.skyMidG) << 8) | Math.round(STATE.skyMidB);
-        const botColor = (Math.round(STATE.skyBotR) << 16) | (Math.round(STATE.skyBotG) << 8) | Math.round(STATE.skyBotB);
 
-        // Draw sky in bands (pixelated gradient — fits the aesthetic)
+        // Draw sky bands from top to horizon (pixelated gradient)
         const bands = 24;
-        const bandH = Math.ceil(sh / bands);
+        const bandH = Math.ceil(horizonY / bands);
         for (let i = 0; i < bands; i++) {
             const t = i / (bands - 1);
             let r, g, b;
             if (t < 0.5) {
-                // Top to mid
                 const p = t * 2;
                 r = STATE.skyTopR + (STATE.skyMidR - STATE.skyTopR) * p;
                 g = STATE.skyTopG + (STATE.skyMidG - STATE.skyTopG) * p;
                 b = STATE.skyTopB + (STATE.skyMidB - STATE.skyTopB) * p;
             } else {
-                // Mid to bottom
                 const p = (t - 0.5) * 2;
                 r = STATE.skyMidR + (STATE.skyBotR - STATE.skyMidR) * p;
                 g = STATE.skyMidG + (STATE.skyBotG - STATE.skyMidG) * p;
@@ -146,26 +143,21 @@ const Renderer = {
             skyGfx.endFill();
         }
 
-        // Background color for areas not covered
         app.renderer.background.color = topColor;
     },
 
-    // Draw road each frame using projected segments
+    // Draw ground plane below flight path (After Burner style).
+    // No road surface — only terrain strips visible far below.
     drawRoad(projected) {
         if (!roadGfx || projected.length < 2) return;
 
         const sw = app.screen.width;
         const sh = app.screen.height;
         const rc = getRoadColors(STATE.act);
-        const rumbleW = CONFIG.road.rumbleWidth;
-        const shoulderW = CONFIG.road.shoulderWidth;
-        const edgeColor = (Math.round(STATE.roadEdgeR) << 16)
-                        | (Math.round(STATE.roadEdgeG) << 8)
-                        | Math.round(STATE.roadEdgeB);
 
         roadGfx.clear();
 
-        // Fill below horizon with grass
+        // Fill below horizon with base ground color
         if (projected.length > 0) {
             const horizon = projected[projected.length - 1];
             const horizonY = Math.max(0, horizon.y);
@@ -179,7 +171,8 @@ const Renderer = {
                        | (Math.round(STATE.fogG) << 8)
                        | Math.round(STATE.fogB);
 
-        // Draw segments from far to near (painter's algorithm)
+        // Draw ground strips from far to near (painter's algorithm).
+        // Full-width horizontal bands — terrain seen from altitude.
         for (let n = projected.length - 2; n >= 0; n--) {
             const curr = projected[n];
             const prev = projected[n + 1];
@@ -189,76 +182,14 @@ const Renderer = {
 
             const isEven = (curr.index % 2) === 0;
 
-            const currW = curr.w;
-            const prevW = prev.w;
-            const currRumble = currW * (1 + rumbleW / CONFIG.road.roadWidth);
-            const prevRumble = prevW * (1 + rumbleW / CONFIG.road.roadWidth);
-            const currShoulder = currW * (1 + (rumbleW + shoulderW) / CONFIG.road.roadWidth);
-            const prevShoulder = prevW * (1 + (rumbleW + shoulderW) / CONFIG.road.roadWidth);
-
-            // Grass
-            const grassColor = isEven ? rc.grass[0] : rc.grass[1];
-            roadGfx.beginFill(grassColor);
+            // Ground terrain strips (alternating colors — checkerboard feel)
+            const groundColor = isEven ? rc.grass[0] : rc.grass[1];
+            roadGfx.beginFill(groundColor);
             roadGfx.moveTo(0, prev.y);
             roadGfx.lineTo(sw, prev.y);
             roadGfx.lineTo(sw, curr.y);
             roadGfx.lineTo(0, curr.y);
             roadGfx.endFill();
-
-            // Shoulder
-            const shoulderColor = isEven ? rc.shoulder[0] : rc.shoulder[1];
-            roadGfx.beginFill(shoulderColor);
-            roadGfx.moveTo(prev.x - prevShoulder, prev.y);
-            roadGfx.lineTo(prev.x + prevShoulder, prev.y);
-            roadGfx.lineTo(curr.x + currShoulder, curr.y);
-            roadGfx.lineTo(curr.x - currShoulder, curr.y);
-            roadGfx.endFill();
-
-            // Rumble strips — single accent color on even, road-dark on odd
-            const rumbleColor = isEven ? edgeColor : rc.road[1];
-            roadGfx.beginFill(rumbleColor);
-            roadGfx.moveTo(prev.x - prevRumble, prev.y);
-            roadGfx.lineTo(prev.x + prevRumble, prev.y);
-            roadGfx.lineTo(curr.x + currRumble, curr.y);
-            roadGfx.lineTo(curr.x - currRumble, curr.y);
-            roadGfx.endFill();
-
-            // Road surface
-            const roadColor = isEven ? rc.road[0] : rc.road[1];
-            roadGfx.beginFill(roadColor);
-            roadGfx.moveTo(prev.x - prevW, prev.y);
-            roadGfx.lineTo(prev.x + prevW, prev.y);
-            roadGfx.lineTo(curr.x + currW, curr.y);
-            roadGfx.lineTo(curr.x - currW, curr.y);
-            roadGfx.endFill();
-
-            // Track cracks (entropy-driven distortion on road surface)
-            if (STATE.trackCrackLevel > 0 && isEven && curr.scale > 0.005) {
-                const crackAlpha = Math.min(0.6, STATE.trackCrackLevel * 0.6);
-                const crackW = currW * 0.02 * (1 + STATE.trackCrackLevel * 2);
-                roadGfx.beginFill(0x111111, crackAlpha);
-                // Random-ish crack line on the road
-                const seed = curr.index * 7 % 13;
-                const offX = (seed / 13 - 0.5) * currW * 0.8;
-                roadGfx.drawRect(curr.x + offX, curr.y, crackW, Math.abs(curr.y - prev.y) + 1);
-                roadGfx.endFill();
-            }
-
-            // Lane markings (dashed)
-            if (isEven && curr.scale > 0.001) {
-                const laneW = Math.max(1, currW * 0.02);
-                for (let lane = 1; lane < CONFIG.road.lanes; lane++) {
-                    const lanePos = -1 + (2 * lane / CONFIG.road.lanes);
-                    const cx = curr.x + currW * lanePos;
-                    const px = prev.x + prevW * lanePos;
-                    roadGfx.beginFill(rc.lane);
-                    roadGfx.moveTo(px - laneW * 0.5, prev.y);
-                    roadGfx.lineTo(px + laneW * 0.5, prev.y);
-                    roadGfx.lineTo(cx + laneW * 0.5, curr.y);
-                    roadGfx.lineTo(cx - laneW * 0.5, curr.y);
-                    roadGfx.endFill();
-                }
-            }
 
             // Atmospheric fog overlay
             if (prev.fog > 0.05) {
@@ -337,20 +268,22 @@ const Renderer = {
     },
 
     applyEffects() {
-        // Camera shake
+        // Camera shake + hover bob (aerial floating feel)
         const shakeX = (Math.random() - 0.5) * STATE.shake;
         const shakeY = (Math.random() - 0.5) * STATE.shake;
+        const time = Date.now() * 0.002;
+        const hoverY = Math.sin(time) * 15;
 
         // Camera roll (bank into curves)
         const roll = STATE.cameraRoll || 0;
 
         camera.rotation = roll;
         camera.pivot.set(centerX, centerY);
-        camera.position.set(centerX + shakeX, centerY + shakeY);
+        camera.position.set(centerX + shakeX, centerY + shakeY + hoverY);
 
         cameraGlow.rotation = roll;
         cameraGlow.pivot.set(centerX, centerY);
-        cameraGlow.position.set(centerX + shakeX, centerY + shakeY);
+        cameraGlow.position.set(centerX + shakeX, centerY + shakeY + hoverY);
 
         // Sun position & tint based on act progression
         if (sunSprite) {
