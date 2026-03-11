@@ -17,15 +17,15 @@ const ENTITY_SCALE = {
 };
 
 const PLACEMENT = {
-    tree:        { minOff: 1.05, maxOff: 1.3 },
-    streetlight: { minOff: 1.0,  maxOff: 1.1 },
-    building:    { minOff: 1.4,  maxOff: 2.5 }
+    tree:        { minOff: 0.4, maxOff: 1.3 },   // some trees right on the roadside
+    streetlight: { minOff: 0.85, maxOff: 1.05 },  // line the road edges
+    building:    { minOff: 1.1,  maxOff: 2.2 }    // closer to road — dense urban feel
 };
 
 const SPACING = {
-    tree: 8,
-    streetlight: 15,
-    building: 10
+    tree: 3,          // was 8 — much denser foliage
+    streetlight: 5,   // was 15 — streetlights every few segments
+    building: 3       // was 10 — packed city blocks
 };
 
 const GLOW_KEYS = {
