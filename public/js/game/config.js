@@ -150,8 +150,8 @@ const CONFIG = {
         shoulderWidth: 600,
         lanes: 3,
         rumbleWidth: 100,
-        cameraHeight: 800,          // low-ish altitude — broomstick above rooftops
-        cameraDepth: 3.0,           // tight telephoto FOV — realistic urban perspective
+        cameraHeight: 1000,         // moderate altitude above rooftops
+        cameraDepth: 1.5,           // balanced FOV — not fisheye, not telephoto
         centrifugal: 0,
         totalSegments: 1600,
         fogDensity: 5,
@@ -159,7 +159,7 @@ const CONFIG = {
 
         // Hill physics
         hill: {
-            cameraFollow: 0.15      // how quickly camera elevation tracks road (0-1)
+            cameraFollow: 0.4       // faster camera tracking so hills don't overshoot
         },
 
         // Curve camera: train follows track, roll provides banking feel
