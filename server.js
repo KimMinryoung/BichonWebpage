@@ -65,7 +65,7 @@ app.use(session({
 }));
 
 // CSRF protection (exclude API-key-authenticated routes)
-app.use(csrfProtection(['/api/ai-diary']));
+app.use(csrfProtection(['/api/ai-diary', '/admin/login']));
 
 // Make session and strings available in all views
 app.use((req, res, next) => {
