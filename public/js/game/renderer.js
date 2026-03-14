@@ -56,9 +56,10 @@ const Renderer = {
     },
 
     _initSkyGraphics() {
+        // Sky is added to app.stage (NOT camera) so it doesn't rotate with camera roll.
+        // Placed at index 0 so it renders behind everything.
         skyGfx = new PIXI.Graphics();
-        skyGfx.zIndex = -12000;
-        camera.addChild(skyGfx);
+        app.stage.addChildAt(skyGfx, 0);
     },
 
     _initRoadGraphics() {
@@ -110,22 +111,21 @@ const Renderer = {
         app.stage.addChild(flash);
     },
 
-    // Draw 3-stop sky gradient (fills down to horizon line, extends to cover slope gaps)
+    // Draw 3-stop sky gradient — rendered on app.stage (no camera roll rotation)
     _drawSky(groundTop) {
         if (!skyGfx) return;
         const sw = app.screen.width;
         const sh = app.screen.height;
         const nominalHorizon = sh * (CONFIG.road.horizonLine || 0.65);
 
-        // Extend sky down to whichever is lower: the fixed horizon or the actual
-        // ground top (which shifts down on downhill slopes, creating a gap).
-        const horizonY = Math.max(nominalHorizon, groundTop || 0);
+        // Extend sky to cover full screen height (ground will paint over lower portion)
+        const horizonY = Math.max(nominalHorizon, groundTop || 0, sh);
 
         skyGfx.clear();
 
         const topColor = (Math.round(STATE.skyTopR) << 16) | (Math.round(STATE.skyTopG) << 8) | Math.round(STATE.skyTopB);
 
-        // Draw sky bands from top to horizon (pixelated gradient)
+        // Draw sky bands covering the entire screen
         const bands = 24;
         const bandH = Math.ceil(horizonY / bands);
         for (let i = 0; i < bands; i++) {
