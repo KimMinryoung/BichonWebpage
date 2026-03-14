@@ -111,23 +111,28 @@ const Renderer = {
         app.stage.addChild(flash);
     },
 
-    // Draw 3-stop sky gradient — rendered on app.stage (no camera roll rotation)
+    // Draw 3-stop sky gradient — rendered on app.stage (no camera roll rotation).
+    // Always covers the FULL screen. The gradient stretches from y=0 down to the
+    // effective horizon (accounting for camera offset), then the bottom sky color
+    // fills the rest. Road strips in the camera paint over the ground portion.
     _drawSky(groundTop) {
         if (!skyGfx) return;
         const sw = app.screen.width;
         const sh = app.screen.height;
-        const nominalHorizon = sh * (CONFIG.road.horizonLine || 0.65);
 
-        // Extend sky to cover full screen height (ground will paint over lower portion)
-        const horizonY = Math.max(nominalHorizon, groundTop || 0, sh);
+        // Effective horizon in screen space: camera-local groundTop + camera Y offset.
+        // Camera pivots at center and shifts by shake + hover, so the horizon in
+        // screen space is approximately groundTop + the camera's Y displacement.
+        const camOffsetY = (camera.position.y - centerY) || 0;
+        const rawHorizon = (groundTop || sh * (CONFIG.road.horizonLine || 0.30)) + camOffsetY;
+        // Clamp: gradient must reach at least to center, and handle roll overshoot
+        const gradientEnd = Math.max(rawHorizon, sh * 0.25);
 
         skyGfx.clear();
 
-        const topColor = (Math.round(STATE.skyTopR) << 16) | (Math.round(STATE.skyTopG) << 8) | Math.round(STATE.skyTopB);
-
-        // Draw sky bands covering the entire screen
+        // Sky gradient bands: top → mid → bottom, ending at gradientEnd
         const bands = 24;
-        const bandH = Math.ceil(horizonY / bands);
+        const bandH = Math.ceil(gradientEnd / bands);
         for (let i = 0; i < bands; i++) {
             const t = i / (bands - 1);
             let r, g, b;
@@ -148,8 +153,17 @@ const Renderer = {
             skyGfx.endFill();
         }
 
-        // Background color = ground color so any gap from camera roll/shake
-        // shows ground instead of sky. Sky gradient paints over the top portion.
+        // Fill remaining screen below gradient with sky bottom color
+        // (road strips will paint over this; if roll exposes it, it's sky-colored)
+        const botColor = (Math.round(STATE.skyBotR) << 16) | (Math.round(STATE.skyBotG) << 8) | Math.round(STATE.skyBotB);
+        const gradientBottom = bands * bandH;
+        if (gradientBottom < sh) {
+            skyGfx.beginFill(botColor);
+            skyGfx.drawRect(0, gradientBottom, sw, sh - gradientBottom);
+            skyGfx.endFill();
+        }
+
+        // Background = ground color for any remaining gaps from extreme roll
         const rc = getRoadColors(STATE.act);
         app.renderer.background.color = rc.grass[0];
     },
