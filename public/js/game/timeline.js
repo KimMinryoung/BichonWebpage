@@ -84,6 +84,9 @@ const Timeline = {
         // Update AI beam color
         STATE.aiBeamColor = actData.ai.core;
 
+        // ── Act transition visual effect ──
+        this._playTransitionFX(act);
+
         actTween = gsap.to(STATE, {
             speed: visuals.speed,
             focalLength: visuals.focalLength,
@@ -103,6 +106,65 @@ const Timeline = {
 
         // Show act narrative text
         this._showActNarrative(act);
+    },
+
+    _playTransitionFX(act) {
+        const flash = Renderer.getFlash();
+        const app = Renderer.getApp();
+
+        // Flash intensity and color vary per act
+        const fx = {
+            act2: { color: 0xc43020, flash: 0.35, shake: 12, particle: 0xff6622, count: 40 },
+            act3: { color: 0x00c0d8, flash: 0.4,  shake: 18, particle: 0x00c0d8, count: 50 },
+            act4: { color: 0xf0ebe0, flash: 0.5,  shake: 8,  particle: 0xd8d0c0, count: 30 },
+            act5: { color: 0xffffff, flash: 0.6,  shake: 25, particle: 0xffffff, count: 60 }
+        };
+
+        const cfg = fx[act];
+        if (!cfg) return;
+
+        // White/colored screen flash
+        flash.clear();
+        flash.beginFill(cfg.color);
+        flash.drawRect(0, 0, app.screen.width, app.screen.height);
+        flash.endFill();
+        gsap.fromTo(flash, { alpha: cfg.flash }, {
+            alpha: 0, duration: 1.5, ease: 'power3.out',
+            onComplete: () => {
+                // Restore flash to white for other uses
+                flash.clear();
+                flash.beginFill(0xFFFFFF);
+                flash.drawRect(0, 0, app.screen.width, app.screen.height);
+                flash.endFill();
+                flash.alpha = 0;
+            }
+        });
+
+        // Shockwave shake — brief spike then settle
+        const prevShake = STATE.shake;
+        gsap.to(STATE, {
+            shake: prevShake + cfg.shake,
+            duration: 0.15,
+            onComplete: () => {
+                gsap.to(STATE, { shake: prevShake, duration: 1.2, ease: 'power2.out' });
+            }
+        });
+
+        // Focal length punch (zoom burst)
+        const prevFocal = STATE.focalLength;
+        gsap.to(STATE, {
+            focalLength: prevFocal * 0.6,
+            duration: 0.2,
+            ease: 'power2.out',
+            onComplete: () => {
+                // Let the main act tween handle restoring focalLength
+            }
+        });
+
+        // Particle burst
+        if (typeof Particles !== 'undefined') {
+            Particles.burst(app, cfg.particle, cfg.count);
+        }
     },
 
     _showActNarrative(act) {

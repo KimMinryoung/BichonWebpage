@@ -16,6 +16,7 @@ const Game = {
         Intervention.init();
         Sound.init();
         Effects.init(Renderer.getApp(), Renderer.getCamera());
+        Particles.init(Renderer.getApp());
 
         // Load Babel Express scene
         currentScene = SceneSeoul;
@@ -63,6 +64,7 @@ const Game = {
         Renderer.applyEffects();
         Sound.updatePhase(STATE.phase);
         Effects.update(app);
+        Particles.update(app, dt);
     },
 
     restart() {
@@ -74,6 +76,7 @@ const Game = {
         Events.reset();
         Intervention.reset();
         Sound.reset();
+        Particles.reset();
 
         Renderer.getFlash().alpha = 0;
 

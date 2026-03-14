@@ -318,8 +318,14 @@ const Entities = {
                 }
             } else if (bg.type === 'cloud') {
                 const cloudCurveShift = -horizonDx * (cameraDepth / (bg.worldZ || 200000)) * sw / 2;
-                bg.sprite.x = bg.baseX * sw + cloudCurveShift;
-                bg.sprite.y = bg.baseY * sh;
+                // Slow wind drift
+                if (!bg._driftSpeed) bg._driftSpeed = 0.002 + Math.random() * 0.004;
+                if (!bg._driftPhase) bg._driftPhase = 0;
+                bg._driftPhase += bg._driftSpeed * STATE.speed * dt;
+                const drift = bg._driftPhase;
+                bg.sprite.x = bg.baseX * sw + drift + cloudCurveShift;
+                // Gentle vertical bob
+                bg.sprite.y = bg.baseY * sh + Math.sin(Date.now() * 0.0005 + (bg.baseX || 0) * 10) * 3;
                 bg.sprite.scale.set(bg.baseScale);
                 bg.sprite.tint = cloudTint;
             } else if (bg.type === 'moon') {
@@ -414,6 +420,14 @@ const Entities = {
             e.sprite.y = screenY;
             e.sprite.scale.set(Math.max(0.01, scale));
 
+            // Apply idle motion (must run after base position/scale is set)
+            this._updateIdleMotion(e, dt);
+
+            // Apply idle bob offset (balloons, lanterns) to screen Y
+            if (e._idleBob) {
+                e.sprite.y += e._idleBob * proj.scale * sh;
+            }
+
             const fogFade = Math.max(0, 1 - proj.fog * proj.fog * 0.5);
             e.sprite.alpha = fogFade;
 
@@ -441,6 +455,47 @@ const Entities = {
             }
 
             this._updateEntityVisuals(e);
+        }
+    },
+
+    // Per-frame idle animations for living entities
+    _updateIdleMotion(e, dt) {
+        const t = Date.now() * 0.001;
+        const id = e.segmentIndex || 0; // unique phase offset per entity
+
+        if (e.type === 'crow') {
+            // Wing flap: scale.y oscillation + banking rotation
+            const flapSpeed = 6 + (id % 5);          // slightly different per bird
+            const flapAmp = 0.15;
+            const flap = Math.sin(t * flapSpeed + id * 1.7);
+            const baseScale = e.sprite.scale.x;
+            e.sprite.scale.y = baseScale * (1 - flapAmp * Math.abs(flap));
+            // Gentle banking as they fly
+            const bank = Math.sin(t * 1.2 + id * 2.3) * 0.12;
+            if (e.fsm === 'normal') e.sprite.rotation = bank;
+        } else if (e.type === 'balloon') {
+            // Gentle bobbing — slow altitude oscillation
+            const bob = Math.sin(t * 0.5 + id * 0.8) * 30;
+            e._idleBob = bob;
+            // Slight horizontal sway
+            if (e.fsm === 'normal') {
+                e.sprite.rotation = Math.sin(t * 0.3 + id * 1.5) * 0.04;
+            }
+        } else if (e.type === 'lantern') {
+            // Pendulum sway + vertical float
+            const sway = Math.sin(t * 1.8 + id * 2.1) * 0.1;
+            if (e.fsm === 'normal') e.sprite.rotation = sway;
+            e._idleBob = Math.sin(t * 0.8 + id * 1.3) * 15;
+            // Glow pulse
+            if (e.glowSprite && e.fsm === 'normal') {
+                const pulse = 0.3 + 0.3 * Math.sin(t * 2.5 + id * 0.9);
+                e.glowSprite.alpha = Math.max(e.glowSprite.alpha, pulse);
+            }
+        } else if (e.type === 'tree') {
+            // Wind sway — subtle rotation
+            const wind = Math.sin(t * 0.7 + id * 0.6) * 0.03
+                       + Math.sin(t * 1.9 + id * 1.2) * 0.01;
+            if (e.fsm === 'normal') e.sprite.rotation = wind;
         }
     },
 
