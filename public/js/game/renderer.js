@@ -153,17 +153,9 @@ const Renderer = {
             skyGfx.endFill();
         }
 
-        // Fill remaining screen below gradient with sky bottom color
-        // (road strips will paint over this; if roll exposes it, it's sky-colored)
-        const botColor = (Math.round(STATE.skyBotR) << 16) | (Math.round(STATE.skyBotG) << 8) | Math.round(STATE.skyBotB);
-        const gradientBottom = bands * bandH;
-        if (gradientBottom < sh) {
-            skyGfx.beginFill(botColor);
-            skyGfx.drawRect(0, gradientBottom, sw, sh - gradientBottom);
-            skyGfx.endFill();
-        }
-
-        // Background = ground color for any remaining gaps from extreme roll
+        // Do NOT fill below gradient — background color (ground) shows through.
+        // Road strips in the camera paint over the ground portion normally.
+        // Any gap from camera roll/shake exposes background = ground color.
         const rc = getRoadColors(STATE.act);
         app.renderer.background.color = rc.grass[0];
     },
