@@ -274,11 +274,13 @@ const Renderer = {
     },
 
     applyEffects() {
-        // Camera shake + hover bob (aerial floating feel)
-        const shakeX = (Math.random() - 0.5) * STATE.shake;
-        const shakeY = (Math.random() - 0.5) * STATE.shake;
-        const time = Date.now() * 0.002;
-        const hoverY = Math.sin(time) * 15;
+        // Camera shake: dual-frequency sin waves per axis (原理 5)
+        // Different frequencies per axis create Lissajous-like organic motion
+        const time = Date.now() * 0.001;
+        const shakeX = STATE.shake * (Math.sin(time * 3.7) * 0.6 + Math.sin(time * 7.3) * 0.4);
+        const shakeY = STATE.shake * (Math.sin(time * 2.3) * 0.6 + Math.sin(time * 5.9) * 0.4);
+        // Hover bob: slow altitude oscillation (independent frequency)
+        const hoverY = Math.sin(time * 2.0) * 15;
 
         // Camera roll (bank into curves)
         const roll = STATE.cameraRoll || 0;

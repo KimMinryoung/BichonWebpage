@@ -104,8 +104,12 @@ const Road = {
     project(screenW, screenH) {
         const segLen = CONFIG.road.segmentLength;
         const total = segments.length;
-        const cameraDepth = CONFIG.road.cameraDepth;
         const baseCameraH = CONFIG.road.cameraHeight;
+
+        // Projection depth derived from STATE.focalLength (原理 1,4)
+        // scale = projDepth / z — focalLength controls perspective intensity
+        const refFL = CONFIG.road.focalLengthRef || 400;
+        const projDepth = CONFIG.road.cameraDepth * (STATE.focalLength / refFL);
 
         // Camera sits on the road surface + cameraHeight above it
         const cameraY = baseCameraH + STATE.cameraElevation;
@@ -113,11 +117,13 @@ const Road = {
         const baseIdx = Math.floor(STATE.roadPosition / segLen);
         const visible = CONFIG.road.visibleSegments;
 
-        // ── First-person on-rails: no look-ahead yaw ──
-        // Camera faces the track tangent at the current position.
-        // Road directly ahead is always centered; curves appear in the distance.
+        // Vanishing point
         const vanishX = screenW / 2;
-        const horizonY = screenH * (CONFIG.road.horizonLine || 0.65);
+        // Horizon derived from focalLength (原理 3)
+        // Wider FOV → horizon rises → more ground visible → speed feel
+        const baseHorizon = CONFIG.road.horizonLine || 0.30;
+        const horizonShift = (1 - STATE.focalLength / refFL) * 0.08;
+        const horizonY = screenH * (baseHorizon - horizonShift);
 
         let dx = 0;       // curve rate accumulator
         let x = 0;        // curve position accumulator (double integral)
@@ -135,16 +141,9 @@ const Road = {
             x += dx;
             dx += seg.curve;
 
-            const scale = cameraDepth / worldZ;
+            const scale = projDepth / worldZ;
 
-            // X: first-person — near road centered, far road curves away.
-            // +x because camera faces track tangent: positive curve (right turn)
-            // → x grows positive → far segments appear to the right.
             const projX = vanishX + scale * x * screenW / 2;
-
-            // Y: horizon pushed down for aerial perspective.
-            // cameraY - seg.y = altitude difference between camera and segment.
-            // Ground appears far below; climbs/dives shift the flight path.
             const projY = horizonY + scale * (cameraY - seg.y) * screenH / 2;
 
             const projW = scale * CONFIG.road.roadWidth * screenW / 2;

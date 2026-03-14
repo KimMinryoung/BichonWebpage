@@ -283,7 +283,8 @@ const Entities = {
         const cloudTint = actData ? actData.cloudTint : 0xFFFFFF;
 
         // ── Background scenery ──
-        const cameraDepth = CONFIG.road.cameraDepth;
+        const refFL = CONFIG.road.focalLengthRef || 400;
+        const cameraDepth = CONFIG.road.cameraDepth * (STATE.focalLength / refFL);
 
         let horizonY = sh * 0.45;
         let horizonDx = 0;
@@ -433,13 +434,19 @@ const Entities = {
 
             e.sprite.zIndex = -segDist;
 
-            // Atmospheric perspective: distant entities tinted toward fog color
+            // Atmospheric perspective: ALL entities blend toward fog color with distance
             if (e.fsm === 'normal') {
                 const distT = Math.min(1, segDist / (CONFIG.road.visibleSegments * 0.6));
-                if (distT > 0.3 && e.type === 'building') {
-                    // Blend toward building tint (sky-influenced color)
-                    e.sprite.tint = buildingTint;
-                } else if (e.fsm === 'normal') {
+                if (distT > 0.15) {
+                    const fogBlend = Math.min(1, (distT - 0.15) / 0.85);
+                    const fr = Math.round(STATE.fogR);
+                    const fg = Math.round(STATE.fogG);
+                    const fb = Math.round(STATE.fogB);
+                    const r = Math.round(255 + (fr - 255) * fogBlend);
+                    const g = Math.round(255 + (fg - 255) * fogBlend);
+                    const b = Math.round(255 + (fb - 255) * fogBlend);
+                    e.sprite.tint = (r << 16) | (g << 8) | b;
+                } else {
                     e.sprite.tint = 0xFFFFFF;
                 }
             }

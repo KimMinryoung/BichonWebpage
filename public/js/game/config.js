@@ -183,7 +183,8 @@ const CONFIG = {
         lanes: 3,
         rumbleWidth: 100,
         cameraHeight: 1000,         // moderate altitude above rooftops
-        cameraDepth: 1.5,           // balanced FOV — not fisheye, not telephoto
+        cameraDepth: 1.5,           // base projection depth at reference focalLength
+        focalLengthRef: 400,        // reference focalLength (Act 1 value)
         centrifugal: 0,
         totalSegments: 1600,
         fogDensity: 5,
