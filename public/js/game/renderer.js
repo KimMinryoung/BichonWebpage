@@ -5,10 +5,14 @@ let app, camera, cameraGlow, flash, centerX, centerY;
 let roadGfx = null;
 let sunSprite = null;
 let bgContainer = null;
-let skyGfx = null;         // sky gradient graphics
+let skyGfx = null;         // sky gradient graphics (inside camera — rotates with it)
 let aiBeamGfx = null;      // AI light beam on road
 let narrativeEl = null;    // DOM element for narrative text
 let _groundTopY = 0;       // Y where ground starts (updated by drawRoad, read by _drawSky)
+
+// Overscan padding (pixels) — sky and road draw beyond screen bounds so that
+// camera roll/shake/hover never exposes gaps at screen edges.
+const OVERSCAN = 250;
 
 const Renderer = {
     setup() {
@@ -56,10 +60,11 @@ const Renderer = {
     },
 
     _initSkyGraphics() {
-        // Sky is added to app.stage (NOT camera) so it doesn't rotate with camera roll.
-        // Placed at index 0 so it renders behind everything.
+        // Sky lives INSIDE camera so it rotates/translates together with road.
+        // Oversized drawing prevents gaps at screen edges during roll.
         skyGfx = new PIXI.Graphics();
-        app.stage.addChildAt(skyGfx, 0);
+        skyGfx.zIndex = -12000;
+        camera.addChild(skyGfx);
     },
 
     _initRoadGraphics() {
@@ -111,28 +116,24 @@ const Renderer = {
         app.stage.addChild(flash);
     },
 
-    // Draw 3-stop sky gradient — rendered on app.stage (no camera roll rotation).
-    // Always covers the FULL screen. The gradient stretches from y=0 down to the
-    // effective horizon (accounting for camera offset), then the bottom sky color
-    // fills the rest. Road strips in the camera paint over the ground portion.
+    // Draw 3-stop sky gradient — inside camera container with overscan.
+    // Sky and road share the same coordinate space, so roll/shake/hover
+    // never creates gaps between them.
     _drawSky(groundTop) {
         if (!skyGfx) return;
         const sw = app.screen.width;
         const sh = app.screen.height;
+        const os = OVERSCAN;
 
-        // Effective horizon in screen space: camera-local groundTop + camera Y offset.
-        // Camera pivots at center and shifts by shake + hover, so the horizon in
-        // screen space is approximately groundTop + the camera's Y displacement.
-        const camOffsetY = (camera.position.y - centerY) || 0;
-        const rawHorizon = (groundTop || sh * (CONFIG.road.horizonLine || 0.30)) + camOffsetY;
-        // Clamp: gradient must reach at least to center, and handle roll overshoot
-        const gradientEnd = Math.max(rawHorizon, sh * 0.25);
+        // Gradient spans from top of overscan to the ground horizon
+        const gradientEnd = Math.max(groundTop || sh * 0.30, sh * 0.25);
 
         skyGfx.clear();
 
-        // Sky gradient bands: top → mid → bottom, ending at gradientEnd
+        // Sky gradient bands (with overscan X and top margin)
         const bands = 24;
-        const bandH = Math.ceil(gradientEnd / bands);
+        const gradientHeight = gradientEnd + os;  // from -os to gradientEnd
+        const bandH = Math.ceil(gradientHeight / bands);
         for (let i = 0; i < bands; i++) {
             const t = i / (bands - 1);
             let r, g, b;
@@ -149,35 +150,42 @@ const Renderer = {
             }
             const c = (Math.round(r) << 16) | (Math.round(g) << 8) | Math.round(b);
             skyGfx.beginFill(c);
-            skyGfx.drawRect(0, i * bandH, sw, bandH + 1);
+            skyGfx.drawRect(-os, -os + i * bandH, sw + os * 2, bandH + 1);
             skyGfx.endFill();
         }
 
-        // Do NOT fill below gradient — background color (ground) shows through.
-        // Road strips in the camera paint over the ground portion normally.
-        // Any gap from camera roll/shake exposes background = ground color.
+        // Fill below gradient to bottom of overscan with sky-bottom color.
+        // Road strips (higher zIndex) will paint over this in the ground area.
+        const botColor = (Math.round(STATE.skyBotR) << 16) | (Math.round(STATE.skyBotG) << 8) | Math.round(STATE.skyBotB);
+        const gradientBottom = -os + bands * bandH;
+        skyGfx.beginFill(botColor);
+        skyGfx.drawRect(-os, gradientBottom, sw + os * 2, sh + os * 2 - gradientBottom);
+        skyGfx.endFill();
+
+        // Background color = ground for any extreme gap beyond overscan
         const rc = getRoadColors(STATE.act);
         app.renderer.background.color = rc.grass[0];
     },
 
     // Draw ground plane below flight path (After Burner style).
-    // No road surface — only terrain strips visible far below.
+    // Oversized bounds so camera roll doesn't expose gaps.
     drawRoad(projected) {
         if (!roadGfx || projected.length < 2) return;
 
         const sw = app.screen.width;
         const sh = app.screen.height;
+        const os = OVERSCAN;
         const rc = getRoadColors(STATE.act);
 
         roadGfx.clear();
 
-        // Fill below horizon with base ground color
+        // Fill below horizon with base ground color (oversized)
         if (projected.length > 0) {
             const horizon = projected[projected.length - 1];
             const horizonY = Math.max(0, horizon.y);
             _groundTopY = horizonY;   // store for sky to extend down to
             roadGfx.beginFill(rc.grass[0]);
-            roadGfx.drawRect(0, horizonY, sw, sh - horizonY);
+            roadGfx.drawRect(-os, horizonY, sw + os * 2, sh - horizonY + os);
             roadGfx.endFill();
         }
 
@@ -187,7 +195,7 @@ const Renderer = {
                        | Math.round(STATE.fogB);
 
         // Draw ground strips from far to near (painter's algorithm).
-        // Full-width horizontal bands — terrain seen from altitude.
+        // Full-width horizontal bands with overscan — terrain seen from altitude.
         for (let n = projected.length - 2; n >= 0; n--) {
             const curr = projected[n];
             const prev = projected[n + 1];
@@ -200,20 +208,20 @@ const Renderer = {
             // Ground terrain strips (alternating colors — checkerboard feel)
             const groundColor = isEven ? rc.grass[0] : rc.grass[1];
             roadGfx.beginFill(groundColor);
-            roadGfx.moveTo(0, prev.y);
-            roadGfx.lineTo(sw, prev.y);
-            roadGfx.lineTo(sw, curr.y);
-            roadGfx.lineTo(0, curr.y);
+            roadGfx.moveTo(-os, prev.y);
+            roadGfx.lineTo(sw + os, prev.y);
+            roadGfx.lineTo(sw + os, curr.y);
+            roadGfx.lineTo(-os, curr.y);
             roadGfx.endFill();
 
             // Atmospheric fog overlay
             if (prev.fog > 0.05) {
                 const fogAlpha = prev.fog * prev.fog;
                 roadGfx.beginFill(fogColor, fogAlpha);
-                roadGfx.moveTo(0, prev.y);
-                roadGfx.lineTo(sw, prev.y);
-                roadGfx.lineTo(sw, curr.y);
-                roadGfx.lineTo(0, curr.y);
+                roadGfx.moveTo(-os, prev.y);
+                roadGfx.lineTo(sw + os, prev.y);
+                roadGfx.lineTo(sw + os, curr.y);
+                roadGfx.lineTo(-os, curr.y);
                 roadGfx.endFill();
             }
         }
@@ -336,7 +344,7 @@ const Renderer = {
             }
         }
 
-        // Draw sky gradient (extends to ground top to prevent slope gaps)
+        // Draw sky gradient (same coord space as road — no gap possible)
         this._drawSky(_groundTopY);
 
         // Update narrative text
