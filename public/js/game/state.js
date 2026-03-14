@@ -2,7 +2,7 @@
 
 const STATE = {
     // Camera & motion
-    speed: 30,
+    speed: 60,
     focalLength: 400,
     shake: 0,
     motionBlur: 0,
@@ -69,7 +69,7 @@ const STATE = {
 
 function resetState() {
     const s1 = CONFIG.acts.act1.sky;
-    STATE.speed = 30;
+    STATE.speed = 60;
     STATE.focalLength = 400;
     STATE.shake = 0;
     STATE.motionBlur = 0;

@@ -164,14 +164,14 @@ const CONFIG = {
 
     // Visual params per act (GSAP tweens toward these)
     phaseVisuals: {
-        act1: { speed: 30,  focalLength: 400, shake: 0, motionBlur: 0 },
-        act2: { speed: 50,  focalLength: 300, shake: 2, motionBlur: 0.1 },
-        act3: { speed: 75,  focalLength: 200, shake: 6, motionBlur: 0.3 },
-        act4: { speed: 100, focalLength: 120, shake: 14, motionBlur: 0.6 },
-        act5: { speed: 120, focalLength: 80,  shake: 22, motionBlur: 0.8 },
+        act1: { speed: 60,  focalLength: 400, shake: 0, motionBlur: 0 },
+        act2: { speed: 100, focalLength: 300, shake: 2, motionBlur: 0.1 },
+        act3: { speed: 150, focalLength: 200, shake: 6, motionBlur: 0.3 },
+        act4: { speed: 200, focalLength: 120, shake: 14, motionBlur: 0.6 },
+        act5: { speed: 240, focalLength: 80,  shake: 22, motionBlur: 0.8 },
         // Special states
         stopped:  { speed: 0,   focalLength: 400, shake: 0, motionBlur: 0 },
-        hope:     { speed: 15,  focalLength: 350, shake: 1, motionBlur: 0 }
+        hope:     { speed: 30,  focalLength: 350, shake: 1, motionBlur: 0 }
     },
 
     // Pseudo-3D flight path (After Burner style — aerial on-rails)

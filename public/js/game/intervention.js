@@ -95,16 +95,11 @@ const Intervention = {
 
         Sound.playAlarm();
 
-        // Slowdown (or full stop for train-stop events)
-        preSlowdownSpeed = STATE.speed;
+        // Train stop only for Act 4 final choice — normal events keep flying
         if (point.trainStop) {
+            preSlowdownSpeed = STATE.speed;
             STATE.trainStopped = true;
             gsap.to(STATE, { speed: 0, duration: 3, ease: 'power3.out' });
-        } else {
-            gsap.to(STATE, {
-                speed: preSlowdownSpeed * CONFIG.timing.interventionSlowdown,
-                duration: 0.5, ease: 'power2.out'
-            });
         }
 
         // Show narrative if present
@@ -195,23 +190,14 @@ const Intervention = {
         choiceContainer.classList.remove('visible');
         choiceContainer.innerHTML = '';
 
-        // Resume speed
+        // Resume speed only for train-stop events (Act 4 final choice)
         if (point && point.trainStop) {
             STATE.trainStopped = false;
-            // After Act 4 choice, entropy jumps to trigger Act 5
             gsap.to(STATE, {
                 speed: CONFIG.phaseVisuals.act4.speed,
                 duration: 2, ease: 'power2.in'
             });
-            // Push entropy toward ending
             STATE.entropy = Math.max(STATE.entropy, CONFIG.phases.act5.min);
-        } else {
-            const targetSpeed = CONFIG.phaseVisuals[STATE.act]
-                ? CONFIG.phaseVisuals[STATE.act].speed : preSlowdownSpeed;
-            gsap.to(STATE, {
-                speed: targetSpeed,
-                duration: 0.8, ease: 'power2.in'
-            });
         }
     },
 
