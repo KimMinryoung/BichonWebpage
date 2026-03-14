@@ -6,6 +6,7 @@ let roadGfx = null;
 let sunSprite = null;
 let bgContainer = null;
 let skyGfx = null;         // sky gradient graphics
+let groundFillGfx = null;  // full-screen ground fill (on app.stage, behind camera)
 let aiBeamGfx = null;      // AI light beam on road
 let narrativeEl = null;    // DOM element for narrative text
 let _groundTopY = 0;       // Y where ground starts (updated by drawRoad, read by _drawSky)
@@ -49,6 +50,7 @@ const Renderer = {
 
     initEnvironment() {
         this._initSkyGraphics();
+        this._initGroundFill();
         this._initRoadGraphics();
         this._initAIBeam();
         this._initBackground();
@@ -60,6 +62,13 @@ const Renderer = {
         // Placed at index 0 so it renders behind everything.
         skyGfx = new PIXI.Graphics();
         app.stage.addChildAt(skyGfx, 0);
+    },
+
+    _initGroundFill() {
+        // Solid ground color on app.stage (NOT camera) — fills gaps exposed by camera roll.
+        // Inserted after sky (index 1) so it sits between sky and camera.
+        groundFillGfx = new PIXI.Graphics();
+        app.stage.addChildAt(groundFillGfx, 1);
     },
 
     _initRoadGraphics() {
@@ -149,6 +158,19 @@ const Renderer = {
         }
 
         app.renderer.background.color = topColor;
+
+        // Ground fill: solid ground color covering lower half of screen.
+        // Sits on app.stage (no rotation), fills gaps exposed by camera roll.
+        if (groundFillGfx) {
+            groundFillGfx.clear();
+            const rc = getRoadColors(STATE.act);
+            const groundColor = rc.grass[0];
+            // Fill from horizon downward (with extra margin for roll)
+            const fillTop = Math.max(0, (groundTop || nominalHorizon) - 60);
+            groundFillGfx.beginFill(groundColor);
+            groundFillGfx.drawRect(0, fillTop, sw, sh - fillTop);
+            groundFillGfx.endFill();
+        }
     },
 
     // Draw ground plane below flight path (After Burner style).
