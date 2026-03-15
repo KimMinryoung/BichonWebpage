@@ -221,6 +221,7 @@ const Touch = {
 
         const now = Date.now();
         const sw = _app.screen.width;
+        const sh = _app.screen.height;
 
         for (let i = 0; i < _scanBeams.length; i++) {
             const beam = _scanBeams[i];
@@ -234,13 +235,13 @@ const Touch = {
             // Target position (camera-local)
             const tx = entity.sprite.x;
             const ty = entity.sprite.y;
-            // Source: top-center of screen (drone position) in camera-local
+            // Source: bottom-center of screen (drone POV — beam cast from drone body)
             const sx = sw / 2;
-            const sy = -80;
+            const sy = sh + 40;
 
-            // Beam narrows from source to target
-            const widthTop = 25 * (1 - t * 0.3);
-            const widthBot = 6 + 4 * (1 - t);
+            // Beam narrows from drone (bottom) to target (scene)
+            const widthSrc = 20 * (1 - t * 0.3);
+            const widthTgt = 6 + 4 * (1 - t);
 
             // Fade out over time
             const alpha = (1 - t * t) * 0.55;
@@ -248,18 +249,18 @@ const Touch = {
 
             // Outer glow cone
             _scanBeamGfx.beginFill(color, alpha * 0.3);
-            _scanBeamGfx.moveTo(sx - widthTop, sy);
-            _scanBeamGfx.lineTo(sx + widthTop, sy);
-            _scanBeamGfx.lineTo(tx + widthBot * 3, ty);
-            _scanBeamGfx.lineTo(tx - widthBot * 3, ty);
+            _scanBeamGfx.moveTo(sx - widthSrc, sy);
+            _scanBeamGfx.lineTo(sx + widthSrc, sy);
+            _scanBeamGfx.lineTo(tx + widthTgt * 3, ty);
+            _scanBeamGfx.lineTo(tx - widthTgt * 3, ty);
             _scanBeamGfx.endFill();
 
             // Core beam
             _scanBeamGfx.beginFill(color, alpha);
-            _scanBeamGfx.moveTo(sx - widthTop * 0.3, sy);
-            _scanBeamGfx.lineTo(sx + widthTop * 0.3, sy);
-            _scanBeamGfx.lineTo(tx + widthBot, ty);
-            _scanBeamGfx.lineTo(tx - widthBot, ty);
+            _scanBeamGfx.moveTo(sx - widthSrc * 0.3, sy);
+            _scanBeamGfx.lineTo(sx + widthSrc * 0.3, sy);
+            _scanBeamGfx.lineTo(tx + widthTgt, ty);
+            _scanBeamGfx.lineTo(tx - widthTgt, ty);
             _scanBeamGfx.endFill();
 
             // Target ring
