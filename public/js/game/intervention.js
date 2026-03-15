@@ -124,9 +124,10 @@ const Intervention = {
                 // Per-tap: visual effect via event builder
                 if (point.visual) Events.onTap(point.visual, entity);
 
-                // Per-tap entropy reward
+                // Per-tap entropy reward (floor at 30% base rate so game always progresses)
                 if (point.tapReward && point.tapReward.entropyDelta) {
-                    STATE.entropyRate = Math.max(0,
+                    const floor = CONFIG.timing.entropyRate * 0.3;
+                    STATE.entropyRate = Math.max(floor,
                         STATE.entropyRate + point.tapReward.entropyDelta
                     );
                 }
