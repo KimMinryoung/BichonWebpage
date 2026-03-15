@@ -415,26 +415,12 @@ const EVENT_BUILDERS = {
                     ev.tweens.push(_tweenTint(e.sprite, 0xff6644, 0.3));
                     ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
                 });
-                // Brief camera pan left
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: -500, duration: 1, ease: 'power2.inOut'
-                }));
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: 0, duration: 1.5, delay: 1.5, ease: 'power2.out'
-                }));
             } else if (dir === 'right') {
                 // New energy route — entropy down
                 ev.data.affectedEntities.forEach(e => {
                     ev.tweens.push(_tweenTint(e.sprite, 0x88ddee, 0.5));
                     ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
                 });
-                // Brief camera pan right
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: 500, duration: 1, ease: 'power2.inOut'
-                }));
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: 0, duration: 1.5, delay: 1.5, ease: 'power2.out'
-                }));
             } else {
                 // Straight — no camera pan
                 ev.data.affectedEntities.forEach(e => {
@@ -673,24 +659,12 @@ const EVENT_BUILDERS = {
                     ev.tweens.push(_tweenTint(e.sprite, 0x556b2f, 0.3));
                     ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
                 });
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: -400, duration: 0.8, ease: 'power2.inOut'
-                }));
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: 0, duration: 1.5, delay: 1.5
-                }));
             } else if (dir === 'right') {
                 // Eastern tower — red flash
                 ev.data.affectedEntities.forEach(e => {
                     ev.tweens.push(_tweenTint(e.sprite, 0x8b1a1a, 0.3));
                     ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
                 });
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: 400, duration: 0.8, ease: 'power2.inOut'
-                }));
-                ev.tweens.push(gsap.to(STATE, {
-                    playerX: 0, duration: 1.5, delay: 1.5
-                }));
             } else {
                 // Server farm — cyan flash (correct)
                 ev.data.affectedEntities.forEach((e, i) => {

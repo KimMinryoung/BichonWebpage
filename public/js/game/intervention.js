@@ -238,6 +238,25 @@ const Intervention = {
             Sound.playImpact();
         }
 
+        // Camera banking turn — drone rotates in swipe direction
+        if (direction === 'left' || direction === 'right') {
+            const sign = direction === 'left' ? 1 : -1;
+            // Bank: roll into the turn
+            gsap.to(STATE, {
+                swipeRoll: sign * 0.18, duration: 0.6, ease: 'power2.out'
+            });
+            gsap.to(STATE, {
+                swipeRoll: 0, duration: 1.5, delay: 1.0, ease: 'power2.inOut'
+            });
+            // Lateral shift: camera slides sideways
+            gsap.to(STATE, {
+                swipeX: -sign * 120, duration: 0.8, ease: 'power2.out'
+            });
+            gsap.to(STATE, {
+                swipeX: 0, duration: 1.5, delay: 1.2, ease: 'power2.inOut'
+            });
+        }
+
         // Resolve visual
         if (point.visual) {
             Events.resolve(point.visual, {
@@ -284,6 +303,23 @@ const Intervention = {
         // Set ending choice
         if (result.ending) {
             STATE.act4Choice = result.ending;
+        }
+
+        // Camera banking turn for ending fork
+        if (direction === 'left' || direction === 'right') {
+            const sign = direction === 'left' ? 1 : -1;
+            gsap.to(STATE, {
+                swipeRoll: sign * 0.22, duration: 0.8, ease: 'power2.out'
+            });
+            gsap.to(STATE, {
+                swipeRoll: 0, duration: 2, delay: 1.5, ease: 'power2.inOut'
+            });
+            gsap.to(STATE, {
+                swipeX: -sign * 150, duration: 1, ease: 'power2.out'
+            });
+            gsap.to(STATE, {
+                swipeX: 0, duration: 2, delay: 1.5, ease: 'power2.inOut'
+            });
         }
 
         // Resolve ending fork visual

@@ -40,6 +40,8 @@ const STATE = {
     // Camera
     cameraElevation: 0,     // smoothed road elevation the camera sits on
     cameraRoll: 0,          // bank into curves (radians)
+    swipeRoll: 0,           // additive camera roll from swipe (radians)
+    swipeX: 0,              // additive lateral camera shift from swipe (px)
 
     // AI light beam
     aiBeamAlpha: 0.6,
@@ -94,6 +96,8 @@ function resetState() {
     STATE.curveDelta = 0;
     STATE.cameraElevation = 0;
     STATE.cameraRoll = 0;
+    STATE.swipeRoll = 0;
+    STATE.swipeX = 0;
     STATE.aiBeamAlpha = 0.6;
     STATE.aiBeamWidth = 1.0;
     STATE.aiBeamColor = 0x00b8d8;

@@ -299,16 +299,17 @@ const Renderer = {
         // Hover bob: slow altitude oscillation (independent frequency)
         const hoverY = Math.sin(time * 2.0) * 15;
 
-        // Camera roll (bank into curves)
-        const roll = STATE.cameraRoll || 0;
+        // Camera roll (bank into curves + swipe banking)
+        const roll = (STATE.cameraRoll || 0) + (STATE.swipeRoll || 0);
+        const swipeShift = STATE.swipeX || 0;
 
         camera.rotation = roll;
         camera.pivot.set(centerX, centerY);
-        camera.position.set(centerX + shakeX, centerY + shakeY + hoverY);
+        camera.position.set(centerX + shakeX + swipeShift, centerY + shakeY + hoverY);
 
         cameraGlow.rotation = roll;
         cameraGlow.pivot.set(centerX, centerY);
-        cameraGlow.position.set(centerX + shakeX, centerY + shakeY + hoverY);
+        cameraGlow.position.set(centerX + shakeX + swipeShift, centerY + shakeY + hoverY);
 
         // Sun position & tint based on act progression
         if (sunSprite) {
