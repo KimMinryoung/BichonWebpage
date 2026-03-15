@@ -17,9 +17,9 @@ const ENTITY_SCALE = {
     crow: 2,            // small birds near flight path
     lantern: 3,         // floating paper lanterns
     balloon: 6,         // hot air balloons — large, visible from far
-    boat: 5,            // boats on the sea surface
+    boat: 12,           // boats on the sea surface — large enough to spot and tap
     debris: 2,          // floating wreckage/debris
-    beacon: 4,          // sea buoys with blinking light
+    beacon: 5,          // sea buoys with blinking light
     neon: 4             // neon signs on buildings (Act 3 city)
 };
 
@@ -30,7 +30,7 @@ const PLACEMENT = {
     crow:        { minOff: 0.05, maxOff: 0.8 },   // birds fly close to the witch
     lantern:     { minOff: 0.1,  maxOff: 1.0 },   // lanterns float near and mid range
     balloon:     { minOff: 0.3,  maxOff: 1.8 },   // balloons at various distances
-    boat:        { minOff: 0.3,  maxOff: 1.6 },   // boats scattered across the sea
+    boat:        { minOff: 0.15, maxOff: 1.4 },   // boats close to flight path for tapping
     debris:      { minOff: 0.1,  maxOff: 1.2 },   // debris close and mid range
     beacon:      { minOff: 0.4,  maxOff: 1.4 },   // buoys at regular intervals
     neon:        { minOff: 0.5,  maxOff: 2.0 }    // neon signs on building facades
@@ -43,9 +43,9 @@ const SPACING = {
     crow: 4,          // birds in small groups
     lantern: 6,       // lanterns scattered
     balloon: 15,      // balloons sparse — special sighting
-    boat: 8,          // boats moderately spaced
-    debris: 4,        // debris fairly dense (flood wreckage)
-    beacon: 12,       // buoys regularly spaced
+    boat: 20,         // 1600 segs / 80 boats = 20 — evenly spread across full road
+    debris: 32,       // 1600 segs / 50 debris = 32 — evenly spread
+    beacon: 53,       // 1600 segs / 30 beacons ≈ 53 — evenly spread
     neon: 6           // neon signs frequent in city
 };
 
@@ -221,7 +221,7 @@ const Entities = {
                 type: 'boat',
                 fsm: 'normal',
                 baseScale: ENTITY_SCALE.boat,
-                elevation: 0
+                elevation: 20 + Math.random() * 40   // slight elevation so boats are visible above sea surface from altitude
             });
             camera.addChild(sprite);
         }
@@ -262,7 +262,7 @@ const Entities = {
                 type: 'beacon',
                 fsm: 'normal',
                 baseScale: ENTITY_SCALE.beacon,
-                elevation: 0
+                elevation: 30 + Math.random() * 30   // buoys stick up above water
             });
             camera.addChild(sprite);
             if (glow) glowLayer.addChild(glow);

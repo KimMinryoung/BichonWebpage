@@ -142,9 +142,9 @@ const CONFIG = {
         lanterns: 40,
         balloons: 15,
         stars: 30,
-        boats: 30,
+        boats: 80,
         debris: 50,
-        beacons: 20,
+        beacons: 30,
         neons: 35
     },
 

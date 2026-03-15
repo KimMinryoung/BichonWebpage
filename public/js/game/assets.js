@@ -90,6 +90,7 @@ const Assets = {
         if (!textures['debris'])             textures['debris']             = this._genDebris(app);
         if (!textures['beacon'])             textures['beacon']             = this._genBeacon(app);
         if (!textures['neon'])               textures['neon']               = this._genNeon(app);
+        if (!textures['drone'])             textures['drone']              = this._genDrone(app);
 
         // Glow layer fallbacks (emissive — only the lit parts on transparent bg)
         if (!textures['building-modern-glow'])    textures['building-modern-glow']    = this._genBuildingGlow(app, 24, 40);
@@ -624,6 +625,62 @@ const Assets = {
         g.drawRect(8, 5, 3, 1);
         // Dot accent
         g.drawRect(13, 3, 2, 2);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genDrone(app) {
+        const g = new PIXI.Graphics();
+        // Drone seen from behind — quadcopter silhouette
+        // Central body
+        g.beginFill(0x3a3a4a);
+        g.drawRect(10, 8, 12, 6);
+        g.endFill();
+        // Body highlight
+        g.beginFill(0x5a5a6a);
+        g.drawRect(12, 9, 8, 4);
+        g.endFill();
+        // Camera lens (center bottom)
+        g.beginFill(0x22aacc);
+        g.drawRect(14, 12, 4, 2);
+        g.endFill();
+        g.beginFill(0x44ddff);
+        g.drawRect(15, 12, 2, 1);
+        g.endFill();
+        // Arms (4 diagonal struts)
+        g.beginFill(0x555566);
+        // Top-left arm
+        g.drawRect(4, 4, 8, 2);
+        // Top-right arm
+        g.drawRect(20, 4, 8, 2);
+        // Bottom-left arm
+        g.drawRect(4, 14, 8, 2);
+        // Bottom-right arm
+        g.drawRect(20, 14, 8, 2);
+        g.endFill();
+        // Rotors (spinning discs at arm tips)
+        g.beginFill(0x999999, 0.6);
+        g.drawRect(0, 2, 8, 2);   // top-left rotor
+        g.drawRect(24, 2, 8, 2);  // top-right rotor
+        g.drawRect(0, 16, 8, 2);  // bottom-left rotor
+        g.drawRect(24, 16, 8, 2); // bottom-right rotor
+        g.endFill();
+        // Rotor hubs
+        g.beginFill(0x222233);
+        g.drawRect(3, 3, 2, 1);
+        g.drawRect(27, 3, 2, 1);
+        g.drawRect(3, 17, 2, 1);
+        g.drawRect(27, 17, 2, 1);
+        g.endFill();
+        // Status LED
+        g.beginFill(0x00ff44);
+        g.drawRect(15, 8, 2, 1);
         g.endFill();
 
         const tex = app.renderer.generateTexture(g, {

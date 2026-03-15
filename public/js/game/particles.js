@@ -21,12 +21,13 @@ const PARTICLE_PROFILES = {
     },
     act2: {
         // Fire embers and ash — the world burns
-        spawnRate: 0.8,
+        spawnRate: 1.2,
         color: 0xff6622,
         colorAlt: 0xcc3300,
-        sizeMin: 1, sizeMax: 4,
+        colorAsh: 0x888888,   // gray ash variant
+        sizeMin: 1, sizeMax: 5,
         speedY: -30,       // embers rise fast
-        speedX: 15,
+        speedX: 18,
         life: 2.5,
         alpha: 0.8,
         blend: 'ADD',
@@ -46,15 +47,15 @@ const PARTICLE_PROFILES = {
         shape: 'rect'
     },
     act4: {
-        // Dust/pollen — empty silence
-        spawnRate: 0.25,
-        color: 0xd8d0c0,
-        colorAlt: 0xc0b898,
-        sizeMin: 1, sizeMax: 2,
-        speedY: 5,         // gentle drift down
-        speedX: 12,
+        // Falling ash — empty silence
+        spawnRate: 0.5,
+        color: 0xb0a890,
+        colorAlt: 0x908878,
+        sizeMin: 1, sizeMax: 3,
+        speedY: 8,         // gentle drift down
+        speedX: 20,        // windswept
         life: 5,
-        alpha: 0.3,
+        alpha: 0.35,
         blend: 'NORMAL',
         shape: 'circle'
     }
@@ -137,14 +138,22 @@ const Particles = {
     },
 
     _spawn(profile, sw, sh) {
-        const useAlt = Math.random() > 0.6;
+        const roll = Math.random();
+        let color;
+        if (profile.colorAsh && roll < 0.25) {
+            color = profile.colorAsh;  // gray ash variant
+        } else if (roll < 0.6) {
+            color = profile.colorAlt;
+        } else {
+            color = profile.color;
+        }
         return {
             x: Math.random() * sw,
             y: profile.speedY < 0 ? sh + 10 : (profile.speedY > 10 ? -10 : Math.random() * sh),
             vx: (Math.random() - 0.5) * profile.speedX,
             vy: profile.speedY + (Math.random() - 0.5) * Math.abs(profile.speedY) * 0.4,
             size: profile.sizeMin + Math.random() * (profile.sizeMax - profile.sizeMin),
-            color: useAlt ? profile.colorAlt : profile.color,
+            color: color,
             alpha: profile.alpha * (0.5 + Math.random() * 0.5),
             life: profile.life * (0.6 + Math.random() * 0.8),
             age: 0,

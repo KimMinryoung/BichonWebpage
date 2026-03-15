@@ -80,7 +80,7 @@ Act transitions (timeline.js) tween: sky gradient (3-stop RGB), fog color, speed
 | # | Name | Entropy | Type | targetTypes | Duration | Description |
 |---|------|---------|------|-------------|----------|-------------|
 | 1 | naming | 12 | TAP | building | 10s | Buildings on fire, tap to suppress |
-| 2 | seaOfFire | 30 | TAP | lantern, balloon | 10s | Lifeboats in burning sea, tap to rescue |
+| 2 | seaOfFire | 30 | TAP | boat, beacon | 10s | Lifeboats in burning sea, tap to rescue |
 | 3 | fallOfEden | 40 | SWIPE | — | 5s | Fork: left=burning port, right=clean energy |
 | 4 | commands | 55 | INFECTION | building, streetlight, lantern | 25s | Infection spreads, rapid-tap to purify |
 | 5 | shadowLegion | 67 | SWIPE | — | 5s | Three-way fork: olive/cyan/red factions |

@@ -4,9 +4,11 @@
 let app, camera, cameraGlow, flash, centerX, centerY;
 let roadGfx = null;
 let sunSprite = null;
+let droneSprite = null;    // player drone sprite (visible at bottom-center)
 let bgContainer = null;
 let skyGfx = null;         // sky gradient graphics (inside camera — rotates with it)
 let aiBeamGfx = null;      // AI light beam on road
+let fireColumnGfx = null;  // fire columns on horizon (Act 2)
 let narrativeEl = null;    // DOM element for narrative text
 let _groundTopY = 0;       // Y where ground starts (updated by drawRoad, read by _drawSky)
 
@@ -55,8 +57,10 @@ const Renderer = {
         this._initSkyGraphics();
         this._initRoadGraphics();
         this._initAIBeam();
+        this._initFireColumns();
         this._initBackground();
         this._drawSun();
+        this._initDrone();
     },
 
     _initSkyGraphics() {
@@ -78,6 +82,13 @@ const Renderer = {
         aiBeamGfx.zIndex = -4998;
         aiBeamGfx.blendMode = PIXI.BLEND_MODES.ADD;
         camera.addChild(aiBeamGfx);
+    },
+
+    _initFireColumns() {
+        fireColumnGfx = new PIXI.Graphics();
+        fireColumnGfx.zIndex = -8200;
+        fireColumnGfx.blendMode = PIXI.BLEND_MODES.ADD;
+        cameraGlow.addChild(fireColumnGfx);
     },
 
     _initBackground() {
@@ -105,6 +116,30 @@ const Renderer = {
         sunSprite.y = sunY;
         sunSprite.zIndex = -11000;
         camera.addChild(sunSprite);
+    },
+
+    _initDrone() {
+        const sw = app.screen.width;
+        const sh = app.screen.height;
+        const tex = Assets.get('drone');
+        if (tex) {
+            droneSprite = new PIXI.Sprite(tex);
+            droneSprite.anchor.set(0.5, 0.5);
+        } else {
+            // Minimal fallback — small rectangle
+            droneSprite = new PIXI.Graphics();
+            droneSprite.beginFill(0x555566);
+            droneSprite.drawRect(-8, -3, 16, 6);
+            droneSprite.endFill();
+        }
+        // Position: horizontally centered, ~80% down screen
+        // This matches the pseudo-3D perspective — drone is "near" the camera
+        droneSprite.x = sw / 2;
+        droneSprite.y = sh * 0.82;
+        droneSprite.scale.set(5);
+        droneSprite.zIndex = 9000; // always on top (HUD-like — drone is nearest to camera)
+        droneSprite.alpha = 0.9;
+        camera.addChild(droneSprite);
     },
 
     _createFlash() {
@@ -214,6 +249,46 @@ const Renderer = {
             roadGfx.lineTo(-os, curr.y);
             roadGfx.endFill();
 
+            // ── Sea wave shimmer (Act 2, sea biome) ──
+            if (STATE.biome === 'sea' && curr.fog < 0.7 && n % 3 === 0) {
+                const time = Date.now() * 0.003;
+                const wavePhase = Math.sin(time + curr.index * 0.8);
+                const sparkle = Math.sin(time * 2.3 + curr.index * 1.7);
+                if (wavePhase > 0.1) {
+                    const shimmerAlpha = wavePhase * 0.25 * (1 - curr.fog) * Math.max(0, sparkle * 0.5 + 0.5);
+                    const stripH = curr.y - prev.y;
+                    const shimmerY = prev.y + stripH * (0.3 + wavePhase * 0.4);
+                    const shimmerW = curr.w * (0.3 + Math.abs(sparkle) * 0.5);
+                    roadGfx.beginFill(0x3a6878, shimmerAlpha);
+                    roadGfx.drawRect(curr.x - shimmerW, shimmerY, shimmerW * 2, Math.max(1, stripH * 0.15));
+                    roadGfx.endFill();
+                    // Secondary highlight (foam crest)
+                    if (sparkle > 0.5 && curr.fog < 0.4) {
+                        roadGfx.beginFill(0x5a8898, shimmerAlpha * 0.6);
+                        roadGfx.drawRect(curr.x - shimmerW * 0.4, shimmerY - 1, shimmerW * 0.8, 1);
+                        roadGfx.endFill();
+                    }
+                }
+            }
+
+            // ── Neon road reflections (Act 3, city biome) ──
+            if (STATE.act === 'act3' && STATE.biome === 'city' && curr.fog < 0.6 && n % 3 === 0) {
+                const neonColors = [0x00c0d8, 0xd800a0, 0x39ff14, 0xffa020];
+                const hash = (curr.index * 127 + 53) % 97;
+                const colorIdx = hash % neonColors.length;
+                const time = Date.now() * 0.004;
+                const flicker = Math.sin(time + curr.index * 2.3) * Math.sin(time * 1.7 + curr.index);
+                const alpha = 0.18 * (1 - curr.fog) * (0.5 + flicker * 0.5);
+                if (alpha > 0.02) {
+                    const puddleOff = ((hash * 211) % 100 - 50) / 100;  // -0.5 to 0.5
+                    const puddleW = curr.w * (0.08 + (hash % 20) * 0.01);
+                    const puddleX = curr.x + curr.w * puddleOff * 0.4;
+                    roadGfx.beginFill(neonColors[colorIdx], alpha);
+                    roadGfx.drawRect(puddleX - puddleW, prev.y, puddleW * 2, curr.y - prev.y);
+                    roadGfx.endFill();
+                }
+            }
+
             // Atmospheric fog overlay
             if (prev.fog > 0.05) {
                 const fogAlpha = prev.fog * prev.fog;
@@ -276,6 +351,61 @@ const Renderer = {
         // Pulsing time-based modulation
         const pulse = 0.8 + 0.2 * Math.sin(Date.now() * 0.003);
         aiBeamGfx.alpha = pulse;
+    },
+
+    // Draw fire columns on the horizon (Act 2 — the world burns)
+    drawFireColumns(projected) {
+        if (!fireColumnGfx) return;
+        fireColumnGfx.clear();
+
+        // Only visible in Act 2
+        if (STATE.act !== 'act2' || !projected || projected.length < 10) return;
+
+        const sw = app.screen.width;
+        const sh = app.screen.height;
+        const horizonY = projected[projected.length - 1].y;
+        const horizonX = projected[projected.length - 1].x;
+        const time = Date.now() * 0.001;
+
+        // Fire column positions (normalized screen X offsets from center)
+        const columns = [-0.55, -0.25, 0.1, 0.35, 0.65];
+
+        for (let i = 0; i < columns.length; i++) {
+            const baseX = horizonX + columns[i] * sw * 0.5;
+
+            // Height oscillation
+            const heightBase = 50 + (i % 3) * 25;
+            const heightPulse = heightBase + Math.sin(time * 1.5 + i * 2.1) * 15;
+
+            // Width varies
+            const w = 8 + (i % 2) * 6;
+
+            // Core fire (bright orange)
+            const coreAlpha = 0.4 + Math.sin(time * 3.0 + i * 1.3) * 0.15;
+            fireColumnGfx.beginFill(0xe07020, coreAlpha);
+            fireColumnGfx.drawRect(baseX - w / 2, horizonY - heightPulse, w, heightPulse);
+            fireColumnGfx.endFill();
+
+            // Inner glow (yellow)
+            const innerW = w * 0.5;
+            fireColumnGfx.beginFill(0xffa020, coreAlpha * 0.7);
+            fireColumnGfx.drawRect(baseX - innerW / 2, horizonY - heightPulse * 0.8, innerW, heightPulse * 0.8);
+            fireColumnGfx.endFill();
+
+            // Outer halo (dim red)
+            const haloW = w * 2.5;
+            fireColumnGfx.beginFill(0xc43020, coreAlpha * 0.15);
+            fireColumnGfx.drawRect(baseX - haloW / 2, horizonY - heightPulse * 1.1, haloW, heightPulse * 1.1);
+            fireColumnGfx.endFill();
+
+            // Tip flicker (bright white-yellow)
+            const tipFlicker = Math.sin(time * 8.0 + i * 5.0) > 0.3 ? 1 : 0;
+            if (tipFlicker) {
+                fireColumnGfx.beginFill(0xffdd44, coreAlpha * 0.5);
+                fireColumnGfx.drawRect(baseX - 2, horizonY - heightPulse - 4, 4, 6);
+                fireColumnGfx.endFill();
+            }
+        }
     },
 
     // Update narrative text overlay
@@ -345,6 +475,16 @@ const Renderer = {
             }
         }
 
+        // Update drone sprite position (subtle hover bob)
+        if (droneSprite) {
+            const sw = app.screen.width;
+            const sh = app.screen.height;
+            droneSprite.x = sw / 2;
+            droneSprite.y = sh * 0.82 + Math.sin(time * 3.1) * 3;
+            // Slight tilt following swipe
+            droneSprite.rotation = (STATE.swipeRoll || 0) * -0.5;
+        }
+
         // Draw sky gradient (same coord space as road — no gap possible)
         this._drawSky(_groundTopY);
 
@@ -371,7 +511,11 @@ const Renderer = {
     getCameraGlow() { return cameraGlow; },
     getFlash() { return flash; },
     getCenter() { return { x: centerX, y: centerY }; },
-    getRoadGfx() { return roadGfx; }
+    getRoadGfx() { return roadGfx; },
+    getDronePosition() {
+        if (!droneSprite) return { x: app.screen.width / 2, y: app.screen.height * 0.82 };
+        return { x: droneSprite.x, y: droneSprite.y };
+    }
 };
 
 // --- Viewport helpers ---

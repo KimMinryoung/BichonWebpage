@@ -266,48 +266,26 @@ const EVENT_BUILDERS = {
     // ════════════════════════════════════════════════
     seaOfFire: {
         create(ev) {
-            const buildings = _getVisibleEntities('building');
-            const trees = _getVisibleEntities('tree');
-            const lanterns = _getVisibleEntities('lantern');
-            const balloons = _getVisibleEntities('balloon');
+            const boats = _getVisibleEntities('boat');
+            const beacons = _getVisibleEntities('beacon');
+            const debris = _getVisibleEntities('debris');
             const clouds = _getVisibleBg('cloud');
 
-            // Lanterns and balloons are "lifeboats" — tap targets
-            const targets = [...lanterns, ...balloons];
+            // Boats and beacons are tap targets (rescue lifeboats)
+            const targets = [...boats, ...beacons];
             ev.data.tapTargets = targets;
 
-            ev.data.affectedEntities = [...buildings, ...trees, ...lanterns, ...balloons];
+            ev.data.affectedEntities = [...boats, ...beacons, ...debris];
             ev.data.affectedBg = clouds;
             ev.data.prevShake = STATE.shake;
-            ev.data.savedElevations = balloons.map(b => ({
-                entity: b, elevation: b.elevation
-            }));
         },
 
         animate(ev) {
-            const buildings = ev.data.affectedEntities.filter(e => e.type === 'building');
-            const trees = ev.data.affectedEntities.filter(e => e.type === 'tree');
-            const balloons = ev.data.affectedEntities.filter(e => e.type === 'balloon');
+            const debris = ev.data.affectedEntities.filter(e => e.type === 'debris');
 
-            // World burns
-            buildings.forEach((e, i) => {
-                ev.tweens.push(_tweenTint(e.sprite, 0xe06020, 2, { delay: i * 0.03 }));
-                if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, {
-                        alpha: 1, duration: 0.3, yoyo: true, repeat: -1,
-                        delay: Math.random() * 1.5
-                    }));
-                }
-            });
-            trees.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0xcc3300, 1.5));
-            });
-
-            // Balloons/lifeboats drift lower
-            balloons.forEach(e => {
-                ev.tweens.push(gsap.to(e, {
-                    elevation: e.elevation - 0.3, duration: 3, ease: 'power2.in'
-                }));
+            // Debris turns fiery — the sea burns
+            debris.forEach((e, i) => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xe06020, 2, { delay: i * 0.05 }));
             });
 
             // Clouds darken
@@ -315,10 +293,10 @@ const EVENT_BUILDERS = {
                 ev.tweens.push(_tweenTint(bg.sprite, 0x8a4838, 2));
             });
 
-            // Shake
+            // Shake — turbulent sea
             ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 5, duration: 0.5 }));
 
-            // Tap targets pulse to stand out
+            // Tap targets (boats/beacons) pulse to stand out
             ev.data.tapTargets.forEach(e => {
                 ev.tweens.push(_tweenTint(e.sprite, 0xFFEE88, 1));
                 if (e.glowSprite) {

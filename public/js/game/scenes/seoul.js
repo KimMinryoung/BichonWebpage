@@ -84,7 +84,7 @@ const SceneSeoul = {
                 visual: { type: 'seaOfFire' },
                 narrative: seaOfFire.narrative,
                 duration: 10000,
-                targetTypes: ['lantern', 'balloon'],
+                targetTypes: ['boat', 'beacon'],
                 tapReward: { entropyDelta: -0.04 },
                 missedPenalty: 0.08,
                 correctThreshold: 0.3

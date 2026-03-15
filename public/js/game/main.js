@@ -56,6 +56,9 @@ const Game = {
         // Draw AI light beam on road
         Renderer.drawAIBeam(projected);
 
+        // Draw fire columns on horizon (Act 2)
+        Renderer.drawFireColumns(projected);
+
         // Update entities anchored to road segments
         Entities.update(dt, projected);
 

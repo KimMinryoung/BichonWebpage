@@ -261,9 +261,10 @@ const Touch = {
             // Target position (camera-local)
             const tx = entity.sprite.x;
             const ty = entity.sprite.y;
-            // Source: bottom-center of screen (drone POV — beam cast from drone body)
-            const sx = sw / 2;
-            const sy = sh + 40;
+            // Source: drone position (beam cast from visible drone sprite)
+            const dronePos = Renderer.getDronePosition();
+            const sx = dronePos.x;
+            const sy = dronePos.y;
 
             // Beam narrows from drone (bottom) to target (scene)
             const widthSrc = 20 * (1 - t * 0.3);
