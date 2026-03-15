@@ -51,7 +51,7 @@ These are non-obvious traps that have caused bugs. Read before editing.
 
 4. **Entity elevations** are in world units (hundreds like 100-500), not fractional values.
 
-5. **Biome system hides entities.** `CONFIG.biomeEntities[biome]` controls which entity types are visible per biome. When biome changes (e.g., Act 2 → 'sea'), buildings/trees/lanterns/balloons become invisible. Events must account for this — don't assume entities are visible.
+5. **Biome system hides entities.** `CONFIG.biomeEntities[biome]` controls which entity types are visible per biome. When biome changes (e.g., Act 2 → 'sea'), buildings/trees/lanterns/balloons become invisible and sea entities (boats/debris/beacons) appear. Events must account for this — don't assume entities are visible.
 
 6. **`targetTypes` vs `tapTargets`** in touch system: `tapTargets` are specific entity references (can scroll off-screen). `targetTypes` checks ALL visible entities of those types (solves scrolling). Always prefer `targetTypes` for tap events.
 
@@ -67,10 +67,10 @@ Entropy-driven progression (0→100 over ~75 seconds at base rate 1.333/sec):
 
 | Act | Entropy | Name | Biome | Speed | Visual Character |
 |-----|---------|------|-------|-------|-----------------|
-| 1 | 0–20 | Genesis | city | 60 | Dawn gold palette, slow, peaceful |
-| 2 | 20–47 | The Deluge | sea | 100 | Sunset→fire, accelerating |
-| 3 | 47–73 | Babel | city | 150 | Dark + artificial lights, fast |
-| 4 | 73–90 | Empty Cradle | desolate | 200 | Overexposed/washed out, very fast |
+| 1 | 0–20 | Genesis | city | 60 | Dawn gold palette, slow, peaceful. Entities: buildings, trees, streetlights, lanterns, balloons, neon signs, crows |
+| 2 | 20–47 | The Deluge | sea | 100 | Sunset→fire, accelerating. Entities: boats, debris, beacons (glow), crows |
+| 3 | 47–73 | Babel | city | 150 | Dark + artificial lights, fast. Entities: buildings, trees, streetlights, lanterns, balloons, neon signs (flickering glow), crows |
+| 4 | 73–90 | Empty Cradle | desolate | 200 | Overexposed/washed out, very fast. Entities: streetlights, debris |
 | 5 | 90–100 | Endings | — | 240 | Ending sequence based on choices |
 
 Act transitions (timeline.js) tween: sky gradient (3-stop RGB), fog color, speed, focalLength, shake, motionBlur, road edge color, AI beam color. Each transition fires a screen flash + shake burst + particle burst.

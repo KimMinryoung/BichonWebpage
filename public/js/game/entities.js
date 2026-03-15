@@ -16,7 +16,11 @@ const ENTITY_SCALE = {
     cloud: 5,
     crow: 2,            // small birds near flight path
     lantern: 3,         // floating paper lanterns
-    balloon: 6          // hot air balloons — large, visible from far
+    balloon: 6,         // hot air balloons — large, visible from far
+    boat: 5,            // boats on the sea surface
+    debris: 2,          // floating wreckage/debris
+    beacon: 4,          // sea buoys with blinking light
+    neon: 4             // neon signs on buildings (Act 3 city)
 };
 
 const PLACEMENT = {
@@ -25,7 +29,11 @@ const PLACEMENT = {
     building:    { minOff: 0.6,  maxOff: 2.2 },   // fly between buildings — canyon feel
     crow:        { minOff: 0.05, maxOff: 0.8 },   // birds fly close to the witch
     lantern:     { minOff: 0.1,  maxOff: 1.0 },   // lanterns float near and mid range
-    balloon:     { minOff: 0.3,  maxOff: 1.8 }    // balloons at various distances
+    balloon:     { minOff: 0.3,  maxOff: 1.8 },   // balloons at various distances
+    boat:        { minOff: 0.3,  maxOff: 1.6 },   // boats scattered across the sea
+    debris:      { minOff: 0.1,  maxOff: 1.2 },   // debris close and mid range
+    beacon:      { minOff: 0.4,  maxOff: 1.4 },   // buoys at regular intervals
+    neon:        { minOff: 0.5,  maxOff: 2.0 }    // neon signs on building facades
 };
 
 const SPACING = {
@@ -34,7 +42,11 @@ const SPACING = {
     building: 3,      // was 10 — packed city blocks
     crow: 4,          // birds in small groups
     lantern: 6,       // lanterns scattered
-    balloon: 15       // balloons sparse — special sighting
+    balloon: 15,      // balloons sparse — special sighting
+    boat: 8,          // boats moderately spaced
+    debris: 4,        // debris fairly dense (flood wreckage)
+    beacon: 12,       // buoys regularly spaced
+    neon: 6           // neon signs frequent in city
 };
 
 const GLOW_KEYS = {
@@ -43,7 +55,9 @@ const GLOW_KEYS = {
     'building-apartment': 'building-apartment-glow',
     'streetlight':        'streetlight-glow',
     'namsan-tower':       'namsan-tower-glow',
-    'lantern':            'lantern-glow'
+    'lantern':            'lantern-glow',
+    'beacon':             'beacon-glow',
+    'neon':               'neon-glow'
 };
 
 function _makeGlow(baseKey) {
@@ -190,6 +204,90 @@ const Entities = {
                 elevation: 200 + Math.random() * 500     // high above the witch
             });
             camera.addChild(sprite);
+        }
+
+        // Boats — vessels on the sea surface (Act 2)
+        for (let i = 0; i < CONFIG.counts.boats; i++) {
+            const segIdx = (i * SPACING.boat + 3 + Math.floor(Math.random() * 5)) % totalSegs;
+            const side = (i % 2 === 0) ? 1 : -1;
+            const offset = side * (PLACEMENT.boat.minOff + Math.random() * (PLACEMENT.boat.maxOff - PLACEMENT.boat.minOff));
+
+            const sprite = Assets.createSprite('boat');
+            entityList.push({
+                sprite,
+                glowSprite: null,
+                segmentIndex: segIdx,
+                roadOffset: offset,
+                type: 'boat',
+                fsm: 'normal',
+                baseScale: ENTITY_SCALE.boat,
+                elevation: 0
+            });
+            camera.addChild(sprite);
+        }
+
+        // Debris — floating wreckage (Act 2 sea, Act 4 desolate)
+        for (let i = 0; i < CONFIG.counts.debris; i++) {
+            const segIdx = (i * SPACING.debris + 1 + Math.floor(Math.random() * 3)) % totalSegs;
+            const side = (Math.random() > 0.5) ? 1 : -1;
+            const offset = side * (PLACEMENT.debris.minOff + Math.random() * (PLACEMENT.debris.maxOff - PLACEMENT.debris.minOff));
+
+            const sprite = Assets.createSprite('debris');
+            entityList.push({
+                sprite,
+                glowSprite: null,
+                segmentIndex: segIdx,
+                roadOffset: offset,
+                type: 'debris',
+                fsm: 'normal',
+                baseScale: ENTITY_SCALE.debris,
+                elevation: 0
+            });
+            camera.addChild(sprite);
+        }
+
+        // Beacons — sea buoys with blinking light (Act 2)
+        for (let i = 0; i < CONFIG.counts.beacons; i++) {
+            const segIdx = (i * SPACING.beacon + 7 + Math.floor(Math.random() * 6)) % totalSegs;
+            const side = (i % 2 === 0) ? 1 : -1;
+            const offset = side * (PLACEMENT.beacon.minOff + Math.random() * (PLACEMENT.beacon.maxOff - PLACEMENT.beacon.minOff));
+
+            const sprite = Assets.createSprite('beacon');
+            const glow = _makeGlow('beacon');
+            entityList.push({
+                sprite,
+                glowSprite: glow,
+                segmentIndex: segIdx,
+                roadOffset: offset,
+                type: 'beacon',
+                fsm: 'normal',
+                baseScale: ENTITY_SCALE.beacon,
+                elevation: 0
+            });
+            camera.addChild(sprite);
+            if (glow) glowLayer.addChild(glow);
+        }
+
+        // Neon signs — glowing signs in the city (Act 3)
+        for (let i = 0; i < CONFIG.counts.neons; i++) {
+            const segIdx = (i * SPACING.neon + 4 + Math.floor(Math.random() * 4)) % totalSegs;
+            const side = (i % 2 === 0) ? 1 : -1;
+            const offset = side * (PLACEMENT.neon.minOff + Math.random() * (PLACEMENT.neon.maxOff - PLACEMENT.neon.minOff));
+
+            const sprite = Assets.createSprite('neon');
+            const glow = _makeGlow('neon');
+            entityList.push({
+                sprite,
+                glowSprite: glow,
+                segmentIndex: segIdx,
+                roadOffset: offset,
+                type: 'neon',
+                fsm: 'normal',
+                baseScale: ENTITY_SCALE.neon,
+                elevation: 80 + Math.random() * 200    // mounted on building facades
+            });
+            camera.addChild(sprite);
+            if (glow) glowLayer.addChild(glow);
         }
 
         // Namsan Tower
@@ -503,11 +601,37 @@ const Entities = {
             const wind = Math.sin(t * 0.7 + id * 0.6) * 0.03
                        + Math.sin(t * 1.9 + id * 1.2) * 0.01;
             if (e.fsm === 'normal') e.sprite.rotation = wind;
+        } else if (e.type === 'boat') {
+            // Rocking on waves — rotation + vertical bob
+            const rock = Math.sin(t * 1.2 + id * 1.5) * 0.08;
+            if (e.fsm === 'normal') e.sprite.rotation = rock;
+            e._idleBob = Math.sin(t * 0.6 + id * 0.9) * 10;
+        } else if (e.type === 'debris') {
+            // Slow tumble rotation + gentle bob
+            const tumble = Math.sin(t * 0.4 + id * 2.0) * 0.15;
+            if (e.fsm === 'normal') e.sprite.rotation = tumble;
+            e._idleBob = Math.sin(t * 0.7 + id * 1.1) * 5;
+        } else if (e.type === 'beacon') {
+            // Slight sway + blink glow
+            const sway = Math.sin(t * 1.0 + id * 1.8) * 0.05;
+            if (e.fsm === 'normal') e.sprite.rotation = sway;
+            if (e.glowSprite && e.fsm === 'normal') {
+                // Slow blink: on for 1s, off for 2s
+                const blink = Math.sin(t * 2.0 + id * 3.0) > 0.3 ? 1.0 : 0.1;
+                e.glowSprite.alpha = Math.max(e.glowSprite.alpha, blink * 0.8);
+            }
+        } else if (e.type === 'neon') {
+            // Neon flicker — occasional rapid alpha jitter
+            if (e.glowSprite && e.fsm === 'normal') {
+                const flicker = Math.sin(t * 8.0 + id * 5.0) * Math.sin(t * 13.0 + id * 2.3);
+                const pulse = 0.6 + 0.4 * Math.max(0, flicker);
+                e.glowSprite.alpha = Math.max(e.glowSprite.alpha, pulse);
+            }
         }
     },
 
     _updateEntityVisuals(e) {
-        if (e.type === 'cloud' || e.type === 'streetlight' || e.type === 'crow' || e.type === 'lantern' || e.type === 'balloon') return;
+        if (e.type === 'cloud' || e.type === 'streetlight' || e.type === 'crow' || e.type === 'lantern' || e.type === 'balloon' || e.type === 'boat' || e.type === 'debris' || e.type === 'beacon' || e.type === 'neon') return;
 
         if (STATE.entropy > 50 && e.fsm === 'normal') {
             if (Math.random() < 0.002) {

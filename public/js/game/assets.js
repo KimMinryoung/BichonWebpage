@@ -24,6 +24,12 @@ const SPRITE_MANIFEST = {
     'balloon': 'balloon.png',
     'moon': 'moon.png',
     'star': 'star.png',
+    // Sea entities (Act 2 — deluge)
+    'boat': 'boat.png',
+    'debris': 'debris.png',
+    'beacon': 'beacon.png',
+    // City entities (Act 3 — babel)
+    'neon': 'neon.png',
     // Glow layers (emissive — bypass color grading filter)
     'building-modern-glow': 'building-modern-glow.png',
     'building-glass-glow': 'building-glass-glow.png',
@@ -31,6 +37,8 @@ const SPRITE_MANIFEST = {
     'namsan-tower-glow': 'namsan-tower-glow.png',
     'streetlight-glow': 'streetlight-glow.png',
     'lantern-glow': 'lantern-glow.png',
+    'beacon-glow': 'beacon-glow.png',
+    'neon-glow': 'neon-glow.png',
 };
 
 const textures = {};
@@ -78,6 +86,10 @@ const Assets = {
         if (!textures['balloon'])            textures['balloon']            = this._genBalloon(app);
         if (!textures['moon'])               textures['moon']               = this._genMoon(app);
         if (!textures['star'])               textures['star']               = this._genStar(app);
+        if (!textures['boat'])               textures['boat']               = this._genBoat(app);
+        if (!textures['debris'])             textures['debris']             = this._genDebris(app);
+        if (!textures['beacon'])             textures['beacon']             = this._genBeacon(app);
+        if (!textures['neon'])               textures['neon']               = this._genNeon(app);
 
         // Glow layer fallbacks (emissive — only the lit parts on transparent bg)
         if (!textures['building-modern-glow'])    textures['building-modern-glow']    = this._genBuildingGlow(app, 24, 40);
@@ -86,6 +98,8 @@ const Assets = {
         if (!textures['namsan-tower-glow'])       textures['namsan-tower-glow']       = this._genNamsanTowerGlow(app);
         if (!textures['streetlight-glow'])        textures['streetlight-glow']        = this._genStreetlightGlow(app);
         if (!textures['lantern-glow'])            textures['lantern-glow']            = this._genLanternGlow(app);
+        if (!textures['beacon-glow'])             textures['beacon-glow']             = this._genBeaconGlow(app);
+        if (!textures['neon-glow'])               textures['neon-glow']               = this._genNeonGlow(app);
     },
 
     // --- Pixel art generators (placeholder fallbacks) ---
@@ -463,6 +477,179 @@ const Assets = {
         const tex = app.renderer.generateTexture(g, {
             scaleMode: PIXI.SCALE_MODES.NEAREST,
             resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    // --- Sea entities (Act 2 — Deluge) ---
+
+    _genBoat(app) {
+        const g = new PIXI.Graphics();
+        // Hull — dark wooden boat
+        g.beginFill(0x5A3A1E);
+        g.drawRect(2, 10, 20, 6);
+        g.endFill();
+        // Hull bottom curve
+        g.beginFill(0x4A2A14);
+        g.drawRect(4, 16, 16, 2);
+        g.endFill();
+        // Deck
+        g.beginFill(0x7A5A3A);
+        g.drawRect(4, 9, 16, 2);
+        g.endFill();
+        // Mast
+        g.beginFill(0x8A6A4A);
+        g.drawRect(11, 1, 2, 9);
+        g.endFill();
+        // Sail (tattered — deluge)
+        g.beginFill(0xCCBBAA, 0.8);
+        g.drawRect(13, 2, 6, 4);
+        g.drawRect(13, 6, 4, 2);
+        g.endFill();
+        // Sail tear
+        g.beginFill(0x9A8A7A, 0.6);
+        g.drawRect(15, 3, 2, 2);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genDebris(app) {
+        const g = new PIXI.Graphics();
+        // Floating plank
+        g.beginFill(0x6A5030);
+        g.drawRect(0, 4, 10, 3);
+        g.endFill();
+        // Broken edge
+        g.beginFill(0x5A4020);
+        g.drawRect(1, 3, 3, 1);
+        g.drawRect(8, 5, 2, 2);
+        g.endFill();
+        // Nail/detail
+        g.beginFill(0x888888);
+        g.drawRect(3, 5, 1, 1);
+        g.drawRect(7, 5, 1, 1);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genBeacon(app) {
+        const g = new PIXI.Graphics();
+        // Float base (red/white buoy)
+        g.beginFill(0xCC2222);
+        g.drawRect(3, 12, 8, 6);
+        g.endFill();
+        g.beginFill(0xDDDDDD);
+        g.drawRect(3, 15, 8, 3);
+        g.endFill();
+        // Pole
+        g.beginFill(0x888888);
+        g.drawRect(6, 4, 2, 8);
+        g.endFill();
+        // Light housing
+        g.beginFill(0xFFAA00);
+        g.drawRect(5, 2, 4, 3);
+        g.endFill();
+        // Light bulb
+        g.beginFill(0xFFDD44);
+        g.drawRect(6, 1, 2, 2);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genBeaconGlow(app) {
+        const g = new PIXI.Graphics();
+        // Light glow only (matches beacon dimensions: 14x18)
+        g.beginFill(0xFFDD44);
+        g.drawRect(6, 1, 2, 2);
+        g.endFill();
+        // Halo
+        g.beginFill(0xFFDD44, 0.4);
+        g.drawRect(4, 0, 6, 5);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1,
+            region: new PIXI.Rectangle(0, 0, 14, 18)
+        });
+        g.destroy();
+        return tex;
+    },
+
+    // --- City entities (Act 3 — Babel) ---
+
+    _genNeon(app) {
+        const g = new PIXI.Graphics();
+        // Sign backing (dark panel)
+        g.beginFill(0x1A1A2A);
+        g.drawRect(0, 0, 16, 10);
+        g.endFill();
+        // Border frame
+        g.beginFill(0x333344);
+        g.drawRect(0, 0, 16, 1);
+        g.drawRect(0, 9, 16, 1);
+        g.drawRect(0, 0, 1, 10);
+        g.drawRect(15, 0, 1, 10);
+        g.endFill();
+        // Neon text/symbol — random color per generation
+        const neonColors = [0x00DDFF, 0xFF2288, 0x44FF44, 0xFFAA00, 0xAA44FF];
+        const neonColor = neonColors[Math.floor(Math.random() * neonColors.length)];
+        // Abstract neon shapes (Korean-style signage)
+        g.beginFill(neonColor);
+        g.drawRect(2, 2, 3, 1);
+        g.drawRect(2, 3, 1, 4);
+        g.drawRect(2, 7, 3, 1);
+        // Second character
+        g.drawRect(7, 2, 1, 6);
+        g.drawRect(8, 2, 3, 1);
+        g.drawRect(8, 5, 3, 1);
+        // Dot accent
+        g.drawRect(13, 3, 2, 2);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1
+        });
+        g.destroy();
+        return tex;
+    },
+
+    _genNeonGlow(app) {
+        const g = new PIXI.Graphics();
+        // Full neon glow — entire sign emits light (matches neon dimensions: 16x10)
+        const neonColors = [0x00DDFF, 0xFF2288, 0x44FF44, 0xFFAA00, 0xAA44FF];
+        const neonColor = neonColors[Math.floor(Math.random() * neonColors.length)];
+        g.beginFill(neonColor, 0.6);
+        g.drawRect(1, 1, 14, 8);
+        g.endFill();
+        g.beginFill(neonColor, 0.2);
+        g.drawRect(0, 0, 16, 10);
+        g.endFill();
+
+        const tex = app.renderer.generateTexture(g, {
+            scaleMode: PIXI.SCALE_MODES.NEAREST,
+            resolution: 1,
+            region: new PIXI.Rectangle(0, 0, 16, 10)
         });
         g.destroy();
         return tex;

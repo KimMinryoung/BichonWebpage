@@ -119,10 +119,10 @@ const CONFIG = {
     // ── Entity visibility per biome ──
     // true = visible, false = hidden
     biomeEntities: {
-        city:     { building: true,  tree: true,  streetlight: true,  crow: true, lantern: true, balloon: true },
-        sea:      { building: false, tree: false, streetlight: false, crow: true, lantern: false, balloon: false },
-        tehran:   { building: true,  tree: false, streetlight: true,  crow: true, lantern: false, balloon: false },
-        desolate: { building: false, tree: false, streetlight: true,  crow: false, lantern: false, balloon: false }
+        city:     { building: true,  tree: true,  streetlight: true,  crow: true, lantern: true, balloon: true, boat: false, debris: false, beacon: false, neon: true },
+        sea:      { building: false, tree: false, streetlight: false, crow: true, lantern: false, balloon: false, boat: true, debris: true, beacon: true, neon: false },
+        tehran:   { building: true,  tree: false, streetlight: true,  crow: true, lantern: false, balloon: false, boat: false, debris: false, beacon: false, neon: false },
+        desolate: { building: false, tree: false, streetlight: true,  crow: false, lantern: false, balloon: false, boat: false, debris: true, beacon: false, neon: false }
     },
 
     // Ending accent palettes
@@ -141,7 +141,11 @@ const CONFIG = {
         crows: 60,
         lanterns: 40,
         balloons: 15,
-        stars: 30
+        stars: 30,
+        boats: 30,
+        debris: 50,
+        beacons: 20,
+        neons: 35
     },
 
     sizes: {
