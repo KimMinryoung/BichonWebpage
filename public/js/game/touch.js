@@ -8,6 +8,7 @@ let _app = null;
 let _active = false;
 let _mode = null;          // 'tap', 'swipe', 'infection'
 let _touchStart = null;    // {x, y, time}
+let _touchCurrent = null;  // {x, y} — live drag position for swipe feedback
 let _tapCallback = null;   // (entity) => void
 let _swipeCallback = null; // (direction) => void
 let _tapTargets = [];      // entities that can be tapped
@@ -17,6 +18,7 @@ let _tapCount = 0;
 let _totalTappable = 0;
 let _tapEntityTypes = null;  // if set, any visible entity of these types is tappable
 let _tappedEntities = null;  // Set of entities already tapped (prevent double-tap)
+let _swipeResolved = false;  // true after swipe callback fires (prevent re-trigger)
 
 const SWIPE_THRESHOLD = 50;       // min px for swipe detection
 const HIT_RADIUS_MULT = 2.0;      // generous hit radius (design: 1.5-2x)
@@ -37,10 +39,15 @@ const Touch = {
         // Input events — use both mouse and touch for full PC + mobile coverage.
         // Pointer events are preferred but some browsers/contexts drop them.
         _canvas.addEventListener('mousedown', (e) => this._onDown(e));
+        _canvas.addEventListener('mousemove', (e) => this._onMove(e));
         _canvas.addEventListener('mouseup', (e) => this._onUp(e));
         _canvas.addEventListener('touchstart', (e) => {
             e.preventDefault(); // prevent synthetic mouse event
             if (e.touches.length > 0) this._onDown(e.touches[0]);
+        }, { passive: false });
+        _canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            if (e.touches.length > 0) this._onMove(e.touches[0]);
         }, { passive: false });
         _canvas.addEventListener('touchend', (e) => {
             e.preventDefault();
@@ -64,6 +71,8 @@ const Touch = {
         _swipeCallback = opts.onSwipe || null;
         _tapCount = 0;
         _totalTappable = _tapTargets.length;
+        _swipeResolved = false;
+        _touchCurrent = null;
     },
 
     deactivate() {
@@ -74,6 +83,8 @@ const Touch = {
         _tappedEntities = null;
         _tapCallback = null;
         _swipeCallback = null;
+        _swipeResolved = false;
+        _touchCurrent = null;
     },
 
     // ── Coordinate conversion ──
@@ -104,6 +115,7 @@ const Touch = {
         if (!_active) return;
         const coords = this._getGameCoords(e);
         _touchStart = { x: coords.x, y: coords.y, time: Date.now() };
+        _touchCurrent = { x: coords.x, y: coords.y };
 
         if (_mode === 'tap' || _mode === 'infection') {
             const hit = this._hitTest(coords.x, coords.y);
@@ -118,10 +130,16 @@ const Touch = {
         }
     },
 
+    _onMove(e) {
+        if (!_active || !_touchStart) return;
+        const coords = this._getGameCoords(e);
+        _touchCurrent = { x: coords.x, y: coords.y };
+    },
+
     _onUp(e) {
         if (!_active || !_touchStart) return;
 
-        if (_mode === 'swipe') {
+        if (_mode === 'swipe' && !_swipeResolved) {
             const coords = this._getGameCoords(e);
             const dx = coords.x - _touchStart.x;
             const dy = coords.y - _touchStart.y;
@@ -133,10 +151,12 @@ const Touch = {
                 dir = 'down';
             }
 
+            _swipeResolved = true;
             if (_swipeCallback) _swipeCallback(dir);
         }
 
         _touchStart = null;
+        _touchCurrent = null;
     },
 
     // ── Hit testing ──
@@ -213,10 +233,16 @@ const Touch = {
         _scanBeams = _scanBeams.filter(b => now - b.startTime < b.duration);
     },
 
-    // Draw scan beam effects (called after entities update, in camera-local space)
+    // Draw scan beam effects and swipe indicators
     drawScanBeams() {
         if (!_scanBeamGfx) return;
         _scanBeamGfx.clear();
+
+        // Draw swipe direction indicators when in swipe mode
+        if (_active && _mode === 'swipe' && !_swipeResolved) {
+            this._drawSwipeIndicators();
+        }
+
         if (_scanBeams.length === 0) return;
 
         const now = Date.now();
@@ -272,6 +298,83 @@ const Touch = {
         }
     },
 
+    // ── Swipe visual indicators ──
+    _drawSwipeIndicators() {
+        // Use a separate non-ADD container for solid arrows
+        // Since _scanBeamGfx uses ADD blend, draw arrows with high alpha
+        const sw = _app.screen.width;
+        const sh = _app.screen.height;
+        const cy = sh * 0.45;
+        const color = STATE.aiBeamColor;
+        const pulse = 0.6 + 0.4 * Math.sin(Date.now() * 0.005);
+
+        // Determine current drag direction
+        let dragDir = 'none';
+        let dragStrength = 0;
+        if (_touchStart && _touchCurrent) {
+            const dx = _touchCurrent.x - _touchStart.x;
+            const dy = _touchCurrent.y - _touchStart.y;
+            if (Math.abs(dx) > SWIPE_THRESHOLD * 0.3 && Math.abs(dx) > Math.abs(dy)) {
+                dragDir = dx > 0 ? 'right' : 'left';
+                dragStrength = Math.min(1, Math.abs(dx) / (SWIPE_THRESHOLD * 2));
+            } else if (dy > SWIPE_THRESHOLD * 0.3 && Math.abs(dy) > Math.abs(dx)) {
+                dragDir = 'down';
+                dragStrength = Math.min(1, dy / (SWIPE_THRESHOLD * 2));
+            }
+        }
+
+        // Arrow dimensions — chevron style (< >)
+        const arrowW = 30;
+        const arrowH = 80;
+        const margin = sw * 0.06;
+        const bobX = Math.sin(Date.now() * 0.003) * 6; // gentle horizontal bob
+
+        // Left chevron <
+        const leftActive = dragDir === 'left';
+        const leftAlpha = leftActive ? 0.7 + dragStrength * 0.3 : pulse * 0.5;
+        const leftX = margin + (leftActive ? -bobX * dragStrength * 3 : bobX);
+        _scanBeamGfx.lineStyle(leftActive ? 5 : 3, color, leftAlpha);
+        _scanBeamGfx.moveTo(leftX + arrowW, cy - arrowH / 2);
+        _scanBeamGfx.lineTo(leftX, cy);
+        _scanBeamGfx.lineTo(leftX + arrowW, cy + arrowH / 2);
+        // Double chevron when dragging
+        if (leftActive && dragStrength > 0.3) {
+            _scanBeamGfx.moveTo(leftX + arrowW + 15, cy - arrowH / 2);
+            _scanBeamGfx.lineTo(leftX + 15, cy);
+            _scanBeamGfx.lineTo(leftX + arrowW + 15, cy + arrowH / 2);
+        }
+        _scanBeamGfx.lineStyle(0);
+
+        // Right chevron >
+        const rightActive = dragDir === 'right';
+        const rightAlpha = rightActive ? 0.7 + dragStrength * 0.3 : pulse * 0.5;
+        const rightX = sw - margin + (rightActive ? bobX * dragStrength * 3 : -bobX);
+        _scanBeamGfx.lineStyle(rightActive ? 5 : 3, color, rightAlpha);
+        _scanBeamGfx.moveTo(rightX - arrowW, cy - arrowH / 2);
+        _scanBeamGfx.lineTo(rightX, cy);
+        _scanBeamGfx.lineTo(rightX - arrowW, cy + arrowH / 2);
+        if (rightActive && dragStrength > 0.3) {
+            _scanBeamGfx.moveTo(rightX - arrowW - 15, cy - arrowH / 2);
+            _scanBeamGfx.lineTo(rightX - 15, cy);
+            _scanBeamGfx.lineTo(rightX - arrowW - 15, cy + arrowH / 2);
+        }
+        _scanBeamGfx.lineStyle(0);
+
+        // Drag trail line
+        if (_touchStart && _touchCurrent && dragDir !== 'none') {
+            const trailAlpha = 0.4 + dragStrength * 0.5;
+            _scanBeamGfx.lineStyle(3, color, trailAlpha);
+            _scanBeamGfx.moveTo(_touchStart.x, _touchStart.y);
+            _scanBeamGfx.lineTo(_touchCurrent.x, _touchCurrent.y);
+            _scanBeamGfx.lineStyle(0);
+
+            // Direction dot
+            _scanBeamGfx.beginFill(color, trailAlpha);
+            _scanBeamGfx.drawCircle(_touchCurrent.x, _touchCurrent.y, 6 + dragStrength * 8);
+            _scanBeamGfx.endFill();
+        }
+    },
+
     // Add new targets dynamically (used by infection event as infection spreads)
     addTargets(newTargets) {
         if (!_active) return;
@@ -293,6 +396,8 @@ const Touch = {
         this.deactivate();
         _scanBeams = [];
         _touchStart = null;
+        _touchCurrent = null;
+        _swipeResolved = false;
         _tapCount = 0;
         _totalTappable = 0;
         if (_scanBeamGfx) _scanBeamGfx.clear();
