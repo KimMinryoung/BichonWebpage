@@ -119,6 +119,7 @@ const Intervention = {
 
         Touch.activate(point.interactionType, {
             targets: targets,
+            targetTypes: point.targetTypes || null,
             onTap: (entity) => {
                 // Per-tap: visual effect via event builder
                 if (point.visual) Events.onTap(point.visual, entity);

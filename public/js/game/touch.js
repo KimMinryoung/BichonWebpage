@@ -15,7 +15,8 @@ let _scanBeams = [];       // active scan beam effects [{entity, startTime, dura
 let _scanBeamGfx = null;
 let _tapCount = 0;
 let _totalTappable = 0;
-let _swipeIndicators = []; // visual fork indicators on event layer
+let _tapEntityTypes = null;  // if set, any visible entity of these types is tappable
+let _tappedEntities = null;  // Set of entities already tapped (prevent double-tap)
 
 const SWIPE_THRESHOLD = 50;       // min px for swipe detection
 const HIT_RADIUS_MULT = 2.0;      // generous hit radius (design: 1.5-2x)
@@ -33,19 +34,32 @@ const Touch = {
         _scanBeamGfx.blendMode = PIXI.BLEND_MODES.ADD;
         Renderer.getCamera().addChild(_scanBeamGfx);
 
-        // Pointer events on the canvas
-        _canvas.addEventListener('pointerdown', (e) => this._onDown(e), { passive: false });
-        _canvas.addEventListener('pointerup', (e) => this._onUp(e), { passive: false });
+        // Input events — use both mouse and touch for full PC + mobile coverage.
+        // Pointer events are preferred but some browsers/contexts drop them.
+        _canvas.addEventListener('mousedown', (e) => this._onDown(e));
+        _canvas.addEventListener('mouseup', (e) => this._onUp(e));
+        _canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // prevent synthetic mouse event
+            if (e.touches.length > 0) this._onDown(e.touches[0]);
+        }, { passive: false });
+        _canvas.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            if (e.changedTouches.length > 0) this._onUp(e.changedTouches[0]);
+        }, { passive: false });
         _canvas.addEventListener('contextmenu', (e) => e.preventDefault());
     },
 
     // Activate touch input for an event
     // mode: 'tap' | 'swipe' | 'infection'
-    // opts: { targets, onTap, onSwipe }
+    // opts: { targets, targetTypes, onTap, onSwipe }
+    //   targets: specific entity references (optional)
+    //   targetTypes: array of entity type strings — any visible entity of these types is tappable
     activate(mode, opts) {
         _active = true;
         _mode = mode;
-        _tapTargets = (opts.targets || []).slice(); // copy
+        _tapTargets = (opts.targets || []).slice();
+        _tapEntityTypes = opts.targetTypes || null;
+        _tappedEntities = new Set();
         _tapCallback = opts.onTap || null;
         _swipeCallback = opts.onSwipe || null;
         _tapCount = 0;
@@ -56,6 +70,8 @@ const Touch = {
         _active = false;
         _mode = null;
         _tapTargets = [];
+        _tapEntityTypes = null;
+        _tappedEntities = null;
         _tapCallback = null;
         _swipeCallback = null;
     },
@@ -126,9 +142,9 @@ const Touch = {
     // ── Hit testing ──
     // Converts screen coords to camera-local space and tests against entity positions.
     // Uses generous hit radii — this is about intent, not precision.
+    // Checks: 1) specific _tapTargets, 2) any visible entity matching _tapEntityTypes.
     _hitTest(gameX, gameY) {
         const camera = Renderer.getCamera();
-        // Transform screen coords to camera-local space (accounts for shake/roll)
         const localPoint = camera.worldTransform.applyInverse(
             new PIXI.Point(gameX, gameY)
         );
@@ -136,8 +152,23 @@ const Touch = {
         let closest = null;
         let closestDist = Infinity;
 
-        for (let i = 0; i < _tapTargets.length; i++) {
-            const entity = _tapTargets[i];
+        // Build candidate list: specific targets + type-matched visible entities
+        let candidates = _tapTargets;
+        if (_tapEntityTypes) {
+            const allEntities = Entities.getList();
+            // Merge: all visible entities of target types (excluding already-tapped)
+            candidates = [];
+            for (let i = 0; i < allEntities.length; i++) {
+                const e = allEntities[i];
+                if (!e.sprite.visible) continue;
+                if (_tapEntityTypes.indexOf(e.type) < 0) continue;
+                if (_tappedEntities && _tappedEntities.has(e)) continue;
+                candidates.push(e);
+            }
+        }
+
+        for (let i = 0; i < candidates.length; i++) {
+            const entity = candidates[i];
             if (!entity.sprite.visible) continue;
 
             const dx = localPoint.x - entity.sprite.x;
@@ -155,6 +186,11 @@ const Touch = {
                 closest = entity;
                 closestDist = dist;
             }
+        }
+
+        // Track tapped entity to prevent double-tap
+        if (closest && _tappedEntities) {
+            _tappedEntities.add(closest);
         }
 
         return closest;

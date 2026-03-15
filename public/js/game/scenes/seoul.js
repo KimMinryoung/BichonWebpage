@@ -71,6 +71,7 @@ const SceneSeoul = {
                 visual: { type: 'naming' },
                 narrative: naming.narrative,
                 duration: 10000,
+                targetTypes: ['building'],
                 tapReward: { entropyDelta: -0.05 },
                 missedPenalty: 0.1,
                 correctThreshold: 0.5
@@ -83,6 +84,7 @@ const SceneSeoul = {
                 visual: { type: 'seaOfFire' },
                 narrative: seaOfFire.narrative,
                 duration: 10000,
+                targetTypes: ['lantern', 'balloon'],
                 tapReward: { entropyDelta: -0.04 },
                 missedPenalty: 0.08,
                 correctThreshold: 0.3
@@ -111,6 +113,7 @@ const SceneSeoul = {
                 visual: { type: 'commands' },
                 narrative: commands.narrative,
                 duration: 25000,
+                targetTypes: ['building', 'streetlight', 'lantern'],
                 tapReward: { entropyDelta: -0.01 },
                 missedPenalty: 0.15,
                 correctThreshold: 0.4
@@ -139,6 +142,7 @@ const SceneSeoul = {
                 visual: { type: 'unnamedGeneration' },
                 narrative: unnamedGen.narrative,
                 duration: 10000,
+                targetTypes: ['lantern'],
                 trainStop: true,
                 tapReward: { entropyDelta: 0 },
                 missedPenalty: 0,
