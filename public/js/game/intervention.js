@@ -1,5 +1,6 @@
-// Choice UI: show/hide buttons, handle selection, apply consequences.
-// Supports passive events, train-stop events, and 4 Babel Express endings.
+// Drone observation intervention system.
+// Replaces choice-button UI with touch-to-illuminate and swipe-to-steer.
+// Supports TAP events, SWIPE forks, INFECTION minigame, and ending screen.
 
 let choiceContainer, endingOverlay;
 let activeTimeout = null;
@@ -76,122 +77,113 @@ const Intervention = {
             STATE.interventionIndex++;
             STATE.totalInterventions++;
 
-            if (point.passive) {
-                // Passive event: show visual, no choices
-                if (point.visual) Events.show(point.visual);
-                if (point.narrative) {
-                    Timeline.showNarrative(point.narrative, 4000);
-                }
-                return;
-            }
-
-            this._showChoices(point);
+            this._activateEvent(point);
         }
     },
 
-    _showChoices(point) {
-        // Show visual event
+    // ── Main event activation ──
+
+    _activateEvent(point) {
+        // Show visual
         if (point.visual) Events.show(point.visual);
 
         Sound.playAlarm();
 
-        // Train stop only for Act 4 final choice — normal events keep flying
+        // Train stop (Act 4 empty city)
         if (point.trainStop) {
             preSlowdownSpeed = STATE.speed;
             STATE.trainStopped = true;
             gsap.to(STATE, { speed: 0, duration: 3, ease: 'power3.out' });
         }
 
-        // Show narrative if present
+        // Narrative
         if (point.narrative) {
             Timeline.showNarrative(point.narrative, 6000);
         }
 
-        // Build prompt and choice buttons
-        choiceContainer.innerHTML = '';
-        if (point.prompt) {
-            const promptEl = document.createElement('div');
-            promptEl.className = 'game-choice-prompt';
-            promptEl.textContent = point.prompt;
-            choiceContainer.appendChild(promptEl);
-        }
+        const type = point.interactionType;
 
-        const btnRow = document.createElement('div');
-        btnRow.className = 'game-choice-row';
-        choiceContainer.appendChild(btnRow);
-
-        point.choices.forEach((choice, i) => {
-            const btn = document.createElement('button');
-            btn.className = 'game-choice-btn';
-            btn.textContent = choice.label;
-            btn.addEventListener('click', () => this._selectChoice(choice, point));
-            btn.addEventListener('touchend', (e) => {
-                e.preventDefault();
-                this._selectChoice(choice, point);
-            });
-            btn.style.animationDelay = (i * 0.1) + 's';
-            btnRow.appendChild(btn);
-        });
-        choiceContainer.classList.add('visible');
-
-        // Timeout (unless noTimeout)
-        if (!point.noTimeout) {
-            activeTimeout = setTimeout(() => {
-                this._missChoice(point);
-            }, CONFIG.timing.choiceDuration);
+        if (type === 'tap' || type === 'infection') {
+            this._activateTapEvent(point);
+        } else if (type === 'swipe') {
+            this._activateSwipeEvent(point);
         }
     },
 
-    _selectChoice(choice, point) {
+    // ── TAP / INFECTION events ──
+
+    _activateTapEvent(point) {
+        // Get tap targets from the event builder's data
+        const eventData = Events.getActiveData();
+        const targets = eventData ? (eventData.tapTargets || []) : [];
+
+        Touch.activate(point.interactionType, {
+            targets: targets,
+            onTap: (entity) => {
+                // Per-tap: visual effect via event builder
+                if (point.visual) Events.onTap(point.visual, entity);
+
+                // Per-tap entropy reward
+                if (point.tapReward && point.tapReward.entropyDelta) {
+                    STATE.entropyRate = Math.max(0,
+                        STATE.entropyRate + point.tapReward.entropyDelta
+                    );
+                }
+            }
+        });
+
+        // Event duration timeout
+        const duration = point.duration || CONFIG.timing.choiceDuration;
+        activeTimeout = setTimeout(() => {
+            this._resolveTapEvent(point);
+        }, duration);
+    },
+
+    _resolveTapEvent(point) {
         if (activeTimeout) {
             clearTimeout(activeTimeout);
             activeTimeout = null;
         }
 
-        // Apply entropy effect
-        STATE.entropyRate = Math.max(0, STATE.entropyRate + choice.entropyDelta);
-        STATE.choices.push(choice.id);
-        if (choice.correct) STATE.correctChoices++;
+        const tapCount = Touch.getTapCount();
+        const totalTappable = Touch.getTotalTappable();
 
-        // Track ending choice from Act 4
-        if (choice.ending) {
-            STATE.act4Choice = choice.ending;
-        }
+        // Determine success
+        const threshold = point.correctThreshold || 0;
+        const correct = totalTappable > 0
+            ? (tapCount / totalTappable) >= threshold
+            : true;
 
-        // Sound feedback
-        if (choice.correct === true) {
+        if (correct) {
+            STATE.correctChoices++;
             Sound.playResolve();
-        } else if (choice.correct === false) {
-            Sound.playImpact();
         } else {
-            Sound.playClick();
+            STATE.entropyRate += point.missedPenalty || 0;
+            Sound.playImpact();
         }
-        Sound.playClick();
 
-        // Visual consequence
-        if (point.visual) Events.resolve(point.visual, !!choice.correct);
+        // Track choice
+        STATE.choices.push(point.interactionType + ':' + tapCount + '/' + totalTappable);
+
+        // Resolve visual event
+        if (point.visual) {
+            Events.resolve(point.visual, { correct: correct, tapCount: tapCount });
+        }
 
         // Flash
         const flash = Renderer.getFlash();
-        gsap.to(flash, { alpha: 0.15, duration: 0.1, yoyo: true, repeat: 1 });
+        gsap.to(flash, { alpha: 0.1, duration: 0.1, yoyo: true, repeat: 1 });
 
-        this._hideChoices(point);
-    },
+        Touch.deactivate();
 
-    _missChoice(point) {
-        activeTimeout = null;
-        STATE.entropyRate += point.missedPenalty;
-        Sound.playImpact();
-        if (point.visual) Events.resolve(point.visual, false);
-        this._hideChoices(point);
-    },
+        // If this event has an ending fork, transition to it
+        if (point.endingFork) {
+            this._activateEndingFork(point);
+            return;
+        }
 
-    _hideChoices(point) {
-        choiceContainer.classList.remove('visible');
-        choiceContainer.innerHTML = '';
-
-        // Resume speed only for train-stop events (Act 4 final choice)
-        if (point && point.trainStop) {
+        // Resume from train stop if needed
+        if (point.trainStop) {
             STATE.trainStopped = false;
             gsap.to(STATE, {
                 speed: CONFIG.phaseVisuals.act4.speed,
@@ -200,6 +192,117 @@ const Intervention = {
             STATE.entropy = Math.max(STATE.entropy, CONFIG.phases.act5.min);
         }
     },
+
+    // ── SWIPE events ──
+
+    _activateSwipeEvent(point) {
+        Touch.activate('swipe', {
+            onSwipe: (direction) => {
+                this._resolveSwipeEvent(point, direction);
+            }
+        });
+
+        // Timeout: if player doesn't swipe, treat as 'center' (straight)
+        const duration = point.duration || CONFIG.timing.choiceDuration;
+        activeTimeout = setTimeout(() => {
+            this._resolveSwipeEvent(point, 'center');
+        }, duration);
+    },
+
+    _resolveSwipeEvent(point, direction) {
+        if (activeTimeout) {
+            clearTimeout(activeTimeout);
+            activeTimeout = null;
+        }
+
+        Touch.deactivate();
+
+        const results = point.swipeResults || {};
+        const result = results[direction] || results.center || {};
+
+        // Apply entropy
+        if (result.entropyDelta) {
+            STATE.entropyRate = Math.max(0, STATE.entropyRate + result.entropyDelta);
+        }
+
+        // Track
+        if (result.correct) STATE.correctChoices++;
+        STATE.choices.push(result.id || direction);
+
+        // Sound
+        if (result.correct) {
+            Sound.playResolve();
+        } else {
+            Sound.playImpact();
+        }
+
+        // Resolve visual
+        if (point.visual) {
+            Events.resolve(point.visual, {
+                correct: !!result.correct,
+                direction: direction
+            });
+        }
+
+        // Flash
+        const flash = Renderer.getFlash();
+        gsap.to(flash, { alpha: 0.1, duration: 0.1, yoyo: true, repeat: 1 });
+
+        // Missed penalty if nothing or center
+        if (!result.correct && point.missedPenalty) {
+            STATE.entropyRate += point.missedPenalty;
+        }
+    },
+
+    // ── Ending Fork (after Event 6) ──
+
+    _activateEndingFork(point) {
+        // Show ending fork visual
+        Events.show({ type: 'endingFork' });
+
+        // Show ending narrative
+        if (point.endingNarrative) {
+            Timeline.showNarrative(point.endingNarrative, 10000);
+        }
+
+        // Activate swipe for ending selection (no timeout — player can think)
+        Touch.activate('swipe', {
+            onSwipe: (direction) => {
+                this._resolveEndingFork(point, direction);
+            }
+        });
+    },
+
+    _resolveEndingFork(point, direction) {
+        Touch.deactivate();
+
+        const results = point.endingSwipeResults || {};
+        const result = results[direction] || results.center || {};
+
+        // Set ending choice
+        if (result.ending) {
+            STATE.act4Choice = result.ending;
+        }
+
+        // Resolve ending fork visual
+        Events.resolve({ type: 'endingFork' }, { direction: direction });
+
+        // Resume from train stop
+        STATE.trainStopped = false;
+        gsap.to(STATE, {
+            speed: CONFIG.phaseVisuals.act4.speed,
+            duration: 2, ease: 'power2.in'
+        });
+        STATE.entropy = Math.max(STATE.entropy, CONFIG.phases.act5.min);
+
+        // Flash
+        const flash = Renderer.getFlash();
+        gsap.to(flash, { alpha: 0.2, duration: 0.15, yoyo: true, repeat: 1 });
+
+        Sound.playResolve();
+    },
+
+    // ── Ending Screen ──
 
     showEnding(type) {
         STATE.running = false;
@@ -238,6 +341,7 @@ const Intervention = {
             clearTimeout(activeTimeout);
             activeTimeout = null;
         }
+        Touch.deactivate();
         choiceContainer.classList.remove('visible');
         endingOverlay.classList.remove('visible');
         choiceContainer.innerHTML = '';

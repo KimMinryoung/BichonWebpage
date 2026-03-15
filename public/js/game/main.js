@@ -13,6 +13,7 @@ const Game = {
 
         Entities.init();
         Events.init();
+        Touch.init();
         Intervention.init();
         Sound.init();
         Effects.init(Renderer.getApp(), Renderer.getCamera());
@@ -61,6 +62,9 @@ const Game = {
         // Core systems
         Timeline.check();
         Intervention.check();
+        Events.update(dt);
+        Touch.update(dt);
+        Touch.drawScanBeams();
         Renderer.applyEffects();
         Sound.updatePhase(STATE.phase);
         Effects.update(app);
@@ -74,6 +78,7 @@ const Game = {
         resetState();
         Timeline.reset();
         Events.reset();
+        Touch.reset();
         Intervention.reset();
         Sound.reset();
         Particles.reset();

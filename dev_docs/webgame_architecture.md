@@ -1,0 +1,369 @@
+# Web Game Architecture Document
+
+## Concept
+
+A rail-type forward-scrolling game set over Seoul city center.
+The player is a drone — an AI observation unit flying over a world in crisis.
+The world automatically progresses from peaceful normality toward catastrophe.
+The player intervenes through embodied actions: touching objects to illuminate them
+with a scan beam (TAP), or swiping to steer the drone at narrative forks (SWIPE).
+The drone's action is always "shining light" — surveillance, rescue, purification, memory.
+Correct interventions steer toward a hopeful ending; missed actions accelerate the catastrophe.
+Linear, difficult to win. Minimal text, visually driven.
+
+## Tech Stack
+
+- **Renderer:** PixiJS 7 (WebGL, NEAREST scale mode for pixel art)
+- **Animation/Tweening:** GSAP (timeline-based state transitions)
+- **Server:** Express route at `/game`, EJS view loads JS modules
+- **Orientation:** Forced landscape (CSS + prompt overlay on portrait)
+
+## Development Phases
+
+### Phase 1 (Current Target): 1-Minute Demo
+- Peaceful Seoul flyover (buildings, Han River, Namsan Tower silhouette)
+- Entropy system: 0 -> 100 over ~60 seconds
+- 2-3 intervention points with 2-3 button choices
+- One ending (catastrophe) + one good ending path
+- Basic visual escalation (speed, FOV, shake, color grading)
+
+### Phase 2: Full 10-Minute Experience
+- Multiple acts/zones with distinct visual themes
+- More intervention points, branching consequences
+- Richer object variety, particle effects, sound
+- Polish: vignetting, motion blur, glitch effects
+
+## File Structure
+
+```
+public/
+  js/
+    game/
+      main.js           # Entry point: init, game loop, resize
+      config.js          # All tunable constants (colors, counts, sizes, timings, road)
+      state.js           # Runtime state (speed, focalLength, shake, entropy, phase, roadPosition)
+      road.js            # Pseudo-3D road: segment geometry, curves, hills, projection
+      renderer.js        # PixiJS app setup, camera, segment-based road drawing, screen flash
+      assets.js          # Sprite loading pipeline (PNG manifest + fallback generators)
+      entities.js        # Entity creation with sprites, road-segment anchoring
+      touch.js           # Touch/swipe input: TAP entities, SWIPE at forks, scan beam FX
+      events.js          # Visual event system (6 events + ending fork, touch-driven)
+      effects.js         # Visual polish: speed lines, vignette, color grading filter
+      sound.js           # Procedural audio: ambient drone, UI sounds (Web Audio API)
+      timeline.js        # GSAP timeline sequences, phase transitions
+      intervention.js    # Drone intervention: activates touch/swipe, resolves outcomes, endings
+      scenes/
+        seoul.js         # Scene definition: interventions with visuals + i18n (en/ko)
+  css/
+    game.css             # Game-specific styles (landscape lock, choice UI, back button)
+  img/
+    game/                # Processed sprite PNGs (palette-reduced, hand-cleaned)
+      raw/               # Raw AI-generated images (1024x1024, for re-processing)
+views/
+  public/
+    game.ejs             # Minimal HTML shell: loads CSS + JS modules
+tools/
+  sprite-pipeline.js     # Gemini AI sprite generation + post-processing pipeline
+```
+
+## Caution
+- Update development documentation (dev_docs\webgame_architecture.md) after change.
+- Entity elevations are in world units (hundreds), not fractional
+- Always check CONFIG.acts and getRoadColors() when changing palette
+- Biome system controls entity visibility — check biomeEntities when adding new entity types
+- GSAP PixiPlugin is NOT loaded — use manual tint tweening (_tweenTint helper in events.js)
+- Test on mobile after any layout change (forced landscape mode)
+- Key files: config.js (palette+acts), state.js, renderer.js (sky+beam+narrative), timeline.js (act transitions), entities.js, touch.js (TAP/SWIPE input+scan beam), events.js (6 builders+ending fork), intervention.js (4 endings), road.js (projection math), scenes/seoul.js (event definitions)
+
+## Implementation Status
+
+### Completed
+- [x] File scaffolding — 10 JS modules, CSS, EJS view, Express route
+- [x] Config + State — entropy-driven phase system, tunable constants
+- [x] Renderer — PixiJS setup, camera shake, sky color tweening
+- [x] Perspective ground — Mode 7-style scanline strips with correct 3D math
+  - TilingSprite per strip, tileScale (X linear, Y quadratic)
+  - Vanishing point X alignment (tilePosition.x = centerX + overscan)
+  - Cumulative texture Y with scaleY conversion for seamless strips
+  - Horizon fog (alpha fade) to suppress moiré artifacts
+  - Cracked gray concrete texture
+- [x] Asset pipeline — SPRITE_MANIFEST for real PNGs, fallback pixel art generators
+- [x] Entities — Seoul buildings (3 styles), Namsan Tower, trees, streetlights, clouds
+  - PIXI.Sprite with bottom-center anchor, per-entity baseScale
+  - Z-projection with object pooling and recycling
+  - FSM: normal → stressed → damaged (entropy-driven tint changes)
+- [x] Timeline — Phase transitions (peace/tension/crisis/catastrophe/hope)
+  - Sky color RGB tweening per phase via GSAP
+  - Catastrophe ending (flash whiteout)
+  - Hope ending (golden dawn, entropy reversal)
+- [x] Intervention — 3 choice points with prompt text + button UI
+  - Bullet-time slowdown during choices
+  - Timeout penalty for missed choices
+  - Choice logging and correct-choice counting for ending determination
+- [x] Visual events — In-world effects on actual game objects (no separate overlay panels)
+  - Bridge: road crack overlay + danger tint + shake boost / debris from road
+  - Quake: actual road-anchored buildings sway + ground crack lines / buildings tilt & collapse
+  - Blackout: glow sprites flicker erratically + spark / power restore wave or total darkness
+- [x] Landscape lock — Portrait detection, rotate prompt overlay
+- [x] Endings — Catastrophe (flash whiteout) + Hope (golden dawn), restart button
+- [x] Nav integration — "Web Game" / "웹 게임" link in site navigation
+- [x] i18n — Exit button and rotate prompt support ko/en
+- [x] Sprite generation pipeline — Gemini 2.5 Flash AI → post-processing → 128x128 sprites
+- [x] Ground texture — AI-generated asphalt, loaded via asset pipeline, Mode 7 tiling
+- [x] Sun sprite — AI-generated, replaces procedural rectangle
+- [x] Ground scroll direction fix — tiles now move toward camera (forward motion)
+- [x] CSP fixes — `unsafe-eval` for PixiJS shaders, `worker-src blob:` for asset workers
+- [x] GSAP PixiJS compat — `scaleX`/`scaleY` → `scale.x`/`scale.y` for display objects
+- [x] Entropy reversal prevention — clamp entropy to never decrease during gameplay (only hope ending reverses)
+- [x] Speed rebalance — peace 40, tension 50, crisis 75, catastrophe 100
+- [x] Pixel art sprite cleanup — updated building-apartment, building-glass, cloud, ground (256x256), streetlight; removed ground-concrete.png
+- [x] Ground tile scale fix — reduced multipliers (1.0x / 0.75x) to match 256x256 ground sprite
+- [x] Sun sunset animation — arcs from upper-right to horizon, tints white→orange→red, fully sets by entropy 65
+- [x] Z-ordering — `sortableChildren` on camera, entities sorted by depth, ground behind entities, sun behind ground
+- [x] Pseudo-3D road — segment-based rendering replacing Mode 7 texture strips
+  - Alternating color stripes (road, grass, rumble strips, shoulders)
+  - Curves with cumulative X offset and centrifugal camera drift
+  - Hills with elevation changes and horizon clipping
+  - Lane markings (dashed white)
+  - Distance fog (sky-colored overlay)
+- [x] Road-anchored entities — sprites placed at specific road segments
+  - Trees/streetlights at road edges, buildings further back
+  - Screen position derived from road projection each frame
+  - Parallax background shift on curves (sun)
+
+### Remaining (Phase 1)
+- [x] Replace fallback pixel art with real sprite PNGs
+- [x] Manual pixel cleanup of generated sprites
+- [x] Sound effects / ambient audio (Web Audio API procedural synth: drone, click, impact, resolve, alarm)
+- [x] Visual polish: speed lines, vignetting, color grading filter (effects.js: PixiJS ColorMatrixFilter)
+- [x] Intervention prompt i18n (ko/en via GAME_LANG, scene text + ending text)
+- [x] Mobile touch testing and optimization (touch-action, min 48px targets, touchend handlers, responsive layout)
+
+### Phase 2 (Completed)
+- [x] Drone observation interaction model — touch-to-illuminate replaces choice buttons
+- [x] Touch system (touch.js) — TAP entities + SWIPE at forks + scan beam FX
+- [x] 6 redesigned events: building fire, lifeboat rescue, direction fork, infection minigame, three-way fork, empty city
+- [x] Ending fork — swipe-based ending selection (light/passengers/walk) replaces button choice
+- [x] Infection minigame — 25-second rapid-tap setpiece with accelerating infection spread
+- [x] Per-event onTap callbacks for entity-specific visual responses
+
+### Future (Phase 3)
+- [ ] Richer entity variety (cars, people, birds, Han River)
+- [ ] Particle effects (smoke, sparks, rain)
+- [ ] Background music with dynamic mixing
+- [ ] Swipe visual indicators (directional beacons/arrows at fork events)
+- [ ] Haptic feedback on touch (navigator.vibrate)
+
+## Core Systems
+
+### 1. Game Loop (main.js)
+
+```
+init()
+  -> renderer.setup()
+  -> assets.load()           # load PNGs or generate fallbacks
+  -> road.init()             # build track geometry (curves + hills)
+  -> renderer.initEnvironment()  # road graphics + sun (needs textures ready)
+  -> entities.init()         # anchor entities to road segments
+  -> events.init()           # event layer (needs entities ready)
+  -> touch.init()            # touch/swipe input + scan beam graphics
+  -> intervention.init()
+  -> ticker.add(tick)
+
+tick(delta)
+  -> state.entropy += delta * state.entropyRate
+  -> road.update(dt)              # advance camera along track, centrifugal drift
+  -> road.project(sw, sh)         # 3D→2D projection of visible segments
+  -> renderer.drawRoad(projected) # draw road polygons (alternating stripes)
+  -> renderer.drawAIBeam(projected) # AI light beam on road
+  -> entities.update(dt, projected) # position sprites on projected segments
+  -> timeline.check()             # trigger phase transitions
+  -> intervention.check()         # activate touch/swipe at entropy thresholds
+  -> events.update(dt)            # per-frame event logic (infection spread)
+  -> touch.update(dt)             # scan beam lifecycle
+  -> touch.drawScanBeams()        # render active scan beams
+  -> renderer.applyEffects()      # shake, parallax, sky color
+```
+
+### 2. State (state.js)
+
+Single mutable object driving the entire simulation:
+
+```javascript
+{
+  speed: 40, focalLength: 400, shake: 0,
+  skyR: 0x87, skyG: 0xCE, skyB: 0xEB,  // tweened RGB for sky
+  entropy: 0, entropyRate: 1.67, phase: 'peace',
+  running: false, ended: false,
+  choices: [], interventionIndex: 0, correctChoices: 0,
+  roadPosition: 0,    // camera Z along track (world units)
+  playerX: 0,         // lateral offset from road center
+  curveDelta: 0       // current curve intensity (for centrifugal + parallax)
+}
+```
+
+### 3. Asset Pipeline (assets.js + tools/sprite-pipeline.js)
+
+**Runtime (assets.js):**
+```javascript
+SPRITE_MANIFEST = {
+  'building-modern': 'building-modern.png',
+  'building-glass': 'building-glass.png',
+  'building-apartment': 'building-apartment.png',
+  'namsan-tower': 'namsan-tower.png',
+  'tree': 'tree.png',
+  'streetlight': 'streetlight.png',
+  'cloud': 'cloud.png',
+  'sun': 'sun.png',
+  'ground': 'ground.png',
+  // Glow layers (emissive — bypass color grading)
+  'building-modern-glow': 'building-modern-glow.png',
+  'building-glass-glow': 'building-glass-glow.png',
+  'building-apartment-glow': 'building-apartment-glow.png',
+  'namsan-tower-glow': 'namsan-tower-glow.png',
+  'streetlight-glow': 'streetlight-glow.png',
+};
+```
+- `Assets.load(app)` — loads real PNGs from manifest, generates fallbacks for missing
+- `Assets.createSprite(key)` — returns PIXI.Sprite with bottom-center anchor
+- Fallbacks: pixel art generated via PIXI.Graphics → generateTexture()
+- Glow layer textures (`*-glow` keys) for emissive sprites that bypass color grading
+
+**Generation pipeline (tools/sprite-pipeline.js):**
+- `node tools/sprite-pipeline.js generate --all` — generates all sprites via Gemini 2.5 Flash
+- `node tools/sprite-pipeline.js generate <key>` — generate specific sprite(s)
+- `node tools/sprite-pipeline.js batch <dir>` — post-process existing raw images
+- `node tools/sprite-pipeline.js process <file> --sprite <key>` — process single image
+- `node tools/sprite-pipeline.js glow --all` — extract glow layers from base sprites (window/beacon/lamp detection + erosion + recolor)
+- `node tools/sprite-pipeline.js patch-base --all` — remove dark windows from base sprites (fill with wall color) + generate glow in one pass
+- Pipeline steps: Gemini generation → auto-detect BG color → remove BG → trim → nearest-neighbor scale to 128x128 → bottom-center canvas → palette reduction (16 colors)
+- Glow extraction: per-type detection rules → binary mask → erosion → recolor → dimAlpha variation
+- `noTrim` flag for texture tiles (ground) skips BG removal, uses edge-to-edge prompt
+- Raw AI outputs saved in `public/img/game/raw/`, processed outputs in `public/img/game/`
+- Requires `GEMINI_API_KEY` environment variable
+- Dependencies: `sharp`, `@google/genai` (devDependencies)
+
+### 4. Road (road.js) — NEW
+
+Pseudo-3D road system (OutRun / Slipstream style):
+- Track defined as 1600 segments, each with `curve` and `y` (elevation) values
+- Curves: sinusoidal ease-in/out applied over segment ranges
+- Hills: sinusoidal elevation changes over segment ranges
+- `Road.project()`: projects visible segments to screen coordinates
+  - Cumulative X offset from curves creates road bending
+  - Perspective projection: `scale = cameraDepth / worldZ`
+  - Hill clipping: far segments hidden behind nearer hilltops
+  - Fog: quadratic falloff by distance
+  - Returns `horizonDx` (accumulated curve offset) and `horizonZ` for background parallax
+- `Road.update()`: advances `STATE.roadPosition`, applies centrifugal drift to `STATE.playerX`
+- Camera auto-centers via spring damping (`playerX *= 0.97`)
+
+### 5. Renderer (renderer.js)
+
+**Two camera containers** (emissive layer separation):
+- `camera` — base sprites, gets ColorMatrixFilter (desaturates in crisis/catastrophe)
+- `cameraGlow` — emissive sprites (ADD blend), bypasses color grading, stays vivid
+- Both synced for camera shake
+
+**Z-layer ordering** (via `sortableChildren` on camera):
+- Sun: `zIndex = -10000` (behind everything)
+- Road graphics: `zIndex = -5000` (behind entities)
+- Event overlays: `zIndex = -4999` (road cracks, danger tints)
+- Entities: `zIndex = -segDist` (depth-sorted, closer = on top)
+
+**Road drawing** (`drawRoad(projected)`):
+- Painter's algorithm: far segments drawn first, near segments on top
+- Per segment: grass → shoulder → rumble strip → road surface → lane markings
+- Alternating even/odd colors create speed-perception stripes
+- Fog overlay: sky-colored semi-transparent quads over distant segments
+- Rumble strips: red/white alternating at road edges
+
+**Sun animation:**
+- Arcs from upper-right (70%, 15%) toward horizon over entropy 0–65
+- Parallax shift opposite to current curve direction
+- Tint: white (0–40%) → orange (40–75%) → deep red + fade out (75–100%)
+
+### 6. Entities (entities.js)
+
+Two categories: **road-anchored** and **background scenery**.
+
+**Road-anchored entities** — placed at specific segment index with `roadOffset`:
+- Trees: just outside road edge (offset 1.05–1.3), alternating sides
+- Streetlights: on road edge (offset 1.0–1.1)
+- Buildings: behind roadside (offset 1.4–2.5), 3 styles, pushed outward by half rendered width
+- Scale: `proj.scale * baseScale * screenWidth * 2` (responsive to viewport size)
+- Visibility culled by projected segment range and fog
+- ENTITY_SCALE: building 8, tree 1.6, streetlight 1.6
+- Glow sprites: paired emissive layer in `cameraGlow` with `BLEND_MODES.ADD`
+  - Alpha ramps with entropy: `(entropy - 50) / 25` (invisible in peace/tension, full in catastrophe)
+  - Synced position/scale/zIndex with base sprite each frame
+  - Namsan beacon pulses via `sin(Date.now())`
+
+**Background scenery** — fixed in back panel with perspective-correct parallax:
+- Namsan Tower: `worldX=-3000, worldZ=80000`, bottom-anchored at horizon Y
+  - `screenX = sw/2 + (cameraDepth/worldZ) * (worldX - playerX + curveDx) * sw/2`
+  - Same 1/Z perspective formula as road projection
+  - Curve offset extrapolated beyond draw distance: `horizonDx * (worldZ / horizonZ)`
+- Clouds: `worldZ=150000–250000` (near-infinite), spread across sky
+  - Minimal shift from curves (1/Z approaches zero at large Z)
+- Both behind road graphics (`zIndex = -8000/-8500`)
+
+### 6. Touch System (touch.js)
+
+Drone observation input — two interaction modes:
+- **TAP**: touch/click entities to "illuminate" with scan beam (cone of AI-colored light from drone to target)
+- **SWIPE**: swipe left/right/down to steer drone at narrative forks
+- Hit testing: screen coords → inverse camera transform → camera-local distance check
+- Generous hit radii (2x sprite size, min 50px) — intent over precision
+- Scan beam: PIXI.Graphics (ADD blend) draws cone + target ring, fades over 1.5s
+- Portrait mode: manual coordinate conversion for CSS-rotated wrapper
+
+### 7. Visual Events (events.js)
+
+EVENT_BUILDERS registry with create/animate/onTap/update/resolve methods:
+- **naming** (TAP): buildings catch fire, tap to suppress with light
+- **seaOfFire** (TAP): lifeboats (lanterns/balloons) in burning sea, tap to rescue
+- **fallOfEden** (SWIPE): fork — left burning port, right clean energy coast
+- **commands** (INFECTION): buildings turn green, rapid-tap to purify, 25s minigame
+- **shadowLegion** (SWIPE): three-way fork — olive/cyan/red faction lights
+- **unnamedGeneration** (TAP): empty city, one swing responds
+- **endingFork** (SWIPE): three horizon beacons for ending selection
+- Infection event uses per-frame `update()` to spread infection progressively
+- All tweens tracked in `activeEvent.tweens[]`; entity state restored on clear
+
+### 8. Intervention (intervention.js)
+
+Drone intervention system — replaces choice buttons with embodied actions:
+- TAP events: activates Touch with entity targets, resolves by tap count vs threshold
+- SWIPE events: activates Touch swipe mode, resolves by direction
+- INFECTION: extended TAP with dynamic target spawning (25s)
+- Ending fork: two-phase event 6 (TAP empty city → SWIPE ending direction)
+- Ending screen: DOM overlay with title/subtitle/quote + restart button
+
+## Data Flow
+
+```
+Scene Definition (scenes/seoul.js)
+  -> intervention points (entropy, prompt, visual, choices, penalties)
+
+Track Definition (road.js init)
+  -> segments[] with curve + elevation data
+
+Game Loop (main.js tick)
+  -> reads STATE
+  -> road.update (advance roadPosition, centrifugal drift)
+  -> road.project (3D→2D segment projection with curves + hills)
+  -> renderer.drawRoad (segment-based road polygons)
+  -> entities.update (anchor sprites to projected segments)
+  -> timeline.check (phase transitions, GSAP tweens on STATE)
+  -> intervention.check (show choices at entropy thresholds)
+  -> renderer.applyEffects (shake, parallax, sky color)
+
+Player Input (touch.js → intervention.js)
+  -> TAP: touch entity → scan beam FX → event.onTap() → per-tap entropy reward
+  -> SWIPE: swipe direction → event.resolve(direction) → entropy delta
+  -> INFECTION: rapid TAP with dynamic targets, 25s window
+  -> modifies STATE (entropyRate, correctChoices, act4Choice)
+  -> events.resolve (visual consequence)
+  -> timeline reacts to new entropyRate
+```

@@ -1,6 +1,10 @@
-// Visual event system for Babel Express.
-// 6 events: naming, seaOfFire, fallOfEden, commands, shadowLegion, unnamedGeneration.
-// All visuals expressed through in-world entity manipulation — no overlay images.
+// Visual event system for Babel Express — drone observation gameplay.
+// 6 events + 1 ending fork, all driven by touch/swipe interactions.
+// The drone "shines light" on objects — same action, different meaning per act.
+//
+// TAP events: player touches entities to illuminate them.
+// SWIPE events: player swipes to steer the drone at forks.
+// INFECTION event: rapid-tap minigame (Act 3 setpiece).
 
 let eventLayer;
 let activeEvent = null;
@@ -24,15 +28,37 @@ const Events = {
         }
     },
 
-    resolve(eventDef, correct) {
+    // Called when player taps an entity during a tap/infection event
+    onTap(eventDef, entity) {
         if (!eventDef || !eventDef.type || !activeEvent) return;
+        const builder = EVENT_BUILDERS[eventDef.type];
+        if (builder && builder.onTap) {
+            builder.onTap(activeEvent, entity);
+        }
+    },
 
+    resolve(eventDef, result) {
+        if (!eventDef || !eventDef.type || !activeEvent) return;
         const builder = EVENT_BUILDERS[eventDef.type];
         if (builder && builder.resolve) {
-            builder.resolve(activeEvent, correct);
+            builder.resolve(activeEvent, result);
         } else {
             this.clear();
         }
+    },
+
+    // Per-frame update for events that need continuous logic (infection spreading)
+    update(dt) {
+        if (!activeEvent) return;
+        const builder = EVENT_BUILDERS[activeEvent.type];
+        if (builder && builder.update) {
+            builder.update(activeEvent, dt);
+        }
+    },
+
+    // Get active event data (for intervention to read tap targets, etc.)
+    getActiveData() {
+        return activeEvent ? activeEvent.data : null;
     },
 
     clear() {
@@ -56,8 +82,6 @@ const Events = {
 
 // ── Helpers ──
 
-// Smoothly tween a PIXI sprite's tint from current color to target color.
-// Returns the gsap tween (caller should push to ev.tweens).
 function _tweenTint(sprite, targetColor, duration, opts) {
     const cur = sprite.tint || 0xFFFFFF;
     const obj = {
@@ -108,6 +132,11 @@ function _restoreEntities(ev) {
         STATE.biome = ev.data.prevBiome;
         tweenBiomeGround(ev.data.prevBiome, STATE.act, 2);
     }
+    // Clear intervals
+    if (ev.data._towerInterval) {
+        clearInterval(ev.data._towerInterval);
+        ev.data._towerInterval = null;
+    }
 }
 
 function _getVisibleEntities(type) {
@@ -134,92 +163,106 @@ function _splitLeftRight(entities) {
     return { left, right };
 }
 
+// Pick N random entities from a list (or all if fewer than N)
+function _pickRandom(arr, n) {
+    const shuffled = arr.slice().sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, n);
+}
+
+
 // ── Event visual builders ──
 
 const EVENT_BUILDERS = {
 
     // ════════════════════════════════════════════════
-    //  Event 1: The Naming — light splits in two
-    //  Crows diverge left/right. Lanterns tint blue(left)/red(right).
-    //  Buildings subtly pick sides. AI beam widens.
+    //  Event 1: Building Fire — TAP
+    //  A spark on a rooftop. Touch to illuminate and suppress.
+    //  Act 1 "observation test" — easy target, slow flight.
     // ════════════════════════════════════════════════
     naming: {
         create(ev) {
-            const crows = _getVisibleEntities('crow');
-            const lanterns = _getVisibleEntities('lantern');
             const buildings = _getVisibleEntities('building');
-            const { left: crowsL, right: crowsR } = _splitLeftRight(crows);
-            const { left: lanternsL, right: lanternsR } = _splitLeftRight(lanterns);
-            const { left: buildingsL, right: buildingsR } = _splitLeftRight(buildings);
+            // Pick 3 buildings to catch fire
+            const targets = _pickRandom(buildings, 3);
 
-            ev.data.crowsL = crowsL;
-            ev.data.crowsR = crowsR;
-            ev.data.lanternsL = lanternsL;
-            ev.data.lanternsR = lanternsR;
-            ev.data.buildingsL = buildingsL;
-            ev.data.buildingsR = buildingsR;
-            ev.data.affectedEntities = [...crows, ...lanterns, ...buildings];
+            ev.data.tapTargets = targets;
+            ev.data.allBuildings = buildings;
+            ev.data.affectedEntities = buildings;
             ev.data.prevBeamWidth = STATE.aiBeamWidth;
+
+            // Mark fire targets with orange glow
+            targets.forEach(e => {
+                e._fireTarget = true;
+            });
         },
 
         animate(ev) {
-            // AI beam widens — "splitting"
-            ev.tweens.push(gsap.to(STATE, { aiBeamWidth: STATE.aiBeamWidth * 2.5, duration: 2, ease: 'power2.out' }));
-
-            // Left crows tint blue (shield)
-            ev.data.crowsL.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0x00b8d8, 1.5, { ease: 'power2.out' }));
-            });
-            // Right crows tint red (sword)
-            ev.data.crowsR.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0xc41e1e, 1.5, { ease: 'power2.out' }));
-            });
-
-            // Lanterns glow in faction colors
-            ev.data.lanternsL.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0x00b8d8, 1));
+            // Fire targets glow fire-orange with flicker
+            ev.data.tapTargets.forEach((e, i) => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xe06020, 1, { delay: i * 0.2 }));
                 if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, { alpha: 1, duration: 1, yoyo: true, repeat: -1 }));
-                }
-            });
-            ev.data.lanternsR.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0xc41e1e, 1));
-                if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, { alpha: 1, duration: 1, yoyo: true, repeat: -1 }));
+                    ev.tweens.push(gsap.to(e.glowSprite, {
+                        alpha: 1, duration: 0.2, yoyo: true, repeat: -1,
+                        delay: Math.random() * 0.5
+                    }));
                 }
             });
 
-            // Buildings subtly tint
-            ev.data.buildingsL.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0x88ccdd, 2));
-            });
-            ev.data.buildingsR.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0xdd8888, 2));
-            });
+            // AI beam widens slightly — "scanning"
+            ev.tweens.push(gsap.to(STATE, {
+                aiBeamWidth: STATE.aiBeamWidth * 1.5,
+                duration: 2, ease: 'power2.out'
+            }));
         },
 
-        resolve(ev, correct) {
-            if (correct) {
-                ev.data.affectedEntities.forEach(e => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0x88ddff, 0.8));
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.8 }));
+        onTap(ev, entity) {
+            // Tapped building: fire suppressed (cyan flash → restore)
+            entity._fireTarget = false;
+            ev.tweens.push(_tweenTint(entity.sprite, 0x88ddff, 0.3));
+            ev.tweens.push(_tweenTint(entity.sprite, 0xFFFFFF, 1.5, { delay: 0.3 }));
+            if (entity.glowSprite) {
+                gsap.killTweensOf(entity.glowSprite);
+                ev.tweens.push(gsap.to(entity.glowSprite, {
+                    alpha: 0.5, duration: 0.5
+                }));
+            }
+        },
+
+        resolve(ev, result) {
+            // result: { correct: bool }
+            ev.tweens.push(gsap.to(STATE, {
+                aiBeamWidth: ev.data.prevBeamWidth, duration: 1.5
+            }));
+
+            // Unsaved buildings stay damaged
+            ev.data.tapTargets.forEach(e => {
+                if (e._fireTarget) {
+                    e.fsm = 'damaged';
+                    ev.tweens.push(_tweenTint(e.sprite, 0x666666, 1));
+                }
+            });
+
+            if (result.correct) {
+                // Brief cyan pulse on all buildings
+                ev.data.allBuildings.forEach(e => {
+                    if (!e._fireTarget) {
+                        ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 0.5));
+                    }
                 });
             } else {
-                ev.data.affectedEntities.forEach(e => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0xff6644, 0.3));
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1, { delay: 0.6 }));
-                });
-                ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 4, duration: 0.3, yoyo: true, repeat: 1 }));
+                ev.tweens.push(gsap.to(STATE, {
+                    shake: STATE.shake + 4, duration: 0.3, yoyo: true, repeat: 1
+                }));
             }
-            ev.tweens.push(gsap.to(STATE, { aiBeamWidth: ev.data.prevBeamWidth, duration: 1.5 }));
+
             _delayedClear(ev, 3);
         }
     },
 
     // ════════════════════════════════════════════════
-    //  Event 2: Sea of Fire — the world burns
-    //  Buildings & trees tint fire-orange. Lanterns flare bright.
-    //  Balloons lose altitude (falling). Clouds darken.
+    //  Event 2: Lifeboat Rescue — TAP
+    //  Sea of fire. Touch lifeboats (lanterns/balloons) to rescue.
+    //  Emotional reward, minor entropy effect.
     // ════════════════════════════════════════════════
     seaOfFire: {
         create(ev) {
@@ -229,45 +272,42 @@ const EVENT_BUILDERS = {
             const balloons = _getVisibleEntities('balloon');
             const clouds = _getVisibleBg('cloud');
 
+            // Lanterns and balloons are "lifeboats" — tap targets
+            const targets = [...lanterns, ...balloons];
+            ev.data.tapTargets = targets;
+
             ev.data.affectedEntities = [...buildings, ...trees, ...lanterns, ...balloons];
             ev.data.affectedBg = clouds;
             ev.data.prevShake = STATE.shake;
-            ev.data.savedElevations = balloons.map(b => ({ entity: b, elevation: b.elevation }));
+            ev.data.savedElevations = balloons.map(b => ({
+                entity: b, elevation: b.elevation
+            }));
         },
 
         animate(ev) {
             const buildings = ev.data.affectedEntities.filter(e => e.type === 'building');
             const trees = ev.data.affectedEntities.filter(e => e.type === 'tree');
-            const lanterns = ev.data.affectedEntities.filter(e => e.type === 'lantern');
             const balloons = ev.data.affectedEntities.filter(e => e.type === 'balloon');
 
-            // Buildings glow fire-orange
+            // World burns
             buildings.forEach((e, i) => {
                 ev.tweens.push(_tweenTint(e.sprite, 0xe06020, 2, { delay: i * 0.03 }));
                 if (e.glowSprite) {
                     ev.tweens.push(gsap.to(e.glowSprite, {
-                        alpha: 1, duration: 0.3, yoyo: true, repeat: -1, delay: Math.random() * 1.5
+                        alpha: 1, duration: 0.3, yoyo: true, repeat: -1,
+                        delay: Math.random() * 1.5
                     }));
                 }
             });
-
-            // Trees burn dark red
             trees.forEach(e => {
                 ev.tweens.push(_tweenTint(e.sprite, 0xcc3300, 1.5));
             });
 
-            // Lanterns flare bright orange
-            lanterns.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0xff8800, 0.5));
-                if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, { alpha: 1, duration: 0.5 }));
-                }
-            });
-
-            // Balloons fall
+            // Balloons/lifeboats drift lower
             balloons.forEach(e => {
-                ev.tweens.push(gsap.to(e, { elevation: e.elevation - 0.3, duration: 3, ease: 'power2.in' }));
-                ev.tweens.push(_tweenTint(e.sprite, 0xcc4400, 2));
+                ev.tweens.push(gsap.to(e, {
+                    elevation: e.elevation - 0.3, duration: 3, ease: 'power2.in'
+                }));
             });
 
             // Clouds darken
@@ -275,21 +315,33 @@ const EVENT_BUILDERS = {
                 ev.tweens.push(_tweenTint(bg.sprite, 0x8a4838, 2));
             });
 
-            // World shake
+            // Shake
             ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 5, duration: 0.5 }));
+
+            // Tap targets pulse to stand out
+            ev.data.tapTargets.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xFFEE88, 1));
+                if (e.glowSprite) {
+                    ev.tweens.push(gsap.to(e.glowSprite, {
+                        alpha: 1, duration: 0.5, yoyo: true, repeat: -1
+                    }));
+                }
+            });
         },
 
-        resolve(ev, correct) {
-            if (correct) {
-                ev.data.affectedEntities.forEach((e, i) => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0x88ccee, 0.5, { delay: i * 0.02 }));
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 + i * 0.02 }));
-                });
-            } else {
-                ev.data.affectedEntities.forEach(e => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 2));
-                });
+        onTap(ev, entity) {
+            // Rescue: bright cyan beam, entity glows
+            ev.tweens.push(_tweenTint(entity.sprite, 0x88ddff, 0.5));
+            if (entity.glowSprite) {
+                gsap.killTweensOf(entity.glowSprite);
+                ev.tweens.push(gsap.to(entity.glowSprite, { alpha: 1, duration: 0.3 }));
             }
+        },
+
+        resolve(ev, result) {
+            ev.data.affectedEntities.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 2));
+            });
             ev.data.affectedBg.forEach(bg => {
                 ev.tweens.push(_tweenTint(bg.sprite, 0xFFFFFF, 2));
             });
@@ -301,97 +353,248 @@ const EVENT_BUILDERS = {
     },
 
     // ════════════════════════════════════════════════
-    //  Event 3: Fall of Eden — PASSIVE
-    //  Biome switches to Tehran. Buildings sway.
-    //  Crows scatter wildly. Stars flash erratically.
+    //  Event 3: Fall of Eden — SWIPE (direction fork)
+    //  Two horizons diverge. Left = burning port, right = new energy coast.
+    //  Swipe to steer, or fly straight.
     // ════════════════════════════════════════════════
     fallOfEden: {
         create(ev) {
-            // Save previous biome and transition to Tehran cityscape
-            ev.data.prevBiome = STATE.biome;
-            STATE.biome = 'tehran';
-            tweenBiomeGround('tehran', STATE.act, 3);
-
-            // Now gather entities (buildings become visible due to tehran biome)
             const buildings = _getVisibleEntities('building');
+            const trees = _getVisibleEntities('tree');
             const crows = _getVisibleEntities('crow');
-            const streetlights = _getVisibleEntities('streetlight');
-            const stars = _getVisibleBg('star');
+            const { left: buildingsL, right: buildingsR } = _splitLeftRight(buildings);
+            const { left: treesL, right: treesR } = _splitLeftRight(trees);
 
-            ev.data.affectedEntities = [...buildings, ...crows, ...streetlights];
-            ev.data.affectedBg = stars;
+            ev.data.buildingsL = buildingsL;
+            ev.data.buildingsR = buildingsR;
+            ev.data.treesL = treesL;
+            ev.data.treesR = treesR;
+            ev.data.crows = crows;
+            ev.data.affectedEntities = [...buildings, ...trees, ...crows];
         },
 
         animate(ev) {
-            const buildings = ev.data.affectedEntities.filter(e => e.type === 'building');
-            const crows = ev.data.affectedEntities.filter(e => e.type === 'crow');
-            const streetlights = ev.data.affectedEntities.filter(e => e.type === 'streetlight');
+            // Left side: burning (red/orange)
+            ev.data.buildingsL.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xcc4400, 2));
+            });
+            ev.data.treesL.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xcc3300, 2));
+            });
 
-            // Buildings sway
-            buildings.forEach(e => {
+            // Right side: clean energy (cyan/green)
+            ev.data.buildingsR.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0x44cc88, 2));
+            });
+            ev.data.treesR.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0x44aa66, 2));
+            });
+
+            // Crows scatter
+            ev.data.crows.forEach(e => {
                 ev.tweens.push(gsap.to(e.sprite, {
-                    rotation: 0.04, duration: 0.3, yoyo: true, repeat: 8,
-                    ease: 'sine.inOut', delay: Math.random() * 0.5
-                }));
-                ev.tweens.push(_tweenTint(e.sprite, 0x999999, 2, { delay: 1 }));
-            });
-
-            // Crows scatter wildly
-            crows.forEach(e => {
-                ev.tweens.push(gsap.to(e.sprite, {
-                    rotation: (Math.random() - 0.5) * 1.5,
-                    duration: 0.4, yoyo: true, repeat: 6,
-                    delay: Math.random() * 1
-                }));
-                ev.tweens.push(_tweenTint(e.sprite, 0xc43020, 1, { delay: Math.random() * 0.5 }));
-            });
-
-            // Streetlights flicker (Tehran chaos)
-            streetlights.forEach(e => {
-                if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, {
-                        alpha: 0, duration: 0.1, yoyo: true, repeat: -1,
-                        delay: Math.random() * 0.5
-                    }));
-                }
-            });
-
-            // Stars flash erratically
-            ev.data.affectedBg.forEach(bg => {
-                ev.tweens.push(gsap.to(bg.sprite, {
-                    alpha: 0, duration: 0.1, yoyo: true, repeat: 20,
-                    delay: Math.random() * 2
+                    rotation: (Math.random() - 0.5) * 1.0,
+                    duration: 0.5, yoyo: true, repeat: 4,
+                    delay: Math.random() * 0.5
                 }));
             });
 
             // Shake
-            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 8, duration: 0.5 }));
-            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake, duration: 1, delay: 3.5 }));
-
-            // Narrative
-            const lang = document.documentElement.lang === 'ko' ? 'ko' : 'en';
-            const text = SCENE_I18N[lang].fallOfEden.narrative;
-            Timeline.showNarrative(text, 4000);
-
-            _delayedClear(ev, 5);
+            ev.tweens.push(gsap.to(STATE, {
+                shake: STATE.shake + 4, duration: 0.5
+            }));
         },
 
-        resolve(ev, correct) {
-            // Restore biome back to sea (still in Act 2)
-            if (ev.data.prevBiome) {
-                STATE.biome = ev.data.prevBiome;
-                tweenBiomeGround(ev.data.prevBiome, STATE.act, 3);
+        resolve(ev, result) {
+            // result: { direction: 'left'|'right'|'center', correct: bool }
+            const dir = result.direction || 'center';
+
+            if (dir === 'left') {
+                // Flew into the burning port — entropy up, but info gained
+                ev.data.affectedEntities.forEach(e => {
+                    ev.tweens.push(_tweenTint(e.sprite, 0xff6644, 0.3));
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
+                });
+                // Brief camera pan left
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: -500, duration: 1, ease: 'power2.inOut'
+                }));
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: 0, duration: 1.5, delay: 1.5, ease: 'power2.out'
+                }));
+            } else if (dir === 'right') {
+                // New energy route — entropy down
+                ev.data.affectedEntities.forEach(e => {
+                    ev.tweens.push(_tweenTint(e.sprite, 0x88ddee, 0.5));
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
+                });
+                // Brief camera pan right
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: 500, duration: 1, ease: 'power2.inOut'
+                }));
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: 0, duration: 1.5, delay: 1.5, ease: 'power2.out'
+                }));
+            } else {
+                // Straight — no camera pan
+                ev.data.affectedEntities.forEach(e => {
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 2));
+                });
             }
-            _delayedClear(ev, 1);
+
+            ev.tweens.push(gsap.to(STATE, { shake: STATE.shake, duration: 1, delay: 1 }));
+            _delayedClear(ev, 4);
         }
     },
 
     // ════════════════════════════════════════════════
-    //  Event 4: Commands to the Tower — three powers
-    //  Entities split into 3 depth zones, each tinted.
-    //  Streetlights/lanterns pulse. Namsan tower cycles colors.
+    //  Event 4: Infection — INFECTION (rapid tap minigame)
+    //  Building windows change cyan → toxic green.
+    //  Touch to purify (green → cyan). Infection accelerates.
+    //  20-30 seconds of frantic tapping — can't save everything.
     // ════════════════════════════════════════════════
     commands: {
+        create(ev) {
+            const glowEntities = Entities.getList().filter(
+                e => e.sprite.visible && e.glowSprite
+            );
+            const tower = _getVisibleBg('tower');
+
+            ev.data.glowEntities = glowEntities;
+            ev.data.tower = tower;
+            ev.data.affectedEntities = glowEntities;
+            ev.data.affectedBg = tower;
+
+            // Track infection state per entity
+            ev.data.infected = new Set();
+            ev.data.cured = new Set();
+            ev.data.tapTargets = []; // populated dynamically as infection spreads
+            ev.data.infectionTimer = 0;
+            ev.data.infectionRate = 1.5; // seconds between infection waves
+            ev.data.infectionWave = 0;
+        },
+
+        animate(ev) {
+            // Tower turns green immediately
+            ev.data.tower.forEach(bg => {
+                bg.sprite.tint = 0x39ff14;
+                if (bg.glowSprite) {
+                    ev.tweens.push(gsap.to(bg.glowSprite, {
+                        alpha: 0, duration: 0.05, yoyo: true, repeat: -1
+                    }));
+                }
+            });
+        },
+
+        // Per-frame: spread infection progressively
+        update(ev, dt) {
+            ev.data.infectionTimer += dt;
+
+            if (ev.data.infectionTimer >= ev.data.infectionRate) {
+                ev.data.infectionTimer = 0;
+                ev.data.infectionWave++;
+
+                // Accelerate infection rate
+                ev.data.infectionRate = Math.max(0.4, ev.data.infectionRate - 0.1);
+
+                // Infect 2-4 new entities per wave
+                const candidates = ev.data.glowEntities.filter(
+                    e => !ev.data.infected.has(e) && !ev.data.cured.has(e)
+                );
+                const batch = _pickRandom(candidates, 2 + Math.min(2, ev.data.infectionWave));
+
+                batch.forEach(e => {
+                    ev.data.infected.add(e);
+                    // Add to tap targets so player can cure them
+                    if (Touch.isActive()) {
+                        // Directly push to the touch system's targets
+                        // We call activate again with updated targets
+                    }
+                    ev.data.tapTargets.push(e);
+
+                    // Visual: turn green with flicker
+                    ev.tweens.push(_tweenTint(e.sprite, 0x39ff14, 0.3));
+                    if (e.glowSprite) {
+                        ev.tweens.push(gsap.to(e.glowSprite, {
+                            alpha: 0, duration: 0.08, yoyo: true, repeat: -1,
+                            delay: Math.random() * 0.3
+                        }));
+                    }
+                });
+
+                // Update touch targets with newly infected entities
+                if (Touch.isActive() && Touch.getMode() === 'infection') {
+                    Touch.addTargets(batch);
+                }
+            }
+        },
+
+        onTap(ev, entity) {
+            // Cure: green → cyan restoration
+            ev.data.infected.delete(entity);
+            ev.data.cured.add(entity);
+
+            ev.tweens.push(_tweenTint(entity.sprite, 0x00b8d8, 0.3));
+            ev.tweens.push(_tweenTint(entity.sprite, 0xFFFFFF, 1, { delay: 0.3 }));
+            if (entity.glowSprite) {
+                gsap.killTweensOf(entity.glowSprite);
+                ev.tweens.push(gsap.to(entity.glowSprite, {
+                    alpha: 0.8, duration: 0.5
+                }));
+            }
+        },
+
+        resolve(ev, result) {
+            // Kill flickering
+            ev.data.glowEntities.forEach(e => {
+                gsap.killTweensOf(e.sprite);
+                if (e.glowSprite) gsap.killTweensOf(e.glowSprite);
+            });
+            ev.data.tower.forEach(bg => {
+                gsap.killTweensOf(bg.sprite);
+                if (bg.glowSprite) gsap.killTweensOf(bg.glowSprite);
+            });
+
+            const curedCount = ev.data.cured.size;
+            const totalInfected = ev.data.cured.size + ev.data.infected.size;
+
+            if (result.correct) {
+                // City lights survive
+                ev.data.glowEntities.forEach((e, i) => {
+                    ev.tweens.push(_tweenTint(e.sprite, 0x00b8d8, 0.3, { delay: i * 0.02 }));
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1, { delay: 0.3 + i * 0.02 }));
+                    if (e.glowSprite) {
+                        ev.tweens.push(gsap.to(e.glowSprite, { alpha: 1, duration: 0.5 }));
+                    }
+                });
+            } else {
+                // City darkens — infection lingers
+                STATE.infectionLevel = 0.3;
+                ev.data.glowEntities.forEach(e => {
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 2));
+                    if (e.glowSprite) {
+                        ev.tweens.push(gsap.to(e.glowSprite, { alpha: 0.2, duration: 1 }));
+                    }
+                });
+            }
+
+            ev.data.tower.forEach(bg => {
+                ev.tweens.push(_tweenTint(bg.sprite, 0xFFFFFF, 1.5));
+                if (bg.glowSprite) {
+                    ev.tweens.push(gsap.to(bg.glowSprite, { alpha: 1, duration: 1 }));
+                }
+            });
+
+            _delayedClear(ev, 3);
+        }
+    },
+
+    // ════════════════════════════════════════════════
+    //  Event 5: Three Lights — SWIPE (three-way fork)
+    //  Olive (Pentagon), Cyan (server farms), Red (Eastern tower).
+    //  Swipe to choose whose AI you follow.
+    // ════════════════════════════════════════════════
+    shadowLegion: {
         create(ev) {
             const buildings = _getVisibleEntities('building');
             const streetlights = _getVisibleEntities('streetlight');
@@ -401,10 +604,12 @@ const EVENT_BUILDERS = {
             const totalSegs = Road.getSegmentCount();
             const segLen = CONFIG.road.segmentLength;
             const cameraSegIdx = Math.floor(STATE.roadPosition / segLen) % totalSegs;
-            const ZONE_COLORS = [0x556b2f, 0x00c0d8, 0x8b1a1a];
 
+            // Split into 3 zones by depth
+            const ZONE_COLORS = [0x556b2f, 0x00c0d8, 0x8b1a1a]; // olive, cyan, red
             const allRoad = [...buildings, ...streetlights, ...lanterns];
             const zones = [[], [], []];
+
             allRoad.forEach(e => {
                 let dist = e.segmentIndex - cameraSegIdx;
                 if (dist < 0) dist += totalSegs;
@@ -422,193 +627,90 @@ const EVENT_BUILDERS = {
         animate(ev) {
             const { zones, zoneColors, tower } = ev.data;
 
+            // Tint each zone with its faction color
             zones.forEach((zoneEntities, zi) => {
                 const color = zoneColors[zi];
                 zoneEntities.forEach((e, i) => {
-                    ev.tweens.push(_tweenTint(e.sprite, color, 1.5, { delay: zi * 0.3 + i * 0.02 }));
+                    ev.tweens.push(_tweenTint(e.sprite, color, 1.5, {
+                        delay: zi * 0.3 + i * 0.02
+                    }));
                     if ((e.type === 'streetlight' || e.type === 'lantern') && e.glowSprite) {
                         ev.tweens.push(gsap.to(e.glowSprite, {
-                            alpha: 1, duration: 0.6, yoyo: true, repeat: -1, delay: zi * 0.3
+                            alpha: 1, duration: 0.6, yoyo: true, repeat: -1,
+                            delay: zi * 0.3
                         }));
                     }
                 });
             });
 
-            // Namsan tower cycles command colors
+            // Tower cycles colors
             tower.forEach(bg => {
-                if (bg.glowSprite) {
-                    ev.tweens.push(gsap.to(bg.glowSprite, {
-                        alpha: 0.3, duration: 0.2, yoyo: true, repeat: -1
-                    }));
-                }
                 let ci = 0;
                 const interval = setInterval(() => {
                     bg.sprite.tint = zoneColors[ci % 3];
                     ci++;
                 }, 600);
                 ev.data._towerInterval = interval;
+                if (bg.glowSprite) {
+                    ev.tweens.push(gsap.to(bg.glowSprite, {
+                        alpha: 0.3, duration: 0.2, yoyo: true, repeat: -1
+                    }));
+                }
             });
         },
 
-        resolve(ev, correct) {
+        resolve(ev, result) {
             if (ev.data._towerInterval) {
                 clearInterval(ev.data._towerInterval);
                 ev.data._towerInterval = null;
             }
 
-            if (correct) {
-                ev.data.affectedEntities.forEach((e, i) => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0x88ddee, 0.8, { delay: i * 0.01 }));
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.8 }));
-                });
-            } else {
+            const dir = result.direction || 'center';
+
+            if (dir === 'left') {
+                // Pentagon route — olive flash
                 ev.data.affectedEntities.forEach(e => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0xff4444, 0.2));
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1, { delay: 0.6 }));
+                    ev.tweens.push(_tweenTint(e.sprite, 0x556b2f, 0.3));
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
                 });
-                ev.tweens.push(gsap.to(STATE, { shake: STATE.shake + 6, duration: 0.3, yoyo: true, repeat: 2 }));
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: -400, duration: 0.8, ease: 'power2.inOut'
+                }));
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: 0, duration: 1.5, delay: 1.5
+                }));
+            } else if (dir === 'right') {
+                // Eastern tower — red flash
+                ev.data.affectedEntities.forEach(e => {
+                    ev.tweens.push(_tweenTint(e.sprite, 0x8b1a1a, 0.3));
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
+                });
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: 400, duration: 0.8, ease: 'power2.inOut'
+                }));
+                ev.tweens.push(gsap.to(STATE, {
+                    playerX: 0, duration: 1.5, delay: 1.5
+                }));
+            } else {
+                // Server farm — cyan flash (correct)
+                ev.data.affectedEntities.forEach((e, i) => {
+                    ev.tweens.push(_tweenTint(e.sprite, 0x00b8d8, 0.5, { delay: i * 0.01 }));
+                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5, { delay: 0.5 }));
+                });
             }
+
             ev.data.tower.forEach(bg => {
                 ev.tweens.push(_tweenTint(bg.sprite, 0xFFFFFF, 1.5));
             });
+
             _delayedClear(ev, 3);
         }
     },
 
     // ════════════════════════════════════════════════
-    //  Event 5: Shadow Legion — digital infection
-    //  Glow entities turn green and flicker.
-    //  Lanterns go dark. Crows scatter.
-    //  Namsan tower glow turns green.
-    // ════════════════════════════════════════════════
-    shadowLegion: {
-        create(ev) {
-            const glowEntities = Entities.getList().filter(e => e.sprite.visible && e.glowSprite);
-            const lanterns = _getVisibleEntities('lantern');
-            const crows = _getVisibleEntities('crow');
-            const bgGlow = Entities.getBgList().filter(bg => bg.glowSprite);
-
-            ev.data.glowEntities = glowEntities;
-            ev.data.lanterns = lanterns;
-            ev.data.crows = crows;
-            ev.data.bgGlow = bgGlow;
-            ev.data.affectedEntities = [...glowEntities, ...lanterns, ...crows];
-            ev.data.affectedBg = bgGlow;
-        },
-
-        animate(ev) {
-            const { glowEntities, lanterns, crows, bgGlow } = ev.data;
-
-            // Buildings/streetlights turn green — infection
-            glowEntities.forEach((e, i) => {
-                ev.tweens.push(_tweenTint(e.sprite, 0x39ff14, 0.3, { delay: i * 0.05 }));
-                if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, {
-                        alpha: 0, duration: 0.05, yoyo: true, repeat: -1,
-                        delay: Math.random() * 2
-                    }));
-                }
-            });
-
-            // Lanterns die
-            lanterns.forEach(e => {
-                ev.tweens.push(_tweenTint(e.sprite, 0x333333, 1.5, { delay: Math.random() }));
-                ev.tweens.push(gsap.to(e.sprite, { alpha: 0.4, duration: 1.5, delay: Math.random() }));
-                if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, { alpha: 0, duration: 0.5 }));
-                }
-            });
-
-            // Crows flee
-            crows.forEach(e => {
-                ev.tweens.push(gsap.to(e.sprite, {
-                    rotation: Math.PI * 2, alpha: 0.3, duration: 1.5,
-                    delay: Math.random(), ease: 'power2.in'
-                }));
-            });
-
-            // Namsan tower infected
-            bgGlow.forEach(bg => {
-                if (bg.glowSprite) {
-                    bg.sprite.tint = 0x39ff14;
-                    ev.tweens.push(gsap.to(bg.glowSprite, {
-                        alpha: 0, duration: 0.05, yoyo: true, repeat: -1, delay: Math.random()
-                    }));
-                }
-            });
-        },
-
-        resolve(ev, correct) {
-            const { glowEntities, lanterns, crows, bgGlow } = ev.data;
-
-            // Kill flicker tweens
-            [...glowEntities, ...lanterns, ...crows].forEach(e => {
-                gsap.killTweensOf(e.sprite);
-                if (e.glowSprite) gsap.killTweensOf(e.glowSprite);
-            });
-            bgGlow.forEach(bg => {
-                gsap.killTweensOf(bg.sprite);
-                if (bg.glowSprite) gsap.killTweensOf(bg.glowSprite);
-            });
-
-            if (correct) {
-                // Mirror — reverse trace, cyan pulse, restore
-                glowEntities.forEach((e, i) => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0x00b8d8, 0.3, { delay: i * 0.02 }));
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1, { delay: 0.3 + i * 0.02 }));
-                    if (e.glowSprite) {
-                        ev.tweens.push(gsap.to(e.glowSprite, { alpha: 1, duration: 0.5, delay: i * 0.02 }));
-                    }
-                });
-                lanterns.forEach(e => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1));
-                    ev.tweens.push(gsap.to(e.sprite, { alpha: 1, duration: 1 }));
-                    if (e.glowSprite) {
-                        ev.tweens.push(gsap.to(e.glowSprite, { alpha: 0.8, duration: 1 }));
-                    }
-                });
-                crows.forEach(e => {
-                    ev.tweens.push(gsap.to(e.sprite, { rotation: 0, alpha: 1, duration: 1 }));
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1));
-                });
-                bgGlow.forEach(bg => {
-                    ev.tweens.push(_tweenTint(bg.sprite, 0xFFFFFF, 1));
-                    if (bg.glowSprite) {
-                        ev.tweens.push(gsap.to(bg.glowSprite, { alpha: 1, duration: 1 }));
-                    }
-                });
-            } else {
-                // Infection lingers
-                STATE.infectionLevel = 0.3;
-                glowEntities.forEach(e => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 2));
-                    if (e.glowSprite) {
-                        ev.tweens.push(gsap.to(e.glowSprite, { alpha: 0.2, duration: 1 }));
-                    }
-                });
-                lanterns.forEach(e => {
-                    ev.tweens.push(_tweenTint(e.sprite, 0x666666, 1.5));
-                    ev.tweens.push(gsap.to(e.sprite, { alpha: 0.6, duration: 1.5 }));
-                });
-                crows.forEach(e => {
-                    ev.tweens.push(gsap.to(e.sprite, { rotation: 0, alpha: 0.5, duration: 1.5 }));
-                    ev.tweens.push(_tweenTint(e.sprite, 0x888888, 1.5));
-                });
-                bgGlow.forEach(bg => {
-                    ev.tweens.push(_tweenTint(bg.sprite, 0x666666, 1.5));
-                    if (bg.glowSprite) {
-                        ev.tweens.push(gsap.to(bg.glowSprite, { alpha: 0.2, duration: 1 }));
-                    }
-                });
-            }
-            _delayedClear(ev, 3);
-        }
-    },
-
-    // ════════════════════════════════════════════════
-    //  Event 6: The Unnamed Generation — train stops, world empties
-    //  All entities dim and freeze. Lanterns go out.
-    //  Crows vanish. Stars become brilliant. Moon brightens.
+    //  Event 6: Empty City — TAP (one target: the swing)
+    //  Almost nothing responds. The emptiness is the point.
+    //  One lantern (rusted swing) reacts with a gentle motion.
     // ════════════════════════════════════════════════
     unnamedGeneration: {
         create(ev) {
@@ -616,11 +718,17 @@ const EVENT_BUILDERS = {
             const stars = _getVisibleBg('star');
             const moon = _getVisibleBg('moon');
             const clouds = _getVisibleBg('cloud');
+            const lanterns = _getVisibleEntities('lantern');
+
+            // The "swing" — pick one lantern as the only touchable target
+            const swing = lanterns.length > 0 ? [lanterns[0]] : [];
 
             ev.data.allRoad = allRoad;
             ev.data.stars = stars;
             ev.data.moon = moon;
             ev.data.clouds = clouds;
+            ev.data.swing = swing;
+            ev.data.tapTargets = swing;
             ev.data.affectedEntities = allRoad;
             ev.data.affectedBg = [...stars, ...moon, ...clouds];
         },
@@ -628,17 +736,19 @@ const EVENT_BUILDERS = {
         animate(ev) {
             const { allRoad, stars, moon, clouds } = ev.data;
 
-            // All road entities gradually dim
+            // All entities dim — emptiness
             allRoad.forEach((e, i) => {
                 const delay = i * 0.03;
                 ev.tweens.push(_tweenTint(e.sprite, 0x888888, 3, { delay }));
                 ev.tweens.push(gsap.to(e.sprite, { alpha: 0.4, duration: 3, delay }));
                 if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, { alpha: 0, duration: 2, delay }));
+                    ev.tweens.push(gsap.to(e.glowSprite, {
+                        alpha: 0, duration: 2, delay
+                    }));
                 }
             });
 
-            // Stars become brilliant
+            // Stars brilliant
             stars.forEach(bg => {
                 ev.tweens.push(gsap.to(bg.sprite, { alpha: 1, duration: 2, delay: 1 }));
                 bg.sprite.tint = 0xFFFFFF;
@@ -646,29 +756,47 @@ const EVENT_BUILDERS = {
 
             // Moon brightens
             moon.forEach(bg => {
-                ev.tweens.push(gsap.to(bg.sprite, { alpha: 1, duration: 2, delay: 0.5 }));
+                ev.tweens.push(gsap.to(bg.sprite, {
+                    alpha: 1, duration: 2, delay: 0.5
+                }));
                 bg.sprite.tint = 0xEEEEFF;
             });
 
-            // Clouds thin out
+            // Clouds thin
             clouds.forEach(bg => {
                 ev.tweens.push(gsap.to(bg.sprite, { alpha: 0.2, duration: 3 }));
             });
 
-            // Narrative
-            const lang = document.documentElement.lang === 'ko' ? 'ko' : 'en';
-            const text = SCENE_I18N[lang].unnamedGeneration.narrative;
-            Timeline.showNarrative(text, 8000);
+            // The swing (lantern) stays slightly brighter
+            ev.data.swing.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xDDCCAA, 2));
+                ev.tweens.push(gsap.to(e.sprite, { alpha: 0.7, duration: 2 }));
+            });
         },
 
-        resolve(ev, correct) {
+        onTap(ev, entity) {
+            // Swing swings harder for a moment
+            ev.tweens.push(gsap.to(entity.sprite, {
+                rotation: 0.3, duration: 0.4, yoyo: true, repeat: 3,
+                ease: 'sine.inOut'
+            }));
+            // Brief warm tint
+            ev.tweens.push(_tweenTint(entity.sprite, 0xFFEECC, 0.5));
+            ev.tweens.push(_tweenTint(entity.sprite, 0xDDCCAA, 1, { delay: 1 }));
+        },
+
+        resolve(ev, result) {
             const { allRoad, clouds } = ev.data;
 
             allRoad.forEach((e, i) => {
                 ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 2, { delay: i * 0.02 }));
-                ev.tweens.push(gsap.to(e.sprite, { alpha: 1, duration: 2, delay: i * 0.02 }));
+                ev.tweens.push(gsap.to(e.sprite, {
+                    alpha: 1, duration: 2, delay: i * 0.02
+                }));
                 if (e.glowSprite) {
-                    ev.tweens.push(gsap.to(e.glowSprite, { alpha: 0.5, duration: 2 }));
+                    ev.tweens.push(gsap.to(e.glowSprite, {
+                        alpha: 0.5, duration: 2
+                    }));
                 }
             });
 
@@ -677,6 +805,67 @@ const EVENT_BUILDERS = {
             });
 
             _delayedClear(ev, 3);
+        }
+    },
+
+    // ════════════════════════════════════════════════
+    //  Ending Fork — SWIPE (after event 6)
+    //  Three visual beacons on the horizon.
+    //  Straight = light (AI), Left = new city, Right = grassland.
+    // ════════════════════════════════════════════════
+    endingFork: {
+        create(ev) {
+            const buildings = _getVisibleEntities('building');
+            const trees = _getVisibleEntities('tree');
+            const lanterns = _getVisibleEntities('lantern');
+            const { left: buildingsL, right: buildingsR } = _splitLeftRight(buildings);
+            const { left: lanternsL, right: lanternsR } = _splitLeftRight(lanterns);
+
+            ev.data.buildingsL = buildingsL;
+            ev.data.buildingsR = buildingsR;
+            ev.data.lanternsL = lanternsL;
+            ev.data.lanternsR = lanternsR;
+            ev.data.trees = trees;
+            ev.data.affectedEntities = [...buildings, ...lanterns, ...trees];
+        },
+
+        animate(ev) {
+            // Center: AI beam brightens (already visible)
+            ev.tweens.push(gsap.to(STATE, {
+                aiBeamAlpha: 1, aiBeamWidth: 3, duration: 2
+            }));
+
+            // Left: warm multicolored city (new tongues)
+            ev.data.buildingsL.forEach(e => {
+                const colors = [0xe07020, 0x44cc88, 0xcc44aa, 0x4488cc];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                ev.tweens.push(_tweenTint(e.sprite, color, 2));
+                if (e.glowSprite) {
+                    ev.tweens.push(gsap.to(e.glowSprite, {
+                        alpha: 1, duration: 1, yoyo: true, repeat: -1
+                    }));
+                }
+            });
+            ev.data.lanternsL.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xFFAA44, 2));
+            });
+
+            // Right: green grassland (pedestrian / landing)
+            ev.data.buildingsR.forEach(e => {
+                ev.tweens.push(gsap.to(e.sprite, { alpha: 0.3, duration: 2 }));
+            });
+            ev.data.trees.filter(e => e.roadOffset > 0).forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0x66aa44, 2));
+                ev.tweens.push(gsap.to(e.sprite, { alpha: 1, duration: 1 }));
+            });
+        },
+
+        resolve(ev, result) {
+            ev.data.affectedEntities.forEach(e => {
+                ev.tweens.push(_tweenTint(e.sprite, 0xFFFFFF, 1.5));
+                ev.tweens.push(gsap.to(e.sprite, { alpha: 1, duration: 1.5 }));
+            });
+            _delayedClear(ev, 2);
         }
     }
 };
