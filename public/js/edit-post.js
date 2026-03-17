@@ -1,10 +1,29 @@
 (function() {
+    // Prevent double form submission
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn.disabled) { e.preventDefault(); return; }
+        btn.disabled = true;
+    });
+
     var content = document.getElementById('content');
     var overlay = document.getElementById('linkOverlay');
     var urlInput = document.getElementById('linkUrl');
     var titleInput = document.getElementById('linkTitle');
     var textInput = document.getElementById('linkText');
     var selStart, selEnd;
+
+    // Prevent Enter in modal inputs from submitting the main form
+    var modalInputs = [urlInput, titleInput, textInput];
+    modalInputs.forEach(function(input) {
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('linkInsertBtn').click();
+            }
+        });
+    });
 
     document.getElementById('insertLinkBtn').addEventListener('click', function() {
         selStart = content.selectionStart;
