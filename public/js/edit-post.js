@@ -1,4 +1,12 @@
 (function() {
+    // Prevent double form submission
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn.disabled) { e.preventDefault(); return; }
+        btn.disabled = true;
+    });
+
     var content = document.getElementById('content');
     var overlay = document.getElementById('linkOverlay');
     var urlInput = document.getElementById('linkUrl');
