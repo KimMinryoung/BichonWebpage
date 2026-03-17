@@ -148,6 +148,15 @@ router.post('/posts/new', requireAuth, async (req, res) => {
     }
 
     try {
+        // Prevent duplicate: skip if identical post was created within the last 30 seconds
+        const { rows: existing } = await db.query(
+            'SELECT id FROM posts WHERE title = $1 AND content = $2 AND created_at > NOW() - INTERVAL \'30 seconds\'',
+            [title, content]
+        );
+        if (existing.length > 0) {
+            return res.redirect('/admin/posts?message=Post created successfully');
+        }
+
         await db.query(
             'INSERT INTO posts (title, content) VALUES ($1, $2)',
             [title, content]
