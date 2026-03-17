@@ -14,6 +14,17 @@
     var textInput = document.getElementById('linkText');
     var selStart, selEnd;
 
+    // Prevent Enter in modal inputs from submitting the main form
+    var modalInputs = [urlInput, titleInput, textInput];
+    modalInputs.forEach(function(input) {
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('linkInsertBtn').click();
+            }
+        });
+    });
+
     document.getElementById('insertLinkBtn').addEventListener('click', function() {
         selStart = content.selectionStart;
         selEnd = content.selectionEnd;
