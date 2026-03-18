@@ -251,7 +251,7 @@ router.post('/posts/delete/:id', requireAuth, async (req, res) => {
 // Chat Logs
 router.get('/chat-logs', requireAuth, (req, res) => {
     res.render('admin/chat-logs', {
-        chatApiUrl: process.env.CHAT_API_URL || 'http://37.27.33.127:8000'
+        chatApiUrl: process.env.CHAT_API_URL || 'https://leninbot.duckdns.org'
     });
 });
 
