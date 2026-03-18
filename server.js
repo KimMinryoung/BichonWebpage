@@ -38,7 +38,7 @@ app.use(helmet({
             workerSrc: ["'self'", 'blob:'],
             styleSrc: ["'self'"],
             imgSrc: ["'self'", 'data:'],
-            connectSrc: ["'self'", 'https://*.onrender.com'],
+            connectSrc: ["'self'", 'https://*.onrender.com', 'http://37.27.33.127:8000'],
             fontSrc: ["'self'"],
             objectSrc: ["'none'"],
             frameAncestors: ["'none'"]
