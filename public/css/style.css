@@ -833,7 +833,7 @@ footer {
 
 .chat-input-row {
     display: flex;
-    gap: 10px;
+    gap: 0;
 }
 
 .chat-input-row input {
