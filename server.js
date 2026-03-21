@@ -32,11 +32,12 @@ app.use(cookieParser());
 // Security headers
 app.use(helmet({
     contentSecurityPolicy: {
+        useDefaults: false,
         directives: {
             defaultSrc: ["'self'"],
             scriptSrc: ["'self'", 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com', "'unsafe-inline'", "'unsafe-eval'"],
             workerSrc: ["'self'", 'blob:'],
-            styleSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'"],
             imgSrc: ["'self'", 'data:'],
             connectSrc: ["'self'", 'https://*.onrender.com', 'https://leninbot.duckdns.org'],
             fontSrc: ["'self'"],
