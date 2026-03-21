@@ -250,9 +250,29 @@ router.post('/posts/delete/:id', requireAuth, async (req, res) => {
 
 // Chat Logs
 router.get('/chat-logs', requireAuth, (req, res) => {
-    res.render('admin/chat-logs', {
-        chatApiUrl: process.env.CHAT_API_URL || 'https://leninbot.duckdns.org'
-    });
+    res.render('admin/chat-logs');
+});
+
+// Chat Logs API proxy — forwards to LeninBot with admin key
+router.get('/api/logs', requireAuth, async (req, res) => {
+    const apiUrl = process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
+    const adminKey = process.env.LENINBOT_ADMIN_KEY || '';
+    const limit = parseInt(req.query.limit) || 50;
+    const offset = parseInt(req.query.offset) || 0;
+    try {
+        const response = await fetch(
+            `${apiUrl}/logs?limit=${limit}&offset=${offset}`,
+            { headers: { 'X-Admin-Key': adminKey } }
+        );
+        if (!response.ok) {
+            return res.status(response.status).json({ error: 'LeninBot API error' });
+        }
+        const data = await response.json();
+        res.json(data);
+    } catch (err) {
+        console.error('Chat logs proxy error:', err.message);
+        res.status(502).json({ error: 'Failed to fetch logs from LeninBot' });
+    }
 });
 
 // Story Editor

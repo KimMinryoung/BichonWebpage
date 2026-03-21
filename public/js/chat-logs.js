@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var API_URL = document.querySelector('meta[name="api-url"]').content;
     var currentOffset = 0;
 
     function getLimit() {
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = '<div class="loading-spinner">불러오는 중...</div>';
 
         try {
-            var res = await fetch(API_URL + '/logs?limit=' + limit + '&offset=' + offset);
+            var res = await fetch('/admin/api/logs?limit=' + limit + '&offset=' + offset);
             if (!res.ok) throw new Error('API error: ' + res.status);
             var data = await res.json();
             renderLogs(data.logs, offset, limit);
@@ -81,9 +80,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 var detailId = 'detail-' + i;
                 html += '<button class="log-details-toggle" data-toggle="' + detailId + '">생각 과정</button>';
                 html += '<div class="log-details" id="' + detailId + '">';
-                if (log.processing_logs && log.processing_logs.length > 0) {
+                var procLogs = log.processing_logs;
+                if (typeof procLogs === 'string') {
+                    try { procLogs = JSON.parse(procLogs); } catch(e) { procLogs = [procLogs]; }
+                }
+                if (procLogs && procLogs.length > 0) {
                     html += '<div class="log-label" style="margin-top:8px">Processing Logs</div>';
-                    html += '<pre>' + escapeHtml(log.processing_logs.join('\n')) + '</pre>';
+                    html += '<pre>' + escapeHtml(procLogs.join('\n')) + '</pre>';
                 }
                 html += '</div>';
             }
