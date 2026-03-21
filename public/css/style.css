@@ -710,7 +710,7 @@ footer {
 
 .chat-page nav {
     flex-shrink: 0;
-    margin-bottom: 8px;
+    margin-bottom: 0;
 }
 
 .chat-page .container {
@@ -720,7 +720,7 @@ footer {
     min-height: 0;
     max-width: none;
     width: 100%;
-    padding: 8px 20px;
+    padding: 0;
 }
 
 .chat-page nav .nav-content {
@@ -737,7 +737,7 @@ footer {
     border: 1px solid var(--border);
     border-radius: 0;
     padding: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 0;
     flex: 1;
     min-height: 0;
     overflow-y: auto;
