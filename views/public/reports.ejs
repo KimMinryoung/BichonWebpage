@@ -17,7 +17,7 @@
                 <% reports.forEach(report => { %>
                     <li class="post-item">
                         <div>
-                            <h2><a href="/reports/<%= report.id %>">#<%= report.id %> — <%= report.content %></a></h2>
+                            <h2><a href="/reports/<%= report.id %>">#<%= report.id %> — <%= report.content.split('\n')[0] %></a></h2>
                             <div class="post-meta">
                                 <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                             </div>

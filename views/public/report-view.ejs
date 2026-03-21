@@ -1,28 +1,11 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <title>#<%= report.id %> — <%= report.content %></title>
+    <title>#<%= report.id %> — <%= report.content.split('\n')[0].substring(0, 80) %></title>
     <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/report.css?v=<%= Date.now() %>">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
-    <style>
-        .report-body { line-height: 1.8; }
-        .report-body h1 { font-size: 1.6em; margin: 1.2em 0 0.6em; border-bottom: 1px solid #333; padding-bottom: 0.3em; }
-        .report-body h2 { font-size: 1.3em; margin: 1em 0 0.5em; }
-        .report-body h3 { font-size: 1.1em; margin: 0.8em 0 0.4em; }
-        .report-body p { margin: 0.6em 0; }
-        .report-body ul, .report-body ol { margin: 0.5em 0; padding-left: 1.5em; }
-        .report-body li { margin: 0.3em 0; }
-        .report-body blockquote { border-left: 3px solid #555; padding-left: 1em; margin: 0.8em 0; color: #aaa; }
-        .report-body code { background: #1a1a1a; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
-        .report-body pre { background: #1a1a1a; padding: 1em; border-radius: 5px; overflow-x: auto; }
-        .report-body pre code { background: none; padding: 0; }
-        .report-body table { border-collapse: collapse; width: 100%; margin: 0.8em 0; }
-        .report-body th, .report-body td { border: 1px solid #333; padding: 0.5em 0.8em; text-align: left; }
-        .report-body th { background: #1a1a1a; }
-        .report-body a { color: #6cb4ee; }
-        .report-task-label { color: #888; font-size: 0.9em; }
-    </style>
 </head>
 <body>
     <%- include('../partials/nav') %>
@@ -30,11 +13,12 @@
     <div class="container">
         <article class="post-content">
             <div class="report-task-label">Task #<%= report.id %></div>
-            <h1><%= report.content %></h1>
+            <h1><%= report.content.split('\n')[0] %></h1>
             <div class="post-meta">
                 <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
             </div>
             <div class="report-body" id="report-content"></div>
+            <script type="application/json" id="report-raw"><%= JSON.stringify(report.result) %></script>
         </article>
 
         <div class="box post-nav" style="margin-top: 20px;">
@@ -45,15 +29,6 @@
     </div>
 
     <%- include('../partials/footer') %>
-
-    <script>
-        const raw = <%- JSON.stringify(report.result) %>;
-        const el = document.getElementById('report-content');
-        if (typeof marked !== 'undefined' && typeof DOMPurify !== 'undefined') {
-            el.innerHTML = DOMPurify.sanitize(marked.parse(raw));
-        } else {
-            el.textContent = raw;
-        }
-    </script>
+    <script src="/js/report-view.js?v=<%= Date.now() %>"></script>
 </body>
 </html>
