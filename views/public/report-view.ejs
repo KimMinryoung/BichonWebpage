@@ -18,7 +18,7 @@
                 <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
             </div>
             <div class="report-body" id="report-content"></div>
-            <script type="application/json" id="report-raw"><%= JSON.stringify(report.result) %></script>
+            <script type="application/json" id="report-raw"><%- JSON.stringify(report.result).replace(/</g, '\\u003c') %></script>
         </article>
 
         <div class="box post-nav" style="margin-top: 20px;">
