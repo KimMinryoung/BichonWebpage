@@ -880,12 +880,12 @@ footer {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
     .container {
-        padding: 12px;
+        padding: 0;
     }
 
     nav {
         padding: 8px 12px;
-        margin-bottom: 12px;
+        margin-bottom: 0;
     }
 
     nav .logo {
