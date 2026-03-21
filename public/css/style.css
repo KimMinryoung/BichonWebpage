@@ -597,7 +597,7 @@ form {
 
 /* ===== Footer ===== */
 footer {
-    margin-top: 24px;
+    margin-top: 0;
     padding: 12px;
     text-align: center;
     color: var(--text-muted);
