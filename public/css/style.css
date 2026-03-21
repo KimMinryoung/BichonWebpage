@@ -399,7 +399,6 @@ header h1 {
 .post-content .post-body {
     margin-top: 20px;
     line-height: 1.8;
-    max-width: 65ch;
 }
 
 /* ===== Forms ===== */
