@@ -5,8 +5,8 @@
     --bg-surface: #0d1117;
     --bg-surface-hover: #161b22;
     --bg-inset: #010409;
-    --border: #30363d;
-    --border-emphasis: #6e7681;
+    --border: #ffffff;
+    --border-emphasis: #ffffff;
     --text-primary: #ffffff;
     --text-secondary: #e0e4e8;
     --text-muted: #b0b8c1;
@@ -42,8 +42,8 @@
     --bg-surface: #f6f8fa;
     --bg-surface-hover: #eaeef2;
     --bg-inset: #eff2f5;
-    --border: #d1d9e0;
-    --border-emphasis: #818b98;
+    --border: #000000;
+    --border-emphasis: #000000;
     --text-primary: #0e1116;
     --text-secondary: #32383f;
     --text-muted: #59636e;
@@ -114,7 +114,7 @@ a:hover {
     border: 1px solid var(--border);
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 6px;
+    border-radius: 0;
 }
 
 /* ===== Navigation ===== */
@@ -165,7 +165,7 @@ nav .nav-links {
 nav .nav-links a {
     color: var(--text-primary);
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 0.9rem;
     font-weight: 500;
     transition: background-color 0.15s;
@@ -183,7 +183,7 @@ nav .nav-links a:hover {
     font: inherit;
     color: var(--text-primary);
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 0.9rem;
     font-weight: 500;
     transition: background-color 0.15s;
@@ -199,7 +199,7 @@ nav .nav-links a:hover {
     border: 1px solid var(--border);
     color: var(--text-secondary);
     padding: 4px 8px;
-    border-radius: 6px;
+    border-radius: 0;
     cursor: pointer;
     font-size: 1rem;
     line-height: 1;
@@ -227,7 +227,7 @@ nav .nav-links a:hover {
     font-family: inherit;
     font-size: 0.9rem;
     font-weight: 500;
-    border-radius: 6px;
+    border-radius: 0;
     transition: background-color 0.15s;
 }
 
@@ -243,7 +243,7 @@ nav .nav-links a:hover {
     top: calc(100% + 4px);
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 0;
     z-index: 100;
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -335,19 +335,19 @@ header h1 {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0;
 }
 
 .post-item {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
     padding: 20px 24px;
-    border-radius: 6px;
+    border-radius: 0;
     transition: border-color 0.15s;
 }
 
-.post-item:hover {
-    border-color: var(--border-emphasis);
+.post-item + .post-item {
+    border-top: none;
 }
 
 .post-item h2 {
@@ -387,7 +387,7 @@ header h1 {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
     padding: 32px;
-    border-radius: 6px;
+    border-radius: 0;
 }
 
 .post-content h1 {
@@ -424,7 +424,7 @@ form {
     padding: 10px 12px;
     background-color: var(--input-bg);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 0;
     color: var(--text-primary);
     font-size: 1rem;
     transition: border-color 0.15s;
@@ -452,7 +452,7 @@ form {
     background-color: var(--btn-bg);
     color: var(--text-primary);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 0;
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 500;
@@ -521,7 +521,7 @@ form {
 .stat-box {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 0;
     padding: 10px 14px;
     text-align: center;
 }
@@ -578,7 +578,7 @@ form {
     padding: 12px 16px;
     margin-bottom: 20px;
     border: 1px solid;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 0.92rem;
 }
 
@@ -603,7 +603,7 @@ form {
 .login-box {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 0;
     padding: 30px;
 }
 
@@ -689,7 +689,7 @@ footer {
 .link-modal {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 24px;
     width: 100%;
     max-width: 450px;
@@ -736,7 +736,7 @@ footer {
 .chat-box {
     background-color: var(--bg-surface);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 0;
     padding: 20px;
     margin-bottom: 8px;
     flex: 1;
@@ -750,7 +750,7 @@ footer {
     max-width: 80%;
     word-wrap: break-word;
     line-height: 1.5;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 .chat-message-user {
@@ -776,14 +776,14 @@ footer {
 .chat-message-ai code {
     background-color: var(--code-bg);
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 0.9em;
 }
 
 .chat-message-ai pre {
     background-color: var(--bg-inset);
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 0;
     overflow-x: auto;
     margin: 10px 0;
     border: 1px solid var(--border);
@@ -806,7 +806,7 @@ footer {
     font-style: italic;
     padding: 10px 15px;
     line-height: 1.4;
-    border-radius: 6px;
+    border-radius: 0;
 }
 
 .chat-message-log p,
@@ -842,7 +842,7 @@ footer {
     padding: 10px 12px;
     background-color: var(--input-bg);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 0;
     color: var(--text-primary);
     font-size: 1rem;
     transition: border-color 0.15s;
