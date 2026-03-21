@@ -16,3 +16,24 @@ document.addEventListener('submit', function(e) {
         e.preventDefault();
     }
 });
+
+// Theme toggle
+(function() {
+    var btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    var html = document.documentElement;
+
+    function setIcon() {
+        var theme = html.getAttribute('data-theme');
+        btn.textContent = theme === 'light' ? '\u263C' : '\u263E';
+        btn.title = theme === 'light' ? 'Dark mode' : 'Light mode';
+    }
+    setIcon();
+
+    btn.addEventListener('click', function() {
+        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        setIcon();
+    });
+})();

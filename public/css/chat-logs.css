@@ -7,15 +7,15 @@
 }
 .logs-controls select,
 .logs-controls input {
-    background: #1a1a1a;
-    color: #f0f0f0;
-    border: 1px solid #333;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
     padding: 8px 12px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 .log-card {
-    background: #121212;
-    border: 1px solid #333;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 6px;
     padding: 16px;
     margin-bottom: 12px;
@@ -26,7 +26,7 @@
     align-items: center;
     margin-bottom: 12px;
     font-size: 0.85em;
-    color: #888;
+    color: var(--text-muted);
 }
 .log-card-header .route-badge {
     padding: 2px 8px;
@@ -36,27 +36,29 @@
 }
 .route-casual { background: #2d4a2d; color: #8fdf8f; }
 .route-vectorstore { background: #2d3a5a; color: #8fb8df; }
+[data-theme="light"] .route-casual { background: #dafbe1; color: #1a7f37; }
+[data-theme="light"] .route-vectorstore { background: #ddf4ff; color: #0349b4; }
 .log-query {
-    background: #1a1a1a;
-    border-left: 3px solid #4da6ff;
+    background: var(--bg-surface);
+    border-left: 3px solid var(--accent-blue);
     padding: 10px 14px;
     margin-bottom: 8px;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 6px 6px 0;
     white-space: pre-wrap;
     word-break: break-word;
 }
 .log-answer {
-    background: #1a1a1a;
-    border-left: 3px solid #66bb6a;
+    background: var(--bg-surface);
+    border-left: 3px solid var(--accent-green);
     padding: 10px 14px;
     margin-bottom: 8px;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 6px 6px 0;
     white-space: pre-wrap;
     word-break: break-word;
 }
 .log-label {
     font-size: 0.8em;
-    color: #888;
+    color: var(--text-muted);
     margin-bottom: 4px;
     font-weight: 600;
 }
@@ -64,28 +66,28 @@
     display: flex;
     gap: 16px;
     font-size: 0.8em;
-    color: #666;
+    color: var(--text-muted);
     margin-top: 8px;
     flex-wrap: wrap;
 }
 .log-details-toggle {
     background: none;
-    border: 1px solid #444;
-    color: #aaa;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
     padding: 4px 10px;
     border-radius: 3px;
     cursor: pointer;
     font-size: 0.8em;
 }
-.log-details-toggle:hover { border-color: #4da6ff; color: #4da6ff; }
+.log-details-toggle:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
 .log-details {
     display: none;
     margin-top: 10px;
     padding: 10px;
-    background: #0a0a0a;
-    border-radius: 4px;
+    background: var(--bg-inset);
+    border-radius: 6px;
     font-size: 0.82em;
-    color: #aaa;
+    color: var(--text-secondary);
 }
 .log-details.open { display: block; }
 .log-details pre {
@@ -102,10 +104,10 @@
 .loading-spinner {
     text-align: center;
     padding: 40px;
-    color: #888;
+    color: var(--text-muted);
 }
 .empty-state {
     text-align: center;
     padding: 40px;
-    color: #666;
+    color: var(--text-muted);
 }
