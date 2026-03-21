@@ -4,11 +4,32 @@ const router = express.Router();
 const CHAT_API_URL = process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
 const REPORTS_PER_PAGE = 20;
 
+// ── In-memory cache ─────────────────────────────────────────
+// Reports rarely change; cache indefinitely until manual purge.
+const _listCache = new Map();   // "page:N" → { data, ts }
+const _reportCache = new Map(); // id → report object
+const LIST_TTL_MS = 10 * 60 * 1000; // list cache: 10 min (new reports appear)
+
+// POST /cache/clear — manual cache purge
+router.post('/cache/clear', (req, res) => {
+    if (!req.session.isAuthenticated) return res.status(403).send('Forbidden');
+    _listCache.clear();
+    _reportCache.clear();
+    res.json({ cleared: true });
+});
+
 // 리포트 목록
 router.get('/', async (req, res) => {
     try {
         const currentPage = parseInt(req.query.page) || 1;
         const offset = (currentPage - 1) * REPORTS_PER_PAGE;
+        const cacheKey = `page:${currentPage}`;
+
+        // Check list cache
+        const cached = _listCache.get(cacheKey);
+        if (cached && (Date.now() - cached.ts) < LIST_TTL_MS) {
+            return res.render('public/reports', cached.data);
+        }
 
         const response = await fetch(
             `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`
@@ -18,12 +39,15 @@ router.get('/', async (req, res) => {
         const data = await response.json();
         const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
 
-        res.render('public/reports', {
+        const viewData = {
             reports: data.reports || [],
             currentPage,
             totalPages,
             paginationBase: '/reports?page='
-        });
+        };
+        _listCache.set(cacheKey, { data: viewData, ts: Date.now() });
+
+        res.render('public/reports', viewData);
     } catch (error) {
         console.error('Error fetching reports:', error);
         res.render('public/reports', {
@@ -35,8 +59,16 @@ router.get('/', async (req, res) => {
 // 리포트 개별 조회
 router.get('/:id', async (req, res) => {
     try {
+        const id = parseInt(req.params.id);
+
+        // Check report cache (no TTL — reports don't change)
+        const cached = _reportCache.get(id);
+        if (cached) {
+            return res.render('public/report-view', { report: cached });
+        }
+
         const response = await fetch(
-            `${CHAT_API_URL}/reports/${req.params.id}`
+            `${CHAT_API_URL}/reports/${id}`
         );
         if (!response.ok) {
             return res.status(404).render('layouts/main', {
@@ -47,8 +79,8 @@ router.get('/:id', async (req, res) => {
 
         const data = await response.json();
         const report = data.report;
+        _reportCache.set(id, report);
 
-        // 이전/다음 리포트 ID 조회 (목록에서 offset으로 계산하는 대신 API 응답에 포함시키는 게 이상적이지만, 현재는 생략)
         res.render('public/report-view', { report });
     } catch (error) {
         console.error('Error fetching report:', error);
