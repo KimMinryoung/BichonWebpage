@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <title><%= lang === 'ko' ? '태스크 리포트' : 'Task Reports' %></title>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <header class="box compact-header">
+            <h1><%= lang === 'ko' ? '태스크 리포트' : 'Task Reports' %></h1>
+        </header>
+
+        <% if (reports && reports.length > 0) { %>
+            <ul class="post-list">
+                <% reports.forEach(report => { %>
+                    <li class="post-item">
+                        <div>
+                            <h2><a href="/reports/<%= report.id %>">#<%= report.id %> — <%= report.content %></a></h2>
+                            <div class="post-meta">
+                                <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                            </div>
+                            <% if (report.excerpt) { %>
+                                <p class="post-excerpt"><%= report.excerpt.replace(/[#*_`]/g, '').substring(0, 200) %>...</p>
+                            <% } %>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+
+            <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
+                <%- include('../partials/pagination', {
+                    currentPage: currentPage,
+                    totalPages: totalPages,
+                    baseUrl: paginationBase
+                }) %>
+            <% } %>
+        <% } else { %>
+            <div class="box">
+                <p><%= lang === 'ko' ? '아직 완료된 리포트가 없습니다.' : 'No completed reports yet.' %></p>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
