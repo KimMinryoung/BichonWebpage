@@ -22,8 +22,8 @@
                                 <span class="report-id">#<%= report.id %></span>
                                 <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"></time>
                             </div>
-                            <% if (report.excerpt) { %>
-                                <p class="post-excerpt"><%= report.excerpt.replace(/[#*_`]/g, '').substring(0, 200) %>...</p>
+                            <% if (report.result) { %>
+                                <p class="post-excerpt"><%= report.result.replace(/[#*_`\-|>]/g, '').replace(/\n+/g, ' ').substring(0, 200) %>...</p>
                             <% } %>
                         </div>
                     </li>

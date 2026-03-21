@@ -39,6 +39,11 @@ router.get('/', async (req, res) => {
         const data = await response.json();
         const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
 
+        // Cache individual reports from list response (full result included)
+        for (const r of data.reports || []) {
+            _reportCache.set(r.id, r);
+        }
+
         const viewData = {
             reports: data.reports || [],
             currentPage,
