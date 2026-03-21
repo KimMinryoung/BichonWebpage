@@ -14,4 +14,7 @@
 .report-body th { background: #1a1a1a; }
 .report-body a { color: #6cb4ee; }
 .report-task-label { color: #888; font-size: 0.9em; }
+.report-task-details { margin-bottom: 0.5em; }
+.report-task-details summary { color: #6cb4ee; font-size: 0.85em; cursor: pointer; }
+.report-task-content { color: #aaa; font-size: 0.85em; white-space: pre-wrap; margin-top: 0.3em; padding-left: 0.5em; border-left: 2px solid #333; }
 .report-id { font-size: 0.65em; color: #666; margin-right: 0.4em; vertical-align: middle; }

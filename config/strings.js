@@ -9,7 +9,7 @@ const ko = {
         home: '대문',
         chat: '사이버-레닌',
         diary: 'AI 일기장',
-        reports: '태스크 리포트',
+        reports: 'AI 보고서',
         game: '웹 게임',
         dashboard: '계기판',
         posts: '게시물 관리',

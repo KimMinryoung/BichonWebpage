@@ -12,10 +12,24 @@
 
     <div class="container">
         <article class="post-content">
+<%
+    // result 마크다운 첫 줄에서 # 제목 추출
+    var resultLines = (report.result || '').split('\n');
+    var reportTitle = '';
+    for (var i = 0; i < resultLines.length; i++) {
+        var match = resultLines[i].match(/^#\s+(.+)/);
+        if (match) { reportTitle = match[1]; break; }
+    }
+    if (!reportTitle) reportTitle = report.content.split('\n')[0];
+%>
             <div class="report-task-label">Task #<%= report.id %></div>
-            <h1><%= report.content.split('\n')[0] %></h1>
+            <h1><%= reportTitle %></h1>
+            <details class="report-task-details">
+                <summary><%= lang === 'ko' ? '작업 명령어' : 'Task command' %></summary>
+                <div class="report-task-content"><%= report.content %></div>
+            </details>
             <div class="post-meta">
-                <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"></time>
             </div>
             <div class="report-body" id="report-content"></div>
             <script type="application/json" id="report-raw"><%- JSON.stringify(report.result).replace(/</g, '\\u003c') %></script>
