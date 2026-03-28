@@ -295,6 +295,7 @@ header h1 {
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    border-top: none;
 }
 
 .compact-header h1 {
