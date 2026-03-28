@@ -314,6 +314,50 @@ header h1 {
     margin: 8px 0;
 }
 
+/* ===== Report Tabs ===== */
+.report-tabs {
+    display: flex;
+    border: 1px solid var(--border);
+    border-bottom: none;
+}
+
+.report-tab {
+    flex: 1;
+    padding: 10px 16px;
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: inherit;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.report-tab:not(:first-child) {
+    border-left: 1px solid var(--border);
+}
+
+.report-tab:hover {
+    background-color: var(--bg-surface-hover);
+    color: var(--text-primary);
+}
+
+.report-tab.active {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.report-panel {
+    display: none;
+}
+
+.report-panel.active {
+    display: block;
+}
+
 /* ===== Post List & Cards ===== */
 .post-list {
     list-style: none;

@@ -12,47 +12,109 @@
             <h1><%= strings.nav.reports %></h1>
         </header>
 
-        <% if (reports && reports.length > 0) { %>
-            <ul class="post-list">
-                <% reports.forEach(report => {
-                    // result 마크다운에서 # 제목 추출
-                    var _lines = (report.result || '').split('\n');
-                    var _title = '';
-                    for (var _i = 0; _i < _lines.length; _i++) {
-                        var _m = _lines[_i].match(/^#\s+(.+)/);
-                        if (_m) { _title = _m[1]; break; }
-                    }
-                    if (!_title) _title = report.content.split('\n')[0];
-                %>
-                    <li class="post-item">
-                        <div>
-                            <h2><a href="/reports/<%= report.id %>"><%= _title %></a></h2>
-                            <div class="post-meta">
-                                <span class="report-id">#<%= report.id %></span>
-                                <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"></time>
-                            </div>
-                            <% if (report.result) { %>
-                                <p class="post-excerpt"><%= report.result.replace(/[#*_`\-|>]/g, '').replace(/\n+/g, ' ').substring(0, 200) %>...</p>
-                            <% } %>
-                        </div>
-                    </li>
-                <% }) %>
-            </ul>
+        <div class="report-tabs">
+            <button type="button" class="report-tab active" data-tab="research"><%= lang === 'ko' ? '리서치' : 'Research' %></button>
+            <button type="button" class="report-tab" data-tab="tasks"><%= lang === 'ko' ? '태스크' : 'Tasks' %></button>
+        </div>
 
-            <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
-                <%- include('../partials/pagination', {
-                    currentPage: currentPage,
-                    totalPages: totalPages,
-                    baseUrl: paginationBase
-                }) %>
+        <!-- Research panel -->
+        <div class="report-panel active" id="panel-research">
+            <% if (researchFiles && researchFiles.length > 0) { %>
+                <ul class="post-list">
+                    <% researchFiles.forEach(file => {
+                        var displayName = file.filename.replace(/\.md$/, '').replace(/_/g, ' ');
+                    %>
+                        <li class="post-item">
+                            <div>
+                                <h2><a href="/reports/research/<%= file.filename %>"><%= displayName %></a></h2>
+                                <div class="post-meta">
+                                    <span class="file-size"><%= (file.size / 1024).toFixed(1) %> KB</span>
+                                    <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 작성' : ', written' %>"></time>
+                                </div>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <div class="box">
+                    <p><%= lang === 'ko' ? '아직 리서치가 없습니다.' : 'No research reports yet.' %></p>
+                </div>
             <% } %>
-        <% } else { %>
-            <div class="box">
-                <p><%= lang === 'ko' ? '아직 완료된 보고서가 없습니다.' : 'No completed reports yet.' %></p>
-            </div>
-        <% } %>
+        </div>
+
+        <!-- Task reports panel -->
+        <div class="report-panel" id="panel-tasks">
+            <% if (reports && reports.length > 0) { %>
+                <ul class="post-list">
+                    <% reports.forEach(report => {
+                        var _lines = (report.result || '').split('\n');
+                        var _title = '';
+                        for (var _i = 0; _i < _lines.length; _i++) {
+                            var _m = _lines[_i].match(/^#\s+(.+)/);
+                            if (_m) { _title = _m[1]; break; }
+                        }
+                        if (!_title) _title = report.content.split('\n')[0];
+                    %>
+                        <li class="post-item">
+                            <div>
+                                <h2><a href="/reports/<%= report.id %>"><%= _title %></a></h2>
+                                <div class="post-meta">
+                                    <span class="report-id">#<%= report.id %></span>
+                                    <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"></time>
+                                </div>
+                                <% if (report.result) { %>
+                                    <p class="post-excerpt"><%= report.result.replace(/[#*_`\-|>]/g, '').replace(/\n+/g, ' ').substring(0, 200) %>...</p>
+                                <% } %>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+
+                <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
+                    <%- include('../partials/pagination', {
+                        currentPage: currentPage,
+                        totalPages: totalPages,
+                        baseUrl: paginationBase
+                    }) %>
+                <% } %>
+            <% } else { %>
+                <div class="box">
+                    <p><%= lang === 'ko' ? '아직 완료된 보고서가 없습니다.' : 'No completed reports yet.' %></p>
+                </div>
+            <% } %>
+        </div>
     </div>
 
     <%- include('../partials/footer') %>
+    <script>
+    (function() {
+        var tabs = document.querySelectorAll('.report-tab');
+        var panels = document.querySelectorAll('.report-panel');
+        var storageKey = 'reportTab';
+
+        function activate(tabName) {
+            tabs.forEach(function(t) {
+                t.classList.toggle('active', t.getAttribute('data-tab') === tabName);
+            });
+            panels.forEach(function(p) {
+                p.classList.toggle('active', p.id === 'panel-' + tabName);
+            });
+        }
+
+        // Restore saved tab
+        var saved = localStorage.getItem(storageKey);
+        if (saved && document.getElementById('panel-' + saved)) {
+            activate(saved);
+        }
+
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var name = this.getAttribute('data-tab');
+                activate(name);
+                localStorage.setItem(storageKey, name);
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
