@@ -111,7 +111,7 @@ a:hover {
 /* ===== Box (generic surface) ===== */
 .box {
     background-color: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     padding: 20px;
     margin-bottom: 0;
     border-radius: 0;
@@ -120,7 +120,7 @@ a:hover {
 /* ===== Navigation ===== */
 nav {
     background-color: var(--nav-bg);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
     padding: 0;
     margin-bottom: 0;
     position: sticky;
@@ -314,10 +314,35 @@ header h1 {
     margin: 8px 0;
 }
 
+/* ===== Border overlap prevention ===== */
+/* Adjacent boxes: remove double border between them */
+.box + .box,
+.box + .post-list,
+.box + .report-tabs,
+.post-list + .box,
+.post-content + .box {
+    border-top: none;
+}
+
+/* First post-item in list directly after a box: top border already provided by box's bottom */
+.box + .post-list > .post-item:first-child {
+    border-top: none;
+}
+
+/* First child in container: remove top border on mobile (nav already provides it) */
+@media (max-width: 768px) {
+    .container > :first-child {
+        border-top: none;
+    }
+    .container > :last-child {
+        border-bottom: none;
+    }
+}
+
 /* ===== Report Tabs ===== */
 .report-tabs {
     display: flex;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-bottom: none;
 }
 
@@ -368,14 +393,19 @@ header h1 {
 
 .post-item {
     background-color: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
+    border-bottom: none;
     padding: 20px 24px;
     border-radius: 0;
     transition: border-color 0.15s;
 }
 
 .post-item + .post-item {
-    border-top: none;
+    border-top: 1px solid var(--border);
+}
+
+.post-item:last-child {
+    border-bottom: 2px solid var(--border);
 }
 
 .post-item h2 {
@@ -413,7 +443,7 @@ header h1 {
 /* ===== Single Post ===== */
 .post-content {
     background-color: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     padding: 32px;
     border-radius: 0;
 }
@@ -629,7 +659,7 @@ form {
 
 .login-box {
     background-color: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 0;
     padding: 30px;
 }
@@ -646,7 +676,7 @@ footer {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.8rem;
-    border-top: 1px solid var(--border);
+    border-top: 2px solid var(--border);
 }
 
 .stealth-link {
@@ -762,7 +792,8 @@ footer {
 /* Chat Box */
 .chat-box {
     background-color: var(--bg-surface);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
+    border-top: none;
     border-radius: 0;
     padding: 20px;
     margin-bottom: 0;
@@ -868,7 +899,7 @@ footer {
     flex: 1;
     padding: 10px 12px;
     background-color: var(--input-bg);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 0;
     color: var(--text-primary);
     font-size: 1rem;
