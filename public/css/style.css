@@ -329,14 +329,17 @@ header h1 {
     border-top: none;
 }
 
-/* First child in container: remove top border on mobile (nav already provides it) */
-@media (max-width: 768px) {
-    .container > :first-child {
-        border-top: none;
-    }
-    .container > :last-child {
-        border-bottom: none;
-    }
+/* Container edges: nav already provides top border, footer provides bottom */
+.container > :first-child {
+    border-top: none;
+}
+.container > :last-child {
+    border-bottom: none;
+}
+/* post-item:last-child inside last element also loses bottom border */
+.container > :last-child > .post-item:last-child,
+.container > :last-child .post-list > .post-item:last-child {
+    border-bottom: none;
 }
 
 /* ===== Report Tabs ===== */
