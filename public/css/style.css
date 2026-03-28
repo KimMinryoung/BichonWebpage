@@ -122,7 +122,7 @@ nav {
     background-color: var(--nav-bg);
     border-bottom: 2px solid var(--border);
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 4px;
     position: sticky;
     top: 0;
     z-index: 50;
@@ -329,18 +329,6 @@ header h1 {
     border-top: none;
 }
 
-/* Container edges: nav already provides top border, footer provides bottom */
-.container > :first-child {
-    border-top: none;
-}
-.container > :last-child {
-    border-bottom: none;
-}
-/* post-item:last-child inside last element also loses bottom border */
-.container > :last-child > .post-item:last-child,
-.container > :last-child .post-list > .post-item:last-child {
-    border-bottom: none;
-}
 
 /* ===== Report Tabs ===== */
 .report-tabs {
@@ -674,7 +662,7 @@ form {
 
 /* ===== Footer ===== */
 footer {
-    margin-top: 0;
+    margin-top: 4px;
     padding: 12px;
     text-align: center;
     color: var(--text-muted);
