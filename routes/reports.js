@@ -97,7 +97,8 @@ router.get('/research/:filename', async (req, res) => {
             });
         }
 
-        const markdown = await response.text();
+        const data = await response.json();
+        const markdown = data.content || '';
         res.render('public/research-view', { filename, markdown });
     } catch (error) {
         console.error('Error fetching research:', error);
