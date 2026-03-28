@@ -64,7 +64,21 @@ router.get('/', async (req, res) => {
                 const rRes = await fetch(`${CHAT_API_URL}/research`);
                 if (rRes.ok) {
                     const rData = await rRes.json();
-                    researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
+                    const files = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
+
+                    // Fetch each file to extract markdown # title
+                    await Promise.all(files.map(async (f) => {
+                        try {
+                            const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}`);
+                            if (r.ok) {
+                                const d = await r.json();
+                                const match = (d.content || '').match(/^#\s+(.+)/m);
+                                if (match) f.title = match[1];
+                            }
+                        } catch (_) { /* keep filename as fallback */ }
+                    }));
+
+                    researchFiles = files;
                     _researchListCache.data = researchFiles;
                     _researchListCache.ts = Date.now();
                 }

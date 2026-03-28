@@ -22,7 +22,7 @@
             <% if (researchFiles && researchFiles.length > 0) { %>
                 <ul class="post-list">
                     <% researchFiles.forEach(file => {
-                        var displayName = file.filename.replace(/\.md$/, '').replace(/_/g, ' ');
+                        var displayName = file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' ');
                     %>
                         <li class="post-item">
                             <div>
