@@ -122,7 +122,6 @@ nav {
     background-color: var(--nav-bg);
     border-bottom: 2px solid var(--border);
     padding: 0;
-    margin-bottom: 4px;
     position: sticky;
     top: 0;
     z-index: 50;
@@ -151,7 +150,7 @@ nav .logo {
     display: flex;
     align-items: center;
     padding: 10px 16px;
-    border-right: 1px solid var(--border);
+    border-left: 2px solid var(--border);
 }
 
 nav .logo:hover {
@@ -177,11 +176,11 @@ nav .nav-links .theme-toggle,
 nav .nav-links .lang-btn,
 nav .nav-links .nav-logout-btn {
     color: var(--text-primary);
-    padding: 10px 14px;
-    border-radius: 0;
+    padding: 0px 0px;
     border: none;
-    border-left: 1px solid var(--border);
-    font-size: 0.9rem;
+    border-radius: 0;
+    border-right: 2px solid var(--border);
+    font-size: clamp(0.7rem, 2.4cqi, 1.1rem);
     font-weight: 500;
     background: none;
     cursor: pointer;
@@ -193,6 +192,9 @@ nav .nav-links .nav-logout-btn {
     transition: background-color 0.15s;
     text-decoration: none;
     white-space: nowrap;
+}
+nav .nav-links > *:first-child {
+    border-left: 2px solid var(--border);
 }
 
 nav .nav-links a:hover,
@@ -226,6 +228,7 @@ nav .nav-links .nav-logout-btn:hover {
     right: 0;
     top: calc(100% + 4px);
     background: var(--card-bg);
+    border: none;
     border: 1px solid var(--border);
     border-radius: 0;
     z-index: 100;
@@ -294,7 +297,6 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
     border-top: none;
 }
 
@@ -663,12 +665,10 @@ form {
 
 /* ===== Footer ===== */
 footer {
-    margin-top: 4px;
     padding: 12px;
     text-align: center;
     color: var(--text-muted);
     font-size: 0.8rem;
-    border-top: 2px solid var(--border);
 }
 
 .stealth-link {
