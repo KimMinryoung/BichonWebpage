@@ -11,8 +11,22 @@ const helmet = require('helmet');
 const csrfProtection = require('./middleware/csrf');
 const sanitizeHtml = require('sanitize-html');
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
+
+// Backend API proxy — must be before body parsers and CSRF
+app.use('/api/proxy', createProxyMiddleware({
+    target: CHAT_API_URL,
+    changeOrigin: true,
+    pathRewrite: { '^/api/proxy': '' },
+    // Disable buffering for streaming responses (SSE)
+    onProxyRes: (proxyRes) => {
+        proxyRes.headers['X-Accel-Buffering'] = 'no';
+    },
+}));
 
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
 if (process.env.NODE_ENV === 'production') {
@@ -39,7 +53,7 @@ app.use(helmet({
             workerSrc: ["'self'", 'blob:'],
             styleSrc: ["'self'", "'unsafe-inline'"],
             imgSrc: ["'self'", 'data:'],
-            connectSrc: ["'self'", 'https://*.onrender.com', 'https://leninbot.duckdns.org'],
+            connectSrc: ["'self'"],
             fontSrc: ["'self'"],
             objectSrc: ["'none'"],
             frameAncestors: ["'none'"]
