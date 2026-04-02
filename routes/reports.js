@@ -1,23 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const cache = require('../config/report-cache');
 
-const CHAT_API_URL = process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
+const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const REPORTS_PER_PAGE = 20;
-
-// ── In-memory cache ─────────────────────────────────────────
-// Reports rarely change; cache indefinitely until manual purge.
-const _listCache = new Map();   // "page:N" → { data, ts }
-const _reportCache = new Map(); // id → report object
-const _researchListCache = { data: null, ts: 0 }; // research list cache
-const LIST_TTL_MS = 10 * 60 * 1000; // list cache: 10 min (new reports appear)
 
 // POST /cache/clear — manual cache purge
 router.post('/cache/clear', (req, res) => {
     if (!req.session.isAuthenticated) return res.status(403).send('Forbidden');
-    _listCache.clear();
-    _reportCache.clear();
-    _researchListCache.data = null;
-    _researchListCache.ts = 0;
+    cache.clearAll();
     res.json({ cleared: true });
 });
 
@@ -26,14 +17,10 @@ router.get('/', async (req, res) => {
     try {
         const currentPage = parseInt(req.query.page) || 1;
         const offset = (currentPage - 1) * REPORTS_PER_PAGE;
-        const cacheKey = `page:${currentPage}`;
 
         // Fetch task reports (with cache)
-        let taskData;
-        const cached = _listCache.get(cacheKey);
-        if (cached && (Date.now() - cached.ts) < LIST_TTL_MS) {
-            taskData = cached.data;
-        } else {
+        let taskData = cache.getList(currentPage);
+        if (!taskData) {
             const response = await fetch(
                 `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`
             );
@@ -43,7 +30,7 @@ router.get('/', async (req, res) => {
             const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
 
             for (const r of data.reports || []) {
-                _reportCache.set(r.id, r);
+                cache.setReport(r);
             }
 
             taskData = {
@@ -52,35 +39,39 @@ router.get('/', async (req, res) => {
                 totalPages,
                 paginationBase: '/reports?page='
             };
-            _listCache.set(cacheKey, { data: taskData, ts: Date.now() });
+            cache.setList(currentPage, taskData);
         }
 
         // Fetch research list (with cache)
-        let researchFiles = [];
-        if (_researchListCache.data && (Date.now() - _researchListCache.ts) < LIST_TTL_MS) {
-            researchFiles = _researchListCache.data;
-        } else {
+        let researchFiles = cache.getResearchList();
+        if (!researchFiles) {
+            researchFiles = [];
             try {
                 const rRes = await fetch(`${CHAT_API_URL}/research`);
                 if (rRes.ok) {
                     const rData = await rRes.json();
                     const files = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
 
-                    // Fetch each file to extract markdown # title
                     await Promise.all(files.map(async (f) => {
+                        // Check file cache first
+                        const cached = cache.getResearch(f.filename);
+                        if (cached && cached.title) {
+                            f.title = cached.title;
+                            return;
+                        }
                         try {
                             const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}`);
                             if (r.ok) {
                                 const d = await r.json();
                                 const match = (d.content || '').match(/^#\s+(.+)/m);
                                 if (match) f.title = match[1];
+                                cache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
                             }
-                        } catch (_) { /* keep filename as fallback */ }
+                        } catch (_) {}
                     }));
 
                     researchFiles = files;
-                    _researchListCache.data = researchFiles;
-                    _researchListCache.ts = Date.now();
+                    cache.setResearchList(researchFiles);
                 }
             } catch (e) {
                 console.error('Error fetching research list:', e);
@@ -103,6 +94,13 @@ router.get('/', async (req, res) => {
 router.get('/research/:filename', async (req, res) => {
     try {
         const filename = req.params.filename;
+
+        // Check file cache
+        const cached = cache.getResearch(filename);
+        if (cached && cached.content) {
+            return res.render('public/research-view', { filename, markdown: cached.content });
+        }
+
         const response = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(filename)}`);
         if (!response.ok) {
             return res.status(404).render('layouts/main', {
@@ -113,6 +111,9 @@ router.get('/research/:filename', async (req, res) => {
 
         const data = await response.json();
         const markdown = data.content || '';
+        const match = markdown.match(/^#\s+(.+)/m);
+        cache.setResearch(filename, { content: markdown, title: match ? match[1] : filename });
+
         res.render('public/research-view', { filename, markdown });
     } catch (error) {
         console.error('Error fetching research:', error);
@@ -128,15 +129,13 @@ router.get('/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
 
-        // Check report cache (no TTL — reports don't change)
-        const cached = _reportCache.get(id);
+        // Check file cache (permanent — reports don't change)
+        const cached = cache.getReport(id);
         if (cached) {
             return res.render('public/report-view', { report: cached });
         }
 
-        const response = await fetch(
-            `${CHAT_API_URL}/reports/${id}`
-        );
+        const response = await fetch(`${CHAT_API_URL}/reports/${id}`);
         if (!response.ok) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',
@@ -146,7 +145,7 @@ router.get('/:id', async (req, res) => {
 
         const data = await response.json();
         const report = data.report;
-        _reportCache.set(id, report);
+        cache.setReport(report);
 
         res.render('public/report-view', { report });
     } catch (error) {
