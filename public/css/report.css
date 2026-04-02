@@ -16,5 +16,5 @@
 .report-task-label { color: var(--text-muted); font-size: 0.9em; }
 .report-task-details { margin-bottom: 0.5em; }
 .report-task-details summary { color: var(--link); font-size: 0.85em; cursor: pointer; }
-.report-task-content { color: var(--text-secondary); font-size: 0.85em; white-space: pre-wrap; margin-top: 0.3em; padding-left: 0.5em; border-left: 2px solid var(--border); }
+.report-task-content { color: var(--text-secondary); font-size: 0.85em; white-space: pre-wrap; margin-top: 0.3em; padding-left: 0.5em; border-left: 1px solid var(--border); }
 .report-id { font-size: 0.65em; color: var(--text-muted); margin-right: 0.4em; vertical-align: middle; }

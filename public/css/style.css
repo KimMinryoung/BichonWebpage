@@ -111,7 +111,7 @@ a:hover {
 /* ===== Box (generic surface) ===== */
 .box {
     background-color: var(--card-bg);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     padding: 20px;
     margin-bottom: 0;
     border-radius: 0;
@@ -120,7 +120,7 @@ a:hover {
 /* ===== Navigation ===== */
 nav {
     background-color: var(--nav-bg);
-    border-bottom: 2px solid var(--border);
+    border: 1px solid var(--border);
     padding: 0;
     position: sticky;
     top: 0;
@@ -150,7 +150,6 @@ nav .logo {
     display: flex;
     align-items: center;
     padding: 10px 16px;
-    border-left: 2px solid var(--border);
 }
 
 nav .logo:hover {
@@ -179,7 +178,7 @@ nav .nav-links .nav-logout-btn {
     padding: 0px 0px;
     border: none;
     border-radius: 0;
-    border-right: 2px solid var(--border);
+    border-right: none;
     font-size: clamp(0.7rem, 2.4cqi, 1.1rem);
     font-weight: 500;
     background: none;
@@ -194,7 +193,7 @@ nav .nav-links .nav-logout-btn {
     white-space: nowrap;
 }
 nav .nav-links > *:first-child {
-    border-left: 2px solid var(--border);
+    border-left: none;
 }
 
 nav .nav-links a:hover,
@@ -336,7 +335,7 @@ header h1 {
 /* ===== Report Tabs ===== */
 .report-tabs {
     display: flex;
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     border-bottom: none;
 }
 
@@ -346,7 +345,7 @@ header h1 {
     background: var(--bg-surface);
     color: var(--text-muted);
     border: none;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
     cursor: pointer;
     font-size: 0.95rem;
     font-weight: 500;
@@ -366,7 +365,7 @@ header h1 {
 .report-tab.active {
     background: var(--card-bg);
     color: var(--text-primary);
-    border-bottom: 2px solid var(--accent-blue);
+    border-bottom: 1px solid var(--accent-blue);
 }
 
 .report-panel {
@@ -387,7 +386,7 @@ header h1 {
 
 .post-item {
     background-color: var(--card-bg);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     border-bottom: none;
     padding: 20px 24px;
     border-radius: 0;
@@ -395,11 +394,11 @@ header h1 {
 }
 
 .post-item + .post-item {
-    border-top: 1px solid var(--border);
+    border-top: none;
 }
 
 .post-item:last-child {
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .post-item h2 {
@@ -437,7 +436,7 @@ header h1 {
 /* ===== Single Post ===== */
 .post-content {
     background-color: var(--card-bg);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     padding: 32px;
     border-radius: 0;
 }
@@ -653,7 +652,7 @@ form {
 
 .login-box {
     background-color: var(--card-bg);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: 0;
     padding: 30px;
 }
@@ -784,7 +783,7 @@ footer {
 /* Chat Box */
 .chat-box {
     background-color: var(--bg-surface);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     border-top: none;
     border-radius: 0;
     padding: 20px;
@@ -891,7 +890,7 @@ footer {
     flex: 1;
     padding: 10px 12px;
     background-color: var(--input-bg);
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: 0;
     color: var(--text-primary);
     font-size: 1rem;

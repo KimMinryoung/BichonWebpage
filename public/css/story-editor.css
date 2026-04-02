@@ -73,7 +73,7 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 15px;
-    border-bottom: 2px solid #333;
+    border-bottom: 1px solid #333;
 }
 
 .scene-meta {
@@ -122,7 +122,7 @@
     justify-content: center;
     background: #f9f9f9;
     color: #888;
-    border: 2px dashed #ddd;
+    border: 1px dashed #ddd;
     border-radius: 8px;
 }
 
