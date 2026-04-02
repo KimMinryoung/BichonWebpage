@@ -26,4 +26,4 @@ Thumbs.db
 .claude/
 
 # temp files for dev
-temp_dev/
+temp_dev/data/
