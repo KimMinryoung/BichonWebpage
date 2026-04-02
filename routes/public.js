@@ -11,16 +11,15 @@ router.get('/', async (req, res) => {
         const currentPage = parseInt(req.query.page) || 1;
         const offset = (currentPage - 1) * POSTS_PER_PAGE;
 
-        // 총 게시물 수 조회
-        const { rows: countResult } = await db.query('SELECT COUNT(*) as count FROM posts');
-        const totalPosts = parseInt(countResult[0].count);
-        const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
-
-        // 게시물 목록 조회 (페이지네이션 적용)
-        const { rows: posts } = await db.query(
-            'SELECT id, title, content, created_at FROM posts ORDER BY created_at DESC LIMIT $1 OFFSET $2',
+        // 단일 쿼리로 게시물 + 총 개수 조회
+        const { rows } = await db.query(
+            'SELECT id, title, content, created_at, COUNT(*) OVER() AS total_count FROM posts ORDER BY created_at DESC LIMIT $1 OFFSET $2',
             [POSTS_PER_PAGE, offset]
         );
+
+        const totalPosts = rows.length > 0 ? parseInt(rows[0].total_count) : 0;
+        const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+        const posts = rows.map(({ total_count, ...post }) => post);
 
         res.render('public/index', {
             posts,

@@ -35,5 +35,8 @@ function isConnectionError(error) {
            error.message?.includes('connect');
 }
 
+// Pre-warm the connection pool at startup
+pool.query('SELECT 1').catch(() => {});
+
 module.exports = pool;
 module.exports.isConnectionError = isConnectionError;
