@@ -40,7 +40,9 @@ app.set('views', path.join(__dirname, 'views'));
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '7d',  // Cloudflare edge caches static assets for 7 days
+}));
 app.use(cookieParser());
 
 // Security headers
