@@ -5,6 +5,7 @@ const rateLimit = require('express-rate-limit');
 const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
+const postCache = require('../config/post-cache');
 
 // Rate limiter for login attempts: 5 attempts per 15 minutes per IP
 const loginLimiter = rateLimit({
@@ -161,6 +162,7 @@ router.post('/posts/new', requireAuth, async (req, res) => {
             'INSERT INTO posts (title, content) VALUES ($1, $2)',
             [title, content]
         );
+        postCache.invalidateIndex();
         res.redirect('/admin/posts?message=Post created successfully');
     } catch (error) {
         if (isConnectionError(error)) {
@@ -216,6 +218,7 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
+        postCache.deleteEntry(parseInt(postId));
         res.redirect('/post/' + postId);
     } catch (error) {
         if (isConnectionError(error)) {
@@ -235,12 +238,14 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
 // Delete post
 router.post('/posts/delete/:id', requireAuth, async (req, res) => {
     try {
-        const result = await db.query('DELETE FROM posts WHERE id = $1', [req.params.id]);
+        const id = parseInt(req.params.id);
+        const result = await db.query('DELETE FROM posts WHERE id = $1', [id]);
 
         if (result.rowCount === 0) {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
+        postCache.deleteEntry(id);
         res.redirect('/admin/posts?message=Post deleted successfully');
     } catch (error) {
         console.error('Error deleting post:', error);

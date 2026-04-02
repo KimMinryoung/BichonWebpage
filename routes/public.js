@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
 const paginationHelper = require('../config/paginationHelper');
+const cache = require('../config/post-cache');
 
 const POSTS_PER_PAGE = 20;
 
@@ -9,9 +10,16 @@ const POSTS_PER_PAGE = 20;
 router.get('/', async (req, res) => {
     try {
         const currentPage = parseInt(req.query.page) || 1;
+        const cacheKey = `page:${currentPage}`;
+
+        // Check index cache
+        const cached = cache.getIndex();
+        if (cached && cached[cacheKey]) {
+            return res.render('public/index', cached[cacheKey]);
+        }
+
         const offset = (currentPage - 1) * POSTS_PER_PAGE;
 
-        // 단일 쿼리로 게시물 + 총 개수 조회
         const { rows } = await db.query(
             'SELECT id, title, content, created_at, COUNT(*) OVER() AS total_count FROM posts ORDER BY created_at DESC LIMIT $1 OFFSET $2',
             [POSTS_PER_PAGE, offset]
@@ -21,12 +29,19 @@ router.get('/', async (req, res) => {
         const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
         const posts = rows.map(({ total_count, ...post }) => post);
 
-        res.render('public/index', {
-            posts,
-            currentPage,
-            totalPages,
-            paginationBase: '/?page='
-        });
+        // Cache individual posts
+        for (const p of posts) {
+            cache.setEntry(p);
+        }
+
+        const pageData = { posts, currentPage, totalPages, paginationBase: '/?page=' };
+
+        // Cache index
+        const indexData = cached || {};
+        indexData[cacheKey] = pageData;
+        cache.setIndex(indexData);
+
+        res.render('public/index', pageData);
     } catch (error) {
         console.error('Error fetching posts:', error);
         res.render('public/index', { posts: [], currentPage: 1, totalPages: 0 });
@@ -43,22 +58,27 @@ router.get('/chat', (req, res) => {
 // Single post view
 router.get('/post/:id', async (req, res) => {
     try {
-        const { rows: posts } = await db.query(
-            'SELECT * FROM posts WHERE id = $1',
-            [req.params.id]
-        );
+        const id = parseInt(req.params.id);
 
-        if (posts.length === 0) {
-            return res.status(404).render('layouts/main', {
-                title: '404 - Post Not Found',
-                body: '<div class="box"><h1>404</h1><p>Post not found.</p><a href="/">Go back home</a></div>'
-            });
+        // Check entry cache
+        let post = cache.getEntry(id);
+        if (!post) {
+            const { rows: posts } = await db.query(
+                'SELECT * FROM posts WHERE id = $1', [id]
+            );
+
+            if (posts.length === 0) {
+                return res.status(404).render('layouts/main', {
+                    title: '404 - Post Not Found',
+                    body: '<div class="box"><h1>404</h1><p>Post not found.</p><a href="/">Go back home</a></div>'
+                });
+            }
+
+            post = posts[0];
+            cache.setEntry(post);
         }
 
-        const post = posts[0];
-
-        // 이전 글 (더 오래된 글) / 다음 글 (더 새로운 글) 조회
-        // AND id != $2: JS Date의 밀리초 정밀도와 PostgreSQL 마이크로초 정밀도 차이로 자기 자신이 매칭되는 것을 방지
+        // prev/next navigation
         const [prevResult, nextResult] = await Promise.all([
             db.query('SELECT id FROM posts WHERE created_at < $1 AND id != $2 ORDER BY created_at DESC LIMIT 1', [post.created_at, post.id]),
             db.query('SELECT id FROM posts WHERE created_at > $1 AND id != $2 ORDER BY created_at ASC LIMIT 1', [post.created_at, post.id])
