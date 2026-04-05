@@ -109,7 +109,7 @@ const ko = {
 
     // 채팅 페이지
     chat: {
-        title: '사이버-레닌',
+        title: '사이버-레닌과 대화',
         placeholder: '레닌 동지에게 질문하세요...',
         send: '전송',
         thinking: '동지가 생각 중...',
@@ -224,7 +224,7 @@ const en = {
     },
 
     chat: {
-        title: 'Cyber-Lenin',
+        title: 'Chat with Cyber-Lenin',
         placeholder: 'Ask Comrade Lenin...',
         send: 'Send',
         thinking: 'Comrade is thinking...',
