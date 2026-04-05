@@ -119,6 +119,7 @@ router.get('/sitemap.xml', async (req, res) => {
         xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
         xml += '  <url><loc>https://cyber-lenin.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>\n';
         xml += '  <url><loc>https://cyber-lenin.com/chat</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>\n';
+        xml += '  <url><loc>https://cyber-lenin.com/reports</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n';
         for (const post of rows) {
             const date = new Date(post.created_at).toISOString().split('T')[0];
             xml += `  <url><loc>https://cyber-lenin.com/post/${post.id}</loc><lastmod>${date}</lastmod><priority>0.8</priority></url>\n`;
@@ -129,6 +130,44 @@ router.get('/sitemap.xml', async (req, res) => {
         console.error('Sitemap error:', error);
         res.status(500).send('');
     }
+});
+
+// atom.xml (RSS feed)
+router.get('/atom.xml', async (req, res) => {
+    try {
+        const { rows } = await db.query(
+            'SELECT id, title, content, created_at FROM posts ORDER BY created_at DESC LIMIT 20'
+        );
+        const updated = rows.length > 0 ? new Date(rows[0].created_at).toISOString() : new Date().toISOString();
+        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        xml += '<feed xmlns="http://www.w3.org/2005/Atom">\n';
+        xml += '  <title>Cyber-Lenin</title>\n';
+        xml += '  <link href="https://cyber-lenin.com/" rel="alternate"/>\n';
+        xml += '  <link href="https://cyber-lenin.com/atom.xml" rel="self"/>\n';
+        xml += '  <id>https://cyber-lenin.com/</id>\n';
+        xml += `  <updated>${updated}</updated>\n`;
+        for (const post of rows) {
+            const date = new Date(post.created_at).toISOString();
+            const snippet = (post.content || '').replace(/<[^>]*>/g, '').substring(0, 500);
+            xml += '  <entry>\n';
+            xml += `    <title>${post.title.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</title>\n`;
+            xml += `    <link href="https://cyber-lenin.com/post/${post.id}"/>\n`;
+            xml += `    <id>https://cyber-lenin.com/post/${post.id}</id>\n`;
+            xml += `    <updated>${date}</updated>\n`;
+            xml += `    <summary>${snippet.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</summary>\n`;
+            xml += '  </entry>\n';
+        }
+        xml += '</feed>';
+        res.type('application/atom+xml').send(xml);
+    } catch (error) {
+        console.error('Atom feed error:', error);
+        res.status(500).send('');
+    }
+});
+
+// /research → redirect to reports page
+router.get('/research', (req, res) => {
+    res.redirect(301, '/reports');
 });
 
 module.exports = router;

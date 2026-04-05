@@ -1,0 +1,1 @@
+{"id":4,"title":"Claude Code는 nul 파일 생성 버그 왜 안 고침?","content":"바본가?\r\n디렉토리 내에 nul 파일이 있으면 문서 여는 것도 크래시 나고 git stage도 누락되고 많은 문제가 발생\r\n\r\nWindows 환경에서 Claude Code가 개발폴더에 'nul' 생성할 때 조치법)\r\n1. git bash로 rm nul 실행\r\n\r\n2. CLAUDE.md에 \"Windows에서 bash command 실행할 때는 output 리다이렉션을 nul 대신 /dev/null로 하라\"는 라인을 추가","created_at":"2026-01-31T09:18:25.797Z"}
