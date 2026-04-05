@@ -60,4 +60,12 @@ async function setNav(ids) {
     } catch (e) { console.error('[post-cache] nav write error:', e.message); }
 }
 
-module.exports = { getEntry, setEntry, deleteEntry, getIndex, setIndex, invalidateIndex, getNav, setNav };
+async function clearAll() {
+    try {
+        const keys = [];
+        for await (const key of redis.scanIterator({ MATCH: 'post:*' })) keys.push(key);
+        if (keys.length > 0) await redis.del(keys);
+    } catch {}
+}
+
+module.exports = { getEntry, setEntry, deleteEntry, getIndex, setIndex, invalidateIndex, getNav, setNav, clearAll };

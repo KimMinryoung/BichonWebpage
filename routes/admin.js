@@ -6,6 +6,8 @@ const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
 const postCache = require('../config/post-cache');
+const diaryCache = require('../config/diary-cache');
+const reportCache = require('../config/report-cache');
 
 // Rate limiter for login attempts: 5 attempts per 15 minutes per IP
 const loginLimiter = rateLimit({
@@ -78,6 +80,12 @@ router.post('/logout', (req, res) => {
         }
         res.redirect('/');
     });
+});
+
+// Clear all caches
+router.post('/cache/clear', requireAuth, async (req, res) => {
+    await Promise.all([postCache.clearAll(), diaryCache.clearAll(), reportCache.clearAll()]);
+    res.json({ cleared: true });
 });
 
 // Dashboard
