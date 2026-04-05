@@ -2,11 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const session = require('express-session');
-const pgSession = require('connect-pg-simple')(session);
+const { RedisStore } = require('connect-redis');
+const redisClient = require('./config/redis');
 const path = require('path');
 const allStrings = require('./config/strings');
 const cookieParser = require('cookie-parser');
-const pool = require('./config/database');
 const helmet = require('helmet');
 const csrfProtection = require('./middleware/csrf');
 const sanitizeHtml = require('sanitize-html');
@@ -66,11 +66,7 @@ app.use(helmet({
 
 // Session configuration
 app.use(session({
-    store: new pgSession({
-        pool: pool,
-        tableName: 'user_sessions',
-        createTableIfMissing: true
-    }),
+    store: new RedisStore({ client: redisClient, prefix: 'sess:' }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,

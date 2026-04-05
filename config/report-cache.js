@@ -1,85 +1,81 @@
 /**
- * report-cache.js — Local file cache for reports and research.
+ * report-cache.js — Redis cache for reports and research.
  *
  * Reports and research are immutable once created,
  * so individual entries can be cached permanently.
  * Listings are cached with a short TTL.
  */
 
-const fs = require('fs');
-const path = require('path');
+const redis = require('./redis');
 
-const CACHE_DIR = process.env.REPORT_CACHE_DIR || path.join(__dirname, '..', 'data', 'report-cache');
-const LIST_TTL_MS = 10 * 60 * 1000; // 10 minutes
-
-fs.mkdirSync(CACHE_DIR, { recursive: true });
-
-function _path(prefix, key) {
-    const safe = String(key).replace(/[^a-zA-Z0-9._-]/g, '_');
-    return path.join(CACHE_DIR, `${prefix}_${safe}.json`);
-}
-
-const LIST_PATH = path.join(CACHE_DIR, '_list.json');
-const RESEARCH_LIST_PATH = path.join(CACHE_DIR, '_research_list.json');
+const LIST_TTL = 600; // 10 minutes in seconds
 
 // ── Report cache (permanent) ──
 
-function getReport(id) {
+async function getReport(id) {
     try {
-        return JSON.parse(fs.readFileSync(_path('report', id), 'utf8'));
+        const data = await redis.get(`report:${id}`);
+        return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-function setReport(report) {
+async function setReport(report) {
     try {
-        fs.writeFileSync(_path('report', report.id), JSON.stringify(report), 'utf8');
+        await redis.set(`report:${report.id}`, JSON.stringify(report));
     } catch (e) { console.error('[report-cache] write error:', e.message); }
 }
 
 // ── Research cache (permanent) ──
 
-function getResearch(filename) {
+async function getResearch(filename) {
     try {
-        return JSON.parse(fs.readFileSync(_path('research', filename), 'utf8'));
+        const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
+        const data = await redis.get(`research:${safe}`);
+        return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-function setResearch(filename, data) {
+async function setResearch(filename, data) {
     try {
-        fs.writeFileSync(_path('research', filename), JSON.stringify(data), 'utf8');
+        const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
+        await redis.set(`research:${safe}`, JSON.stringify(data));
     } catch (e) { console.error('[report-cache] research write error:', e.message); }
 }
 
 // ── List caches (TTL-based) ──
 
-function _getListFile(filePath) {
+async function getList(page) {
     try {
-        const stat = fs.statSync(filePath);
-        if (Date.now() - stat.mtimeMs > LIST_TTL_MS) return null;
-        return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        const data = await redis.get(`report:list:${page}`);
+        return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-function _setListFile(filePath, data) {
+async function setList(page, data) {
     try {
-        fs.writeFileSync(filePath, JSON.stringify(data), 'utf8');
+        await redis.set(`report:list:${page}`, JSON.stringify(data), { EX: LIST_TTL });
     } catch (e) { console.error('[report-cache] list write error:', e.message); }
 }
 
-function getList(page) { return _getListFile(LIST_PATH)?.[`page:${page}`] || null; }
-function setList(page, data) {
-    const existing = _getListFile(LIST_PATH) || {};
-    existing[`page:${page}`] = data;
-    _setListFile(LIST_PATH, existing);
+async function getResearchList() {
+    try {
+        const data = await redis.get('report:research_list');
+        return data ? JSON.parse(data) : null;
+    } catch { return null; }
 }
 
-function getResearchList() { return _getListFile(RESEARCH_LIST_PATH); }
-function setResearchList(data) { _setListFile(RESEARCH_LIST_PATH, data); }
-
-function clearAll() {
+async function setResearchList(data) {
     try {
-        const files = fs.readdirSync(CACHE_DIR);
-        for (const f of files) fs.unlinkSync(path.join(CACHE_DIR, f));
+        await redis.set('report:research_list', JSON.stringify(data), { EX: LIST_TTL });
+    } catch (e) { console.error('[report-cache] research list write error:', e.message); }
+}
+
+async function clearAll() {
+    try {
+        const keys = [];
+        for await (const key of redis.scanIterator({ MATCH: 'report:*' })) keys.push(key);
+        for await (const key of redis.scanIterator({ MATCH: 'research:*' })) keys.push(key);
+        if (keys.length > 0) await redis.del(keys);
     } catch {}
 }
 

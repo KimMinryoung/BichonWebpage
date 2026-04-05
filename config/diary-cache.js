@@ -1,5 +1,5 @@
 /**
- * diary-cache.js — Local file cache for AI diary entries.
+ * diary-cache.js — Redis cache for AI diary entries.
  *
  * Diary entries are immutable (never updated after creation),
  * so individual entries can be cached permanently.
@@ -7,68 +7,58 @@
  * may be added by leninbot at any time.
  */
 
-const fs = require('fs');
-const path = require('path');
+const redis = require('./redis');
 
-const CACHE_DIR = process.env.DIARY_CACHE_DIR || path.join(__dirname, '..', 'data', 'diary-cache');
-const INDEX_TTL_MS = 5 * 60 * 1000; // 5 minutes
+const INDEX_TTL = 300; // 5 minutes in seconds
 
-// Ensure cache directory exists
-fs.mkdirSync(CACHE_DIR, { recursive: true });
-
-function _entryPath(id) {
-    return path.join(CACHE_DIR, `${id}.json`);
-}
-
-const INDEX_PATH = path.join(CACHE_DIR, '_index.json');
-
-// ── Individual entry cache (permanent) ──
-
-function getEntry(id) {
+async function getEntry(id) {
     try {
-        const data = fs.readFileSync(_entryPath(id), 'utf8');
-        return JSON.parse(data);
-    } catch {
-        return null;
-    }
+        const data = await redis.get(`diary:${id}`);
+        return data ? JSON.parse(data) : null;
+    } catch { return null; }
 }
 
-function setEntry(diary) {
+async function setEntry(diary) {
     try {
-        fs.writeFileSync(_entryPath(diary.id), JSON.stringify(diary), 'utf8');
-    } catch (e) {
-        console.error('[diary-cache] write error:', e.message);
-    }
+        await redis.set(`diary:${diary.id}`, JSON.stringify(diary));
+    } catch (e) { console.error('[diary-cache] write error:', e.message); }
 }
 
-function deleteEntry(id) {
-    try { fs.unlinkSync(_entryPath(id)); } catch {}
-    invalidateIndex();
+async function deleteEntry(id) {
+    try { await redis.del(`diary:${id}`); } catch {}
+    await invalidateIndex();
 }
 
-// ── Index cache (TTL-based) ──
-
-function getIndex() {
+async function getIndex() {
     try {
-        const stat = fs.statSync(INDEX_PATH);
-        if (Date.now() - stat.mtimeMs > INDEX_TTL_MS) return null; // expired
-        const data = fs.readFileSync(INDEX_PATH, 'utf8');
-        return JSON.parse(data);
-    } catch {
-        return null;
-    }
+        const data = await redis.get('diary:index');
+        return data ? JSON.parse(data) : null;
+    } catch { return null; }
 }
 
-function setIndex(data) {
+async function setIndex(data) {
     try {
-        fs.writeFileSync(INDEX_PATH, JSON.stringify(data), 'utf8');
-    } catch (e) {
-        console.error('[diary-cache] index write error:', e.message);
-    }
+        await redis.set('diary:index', JSON.stringify(data), { EX: INDEX_TTL });
+    } catch (e) { console.error('[diary-cache] index write error:', e.message); }
 }
 
-function invalidateIndex() {
-    try { fs.unlinkSync(INDEX_PATH); } catch {}
+async function invalidateIndex() {
+    try { await redis.del('diary:index', 'diary:nav'); } catch {}
 }
 
-module.exports = { getEntry, setEntry, deleteEntry, getIndex, setIndex, invalidateIndex };
+// ── Navigation cache (sorted ID list, same TTL as index) ──
+
+async function getNav() {
+    try {
+        const data = await redis.get('diary:nav');
+        return data ? JSON.parse(data) : null;
+    } catch { return null; }
+}
+
+async function setNav(ids) {
+    try {
+        await redis.set('diary:nav', JSON.stringify(ids), { EX: INDEX_TTL });
+    } catch (e) { console.error('[diary-cache] nav write error:', e.message); }
+}
+
+module.exports = { getEntry, setEntry, deleteEntry, getIndex, setIndex, invalidateIndex, getNav, setNav };

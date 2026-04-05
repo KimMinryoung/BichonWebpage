@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
         const cacheKey = `page:${currentPage}`;
 
         // Check index cache
-        const cached = cache.getIndex();
+        const cached = await cache.getIndex();
         if (cached && cached[cacheKey]) {
             return res.render('public/ai-diary', cached[cacheKey]);
         }
@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 
         // Cache individual entries
         for (const d of diaries) {
-            cache.setEntry(d);
+            await cache.setEntry(d);
         }
 
         const pageData = { diaries, currentPage, totalPages, paginationBase: '/ai-diary?page=' };
@@ -39,7 +39,7 @@ router.get('/', async (req, res) => {
         // Cache index (TTL-based)
         const indexData = cached || {};
         indexData[cacheKey] = pageData;
-        cache.setIndex(indexData);
+        await cache.setIndex(indexData);
 
         res.render('public/ai-diary', pageData);
     } catch (error) {
@@ -54,7 +54,7 @@ router.get('/:id', async (req, res) => {
         const id = parseInt(req.params.id);
 
         // Check entry cache
-        let diary = cache.getEntry(id);
+        let diary = await cache.getEntry(id);
         if (!diary) {
             const { rows } = await db.query('SELECT * FROM ai_diary WHERE id = $1', [id]);
             if (rows.length === 0) {
@@ -64,17 +64,19 @@ router.get('/:id', async (req, res) => {
                 });
             }
             diary = rows[0];
-            cache.setEntry(diary);
+            await cache.setEntry(diary);
         }
 
-        // prev/next navigation — still needs DB (lightweight query)
-        const [prevResult, nextResult] = await Promise.all([
-            db.query('SELECT id FROM ai_diary WHERE created_at < $1 AND id != $2 ORDER BY created_at DESC LIMIT 1', [diary.created_at, diary.id]),
-            db.query('SELECT id FROM ai_diary WHERE created_at > $1 AND id != $2 ORDER BY created_at ASC LIMIT 1', [diary.created_at, diary.id])
-        ]);
-
-        const prevId = prevResult.rows.length > 0 ? prevResult.rows[0].id : null;
-        const nextId = nextResult.rows.length > 0 ? nextResult.rows[0].id : null;
+        // prev/next navigation from cached sorted ID list
+        let nav = await cache.getNav();
+        if (!nav) {
+            const { rows } = await db.query('SELECT id FROM ai_diary ORDER BY created_at DESC');
+            nav = rows.map(r => r.id);
+            await cache.setNav(nav);
+        }
+        const idx = nav.indexOf(id);
+        const prevId = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
+        const nextId = idx > 0 ? nav[idx - 1] : null;
 
         res.render('public/ai-diary-view', { diary, prevId, nextId });
     } catch (error) {
@@ -96,7 +98,7 @@ router.post('/:id/delete', requireAuth, async (req, res) => {
             return res.redirect('/ai-diary?message=일기를 찾을 수 없습니다.&type=error');
         }
 
-        cache.deleteEntry(id);
+        await cache.deleteEntry(id);
         res.redirect('/ai-diary?message=일기가 삭제되었습니다.');
     } catch (error) {
         console.error('Error deleting diary:', error);

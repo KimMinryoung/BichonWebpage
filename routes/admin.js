@@ -162,7 +162,7 @@ router.post('/posts/new', requireAuth, async (req, res) => {
             'INSERT INTO posts (title, content) VALUES ($1, $2)',
             [title, content]
         );
-        postCache.invalidateIndex();
+        await postCache.invalidateIndex();
         res.redirect('/admin/posts?message=Post created successfully');
     } catch (error) {
         if (isConnectionError(error)) {
@@ -218,7 +218,7 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
-        postCache.deleteEntry(parseInt(postId));
+        await postCache.deleteEntry(parseInt(postId));
         res.redirect('/post/' + postId);
     } catch (error) {
         if (isConnectionError(error)) {
@@ -245,7 +245,7 @@ router.post('/posts/delete/:id', requireAuth, async (req, res) => {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
-        postCache.deleteEntry(id);
+        await postCache.deleteEntry(id);
         res.redirect('/admin/posts?message=Post deleted successfully');
     } catch (error) {
         console.error('Error deleting post:', error);

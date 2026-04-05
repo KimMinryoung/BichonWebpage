@@ -6,9 +6,9 @@ const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:80
 const REPORTS_PER_PAGE = 20;
 
 // POST /cache/clear — manual cache purge
-router.post('/cache/clear', (req, res) => {
+router.post('/cache/clear', async (req, res) => {
     if (!req.session.isAuthenticated) return res.status(403).send('Forbidden');
-    cache.clearAll();
+    await cache.clearAll();
     res.json({ cleared: true });
 });
 
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         const offset = (currentPage - 1) * REPORTS_PER_PAGE;
 
         // Fetch task reports (with cache)
-        let taskData = cache.getList(currentPage);
+        let taskData = await cache.getList(currentPage);
         if (!taskData) {
             const response = await fetch(
                 `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
             const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
 
             for (const r of data.reports || []) {
-                cache.setReport(r);
+                await cache.setReport(r);
             }
 
             taskData = {
@@ -39,11 +39,11 @@ router.get('/', async (req, res) => {
                 totalPages,
                 paginationBase: '/reports?page='
             };
-            cache.setList(currentPage, taskData);
+            await cache.setList(currentPage, taskData);
         }
 
         // Fetch research list (with cache)
-        let researchFiles = cache.getResearchList();
+        let researchFiles = await cache.getResearchList();
         if (!researchFiles) {
             researchFiles = [];
             try {
@@ -54,7 +54,7 @@ router.get('/', async (req, res) => {
 
                     await Promise.all(files.map(async (f) => {
                         // Check file cache first
-                        const cached = cache.getResearch(f.filename);
+                        const cached = await cache.getResearch(f.filename);
                         if (cached && cached.title) {
                             f.title = cached.title;
                             return;
@@ -65,13 +65,13 @@ router.get('/', async (req, res) => {
                                 const d = await r.json();
                                 const match = (d.content || '').match(/^#\s+(.+)/m);
                                 if (match) f.title = match[1];
-                                cache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
+                                await cache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
                             }
                         } catch (_) {}
                     }));
 
                     researchFiles = files;
-                    cache.setResearchList(researchFiles);
+                    await cache.setResearchList(researchFiles);
                 }
             } catch (e) {
                 console.error('Error fetching research list:', e);
@@ -96,7 +96,7 @@ router.get('/research/:filename', async (req, res) => {
         const filename = req.params.filename;
 
         // Check file cache
-        const cached = cache.getResearch(filename);
+        const cached = await cache.getResearch(filename);
         if (cached && cached.content) {
             return res.render('public/research-view', { filename, markdown: cached.content });
         }
@@ -112,7 +112,7 @@ router.get('/research/:filename', async (req, res) => {
         const data = await response.json();
         const markdown = data.content || '';
         const match = markdown.match(/^#\s+(.+)/m);
-        cache.setResearch(filename, { content: markdown, title: match ? match[1] : filename });
+        await cache.setResearch(filename, { content: markdown, title: match ? match[1] : filename });
 
         res.render('public/research-view', { filename, markdown });
     } catch (error) {
@@ -130,7 +130,7 @@ router.get('/:id', async (req, res) => {
         const id = parseInt(req.params.id);
 
         // Check file cache (permanent — reports don't change)
-        const cached = cache.getReport(id);
+        const cached = await cache.getReport(id);
         if (cached) {
             return res.render('public/report-view', { report: cached });
         }
@@ -145,7 +145,7 @@ router.get('/:id', async (req, res) => {
 
         const data = await response.json();
         const report = data.report;
-        cache.setReport(report);
+        await cache.setReport(report);
 
         res.render('public/report-view', { report });
     } catch (error) {

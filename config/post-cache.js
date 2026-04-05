@@ -1,62 +1,63 @@
 /**
- * post-cache.js — Local file cache for blog posts.
+ * post-cache.js — Redis cache for blog posts.
  *
  * Posts are rarely modified. Individual posts are cached permanently
  * and invalidated on edit/delete. The listing index uses a short TTL
  * and is also invalidated on any write operation.
  */
 
-const fs = require('fs');
-const path = require('path');
+const redis = require('./redis');
 
-const CACHE_DIR = process.env.POST_CACHE_DIR || path.join(__dirname, '..', 'data', 'post-cache');
-const INDEX_TTL_MS = 10 * 60 * 1000; // 10 minutes
+const INDEX_TTL = 600; // 10 minutes in seconds
 
-fs.mkdirSync(CACHE_DIR, { recursive: true });
-
-function _entryPath(id) {
-    return path.join(CACHE_DIR, `${id}.json`);
-}
-
-const INDEX_PATH = path.join(CACHE_DIR, '_index.json');
-
-// ── Individual post cache (permanent until invalidated) ──
-
-function getEntry(id) {
+async function getEntry(id) {
     try {
-        return JSON.parse(fs.readFileSync(_entryPath(id), 'utf8'));
+        const data = await redis.get(`post:${id}`);
+        return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-function setEntry(post) {
+async function setEntry(post) {
     try {
-        fs.writeFileSync(_entryPath(post.id), JSON.stringify(post), 'utf8');
+        await redis.set(`post:${post.id}`, JSON.stringify(post));
     } catch (e) { console.error('[post-cache] write error:', e.message); }
 }
 
-function deleteEntry(id) {
-    try { fs.unlinkSync(_entryPath(id)); } catch {}
-    invalidateIndex();
+async function deleteEntry(id) {
+    try { await redis.del(`post:${id}`); } catch {}
+    await invalidateIndex();
 }
 
-// ── Index cache (TTL-based, invalidated on write) ──
-
-function getIndex() {
+async function getIndex() {
     try {
-        const stat = fs.statSync(INDEX_PATH);
-        if (Date.now() - stat.mtimeMs > INDEX_TTL_MS) return null;
-        return JSON.parse(fs.readFileSync(INDEX_PATH, 'utf8'));
+        const data = await redis.get('post:index');
+        return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-function setIndex(data) {
+async function setIndex(data) {
     try {
-        fs.writeFileSync(INDEX_PATH, JSON.stringify(data), 'utf8');
+        await redis.set('post:index', JSON.stringify(data), { EX: INDEX_TTL });
     } catch (e) { console.error('[post-cache] index write error:', e.message); }
 }
 
-function invalidateIndex() {
-    try { fs.unlinkSync(INDEX_PATH); } catch {}
+async function invalidateIndex() {
+    try { await redis.del('post:index', 'post:nav'); } catch {}
 }
 
-module.exports = { getEntry, setEntry, deleteEntry, getIndex, setIndex, invalidateIndex };
+// ── Navigation cache (sorted ID list, same TTL as index) ──
+
+async function getNav() {
+    try {
+        const data = await redis.get('post:nav');
+        return data ? JSON.parse(data) : null;
+    } catch { return null; }
+}
+
+async function setNav(ids) {
+    try {
+        await redis.set('post:nav', JSON.stringify(ids), { EX: INDEX_TTL });
+    } catch (e) { console.error('[post-cache] nav write error:', e.message); }
+}
+
+module.exports = { getEntry, setEntry, deleteEntry, getIndex, setIndex, invalidateIndex, getNav, setNav };
