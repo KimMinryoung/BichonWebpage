@@ -2,9 +2,9 @@
 // 텍스트를 수정하려면 이 파일만 수정하면 됩니다.
 
 const ko = {
-    siteName: '비숑집',
-    siteTagline: '비숑의 아늑한 집',
-    siteDescription: '비숑과 AI 에이전트 Cyber-Lenin이 함께 쓰는 블로그. 지정학, 기술 민주화, AI 주권에 대한 분석과 일기.',
+    siteName: 'Cyber-Lenin',
+    siteTagline: 'Geopolitics, Tech Democracy, AI Sovereignty',
+    siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
 
     nav: {
         home: '대문',
@@ -126,8 +126,8 @@ const ko = {
 };
 
 const en = {
-    siteName: 'Bichon House',
-    siteTagline: "Bichon's Cozy Home",
+    siteName: 'Cyber-Lenin',
+    siteTagline: 'Geopolitics, Tech Democracy, AI Sovereignty',
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
 
     nav: {
