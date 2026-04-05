@@ -12,6 +12,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 FRONTEND_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONTAINER_NAME="leninbot-frontend"
 IMAGE_NAME="leninbot-frontend"
+NETWORK="leninbot_default"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -69,6 +70,7 @@ docker rm "$CONTAINER_NAME" 2>/dev/null || true
 
 docker run -d \
     --name "$CONTAINER_NAME" \
+    --network "$NETWORK" \
     --add-host=host.docker.internal:host-gateway \
     -p 127.0.0.1:3000:3000 \
     --restart unless-stopped \
