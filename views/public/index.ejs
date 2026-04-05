@@ -100,24 +100,21 @@
             </section>
         <% } %>
 
-        <!-- Recent AI Reports -->
-        <% if (recentReports && recentReports.length > 0) { %>
+        <!-- Recent Research -->
+        <% if (recentResearch && recentResearch.length > 0) { %>
             <section class="home-section">
                 <div class="home-section-header">
                     <h2><%= strings.home.recentReports %></h2>
                     <a href="/reports" class="btn btn-small"><%= strings.home.viewAll %></a>
                 </div>
                 <ul class="post-list">
-                    <% recentReports.forEach(report => { %>
+                    <% recentResearch.forEach(file => { %>
                         <li class="post-item">
-                            <h2><a href="/reports/<%= report.id %>"><%= report.title || ('Report #' + report.id) %></a></h2>
-                            <% if (report.created_at) { %>
+                            <h2><a href="/reports/research/<%= encodeURIComponent(file.filename) %>"><%= file.title || file.filename %></a></h2>
+                            <% if (file.modified_at) { %>
                                 <div class="post-meta">
-                                    <time class="local-date" datetime="<%= new Date(report.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                                    <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                                 </div>
-                            <% } %>
-                            <% if (report.summary) { %>
-                                <p class="post-excerpt"><%- truncateHtml(sanitize(report.summary), 200) %></p>
                             <% } %>
                         </li>
                     <% }) %>

@@ -14,30 +14,45 @@ const RECENT_LIMIT = 5;
 // Homepage
 router.get('/', async (req, res) => {
     try {
-        // Fetch recent posts, diaries, and reports in parallel
-        const [postsResult, diariesResult, reportsResult] = await Promise.allSettled([
+        // Fetch recent posts, diaries, and research in parallel
+        const [postsResult, diariesResult, researchResult] = await Promise.allSettled([
             db.query('SELECT id, title, content, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             db.query('SELECT id, title, content, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             (async () => {
-                const cached = await reportCache.getList('home');
-                if (cached) return cached;
-                const response = await fetch(`${CHAT_API_URL}/reports?limit=${RECENT_LIMIT}&offset=0`);
-                if (!response.ok) throw new Error(`API ${response.status}`);
-                const data = await response.json();
-                const reports = data.reports || [];
-                await reportCache.setList('home', reports);
-                return reports;
+                let files = await reportCache.getResearchList();
+                if (!files) {
+                    const response = await fetch(`${CHAT_API_URL}/research`);
+                    if (!response.ok) throw new Error(`API ${response.status}`);
+                    const data = await response.json();
+                    files = (data.files || []).sort((a, b) => b.modified_at - a.modified_at);
+                    // Fetch titles for top files
+                    await Promise.all(files.slice(0, RECENT_LIMIT).map(async (f) => {
+                        const cached = await reportCache.getResearch(f.filename);
+                        if (cached && cached.title) { f.title = cached.title; return; }
+                        try {
+                            const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}`);
+                            if (r.ok) {
+                                const d = await r.json();
+                                const match = (d.content || '').match(/^#\s+(.+)/m);
+                                if (match) f.title = match[1];
+                                await reportCache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
+                            }
+                        } catch (_) {}
+                    }));
+                    await reportCache.setResearchList(files);
+                }
+                return files.slice(0, RECENT_LIMIT);
             })()
         ]);
 
         const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
         const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
-        const recentReports = reportsResult.status === 'fulfilled' ? reportsResult.value : [];
+        const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
 
-        res.render('public/index', { recentPosts, recentDiaries, recentReports, pagePath: '/' });
+        res.render('public/index', { recentPosts, recentDiaries, recentResearch, pagePath: '/' });
     } catch (error) {
         console.error('Error fetching homepage data:', error);
-        res.render('public/index', { recentPosts: [], recentDiaries: [], recentReports: [] });
+        res.render('public/index', { recentPosts: [], recentDiaries: [], recentResearch: [] });
     }
 });
 
