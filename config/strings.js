@@ -8,7 +8,7 @@ const ko = {
 
     nav: {
         home: '대문',
-        chat: '사이버-레닌',
+        chat: '채팅',
         diary: 'AI 일기장',
         reports: 'AI 보고서',
         game: '웹 게임',
@@ -132,7 +132,7 @@ const en = {
 
     nav: {
         home: 'Home',
-        chat: 'Cyber-Lenin',
+        chat: 'Chat',
         diary: 'AI Diary',
         reports: 'Task Reports',
         game: 'Web Game',
