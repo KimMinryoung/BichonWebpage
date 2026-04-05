@@ -3,33 +3,8 @@
 <head>
     <%- include('../partials/head') %>
 </head>
-<body>
-    <div class="home-toolbar">
-        <button type="button" class="theme-toggle" id="themeToggle" title="Toggle theme">&#x263E;</button>
-        <div class="lang-dropdown">
-            <button type="button" class="lang-btn" id="langBtn">&#x1F310;<%= lang === 'en' ? 'English' : 'Korean' %></button>
-            <div class="lang-menu" id="langMenu">
-                <a href="#" data-lang="ko" class="<%= lang === 'ko' ? 'active' : '' %>">Korean</a>
-                <a href="#" data-lang="en" class="<%= lang === 'en' ? 'active' : '' %>">English</a>
-            </div>
-        </div>
-    </div>
-    <script src="/js/nav.js?v=<%= Date.now() %>"></script>
-    <% if (isAuthenticated) { %>
-    <nav class="admin-bar">
-        <div class="nav-content">
-            <div class="nav-links">
-                <a href="/admin"><%= strings.nav.dashboard %></a>
-                <a href="/admin/posts"><%= strings.nav.posts %></a>
-                <a href="/game"><%= strings.nav.game %></a>
-                <form action="/admin/logout" method="POST" style="display:inline;margin:0;">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit" class="nav-logout-btn"><%= strings.nav.logout %></button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <% } %>
+<body class="home-page">
+    <%- include('../partials/nav') %>
 
     <div class="container">
         <!-- Hero / Overview -->

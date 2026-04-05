@@ -382,6 +382,11 @@ header h1 {
 }
 
 /* ===== Home Page ===== */
+/* Hide nav links bar on home page (card UI replaces it) */
+.home-page > nav:not(.admin-bar) {
+    display: none;
+}
+
 .home-toolbar {
     display: flex;
     justify-content: flex-end;
