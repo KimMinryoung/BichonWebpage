@@ -70,13 +70,15 @@ docker rm "$CONTAINER_NAME" 2>/dev/null || true
 
 docker run -d \
     --name "$CONTAINER_NAME" \
-    --network "$NETWORK" \
     --add-host=host.docker.internal:host-gateway \
     -p 127.0.0.1:3000:3000 \
     --restart unless-stopped \
     --env-file "$FRONTEND_DIR/.env" \
     -v "$FRONTEND_DIR/data:/app/data" \
     "$IMAGE_NAME"
+
+# Connect to leninbot network for Redis access
+docker network connect "$NETWORK" "$CONTAINER_NAME" 2>/dev/null || true
 
 # 4. Cleanup
 docker image prune -f > /dev/null
