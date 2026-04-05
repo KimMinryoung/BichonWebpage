@@ -85,7 +85,7 @@
                 <ul class="post-list">
                     <% recentResearch.forEach(file => { %>
                         <li class="post-item">
-                            <h2><a href="/reports/research/<%= encodeURIComponent(file.filename) %>"><%= file.title || file.filename %></a></h2>
+                            <h2><a href="/reports/research/<%= encodeURIComponent(file.filename.replace(/\.md$/, '')) %>"><%= file.title || file.filename %></a></h2>
                             <% if (file.modified_at) { %>
                                 <div class="post-meta">
                                     <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>

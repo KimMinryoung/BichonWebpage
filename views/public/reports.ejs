@@ -26,7 +26,7 @@
                     %>
                         <li class="post-item">
                             <div>
-                                <h2><a href="/reports/research/<%= file.filename %>"><%= displayName %></a></h2>
+                                <h2><a href="/reports/research/<%= file.filename.replace(/\.md$/, '') %>"><%= displayName %></a></h2>
                                 <div class="post-meta">
                                     <span class="file-size"><%= (file.size / 1024).toFixed(1) %> KB</span>
                                     <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 작성' : ', written' %>"></time>

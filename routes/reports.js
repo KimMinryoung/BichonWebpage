@@ -93,7 +93,7 @@ router.get('/', async (req, res) => {
 // Research 개별 조회 (must be before /:id to avoid conflict)
 router.get('/research/:filename', async (req, res) => {
     try {
-        const filename = req.params.filename;
+        const filename = req.params.filename.endsWith('.md') ? req.params.filename : req.params.filename + '.md';
 
         // Check file cache
         const cached = await cache.getResearch(filename);

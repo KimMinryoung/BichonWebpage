@@ -206,7 +206,8 @@ router.get('/sitemap.xml', async (req, res) => {
         if (researchFiles) {
             for (const f of researchFiles) {
                 const date = f.modified_at ? new Date(f.modified_at * 1000).toISOString().split('T')[0] : '';
-                xml += `  <url><loc>https://cyber-lenin.com/reports/research/${encodeURIComponent(f.filename)}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}<priority>0.7</priority></url>\n`;
+                const slug = f.filename.replace(/\.md$/, '');
+                xml += `  <url><loc>https://cyber-lenin.com/reports/research/${encodeURIComponent(slug)}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}<priority>0.7</priority></url>\n`;
             }
         }
         xml += '</urlset>';
