@@ -1,6 +1,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title><%= typeof pageTitle !== 'undefined' && pageTitle ? pageTitle + ' - ' + strings.siteName : strings.siteName %></title>
+<% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
+<% const _title = (typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' - ' + strings.siteName : strings.siteName; %>
+<% const _url = 'https://cyber-lenin.com' + (typeof pagePath !== 'undefined' && pagePath ? pagePath : '/'); %>
+<meta name="description" content="<%= _desc %>">
+<link rel="canonical" href="<%= _url %>">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%= _title %>">
+<meta property="og:description" content="<%= _desc %>">
+<meta property="og:url" content="<%= _url %>">
+<meta property="og:site_name" content="<%= strings.siteName %>">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<%= _title %>">
+<meta name="twitter:description" content="<%= _desc %>">
 <script>
 (function(){var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t)})();
 </script>

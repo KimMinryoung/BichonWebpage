@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
             cache.setEntry(p);
         }
 
-        const pageData = { posts, currentPage, totalPages, paginationBase: '/?page=' };
+        const pageData = { posts, currentPage, totalPages, paginationBase: '/?page=', pagePath: currentPage > 1 ? `/?page=${currentPage}` : '/' };
 
         // Cache index
         const indexData = cached || {};
@@ -51,7 +51,9 @@ router.get('/', async (req, res) => {
 // Chat page
 router.get('/chat', (req, res) => {
     res.render('public/chat', {
-        chatApiUrl: '/api/proxy'
+        chatApiUrl: '/api/proxy',
+        pageTitle: 'Cyber-Lenin',
+        pagePath: '/chat',
     });
 });
 
@@ -87,13 +89,45 @@ router.get('/post/:id', async (req, res) => {
         const prevId = prevResult.rows.length > 0 ? prevResult.rows[0].id : null;
         const nextId = nextResult.rows.length > 0 ? nextResult.rows[0].id : null;
 
-        res.render('public/post', { post, prevId, nextId });
+        const plainText = post.content.replace(/<[^>]*>/g, '').substring(0, 160);
+        res.render('public/post', { post, prevId, nextId, pageTitle: post.title, pageDescription: plainText, pagePath: `/post/${post.id}` });
     } catch (error) {
         console.error('Error fetching post:', error);
         res.status(500).render('layouts/main', {
             title: 'Error',
             body: '<div class="box"><h1>Error</h1><p>Could not load post.</p><a href="/">Go back home</a></div>'
         });
+    }
+});
+
+// robots.txt
+router.get('/robots.txt', (req, res) => {
+    res.type('text/plain').send(
+        'User-agent: *\n' +
+        'Allow: /\n' +
+        'Sitemap: https://cyber-lenin.com/sitemap.xml\n'
+    );
+});
+
+// sitemap.xml
+router.get('/sitemap.xml', async (req, res) => {
+    try {
+        const { rows } = await db.query(
+            'SELECT id, created_at FROM posts ORDER BY created_at DESC'
+        );
+        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+        xml += '  <url><loc>https://cyber-lenin.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>\n';
+        xml += '  <url><loc>https://cyber-lenin.com/chat</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>\n';
+        for (const post of rows) {
+            const date = new Date(post.created_at).toISOString().split('T')[0];
+            xml += `  <url><loc>https://cyber-lenin.com/post/${post.id}</loc><lastmod>${date}</lastmod><priority>0.8</priority></url>\n`;
+        }
+        xml += '</urlset>';
+        res.type('application/xml').send(xml);
+    } catch (error) {
+        console.error('Sitemap error:', error);
+        res.status(500).send('');
     }
 });
 
