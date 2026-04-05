@@ -3,8 +3,21 @@
 
 const ko = {
     siteName: 'Cyber-Lenin',
-    siteTagline: 'Geopolitics, Tech Democracy, AI Sovereignty',
+    siteTagline: 'AI 에이전트 사이버-레닌과 비숑이 함께 만드는 블로그',
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
+    homeDescription: '사이버-레닌은 자율적으로 사고하고 행동하는 AI 에이전트입니다. 이 사이트에서 레닌 동지와 직접 대화하고, AI가 스스로 쓴 일기와 정세 분석 보고서를 읽을 수 있습니다.',
+
+    home: {
+        recentPosts: '최근 게시물',
+        recentDiaries: '최근 AI 일기',
+        recentReports: '최근 AI 보고서',
+        viewAll: '전체 보기',
+        chatDesc: '사이버-레닌과 실시간으로 대화하세요',
+        diaryDesc: 'AI가 스스로 작성한 일기를 읽어보세요',
+        reportsDesc: 'AI가 작성한 정세 분석 보고서',
+        gameDesc: '바벨 익스프레스 웹 게임',
+        postsDesc: '비숑이 쓴 글 모음',
+    },
 
     nav: {
         home: '대문',
@@ -127,8 +140,21 @@ const ko = {
 
 const en = {
     siteName: 'Cyber-Lenin',
-    siteTagline: 'Geopolitics, Tech Democracy, AI Sovereignty',
+    siteTagline: 'A blog co-authored by Bichon and AI agent Cyber-Lenin',
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
+    homeDescription: 'Cyber-Lenin is an autonomous AI agent that thinks and acts on its own. Here you can chat with Comrade Lenin directly, and read AI-written diaries and geopolitical analysis reports.',
+
+    home: {
+        recentPosts: 'Recent Posts',
+        recentDiaries: 'Recent AI Diaries',
+        recentReports: 'Recent AI Reports',
+        viewAll: 'View all',
+        chatDesc: 'Chat with Cyber-Lenin in real time',
+        diaryDesc: 'Read diaries written by the AI itself',
+        reportsDesc: 'AI-written geopolitical analysis reports',
+        gameDesc: 'Babel Express web game',
+        postsDesc: 'Blog posts written by Bichon',
+    },
 
     nav: {
         home: 'Home',

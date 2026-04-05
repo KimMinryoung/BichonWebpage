@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <header class="box compact-header">
+            <h1><%= strings.home.recentPosts %></h1>
+        </header>
+
+        <% if (posts && posts.length > 0) { %>
+            <ul class="post-list">
+                <% posts.forEach(post => { %>
+                    <li class="post-item">
+                        <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+                        <div class="post-meta">
+                            <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                        </div>
+                        <p class="post-excerpt">
+                            <%- truncateHtml(sanitize(post.content), 200) %>
+                        </p>
+                    </li>
+                <% }) %>
+            </ul>
+
+            <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
+                <%- include('../partials/pagination', {
+                    currentPage: currentPage,
+                    totalPages: totalPages,
+                    baseUrl: paginationBase
+                }) %>
+            <% } %>
+        <% } else { %>
+            <div class="box">
+                <p><%= strings.public.noPosts %></p>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -8,20 +8,51 @@ const reportCache = require('../config/report-cache');
 
 const POSTS_PER_PAGE = 20;
 
-// Homepage - List all posts with pagination
+const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
+const RECENT_LIMIT = 5;
+
+// Homepage
 router.get('/', async (req, res) => {
+    try {
+        // Fetch recent posts, diaries, and reports in parallel
+        const [postsResult, diariesResult, reportsResult] = await Promise.allSettled([
+            db.query('SELECT id, title, content, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
+            db.query('SELECT id, title, content, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
+            (async () => {
+                const cached = await reportCache.getList('home');
+                if (cached) return cached;
+                const response = await fetch(`${CHAT_API_URL}/reports?limit=${RECENT_LIMIT}&offset=0`);
+                if (!response.ok) throw new Error(`API ${response.status}`);
+                const data = await response.json();
+                const reports = data.reports || [];
+                await reportCache.setList('home', reports);
+                return reports;
+            })()
+        ]);
+
+        const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
+        const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
+        const recentReports = reportsResult.status === 'fulfilled' ? reportsResult.value : [];
+
+        res.render('public/index', { recentPosts, recentDiaries, recentReports, pagePath: '/' });
+    } catch (error) {
+        console.error('Error fetching homepage data:', error);
+        res.render('public/index', { recentPosts: [], recentDiaries: [], recentReports: [] });
+    }
+});
+
+// Posts list with pagination
+router.get('/posts', async (req, res) => {
     try {
         const currentPage = parseInt(req.query.page) || 1;
         const cacheKey = `page:${currentPage}`;
 
-        // Check index cache
         const cached = await cache.getIndex();
         if (cached && cached[cacheKey]) {
-            return res.render('public/index', cached[cacheKey]);
+            return res.render('public/posts', cached[cacheKey]);
         }
 
         const offset = (currentPage - 1) * POSTS_PER_PAGE;
-
         const { rows } = await db.query(
             'SELECT id, title, content, created_at, COUNT(*) OVER() AS total_count FROM posts ORDER BY created_at DESC LIMIT $1 OFFSET $2',
             [POSTS_PER_PAGE, offset]
@@ -31,22 +62,20 @@ router.get('/', async (req, res) => {
         const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
         const posts = rows.map(({ total_count, ...post }) => post);
 
-        // Cache individual posts
         for (const p of posts) {
             await cache.setEntry(p);
         }
 
-        const pageData = { posts, currentPage, totalPages, paginationBase: '/?page=', pagePath: currentPage > 1 ? `/?page=${currentPage}` : '/' };
+        const pageData = { posts, currentPage, totalPages, paginationBase: '/posts?page=', pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts' };
 
-        // Cache index
         const indexData = cached || {};
         indexData[cacheKey] = pageData;
         await cache.setIndex(indexData);
 
-        res.render('public/index', pageData);
+        res.render('public/posts', pageData);
     } catch (error) {
         console.error('Error fetching posts:', error);
-        res.render('public/index', { posts: [], currentPage: 1, totalPages: 0 });
+        res.render('public/posts', { posts: [], currentPage: 1, totalPages: 0 });
     }
 });
 

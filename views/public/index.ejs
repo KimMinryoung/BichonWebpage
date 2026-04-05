@@ -7,36 +7,97 @@
     <%- include('../partials/nav') %>
 
     <div class="container">
-        <header class="box compact-header">
+        <!-- Hero / Overview -->
+        <header class="box home-hero">
             <h1><%= strings.siteTagline %></h1>
+            <p class="home-description"><%= strings.homeDescription %></p>
         </header>
 
-        <% if (posts && posts.length > 0) { %>
-            <ul class="post-list">
-                <% posts.forEach(post => { %>
-                    <li class="post-item">
-                        <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
-                        <div class="post-meta">
-                            <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
-                        </div>
-                        <p class="post-excerpt">
-                            <%- truncateHtml(sanitize(post.content), 200) %>
-                        </p>
-                    </li>
-                <% }) %>
-            </ul>
+        <!-- Menu Cards -->
+        <div class="home-cards">
+            <a href="/chat" class="home-card">
+                <h2><%= strings.nav.chat %></h2>
+                <p><%= strings.home.chatDesc %></p>
+            </a>
+            <a href="/ai-diary" class="home-card">
+                <h2><%= strings.nav.diary %></h2>
+                <p><%= strings.home.diaryDesc %></p>
+            </a>
+            <a href="/reports" class="home-card">
+                <h2><%= strings.nav.reports %></h2>
+                <p><%= strings.home.reportsDesc %></p>
+            </a>
+            <a href="/game" class="home-card">
+                <h2><%= strings.nav.game %></h2>
+                <p><%= strings.home.gameDesc %></p>
+            </a>
+        </div>
 
-            <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
-                <%- include('../partials/pagination', {
-                    currentPage: currentPage,
-                    totalPages: totalPages,
-                    baseUrl: paginationBase
-                }) %>
-            <% } %>
-        <% } else { %>
-            <div class="box">
-                <p><%= strings.public.noPosts %></p>
-            </div>
+        <!-- Recent Posts -->
+        <% if (recentPosts && recentPosts.length > 0) { %>
+            <section class="home-section">
+                <div class="home-section-header">
+                    <h2><%= strings.home.recentPosts %></h2>
+                    <a href="/posts" class="btn btn-small"><%= strings.home.viewAll %></a>
+                </div>
+                <ul class="post-list">
+                    <% recentPosts.forEach(post => { %>
+                        <li class="post-item">
+                            <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+                            <div class="post-meta">
+                                <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                            </div>
+                            <p class="post-excerpt"><%- truncateHtml(sanitize(post.content), 200) %></p>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+        <% } %>
+
+        <!-- Recent AI Diaries -->
+        <% if (recentDiaries && recentDiaries.length > 0) { %>
+            <section class="home-section">
+                <div class="home-section-header">
+                    <h2><%= strings.home.recentDiaries %></h2>
+                    <a href="/ai-diary" class="btn btn-small"><%= strings.home.viewAll %></a>
+                </div>
+                <ul class="post-list">
+                    <% recentDiaries.forEach(diary => { %>
+                        <li class="post-item">
+                            <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
+                            <div class="post-meta">
+                                <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                            </div>
+                            <p class="post-excerpt"><%- truncateHtml(sanitize(diary.content), 200) %></p>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+        <% } %>
+
+        <!-- Recent AI Reports -->
+        <% if (recentReports && recentReports.length > 0) { %>
+            <section class="home-section">
+                <div class="home-section-header">
+                    <h2><%= strings.home.recentReports %></h2>
+                    <a href="/reports" class="btn btn-small"><%= strings.home.viewAll %></a>
+                </div>
+                <ul class="post-list">
+                    <% recentReports.forEach(report => { %>
+                        <li class="post-item">
+                            <h2><a href="/reports/<%= report.id %>"><%= report.title || ('Report #' + report.id) %></a></h2>
+                            <% if (report.created_at) { %>
+                                <div class="post-meta">
+                                    <time class="local-date" datetime="<%= new Date(report.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                                </div>
+                            <% } %>
+                            <% if (report.summary) { %>
+                                <p class="post-excerpt"><%- truncateHtml(sanitize(report.summary), 200) %></p>
+                            <% } %>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
         <% } %>
     </div>
 
