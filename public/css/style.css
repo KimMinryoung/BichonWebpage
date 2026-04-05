@@ -382,6 +382,43 @@ header h1 {
 }
 
 /* ===== Home Page ===== */
+.home-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8px 20px;
+}
+
+.home-toolbar .theme-toggle,
+.home-toolbar .lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    font-family: inherit;
+    transition: color 0.15s;
+}
+
+.home-toolbar .theme-toggle:hover,
+.home-toolbar .lang-btn:hover {
+    color: var(--text-primary);
+}
+
+.home-toolbar .lang-dropdown {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .home-toolbar {
+        padding: 8px 12px;
+    }
+}
+
 .home-hero {
     padding: 32px 24px;
     border-top: none;
