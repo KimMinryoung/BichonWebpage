@@ -58,7 +58,7 @@
     --btn-primary-hover: #0860ca;
     --btn-danger: #cf222e;
     --btn-danger-hover: #a40e26;
-    --nav-bg: #f6f8fa;
+    --nav-bg: #ffffff;
     --card-bg: #ffffff;
     --input-bg: #f6f8fa;
     --overlay: rgba(31, 35, 40, 0.5);
@@ -421,7 +421,6 @@ header h1 {
 
 .home-hero {
     padding: 32px 24px;
-    border-top: none;
 }
 
 .home-hero h1 {
@@ -440,7 +439,6 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
-    border-top: 1px solid var(--border);
 }
 
 .home-card {
