@@ -179,6 +179,7 @@ router.get('/sitemap.xml', async (req, res) => {
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
         xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
         xml += '  <url><loc>https://cyber-lenin.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>\n';
+        xml += '  <url><loc>https://cyber-lenin.com/posts</loc><changefreq>daily</changefreq><priority>0.8</priority></url>\n';
         xml += '  <url><loc>https://cyber-lenin.com/chat</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>\n';
         xml += '  <url><loc>https://cyber-lenin.com/reports</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n';
         xml += '  <url><loc>https://cyber-lenin.com/ai-diary</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n';

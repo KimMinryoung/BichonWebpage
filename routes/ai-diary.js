@@ -9,15 +9,16 @@ const DIARIES_PER_PAGE = 20;
 
 // AI 일기장 메인 페이지 - 글 목록 (페이지네이션 적용)
 router.get('/', async (req, res) => {
+    const currentPage = parseInt(req.query.page) || 1;
+    const pagePath = currentPage > 1 ? `/ai-diary?page=${currentPage}` : '/ai-diary';
     try {
-        const currentPage = parseInt(req.query.page) || 1;
         const offset = (currentPage - 1) * DIARIES_PER_PAGE;
         const cacheKey = `page:${currentPage}`;
 
         // Check index cache
         const cached = await cache.getIndex();
         if (cached && cached[cacheKey]) {
-            return res.render('public/ai-diary', cached[cacheKey]);
+            return res.render('public/ai-diary', { ...cached[cacheKey], pagePath });
         }
 
         const { rows } = await db.query(
@@ -41,10 +42,10 @@ router.get('/', async (req, res) => {
         indexData[cacheKey] = pageData;
         await cache.setIndex(indexData);
 
-        res.render('public/ai-diary', pageData);
+        res.render('public/ai-diary', { ...pageData, pagePath });
     } catch (error) {
         console.error('Error fetching diaries:', error);
-        res.render('public/ai-diary', { diaries: [], currentPage: 1, totalPages: 0 });
+        res.render('public/ai-diary', { diaries: [], currentPage: 1, totalPages: 0, pagePath });
     }
 });
 
@@ -78,7 +79,13 @@ router.get('/:id', async (req, res) => {
         const prevId = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
         const nextId = idx > 0 ? nav[idx - 1] : null;
 
-        res.render('public/ai-diary-view', { diary, prevId, nextId });
+        const plainText = (diary.content || '').replace(/<[^>]*>/g, '').substring(0, 160);
+        res.render('public/ai-diary-view', {
+            diary, prevId, nextId,
+            pageTitle: diary.title,
+            pageDescription: plainText,
+            pagePath: `/ai-diary/${diary.id}`
+        });
     } catch (error) {
         console.error('Error fetching diary:', error);
         res.status(500).render('layouts/main', {

@@ -14,8 +14,9 @@ router.post('/cache/clear', async (req, res) => {
 
 // 리포트 목록 (research + task reports)
 router.get('/', async (req, res) => {
+    const currentPage = parseInt(req.query.page) || 1;
+    const pagePath = currentPage > 1 ? `/reports?page=${currentPage}` : '/reports';
     try {
-        const currentPage = parseInt(req.query.page) || 1;
         const offset = (currentPage - 1) * REPORTS_PER_PAGE;
 
         // Fetch task reports (with cache)
@@ -80,12 +81,13 @@ router.get('/', async (req, res) => {
 
         res.render('public/reports', {
             ...taskData,
-            researchFiles
+            researchFiles,
+            pagePath
         });
     } catch (error) {
         console.error('Error fetching reports:', error);
         res.render('public/reports', {
-            reports: [], currentPage: 1, totalPages: 0, researchFiles: []
+            reports: [], currentPage: 1, totalPages: 0, researchFiles: [], pagePath
         });
     }
 });
@@ -94,11 +96,17 @@ router.get('/', async (req, res) => {
 router.get('/research/:filename', async (req, res) => {
     try {
         const filename = req.params.filename.endsWith('.md') ? req.params.filename : req.params.filename + '.md';
+        const slug = filename.replace(/\.md$/, '');
+        const pagePath = `/reports/research/${slug}`;
 
         // Check file cache
         const cached = await cache.getResearch(filename);
         if (cached && cached.content) {
-            return res.render('public/research-view', { filename, markdown: cached.content });
+            return res.render('public/research-view', {
+                filename, markdown: cached.content,
+                pageTitle: cached.title || slug.replace(/_/g, ' '),
+                pagePath
+            });
         }
 
         const response = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(filename)}`);
@@ -112,9 +120,10 @@ router.get('/research/:filename', async (req, res) => {
         const data = await response.json();
         const markdown = data.content || '';
         const match = markdown.match(/^#\s+(.+)/m);
-        await cache.setResearch(filename, { content: markdown, title: match ? match[1] : filename });
+        const title = match ? match[1] : slug.replace(/_/g, ' ');
+        await cache.setResearch(filename, { content: markdown, title });
 
-        res.render('public/research-view', { filename, markdown });
+        res.render('public/research-view', { filename, markdown, pageTitle: title, pagePath });
     } catch (error) {
         console.error('Error fetching research:', error);
         res.status(500).render('layouts/main', {
@@ -128,11 +137,12 @@ router.get('/research/:filename', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
+        const pagePath = `/reports/${id}`;
 
         // Check file cache (permanent — reports don't change)
         const cached = await cache.getReport(id);
         if (cached) {
-            return res.render('public/report-view', { report: cached });
+            return res.render('public/report-view', { report: cached, pagePath });
         }
 
         const response = await fetch(`${CHAT_API_URL}/reports/${id}`);
@@ -147,7 +157,7 @@ router.get('/:id', async (req, res) => {
         const report = data.report;
         await cache.setReport(report);
 
-        res.render('public/report-view', { report });
+        res.render('public/report-view', { report, pagePath });
     } catch (error) {
         console.error('Error fetching report:', error);
         res.status(500).render('layouts/main', {
