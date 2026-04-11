@@ -71,7 +71,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: process.env.NODE_ENV === 'production',
+        // 'auto' uses req.secure (respects X-Forwarded-Proto via trust proxy):
+        // HTTPS (Cloudflare) → secure cookie, HTTP (Tailscale) → non-secure.
+        secure: process.env.NODE_ENV === 'production' ? 'auto' : false,
         sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'strict',
         maxAge: 24 * 60 * 60 * 1000 // 24 hours
     }
@@ -149,9 +151,10 @@ const storyApiRoutes = require('./routes/story-api');
 const aiDiaryRoutes = require('./routes/ai-diary');
 const gameRoutes = require('./routes/game');
 const reportRoutes = require('./routes/reports');
+const { requireAdminIp } = require('./middleware/auth');
 
 app.use('/', publicRoutes);
-app.use('/admin', adminRoutes);
+app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
 app.use('/reports', reportRoutes);
