@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+const fs = require('fs');
 const router = express.Router();
 const db = require('../config/database');
 const paginationHelper = require('../config/paginationHelper');
@@ -254,6 +256,30 @@ router.get('/atom.xml', async (req, res) => {
         console.error('Atom feed error:', error);
         res.status(500).send('');
     }
+});
+
+// Standalone HTML embeds used inside post iframes (served with relaxed CSP)
+router.get('/posts-embed/:filename', (req, res) => {
+    const filename = req.params.filename;
+    if (!/^[A-Za-z0-9_\-]+\.html$/.test(filename)) {
+        return res.status(404).type('text').send('Not found');
+    }
+    const filePath = path.join(__dirname, '..', 'data', 'posts-embed', filename);
+    if (!fs.existsSync(filePath)) {
+        return res.status(404).type('text').send('Not found');
+    }
+    res.setHeader(
+        'Content-Security-Policy',
+        "default-src 'self'; " +
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+        "font-src 'self' https://fonts.gstatic.com; " +
+        "img-src 'self' data:; " +
+        "script-src 'none'; " +
+        "frame-ancestors 'self'; " +
+        "object-src 'none'"
+    );
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.type('html').sendFile(filePath);
 });
 
 // /research → redirect to reports page

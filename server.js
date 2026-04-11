@@ -96,6 +96,19 @@ app.use((req, res, next) => {
             allowedSchemes: ['http', 'https']
         });
     };
+    // Full-post view: also permits same-origin iframes (for embedded HTML posts)
+    res.locals.sanitizePost = function(html) {
+        return sanitizeHtml(html, {
+            allowedTags: ['a', 'br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'code', 'pre', 'iframe'],
+            allowedAttributes: {
+                'a': ['href', 'title', 'target'],
+                'iframe': ['src', 'width', 'height', 'frameborder', 'class', 'style', 'loading', 'title']
+            },
+            allowedSchemes: ['http', 'https'],
+            allowedIframeHostnames: [],
+            allowIframeRelativeUrls: true
+        });
+    };
     res.locals.truncateHtml = function(html, maxLen) {
         var result = '';
         var textLen = 0;

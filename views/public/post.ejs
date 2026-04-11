@@ -17,7 +17,7 @@
                 <% } %>
             </div>
             <div class="post-body">
-                <%- sanitize(post.content).replace(/\n/g, '<br>') %>
+                <%- sanitizePost(post.content).replace(/\n/g, '<br>') %>
             </div>
         </article>
 
