@@ -27,9 +27,9 @@
                 <h2><%= strings.nav.reports %></h2>
                 <p><%= strings.home.reportsDesc %></p>
             </a>
-            <a href="/game" class="home-card">
-                <h2><%= strings.nav.game %></h2>
-                <p><%= strings.home.gameDesc %></p>
+            <a href="/hub" class="home-card">
+                <h2><%= strings.nav.hub %></h2>
+                <p><%= strings.home.hubDesc %></p>
             </a>
         </div>
 
@@ -90,6 +90,34 @@
                                 <div class="post-meta">
                                     <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                                 </div>
+                            <% } %>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+        <% } %>
+
+        <!-- Recent Hub -->
+        <% if (recentHub && recentHub.length > 0) { %>
+            <section class="home-section">
+                <div class="home-section-header">
+                    <h2><%= strings.home.recentHub %></h2>
+                    <a href="/hub" class="btn btn-small"><%= strings.home.viewAll %></a>
+                </div>
+                <ul class="post-list">
+                    <% recentHub.forEach(it => { %>
+                        <li class="post-item">
+                            <h2><a href="/hub/<%= it.slug %>"><%= it.title %></a></h2>
+                            <div class="post-meta">
+                                <% if (it.source_publication) { %>
+                                    <span class="hub-source"><%= it.source_publication %></span>
+                                <% } %>
+                                <% if (it.published_at) { %>
+                                    <time class="local-date" datetime="<%= it.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"></time>
+                                <% } %>
+                            </div>
+                            <% if (it.context) { %>
+                                <p class="post-excerpt"><%= it.context.substring(0, 180) %><%= it.context.length > 180 ? '…' : '' %></p>
                             <% } %>
                         </li>
                     <% }) %>

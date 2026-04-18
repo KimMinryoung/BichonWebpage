@@ -16,8 +16,8 @@ const RECENT_LIMIT = 5;
 // Homepage
 router.get('/', async (req, res) => {
     try {
-        // Fetch recent posts, diaries, and research in parallel
-        const [postsResult, diariesResult, researchResult] = await Promise.allSettled([
+        // Fetch recent posts, diaries, research, and hub curations in parallel
+        const [postsResult, diariesResult, researchResult, hubResult] = await Promise.allSettled([
             db.query('SELECT id, title, content, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             db.query('SELECT id, title, content, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             (async () => {
@@ -44,17 +44,24 @@ router.get('/', async (req, res) => {
                     await reportCache.setResearchList(files);
                 }
                 return files.slice(0, RECENT_LIMIT);
+            })(),
+            (async () => {
+                const response = await fetch(`${CHAT_API_URL}/hub?limit=${RECENT_LIMIT}&offset=0`);
+                if (!response.ok) throw new Error(`API ${response.status}`);
+                const data = await response.json();
+                return data.items || [];
             })()
         ]);
 
         const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
         const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
         const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
+        const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
 
-        res.render('public/index', { recentPosts, recentDiaries, recentResearch, pagePath: '/' });
+        res.render('public/index', { recentPosts, recentDiaries, recentResearch, recentHub, pagePath: '/' });
     } catch (error) {
         console.error('Error fetching homepage data:', error);
-        res.render('public/index', { recentPosts: [], recentDiaries: [], recentResearch: [] });
+        res.render('public/index', { recentPosts: [], recentDiaries: [], recentResearch: [], recentHub: [] });
     }
 });
 
