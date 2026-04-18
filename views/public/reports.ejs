@@ -19,18 +19,25 @@
 
         <!-- Research panel -->
         <div class="report-panel active" id="panel-research">
-            <% if (researchFiles && researchFiles.length > 0) { %>
+            <% if (researchItems && researchItems.length > 0) { %>
                 <ul class="post-list">
-                    <% researchFiles.forEach(file => {
-                        var displayName = file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' ');
-                    %>
+                    <% researchItems.forEach(item => { %>
                         <li class="post-item">
                             <div>
-                                <h2><a href="/reports/research/<%= file.filename.replace(/\.md$/, '') %>"><%= displayName %></a></h2>
+                                <h2><a href="<%= item.href %>"><%= item.title %></a></h2>
                                 <div class="post-meta">
-                                    <span class="file-size"><%= (file.size / 1024).toFixed(1) %> KB</span>
-                                    <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 작성' : ', written' %>"></time>
+                                    <% if (item.type === 'page') { %>
+                                        <span class="post-type"><%= lang === 'ko' ? '페이지' : 'Page' %></span>
+                                    <% } else if (item.size) { %>
+                                        <span class="file-size"><%= (item.size / 1024).toFixed(1) %> KB</span>
+                                    <% } %>
+                                    <% if (item.modified) { %>
+                                        <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 작성' : ', written' %>"></time>
+                                    <% } %>
                                 </div>
+                                <% if (item.summary) { %>
+                                    <p class="post-excerpt"><%= item.summary %></p>
+                                <% } %>
                             </div>
                         </li>
                     <% }) %>

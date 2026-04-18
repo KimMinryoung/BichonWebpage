@@ -79,15 +79,49 @@ router.get('/', async (req, res) => {
             }
         }
 
+        // Fetch static-pages list (with cache)
+        let pagesList = await cache.getPagesList();
+        if (!pagesList) {
+            pagesList = [];
+            try {
+                const pRes = await fetch(`${CHAT_API_URL}/pages`);
+                if (pRes.ok) {
+                    const pData = await pRes.json();
+                    pagesList = pData.items || [];
+                    await cache.setPagesList(pagesList);
+                }
+            } catch (e) {
+                console.error('Error fetching pages list:', e);
+            }
+        }
+
+        // Unified research-tab feed: research files + static pages, sorted by date desc
+        const researchItems = [
+            ...researchFiles.map(f => ({
+                type: 'research',
+                title: f.title || f.filename.replace(/\.md$/, '').replace(/_/g, ' '),
+                href: `/reports/research/${f.filename.replace(/\.md$/, '')}`,
+                modified: (f.modified_at || 0) * 1000,
+                size: f.size,
+            })),
+            ...pagesList.map(p => ({
+                type: 'page',
+                title: p.title,
+                href: `/p/${p.slug}`,
+                modified: p.updated_at ? new Date(p.updated_at).getTime() : 0,
+                summary: p.summary,
+            })),
+        ].sort((a, b) => b.modified - a.modified);
+
         res.render('public/reports', {
             ...taskData,
-            researchFiles,
+            researchItems,
             pagePath
         });
     } catch (error) {
         console.error('Error fetching reports:', error);
         res.render('public/reports', {
-            reports: [], currentPage: 1, totalPages: 0, researchFiles: [], pagePath
+            reports: [], currentPage: 1, totalPages: 0, researchItems: [], pagePath
         });
     }
 });

@@ -70,6 +70,19 @@ async function setResearchList(data) {
     } catch (e) { console.error('[report-cache] research list write error:', e.message); }
 }
 
+async function getPagesList() {
+    try {
+        const data = await redis.get('report:pages_list');
+        return data ? JSON.parse(data) : null;
+    } catch { return null; }
+}
+
+async function setPagesList(data) {
+    try {
+        await redis.set('report:pages_list', JSON.stringify(data), { EX: LIST_TTL });
+    } catch (e) { console.error('[report-cache] pages list write error:', e.message); }
+}
+
 async function clearAll() {
     try {
         const keys = [];
@@ -84,5 +97,6 @@ module.exports = {
     getResearch, setResearch,
     getList, setList,
     getResearchList, setResearchList,
+    getPagesList, setPagesList,
     clearAll,
 };
