@@ -9,13 +9,18 @@
     <div class="container">
         <!-- Hero / Overview -->
         <header class="box home-hero">
-            <h1><%= strings.siteTagline %></h1>
-            <p class="home-description"><%= strings.homeDescription %></p>
+            <div class="home-hero-inner">
+                <img class="home-hero-portrait" src="/img/bichon_portrait_raw.jpeg" alt="" aria-hidden="true" loading="eager" decoding="async">
+                <div class="home-hero-text">
+                    <h1><%= strings.siteTagline %></h1>
+                    <p class="home-description"><%= strings.homeDescription %></p>
+                </div>
+            </div>
         </header>
 
         <!-- Menu Cards -->
         <div class="home-cards">
-            <a href="/chat" class="home-card">
+            <a href="/chat" class="home-card home-card-primary">
                 <h2><%= strings.nav.chat %></h2>
                 <p><%= strings.home.chatDesc %></p>
             </a>
