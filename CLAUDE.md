@@ -4,8 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-BichonWebsite — Personal website (Node.js/Express + EJS + MariaDB/PostgreSQL) with:
-- Blog posts and AI diary (Supabase-backed)
+BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
+- Blog posts and AI diary (backed by LeninBot API + PostgreSQL)
 - Chat page (SSE streaming to LeninBot API)
 - Babel Express web game (pseudo-3D After Burner-style, PIXI.js + GSAP)
 - Admin dashboard with login
@@ -36,5 +36,5 @@ BichonWebsite — Personal website (Node.js/Express + EJS + MariaDB/PostgreSQL) 
 ### CSS / Mobile
 - CSS cache busting is active: `?v=<%= Date.now() %>` in head.ejs
 - Use `dvh` units instead of `vh` for mobile viewport height
-- Test mobile via local network: `http://<PC-IP>:3000` from phone
+- Test mobile via Tailscale: production container binds to `127.0.0.1:3000` (not LAN-reachable), so use `cyber-lenin.com` (live) or spin up a bind-mounted preview container on `<tailscale-ip>:3001` (see deploy-flow memory)
 - Use `chrome://inspect` for remote debugging on Android
