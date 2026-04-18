@@ -1,21 +1,23 @@
 <div class="home-toolbar">
-    <button type="button" class="theme-toggle" id="themeToggle" title="Toggle theme">&#x263E;</button>
-    <div class="lang-dropdown">
-        <button type="button" class="lang-btn" id="langBtn">&#x1F310;<%= lang === 'en' ? 'English' : 'Korean' %></button>
-        <div class="lang-menu" id="langMenu">
-            <a href="#" data-lang="ko" class="<%= lang === 'ko' ? 'active' : '' %>">Korean</a>
-            <a href="#" data-lang="en" class="<%= lang === 'en' ? 'active' : '' %>">English</a>
+    <a href="/" class="toolbar-logo"><%= strings.siteName %></a>
+    <div class="toolbar-right">
+        <button type="button" class="theme-toggle" id="themeToggle" title="Toggle theme">&#x263E;</button>
+        <div class="lang-dropdown">
+            <button type="button" class="lang-btn" id="langBtn">&#x1F310;<%= lang === 'en' ? 'English' : 'Korean' %></button>
+            <div class="lang-menu" id="langMenu">
+                <a href="#" data-lang="ko" class="<%= lang === 'ko' ? 'active' : '' %>">Korean</a>
+                <a href="#" data-lang="en" class="<%= lang === 'en' ? 'active' : '' %>">English</a>
+            </div>
         </div>
     </div>
 </div>
 <nav>
     <div class="nav-content">
-        <a href="/" class="logo"><%= strings.siteName %></a>
         <div class="nav-links">
-            <a href="/"><%= strings.nav.home %></a>
             <a href="/chat"><%= strings.nav.chat %></a>
-            <a href="/ai-diary"><%= strings.nav.diary %></a>
-            <a href="/reports"><%= strings.nav.reports %></a>
+            <a href="/posts"><%= strings.nav.bichonPosts %></a>
+            <a href="/ai-diary"><span class="nav-label-full"><%= strings.nav.diary %></span><span class="nav-label-short"><%= strings.nav.diaryShort %></span></a>
+            <a href="/reports"><span class="nav-label-full"><%= strings.nav.reports %></span><span class="nav-label-short"><%= strings.nav.reportsShort %></span></a>
             <a href="/hub"><%= strings.nav.hub %></a>
         </div>
     </div>

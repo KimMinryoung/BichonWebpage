@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <title><%= filename.replace(/\.md$/, '').replace(/_/g, ' ') %></title>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/report.css?v=<%= Date.now() %>">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -12,7 +11,7 @@
 
     <div class="container">
         <article class="post-content">
-            <h1><%= filename.replace(/\.md$/, '').replace(/_/g, ' ') %></h1>
+            <h1><%= pageTitle %></h1>
             <div class="report-body" id="report-content"></div>
             <script type="application/json" id="report-raw"><%- JSON.stringify(markdown).replace(/</g, '\\u003c') %></script>
         </article>

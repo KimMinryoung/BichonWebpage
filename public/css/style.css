@@ -7,7 +7,6 @@
     --bg-inset: #010409;
     --border: #d1d9e0;
     --border-emphasis: #f0f3f6;
-    --font-display: "Newsreader", "Noto Serif KR", Georgia, "Times New Roman", serif;
     --text-primary: #ffffff;
     --text-secondary: #e0e4e8;
     --text-muted: #b0b8c1;
@@ -90,6 +89,10 @@ body {
     min-height: 100vh;
     overscroll-behavior-y: none;
     transition: background-color 0.2s, color 0.2s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
 }
 
 a {
@@ -180,11 +183,11 @@ nav .nav-links .theme-toggle,
 nav .nav-links .lang-btn,
 nav .nav-links .nav-logout-btn {
     color: var(--text-primary);
-    padding: 0px 0px;
+    padding: 10px 6px;
     border: none;
     border-radius: 0;
     border-right: none;
-    font-size: clamp(0.7rem, 2.4cqi, 1.1rem);
+    font-size: clamp(0.72rem, 1.6cqi, 0.88rem);
     font-weight: 500;
     background: none;
     cursor: pointer;
@@ -196,6 +199,19 @@ nav .nav-links .nav-logout-btn {
     transition: background-color 0.15s;
     text-decoration: none;
     white-space: nowrap;
+}
+
+.nav-label-short {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .nav-label-full {
+        display: none;
+    }
+    .nav-label-short {
+        display: inline;
+    }
 }
 nav .nav-links > *:first-child {
     border-left: none;
@@ -394,12 +410,33 @@ header h1 {
 
 .home-toolbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     gap: 0;
-    max-width: 800px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 8px 20px;
+}
+
+.toolbar-logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    padding: 4px 6px;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.toolbar-logo:hover {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0;
 }
 
 .home-toolbar .theme-toggle,
@@ -430,19 +467,19 @@ header h1 {
 }
 
 .home-hero {
-    padding: 32px 28px;
+    padding: 16px 24px;
 }
 
 .home-hero-inner {
     display: grid;
-    grid-template-columns: 128px 1fr;
-    gap: 24px;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
     align-items: center;
 }
 
 .home-hero-portrait {
-    width: 128px;
-    height: 128px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border: 1px solid var(--border);
     display: block;
@@ -453,12 +490,21 @@ header h1 {
 }
 
 .home-hero h1 {
-    font-family: var(--font-display);
-    font-size: 1.9rem;
-    font-weight: 600;
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: -0.01em;
     line-height: 1.25;
+    white-space: nowrap;
+}
+
+@media (max-width: 440px) {
+    .home-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        justify-items: center;
+        text-align: center;
+    }
 }
 
 .home-description {
@@ -469,8 +515,7 @@ header h1 {
 
 .home-cards {
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
 }
 
@@ -491,7 +536,7 @@ header h1 {
     border-top: none;
 }
 
-.home-cards > .home-card:nth-child(n+2) {
+.home-cards > .home-card:nth-child(2n+3) {
     border-left: none;
 }
 
@@ -530,26 +575,8 @@ header h1 {
 }
 
 .home-card-primary {
-    grid-column: 1;
-    grid-row: 1 / span 3;
-    padding: 28px 48px 28px 24px;
-}
-
-.home-card-primary h2 {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-}
-
-.home-card-primary p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-}
-
-.home-card-primary::after {
-    font-size: 1.25rem;
-    right: 20px;
+    grid-column: 1 / -1;
+    padding: 18px 44px 18px 24px;
 }
 
 .home-section {
@@ -579,17 +606,13 @@ header h1 {
     }
 
     .home-hero-inner {
-        grid-template-columns: 88px 1fr;
-        gap: 16px;
+        grid-template-columns: 112px 1fr;
+        gap: 18px;
     }
 
     .home-hero-portrait {
-        width: 88px;
-        height: 88px;
-    }
-
-    .home-hero h1 {
-        font-size: 1.35rem;
+        width: 112px;
+        height: 112px;
     }
 
     .home-cards {
@@ -597,7 +620,7 @@ header h1 {
         grid-template-rows: auto;
     }
 
-    .home-cards > .home-card:nth-child(n+2) {
+    .home-cards > .home-card:nth-child(2n+3) {
         border-left: 1px solid var(--border);
     }
 
@@ -606,10 +629,6 @@ header h1 {
         grid-column: 1;
         grid-row: auto;
         padding: 14px 40px 14px 18px;
-    }
-
-    .home-card-primary h2 {
-        font-size: 1.15rem;
     }
 
     .home-section-header {
@@ -688,11 +707,8 @@ header h1 {
 
 .post-content h1 {
     margin-bottom: 15px;
-    font-family: var(--font-display);
-    font-size: 1.9rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.25;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
 }
 
 .post-content .post-body {

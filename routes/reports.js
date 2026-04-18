@@ -99,11 +99,13 @@ router.get('/research/:filename', async (req, res) => {
         const slug = filename.replace(/\.md$/, '');
         const pagePath = `/reports/research/${slug}`;
 
+        const stripTitle = (md) => md.replace(/^\s*#\s+.+\r?\n+/, '');
+
         // Check file cache
         const cached = await cache.getResearch(filename);
         if (cached && cached.content) {
             return res.render('public/research-view', {
-                filename, markdown: cached.content,
+                filename, markdown: stripTitle(cached.content),
                 pageTitle: cached.title || slug.replace(/_/g, ' '),
                 pagePath
             });
@@ -123,7 +125,7 @@ router.get('/research/:filename', async (req, res) => {
         const title = match ? match[1] : slug.replace(/_/g, ' ');
         await cache.setResearch(filename, { content: markdown, title });
 
-        res.render('public/research-view', { filename, markdown, pageTitle: title, pagePath });
+        res.render('public/research-view', { filename, markdown: stripTitle(markdown), pageTitle: title, pagePath });
     } catch (error) {
         console.error('Error fetching research:', error);
         res.status(500).render('layouts/main', {

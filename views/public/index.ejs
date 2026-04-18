@@ -10,7 +10,7 @@
         <!-- Hero / Overview -->
         <header class="box home-hero">
             <div class="home-hero-inner">
-                <img class="home-hero-portrait" src="/img/bichon_portrait_raw.jpeg" alt="" aria-hidden="true" loading="eager" decoding="async">
+                <img class="home-hero-portrait" src="/img/og-image.jpg" alt="" aria-hidden="true" width="180" height="180" loading="eager" decoding="async">
                 <div class="home-hero-text">
                     <h1><%= strings.siteTagline %></h1>
                     <p class="home-description"><%= strings.homeDescription %></p>
@@ -23,6 +23,10 @@
             <a href="/chat" class="home-card home-card-primary">
                 <h2><%= strings.nav.chat %></h2>
                 <p><%= strings.home.chatDesc %></p>
+            </a>
+            <a href="/posts" class="home-card">
+                <h2><%= strings.nav.bichonPosts %></h2>
+                <p><%= strings.home.postsDesc %></p>
             </a>
             <a href="/ai-diary" class="home-card">
                 <h2><%= strings.nav.diary %></h2>
