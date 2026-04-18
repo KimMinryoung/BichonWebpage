@@ -39,8 +39,9 @@
             var raw = document.getElementById('page-raw').textContent;
             var html = JSON.parse(raw);
             var sanitized = DOMPurify.sanitize(html, {
-                USE_PROFILES: { html: true },
-                FORBID_TAGS: ['script', 'style', 'iframe', 'form', 'input'],
+                USE_PROFILES: { html: true, svg: true, svgFilters: true },
+                ADD_TAGS: ['style'],
+                FORBID_TAGS: ['script', 'iframe', 'form', 'input'],
                 FORBID_ATTR: ['onerror', 'onclick', 'onload', 'onmouseover']
             });
             document.getElementById('page-content').innerHTML = sanitized;
