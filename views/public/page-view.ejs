@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <title><%= pageTitle %></title>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/report.css?v=<%= Date.now() %>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <article class="post-content">
+            <h1><%= pageTitle %></h1>
+            <% if (summary) { %>
+                <p class="post-summary"><%= summary %></p>
+            <% } %>
+            <% if (updatedAt) { %>
+                <div class="post-meta">
+                    <time class="local-date" datetime="<%= updatedAt %>" data-suffix="<%= lang === 'ko' ? '에 업데이트' : ', updated' %>"></time>
+                </div>
+            <% } %>
+
+            <div class="report-body" id="page-content"></div>
+            <script type="application/json" id="page-raw"><%- JSON.stringify(htmlBody).replace(/</g, '\\u003c') %></script>
+        </article>
+
+        <div class="box post-nav">
+            <div class="post-nav-left">
+                <a href="/">&larr; <%= lang === 'ko' ? '대문으로' : 'Home' %></a>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script>
+    (function() {
+        try {
+            var raw = document.getElementById('page-raw').textContent;
+            var html = JSON.parse(raw);
+            var sanitized = DOMPurify.sanitize(html, {
+                USE_PROFILES: { html: true },
+                FORBID_TAGS: ['script', 'style', 'iframe', 'form', 'input'],
+                FORBID_ATTR: ['onerror', 'onclick', 'onload', 'onmouseover']
+            });
+            document.getElementById('page-content').innerHTML = sanitized;
+        } catch (e) {
+            document.getElementById('page-content').textContent =
+                '페이지를 표시하는 중 오류가 발생했습니다.';
+            console.error(e);
+        }
+    })();
+    </script>
+</body>
+</html>

@@ -151,6 +151,8 @@ const storyApiRoutes = require('./routes/story-api');
 const aiDiaryRoutes = require('./routes/ai-diary');
 const gameRoutes = require('./routes/game');
 const reportRoutes = require('./routes/reports');
+const hubRoutes = require('./routes/hub');
+const pageRoutes = require('./routes/pages');
 const { requireAdminIp } = require('./middleware/auth');
 
 app.use('/', publicRoutes);
@@ -158,6 +160,8 @@ app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
 app.use('/reports', reportRoutes);
+app.use('/hub', hubRoutes);
+app.use('/p', pageRoutes);
 app.use('/game', gameRoutes);
 app.get('/health', (req, res) => { res.status(200).send('ok'); });
 

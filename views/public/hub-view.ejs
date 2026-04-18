@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <title><%= item.title %></title>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/report.css?v=<%= Date.now() %>">
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <article class="post-content">
+            <h1><%= item.title %></h1>
+
+            <div class="post-meta hub-meta">
+                <% if (item.source_publication) { %>
+                    <span class="hub-source"><%= item.source_publication %></span>
+                <% } %>
+                <% if (item.source_author) { %>
+                    <span class="hub-author"><%= item.source_author %></span>
+                <% } %>
+                <% if (item.source_published_at) { %>
+                    <span class="hub-source-date"><%= item.source_published_at %></span>
+                <% } %>
+                <% if (item.published_at) { %>
+                    <time class="local-date" datetime="<%= item.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"></time>
+                <% } %>
+            </div>
+
+            <section class="hub-section">
+                <h2><%= lang === 'ko' ? '원문 링크' : 'Source' %></h2>
+                <p>
+                    <a class="hub-source-link" href="<%= item.source_url %>" target="_blank" rel="noopener noreferrer nofollow">
+                        <%= item.source_title || item.source_url %>
+                    </a>
+                </p>
+            </section>
+
+            <section class="hub-section">
+                <h2><%= lang === 'ko' ? '선정 이유' : 'Why this was selected' %></h2>
+                <p><%= item.selection_rationale %></p>
+            </section>
+
+            <section class="hub-section">
+                <h2><%= lang === 'ko' ? '맥락' : 'Context' %></h2>
+                <p><%= item.context %></p>
+            </section>
+
+            <% if (item.tags && item.tags.length > 0) { %>
+                <div class="hub-tags">
+                    <% item.tags.forEach(tag => { %>
+                        <span class="hub-tag">#<%= tag %></span>
+                    <% }) %>
+                </div>
+            <% } %>
+        </article>
+
+        <div class="box post-nav">
+            <div class="post-nav-left">
+                <a href="/hub">&larr; <%= strings.public.backToList %></a>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
