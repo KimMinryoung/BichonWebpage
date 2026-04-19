@@ -43,7 +43,9 @@ router.get('/', async (req, res) => {
             await cache.setList(currentPage, taskData);
         }
 
-        // Fetch research list (with cache)
+        // Fetch research list (with cache). Title is extracted server-side from each file's
+        // H1, so no per-file fetch is needed here — avoids N+1 and the partial-failure state
+        // that previously baked filenames into the list cache.
         let researchFiles = await cache.getResearchList();
         if (!researchFiles) {
             researchFiles = [];
@@ -51,27 +53,7 @@ router.get('/', async (req, res) => {
                 const rRes = await fetch(`${CHAT_API_URL}/research`);
                 if (rRes.ok) {
                     const rData = await rRes.json();
-                    const files = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
-
-                    await Promise.all(files.map(async (f) => {
-                        // Check file cache first
-                        const cached = await cache.getResearch(f.filename);
-                        if (cached && cached.title) {
-                            f.title = cached.title;
-                            return;
-                        }
-                        try {
-                            const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}`);
-                            if (r.ok) {
-                                const d = await r.json();
-                                const match = (d.content || '').match(/^#\s+(.+)/m);
-                                if (match) f.title = match[1];
-                                await cache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
-                            }
-                        } catch (_) {}
-                    }));
-
-                    researchFiles = files;
+                    researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
                     await cache.setResearchList(researchFiles);
                 }
             } catch (e) {
@@ -156,7 +138,7 @@ router.get('/research/:filename', async (req, res) => {
         const data = await response.json();
         const markdown = data.content || '';
         const match = markdown.match(/^#\s+(.+)/m);
-        const title = match ? match[1] : slug.replace(/_/g, ' ');
+        const title = data.title || (match ? match[1] : slug.replace(/_/g, ' '));
         await cache.setResearch(filename, { content: markdown, title });
 
         res.render('public/research-view', { filename, markdown: stripTitle(markdown), pageTitle: title, pagePath });
