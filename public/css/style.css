@@ -1,75 +1,78 @@
 /* ===== Theme Variables ===== */
-/* GitHub Dark High Contrast (default) */
+/* Component-level aliases, sourced from /css/palette.css raw tokens. */
+/* Dark (default) — GitHub Dark High Contrast */
 :root {
-    --bg-canvas: #010409;
-    --bg-surface: #0d1117;
-    --bg-surface-hover: #161b22;
-    --bg-inset: #010409;
-    --border: #d1d9e0;
-    --border-emphasis: #f0f3f6;
-    --text-primary: #ffffff;
-    --text-secondary: #e0e4e8;
-    --text-muted: #b0b8c1;
-    --link: #71b7ff;
-    --link-hover: #409eff;
-    --accent-blue: #409eff;
-    --accent-green: #26a148;
-    --accent-red: #da3633;
-    --btn-bg: #21262d;
-    --btn-hover: #30363d;
-    --btn-primary: #1f6feb;
-    --btn-primary-hover: #388bfd;
-    --btn-danger: #da3633;
-    --btn-danger-hover: #b62324;
-    --nav-bg: #0d1117;
-    --card-bg: #0d1117;
-    --input-bg: #161b22;
+    --bg-canvas: var(--clr-ink-0);
+    --bg-surface: var(--clr-ink-1);
+    --bg-surface-hover: var(--clr-ink-2);
+    --bg-inset: var(--clr-ink-0);
+    --border: var(--clr-line-on-ink);
+    --border-emphasis: var(--clr-line-on-ink-emphasis);
+    --text-primary: var(--clr-text-on-ink-hi);
+    --text-secondary: var(--clr-text-on-ink-mid);
+    --text-muted: var(--clr-text-on-ink-lo);
+    --link: var(--clr-blue-link-ink);
+    --link-hover: var(--clr-blue-accent-ink);
+    --accent-blue: var(--clr-blue-accent-ink);
+    --accent-green: var(--clr-green-accent-ink);
+    --accent-red: var(--clr-red-on-ink);
+    --btn-bg: var(--clr-ink-3);
+    --btn-hover: var(--clr-ink-4);
+    --btn-primary: var(--clr-blue-primary-ink);
+    --btn-primary-hover: var(--clr-blue-primary-ink-hi);
+    --btn-danger: var(--clr-red-on-ink);
+    --btn-danger-hover: var(--clr-red-on-ink-hover);
+    --nav-bg: var(--clr-ink-1);
+    --card-bg: var(--clr-ink-1);
+    --input-bg: var(--clr-ink-2);
     --overlay: rgba(1, 4, 9, 0.8);
-    --shadow: 0 1px 3px rgba(0,0,0,0.3);
-    --code-bg: #161b22;
-    --success-bg: #0d2818;
-    --success-border: #196c2e;
-    --success-text: #3fb950;
-    --error-bg: #2d1115;
-    --error-border: #6e2b2b;
-    --error-text: #f85149;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --code-bg: var(--clr-ink-2);
+    --success-bg: var(--clr-green-success-bg-ink);
+    --success-border: var(--clr-green-success-border-ink);
+    --success-text: var(--clr-green-success-text-ink);
+    --error-bg: var(--clr-red-error-bg-ink);
+    --error-border: var(--clr-red-error-border-ink);
+    --error-text: var(--clr-red-error-text-ink);
+    --focus-ring: rgba(31, 111, 235, 0.2);
     color-scheme: dark;
 }
 
-/* GitHub Light High Contrast */
+/* Light — GitHub Light High Contrast */
 [data-theme="light"] {
-    --bg-canvas: #ffffff;
-    --bg-surface: #f6f8fa;
-    --bg-surface-hover: #eaeef2;
-    --bg-inset: #eff2f5;
-    --border: #1f2328;
-    --border-emphasis: #0e1116;
-    --text-primary: #0e1116;
-    --text-secondary: #32383f;
-    --text-muted: #59636e;
-    --link: #0349b4;
-    --link-hover: #0969da;
-    --accent-blue: #0969da;
-    --accent-green: #1a7f37;
-    --accent-red: #cf222e;
-    --btn-bg: #e8ecf0;
-    --btn-hover: #d1d9e0;
-    --btn-primary: #0969da;
-    --btn-primary-hover: #0860ca;
-    --btn-danger: #cf222e;
-    --btn-danger-hover: #a40e26;
-    --nav-bg: #ffffff;
-    --card-bg: #ffffff;
-    --input-bg: #f6f8fa;
+    --bg-canvas: var(--clr-paper-0);
+    --bg-surface: var(--clr-paper-1);
+    --bg-surface-hover: var(--clr-paper-3);
+    --bg-inset: var(--clr-paper-2);
+    --border: var(--clr-line-on-paper);
+    --border-emphasis: var(--clr-line-on-paper-emphasis);
+    --text-primary: var(--clr-text-on-paper-hi);
+    --text-secondary: var(--clr-text-on-paper-mid);
+    --text-muted: var(--clr-text-on-paper-lo);
+    --link: var(--clr-blue-link-paper);
+    --link-hover: var(--clr-blue-accent-paper);
+    --accent-blue: var(--clr-blue-accent-paper);
+    --accent-green: var(--clr-green-accent-paper);
+    --accent-red: var(--clr-red-on-paper);
+    --btn-bg: var(--clr-paper-4);
+    --btn-hover: var(--clr-paper-5);
+    --btn-primary: var(--clr-blue-accent-paper);
+    --btn-primary-hover: var(--clr-blue-accent-paper-hi);
+    --btn-danger: var(--clr-red-on-paper);
+    --btn-danger-hover: var(--clr-red-on-paper-hover);
+    --nav-bg: var(--clr-paper-0);
+    --card-bg: var(--clr-paper-0);
+    --input-bg: var(--clr-paper-1);
     --overlay: rgba(31, 35, 40, 0.5);
-    --shadow: 0 1px 3px rgba(31,35,40,0.12);
-    --code-bg: #eff2f5;
-    --success-bg: #dafbe1;
-    --success-border: #82e596;
-    --success-text: #1a7f37;
-    --error-bg: #ffebe9;
-    --error-border: #ff8182;
-    --error-text: #cf222e;
+    --shadow: 0 1px 3px rgba(31, 35, 40, 0.12);
+    --code-bg: var(--clr-paper-2);
+    --success-bg: var(--clr-green-success-bg-paper);
+    --success-border: var(--clr-green-success-border-paper);
+    --success-text: var(--clr-green-accent-paper);
+    --error-bg: var(--clr-red-error-bg-paper);
+    --error-border: var(--clr-red-error-border-paper);
+    --error-text: var(--clr-red-on-paper);
+    --focus-ring: rgba(31, 111, 235, 0.2);
     color-scheme: light;
 }
 
@@ -472,14 +475,14 @@ header h1 {
 
 .home-hero-inner {
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 28px;
+    grid-template-columns: 128px 1fr;
+    gap: 24px;
     align-items: center;
 }
 
 .home-hero-portrait {
-    width: 180px;
-    height: 180px;
+    width: 128px;
+    height: 128px;
     object-fit: cover;
     border: 1px solid var(--border);
     display: block;
@@ -490,12 +493,11 @@ header h1 {
 }
 
 .home-hero h1 {
-    font-size: clamp(1rem, 4vw, 1.6rem);
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 6px;
     letter-spacing: -0.01em;
-    line-height: 1.25;
-    white-space: nowrap;
+    line-height: 1.3;
 }
 
 @media (max-width: 440px) {
@@ -509,8 +511,8 @@ header h1 {
 
 .home-description {
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.82rem;
+    line-height: 1.5;
 }
 
 .home-cards {
@@ -667,7 +669,7 @@ header h1 {
 
 .post-item h2 {
     margin-bottom: 8px;
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.4;
 }
@@ -683,14 +685,14 @@ header h1 {
 
 .post-meta {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     margin-bottom: 10px;
 }
 
 .post-excerpt {
     color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.55;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -707,13 +709,14 @@ header h1 {
 
 .post-content h1 {
     margin-bottom: 15px;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     letter-spacing: -0.02em;
 }
 
 .post-content .post-body {
     margin-top: 20px;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.65;
 }
 
 .post-content .post-body iframe.post-embed {
@@ -757,7 +760,7 @@ form {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.2);
+    box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .form-group textarea {
@@ -1059,6 +1062,12 @@ footer .footer-tagline {
     max-width: 100%;
 }
 
+.chat-page .home-toolbar {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+}
+
 .chat-page footer {
     display: none;
 }
@@ -1183,7 +1192,7 @@ footer .footer-tagline {
 .chat-input-row input:focus {
     outline: none;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.2);
+    box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .chat-input-row button {
@@ -1253,7 +1262,7 @@ footer .footer-tagline {
     }
 
     .post-item h2 {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
     }
 
     .admin-header {

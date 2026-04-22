@@ -63,27 +63,6 @@
             </section>
         <% } %>
 
-        <!-- Recent AI Diaries -->
-        <% if (recentDiaries && recentDiaries.length > 0) { %>
-            <section class="home-section">
-                <div class="home-section-header">
-                    <h2><%= strings.home.recentDiaries %></h2>
-                    <a href="/ai-diary" class="btn btn-small"><%= strings.home.viewAll %></a>
-                </div>
-                <ul class="post-list">
-                    <% recentDiaries.forEach(diary => { %>
-                        <li class="post-item">
-                            <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
-                            <div class="post-meta">
-                                <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
-                            </div>
-                            <p class="post-excerpt"><%- truncateHtml(sanitize(diary.content), 200) %></p>
-                        </li>
-                    <% }) %>
-                </ul>
-            </section>
-        <% } %>
-
         <!-- Recent Research -->
         <% if (recentResearch && recentResearch.length > 0) { %>
             <section class="home-section">
@@ -99,6 +78,9 @@
                                 <div class="post-meta">
                                     <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                                 </div>
+                            <% } %>
+                            <% if (file.excerpt) { %>
+                                <p class="post-excerpt"><%= file.excerpt %></p>
                             <% } %>
                         </li>
                     <% }) %>
@@ -128,6 +110,27 @@
                             <% if (it.context) { %>
                                 <p class="post-excerpt"><%= it.context.substring(0, 180) %><%= it.context.length > 180 ? '…' : '' %></p>
                             <% } %>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+        <% } %>
+
+        <!-- Recent AI Diaries -->
+        <% if (recentDiaries && recentDiaries.length > 0) { %>
+            <section class="home-section">
+                <div class="home-section-header">
+                    <h2><%= strings.home.recentDiaries %></h2>
+                    <a href="/ai-diary" class="btn btn-small"><%= strings.home.viewAll %></a>
+                </div>
+                <ul class="post-list">
+                    <% recentDiaries.forEach(diary => { %>
+                        <li class="post-item">
+                            <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
+                            <div class="post-meta">
+                                <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                            </div>
+                            <p class="post-excerpt"><%- truncateHtml(sanitize(diary.content), 200) %></p>
                         </li>
                     <% }) %>
                 </ul>

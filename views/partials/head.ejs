@@ -21,6 +21,7 @@
 <script>
 (function(){var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t)})();
 </script>
+<link rel="stylesheet" href="/css/palette.css?v=<%= Date.now() %>">
 <link rel="stylesheet" href="/css/style.css?v=<%= Date.now() %>">
 <% if (typeof extraCss !== 'undefined' && extraCss) { %>
 <link rel="stylesheet" href="<%= extraCss %>">

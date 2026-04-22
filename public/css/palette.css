@@ -1,0 +1,68 @@
+/* ==============================================
+   Cyber-Lenin Color Palette
+   Raw color tokens — B&W contrast + blue accent.
+   Theme mapping (dark/light) lives in style.css;
+   this file defines swatches only, no component aliases.
+   ============================================== */
+
+:root {
+  /* ── Ink scale (dark-mode surfaces, deep → raised) ─────── */
+  --clr-ink-0:   #010409;   /* canvas */
+  --clr-ink-1:   #0d1117;   /* surface / card / nav */
+  --clr-ink-2:   #161b22;   /* elevated / input / code / hover */
+  --clr-ink-3:   #21262d;   /* btn */
+  --clr-ink-4:   #30363d;   /* btn hover */
+
+  /* ── Paper scale (light-mode surfaces, pure → sunk) ─────── */
+  --clr-paper-0: #ffffff;   /* canvas / card / nav */
+  --clr-paper-1: #f6f8fa;   /* surface / input */
+  --clr-paper-2: #eff2f5;   /* inset / code */
+  --clr-paper-3: #eaeef2;   /* hover */
+  --clr-paper-4: #e8ecf0;   /* btn */
+  --clr-paper-5: #d1d9e0;   /* btn hover */
+
+  /* ── Text on ink (high → low contrast) ─────────────────── */
+  --clr-text-on-ink-hi:  #ffffff;
+  --clr-text-on-ink-mid: #e0e4e8;
+  --clr-text-on-ink-lo:  #b0b8c1;
+
+  /* ── Text on paper (high → low contrast) ───────────────── */
+  --clr-text-on-paper-hi:  #0e1116;
+  --clr-text-on-paper-mid: #32383f;
+  --clr-text-on-paper-lo:  #59636e;
+
+  /* ── Border lines ──────────────────────────────────────── */
+  --clr-line-on-ink:          #d1d9e0;
+  --clr-line-on-ink-emphasis: #f0f3f6;
+  --clr-line-on-paper:          #1f2328;
+  --clr-line-on-paper-emphasis: #0e1116;
+
+  /* ── Blue accent (light weight → heavy weight) ─────────── */
+  --clr-blue-link-ink:       #71b7ff;
+  --clr-blue-accent-ink:     #409eff;
+  --clr-blue-primary-ink:    #1f6feb;
+  --clr-blue-primary-ink-hi: #388bfd;
+  --clr-blue-link-paper:       #0349b4;
+  --clr-blue-accent-paper:     #0969da;
+  --clr-blue-accent-paper-hi:  #0860ca;
+
+  /* ── Red / danger ──────────────────────────────────────── */
+  --clr-red-on-ink:         #da3633;
+  --clr-red-on-ink-hover:   #b62324;
+  --clr-red-on-paper:       #cf222e;
+  --clr-red-on-paper-hover: #a40e26;
+  --clr-red-error-text-ink:   #f85149;
+  --clr-red-error-bg-ink:     #2d1115;
+  --clr-red-error-border-ink: #6e2b2b;
+  --clr-red-error-bg-paper:     #ffebe9;
+  --clr-red-error-border-paper: #ff8182;
+
+  /* ── Green / success ───────────────────────────────────── */
+  --clr-green-accent-ink:   #26a148;
+  --clr-green-accent-paper: #1a7f37;
+  --clr-green-success-text-ink:   #3fb950;
+  --clr-green-success-bg-ink:     #0d2818;
+  --clr-green-success-border-ink: #196c2e;
+  --clr-green-success-bg-paper:     #dafbe1;
+  --clr-green-success-border-paper: #82e596;
+}

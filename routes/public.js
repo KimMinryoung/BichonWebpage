@@ -13,6 +13,27 @@ const POSTS_PER_PAGE = 20;
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const RECENT_LIMIT = 5;
 
+function mdExcerpt(content, n = 220) {
+    if (!content) return '';
+    let text = content.replace(/^#\s+.+$/m, '').trim();
+    text = text
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
+        .replace(/`([^`]+)`/g, '$1')
+        .replace(/^\s*(작성자|작성일|Author|Date)\s*:.*$/gim, '')
+        .replace(/^\s*>.*$/gm, '')
+        .replace(/^\s*-{3,}\s*$/gm, '')
+        .replace(/^#{1,6}\s+/gm, '')
+        .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/^[-*+]\s+/gm, '')
+        .replace(/^\d+\.\s+/gm, '')
+        .replace(/\n{2,}/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    return text.length > n ? text.substring(0, n) + '…' : text;
+}
+
 // Homepage
 router.get('/', async (req, res) => {
     try {
@@ -27,23 +48,29 @@ router.get('/', async (req, res) => {
                     if (!response.ok) throw new Error(`API ${response.status}`);
                     const data = await response.json();
                     files = (data.files || []).sort((a, b) => b.modified_at - a.modified_at);
-                    // Fetch titles for top files
-                    await Promise.all(files.slice(0, RECENT_LIMIT).map(async (f) => {
-                        const cached = await reportCache.getResearch(f.filename);
-                        if (cached && cached.title) { f.title = cached.title; return; }
-                        try {
-                            const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}`);
-                            if (r.ok) {
-                                const d = await r.json();
-                                const match = (d.content || '').match(/^#\s+(.+)/m);
-                                if (match) f.title = match[1];
-                                await reportCache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
-                            }
-                        } catch (_) {}
-                    }));
                     await reportCache.setResearchList(files);
                 }
-                return files.slice(0, RECENT_LIMIT);
+                const top = files.slice(0, RECENT_LIMIT);
+                await Promise.all(top.map(async (f) => {
+                    if (f.title && f.excerpt) return;
+                    const cached = await reportCache.getResearch(f.filename);
+                    if (cached && cached.content) {
+                        if (!f.title && cached.title) f.title = cached.title;
+                        f.excerpt = mdExcerpt(cached.content);
+                        return;
+                    }
+                    try {
+                        const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}`);
+                        if (r.ok) {
+                            const d = await r.json();
+                            const match = (d.content || '').match(/^#\s+(.+)/m);
+                            if (match) f.title = match[1];
+                            f.excerpt = mdExcerpt(d.content);
+                            await reportCache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
+                        }
+                    } catch (_) {}
+                }));
+                return top;
             })(),
             (async () => {
                 const response = await fetch(`${CHAT_API_URL}/hub?limit=${RECENT_LIMIT}&offset=0`);
