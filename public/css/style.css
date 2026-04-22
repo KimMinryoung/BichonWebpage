@@ -493,19 +493,22 @@ header h1 {
 }
 
 .home-hero h1 {
-    font-size: 1.2rem;
+    font-size: clamp(0.95rem, 2.8vw, 1.2rem);
     font-weight: 600;
     margin-bottom: 6px;
     letter-spacing: -0.01em;
     line-height: 1.3;
+    white-space: nowrap;
 }
 
 @media (max-width: 440px) {
     .home-hero-inner {
         grid-template-columns: 1fr;
         gap: 16px;
-        justify-items: center;
-        text-align: center;
+    }
+
+    .home-hero-portrait {
+        justify-self: center;
     }
 }
 
