@@ -3,6 +3,7 @@
 <head>
     <% pageTitle = strings.login.title %>
     <%- include('../partials/head') %>
+    <meta name="csrf-token" content="<%= csrfToken %>">
 </head>
 <body>
     <nav>
@@ -18,26 +19,134 @@
         <div class="login-box">
             <h1><%= strings.login.title %></h1>
 
-            <% if (typeof error !== 'undefined' && error) { %>
-                <div class="message message-error">
-                    <%= error %>
-                </div>
-            <% } %>
+            <div id="passkey-message" class="message" style="display:none;"></div>
 
-            <form action="/admin/login" method="POST">
+            <div id="bootstrap-fields" style="display:none;">
+                <p class="message message-info"><%= strings.login.bootstrapHint %></p>
                 <div class="form-group">
-                    <label for="username"><%= strings.login.username %></label>
-                    <input type="text" id="username" name="username" required autofocus>
+                    <label for="bootstrap-username"><%= strings.login.username %></label>
+                    <input type="text" id="bootstrap-username" name="username" autocomplete="username">
                 </div>
                 <div class="form-group">
-                    <label for="password"><%= strings.login.password %></label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="bootstrap-device"><%= strings.login.deviceName %></label>
+                    <input type="text" id="bootstrap-device" name="deviceName" placeholder="<%= strings.login.deviceNamePlaceholder %>">
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;"><%= strings.login.submit %></button>
-            </form>
+                <button type="button" class="btn btn-primary" id="register-btn" style="width: 100%;">
+                    <%= strings.login.registerSubmit %>
+                </button>
+            </div>
 
+            <div id="signin-block">
+                <button type="button" class="btn btn-primary" id="signin-btn" style="width: 100%;">
+                    <%= strings.login.passkeySubmit %>
+                </button>
+            </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.umd.min.js"></script>
+    <script>
+    (function () {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+        const msg = document.getElementById('passkey-message');
+        const bootstrapBlock = document.getElementById('bootstrap-fields');
+        const signinBlock = document.getElementById('signin-block');
+        const signinBtn = document.getElementById('signin-btn');
+        const registerBtn = document.getElementById('register-btn');
+        const strings = {
+            notSupported: <%- JSON.stringify(strings.login.notSupported) %>,
+            cancelled: <%- JSON.stringify(strings.login.cancelled) %>,
+            failed: <%- JSON.stringify(strings.login.failed) %>,
+            registered: <%- JSON.stringify(strings.login.registered) %>,
+            usernameRequired: <%- JSON.stringify(strings.login.usernameRequired) %>,
+        };
+
+        function showMessage(text, kind) {
+            msg.textContent = text;
+            msg.className = 'message message-' + (kind || 'info');
+            msg.style.display = 'block';
+        }
+
+        async function jsonFetch(url, body) {
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-csrf-token': csrfToken,
+                },
+                body: JSON.stringify(body || {}),
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+            return data;
+        }
+
+        async function init() {
+            if (!window.SimpleWebAuthnBrowser || !window.PublicKeyCredential) {
+                showMessage(strings.notSupported, 'error');
+                signinBtn.disabled = true;
+                return;
+            }
+            try {
+                const status = await fetch('/admin/webauthn/status').then(r => r.json());
+                if (status.bootstrap) {
+                    bootstrapBlock.style.display = 'block';
+                    signinBlock.style.display = 'none';
+                }
+            } catch (e) { /* network failure — show sign-in anyway */ }
+        }
+
+        signinBtn.addEventListener('click', async () => {
+            signinBtn.disabled = true;
+            try {
+                const options = await jsonFetch('/admin/webauthn/auth/options');
+                const assertion = await window.SimpleWebAuthnBrowser.startAuthentication({ optionsJSON: options });
+                const result = await jsonFetch('/admin/webauthn/auth/verify', { response: assertion });
+                if (result.verified) {
+                    window.location.href = result.redirect || '/admin';
+                    return;
+                }
+                showMessage(strings.failed, 'error');
+            } catch (err) {
+                const isCancel = err && (err.name === 'NotAllowedError' || /cancel/i.test(err.message || ''));
+                showMessage(isCancel ? strings.cancelled : (err.message || strings.failed), 'error');
+            } finally {
+                signinBtn.disabled = false;
+            }
+        });
+
+        registerBtn.addEventListener('click', async () => {
+            const username = document.getElementById('bootstrap-username').value.trim();
+            const deviceName = document.getElementById('bootstrap-device').value.trim();
+            if (!username) {
+                showMessage(strings.usernameRequired, 'error');
+                return;
+            }
+            registerBtn.disabled = true;
+            try {
+                const options = await jsonFetch('/admin/webauthn/register/options', { username });
+                const attestation = await window.SimpleWebAuthnBrowser.startRegistration({ optionsJSON: options });
+                const result = await jsonFetch('/admin/webauthn/register/verify', {
+                    response: attestation,
+                    deviceName: deviceName || null,
+                });
+                if (result.verified) {
+                    showMessage(strings.registered, 'success');
+                    window.location.href = result.redirect || '/admin';
+                    return;
+                }
+                showMessage(strings.failed, 'error');
+            } catch (err) {
+                const isCancel = err && (err.name === 'NotAllowedError' || /cancel/i.test(err.message || ''));
+                showMessage(isCancel ? strings.cancelled : (err.message || strings.failed), 'error');
+            } finally {
+                registerBtn.disabled = false;
+            }
+        });
+
+        init();
+    })();
+    </script>
 
     <%- include('../partials/footer') %>
 </body>

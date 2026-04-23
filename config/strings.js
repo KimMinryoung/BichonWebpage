@@ -59,7 +59,17 @@ const ko = {
         title: '관리실 입실',
         username: '이름',
         password: '비밀번호',
-        submit: '로그인'
+        submit: '로그인',
+        passkeySubmit: 'Passkey로 로그인',
+        registerSubmit: 'Passkey 등록',
+        deviceName: '기기 이름',
+        deviceNamePlaceholder: '예: 갤럭시 S24, 사무실 데스크톱',
+        bootstrapHint: '등록된 Passkey가 없습니다. 허용된 IP에서 최초 Passkey를 등록하세요.',
+        notSupported: '이 브라우저는 Passkey를 지원하지 않습니다.',
+        cancelled: '취소되었습니다.',
+        failed: '실패. 다시 시도하세요.',
+        registered: '등록 완료. 로그인 중…',
+        usernameRequired: '이름을 입력하세요.'
     },
 
     // 관리자 페이지
@@ -112,7 +122,19 @@ const ko = {
         chatLogsFilterCasual: '일상 대화',
         chatLogsFilterVectorstore: '지식 검색',
         chatLogsRefresh: '새로고침',
-        chatLogsLoading: '불러오는 중...'
+        chatLogsLoading: '불러오는 중...',
+
+        // Passkey 관리
+        passkeys: 'Passkey 관리',
+        passkeysHint: '등록된 Passkey를 관리합니다. 분실한 기기의 Passkey는 삭제하세요.',
+        passkeysEmpty: '등록된 Passkey가 없습니다.',
+        addPasskey: '이 기기에 Passkey 추가',
+        passkeyAdded: '추가 완료.',
+        passkeyDeleteConfirm: '이 Passkey를 정말 삭제하시겠습니까?',
+        passkeyUnnamed: '(이름 없음)',
+        passkeyCreated: '등록일',
+        passkeyLastUsed: '최근 사용',
+        passkeyNever: '사용 안 함'
     },
 
     // 스토리 편집기
@@ -203,7 +225,17 @@ const en = {
         title: 'Admin Login',
         username: 'Username',
         password: 'Password',
-        submit: 'Login'
+        submit: 'Login',
+        passkeySubmit: 'Sign in with Passkey',
+        registerSubmit: 'Register Passkey',
+        deviceName: 'Device name',
+        deviceNamePlaceholder: 'e.g. Galaxy S24, Office desktop',
+        bootstrapHint: 'No passkey registered yet. Set up the first one from an allowed IP.',
+        notSupported: 'This browser does not support passkeys.',
+        cancelled: 'Cancelled.',
+        failed: 'Failed. Please try again.',
+        registered: 'Registered. Signing you in…',
+        usernameRequired: 'Username is required.'
     },
 
     admin: {
@@ -251,7 +283,18 @@ const en = {
         chatLogsFilterCasual: 'Casual',
         chatLogsFilterVectorstore: 'Knowledge Search',
         chatLogsRefresh: 'Refresh',
-        chatLogsLoading: 'Loading...'
+        chatLogsLoading: 'Loading...',
+
+        passkeys: 'Passkeys',
+        passkeysHint: 'Manage registered passkeys. Remove passkeys for lost devices.',
+        passkeysEmpty: 'No passkeys registered.',
+        addPasskey: 'Add passkey on this device',
+        passkeyAdded: 'Added.',
+        passkeyDeleteConfirm: 'Delete this passkey?',
+        passkeyUnnamed: '(unnamed)',
+        passkeyCreated: 'Created',
+        passkeyLastUsed: 'Last used',
+        passkeyNever: 'Never'
     },
 
     storyEditor: {

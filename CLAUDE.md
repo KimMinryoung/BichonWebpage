@@ -33,6 +33,14 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 ### Game Development (Babel Express)
 - Must read development documentation (dev_docs\webgame_architecture.md) before work, and update it after change.
 
+### Admin auth (Passkey / WebAuthn)
+- Admin login is passkey-only. No password anywhere. IP whitelist (ADMIN_ALLOWED_IPS) is still enforced on `/admin/*`.
+- WebAuthn requires HTTPS, so admin login must go through `https://cyber-lenin.com` — direct `http://<tailscale-ip>:3000` will fail at ceremony time. RP_ID / RP_ORIGIN are in `.env`.
+- Bootstrap: when `user_passkeys` is empty, `/admin/login` shows a register form that any allowlisted IP can use to register the first passkey.
+- Add more passkeys after login at `/admin/passkeys` (one per device: Galaxy fingerprint, Windows Hello, USB key, …).
+- Recovery (lost all passkeys): SSH in and run `docker exec leninbot-frontend node /app/scripts/reset-passkeys.js [username]`. Next `/admin/login` from an allowlisted IP re-enters bootstrap mode.
+- DB tables: `users` (id, username, is_admin), `user_passkeys` (credential_id, public_key, counter, transports, device_name, backed_up). The old `admins` table is dropped by the migration.
+
 ### CSS / Mobile
 - CSS cache busting is active: `?v=<%= Date.now() %>` in head.ejs
 - Use `dvh` units instead of `vh` for mobile viewport height

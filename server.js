@@ -80,7 +80,7 @@ app.use(session({
 }));
 
 // CSRF protection (exclude API-key-authenticated routes)
-app.use(csrfProtection(['/admin/login']));
+app.use(csrfProtection([]));
 
 // Make session and strings available in all views
 app.use((req, res, next) => {
@@ -147,6 +147,7 @@ app.use((req, res, next) => {
 // Routes
 const publicRoutes = require('./routes/public');
 const adminRoutes = require('./routes/admin');
+const webauthnRoutes = require('./routes/webauthn');
 const storyApiRoutes = require('./routes/story-api');
 const aiDiaryRoutes = require('./routes/ai-diary');
 const gameRoutes = require('./routes/game');
@@ -156,6 +157,7 @@ const pageRoutes = require('./routes/pages');
 const { requireAdminIp } = require('./middleware/auth');
 
 app.use('/', publicRoutes);
+app.use('/admin/webauthn', requireAdminIp, webauthnRoutes);
 app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);

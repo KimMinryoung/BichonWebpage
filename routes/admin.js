@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const rateLimit = require('express-rate-limit');
 const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
@@ -9,67 +7,14 @@ const postCache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
 
-// Rate limiter for login attempts: 5 attempts per 15 minutes per IP
-const loginLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 5,
-    standardHeaders: true,
-    legacyHeaders: false,
-    handler: (req, res) => {
-        res.render('admin/login', {
-            error: 'Too many login attempts. Please try again after 15 minutes.'
-        });
-    }
-});
-
-// Login page
+// Login page (Passkey ceremony happens entirely client-side; see routes/webauthn.js)
 router.get('/login', redirectIfAuthenticated, (req, res) => {
-    res.render('admin/login', { error: null });
+    res.render('admin/login');
 });
 
-// Login handler
-router.post('/login', loginLimiter, redirectIfAuthenticated, async (req, res) => {
-    const { username, password } = req.body;
-
-    try {
-        const { rows: admins } = await db.query(
-            'SELECT * FROM admins WHERE username = $1',
-            [username]
-        );
-
-        if (admins.length === 0) {
-            return res.render('admin/login', { error: 'Invalid username or password' });
-        }
-
-        const admin = admins[0];
-
-        const validPassword = await bcrypt.compare(password, admin.password_hash);
-
-        if (!validPassword) {
-            return res.render('admin/login', { error: 'Invalid username or password' });
-        }
-
-        req.session.regenerate(function(err) {
-            if (err) {
-                console.error('Session regenerate error:', err);
-                return res.render('admin/login', { error: 'An error occurred. Please try again.' });
-            }
-            req.session.isAuthenticated = true;
-            req.session.adminUser = {
-                id: admin.id,
-                username: admin.username
-            };
-            res.redirect('/admin');
-        });
-    } catch (error) {
-        if (isConnectionError(error)) {
-            console.error('[DB Connection Failed] Login - Database connection failed:', error.message);
-            console.error('[DB Connection Failed] Login - Error code:', error.code);
-        } else {
-            console.error('Login error:', error);
-        }
-        res.render('admin/login', { error: 'An error occurred. Please try again.' });
-    }
+// Passkey management page
+router.get('/passkeys', requireAuth, (req, res) => {
+    res.render('admin/passkeys');
 });
 
 // Logout
