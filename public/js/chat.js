@@ -87,84 +87,144 @@
     var inHistoryMode = false;
     var originalPlaceholder = chatInput.placeholder;
 
-    async function loadHistory() {
+    function formatRelative(iso) {
+        if (!iso) return '';
         try {
-            var res = await fetch(API_URL + '/history?fingerprint=' + encodeURIComponent(userId) + '&limit=50');
+            var d = new Date(iso);
+            var diff = (Date.now() - d.getTime()) / 1000;
+            if (diff < 60) return '방금';
+            if (diff < 3600) return Math.floor(diff / 60) + '분 전';
+            if (diff < 86400) return Math.floor(diff / 3600) + '시간 전';
+            if (diff < 604800) return Math.floor(diff / 86400) + '일 전';
+            return d.toLocaleDateString();
+        } catch { return ''; }
+    }
+
+    function renderSessionTurns(turns) {
+        chatBox.innerHTML = '';
+        for (var i = 0; i < turns.length; i++) {
+            var item = turns[i];
+            var userMsg = document.createElement('div');
+            userMsg.className = 'chat-message chat-message-user';
+            userMsg.textContent = item.user_query;
+            chatBox.appendChild(userMsg);
+            var aiMsg = document.createElement('div');
+            aiMsg.className = 'chat-message chat-message-ai';
+            aiMsg.innerHTML = DOMPurify.sanitize(marked.parse(item.bot_answer || ''), {ADD_ATTR: ['target']});
+            chatBox.appendChild(aiMsg);
+        }
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    async function resumeSession(sid) {
+        try {
+            var res = await fetch(API_URL + '/history?session_id=' + encodeURIComponent(sid) + '&fingerprint=' + encodeURIComponent(userId) + '&limit=200');
             if (!res.ok) throw new Error('서버 응답 오류');
             var data = await res.json();
+            renderSessionTurns(data.history || []);
+            sessionId = sid;
+            sessionStorage.setItem('chatSessionId', sid);
+            exitHistoryMode();
+            return true;
+        } catch (err) {
+            console.error('resume error:', err);
+            return false;
+        }
+    }
 
-            // Wrap all history in one container so it can be removed cleanly
+    function startNewSession() {
+        sessionId = 'tab-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
+        sessionStorage.setItem('chatSessionId', sessionId);
+        chatBox.innerHTML = '';
+        exitHistoryMode();
+    }
+
+    async function loadSessions() {
+        try {
+            var res = await fetch(API_URL + '/sessions?fingerprint=' + encodeURIComponent(userId) + '&limit=50');
+            if (!res.ok) throw new Error('서버 응답 오류');
+            var data = await res.json();
+            var sessions = data.sessions || [];
+
+            chatBox.innerHTML = '';
             var container = document.createElement('div');
             container.id = 'historyContainer';
+            container.className = 'session-list';
 
             var sep = document.createElement('div');
             sep.className = 'chat-history-separator';
-            sep.textContent = data.history.length > 0 ? '── 이전 대화 기록 ──' : '── 이전 대화 기록이 없습니다 ──';
+            sep.textContent = sessions.length > 0 ? '── 이전 대화 기록 ──' : '── 이전 대화 기록이 없습니다 ──';
             container.appendChild(sep);
 
-            for (var i = 0; i < data.history.length; i++) {
-                var item = data.history[i];
-                var userMsg = document.createElement('div');
-                userMsg.className = 'chat-message chat-message-user';
-                userMsg.textContent = item.user_query;
-                container.appendChild(userMsg);
+            for (var i = 0; i < sessions.length; i++) {
+                var s = sessions[i];
+                var card = document.createElement('button');
+                card.type = 'button';
+                card.className = 'session-card';
+                card.setAttribute('data-session-id', s.session_id);
 
-                var aiMsg = document.createElement('div');
-                aiMsg.className = 'chat-message chat-message-ai';
-                aiMsg.innerHTML = DOMPurify.sanitize(marked.parse(item.bot_answer), {ADD_ATTR: ['target']});
-                container.appendChild(aiMsg);
+                var q = document.createElement('div');
+                q.className = 'session-card-query';
+                q.textContent = s.first_query || '(빈 대화)';
+                card.appendChild(q);
+
+                var meta = document.createElement('div');
+                meta.className = 'session-card-meta';
+                meta.textContent = formatRelative(s.last_at) + ' · ' + (s.message_count || 0) + '개 메시지';
+                card.appendChild(meta);
+
+                card.addEventListener('click', function (sid) {
+                    return function () { resumeSession(sid); };
+                }(s.session_id));
+
+                container.appendChild(card);
             }
 
-            chatBox.insertBefore(container, chatBox.firstChild);
+            chatBox.appendChild(container);
             chatBox.scrollTop = 0;
             return true;
         } catch (err) {
-            console.error('History load error:', err);
+            console.error('Sessions load error:', err);
             var errorNote = document.createElement('div');
             errorNote.className = 'chat-message chat-message-log chat-message-error';
             errorNote.style.textAlign = 'center';
             errorNote.textContent = '⚠️ 대화 기록을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.';
-            
-            // historyContainer 대신 에러 메시지 임시 삽입
-            chatBox.insertBefore(errorNote, chatBox.firstChild);
-            
-            // 3초 후 에러 메시지 삭제
+            chatBox.appendChild(errorNote);
             setTimeout(() => errorNote.remove(), 3000);
-            
             return false;
         }
+    }
+
+    function exitHistoryMode() {
+        if (!inHistoryMode) return;
+        var container = document.getElementById('historyContainer');
+        if (container) container.remove();
+        setLoading(false);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        historyBtn.classList.remove('btn-primary');
+        historyBtn.textContent = '이전 대화';
+        chatInput.placeholder = originalPlaceholder;
+        inHistoryMode = false;
     }
 
     var historyBtn = document.getElementById('historyBtn');
     if (historyBtn) {
         historyBtn.addEventListener('click', async function () {
             historyBtn.disabled = true;
-
             if (!inHistoryMode) {
-                // → History mode: disable input, load history, rename button
                 setLoading(true);
-                var success = await loadHistory();
+                var success = await loadSessions();
                 if (success) {
                     historyBtn.classList.add('btn-primary');
-                    historyBtn.textContent = '채팅 재개';
-                    chatInput.placeholder = "'채팅 재개'를 클릭하면 대화 모드로 돌아갑니다";
+                    historyBtn.textContent = '닫기';
+                    chatInput.placeholder = '세션을 클릭해 이어서 대화하거나 "닫기"를 누르세요';
                     inHistoryMode = true;
-                }
-                 else {
+                } else {
                     setLoading(false);
-                 }
+                }
             } else {
-                // → Chat mode: remove history container, enable input, scroll to bottom
-                var container = document.getElementById('historyContainer');
-                if (container) container.remove();
-                setLoading(false);
-                chatBox.scrollTop = chatBox.scrollHeight;
-                historyBtn.classList.remove('btn-primary');
-                historyBtn.textContent = '이전 대화';
-                chatInput.placeholder = originalPlaceholder;
-                inHistoryMode = false;
+                exitHistoryMode();
             }
-
             historyBtn.disabled = false;
         });
     }

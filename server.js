@@ -17,17 +17,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 
-// Backend API proxy — must be before body parsers and CSRF
-app.use('/api/proxy', createProxyMiddleware({
-    target: CHAT_API_URL,
-    changeOrigin: true,
-    pathRewrite: { '^/api/proxy': '' },
-    // Disable buffering for streaming responses (SSE)
-    onProxyRes: (proxyRes) => {
-        proxyRes.headers['X-Accel-Buffering'] = 'no';
-    },
-}));
-
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
 if (process.env.NODE_ENV === 'production') {
     app.set('trust proxy', 1);
@@ -37,13 +26,58 @@ if (process.env.NODE_ENV === 'production') {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// cookieParser + session must run before the backend proxy so logged-in
+// users' bound fingerprints can be stamped onto proxied LeninBot requests.
+app.use(cookieParser());
+app.use(session({
+    store: new RedisStore({ client: redisClient, prefix: 'sess:' }),
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: process.env.NODE_ENV === 'production' ? 'auto' : false,
+        sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'strict',
+        maxAge: 24 * 60 * 60 * 1000
+    }
+}));
+
+// Preload user's bound fingerprints into req so the proxy can stamp them.
+app.use('/api/proxy', async (req, res, next) => {
+    if (req.session && req.session.user && req.session.user.id) {
+        try {
+            const { fingerprintsForUser } = require('./services/webauthn');
+            req.userFingerprints = await fingerprintsForUser(req.session.user.id);
+        } catch (err) {
+            console.error('fingerprint preload:', err.message);
+            req.userFingerprints = [];
+        }
+    }
+    next();
+});
+
+// Backend API proxy — must be before body parsers and CSRF for streaming integrity.
+app.use('/api/proxy', createProxyMiddleware({
+    target: CHAT_API_URL,
+    changeOrigin: true,
+    pathRewrite: { '^/api/proxy': '' },
+    on: {
+        proxyReq: (proxyReq, req) => {
+            if (Array.isArray(req.userFingerprints) && req.userFingerprints.length) {
+                proxyReq.setHeader('X-User-Fingerprints', req.userFingerprints.join(','));
+            }
+        },
+        proxyRes: (proxyRes) => {
+            proxyRes.headers['X-Accel-Buffering'] = 'no';
+        },
+    },
+}));
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'), {
     maxAge: '7d',  // Cloudflare edge caches static assets for 7 days
 }));
-app.use(cookieParser());
 
 // Security headers
 app.use(helmet({
@@ -64,21 +98,6 @@ app.use(helmet({
     crossOriginEmbedderPolicy: false
 }));
 
-// Session configuration
-app.use(session({
-    store: new RedisStore({ client: redisClient, prefix: 'sess:' }),
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        // 'auto' uses req.secure (respects X-Forwarded-Proto via trust proxy):
-        // HTTPS (Cloudflare) → secure cookie, HTTP (Tailscale) → non-secure.
-        secure: process.env.NODE_ENV === 'production' ? 'auto' : false,
-        sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'strict',
-        maxAge: 24 * 60 * 60 * 1000 // 24 hours
-    }
-}));
-
 // CSRF protection (exclude API-key-authenticated routes)
 app.use(csrfProtection([]));
 
@@ -86,6 +105,7 @@ app.use(csrfProtection([]));
 app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
     res.locals.adminUser = req.session.adminUser || null;
+    res.locals.currentUser = req.session.user || null;
     var lang = req.cookies.lang === 'en' ? 'en' : 'ko';
     res.locals.lang = lang;
     res.locals.strings = allStrings[lang];
@@ -148,6 +168,7 @@ app.use((req, res, next) => {
 const publicRoutes = require('./routes/public');
 const adminRoutes = require('./routes/admin');
 const webauthnRoutes = require('./routes/webauthn');
+const authRoutes = require('./routes/auth');
 const storyApiRoutes = require('./routes/story-api');
 const aiDiaryRoutes = require('./routes/ai-diary');
 const gameRoutes = require('./routes/game');
@@ -157,6 +178,7 @@ const pageRoutes = require('./routes/pages');
 const { requireAdminIp } = require('./middleware/auth');
 
 app.use('/', publicRoutes);
+app.use('/auth', authRoutes);
 app.use('/admin/webauthn', requireAdminIp, webauthnRoutes);
 app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);

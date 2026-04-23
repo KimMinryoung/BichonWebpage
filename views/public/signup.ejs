@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <% pageTitle = strings.userAuth.signupTitle %>
+    <%- include('../partials/head') %>
+    <meta name="csrf-token" content="<%= csrfToken %>">
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1><%= strings.userAuth.signupTitle %></h1>
+
+            <p class="message message-info">
+                <%= strings.userAuth.signupHint %>
+            </p>
+
+            <div id="auth-message" class="message" style="display:none;"></div>
+
+            <div class="form-group">
+                <label for="username"><%= strings.userAuth.username %></label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+                <small style="display:block;margin-top:4px;color:var(--clr-text-soft,#888);">
+                    <%= strings.userAuth.usernameHint %>
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="device-name"><%= strings.login.deviceName %></label>
+                <input type="text" id="device-name" placeholder="<%= strings.login.deviceNamePlaceholder %>">
+            </div>
+
+            <button type="button" class="btn btn-primary" id="signup-btn" style="width:100%;">
+                <%= strings.userAuth.signUp %>
+            </button>
+
+            <p style="margin-top:20px; text-align:center;">
+                <%= strings.userAuth.haveAccount %>
+                <a href="/auth/login"><%= strings.userAuth.signInLink %></a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.umd.min.js"></script>
+    <script>
+    (function () {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+        const msg = document.getElementById('auth-message');
+        const signupBtn = document.getElementById('signup-btn');
+        const S = {
+            notSupported: <%- JSON.stringify(strings.login.notSupported) %>,
+            cancelled: <%- JSON.stringify(strings.login.cancelled) %>,
+            failed: <%- JSON.stringify(strings.login.failed) %>,
+            usernameRequired: <%- JSON.stringify(strings.login.usernameRequired) %>,
+            registered: <%- JSON.stringify(strings.login.registered) %>,
+        };
+
+        function showMessage(text, kind) {
+            msg.textContent = text;
+            msg.className = 'message message-' + (kind || 'info');
+            msg.style.display = 'block';
+        }
+
+        async function jsonFetch(url, body) {
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'x-csrf-token': csrfToken },
+                body: JSON.stringify(body || {}),
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+            return data;
+        }
+
+        function currentFingerprint() {
+            try { return localStorage.getItem('cl_user_id'); } catch { return null; }
+        }
+
+        if (!window.SimpleWebAuthnBrowser || !window.PublicKeyCredential) {
+            showMessage(S.notSupported, 'error');
+            signupBtn.disabled = true;
+        }
+
+        signupBtn.addEventListener('click', async () => {
+            const username = document.getElementById('username').value.trim();
+            const deviceName = document.getElementById('device-name').value.trim();
+            if (!username) {
+                showMessage(S.usernameRequired, 'error');
+                return;
+            }
+            signupBtn.disabled = true;
+            try {
+                const options = await jsonFetch('/auth/webauthn/register/options', { username });
+                const attestation = await window.SimpleWebAuthnBrowser.startRegistration({ optionsJSON: options });
+                const result = await jsonFetch('/auth/webauthn/register/verify', {
+                    response: attestation,
+                    username,
+                    deviceName: deviceName || null,
+                    fingerprint: currentFingerprint(),
+                });
+                if (result.verified) {
+                    showMessage(S.registered, 'success');
+                    window.location.href = result.redirect || '/';
+                    return;
+                }
+                showMessage(S.failed, 'error');
+            } catch (err) {
+                const isCancel = err && (err.name === 'NotAllowedError' || /cancel/i.test(err.message || ''));
+                showMessage(isCancel ? S.cancelled : (err.message || S.failed), 'error');
+            } finally {
+                signupBtn.disabled = false;
+            }
+        });
+    })();
+    </script>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

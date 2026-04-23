@@ -1,5 +1,16 @@
 <div class="home-toolbar">
     <a href="/" class="toolbar-logo"><%= strings.siteName %></a>
+    <div class="toolbar-center">
+        <% if (currentUser) { %>
+            <span class="toolbar-user">@<%= currentUser.username %></span>
+            <form action="/auth/logout" method="POST" class="toolbar-inline-form">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="toolbar-link"><%= strings.userAuth.logout %></button>
+            </form>
+        <% } else { %>
+            <a href="/auth/login" class="toolbar-link"><%= strings.userAuth.login %></a>
+        <% } %>
+    </div>
     <div class="toolbar-right">
         <button type="button" class="theme-toggle" id="themeToggle" title="Toggle theme">&#x263E;</button>
         <div class="lang-dropdown">

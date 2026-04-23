@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <% pageTitle = strings.userAuth.loginTitle %>
+    <%- include('../partials/head') %>
+    <meta name="csrf-token" content="<%= csrfToken %>">
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1><%= strings.userAuth.loginTitle %></h1>
+
+            <div id="auth-message" class="message" style="display:none;"></div>
+
+            <button type="button" class="btn btn-primary" id="signin-btn" style="width:100%;">
+                <%= strings.userAuth.signIn %>
+            </button>
+
+            <p style="margin-top:20px; text-align:center;">
+                <%= strings.userAuth.noAccount %>
+                <a href="/auth/signup"><%= strings.userAuth.signUpLink %></a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.umd.min.js"></script>
+    <script>
+    (function () {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+        const msg = document.getElementById('auth-message');
+        const signinBtn = document.getElementById('signin-btn');
+        const S = {
+            notSupported: <%- JSON.stringify(strings.login.notSupported) %>,
+            cancelled: <%- JSON.stringify(strings.login.cancelled) %>,
+            failed: <%- JSON.stringify(strings.login.failed) %>,
+        };
+
+        function showMessage(text, kind) {
+            msg.textContent = text;
+            msg.className = 'message message-' + (kind || 'info');
+            msg.style.display = 'block';
+        }
+
+        async function jsonFetch(url, body) {
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'x-csrf-token': csrfToken },
+                body: JSON.stringify(body || {}),
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+            return data;
+        }
+
+        function currentFingerprint() {
+            try { return localStorage.getItem('cl_user_id'); } catch { return null; }
+        }
+
+        if (!window.SimpleWebAuthnBrowser || !window.PublicKeyCredential) {
+            showMessage(S.notSupported, 'error');
+            signinBtn.disabled = true;
+        }
+
+        signinBtn.addEventListener('click', async () => {
+            signinBtn.disabled = true;
+            try {
+                const options = await jsonFetch('/auth/webauthn/auth/options');
+                const assertion = await window.SimpleWebAuthnBrowser.startAuthentication({ optionsJSON: options });
+                const result = await jsonFetch('/auth/webauthn/auth/verify', {
+                    response: assertion,
+                    fingerprint: currentFingerprint(),
+                });
+                if (result.verified) {
+                    window.location.href = result.redirect || '/';
+                    return;
+                }
+                showMessage(S.failed, 'error');
+            } catch (err) {
+                const isCancel = err && (err.name === 'NotAllowedError' || /cancel/i.test(err.message || ''));
+                showMessage(isCancel ? S.cancelled : (err.message || S.failed), 'error');
+            } finally {
+                signinBtn.disabled = false;
+            }
+        });
+    })();
+    </script>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

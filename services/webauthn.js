@@ -9,18 +9,31 @@ const {
 } = require('@simplewebauthn/server');
 const db = require('../config/database');
 
-function rpID() {
-    return process.env.RP_ID || 'cyber-lenin.com';
-}
+// RPs keyed by Host header. Admin lives on the tailnet domain (IP-gated),
+// regular users on the public domain. Each origin is a separate WebAuthn RP —
+// credentials registered under one cannot be used to authenticate on the other.
+const RP_CONFIGS = [
+    {
+        id: process.env.ADMIN_RP_ID || 'leninbot.tail6ecbbc.ts.net',
+        origins: (process.env.ADMIN_RP_ORIGIN || 'https://leninbot.tail6ecbbc.ts.net:8443')
+            .split(',').map(s => s.trim()).filter(Boolean),
+        name: process.env.ADMIN_RP_NAME || 'Cyber-Lenin Admin',
+    },
+    {
+        id: process.env.USER_RP_ID || 'cyber-lenin.com',
+        origins: (process.env.USER_RP_ORIGIN || 'https://cyber-lenin.com')
+            .split(',').map(s => s.trim()).filter(Boolean),
+        name: process.env.USER_RP_NAME || 'Cyber-Lenin',
+    },
+];
 
-function rpOrigin() {
-    // Multiple origins accepted so testing on localhost still works when configured.
-    const raw = process.env.RP_ORIGIN || `https://${rpID()}`;
-    return raw.split(',').map(s => s.trim()).filter(Boolean);
-}
-
-function rpName() {
-    return process.env.RP_NAME || 'Cyber-Lenin';
+function rpFromReq(req) {
+    const hostHeader = (req && req.get && req.get('host')) || '';
+    const hostname = hostHeader.split(':')[0].toLowerCase();
+    const match = RP_CONFIGS.find(c => c.id === hostname);
+    // Fall back to the user RP (index 1) so misconfigured Host doesn't crash admin,
+    // but registration will fail origin validation if truly wrong.
+    return match || RP_CONFIGS[1];
 }
 
 function userIdToBytes(userId) {
@@ -35,11 +48,12 @@ async function listCredentialsForUser(userId) {
     return rows;
 }
 
-async function buildRegistrationOptions({ user, session }) {
+async function buildRegistrationOptions({ user, session, req }) {
+    const rp = rpFromReq(req);
     const existing = await listCredentialsForUser(user.id);
     const options = await generateRegistrationOptions({
-        rpName: rpName(),
-        rpID: rpID(),
+        rpName: rp.name,
+        rpID: rp.id,
         userID: userIdToBytes(user.id),
         userName: user.username,
         userDisplayName: user.username,
@@ -62,16 +76,17 @@ async function buildRegistrationOptions({ user, session }) {
     return options;
 }
 
-async function confirmRegistration({ response, session, deviceName }) {
+async function confirmRegistration({ response, session, deviceName, req }) {
     const state = session.webauthn;
     if (!state || state.mode !== 'register') {
         throw new Error('No pending registration challenge');
     }
+    const rp = rpFromReq(req);
     const verification = await verifyRegistrationResponse({
         response,
         expectedChallenge: state.challenge,
-        expectedOrigin: rpOrigin(),
-        expectedRPID: rpID(),
+        expectedOrigin: rp.origins,
+        expectedRPID: rp.id,
         requireUserVerification: false,
     });
 
@@ -103,10 +118,11 @@ async function confirmRegistration({ response, session, deviceName }) {
     return { userId: state.userId };
 }
 
-async function buildAuthenticationOptions({ session }) {
+async function buildAuthenticationOptions({ session, req }) {
+    const rp = rpFromReq(req);
     // Discoverable-credential flow: no allowCredentials, client picks.
     const options = await generateAuthenticationOptions({
-        rpID: rpID(),
+        rpID: rp.id,
         userVerification: 'preferred',
     });
     session.webauthn = {
@@ -116,11 +132,12 @@ async function buildAuthenticationOptions({ session }) {
     return options;
 }
 
-async function confirmAuthentication({ response, session }) {
+async function confirmAuthentication({ response, session, req }) {
     const state = session.webauthn;
     if (!state || state.mode !== 'authenticate') {
         throw new Error('No pending authentication challenge');
     }
+    const rp = rpFromReq(req);
 
     const { rows } = await db.query(
         `SELECT p.id AS passkey_id, p.user_id, p.credential_id, p.public_key, p.counter, p.transports,
@@ -138,8 +155,8 @@ async function confirmAuthentication({ response, session }) {
     const verification = await verifyAuthenticationResponse({
         response,
         expectedChallenge: state.challenge,
-        expectedOrigin: rpOrigin(),
-        expectedRPID: rpID(),
+        expectedOrigin: rp.origins,
+        expectedRPID: rp.id,
         credential: {
             id: row.credential_id,
             publicKey: new Uint8Array(row.public_key),
@@ -194,6 +211,43 @@ async function findOrCreateBootstrapUser(username) {
     return rows[0];
 }
 
+async function createRegularUser(username) {
+    const { rows } = await db.query(
+        `INSERT INTO users (username, is_admin)
+         VALUES ($1, FALSE)
+         RETURNING id, username, is_admin`,
+        [username]
+    );
+    return rows[0];
+}
+
+async function findUserByUsername(username) {
+    const { rows } = await db.query(
+        'SELECT id, username, is_admin FROM users WHERE username = $1',
+        [username]
+    );
+    return rows[0] || null;
+}
+
+async function bindFingerprint(userId, fingerprint) {
+    if (!fingerprint || typeof fingerprint !== 'string') return false;
+    const result = await db.query(
+        `INSERT INTO user_fingerprints (user_id, fingerprint)
+         VALUES ($1, $2)
+         ON CONFLICT (user_id, fingerprint) DO NOTHING`,
+        [userId, fingerprint]
+    );
+    return result.rowCount > 0;
+}
+
+async function fingerprintsForUser(userId) {
+    const { rows } = await db.query(
+        'SELECT fingerprint FROM user_fingerprints WHERE user_id = $1',
+        [userId]
+    );
+    return rows.map(r => r.fingerprint);
+}
+
 async function listPasskeys(userId) {
     const { rows } = await db.query(
         `SELECT id, device_name, created_at, last_used_at, backed_up
@@ -220,6 +274,10 @@ module.exports = {
     countUsers,
     countPasskeysForUser,
     findOrCreateBootstrapUser,
+    createRegularUser,
+    findUserByUsername,
+    bindFingerprint,
+    fingerprintsForUser,
     listPasskeys,
     deletePasskey,
 };

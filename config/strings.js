@@ -54,7 +54,24 @@ const ko = {
         nextPost: '다음'
     },
 
-    // 로그인 페이지
+    // 일반 사용자 로그인/가입
+    userAuth: {
+        login: '로그인',
+        logout: '로그아웃',
+        loginTitle: '로그인',
+        signupTitle: '계정 생성',
+        signUp: '가입',
+        signIn: 'Passkey로 로그인',
+        signupHint: 'Passkey 하나만 등록하면 됩니다. 이메일/비밀번호 없음.',
+        username: '사용자 이름',
+        usernameHint: '3-30자, 한글/영문/숫자/_ 사용 가능',
+        noAccount: '계정이 없으신가요?',
+        signUpLink: '가입하기',
+        haveAccount: '이미 계정이 있으신가요?',
+        signInLink: '로그인'
+    },
+
+    // 관리자 로그인 페이지
     login: {
         title: '관리실 입실',
         username: '이름',
@@ -219,6 +236,22 @@ const en = {
         chatHistory: 'History',
         prevPost: 'Prev',
         nextPost: 'Next'
+    },
+
+    userAuth: {
+        login: 'Login',
+        logout: 'Logout',
+        loginTitle: 'Sign In',
+        signupTitle: 'Create Account',
+        signUp: 'Sign up',
+        signIn: 'Sign in with Passkey',
+        signupHint: 'Register one passkey. No email, no password.',
+        username: 'Username',
+        usernameHint: '3-30 chars, letters/digits/Korean/_',
+        noAccount: 'No account?',
+        signUpLink: 'Sign up',
+        haveAccount: 'Already have an account?',
+        signInLink: 'Sign in'
     },
 
     login: {

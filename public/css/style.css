@@ -340,6 +340,47 @@ header h1 {
     margin: 8px 0;
 }
 
+/* Session list (chat history mode) */
+.session-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.session-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--bg-secondary, rgba(127, 127, 127, 0.08));
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.session-card:hover {
+    background: var(--bg-tertiary, rgba(127, 127, 127, 0.14));
+    border-color: var(--link);
+}
+
+.session-card-query {
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-card-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
 /* ===== Border overlap prevention ===== */
 /* Adjacent boxes: remove double border between them */
 .box + .box,
@@ -440,6 +481,41 @@ header h1 {
     display: flex;
     align-items: center;
     gap: 0;
+}
+
+.toolbar-center {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.toolbar-user {
+    color: var(--text-secondary);
+}
+
+.toolbar-link {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    font-family: inherit;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.toolbar-link:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.toolbar-inline-form {
+    display: inline;
+    margin: 0;
 }
 
 .home-toolbar .theme-toggle,

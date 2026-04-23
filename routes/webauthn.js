@@ -63,7 +63,7 @@ router.post('/register/options', async (req, res) => {
             return res.status(401).json({ error: 'authentication required' });
         }
 
-        const options = await buildRegistrationOptions({ user: targetUser, session: req.session });
+        const options = await buildRegistrationOptions({ user: targetUser, session: req.session, req });
         res.json(options);
     } catch (err) {
         console.error('register/options error:', err);
@@ -86,6 +86,7 @@ router.post('/register/verify', async (req, res) => {
             response: req.body.response,
             session: req.session,
             deviceName,
+            req,
         });
 
         // If the user wasn't logged in, log them in now (first passkey = they've proven ownership).
@@ -120,7 +121,7 @@ router.post('/register/verify', async (req, res) => {
 // POST /admin/webauthn/auth/options
 router.post('/auth/options', async (req, res) => {
     try {
-        const options = await buildAuthenticationOptions({ session: req.session });
+        const options = await buildAuthenticationOptions({ session: req.session, req });
         res.json(options);
     } catch (err) {
         console.error('auth/options error:', err);
@@ -134,6 +135,7 @@ router.post('/auth/verify', async (req, res) => {
         const { user } = await confirmAuthentication({
             response: req.body.response,
             session: req.session,
+            req,
         });
 
         // Admin-only site for now; enforce until general-user login lands.
