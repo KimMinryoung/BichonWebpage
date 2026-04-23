@@ -3,6 +3,7 @@
     <div class="toolbar-center">
         <% if (currentUser) { %>
             <span class="toolbar-user">@<%= currentUser.username %></span>
+            <a href="/auth/passkeys" class="toolbar-link"><%= strings.admin.passkeys %></a>
             <form action="/auth/logout" method="POST" class="toolbar-inline-form">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <button type="submit" class="toolbar-link"><%= strings.userAuth.logout %></button>

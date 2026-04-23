@@ -12,6 +12,8 @@ const {
     createRegularUser,
     findUserByUsername,
     bindFingerprint,
+    listPasskeys,
+    deletePasskey,
 } = require('../services/webauthn');
 
 function requireUser(req, res, next) {
@@ -147,6 +149,78 @@ router.post('/bind-fingerprint', requireUser, async (req, res) => {
     } catch (err) {
         console.error('bind-fingerprint:', err);
         res.status(500).json({ error: 'bind failed' });
+    }
+});
+
+// GET /auth/passkeys — management page for logged-in users
+router.get('/passkeys', (req, res) => {
+    if (!req.session.user || !req.session.user.id) return res.redirect('/auth/login');
+    res.render('public/passkeys');
+});
+
+// POST /auth/webauthn/add/options — logged-in user begins registering another passkey
+router.post('/webauthn/add/options', requireUser, async (req, res) => {
+    try {
+        const user = { id: req.session.user.id, username: req.session.user.username };
+        const options = await buildRegistrationOptions({ user, session: req.session, req });
+        res.json(options);
+    } catch (err) {
+        console.error('auth add/options:', err);
+        res.status(500).json({ error: 'failed to build registration options' });
+    }
+});
+
+// POST /auth/webauthn/add/verify
+router.post('/webauthn/add/verify', requireUser, async (req, res) => {
+    try {
+        if (!req.session.webauthn || req.session.webauthn.mode !== 'register') {
+            return res.status(400).json({ error: 'no pending registration' });
+        }
+        if (req.session.webauthn.userId !== req.session.user.id) {
+            return res.status(400).json({ error: 'user mismatch' });
+        }
+        const deviceName = typeof req.body.deviceName === 'string'
+            ? req.body.deviceName.slice(0, 80).trim() || null : null;
+        await confirmRegistration({
+            response: req.body.response,
+            session: req.session,
+            deviceName,
+            req,
+        });
+        res.json({ verified: true });
+    } catch (err) {
+        console.error('auth add/verify:', err);
+        res.status(400).json({ error: err.message || 'registration failed' });
+    }
+});
+
+// GET /auth/webauthn/passkeys — list current user's passkeys
+router.get('/webauthn/passkeys', requireUser, async (req, res) => {
+    try {
+        const rows = await listPasskeys(req.session.user.id);
+        res.json({ passkeys: rows });
+    } catch (err) {
+        console.error('auth list passkeys:', err);
+        res.status(500).json({ error: 'failed to list passkeys' });
+    }
+});
+
+// POST /auth/webauthn/passkeys/:id/delete
+router.post('/webauthn/passkeys/:id/delete', requireUser, async (req, res) => {
+    try {
+        const passkeyId = parseInt(req.params.id, 10);
+        if (!Number.isFinite(passkeyId)) {
+            return res.status(400).json({ error: 'invalid id' });
+        }
+        const ok = await deletePasskey({
+            userId: req.session.user.id,
+            passkeyId,
+        });
+        if (!ok) return res.status(404).json({ error: 'not found' });
+        res.json({ deleted: true });
+    } catch (err) {
+        console.error('auth delete passkey:', err);
+        res.status(500).json({ error: 'failed to delete passkey' });
     }
 });
 

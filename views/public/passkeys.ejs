@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <% pageTitle = strings.admin.passkeys %>
+    <%- include('../partials/head') %>
+    <meta name="csrf-token" content="<%= csrfToken %>">
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container">
+        <div class="admin-header">
+            <h1><%= strings.admin.passkeys %></h1>
+        </div>
+
+        <div class="box">
+            <p><%= strings.admin.passkeysHint %></p>
+            <div id="passkey-list" style="margin-top: 15px;"></div>
+        </div>
+
+        <div class="box">
+            <h2><%= strings.admin.addPasskey %></h2>
+            <div id="add-message" class="message" style="display:none;"></div>
+            <div class="form-group">
+                <label for="add-device"><%= strings.login.deviceName %></label>
+                <input type="text" id="add-device" placeholder="<%= strings.login.deviceNamePlaceholder %>">
+            </div>
+            <button type="button" class="btn btn-primary" id="add-btn">
+                <%= strings.admin.addPasskey %>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.umd.min.js"></script>
+    <script>
+    (function () {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+        const list = document.getElementById('passkey-list');
+        const addBtn = document.getElementById('add-btn');
+        const msg = document.getElementById('add-message');
+        const strings = {
+            added: <%- JSON.stringify(strings.admin.passkeyAdded) %>,
+            deleteConfirm: <%- JSON.stringify(strings.admin.passkeyDeleteConfirm) %>,
+            empty: <%- JSON.stringify(strings.admin.passkeysEmpty) %>,
+            cancelled: <%- JSON.stringify(strings.login.cancelled) %>,
+            failed: <%- JSON.stringify(strings.login.failed) %>,
+            unnamed: <%- JSON.stringify(strings.admin.passkeyUnnamed) %>,
+            created: <%- JSON.stringify(strings.admin.passkeyCreated) %>,
+            lastUsed: <%- JSON.stringify(strings.admin.passkeyLastUsed) %>,
+            never: <%- JSON.stringify(strings.admin.passkeyNever) %>,
+            delete: <%- JSON.stringify(strings.admin.delete) %>,
+        };
+
+        function showMessage(text, kind) {
+            msg.textContent = text;
+            msg.className = 'message message-' + (kind || 'info');
+            msg.style.display = 'block';
+        }
+
+        async function jsonFetch(url, body) {
+            const res = await fetch(url, {
+                method: body ? 'POST' : 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-csrf-token': csrfToken,
+                },
+                body: body ? JSON.stringify(body) : undefined,
+            });
+            const data = await res.json().catch(() => ({}));
+            if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
+            return data;
+        }
+
+        function formatDate(iso) {
+            if (!iso) return strings.never;
+            try { return new Date(iso).toLocaleString(); } catch { return iso; }
+        }
+
+        async function load() {
+            list.innerHTML = '';
+            const { passkeys } = await jsonFetch('/auth/webauthn/passkeys');
+            if (!passkeys.length) {
+                list.innerHTML = '<p>' + strings.empty + '</p>';
+                return;
+            }
+            const table = document.createElement('table');
+            table.className = 'posts-table';
+            table.innerHTML = '<thead><tr><th>Device</th><th>' + strings.created + '</th><th>' + strings.lastUsed + '</th><th></th></tr></thead><tbody></tbody>';
+            const tbody = table.querySelector('tbody');
+            passkeys.forEach((p) => {
+                const tr = document.createElement('tr');
+                const name = document.createElement('td');
+                name.textContent = p.device_name || strings.unnamed;
+                const created = document.createElement('td');
+                created.textContent = formatDate(p.created_at);
+                const used = document.createElement('td');
+                used.textContent = formatDate(p.last_used_at);
+                const actions = document.createElement('td');
+                const btn = document.createElement('button');
+                btn.className = 'btn btn-small btn-danger';
+                btn.textContent = strings.delete;
+                btn.addEventListener('click', async () => {
+                    if (!confirm(strings.deleteConfirm)) return;
+                    try {
+                        await jsonFetch('/auth/webauthn/passkeys/' + p.id + '/delete', {});
+                        await load();
+                    } catch (err) {
+                        showMessage(err.message || strings.failed, 'error');
+                    }
+                });
+                actions.appendChild(btn);
+                tr.append(name, created, used, actions);
+                tbody.appendChild(tr);
+            });
+            list.appendChild(table);
+        }
+
+        addBtn.addEventListener('click', async () => {
+            const deviceName = document.getElementById('add-device').value.trim();
+            addBtn.disabled = true;
+            msg.style.display = 'none';
+            try {
+                const options = await jsonFetch('/auth/webauthn/add/options', {});
+                const attestation = await window.SimpleWebAuthnBrowser.startRegistration({ optionsJSON: options });
+                await jsonFetch('/auth/webauthn/add/verify', {
+                    response: attestation,
+                    deviceName: deviceName || null,
+                });
+                document.getElementById('add-device').value = '';
+                showMessage(strings.added, 'success');
+                await load();
+            } catch (err) {
+                const isCancel = err && (err.name === 'NotAllowedError' || /cancel/i.test(err.message || ''));
+                showMessage(isCancel ? strings.cancelled : (err.message || strings.failed), 'error');
+            } finally {
+                addBtn.disabled = false;
+            }
+        });
+
+        load().catch((err) => { list.innerHTML = '<p class="message message-error">' + (err.message || '') + '</p>'; });
+    })();
+    </script>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
