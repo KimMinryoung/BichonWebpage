@@ -152,10 +152,10 @@ router.post('/bind-fingerprint', requireUser, async (req, res) => {
     }
 });
 
-// GET /auth/passkeys — management page for logged-in users
-router.get('/passkeys', (req, res) => {
+// GET /auth/account — combined logout + passkey management for logged-in users
+router.get('/account', (req, res) => {
     if (!req.session.user || !req.session.user.id) return res.redirect('/auth/login');
-    res.render('public/passkeys');
+    res.render('public/account');
 });
 
 // POST /auth/webauthn/add/options — logged-in user begins registering another passkey

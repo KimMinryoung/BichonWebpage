@@ -69,7 +69,10 @@ const ko = {
         noAccount: '계정이 없으신가요?',
         signUpLink: '가입하기',
         haveAccount: '이미 계정이 있으신가요?',
-        signInLink: '로그인'
+        signInLink: '로그인',
+        accountMenu: '계정관리',
+        accountTitle: '계정관리',
+        accountLogoutSection: '세션'
     },
 
     // 관리자 로그인 페이지
@@ -253,7 +256,10 @@ const en = {
         noAccount: 'No account?',
         signUpLink: 'Sign up',
         haveAccount: 'Already have an account?',
-        signInLink: 'Sign in'
+        signInLink: 'Sign in',
+        accountMenu: 'Account',
+        accountTitle: 'Account',
+        accountLogoutSection: 'Session'
     },
 
     login: {
