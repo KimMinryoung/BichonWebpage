@@ -10,7 +10,7 @@
     <meta name="str-disconnect" content="<%= strings.chat.disconnectError %>">
 </head>
 <body>
-    <script src="/js/chat-viewport.js"></script>
+    <script src="/js/chat-viewport.js?v=<%= Date.now() %>"></script>
     <div class="chat-page">
         <%- include('../partials/nav') %>
 
@@ -37,6 +37,6 @@
     </div>
 
     <script src="/js/common.js?v=<%= Date.now() %>"></script>
-    <script src="/js/chat.js"></script>
+    <script src="/js/chat.js?v=<%= Date.now() %>"></script>
 </body>
 </html>
