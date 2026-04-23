@@ -274,6 +274,30 @@
 
         var logDiv = appendMessage(STRINGS.thinking, 'chat-message-log');
         var aiDiv = null;
+        var streamedText = '';
+        var renderScheduled = false;
+
+        function renderAiMarkdown() {
+            if (!aiDiv) return;
+            var dirty = marked.parse(streamedText);
+            var clean = DOMPurify.sanitize(dirty, { ADD_ATTR: ['target'] });
+            aiDiv.innerHTML = clean;
+            var links = aiDiv.querySelectorAll('a');
+            links.forEach(function (link) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+        }
+
+        function scheduleRender() {
+            if (renderScheduled) return;
+            renderScheduled = true;
+            requestAnimationFrame(function () {
+                renderScheduled = false;
+                renderAiMarkdown();
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
 
         try {
             var res = await fetch(API_URL + '/chat', {
@@ -313,16 +337,32 @@
                         if (data.type === 'log') {
                             // 새로운 로그 조각을 기존 로그에 추가
                             accumulatedLog += data.content +"\n";
-                            logDiv.textContent = accumulatedLog;
+                            if (logDiv && logDiv.parentNode) logDiv.textContent = accumulatedLog;
 
                             // 스크롤 조절
                             chatBox.scrollTop = chatBox.scrollHeight;
+                        } else if (data.type === 'chunk') {
+                            // 첫 조각 도착 시 로그창 제거하고 답변 칸 생성
+                            if (!aiDiv) {
+                                accumulatedLog = "";
+                                if (logDiv) { logDiv.remove(); logDiv = null; }
+                                aiDiv = document.createElement('div');
+                                aiDiv.className = 'chat-message chat-message-ai';
+                                chatBox.appendChild(aiDiv);
+                            }
+                            streamedText += data.content;
+                            scheduleRender();
                         } else if (data.type === 'answer') {
-                            // 답변이 오면 로그 변수 초기화 및 로그창 제거
+                            // 최종 답변 수신 — 스트림 내용과 같으면 그대로, 다르면 대체
                             accumulatedLog = "";
-                            if (logDiv) logDiv.remove();
-
-                            aiDiv = appendMessage(data.content, 'chat-message-ai');
+                            if (logDiv) { logDiv.remove(); logDiv = null; }
+                            if (!aiDiv) {
+                                aiDiv = appendMessage(data.content, 'chat-message-ai');
+                            } else {
+                                streamedText = data.content;
+                                renderAiMarkdown();
+                                chatBox.scrollTop = chatBox.scrollHeight;
+                            }
                             if (document.visibilityState === 'hidden') {
                                 document.title = '💬 답변 도착 — ' + originalTitle;
                             }

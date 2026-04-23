@@ -1189,7 +1189,9 @@ footer .footer-tagline {
     padding: 10px 14px;
     margin-bottom: 10px;
     max-width: 80%;
+    width: fit-content;
     word-wrap: break-word;
+    overflow-wrap: break-word;
     line-height: 1.5;
     border-radius: 0;
 }
@@ -1206,6 +1208,7 @@ footer .footer-tagline {
     background-color: var(--bg-surface-hover);
     border: 1px solid var(--border);
     color: var(--text-primary);
+    margin-right: auto;
 }
 
 .chat-message-ai p { margin: 0.4em 0; }
