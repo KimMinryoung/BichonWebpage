@@ -87,7 +87,8 @@ router.get('/', async (req, res) => {
             }
         }
 
-        // Unified research-tab feed: research files + static pages, sorted by date desc
+        // Unified research-tab feed: research files + static pages, sorted by date desc.
+        // `summary` is the unified preview field — the EJS template clamps it to 3 lines via CSS.
         const researchItems = [
             ...researchFiles.map(f => ({
                 type: 'research',
@@ -95,6 +96,7 @@ router.get('/', async (req, res) => {
                 href: `/reports/research/${f.filename.replace(/\.md$/, '')}`,
                 modified: (f.modified_at || 0) * 1000,
                 size: f.size,
+                summary: f.excerpt,
             })),
             ...pagesList.map(p => ({
                 type: 'page',
