@@ -178,8 +178,9 @@ const ko = {
         placeholder: '레닌 동지에게 질문하세요...',
         send: '전송',
         thinking: '동지가 생각 중...',
-        error: '오류가 발생했습니다. 다시 시도해주세요.',
-        disconnectError: '다른 탭에 있는 동안 연결이 끊겼습니다. "이전 대화" 버튼으로 답변을 확인해 보세요.'
+        error: '오류가 발생했습니다.',
+        notSaved: '답변을 받지 못했습니다. 메시지를 다시 보내주세요.',
+        retry: '↻ 다시 보내기'
     },
 
     // 에러 페이지
@@ -356,8 +357,9 @@ const en = {
         placeholder: 'Ask Comrade Lenin...',
         send: 'Send',
         thinking: 'Comrade is thinking...',
-        error: 'An error occurred. Please try again.',
-        disconnectError: 'Disconnected while you were on another tab. Check the "History" button for the answer.'
+        error: 'An error occurred.',
+        notSaved: "The reply didn't come through. Please resend your message.",
+        retry: '↻ Retry'
     },
 
     error: {

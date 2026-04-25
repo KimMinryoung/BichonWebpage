@@ -3,7 +3,8 @@
     var STRINGS = {
         thinking: document.querySelector('meta[name="str-thinking"]').content,
         error: document.querySelector('meta[name="str-error"]').content,
-        disconnectError: document.querySelector('meta[name="str-disconnect"]').content
+        notSaved: document.querySelector('meta[name="str-not-saved"]').content,
+        retry: document.querySelector('meta[name="str-retry"]').content
     };
 
     var chatBox = document.getElementById('chatBox');
@@ -33,6 +34,35 @@
         return uid;
     }
     var userId = getUserId();
+
+    // Render a connection-drop error in `errDiv` with an inline "다시 보내기" button.
+    // Clicking the button re-fires the form submission with the lost message,
+    // preserving any draft the user has typed since the failure.
+    function showRetryError(errDiv, mainText, retryMessage) {
+        errDiv.innerHTML = '';
+        errDiv.classList.add('chat-message-error');
+
+        var span = document.createElement('span');
+        span.textContent = mainText + ' ';
+        errDiv.appendChild(span);
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn btn-small chat-retry-btn';
+        btn.style.marginLeft = '8px';
+        btn.textContent = STRINGS.retry;
+        btn.addEventListener('click', function () {
+            if (busy) return;
+            var draft = chatInput.value;
+            chatInput.value = retryMessage;
+            // requestSubmit dispatches the submit event synchronously; the handler
+            // reads chatInput.value and clears it before awaiting, so we can safely
+            // restore the user's draft right after.
+            chatForm.requestSubmit();
+            if (draft) chatInput.value = draft;
+        });
+        errDiv.appendChild(btn);
+    }
 
     // Recovery: poll /history after a background connection drop to find the completed answer
     async function tryRecoverFromHistory(msg, errDiv, logDiv) {
@@ -64,9 +94,9 @@
             } catch (e) { /* network error during poll — try again */ }
         }
 
-        // All attempts failed — show manual fallback
-        errDiv.textContent = STRINGS.error + ' ' + STRINGS.disconnectError;
-        errDiv.classList.add('chat-message-error');
+        // All attempts failed — the answer was never saved (server died mid-generation
+        // before _log_chat ran). Surface that truthfully and offer a one-click resend.
+        showRetryError(errDiv, STRINGS.notSaved, msg);
         recovering = false;
     }
 
@@ -393,8 +423,7 @@
                     errDiv.textContent = '연결이 끊겼습니다. 탭으로 돌아오면 답변을 복구합니다...';
                 }
             } else {
-                errDiv.textContent = STRINGS.error;
-                errDiv.classList.add('chat-message-error');
+                showRetryError(errDiv, STRINGS.error, message);
             }
 
             chatBox.scrollTop = chatBox.scrollHeight;
