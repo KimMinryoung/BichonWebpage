@@ -12,10 +12,12 @@
             <h1><%= strings.nav.reports %></h1>
         </header>
 
+        <% if (typeof showTasks !== 'undefined' && showTasks) { %>
         <div class="report-tabs">
             <button type="button" class="report-tab active" data-tab="research"><%= lang === 'ko' ? '리서치' : 'Research' %></button>
             <button type="button" class="report-tab" data-tab="tasks"><%= lang === 'ko' ? '태스크' : 'Tasks' %></button>
         </div>
+        <% } %>
 
         <!-- Research panel -->
         <div class="report-panel active" id="panel-research">
@@ -49,7 +51,8 @@
             <% } %>
         </div>
 
-        <!-- Task reports panel -->
+        <!-- Task reports panel — admin-only -->
+        <% if (typeof showTasks !== 'undefined' && showTasks) { %>
         <div class="report-panel" id="panel-tasks">
             <% if (reports && reports.length > 0) { %>
                 <ul class="post-list">
@@ -90,6 +93,7 @@
                 </div>
             <% } %>
         </div>
+        <% } %>
     </div>
 
     <%- include('../partials/footer') %>
