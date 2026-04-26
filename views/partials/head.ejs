@@ -1,11 +1,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<% const _title = (typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' - ' + strings.siteName : strings.siteName; %>
+<% const _path = (typeof pagePath !== 'undefined' && pagePath) ? pagePath : '/'; %>
+<% const _isHome = _path === '/'; %>
+<% const _title = (!_isHome && typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' | ' + strings.siteName : strings.siteName; %>
 <% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
-<% const _url = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : siteOrigin + (typeof pagePath !== 'undefined' && pagePath ? pagePath : '/'); %>
+<% const _url = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : siteOrigin + _path; %>
 <% const _robots = (typeof robotsMeta !== 'undefined' && robotsMeta) ? robotsMeta : 'index, follow'; %>
 <% const _ogType = (typeof ogType !== 'undefined' && ogType) ? ogType : 'website'; %>
-<title><%= strings.siteName %></title>
+<title><%= _title %></title>
 <meta name="description" content="<%= _desc %>">
 <link rel="canonical" href="<%= _url %>">
 <meta name="robots" content="<%= _robots %>">
