@@ -204,16 +204,13 @@ nav .nav-links .nav-logout-btn {
     white-space: nowrap;
 }
 
-.nav-label-short {
-    display: none;
-}
-
 @media (max-width: 600px) {
-    .nav-label-full {
-        display: none;
+    .nav-responsive-label {
+        font-size: 0;
     }
-    .nav-label-short {
-        display: inline;
+    .nav-responsive-label::after {
+        content: attr(data-short);
+        font-size: clamp(0.72rem, 1.6cqi, 0.88rem);
     }
 }
 nav .nav-links > *:first-child {

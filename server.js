@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const csrfProtection = require('./middleware/csrf');
 const sanitizeHtml = require('sanitize-html');
+const seo = require('./utils/seo');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -21,6 +22,8 @@ const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:80
 if (process.env.NODE_ENV === 'production') {
     app.set('trust proxy', 1);
 }
+
+app.use(seo.canonicalHostRedirect);
 
 // View engine setup
 app.set('view engine', 'ejs');
@@ -109,6 +112,9 @@ app.use((req, res, next) => {
     var lang = req.cookies.lang === 'en' ? 'en' : 'ko';
     res.locals.lang = lang;
     res.locals.strings = allStrings[lang];
+    res.locals.siteOrigin = seo.SITE_ORIGIN;
+    res.locals.absoluteUrl = seo.absoluteUrl;
+    res.locals.jsonLdScript = seo.jsonLdScript;
     res.locals.sanitize = function(html) {
         return sanitizeHtml(html, {
             allowedTags: ['a', 'br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'code', 'pre'],

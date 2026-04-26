@@ -14,6 +14,7 @@ const LIST_TTL = 600; // 10 minutes in seconds
 
 async function getReport(id) {
     try {
+        if (!redis.isReady) return null;
         const data = await redis.get(`report:${id}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
@@ -21,6 +22,7 @@ async function getReport(id) {
 
 async function setReport(report) {
     try {
+        if (!redis.isReady) return;
         await redis.set(`report:${report.id}`, JSON.stringify(report));
     } catch (e) { console.error('[report-cache] write error:', e.message); }
 }
@@ -29,6 +31,7 @@ async function setReport(report) {
 
 async function getResearch(filename) {
     try {
+        if (!redis.isReady) return null;
         const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
         const data = await redis.get(`research:${safe}`);
         return data ? JSON.parse(data) : null;
@@ -37,6 +40,7 @@ async function getResearch(filename) {
 
 async function setResearch(filename, data) {
     try {
+        if (!redis.isReady) return;
         const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
         await redis.set(`research:${safe}`, JSON.stringify(data));
     } catch (e) { console.error('[report-cache] research write error:', e.message); }
@@ -46,6 +50,7 @@ async function setResearch(filename, data) {
 
 async function getList(page) {
     try {
+        if (!redis.isReady) return null;
         const data = await redis.get(`report:list:${page}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
@@ -53,12 +58,14 @@ async function getList(page) {
 
 async function setList(page, data) {
     try {
+        if (!redis.isReady) return;
         await redis.set(`report:list:${page}`, JSON.stringify(data), { EX: LIST_TTL });
     } catch (e) { console.error('[report-cache] list write error:', e.message); }
 }
 
 async function getResearchList() {
     try {
+        if (!redis.isReady) return null;
         const data = await redis.get('report:research_list');
         return data ? JSON.parse(data) : null;
     } catch { return null; }
@@ -66,12 +73,14 @@ async function getResearchList() {
 
 async function setResearchList(data) {
     try {
+        if (!redis.isReady) return;
         await redis.set('report:research_list', JSON.stringify(data), { EX: LIST_TTL });
     } catch (e) { console.error('[report-cache] research list write error:', e.message); }
 }
 
 async function getPagesList() {
     try {
+        if (!redis.isReady) return null;
         const data = await redis.get('report:pages_list');
         return data ? JSON.parse(data) : null;
     } catch { return null; }
@@ -79,12 +88,14 @@ async function getPagesList() {
 
 async function setPagesList(data) {
     try {
+        if (!redis.isReady) return;
         await redis.set('report:pages_list', JSON.stringify(data), { EX: LIST_TTL });
     } catch (e) { console.error('[report-cache] pages list write error:', e.message); }
 }
 
 async function clearAll() {
     try {
+        if (!redis.isReady) return;
         const keys = [];
         for await (const key of redis.scanIterator({ MATCH: 'report:*' })) keys.push(key);
         for await (const key of redis.scanIterator({ MATCH: 'research:*' })) keys.push(key);

@@ -7,6 +7,7 @@ const paginationHelper = require('../config/paginationHelper');
 const cache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
+const seo = require('../utils/seo');
 
 const POSTS_PER_PAGE = 20;
 
@@ -32,6 +33,20 @@ function mdExcerpt(content, n = 220) {
         .replace(/\s+/g, ' ')
         .trim();
     return text.length > n ? text.substring(0, n) + '…' : text;
+}
+
+async function fetchJson(url, timeoutMs = 3000) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+        const response = await fetch(url, { signal: controller.signal });
+        if (!response.ok) return null;
+        return response.json();
+    } catch {
+        return null;
+    } finally {
+        clearTimeout(timer);
+    }
 }
 
 // Homepage
@@ -85,10 +100,33 @@ router.get('/', async (req, res) => {
         const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
         const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
 
-        res.render('public/index', { recentPosts, recentDiaries, recentResearch, recentHub, pagePath: '/' });
+        const indexItems = [
+            ...recentPosts.map(post => ({ title: post.title, href: `/post/${post.id}` })),
+            ...recentResearch.map(file => ({ title: file.title || file.filename, href: `/reports/research/${file.filename.replace(/\.md$/, '')}` })),
+            ...recentHub.map(item => ({ title: item.title, href: `/hub/${item.slug}` })),
+            ...recentDiaries.map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` })),
+        ];
+        res.render('public/index', {
+            recentPosts,
+            recentDiaries,
+            recentResearch,
+            recentHub,
+            pageTitle: '사이버-레닌과 비숑의 블로그',
+            pageDescription: res.locals.strings.homeDescription,
+            pagePath: '/',
+            jsonLd: seo.itemListJsonLd(indexItems),
+        });
     } catch (error) {
         console.error('Error fetching homepage data:', error);
-        res.render('public/index', { recentPosts: [], recentDiaries: [], recentResearch: [], recentHub: [] });
+        res.render('public/index', {
+            recentPosts: [],
+            recentDiaries: [],
+            recentResearch: [],
+            recentHub: [],
+            pageTitle: '사이버-레닌과 비숑의 블로그',
+            pageDescription: res.locals.strings.homeDescription,
+            pagePath: '/',
+        });
     }
 });
 
@@ -100,7 +138,13 @@ router.get('/posts', async (req, res) => {
 
         const cached = await cache.getIndex();
         if (cached && cached[cacheKey]) {
-            return res.render('public/posts', cached[cacheKey]);
+            return res.render('public/posts', {
+                ...cached[cacheKey],
+                pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts',
+                pageTitle: '비숑글',
+                pageDescription: '비숑이 작성한 블로그 글 목록입니다.',
+                jsonLd: seo.itemListJsonLd((cached[cacheKey].posts || []).map(post => ({ title: post.title, href: `/post/${post.id}` }))),
+            });
         }
 
         const offset = (currentPage - 1) * POSTS_PER_PAGE;
@@ -123,10 +167,22 @@ router.get('/posts', async (req, res) => {
         indexData[cacheKey] = pageData;
         await cache.setIndex(indexData);
 
-        res.render('public/posts', pageData);
+        res.render('public/posts', {
+            ...pageData,
+            pageTitle: '비숑글',
+            pageDescription: '비숑이 작성한 블로그 글 목록입니다.',
+            jsonLd: seo.itemListJsonLd(posts.map(post => ({ title: post.title, href: `/post/${post.id}` }))),
+        });
     } catch (error) {
         console.error('Error fetching posts:', error);
-        res.render('public/posts', { posts: [], currentPage: 1, totalPages: 0 });
+        res.render('public/posts', {
+            posts: [],
+            currentPage: 1,
+            totalPages: 0,
+            pageTitle: '비숑글',
+            pageDescription: '비숑이 작성한 블로그 글 목록입니다.',
+            pagePath: '/posts',
+        });
     }
 });
 
@@ -135,6 +191,7 @@ router.get('/chat', (req, res) => {
     res.render('public/chat', {
         chatApiUrl: '/api/proxy',
         pageTitle: 'Cyber-Lenin',
+        pageDescription: '자율 AI 에이전트 사이버-레닌과 대화하는 채팅 페이지입니다.',
         pagePath: '/chat',
     });
 });
@@ -173,8 +230,25 @@ router.get('/post/:id', async (req, res) => {
         const prevId = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
         const nextId = idx > 0 ? nav[idx - 1] : null;
 
-        const plainText = post.content.replace(/<[^>]*>/g, '').substring(0, 160);
-        res.render('public/post', { post, prevId, nextId, pageTitle: post.title, pageDescription: plainText, pagePath: `/post/${post.id}` });
+        const plainText = seo.excerpt(post.content, 160);
+        res.render('public/post', {
+            post,
+            prevId,
+            nextId,
+            pageTitle: post.title,
+            pageDescription: plainText,
+            pagePath: `/post/${post.id}`,
+            ogType: 'article',
+            jsonLd: seo.pageJsonLd({
+                type: 'BlogPosting',
+                title: post.title,
+                description: plainText,
+                path: `/post/${post.id}`,
+                datePublished: post.created_at,
+                dateModified: post.updated_at || post.created_at,
+                authorName: 'Bichon',
+            }),
+        });
     } catch (error) {
         console.error('Error fetching post:', error);
         res.status(500).render('layouts/main', {
@@ -189,64 +263,130 @@ router.get('/robots.txt', (req, res) => {
     res.type('text/plain').send(
         'User-agent: *\n' +
         'Allow: /\n' +
-        'Sitemap: https://cyber-lenin.com/sitemap.xml\n'
+        'Host: cyber-lenin.com\n' +
+        'Sitemap: https://cyber-lenin.com/sitemap.xml\n' +
+        '# RSS: https://cyber-lenin.com/rss.xml\n' +
+        '# Atom: https://cyber-lenin.com/atom.xml\n'
     );
 });
+
+async function getResearchFiles() {
+    let researchFiles = await reportCache.getResearchList();
+    if (!researchFiles) {
+        const rData = await fetchJson(`${CHAT_API_URL}/research`);
+        if (rData) {
+            researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
+            await reportCache.setResearchList(researchFiles);
+        }
+    }
+    return researchFiles || [];
+}
+
+async function getPagesList() {
+    let pagesList = await reportCache.getPagesList();
+    if (!pagesList) {
+        const pData = await fetchJson(`${CHAT_API_URL}/pages`);
+        if (pData) {
+            pagesList = pData.items || [];
+            await reportCache.setPagesList(pagesList);
+        }
+    }
+    return pagesList || [];
+}
+
+async function getHubItems(limit = 200) {
+    const data = await fetchJson(`${CHAT_API_URL}/hub?limit=${limit}&offset=0`);
+    if (!data) return [];
+    return data.items || [];
+}
+
+function markdownIndex(title, description, items) {
+    const lines = [`# ${title}`, '', description, ''];
+    for (const item of items) {
+        const suffix = item.date ? ` — ${item.date}` : '';
+        lines.push(`- [${item.title}](${item.href})${suffix}`);
+    }
+    return lines.join('\n') + '\n';
+}
+
+async function getFeedItems(limit = 40) {
+    const [postsResult, diariesResult, researchResult, hubResult] = await Promise.allSettled([
+        db.query('SELECT id, title, content, created_at, updated_at FROM posts ORDER BY created_at DESC LIMIT 30'),
+        db.query('SELECT id, title, content, created_at, updated_at FROM ai_diary ORDER BY created_at DESC LIMIT 30'),
+        getResearchFiles(),
+        getHubItems(30),
+    ]);
+    const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(post => ({
+        title: post.title,
+        href: `/post/${post.id}`,
+        date: post.updated_at || post.created_at,
+        summary: seo.excerpt(post.content || '', 500),
+        category: 'Bichon posts',
+    })) : [];
+    const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows.map(diary => ({
+        title: diary.title,
+        href: `/ai-diary/${diary.id}`,
+        date: diary.updated_at || diary.created_at,
+        summary: seo.excerpt(diary.content || '', 500),
+        category: 'Cyber-Lenin diaries',
+    })) : [];
+    const research = researchResult.status === 'fulfilled' ? researchResult.value.map(file => ({
+        title: file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' '),
+        href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
+        date: file.modified_at ? new Date(file.modified_at * 1000).toISOString() : null,
+        summary: file.excerpt || '',
+        category: 'Cyber-Lenin research',
+    })) : [];
+    const hub = hubResult.status === 'fulfilled' ? hubResult.value.map(item => ({
+        title: item.title,
+        href: `/hub/${item.slug}`,
+        date: item.published_at || null,
+        summary: seo.excerpt(`${item.selection_rationale || ''} ${item.context || ''}`, 500),
+        category: 'Curations',
+    })) : [];
+
+    return [...posts, ...diaries, ...research, ...hub]
+        .filter(item => item.title && item.href)
+        .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+        .slice(0, limit);
+}
 
 // sitemap.xml
 router.get('/sitemap.xml', async (req, res) => {
     try {
-        // Use nav cache for ID lists, fall back to DB
-        let postNav = await cache.getNav();
-        if (!postNav) {
-            const { rows } = await db.query('SELECT id FROM posts ORDER BY created_at DESC');
-            postNav = rows.map(r => r.id);
-            await cache.setNav(postNav);
-        }
-        let diaryNav = await diaryCache.getNav();
-        if (!diaryNav) {
-            const { rows } = await db.query('SELECT id FROM ai_diary ORDER BY created_at DESC');
-            diaryNav = rows.map(r => r.id);
-            await diaryCache.setNav(diaryNav);
-        }
-
+        const [postsResult, diariesResult, researchResult, pagesResult, hubResult] = await Promise.allSettled([
+            db.query('SELECT id, created_at, updated_at FROM posts ORDER BY created_at DESC'),
+            db.query('SELECT id, created_at, updated_at FROM ai_diary ORDER BY created_at DESC'),
+            getResearchFiles(),
+            getPagesList(),
+            getHubItems(),
+        ]);
+        const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
+        const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
+        const researchFiles = researchResult.status === 'fulfilled' ? researchResult.value : [];
+        const pagesList = pagesResult.status === 'fulfilled' ? pagesResult.value : [];
+        const hubItems = hubResult.status === 'fulfilled' ? hubResult.value : [];
+        const dateTag = value => value ? `<lastmod>${new Date(value).toISOString().split('T')[0]}</lastmod>` : '';
+        const url = (path, lastmod, priority = '0.7', changefreq = '') => {
+            const freq = changefreq ? `<changefreq>${changefreq}</changefreq>` : '';
+            return `  <url><loc>${seo.escapeXml(seo.absoluteUrl(path))}</loc>${dateTag(lastmod)}${freq}<priority>${priority}</priority></url>\n`;
+        };
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
         xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-        xml += '  <url><loc>https://cyber-lenin.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>\n';
-        xml += '  <url><loc>https://cyber-lenin.com/posts</loc><changefreq>daily</changefreq><priority>0.8</priority></url>\n';
-        xml += '  <url><loc>https://cyber-lenin.com/chat</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>\n';
-        xml += '  <url><loc>https://cyber-lenin.com/reports</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n';
-        xml += '  <url><loc>https://cyber-lenin.com/ai-diary</loc><changefreq>daily</changefreq><priority>0.7</priority></url>\n';
-        for (const id of postNav) {
-            const entry = await cache.getEntry(id);
-            const date = entry?.created_at ? new Date(entry.created_at).toISOString().split('T')[0] : '';
-            xml += `  <url><loc>https://cyber-lenin.com/post/${id}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}<priority>0.8</priority></url>\n`;
+        xml += url('/', null, '1.0', 'daily');
+        xml += url('/posts', null, '0.8', 'daily');
+        xml += url('/reports', null, '0.8', 'daily');
+        xml += url('/ai-diary', null, '0.7', 'daily');
+        xml += url('/hub', null, '0.7', 'daily');
+        xml += url('/chat', null, '0.5', 'monthly');
+        for (const post of posts) xml += url(`/post/${post.id}`, post.updated_at || post.created_at, '0.8');
+        for (const diary of diaries) xml += url(`/ai-diary/${diary.id}`, diary.updated_at || diary.created_at, '0.6');
+        for (const f of researchFiles) {
+            const slug = f.filename.replace(/\.md$/, '');
+            xml += url(`/reports/research/${encodeURIComponent(slug)}`, f.modified_at ? f.modified_at * 1000 : null, '0.8');
         }
-        for (const id of diaryNav) {
-            const entry = await diaryCache.getEntry(id);
-            const date = entry?.created_at ? new Date(entry.created_at).toISOString().split('T')[0] : '';
-            xml += `  <url><loc>https://cyber-lenin.com/ai-diary/${id}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}<priority>0.6</priority></url>\n`;
-        }
-        // Research files
-        let researchFiles = await reportCache.getResearchList();
-        if (!researchFiles) {
-            try {
-                const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
-                const rRes = await fetch(`${CHAT_API_URL}/research`);
-                if (rRes.ok) {
-                    const rData = await rRes.json();
-                    researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
-                    await reportCache.setResearchList(researchFiles);
-                }
-            } catch {}
-        }
-        if (researchFiles) {
-            for (const f of researchFiles) {
-                const date = f.modified_at ? new Date(f.modified_at * 1000).toISOString().split('T')[0] : '';
-                const slug = f.filename.replace(/\.md$/, '');
-                xml += `  <url><loc>https://cyber-lenin.com/reports/research/${encodeURIComponent(slug)}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}<priority>0.7</priority></url>\n`;
-            }
-        }
+        for (const p of pagesList) xml += url(`/p/${encodeURIComponent(p.slug)}`, p.updated_at || null, '0.6');
+        for (const item of hubItems) xml += url(`/hub/${encodeURIComponent(item.slug)}`, item.published_at || null, '0.6');
         xml += '</urlset>';
         res.type('application/xml').send(xml);
     } catch (error) {
@@ -255,40 +395,137 @@ router.get('/sitemap.xml', async (req, res) => {
     }
 });
 
-// atom.xml (RSS feed)
+router.get('/llms.txt', (req, res) => {
+    res.type('text/plain; charset=utf-8').send(
+        '# Cyber-Lenin\n\n' +
+        'Cyber-Lenin is a Korean/English blog and AI agent site with posts, diaries, research reports, curations, and an interactive chat.\n\n' +
+        'Important Markdown indexes:\n' +
+        '- Home: https://cyber-lenin.com/index.md\n' +
+        '- Bichon posts: https://cyber-lenin.com/posts.md\n' +
+        '- Cyber-Lenin research reports: https://cyber-lenin.com/reports.md\n' +
+        '- Cyber-Lenin diaries: https://cyber-lenin.com/ai-diary.md\n' +
+        '- Curations: https://cyber-lenin.com/hub.md\n\n' +
+        'Feeds:\n' +
+        '- RSS: https://cyber-lenin.com/rss.xml\n' +
+        '- Atom: https://cyber-lenin.com/atom.xml\n\n' +
+        'Canonical host: https://cyber-lenin.com\n' +
+        'Research report Markdown source is available at /reports/research/{slug}.md or /reports/research/{slug}?format=markdown.\n'
+    );
+});
+
+router.get('/index.md', async (req, res) => {
+    const items = [
+        { title: '사이버-레닌과 대화', href: '/chat' },
+        { title: '비숑글', href: '/posts' },
+        { title: '사이버-레닌 보고서', href: '/reports' },
+        { title: '사이버-레닌 일기장', href: '/ai-diary' },
+        { title: '큐레이션', href: '/hub' },
+    ];
+    res.type('text/markdown; charset=utf-8').send(markdownIndex('Cyber-Lenin', res.locals.strings.homeDescription, items));
+});
+
+router.get('/posts.md', async (req, res) => {
+    const { rows } = await db.query('SELECT id, title, created_at FROM posts ORDER BY created_at DESC LIMIT 200');
+    const items = rows.map(post => ({
+        title: post.title,
+        href: `/post/${post.id}`,
+        date: post.created_at ? new Date(post.created_at).toISOString().split('T')[0] : '',
+    }));
+    res.type('text/markdown; charset=utf-8').send(markdownIndex('비숑글', '비숑이 작성한 블로그 글 목록입니다.', items));
+});
+
+router.get('/reports.md', async (req, res) => {
+    const files = await getResearchFiles();
+    const items = files.map(file => ({
+        title: file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' '),
+        href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
+        date: file.modified_at ? new Date(file.modified_at * 1000).toISOString().split('T')[0] : '',
+    }));
+    res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 보고서', '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.', items));
+});
+
+router.get('/ai-diary.md', async (req, res) => {
+    const { rows } = await db.query('SELECT id, title, created_at FROM ai_diary ORDER BY created_at DESC LIMIT 200');
+    const items = rows.map(diary => ({
+        title: diary.title,
+        href: `/ai-diary/${diary.id}`,
+        date: diary.created_at ? new Date(diary.created_at).toISOString().split('T')[0] : '',
+    }));
+    res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 일기장', '사이버-레닌이 스스로 작성한 일기 목록입니다.', items));
+});
+
+router.get('/hub.md', async (req, res) => {
+    const hubItems = await getHubItems();
+    const items = hubItems.map(item => ({
+        title: item.title,
+        href: `/hub/${item.slug}`,
+        date: item.published_at ? new Date(item.published_at).toISOString().split('T')[0] : '',
+    }));
+    res.type('text/markdown; charset=utf-8').send(markdownIndex('큐레이션', '사이버-레닌이 선별한 한국어권 진보 글 목록입니다.', items));
+});
+
 router.get('/atom.xml', async (req, res) => {
     try {
-        let postNav = await cache.getNav();
-        if (!postNav) {
-            const { rows } = await db.query('SELECT id FROM posts ORDER BY created_at DESC');
-            postNav = rows.map(r => r.id);
-            await cache.setNav(postNav);
-        }
-        const recentIds = postNav.slice(0, 20);
-        const posts = (await Promise.all(recentIds.map(id => cache.getEntry(id)))).filter(Boolean);
-        const updated = posts.length > 0 ? new Date(posts[0].created_at).toISOString() : new Date().toISOString();
+        const items = await getFeedItems();
+        const updated = items.length > 0 ? new Date(items[0].date || Date.now()).toISOString() : new Date().toISOString();
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
         xml += '<feed xmlns="http://www.w3.org/2005/Atom">\n';
         xml += '  <title>Cyber-Lenin</title>\n';
-        xml += '  <link href="https://cyber-lenin.com/" rel="alternate"/>\n';
-        xml += '  <link href="https://cyber-lenin.com/atom.xml" rel="self"/>\n';
-        xml += '  <id>https://cyber-lenin.com/</id>\n';
+        xml += `  <link href="${seo.escapeXml(seo.absoluteUrl('/'))}" rel="alternate"/>\n`;
+        xml += `  <link href="${seo.escapeXml(seo.absoluteUrl('/atom.xml'))}" rel="self"/>\n`;
+        xml += `  <id>${seo.escapeXml(seo.absoluteUrl('/'))}</id>\n`;
         xml += `  <updated>${updated}</updated>\n`;
-        for (const post of posts) {
-            const date = new Date(post.created_at).toISOString();
-            const snippet = (post.content || '').replace(/<[^>]*>/g, '').substring(0, 500);
+        xml += `  <subtitle>${seo.escapeXml(res.locals.strings.siteDescription)}</subtitle>\n`;
+        for (const item of items) {
+            const url = seo.absoluteUrl(item.href);
+            const date = item.date ? new Date(item.date).toISOString() : updated;
             xml += '  <entry>\n';
-            xml += `    <title>${post.title.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</title>\n`;
-            xml += `    <link href="https://cyber-lenin.com/post/${post.id}"/>\n`;
-            xml += `    <id>https://cyber-lenin.com/post/${post.id}</id>\n`;
+            xml += `    <title>${seo.escapeXml(item.title)}</title>\n`;
+            xml += `    <link href="${seo.escapeXml(url)}"/>\n`;
+            xml += `    <id>${seo.escapeXml(url)}</id>\n`;
             xml += `    <updated>${date}</updated>\n`;
-            xml += `    <summary>${snippet.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</summary>\n`;
+            if (item.category) xml += `    <category term="${seo.escapeXml(item.category)}"/>\n`;
+            xml += `    <summary>${seo.escapeXml(item.summary || '')}</summary>\n`;
             xml += '  </entry>\n';
         }
         xml += '</feed>';
         res.type('application/atom+xml').send(xml);
     } catch (error) {
         console.error('Atom feed error:', error);
+        res.status(500).send('');
+    }
+});
+
+router.get('/rss.xml', async (req, res) => {
+    try {
+        const items = await getFeedItems();
+        const updated = items.length > 0 ? new Date(items[0].date || Date.now()) : new Date();
+        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        xml += '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n';
+        xml += '  <channel>\n';
+        xml += '    <title>Cyber-Lenin</title>\n';
+        xml += `    <link>${seo.escapeXml(seo.absoluteUrl('/'))}</link>\n`;
+        xml += `    <atom:link href="${seo.escapeXml(seo.absoluteUrl('/rss.xml'))}" rel="self" type="application/rss+xml"/>\n`;
+        xml += `    <description>${seo.escapeXml(res.locals.strings.siteDescription)}</description>\n`;
+        xml += `    <lastBuildDate>${updated.toUTCString()}</lastBuildDate>\n`;
+        xml += '    <language>ko</language>\n';
+        for (const item of items) {
+            const url = seo.absoluteUrl(item.href);
+            const date = item.date ? new Date(item.date) : updated;
+            xml += '    <item>\n';
+            xml += `      <title>${seo.escapeXml(item.title)}</title>\n`;
+            xml += `      <link>${seo.escapeXml(url)}</link>\n`;
+            xml += `      <guid isPermaLink="true">${seo.escapeXml(url)}</guid>\n`;
+            xml += `      <pubDate>${date.toUTCString()}</pubDate>\n`;
+            if (item.category) xml += `      <category>${seo.escapeXml(item.category)}</category>\n`;
+            xml += `      <description>${seo.escapeXml(item.summary || '')}</description>\n`;
+            xml += '    </item>\n';
+        }
+        xml += '  </channel>\n';
+        xml += '</rss>';
+        res.type('application/rss+xml').send(xml);
+    } catch (error) {
+        console.error('RSS feed error:', error);
         res.status(500).send('');
     }
 });

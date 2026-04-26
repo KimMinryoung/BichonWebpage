@@ -3,8 +3,7 @@
 <head>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/report.css?v=<%= Date.now() %>">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <link rel="alternate" type="text/markdown" href="<%= markdownUrl %>">
 </head>
 <body>
     <%- include('../partials/nav') %>
@@ -12,8 +11,10 @@
     <div class="container">
         <article class="post-content">
             <h1><%= pageTitle %></h1>
-            <div class="report-body" id="report-content"></div>
-            <script type="application/json" id="report-raw"><%- JSON.stringify(markdown).replace(/</g, '\\u003c') %></script>
+            <div class="post-meta">
+                <a href="<%= markdownUrl %>">Markdown</a>
+            </div>
+            <div class="report-body" id="report-content"><%- htmlBody %></div>
         </article>
 
         <div class="box post-nav">
@@ -24,6 +25,5 @@
     </div>
 
     <%- include('../partials/footer') %>
-    <script src="/js/report-view.js?v=<%= Date.now() %>"></script>
 </body>
 </html>

@@ -1,15 +1,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title><%= typeof pageTitle !== 'undefined' && pageTitle ? pageTitle + ' - ' + strings.siteName : strings.siteName %></title>
-<% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
 <% const _title = (typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' - ' + strings.siteName : strings.siteName; %>
-<% const _url = 'https://cyber-lenin.com' + (typeof pagePath !== 'undefined' && pagePath ? pagePath : '/'); %>
+<% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
+<% const _url = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : siteOrigin + (typeof pagePath !== 'undefined' && pagePath ? pagePath : '/'); %>
+<% const _robots = (typeof robotsMeta !== 'undefined' && robotsMeta) ? robotsMeta : 'index, follow'; %>
+<% const _ogType = (typeof ogType !== 'undefined' && ogType) ? ogType : 'website'; %>
+<title><%= strings.siteName %></title>
 <meta name="description" content="<%= _desc %>">
 <link rel="canonical" href="<%= _url %>">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="<%= _robots %>">
 <link rel="icon" href="/img/favicon.png" type="image/png">
-<link rel="alternate" type="application/atom+xml" title="Cyber-Lenin Feed" href="/atom.xml">
-<meta property="og:type" content="website">
+<link rel="alternate" type="application/rss+xml" title="Cyber-Lenin RSS Feed" href="/rss.xml">
+<link rel="alternate" type="application/atom+xml" title="Cyber-Lenin Atom Feed" href="/atom.xml">
+<meta property="og:type" content="<%= _ogType %>">
 <meta property="og:title" content="<%= _title %>">
 <meta property="og:description" content="<%= _desc %>">
 <meta property="og:url" content="<%= _url %>">
@@ -18,6 +21,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<%= _title %>">
 <meta name="twitter:description" content="<%= _desc %>">
+<% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
+<script type="application/ld+json"><%- jsonLdScript(jsonLd) %></script>
+<% } %>
 <script>
 (function(){var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t)})();
 </script>

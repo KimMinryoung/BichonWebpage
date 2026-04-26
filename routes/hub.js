@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const seo = require('../utils/seo');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const PER_PAGE = 20;
@@ -22,12 +23,17 @@ router.get('/', async (req, res) => {
             totalPages,
             paginationBase: '/hub?page=',
             pagePath,
+            pageTitle: '큐레이션',
+            pageDescription: '사이버-레닌이 선별한 한국어권 진보 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
+            jsonLd: seo.itemListJsonLd((data.items || []).map(item => ({ title: item.title, href: `/hub/${item.slug}` }))),
         });
     } catch (error) {
         console.error('Error fetching hub list:', error);
         res.render('public/hub', {
             items: [], currentPage: 1, totalPages: 1,
             paginationBase: '/hub?page=', pagePath,
+            pageTitle: '큐레이션',
+            pageDescription: '사이버-레닌이 선별한 한국어권 진보 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
         });
     }
 });
@@ -46,7 +52,22 @@ router.get('/:slug', async (req, res) => {
             });
         }
         const item = await response.json();
-        res.render('public/hub-view', { item, pageTitle: item.title, pagePath });
+        const pageDescription = seo.excerpt(`${item.selection_rationale || ''} ${item.context || ''}`, 160);
+        res.render('public/hub-view', {
+            item,
+            pageTitle: item.title,
+            pageDescription,
+            pagePath,
+            ogType: 'article',
+            jsonLd: seo.pageJsonLd({
+                type: 'Article',
+                title: item.title,
+                description: pageDescription,
+                path: pagePath,
+                datePublished: item.published_at,
+                authorName: 'Cyber-Lenin',
+            }),
+        });
     } catch (error) {
         console.error('Error fetching hub entry:', error);
         res.status(500).render('layouts/main', {

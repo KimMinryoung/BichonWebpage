@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <title>#<%= report.id %> — <%= report.content.split('\n')[0].substring(0, 80) %></title>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/report.css?v=<%= Date.now() %>">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

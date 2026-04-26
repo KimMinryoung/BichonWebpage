@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const seo = require('../utils/seo');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 
@@ -28,10 +29,20 @@ router.get('/:slug', async (req, res) => {
         res.render('public/page-view', {
             slug: data.slug,
             pageTitle: data.title,
+            pageDescription: data.summary || seo.excerpt(data.html_body || '', 160),
             summary: data.summary || '',
             htmlBody: data.html_body || '',
             updatedAt: data.updated_at || null,
             pagePath,
+            ogType: 'article',
+            jsonLd: seo.pageJsonLd({
+                type: 'Article',
+                title: data.title,
+                description: data.summary || seo.excerpt(data.html_body || '', 160),
+                path: pagePath,
+                dateModified: data.updated_at || null,
+                authorName: 'Cyber-Lenin',
+            }),
         });
     } catch (error) {
         console.error('Error fetching static page:', error);

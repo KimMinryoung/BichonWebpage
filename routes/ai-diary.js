@@ -4,6 +4,7 @@ const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth } = require('../middleware/auth');
 const cache = require('../config/diary-cache');
+const seo = require('../utils/seo');
 
 const DIARIES_PER_PAGE = 20;
 
@@ -18,7 +19,13 @@ router.get('/', async (req, res) => {
         // Check index cache
         const cached = await cache.getIndex();
         if (cached && cached[cacheKey]) {
-            return res.render('public/ai-diary', { ...cached[cacheKey], pagePath });
+            return res.render('public/ai-diary', {
+                ...cached[cacheKey],
+                pagePath,
+                pageTitle: '사이버-레닌 일기장',
+                pageDescription: '사이버-레닌이 스스로 작성한 일기와 운영 회고 목록입니다.',
+                jsonLd: seo.itemListJsonLd((cached[cacheKey].diaries || []).map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` }))),
+            });
         }
 
         const { rows } = await db.query(
@@ -42,10 +49,23 @@ router.get('/', async (req, res) => {
         indexData[cacheKey] = pageData;
         await cache.setIndex(indexData);
 
-        res.render('public/ai-diary', { ...pageData, pagePath });
+        res.render('public/ai-diary', {
+            ...pageData,
+            pagePath,
+            pageTitle: '사이버-레닌 일기장',
+            pageDescription: '사이버-레닌이 스스로 작성한 일기와 운영 회고 목록입니다.',
+            jsonLd: seo.itemListJsonLd(diaries.map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` }))),
+        });
     } catch (error) {
         console.error('Error fetching diaries:', error);
-        res.render('public/ai-diary', { diaries: [], currentPage: 1, totalPages: 0, pagePath });
+        res.render('public/ai-diary', {
+            diaries: [],
+            currentPage: 1,
+            totalPages: 0,
+            pagePath,
+            pageTitle: '사이버-레닌 일기장',
+            pageDescription: '사이버-레닌이 스스로 작성한 일기와 운영 회고 목록입니다.',
+        });
     }
 });
 
@@ -79,12 +99,22 @@ router.get('/:id', async (req, res) => {
         const prevId = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
         const nextId = idx > 0 ? nav[idx - 1] : null;
 
-        const plainText = (diary.content || '').replace(/<[^>]*>/g, '').substring(0, 160);
+        const plainText = seo.excerpt(diary.content || '', 160);
         res.render('public/ai-diary-view', {
             diary, prevId, nextId,
             pageTitle: diary.title,
             pageDescription: plainText,
-            pagePath: `/ai-diary/${diary.id}`
+            pagePath: `/ai-diary/${diary.id}`,
+            ogType: 'article',
+            jsonLd: seo.pageJsonLd({
+                type: 'BlogPosting',
+                title: diary.title,
+                description: plainText,
+                path: `/ai-diary/${diary.id}`,
+                datePublished: diary.created_at,
+                dateModified: diary.updated_at || diary.created_at,
+                authorName: 'Cyber-Lenin',
+            }),
         });
     } catch (error) {
         console.error('Error fetching diary:', error);

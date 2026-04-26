@@ -1,10 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const cache = require('../config/report-cache');
+const seo = require('../utils/seo');
+const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const ADMIN_KEY = process.env.LENINBOT_ADMIN_KEY || '';
 const REPORTS_PER_PAGE = 20;
+
+function reportTitle(report) {
+    const resultLines = (report.result || '').split('\n');
+    for (const line of resultLines) {
+        const match = line.match(/^#\s+(.+)/);
+        if (match) return match[1];
+    }
+    return (report.content || `Report #${report.id}`).split('\n')[0].substring(0, 80);
+}
 
 // POST /cache/clear — manual cache purge
 router.post('/cache/clear', async (req, res) => {
@@ -111,12 +122,17 @@ router.get('/', async (req, res) => {
             ...taskData,
             researchItems,
             pagePath,
+            pageTitle: '사이버-레닌 보고서',
+            pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
+            jsonLd: seo.itemListJsonLd(researchItems.map(item => ({ title: item.title, href: item.href }))),
             showTasks: isAdmin
         });
     } catch (error) {
         console.error('Error fetching reports:', error);
         res.render('public/reports', {
             reports: [], currentPage: 1, totalPages: 0, researchItems: [], pagePath,
+            pageTitle: '사이버-레닌 보고서',
+            pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
             showTasks: isAdmin
         });
     }
@@ -125,19 +141,37 @@ router.get('/', async (req, res) => {
 // Research 개별 조회 (must be before /:id to avoid conflict)
 router.get('/research/:filename', async (req, res) => {
     try {
-        const filename = req.params.filename.endsWith('.md') ? req.params.filename : req.params.filename + '.md';
+        const requestedMarkdownFile = req.params.filename.endsWith('.md');
+        const wantsMarkdown = requestedMarkdownFile || req.query.format === 'markdown' || req.query.format === 'md';
+        const filename = requestedMarkdownFile ? req.params.filename : req.params.filename + '.md';
         const slug = filename.replace(/\.md$/, '');
         const pagePath = `/reports/research/${slug}`;
-
-        const stripTitle = (md) => md.replace(/^\s*#\s+.+\r?\n+/, '');
 
         // Check file cache
         const cached = await cache.getResearch(filename);
         if (cached && cached.content) {
+            if (wantsMarkdown) {
+                res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+                return res.type('text/markdown; charset=utf-8').send(cached.content);
+            }
+            const title = cached.title || titleFromMarkdown(cached.content, slug.replace(/_/g, ' '));
+            const articleMarkdown = stripFirstHeading(cached.content);
             return res.render('public/research-view', {
-                filename, markdown: stripTitle(cached.content),
-                pageTitle: cached.title || slug.replace(/_/g, ' '),
-                pagePath
+                filename,
+                markdown: articleMarkdown,
+                htmlBody: renderMarkdown(articleMarkdown),
+                markdownUrl: `${pagePath}.md`,
+                pageTitle: title,
+                pageDescription: seo.excerpt(cached.content, 160),
+                pagePath,
+                ogType: 'article',
+                jsonLd: seo.pageJsonLd({
+                    type: 'Article',
+                    title,
+                    description: seo.excerpt(cached.content, 160),
+                    path: pagePath,
+                    authorName: 'Cyber-Lenin',
+                }),
             });
         }
 
@@ -151,11 +185,32 @@ router.get('/research/:filename', async (req, res) => {
 
         const data = await response.json();
         const markdown = data.content || '';
-        const match = markdown.match(/^#\s+(.+)/m);
-        const title = data.title || (match ? match[1] : slug.replace(/_/g, ' '));
+        if (wantsMarkdown) {
+            res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+            return res.type('text/markdown; charset=utf-8').send(markdown);
+        }
+        const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
         await cache.setResearch(filename, { content: markdown, title });
 
-        res.render('public/research-view', { filename, markdown: stripTitle(markdown), pageTitle: title, pagePath });
+        const articleMarkdown = stripFirstHeading(markdown);
+        const pageDescription = seo.excerpt(markdown, 160);
+        res.render('public/research-view', {
+            filename,
+            markdown: articleMarkdown,
+            htmlBody: renderMarkdown(articleMarkdown),
+            markdownUrl: `${pagePath}.md`,
+            pageTitle: title,
+            pageDescription,
+            pagePath,
+            ogType: 'article',
+            jsonLd: seo.pageJsonLd({
+                type: 'Article',
+                title,
+                description: pageDescription,
+                path: pagePath,
+                authorName: 'Cyber-Lenin',
+            }),
+        });
     } catch (error) {
         console.error('Error fetching research:', error);
         res.status(500).render('layouts/main', {
@@ -180,7 +235,12 @@ router.get('/:id', async (req, res) => {
         // Check file cache (permanent — reports don't change)
         const cached = await cache.getReport(id);
         if (cached) {
-            return res.render('public/report-view', { report: cached, pagePath });
+            return res.render('public/report-view', {
+                report: cached,
+                pageTitle: reportTitle(cached),
+                pagePath,
+                robotsMeta: 'noindex, nofollow'
+            });
         }
 
         const response = await fetch(`${CHAT_API_URL}/reports/${id}`, {
@@ -197,7 +257,12 @@ router.get('/:id', async (req, res) => {
         const report = data.report;
         await cache.setReport(report);
 
-        res.render('public/report-view', { report, pagePath });
+        res.render('public/report-view', {
+            report,
+            pageTitle: reportTitle(report),
+            pagePath,
+            robotsMeta: 'noindex, nofollow'
+        });
     } catch (error) {
         console.error('Error fetching report:', error);
         res.status(500).render('layouts/main', {
