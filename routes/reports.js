@@ -8,6 +8,41 @@ const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:80
 const ADMIN_KEY = process.env.LENINBOT_ADMIN_KEY || '';
 const REPORTS_PER_PAGE = 20;
 
+function researchMarkdown(data) {
+    return data && (data.content || data.markdown || data.body || data.text || '');
+}
+
+function researchHtmlBody(data, markdown) {
+    if (data && data.html_body) return data.html_body;
+    if (data && data.htmlBody) return data.htmlBody;
+    return renderMarkdown(stripFirstHeading(markdown));
+}
+
+function renderResearch(res, { filename, slug, pagePath, data }) {
+    const markdown = researchMarkdown(data);
+    const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
+    const descriptionSource = markdown || data.summary || data.excerpt || data.html_body || data.htmlBody || '';
+    const pageDescription = seo.excerpt(descriptionSource, 160);
+
+    return res.render('public/research-view', {
+        filename,
+        markdown: stripFirstHeading(markdown),
+        htmlBody: researchHtmlBody(data, markdown),
+        markdownUrl: `${pagePath}.md`,
+        pageTitle: title,
+        pageDescription,
+        pagePath,
+        ogType: 'article',
+        jsonLd: seo.pageJsonLd({
+            type: 'Article',
+            title,
+            description: pageDescription,
+            path: pagePath,
+            authorName: 'Cyber-Lenin',
+        }),
+    });
+}
+
 function reportTitle(report) {
     const resultLines = (report.result || '').split('\n');
     for (const line of resultLines) {
@@ -149,29 +184,23 @@ router.get('/research/:filename', async (req, res) => {
 
         // Check file cache
         const cached = await cache.getResearch(filename);
-        if (cached && cached.content) {
+        if (cached && (researchMarkdown(cached) || cached.html_body || cached.htmlBody)) {
             if (wantsMarkdown) {
+                const cachedMarkdown = researchMarkdown(cached);
+                if (!cachedMarkdown) {
+                    return res.status(404).render('layouts/main', {
+                        pageTitle: '404',
+                        body: '<div class="box"><h1>404</h1><p>마크다운 원문을 찾을 수 없습니다.</p><a href="/reports">목록으로</a></div>'
+                    });
+                }
                 res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
-                return res.type('text/markdown; charset=utf-8').send(cached.content);
+                return res.type('text/markdown; charset=utf-8').send(cachedMarkdown);
             }
-            const title = cached.title || titleFromMarkdown(cached.content, slug.replace(/_/g, ' '));
-            const articleMarkdown = stripFirstHeading(cached.content);
-            return res.render('public/research-view', {
+            return renderResearch(res, {
                 filename,
-                markdown: articleMarkdown,
-                htmlBody: renderMarkdown(articleMarkdown),
-                markdownUrl: `${pagePath}.md`,
-                pageTitle: title,
-                pageDescription: seo.excerpt(cached.content, 160),
+                slug,
                 pagePath,
-                ogType: 'article',
-                jsonLd: seo.pageJsonLd({
-                    type: 'Article',
-                    title,
-                    description: seo.excerpt(cached.content, 160),
-                    path: pagePath,
-                    authorName: 'Cyber-Lenin',
-                }),
+                data: cached,
             });
         }
 
@@ -184,32 +213,24 @@ router.get('/research/:filename', async (req, res) => {
         }
 
         const data = await response.json();
-        const markdown = data.content || '';
+        const markdown = researchMarkdown(data);
         if (wantsMarkdown) {
             res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
             return res.type('text/markdown; charset=utf-8').send(markdown);
         }
         const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
-        await cache.setResearch(filename, { content: markdown, title });
+        await cache.setResearch(filename, {
+            content: markdown,
+            html_body: data.html_body || data.htmlBody || '',
+            summary: data.summary || data.excerpt || '',
+            title,
+        });
 
-        const articleMarkdown = stripFirstHeading(markdown);
-        const pageDescription = seo.excerpt(markdown, 160);
-        res.render('public/research-view', {
+        renderResearch(res, {
             filename,
-            markdown: articleMarkdown,
-            htmlBody: renderMarkdown(articleMarkdown),
-            markdownUrl: `${pagePath}.md`,
-            pageTitle: title,
-            pageDescription,
+            slug,
             pagePath,
-            ogType: 'article',
-            jsonLd: seo.pageJsonLd({
-                type: 'Article',
-                title,
-                description: pageDescription,
-                path: pagePath,
-                authorName: 'Cyber-Lenin',
-            }),
+            data: { ...data, title },
         });
     } catch (error) {
         console.error('Error fetching research:', error);

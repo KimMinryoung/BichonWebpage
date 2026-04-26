@@ -22,10 +22,50 @@ function flushParagraph(out, paragraph) {
 
 function flushList(out, list) {
     if (!list.length) return;
-    out.push('<ul>');
-    for (const item of list) out.push(`<li>${inlineMarkdown(item)}</li>`);
-    out.push('</ul>');
+    const tag = list[0].ordered ? 'ol' : 'ul';
+    out.push(`<${tag}>`);
+    for (const item of list) out.push(`<li>${inlineMarkdown(item.text)}</li>`);
+    out.push(`</${tag}>`);
     list.length = 0;
+}
+
+function splitTableRow(line) {
+    const trimmed = line.trim();
+    if (!trimmed.startsWith('|') || !trimmed.endsWith('|')) return null;
+    return trimmed.slice(1, -1).split('|').map(cell => cell.trim());
+}
+
+function isTableDivider(line) {
+    const cells = splitTableRow(line);
+    return !!cells && cells.length > 0 && cells.every(cell => /^:?-{3,}:?$/.test(cell));
+}
+
+function flushTable(out, table) {
+    if (!table.length) return;
+    const [header, divider, ...rows] = table;
+    if (!divider || !isTableDivider(divider)) {
+        for (const row of table) out.push(`<p>${inlineMarkdown(row)}</p>`);
+        table.length = 0;
+        return;
+    }
+
+    const headers = splitTableRow(header) || [];
+    out.push('<table>');
+    out.push('<thead><tr>');
+    for (const cell of headers) out.push(`<th>${inlineMarkdown(cell)}</th>`);
+    out.push('</tr></thead>');
+    if (rows.length) {
+        out.push('<tbody>');
+        for (const row of rows) {
+            const cells = splitTableRow(row) || [];
+            out.push('<tr>');
+            for (const cell of cells) out.push(`<td>${inlineMarkdown(cell)}</td>`);
+            out.push('</tr>');
+        }
+        out.push('</tbody>');
+    }
+    out.push('</table>');
+    table.length = 0;
 }
 
 function renderMarkdown(markdown = '') {
@@ -33,6 +73,7 @@ function renderMarkdown(markdown = '') {
     const out = [];
     const paragraph = [];
     const list = [];
+    const table = [];
     let inCode = false;
     let code = [];
 
@@ -42,6 +83,7 @@ function renderMarkdown(markdown = '') {
         if (line.startsWith('```')) {
             flushParagraph(out, paragraph);
             flushList(out, list);
+            flushTable(out, table);
             if (inCode) {
                 out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
                 code = [];
@@ -60,6 +102,24 @@ function renderMarkdown(markdown = '') {
         if (!line.trim()) {
             flushParagraph(out, paragraph);
             flushList(out, list);
+            flushTable(out, table);
+            continue;
+        }
+
+        const tableRow = splitTableRow(line);
+        if (tableRow) {
+            flushParagraph(out, paragraph);
+            flushList(out, list);
+            table.push(line);
+            continue;
+        }
+
+        flushTable(out, table);
+
+        if (/^\s*-{3,}\s*$/.test(line)) {
+            flushParagraph(out, paragraph);
+            flushList(out, list);
+            out.push('<hr>');
             continue;
         }
 
@@ -75,7 +135,16 @@ function renderMarkdown(markdown = '') {
         const bullet = line.match(/^\s*[-*+]\s+(.+)$/);
         if (bullet) {
             flushParagraph(out, paragraph);
-            list.push(bullet[1]);
+            if (list.length && list[0].ordered) flushList(out, list);
+            list.push({ ordered: false, text: bullet[1] });
+            continue;
+        }
+
+        const ordered = line.match(/^\s*\d+\.\s+(.+)$/);
+        if (ordered) {
+            flushParagraph(out, paragraph);
+            if (list.length && !list[0].ordered) flushList(out, list);
+            list.push({ ordered: true, text: ordered[1] });
             continue;
         }
 
@@ -94,6 +163,7 @@ function renderMarkdown(markdown = '') {
     if (inCode) out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
     flushParagraph(out, paragraph);
     flushList(out, list);
+    flushTable(out, table);
 
     return out.join('\n');
 }
