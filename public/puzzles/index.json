@@ -8,9 +8,27 @@
       "puzzles": [
         {
           "id": "freenono-letter-l",
-          "hint_title": "사이버-레닌의 첫 글자",
+          "hint_title": "레닌의 첫 글자",
           "size": [14, 8],
           "path": "/puzzles/freenono-letter-l/puzzle.json"
+        },
+        {
+          "id": "cyber-red-star",
+          "hint_title": "다섯 갈래의 표식",
+          "size": [11, 11],
+          "path": "/puzzles/cyber-red-star/puzzle.json"
+        },
+        {
+          "id": "cyber-red-flag",
+          "hint_title": "바람에 드는 신호",
+          "size": [11, 12],
+          "path": "/puzzles/cyber-red-flag/puzzle.json"
+        },
+        {
+          "id": "cyber-hammer",
+          "hint_title": "일하는 손의 도구",
+          "size": [10, 12],
+          "path": "/puzzles/cyber-hammer/puzzle.json"
         }
       ]
     }

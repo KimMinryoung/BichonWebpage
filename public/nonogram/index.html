@@ -582,30 +582,33 @@
     const PUZZLE_INDEX_URL = "/puzzles/index.json";
 
     const FALLBACK_PUZZLE = {
-      "id": "minchong-01",
-      "title": "민총이",
-      "hint_title": "우리의 귀요미 마스코트",
-      "size": [10, 10],
-      "row_hints": [[1], [3], [6], [6], [7], [5], [4], [], [], []],
-      "col_hints": [[], [], [3], [5], [6], [6], [7], [4], [1], []],
+      "id": "freenono-letter-l",
+      "title": "L",
+      "hint_title": "레닌의 첫 글자",
+      "size": [14, 8],
+      "row_hints": [[], [2], [2], [2], [2], [2], [2], [2], [2], [2], [2], [6], [6], []],
+      "col_hints": [[], [12], [12], [2], [2], [2], [2], []],
       "solution": [
-        [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-        [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
-        [0, 0, 1, 1, 1, 1, 1, 1, 0, 0],
-        [0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
-        [0, 0, 0, 1, 1, 1, 1, 1, 0, 0],
-        [0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0]
       ],
-      "solution_image": "/puzzles/minchong-01/solution.png",
+      "solution_image": "/puzzles/freenono-letter-l/solution.png",
       "questions": [
-        {"q": "민주노총의 마스코트 민총이는 언제 처음 등장했나?", "a": ["2006년", "2008년", "2010년"], "correct": 1},
-        {"q": "노노그램에서 숫자 3, 1은 무엇을 뜻하나?", "a": ["연속 3칸과 1칸이 떨어져 있다는 뜻", "전체 4칸을 아무 곳이나 칠한다는 뜻", "세 번째 칸과 첫 번째 칸만 칠한다는 뜻"], "correct": 0},
-        {"q": "이 게임 루프가 훈련하려는 태도에 가장 가까운 것은?", "a": ["빠른 반응", "논리적 검증", "무한 스크롤"], "correct": 1},
-        {"q": "퍼즐을 푼 뒤 질문을 배치하는 이유는?", "a": ["정답 이미지를 숨기기 위해", "이미지와 역사적 맥락을 연결하기 위해", "플레이 시간을 억지로 늘리기 위해"], "correct": 1}
+        {"q": "이 퍼즐 데이터가 온 공개 프로젝트는?", "a": ["FreeNono", "webpbn", "Conceptis"], "correct": 0},
+        {"q": "노노그램에서 숫자 힌트가 가리키는 것은?", "a": ["연속해서 칠할 칸 묶음", "아무 위치에 칠할 총합만", "정답 이미지의 색상 수"], "correct": 0},
+        {"q": "이 글자를 첫 퍼즐로 고른 이유에 가장 가까운 것은?", "a": ["Lenin 이름의 첫 글자를 떠올리게 해서", "정답을 성별로 설명하기 위해서", "큰 화면에서만 풀 수 있어서"], "correct": 0}
       ]
     };
 
@@ -614,7 +617,7 @@
       puzzles: [
         {
           id: DEFAULT_PUZZLE_ID,
-          hint_title: "사이버-레닌의 첫 글자",
+          hint_title: "레닌의 첫 글자",
           size: [14, 8],
           path: "/puzzles/freenono-letter-l/puzzle.json"
         }
@@ -802,7 +805,7 @@
       refreshPuzzleSelection();
       els.hintTitle.textContent = puzzle.hint_title || "우리의 귀요미 마스코트";
       els.size.textContent = rows + " x " + cols;
-      els.image.src = puzzle.solution_image;
+      els.image.src = getSolutionImageSrc(puzzle);
       els.solutionTitle.textContent = puzzle.title || "이미지 해제";
       renderSourceNote(puzzle.source);
       els.grid.innerHTML = "";
@@ -887,6 +890,29 @@
       const detail = document.createElement("span");
       detail.textContent = " / " + [source.author, source.license].filter(Boolean).join(" / ");
       els.sourceNote.appendChild(detail);
+    }
+
+    function buildSolutionImage(puzzle) {
+      const [rows, cols] = puzzle.size;
+      const cell = 28;
+      const width = cols * cell;
+      const height = rows * cell;
+      const rects = [];
+      for (let r = 0; r < rows; r += 1) {
+        for (let c = 0; c < cols; c += 1) {
+          if (puzzle.solution?.[r]?.[c] !== 1) continue;
+          rects.push('<rect x="' + (c * cell + 2) + '" y="' + (r * cell + 2) + '" width="' + (cell - 4) + '" height="' + (cell - 4) + '" fill="#d03b40"/>');
+        }
+      }
+      const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + width + ' ' + height + '">' +
+        '<rect width="100%" height="100%" fill="#10151b"/>' +
+        rects.join("") +
+        '</svg>';
+      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+    }
+
+    function getSolutionImageSrc(puzzle) {
+      return puzzle.solution_image || buildSolutionImage(puzzle);
     }
 
     function updateGridMetrics(rows, cols) {
