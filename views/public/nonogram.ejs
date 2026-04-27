@@ -164,10 +164,11 @@
     }
 
     .toolbar-actions {
+      flex: 0 1 390px;
       display: flex;
       align-items: center;
       gap: 10px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: flex-end;
       min-width: 0;
     }
@@ -181,8 +182,9 @@
     }
 
     .puzzle-picker {
-      flex: 1 1 250px;
+      flex: 1 1 auto;
       max-width: 100%;
+      min-width: 0;
       min-height: 40px;
       display: inline-flex;
       align-items: center;
@@ -330,7 +332,7 @@
       color: #b9f1cd;
     }
 
-    .cell {
+    .nonogram-page main .cell {
       appearance: none;
       -webkit-appearance: none;
       width: var(--grid-cell);
@@ -346,21 +348,21 @@
       touch-action: manipulation;
     }
 
-    .cell.row-hover, .cell.col-hover {
+    .nonogram-page main .cell.row-hover, .nonogram-page main .cell.col-hover {
       background: var(--cell-empty-hover);
       border-color: #6a7280;
     }
 
-    .cell.filled {
+    .nonogram-page main .cell.filled {
       background: #11141a;
       box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.65);
     }
 
-    .cell.marked {
+    .nonogram-page main .cell.marked {
       background: var(--cell-empty);
     }
 
-    .cell.marked.row-hover, .cell.marked.col-hover {
+    .nonogram-page main .cell.marked.row-hover, .nonogram-page main .cell.marked.col-hover {
       background: var(--cell-empty-hover);
     }
 
@@ -528,8 +530,9 @@
         --hint-h: 72px;
       }
       .toolbar { align-items: stretch; flex-direction: column; }
-      .toolbar-actions { justify-content: stretch; }
-      .puzzle-picker { width: 100%; }
+      .toolbar-title { flex: 0 1 auto; }
+      .toolbar-actions { flex: 0 1 auto; justify-content: stretch; width: 100%; }
+      .puzzle-picker { width: auto; }
       .puzzle-picker select { min-width: 0; flex: 1; }
       .reset-btn { min-width: 30px; min-height: 26px; padding: 0 7px; }
       .row-hint { font-size: 13px; gap: 4px; padding: 0 6px; }
