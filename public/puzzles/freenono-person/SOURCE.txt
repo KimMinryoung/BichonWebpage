@@ -1,0 +1,6 @@
+FreeNono Kanji A: Man
+Original file: Kanji A.nonopack/Mann.nonogram
+Author: Christian Wichmann
+Project: https://www.freenono.org/
+License: GPL-2.0-or-later
+Converted for cyber-lenin.com/nonogram on 2026-04-27.

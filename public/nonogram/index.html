@@ -145,8 +145,7 @@
       font-weight: 900;
     }
 
-    .touch-guide {
-      display: none;
+    .input-guide {
       margin: -4px 0 12px;
       color: var(--muted);
       font-size: 13px;
@@ -155,59 +154,12 @@
       transition: opacity 240ms ease;
     }
 
-    .touch-guide.is-subtle {
+    .touch-guide {
+      display: none;
+    }
+
+    .input-guide.is-subtle {
       opacity: 0.5;
-    }
-
-    .mode-toggle {
-      min-height: 40px;
-      display: inline-grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      gap: 0;
-      padding: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 999px;
-      background: #0e1218;
-      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.22);
-      isolation: isolate;
-      overflow: hidden;
-    }
-
-    .mode-toggle::before {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      width: calc(50% - 4px);
-      height: calc(100% - 8px);
-      border-radius: 999px;
-      background: var(--yellow);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
-      transform: translateX(0);
-      transition: transform 180ms ease;
-      z-index: -1;
-    }
-
-    .mode-toggle.mark-active::before {
-      transform: translateX(100%);
-    }
-
-    .mode-btn {
-      min-width: 74px;
-      min-height: 32px;
-      padding: 0 13px;
-      border: 0;
-      background: transparent;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 900;
-      border-radius: 999px;
-      position: relative;
-    }
-
-    .mode-btn.active {
-      color: #11141a;
     }
 
     button {
@@ -383,6 +335,21 @@
       line-height: 1.6;
     }
 
+    .source-note {
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .source-note a {
+      color: var(--yellow);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
     .questions {
       opacity: 0.42;
       pointer-events: none;
@@ -465,8 +432,6 @@
       }
       .toolbar { align-items: stretch; flex-direction: column; }
       .toolbar-actions { justify-content: stretch; }
-      .mode-toggle { flex: 1 1 auto; }
-      .mode-btn { min-width: 0; }
       .puzzle-picker { width: 100%; }
       .puzzle-picker select { min-width: 0; flex: 1; }
       .reset-btn { flex: 1 1 auto; }
@@ -477,6 +442,10 @@
     @media (hover: none), (pointer: coarse) {
       .touch-guide {
         display: block;
+      }
+
+      .mouse-guide {
+        display: none;
       }
     }
   </style>
@@ -500,14 +469,11 @@
               <span>퍼즐</span>
               <select id="puzzleSelect" aria-label="퍼즐 선택"></select>
             </label>
-            <div class="mode-toggle" id="modeToggle" aria-label="입력 모드">
-              <button class="mode-btn active" id="fillModeButton" type="button" aria-pressed="true">칠하기</button>
-              <button class="mode-btn" id="markModeButton" type="button" aria-pressed="false">X 표시</button>
-            </div>
             <button class="reset-btn" id="resetButton" type="button">초기화</button>
           </div>
         </div>
-        <p class="touch-guide" id="touchGuide">모드를 고른 뒤 칸을 탭한다.</p>
+        <p class="input-guide mouse-guide" id="mouseGuide">좌클릭으로 칠하고 우클릭으로 X 표시한다.</p>
+        <p class="input-guide touch-guide" id="touchGuide">터치할 때마다 칸이 채우기, X 표시, 비우기 순서로 바뀐다.</p>
         <div class="puzzle-wrap">
           <div class="nonogram-grid" id="grid" aria-label="노노그램 퍼즐판"></div>
           <div class="solution-panel" id="solutionPanel" aria-live="polite">
@@ -521,6 +487,7 @@
       </div>
 
       <aside class="side">
+        <div class="source-note" id="sourceNote" hidden></div>
         <section class="questions" id="questions">
           <h2>질문</h2>
           <p>퍼즐을 정확히 풀면 답변이 열린다.</p>
@@ -537,7 +504,7 @@
   </main>
 
   <script>
-    const DEFAULT_PUZZLE_ID = "minchong-01";
+    const DEFAULT_PUZZLE_ID = "freenono-person";
     const PUZZLE_INDEX_URL = "/puzzles/index.json";
 
     const FALLBACK_PUZZLE = {
@@ -573,9 +540,9 @@
       puzzles: [
         {
           id: DEFAULT_PUZZLE_ID,
-          hint_title: "우리의 귀요미 마스코트",
-          size: [10, 10],
-          path: "/puzzles/minchong-01/puzzle.json"
+          hint_title: "민중을 이루는 하나의 표식",
+          size: [15, 15],
+          path: "/puzzles/freenono-person/puzzle.json"
         }
       ]
     };
@@ -586,7 +553,6 @@
       currentPuzzleId: DEFAULT_PUZZLE_ID,
       cells: [],
       solved: false,
-      mode: "fill",
       answers: new Map()
     };
 
@@ -602,17 +568,16 @@
       questionList: document.getElementById("questionList"),
       complete: document.getElementById("complete"),
       reset: document.getElementById("resetButton"),
-      modeToggle: document.getElementById("modeToggle"),
-      fillMode: document.getElementById("fillModeButton"),
-      markMode: document.getElementById("markModeButton"),
       picker: document.getElementById("puzzlePicker"),
       select: document.getElementById("puzzleSelect"),
       share: document.getElementById("shareButton"),
       touchGuide: document.getElementById("touchGuide"),
+      sourceNote: document.getElementById("sourceNote"),
       shareText: document.getElementById("shareText")
     };
 
     let touchInteractionCount = 0;
+    let lastPointerType = "";
     let resizeObserver = null;
 
     function normalizePuzzleEntry(entry, series) {
@@ -680,7 +645,7 @@
           hint_title: puzzle.hint_title || entry.hint_title
         };
       } catch (error) {
-        if (id === DEFAULT_PUZZLE_ID) return FALLBACK_PUZZLE;
+        if (id === DEFAULT_PUZZLE_ID && FALLBACK_PUZZLE.id === id) return FALLBACK_PUZZLE;
         throw error;
       }
     }
@@ -735,6 +700,7 @@
       els.size.textContent = rows + " x " + cols;
       els.image.src = puzzle.solution_image;
       els.solutionTitle.textContent = puzzle.title || "이미지 해제";
+      renderSourceNote(puzzle.source);
       els.grid.innerHTML = "";
       updateGridMetrics(rows, cols);
       els.grid.style.gridTemplateColumns = "var(--grid-hint-w) repeat(" + cols + ", var(--grid-cell))";
@@ -744,7 +710,6 @@
       els.complete.classList.remove("show");
       els.shareText.textContent = "공유 링크 자리: /nonogram/?p=" + state.currentPuzzleId;
       els.status.textContent = "풀이 중";
-      setMode(state.mode);
 
       const corner = document.createElement("div");
       corner.className = "corner";
@@ -774,9 +739,10 @@
           cell.dataset.col = c;
           cell.setAttribute("aria-label", (r + 1) + "행 " + (c + 1) + "열");
           cell.addEventListener("pointerdown", noteTouchInteraction);
-          cell.addEventListener("click", () => applyCellAction(r, c, cell));
+          cell.addEventListener("click", (event) => applyPrimaryAction(event, r, c, cell));
           cell.addEventListener("contextmenu", (event) => {
             event.preventDefault();
+            if (lastPointerType === "touch") return;
             cycleMark(r, c, cell);
           });
           cell.addEventListener("mouseenter", () => setHover(r, c));
@@ -786,6 +752,37 @@
       }
 
       renderQuestions(puzzle.questions || []);
+    }
+
+    function renderSourceNote(source) {
+      if (!source || !source.name) {
+        els.sourceNote.hidden = true;
+        els.sourceNote.textContent = "";
+        return;
+      }
+
+      els.sourceNote.hidden = false;
+      els.sourceNote.innerHTML = "";
+      const label = document.createElement("span");
+      label.textContent = "출처: ";
+      els.sourceNote.appendChild(label);
+
+      if (source.url) {
+        const link = document.createElement("a");
+        link.href = source.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = source.name;
+        els.sourceNote.appendChild(link);
+      } else {
+        const name = document.createElement("strong");
+        name.textContent = source.name;
+        els.sourceNote.appendChild(name);
+      }
+
+      const detail = document.createElement("span");
+      detail.textContent = " / " + [source.author, source.license].filter(Boolean).join(" / ");
+      els.sourceNote.appendChild(detail);
     }
 
     function updateGridMetrics(rows, cols) {
@@ -812,6 +809,7 @@
     }
 
     function noteTouchInteraction(event) {
+      lastPointerType = event.pointerType || "";
       if (event.pointerType !== "touch") return;
       touchInteractionCount += 1;
       if (touchInteractionCount >= 3) {
@@ -824,21 +822,12 @@
       return values.map((value) => "<span>" + value + "</span>").join("");
     }
 
-    function setMode(mode) {
-      state.mode = mode === "mark" ? "mark" : "fill";
-      els.fillMode.classList.toggle("active", state.mode === "fill");
-      els.markMode.classList.toggle("active", state.mode === "mark");
-      els.modeToggle.classList.toggle("mark-active", state.mode === "mark");
-      els.fillMode.setAttribute("aria-pressed", state.mode === "fill" ? "true" : "false");
-      els.markMode.setAttribute("aria-pressed", state.mode === "mark" ? "true" : "false");
-    }
-
-    function applyCellAction(row, col, cell) {
-      if (state.mode === "mark") {
-        cycleMark(row, col, cell);
-      } else {
-        cycleFill(row, col, cell);
+    function applyPrimaryAction(event, row, col, cell) {
+      if (event.detail === 0 || lastPointerType === "touch") {
+        cycleTouch(row, col, cell);
+        return;
       }
+      cycleFill(row, col, cell);
     }
 
     function cycleFill(row, col, cell) {
@@ -852,6 +841,15 @@
       if (state.solved) return;
       state.cells[row][col] = state.cells[row][col] === -1 ? 0 : -1;
       paintCell(cell, state.cells[row][col]);
+      checkSolved();
+    }
+
+    function cycleTouch(row, col, cell) {
+      if (state.solved) return;
+      const current = state.cells[row][col];
+      const next = current === 0 ? 1 : current === 1 ? -1 : 0;
+      state.cells[row][col] = next;
+      paintCell(cell, next);
       checkSolved();
     }
 
@@ -978,8 +976,6 @@
     }
 
     els.reset.addEventListener("click", resetPuzzle);
-    els.fillMode.addEventListener("click", () => setMode("fill"));
-    els.markMode.addEventListener("click", () => setMode("mark"));
     els.select.addEventListener("change", () => switchPuzzle(els.select.value));
     els.share.addEventListener("click", copyShareLink);
     resizeObserver = new ResizeObserver(refreshGridMetrics);

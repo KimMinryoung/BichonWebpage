@@ -1,16 +1,16 @@
 {
-  "default_series": "labor-mascots",
-  "default": "minchong-01",
+  "default_series": "open-nonograms",
+  "default": "freenono-person",
   "series": [
     {
-      "id": "labor-mascots",
-      "title": "노동 마스코트",
+      "id": "open-nonograms",
+      "title": "공개 노노그램",
       "puzzles": [
         {
-          "id": "minchong-01",
-          "hint_title": "우리의 귀요미 마스코트",
-          "size": [10, 10],
-          "path": "/puzzles/minchong-01/puzzle.json"
+          "id": "freenono-person",
+          "hint_title": "민중을 이루는 하나의 표식",
+          "size": [15, 15],
+          "path": "/puzzles/freenono-person/puzzle.json"
         }
       ]
     }
