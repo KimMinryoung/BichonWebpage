@@ -90,11 +90,12 @@
     }
 
     .play-area {
-      padding: clamp(12px, 2vw, 22px);
+      padding: clamp(8px, 1.4vw, 14px);
       overflow: visible;
       display: flex;
       flex-direction: column;
       min-width: 0;
+      position: relative;
     }
 
     .toolbar {
@@ -103,6 +104,7 @@
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 16px;
+      padding-right: 44px;
     }
 
     .toolbar-actions {
@@ -151,15 +153,10 @@
       font-size: 13px;
       font-weight: 700;
       line-height: 1.4;
-      transition: opacity 240ms ease;
     }
 
     .touch-guide {
       display: none;
-    }
-
-    .input-guide.is-subtle {
-      opacity: 0.5;
     }
 
     button {
@@ -174,9 +171,22 @@
     button:hover { border-color: var(--yellow); }
     button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
 
-    .reset-btn, .share-btn {
+    .share-btn {
       min-height: 40px;
       padding: 0 14px;
+    }
+
+    .reset-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      min-width: 32px;
+      min-height: 28px;
+      padding: 0 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      z-index: 2;
     }
 
     .puzzle-wrap {
@@ -209,7 +219,7 @@
       background: #0e1218;
       color: var(--muted);
       font-weight: 800;
-      line-height: 1.35;
+      line-height: 1.1;
       transition: opacity 360ms ease, background 140ms ease, color 140ms ease;
     }
 
@@ -223,6 +233,7 @@
       align-items: center;
       justify-content: flex-end;
       font-size: 14px;
+      gap: 1px;
     }
 
     .row-hint {
@@ -232,6 +243,10 @@
       justify-content: flex-end;
       gap: 7px;
       font-size: 15px;
+    }
+
+    .hint span {
+      flex: 0 0 auto;
     }
 
     .corner {
@@ -434,9 +449,9 @@
       .toolbar-actions { justify-content: stretch; }
       .puzzle-picker { width: 100%; }
       .puzzle-picker select { min-width: 0; flex: 1; }
-      .reset-btn { flex: 1 1 auto; }
+      .reset-btn { min-width: 30px; min-height: 26px; padding: 0 7px; }
       .row-hint { font-size: 13px; gap: 4px; padding: 0 6px; }
-      .col-hint { font-size: 12px; }
+      .col-hint { font-size: 12px; padding-top: 5px; padding-bottom: 5px; }
     }
 
     @media (hover: none), (pointer: coarse) {
@@ -579,6 +594,11 @@
     let touchInteractionCount = 0;
     let lastPointerType = "";
     let resizeObserver = null;
+
+    function maxHintParts(hints) {
+      if (!Array.isArray(hints) || hints.length === 0) return 1;
+      return Math.max(1, ...hints.map((hint) => Array.isArray(hint) && hint.length ? hint.length : 1));
+    }
 
     function normalizePuzzleEntry(entry, series) {
       if (!entry || !entry.id) return null;
@@ -792,9 +812,21 @@
       const maxCell = Number.parseFloat(styles.getPropertyValue("--cell")) || 48;
       const paddingX = (Number.parseFloat(playStyles.paddingLeft) || 0) + (Number.parseFloat(playStyles.paddingRight) || 0);
       const available = Math.max(180, els.playArea.clientWidth - paddingX - 2);
-      const compactHint = Math.min(baseHint, Math.max(44, available * 0.18));
+      const compact = available < 520;
+      const rowFont = compact ? 13 : 15;
+      const colFont = compact ? 12 : 14;
+      const rowGap = compact ? 4 : 7;
+      const rowPadding = compact ? 14 : 22;
+      const colPadding = compact ? 14 : 18;
+      const maxRowParts = maxHintParts(state.puzzle?.row_hints);
+      const maxColParts = maxHintParts(state.puzzle?.col_hints);
+      const requiredHintW = Math.max(44, maxRowParts * rowFont + Math.max(0, maxRowParts - 1) * rowGap + rowPadding);
+      const maxHintW = Math.max(baseHint, requiredHintW);
+      const compactHint = Math.min(Math.max(44, available * 0.34), maxHintW);
       const cell = Math.max(14, Math.min(maxCell, Math.floor((available - compactHint) / cols)));
-      const hintH = Math.max(62, Math.min(Number.parseFloat(styles.getPropertyValue("--hint-h")) || 92, cell * 2.5));
+      const requiredHintH = Math.ceil(maxColParts * colFont * 1.12 + Math.max(0, maxColParts - 1) + colPadding);
+      const baseHintH = Number.parseFloat(styles.getPropertyValue("--hint-h")) || 92;
+      const hintH = Math.max(62, Math.min(150, Math.max(baseHintH, requiredHintH)));
       els.grid.style.setProperty("--grid-hint-w", compactHint + "px");
       els.grid.style.setProperty("--grid-cell", cell + "px");
       els.grid.style.setProperty("--grid-hint-h", hintH + "px");
@@ -812,9 +844,6 @@
       lastPointerType = event.pointerType || "";
       if (event.pointerType !== "touch") return;
       touchInteractionCount += 1;
-      if (touchInteractionCount >= 3) {
-        els.touchGuide.classList.add("is-subtle");
-      }
     }
 
     function formatHint(values) {
@@ -948,6 +977,7 @@
 
     function resetPuzzle() {
       if (!state.puzzle) return;
+      if (!window.confirm("퍼즐을 초기화할까요?")) return;
       renderPuzzle(state.puzzle);
     }
 
