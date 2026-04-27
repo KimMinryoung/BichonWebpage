@@ -77,6 +77,58 @@
       text-align: center;
     }
 
+    .topbar-controls {
+      width: min(420px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .puzzle-strip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .puzzle-strip[hidden] {
+      display: none;
+    }
+
+    .puzzle-strip-label {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .puzzle-strip-items {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .puzzle-tab {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 0 12px;
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(17, 21, 27, 0.78);
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .puzzle-tab.active {
+      border-color: rgba(241, 191, 75, 0.8);
+      background: rgba(241, 191, 75, 0.18);
+      color: var(--yellow);
+    }
+
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 360px;
@@ -434,6 +486,7 @@
     @media (max-width: 920px) {
       main { width: min(100% - 16px, 760px); padding-top: 18px; }
       .topbar { align-items: stretch; flex-direction: column; }
+      .topbar-controls { width: 100%; }
       .status { text-align: left; }
       .layout { grid-template-columns: 1fr; }
       .side { position: static; }
@@ -472,7 +525,13 @@
         <h1>노노그램</h1>
         <p class="subtitle">퍼즐을 풀고 이미지를 해제한 뒤 질문까지 통과해야 완료된다.</p>
       </div>
-      <div class="status" id="status">퍼즐 로딩 중</div>
+      <div class="topbar-controls">
+        <nav class="puzzle-strip" id="puzzleStrip" aria-label="문제 선택" hidden>
+          <span class="puzzle-strip-label">문제</span>
+          <div class="puzzle-strip-items" id="puzzleStripItems"></div>
+        </nav>
+        <div class="status" id="status">퍼즐 로딩 중</div>
+      </div>
     </header>
 
     <section class="layout">
@@ -583,6 +642,8 @@
       questionList: document.getElementById("questionList"),
       complete: document.getElementById("complete"),
       reset: document.getElementById("resetButton"),
+      puzzleStrip: document.getElementById("puzzleStrip"),
+      puzzleStripItems: document.getElementById("puzzleStripItems"),
       picker: document.getElementById("puzzlePicker"),
       select: document.getElementById("puzzleSelect"),
       share: document.getElementById("shareButton"),
@@ -679,6 +740,7 @@
 
     function renderPuzzlePicker() {
       els.select.innerHTML = "";
+      els.puzzleStripItems.innerHTML = "";
       const hasSeries = state.puzzleIndex.some((entry) => entry.series_title);
 
       function appendOption(parent, entry) {
@@ -687,6 +749,18 @@
         option.textContent = entry.hint_title || entry.id;
         parent.appendChild(option);
       }
+
+      function appendTab(entry) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "puzzle-tab";
+        button.dataset.puzzleId = entry.id;
+        button.textContent = entry.hint_title || entry.id;
+        button.addEventListener("click", () => switchPuzzle(entry.id));
+        els.puzzleStripItems.appendChild(button);
+      }
+
+      state.puzzleIndex.forEach(appendTab);
 
       if (hasSeries) {
         const groups = new Map();
@@ -705,6 +779,15 @@
       }
 
       els.picker.hidden = state.puzzleIndex.length <= 1;
+      els.puzzleStrip.hidden = state.puzzleIndex.length === 0;
+    }
+
+    function refreshPuzzleSelection() {
+      document.querySelectorAll(".puzzle-tab").forEach((button) => {
+        const active = button.dataset.puzzleId === state.currentPuzzleId;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-current", active ? "true" : "false");
+      });
     }
 
     function renderPuzzle(puzzle) {
@@ -716,6 +799,7 @@
 
       const [rows, cols] = puzzle.size;
       els.select.value = state.currentPuzzleId;
+      refreshPuzzleSelection();
       els.hintTitle.textContent = puzzle.hint_title || "우리의 귀요미 마스코트";
       els.size.textContent = rows + " x " + cols;
       els.image.src = puzzle.solution_image;
