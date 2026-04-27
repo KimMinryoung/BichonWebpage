@@ -101,6 +101,20 @@
 
     .toolbar strong { color: var(--yellow); }
 
+    .touch-guide {
+      display: none;
+      margin: -4px 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+      transition: opacity 240ms ease;
+    }
+
+    .touch-guide.is-subtle {
+      opacity: 0.5;
+    }
+
     button {
       border: 1px solid rgba(255, 255, 255, 0.18);
       background: #1b222c;
@@ -396,6 +410,12 @@
       .col-hint { font-size: 12px; }
       .puzzle-wrap { min-height: 420px; }
     }
+
+    @media (hover: none), (pointer: coarse) {
+      .touch-guide {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -414,6 +434,7 @@
           <div><strong id="puzzleTitle">민총이</strong> <span id="puzzleSize">10 x 10</span></div>
           <button class="reset-btn" id="resetButton" type="button">초기화</button>
         </div>
+        <p class="touch-guide" id="touchGuide">탭: 칸 채우기 / 길게 누르기: X 표시</p>
         <div class="puzzle-wrap">
           <div class="nonogram-grid" id="grid" aria-label="노노그램 퍼즐판"></div>
           <div class="solution-panel" id="solutionPanel" aria-live="polite">
@@ -496,8 +517,11 @@
       complete: document.getElementById("complete"),
       reset: document.getElementById("resetButton"),
       share: document.getElementById("shareButton"),
+      touchGuide: document.getElementById("touchGuide"),
       shareText: document.getElementById("shareText")
     };
+
+    let touchInteractionCount = 0;
 
     async function loadPuzzle() {
       try {
@@ -555,6 +579,7 @@
           cell.dataset.row = r;
           cell.dataset.col = c;
           cell.setAttribute("aria-label", (r + 1) + "행 " + (c + 1) + "열");
+          cell.addEventListener("pointerdown", noteTouchInteraction);
           cell.addEventListener("click", () => cycleFill(r, c, cell));
           cell.addEventListener("contextmenu", (event) => {
             event.preventDefault();
@@ -567,6 +592,14 @@
       }
 
       renderQuestions(puzzle.questions);
+    }
+
+    function noteTouchInteraction(event) {
+      if (event.pointerType !== "touch") return;
+      touchInteractionCount += 1;
+      if (touchInteractionCount >= 3) {
+        els.touchGuide.classList.add("is-subtle");
+      }
     }
 
     function formatHint(values) {
