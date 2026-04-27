@@ -11,6 +11,7 @@ const helmet = require('helmet');
 const csrfProtection = require('./middleware/csrf');
 const sanitizeHtml = require('sanitize-html');
 const seo = require('./utils/seo');
+const crypto = require('crypto');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -78,17 +79,6 @@ app.use('/api/proxy', createProxyMiddleware({
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public'), {
-    maxAge: '7d',  // Cloudflare edge caches static assets for 7 days
-    setHeaders: (res, filePath) => {
-        const normalized = filePath.split(path.sep).join('/');
-        const isNonogramPage = normalized.endsWith('/public/nonogram/index.html') || normalized.endsWith('/public/nonogram/editor.html');
-        const isPuzzleJson = normalized.includes('/public/puzzles/') && normalized.endsWith('.json');
-        if (isNonogramPage || isPuzzleJson) {
-            res.setHeader('Cache-Control', 'no-store, max-age=0');
-        }
-    }
-}));
 
 // Security headers
 app.use(helmet({
@@ -108,9 +98,6 @@ app.use(helmet({
     },
     crossOriginEmbedderPolicy: false
 }));
-
-// CSRF protection (exclude API-key-authenticated routes)
-app.use(csrfProtection([]));
 
 // Make session and strings available in all views
 app.use((req, res, next) => {
@@ -177,6 +164,36 @@ app.use((req, res, next) => {
     };
     next();
 });
+
+app.get(['/nonogram', '/nonogram/'], (req, res) => {
+    if (res.locals.isAuthenticated) {
+        req.session.csrfToken = req.session.csrfToken || crypto.randomBytes(32).toString('hex');
+        res.locals.csrfToken = req.session.csrfToken;
+    }
+    res.setHeader('Cache-Control', 'no-store, max-age=0');
+    res.render('public/nonogram');
+});
+
+app.get('/nonogram/index.html', (req, res) => {
+    const query = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
+    res.redirect(301, '/nonogram/' + query);
+});
+
+app.use(express.static(path.join(__dirname, 'public'), {
+    index: false,
+    maxAge: '7d',  // Cloudflare edge caches static assets for 7 days
+    setHeaders: (res, filePath) => {
+        const normalized = filePath.split(path.sep).join('/');
+        const isNonogramPage = normalized.endsWith('/public/nonogram/index.html') || normalized.endsWith('/public/nonogram/editor.html');
+        const isPuzzleJson = normalized.includes('/public/puzzles/') && normalized.endsWith('.json');
+        if (isNonogramPage || isPuzzleJson) {
+            res.setHeader('Cache-Control', 'no-store, max-age=0');
+        }
+    }
+}));
+
+// CSRF protection (exclude API-key-authenticated routes)
+app.use(csrfProtection([]));
 
 // Routes
 const publicRoutes = require('./routes/public');
