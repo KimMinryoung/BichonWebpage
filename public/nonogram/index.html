@@ -130,25 +130,50 @@
       min-height: 40px;
       display: inline-grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      padding: 3px;
+      position: relative;
+      gap: 0;
+      padding: 4px;
       border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
       background: #0e1218;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.22);
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .mode-toggle::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: calc(50% - 4px);
+      height: calc(100% - 8px);
+      border-radius: 999px;
+      background: var(--yellow);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+      transform: translateX(0);
+      transition: transform 180ms ease;
+      z-index: -1;
+    }
+
+    .mode-toggle.mark-active::before {
+      transform: translateX(100%);
     }
 
     .mode-btn {
-      min-width: 58px;
+      min-width: 74px;
       min-height: 32px;
-      padding: 0 11px;
+      padding: 0 13px;
       border: 0;
       background: transparent;
       color: var(--muted);
       font-size: 13px;
       font-weight: 900;
+      border-radius: 999px;
+      position: relative;
     }
 
     .mode-btn.active {
-      background: var(--yellow);
       color: #11141a;
     }
 
@@ -226,7 +251,6 @@
     .corner {
       width: var(--grid-hint-w);
       height: var(--grid-hint-h);
-      color: var(--red);
     }
 
     .hint.active {
@@ -325,44 +349,7 @@
       line-height: 1.6;
     }
 
-    .legend {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin: 14px 0 18px;
-    }
-
-    .legend span {
-      min-height: 36px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0 10px;
-      background: #0e1218;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .swatch {
-      width: 16px;
-      height: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      flex: 0 0 auto;
-    }
-
-    .swatch.fill { background: #11141a; }
-    .swatch.x {
-      background:
-        linear-gradient(45deg, transparent 42%, var(--red) 42%, var(--red) 58%, transparent 58%),
-        linear-gradient(-45deg, transparent 42%, var(--red) 42%, var(--red) 58%, transparent 58%),
-        #f4f1e8;
-    }
-
     .questions {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 16px;
       opacity: 0.42;
       pointer-events: none;
       transition: opacity 260ms ease;
@@ -448,7 +435,6 @@
       .mode-toggle { flex: 1 1 auto; }
       .mode-btn { min-width: 0; }
       .reset-btn { flex: 1 1 auto; }
-      .legend { grid-template-columns: 1fr; }
       .row-hint { font-size: 13px; gap: 4px; padding: 0 6px; }
       .col-hint { font-size: 12px; }
       .puzzle-wrap { min-height: 420px; }
@@ -474,11 +460,11 @@
     <section class="layout">
       <div class="play-area" id="playArea">
         <div class="toolbar">
-          <div><strong id="puzzleTitle">민총이</strong> <span id="puzzleSize">10 x 10</span></div>
+          <div><strong id="puzzleHintTitle">우리의 귀요미 마스코트</strong> <span id="puzzleSize">10 x 10</span></div>
           <div class="toolbar-actions">
-            <div class="mode-toggle" aria-label="입력 모드">
+            <div class="mode-toggle" id="modeToggle" aria-label="입력 모드">
               <button class="mode-btn active" id="fillModeButton" type="button" aria-pressed="true">칠하기</button>
-              <button class="mode-btn" id="markModeButton" type="button" aria-pressed="false">X</button>
+              <button class="mode-btn" id="markModeButton" type="button" aria-pressed="false">X 표시</button>
             </div>
             <button class="reset-btn" id="resetButton" type="button">초기화</button>
           </div>
@@ -489,7 +475,7 @@
           <div class="solution-panel" id="solutionPanel" aria-live="polite">
             <div class="solution-card">
               <img id="solutionImage" alt="해제된 해답 이미지">
-              <h2>이미지 해제</h2>
+              <h2 id="solutionTitle">이미지 해제</h2>
               <p>이제 맥락 질문을 통과하면 완료된다.</p>
             </div>
           </div>
@@ -497,12 +483,6 @@
       </div>
 
       <aside class="side">
-        <h2>진행</h2>
-        <p id="progressText">왼쪽 클릭으로 칠하고, 오른쪽 클릭으로 X를 표시한다.</p>
-        <div class="legend" aria-label="조작 안내">
-          <span><i class="swatch fill"></i> 칠하기 모드</span>
-          <span><i class="swatch x"></i> X 표시 모드</span>
-        </div>
         <section class="questions" id="questions">
           <h2>질문</h2>
           <p>퍼즐을 정확히 풀면 답변이 열린다.</p>
@@ -522,6 +502,7 @@
     const FALLBACK_PUZZLE = {
       "id": "minchong-01",
       "title": "민총이",
+      "hint_title": "우리의 귀요미 마스코트",
       "size": [10, 10],
       "row_hints": [[1], [3], [6], [6], [7], [5], [4], [], [], []],
       "col_hints": [[], [], [3], [5], [6], [6], [7], [4], [1], []],
@@ -558,14 +539,15 @@
       playArea: document.getElementById("playArea"),
       grid: document.getElementById("grid"),
       status: document.getElementById("status"),
-      title: document.getElementById("puzzleTitle"),
+      hintTitle: document.getElementById("puzzleHintTitle"),
       size: document.getElementById("puzzleSize"),
-      progress: document.getElementById("progressText"),
       image: document.getElementById("solutionImage"),
+      solutionTitle: document.getElementById("solutionTitle"),
       questions: document.getElementById("questions"),
       questionList: document.getElementById("questionList"),
       complete: document.getElementById("complete"),
       reset: document.getElementById("resetButton"),
+      modeToggle: document.getElementById("modeToggle"),
       fillMode: document.getElementById("fillModeButton"),
       markMode: document.getElementById("markModeButton"),
       share: document.getElementById("shareButton"),
@@ -593,9 +575,10 @@
       state.cells = Array.from({ length: puzzle.size[0] }, () => Array(puzzle.size[1]).fill(0));
 
       const [rows, cols] = puzzle.size;
-      els.title.textContent = puzzle.title;
+      els.hintTitle.textContent = puzzle.hint_title || "우리의 귀요미 마스코트";
       els.size.textContent = rows + " x " + cols;
       els.image.src = puzzle.solution_image;
+      els.solutionTitle.textContent = puzzle.title || "이미지 해제";
       els.grid.innerHTML = "";
       updateGridMetrics(rows, cols);
       els.grid.style.gridTemplateColumns = "var(--grid-hint-w) repeat(" + cols + ", var(--grid-cell))";
@@ -605,11 +588,10 @@
       els.complete.classList.remove("show");
       els.status.textContent = "풀이 중";
       setMode(state.mode);
-      updateProgressText();
 
       const corner = document.createElement("div");
       corner.className = "corner";
-      corner.textContent = puzzle.id;
+      corner.setAttribute("aria-hidden", "true");
       els.grid.appendChild(corner);
 
       for (let c = 0; c < cols; c += 1) {
@@ -689,17 +671,9 @@
       state.mode = mode === "mark" ? "mark" : "fill";
       els.fillMode.classList.toggle("active", state.mode === "fill");
       els.markMode.classList.toggle("active", state.mode === "mark");
+      els.modeToggle.classList.toggle("mark-active", state.mode === "mark");
       els.fillMode.setAttribute("aria-pressed", state.mode === "fill" ? "true" : "false");
       els.markMode.setAttribute("aria-pressed", state.mode === "mark" ? "true" : "false");
-      updateProgressText();
-    }
-
-    function updateProgressText() {
-      if (state.solved) return;
-      const modeText = state.mode === "mark"
-        ? "X 모드다. 빈칸이라고 판단한 셀을 연속으로 표시한다."
-        : "칠하기 모드다. 정답이라고 판단한 셀을 채운다.";
-      els.progress.textContent = modeText;
     }
 
     function applyCellAction(row, col, cell) {
@@ -767,7 +741,6 @@
       els.playArea.classList.add("is-solved");
       els.questions.classList.add("unlocked");
       els.status.textContent = "이미지 해제";
-      els.progress.textContent = "해답이 열렸다. 질문을 모두 맞히면 완료된다.";
     }
 
     function renderQuestions(questions) {
@@ -816,7 +789,6 @@
       if (state.answers.size !== state.puzzle.questions.length) return;
       els.complete.classList.add("show");
       els.status.textContent = "완료";
-      els.progress.textContent = "퍼즐과 질문을 모두 통과했다.";
     }
 
     function resetPuzzle() {
@@ -842,7 +814,6 @@
 
     loadPuzzle().then(renderPuzzle).catch(() => {
       els.status.textContent = "로딩 실패";
-      els.progress.textContent = "퍼즐 데이터를 불러오지 못했다.";
     });
   </script>
 </body>
