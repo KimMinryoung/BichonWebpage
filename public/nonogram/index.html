@@ -20,6 +20,9 @@
       --cell: clamp(28px, 7vw, 48px);
       --hint-w: clamp(72px, 18vw, 112px);
       --hint-h: clamp(76px, 16vw, 116px);
+      --grid-cell: var(--cell);
+      --grid-hint-w: var(--hint-w);
+      --grid-hint-h: var(--hint-h);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
@@ -88,7 +91,7 @@
 
     .play-area {
       padding: clamp(12px, 2vw, 22px);
-      overflow-x: auto;
+      overflow-x: hidden;
     }
 
     .toolbar {
@@ -97,6 +100,14 @@
       justify-content: space-between;
       gap: 12px;
       margin-bottom: 16px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .toolbar strong { color: var(--yellow); }
@@ -113,6 +124,32 @@
 
     .touch-guide.is-subtle {
       opacity: 0.5;
+    }
+
+    .mode-toggle {
+      min-height: 40px;
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      padding: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #0e1218;
+    }
+
+    .mode-btn {
+      min-width: 58px;
+      min-height: 32px;
+      padding: 0 11px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .mode-btn.active {
+      background: var(--yellow);
+      color: #11141a;
     }
 
     button {
@@ -137,6 +174,7 @@
       place-items: start center;
       min-height: 520px;
       position: relative;
+      width: 100%;
     }
 
     .nonogram-grid {
@@ -167,8 +205,8 @@
     .is-solved .corner, .is-solved .hint { opacity: 0; }
 
     .col-hint {
-      width: var(--cell);
-      height: var(--hint-h);
+      width: var(--grid-cell);
+      height: var(--grid-hint-h);
       padding: 7px 2px;
       flex-direction: column;
       align-items: center;
@@ -177,8 +215,8 @@
     }
 
     .row-hint {
-      width: var(--hint-w);
-      height: var(--cell);
+      width: var(--grid-hint-w);
+      height: var(--grid-cell);
       padding: 0 10px;
       justify-content: flex-end;
       gap: 7px;
@@ -186,8 +224,8 @@
     }
 
     .corner {
-      width: var(--hint-w);
-      height: var(--hint-h);
+      width: var(--grid-hint-w);
+      height: var(--grid-hint-h);
       color: var(--red);
     }
 
@@ -197,8 +235,8 @@
     }
 
     .cell {
-      width: var(--cell);
-      height: var(--cell);
+      width: var(--grid-cell);
+      height: var(--grid-cell);
       border: 1px solid var(--line);
       background: #f4f1e8;
       color: #101318;
@@ -207,6 +245,7 @@
       padding: 0;
       position: relative;
       transition: background 110ms ease, border-color 110ms ease, box-shadow 110ms ease;
+      touch-action: manipulation;
     }
 
     .cell.row-hover, .cell.col-hover {
@@ -401,10 +440,14 @@
     @media (max-width: 560px) {
       :root {
         --cell: min(8vw, 34px);
-        --hint-w: 58px;
+        --hint-w: 52px;
         --hint-h: 72px;
       }
       .toolbar { align-items: stretch; flex-direction: column; }
+      .toolbar-actions { justify-content: stretch; }
+      .mode-toggle { flex: 1 1 auto; }
+      .mode-btn { min-width: 0; }
+      .reset-btn { flex: 1 1 auto; }
       .legend { grid-template-columns: 1fr; }
       .row-hint { font-size: 13px; gap: 4px; padding: 0 6px; }
       .col-hint { font-size: 12px; }
@@ -432,9 +475,15 @@
       <div class="play-area" id="playArea">
         <div class="toolbar">
           <div><strong id="puzzleTitle">민총이</strong> <span id="puzzleSize">10 x 10</span></div>
-          <button class="reset-btn" id="resetButton" type="button">초기화</button>
+          <div class="toolbar-actions">
+            <div class="mode-toggle" aria-label="입력 모드">
+              <button class="mode-btn active" id="fillModeButton" type="button" aria-pressed="true">칠하기</button>
+              <button class="mode-btn" id="markModeButton" type="button" aria-pressed="false">X</button>
+            </div>
+            <button class="reset-btn" id="resetButton" type="button">초기화</button>
+          </div>
         </div>
-        <p class="touch-guide" id="touchGuide">탭: 칸 채우기 / 길게 누르기: X 표시</p>
+        <p class="touch-guide" id="touchGuide">모드를 고른 뒤 칸을 탭한다.</p>
         <div class="puzzle-wrap">
           <div class="nonogram-grid" id="grid" aria-label="노노그램 퍼즐판"></div>
           <div class="solution-panel" id="solutionPanel" aria-live="polite">
@@ -451,8 +500,8 @@
         <h2>진행</h2>
         <p id="progressText">왼쪽 클릭으로 칠하고, 오른쪽 클릭으로 X를 표시한다.</p>
         <div class="legend" aria-label="조작 안내">
-          <span><i class="swatch fill"></i> 왼쪽 클릭: 칠하기</span>
-          <span><i class="swatch x"></i> 오른쪽 클릭: X</span>
+          <span><i class="swatch fill"></i> 칠하기 모드</span>
+          <span><i class="swatch x"></i> X 표시 모드</span>
         </div>
         <section class="questions" id="questions">
           <h2>질문</h2>
@@ -501,6 +550,7 @@
       puzzle: null,
       cells: [],
       solved: false,
+      mode: "fill",
       answers: new Map()
     };
 
@@ -516,12 +566,15 @@
       questionList: document.getElementById("questionList"),
       complete: document.getElementById("complete"),
       reset: document.getElementById("resetButton"),
+      fillMode: document.getElementById("fillModeButton"),
+      markMode: document.getElementById("markModeButton"),
       share: document.getElementById("shareButton"),
       touchGuide: document.getElementById("touchGuide"),
       shareText: document.getElementById("shareText")
     };
 
     let touchInteractionCount = 0;
+    let resizeObserver = null;
 
     async function loadPuzzle() {
       try {
@@ -544,13 +597,15 @@
       els.size.textContent = rows + " x " + cols;
       els.image.src = puzzle.solution_image;
       els.grid.innerHTML = "";
-      els.grid.style.gridTemplateColumns = "var(--hint-w) repeat(" + cols + ", var(--cell))";
-      els.grid.style.gridTemplateRows = "var(--hint-h) repeat(" + rows + ", var(--cell))";
+      updateGridMetrics(rows, cols);
+      els.grid.style.gridTemplateColumns = "var(--grid-hint-w) repeat(" + cols + ", var(--grid-cell))";
+      els.grid.style.gridTemplateRows = "var(--grid-hint-h) repeat(" + rows + ", var(--grid-cell))";
       els.playArea.classList.remove("is-solved");
       els.questions.classList.remove("unlocked");
       els.complete.classList.remove("show");
       els.status.textContent = "풀이 중";
-      els.progress.textContent = "왼쪽 클릭으로 칠하고, 오른쪽 클릭으로 X를 표시한다.";
+      setMode(state.mode);
+      updateProgressText();
 
       const corner = document.createElement("div");
       corner.className = "corner";
@@ -580,7 +635,7 @@
           cell.dataset.col = c;
           cell.setAttribute("aria-label", (r + 1) + "행 " + (c + 1) + "열");
           cell.addEventListener("pointerdown", noteTouchInteraction);
-          cell.addEventListener("click", () => cycleFill(r, c, cell));
+          cell.addEventListener("click", () => applyCellAction(r, c, cell));
           cell.addEventListener("contextmenu", (event) => {
             event.preventDefault();
             cycleMark(r, c, cell);
@@ -594,6 +649,29 @@
       renderQuestions(puzzle.questions);
     }
 
+    function updateGridMetrics(rows, cols) {
+      const styles = getComputedStyle(document.documentElement);
+      const playStyles = getComputedStyle(els.playArea);
+      const baseHint = Number.parseFloat(styles.getPropertyValue("--hint-w")) || 72;
+      const maxCell = Number.parseFloat(styles.getPropertyValue("--cell")) || 48;
+      const paddingX = (Number.parseFloat(playStyles.paddingLeft) || 0) + (Number.parseFloat(playStyles.paddingRight) || 0);
+      const available = Math.max(180, els.playArea.clientWidth - paddingX - 2);
+      const compactHint = Math.min(baseHint, Math.max(44, available * 0.18));
+      const cell = Math.max(14, Math.min(maxCell, Math.floor((available - compactHint) / cols)));
+      const hintH = Math.max(62, Math.min(Number.parseFloat(styles.getPropertyValue("--hint-h")) || 92, cell * 2.5));
+      els.grid.style.setProperty("--grid-hint-w", compactHint + "px");
+      els.grid.style.setProperty("--grid-cell", cell + "px");
+      els.grid.style.setProperty("--grid-hint-h", hintH + "px");
+      els.grid.style.width = (compactHint + (cell * cols)) + "px";
+      els.grid.style.maxWidth = "100%";
+    }
+
+    function refreshGridMetrics() {
+      if (!state.puzzle) return;
+      const [rows, cols] = state.puzzle.size;
+      updateGridMetrics(rows, cols);
+    }
+
     function noteTouchInteraction(event) {
       if (event.pointerType !== "touch") return;
       touchInteractionCount += 1;
@@ -605,6 +683,31 @@
     function formatHint(values) {
       if (!values || values.length === 0) return "<span>0</span>";
       return values.map((value) => "<span>" + value + "</span>").join("");
+    }
+
+    function setMode(mode) {
+      state.mode = mode === "mark" ? "mark" : "fill";
+      els.fillMode.classList.toggle("active", state.mode === "fill");
+      els.markMode.classList.toggle("active", state.mode === "mark");
+      els.fillMode.setAttribute("aria-pressed", state.mode === "fill" ? "true" : "false");
+      els.markMode.setAttribute("aria-pressed", state.mode === "mark" ? "true" : "false");
+      updateProgressText();
+    }
+
+    function updateProgressText() {
+      if (state.solved) return;
+      const modeText = state.mode === "mark"
+        ? "X 모드다. 빈칸이라고 판단한 셀을 연속으로 표시한다."
+        : "칠하기 모드다. 정답이라고 판단한 셀을 채운다.";
+      els.progress.textContent = modeText;
+    }
+
+    function applyCellAction(row, col, cell) {
+      if (state.mode === "mark") {
+        cycleMark(row, col, cell);
+      } else {
+        cycleFill(row, col, cell);
+      }
     }
 
     function cycleFill(row, col, cell) {
@@ -731,7 +834,11 @@
     }
 
     els.reset.addEventListener("click", resetPuzzle);
+    els.fillMode.addEventListener("click", () => setMode("fill"));
+    els.markMode.addEventListener("click", () => setMode("mark"));
     els.share.addEventListener("click", copyShareLink);
+    resizeObserver = new ResizeObserver(refreshGridMetrics);
+    resizeObserver.observe(els.playArea);
 
     loadPuzzle().then(renderPuzzle).catch(() => {
       els.status.textContent = "로딩 실패";
