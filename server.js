@@ -80,6 +80,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'), {
     maxAge: '7d',  // Cloudflare edge caches static assets for 7 days
+    setHeaders: (res, filePath) => {
+        const normalized = filePath.split(path.sep).join('/');
+        const isNonogramPage = normalized.endsWith('/public/nonogram/index.html') || normalized.endsWith('/public/nonogram/editor.html');
+        const isPuzzleJson = normalized.includes('/public/puzzles/') && normalized.endsWith('.json');
+        if (isNonogramPage || isPuzzleJson) {
+            res.setHeader('Cache-Control', 'no-store, max-age=0');
+        }
+    }
 }));
 
 // Security headers
