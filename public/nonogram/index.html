@@ -91,7 +91,10 @@
 
     .play-area {
       padding: clamp(12px, 2vw, 22px);
-      overflow-x: hidden;
+      overflow: visible;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
     }
 
     .toolbar {
@@ -111,6 +114,36 @@
     }
 
     .toolbar strong { color: var(--yellow); }
+
+    .toolbar-title {
+      min-width: 0;
+      line-height: 1.45;
+    }
+
+    .puzzle-picker {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #0e1218;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .puzzle-picker[hidden] { display: none; }
+
+    .puzzle-picker select {
+      min-width: 160px;
+      max-width: 220px;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-weight: 900;
+    }
 
     .touch-guide {
       display: none;
@@ -197,9 +230,10 @@
     .puzzle-wrap {
       display: grid;
       place-items: start center;
-      min-height: 520px;
+      min-height: 0;
       position: relative;
       width: 100%;
+      flex: 0 0 auto;
     }
 
     .nonogram-grid {
@@ -421,7 +455,6 @@
       .status { text-align: left; }
       .layout { grid-template-columns: 1fr; }
       .side { position: static; }
-      .puzzle-wrap { min-height: 500px; }
     }
 
     @media (max-width: 560px) {
@@ -434,10 +467,11 @@
       .toolbar-actions { justify-content: stretch; }
       .mode-toggle { flex: 1 1 auto; }
       .mode-btn { min-width: 0; }
+      .puzzle-picker { width: 100%; }
+      .puzzle-picker select { min-width: 0; flex: 1; }
       .reset-btn { flex: 1 1 auto; }
       .row-hint { font-size: 13px; gap: 4px; padding: 0 6px; }
       .col-hint { font-size: 12px; }
-      .puzzle-wrap { min-height: 420px; }
     }
 
     @media (hover: none), (pointer: coarse) {
@@ -460,8 +494,12 @@
     <section class="layout">
       <div class="play-area" id="playArea">
         <div class="toolbar">
-          <div><strong id="puzzleHintTitle">우리의 귀요미 마스코트</strong> <span id="puzzleSize">10 x 10</span></div>
+          <div class="toolbar-title"><strong id="puzzleHintTitle">우리의 귀요미 마스코트</strong> <span id="puzzleSize">10 x 10</span></div>
           <div class="toolbar-actions">
+            <label class="puzzle-picker" id="puzzlePicker" hidden>
+              <span>퍼즐</span>
+              <select id="puzzleSelect" aria-label="퍼즐 선택"></select>
+            </label>
             <div class="mode-toggle" id="modeToggle" aria-label="입력 모드">
               <button class="mode-btn active" id="fillModeButton" type="button" aria-pressed="true">칠하기</button>
               <button class="mode-btn" id="markModeButton" type="button" aria-pressed="false">X 표시</button>
@@ -499,6 +537,9 @@
   </main>
 
   <script>
+    const DEFAULT_PUZZLE_ID = "minchong-01";
+    const PUZZLE_INDEX_URL = "/puzzles/index.json";
+
     const FALLBACK_PUZZLE = {
       "id": "minchong-01",
       "title": "민총이",
@@ -527,8 +568,22 @@
       ]
     };
 
+    const FALLBACK_INDEX = {
+      default: DEFAULT_PUZZLE_ID,
+      puzzles: [
+        {
+          id: DEFAULT_PUZZLE_ID,
+          hint_title: "우리의 귀요미 마스코트",
+          size: [10, 10],
+          path: "/puzzles/minchong-01/puzzle.json"
+        }
+      ]
+    };
+
     const state = {
       puzzle: null,
+      puzzleIndex: [],
+      currentPuzzleId: DEFAULT_PUZZLE_ID,
       cells: [],
       solved: false,
       mode: "fill",
@@ -550,6 +605,8 @@
       modeToggle: document.getElementById("modeToggle"),
       fillMode: document.getElementById("fillModeButton"),
       markMode: document.getElementById("markModeButton"),
+      picker: document.getElementById("puzzlePicker"),
+      select: document.getElementById("puzzleSelect"),
       share: document.getElementById("shareButton"),
       touchGuide: document.getElementById("touchGuide"),
       shareText: document.getElementById("shareText")
@@ -558,23 +615,122 @@
     let touchInteractionCount = 0;
     let resizeObserver = null;
 
-    async function loadPuzzle() {
-      try {
-        const response = await fetch("/puzzles/minchong-01/puzzle.json", { cache: "no-cache" });
-        if (!response.ok) throw new Error("puzzle fetch failed");
-        return await response.json();
-      } catch (error) {
-        return FALLBACK_PUZZLE;
+    function normalizePuzzleEntry(entry, series) {
+      if (!entry || !entry.id) return null;
+      const id = String(entry.id);
+      return {
+        id,
+        hint_title: entry.hint_title || entry.title || id,
+        size: Array.isArray(entry.size) ? entry.size : null,
+        path: entry.path || "/puzzles/" + encodeURIComponent(id) + "/puzzle.json",
+        series_id: series?.id || entry.series_id || "",
+        series_title: series?.title || entry.series_title || ""
+      };
+    }
+
+    function collectPuzzleEntries(payload) {
+      if (Array.isArray(payload.series)) {
+        const seriesEntries = payload.series.flatMap((series) => {
+          const puzzles = Array.isArray(series.puzzles) ? series.puzzles : [];
+          return puzzles.map((entry) => normalizePuzzleEntry(entry, series)).filter(Boolean);
+        });
+        if (seriesEntries.length > 0) return seriesEntries;
       }
+
+      return Array.isArray(payload.puzzles) ? payload.puzzles.map((entry) => normalizePuzzleEntry(entry)).filter(Boolean) : [];
+    }
+
+    async function loadPuzzleIndex() {
+      try {
+        const response = await fetch(PUZZLE_INDEX_URL, { cache: "no-cache" });
+        if (!response.ok) throw new Error("puzzle index fetch failed");
+        const payload = await response.json();
+        const puzzles = collectPuzzleEntries(payload);
+        if (puzzles.length === 0) throw new Error("empty puzzle index");
+        const requestedDefault = typeof payload.default === "string" ? payload.default : puzzles[0].id;
+        const defaultId = puzzles.some((entry) => entry.id === requestedDefault) ? requestedDefault : puzzles[0].id;
+        return { default: defaultId, puzzles };
+      } catch (error) {
+        return FALLBACK_INDEX;
+      }
+    }
+
+    function getRequestedPuzzleId(index) {
+      const params = new URLSearchParams(window.location.search);
+      const requested = params.get("p");
+      if (requested && index.puzzles.some((entry) => entry.id === requested)) return requested;
+      return index.default || index.puzzles[0].id;
+    }
+
+    function getPuzzleEntry(id) {
+      return state.puzzleIndex.find((entry) => entry.id === id) || null;
+    }
+
+    async function loadPuzzleById(id) {
+      const entry = getPuzzleEntry(id);
+      if (!entry) throw new Error("unknown puzzle");
+
+      try {
+        const response = await fetch(entry.path, { cache: "no-cache" });
+        if (!response.ok) throw new Error("puzzle fetch failed");
+        const puzzle = await response.json();
+        return {
+          ...puzzle,
+          id: puzzle.id || entry.id,
+          hint_title: puzzle.hint_title || entry.hint_title
+        };
+      } catch (error) {
+        if (id === DEFAULT_PUZZLE_ID) return FALLBACK_PUZZLE;
+        throw error;
+      }
+    }
+
+    async function loadInitialPuzzle() {
+      const index = await loadPuzzleIndex();
+      state.puzzleIndex = index.puzzles;
+      renderPuzzlePicker();
+      return loadPuzzleById(getRequestedPuzzleId(index));
+    }
+
+    function renderPuzzlePicker() {
+      els.select.innerHTML = "";
+      const hasSeries = state.puzzleIndex.some((entry) => entry.series_title);
+
+      function appendOption(parent, entry) {
+        const option = document.createElement("option");
+        option.value = entry.id;
+        option.textContent = entry.hint_title || entry.id;
+        parent.appendChild(option);
+      }
+
+      if (hasSeries) {
+        const groups = new Map();
+        state.puzzleIndex.forEach((entry) => {
+          const key = entry.series_id || entry.series_title || "default";
+          if (!groups.has(key)) {
+            const group = document.createElement("optgroup");
+            group.label = entry.series_title || "기본";
+            groups.set(key, group);
+            els.select.appendChild(group);
+          }
+          appendOption(groups.get(key), entry);
+        });
+      } else {
+        state.puzzleIndex.forEach((entry) => appendOption(els.select, entry));
+      }
+
+      els.picker.hidden = state.puzzleIndex.length <= 1;
     }
 
     function renderPuzzle(puzzle) {
       state.puzzle = puzzle;
+      state.currentPuzzleId = puzzle.id || DEFAULT_PUZZLE_ID;
       state.solved = false;
       state.answers.clear();
       state.cells = Array.from({ length: puzzle.size[0] }, () => Array(puzzle.size[1]).fill(0));
 
       const [rows, cols] = puzzle.size;
+      els.select.value = state.currentPuzzleId;
       els.hintTitle.textContent = puzzle.hint_title || "우리의 귀요미 마스코트";
       els.size.textContent = rows + " x " + cols;
       els.image.src = puzzle.solution_image;
@@ -586,6 +742,7 @@
       els.playArea.classList.remove("is-solved");
       els.questions.classList.remove("unlocked");
       els.complete.classList.remove("show");
+      els.shareText.textContent = "공유 링크 자리: /nonogram/?p=" + state.currentPuzzleId;
       els.status.textContent = "풀이 중";
       setMode(state.mode);
 
@@ -628,7 +785,7 @@
         }
       }
 
-      renderQuestions(puzzle.questions);
+      renderQuestions(puzzle.questions || []);
     }
 
     function updateGridMetrics(rows, cols) {
@@ -797,7 +954,7 @@
     }
 
     function copyShareLink() {
-      const link = window.location.origin + "/nonogram/?p=" + state.puzzle.id;
+      const link = window.location.origin + "/nonogram/?p=" + encodeURIComponent(state.currentPuzzleId);
       navigator.clipboard?.writeText(link).then(() => {
         els.shareText.textContent = "공유 링크 복사됨: " + link;
       }).catch(() => {
@@ -805,14 +962,30 @@
       });
     }
 
+    async function switchPuzzle(id) {
+      if (!id || id === state.currentPuzzleId) return;
+      els.status.textContent = "퍼즐 로딩 중";
+      try {
+        const puzzle = await loadPuzzleById(id);
+        renderPuzzle(puzzle);
+        const url = new URL(window.location.href);
+        url.searchParams.set("p", id);
+        window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+      } catch (error) {
+        els.status.textContent = "로딩 실패";
+        els.select.value = state.currentPuzzleId;
+      }
+    }
+
     els.reset.addEventListener("click", resetPuzzle);
     els.fillMode.addEventListener("click", () => setMode("fill"));
     els.markMode.addEventListener("click", () => setMode("mark"));
+    els.select.addEventListener("change", () => switchPuzzle(els.select.value));
     els.share.addEventListener("click", copyShareLink);
     resizeObserver = new ResizeObserver(refreshGridMetrics);
     resizeObserver.observe(els.playArea);
 
-    loadPuzzle().then(renderPuzzle).catch(() => {
+    loadInitialPuzzle().then(renderPuzzle).catch(() => {
       els.status.textContent = "로딩 실패";
     });
   </script>

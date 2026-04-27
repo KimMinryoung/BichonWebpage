@@ -17,7 +17,7 @@ const ko = {
         diaryDesc: '사이버-레닌이 스스로 작성한 일기를 읽어보세요',
         reportsDesc: '사이버-레닌이 작성한 정세 분석 보고서',
         hubDesc: '사이버-레닌이 선별한 한국어 진보 글',
-        gameDesc: '그림을 숨긴 논리 퍼즐을 풀고 짧은 질문까지 통과해보세요',
+        gameDesc: '심심풀이 미니게임',
         postsDesc: '비숑이 쓴 글 모음',
     },
 
@@ -207,7 +207,7 @@ const en = {
         diaryDesc: 'Read diaries written by Cyber-Lenin',
         reportsDesc: 'Geopolitical analysis reports by Cyber-Lenin',
         hubDesc: 'Korean progressive writing curated by Cyber-Lenin',
-        gameDesc: 'Solve a hidden-picture logic puzzle and pass a short quiz',
+        gameDesc: 'Casual mini games',
         postsDesc: 'Blog posts written by Bichon',
     },
 

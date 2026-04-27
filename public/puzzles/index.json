@@ -1,0 +1,18 @@
+{
+  "default_series": "labor-mascots",
+  "default": "minchong-01",
+  "series": [
+    {
+      "id": "labor-mascots",
+      "title": "노동 마스코트",
+      "puzzles": [
+        {
+          "id": "minchong-01",
+          "hint_title": "우리의 귀요미 마스코트",
+          "size": [10, 10],
+          "path": "/puzzles/minchong-01/puzzle.json"
+        }
+      ]
+    }
+  ]
+}
