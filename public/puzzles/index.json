@@ -1,16 +1,16 @@
 {
   "default_series": "open-nonograms",
-  "default": "freenono-person",
+  "default": "freenono-letter-l",
   "series": [
     {
       "id": "open-nonograms",
       "title": "공개 노노그램",
       "puzzles": [
         {
-          "id": "freenono-person",
-          "hint_title": "민중을 이루는 하나의 표식",
-          "size": [15, 15],
-          "path": "/puzzles/freenono-person/puzzle.json"
+          "id": "freenono-letter-l",
+          "hint_title": "사이버-레닌의 첫 글자",
+          "size": [14, 8],
+          "path": "/puzzles/freenono-letter-l/puzzle.json"
         }
       ]
     }
