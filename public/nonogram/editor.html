@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>노노그램 편집기 | Cyber-Lenin</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08090b;
+      --panel: #11151b;
+      --panel-2: #171d25;
+      --line: #313946;
+      --muted: #98a4b5;
+      --text: #eef3f8;
+      --red: #d03b40;
+      --yellow: #f1bf4b;
+      --blue: #3a78d5;
+      --green: #4fb879;
+      --cell: clamp(24px, 4.6vw, 36px);
+      --hint-w: clamp(64px, 14vw, 96px);
+      --hint-h: clamp(70px, 14vw, 100px);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(208, 59, 64, 0.12), transparent 36%),
+        radial-gradient(circle at 80% 12%, rgba(58, 120, 213, 0.18), transparent 32%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      width: min(1240px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 52px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .status {
+      min-width: 220px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(17, 21, 27, 0.86);
+      color: var(--yellow);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .editor-area, .side, .panel {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(17, 21, 27, 0.9);
+    }
+
+    .editor-area {
+      padding: clamp(12px, 2vw, 22px);
+      overflow-x: auto;
+    }
+
+    .side {
+      padding: 18px;
+      position: sticky;
+      top: 14px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel {
+      padding: 16px;
+      background: rgba(14, 18, 24, 0.72);
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+      align-items: end;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #0e1218;
+      color: var(--text);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    input {
+      min-height: 40px;
+      padding: 0 10px;
+    }
+
+    textarea {
+      min-height: 170px;
+      resize: vertical;
+      padding: 10px;
+      line-height: 1.45;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      white-space: pre;
+    }
+
+    button {
+      min-height: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #1b222c;
+      color: var(--text);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover { border-color: var(--yellow); }
+    button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 2px;
+    }
+
+    .wide { grid-column: span 2; }
+    .full { grid-column: 1 / -1; }
+
+    .button-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .guide {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .mobile-guide { display: none; }
+
+    .grid-wrap {
+      display: grid;
+      place-items: start center;
+      min-height: 560px;
+    }
+
+    .nonogram-grid {
+      display: grid;
+      gap: 0;
+    }
+
+    .corner, .hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      background: #0e1218;
+      color: var(--muted);
+      font-weight: 800;
+      line-height: 1.35;
+      transition: background 140ms ease, color 140ms ease;
+    }
+
+    .col-hint {
+      width: var(--cell);
+      height: var(--hint-h);
+      padding: 7px 2px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 13px;
+    }
+
+    .row-hint {
+      width: var(--hint-w);
+      height: var(--cell);
+      padding: 0 8px;
+      justify-content: flex-end;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .corner {
+      width: var(--hint-w);
+      height: var(--hint-h);
+      color: var(--red);
+      padding: 8px;
+      text-align: center;
+      word-break: break-word;
+      font-size: 12px;
+    }
+
+    .hint.active {
+      background: rgba(241, 191, 75, 0.16);
+      color: var(--yellow);
+    }
+
+    .cell {
+      width: var(--cell);
+      height: var(--cell);
+      min-height: 0;
+      border: 1px solid var(--line);
+      background: #f4f1e8;
+      color: #101318;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      position: relative;
+      transition: background 110ms ease, border-color 110ms ease, box-shadow 110ms ease;
+      touch-action: manipulation;
+      user-select: none;
+    }
+
+    .cell.row-hover, .cell.col-hover {
+      background: #fff8dc;
+      border-color: #6a7280;
+    }
+
+    .cell.filled {
+      background: #11141a;
+      box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.65);
+    }
+
+    .cell.marked::before, .cell.marked::after {
+      content: "";
+      position: absolute;
+      width: 72%;
+      height: 3px;
+      border-radius: 1px;
+      background: var(--red);
+    }
+
+    .cell.marked::before { transform: rotate(45deg); }
+    .cell.marked::after { transform: rotate(-45deg); }
+
+    .preview-frame {
+      display: grid;
+      place-items: center;
+      min-height: 260px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #f4f1e8;
+      overflow: auto;
+    }
+
+    .preview-grid {
+      display: grid;
+      width: min(220px, 100%);
+      aspect-ratio: 1 / 1;
+      border: 1px solid rgba(0, 0, 0, 0.28);
+      background: #f4f1e8;
+      image-rendering: pixelated;
+    }
+
+    .preview-cell.filled { background: #11141a; }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .meta span {
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0e1218;
+    }
+
+    .file-input {
+      padding: 9px 10px;
+    }
+
+    @media (max-width: 980px) {
+      main { width: min(100% - 16px, 820px); padding-top: 18px; }
+      .topbar { align-items: stretch; flex-direction: column; }
+      .status { text-align: left; }
+      .layout { grid-template-columns: 1fr; }
+      .side { position: static; }
+      .controls { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .grid-wrap { min-height: 500px; }
+    }
+
+    @media (max-width: 620px) {
+      :root {
+        --cell: min(8.4vw, 31px);
+        --hint-w: 56px;
+        --hint-h: 72px;
+      }
+
+      .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .wide { grid-column: 1 / -1; }
+      .button-row { grid-template-columns: 1fr; }
+      .row-hint { font-size: 12px; gap: 3px; padding: 0 5px; }
+      .col-hint { font-size: 11px; }
+      .grid-wrap { min-height: 420px; }
+      textarea { min-height: 220px; }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .mobile-guide { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <div>
+        <h1>노노그램 편집기</h1>
+        <p class="subtitle">직접 도트를 찍고 게임용 JSON을 만든다.</p>
+      </div>
+      <div class="status" id="status">15 x 15 새 퍼즐</div>
+    </header>
+
+    <section class="layout">
+      <div class="editor-area">
+        <div class="controls" aria-label="퍼즐 설정">
+          <label class="wide">
+            제목
+            <input id="titleInput" type="text" value="새 퍼즐" maxlength="60">
+          </label>
+          <label>
+            ID
+            <input id="idInput" type="text" value="custom-01" maxlength="48">
+          </label>
+          <label>
+            행
+            <input id="rowsInput" type="number" min="5" max="25" value="15">
+          </label>
+          <label>
+            열
+            <input id="colsInput" type="number" min="5" max="25" value="15">
+          </label>
+          <button id="resizeButton" type="button">크기 적용</button>
+          <label class="wide">
+            해답 이미지 경로
+            <input id="imageInput" type="text" placeholder="/puzzles/example/solution.png">
+          </label>
+        </div>
+
+        <p class="guide">칸을 누르면 빈칸 → 채움 → X → 빈칸 순서로 바뀐다. 숫자 힌트는 채운 칸만 기준으로 즉시 계산된다.</p>
+        <p class="guide mobile-guide">모바일에서는 칸을 탭해서 상태를 바꾼다. 화면이 좁으면 퍼즐 영역을 좌우로 밀어서 확인한다.</p>
+
+        <div class="grid-wrap">
+          <div class="nonogram-grid" id="grid" aria-label="노노그램 편집판"></div>
+        </div>
+      </div>
+
+      <aside class="side">
+        <section class="panel">
+          <h2>미리보기</h2>
+          <div class="preview-frame">
+            <div class="preview-grid" id="preview" aria-label="채운 칸 미리보기"></div>
+          </div>
+          <div class="meta" aria-label="퍼즐 통계">
+            <span id="sizeText">크기 15 x 15</span>
+            <span id="filledText">채움 0칸</span>
+            <span id="markedText">X 0칸</span>
+            <span id="hintText">힌트 계산됨</span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>작업</h2>
+          <div class="button-row">
+            <button id="saveButton" type="button">브라우저 저장</button>
+            <button id="loadButton" type="button">저장본 불러오기</button>
+            <button id="clearMarksButton" type="button">X 지우기</button>
+            <button id="newButton" type="button">새로 시작</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>가져오기</h2>
+          <label>
+            JSON 파일
+            <input class="file-input" id="fileInput" type="file" accept="application/json,.json">
+          </label>
+          <label>
+            JSON 붙여넣기
+            <textarea id="importText" spellcheck="false" placeholder="기존 puzzle.json 내용을 붙여넣고 가져오기를 누른다."></textarea>
+          </label>
+          <button id="importButton" type="button">가져오기</button>
+        </section>
+
+        <section class="panel">
+          <h2>내보내기</h2>
+          <label>
+            게임용 JSON
+            <textarea id="exportText" spellcheck="false" readonly></textarea>
+          </label>
+          <div class="button-row">
+            <button id="exportButton" type="button">JSON 갱신</button>
+            <button id="copyButton" type="button">복사</button>
+          </div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const MIN_SIZE = 5;
+    const MAX_SIZE = 25;
+    const STORAGE_KEY = "cyber-lenin-nonogram-editor-v1";
+
+    const state = {
+      rows: 15,
+      cols: 15,
+      cells: [],
+      questions: []
+    };
+
+    const els = {
+      status: document.getElementById("status"),
+      grid: document.getElementById("grid"),
+      preview: document.getElementById("preview"),
+      title: document.getElementById("titleInput"),
+      id: document.getElementById("idInput"),
+      rows: document.getElementById("rowsInput"),
+      cols: document.getElementById("colsInput"),
+      image: document.getElementById("imageInput"),
+      resize: document.getElementById("resizeButton"),
+      sizeText: document.getElementById("sizeText"),
+      filledText: document.getElementById("filledText"),
+      markedText: document.getElementById("markedText"),
+      hintText: document.getElementById("hintText"),
+      save: document.getElementById("saveButton"),
+      load: document.getElementById("loadButton"),
+      clearMarks: document.getElementById("clearMarksButton"),
+      fresh: document.getElementById("newButton"),
+      file: document.getElementById("fileInput"),
+      importText: document.getElementById("importText"),
+      importButton: document.getElementById("importButton"),
+      exportText: document.getElementById("exportText"),
+      exportButton: document.getElementById("exportButton"),
+      copy: document.getElementById("copyButton")
+    };
+
+    function blankCells(rows, cols) {
+      return Array.from({ length: rows }, () => Array(cols).fill(0));
+    }
+
+    function clampSize(value) {
+      const parsed = Number.parseInt(value, 10);
+      if (!Number.isFinite(parsed)) return 15;
+      return Math.max(MIN_SIZE, Math.min(MAX_SIZE, parsed));
+    }
+
+    function sanitizeId(value) {
+      const cleaned = String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9_-]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+      return cleaned || "custom-01";
+    }
+
+    function calculateRuns(values) {
+      const runs = [];
+      let count = 0;
+      values.forEach((value) => {
+        if (value === 1) {
+          count += 1;
+          return;
+        }
+        if (count > 0) {
+          runs.push(count);
+          count = 0;
+        }
+      });
+      if (count > 0) runs.push(count);
+      return runs;
+    }
+
+    function calculateRowHints() {
+      return state.cells.map((row) => calculateRuns(row.map((value) => value === 1 ? 1 : 0)));
+    }
+
+    function calculateColHints() {
+      const hints = [];
+      for (let c = 0; c < state.cols; c += 1) {
+        const values = [];
+        for (let r = 0; r < state.rows; r += 1) {
+          values.push(state.cells[r][c] === 1 ? 1 : 0);
+        }
+        hints.push(calculateRuns(values));
+      }
+      return hints;
+    }
+
+    function formatHint(values) {
+      if (!values || values.length === 0) return "<span>0</span>";
+      return values.map((value) => "<span>" + value + "</span>").join("");
+    }
+
+    function buildPuzzle() {
+      const title = els.title.value.trim() || "새 퍼즐";
+      const id = sanitizeId(els.id.value);
+      els.id.value = id;
+      return {
+        id,
+        title,
+        size: [state.rows, state.cols],
+        row_hints: calculateRowHints(),
+        col_hints: calculateColHints(),
+        solution: state.cells.map((row) => row.map((value) => value === 1 ? 1 : 0)),
+        solution_image: els.image.value.trim(),
+        questions: state.questions
+      };
+    }
+
+    function render() {
+      const rowHints = calculateRowHints();
+      const colHints = calculateColHints();
+      els.rows.value = state.rows;
+      els.cols.value = state.cols;
+      els.grid.innerHTML = "";
+      els.grid.style.gridTemplateColumns = "var(--hint-w) repeat(" + state.cols + ", var(--cell))";
+      els.grid.style.gridTemplateRows = "var(--hint-h) repeat(" + state.rows + ", var(--cell))";
+
+      const corner = document.createElement("div");
+      corner.className = "corner";
+      corner.textContent = sanitizeId(els.id.value);
+      els.grid.appendChild(corner);
+
+      for (let c = 0; c < state.cols; c += 1) {
+        const hint = document.createElement("div");
+        hint.className = "hint col-hint";
+        hint.dataset.colHint = c;
+        hint.innerHTML = formatHint(colHints[c]);
+        els.grid.appendChild(hint);
+      }
+
+      for (let r = 0; r < state.rows; r += 1) {
+        const rowHint = document.createElement("div");
+        rowHint.className = "hint row-hint";
+        rowHint.dataset.rowHint = r;
+        rowHint.innerHTML = formatHint(rowHints[r]);
+        els.grid.appendChild(rowHint);
+
+        for (let c = 0; c < state.cols; c += 1) {
+          const cell = document.createElement("button");
+          cell.type = "button";
+          cell.className = "cell";
+          cell.dataset.row = r;
+          cell.dataset.col = c;
+          paintCell(cell, state.cells[r][c]);
+          cell.addEventListener("click", () => cycleCell(r, c));
+          cell.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+            state.cells[r][c] = -1;
+            afterChange("X 표시");
+          });
+          cell.addEventListener("mouseenter", () => setHover(r, c));
+          cell.addEventListener("mouseleave", clearHover);
+          els.grid.appendChild(cell);
+        }
+      }
+
+      renderPreview();
+      updateMeta();
+      updateExport();
+    }
+
+    function paintCell(cell, value) {
+      cell.classList.toggle("filled", value === 1);
+      cell.classList.toggle("marked", value === -1);
+      const labelState = value === 1 ? "채움" : value === -1 ? "X" : "빈칸";
+      cell.setAttribute("aria-label", (Number(cell.dataset.row) + 1) + "행 " + (Number(cell.dataset.col) + 1) + "열 " + labelState);
+    }
+
+    function cycleCell(row, col) {
+      const current = state.cells[row][col];
+      state.cells[row][col] = current === 0 ? 1 : current === 1 ? -1 : 0;
+      afterChange("수정됨");
+    }
+
+    function afterChange(message) {
+      render();
+      saveDraft(false);
+      setStatus(message);
+    }
+
+    function setHover(row, col) {
+      document.querySelectorAll(".cell").forEach((cell) => {
+        cell.classList.toggle("row-hover", Number(cell.dataset.row) === row);
+        cell.classList.toggle("col-hover", Number(cell.dataset.col) === col);
+      });
+      document.querySelectorAll(".row-hint").forEach((hint) => {
+        hint.classList.toggle("active", Number(hint.dataset.rowHint) === row);
+      });
+      document.querySelectorAll(".col-hint").forEach((hint) => {
+        hint.classList.toggle("active", Number(hint.dataset.colHint) === col);
+      });
+    }
+
+    function clearHover() {
+      document.querySelectorAll(".row-hover, .col-hover, .hint.active").forEach((node) => {
+        node.classList.remove("row-hover", "col-hover", "active");
+      });
+    }
+
+    function renderPreview() {
+      els.preview.innerHTML = "";
+      els.preview.style.gridTemplateColumns = "repeat(" + state.cols + ", 1fr)";
+      els.preview.style.gridTemplateRows = "repeat(" + state.rows + ", 1fr)";
+      els.preview.style.aspectRatio = state.cols + " / " + state.rows;
+      for (let r = 0; r < state.rows; r += 1) {
+        for (let c = 0; c < state.cols; c += 1) {
+          const pixel = document.createElement("span");
+          pixel.className = "preview-cell";
+          pixel.classList.toggle("filled", state.cells[r][c] === 1);
+          els.preview.appendChild(pixel);
+        }
+      }
+    }
+
+    function updateMeta() {
+      let filled = 0;
+      let marked = 0;
+      state.cells.forEach((row) => row.forEach((value) => {
+        if (value === 1) filled += 1;
+        if (value === -1) marked += 1;
+      }));
+      els.sizeText.textContent = "크기 " + state.rows + " x " + state.cols;
+      els.filledText.textContent = "채움 " + filled + "칸";
+      els.markedText.textContent = "X " + marked + "칸";
+      els.hintText.textContent = "힌트 " + (state.rows + state.cols) + "줄";
+    }
+
+    function updateExport() {
+      els.exportText.value = JSON.stringify(buildPuzzle(), null, 2);
+    }
+
+    function resizeGrid() {
+      const nextRows = clampSize(els.rows.value);
+      const nextCols = clampSize(els.cols.value);
+      const next = blankCells(nextRows, nextCols);
+      for (let r = 0; r < Math.min(state.rows, nextRows); r += 1) {
+        for (let c = 0; c < Math.min(state.cols, nextCols); c += 1) {
+          next[r][c] = state.cells[r][c];
+        }
+      }
+      state.rows = nextRows;
+      state.cols = nextCols;
+      state.cells = next;
+      afterChange("크기 변경됨");
+    }
+
+    function clearMarks() {
+      state.cells = state.cells.map((row) => row.map((value) => value === -1 ? 0 : value));
+      afterChange("X 표시 삭제됨");
+    }
+
+    function freshPuzzle() {
+      if (!window.confirm("현재 편집 내용을 지우고 15 x 15 새 퍼즐을 시작할까?")) return;
+      state.rows = 15;
+      state.cols = 15;
+      state.cells = blankCells(15, 15);
+      state.questions = [];
+      els.title.value = "새 퍼즐";
+      els.id.value = "custom-01";
+      els.image.value = "";
+      afterChange("새 퍼즐");
+    }
+
+    function saveDraft(showStatus) {
+      const payload = {
+        version: 1,
+        saved_at: new Date().toISOString(),
+        puzzle: buildPuzzle(),
+        cells: state.cells
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      if (showStatus) setStatus("브라우저에 저장됨");
+    }
+
+    function loadDraft() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        setStatus("저장본 없음");
+        return;
+      }
+      try {
+        const payload = JSON.parse(raw);
+        loadPuzzleObject(payload.puzzle, payload.cells);
+        setStatus("저장본 불러옴");
+      } catch (error) {
+        setStatus("저장본 오류");
+      }
+    }
+
+    function validatePuzzle(puzzle) {
+      if (!puzzle || !Array.isArray(puzzle.size) || puzzle.size.length !== 2) {
+        throw new Error("size 배열이 필요하다.");
+      }
+      const rows = clampSize(puzzle.size[0]);
+      const cols = clampSize(puzzle.size[1]);
+      if (!Array.isArray(puzzle.solution) || puzzle.solution.length !== rows) {
+        throw new Error("solution 행 수가 size와 맞지 않는다.");
+      }
+      puzzle.solution.forEach((row) => {
+        if (!Array.isArray(row) || row.length !== cols) {
+          throw new Error("solution 열 수가 size와 맞지 않는다.");
+        }
+      });
+      return { rows, cols };
+    }
+
+    function loadPuzzleObject(puzzle, savedCells) {
+      const size = validatePuzzle(puzzle);
+      state.rows = size.rows;
+      state.cols = size.cols;
+      state.questions = Array.isArray(puzzle.questions) ? puzzle.questions : [];
+      els.title.value = puzzle.title || "가져온 퍼즐";
+      els.id.value = sanitizeId(puzzle.id || "imported-01");
+      els.image.value = puzzle.solution_image || "";
+      if (Array.isArray(savedCells) && savedCells.length === state.rows) {
+        state.cells = savedCells.map((row) => row.slice(0, state.cols).map((value) => value === 1 ? 1 : value === -1 ? -1 : 0));
+      } else {
+        state.cells = puzzle.solution.map((row) => row.map((value) => value === 1 ? 1 : 0));
+      }
+      render();
+      saveDraft(false);
+    }
+
+    function importFromText(text) {
+      try {
+        const puzzle = JSON.parse(text);
+        loadPuzzleObject(puzzle);
+        setStatus("JSON 가져옴");
+      } catch (error) {
+        setStatus("가져오기 실패: " + error.message);
+      }
+    }
+
+    function importFromFile(file) {
+      if (!file) return;
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        els.importText.value = String(reader.result || "");
+        importFromText(els.importText.value);
+      });
+      reader.readAsText(file);
+    }
+
+    function copyExport() {
+      updateExport();
+      navigator.clipboard?.writeText(els.exportText.value).then(() => {
+        setStatus("JSON 복사됨");
+      }).catch(() => {
+        els.exportText.focus();
+        els.exportText.select();
+        setStatus("텍스트를 선택함");
+      });
+    }
+
+    function setStatus(message) {
+      els.status.textContent = message;
+    }
+
+    function bindEvents() {
+      els.resize.addEventListener("click", resizeGrid);
+      els.save.addEventListener("click", () => saveDraft(true));
+      els.load.addEventListener("click", loadDraft);
+      els.clearMarks.addEventListener("click", clearMarks);
+      els.fresh.addEventListener("click", freshPuzzle);
+      els.file.addEventListener("change", () => importFromFile(els.file.files[0]));
+      els.importButton.addEventListener("click", () => importFromText(els.importText.value));
+      els.exportButton.addEventListener("click", () => {
+        updateExport();
+        saveDraft(false);
+        setStatus("JSON 갱신됨");
+      });
+      els.copy.addEventListener("click", copyExport);
+      [els.title, els.id, els.image].forEach((input) => {
+        input.addEventListener("input", () => {
+          updateExport();
+          saveDraft(false);
+        });
+      });
+    }
+
+    bindEvents();
+    state.cells = blankCells(state.rows, state.cols);
+    render();
+    if (localStorage.getItem(STORAGE_KEY)) {
+      setStatus("저장본 있음");
+    }
+  </script>
+</body>
+</html>
