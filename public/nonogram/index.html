@@ -560,7 +560,7 @@
         </div>
       </div>
 
-      <aside class="side">
+      <aside class="side" id="sidePanel" hidden>
         <div class="source-note" id="sourceNote" hidden></div>
         <section class="questions" id="questions">
           <h2>질문</h2>
@@ -644,6 +644,7 @@
       questions: document.getElementById("questions"),
       questionList: document.getElementById("questionList"),
       complete: document.getElementById("complete"),
+      side: document.getElementById("sidePanel"),
       reset: document.getElementById("resetButton"),
       puzzleStrip: document.getElementById("puzzleStrip"),
       puzzleStripItems: document.getElementById("puzzleStripItems"),
@@ -805,15 +806,18 @@
       refreshPuzzleSelection();
       els.hintTitle.textContent = puzzle.hint_title || "우리의 귀요미 마스코트";
       els.size.textContent = rows + " x " + cols;
-      els.image.src = getSolutionImageSrc(puzzle);
-      els.solutionTitle.textContent = puzzle.title || "이미지 해제";
-      renderSourceNote(puzzle.source);
+      els.image.removeAttribute("src");
+      els.solutionTitle.textContent = "이미지 해제";
       els.grid.innerHTML = "";
       updateGridMetrics(rows, cols);
       els.grid.style.gridTemplateColumns = "var(--grid-hint-w) repeat(" + cols + ", var(--grid-cell))";
       els.grid.style.gridTemplateRows = "var(--grid-hint-h) repeat(" + rows + ", var(--grid-cell))";
       els.playArea.classList.remove("is-solved");
+      els.side.hidden = true;
+      els.sourceNote.hidden = true;
+      els.sourceNote.textContent = "";
       els.questions.classList.remove("unlocked");
+      els.questionList.innerHTML = "";
       els.complete.classList.remove("show");
       els.shareText.textContent = "공유 링크 자리: /nonogram/?p=" + state.currentPuzzleId;
       els.status.textContent = "풀이 중";
@@ -858,7 +862,6 @@
         }
       }
 
-      renderQuestions(puzzle.questions || []);
     }
 
     function renderSourceNote(source) {
@@ -1033,6 +1036,11 @@
       if (state.solved) return;
       state.solved = true;
       els.playArea.classList.add("is-solved");
+      els.image.src = getSolutionImageSrc(state.puzzle);
+      els.solutionTitle.textContent = state.puzzle.title || "이미지 해제";
+      els.side.hidden = false;
+      renderSourceNote(state.puzzle.source);
+      renderQuestions(state.puzzle.questions || []);
       els.questions.classList.add("unlocked");
       els.status.textContent = "이미지 해제";
     }
