@@ -35,6 +35,19 @@ function mdExcerpt(content, n = 220) {
     return text.length > n ? text.substring(0, n) + '…' : text;
 }
 
+function localizedRecord(row, lang) {
+    if (!row || lang !== 'en') return row;
+    const titleEn = row.title_en && row.title_en.trim();
+    const contentEn = row.content_en && row.content_en.trim();
+    return {
+        ...row,
+        title: titleEn || row.title,
+        content: contentEn || row.content,
+        language: titleEn || contentEn ? 'en' : 'ko',
+        has_translation: Boolean(titleEn || contentEn),
+    };
+}
+
 async function fetchJson(url, timeoutMs = 3000) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -52,36 +65,37 @@ async function fetchJson(url, timeoutMs = 3000) {
 // Homepage
 router.get('/', async (req, res) => {
     try {
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         // Fetch recent posts, diaries, research, and hub curations in parallel
         const [postsResult, diariesResult, researchResult, hubResult] = await Promise.allSettled([
-            db.query('SELECT id, title, content, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
-            db.query('SELECT id, title, content, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
+            db.query('SELECT id, title, content, title_en, content_en, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
+            db.query('SELECT id, title, content, title_en, content_en, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             (async () => {
-                let files = await reportCache.getResearchList();
+                let files = await reportCache.getResearchList(lang);
                 if (!files) {
-                    const response = await fetch(`${CHAT_API_URL}/research`);
+                    const response = await fetch(`${CHAT_API_URL}/research?lang=${lang}`);
                     if (!response.ok) throw new Error(`API ${response.status}`);
                     const data = await response.json();
                     files = (data.files || []).sort((a, b) => b.modified_at - a.modified_at);
-                    await reportCache.setResearchList(files);
+                    await reportCache.setResearchList(files, lang);
                 }
                 const top = files.slice(0, RECENT_LIMIT);
                 await Promise.all(top.map(async (f) => {
                     if (f.title && f.excerpt) return;
-                    const cached = await reportCache.getResearch(f.filename);
+                    const cached = await reportCache.getResearch(f.filename, lang);
                     if (cached && cached.content) {
                         if (!f.title && cached.title) f.title = cached.title;
                         f.excerpt = mdExcerpt(cached.content);
                         return;
                     }
                     try {
-                        const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}`);
+                        const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}?lang=${lang}`);
                         if (r.ok) {
                             const d = await r.json();
                             const match = (d.content || '').match(/^#\s+(.+)/m);
                             if (match) f.title = match[1];
                             f.excerpt = mdExcerpt(d.content);
-                            await reportCache.setResearch(f.filename, { content: d.content, title: f.title || f.filename });
+                            await reportCache.setResearch(f.filename, { content: d.content, title: f.title || f.filename }, lang);
                         }
                     } catch (_) {}
                 }));
@@ -95,8 +109,8 @@ router.get('/', async (req, res) => {
             })()
         ]);
 
-        const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
-        const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
+        const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(row => localizedRecord(row, lang)) : [];
+        const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows.map(row => localizedRecord(row, lang)) : [];
         const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
         const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
 
@@ -133,44 +147,45 @@ router.get('/', async (req, res) => {
 // Posts list with pagination
 router.get('/posts', async (req, res) => {
     try {
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         const currentPage = parseInt(req.query.page) || 1;
         const cacheKey = `page:${currentPage}`;
 
-        const cached = await cache.getIndex();
+        const cached = await cache.getIndex(lang);
         if (cached && cached[cacheKey]) {
             return res.render('public/posts', {
                 ...cached[cacheKey],
                 pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts',
-                pageTitle: '비숑글',
-                pageDescription: '비숑이 작성한 블로그 글 목록입니다.',
+                pageTitle: res.locals.strings.nav.bichonPosts,
+                pageDescription: res.locals.strings.home.postsDesc,
                 jsonLd: seo.itemListJsonLd((cached[cacheKey].posts || []).map(post => ({ title: post.title, href: `/post/${post.id}` }))),
             });
         }
 
         const offset = (currentPage - 1) * POSTS_PER_PAGE;
         const { rows } = await db.query(
-            'SELECT id, title, content, created_at, COUNT(*) OVER() AS total_count FROM posts ORDER BY created_at DESC LIMIT $1 OFFSET $2',
+            'SELECT id, title, content, title_en, content_en, created_at, COUNT(*) OVER() AS total_count FROM posts ORDER BY created_at DESC LIMIT $1 OFFSET $2',
             [POSTS_PER_PAGE, offset]
         );
 
         const totalPosts = rows.length > 0 ? parseInt(rows[0].total_count) : 0;
         const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
-        const posts = rows.map(({ total_count, ...post }) => post);
+        const posts = rows.map(({ total_count, ...post }) => localizedRecord(post, lang));
 
         for (const p of posts) {
-            await cache.setEntry(p);
+            await cache.setEntry(p, lang);
         }
 
         const pageData = { posts, currentPage, totalPages, paginationBase: '/posts?page=', pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts' };
 
         const indexData = cached || {};
         indexData[cacheKey] = pageData;
-        await cache.setIndex(indexData);
+        await cache.setIndex(indexData, lang);
 
         res.render('public/posts', {
             ...pageData,
-            pageTitle: '비숑글',
-            pageDescription: '비숑이 작성한 블로그 글 목록입니다.',
+            pageTitle: res.locals.strings.nav.bichonPosts,
+            pageDescription: res.locals.strings.home.postsDesc,
             jsonLd: seo.itemListJsonLd(posts.map(post => ({ title: post.title, href: `/post/${post.id}` }))),
         });
     } catch (error) {
@@ -179,8 +194,8 @@ router.get('/posts', async (req, res) => {
             posts: [],
             currentPage: 1,
             totalPages: 0,
-            pageTitle: '비숑글',
-            pageDescription: '비숑이 작성한 블로그 글 목록입니다.',
+            pageTitle: res.locals.strings.nav.bichonPosts,
+            pageDescription: res.locals.strings.home.postsDesc,
             pagePath: '/posts',
         });
     }
@@ -199,10 +214,11 @@ router.get('/chat', (req, res) => {
 // Single post view
 router.get('/post/:id', async (req, res) => {
     try {
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         const id = parseInt(req.params.id);
 
         // Check entry cache
-        let post = await cache.getEntry(id);
+        let post = await cache.getEntry(id, lang);
         if (!post) {
             const { rows: posts } = await db.query(
                 'SELECT * FROM posts WHERE id = $1', [id]
@@ -215,8 +231,8 @@ router.get('/post/:id', async (req, res) => {
                 });
             }
 
-            post = posts[0];
-            await cache.setEntry(post);
+            post = localizedRecord(posts[0], lang);
+            await cache.setEntry(post, lang);
         }
 
         // prev/next navigation from cached sorted ID list

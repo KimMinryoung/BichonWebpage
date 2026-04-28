@@ -18,7 +18,8 @@ router.get('/:slug', async (req, res) => {
     }
     const pagePath = `/p/${slug}`;
     try {
-        const response = await fetch(`${CHAT_API_URL}/pages/${encodeURIComponent(slug)}`);
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        const response = await fetch(`${CHAT_API_URL}/pages/${encodeURIComponent(slug)}?lang=${lang}`);
         if (!response.ok) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',

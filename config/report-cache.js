@@ -29,20 +29,22 @@ async function setReport(report) {
 
 // ── Research cache (permanent) ──
 
-async function getResearch(filename) {
+async function getResearch(filename, lang = 'ko') {
     try {
         if (!redis.isReady) return null;
         const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
-        const data = await redis.get(`research:${safe}`);
+        const safeLang = lang === 'en' ? 'en' : 'ko';
+        const data = await redis.get(`research:${safe}:${safeLang}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-async function setResearch(filename, data) {
+async function setResearch(filename, data, lang = 'ko') {
     try {
         if (!redis.isReady) return;
         const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
-        await redis.set(`research:${safe}`, JSON.stringify(data));
+        const safeLang = lang === 'en' ? 'en' : 'ko';
+        await redis.set(`research:${safe}:${safeLang}`, JSON.stringify(data));
     } catch (e) { console.error('[report-cache] research write error:', e.message); }
 }
 
@@ -63,33 +65,37 @@ async function setList(page, data) {
     } catch (e) { console.error('[report-cache] list write error:', e.message); }
 }
 
-async function getResearchList() {
+async function getResearchList(lang = 'ko') {
     try {
         if (!redis.isReady) return null;
-        const data = await redis.get('report:research_list');
+        const safeLang = lang === 'en' ? 'en' : 'ko';
+        const data = await redis.get(`report:research_list:${safeLang}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-async function setResearchList(data) {
+async function setResearchList(data, lang = 'ko') {
     try {
         if (!redis.isReady) return;
-        await redis.set('report:research_list', JSON.stringify(data), { EX: LIST_TTL });
+        const safeLang = lang === 'en' ? 'en' : 'ko';
+        await redis.set(`report:research_list:${safeLang}`, JSON.stringify(data), { EX: LIST_TTL });
     } catch (e) { console.error('[report-cache] research list write error:', e.message); }
 }
 
-async function getPagesList() {
+async function getPagesList(lang = 'ko') {
     try {
         if (!redis.isReady) return null;
-        const data = await redis.get('report:pages_list');
+        const safeLang = lang === 'en' ? 'en' : 'ko';
+        const data = await redis.get(`report:pages_list:${safeLang}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-async function setPagesList(data) {
+async function setPagesList(data, lang = 'ko') {
     try {
         if (!redis.isReady) return;
-        await redis.set('report:pages_list', JSON.stringify(data), { EX: LIST_TTL });
+        const safeLang = lang === 'en' ? 'en' : 'ko';
+        await redis.set(`report:pages_list:${safeLang}`, JSON.stringify(data), { EX: LIST_TTL });
     } catch (e) { console.error('[report-cache] pages list write error:', e.message); }
 }
 

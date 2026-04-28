@@ -8,8 +8,22 @@ const seo = require('../utils/seo');
 
 const DIARIES_PER_PAGE = 20;
 
+function localizedDiary(row, lang) {
+    if (!row || lang !== 'en') return row;
+    const titleEn = row.title_en && row.title_en.trim();
+    const contentEn = row.content_en && row.content_en.trim();
+    return {
+        ...row,
+        title: titleEn || row.title,
+        content: contentEn || row.content,
+        language: titleEn || contentEn ? 'en' : 'ko',
+        has_translation: Boolean(titleEn || contentEn),
+    };
+}
+
 // AI 일기장 메인 페이지 - 글 목록 (페이지네이션 적용)
 router.get('/', async (req, res) => {
+    const lang = res.locals.lang === 'en' ? 'en' : 'ko';
     const currentPage = parseInt(req.query.page) || 1;
     const pagePath = currentPage > 1 ? `/ai-diary?page=${currentPage}` : '/ai-diary';
     try {
@@ -17,29 +31,29 @@ router.get('/', async (req, res) => {
         const cacheKey = `page:${currentPage}`;
 
         // Check index cache
-        const cached = await cache.getIndex();
+        const cached = await cache.getIndex(lang);
         if (cached && cached[cacheKey]) {
             return res.render('public/ai-diary', {
                 ...cached[cacheKey],
                 pagePath,
-                pageTitle: '사이버-레닌 일기장',
-                pageDescription: '사이버-레닌이 스스로 작성한 일기와 운영 회고 목록입니다.',
+                pageTitle: res.locals.strings.nav.diary,
+                pageDescription: res.locals.strings.home.diaryDesc,
                 jsonLd: seo.itemListJsonLd((cached[cacheKey].diaries || []).map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` }))),
             });
         }
 
         const { rows } = await db.query(
-            'SELECT id, title, content, created_at, COUNT(*) OVER() AS total_count FROM ai_diary ORDER BY created_at DESC LIMIT $1 OFFSET $2',
+            'SELECT id, title, content, title_en, content_en, created_at, COUNT(*) OVER() AS total_count FROM ai_diary ORDER BY created_at DESC LIMIT $1 OFFSET $2',
             [DIARIES_PER_PAGE, offset]
         );
 
         const totalDiaries = rows.length > 0 ? parseInt(rows[0].total_count) : 0;
         const totalPages = Math.ceil(totalDiaries / DIARIES_PER_PAGE);
-        const diaries = rows.map(({ total_count, ...d }) => d);
+        const diaries = rows.map(({ total_count, ...d }) => localizedDiary(d, lang));
 
         // Cache individual entries
         for (const d of diaries) {
-            await cache.setEntry(d);
+            await cache.setEntry(d, lang);
         }
 
         const pageData = { diaries, currentPage, totalPages, paginationBase: '/ai-diary?page=' };
@@ -47,13 +61,13 @@ router.get('/', async (req, res) => {
         // Cache index (TTL-based)
         const indexData = cached || {};
         indexData[cacheKey] = pageData;
-        await cache.setIndex(indexData);
+        await cache.setIndex(indexData, lang);
 
         res.render('public/ai-diary', {
             ...pageData,
             pagePath,
-            pageTitle: '사이버-레닌 일기장',
-            pageDescription: '사이버-레닌이 스스로 작성한 일기와 운영 회고 목록입니다.',
+            pageTitle: res.locals.strings.nav.diary,
+            pageDescription: res.locals.strings.home.diaryDesc,
             jsonLd: seo.itemListJsonLd(diaries.map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` }))),
         });
     } catch (error) {
@@ -63,8 +77,8 @@ router.get('/', async (req, res) => {
             currentPage: 1,
             totalPages: 0,
             pagePath,
-            pageTitle: '사이버-레닌 일기장',
-            pageDescription: '사이버-레닌이 스스로 작성한 일기와 운영 회고 목록입니다.',
+            pageTitle: res.locals.strings.nav.diary,
+            pageDescription: res.locals.strings.home.diaryDesc,
         });
     }
 });
@@ -72,10 +86,11 @@ router.get('/', async (req, res) => {
 // 일기 읽기 (조회만 가능)
 router.get('/:id', async (req, res) => {
     try {
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         const id = parseInt(req.params.id);
 
         // Check entry cache
-        let diary = await cache.getEntry(id);
+        let diary = await cache.getEntry(id, lang);
         if (!diary) {
             const { rows } = await db.query('SELECT * FROM ai_diary WHERE id = $1', [id]);
             if (rows.length === 0) {
@@ -84,8 +99,8 @@ router.get('/:id', async (req, res) => {
                     body: '<div class="box"><h1>404</h1><p>일기를 찾을 수 없습니다.</p><a href="/ai-diary">목록으로</a></div>'
                 });
             }
-            diary = rows[0];
-            await cache.setEntry(diary);
+            diary = localizedDiary(rows[0], lang);
+            await cache.setEntry(diary, lang);
         }
 
         // prev/next navigation from cached sorted ID list

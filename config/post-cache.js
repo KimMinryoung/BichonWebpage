@@ -10,39 +10,43 @@ const redis = require('./redis');
 
 const INDEX_TTL = 600; // 10 minutes in seconds
 
-async function getEntry(id) {
+function langSuffix(lang) {
+    return lang === 'en' ? ':en' : ':ko';
+}
+
+async function getEntry(id, lang = 'ko') {
     try {
-        const data = await redis.get(`post:${id}`);
+        const data = await redis.get(`post:${id}${langSuffix(lang)}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-async function setEntry(post) {
+async function setEntry(post, lang = 'ko') {
     try {
-        await redis.set(`post:${post.id}`, JSON.stringify(post));
+        await redis.set(`post:${post.id}${langSuffix(lang)}`, JSON.stringify(post));
     } catch (e) { console.error('[post-cache] write error:', e.message); }
 }
 
 async function deleteEntry(id) {
-    try { await redis.del(`post:${id}`); } catch {}
+    try { await redis.del(`post:${id}`, `post:${id}:ko`, `post:${id}:en`); } catch {}
     await invalidateIndex();
 }
 
-async function getIndex() {
+async function getIndex(lang = 'ko') {
     try {
-        const data = await redis.get('post:index');
+        const data = await redis.get(`post:index${langSuffix(lang)}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
 
-async function setIndex(data) {
+async function setIndex(data, lang = 'ko') {
     try {
-        await redis.set('post:index', JSON.stringify(data), { EX: INDEX_TTL });
+        await redis.set(`post:index${langSuffix(lang)}`, JSON.stringify(data), { EX: INDEX_TTL });
     } catch (e) { console.error('[post-cache] index write error:', e.message); }
 }
 
 async function invalidateIndex() {
-    try { await redis.del('post:index', 'post:nav'); } catch {}
+    try { await redis.del('post:index', 'post:index:ko', 'post:index:en', 'post:nav'); } catch {}
 }
 
 // ── Navigation cache (sorted ID list, same TTL as index) ──

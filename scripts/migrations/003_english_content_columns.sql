@@ -1,0 +1,7 @@
+ALTER TABLE posts
+    ADD COLUMN IF NOT EXISTS title_en TEXT,
+    ADD COLUMN IF NOT EXISTS content_en TEXT;
+
+ALTER TABLE ai_diary
+    ADD COLUMN IF NOT EXISTS title_en TEXT,
+    ADD COLUMN IF NOT EXISTS content_en TEXT;

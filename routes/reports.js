@@ -102,15 +102,16 @@ router.get('/', async (req, res) => {
         // Fetch research list (with cache). Title is extracted server-side from each file's
         // H1, so no per-file fetch is needed here — avoids N+1 and the partial-failure state
         // that previously baked filenames into the list cache.
-        let researchFiles = await cache.getResearchList();
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        let researchFiles = await cache.getResearchList(lang);
         if (!researchFiles) {
             researchFiles = [];
             try {
-                const rRes = await fetch(`${CHAT_API_URL}/research`);
+                const rRes = await fetch(`${CHAT_API_URL}/research?lang=${lang}`);
                 if (rRes.ok) {
                     const rData = await rRes.json();
                     researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
-                    await cache.setResearchList(researchFiles);
+                    await cache.setResearchList(researchFiles, lang);
                 }
             } catch (e) {
                 console.error('Error fetching research list:', e);
@@ -118,15 +119,15 @@ router.get('/', async (req, res) => {
         }
 
         // Fetch static-pages list (with cache)
-        let pagesList = await cache.getPagesList();
+        let pagesList = await cache.getPagesList(lang);
         if (!pagesList) {
             pagesList = [];
             try {
-                const pRes = await fetch(`${CHAT_API_URL}/pages`);
+                const pRes = await fetch(`${CHAT_API_URL}/pages?lang=${lang}`);
                 if (pRes.ok) {
                     const pData = await pRes.json();
                     pagesList = pData.items || [];
-                    await cache.setPagesList(pagesList);
+                    await cache.setPagesList(pagesList, lang);
                 }
             } catch (e) {
                 console.error('Error fetching pages list:', e);
@@ -181,9 +182,10 @@ router.get('/research/:filename', async (req, res) => {
         const filename = requestedMarkdownFile ? req.params.filename : req.params.filename + '.md';
         const slug = filename.replace(/\.md$/, '');
         const pagePath = `/reports/research/${slug}`;
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
 
         // Check file cache
-        const cached = await cache.getResearch(filename);
+        const cached = await cache.getResearch(filename, lang);
         if (cached && (researchMarkdown(cached) || cached.html_body || cached.htmlBody)) {
             if (wantsMarkdown) {
                 const cachedMarkdown = researchMarkdown(cached);
@@ -204,7 +206,7 @@ router.get('/research/:filename', async (req, res) => {
             });
         }
 
-        const response = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(filename)}`);
+        const response = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(filename)}?lang=${lang}`);
         if (!response.ok) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',
@@ -224,7 +226,7 @@ router.get('/research/:filename', async (req, res) => {
             html_body: data.html_body || data.htmlBody || '',
             summary: data.summary || data.excerpt || '',
             title,
-        });
+        }, lang);
 
         renderResearch(res, {
             filename,
