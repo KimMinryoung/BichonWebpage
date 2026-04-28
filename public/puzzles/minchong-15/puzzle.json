@@ -22,7 +22,7 @@
     [0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0],
     [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0]
   ],
-  "solution_image": "/puzzles/minchong-15/solution.PNG",
+  "solution_image": "/puzzles/minchong-15/solution.png",
   "source": {
     "name": "Rendersnail Nonogram Builder",
     "url": "https://rendersnail.com/tools/nonogram-builder"
