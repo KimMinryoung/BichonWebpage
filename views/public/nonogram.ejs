@@ -43,10 +43,9 @@
     }
 
     .topbar {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
       margin-bottom: 22px;
       border-bottom: 1px solid var(--border);
       padding-bottom: 18px;
@@ -66,7 +65,7 @@
     }
 
     .status {
-      min-width: 180px;
+      min-width: 0;
       padding: 12px 14px;
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: rgba(17, 21, 27, 0.86);
@@ -76,14 +75,16 @@
     }
 
     .topbar-controls {
-      width: min(420px, 100%);
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: stretch;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
     }
 
     .puzzle-strip {
+      flex: 1 1 auto;
+      min-width: 0;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -113,6 +114,8 @@
       align-items: center;
       gap: 8px;
       min-width: 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
     }
 
     .puzzle-tab {
@@ -516,8 +519,7 @@
 
     @media (max-width: 920px) {
       main { width: min(100% - 16px, 760px); padding-top: 18px; }
-      .topbar { align-items: stretch; flex-direction: column; }
-      .topbar-controls { width: 100%; }
+      .topbar-controls { width: 100%; flex-direction: column; align-items: stretch; }
       .status { text-align: left; }
       .layout { grid-template-columns: 1fr; }
       .side { position: static; }
@@ -613,7 +615,7 @@
 
   <%- include('../partials/footer') %>
   <script>
-    const DEFAULT_PUZZLE_ID = "freenono-letter-l";
+    const DEFAULT_PUZZLE_ID = "minchong-15";
     const PUZZLE_INDEX_URL = "/puzzles/index.json";
 
     const FALLBACK_PUZZLE = {

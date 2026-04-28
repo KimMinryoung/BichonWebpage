@@ -1,6 +1,6 @@
 {
   "default_series": "open-nonograms",
-  "default": "freenono-letter-l",
+  "default": "minchong-15",
   "series": [
     {
       "id": "open-nonograms",
@@ -29,6 +29,12 @@
           "hint_title": "일하는 손의 도구",
           "size": [10, 12],
           "path": "/puzzles/cyber-hammer/puzzle.json"
+        },
+        {
+          "id": "minchong-15",
+          "hint_title": "귀염둥이 마스코트",
+          "size": [15, 15],
+          "path": "/puzzles/minchong-15/puzzle.json"
         }
       ]
     }
