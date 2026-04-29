@@ -98,6 +98,15 @@ The fourth pass starts centralizing server-side HTML sanitization:
 - Sanitize research HTML on the server before rendering.
 - Restrict post iframes to relative `/posts-embed/*.html` paths and force defensive iframe attributes.
 
+## Fifth pass applied
+
+The fifth pass improves first-visit language defaults:
+
+- Add `utils/language.js` to resolve language from an existing `lang` cookie first.
+- If no language cookie exists, infer Korean when the browser's preferred supported language is `ko` or proxy country headers identify `KR`; otherwise default to English.
+- Persist the inferred language in a one-year `lang` cookie so later visits follow the cached/toggled setting.
+- Update the language toggle cookie attributes to use `Path=/`, `Max-Age`, `SameSite=Lax`, and `Secure` on HTTPS.
+
 ## Next recommended implementation order
 
 1. Add production environment validation in warning-only mode, then switch production to fail-closed after confirming deployed env values.

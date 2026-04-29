@@ -13,6 +13,7 @@ const seo = require('./utils/seo');
 const crypto = require('crypto');
 const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
 const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
+const { resolveLanguage } = require('./utils/language');
 const { requireAdminIp } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -113,7 +114,7 @@ app.use((req, res, next) => {
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
     res.locals.adminUser = req.session.adminUser || null;
     res.locals.currentUser = req.session.user || null;
-    var lang = req.cookies.lang === 'en' ? 'en' : 'ko';
+    var lang = resolveLanguage(req, res);
     res.locals.lang = lang;
     res.locals.strings = allStrings[lang];
     res.locals.siteOrigin = seo.SITE_ORIGIN;
