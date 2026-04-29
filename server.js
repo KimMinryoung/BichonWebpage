@@ -14,7 +14,7 @@ const seo = require('./utils/seo');
 const crypto = require('crypto');
 const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
 const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
-const { resolveLanguage } = require('./utils/language');
+const { normalizeLanguage, resolveLanguage } = require('./utils/language');
 const { requireAdminIp } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -41,9 +41,31 @@ function isStaticAssetPath(reqPath) {
         || reqPath === '/BingSiteAuth.xml';
 }
 
+function isPublicHtmlPath(reqPath) {
+    return reqPath === '/'
+        || reqPath === '/posts'
+        || /^\/post\/\d+$/.test(reqPath)
+        || reqPath === '/reports'
+        || /^\/reports\/research\/[^/]+$/.test(reqPath)
+        || reqPath === '/hub'
+        || /^\/hub\/[^/]+$/.test(reqPath)
+        || reqPath === '/ai-diary'
+        || /^\/ai-diary\/\d+$/.test(reqPath)
+        || /^\/p\/[^/]+$/.test(reqPath);
+}
+
+function hasSessionCookie(req) {
+    return Boolean(req.cookies && req.cookies['connect.sid']);
+}
+
+function hasLanguageCookie(req) {
+    return Boolean(req.cookies && normalizeLanguage(req.cookies.lang));
+}
+
 function isSessionFreeRequest(req) {
-    return (req.method === 'GET' || req.method === 'HEAD')
-        && (isStaticAssetPath(req.path) || isCacheablePublicTextPath(req.path));
+    if (req.method !== 'GET' && req.method !== 'HEAD') return false;
+    if (isStaticAssetPath(req.path) || isCacheablePublicTextPath(req.path)) return true;
+    return isPublicHtmlPath(req.path) && !hasSessionCookie(req);
 }
 
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
@@ -72,7 +94,10 @@ const sessionMiddleware = session({
     }
 });
 app.use((req, res, next) => {
-    if (isSessionFreeRequest(req)) return next();
+    if (isSessionFreeRequest(req)) {
+        req.session = {};
+        return next();
+    }
     return sessionMiddleware(req, res, next);
 });
 
@@ -147,18 +172,53 @@ app.use('/admin/webauthn', requireAdminIp, webauthnLimiter);
 // Make session and strings available in all views
 app.use((req, res, next) => {
     if ((req.method === 'GET' || req.method === 'HEAD') && isStaticAssetPath(req.path)) return next();
-    if ((req.method === 'GET' || req.method === 'HEAD') && isCacheablePublicTextPath(req.path)) {
+
+    const sessionFreePublicRead = isSessionFreeRequest(req);
+    if (sessionFreePublicRead) {
         res.locals.isAuthenticated = false;
         res.locals.adminUser = null;
         res.locals.currentUser = null;
-        res.locals.lang = 'ko';
-        res.locals.strings = allStrings.ko;
+        const lang = isCacheablePublicTextPath(req.path)
+            ? (normalizeLanguage(req.cookies.lang) || 'ko')
+            : (normalizeLanguage(req.cookies.lang) || resolveLanguage(req, res));
+        res.locals.lang = lang;
+        res.locals.strings = allStrings[lang];
         res.locals.siteOrigin = seo.SITE_ORIGIN;
         res.locals.absoluteUrl = seo.absoluteUrl;
         res.locals.jsonLdScript = seo.jsonLdScript;
         res.locals.assetVersion = ASSET_VERSION;
         res.locals.sanitize = sanitizeBasic;
         res.locals.sanitizePost = sanitizePost;
+        res.locals.truncateHtml = function(html, maxLen) {
+            var result = '';
+            var textLen = 0;
+            var openTags = [];
+            var i = 0;
+            while (i < html.length && textLen < maxLen) {
+                if (html[i] === '<') {
+                    var end = html.indexOf('>', i);
+                    if (end === -1) break;
+                    var tag = html.substring(i, end + 1);
+                    var closing = tag[1] === '/';
+                    if (closing) {
+                        openTags.pop();
+                    } else if (!tag.endsWith('/>') && !tag.startsWith('<!')) {
+                        var name = tag.match(/^<\s*([a-zA-Z][a-zA-Z0-9]*)/);
+                        if (name) openTags.push(name[1]);
+                    }
+                    result += tag;
+                    i = end + 1;
+                } else {
+                    result += html[i];
+                    textLen++;
+                    i++;
+                }
+            }
+            var truncated = textLen < html.replace(/<[^>]*>/g, '').length;
+            while (openTags.length) result += '</' + openTags.pop() + '>';
+            if (truncated) result += '...';
+            return result;
+        };
         return next();
     }
 
@@ -209,10 +269,18 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     if ((req.method === 'GET' || req.method === 'HEAD') && isCacheablePublicTextPath(req.path)) {
-        res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
+        res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=300, stale-while-revalidate=3600');
         return next();
     }
-    const isHtmlRequest = req.method === 'GET'
+    if ((req.method === 'GET' || req.method === 'HEAD') && isPublicHtmlPath(req.path) && !hasSessionCookie(req)) {
+        if (hasLanguageCookie(req)) {
+            res.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=3600');
+        } else {
+            res.setHeader('Cache-Control', 'private, max-age=60, stale-while-revalidate=300');
+        }
+        return next();
+    }
+    const isHtmlRequest = (req.method === 'GET' || req.method === 'HEAD')
         && !path.extname(req.path)
         && !req.path.startsWith('/api/')
         && !req.path.startsWith('/admin')
