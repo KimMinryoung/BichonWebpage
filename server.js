@@ -155,6 +155,10 @@ app.use((req, res, next) => {
         res.locals.strings = allStrings.ko;
         res.locals.siteOrigin = seo.SITE_ORIGIN;
         res.locals.absoluteUrl = seo.absoluteUrl;
+        res.locals.jsonLdScript = seo.jsonLdScript;
+        res.locals.assetVersion = ASSET_VERSION;
+        res.locals.sanitize = sanitizeBasic;
+        res.locals.sanitizePost = sanitizePost;
         return next();
     }
 
@@ -290,8 +294,12 @@ app.use(express.static(path.join(__dirname, 'public'), {
     }
 }));
 
-// CSRF protection (exclude API-key-authenticated routes)
-app.use(csrfProtection([]));
+// CSRF protection (exclude API-key-authenticated routes and cacheable public reads)
+const csrfMiddleware = csrfProtection([]);
+app.use((req, res, next) => {
+    if (isSessionFreeRequest(req)) return next();
+    return csrfMiddleware(req, res, next);
+});
 
 // Routes
 const publicRoutes = require('./routes/public');
