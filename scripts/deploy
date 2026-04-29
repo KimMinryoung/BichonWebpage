@@ -22,6 +22,14 @@ NC='\033[0m'
 log()  { echo -e "${GREEN}[deploy]${NC} $*"; }
 warn() { echo -e "${YELLOW}[deploy]${NC} $*"; }
 err()  { echo -e "${RED}[deploy]${NC} $*" >&2; }
+warm() {
+    local path="$1"
+    if curl -fsS --max-time 20 "http://localhost:3000${path}" > /dev/null 2>&1; then
+        log "Warmed ${path}"
+    else
+        warn "Warm-up failed for ${path}"
+    fi
+}
 
 FORCE_RESTART=0
 for arg in "$@"; do
@@ -87,7 +95,7 @@ docker image prune -f > /dev/null
 log "Waiting for health check..."
 elapsed=0
 while (( elapsed < 15 )); do
-    if curl -sf http://localhost:3000 > /dev/null 2>&1; then
+    if curl -sf --max-time 20 http://localhost:3000 > /dev/null 2>&1; then
         log "Frontend is healthy."
         break
     fi
@@ -98,5 +106,13 @@ done
 if (( elapsed >= 15 )); then
     warn "Health check timed out — check logs with: docker logs $CONTAINER_NAME"
 fi
+
+log "Warming public pages..."
+warm "/"
+warm "/reports"
+warm "/hub"
+warm "/sitemap.xml"
+warm "/css/style.css"
+warm "/js/common.js"
 
 log "Deploy complete ($(git log --oneline -1))"
