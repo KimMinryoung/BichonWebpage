@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cache = require('../config/report-cache');
+const researchStore = require('../config/research-store');
 const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
@@ -100,22 +101,17 @@ router.get('/', async (req, res) => {
             }
         }
 
-        // Fetch research list (with cache). Title is extracted server-side from each file's
-        // H1, so no per-file fetch is needed here — avoids N+1 and the partial-failure state
-        // that previously baked filenames into the list cache.
+        // Fetch research list directly from the shared database. Title/excerpt are returned
+        // with the row, so no per-document request is needed.
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         let researchFiles = await cache.getResearchList(lang);
         if (!researchFiles) {
-            researchFiles = [];
             try {
-                const rRes = await fetchWithTimeout(`${CHAT_API_URL}/research?lang=${lang}`, { timeoutMs: 5000 });
-                if (rRes.ok) {
-                    const rData = await rRes.json();
-                    researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
-                    await cache.setResearchList(researchFiles, lang);
-                }
+                researchFiles = await researchStore.listResearch(lang);
+                await cache.setResearchList(researchFiles, lang);
             } catch (e) {
-                console.error('Error fetching research list:', e);
+                console.error('Error loading research list:', e);
+                researchFiles = [];
             }
         }
 
@@ -207,15 +203,14 @@ router.get('/research/:filename', async (req, res) => {
             });
         }
 
-        const response = await fetchWithTimeout(`${CHAT_API_URL}/research/${encodeURIComponent(filename)}?lang=${lang}`, { timeoutMs: 5000 });
-        if (!response.ok) {
+        const data = await researchStore.getResearch(filename, lang);
+        if (!data) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',
                 body: '<div class="box"><h1>404</h1><p>리서치를 찾을 수 없습니다.</p><a href="/reports">목록으로</a></div>'
             });
         }
 
-        const data = await response.json();
         const markdown = researchMarkdown(data);
         if (wantsMarkdown) {
             res.setHeader('Content-Disposition', `inline; filename="${filename}"`);

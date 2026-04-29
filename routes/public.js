@@ -7,33 +7,13 @@ const paginationHelper = require('../config/paginationHelper');
 const cache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
+const researchStore = require('../config/research-store');
 const seo = require('../utils/seo');
 
 const POSTS_PER_PAGE = 20;
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const RECENT_LIMIT = 5;
-
-function mdExcerpt(content, n = 220) {
-    if (!content) return '';
-    let text = content.replace(/^#\s+.+$/m, '').trim();
-    text = text
-        .replace(/\*\*([^*]+)\*\*/g, '$1')
-        .replace(/\*([^*]+)\*/g, '$1')
-        .replace(/`([^`]+)`/g, '$1')
-        .replace(/^\s*(작성자|작성일|Author|Date)\s*:.*$/gim, '')
-        .replace(/^\s*>.*$/gm, '')
-        .replace(/^\s*-{3,}\s*$/gm, '')
-        .replace(/^#{1,6}\s+/gm, '')
-        .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
-        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-        .replace(/^[-*+]\s+/gm, '')
-        .replace(/^\d+\.\s+/gm, '')
-        .replace(/\n{2,}/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-    return text.length > n ? text.substring(0, n) + '…' : text;
-}
 
 function localizedRecord(row, lang) {
     if (!row || lang !== 'en') return row;
@@ -73,33 +53,10 @@ router.get('/', async (req, res) => {
             (async () => {
                 let files = await reportCache.getResearchList(lang);
                 if (!files) {
-                    const response = await fetch(`${CHAT_API_URL}/research?lang=${lang}`);
-                    if (!response.ok) throw new Error(`API ${response.status}`);
-                    const data = await response.json();
-                    files = (data.files || []).sort((a, b) => b.modified_at - a.modified_at);
+                    files = await researchStore.listResearch(lang);
                     await reportCache.setResearchList(files, lang);
                 }
-                const top = files.slice(0, RECENT_LIMIT);
-                await Promise.all(top.map(async (f) => {
-                    if (f.title && f.excerpt) return;
-                    const cached = await reportCache.getResearch(f.filename, lang);
-                    if (cached && cached.content) {
-                        if (!f.title && cached.title) f.title = cached.title;
-                        f.excerpt = mdExcerpt(cached.content);
-                        return;
-                    }
-                    try {
-                        const r = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(f.filename)}?lang=${lang}`);
-                        if (r.ok) {
-                            const d = await r.json();
-                            const match = (d.content || '').match(/^#\s+(.+)/m);
-                            if (match) f.title = match[1];
-                            f.excerpt = mdExcerpt(d.content);
-                            await reportCache.setResearch(f.filename, { content: d.content, title: f.title || f.filename }, lang);
-                        }
-                    } catch (_) {}
-                }));
-                return top;
+                return files.slice(0, RECENT_LIMIT);
             })(),
             (async () => {
                 const response = await fetch(`${CHAT_API_URL}/hub?limit=${RECENT_LIMIT}&offset=0`);
@@ -286,14 +243,11 @@ router.get('/robots.txt', (req, res) => {
     );
 });
 
-async function getResearchFiles() {
-    let researchFiles = await reportCache.getResearchList();
+async function getResearchFiles(lang = 'ko') {
+    let researchFiles = await reportCache.getResearchList(lang);
     if (!researchFiles) {
-        const rData = await fetchJson(`${CHAT_API_URL}/research`);
-        if (rData) {
-            researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
-            await reportCache.setResearchList(researchFiles);
-        }
+        researchFiles = await researchStore.listResearch(lang);
+        await reportCache.setResearchList(researchFiles, lang);
     }
     return researchFiles || [];
 }
@@ -329,7 +283,7 @@ async function getFeedItems(limit = 40) {
     const [postsResult, diariesResult, researchResult, hubResult] = await Promise.allSettled([
         db.query('SELECT id, title, content, created_at, updated_at FROM posts ORDER BY created_at DESC LIMIT 30'),
         db.query('SELECT id, title, content, created_at, updated_at FROM ai_diary ORDER BY created_at DESC LIMIT 30'),
-        getResearchFiles(),
+        getResearchFiles('ko'),
         getHubItems(30),
     ]);
     const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(post => ({
@@ -373,7 +327,7 @@ router.get('/sitemap.xml', async (req, res) => {
         const [postsResult, diariesResult, researchResult, pagesResult, hubResult] = await Promise.allSettled([
             db.query('SELECT id, created_at, updated_at FROM posts ORDER BY created_at DESC'),
             db.query('SELECT id, created_at, updated_at FROM ai_diary ORDER BY created_at DESC'),
-            getResearchFiles(),
+            getResearchFiles('ko'),
             getPagesList(),
             getHubItems(),
         ]);
@@ -451,7 +405,8 @@ router.get('/posts.md', async (req, res) => {
 });
 
 router.get('/reports.md', async (req, res) => {
-    const files = await getResearchFiles();
+    const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+    const files = await getResearchFiles(lang);
     const items = files.map(file => ({
         title: file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' '),
         href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
