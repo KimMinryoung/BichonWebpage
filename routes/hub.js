@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const hubStore = require('../config/hub-store');
 const seo = require('../utils/seo');
-const { fetchWithTimeout, clampInteger } = require('../utils/http');
+const { clampInteger } = require('../utils/http');
 
-const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const PER_PAGE = 20;
 
 // GET /hub — list of curations
@@ -13,23 +13,24 @@ router.get('/', async (req, res) => {
     const offset = (currentPage - 1) * PER_PAGE;
 
     try {
-        const response = await fetchWithTimeout(`${CHAT_API_URL}/hub?limit=${PER_PAGE}&offset=${offset}`, { timeoutMs: 5000 });
-        if (!response.ok) throw new Error(`API ${response.status}`);
-        const data = await response.json();
-        const totalPages = Math.max(1, Math.ceil((data.total || 0) / PER_PAGE));
+        const [items, total] = await Promise.all([
+            hubStore.listHubCurations({ limit: PER_PAGE, offset }),
+            hubStore.countHubCurations(),
+        ]);
+        const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
 
         res.render('public/hub', {
-            items: data.items || [],
+            items,
             currentPage,
             totalPages,
             paginationBase: '/hub?page=',
             pagePath,
             pageTitle: '큐레이션',
             pageDescription: '사이버-레닌이 선별한 한국어권 진보 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
-            jsonLd: seo.itemListJsonLd((data.items || []).map(item => ({ title: item.title, href: `/hub/${item.slug}` }))),
+            jsonLd: seo.itemListJsonLd(items.map(item => ({ title: item.title, href: `/hub/${item.slug}` }))),
         });
     } catch (error) {
-        console.error('Error fetching hub list:', error);
+        console.error('Error loading hub list:', error);
         res.render('public/hub', {
             items: [], currentPage: 1, totalPages: 1,
             paginationBase: '/hub?page=', pagePath,
@@ -45,14 +46,13 @@ router.get('/:slug', async (req, res) => {
     const pagePath = `/hub/${slug}`;
 
     try {
-        const response = await fetchWithTimeout(`${CHAT_API_URL}/hub/${encodeURIComponent(slug)}`, { timeoutMs: 5000 });
-        if (!response.ok) {
+        const item = await hubStore.getHubCuration(slug);
+        if (!item) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',
                 body: '<div class="box"><h1>404</h1><p>큐레이션을 찾을 수 없습니다.</p><a href="/hub">큐레이션으로</a></div>'
             });
         }
-        const item = await response.json();
         const pageDescription = seo.excerpt(`${item.selection_rationale || ''} ${item.context || ''}`, 160);
         res.render('public/hub-view', {
             item,

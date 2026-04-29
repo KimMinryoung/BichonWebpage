@@ -7,6 +7,7 @@ const paginationHelper = require('../config/paginationHelper');
 const cache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
+const hubStore = require('../config/hub-store');
 const researchStore = require('../config/research-store');
 const seo = require('../utils/seo');
 
@@ -59,10 +60,7 @@ router.get('/', async (req, res) => {
                 return files.slice(0, RECENT_LIMIT);
             })(),
             (async () => {
-                const response = await fetch(`${CHAT_API_URL}/hub?limit=${RECENT_LIMIT}&offset=0`);
-                if (!response.ok) throw new Error(`API ${response.status}`);
-                const data = await response.json();
-                return data.items || [];
+                return hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0 });
             })()
         ]);
 
@@ -265,9 +263,7 @@ async function getPagesList() {
 }
 
 async function getHubItems(limit = 200) {
-    const data = await fetchJson(`${CHAT_API_URL}/hub?limit=${limit}&offset=0`);
-    if (!data) return [];
-    return data.items || [];
+    return hubStore.listHubCurations({ limit, offset: 0 });
 }
 
 function markdownIndex(title, description, items) {
