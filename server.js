@@ -172,9 +172,16 @@ function stripNonogramVersionQuery(req, res) {
     if (!url.searchParams.has('v')) return false;
     url.searchParams.delete('v');
     const query = url.searchParams.toString();
-    res.setHeader('Cache-Control', 'no-store, max-age=0');
+    setNoStore(res);
     res.redirect(301, '/nonogram/' + (query ? `?${query}` : ''));
     return true;
+}
+
+function setNoStore(res) {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.setHeader('Surrogate-Control', 'no-store');
 }
 
 app.get('/nonogram', (req, res, next) => {
@@ -182,7 +189,7 @@ app.get('/nonogram', (req, res, next) => {
     const url = new URL(req.originalUrl, 'http://localhost');
     url.searchParams.delete('v');
     const query = url.searchParams.toString();
-    res.setHeader('Cache-Control', 'no-store, max-age=0');
+    setNoStore(res);
     res.redirect(301, '/nonogram/' + (query ? `?${query}` : ''));
 });
 
@@ -192,7 +199,7 @@ app.get('/nonogram/', (req, res) => {
         req.session.csrfToken = req.session.csrfToken || crypto.randomBytes(32).toString('hex');
         res.locals.csrfToken = req.session.csrfToken;
     }
-    res.setHeader('Cache-Control', 'no-store, max-age=0');
+    setNoStore(res);
     res.render('public/nonogram');
 });
 
