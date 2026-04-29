@@ -12,6 +12,8 @@ const csrfProtection = require('./middleware/csrf');
 const sanitizeHtml = require('sanitize-html');
 const seo = require('./utils/seo');
 const crypto = require('crypto');
+const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
+const { requireAdminIp } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -47,6 +49,8 @@ app.use(session({
 }));
 
 // Preload user's bound fingerprints into req so the proxy can stamp them.
+app.use('/api/proxy', chatProxyLimiter);
+
 app.use('/api/proxy', async (req, res, next) => {
     if (req.session && req.session.user && req.session.user.id) {
         try {
@@ -99,6 +103,10 @@ app.use(helmet({
     },
     crossOriginEmbedderPolicy: false
 }));
+
+app.use('/auth/webauthn/register/options', signupLimiter);
+app.use('/auth/webauthn', webauthnLimiter);
+app.use('/admin/webauthn', requireAdminIp, webauthnLimiter);
 
 // Make session and strings available in all views
 app.use((req, res, next) => {
@@ -241,7 +249,6 @@ const gameRoutes = require('./routes/game');
 const reportRoutes = require('./routes/reports');
 const hubRoutes = require('./routes/hub');
 const pageRoutes = require('./routes/pages');
-const { requireAdminIp } = require('./middleware/auth');
 
 app.use('/', publicRoutes);
 app.use('/auth', authRoutes);

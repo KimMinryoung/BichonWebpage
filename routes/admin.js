@@ -7,6 +7,7 @@ const postCache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
+const { adminApiLimiter } = require('../middleware/rate-limit');
 
 // Login page (Passkey ceremony happens entirely client-side; see routes/webauthn.js)
 router.get('/login', redirectIfAuthenticated, (req, res) => {
@@ -213,7 +214,7 @@ router.get('/chat-logs', requireAuth, (req, res) => {
 });
 
 // Chat Logs API proxy — forwards to LeninBot with admin key
-router.get('/api/logs', requireAuth, async (req, res) => {
+router.get('/api/logs', requireAuth, adminApiLimiter, async (req, res) => {
     const apiUrl = process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
     const adminKey = process.env.LENINBOT_ADMIN_KEY || '';
     const limit = clampInteger(req.query.limit, { fallback: 50, min: 1, max: 200 });

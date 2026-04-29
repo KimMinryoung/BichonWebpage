@@ -79,6 +79,16 @@ The second pass improved static asset caching without changing page behavior:
 
 This keeps cache invalidation available at deploy/restart boundaries while avoiding a new CSS/JS URL on every request.
 
+## Third pass applied
+
+The third pass wires the existing `express-rate-limit` dependency into high-risk routes:
+
+- WebAuthn ceremony endpoints share a conservative authentication limiter.
+- Signup registration options get a stricter hourly limiter.
+- Chat proxy requests get a broad per-minute limiter to avoid breaking normal streaming use.
+- Admin log API requests get a separate limiter.
+- Limits are environment-variable tunable.
+
 ## Next recommended implementation order
 
 1. Add production environment validation in warning-only mode, then switch production to fail-closed after confirming deployed env values.
