@@ -9,11 +9,11 @@ const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
 const hubStore = require('../config/hub-store');
 const researchStore = require('../config/research-store');
+const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 
 const POSTS_PER_PAGE = 20;
 
-const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const RECENT_LIMIT = 5;
 
 function localizedRecord(row, lang) {
@@ -27,20 +27,6 @@ function localizedRecord(row, lang) {
         language: titleEn || contentEn ? 'en' : 'ko',
         has_translation: Boolean(titleEn || contentEn),
     };
-}
-
-async function fetchJson(url, timeoutMs = 3000) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
-    try {
-        const response = await fetch(url, { signal: controller.signal });
-        if (!response.ok) return null;
-        return response.json();
-    } catch {
-        return null;
-    } finally {
-        clearTimeout(timer);
-    }
 }
 
 // Homepage
@@ -250,14 +236,11 @@ async function getResearchFiles(lang = 'ko') {
     return researchFiles || [];
 }
 
-async function getPagesList() {
-    let pagesList = await reportCache.getPagesList();
+async function getPagesList(lang = 'ko') {
+    let pagesList = await reportCache.getPagesList(lang);
     if (!pagesList) {
-        const pData = await fetchJson(`${CHAT_API_URL}/pages`);
-        if (pData) {
-            pagesList = pData.items || [];
-            await reportCache.setPagesList(pagesList);
-        }
+        pagesList = await pageStore.listPages(lang);
+        await reportCache.setPagesList(pagesList, lang);
     }
     return pagesList || [];
 }

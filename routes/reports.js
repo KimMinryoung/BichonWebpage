@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cache = require('../config/report-cache');
 const researchStore = require('../config/research-store');
+const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
@@ -120,14 +121,10 @@ router.get('/', async (req, res) => {
         if (!pagesList) {
             pagesList = [];
             try {
-                const pRes = await fetchWithTimeout(`${CHAT_API_URL}/pages?lang=${lang}`, { timeoutMs: 5000 });
-                if (pRes.ok) {
-                    const pData = await pRes.json();
-                    pagesList = pData.items || [];
-                    await cache.setPagesList(pagesList, lang);
-                }
+                pagesList = await pageStore.listPages(lang);
+                await cache.setPagesList(pagesList, lang);
             } catch (e) {
-                console.error('Error fetching pages list:', e);
+                console.error('Error loading pages list:', e);
             }
         }
 
