@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const compression = require('compression');
 const session = require('express-session');
 const { RedisStore } = require('connect-redis');
 const redisClient = require('./config/redis');
@@ -82,6 +83,14 @@ app.use('/api/proxy', createProxyMiddleware({
     },
 }));
 
+app.use(compression({
+    threshold: 1024,
+    filter: (req, res) => {
+        if (req.path.startsWith('/api/proxy')) return false;
+        return compression.filter(req, res);
+    },
+}));
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -156,6 +165,18 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use((req, res, next) => {
+    const isHtmlRequest = req.method === 'GET'
+        && req.accepts(['html', 'json', 'text']) === 'html'
+        && !req.path.startsWith('/api/')
+        && !req.path.startsWith('/admin')
+        && !req.path.startsWith('/auth');
+    if (isHtmlRequest && !res.locals.isAuthenticated) {
+        res.setHeader('Cache-Control', 'private, max-age=60, stale-while-revalidate=300');
+    }
+    next();
+});
+
 function stripNonogramVersionQuery(req, res) {
     const url = new URL(req.originalUrl, 'http://localhost');
     if (!url.searchParams.has('v')) return false;
@@ -205,13 +226,24 @@ app.use('/img/game/raw', (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'public'), {
     index: false,
-    maxAge: '7d',  // Cloudflare edge caches static assets for 7 days
     setHeaders: (res, filePath) => {
         const normalized = filePath.split(path.sep).join('/');
         const isNonogramPage = normalized.endsWith('/public/nonogram/index.html') || normalized.endsWith('/public/nonogram/editor.html');
         const isPuzzleJson = normalized.includes('/public/puzzles/') && normalized.endsWith('.json');
         if (isNonogramPage || isPuzzleJson) {
             res.setHeader('Cache-Control', 'no-store, max-age=0');
+            return;
+        }
+        if (/\.(?:css|js)$/i.test(normalized)) {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+            return;
+        }
+        if (/\.(?:png|jpe?g|gif|webp|svg|ico|woff2?)$/i.test(normalized)) {
+            res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
+            return;
+        }
+        if (/\.(?:xml|txt)$/i.test(normalized)) {
+            res.setHeader('Cache-Control', 'public, max-age=86400');
         }
     }
 }));
