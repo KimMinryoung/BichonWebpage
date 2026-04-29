@@ -89,6 +89,15 @@ The third pass wires the existing `express-rate-limit` dependency into high-risk
 - Admin log API requests get a separate limiter.
 - Limits are environment-variable tunable.
 
+## Fourth pass applied
+
+The fourth pass starts centralizing server-side HTML sanitization:
+
+- Add `utils/sanitize.js` with basic, rich, and post sanitizers.
+- Use the shared helpers for EJS locals instead of inline sanitizer definitions.
+- Sanitize research HTML on the server before rendering.
+- Restrict post iframes to relative `/posts-embed/*.html` paths and force defensive iframe attributes.
+
 ## Next recommended implementation order
 
 1. Add production environment validation in warning-only mode, then switch production to fail-closed after confirming deployed env values.

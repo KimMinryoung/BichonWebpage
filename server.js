@@ -9,10 +9,10 @@ const allStrings = require('./config/strings');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const csrfProtection = require('./middleware/csrf');
-const sanitizeHtml = require('sanitize-html');
 const seo = require('./utils/seo');
 const crypto = require('crypto');
 const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
+const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
 const { requireAdminIp } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -120,28 +120,8 @@ app.use((req, res, next) => {
     res.locals.absoluteUrl = seo.absoluteUrl;
     res.locals.jsonLdScript = seo.jsonLdScript;
     res.locals.assetVersion = ASSET_VERSION;
-    res.locals.sanitize = function(html) {
-        return sanitizeHtml(html, {
-            allowedTags: ['a', 'br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'code', 'pre'],
-            allowedAttributes: {
-                'a': ['href', 'title', 'target']
-            },
-            allowedSchemes: ['http', 'https']
-        });
-    };
-    // Full-post view: also permits same-origin iframes (for embedded HTML posts)
-    res.locals.sanitizePost = function(html) {
-        return sanitizeHtml(html, {
-            allowedTags: ['a', 'br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'code', 'pre', 'iframe'],
-            allowedAttributes: {
-                'a': ['href', 'title', 'target'],
-                'iframe': ['src', 'width', 'height', 'frameborder', 'class', 'style', 'loading', 'title']
-            },
-            allowedSchemes: ['http', 'https'],
-            allowedIframeHostnames: [],
-            allowIframeRelativeUrls: true
-        });
-    };
+    res.locals.sanitize = sanitizeBasic;
+    res.locals.sanitizePost = sanitizePost;
     res.locals.truncateHtml = function(html, maxLen) {
         var result = '';
         var textLen = 0;

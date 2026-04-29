@@ -4,6 +4,7 @@ const cache = require('../config/report-cache');
 const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
+const { sanitizeRich } = require('../utils/sanitize');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const ADMIN_KEY = process.env.LENINBOT_ADMIN_KEY || '';
@@ -14,9 +15,8 @@ function researchMarkdown(data) {
 }
 
 function researchHtmlBody(data, markdown) {
-    if (data && data.html_body) return data.html_body;
-    if (data && data.htmlBody) return data.htmlBody;
-    return renderMarkdown(stripFirstHeading(markdown));
+    const html = (data && (data.html_body || data.htmlBody)) || renderMarkdown(stripFirstHeading(markdown));
+    return sanitizeRich(html);
 }
 
 function renderResearch(res, { filename, slug, pagePath, data }) {
