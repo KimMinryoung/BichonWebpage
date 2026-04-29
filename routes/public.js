@@ -38,12 +38,7 @@ router.get('/', async (req, res) => {
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             (async () => {
-                let files = await reportCache.getResearchList(lang);
-                if (!files) {
-                    files = await researchStore.listResearch(lang);
-                    await reportCache.setResearchList(files, lang);
-                }
-                return files.slice(0, RECENT_LIMIT);
+                return researchStore.listResearch(lang, { limit: RECENT_LIMIT });
             })(),
             (async () => {
                 return hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0 });

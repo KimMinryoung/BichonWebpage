@@ -38,12 +38,12 @@ function timestampSeconds(value) {
 
 function localize(row, lang = 'ko', includeContent = true) {
     if (!row) return null;
-    const hasEnglish = Boolean(row.markdown_en && row.markdown_en.trim());
+    const hasEnglish = Boolean(row.has_markdown_en || (row.markdown_en && row.markdown_en.trim()));
     const useEnglish = lang === 'en' && hasEnglish;
     const markdown = useEnglish ? row.markdown_en : row.markdown;
     const title = (useEnglish ? row.title_en : row.title) || row.title || titleFromMarkdown(markdown, row.filename);
     const summary = (useEnglish ? row.summary_en : row.summary) || row.summary || '';
-    const fallbackExcerpt = summary || excerpt(markdown);
+    const fallbackExcerpt = summary || (markdown ? excerpt(markdown) : '');
 
     const document = {
         filename: row.filename,
@@ -51,7 +51,7 @@ function localize(row, lang = 'ko', includeContent = true) {
         title,
         summary,
         excerpt: fallbackExcerpt,
-        size: Buffer.byteLength(markdown || '', 'utf8'),
+        size: row.markdown_size || Buffer.byteLength(markdown || '', 'utf8'),
         modified_at: timestampSeconds(row.updated_at || row.published_at),
         published_at: row.published_at,
         updated_at: row.updated_at,
@@ -68,13 +68,23 @@ function localize(row, lang = 'ko', includeContent = true) {
     return document;
 }
 
-async function listResearch(lang = 'ko') {
+async function listResearch(lang = 'ko', { limit } = {}) {
+    const safeLimit = Number.isInteger(limit) && limit > 0 ? Math.min(limit, 200) : null;
+    const params = [];
+    let limitSql = '';
+    if (safeLimit) {
+        params.push(safeLimit);
+        limitSql = ' LIMIT $1';
+    }
     const { rows } = await db.query(
-        `SELECT filename, slug, title, summary, markdown, title_en, summary_en, markdown_en,
-                published_at, updated_at
+        `SELECT filename, slug, title, summary, title_en, summary_en,
+                published_at, updated_at,
+                OCTET_LENGTH(markdown) AS markdown_size,
+                COALESCE(BTRIM(markdown_en), '') <> '' AS has_markdown_en
            FROM research_documents
           WHERE status = 'public'
-          ORDER BY updated_at DESC, id DESC`
+          ORDER BY updated_at DESC, id DESC${limitSql}`,
+        params
     );
     return rows.map(row => localize(row, lang, false));
 }
