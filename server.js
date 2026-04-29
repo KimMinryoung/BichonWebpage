@@ -24,6 +24,15 @@ const PORT = process.env.PORT || 3000;
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const ASSET_VERSION = process.env.ASSET_VERSION || process.env.GIT_SHA || String(Date.now());
 
+function isCacheablePublicTextPath(reqPath) {
+    return reqPath === '/robots.txt'
+        || reqPath === '/llms.txt'
+        || reqPath === '/sitemap.xml'
+        || reqPath === '/atom.xml'
+        || reqPath === '/rss.xml'
+        || /^\/(?:index|posts|reports|ai-diary|hub)\.md$/.test(reqPath);
+}
+
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
 if (process.env.NODE_ENV === 'production') {
     app.set('trust proxy', 1);
@@ -130,6 +139,16 @@ app.use((req, res, next) => {
         )
         : false;
     if (isStaticAssetRequest) return next();
+    if ((req.method === 'GET' || req.method === 'HEAD') && isCacheablePublicTextPath(req.path)) {
+        res.locals.isAuthenticated = false;
+        res.locals.adminUser = null;
+        res.locals.currentUser = null;
+        res.locals.lang = 'ko';
+        res.locals.strings = allStrings.ko;
+        res.locals.siteOrigin = seo.SITE_ORIGIN;
+        res.locals.absoluteUrl = seo.absoluteUrl;
+        return next();
+    }
 
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
     res.locals.adminUser = req.session.adminUser || null;
@@ -177,6 +196,10 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
+    if ((req.method === 'GET' || req.method === 'HEAD') && isCacheablePublicTextPath(req.path)) {
+        res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
+        return next();
+    }
     const isHtmlRequest = req.method === 'GET'
         && !path.extname(req.path)
         && !req.path.startsWith('/api/')
