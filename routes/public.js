@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
                 return researchStore.listResearch(lang, { limit: RECENT_LIMIT });
             })(),
             (async () => {
-                return hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0 });
+                return hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0, lang });
             })()
         ]);
 
@@ -240,8 +240,8 @@ async function getPagesList(lang = 'ko') {
     return pagesList || [];
 }
 
-async function getHubItems(limit = 200) {
-    return hubStore.listHubCurations({ limit, offset: 0 });
+async function getHubItems(limit = 200, lang = 'ko') {
+    return hubStore.listHubCurations({ limit, offset: 0, lang });
 }
 
 function markdownIndex(title, description, items) {
@@ -258,7 +258,7 @@ async function getFeedItems(limit = 40) {
         db.query('SELECT id, title, content, created_at, updated_at FROM posts ORDER BY created_at DESC LIMIT 30'),
         db.query('SELECT id, title, content, created_at, updated_at FROM ai_diary ORDER BY created_at DESC LIMIT 30'),
         getResearchFiles('ko'),
-        getHubItems(30),
+        getHubItems(30, 'ko'),
     ]);
     const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(post => ({
         title: post.title,
@@ -303,7 +303,7 @@ router.get('/sitemap.xml', async (req, res) => {
             db.query('SELECT id, created_at, updated_at FROM ai_diary ORDER BY created_at DESC'),
             getResearchFiles('ko'),
             getPagesList(),
-            getHubItems(),
+            getHubItems(200, 'ko'),
         ]);
         const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
         const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
@@ -400,7 +400,7 @@ router.get('/ai-diary.md', async (req, res) => {
 });
 
 router.get('/hub.md', async (req, res) => {
-    const hubItems = await getHubItems();
+    const hubItems = await getHubItems(200, 'ko');
     const items = hubItems.map(item => ({
         title: item.title,
         href: `/hub/${item.slug}`,

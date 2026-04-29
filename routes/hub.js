@@ -11,10 +11,11 @@ router.get('/', async (req, res) => {
     const currentPage = clampInteger(req.query.page, { fallback: 1, min: 1, max: 1000 });
     const pagePath = currentPage > 1 ? `/hub?page=${currentPage}` : '/hub';
     const offset = (currentPage - 1) * PER_PAGE;
+    const lang = res.locals.lang === 'en' ? 'en' : 'ko';
 
     try {
         const [items, total] = await Promise.all([
-            hubStore.listHubCurations({ limit: PER_PAGE, offset }),
+            hubStore.listHubCurations({ limit: PER_PAGE, offset, lang }),
             hubStore.countHubCurations(),
         ]);
         const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
@@ -46,7 +47,8 @@ router.get('/:slug', async (req, res) => {
     const pagePath = `/hub/${slug}`;
 
     try {
-        const item = await hubStore.getHubCuration(slug);
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        const item = await hubStore.getHubCuration(slug, lang);
         if (!item) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',
