@@ -33,6 +33,19 @@ function isCacheablePublicTextPath(reqPath) {
         || /^\/(?:index|posts|reports|ai-diary|hub)\.md$/.test(reqPath);
 }
 
+function isStaticAssetPath(reqPath) {
+    return reqPath.startsWith('/css/')
+        || reqPath.startsWith('/js/')
+        || reqPath.startsWith('/img/')
+        || reqPath.startsWith('/puzzles/')
+        || reqPath === '/BingSiteAuth.xml';
+}
+
+function isSessionFreeRequest(req) {
+    return (req.method === 'GET' || req.method === 'HEAD')
+        && (isStaticAssetPath(req.path) || isCacheablePublicTextPath(req.path));
+}
+
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
 if (process.env.NODE_ENV === 'production') {
     app.set('trust proxy', 1);
@@ -47,7 +60,7 @@ app.set('views', path.join(__dirname, 'views'));
 // cookieParser + session must run before the backend proxy so logged-in
 // users' bound fingerprints can be stamped onto proxied LeninBot requests.
 app.use(cookieParser());
-app.use(session({
+const sessionMiddleware = session({
     store: new RedisStore({ client: redisClient, prefix: 'sess:' }),
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -57,7 +70,11 @@ app.use(session({
         sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'strict',
         maxAge: 24 * 60 * 60 * 1000
     }
-}));
+});
+app.use((req, res, next) => {
+    if (isSessionFreeRequest(req)) return next();
+    return sessionMiddleware(req, res, next);
+});
 
 // Preload user's bound fingerprints into req so the proxy can stamp them.
 app.use('/api/proxy', chatProxyLimiter);
@@ -129,16 +146,7 @@ app.use('/admin/webauthn', requireAdminIp, webauthnLimiter);
 
 // Make session and strings available in all views
 app.use((req, res, next) => {
-    const isStaticAssetRequest = req.method === 'GET' || req.method === 'HEAD'
-        ? (
-            req.path.startsWith('/css/')
-            || req.path.startsWith('/js/')
-            || req.path.startsWith('/img/')
-            || req.path.startsWith('/puzzles/')
-            || req.path === '/BingSiteAuth.xml'
-        )
-        : false;
-    if (isStaticAssetRequest) return next();
+    if ((req.method === 'GET' || req.method === 'HEAD') && isStaticAssetPath(req.path)) return next();
     if ((req.method === 'GET' || req.method === 'HEAD') && isCacheablePublicTextPath(req.path)) {
         res.locals.isAuthenticated = false;
         res.locals.adminUser = null;
