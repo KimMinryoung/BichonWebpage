@@ -120,6 +120,17 @@ app.use('/admin/webauthn', requireAdminIp, webauthnLimiter);
 
 // Make session and strings available in all views
 app.use((req, res, next) => {
+    const isStaticAssetRequest = req.method === 'GET' || req.method === 'HEAD'
+        ? (
+            req.path.startsWith('/css/')
+            || req.path.startsWith('/js/')
+            || req.path.startsWith('/img/')
+            || req.path.startsWith('/puzzles/')
+            || req.path === '/BingSiteAuth.xml'
+        )
+        : false;
+    if (isStaticAssetRequest) return next();
+
     res.locals.isAuthenticated = req.session.isAuthenticated || false;
     res.locals.adminUser = req.session.adminUser || null;
     res.locals.currentUser = req.session.user || null;
@@ -167,7 +178,7 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     const isHtmlRequest = req.method === 'GET'
-        && req.accepts(['html', 'json', 'text']) === 'html'
+        && !path.extname(req.path)
         && !req.path.startsWith('/api/')
         && !req.path.startsWith('/admin')
         && !req.path.startsWith('/auth');
