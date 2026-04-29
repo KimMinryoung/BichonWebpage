@@ -3,3 +3,6 @@ node_modules
 .git
 *.log
 data
+public/img/game/raw
+public/puzzles/.*-backup
+temp_dev

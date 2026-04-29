@@ -6,6 +6,7 @@ const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
 const postCache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
+const { fetchWithTimeout, clampInteger } = require('../utils/http');
 
 // Login page (Passkey ceremony happens entirely client-side; see routes/webauthn.js)
 router.get('/login', redirectIfAuthenticated, (req, res) => {
@@ -215,12 +216,12 @@ router.get('/chat-logs', requireAuth, (req, res) => {
 router.get('/api/logs', requireAuth, async (req, res) => {
     const apiUrl = process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
     const adminKey = process.env.LENINBOT_ADMIN_KEY || '';
-    const limit = parseInt(req.query.limit) || 50;
-    const offset = parseInt(req.query.offset) || 0;
+    const limit = clampInteger(req.query.limit, { fallback: 50, min: 1, max: 200 });
+    const offset = clampInteger(req.query.offset, { fallback: 0, min: 0, max: 100000 });
     try {
-        const response = await fetch(
+        const response = await fetchWithTimeout(
             `${apiUrl}/logs?limit=${limit}&offset=${offset}`,
-            { headers: { 'X-Admin-Key': adminKey } }
+            { headers: { 'X-Admin-Key': adminKey }, timeoutMs: 5000 }
         );
         if (!response.ok) {
             return res.status(response.status).json({ error: 'LeninBot API error' });

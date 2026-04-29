@@ -18,6 +18,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
+const ASSET_VERSION = process.env.ASSET_VERSION || process.env.GIT_SHA || String(Date.now());
 
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
 if (process.env.NODE_ENV === 'production') {
@@ -110,6 +111,7 @@ app.use((req, res, next) => {
     res.locals.siteOrigin = seo.SITE_ORIGIN;
     res.locals.absoluteUrl = seo.absoluteUrl;
     res.locals.jsonLdScript = seo.jsonLdScript;
+    res.locals.assetVersion = ASSET_VERSION;
     res.locals.sanitize = function(html) {
         return sanitizeHtml(html, {
             allowedTags: ['a', 'br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'code', 'pre'],
@@ -165,7 +167,27 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get(['/nonogram', '/nonogram/'], (req, res) => {
+function stripNonogramVersionQuery(req, res) {
+    const url = new URL(req.originalUrl, 'http://localhost');
+    if (!url.searchParams.has('v')) return false;
+    url.searchParams.delete('v');
+    const query = url.searchParams.toString();
+    res.setHeader('Cache-Control', 'no-store, max-age=0');
+    res.redirect(301, '/nonogram/' + (query ? `?${query}` : ''));
+    return true;
+}
+
+app.get('/nonogram', (req, res, next) => {
+    if (req.path !== '/nonogram') return next();
+    const url = new URL(req.originalUrl, 'http://localhost');
+    url.searchParams.delete('v');
+    const query = url.searchParams.toString();
+    res.setHeader('Cache-Control', 'no-store, max-age=0');
+    res.redirect(301, '/nonogram/' + (query ? `?${query}` : ''));
+});
+
+app.get('/nonogram/', (req, res) => {
+    if (stripNonogramVersionQuery(req, res)) return;
     if (res.locals.isAuthenticated) {
         req.session.csrfToken = req.session.csrfToken || crypto.randomBytes(32).toString('hex');
         res.locals.csrfToken = req.session.csrfToken;
@@ -175,8 +197,14 @@ app.get(['/nonogram', '/nonogram/'], (req, res) => {
 });
 
 app.get('/nonogram/index.html', (req, res) => {
-    const query = req.originalUrl.includes('?') ? req.originalUrl.slice(req.originalUrl.indexOf('?')) : '';
-    res.redirect(301, '/nonogram/' + query);
+    const url = new URL(req.originalUrl, 'http://localhost');
+    url.searchParams.delete('v');
+    const query = url.searchParams.toString();
+    res.redirect(301, '/nonogram/' + (query ? `?${query}` : ''));
+});
+
+app.use('/img/game/raw', (req, res) => {
+    res.status(404).type('text/plain').send('Not found');
 });
 
 app.use(express.static(path.join(__dirname, 'public'), {

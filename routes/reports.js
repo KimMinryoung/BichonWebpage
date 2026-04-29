@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cache = require('../config/report-cache');
 const seo = require('../utils/seo');
+const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
@@ -62,7 +63,7 @@ router.post('/cache/clear', async (req, res) => {
 // 리포트 목록 — public: research only. admin: research + task reports.
 router.get('/', async (req, res) => {
     const isAdmin = !!req.session.isAuthenticated;
-    const currentPage = parseInt(req.query.page) || 1;
+    const currentPage = clampInteger(req.query.page, { fallback: 1, min: 1, max: 1000 });
     const pagePath = currentPage > 1 ? `/reports?page=${currentPage}` : '/reports';
     try {
         const offset = (currentPage - 1) * REPORTS_PER_PAGE;
@@ -76,9 +77,9 @@ router.get('/', async (req, res) => {
             if (cached) {
                 taskData = cached;
             } else {
-                const response = await fetch(
+                const response = await fetchWithTimeout(
                     `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`,
-                    { headers: { 'X-Admin-Key': ADMIN_KEY } }
+                    { headers: { 'X-Admin-Key': ADMIN_KEY }, timeoutMs: 5000 }
                 );
                 if (!response.ok) throw new Error(`API ${response.status}`);
 
@@ -107,7 +108,7 @@ router.get('/', async (req, res) => {
         if (!researchFiles) {
             researchFiles = [];
             try {
-                const rRes = await fetch(`${CHAT_API_URL}/research?lang=${lang}`);
+                const rRes = await fetchWithTimeout(`${CHAT_API_URL}/research?lang=${lang}`, { timeoutMs: 5000 });
                 if (rRes.ok) {
                     const rData = await rRes.json();
                     researchFiles = (rData.files || []).sort((a, b) => b.modified_at - a.modified_at);
@@ -123,7 +124,7 @@ router.get('/', async (req, res) => {
         if (!pagesList) {
             pagesList = [];
             try {
-                const pRes = await fetch(`${CHAT_API_URL}/pages?lang=${lang}`);
+                const pRes = await fetchWithTimeout(`${CHAT_API_URL}/pages?lang=${lang}`, { timeoutMs: 5000 });
                 if (pRes.ok) {
                     const pData = await pRes.json();
                     pagesList = pData.items || [];
@@ -206,7 +207,7 @@ router.get('/research/:filename', async (req, res) => {
             });
         }
 
-        const response = await fetch(`${CHAT_API_URL}/research/${encodeURIComponent(filename)}?lang=${lang}`);
+        const response = await fetchWithTimeout(`${CHAT_API_URL}/research/${encodeURIComponent(filename)}?lang=${lang}`, { timeoutMs: 5000 });
         if (!response.ok) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',
@@ -266,8 +267,9 @@ router.get('/:id', async (req, res) => {
             });
         }
 
-        const response = await fetch(`${CHAT_API_URL}/reports/${id}`, {
-            headers: { 'X-Admin-Key': ADMIN_KEY }
+        const response = await fetchWithTimeout(`${CHAT_API_URL}/reports/${id}`, {
+            headers: { 'X-Admin-Key': ADMIN_KEY },
+            timeoutMs: 5000
         });
         if (!response.ok) {
             return res.status(404).render('layouts/main', {

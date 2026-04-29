@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const seo = require('../utils/seo');
+const { fetchWithTimeout } = require('../utils/http');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 
@@ -19,7 +20,7 @@ router.get('/:slug', async (req, res) => {
     const pagePath = `/p/${slug}`;
     try {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        const response = await fetch(`${CHAT_API_URL}/pages/${encodeURIComponent(slug)}?lang=${lang}`);
+        const response = await fetchWithTimeout(`${CHAT_API_URL}/pages/${encodeURIComponent(slug)}?lang=${lang}`, { timeoutMs: 5000 });
         if (!response.ok) {
             return res.status(404).render('layouts/main', {
                 pageTitle: '404',
