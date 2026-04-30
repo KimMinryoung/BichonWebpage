@@ -75,16 +75,16 @@
                     <a href="/reports" class="btn btn-small"><%= strings.home.viewAll %></a>
                 </div>
                 <ul class="post-list">
-                    <% recentResearch.forEach(file => { %>
+                    <% recentResearch.forEach(item => { %>
                         <li class="post-item">
-                            <h2><a href="/reports/research/<%= encodeURIComponent(file.filename.replace(/\.md$/, '')) %>"><%= file.title || file.filename %></a></h2>
-                            <% if (file.modified_at) { %>
+                            <h2><a href="<%= item.href %>"><%= item.title %></a></h2>
+                            <% if (item.modified) { %>
                                 <div class="post-meta">
-                                    <time class="local-date" datetime="<%= new Date(file.modified_at * 1000).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                                    <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                                 </div>
                             <% } %>
-                            <% if (file.excerpt) { %>
-                                <p class="post-excerpt"><%= file.excerpt %></p>
+                            <% if (item.summary) { %>
+                                <p class="post-excerpt"><%= item.summary %></p>
                             <% } %>
                         </li>
                     <% }) %>

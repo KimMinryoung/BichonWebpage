@@ -29,6 +29,37 @@ function localizedRecord(row, lang) {
     };
 }
 
+async function loadRecentReportItems(lang) {
+    const [researchResult, pagesResult] = await Promise.allSettled([
+        researchStore.listResearch(lang, { limit: RECENT_LIMIT }),
+        (async () => {
+            let pages = await reportCache.getPagesList(lang);
+            if (!pages) {
+                pages = await pageStore.listPages(lang);
+                await reportCache.setPagesList(pages, lang);
+            }
+            return pages;
+        })(),
+    ]);
+    const researchFiles = researchResult.status === 'fulfilled' ? researchResult.value : [];
+    const pagesList = pagesResult.status === 'fulfilled' ? pagesResult.value : [];
+
+    return [
+        ...researchFiles.map(file => ({
+            title: file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' '),
+            href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
+            modified: (file.modified_at || 0) * 1000,
+            summary: file.excerpt,
+        })),
+        ...pagesList.map(page => ({
+            title: page.title,
+            href: `/p/${page.slug}`,
+            modified: page.updated_at ? new Date(page.updated_at).getTime() : 0,
+            summary: page.summary,
+        })),
+    ].sort((a, b) => b.modified - a.modified).slice(0, RECENT_LIMIT);
+}
+
 // Homepage
 router.get('/', async (req, res) => {
     try {
@@ -38,7 +69,7 @@ router.get('/', async (req, res) => {
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             (async () => {
-                return researchStore.listResearch(lang, { limit: RECENT_LIMIT });
+                return loadRecentReportItems(lang);
             })(),
             (async () => {
                 return hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0, lang });
@@ -52,7 +83,7 @@ router.get('/', async (req, res) => {
 
         const indexItems = [
             ...recentPosts.map(post => ({ title: post.title, href: `/post/${post.id}` })),
-            ...recentResearch.map(file => ({ title: file.title || file.filename, href: `/reports/research/${file.filename.replace(/\.md$/, '')}` })),
+            ...recentResearch.map(item => ({ title: item.title, href: item.href })),
             ...recentHub.map(item => ({ title: item.title, href: `/hub/${item.slug}` })),
             ...recentDiaries.map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` })),
         ];
