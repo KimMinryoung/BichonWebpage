@@ -13,6 +13,7 @@ FRONTEND_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONTAINER_NAME="leninbot-frontend"
 IMAGE_NAME="leninbot-frontend"
 NETWORK="leninbot_default"
+REVISION_LABEL="com.cyber-lenin.frontend.git-revision"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -49,27 +50,40 @@ done
 
 cd "$FRONTEND_DIR"
 
-# 1. Check for changes
+# 1. Check source and deployed revisions
 git fetch origin
 LOCAL=$(git rev-parse HEAD)
 REMOTE=$(git rev-parse origin/master)
-
-if [[ "$LOCAL" == "$REMOTE" && "$FORCE_RESTART" -eq 0 ]]; then
-    log "Already up-to-date ($LOCAL). Use --restart to force."
-    exit 0
-fi
 
 if [[ "$LOCAL" != "$REMOTE" ]]; then
     log "Changes detected: $LOCAL -> $REMOTE"
     git log "$LOCAL..$REMOTE" --oneline
     git pull origin master
+    LOCAL=$(git rev-parse HEAD)
 else
-    log "No new commits, but --restart requested."
+    log "Local source is up-to-date with origin/master ($LOCAL)."
+fi
+
+DEPLOYED=$(docker inspect -f "{{ index .Config.Labels \"$REVISION_LABEL\" }}" "$CONTAINER_NAME" 2>/dev/null || true)
+
+if [[ "$FORCE_RESTART" -eq 0 && "$LOCAL" == "$DEPLOYED" ]]; then
+    log "Already deployed ($LOCAL). Use --restart to force."
+    exit 0
+fi
+
+if [[ -z "$DEPLOYED" ]]; then
+    warn "No deployed revision label found; rebuilding ${LOCAL}."
+elif [[ "$LOCAL" != "$DEPLOYED" ]]; then
+    log "Deploying newer local revision: $DEPLOYED -> $LOCAL"
+else
+    log "Revision $LOCAL is already deployed, but --restart requested."
 fi
 
 # 2. Build image
 log "Building Docker image..."
-docker build -t "$IMAGE_NAME" .
+docker build \
+    --label "$REVISION_LABEL=$LOCAL" \
+    -t "$IMAGE_NAME" .
 
 # 3. Recreate container
 log "Recreating container..."
@@ -78,6 +92,7 @@ docker rm "$CONTAINER_NAME" 2>/dev/null || true
 
 docker run -d \
     --name "$CONTAINER_NAME" \
+    --label "$REVISION_LABEL=$LOCAL" \
     --add-host=host.docker.internal:host-gateway \
     -p 127.0.0.1:3000:3000 \
     --restart unless-stopped \
