@@ -338,12 +338,20 @@ app.get('/favicon.ico', (req, res) => {
     res.redirect(301, 'https://assets.cyber-lenin.com/favicon.ico');
 });
 
+app.get(['/apple-touch-icon.png', '/apple-touch-icon-precomposed.png'], (req, res) => {
+    res.redirect(301, 'https://assets.cyber-lenin.com/apple-touch-icon.png');
+});
+
 app.get('/img/og-image.jpg', (req, res) => {
     res.redirect(301, 'https://assets.cyber-lenin.com/og-image.jpg');
 });
 
 app.get('/img/og-image.png', (req, res) => {
     res.redirect(301, 'https://assets.cyber-lenin.com/og-image.jpg');
+});
+
+app.get('/reports/research/setlog-privacy-audit', (req, res) => {
+    res.status(410).type('text/plain').send('Gone');
 });
 
 app.use('/img/game/raw', (req, res) => {
