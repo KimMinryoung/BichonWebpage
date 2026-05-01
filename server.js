@@ -155,7 +155,7 @@ app.use(helmet({
             scriptSrc: ["'self'", 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com', "'unsafe-inline'", "'unsafe-eval'"],
             workerSrc: ["'self'", 'blob:'],
             styleSrc: ["'self'", "'unsafe-inline'"],
-            imgSrc: ["'self'", 'data:'],
+            imgSrc: ["'self'", 'data:', 'https://assets.cyber-lenin.com'],
             connectSrc: ["'self'"],
             fontSrc: ["'self'"],
             objectSrc: ["'none'"],
@@ -332,6 +332,18 @@ app.get('/nonogram/index.html', (req, res) => {
     url.searchParams.delete('v');
     const query = url.searchParams.toString();
     res.redirect(301, '/nonogram/' + (query ? `?${query}` : ''));
+});
+
+app.get('/favicon.ico', (req, res) => {
+    res.redirect(301, 'https://assets.cyber-lenin.com/favicon.ico');
+});
+
+app.get('/img/og-image.jpg', (req, res) => {
+    res.redirect(301, 'https://assets.cyber-lenin.com/og-image.jpg');
+});
+
+app.get('/img/og-image.png', (req, res) => {
+    res.redirect(301, 'https://assets.cyber-lenin.com/og-image.jpg');
 });
 
 app.use('/img/game/raw', (req, res) => {
