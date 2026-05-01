@@ -13,6 +13,7 @@ FRONTEND_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONTAINER_NAME="leninbot-frontend"
 IMAGE_NAME="leninbot-frontend"
 NETWORK="leninbot_default"
+IPV6_NETWORK="leninbot_ipv6"
 REVISION_LABEL="com.cyber-lenin.frontend.git-revision"
 
 RED='\033[0;31m'
@@ -102,6 +103,12 @@ docker run -d \
 
 # Connect to leninbot network for Redis access
 docker network connect "$NETWORK" "$CONTAINER_NAME" 2>/dev/null || true
+
+# Connect to IPv6-enabled network for Supabase direct DB access.
+if ! docker network inspect "$IPV6_NETWORK" > /dev/null 2>&1; then
+    docker network create --ipv6 --subnet fd00:dead:beef:2::/64 "$IPV6_NETWORK" > /dev/null
+fi
+docker network connect "$IPV6_NETWORK" "$CONTAINER_NAME" 2>/dev/null || true
 
 # 4. Cleanup
 docker image prune -f > /dev/null

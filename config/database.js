@@ -1,12 +1,18 @@
 const { Pool } = require('pg');
 
+function intFromEnv(name, fallback) {
+    const value = Number.parseInt(process.env[name], 10);
+    return Number.isFinite(value) && value > 0 ? value : fallback;
+}
+
 const pool = new Pool({
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 5432,
     user: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_NAME || 'bichon_website',
-    max: 10,
+    application_name: process.env.DB_APPLICATION_NAME || 'leninbot-frontend',
+    max: intFromEnv('DB_POOL_MAX', 15),
     ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
 
@@ -16,7 +22,13 @@ pool.on('error', (err) => {
     console.error('[DB Connection Error] Error code:', err.code);
 });
 
-pool.on('connect', () => {
+pool.on('connect', (client) => {
+    client.query(
+        'SELECT set_config($1, $2, false)',
+        ['application_name', process.env.DB_APPLICATION_NAME || 'leninbot-frontend']
+    ).catch((err) => {
+        console.error('[DB Connection Error] Failed to set application_name:', err.message);
+    });
     console.debug('[DB Connection] Successfully connected to database');
 });
 
