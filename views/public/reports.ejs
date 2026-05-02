@@ -29,6 +29,8 @@
                                 <div class="post-meta">
                                     <% if (item.type === 'page') { %>
                                         <span class="post-type"><%= lang === 'ko' ? '페이지' : 'Page' %></span>
+                                    <% } else if (item.type === 'private') { %>
+                                        <span class="post-type"><%= lang === 'ko' ? '비공개' : 'Private' %></span>
                                     <% } else if (item.size) { %>
                                         <span class="file-size"><%= (item.size / 1024).toFixed(1) %> KB</span>
                                     <% } %>

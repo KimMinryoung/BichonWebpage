@@ -10,6 +10,9 @@
 
     <div class="container">
         <article class="post-content">
+            <% if (typeof isPrivate !== 'undefined' && isPrivate) { %>
+                <div class="report-task-label"><%= lang === 'ko' ? '비공개 보고서' : 'Private report' %></div>
+            <% } %>
             <h1><%= pageTitle %></h1>
             <div class="post-meta">
                 <a href="<%= markdownUrl %>">Markdown</a>

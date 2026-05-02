@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cache = require('../config/report-cache');
+const db = require('../config/database');
 const researchStore = require('../config/research-store');
 const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
@@ -21,6 +22,83 @@ function researchHtmlBody(data, markdown) {
     return sanitizeRich(html);
 }
 
+function timestampSeconds(value) {
+    if (!value) return 0;
+    const time = new Date(value).getTime();
+    return Number.isFinite(time) ? Math.floor(time / 1000) : 0;
+}
+
+function stripMarkdown(content) {
+    return String(content || '')
+        .replace(/^#\s+.+$/m, '')
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
+        .replace(/`([^`]+)`/g, '$1')
+        .replace(/^\s*(작성자|작성일|Author|Date)\s*:.*$/gim, '')
+        .replace(/^\s*>.*$/gm, '')
+        .replace(/^#{1,6}\s+/gm, '')
+        .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/^[-*+]\s+/gm, '')
+        .replace(/^\d+\.\s+/gm, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function excerpt(content, limit = 220) {
+    const text = stripMarkdown(content);
+    return text.length > limit ? text.substring(0, limit) + '...' : text;
+}
+
+function privateReportFromRow(row, includeContent = false) {
+    if (!row) return null;
+    const markdown = row.markdown || '';
+    const data = {
+        id: row.id,
+        slug: row.slug,
+        title: row.title || row.slug,
+        summary: row.summary || '',
+        excerpt: row.summary || (markdown ? excerpt(markdown) : ''),
+        size: row.markdown_size || Buffer.byteLength(markdown, 'utf8'),
+        modified_at: timestampSeconds(row.updated_at || row.created_at),
+        created_at: row.created_at,
+        updated_at: row.updated_at,
+        content_sha256: row.content_sha256,
+        source_task_id: row.source_task_id,
+        published_research_id: row.published_research_id,
+        private: true,
+    };
+    if (includeContent) {
+        data.content = markdown;
+        data.markdown = markdown;
+    }
+    return data;
+}
+
+async function listPrivateReports() {
+    const { rows } = await db.query(
+        `SELECT id, slug, title, summary, source_task_id, published_research_id,
+                content_sha256, created_at, updated_at,
+                OCTET_LENGTH(markdown) AS markdown_size
+           FROM private_reports
+          ORDER BY updated_at DESC, id DESC
+          LIMIT 200`
+    );
+    return rows.map(row => privateReportFromRow(row, false));
+}
+
+async function getPrivateReport(slug) {
+    const { rows } = await db.query(
+        `SELECT id, slug, title, summary, markdown, source_task_id,
+                published_research_id, content_sha256, created_at, updated_at
+           FROM private_reports
+          WHERE slug = $1
+          LIMIT 1`,
+        [slug]
+    );
+    return privateReportFromRow(rows[0], true);
+}
+
 function renderResearch(res, { filename, slug, pagePath, data }) {
     const markdown = researchMarkdown(data);
     const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
@@ -29,12 +107,14 @@ function renderResearch(res, { filename, slug, pagePath, data }) {
 
     return res.render('public/research-view', {
         filename,
+        isPrivate: Boolean(data.private),
         markdown: stripFirstHeading(markdown),
         htmlBody: researchHtmlBody(data, markdown),
         markdownUrl: `${pagePath}.md`,
         pageTitle: title,
         pageDescription,
         pagePath,
+        robotsMeta: data.private ? 'noindex, nofollow' : undefined,
         ogType: 'article',
         jsonLd: seo.pageJsonLd({
             type: 'Article',
@@ -62,6 +142,10 @@ router.post('/cache/clear', async (req, res) => {
     res.json({ cleared: true });
 });
 
+router.get(['/private', '/admin/private-reports'], (req, res) => {
+    res.redirect('/reports');
+});
+
 // 리포트 목록 — public: research only. admin: research + task reports.
 router.get('/', async (req, res) => {
     const isAdmin = !!req.session.isAuthenticated;
@@ -75,30 +159,34 @@ router.get('/', async (req, res) => {
             reports: [], currentPage: 1, totalPages: 0, paginationBase: '/reports?page='
         };
         if (isAdmin) {
-            const cached = await cache.getList(currentPage);
-            if (cached) {
-                taskData = cached;
-            } else {
-                const response = await fetchWithTimeout(
-                    `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`,
-                    { headers: { 'X-Admin-Key': ADMIN_KEY }, timeoutMs: 5000 }
-                );
-                if (!response.ok) throw new Error(`API ${response.status}`);
+            try {
+                const cached = await cache.getList(currentPage);
+                if (cached) {
+                    taskData = cached;
+                } else {
+                    const response = await fetchWithTimeout(
+                        `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`,
+                        { headers: { 'X-Admin-Key': ADMIN_KEY }, timeoutMs: 5000 }
+                    );
+                    if (!response.ok) throw new Error(`API ${response.status}`);
 
-                const data = await response.json();
-                const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
+                    const data = await response.json();
+                    const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
 
-                for (const r of data.reports || []) {
-                    await cache.setReport(r);
+                    for (const r of data.reports || []) {
+                        await cache.setReport(r);
+                    }
+
+                    taskData = {
+                        reports: data.reports || [],
+                        currentPage,
+                        totalPages,
+                        paginationBase: '/reports?page='
+                    };
+                    await cache.setList(currentPage, taskData);
                 }
-
-                taskData = {
-                    reports: data.reports || [],
-                    currentPage,
-                    totalPages,
-                    paginationBase: '/reports?page='
-                };
-                await cache.setList(currentPage, taskData);
+            } catch (e) {
+                console.error('Error loading task reports:', e);
             }
         }
 
@@ -113,6 +201,15 @@ router.get('/', async (req, res) => {
             } catch (e) {
                 console.error('Error loading research list:', e);
                 researchFiles = [];
+            }
+        }
+
+        let privateReports = [];
+        if (isAdmin) {
+            try {
+                privateReports = await listPrivateReports();
+            } catch (e) {
+                console.error('Error loading private reports:', e);
             }
         }
 
@@ -131,6 +228,15 @@ router.get('/', async (req, res) => {
         // Unified research-tab feed: research files + static pages, sorted by date desc.
         // `summary` is the unified preview field — the EJS template clamps it to 3 lines via CSS.
         const researchItems = [
+            ...privateReports.map(r => ({
+                type: 'private',
+                title: r.title || r.slug,
+                href: `/reports/private/${r.slug}`,
+                modified: (r.modified_at || 0) * 1000,
+                size: r.size,
+                summary: r.excerpt,
+                private: true,
+            })),
             ...researchFiles.map(f => ({
                 type: 'research',
                 title: f.title || f.filename.replace(/\.md$/, '').replace(/_/g, ' '),
@@ -154,6 +260,7 @@ router.get('/', async (req, res) => {
             pagePath,
             pageTitle: '사이버-레닌 보고서',
             pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
+            robotsMeta: isAdmin ? 'noindex, nofollow' : undefined,
             jsonLd: seo.itemListJsonLd(researchItems.map(item => ({ title: item.title, href: item.href }))),
             showTasks: isAdmin
         });
@@ -164,6 +271,50 @@ router.get('/', async (req, res) => {
             pageTitle: '사이버-레닌 보고서',
             pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
             showTasks: isAdmin
+        });
+    }
+});
+
+// Private research/report detail — admin-only, integrated into the public reports viewer.
+router.get('/private/:slug', async (req, res) => {
+    if (!req.session.isAuthenticated) {
+        return res.status(404).render('layouts/main', {
+            pageTitle: '404',
+            body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/reports">${res.locals.strings.public.backToList}</a></div>`
+        });
+    }
+    try {
+        res.setHeader('Cache-Control', 'no-store');
+        const requestedMarkdownFile = req.params.slug.endsWith('.md');
+        const wantsMarkdown = requestedMarkdownFile || req.query.format === 'markdown' || req.query.format === 'md';
+        const slug = req.params.slug.replace(/\.md$/, '');
+        const pagePath = `/reports/private/${slug}`;
+        const data = await getPrivateReport(slug);
+        if (!data) {
+            return res.status(404).render('layouts/main', {
+                pageTitle: '404',
+                robotsMeta: 'noindex, nofollow',
+                body: '<div class="box"><h1>404</h1><p>비공개 보고서를 찾을 수 없습니다.</p><a href="/reports">목록으로</a></div>'
+            });
+        }
+
+        const markdown = researchMarkdown(data);
+        if (wantsMarkdown) {
+            res.setHeader('Content-Disposition', `inline; filename="${slug}.md"`);
+            return res.type('text/markdown; charset=utf-8').send(markdown);
+        }
+        return renderResearch(res, {
+            filename: `${slug}.md`,
+            slug,
+            pagePath,
+            data,
+        });
+    } catch (error) {
+        console.error('Error fetching private report:', error);
+        res.status(500).render('layouts/main', {
+            pageTitle: 'Error',
+            robotsMeta: 'noindex, nofollow',
+            body: '<div class="box"><h1>Error</h1><p>비공개 보고서를 불러올 수 없습니다.</p><a href="/reports">목록으로</a></div>'
         });
     }
 });

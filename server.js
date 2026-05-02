@@ -404,6 +404,8 @@ const pageRoutes = require('./routes/pages');
 app.use('/', publicRoutes);
 app.use('/auth', authRoutes);
 app.use('/admin/webauthn', requireAdminIp, webauthnRoutes);
+app.get('/private', (req, res) => res.redirect('/reports'));
+app.get('/admin/private-reports', requireAdminIp, (req, res) => res.redirect('/reports'));
 app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
