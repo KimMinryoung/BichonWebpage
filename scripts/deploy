@@ -65,6 +65,13 @@ else
     log "Local source is up-to-date with origin/master ($LOCAL)."
 fi
 
+if [[ -n "$(git status --porcelain)" ]]; then
+    err "Working tree has uncommitted changes; refusing to deploy a dirty tree."
+    err "Commit and push the changes first, then run deploy again."
+    git status --short >&2
+    exit 1
+fi
+
 DEPLOYED=$(docker inspect -f "{{ index .Config.Labels \"$REVISION_LABEL\" }}" "$CONTAINER_NAME" 2>/dev/null || true)
 
 if [[ "$FORCE_RESTART" -eq 0 && "$LOCAL" == "$DEPLOYED" ]]; then
