@@ -1244,10 +1244,17 @@ footer .footer-tagline {
     border: 1px solid var(--border);
     color: var(--text-muted);
     font-size: 0.9em;
-    font-style: italic;
+    font-style: normal;
     padding: 10px 15px;
     line-height: 1.4;
     border-radius: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.chat-message-warning {
+    border-color: var(--accent-red);
+    color: var(--text-secondary);
 }
 
 .chat-message-log p,

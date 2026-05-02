@@ -124,6 +124,7 @@ app.use('/api/proxy', createProxyMiddleware({
     pathRewrite: { '^/api/proxy': '' },
     on: {
         proxyReq: (proxyReq, req) => {
+            proxyReq.removeHeader('X-User-Fingerprints');
             if (Array.isArray(req.userFingerprints) && req.userFingerprints.length) {
                 proxyReq.setHeader('X-User-Fingerprints', req.userFingerprints.join(','));
             }

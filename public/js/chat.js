@@ -366,10 +366,22 @@
                         
                         if (data.type === 'log') {
                             // 새로운 로그 조각을 기존 로그에 추가
-                            accumulatedLog += data.content +"\n";
+                            accumulatedLog += data.content + "\n\n";
                             if (logDiv && logDiv.parentNode) logDiv.textContent = accumulatedLog;
 
                             // 스크롤 조절
+                            chatBox.scrollTop = chatBox.scrollHeight;
+                        } else if (data.type === 'status' || data.type === 'warning') {
+                            var prefix = data.type === 'warning' ? '주의: ' : '';
+                            accumulatedLog += prefix + data.content + "\n\n";
+                            if (logDiv && logDiv.parentNode) {
+                                logDiv.textContent = accumulatedLog;
+                            } else if (!aiDiv) {
+                                logDiv = appendMessage(accumulatedLog, 'chat-message-log');
+                            } else {
+                                var note = appendMessage(prefix + data.content, 'chat-message-log');
+                                if (data.type === 'warning') note.classList.add('chat-message-warning');
+                            }
                             chatBox.scrollTop = chatBox.scrollHeight;
                         } else if (data.type === 'chunk') {
                             // 첫 조각 도착 시 로그창 제거하고 답변 칸 생성
@@ -395,6 +407,10 @@
                             }
                             if (document.visibilityState === 'hidden') {
                                 document.title = '💬 답변 도착 — ' + originalTitle;
+                            }
+                            if (data.truncated) {
+                                var warn = appendMessage('답변이 모델 출력 한도에서 멈춰 마지막 부분이 미완성일 수 있습니다.', 'chat-message-log');
+                                warn.classList.add('chat-message-warning');
                             }
                         } else if (data.type === 'error') {
                             if (logDiv) logDiv.remove();

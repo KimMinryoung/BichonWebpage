@@ -30,7 +30,7 @@ const signupLimiter = buildLimiter({
 
 const chatProxyLimiter = buildLimiter({
     windowMs: intEnv('RATE_LIMIT_CHAT_WINDOW_MS', 60 * 1000),
-    max: intEnv('RATE_LIMIT_CHAT_MAX', 60),
+    max: intEnv('RATE_LIMIT_CHAT_MAX', 10),
     message: 'too many chat requests',
 });
 
