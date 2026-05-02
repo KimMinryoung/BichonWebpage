@@ -77,10 +77,12 @@ function privateReportFromRow(row, includeContent = false) {
 
 async function listPrivateReports() {
     const { rows } = await db.query(
-        `SELECT id, slug, title, summary, source_task_id, published_research_id,
-                content_sha256, created_at, updated_at,
+        `SELECT id, slug, title, summary, source_task_id,
+                NULL::BIGINT AS published_research_id,
+                content_sha256, published_at AS created_at, updated_at,
                 OCTET_LENGTH(markdown) AS markdown_size
-           FROM private_reports
+           FROM research_documents
+          WHERE status = 'private'
           ORDER BY updated_at DESC, id DESC
           LIMIT 200`
     );
@@ -90,9 +92,10 @@ async function listPrivateReports() {
 async function getPrivateReport(slug) {
     const { rows } = await db.query(
         `SELECT id, slug, title, summary, markdown, source_task_id,
-                published_research_id, content_sha256, created_at, updated_at
-           FROM private_reports
-          WHERE slug = $1
+                NULL::BIGINT AS published_research_id,
+                content_sha256, published_at AS created_at, updated_at
+           FROM research_documents
+          WHERE slug = $1 AND status = 'private'
           LIMIT 1`,
         [slug]
     );
@@ -148,7 +151,7 @@ router.get(['/private', '/admin/private-reports'], (req, res) => {
 
 // 리포트 목록 — public: research only. admin: research + task reports.
 router.get('/', async (req, res) => {
-    const isAdmin = !!req.session.isAuthenticated;
+    const isAdmin = !!req.session.adminUser;
     const currentPage = clampInteger(req.query.page, { fallback: 1, min: 1, max: 1000 });
     const pagePath = currentPage > 1 ? `/reports?page=${currentPage}` : '/reports';
     try {
@@ -277,7 +280,7 @@ router.get('/', async (req, res) => {
 
 // Private research/report detail — admin-only, integrated into the public reports viewer.
 router.get('/private/:slug', async (req, res) => {
-    if (!req.session.isAuthenticated) {
+    if (!req.session.adminUser) {
         return res.status(404).render('layouts/main', {
             pageTitle: '404',
             body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/reports">${res.locals.strings.public.backToList}</a></div>`
@@ -389,7 +392,7 @@ router.get('/research/:filename', async (req, res) => {
 
 // 리포트 개별 조회 — admin-only
 router.get('/:id', async (req, res) => {
-    if (!req.session.isAuthenticated) {
+    if (!req.session.adminUser) {
         return res.status(404).render('layouts/main', {
             pageTitle: '404',
             body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/reports">${res.locals.strings.public.backToList}</a></div>`
