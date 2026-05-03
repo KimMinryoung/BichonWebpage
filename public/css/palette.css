@@ -15,6 +15,8 @@
   --clr-red: #cf222e;
   --clr-red-deep: #2d1115;
   --clr-accent: #214d2e;
+  --clr-khaki-green: #8f9f5f;
+  --clr-khaki-green-bright: #b6c77a;
 
   /* Dark theme, default. */
   --bg-canvas: var(--clr-black);
@@ -26,8 +28,8 @@
   --text-primary: var(--clr-white);
   --text-secondary: var(--clr-cream);
   --text-muted: var(--clr-muted);
-  --link: var(--clr-accent);
-  --link-hover: var(--clr-accent);
+  --link: var(--clr-khaki-green);
+  --link-hover: var(--clr-khaki-green-bright);
   --accent: var(--clr-accent);
   --accent-green: var(--clr-accent);
   --accent-red: var(--clr-red);
