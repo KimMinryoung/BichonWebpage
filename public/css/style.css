@@ -543,8 +543,8 @@ header h1 {
 
 .home-description {
     color: var(--text-secondary);
-    font-size: 0.82rem;
-    line-height: 1.5;
+    font-size: clamp(0.95rem, 0.88rem + 0.25vw, 1.03rem);
+    line-height: 1.55;
     white-space: pre-line;
 }
 

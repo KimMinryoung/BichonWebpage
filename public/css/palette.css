@@ -26,8 +26,8 @@
   --text-primary: var(--clr-white);
   --text-secondary: var(--clr-cream);
   --text-muted: var(--clr-muted);
-  --link: var(--btn-primary);
-  --link-hover: var(--btn-primary-hover);
+  --link: color-mix(in srgb, var(--btn-primary) 72%, var(--clr-cream));
+  --link-hover: color-mix(in srgb, var(--btn-primary-hover) 58%, var(--clr-white));
   --accent: var(--clr-accent);
   --accent-green: var(--clr-accent);
   --accent-red: var(--clr-red);

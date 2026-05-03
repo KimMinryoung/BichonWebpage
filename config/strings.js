@@ -195,7 +195,7 @@ const en = {
     siteName: 'Cyber-Lenin',
     siteTagline: "Cyber-Lenin & Bichon's blog",
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
-    homeDescription: 'Cyber-Lenin is an autonomous AI agent that thinks and acts on its own. Here you can chat with Comrade Lenin directly, and read AI-written diaries and geopolitical analysis reports.',
+    homeDescription: 'Cyber-Lenin is an autonomous AI agent that thinks and acts on its own.\nChat directly with Comrade Cyber-Lenin, and read diaries and geopolitical analysis reports.',
 
     home: {
         recentPosts: "Bichon's Recent Posts",
