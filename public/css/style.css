@@ -1,81 +1,3 @@
-/* ===== Theme Variables ===== */
-/* Component-level aliases, sourced from /css/palette.css raw tokens. */
-/* Dark (default) — GitHub Dark High Contrast */
-:root {
-    --bg-canvas: var(--clr-ink-0);
-    --bg-surface: var(--clr-ink-1);
-    --bg-surface-hover: var(--clr-ink-2);
-    --bg-inset: var(--clr-ink-0);
-    --border: var(--clr-line-on-ink);
-    --border-emphasis: var(--clr-line-on-ink-emphasis);
-    --text-primary: var(--clr-text-on-ink-hi);
-    --text-secondary: var(--clr-text-on-ink-mid);
-    --text-muted: var(--clr-text-on-ink-lo);
-    --link: var(--clr-blue-link-ink);
-    --link-hover: var(--clr-blue-accent-ink);
-    --accent-blue: var(--clr-blue-accent-ink);
-    --accent-green: var(--clr-green-accent-ink);
-    --accent-red: var(--clr-red-on-ink);
-    --btn-bg: var(--clr-ink-3);
-    --btn-hover: var(--clr-ink-4);
-    --btn-primary: var(--clr-blue-primary-ink);
-    --btn-primary-hover: var(--clr-blue-primary-ink-hi);
-    --btn-danger: var(--clr-red-on-ink);
-    --btn-danger-hover: var(--clr-red-on-ink-hover);
-    --nav-bg: var(--clr-ink-1);
-    --card-bg: var(--clr-ink-1);
-    --input-bg: var(--clr-ink-2);
-    --overlay: rgba(1, 4, 9, 0.8);
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    --code-bg: var(--clr-ink-2);
-    --success-bg: var(--clr-green-success-bg-ink);
-    --success-border: var(--clr-green-success-border-ink);
-    --success-text: var(--clr-green-success-text-ink);
-    --error-bg: var(--clr-red-error-bg-ink);
-    --error-border: var(--clr-red-error-border-ink);
-    --error-text: var(--clr-red-error-text-ink);
-    --focus-ring: rgba(31, 111, 235, 0.2);
-    color-scheme: dark;
-}
-
-/* Light — GitHub Light High Contrast */
-[data-theme="light"] {
-    --bg-canvas: var(--clr-paper-0);
-    --bg-surface: var(--clr-paper-1);
-    --bg-surface-hover: var(--clr-paper-3);
-    --bg-inset: var(--clr-paper-2);
-    --border: var(--clr-line-on-paper);
-    --border-emphasis: var(--clr-line-on-paper-emphasis);
-    --text-primary: var(--clr-text-on-paper-hi);
-    --text-secondary: var(--clr-text-on-paper-mid);
-    --text-muted: var(--clr-text-on-paper-lo);
-    --link: var(--clr-blue-link-paper);
-    --link-hover: var(--clr-blue-accent-paper);
-    --accent-blue: var(--clr-blue-accent-paper);
-    --accent-green: var(--clr-green-accent-paper);
-    --accent-red: var(--clr-red-on-paper);
-    --btn-bg: var(--clr-paper-4);
-    --btn-hover: var(--clr-paper-5);
-    --btn-primary: var(--clr-blue-accent-paper);
-    --btn-primary-hover: var(--clr-blue-accent-paper-hi);
-    --btn-danger: var(--clr-red-on-paper);
-    --btn-danger-hover: var(--clr-red-on-paper-hover);
-    --nav-bg: var(--clr-paper-0);
-    --card-bg: var(--clr-paper-0);
-    --input-bg: var(--clr-paper-1);
-    --overlay: rgba(31, 35, 40, 0.5);
-    --shadow: 0 1px 3px rgba(31, 35, 40, 0.12);
-    --code-bg: var(--clr-paper-2);
-    --success-bg: var(--clr-green-success-bg-paper);
-    --success-border: var(--clr-green-success-border-paper);
-    --success-text: var(--clr-green-accent-paper);
-    --error-bg: var(--clr-red-error-bg-paper);
-    --error-border: var(--clr-red-error-border-paper);
-    --error-text: var(--clr-red-on-paper);
-    --focus-ring: rgba(31, 111, 235, 0.2);
-    color-scheme: light;
-}
-
 /* ===== Reset ===== */
 * {
     margin: 0;
@@ -432,7 +354,7 @@ header h1 {
 .report-tab.active {
     background: var(--card-bg);
     color: var(--text-primary);
-    border-bottom: 1px solid var(--accent-blue);
+    border-bottom: 1px solid var(--accent);
 }
 
 .report-panel {
@@ -470,7 +392,7 @@ header h1 {
 }
 
 .toolbar-logo:hover {
-    color: var(--link);
+    color: var(--accent-red);
     text-decoration: none;
 }
 
@@ -546,6 +468,19 @@ header h1 {
     padding: 4px 8px;
     font-family: inherit;
     transition: color 0.15s;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-icon {
+    width: 17px;
+    height: 17px;
+    color: currentColor;
+    flex-shrink: 0;
 }
 
 .home-toolbar .theme-toggle:hover,
@@ -656,7 +591,7 @@ header h1 {
 }
 
 .home-card:hover::after {
-    color: var(--accent-blue);
+    color: var(--accent);
     transform: translate(4px, -50%);
 }
 
@@ -690,7 +625,7 @@ header h1 {
     border: 1px solid var(--border);
     border-bottom: none;
     border-left-width: 3px;
-    border-left-color: var(--accent-blue);
+    border-left-color: var(--accent);
     padding: 14px 20px;
 }
 
@@ -856,7 +791,7 @@ form {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-blue);
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
@@ -952,7 +887,7 @@ form {
 .stat-box .stat-number {
     font-size: 1.6rem;
     font-weight: bold;
-    color: var(--accent-blue);
+    color: var(--accent);
 }
 
 .stat-box .stat-label {
@@ -1298,7 +1233,7 @@ footer .footer-tagline {
 
 .chat-input-row input:focus {
     outline: none;
-    border-color: var(--accent-blue);
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
