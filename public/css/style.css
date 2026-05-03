@@ -723,7 +723,7 @@ header h1 {
 }
 
 .post-excerpt {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: 0.85rem;
     line-height: 1.55;
     display: -webkit-box;
