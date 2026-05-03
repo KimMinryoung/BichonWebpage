@@ -66,4 +66,5 @@ module.exports = {
     normalizeLanguage,
     inferLanguage,
     resolveLanguage,
+    languageCookieOptions,
 };

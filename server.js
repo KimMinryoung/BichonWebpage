@@ -14,7 +14,7 @@ const seo = require('./utils/seo');
 const crypto = require('crypto');
 const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
 const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
-const { normalizeLanguage, resolveLanguage } = require('./utils/language');
+const { normalizeLanguage, resolveLanguage, languageCookieOptions } = require('./utils/language');
 const { requireAdminIp } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -68,6 +68,12 @@ function isSessionFreeRequest(req) {
     return isPublicHtmlPath(req.path) && !hasSessionCookie(req);
 }
 
+function setDynamicLanguageCacheHeaders(res) {
+    res.vary('Cookie');
+    res.vary('Accept-Language');
+    res.setHeader('Cache-Control', 'private, no-cache, max-age=0, must-revalidate');
+}
+
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
 if (process.env.NODE_ENV === 'production') {
     app.set('trust proxy', 1);
@@ -82,6 +88,17 @@ app.set('views', path.join(__dirname, 'views'));
 // cookieParser + session must run before the backend proxy so logged-in
 // users' bound fingerprints can be stamped onto proxied LeninBot requests.
 app.use(cookieParser());
+app.use((req, res, next) => {
+    const requestedLang = normalizeLanguage(req.query && req.query.lang);
+    if (!requestedLang || (req.method !== 'GET' && req.method !== 'HEAD')) return next();
+
+    const url = new URL(req.originalUrl, 'http://localhost');
+    url.searchParams.delete('lang');
+    const query = url.searchParams.toString();
+    res.cookie('lang', requestedLang, languageCookieOptions(req));
+    setNoStore(res);
+    res.redirect(303, req.path + (query ? `?${query}` : ''));
+});
 const sessionMiddleware = session({
     store: new RedisStore({ client: redisClient, prefix: 'sess:' }),
     secret: process.env.SESSION_SECRET,
@@ -270,15 +287,11 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     if ((req.method === 'GET' || req.method === 'HEAD') && isCacheablePublicTextPath(req.path)) {
-        res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=300, stale-while-revalidate=3600');
+        setDynamicLanguageCacheHeaders(res);
         return next();
     }
     if ((req.method === 'GET' || req.method === 'HEAD') && isPublicHtmlPath(req.path) && !hasSessionCookie(req)) {
-        if (hasLanguageCookie(req)) {
-            res.setHeader('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=3600');
-        } else {
-            res.setHeader('Cache-Control', 'private, max-age=60, stale-while-revalidate=300');
-        }
+        setDynamicLanguageCacheHeaders(res);
         return next();
     }
     const isHtmlRequest = (req.method === 'GET' || req.method === 'HEAD')
@@ -287,7 +300,7 @@ app.use((req, res, next) => {
         && !req.path.startsWith('/admin')
         && !req.path.startsWith('/auth');
     if (isHtmlRequest && !res.locals.isAuthenticated) {
-        res.setHeader('Cache-Control', 'private, max-age=60, stale-while-revalidate=300');
+        setDynamicLanguageCacheHeaders(res);
     }
     next();
 });
