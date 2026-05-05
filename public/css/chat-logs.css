@@ -54,6 +54,7 @@
     word-break: break-word;
 }
 .log-answer {
+    display: none;
     background: var(--bg-surface);
     border-left: 3px solid var(--accent-green);
     padding: 10px 14px;
@@ -61,6 +62,26 @@
     border-radius: 0;
     white-space: pre-wrap;
     word-break: break-word;
+}
+.log-answer.open {
+    display: block;
+}
+.log-answer-toggle {
+    background: var(--btn-primary);
+    border: 1px solid var(--btn-primary);
+    color: var(--clr-cream-light);
+    padding: 6px 12px;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 0.82em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-family: inherit;
+}
+.log-answer-toggle:hover {
+    background: var(--btn-primary-hover);
+    border-color: var(--btn-primary-hover);
+    color: var(--clr-cream-light);
 }
 .log-label {
     font-size: 0.8em;

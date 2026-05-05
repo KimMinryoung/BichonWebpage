@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         filtered.forEach(function(log, i) {
             var routeClass = log.route === 'casual' ? 'route-casual' : 'route-vectorstore';
             var routeLabel = log.route === 'casual' ? '일상대화' : '진지한 대화';
+            var answerId = 'answer-' + log.id + '-' + i;
 
             html += '<div class="log-card">';
             html += '<div class="log-card-header">';
@@ -69,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
             html += '<div class="log-query">' + escapeHtml(log.user_query) + '</div>';
 
             html += '<div class="log-label">답변</div>';
-            html += '<div class="log-answer">' + escapeHtml(log.bot_answer) + '</div>';
+            html += '<button class="log-answer-toggle" data-answer-toggle="' + answerId + '" aria-expanded="false">답변 열기</button>';
+            html += '<div class="log-answer" id="' + answerId + '">' + escapeHtml(log.bot_answer) + '</div>';
 
             html += '<div class="log-meta">';
             html += '<span>이용 문헌: ' + (log.documents_count || 0) + '개</span>';
@@ -110,6 +112,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event delegation for dynamically created buttons
     document.addEventListener('click', function(e) {
+        var answerId = e.target.getAttribute('data-answer-toggle');
+        if (answerId) {
+            var answer = document.getElementById(answerId);
+            if (!answer) return;
+            var isOpen = answer.classList.toggle('open');
+            e.target.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            e.target.textContent = isOpen ? '답변 닫기' : '답변 열기';
+            return;
+        }
+
         var toggleId = e.target.getAttribute('data-toggle');
         if (toggleId) {
             document.getElementById(toggleId).classList.toggle('open');
