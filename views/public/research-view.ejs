@@ -24,21 +24,14 @@
                             <div class="research-series-label"><%= lang === 'ko' ? '연재' : 'Series' %></div>
                             <h2><%= seriesNav.title %></h2>
                         </div>
-                        <div class="research-series-step">
-                            <%= lang === 'ko' ? '전체 ' : '' %><%= seriesNav.items.length %><%= lang === 'ko' ? '회차' : ' episodes' %>
+                        <div class="research-series-actions">
+                            <% if (seriesNav.previous) { %>
+                                <a href="<%= seriesNav.previous.href %>">&larr; <%= lang === 'ko' ? '이전' : 'Prev' %></a>
+                            <% } %>
+                            <% if (seriesNav.next) { %>
+                                <a href="<%= seriesNav.next.href %>"><%= lang === 'ko' ? '다음' : 'Next' %> &rarr;</a>
+                            <% } %>
                         </div>
-                    </div>
-                    <div class="research-series-links">
-                        <% if (seriesNav.previous) { %>
-                            <a href="<%= seriesNav.previous.href %>">&larr; <%= lang === 'ko' ? '이전 회차' : 'Previous' %></a>
-                        <% } else { %>
-                            <span></span>
-                        <% } %>
-                        <% if (seriesNav.next) { %>
-                            <a href="<%= seriesNav.next.href %>"><%= lang === 'ko' ? '다음 회차' : 'Next' %> &rarr;</a>
-                        <% } else { %>
-                            <span></span>
-                        <% } %>
                     </div>
                     <ol class="research-series-list">
                         <% seriesNav.items.forEach(function(item) { %>
