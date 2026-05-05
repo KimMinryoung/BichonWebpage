@@ -102,7 +102,7 @@ async function getPrivateReport(slug) {
     return privateReportFromRow(rows[0], true);
 }
 
-function renderResearch(res, { filename, slug, pagePath, data }) {
+function renderResearch(res, { filename, slug, pagePath, data, seriesNav = null }) {
     const markdown = researchMarkdown(data);
     const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
     const descriptionSource = markdown || data.summary || data.excerpt || data.html_body || data.htmlBody || '';
@@ -114,6 +114,7 @@ function renderResearch(res, { filename, slug, pagePath, data }) {
         markdown: stripFirstHeading(markdown),
         htmlBody: researchHtmlBody(data, markdown),
         markdownUrl: `${pagePath}.md`,
+        seriesNav,
         pageTitle: title,
         pageDescription,
         pagePath,
@@ -136,6 +137,56 @@ function reportTitle(report) {
         if (match) return match[1];
     }
     return (report.content || `Report #${report.id}`).split('\n')[0].substring(0, 80);
+}
+
+function researchSeriesIdentity(item) {
+    const episode = Number(item && item.series_order);
+    if (!item || !item.series_slug || !Number.isInteger(episode) || episode < 1) return null;
+    return {
+        episode,
+        label: item.series_title || item.series_slug,
+        key: item.series_slug,
+    };
+}
+
+function buildResearchSeriesNav({ current, items, lang }) {
+    const currentIdentity = researchSeriesIdentity(current);
+    if (!currentIdentity) return null;
+
+    const seriesItems = (items || [])
+        .map(item => {
+            const identity = researchSeriesIdentity(item);
+            if (!identity || identity.key !== currentIdentity.key) return null;
+            const slug = item.slug || String(item.filename || '').replace(/\.md$/, '');
+            return {
+                title: item.title || slug.replace(/[-_]+/g, ' '),
+                href: `/reports/research/${slug}`,
+                episode: identity.episode,
+                modified: (item.modified_at || 0) * 1000,
+                current: slug === current.slug,
+            };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (a.episode - b.episode) || (a.modified - b.modified) || a.title.localeCompare(b.title, lang));
+
+    if (seriesItems.length < 2 || !seriesItems.some(item => item.current)) return null;
+
+    const currentIndex = seriesItems.findIndex(item => item.current);
+    return {
+        title: currentIdentity.label || (lang === 'en' ? 'Series' : '연재'),
+        items: seriesItems,
+        previous: currentIndex > 0 ? seriesItems[currentIndex - 1] : null,
+        next: currentIndex < seriesItems.length - 1 ? seriesItems[currentIndex + 1] : null,
+    };
+}
+
+async function researchSeriesNavFor(current, lang) {
+    let researchFiles = await cache.getResearchList(lang);
+    if (!researchFiles) {
+        researchFiles = await researchStore.listResearch(lang);
+        await cache.setResearchList(researchFiles, lang);
+    }
+    return buildResearchSeriesNav({ current, items: researchFiles, lang });
 }
 
 // POST /cache/clear — manual cache purge
@@ -331,6 +382,7 @@ router.get('/research/:filename', async (req, res) => {
         const slug = filename.replace(/\.md$/, '');
         const pagePath = `/reports/research/${slug}`;
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        let seriesNav = null;
 
         // Check file cache
         const cached = await cache.getResearch(filename, lang);
@@ -346,11 +398,15 @@ router.get('/research/:filename', async (req, res) => {
                 res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
                 return res.type('text/markdown; charset=utf-8').send(cachedMarkdown);
             }
+            const cachedMarkdown = researchMarkdown(cached);
+            const cachedTitle = cached.title || titleFromMarkdown(cachedMarkdown, slug.replace(/_/g, ' '));
+            seriesNav = await researchSeriesNavFor({ filename, slug, title: cachedTitle, ...cached }, lang);
             return renderResearch(res, {
                 filename,
                 slug,
                 pagePath,
-                data: cached,
+                data: { ...cached, title: cachedTitle },
+                seriesNav,
             });
         }
 
@@ -373,13 +429,18 @@ router.get('/research/:filename', async (req, res) => {
             html_body: data.html_body || data.htmlBody || '',
             summary: data.summary || data.excerpt || '',
             title,
+            series_slug: data.series_slug || '',
+            series_title: data.series_title || '',
+            series_order: data.series_order || null,
         }, lang);
+        seriesNav = await researchSeriesNavFor({ filename, slug, title, ...data }, lang);
 
         renderResearch(res, {
             filename,
             slug,
             pagePath,
             data: { ...data, title },
+            seriesNav,
         });
     } catch (error) {
         console.error('Error fetching research:', error);

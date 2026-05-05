@@ -18,3 +18,98 @@
 .report-task-details summary { color: var(--link); font-size: 0.85em; cursor: pointer; }
 .report-task-content { color: var(--text-secondary); font-size: 0.85em; white-space: pre-wrap; margin-top: 0.3em; padding-left: 0.5em; border-left: 1px solid var(--border); }
 .report-id { font-size: 0.65em; color: var(--text-muted); margin-right: 0.4em; vertical-align: middle; }
+
+.research-series-nav {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    margin: 18px 0 24px;
+    background: var(--bg-surface);
+}
+
+.research-series-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.research-series-label,
+.research-series-step {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+.research-series-header h2 {
+    font-size: 1rem;
+    line-height: 1.35;
+    margin: 2px 0 0;
+}
+
+.research-series-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+}
+
+.research-series-links a,
+.research-series-links span {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    color: var(--link);
+}
+
+.research-series-links a:last-child,
+.research-series-links span:last-child {
+    justify-content: flex-end;
+    border-left: 1px solid var(--border);
+    text-align: right;
+}
+
+.research-series-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.research-series-list li + li {
+    border-top: 1px solid var(--border);
+}
+
+.research-series-list a,
+.research-series-list span {
+    display: flex;
+    gap: 10px;
+    padding: 10px 14px;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.research-series-list a:hover {
+    background: var(--bg-surface-hover);
+    color: var(--link);
+    text-decoration: none;
+}
+
+.research-series-list li.current > span {
+    background: var(--bg-surface-hover);
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+.research-series-episode {
+    flex: 0 0 auto;
+    min-width: 2.2em;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 560px) {
+    .research-series-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

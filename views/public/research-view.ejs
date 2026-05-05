@@ -17,6 +17,48 @@
             <div class="post-meta">
                 <a href="<%= markdownUrl %>">Markdown</a>
             </div>
+            <% if (seriesNav && seriesNav.items && seriesNav.items.length > 1) { %>
+                <nav class="research-series-nav" aria-label="<%= lang === 'ko' ? '연재 회차' : 'Series episodes' %>">
+                    <div class="research-series-header">
+                        <div>
+                            <div class="research-series-label"><%= lang === 'ko' ? '연재' : 'Series' %></div>
+                            <h2><%= seriesNav.title %></h2>
+                        </div>
+                        <div class="research-series-step">
+                            <%= lang === 'ko' ? '전체 ' : '' %><%= seriesNav.items.length %><%= lang === 'ko' ? '회차' : ' episodes' %>
+                        </div>
+                    </div>
+                    <div class="research-series-links">
+                        <% if (seriesNav.previous) { %>
+                            <a href="<%= seriesNav.previous.href %>">&larr; <%= lang === 'ko' ? '이전 회차' : 'Previous' %></a>
+                        <% } else { %>
+                            <span></span>
+                        <% } %>
+                        <% if (seriesNav.next) { %>
+                            <a href="<%= seriesNav.next.href %>"><%= lang === 'ko' ? '다음 회차' : 'Next' %> &rarr;</a>
+                        <% } else { %>
+                            <span></span>
+                        <% } %>
+                    </div>
+                    <ol class="research-series-list">
+                        <% seriesNav.items.forEach(function(item) { %>
+                            <li class="<%= item.current ? 'current' : '' %>">
+                                <% if (item.current) { %>
+                                    <span>
+                                        <span class="research-series-episode"><%= item.episode %></span>
+                                        <%= item.title %>
+                                    </span>
+                                <% } else { %>
+                                    <a href="<%= item.href %>">
+                                        <span class="research-series-episode"><%= item.episode %></span>
+                                        <%= item.title %>
+                                    </a>
+                                <% } %>
+                            </li>
+                        <% }) %>
+                    </ol>
+                </nav>
+            <% } %>
             <div class="report-body" id="report-content"><%- htmlBody %></div>
         </article>
 

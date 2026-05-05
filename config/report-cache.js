@@ -34,7 +34,7 @@ async function getResearch(filename, lang = 'ko') {
         if (!redis.isReady) return null;
         const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
         const safeLang = lang === 'en' ? 'en' : 'ko';
-        const data = await redis.get(`research:${safe}:${safeLang}`);
+        const data = await redis.get(`research:v3:${safe}:${safeLang}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
@@ -44,7 +44,7 @@ async function setResearch(filename, data, lang = 'ko') {
         if (!redis.isReady) return;
         const safe = String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
         const safeLang = lang === 'en' ? 'en' : 'ko';
-        await redis.set(`research:${safe}:${safeLang}`, JSON.stringify(data));
+        await redis.set(`research:v3:${safe}:${safeLang}`, JSON.stringify(data));
     } catch (e) { console.error('[report-cache] research write error:', e.message); }
 }
 
@@ -69,7 +69,7 @@ async function getResearchList(lang = 'ko') {
     try {
         if (!redis.isReady) return null;
         const safeLang = lang === 'en' ? 'en' : 'ko';
-        const data = await redis.get(`report:research_list:${safeLang}`);
+        const data = await redis.get(`report:research_list:v3:${safeLang}`);
         return data ? JSON.parse(data) : null;
     } catch { return null; }
 }
@@ -78,7 +78,7 @@ async function setResearchList(data, lang = 'ko') {
     try {
         if (!redis.isReady) return;
         const safeLang = lang === 'en' ? 'en' : 'ko';
-        await redis.set(`report:research_list:${safeLang}`, JSON.stringify(data), { EX: LIST_TTL });
+        await redis.set(`report:research_list:v3:${safeLang}`, JSON.stringify(data), { EX: LIST_TTL });
     } catch (e) { console.error('[report-cache] research list write error:', e.message); }
 }
 

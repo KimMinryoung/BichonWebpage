@@ -58,6 +58,9 @@ function localize(row, lang = 'ko', includeContent = true) {
         language: useEnglish ? 'en' : 'ko',
         has_translation: hasEnglish,
         available_languages: hasEnglish ? ['ko', 'en'] : ['ko'],
+        series_slug: row.series_slug || '',
+        series_title: (useEnglish ? row.series_title_en : row.series_title) || row.series_title || '',
+        series_order: row.series_order || null,
     };
 
     if (includeContent) {
@@ -78,6 +81,7 @@ async function listResearch(lang = 'ko', { limit } = {}) {
     }
     const { rows } = await db.query(
         `SELECT filename, slug, title, summary, title_en, summary_en,
+                series_slug, series_title, series_title_en, series_order,
                 published_at, updated_at,
                 OCTET_LENGTH(markdown) AS markdown_size,
                 COALESCE(BTRIM(markdown_en), '') <> '' AS has_markdown_en
@@ -95,6 +99,7 @@ async function getResearch(filenameOrSlug, lang = 'ko') {
     const slug = raw.replace(/\.md$/, '');
     const { rows } = await db.query(
         `SELECT filename, slug, title, summary, markdown, title_en, summary_en, markdown_en,
+                series_slug, series_title, series_title_en, series_order,
                 published_at, updated_at
            FROM research_documents
           WHERE status = 'public'
