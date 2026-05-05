@@ -3,7 +3,7 @@
 <head>
     <% pageTitle = strings.admin.chatLogs %>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/chat-logs.css">
+    <link rel="stylesheet" href="/css/chat-logs.css?v=<%= assetVersion %>">
 </head>
 <body>
     <%- include('../partials/nav') %>
@@ -36,6 +36,6 @@
 
     <%- include('../partials/footer') %>
 
-    <script src="/js/chat-logs.js"></script>
+    <script src="/js/chat-logs.js?v=<%= assetVersion %>"></script>
 </body>
 </html>
