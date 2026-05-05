@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+# dev-preview - Run a bind-mounted frontend preview on the Tailscale interface.
+#
+# Usage:
+#   scripts/dev-preview [start|stop|restart|status|logs]
+#
+# Defaults:
+#   DEV_PORT=3001
+#   DEV_TAILSCALE_IFACE=tailscale0
+#   DEV_CONTAINER_NAME=leninbot-frontend-dev
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+FRONTEND_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+CONTAINER_NAME="${DEV_CONTAINER_NAME:-leninbot-frontend-dev}"
+IMAGE_NAME="${DEV_IMAGE_NAME:-leninbot-frontend}"
+NETWORK="${DEV_DOCKER_NETWORK:-leninbot_default}"
+IPV6_NETWORK="${DEV_DOCKER_IPV6_NETWORK:-leninbot_ipv6}"
+TAILSCALE_IFACE="${DEV_TAILSCALE_IFACE:-tailscale0}"
+TAILSCALE_IP="${DEV_TAILSCALE_IP:-}"
+DEV_PORT="${DEV_PORT:-3001}"
+
+log() { printf '[dev-preview] %s\n' "$*"; }
+err() { printf '[dev-preview] %s\n' "$*" >&2; }
+
+detect_tailscale_ip() {
+    ip -o -4 addr show "$TAILSCALE_IFACE" | awk '{ split($4, a, "/"); print a[1]; exit }'
+}
+
+ensure_tailscale_ip() {
+    if [[ -z "$TAILSCALE_IP" ]]; then
+        TAILSCALE_IP="$(detect_tailscale_ip)"
+    fi
+    if [[ -z "$TAILSCALE_IP" ]]; then
+        err "Could not detect an IPv4 address on ${TAILSCALE_IFACE}."
+        err "Set DEV_TAILSCALE_IP explicitly and retry."
+        exit 1
+    fi
+}
+
+stop_container() {
+    docker stop "$CONTAINER_NAME" >/dev/null 2>&1 || true
+    docker rm "$CONTAINER_NAME" >/dev/null 2>&1 || true
+}
+
+start_container() {
+    ensure_tailscale_ip
+
+    if ! docker image inspect "$IMAGE_NAME" >/dev/null 2>&1; then
+        log "Image ${IMAGE_NAME} not found; building it once."
+        docker build -t "$IMAGE_NAME" "$FRONTEND_DIR"
+    fi
+
+    stop_container
+
+    log "Starting ${CONTAINER_NAME} at http://${TAILSCALE_IP}:${DEV_PORT}"
+    docker run -d \
+        --name "$CONTAINER_NAME" \
+        --add-host=host.docker.internal:host-gateway \
+        -p "${TAILSCALE_IP}:${DEV_PORT}:3000" \
+        --restart unless-stopped \
+        --env-file "$FRONTEND_DIR/.env" \
+        -e NODE_ENV=development \
+        -e DEV_MODE=1 \
+        -e PORT=3000 \
+        -e ASSET_VERSION=dev \
+        -v "$FRONTEND_DIR/config:/app/config" \
+        -v "$FRONTEND_DIR/data:/app/data" \
+        -v "$FRONTEND_DIR/middleware:/app/middleware" \
+        -v "$FRONTEND_DIR/public:/app/public" \
+        -v "$FRONTEND_DIR/routes:/app/routes" \
+        -v "$FRONTEND_DIR/services:/app/services" \
+        -v "$FRONTEND_DIR/utils:/app/utils" \
+        -v "$FRONTEND_DIR/views:/app/views" \
+        -v "$FRONTEND_DIR/server.js:/app/server.js" \
+        "$IMAGE_NAME" \
+        node --watch server.js
+
+    docker network connect "$NETWORK" "$CONTAINER_NAME" >/dev/null 2>&1 || true
+    if docker network inspect "$IPV6_NETWORK" >/dev/null 2>&1; then
+        docker network connect "$IPV6_NETWORK" "$CONTAINER_NAME" >/dev/null 2>&1 || true
+    fi
+}
+
+case "${1:-start}" in
+    start)
+        start_container
+        ;;
+    restart)
+        start_container
+        ;;
+    stop)
+        stop_container
+        ;;
+    status)
+        docker ps --filter "name=^/${CONTAINER_NAME}$"
+        ;;
+    logs)
+        docker logs -f "$CONTAINER_NAME"
+        ;;
+    *)
+        err "Usage: scripts/dev-preview [start|stop|restart|status|logs]"
+        exit 2
+        ;;
+esac

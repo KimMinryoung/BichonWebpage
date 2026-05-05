@@ -23,6 +23,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const ASSET_VERSION = process.env.ASSET_VERSION || process.env.GIT_SHA || String(Date.now());
+const DEV_MODE = process.env.DEV_MODE === '1' || process.env.NODE_ENV !== 'production';
 
 function isCacheablePublicTextPath(reqPath) {
     return reqPath === '/robots.txt'
@@ -84,6 +85,9 @@ app.use(seo.canonicalHostRedirect);
 // View engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+if (DEV_MODE) {
+    app.disable('view cache');
+}
 
 // cookieParser + session must run before the backend proxy so logged-in
 // users' bound fingerprints can be stamped onto proxied LeninBot requests.
@@ -376,6 +380,10 @@ app.use(express.static(path.join(__dirname, 'public'), {
     index: false,
     setHeaders: (res, filePath) => {
         const normalized = filePath.split(path.sep).join('/');
+        if (DEV_MODE) {
+            res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+            return;
+        }
         const isNonogramPage = normalized.endsWith('/public/nonogram/index.html') || normalized.endsWith('/public/nonogram/editor.html');
         const isPuzzleJson = normalized.includes('/public/puzzles/') && normalized.endsWith('.json');
         if (isNonogramPage || isPuzzleJson) {

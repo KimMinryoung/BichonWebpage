@@ -10,12 +10,16 @@
   --clr-dark: #161b22;
   --clr-dark-raised: #21262d;
   --clr-cream: #f8edca;
-  --clr-white: #ffffff;
+  --clr-cream-light: #faf2da;
+  --clr-white: #faf2da;
   --clr-muted: #b0b8c1;
   --clr-red: #cf222e;
   --clr-red-deep: #2d1115;
   --clr-accent: #214d2e;
+}
 
+:root,
+[data-theme="dark"] {
   /* Dark theme, default. */
   --bg-canvas: var(--clr-black);
   --bg-surface: var(--clr-ink);
@@ -54,36 +58,36 @@
 }
 
 [data-theme="light"] {
-  --bg-canvas: var(--clr-cream);
-  --bg-surface: var(--clr-cream);
-  --bg-surface-hover: color-mix(in srgb, var(--clr-accent) 10%, var(--clr-cream));
-  --bg-inset: color-mix(in srgb, var(--clr-ink) 8%, var(--clr-cream));
+  --bg-canvas: var(--clr-cream-light);
+  --bg-surface: var(--clr-cream-light);
+  --bg-surface-hover: color-mix(in srgb, var(--clr-accent) 8%, var(--clr-cream-light));
+  --bg-inset: color-mix(in srgb, var(--clr-ink) 6%, var(--clr-cream-light));
   --border: var(--clr-ink);
   --border-emphasis: var(--clr-black);
   --text-primary: var(--clr-ink);
   --text-secondary: var(--clr-dark);
-  --text-muted: color-mix(in srgb, var(--clr-ink) 68%, var(--clr-cream));
+  --text-muted: color-mix(in srgb, var(--clr-ink) 68%, var(--clr-cream-light));
   --link: var(--clr-accent);
   --link-hover: var(--clr-accent);
   --accent: var(--clr-accent);
   --accent-green: var(--clr-accent);
   --accent-red: var(--clr-red);
-  --btn-bg: color-mix(in srgb, var(--clr-ink) 10%, var(--clr-cream));
-  --btn-hover: color-mix(in srgb, var(--clr-ink) 16%, var(--clr-cream));
+  --btn-bg: color-mix(in srgb, var(--clr-ink) 10%, var(--clr-cream-light));
+  --btn-hover: color-mix(in srgb, var(--clr-ink) 16%, var(--clr-cream-light));
   --btn-primary: var(--clr-accent);
   --btn-primary-hover: var(--clr-accent);
   --btn-danger: var(--clr-red);
   --btn-danger-hover: var(--clr-red);
-  --nav-bg: var(--clr-cream);
-  --card-bg: var(--clr-cream);
-  --input-bg: var(--clr-cream);
+  --nav-bg: var(--clr-cream-light);
+  --card-bg: var(--clr-cream-light);
+  --input-bg: var(--clr-cream-light);
   --overlay: rgba(13, 17, 23, 0.55);
   --shadow: 0 1px 3px rgba(13, 17, 23, 0.14);
-  --code-bg: color-mix(in srgb, var(--clr-ink) 8%, var(--clr-cream));
-  --success-bg: color-mix(in srgb, var(--clr-accent) 14%, var(--clr-cream));
+  --code-bg: color-mix(in srgb, var(--clr-ink) 8%, var(--clr-cream-light));
+  --success-bg: color-mix(in srgb, var(--clr-accent) 14%, var(--clr-cream-light));
   --success-border: var(--clr-accent);
   --success-text: var(--clr-ink);
-  --error-bg: color-mix(in srgb, var(--clr-red) 12%, var(--clr-cream));
+  --error-bg: color-mix(in srgb, var(--clr-red) 12%, var(--clr-cream-light));
   --error-border: var(--clr-red);
   --error-text: var(--clr-red);
   --focus-ring: color-mix(in srgb, var(--clr-accent) 32%, transparent);

@@ -45,5 +45,6 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 ### CSS / Mobile
 - CSS cache busting is active: `?v=<%= Date.now() %>` in head.ejs
 - Use `dvh` units instead of `vh` for mobile viewport height
-- Test mobile via Tailscale: production container binds to `127.0.0.1:3000` (not LAN-reachable), so use `cyber-lenin.com` (live) or spin up a bind-mounted preview container on `<tailscale-ip>:3001` (see deploy-flow memory)
+- Test mobile via Tailscale: production container binds to `127.0.0.1:3000` (not LAN-reachable), so use `cyber-lenin.com` (live) or run `scripts/dev-preview start` for a bind-mounted preview on `<tailscale-ip>:3001`.
+- The dev preview container is `leninbot-frontend-dev`; use `scripts/dev-preview stop|restart|status|logs`. It sets `DEV_MODE=1`, disables view/static asset caching, and publishes only to the Tailscale interface.
 - Use `chrome://inspect` for remote debugging on Android
