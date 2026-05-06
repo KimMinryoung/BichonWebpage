@@ -1240,6 +1240,40 @@ footer .footer-tagline {
     color: var(--text-secondary);
 }
 
+.chat-message-tool {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-inset);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.88em;
+    padding: 8px 12px;
+}
+
+.chat-tool-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background-color: var(--accent-red);
+    animation: chat-tool-pulse 1s ease-in-out infinite;
+}
+
+.chat-message-tool-done .chat-tool-dot {
+    animation: none;
+    background-color: var(--text-muted);
+}
+
+.chat-tool-text {
+    overflow-wrap: anywhere;
+}
+
+@keyframes chat-tool-pulse {
+    0%, 100% { opacity: 0.45; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
 .chat-message-log p,
 .chat-message-log ul,
 .chat-message-log ol {

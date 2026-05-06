@@ -283,6 +283,32 @@
         return div;
     }
 
+    function createToolStatusMessage() {
+        var div = document.createElement('div');
+        div.className = 'chat-message chat-message-tool';
+
+        var dot = document.createElement('span');
+        dot.className = 'chat-tool-dot';
+        dot.setAttribute('aria-hidden', 'true');
+        div.appendChild(dot);
+
+        var text = document.createElement('span');
+        text.className = 'chat-tool-text';
+        div.appendChild(text);
+
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return div;
+    }
+
+    function setToolStatusText(div, text, done) {
+        if (!div) return;
+        var label = div.querySelector('.chat-tool-text');
+        if (label) label.textContent = text;
+        div.classList.toggle('chat-message-tool-done', !!done);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
     function setLoading(on) {
         busy = on;
         chatSend.disabled = on;
@@ -306,6 +332,54 @@
         var aiDiv = null;
         var streamedText = '';
         var renderScheduled = false;
+        var toolStatusDiv = null;
+        var toolStatusRemoveTimer = null;
+        var activeTools = {};
+
+        function clearToolStatus() {
+            activeTools = {};
+            if (toolStatusRemoveTimer) {
+                clearTimeout(toolStatusRemoveTimer);
+                toolStatusRemoveTimer = null;
+            }
+            if (toolStatusDiv) {
+                toolStatusDiv.remove();
+                toolStatusDiv = null;
+            }
+        }
+
+        function updateToolStatus(data, done) {
+            var key = data.tool_name || data.label || 'tool';
+            if (toolStatusRemoveTimer) {
+                clearTimeout(toolStatusRemoveTimer);
+                toolStatusRemoveTimer = null;
+            }
+            if (!toolStatusDiv || !toolStatusDiv.parentNode) {
+                toolStatusDiv = createToolStatusMessage();
+            }
+
+            if (done) {
+                delete activeTools[key];
+            } else {
+                activeTools[key] = data.content || ((data.label || '도구') + ' 사용 중');
+            }
+
+            var active = Object.keys(activeTools).map(function (name) {
+                return activeTools[name];
+            });
+            if (active.length > 0) {
+                setToolStatusText(toolStatusDiv, active.join(' · '), false);
+            } else {
+                setToolStatusText(toolStatusDiv, data.content || ((data.label || '도구') + ' 완료'), true);
+                toolStatusRemoveTimer = setTimeout(function () {
+                    if (Object.keys(activeTools).length === 0 && toolStatusDiv) {
+                        toolStatusDiv.remove();
+                        toolStatusDiv = null;
+                    }
+                    toolStatusRemoveTimer = null;
+                }, 900);
+            }
+        }
 
         function renderAiMarkdown() {
             if (!aiDiv) return;
@@ -365,6 +439,7 @@
                         var data = JSON.parse(jsonStr);
                         
                         if (data.type === 'log') {
+                            if (data.node === 'tool') continue;
                             // 새로운 로그 조각을 기존 로그에 추가
                             accumulatedLog += data.content + "\n\n";
                             if (logDiv && logDiv.parentNode) logDiv.textContent = accumulatedLog;
@@ -383,11 +458,16 @@
                                 if (data.type === 'warning') note.classList.add('chat-message-warning');
                             }
                             chatBox.scrollTop = chatBox.scrollHeight;
+                        } else if (data.type === 'tool_start') {
+                            updateToolStatus(data, false);
+                        } else if (data.type === 'tool_done') {
+                            updateToolStatus(data, true);
                         } else if (data.type === 'chunk') {
                             // 첫 조각 도착 시 로그창 제거하고 답변 칸 생성
                             if (!aiDiv) {
                                 accumulatedLog = "";
                                 if (logDiv) { logDiv.remove(); logDiv = null; }
+                                clearToolStatus();
                                 aiDiv = document.createElement('div');
                                 aiDiv.className = 'chat-message chat-message-ai';
                                 chatBox.appendChild(aiDiv);
@@ -398,6 +478,7 @@
                             // 최종 답변 수신 — 스트림 내용과 같으면 그대로, 다르면 대체
                             accumulatedLog = "";
                             if (logDiv) { logDiv.remove(); logDiv = null; }
+                            clearToolStatus();
                             if (!aiDiv) {
                                 aiDiv = appendMessage(data.content, 'chat-message-ai');
                             } else {
@@ -414,6 +495,7 @@
                             }
                         } else if (data.type === 'error') {
                             if (logDiv) logDiv.remove();
+                            clearToolStatus();
                             var errMsg = appendMessage(data.content, 'chat-message-ai');
                             errMsg.classList.add('chat-message-error');
                             chatBox.scrollTop = chatBox.scrollHeight;
@@ -426,6 +508,7 @@
         } catch (err) {
             console.error("Chat Error: ", err);
             streamDied = true;
+            clearToolStatus();
             var errDiv = (typeof aiDiv !== 'undefined' && aiDiv) ? aiDiv : appendMessage('', 'chat-message-ai');
 
             if (hiddenDuringRequest) {
