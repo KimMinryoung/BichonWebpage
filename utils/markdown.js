@@ -6,25 +6,94 @@ function escapeHtml(value = '') {
         .replace(/"/g, '&quot;');
 }
 
-function inlineMarkdown(text) {
-    return escapeHtml(text)
-        .replace(/`([^`]+)`/g, '<code>$1</code>')
-        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-        .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+function cleanCitationUrl(value = '') {
+    return String(value).replace(/[.,;:]+$/, '');
 }
 
-function flushParagraph(out, paragraph) {
+function collectCitationLinks(markdown = '') {
+    const links = new Map();
+    const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
+    let inCode = false;
+    let pendingNumber = null;
+
+    for (const rawLine of lines) {
+        const line = rawLine.replace(/\s+$/, '');
+
+        if (line.startsWith('```')) {
+            inCode = !inCode;
+            pendingNumber = null;
+            continue;
+        }
+        if (inCode) continue;
+
+        const reference = line.match(/^\s*\[([1-9]\d*)\]:\s*(https?:\/\/[^\s<>)]+)/);
+        if (reference) {
+            links.set(reference[1], cleanCitationUrl(reference[2]));
+            pendingNumber = null;
+            continue;
+        }
+
+        const bracketed = line.match(/^\s*\[([1-9]\d*)\][^\n]*(https?:\/\/[^\s<>)]+)/);
+        if (bracketed) {
+            links.set(bracketed[1], cleanCitationUrl(bracketed[2]));
+            pendingNumber = null;
+            continue;
+        }
+
+        const numbered = line.match(/^\s*([1-9]\d*)\.\s+(.+)$/);
+        if (numbered) {
+            const sameLineUrl = numbered[2].match(/https?:\/\/[^\s<>)]+/);
+            if (sameLineUrl) {
+                links.set(numbered[1], cleanCitationUrl(sameLineUrl[0]));
+                pendingNumber = null;
+            } else {
+                pendingNumber = numbered[1];
+            }
+            continue;
+        }
+
+        if (pendingNumber) {
+            const nextLineUrl = line.match(/^\s*(https?:\/\/[^\s<>)]+)/);
+            if (nextLineUrl) {
+                links.set(pendingNumber, cleanCitationUrl(nextLineUrl[1]));
+            }
+            pendingNumber = null;
+        }
+    }
+
+    return links;
+}
+
+function inlineMarkdown(text, citationLinks = new Map()) {
+    const codeSegments = [];
+    const protectedText = String(text).replace(/`([^`]+)`/g, (_match, code) => {
+        const index = codeSegments.push(`<code>${escapeHtml(code)}</code>`) - 1;
+        return `\u0000CODE${index}\u0000`;
+    });
+
+    return escapeHtml(protectedText)
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        .replace(/\[([1-9]\d*)\]/g, (match, number) => {
+            const href = citationLinks.get(number);
+            if (!href) return match;
+            return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">[${number}]</a>`;
+        })
+        .replace(/\u0000CODE(\d+)\u0000/g, (_match, index) => codeSegments[Number(index)] || '');
+}
+
+function flushParagraph(out, paragraph, citationLinks) {
     if (!paragraph.length) return;
-    out.push(`<p>${inlineMarkdown(paragraph.join(' '))}</p>`);
+    out.push(`<p>${inlineMarkdown(paragraph.join(' '), citationLinks)}</p>`);
     paragraph.length = 0;
 }
 
-function flushList(out, list) {
+function flushList(out, list, citationLinks) {
     if (!list.length) return;
     const tag = list[0].ordered ? 'ol' : 'ul';
     out.push(`<${tag}>`);
-    for (const item of list) out.push(`<li>${inlineMarkdown(item.text)}</li>`);
+    for (const item of list) out.push(`<li>${inlineMarkdown(item.text, citationLinks)}</li>`);
     out.push(`</${tag}>`);
     list.length = 0;
 }
@@ -40,11 +109,11 @@ function isTableDivider(line) {
     return !!cells && cells.length > 0 && cells.every(cell => /^:?-{3,}:?$/.test(cell));
 }
 
-function flushTable(out, table) {
+function flushTable(out, table, citationLinks) {
     if (!table.length) return;
     const [header, divider, ...rows] = table;
     if (!divider || !isTableDivider(divider)) {
-        for (const row of table) out.push(`<p>${inlineMarkdown(row)}</p>`);
+        for (const row of table) out.push(`<p>${inlineMarkdown(row, citationLinks)}</p>`);
         table.length = 0;
         return;
     }
@@ -52,14 +121,14 @@ function flushTable(out, table) {
     const headers = splitTableRow(header) || [];
     out.push('<table>');
     out.push('<thead><tr>');
-    for (const cell of headers) out.push(`<th>${inlineMarkdown(cell)}</th>`);
+    for (const cell of headers) out.push(`<th>${inlineMarkdown(cell, citationLinks)}</th>`);
     out.push('</tr></thead>');
     if (rows.length) {
         out.push('<tbody>');
         for (const row of rows) {
             const cells = splitTableRow(row) || [];
             out.push('<tr>');
-            for (const cell of cells) out.push(`<td>${inlineMarkdown(cell)}</td>`);
+            for (const cell of cells) out.push(`<td>${inlineMarkdown(cell, citationLinks)}</td>`);
             out.push('</tr>');
         }
         out.push('</tbody>');
@@ -70,6 +139,7 @@ function flushTable(out, table) {
 
 function renderMarkdown(markdown = '') {
     const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
+    const citationLinks = collectCitationLinks(markdown);
     const out = [];
     const paragraph = [];
     const list = [];
@@ -81,9 +151,9 @@ function renderMarkdown(markdown = '') {
         const line = rawLine.replace(/\s+$/, '');
 
         if (line.startsWith('```')) {
-            flushParagraph(out, paragraph);
-            flushList(out, list);
-            flushTable(out, table);
+            flushParagraph(out, paragraph, citationLinks);
+            flushList(out, list, citationLinks);
+            flushTable(out, table, citationLinks);
             if (inCode) {
                 out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
                 code = [];
@@ -100,70 +170,70 @@ function renderMarkdown(markdown = '') {
         }
 
         if (!line.trim()) {
-            flushParagraph(out, paragraph);
-            flushList(out, list);
-            flushTable(out, table);
+            flushParagraph(out, paragraph, citationLinks);
+            flushList(out, list, citationLinks);
+            flushTable(out, table, citationLinks);
             continue;
         }
 
         const tableRow = splitTableRow(line);
         if (tableRow) {
-            flushParagraph(out, paragraph);
-            flushList(out, list);
+            flushParagraph(out, paragraph, citationLinks);
+            flushList(out, list, citationLinks);
             table.push(line);
             continue;
         }
 
-        flushTable(out, table);
+        flushTable(out, table, citationLinks);
 
         if (/^\s*-{3,}\s*$/.test(line)) {
-            flushParagraph(out, paragraph);
-            flushList(out, list);
+            flushParagraph(out, paragraph, citationLinks);
+            flushList(out, list, citationLinks);
             out.push('<hr>');
             continue;
         }
 
         const heading = line.match(/^(#{1,6})\s+(.+)$/);
         if (heading) {
-            flushParagraph(out, paragraph);
-            flushList(out, list);
+            flushParagraph(out, paragraph, citationLinks);
+            flushList(out, list, citationLinks);
             const level = heading[1].length;
-            out.push(`<h${level}>${inlineMarkdown(heading[2])}</h${level}>`);
+            out.push(`<h${level}>${inlineMarkdown(heading[2], citationLinks)}</h${level}>`);
             continue;
         }
 
         const bullet = line.match(/^\s*[-*+]\s+(.+)$/);
         if (bullet) {
-            flushParagraph(out, paragraph);
-            if (list.length && list[0].ordered) flushList(out, list);
+            flushParagraph(out, paragraph, citationLinks);
+            if (list.length && list[0].ordered) flushList(out, list, citationLinks);
             list.push({ ordered: false, text: bullet[1] });
             continue;
         }
 
         const ordered = line.match(/^\s*\d+\.\s+(.+)$/);
         if (ordered) {
-            flushParagraph(out, paragraph);
-            if (list.length && !list[0].ordered) flushList(out, list);
+            flushParagraph(out, paragraph, citationLinks);
+            if (list.length && !list[0].ordered) flushList(out, list, citationLinks);
             list.push({ ordered: true, text: ordered[1] });
             continue;
         }
 
         const quote = line.match(/^\s*>\s+(.+)$/);
         if (quote) {
-            flushParagraph(out, paragraph);
-            flushList(out, list);
-            out.push(`<blockquote>${inlineMarkdown(quote[1])}</blockquote>`);
+            flushParagraph(out, paragraph, citationLinks);
+            flushList(out, list, citationLinks);
+            out.push(`<blockquote>${inlineMarkdown(quote[1], citationLinks)}</blockquote>`);
             continue;
         }
 
-        flushList(out, list);
+        flushList(out, list, citationLinks);
         paragraph.push(line.trim());
     }
 
     if (inCode) out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
-    flushParagraph(out, paragraph);
-    flushList(out, list);
-    flushTable(out, table);
+    flushParagraph(out, paragraph, citationLinks);
+    flushList(out, list, citationLinks);
+    flushTable(out, table, citationLinks);
 
     return out.join('\n');
 }
