@@ -26,14 +26,14 @@ function collectCitationLinks(markdown = '') {
         }
         if (inCode) continue;
 
-        const reference = line.match(/^\s*\[([1-9]\d*)\]:\s*(https?:\/\/[^\s<>)]+)/);
+        const reference = line.match(/^\s*\[\^?([1-9]\d*)\]:\s*(?:.*?\s)?(https?:\/\/[^\s<>)]+)/);
         if (reference) {
             links.set(reference[1], cleanCitationUrl(reference[2]));
             pendingNumber = null;
             continue;
         }
 
-        const bracketed = line.match(/^\s*\[([1-9]\d*)\][^\n]*(https?:\/\/[^\s<>)]+)/);
+        const bracketed = line.match(/^\s*\[\^?([1-9]\d*)\][^\n]*(https?:\/\/[^\s<>)]+)/);
         if (bracketed) {
             links.set(bracketed[1], cleanCitationUrl(bracketed[2]));
             pendingNumber = null;
@@ -75,7 +75,7 @@ function inlineMarkdown(text, citationLinks = new Map()) {
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
         .replace(/\*([^*]+)\*/g, '<em>$1</em>')
         .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-        .replace(/\[([1-9]\d*)\]/g, (match, number) => {
+        .replace(/\[\^?([1-9]\d*)\]/g, (match, number) => {
             const href = citationLinks.get(number);
             if (!href) return match;
             return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">[${number}]</a>`;
