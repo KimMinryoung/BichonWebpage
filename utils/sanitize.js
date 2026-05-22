@@ -1,8 +1,8 @@
 const sanitizeHtml = require('sanitize-html');
 
-const linkAttrs = ['href', 'title', 'target', 'rel'];
+const linkAttrs = ['href', 'title', 'target', 'rel', 'class'];
 const textTags = [
-    'a', 'br', 'b', 'i', 'strong', 'em', 'p', 'ul', 'ol', 'li',
+    'a', 'br', 'b', 'i', 'strong', 'em', 'span', 'p', 'ul', 'ol', 'li',
     'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'code', 'pre',
 ];
 const richTags = [
@@ -43,6 +43,8 @@ function sanitizeRich(html) {
         allowedTags: richTags,
         allowedAttributes: {
             ...baseOptions.allowedAttributes,
+            p: ['id', 'class'],
+            span: ['class'],
             th: ['align'],
             td: ['align'],
         },

@@ -64,7 +64,27 @@ function collectCitationLinks(markdown = '') {
     return links;
 }
 
-function inlineMarkdown(text, citationLinks = new Map()) {
+function collectFootnoteDefinitions(markdown = '') {
+    const definitions = new Set();
+    const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
+    let inCode = false;
+
+    for (const rawLine of lines) {
+        const line = rawLine.replace(/\s+$/, '');
+        if (line.startsWith('```')) {
+            inCode = !inCode;
+            continue;
+        }
+        if (inCode) continue;
+
+        const reference = line.match(/^\s*\[\^?([1-9]\d*)\]:\s*/);
+        if (reference) definitions.add(reference[1]);
+    }
+
+    return definitions;
+}
+
+function inlineMarkdown(text, citationLinks = new Map(), footnoteDefinitions = new Set()) {
     const codeSegments = [];
     const protectedText = String(text).replace(/`([^`]+)`/g, (_match, code) => {
         const index = codeSegments.push(`<code>${escapeHtml(code)}</code>`) - 1;
@@ -77,23 +97,24 @@ function inlineMarkdown(text, citationLinks = new Map()) {
         .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
         .replace(/\[\^?([1-9]\d*)\]/g, (match, number) => {
             const href = citationLinks.get(number);
-            if (!href) return match;
-            return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">[${number}]</a>`;
+            if (href) return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">[${number}]</a>`;
+            if (footnoteDefinitions.has(number)) return `<a href="#fn-${number}" class="footnote-ref">[${number}]</a>`;
+            return match;
         })
         .replace(/\u0000CODE(\d+)\u0000/g, (_match, index) => codeSegments[Number(index)] || '');
 }
 
-function flushParagraph(out, paragraph, citationLinks) {
+function flushParagraph(out, paragraph, citationLinks, footnoteDefinitions) {
     if (!paragraph.length) return;
-    out.push(`<p>${inlineMarkdown(paragraph.join(' '), citationLinks)}</p>`);
+    out.push(`<p>${inlineMarkdown(paragraph.join(' '), citationLinks, footnoteDefinitions)}</p>`);
     paragraph.length = 0;
 }
 
-function flushList(out, list, citationLinks) {
+function flushList(out, list, citationLinks, footnoteDefinitions) {
     if (!list.length) return;
     const tag = list[0].ordered ? 'ol' : 'ul';
     out.push(`<${tag}>`);
-    for (const item of list) out.push(`<li>${inlineMarkdown(item.text, citationLinks)}</li>`);
+    for (const item of list) out.push(`<li>${inlineMarkdown(item.text, citationLinks, footnoteDefinitions)}</li>`);
     out.push(`</${tag}>`);
     list.length = 0;
 }
@@ -109,11 +130,11 @@ function isTableDivider(line) {
     return !!cells && cells.length > 0 && cells.every(cell => /^:?-{3,}:?$/.test(cell));
 }
 
-function flushTable(out, table, citationLinks) {
+function flushTable(out, table, citationLinks, footnoteDefinitions) {
     if (!table.length) return;
     const [header, divider, ...rows] = table;
     if (!divider || !isTableDivider(divider)) {
-        for (const row of table) out.push(`<p>${inlineMarkdown(row, citationLinks)}</p>`);
+        for (const row of table) out.push(`<p>${inlineMarkdown(row, citationLinks, footnoteDefinitions)}</p>`);
         table.length = 0;
         return;
     }
@@ -121,14 +142,14 @@ function flushTable(out, table, citationLinks) {
     const headers = splitTableRow(header) || [];
     out.push('<table>');
     out.push('<thead><tr>');
-    for (const cell of headers) out.push(`<th>${inlineMarkdown(cell, citationLinks)}</th>`);
+    for (const cell of headers) out.push(`<th>${inlineMarkdown(cell, citationLinks, footnoteDefinitions)}</th>`);
     out.push('</tr></thead>');
     if (rows.length) {
         out.push('<tbody>');
         for (const row of rows) {
             const cells = splitTableRow(row) || [];
             out.push('<tr>');
-            for (const cell of cells) out.push(`<td>${inlineMarkdown(cell, citationLinks)}</td>`);
+            for (const cell of cells) out.push(`<td>${inlineMarkdown(cell, citationLinks, footnoteDefinitions)}</td>`);
             out.push('</tr>');
         }
         out.push('</tbody>');
@@ -140,6 +161,7 @@ function flushTable(out, table, citationLinks) {
 function renderMarkdown(markdown = '') {
     const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
     const citationLinks = collectCitationLinks(markdown);
+    const footnoteDefinitions = collectFootnoteDefinitions(markdown);
     const out = [];
     const paragraph = [];
     const list = [];
@@ -151,9 +173,9 @@ function renderMarkdown(markdown = '') {
         const line = rawLine.replace(/\s+$/, '');
 
         if (line.startsWith('```')) {
-            flushParagraph(out, paragraph, citationLinks);
-            flushList(out, list, citationLinks);
-            flushTable(out, table, citationLinks);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
+            flushTable(out, table, citationLinks, footnoteDefinitions);
             if (inCode) {
                 out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
                 code = [];
@@ -170,70 +192,80 @@ function renderMarkdown(markdown = '') {
         }
 
         if (!line.trim()) {
-            flushParagraph(out, paragraph, citationLinks);
-            flushList(out, list, citationLinks);
-            flushTable(out, table, citationLinks);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
+            flushTable(out, table, citationLinks, footnoteDefinitions);
             continue;
         }
 
         const tableRow = splitTableRow(line);
         if (tableRow) {
-            flushParagraph(out, paragraph, citationLinks);
-            flushList(out, list, citationLinks);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
             table.push(line);
             continue;
         }
 
-        flushTable(out, table, citationLinks);
+        flushTable(out, table, citationLinks, footnoteDefinitions);
 
         if (/^\s*-{3,}\s*$/.test(line)) {
-            flushParagraph(out, paragraph, citationLinks);
-            flushList(out, list, citationLinks);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
             out.push('<hr>');
+            continue;
+        }
+
+        const footnote = line.match(/^\s*\[\^?([1-9]\d*)\]:\s*(.*)$/);
+        if (footnote) {
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
+            const number = footnote[1];
+            const text = footnote[2] || '';
+            out.push(`<p id="fn-${number}" class="footnote-def"><span class="footnote-label">[${number}]</span> ${inlineMarkdown(text, citationLinks, footnoteDefinitions)}</p>`);
             continue;
         }
 
         const heading = line.match(/^(#{1,6})\s+(.+)$/);
         if (heading) {
-            flushParagraph(out, paragraph, citationLinks);
-            flushList(out, list, citationLinks);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
             const level = heading[1].length;
-            out.push(`<h${level}>${inlineMarkdown(heading[2], citationLinks)}</h${level}>`);
+            out.push(`<h${level}>${inlineMarkdown(heading[2], citationLinks, footnoteDefinitions)}</h${level}>`);
             continue;
         }
 
         const bullet = line.match(/^\s*[-*+]\s+(.+)$/);
         if (bullet) {
-            flushParagraph(out, paragraph, citationLinks);
-            if (list.length && list[0].ordered) flushList(out, list, citationLinks);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            if (list.length && list[0].ordered) flushList(out, list, citationLinks, footnoteDefinitions);
             list.push({ ordered: false, text: bullet[1] });
             continue;
         }
 
         const ordered = line.match(/^\s*\d+\.\s+(.+)$/);
         if (ordered) {
-            flushParagraph(out, paragraph, citationLinks);
-            if (list.length && !list[0].ordered) flushList(out, list, citationLinks);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            if (list.length && !list[0].ordered) flushList(out, list, citationLinks, footnoteDefinitions);
             list.push({ ordered: true, text: ordered[1] });
             continue;
         }
 
         const quote = line.match(/^\s*>\s+(.+)$/);
         if (quote) {
-            flushParagraph(out, paragraph, citationLinks);
-            flushList(out, list, citationLinks);
-            out.push(`<blockquote>${inlineMarkdown(quote[1], citationLinks)}</blockquote>`);
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
+            out.push(`<blockquote>${inlineMarkdown(quote[1], citationLinks, footnoteDefinitions)}</blockquote>`);
             continue;
         }
 
-        flushList(out, list, citationLinks);
+        flushList(out, list, citationLinks, footnoteDefinitions);
         paragraph.push(line.trim());
     }
 
     if (inCode) out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
-    flushParagraph(out, paragraph, citationLinks);
-    flushList(out, list, citationLinks);
-    flushTable(out, table, citationLinks);
+    flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+    flushList(out, list, citationLinks, footnoteDefinitions);
+    flushTable(out, table, citationLinks, footnoteDefinitions);
 
     return out.join('\n');
 }
