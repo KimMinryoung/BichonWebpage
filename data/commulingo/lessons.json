@@ -8174,27 +8174,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀의 핵심은 무엇입니까?",
-                    "en": "What is central to The Secret of Primitive Accumulation?"
+                    "ko": "마르크스가 “원시적 축적”의 비밀을 묻는 이유는 무엇인가?",
+                    "en": "Why does Marx ask about the secret of “primitive accumulation”?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다"
+                      "자본주의가 단순히 부지런한 사람의 저축에서 시작했다는 이야기가, 노동자와 생산수단의 역사적 분리를 설명하지 못하기 때문이다.",
+                      "자본주의는 언제나 자연적으로 존재했으므로 기원을 따질 필요가 없기 때문이다.",
+                      "자본은 화폐만 있으면 노동자 없이도 스스로 증식하기 때문이다.",
+                      "원시적 축적은 상품교환이 성숙한 뒤에는 완전히 사라진 회계 절차이기 때문이다."
                     ],
                     "en": [
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline",
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals"
+                      "Because the story that capitalism began from the savings of industrious people cannot explain the historical separation of workers from the means of production.",
+                      "Because capitalism has always existed naturally, so its origin need not be examined.",
+                      "Because capital can valorize itself from money alone without workers.",
+                      "Because primitive accumulation is merely an accounting procedure that disappears once commodity exchange matures."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                    "en": "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals"
+                    "ko": "마르크스가 겨냥하는 것은 기원 신화다. 자본주의의 출발점에는 돈의 축적만이 아니라 생산자가 생산수단에서 분리되어 임금노동자가 되는 폭력적 과정이 있다.",
+                    "en": "Marx targets an origin myth. Capitalism begins not merely with accumulated money but with a violent process in which producers are separated from the means of production and become wage-labourers."
                   }
                 },
                 {
@@ -8202,27 +8202,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does The Secret of Primitive Accumulation operate?"
+                    "ko": "원시적 축적의 핵심 메커니즘은 무엇인가?",
+                    "en": "What is the central mechanism of primitive accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "원시적 축적의 비밀은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "생산과정에서 원시적 축적의 비밀의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "상인들이 상품을 더 싼 곳에서 사서 더 비싼 곳에 파는 가격 차익만으로 자본주의를 완성하는 것이다.",
+                      "국가가 모든 사람에게 같은 크기의 토지를 나누어 주어 시장을 평등하게 만드는 것이다.",
+                      "독립생산자들이 토지와 도구에 대한 접근을 잃고, 한편에는 생산수단 소유자가, 다른 한편에는 노동력 판매자가 만들어지는 것이다.",
+                      "노동자들이 임금으로 받은 돈을 모두 저축해 곧바로 자본가가 되는 것이다."
                     ],
                     "en": [
-                      "The Secret of Primitive Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "a production-process case where the logic of The Secret of Primitive Accumulation reshapes the relation between workers and capitalists",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Merchants complete capitalism solely through price arbitrage, buying cheap and selling dear.",
+                      "The state gives everyone equal plots of land and thereby makes the market equal.",
+                      "Independent producers lose access to land and tools, producing owners of means of production on one side and sellers of labour-power on the other.",
+                      "Workers save all their wages and immediately become capitalists."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "원시적 축적의 비밀은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "The Secret of Primitive Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "원시적 축적은 두 계급을 동시에 만든다. 생산수단을 잃은 사람은 노동력을 팔아야 하고, 생산수단을 장악한 사람은 그 노동력을 구매할 수 있다.",
+                    "en": "Primitive accumulation produces two classes at once. Those who lose the means of production must sell labour-power, while those who control them can buy it."
                   }
                 },
                 {
@@ -8230,27 +8230,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of The Secret of Primitive Accumulation would Marx criticize?"
+                    "ko": "“자본가는 절약했고 노동자는 게을렀기 때문에 계급 차이가 생겼다”는 설명이 왜 마르크스에게 부적절한가?",
+                    "en": "Why is the explanation “capitalists saved while workers were lazy, so class differences arose” inadequate for Marx?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "원시적 축적의 비밀은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "그 설명은 노동자가 실제로는 생산수단을 계속 소유했다는 점을 지나치기 때문이다.",
+                      "그 설명은 계급 형성을 도덕적 성격 차이로 바꾸어, 토지 수탈과 법적 강제 같은 역사적 폭력을 지운다.",
+                      "그 설명은 절약이 자본주의에서 아무 역할도 하지 않는다는 수학적 명제를 증명하기 때문이다.",
+                      "그 설명은 자본가가 상품을 생산하지 않고 오직 세금을 걷는다고 보기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "The Secret of Primitive Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "Because it overlooks that workers actually continued to own the means of production.",
+                      "It turns class formation into a moral difference and erases historical violence such as land expropriation and legal coercion.",
+                      "Because it proves the mathematical proposition that saving has no role at all in capitalism.",
+                      "Because it treats capitalists as tax collectors rather than commodity producers."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 원시적 축적의 비밀을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns The Secret of Primitive Accumulation from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "마르크스는 근면한 소수와 게으른 다수라는 우화를 비판한다. 임금노동자의 형성은 성격 문제가 아니라 생산수단에서의 분리라는 사회적 사건이다.",
+                    "en": "Marx criticizes the fable of an industrious few and a lazy many. The formation of wage-labourers is not a matter of character but a social event: separation from the means of production."
                   }
                 },
                 {
@@ -8258,27 +8258,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 원시적 축적의 비밀과 어떻게 연결됩니까? 생산과정에서 원시적 축적의 비밀의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to The Secret of Primitive Accumulation? a production-process case where the logic of The Secret of Primitive Accumulation reshapes the relation between workers and capitalists."
+                    "ko": "공동체가 함께 쓰던 토지가 사유지로 폐쇄되고, 주민들은 생계를 위해 임금노동을 찾아야 한다. 마르크스의 개념으로 보면 이 사례에서 무엇이 드러나는가?",
+                    "en": "Common land is enclosed as private property, and residents must seek wage-labour to live. What does this reveal in Marx’s terms?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "토지를 잃은 사람은 자동으로 생산수단의 공동소유자가 된다.",
+                      "공유지가 사라지면 화폐와 상품교환도 즉시 사라진다.",
+                      "임금노동은 사람들이 토지를 충분히 가졌을 때 자연스럽게 선택하는 여가 활동이다.",
+                      "토지의 사유화는 단지 소유권 문서의 변화가 아니라 노동력 판매자를 만드는 과정일 수 있다."
                     ],
                     "en": [
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Those who lose land automatically become common owners of means of production.",
+                      "When common land disappears, money and commodity exchange immediately disappear too.",
+                      "Wage-labour is a leisure activity people naturally choose when they have enough land.",
+                      "Privatizing land can be not merely a change in title but a process that produces sellers of labour-power."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 원시적 축적의 비밀의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of The Secret of Primitive Accumulation reshapes the relation between workers and capitalists"
+                    "ko": "토지 접근의 상실은 생계 조건의 상실이다. 그 결과 사람들은 법적으로 자유로워 보이지만 실제로는 노동력을 팔지 않고는 살 수 없는 위치에 놓인다.",
+                    "en": "Loss of access to land is loss of the conditions of subsistence. People may appear legally free, yet they are placed in a position where they cannot live without selling labour-power."
                   }
                 },
                 {
@@ -8286,27 +8286,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand The Secret of Primitive Accumulation?"
+                    "ko": "원시적 축적 장이 1권 앞부분의 잉여가치 분석과 연결되는 방식은 무엇인가?",
+                    "en": "How does the chapter on primitive accumulation connect back to the earlier analysis of surplus-value in Volume I?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "개별 인물의 선의와 악의",
-                      "정책 구호와 선거 전략",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "잉여가치 생산이 가능하려면 먼저 노동력이라는 상품이 시장에 나와야 하며, 원시적 축적은 그런 노동력 판매자가 역사적으로 어떻게 만들어졌는지 설명한다.",
+                      "원시적 축적은 잉여가치가 노동시간과 무관하다는 점을 증명한다.",
+                      "이 장은 앞의 가치론을 버리고 자본주의를 순수한 심리학으로 설명한다.",
+                      "이 장은 자본주의가 폭력 없이 완성된 뒤에야 국가가 등장한다고 결론짓는다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "individual goodwill and malice",
-                      "policy slogans and electoral strategy",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "For surplus-value production to be possible, labour-power must first appear on the market as a commodity; primitive accumulation explains how such sellers of labour-power were historically produced.",
+                      "Primitive accumulation proves that surplus-value has no relation to labour-time.",
+                      "This chapter abandons the earlier theory of value and explains capitalism as pure psychology.",
+                      "This chapter concludes that the state appears only after capitalism is completed without violence."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "앞 장들은 노동력이 상품으로 존재한다는 전제 위에서 진행된다. 원시적 축적은 그 전제가 자연적 사실이 아니라 역사적으로 만들어진 결과임을 보여준다.",
+                    "en": "The earlier chapters proceed on the premise that labour-power exists as a commodity. Primitive accumulation shows that this premise is not a natural fact but a historically produced result."
                   }
                 }
               ]
@@ -8324,27 +8324,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of The Secret of Primitive Accumulation?"
+                    "ko": "자본주의적 생산은 자본가와 임금노동자를 전제하는데, 자본가와 임금노동자는 다시 자본주의적 생산의 결과처럼 보인다. 원시적 축적 분석은 이 순환 문제를 어떻게 푸는가?",
+                    "en": "Capitalist production presupposes capitalists and wage-labourers, yet these also seem to be its results. How does the analysis of primitive accumulation address this circular problem?"
                   },
                   "choices": {
                     "ko": [
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다"
+                      "자본주의는 원래부터 있었으므로 순환 문제 자체가 무의미하다고 선언한다.",
+                      "자본가는 먼저 순수한 이자로 생겨나고 노동자는 나중에 자발적으로 합류한다고 설명한다.",
+                      "자본주의의 논리적 순환 바깥에 있는 역사적 분리 과정을 보여줌으로써, 임금노동자의 형성이 어떻게 가능했는지 설명한다.",
+                      "노동력 상품은 생산수단 소유와 무관하게 모든 사회에서 자동으로 존재한다고 본다."
                     ],
                     "en": [
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty",
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+                      "It declares the circular problem meaningless because capitalism has always existed.",
+                      "It explains that capitalists first arise from pure interest and workers later join voluntarily.",
+                      "It shows a historical process of separation outside the logical circle of capitalist production, explaining how wage-labourers could be formed.",
+                      "It treats labour-power as a commodity that automatically exists in every society regardless of ownership of means of production."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                    "en": "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals"
+                    "ko": "마르크스는 자본주의의 논리적 전제를 역사적으로 되짚는다. 생산자가 생산수단에서 분리되는 과정이 있어야 노동력 판매자와 자본 소유자가 서로 만날 수 있다.",
+                    "en": "Marx traces the logical premise of capitalism historically. Only through the separation of producers from means of production can sellers of labour-power and owners of capital confront one another."
                   }
                 },
                 {
@@ -8352,27 +8352,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in The Secret of Primitive Accumulation?"
+                    "ko": "원시적 축적에서 “자유로운 노동자”는 어떤 이중적 의미를 갖는가?",
+                    "en": "What double meaning does the “free worker” have in primitive accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 원시적 축적의 비밀의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "순수한 자연조건의 차이",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "노동자는 토지와 도구를 충분히 소유하므로 임금계약을 취미로만 맺는다.",
+                      "노동자는 인격적으로 예속되지 않아 노동력을 팔 수 있지만, 생산수단에서도 자유롭기 때문에 팔 수밖에 없다.",
+                      "노동자는 법적으로 상품이 아니므로 노동력도 결코 상품이 될 수 없다.",
+                      "노동자는 자본가의 가족 구성원이기 때문에 시장을 거치지 않고 고용된다."
                     ],
                     "en": [
-                      "a production-process case where the logic of The Secret of Primitive Accumulation reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a purely natural difference",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "The worker owns enough land and tools, so wage contracts are entered only as a hobby.",
+                      "The worker is free from personal bondage and can sell labour-power, but also free of means of production and therefore compelled to sell it.",
+                      "The worker is not legally a commodity, so labour-power can never become a commodity.",
+                      "The worker is a member of the capitalist’s family and is employed without the market."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "“자유”는 해방만을 뜻하지 않는다. 인격적 예속에서 풀려난 동시에 생계수단에서 분리되었기 때문에, 노동자는 자신의 노동력을 팔아야 한다.",
+                    "en": "“Freedom” does not mean emancipation alone. Freed from personal bondage but also separated from means of subsistence, the worker must sell labour-power."
                   }
                 },
                 {
@@ -8380,27 +8380,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of The Secret of Primitive Accumulation to concrete analysis is appropriate?"
+                    "ko": "정치경제학이 원시적 축적을 평화로운 시장교환의 전사로 묘사할 때, 마르크스가 특히 비판하는 점은 무엇인가?",
+                    "en": "When political economy portrays primitive accumulation as a peaceful prehistory of market exchange, what does Marx especially criticize?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 원시적 축적의 비밀의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "개념 없이 사례를 나열하면 충분하다"
+                      "그 묘사는 자본주의 이전에는 어떤 종류의 폭력도 없었다고 너무 강하게 주장한다.",
+                      "그 묘사는 노동자가 실제로 자본가보다 더 많은 생산수단을 소유했다는 사실을 강조한다.",
+                      "그 묘사는 상품교환을 전혀 다루지 않기 때문에 가치형태 분석과 무관하다.",
+                      "그 묘사는 폭력, 법, 국가권력, 수탈을 시장의 자연스러운 준비 과정으로 보이지 않게 만든다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of The Secret of Primitive Accumulation reshapes the relation between workers and capitalists",
-                      "the phenomenon is fully explained by individual psychology",
-                      "listing examples without concepts is sufficient"
+                      "It too strongly claims that no violence of any kind existed before capitalism.",
+                      "It emphasizes that workers actually owned more means of production than capitalists.",
+                      "It has nothing to do with value-form analysis because it never discusses commodity exchange.",
+                      "It makes violence, law, state power, and expropriation invisible as the supposedly natural preparation for the market."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 원시적 축적의 비밀의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of The Secret of Primitive Accumulation reshapes the relation between workers and capitalists"
+                    "ko": "마르크스의 비판은 시장이 폭력과 분리된 순수 영역이라는 생각을 겨냥한다. 자본주의적 시장의 전제는 법적·국가적 강제와 수탈을 통해 만들어졌다.",
+                    "en": "Marx’s criticism targets the idea of the market as a pure sphere separate from violence. The premises of the capitalist market were produced through legal and state coercion and expropriation."
                   }
                 },
                 {
@@ -8408,27 +8408,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes The Secret of Primitive Accumulation in a bourgeois way?"
+                    "ko": "현대의 토지 개발에서 주민이 퇴거당하고 보상금은 잠시 지급되지만 지속적 생계수단은 사라진다. 원시적 축적 개념을 적용할 때 조심해야 할 핵심은 무엇인가?",
+                    "en": "In a modern land development project, residents are evicted and receive temporary compensation, but lose lasting means of subsistence. What is the key caution when applying the concept of primitive accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "원시적 축적의 비밀은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "단순히 돈이 오갔는지가 아니라, 사람들이 생계수단에서 분리되어 임금·부채·시장 의존으로 밀려나는지를 보아야 한다.",
+                      "보상금이 지급되면 어떤 경우에도 수탈이 아니므로 분석을 중단해야 한다.",
+                      "현대에는 법적 절차가 있으므로 원시적 축적과 연결할 수 없다.",
+                      "토지 개발은 생산과 무관하므로 자본주의적 관계와도 무관하다."
                     ],
                     "en": [
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "The Secret of Primitive Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "One must ask not merely whether money changed hands, but whether people are separated from means of subsistence and pushed into wage, debt, or market dependence.",
+                      "If compensation is paid, it is never expropriation, so the analysis must stop.",
+                      "Because modern cases involve legal procedures, they cannot be connected to primitive accumulation.",
+                      "Land development is unrelated to production and therefore unrelated to capitalist relations."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "원시적 축적의 요점은 무보상 여부 하나가 아니라 사회관계의 변화다. 생계수단에서의 분리와 노동력 판매 강제가 생기면 개념적으로 연결해 볼 수 있다.",
+                    "en": "The point of primitive accumulation is not compensation alone but a change in social relations. If separation from means of subsistence and compulsion to sell labour-power are produced, the concept is relevant."
                   }
                 },
                 {
@@ -8436,27 +8436,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적의 비밀에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of The Secret of Primitive Accumulation?"
+                    "ko": "26장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 26?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것"
+                      "자본주의가 충분히 발전하면 임금노동이 자동으로 소멸한다는 결론을 낸다.",
+                      "앞 장의 축적 법칙이 틀렸으므로 새로운 도덕철학으로 대체한다.",
+                      "자본주의적 생산의 전제인 노동력 상품과 생산수단 독점이 자연적 출발점이 아니라 역사적 폭력의 결과임을 드러낸다.",
+                      "자본주의의 기원을 개인의 소비 취향 차이로 환원한다."
                     ],
                     "en": [
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals; and grasping how this form moves into the next contradiction",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "treating a modern example with a similar name as the same concept"
+                      "It concludes that once capitalism is developed enough, wage-labour automatically disappears.",
+                      "It replaces the previous law of accumulation with a new moral philosophy because that law was wrong.",
+                      "It reveals that labour-power as a commodity and the monopoly of means of production, premises of capitalist production, are not natural starting points but results of historical violence.",
+                      "It reduces the origin of capitalism to differences in individual consumption preferences."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "26장은 1권의 앞선 논리적 분석에 역사적 토대를 붙인다. 자본과 임금노동의 만남은 자연적 우연이 아니라 생산자 수탈의 결과다.",
+                    "en": "Chapter 26 gives the earlier logical analysis in Volume I its historical ground. The encounter between capital and wage-labour is not a natural accident but the result of expropriating producers."
                   }
                 }
               ]
@@ -8499,27 +8499,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈의 핵심은 무엇입니까?",
-                    "en": "What is central to Expropriation of the Agricultural Population from the Land?"
+                    "ko": "27장에서 농촌 인구의 토지로부터의 수탈은 왜 중심 사례가 되는가?",
+                    "en": "Why does the expropriation of the agricultural population from the land become the central case in Chapter 27?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다"
+                      "농민이 토지와 공유지에서 분리될 때, 임금노동자가 될 수밖에 없는 대중과 자본주의적 토지소유의 조건이 함께 만들어지기 때문이다.",
+                      "농민이 토지를 더 많이 소유할수록 임금노동자가 더 빨리 형성되기 때문이다.",
+                      "농촌 수탈은 도시 공업과 아무 관계가 없는 지방 행정 문제이기 때문이다.",
+                      "마르크스는 농업에서는 계급관계가 존재하지 않는다고 보기 때문이다."
                     ],
                     "en": [
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline",
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor"
+                      "Because when peasants are separated from land and commons, a mass compelled toward wage-labour and the conditions of capitalist landed property are produced together.",
+                      "Because the more land peasants own, the faster wage-labourers are formed.",
+                      "Because rural expropriation is a local administrative issue unrelated to urban industry.",
+                      "Because Marx thinks class relations do not exist in agriculture."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                    "en": "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor"
+                    "ko": "토지 수탈은 단지 농촌 내부의 사건이 아니다. 그것은 노동력 시장을 만들고 토지를 자본주의적 수익의 대상으로 재편하는 과정이다.",
+                    "en": "Land expropriation is not merely a rural event. It creates a labour market and reshapes land as an object of capitalist revenue."
                   }
                 },
                 {
@@ -8527,27 +8527,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Expropriation of the Agricultural Population from the Land operate?"
+                    "ko": "공유지와 관습적 이용권이 폐지될 때, 농민에게 생기는 변화는 무엇인가?",
+                    "en": "What changes for peasants when commons and customary rights of use are abolished?"
                   },
                   "choices": {
                     "ko": [
-                      "농촌 인구의 토지로부터의 수탈은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 농촌 인구의 토지로부터의 수탈의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "공유지가 없어지면 농민은 자동으로 더 높은 임금을 받는 도시 노동자가 된다.",
+                      "관습적 권리가 사라지면 토지는 더 이상 상품이 될 수 없다.",
+                      "법적 소유권 문서는 그대로여도 생계 보충 수단이 사라져 임금노동 의존이 커질 수 있다.",
+                      "공유지 폐지는 봉건적 예속을 강화하지만 자본주의와는 연결되지 않는다."
                     ],
                     "en": [
-                      "Expropriation of the Agricultural Population from the Land reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Expropriation of the Agricultural Population from the Land reshapes the relation between workers and capitalists"
+                      "When commons disappear, peasants automatically become urban workers with higher wages.",
+                      "Once customary rights disappear, land can no longer become a commodity.",
+                      "Even if formal title is unchanged, means of supplementing subsistence can disappear, increasing dependence on wage-labour.",
+                      "Abolishing commons strengthens feudal bondage but has no connection to capitalism."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "농촌 인구의 토지로부터의 수탈은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Expropriation of the Agricultural Population from the Land reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "공유지는 생계의 일부였다. 그것이 사라지면 농민은 시장에서 생활수단을 사야 하고, 그만큼 노동력 판매의 압박이 커진다.",
+                    "en": "The commons were part of subsistence. When they disappear, peasants must buy means of subsistence on the market, increasing pressure to sell labour-power."
                   }
                 },
                 {
@@ -8555,27 +8555,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Expropriation of the Agricultural Population from the Land would Marx criticize?"
+                    "ko": "“인클로저는 토지를 더 효율적으로 쓰기 위한 중립적 개혁이었다”는 설명이 놓치는 것은 무엇인가?",
+                    "en": "What is missed by the claim that enclosure was a neutral reform for using land more efficiently?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "농촌 인구의 토지로부터의 수탈은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "인클로저가 생산성에 영향을 줄 수 없다는 자연법칙이다.",
+                      "효율성이라는 말이 누가 토지에서 배제되고 누가 수익권을 얻었는지의 계급 문제를 가릴 수 있다는 점이다.",
+                      "토지는 어떤 사회에서도 소유 대상이 될 수 없다는 점이다.",
+                      "농민은 인클로저 뒤에도 언제나 같은 방식으로 공유지를 이용했다는 점이다."
                     ],
                     "en": [
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "Expropriation of the Agricultural Population from the Land reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "The natural law that enclosure can never affect productivity.",
+                      "The language of efficiency can hide the class question of who was excluded from land and who gained the right to revenue.",
+                      "The fact that land cannot be an object of ownership in any society.",
+                      "The fact that peasants always used the commons in the same way after enclosure."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 농촌 인구의 토지로부터의 수탈을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Expropriation of the Agricultural Population from the Land from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "마르크스는 생산성 논의만으로 수탈을 중립화하지 않는다. 토지 이용의 변화는 동시에 농민을 생계수단에서 떼어 내고 새로운 소유권을 강화했다.",
+                    "en": "Marx does not let productivity talk neutralize expropriation. Changes in land use also detached peasants from means of subsistence and strengthened new property rights."
                   }
                 },
                 {
@@ -8583,27 +8583,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 농촌 인구의 토지로부터의 수탈과 어떻게 연결됩니까? 생산과정에서 농촌 인구의 토지로부터의 수탈의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Expropriation of the Agricultural Population from the Land? a production-process case where the logic of Expropriation of the Agricultural Population from the Land reshapes the relation between workers and capitalists."
+                    "ko": "귀족이 경작지를 목양지로 바꾸고 주민을 내쫓는다. 이 장의 관점에서 이 변화는 무엇을 만든다고 볼 수 있는가?",
+                    "en": "A landlord turns arable land into sheep pasture and drives residents out. From the standpoint of this chapter, what does this transformation create?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의적 관계와 무관한 예외적 사건이다"
+                      "농민이 더 많은 자급수단을 갖게 되는 평등한 농촌 공동체다.",
+                      "상품시장과 임금노동이 필요 없는 봉건적 안정이다.",
+                      "토지소유자가 생산물에 대한 권리를 완전히 잃는 상황이다.",
+                      "토지에서 분리된 사람들의 대중과, 토지를 수익성 있는 자본주의적 이용 대상으로 만드는 조건이다."
                     ],
                     "en": [
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "It is an exceptional event unrelated to capitalist relations"
+                      "An egalitarian rural community in which peasants gain more means of subsistence.",
+                      "A feudal stability with no need for commodity markets or wage-labour.",
+                      "A situation in which landowners lose all rights to the product.",
+                      "A mass of people separated from land and the conditions for making land an object of profitable capitalist use."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 농촌 인구의 토지로부터의 수탈의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Expropriation of the Agricultural Population from the Land reshapes the relation between workers and capitalists"
+                    "ko": "이런 전환은 사람과 토지의 관계를 끊는다. 동시에 토지는 공동 생계의 기반이 아니라 수익을 낳는 사적 자산으로 재편된다.",
+                    "en": "Such a transformation breaks the relation between people and land. At the same time, land is reshaped from a basis of common subsistence into a private asset yielding revenue."
                   }
                 },
                 {
@@ -8611,27 +8611,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Expropriation of the Agricultural Population from the Land?"
+                    "ko": "27장을 이해할 때 “봉건적 예속에서의 해방”과 “생산수단에서의 분리”를 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must “liberation from feudal bondage” be distinguished from “separation from the means of production” in Chapter 27?"
                   },
                   "choices": {
                     "ko": [
-                      "정책 구호와 선거 전략",
-                      "개별 인물의 선의와 악의",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "농민이 인격적 예속에서 벗어나는 일이 곧바로 생계수단의 보장을 뜻하지 않으며, 그 분리가 임금노동 강제를 낳을 수 있기 때문이다.",
+                      "봉건적 예속에서 벗어난 사람은 언제나 충분한 토지를 받기 때문이다.",
+                      "생산수단에서의 분리는 오직 도시 상인에게만 일어나기 때문이다.",
+                      "두 표현은 완전히 같은 뜻이므로 구분하면 안 되기 때문이다."
                     ],
                     "en": [
-                      "policy slogans and electoral strategy",
-                      "individual goodwill and malice",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "Because release from personal bondage does not automatically mean secure means of subsistence; separation can produce compulsion toward wage-labour.",
+                      "Because everyone freed from feudal bondage always receives enough land.",
+                      "Because separation from means of production happens only to urban merchants.",
+                      "Because the two expressions mean exactly the same thing and should not be distinguished."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "마르크스의 “자유로운 노동자”에는 이중성이 있다. 예속에서 풀려나는 동시에 생계수단에서 분리되면, 자유는 임금노동 의존의 형태를 띤다.",
+                    "en": "Marx’s “free worker” is double. If people are freed from bondage while separated from means of subsistence, freedom takes the form of dependence on wage-labour."
                   }
                 }
               ]
@@ -8649,27 +8649,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Expropriation of the Agricultural Population from the Land?"
+                    "ko": "27장의 수탈 과정에서 법은 단순히 이미 일어난 변화를 기록하는 역할만 하지 않는다. 어떤 긴장이 여기에 있는가?",
+                    "en": "In the expropriation described in Chapter 27, law does not merely record changes that have already happened. What tension is involved?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다"
+                      "법은 언제나 농민의 관습적 권리를 그대로 보존하여 수탈을 막는다.",
+                      "법은 경제와 무관하므로 토지관계에 아무런 효과가 없다.",
+                      "법은 폭력적 수탈을 승인하고 안정화하면서, 그것을 정상적인 재산권의 형태로 보이게 만든다.",
+                      "법은 오직 도시 임금계약에만 적용되고 농촌에는 적용되지 않는다."
                     ],
                     "en": [
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+                      "Law always preserves peasants’ customary rights unchanged and prevents expropriation.",
+                      "Law is unrelated to the economy and has no effect on land relations.",
+                      "Law authorizes and stabilizes violent expropriation while making it appear as normal property right.",
+                      "Law applies only to urban wage contracts and never to the countryside."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                    "en": "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor"
+                    "ko": "마르크스에게 법은 시장 바깥의 장식이 아니다. 수탈은 폭력으로 일어나고 법을 통해 정당한 소유권처럼 굳어진다.",
+                    "en": "For Marx, law is not decoration outside the market. Expropriation occurs through violence and is then fixed through law as if it were legitimate property."
                   }
                 },
                 {
@@ -8677,27 +8677,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Expropriation of the Agricultural Population from the Land?"
+                    "ko": "농촌 수탈이 도시 산업자본의 형성과 연결되는 매개는 무엇인가?",
+                    "en": "What mediates the connection between rural expropriation and the formation of urban industrial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "순수한 자연조건의 차이",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 농촌 인구의 토지로부터의 수탈의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "농촌 수탈은 도시 인구를 줄여 산업자본의 노동력 수요를 없앤다.",
+                      "토지에서 쫓겨난 사람들은 생계수단을 잃고 노동력 시장으로 밀려나며, 도시 산업은 이 노동력 공급을 이용할 수 있다.",
+                      "농촌 수탈은 모든 농민을 곧바로 독립 장인으로 만들어 도시 공업과 경쟁시킨다.",
+                      "도시 산업자본은 노동자 없이도 기계만으로 잉여가치를 생산한다."
                     ],
                     "en": [
-                      "a purely natural difference",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Expropriation of the Agricultural Population from the Land reshapes the relation between workers and capitalists"
+                      "Rural expropriation reduces the urban population and removes industrial capital’s demand for labour-power.",
+                      "People driven from the land lose means of subsistence and are pushed into the labour market, which urban industry can draw upon.",
+                      "Rural expropriation immediately turns all peasants into independent artisans competing with urban industry.",
+                      "Urban industrial capital produces surplus-value with machines alone and without workers."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "토지 수탈은 노동력 공급의 역사적 조건을 만든다. 산업자본은 이미 준비된 자연적 노동시장을 발견한 것이 아니라, 이런 분리 과정의 결과를 활용한다.",
+                    "en": "Land expropriation creates the historical condition for the supply of labour-power. Industrial capital does not find a ready-made natural labour market; it uses the result of this separation."
                   }
                 },
                 {
@@ -8705,27 +8705,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Expropriation of the Agricultural Population from the Land to concrete analysis is appropriate?"
+                    "ko": "수탈을 “봉건 질서의 낡은 제약을 제거한 진보”로만 설명하면 무엇이 빠지는가?",
+                    "en": "What is omitted if expropriation is explained only as “progress” that removed old feudal constraints?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 농촌 인구의 토지로부터의 수탈의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "봉건 질서가 완전히 평등하고 폭력이 없었다는 점이다.",
+                      "자본주의적 토지소유는 어떤 생산관계도 만들지 않는다는 점이다.",
+                      "농민은 수탈 뒤에도 같은 관습권을 유지했다는 점이다.",
+                      "낡은 예속의 해체가 동시에 대중을 생계수단에서 떼어 내어 자본에 종속시키는 새로운 강제를 만들었다는 점이다."
                     ],
                     "en": [
-                      "a production-process case where the logic of Expropriation of the Agricultural Population from the Land reshapes the relation between workers and capitalists",
-                      "listing examples without concepts is sufficient",
-                      "the phenomenon is fully explained by individual psychology",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "That feudal order was completely equal and free of violence.",
+                      "That capitalist landed property produces no production relations.",
+                      "That peasants retained the same customary rights after expropriation.",
+                      "That the dissolution of old bondage simultaneously created a new compulsion by separating masses from means of subsistence and subordinating them to capital."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 농촌 인구의 토지로부터의 수탈의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Expropriation of the Agricultural Population from the Land reshapes the relation between workers and capitalists"
+                    "ko": "마르크스는 봉건 질서를 미화하지 않는다. 다만 낡은 예속의 해체가 곧바로 실질적 자유가 아니라 임금노동의 강제로 이어질 수 있음을 보여준다.",
+                    "en": "Marx does not idealize feudal order. He shows that the dissolution of old bondage can lead not to substantive freedom but to the compulsion of wage-labour."
                   }
                 },
                 {
@@ -8733,27 +8733,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Expropriation of the Agricultural Population from the Land in a bourgeois way?"
+                    "ko": "토지개혁이라는 이름으로 공동 이용지가 사라지고, 주민은 현금 소득 없이는 생활할 수 없게 된다. 27장의 분석을 적용하면 무엇을 물어야 하는가?",
+                    "en": "Under the name of land reform, common-use land disappears and residents cannot live without cash income. Applying Chapter 27, what should be asked?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "농촌 인구의 토지로부터의 수탈은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다"
+                      "소유권의 근대화라는 말 뒤에서 누가 생계수단을 잃고 누가 토지수익을 독점하게 되었는가를 물어야 한다.",
+                      "법적 문서가 새로 작성되었는지만 보면 충분하다.",
+                      "현금 소득이 필요해졌다면 모두가 자본가가 된 것이므로 수탈은 없다.",
+                      "공유지가 사라진 뒤에도 주민의 재생산 조건은 자동으로 유지된다고 보아야 한다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Expropriation of the Agricultural Population from the Land reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor"
+                      "One should ask who lost means of subsistence and who came to monopolize land revenue behind the language of modernizing property.",
+                      "It is enough to ask whether new legal documents were written.",
+                      "If cash income becomes necessary, everyone has become a capitalist, so there is no expropriation.",
+                      "After commons disappear, residents’ conditions of reproduction should be assumed to remain automatically intact."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "27장의 관점은 형식적 근대화가 아니라 재생산 조건의 변화를 본다. 공동 이용권 상실은 사람들을 시장과 임금노동에 더 깊이 묶을 수 있다.",
+                    "en": "Chapter 27 looks not at formal modernization but at changes in conditions of reproduction. Losing common rights can bind people more deeply to the market and wage-labour."
                   }
                 },
                 {
@@ -8761,27 +8761,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농촌 인구의 토지로부터의 수탈에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Expropriation of the Agricultural Population from the Land?"
+                    "ko": "27장이 뒤의 유혈입법 장으로 이어지는 이유는 무엇인가?",
+                    "en": "Why does Chapter 27 lead into the following chapter on bloody legislation?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "토지 수탈이 끝나면 국가는 더 이상 계급관계에 개입하지 않기 때문이다.",
+                      "농민이 토지를 잃으면 즉시 충분한 임금을 받는 정규직이 되기 때문이다.",
+                      "토지에서 쫓겨난 사람들이 자동으로 규율 잡힌 임금노동자가 되는 것이 아니어서, 국가는 그들을 노동시장에 강제로 맞추는 법을 동원했기 때문이다.",
+                      "유혈입법은 토지수탈 이전에만 존재했고 이후에는 사라졌기 때문이다."
                     ],
                     "en": [
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor; and grasping how this form moves into the next contradiction",
-                      "treating a modern example with a similar name as the same concept",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because once land expropriation is over, the state no longer intervenes in class relations.",
+                      "Because once peasants lose land, they immediately become regularly employed workers with sufficient wages.",
+                      "Because those driven from the land do not automatically become disciplined wage-labourers, so the state used laws to force them into the labour market.",
+                      "Because bloody legislation existed only before land expropriation and disappeared afterward."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "토지 수탈은 노동력 판매자를 만들지만, 그들이 곧바로 자본의 규율에 맞춰지는 것은 아니다. 그래서 다음 장은 방랑자 처벌과 임금 억압 법제를 다룬다.",
+                    "en": "Land expropriation creates sellers of labour-power, but they are not immediately disciplined for capital. The next chapter therefore treats laws punishing vagabonds and forcing down wages."
                   }
                 }
               ]
@@ -8824,27 +8824,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법의 핵심은 무엇입니까?",
-                    "en": "What is central to Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament?"
+                    "ko": "28장에서 유혈입법이 등장하는 배경은 무엇인가?",
+                    "en": "What is the background to the bloody legislation discussed in Chapter 28?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다"
+                      "토지에서 쫓겨난 사람들이 생계수단을 잃었지만 아직 안정적 임금노동자로 흡수되지 않았고, 국가는 이들을 처벌과 강제로 노동시장에 밀어 넣었다.",
+                      "농민이 충분한 토지를 얻어 임금노동을 거부할 수 있었기 때문에 국가는 그 소유권을 보호했다.",
+                      "자본가들이 노동자를 전혀 필요로 하지 않게 되어 국가는 실업을 장려했다.",
+                      "유혈입법은 임금을 노동자에게 유리하게 무제한 인상하기 위한 제도였다."
                     ],
                     "en": [
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                      "People expelled from the land had lost means of subsistence but were not yet absorbed as stable wage-labourers, and the state pushed them into the labour market through punishment and coercion.",
+                      "Because peasants gained enough land to refuse wage-labour, the state protected their ownership.",
+                      "Because capitalists no longer needed workers at all, the state encouraged unemployment.",
+                      "Bloody legislation was a system for raising wages without limit in workers’ favour."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                    "en": "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+                    "ko": "유혈입법은 수탈된 사람들의 “자연스러운 게으름”을 벌한 것이 아니다. 토지에서 분리된 대중을 저임금 노동 규율에 맞추는 국가 폭력이다.",
+                    "en": "Bloody legislation did not punish the “natural laziness” of the expropriated. It was state violence that adapted separated masses to the discipline of low-wage labour."
                   }
                 },
                 {
@@ -8852,27 +8852,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament operate?"
+                    "ko": "방랑자와 부랑자를 처벌하는 법은 자본주의적 노동시장 형성에서 어떤 기능을 했는가?",
+                    "en": "What function did laws punishing vagabonds and vagrants serve in forming the capitalist labour market?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 15세기 말 이후 수탈당한 사람들에 대한 유혈입법의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "15세기 말 이후 수탈당한 사람들에 대한 유혈입법은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "모든 노동자에게 토지를 무상 분배해 자급을 보장했다.",
+                      "자본가가 노동자를 고용하지 못하도록 막아 독립생산을 보호했다.",
+                      "일하지 않는 사람을 도덕적으로 꾸짖는 데 그치지 않고, 생계수단을 잃은 사람들에게 임금노동을 강제하는 장치로 작동했다.",
+                      "노동시간을 노동자 마음대로 줄일 자유를 법적으로 보장했다."
                     ],
                     "en": [
-                      "a production-process case where the logic of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "They guaranteed subsistence by distributing land to all workers for free.",
+                      "They protected independent production by preventing capitalists from hiring workers.",
+                      "They did more than morally scold the idle; they functioned as devices compelling people who had lost means of subsistence into wage-labour.",
+                      "They legally guaranteed workers the freedom to reduce working time as they wished."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "국가는 수탈된 사람을 먼저 생계수단에서 떼어 내고, 그 다음에는 노동하지 않는다는 이유로 처벌했다. 이 이중 과정이 임금노동 규율을 만들었다.",
+                    "en": "The state first helped separate people from means of subsistence, then punished them for not working. This double process created the discipline of wage-labour."
                   }
                 },
                 {
@@ -8880,27 +8880,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament would Marx criticize?"
+                    "ko": "“노동자와 자본가는 자유롭게 계약했으므로 국가는 개입하지 않았다”는 설명이 28장에서 틀리는 이유는 무엇인가?",
+                    "en": "Why is the claim “workers and capitalists contracted freely, so the state did not intervene” wrong in Chapter 28?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "15세기 말 이후 수탈당한 사람들에 대한 유혈입법은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다"
+                      "국가는 언제나 노동자 조합을 보호해 임금을 높였다.",
+                      "국가는 부랑 처벌, 강제노동, 임금 억압 법률을 통해 노동자가 어떤 조건에서 팔릴 수 있는지를 적극적으로 만들었다.",
+                      "국가는 법을 통해 자본가의 생산수단 소유를 금지했다.",
+                      "국가는 화폐 사용을 금지해 임금계약 자체를 불가능하게 했다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+                      "The state always protected workers’ combinations and raised wages.",
+                      "The state actively shaped the conditions under which workers could be sold through vagrancy punishment, forced labour, and wage-suppressing laws.",
+                      "The state legally prohibited capitalists from owning means of production.",
+                      "The state banned the use of money and made wage contracts impossible."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 15세기 말 이후 수탈당한 사람들에 대한 유혈입법을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "28장은 자유계약의 배경에 국가 폭력이 있었음을 보여준다. 노동시장은 자연적으로 생긴 것이 아니라 법과 처벌을 통해 훈육되었다.",
+                    "en": "Chapter 28 shows state violence behind the appearance of free contract. The labour market did not arise naturally; it was disciplined through law and punishment."
                   }
                 },
                 {
@@ -8908,27 +8908,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 15세기 말 이후 수탈당한 사람들에 대한 유혈입법과 어떻게 연결됩니까? 생산과정에서 15세기 말 이후 수탈당한 사람들에 대한 유혈입법의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament? a production-process case where the logic of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reshapes the relation between workers and capitalists."
+                    "ko": "국가가 임금 상한을 정하고 노동자 결합을 처벌한다. 이 사례는 유혈입법의 어떤 논리를 보여주는가?",
+                    "en": "The state fixes wage ceilings and punishes workers’ combinations. Which logic of bloody legislation does this show?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다"
+                      "노동자가 생산수단을 공동소유하도록 돕는 논리다.",
+                      "임금이 항상 노동자의 필요에 맞춰 자동 조정된다는 논리다.",
+                      "자본가의 고용권을 제한해 노동자가 독립생산자가 되게 하는 논리다.",
+                      "노동력의 가격을 자본에 유리하게 억누르고, 노동자가 집단적으로 조건을 방어하는 것을 막는 논리다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+                      "It helps workers become common owners of means of production.",
+                      "It assumes wages automatically adjust to workers’ needs.",
+                      "It restricts capitalists’ right to hire so workers become independent producers.",
+                      "It suppresses the price of labour-power in capital’s favour and blocks workers from collectively defending their conditions."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 15세기 말 이후 수탈당한 사람들에 대한 유혈입법의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reshapes the relation between workers and capitalists"
+                    "ko": "유혈입법은 단지 노동을 강제하는 데서 멈추지 않는다. 임금 수준과 노동자의 집단 행동까지 규제해 자본 축적에 맞는 노동조건을 만든다.",
+                    "en": "Bloody legislation does not stop at compelling labour. It regulates wage levels and collective action, creating labour conditions suited to capital accumulation."
                   }
                 },
                 {
@@ -8936,27 +8936,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament?"
+                    "ko": "28장이 26-27장의 원시적 축적 분석에 덧붙이는 핵심은 무엇인가?",
+                    "en": "What does Chapter 28 add to the analysis of primitive accumulation in Chapters 26-27?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 인물의 선의와 악의",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "정책 구호와 선거 전략"
+                      "생산자와 토지의 분리만으로는 충분하지 않고, 국가 폭력이 수탈된 사람들을 저임금 노동 규율에 맞추는 과정이 필요했다는 점이다.",
+                      "토지 수탈은 전혀 중요하지 않고 임금법만으로 자본주의가 생겼다는 점이다.",
+                      "국가가 개입하면 자본주의적 관계는 언제나 약화된다는 점이다.",
+                      "노동자는 법의 강제 없이도 항상 자본이 원하는 조건을 자발적으로 받아들인다는 점이다."
                     ],
                     "en": [
-                      "individual goodwill and malice",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "policy slogans and electoral strategy"
+                      "Separation from land was not enough; state violence was needed to adapt the expropriated to the discipline of low-wage labour.",
+                      "Land expropriation was unimportant and capitalism arose from wage laws alone.",
+                      "Whenever the state intervenes, capitalist relations are weakened.",
+                      "Workers always voluntarily accept the conditions capital wants without legal coercion."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "이 장은 원시적 축적이 한 번의 수탈 사건이 아니라 규율화 과정임을 보여준다. 노동력 상품은 법적 폭력 속에서 자본에 적합한 형태로 만들어졌다.",
+                    "en": "This chapter shows that primitive accumulation is not a single act of expropriation but a process of discipline. Labour-power as a commodity was shaped for capital through legal violence."
                   }
                 }
               ]
@@ -8974,27 +8974,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament?"
+                    "ko": "수탈된 사람이 임금노동자가 되기를 거부하거나 안정적으로 고용되지 못할 때, 유혈입법은 이 모순을 어떻게 처리했는가?",
+                    "en": "When the expropriated refused wage-labour or could not be stably employed, how did bloody legislation handle this contradiction?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다"
+                      "그들에게 생산수단을 돌려주어 독립생산을 회복시켰다.",
+                      "고용되지 않은 모든 사람에게 자본가 이윤의 일부를 배당했다.",
+                      "생계수단을 빼앗긴 사람을 부랑자로 낙인찍고 처벌함으로써, 수탈의 결과를 개인의 범죄처럼 처리했다.",
+                      "노동시장 밖에 머무는 것을 법적으로 보호해 자본의 수요를 제한했다."
                     ],
                     "en": [
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+                      "It returned means of production to them and restored independent production.",
+                      "It distributed part of capitalist profit to everyone not employed.",
+                      "It branded and punished those deprived of means of subsistence as vagrants, treating the result of expropriation as individual crime.",
+                      "It legally protected remaining outside the labour market and limited capital’s demand."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                    "en": "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+                    "ko": "국가는 수탈의 사회적 원인을 지우고 그 결과를 개인의 일탈로 처벌했다. 이 점이 유혈입법의 폭력성과 이데올로기를 동시에 보여준다.",
+                    "en": "The state erased the social cause of expropriation and punished its result as individual deviance. This shows both the violence and the ideology of bloody legislation."
                   }
                 },
                 {
@@ -9002,27 +9002,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament?"
+                    "ko": "28장에서 국가 폭력과 “자유로운” 임금계약은 어떻게 매개되는가?",
+                    "en": "How are state violence and the “free” wage contract mediated in Chapter 28?"
                   },
                   "choices": {
                     "ko": [
-                      "순수한 자연조건의 차이",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 15세기 말 이후 수탈당한 사람들에 대한 유혈입법의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "폭력은 계약을 완전히 폐지하므로 임금노동과 아무 관계가 없다.",
+                      "폭력은 사람들이 노동력 판매 외의 생계 가능성을 잃고 낮은 임금 규율을 받아들이도록 만든 뒤, 그 결과를 자유계약처럼 나타나게 한다.",
+                      "임금계약이 자유로우면 이전의 강제는 분석할 필요가 없다.",
+                      "국가 폭력은 오직 자본가를 억압하기 때문에 노동시장 형성과 반대 방향으로 작용한다."
                     ],
                     "en": [
-                      "a purely natural difference",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reshapes the relation between workers and capitalists"
+                      "Violence abolishes contract completely and therefore has no relation to wage-labour.",
+                      "Violence makes people lose alternatives to selling labour-power and accept low-wage discipline, after which the result appears as free contract.",
+                      "If the wage contract is free, previous coercion need not be analyzed.",
+                      "State violence acts against labour-market formation because it only represses capitalists."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "마르크스의 요점은 강제와 자유계약이 단순히 반대가 아니라는 것이다. 강제가 노동시장의 조건을 만들고, 그 위에서 계약은 자유로운 형식을 띤다.",
+                    "en": "Marx’s point is that coercion and free contract are not simple opposites. Coercion creates the conditions of the labour market, on which contract then takes a free form."
                   }
                 },
                 {
@@ -9030,27 +9030,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament to concrete analysis is appropriate?"
+                    "ko": "임금 억압 법률을 “사회질서 유지”로만 보면 무엇이 가려지는가?",
+                    "en": "What is concealed if wage-suppressing laws are seen only as “maintaining social order”?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 15세기 말 이후 수탈당한 사람들에 대한 유혈입법의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "현상은 개인 심리의 합으로 충분히 설명된다"
+                      "그 법률이 실제로는 자본가의 임금을 제한했다는 점이 가려진다.",
+                      "그 법률이 생산과 전혀 무관한 종교 의례였다는 점이 가려진다.",
+                      "그 법률이 노동자에게 생산수단을 분배하는 통로였다는 점이 가려진다.",
+                      "질서 유지라는 말이 노동력 가격을 낮추고 노동자의 단결을 막아 자본 축적 조건을 만드는 계급 기능을 가린다."
                     ],
                     "en": [
-                      "a production-process case where the logic of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reshapes the relation between workers and capitalists",
-                      "listing examples without concepts is sufficient",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "the phenomenon is fully explained by individual psychology"
+                      "It conceals that these laws actually limited capitalists’ wages.",
+                      "It conceals that these laws were religious rituals unrelated to production.",
+                      "It conceals that these laws distributed means of production to workers.",
+                      "The language of order conceals the class function of lowering the price of labour-power and blocking workers’ organization, thereby creating conditions for accumulation."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 15세기 말 이후 수탈당한 사람들에 대한 유혈입법의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reshapes the relation between workers and capitalists"
+                    "ko": "질서의 이름은 중립적이지 않다. 유혈입법은 노동력 가격과 노동자 저항을 통제해 자본에 유리한 질서를 만들었다.",
+                    "en": "The name of order is not neutral. Bloody legislation created an order favourable to capital by controlling the price of labour-power and workers’ resistance."
                   }
                 },
                 {
@@ -9058,27 +9058,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament in a bourgeois way?"
+                    "ko": "오늘날 복지 수급 조건이 지나치게 처벌적으로 설계되어, 어떤 일자리든 낮은 임금으로 받아들이도록 압박한다고 하자. 28장의 관점으로 분석할 때 핵심 질문은 무엇인가?",
+                    "en": "Suppose modern welfare conditions are designed punitively, pressuring people to accept any job at low wages. From the standpoint of Chapter 28, what is the key question?"
                   },
                   "choices": {
                     "ko": [
-                      "15세기 말 이후 수탈당한 사람들에 대한 유혈입법은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "그 제도가 노동하지 않는 개인을 도덕적으로 평가하는 것을 넘어, 노동력 판매 조건을 자본에 유리하게 강제하는지 물어야 한다.",
+                      "국가 제도는 현대적이면 언제나 계급 중립적이라고 전제해야 한다.",
+                      "낮은 임금을 받아들이면 노동자는 곧바로 생산수단 소유자가 되는지 물어야 한다.",
+                      "복지 제도는 생산과 무관하므로 임금노동 분석에서 제외해야 한다."
                     ],
                     "en": [
-                      "Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "One should ask whether the system goes beyond moral judgment of the non-working and coerces conditions of selling labour-power in capital’s favour.",
+                      "One should assume state institutions are always class-neutral if they are modern.",
+                      "One should ask whether accepting low wages immediately makes workers owners of means of production.",
+                      "Welfare systems are unrelated to production and should be excluded from the analysis of wage-labour."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "28장의 범주는 과거 법률의 이름을 반복하는 데 있지 않다. 핵심은 국가 제도가 노동력 판매의 조건과 임금 규율을 어떻게 만드는가를 묻는 것이다.",
+                    "en": "The point of Chapter 28 is not to repeat the names of old laws. The key is to ask how state institutions shape the conditions of selling labour-power and wage discipline."
                   }
                 },
                 {
@@ -9086,27 +9086,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15세기 말 이후 수탈당한 사람들에 대한 유혈입법에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament?"
+                    "ko": "유혈입법 장이 원시적 축적 전체에서 갖는 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of the chapter on bloody legislation within primitive accumulation as a whole?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "자본주의가 국가 없이 순수한 교환만으로 성립했음을 증명한다.",
+                      "노동자에게 생산수단을 돌려주는 법률이 자본주의를 만들었다고 설명한다.",
+                      "자본주의적 노동시장이 자연 발생한 것이 아니라 수탈된 사람들을 법적 폭력으로 훈육한 결과임을 보여준다.",
+                      "수탈 이후에는 더 이상 계급 강제가 필요하지 않다는 결론을 낸다."
                     ],
                     "en": [
-                      "treating a modern example with a similar name as the same concept",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline; and grasping how this form moves into the next contradiction",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "It proves that capitalism was established without the state through pure exchange alone.",
+                      "It explains that laws returning means of production to workers created capitalism.",
+                      "It shows that the capitalist labour market did not arise spontaneously but resulted from disciplining the expropriated through legal violence.",
+                      "It concludes that after expropriation, class coercion is no longer necessary."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "이 장은 노동력 상품의 형성이 폭력과 법의 산물임을 선명하게 한다. 자유로운 노동시장은 수탈과 훈육의 역사 위에서 나타난다.",
+                    "en": "This chapter makes clear that the formation of labour-power as a commodity is a product of violence and law. The free labour market appears on the basis of a history of expropriation and discipline."
                   }
                 }
               ]
@@ -9149,27 +9149,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생의 핵심은 무엇입니까?",
-                    "en": "What is central to Genesis of the Capitalist Farmer?"
+                    "ko": "29장에서 “자본주의적 차지농업가”의 발생은 어떤 변화를 가리키는가?",
+                    "en": "What transformation is meant by the genesis of the capitalist farmer in Chapter 29?"
                   },
                   "choices": {
                     "ko": [
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다"
+                      "토지를 빌려 경영하는 농업가가 임금노동자를 고용하고 생산을 이윤을 위한 사업으로 조직하는 계급으로 성장하는 것이다.",
+                      "모든 농민이 토지를 공동소유해 시장에서 철수하는 것이다.",
+                      "지주가 직접 모든 농기구를 들고 노동하는 소농으로 변하는 것이다.",
+                      "농업 생산이 상품교환과 무관한 자급경제로 되돌아가는 것이다."
                     ],
                     "en": [
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists"
+                      "A tenant farmer grows into a class that hires wage-labourers and organizes production as a business for profit.",
+                      "All peasants commonly own land and withdraw from the market.",
+                      "The landlord personally becomes a small peasant working all tools by hand.",
+                      "Agricultural production returns to a subsistence economy unrelated to commodity exchange."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                    "en": "Traces the formation of the capitalist farmer through land expropriation and market expansion"
+                    "ko": "마르크스가 보는 차지농업가는 단순한 임차인이 아니다. 그는 토지를 빌리지만 노동자를 고용하고 농업을 자본주의적 이윤 생산으로 조직한다.",
+                    "en": "For Marx, the capitalist farmer is not a mere tenant. He rents land, but hires workers and organizes agriculture as capitalist production for profit."
                   }
                 },
                 {
@@ -9177,27 +9177,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Genesis of the Capitalist Farmer operate?"
+                    "ko": "차지농업가가 성장하려면 지주와 노동자 사이에서 어떤 위치를 차지해야 하는가?",
+                    "en": "What position must the tenant farmer occupy between landlord and labourers in order to develop as a capitalist farmer?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의적 차지농업가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "생산과정에서 자본주의적 차지농업가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "지대도 임금도 내지 않고 모든 생산물을 농민 공동체에 넘긴다.",
+                      "지주의 하인으로 남아 독자적 경영권을 전혀 갖지 않는다.",
+                      "지대는 지주에게 내지만, 생산과 노동과정을 지휘하고 임금노동자에게서 잉여노동을 뽑아내는 경영자가 된다.",
+                      "노동자와 함께 생산수단을 공동소유해 이윤과 지대를 없앤다."
                     ],
                     "en": [
-                      "Genesis of the Capitalist Farmer reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "a production-process case where the logic of Genesis of the Capitalist Farmer reshapes the relation between workers and capitalists"
+                      "He pays neither rent nor wages and hands all products to the peasant community.",
+                      "He remains the landlord’s servant with no independent control of production.",
+                      "He pays rent to the landlord but becomes the manager who directs production and the labour-process, extracting surplus-labour from wage-labourers.",
+                      "He jointly owns the means of production with workers and abolishes profit and rent."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "자본주의적 차지농업가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Genesis of the Capitalist Farmer reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "자본주의적 차지농업가는 지주와 동일하지 않지만 노동자와도 다르다. 그는 토지 사용권을 매개로 노동자를 고용하고 농업 잉여를 자본주의적으로 전유한다.",
+                    "en": "The capitalist farmer is not identical with the landlord, but is also distinct from the worker. Through access to rented land, he hires workers and appropriates agricultural surplus capitalistically."
                   }
                 },
                 {
@@ -9205,27 +9205,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Genesis of the Capitalist Farmer would Marx criticize?"
+                    "ko": "가격 상승과 고정된 장기 지대 계약은 차지농업가에게 어떤 효과를 낼 수 있었는가?",
+                    "en": "What effect could rising prices and fixed long-term rent contracts have for the tenant farmer?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의적 차지농업가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다"
+                      "가격이 오르면 고정 지대 계약은 언제나 차지농업가를 즉시 파산시킨다.",
+                      "생산물 가격은 오르는데 지대가 고정되어 있으면, 차지농업가가 더 큰 차액을 확보해 자본을 축적할 수 있다.",
+                      "가격 상승은 농업과 무관하므로 차지농업가의 형성에 아무 영향도 없다.",
+                      "고정 지대는 노동자에게 토지소유권을 자동 이전하는 장치다."
                     ],
                     "en": [
-                      "Genesis of the Capitalist Farmer reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion"
+                      "When prices rise, fixed rent contracts always immediately bankrupt the tenant farmer.",
+                      "If product prices rise while rent remains fixed, the tenant farmer can retain a larger margin and accumulate capital.",
+                      "Price increases are unrelated to agriculture and have no effect on the formation of capitalist farmers.",
+                      "Fixed rent is a device that automatically transfers landownership to workers."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 자본주의적 차지농업가의 발생을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Genesis of the Capitalist Farmer from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "마르크스는 화폐가치 변화와 가격 상승이 계급별로 다르게 작용했음을 본다. 고정 지대를 내는 차지농업가는 상승한 판매가격과 낮게 묶인 지대 사이의 이득을 축적할 수 있었다.",
+                    "en": "Marx notes that changes in money value and rising prices affected classes differently. A tenant paying fixed rent could accumulate the gain between higher selling prices and rent held down by contract."
                   }
                 },
                 {
@@ -9233,27 +9233,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 자본주의적 차지농업가의 발생과 어떻게 연결됩니까? 생산과정에서 자본주의적 차지농업가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Genesis of the Capitalist Farmer? a production-process case where the logic of Genesis of the Capitalist Farmer reshapes the relation between workers and capitalists."
+                    "ko": "농업 경영자가 토지를 빌려 대규모로 경작하고, 농촌 빈민을 계절 임금노동자로 고용한다. 이 사례는 어떤 변화를 보여주는가?",
+                    "en": "An agricultural manager rents land, cultivates on a large scale, and hires rural poor as seasonal wage-labourers. What transformation does this show?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "농업이 시장과 완전히 단절되어 봉건적 의무만 남는 모습이다.",
+                      "지주가 사라지고 모든 노동자가 토지를 평등하게 나누는 모습이다.",
+                      "임금노동자가 고용되는 순간 착취 관계가 사라지는 모습이다.",
+                      "농업이 가족적 자급생산에서 벗어나 임금노동과 이윤을 중심으로 조직되는 자본주의적 경영으로 바뀌는 모습이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "Agriculture is completely cut off from the market and only feudal obligations remain.",
+                      "Landlords disappear and all workers divide land equally.",
+                      "The moment wage-labourers are hired, exploitation disappears.",
+                      "Agriculture is shifting from family subsistence production toward capitalist management organized around wage-labour and profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 자본주의적 차지농업가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Genesis of the Capitalist Farmer reshapes the relation between workers and capitalists"
+                    "ko": "차지농업가의 발생은 농업 내부의 자본주의화를 보여준다. 토지는 빌린 것이지만, 노동과정은 임금노동과 이윤을 중심으로 재조직된다.",
+                    "en": "The rise of the capitalist farmer shows the capitalization of agriculture from within. The land is rented, but the labour-process is reorganized around wage-labour and profit."
                   }
                 },
                 {
@@ -9261,27 +9261,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Genesis of the Capitalist Farmer?"
+                    "ko": "29장이 원시적 축적의 앞 장들과 연결되는 방식은 무엇인가?",
+                    "en": "How does Chapter 29 connect to the earlier chapters on primitive accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "개별 인물의 선의와 악의",
-                      "정책 구호와 선거 전략",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "농민 수탈이 노동자를 만들 뿐 아니라, 토지를 자본주의적으로 경영할 차지농업가 계급도 성장시킨다는 점을 보여준다.",
+                      "토지 수탈이 끝나면 농업은 더 이상 자본주의와 관계없어진다는 점을 보여준다.",
+                      "차지농업가는 노동자를 고용하지 않으므로 임금노동 형성과 무관하다는 점을 보여준다.",
+                      "농촌에서는 지대와 이윤이 언제나 같은 사람에게 돌아가므로 계급 구분이 사라진다는 점을 보여준다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "individual goodwill and malice",
-                      "policy slogans and electoral strategy",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "It shows that peasant expropriation not only creates workers but also helps develop a class of tenant farmers who manage land capitalistically.",
+                      "It shows that once land expropriation is over, agriculture has no further relation to capitalism.",
+                      "It shows that tenant farmers do not hire workers and are unrelated to the formation of wage-labour.",
+                      "It shows that in the countryside rent and profit always go to the same person, so class distinctions disappear."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "원시적 축적은 노동자 쪽만 만드는 과정이 아니다. 토지소유, 차지농업가, 농업 임금노동자가 결합되면서 농업 자체가 자본주의적으로 재편된다.",
+                    "en": "Primitive accumulation does not create only the worker side. Landed property, capitalist tenant farmers, and agricultural wage-labourers combine to reorganize agriculture capitalistically."
                   }
                 }
               ]
@@ -9299,27 +9299,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Genesis of the Capitalist Farmer?"
+                    "ko": "차지농업가는 지주도 아니고 단순 농민도 아니다. 이 중간적 위치가 왜 자본주의적 농업 형성에 중요했는가?",
+                    "en": "The tenant farmer is neither landlord nor simple peasant. Why was this intermediate position important for the formation of capitalist agriculture?"
                   },
                   "choices": {
                     "ko": [
-                      "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다"
+                      "중간적 위치 때문에 차지농업가는 어떤 생산관계에도 속하지 않았다.",
+                      "차지농업가는 토지를 소유하지 않으므로 자본을 축적할 수 없었다.",
+                      "토지소유와 직접 경영이 분리된 상태에서, 차지농업가는 지대를 지급하면서도 노동자를 고용해 이윤을 추구하는 자본가로 기능할 수 있었다.",
+                      "지주와 농민 사이의 위치는 봉건적 의무만 강화하고 시장생산을 막았다."
                     ],
                     "en": [
-                      "Shows how bloody legislation forced the expropriated population into labor-market discipline",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists"
+                      "Because of this intermediate position, the tenant farmer belonged to no production relation.",
+                      "Because the tenant farmer did not own land, he could not accumulate capital.",
+                      "With landownership separated from direct management, the tenant farmer could pay rent yet function as a capitalist pursuing profit by hiring labourers.",
+                      "The position between landlord and peasant only strengthened feudal duties and blocked market production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                    "en": "Traces the formation of the capitalist farmer through land expropriation and market expansion"
+                    "ko": "자본주의적 농업에서는 지대와 이윤이 구분된다. 차지농업가는 토지소유자는 아니지만, 임금노동을 지휘해 이윤을 얻는 자본가적 기능을 수행한다.",
+                    "en": "In capitalist agriculture, rent and profit are differentiated. The tenant farmer does not own the land, but performs a capitalist function by commanding wage-labour for profit."
                   }
                 },
                 {
@@ -9327,27 +9327,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Genesis of the Capitalist Farmer?"
+                    "ko": "16세기 가격혁명과 화폐가치 하락이 차지농업가에게 유리하게 작용할 수 있었던 매개는 무엇인가?",
+                    "en": "What mediated the favourable effect that the sixteenth-century price revolution and depreciation of money could have for tenant farmers?"
                   },
                   "choices": {
                     "ko": [
-                      "순수한 자연조건의 차이",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "생산과정에서 자본주의적 차지농업가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "화폐가치가 떨어지면 모든 계약이 자동으로 무효가 되어 지대를 낼 필요가 없어졌다.",
+                      "장기 임대계약으로 지대가 낡은 화폐액에 묶여 있는 동안 농산물 판매가격은 올라, 차지농업가의 잉여가 커질 수 있었다.",
+                      "가격혁명은 오직 도시 상인에게만 영향을 주고 농업 생산물에는 영향을 주지 않았다.",
+                      "가격 상승은 임금노동자의 토지소유를 확대해 차지농업가를 없앴다."
                     ],
                     "en": [
-                      "a purely natural difference",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "a production-process case where the logic of Genesis of the Capitalist Farmer reshapes the relation between workers and capitalists"
+                      "When money depreciated, all contracts automatically became void and rent no longer had to be paid.",
+                      "While rent was fixed at old money sums through long leases, agricultural selling prices rose, allowing the tenant farmer’s surplus to grow.",
+                      "The price revolution affected only urban merchants and not agricultural products.",
+                      "Rising prices expanded wage-labourers’ landownership and eliminated tenant farmers."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "핵심은 가격 변화가 계급관계 속에서 다르게 작용했다는 점이다. 고정 지대는 지주에게 불리하고 차지농업가에게 축적의 여지를 줄 수 있었다.",
+                    "en": "The key is that price changes worked differently within class relations. Fixed rents could disadvantage landlords and give tenant farmers room to accumulate."
                   }
                 },
                 {
@@ -9355,27 +9355,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Genesis of the Capitalist Farmer to concrete analysis is appropriate?"
+                    "ko": "차지농업가의 발생을 “유능한 농부의 성공담”으로만 보면 무엇이 빠지는가?",
+                    "en": "What is omitted if the rise of the capitalist farmer is seen only as a success story of capable farmers?"
                   },
                   "choices": {
                     "ko": [
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "생산과정에서 자본주의적 차지농업가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "차지농업가가 실제로 생산물을 전혀 시장에 팔지 않았다는 점이 빠진다.",
+                      "지주는 차지농업가에게 아무런 지대를 요구하지 않았다는 점이 빠진다.",
+                      "농업에서는 잉여노동이 존재할 수 없다는 점이 빠진다.",
+                      "농민 수탈, 임금노동자의 형성, 지대계약과 가격 변화 같은 구조적 조건이 개인 능력 이야기 뒤로 사라진다."
                     ],
                     "en": [
-                      "the phenomenon is fully explained by individual psychology",
-                      "a production-process case where the logic of Genesis of the Capitalist Farmer reshapes the relation between workers and capitalists",
-                      "listing examples without concepts is sufficient",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "It omits that tenant farmers never sold products on the market.",
+                      "It omits that landlords demanded no rent from tenant farmers.",
+                      "It omits that surplus-labour cannot exist in agriculture.",
+                      "Structural conditions such as peasant expropriation, formation of wage-labourers, rent contracts, and price changes disappear behind a story of individual ability."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 자본주의적 차지농업가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Genesis of the Capitalist Farmer reshapes the relation between workers and capitalists"
+                    "ko": "마르크스는 개인의 능력을 역사적 조건 대신 세우지 않는다. 차지농업가의 성장은 수탈된 노동력, 토지관계, 시장가격이 결합된 결과다.",
+                    "en": "Marx does not put individual ability in place of historical conditions. The growth of the tenant farmer results from expropriated labour-power, land relations, and market prices combined."
                   }
                 },
                 {
@@ -9383,27 +9383,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Genesis of the Capitalist Farmer in a bourgeois way?"
+                    "ko": "한 농업 기업이 토지를 소유하지 않고 장기 임차하지만, 기계와 종자를 구입하고 노동자를 고용해 대형 유통망에 판매한다. 29장의 관점으로 보면 무엇이 핵심인가?",
+                    "en": "An agricultural firm does not own land but leases it long-term, buys machinery and seed, hires workers, and sells to large distributors. From Chapter 29’s standpoint, what is central?"
                   },
                   "choices": {
                     "ko": [
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "자본주의적 차지농업가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "토지소유 여부만이 아니라, 임차인이 생산을 지휘하고 임금노동을 통해 이윤을 추구하는 자본가로 기능하는지가 중요하다.",
+                      "토지를 소유하지 않으면 어떤 경우에도 자본주의적 농업이 아니다.",
+                      "대형 유통망에 판매하면 생산관계는 자동으로 협동조합이 된다.",
+                      "기계를 쓰면 노동자의 잉여노동은 더 이상 문제가 되지 않는다."
                     ],
                     "en": [
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Genesis of the Capitalist Farmer reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "What matters is not landownership alone, but whether the lessee directs production and functions as a capitalist pursuing profit through wage-labour.",
+                      "If it does not own land, it can never be capitalist agriculture.",
+                      "Selling to large distributors automatically makes the production relation cooperative.",
+                      "Once machinery is used, workers’ surplus-labour is no longer an issue."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "29장의 범주는 토지소유와 자본가적 경영을 구분하게 해 준다. 임차라도 노동자를 고용해 이윤을 추구하면 차지농업가의 논리가 작동한다.",
+                    "en": "Chapter 29 helps distinguish landownership from capitalist management. Even under lease, if labourers are hired for profit, the logic of the capitalist farmer is at work."
                   }
                 },
                 {
@@ -9411,27 +9411,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 차지농업가의 발생에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Genesis of the Capitalist Farmer?"
+                    "ko": "29장이 다음 장의 국내시장 형성 논의로 넘어가는 이유는 무엇인가?",
+                    "en": "Why does Chapter 29 lead into the next chapter’s discussion of the formation of the home market?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것"
+                      "차지농업가가 성장하면 농촌은 시장에서 철수해 도시 산업과 단절되기 때문이다.",
+                      "농업이 자본주의화되면 노동자는 생활수단을 더 이상 구매하지 않아도 되기 때문이다.",
+                      "자본주의적 농업은 농민을 임금노동자와 상품 구매자로 만들고, 농업 생산물도 시장을 향하게 하여 산업자본의 국내시장을 넓히기 때문이다.",
+                      "지대가 존재하면 상품시장은 법적으로 금지되기 때문이다."
                     ],
                     "en": [
-                      "treating a modern example with a similar name as the same concept",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion; and grasping how this form moves into the next contradiction",
-                      "looking only at distributional outcomes while skipping production and circulation mediations"
+                      "When tenant farmers grow, the countryside withdraws from the market and separates from urban industry.",
+                      "Once agriculture becomes capitalist, workers no longer need to buy means of subsistence.",
+                      "Capitalist agriculture turns peasants into wage-labourers and commodity buyers, while orienting agricultural products toward the market, thereby expanding the home market for industrial capital.",
+                      "If rent exists, commodity markets are legally prohibited."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "차지농업가의 발생은 농업 내부 변화에 그치지 않는다. 자급적 농민이 해체되고 생활수단이 상품화되면서 산업자본을 위한 국내시장이 형성된다.",
+                    "en": "The rise of the capitalist farmer is not only an internal agricultural change. As self-sufficient peasants are dissolved and means of subsistence become commodities, a home market for industrial capital is formed."
                   }
                 }
               ]
