@@ -32,7 +32,14 @@
     els.back.addEventListener('click', showLessons);
     els.next.addEventListener('click', function() {
         if (!active || !answered) return;
-        if (els.next.getAttribute('data-finished') === '1') {
+        var finishedAction = els.next.getAttribute('data-finished');
+        if (finishedAction === 'retry') {
+            var retryLesson = active.lesson;
+            els.next.removeAttribute('data-finished');
+            startLesson(retryLesson);
+            return;
+        }
+        if (finishedAction === '1') {
             els.next.removeAttribute('data-finished');
             showLessons();
             return;
@@ -306,6 +313,9 @@
 
     function lessonLabel(lesson, item) {
         if (lesson.locked) return escapeHtml(strings.locked || 'Coming soon');
+        if (item && item.totalQuestions) {
+            return escapeHtml((strings.score || 'Score') + ' ' + item.score + ' / ' + item.totalQuestions);
+        }
         if (item && item.completed) return escapeHtml(strings.completed || 'Completed');
         if (item) return escapeHtml(strings.continue || 'Continue');
         return escapeHtml(strings.start || 'Start');
@@ -379,7 +389,7 @@
 
     function finishLesson() {
         var item = {
-            completed: true,
+            completed: active.score === active.lesson.questions.length,
             score: active.score,
             totalQuestions: active.lesson.questions.length,
             updatedAt: new Date().toISOString()
@@ -394,8 +404,13 @@
         els.feedback.className = 'commu-feedback';
         els.feedback.textContent = (strings.score || 'Score') + ': ' + active.score + ' / ' + active.lesson.questions.length;
         els.next.disabled = false;
-        els.next.textContent = strings.backToLessons || 'Lessons';
-        els.next.setAttribute('data-finished', '1');
+        if (active.score < active.lesson.questions.length) {
+            els.next.textContent = strings.tryAgain || 'Try again';
+            els.next.setAttribute('data-finished', 'retry');
+        } else {
+            els.next.textContent = strings.backToLessons || 'Lessons';
+            els.next.setAttribute('data-finished', '1');
+        }
         answered = true;
     }
 
