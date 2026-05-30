@@ -7,6 +7,7 @@ const router = express.Router();
 const LESSONS_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'lessons.json');
 const PUBLIC_CHAPTER_LIMITS = {
     'capital-vol1': 33,
+    'capital-vol2': 3,
 };
 
 function readLessons() {

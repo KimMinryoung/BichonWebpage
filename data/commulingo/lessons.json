@@ -10792,27 +10792,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환의 핵심은 무엇입니까?",
-                    "en": "What is central to The Circuit of Money-Capital?"
+                    "ko": "화폐자본의 순환을 M-C ... P ... C'-M'로 표시할 때, 마르크스가 먼저 보이려는 것은 무엇인가?",
+                    "en": "When Marx represents the circuit of money-capital as M-C ... P ... C'-M', what is he first trying to show?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다"
+                      "자본은 화폐로 출발하지만, 생산수단과 노동력을 사고 생산과 판매를 거쳐야 더 큰 화폐로 돌아온다.",
+                      "화폐는 생산과 판매를 거치지 않아도 스스로 더 큰 화폐가 된다.",
+                      "자본의 순환에서 생산과정은 우연한 중간 단계이므로 분석에서 제외된다.",
+                      "화폐자본의 순환은 상품교환이 없는 자급경제를 설명한다."
                     ],
                     "en": [
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization",
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone"
+                      "Capital starts as money, but must buy means of production and labour-power, pass through production and sale, and return as a larger sum of money.",
+                      "Money becomes more money by itself without production or sale.",
+                      "In capital’s circuit, the production process is an accidental middle stage and can be excluded from analysis.",
+                      "The circuit of money-capital explains a subsistence economy without commodity exchange."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-                    "en": "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization"
+                    "ko": "화폐자본의 순환은 가치증식이 화폐의 단순 증가가 아니라 세 단계의 운동임을 보여준다. 돈은 생산수단과 노동력을 사고, 생산에서 잉여가치가 만들어지고, 판매를 통해 다시 화폐형태로 돌아와야 한다.",
+                    "en": "The circuit of money-capital shows that valorization is not the simple increase of money but a movement through three stages. Money must buy means of production and labour-power, surplus-value must be produced, and sale must return value to the money-form."
                   }
                 },
                 {
@@ -10820,27 +10820,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does The Circuit of Money-Capital operate?"
+                    "ko": "M-C 단계에서 자본가가 사는 두 종류의 상품은 왜 특별한가?",
+                    "en": "Why are the two kinds of commodities bought in the M-C phase special?"
                   },
                   "choices": {
                     "ko": [
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                      "화폐자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해"
+                      "그것들은 모두 자본가의 개인소비를 위한 사치품이다.",
+                      "그것들은 팔지 않고 보관할수록 스스로 가치가 늘어나는 상품이다.",
+                      "그것들은 생산수단과 노동력이며, 함께 결합될 때 생산과정에서 가치증식이 가능해진다.",
+                      "그것들은 상품이 아니라 법적 명령이므로 시장에서 살 수 없다."
                     ],
                     "en": [
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later",
-                      "The Circuit of Money-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting"
+                      "They are all luxuries for the capitalist’s personal consumption.",
+                      "They are commodities whose value increases by itself the longer they are stored without being sold.",
+                      "They are means of production and labour-power, and when combined they make valorization possible in the production process.",
+                      "They are legal commands rather than commodities and cannot be bought on the market."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "화폐자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                    "en": "The Circuit of Money-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions"
+                    "ko": "M-C는 단순 구매가 아니라 생산자본의 요소를 마련하는 단계다. 노동력과 생산수단이 결합되어야 상품 C'와 잉여가치가 생산된다.",
+                    "en": "M-C is not just a purchase; it prepares the elements of productive capital. Labour-power and means of production must be combined for C' and surplus-value to be produced."
                   }
                 },
                 {
@@ -10848,27 +10848,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of The Circuit of Money-Capital would Marx criticize?"
+                    "ko": "화폐자본의 순환만 보면 자본주의가 “돈이 돈을 낳는” 과정처럼 보일 수 있다. 이 외관이 놓치는 것은 무엇인가?",
+                    "en": "If one looks only at the circuit of money-capital, capitalism can appear as a process in which “money makes money.” What does this appearance miss?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "화폐자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건"
+                      "판매 단계가 필요 없고 가격표만 바꾸면 잉여가치가 생긴다는 점이다.",
+                      "화폐가 처음과 끝에 서 있기 때문에 생산과 노동력 착취가 중간에서 사라진 것처럼 보일 수 있다는 점이다.",
+                      "자본가는 생산수단을 전혀 사지 않는다는 점이다.",
+                      "노동력은 상품이 아니므로 생산과정에 들어갈 수 없다는 점이다."
                     ],
                     "en": [
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "The Circuit of Money-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                      "That surplus-value arises by changing price tags without any need for sale.",
+                      "That because money stands at both beginning and end, production and exploitation of labour-power can appear to disappear in the middle.",
+                      "That the capitalist never buys means of production.",
+                      "That labour-power is not a commodity and cannot enter production."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 화폐자본의 순환을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns The Circuit of Money-Capital from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "화폐자본의 순환은 가치증식의 결과를 선명하게 보이지만, 동시에 생산과정의 역할을 가릴 수 있다. M'는 중간의 P에서 잉여가치가 생산되었기 때문에 가능하다.",
+                    "en": "The circuit of money-capital clearly displays the result of valorization, but it can also obscure the role of production. M' is possible because surplus-value was produced in the intervening P."
                   }
                 },
                 {
@@ -10876,27 +10876,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 화폐자본의 순환과 어떻게 연결됩니까? 상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황.",
-                    "en": "How does this situation relate to The Circuit of Money-Capital? commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later."
+                    "ko": "기업이 돈을 투입해 원료와 노동력을 사고 상품을 만들었지만, 재고가 팔리지 않아 돈으로 돌아오지 못한다. 화폐자본의 순환 관점에서 무엇이 막힌 것인가?",
+                    "en": "A firm advances money to buy raw materials and labour-power and produces commodities, but inventory does not sell and fails to return as money. From the standpoint of the circuit of money-capital, what is blocked?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다"
+                      "생산과정 자체가 없었으므로 어떤 자본 운동도 시작되지 않았다.",
+                      "노동력이 사용되었으니 판매와 무관하게 순환은 이미 완성되었다.",
+                      "돈이 원료로 바뀌는 순간 자본은 더 이상 순환할 필요가 없다.",
+                      "상품자본 C'가 M'로 실현되지 못해 가치와 잉여가치가 화폐형태로 돌아오는 단계가 중단되었다."
                     ],
                     "en": [
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization"
+                      "No capital movement began because there was no production process at all.",
+                      "Once labour-power has been used, the circuit is complete regardless of sale.",
+                      "Once money turns into raw materials, capital no longer needs to circulate.",
+                      "Commodity-capital C' has not been realized as M', so the return of value and surplus-value to the money-form is interrupted."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                    "en": "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                    "ko": "화폐자본의 순환은 판매로 완결된다. 상품이 팔리지 않으면 생산된 가치가 자본가에게 다시 화폐로 돌아오지 못해 다음 투입도 지연된다.",
+                    "en": "The circuit of money-capital is completed through sale. If commodities do not sell, produced value does not return to the capitalist as money, delaying the next advance."
                   }
                 },
                 {
@@ -10904,27 +10904,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand The Circuit of Money-Capital?"
+                    "ko": "화폐자본의 순환에서 “화폐의 선대”와 “자본의 가치증식”을 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must the advance of money be distinguished from the valorization of capital in the circuit of money-capital?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 인물의 선의와 악의",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "정책 구호와 선거 전략",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건"
+                      "돈을 선대하는 것만으로는 잉여가치가 생기지 않고, 노동력과 생산수단이 생산과정에서 결합되어야 가치증식이 일어나기 때문이다.",
+                      "화폐의 선대는 언제나 자본가의 개인소비와 같은 뜻이기 때문이다.",
+                      "가치증식은 생산과 무관하게 은행 계좌에 숫자가 쓰이는 순간 완성되기 때문이다.",
+                      "자본의 순환에서는 화폐형태가 한 번도 등장하지 않기 때문이다."
                     ],
                     "en": [
-                      "individual goodwill and malice",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "policy slogans and electoral strategy",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                      "Because merely advancing money does not create surplus-value; valorization requires labour-power and means of production to be combined in production.",
+                      "Because advancing money always means the capitalist’s personal consumption.",
+                      "Because valorization is completed the moment numbers are written in a bank account, unrelated to production.",
+                      "Because the money-form never appears in capital’s circuit."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                    "en": "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                    "ko": "화폐는 자본의 출발형태일 뿐이다. 그것이 생산자본으로 전환되어 노동력을 착취하고 다시 판매되어야 M'가 된다.",
+                    "en": "Money is only the starting form of capital. It must be converted into productive capital, exploit labour-power, and be sold again to become M'."
                   }
                 }
               ]
@@ -10942,27 +10942,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of The Circuit of Money-Capital?"
+                    "ko": "화폐자본의 순환은 자본가에게 가장 자연스러운 출발점처럼 보인다. 이 형식이 특별히 강조하는 것은 무엇이고, 동시에 무엇을 가릴 수 있는가?",
+                    "en": "The circuit of money-capital appears as the capitalist’s most natural starting point. What does this form emphasize, and what can it obscure?"
                   },
                   "choices": {
                     "ko": [
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다"
+                      "그것은 생산과정을 강조하지만 가치증식의 화폐 결과는 완전히 지운다.",
+                      "그것은 노동자의 소비를 강조하지만 자본가의 판매는 분석하지 않는다.",
+                      "그것은 가치가 더 큰 화폐로 돌아오는 목적을 강조하지만, 그 증가가 생산과 노동력 착취를 통해 매개된다는 점을 가릴 수 있다.",
+                      "그것은 자본주의가 상품교환 없이 작동한다는 점을 강조한다."
                     ],
                     "en": [
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone"
+                      "It emphasizes production but completely erases the monetary result of valorization.",
+                      "It emphasizes workers’ consumption but does not analyze the capitalist’s sale.",
+                      "It emphasizes the aim of value returning as a larger sum of money, but can obscure that this increase is mediated by production and exploitation of labour-power.",
+                      "It emphasizes that capitalism works without commodity exchange."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-                    "en": "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization"
+                    "ko": "M ... M' 형식은 자본가의 목표를 잘 보여준다. 그러나 이 형식만 붙들면 M과 M' 사이의 생산과 착취가 단순한 기술적 중간단계처럼 보일 수 있다.",
+                    "en": "The form M ... M' clearly shows the capitalist’s aim. But if one holds only to this form, production and exploitation between M and M' can appear as a merely technical middle step."
                   }
                 },
                 {
@@ -10970,27 +10970,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in The Circuit of Money-Capital?"
+                    "ko": "M-C에서 노동력 구매와 생산수단 구매가 함께 필요하다는 사실은 어떤 계급관계를 전제하는가?",
+                    "en": "What class relation is presupposed by the fact that M-C must include the purchase of labour-power together with means of production?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "순수한 자연조건의 차이",
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황"
+                      "노동자가 이미 생산수단을 소유하므로 임금계약은 단순한 취미라는 관계다.",
+                      "노동자가 생산수단에서 분리되어 있어 자신의 노동력을 상품으로 팔아야 하고, 자본가는 생산수단과 화폐를 통해 그 노동력을 결합할 수 있다는 관계다.",
+                      "자본가는 노동력을 사지 않고도 생산수단만으로 가치를 만든다는 관계다.",
+                      "노동력과 생산수단이 같은 사람에게 속해야 자본주의가 시작된다는 관계다."
                     ],
                     "en": [
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "a purely natural difference",
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                      "Workers already own means of production, so wage contracts are a mere hobby.",
+                      "Workers are separated from means of production and must sell labour-power as a commodity, while capitalists can combine that labour-power with means of production through money.",
+                      "Capitalists create value with means of production alone without buying labour-power.",
+                      "Capitalism begins only when labour-power and means of production belong to the same person."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                    "en": "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                    "ko": "화폐자본의 첫 단계에도 1권의 계급 전제가 들어 있다. 돈이 자본으로 기능하려면 노동력이 상품으로 시장에 나와 있어야 한다.",
+                    "en": "The first stage of money-capital already contains the class premise of Volume I. For money to function as capital, labour-power must be available on the market as a commodity."
                   }
                 },
                 {
@@ -10998,27 +10998,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of The Circuit of Money-Capital to concrete analysis is appropriate?"
+                    "ko": "“순환”이라는 말 때문에 자본의 운동을 단순한 반복으로만 보면 어떤 문제가 생기는가?",
+                    "en": "What problem arises if capital’s movement is seen as mere repetition because it is called a “circuit”?"
                   },
                   "choices": {
                     "ko": [
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해"
+                      "반복은 존재하지 않고 자본은 한 번만 운동한다는 점을 놓친다.",
+                      "순환은 생산과정을 포함하지 않으므로 상품이 필요 없다는 점을 놓친다.",
+                      "자본은 반복될수록 노동력을 구매할 필요가 없어진다는 점을 놓친다.",
+                      "각 순환은 단순히 원점으로 돌아오는 것이 아니라 가치가 증식된 형태로 돌아와 다음 순환의 규모와 조건을 바꿀 수 있다는 점을 놓친다."
                     ],
                     "en": [
-                      "listing examples without concepts is sufficient",
-                      "the phenomenon is fully explained by individual psychology",
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting"
+                      "It misses that repetition does not exist and capital moves only once.",
+                      "It misses that the circuit does not include production and therefore needs no commodities.",
+                      "It misses that the more capital repeats, the less it needs to buy labour-power.",
+                      "It misses that each circuit does not merely return to its starting point; it returns as valorized value and can change the scale and conditions of the next circuit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                    "en": "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                    "ko": "자본의 순환은 원형 운동이면서 확대 가능성을 가진다. M'가 다시 M으로 선대되면 축적과 회전의 문제가 이어진다.",
+                    "en": "Capital’s circuit is circular movement with the possibility of expansion. When M' is advanced again as M, questions of accumulation and turnover follow."
                   }
                 },
                 {
@@ -11026,27 +11026,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes The Circuit of Money-Capital in a bourgeois way?"
+                    "ko": "금융 수익만 보이는 투자 보고서가 생산 현장의 노동과 판매 위험을 거의 언급하지 않는다고 하자. 화폐자본의 순환 개념으로 무엇을 비판할 수 있는가?",
+                    "en": "Suppose an investment report shows only financial returns and barely mentions labour in production or the risk of sale. What can be criticized through the concept of the circuit of money-capital?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다"
+                      "보고서는 M-M'의 결과만 보며, M-C, P, C'-M'라는 매개를 지워 돈이 돈을 낳는 것처럼 보이게 한다.",
+                      "보고서는 생산을 너무 많이 강조해 화폐형태를 완전히 지운다.",
+                      "보고서는 노동자 소비를 분석했기 때문에 자본 순환과 무관하다.",
+                      "보고서는 상품 판매가 필요 없다는 마르크스의 주장을 정확히 따른다."
                     ],
                     "en": [
-                      "The Circuit of Money-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization"
+                      "The report sees only the result M-M' and erases the mediations M-C, P, and C'-M', making it appear that money breeds money.",
+                      "The report emphasizes production too much and completely erases the money-form.",
+                      "The report analyzes workers’ consumption and is therefore unrelated to capital’s circuit.",
+                      "The report accurately follows Marx’s claim that commodity sale is unnecessary."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "화폐수익만 보면 자본의 사회적·생산적 매개가 사라진다. 마르크스의 순환식은 금융적 외관 뒤의 생산과 판매 조건을 다시 드러낸다.",
+                    "en": "If one sees only monetary return, capital’s social and productive mediations disappear. Marx’s circuit restores the conditions of production and sale behind the financial appearance."
                   }
                 },
                 {
@@ -11054,27 +11054,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐자본의 순환에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of The Circuit of Money-Capital?"
+                    "ko": "화폐자본의 순환이 2권 전체의 출발점으로 중요한 이유는 무엇인가?",
+                    "en": "Why is the circuit of money-capital important as a starting point for Volume II?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것"
+                      "1권의 잉여가치 분석을 취소하고 유통만이 가치를 만든다고 주장하기 때문이다.",
+                      "자본주의에서는 생산이 끝나면 판매가 자동으로 보장된다고 전제하기 때문이다.",
+                      "1권의 가치증식 분석을, 자본이 생산을 지나 다시 화폐로 돌아오고 반복되어야 하는 운동의 문제로 옮겨 놓기 때문이다.",
+                      "화폐형태가 사라진 뒤 생산자본만 남는다는 결론을 내기 때문이다."
                     ],
                     "en": [
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "treating a modern example with a similar name as the same concept",
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization; and grasping how this form moves into the next contradiction",
-                      "looking only at distributional outcomes while skipping production and circulation mediations"
+                      "Because it cancels Volume I’s analysis of surplus-value and claims circulation alone creates value.",
+                      "Because it assumes that once production is complete, sale is automatically guaranteed under capitalism.",
+                      "Because it moves the analysis of valorization from Volume I into the problem of capital’s movement through production, return to money, and repetition.",
+                      "Because it concludes that the money-form disappears and only productive capital remains."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "2권은 잉여가치가 생산된다는 사실에서 멈추지 않는다. 자본은 그 가치를 실현하고 다시 선대되어야 하므로 순환과 회전의 문제가 중심이 된다.",
+                    "en": "Volume II does not stop at the fact that surplus-value is produced. Capital must realize that value and be advanced again, so circuit and turnover become central problems."
                   }
                 }
               ]
@@ -11117,27 +11117,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환의 핵심은 무엇입니까?",
-                    "en": "What is central to The Circuit of Productive Capital?"
+                    "ko": "생산자본의 순환 P ... C'-M'-C ... P는 무엇을 출발점으로 삼는가?",
+                    "en": "What does the circuit of productive capital, P ... C'-M'-C ... P, take as its starting point?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다"
+                      "가치증식이 실제로 일어나는 생산과정과, 그 생산과정이 다시 갱신되어야 한다는 문제를 출발점으로 삼는다.",
+                      "화폐가 은행 안에서 스스로 증식하는 과정을 출발점으로 삼는다.",
+                      "상품이 생산되기 전에 이미 판매되었다는 사실을 출발점으로 삼는다.",
+                      "노동자의 개인소비가 자본가의 생산과 무관하다는 점을 출발점으로 삼는다."
                     ],
                     "en": [
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization",
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone"
+                      "It starts from the production process where valorization actually occurs and from the problem that this process must be renewed.",
+                      "It starts from money increasing by itself inside a bank.",
+                      "It starts from the fact that commodities have already been sold before being produced.",
+                      "It starts from the claim that workers’ personal consumption is unrelated to capitalist production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                    "en": "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center"
+                    "ko": "생산자본의 순환은 P를 출발점과 귀착점으로 둔다. 그래서 자본이 어떻게 생산과정을 반복하고 재생산 조건을 갱신하는지가 전면에 나온다.",
+                    "en": "The circuit of productive capital places P at both starting point and return point. It foregrounds how capital repeats production and renews its conditions of reproduction."
                   }
                 },
                 {
@@ -11145,27 +11145,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does The Circuit of Productive Capital operate?"
+                    "ko": "생산자본의 순환에서 C'-M'-C 단계가 필요한 이유는 무엇인가?",
+                    "en": "Why is the phase C'-M'-C necessary in the circuit of productive capital?"
                   },
                   "choices": {
                     "ko": [
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                      "생산자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건"
+                      "이 단계에서는 생산된 상품을 팔지 않고 폐기해야 다음 생산이 가능하기 때문이다.",
+                      "이 단계는 노동자가 임금을 소비하는 순수한 사생활만을 뜻하기 때문이다.",
+                      "생산된 상품 C'를 팔아 M'로 실현하고, 다시 생산수단과 노동력을 사야 다음 생산과정 P가 가능하기 때문이다.",
+                      "생산자본은 유통을 거치지 않아도 즉시 다시 생산자본이 되기 때문이다."
                     ],
                     "en": [
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later",
-                      "The Circuit of Productive Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                      "Because in this phase the produced commodity must be discarded rather than sold for production to continue.",
+                      "Because this phase means only the worker’s private consumption of wages.",
+                      "Because the produced commodity C' must be sold as M', and means of production and labour-power must be bought again for the next P to occur.",
+                      "Because productive capital becomes productive capital again immediately without passing through circulation."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "생산자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                    "en": "The Circuit of Productive Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions"
+                    "ko": "생산은 스스로 갱신되지 않는다. 상품의 판매와 생산요소의 재구매가 이루어져야 생산자본이 다시 P로 돌아갈 수 있다.",
+                    "en": "Production does not renew itself automatically. Sale of commodities and repurchase of production elements are needed for productive capital to return to P."
                   }
                 },
                 {
@@ -11173,27 +11173,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of The Circuit of Productive Capital would Marx criticize?"
+                    "ko": "생산자본의 순환은 화폐자본의 순환과 달리 어떤 점을 더 분명히 보여주는가?",
+                    "en": "What does the circuit of productive capital show more clearly than the circuit of money-capital?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "생산자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다"
+                      "자본주의에서 화폐형태는 전혀 필요 없다는 점이다.",
+                      "자본주의적 생산은 한 번의 투자와 회수가 아니라 생산과정의 반복적 갱신이라는 점이다.",
+                      "자본의 목적이 개인소비라는 점이다.",
+                      "상품 판매는 생산과정이 시작되기 전에 이미 완료된다는 점이다."
                     ],
                     "en": [
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "The Circuit of Productive Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions"
+                      "That the money-form is entirely unnecessary under capitalism.",
+                      "That capitalist production is not a one-time investment and return but the repeated renewal of the production process.",
+                      "That capital’s purpose is personal consumption.",
+                      "That commodity sale is already complete before the production process begins."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 생산자본의 순환을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns The Circuit of Productive Capital from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "화폐자본의 순환은 M에서 M'로의 증가를 강조한다. 생산자본의 순환은 가치증식의 장소인 P와 그 반복, 즉 재생산의 문제를 더 잘 드러낸다.",
+                    "en": "The circuit of money-capital emphasizes the increase from M to M'. The circuit of productive capital better reveals P, the site of valorization, and its repetition, the problem of reproduction."
                   }
                 },
                 {
@@ -11201,27 +11201,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 생산자본의 순환과 어떻게 연결됩니까? 상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황.",
-                    "en": "How does this situation relate to The Circuit of Productive Capital? commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later."
+                    "ko": "공장이 상품을 팔아 돈을 회수했지만, 핵심 원료 공급이 끊겨 다음 생산을 시작하지 못한다. 생산자본의 순환에서 무엇이 중단된 것인가?",
+                    "en": "A factory sells its commodities and recovers money, but cannot start the next production because a key raw material supply is cut off. What is interrupted in the circuit of productive capital?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다"
+                      "상품이 팔렸으므로 순환은 완전히 끝났고 더 이상 문제는 없다.",
+                      "원료는 생산과 무관하므로 중단된 것은 회계 절차뿐이다.",
+                      "생산자본의 순환에는 원료나 노동력 구매가 포함되지 않는다.",
+                      "C'-M' 이후 M-C가 다음 P의 요소를 재구성하지 못해 생산자본으로의 복귀가 막힌 것이다."
                     ],
                     "en": [
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center"
+                      "Since the commodities were sold, the circuit is completely finished and there is no further problem.",
+                      "Raw materials are unrelated to production, so only an accounting procedure is interrupted.",
+                      "The circuit of productive capital does not include the purchase of raw materials or labour-power.",
+                      "After C'-M', M-C fails to reconstitute the elements of the next P, blocking the return to productive capital."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                    "en": "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                    "ko": "생산자본의 관점에서는 판매만으로 충분하지 않다. 다음 생산에 필요한 요소가 다시 마련되어야 순환이 P로 돌아간다.",
+                    "en": "From the standpoint of productive capital, sale alone is not enough. The elements needed for the next production must be secured for the circuit to return to P."
                   }
                 },
                 {
@@ -11229,27 +11229,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand The Circuit of Productive Capital?"
+                    "ko": "생산자본의 순환을 이해할 때 “생산과정”과 “재생산과정”을 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must the production process be distinguished from the reproduction process when understanding the circuit of productive capital?"
                   },
                   "choices": {
                     "ko": [
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "개별 인물의 선의와 악의",
-                      "정책 구호와 선거 전략",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해"
+                      "한 번의 생산은 상품과 잉여가치를 만들지만, 자본주의적 생산이 계속되려면 판매와 생산요소의 재구매를 통해 생산과정이 반복되어야 하기 때문이다.",
+                      "재생산과정은 노동자 가족의 생물학적 출산만을 뜻하기 때문이다.",
+                      "생산과정과 재생산과정은 완전히 같은 말이므로 구분할 필요가 없기 때문이다.",
+                      "자본주의에서는 생산이 반복될수록 유통은 사라지기 때문이다."
                     ],
                     "en": [
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "individual goodwill and malice",
-                      "policy slogans and electoral strategy",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting"
+                      "Because a single production process creates commodities and surplus-value, but capitalist production continues only if sale and repurchase of production elements allow production to be repeated.",
+                      "Because the reproduction process means only the biological birth of workers’ children.",
+                      "Because production and reproduction mean exactly the same thing and need not be distinguished.",
+                      "Because under capitalism, the more production repeats, the more circulation disappears."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                    "en": "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                    "ko": "생산자본의 순환은 자본이 P로 돌아와야 함을 보여준다. 그래서 단일 생산행위가 아니라 자본주의적 생산의 계속성과 조건 갱신이 핵심이 된다.",
+                    "en": "The circuit of productive capital shows that capital must return to P. The key is therefore not a single act of production but the continuity of capitalist production and renewal of its conditions."
                   }
                 }
               ]
@@ -11267,27 +11267,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of The Circuit of Productive Capital?"
+                    "ko": "생산자본의 순환은 자본주의가 “생산을 위한 생산”처럼 보이는 외관을 만든다. 이 외관은 무엇을 강조하고 무엇을 가리는가?",
+                    "en": "The circuit of productive capital can make capitalism appear as “production for the sake of production.” What does this appearance emphasize, and what does it obscure?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다"
+                      "화폐 증가만을 강조하고 생산과정은 완전히 지운다.",
+                      "노동자 소비만을 강조하고 자본가의 생산은 무시한다.",
+                      "생산과정의 반복을 강조하지만, 그 반복이 가치증식과 잉여가치 실현을 위한 것이라는 목적을 가릴 수 있다.",
+                      "상품 판매 없이도 재생산이 가능하다는 점을 정확히 보여준다."
                     ],
                     "en": [
-                      "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone"
+                      "It emphasizes only the increase of money and completely erases production.",
+                      "It emphasizes workers’ consumption and ignores capitalist production.",
+                      "It emphasizes the repetition of production, but can obscure that this repetition is for valorization and realization of surplus-value.",
+                      "It correctly shows that reproduction is possible without commodity sale."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                    "en": "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center"
+                    "ko": "P ... P는 생산의 연속성을 선명하게 보인다. 그러나 자본주의에서 이 연속성은 사용가치의 일반적 생산이 아니라 가치증식의 반복이다.",
+                    "en": "P ... P clearly displays the continuity of production. But under capitalism this continuity is not production of use-values in general; it is the repetition of valorization."
                   }
                 },
                 {
@@ -11295,27 +11295,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in The Circuit of Productive Capital?"
+                    "ko": "생산자본의 순환에서 노동력과 생산수단의 재구매는 단순한 기술 문제가 아니다. 왜 그런가?",
+                    "en": "In the circuit of productive capital, the repurchase of labour-power and means of production is not merely a technical matter. Why not?"
                   },
                   "choices": {
                     "ko": [
-                      "순수한 자연조건의 차이",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황"
+                      "그 재구매는 자본가가 노동자의 임금소비를 직접 통제하지 않는다는 뜻만 갖기 때문이다.",
+                      "그 재구매는 노동자가 계속 노동력을 팔아야 하고 생산수단이 자본의 형태로 재등장한다는 사회관계의 재생산을 포함하기 때문이다.",
+                      "그 재구매는 생산수단의 가치가 사라졌음을 증명하기 때문이다.",
+                      "그 재구매는 상품시장을 폐지하고 자급경제로 돌아가는 절차이기 때문이다."
                     ],
                     "en": [
-                      "a purely natural difference",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                      "Because it only means that the capitalist does not directly control workers’ wage consumption.",
+                      "Because it includes the reproduction of a social relation in which workers must keep selling labour-power and means of production reappear as capital.",
+                      "Because it proves that the value of means of production has disappeared.",
+                      "Because it is a procedure for abolishing the commodity market and returning to subsistence economy."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                    "en": "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                    "ko": "재생산은 물적 요소의 보충만이 아니다. 생산수단이 자본으로, 노동력이 판매 가능한 상품으로 반복해서 마주서는 관계가 갱신된다.",
+                    "en": "Reproduction is not just replenishment of physical elements. The relation is renewed in which means of production confront workers as capital and labour-power appears again as a saleable commodity."
                   }
                 },
                 {
@@ -11323,27 +11323,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of The Circuit of Productive Capital to concrete analysis is appropriate?"
+                    "ko": "“생산만 잘되면 자본의 순환은 문제없이 완성된다”는 설명이 부족한 이유는 무엇인가?",
+                    "en": "Why is the claim “if production goes well, capital’s circuit is completed without problem” insufficient?"
                   },
                   "choices": {
                     "ko": [
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "개념 없이 사례를 나열하면 충분하다"
+                      "생산이 잘되면 상품은 더 이상 시장에 나올 필요가 없기 때문이다.",
+                      "생산과정에서는 가치가 전혀 만들어지지 않기 때문이다.",
+                      "생산자본의 순환은 판매와 구매를 포함하지 않기 때문이다.",
+                      "생산은 가치와 잉여가치를 상품형태로 만들 뿐이고, 그것이 팔리고 다시 생산요소로 전환되어야 다음 P가 가능하기 때문이다."
                     ],
                     "en": [
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "the phenomenon is fully explained by individual psychology",
-                      "listing examples without concepts is sufficient"
+                      "Because if production goes well, commodities no longer need to enter the market.",
+                      "Because no value is created in the production process.",
+                      "Because the circuit of productive capital does not include sale and purchase.",
+                      "Because production creates value and surplus-value in commodity-form, but they must be sold and converted again into elements of production for the next P to occur."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                    "en": "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                    "ko": "2권의 핵심은 생산과 유통의 매개다. 생산이 성공해도 실현과 재구매가 막히면 자본의 재생산은 중단된다.",
+                    "en": "The core of Volume II is the mediation of production and circulation. Even successful production does not reproduce capital if realization and repurchase are blocked."
                   }
                 },
                 {
@@ -11351,27 +11351,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes The Circuit of Productive Capital in a bourgeois way?"
+                    "ko": "공급망 위기로 원료 조달 주기가 길어져 공장이 가동과 정지를 반복한다. 생산자본의 순환 개념으로 보면 무엇이 드러나는가?",
+                    "en": "A supply-chain crisis lengthens the procurement cycle for raw materials, making a factory alternate between operation and stoppage. What does the circuit of productive capital reveal here?"
                   },
                   "choices": {
                     "ko": [
-                      "생산자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건"
+                      "생산자본은 생산 내부의 기술만이 아니라 유통을 통한 생산요소의 시간 맞춘 재구성에 의존한다.",
+                      "원료 조달은 자본의 순환이 아니라 노동자의 개인소비 문제다.",
+                      "공장이 멈춰도 자본은 항상 같은 속도로 가치증식한다.",
+                      "생산자본의 순환은 원료를 자연물로 보기 때문에 구매 시간을 다루지 않는다."
                     ],
                     "en": [
-                      "The Circuit of Productive Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                      "Productive capital depends not only on techniques inside production but on the timely reconstitution of production elements through circulation.",
+                      "Procurement of raw materials is a matter of workers’ personal consumption, not capital’s circuit.",
+                      "Even when the factory stops, capital always valorizes at the same speed.",
+                      "The circuit of productive capital treats raw materials as natural objects and does not deal with purchase time."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "P의 반복은 유통에 의해 조건 지어진다. 원료와 노동력이 제때 재구매되지 않으면 생산자본은 생산자본으로 기능하지 못한다.",
+                    "en": "The repetition of P is conditioned by circulation. If raw materials and labour-power are not repurchased in time, productive capital cannot function as productive capital."
                   }
                 },
                 {
@@ -11379,27 +11379,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산자본의 순환에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of The Circuit of Productive Capital?"
+                    "ko": "생산자본의 순환이 2권의 재생산 분석으로 이어지는 이유는 무엇인가?",
+                    "en": "Why does the circuit of productive capital lead toward Volume II’s analysis of reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것"
+                      "P로 돌아오는 운동은 화폐와 상품을 모두 없애므로 사회적 비율 문제가 사라지기 때문이다.",
+                      "생산자본의 순환은 오직 한 기업 내부의 회계만 다루고 사회적 재생산과 무관하기 때문이다.",
+                      "P로 돌아오는 운동은 개별 자본만이 아니라 사회 전체에서 생산수단과 소비수단이 어떤 비율로 재생산되어야 하는가의 문제를 열기 때문이다.",
+                      "재생산은 생산이 아니라 노동자의 여가시간만을 뜻하기 때문이다."
                     ],
                     "en": [
-                      "treating a modern example with a similar name as the same concept",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center; and grasping how this form moves into the next contradiction",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "looking only at distributional outcomes while skipping production and circulation mediations"
+                      "Because the return to P abolishes money and commodities, eliminating the problem of social proportions.",
+                      "Because the circuit of productive capital deals only with accounting inside one firm and has no relation to social reproduction.",
+                      "Because the return to P opens the question not only for individual capitals but for society as a whole: in what proportions means of production and means of consumption must be reproduced.",
+                      "Because reproduction means only workers’ leisure time, not production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "생산자본은 계속 P로 돌아와야 한다. 이 요구가 확대되면 사회 전체에서 부문 간 비율과 상호 의존의 문제가 등장한다.",
+                    "en": "Productive capital must continually return to P. When this requirement is expanded, the problem of proportions and interdependence among departments of social production appears."
                   }
                 }
               ]
@@ -11442,27 +11442,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환의 핵심은 무엇입니까?",
-                    "en": "What is central to The Circuit of Commodity-Capital?"
+                    "ko": "상품자본의 순환 C'-M'-C ... P ... C'는 왜 C'에서 출발하는가?",
+                    "en": "Why does the circuit of commodity-capital, C'-M'-C ... P ... C', begin with C'?"
                   },
                   "choices": {
                     "ko": [
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다",
-                      "유통시간이 생산하지 않으면서도 자본의 회전과 가치증식 속도를 제한하는 시간을 이룬다는 점을 분석한다"
+                      "이미 생산된 상품자본 안에 가치와 잉여가치가 들어 있고, 그것이 팔려야 다음 순환이 시작될 수 있기 때문이다.",
+                      "상품은 팔리지 않아도 그 자체로 다음 생산수단이 되기 때문이다.",
+                      "C'는 노동자가 임금으로 소비한 생활수단만을 뜻하기 때문이다.",
+                      "상품자본의 순환에서는 생산과정이 빠져 있기 때문이다."
                     ],
                     "en": [
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone",
-                      "Analyzes circulation time as non-productive time that nevertheless limits turnover and the speed of valorization"
+                      "Because value and surplus-value are already contained in the produced commodity-capital, and it must be sold for the next circuit to begin.",
+                      "Because commodities become the next means of production by themselves without being sold.",
+                      "Because C' means only the means of subsistence consumed by workers as wages.",
+                      "Because the production process is absent from the circuit of commodity-capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                    "en": "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction"
+                    "ko": "상품자본의 순환은 생산된 결과에서 출발한다. C'는 단순 상품이 아니라 잉여가치를 포함한 상품자본이므로 판매를 통해 가치가 실현되어야 한다.",
+                    "en": "The circuit of commodity-capital starts from the produced result. C' is not a mere commodity but commodity-capital containing surplus-value, so its value must be realized through sale."
                   }
                 },
                 {
@@ -11470,27 +11470,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does The Circuit of Commodity-Capital operate?"
+                    "ko": "상품자본의 순환이 특히 잘 드러내는 문제는 무엇인가?",
+                    "en": "What problem does the circuit of commodity-capital make especially visible?"
                   },
                   "choices": {
                     "ko": [
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                      "상품자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다"
+                      "화폐가 필요 없으므로 모든 상품은 직접 생산수단으로 변한다는 문제다.",
+                      "생산된 상품은 사용가치가 없으므로 소비될 수 없다는 문제다.",
+                      "자본주의에서는 생산물이 시장에서 실현되어야 하고, 한 자본의 판매는 다른 자본이나 소비자의 구매를 전제로 한다는 문제다.",
+                      "노동력은 상품자본 속에 들어 있지 않으므로 임금노동은 사라진다는 문제다."
                     ],
                     "en": [
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later",
-                      "The Circuit of Commodity-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions"
+                      "That money is unnecessary because every commodity directly becomes means of production.",
+                      "That produced commodities have no use-value and therefore cannot be consumed.",
+                      "That capitalist products must be realized on the market, and one capital’s sale presupposes another capital’s or consumer’s purchase.",
+                      "That wage-labour disappears because labour-power is not contained in commodity-capital."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "상품자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                    "en": "The Circuit of Commodity-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions"
+                    "ko": "C'에서 출발하면 판매와 사회적 연결이 전면에 나온다. 한 자본의 상품자본은 다른 곳에서 화폐와 수요를 만나야 실현된다.",
+                    "en": "Starting from C' brings sale and social connection to the foreground. One capital’s commodity-capital must meet money and demand elsewhere in order to be realized."
                   }
                 },
                 {
@@ -11498,27 +11498,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of The Circuit of Commodity-Capital would Marx criticize?"
+                    "ko": "상품자본 C'와 단순 상품 C를 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must commodity-capital C' be distinguished from a simple commodity C?"
                   },
                   "choices": {
                     "ko": [
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "상품자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해"
+                      "C'는 사용가치가 없고 오직 가격표만 가진 물건이기 때문이다.",
+                      "C'는 생산과정을 거친 자본의 결과이며 원래 선대된 가치와 잉여가치를 함께 포함하기 때문이다.",
+                      "C'는 노동자가 개인적으로 소비한 상품만을 뜻하기 때문이다.",
+                      "C'는 팔 필요가 없는 재고를 뜻하기 때문이다."
                     ],
                     "en": [
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "The Circuit of Commodity-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting"
+                      "Because C' has no use-value and only has a price tag.",
+                      "Because C' is the result of capital’s production process and contains both the originally advanced value and surplus-value.",
+                      "Because C' means only commodities personally consumed by workers.",
+                      "Because C' means inventory that need not be sold."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 상품자본의 순환을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns The Circuit of Commodity-Capital from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "C'의 프라임 표시는 잉여가치를 포함한다는 뜻이다. 그것은 단순히 팔 물건이 아니라 가치증식 과정을 거친 자본의 상품형태다.",
+                    "en": "The prime in C' indicates that surplus-value is included. It is not merely an item for sale but capital in commodity-form after valorization."
                   }
                 },
                 {
@@ -11526,27 +11526,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 상품자본의 순환과 어떻게 연결됩니까? 상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황.",
-                    "en": "How does this situation relate to The Circuit of Commodity-Capital? commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later."
+                    "ko": "한 기업의 완제품이 다른 기업의 원료로 팔린다. 상품자본의 순환 관점에서 이 사례가 보여주는 것은 무엇인가?",
+                    "en": "A firm’s finished product is sold as another firm’s raw material. What does this show from the standpoint of the circuit of commodity-capital?"
                   },
                   "choices": {
                     "ko": [
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "자본주의적 관계와 무관한 예외적 사건이다"
+                      "상품이 다른 기업으로 팔리면 더 이상 자본의 순환이 아니다.",
+                      "완제품이 원료로 쓰이면 그 안의 가치는 모두 사라진다.",
+                      "기업 사이의 거래는 노동력 구매와 전혀 같은 단계다.",
+                      "한 자본의 C' 실현은 다른 자본의 M-C와 연결될 수 있어, 개별 자본 순환들이 사회적으로 맞물린다는 점이다."
                     ],
                     "en": [
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "It is an exceptional event unrelated to capitalist relations"
+                      "If a commodity is sold to another firm, it is no longer part of capital’s circuit.",
+                      "When a finished product is used as raw material, all value in it disappears.",
+                      "Transactions between firms are exactly the same stage as the purchase of labour-power.",
+                      "One capital’s realization of C' can connect with another capital’s M-C, showing that individual circuits interlock socially."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                    "en": "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                    "ko": "상품자본의 순환은 개별 자본을 사회적 재생산의 연결망 속에 놓는다. 한쪽의 판매는 다른 쪽의 생산요소 구매가 될 수 있다.",
+                    "en": "The circuit of commodity-capital places individual capital within the network of social reproduction. Sale on one side can be purchase of production elements on another."
                   }
                 },
                 {
@@ -11554,27 +11554,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand The Circuit of Commodity-Capital?"
+                    "ko": "상품자본의 순환이 2권의 사회적 재생산 분석으로 이어지는 이유는 무엇인가?",
+                    "en": "Why does the circuit of commodity-capital lead toward Volume II’s analysis of social reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "정책 구호와 선거 전략",
-                      "개별 인물의 선의와 악의",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해"
+                      "C'의 판매와 재구매는 개별 자본 안에서 끝나지 않고, 사회 전체의 생산물 구성과 구매력, 부문 간 교환을 전제로 하기 때문이다.",
+                      "상품자본의 순환은 사회 전체와 무관하고 오직 한 창고의 재고만 다루기 때문이다.",
+                      "C'가 존재하면 생산수단과 소비수단의 비율 문제는 사라지기 때문이다.",
+                      "상품자본은 화폐와 생산을 모두 폐지하는 최종 형태이기 때문이다."
                     ],
                     "en": [
-                      "policy slogans and electoral strategy",
-                      "individual goodwill and malice",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting"
+                      "Because the sale and repurchase of C' do not end inside an individual capital; they presuppose the composition of the total social product, purchasing power, and exchange between departments.",
+                      "Because the circuit of commodity-capital is unrelated to society as a whole and deals only with inventory in one warehouse.",
+                      "Because when C' exists, the problem of proportions between means of production and means of consumption disappears.",
+                      "Because commodity-capital is the final form that abolishes both money and production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                    "en": "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                    "ko": "상품자본에서 출발하면 실현 문제가 사회적 문제로 확장된다. 사회 전체가 어떤 상품을 어떤 비율로 생산하고 교환해야 하는지가 중요해진다.",
+                    "en": "Starting from commodity-capital expands realization into a social problem. It becomes crucial what commodities society as a whole produces and exchanges, and in what proportions."
                   }
                 }
               ]
@@ -11592,27 +11592,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of The Circuit of Commodity-Capital?"
+                    "ko": "상품자본의 순환은 화폐자본이나 생산자본의 순환보다 사회적 성격을 더 강하게 드러낸다. 왜 그런가?",
+                    "en": "The circuit of commodity-capital reveals the social character of capital more strongly than the circuits of money-capital or productive capital. Why?"
                   },
                   "choices": {
                     "ko": [
-                      "유통시간이 생산하지 않으면서도 자본의 회전과 가치증식 속도를 제한하는 시간을 이룬다는 점을 분석한다",
-                      "세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다",
-                      "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다"
+                      "C'는 시장에 나오지 않고 공장 내부에서만 소비되기 때문이다.",
+                      "상품자본은 노동력과 생산수단을 전혀 포함하지 않는 순수 자연물의 흐름이기 때문이다.",
+                      "C'는 판매되어야 하며, 그 판매는 다른 자본과 소비자의 구매, 즉 사회적 재생산의 상호 의존을 전제로 하기 때문이다.",
+                      "상품자본의 순환에서는 잉여가치가 이미 사라져 사회적 관계가 필요 없기 때문이다."
                     ],
                     "en": [
-                      "Analyzes circulation time as non-productive time that nevertheless limits turnover and the speed of valorization",
-                      "Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone",
-                      "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center",
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction"
+                      "Because C' never enters the market and is consumed only inside the factory.",
+                      "Because commodity-capital is a flow of pure natural things containing neither labour-power nor means of production.",
+                      "Because C' must be sold, and that sale presupposes purchases by other capitals and consumers, the interdependence of social reproduction.",
+                      "Because in the circuit of commodity-capital surplus-value has already disappeared and no social relation is needed."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                    "en": "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction"
+                    "ko": "상품자본은 자본의 결과가 사회적으로 실현되어야 함을 보여준다. 그래서 개별 자본의 운동이 곧 다른 자본과 소비자의 운동에 의존한다는 점이 드러난다.",
+                    "en": "Commodity-capital shows that capital’s result must be socially realized. It reveals that the movement of an individual capital depends on the movements of other capitals and consumers."
                   }
                 },
                 {
@@ -11620,27 +11620,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in The Circuit of Commodity-Capital?"
+                    "ko": "C'에서 출발하면 잉여가치의 운명은 어떤 두 방향으로 갈라질 수 있는가?",
+                    "en": "Starting from C', into what two directions can the fate of surplus-value divide?"
                   },
                   "choices": {
                     "ko": [
-                      "순수한 자연조건의 차이",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건"
+                      "잉여가치는 언제나 사라져 어떤 형태로도 남지 않는다.",
+                      "잉여가치의 일부는 자본가의 수입으로 소비될 수 있고, 일부는 추가 자본으로 축적되어 다음 순환의 규모를 바꿀 수 있다.",
+                      "잉여가치는 전부 노동자 임금으로 자동 반환된다.",
+                      "잉여가치는 오직 생산수단의 물리적 마모만을 보상한다."
                     ],
                     "en": [
-                      "a purely natural difference",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                      "Surplus-value always disappears and remains in no form.",
+                      "Part of surplus-value can be consumed as the capitalist’s revenue, while part can be accumulated as additional capital and change the scale of the next circuit.",
+                      "All surplus-value is automatically returned as workers’ wages.",
+                      "Surplus-value only compensates the physical wear of means of production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건",
-                    "en": "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                    "ko": "C'는 원가치와 잉여가치를 함께 담는다. 판매 뒤 잉여가치가 소비될지 축적될지는 재생산의 규모와 다음 순환의 성격을 바꾼다.",
+                    "en": "C' contains both original value and surplus-value. After sale, whether surplus-value is consumed or accumulated changes the scale of reproduction and the character of the next circuit."
                   }
                 },
                 {
@@ -11648,27 +11648,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of The Circuit of Commodity-Capital to concrete analysis is appropriate?"
+                    "ko": "“상품은 팔리기만 하면 된다”는 식의 설명이 상품자본의 순환에서 부족한 이유는 무엇인가?",
+                    "en": "Why is it insufficient in the circuit of commodity-capital to say simply that “commodities only need to be sold”?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                      "개념 없이 사례를 나열하면 충분하다"
+                      "판매는 단지 가격표를 붙이는 행위이므로 구매자가 필요 없기 때문이다.",
+                      "판매가 이루어지면 다음 생산과정은 자동으로 자연에서 생기기 때문이다.",
+                      "상품자본은 판매되면 더 이상 가치와 관계가 없기 때문이다.",
+                      "판매 뒤에는 생산수단과 노동력의 재구매, 잉여가치의 소비 또는 축적, 다른 자본과의 교환 비율 문제가 이어지기 때문이다."
                     ],
                     "en": [
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "the phenomenon is fully explained by individual psychology",
-                      "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later",
-                      "listing examples without concepts is sufficient"
+                      "Because sale is merely putting on a price tag and needs no buyer.",
+                      "Because once sale occurs, the next production process arises automatically from nature.",
+                      "Because once commodity-capital is sold, it no longer has any relation to value.",
+                      "Because after sale come the repurchase of means of production and labour-power, the consumption or accumulation of surplus-value, and the problem of exchange proportions with other capitals."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "상품은 생산되었지만 판매와 회전이 지연되어 같은 자본이 더 늦게 가치증식으로 돌아오는 상황",
-                    "en": "commodities are produced, but sale and turnover are delayed, so the same capital returns to valorization later"
+                    "ko": "C'-M'는 끝이 아니라 다음 운동의 조건이다. 실현된 가치는 다시 생산요소와 수입, 축적 몫으로 나뉘어 사회적 재생산에 들어간다.",
+                    "en": "C'-M' is not the end but the condition of the next movement. Realized value is divided again into production elements, revenue, and accumulation, entering social reproduction."
                   }
                 },
                 {
@@ -11676,27 +11676,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes The Circuit of Commodity-Capital in a bourgeois way?"
+                    "ko": "한 산업의 과잉생산이 다른 산업의 판매 부진과 원료 구매 축소로 이어진다. 상품자본의 순환은 이 연쇄를 어떻게 이해하게 해 주는가?",
+                    "en": "Overproduction in one industry leads to poor sales and reduced raw-material purchases in another. How does the circuit of commodity-capital help explain this chain?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "상품자본의 순환은 자본의 생산과 유통이 시간, 회전, 실현 조건에 의해 매개된다는 점을 보여준다",
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-                      "개별자본의 회계 흐름과 사회적 총자본의 재생산 조건"
+                      "개별 C'의 실현 실패는 다른 자본의 M-C와 P를 방해할 수 있어, 순환들이 사회적으로 서로 얽혀 있음을 보여준다.",
+                      "한 산업의 판매 부진은 다른 산업과 원칙적으로 연결될 수 없다.",
+                      "과잉생산은 상품이 너무 적게 생산되었다는 뜻이므로 원료 구매가 늘어야 한다.",
+                      "상품자본의 순환은 산업 간 거래를 분석하지 않는다."
                     ],
                     "en": [
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "The Circuit of Commodity-Capital shows that production and circulation of capital are mediated by time, turnover, and realization conditions",
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction",
-                      "accounting flow of individual capital and reproduction conditions of aggregate social capital"
+                      "The failure to realize one C' can disrupt another capital’s M-C and P, showing that circuits are socially interwoven.",
+                      "Poor sales in one industry cannot in principle be connected to another industry.",
+                      "Overproduction means too few commodities were produced, so raw-material purchases must rise.",
+                      "The circuit of commodity-capital does not analyze transactions between industries."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "상품자본의 순환은 위기를 단일 기업의 문제가 아니라 연결된 순환들의 문제로 보게 한다. 한곳의 실현 실패는 다른 곳의 구매와 생산을 막을 수 있다.",
+                    "en": "The circuit of commodity-capital lets us see crisis not as a problem of a single firm but of connected circuits. Failure of realization in one place can block purchase and production elsewhere."
                   }
                 },
                 {
@@ -11704,27 +11704,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of The Circuit of Commodity-Capital?"
+                    "ko": "3장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 3?"
                   },
                   "choices": {
                     "ko": [
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "자본의 유통과 회전을 단순한 물류, 판매기술, 기업 회계 문제로만 보는 견해",
-                      "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것"
+                      "상품자본이 가장 단순하므로 화폐와 생산 분석이 필요 없다는 결론을 낸다.",
+                      "상품 판매가 항상 자동으로 이루어져 위기 가능성이 없다는 점을 증명한다.",
+                      "세 번째 순환 형식을 통해 개별 자본의 운동이 사회적 총자본의 재생산 문제로 넘어갈 수밖에 없음을 보여준다.",
+                      "자본의 순환은 세 형식 중 하나만 알면 나머지는 모두 폐기해도 된다고 주장한다."
                     ],
                     "en": [
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "the view that circulation and turnover of capital are merely logistics, sales technique, or firm accounting",
-                      "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction; and grasping how this form moves into the next contradiction",
-                      "treating a modern example with a similar name as the same concept"
+                      "It concludes that because commodity-capital is simplest, analysis of money and production is unnecessary.",
+                      "It proves that commodity sale is always automatic and that crisis is impossible.",
+                      "Through the third circuit form, it shows that the movement of individual capital necessarily leads to the problem of reproduction of the total social capital.",
+                      "It argues that once one of the three circuit forms is known, the others can be discarded."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "상품자본의 순환은 사회적 재생산 분석으로 가는 문을 연다. 개별 자본의 C'가 실현되려면 사회 전체의 구매력과 생산물 구성이 맞물려야 한다.",
+                    "en": "The circuit of commodity-capital opens the door to the analysis of social reproduction. For an individual capital’s C' to be realized, the purchasing power and product composition of society as a whole must interlock."
                   }
                 }
               ]
