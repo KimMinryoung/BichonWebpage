@@ -5899,27 +5899,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨의 핵심은 무엇입니까?",
-                    "en": "What is central to The Transformation of the Value (and Respective Price) of Labour-Power into Wages?"
+                    "ko": "노동자는 하루 임금을 받고 일한다. 일상적으로는 “노동의 가격”을 받은 것처럼 보인다. 19장에서 마르크스가 이 외양 뒤에서 구분하는 것은 무엇인가?",
+                    "en": "A worker receives a daily wage. In everyday appearance, it looks like a “price of labor.” What does Marx distinguish behind this appearance in Chapter 19?"
                   },
                   "choices": {
                     "ko": [
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                      "잉여가치율을 표현하는 여러 공식이 착취관계를 드러내거나 은폐하는 방식을 정리한다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다"
+                      "판매되는 것은 노동 그 자체가 아니라 노동력이며, 임금은 노동력 가치 또는 가격의 현상형태라는 점",
+                      "노동자는 임금을 받으므로 노동력을 판매하지 않고 상품도 생산하지 않는다는 점",
+                      "임금은 노동자가 만든 전체 가치와 언제나 같은 금액이라는 점",
+                      "노동은 생산 전에 이미 존재하는 완성된 상품이라는 점"
                     ],
                     "en": [
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day",
-                      "Clarifies how different formulas for the rate of surplus-value reveal or obscure exploitation",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself"
+                      "What is sold is not labor itself but labor-power, and wages are the phenomenal form of the value or price of labor-power.",
+                      "Because the worker receives wages, they do not sell labor-power and do not produce commodities.",
+                      "Wages are always equal to the whole value created by the worker.",
+                      "Labor is a finished commodity that already exists before production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-                    "en": "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself"
+                    "ko": "노동은 생산과정에서 실제로 수행되는 활동이므로, 생산 전에 상품처럼 팔릴 수 없다. 시장에서 팔리는 것은 노동력이고, 임금형태는 그 노동력의 가치가 노동 자체의 가격인 것처럼 보이게 만든다.",
+                    "en": "Labor is the activity actually performed in production, so it cannot be sold as a commodity before production. What is sold in the market is labor-power, and the wage-form makes the value of labor-power appear as the price of labor itself."
                   }
                 },
                 {
@@ -5927,27 +5927,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does The Transformation of the Value (and Respective Price) of Labour-Power into Wages operate?"
+                    "ko": "노동자가 12시간 일하고 임금은 6시간의 필요노동에 해당한다고 하자. 임금형태는 왜 이 관계를 가리기 쉬운가?",
+                    "en": "Suppose a worker works 12 hours, while the wage corresponds to 6 hours of necessary labor. Why does the wage-form easily conceal this relation?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "노동력의 가치 또는 가격이 임금으로 전환됨은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 노동력의 가치 또는 가격이 임금으로 전환됨의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "임금이 낮으면 노동자가 실제로 6시간만 일하기 때문이다.",
+                      "잉여노동은 생산과정이 아니라 임금 지급 순간에 생기기 때문이다.",
+                      "임금이 하루 노동 전체의 대가처럼 나타나 필요노동과 잉여노동의 분할을 보이지 않게 만들기 때문이다.",
+                      "임금형태에서는 불변자본이 노동력으로 바뀌기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "The Transformation of the Value (and Respective Price) of Labour-Power into Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of The Transformation of the Value (and Respective Price) of Labour-Power into Wages reshapes the relation between workers and capitalists"
+                      "Because if wages are low, the worker actually works only 6 hours.",
+                      "Because surplus labor arises at the moment wages are paid, not in production.",
+                      "Because wages appear as payment for the whole day’s labor, making the division between necessary and surplus labor invisible.",
+                      "Because in the wage-form constant capital turns into labor-power."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "The Transformation of the Value (and Respective Price) of Labour-Power into Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "임금은 노동력의 가치에 대한 지불인데, 노동 전체의 지불처럼 나타난다. 그래서 노동일의 일부가 불불노동이라는 사실이 사라지고, 착취관계가 공정한 노동가격처럼 보인다.",
+                    "en": "Wages pay for the value of labor-power, but appear as payment for labor as a whole. Thus the fact that part of the working day is unpaid labor disappears, and exploitation appears as a fair price of labor."
                   }
                 },
                 {
@@ -5955,27 +5955,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of The Transformation of the Value (and Respective Price) of Labour-Power into Wages would Marx criticize?"
+                    "ko": "“노동의 가치”라는 표현이 마르크스에게 왜 문제가 되는가?",
+                    "en": "Why is the expression “value of labor” problematic for Marx?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "노동력의 가치 또는 가격이 임금으로 전환됨은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "노동에는 어떤 사회에서도 가치와 무관한 순수 자연가격만 있기 때문이다.",
+                      "노동은 가치의 실체이자 척도이지, 생산 전에 따로 가치가 매겨져 판매되는 상품이 아니기 때문이다.",
+                      "노동은 언제나 임금보다 더 높은 가격으로 팔리기 때문이다.",
+                      "노동은 물질적 생산과 무관한 심리상태이기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "The Transformation of the Value (and Respective Price) of Labour-Power into Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "Because in every society labor has only a pure natural price unrelated to value.",
+                      "Because labor is the substance and measure of value, not a commodity with its own value sold before production.",
+                      "Because labor is always sold above the wage.",
+                      "Because labor is a psychological state unrelated to material production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 노동력의 가치 또는 가격이 임금으로 전환됨을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns The Transformation of the Value (and Respective Price) of Labour-Power into Wages from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "가치를 만드는 활동인 노동 자체에 다시 “가치”를 붙이면 순환논리가 된다. 마르크스는 이 혼동을 풀기 위해 노동과 노동력을 구분한다.",
+                    "en": "If labor, the activity that creates value, is itself given a “value,” the explanation becomes circular. Marx resolves this confusion by distinguishing labor from labor-power."
                   }
                 },
                 {
@@ -5983,27 +5983,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 노동력의 가치 또는 가격이 임금으로 전환됨과 어떻게 연결됩니까? 생산과정에서 노동력의 가치 또는 가격이 임금으로 전환됨의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to The Transformation of the Value (and Respective Price) of Labour-Power into Wages? a production-process case where the logic of The Transformation of the Value (and Respective Price) of Labour-Power into Wages reshapes the relation between workers and capitalists."
+                    "ko": "자본가와 노동자가 시장에서 평등한 상품소유자로 만났다는 사실은 왜 임금형태의 전도를 강화하는가?",
+                    "en": "Why does the fact that capitalist and worker meet in the market as equal commodity owners strengthen the inversion of the wage-form?"
                   },
                   "choices": {
                     "ko": [
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "시장에서 평등하게 만나면 생산과정의 착취도 자동으로 사라지기 때문이다.",
+                      "상품소유자는 서로 만나면 어떤 노동도 하지 않기 때문이다.",
+                      "평등한 교환에서는 노동력의 가치가 언제나 0이 되기 때문이다.",
+                      "자유로운 교환의 표면에서는 노동력 판매가 노동 전체의 정당한 판매처럼 보이고, 생산 안의 잉여노동은 가려지기 때문이다."
                     ],
                     "en": [
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "Because if they meet equally in the market, exploitation in production automatically disappears.",
+                      "Because commodity owners do no labor once they meet each other.",
+                      "Because in equal exchange the value of labor-power is always zero.",
+                      "Because on the surface of free exchange, the sale of labor-power appears as the legitimate sale of all labor, concealing surplus labor in production."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 노동력의 가치 또는 가격이 임금으로 전환됨의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of The Transformation of the Value (and Respective Price) of Labour-Power into Wages reshapes the relation between workers and capitalists"
+                    "ko": "임금형태는 시장의 자유와 평등을 부정하지 않고 그 표면 위에서 작동한다. 바로 그 표면이 노동력의 가격을 노동의 가격처럼 보이게 만들어 생산과정의 착취를 가린다.",
+                    "en": "The wage-form does not deny the market surface of freedom and equality; it operates on that surface. That very surface makes the price of labor-power appear as the price of labor and conceals exploitation in production."
                   }
                 },
                 {
@@ -6011,27 +6011,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand The Transformation of the Value (and Respective Price) of Labour-Power into Wages?"
+                    "ko": "19장이 시간임금과 성과임금 분석보다 먼저 와야 하는 이유는 무엇인가?",
+                    "en": "Why must Chapter 19 come before the analyses of time-wages and piece-wages?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 인물의 선의와 악의",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "정책 구호와 선거 전략"
+                      "먼저 임금 일반이 노동력 가치의 전도된 현상형태임을 이해해야 시간당 임금과 개당 임금의 구체적 은폐방식을 볼 수 있기 때문이다.",
+                      "시간임금과 성과임금은 임금형태와 무관한 별개의 시장가격이기 때문이다.",
+                      "임금 일반을 이해하면 시간임금과 성과임금은 더 이상 자본주의에서 존재하지 않기 때문이다.",
+                      "성과임금이 먼저 있어야 노동력과 노동의 구분이 가능하기 때문이다."
                     ],
                     "en": [
-                      "individual goodwill and malice",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "policy slogans and electoral strategy"
+                      "Because we must first understand wages in general as the inverted phenomenal form of the value of labor-power before seeing the specific concealments of hourly and piece wages.",
+                      "Because time-wages and piece-wages are separate market prices unrelated to the wage-form.",
+                      "Because once wages in general are understood, time-wages and piece-wages no longer exist under capitalism.",
+                      "Because piece-wages must come first before labor-power can be distinguished from labor."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "19장은 임금형태의 일반적 전도를 설명한다. 20장과 21장은 이 전도가 시간 단위와 생산물 단위라는 구체적 형태에서 어떻게 작동하는지를 보여준다.",
+                    "en": "Chapter 19 explains the general inversion of the wage-form. Chapters 20 and 21 show how that inversion operates in the concrete forms of time-wages and piece-wages."
                   }
                 }
               ]
@@ -6049,27 +6049,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of The Transformation of the Value (and Respective Price) of Labour-Power into Wages?"
+                    "ko": "임금형태가 자본주의를 안정적으로 보이게 만드는 이유는 무엇인가?",
+                    "en": "Why does the wage-form make capitalism appear stable and fair?"
                   },
                   "choices": {
                     "ko": [
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                      "잉여가치율을 표현하는 여러 공식이 착취관계를 드러내거나 은폐하는 방식을 정리한다",
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다"
+                      "임금이 실제로 노동자가 만든 전체 가치를 모두 돌려주기 때문이다.",
+                      "임금형태에서는 생산수단 소유가 사라져 계급관계가 없어지기 때문이다.",
+                      "임금이 노동 전체의 대가처럼 보이게 해 불불노동과 잉여가치를 지우고, 착취를 등가교환의 결과처럼 보이게 하기 때문이다.",
+                      "임금은 자본가의 이윤과 아무 관계가 없으므로 분석할 필요가 없기 때문이다."
                     ],
                     "en": [
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day",
-                      "Clarifies how different formulas for the rate of surplus-value reveal or obscure exploitation",
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor"
+                      "Because wages actually return the entire value created by the worker.",
+                      "Because in the wage-form ownership of means of production disappears and class relations vanish.",
+                      "Because wages appear as payment for all labor, erasing unpaid labor and surplus-value and making exploitation look like the result of equivalent exchange.",
+                      "Because wages have no relation to capitalist profit and need no analysis."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-                    "en": "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself"
+                    "ko": "임금형태는 착취를 부정하는 이데올로기적 외피가 아니라 실제 교환형태에서 생기는 외양이다. 노동력의 가격이 노동의 가격처럼 보이므로 잉여노동은 보이지 않는다.",
+                    "en": "The wage-form is not merely an ideological cover denying exploitation; it is an appearance generated by the real form of exchange. The price of labor-power appears as the price of labor, making surplus labor invisible."
                   }
                 },
                 {
@@ -6077,27 +6077,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in The Transformation of the Value (and Respective Price) of Labour-Power into Wages?"
+                    "ko": "“노동자가 임금을 받았으니 하루 노동 전체가 지불됐다”는 주장이 착취 분석에서 놓치는 것은 무엇인가?",
+                    "en": "What does the claim “because the worker receives wages, the whole working day is paid” miss in the analysis of exploitation?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 노동력의 가치 또는 가격이 임금으로 전환됨의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "순수한 자연조건의 차이",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "임금이 지급되면 노동자는 더 이상 생산물 가치를 만들지 않는다는 점",
+                      "임금은 노동일 전체가 아니라 노동력 가치에 대한 지불이며, 노동일은 필요노동과 잉여노동으로 나뉜다는 점",
+                      "하루 노동 전체가 지불되면 자본가는 언제나 손실만 본다는 점",
+                      "노동력 가치와 노동 전체 가치는 언제나 같은 개념이라는 점"
                     ],
                     "en": [
-                      "a production-process case where the logic of The Transformation of the Value (and Respective Price) of Labour-Power into Wages reshapes the relation between workers and capitalists",
-                      "a purely natural difference",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "That once wages are paid, the worker no longer creates the value of the product.",
+                      "That wages pay for the value of labor-power, not for the entire working day, and the working day is divided into necessary and surplus labor.",
+                      "That if the whole working day is paid, the capitalist always makes only a loss.",
+                      "That the value of labor-power and the value of all labor are always the same concept."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "마르크스의 임금 분석은 “지불됐다”는 외양을 노동력 가치와 노동일 분할로 해체한다. 임금 지급은 잉여노동의 존재와 모순되지 않는다.",
+                    "en": "Marx’s analysis of wages breaks down the appearance of “payment” into the value of labor-power and the division of the working day. The payment of wages does not contradict the existence of surplus labor."
                   }
                 },
                 {
@@ -6105,27 +6105,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of The Transformation of the Value (and Respective Price) of Labour-Power into Wages to concrete analysis is appropriate?"
+                    "ko": "“노동의 가격”이라는 외양은 왜 단순한 착각이 아니라 현실적 외양인가?",
+                    "en": "Why is the appearance “price of labor” a real appearance rather than a mere illusion?"
                   },
                   "choices": {
                     "ko": [
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "생산과정에서 노동력의 가치 또는 가격이 임금으로 전환됨의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "노동이 실제로 생산 전에 완성된 물건처럼 창고에 보관되기 때문이다.",
+                      "자본가는 노동력을 사지 않고 노동자에게 아무것도 지급하지 않기 때문이다.",
+                      "임금이 법률상 존재하지 않는데도 사람들이 상상하기 때문이다.",
+                      "노동자는 실제로 노동력을 팔고 임금을 받으며, 그 임금이 생산 후 수행된 노동시간과 연결되어 나타나기 때문이다."
                     ],
                     "en": [
-                      "the phenomenon is fully explained by individual psychology",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "listing examples without concepts is sufficient",
-                      "a production-process case where the logic of The Transformation of the Value (and Respective Price) of Labour-Power into Wages reshapes the relation between workers and capitalists"
+                      "Because labor is actually stored in warehouses before production like a finished object.",
+                      "Because the capitalist does not buy labor-power and pays the worker nothing.",
+                      "Because wages do not legally exist and people merely imagine them.",
+                      "Because the worker really sells labor-power and receives wages, and those wages appear connected to the labor-time performed after production begins."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 노동력의 가치 또는 가격이 임금으로 전환됨의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of The Transformation of the Value (and Respective Price) of Labour-Power into Wages reshapes the relation between workers and capitalists"
+                    "ko": "임금형태의 전도는 현실적 교환관계에서 나온다. 노동력은 시장에서 팔리지만 그 사용은 생산과정에서 노동으로 나타나기 때문에, 사후적으로 노동 자체가 팔린 것처럼 보인다.",
+                    "en": "The inversion of the wage-form arises from a real exchange relation. Labor-power is sold in the market, but its use appears as labor in production, so retrospectively it looks as if labor itself was sold."
                   }
                 },
                 {
@@ -6133,27 +6133,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes The Transformation of the Value (and Respective Price) of Labour-Power into Wages in a bourgeois way?"
+                    "ko": "19장의 임금형태 분석이 앞선 잉여가치율 공식과 연결되는 지점은 어디인가?",
+                    "en": "Where does Chapter 19’s analysis of the wage-form connect to the earlier formulas for the rate of surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "노동력의 가치 또는 가격이 임금으로 전환됨은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "앞선 공식은 필요노동과 잉여노동을 드러냈지만, 임금형태는 그 분할을 노동 전체의 가격처럼 보이게 해 은폐한다.",
+                      "임금형태는 잉여가치율을 더 정확히 보이게 하므로 공식 분석이 필요 없어진다.",
+                      "잉여가치율 공식은 생산과정에만 있고 임금형태와는 어떤 관련도 없다.",
+                      "임금형태가 나타나면 필요노동과 잉여노동은 실제로 사라진다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "The Transformation of the Value (and Respective Price) of Labour-Power into Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "The earlier formulas reveal necessary and surplus labor, while the wage-form conceals that division by making it appear as the price of all labor.",
+                      "The wage-form makes the rate of surplus-value more visible, so formula analysis becomes unnecessary.",
+                      "The formulas for the rate of surplus-value exist only in production and have no relation to the wage-form.",
+                      "When the wage-form appears, necessary and surplus labor really disappear."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "18장은 착취관계를 드러내는 표현들을 정리했고, 19장은 임금형태가 그 관계를 어떻게 전도하는지 보여준다. 그래서 임금 분석은 잉여가치 분석의 후속 단계다.",
+                    "en": "Chapter 18 organized expressions that reveal exploitation; Chapter 19 shows how the wage-form inverts that relation. Wage analysis is therefore the next stage of surplus-value analysis."
                   }
                 },
                 {
@@ -6161,27 +6161,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동력의 가치 또는 가격이 임금으로 전환됨에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of The Transformation of the Value (and Respective Price) of Labour-Power into Wages?"
+                    "ko": "19장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best describes the systematic role of Chapter 19?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것"
+                      "임금이 노동자가 만든 전체 가치를 모두 지불한다는 점을 증명해 착취 분석을 끝낸다.",
+                      "시간임금과 성과임금의 기술적 계산만 다루고 가치형태와는 무관하다.",
+                      "잉여가치 생산 분석에서 드러난 노동력/노동의 구분이 임금형태에서 어떻게 노동의 가격이라는 외양으로 전도되는지 보여준다.",
+                      "노동력은 상품이 아니라는 결론으로 6장의 분석을 폐기한다."
                     ],
                     "en": [
-                      "treating a modern example with a similar name as the same concept",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself; and grasping how this form moves into the next contradiction"
+                      "It proves that wages pay the entire value created by workers and ends the analysis of exploitation.",
+                      "It deals only with technical calculations of time-wages and piece-wages and has no relation to value-form.",
+                      "It shows how the distinction between labor-power and labor, established in the analysis of surplus-value production, is inverted in the wage-form into the appearance of a price of labor.",
+                      "It abandons Chapter 6 by concluding that labor-power is not a commodity."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "19장은 생산과정에서 밝혀진 착취관계가 표면에서는 어떻게 사라져 보이는지 설명한다. 이 장이 있어야 임금형태를 단순한 소득이 아니라 자본주의적 외양형태로 읽을 수 있다.",
+                    "en": "Chapter 19 explains how the exploitation relation revealed in production disappears on the surface. It allows us to read wages not as a simple income, but as a capitalist form of appearance."
                   }
                 }
               ]
@@ -6224,27 +6224,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금의 핵심은 무엇입니까?",
-                    "en": "What is central to Time-Wages?"
+                    "ko": "노동자가 하루 10시간 일하고 하루 임금 100을 받으면, 시간당 10을 받는 것처럼 보인다. 시간임금에서 마르크스가 주목하는 외양은 무엇인가?",
+                    "en": "If a worker works 10 hours and receives a daily wage of 100, it appears they receive 10 per hour. What appearance does Marx focus on in time-wages?"
                   },
                   "choices": {
                     "ko": [
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다"
+                      "노동력의 하루 가치가 노동시간 단위의 노동 가격처럼 나뉘어 보인다는 점",
+                      "노동자가 매 시간마다 자신이 만든 전체 가치를 모두 받는다는 점",
+                      "시간임금에서는 필요노동과 잉여노동이 실제로 사라진다는 점",
+                      "시간당 임금은 생산성과 노동일 길이에 아무 관계도 없다는 점"
                     ],
                     "en": [
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day",
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself"
+                      "The daily value of labor-power appears divided into a price of labor per unit of labor-time.",
+                      "The worker receives the entire value they create in every hour.",
+                      "In time-wages, necessary and surplus labor really disappear.",
+                      "Hourly wages have no relation to productivity or the length of the working day."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                    "en": "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day"
+                    "ko": "시간임금은 임금을 시간 단위의 노동가격처럼 보이게 한다. 하지만 그 배후에는 하루 노동력의 가치와 노동일 길이, 필요노동과 잉여노동의 분할이 있다.",
+                    "en": "Time-wages make wages appear as a price of labor per time unit. Behind this appearance stand the daily value of labor-power, the length of the working day, and the division between necessary and surplus labor."
                   }
                 },
                 {
@@ -6252,27 +6252,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Time-Wages operate?"
+                    "ko": "하루 임금이 그대로인데 노동일이 10시간에서 12시간으로 늘었다. 시간당 임금은 어떻게 되고, 왜 이것이 중요할 수 있는가?",
+                    "en": "The daily wage stays the same, but the working day rises from 10 to 12 hours. What happens to the hourly wage, and why can this matter?"
                   },
                   "choices": {
                     "ko": [
-                      "시간임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "생산과정에서 시간임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "시간당 임금은 반드시 올라가고 착취는 줄어든다.",
+                      "하루 임금이 같으면 시간당 임금도 반드시 같다.",
+                      "시간당 임금은 낮아지고, 같은 하루 임금이 더 긴 노동일에 퍼져 노동력 가격 인하처럼 작동할 수 있다.",
+                      "노동일이 길어져도 시간임금은 어떤 계산도 불가능하다."
                     ],
                     "en": [
-                      "Time-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "a production-process case where the logic of Time-Wages reshapes the relation between workers and capitalists",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "The hourly wage must rise and exploitation declines.",
+                      "If the daily wage is the same, the hourly wage must also be the same.",
+                      "The hourly wage falls, and the same daily wage spread over a longer working day can function like a reduction in the price of labor-power.",
+                      "If the working day lengthens, time-wages cannot be calculated at all."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "시간임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Time-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "시간임금에서는 하루 임금과 노동일 길이를 함께 봐야 한다. 하루 임금이 변하지 않아도 노동일이 길어지면 시간당 가격은 낮아지고 잉여노동이 늘 수 있다.",
+                    "en": "With time-wages, daily wage and length of working day must be considered together. Even if the daily wage does not change, a longer working day lowers the hourly price and can increase surplus labor."
                   }
                 },
                 {
@@ -6280,27 +6280,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Time-Wages would Marx criticize?"
+                    "ko": "자본가가 “시간당 임금은 공정하다”고 말하며 노동일을 늘리려 한다. 이 설명이 놓치는 것은 무엇인가?",
+                    "en": "A capitalist says, “The hourly wage is fair,” while trying to lengthen the working day. What does this miss?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                      "시간임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "시간당 임금이 있으면 노동일 길이는 언제나 노동자가 정한다는 점",
+                      "시간당 가격만으로는 하루 노동력 가치, 노동일 길이, 잉여노동의 크기를 판단할 수 없다는 점",
+                      "시간임금은 임금형태가 아니므로 착취와 무관하다는 점",
+                      "노동일이 길어질수록 필요노동은 반드시 같은 비율로 늘어난다는 점"
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day",
-                      "Time-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "When hourly wages exist, the worker always determines the length of the working day.",
+                      "The hourly price alone does not tell us the daily value of labor-power, the length of the working day, or the amount of surplus labor.",
+                      "Time-wages are not a wage-form and have nothing to do with exploitation.",
+                      "The longer the working day, the more necessary labor necessarily rises in the same proportion."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 시간임금을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Time-Wages from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "시간임금은 노동시간 단위의 공정한 가격처럼 보이지만, 착취율은 시간당 가격만으로 드러나지 않는다. 노동일이 얼마나 길고 그 안에서 필요노동이 얼마인지가 중요하다.",
+                    "en": "Time-wages look like a fair price per unit of labor-time, but the rate of exploitation is not revealed by the hourly price alone. The length of the working day and the amount of necessary labor within it matter."
                   }
                 },
                 {
@@ -6308,27 +6308,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 시간임금과 어떻게 연결됩니까? 생산과정에서 시간임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Time-Wages? a production-process case where the logic of Time-Wages reshapes the relation between workers and capitalists."
+                    "ko": "노동자가 단시간만 고용되어 시간당 임금은 높아 보이지만 총임금은 생활비에 못 미친다. 시간임금 분석에서 이 사례가 보여주는 것은 무엇인가?",
+                    "en": "A worker is employed only for a short time; the hourly wage looks high, but total wages fall below subsistence. What does this case show in the analysis of time-wages?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "시간당 임금이 높으면 총임금도 언제나 충분하다.",
+                      "단시간 고용에서는 노동력의 가치가 존재하지 않는다.",
+                      "총임금은 노동자 생활과 무관하고 자본가 이윤만 나타낸다.",
+                      "시간당 임금이 높아 보여도 고용시간이 부족하면 노동력의 일상적 재생산이 보장되지 않을 수 있다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "If the hourly wage is high, total wages are always sufficient.",
+                      "In short-time employment, the value of labor-power does not exist.",
+                      "Total wages have nothing to do with workers’ life and express only capitalist profit.",
+                      "Even if the hourly wage looks high, insufficient hours of employment may fail to secure the daily reproduction of labor-power."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 시간임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Time-Wages reshapes the relation between workers and capitalists"
+                    "ko": "시간임금은 시간당 가격을 전면에 내세우지만 노동자의 재생산은 총임금과 고용시간에 달려 있다. 그래서 시간당 임금만 보면 노동력 가격의 실제 하락을 놓칠 수 있다.",
+                    "en": "Time-wages foreground the hourly price, but the worker’s reproduction depends on total wages and hours of employment. Looking only at the hourly wage can miss an actual fall in the price of labor-power."
                   }
                 },
                 {
@@ -6336,27 +6336,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Time-Wages?"
+                    "ko": "20장이 19장의 임금형태 분석을 어떻게 구체화하는가?",
+                    "en": "How does Chapter 20 concretize Chapter 19’s analysis of the wage-form?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "정책 구호와 선거 전략",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "개별 인물의 선의와 악의"
+                      "노동력 가치가 노동의 가격처럼 보이는 일반적 전도가 시간 단위의 가격, 즉 시간임금 형태에서 어떻게 작동하는지 보여준다.",
+                      "시간임금은 임금형태의 전도를 없애고 착취를 즉시 투명하게 만든다.",
+                      "19장의 노동력/노동 구분을 폐기하고 노동 자체가 팔린다고 결론낸다.",
+                      "시간임금은 자본주의가 아니라 봉건제의 보수형태라고 설명한다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "policy slogans and electoral strategy",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "individual goodwill and malice"
+                      "It shows how the general inversion of the value of labor-power into the price of labor operates in the form of a price per unit of time.",
+                      "Time-wages abolish the inversion of the wage-form and immediately make exploitation transparent.",
+                      "It abandons Chapter 19’s distinction between labor-power and labor and concludes that labor itself is sold.",
+                      "It explains time-wages as a feudal form of remuneration, not a capitalist one."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "19장이 임금 일반의 전도를 설명했다면, 20장은 그 전도가 시간당 노동가격이라는 구체적 형태를 취할 때 생기는 효과를 분석한다.",
+                    "en": "If Chapter 19 explains the general inversion of wages, Chapter 20 analyzes the effects when that inversion takes the concrete form of a price per hour of labor."
                   }
                 }
               ]
@@ -6374,27 +6374,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Time-Wages?"
+                    "ko": "시간임금에서 “노동의 가격”을 계산하는 공식이 왜 착취를 가릴 수 있는가?",
+                    "en": "Why can the calculation of a “price of labor” in time-wages conceal exploitation?"
                   },
                   "choices": {
                     "ko": [
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다"
+                      "시간당 가격은 언제나 잉여가치율과 같은 숫자를 내기 때문이다.",
+                      "시간임금에서는 자본가가 생산수단을 소유하지 않기 때문이다.",
+                      "하루 노동력 가치가 전체 노동시간으로 나뉘어 표시되면서, 하루 노동 중 일부만 필요노동이라는 사실이 보이지 않기 때문이다.",
+                      "노동자는 시간임금을 받으면 잉여노동을 할 수 없기 때문이다."
                     ],
                     "en": [
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself"
+                      "Because the hourly price always gives the same number as the rate of surplus-value.",
+                      "Because under time-wages the capitalist does not own means of production.",
+                      "Because the daily value of labor-power is displayed as divided by the whole working time, hiding that only part of the working day is necessary labor.",
+                      "Because workers cannot perform surplus labor if they receive time-wages."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                    "en": "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day"
+                    "ko": "시간당 임금은 노동 전체가 시간별로 지불되는 것처럼 보이게 한다. 이 표현은 노동일 내부의 필요노동/잉여노동 분할을 가린다.",
+                    "en": "The hourly wage makes it appear that all labor is paid hour by hour. This expression conceals the internal division of the working day between necessary and surplus labor."
                   }
                 },
                 {
@@ -6402,27 +6402,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Time-Wages?"
+                    "ko": "자본가가 정상 노동일보다 짧은 시간만 고용하면서 시간당 임금 기준을 유지한다. 왜 이것이 노동자에게 불리할 수 있는가?",
+                    "en": "A capitalist employs workers for less than the normal working day while maintaining the hourly wage. Why can this disadvantage workers?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "순수한 자연조건의 차이",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 시간임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "짧게 일하면 노동력 가치가 자동으로 0이 되기 때문이다.",
+                      "노동자는 시간당 가격을 받아도 하루 노동력 재생산에 필요한 총임금을 확보하지 못할 수 있기 때문이다.",
+                      "시간당 임금이 있으면 총임금은 언제나 생활수단 가치보다 높기 때문이다.",
+                      "단시간 고용은 자본가의 잉여가치를 원리상 불가능하게 만들기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "a purely natural difference",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Time-Wages reshapes the relation between workers and capitalists"
+                      "Because if one works shorter hours, the value of labor-power automatically becomes zero.",
+                      "Because even with an hourly price, the worker may fail to obtain the total wage needed to reproduce daily labor-power.",
+                      "Because when hourly wages exist, total wages are always above the value of means of subsistence.",
+                      "Because short-time employment makes surplus-value impossible in principle."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "시간임금은 시간당 가격과 고용시간을 분리할 수 있다. 그래서 시간당 임금이 유지되어도 총임금은 노동력 가치 아래로 떨어질 수 있다.",
+                    "en": "Time-wages allow the hourly price and hours of employment to be separated. Thus even if the hourly wage is maintained, total wages can fall below the value of labor-power."
                   }
                 },
                 {
@@ -6430,27 +6430,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Time-Wages to concrete analysis is appropriate?"
+                    "ko": "“시간당 임금이 올랐으니 착취율은 반드시 낮아졌다”는 판단이 성급한 이유는 무엇인가?",
+                    "en": "Why is it premature to judge, “The hourly wage rose, so the rate of exploitation must have fallen”?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "생산과정에서 시간임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "시간당 임금이 오르면 노동자는 더 이상 노동력을 팔지 않기 때문이다.",
+                      "착취율은 임금과 무관하고 오직 자본가의 도덕성만 반영하기 때문이다.",
+                      "시간당 임금이 오르면 불변자본도 같은 비율로 가변자본이 되기 때문이다.",
+                      "노동일 길이, 노동강도, 필요노동시간, 총임금이 함께 변할 수 있어 시간당 임금만으로 s/v를 알 수 없기 때문이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "listing examples without concepts is sufficient",
-                      "the phenomenon is fully explained by individual psychology",
-                      "a production-process case where the logic of Time-Wages reshapes the relation between workers and capitalists"
+                      "Because if hourly wages rise, workers no longer sell labor-power.",
+                      "Because the rate of exploitation is unrelated to wages and reflects only capitalist morality.",
+                      "Because if hourly wages rise, constant capital becomes variable capital in the same proportion.",
+                      "Because the working day, labor intensity, necessary labor-time, and total wage can change together, so hourly wage alone does not reveal s/v."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 시간임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Time-Wages reshapes the relation between workers and capitalists"
+                    "ko": "시간당 임금은 중요한 표면지표지만 착취율 자체는 아니다. 노동일과 강도, 노동력 가치가 함께 분석되어야 한다.",
+                    "en": "The hourly wage is an important surface indicator, but it is not the rate of exploitation itself. The working day, intensity, and value of labor-power must be analyzed together."
                   }
                 },
                 {
@@ -6458,27 +6458,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Time-Wages in a bourgeois way?"
+                    "ko": "시간임금은 노동일 투쟁과 어떤 관련을 갖는가?",
+                    "en": "How are time-wages related to struggles over the working day?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "시간임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다"
+                      "하루 임금과 시간당 임금의 관계가 노동일 길이에 따라 달라지므로, 노동시간 연장·단축은 임금형태 속에서 직접적인 투쟁 문제가 된다.",
+                      "시간임금이 있으면 노동일 길이는 법적으로 언제나 고정되어 투쟁할 필요가 없다.",
+                      "시간임금은 노동일과 무관하고 오직 생산물 개수만을 기준으로 한다.",
+                      "시간임금은 성과임금과 같아서 노동시간 계산을 하지 않는다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Time-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day"
+                      "Because the relation between daily wage and hourly wage changes with the length of the working day, extension or shortening of labor-time becomes a direct struggle within the wage-form.",
+                      "When time-wages exist, the length of the working day is always legally fixed and needs no struggle.",
+                      "Time-wages are unrelated to the working day and depend only on the number of products.",
+                      "Time-wages are the same as piece-wages and do not calculate labor-time."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "시간임금은 노동시간을 가격형태로 만들기 때문에 노동일의 길이와 임금 수준을 직접 연결한다. 그래서 시간 단위 임금은 노동일 투쟁의 표면 언어가 된다.",
+                    "en": "Time-wages turn labor-time into a price-form, directly linking the length of the working day and the wage level. The hourly wage becomes the surface language of struggles over the working day."
                   }
                 },
                 {
@@ -6486,27 +6486,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시간임금에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Time-Wages?"
+                    "ko": "20장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best describes the systematic role of Chapter 20?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것"
+                      "성과임금이 시간임금보다 먼저 생긴다는 역사만 정리한다.",
+                      "노동력 가치 분석을 폐기하고 임금을 순수한 소비자 가격으로 설명한다.",
+                      "임금 일반의 전도를 시간 단위의 노동가격으로 구체화하고, 하루임금·시간당 임금·노동일 길이의 관계가 착취를 어떻게 가리는지 보여준다.",
+                      "시간임금이 착취관계를 완전히 투명하게 만든다고 결론낸다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "treating a modern example with a similar name as the same concept",
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day; and grasping how this form moves into the next contradiction",
-                      "looking only at distributional outcomes while skipping production and circulation mediations"
+                      "It only summarizes the history that piece-wages came before time-wages.",
+                      "It abandons the analysis of labor-power value and explains wages as pure consumer prices.",
+                      "It concretizes the general inversion of wages as a time-unit price of labor and shows how daily wage, hourly wage, and length of working day conceal exploitation.",
+                      "It concludes that time-wages make exploitation completely transparent."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "20장은 시간임금을 통해 임금형태가 숫자상으로 어떻게 작동하는지 보여준다. 이 분석은 성과임금이 어떻게 노동강도와 감독을 재편하는지 이해하는 발판이다.",
+                    "en": "Chapter 20 shows how the wage-form operates numerically through time-wages. This prepares the analysis of how piece-wages reorganize intensity and supervision."
                   }
                 }
               ]
@@ -6549,27 +6549,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금의 핵심은 무엇입니까?",
-                    "en": "What is central to Piece-Wages?"
+                    "ko": "성과임금에서는 노동자가 만든 물건 한 개당 얼마를 받는 것처럼 보인다. 마르크스가 먼저 지적하는 것은 무엇인가?",
+                    "en": "In piece-wages, it appears that the worker is paid a certain amount per item produced. What does Marx first point out?"
                   },
                   "choices": {
                     "ko": [
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다"
+                      "성과임금도 노동력 가치의 변형된 임금형태이며, 생산물 단위가 노동시간과 노동강도를 측정하는 외양이 된다는 점",
+                      "성과임금은 노동자가 생산물 전체를 소유한다는 뜻이다.",
+                      "성과임금에서는 자본가가 더 이상 노동력을 구매하지 않는다.",
+                      "성과임금은 노동시간과 완전히 무관해 가치분석을 불가능하게 만든다."
                     ],
                     "en": [
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day"
+                      "Piece-wages are also a transformed wage-form of the value of labor-power, with the unit of product becoming an appearance for measuring labor-time and intensity.",
+                      "Piece-wages mean the worker owns the whole product.",
+                      "Under piece-wages the capitalist no longer buys labor-power.",
+                      "Piece-wages are completely unrelated to labor-time and make value analysis impossible."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                    "en": "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor"
+                    "ko": "성과임금은 시간임금과 본질적으로 다른 원리가 아니라 임금형태의 변형이다. 개당 가격은 노동자가 투입한 시간과 강도를 우회적으로 측정하고 통제한다.",
+                    "en": "Piece-wages are not a fundamentally different principle from time-wages but a transformed wage-form. The price per piece indirectly measures and controls the worker’s time and intensity."
                   }
                 },
                 {
@@ -6577,27 +6577,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Piece-Wages operate?"
+                    "ko": "성과임금이 노동강도를 높이기 쉬운 이유는 무엇인가?",
+                    "en": "Why can piece-wages easily raise labor intensity?"
                   },
                   "choices": {
                     "ko": [
-                      "성과임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 성과임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "성과임금에서는 노동자가 아무리 적게 만들어도 같은 하루 임금을 받기 때문이다.",
+                      "개당 임금은 노동자의 몸 소모와 무관해 강도를 낮추기 때문이다.",
+                      "노동자가 더 많은 개수를 만들수록 임금이 늘어나는 것처럼 보이므로, 속도와 강도를 스스로 높이도록 압박하기 때문이다.",
+                      "성과임금은 자본가가 생산량을 알 수 없게 만들어 감독을 불가능하게 하기 때문이다."
                     ],
                     "en": [
-                      "Piece-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Piece-Wages reshapes the relation between workers and capitalists"
+                      "Because under piece-wages workers receive the same daily wage no matter how little they make.",
+                      "Because payment per piece is unrelated to bodily exhaustion and therefore lowers intensity.",
+                      "Because wages seem to rise with the number of pieces produced, pressuring workers to raise speed and intensity themselves.",
+                      "Because piece-wages make output unknowable to the capitalist and supervision impossible."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "성과임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Piece-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "성과임금은 감독의 일부를 노동자 자신에게 이전한다. 더 많은 개수를 만들어야 더 많은 임금을 받는 외양 때문에 노동강도 경쟁이 강화될 수 있다.",
+                    "en": "Piece-wages transfer part of supervision to the worker. Because higher wages appear to depend on producing more pieces, competition over labor intensity can increase."
                   }
                 },
                 {
@@ -6605,27 +6605,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Piece-Wages would Marx criticize?"
+                    "ko": "자본가가 개당 단가를 낮추면서 “열심히 하면 같은 임금을 벌 수 있다”고 말한다. 이 상황에서 성과임금의 어떤 효과가 드러나는가?",
+                    "en": "A capitalist lowers the rate per piece and says, “You can earn the same wage if you work harder.” What effect of piece-wages appears here?"
                   },
                   "choices": {
                     "ko": [
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "성과임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "개당 단가가 낮아지면 노동자는 자동으로 생산물 전체를 소유한다.",
+                      "개당 단가 인하는 노동자에게 더 높은 강도와 더 많은 산출을 강제하면서 노동력 가격 하락을 가릴 수 있다.",
+                      "성과임금은 단가가 낮아질수록 노동강도가 반드시 낮아지는 형태다.",
+                      "단가 변화는 임금과 무관하고 오직 자본가의 소비 취향을 나타낸다."
                     ],
                     "en": [
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Piece-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "When the piece-rate falls, workers automatically own the whole product.",
+                      "A lower piece-rate can conceal a fall in the price of labor-power while forcing workers toward higher intensity and output.",
+                      "Piece-wages necessarily lower labor intensity whenever the piece-rate falls.",
+                      "Changes in the piece-rate have nothing to do with wages and only express the capitalist’s consumption taste."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 성과임금을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Piece-Wages from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "성과임금에서는 단가와 생산량이 함께 움직인다. 단가 인하는 표면상 “더 하면 된다”는 말로 가려지지만, 실제로는 더 강한 노동을 요구하며 노동력 가격을 낮출 수 있다.",
+                    "en": "In piece-wages, rate and output move together. A cut in the rate can be masked by the phrase “just produce more,” while actually demanding more intense labor and lowering the price of labor-power."
                   }
                 },
                 {
@@ -6633,27 +6633,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 성과임금과 어떻게 연결됩니까? 생산과정에서 성과임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Piece-Wages? a production-process case where the logic of Piece-Wages reshapes the relation between workers and capitalists."
+                    "ko": "성과임금이 자본가에게 감독을 쉽게 만드는 이유는 무엇인가?",
+                    "en": "Why can piece-wages make supervision easier for the capitalist?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "성과임금에서는 생산물 개수를 세지 않으므로 감독할 자료가 없기 때문이다.",
+                      "개당 임금은 노동자가 자본가를 감독하게 만들어 자본의 지휘를 없애기 때문이다.",
+                      "성과임금은 노동자들이 모두 같은 속도로 일하게 해 경쟁을 제거하기 때문이다.",
+                      "생산물 개수와 품질이 노동수행의 표면 지표가 되어 노동자의 속도와 성실성을 비교·통제하기 쉽기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because under piece-wages products are not counted, leaving no data for supervision.",
+                      "Because payment per piece makes workers supervise the capitalist and abolishes capital’s command.",
+                      "Because piece-wages make all workers work at the same speed and eliminate competition.",
+                      "Because the number and quality of products become surface indicators of performance, making it easier to compare and control workers’ speed and diligence."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 성과임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Piece-Wages reshapes the relation between workers and capitalists"
+                    "ko": "성과임금은 노동과정의 결과를 임금의 직접 기준처럼 만든다. 그래서 개수, 불량률, 속도 비교가 감독과 경쟁의 수단으로 사용된다.",
+                    "en": "Piece-wages make the result of the labor-process appear as the direct basis of wages. Counts, defect rates, and speed comparisons become instruments of supervision and competition."
                   }
                 },
                 {
@@ -6661,27 +6661,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Piece-Wages?"
+                    "ko": "21장이 시간임금 다음에 오는 이유는 무엇인가?",
+                    "en": "Why does Chapter 21 come after the analysis of time-wages?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "개별 인물의 선의와 악의",
-                      "정책 구호와 선거 전략",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "성과임금은 시간임금과 다른 외양을 갖지만, 결국 노동력 가치가 생산물 단위의 노동가격처럼 나타나는 또 다른 임금형태이기 때문이다.",
+                      "성과임금은 임금형태가 아니라 자본가의 이윤분배 방식이기 때문이다.",
+                      "시간임금이 있으면 성과임금은 자본주의에서 존재할 수 없기 때문이다.",
+                      "성과임금은 노동력과 노동의 구분을 없애 착취를 완전히 투명하게 만들기 때문이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "individual goodwill and malice",
-                      "policy slogans and electoral strategy",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "Because piece-wages have a different appearance from time-wages, but are another wage-form in which the value of labor-power appears as a price of labor per product unit.",
+                      "Because piece-wages are not a wage-form but a method of distributing capitalist profit.",
+                      "Because when time-wages exist, piece-wages cannot exist under capitalism.",
+                      "Because piece-wages abolish the distinction between labor-power and labor and make exploitation fully transparent."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "시간임금은 노동시간 단위, 성과임금은 생산물 단위로 노동의 가격처럼 보인다. 두 형태 모두 노동력 가치의 전도된 임금형태라는 점에서 연결된다.",
+                    "en": "Time-wages make labor appear priced by time; piece-wages make it appear priced by output. Both are connected as inverted wage-forms of the value of labor-power."
                   }
                 }
               ]
@@ -6699,27 +6699,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Piece-Wages?"
+                    "ko": "성과임금이 “자유로운 성과 보상”처럼 보이지만 자본에 유리할 수 있는 이유는 무엇인가?",
+                    "en": "Why can piece-wages appear as “free reward for performance” while favoring capital?"
                   },
                   "choices": {
                     "ko": [
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다"
+                      "성과임금은 자본가가 잉여가치를 전혀 얻지 못하게 하기 때문이다.",
+                      "성과임금에서는 모든 노동자가 생산수단을 공동소유하기 때문이다.",
+                      "노동자가 스스로 속도와 강도를 높이도록 만들고, 개수 기준을 통해 감독과 경쟁을 노동자 내부로 밀어 넣기 때문이다.",
+                      "성과가 높으면 필요노동과 잉여노동의 구분이 실제로 사라지기 때문이다."
                     ],
                     "en": [
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor"
+                      "Because piece-wages prevent capitalists from obtaining any surplus-value.",
+                      "Because under piece-wages all workers jointly own the means of production.",
+                      "Because they make workers raise speed and intensity themselves, and push supervision and competition inside the workforce through output standards.",
+                      "Because when performance is high, the distinction between necessary and surplus labor really disappears."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                    "en": "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor"
+                    "ko": "성과임금은 자율성과 보상처럼 보이지만, 자본이 원하는 노동강도와 품질 통제를 노동자 간 경쟁과 자기감독으로 바꿀 수 있다.",
+                    "en": "Piece-wages look like autonomy and reward, but they can transform capital’s desired intensity and quality control into competition and self-supervision among workers."
                   }
                 },
                 {
@@ -6727,27 +6727,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Piece-Wages?"
+                    "ko": "성과임금에서 노동자들 사이 경쟁이 강화될 수 있는 이유는 무엇인가?",
+                    "en": "Why can competition among workers intensify under piece-wages?"
                   },
                   "choices": {
                     "ko": [
-                      "순수한 자연조건의 차이",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "생산과정에서 성과임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "성과임금에서는 모든 노동자가 같은 임금을 받으므로 경쟁할 이유가 없기 때문이다.",
+                      "개별 산출량이 임금의 직접 기준처럼 보이므로 노동자들이 서로 다른 속도와 단가 인하 압력 속에서 경쟁하게 되기 때문이다.",
+                      "개당 임금은 노동자를 생산물에서 완전히 분리해 산출량을 알 수 없게 하기 때문이다.",
+                      "성과임금은 노동자들이 노동시간을 자유롭게 줄여도 총임금이 보장되는 제도이기 때문이다."
                     ],
                     "en": [
-                      "a purely natural difference",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "a production-process case where the logic of Piece-Wages reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because all workers receive the same wage under piece-wages, so there is no reason to compete.",
+                      "Because individual output appears as the direct basis of wages, placing workers in competition over speed and under pressure from falling piece-rates.",
+                      "Because payment per piece completely separates workers from the product and makes output unknowable.",
+                      "Because piece-wages guarantee total wages even if workers freely reduce labor-time."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "성과임금은 노동자를 개별 산출량으로 비교하게 만든다. 이 비교는 더 높은 강도와 낮은 단가를 받아들이게 하는 압력으로 작동할 수 있다.",
+                    "en": "Piece-wages compare workers by individual output. This comparison can operate as pressure to accept higher intensity and lower piece-rates."
                   }
                 },
                 {
@@ -6755,27 +6755,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Piece-Wages to concrete analysis is appropriate?"
+                    "ko": "“성과임금은 많이 만든 만큼 받으니 착취가 없다”는 설명이 왜 부정확한가?",
+                    "en": "Why is it inaccurate to say, “Under piece-wages there is no exploitation because workers are paid according to how much they make”?"
                   },
                   "choices": {
                     "ko": [
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "생산과정에서 성과임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "많이 만들수록 자본가가 생산물을 소유할 수 없게 되기 때문이다.",
+                      "성과임금에서는 노동자가 만든 상품이 시장에 팔리지 않기 때문이다.",
+                      "개당 임금은 항상 상품 전체 가치와 같기 때문이다.",
+                      "개당 지급액 자체가 노동력 가치와 잉여노동 관계 위에 정해지며, 생산량 증가는 더 많은 불불노동을 포함할 수 있기 때문이다."
                     ],
                     "en": [
-                      "listing examples without concepts is sufficient",
-                      "the phenomenon is fully explained by individual psychology",
-                      "a production-process case where the logic of Piece-Wages reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because the more workers make, the less the capitalist can own the product.",
+                      "Because under piece-wages the commodities workers make are not sold in the market.",
+                      "Because the wage per piece is always equal to the whole value of the commodity.",
+                      "Because the payment per piece is itself set on the basis of the relation between the value of labor-power and surplus labor, and higher output can include more unpaid labor."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 성과임금의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Piece-Wages reshapes the relation between workers and capitalists"
+                    "ko": "성과임금은 노동자가 만든 만큼 모두 받는다는 뜻이 아니다. 단가는 노동력 재생산 비용과 자본의 잉여가치 요구 속에서 정해지며, 산출량 증가는 잉여노동 확대가 될 수 있다.",
+                    "en": "Piece-wages do not mean workers receive everything they produce. The piece-rate is set within the relation between reproduction costs of labor-power and capital’s demand for surplus-value, and higher output can expand surplus labor."
                   }
                 },
                 {
@@ -6783,27 +6783,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Piece-Wages in a bourgeois way?"
+                    "ko": "성과임금이 시간임금과 본질적으로 같은 임금형태라는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that piece-wages are essentially the same wage-form as time-wages?"
                   },
                   "choices": {
                     "ko": [
-                      "성과임금은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "둘 다 노동력 가치가 노동 자체의 가격처럼 나타나는 형태이며, 하나는 시간 단위로, 다른 하나는 생산물 단위로 표현될 뿐이다.",
+                      "둘은 언제나 같은 금액을 지급하므로 계산상 차이가 전혀 없다는 뜻이다.",
+                      "성과임금은 시간임금과 달리 노동력 상품을 전혀 전제하지 않는다는 뜻이다.",
+                      "시간임금은 자본주의적이고 성과임금은 비자본주의적이라는 뜻이다."
                     ],
                     "en": [
-                      "Piece-Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Both are forms in which the value of labor-power appears as the price of labor itself; one is expressed per time unit, the other per product unit.",
+                      "They always pay the same amount, so there is no calculational difference.",
+                      "Unlike time-wages, piece-wages do not presuppose the commodity labor-power.",
+                      "Time-wages are capitalist while piece-wages are non-capitalist."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "성과임금은 더 직접적인 성과 보상처럼 보이지만, 그 밑에는 여전히 노동력의 가치와 잉여노동의 관계가 있다. 표현 단위만 달라진다.",
+                    "en": "Piece-wages look like more direct payment for performance, but beneath them remains the relation between the value of labor-power and surplus labor. Only the unit of expression changes."
                   }
                 },
                 {
@@ -6811,27 +6811,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "성과임금에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Piece-Wages?"
+                    "ko": "21장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best describes the systematic role of Chapter 21?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것"
+                      "성과임금이 노동자가 생산물 전체를 소유하는 공산주의적 분배형태라고 결론낸다.",
+                      "시간임금 분석을 취소하고 노동시간이 가치와 무관하다고 본다.",
+                      "성과임금이 임금형태의 전도를 생산물 단위로 구체화하면서 노동강도, 자기감독, 노동자 간 경쟁을 자본에 유리하게 조직할 수 있음을 보여준다.",
+                      "임금의 국민적 차이가 모두 성과임금 하나로 설명된다고 본다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor; and grasping how this form moves into the next contradiction",
-                      "treating a modern example with a similar name as the same concept",
-                      "looking only at distributional outcomes while skipping production and circulation mediations"
+                      "It concludes that piece-wages are a communist form of distribution in which workers own the whole product.",
+                      "It cancels the analysis of time-wages and treats labor-time as unrelated to value.",
+                      "It shows how piece-wages concretize the inversion of the wage-form per product unit while organizing intensity, self-supervision, and competition among workers in capital’s favor.",
+                      "It treats all national differences of wages as explained by piece-wages alone."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "21장은 임금형태가 단순한 지급방식이 아니라 노동과정 통제와 연결된다는 점을 보여준다. 이 다음에는 임금형태가 국가별 조건 속에서 어떻게 비교되는지로 넘어간다.",
+                    "en": "Chapter 21 shows that wage-forms are not merely payment methods but are connected to control of the labor-process. The next step is how wage-forms compare across national conditions."
                   }
                 }
               ]
@@ -6874,27 +6874,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이의 핵심은 무엇입니까?",
-                    "en": "What is central to National Differences of Wages?"
+                    "ko": "두 나라의 하루 임금을 단순히 금액만 비교하면 왜 부족한가?",
+                    "en": "Why is it insufficient simply to compare the daily wage amounts of two countries?"
                   },
                   "choices": {
                     "ko": [
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다"
+                      "생활수단의 가치, 노동생산성, 노동강도, 노동일, 화폐가치가 달라 같은 금액도 다른 노동력 가격을 뜻할 수 있기 때문이다.",
+                      "임금 금액은 어느 나라에서나 노동자 생활과 완전히 무관하기 때문이다.",
+                      "국가별 차이는 모두 노동자가 게으른가 부지런한가만으로 결정되기 때문이다.",
+                      "세계시장에서는 모든 임금이 자동으로 같은 생활수준을 보장하기 때문이다."
                     ],
                     "en": [
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions"
+                      "Because the value of means of subsistence, productivity, labor intensity, working day, and value of money differ, so the same amount can mean different prices of labor-power.",
+                      "Because wage amounts are completely unrelated to workers’ lives in every country.",
+                      "Because national differences are determined only by whether workers are lazy or diligent.",
+                      "Because in the world market all wages automatically guarantee the same standard of life."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                    "en": "Understands national wage differences through living standards, productivity, intensity, and world-market conditions"
+                    "ko": "마르크스는 명목임금만 비교하지 않는다. 노동력 가치와 가격은 각 나라의 생활수준, 생산성, 강도, 화폐조건 속에서 비교해야 한다.",
+                    "en": "Marx does not compare nominal wages alone. The value and price of labor-power must be compared within each country’s standard of life, productivity, intensity, and monetary conditions."
                   }
                 },
                 {
@@ -6902,27 +6902,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does National Differences of Wages operate?"
+                    "ko": "한 나라의 임금이 더 높지만 노동강도도 훨씬 높고 생활비도 높다. 이 경우 “그 나라 노동자는 덜 착취된다”고 바로 말할 수 없는 이유는 무엇인가?",
+                    "en": "A country has higher wages, but labor intensity and cost of living are also much higher. Why can we not immediately say workers there are less exploited?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 임금의 국민적 차이의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "임금의 국민적 차이은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "임금이 높으면 잉여가치는 원리상 존재할 수 없기 때문이다.",
+                      "생활비와 노동강도는 임금 비교에서 전혀 고려할 수 없는 도덕 문제이기 때문이다.",
+                      "높은 임금이 더 높은 노동력 가치나 더 강한 노동지출을 반영할 수 있어, 잉여노동과 착취율을 별도로 봐야 하기 때문이다.",
+                      "높은 임금은 언제나 낮은 생산성을 뜻하기 때문이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of National Differences of Wages reshapes the relation between workers and capitalists",
-                      "National Differences of Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "Because if wages are high, surplus-value cannot exist in principle.",
+                      "Because cost of living and labor intensity are moral issues that cannot be considered in wage comparisons.",
+                      "Because higher wages may reflect a higher value of labor-power or greater labor expenditure, so surplus labor and the rate of exploitation must be examined separately.",
+                      "Because high wages always mean low productivity."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "임금의 국민적 차이은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "National Differences of Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "국민적 임금 비교에서는 명목임금, 실질임금, 노동강도, 생산성을 함께 봐야 한다. 높은 임금이 곧 낮은 착취율을 뜻하지는 않는다.",
+                    "en": "In comparing national wages, nominal wages, real wages, labor intensity, and productivity must be considered together. Higher wages do not automatically mean a lower rate of exploitation."
                   }
                 },
                 {
@@ -6930,27 +6930,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of National Differences of Wages would Marx criticize?"
+                    "ko": "생산성이 높은 나라에서는 임금이 높아도 상품이 세계시장에서 경쟁력을 가질 수 있다. 마르크스의 관점에서 이것은 무엇을 보여주는가?",
+                    "en": "In a highly productive country, commodities can remain competitive in the world market even with higher wages. What does this show from Marx’s standpoint?"
                   },
                   "choices": {
                     "ko": [
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "임금의 국민적 차이은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "임금이 높으면 상품가치는 반드시 더 높아져 경쟁이 불가능하다.",
+                      "높은 생산성은 단위상품 가치를 낮출 수 있으므로, 높은 임금과 높은 잉여가치 생산이 함께 존재할 수 있다.",
+                      "세계시장에서는 노동생산성이 가치와 아무 관계가 없다.",
+                      "생산성이 높으면 노동자는 더 이상 노동력을 팔지 않는다."
                     ],
                     "en": [
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "National Differences of Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "If wages are high, commodity values must be higher and competition is impossible.",
+                      "High productivity can lower unit values, so higher wages and high surplus-value production can coexist.",
+                      "In the world market, labor productivity has no relation to value.",
+                      "If productivity is high, workers no longer sell labor-power."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 임금의 국민적 차이을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns National Differences of Wages from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "국민적 임금 차이는 단순한 임금수준 비교가 아니다. 생산성이 높으면 노동력 가격이 상대적으로 높아도 자본은 세계시장에서 더 많은 잉여가치를 실현할 수 있다.",
+                    "en": "National wage differences are not a simple comparison of wage levels. With high productivity, capital may realize more surplus-value in the world market even if the price of labor-power is relatively higher."
                   }
                 },
                 {
@@ -6958,27 +6958,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 임금의 국민적 차이과 어떻게 연결됩니까? 생산과정에서 임금의 국민적 차이의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to National Differences of Wages? a production-process case where the logic of National Differences of Wages reshapes the relation between workers and capitalists."
+                    "ko": "“임금이 낮은 나라가 언제나 자본에게 가장 유리하다”는 설명이 왜 단순한가?",
+                    "en": "Why is the claim “the country with the lowest wages is always most favorable to capital” too simple?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다"
+                      "낮은 임금은 항상 높은 생산성과 같은 말이기 때문이다.",
+                      "자본은 임금과 무관하게 오직 날씨만 보고 이동하기 때문이다.",
+                      "세계시장에서는 낮은 임금 국가의 상품이 법적으로 판매될 수 없기 때문이다.",
+                      "임금수준뿐 아니라 생산력, 노동강도, 숙련, 노동일, 세계시장 조건이 잉여가치 생산과 경쟁력을 함께 결정하기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions"
+                      "Because low wages always mean the same thing as high productivity.",
+                      "Because capital moves only according to weather and independently of wages.",
+                      "Because commodities from low-wage countries cannot legally be sold in the world market.",
+                      "Because not only wage levels but also productivity, intensity, skill, working day, and world-market conditions together determine surplus-value production and competitiveness."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 임금의 국민적 차이의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of National Differences of Wages reshapes the relation between workers and capitalists"
+                    "ko": "마르크스의 비교는 낮은 임금 숭배가 아니다. 자본에게 중요한 것은 노동력 가격과 생산성, 강도, 세계시장 가치관계가 결합된 결과다.",
+                    "en": "Marx’s comparison is not a worship of low wages. What matters for capital is the combined result of the price of labor-power, productivity, intensity, and world-market value relations."
                   }
                 },
                 {
@@ -6986,27 +6986,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand National Differences of Wages?"
+                    "ko": "22장이 임금 편의 마지막에 오는 이유는 무엇인가?",
+                    "en": "Why does Chapter 22 come at the end of the part on wages?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "개별 인물의 선의와 악의",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "정책 구호와 선거 전략"
+                      "임금형태의 일반 전도, 시간임금, 성과임금을 본 뒤 그 범주들이 국민적 조건과 세계시장 속에서 어떻게 비교되어야 하는지 정리하기 때문이다.",
+                      "국가별 임금 차이는 노동력 가치와 무관하므로 앞 장들과 연결되지 않기 때문이다.",
+                      "임금형태 분석이 끝나면 자본주의적 착취가 사라진다는 점을 보이기 위해서이다.",
+                      "국민적 차이는 생산성과 노동강도 없이 화폐 이름만 비교하면 충분하기 때문이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "individual goodwill and malice",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "policy slogans and electoral strategy"
+                      "Because after the general inversion of wages, time-wages, and piece-wages, it clarifies how those categories must be compared under national conditions and the world market.",
+                      "Because national wage differences are unrelated to the value of labor-power and have no connection to the previous chapters.",
+                      "Because after wage-form analysis, capitalist exploitation disappears.",
+                      "Because national differences can be understood simply by comparing money names without productivity or intensity."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "22장은 임금형태 분석을 세계시장과 국민적 조건으로 확장한다. 같은 임금이라는 말도 생활수준, 생산성, 강도, 화폐가치에 따라 전혀 다른 의미를 가질 수 있다.",
+                    "en": "Chapter 22 extends the analysis of wage-forms to the world market and national conditions. The same “wage” can mean very different things depending on standard of life, productivity, intensity, and money value."
                   }
                 }
               ]
@@ -7024,27 +7024,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of National Differences of Wages?"
+                    "ko": "국민적 임금 차이를 볼 때 “명목임금”과 “실질임금”을 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must nominal and real wages be distinguished when comparing national wage differences?"
                   },
                   "choices": {
                     "ko": [
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다"
+                      "명목임금만이 노동자 생활을 완전히 설명하고 실질임금은 아무 의미가 없기 때문이다.",
+                      "실질임금은 자본주의 이전에만 있고 세계시장에서는 사라지기 때문이다.",
+                      "같은 화폐액 또는 더 큰 화폐액도 생활수단 가격과 노동력 재생산 조건에 따라 다른 실제 생활수준을 뜻할 수 있기 때문이다.",
+                      "명목임금과 실질임금은 언제나 같은 숫자이기 때문이다."
                     ],
                     "en": [
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power"
+                      "Because nominal wages fully explain workers’ lives and real wages have no meaning.",
+                      "Because real wages exist only before capitalism and disappear in the world market.",
+                      "Because the same or even a larger money amount can mean a different actual standard of life depending on the prices of subsistence goods and conditions of reproducing labor-power.",
+                      "Because nominal and real wages are always the same number."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                    "en": "Understands national wage differences through living standards, productivity, intensity, and world-market conditions"
+                    "ko": "국가별 임금 비교는 화폐액 비교로 끝나지 않는다. 노동력 재생산에 필요한 생활수단을 실제로 얼마나 확보하는지가 중요하다.",
+                    "en": "Comparing wages across countries does not end with comparing money sums. What matters is how much of the means of subsistence required to reproduce labor-power is actually secured."
                   }
                 },
                 {
@@ -7052,27 +7052,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in National Differences of Wages?"
+                    "ko": "세계시장에서는 더 생산적인 국민노동이 더 강도 높은 노동처럼 계산될 수 있다. 이 말은 무엇을 뜻하는가?",
+                    "en": "In the world market, more productive national labor can count as more intensive labor. What does this mean?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 임금의 국민적 차이의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "순수한 자연조건의 차이"
+                      "생산성이 높은 나라 노동자는 실제로 항상 더 긴 노동일을 일한다는 뜻이다.",
+                      "국가별 생산력 차이가 세계시장 가치관계 속에서 같은 시간 노동의 사회적 효력을 다르게 만들 수 있다는 뜻이다.",
+                      "세계시장에서는 가치법칙이 사라져 노동시간 비교가 불가능하다는 뜻이다.",
+                      "국가별 차이는 모두 환율 조작으로만 설명된다는 뜻이다."
                     ],
                     "en": [
-                      "a production-process case where the logic of National Differences of Wages reshapes the relation between workers and capitalists",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a purely natural difference"
+                      "It means workers in more productive countries always actually work longer days.",
+                      "It means differences in national productivity can give the same hour of labor different social effectiveness within world-market value relations.",
+                      "It means the law of value disappears in the world market and labor-time cannot be compared.",
+                      "It means all national differences are explained only by exchange-rate manipulation."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "마르크스는 국가별 노동을 단순한 물리적 시간으로만 비교하지 않는다. 세계시장에서는 생산력과 강도 차이가 노동의 사회적 평가를 바꿀 수 있다.",
+                    "en": "Marx does not compare national labors as mere physical time. In the world market, differences in productivity and intensity can alter the social valuation of labor."
                   }
                 },
                 {
@@ -7080,27 +7080,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of National Differences of Wages to concrete analysis is appropriate?"
+                    "ko": "“고임금 국가는 노동자가 자본보다 유리한 나라”라는 결론이 성급한 이유는 무엇인가?",
+                    "en": "Why is it premature to conclude, “A high-wage country is one where workers are favored over capital”?"
                   },
                   "choices": {
                     "ko": [
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "생산과정에서 임금의 국민적 차이의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "고임금은 자본주의가 아니라 언제나 사회주의의 표시이기 때문이다.",
+                      "고임금 국가는 상품생산을 하지 않으므로 자본과 무관하기 때문이다.",
+                      "임금이 높으면 노동자는 노동력을 팔지 않고 자본가가 된다.",
+                      "높은 임금이 높은 생산성, 높은 노동강도, 더 높은 생활비와 결합해 더 큰 잉여가치 생산과 양립할 수 있기 때문이다."
                     ],
                     "en": [
-                      "the phenomenon is fully explained by individual psychology",
-                      "listing examples without concepts is sufficient",
-                      "a production-process case where the logic of National Differences of Wages reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because high wages are always a sign of socialism, not capitalism.",
+                      "Because high-wage countries do not produce commodities and have nothing to do with capital.",
+                      "Because if wages are high, workers stop selling labor-power and become capitalists.",
+                      "Because high wages can coexist with greater surplus-value production when combined with high productivity, high intensity, and higher cost of living."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 임금의 국민적 차이의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of National Differences of Wages reshapes the relation between workers and capitalists"
+                    "ko": "높은 임금은 그 자체로 착취의 부재를 뜻하지 않는다. 자본은 높은 생산성과 강도를 통해 더 높은 임금과 더 높은 잉여가치를 동시에 가질 수 있다.",
+                    "en": "High wages do not by themselves mean the absence of exploitation. Capital can combine higher wages with higher surplus-value through greater productivity and intensity."
                   }
                 },
                 {
@@ -7108,27 +7108,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes National Differences of Wages in a bourgeois way?"
+                    "ko": "국민적 임금 차이를 인종적·문화적 성격 탓으로 돌리는 설명이 마르크스의 분석과 어긋나는 이유는 무엇인가?",
+                    "en": "Why does an explanation that attributes national wage differences to racial or cultural character conflict with Marx’s analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "임금의 국민적 차이은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "마르크스는 임금 차이를 생활수준의 역사적 형성, 생산력, 노동강도, 세계시장 조건 같은 사회적 관계 속에서 분석하기 때문이다.",
+                      "마르크스는 임금 차이를 설명할 수 없으므로 자연적 성격에 맡기기 때문이다.",
+                      "임금은 어떤 사회적 조건과도 무관한 순수 생물학적 결과이기 때문이다.",
+                      "세계시장에서는 문화적 편견이 곧 가치법칙을 대체하기 때문이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "National Differences of Wages reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "Because Marx analyzes wage differences within social relations such as historically formed standards of life, productivity, labor intensity, and world-market conditions.",
+                      "Because Marx cannot explain wage differences and therefore leaves them to natural character.",
+                      "Because wages are purely biological results unrelated to social conditions.",
+                      "Because in the world market cultural prejudice replaces the law of value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "22장은 국민적 차이를 자연화하지 않는다. 임금 차이는 역사적 생활수준, 생산력과 강도, 세계시장 경쟁 속에서 형성되는 자본주의적 관계로 분석된다.",
+                    "en": "Chapter 22 does not naturalize national differences. Wage differences are analyzed as capitalist relations formed through historical standards of life, productivity and intensity, and world-market competition."
                   }
                 },
                 {
@@ -7136,27 +7136,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금의 국민적 차이에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of National Differences of Wages?"
+                    "ko": "22장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best describes the systematic role of Chapter 22?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것"
+                      "임금형태 분석을 폐기하고 모든 국가의 임금은 같은 기준으로 단순 합산하면 된다고 본다.",
+                      "성과임금이 시간임금보다 우월하다는 도덕 판단으로 임금 편을 끝낸다.",
+                      "임금형태 분석을 국민적·세계시장적 비교로 확장해, 임금수준을 노동력 가치와 착취율의 복합 관계 속에서 읽게 한다.",
+                      "국가별 임금 차이는 자본주의 생산과 무관하므로 축적 분석으로 넘어가기 전에 제거한다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "treating a modern example with a similar name as the same concept",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions; and grasping how this form moves into the next contradiction"
+                      "It abandons wage-form analysis and says wages in all countries can simply be added by the same standard.",
+                      "It ends the part on wages with the moral judgment that piece-wages are superior to time-wages.",
+                      "It extends the analysis of wage-forms to national and world-market comparison, teaching us to read wage levels within the complex relation between the value of labor-power and the rate of exploitation.",
+                      "It removes national wage differences as unrelated to capitalist production before moving to accumulation."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "22장은 임금 편을 마무리하며 임금 비교의 함정을 정리한다. 이 뒤에는 임금형태를 넘어 자본관계가 매 주기 재생산되고 축적되는 과정으로 넘어간다.",
+                    "en": "Chapter 22 closes the part on wages by clarifying the traps in wage comparison. After this, the analysis moves beyond wage-forms to how the capital relation is reproduced and accumulated each cycle."
                   }
                 }
               ]
