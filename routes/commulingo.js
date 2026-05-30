@@ -5,10 +5,30 @@ const db = require('../config/database');
 
 const router = express.Router();
 const LESSONS_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'lessons.json');
+const PUBLIC_CHAPTER_LIMITS = {
+    'capital-vol1': 18,
+};
 
 function readLessons() {
     const raw = fs.readFileSync(LESSONS_PATH, 'utf8');
     return JSON.parse(raw);
+}
+
+function publicLessons(bundle) {
+    return {
+        ...bundle,
+        collections: (bundle.collections || [])
+            .map(collection => {
+                const chapterLimit = PUBLIC_CHAPTER_LIMITS[collection.id] || 0;
+                return {
+                    ...collection,
+                    chapters: (collection.chapters || []).filter(chapter => (
+                        chapterLimit > 0 && Number(chapter.chapterNumber) <= chapterLimit
+                    )),
+                };
+            })
+            .filter(collection => collection.chapters.length > 0),
+    };
 }
 
 function requireUser(req, res, next) {
@@ -29,7 +49,7 @@ function normalizeProgress(raw) {
 }
 
 router.get('/', (req, res) => {
-    const lessons = readLessons();
+    const lessons = publicLessons(readLessons());
     res.render('public/commulingo', {
         lessons,
         pageTitle: res.locals.strings.commuLingo.title,

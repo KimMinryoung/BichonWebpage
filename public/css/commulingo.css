@@ -67,23 +67,80 @@
 }
 
 .commulingo-lessons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.commu-volume-section {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+}
+
+.commu-volume-header {
+    border-bottom: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 14px 16px;
+}
+
+.commu-volume-header h2 {
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    margin: 0 0 4px;
+}
+
+.commu-volume-header p {
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    margin: 0;
+}
+
+.commu-volume-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.commu-part-section + .commu-part-section {
+    border-top: 1px solid var(--border);
+}
+
+.commu-part-header {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+}
+
+.commu-part-header h3 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin: 0 0 4px;
+}
+
+.commu-part-header p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.commu-volume-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+    padding: 12px;
 }
 
 .commu-lesson-card {
     border: 1px solid var(--border);
-    background: var(--card-bg);
+    background: var(--bg-surface);
     color: var(--text-primary);
-    padding: 16px;
+    padding: 14px;
     text-align: left;
     font-family: inherit;
     cursor: pointer;
-    min-height: 156px;
+    min-height: 166px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .commu-lesson-card:hover:not(:disabled) {
@@ -95,16 +152,46 @@
     opacity: 0.58;
 }
 
+.commu-lesson-title-row {
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
 .commu-lesson-card h2 {
     font-size: 1.05rem;
+    line-height: 1.35;
     margin: 0;
 }
 
-.commu-lesson-card p {
+.commu-level-badge {
+    border: 1px solid var(--clr-cream-light);
+    color: var(--clr-cream-light);
+    flex: 0 0 auto;
+    font-size: 0.75rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: 5px 7px;
+}
+
+.commu-level-badge.is-basic {
+    background: var(--accent-green);
+}
+
+.commu-level-badge.is-advanced {
+    background: var(--accent-red);
+}
+
+.commu-lesson-summary {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.45;
+    display: -webkit-box;
+    font-size: 0.88rem;
+    line-height: 1.42;
     margin: 0;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .commu-lesson-meta {
@@ -113,7 +200,6 @@
     gap: 8px;
     color: var(--text-muted);
     font-size: 0.8rem;
-    margin-top: auto;
 }
 
 .commu-progress-track,
@@ -159,8 +245,12 @@
 }
 
 .commu-lesson-title {
+    align-items: center;
     color: var(--accent);
+    display: flex;
+    flex-wrap: wrap;
     font-weight: 700;
+    gap: 8px;
     margin-bottom: 10px;
 }
 
@@ -230,7 +320,7 @@
         min-height: 78px;
     }
 
-    .commulingo-lessons,
+    .commu-volume-grid,
     .commu-choices {
         grid-template-columns: 1fr;
     }
