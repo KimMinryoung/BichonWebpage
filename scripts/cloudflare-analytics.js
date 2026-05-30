@@ -236,6 +236,7 @@ function classifyPath(requestPath) {
     if (requestPath === '/reports') return 'reports-index';
     if (/^\/ai-diary\/\d+$/.test(requestPath)) return 'diary';
     if (requestPath === '/ai-diary') return 'diary-index';
+    if (requestPath === '/commulingo') return 'commulingo';
     if (/^\/hub\/[^/]+$/.test(requestPath)) return 'hub';
     if (requestPath === '/hub') return 'hub-index';
     if (/^\/p\/[^/]+$/.test(requestPath)) return 'page';

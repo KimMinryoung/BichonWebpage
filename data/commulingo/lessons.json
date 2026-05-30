@@ -1,0 +1,762 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "capital-vol1",
+      "title": {
+        "ko": "자본론 1권",
+        "en": "Capital Volume I"
+      },
+      "description": {
+        "ko": "상품, 가치, 교환, 화폐의 기초부터 시작합니다.",
+        "en": "Start with commodities, value, exchange, and money."
+      },
+      "chapters": [
+        {
+          "id": "capital-v1-ch1",
+          "chapterNumber": 1,
+          "title": {
+            "ko": "상품",
+            "en": "Commodities"
+          },
+          "summary": {
+            "ko": "상품, 사용가치, 교환가치, 가치형태의 기초를 익힙니다.",
+            "en": "Learn commodities, use-value, exchange-value, and the value-form."
+          },
+          "lessons": [
+            {
+              "id": "capital-v1-ch1-basic",
+              "level": "basic",
+              "title": {
+                "ko": "상품 기본",
+                "en": "Commodities: Basics"
+              },
+              "questions": [
+                {
+                  "id": "q1",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "마르크스가 말하는 상품은 무엇을 동시에 가져야 합니까?",
+                    "en": "For Marx, what two aspects must a commodity have?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "사용가치와 가치",
+                      "가격과 광고",
+                      "소유권과 특허",
+                      "임금과 이윤"
+                    ],
+                    "en": [
+                      "Use-value and value",
+                      "Price and advertising",
+                      "Ownership and patent",
+                      "Wages and profit"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "상품은 어떤 필요를 충족하는 사용가치이면서, 사회적으로 필요한 노동시간으로 표현되는 가치를 가집니다.",
+                    "en": "A commodity satisfies a need as a use-value while also bearing value expressed through socially necessary labor time."
+                  }
+                },
+                {
+                  "id": "q2",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "사용가치는 상품이 구체적인 필요를 충족하는 성질을 뜻합니다.",
+                    "en": "Use-value means the concrete usefulness by which a thing satisfies a need."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "사용가치는 물건의 유용성입니다. 그것이 어떤 필요를 충족하기 때문에 사용가치가 됩니다.",
+                    "en": "Use-value is usefulness: a thing has use-value because it satisfies some need."
+                  }
+                },
+                {
+                  "id": "q3",
+                  "type": "fill_blank",
+                  "prompt": {
+                    "ko": "상품의 가치를 이루는 것은 사회적으로 필요한 ____ 시간입니다.",
+                    "en": "The value of a commodity is formed by socially necessary ____ time."
+                  },
+                  "choices": {
+                    "ko": [
+                      "노동",
+                      "판매",
+                      "운송",
+                      "광고"
+                    ],
+                    "en": [
+                      "labor",
+                      "sales",
+                      "transport",
+                      "advertising"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "가치는 개인이 오래 일했다는 사실이 아니라, 사회적으로 필요한 노동시간으로 규정됩니다.",
+                    "en": "Value is determined not by any private delay, but by socially necessary labor time."
+                  }
+                },
+                {
+                  "id": "q4",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "교환가치는 가장 먼저 어떤 모습으로 나타납니까?",
+                    "en": "How does exchange-value first appear?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "다른 사용가치와 교환되는 양적 관계",
+                      "상인의 도덕성",
+                      "국가가 정한 세율",
+                      "상품의 자연적 색깔"
+                    ],
+                    "en": [
+                      "A quantitative relation with other use-values",
+                      "The merchant's morality",
+                      "A tax rate set by the state",
+                      "The natural color of the commodity"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "교환가치는 한 종류의 사용가치가 다른 종류의 사용가치와 교환되는 비율로 먼저 나타납니다.",
+                    "en": "Exchange-value first appears as the proportion in which one kind of use-value exchanges for another."
+                  }
+                },
+                {
+                  "id": "q5",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "가치의 크기는 사회적으로 필요한 노동시간의 변화와 관련됩니다.",
+                    "en": "The magnitude of value changes with socially necessary labor time."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "생산력이 변하면 같은 상품을 만드는 데 필요한 사회적 노동시간도 변하고, 따라서 가치의 크기도 변합니다.",
+                    "en": "When productivity changes, the socially necessary labor time changes, and so does the magnitude of value."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "capital-v1-ch1-advanced",
+              "level": "advanced",
+              "title": {
+                "ko": "상품 심화",
+                "en": "Commodities: Advanced"
+              },
+              "questions": [
+                {
+                  "id": "q1",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "상품을 생산하는 노동의 이중성은 무엇입니까?",
+                    "en": "What is the dual character of labor that produces commodities?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "구체적 노동과 추상적 인간노동",
+                      "숙련노동과 야간노동",
+                      "국내노동과 해외노동",
+                      "관리노동과 회계노동"
+                    ],
+                    "en": [
+                      "Concrete labor and abstract human labor",
+                      "Skilled labor and night labor",
+                      "Domestic labor and foreign labor",
+                      "Managerial labor and accounting labor"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "구체적 노동은 사용가치를 만들고, 추상적 인간노동은 가치의 실체로 파악됩니다.",
+                    "en": "Concrete labor creates use-values, while abstract human labor is grasped as the substance of value."
+                  }
+                },
+                {
+                  "id": "q2",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "마르크스에게 추상적 인간노동은 특정 직업의 기술 차이를 그대로 보존한 개념입니다.",
+                    "en": "For Marx, abstract human labor preserves the concrete technical differences of particular jobs."
+                  },
+                  "answer": false,
+                  "explanation": {
+                    "ko": "추상적 인간노동은 구체적 차이를 사상하고, 인간 노동력 지출이라는 공통성으로 환원한 개념입니다.",
+                    "en": "Abstract human labor abstracts from concrete differences and reduces labor to the common expenditure of human labor-power."
+                  }
+                },
+                {
+                  "id": "q3",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "가치형태 분석에서 등가형태의 상품은 어떤 역할을 합니까?",
+                    "en": "In the analysis of the value-form, what role does the equivalent-form commodity play?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "다른 상품의 가치를 표현하는 몸",
+                      "교환을 금지하는 법",
+                      "상품의 사용법 설명서",
+                      "생산자의 개인 취향"
+                    ],
+                    "en": [
+                      "The body in which another commodity's value is expressed",
+                      "A law banning exchange",
+                      "A manual for the commodity's use",
+                      "The producer's private taste"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "상대적 가치형태의 상품은 자신의 가치를 등가형태의 다른 상품을 통해 표현합니다.",
+                    "en": "A commodity in the relative form expresses its value through another commodity in the equivalent form."
+                  }
+                },
+                {
+                  "id": "q4",
+                  "type": "fill_blank",
+                  "prompt": {
+                    "ko": "상품형태의 신비성은 사회적 관계가 사물들의 관계처럼 보이는 ____에서 강해집니다.",
+                    "en": "The mysticism of the commodity-form intensifies in ____ where social relations appear as relations between things."
+                  },
+                  "choices": {
+                    "ko": [
+                      "물신성",
+                      "절약",
+                      "기계화",
+                      "인구증가"
+                    ],
+                    "en": [
+                      "fetishism",
+                      "saving",
+                      "mechanization",
+                      "population growth"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "상품 물신성은 인간들의 사회적 노동관계가 상품들 사이의 객관적 관계처럼 나타나는 현상을 가리킵니다.",
+                    "en": "Commodity fetishism names the appearance of social labor relations as objective relations among things."
+                  }
+                },
+                {
+                  "id": "q5",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "단순한 가치형태에서 이미 화폐형태로 발전할 논리적 씨앗을 찾을 수 있습니다.",
+                    "en": "The simple form of value already contains the logical seed of the money-form."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "마르크스는 단순한 가치형태에서 전개된 가치형태, 일반적 가치형태, 화폐형태로 나아가는 논리를 추적합니다.",
+                    "en": "Marx traces the movement from the simple form to the expanded, general, and money forms of value."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capital-v1-ch2",
+          "chapterNumber": 2,
+          "title": {
+            "ko": "교환 과정",
+            "en": "The Process of Exchange"
+          },
+          "summary": {
+            "ko": "상품 소유자들이 교환을 통해 서로를 사회적으로 관계 맺는 방식을 봅니다.",
+            "en": "See how commodity owners relate socially through exchange."
+          },
+          "lessons": [
+            {
+              "id": "capital-v1-ch2-basic",
+              "level": "basic",
+              "title": {
+                "ko": "교환 과정 기본",
+                "en": "Exchange: Basics"
+              },
+              "questions": [
+                {
+                  "id": "q1",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "교환 과정에서 상품은 누구를 통해 서로 관계 맺습니까?",
+                    "en": "In exchange, commodities relate to each other through whom?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "상품 소유자",
+                      "국가 관료",
+                      "기계",
+                      "은행 장부"
+                    ],
+                    "en": [
+                      "Commodity owners",
+                      "State officials",
+                      "Machines",
+                      "Bank ledgers"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "상품은 스스로 시장에 갈 수 없습니다. 상품 소유자들의 의지와 행위를 통해 교환됩니다.",
+                    "en": "Commodities cannot take themselves to market. They are exchanged through the wills and actions of their owners."
+                  }
+                },
+                {
+                  "id": "q2",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "교환은 상품의 사용가치만 비교하면 충분한 과정입니다.",
+                    "en": "Exchange only needs to compare the use-values of commodities."
+                  },
+                  "answer": false,
+                  "explanation": {
+                    "ko": "교환은 서로 다른 사용가치를 가진 상품들이 가치로 비교되고 등가로 놓이는 사회적 과정입니다.",
+                    "en": "Exchange is a social process in which different use-values are compared as values and set as equivalents."
+                  }
+                },
+                {
+                  "id": "q3",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "상품 소유자가 자기 상품을 교환하려면 상대 상품을 어떻게 보아야 합니까?",
+                    "en": "To exchange their commodity, how must an owner regard the other commodity?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "자신에게 사용가치가 있는 것으로",
+                      "절대 교환 불가능한 것으로",
+                      "자연물로만",
+                      "세금으로만"
+                    ],
+                    "en": [
+                      "As a use-value for them",
+                      "As absolutely unexchangeable",
+                      "Only as a natural object",
+                      "Only as a tax"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "각 소유자에게 자기 상품은 비사용가치이고, 상대 상품은 사용가치여야 교환 동기가 생깁니다.",
+                    "en": "Each owner treats their own commodity as a non-use-value for themselves and the other's as a use-value."
+                  }
+                },
+                {
+                  "id": "q4",
+                  "type": "fill_blank",
+                  "prompt": {
+                    "ko": "교환은 상품 소유자들이 서로를 사적 소유자로 인정하는 ____ 관계를 전제합니다.",
+                    "en": "Exchange presupposes a ____ relation in which commodity owners recognize each other as private owners."
+                  },
+                  "choices": {
+                    "ko": [
+                      "법적",
+                      "기상",
+                      "생물학적",
+                      "지질학적"
+                    ],
+                    "en": [
+                      "legal",
+                      "meteorological",
+                      "biological",
+                      "geological"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "교환은 단순한 물건 이동이 아니라 소유자들의 의지와 권리를 매개로 하는 사회적·법적 관계입니다.",
+                    "en": "Exchange is not mere movement of things; it is mediated by owners' wills and rights."
+                  }
+                },
+                {
+                  "id": "q5",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "교환 과정은 화폐가 왜 필요해지는지 설명하는 고리입니다.",
+                    "en": "The process of exchange helps explain why money becomes necessary."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "상품들이 일반적으로 교환되려면 공통의 등가물이 필요해지고, 이 역할이 화폐로 고정됩니다.",
+                    "en": "General exchange requires a common equivalent, a role that becomes fixed as money."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "capital-v1-ch2-advanced",
+              "level": "advanced",
+              "title": {
+                "ko": "교환 과정 심화",
+                "en": "Exchange: Advanced"
+              },
+              "questions": [
+                {
+                  "id": "q1",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "교환 과정에서 드러나는 모순은 무엇입니까?",
+                    "en": "What contradiction appears in the process of exchange?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "각 상품은 일반적 등가물이 되려 하지만, 동시에 하나의 일반적 등가물이 필요하다",
+                      "모든 상품은 사용가치만 있고 가치는 없다",
+                      "소유자는 항상 자기 상품을 직접 소비한다",
+                      "화폐는 교환 이전에 아무 역할도 없다"
+                    ],
+                    "en": [
+                      "Each commodity tends to claim equivalence, while one general equivalent is needed",
+                      "All commodities have use-value only and no value",
+                      "Owners always consume their own commodities directly",
+                      "Money has no role before exchange"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "상품들의 사적 교환 요구는 일반적 등가물의 사회적 고정을 요구하며, 이 모순이 화폐의 발생과 연결됩니다.",
+                    "en": "Private exchange demands the social fixation of a general equivalent, linking this contradiction to the genesis of money."
+                  }
+                },
+                {
+                  "id": "q2",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "마르크스에게 화폐는 단순한 기술적 편의가 아니라 상품교환 관계에서 발생한 사회적 형태입니다.",
+                    "en": "For Marx, money is not merely a technical convenience but a social form arising from commodity exchange."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "화폐는 교환을 편리하게 하는 도구인 동시에, 상품세계의 가치관계가 특정 상품에 고정된 사회적 형태입니다.",
+                    "en": "Money is a convenience, but more importantly a social form in which value relations become fixed in a particular commodity."
+                  }
+                },
+                {
+                  "id": "q3",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "상품 소유자들의 의지가 교환에서 중요한 이유는 무엇입니까?",
+                    "en": "Why is the will of commodity owners important in exchange?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "상품은 스스로 의지를 갖지 않기 때문",
+                      "상품이 이미 국가이기 때문",
+                      "가격이 자연법칙만으로 결정되기 때문",
+                      "생산 과정이 사라지기 때문"
+                    ],
+                    "en": [
+                      "Because commodities have no will of their own",
+                      "Because commodities are already states",
+                      "Because prices are determined only by natural law",
+                      "Because production disappears"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "상품 사이의 관계는 상품 소유자들의 사회적 행위와 의지를 통해 현실화됩니다.",
+                    "en": "Relations among commodities become real through the social actions and wills of their owners."
+                  }
+                },
+                {
+                  "id": "q4",
+                  "type": "fill_blank",
+                  "prompt": {
+                    "ko": "상품교환이 발전하면 특정 상품이 일반적 ____로 굳어집니다.",
+                    "en": "As commodity exchange develops, a particular commodity becomes fixed as the general ____."
+                  },
+                  "choices": {
+                    "ko": [
+                      "등가물",
+                      "사용설명서",
+                      "세금",
+                      "도구"
+                    ],
+                    "en": [
+                      "equivalent",
+                      "manual",
+                      "tax",
+                      "tool"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "일반적 등가물의 역할이 특정 상품에 사회적으로 고정될 때 화폐형태가 성립합니다.",
+                    "en": "The money-form arises when the role of general equivalent is socially fixed in a particular commodity."
+                  }
+                },
+                {
+                  "id": "q5",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "교환 과정 장은 제1장의 가치형태 분석과 제3장의 화폐 유통 분석을 잇는 역할을 합니다.",
+                    "en": "The chapter on exchange links the value-form analysis of Chapter 1 with the analysis of money circulation in Chapter 3."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "제2장은 가치형태가 실제 상품 소유자들의 교환 행위 속에서 어떻게 화폐 필요성으로 전개되는지 보여줍니다.",
+                    "en": "Chapter 2 shows how the value-form develops into the need for money within the exchange actions of commodity owners."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "capital-v1-ch3",
+          "chapterNumber": 3,
+          "title": {
+            "ko": "화폐 또는 상품 유통",
+            "en": "Money, or the Circulation of Commodities"
+          },
+          "summary": {
+            "ko": "화폐가 가치 표현과 상품 유통에서 맡는 역할을 학습합니다.",
+            "en": "Learn the role money plays in value expression and circulation."
+          },
+          "lessons": [
+            {
+              "id": "capital-v1-ch3-basic",
+              "level": "basic",
+              "title": {
+                "ko": "화폐와 유통 기본",
+                "en": "Money and Circulation: Basics"
+              },
+              "questions": [
+                {
+                  "id": "q1",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제3장에서 화폐는 무엇의 발전된 형태로 다뤄집니까?",
+                    "en": "In Chapter 3, money is treated as the developed form of what?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "가치형태",
+                      "봉건적 신분",
+                      "자연적 풍요",
+                      "기계 설계"
+                    ],
+                    "en": [
+                      "The value-form",
+                      "Feudal status",
+                      "Natural abundance",
+                      "Machine design"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "화폐는 상품들의 가치관계가 일반적 등가물로 고정된 발전된 가치형태입니다.",
+                    "en": "Money is the developed value-form in which commodity value relations are fixed in a general equivalent."
+                  }
+                },
+                {
+                  "id": "q2",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "화폐는 상품들의 가치를 표현하는 척도 역할을 합니다.",
+                    "en": "Money serves as a measure for expressing the value of commodities."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "화폐는 가치척도로서 상품들의 가치를 가격 형태로 표현하게 합니다.",
+                    "en": "As measure of value, money lets commodity values appear in the form of prices."
+                  }
+                },
+                {
+                  "id": "q3",
+                  "type": "fill_blank",
+                  "prompt": {
+                    "ko": "상품의 가치가 화폐명으로 표현된 것이 ____입니다.",
+                    "en": "A commodity's value expressed in a money-name is its ____."
+                  },
+                  "choices": {
+                    "ko": [
+                      "가격",
+                      "습관",
+                      "색깔",
+                      "무게"
+                    ],
+                    "en": [
+                      "price",
+                      "habit",
+                      "color",
+                      "weight"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "가격은 상품 가치의 화폐 표현입니다.",
+                    "en": "Price is the money-expression of a commodity's value."
+                  }
+                },
+                {
+                  "id": "q4",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "단순 상품유통의 기본 형태는 무엇입니까?",
+                    "en": "What is the basic form of simple commodity circulation?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "C-M-C",
+                      "M-C-M'",
+                      "P-P-P",
+                      "L-W-L"
+                    ],
+                    "en": [
+                      "C-M-C",
+                      "M-C-M'",
+                      "P-P-P",
+                      "L-W-L"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "단순 상품유통은 상품을 팔아 화폐를 얻고, 그 화폐로 다른 상품을 사는 C-M-C 형태입니다.",
+                    "en": "Simple circulation is C-M-C: selling a commodity for money, then buying another commodity."
+                  }
+                },
+                {
+                  "id": "q5",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "C-M-C에서 목적은 보통 다른 사용가치의 획득입니다.",
+                    "en": "In C-M-C, the usual aim is obtaining another use-value."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "단순 상품유통은 판매와 구매를 통해 필요를 충족하는 다른 사용가치로 끝납니다.",
+                    "en": "Simple circulation ends in another use-value that satisfies a need."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "capital-v1-ch3-advanced",
+              "level": "advanced",
+              "title": {
+                "ko": "화폐와 유통 심화",
+                "en": "Money and Circulation: Advanced"
+              },
+              "questions": [
+                {
+                  "id": "q1",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "가치척도로서의 화폐와 유통수단으로서의 화폐를 구분하는 핵심은 무엇입니까?",
+                    "en": "What distinguishes money as measure of value from money as means of circulation?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "전자는 관념적으로 가격을 표현하고, 후자는 실제 교환을 매개한다",
+                      "둘은 아무 차이가 없다",
+                      "전자는 국가만 쓰고 후자는 노동자만 쓴다",
+                      "전자는 물물교환이고 후자는 생산이다"
+                    ],
+                    "en": [
+                      "The first ideally expresses price, the second actually mediates exchange",
+                      "There is no difference",
+                      "The first is only for states and the second only for workers",
+                      "The first is barter and the second production"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "가치척도 기능에서는 화폐가 가격 표현의 기준이 되고, 유통수단 기능에서는 실제 매매를 매개합니다.",
+                    "en": "As measure of value, money provides the standard for price expression; as means of circulation, it mediates actual sale and purchase."
+                  }
+                },
+                {
+                  "id": "q2",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "가격과 가치가 항상 정확히 일치해야만 상품유통이 가능합니다.",
+                    "en": "Commodity circulation is possible only if price and value always exactly coincide."
+                  },
+                  "answer": false,
+                  "explanation": {
+                    "ko": "가격은 가치의 화폐 표현이지만, 가격과 가치 사이의 양적 불일치 가능성도 가격형태 자체에 포함됩니다.",
+                    "en": "Price is the money-expression of value, but the possibility of quantitative divergence is built into the price-form."
+                  }
+                },
+                {
+                  "id": "q3",
+                  "type": "fill_blank",
+                  "prompt": {
+                    "ko": "상품유통에서 판매 C-M과 구매 M-C가 분리될 수 있기 때문에 ____의 가능성이 생깁니다.",
+                    "en": "Because sale C-M and purchase M-C can separate, the possibility of ____ appears."
+                  },
+                  "choices": {
+                    "ko": [
+                      "위기",
+                      "영구 안정",
+                      "자연 소멸",
+                      "무가격"
+                    ],
+                    "en": [
+                      "crisis",
+                      "permanent stability",
+                      "natural disappearance",
+                      "pricelessness"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "판매와 구매의 분리는 단순 물물교환과 달리 유통의 중단과 위기의 가능성을 내포합니다.",
+                    "en": "The separation of sale and purchase contains the possibility of interruption and crisis, unlike direct barter."
+                  }
+                },
+                {
+                  "id": "q4",
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "유통수단으로서 화폐가 계속 손바뀜되는 현상은 무엇을 보여줍니까?",
+                    "en": "What does the repeated change of hands of money as means of circulation show?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "상품들의 형태변환을 매개하는 화폐의 운동",
+                      "화폐가 사용가치가 없다는 사실",
+                      "상품 생산의 완전한 폐지",
+                      "노동시간과 무관한 가치"
+                    ],
+                    "en": [
+                      "Money's movement mediating the metamorphosis of commodities",
+                      "That money has no use-value",
+                      "The complete abolition of commodity production",
+                      "Value unrelated to labor time"
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "화폐의 유통은 상품들이 판매와 구매를 거치며 형태를 바꾸는 과정을 매개합니다.",
+                    "en": "The circulation of money mediates commodities' metamorphosis through sale and purchase."
+                  }
+                },
+                {
+                  "id": "q5",
+                  "type": "true_false",
+                  "prompt": {
+                    "ko": "제3장의 화폐 분석은 이후 자본의 일반 공식 M-C-M'를 이해하는 토대가 됩니다.",
+                    "en": "Chapter 3's analysis of money prepares the ground for understanding the general formula of capital, M-C-M'."
+                  },
+                  "answer": true,
+                  "explanation": {
+                    "ko": "화폐와 상품유통의 분석은 단순 유통과 자본의 운동을 구분하기 위한 전제가 됩니다.",
+                    "en": "The analysis of money and commodity circulation is a premise for distinguishing simple circulation from the movement of capital."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

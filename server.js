@@ -52,6 +52,7 @@ function isPublicHtmlPath(reqPath) {
         || /^\/hub\/[^/]+$/.test(reqPath)
         || reqPath === '/ai-diary'
         || /^\/ai-diary\/\d+$/.test(reqPath)
+        || reqPath === '/commulingo'
         || /^\/p\/[^/]+$/.test(reqPath);
 }
 
@@ -418,6 +419,7 @@ const webauthnRoutes = require('./routes/webauthn');
 const authRoutes = require('./routes/auth');
 const storyApiRoutes = require('./routes/story-api');
 const aiDiaryRoutes = require('./routes/ai-diary');
+const commuLingoRoutes = require('./routes/commulingo');
 const gameRoutes = require('./routes/game');
 const reportRoutes = require('./routes/reports');
 const hubRoutes = require('./routes/hub');
@@ -431,6 +433,7 @@ app.get('/admin/private-reports', requireAdminIp, (req, res) => res.redirect('/r
 app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
+app.use('/commulingo', commuLingoRoutes);
 app.use('/reports', reportRoutes);
 app.use('/hub', hubRoutes);
 app.use('/p', pageRoutes);

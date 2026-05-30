@@ -1,0 +1,241 @@
+.commulingo-page .container {
+    max-width: 980px;
+}
+
+.commulingo-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.commulingo-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border-left: 4px solid var(--accent);
+}
+
+.commulingo-kicker {
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 8px;
+}
+
+.commulingo-hero h1 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.commulingo-hero p:last-child {
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.commulingo-total {
+    flex: 0 0 auto;
+    width: 112px;
+    height: 112px;
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.commulingo-total span {
+    display: block;
+    color: var(--accent-red);
+    font-size: 1.55rem;
+    font-weight: 800;
+}
+
+.commulingo-total small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.commulingo-status {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    padding: 10px 14px;
+}
+
+.commulingo-lessons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.commu-lesson-card {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 16px;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    min-height: 156px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.commu-lesson-card:hover:not(:disabled) {
+    background: var(--bg-surface-hover);
+}
+
+.commu-lesson-card:disabled {
+    cursor: not-allowed;
+    opacity: 0.58;
+}
+
+.commu-lesson-card h2 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.commu-lesson-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.commu-lesson-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: auto;
+}
+
+.commu-progress-track,
+.commu-meter-track {
+    height: 8px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.commu-progress-track > span,
+#commuMeterFill {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.2s ease;
+}
+
+.commu-quiz {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+}
+
+.commu-quiz-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    padding: 12px;
+}
+
+.commu-quiz-meter {
+    flex: 1;
+    max-width: 420px;
+    color: var(--text-muted);
+    font-size: 0.86rem;
+}
+
+.commu-question {
+    padding: 24px;
+}
+
+.commu-lesson-title {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.commu-question h2 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin-bottom: 18px;
+}
+
+.commu-choices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.commu-choice {
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font: inherit;
+    min-height: 56px;
+    padding: 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.commu-choice:hover:not(:disabled) {
+    border-color: var(--accent);
+}
+
+.commu-choice.is-correct {
+    border-color: var(--accent);
+}
+
+.commu-choice.is-wrong {
+    border-color: var(--accent-red);
+}
+
+.commu-feedback {
+    border-left: 4px solid var(--accent);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+}
+
+.commu-feedback.is-wrong {
+    border-left-color: var(--accent-red);
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    .commulingo-hero,
+    .commu-quiz-top {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .commulingo-total {
+        width: 100%;
+        height: auto;
+        min-height: 78px;
+    }
+
+    .commulingo-lessons,
+    .commu-choices {
+        grid-template-columns: 1fr;
+    }
+
+    .commu-question {
+        padding: 18px;
+    }
+}

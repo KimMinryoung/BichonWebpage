@@ -17,6 +17,7 @@ const ko = {
         diaryDesc: '사이버-레닌이 스스로 작성한 일기를 읽어보세요',
         reportsDesc: '사이버-레닌이 작성한 정세 분석 보고서',
         hubDesc: '사이버-레닌이 선별한 한국어 진보 글',
+        commuLingoDesc: '혁명 이론을 책별·챕터별 퀴즈로 학습하세요',
         gameDesc: '심심풀이 미니게임',
         postsDesc: '비숑이 쓴 글 모음',
     },
@@ -30,6 +31,7 @@ const ko = {
         reports: '사이버-레닌 보고서',
         reportsShort: '보고서',
         hub: '큐레이션',
+        commuLingo: '공산링고',
         game: '게임',
         dashboard: '계기판',
         posts: '게시물 관리',
@@ -183,6 +185,30 @@ const ko = {
         retry: '↻ 다시 보내기'
     },
 
+    commuLingo: {
+        title: '공산링고',
+        description: '혁명 이론을 책별·챕터별 퀴즈로 익히는 학습장입니다.',
+        kicker: '자본론 1권',
+        start: '학습 시작',
+        continue: '이어하기',
+        review: '복습',
+        progress: '진도',
+        questions: '문항',
+        score: '점수',
+        completed: '완료',
+        locked: '준비중',
+        next: '다음',
+        finish: '완료',
+        tryAgain: '다시 풀기',
+        correct: '정답입니다.',
+        incorrect: '오답입니다.',
+        syncLogin: '로그인하면 진도를 계정에 동기화합니다.',
+        syncSaved: '진도 저장됨',
+        syncLocal: '이 브라우저에 진도를 저장합니다.',
+        allDone: '오늘의 학습 완료',
+        backToLessons: '챕터 목록'
+    },
+
     // 에러 페이지
     error: {
         notFound: '페이지를 찾을 수 없습니다.',
@@ -207,6 +233,7 @@ const en = {
         diaryDesc: 'Read diaries written by Cyber-Lenin',
         reportsDesc: 'Geopolitical analysis reports by Cyber-Lenin',
         hubDesc: 'Korean progressive writing curated by Cyber-Lenin',
+        commuLingoDesc: 'Learn revolutionary theory book by book through quizzes',
         gameDesc: 'Casual mini games',
         postsDesc: 'Blog posts written by Bichon',
     },
@@ -220,6 +247,7 @@ const en = {
         reports: "Cyber-Lenin's Reports",
         reportsShort: 'Reports',
         hub: 'Curation',
+        commuLingo: 'commulingo',
         game: 'Game',
         dashboard: 'Dashboard',
         posts: 'Manage Posts',
@@ -360,6 +388,30 @@ const en = {
         error: 'An error occurred.',
         notSaved: "The reply didn't come through. Please resend your message.",
         retry: '↻ Retry'
+    },
+
+    commuLingo: {
+        title: 'commulingo',
+        description: 'Learn revolutionary theory book by book and chapter by chapter through short quizzes.',
+        kicker: 'Capital Volume I',
+        start: 'Start',
+        continue: 'Continue',
+        review: 'Review',
+        progress: 'Progress',
+        questions: 'Questions',
+        score: 'Score',
+        completed: 'Completed',
+        locked: 'Coming soon',
+        next: 'Next',
+        finish: 'Finish',
+        tryAgain: 'Try again',
+        correct: 'Correct.',
+        incorrect: 'Incorrect.',
+        syncLogin: 'Sign in to sync progress to your account.',
+        syncSaved: 'Progress saved',
+        syncLocal: 'Progress is saved in this browser.',
+        allDone: "Today's lesson complete",
+        backToLessons: 'Lessons'
     },
 
     error: {

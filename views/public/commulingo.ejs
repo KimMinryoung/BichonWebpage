@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+    <meta name="csrf-token" content="<%= typeof csrfToken !== 'undefined' ? csrfToken : '' %>">
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <main class="container commulingo-shell" data-lang="<%= lang %>">
+        <script id="commulingo-data" type="application/json"><%- JSON.stringify(lessons).replace(/</g, '\\u003c') %></script>
+
+        <header class="box commulingo-hero">
+            <div>
+                <p class="commulingo-kicker"><%= strings.commuLingo.kicker %></p>
+                <h1><%= strings.commuLingo.title %></h1>
+                <p><%= strings.commuLingo.description %></p>
+            </div>
+            <div class="commulingo-total">
+                <span id="commuProgressText">0%</span>
+                <small><%= strings.commuLingo.progress %></small>
+            </div>
+        </header>
+
+
+        <section class="commulingo-lessons" id="commuLessonList" aria-label="<%= strings.commuLingo.title %>"></section>
+
+        <section class="commu-quiz is-hidden" id="commuQuiz" aria-live="polite">
+            <div class="commu-quiz-top">
+                <button type="button" class="btn btn-secondary" id="commuBackBtn"><%= strings.commuLingo.backToLessons %></button>
+                <div class="commu-quiz-meter">
+                    <span id="commuQuestionCount"></span>
+                    <div class="commu-meter-track"><div id="commuMeterFill"></div></div>
+                </div>
+            </div>
+
+            <article class="commu-question">
+                <p class="commu-lesson-title" id="commuLessonTitle"></p>
+                <h2 id="commuPrompt"></h2>
+                <div class="commu-choices" id="commuChoices"></div>
+                <div class="commu-feedback is-hidden" id="commuFeedback"></div>
+                <button type="button" class="btn btn-primary" id="commuNextBtn" disabled><%= strings.commuLingo.next %></button>
+            </article>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script>
+        window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
+    </script>
+    <script src="/js/commulingo.js?v=<%= assetVersion %>"></script>
+</body>
+</html>
