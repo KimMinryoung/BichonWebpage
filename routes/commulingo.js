@@ -8,7 +8,7 @@ const LESSONS_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'lessons.j
 const PUBLIC_CHAPTER_LIMITS = {
     'capital-vol1': 33,
     'capital-vol2': 21,
-    'capital-vol3': 12,
+    'capital-vol3': 22,
 };
 
 function readLessons() {
