@@ -9474,27 +9474,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출의 핵심은 무엇입니까?",
-                    "en": "What is central to Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital?"
+                    "ko": "마르크스가 농업혁명의 “공업에 대한 반작용”을 말할 때, 단순히 농업 생산성이 올랐다는 뜻이 아니다. 무엇이 공업에 결정적으로 제공되는가?",
+                    "en": "When Marx speaks of the “reaction” of the agricultural revolution on industry, he does not merely mean that agricultural productivity rose. What is decisively provided to industry?"
                   },
                   "choices": {
                     "ko": [
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다"
+                      "토지에서 분리된 노동자, 상품화된 생활수단, 그리고 공업 상품을 사야 하는 국내시장이 함께 형성된다.",
+                      "농촌이 완전히 자급자족하게 되어 공업 상품 수요가 사라진다.",
+                      "농업 생산물이 더 이상 상품으로 팔리지 않고 봉건적 공납으로만 남는다.",
+                      "공업자본은 농촌 변화와 무관하게 해외시장만으로 생겨난다."
                     ],
                     "en": [
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits"
+                      "Workers separated from land, commodified means of subsistence, and a home market that must buy industrial commodities are formed together.",
+                      "The countryside becomes completely self-sufficient and demand for industrial commodities disappears.",
+                      "Agricultural products are no longer sold as commodities and remain only feudal dues.",
+                      "Industrial capital arises from foreign markets alone, unrelated to rural transformation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                    "en": "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                    "ko": "농업혁명은 공업에 노동력과 시장을 동시에 제공한다. 농민이 자급 기반을 잃으면 생활수단과 도구를 시장에서 사야 하고, 이는 공업자본의 국내시장을 넓힌다.",
+                    "en": "The agricultural revolution provides industry with both labour-power and a market. When peasants lose their basis of subsistence, they must buy means of life and tools on the market, expanding the home market for industrial capital."
                   }
                 },
                 {
@@ -9502,27 +9502,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital operate?"
+                    "ko": "농촌 가내공업과 자급적 생산이 해체되면, 이전에 가족이나 마을 안에서 만들던 생활수단과 도구는 어떤 형태를 띠게 되는가?",
+                    "en": "When rural domestic industry and self-sufficient production are broken up, what form do the means of subsistence and tools formerly made within the household or village take?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "농업혁명이 공업에 미친 반작용과 국내시장의 창출은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "생산과정에서 농업혁명이 공업에 미친 반작용과 국내시장의 창출의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "그것들은 더 이상 필요하지 않으므로 생산에서 사라진다.",
+                      "그것들은 지주에게 바치는 현물 공납으로만 남는다.",
+                      "그것들은 시장에서 사야 하는 상품이 되며, 공업자본의 판매 대상이 된다.",
+                      "그것들은 노동자에게 무상으로 분배되는 공동재산이 된다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "a production-process case where the logic of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "They disappear from production because they are no longer needed.",
+                      "They remain only as payments in kind to landlords.",
+                      "They become commodities that must be bought on the market and thus objects of sale for industrial capital.",
+                      "They become common property distributed to workers for free."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "국내시장은 단순히 사람들이 많아서 생기는 것이 아니다. 이전에 직접 만들거나 공동체에서 얻던 물건들이 상품으로 바뀌면서 구매 강제가 생긴다.",
+                    "en": "The home market does not arise simply because there are many people. It arises as things formerly made directly or obtained through the community become commodities that must be purchased."
                   }
                 },
                 {
@@ -9530,27 +9530,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital would Marx criticize?"
+                    "ko": "“농촌 인구가 도시로 이동했으니 공업이 성장했다”는 설명만으로 부족한 이유는 무엇인가?",
+                    "en": "Why is it insufficient to say simply that industry grew because rural people moved to towns?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "농업혁명이 공업에 미친 반작용과 국내시장의 창출은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다"
+                      "도시 이동은 중요하지 않고 농촌에 남은 사람만 공업 노동자가 되기 때문이다.",
+                      "마르크스가 보려는 것은 인구 이동뿐 아니라 생산수단에서의 분리, 생활수단의 상품화, 국내시장 형성이 함께 일어나는 구조이기 때문이다.",
+                      "공업은 노동자를 전혀 필요로 하지 않고 기계만으로 잉여가치를 만들기 때문이다.",
+                      "도시로 이동한 사람은 임금노동자가 아니라 모두 즉시 자본가가 되기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                      "Because migration to towns is unimportant and only those who remain in the countryside become industrial workers.",
+                      "Because Marx is concerned not just with migration but with the combined structure of separation from means of production, commodification of subsistence, and formation of the home market.",
+                      "Because industry needs no workers and machines alone create surplus-value.",
+                      "Because those who move to towns become capitalists immediately rather than wage-labourers."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 농업혁명이 공업에 미친 반작용과 국내시장의 창출을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "인구 이동은 결과의 일부일 뿐이다. 핵심은 농민이 자급 조건을 잃고 노동력 판매자와 상품 구매자로 재편되는 사회관계의 변화다.",
+                    "en": "Migration is only part of the result. The key is the transformation of social relations: peasants lose self-sufficient conditions and are reshaped as sellers of labour-power and buyers of commodities."
                   }
                 },
                 {
@@ -9558,27 +9558,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 농업혁명이 공업에 미친 반작용과 국내시장의 창출과 어떻게 연결됩니까? 생산과정에서 농업혁명이 공업에 미친 반작용과 국내시장의 창출의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital? a production-process case where the logic of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reshapes the relation between workers and capitalists."
+                    "ko": "한 지역에서 소농과 가내직조가 해체되고, 주민은 공장 임금으로 옷과 도구를 사야 한다. 이 사례는 30장의 어떤 논점을 보여주는가?",
+                    "en": "In one region, small farming and domestic weaving are dissolved, and residents must buy clothes and tools with factory wages. Which point from Chapter 30 does this illustrate?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다"
+                      "농촌 수탈은 공업 상품의 구매자를 없애므로 공업자본을 약화한다.",
+                      "가내공업이 사라지면 상품시장도 함께 사라진다.",
+                      "공장 임금은 생산수단 소유를 자동으로 회복시키는 수단이다.",
+                      "임금으로 상품을 사야 하는 대중이 만들어지면서 공업자본을 위한 국내시장이 형성된다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                      "Rural expropriation removes buyers of industrial commodities and weakens industrial capital.",
+                      "When domestic industry disappears, the commodity market disappears with it.",
+                      "Factory wages automatically restore ownership of means of production.",
+                      "A mass compelled to buy commodities with wages is created, forming a home market for industrial capital."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 농업혁명이 공업에 미친 반작용과 국내시장의 창출의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reshapes the relation between workers and capitalists"
+                    "ko": "국내시장은 농민의 풍요로운 선택에서 생기는 것이 아니라 자급 기반의 해체에서 생긴다. 임금노동자는 생활수단을 상품으로 구매해야 한다.",
+                    "en": "The home market arises not from the peasant’s rich choice but from the dissolution of self-sufficiency. Wage-labourers must buy means of subsistence as commodities."
                   }
                 },
                 {
@@ -9586,27 +9586,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital?"
+                    "ko": "30장이 원시적 축적 논의 안에서 하는 역할은 무엇인가?",
+                    "en": "What role does Chapter 30 play within the discussion of primitive accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "정책 구호와 선거 전략",
-                      "개별 인물의 선의와 악의",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "농촌 수탈이 노동자 공급만이 아니라 공업자본의 판매시장과 원료 공급 조건까지 만든다는 점을 보여준다.",
+                      "원시적 축적은 농업에서 끝나고 공업과는 연결되지 않는다는 점을 증명한다.",
+                      "공업자본은 언제나 자급농민을 보존해야만 성장한다는 결론을 낸다.",
+                      "국내시장은 국가가 임의로 가격표를 정하면 충분히 만들어진다고 본다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "policy slogans and electoral strategy",
-                      "individual goodwill and malice",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "It shows that rural expropriation creates not only a labour supply but also the sales market and raw-material conditions for industrial capital.",
+                      "It proves that primitive accumulation ends in agriculture and has no connection to industry.",
+                      "It concludes that industrial capital can grow only by preserving self-sufficient peasants.",
+                      "It treats the home market as something created simply by the state setting price lists."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "30장은 농업혁명이 산업자본의 전제 조건을 어떻게 낳는지 연결한다. 수탈된 농민은 노동자일 뿐 아니라 상품 구매자가 되고, 농산물도 공업 원료로 재편된다.",
+                    "en": "Chapter 30 connects the agricultural revolution to the conditions of industrial capital. Expropriated peasants become not only workers but commodity buyers, while agricultural products are reorganized as industrial raw materials."
                   }
                 }
               ]
@@ -9624,27 +9624,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital?"
+                    "ko": "국내시장을 단순히 “국내 소비자의 수요 증가”로 설명하면, 30장의 핵심 긴장이 왜 사라지는가?",
+                    "en": "If the home market is explained simply as “increased demand from domestic consumers,” why does the central tension of Chapter 30 disappear?"
                   },
                   "choices": {
                     "ko": [
-                      "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다"
+                      "그 설명은 국내 소비가 언제나 해외시장보다 작다는 통계를 빠뜨리기 때문이다.",
+                      "그 설명은 공업 상품이 사용가치를 갖지 않는다는 점을 인정하지 않기 때문이다.",
+                      "그 설명은 자본주의적 수요가 자급 조건의 파괴와 임금노동 의존 속에서 만들어진다는 점을 지운다.",
+                      "그 설명은 농촌이 공업 상품을 전혀 사지 않는다는 사실을 과장하기 때문이다."
                     ],
                     "en": [
-                      "Traces the formation of the capitalist farmer through land expropriation and market expansion",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists"
+                      "Because it omits the statistic that domestic consumption is always smaller than foreign markets.",
+                      "Because it fails to admit that industrial commodities have no use-value.",
+                      "It erases that capitalist demand is produced through the destruction of self-sufficient conditions and dependence on wage-labour.",
+                      "Because it exaggerates the fact that the countryside buys no industrial commodities at all."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                    "en": "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                    "ko": "마르크스에게 국내시장은 자연적 소비성향의 결과가 아니다. 농민이 생산수단과 가내공업을 잃으면서 생긴 강제된 구매 관계다.",
+                    "en": "For Marx, the home market is not the result of a natural propensity to consume. It is a compelled relation of purchase produced as peasants lose means of production and domestic industry."
                   }
                 },
                 {
@@ -9652,27 +9652,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital?"
+                    "ko": "농업 원료가 공업자본의 투입물로 안정적으로 공급되려면 어떤 사회적 변화가 필요했는가?",
+                    "en": "What social transformation was needed for agricultural raw materials to be supplied reliably as inputs for industrial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "순수한 자연조건의 차이",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 농업혁명이 공업에 미친 반작용과 국내시장의 창출의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "농업이 자급적 관습 생산에 머물러 지역 안에서만 소비되어야 했다.",
+                      "농업 생산이 시장과 이윤을 향해 재조직되고, 토지와 노동이 자본주의적 경영에 종속되어야 했다.",
+                      "농산물이 상품이 되지 않도록 국가가 모든 교환을 금지해야 했다.",
+                      "농민이 생산물을 모두 직접 소비해 원료 시장을 없애야 했다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "a purely natural difference",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reshapes the relation between workers and capitalists"
+                      "Agriculture had to remain customary subsistence production consumed only locally.",
+                      "Agricultural production had to be reorganized toward market and profit, with land and labour subordinated to capitalist management.",
+                      "The state had to prohibit all exchange so agricultural products would not become commodities.",
+                      "Peasants had to consume all products directly and eliminate the raw-material market."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "공업 원료 시장은 자연적으로 주어진 것이 아니다. 자본주의적 농업은 생산물을 시장용 원료로 만들고, 그 과정에서 농촌 노동도 임금노동으로 재편한다.",
+                    "en": "The market for industrial raw materials is not naturally given. Capitalist agriculture turns products into marketable inputs and reorganizes rural labour as wage-labour in the process."
                   }
                 },
                 {
@@ -9680,27 +9680,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital to concrete analysis is appropriate?"
+                    "ko": "농촌 가내공업의 파괴를 “비효율적 낡은 생산의 제거”로만 보면 무엇이 가려지는가?",
+                    "en": "What is concealed if the destruction of rural domestic industry is seen only as “removing inefficient old production”?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "생산과정에서 농업혁명이 공업에 미친 반작용과 국내시장의 창출의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "가내공업은 실제로 항상 대공업보다 생산성이 높았다는 점이다.",
+                      "가내공업은 시장과 어떤 관계도 맺을 수 없었다는 점이다.",
+                      "그 파괴가 지주에게 지대를 지불하지 않아도 되는 법적 권리를 준다는 점이다.",
+                      "그 파괴가 사람들을 생활수단의 직접 생산에서 떼어 내고 공업 상품의 구매자와 임금노동자로 만든다는 점이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "the phenomenon is fully explained by individual psychology",
-                      "listing examples without concepts is sufficient",
-                      "a production-process case where the logic of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reshapes the relation between workers and capitalists"
+                      "That domestic industry was in fact always more productive than large-scale industry.",
+                      "That domestic industry could never have any relation to the market.",
+                      "That its destruction gives landlords a legal right not to pay rent.",
+                      "That its destruction separates people from directly producing means of subsistence and makes them buyers of industrial commodities and wage-labourers."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 농업혁명이 공업에 미친 반작용과 국내시장의 창출의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reshapes the relation between workers and capitalists"
+                    "ko": "효율성 언어는 계급적 재편을 가릴 수 있다. 가내공업의 해체는 공업자본을 위한 수요와 노동력을 동시에 만든다.",
+                    "en": "The language of efficiency can conceal class reorganization. The dissolution of domestic industry creates both demand and labour-power for industrial capital."
                   }
                 },
                 {
@@ -9708,27 +9708,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital in a bourgeois way?"
+                    "ko": "현대적으로 어떤 플랫폼이 농민의 종자 저장과 직거래를 막고, 매년 독점 종자·비료·유통망 구매에 묶는다고 하자. 30장의 관점에서 무엇을 물을 수 있는가?",
+                    "en": "Suppose a modern platform blocks farmers from saving seed and direct selling, binding them each year to monopoly seed, fertilizer, and distribution networks. From Chapter 30’s standpoint, what can be asked?"
                   },
                   "choices": {
                     "ko": [
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "농업혁명이 공업에 미친 반작용과 국내시장의 창출은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "그 과정이 생산자를 자급적 재생산 조건에서 떼어 내고 특정 자본의 투입물·상품 시장에 의존하게 만드는지 물어야 한다.",
+                      "디지털 플랫폼은 농업과 무관하므로 자본주의적 시장 형성과 연결할 수 없다.",
+                      "종자와 비료가 상품이면 농민은 자동으로 생산수단의 소유자가 된다.",
+                      "직거래가 줄어들면 상품시장이 축소되므로 자본의 지배도 반드시 줄어든다."
                     ],
                     "en": [
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "One should ask whether the process separates producers from self-reproducing conditions and makes them dependent on the input and commodity markets of particular capitals.",
+                      "Digital platforms are unrelated to agriculture and cannot be connected to capitalist market formation.",
+                      "If seeds and fertilizer are commodities, farmers automatically become owners of means of production.",
+                      "If direct selling declines, the commodity market shrinks and capital’s command must also decline."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "30장의 현대적 적용은 단순한 기술 비판이 아니다. 핵심은 재생산 조건이 시장 의존으로 바뀌며 자본의 국내시장과 투입물 시장이 확대되는가이다.",
+                    "en": "A modern application of Chapter 30 is not a mere critique of technology. The key is whether conditions of reproduction are turned into market dependence, expanding capital’s home and input markets."
                   }
                 },
                 {
@@ -9736,27 +9736,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "농업혁명이 공업에 미친 반작용과 국내시장의 창출에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital?"
+                    "ko": "30장이 31장의 산업자본가 발생 논의로 넘어가는 이유는 무엇인가?",
+                    "en": "Why does Chapter 30 lead into Chapter 31’s discussion of the genesis of the industrial capitalist?"
                   },
                   "choices": {
                     "ko": [
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것"
+                      "30장이 국내시장의 불가능성을 증명하므로 31장은 자본주의의 실패를 논한다.",
+                      "30장이 농업만 다루므로 31장은 앞 장과 무관한 순수 기술사를 시작한다.",
+                      "30장이 노동력과 국내시장의 형성을 보인 뒤, 31장은 이런 조건 속에서 산업자본가가 어떤 폭력적·국가적·세계시장적 방법으로 형성되는지를 다룬다.",
+                      "30장이 국가 개입을 부정하므로 31장은 국가 없는 교환만을 설명한다."
                     ],
                     "en": [
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital; and grasping how this form moves into the next contradiction",
-                      "treating a modern example with a similar name as the same concept",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "looking only at distributional outcomes while skipping production and circulation mediations"
+                      "Because Chapter 30 proves the impossibility of a home market, Chapter 31 discusses the failure of capitalism.",
+                      "Because Chapter 30 deals only with agriculture, Chapter 31 begins a pure history of technology unrelated to it.",
+                      "After Chapter 30 shows the formation of labour-power and the home market, Chapter 31 examines the violent, state-backed, and world-market methods through which industrial capitalists are formed.",
+                      "Because Chapter 30 denies state intervention, Chapter 31 explains exchange without the state."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "두 장은 조건과 주체의 형성을 연결한다. 농업혁명이 공업자본의 시장과 노동력을 만들고, 다음 장은 산업자본가가 그 조건을 어떻게 장악했는지 보여준다.",
+                    "en": "The two chapters connect the formation of conditions and agents. The agricultural revolution creates labour-power and markets for industrial capital, and the next chapter shows how industrial capitalists came to command those conditions."
                   }
                 }
               ]
@@ -9799,27 +9799,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생의 핵심은 무엇입니까?",
-                    "en": "What is central to Genesis of the Industrial Capitalist?"
+                    "ko": "31장에서 산업자본가의 발생은 왜 단순한 사업가 정신의 결과로 설명되지 않는가?",
+                    "en": "Why is the genesis of the industrial capitalist in Chapter 31 not explained simply as the result of entrepreneurial spirit?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다"
+                      "산업자본은 식민지 약탈, 노예무역, 국채, 조세, 보호무역, 국가폭력 같은 역사적 장치 속에서 집중된 부를 바탕으로 성장했기 때문이다.",
+                      "산업자본가는 언제나 노동자 투표로 선출되었기 때문이다.",
+                      "산업자본은 생산수단 없이 순수한 상상력만으로 생겨났기 때문이다.",
+                      "사업가 정신은 자본주의에서 아무 사람에게도 존재할 수 없기 때문이다."
                     ],
                     "en": [
-                      "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                      "Because industrial capital grew on the basis of wealth concentrated through historical mechanisms such as colonial plunder, the slave trade, public debt, taxation, protection, and state violence.",
+                      "Because industrial capitalists were always elected by workers’ vote.",
+                      "Because industrial capital arose from pure imagination without means of production.",
+                      "Because entrepreneurial spirit cannot exist in anyone under capitalism."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                    "en": "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists"
+                    "ko": "마르크스는 산업자본가의 형성을 개인 덕목으로 환원하지 않는다. 세계시장과 국가권력, 식민 폭력, 금융 제도가 자본 집중의 수단으로 작동했다.",
+                    "en": "Marx does not reduce the formation of industrial capitalists to individual virtue. The world market, state power, colonial violence, and finance operated as means of concentrating capital."
                   }
                 },
                 {
@@ -9827,27 +9827,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Genesis of the Industrial Capitalist operate?"
+                    "ko": "식민지 약탈과 노예무역은 산업자본 형성에서 어떤 역할을 했는가?",
+                    "en": "What role did colonial plunder and the slave trade play in the formation of industrial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 산업자본가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "그것들은 유럽 산업과 무관한 주변 사건이었다.",
+                      "그것들은 자본주의를 막기 위해 봉건제를 복원하는 수단이었다.",
+                      "그것들은 막대한 부와 원료, 시장, 금융 능력을 집중시켜 산업자본의 출발 조건을 강화했다.",
+                      "그것들은 노동력이 상품이 되는 과정을 완전히 폐지했다."
                     ],
                     "en": [
-                      "Genesis of the Industrial Capitalist reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Genesis of the Industrial Capitalist reshapes the relation between workers and capitalists",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "They were peripheral events unrelated to European industry.",
+                      "They were means of restoring feudalism in order to block capitalism.",
+                      "They concentrated immense wealth, raw materials, markets, and financial capacity, strengthening the starting conditions of industrial capital.",
+                      "They completely abolished the process by which labour-power became a commodity."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "산업자본가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Genesis of the Industrial Capitalist reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "마르크스에게 세계시장 폭력은 산업자본의 외부 장식이 아니다. 식민지와 노예무역은 축적된 화폐와 원료, 시장을 제공하며 산업자본의 성장을 가속했다.",
+                    "en": "For Marx, world-market violence is not external decoration. Colonies and the slave trade provided accumulated money, raw materials, and markets, accelerating the growth of industrial capital."
                   }
                 },
                 {
@@ -9855,27 +9855,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Genesis of the Industrial Capitalist would Marx criticize?"
+                    "ko": "국채와 조세 제도는 산업자본가의 발생에서 왜 중요하게 다뤄지는가?",
+                    "en": "Why are public debt and taxation important in the genesis of the industrial capitalist?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "국채는 모든 채권자를 즉시 노동자로 만들기 때문이다.",
+                      "그 제도들은 국가 재정을 매개로 대중에게서 자원을 끌어내고 금융·상업 자본에 수익과 축적 기회를 제공했기 때문이다.",
+                      "조세는 상품생산을 폐지하고 직접 공납으로 돌아가게 하기 때문이다.",
+                      "국채는 해외무역을 금지하는 순수한 도덕 제도였기 때문이다."
                     ],
                     "en": [
-                      "Genesis of the Industrial Capitalist reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because public debt immediately turns all creditors into workers.",
+                      "Because these institutions drew resources from the population through state finance and provided profit and accumulation opportunities to financial and commercial capital.",
+                      "Because taxation abolishes commodity production and returns society to direct tribute.",
+                      "Because public debt was a purely moral institution that prohibited foreign trade."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 산업자본가의 발생을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Genesis of the Industrial Capitalist from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "국가 재정은 중립적 회계가 아니다. 국채와 조세는 사회적 부를 특정 자본 집단에 집중시키며 축적의 지렛대가 된다.",
+                    "en": "State finance is not neutral accounting. Public debt and taxation concentrate social wealth in particular capitalist groups and become levers of accumulation."
                   }
                 },
                 {
@@ -9883,27 +9883,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 산업자본가의 발생과 어떻게 연결됩니까? 생산과정에서 산업자본가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Genesis of the Industrial Capitalist? a production-process case where the logic of Genesis of the Industrial Capitalist reshapes the relation between workers and capitalists."
+                    "ko": "보호무역과 상업전쟁을 마르크스의 관점에서 보면 무엇이 드러나는가?",
+                    "en": "What is revealed when protectionism and commercial wars are viewed from Marx’s standpoint?"
                   },
                   "choices": {
                     "ko": [
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "산업자본은 언제나 국가와 무관한 평화로운 자유경쟁만으로 태어났다.",
+                      "보호관세는 모든 노동자에게 생산수단을 무상으로 나누어 주었다.",
+                      "상업전쟁은 상품교환이 없다는 증거다.",
+                      "국가는 특정 산업자본을 키우기 위해 시장을 만들고 경쟁자를 밀어내며 폭력적 세계경쟁에 개입했다."
                     ],
                     "en": [
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "Industrial capital was always born through peaceful free competition unrelated to the state.",
+                      "Protective tariffs distributed means of production to all workers for free.",
+                      "Commercial wars prove that commodity exchange does not exist.",
+                      "The state intervened in violent world competition by creating markets and excluding rivals in order to build particular industrial capitals."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 산업자본가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Genesis of the Industrial Capitalist reshapes the relation between workers and capitalists"
+                    "ko": "마르크스는 자유시장 신화를 뒤집는다. 산업자본의 초기 형성에는 보호, 독점, 전쟁, 국가권력이 깊게 결합되어 있었다.",
+                    "en": "Marx overturns the free-market myth. Protection, monopoly, war, and state power were deeply involved in the early formation of industrial capital."
                   }
                 },
                 {
@@ -9911,27 +9911,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Genesis of the Industrial Capitalist?"
+                    "ko": "31장이 원시적 축적 전체에 덧붙이는 핵심은 무엇인가?",
+                    "en": "What does Chapter 31 add to the overall account of primitive accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "정책 구호와 선거 전략",
-                      "개별 인물의 선의와 악의"
+                      "임금노동자만이 아니라 산업자본가 쪽의 부와 권력도 폭력적·국가적·세계시장적 과정 속에서 만들어졌음을 보여준다.",
+                      "산업자본가는 임금노동자와 아무 관계 없이 순수한 상업 차익만으로 남는다는 점을 보여준다.",
+                      "원시적 축적은 농촌에서만 일어나고 세계시장은 관련이 없다는 점을 증명한다.",
+                      "국가가 개입하면 자본 집중은 언제나 불가능해진다는 결론을 낸다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "policy slogans and electoral strategy",
-                      "individual goodwill and malice"
+                      "It shows that not only wage-labourers but also the wealth and power on the industrial capitalist side were made through violent, state-backed, and world-market processes.",
+                      "It shows that industrial capitalists remain pure merchants unrelated to wage-labourers.",
+                      "It proves that primitive accumulation occurs only in the countryside and has no relation to the world market.",
+                      "It concludes that whenever the state intervenes, concentration of capital becomes impossible."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "원시적 축적은 한쪽에서 노동자를 만들고 다른 쪽에서 자본을 집중시킨다. 31장은 특히 후자의 역사적 폭력과 제도적 장치를 전면에 놓는다.",
+                    "en": "Primitive accumulation creates workers on one side and concentrates capital on the other. Chapter 31 foregrounds the historical violence and institutional mechanisms of the latter."
                   }
                 }
               ]
@@ -9949,27 +9949,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Genesis of the Industrial Capitalist?"
+                    "ko": "산업자본의 발생을 “상업자본이 자연스럽게 공장으로 발전한 것”으로 보면 무엇이 빠지는가?",
+                    "en": "What is omitted if the rise of industrial capital is seen as merchant capital naturally developing into factories?"
                   },
                   "choices": {
                     "ko": [
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다"
+                      "상업자본은 어떤 사회에서도 존재할 수 없었다는 점이다.",
+                      "공장제는 기술과 무관하게 오직 농민의 자급만으로 성립했다는 점이다.",
+                      "상업과 금융의 부가 국가폭력, 식민지, 국채, 보호제도를 통해 생산을 지휘하는 산업자본으로 전환되는 역사적 매개가 사라진다.",
+                      "산업자본은 상품을 팔지 않으므로 상업과 연결될 수 없다는 점이다."
                     ],
                     "en": [
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                      "That merchant capital could not exist in any society.",
+                      "That the factory system arose only from peasant self-sufficiency and had no relation to technology.",
+                      "The historical mediations disappear through which commercial and financial wealth, aided by state violence, colonies, public debt, and protection, was transformed into industrial capital commanding production.",
+                      "That industrial capital cannot be connected to commerce because it does not sell commodities."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                    "en": "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists"
+                    "ko": "마르크스는 단순한 자연발전을 말하지 않는다. 상업·금융의 부가 생산을 지휘하는 산업자본이 되려면 세계시장 폭력과 국가제도가 중요한 매개로 작동했다.",
+                    "en": "Marx is not describing a simple natural evolution. For commercial and financial wealth to become industrial capital commanding production, world-market violence and state institutions acted as crucial mediations."
                   }
                 },
                 {
@@ -9977,27 +9977,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Genesis of the Industrial Capitalist?"
+                    "ko": "31장에서 국가는 시장의 외부자가 아니라 축적의 행위자로 등장한다. 그 매개는 무엇인가?",
+                    "en": "In Chapter 31, the state appears not as an outsider to the market but as an agent of accumulation. What mediates this role?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 산업자본가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "순수한 자연조건의 차이"
+                      "국가는 모든 상품교환을 금지하여 자본주의를 멈춘다.",
+                      "국가는 국채, 조세, 독점권, 보호관세, 군사력으로 사회적 부를 집중시키고 특정 자본의 성장을 촉진한다.",
+                      "국가는 생산수단을 노동자에게 모두 돌려주어 임금노동을 폐지한다.",
+                      "국가는 오직 법정 휴일을 정하는 방식으로만 경제에 관계한다."
                     ],
                     "en": [
-                      "a production-process case where the logic of Genesis of the Industrial Capitalist reshapes the relation between workers and capitalists",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a purely natural difference"
+                      "The state stops capitalism by prohibiting all commodity exchange.",
+                      "Through public debt, taxation, monopolies, protective tariffs, and military force, the state concentrates social wealth and promotes the growth of particular capitals.",
+                      "The state abolishes wage-labour by returning all means of production to workers.",
+                      "The state relates to the economy only by setting public holidays."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "국가는 시장을 단순히 감시하는 심판이 아니다. 초기 산업자본 형성에서 국가는 부의 이전, 독점, 강제력을 통해 축적을 조직했다.",
+                    "en": "The state is not merely a referee watching the market. In the formation of early industrial capital, it organized accumulation through transfers of wealth, monopoly, and coercive power."
                   }
                 },
                 {
@@ -10005,27 +10005,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Genesis of the Industrial Capitalist to concrete analysis is appropriate?"
+                    "ko": "식민지 폭력을 자본주의의 “예외적 범죄”로만 보면 31장의 논지가 왜 약해지는가?",
+                    "en": "Why is Chapter 31 weakened if colonial violence is treated only as an “exceptional crime” of capitalism?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 산업자본가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "개념 없이 사례를 나열하면 충분하다"
+                      "식민지 폭력은 실제로 존재하지 않았다는 결론이 나오기 때문이다.",
+                      "식민지 폭력은 도덕적으로 나쁘지만 자본 축적과는 아무 관련이 없다는 점이 확정되기 때문이다.",
+                      "식민지 폭력은 오직 봉건제 복원을 위한 운동이었기 때문이다.",
+                      "식민지 폭력을 주변 예외로 밀어내면, 세계시장에서의 약탈과 노예화가 자본 집중과 산업 성장의 조건으로 작동했다는 분석이 사라진다."
                     ],
                     "en": [
-                      "a production-process case where the logic of Genesis of the Industrial Capitalist reshapes the relation between workers and capitalists",
-                      "the phenomenon is fully explained by individual psychology",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "listing examples without concepts is sufficient"
+                      "Because it would imply that colonial violence never existed.",
+                      "Because it establishes that colonial violence was morally bad but unrelated to capital accumulation.",
+                      "Because colonial violence was only a movement to restore feudalism.",
+                      "If colonial violence is pushed to the margins as an exception, the analysis disappears of how plunder and enslavement in the world market functioned as conditions for capital concentration and industrial growth."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 산업자본가의 발생의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Genesis of the Industrial Capitalist reshapes the relation between workers and capitalists"
+                    "ko": "마르크스는 식민지 폭력을 부차적 일탈로 처리하지 않는다. 그것은 세계시장 형성과 자본 집중의 중요한 수단이었다.",
+                    "en": "Marx does not treat colonial violence as a secondary deviation. It was a major means of forming the world market and concentrating capital."
                   }
                 },
                 {
@@ -10033,27 +10033,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Genesis of the Industrial Capitalist in a bourgeois way?"
+                    "ko": "현대 국가가 특정 산업에 막대한 보조금, 특허 보호, 군사계약, 조달시장을 제공해 거대 기업을 키운다. 31장의 관점에서 핵심 질문은 무엇인가?",
+                    "en": "A modern state builds giant firms through large subsidies, patent protection, military contracts, and procurement markets. From Chapter 31’s standpoint, what is the key question?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "산업자본가의 발생은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "국가의 제도와 재정이 어떻게 특정 자본의 축적 조건을 만들고 사회적 비용을 사적으로 집중된 이윤으로 전환하는가를 물어야 한다.",
+                      "국가가 개입하면 그 기업은 더 이상 자본주의 기업이 아니라고 보아야 한다.",
+                      "보조금이 있으면 노동자는 생산수단을 자동으로 소유한다고 전제해야 한다.",
+                      "특허와 조달은 생산과 무관하므로 축적 분석에서 제외해야 한다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Genesis of the Industrial Capitalist reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "One should ask how state institutions and finance create conditions of accumulation for particular capitals and turn social costs into privately concentrated profit.",
+                      "If the state intervenes, the firm should no longer be considered capitalist.",
+                      "If subsidies exist, workers should be assumed automatically to own the means of production.",
+                      "Patents and procurement are unrelated to production and should be excluded from the analysis of accumulation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "31장은 국가개입과 자본주의를 대립시키지 않는다. 오히려 국가는 특정 자본의 축적 조건을 만드는 능동적 장치가 될 수 있다.",
+                    "en": "Chapter 31 does not oppose state intervention to capitalism. The state can be an active mechanism for creating the conditions of accumulation for particular capitals."
                   }
                 },
                 {
@@ -10061,27 +10061,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "산업자본가의 발생에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Genesis of the Industrial Capitalist?"
+                    "ko": "31장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 31?"
                   },
                   "choices": {
                     "ko": [
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것"
+                      "원시적 축적의 폭력은 노동자 쪽에만 있고 자본가 쪽에는 아무 역사도 없다는 점을 보인다.",
+                      "산업자본가는 기술 발명만으로 생겨나므로 계급관계와 무관하다는 결론을 낸다.",
+                      "원시적 축적이 국내 농촌 수탈만이 아니라 세계시장, 금융, 국가폭력을 통해 산업자본의 출발 자금을 집중시킨 과정임을 보여준다.",
+                      "식민지와 국채는 자본주의 이전에만 존재했으므로 산업자본과 연결되지 않는다고 본다."
                     ],
                     "en": [
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists; and grasping how this form moves into the next contradiction",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "treating a modern example with a similar name as the same concept"
+                      "It shows that the violence of primitive accumulation exists only on the worker’s side and that the capitalist side has no history.",
+                      "It concludes that industrial capitalists arise from technical invention alone and are unrelated to class relations.",
+                      "It shows that primitive accumulation was not only domestic rural expropriation but also a process concentrating the starting funds of industrial capital through the world market, finance, and state violence.",
+                      "It treats colonies and public debt as existing only before capitalism and therefore unrelated to industrial capital."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "31장은 원시적 축적의 세계사적 폭을 보여준다. 노동자 형성, 국내시장 형성, 자본 집중이 모두 폭력적 세계시장과 국가제도 속에서 결합된다.",
+                    "en": "Chapter 31 shows the world-historical breadth of primitive accumulation. The formation of workers, the home market, and the concentration of capital are joined through the violent world market and state institutions."
                   }
                 }
               ]
@@ -10124,27 +10124,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향의 핵심은 무엇입니까?",
-                    "en": "What is central to Historical Tendency of Capitalist Accumulation?"
+                    "ko": "마르크스가 “자본주의적 축적의 역사적 경향”을 말할 때, 어떤 장기 운동을 가리키는가?",
+                    "en": "When Marx speaks of the “historical tendency of capitalist accumulation,” what long-term movement does he indicate?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다"
+                      "소생산자의 사적 소유가 부정되어 자본주의적 사적 소유가 생기고, 다시 자본의 집중과 사회화된 노동이 그 소유형태와 충돌하게 되는 운동이다.",
+                      "모든 자본가가 점점 더 작은 독립 장인이 되는 운동이다.",
+                      "자본주의가 발전할수록 생산은 점점 더 가족 자급경제로 돌아가는 운동이다.",
+                      "축적이 진행될수록 계급관계가 자연적으로 사라지고 아무 갈등도 남지 않는 운동이다."
                     ],
                     "en": [
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power"
+                      "The movement in which small producers’ private property is negated by capitalist private property, and then concentration of capital and socialized labour come into conflict with that property form.",
+                      "The movement in which all capitalists gradually become smaller independent artisans.",
+                      "The movement in which capitalist development returns production to family subsistence economies.",
+                      "The movement in which class relations naturally disappear as accumulation proceeds, leaving no conflict."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                    "en": "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits"
+                    "ko": "32장은 자본주의를 영원한 형태로 보지 않는다. 자본주의는 소생산을 파괴하며 성장하지만, 그 성장 자체가 더 사회화된 생산과 사적 전유 사이의 모순을 키운다.",
+                    "en": "Chapter 32 does not treat capitalism as eternal. Capitalism grows by destroying small production, but that very growth intensifies the contradiction between socialized production and private appropriation."
                   }
                 },
                 {
@@ -10152,27 +10152,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Historical Tendency of Capitalist Accumulation operate?"
+                    "ko": "자본주의적 사적 소유는 소생산자의 사적 소유와 어떻게 다른가?",
+                    "en": "How is capitalist private property different from the private property of small producers?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "자본주의적 축적의 역사적 경향은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 자본주의적 축적의 역사적 경향의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "둘은 완전히 같으며 규모 차이만 있을 뿐이다.",
+                      "자본주의적 소유는 노동자가 생산수단을 공동으로 소유한다는 뜻이다.",
+                      "소생산자의 소유는 자기 노동과 생산수단의 결합에 기대지만, 자본주의적 소유는 노동자와 생산수단의 분리와 타인 노동의 전유에 기대고 있다.",
+                      "소생산자의 소유는 언제나 대공장과 세계시장을 전제로 한다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Historical Tendency of Capitalist Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Historical Tendency of Capitalist Accumulation reshapes the relation between workers and capitalists"
+                      "They are completely identical and differ only in scale.",
+                      "Capitalist property means workers commonly own the means of production.",
+                      "Small-producer property rests on the union of the producer’s own labour with means of production, whereas capitalist property rests on the separation of workers from means of production and appropriation of others’ labour.",
+                      "Small-producer property always presupposes large factories and the world market."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "자본주의적 축적의 역사적 경향은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Historical Tendency of Capitalist Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "마르크스는 모든 사적 소유를 같은 것으로 다루지 않는다. 자본주의적 소유는 자기 노동의 산물이 아니라 노동자와 생산수단의 분리 위에서 타인의 잉여노동을 전유하는 형태다.",
+                    "en": "Marx does not treat all private property as the same. Capitalist property is not the product of one’s own labour but a form of appropriating others’ surplus-labour on the basis of separating workers from means of production."
                   }
                 },
                 {
@@ -10180,27 +10180,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Historical Tendency of Capitalist Accumulation would Marx criticize?"
+                    "ko": "자본주의가 발전할수록 생산은 더 사회화되지만 소유는 소수에게 집중된다. 이 모순은 왜 중요한가?",
+                    "en": "As capitalism develops, production becomes more socialized while ownership is concentrated in fewer hands. Why is this contradiction important?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "자본주의적 축적의 역사적 경향은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "사회화된 생산은 더 이상 어떤 조직도 필요 없다는 뜻이기 때문이다.",
+                      "생산은 협업과 과학, 세계적 연결에 의존하지만 그 성과는 사적으로 전유되기 때문에 자본주의적 소유형태가 생산력의 족쇄가 될 수 있기 때문이다.",
+                      "소유 집중은 노동자가 모두 자본가가 되었음을 뜻하기 때문이다.",
+                      "소유가 집중될수록 상품교환은 즉시 사라지기 때문이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Historical Tendency of Capitalist Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "Because socialized production means no organization is needed anymore.",
+                      "Because production depends on cooperation, science, and global connection, while its results are privately appropriated, so the capitalist property form can become a fetter on productive forces.",
+                      "Because concentrated ownership means all workers have become capitalists.",
+                      "Because as ownership concentrates, commodity exchange immediately disappears."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 자본주의적 축적의 역사적 경향을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Historical Tendency of Capitalist Accumulation from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "마르크스가 보는 역사적 경향은 생산의 사회적 성격과 전유의 사적 형태 사이의 충돌이다. 자본이 발전시킨 협업과 집중은 자본주의적 소유 자체와 긴장한다.",
+                    "en": "The historical tendency Marx sees is the clash between the social character of production and the private form of appropriation. The cooperation and concentration developed by capital come into tension with capitalist property itself."
                   }
                 },
                 {
@@ -10208,27 +10208,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 자본주의적 축적의 역사적 경향과 어떻게 연결됩니까? 생산과정에서 자본주의적 축적의 역사적 경향의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Historical Tendency of Capitalist Accumulation? a production-process case where the logic of Historical Tendency of Capitalist Accumulation reshapes the relation between workers and capitalists."
+                    "ko": "수많은 작은 자본이 경쟁 속에서 합병되고, 거대 기업 몇 곳이 생산과 시장을 지배한다. 32장의 관점에서 이 사례는 무엇을 보여주는가?",
+                    "en": "Many small capitals are merged through competition, and a few giant firms dominate production and markets. From Chapter 32’s standpoint, what does this show?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "자본주의적 관계와 무관한 예외적 사건이다"
+                      "자본주의적 축적은 언제나 소유를 더 잘게 쪼개 독립생산자를 늘린다.",
+                      "기업 규모가 커지면 노동자는 자동으로 생산수단을 통제한다.",
+                      "합병은 상품생산과 임금노동을 곧바로 폐지한다.",
+                      "경쟁은 자본 집중과 중앙화를 낳으며, 소수의 자본이 사회적 생산을 지휘하는 경향을 강화한다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "It is an exceptional event unrelated to capitalist relations"
+                      "Capitalist accumulation always fragments ownership further and increases independent producers.",
+                      "When firms grow larger, workers automatically control the means of production.",
+                      "Mergers immediately abolish commodity production and wage-labour.",
+                      "Competition produces concentration and centralization of capital, strengthening the tendency for a few capitals to command social production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 자본주의적 축적의 역사적 경향의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Historical Tendency of Capitalist Accumulation reshapes the relation between workers and capitalists"
+                    "ko": "경쟁은 작은 소유의 영원한 보존이 아니라 자본의 집중을 낳는다. 이 집중은 생산의 사회적 규모를 키우면서도 지휘권을 소수에게 모은다.",
+                    "en": "Competition does not eternally preserve small property; it produces concentration of capital. This concentration enlarges the social scale of production while concentrating command in few hands."
                   }
                 },
                 {
@@ -10236,27 +10236,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Historical Tendency of Capitalist Accumulation?"
+                    "ko": "“수탈자의 수탈”이라는 명제는 무엇을 뜻하는가?",
+                    "en": "What does the proposition “the expropriators are expropriated” mean?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "정책 구호와 선거 전략",
-                      "개별 인물의 선의와 악의"
+                      "자본주의가 만든 사회화된 생산과 집중된 노동능력이 사적 자본 소유와 충돌하면서, 자본가의 독점적 소유가 역사적으로 폐지될 조건이 성숙한다는 뜻이다.",
+                      "각 노동자가 개인적으로 작은 작업장을 되찾아 자급경제로 돌아간다는 뜻이다.",
+                      "자본가가 노동자에게 임금을 조금 더 주면 계급관계가 사라진다는 뜻이다.",
+                      "원시적 축적이 처음부터 아무 폭력도 없었다는 뜻이다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "policy slogans and electoral strategy",
-                      "individual goodwill and malice"
+                      "It means that the socialized production and concentrated capacities created by capitalism come into conflict with private capitalist ownership, maturing the conditions for abolishing the capitalists’ monopoly of ownership.",
+                      "It means each worker individually regains a small workshop and returns to subsistence production.",
+                      "It means class relations disappear if capitalists pay workers slightly higher wages.",
+                      "It means primitive accumulation involved no violence from the beginning."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "마르크스의 결론은 소생산으로의 단순 복귀가 아니다. 자본주의가 만든 사회화된 생산을 토대로, 소수 자본가의 전유를 폐지할 가능성이 생긴다는 뜻이다.",
+                    "en": "Marx’s conclusion is not a simple return to small production. On the basis of the socialized production created by capitalism, the possibility arises of abolishing appropriation by a minority of capitalists."
                   }
                 }
               ]
@@ -10274,27 +10274,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Historical Tendency of Capitalist Accumulation?"
+                    "ko": "32장에서 “부정의 부정”을 개인 소유의 단순한 회복으로 읽으면 왜 틀리는가?",
+                    "en": "Why is it wrong to read the “negation of the negation” in Chapter 32 as a simple restoration of individual private property?"
                   },
                   "choices": {
                     "ko": [
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다"
+                      "마르크스는 어떤 종류의 개인성도 인정하지 않기 때문이다.",
+                      "부정의 부정은 철학적 장식일 뿐 경제 분석과 무관하기 때문이다.",
+                      "마르크스는 과거의 소농·장인 소유로 돌아가자는 것이 아니라, 자본주의가 발전시킨 협업과 공동 생산수단을 토대로 한 더 높은 형태의 개인적 소유를 말하기 때문이다.",
+                      "개인 소유는 자본주의 이전에도 존재한 적이 없기 때문이다."
                     ],
                     "en": [
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power"
+                      "Because Marx recognizes no form of individuality at all.",
+                      "Because the negation of the negation is philosophical decoration unrelated to economic analysis.",
+                      "Because Marx is not calling for a return to old peasant or artisan property, but for a higher form of individual property based on the cooperation and common means of production developed by capitalism.",
+                      "Because individual property never existed before capitalism."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                    "en": "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits"
+                    "ko": "중요한 것은 복귀가 아니라 역사적 상승이다. 자본주의가 만든 사회적 생산력을 유지하면서 사적 자본 전유를 넘어서는 형태가 문제다.",
+                    "en": "The point is not return but historical supersession. The question is a form that preserves the social productive powers developed by capitalism while overcoming private capitalist appropriation."
                   }
                 },
                 {
@@ -10302,27 +10302,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Historical Tendency of Capitalist Accumulation?"
+                    "ko": "자본주의가 소유를 집중시키고 노동을 사회화한다는 말은 어떤 매개를 통해 연결되는가?",
+                    "en": "Through what mediation are concentration of ownership and socialization of labour connected in capitalism?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "순수한 자연조건의 차이",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "생산과정에서 자본주의적 축적의 역사적 경향의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "노동자가 모두 독립생산자가 되므로 사회적 협업이 줄어든다.",
+                      "경쟁과 축적은 자본을 집중시키고, 대공업은 협업·분업·과학·세계시장을 결합해 개별 노동을 사회적 총노동의 일부로 만든다.",
+                      "소유 집중은 생산 규모를 항상 줄이고 노동자를 가정으로 돌려보낸다.",
+                      "사회화된 노동은 상품생산과 무관하게 자연적으로만 생긴다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a purely natural difference",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "a production-process case where the logic of Historical Tendency of Capitalist Accumulation reshapes the relation between workers and capitalists"
+                      "Because all workers become independent producers, social cooperation declines.",
+                      "Competition and accumulation concentrate capital, while large-scale industry combines cooperation, division of labour, science, and the world market, making individual labour part of social total labour.",
+                      "Concentrated ownership always reduces the scale of production and sends workers back to households.",
+                      "Socialized labour arises only naturally, unrelated to commodity production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "자본주의는 한편으로 지휘권을 집중시키고 다른 한편으로 생산을 거대한 사회적 협업으로 만든다. 이 결합이 나중에는 사적 소유형태와 충돌한다.",
+                    "en": "Capitalism concentrates command on one side and turns production into vast social cooperation on the other. This combination later clashes with the private form of ownership."
                   }
                 },
                 {
@@ -10330,27 +10330,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Historical Tendency of Capitalist Accumulation to concrete analysis is appropriate?"
+                    "ko": "“자본주의는 사적 소유를 보호하는 체제이므로 사적 소유를 파괴하지 않는다”는 설명이 32장에서 놓치는 것은 무엇인가?",
+                    "en": "What is missed in Chapter 32 by the claim “capitalism protects private property, so it does not destroy private property”?"
                   },
                   "choices": {
                     "ko": [
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "생산과정에서 자본주의적 축적의 역사적 경향의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황"
+                      "자본주의에서는 어떤 법적 소유권도 존재하지 않는다는 점이다.",
+                      "자본주의는 모든 사람의 소유를 같은 규모로 보존한다는 점이다.",
+                      "사적 소유는 언제나 공동소유와 같은 뜻이라는 점이다.",
+                      "자본주의는 소생산자의 자기 노동에 기초한 사적 소유를 대규모로 파괴하면서, 자본주의적 사적 소유를 세운다는 점이다."
                     ],
                     "en": [
-                      "the phenomenon is fully explained by individual psychology",
-                      "listing examples without concepts is sufficient",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "a production-process case where the logic of Historical Tendency of Capitalist Accumulation reshapes the relation between workers and capitalists"
+                      "There are no legal property rights under capitalism.",
+                      "Capitalism preserves everyone’s property at the same scale.",
+                      "Private property always means the same thing as common ownership.",
+                      "Capitalism destroys on a large scale the private property of small producers based on their own labour, while establishing capitalist private property."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 자본주의적 축적의 역사적 경향의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Historical Tendency of Capitalist Accumulation reshapes the relation between workers and capitalists"
+                    "ko": "마르크스는 사적 소유의 역사적 형태를 구분한다. 자본주의는 소유를 보존하기만 하는 것이 아니라 한 형태의 소유를 파괴하고 다른 형태를 세운다.",
+                    "en": "Marx distinguishes historical forms of private property. Capitalism does not simply preserve property; it destroys one form and establishes another."
                   }
                 },
                 {
@@ -10358,27 +10358,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Historical Tendency of Capitalist Accumulation in a bourgeois way?"
+                    "ko": "거대 플랫폼 기업이 수백만 노동자의 협업과 데이터를 조직하지만, 통제권과 수익은 소수 소유자에게 집중된다. 32장의 관점으로 보면 무엇이 두드러지는가?",
+                    "en": "A giant platform firm organizes the cooperation and data of millions of workers, while control and revenue are concentrated in a few owners. From Chapter 32’s standpoint, what stands out?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "자본주의적 축적의 역사적 경향은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "사회화된 생산능력과 사적 전유 사이의 모순이 강화되는 사례로 볼 수 있다.",
+                      "플랫폼이 크면 노동자들은 자동으로 생산수단을 소유한다.",
+                      "데이터가 쓰이면 더 이상 노동이나 소유관계가 문제가 되지 않는다.",
+                      "소유가 집중되면 협업은 사라지고 모두 독립생산자가 된다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "Historical Tendency of Capitalist Accumulation reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "It can be seen as a case in which the contradiction between socialized productive capacity and private appropriation is intensified.",
+                      "If a platform is large, workers automatically own the means of production.",
+                      "Once data is used, labour and property relations are no longer at issue.",
+                      "When ownership is concentrated, cooperation disappears and everyone becomes an independent producer."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "32장의 범주는 현대 거대기업에도 적용될 수 있다. 생산은 수많은 사람의 연결된 활동인데, 그 지휘와 성과는 소수의 소유권으로 집중된다.",
+                    "en": "The categories of Chapter 32 can apply to modern giant firms. Production is the connected activity of many people, while command and results are concentrated as the property of a few."
                   }
                 },
                 {
@@ -10386,27 +10386,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 역사적 경향에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Historical Tendency of Capitalist Accumulation?"
+                    "ko": "32장이 1권 전체의 결론부에서 갖는 의미는 무엇인가?",
+                    "en": "What is the significance of Chapter 32 near the conclusion of Volume I?"
                   },
                   "choices": {
                     "ko": [
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것"
+                      "앞 장의 원시적 축적 분석을 취소하고 자본주의를 영원한 자연질서로 확정한다.",
+                      "생산과정을 떠나 순수한 정치 선언만 남긴다.",
+                      "상품과 잉여가치 분석에서 출발한 1권의 논의를, 자본주의의 역사적 발생과 소멸 가능성이라는 경향 분석으로 묶어 준다.",
+                      "자본주의의 발전이 계급투쟁과 무관하다는 결론을 낸다."
                     ],
                     "en": [
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits; and grasping how this form moves into the next contradiction",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "treating a modern example with a similar name as the same concept"
+                      "It cancels the previous analysis of primitive accumulation and fixes capitalism as an eternal natural order.",
+                      "It leaves the production process behind and offers only a pure political declaration.",
+                      "It gathers the argument of Volume I, which began with commodities and surplus-value, into an analysis of capitalism’s historical emergence and possible supersession.",
+                      "It concludes that capitalist development has no relation to class struggle."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "32장은 1권의 논리와 역사를 연결하는 결론적 장이다. 자본주의가 어떻게 생겨났고, 그 발전이 어떤 모순을 성숙시키는지 보여준다.",
+                    "en": "Chapter 32 is a concluding chapter linking the logic and history of Volume I. It shows how capitalism arose and what contradictions its development matures."
                   }
                 }
               ]
@@ -10449,27 +10449,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "마르크스가 식민지를 통해 보여주려는 자본주의의 핵심 조건은 무엇입니까?",
-                    "en": "What core condition of capitalism does Marx show through the colonies?"
+                    "ko": "마르크스가 근대 식민이론을 다루는 이유는 무엇인가?",
+                    "en": "Why does Marx discuss modern colonization theory?"
                   },
                   "choices": {
                     "ko": [
-                      "자본가는 돈과 생산수단뿐 아니라, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-                      "자본주의는 충분한 금과 무역항만 있으면 자연스럽게 성립한다",
-                      "식민지에서는 토지가 많을수록 임금노동이 더 안정적으로 공급된다",
-                      "기계와 화폐가 있으면 계급관계와 무관하게 자본주의 생산이 시작된다"
+                      "식민지에서는 노동자가 토지에 접근할 수 있을 때 자본주의가 돈과 기계만으로 성립하지 않는다는 사실이 노골적으로 드러나기 때문이다.",
+                      "식민지에서는 언제나 자본주의가 본국보다 더 완성되어 있기 때문이다.",
+                      "식민지는 생산수단과 노동력의 관계가 없어서 경제 분석과 무관하기 때문이다.",
+                      "근대 식민이론은 노동자 공동소유를 옹호하는 이론이기 때문이다."
                     ],
                     "en": [
-                      "Capital needs not only money and means of production, but workers separated from means of production and compelled to sell labor-power",
-                      "Capitalism naturally arises wherever there is enough gold and trade ports",
-                      "The more land is available in a colony, the more stable the supply of wage-labor becomes",
-                      "With machines and money, capitalist production begins regardless of class relations"
+                      "Because colonies openly reveal that capitalism does not arise from money and machinery alone when workers can access land.",
+                      "Because capitalism is always more complete in colonies than in the metropole.",
+                      "Because colonies have no relation between means of production and labour-power and are irrelevant to economic analysis.",
+                      "Because modern colonization theory advocates workers’ common ownership."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "식민지는 자본주의가 돈과 물건만으로 성립하지 않고, 임금노동자를 안정적으로 확보하는 사회관계를 필요로 한다는 점을 드러냅니다.",
-                    "en": "The colonies show that capitalism does not arise from money and things alone; it requires the social relation that secures wage-laborers."
+                    "ko": "식민지는 자본주의의 비밀을 거꾸로 보여준다. 노동자가 토지와 생산수단에 접근할 수 있으면 임금노동자로 묶이지 않기 때문에, 돈과 기계만으로 자본이 성립하지 않는다.",
+                    "en": "The colony reveals capitalism’s secret in reverse. If workers can access land and means of production, they are not bound as wage-labourers, so money and machinery alone do not make capital."
                   }
                 },
                 {
@@ -10477,27 +10477,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "왜 식민지에서는 자본가가 돈과 생산수단을 가지고 있어도 노동자를 안정적으로 고용하기 어려울 수 있습니까?",
-                    "en": "Why can capitalists in colonies have money and means of production yet still struggle to employ workers stably?"
+                    "ko": "식민지에서 자본가가 돈과 생산수단을 가지고도 노동자를 안정적으로 고용하기 어려운 이유는 무엇인가?",
+                    "en": "Why can a capitalist in a colony have money and means of production yet find it hard to hire workers stably?"
                   },
                   "choices": {
                     "ko": [
-                      "자본가가 높은 임금을 주면 토지 접근성은 노동공급에 영향을 주지 않기 때문이다",
-                      "생산수단이 많아질수록 노동력은 자동으로 자본에 종속되기 때문이다",
-                      "식민지 노동자는 본성적으로 임금계약을 이해하지 못하기 때문이다",
-                      "노동자가 토지에 접근할 수 있으면 임금노동자로 남기보다 독립생산자가 될 수 있기 때문이다"
+                      "식민지 노동자는 화폐를 이해하지 못하기 때문이다.",
+                      "식민지에는 사용가치가 없어서 생산이 불가능하기 때문이다.",
+                      "노동자가 비교적 쉽게 토지를 얻어 독립생산자가 될 수 있으면, 장기간 노동력을 팔 압박이 약하기 때문이다.",
+                      "자본가는 식민지에서 법적으로 어떤 생산수단도 소유할 수 없기 때문이다."
                     ],
                     "en": [
-                      "Because if capitalists pay higher wages, access to land has no effect on labor supply",
-                      "Because more means of production automatically subordinate labor-power to capital",
-                      "Because colonial workers are naturally unable to understand wage contracts",
-                      "Because access to land lets workers become independent producers instead of remaining wage-laborers"
+                      "Because colonial workers do not understand money.",
+                      "Because there are no use-values in colonies, making production impossible.",
+                      "Because if workers can relatively easily obtain land and become independent producers, the pressure to sell labour-power for long periods is weak.",
+                      "Because capitalists are legally unable to own any means of production in colonies."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "토지 접근성은 노동자가 자본가에게 오래 종속되지 않고 독립생산자가 될 수 있는 물질적 조건입니다.",
-                    "en": "Access to land gives workers the material possibility of leaving wage-labor and becoming independent producers."
+                    "ko": "노동력 시장은 자연적으로 주어진 것이 아니다. 노동자가 독립생산자로 살 수 있는 조건이 있으면 자본가는 노동력을 안정적으로 지휘하기 어렵다.",
+                    "en": "The labour market is not naturally given. If workers have the conditions to live as independent producers, capitalists cannot stably command labour-power."
                   }
                 },
                 {
@@ -10505,27 +10505,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "웨이크필드의 “체계적 식민” 이론은 무엇을 하려는 시도입니까?",
-                    "en": "What is Wakefield’s theory of “systematic colonisation” trying to do?"
+                    "ko": "웨이크필드의 “체계적 식민” 이론은 무엇을 하려는 시도인가?",
+                    "en": "What is Wakefield’s theory of “systematic colonization” trying to do?"
                   },
                   "choices": {
                     "ko": [
-                      "식민지에서 화폐를 폐지하고 직접 물물교환으로 돌아가려는 시도",
-                      "식민지의 모든 토지를 즉시 무상분배해 소농의 독립을 촉진하려는 시도",
-                      "자본가가 생산수단 없이도 순수한 신용만으로 생산을 시작하게 하려는 시도",
-                      "토지를 쉽게 살 수 없게 만들어 노동자가 독립생산자가 되는 길을 늦추고 임금노동 공급을 확보하려는 시도"
+                      "모든 이주민에게 토지를 무상으로 나누어 독립생산을 보장하려는 시도다.",
+                      "토지 가격을 인위적으로 높여 이주 노동자가 바로 독립농민이 되지 못하게 하고, 임금노동자로 머물게 하려는 시도다.",
+                      "식민지에서 화폐 사용을 금지해 자본주의를 막으려는 시도다.",
+                      "자본가가 생산수단을 소유하지 못하도록 토지를 공동소유화하려는 시도다."
                     ],
                     "en": [
-                      "It tries to abolish money in the colonies and return to direct barter",
-                      "It tries to distribute all colonial land freely and immediately to promote independent small farmers",
-                      "It tries to let capitalists begin production through pure credit without means of production",
-                      "It tries to make land less easily accessible so workers cannot quickly become independent producers, thereby securing wage-labor supply"
+                      "It tries to give land freely to all settlers and guarantee independent production.",
+                      "It tries to set land prices artificially high so immigrant workers cannot immediately become independent farmers and must remain wage-labourers.",
+                      "It tries to prevent capitalism in colonies by prohibiting money.",
+                      "It tries to make land common property so capitalists cannot own means of production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "체계적 식민은 토지 가격과 접근을 조절해 임금노동자를 인위적으로 만들어내려는 이론입니다.",
-                    "en": "Systematic colonisation aims to regulate land price and access in order to artificially produce a wage-laboring class."
+                    "ko": "웨이크필드는 노동자가 토지에 접근하면 자본가에게 묶이지 않는다는 문제를 분명히 본다. 그래서 토지를 비싸게 만들어 임금노동자 공급을 인위적으로 만들려 한다.",
+                    "en": "Wakefield clearly sees the problem that workers are not bound to capitalists if they can access land. He therefore wants to make land expensive and artificially produce a supply of wage-labourers."
                   }
                 },
                 {
@@ -10533,27 +10533,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "어떤 식민지에서 노동자들이 조금만 일해 돈을 모으면 곧바로 땅을 사서 독립농민이 된다. 그래서 자본가는 임금노동자를 오래 붙잡아둘 수 없다. 마르크스식으로 이 상황은 무엇을 보여줍니까?",
-                    "en": "In a colony, workers can work briefly, save money, buy land, and become independent farmers; capitalists cannot keep them as wage-laborers. What does this show in Marx’s terms?"
+                    "ko": "어떤 식민지에서 노동자들이 몇 달만 일해도 토지를 사서 독립생산자가 된다. 마르크스식으로 이 상황은 무엇을 보여주는가?",
+                    "en": "In a colony, workers can buy land and become independent producers after only a few months of work. What does this show in Marx’s terms?"
                   },
                   "choices": {
                     "ko": [
-                      "자본가가 돈을 충분히 가지고 있으면 노동력 공급은 언제나 자동으로 생긴다",
-                      "임금노동자는 어디서나 자연적으로 생겨나므로 토지 접근성은 중요하지 않다",
-                      "자본주의적 생산은 생산수단에서 분리된 노동자라는 조건을 필요로 한다",
-                      "식민지에서는 계급관계가 사라져 모든 사람이 곧바로 자본가가 된다"
+                      "자본주의는 노동자가 생산수단을 소유할 때 가장 안정적으로 작동한다.",
+                      "식민지에서는 잉여가치가 노동시간과 무관하게 자동으로 생긴다.",
+                      "노동자가 독립생산자가 되면 상품생산도 즉시 사라진다.",
+                      "노동자가 토지에 접근할수록 자본가의 임금노동 지휘는 불안정해진다."
                     ],
                     "en": [
-                      "If capitalists have enough money, labor supply always appears automatically",
-                      "Wage-labor arises naturally everywhere, so access to land is irrelevant",
-                      "Capitalist production requires workers separated from means of production",
-                      "In colonies class relations disappear and everyone immediately becomes a capitalist"
+                      "Capitalism works most stably when workers own means of production.",
+                      "In colonies, surplus-value arises automatically without relation to labour-time.",
+                      "When workers become independent producers, commodity production immediately disappears.",
+                      "The more workers can access land, the more unstable the capitalist’s command over wage-labour becomes."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "노동자가 생산수단에 접근할 수 있으면 노동력을 팔 수밖에 없는 상태가 흔들립니다.",
-                    "en": "If workers have access to means of production, the compulsion to sell labor-power is weakened."
+                    "ko": "자본주의적 임금노동은 노동자가 생산수단에서 분리되어 있다는 조건을 필요로 한다. 이 조건이 약하면 자본가는 노동자를 계속 붙잡아 두기 어렵다.",
+                    "en": "Capitalist wage-labour requires that workers be separated from the means of production. If this condition is weak, capitalists struggle to retain workers."
                   }
                 },
                 {
@@ -10561,27 +10561,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "“자본주의는 자본가가 돈과 기계만 가지고 있으면 자연스럽게 성립한다.” 이 명제를 마르크스식으로 비판하면 무엇입니까?",
-                    "en": "How would Marx criticize the claim: “Capitalism naturally arises once capitalists have money and machines”?"
+                    "ko": "근대 식민이론 장이 1권의 마지막에서 하는 역할은 무엇인가?",
+                    "en": "What role does the chapter on modern colonization theory play at the end of Volume I?"
                   },
                   "choices": {
                     "ko": [
-                      "돈과 기계가 있으면 노동자가 토지를 소유해도 언제나 임금노동자로 남는다",
-                      "화폐가 많을수록 노동력의 상품화는 자동으로 불필요해진다",
-                      "자본주의는 기술 수준만 충분하면 계급관계 없이도 성립한다",
-                      "돈과 기계는 자본주의의 물적 조건일 뿐이며, 노동자가 생산수단에서 분리되어 노동력을 팔아야 하는 사회관계가 필요하다"
+                      "자본은 물건이 아니라 특정한 사회관계라는 1권의 결론을 식민지 사례를 통해 다시 확인한다.",
+                      "자본주의는 모든 곳에서 자연적으로 생기므로 역사적 조건이 필요 없다는 결론을 낸다.",
+                      "식민지가 본국보다 착취가 약하므로 자본주의 분석에서 제외해야 한다고 주장한다.",
+                      "원시적 축적은 유럽 안에서만 의미 있고 식민지에는 적용할 수 없다고 본다."
                     ],
                     "en": [
-                      "Once money and machines exist, workers remain wage-laborers even if they own land",
-                      "The more money exists, the less necessary commodification of labor-power becomes",
-                      "Capitalism arises from technology alone without class relations",
-                      "Money and machines are material conditions; capitalism also requires the social relation in which workers are separated from means of production and must sell labor-power"
+                      "It confirms through the colonial case the conclusion of Volume I that capital is not a thing but a specific social relation.",
+                      "It concludes that capitalism arises naturally everywhere and needs no historical conditions.",
+                      "It argues that colonies should be excluded from the analysis of capitalism because exploitation is weaker there than in the metropole.",
+                      "It treats primitive accumulation as meaningful only inside Europe and inapplicable to colonies."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 핵심은 “자본”이 물건이 아니라 특정한 사회관계라는 점입니다.",
-                    "en": "Marx’s point is that capital is not a thing but a definite social relation."
+                    "ko": "33장은 1권의 논지를 선명하게 되돌린다. 생산수단과 돈이 있어도 노동자가 분리되어 있지 않으면 자본주의적 생산관계는 안정적으로 성립하지 않는다.",
+                    "en": "Chapter 33 sharply returns to the argument of Volume I. Even if money and means of production exist, capitalist production relations do not stably arise unless workers are separated from them."
                   }
                 }
               ]
@@ -10599,27 +10599,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "근대 식민이론을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of modern theory of colonisation?"
+                    "ko": "식민지 사례는 본국 자본주의의 어떤 “비밀”을 드러내는가?",
+                    "en": "What “secret” of metropolitan capitalism does the colonial case reveal?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-                      "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-                      "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-                      "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다"
+                      "본국의 자본주의는 노동자가 토지를 충분히 소유할 때만 작동한다는 점이다.",
+                      "자본은 어느 곳에서나 돈의 양만 충분하면 사회관계 없이 성립한다는 점이다.",
+                      "본국에서는 자연스러워 보이는 임금노동자 공급이 사실은 생산자와 생산수단의 역사적 분리를 전제로 한다는 점이다.",
+                      "식민지에서는 계급관계가 없기 때문에 본국의 계급관계도 허구라는 점이다."
                     ],
                     "en": [
-                      "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power",
-                      "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits",
-                      "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists",
-                      "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+                      "That metropolitan capitalism functions only when workers own enough land.",
+                      "That capital arises anywhere from a sufficient quantity of money without social relations.",
+                      "That the supply of wage-labourers, which appears natural in the metropole, actually presupposes the historical separation of producers from means of production.",
+                      "That because colonies have no class relations, class relations in the metropole are also fictitious."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-                    "en": "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power"
+                    "ko": "본국에서는 노동력 시장이 당연해 보인다. 식민지는 그 당연함이 사실 생산수단에서의 분리라는 역사적 조건에 의존한다는 점을 폭로한다.",
+                    "en": "In the metropole, the labour market appears self-evident. The colony exposes that this self-evidence depends on the historical condition of separation from means of production."
                   }
                 },
                 {
@@ -10627,27 +10627,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "근대 식민이론이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in modern theory of colonisation?"
+                    "ko": "웨이크필드가 토지 가격을 인위적으로 높이려 한 것은 어떤 매개를 만들기 위해서였는가?",
+                    "en": "What mediation was Wakefield trying to create by artificially raising the price of land?"
                   },
                   "choices": {
                     "ko": [
-                      "노동자가 조금만 임금을 모으면 땅을 사 독립농민이 되어 임금노동자로 오래 머물지 않는 상황",
-                      "돈·생산수단의 소유와 임금노동자를 안정적으로 확보하는 사회관계",
-                      "자본주의는 자본가가 돈과 기계만 가지고 있으면 자연스럽게 성립한다는 견해",
-                      "순수한 자연조건의 차이"
+                      "토지를 비싸게 해 자본가의 이윤을 직접 세금으로 몰수하려는 매개다.",
+                      "노동자가 즉시 독립생산자가 되는 것을 막고, 일정 기간 임금노동자로 머물게 하는 인위적 분리의 매개다.",
+                      "식민지에서 모든 상품교환을 폐지하는 매개다.",
+                      "노동자가 생산수단을 공동으로 소유하게 하는 매개다."
                     ],
                     "en": [
-                      "workers save some wages, buy land, become independent farmers, and do not remain wage-laborers for long",
-                      "possession of money and means of production versus the social relation that secures wage-laborers",
-                      "the view that capitalism naturally arises once capitalists possess money and machines",
-                      "a purely natural difference"
+                      "A mediation for directly confiscating capitalist profit as taxes by making land expensive.",
+                      "A mediation of artificial separation that prevents workers from immediately becoming independent producers and keeps them as wage-labourers for a time.",
+                      "A mediation for abolishing all commodity exchange in the colony.",
+                      "A mediation for making workers common owners of means of production."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "돈·생산수단의 소유와 임금노동자를 안정적으로 확보하는 사회관계",
-                    "en": "possession of money and means of production versus the social relation that secures wage-laborers"
+                    "ko": "체계적 식민은 자본주의가 필요로 하는 분리를 정책적으로 만들려는 시도다. 토지 접근을 막아야 노동자가 노동력을 팔도록 강제될 수 있다.",
+                    "en": "Systematic colonization tries to produce politically the separation capitalism needs. Blocking access to land compels workers to sell labour-power."
                   }
                 },
                 {
@@ -10655,27 +10655,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "근대 식민이론을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of modern theory of colonisation to concrete analysis is appropriate?"
+                    "ko": "“식민지의 높은 임금은 자본가의 탐욕이 약해서 생긴다”는 설명이 왜 부적절한가?",
+                    "en": "Why is the explanation “wages are high in colonies because capitalists are less greedy” inadequate?"
                   },
                   "choices": {
                     "ko": [
-                      "노동자가 조금만 임금을 모으면 땅을 사 독립농민이 되어 임금노동자로 오래 머물지 않는 상황",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "자본주의는 자본가가 돈과 기계만 가지고 있으면 자연스럽게 성립한다는 견해",
-                      "개념 없이 사례를 나열하면 충분하다"
+                      "높은 임금은 언제나 노동자가 자본가보다 더 많은 생산수단을 소유한다는 뜻이기 때문이다.",
+                      "식민지에서는 임금이라는 형태가 존재하지 않기 때문이다.",
+                      "자본가의 탐욕은 본국에서만 있고 식민지에는 법적으로 금지되기 때문이다.",
+                      "자본가의 도덕성이 아니라, 노동자가 대체 생계수단인 토지에 접근할 수 있어 노동력 공급이 자본에 완전히 종속되지 않는 조건을 보아야 하기 때문이다."
                     ],
                     "en": [
-                      "workers save some wages, buy land, become independent farmers, and do not remain wage-laborers for long",
-                      "the phenomenon is fully explained by individual psychology",
-                      "the view that capitalism naturally arises once capitalists possess money and machines",
-                      "listing examples without concepts is sufficient"
+                      "Because high wages always mean workers own more means of production than capitalists.",
+                      "Because the wage form does not exist in colonies.",
+                      "Because capitalist greed exists only in the metropole and is legally prohibited in colonies.",
+                      "Because one must look not to capitalist morality but to the condition that workers can access land as an alternative means of subsistence, so the supply of labour-power is not fully subordinated to capital."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "노동자가 조금만 임금을 모으면 땅을 사 독립농민이 되어 임금노동자로 오래 머물지 않는 상황",
-                    "en": "workers save some wages, buy land, become independent farmers, and do not remain wage-laborers for long"
+                    "ko": "임금 수준은 도덕성만으로 설명되지 않는다. 노동자가 토지에 접근할 수 있으면 자본가가 제시하는 낮은 조건을 거부할 힘이 커진다.",
+                    "en": "Wage levels are not explained by morality alone. If workers can access land, they have greater power to refuse the low conditions offered by capitalists."
                   }
                 },
                 {
@@ -10683,27 +10683,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "근대 식민이론을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes modern theory of colonisation in a bourgeois way?"
+                    "ko": "현대의 어떤 개발지역에서 이주노동자가 쉽게 독립 점포나 농지를 얻지 못하도록 허가·부채·토지 가격이 설계되어 있다고 하자. 33장의 관점에서 핵심 질문은 무엇인가?",
+                    "en": "Suppose in a modern development zone, permits, debt, and land prices are designed so migrant workers cannot easily obtain independent shops or farmland. From Chapter 33’s standpoint, what is the key question?"
                   },
                   "choices": {
                     "ko": [
-                      "식민지에서 토지 접근성이 높으면 임금노동자가 쉽게 독립생산자가 되어 자본가가 안정적 노동력을 확보하기 어렵다",
-                      "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-                      "자본주의는 자본가가 돈과 기계만 가지고 있으면 자연스럽게 성립한다는 견해",
-                      "돈·생산수단의 소유와 임금노동자를 안정적으로 확보하는 사회관계"
+                      "그 제도들이 노동자를 생산수단 접근에서 분리해 임금노동 공급을 안정화하는 장치로 작동하는지 물어야 한다.",
+                      "이주노동자가 있으면 자본주의적 관계는 자동으로 사라진다고 보아야 한다.",
+                      "토지 가격이 높으면 모든 노동자가 곧바로 자본가가 되는지 물어야 한다.",
+                      "허가제도는 경제와 무관하므로 분석에서 제외해야 한다."
                     ],
                     "en": [
-                      "where land is accessible in colonies, wage-laborers can become independent producers, making stable labor supply difficult for capitalists",
-                      "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power",
-                      "the view that capitalism naturally arises once capitalists possess money and machines",
-                      "possession of money and means of production versus the social relation that secures wage-laborers"
+                      "One should ask whether these institutions separate workers from access to means of production and stabilize the supply of wage-labour.",
+                      "If migrant workers exist, capitalist relations should be assumed to disappear automatically.",
+                      "One should ask whether high land prices immediately turn all workers into capitalists.",
+                      "Permit systems are unrelated to the economy and should be excluded from the analysis."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "33장의 요점은 토지와 생산수단 접근이 노동력 시장을 어떻게 흔드는가이다. 현대적 제도도 이 접근을 차단해 임금노동 의존을 만들 수 있다.",
+                    "en": "The point of Chapter 33 is how access to land and means of production destabilizes the labour market. Modern institutions can also block that access and produce dependence on wage-labour."
                   }
                 },
                 {
@@ -10711,27 +10711,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "근대 식민이론에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of modern theory of colonisation?"
+                    "ko": "33장이 1권 전체를 닫는 방식은 무엇인가?",
+                    "en": "How does Chapter 33 close Volume I as a whole?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의는 자본가가 돈과 기계만 가지고 있으면 자연스럽게 성립한다는 견해",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것"
+                      "식민지를 통해 원시적 축적의 폭력은 중요하지 않고 자본주의는 평화적 교환만으로 생긴다고 결론짓는다.",
+                      "본국의 분석은 식민지와 무관하므로 1권의 앞 장들을 모두 예외로 처리한다.",
+                      "식민지를 통해 자본주의적 생산의 전제가 자연적이지 않음을 확인하고, 자본이 사물이 아니라 생산수단에서 분리된 노동자를 지배하는 사회관계임을 다시 못박는다.",
+                      "노동자가 토지에 접근할수록 자본주의가 더 안정된다는 결론으로 끝난다."
                     ],
                     "en": [
-                      "the view that capitalism naturally arises once capitalists possess money and machines",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "treating a modern example with a similar name as the same concept",
-                      "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power; and grasping how this form moves into the next contradiction"
+                      "Through the colony, it concludes that the violence of primitive accumulation is unimportant and capitalism arises from peaceful exchange alone.",
+                      "It treats all earlier chapters of Volume I as exceptions because the metropole is unrelated to the colony.",
+                      "Through the colony, it confirms that the premises of capitalist production are not natural and restates that capital is not a thing but a social relation commanding workers separated from means of production.",
+                      "It ends by concluding that the more workers can access land, the more stable capitalism becomes."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "마지막 장은 1권의 핵심 명제를 압축한다. 자본은 생산수단 그 자체가 아니라, 그것이 생산수단에서 분리된 노동자를 지휘할 때 성립하는 사회관계다.",
+                    "en": "The final chapter condenses the central thesis of Volume I. Capital is not the means of production themselves, but a social relation that exists when they command workers separated from the means of production."
                   }
                 }
               ]
