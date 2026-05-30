@@ -271,36 +271,105 @@
     border: 1px solid var(--border);
     background: var(--bg-surface);
     color: var(--text-primary);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);
     font: inherit;
     min-height: 56px;
     padding: 12px;
     text-align: left;
     cursor: pointer;
+    transform: translateY(0);
+    transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease, color 140ms ease, transform 140ms ease;
 }
 
 .commu-choice:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--accent) 14%, var(--bg-surface));
     border-color: var(--accent);
+    box-shadow: 0 8px 0 color-mix(in srgb, var(--accent) 18%, transparent);
+    transform: translateY(-2px);
+}
+
+.commu-choice:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
 .commu-choice.is-correct {
+    animation: commu-correct-pop 520ms ease;
+    background: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
     border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-green) 28%, transparent), 0 10px 0 color-mix(in srgb, var(--accent-green) 18%, transparent);
+    color: var(--text-primary);
 }
 
 .commu-choice.is-wrong {
+    animation: commu-wrong-shake 360ms ease;
+    background: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
     border-color: var(--accent-red);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-red) 24%, transparent);
+    color: var(--text-primary);
 }
 
 .commu-feedback {
     border-left: 4px solid var(--accent);
-    background: var(--bg-surface);
+    background: color-mix(in srgb, var(--accent-green) 14%, var(--bg-surface));
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 16px;
     padding: 12px 14px;
+    animation: commu-feedback-rise 260ms ease;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-green) 18%, transparent);
 }
 
 .commu-feedback.is-wrong {
+    background: color-mix(in srgb, var(--accent-red) 12%, var(--bg-surface));
     border-left-color: var(--accent-red);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-red) 18%, transparent);
+}
+
+@keyframes commu-correct-pop {
+    0% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.025);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes commu-wrong-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    24% {
+        transform: translateX(-5px);
+    }
+    48% {
+        transform: translateX(5px);
+    }
+    72% {
+        transform: translateX(-3px);
+    }
+}
+
+@keyframes commu-feedback-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .commu-choice,
+    .commu-feedback {
+        animation: none;
+        transition: none;
+    }
 }
 
 .is-hidden {
