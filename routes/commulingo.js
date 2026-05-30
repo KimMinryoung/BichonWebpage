@@ -6,7 +6,7 @@ const db = require('../config/database');
 const router = express.Router();
 const LESSONS_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'lessons.json');
 const PUBLIC_CHAPTER_LIMITS = {
-    'capital-vol1': 22,
+    'capital-vol1': 25,
 };
 
 function readLessons() {

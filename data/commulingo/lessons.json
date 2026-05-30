@@ -7199,27 +7199,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산의 핵심은 무엇입니까?",
-                    "en": "What is central to Simple Reproduction?"
+                    "ko": "마르크스가 단순재생산을 분석할 때, “같은 규모의 생산이 반복된다”는 사실만으로는 충분하지 않다. 그가 더 중요하게 보려는 것은 무엇인가?",
+                    "en": "When Marx analyzes simple reproduction, it is not enough to say that production repeats on the same scale. What is he more concerned to show?"
                   },
                   "choices": {
                     "ko": [
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다"
+                      "매 주기의 반복이 자본가와 임금노동자의 관계 자체를 다시 만들어 낸다는 점이다.",
+                      "생산 규모가 같으면 착취도 사라지고 교환만 남는다는 점이다.",
+                      "단순재생산에서는 상품이 더 이상 가치 형태를 취하지 않는다는 점이다.",
+                      "자본가는 생산을 반복하려면 언제나 축적을 포기해야 한다는 점이다."
                     ],
                     "en": [
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions"
+                      "That each repeated cycle reproduces the relation between capitalist and wage-labourer itself.",
+                      "That if the scale of production is unchanged, exploitation disappears and only exchange remains.",
+                      "That in simple reproduction commodities no longer take the value-form.",
+                      "That a capitalist must always renounce accumulation in order to repeat production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                    "en": "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle"
+                    "ko": "단순재생산은 단지 같은 양의 물건을 다시 만드는 과정이 아니다. 그 반복은 노동력 판매자와 생산수단 소유자의 분리를 계속 재생산한다.",
+                    "en": "Simple reproduction is not merely the remaking of the same quantity of things. Its repetition also reproduces the separation between sellers of labour-power and owners of means of production."
                   }
                 },
                 {
@@ -7227,27 +7227,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does Simple Reproduction operate?"
+                    "ko": "노동자가 받은 임금을 생활수단 구매에 쓰고 다시 일터로 돌아온다. 이 소비가 자본주의적 재생산에서 갖는 의미는 무엇인가?",
+                    "en": "A worker spends wages on means of subsistence and returns to work. What role does this consumption play in capitalist reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 단순재생산의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "단순재생산은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "노동자의 소비는 자본과 무관한 사적 행위일 뿐이므로 분석에서 제외된다.",
+                      "노동자의 소비는 노동력을 다시 생산하여 다음 생산주기에 팔 수 있게 만든다.",
+                      "노동자의 소비는 잉여가치를 자동으로 없애서 자본가의 이윤을 상쇄한다.",
+                      "노동자의 소비는 생산수단을 직접 늘리므로 이미 축적이다."
                     ],
                     "en": [
-                      "a production-process case where the logic of Simple Reproduction reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Simple Reproduction reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "The worker’s consumption is merely a private act unrelated to capital, so it drops out of the analysis.",
+                      "The worker’s consumption reproduces labour-power so it can be sold again in the next cycle.",
+                      "The worker’s consumption automatically abolishes surplus-value and offsets capitalist profit.",
+                      "The worker’s consumption directly increases means of production, so it is already accumulation."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "단순재생산은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                    "en": "Simple Reproduction reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                    "ko": "노동자의 생활수단 소비는 공장 밖에서 일어나지만 자본의 재생산에 필수적이다. 그것은 노동력을 유지하고, 노동자가 다시 임금노동자로 시장에 나오게 만든다.",
+                    "en": "The worker’s consumption occurs outside the workshop, but it is essential to capital’s reproduction. It maintains labour-power and brings the worker back to the market as a wage-labourer."
                   }
                 },
                 {
@@ -7255,27 +7255,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of Simple Reproduction would Marx criticize?"
+                    "ko": "자본가는 “내가 내 돈으로 임금을 선지급했다”고 말한다. 단순재생산을 연속 과정으로 보면 이 설명에서 무엇이 가려지는가?",
+                    "en": "The capitalist says, “I advanced wages out of my own money.” When simple reproduction is viewed as a continuous process, what does this account conceal?"
                   },
                   "choices": {
                     "ko": [
-                      "단순재생산은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "임금은 노동자의 필요와 아무 관계 없이 국가가 정하는 정치적 보조금이라는 점이다.",
+                      "임금은 상품교환이 아니라 직접 약탈로만 지급된다는 점이다.",
+                      "반복되는 생산 속에서 가변자본은 노동자가 이전에 생산한 가치의 일부로 계속 대체된다는 점이다.",
+                      "자본가는 임금을 지급하는 순간 더 이상 노동과정에 개입하지 않는다는 점이다."
                     ],
                     "en": [
-                      "Simple Reproduction reveals a specific relation among labor-power, value, surplus-value, and accumulation",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "That wages are a political subsidy fixed by the state with no relation to workers’ needs.",
+                      "That wages are paid only by direct robbery, not through commodity exchange.",
+                      "That in repeated production, variable capital is continually replaced by part of the value workers have previously produced.",
+                      "That once wages are paid, the capitalist no longer intervenes in the labour-process."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "비판 대상은 단순재생산을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns Simple Reproduction from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "처음에는 자본가의 선대처럼 보이는 임금도 반복 과정에서는 노동자가 생산한 가치에서 대체된다. 이 점이 보이지 않으면 임금관계가 자본가의 관대한 지출처럼 오해된다.",
+                    "en": "What first appears as the capitalist’s advance is, in the repeated process, replaced out of value produced by workers. Missing this point makes the wage relation look like the capitalist’s generous outlay."
                   }
                 },
                 {
@@ -7283,27 +7283,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 단순재생산과 어떻게 연결됩니까? 생산과정에서 단순재생산의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황.",
-                    "en": "How does this situation relate to Simple Reproduction? a production-process case where the logic of Simple Reproduction reshapes the relation between workers and capitalists."
+                    "ko": "어떤 자본가가 한 해의 잉여가치를 모두 사치품 소비에 쓰고, 다음 해에는 같은 규모로 생산을 반복한다. 마르크스의 개념으로 보면 이 상황에서 무엇이 계속 재생산되는가?",
+                    "en": "A capitalist spends the year’s surplus-value entirely on luxury consumption and repeats production on the same scale next year. In Marx’s terms, what is still reproduced?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다"
+                      "자본의 규모가 늘지 않더라도 자본가의 지휘권과 노동자의 임금의존은 다시 만들어진다.",
+                      "잉여가치를 소비했으므로 자본주의적 관계는 다음 주기에 사라진다.",
+                      "축적이 없으면 노동자는 자동으로 생산수단의 공동소유자가 된다.",
+                      "단순재생산에서는 노동자가 생산한 총가치가 모두 임금으로 돌아간다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle"
+                      "Even without an increase in capital, the capitalist’s command and the worker’s wage-dependence are reproduced.",
+                      "Because surplus-value is consumed, capitalist relations disappear in the next cycle.",
+                      "If there is no accumulation, workers automatically become common owners of the means of production.",
+                      "In simple reproduction, the total value produced by workers returns to them as wages."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산과정에서 단순재생산의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Simple Reproduction reshapes the relation between workers and capitalists"
+                    "ko": "단순재생산에서는 잉여가치가 추가 자본이 되지 않을 수 있다. 그래도 생산수단은 자본가 쪽에, 노동력 판매의 필요는 노동자 쪽에 남기 때문에 관계 자체는 반복된다.",
+                    "en": "In simple reproduction, surplus-value need not become additional capital. Yet the means of production remain on the capitalist side and the need to sell labour-power remains on the worker’s side, so the relation itself recurs."
                   }
                 },
                 {
@@ -7311,27 +7311,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand Simple Reproduction?"
+                    "ko": "단순재생산 장이 축적 분석으로 넘어가기 전에 하는 역할은 무엇인가?",
+                    "en": "What role does the chapter on simple reproduction play before Marx turns to accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "개별 인물의 선의와 악의",
-                      "정책 구호와 선거 전략",
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계"
+                      "자본주의가 반복되려면 착취가 불필요해진다는 결론을 먼저 세운다.",
+                      "자본관계가 한 번의 계약이 아니라 생산과 소비의 반복 속에서 재생산된다는 토대를 보여준다.",
+                      "가격 변동만으로 계급관계 전체를 설명할 수 있음을 증명한다.",
+                      "축적은 오직 개인의 절약 습관에서 나온다는 전제를 확정한다."
                     ],
                     "en": [
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "individual goodwill and malice",
-                      "policy slogans and electoral strategy",
-                      "surface forms of contract, wage, and price versus the underlying value and class relations"
+                      "It first establishes that exploitation becomes unnecessary once capitalism repeats itself.",
+                      "It shows the basis on which the capital relation is reproduced through repeated production and consumption, not through a single contract.",
+                      "It proves that price fluctuations alone can explain the whole class relation.",
+                      "It fixes the premise that accumulation comes only from individual habits of saving."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "마르크스는 축적을 말하기 전에 단순한 반복만으로도 자본관계가 재생산됨을 보인다. 이 토대 위에서 잉여가치가 추가 자본으로 바뀔 때 관계가 확대되는 방식을 설명할 수 있다.",
+                    "en": "Before discussing accumulation, Marx shows that even mere repetition reproduces the capital relation. On that basis he can explain how the relation expands when surplus-value becomes additional capital."
                   }
                 }
               ]
@@ -7349,27 +7349,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of Simple Reproduction?"
+                    "ko": "임금계약만 보면 노동자는 자신의 노동력 값을 받고 자본가는 그 값을 지불한 것처럼 보인다. 단순재생산을 반복 과정으로 보면 이 외관에 어떤 긴장이 생기는가?",
+                    "en": "Viewed only as a wage contract, the worker seems to receive the value of labour-power and the capitalist seems to pay it. What tension appears when simple reproduction is viewed as a repeated process?"
                   },
                   "choices": {
                     "ko": [
-                      "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다"
+                      "평등한 교환의 외관 뒤에서, 노동자가 만든 가치가 다음 주기에도 노동자를 고용하고 지휘하는 힘으로 돌아온다.",
+                      "반복이 계속될수록 노동력의 가치는 반드시 0으로 떨어진다.",
+                      "계약이 반복되면 자본가는 더 이상 잉여가치를 얻지 못한다.",
+                      "임금계약은 생산과 무관하므로 반복 과정은 아무것도 바꾸지 않는다."
                     ],
                     "en": [
-                      "Understands national wage differences through living standards, productivity, intensity, and world-market conditions",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+                      "Behind the appearance of equal exchange, value produced by workers returns as the power to hire and command them in the next cycle.",
+                      "As repetition continues, the value of labour-power must fall to zero.",
+                      "Once the contract is repeated, the capitalist can no longer obtain surplus-value.",
+                      "The wage contract is unrelated to production, so repetition changes nothing."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                    "en": "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle"
+                    "ko": "마르크스의 전환점은 단일 거래가 아니라 사회적 반복을 보는 데 있다. 반복 속에서 노동자의 산물이 노동자를 다시 종속시키는 자본의 형태로 맞선다.",
+                    "en": "Marx’s shift is to look not at a single transaction but at social repetition. In that repetition, the worker’s product confronts the worker again in the form of capital."
                   }
                 },
                 {
@@ -7377,27 +7377,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in Simple Reproduction?"
+                    "ko": "노동자의 개인적 소비는 임금을 받은 뒤의 사생활처럼 보인다. 마르크스가 그것을 자본의 재생산과 연결하는 매개는 무엇인가?",
+                    "en": "The worker’s individual consumption looks like private life after wages are paid. What mediation connects it to the reproduction of capital?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "순수한 자연조건의 차이",
-                      "생산과정에서 단순재생산의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "소비가 노동자를 자본가로 전환시키기 때문이다.",
+                      "소비가 노동력을 보존하고 가족과 세대를 통해 노동력의 공급 조건을 재생산하기 때문이다.",
+                      "소비가 상품의 가치를 없애므로 다음 생산에는 가치법칙이 적용되지 않기 때문이다.",
+                      "소비가 늘면 자본가는 더 이상 생산수단을 소유할 필요가 없기 때문이다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "a purely natural difference",
-                      "a production-process case where the logic of Simple Reproduction reshapes the relation between workers and capitalists",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because consumption turns workers into capitalists.",
+                      "Because consumption preserves labour-power and reproduces the conditions of its supply through households and generations.",
+                      "Because consumption abolishes the value of commodities, so the law of value no longer applies to the next production cycle.",
+                      "Because if consumption rises, capitalists no longer need to own means of production."
                     ]
                   },
-                  "answer": 0,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                    "en": "surface forms of contract, wage, and price versus the underlying value and class relations"
+                    "ko": "노동자의 소비는 노동력을 다시 사용할 수 있게 만들고 장기적으로는 노동계급의 재생산과 이어진다. 그래서 그것은 자본 바깥의 순수한 사적 영역이 아니다.",
+                    "en": "The worker’s consumption makes labour-power usable again and, over time, connects to the reproduction of the working class. It is therefore not a purely private sphere outside capital."
                   }
                 },
                 {
@@ -7405,27 +7405,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of Simple Reproduction to concrete analysis is appropriate?"
+                    "ko": "“자본가가 절약해서 모은 기금이 노동자를 먹여 살린다”는 설명이 단순재생산 분석에서 부족한 이유는 무엇인가?",
+                    "en": "Why is the claim “the capitalist’s saved fund maintains the workers” inadequate in Marx’s analysis of simple reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "생산과정에서 단순재생산의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "그 설명은 절약이 언제나 임금을 낮춘다는 심리 법칙을 증명하지 못하기 때문이다.",
+                      "그 설명은 모든 자본가가 사치품을 소비한다는 사실만 강조하기 때문이다.",
+                      "그 설명은 국가 예산이 자본가의 임금 지급을 대신한다는 점을 빠뜨리기 때문이다.",
+                      "그 설명은 반복되는 생산에서 임금기금 자체가 노동자가 생산한 가치로 계속 재구성된다는 점을 지운다."
                     ],
                     "en": [
-                      "listing examples without concepts is sufficient",
-                      "a production-process case where the logic of Simple Reproduction reshapes the relation between workers and capitalists",
-                      "the phenomenon is fully explained by individual psychology",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "Because it fails to prove a psychological law that saving always lowers wages.",
+                      "Because it merely emphasizes that all capitalists consume luxuries.",
+                      "Because it omits the fact that the state budget pays wages in place of capitalists.",
+                      "Because it erases that, in repeated production, the wage fund itself is continually reconstituted by value produced by workers."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "생산과정에서 단순재생산의 논리가 노동자와 자본가의 관계를 바꾸어 나타나는 상황",
-                    "en": "a production-process case where the logic of Simple Reproduction reshapes the relation between workers and capitalists"
+                    "ko": "마르크스는 임금 지급의 외관을 연속 과정 속에서 뒤집어 본다. 자본가의 기금처럼 보이는 것은 노동자가 생산한 가치의 일부가 자본의 형태로 되돌아온 것이다.",
+                    "en": "Marx reverses the appearance of wage payment by placing it in the continuous process. What looks like the capitalist’s fund is part of the value produced by workers returning in the form of capital."
                   }
                 },
                 {
@@ -7433,27 +7433,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes Simple Reproduction in a bourgeois way?"
+                    "ko": "한 산업에서 임금이 상대적으로 높고 고용도 안정적이지만, 노동자는 생산수단을 소유하지 못해 계속 노동력을 팔아야 한다. 단순재생산의 관점에서 이 사례가 보여주는 것은 무엇인가?",
+                    "en": "In one industry wages are relatively high and employment is stable, but workers own no means of production and must keep selling labour-power. What does this show from the standpoint of simple reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "표면의 계약·임금·가격 형태와 그 배후의 가치 및 계급관계",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해",
-                      "단순재생산은 노동력, 가치, 잉여가치, 축적 사이의 관계를 특정한 형태로 드러낸다"
+                      "임금이 높으면 노동력 판매는 더 이상 강제가 아니라 완전히 사라진다.",
+                      "안정적 고용은 자본가와 노동자가 같은 계급이 되었음을 뜻한다.",
+                      "착취는 저임금에서만 존재하므로 이 산업에는 자본관계가 없다.",
+                      "더 나은 임금조건도 생산수단으로부터의 분리와 임금의존을 자동으로 폐지하지는 않는다."
                     ],
                     "en": [
-                      "surface forms of contract, wage, and price versus the underlying value and class relations",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality",
-                      "Simple Reproduction reveals a specific relation among labor-power, value, surplus-value, and accumulation"
+                      "If wages are high, the sale of labour-power is no longer compelled and disappears entirely.",
+                      "Stable employment means capitalist and worker have become the same class.",
+                      "Exploitation exists only with low wages, so there is no capital relation in this industry.",
+                      "Better wage conditions do not automatically abolish separation from the means of production and wage-dependence."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 3,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "단순재생산의 핵심은 빈곤의 정도만이 아니라 관계의 반복이다. 임금이 높아도 생산수단이 자본의 편에 독점되어 있으면 노동자는 다시 노동력을 팔아야 한다.",
+                    "en": "The core of simple reproduction is not only the degree of poverty but the repetition of a relation. Even with higher wages, if the means of production are monopolized by capital, workers must sell labour-power again."
                   }
                 },
                 {
@@ -7461,27 +7461,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of Simple Reproduction?"
+                    "ko": "단순재생산 분석은 다음 장의 축적 분석과 어떻게 이어지는가?",
+                    "en": "How does the analysis of simple reproduction lead into the following analysis of accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "착취와 가치관계를 개인 계약의 공정성이나 자본가의 성격 문제로 축소하는 견해"
+                      "단순재생산이 자본관계의 반복을 보인 뒤, 축적은 잉여가치가 추가 자본이 되어 그 관계를 확대하는 과정을 보여준다.",
+                      "단순재생산은 축적이 불가능함을 증명하므로 다음 장은 앞 장을 철회한다.",
+                      "단순재생산과 축적은 서로 무관하며 하나는 소비론, 다른 하나는 화폐론이다.",
+                      "축적은 단순재생산과 달리 노동력 구매 없이도 순수한 가격 상승으로만 진행된다."
                     ],
                     "en": [
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "treating a modern example with a similar name as the same concept",
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle; and grasping how this form moves into the next contradiction",
-                      "the view that exploitation and value-relations reduce to fair contract or capitalist personality"
+                      "After simple reproduction shows the repetition of the capital relation, accumulation shows surplus-value becoming additional capital and expanding that relation.",
+                      "Simple reproduction proves accumulation impossible, so the next chapter withdraws the previous argument.",
+                      "Simple reproduction and accumulation are unrelated: one is a theory of consumption, the other a theory of money.",
+                      "Unlike simple reproduction, accumulation proceeds purely through price increases without buying labour-power."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "두 장은 단절되어 있지 않다. 먼저 관계가 반복되는 방식을 보인 다음, 잉여가치가 다시 자본으로 전환될 때 그 반복이 확대재생산으로 바뀌는 과정을 분석한다.",
+                    "en": "The two chapters are not separate. Marx first shows how the relation repeats, then analyzes how that repetition becomes expanded reproduction when surplus-value is converted back into capital."
                   }
                 }
               ]
@@ -7524,27 +7524,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환의 핵심은 무엇입니까?",
-                    "en": "What is central to conversion of surplus-value into capital?"
+                    "ko": "마르크스가 “잉여가치가 자본으로 전환된다”고 말할 때, 단순히 이윤이 생겼다는 뜻이 아니다. 어떤 경우에 잉여가치는 자본으로 전환되는가?",
+                    "en": "When Marx says that surplus-value is converted into capital, he does not merely mean that profit has been made. When is surplus-value converted into capital?"
                   },
                   "choices": {
                     "ko": [
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다"
+                      "잉여가치가 자본가의 개인소비로 모두 사라질 때이다.",
+                      "잉여가치가 금고에 쌓여 생산과 분리된 화폐로 남을 때이다.",
+                      "잉여가치가 추가 생산수단과 추가 노동력 구매에 투입되어 더 큰 생산과정을 시작할 때이다.",
+                      "잉여가치가 임금과 정확히 같은 액수로 노동자에게 반환될 때이다."
                     ],
                     "en": [
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+                      "When surplus-value disappears entirely into the capitalist’s personal consumption.",
+                      "When surplus-value is kept in a vault as money separated from production.",
+                      "When surplus-value is advanced for additional means of production and additional labour-power, beginning a larger production process.",
+                      "When surplus-value is returned to workers in an amount exactly equal to wages."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                    "en": "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power"
+                    "ko": "축적은 잉여가치가 생산적 자본의 요소로 다시 들어갈 때 일어난다. 단순한 이윤 발생이나 화폐 보관은 아직 확대재생산이 아니다.",
+                    "en": "Accumulation occurs when surplus-value re-enters as elements of productive capital. The mere existence of profit, or money kept aside, is not yet expanded reproduction."
                   }
                 },
                 {
@@ -7552,27 +7552,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does conversion of surplus-value into capital operate?"
+                    "ko": "한 자본가가 잉여가치의 일부는 생활비와 사치품에 쓰고, 나머지는 원료·기계·노동력 구매에 쓴다. 이 분할은 무엇을 설명하는가?",
+                    "en": "A capitalist spends part of surplus-value on personal consumption and another part on raw materials, machinery, and labour-power. What does this division explain?"
                   },
                   "choices": {
                     "ko": [
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해",
-                      "잉여가치의 소비와 잉여가치의 자본화",
-                      "기업이 이윤을 새 설비와 추가 고용에 투입해 생산규모를 키울 때, 잉여가치는 자본으로 전환된다",
-                      "노동자의 미지불 노동이 추가 자본으로 되돌아와 노동자를 더 큰 규모로 지배한다"
+                      "잉여가치는 생산과 무관하므로 어느 쪽으로 쓰든 자본주의에는 차이가 없다는 점이다.",
+                      "축적은 잉여가치 중 소비되지 않은 부분이 추가 자본으로 기능할 때 성립한다는 점이다.",
+                      "자본가의 개인소비가 늘수록 노동자의 임금도 같은 비율로 오른다는 점이다.",
+                      "축적은 노동력 구매 없이 생산수단만 늘리면 언제나 완성된다는 점이다."
                     ],
                     "en": [
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk",
-                      "consumption of surplus-value and capitalization of surplus-value",
-                      "when a firm invests profit in new machinery and additional hiring, surplus-value is converted into capital",
-                      "workers’ unpaid labor returns as additional capital that dominates workers on an enlarged scale"
+                      "That surplus-value is unrelated to production, so its use makes no difference to capitalism.",
+                      "That accumulation occurs when the unconsumed part of surplus-value functions as additional capital.",
+                      "That when the capitalist’s personal consumption rises, workers’ wages rise in the same proportion.",
+                      "That accumulation is always complete if means of production increase without any purchase of labour-power."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "노동자의 미지불 노동이 추가 자본으로 되돌아와 노동자를 더 큰 규모로 지배한다",
-                    "en": "workers’ unpaid labor returns as additional capital that dominates workers on an enlarged scale"
+                    "ko": "마르크스는 잉여가치가 수입으로 소비되는 부분과 자본으로 전환되는 부분을 구분한다. 축적은 후자가 생산과정에 다시 투입될 때 성립한다.",
+                    "en": "Marx distinguishes the part of surplus-value consumed as revenue from the part converted into capital. Accumulation occurs when the latter is reinserted into production."
                   }
                 },
                 {
@@ -7580,27 +7580,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of conversion of surplus-value into capital would Marx criticize?"
+                    "ko": "잉여가치를 금고에 쌓아 두는 것과 잉여가치를 자본으로 축적하는 것은 왜 같지 않은가?",
+                    "en": "Why is hoarding surplus-value not the same as accumulating it as capital?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "잉여가치의 소비와 잉여가치의 자본화",
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해",
-                      "노동자의 미지불 노동이 추가 자본으로 되돌아와 노동자를 더 큰 규모로 지배한다"
+                      "화폐는 가치형태가 아니므로 아무리 쌓아도 사회적 힘이 되지 않기 때문이다.",
+                      "축적은 화폐가 생산수단과 노동력으로 전환되어 가치증식 과정에 들어가야 하기 때문이다.",
+                      "금고에 쌓인 화폐는 자동으로 노동자의 공동재산이 되기 때문이다.",
+                      "화폐를 보관하면 잉여가치가 곧바로 노동시간으로 바뀌기 때문이다."
                     ],
                     "en": [
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "consumption of surplus-value and capitalization of surplus-value",
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk",
-                      "workers’ unpaid labor returns as additional capital that dominates workers on an enlarged scale"
+                      "Because money is not a value-form, so no amount of it can become a social power.",
+                      "Because accumulation requires money to be converted into means of production and labour-power and enter the valorization process.",
+                      "Because money kept in a vault automatically becomes the common property of workers.",
+                      "Because storing money immediately turns surplus-value into labour-time."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "비판 대상은 잉여가치의 자본 전환을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns conversion of surplus-value into capital from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "자본은 단순한 돈더미가 아니라 가치증식하는 가치다. 잉여가치가 자본이 되려면 다시 생산 조건을 구매해 노동과정 속에서 증식해야 한다.",
+                    "en": "Capital is not a mere pile of money but value in process of valorization. For surplus-value to become capital, it must buy conditions of production again and expand through the labour-process."
                   }
                 },
                 {
@@ -7608,27 +7608,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 잉여가치의 자본 전환과 어떻게 연결됩니까? 기업이 이윤을 새 설비와 추가 고용에 투입해 생산규모를 키울 때, 잉여가치는 자본으로 전환된다.",
-                    "en": "How does this situation relate to conversion of surplus-value into capital? when a firm invests profit in new machinery and additional hiring, surplus-value is converted into capital."
+                    "ko": "기업이 전년도의 이윤으로 설비를 늘리고 노동자를 더 고용한다. 이 사례를 마르크스의 관점에서 보면 무엇이 드러나는가?",
+                    "en": "A firm uses last year’s profit to expand equipment and hire more workers. What does this reveal in Marx’s terms?"
                   },
                   "choices": {
                     "ko": [
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "자본주의적 관계와 무관한 예외적 사건이다",
-                      "잉여가치의 소비와 잉여가치의 자본화"
+                      "이전 노동에서 나온 잉여가치가 더 많은 산 노동을 지휘하는 추가 자본으로 바뀐다.",
+                      "고용이 늘면 이전의 착취는 모두 취소되고 자본관계는 중립적 협동이 된다.",
+                      "설비 투자는 노동력 구매와 무관하므로 잉여가치 생산과 연결되지 않는다.",
+                      "이윤이 재투자되면 상품생산은 더 이상 가치법칙의 지배를 받지 않는다."
                     ],
                     "en": [
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "It is an exceptional event unrelated to capitalist relations",
-                      "consumption of surplus-value and capitalization of surplus-value"
+                      "Surplus-value from previous labour becomes additional capital commanding more living labour.",
+                      "Once employment rises, previous exploitation is cancelled and the capital relation becomes neutral cooperation.",
+                      "Investment in equipment is unrelated to the purchase of labour-power, so it has no connection to surplus-value production.",
+                      "Once profit is reinvested, commodity production is no longer governed by the law of value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "기업이 이윤을 새 설비와 추가 고용에 투입해 생산규모를 키울 때, 잉여가치는 자본으로 전환된다",
-                    "en": "when a firm invests profit in new machinery and additional hiring, surplus-value is converted into capital"
+                    "ko": "축적에서는 과거의 무급노동이 자본의 형태로 돌아와 더 많은 산 노동을 지휘한다. 고용 확대라는 표면만 보면 이 계급관계가 가려진다.",
+                    "en": "In accumulation, past unpaid labour returns in the form of capital and commands more living labour. If one sees only employment growth, this class relation is obscured."
                   }
                 },
                 {
@@ -7636,27 +7636,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand conversion of surplus-value into capital?"
+                    "ko": "이 장에서 마르크스가 소유법칙의 “전도”를 말할 때 가리키는 것은 무엇인가?",
+                    "en": "What does Marx point to when he speaks of an inversion in the law of property in this chapter?"
                   },
                   "choices": {
                     "ko": [
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해",
-                      "정책 구호와 선거 전략",
-                      "개별 인물의 선의와 악의",
-                      "잉여가치의 소비와 잉여가치의 자본화"
+                      "자본주의에서는 모든 사적 소유가 법적으로 금지된다는 뜻이다.",
+                      "처음에는 자기 노동에 기초한 소유처럼 보이던 것이, 축적 속에서는 타인의 무급노동을 반복적으로 전유하는 권리로 나타난다는 뜻이다.",
+                      "축적이 진행되면 상품교환이 사라지고 물물교환만 남는다는 뜻이다.",
+                      "자본가는 축적할수록 생산수단을 노동자에게 무상으로 이전한다는 뜻이다."
                     ],
                     "en": [
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk",
-                      "policy slogans and electoral strategy",
-                      "individual goodwill and malice",
-                      "consumption of surplus-value and capitalization of surplus-value"
+                      "That all private property becomes legally prohibited under capitalism.",
+                      "That what first appears as property based on one’s own labour becomes, in accumulation, the repeated right to appropriate others’ unpaid labour.",
+                      "That as accumulation proceeds, commodity exchange disappears and only barter remains.",
+                      "That the more capitalists accumulate, the more they transfer means of production to workers for free."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "잉여가치의 소비와 잉여가치의 자본화",
-                    "en": "consumption of surplus-value and capitalization of surplus-value"
+                    "ko": "마르크스는 교환의 법적 외관이 축적의 반복 속에서 어떻게 뒤집히는지 보인다. 등가교환의 형식은 유지되지만 그 결과는 타인의 무급노동에 대한 지배의 확대다.",
+                    "en": "Marx shows how the legal appearance of exchange is inverted through repeated accumulation. The form of equivalent exchange remains, but its result is the expanded command over others’ unpaid labour."
                   }
                 }
               ]
@@ -7674,27 +7674,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of conversion of surplus-value into capital?"
+                    "ko": "축적을 “자본가가 소비를 참고 저축한 결과”로 설명하면, 마르크스가 이 장에서 겨냥하는 핵심 문제가 왜 사라지는가?",
+                    "en": "If accumulation is explained as the result of the capitalist saving instead of consuming, why does the central problem Marx targets in this chapter disappear?"
                   },
                   "choices": {
                     "ko": [
-                      "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다"
+                      "그 설명은 저축의 양을 계산하지 못하기 때문에 회계상으로만 틀리다.",
+                      "그 설명은 잉여가치가 어디서 왔는지, 즉 무급노동이 어떻게 추가 자본의 원천이 되는지를 묻지 않는다.",
+                      "그 설명은 자본가의 소비가 언제나 노동자에게 이롭다는 점을 부정한다.",
+                      "그 설명은 축적이 국가 명령으로만 가능하다는 사실을 지나친다."
                     ],
                     "en": [
-                      "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle",
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+                      "It is wrong only as accounting because it cannot calculate the amount saved.",
+                      "It does not ask where surplus-value came from, namely how unpaid labour becomes the source of additional capital.",
+                      "It denies that capitalist consumption is always beneficial to workers.",
+                      "It overlooks the fact that accumulation is possible only by state command."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                    "en": "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power"
+                    "ko": "절약론은 잉여가치의 기원을 자본가의 덕목으로 바꿔 놓는다. 마르크스의 논점은 소비를 줄였다는 심리가 아니라 무급노동이 추가 자본으로 기능한다는 구조다.",
+                    "en": "The theory of abstinence turns the origin of surplus-value into a virtue of the capitalist. Marx’s point is not the psychology of reduced consumption but the structure in which unpaid labour functions as additional capital."
                   }
                 },
                 {
@@ -7702,27 +7702,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in conversion of surplus-value into capital?"
+                    "ko": "잉여가치가 실제로 추가 자본이 되려면 사회 전체의 생산물 구성에도 조건이 필요하다. 어떤 조건인가?",
+                    "en": "For surplus-value actually to become additional capital, the composition of the total social product must also provide certain conditions. What are they?"
                   },
                   "choices": {
                     "ko": [
-                      "기업이 이윤을 새 설비와 추가 고용에 투입해 생산규모를 키울 때, 잉여가치는 자본으로 전환된다",
-                      "순수한 자연조건의 차이",
-                      "잉여가치의 소비와 잉여가치의 자본화",
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해"
+                      "추가 생산수단과 추가 노동력을 재생산할 생활수단이 물질적으로 존재해야 한다.",
+                      "모든 생산물이 사치품 형태로만 존재해야 자본가가 축적할 수 있다.",
+                      "화폐량만 늘면 생산물의 종류와 노동력 공급은 아무 의미가 없다.",
+                      "축적은 오직 기존 생산수단을 폐기할 때만 가능하다."
                     ],
                     "en": [
-                      "when a firm invests profit in new machinery and additional hiring, surplus-value is converted into capital",
-                      "a purely natural difference",
-                      "consumption of surplus-value and capitalization of surplus-value",
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk"
+                      "Additional means of production and means of subsistence to reproduce additional labour-power must materially exist.",
+                      "All products must exist only as luxuries for capitalists to accumulate.",
+                      "If the quantity of money rises, the kinds of products and the supply of labour-power have no significance.",
+                      "Accumulation is possible only when existing means of production are destroyed."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치의 소비와 잉여가치의 자본화",
-                    "en": "consumption of surplus-value and capitalization of surplus-value"
+                    "ko": "축적은 회계상의 결심만으로 되지 않는다. 잉여가치가 자본으로 전환되려면 추가 생산수단과 추가 노동력을 유지할 생활수단이 사회적 생산물 안에 있어야 한다.",
+                    "en": "Accumulation is not a mere accounting decision. For surplus-value to become capital, the social product must contain additional means of production and means of subsistence for additional labour-power."
                   }
                 },
                 {
@@ -7730,27 +7730,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of conversion of surplus-value into capital to concrete analysis is appropriate?"
+                    "ko": "“자본가는 노동자에게 일자리를 만들어 주므로 축적은 노동자에게 주는 선물이다”라는 설명이 놓치는 것은 무엇인가?",
+                    "en": "What is missed by the claim, “The capitalist creates jobs for workers, so accumulation is a gift to them”?"
                   },
                   "choices": {
                     "ko": [
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해",
-                      "기업이 이윤을 새 설비와 추가 고용에 투입해 생산규모를 키울 때, 잉여가치는 자본으로 전환된다",
-                      "개념 없이 사례를 나열하면 충분하다"
+                      "축적이 진행되면 노동자는 더 이상 임금을 받을 필요가 없다는 점이다.",
+                      "일자리의 증가는 이전에 착취된 잉여가치가 자본의 지휘권으로 돌아오는 방식일 수 있다는 점이다.",
+                      "자본가는 축적할수록 생산물의 소유권을 자동으로 포기한다는 점이다.",
+                      "노동자는 고용되는 순간 자본가와 같은 비율의 이윤을 받는다는 점이다."
                     ],
                     "en": [
-                      "the phenomenon is fully explained by individual psychology",
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk",
-                      "when a firm invests profit in new machinery and additional hiring, surplus-value is converted into capital",
-                      "listing examples without concepts is sufficient"
+                      "That once accumulation proceeds, workers no longer need wages.",
+                      "That job growth can be the way previously extracted surplus-value returns as capital’s command.",
+                      "That the more capitalists accumulate, the more they automatically give up ownership of the product.",
+                      "That once employed, workers receive profit in the same proportion as capitalists."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "기업이 이윤을 새 설비와 추가 고용에 투입해 생산규모를 키울 때, 잉여가치는 자본으로 전환된다",
-                    "en": "when a firm invests profit in new machinery and additional hiring, surplus-value is converted into capital"
+                    "ko": "마르크스는 고용의 외관 뒤에 있는 원천을 묻는다. 추가 고용은 선물이 아니라 이전 무급노동이 더 큰 자본권력으로 돌아오는 과정일 수 있다.",
+                    "en": "Marx asks about the source behind the appearance of employment. Additional employment can be not a gift but the return of previous unpaid labour as greater capital power."
                   }
                 },
                 {
@@ -7758,27 +7758,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes conversion of surplus-value into capital in a bourgeois way?"
+                    "ko": "어떤 기업이 축적하면서 노동자를 조금만 더 고용하고 대부분의 투자를 자동화 설비에 쓴다. 이 사례는 축적을 단순히 “노동자 수 증가”로 볼 수 없다는 점을 어떻게 보여주는가?",
+                    "en": "A firm accumulates while hiring only a few more workers and putting most investment into automated equipment. How does this show that accumulation cannot simply be read as “more workers”?"
                   },
                   "choices": {
                     "ko": [
-                      "노동자의 미지불 노동이 추가 자본으로 되돌아와 노동자를 더 큰 규모로 지배한다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해",
-                      "잉여가치의 소비와 잉여가치의 자본화"
+                      "축적은 언제나 노동자 수를 생산수단보다 빠르게 늘린다는 법칙을 확인한다.",
+                      "축적된 자본은 생산수단과 노동력 사이의 비율을 바꾸며, 추가 자본이 반드시 같은 비율의 고용 증가를 뜻하지 않는다.",
+                      "자동화 설비는 가치가 없으므로 자본 축적에 포함될 수 없다.",
+                      "노동자를 적게 고용하면 잉여가치가 더 이상 생산되지 않는다."
                     ],
                     "en": [
-                      "workers’ unpaid labor returns as additional capital that dominates workers on an enlarged scale",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk",
-                      "consumption of surplus-value and capitalization of surplus-value"
+                      "It confirms the law that accumulation always increases the number of workers faster than means of production.",
+                      "Accumulated capital changes the ratio between means of production and labour-power, so additional capital does not necessarily mean employment rises in the same proportion.",
+                      "Automated equipment has no value and therefore cannot be part of capital accumulation.",
+                      "If fewer workers are hired, surplus-value is no longer produced."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "축적은 단순한 규모 확대가 아니라 자본의 구성 변화와 함께 진행될 수 있다. 이 점은 다음 장에서 노동수요와 상대적 과잉인구 문제로 이어진다.",
+                    "en": "Accumulation can proceed not just as scale expansion but with changes in the composition of capital. This leads directly to the next chapter’s problem of labour demand and relative surplus population."
                   }
                 },
                 {
@@ -7786,27 +7786,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 자본 전환에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of conversion of surplus-value into capital?"
+                    "ko": "이 장의 결론이 25장의 “자본주의적 축적의 일반 법칙”으로 넘어가는 이유는 무엇인가?",
+                    "en": "Why does the conclusion of this chapter lead into Chapter 25, “The General Law of Capitalist Accumulation”?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "축적을 자본가의 절약, 금욕, 위험부담의 정당한 보상으로 보는 견해",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것"
+                      "잉여가치의 자본화가 관계의 확대를 보이면, 다음 문제는 그 확대가 노동계급의 고용·임금·생활조건을 어떤 법칙 속에 놓는가이기 때문이다.",
+                      "축적이 시작되는 순간 노동계급은 사라지므로 다음 장은 자본가 내부 경쟁만 다룰 수 있기 때문이다.",
+                      "잉여가치가 자본이 되면 생산수단과 노동력의 비율은 더 이상 중요하지 않기 때문이다.",
+                      "24장이 가치론을 폐기하므로 25장은 순수한 인구통계로 넘어가기 때문이다."
                     ],
                     "en": [
-                      "treating a modern example with a similar name as the same concept",
-                      "the view that accumulation is the rightful reward for capitalist thrift, abstinence, and risk",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power; and grasping how this form moves into the next contradiction",
-                      "looking only at distributional outcomes while skipping production and circulation mediations"
+                      "Once the capitalization of surplus-value shows the expansion of the relation, the next question is how that expansion places workers’ employment, wages, and living conditions under a law.",
+                      "Because once accumulation begins, the working class disappears, so the next chapter can deal only with competition among capitalists.",
+                      "Because once surplus-value becomes capital, the ratio between means of production and labour-power no longer matters.",
+                      "Because Chapter 24 abandons value theory, so Chapter 25 turns to pure demography."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "24장은 잉여가치가 추가 자본으로 변하는 방식을 보여준다. 25장은 그 확대가 노동수요, 예비군, 빈곤의 재생산을 어떻게 낳는지 분석한다.",
+                    "en": "Chapter 24 shows how surplus-value becomes additional capital. Chapter 25 analyzes how that expansion produces labour demand, the reserve army, and the reproduction of poverty."
                   }
                 }
               ]
@@ -7849,27 +7849,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙의 핵심은 무엇입니까?",
-                    "en": "What is central to general law of capitalist accumulation?"
+                    "ko": "마르크스가 “자본주의적 축적의 일반 법칙”으로 설명하려는 것은 단순히 자본이 많아진다는 사실이 아니다. 이 법칙은 무엇을 함께 보여주는가?",
+                    "en": "Marx’s “general law of capitalist accumulation” does not merely say that capital grows. What does the law show together with that growth?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다"
+                      "자본 축적은 부의 집중과 함께 상대적 과잉인구와 노동계급의 불안정을 재생산한다.",
+                      "자본이 커질수록 모든 노동자는 자동으로 자본가가 된다.",
+                      "축적이 진행되면 실업은 오직 개인의 게으름으로만 생긴다.",
+                      "자본 축적은 노동시간과 노동강도에 아무 영향을 주지 않는다."
                     ],
                     "en": [
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+                      "Capital accumulation reproduces concentration of wealth together with relative surplus population and insecurity for the working class.",
+                      "As capital grows, all workers automatically become capitalists.",
+                      "Once accumulation proceeds, unemployment arises only from individual laziness.",
+                      "Capital accumulation has no effect on working time or labour intensity."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                    "en": "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+                    "ko": "이 법칙은 부의 증가와 노동계급의 불안정이 별개 현상이 아님을 보여준다. 자본의 축적은 동시에 노동자를 자본의 필요에 맞게 과잉 또는 부족으로 배치한다.",
+                    "en": "The law shows that growing wealth and working-class insecurity are not separate phenomena. Accumulation also arranges workers as excessive or insufficient according to capital’s needs."
                   }
                 },
                 {
@@ -7877,27 +7877,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙은 어떤 메커니즘으로 작동합니까?",
-                    "en": "By what mechanism does general law of capitalist accumulation operate?"
+                    "ko": "축적이 진행되면서 생산수단의 규모와 기술이 빠르게 커지지만, 필요한 노동자 수는 같은 비율로 늘지 않을 수 있다. 이때 어떤 메커니즘이 작동하는가?",
+                    "en": "As accumulation proceeds, the scale and technology of means of production may grow rapidly while the number of required workers does not rise in the same proportion. What mechanism is at work?"
                   },
                   "choices": {
                     "ko": [
-                      "자본구성이 고도화되고 생산력이 상승하면 노동자 일부는 상대적 과잉인구로 밀려난다",
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해",
-                      "절대적 인구과잉과 자본축적에 상대적인 과잉인구",
-                      "자동화 뒤 생산량은 늘지만 고용이 불안정해지고 실업자가 임금 압박 수단이 되는 상황"
+                      "자본의 구성이 변하면서 노동력에 대한 상대적 수요가 줄고, 상대적 과잉인구가 만들어진다.",
+                      "기계가 가치를 창조하므로 살아 있는 노동은 더 이상 필요하지 않다.",
+                      "생산수단이 늘면 노동자는 모두 토지를 받아 독립생산자가 된다.",
+                      "노동자 수가 덜 늘면 자본 축적도 반드시 멈춘다."
                     ],
                     "en": [
-                      "as the composition of capital rises and productivity increases, part of the working class is pushed into relative surplus population",
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough",
-                      "absolute overpopulation and surplus population relative to capital accumulation",
-                      "after automation, output rises while employment becomes insecure and unemployment pressures wages"
+                      "The composition of capital changes, reducing the relative demand for labour-power and producing a relative surplus population.",
+                      "Machines create value, so living labour is no longer necessary.",
+                      "When means of production increase, all workers receive land and become independent producers.",
+                      "If the number of workers rises more slowly, capital accumulation must stop."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본구성이 고도화되고 생산력이 상승하면 노동자 일부는 상대적 과잉인구로 밀려난다",
-                    "en": "as the composition of capital rises and productivity increases, part of the working class is pushed into relative surplus population"
+                    "ko": "마르크스는 축적이 노동수요를 절대적으로만 늘린다고 보지 않는다. 생산성이 오르고 자본의 구성이 변하면 노동자는 자본에 비해 상대적으로 과잉이 될 수 있다.",
+                    "en": "Marx does not treat accumulation as simply increasing labour demand absolutely. When productivity rises and the composition of capital changes, workers can become surplus relative to capital."
                   }
                 },
                 {
@@ -7905,27 +7905,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙에 대해 마르크스가 비판할 설명은 무엇입니까?",
-                    "en": "Which explanation of general law of capitalist accumulation would Marx criticize?"
+                    "ko": "마르크스가 말하는 “상대적 과잉인구”를 단순한 인구 과잉과 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must Marx’s “relative surplus population” be distinguished from simple overpopulation?"
                   },
                   "choices": {
                     "ko": [
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해",
-                      "자본구성이 고도화되고 생산력이 상승하면 노동자 일부는 상대적 과잉인구로 밀려난다",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                      "절대적 인구과잉과 자본축적에 상대적인 과잉인구"
+                      "상대적 과잉인구는 자연적으로 사람이 너무 많이 태어나서 생기는 것이 아니라, 자본의 축적 방식에 비해 노동력이 과잉으로 되는 것이다.",
+                      "상대적 과잉인구는 임금노동자가 아니라 자본가가 너무 많다는 뜻이다.",
+                      "상대적 과잉인구는 농업사회에만 있고 산업자본주의에는 존재하지 않는다.",
+                      "상대적 과잉인구는 임금이 높을 때만 생기며 실업과는 무관하다."
                     ],
                     "en": [
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough",
-                      "as the composition of capital rises and productivity increases, part of the working class is pushed into relative surplus population",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty",
-                      "absolute overpopulation and surplus population relative to capital accumulation"
+                      "It is not caused simply by too many people being born; labour-power becomes surplus relative to capital’s mode of accumulation.",
+                      "It means there are too many capitalists, not too many wage-labourers.",
+                      "It exists only in agrarian societies and not in industrial capitalism.",
+                      "It arises only when wages are high and has no relation to unemployment."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "비판 대상은 자본주의적 축적의 일반 법칙을 자본주의적 사회관계가 아니라 자연적·개인적·기술적 현상으로 바꾸는 설명입니다.",
-                    "en": "The criticized view turns general law of capitalist accumulation from a capitalist social relation into a natural, individual, or technical fact."
+                    "ko": "“상대적”이라는 말이 중요하다. 노동자가 사회적으로 불필요해서가 아니라, 자본의 이윤추구와 기술적 구성 속에서 필요한 노동력보다 많게 만들어진다는 뜻이다.",
+                    "en": "The word “relative” is crucial. Workers are not socially unnecessary; they are made surplus relative to capital’s profit-seeking and technical composition."
                   }
                 },
                 {
@@ -7933,27 +7933,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "다음 상황은 자본주의적 축적의 일반 법칙과 어떻게 연결됩니까? 자동화 뒤 생산량은 늘지만 고용이 불안정해지고 실업자가 임금 압박 수단이 되는 상황.",
-                    "en": "How does this situation relate to general law of capitalist accumulation? after automation, output rises while employment becomes insecure and unemployment pressures wages."
+                    "ko": "자동화 뒤 생산량은 늘었지만 정규직은 줄고, 실업자와 불안정 노동자가 임금 인상을 압박하는 수단으로 쓰인다. 이 사례는 25장의 어떤 논점을 보여주는가?",
+                    "en": "After automation, output rises but regular employment falls, and unemployed or insecure workers are used to pressure wages. Which point from Chapter 25 does this illustrate?"
                   },
                   "choices": {
                     "ko": [
-                      "절대적 인구과잉과 자본축적에 상대적인 과잉인구",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해",
-                      "자본주의적 관계와 무관한 예외적 사건이다"
+                      "기계 도입은 자본주의에서 언제나 노동자의 여가와 소득을 동시에 늘린다.",
+                      "실업자는 생산과 완전히 무관하므로 임금 수준에 영향을 주지 않는다.",
+                      "산업예비군은 자본이 필요할 때 끌어오고 필요 없을 때 밀어내는 노동력의 압박 장치로 기능한다.",
+                      "생산량이 늘면 자본과 노동 사이의 갈등은 자동으로 사라진다."
                     ],
                     "en": [
-                      "absolute overpopulation and surplus population relative to capital accumulation",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty",
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough",
-                      "It is an exceptional event unrelated to capitalist relations"
+                      "The introduction of machinery always increases workers’ leisure and income at the same time under capitalism.",
+                      "The unemployed are completely unrelated to production and do not affect wage levels.",
+                      "The industrial reserve army functions as a pressure mechanism: labour-power can be drawn in when needed and pushed out when not needed.",
+                      "When output rises, conflict between capital and labour automatically disappears."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 2,
                   "explanation": {
-                    "ko": "자동화 뒤 생산량은 늘지만 고용이 불안정해지고 실업자가 임금 압박 수단이 되는 상황",
-                    "en": "after automation, output rises while employment becomes insecure and unemployment pressures wages"
+                    "ko": "산업예비군은 생산 바깥의 우연한 잔여가 아니다. 그것은 고용된 노동자에게도 압력을 가하며 자본 축적의 리듬에 맞춰 동원되고 배제된다.",
+                    "en": "The industrial reserve army is not an accidental leftover outside production. It pressures employed workers too and is drawn in or expelled according to the rhythm of accumulation."
                   }
                 },
                 {
@@ -7961,27 +7961,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙을 이해하려면 무엇을 구분해야 합니까?",
-                    "en": "What must be distinguished to understand general law of capitalist accumulation?"
+                    "ko": "25장에서 부의 축적과 빈곤의 축적이 함께 언급되는 이유는 무엇인가?",
+                    "en": "Why does Chapter 25 speak of the accumulation of wealth together with the accumulation of poverty?"
                   },
                   "choices": {
                     "ko": [
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해",
-                      "절대적 인구과잉과 자본축적에 상대적인 과잉인구",
-                      "개별 인물의 선의와 악의",
-                      "정책 구호와 선거 전략"
+                      "마르크스가 모든 사회에서 가난은 자연법칙이라고 보기 때문이다.",
+                      "자본주의에서는 사회적 생산력이 커져도 그 성과가 자본으로 집중되고 노동자는 예비군·불안정·종속의 형태로 재생산될 수 있기 때문이다.",
+                      "빈곤이 늘어야만 상품의 사용가치가 사라지기 때문이다.",
+                      "부가 축적되면 임금노동은 곧바로 폐지되기 때문이다."
                     ],
                     "en": [
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough",
-                      "absolute overpopulation and surplus population relative to capital accumulation",
-                      "individual goodwill and malice",
-                      "policy slogans and electoral strategy"
+                      "Because Marx thinks poverty is a natural law in every society.",
+                      "Because under capitalism, even as social productive power grows, its results can be concentrated as capital while workers are reproduced as reserve army, insecurity, and dependence.",
+                      "Because use-values disappear only when poverty increases.",
+                      "Because when wealth accumulates, wage-labour is immediately abolished."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "절대적 인구과잉과 자본축적에 상대적인 과잉인구",
-                    "en": "absolute overpopulation and surplus population relative to capital accumulation"
+                    "ko": "마르크스의 명제는 도덕적 탄식이 아니라 구조 분석이다. 생산력이 커져도 소유와 지휘권이 자본으로 집중되면 노동계급의 조건은 상대적 빈곤과 불안정으로 재생산된다.",
+                    "en": "Marx’s claim is a structural analysis, not a moral lament. Even as productive power grows, if ownership and command are concentrated as capital, working-class conditions are reproduced as relative poverty and insecurity."
                   }
                 }
               ]
@@ -7999,27 +7999,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙을 더 엄밀히 이해한 설명은 무엇입니까?",
-                    "en": "Which statement gives a more rigorous understanding of general law of capitalist accumulation?"
+                    "ko": "자본이 축적되면 더 많은 노동자를 필요로 할 것처럼 보인다. 마르크스가 이 직관을 그대로 받아들이지 않는 이유는 무엇인가?",
+                    "en": "It may seem that as capital accumulates it will need more workers. Why does Marx not accept this intuition as it stands?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-                      "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-                      "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다"
+                      "자본이 커질수록 생산수단과 노동력의 비율이 변할 수 있고, 노동수요는 자본 총량이 아니라 자본의 구성에 의해 매개되기 때문이다.",
+                      "자본이 축적되면 모든 생산은 기계 없이 수공업으로 돌아가기 때문이다.",
+                      "노동수요는 임금과 아무 관계 없이 항상 일정하기 때문이다.",
+                      "축적은 화폐량만 늘리는 과정이라 생산과 고용에는 영향을 주지 않기 때문이다."
                     ],
                     "en": [
-                      "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals",
-                      "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor",
-                      "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power",
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+                      "Because as capital grows, the ratio between means of production and labour-power can change; labour demand is mediated by the composition of capital, not by total capital alone.",
+                      "Because when capital accumulates, all production returns to handicraft without machinery.",
+                      "Because labour demand is always fixed and has no relation to wages.",
+                      "Because accumulation only increases the quantity of money and has no effect on production or employment."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                    "en": "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+                    "ko": "축적된 자본이 모두 같은 비율로 노동력을 사는 것은 아니다. 기술 변화와 자본 구성의 변화가 노동수요를 매개하기 때문에 상대적 과잉인구가 생길 수 있다.",
+                    "en": "Accumulated capital does not all buy labour-power in the same proportion. Technical change and changes in the composition of capital mediate labour demand, making relative surplus population possible."
                   }
                 },
                 {
@@ -8027,27 +8027,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙이 가리는 사회관계는 무엇입니까?",
-                    "en": "What social relation is concealed or transformed in general law of capitalist accumulation?"
+                    "ko": "산업예비군은 고용된 노동자와 분리된 집단처럼 보이지만, 마르크스에게는 임금관계 전체의 일부다. 그 매개는 무엇인가?",
+                    "en": "The industrial reserve army may look like a group separate from employed workers, but for Marx it is part of the wage relation as a whole. What mediates this connection?"
                   },
                   "choices": {
                     "ko": [
-                      "순수한 자연조건의 차이",
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해",
-                      "절대적 인구과잉과 자본축적에 상대적인 과잉인구",
-                      "자동화 뒤 생산량은 늘지만 고용이 불안정해지고 실업자가 임금 압박 수단이 되는 상황"
+                      "예비군은 고용된 노동자의 임금 요구와 저항을 압박하고, 경기 확장기에는 다시 흡수될 수 있는 노동력 저장고로 기능한다.",
+                      "예비군은 생산과 무관하기 때문에 고용된 노동자에게 어떤 영향도 주지 않는다.",
+                      "예비군은 자본가의 소비재 시장을 없애서 축적을 즉시 중단시킨다.",
+                      "예비군은 항상 자발적 실업자만으로 이루어져 임금관계와 무관하다."
                     ],
                     "en": [
-                      "a purely natural difference",
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough",
-                      "absolute overpopulation and surplus population relative to capital accumulation",
-                      "after automation, output rises while employment becomes insecure and unemployment pressures wages"
+                      "It pressures employed workers’ wage demands and resistance, while serving as a reservoir of labour-power that can be reabsorbed in expansion.",
+                      "It has no effect on employed workers because it is unrelated to production.",
+                      "It eliminates the capitalist market for consumer goods and immediately stops accumulation.",
+                      "It is always composed only of voluntarily unemployed people and has no relation to the wage relation."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "절대적 인구과잉과 자본축적에 상대적인 과잉인구",
-                    "en": "absolute overpopulation and surplus population relative to capital accumulation"
+                    "ko": "예비군은 고용 밖에 있다는 사실 때문에 오히려 고용 안의 노동자를 규율한다. 자본은 이 유동성을 통해 임금과 노동조건에 압력을 가한다.",
+                    "en": "The reserve army disciplines employed workers precisely through its position outside employment. Capital uses this mobility to pressure wages and working conditions."
                   }
                 },
                 {
@@ -8055,27 +8055,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙을 현실 분석에 적용한 설명으로 적절한 것은 무엇입니까?",
-                    "en": "Which application of general law of capitalist accumulation to concrete analysis is appropriate?"
+                    "ko": "실업과 빈곤을 “사람이 너무 많이 태어난 결과”로 설명하는 인구론적 설명이 왜 마르크스의 분석과 충돌하는가?",
+                    "en": "Why does a demographic explanation that treats unemployment and poverty as the result of “too many people being born” clash with Marx’s analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "현상은 개인 심리의 합으로 충분히 설명된다",
-                      "개념 없이 사례를 나열하면 충분하다",
-                      "자동화 뒤 생산량은 늘지만 고용이 불안정해지고 실업자가 임금 압박 수단이 되는 상황",
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해"
+                      "마르크스는 인구 변화가 어떤 사회에서도 존재하지 않는다고 보기 때문이다.",
+                      "그 설명은 자본의 축적 방식이 노동자를 상대적으로 과잉으로 만드는 사회적 메커니즘을 자연법칙으로 바꿔 버리기 때문이다.",
+                      "그 설명은 실업자가 실제로는 모두 생산수단을 소유한다는 점을 인정하기 때문이다.",
+                      "마르크스는 실업을 오직 통화량 부족으로만 설명하기 때문이다."
                     ],
                     "en": [
-                      "the phenomenon is fully explained by individual psychology",
-                      "listing examples without concepts is sufficient",
-                      "after automation, output rises while employment becomes insecure and unemployment pressures wages",
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough"
+                      "Because Marx thinks population change does not exist in any society.",
+                      "Because it turns the social mechanism by which capital accumulation makes workers relatively surplus into a natural law.",
+                      "Because it admits that the unemployed actually own all means of production.",
+                      "Because Marx explains unemployment only by a shortage of money."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "자동화 뒤 생산량은 늘지만 고용이 불안정해지고 실업자가 임금 압박 수단이 되는 상황",
-                    "en": "after automation, output rises while employment becomes insecure and unemployment pressures wages"
+                    "ko": "마르크스가 비판하는 것은 인구 자체가 아니라 자연화다. 자본주의의 과잉인구는 자본의 필요에 상대적인 것이며, 축적과 기술 변화의 산물이다.",
+                    "en": "Marx is not denying population; he is criticizing naturalization. Capitalist surplus population is relative to capital’s needs and is produced by accumulation and technical change."
                   }
                 },
                 {
@@ -8083,27 +8083,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙을 부르주아적으로 자연화한 명제는 무엇입니까?",
-                    "en": "Which thesis naturalizes general law of capitalist accumulation in a bourgeois way?"
+                    "ko": "플랫폼 노동자가 주문이 많을 때는 장시간 일하고, 주문이 줄면 즉시 소득이 끊기며, 언제든 대체 가능한 인력풀 속에 놓인다. 25장의 범주로 보면 무엇이 두드러지는가?",
+                    "en": "Platform workers work long hours when orders are high, lose income immediately when orders fall, and remain in a pool of easily replaceable labour. Which Chapter 25 category is highlighted here?"
                   },
                   "choices": {
                     "ko": [
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-                      "절대적 인구과잉과 자본축적에 상대적인 과잉인구",
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해",
-                      "자본구성이 고도화되고 생산력이 상승하면 노동자 일부는 상대적 과잉인구로 밀려난다"
+                      "노동자가 생산수단을 소유하므로 임금관계가 사라진 사례다.",
+                      "노동력의 일부가 필요에 따라 흡수되고 배제되는 예비군적 기능과 불안정 고용의 결합이다.",
+                      "상품 유통만 있고 생산관계는 전혀 없는 사례다.",
+                      "자본 축적이 노동시간과 무관하다는 증거다."
                     ],
                     "en": [
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty",
-                      "absolute overpopulation and surplus population relative to capital accumulation",
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough",
-                      "as the composition of capital rises and productivity increases, part of the working class is pushed into relative surplus population"
+                      "It is a case where workers own means of production and the wage relation disappears.",
+                      "It combines insecure employment with a reserve-army function in which parts of labour-power are absorbed and expelled according to need.",
+                      "It is a case of circulation only, with no production relation at all.",
+                      "It proves that capital accumulation has no relation to working time."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 1,
                   "explanation": {
-                    "ko": "부르주아적 자연화는 사회관계의 역사적 형태를 개인·자연·기술의 산물처럼 보이게 합니다.",
-                    "en": "Bourgeois naturalization makes historical social forms appear as products of individuals, nature, or technique."
+                    "ko": "플랫폼 형태가 새로워도 핵심은 자본이 필요에 따라 노동력을 호출하고 방출하는 능력이다. 이는 고용된 노동자와 대기 중인 노동자 사이의 경계를 불안정하게 만든다.",
+                    "en": "Even if the platform form is new, the core is capital’s ability to summon and release labour-power according to need. This destabilizes the boundary between employed workers and workers waiting for work."
                   }
                 },
                 {
@@ -8111,27 +8111,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 축적의 일반 법칙에 대한 가장 강한 심화 이해는 무엇입니까?",
-                    "en": "What is the strongest advanced understanding of general law of capitalist accumulation?"
+                    "ko": "25장의 논지가 1권 전체의 전개에서 갖는 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 25 within the movement of Volume I as a whole?"
                   },
                   "choices": {
                     "ko": [
-                      "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다; 그리고 이 형태가 다음 모순으로 어떻게 이동하는지 파악하는 것",
-                      "현대 사례와 이름이 비슷하면 같은 개념으로 처리하는 것",
-                      "분배 결과만 보고 생산·유통의 매개를 생략하는 것",
-                      "자본축적이 충분히 커지면 실업과 빈곤은 자동으로 사라진다는 견해"
+                      "가치생산과 잉여가치 생산의 분석이 노동계급의 재생산 조건, 예비군, 빈곤의 법칙으로 이어진다는 점을 보여준다.",
+                      "이 장은 앞의 착취 분석을 버리고 순수한 복지정책 논의로 전환한다.",
+                      "이 장은 자본주의가 발전할수록 계급관계가 자연스럽게 해소된다는 결론을 낸다.",
+                      "이 장은 생산과정을 떠나 상인의 가격 조작만으로 모든 빈곤을 설명한다."
                     ],
                     "en": [
-                      "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty; and grasping how this form moves into the next contradiction",
-                      "treating a modern example with a similar name as the same concept",
-                      "looking only at distributional outcomes while skipping production and circulation mediations",
-                      "the view that unemployment and poverty automatically disappear once accumulation is large enough"
+                      "It shows how the analysis of value production and surplus-value production leads to the conditions of working-class reproduction, the reserve army, and the law of poverty.",
+                      "The chapter abandons the earlier analysis of exploitation and turns to a purely welfare-policy discussion.",
+                      "The chapter concludes that as capitalism develops, class relations naturally dissolve.",
+                      "The chapter leaves the production process and explains all poverty by merchants’ price manipulation alone."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화 이해는 정의를 넘어 그 형태의 운동과 모순을 파악하는 것입니다.",
-                    "en": "Advanced understanding grasps the movement and contradiction of the form, beyond definition."
+                    "ko": "25장은 앞선 분석의 사회적 결과를 집약한다. 잉여가치 생산과 축적은 단지 자본의 성장사가 아니라 노동계급이 어떤 조건으로 재생산되는가의 법칙이기도 하다.",
+                    "en": "Chapter 25 condenses the social result of the preceding analysis. Surplus-value production and accumulation are not merely the growth history of capital; they are also the law of how the working class is reproduced."
                   }
                 }
               ]
