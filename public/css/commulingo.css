@@ -104,6 +104,13 @@
     display: block;
 }
 
+.commu-volume-title {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    width: min(640px, calc(100% - 52px));
+}
+
 .commu-volume-toggle strong {
     font-size: 1.15rem;
 }
@@ -111,7 +118,36 @@
 .commu-volume-toggle small {
     color: var(--text-muted);
     font-size: 0.84rem;
+}
+
+.commu-volume-progress {
+    display: grid;
+    gap: 5px;
     margin-top: 4px;
+    max-width: 360px;
+}
+
+.commu-volume-progress-label {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.commu-volume-progress-track {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    display: block;
+    height: 7px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.commu-volume-progress-track > span {
+    background: var(--accent);
+    display: block;
+    height: 100%;
+    transition: width 0.2s ease;
 }
 
 .commu-volume-toggle-icon {
@@ -657,6 +693,14 @@
         width: 100%;
         height: auto;
         min-height: 78px;
+    }
+
+    .commu-volume-title {
+        width: min(100%, calc(100% - 48px));
+    }
+
+    .commu-volume-progress {
+        max-width: 100%;
     }
 
     .commu-volume-grid,

@@ -266,10 +266,18 @@
             var expanded = expandedCollection === group.id;
             var section = document.createElement('section');
             section.className = 'commu-volume-section' + (expanded ? ' is-expanded' : ' is-collapsed');
+            var groupProgress = progressStats(group.lessons);
             section.innerHTML = [
                 '<header class="commu-volume-header">',
                 '<button type="button" class="commu-volume-toggle" aria-expanded="' + (expanded ? 'true' : 'false') + '">',
-                '<span><strong>' + escapeHtml(group.title) + '</strong><small>' + escapeHtml(chapterCountLabel(countChapters(group.lessons))) + '</small></span>',
+                '<span class="commu-volume-title">',
+                '<strong>' + escapeHtml(group.title) + '</strong>',
+                '<small>' + escapeHtml(chapterCountLabel(countChapters(group.lessons))) + '</small>',
+                '<span class="commu-volume-progress">',
+                '<span class="commu-volume-progress-label">' + escapeHtml(progressLabel(groupProgress)) + '</span>',
+                '<span class="commu-volume-progress-track"><span style="width:' + groupProgress.percent + '%"></span></span>',
+                '</span>',
+                '</span>',
                 '<span class="commu-volume-toggle-icon" aria-hidden="true">' + (expanded ? '−' : '+') + '</span>',
                 '</button>',
                 '</header>',
@@ -313,6 +321,23 @@
 
     function chapterCountLabel(count) {
         return count + ' ' + (lang === 'en' ? 'Chapters' : '챕터');
+    }
+
+    function progressStats(items) {
+        var playable = (items || []).filter(function(lesson) { return !lesson.locked && lessonQuestionCount(lesson); });
+        var completed = playable.filter(function(lesson) {
+            return progress[lesson.id] && progress[lesson.id].completed;
+        }).length;
+        return {
+            completed: completed,
+            total: playable.length,
+            percent: Math.round((completed / (playable.length || 1)) * 100)
+        };
+    }
+
+    function progressLabel(stats) {
+        var label = lang === 'en' ? 'Progress' : '진도';
+        return label + ' ' + stats.percent + '% · ' + stats.completed + ' / ' + stats.total;
     }
 
     function groupLessons() {
