@@ -499,7 +499,7 @@
         renderLoadingLesson(lesson);
         loadLessonDetail(lesson)
             .then(function(loadedLesson) {
-                active = { lesson: loadedLesson, index: 0, score: 0, intro: true };
+                active = { lesson: loadedLesson, index: 0, score: 0, streak: 0, intro: true };
                 renderIntro();
             })
             .catch(function() {
@@ -574,6 +574,7 @@
         els.prompt.textContent = text(question.prompt);
         els.feedback.className = 'commu-feedback is-hidden';
         els.feedback.textContent = '';
+        els.quiz.classList.remove('has-answer-reward', 'has-perfect-reward');
         els.next.disabled = true;
         els.next.textContent = active.index >= lessonQuestionCount(active.lesson) - 1 ? (strings.finish || 'Finish') : (strings.next || 'Next');
         renderChoices(question);
@@ -599,7 +600,12 @@
         answered = true;
         var correctIndex = question.type === 'true_false' ? (question.answer === true ? 0 : 1) : Number(question.answer);
         var correct = index === correctIndex;
-        if (correct) active.score += 1;
+        if (correct) {
+            active.score += 1;
+            active.streak += 1;
+        } else {
+            active.streak = 0;
+        }
 
         Array.prototype.forEach.call(els.choices.children, function(button, i) {
             button.disabled = true;
@@ -608,9 +614,44 @@
         });
 
         els.feedback.className = 'commu-feedback' + (correct ? '' : ' is-wrong');
-        els.feedback.innerHTML = '<strong class="commu-feedback-marker">' + escapeHtml(correct ? strings.correct : strings.incorrect) + '</strong><span>' + escapeHtml(text(question.explanation)) + '</span>';
+        els.feedback.innerHTML = feedbackHtml(question, index, correct);
+        if (correct) showAnswerReward();
         els.next.disabled = false;
         els.meter.style.width = Math.round(((active.index + 1) / lessonQuestionCount(active.lesson)) * 100) + '%';
+    }
+
+    function feedbackHtml(question, index, correct) {
+        var selectedFeedback = choiceFeedback(question, index);
+        var parts = [
+            '<strong class="commu-feedback-marker">' + escapeHtml(correct ? strings.correct : strings.incorrect) + '</strong>',
+            '<span>' + escapeHtml(text(question.explanation)) + '</span>'
+        ];
+        if (selectedFeedback) {
+            parts.push('<span class="commu-choice-feedback">' + escapeHtml(selectedFeedback) + '</span>');
+        }
+        if (correct && active && active.streak >= 3) {
+            parts.push('<span class="commu-streak-badge">' + escapeHtml(streakLabel(active.streak)) + '</span>');
+        }
+        return parts.join('');
+    }
+
+    function choiceFeedback(question, index) {
+        var feedback = question && question.choiceFeedback;
+        if (!feedback) return '';
+        var localized = feedback[lang] || feedback.ko || feedback.en;
+        if (!Array.isArray(localized)) return '';
+        return localized[index] || '';
+    }
+
+    function streakLabel(streak) {
+        return lang === 'en' ? streak + ' in a row' : streak + '연속 정답';
+    }
+
+    function showAnswerReward() {
+        if (!els.quiz) return;
+        els.quiz.classList.remove('has-answer-reward');
+        void els.quiz.offsetWidth;
+        els.quiz.classList.add('has-answer-reward');
     }
 
     function finishLesson() {
@@ -631,10 +672,12 @@
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.remove('is-hidden');
         els.choices.innerHTML = '';
-        els.feedback.className = 'commu-feedback';
-        els.feedback.textContent = (strings.score || 'Score') + ': ' + active.score + ' / ' + lessonQuestionCount(active.lesson);
+        var perfect = active.score === lessonQuestionCount(active.lesson);
+        els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : '');
+        els.feedback.innerHTML = finishFeedbackHtml(perfect);
+        els.quiz.classList.toggle('has-perfect-reward', perfect);
         els.next.disabled = false;
-        if (active.score < lessonQuestionCount(active.lesson)) {
+        if (!perfect) {
             els.next.textContent = strings.tryAgain || 'Try again';
             els.next.setAttribute('data-finished', 'retry');
         } else {
@@ -642,6 +685,18 @@
             els.next.setAttribute('data-finished', '1');
         }
         answered = true;
+    }
+
+    function finishFeedbackHtml(perfect) {
+        var score = (strings.score || 'Score') + ': ' + active.score + ' / ' + lessonQuestionCount(active.lesson);
+        if (!perfect) return '<strong class="commu-feedback-marker">' + escapeHtml(score) + '</strong>';
+        var label = lang === 'en' ? 'Perfect lesson' : '만점 완료';
+        var note = lang === 'en' ? 'The full concept path is clear enough to move on.' : '이 장의 기본 개념 흐름을 안정적으로 잡았습니다.';
+        return [
+            '<strong class="commu-feedback-marker">' + escapeHtml(label) + '</strong>',
+            '<span>' + escapeHtml(score) + '</span>',
+            '<span class="commu-choice-feedback">' + escapeHtml(note) + '</span>'
+        ].join('');
     }
 
     function mergeOne(existing, incoming) {

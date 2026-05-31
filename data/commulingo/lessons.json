@@ -6090,21 +6090,35 @@
                   "choices": {
                     "ko": [
                       "잉여가치/가변자본, 또는 잉여노동/필요노동",
-                      "잉여가치/불변자본",
-                      "임금/총생산물",
-                      "가격/사용가치"
+                      "잉여가치/불변자본을 착취관계의 비율로 잘못 잡는 설명",
+                      "임금/총생산물을 착취관계의 비율로 잘못 잡는 설명",
+                      "가격/사용가치를 착취관계의 비율로 잘못 잡는 설명"
                     ],
                     "en": [
                       "Surplus-value / variable capital, or surplus labor / necessary labor",
-                      "Surplus-value / constant capital",
-                      "Wages / total product",
-                      "Price / use-value"
+                      "Surplus-value / constant capital as the decisive ratio",
+                      "Wages / total product as the decisive ratio",
+                      "Price / use-value as the decisive ratio"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
                     "ko": "잉여가치율은 s/v이며 시간으로는 잉여노동/필요노동이다. 이 공식은 착취관계를 노동력 가치와 그 이상으로 수행된 노동의 관계로 드러낸다.",
                     "en": "The rate of surplus-value is s/v, expressed in time as surplus labor / necessary labor. This formula reveals exploitation as the relation between the value of labor-power and labor performed beyond it."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 잉여가치율은 s/v이며 시간으로는 잉여노동/필요노동이다. 이 공식은 착취관계를 노동력 가치와 그 이상으로 수행된 노동의 관계로 드러낸다.",
+                      "오해 진단: \"잉여가치/불변자본을 착취관계의 비율로 잘못 잡는 설명\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"임금/총생산물을 착취관계의 비율로 잘못 잡는 설명\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"가격/사용가치를 착취관계의 비율로 잘못 잡는 설명\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The rate of surplus-value is s/v, expressed in time as surplus labor / necessary labor. This formula reveals exploitation as the relation between the value of labor-power and labor performed beyond it.",
+                      "Misconception check: choosing \"Surplus-value / constant capital as the decisive ratio\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Wages / total product as the decisive ratio\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Price / use-value as the decisive ratio\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -11171,7 +11185,7 @@
                   },
                   "choices": {
                     "ko": [
-                      "원시적 축적이 처음부터 아무 폭력도 없었다는 뜻이다.",
+                      "원시적 축적이 처음부터 아무 폭력도 없었다는 뜻이라는 식으로 가치관계의 매개를 지우는 오해",
                       "각 노동자가 개인적으로 작은 작업장을 되찾아 자급경제로 돌아간다는 뜻이다.",
                       "자본가가 노동자에게 임금을 조금 더 주면 계급관계가 사라진다는 뜻이다.",
                       "자본주의가 만든 사회화된 생산과 집중된 노동능력이 사적 자본 소유와 충돌하면서, 자본가의 독점적 소유가 역사적으로 폐지될 조건이 성숙한다는 뜻이다."
@@ -11187,6 +11201,20 @@
                   "explanation": {
                     "ko": "마르크스의 결론은 소생산으로의 단순 복귀가 아니다. 자본주의가 만든 사회화된 생산을 토대로, 소수 자본가의 전유를 폐지할 가능성이 생긴다는 뜻이다.",
                     "en": "Marx’s conclusion is not a simple return to small production. On the basis of the socialized production created by capitalism, the possibility arises of abolishing appropriation by a minority of capitalists."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"원시적 축적이 처음부터 아무 폭력도 없었다는 뜻이라는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"각 노동자가 개인적으로 작은 작업장을 되찾아 자급경제로 돌아간다는 뜻이다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"자본가가 노동자에게 임금을 조금 더 주면 계급관계가 사라진다는 뜻이다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 마르크스의 결론은 소생산으로의 단순 복귀가 아니다. 자본주의가 만든 사회화된 생산을 토대로, 소수 자본가의 전유를 폐지할 가능성이 생긴다는 뜻이다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"It means primitive accumulation involved no violence from the beginning.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It means each worker individually regains a small workshop and returns to subsistence production.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It means class relations disappear if capitalists pay workers slightly higher wages.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Marx’s conclusion is not a simple return to small production. On the basis of the socialized production created by capitalism, the possibility arises of abolishing appropriation by a minority of capitalists."
+                    ]
                   }
                 }
               ]
@@ -11211,7 +11239,7 @@
                     "ko": [
                       "마르크스는 과거의 소농·장인 소유로 돌아가자는 것이 아니라, 자본주의가 발전시킨 협업과 공동 생산수단을 토대로 한 더 높은 형태의 개인적 소유를 말하기 때문이다.",
                       "부정의 부정은 철학적 장식일 뿐 경제 분석과 무관하기 때문이다.",
-                      "마르크스는 어떤 종류의 개인성도 인정하지 않기 때문이다.",
+                      "마르크스는 어떤 종류의 개인성도 인정하지 않기 때문이라는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "개인적 소유라는 말을 사적 자본 소유와 같은 뜻으로 읽기 때문이다."
                     ],
                     "en": [
@@ -11225,6 +11253,20 @@
                   "explanation": {
                     "ko": "중요한 것은 복귀가 아니라 역사적 상승이다. 자본주의가 만든 사회적 생산력을 유지하면서 사적 자본 전유를 넘어서는 형태가 문제다.",
                     "en": "The point is not return but historical supersession. The question is a form that preserves the social productive powers developed by capitalism while overcoming private capitalist appropriation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 중요한 것은 복귀가 아니라 역사적 상승이다. 자본주의가 만든 사회적 생산력을 유지하면서 사적 자본 전유를 넘어서는 형태가 문제다.",
+                      "오해 진단: \"부정의 부정은 철학적 장식일 뿐 경제 분석과 무관하기 때문이다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"마르크스는 어떤 종류의 개인성도 인정하지 않기 때문이라는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"개인적 소유라는 말을 사적 자본 소유와 같은 뜻으로 읽기 때문이다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The point is not return but historical supersession. The question is a form that preserves the social productive powers developed by capitalism while overcoming private capitalist appropriation.",
+                      "Misconception check: choosing \"Because the negation of the negation is philosophical decoration unrelated to economic analysis.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Because Marx recognizes no form of individuality at all.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Because it reads individual property as the same thing as private capitalist property.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -12678,7 +12720,7 @@
                       "잉여가치의 처분을 자본가의 개인소비로만 본다.",
                       "잉여가치의 일부는 자본가의 수입으로 소비될 수 있고, 일부는 추가 자본으로 축적되어 다음 순환의 규모를 바꿀 수 있다.",
                       "잉여가치는 전부 노동자 임금으로 자동 반환된다.",
-                      "잉여가치를 생산수단 보전 비용과 혼동한다."
+                      "잉여가치를 생산수단 보전 비용과 혼동하는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Surplus-value always disappears and remains in no form.",
@@ -12691,6 +12733,20 @@
                   "explanation": {
                     "ko": "C'는 원가치와 잉여가치를 함께 담는다. 판매 뒤 잉여가치가 소비될지 축적될지는 재생산의 규모와 다음 순환의 성격을 바꾼다.",
                     "en": "C' contains both original value and surplus-value. After sale, whether surplus-value is consumed or accumulated changes the scale of reproduction and the character of the next circuit."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"잉여가치의 처분을 자본가의 개인소비로만 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: C'는 원가치와 잉여가치를 함께 담는다. 판매 뒤 잉여가치가 소비될지 축적될지는 재생산의 규모와 다음 순환의 성격을 바꾼다.",
+                      "오해 진단: \"잉여가치는 전부 노동자 임금으로 자동 반환된다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"잉여가치를 생산수단 보전 비용과 혼동하는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Surplus-value always disappears and remains in no form.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: C' contains both original value and surplus-value. After sale, whether surplus-value is consumed or accumulated changes the scale of reproduction and the character of the next circuit.",
+                      "Misconception check: choosing \"All surplus-value is automatically returned as workers’ wages.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Surplus-value only compensates the physical wear of means of production.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -13003,8 +13059,8 @@
                   "choices": {
                     "ko": [
                       "M...M'는 돈의 자기증식을, P...P는 생산 자체를, C'...C'는 상품의 사회적 연결을 과도하게 독립된 것처럼 보이게 할 수 있기 때문이다.",
-                      "착시는 순환이 아니라 노동과정 내부에서만 생긴다.",
-                      "세 공식은 모두 같은 착시를 만들기 때문이다.",
+                      "착시는 순환이 아니라 노동과정 내부에서만 생긴다는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "세 공식은 모두 같은 착시를 만들기 때문이라는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "세 공식을 역사적 사회관계가 아니라 중립적인 계산식으로만 본다."
                     ],
                     "en": [
@@ -13018,6 +13074,20 @@
                   "explanation": {
                     "ko": "각 형식은 실제 운동의 한 면을 붙잡지만 전체를 대체하면 물신적 외관을 만든다. 서로 보정해서 읽어야 한다.",
                     "en": "Each form grasps a real side of the movement, but becomes fetishistic if it replaces the whole. They must be read as correcting one another."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 각 형식은 실제 운동의 한 면을 붙잡지만 전체를 대체하면 물신적 외관을 만든다. 서로 보정해서 읽어야 한다.",
+                      "오해 진단: \"착시는 순환이 아니라 노동과정 내부에서만 생긴다는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"세 공식은 모두 같은 착시를 만들기 때문이라는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"세 공식을 역사적 사회관계가 아니라 중립적인 계산식으로만 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Each form grasps a real side of the movement, but becomes fetishistic if it replaces the whole. They must be read as correcting one another.",
+                      "Misconception check: choosing \"Illusions arise only inside the labour-process, not in circulation.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Because all three formulas produce the same illusion.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"The formulas are natural-scientific laws and contain no social illusion.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -13033,7 +13103,7 @@
                       "한 자본가가 곧장 세 회사를 동시에 소유해야 한다는 뜻이다.",
                       "한 개별 자본도 계속 운동하려면 일부는 화폐, 일부는 생산, 일부는 상품 형태로 서로 다른 단계에 배치되어야 한다는 뜻이다.",
                       "세 형식을 자본 운동의 단계가 아니라 상품의 속성처럼 본다.",
-                      "생산자본이 나머지 형식을 제거한다는 뜻이다."
+                      "생산자본이 나머지 형식을 제거한다는 뜻이라는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "One capitalist must own three companies at the same time.",
@@ -13046,6 +13116,20 @@
                   "explanation": {
                     "ko": "순환은 단선적 행렬이 아니라 계속 이어지는 흐름이다. 한 단계가 막히면 다른 단계의 연속성도 흔들린다.",
                     "en": "The circuit is not a one-time line but a continuous flow. If one stage is blocked, continuity in the others is shaken."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"한 자본가가 곧장 세 회사를 동시에 소유해야 한다는 뜻이다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 순환은 단선적 행렬이 아니라 계속 이어지는 흐름이다. 한 단계가 막히면 다른 단계의 연속성도 흔들린다.",
+                      "오해 진단: \"세 형식을 자본 운동의 단계가 아니라 상품의 속성처럼 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"생산자본이 나머지 형식을 제거한다는 뜻이라는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"One capitalist must own three companies at the same time.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: The circuit is not a one-time line but a continuous flow. If one stage is blocked, continuity in the others is shaken.",
+                      "Misconception check: choosing \"The three forms are physically mixed in one object.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Productive capital eliminates the other forms.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -13263,15 +13347,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "유통시간이 생산시간보다 더 많은 잉여가치를 만든다.",
+                      "유통시간이 생산시간보다 더 많은 잉여가치를 만든다는 식으로 가치관계의 매개를 지우는 오해",
                       "생산시간에는 가치와 잉여가치가 만들어질 수 있지만, 순수 유통시간은 가치형태 전환에 필요한 시간일 뿐 그 자체로 가치를 만들지 않기 때문이다.",
-                      "생산시간과 유통시간의 차이를 회계상 편의로만 본다.",
-                      "생산시간은 시장에서 가격을 붙이는 시간이다."
+                      "생산시간과 유통시간의 차이를 회계상 편의로만 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "생산시간은 시장에서 가격을 붙이는 시간이다는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Circulation time creates more surplus-value than production time.",
                       "Because value and surplus-value can be produced in production time, whereas pure circulation time is time for form-changing and does not itself create value.",
-                      "The two terms mean the same thing.",
+                      "The two terms mean the same thing as a complete explanation.",
                       "Production time is the time of putting prices on the market."
                     ]
                   },
@@ -13279,6 +13363,20 @@
                   "explanation": {
                     "ko": "생산과 유통은 모두 필요하지만 같은 기능을 하지 않는다. 순수 유통은 자본 운동에 필요하지만 가치창조의 장소는 아니다.",
                     "en": "Production and circulation are both necessary but do not perform the same function. Pure circulation is necessary to capital's movement, but not the site of value creation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"유통시간이 생산시간보다 더 많은 잉여가치를 만든다는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 생산과 유통은 모두 필요하지만 같은 기능을 하지 않는다. 순수 유통은 자본 운동에 필요하지만 가치창조의 장소는 아니다.",
+                      "오해 진단: \"생산시간과 유통시간의 차이를 회계상 편의로만 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"생산시간은 시장에서 가격을 붙이는 시간이다는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Circulation time creates more surplus-value than production time.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Production and circulation are both necessary but do not perform the same function. Pure circulation is necessary to capital's movement, but not the site of value creation.",
+                      "Misconception check: choosing \"The two terms mean the same thing as a complete explanation.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Production time is the time of putting prices on the market.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -15366,7 +15464,7 @@
                   "choices": {
                     "ko": [
                       "리카도는 고정·유동 차이가 가격과 이윤율에 미치는 효과를 보려 했지만 가치생산의 원천과 가치 이전의 시간 구조를 분리하지 못했다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "판매와 구매가 그 자체로 보장된다고 전제하는 식으로 생산조건과 사회적 형태를 분리하는 오해",
                       "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
                       "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
                     ],
@@ -15381,6 +15479,20 @@
                   "explanation": {
                     "ko": "리카도는 고정·유동 차이가 가격과 이윤율에 미치는 효과를 보려 했지만 가치생산의 원천과 가치 이전의 시간 구조를 분리하지 못했다. 그래서 이 장은 자본이 어느 형태로 얼마나 오래 묶이는지를 구체적으로 묻는다.",
                     "en": "Ricardo tried to see how the fixed/circulating difference affects prices and profit rates, but did not separate the source of value production from the temporal structure of value transfer. The chapter therefore asks concretely in what form and for how long capital is tied up."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 리카도는 고정·유동 차이가 가격과 이윤율에 미치는 효과를 보려 했지만 가치생산의 원천과 가치 이전의 시간 구조를 분리하지 못했다. 그래서 이 장은 자본이 어느 형태로 얼마나 오래 묶이는지를 구체적으로 묻는다.",
+                      "오해 진단: \"판매와 구매가 그 자체로 보장된다고 전제하는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Ricardo tried to see how the fixed/circulating difference affects prices and profit rates, but did not separate the source of value production from the temporal structure of value transfer. The chapter therefore asks concretely in what form and for how long capital is tied up.",
+                      "Misconception check: choosing \"It assumes sale and purchase are automatically guaranteed.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It treats the issue as a merely technical classification or accounting label.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It fails to distinguish value production, value transfer, and turnover speed.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -17618,7 +17730,7 @@
                   "choices": {
                     "ko": [
                       "잉여가치는 노동에서 생산되지만, 자본가가 그것을 소비하거나 축적하려면 사회적 유통 속에서 화폐와 물질적 요소로 실현되어야 한다.",
-                      "자본가의 소비와 축적을 같은 지출로 취급한다.",
+                      "자본가의 소비와 축적을 같은 지출로 취급하는 식으로 생산조건과 사회적 형태를 분리하는 오해",
                       "생산된 잉여가치가 실현 과정을 거치지 않고 바로 축적된다고 본다.",
                       "화폐 이윤의 실현을 추가 생산수단과 노동력 확보와 동일시한다."
                     ],
@@ -17633,6 +17745,20 @@
                   "explanation": {
                     "ko": "잉여가치는 노동에서 생산되지만, 자본가가 그것을 소비하거나 축적하려면 사회적 유통 속에서 화폐와 물질적 요소로 실현되어야 한다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
                     "en": "Surplus-value is produced in labour, but for the capitalist to consume or accumulate it, it must be realized in money and material elements through social circulation. Seeing this tension separates capital's surface speed from the underlying value relation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 잉여가치는 노동에서 생산되지만, 자본가가 그것을 소비하거나 축적하려면 사회적 유통 속에서 화폐와 물질적 요소로 실현되어야 한다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
+                      "오해 진단: \"자본가의 소비와 축적을 같은 지출로 취급하는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"생산된 잉여가치가 실현 과정을 거치지 않고 바로 축적된다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"화폐 이윤의 실현을 추가 생산수단과 노동력 확보와 동일시한다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Surplus-value is produced in labour, but for the capitalist to consume or accumulate it, it must be realized in money and material elements through social circulation. Seeing this tension separates capital's surface speed from the underlying value relation.",
+                      "Misconception check: choosing \"Treats capitalist consumption and accumulation as the same expenditure.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes surplus-value is accumulated immediately once produced, without circulation.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes money profit automatically creates additional means of production and labour-power.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -19290,7 +19416,7 @@
                     "ko": [
                       "자본가는 임금과 생산수단 지출을 모두 비용가격으로 합쳐 보며, 잉여가치를 노동력의 특수한 역할이 아니라 총비용 위의 초과분으로 경험하기 때문이다.",
                       "임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다.",
-                      "비용가격을 상품가치 전체와 같은 것으로 본다.",
+                      "비용가격을 상품가치 전체와 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다."
                     ],
                     "en": [
@@ -19304,6 +19430,20 @@
                   "explanation": {
                     "ko": "자본가는 임금과 생산수단 지출을 모두 비용가격으로 합쳐 보며, 잉여가치를 노동력의 특수한 역할이 아니라 총비용 위의 초과분으로 경험하기 때문이다. 따라서 핵심은 판매량 하나가 아니라 가치보충과 물질보충이 동시에 맞는가이다.",
                     "en": "The capitalist groups wages and means-of-production outlays together as cost-price, experiencing surplus-value not as the specific result of labour-power but as an excess over total cost. The core issue is therefore not sales volume alone, but whether value replacement and material replacement fit together."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 자본가는 임금과 생산수단 지출을 모두 비용가격으로 합쳐 보며, 잉여가치를 노동력의 특수한 역할이 아니라 총비용 위의 초과분으로 경험하기 때문이다. 따라서 핵심은 판매량 하나가 아니라 가치보충과 물질보충이 동시에 맞는가이다.",
+                      "오해 진단: \"임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"비용가격을 상품가치 전체와 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The capitalist groups wages and means-of-production outlays together as cost-price, experiencing surplus-value not as the specific result of labour-power but as an excess over total cost. The core issue is therefore not sales volume alone, but whether value replacement and material replacement fit together.",
+                      "Misconception check: choosing \"Erases the specificity of labour-power because wages appear as a cost.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Identifies cost-price with the whole value of the commodity.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes exploitation need not be analyzed if one sees only the margin over price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -22103,7 +22243,7 @@
                       "서로 다른 부문 이윤율이 경쟁을 통해 평균화되고, 상품가치가 비용가격+평균이윤인 생산가격으로 나타나는 과정이다.",
                       "생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다.",
                       "평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.",
-                      "생산가격을 비용가격과 같은 것으로 본다."
+                      "생산가격을 비용가격과 같은 것으로 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "He analyzes how different branch profit rates are averaged through competition and commodity values appear as prices of production: cost-price plus average profit.",
@@ -22116,6 +22256,20 @@
                   "explanation": {
                     "ko": "서로 다른 부문 이윤율이 경쟁을 통해 평균화되고, 상품가치가 비용가격+평균이윤인 생산가격으로 나타나는 과정이다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
                     "en": "He analyzes how different branch profit rates are averaged through competition and commodity values appear as prices of production: cost-price plus average profit. This is the starting point for the analysis of average profit and prices of production."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 서로 다른 부문 이윤율이 경쟁을 통해 평균화되고, 상품가치가 비용가격+평균이윤인 생산가격으로 나타나는 과정이다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
+                      "오해 진단: \"생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"생산가격을 비용가격과 같은 것으로 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: He analyzes how different branch profit rates are averaged through competition and commodity values appear as prices of production: cost-price plus average profit. This is the starting point for the analysis of average profit and prices of production.",
+                      "Misconception check: choosing \"Assumes the law of value is abolished if prices of production differ from values.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes average profit always equals the surplus-value directly produced in each branch.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Identifies price of production with cost-price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -22156,10 +22310,10 @@
                   },
                   "choices": {
                     "ko": [
-                      "생산가격을 비용가격과 같은 것으로 본다.",
+                      "생산가격을 비용가격과 같은 것으로 보는 식으로 가치관계의 매개를 지우는 오해",
                       "총가격은 총가치에, 총이윤은 총잉여가치에 의존하며, 생산가격은 잉여가치가 부문 사이에 재분배되는 형태이기 때문이다.",
-                      "경쟁이 잉여가치를 새로 창조한다고 본다.",
-                      "총이윤과 총잉여가치의 연결을 끊어 버린다."
+                      "경쟁이 잉여가치를 새로 창조한다고 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "총이윤과 총잉여가치의 연결을 끊어 버리는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Identifies price of production with cost-price.",
@@ -22172,6 +22326,20 @@
                   "explanation": {
                     "ko": "총가격은 총가치에, 총이윤은 총잉여가치에 의존하며, 생산가격은 잉여가치가 부문 사이에 재분배되는 형태이기 때문이다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
                     "en": "Because total price depends on total value and total profit on total surplus-value; prices of production are the form in which surplus-value is redistributed among branches. Without this distinction, one cannot explain how value, market-value, and price of production diverge."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"생산가격을 비용가격과 같은 것으로 보는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 총가격은 총가치에, 총이윤은 총잉여가치에 의존하며, 생산가격은 잉여가치가 부문 사이에 재분배되는 형태이기 때문이다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
+                      "오해 진단: \"경쟁이 잉여가치를 새로 창조한다고 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"총이윤과 총잉여가치의 연결을 끊어 버리는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Identifies price of production with cost-price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Because total price depends on total value and total profit on total surplus-value; prices of production are the form in which surplus-value is redistributed among branches. Without this distinction, one cannot explain how value, market-value, and price of production diverge.",
+                      "Misconception check: choosing \"Assumes competition creates surplus-value.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Cuts the link between total profit and total surplus-value.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -22484,8 +22652,8 @@
                   "choices": {
                     "ko": [
                       "같은 종류의 상품도 생산조건이 다른 개별 자본에서 서로 다른 개별가치를 갖지만, 시장에서는 사회적으로 지배적인 조건을 반영한 시장가치로 맞부딪힌다.",
-                      "초과이윤을 대체로 독점 사기나 우연으로만 본다.",
-                      "개별가치와 시장가치를 같은 것으로 본다.",
+                      "초과이윤을 대체로 독점 사기나 우연으로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "개별가치와 시장가치를 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다."
                     ],
                     "en": [
@@ -22499,6 +22667,20 @@
                   "explanation": {
                     "ko": "같은 종류의 상품도 생산조건이 다른 개별 자본에서 서로 다른 개별가치를 갖지만, 시장에서는 사회적으로 지배적인 조건을 반영한 시장가치로 맞부딪힌다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
                     "en": "Commodities of the same kind have different individual values under different production conditions, but confront one another on the market through a market-value reflecting socially dominant conditions. The core is to see the mediation between individual value calculation and social competition."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 같은 종류의 상품도 생산조건이 다른 개별 자본에서 서로 다른 개별가치를 갖지만, 시장에서는 사회적으로 지배적인 조건을 반영한 시장가치로 맞부딪힌다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
+                      "오해 진단: \"초과이윤을 대체로 독점 사기나 우연으로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"개별가치와 시장가치를 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Commodities of the same kind have different individual values under different production conditions, but confront one another on the market through a market-value reflecting socially dominant conditions. The core is to see the mediation between individual value calculation and social competition.",
+                      "Misconception check: choosing \"Treats surplus-profit always as monopoly fraud or accident.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Identifies individual value with market-value.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes the average profit rate forms without capital moving between branches.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -23196,7 +23378,7 @@
                       "생산가격은 비용가격+평균이윤이라는 공식이지만, 그 배후에는 부문별 자본구성, 경쟁, 총잉여가치 재분배가 있다.",
                       "가격이 가치와 다르면 가치관계는 사라졌다고 본다.",
                       "시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.",
-                      "수요공급이 잉여가치를 생산한다고 본다."
+                      "수요공급이 잉여가치를 생산한다고 본다.로만 설명하는 해석"
                     ],
                     "en": [
                       "Price of production is cost-price plus average profit, but behind the formula stand branch composition, competition, and redistribution of total surplus-value.",
@@ -23209,6 +23391,20 @@
                   "explanation": {
                     "ko": "생산가격은 비용가격+평균이윤이라는 공식이지만, 그 배후에는 부문별 자본구성, 경쟁, 총잉여가치 재분배가 있다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
                     "en": "Price of production is cost-price plus average profit, but behind the formula stand branch composition, competition, and redistribution of total surplus-value. The core is to see the mediation between individual value calculation and social competition."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 생산가격은 비용가격+평균이윤이라는 공식이지만, 그 배후에는 부문별 자본구성, 경쟁, 총잉여가치 재분배가 있다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
+                      "오해 진단: \"가격이 가치와 다르면 가치관계는 사라졌다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"수요공급이 잉여가치를 생산한다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Price of production is cost-price plus average profit, but behind the formula stand branch composition, competition, and redistribution of total surplus-value. The core is to see the mediation between individual value calculation and social competition.",
+                      "Misconception check: choosing \"Assumes value relations disappear when prices differ from values.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Identifies short-term market-price fluctuation with the center of prices of production.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes supply and demand produce surplus-value.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -23550,8 +23746,8 @@
                     "ko": [
                       "생산성 상승은 더 많은 기계와 원료를 움직이게 하지만, 새 가치를 만드는 살아 있는 노동의 상대적 비중을 줄일 수 있기 때문이다.",
                       "기계의 생산성 향상을 새 가치의 직접 원천으로 본다.",
-                      "이윤율 저하 경향을 즉각적 붕괴 예언으로만 본다.",
-                      "불변자본과 가변자본 비중의 변화를 무시한다."
+                      "이윤율 저하 경향을 즉각적 붕괴 예언으로만 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "불변자본과 가변자본 비중의 변화를 무시하는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Rising productivity sets more machinery and materials in motion, but can reduce the relative share of living labour that creates new value.",
@@ -23564,6 +23760,20 @@
                   "explanation": {
                     "ko": "생산성 상승은 더 많은 기계와 원료를 움직이게 하지만, 새 가치를 만드는 살아 있는 노동의 상대적 비중을 줄일 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
                     "en": "Rising productivity sets more machinery and materials in motion, but can reduce the relative share of living labour that creates new value. So one must look not only at surface profitability but also at the underlying production and distribution of value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 생산성 상승은 더 많은 기계와 원료를 움직이게 하지만, 새 가치를 만드는 살아 있는 노동의 상대적 비중을 줄일 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
+                      "오해 진단: \"기계의 생산성 향상을 새 가치의 직접 원천으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"이윤율 저하 경향을 즉각적 붕괴 예언으로만 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"불변자본과 가변자본 비중의 변화를 무시하는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Rising productivity sets more machinery and materials in motion, but can reduce the relative share of living labour that creates new value. So one must look not only at surface profitability but also at the underlying production and distribution of value.",
+                      "Misconception check: choosing \"Assumes machinery directly creates new value.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Treats the falling-profit tendency only as a prophecy of immediate collapse.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Ignores changes in the shares of constant and variable capital.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -23906,7 +24116,7 @@
                       "물질적으로 더 많은 기계와 원료를 쓰더라도 그 가치가 싸지면 총자본 가치의 증가가 완화될 수 있기 때문이다.",
                       "해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.",
                       "불변자본의 물질량과 가치량을 구분하지 않는다.",
-                      "착취 강화가 이윤율과 무관하다고 본다."
+                      "착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석"
                     ],
                     "en": [
                       "Even if more machinery and materials are used physically, their cheaper value can moderate the rise of total capital value.",
@@ -23919,6 +24129,20 @@
                   "explanation": {
                     "ko": "물질적으로 더 많은 기계와 원료를 쓰더라도 그 가치가 싸지면 총자본 가치의 증가가 완화될 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
                     "en": "Even if more machinery and materials are used physically, their cheaper value can moderate the rise of total capital value. So one must look not only at surface profitability but also at the underlying production and distribution of value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 물질적으로 더 많은 기계와 원료를 쓰더라도 그 가치가 싸지면 총자본 가치의 증가가 완화될 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
+                      "오해 진단: \"해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"불변자본의 물질량과 가치량을 구분하지 않는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Even if more machinery and materials are used physically, their cheaper value can moderate the rise of total capital value. So one must look not only at surface profitability but also at the underlying production and distribution of value.",
+                      "Misconception check: choosing \"Treats foreign trade as a permanent solution to all profit-rate problems.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Fails to distinguish the physical mass and value magnitude of constant capital.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Treats intensified exploitation as unrelated to the profit rate.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -24082,7 +24306,7 @@
                   "choices": {
                     "ko": [
                       "해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.",
-                      "착취 강화가 이윤율과 무관하다고 본다.",
+                      "착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석",
                       "해외무역은 원료와 임금을 낮춰 압박을 완화할 수 있지만, 세계시장 경쟁과 불균등 발전의 모순을 함께 확대한다.",
                       "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다."
                     ],
@@ -24097,6 +24321,20 @@
                   "explanation": {
                     "ko": "해외무역은 원료와 임금을 낮춰 압박을 완화할 수 있지만, 세계시장 경쟁과 불균등 발전의 모순을 함께 확대한다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
                     "en": "Foreign trade can relieve pressure by cheapening inputs and wages, but it also expands contradictions of world-market competition and uneven development. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 해외무역은 원료와 임금을 낮춰 압박을 완화할 수 있지만, 세계시장 경쟁과 불균등 발전의 모순을 함께 확대한다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
+                      "오해 진단: \"상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Treats foreign trade as a permanent solution to all profit-rate problems.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Treats intensified exploitation as unrelated to the profit rate.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Foreign trade can relieve pressure by cheapening inputs and wages, but it also expands contradictions of world-market competition and uneven development. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals.",
+                      "Misconception check: choosing \"Treats counteracting influences as external variables unrelated to capitalist contradictions.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -24110,7 +24348,7 @@
                   "choices": {
                     "ko": [
                       "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.",
-                      "착취 강화가 이윤율과 무관하다고 본다.",
+                      "착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석",
                       "이 조치가 가변자본 비용과 착취율, 이윤율 압박을 어떻게 상쇄하는지와 어떤 새 의존을 만드는지 함께 봐야 한다.",
                       "상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다."
                     ],
@@ -24125,6 +24363,20 @@
                   "explanation": {
                     "ko": "이 조치가 가변자본 비용과 착취율, 이윤율 압박을 어떻게 상쇄하는지와 어떤 새 의존을 만드는지 함께 봐야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
                     "en": "One should examine how it counteracts pressure through variable-capital costs and exploitation, and what new dependencies it creates. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 이 조치가 가변자본 비용과 착취율, 이윤율 압박을 어떻게 상쇄하는지와 어떤 새 의존을 만드는지 함께 봐야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
+                      "오해 진단: \"상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Treats counteracting influences as external variables unrelated to capitalist contradictions.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Treats intensified exploitation as unrelated to the profit rate.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: One should examine how it counteracts pressure through variable-capital costs and exploitation, and what new dependencies it creates. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases.",
+                      "Misconception check: choosing \"Assumes the law is false if counteracting influences exist.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -24286,10 +24538,10 @@
                   },
                   "choices": {
                     "ko": [
-                      "과잉축적을 단순한 소비자의 변덕으로 설명한다.",
+                      "과잉축적을 단순한 소비자의 변덕으로 설명하는 식으로 가치관계의 매개를 지우는 오해",
                       "위기는 사회적 필요보다 물건이 절대적으로 많아서가 아니라, 이윤을 낼 수 있는 자본증식 조건에 비해 자본과 상품이 과잉이 되는 데서 온다.",
                       "신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다.",
-                      "평가절하를 자본주의 외부의 우연한 사고로만 본다."
+                      "평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Explains overaccumulation as mere consumer whim.",
@@ -24302,6 +24554,20 @@
                   "explanation": {
                     "ko": "위기는 사회적 필요보다 물건이 절대적으로 많아서가 아니라, 이윤을 낼 수 있는 자본증식 조건에 비해 자본과 상품이 과잉이 되는 데서 온다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
                     "en": "Crisis does not arise because goods are absolutely too abundant for social need, but because capital and commodities become excessive relative to profitable valorization. Without this distinction, capitalist forms appear as natural facts."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"과잉축적을 단순한 소비자의 변덕으로 설명하는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 위기는 사회적 필요보다 물건이 절대적으로 많아서가 아니라, 이윤을 낼 수 있는 자본증식 조건에 비해 자본과 상품이 과잉이 되는 데서 온다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
+                      "오해 진단: \"신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Explains overaccumulation as mere consumer whim.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Crisis does not arise because goods are absolutely too abundant for social need, but because capital and commodities become excessive relative to profitable valorization. Without this distinction, capitalist forms appear as natural facts.",
+                      "Misconception check: choosing \"Assumes credit expansion permanently solves capital’s contradictions.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Treats devaluation as only an accidental event external to capitalism.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -24342,9 +24608,9 @@
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 본다.",
-                      "평가절하를 자본주의 외부의 우연한 사고로만 본다.",
-                      "위기를 물건의 절대적 부족 문제로 좁혀 본다.",
+                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 보는 식으로 가치관계의 매개를 지우는 오해",
+                      "평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "위기를 물건의 절대적 부족 문제로 좁혀 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "이윤율 저하 경향이 단순 수치 변화가 아니라 과잉축적, 자본 평가절하, 생산 중단 같은 모순으로 폭발할 수 있음을 보여주기 때문이다."
                     ],
                     "en": [
@@ -24358,6 +24624,20 @@
                   "explanation": {
                     "ko": "이윤율 저하 경향이 단순 수치 변화가 아니라 과잉축적, 자본 평가절하, 생산 중단 같은 모순으로 폭발할 수 있음을 보여주기 때문이다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다.",
                     "en": "Because it shows that the falling-profit tendency is not merely a numerical change but can erupt as overaccumulation, devaluation of capital, and interruption of production. This connection leads into the more concrete forms of capital analyzed next."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"잉여가치량이 늘면 이윤율도 곧장 오른다고 보는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"위기를 물건의 절대적 부족 문제로 좁혀 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 이윤율 저하 경향이 단순 수치 변화가 아니라 과잉축적, 자본 평가절하, 생산 중단 같은 모순으로 폭발할 수 있음을 보여주기 때문이다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Assumes a larger mass of surplus-value necessarily raises the profit rate.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Treats devaluation as only an accidental event external to capitalism.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes crisis always arises from an absolute shortage of goods.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Because it shows that the falling-profit tendency is not merely a numerical change but can erupt as overaccumulation, devaluation of capital, and interruption of production. This connection leads into the more concrete forms of capital analyzed next."
+                    ]
                   }
                 }
               ]
@@ -25325,8 +25605,8 @@
                     "ko": [
                       "같은 화폐자본이 더 자주 상품매입과 판매를 반복하므로, 한 해 동안 중개하는 상품가치량이 커지기 때문이다.",
                       "상업이윤율을 회전수와 무관한 단순 마진으로 본다.",
-                      "재고회전과 생산과정을 같은 것으로 본다.",
-                      "상인자본의 선대액이 필요 없다고 본다."
+                      "재고회전과 생산과정을 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석"
                     ],
                     "en": [
                       "Because the same money-capital repeats purchase and sale more often, increasing the commodity value mediated during a year.",
@@ -25339,6 +25619,20 @@
                   "explanation": {
                     "ko": "같은 화폐자본이 더 자주 상품매입과 판매를 반복하므로, 한 해 동안 중개하는 상품가치량이 커지기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
                     "en": "Because the same money-capital repeats purchase and sale more often, increasing the commodity value mediated during a year. So surface revenue or fees should not be treated immediately as an independent source of value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 같은 화폐자본이 더 자주 상품매입과 판매를 반복하므로, 한 해 동안 중개하는 상품가치량이 커지기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
+                      "오해 진단: \"상업이윤율을 회전수와 무관한 단순 마진으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"재고회전과 생산과정을 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Because the same money-capital repeats purchase and sale more often, increasing the commodity value mediated during a year. So surface revenue or fees should not be treated immediately as an independent source of value.",
+                      "Misconception check: choosing \"Treats the commercial profit rate as a simple margin unrelated to turnover number.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Identifies inventory turnover with the production process.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes no advance of merchant capital is needed.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -25353,7 +25647,7 @@
                     "ko": [
                       "상업이윤율을 회전수와 무관한 단순 마진으로 본다.",
                       "상인자본의 회전은 가치 실현을 빠르게 할 수 있지만, 그 자체가 상품의 새 가치를 생산하는 것은 아니기 때문이다.",
-                      "상인자본의 선대액이 필요 없다고 본다.",
+                      "상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석",
                       "상품 판매 속도와 가치 실현을 완전히 분리한다."
                     ],
                     "en": [
@@ -25367,6 +25661,20 @@
                   "explanation": {
                     "ko": "상인자본의 회전은 가치 실현을 빠르게 할 수 있지만, 그 자체가 상품의 새 가치를 생산하는 것은 아니기 때문이다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
                     "en": "Merchant turnover can accelerate realization of value, but it does not itself produce the commodity’s new value. This distinction clarifies the route by which produced surplus-value is distributed."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"상업이윤율을 회전수와 무관한 단순 마진으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 상인자본의 회전은 가치 실현을 빠르게 할 수 있지만, 그 자체가 상품의 새 가치를 생산하는 것은 아니기 때문이다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
+                      "오해 진단: \"상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"상품 판매 속도와 가치 실현을 완전히 분리한다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Treats the commercial profit rate as a simple margin unrelated to turnover number.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Merchant turnover can accelerate realization of value, but it does not itself produce the commodity’s new value. This distinction clarifies the route by which produced surplus-value is distributed.",
+                      "Misconception check: choosing \"Assumes no advance of merchant capital is needed.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Completely separates selling speed from realization of value.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -26744,7 +27052,7 @@
                   "choices": {
                     "ko": [
                       "이자율은 이미 생산된 이윤을 대부자와 기능자본가가 나누는 비율로, 화폐자본 수요·공급과 계급 내 경쟁에 의해 규정되기 때문이다.",
-                      "높은 이자를 돈 자체의 생산성 증거로 본다.",
+                      "높은 이자를 돈 자체의 생산성 증거로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
                       "이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.",
                       "자연 이자율이 모든 시대에 고정되어 있다고 본다."
                     ],
@@ -26759,6 +27067,20 @@
                   "explanation": {
                     "ko": "이자율은 이미 생산된 이윤을 대부자와 기능자본가가 나누는 비율로, 화폐자본 수요·공급과 계급 내 경쟁에 의해 규정되기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
                     "en": "The interest rate is the ratio in which already produced profit is divided between lender and functioning capitalist, determined by money-capital supply and demand and intra-class competition. So surface revenue or fees should not be treated immediately as an independent source of value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 이자율은 이미 생산된 이윤을 대부자와 기능자본가가 나누는 비율로, 화폐자본 수요·공급과 계급 내 경쟁에 의해 규정되기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
+                      "오해 진단: \"높은 이자를 돈 자체의 생산성 증거로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"자연 이자율이 모든 시대에 고정되어 있다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The interest rate is the ratio in which already produced profit is divided between lender and functioning capitalist, determined by money-capital supply and demand and intra-class competition. So surface revenue or fees should not be treated immediately as an independent source of value.",
+                      "Misconception check: choosing \"Treats high interest as proof of money’s own productivity.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes the interest rate is directly determined in production like the rate of surplus-value.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes a natural rate of interest is fixed for all periods.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -28166,7 +28488,7 @@
                       "유휴 화폐, 예금, 상환금, 수익청구권은 대부 가능 자금으로 쌓일 수 있지만 곧바로 생산수단과 노동력의 확대를 뜻하지는 않는다.",
                       "낮은 금리를 대체로 강한 투자수요의 증거로 본다.",
                       "이자율을 중앙은행 결정으로만 보고 대부자본의 수급과 산업순환을 약하게 본다.",
-                      "화폐자본 축적과 현실축적을 구분하지 않는다."
+                      "화폐자본 축적과 현실축적을 구분하지 않는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Idle money, deposits, repayments, and revenue claims can accumulate as loanable funds without immediately meaning expanded means of production and labour-power.",
@@ -28179,6 +28501,20 @@
                   "explanation": {
                     "ko": "유휴 화폐, 예금, 상환금, 수익청구권은 대부 가능 자금으로 쌓일 수 있지만 곧바로 생산수단과 노동력의 확대를 뜻하지는 않는다. 따라서 표면의 금융수익이나 경영상 보수를 곧 독립적 가치 원천으로 보면 안 된다.",
                     "en": "Idle money, deposits, repayments, and revenue claims can accumulate as loanable funds without immediately meaning expanded means of production and labour-power. So surface financial returns or managerial rewards should not be treated as independent sources of value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 유휴 화폐, 예금, 상환금, 수익청구권은 대부 가능 자금으로 쌓일 수 있지만 곧바로 생산수단과 노동력의 확대를 뜻하지는 않는다. 따라서 표면의 금융수익이나 경영상 보수를 곧 독립적 가치 원천으로 보면 안 된다.",
+                      "오해 진단: \"낮은 금리를 대체로 강한 투자수요의 증거로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"이자율을 중앙은행 결정으로만 보고 대부자본의 수급과 산업순환을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"화폐자본 축적과 현실축적을 구분하지 않는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: Idle money, deposits, repayments, and revenue claims can accumulate as loanable funds without immediately meaning expanded means of production and labour-power. So surface financial returns or managerial rewards should not be treated as independent sources of value.",
+                      "Misconception check: choosing \"Treats low interest as always evidence of strong investment demand.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Explains interest rates only by central bank decisions.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Fails to distinguish money-capital accumulation from real accumulation.\" puts another category ahead of the key relation in the correct answer."
+                    ]
                   }
                 },
                 {
@@ -30527,7 +30863,7 @@
                   },
                   "choices": {
                     "ko": [
-                      "시가총액이 곧 같은 양의 현실자본이라고 본다.",
+                      "시가총액이 곧 같은 양의 현실자본이라고 보는 식으로 가치관계의 매개를 지우는 오해",
                       "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
                       "가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.",
                       "화폐자본과 금융청구권은 현실 축적을 매개하고 확대하지만, 그것들의 축적은 현실자본의 축적과 동일하지 않으며 위기 속에서 그 차이가 드러난다."
@@ -30543,6 +30879,20 @@
                   "explanation": {
                     "ko": "화폐자본과 금융청구권은 현실 축적을 매개하고 확대하지만, 그것들의 축적은 현실자본의 축적과 동일하지 않으며 위기 속에서 그 차이가 드러난다. 이 결론은 30-32장의 학습 목표다. 연결, 차이, 위기 속 검증이라는 세 요소를 함께 이해해야 한다.",
                     "en": "Money-capital and financial claims mediate and expand real accumulation, but their accumulation is not identical with the accumulation of real capital, and crisis reveals the difference. This is the learning goal of chapters 30-32: connection, difference, and verification in crisis must be understood together."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"시가총액이 곧 같은 양의 현실자본이라고 보는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 화폐자본과 금융청구권은 현실 축적을 매개하고 확대하지만, 그것들의 축적은 현실자본의 축적과 동일하지 않으며 위기 속에서 그 차이가 드러난다. 이 결론은 30-32장의 학습 목표다. 연결, 차이, 위기 속 검증이라는 세 요소를 함께 이해해야 한다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Equates market capitalization with the same quantity of real capital.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Treats finance as fully autonomous from production and realization.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Assumes fictitious capital is harmless because it is fictitious.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Money-capital and financial claims mediate and expand real accumulation, but their accumulation is not identical with the accumulation of real capital, and crisis reveals the difference. This is the learning goal of chapters 30-32: connection, difference, and verification in crisis must be understood together."
+                    ]
                   }
                 }
               ]
@@ -32273,7 +32623,7 @@
                   },
                   "choices": {
                     "ko": [
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다.",
+                      "지주의 권리를 시장가격 형성과 직접 동일시하는 식으로 가치관계의 매개를 지우는 오해",
                       "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
                       "추가 수익이 차지농의 자본투자에서 나온 것인지, 토지조건에서 나온 것인지, 그리고 토지소유가 그것을 어떻게 가져가는지 따져야 한다.",
                       "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다."
@@ -32290,7 +32640,21 @@
                     "ko": "지대는 단순한 계약 금액이 아니다. 임대계약은 생산에서 생긴 초과분이 누구에게 돌아가는지를 둘러싼 권리관계다.",
                     "en": "Rent is not just a contract amount. The lease is a relation of rights over who receives the surplus generated in production."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"지주의 권리를 시장가격 형성과 직접 동일시하는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 지대는 단순한 계약 금액이 아니다. 임대계약은 생산에서 생긴 초과분이 누구에게 돌아가는지를 둘러싼 권리관계다.",
+                      "오해 진단: \"농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"The landowner creates market prices at will.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It treats rent as the product of land itself without mediation by labour and market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: Rent is not just a contract amount. The lease is a relation of rights over who receives the surplus generated in production.",
+                      "Misconception check: choosing \"Capitalist wage-labour cannot exist in agriculture.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q5",
@@ -32545,8 +32909,8 @@
                   "choices": {
                     "ko": [
                       "같은 양의 자본과 노동을 투입해도 토지의 비옥도나 위치가 다르면 개별 생산비와 수익이 달라진다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
+                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
                     ],
                     "en": [
@@ -32561,7 +32925,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"It says natural conditions of land directly create value apart from labour.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -32900,9 +33278,9 @@
                   "choices": {
                     "ko": [
                       "가장 불리하지만 필요한 토지의 생산조건이 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "When the conditions of the worst land still needed for supply regulate market price, better land earns surplus-profit at the same price. But the result does not become rent directly; it hardens into rent through landed property and market price.",
@@ -32916,7 +33294,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"It treats the higher return of superior land as a natural return outside labour and market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -33162,7 +33554,7 @@
                     "ko": [
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
                       "같은 토지라도 첫 투자와 추가투자의 생산성이 다르면, 각 투자분의 수익 차이가 초과이윤을 만들 수 있다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
+                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
                     ],
                     "en": [
@@ -33177,7 +33569,21 @@
                     "ko": "같은 토지에서는 추가투자가 지대를 만들 수 없다는 설명은 집약적 경작의 차이를 놓친다. 같은 밭 안에서도 투자분마다 생산성이 다르면 초과이윤이 생길 수 있다.",
                     "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
                   },
-                  "points": 2
+                  "points": 2,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 같은 토지에서는 추가투자가 지대를 만들 수 없다는 설명은 집약적 경작의 차이를 놓친다. 같은 밭 안에서도 투자분마다 생산성이 다르면 초과이윤이 생길 수 있다.",
+                      "오해 진단: \"같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent.",
+                      "Misconception check: choosing \"It assumes additional investments on the same land cannot differ in productivity.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q4",
@@ -33255,9 +33661,9 @@
                   "choices": {
                     "ko": [
                       "같은 토지라도 첫 투자와 추가투자의 생산성이 다르면, 각 투자분의 수익 차이가 초과이윤을 만들 수 있다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Even on the same land, if initial and additional investments have different productivities, differences among investment portions can create surplus-profit. But the result does not become rent directly; it hardens into rent through landed property and market price.",
@@ -33271,7 +33677,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"It assumes additional investments on the same land cannot differ in productivity.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -33339,7 +33759,7 @@
                   "choices": {
                     "ko": [
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
+                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
                       "먼저 차액지대 II는 집약적 경작과 임대계약이 만나면서, 차지농의 개선투자가 나중에 지대 상승으로 넘어갈 수 있음을 보여준다. 그런 다음 누가 그 초과분을 가져가는지 보아야 한다.",
                       "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
                     ],
@@ -33355,7 +33775,21 @@
                     "ko": "심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
                     "en": "In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It assumes additional investments on the same land cannot differ in productivity.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q5",
@@ -33517,7 +33951,7 @@
                     "ko": [
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
                       "시장가격이 변하지 않아도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대의 배치가 달라진다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
+                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
                     ],
                     "en": [
@@ -33532,7 +33966,21 @@
                     "ko": "생산가격이 변하지 않는다고 해서 초과이윤까지 사라지는 것은 아니다. 같은 토지의 투자분들이 서로 다른 생산성을 보이면 지대의 내부 구성이 달라질 수 있다.",
                     "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
                   },
-                  "points": 2
+                  "points": 2,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 생산가격이 변하지 않는다고 해서 초과이윤까지 사라지는 것은 아니다. 같은 토지의 투자분들이 서로 다른 생산성을 보이면 지대의 내부 구성이 달라질 수 있다.",
+                      "오해 진단: \"생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent.",
+                      "Misconception check: choosing \"If the price of production is constant, no surplus-profit can arise.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q4",
@@ -33610,8 +34058,8 @@
                   "choices": {
                     "ko": [
                       "시장가격이 변하지 않아도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대의 배치가 달라진다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
+                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
                     ],
                     "en": [
@@ -33626,7 +34074,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"If the price of production is constant, no surplus-profit can arise.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -33694,7 +34156,7 @@
                   "choices": {
                     "ko": [
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
+                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
                       "먼저 가격이 그대로라는 말은 지대가 그대로라는 뜻이 아니라, 가격 조건이 일정한 상태에서 투자분별 차이를 보자는 뜻이다. 그런 다음 누가 그 초과분을 가져가는지 보아야 한다.",
                       "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
                     ],
@@ -33710,7 +34172,21 @@
                     "ko": "심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
                     "en": "In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"If the price of production is constant, no surplus-profit can arise.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q5",
@@ -33965,9 +34441,9 @@
                   "choices": {
                     "ko": [
                       "가격 하락은 일부 토지나 투자분의 지대를 줄일 수 있지만, 더 우월한 조건에는 새로운 차액을 만들 수도 있다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "가격 하락이 토지별 차액을 같은 방향으로 단순 축소한다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "가격 하락이 토지별 차액을 같은 방향으로 단순 축소한다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "A falling price can reduce rent on some lands or investment portions, while creating new differences for superior conditions. But the result does not become rent directly; it hardens into rent through landed property and market price.",
@@ -33981,7 +34457,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"가격 하락이 토지별 차액을 같은 방향으로 단순 축소한다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"If price falls, all surplus-profit must disappear.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -34320,9 +34810,9 @@
                   "choices": {
                     "ko": [
                       "더 나쁜 조건의 토지나 투자분까지 필요해지면 사회적 생산가격이 오르고, 기존 우등지의 차액이 커질 수 있다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "가격 상승을 경작 한계 변화보다 토지소유자의 요구로만 설명한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "가격 상승을 경작 한계 변화보다 토지소유자의 요구로만 설명하는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "When worse land or investment portions become necessary, the social price of production rises and the differential on existing superior land can grow. But the result does not become rent directly; it hardens into rent through landed property and market price.",
@@ -34336,7 +34826,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"가격 상승을 경작 한계 변화보다 토지소유자의 요구로만 설명하는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"Price rises always occur only at the landlord’s will.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -34675,9 +35179,9 @@
                   "choices": {
                     "ko": [
                       "한계지로 보이는 토지에서도 서로 다른 투자분의 생산성이 달라지면 일부 투자분이 초과이윤을 낼 수 있다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "한계지를 고정된 자연등급으로 보고 투자 조건의 변화를 약하게 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "한계지를 고정된 자연등급으로 보고 투자 조건의 변화를 약하게 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Even on land that appears marginal, different productivities among investment portions can let some portions earn surplus-profit. But the result does not become rent directly; it hardens into rent through landed property and market price.",
@@ -34691,7 +35195,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"한계지를 고정된 자연등급으로 보고 투자 조건의 변화를 약하게 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"The worst land can never yield surplus-profit under any condition.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -34937,7 +35455,7 @@
                     "ko": [
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
                       "토지소유자는 토지 접근을 허락하지 않음으로써 최열등지에서도 평균이윤을 넘는 지불을 요구할 수 있다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "절대지대를 차액지대처럼 비옥도 차이의 문제로만 본다.",
+                      "절대지대를 차액지대처럼 비옥도 차이의 문제로만 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
                     ],
                     "en": [
@@ -34952,7 +35470,21 @@
                     "ko": "절대지대를 비옥도 차이로만 설명하면 차액지대와 구분할 수 없다. 여기서 핵심은 토지소유가 토지 접근을 독점해 최열등지에서도 별도 지불을 요구할 수 있다는 점이다.",
                     "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
                   },
-                  "points": 2
+                  "points": 2,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 절대지대를 비옥도 차이로만 설명하면 차액지대와 구분할 수 없다. 여기서 핵심은 토지소유가 토지 접근을 독점해 최열등지에서도 별도 지불을 요구할 수 있다는 점이다.",
+                      "오해 진단: \"절대지대를 차액지대처럼 비옥도 차이의 문제로만 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent.",
+                      "Misconception check: choosing \"Absolute rent always arises only from differences in fertility.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q4",
@@ -35030,8 +35562,8 @@
                   "choices": {
                     "ko": [
                       "토지소유자는 토지 접근을 허락하지 않음으로써 최열등지에서도 평균이윤을 넘는 지불을 요구할 수 있다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "절대지대를 차액지대처럼 비옥도 차이의 문제로만 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
+                      "절대지대를 차액지대처럼 비옥도 차이의 문제로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
                     ],
                     "en": [
@@ -35046,7 +35578,21 @@
                     "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
                     "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
+                      "오해 진단: \"절대지대를 차액지대처럼 비옥도 차이의 문제로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
+                      "Misconception check: choosing \"Absolute rent always arises only from differences in fertility.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q2",
@@ -35647,8 +36193,8 @@
                     "ko": [
                       "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
                       "노동지대에서는 직접 노동이, 생산물지대에서는 산물이, 화폐지대에서는 돈이 지대형태가 되지만 각각의 배후 생산관계는 다르다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시하는 식으로 현상과 원인을 바로 동일시하는 오해",
+                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "It weakens how location and fertility can create surplus profit under a market price.",
@@ -35662,7 +36208,21 @@
                     "ko": "화폐로 냈다는 형식만으로 자본주의적 지대를 판정할 수는 없다. 임금노동, 자본가적 차지농, 토지소유의 관계가 성립하는지가 더 중요하다.",
                     "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
                   },
-                  "points": 2
+                  "points": 2,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 화폐로 냈다는 형식만으로 자본주의적 지대를 판정할 수는 없다. 임금노동, 자본가적 차지농, 토지소유의 관계가 성립하는지가 더 중요하다.",
+                      "오해 진단: \"화폐지대와 자본주의적 지대를 지불수단만 보고 동일시하는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent.",
+                      "Misconception check: choosing \"Whenever rent is paid in money, it is capitalist rent.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q4",
@@ -36891,7 +37451,7 @@
                       "경쟁의 결과를 수입형태들 사이의 이름 바꾸기로 본다.",
                       "경쟁 우위를 노동 고용과 무관한 순수한 시장성과로 본다.",
                       "경쟁 승리는 특정 자본이 더 큰 몫을 가져가는 이유일 수 있지만, 이윤이라는 몫이 생기는 원천은 따로 설명해야 한다.",
-                      "경쟁가격의 차이를 가치관계의 소멸로 본다."
+                      "경쟁가격의 차이를 가치관계의 소멸로 보는 식으로 자본 운동의 단계를 단순화하는 오해"
                     ],
                     "en": [
                       "Competitive victory is a legal act that turns rent into wages.",
@@ -36905,7 +37465,21 @@
                     "ko": "개별 자본의 성공과 자본 전체의 이윤 원천은 다른 문제다. 경쟁은 몫의 배분을 설명할 수 있지만, 그 몫의 재료가 되는 잉여가치까지 만들어내지는 않는다.",
                     "en": "The success of an individual capital and the source of profit for capital as a whole are different questions. Competition can explain allocation of shares, not the production of the surplus-value that supplies them."
                   },
-                  "points": 3
+                  "points": 3,
+                  "choiceFeedback": {
+                    "ko": [
+                      "오해 진단: \"경쟁의 결과를 수입형태들 사이의 이름 바꾸기로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"경쟁 우위를 노동 고용과 무관한 순수한 시장성과로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "핵심 확인: 개별 자본의 성공과 자본 전체의 이윤 원천은 다른 문제다. 경쟁은 몫의 배분을 설명할 수 있지만, 그 몫의 재료가 되는 잉여가치까지 만들어내지는 않는다.",
+                      "오해 진단: \"경쟁가격의 차이를 가치관계의 소멸로 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                    ],
+                    "en": [
+                      "Misconception check: choosing \"Competitive victory is a legal act that turns rent into wages.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"A capital that wins in competition no longer employs workers.\" puts another category ahead of the key relation in the correct answer.",
+                      "Right: The success of an individual capital and the source of profit for capital as a whole are different questions. Competition can explain allocation of shares, not the production of the surplus-value that supplies them.",
+                      "Misconception check: choosing \"If one wins in competition, commodity value disappears.\" puts another category ahead of the key relation in the correct answer."
+                    ]
+                  }
                 },
                 {
                   "id": "q5",

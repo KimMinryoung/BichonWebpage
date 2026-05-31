@@ -13,6 +13,7 @@ const extremeChoice = /(언제나|아무 역할|전혀|완전히 무관|영구�
 const weakChoice = /(장식품일 뿐|색깔만|게으른가 부지런한가|도덕성|자본가의 선의|몰래|법적으로 0|날씨만|오락이 되|물리적으로 두 배|전혀 사지 않고|아무도 .*원하지|환상이라|틀렸으므로)/;
 
 const issues = [];
+let choiceFeedbackQuestions = 0;
 
 function add(kind, label, text) {
   issues.push({ kind, label, text: String(text || '').replace(/\s+/g, ' ').trim() });
@@ -42,6 +43,14 @@ for (const collection of data.collections || []) {
         const qLabel = lessonLabel + '/' + question.id;
         checkText('prompt', qLabel, question.prompt && question.prompt.ko);
         checkText('explanation', qLabel, question.explanation && question.explanation.ko);
+        if (question.choiceFeedback) {
+          choiceFeedbackQuestions += 1;
+          ['ko', 'en'].forEach(locale => {
+            const items = question.choiceFeedback && question.choiceFeedback[locale];
+            if (!Array.isArray(items) || items.length !== 4) add('choice-feedback-shape', qLabel, locale);
+            (items || []).forEach((item, feedbackIndex) => checkText('choiceFeedback' + feedbackIndex, qLabel, item));
+          });
+        }
 
         const choices = question.choices && question.choices.ko || [];
         const lengths = choices.map(choice => String(choice || '').length);
@@ -71,7 +80,7 @@ const counts = issues.reduce((acc, issue) => {
 const blockingKinds = new Set(['honorific', 'embedded-marker', 'generic-prompt', 'extreme-distractor', 'weak-distractor']);
 const blocking = issues.filter(issue => blockingKinds.has(issue.kind)).length;
 
-console.log(JSON.stringify({ ok: blocking === 0, blocking, counts, total: issues.length }, null, 2));
+console.log(JSON.stringify({ ok: blocking === 0, blocking, counts, total: issues.length, choiceFeedbackQuestions }, null, 2));
 issues.slice(0, 200).forEach(issue => {
   console.log([issue.kind, issue.label, issue.text].join(' | '));
 });

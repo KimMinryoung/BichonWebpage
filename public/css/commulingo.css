@@ -504,6 +504,43 @@
     font-weight: 700;
 }
 
+.commu-choice-feedback {
+    background: color-mix(in srgb, var(--accent) 8%, var(--bg-surface));
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+    color: var(--text-primary);
+    display: block;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    padding: 10px 12px;
+}
+
+.commu-streak-badge {
+    align-self: start;
+    animation: commu-streak-pop 420ms ease;
+    background: color-mix(in srgb, var(--accent-green) 26%, var(--bg-surface));
+    border: 1px solid color-mix(in srgb, var(--accent-green) 58%, var(--border));
+    color: var(--text-primary);
+    display: inline-flex;
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: 8px 10px;
+}
+
+.commu-feedback.is-perfect {
+    animation: commu-perfect-rise 640ms ease;
+    background: color-mix(in srgb, var(--accent-green) 20%, var(--bg-surface));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-green) 28%, transparent), 0 0 0 3px color-mix(in srgb, var(--accent-green) 12%, transparent);
+}
+
+.commu-quiz.has-answer-reward .commu-meter-track {
+    animation: commu-meter-glow 520ms ease;
+}
+
+.commu-quiz.has-perfect-reward .commu-question {
+    animation: commu-perfect-shell 620ms ease;
+}
+
 .commu-feedback.is-wrong {
     background: color-mix(in srgb, var(--accent-red) 12%, var(--bg-surface));
     border-left-color: var(--accent-red);
@@ -548,9 +585,58 @@
     }
 }
 
+@keyframes commu-streak-pop {
+    0% {
+        opacity: 0;
+        transform: translateY(4px) scale(0.96);
+    }
+    55% {
+        transform: translateY(0) scale(1.04);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes commu-meter-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-green) 0%, transparent);
+    }
+    45% {
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-green) 22%, transparent);
+    }
+}
+
+@keyframes commu-perfect-rise {
+    0% {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    60% {
+        transform: translateY(0) scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes commu-perfect-shell {
+    0%, 100% {
+        box-shadow: none;
+    }
+    45% {
+        box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--accent-green) 16%, transparent);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .commu-choice,
-    .commu-feedback {
+    .commu-feedback,
+    .commu-streak-badge,
+    .commu-quiz.has-answer-reward .commu-meter-track,
+    .commu-quiz.has-perfect-reward .commu-question {
         animation: none;
         transition: none;
     }

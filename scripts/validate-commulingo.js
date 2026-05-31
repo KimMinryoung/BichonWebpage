@@ -45,6 +45,22 @@ function allLocalizedText(value, label) {
   checkText(value && value.en, label + '.en');
 }
 
+function checkChoiceFeedback(value, qLabel) {
+  if (typeof value === 'undefined') return;
+  if (!value || typeof value !== 'object') { fail(qLabel + '.choiceFeedback must be localized arrays'); return; }
+  ['ko', 'en'].forEach(function(locale) {
+    const items = value[locale];
+    if (!Array.isArray(items) || items.length !== 4) {
+      fail(qLabel + '.choiceFeedback.' + locale + ' length != 4');
+      return;
+    }
+    items.forEach(function(item, index) {
+      if (!String(item || '').trim()) fail(qLabel + '.choiceFeedback.' + locale + '[' + index + '] is empty');
+      checkText(item, qLabel + '.choiceFeedback.' + locale + '[' + index + ']');
+    });
+  });
+}
+
 function checkConceptMap(value, label) {
   if (!value || typeof value !== 'object') { fail(label + ' must have conceptMap'); return; }
   ['ko', 'en'].forEach(function(locale) {
@@ -113,6 +129,7 @@ Object.keys(expected).forEach(function(collectionId) {
         if (question.points !== (lesson.level === 'advanced' ? 3 : 2)) fail(qLabel + ' points do not match lesson level');
         allLocalizedText(question.prompt, qLabel + '.prompt');
         allLocalizedText(question.explanation, qLabel + '.explanation');
+        checkChoiceFeedback(question.choiceFeedback, qLabel);
         if (!Number.isInteger(question.answer) || question.answer < 0 || question.answer > 3) fail(qLabel + ' answer must be 0..3');
         else distribution[question.answer] += 1;
         if (!question.choices || !Array.isArray(question.choices.ko) || !Array.isArray(question.choices.en)) {
