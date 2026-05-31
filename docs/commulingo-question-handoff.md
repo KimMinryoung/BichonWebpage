@@ -1,26 +1,95 @@
-# Commulingo Question Handoff
+# CommuLingo Handoff
 
-## Goal
+## Purpose
 
-Commulingo is a chapter-by-chapter learning path for revolutionary theory. The current dataset starts with Marx's Capital, volumes 1-3, and keeps two lessons per chapter:
+CommuLingo is a chapter-by-chapter learning path for visitors who are not already comfortable with Marxist theory. The current public scope is Marx's Capital, volumes 1-3.
 
-- Basic: 5 questions
-- Advanced: 5 questions
+The service should feel like guided study, not an exam ambush. The learner should be able to read a short chapter card, get a concept brief before the quiz, answer five questions, and understand why the distinction matters.
 
-The quiz format stays multiple choice. The next quality pass should improve the questions, not replace the interaction model.
+## Current Public Scope
+
+- Capital Volume I: 33 chapters
+- Capital Volume II: 21 chapters
+- Capital Volume III: 52 chapters
+- Two lessons per chapter:
+  - Basic: 5 multiple-choice questions
+  - Advanced: 5 multiple-choice questions
+- Current totals:
+  - 106 chapters
+  - 212 lessons
+  - 1,060 questions
 
 ## Current Files
 
 - Data: `data/commulingo/lessons.json`
-- Public route: `routes/commulingo.js`
+- Public route and data API: `routes/commulingo.js`
 - Page template: `views/public/commulingo.ejs`
 - Client UI: `public/js/commulingo.js`
 - Styles: `public/css/commulingo.css`
+- Content validator: `scripts/validate-commulingo.js`
 - Progress table migration: `scripts/migrations/005_commulingo_progress.sql`
 
-## Data Shape
+## Completed Work, May 31 2026
 
-The lesson data is organized as:
+The recent pass changed CommuLingo from a full-question dump page into a lighter chapter learning interface.
+
+Completed content work:
+
+- Published all Capital Volumes I, II, and III chapters.
+- Rewrote and improved late Volume III questions, especially chapters 33-52.
+- Improved card summaries and learning-focus text for Volume I, Volume II, and earlier Volume III chapters.
+- Removed exact duplicate card text such as the old Volume I Chapter 1 repetition.
+- Added a validator script for collection counts, lesson counts, question counts, answer distribution, and known bad phrase checks.
+
+Completed UI work:
+
+- Volume sections initially show only buttons for Volume I, II, and III.
+- Clicking a volume expands that volume's chapters.
+- The volume containing the most recently selected lesson auto-expands when returning to the lesson list.
+- Basic and advanced lessons are no longer separate duplicate cards.
+- Each chapter card now shows:
+  - chapter title
+  - summary
+  - learning focus
+  - Basic row with progress, question count, and start action
+  - Advanced row with progress, question count, and start action
+- Completed Basic/Advanced rows get a distinct container background and border, not only a progress bar.
+- The old part-level arrow diagram was removed.
+- The pre-quiz concept brief now uses explanation blocks rather than a generic A -> B -> C flow.
+- Some key chapters have custom concept diagrams, for example:
+  - Volume I Chapter 1: use-value, value, and the confusion to avoid
+  - Volume I Chapter 16: absolute surplus-value, relative surplus-value, and their common point
+  - Volume II Chapter 7: production time, circulation time, turnover time
+  - Volume III Chapter 24: M-M', missing production link, fetishism
+
+Completed performance work:
+
+- Server now memoizes `lessons.json` by file mtime instead of parsing the 2.4MB file on every request.
+- The initial `/commulingo` HTML embeds only a slim catalog:
+  - collection data
+  - chapter titles
+  - summaries
+  - learning-focus text
+  - lesson ids and question counts
+- The initial HTML no longer embeds question arrays.
+- Lesson questions are lazy-loaded from `/commulingo/lesson/:lessonId?v={catalogVersion}` when the learner starts Basic or Advanced.
+- `/commulingo/catalog.json` is available for cacheable catalog access.
+- Cache policy:
+  - unversioned catalog: `public, max-age=3600, stale-while-revalidate=86400`
+  - versioned lesson detail: `public, max-age=31536000, immutable`
+
+Production verification from the last deployment:
+
+- Commit: `e8926d1 Cache CommuLingo catalog and lazy-load lessons`
+- Production `/commulingo` returned `200`.
+- Production initial HTML was about `145,936` bytes.
+- Embedded question count in initial HTML was `0`.
+- Catalog payload was about `137,362` bytes.
+- A single lesson payload was about `10KB`.
+
+## Current Data Shape
+
+The source data still keeps questions in `data/commulingo/lessons.json`:
 
 ```json
 {
@@ -30,13 +99,15 @@ The lesson data is organized as:
       "title": { "ko": "자본론 1권", "en": "Capital Volume I" },
       "chapters": [
         {
-          "id": "capital-vol1-ch01",
+          "id": "capital-v1-ch01",
           "chapterNumber": 1,
           "title": { "ko": "상품", "en": "Commodities" },
           "summary": { "ko": "...", "en": "..." },
+          "learningFocus": { "ko": "...", "en": "..." },
           "lessons": [
             {
-              "id": "capital-vol1-ch01-basic",
+              "id": "capital-v1-ch01-basic",
+              "level": "basic",
               "title": { "ko": "상품 기본", "en": "Commodities: Basics" },
               "questions": []
             }
@@ -52,7 +123,9 @@ Each question should preserve the existing fields:
 
 ```json
 {
+  "id": "q1",
   "type": "multiple_choice",
+  "points": 2,
   "prompt": { "ko": "...", "en": "..." },
   "choices": { "ko": ["...", "...", "...", "..."], "en": ["...", "...", "...", "..."] },
   "answer": 0,
@@ -60,17 +133,25 @@ Each question should preserve the existing fields:
 }
 ```
 
+Runtime delivery is different from source storage:
+
+- `/commulingo` receives a slim catalog generated from the source JSON.
+- `/commulingo/lesson/:lessonId` returns full questions for one lesson.
+- Do not assume question arrays are present in the browser's initial `commulingo-data` script tag.
+
 ## Quality Target
 
-Good Commulingo questions should feel like guided study, not an exam ambush. A user who has not fully mastered the chapter should still learn something from the prompt, the choices, and the explanation.
+Good CommuLingo questions should teach a concept through the prompt, the choices, and the explanation.
+
+Korean quality matters. Korean prompts and choices must read as natural Korean written for Korean speakers. Avoid stiff translationese, unnatural word order, and repeated template phrases. If a sentence sounds like English translated word-for-word, rewrite it.
 
 The user specifically rejected questions like:
 
 - "이 장을 원문에서 찾고 맥락화할 때 가장 유용한 표지는 무엇입니까?"
 - "다음 중 이 장을 읽는 방식으로 가장 문제가 큰 것은 무엇입니까?"
-- Vague meta-reading questions about how to read the chapter
-- Questions where the answer is obvious because the distractors are silly
-- Questions that ask for "the core of the chapter" as the first item without giving any conceptual runway
+- Vague meta-reading questions about how to read the chapter.
+- Questions where the answer is obvious because the distractors are silly.
+- Questions that ask for "the core of the chapter" as the first item without giving any conceptual runway.
 
 The desired direction is closer to:
 
@@ -78,6 +159,7 @@ The desired direction is closer to:
 - Use a concrete situation, quote-like paraphrase, or conceptual tension.
 - Make wrong choices plausible misunderstandings.
 - Use explanations to teach the distinction, not merely say "correct".
+- Before a learner answers, help them distinguish key concepts visually or schematically.
 
 ## Lesson Progression
 
@@ -154,6 +236,81 @@ Each explanation should do three things in 1-3 sentences:
 
 Do not merely repeat the correct choice.
 
+## Concept Brief And Diagram Guidance
+
+The concept brief appears before the first question. It should help a beginner distinguish the chapter's main concepts before answering.
+
+Current implementation:
+
+- `renderIntro()` displays summary, learning focus, and a diagram.
+- `conceptMap(lesson)` in `public/js/commulingo.js` provides custom diagrams for selected chapters.
+- `fallbackConceptMap(lesson)` builds a generic but chapter-specific explanation from title, summary, and learning focus.
+
+Good concept diagrams should explain distinctions, not merely show a table of contents flow.
+
+Good diagram patterns:
+
+- Use-value vs value.
+- Necessary labor vs surplus labor.
+- Absolute surplus-value vs relative surplus-value.
+- Production time vs circulation time vs turnover time.
+- Real capital vs loanable money-capital vs fictitious capital.
+- Profit, interest, rent as income forms tied to underlying production relations.
+
+Avoid diagrams like:
+
+- "상품의 두 얼굴 -> 가치형태와 화폐 -> 자본 분석의 출발점" when shown for every chapter in the same part.
+- Generic part-level flow diagrams repeated across multiple chapters.
+- Diagrams whose meaning is not obvious to a beginner.
+
+## Known Quality Gaps
+
+The main remaining problem is content quality variance. Some chapters still have questions that repeat the same idea too often, especially within the five questions of a lesson. Some choices are also too weak: the wrong options are sometimes obviously wrong, too abstract, or not diagnostic of a real misunderstanding.
+
+Priority quality improvements:
+
+1. Audit repeated question substance within each Basic/Advanced pair.
+2. Replace weak distractors with plausible misunderstandings.
+3. Make Korean prompts more natural and less template-like.
+4. Add more custom concept diagrams for chapters where learners need a distinction before solving questions.
+5. Improve explanations that merely restate the answer.
+6. Ensure Basic and Advanced lessons feel different:
+   - Basic should clarify the chapter's central distinction.
+   - Advanced should test mediation, contradiction, critique, or system-level relation.
+
+Useful automated checks to add later:
+
+- Detect repeated Korean prompt openings within the same lesson.
+- Detect repeated explanation endings.
+- Flag choices containing extreme words like "언제나", "아무 역할도", "전혀" unless conceptually justified.
+- Flag answer choices that are much longer than the others.
+- Flag lessons where all five correct answers are conceptually the same sentence.
+
+## Recommended QA Workflow
+
+Recommended workflow for a chapter rewrite:
+
+1. Pick one chapter only.
+2. Create a 5-8 bullet chapter argument map:
+   - object of analysis
+   - central problem
+   - key categories
+   - movement of the argument
+   - common misunderstandings
+   - what Basic learners should grasp
+   - what Advanced learners should grasp
+3. Audit the existing 10 questions:
+   - repeated concept?
+   - weak distractors?
+   - unnatural Korean?
+   - explanation only repeats answer?
+4. Rewrite only the weak items.
+5. For every wrong choice, label the misconception it tests.
+6. Run `node scripts/validate-commulingo.js`.
+7. Spot-check in the UI.
+
+Do not mass-generate all volumes in one pass. That was the source of many generic questions.
+
 ## Example Conversion
 
 Weak:
@@ -191,20 +348,6 @@ Better multiple-choice:
 }
 ```
 
-## Generation Workflow
-
-Recommended workflow for a full rewrite:
-
-1. Work one chapter at a time.
-2. Before writing questions, create a 5-8 bullet "chapter argument map".
-3. Draft 10 questions from the map: 5 basic, 5 advanced.
-4. For each question, label the misconception tested by each wrong choice.
-5. Run a critic pass that deletes meta-reading questions and obvious-answer questions.
-6. Validate JSON.
-7. Spot-check in the UI.
-
-Do not mass-generate all volumes in one prompt without a chapter map. That was the source of many low-quality generic questions.
-
 ## Codex Prompt To Use
 
 When using Codex, give it a content-generation role before asking for edits:
@@ -221,58 +364,53 @@ For Capital Volume {n}, Chapter {m}, first write a chapter argument map in Korea
 - what basic learners should grasp
 - what advanced learners should grasp
 
-Then produce exactly 10 multiple-choice questions:
-- 5 basic, 5 advanced
+Then audit the existing Basic and Advanced questions:
+- identify repeated substance
+- identify weak or implausible distractors
+- identify unnatural Korean
+- identify explanations that merely repeat the answer
+
+Then produce only the replacement questions needed:
 - 4 choices each
 - plausible distractors
 - explanations that teach the concept
 - no meta-reading questions
 - no obvious joke choices
-- first question must be low-pressure and concrete
+- first Basic question must be low-pressure and concrete
 
-Only after the questions pass this rubric, update `data/commulingo/lessons.json`.
+Only after the questions pass this rubric, update data/commulingo/lessons.json.
 ```
 
-## Why ChatGPT May Produce Better Questions Than Codex By Default
+## Validation Commands
 
-This is likely not because Codex cannot write good educational content. The issue is workflow pressure.
+Run these after content or UI changes:
 
-Codex is optimized for repository work: inspect files, edit code, keep JSON valid, run checks, preserve existing structure, and finish the task. Under that pressure, it tends to satisfy the schema at scale and can drift into generic templated questions.
+```bash
+node scripts/validate-commulingo.js
+node --check public/js/commulingo.js
+node --check routes/commulingo.js
+```
 
-ChatGPT, especially in a normal chat setting, is usually being used in a more editorial mode: it can spend the whole answer on pedagogy, examples, tone, and conceptual sequencing without also managing file edits, UI constraints, JSON escaping, and verification.
+For local UI smoke testing, run a temporary server on an unused port and check:
 
-To get better questions from Codex, split the job into two phases:
-
-1. Content phase: no file edits. Generate and critique the chapter map and questions.
-2. Integration phase: write the accepted questions into JSON and run checks.
-
-If Codex is asked to generate hundreds of questions and commit them in one pass, quality will degrade. If it is asked to behave as a study-guide editor chapter by chapter, with a rubric and critic pass, it can do much better while still avoiding manual copy-paste.
+- `/commulingo` returns 200.
+- Initial HTML contains 0 embedded questions.
+- Volume buttons render quickly.
+- Expanding a volume shows chapter cards.
+- Starting a lesson fetches exactly one `/commulingo/lesson/:lessonId?v=...` request.
+- The concept brief appears before questions.
+- Returning to lessons keeps the selected volume expanded.
+- Mobile viewport has no horizontal overflow.
 
 ## Suggested Automation
 
-Add a script later, for example `scripts/generate_commulingo_chapter.py`, that:
+Add a script later, for example `scripts/audit_commulingo_quality.js`, that:
 
-1. Reads one chapter entry from `data/commulingo/lessons.json`.
-2. Sends the chapter title, summary, and source notes to a high-quality model.
-3. Requires a chapter argument map plus 10 questions.
-4. Runs a second model pass as critic.
-5. Writes only the approved chapter back to JSON.
-6. Validates the file with `python3 -m json.tool`.
+1. Reads one chapter or all chapters from `data/commulingo/lessons.json`.
+2. Computes prompt/explanation similarity within each lesson.
+3. Flags repeated stems and repeated conceptual answers.
+4. Flags obvious or caricatured distractors.
+5. Flags missing or overly generic custom concept diagrams.
+6. Outputs a chapter-by-chapter quality report.
 
-This would let ChatGPT-like content quality and Codex-like repo integration work together without manual copy-paste.
-
-## Acceptance Checklist
-
-Before accepting a rewritten chapter:
-
-- Each lesson has exactly 5 questions.
-- The first basic question is concrete and low-pressure.
-- Every prompt asks about chapter content, not how to read or locate the chapter.
-- Wrong choices are plausible misconceptions.
-- No answer is obvious from tone alone.
-- Explanations teach the concept.
-- Basic and advanced questions are meaningfully different.
-- Korean text is natural, not stiff translationese.
-- English text is acceptable if the site is viewed in English.
-- `python3 -m json.tool data/commulingo/lessons.json` passes.
-- The `/commulingo` page renders the chapter correctly.
+A separate generation script can then rewrite only flagged chapters, rather than regenerating the whole dataset.
