@@ -18770,27 +18770,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이전 경제학 비판에서 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the critique of earlier economics?"
+                    "ko": "왜 마르크스는 케네와 스미스를 단순히 낡은 이론으로 폐기하지 않고 길게 검토하는가?",
+                    "en": "Why does Marx examine Quesnay and Smith at length instead of simply discarding them as obsolete theories?"
                   },
                   "choices": {
                     "ko": [
-                      "이전 이론은 사회적 순환을 보려 했지만, 그것을 자본주의적 가치관계와 부문 재생산의 조건으로 끝까지 밀고 가지 못했다.",
-                      "생산물 가치 전체를 수입형태로 환원해 불변자본의 보전을 놓친다.",
-                      "국민소득 흐름만 알면 사회적 재생산이 설명된다고 본다.",
-                      "중농주의의 농업 중심 도식을 일반적 자본주의 분석으로 그대로 받아들인다."
+                      "그들이 사회적 생산물이 계급과 부문 사이를 순환한다는 문제를 열었지만, 자본주의적 가치보충과 불변자본 보전까지는 밀고 가지 못했기 때문이다.",
+                      "스미스가 생산물 가치 전체를 임금·이윤·지대로 나누어도 불변자본 보전 문제가 남지 않기 때문이다.",
+                      "국민소득의 흐름만 알면 생산수단 보충과 사회적 재생산도 충분히 설명되기 때문이다.",
+                      "중농주의의 농업 중심 도식이 자본주의 전체에 그대로 적용될 수 있기 때문이다."
                     ],
                     "en": [
-                      "Earlier theory tried to see social circulation, but did not carry it through as capitalist value relations and departmental conditions of reproduction.",
-                      "Assumes the product’s value can be dissolved into wages, profit, and rent without problem.",
-                      "Assumes national-income flows alone explain social reproduction.",
-                      "Accepts the Physiocratic agricultural schema as a general analysis of capitalism."
+                      "Because they opened the problem of the social product circulating among classes and departments, but did not carry it through to capitalist value replacement and preservation of constant capital.",
+                      "Because Smith can divide the whole value of the product into wages, profit, and rent without leaving a problem of constant-capital replacement.",
+                      "Because national-income flows are enough to explain replacement of means of production and social reproduction.",
+                      "Because the Physiocratic agricultural schema can be applied directly to capitalism as a whole."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이전 이론은 사회적 순환을 보려 했지만, 그것을 자본주의적 가치관계와 부문 재생산의 조건으로 끝까지 밀고 가지 못했다. 이 긴장은 자본주의적 재생산이 사적 결정과 사회적 의존을 동시에 갖는다는 데서 나온다.",
-                    "en": "Earlier theory tried to see social circulation, but did not carry it through as capitalist value relations and departmental conditions of reproduction. This tension arises because capitalist reproduction combines private decisions with social interdependence."
+                    "ko": "마르크스의 비판은 선행 이론을 무시하는 것이 아니라 그들이 포착한 진짜 문제를 더 엄밀한 형태로 다시 세우는 것이다. 케네는 사회적 순환을 보았고, 스미스는 수입형태를 분석했지만, 둘 다 생산수단으로 보충되어야 할 불변자본 부분을 충분히 처리하지 못했다.",
+                    "en": "Marx is not ignoring earlier theory; he is restating the real problem it partly discovered in a stricter form. Quesnay saw social circulation, and Smith analyzed revenue forms, but neither adequately handled the part of the product that must replace constant capital as means of production."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 선행 이론의 성과와 한계를 동시에 보아야 20장의 재생산 도식이 왜 필요한지 보입니다.",
+                      "이 답은 스미스식 환원의 문제를 정답으로 만들어 버립니다. 불변자본 보전이 사라지는 것이 바로 한계입니다.",
+                      "국민소득 흐름만으로는 다음 생산에 필요한 생산수단 보충을 설명할 수 없습니다.",
+                      "마르크스는 중농주의의 통찰을 인정하지만 농업 중심 도식을 일반 법칙으로 받아들이지는 않습니다."
+                    ],
+                    "en": [
+                      "Correct. Seeing both the achievement and the limit of earlier theory explains why the reproduction schemes of Chapter 20 are needed.",
+                      "This turns Smith’s reduction into the answer. The disappearance of constant-capital replacement is precisely the problem.",
+                      "National-income flows alone cannot explain replacement of the means of production needed for the next cycle.",
+                      "Marx recognizes the Physiocrats’ insight but does not accept the agricultural schema as a general law."
+                    ]
                   }
                 },
                 {
@@ -18798,27 +18812,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "케네의 경제표와 마르크스의 재생산 도식을 이어 주면서도 갈라놓는 매개는 무엇인가?",
-                    "en": "What mediates and separates Quesnay’s Tableau from Marx’s reproduction schemes?"
+                    "ko": "케네의 경제표를 마르크스의 재생산 도식으로 다시 읽으려면 무엇을 바꾸어야 하는가?",
+                    "en": "What has to change if Quesnay’s Tableau is to be reread as Marx’s reproduction scheme?"
                   },
                   "choices": {
                     "ko": [
-                      "생산물 가치 전체를 수입형태로 환원해 불변자본의 보전을 놓친다.",
-                      "사회적 생산물의 순환을 부문별 가치구성과 자본주의적 계급관계 속에서 다시 정식화하는 것이다.",
-                      "중농주의의 농업 중심 도식을 일반적 자본주의 분석으로 그대로 받아들인다.",
-                      "생산수단 보충을 소비재 구매와 같은 문제로 본다."
+                      "생산물 가치 전체를 임금·이윤·지대로만 분해하는 방식을 유지한다.",
+                      "사회적 생산물의 순환을 생산수단/소비수단 부문, 가치구성, 자본주의적 계급관계 속에서 다시 정식화한다.",
+                      "농업만이 순생산물을 만든다는 전제를 자본주의 전체의 일반 법칙으로 둔다.",
+                      "생산수단 보충을 소비재 구매와 같은 종류의 지출로 처리한다."
                     ],
                     "en": [
-                      "Assumes the product’s value can be dissolved into wages, profit, and rent without problem.",
-                      "It is the reformulation of the circulation of the social product through departmental value composition and capitalist class relations.",
-                      "Accepts the Physiocratic agricultural schema as a general analysis of capitalism.",
-                      "Treats replacement of means of production as the same problem as buying consumer goods."
+                      "Keep the method of dissolving the whole product into wages, profit, and rent.",
+                      "Reformulate circulation of the social product through departments of means of production and consumption, value composition, and capitalist class relations.",
+                      "Treat the premise that only agriculture produces a net product as a general law of capitalism.",
+                      "Treat replacement of means of production as the same kind of expenditure as buying consumption goods."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "사회적 생산물의 순환을 부문별 가치구성과 자본주의적 계급관계 속에서 다시 정식화하는 것이다. 매개를 보아야 한 부문의 운동이 다른 부문의 재생산 조건이 되는 방식을 이해할 수 있다.",
-                    "en": "It is the reformulation of the circulation of the social product through departmental value composition and capitalist class relations. Seeing the mediation shows how the movement of one department becomes a condition for reproduction in another."
+                    "ko": "경제표의 중요성은 사회 전체의 순환을 한눈에 보려 했다는 데 있다. 그러나 마르크스에게는 그 순환이 생산수단 부문과 소비수단 부문, c/v/m의 가치구성, 자본가와 노동자의 계급관계 속에서 다시 써져야 한다.",
+                    "en": "The importance of the Tableau is that it tried to view social circulation as a whole. For Marx, however, that circulation must be rewritten through the departments of means of production and consumption, the value composition c/v/m, and the class relation between capitalists and workers."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 답은 스미스식 수입 환원을 그대로 남깁니다. 불변자본 보충이 빠집니다.",
+                      "핵심입니다. 마르크스는 경제표의 순환 통찰을 부문·가치구성·계급관계로 재구성합니다.",
+                      "중농주의의 농업 특권은 마르크스가 넘어서야 할 한계입니다.",
+                      "생산수단 보충은 소비재 구매와 다릅니다. 다음 생산의 물질적 조건을 되돌리는 문제입니다."
+                    ],
+                    "en": [
+                      "This keeps Smith’s revenue reduction and loses replacement of constant capital.",
+                      "Correct. Marx reconstructs the Tableau’s insight into circulation through departments, value composition, and class relations.",
+                      "The Physiocratic privilege of agriculture is a limit Marx must overcome.",
+                      "Replacing means of production is not the same as buying consumer goods; it restores the material conditions of the next production cycle."
+                    ]
                   }
                 },
                 {
@@ -18826,27 +18854,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "스미스식으로 모든 생산물 가치를 임금·이윤·지대로만 분해하면 무엇이 사라지는가?",
-                    "en": "What disappears if the whole value of the product is dissolved, Smith-style, into wages, profit, and rent?"
+                    "ko": "스미스처럼 생산물 가치를 전부 임금·이윤·지대로만 나누면 다음 생산에서 무엇을 설명할 수 없게 되는가?",
+                    "en": "If the whole value of the product is divided only into wages, profit, and rent as in Smith, what becomes impossible to explain for the next cycle?"
                   },
                   "choices": {
                     "ko": [
-                      "중농주의의 농업 중심 도식을 일반적 자본주의 분석으로 그대로 받아들인다.",
-                      "생산수단 보충을 소비재 구매와 같은 문제로 본다.",
-                      "다음 생산에 보충되어야 할 불변자본 부분, 특히 생산수단의 가치와 물질적 대체가 사라진다.",
-                      "이론사 검토를 단순한 역사 소개로만 본다."
+                      "중농주의의 농업 중심 도식이 왜 자본주의 전체에 맞는지",
+                      "생산수단 보충도 결국 소비재 구매와 같은 문제라는 점",
+                      "소모된 기계·원료·보조재의 가치와 물질적 대체가 어디서 나오는지",
+                      "이론사 검토가 왜 단순한 역사 소개로 끝나는지"
                     ],
                     "en": [
-                      "Accepts the Physiocratic agricultural schema as a general analysis of capitalism.",
-                      "Treats replacement of means of production as the same problem as buying consumer goods.",
-                      "The constant-capital portion that must be replaced for the next production cycle, especially the value and material replacement of means of production, disappears.",
-                      "Treats the history of theory as a mere historical introduction."
+                      "Why the Physiocratic agricultural schema fits capitalism as a whole.",
+                      "Why replacement of means of production is ultimately the same problem as buying consumer goods.",
+                      "Where the value and material replacement of used-up machinery, raw materials, and auxiliary materials comes from.",
+                      "Why a review of earlier theory ends as mere historical description."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "다음 생산에 보충되어야 할 불변자본 부분, 특히 생산수단의 가치와 물질적 대체가 사라진다. 마르크스의 비판은 시장 표면을 지우는 것이 아니라 그 표면이 어떤 사회적 조건을 전제하는지 밝힌다.",
-                    "en": "The constant-capital portion that must be replaced for the next production cycle, especially the value and material replacement of means of production, disappears. Marx’s critique does not erase the market surface; it reveals the social conditions presupposed by that surface."
+                    "ko": "임금·이윤·지대는 수입형태다. 사회적 총생산물 전체를 수입으로만 풀어 버리면, 다음 생산에 다시 들어가야 할 기계와 원료의 가치부분, 즉 불변자본 보전이 설명되지 않는다.",
+                    "en": "Wages, profit, and rent are revenue forms. If the whole social product is dissolved into revenue, the value part that must re-enter production as machinery and raw materials, the preservation of constant capital, is no longer explained."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "농업 중심 도식의 일반화가 아니라 불변자본 보전 문제가 핵심입니다.",
+                      "생산수단 보충은 소비재 구매와 달리 다음 생산의 객관적 조건을 되돌리는 문제입니다.",
+                      "핵심입니다. 수입형태만 보면 불변자본의 가치와 물질적 대체가 사라집니다.",
+                      "이론사 검토는 역사 소개가 아니라 재생산 도식의 범주를 정리하는 단계입니다."
+                    ],
+                    "en": [
+                      "The issue is not generalizing the agricultural schema but preserving constant capital.",
+                      "Replacing means of production restores the objective conditions of production; it is not the same as buying consumer goods.",
+                      "Correct. Revenue forms alone make the value and material replacement of constant capital disappear.",
+                      "The review of theory is not mere history; it clarifies the categories needed for reproduction schemes."
+                    ]
                   }
                 },
                 {
@@ -18854,27 +18896,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "GDP 소득분배표는 임금과 이윤을 보여주지만 중간재와 설비 보충을 흐릿하게 만든다. 어떤 마르크스적 질문이 필요한가?",
-                    "en": "A GDP income table shows wages and profits but blurs intermediate inputs and equipment replacement. What Marxian question is needed?"
+                    "ko": "GDP 소득분배표가 임금과 이윤은 잘 보여주지만 중간재·설비 보충을 흐리게 만든다. 무엇을 추가로 물어야 하는가?",
+                    "en": "A GDP income table shows wages and profits clearly but obscures intermediate goods and equipment replacement. What additional question must be asked?"
                   },
                   "choices": {
                     "ko": [
-                      "이론사 검토를 단순한 역사 소개로만 본다.",
-                      "생산수단 보충을 소비재 구매와 같은 문제로 본다.",
-                      "사회적 총생산물 중 어느 부분이 소비될 수 있고 어느 부분이 자본으로 보충되어야 하는지 물어야 한다.",
-                      "국민소득 흐름만 알면 사회적 재생산이 설명된다고 본다."
+                      "이론사 검토는 단순한 역사 소개이므로 현재 통계와 무관하다는 점",
+                      "생산수단 보충도 소비재 구매와 같은 소비 지출인지 여부",
+                      "총생산물 중 어느 부분이 수입으로 소비될 수 있고 어느 부분이 생산수단으로 보충되어야 하는지",
+                      "국민소득 흐름만 알면 사회적 재생산이 모두 설명되는지"
                     ],
                     "en": [
-                      "Treats the history of theory as a mere historical introduction.",
-                      "Treats replacement of means of production as the same problem as buying consumer goods.",
-                      "One must ask which part of the total social product can be consumed and which part must replace capital.",
-                      "Assumes national-income flows alone explain social reproduction."
+                      "Whether a review of earlier theory is mere historical description and irrelevant to current statistics.",
+                      "Whether replacing means of production is the same consumer expenditure as buying consumption goods.",
+                      "Which part of the total product can be consumed as revenue and which part must replace means of production.",
+                      "Whether national-income flows alone explain all of social reproduction."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "사회적 총생산물 중 어느 부분이 소비될 수 있고 어느 부분이 자본으로 보충되어야 하는지 물어야 한다. 현대적 사례에서도 문제는 동일하다. 화폐수익만이 아니라 재생산의 물질적·가치적 조건을 함께 봐야 한다.",
-                    "en": "One must ask which part of the total social product can be consumed and which part must replace capital. The issue is the same in modern cases: not money revenue alone, but the material and value conditions of reproduction together."
+                    "ko": "소득분배표는 누가 얼마의 수입을 받는지는 보여 주지만, 사회적 총생산물 중 얼마가 다음 생산의 생산수단으로 되돌아가야 하는지는 흐릴 수 있다. 마르크스식 질문은 수입으로 소비되는 부분과 자본으로 보충되는 부분을 나누어 묻는 것이다.",
+                    "en": "An income table can show who receives how much revenue, while obscuring how much of the total product must return as means of production for the next cycle. Marx’s question separates the part consumed as revenue from the part replaced as capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "현재 통계에도 같은 문제가 있습니다. 수입형태만 보면 보충되어야 할 자본 부분이 흐려집니다.",
+                      "생산수단 보충은 소비 지출이 아니라 자본의 물질적·가치적 보전입니다.",
+                      "핵심입니다. 수입과 자본 보충을 나누어야 사회적 재생산이 보입니다.",
+                      "국민소득 흐름만으로는 생산수단 보충과 부문 비례를 설명할 수 없습니다."
+                    ],
+                    "en": [
+                      "The same problem applies to current statistics: revenue forms can obscure the capital part that must be replaced.",
+                      "Replacement of means of production is material and value preservation of capital, not consumer spending.",
+                      "Correct. Social reproduction becomes visible only by distinguishing revenue from capital replacement.",
+                      "National-income flows alone cannot explain replacement of means of production and departmental proportions."
+                    ]
                   }
                 },
                 {
@@ -18882,27 +18938,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이 주제에 관한 이전의 설명들의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of Former Presentations of the Subject?"
+                    "ko": "왜 19장의 선행 이론 비판 뒤에 20장의 단순재생산 도식이 바로 필요한가?",
+                    "en": "Why is Chapter 20’s simple reproduction scheme needed immediately after Chapter 19’s critique of earlier theory?"
                   },
                   "choices": {
                     "ko": [
-                      "이론사 검토를 단순한 역사 소개로만 본다.",
-                      "국민소득 흐름만 알면 사회적 재생산이 설명된다고 본다.",
-                      "생산물 가치 전체를 수입형태로 환원해 불변자본의 보전을 놓친다.",
-                      "단순재생산 도식에 들어가기 전, 왜 자본/수입과 불변자본 보충을 엄밀히 구분해야 하는지 정리한다."
+                      "이론사 검토가 단순한 역사 소개로 끝나기 때문이다.",
+                      "국민소득 흐름만으로 이미 사회적 재생산이 충분히 설명되기 때문이다.",
+                      "생산물 가치 전체를 수입형태로 환원해도 불변자본 보전 문제가 없기 때문이다.",
+                      "수입으로 소비될 부분과 생산수단으로 보충될 부분을 구분해, 같은 규모의 재생산 조건을 직접 보여 주어야 하기 때문이다."
                     ],
                     "en": [
-                      "Treats the history of theory as a mere historical introduction.",
-                      "Assumes national-income flows alone explain social reproduction.",
-                      "Assumes the product’s value can be dissolved into wages, profit, and rent without problem.",
-                      "Before the scheme of simple reproduction, it clarifies why capital/revenue and replacement of constant capital must be strictly distinguished."
+                      "Because the review of earlier theory ends as mere historical description.",
+                      "Because national-income flows already explain social reproduction adequately.",
+                      "Because reducing the whole product to revenue forms leaves no problem of constant-capital replacement.",
+                      "Because the parts consumed as revenue and the parts replacing means of production must be distinguished so the conditions of reproduction on the same scale can be shown directly."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "단순재생산 도식에 들어가기 전, 왜 자본/수입과 불변자본 보충을 엄밀히 구분해야 하는지 정리한다. 이 연결을 통해 분석은 더 구체적인 형태 또는 다음 권의 표면형태로 이동한다.",
-                    "en": "Before the scheme of simple reproduction, it clarifies why capital/revenue and replacement of constant capital must be strictly distinguished. Through this connection, the analysis moves to a more concrete form or to the surface forms treated in the next volume."
+                    "ko": "19장은 선행 이론의 한계가 불변자본 보전과 수입/자본 구분을 흐리는 데 있음을 정리한다. 그러면 다음 단계는 이 구분을 실제 부문 교환으로 보여 주는 것이다. 그래서 20장의 단순재생산 도식이 필요하다.",
+                    "en": "Chapter 19 shows that earlier theory blurred preservation of constant capital and the distinction between revenue and capital. The next step is to show that distinction in actual departmental exchange. That is why Chapter 20’s simple reproduction scheme is needed."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "역사 소개가 아니라 다음 도식에 필요한 범주 정리입니다.",
+                      "국민소득 흐름만으로는 불변자본 보전과 부문 교환을 설명할 수 없습니다.",
+                      "바로 그 환원이 문제입니다. 생산수단으로 보충될 부분이 사라집니다.",
+                      "핵심입니다. 선행 이론 비판은 단순재생산 도식을 위한 범주 정리로 이어집니다."
+                    ],
+                    "en": [
+                      "It is not mere history; it prepares the categories needed for the next scheme.",
+                      "National-income flows alone cannot explain preservation of constant capital and departmental exchange.",
+                      "That reduction is the problem: the part replacing means of production disappears.",
+                      "Correct. The critique of earlier theory leads to the categories required for the simple reproduction scheme."
+                    ]
                   }
                 }
               ]
@@ -19125,27 +19195,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "단순재생산의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in simple reproduction?"
+                    "ko": "사회 전체가 같은 규모로 재생산되려면, 개별 기업들이 각자 판매에 성공하는 것만으로 충분하지 않은 이유는 무엇인가?",
+                    "en": "Why is it not enough for each firm to sell successfully if society is to reproduce on the same scale?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의 생산은 사적으로 이루어지지만, 같은 규모로 반복되려면 사회적 총생산물이 정확한 부문 비례로 서로 보충되어야 한다.",
-                      "소비수요만 충분하면 생산수단 보충은 자동이라고 본다.",
-                      "단순재생산을 정체나 비자본주의 상태로 오해한다.",
-                      "I부문과 II부문을 임의의 산업분류로만 본다."
+                      "사적으로 생산된 총생산물이 다음 생산에 필요한 생산수단과 소비수단으로 정확히 보충되어야 하기 때문이다.",
+                      "소비수요만 충분하면 생산수단 보충은 자동으로 해결되기 때문이다.",
+                      "단순재생산은 자본주의가 아니라 정체된 전자본주의 상태를 뜻하기 때문이다.",
+                      "I부문과 II부문은 분석 편의를 위한 임의의 산업분류일 뿐이기 때문이다."
                     ],
                     "en": [
-                      "Capitalist production is private, yet repetition on the same scale requires the total social product to replace itself through exact departmental proportions.",
-                      "Assumes sufficient consumer demand automatically replaces means of production.",
-                      "Mistakes simple reproduction for stagnation or a non-capitalist state.",
-                      "Treats Departments I and II as arbitrary industry labels."
+                      "Because the privately produced total product must replace the means of production and means of consumption required for the next cycle in the right proportions.",
+                      "Because sufficient consumer demand automatically solves replacement of means of production.",
+                      "Because simple reproduction means a stagnant pre-capitalist state rather than capitalism.",
+                      "Because Departments I and II are only arbitrary industrial classifications for convenience."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본주의 생산은 사적으로 이루어지지만, 같은 규모로 반복되려면 사회적 총생산물이 정확한 부문 비례로 서로 보충되어야 한다. 이 긴장은 자본주의적 재생산이 사적 결정과 사회적 의존을 동시에 갖는다는 데서 나온다.",
-                    "en": "Capitalist production is private, yet repetition on the same scale requires the total social product to replace itself through exact departmental proportions. This tension arises because capitalist reproduction combines private decisions with social interdependence."
+                    "ko": "단순재생산은 성장이 없다는 말이 아니라 같은 규모의 반복 조건을 묻는 것이다. 사회 전체에서는 생산수단 부문과 소비수단 부문이 서로의 c, v, m을 맞는 형태로 보충해야 다음 생산이 같은 규모로 다시 시작된다.",
+                    "en": "Simple reproduction does not mean non-capitalist stagnation; it asks for the conditions of repetition on the same scale. At the social level, the departments of means of production and consumption must replace one another’s c, v, and m in the right forms for production to begin again on the same scale."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 판매 성공만이 아니라 다음 생산의 생산수단과 소비수단 보충 비례가 맞아야 합니다.",
+                      "소비수요만으로는 생산수단 부문의 c 보충을 설명할 수 없습니다.",
+                      "단순재생산은 자본주의 분석 안에서 같은 규모 반복의 조건을 묻는 추상입니다.",
+                      "I/II부문은 임의 분류가 아니라 생산수단과 소비수단의 재생산 기능을 구분합니다."
+                    ],
+                    "en": [
+                      "Correct. Sales success is not enough; the replacement proportions of means of production and consumption must fit.",
+                      "Consumer demand alone cannot explain replacement of constant capital in Department I.",
+                      "Simple reproduction is an abstraction within capitalism that asks about repetition on the same scale.",
+                      "Departments I and II distinguish reproduction functions, not arbitrary industries."
+                    ]
                   }
                 },
                 {
@@ -19153,27 +19237,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "I부문과 II부문을 매개하는 것은 무엇인가?",
-                    "en": "What mediates Department I and Department II?"
+                    "ko": "단순재생산 도식에서 I(v+m)=IIc라는 관계가 말하는 것은 무엇인가?",
+                    "en": "In the simple reproduction scheme, what does the relation I(v+m)=IIc express?"
                   },
                   "choices": {
                     "ko": [
-                      "소비수요만 충분하면 생산수단 보충은 자동이라고 본다.",
-                      "I부문의 v+m이 II부문의 소비수단을 구매하고, II부문의 c가 I부문의 생산수단으로 보충되는 교환이다.",
-                      "I부문과 II부문을 임의의 산업분류로만 본다.",
-                      "불변자본 보충을 자본가의 개인소비와 혼동한다."
+                      "소비수요만 있으면 생산수단 보충은 자동이라는 뜻이다.",
+                      "I부문의 노동자·자본가가 소비수단을 사는 지출과 II부문이 생산수단을 보충해야 하는 필요가 서로 맞아야 한다는 뜻이다.",
+                      "I부문과 II부문은 임의의 산업분류라서 실제 재생산 조건과 무관하다는 뜻이다.",
+                      "불변자본 보충은 자본가의 개인소비와 같은 지출이라는 뜻이다."
                     ],
                     "en": [
-                      "Assumes sufficient consumer demand automatically replaces means of production.",
-                      "The mediation is the exchange in which I(v+s) buys Department II’s consumer goods while IIc is replaced by Department I’s means of production.",
-                      "Treats Departments I and II as arbitrary industry labels.",
-                      "Confuses replacement of constant capital with capitalist personal consumption."
+                      "That consumer demand automatically solves replacement of means of production.",
+                      "That the expenditure of Department I workers and capitalists on consumption goods must match Department II’s need to replace means of production.",
+                      "That Departments I and II are arbitrary industrial classifications unrelated to reproduction conditions.",
+                      "That replacing constant capital is the same expenditure as capitalist personal consumption."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "I부문의 v+m이 II부문의 소비수단을 구매하고, II부문의 c가 I부문의 생산수단으로 보충되는 교환이다. 매개를 보아야 한 부문의 운동이 다른 부문의 재생산 조건이 되는 방식을 이해할 수 있다.",
-                    "en": "The mediation is the exchange in which I(v+s) buys Department II’s consumer goods while IIc is replaced by Department I’s means of production. Seeing the mediation shows how the movement of one department becomes a condition for reproduction in another."
+                    "ko": "I부문의 v+m은 임금과 잉여가치로서 소비수단을 사러 간다. II부문의 c는 다음 생산을 위해 생산수단으로 보충되어야 한다. 단순재생산이 가능하려면 이 두 흐름이 가치와 물질 양쪽에서 맞아야 한다.",
+                    "en": "Department I’s v+m goes to buy consumption goods as wages and surplus-value. Department II’s c must be replaced by means of production for the next cycle. Simple reproduction requires these two flows to match in both value and material form."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "소비수요만으로는 II부문의 c가 생산수단으로 보충되는지를 설명할 수 없습니다.",
+                      "핵심입니다. I의 소비수단 수요와 II의 생산수단 보충 필요가 서로 맞아야 합니다.",
+                      "I/II부문은 재생산에서 서로 다른 물질적 기능을 나타냅니다.",
+                      "불변자본 보충은 개인소비가 아니라 다음 생산을 위한 생산수단 대체입니다."
+                    ],
+                    "en": [
+                      "Consumer demand alone does not explain whether Department II’s c is replaced by means of production.",
+                      "Correct. Department I’s demand for consumption goods must match Department II’s need for means of production.",
+                      "Departments I and II name different material functions in reproduction.",
+                      "Constant-capital replacement is not personal consumption; it is replacement of means of production."
+                    ]
                   }
                 },
                 {
@@ -19181,27 +19279,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "소비가 충분하면 단순재생산은 자동으로 보장된다는 설명은 왜 부족한가?",
-                    "en": "Why is it insufficient to say simple reproduction is guaranteed if consumption is sufficient?"
+                    "ko": "소비재 판매가 잘되면 단순재생산도 자동으로 보장된다는 설명은 왜 틀리는가?",
+                    "en": "Why is it wrong to say that strong sales of consumption goods automatically guarantee simple reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "I부문과 II부문을 임의의 산업분류로만 본다.",
-                      "불변자본 보충을 자본가의 개인소비와 혼동한다.",
-                      "소비수요만으로는 생산수단의 보충, 불변자본의 가치 대체, 부문 간 비례가 보장되지 않기 때문이다.",
-                      "개별 기업의 판매 합계가 곧 사회적 균형이라고 본다."
+                      "I부문과 II부문을 임의의 산업분류로만 보기 때문이다.",
+                      "불변자본 보충을 자본가의 개인소비와 혼동하기 때문이다.",
+                      "소비수단 판매와 별도로 소모된 생산수단의 가치와 물질적 대체가 맞아야 하기 때문이다.",
+                      "개별 기업의 판매 합계가 곧 사회적 균형이기 때문이다."
                     ],
                     "en": [
-                      "Treats Departments I and II as arbitrary industry labels.",
-                      "Confuses replacement of constant capital with capitalist personal consumption.",
-                      "Consumer demand alone does not guarantee replacement of means of production, value replacement of constant capital, or departmental proportions.",
-                      "Equates the sum of individual sales with social equilibrium."
+                      "Because it treats Departments I and II as arbitrary industrial classifications.",
+                      "Because it confuses constant-capital replacement with capitalist personal consumption.",
+                      "Because apart from sales of consumption goods, the value and material replacement of used-up means of production must fit.",
+                      "Because the sum of individual firms’ sales is social equilibrium."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "소비수요만으로는 생산수단의 보충, 불변자본의 가치 대체, 부문 간 비례가 보장되지 않기 때문이다. 마르크스의 비판은 시장 표면을 지우는 것이 아니라 그 표면이 어떤 사회적 조건을 전제하는지 밝힌다.",
-                    "en": "Consumer demand alone does not guarantee replacement of means of production, value replacement of constant capital, or departmental proportions. Marx’s critique does not erase the market surface; it reveals the social conditions presupposed by that surface."
+                    "ko": "소비재가 팔렸다는 사실은 II부문 상품의 실현을 말해 줄 수 있다. 그러나 단순재생산에는 I부문이 II부문의 c를 생산수단으로 보충하고, II부문이 I부문의 v+m에 소비수단을 공급하는 교환이 맞아야 한다.",
+                    "en": "The sale of consumption goods may show realization of Department II’s commodities. But simple reproduction also requires the exchange in which Department I replaces Department II’s c with means of production, while Department II supplies consumption goods for Department I’s v+m."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "부문 구분을 임의로 보면 재생산의 물질적 조건이 사라집니다.",
+                      "불변자본 보충은 개인소비가 아니라 생산수단 대체입니다.",
+                      "핵심입니다. 소비재 판매와 생산수단 보충은 함께 맞아야 합니다.",
+                      "개별 판매의 합계가 부문 간 비례를 자동으로 보장하지는 않습니다."
+                    ],
+                    "en": [
+                      "If departments are treated as arbitrary, the material conditions of reproduction disappear.",
+                      "Constant-capital replacement is replacement of means of production, not personal consumption.",
+                      "Correct. Sales of consumption goods and replacement of means of production must fit together.",
+                      "The sum of individual sales does not automatically guarantee departmental proportions."
+                    ]
                   }
                 },
                 {
@@ -19209,27 +19321,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가계 소비는 안정적이지만 핵심 생산장비 보충이 지연되어 다음 생산이 줄어든다. 단순재생산 관점에서 무엇이 문제인가?",
-                    "en": "Household consumption is stable, but replacement of key production equipment is delayed and next production falls. What is the problem from simple reproduction?"
+                    "ko": "가계 소비는 안정적이지만 핵심 장비 교체가 지연되어 다음 생산이 줄어든다. 단순재생산 도식으로 보면 어디가 막힌 것인가?",
+                    "en": "Household consumption is stable, but replacement of key equipment is delayed and the next production cycle shrinks. Where is the blockage in the simple reproduction scheme?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 기업의 판매 합계가 곧 사회적 균형이라고 본다.",
-                      "불변자본 보충을 자본가의 개인소비와 혼동한다.",
-                      "소비수단의 판매 안정만으로는 충분하지 않고, 소모된 생산수단이 가치와 물질 양쪽에서 보충되어야 한다.",
-                      "단순재생산을 정체나 비자본주의 상태로 오해한다."
+                      "개별 기업의 판매 합계가 사회적 균형이라는 점",
+                      "불변자본 보충을 자본가의 개인소비와 같은 것으로 보는 점",
+                      "소비수단의 실현은 되었지만 소모된 생산수단이 가치와 물질 형태로 제때 보충되지 못한 점",
+                      "단순재생산은 정체 상태라 장비 보충을 고려하지 않는다는 점"
                     ],
                     "en": [
-                      "Equates the sum of individual sales with social equilibrium.",
-                      "Confuses replacement of constant capital with capitalist personal consumption.",
-                      "Stable sale of consumer goods is not enough; used-up means of production must be replaced both in value and in material form.",
-                      "Mistakes simple reproduction for stagnation or a non-capitalist state."
+                      "In the fact that the sum of individual sales is social equilibrium.",
+                      "In treating constant-capital replacement as the same as capitalist personal consumption.",
+                      "Consumption goods have been realized, but used-up means of production have not been replaced in value and material form on time.",
+                      "Simple reproduction is a stagnant state and therefore does not consider equipment replacement."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "소비수단의 판매 안정만으로는 충분하지 않고, 소모된 생산수단이 가치와 물질 양쪽에서 보충되어야 한다. 현대적 사례에서도 문제는 동일하다. 화폐수익만이 아니라 재생산의 물질적·가치적 조건을 함께 봐야 한다.",
-                    "en": "Stable sale of consumer goods is not enough; used-up means of production must be replaced both in value and in material form. The issue is the same in modern cases: not money revenue alone, but the material and value conditions of reproduction together."
+                    "ko": "이 사례는 소비수요가 안정적이어도 단순재생산이 자동으로 굴러가지 않는다는 점을 보여 준다. 소모된 장비와 원료가 생산수단으로 보충되지 않으면 다음 생산은 같은 규모로 반복될 수 없다.",
+                    "en": "The case shows that stable consumer demand does not make simple reproduction automatic. If used-up equipment and materials are not replaced as means of production, the next production cycle cannot repeat on the same scale."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "개별 판매의 합계가 사회적 균형이라는 생각이 바로 문제입니다.",
+                      "장비 교체는 개인소비가 아니라 불변자본의 물질적 보충입니다.",
+                      "핵심입니다. 소비재 실현과 생산수단 보충이 모두 맞아야 같은 규모가 반복됩니다.",
+                      "단순재생산도 생산수단 보충을 핵심 조건으로 다룹니다."
+                    ],
+                    "en": [
+                      "The idea that the sum of individual sales is social equilibrium is exactly the problem.",
+                      "Equipment replacement is material replacement of constant capital, not personal consumption.",
+                      "Correct. Both realization of consumption goods and replacement of means of production must fit for repetition on the same scale.",
+                      "Simple reproduction treats replacement of means of production as a core condition."
+                    ]
                   }
                 },
                 {
@@ -19237,27 +19363,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "단순재생산의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of Simple Reproduction?"
+                    "ko": "왜 마르크스는 확대재생산을 보기 전에 단순재생산 도식을 먼저 세우는가?",
+                    "en": "Why does Marx set out the simple reproduction scheme before analyzing expanded reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 기업의 판매 합계가 곧 사회적 균형이라고 본다.",
-                      "단순재생산을 정체나 비자본주의 상태로 오해한다.",
-                      "소비수요만 충분하면 생산수단 보충은 자동이라고 본다.",
-                      "같은 규모의 재생산 조건을 먼저 밝힘으로써, 축적과 확대재생산에서 필요한 추가 비례 문제를 제기한다."
+                      "개별 기업의 판매 합계가 곧 사회적 균형임을 증명하기 위해서다.",
+                      "단순재생산이 정체나 비자본주의 상태라서 자본주의 축적과 무관하기 때문이다.",
+                      "소비수요만 충분하면 생산수단 보충은 자동이라는 점을 보이기 위해서다.",
+                      "같은 규모의 반복 조건을 먼저 밝혀야, 축적에서는 어떤 추가 생산수단·노동력·소비수단 비례가 더 필요한지 보이기 때문이다."
                     ],
                     "en": [
-                      "Equates the sum of individual sales with social equilibrium.",
-                      "Mistakes simple reproduction for stagnation or a non-capitalist state.",
-                      "Assumes sufficient consumer demand automatically replaces means of production.",
-                      "By first clarifying conditions for reproduction on the same scale, it poses the additional proportionality problem of accumulation and expanded reproduction."
+                      "To prove that the sum of individual firms’ sales is social equilibrium.",
+                      "Because simple reproduction is stagnation or a non-capitalist state and therefore unrelated to capitalist accumulation.",
+                      "To show that sufficient consumer demand automatically solves replacement of means of production.",
+                      "Because the conditions for repetition on the same scale must first be shown before we can see what additional proportions of means of production, labour-power, and consumption goods accumulation requires."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "같은 규모의 재생산 조건을 먼저 밝힘으로써, 축적과 확대재생산에서 필요한 추가 비례 문제를 제기한다. 이 연결을 통해 분석은 더 구체적인 형태 또는 다음 권의 표면형태로 이동한다.",
-                    "en": "By first clarifying conditions for reproduction on the same scale, it poses the additional proportionality problem of accumulation and expanded reproduction. Through this connection, the analysis moves to a more concrete form or to the surface forms treated in the next volume."
+                    "ko": "단순재생산 도식은 확대재생산의 출발 기준이다. 같은 규모로 반복되려면 무엇이 어떻게 보충되어야 하는지 알아야, 축적이 그 조건에 어떤 추가 생산수단과 추가 노동력, 추가 소비수단의 비례를 더 요구하는지 볼 수 있다.",
+                    "en": "The simple reproduction scheme is the baseline for expanded reproduction. Only after seeing what must be replaced for repetition on the same scale can we see what additional proportions of means of production, labour-power, and consumption goods accumulation requires."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "단순재생산 도식은 개별 판매 합계가 충분하지 않다는 점을 보이기 위한 것입니다.",
+                      "단순재생산은 자본주의 분석 안의 기준선이며 축적 분석과 연결됩니다.",
+                      "소비수요 자동론이 아니라 생산수단 보충 조건을 드러냅니다.",
+                      "핵심입니다. 같은 규모 반복의 조건이 확대재생산의 추가 조건을 판단하는 기준이 됩니다."
+                    ],
+                    "en": [
+                      "The simple reproduction scheme shows precisely that the sum of individual sales is not enough.",
+                      "Simple reproduction is a baseline within capitalist analysis and connects to accumulation analysis.",
+                      "It does not endorse consumer-demand automaticity; it reveals replacement conditions for means of production.",
+                      "Correct. Conditions of repetition on the same scale become the baseline for judging the added conditions of expanded reproduction."
+                    ]
                   }
                 }
               ]
@@ -19480,27 +19620,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "확대재생산의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of expanded reproduction?"
+                    "ko": "각 기업이 투자를 늘리려 해도 사회 전체의 확대재생산이 자동으로 성립하지 않는 이유는 무엇인가?",
+                    "en": "Why does expanded reproduction not automatically follow even when each firm tries to increase investment?"
                   },
                   "choices": {
                     "ko": [
-                      "각 자본은 더 큰 축적을 추구하지만, 사회 전체의 확대는 생산수단과 소비수단의 비례가 맞을 때만 가능하다는 긴장이다.",
-                      "투자 총액이 늘면 부문 비례 문제는 사라진다고 본다.",
-                      "축적을 자본가가 돈을 아껴 두는 행위로만 본다.",
-                      "생산수단 확대와 소비수단 확대를 서로 무관하게 본다."
+                      "추가 생산수단, 추가 노동력, 그 노동자의 소비수단이 사회 전체에서 맞는 비례로 준비되어야 하기 때문이다.",
+                      "투자 총액이 늘면 부문 비례 문제는 사라지기 때문이다.",
+                      "축적은 자본가가 돈을 아껴 두는 행위일 뿐이기 때문이다.",
+                      "생산수단 확대와 소비수단 확대는 서로 무관하게 진행될 수 있기 때문이다."
                     ],
                     "en": [
-                      "Each capital seeks greater accumulation, but social expansion is possible only if means of production and means of consumption stand in the right proportions.",
-                      "Assumes rising total investment abolishes departmental proportionality problems.",
-                      "Treats accumulation only as the capitalist saving money.",
-                      "Treats expansion of means of production and consumption goods as unrelated."
+                      "Because additional means of production, additional labour-power, and the consumption goods for those workers must be available in the right social proportions.",
+                      "Because a rise in total investment abolishes departmental proportionality problems.",
+                      "Because accumulation is merely the capitalist saving money.",
+                      "Because expansion of means of production and means of consumption can proceed independently of one another."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "각 자본은 더 큰 축적을 추구하지만, 사회 전체의 확대는 생산수단과 소비수단의 비례가 맞을 때만 가능하다는 긴장이다. 이 긴장은 자본주의적 재생산이 사적 결정과 사회적 의존을 동시에 갖는다는 데서 나온다.",
-                    "en": "Each capital seeks greater accumulation, but social expansion is possible only if means of production and means of consumption stand in the right proportions. This tension arises because capitalist reproduction combines private decisions with social interdependence."
+                    "ko": "확대재생산은 투자 의지만의 문제가 아니다. 잉여가치가 추가 자본으로 전환되려면 더 많은 기계와 원료, 더 많은 노동력, 그 노동자가 생활할 소비수단이 서로 맞는 양으로 사회적으로 공급되어야 한다.",
+                    "en": "Expanded reproduction is not a matter of investment intention alone. If surplus-value is to become additional capital, more machinery and materials, more labour-power, and the consumption goods for those workers must be socially supplied in fitting quantities."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 확대는 추가 생산수단·노동력·소비수단의 비례 조건을 요구합니다.",
+                      "투자 총액 증가는 오히려 부문 비례 문제를 더 날카롭게 만들 수 있습니다.",
+                      "축적은 돈을 쌓아 두는 것이 아니라 잉여가치를 추가 자본으로 전환하는 과정입니다.",
+                      "두 부문은 무관하지 않습니다. 한 부문의 확대는 다른 부문의 보충 조건을 요구합니다."
+                    ],
+                    "en": [
+                      "Correct. Expansion requires proportional conditions among additional means of production, labour-power, and consumption goods.",
+                      "A rise in total investment can make departmental proportionality problems sharper.",
+                      "Accumulation is not hoarding money; it is conversion of surplus-value into additional capital.",
+                      "The departments are not independent. Expansion in one requires replacement conditions in the other."
+                    ]
                   }
                 },
                 {
@@ -19508,27 +19662,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "잉여가치가 추가 자본으로 전환되는 매개는 무엇인가?",
-                    "en": "What mediates the conversion of surplus-value into additional capital?"
+                    "ko": "잉여가치가 실제 추가 자본이 되려면 어떤 전환이 일어나야 하는가?",
+                    "en": "What conversion must occur for surplus-value to become actual additional capital?"
                   },
                   "choices": {
                     "ko": [
-                      "투자 총액이 늘면 부문 비례 문제는 사라진다고 본다.",
-                      "화폐화된 잉여가치가 추가 생산수단과 추가 노동력 구매로 나뉘고, 그에 맞는 소비수단이 사회적으로 공급되는 과정이다.",
-                      "생산수단 확대와 소비수단 확대를 서로 무관하게 본다.",
-                      "확대재생산을 단순재생산의 숫자만 키운 형태로 본다."
+                      "투자 총액 증가만 확인하면 부문 비례는 따로 볼 필요가 없다.",
+                      "화폐화된 잉여가치가 추가 생산수단과 추가 노동력 구매로 나뉘고, 그 노동력을 유지할 소비수단도 사회적으로 공급되어야 한다.",
+                      "생산수단 확대와 소비수단 확대는 서로 별개의 과정으로 두면 된다.",
+                      "확대재생산은 단순재생산의 숫자만 키우면 된다."
                     ],
                     "en": [
-                      "Assumes rising total investment abolishes departmental proportionality problems.",
-                      "The mediation is the division of monetized surplus-value into additional means of production and labour-power, along with the social supply of corresponding consumer goods.",
-                      "Treats expansion of means of production and consumption goods as unrelated.",
-                      "Sees expanded reproduction as merely simple reproduction with larger numbers."
+                      "Once total investment rises, departmental proportions need not be examined separately.",
+                      "Monetized surplus-value must be divided into purchases of additional means of production and labour-power, with the corresponding consumption goods socially supplied for that labour-power.",
+                      "Expansion of means of production and expansion of consumption goods can be left as separate processes.",
+                      "Expanded reproduction is simply simple reproduction with larger numbers."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "화폐화된 잉여가치가 추가 생산수단과 추가 노동력 구매로 나뉘고, 그에 맞는 소비수단이 사회적으로 공급되는 과정이다. 매개를 보아야 한 부문의 운동이 다른 부문의 재생산 조건이 되는 방식을 이해할 수 있다.",
-                    "en": "The mediation is the division of monetized surplus-value into additional means of production and labour-power, along with the social supply of corresponding consumer goods. Seeing the mediation shows how the movement of one department becomes a condition for reproduction in another."
+                    "ko": "추가 자본은 화폐 숫자로만 존재하지 않는다. 그 화폐가 생산수단과 노동력으로 전환되어야 하며, 추가 노동력이 생활할 소비수단도 함께 재생산되어야 한다. 그래서 축적은 부문 간 물질적·가치적 비례의 문제다.",
+                    "en": "Additional capital does not exist as a money figure alone. That money must be converted into means of production and labour-power, and the consumption goods for the additional labour-power must also be reproduced. Accumulation is therefore a problem of material and value proportions between departments."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "투자 총액만으로는 어떤 부문이 무엇을 보충해야 하는지 알 수 없습니다.",
+                      "핵심입니다. 화폐화된 잉여가치가 추가 생산요소와 소비수단 조건으로 전환되어야 합니다.",
+                      "두 확대는 서로 맞물려야 합니다. 추가 노동력은 소비수단을 필요로 합니다.",
+                      "확대재생산은 숫자 확대가 아니라 부문 간 비례가 바뀌는 문제입니다."
+                    ],
+                    "en": [
+                      "Total investment alone does not show which department must replace what.",
+                      "Correct. Monetized surplus-value must be converted into additional productive elements and consumption-goods conditions.",
+                      "The two expansions must interlock. Additional labour-power requires consumption goods.",
+                      "Expanded reproduction is not just larger numbers; it changes departmental proportions."
+                    ]
                   }
                 },
                 {
@@ -19536,27 +19704,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "투자가 늘면 확대재생산은 언제나 순조롭게 이루어진다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by the claim that expanded reproduction proceeds smoothly whenever investment rises?"
+                    "ko": "투자 총액이 늘면 확대재생산도 순조롭다는 설명은 무엇을 놓치는가?",
+                    "en": "What is missed by the claim that expanded reproduction proceeds smoothly whenever total investment rises?"
                   },
                   "choices": {
                     "ko": [
-                      "생산수단 확대와 소비수단 확대를 서로 무관하게 본다.",
-                      "확대재생산을 단순재생산의 숫자만 키운 형태로 본다.",
-                      "투자의 부문 구성과 노동자 소비수단, 생산수단 보충 사이의 비례 불균형 가능성을 놓친다.",
+                      "생산수단 확대와 소비수단 확대를 서로 무관하게 둔다.",
+                      "확대재생산을 단순재생산의 숫자만 키운 것으로 본다.",
+                      "투자가 어느 부문에 들어갔는지, 추가 노동자의 소비수단과 생산수단 보충이 그 투자와 맞는지의 비례 문제를 놓친다.",
                       "불균형 가능성을 개인 기업의 경영 실패로만 설명한다."
                     ],
                     "en": [
-                      "Treats expansion of means of production and consumption goods as unrelated.",
-                      "Sees expanded reproduction as merely simple reproduction with larger numbers.",
-                      "It misses the possibility of disproportions between the departmental composition of investment, workers’ means of consumption, and replacement of means of production.",
-                      "Explains disproportions only as individual managerial failure."
+                      "It leaves expansion of means of production and consumption goods unrelated.",
+                      "It treats expanded reproduction as simple reproduction with larger numbers.",
+                      "It misses the proportionality problem: which department receives investment, and whether consumption goods for additional workers and replacement of means of production match that investment.",
+                      "It explains disproportions only as individual managerial failure."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "투자의 부문 구성과 노동자 소비수단, 생산수단 보충 사이의 비례 불균형 가능성을 놓친다. 마르크스의 비판은 시장 표면을 지우는 것이 아니라 그 표면이 어떤 사회적 조건을 전제하는지 밝힌다.",
-                    "en": "It misses the possibility of disproportions between the departmental composition of investment, workers’ means of consumption, and replacement of means of production. Marx’s critique does not erase the market surface; it reveals the social conditions presupposed by that surface."
+                    "ko": "총투자액은 커져도 그 투자가 생산수단 부문과 소비수단 부문 사이에 맞게 배분되지 않으면 확대재생산은 막힐 수 있다. 핵심은 더 많은 돈이 아니라 추가 생산수단, 추가 노동력, 추가 소비수단의 사회적 조합이다.",
+                    "en": "Total investment may rise, but expanded reproduction can still be blocked if investment is not distributed properly between the departments of means of production and consumption. The issue is not simply more money, but the social combination of additional means of production, labour-power, and consumption goods."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 답은 서로 무관하게 둔다는 오류를 말하지만, 더 정확히는 그 비례가 맞아야 한다는 점입니다.",
+                      "확대재생산은 단순재생산의 규모만 키운 것이 아니라 추가 비례 조건을 포함합니다.",
+                      "핵심입니다. 투자 부문, 노동력, 소비수단, 생산수단 보충의 비례를 봐야 합니다.",
+                      "불균형은 개별 경영 실패만이 아니라 사회적 부문 비례의 문제일 수 있습니다."
+                    ],
+                    "en": [
+                      "This names the error of separating the two expansions, but the precise point is that their proportions must fit.",
+                      "Expanded reproduction is not simple reproduction scaled up; it includes additional proportionality conditions.",
+                      "Correct. We must examine proportions among investment departments, labour-power, consumption goods, and means-of-production replacement.",
+                      "Disproportion can be a social departmental problem, not only individual managerial failure."
+                    ]
                   }
                 },
                 {
@@ -19564,27 +19746,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "배터리 산업은 설비투자를 크게 늘렸지만 원재료와 노동자 주거·소비 인프라가 따라오지 못한다. 확대재생산 관점에서 무엇을 봐야 하는가?",
-                    "en": "The battery industry expands equipment investment rapidly, but raw materials and workers’ housing and consumption infrastructure lag. What should expanded reproduction analysis examine?"
+                    "ko": "배터리 산업은 설비투자를 크게 늘렸지만 원재료와 노동자 주거·소비 인프라가 따라오지 못한다. 확대재생산 도식으로 보면 무엇이 맞지 않는가?",
+                    "en": "The battery industry expands equipment investment rapidly, but raw materials and workers’ housing and consumption infrastructure lag. In the expanded reproduction scheme, what fails to fit?"
                   },
                   "choices": {
                     "ko": [
-                      "불균형 가능성을 개인 기업의 경영 실패로만 설명한다.",
-                      "확대재생산을 단순재생산의 숫자만 키운 형태로 본다.",
-                      "한 부문의 투자 확대가 사회적 총생산물의 다른 구성부분과 어떤 비례로 맞물리는지 봐야 한다.",
-                      "축적을 자본가가 돈을 아껴 두는 행위로만 본다."
+                      "불균형 가능성은 개별 기업 경영 실패로만 설명된다는 점",
+                      "확대재생산은 단순재생산의 숫자만 키운 형태라는 점",
+                      "한 부문의 축적 속도와 원료·생산수단·노동력 재생산 및 소비수단 공급의 부문 비례",
+                      "축적은 자본가가 돈을 아껴 두는 행위일 뿐이라는 점"
                     ],
                     "en": [
-                      "Explains disproportions only as individual managerial failure.",
-                      "Sees expanded reproduction as merely simple reproduction with larger numbers.",
-                      "It should examine how expansion of one department fits proportionally with other components of the total social product.",
-                      "Treats accumulation only as the capitalist saving money."
+                      "That disproportions are explained only by individual managerial failure.",
+                      "That expanded reproduction is merely simple reproduction with larger numbers.",
+                      "The departmental proportions between one department’s rate of accumulation and the reproduction of raw materials, means of production, labour-power, and consumption goods.",
+                      "That accumulation is merely the capitalist saving money."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "한 부문의 투자 확대가 사회적 총생산물의 다른 구성부분과 어떤 비례로 맞물리는지 봐야 한다. 현대적 사례에서도 문제는 동일하다. 화폐수익만이 아니라 재생산의 물질적·가치적 조건을 함께 봐야 한다.",
-                    "en": "It should examine how expansion of one department fits proportionally with other components of the total social product. The issue is the same in modern cases: not money revenue alone, but the material and value conditions of reproduction together."
+                    "ko": "이 사례에서는 한 부문의 설비투자만 앞서가고, 그 투자를 현실 생산으로 바꿀 원재료와 노동력 재생산 조건이 뒤처진다. 확대재생산 분석은 이런 불균형을 개별 기업의 실수보다 사회적 총생산물의 부문 비례 문제로 본다.",
+                    "en": "In this case one department’s equipment investment runs ahead, while the raw materials and labour-power reproduction conditions needed to turn that investment into real production lag behind. Expanded reproduction analyzes this not merely as a firm-level mistake but as a problem of departmental proportions in the total social product."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "개별 경영 실패만으로는 원재료와 소비 인프라의 사회적 부족을 설명할 수 없습니다.",
+                      "숫자만 키우는 문제가 아니라 추가 생산요소들이 서로 맞는가의 문제입니다.",
+                      "핵심입니다. 한 부문의 축적은 다른 부문의 원료·노동력·소비수단 조건과 맞아야 합니다.",
+                      "축적은 저축이 아니라 잉여가치가 추가 생산요소로 전환되는 과정입니다."
+                    ],
+                    "en": [
+                      "Individual managerial failure alone cannot explain social shortages of raw materials and consumption infrastructure.",
+                      "It is not just larger numbers, but whether additional productive elements fit together.",
+                      "Correct. Accumulation in one department must match raw-material, labour-power, and consumption-goods conditions in others.",
+                      "Accumulation is not saving; it is conversion of surplus-value into additional productive elements."
+                    ]
                   }
                 },
                 {
@@ -19592,27 +19788,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "축적과 확대재생산의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of Accumulation and Reproduction on an Expanded Scale?"
+                    "ko": "왜 21장의 확대재생산 분석이 2권 전체의 결론 역할을 하는가?",
+                    "en": "Why does Chapter 21’s analysis of expanded reproduction function as the conclusion of Volume II?"
                   },
                   "choices": {
                     "ko": [
-                      "불균형 가능성을 개인 기업의 경영 실패로만 설명한다.",
-                      "축적을 자본가가 돈을 아껴 두는 행위로만 본다.",
-                      "투자 총액이 늘면 부문 비례 문제는 사라진다고 본다.",
-                      "2권의 결론으로서 개별 자본의 순환·회전 분석을 사회적 축적의 비례와 불균형 가능성으로 종합한다."
+                      "불균형은 결국 개별 기업의 경영 실패로만 설명되기 때문이다.",
+                      "축적은 자본가가 돈을 아껴 두는 행위로 충분히 설명되기 때문이다.",
+                      "투자 총액만 늘면 부문 비례 문제는 사라진다는 결론에 이르기 때문이다.",
+                      "개별 자본의 순환과 회전 분석을 사회적 총자본의 축적 조건, 즉 부문 비례와 불균형 가능성으로 종합하기 때문이다."
                     ],
                     "en": [
-                      "Explains disproportions only as individual managerial failure.",
-                      "Treats accumulation only as the capitalist saving money.",
-                      "Assumes rising total investment abolishes departmental proportionality problems.",
-                      "As Volume II’s conclusion, it synthesizes circuits and turnover of individual capitals into the proportions and possible disproportions of social accumulation."
+                      "Because disproportions are ultimately explained only as failures of individual management.",
+                      "Because accumulation is sufficiently explained as the capitalist saving money.",
+                      "Because it concludes that a rise in total investment abolishes departmental proportionality problems.",
+                      "Because it synthesizes the analysis of individual circuits and turnover into the accumulation conditions of total social capital: departmental proportions and possible disproportions."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "2권의 결론으로서 개별 자본의 순환·회전 분석을 사회적 축적의 비례와 불균형 가능성으로 종합한다. 이 연결을 통해 분석은 더 구체적인 형태 또는 다음 권의 표면형태로 이동한다.",
-                    "en": "As Volume II’s conclusion, it synthesizes circuits and turnover of individual capitals into the proportions and possible disproportions of social accumulation. Through this connection, the analysis moves to a more concrete form or to the surface forms treated in the next volume."
+                    "ko": "2권은 자본이 어떤 형태를 지나 되돌아오는지, 얼마나 빨리 회전하는지, 그리고 사회 전체에서 어떻게 보충되는지를 추적한다. 확대재생산 장은 이 흐름을 축적의 조건으로 모은다. 성장 자체가 생산수단과 소비수단의 비례, 추가 노동력의 재생산, 불균형 가능성을 포함한다는 점이 결론이다.",
+                    "en": "Volume II traces the forms through which capital returns, the speed of turnover, and the way capital is replaced socially. The chapter on expanded reproduction gathers these threads as the conditions of accumulation. Its conclusion is that growth itself includes proportions between means of production and consumption, reproduction of additional labour-power, and the possibility of disproportions."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "불균형은 개인 경영 실패만이 아니라 사회적 부문 비례의 문제일 수 있습니다.",
+                      "축적은 저축이 아니라 추가 자본으로의 전환과 사회적 보충 조건입니다.",
+                      "투자 총액 증가는 부문 비례 문제를 없애지 않고 오히려 드러냅니다.",
+                      "핵심입니다. 2권의 순환·회전 분석이 사회적 축적 조건으로 종합됩니다."
+                    ],
+                    "en": [
+                      "Disproportion can be a problem of social departmental proportions, not merely individual management.",
+                      "Accumulation is not saving; it is conversion into additional capital under social replacement conditions.",
+                      "A rise in total investment does not abolish departmental proportionality problems; it reveals them.",
+                      "Correct. Volume II’s analysis of circuits and turnover is synthesized as the conditions of social accumulation."
+                    ]
                   }
                 }
               ]
