@@ -8,6 +8,7 @@
     var data = JSON.parse(raw.textContent);
     var lessons = flattenLessons(data);
     var storageKey = 'commulingo-progress-v1';
+    var expandedKey = 'commulingo-expanded-collection-v1';
     var progress = loadLocalProgress();
     var active = null;
     var answered = false;
@@ -24,6 +25,12 @@
         prompt: document.getElementById('commuPrompt'),
         choices: document.getElementById('commuChoices'),
         feedback: document.getElementById('commuFeedback'),
+        focus: document.getElementById('commuFocus'),
+        intro: document.getElementById('commuIntro'),
+        introTitle: document.getElementById('commuIntroTitle'),
+        introSummary: document.getElementById('commuIntroSummary'),
+        introFocus: document.getElementById('commuIntroFocus'),
+        diagram: document.getElementById('commuDiagram'),
         next: document.getElementById('commuNextBtn')
     };
 
@@ -31,7 +38,14 @@
 
     els.back.addEventListener('click', showLessons);
     els.next.addEventListener('click', function() {
-        if (!active || !answered) return;
+        if (!active) return;
+        if (active.intro) {
+            active.intro = false;
+            answered = false;
+            renderQuestion();
+            return;
+        }
+        if (!answered) return;
         var finishedAction = els.next.getAttribute('data-finished');
         if (finishedAction === 'retry') {
             var retryLesson = active.lesson;
@@ -99,6 +113,7 @@
                         chapterTitle: text(chapter.title),
                         title: text(lesson.title),
                         summary: text(chapter.summary),
+                        focus: text(chapter.learningFocus),
                         questions: lesson.questions || []
                     });
                 });
@@ -111,6 +126,7 @@
                         chapterTitle: text(chapter.title),
                         title: text(chapter.title),
                         summary: text(chapter.summary),
+                        focus: text(chapter.learningFocus),
                         questions: [],
                         locked: true
                     });
@@ -130,6 +146,21 @@
 
     function saveLocalProgress() {
         localStorage.setItem(storageKey, JSON.stringify(progress));
+    }
+
+    function loadExpandedCollection() {
+        try {
+            return localStorage.getItem(expandedKey) || '';
+        } catch (err) {
+            return '';
+        }
+    }
+
+    function saveExpandedCollection(collectionId) {
+        try {
+            if (collectionId) localStorage.setItem(expandedKey, collectionId);
+            else localStorage.removeItem(expandedKey);
+        } catch (err) {}
     }
 
     function mergeProgress(items) {
@@ -187,16 +218,25 @@
         els.total.textContent = Math.round((completeCount / (playable.length || 1)) * 100) + '%';
         els.list.innerHTML = '';
 
+        var expandedCollection = loadExpandedCollection();
         groupLessons().forEach(function(group) {
+            var expanded = expandedCollection === group.id;
             var section = document.createElement('section');
-            section.className = 'commu-volume-section';
+            section.className = 'commu-volume-section' + (expanded ? ' is-expanded' : ' is-collapsed');
             section.innerHTML = [
                 '<header class="commu-volume-header">',
-                '<h2>' + escapeHtml(group.title) + '</h2>',
-                '<p>' + group.lessons.length + ' ' + escapeHtml(strings.lessons || 'Lessons') + '</p>',
+                '<button type="button" class="commu-volume-toggle" aria-expanded="' + (expanded ? 'true' : 'false') + '">',
+                '<span><strong>' + escapeHtml(group.title) + '</strong><small>' + group.lessons.length + ' ' + escapeHtml(strings.lessons || 'Lessons') + '</small></span>',
+                '<span class="commu-volume-toggle-icon" aria-hidden="true">' + (expanded ? '−' : '+') + '</span>',
+                '</button>',
                 '</header>',
-                '<div class="commu-volume-body"></div>'
+                '<div class="commu-volume-body' + (expanded ? '' : ' is-hidden') + '"></div>'
             ].join('');
+
+            section.querySelector('.commu-volume-toggle').addEventListener('click', function() {
+                saveExpandedCollection(expanded ? '' : group.id);
+                renderLessons();
+            });
 
             var body = section.querySelector('.commu-volume-body');
             groupPartLessons(group.lessons).forEach(function(part) {
@@ -276,6 +316,7 @@
             '<span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + '</span>',
             '</div>',
             '<p class="commu-lesson-summary">' + escapeHtml(lessonSummary(lesson)) + '</p>',
+            lesson.focus ? '<p class="commu-lesson-focus">' + escapeHtml(lesson.focus) + '</p>' : '',
             '<div class="commu-progress-track"><span style="width:' + percent + '%"></span></div>',
             '<div class="commu-lesson-meta"><span>' + lesson.questions.length + ' ' + escapeHtml(strings.questions || 'Questions') + '</span><span>' + lessonLabel(lesson, item) + '</span></div>'
         ].join('');
@@ -311,6 +352,45 @@
         return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
+    function introFallback(lesson) {
+        var part = findPart(lesson);
+        if (!part) return lessonSummary(lesson);
+        var title = partTitle(part).replace(/^제\d+편\s*/, '').replace(/^Part\s+[IVX]+:\s*/, '');
+        return lang === 'en' ? 'This lesson sits inside ' + title + ', so read the question as one step in that larger argument.' : '이 장은 ' + title + ' 안의 한 단계입니다. 문제를 풀 때 개별 개념이 앞뒤 논의와 어떻게 이어지는지 함께 보세요.';
+    }
+
+    function conceptMap(lesson) {
+        var part = findPart(lesson);
+        var key = part ? part.key : '';
+        var maps = {
+            'v1-p1': { ko: ['상품의 두 얼굴', '가치형태와 화폐', '자본 분석의 출발점'], en: ['Two sides of the commodity', 'Value-form and money', 'Starting point for capital'] },
+            'v1-p2': { ko: ['화폐 순환', '노동력 상품', '잉여가치의 조건'], en: ['Money circulation', 'Labour-power as commodity', 'Condition for surplus-value'] },
+            'v1-p3': { ko: ['노동일', '절대적 잉여가치', '착취의 시간 구조'], en: ['Working day', 'Absolute surplus-value', 'Time-structure of exploitation'] },
+            'v1-p4': { ko: ['협업과 분업', '기계와 생산성', '상대적 잉여가치'], en: ['Cooperation and division of labour', 'Machinery and productivity', 'Relative surplus-value'] },
+            'v1-p7': { ko: ['잉여가치', '축적', '계급관계 재생산'], en: ['Surplus-value', 'Accumulation', 'Reproduction of class relations'] },
+            'v1-p8': { ko: ['생산자 분리', '폭력과 법', '임금노동의 형성'], en: ['Separation of producers', 'Violence and law', 'Formation of wage-labour'] },
+            'v2-p1': { ko: ['화폐자본', '생산자본', '상품자본'], en: ['Money-capital', 'Productive capital', 'Commodity-capital'] },
+            'v2-p2': { ko: ['회전시간', '선대자본', '잉여가치 연간율'], en: ['Turnover time', 'Advanced capital', 'Annual rate of surplus-value'] },
+            'v2-p3': { ko: ['부문 I/II', '사회적 총자본', '재생산 조건'], en: ['Departments I/II', 'Total social capital', 'Conditions of reproduction'] },
+            'v3-p1': { ko: ['잉여가치', '이윤 형태', '이윤율'], en: ['Surplus-value', 'Profit form', 'Rate of profit'] },
+            'v3-p2': { ko: ['개별 이윤율', '평균이윤', '생산가격'], en: ['Individual profit rates', 'Average profit', 'Prices of production'] },
+            'v3-p3': { ko: ['자본구성 상승', '이윤율 저하 경향', '반작용 요인'], en: ['Rising composition of capital', 'Tendency of profit rate to fall', 'Counteracting factors'] },
+            'v3-p4': { ko: ['상업자본', '유통비용', '이윤 분할'], en: ['Commercial capital', 'Circulation costs', 'Division of profit'] },
+            'v3-p5': { ko: ['이자 낳는 자본', '신용과 지급연쇄', '자본관계의 물신화'], en: ['Interest-bearing capital', 'Credit and payment chains', 'Fetishism of capital relation'] },
+            'v3-p6': { ko: ['생산조건 차이', '초과이윤', '지대'], en: ['Differences in production conditions', 'Surplus-profit', 'Rent'] },
+            'v3-p7': { ko: ['임금·이윤·지대', '수입의 원천이라는 착시', '계급관계'], en: ['Wages, profit, rent', 'Illusion of income sources', 'Class relations'] }
+        };
+        return maps[key] || { ko: [lesson.collectionTitle, chapterTitle(lesson), lessonLevel(lesson)], en: [lesson.collectionTitle, chapterTitle(lesson), lessonLevel(lesson)] };
+    }
+
+    function renderDiagram(lesson) {
+        if (!els.diagram) return;
+        var nodes = conceptMap(lesson)[lang === 'en' ? 'en' : 'ko'];
+        els.diagram.innerHTML = nodes.map(function(node, index) {
+            return '<span class="commu-diagram-node">' + escapeHtml(node) + '</span>' + (index < nodes.length - 1 ? '<span class="commu-diagram-arrow" aria-hidden="true">→</span>' : '');
+        }).join('');
+    }
+
     function lessonLabel(lesson, item) {
         if (lesson.locked) return escapeHtml(strings.locked || 'Coming soon');
         if (item && item.totalQuestions) {
@@ -322,12 +402,30 @@
     }
 
     function startLesson(lesson) {
-        active = { lesson: lesson, index: 0, score: 0 };
+        saveExpandedCollection(lesson.collectionId || '');
+        active = { lesson: lesson, index: 0, score: 0, intro: true };
         answered = false;
         els.list.classList.add('is-hidden');
         els.quiz.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
-        renderQuestion();
+        renderIntro();
+    }
+
+    function renderIntro() {
+        els.count.textContent = '0 / ' + active.lesson.questions.length;
+        els.meter.style.width = '0%';
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
+        if (els.intro) els.intro.classList.remove('is-hidden');
+        if (els.focus) els.focus.classList.add('is-hidden');
+        els.prompt.classList.add('is-hidden');
+        els.choices.classList.add('is-hidden');
+        els.feedback.className = 'commu-feedback is-hidden';
+        if (els.introTitle) els.introTitle.textContent = lang === 'en' ? 'Concept brief before the quiz' : '문제를 풀기 전, 개념 먼저 잡기';
+        if (els.introSummary) els.introSummary.textContent = lessonSummary(active.lesson);
+        if (els.introFocus) els.introFocus.textContent = active.lesson.focus || introFallback(active.lesson);
+        renderDiagram(active.lesson);
+        els.next.disabled = false;
+        els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';
     }
 
     function showLessons() {
@@ -340,11 +438,18 @@
     }
 
     function renderQuestion() {
+        if (els.intro) els.intro.classList.add('is-hidden');
+        els.prompt.classList.remove('is-hidden');
+        els.choices.classList.remove('is-hidden');
         var question = active.lesson.questions[active.index];
         var count = active.index + 1;
         els.count.textContent = count + ' / ' + active.lesson.questions.length;
         els.meter.style.width = Math.round((active.index / active.lesson.questions.length) * 100) + '%';
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
+        if (els.focus) {
+            els.focus.textContent = active.lesson.focus || '';
+            els.focus.classList.toggle('is-hidden', !active.lesson.focus);
+        }
         els.prompt.textContent = text(question.prompt);
         els.feedback.className = 'commu-feedback is-hidden';
         els.feedback.textContent = '';
@@ -399,7 +504,11 @@
         postProgress(active.lesson.id, progress[active.lesson.id], false);
 
         els.prompt.textContent = strings.allDone || 'Lesson complete';
+        if (els.focus) els.focus.classList.add('is-hidden');
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
+        if (els.intro) els.intro.classList.add('is-hidden');
+        els.prompt.classList.remove('is-hidden');
+        els.choices.classList.remove('is-hidden');
         els.choices.innerHTML = '';
         els.feedback.className = 'commu-feedback';
         els.feedback.textContent = (strings.score || 'Score') + ': ' + active.score + ' / ' + active.lesson.questions.length;
