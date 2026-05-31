@@ -45,6 +45,24 @@ function allLocalizedText(value, label) {
   checkText(value && value.en, label + '.en');
 }
 
+function checkConceptMap(value, label) {
+  if (!value || typeof value !== 'object') { fail(label + ' must have conceptMap'); return; }
+  ['ko', 'en'].forEach(function(locale) {
+    const nodes = value[locale];
+    if (!Array.isArray(nodes) || nodes.length !== 3) {
+      fail(label + '.conceptMap.' + locale + ' must have 3 nodes');
+      return;
+    }
+    nodes.forEach(function(node, index) {
+      allLocalizedText({ ko: locale === 'ko' ? node.title : 'ok', en: locale === 'en' ? node.title : 'ok' }, label + '.conceptMap.' + locale + '[' + index + '].title');
+      allLocalizedText({ ko: locale === 'ko' ? node.text : 'ok', en: locale === 'en' ? node.text : 'ok' }, label + '.conceptMap.' + locale + '[' + index + '].text');
+      if (locale === 'ko' && /\d+장/.test(String(node.text || ''))) fail(label + '.conceptMap.ko[' + index + '] repeats chapter number in text');
+      if (locale === 'ko' && String(node.title || '').trim() === '핵심 개념') fail(label + '.conceptMap.ko[' + index + '] uses generic title 핵심 개념');
+      if (locale === 'en' && /Chapter\s+\d+/i.test(String(node.text || ''))) fail(label + '.conceptMap.en[' + index + '] repeats chapter number in text');
+    });
+  });
+}
+
 let totalQuestions = 0;
 let totalLessons = 0;
 
@@ -71,6 +89,7 @@ Object.keys(expected).forEach(function(collectionId) {
     allLocalizedText(chapter.title, chapterLabel + '.title');
     allLocalizedText(chapter.summary, chapterLabel + '.summary');
     if (chapter.learningFocus) allLocalizedText(chapter.learningFocus, chapterLabel + '.learningFocus');
+    checkConceptMap(chapter.conceptMap, chapterLabel);
 
     const lessons = chapter.lessons || [];
     if (lessons.length !== 2) fail(chapterLabel + ' lesson count ' + lessons.length + ' != 2');
