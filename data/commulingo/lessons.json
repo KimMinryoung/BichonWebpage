@@ -15244,8 +15244,22 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "선행 이론은 중요한 문제를 발견했지만 그 기준을 물질적 외관과 사회적 형식 사이에서 일관되게 유지하지 못했다. 이 긴장을 보아야 물질적 과정, 가치형태, 계급관계를 한꺼번에 분석할 수 있다.",
-                    "en": "Earlier theory discovered an important problem but did not consistently maintain the criterion between material appearance and social form. Seeing this tension lets us analyze material process, value-form, and class relation together."
+                    "ko": "마르크스는 중농주의자가 사회 전체의 재생산 흐름을 보려 했다는 점을 높게 평가한다. 다만 그들은 농업 중심의 물질적 외관에 묶였고, 스미스는 고정/유동 구분을 내구성이나 장소 같은 표면 기준과 뒤섞었다. 핵심은 물건의 성질이 아니라 자본가치가 어떤 기간에 어떤 방식으로 이전·회수되는가이다.",
+                    "en": "Marx values the Physiocrats because they tried to see the reproduction flow of society as a whole. But they remained tied to an agricultural material appearance, while Smith mixed fixed/circulating capital with surface criteria such as durability or location. The issue is not the thing’s physical nature but how capital-value is transferred and recovered over time."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 선행 이론의 통찰은 살리되, 물질적 외관과 자본가치의 회전을 구분해야 합니다.",
+                      "판매 뒤 회수 문제는 유동/고정자본과 무관하지 않습니다. 가치가 언제 돌아오는지가 바로 회전 문제입니다.",
+                      "내구성이나 장소만으로는 고정자본을 정의할 수 없습니다. 가치 이전 방식이 필요합니다.",
+                      "가치 이전과 새 가치 생산을 섞으면 기계가 이윤을 낳는 것처럼 보입니다."
+                    ],
+                    "en": [
+                      "Correct. The earlier insight must be retained while separating material appearance from the turnover of capital-value.",
+                      "Recovery after sale is not unrelated to fixed and circulating capital; when value returns is exactly the turnover problem.",
+                      "Durability or location alone cannot define fixed capital. The mode of value transfer is needed.",
+                      "If value transfer and new value production are mixed, machinery appears to produce profit."
+                    ]
                   }
                 },
                 {
@@ -15272,8 +15286,22 @@
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "중농주의의 재생산 통찰과 스미스의 회전 구분을 비판적으로 분리해 받아들이는 것이 매개다. 이 매개가 없으면 개별 사례는 단순한 기술 문제로 축소된다.",
-                    "en": "The mediation is to critically separate and appropriate the Physiocrats' insight into reproduction and Smith's turnover distinction. Without this mediation, individual cases are reduced to mere technical problems."
+                    "ko": "중농주의의 강점은 사회적 생산물이 한 계급이나 부문 안에 머무르지 않고 전체 순환을 이룬다는 점을 보려 한 데 있다. 스미스의 강점은 자본 일부가 서로 다른 방식으로 회전한다는 문제를 제기한 데 있다. 마르크스는 둘을 받아들이되, 농업 특권과 물리적 내구성 기준을 버리고 가치 이전과 재생산 조건으로 다시 정리한다.",
+                    "en": "The Physiocrats’ strength was trying to see that the social product forms a whole circulation rather than remaining inside one class or department. Smith’s strength was raising the problem that parts of capital turn over differently. Marx retains both insights, but drops agricultural privilege and physical durability as criteria, reformulating the issue through value transfer and reproduction conditions."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "내구성만으로 분류하면 가치 이전과 회수의 리듬이 사라집니다.",
+                      "핵심입니다. 두 이론의 통찰을 살리되 기준을 가치 이전과 재생산 조건으로 바꿉니다.",
+                      "회수 문제는 실현 문제이면서 동시에 회전 방식의 일부입니다.",
+                      "기계의 가치 이전과 노동의 새 가치 생산은 함께 보되 구분해야 합니다."
+                    ],
+                    "en": [
+                      "Durability alone erases the rhythm of value transfer and recovery.",
+                      "Correct. Marx preserves the insights while changing the criterion to value transfer and reproduction conditions.",
+                      "Recovery is a realization problem and also part of turnover.",
+                      "The value transferred by machinery and new value created by labour must be connected but distinguished."
+                    ]
                   }
                 },
                 {
@@ -15300,8 +15328,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "물건의 내구성, 장소, 소득 발생 여부를 자본가치의 회전 방식과 혼동한다. 그래서 겉보기의 효율, 가격, 내구성 뒤에 있는 자본관계를 다시 드러내야 한다.",
-                    "en": "It confuses durability, location, and revenue-yielding with the turnover mode of capital-value. The capital relation behind apparent efficiency, price, and durability must therefore be made visible again."
+                    "ko": "스미스의 혼동은 자본이 어떻게 회전하는가의 문제를 물건이 오래 가는가, 어디에 머무는가, 수입을 낳는가 같은 기준으로 바꾸어 버린다. 그러면 생산수단의 가치가 여러 회전에 걸쳐 조금씩 이전되는 문제와, 노동력이 새 가치를 만드는 문제가 흐려진다.",
+                    "en": "Smith’s confusion turns the question of how capital turns over into criteria such as whether a thing lasts, where it remains, or whether it yields income. This obscures the difference between means of production transferring value gradually over several turnovers and labour-power creating new value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "내구성과 장소 기준만으로는 자본가치의 회전 방식을 설명할 수 없습니다.",
+                      "회수 문제를 별도 실현 문제로 밀어내면 고정/유동 구분의 시간 구조를 놓칩니다.",
+                      "핵심입니다. 물건의 표면 성질과 자본가치의 회전 방식을 혼동하는 것이 문제입니다.",
+                      "이 혼동은 기계의 가치 이전과 노동의 가치창조를 뒤섞습니다."
+                    ],
+                    "en": [
+                      "Durability and location do not explain the turnover of capital-value.",
+                      "If recovery is pushed aside as a separate realization issue, the time structure of fixed/circulating capital is missed.",
+                      "Correct. The problem is confusing the thing’s surface properties with the turnover of capital-value.",
+                      "This confusion mixes machinery’s value transfer with labour’s creation of new value."
+                    ]
                   }
                 },
                 {
@@ -15328,8 +15370,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "물질적 형태보다 비용이 어떤 기간에 걸쳐 가치로 이전되고 어떤 방식으로 갱신되는지 물어야 한다. 현대적 형태에서도 자본의 회전과 가치 이전 방식은 사라지지 않는다.",
-                    "en": "One must ask less about material form than about the period over which cost is transferred as value and the mode of renewal. Even in modern forms, capital's turnover and value-transfer mechanisms do not disappear."
+                    "ko": "무형/유형 여부는 충분한 기준이 아니다. 어떤 비용이 여러 생산주기에 걸쳐 조금씩 가치로 이전되는지, 한 주기마다 전부 보충되어야 하는지, 계약 갱신이나 기술 변화가 회전기간을 어떻게 바꾸는지를 보아야 한다.",
+                    "en": "Intangible/tangible form is not a sufficient criterion. We must ask whether a cost transfers value gradually over many production cycles, whether it must be replaced fully each cycle, and how contract renewal or technical change affects turnover time."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "판매 뒤 회수 문제는 여전히 중요하지만, 이 사례의 기준은 무형/유형이 아니라 가치 이전 기간입니다.",
+                      "유형 설비라고 해서 자동으로 고정자본인 것도, 무형 비용이라고 해서 자동으로 유동자본인 것도 아닙니다.",
+                      "핵심입니다. 비용이 어떤 기간에 걸쳐 가치로 이전되고 갱신되는지가 기준입니다.",
+                      "이 답은 가치 이전과 새 가치 생산을 섞습니다. 라이선스나 설비는 노동처럼 새 가치를 만들지 않습니다."
+                    ],
+                    "en": [
+                      "Recovery after sale remains important, but the criterion here is value-transfer period, not tangible/intangible form.",
+                      "Tangible equipment is not automatically fixed capital, and intangible cost is not automatically circulating capital.",
+                      "Correct. The criterion is the period over which the cost transfers value and is renewed.",
+                      "This mixes value transfer with new value production. Licenses or equipment do not create new value as labour does."
+                    ]
                   }
                 },
                 {
@@ -15337,8 +15393,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "스미스의 혼동이 리카도에게 이어진다는 점은 다음 장으로 어떻게 연결되는가?",
-                    "en": "What is the systematic significance of Theories of Fixed and Circulating Capital: the Physiocrats and Adam Smith?"
+                    "ko": "스미스의 혼동이 왜 리카도 비판으로 이어지는가?",
+                    "en": "Why does Smith’s confusion lead into Marx’s critique of Ricardo?"
                   },
                   "choices": {
                     "ko": [
@@ -15356,8 +15412,22 @@
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "스미스의 혼동이 리카도에게 이어지므로 다음 장에서 그 효과를 비판해야 한다. 이 장은 2권의 시간 분석을 다음 단계로 넘기는 연결고리다.",
-                    "en": "Because Smith's confusion continues into Ricardo, the next chapter must criticize its effects. This chapter is a link that moves Volume II's analysis of time to the next stage."
+                    "ko": "스미스에게 남아 있던 혼동은 리카도에게서 가격과 이윤율 문제로 다시 나타난다. 고정자본의 내구성이나 회전 차이가 가격 현상에 영향을 주는 것은 맞지만, 그것을 가치창조의 원천 문제와 섞으면 기계가 이윤을 만든다는 착시가 생긴다. 그래서 다음 장은 회전 차이, 가치 이전, 살아 있는 노동을 더 엄밀히 나눈다.",
+                    "en": "Smith’s confusion reappears in Ricardo as a problem of prices and profit rates. Differences in durability and turnover of fixed capital do affect price phenomena, but if they are mixed with the source of value creation, machinery appears to create profit. The next chapter therefore separates turnover differences, value transfer, and living labour more strictly."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "내구성 기준만으로는 리카도에게서 반복되는 가격/이윤율 문제를 설명할 수 없습니다.",
+                      "회수 문제는 고정/유동자본의 시간 구조와 연결됩니다.",
+                      "이 답은 다음 장의 핵심인 가치 이전과 노동의 가치창조 구분을 미리 짚습니다.",
+                      "핵심입니다. 스미스의 혼동은 리카도에게서 가격과 이윤율 문제로 다시 나타납니다."
+                    ],
+                    "en": [
+                      "Durability alone cannot explain the price/profit-rate problem that returns in Ricardo.",
+                      "Recovery is connected to the time structure of fixed and circulating capital.",
+                      "This points to the next chapter’s distinction between value transfer and labour’s creation of value.",
+                      "Correct. Smith’s confusion returns in Ricardo as a price and profit-rate problem."
+                    ]
                   }
                 }
               ]
@@ -15613,8 +15683,22 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "리카도는 회전 차이를 가치론에 끌어들이지만 가치창조와 가치 이전의 시간을 충분히 구분하지 못한다. 이 긴장을 보아야 물질적 과정, 가치형태, 계급관계를 한꺼번에 분석할 수 있다.",
-                    "en": "Ricardo brings turnover differences into value theory but does not sufficiently distinguish value creation from the time of value transfer. Seeing this tension lets us analyze material process, value-form, and class relation together."
+                    "ko": "리카도는 자본의 내구성과 회전 차이가 가격과 이윤율에 영향을 준다는 문제를 보았다. 그러나 마르크스가 보기에, 그 영향은 기계가 새 가치를 만든다는 뜻이 아니다. 고정자본은 자기 가치를 조금씩 이전하고, 새 가치와 잉여가치는 살아 있는 노동에서 나온다는 두 문제를 분리해야 한다.",
+                    "en": "Ricardo saw that durability and turnover differences affect prices and profit rates. For Marx, however, that effect does not mean machinery creates new value. Fixed capital transfers its own value gradually, while new value and surplus-value come from living labour; these two issues must be separated."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 리카도는 문제를 보았지만 가치 이전과 가치창조를 충분히 나누지 못했습니다.",
+                      "기계가 오래간다고 매 회전마다 전체 가치가 회수되는 것은 아닙니다.",
+                      "보수 비용과 내구성은 가치창조의 원천이 아니라 가치 이전과 비용 보전의 문제입니다.",
+                      "기계의 가치 이전과 노동의 새 가치 생산을 같은 것으로 보면 이윤의 원천이 흐려집니다."
+                    ],
+                    "en": [
+                      "Correct. Ricardo saw the problem but did not sufficiently separate value transfer from value creation.",
+                      "Long machine life does not mean its whole value is recovered every turnover.",
+                      "Maintenance cost and durability concern value transfer and cost preservation, not the source of value creation.",
+                      "If machinery’s value transfer and labour’s creation of new value are identified, the source of profit is obscured."
+                    ]
                   }
                 },
                 {
@@ -15641,8 +15725,22 @@
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "임금 선대, 고정자본의 가치 이전, 이윤율 비교를 분리해 다시 연결하는 것이 매개다. 이 매개가 없으면 개별 사례는 단순한 기술 문제로 축소된다.",
-                    "en": "The mediation is to separate and reconnect wage advances, fixed-capital value transfer, and profit-rate comparison. Without this mediation, individual cases are reduced to mere technical problems."
+                    "ko": "임금 선대는 노동력 구매를 통해 새 가치 생산을 가능하게 한다. 고정자본은 여러 주기에 걸쳐 자기 가치를 이전한다. 이 둘의 회전 차이는 이윤율 비교에 영향을 줄 수 있지만, 그것이 기계와 노동이 같은 방식으로 가치를 만든다는 뜻은 아니다.",
+                    "en": "A wage advance buys labour-power and makes new value production possible. Fixed capital transfers its own value over several cycles. The turnover difference between the two can affect profit-rate comparison, but it does not mean machinery and labour create value in the same way."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "내구성과 보수 비용을 가치창조의 원천으로 바꾸면 리카도의 혼동이 반복됩니다.",
+                      "핵심입니다. 임금 선대, 고정자본의 가치 이전, 이윤율 현상은 구분한 뒤 연결해야 합니다.",
+                      "기계가 오래간다고 한 회전에 전체 가치가 회수되는 것은 아닙니다.",
+                      "기계와 노동을 같은 방식의 가치 원천으로 보면 잉여가치의 원천이 흐려집니다."
+                    ],
+                    "en": [
+                      "Turning durability and maintenance into a source of value creation repeats Ricardo’s confusion.",
+                      "Correct. Wage advances, fixed-capital value transfer, and profit-rate appearances must be distinguished and then connected.",
+                      "Long machine life does not mean its entire value is recovered in one turnover.",
+                      "Treating machinery and labour as equivalent value sources obscures the source of surplus-value."
+                    ]
                   }
                 },
                 {
@@ -15669,8 +15767,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "회전 구조를 가치창조의 원천처럼 보아 살아 있는 노동의 역할을 흐린다. 그래서 겉보기의 효율, 가격, 내구성 뒤에 있는 자본관계를 다시 드러내야 한다.",
-                    "en": "It treats turnover structure as if it were the source of value creation, obscuring the role of living labour. The capital relation behind apparent efficiency, price, and durability must therefore be made visible again."
+                    "ko": "자동화 설비는 많은 산출을 가능하게 하고 자기 가치를 상품에 이전하지만, 그 자체가 새 가치를 창조하지는 않는다. 높은 이윤은 설비의 가치 이전, 노동력 사용, 회전속도, 경쟁 조건이 결합되어 나타난 결과이지 기계가 잉여가치를 생산한다는 증거가 아니다.",
+                    "en": "Automated equipment enables large output and transfers its value to commodities, but it does not create new value by itself. High profit is an appearance produced by the combination of equipment value transfer, use of labour-power, turnover speed, and competitive conditions; it is not proof that machinery produces surplus-value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "보수 비용이나 내구성이 바로 가치창조의 원천이 되는 것은 아닙니다.",
+                      "기계가 오래간다고 매 회전 전체 가치가 회수되지는 않습니다.",
+                      "핵심입니다. 회전과 효율의 현상을 가치창조의 원천으로 착각하면 살아 있는 노동이 지워집니다.",
+                      "이 답은 맞는 비판이지만, 자동화 사례에서는 특히 회전·효율이 가치창조처럼 보이는 착시를 보아야 합니다."
+                    ],
+                    "en": [
+                      "Maintenance or durability is not directly a source of value creation.",
+                      "Long machine life does not mean its full value is recovered every turnover.",
+                      "Correct. If turnover and efficiency appearances are mistaken for value creation, living labour disappears.",
+                      "This is a valid criticism, but in the automation case the key is the appearance that turnover and efficiency create value."
+                    ]
                   }
                 },
                 {
@@ -15697,8 +15809,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "설비의 가치 이전, 회전속도, 살아 있는 노동, 전체 이윤 현상형태를 구분해야 한다. 현대적 형태에서도 자본의 회전과 가치 이전 방식은 사라지지 않는다.",
-                    "en": "One must distinguish equipment value transfer, turnover speed, living labour, and the phenomenal form of total profit. Even in modern forms, capital's turnover and value-transfer mechanisms do not disappear."
+                    "ko": "가격 현상에서 고정자본의 회전 차이가 보일 때도 분석 순서는 유지되어야 한다. 먼저 설비가 얼마의 기간에 걸쳐 가치를 이전하는지, 그 기간 동안 살아 있는 노동이 얼마의 새 가치를 만드는지, 그리고 이 둘이 이윤율 형태에서 어떻게 뒤섞여 보이는지를 구분해야 한다.",
+                    "en": "Even when fixed-capital turnover differences appear in price phenomena, the order of analysis must be preserved. First distinguish the period over which equipment transfers value, the new value created by living labour during that period, and how the two appear mixed in the form of the profit rate."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "오래가는 기계가 매 회전 전체 가치를 회수한다고 보면 감가상각과 가치 이전을 놓칩니다.",
+                      "내구성과 보수 비용은 중요하지만, 그것을 곧 가치창조 원천으로 바꿀 수는 없습니다.",
+                      "핵심입니다. 가치 이전, 회전속도, 살아 있는 노동, 이윤율 형태를 순서대로 구분해야 합니다.",
+                      "기계의 가치 이전과 노동의 새 가치 생산을 구분하지 않으면 이윤율 현상이 설명을 대신합니다."
+                    ],
+                    "en": [
+                      "If long-lasting machinery is assumed to recover all its value every turnover, depreciation and value transfer are missed.",
+                      "Durability and maintenance costs matter, but they cannot be turned directly into a source of value creation.",
+                      "Correct. Value transfer, turnover speed, living labour, and the profit-rate form must be distinguished in order.",
+                      "Without separating machinery’s value transfer from labour’s new value, the profit-rate appearance replaces explanation."
+                    ]
                   }
                 },
                 {
@@ -15706,8 +15832,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "11장이 노동기간과 생산시간 분석으로 넘어가기 전에 하는 역할은 무엇인가?",
-                    "en": "What is the systematic significance of Theories of Fixed and Circulating Capital: Ricardo?"
+                    "ko": "리카도 비판 뒤에 왜 노동기간과 생산시간 분석이 필요한가?",
+                    "en": "Why are the analyses of the working period and production time needed after the critique of Ricardo?"
                   },
                   "choices": {
                     "ko": [
@@ -15725,8 +15851,22 @@
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "리카도 비판을 통해 회전 범주를 정밀하게 만들어 노동기간과 생산시간 분석으로 넘어간다. 이 장은 2권의 시간 분석을 다음 단계로 넘기는 연결고리다.",
-                    "en": "Through the critique of Ricardo, the category of turnover is sharpened for the analysis of working period and production time. This chapter is a link that moves Volume II's analysis of time to the next stage."
+                    "ko": "리카도 비판은 회전 차이가 가격과 이윤율에 영향을 주지만 가치창조의 원천과 같지는 않다는 점을 분명히 한다. 그러면 다음 질문은 자본이 실제 생산과정 안에서 얼마나 오래 묶이는가이다. 노동기간과 생산시간 분석은 이 시간 구조를 직접 다룬다.",
+                    "en": "The critique of Ricardo clarifies that turnover differences affect prices and profit rates but are not identical with the source of value creation. The next question is how long capital is tied up inside the actual production process. The analyses of the working period and production time address this time structure directly."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "보수 비용을 가치창조 원천으로 만들면 다음 시간 분석의 기준이 흐려집니다.",
+                      "한 회전마다 전체 기계가치가 회수된다고 보면 노동기간 문제를 볼 수 없습니다.",
+                      "이 답은 다음 장에서 풀릴 핵심 구분입니다. 기계의 가치 이전과 노동의 새 가치 생산을 나누어야 합니다.",
+                      "핵심입니다. 리카도 비판 뒤에는 자본이 생산 안에서 묶이는 구체적 시간 구조가 문제가 됩니다."
+                    ],
+                    "en": [
+                      "Turning maintenance into a source of value creation blurs the criterion for the following time analysis.",
+                      "If the whole machine value is assumed recovered each turnover, the working-period problem disappears.",
+                      "This names the key distinction developed by the next step: machinery’s value transfer versus labour’s new value.",
+                      "Correct. After Ricardo, the concrete time structure in which capital is tied up in production becomes the issue."
+                    ]
                   }
                 }
               ]
@@ -15968,8 +16108,22 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "가치가 생산되고 있어도 판매 가능한 완성품이 아직 없으면 자본이 계속 묶인다는 긴장이다. 이 긴장을 보아야 물질적 과정, 가치형태, 계급관계를 한꺼번에 분석할 수 있다.",
-                    "en": "The tension is that even while value is being produced, capital remains tied up if there is no saleable finished product yet. Seeing this tension lets us analyze material process, value-form, and class relation together."
+                    "ko": "긴 노동기간에서는 노동이 실제로 진행되고 가치가 형성되고 있어도, 완성품이 나오기 전에는 판매를 통한 회수가 불가능하다. 그동안 임금과 재료비는 계속 선대되어야 하므로 신용 의존이나 더 큰 선대자본 요구가 생긴다.",
+                    "en": "During a long working period, labour is actually being performed and value is being formed, but recovery through sale is impossible until the finished product exists. Wages and materials must still be advanced during that time, so credit dependence or a larger advance becomes necessary."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 가치 형성과 판매 가능한 완성품 사이의 시간차가 자본 묶임을 만듭니다.",
+                      "완성품이 나오기 전에는 판매를 통한 회수가 일반적으로 불가능합니다.",
+                      "노동기간은 하루 노동시간의 길이가 아니라 완성품을 만들기까지 이어지는 전체 기간입니다.",
+                      "노동기간과 판매 후 회수시간을 구분해야 생산 안팎의 시간 구조가 보입니다."
+                    ],
+                    "en": [
+                      "Correct. The time gap between value formation and a saleable finished product ties up capital.",
+                      "Before the finished product exists, recovery through sale is generally impossible.",
+                      "The working period is not the length of a working day; it is the whole period required to complete the product.",
+                      "Working period and post-sale recovery time must be distinguished to see time inside and outside production."
+                    ]
                   }
                 },
                 {
@@ -15996,8 +16150,22 @@
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "연속된 노동일들이 하나의 완성품으로 응결되는 전체 기간이 노동기간을 매개한다. 이 매개가 없으면 개별 사례는 단순한 기술 문제로 축소된다.",
-                    "en": "The total span in which successive working days are condensed into one finished product mediates the working period. Without this mediation, individual cases are reduced to mere technical problems."
+                    "ko": "노동기간은 개별 노동일 하나가 아니라 여러 노동일이 이어져 하나의 완성품을 만드는 전체 기간이다. 조선, 건설, 대형 설비 제작처럼 완성 전에는 판매가 어렵거나 불가능한 경우, 이 전체 기간 동안 선대자본이 생산 안에 묶인다.",
+                    "en": "The working period is not one working day but the whole span in which many working days are joined into one finished product. In shipbuilding, construction, or large equipment production, where sale is difficult or impossible before completion, advanced capital remains tied up in production throughout that period."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "하루 노동시간과 노동기간을 혼동하면 선대자본이 묶이는 기간이 사라집니다.",
+                      "핵심입니다. 여러 노동일이 하나의 완성품으로 이어지는 전체 기간이 노동기간입니다.",
+                      "완성 전 판매 회수를 전제하면 긴 노동기간의 자금 압박을 놓칩니다.",
+                      "노동기간과 유통시간을 뭉뚱그리면 생산 안에서 자본이 묶이는 문제를 볼 수 없습니다."
+                    ],
+                    "en": [
+                      "If the working day and working period are confused, the period during which advanced capital is tied up disappears.",
+                      "Correct. The working period is the whole span in which many working days form one finished product.",
+                      "Assuming recovery before completion misses the financing pressure of a long working period.",
+                      "If working period and circulation time are merged, the problem of capital tied up inside production is lost."
+                    ]
                   }
                 },
                 {
@@ -16024,8 +16192,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "기간이 길다는 사실을 더 많은 가치생산과 곧바로 동일시한다. 그래서 겉보기의 효율, 가격, 내구성 뒤에 있는 자본관계를 다시 드러내야 한다.",
-                    "en": "It immediately identifies longer duration with greater value production. The capital relation behind apparent efficiency, price, and durability must therefore be made visible again."
+                    "ko": "노동기간이 길다고 해서 자동으로 더 많은 가치가 생기는 것은 아니다. 새 가치는 노동시간에서 나오지만, 긴 노동기간의 핵심은 완성품이 나오기까지 선대자본이 오래 묶이고 회수가 늦어진다는 데 있다.",
+                    "en": "A longer working period does not automatically create more value. New value comes from labour-time, but the key point of a long working period is that advanced capital remains tied up until the finished product exists and recovery is delayed."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동기간을 하루 노동시간 증가와 혼동한 답입니다.",
+                      "완성 전 회수를 전제하면 노동기간 문제 자체가 사라집니다.",
+                      "핵심입니다. 기간의 길이 자체가 아니라 노동시간과 자본 묶임의 관계를 보아야 합니다.",
+                      "노동기간과 판매 후 회수시간은 연결되지만 같은 문제는 아닙니다."
+                    ],
+                    "en": [
+                      "This confuses the working period with a longer working day.",
+                      "Assuming recovery before completion erases the working-period problem.",
+                      "Correct. The issue is not length by itself, but the relation between labour-time and tied-up capital.",
+                      "The working period and post-sale recovery time are connected but not identical."
+                    ]
                   }
                 },
                 {
@@ -16052,8 +16234,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "부분 지급이 긴 노동기간의 자금 압박과 자본 묶임을 어떻게 완화하는지 물어야 한다. 현대적 형태에서도 자본의 회전과 가치 이전 방식은 사라지지 않는다.",
-                    "en": "One should ask how partial payments mitigate the financing pressure and tying-up of capital caused by a long working period. Even in modern forms, capital's turnover and value-transfer mechanisms do not disappear."
+                    "ko": "부분 지급은 완성품 판매 전까지 자본이 전부 묶이는 부담을 줄일 수 있다. 핵심은 계약 기술 자체가 아니라, 긴 노동기간 동안 선대된 임금·재료비가 언제 얼마나 회수되어 다음 지출을 감당할 수 있는가이다.",
+                    "en": "Progress payments can reduce the burden of having all capital tied up until final sale. The key is not the contract technique itself, but when and how much of the advanced wages and materials are recovered during the long working period so that further outlays can be met."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "완성 전 전액 회수를 전제하면 부분 지급의 의미를 볼 수 없습니다.",
+                      "하루 노동시간과 노동기간을 혼동하면 자금 압박의 기간이 사라집니다.",
+                      "핵심입니다. 부분 지급이 긴 노동기간의 선대자본 묶임을 어떻게 줄이는지가 문제입니다.",
+                      "노동기간과 판매 후 유통시간은 구분해야 하지만, 둘 다 회전에 영향을 줍니다."
+                    ],
+                    "en": [
+                      "Assuming full recovery before completion misses the meaning of progress payments.",
+                      "Confusing the working day and working period erases the duration of financing pressure.",
+                      "Correct. The issue is how progress payments reduce the tying-up of advanced capital during a long working period.",
+                      "Working period and post-sale circulation time must be distinguished, though both affect turnover."
+                    ]
                   }
                 },
                 {
@@ -16061,8 +16257,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "노동기간 장이 생산시간 장으로 이어지는 이유는 무엇인가?",
-                    "en": "What is the systematic significance of The Working Period?"
+                    "ko": "왜 노동기간 분석 뒤에 생산시간 분석이 이어지는가?",
+                    "en": "Why does the analysis of the working period lead to the analysis of production time?"
                   },
                   "choices": {
                     "ko": [
@@ -16080,8 +16276,22 @@
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "노동기간은 생산시간의 일부일 뿐이므로, 노동이 직접 작용하지 않는 생산시간 분석으로 넘어간다. 이 장은 2권의 시간 분석을 다음 단계로 넘기는 연결고리다.",
-                    "en": "Because the working period is only part of production time, the argument moves to production time in which labour may not be directly acting. This chapter is a link that moves Volume II's analysis of time to the next stage."
+                    "ko": "노동기간은 직접 노동이 이어져 완성품을 만드는 시간이다. 그러나 생산시간에는 노동이 잠시 멈추어도 자연과정이나 기술적 대기 때문에 자본이 계속 묶이는 시간이 포함된다. 그래서 노동기간 다음에는 더 넓은 생산시간을 분석해야 한다.",
+                    "en": "The working period is the time in which direct labour continues toward a finished product. But production time also includes periods when labour pauses while natural processes or technical waiting keep capital tied up. That is why the broader category of production time follows the working period."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "하루 노동시간과 노동기간의 혼동을 바로잡아야 다음 생산시간 구분으로 갈 수 있습니다.",
+                      "완성 전 회수를 전제하면 노동기간과 생산시간의 차이를 볼 수 없습니다.",
+                      "노동기간과 유통시간을 뭉뚱그리면 생산 내부의 비노동 대기시간이 보이지 않습니다.",
+                      "핵심입니다. 노동기간은 생산시간의 일부이고, 다음 장은 노동하지 않는 생산 내부 시간까지 다룹니다."
+                    ],
+                    "en": [
+                      "Correcting the confusion between working day and working period prepares the next distinction.",
+                      "Assuming recovery before completion hides the difference between working period and production time.",
+                      "Merging working period and circulation time hides non-labour waiting time inside production.",
+                      "Correct. The working period is part of production time; the next chapter covers time inside production when labour is not directly acting."
+                    ]
                   }
                 }
               ]
@@ -16323,8 +16533,22 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "사용가치 완성에 필요한 시간과 새 가치가 창조되는 노동시간이 일치하지 않는 긴장이다. 이 긴장을 보아야 물질적 과정, 가치형태, 계급관계를 한꺼번에 분석할 수 있다.",
-                    "en": "The tension is that time needed to complete a use-value does not coincide with labour-time that creates new value. Seeing this tension lets us analyze material process, value-form, and class relation together."
+                    "ko": "생산시간에는 직접 노동시간보다 긴 시간이 포함될 수 있다. 포도주 숙성, 목재 건조, 생물학적 배양처럼 사용가치가 완성되려면 시간이 필요하지만, 그 시간 전체가 새 가치를 만드는 노동시간은 아니다. 그런데 그동안 자본은 여전히 생산 안에 묶인다.",
+                    "en": "Production time can be longer than direct labour-time. Wine aging, drying wood, or biological cultivation require time for the use-value to be completed, but that whole time is not labour-time creating new value. Yet capital remains tied up inside production during it."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 사용가치 완성 시간과 새 가치 창조 시간이 어긋날 수 있습니다.",
+                      "자연과정 동안 선대자본이 자유롭게 다시 투입되는 것은 아닙니다. 생산 안에 묶일 수 있습니다.",
+                      "생산시간을 노동시간과 같게 보면 자연과정이 회전을 늦추는 효과를 놓칩니다.",
+                      "대기시간은 필요할 수 있지만 새 가치를 만드는 노동시간과 같지는 않습니다."
+                    ],
+                    "en": [
+                      "Correct. Time needed to complete the use-value can diverge from time creating new value.",
+                      "During a natural process, advanced capital is not simply free to be advanced again; it may remain tied up in production.",
+                      "If production time is identified with labour-time, the effect of natural processes on turnover is missed.",
+                      "Waiting time may be necessary, but it is not the same as labour-time creating new value."
+                    ]
                   }
                 },
                 {
@@ -16351,8 +16575,22 @@
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "자연과정, 기술적 대기, 직접 노동의 결합이 생산시간을 매개한다. 이 매개가 없으면 개별 사례는 단순한 기술 문제로 축소된다.",
-                    "en": "Production time is mediated by the combination of natural process, technical waiting, and direct labour. Without this mediation, individual cases are reduced to mere technical problems."
+                    "ko": "생산시간은 직접 노동, 자연과정, 기술적 대기 시간이 결합된 전체다. 이 구분을 해야 왜 노동이 멈춘 상태에서도 자본이 생산 안에 묶이고, 회전시간이 길어지는지 설명할 수 있다.",
+                    "en": "Production time is the whole combination of direct labour, natural processes, and technical waiting. This distinction explains why capital can remain tied up inside production even when labour is not currently acting, lengthening turnover time."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산시간 전체를 노동시간으로 보면 자연과정과 대기시간이 사라집니다.",
+                      "핵심입니다. 직접 노동과 비노동 생산시간의 결합이 생산시간을 이룹니다.",
+                      "자연과정 중에도 자본이 자유롭게 회수된다고 보면 자본 묶임을 놓칩니다.",
+                      "숙성이나 발효 시간은 필요하지만 새 가치를 만드는 노동시간과 같지 않습니다."
+                    ],
+                    "en": [
+                      "If all production time is treated as labour-time, natural processes and waiting time disappear.",
+                      "Correct. Production time consists of the combination of direct labour and non-labour production time.",
+                      "If capital is assumed freely recoverable during natural processes, its tying-up is missed.",
+                      "Aging or fermentation time may be necessary, but it is not the same as labour-time creating new value."
+                    ]
                   }
                 },
                 {
@@ -16379,8 +16617,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "달력 시간이 길수록 가치가 자동으로 커진다고 본다. 그래서 겉보기의 효율, 가격, 내구성 뒤에 있는 자본관계를 다시 드러내야 한다.",
-                    "en": "It assumes value automatically grows with calendar time. The capital relation behind apparent efficiency, price, and durability must therefore be made visible again."
+                    "ko": "달력 시간이 길다는 사실만으로 가치가 자동 증가하지 않는다. 새 가치는 노동시간에서 나오며, 자연과정이나 대기시간은 사용가치 완성에 필요할 수 있지만 자본 회전을 늦추고 선대자본을 묶는 방식으로 작용한다.",
+                    "en": "A longer calendar time does not automatically increase value. New value comes from labour-time; natural processes or waiting time may be necessary for the use-value, but they act by slowing turnover and tying up advanced capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산시간을 노동시간과 같게 보면 대기시간의 성격을 구분할 수 없습니다.",
+                      "자연과정 동안 자본이 자유롭게 회수된다고 보면 회전 지연이 사라집니다.",
+                      "핵심입니다. 달력 시간과 가치창조 노동시간을 구분해야 합니다.",
+                      "숙성·발효 시간은 필요한 생산시간일 수 있지만 그 자체가 노동시간은 아닙니다."
+                    ],
+                    "en": [
+                      "If production time is identified with labour-time, waiting time cannot be distinguished.",
+                      "If capital is assumed freely recoverable during natural processes, turnover delay disappears.",
+                      "Correct. Calendar time must be distinguished from labour-time that creates value.",
+                      "Aging or fermentation may be necessary production time, but it is not labour-time itself."
+                    ]
                   }
                 },
                 {
@@ -16407,8 +16659,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "직접 노동시간과 배양이라는 생산시간의 차이가 회전시간과 선대자본 요구에 미치는 영향을 물어야 한다. 현대적 형태에서도 자본의 회전과 가치 이전 방식은 사라지지 않는다.",
-                    "en": "One should ask how the difference between direct labour-time and culture production time affects turnover time and the need for advanced capital. Even in modern forms, capital's turnover and value-transfer mechanisms do not disappear."
+                    "ko": "세포 배양 중에는 직접 노동이 계속 투입되지 않아도 설비, 원료, 배양 중인 생산물이 묶여 있다. 따라서 핵심은 배양시간이 새 가치를 만든다는 말이 아니라, 직접 노동시간보다 긴 생산시간이 회전시간과 필요한 선대자본량을 어떻게 늘리는가이다.",
+                    "en": "During cell cultivation, equipment, materials, and the product in process remain tied up even when direct labour is not continuously applied. The key is not that cultivation time creates new value, but how production time longer than direct labour-time lengthens turnover and increases the required advance."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "자연과정 중에도 자본이 자유롭게 다시 투입된다고 보면 배양시간의 회전 효과를 놓칩니다.",
+                      "생산시간을 노동시간과 같게 보면 직접 노동이 없는 배양시간을 설명할 수 없습니다.",
+                      "핵심입니다. 직접 노동시간과 긴 생산시간의 차이가 회전과 선대자본 요구를 바꿉니다.",
+                      "배양 시간은 필요하지만 그 자체가 새 가치를 만드는 노동시간은 아닙니다."
+                    ],
+                    "en": [
+                      "If capital is assumed freely re-advanceable during natural processes, the turnover effect of cultivation time is missed.",
+                      "If production time is identified with labour-time, cultivation time without direct labour cannot be explained.",
+                      "Correct. The gap between direct labour-time and longer production time changes turnover and required advances.",
+                      "Cultivation time may be necessary, but it is not itself labour-time creating new value."
+                    ]
                   }
                 },
                 {
@@ -16416,8 +16682,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "생산시간 장이 다음의 유통시간 분석과 맞물리는 지점은 무엇인가?",
-                    "en": "What is the systematic significance of The Time of Production?"
+                    "ko": "왜 생산시간 분석 뒤에 유통시간 분석이 이어지는가?",
+                    "en": "Why does the analysis of production time lead to the analysis of circulation time?"
                   },
                   "choices": {
                     "ko": [
@@ -16435,8 +16701,22 @@
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "생산 내부의 시간 구조를 다룬 뒤, 생산 밖에서 자본을 묶는 유통시간 분석으로 넘어간다. 이 장은 2권의 시간 분석을 다음 단계로 넘기는 연결고리다.",
-                    "en": "After treating the time structure inside production, the argument moves to circulation time, which ties up capital outside production. This chapter is a link that moves Volume II's analysis of time to the next stage."
+                    "ko": "생산시간 분석은 자본이 생산 안에서 직접 노동시간보다 오래 묶일 수 있음을 보여 준다. 그러나 상품이 완성된 뒤에도 판매와 구매, 대금 회수 때문에 자본은 생산 밖에서 다시 묶일 수 있다. 그래서 다음 단계는 생산 밖의 시간, 곧 유통시간이다.",
+                    "en": "The analysis of production time shows that capital can be tied up inside production longer than direct labour-time. But after the commodity is completed, sale, purchase, and monetary recovery can tie capital up again outside production. The next step is therefore time outside production: circulation time."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산시간을 노동시간과 같게 보면 생산 내부의 시간 분석이 끝나지 않습니다.",
+                      "자연과정 동안 자본이 자유롭다고 보면 생산시간의 묶임도 유통시간과의 연결도 사라집니다.",
+                      "대기시간이 노동시간과 같다는 오해를 버려야 유통시간의 별도 성격도 보입니다.",
+                      "핵심입니다. 생산 안에서 묶이는 시간을 본 뒤, 생산 밖에서 묶이는 시간을 분석합니다."
+                    ],
+                    "en": [
+                      "If production time is identified with labour-time, the analysis of time inside production is incomplete.",
+                      "If capital is treated as free during natural processes, both production-time tying-up and its link to circulation time disappear.",
+                      "Rejecting the idea that waiting time is labour-time also clarifies the separate character of circulation time.",
+                      "Correct. After time tied up inside production, Marx analyzes time tied up outside production."
+                    ]
                   }
                 }
               ]
