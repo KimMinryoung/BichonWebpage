@@ -16870,15 +16870,15 @@
                   "choices": {
                     "ko": [
                       "회전시간의 길이가 같은 규모의 연속생산에 필요한 선대자본량을 어떻게 바꾸는지 분석한다.",
-                      "연간 생산비가 같으면 필요한 선대자본도 대체로 같다고 본다.",
-                      "회전이 늦어도 신용만 있으면 선대자본 문제는 사라진다고 본다.",
-                      "생산규모와 선대자본량을 같은 개념으로 본다."
+                      "연간 총생산비가 같으면 처음 묶어 두어야 할 선대액도 같다고 계산한다.",
+                      "회수 지연은 은행 신용이 항상 흡수하므로 자본량 분석에서 제외해도 된다고 본다.",
+                      "생산규모를 유지하는 데 필요한 동시 선대액과 1년 지출 총액을 구분하지 않는다."
                     ],
                     "en": [
-                      "It analyzes how the length of turnover time changes the amount of advanced capital required for continuous production on the same scale.",
-                      "Assumes equal annual cost always means equal advanced capital.",
-                      "Assumes credit abolishes the problem of advanced capital under slow turnover.",
-                      "Identifies scale of production with the magnitude of advanced capital."
+                      "It analyzes how the length of turnover time changes the amount of advanced capital needed for continuous production at the same scale.",
+                      "It calculates that if annual production costs are the same, the initial capital tied up must also be the same.",
+                      "It treats delayed recovery as always absorbed by bank credit and therefore outside the analysis of capital magnitude.",
+                      "It fails to distinguish the simultaneous advance needed to maintain production from total yearly outlays."
                     ]
                   },
                   "answer": 0,
@@ -16898,15 +16898,15 @@
                   "choices": {
                     "ko": [
                       "회수가 늦을수록 생산을 끊지 않기 위해 더 많은 기간의 임금과 원료비를 미리 선대해야 한다.",
-                      "생산규모와 선대자본량을 같은 개념으로 본다.",
-                      "회전이 늦어도 신용만 있으면 선대자본 문제는 사라진다고 본다.",
-                      "대금 회수 시점을 생산과 무관한 회계 문제로만 본다."
+                      "두 공장의 주당 지출이 같으므로 처음 준비해야 할 자본도 같다고 계산한다.",
+                      "늦게 회수되는 공장은 신용으로 시간을 메우면 되므로 추가 선대액은 문제가 아니라고 본다.",
+                      "판매대금이 돌아오는 시차가 다음 주 임금과 원료 구매에 미치는 압박을 보지 않는다."
                     ],
                     "en": [
-                      "The later the recovery, the more weeks of wages and materials must be advanced in order to keep production continuous.",
-                      "Identifies scale of production with the magnitude of advanced capital.",
-                      "Assumes credit abolishes the problem of advanced capital under slow turnover.",
-                      "Treats payment recovery as mere bookkeeping unrelated to production."
+                      "The slower the recovery, the more weeks of wages and materials must be advanced in order to keep production continuous.",
+                      "It calculates that because the two factories spend the same amount each week, they must need the same initial capital.",
+                      "It assumes the slower factory can simply bridge the gap with credit, so the additional advance is not a real issue.",
+                      "It misses how the delay in receiving sales money presses on the next week’s wage and materials payments."
                     ]
                   },
                   "answer": 0,
@@ -16925,16 +16925,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "생산규모와 선대자본량을 같은 개념으로 본다.",
+                      "한 해 생산규모가 같으면 그해 실제로 묶여 있어야 하는 선대자본도 같다고 계산한다.",
                       "같은 선대액도 회전이 빠르면 1년 동안 여러 번 기능하고, 느리면 더 큰 선대액이 같은 생산규모를 유지해야 한다.",
-                      "대금 회수 시점을 생산과 무관한 회계 문제로만 본다.",
-                      "유통시간이 길수록 상품가치가 그 자체로 오른다고 본다."
+                      "판매대금이 언제 돌아오는지는 총생산액 계산 뒤에 따로 처리할 금융 문제라고 본다.",
+                      "유통시간이 길어질수록 같은 상품이 더 많은 가치를 품게 된다고 오해한다."
                     ],
                     "en": [
-                      "Identifies scale of production with the magnitude of advanced capital.",
-                      "The same advance can function several times in a year if turnover is fast, while slow turnover requires a larger advance to maintain the same scale of production.",
-                      "Treats payment recovery as mere bookkeeping unrelated to production.",
-                      "Assumes longer circulation time automatically raises commodity value."
+                      "It calculates that if yearly output is the same, the capital that must actually be tied up during the year is also the same.",
+                      "The same advanced sum can function several times in a year if turnover is fast, while slower turnover requires a larger advance to maintain the same scale of production.",
+                      "It treats the timing of sales receipts as a financial issue to be handled separately after total output is calculated.",
+                      "It mistakes a longer circulation time for a direct increase in the value contained in the same commodity."
                     ]
                   },
                   "answer": 1,
@@ -16953,16 +16953,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "대금 회수 시점을 생산과 무관한 회계 문제로만 본다.",
-                      "유통시간이 길수록 상품가치가 그 자체로 오른다고 본다.",
+                      "납품은 끝났으니 회계상 매출만 잡으면 생산이 계속될 수 있다고 본다.",
+                      "90일 기다리는 동안 상품가치가 저절로 커져 임금과 원료비를 보충한다고 오해한다.",
                       "판매는 되었더라도 화폐 회수가 늦으면 연속생산을 위해 추가 선대자본이나 신용이 필요해진다.",
-                      "연간 생산비가 같으면 필요한 선대자본도 대체로 같다고 본다."
+                      "연간 매출과 비용이 맞으면 주별 현금 공백은 자본 회전에 영향을 주지 않는다고 계산한다."
                     ],
                     "en": [
-                      "Treats payment recovery as mere bookkeeping unrelated to production.",
-                      "Assumes longer circulation time automatically raises commodity value.",
-                      "Even after sale, delayed monetary recovery requires additional advanced capital or credit to maintain continuous production.",
-                      "Assumes equal annual cost always means equal advanced capital."
+                      "It assumes that once delivery is complete, booking the sale is enough for production to continue.",
+                      "It mistakes the 90-day wait for a period in which commodity value grows by itself and covers wages and materials.",
+                      "Even if the sale has occurred, delayed money recovery means additional advanced capital or credit is needed for continuous production.",
+                      "It calculates that if annual revenue and costs balance, weekly cash gaps do not affect capital turnover."
                     ]
                   },
                   "answer": 2,
@@ -16981,16 +16981,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "회전이 늦어도 신용만 있으면 선대자본 문제는 사라진다고 본다.",
-                      "유통시간이 길수록 상품가치가 그 자체로 오른다고 본다.",
-                      "연간 생산비가 같으면 필요한 선대자본도 대체로 같다고 본다.",
+                      "신용을 이용하면 회전 지연이 실제로 묶어 두는 자본량 문제는 사라진다고 본다.",
+                      "유통시간이 길어진 만큼 상품 자체의 가치가 올라가 선대자본 부담을 보상한다고 본다.",
+                      "연간 생산비 총액만 알면 자본가가 동시에 준비해야 할 자본량도 알 수 있다고 본다.",
                       "회전시간이 단지 속도 지표가 아니라 자본가가 묶어 두어야 할 자본량을 결정하는 조건임을 보여준다."
                     ],
                     "en": [
-                      "Assumes credit abolishes the problem of advanced capital under slow turnover.",
-                      "Assumes longer circulation time automatically raises commodity value.",
-                      "Assumes equal annual cost always means equal advanced capital.",
-                      "It shows that turnover time is not merely a speed indicator but a condition determining how much capital must be tied up."
+                      "It treats credit as making the amount of capital tied up by delayed turnover disappear in practice.",
+                      "It assumes that a longer circulation time raises the commodity’s value and compensates for the burden of advanced capital.",
+                      "It assumes that knowing total annual production costs is enough to know how much capital must be available at the same time.",
+                      "It shows that turnover time is not just a speed indicator but a condition determining how much capital the capitalist must keep tied up."
                     ]
                   },
                   "answer": 3,
@@ -17020,15 +17020,15 @@
                   "choices": {
                     "ko": [
                       "생산규모가 같아도 자본 회수가 늦으면 더 많은 가치가 동시에 묶여야 한다는 긴장이다.",
-                      "회전이 늦어도 신용만 있으면 선대자본 문제는 사라진다고 본다.",
-                      "연간 생산비가 같으면 필요한 선대자본도 대체로 같다고 본다.",
-                      "생산규모와 선대자본량을 같은 개념으로 본다."
+                      "신용이 회수 지연을 메우면 선대자본량의 차이는 이론적으로 중요하지 않다고 본다.",
+                      "연간 지출 총액이 같으면 회전시간 차이는 자본량이 아니라 장부 표시만 바꾼다고 본다.",
+                      "생산량과 동시에 묶여 있는 자본량을 같은 수치로 놓고 회전시간의 효과를 지운다."
                     ],
                     "en": [
-                      "Even with the same scale of production, slower recovery requires more value to be tied up at the same time.",
-                      "Assumes credit abolishes the problem of advanced capital under slow turnover.",
-                      "Assumes equal annual cost always means equal advanced capital.",
-                      "Identifies scale of production with the magnitude of advanced capital."
+                      "The tension is that even at the same production scale, slower capital recovery requires more value to be tied up at the same time.",
+                      "It treats credit as making differences in advanced capital theoretically unimportant once it bridges delayed recovery.",
+                      "It treats equal annual outlays as meaning turnover time changes only bookkeeping presentation, not the quantity of capital.",
+                      "It places output and the capital simultaneously tied up under the same figure, erasing the effect of turnover time."
                     ]
                   },
                   "answer": 0,
@@ -17047,16 +17047,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "회전이 늦어도 신용만 있으면 선대자본 문제는 사라진다고 본다.",
+                      "신용 한도가 있으면 회수 리듬과 지불 리듬의 불일치는 분석할 필요가 없다고 본다.",
                       "선대자본의 회수 리듬과 새 임금·원료 구매의 지불 리듬이 맞물리는 방식이다.",
-                      "생산규모와 선대자본량을 같은 개념으로 본다.",
-                      "대금 회수 시점을 생산과 무관한 회계 문제로만 본다."
+                      "연속생산은 생산능력만 충분하면 유지되며 회수 시점은 외부 금융 문제라고 본다.",
+                      "판매대금 회수 전에도 다음 생산을 시작해야 하는 시간적 압박을 보지 않는다."
                     ],
                     "en": [
-                      "Assumes credit abolishes the problem of advanced capital under slow turnover.",
-                      "It is the way the rhythm of capital recovery interlocks with the payment rhythm for new wages and materials.",
-                      "Identifies scale of production with the magnitude of advanced capital.",
-                      "Treats payment recovery as mere bookkeeping unrelated to production."
+                      "It assumes that if a credit line exists, the mismatch between recovery rhythm and payment rhythm need not be analyzed.",
+                      "It is the way the rhythm of recovering advanced capital meshes with the payment rhythm for new wages and materials.",
+                      "It treats continuous production as maintained by productive capacity alone, with recovery timing as an external finance issue.",
+                      "It misses the temporal pressure to begin the next production cycle before sales money has returned."
                     ]
                   },
                   "answer": 1,
@@ -17075,16 +17075,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "생산규모와 선대자본량을 같은 개념으로 본다.",
-                      "대금 회수 시점을 생산과 무관한 회계 문제로만 본다.",
+                      "생산규모가 같으면 동시에 묶이는 자본량도 같다고 보아 회전속도의 차이를 지운다.",
+                      "대금 회수 전에도 새 임금과 원료비를 지급해야 하는 시간 구조를 별도 문제로 밀어낸다.",
                       "그 비용이 한꺼번에 필요한지, 회수되어 반복 사용되는지라는 시간 구조를 놓친다.",
-                      "유통시간이 길수록 상품가치가 그 자체로 오른다고 본다."
+                      "유통시간이 길어지면 같은 비용도 더 큰 새 가치를 만든다고 착각한다."
                     ],
                     "en": [
-                      "Identifies scale of production with the magnitude of advanced capital.",
-                      "Treats payment recovery as mere bookkeeping unrelated to production.",
-                      "It misses the time-structure: whether the cost is needed all at once or returns and is used repeatedly.",
-                      "Assumes longer circulation time automatically raises commodity value."
+                      "It treats equal production scale as implying equal capital tied up at the same time, erasing the difference made by turnover speed.",
+                      "It pushes aside the temporal structure in which new wages and materials must be paid before sales money returns.",
+                      "It misses whether those costs are needed all at once or are recovered and used repeatedly over time.",
+                      "It mistakes longer circulation time for a process that makes the same costs create more new value."
                     ]
                   },
                   "answer": 2,
@@ -17103,16 +17103,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "유통시간이 길수록 상품가치가 그 자체로 오른다고 본다.",
-                      "대금 회수 시점을 생산과 무관한 회계 문제로만 본다.",
+                      "정산 대기 시간이 길수록 플랫폼이 새 가치를 추가로 만들어 판매자에게 넘긴다고 본다.",
+                      "빠른 정산은 편리한 결제 서비스일 뿐 재고와 임금 선대의 리듬에는 영향을 주지 않는다고 본다.",
                       "정산 단축은 새 가치를 만들기보다 자본 회수와 재선대 사이의 공백을 줄여 필요한 선대액을 낮춘다.",
-                      "연간 생산비가 같으면 필요한 선대자본도 대체로 같다고 본다."
+                      "연간 매출이 같으면 정산일이 앞당겨져도 판매자가 준비해야 할 운전자본은 같다고 본다."
                     ],
                     "en": [
-                      "Assumes longer circulation time automatically raises commodity value.",
-                      "Treats payment recovery as mere bookkeeping unrelated to production.",
-                      "Faster settlement does not create new value; it reduces the gap between recovery and renewed advance, lowering the required advance.",
-                      "Assumes equal annual cost always means equal advanced capital."
+                      "It treats a longer settlement wait as a period in which the platform creates additional new value for the seller.",
+                      "It treats faster settlement as a convenient payment service that does not affect the rhythm of inventory and wage advances.",
+                      "Shorter settlement does not create new value; it reduces the gap between capital recovery and re-advance, lowering the required advance.",
+                      "It assumes that if annual sales are the same, earlier settlement does not change the working capital the seller must prepare."
                     ]
                   },
                   "answer": 2,
@@ -17131,16 +17131,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "유통시간이 길수록 상품가치가 그 자체로 오른다고 본다.",
-                      "연간 생산비가 같으면 필요한 선대자본도 대체로 같다고 본다.",
-                      "회전이 늦어도 신용만 있으면 선대자본 문제는 사라진다고 본다.",
+                      "유통시간이 길어진 만큼 상품가치가 커진다는 관점에서 회전시간 분석을 가치증식 이론으로 바꾼다.",
+                      "연간 생산비 총액과 동시에 묶이는 선대자본량을 같은 것으로 놓아 회전 분석을 불필요하게 만든다.",
+                      "신용이 회전 지연을 메울 수 있다는 사실을 근거로 선대자본량 문제를 분석 밖으로 밀어낸다.",
                       "회전시간 분석을 자본량 문제로 구체화해, 가변자본의 회전과 연간 잉여가치율 분석으로 넘어간다."
                     ],
                     "en": [
-                      "Assumes longer circulation time automatically raises commodity value.",
-                      "Assumes equal annual cost always means equal advanced capital.",
-                      "Assumes credit abolishes the problem of advanced capital under slow turnover.",
-                      "It concretizes turnover time as a problem of capital magnitude, leading to the turnover of variable capital and the annual rate of surplus-value."
+                      "It turns the analysis of turnover time into a theory of value expansion by assuming commodities gain value while circulation lasts.",
+                      "It makes turnover analysis unnecessary by identifying total annual production costs with the amount of capital tied up at once.",
+                      "It pushes the question of advanced capital outside the analysis because credit may bridge delayed turnover.",
+                      "It concretizes turnover time as a problem of capital magnitude, leading into variable-capital turnover and the annual rate of surplus-value."
                     ]
                   },
                   "answer": 3,
