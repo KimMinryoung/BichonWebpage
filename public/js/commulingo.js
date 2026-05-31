@@ -469,14 +469,7 @@
     function conceptMap(lesson) {
         var dataMap = lesson.conceptMap;
         if (dataMap && Array.isArray(dataMap.ko) && Array.isArray(dataMap.en)) return dataMap;
-        return {
-            ko: [
-                { title: '개념 데이터 없음', text: '이 장의 개념 카드가 아직 데이터에 연결되지 않았습니다.' }
-            ],
-            en: [
-                { title: 'Missing concept data', text: 'This chapter concept brief has not been connected in the lesson data yet.' }
-            ]
-        };
+        return { ko: [], en: [] };
     }
 
     function renderDiagram(lesson) {
