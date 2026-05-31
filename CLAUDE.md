@@ -42,6 +42,12 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 - Recovery (lost all passkeys): SSH in and run `docker exec leninbot-frontend node /app/scripts/reset-passkeys.js [username]`. Next `/admin/login` from an allowlisted IP re-enters bootstrap mode.
 - DB tables: `users` (id, username, is_admin), `user_passkeys` (credential_id, public_key, counter, transports, device_name, backed_up). The old `admins` table is dropped by the migration.
 
+### Deployment / Data-only updates
+- Production container mounts host data with `-v /home/grass/frontend/data:/app/data`; JSON data changes under `data/` are visible to the running app without rebuilding the Docker image.
+- For CommuLingo content-only edits such as `data/commulingo/lessons.json`, do not run `scripts/deploy` just to rebuild/restart the frontend. Commit/push the data change, then verify the live API/page.
+- `routes/commulingo.js` caches `lessons.json` by file mtime, so a changed host file is picked up on the next request after the mtime changes. Verify with `curl -s http://127.0.0.1:3000/commulingo/lesson/<lesson-id>`.
+- Run the full deploy script only for code, dependency, CSS/JS/template, server, route, config, or Docker image changes that require a new container image/restart.
+
 ### CSS / Mobile
 - CSS cache busting is active: `?v=<%= Date.now() %>` in head.ejs
 - Use `dvh` units instead of `vh` for mobile viewport height
