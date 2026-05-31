@@ -16678,8 +16678,22 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "유통은 자본에 필수적이지만, 유통시간 자체는 가치증식을 하지 않고 오히려 가치증식의 반복을 지연시킨다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
-                    "en": "Circulation is necessary for capital, but circulation time itself does not valorize and instead delays the repetition of valorization. Seeing this tension separates capital's surface speed from the underlying value relation."
+                    "ko": "자본은 팔고 사는 유통을 거쳐야만 다시 생산에 들어갈 수 있다. 하지만 유통시간 동안 상품은 새 가치를 만들지 않는다. 그래서 유통은 자본에 필수적인 동시에 가치증식의 반복을 늦추는 시간이다.",
+                    "en": "Capital must pass through sale and purchase before it can enter production again. But during circulation time the commodity does not create new value. Circulation is therefore necessary for capital while also delaying the repetition of valorization."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 유통은 필요한 과정이지만 가치증식은 생산과정의 노동에서 일어납니다.",
+                      "유통시간이 길어진다고 새 가치가 생기지는 않습니다. 가치 실현이 늦어질 뿐입니다.",
+                      "생산 완료와 회전 완료를 혼동한 답입니다. 판매를 통해 화폐로 돌아와야 회전이 끝납니다.",
+                      "물류 속도만 보면 판매와 화폐실현이라는 자본 형태 변화를 놓칩니다."
+                    ],
+                    "en": [
+                      "Correct. Circulation is necessary, but valorization happens through labour in production.",
+                      "Longer circulation time does not create new value; it delays realization.",
+                      "This confuses completion of production with completion of turnover. Turnover ends when value returns as money.",
+                      "Logistics speed alone misses the change of form through sale and monetary realization."
+                    ]
                   }
                 },
                 {
@@ -16706,8 +16720,22 @@
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "선대자본이 생산자본에서 상품자본과 화폐자본을 거쳐 다시 생산자본으로 돌아오는 순환이다. 매개를 보지 못하면 한 범주를 다른 범주로 환원하게 된다.",
-                    "en": "The mediation is the circuit in which advanced capital moves from productive capital through commodity-capital and money-capital back to productive capital. Without the mediation, one category is reduced to another."
+                    "ko": "회전시간은 생산 안의 시간과 생산 밖의 판매·구매 시간을 더한 것이다. 두 시간이 하나로 묶이는 이유는 같은 선대자본이 생산자본, 상품자본, 화폐자본의 형태를 지나 다시 생산자본으로 돌아와야 하기 때문이다.",
+                    "en": "Turnover time combines time inside production with the time of sale and purchase outside production. They are joined because the same advanced capital must pass through productive capital, commodity-capital, and money-capital before returning to productive capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "유통시간이 새 가치를 만든다는 답은 생산과 유통의 기능을 뒤섞습니다.",
+                      "핵심입니다. 같은 선대자본이 여러 형태를 거쳐 돌아오는 전체 회로가 두 시간을 묶습니다.",
+                      "물류 지연만 보면 상품자본이 화폐자본으로 실현되어야 한다는 점을 놓칩니다.",
+                      "신용은 판매 문제를 없애지 않습니다. 실현되지 않은 상품가치는 여전히 묶여 있습니다."
+                    ],
+                    "en": [
+                      "This confuses the functions of production and circulation.",
+                      "Correct. The whole circuit of the same advanced capital through its forms joins the two times.",
+                      "A logistics-only view misses the need for commodity-capital to be realized as money-capital.",
+                      "Credit does not abolish sale. Unrealized commodity value remains tied up."
+                    ]
                   }
                 },
                 {
@@ -16715,27 +16743,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "유통시간을 물류 효율 문제로만 보는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed when circulation time is treated merely as a logistics-efficiency problem?"
+                    "ko": "온라인 주문은 접수됐지만 검수·반품기한·정산 보류 때문에 판매대금이 30일 뒤에야 들어온다. 이것을 단순 물류 지연으로만 보면 무엇을 놓치는가?",
+                    "en": "An online order is placed, but inspection, return windows, and settlement holds delay the seller's money for thirty days. What is missed if this is treated as mere logistics delay?"
                   },
                   "choices": {
                     "ko": [
-                      "상품이 팔려 화폐로 돌아오기 전까지 자본이 생산으로 복귀하지 못한다는 점을 물류 속도 문제로만 좁힌다.",
-                      "신용이 있으면 상품 판매와 가치 실현 문제가 사라진다고 본다.",
-                      "판매 가능성, 지불능력, 시장 연결처럼 가치 실현을 가능하게 하는 사회적 조건을 놓친다.",
-                      "생산시간과 유통시간을 같은 시간으로 취급한다."
+                      "배송이 빨라졌으므로 자본은 이미 생산으로 돌아왔다고 본다.",
+                      "신용 한도가 있으면 판매와 가치실현 문제는 사라진다고 본다.",
+                      "상품이 화폐로 실현되어야만 그 가치가 다시 생산자본으로 기능할 수 있다는 점을 놓친다.",
+                      "유통시간이 길어질수록 상품이 시장에서 새 가치를 생산한다고 본다."
                     ],
                     "en": [
-                      "Reduces circulation time to logistics speed and misses that capital cannot return to production until the commodity is sold for money.",
-                      "Assumes credit abolishes the problem of sale and realization.",
-                      "It misses the social conditions of realization: saleability, ability to pay, and market interconnection.",
-                      "Treats production time and circulation time as the same time."
+                      "It assumes that because delivery became faster, capital has already returned to production.",
+                      "It assumes that a credit line abolishes the problem of sale and realization.",
+                      "It misses that the commodity's value can function again as productive capital only after it is realized as money.",
+                      "It treats a longer circulation time as a period in which the commodity produces new value in the market."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "판매 가능성, 지불능력, 시장 연결처럼 가치 실현을 가능하게 하는 사회적 조건을 놓친다. 마르크스의 비판은 현실의 표면을 부정하는 것이 아니라 그 표면이 어떤 관계를 가리는지 드러내는 것이다.",
-                    "en": "It misses the social conditions of realization: saleability, ability to pay, and market interconnection. Marx's critique does not deny the surface; it shows what relation the surface conceals."
+                    "ko": "유통시간은 택배 속도만의 문제가 아니다. 상품자본이 팔려 화폐자본으로 돌아오기 전까지 그 가치는 다음 생산에 다시 선대될 수 없다. 그래서 판매 가능성, 지불능력, 정산 조건 같은 사회적 조건이 회전시간의 일부가 된다.",
+                    "en": "Circulation time is not just delivery speed. Until commodity-capital is sold and returns as money-capital, its value cannot be advanced again for production. Saleability, ability to pay, and settlement terms therefore become part of turnover time."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "배송 완료와 가치 회수는 다릅니다. 판매대금이 묶여 있으면 자본은 아직 다시 기능하지 못합니다.",
+                      "신용은 공백을 메울 수 있지만 상품 판매와 화폐 회수를 없애지는 않습니다.",
+                      "핵심입니다. 유통시간은 가치가 다시 생산자본으로 돌아오기까지의 사회적 조건을 포함합니다.",
+                      "유통은 이미 생산된 가치의 실현 과정입니다. 새 가치는 생산과정의 노동에서 생깁니다."
+                    ],
+                    "en": [
+                      "Delivery completion is not the same as recovery of value. If sales money is tied up, capital cannot yet function again.",
+                      "Credit can bridge the gap, but it does not abolish sale and monetary recovery.",
+                      "Correct. Circulation time includes the social conditions under which value returns to productive capital.",
+                      "Circulation realizes already produced value. New value is created by labour in production."
+                    ]
                   }
                 },
                 {
@@ -16762,8 +16804,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "기술적 결제 속도와 자본가치가 실제로 회수되어 다시 선대될 수 있는 시간을 구분해야 한다. 현대적 사례에서도 기준은 동일하다. 자본가치가 어떤 형태와 시간 속에서 묶이는지를 물어야 한다.",
-                    "en": "One must distinguish technical payment speed from the time in which capital-value is actually recovered and can be advanced again. The same criterion applies in modern cases: ask in what form and time capital-value is tied up."
+                    "ko": "즉시 결제 처리와 실제 정산은 다르다. 판매자가 그 돈으로 다음 생산의 임금·원료비를 다시 선대할 수 있어야 자본가치가 회수된 것이다. 반품과 정산 보류가 남아 있으면 기술적 결제는 빨라도 회전시간은 아직 끝나지 않을 수 있다.",
+                    "en": "Instant payment processing is not the same as actual settlement. Capital-value is recovered only when the seller can use the money to advance wages and materials for the next production cycle. If returns and holds remain, turnover time may not be over even when payment technology is fast."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산시간과 유통시간은 역할이 다릅니다. 여기서는 판매 뒤 화폐 회수가 문제입니다.",
+                      "신용은 지연을 임시로 메울 뿐 판매와 정산의 문제를 없애지 않습니다.",
+                      "핵심입니다. 기술적 결제 속도와 자본가치의 실제 회수 시점을 구분해야 합니다.",
+                      "생산이 끝나도 판매대금이 돌아오지 않으면 자본은 아직 다시 선대될 수 없습니다."
+                    ],
+                    "en": [
+                      "Production time and circulation time have different roles. The issue here is monetary recovery after sale.",
+                      "Credit can temporarily bridge delay; it does not abolish sale and settlement.",
+                      "Correct. Technical payment speed must be distinguished from actual recovery of capital-value.",
+                      "Even after production, capital cannot be advanced again if sales money has not returned."
+                    ]
                   }
                 },
                 {
@@ -16771,27 +16827,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "유통시간의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of The Time of Circulation?"
+                    "ko": "왜 14장의 유통시간 분석 뒤에 15장의 '필요 선대자본량' 문제가 바로 따라오는가?",
+                    "en": "Why does the question of the required advance in Chapter 15 follow directly from Chapter 14's analysis of circulation time?"
                   },
                   "choices": {
                     "ko": [
-                      "생산시간과 유통시간을 같은 시간으로 취급한다.",
-                      "판매가 늦어도 생산이 끝났으니 회전은 이미 완료되었다고 본다.",
-                      "유통시간이 길수록 그 시간 자체가 새 가치를 만든다고 본다.",
-                      "회전시간을 생산시간과 유통시간의 결합으로 완성해, 다음의 선대자본량 문제로 넘어가게 한다."
+                      "생산이 끝나면 회전도 끝나므로, 유통시간은 다음 생산에 영향을 주지 않는다.",
+                      "유통시간이 길어지는 만큼 상품가치가 커져 추가 선대자본이 필요 없어진다.",
+                      "신용이 있으면 회수 지연은 자본량 문제가 아니라 결제 기술 문제로 바뀐다.",
+                      "판매와 구매에 걸리는 시간이 길수록 같은 생산을 이어 가기 위해 더 많은 자본을 미리 묶어야 하기 때문이다."
                     ],
                     "en": [
-                      "Treats production time and circulation time as the same time.",
-                      "Treats turnover as completed once production is finished, even if sale is delayed.",
-                      "Treats longer circulation time itself as creating new value.",
-                      "It completes turnover time as the combination of production time and circulation time, leading to the question of the magnitude of advanced capital."
+                      "Once production is finished, turnover is finished, so circulation time does not affect the next production cycle.",
+                      "A longer circulation time raises commodity value, removing the need for additional advanced capital.",
+                      "With credit, delayed recovery becomes a payment-technology issue rather than a capital-magnitude issue.",
+                      "The longer sale and purchase take, the more capital must be tied up in advance to keep the same production continuous."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "회전시간을 생산시간과 유통시간의 결합으로 완성해, 다음의 선대자본량 문제로 넘어가게 한다. 이 연결 때문에 해당 장은 앞선 범주의 반복이 아니라 다음 분석으로 넘어가는 계단이다.",
-                    "en": "It completes turnover time as the combination of production time and circulation time, leading to the question of the magnitude of advanced capital. This is why the chapter is not a repetition of earlier categories but a step into the next analysis."
+                    "ko": "14장은 생산 밖의 시간이 자본 회전을 늦춘다는 점을 보여 준다. 그 시간이 길어지면 판매대금이 돌아오기 전에도 임금과 원료비를 다시 내야 하므로, 15장의 질문은 '같은 생산규모를 유지하려면 얼마를 동시에 선대해야 하는가'가 된다.",
+                    "en": "Chapter 14 shows that time outside production slows capital turnover. If that time lengthens, wages and materials must be paid again before sales money returns; Chapter 15 therefore asks how much must be advanced at the same time to maintain the same scale of production."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산 완료와 회전 완료를 혼동한 답입니다. 상품이 팔려 화폐로 돌아와야 회전이 끝납니다.",
+                      "유통시간은 새 가치를 만들지 않습니다. 오히려 가치 회수를 늦춰 추가 선대액을 요구할 수 있습니다.",
+                      "신용은 지연의 부담을 옮기거나 임시로 메울 뿐, 선대되어야 할 자본량 문제를 없애지 않습니다.",
+                      "핵심입니다. 유통시간은 다음 장에서 필요한 동시 선대액 문제로 바뀝니다."
+                    ],
+                    "en": [
+                      "This confuses completion of production with completion of turnover. Turnover ends only when the commodity returns as money.",
+                      "Circulation time does not create new value. It can delay recovery and require additional advances.",
+                      "Credit shifts or bridges the burden of delay; it does not abolish the question of capital that must be advanced.",
+                      "Correct. Circulation time becomes the question of the simultaneous advance required in the next chapter."
+                    ]
                   }
                 }
               ]
@@ -17033,8 +17103,22 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산규모가 같아도 자본 회수가 늦으면 더 많은 가치가 동시에 묶여야 한다는 긴장이다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
-                    "en": "Even with the same scale of production, slower recovery requires more value to be tied up at the same time. Seeing this tension separates capital's surface speed from the underlying value relation."
+                    "ko": "같은 규모로 계속 생산하려면 임금과 원료비가 매주 다시 나간다. 자본 회수가 늦으면 지난 회전의 가치가 아직 묶여 있는 동안 새 비용을 선대해야 하므로, 동시에 필요한 선대자본량이 커진다.",
+                    "en": "To keep producing at the same scale, wages and materials must be paid again each week. If recovery is slow, new outlays must be advanced while value from the previous turnover remains tied up, so the capital required at one time grows."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 생산규모가 같아도 회수 지연은 동시에 묶이는 가치량을 키웁니다.",
+                      "신용은 누가 임시로 선대하는지를 바꿀 수 있지만 자본량 문제를 없애지 않습니다.",
+                      "연간 지출 총액만 보면 몇 주치 비용이 동시에 묶이는지 알 수 없습니다.",
+                      "생산량과 선대자본량은 같은 수치가 아닙니다. 회전시간이 둘 사이를 갈라놓습니다."
+                    ],
+                    "en": [
+                      "Correct. Even at the same scale, delayed recovery increases the value tied up at one time.",
+                      "Credit can change who temporarily advances funds, but it does not abolish the capital-magnitude problem.",
+                      "Total annual outlay does not show how many weeks of cost are tied up at once.",
+                      "Output and advanced capital are not the same figure. Turnover time separates them."
+                    ]
                   }
                 },
                 {
@@ -17061,8 +17145,22 @@
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "선대자본의 회수 리듬과 새 임금·원료 구매의 지불 리듬이 맞물리는 방식이다. 매개를 보지 못하면 한 범주를 다른 범주로 환원하게 된다.",
-                    "en": "It is the way the rhythm of capital recovery interlocks with the payment rhythm for new wages and materials. Without the mediation, one category is reduced to another."
+                    "ko": "연속생산은 생산능력만으로 유지되지 않는다. 판매대금이 돌아오기 전에 다음 임금과 원료비를 지급해야 한다면, 자본가는 그 시간차를 버틸 선대액이나 신용을 마련해야 한다. 이 회수 리듬과 지급 리듬의 맞물림이 핵심이다.",
+                    "en": "Continuous production is not maintained by productive capacity alone. If new wages and materials must be paid before sales money returns, the capitalist needs an advance or credit to cover that gap. The key is the interlocking of recovery rhythm and payment rhythm."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "신용 한도는 시간차를 메우는 방식일 수 있지만 분석할 필요를 없애지는 않습니다.",
+                      "핵심입니다. 회수와 재지급의 리듬이 맞물리는 방식이 필요한 선대액을 정합니다.",
+                      "생산능력만 충분해도 돈이 돌아오지 않으면 다음 생산의 비용을 지급할 수 없습니다.",
+                      "이 답은 시간적 압박을 맞게 짚지만, 그것을 회수 리듬과 지급 리듬의 관계로 명확히 보아야 합니다."
+                    ],
+                    "en": [
+                      "A credit line may bridge the gap, but it does not remove the need to analyze it.",
+                      "Correct. The relation between recovery and renewed payment determines the required advance.",
+                      "Productive capacity alone cannot pay for the next cycle if money has not returned.",
+                      "This notes the pressure, but the point is the relation between recovery rhythm and payment rhythm."
+                    ]
                   }
                 },
                 {
@@ -17070,27 +17168,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "필요 자본량을 연간 생산비 총액만으로 설명하면 무엇을 놓치는가?",
-                    "en": "What is missed if the required capital is explained only by total annual production cost?"
+                    "ko": "필요 선대자본을 '1년 총비용'으로만 계산하면 무엇이 빠지는가?",
+                    "en": "What is missing if the required advance is calculated only from total yearly cost?"
                   },
                   "choices": {
                     "ko": [
-                      "생산규모가 같으면 동시에 묶이는 자본량도 같다고 보아 회전속도의 차이를 지운다.",
-                      "대금 회수 전에도 새 임금과 원료비를 지급해야 하는 시간 구조를 별도 문제로 밀어낸다.",
-                      "그 비용이 한꺼번에 필요한지, 회수되어 반복 사용되는지라는 시간 구조를 놓친다.",
-                      "유통시간이 길어지면 같은 비용도 더 큰 새 가치를 만든다고 착각한다."
+                      "연간 생산비가 같으면 어떤 경우에도 처음 준비해야 할 화폐자본은 같아진다.",
+                      "판매대금 회수 전 임금과 원료비를 다시 지급해야 하는 문제는 자본 회전이 아니라 단순 회계 문제다.",
+                      "1년 총비용이 같아도, 5주치 비용을 미리 묶어야 하는지 20주치 비용을 묶어야 하는지가 달라진다.",
+                      "유통시간이 길수록 상품이 시장에 머무는 동안 더 많은 가치를 생산한다."
                     ],
                     "en": [
-                      "It treats equal production scale as implying equal capital tied up at the same time, erasing the difference made by turnover speed.",
-                      "It pushes aside the temporal structure in which new wages and materials must be paid before sales money returns.",
-                      "It misses whether those costs are needed all at once or are recovered and used repeatedly over time.",
-                      "It mistakes longer circulation time for a process that makes the same costs create more new value."
+                      "If yearly production costs are equal, the money capital needed at the start is always the same.",
+                      "The need to pay new wages and materials before sales money returns is simple bookkeeping, not capital turnover.",
+                      "Even with the same yearly cost, it matters whether five weeks of outlays or twenty weeks of outlays must be tied up in advance.",
+                      "The longer circulation lasts, the more value the commodity produces while it waits in the market."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "그 비용이 한꺼번에 필요한지, 회수되어 반복 사용되는지라는 시간 구조를 놓친다. 마르크스의 비판은 현실의 표면을 부정하는 것이 아니라 그 표면이 어떤 관계를 가리는지 드러내는 것이다.",
-                    "en": "It misses the time-structure: whether the cost is needed all at once or returns and is used repeatedly. Marx's critique does not deny the surface; it shows what relation the surface conceals."
+                    "ko": "연간 총액은 한 해 동안 지출된 비용의 합계일 뿐이다. 마르크스가 보려는 것은 그 비용 중 얼마가 한꺼번에 선대되어 생산과 유통이 끝날 때까지 묶여 있어야 하는가이다. 회전이 빠르면 같은 돈이 여러 번 돌아와 다시 쓰이고, 회전이 느리면 같은 생산규모에도 더 큰 선대액이 필요하다.",
+                    "en": "The yearly total is only the sum spent over the year. Marx is asking how much of that cost must be advanced at one time and remain tied up until production and circulation are completed. Faster turnover lets the same money return and function again; slower turnover requires a larger advance for the same scale of production."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 답은 연간 지출 총액과 동시에 선대되어 있어야 하는 자본량을 같은 것으로 착각합니다.",
+                      "이 답은 회수와 재지급의 시간차를 회전 분석 밖으로 밀어내지만, 바로 그 시간차가 이 장의 분석 대상입니다.",
+                      "핵심입니다. 필요한 선대액은 연간 비용 총액이 아니라 한 회전 동안 동시에 묶이는 비용의 크기에 달려 있습니다.",
+                      "유통시간은 이미 생산된 가치의 실현을 지연시킬 뿐, 그 자체로 새 가치를 만들지 않습니다."
+                    ],
+                    "en": [
+                      "This confuses total annual outlay with the amount of capital that must be advanced at the same time.",
+                      "This pushes the gap between recovery and renewed payment outside the analysis, but that gap is exactly the point here.",
+                      "Correct. The required advance depends on the outlay tied up during one turnover, not simply on total yearly cost.",
+                      "Circulation time delays realization of already produced value; it does not itself create new value."
+                    ]
                   }
                 },
                 {
@@ -17126,27 +17238,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "회전시간이 투하자본량에 미치는 영향의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of Effect of Turnover Time on Magnitude of Advanced Capital?"
+                    "ko": "이 장이 다음의 '가변자본의 회전' 분석으로 넘어가는 이유는 무엇인가?",
+                    "en": "Why does this chapter lead into the later analysis of the turnover of variable capital?"
                   },
                   "choices": {
                     "ko": [
-                      "유통시간이 길어진 만큼 상품가치가 커진다는 관점에서 회전시간 분석을 가치증식 이론으로 바꾼다.",
-                      "연간 생산비 총액과 동시에 묶이는 선대자본량을 같은 것으로 놓아 회전 분석을 불필요하게 만든다.",
-                      "신용이 회전 지연을 메울 수 있다는 사실을 근거로 선대자본량 문제를 분석 밖으로 밀어낸다.",
-                      "회전시간 분석을 자본량 문제로 구체화해, 가변자본의 회전과 연간 잉여가치율 분석으로 넘어간다."
+                      "회전기간이 길수록 같은 임금 선대액이 더 많은 잉여가치를 낳는다는 결론을 내기 때문이다.",
+                      "신용이 회전 지연을 보충할 수 있으므로 임금 선대액의 크기는 더 이상 분석할 필요가 없기 때문이다.",
+                      "연간 임금 총액만 알면 선대 가변자본과 연간 잉여가치율을 바로 계산할 수 있기 때문이다.",
+                      "회전기간이 선대액을 바꾸므로, 같은 착취율이라도 가변자본이 1년에 몇 번 기능하는지가 중요해지기 때문이다."
                     ],
                     "en": [
-                      "It turns the analysis of turnover time into a theory of value expansion by assuming commodities gain value while circulation lasts.",
-                      "It makes turnover analysis unnecessary by identifying total annual production costs with the amount of capital tied up at once.",
-                      "It pushes the question of advanced capital outside the analysis because credit may bridge delayed turnover.",
-                      "It concretizes turnover time as a problem of capital magnitude, leading into variable-capital turnover and the annual rate of surplus-value."
+                      "Because it concludes that a longer turnover period makes the same wage advance produce more surplus-value.",
+                      "Because credit can bridge turnover delays, so the size of the wage advance no longer needs analysis.",
+                      "Because knowing total yearly wages is enough to calculate advanced variable capital and the annual rate of surplus-value directly.",
+                      "Because turnover time changes the required advance, making it important how many times variable capital functions during the year even at the same rate of exploitation."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "회전시간 분석을 자본량 문제로 구체화해, 가변자본의 회전과 연간 잉여가치율 분석으로 넘어간다. 이 연결 때문에 해당 장은 앞선 범주의 반복이 아니라 다음 분석으로 넘어가는 계단이다.",
-                    "en": "It concretizes turnover time as a problem of capital magnitude, leading to the turnover of variable capital and the annual rate of surplus-value. This is why the chapter is not a repetition of earlier categories but a step into the next analysis."
+                    "ko": "이 장은 회전시간이 필요한 선대자본량을 바꾼다는 점을 확정한다. 그래서 다음 문제는 가변자본이다. 같은 임금 총액과 같은 잉여가치율이라도, 임금으로 선대된 자본이 1년에 몇 번 회수되어 다시 선대되는지에 따라 연간 잉여가치율의 표현이 달라진다.",
+                    "en": "This chapter establishes that turnover time changes the required advance. The next question is variable capital: even with the same yearly wages and the same rate of surplus-value, the annual expression changes according to how many times the capital advanced as wages returns and is advanced again."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "반대입니다. 유통이나 회전 지연은 그 자체로 잉여가치를 더 만들지 않습니다.",
+                      "신용은 공백을 메울 수 있지만 공백을 없애지는 않습니다. 누가, 얼마를, 얼마나 오래 선대하는지는 여전히 분석 대상입니다.",
+                      "연간 임금 총액만으로는 동시에 필요한 선대 가변자본량을 알 수 없습니다. 회전 횟수가 빠져 있습니다.",
+                      "핵심입니다. 선대 가변자본이 몇 번 회전하는지가 연간 잉여가치율 분석의 출발점이 됩니다."
+                    ],
+                    "en": [
+                      "This reverses Marx's point. Circulation or turnover delay does not by itself create surplus-value.",
+                      "Credit may bridge the gap, but it does not abolish it. Who advances how much, and for how long, still has to be analyzed.",
+                      "Total yearly wages do not tell us how much variable capital must be advanced at one time. The number of turnovers is missing.",
+                      "Correct. The number of annual turnovers of advanced variable capital becomes the starting point for the annual rate of surplus-value."
+                    ]
                   }
                 }
               ]
@@ -17369,27 +17495,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가변자본의 회전에서 가장 중요한 긴장은 무엇인가?",
-                    "en": "What is the key tension in the turnover of variable capital?"
+                    "ko": "두 기업의 한 생산기간 착취율은 같지만, 한 기업은 임금 선대액을 매달 회수하고 다른 기업은 반년에 한 번 회수한다. 무엇이 달라지는가?",
+                    "en": "Two firms have the same rate of exploitation during one production period, but one recovers its wage advance monthly while the other recovers it every six months. What changes?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 노동착취율이 회전속도에 따라 전혀 다른 연간 잉여가치율로 나타날 수 있다는 긴장이다.",
-                      "회전수가 빠르면 노동착취가 사라진다고 본다.",
-                      "가변자본 회전은 임금 지급 방식일 뿐 잉여가치와 무관하다고 본다.",
-                      "한 생산기간의 잉여가치율과 연간 잉여가치율을 같은 것으로 본다."
+                      "연간으로 보면 같은 임금 선대액이 몇 번 반복해 기능하는지가 달라져 연간 잉여가치율이 달라진다.",
+                      "회전이 빠르면 노동자가 덜 착취되므로 잉여가치율이 낮아진다.",
+                      "임금 지급 주기는 회계 방식일 뿐 잉여가치 생산과 무관하다.",
+                      "한 생산기간의 잉여가치율만 알면 연간 잉여가치율도 자동으로 알 수 있다."
                     ],
                     "en": [
-                      "The same rate of labour exploitation can appear as very different annual rates of surplus-value depending on turnover speed.",
-                      "Assumes faster turnover abolishes exploitation.",
-                      "Treats variable-capital turnover as a wage-payment detail unrelated to surplus-value.",
-                      "Identifies the period rate of surplus-value with the annual rate."
+                      "Annually, the same wage advance functions a different number of times, so the annual rate of surplus-value changes.",
+                      "Faster turnover means workers are less exploited, so the rate of surplus-value falls.",
+                      "The rhythm of wage payment is merely bookkeeping and has nothing to do with surplus-value production.",
+                      "Knowing the rate of surplus-value for one production period automatically gives the annual rate."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "같은 노동착취율이 회전속도에 따라 전혀 다른 연간 잉여가치율로 나타날 수 있다는 긴장이다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
-                    "en": "The same rate of labour exploitation can appear as very different annual rates of surplus-value depending on turnover speed. Seeing this tension separates capital's surface speed from the underlying value relation."
+                    "ko": "마르크스가 구분하는 것은 한 생산기간의 착취율과 1년 동안 선대 가변자본이 반복해서 기능한 결과다. 회전이 빠르면 같은 크기의 임금 선대액이 더 자주 노동력을 구매하고, 그만큼 연간 잉여가치율의 표현이 커질 수 있다.",
+                    "en": "Marx distinguishes the rate of exploitation in one production period from the annual result of the repeated functioning of advanced variable capital. Faster turnover lets the same wage advance buy labour-power more often, so the annual expression of the rate of surplus-value can rise."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 문제는 착취율 자체가 변한다는 뜻이 아니라 같은 선대액이 1년에 몇 번 기능하는가입니다.",
+                      "회전이 빠르다고 착취가 줄어드는 것은 아닙니다. 같은 착취관계가 더 자주 반복될 수 있습니다.",
+                      "임금 선대액은 노동력 구매에 쓰이는 가변자본입니다. 단순 회계 항목이 아닙니다.",
+                      "한 기간의 비율과 연간 비율은 회전수 때문에 달라질 수 있습니다."
+                    ],
+                    "en": [
+                      "Correct. The issue is not that exploitation itself changes, but how many times the same advance functions in a year.",
+                      "Faster turnover does not mean less exploitation. The same exploitation relation can be repeated more often.",
+                      "The wage advance is variable capital used to buy labour-power, not a mere bookkeeping item.",
+                      "The period rate and the annual rate can diverge because of the number of turnovers."
+                    ]
                   }
                 },
                 {
@@ -17397,27 +17537,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "선대 가변자본과 연간 잉여가치량을 매개하는 것은 무엇인가?",
-                    "en": "What mediates advanced variable capital and the annual mass of surplus-value?"
+                    "ko": "선대 가변자본 100이 한 해에 10번 회전하는 경우와 2번 회전하는 경우를 비교하려면 무엇을 봐야 하는가?",
+                    "en": "If an advanced variable capital of 100 turns over ten times a year rather than twice, what must be examined?"
                   },
                   "choices": {
                     "ko": [
-                      "회전수가 빠르면 노동착취가 사라진다고 본다.",
-                      "가변자본의 회전수, 곧 임금 선대액이 1년 동안 몇 번 회수되어 다시 노동력 구매에 쓰이는가이다.",
-                      "한 생산기간의 잉여가치율과 연간 잉여가치율을 같은 것으로 본다.",
-                      "가변자본을 노동력 구매가 아니라 단순한 비용항목으로 본다."
+                      "회전수가 늘면 노동착취가 사라지는지 여부",
+                      "임금 선대액이 회수되어 다시 노동력 구매에 쓰이는 횟수와 그 결과 생기는 연간 잉여가치량",
+                      "한 생산기간의 잉여가치율만으로 연간 결과를 대체할 수 있는지 여부",
+                      "가변자본이 원료처럼 자기 가치만 이전하는 비용인지 여부"
                     ],
                     "en": [
-                      "Assumes faster turnover abolishes exploitation.",
-                      "The mediation is the number of turnovers of variable capital: how often the wage advance returns and buys labour-power again during the year.",
-                      "Identifies the period rate of surplus-value with the annual rate.",
-                      "Treats variable capital as merely transferring its own value like raw material."
+                      "Whether a higher number of turnovers abolishes labour exploitation.",
+                      "How often the wage advance returns and buys labour-power again, and the annual mass of surplus-value that results.",
+                      "Whether the rate of surplus-value in one production period can replace the annual result.",
+                      "Whether variable capital is a cost that merely transfers its own value like raw material."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "가변자본의 회전수, 곧 임금 선대액이 1년 동안 몇 번 회수되어 다시 노동력 구매에 쓰이는가이다. 매개를 보지 못하면 한 범주를 다른 범주로 환원하게 된다.",
-                    "en": "The mediation is the number of turnovers of variable capital: how often the wage advance returns and buys labour-power again during the year. Without the mediation, one category is reduced to another."
+                    "ko": "매개는 회전수다. 선대된 임금 자본이 돌아와 다시 노동력 구매에 쓰일 때마다 같은 선대액이 새 생산기간을 연다. 그래서 연간 잉여가치량은 한 기간의 착취율뿐 아니라 가변자본이 몇 번 회전했는지에 의해 표현된다.",
+                    "en": "The mediation is the number of turnovers. Each time the advanced wage capital returns and buys labour-power again, the same advance opens a new production period. The annual mass of surplus-value is therefore expressed not only by the period rate of exploitation but also by how many times variable capital turns over."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "회전수 증가는 착취를 없애지 않습니다. 같은 착취관계가 반복되는 횟수를 바꿉니다.",
+                      "핵심입니다. 회전수는 선대 가변자본과 연간 잉여가치량을 잇는 매개입니다.",
+                      "한 기간의 잉여가치율만으로는 연간 결과를 설명할 수 없습니다. 회전수가 빠져 있습니다.",
+                      "가변자본은 노동력 구매를 통해 새 가치를 생산하게 하는 자본 부분입니다. 원료와 다릅니다."
+                    ],
+                    "en": [
+                      "More turnovers do not abolish exploitation. They change how often the same relation is repeated.",
+                      "Correct. Turnover number mediates advanced variable capital and the annual mass of surplus-value.",
+                      "The period rate alone cannot explain the annual result. The number of turnovers is missing.",
+                      "Variable capital buys labour-power and sets new value production in motion. It is unlike raw material."
+                    ]
                   }
                 },
                 {
@@ -17425,27 +17579,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "빠른 회전이 착취를 줄인다는 설명은 왜 부적절한가?",
-                    "en": "Why is it inadequate to say that faster turnover reduces exploitation?"
+                    "ko": "빠른 회전이 '노동자를 덜 착취한다'는 뜻이 아닌 이유는 무엇인가?",
+                    "en": "Why does faster turnover not mean that workers are less exploited?"
                   },
                   "choices": {
                     "ko": [
-                      "한 생산기간의 잉여가치율과 연간 잉여가치율을 같은 것으로 본다.",
-                      "가변자본을 노동력 구매가 아니라 단순한 비용항목으로 본다.",
-                      "빠른 회전은 착취율을 낮추는 것이 아니라 같은 착취관계를 더 자주 반복해 연간 효과를 키울 수 있다.",
-                      "연간 차이를 회전수보다 가격 변동의 결과로 본다."
+                      "한 생산기간의 착취율과 연간 잉여가치율을 같은 것으로 보아야 하기 때문이다.",
+                      "가변자본은 노동력 구매가 아니라 원료비처럼 자기 가치만 이전하기 때문이다.",
+                      "빠른 회전은 한 번의 착취율을 낮추는 것이 아니라 같은 임금 선대액이 더 자주 노동력을 구매하게 만들 수 있기 때문이다.",
+                      "연간 차이는 회전수가 아니라 상품 가격 변동만으로 생기기 때문이다."
                     ],
                     "en": [
-                      "Identifies the period rate of surplus-value with the annual rate.",
-                      "Treats variable capital as merely transferring its own value like raw material.",
-                      "Faster turnover does not lower exploitation; it can repeat the same exploitation relation more often and enlarge its annual effect.",
-                      "Explains the annual effect only by price changes."
+                      "Because the rate for one production period and the annual rate of surplus-value must be treated as identical.",
+                      "Because variable capital does not buy labour-power but merely transfers its own value like raw material.",
+                      "Because faster turnover need not lower the rate of exploitation in one period; it can let the same wage advance buy labour-power more often.",
+                      "Because annual differences arise only from commodity price changes, not from turnover number."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "빠른 회전은 착취율을 낮추는 것이 아니라 같은 착취관계를 더 자주 반복해 연간 효과를 키울 수 있다. 마르크스의 비판은 현실의 표면을 부정하는 것이 아니라 그 표면이 어떤 관계를 가리는지 드러내는 것이다.",
-                    "en": "Faster turnover does not lower exploitation; it can repeat the same exploitation relation more often and enlarge its annual effect. Marx's critique does not deny the surface; it shows what relation the surface conceals."
+                    "ko": "빠른 회전은 노동일 안에서의 착취율을 자동으로 낮추지 않는다. 그것은 선대된 임금 자본이 더 빨리 회수되어 다시 노동력 구매에 들어갈 수 있음을 뜻한다. 따라서 연간으로는 같은 착취관계가 더 여러 번 반복될 수 있다.",
+                    "en": "Faster turnover does not automatically lower the rate of exploitation within the working day. It means the advanced wage capital returns sooner and can buy labour-power again. Annually, the same exploitation relation can therefore be repeated more times."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 답은 구분해야 할 두 비율을 다시 합쳐 버립니다.",
+                      "가변자본은 노동력 구매를 통해 새 가치 생산을 가능하게 합니다. 원료비와 같은 방식으로 보아서는 안 됩니다.",
+                      "핵심입니다. 빠른 회전은 착취율의 하락이 아니라 반복 횟수의 증가로 작용할 수 있습니다.",
+                      "가격 변동이 아니라 회전수가 선대 가변자본의 연간 효과를 바꿉니다."
+                    ],
+                    "en": [
+                      "This collapses the two rates that Marx is trying to distinguish.",
+                      "Variable capital makes new value production possible by buying labour-power; it should not be treated like raw material.",
+                      "Correct. Faster turnover can increase repetition, not reduce the rate of exploitation.",
+                      "The number of turnovers, not merely price movement, changes the annual effect of advanced variable capital."
+                    ]
                   }
                 },
                 {
@@ -17472,8 +17640,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "임금 선대액의 빠른 회수가 연간 잉여가치율과 필요한 가변자본 규모를 어떻게 바꾸는지 봐야 한다. 현대적 사례에서도 기준은 동일하다. 자본가치가 어떤 형태와 시간 속에서 묶이는지를 물어야 한다.",
-                    "en": "One should examine how rapid recovery of wage advances changes the annual rate of surplus-value and the required scale of variable capital. The same criterion applies in modern cases: ask in what form and time capital-value is tied up."
+                    "ko": "매주 임금을 선대하고 매주 매출을 회수한다면 같은 임금 선대액이 1년 동안 여러 번 노동력 구매에 다시 쓰인다. 따라서 보아야 할 것은 결제 주기의 편의성이 아니라 가변자본 회전수가 연간 잉여가치율과 필요한 선대 가변자본량을 어떻게 바꾸는가이다.",
+                    "en": "If wages are advanced weekly and revenue is recovered weekly, the same wage advance can buy labour-power repeatedly during the year. The issue is therefore not payment convenience but how the turnover number of variable capital changes the annual rate of surplus-value and the required advanced variable capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가격 변동이 아니라 임금 선대액의 회전수가 이 사례의 핵심입니다.",
+                      "가변자본은 노동력 구매에 쓰입니다. 원료비처럼 자기 가치만 이전하는 항목이 아닙니다.",
+                      "핵심입니다. 빠른 회수는 같은 선대액이 더 자주 노동력 구매로 기능하게 합니다.",
+                      "임금 지급 방식 자체가 아니라 그 임금 선대액이 얼마나 자주 회수되어 다시 선대되는지가 문제입니다."
+                    ],
+                    "en": [
+                      "The key here is turnover of wage advances, not price movement.",
+                      "Variable capital buys labour-power; it is not a raw-material cost that merely transfers its own value.",
+                      "Correct. Rapid recovery lets the same advance function more often as a purchase of labour-power.",
+                      "The issue is not wage-payment technique itself, but how often that wage advance returns and is advanced again."
+                    ]
                   }
                 },
                 {
@@ -17481,27 +17663,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가변자본의 회전의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of The Turnover of Variable Capital?"
+                    "ko": "왜 16장의 가변자본 회전 분석 뒤에 17장의 잉여가치 유통 문제가 이어지는가?",
+                    "en": "Why does Chapter 16's analysis of variable-capital turnover lead into Chapter 17's problem of the circulation of surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "연간 차이를 회전수보다 가격 변동의 결과로 본다.",
-                      "가변자본 회전은 임금 지급 방식일 뿐 잉여가치와 무관하다고 본다.",
-                      "회전수가 빠르면 노동착취가 사라진다고 본다.",
-                      "회전 분석을 잉여가치 생산의 연간 표현으로 연결해, 잉여가치가 어떻게 유통되는지의 문제로 넘어간다."
+                      "연간 잉여가치율의 차이는 회전수가 아니라 가격 변동만으로 설명되기 때문이다.",
+                      "임금 지급 방식은 잉여가치와 무관하므로 다음에는 단순 소비 문제가 나오기 때문이다.",
+                      "회전수가 빠르면 노동착취가 사라져 잉여가치 유통을 따로 볼 필요가 없기 때문이다.",
+                      "가변자본의 회전이 연간 잉여가치량을 보여 준 뒤, 그 잉여가치가 소비·축적을 통해 어떻게 유통되는지가 문제가 되기 때문이다."
                     ],
                     "en": [
-                      "Explains the annual effect only by price changes.",
-                      "Treats variable-capital turnover as a wage-payment detail unrelated to surplus-value.",
-                      "Assumes faster turnover abolishes exploitation.",
-                      "It connects turnover analysis to the annual expression of surplus-value production, leading to the problem of the circulation of surplus-value."
+                      "Because differences in the annual rate of surplus-value are explained only by price changes, not by turnover number.",
+                      "Because wage payment is unrelated to surplus-value, so the next topic is merely consumption.",
+                      "Because faster turnover abolishes exploitation, so the circulation of surplus-value no longer needs analysis.",
+                      "Because after variable-capital turnover shows the annual mass of surplus-value, the next problem is how that surplus-value circulates through consumption and accumulation."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "회전 분석을 잉여가치 생산의 연간 표현으로 연결해, 잉여가치가 어떻게 유통되는지의 문제로 넘어간다. 이 연결 때문에 해당 장은 앞선 범주의 반복이 아니라 다음 분석으로 넘어가는 계단이다.",
-                    "en": "It connects turnover analysis to the annual expression of surplus-value production, leading to the problem of the circulation of surplus-value. This is why the chapter is not a repetition of earlier categories but a step into the next analysis."
+                    "ko": "16장은 같은 선대 가변자본이 1년에 몇 번 기능하는가에 따라 연간 잉여가치량의 표현이 달라진다는 점을 보여 준다. 그러면 다음 질문은 그 잉여가치가 화폐로 실현된 뒤 자본가의 소비와 축적 속에서 어떤 경로를 밟는가이다.",
+                    "en": "Chapter 16 shows that the annual expression of surplus-value changes according to how often the same advanced variable capital functions in a year. The next question is what path that surplus-value takes after monetary realization, through capitalist consumption and accumulation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가격 변동이 아니라 가변자본 회전수가 이 장의 핵심 변수입니다.",
+                      "임금 지급 방식이 아니라 임금으로 선대된 가변자본의 회전이 문제입니다.",
+                      "빠른 회전은 착취를 없애지 않습니다. 연간 잉여가치량의 표현을 바꿉니다.",
+                      "핵심입니다. 생산된 잉여가치의 연간량을 본 뒤에는 그 잉여가치의 유통 경로가 문제가 됩니다."
+                    ],
+                    "en": [
+                      "The key variable here is turnover of variable capital, not price movement.",
+                      "The issue is not wage-payment technique but the turnover of variable capital advanced as wages.",
+                      "Faster turnover does not abolish exploitation. It changes the annual expression of surplus-value.",
+                      "Correct. Once the annual mass of surplus-value is shown, its circulation path becomes the next problem."
+                    ]
                   }
                 }
               ]
@@ -17724,40 +17920,40 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "잉여가치의 유통에서 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the circulation of surplus-value?"
+                    "ko": "공장에서 잉여가치가 생산됐지만 상품이 팔리지 않거나, 팔린 돈으로 살 추가 설비와 노동력이 없다. 무엇이 드러나는가?",
+                    "en": "Surplus-value has been produced in the factory, but the commodities do not sell, or the money cannot buy additional equipment and labour-power. What is revealed?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치는 노동에서 생산되지만, 자본가가 그것을 소비하거나 축적하려면 사회적 유통 속에서 화폐와 물질적 요소로 실현되어야 한다.",
-                      "자본가의 소비와 축적을 같은 지출로 취급하는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "생산된 잉여가치가 실현 과정을 거치지 않고 바로 축적된다고 본다.",
-                      "화폐 이윤의 실현을 추가 생산수단과 노동력 확보와 동일시한다."
+                      "잉여가치는 노동에서 생산되지만, 소비나 축적으로 쓰이려면 판매와 물질적 보충 조건을 거쳐야 한다.",
+                      "잉여가치는 생산되기만 하면 곧바로 자본가의 소비나 축적으로 넘어간다.",
+                      "자본가의 개인소비와 축적은 모두 돈을 쓰는 일이므로 같은 범주다.",
+                      "화폐 이윤이 생기면 추가 생산수단과 노동력도 자동으로 생겨난다."
                     ],
                     "en": [
-                      "Surplus-value is produced in labour, but for the capitalist to consume or accumulate it, it must be realized in money and material elements through social circulation.",
-                      "Treats capitalist consumption and accumulation as the same expenditure.",
-                      "Assumes surplus-value is accumulated immediately once produced, without circulation.",
-                      "Assumes money profit automatically creates additional means of production and labour-power."
+                      "Surplus-value is produced in labour, but to be consumed or accumulated it must pass through sale and material replacement conditions.",
+                      "Once surplus-value is produced, it passes directly into capitalist consumption or accumulation.",
+                      "Capitalist personal consumption and accumulation are the same category because both spend money.",
+                      "Once money profit exists, additional means of production and labour-power automatically exist as well."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치는 노동에서 생산되지만, 자본가가 그것을 소비하거나 축적하려면 사회적 유통 속에서 화폐와 물질적 요소로 실현되어야 한다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
-                    "en": "Surplus-value is produced in labour, but for the capitalist to consume or accumulate it, it must be realized in money and material elements through social circulation. Seeing this tension separates capital's surface speed from the underlying value relation."
+                    "ko": "잉여가치의 생산과 잉여가치의 유통은 같은 문제가 아니다. 자본가는 먼저 상품을 팔아 잉여가치를 화폐로 실현해야 하고, 축적하려면 그 화폐가 추가 생산수단과 노동력으로 전환될 수 있어야 한다. 이 조건이 막히면 잉여가치는 생산되었어도 재생산 규모를 곧바로 늘리지 못한다.",
+                    "en": "Production of surplus-value and circulation of surplus-value are not the same problem. The capitalist must first sell commodities and realize surplus-value as money; for accumulation, that money must be convertible into additional means of production and labour-power. If those conditions are blocked, produced surplus-value cannot immediately expand reproduction."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "핵심 확인: 잉여가치는 노동에서 생산되지만, 자본가가 그것을 소비하거나 축적하려면 사회적 유통 속에서 화폐와 물질적 요소로 실현되어야 한다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
-                      "오해 진단: \"자본가의 소비와 축적을 같은 지출로 취급하는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"생산된 잉여가치가 실현 과정을 거치지 않고 바로 축적된다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"화폐 이윤의 실현을 추가 생산수단과 노동력 확보와 동일시한다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                      "핵심입니다. 잉여가치는 생산된 뒤에도 판매와 물질적 보충 조건을 통과해야 소비나 축적으로 갈 수 있습니다.",
+                      "생산과 실현을 같은 것으로 본 답입니다. 상품 판매가 막히면 잉여가치는 화폐로 실현되지 않습니다.",
+                      "개인소비는 수입의 지출이고, 축적은 잉여가치의 추가 자본 전환입니다. 같은 범주가 아닙니다.",
+                      "화폐 이윤은 필요조건일 뿐입니다. 추가 생산수단과 노동력이 사회적으로 존재해야 축적이 가능합니다."
                     ],
                     "en": [
-                      "Right: Surplus-value is produced in labour, but for the capitalist to consume or accumulate it, it must be realized in money and material elements through social circulation. Seeing this tension separates capital's surface speed from the underlying value relation.",
-                      "Misconception check: choosing \"Treats capitalist consumption and accumulation as the same expenditure.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes surplus-value is accumulated immediately once produced, without circulation.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes money profit automatically creates additional means of production and labour-power.\" puts another category ahead of the key relation in the correct answer."
+                      "Correct. After production, surplus-value must pass through sale and material replacement conditions to become consumption or accumulation.",
+                      "This identifies production with realization. If sale is blocked, surplus-value is not realized as money.",
+                      "Personal consumption spends revenue; accumulation converts surplus-value into additional capital. They are not the same category.",
+                      "Money profit is only a condition. Additional means of production and labour-power must socially exist for accumulation."
                     ]
                   }
                 },
@@ -17766,27 +17962,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "잉여가치의 생산과 축적을 매개하는 것은 무엇인가?",
-                    "en": "What mediates the production of surplus-value and accumulation?"
+                    "ko": "잉여가치가 추가 자본으로 바뀌려면 어떤 두 단계가 이어져야 하는가?",
+                    "en": "What two steps must occur for surplus-value to become additional capital?"
                   },
                   "choices": {
                     "ko": [
-                      "자본가의 소비와 축적을 같은 지출로 취급한다.",
-                      "상품 판매를 통한 화폐실현과 그 화폐가 추가 생산수단·노동력으로 전환되는 과정이다.",
-                      "화폐 이윤의 실현을 추가 생산수단과 노동력 확보와 동일시한다.",
-                      "잉여가치의 유통을 노동자의 임금소비 문제로만 환원한다."
+                      "자본가가 잉여가치를 개인소비에 쓰는 것과 축적에 쓰는 것을 같은 지출로 처리한다.",
+                      "상품 판매로 잉여가치가 화폐로 실현되고, 그 화폐가 추가 생산수단과 노동력 구매로 전환된다.",
+                      "화폐 이윤이 장부에 잡히면 추가 생산수단과 노동력이 이미 확보된 것으로 본다.",
+                      "잉여가치의 유통을 노동자가 임금을 소비하는 문제로 바꿔 설명한다."
                     ],
                     "en": [
-                      "Treats capitalist consumption and accumulation as the same expenditure.",
-                      "The mediation is monetary realization through commodity sale and the conversion of that money into additional means of production and labour-power.",
-                      "Assumes money profit automatically creates additional means of production and labour-power.",
-                      "Reduces the circulation of surplus-value to workers’ wage consumption."
+                      "Capitalist personal consumption and accumulation are treated as the same expenditure.",
+                      "Surplus-value is realized as money through commodity sale, and that money is converted into additional means of production and labour-power.",
+                      "Once money profit appears in the accounts, additional means of production and labour-power are treated as already secured.",
+                      "The circulation of surplus-value is recast as a question of workers consuming wages."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "상품 판매를 통한 화폐실현과 그 화폐가 추가 생산수단·노동력으로 전환되는 과정이다. 매개를 보지 못하면 한 범주를 다른 범주로 환원하게 된다.",
-                    "en": "The mediation is monetary realization through commodity sale and the conversion of that money into additional means of production and labour-power. Without the mediation, one category is reduced to another."
+                    "ko": "첫째, 상품 판매를 통해 잉여가치가 화폐로 실현되어야 한다. 둘째, 그 화폐가 축적에 맞는 물질적 요소, 곧 추가 생산수단과 노동력으로 바뀌어야 한다. 둘 중 하나가 빠지면 화폐 이윤은 곧바로 추가 자본이 되지 않는다.",
+                    "en": "First, surplus-value must be realized as money through commodity sale. Second, that money must be converted into the material elements of accumulation: additional means of production and labour-power. If either step is missing, money profit does not immediately become additional capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "개인소비와 축적은 지출 형태가 아니라 재생산에서 맡는 기능이 다릅니다.",
+                      "핵심입니다. 실현과 추가 생산요소 구매라는 두 단계를 함께 봐야 합니다.",
+                      "장부상 이윤은 추가 생산요소의 실제 확보와 다릅니다.",
+                      "노동자의 임금소비가 아니라 자본가가 잉여가치를 수입 또는 추가 자본으로 쓰는 경로가 문제입니다."
+                    ],
+                    "en": [
+                      "Personal consumption and accumulation differ by their function in reproduction, not just by spending form.",
+                      "Correct. Both realization and purchase of additional productive elements must be considered.",
+                      "Accounting profit is not the same as actual access to additional productive elements.",
+                      "The issue is not workers' wage consumption but the capitalist's use of surplus-value as revenue or additional capital."
+                    ]
                   }
                 },
                 {
@@ -17794,27 +18004,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤이 생기면 축적은 자동으로 가능하다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by the claim that accumulation is automatically possible once profit exists?"
+                    "ko": "기업에 현금 이윤은 있지만 기계 공급망과 숙련노동이 부족해 증설하지 못한다. '이윤=즉시 축적'이라는 설명은 무엇을 놓치는가?",
+                    "en": "A firm has cash profit but cannot expand because machinery supply chains and skilled labour are lacking. What is missed by the claim 'profit equals immediate accumulation'?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐 이윤의 실현을 추가 생산수단과 노동력 확보와 동일시한다.",
-                      "잉여가치의 유통을 노동자의 임금소비 문제로만 환원한다.",
+                      "화폐 이윤이 있으면 추가 생산수단과 노동력도 자동으로 확보된다고 본다.",
+                      "잉여가치의 유통은 노동자의 임금소비 문제일 뿐이라고 본다.",
                       "화폐 이윤이 추가 자본으로 바뀌려면 필요한 생산수단과 노동력, 그리고 부문 간 비례가 갖춰져야 한다는 점을 놓친다.",
-                      "개별 기업의 저축만으로 사회적 확대재생산이 설명된다고 본다."
+                      "개별 기업이 저축만 하면 사회 전체의 확대재생산 조건도 자동으로 맞춰진다고 본다."
                     ],
                     "en": [
-                      "Assumes money profit automatically creates additional means of production and labour-power.",
-                      "Reduces the circulation of surplus-value to workers’ wage consumption.",
+                      "It assumes that once money profit exists, additional means of production and labour-power are automatically secured.",
+                      "It treats the circulation of surplus-value as merely a question of workers' wage consumption.",
                       "It misses that money profit can become additional capital only if the necessary means of production, labour-power, and proportions between departments exist.",
-                      "Explains social expanded reproduction by individual firm saving alone."
+                      "It assumes that if an individual firm saves, the conditions for expanded reproduction across society automatically fit together."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "화폐 이윤이 추가 자본으로 바뀌려면 필요한 생산수단과 노동력, 그리고 부문 간 비례가 갖춰져야 한다는 점을 놓친다. 마르크스의 비판은 현실의 표면을 부정하는 것이 아니라 그 표면이 어떤 관계를 가리는지 드러내는 것이다.",
-                    "en": "It misses that money profit can become additional capital only if the necessary means of production, labour-power, and proportions between departments exist. Marx's critique does not deny the surface; it shows what relation the surface conceals."
+                    "ko": "축적은 화폐 이윤을 장부에 남기는 일이 아니다. 그 화폐가 실제 생산수단과 노동력을 살 수 있어야 하고, 사회 전체에서 그런 요소들이 적절한 비례로 공급되어야 한다. 그래서 잉여가치의 유통은 개별 기업의 저축 문제가 아니라 사회적 재생산 조건의 문제로 이어진다.",
+                    "en": "Accumulation is not merely keeping money profit on the books. That money must be able to buy actual means of production and labour-power, and those elements must be supplied in the right proportions across society. The circulation of surplus-value therefore leads beyond individual saving to the conditions of social reproduction."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 답은 화폐형태와 물질적 생산조건을 같은 것으로 봅니다.",
+                      "노동자의 임금소비가 아니라 자본가가 잉여가치를 어떻게 소비하거나 축적하는지가 문제입니다.",
+                      "핵심입니다. 축적은 화폐실현뿐 아니라 추가 생산요소의 사회적 공급을 요구합니다.",
+                      "개별 저축만으로는 부문 간 비례와 물질적 보충 조건이 보장되지 않습니다."
+                    ],
+                    "en": [
+                      "This identifies money form with material production conditions.",
+                      "The issue is not workers' wage consumption but how capitalists consume or accumulate surplus-value.",
+                      "Correct. Accumulation requires not only monetary realization but also the social supply of additional productive elements.",
+                      "Individual saving does not guarantee departmental proportions or material replacement conditions."
+                    ]
                   }
                 },
                 {
@@ -17841,8 +18065,22 @@
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "화폐형태의 잉여가치만으로는 축적이 충분하지 않고, 추가 자본의 물질적 요소가 사회적으로 공급되어야 한다. 현대적 사례에서도 기준은 동일하다. 자본가치가 어떤 형태와 시간 속에서 묶이는지를 물어야 한다.",
-                    "en": "Surplus-value in money-form is not sufficient for accumulation; the material elements of additional capital must be socially available. The same criterion applies in modern cases: ask in what form and time capital-value is tied up."
+                    "ko": "흑자는 축적의 충분조건이 아니다. 서버 장비와 숙련노동이 부족하면 화폐형태의 잉여가치는 추가 자본으로 전환되지 못한다. 이 사례는 축적이 화폐실현뿐 아니라 물질적 생산요소의 사회적 공급에 달려 있음을 보여 준다.",
+                    "en": "Profit is not a sufficient condition for accumulation. If server equipment and skilled labour are scarce, surplus-value in money form cannot be converted into additional capital. The case shows that accumulation depends not only on monetary realization but also on the social supply of material productive elements."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "개별 기업의 저축만으로는 필요한 장비와 노동력이 사회적으로 공급되는지 설명할 수 없습니다.",
+                      "노동자의 임금소비가 아니라 자본가가 잉여가치를 추가 자본으로 전환할 조건이 문제입니다.",
+                      "핵심입니다. 화폐형태의 잉여가치가 추가 생산요소로 전환될 수 있어야 축적이 됩니다.",
+                      "생산된 잉여가치도 판매와 보충 조건을 거쳐야 축적될 수 있습니다."
+                    ],
+                    "en": [
+                      "Individual saving does not explain whether needed equipment and labour-power are socially supplied.",
+                      "The issue is not workers' wage consumption but the conditions for converting surplus-value into additional capital.",
+                      "Correct. Surplus-value in money form must be convertible into additional productive elements to become accumulation.",
+                      "Produced surplus-value must pass through sale and replacement conditions before it can be accumulated."
+                    ]
                   }
                 },
                 {
@@ -17850,27 +18088,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "잉여가치의 유통의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of The Circulation of Surplus-Value?"
+                    "ko": "왜 잉여가치의 유통 분석은 3편의 사회적 재생산 도식으로 넘어가는 발판이 되는가?",
+                    "en": "Why does the analysis of the circulation of surplus-value become a bridge to the reproduction schemes of Part III?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 기업의 저축만으로 사회적 확대재생산이 설명된다고 본다.",
-                      "생산된 잉여가치가 실현 과정을 거치지 않고 바로 축적된다고 본다.",
-                      "자본가의 소비와 축적을 같은 지출로 취급한다.",
-                      "개별 자본의 잉여가치 사용을 사회적 재생산의 부문 비례 문제로 연결한다."
+                      "개별 기업이 이윤을 저축하면 사회 전체의 확대재생산도 자동으로 설명되기 때문이다.",
+                      "생산된 잉여가치는 판매나 보충 조건 없이 곧바로 축적될 수 있기 때문이다.",
+                      "자본가의 사치소비와 생산 확대는 모두 돈을 쓰는 일이므로 구분할 필요가 없기 때문이다.",
+                      "잉여가치가 축적되려면 추가 생산수단·소비수단·노동력이 사회적으로 맞물려 공급되어야 하기 때문이다."
                     ],
                     "en": [
-                      "Explains social expanded reproduction by individual firm saving alone.",
-                      "Assumes surplus-value is accumulated immediately once produced, without circulation.",
-                      "Treats capitalist consumption and accumulation as the same expenditure.",
-                      "It connects the use of surplus-value by individual capitals to the problem of departmental proportions in social reproduction."
+                      "Because if individual firms save profit, expanded reproduction across society is automatically explained.",
+                      "Because produced surplus-value can be accumulated directly without sale or replacement conditions.",
+                      "Because capitalist luxury consumption and productive expansion are both spending money, so no distinction is needed.",
+                      "Because for surplus-value to be accumulated, additional means of production, means of consumption, and labour-power must be socially supplied in the right relation."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "개별 자본의 잉여가치 사용을 사회적 재생산의 부문 비례 문제로 연결한다. 이 연결 때문에 해당 장은 앞선 범주의 반복이 아니라 다음 분석으로 넘어가는 계단이다.",
-                    "en": "It connects the use of surplus-value by individual capitals to the problem of departmental proportions in social reproduction. This is why the chapter is not a repetition of earlier categories but a step into the next analysis."
+                    "ko": "이 장은 잉여가치가 생산된 뒤 자본가의 소비와 축적 경로로 갈라진다는 점을 보여 준다. 축적 경로를 택하면 개별 자본의 문제가 곧 사회 전체의 물질적 보충과 부문 간 비례 문제로 바뀐다. 이것이 다음 재생산 도식의 출발점이다.",
+                    "en": "This chapter shows that after production surplus-value divides into capitalist consumption and accumulation. If the path is accumulation, the individual capital's problem becomes a problem of material replacement and departmental proportions across society. That is the starting point of the reproduction schemes."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "개별 저축은 사회 전체의 생산수단·소비수단 비례를 보장하지 않습니다.",
+                      "판매와 물질적 보충 조건 없이 잉여가치가 바로 축적되는 것은 아닙니다.",
+                      "사치소비는 수입의 지출이고 축적은 추가 자본 전환입니다. 재생산 효과가 다릅니다.",
+                      "핵심입니다. 잉여가치의 유통은 사회적 재생산의 비례 문제로 이어집니다."
+                    ],
+                    "en": [
+                      "Individual saving does not guarantee the social proportions of means of production and means of consumption.",
+                      "Surplus-value is not accumulated directly without sale and material replacement conditions.",
+                      "Luxury consumption spends revenue; accumulation converts surplus-value into additional capital. Their reproduction effects differ.",
+                      "Correct. The circulation of surplus-value leads to the proportionality problem of social reproduction."
+                    ]
                   }
                 }
               ]
@@ -18093,27 +18345,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "사회적 총자본 분석의 출발점이 되는 긴장은 무엇인가?",
-                    "en": "What tension forms the starting point for analysis of total social capital?"
+                    "ko": "자동차 회사는 차를 모두 팔았지만 반도체 업체가 다음 생산에 필요한 장비를 확보하지 못했다. 사회적 총자본 관점에서는 무엇을 보아야 하는가?",
+                    "en": "A car company sells all its cars, but chip producers cannot obtain the equipment needed for the next production cycle. What must be examined from the standpoint of total social capital?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 자본의 관점에서는 판매와 구매가 사적 거래로 보이지만, 사회 전체에서는 서로의 재생산 조건으로 맞물린다.",
-                      "총자본을 단순히 개별 자본의 산술합으로만 본다.",
-                      "개별 기업의 판매 성공을 사회 전체의 재생산 성공과 동일시한다.",
-                      "소비수요만 있으면 생산수단 보충 문제는 사라진다고 본다."
+                      "개별 기업의 판매 성공이 곧 사회 전체 재생산의 성공은 아니라는 점",
+                      "총자본은 개별 자본을 단순히 더한 숫자일 뿐이라는 점",
+                      "한 기업이 팔았으면 다른 부문의 보충 조건도 자동으로 맞는다는 점",
+                      "소비수요만 충분하면 생산수단 보충 문제는 사라진다는 점"
                     ],
                     "en": [
-                      "From the standpoint of individual capital, sales and purchases look like private transactions; socially, they interlock as conditions of one another’s reproduction.",
-                      "Treats total capital as only an arithmetic sum of individual capitals.",
-                      "Identifies individual sales success with successful social reproduction.",
-                      "Assumes consumer demand abolishes the problem of replacing means of production."
+                      "That individual sales success is not the same as successful reproduction of society as a whole.",
+                      "That total capital is only the arithmetic sum of individual capitals.",
+                      "That if one firm sells, replacement conditions in other departments automatically fit.",
+                      "That sufficient consumer demand abolishes the problem of replacing means of production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "개별 자본의 관점에서는 판매와 구매가 사적 거래로 보이지만, 사회 전체에서는 서로의 재생산 조건으로 맞물린다. 이 긴장을 보아야 자본의 표면적 속도와 그 배후의 가치관계를 분리할 수 있다.",
-                    "en": "From the standpoint of individual capital, sales and purchases look like private transactions; socially, they interlock as conditions of one another’s reproduction. Seeing this tension separates capital's surface speed from the underlying value relation."
+                    "ko": "사회적 총자본 분석은 개별 기업의 판매 성패를 넘어선다. 한 부문의 산물이 다른 부문의 생산수단이나 소비수단 보충 조건이 되기 때문에, 판매가 이루어져도 부문 간 물질적·가치적 연결이 맞지 않으면 재생산은 막힐 수 있다.",
+                    "en": "The analysis of total social capital goes beyond whether an individual firm sells. Because the output of one department becomes the replacement condition for means of production or consumption in another, reproduction can be blocked even after sales if material and value relations between departments do not fit."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심입니다. 개별 판매 성공과 사회 전체 재생산 성공은 다른 수준의 문제입니다.",
+                      "총자본은 단순 합계가 아니라 서로 맞물린 재생산 관계입니다.",
+                      "한 기업의 판매는 다른 부문의 생산수단 보충을 자동 보장하지 않습니다.",
+                      "소비수요만으로는 생산수단 부문의 보충 조건을 설명할 수 없습니다."
+                    ],
+                    "en": [
+                      "Correct. Individual sales success and successful social reproduction are different levels of analysis.",
+                      "Total capital is not a mere sum; it is an interlocking reproduction relation.",
+                      "One firm's sale does not automatically secure replacement of means of production in another department.",
+                      "Consumer demand alone cannot explain replacement conditions for the means-of-production department."
+                    ]
                   }
                 },
                 {
@@ -18121,27 +18387,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "개별자본 순환과 총자본 재생산을 매개하는 것은 무엇인가?",
-                    "en": "What mediates individual capital circuits and reproduction of total social capital?"
+                    "ko": "사회적 총생산물을 분석할 때 왜 생산수단 부문과 소비수단 부문을 나누어 보아야 하는가?",
+                    "en": "Why must the total social product be divided into departments producing means of production and means of consumption?"
                   },
                   "choices": {
                     "ko": [
-                      "총자본을 단순히 개별 자본의 산술합으로만 본다.",
-                      "사회적 총생산물이 생산수단과 소비수단으로 나뉘고, 그 각 부분이 가치구성에 따라 교환되는 구조다.",
-                      "소비수요만 있으면 생산수단 보충 문제는 사라진다고 본다.",
-                      "부문 간 물질적 비례를 가격 조정만으로 자동 해결된다고 본다."
+                      "총자본은 개별 자본의 산술합이면 충분하기 때문이다.",
+                      "다음 생산이 반복되려면 생산수단은 생산수단으로, 임금과 잉여가치의 일부는 소비수단으로 보충되어야 하기 때문이다.",
+                      "소비수요만 확인하면 생산수단 보충은 자동으로 해결되기 때문이다.",
+                      "가격이 오르내리면 부문 간 물질적 비례도 자동으로 맞춰지기 때문이다"
                     ],
                     "en": [
-                      "Treats total capital as only an arithmetic sum of individual capitals.",
-                      "The mediation is the division of the total social product into means of production and means of consumption, exchanged according to their value composition.",
-                      "Assumes consumer demand abolishes the problem of replacing means of production.",
-                      "Assumes prices automatically solve material proportions between departments."
+                      "Because it is enough to treat total capital as the arithmetic sum of individual capitals.",
+                      "Because for production to repeat, means of production must be replaced by means of production, while wages and part of surplus-value require means of consumption.",
+                      "Because checking consumer demand automatically solves replacement of means of production.",
+                      "Because price movements automatically settle material proportions between departments."
                     ]
                   },
                   "answer": 1,
                   "explanation": {
-                    "ko": "사회적 총생산물이 생산수단과 소비수단으로 나뉘고, 그 각 부분이 가치구성에 따라 교환되는 구조다. 매개를 보지 못하면 한 범주를 다른 범주로 환원하게 된다.",
-                    "en": "The mediation is the division of the total social product into means of production and means of consumption, exchanged according to their value composition. Without the mediation, one category is reduced to another."
+                    "ko": "재생산은 판매액의 합계만으로 설명되지 않는다. 다음 생산에 필요한 생산수단이 어디서 나오고, 노동자와 자본가의 소비수단이 어디서 나오는지를 부문별로 맞춰 보아야 한다. 이 구분이 단순재생산과 확대재생산 도식의 기초다.",
+                    "en": "Reproduction is not explained by the sum of sales. We must ask where the means of production for the next cycle come from, and where the means of consumption for workers and capitalists come from. This distinction grounds the schemes of simple and expanded reproduction."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "단순 합계로는 어떤 산물이 어떤 재생산 조건을 보충하는지 보이지 않습니다.",
+                      "핵심입니다. 부문 구분은 물질적 보충과 가치보충을 함께 보기 위한 장치입니다.",
+                      "소비수요만으로는 생산수단 부문의 보충을 설명할 수 없습니다.",
+                      "가격 조정만으로 실제 기계, 원료, 소비재의 비례가 자동 보장되지는 않습니다."
+                    ],
+                    "en": [
+                      "A simple sum does not show which products replace which conditions of reproduction.",
+                      "Correct. Departmental division lets us see material replacement together with value replacement.",
+                      "Consumer demand alone cannot explain replacement of the means-of-production department.",
+                      "Price adjustment alone does not guarantee the real proportions of machinery, materials, and consumption goods."
+                    ]
                   }
                 },
                 {
@@ -18149,27 +18429,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "모든 기업이 자기 상품만 팔면 사회적 재생산은 자동으로 보장된다는 설명은 왜 부족한가?",
-                    "en": "Why is it insufficient to say social reproduction is guaranteed if every firm sells its own commodity?"
+                    "ko": "모든 기업이 자기 상품을 팔았다는 사실만으로 다음 해 생산이 반복된다고 말할 수 없는 이유는 무엇인가?",
+                    "en": "Why can we not say that next year's production will repeat merely because every firm sold its own commodity?"
                   },
                   "choices": {
                     "ko": [
-                      "소비수요만 있으면 생산수단 보충 문제는 사라진다고 본다.",
-                      "부문 간 물질적 비례를 가격 조정만으로 자동 해결된다고 본다.",
-                      "판매의 총합이 다음 생산에 필요한 생산수단·소비수단의 올바른 비례를 보장하지는 않기 때문이다.",
-                      "사회적 재생산을 가계 소비 문제로만 축소한다."
+                      "소비수요만 있으면 생산수단 보충 문제는 사라지기 때문이다.",
+                      "가격 변동이 부문 간 물질적 비례를 항상 자동으로 맞추기 때문이다.",
+                      "판매 총액이 맞아도 다음 생산에 필요한 생산수단과 소비수단의 비례가 맞는지는 별도 문제이기 때문이다.",
+                      "사회적 재생산은 가계 소비만 분석하면 충분하기 때문이다"
                     ],
                     "en": [
-                      "Assumes consumer demand abolishes the problem of replacing means of production.",
-                      "Assumes prices automatically solve material proportions between departments.",
-                      "Because the sum of sales does not by itself guarantee the right proportions of means of production and consumption needed for the next production cycle.",
-                      "Reduces social reproduction to household consumption alone."
+                      "Because consumer demand abolishes the problem of replacing means of production.",
+                      "Because price movements always automatically settle material proportions between departments.",
+                      "Because even if total sales balance, whether means of production and means of consumption exist in the right proportions for the next cycle is a separate question.",
+                      "Because social reproduction can be explained by household consumption alone."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "판매의 총합이 다음 생산에 필요한 생산수단·소비수단의 올바른 비례를 보장하지는 않기 때문이다. 마르크스의 비판은 현실의 표면을 부정하는 것이 아니라 그 표면이 어떤 관계를 가리는지 드러내는 것이다.",
-                    "en": "Because the sum of sales does not by itself guarantee the right proportions of means of production and consumption needed for the next production cycle. Marx's critique does not deny the surface; it shows what relation the surface conceals."
+                    "ko": "판매 성공은 가치가 화폐로 실현되었다는 뜻일 수 있지만, 그것만으로 다음 생산의 물질적 조건이 맞는다는 뜻은 아니다. 사회적 재생산은 생산수단과 소비수단이 올바른 양과 가치구성으로 서로 보충되는지를 따져야 한다.",
+                    "en": "Successful sale may mean value has been realized as money, but it does not by itself mean that the material conditions for the next production cycle fit. Social reproduction requires checking whether means of production and means of consumption replace one another in the right quantities and value composition."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "소비수요는 한 부분일 뿐입니다. 생산수단 보충이 빠져 있습니다.",
+                      "가격 변동이 실제 부품, 원료, 소비재의 사회적 비례를 자동 보장하지 않습니다.",
+                      "핵심입니다. 판매와 재생산 조건의 부문별 비례는 다른 문제입니다.",
+                      "사회적 재생산은 가계 소비보다 넓은 생산수단·소비수단 보충 문제입니다."
+                    ],
+                    "en": [
+                      "Consumer demand is only one part. Replacement of means of production is missing.",
+                      "Price movement does not automatically guarantee the social proportions of real components, materials, and consumption goods.",
+                      "Correct. Sale and departmental proportions for reproduction are different questions.",
+                      "Social reproduction is broader than household consumption; it concerns replacement of means of production and consumption."
+                    ]
                   }
                 },
                 {
@@ -18177,27 +18471,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "한 경제에서 소비수요는 큰데 핵심 부품과 에너지 공급이 부족해 생산이 반복되지 못한다. 어떤 범주가 필요해지는가?",
-                    "en": "In an economy, consumer demand is strong, but production cannot repeat because key components and energy are scarce. What category becomes necessary?"
+                    "ko": "소비재는 충분히 팔리는데 에너지·부품 부족으로 공장들이 다음 생산을 시작하지 못한다. 이 사례는 무엇을 보여 주는가?",
+                    "en": "Consumption goods sell well, but factories cannot begin the next cycle because energy and components are scarce. What does this case show?"
                   },
                   "choices": {
                     "ko": [
-                      "사회적 재생산을 가계 소비 문제로만 축소한다.",
-                      "부문 간 물질적 비례를 가격 조정만으로 자동 해결된다고 본다.",
-                      "사회적 총자본의 물질적 구성과 가치보충 관계를 함께 보는 재생산 분석이 필요하다.",
-                      "개별 기업의 판매 성공을 사회 전체의 재생산 성공과 동일시한다."
+                      "사회적 재생산을 가계 소비 문제로만 축소해도 충분하다.",
+                      "가격 조정만 있으면 부문 간 물질적 비례는 항상 맞춰진다.",
+                      "사회적 총자본의 물질적 구성과 가치보충 관계를 함께 보아야 한다.",
+                      "개별 기업의 판매 성공은 사회 전체 재생산 성공과 같다."
                     ],
                     "en": [
-                      "Reduces social reproduction to household consumption alone.",
-                      "Assumes prices automatically solve material proportions between departments.",
-                      "A reproduction analysis is needed that treats the material composition of total social capital together with value replacement relations.",
-                      "Identifies individual sales success with successful social reproduction."
+                      "It is enough to reduce social reproduction to household consumption.",
+                      "Price adjustment always aligns material proportions between departments.",
+                      "The material composition of total social capital must be analyzed together with value replacement relations.",
+                      "Individual sales success is the same as successful reproduction of society as a whole."
                     ]
                   },
                   "answer": 2,
                   "explanation": {
-                    "ko": "사회적 총자본의 물질적 구성과 가치보충 관계를 함께 보는 재생산 분석이 필요하다. 현대적 사례에서도 기준은 동일하다. 자본가치가 어떤 형태와 시간 속에서 묶이는지를 물어야 한다.",
-                    "en": "A reproduction analysis is needed that treats the material composition of total social capital together with value replacement relations. The same criterion applies in modern cases: ask in what form and time capital-value is tied up."
+                    "ko": "소비재 판매가 활발해도 생산수단이 보충되지 않으면 생산은 반복되지 못한다. 따라서 사회적 총자본 분석은 돈의 흐름뿐 아니라 에너지, 원료, 기계, 소비재가 어떤 부문 비례로 재생산되는지를 함께 보아야 한다.",
+                    "en": "Even if consumption goods sell strongly, production cannot repeat if means of production are not replaced. Analysis of total social capital must therefore examine not only money flows but also the departmental proportions in which energy, materials, machinery, and consumption goods are reproduced."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가계 소비만 보면 생산수단 보충 조건이 사라집니다.",
+                      "가격 조정은 부족한 에너지나 부품을 즉시 만들어 내지 않습니다.",
+                      "핵심입니다. 물질적 구성과 가치보충을 함께 보아야 재생산 조건이 보입니다.",
+                      "개별 판매 성공은 사회 전체의 부문별 보충을 보장하지 않습니다."
+                    ],
+                    "en": [
+                      "Household consumption alone erases the replacement conditions for means of production.",
+                      "Price adjustment does not instantly create scarce energy or components.",
+                      "Correct. Material composition and value replacement must be analyzed together.",
+                      "Individual sales success does not guarantee departmental replacement across society."
+                    ]
                   }
                 },
                 {
@@ -18205,27 +18513,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "서론의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of Introduction?"
+                    "ko": "18장의 서론이 이후 재생산 도식의 출발점이 되는 이유는 무엇인가?",
+                    "en": "Why does Chapter 18's introduction become the starting point for the later reproduction schemes?"
                   },
                   "choices": {
                     "ko": [
-                      "사회적 재생산을 가계 소비 문제로만 축소한다.",
-                      "개별 기업의 판매 성공을 사회 전체의 재생산 성공과 동일시한다.",
-                      "총자본을 단순히 개별 자본의 산술합으로만 본다.",
-                      "단순재생산과 확대재생산 도식을 위한 문제틀, 즉 부문 간 교환과 가치보충 문제를 연다."
+                      "사회적 재생산을 가계 소비 문제로만 줄여도 충분하다는 점을 보이기 때문이다.",
+                      "개별 기업의 판매 성공만 확인하면 사회 전체도 재생산된다고 보기 때문이다.",
+                      "총자본을 개별 자본의 단순 합계로 계산하면 충분하다는 점을 보이기 때문이다.",
+                      "개별 자본의 순환·회전 분석을 사회 전체의 부문 간 교환과 가치보충 문제로 옮기기 때문이다."
                     ],
                     "en": [
-                      "Reduces social reproduction to household consumption alone.",
-                      "Identifies individual sales success with successful social reproduction.",
-                      "Treats total capital as only an arithmetic sum of individual capitals.",
-                      "It opens the problem-field for simple and expanded reproduction schemes: departmental exchange and value replacement."
+                      "Because it shows that social reproduction can be reduced to household consumption.",
+                      "Because it treats individual sales success as enough to confirm reproduction of society as a whole.",
+                      "Because it shows that calculating total capital as the simple sum of individual capitals is enough.",
+                      "Because it shifts the analysis from individual circuits and turnover to departmental exchange and value replacement for society as a whole."
                     ]
                   },
                   "answer": 3,
                   "explanation": {
-                    "ko": "단순재생산과 확대재생산 도식을 위한 문제틀, 즉 부문 간 교환과 가치보충 문제를 연다. 이 연결 때문에 해당 장은 앞선 범주의 반복이 아니라 다음 분석으로 넘어가는 계단이다.",
-                    "en": "It opens the problem-field for simple and expanded reproduction schemes: departmental exchange and value replacement. This is why the chapter is not a repetition of earlier categories but a step into the next analysis."
+                    "ko": "앞 장들에서는 개별 자본이 어떤 형태를 거쳐 돌아오는지를 보았다. 18장은 질문의 단위를 사회적 총자본으로 바꾼다. 이제 문제는 한 자본의 회전이 아니라 생산수단 부문과 소비수단 부문이 서로의 가치와 물질적 요소를 어떻게 보충하는가이다.",
+                    "en": "The previous chapters examined how individual capitals return through their forms. Chapter 18 changes the unit of analysis to total social capital. The problem is no longer one capital's turnover alone, but how the departments of means of production and means of consumption replace one another's value and material elements."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가계 소비만으로는 생산수단 부문의 보충과 가치구성을 설명할 수 없습니다.",
+                      "개별 판매 성공은 사회 전체의 부문별 재생산 조건과 다릅니다.",
+                      "총자본은 단순 합계가 아니라 서로 맞물린 부문 관계로 분석되어야 합니다.",
+                      "핵심입니다. 분석 단위가 개별 자본에서 사회적 총자본의 재생산 조건으로 이동합니다."
+                    ],
+                    "en": [
+                      "Household consumption alone cannot explain replacement and value composition in the means-of-production department.",
+                      "Individual sales success differs from the departmental conditions of social reproduction.",
+                      "Total capital must be analyzed as interlocking departmental relations, not a simple sum.",
+                      "Correct. The unit of analysis shifts from individual capital to the reproduction conditions of total social capital."
+                    ]
                   }
                 }
               ]
