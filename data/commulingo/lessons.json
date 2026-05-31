@@ -31,8 +31,8 @@
             "en": "Commodities"
           },
           "summary": {
-            "ko": "1장 「상품」: 상품은 사용가치와 가치를 동시에 지니며, 가치는 사회적으로 필요한 노동시간과 관련된다",
-            "en": "Chapter 1, “Commodities”: a commodity has both use-value and value, and value is tied to socially necessary labor-time"
+            "ko": "상품을 단순한 물건이 아니라 사용가치와 가치가 함께 얽힌 사회적 형태로 살핀다.",
+            "en": "Looks at the commodity not as a mere thing, but as a social form joining use-value and value."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm",
           "lessons": [
@@ -338,8 +338,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "상품은 사용가치와 가치를 동시에 지니며, 가치는 사회적으로 필요한 노동시간과 관련된다",
-            "en": "a commodity has both use-value and value, and value is tied to socially necessary labor-time"
+            "ko": "쓸모와 교환가치를 구분하고, 가치가 개인의 수고가 아니라 사회적으로 필요한 노동시간과 연결된다는 점을 잡는다.",
+            "en": "Distinguish usefulness from exchange-value, and see why value depends on socially necessary labor-time rather than private effort."
           }
         },
         {
@@ -356,8 +356,8 @@
             "en": "Exchange"
           },
           "summary": {
-            "ko": "2장 「교환」: 상품 소유자들의 사적 의지가 어떻게 일반적 등가물과 화폐의 필요성으로 이어지는지 밝힌다",
-            "en": "Chapter 2, “Exchange”: Shows how the private wills of commodity owners lead to the need for a general equivalent and money"
+            "ko": "상품이 서로 교환되려면 소유자들이 어떤 사회적 관계를 맺어야 하는지 설명한다.",
+            "en": "Explains what social relation among owners is required for commodities to be exchanged."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch02.htm",
           "lessons": [
@@ -663,8 +663,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "상품 소유자들의 사적 의지가 어떻게 일반적 등가물과 화폐의 필요성으로 이어지는지 밝힌다",
-            "en": "Shows how the private wills of commodity owners lead to the need for a general equivalent and money"
+            "ko": "교환은 물건끼리 자동으로 일어나는 일이 아니라, 사적 소유자들이 서로를 인정하는 관계 위에서 가능하다는 점을 본다.",
+            "en": "See exchange as a relation among private owners who recognize one another, not as an automatic movement of things."
           }
         },
         {
@@ -681,8 +681,8 @@
             "en": "Money, or the Circulation of Commodities"
           },
           "summary": {
-            "ko": "3장 「화폐 또는 상품 유통」: 화폐가 가치척도와 유통수단으로 기능하며 단순 상품유통 C-M-C를 매개하는 방식을 분석한다",
-            "en": "Chapter 3, “Money, or the Circulation of Commodities”: Analyzes money as measure of value and means of circulation mediating simple commodity circulation, C-M-C"
+            "ko": "화폐가 가치의 척도, 유통수단, 지급수단으로 작동하며 상품교환을 조직하는 방식을 다룬다.",
+            "en": "Shows how money organizes commodity exchange as measure of value, means of circulation, and means of payment."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm",
           "lessons": [
@@ -988,8 +988,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "화폐가 가치척도와 유통수단으로 기능하며 단순 상품유통 C-M-C를 매개하는 방식을 분석한다",
-            "en": "Analyzes money as measure of value and means of circulation mediating simple commodity circulation, C-M-C"
+            "ko": "화폐를 단순한 동전이나 지폐가 아니라 상품세계의 가치관계를 표현하고 움직이는 형태로 이해한다.",
+            "en": "Understand money as a form that expresses and moves value relations in commodity society, not merely as coins or notes."
           }
         },
         {
@@ -1006,8 +1006,8 @@
             "en": "The General Formula for Capital"
           },
           "summary": {
-            "ko": "4장 「자본의 일반 공식」: 화폐가 자본으로 전환되는 운동 M-C-M'를 제시하고 자본의 목적이 가치증식임을 드러낸다",
-            "en": "Chapter 4, “The General Formula for Capital”: Introduces M-C-M', the movement in which money becomes capital, revealing valorization as capital's aim"
+            "ko": "돈이 어떻게 더 많은 돈을 낳는 자본의 운동으로 바뀌는지, 그 수수께끼를 제기한다.",
+            "en": "Poses the puzzle of how money becomes capital, a movement that returns as more money."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch04.htm",
           "lessons": [
@@ -1313,8 +1313,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "화폐가 자본으로 전환되는 운동 M-C-M'를 제시하고 자본의 목적이 가치증식임을 드러낸다",
-            "en": "Introduces M-C-M', the movement in which money becomes capital, revealing valorization as capital's aim"
+            "ko": "자본의 출발점은 돈 자체가 아니라 M-C-M' 운동이며, 잉여가치가 어디서 생기는지 묻는 데 있다.",
+            "en": "Focus on M-C-M' as capital’s form of motion and on the question of where surplus-value can arise."
           }
         },
         {
@@ -1331,8 +1331,8 @@
             "en": "Contradictions in the General Formula of Capital"
           },
           "summary": {
-            "ko": "5장 「자본의 일반 공식의 모순」: 등가교환만으로는 잉여가치를 설명할 수 없다는 모순을 통해 노동력 상품의 발견을 준비한다",
-            "en": "Chapter 5, “Contradictions in the General Formula of Capital”: Uses the contradiction that equivalent exchange cannot explain surplus-value to prepare the discovery of labor-power as commodity"
+            "ko": "등가교환만으로는 잉여가치가 생기지 않지만, 유통 바깥에서도 자본은 설명되지 않는다는 난점을 다룬다.",
+            "en": "Examines the difficulty that surplus-value cannot arise from equal exchange alone, yet capital cannot be explained outside circulation either."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
           "lessons": [
@@ -1638,8 +1638,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "등가교환만으로는 잉여가치를 설명할 수 없다는 모순을 통해 노동력 상품의 발견을 준비한다",
-            "en": "Uses the contradiction that equivalent exchange cannot explain surplus-value to prepare the discovery of labor-power as commodity"
+            "ko": "사기나 비싸게 팔기만으로는 전체 자본주의의 이윤을 설명할 수 없다는 점을 확인한다.",
+            "en": "See why fraud or selling dear cannot explain profit for capitalist society as a whole."
           }
         },
         {
@@ -1656,8 +1656,8 @@
             "en": "The Buying and Selling of Labour-Power"
           },
           "summary": {
-            "ko": "6장 「노동력의 구매와 판매」: 노동력이 상품으로 판매되는 역사적 조건과 그 가치가 노동자 재생산 비용으로 규정되는 방식을 설명한다",
-            "en": "Chapter 6, “The Buying and Selling of Labour-Power”: Explains the historical conditions for labor-power becoming a commodity and its value as the cost of reproducing the worker"
+            "ko": "노동력이 상품으로 등장하면서 잉여가치 생산의 조건이 마련되는 과정을 설명한다.",
+            "en": "Explains how labor-power becomes a commodity and makes the production of surplus-value possible."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch06.htm",
           "lessons": [
@@ -1963,8 +1963,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "노동력이 상품으로 판매되는 역사적 조건과 그 가치가 노동자 재생산 비용으로 규정되는 방식을 설명한다",
-            "en": "Explains the historical conditions for labor-power becoming a commodity and its value as the cost of reproducing the worker"
+            "ko": "자본가는 노동이 아니라 노동력을 사고, 그 사용 과정에서 가치보다 더 큰 가치를 얻는다는 차이를 잡는다.",
+            "en": "Grasp the difference between buying labor-power and using it to produce more value than it costs."
           }
         },
         {
@@ -1981,8 +1981,8 @@
             "en": "The Labour-Process and the Process of Producing Surplus-Value"
           },
           "summary": {
-            "ko": "7장 「노동과정과 잉여가치 생산과정」: 노동과정과 가치증식과정을 구분하여 자본가가 구매한 노동력에서 잉여가치를 끌어내는 방식을 분석한다",
-            "en": "Chapter 7, “The Labour-Process and the Process of Producing Surplus-Value”: Distinguishes labor-process from valorization-process and shows how capital extracts surplus-value from purchased labor-power"
+            "ko": "노동과정과 가치증식과정을 구분해, 같은 생산 현장이 어떻게 사용가치와 잉여가치를 동시에 낳는지 보여 준다.",
+            "en": "Distinguishes the labor-process from the valorization-process, showing how production makes use-values and surplus-value at once."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm",
           "lessons": [
@@ -2288,8 +2288,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "노동과정과 가치증식과정을 구분하여 자본가가 구매한 노동력에서 잉여가치를 끌어내는 방식을 분석한다",
-            "en": "Distinguishes labor-process from valorization-process and shows how capital extracts surplus-value from purchased labor-power"
+            "ko": "노동과정은 물건을 만드는 과정이고, 가치증식과정은 자본이 지불한 가치보다 더 큰 가치를 얻는 과정임을 구분한다.",
+            "en": "Separate making useful things from capital’s process of producing more value than it advanced."
           }
         },
         {
@@ -2306,8 +2306,8 @@
             "en": "Constant Capital and Variable Capital"
           },
           "summary": {
-            "ko": "8장 「불변자본과 가변자본」: 생산수단으로 이전되는 가치와 노동력이 새로 창조하는 가치를 구분해 불변자본과 가변자본을 정식화한다",
-            "en": "Chapter 8, “Constant Capital and Variable Capital”: Formulates constant and variable capital by distinguishing transferred value from newly created value"
+            "ko": "불변자본과 가변자본을 나누어, 새 가치와 잉여가치가 어디서 생기는지 밝힌다.",
+            "en": "Divides constant and variable capital to locate the source of new value and surplus-value."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
           "lessons": [
@@ -2613,8 +2613,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "생산수단으로 이전되는 가치와 노동력이 새로 창조하는 가치를 구분해 불변자본과 가변자본을 정식화한다",
-            "en": "Formulates constant and variable capital by distinguishing transferred value from newly created value"
+            "ko": "기계와 원료는 기존 가치를 이전하지만, 노동력만이 새 가치를 만든다는 구분을 익힌다.",
+            "en": "Learn why machinery and materials transfer existing value, while labor-power alone creates new value."
           }
         },
         {
@@ -2631,8 +2631,8 @@
             "en": "The Rate of Surplus-Value"
           },
           "summary": {
-            "ko": "9장 「잉여가치율」: 필요노동과 잉여노동의 비율로 착취의 정도인 잉여가치율을 측정한다",
-            "en": "Chapter 9, “The Rate of Surplus-Value”: Measures the degree of exploitation as the rate of surplus-value, the ratio of surplus labor to necessary labor"
+            "ko": "잉여가치율을 통해 노동일 안에서 필요노동과 잉여노동이 어떻게 나뉘는지 계산한다.",
+            "en": "Uses the rate of surplus-value to calculate how necessary and surplus labor divide the working day."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm",
           "lessons": [
@@ -2938,8 +2938,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "필요노동과 잉여노동의 비율로 착취의 정도인 잉여가치율을 측정한다",
-            "en": "Measures the degree of exploitation as the rate of surplus-value, the ratio of surplus labor to necessary labor"
+            "ko": "착취를 도덕적 비난이 아니라 노동시간의 비율로 파악하는 방법을 익힌다.",
+            "en": "Read exploitation as a ratio of labor-time, not merely as a moral accusation."
           }
         },
         {
@@ -2956,8 +2956,8 @@
             "en": "The Working-Day"
           },
           "summary": {
-            "ko": "10장 「노동일」: 노동일의 길이를 둘러싼 계급투쟁을 통해 자본의 무한한 잉여노동 욕구와 노동력의 물리적 한계를 대립시킨다",
-            "en": "Chapter 10, “The Working-Day”: Sets capital's drive for unlimited surplus labor against labor-power's physical limits through the class struggle over the working day"
+            "ko": "노동일을 둘러싼 투쟁을 통해 자본의 시간 요구와 노동자의 생존 조건이 충돌함을 보여 준다.",
+            "en": "Shows the conflict between capital’s demand for labor-time and workers’ conditions of life in the struggle over the working day."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm",
           "lessons": [
@@ -3263,8 +3263,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "노동일의 길이를 둘러싼 계급투쟁을 통해 자본의 무한한 잉여노동 욕구와 노동력의 물리적 한계를 대립시킨다",
-            "en": "Sets capital's drive for unlimited surplus labor against labor-power's physical limits through the class struggle over the working day"
+            "ko": "노동일의 길이는 자연스럽게 정해지는 것이 아니라 계급투쟁과 법적 제한 속에서 결정된다는 점을 본다.",
+            "en": "See the length of the working day as a result of class struggle and legal limits, not a natural fact."
           }
         },
         {
@@ -3281,8 +3281,8 @@
             "en": "Rate and Mass of Surplus-Value"
           },
           "summary": {
-            "ko": "11장 「잉여가치율과 잉여가치량」: 잉여가치량이 가변자본 규모와 잉여가치율에 의해 어떻게 결정되는지 보여준다",
-            "en": "Chapter 11, “Rate and Mass of Surplus-Value”: Shows how the mass of surplus-value depends on the size of variable capital and the rate of surplus-value"
+            "ko": "노동일이 그대로일 때 노동력 가치와 잉여가치의 비율이 어떻게 달라지는지 살핀다.",
+            "en": "Examines how the shares of labor-power value and surplus-value change when the working day is fixed."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch11.htm",
           "lessons": [
@@ -3588,8 +3588,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "잉여가치량이 가변자본 규모와 잉여가치율에 의해 어떻게 결정되는지 보여준다",
-            "en": "Shows how the mass of surplus-value depends on the size of variable capital and the rate of surplus-value"
+            "ko": "임금과 이윤의 몫은 고정된 것이 아니라 필요노동과 잉여노동의 관계에 따라 바뀐다는 점을 이해한다.",
+            "en": "Understand wages and surplus-value as changing shares of the working day, not fixed magnitudes."
           }
         },
         {
@@ -3606,8 +3606,8 @@
             "en": "The Concept of Relative Surplus-Value"
           },
           "summary": {
-            "ko": "12장 「상대적 잉여가치의 개념」: 노동일 연장 없이 필요노동시간을 줄여 잉여노동을 늘리는 상대적 잉여가치의 원리를 제시한다",
-            "en": "Chapter 12, “The Concept of Relative Surplus-Value”: Presents relative surplus-value as increasing surplus labor by reducing necessary labor-time without simply lengthening the working day"
+            "ko": "상대적 잉여가치가 노동일을 늘리지 않고도 필요노동시간을 줄여 생긴다는 점을 설명한다.",
+            "en": "Explains relative surplus-value as the reduction of necessary labor-time without lengthening the working day."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch12.htm",
           "lessons": [
@@ -3913,8 +3913,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "노동일 연장 없이 필요노동시간을 줄여 잉여노동을 늘리는 상대적 잉여가치의 원리를 제시한다",
-            "en": "Presents relative surplus-value as increasing surplus labor by reducing necessary labor-time without simply lengthening the working day"
+            "ko": "생산성 향상이 노동자를 편하게 만드는 데 그치지 않고 자본의 잉여노동 확대 수단이 될 수 있음을 본다.",
+            "en": "See how higher productivity can expand surplus labor for capital rather than simply easing work."
           }
         },
         {
@@ -3931,8 +3931,8 @@
             "en": "Co-operation"
           },
           "summary": {
-            "ko": "13장 「협업」: 협업이 개별 노동력의 합을 넘어 사회적 노동력으로 생산성을 높이는 자본주의적 조직형태임을 설명한다",
-            "en": "Chapter 13, “Co-operation”: Explains cooperation as a capitalist organization of social labor that raises productivity beyond isolated individual labor-powers"
+            "ko": "협업이 개인 노동의 단순한 합을 넘어 자본의 지휘 아래 새로운 생산력을 만든다는 점을 다룬다.",
+            "en": "Shows how cooperation under capitalist command creates a productive power greater than isolated labor."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch13.htm",
           "lessons": [
@@ -4238,8 +4238,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "협업이 개별 노동력의 합을 넘어 사회적 노동력으로 생산성을 높이는 자본주의적 조직형태임을 설명한다",
-            "en": "Explains cooperation as a capitalist organization of social labor that raises productivity beyond isolated individual labor-powers"
+            "ko": "많은 사람이 함께 일할 때 생기는 힘이 왜 자본가의 능력처럼 보이는지 주목한다.",
+            "en": "Notice how the collective power of many workers comes to appear as the capitalist’s own power."
           }
         },
         {
@@ -4256,8 +4256,8 @@
             "en": "Division of Labour and Manufacture"
           },
           "summary": {
-            "ko": "14장 「분업과 매뉴팩처」: 매뉴팩처 분업이 부분노동자를 만들고 노동과정을 자본의 지휘 아래 세분화하는 방식을 분석한다",
-            "en": "Chapter 14, “Division of Labour and Manufacture”: Analyzes how manufacture divides labor, creates the detail worker, and subdivides the labor-process under capital's command"
+            "ko": "분업과 매뉴팩처가 노동자를 부분 작업에 묶어 생산성을 높이는 동시에 능력을 좁히는 과정을 설명한다.",
+            "en": "Explains how division of labor and manufacture raise productivity while narrowing workers into partial tasks."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch14.htm",
           "lessons": [
@@ -4563,8 +4563,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "매뉴팩처 분업이 부분노동자를 만들고 노동과정을 자본의 지휘 아래 세분화하는 방식을 분석한다",
-            "en": "Analyzes how manufacture divides labor, creates the detail worker, and subdivides the labor-process under capital's command"
+            "ko": "전문화가 효율만 뜻하지 않고 노동자의 전체적 기능을 분해하는 방식도 함께 본다.",
+            "en": "Read specialization as both efficiency and a decomposition of workers’ broader capacities."
           }
         },
         {
@@ -4581,8 +4581,8 @@
             "en": "Machinery and Modern Industry"
           },
           "summary": {
-            "ko": "15장 「기계와 대공업」: 기계제 대공업이 상대적 잉여가치 생산을 확대하면서 노동자 예속과 산업예비군을 강화하는 방식을 추적한다",
-            "en": "Chapter 15, “Machinery and Modern Industry”: Traces how machinery and modern industry expand relative surplus-value while intensifying worker subordination and the reserve army"
+            "ko": "기계제 대공업이 노동과정, 숙련, 가족생활, 노동강도를 어떻게 바꾸는지 추적한다.",
+            "en": "Traces how machinery and large-scale industry transform work, skill, family life, and labor intensity."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm",
           "lessons": [
@@ -4888,8 +4888,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "기계제 대공업이 상대적 잉여가치 생산을 확대하면서 노동자 예속과 산업예비군을 강화하는 방식을 추적한다",
-            "en": "Traces how machinery and modern industry expand relative surplus-value while intensifying worker subordination and the reserve army"
+            "ko": "기계는 중립적 도구가 아니라 자본 아래에서 노동자를 통제하고 상대적 잉여가치를 늘리는 장치로 작동한다.",
+            "en": "See machinery under capital as a means of control and relative surplus-value, not as a neutral tool."
           }
         },
         {
@@ -4906,8 +4906,8 @@
             "en": "Absolute and Relative Surplus-Value"
           },
           "summary": {
-            "ko": "16장 「절대적 잉여가치와 상대적 잉여가치」: 절대적 잉여가치와 상대적 잉여가치가 실제 자본주의 생산에서 결합되는 방식을 종합한다",
-            "en": "Chapter 16, “Absolute and Relative Surplus-Value”: Synthesizes how absolute and relative surplus-value are combined in actual capitalist production"
+            "ko": "절대적 잉여가치와 상대적 잉여가치가 서로 다른 방식으로 잉여노동을 늘린다는 점을 정리한다.",
+            "en": "Summarizes the different ways absolute and relative surplus-value expand surplus labor."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
           "lessons": [
@@ -5213,8 +5213,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "절대적 잉여가치와 상대적 잉여가치가 실제 자본주의 생산에서 결합되는 방식을 종합한다",
-            "en": "Synthesizes how absolute and relative surplus-value are combined in actual capitalist production"
+            "ko": "노동시간을 늘리는 방식과 필요노동을 줄이는 방식이 어떻게 함께 자본의 축적을 떠받치는지 비교한다.",
+            "en": "Compare lengthening labor-time with reducing necessary labor, and see how both support accumulation."
           }
         },
         {
@@ -5231,8 +5231,8 @@
             "en": "Changes of Magnitude in the Price of Labour-Power and in Surplus-Value"
           },
           "summary": {
-            "ko": "17장 「노동력 가격과 잉여가치의 크기 변동」: 노동일, 노동강도, 생산력 변화가 노동력 가격과 잉여가치의 크기를 어떻게 바꾸는지 비교한다",
-            "en": "Chapter 17, “Changes of Magnitude in the Price of Labour-Power and in Surplus-Value”: Compares how changes in working day, intensity, and productivity alter the price of labor-power and surplus-value"
+            "ko": "노동력 가치, 잉여가치, 노동일의 길이가 서로 변할 때 각 몫이 어떻게 달라지는지 종합한다.",
+            "en": "Synthesizes how labor-power value, surplus-value, and the working day vary in relation to one another."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm",
           "lessons": [
@@ -5538,8 +5538,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "노동일, 노동강도, 생산력 변화가 노동력 가격과 잉여가치의 크기를 어떻게 바꾸는지 비교한다",
-            "en": "Compares how changes in working day, intensity, and productivity alter the price of labor-power and surplus-value"
+            "ko": "하나의 변수만 보지 말고 생산성, 임금, 노동시간이 함께 움직일 때 착취율이 어떻게 달라지는지 읽는다.",
+            "en": "Track productivity, wages, and labor-time together when judging changes in exploitation."
           }
         },
         {
@@ -5556,8 +5556,8 @@
             "en": "Various Formula for the Rate of Surplus-Value"
           },
           "summary": {
-            "ko": "18장 「잉여가치율의 여러 공식」: 잉여가치율을 표현하는 여러 공식이 착취관계를 드러내거나 은폐하는 방식을 정리한다",
-            "en": "Chapter 18, “Various Formula for the Rate of Surplus-Value”: Clarifies how different formulas for the rate of surplus-value reveal or obscure exploitation"
+            "ko": "잉여가치율을 표현하는 여러 공식이 같은 관계를 어떻게 다르게 보이게 하는지 정리한다.",
+            "en": "Reviews different formulas for the rate of surplus-value and how they present the same relation differently."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
           "lessons": [
@@ -5863,8 +5863,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "잉여가치율을 표현하는 여러 공식이 착취관계를 드러내거나 은폐하는 방식을 정리한다",
-            "en": "Clarifies how different formulas for the rate of surplus-value reveal or obscure exploitation"
+            "ko": "공식의 모양이 달라져도 핵심은 노동일 안의 필요노동과 잉여노동의 관계라는 점을 놓치지 않는다.",
+            "en": "Keep necessary and surplus labor within the working day at the center, even when the formulas change form."
           }
         },
         {
@@ -5881,8 +5881,8 @@
             "en": "The Transformation of the Value (and Respective Price) of Labour-Power into Wages"
           },
           "summary": {
-            "ko": "19장 「노동력의 가치 또는 가격이 임금으로 전환됨」: 노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-            "en": "Chapter 19, “The Transformation of the Value (and Respective Price) of Labour-Power into Wages”: Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself"
+            "ko": "노동력의 가치가 임금 형태로 나타나면서 노동 전체가 지불받는 것처럼 보이는 과정을 설명한다.",
+            "en": "Explains how the value of labor-power appears as wages, making all labor seem paid."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch19.htm",
           "lessons": [
@@ -6188,8 +6188,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "노동력의 가치가 임금형태에서는 노동 자체의 가격처럼 보이는 전도를 분석한다",
-            "en": "Analyzes the inversion by which the value of labor-power appears in wages as the price of labor itself"
+            "ko": "임금은 노동의 가격처럼 보이지만 실제로는 노동력의 가치가 변형되어 나타난 형태임을 이해한다.",
+            "en": "Understand wages as the transformed appearance of labor-power’s value, not the price of labor itself."
           }
         },
         {
@@ -6206,8 +6206,8 @@
             "en": "Time-Wages"
           },
           "summary": {
-            "ko": "20장 「시간임금」: 시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-            "en": "Chapter 20, “Time-Wages”: Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day"
+            "ko": "시간임금이 노동시간을 기준으로 임금을 계산하면서도 무급노동을 숨기는 방식을 설명한다.",
+            "en": "Explains how time-wages calculate pay by time while still concealing unpaid labor."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch20.htm",
           "lessons": [
@@ -6513,8 +6513,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "시간임금이 노동시간 단위의 가격처럼 보이면서도 노동력 가치와 노동일 투쟁을 은폐하는 방식을 설명한다",
-            "en": "Explains how time-wages appear as a price per labor-time while concealing the value of labor-power and struggles over the working day"
+            "ko": "시급이 공정해 보여도 노동일의 길이와 강도에 따라 착취가 달라질 수 있음을 본다.",
+            "en": "See why hourly pay can look fair while exploitation varies with the length and intensity of labor."
           }
         },
         {
@@ -6531,8 +6531,8 @@
             "en": "Piece-Wages"
           },
           "summary": {
-            "ko": "21장 「성과임금」: 성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-            "en": "Chapter 21, “Piece-Wages”: Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor"
+            "ko": "성과임금이 산출량을 임금 기준으로 삼아 감시와 노동강도를 강화하는 방식을 다룬다.",
+            "en": "Shows how piece-wages use output as the wage measure and intensify supervision and effort."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch21.htm",
           "lessons": [
@@ -6838,8 +6838,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "성과임금이 생산물 단위의 보상처럼 보이지만 노동강도와 감독을 자본에 유리하게 재편하는 방식을 분석한다",
-            "en": "Shows how piece-wages appear as payment per output while reorganizing intensity and supervision in capital's favor"
+            "ko": "성과급은 자유로운 보상처럼 보이지만 노동자가 스스로 속도를 높이게 만드는 통제 장치가 될 수 있다.",
+            "en": "Read piece-wages as a form that can make workers drive their own pace, not simply as free reward."
           }
         },
         {
@@ -6856,8 +6856,8 @@
             "en": "National Differences of Wages"
           },
           "summary": {
-            "ko": "22장 「임금의 국민적 차이」: 국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-            "en": "Chapter 22, “National Differences of Wages”: Understands national wage differences through living standards, productivity, intensity, and world-market conditions"
+            "ko": "나라마다 임금 수준이 달라지는 이유를 생산성, 생활수준, 노동강도 같은 조건과 연결해 살핀다.",
+            "en": "Examines national differences in wages through productivity, standards of life, and intensity of labor."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch22.htm",
           "lessons": [
@@ -7163,8 +7163,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "국가별 임금 차이를 생활수준, 생산력, 노동강도, 세계시장 조건의 결합 속에서 이해한다",
-            "en": "Understands national wage differences through living standards, productivity, intensity, and world-market conditions"
+            "ko": "국민별 임금 차이를 단순한 물가 차이나 문화 차이로 보지 말고 자본주의적 생산조건의 차이와 함께 본다.",
+            "en": "Read national wage differences through capitalist production conditions, not merely prices or culture."
           }
         },
         {
@@ -7181,8 +7181,8 @@
             "en": "Simple Reproduction"
           },
           "summary": {
-            "ko": "23장 「단순재생산」: 단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-            "en": "Chapter 23, “Simple Reproduction”: Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle"
+            "ko": "단순재생산을 통해 자본주의 생산이 같은 계급관계를 매번 다시 만들어 내는 과정을 보여 준다.",
+            "en": "Shows through simple reproduction how capitalist production repeatedly recreates the same class relation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
           "lessons": [
@@ -7488,8 +7488,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "단순재생산이 매 주기마다 자본관계와 임금노동자의 종속을 재생산한다는 점을 밝힌다",
-            "en": "Shows that simple reproduction reproduces the capital relation and the worker's dependence every cycle"
+            "ko": "재생산은 물건을 다시 만드는 일만이 아니라 자본가와 임금노동자의 관계를 반복해서 유지하는 과정이다.",
+            "en": "See reproduction as maintaining the capital-wage labor relation, not only as replacing things."
           }
         },
         {
@@ -7506,8 +7506,8 @@
             "en": "Conversion of Surplus-Value into Capital"
           },
           "summary": {
-            "ko": "24장 「잉여가치의 자본으로의 전환」: 잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-            "en": "Chapter 24, “Conversion of Surplus-Value into Capital”: accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power"
+            "ko": "잉여가치가 다시 자본으로 바뀌면서 축적이 시작되고 생산 규모가 확대되는 과정을 설명한다.",
+            "en": "Explains how surplus-value becomes capital again, beginning accumulation and expanding production."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch24.htm",
           "lessons": [
@@ -7813,8 +7813,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "잉여가치가 소비되지 않고 추가 생산수단과 노동력 구매에 투입될 때 축적이 성립한다",
-            "en": "accumulation occurs when surplus-value is not consumed but advanced for additional means of production and labor-power"
+            "ko": "축적은 돈을 쌓아 두는 일이 아니라 잉여가치를 생산수단과 노동력 구매로 되돌리는 과정임을 잡는다.",
+            "en": "See accumulation as returning surplus-value to purchases of means of production and labor-power, not hoarding money."
           }
         },
         {
@@ -7831,8 +7831,8 @@
             "en": "The General Law of Capitalist Accumulation"
           },
           "summary": {
-            "ko": "25장 「자본주의적 축적의 일반 법칙」: 축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-            "en": "Chapter 25, “The General Law of Capitalist Accumulation”: accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+            "ko": "축적이 자본의 집중과 산업예비군을 낳으며 노동자의 처지를 어떻게 압박하는지 분석한다.",
+            "en": "Analyzes how accumulation produces concentration of capital and an industrial reserve army that pressures workers."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch25.htm",
           "lessons": [
@@ -8138,8 +8138,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "축적은 부의 집중과 함께 산업예비군과 상대적 빈곤을 재생산한다",
-            "en": "accumulation reproduces concentration of wealth together with the industrial reserve army and relative poverty"
+            "ko": "실업과 빈곤을 우연한 실패가 아니라 축적 과정이 만들어 내는 압력 장치로 이해한다.",
+            "en": "Understand unemployment and poverty as pressures generated by accumulation, not as accidental failures."
           }
         },
         {
@@ -8156,8 +8156,8 @@
             "en": "The Secret of Primitive Accumulation"
           },
           "summary": {
-            "ko": "26장 「원시적 축적의 비밀」: 자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-            "en": "Chapter 26, “The Secret of Primitive Accumulation”: Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals"
+            "ko": "마르크스가 ‘원시축적’이라는 이름으로 자본주의의 역사적 출발점을 다시 묻는 대목이다.",
+            "en": "Reopens the historical starting point of capitalism under the name primitive accumulation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch26.htm",
           "lessons": [
@@ -8463,8 +8463,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "자본주의의 출발점이 근면한 개인의 저축이 아니라 생산자와 생산수단의 폭력적 분리였음을 폭로한다",
-            "en": "Exposes primitive accumulation as violent separation of producers from means of production, not the thrift of diligent individuals"
+            "ko": "자본과 임금노동이 처음부터 자연스럽게 있었던 것이 아니라 특정한 분리 과정의 결과라는 점을 확인한다.",
+            "en": "Confirm that capital and wage labor are results of a specific separation, not timeless natural facts."
           }
         },
         {
@@ -8481,8 +8481,8 @@
             "en": "Expropriation of the Agricultural Population from the Land"
           },
           "summary": {
-            "ko": "27장 「농촌 인구의 토지로부터의 수탈」: 농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-            "en": "Chapter 27, “Expropriation of the Agricultural Population from the Land”: Analyzes the expropriation of peasants from the land as a historical precondition of wage labor"
+            "ko": "농민이 토지에서 쫓겨나 임금노동자로 내몰리는 영국의 역사적 과정을 다룬다.",
+            "en": "Treats the English history in which peasants were driven from the land and forced toward wage labor."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
           "lessons": [
@@ -8788,8 +8788,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "농민이 토지에서 축출되어 임금노동자로 만들어지는 수탈 과정을 자본주의의 역사적 전제로 분석한다",
-            "en": "Analyzes the expropriation of peasants from the land as a historical precondition of wage labor"
+            "ko": "노동시장은 자유계약만으로 생긴 것이 아니라 생계 기반을 잃은 사람들이 만들어 낸 역사적 결과임을 본다.",
+            "en": "See the labor market as a historical result of lost means of subsistence, not simply free contract."
           }
         },
         {
@@ -8806,8 +8806,8 @@
             "en": "Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament"
           },
           "summary": {
-            "ko": "28장 「15세기 말 이후 수탈당한 사람들에 대한 유혈입법」: 수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-            "en": "Chapter 28, “Bloody Legislation against the Expropriated, from the End of the 15th Century. Forcing down of Wages by Acts of Parliament”: Shows how bloody legislation forced the expropriated population into labor-market discipline"
+            "ko": "토지를 잃은 사람들을 노동규율에 묶기 위해 국가가 폭력적 법률을 사용한 과정을 보여 준다.",
+            "en": "Shows how the state used violent laws to bind dispossessed people to labor discipline."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch28.htm",
           "lessons": [
@@ -9113,8 +9113,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "수탈당한 인구를 노동시장 규율에 복속시키는 유혈입법이 자유노동자를 강제로 만들었음을 보여준다",
-            "en": "Shows how bloody legislation forced the expropriated population into labor-market discipline"
+            "ko": "임금노동의 자유는 처음부터 법과 처벌을 통해 강제된 질서였다는 점을 이해한다.",
+            "en": "Understand free wage labor as a legally enforced order, not as pure voluntary choice."
           }
         },
         {
@@ -9131,8 +9131,8 @@
             "en": "Genesis of the Capitalist Farmer"
           },
           "summary": {
-            "ko": "29장 「자본주의적 차지농업가의 발생」: 차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-            "en": "Chapter 29, “Genesis of the Capitalist Farmer”: Traces the formation of the capitalist farmer through land expropriation and market expansion"
+            "ko": "자본주의적 농업이 농민을 몰아내고 농업자본가와 임금노동자를 형성하는 과정을 설명한다.",
+            "en": "Explains how capitalist agriculture expelled peasants and formed capitalist farmers and wage laborers."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch29.htm",
           "lessons": [
@@ -9438,8 +9438,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "차지농업가가 토지수탈과 시장 확대 속에서 자본주의적 농업 경영자로 형성되는 과정을 추적한다",
-            "en": "Traces the formation of the capitalist farmer through land expropriation and market expansion"
+            "ko": "농업의 변화가 단지 생산기술 문제가 아니라 계급구조 재편이라는 점을 본다.",
+            "en": "Read changes in agriculture as a reorganization of class relations, not merely technique."
           }
         },
         {
@@ -9456,8 +9456,8 @@
             "en": "Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital"
           },
           "summary": {
-            "ko": "30장 「농업혁명이 공업에 미친 반작용과 국내시장의 창출」: 농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-            "en": "Chapter 30, “Reaction of the Agricultural Revolution on Industry. Creation of the Home-Market for Industrial Capital”: Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+            "ko": "토지에서 쫓겨난 사람들이 도시 산업 노동력으로 흡수되며 국내시장이 형성되는 과정을 다룬다.",
+            "en": "Shows how the expelled rural population became industrial labor-power and helped form the home market."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch30.htm",
           "lessons": [
@@ -9763,8 +9763,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "농업혁명이 농촌 인구를 몰아내고 공업자본을 위한 국내시장을 창출한 방식을 설명한다",
-            "en": "Explains how the agricultural revolution expelled rural people and created the home market for industrial capital"
+            "ko": "노동자와 시장은 따로 생기는 것이 아니라 생산수단 박탈과 함께 만들어진다는 점을 연결한다.",
+            "en": "Connect the making of workers and markets to the loss of means of production."
           }
         },
         {
@@ -9781,8 +9781,8 @@
             "en": "Genesis of the Industrial Capitalist"
           },
           "summary": {
-            "ko": "31장 「산업자본가의 발생」: 식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-            "en": "Chapter 31, “Genesis of the Industrial Capitalist”: Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists"
+            "ko": "국가부채, 세금, 보호무역, 식민지 약탈이 자본축적을 밀어붙인 방식을 정리한다.",
+            "en": "Summarizes how public debt, taxes, protectionism, and colonial plunder propelled accumulation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
           "lessons": [
@@ -10088,8 +10088,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "식민, 국가부채, 조세, 보호무역, 노예제 등 폭력적 수단이 산업자본가 형성에 기여했음을 밝힌다",
-            "en": "Shows how colonies, public debt, taxation, protectionism, and slavery helped form industrial capitalists"
+            "ko": "자본주의의 성장을 시장의 평화로운 확대만이 아니라 국가권력과 폭력의 결합으로 읽는다.",
+            "en": "Read capitalist growth as tied to state power and violence, not merely peaceful market expansion."
           }
         },
         {
@@ -10106,8 +10106,8 @@
             "en": "Historical Tendency of Capitalist Accumulation"
           },
           "summary": {
-            "ko": "32장 「자본주의적 축적의 역사적 경향」: 자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-            "en": "Chapter 32, “Historical Tendency of Capitalist Accumulation”: Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits"
+            "ko": "자본주의적 사적 소유가 스스로의 발전 속에서 다시 부정될 조건을 만들어 낸다는 논지를 제시한다.",
+            "en": "Argues that capitalist private property creates the conditions for its own negation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch32.htm",
           "lessons": [
@@ -10413,8 +10413,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "자본주의적 축적이 소유의 집중과 사회화된 생산을 낳아 자신의 역사적 한계를 만든다는 경향을 제시한다",
-            "en": "Presents the tendency of capitalist accumulation to centralize property and socialize production, producing its own historical limits"
+            "ko": "마르크스가 말하는 부정은 단순한 도덕적 비판이 아니라 생산의 사회화와 소유의 사적 형태 사이의 모순이다.",
+            "en": "See negation as the contradiction between socialized production and private appropriation, not mere moral rejection."
           }
         },
         {
@@ -10431,8 +10431,8 @@
             "en": "The Modern Theory of Colonisation"
           },
           "summary": {
-            "ko": "33장 「근대 식민이론」: 자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-            "en": "Chapter 33, “The Modern Theory of Colonisation”: capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power"
+            "ko": "식민지에서 토지 접근성이 임금노동 형성을 방해하는 사례를 통해 자본주의 조건을 역으로 드러낸다.",
+            "en": "Uses colonial conditions, where access to land obstructs wage labor, to reveal capitalism’s necessary conditions."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch33.htm",
           "lessons": [
@@ -10738,8 +10738,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "자본주의는 돈과 생산수단만으로 성립하지 않고, 생산수단에서 분리되어 노동력을 팔 수밖에 없는 노동자를 필요로 한다",
-            "en": "capitalism does not arise from money and means of production alone; it requires workers separated from means of production and compelled to sell labor-power"
+            "ko": "자본주의에는 돈과 상품만으로 부족하며, 생계수단에서 분리된 노동자가 필요하다는 결론을 확인한다.",
+            "en": "Confirm that capitalism needs separated workers, not just money and commodities."
           }
         }
       ]
@@ -10774,8 +10774,8 @@
             "en": "The Circuit of Money-Capital"
           },
           "summary": {
-            "ko": "1장 「화폐자본의 순환」: 화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-            "en": "Chapter 1, “The Circuit of Money-Capital”: Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization"
+            "ko": "화폐자본이 구매, 생산, 판매를 거쳐 다시 화폐로 돌아오는 순환을 설명한다.",
+            "en": "Explains the circuit in which money-capital passes through purchase, production, and sale before returning as money."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch01.htm",
           "lessons": [
@@ -11081,8 +11081,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "화폐자본의 순환 M-C...P...C'-M'가 자본이 가치증식을 목표로 운동하는 완결된 형식을 보여준다",
-            "en": "Shows the circuit of money-capital, M-C...P...C'-M', as the full form of capital's movement toward valorization"
+            "ko": "자본은 한 번의 거래가 아니라 형태를 바꾸며 계속 돌아와야 하는 운동이라는 점을 잡는다.",
+            "en": "See capital as a movement that must repeatedly change form and return, not as a single transaction."
           }
         },
         {
@@ -11099,8 +11099,8 @@
             "en": "The Circuit of Productive Capital"
           },
           "summary": {
-            "ko": "2장 「생산자본의 순환」: 생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-            "en": "Chapter 2, “The Circuit of Productive Capital”: Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center"
+            "ko": "생산자본의 순환을 통해 생산과정이 전체 자본 운동의 한 국면임을 보여 준다.",
+            "en": "Uses the circuit of productive capital to show production as one phase of the total movement of capital."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch02.htm",
           "lessons": [
@@ -11406,8 +11406,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "생산자본의 순환이 생산과정의 반복과 재생산 조건을 중심에 놓는다는 점을 밝힌다",
-            "en": "Shows that the circuit of productive capital places the repetition of production and its conditions of reproduction at the center"
+            "ko": "생산은 유통과 분리된 내부 과정이 아니라 자본이 다시 증식하기 위해 지나야 하는 핵심 단계임을 본다.",
+            "en": "See production as a necessary phase of capital’s reproduction, not as isolated from circulation."
           }
         },
         {
@@ -11424,8 +11424,8 @@
             "en": "The Circuit of Commodity-Capital"
           },
           "summary": {
-            "ko": "3장 「상품자본의 순환」: 상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-            "en": "Chapter 3, “The Circuit of Commodity-Capital”: Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction"
+            "ko": "상품자본의 순환을 통해 이미 생산된 가치가 판매와 재생산을 요구하는 방식을 다룬다.",
+            "en": "Treats the circuit of commodity-capital, where produced value must be sold and reproduced."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch03.htm",
           "lessons": [
@@ -11731,8 +11731,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "상품자본의 순환이 이미 증식된 가치 C'에서 출발해 실현과 재생산의 문제를 전면화한다",
-            "en": "Shows that the circuit of commodity-capital starts from valorized value C' and foregrounds realization and reproduction"
+            "ko": "상품이 팔리지 않으면 가치증식이 완성되지 않는다는 점에서 판매는 부차적 절차가 아님을 이해한다.",
+            "en": "Understand sale as essential: without it, valorization is not completed."
           }
         },
         {
@@ -11749,8 +11749,8 @@
             "en": "The Three Formulas of the Circuit"
           },
           "summary": {
-            "ko": "4장 「순환의 세 공식」: 세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다",
-            "en": "Chapter 4, “The Three Formulas of the Circuit”: Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone"
+            "ko": "세 가지 순환이 서로 맞물려 산업자본의 전체 운동을 이룬다는 점을 정리한다.",
+            "en": "Shows how the three circuits interlock to form the total movement of industrial capital."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch04.htm",
           "lessons": [
@@ -12056,8 +12056,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "세 순환 공식이 같은 자본운동의 서로 다른 측면이며 어느 하나만으로는 전체를 설명할 수 없음을 정리한다",
-            "en": "Clarifies the three circuit formulas as different aspects of one movement, none sufficient alone"
+            "ko": "화폐, 생산, 상품 형태 중 하나만 보면 자본의 재생산 과정을 놓친다는 점을 주의한다.",
+            "en": "Avoid reducing capital to only money, production, or commodities; reproduction requires all three forms."
           }
         },
         {
@@ -12074,8 +12074,8 @@
             "en": "The Time of Circulation"
           },
           "summary": {
-            "ko": "5장 「유통시간」: 유통시간이 생산하지 않으면서도 자본의 회전과 가치증식 속도를 제한하는 시간을 이룬다는 점을 분석한다",
-            "en": "Chapter 5, “The Time of Circulation”: Analyzes circulation time as non-productive time that nevertheless limits turnover and the speed of valorization"
+            "ko": "상품이 팔리고 생산요소가 다시 구매되기까지 걸리는 유통시간이 자본 운동을 늦추는 방식을 설명한다.",
+            "en": "Explains how circulation time, the time needed to sell and buy again, slows the movement of capital."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch05.htm",
           "lessons": [
@@ -12381,8 +12381,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "유통시간이 생산하지 않으면서도 자본의 회전과 가치증식 속도를 제한하는 시간을 이룬다는 점을 분석한다",
-            "en": "Analyzes circulation time as non-productive time that nevertheless limits turnover and the speed of valorization"
+            "ko": "생산 밖에서 보내는 시간도 자본에는 멈춤이며, 판매와 구매 지연이 회전 전체를 바꾼다는 점을 본다.",
+            "en": "See time spent outside production as a pause for capital, since delays in sale and purchase reshape turnover."
           }
         },
         {
@@ -12399,8 +12399,8 @@
             "en": "The Costs of Circulation"
           },
           "summary": {
-            "ko": "6장 「유통비용」: 유통비용 중 어떤 것은 가치형태의 변화 비용이고 어떤 것은 생산과 연결된 보존·운송 비용임을 구분한다",
-            "en": "Chapter 6, “The Costs of Circulation”: Distinguishes costs of mere form-change from preservation and transport costs tied to production"
+            "ko": "유통비용을 순수한 거래비용과 보관·운송처럼 사용가치와 관련된 비용으로 나누어 살핀다.",
+            "en": "Distinguishes pure circulation costs from costs tied to use-values, such as storage and transport."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch06.htm",
           "lessons": [
@@ -12706,8 +12706,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "유통비용 중 어떤 것은 가치형태의 변화 비용이고 어떤 것은 생산과 연결된 보존·운송 비용임을 구분한다",
-            "en": "Distinguishes costs of mere form-change from preservation and transport costs tied to production"
+            "ko": "모든 유통비가 새 가치를 만드는 것은 아니며, 비용의 성격을 구분해야 한다는 점을 익힌다.",
+            "en": "Learn why not every circulation cost creates new value, and why the kind of cost matters."
           }
         },
         {
@@ -12724,8 +12724,8 @@
             "en": "The Turnover Time and Number of Turnovers"
           },
           "summary": {
-            "ko": "7장 「회전시간과 회전수」: 회전시간과 회전수가 같은 자본량으로 생산 가능한 연간 잉여가치량을 좌우함을 설명한다",
-            "en": "Chapter 7, “The Turnover Time and Number of Turnovers”: Explains how turnover time and number of turnovers shape annual surplus-value from a given capital"
+            "ko": "자본이 한 순환을 마치고 같은 형태로 돌아오는 데 걸리는 회전시간과 회전수를 분석한다.",
+            "en": "Analyzes turnover time and the number of turnovers needed for capital to return to its initial form."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch07.htm",
           "lessons": [
@@ -13031,8 +13031,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "회전시간과 회전수가 같은 자본량으로 생산 가능한 연간 잉여가치량을 좌우함을 설명한다",
-            "en": "Explains how turnover time and number of turnovers shape annual surplus-value from a given capital"
+            "ko": "생산시간과 유통시간이 모두 자본 회전 속도를 좌우하며, 1년에 몇 번 돌아오는지가 중요하다.",
+            "en": "Track both production and circulation time, since what matters is how often capital returns within a year."
           }
         },
         {
@@ -13049,8 +13049,8 @@
             "en": "Fixed Capital and Circulating Capital"
           },
           "summary": {
-            "ko": "8장 「고정자본과 유동자본」: 고정자본과 유동자본을 가치가 생산물에 이전되는 방식과 회전속도에 따라 구분한다",
-            "en": "Chapter 8, “Fixed Capital and Circulating Capital”: Distinguishes fixed and circulating capital by how value is transferred to the product and how fast it turns over"
+            "ko": "고정자본과 유동자본의 차이를 통해 자본가치가 생산물에 이전되는 속도를 설명한다.",
+            "en": "Explains fixed and circulating capital by how quickly their value passes into the product."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch08.htm",
           "lessons": [
@@ -13356,8 +13356,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "고정자본과 유동자본을 가치가 생산물에 이전되는 방식과 회전속도에 따라 구분한다",
-            "en": "Distinguishes fixed and circulating capital by how value is transferred to the product and how fast it turns over"
+            "ko": "기계처럼 오래 쓰이는 자본과 원료처럼 한 번에 소비되는 자본은 회전 방식이 다르다는 점을 구분한다.",
+            "en": "Distinguish durable means of production from inputs consumed at once, because their turnover differs."
           }
         },
         {
@@ -13374,8 +13374,8 @@
             "en": "The Aggregate Turnover of the Capital Advanced. Cycles of Turnover"
           },
           "summary": {
-            "ko": "9장 「투하자본의 총회전과 회전주기」: 「투하자본의 총회전과 회전주기」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 9, “The Aggregate Turnover of the Capital Advanced. Cycles of Turnover”: Chapter “The Aggregate Turnover of the Capital Advanced. Cycles of Turnover” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "선대자본 전체의 회전을 계산하려면 서로 다른 자본 부분의 회전 속도를 함께 봐야 함을 보여 준다.",
+            "en": "Shows that turnover of total advanced capital must combine parts that turn over at different speeds."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch09.htm",
           "lessons": [
@@ -13681,8 +13681,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「투하자본의 총회전과 회전주기」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “The Aggregate Turnover of the Capital Advanced. Cycles of Turnover” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "평균 회전은 단순한 숫자 계산이 아니라 고정자본과 유동자본의 결합을 이해하는 문제다.",
+            "en": "Treat average turnover as an analysis of combined capital parts, not merely arithmetic."
           }
         },
         {
@@ -13699,8 +13699,8 @@
             "en": "Theories of Fixed and Circulating Capital. The Physiocrats and Adam Smith"
           },
           "summary": {
-            "ko": "10장 「고정자본과 유동자본 이론: 중농주의자와 애덤 스미스」: 「고정자본과 유동자본 이론: 중농주의자와 애덤 스미스」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 10, “Theories of Fixed and Circulating Capital. The Physiocrats and Adam Smith”: Chapter “Theories of Fixed and Circulating Capital. The Physiocrats and Adam Smith” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "중농주의자와 애덤 스미스의 구분을 검토하며 고정자본·유동자본 개념의 한계와 성과를 살핀다.",
+            "en": "Reviews the Physiocrats and Adam Smith on fixed and circulating capital, noting both insights and limits."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch10.htm",
           "lessons": [
@@ -14006,8 +14006,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「고정자본과 유동자본 이론: 중농주의자와 애덤 스미스」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “Theories of Fixed and Circulating Capital. The Physiocrats and Adam Smith” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "가치 이전 방식의 구분과 잉여가치 생산의 구분을 혼동하면 자본 분석이 흐려진다는 점을 본다.",
+            "en": "See why confusing value-transfer distinctions with surplus-value production weakens the analysis of capital."
           }
         },
         {
@@ -14024,8 +14024,8 @@
             "en": "Theories of Fixed and Circulating Capital. Ricardo"
           },
           "summary": {
-            "ko": "11장 「고정자본과 유동자본 이론: 리카도」: 「고정자본과 유동자본 이론: 리카도」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 11, “Theories of Fixed and Circulating Capital. Ricardo”: Chapter “Theories of Fixed and Circulating Capital. Ricardo” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "리카도의 고정자본·유동자본 논의를 비판하며 임금, 가치, 회전의 관계를 다시 정리한다.",
+            "en": "Critiques Ricardo on fixed and circulating capital while clarifying wages, value, and turnover."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch11.htm",
           "lessons": [
@@ -14331,8 +14331,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「고정자본과 유동자본 이론: 리카도」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “Theories of Fixed and Circulating Capital. Ricardo” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "리카도의 설명에서 무엇이 포착되고 무엇이 빠지는지 보며, 자본 구분을 더 정확히 사용하는 법을 익힌다.",
+            "en": "Learn what Ricardo captures and misses, and use the capital distinctions more precisely."
           }
         },
         {
@@ -14349,8 +14349,8 @@
             "en": "The Working Period"
           },
           "summary": {
-            "ko": "12장 「노동기간」: 「노동기간」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 12, “The Working Period”: Chapter “The Working Period” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "노동기간의 길이가 자본 회전과 선대자본의 묶임에 어떤 영향을 주는지 분석한다.",
+            "en": "Analyzes how the length of the working period affects turnover and ties up advanced capital."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch12.htm",
           "lessons": [
@@ -14656,8 +14656,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「노동기간」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “The Working Period” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "상품이 완성되기까지 오래 걸릴수록 자본이 더 오래 묶이고 회전 속도가 느려진다는 점을 본다.",
+            "en": "See why long production periods keep capital tied up and slow turnover."
           }
         },
         {
@@ -14674,8 +14674,8 @@
             "en": "The Time of Production"
           },
           "summary": {
-            "ko": "13장 「생산시간」: 「생산시간」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 13, “The Time of Production”: Chapter “The Time of Production” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "생산시간이 노동시간보다 길어질 수 있으며, 이 차이가 자본 회전에 영향을 준다는 점을 설명한다.",
+            "en": "Explains how production time can exceed labor-time and affect capital turnover."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch13.htm",
           "lessons": [
@@ -14981,8 +14981,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「생산시간」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “The Time of Production” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "발효나 건조처럼 노동이 멈춰도 생산물이 변하는 시간이 자본의 회전 계산에 들어간다는 점을 이해한다.",
+            "en": "Include periods when labor pauses but the product is still changing, such as fermentation or drying."
           }
         },
         {
@@ -14999,8 +14999,8 @@
             "en": "The Time of Circulation"
           },
           "summary": {
-            "ko": "14장 「유통시간」: 「유통시간」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 14, “The Time of Circulation”: Chapter “The Time of Circulation” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "판매와 구매에 걸리는 유통시간이 자본의 회전을 늦추고 추가 선대자본을 요구하는 방식을 다룬다.",
+            "en": "Treats circulation time in selling and buying as a factor that slows turnover and requires additional advances."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch14.htm",
           "lessons": [
@@ -15306,8 +15306,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「유통시간」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “The Time of Circulation” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "시장에 머무는 시간도 자본에는 비용이며, 생산 밖의 지연이 축적 조건을 바꿀 수 있음을 본다.",
+            "en": "See market time as costly for capital, since delays outside production can change conditions of accumulation."
           }
         },
         {
@@ -15324,8 +15324,8 @@
             "en": "Effect of Turnover Time on Magnitude of Advanced Capital"
           },
           "summary": {
-            "ko": "15장 「회전시간이 투하자본량에 미치는 영향」: 「회전시간이 투하자본량에 미치는 영향」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 15, “Effect of Turnover Time on Magnitude of Advanced Capital”: Chapter “Effect of Turnover Time on Magnitude of Advanced Capital” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "회전 속도와 선대자본 규모의 관계를 통해 자본이 얼마나 미리 투입되어야 하는지 살핀다.",
+            "en": "Examines how turnover speed determines how much capital must be advanced in advance."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch15.htm",
           "lessons": [
@@ -15631,8 +15631,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「회전시간이 투하자본량에 미치는 영향」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “Effect of Turnover Time on Magnitude of Advanced Capital” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "자본이 빨리 돌아오면 같은 생산을 더 적은 선대자본으로도 유지할 수 있다는 점을 이해한다.",
+            "en": "Understand why faster return can sustain the same production with less advanced capital."
           }
         },
         {
@@ -15649,8 +15649,8 @@
             "en": "The Turnover of Variable Capital"
           },
           "summary": {
-            "ko": "16장 「가변자본의 회전」: 가변자본의 회전이 연간 잉여가치율을 변화시켜 착취의 연간 표현을 달리 만든다",
-            "en": "Chapter 16, “The Turnover of Variable Capital”: Shows how turnover of variable capital changes the annual rate of surplus-value"
+            "ko": "가변자본의 회전이 빨라질수록 같은 임금 지출이 더 많은 잉여가치를 연간으로 낳을 수 있음을 보여 준다.",
+            "en": "Shows how faster turnover of variable capital can raise annual surplus-value from the same wage advance."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch16.htm",
           "lessons": [
@@ -15956,8 +15956,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "가변자본의 회전이 연간 잉여가치율을 변화시켜 착취의 연간 표현을 달리 만든다",
-            "en": "Shows how turnover of variable capital changes the annual rate of surplus-value"
+            "ko": "임금으로 선대한 자본이 얼마나 자주 회수되는지가 연간 착취 계산에 중요하다는 점을 잡는다.",
+            "en": "Track how often wage advances return when calculating annual exploitation."
           }
         },
         {
@@ -15974,8 +15974,8 @@
             "en": "The Circulation of Surplus-Value"
           },
           "summary": {
-            "ko": "17장 「잉여가치의 유통」: 「잉여가치의 유통」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 17, “The Circulation of Surplus-Value”: Chapter “The Circulation of Surplus-Value” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "잉여가치의 유통을 통해 자본가의 소비와 축적이 어떤 화폐 흐름을 필요로 하는지 설명한다.",
+            "en": "Explains what money flows are needed for capitalists’ consumption and accumulation of surplus-value."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch17.htm",
           "lessons": [
@@ -16281,8 +16281,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「잉여가치의 유통」 장은 자본의 회전 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “The Circulation of Surplus-Value” analyzes how capital’s movement in The Turnover of Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "잉여가치는 생산에서 생기지만, 실현되고 다시 쓰이려면 유통 속에서 화폐형태를 거쳐야 한다.",
+            "en": "Remember that surplus-value is produced in production but must pass through money form to be realized and reused."
           }
         },
         {
@@ -16299,8 +16299,8 @@
             "en": "Introduction"
           },
           "summary": {
-            "ko": "18장 「서론」: 「서론」 장은 사회적 총자본의 재생산과 유통 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 18, “Introduction”: Chapter “Introduction” analyzes how capital’s movement in The Reproduction and Circulation of the Aggregate Social Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "개별 자본이 아니라 사회 전체 자본의 재생산을 분석해야 하는 이유를 제시한다.",
+            "en": "Introduces why reproduction must be analyzed at the level of total social capital, not only individual capitals."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch18.htm",
           "lessons": [
@@ -16606,8 +16606,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「서론」 장은 사회적 총자본의 재생산과 유통 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “Introduction” analyzes how capital’s movement in The Reproduction and Circulation of the Aggregate Social Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "한 기업의 판매 성공만으로는 사회 전체에서 생산수단과 소비재가 맞물리는 조건을 설명할 수 없다.",
+            "en": "One firm’s sale cannot explain how means of production and consumption goods fit together for society as a whole."
           }
         },
         {
@@ -16624,8 +16624,8 @@
             "en": "Former Presentations of the Subject"
           },
           "summary": {
-            "ko": "19장 「이 주제에 대한 이전의 서술들」: 「이 주제에 대한 이전의 서술들」 장은 사회적 총자본의 재생산과 유통 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter 19, “Former Presentations of the Subject”: Chapter “Former Presentations of the Subject” analyzes how capital’s movement in The Reproduction and Circulation of the Aggregate Social Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "이전 경제학이 사회적 재생산 문제를 어떻게 잘못 다루었는지 비판적으로 검토한다.",
+            "en": "Critically reviews how earlier political economy mishandled the problem of social reproduction."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch19.htm",
           "lessons": [
@@ -16931,8 +16931,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「이 주제에 대한 이전의 서술들」 장은 사회적 총자본의 재생산과 유통 안에서 자본의 운동이 생산시간·유통시간·회전속도에 의해 어떻게 제약되는지 분석한다",
-            "en": "Chapter “Former Presentations of the Subject” analyzes how capital’s movement in The Reproduction and Circulation of the Aggregate Social Capital is constrained by production time, circulation time, and turnover speed"
+            "ko": "총생산물을 소득으로만 환원하면 생산수단의 보충 문제를 놓친다는 점을 본다.",
+            "en": "See why reducing the total product to income misses the replacement of means of production."
           }
         },
         {
@@ -16949,8 +16949,8 @@
             "en": "Simple Reproduction"
           },
           "summary": {
-            "ko": "20장 「단순재생산」: 사회적 총자본의 단순재생산을 두 부문 교환관계로 분석해 개별자본 관점의 한계를 넘어선다",
-            "en": "Chapter 20, “Simple Reproduction”: Analyzes simple reproduction of aggregate social capital through exchange between departments, moving beyond individual capital"
+            "ko": "단순재생산 도식을 통해 생산수단 부문과 소비재 부문이 균형을 맞춰야 하는 조건을 설명한다.",
+            "en": "Uses simple reproduction schemes to show the balance required between means of production and consumption goods."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch20.htm",
           "lessons": [
@@ -17256,8 +17256,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "사회적 총자본의 단순재생산을 두 부문 교환관계로 분석해 개별자본 관점의 한계를 넘어선다",
-            "en": "Analyzes simple reproduction of aggregate social capital through exchange between departments, moving beyond individual capital"
+            "ko": "사회 전체가 그대로 반복되려면 두 부문 사이의 교환 비율이 맞아야 한다는 점을 도식으로 이해한다.",
+            "en": "Use the scheme to see how the two departments must exchange in the right proportions for reproduction to repeat."
           }
         },
         {
@@ -17274,8 +17274,8 @@
             "en": "Accumulation and Reproduction on an Expanded Scale"
           },
           "summary": {
-            "ko": "21장 「축적과 확대재생산」: 확대재생산이 축적을 위해 두 부문 사이의 비례관계를 요구한다는 점을 보여준다",
-            "en": "Chapter 21, “Accumulation and Reproduction on an Expanded Scale”: Shows that expanded reproduction requires proportional relations between departments for accumulation"
+            "ko": "확대재생산 도식을 통해 축적이 부문 간 균형 조건을 더 복잡하게 만든다는 점을 보여 준다.",
+            "en": "Uses expanded reproduction schemes to show how accumulation complicates the balance between departments."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch21.htm",
           "lessons": [
@@ -17581,8 +17581,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "확대재생산이 축적을 위해 두 부문 사이의 비례관계를 요구한다는 점을 보여준다",
-            "en": "Shows that expanded reproduction requires proportional relations between departments for accumulation"
+            "ko": "성장은 아무 부문에서나 마음대로 늘어나는 것이 아니라 생산수단과 소비재의 비례 관계를 요구한다.",
+            "en": "Growth requires proportional relations between means of production and consumption goods, not arbitrary expansion."
           }
         }
       ]
@@ -17617,8 +17617,8 @@
             "en": "Cost-Price and Profit"
           },
           "summary": {
-            "ko": "1장 「비용가격과 이윤」: 비용가격이 잉여가치의 원천을 가리고 이윤을 투하자본 전체의 산물처럼 보이게 만드는 전도를 분석한다",
-            "en": "Chapter 1, “Cost-Price and Profit”: Analyzes how cost-price hides the source of surplus-value and makes profit appear as the product of total advanced capital"
+            "ko": "잉여가치가 비용가격과 이윤의 형태로 나타나면서 착취의 출처가 흐려지는 과정을 설명한다.",
+            "en": "Explains how surplus-value appears as cost-price and profit, obscuring its source in exploitation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch01.htm",
           "lessons": [
@@ -17924,8 +17924,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "비용가격이 잉여가치의 원천을 가리고 이윤을 투하자본 전체의 산물처럼 보이게 만드는 전도를 분석한다",
-            "en": "Analyzes how cost-price hides the source of surplus-value and makes profit appear as the product of total advanced capital"
+            "ko": "이윤은 생산비 위에 붙는 단순한 덧셈처럼 보이지만, 실제로는 잉여가치의 변형된 모습임을 잡는다.",
+            "en": "See profit as a transformed appearance of surplus-value, not a simple markup over costs."
           }
         },
         {
@@ -17942,8 +17942,8 @@
             "en": "The Rate of Profit"
           },
           "summary": {
-            "ko": "2장 「이윤율」: 이윤율이 잉여가치율과 달리 총투하자본에 대한 비율로 나타나 착취관계를 변형해 표현함을 설명한다",
-            "en": "Chapter 2, “The Rate of Profit”: Explains profit rate as surplus-value relative to total advanced capital, a transformed expression of exploitation"
+            "ko": "이윤율이 잉여가치율과 달리 전체 선대자본에 대해 계산되면서 자본의 성과처럼 보이는 방식을 다룬다.",
+            "en": "Shows how the rate of profit differs from the rate of surplus-value by relating surplus-value to total advanced capital."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch02.htm",
           "lessons": [
@@ -18249,8 +18249,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "이윤율이 잉여가치율과 달리 총투하자본에 대한 비율로 나타나 착취관계를 변형해 표현함을 설명한다",
-            "en": "Explains profit rate as surplus-value relative to total advanced capital, a transformed expression of exploitation"
+            "ko": "착취율과 이윤율은 같은 것이 아니며, 분모가 달라질 때 자본관계가 다르게 보인다는 점을 구분한다.",
+            "en": "Distinguish exploitation rate from profit rate, since changing the denominator changes the appearance of the relation."
           }
         },
         {
@@ -18267,8 +18267,8 @@
             "en": "The Relation of the Rate of Profit to the Rate of Surplus-Value"
           },
           "summary": {
-            "ko": "3장 「이윤율과 잉여가치율의 관계」: 「이윤율과 잉여가치율의 관계」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 3, “The Relation of the Rate of Profit to the Rate of Surplus-Value”: Chapter “The Relation of the Rate of Profit to the Rate of Surplus-Value” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "잉여가치와 이윤율의 관계를 여러 조건 변화 속에서 더 구체적으로 비교한다.",
+            "en": "Compares surplus-value and the profit rate more concretely under changing conditions."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch03.htm",
           "lessons": [
@@ -18574,8 +18574,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「이윤율과 잉여가치율의 관계」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “The Relation of the Rate of Profit to the Rate of Surplus-Value” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "임금, 노동일, 자본구성, 회전이 함께 이윤율을 바꾸므로 하나의 원인만으로 설명하지 않는다.",
+            "en": "Avoid single-cause explanations: wages, working day, composition, and turnover all affect the profit rate."
           }
         },
         {
@@ -18592,8 +18592,8 @@
             "en": "The Effect of the Turnover on the Rate of Profit"
           },
           "summary": {
-            "ko": "4장 「회전이 이윤율에 미치는 영향」: 「회전이 이윤율에 미치는 영향」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 4, “The Effect of the Turnover on the Rate of Profit”: Chapter “The Effect of the Turnover on the Rate of Profit” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "자본 회전이 빨라지거나 느려질 때 연간 이윤율이 어떻게 달라지는지 설명한다.",
+            "en": "Explains how faster or slower turnover changes the annual rate of profit."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch04.htm",
           "lessons": [
@@ -18899,8 +18899,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「회전이 이윤율에 미치는 영향」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “The Effect of the Turnover on the Rate of Profit” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "같은 생산 조건에서도 자본이 1년에 몇 번 회전하는지가 수익성 판단을 바꾼다는 점을 본다.",
+            "en": "See why profitability depends on how often capital turns over in a year, even with the same production conditions."
           }
         },
         {
@@ -18917,8 +18917,8 @@
             "en": "Economy in the Employment of Constant Capital"
           },
           "summary": {
-            "ko": "5장 「불변자본 사용의 절약」: 「불변자본 사용의 절약」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 5, “Economy in the Employment of Constant Capital”: Chapter “Economy in the Employment of Constant Capital” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "경제적 자원 사용과 낭비가 이윤율에 어떤 영향을 주는지, 불변자본 절약을 중심으로 분석한다.",
+            "en": "Analyzes how economies in the use of constant capital affect the profit rate."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch05.htm",
           "lessons": [
@@ -19224,8 +19224,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「불변자본 사용의 절약」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Economy in the Employment of Constant Capital” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "비용 절감은 기술적 효율만이 아니라 노동조건 악화나 사회적 비용 전가와도 연결될 수 있음을 본다.",
+            "en": "Read cost saving as tied not only to efficiency but also to worsened labor conditions and shifted social costs."
           }
         },
         {
@@ -19242,8 +19242,8 @@
             "en": "The Effect of Price Fluctuations"
           },
           "summary": {
-            "ko": "6장 「가격 변동의 영향」: 「가격 변동의 영향」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 6, “The Effect of Price Fluctuations”: Chapter “The Effect of Price Fluctuations” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "원료 가격 변동이 생산비와 이윤율을 크게 흔드는 이유를 설명한다.",
+            "en": "Explains why changes in raw material prices can strongly disturb costs and profit rates."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch06.htm",
           "lessons": [
@@ -19549,8 +19549,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「가격 변동의 영향」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “The Effect of Price Fluctuations” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "원료는 생산과정에서 계속 필요하므로 가격 변화가 개별 기업의 계산을 넘어 전체 순환에 영향을 준다.",
+            "en": "See raw material prices as affecting the whole circuit, not just a firm’s accounting."
           }
         },
         {
@@ -19567,8 +19567,8 @@
             "en": "Supplementary Remarks"
           },
           "summary": {
-            "ko": "7장 「보충 설명」: 「보충 설명」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 7, “Supplementary Remarks”: Chapter “Supplementary Remarks” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "제1편의 보충 논의를 통해 비용가격, 이윤, 이윤율의 착시를 다시 정리한다.",
+            "en": "Adds supplementary clarification on cost-price, profit, and the rate of profit."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch07.htm",
           "lessons": [
@@ -19874,8 +19874,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「보충 설명」 장은 잉여가치의 이윤으로의 전환과 잉여가치율의 이윤율로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Supplementary Remarks” analyzes how surplus-value appears in surface revenue forms within The Conversion of Surplus-Value into Profit and of the Rate of Surplus-Value into the Rate of Profit, transforming the visibility of exploitation"
+            "ko": "보충 설명은 단순 반복이 아니라 앞선 범주들이 실제 자본 계산에서 어떻게 보이는지 확인하는 단계다.",
+            "en": "Treat the supplement as a check on how earlier categories appear in actual capitalist calculation."
           }
         },
         {
@@ -19892,8 +19892,8 @@
             "en": "Different Compositions of Capitals in Different Branches of Production and Resulting Differences in Rates of Profit"
           },
           "summary": {
-            "ko": "8장 「생산부문별 자본구성 차이와 이윤율 차이」: 「생산부문별 자본구성 차이와 이윤율 차이」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 8, “Different Compositions of Capitals in Different Branches of Production and Resulting Differences in Rates of Profit”: Chapter “Different Compositions of Capitals in Different Branches of Production and Resulting Differences in Rates of Profit” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "서로 다른 생산부문의 이윤율이 경쟁을 통해 평균이윤율로 기울어지는 과정을 설명한다.",
+            "en": "Explains how competition tends to equalize different branch profit rates into an average rate of profit."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch08.htm",
           "lessons": [
@@ -20199,8 +20199,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「생산부문별 자본구성 차이와 이윤율 차이」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Different Compositions of Capitals in Different Branches of Production and Resulting Differences in Rates of Profit” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "개별 상품이 자기 가치대로 팔린다는 단순 그림에서 벗어나, 자본 이동이 가격을 어떻게 바꾸는지 본다.",
+            "en": "Move beyond the simple picture of each commodity selling at value, and see how capital movement reshapes prices."
           }
         },
         {
@@ -20217,8 +20217,8 @@
             "en": "Formation of a General Rate of Profit (Average Rate of Profit) and Transformation of the Values of Commodities into Prices of Production"
           },
           "summary": {
-            "ko": "9장 「일반 이윤율의 형성과 가치의 생산가격으로의 전환」: 일반 이윤율 형성과 생산가격이 가치법칙을 폐기하는 것이 아니라 경쟁 속에서 변형해 관철하는 방식임을 설명한다",
-            "en": "Chapter 9, “Formation of a General Rate of Profit (Average Rate of Profit) and Transformation of the Values of Commodities into Prices of Production”: Explains the general rate of profit and prices of production as transformed enforcement, not abolition, of the law of value"
+            "ko": "평균이윤이 형성되면서 가치가 생산가격으로 전환되는 논리를 다룬다.",
+            "en": "Treats the transformation of values into prices of production through the formation of average profit."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch09.htm",
           "lessons": [
@@ -20524,8 +20524,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "일반 이윤율 형성과 생산가격이 가치법칙을 폐기하는 것이 아니라 경쟁 속에서 변형해 관철하는 방식임을 설명한다",
-            "en": "Explains the general rate of profit and prices of production as transformed enforcement, not abolition, of the law of value"
+            "ko": "생산가격은 가치론의 폐기가 아니라 잉여가치가 자본들 사이에 재분배되는 형태임을 이해한다.",
+            "en": "Understand prices of production as redistribution of surplus-value among capitals, not abandonment of value theory."
           }
         },
         {
@@ -20542,8 +20542,8 @@
             "en": "Equalisation of the General Rate of Profit Through Competition. Market-Prices and Market-Values. Surplus-Profit."
           },
           "summary": {
-            "ko": "10장 「경쟁을 통한 일반 이윤율의 균등화」: 「경쟁을 통한 일반 이윤율의 균등화」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 10, “Equalisation of the General Rate of Profit Through Competition. Market-Prices and Market-Values. Surplus-Profit.”: Chapter “Equalisation of the General Rate of Profit Through Competition. Market-Prices and Market-Values. Surplus-Profit.” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "경쟁이 시장가격과 시장가치를 조정하며 평균이윤율을 현실에서 관철하는 방식을 설명한다.",
+            "en": "Explains how competition adjusts market prices and market values while enforcing the average profit rate."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch10.htm",
           "lessons": [
@@ -20849,8 +20849,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「경쟁을 통한 일반 이윤율의 균등화」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Equalisation of the General Rate of Profit Through Competition. Market-Prices and Market-Values. Surplus-Profit.” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "경쟁은 단순히 가격을 낮추는 힘이 아니라 자본 사이의 사회적 규칙을 집행하는 과정임을 본다.",
+            "en": "See competition as enforcing social rules among capitals, not merely lowering prices."
           }
         },
         {
@@ -20867,8 +20867,8 @@
             "en": "Effects of General Wage Fluctuations on Prices of Production"
           },
           "summary": {
-            "ko": "11장 「일반적 임금변동이 생산가격에 미치는 영향」: 「일반적 임금변동이 생산가격에 미치는 영향」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 11, “Effects of General Wage Fluctuations on Prices of Production”: Chapter “Effects of General Wage Fluctuations on Prices of Production” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "임금 변동이 생산가격과 이윤율에 미치는 영향을 자본구성 차이와 함께 분석한다.",
+            "en": "Analyzes how wage changes affect prices of production and profit rates across different capital compositions."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch11.htm",
           "lessons": [
@@ -21174,8 +21174,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「일반적 임금변동이 생산가격에 미치는 영향」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Effects of General Wage Fluctuations on Prices of Production” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "임금 상승이 모든 가격에 같은 방식으로 반영되지 않는 이유를 자본구성의 차이에서 찾는다.",
+            "en": "Use differences in capital composition to understand why wage changes do not affect all prices alike."
           }
         },
         {
@@ -21192,8 +21192,8 @@
             "en": "Supplementary Remarks"
           },
           "summary": {
-            "ko": "12장 「보충 설명」: 「보충 설명」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 12, “Supplementary Remarks”: Chapter “Supplementary Remarks” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "생산가격론의 보충 논의를 통해 가치, 가격, 평균이윤 사이의 관계를 더 정밀하게 다룬다.",
+            "en": "Further clarifies the relation among value, price, and average profit in the theory of prices of production."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch12.htm",
           "lessons": [
@@ -21499,8 +21499,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「보충 설명」 장은 이윤의 평균이윤으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Supplementary Remarks” analyzes how surplus-value appears in surface revenue forms within Conversion of Profit into Average Profit, transforming the visibility of exploitation"
+            "ko": "가격이 가치에서 벗어나 보이는 지점에서도 전체 잉여가치와 전체 이윤의 관계를 놓치지 않는다.",
+            "en": "Keep the relation between total surplus-value and total profit in view when prices diverge from values."
           }
         },
         {
@@ -21517,8 +21517,8 @@
             "en": "The Law as Such"
           },
           "summary": {
-            "ko": "13장 「법칙 그 자체」: 불변자본 비중이 커질수록 잉여가치가 총투하자본에 대해 작아 보이는 구조적 압박이 생긴다",
-            "en": "Chapter 13, “The Law as Such”: as the share of constant capital grows, surplus-value comes under structural pressure relative to total advanced capital"
+            "ko": "자본의 유기적 구성이 높아질수록 일반 이윤율이 낮아지는 경향을 제시한다.",
+            "en": "Presents the tendency of the general rate of profit to fall as the organic composition of capital rises."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch13.htm",
           "lessons": [
@@ -21824,8 +21824,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "불변자본 비중이 커질수록 잉여가치가 총투하자본에 대해 작아 보이는 구조적 압박이 생긴다",
-            "en": "as the share of constant capital grows, surplus-value comes under structural pressure relative to total advanced capital"
+            "ko": "기계와 설비가 늘어도 새 가치를 만드는 것은 노동력이라는 점에서 이윤율 저하 경향을 이해한다.",
+            "en": "Understand the tendency through the fact that labor-power creates new value while machinery and equipment do not."
           }
         },
         {
@@ -21842,8 +21842,8 @@
             "en": "Counteracting Influences"
           },
           "summary": {
-            "ko": "14장 「상쇄 요인들」: 착취도 상승, 불변자본 저렴화, 상대적 과잉인구 등 이윤율 저하를 상쇄하는 요인을 분석한다",
-            "en": "Chapter 14, “Counteracting Influences”: Analyzes counteracting factors to the falling rate of profit, including intensified exploitation and cheapening of constant capital"
+            "ko": "이윤율 저하 경향을 완화하거나 늦추는 여러 반작용 요인을 설명한다.",
+            "en": "Explains counteracting factors that can slow or offset the falling tendency of the profit rate."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch14.htm",
           "lessons": [
@@ -22149,8 +22149,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "착취도 상승, 불변자본 저렴화, 상대적 과잉인구 등 이윤율 저하를 상쇄하는 요인을 분석한다",
-            "en": "Analyzes counteracting factors to the falling rate of profit, including intensified exploitation and cheapening of constant capital"
+            "ko": "경향은 자동 붕괴 예언이 아니라 반대 요인들과 함께 작동하는 구조적 압력임을 구분한다.",
+            "en": "Read the tendency as a structural pressure working with counterforces, not as an automatic collapse prediction."
           }
         },
         {
@@ -22167,8 +22167,8 @@
             "en": "Exposition of the Internal Contradictions of the Law"
           },
           "summary": {
-            "ko": "15장 「법칙의 내적 모순의 전개」: 이윤율 저하 법칙의 내적 모순이 과잉축적, 위기, 자본의 폭력적 조정을 낳는 방식을 전개한다",
-            "en": "Chapter 15, “Exposition of the Internal Contradictions of the Law”: Develops how the contradictions of the falling profit rate produce overaccumulation, crisis, and violent adjustment"
+            "ko": "이윤율 저하 경향이 자본의 과잉축적, 위기, 모순과 어떻게 이어지는지 분석한다.",
+            "en": "Analyzes how the falling profit-rate tendency connects to overaccumulation, crisis, and contradiction."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch15.htm",
           "lessons": [
@@ -22474,8 +22474,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "이윤율 저하 법칙의 내적 모순이 과잉축적, 위기, 자본의 폭력적 조정을 낳는 방식을 전개한다",
-            "en": "Develops how the contradictions of the falling profit rate produce overaccumulation, crisis, and violent adjustment"
+            "ko": "위기는 외부 사고가 아니라 자본이 생산력을 키우는 방식 자체에서 생기는 긴장과 연결된다.",
+            "en": "See crisis as tied to capital’s own development of productive forces, not as an outside accident."
           }
         },
         {
@@ -22492,8 +22492,8 @@
             "en": "Commercial Capital"
           },
           "summary": {
-            "ko": "16장 「상업자본」: 「상업자본」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 16, “Commercial Capital”: Chapter “Commercial Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상업자본이 산업자본의 유통 기능을 맡으며 독립된 자본 형태로 나타나는 과정을 설명한다.",
+            "en": "Explains how commercial capital takes over circulation functions and appears as an independent form of capital."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch16.htm",
           "lessons": [
@@ -22799,8 +22799,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「상업자본」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Commercial Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상업자본은 새 가치를 직접 만들지 않지만, 실현 시간을 줄이며 총잉여가치의 일부를 이윤으로 가져간다.",
+            "en": "See commercial capital as sharing surplus-value by shortening realization time, not as directly creating new value."
           }
         },
         {
@@ -22817,8 +22817,8 @@
             "en": "Commercial Profit"
           },
           "summary": {
-            "ko": "17장 「상업이윤」: 「상업이윤」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 17, “Commercial Profit”: Chapter “Commercial Profit” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상업이윤이 어디서 나오는지, 산업자본이 만든 잉여가치가 어떻게 나뉘는지 다룬다.",
+            "en": "Treats the source of commercial profit and how surplus-value produced by industrial capital is divided."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch17.htm",
           "lessons": [
@@ -23124,8 +23124,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「상업이윤」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Commercial Profit” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상인이 싸게 사서 비싸게 파는 겉모습 뒤에 총잉여가치의 분배 문제가 있다는 점을 본다.",
+            "en": "Look behind buying cheap and selling dear to the distribution of total surplus-value."
           }
         },
         {
@@ -23142,8 +23142,8 @@
             "en": "The Turnover of Merchant's Capital"
           },
           "summary": {
-            "ko": "18장 「상인자본의 회전」: 「상인자본의 회전」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 18, “The Turnover of Merchant's Capital”: Chapter “The Turnover of Merchant's Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상업자본의 회전 속도가 가격, 이윤, 필요한 자본 규모에 미치는 영향을 설명한다.",
+            "en": "Explains how the turnover of commercial capital affects prices, profit, and the amount of capital needed."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch18.htm",
           "lessons": [
@@ -23449,8 +23449,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「상인자본의 회전」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “The Turnover of Merchant's Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상업 부문의 빠른 회전은 유통비와 이윤분배를 바꾸지만 가치 창조의 장소를 바꾸지는 않는다.",
+            "en": "See fast commercial turnover as altering circulation costs and profit distribution, not the site of value creation."
           }
         },
         {
@@ -23467,8 +23467,8 @@
             "en": "Money-Dealing Capital"
           },
           "summary": {
-            "ko": "19장 「화폐거래자본」: 「화폐거래자본」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 19, “Money-Dealing Capital”: Chapter “Money-Dealing Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "화폐거래자본이 지불, 보관, 결제 같은 화폐 기능을 전문적으로 담당하는 과정을 설명한다.",
+            "en": "Explains money-dealing capital as the specialized handling of payments, safekeeping, and settlement."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch19.htm",
           "lessons": [
@@ -23774,8 +23774,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「화폐거래자본」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Money-Dealing Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "금융적 기능이 독립해 보여도 그 바탕에는 산업자본과 상업자본의 순환 필요가 있다는 점을 잡는다.",
+            "en": "See specialized financial functions as rooted in the circulation needs of industrial and commercial capital."
           }
         },
         {
@@ -23792,8 +23792,8 @@
             "en": "Historical Facts about Merchant's Capital"
           },
           "summary": {
-            "ko": "20장 「상인자본에 관한 역사적 사실들」: 「상인자본에 관한 역사적 사실들」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter 20, “Historical Facts about Merchant's Capital”: Chapter “Historical Facts about Merchant's Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상인자본의 역사적 위치를 통해 자본주의 이전의 상업과 자본주의적 생산의 차이를 보여 준다.",
+            "en": "Uses the history of merchant capital to distinguish pre-capitalist commerce from capitalist production."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch20.htm",
           "lessons": [
@@ -24099,8 +24099,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "「상인자본에 관한 역사적 사실들」 장은 상품자본과 화폐자본의 상업자본과 화폐거래자본으로의 전환 안에서 잉여가치가 표면의 수입형태로 나타나며 착취관계를 어떻게 변형해 보이게 하는지 분석한다",
-            "en": "Chapter “Historical Facts about Merchant's Capital” analyzes how surplus-value appears in surface revenue forms within Conversion of Commodity-Capital and Money-Capital into Commercial Capital and Money-Dealing Capital (Merchant's Capital), transforming the visibility of exploitation"
+            "ko": "상업이 오래되었다고 해서 곧 자본주의가 있었던 것은 아니며, 생산을 지배하는 방식이 핵심이다.",
+            "en": "Remember that old commerce is not the same as capitalism; the key is whether capital dominates production."
           }
         },
         {
@@ -24117,8 +24117,8 @@
             "en": "Interest-Bearing Capital"
           },
           "summary": {
-            "ko": "21장 「이자 낳는 자본」: 이자 낳는 자본에서 돈이 스스로 증식하는 것처럼 보이는 가장 물신적인 자본형태를 분석한다",
-            "en": "Chapter 21, “Interest-Bearing Capital”: Analyzes interest-bearing capital as the most fetishized form, where money seems to breed money by itself"
+            "ko": "이자가 이윤의 일부로 분리되면서 자본 소유와 자본 사용이 나뉘어 보이는 과정을 설명한다.",
+            "en": "Explains how interest separates from profit, making ownership of capital appear distinct from its use."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch21.htm",
           "lessons": [
@@ -24424,8 +24424,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "이자 낳는 자본에서 돈이 스스로 증식하는 것처럼 보이는 가장 물신적인 자본형태를 분석한다",
-            "en": "Analyzes interest-bearing capital as the most fetishized form, where money seems to breed money by itself"
+            "ko": "이자는 돈 자체가 낳는 열매처럼 보이지만, 실제로는 생산된 잉여가치의 분할 형태임을 이해한다.",
+            "en": "See interest as a share of produced surplus-value, not as fruit naturally borne by money."
           }
         },
         {
@@ -24442,8 +24442,8 @@
             "en": "Division of Profit. Rate of Interest. Natural Rate of Interest."
           },
           "summary": {
-            "ko": "22장 「이윤의 분할, 이자율, 자연 이자율」: 총이윤이 이자와 기업가이득으로 나뉘는 방식과 이자율이 자연법칙이 아니라 대부자본의 경쟁 속에서 정해지는 방식을 분석한다",
-            "en": "Chapter 22, “Division of Profit. Rate of Interest. Natural Rate of Interest.”: Analyzes how total profit divides into interest and profit of enterprise, and how the interest rate is set through competition for loanable capital rather than by a natural law"
+            "ko": "총이윤이 이자와 기업가이득으로 나뉘고, 이자율이 어떤 사회적 힘 속에서 정해지는지 살핀다.",
+            "en": "Examines how total profit divides into interest and profit of enterprise, and how the interest rate is formed."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch22.htm",
           "lessons": [
@@ -24749,8 +24749,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "총이윤이 이자와 기업가이득으로 나뉘는 방식과 이자율이 자연법칙이 아니라 대부자본의 경쟁 속에서 정해지는 방식을 분석한다",
-            "en": "Analyzes how total profit divides into interest and profit of enterprise, and how the interest rate is set through competition for loanable capital rather than by a natural law"
+            "ko": "이자율은 자연적으로 주어진 가격이 아니라 대부자본과 기능자본 사이의 힘 관계 속에서 형성된다는 점을 본다.",
+            "en": "See the interest rate as shaped by social relations between loan capital and functioning capital, not as a natural price."
           }
         },
         {
@@ -24767,8 +24767,8 @@
             "en": "Interest and Profit of Enterprise"
           },
           "summary": {
-            "ko": "23장 「이자와 기업가이득」: 총이윤이 이자와 기업가이득으로 갈라지며 하나의 잉여가치가 서로 다른 수입형태로 나타나는 방식을 분석한다",
-            "en": "Chapter 23, “Interest and Profit of Enterprise”: Analyzes how total profit splits into interest and profit of enterprise, so one surplus-value appears in distinct revenue forms"
+            "ko": "이윤이 이자와 기업가이득으로 갈라지면서 자본 소유와 자본 사용이 서로 다른 역할처럼 보이는 과정을 다룬다.",
+            "en": "Treats the split of profit into interest and profit of enterprise, making ownership and use of capital appear as separate roles."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch23.htm",
           "lessons": [
@@ -25074,8 +25074,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "총이윤이 이자와 기업가이득으로 갈라지며 하나의 잉여가치가 서로 다른 수입형태로 나타나는 방식을 분석한다",
-            "en": "Analyzes how total profit splits into interest and profit of enterprise, so one surplus-value appears in distinct revenue forms"
+            "ko": "기업가이득은 감독 노동의 임금이 아니라 잉여가치 분할 속에서 생기는 형태라는 점을 구분한다.",
+            "en": "Distinguish profit of enterprise from wages of supervision; it is a form within the division of surplus-value."
           }
         },
         {
@@ -25092,8 +25092,8 @@
             "en": "Externalisation of the Relations of Capital in the Form of Interest-Bearing Capital"
           },
           "summary": {
-            "ko": "24장 「이자 낳는 자본 형태에서 자본관계의 외화」: 이자 낳는 자본 형태가 자본관계를 완전히 외화해 착취의 사회적 매개를 지워버리는 방식을 보여준다",
-            "en": "Chapter 24, “Externalisation of the Relations of Capital in the Form of Interest-Bearing Capital”: Shows how the form of interest-bearing capital externalizes the capital relation and erases the social mediation of exploitation"
+            "ko": "이자 낳는 자본이 돈이 스스로 증식하는 것처럼 보이는 가장 물신적인 형태임을 분석한다.",
+            "en": "Analyzes interest-bearing capital as the most fetishized form, where money seems to expand by itself."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch24.htm",
           "lessons": [
@@ -25399,8 +25399,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "이자 낳는 자본 형태가 자본관계를 완전히 외화해 착취의 사회적 매개를 지워버리는 방식을 보여준다",
-            "en": "Shows how the form of interest-bearing capital externalizes the capital relation and erases the social mediation of exploitation"
+            "ko": "M-M'라는 짧은 형태가 중간의 생산과 착취를 지워 버리는 착시를 만든다는 점을 본다.",
+            "en": "See how the abbreviated M-M' form erases production and exploitation from view."
           }
         },
         {
@@ -25417,8 +25417,8 @@
             "en": "Credit and Fictitious Capital"
           },
           "summary": {
-            "ko": "25장 「신용과 가공자본」: 신용과 가공자본이 축적을 확장하면서도 소유권 청구와 현실자본 사이의 긴장을 키우는 방식을 분석한다",
-            "en": "Chapter 25, “Credit and Fictitious Capital”: Analyzes how credit and fictitious capital expand accumulation while intensifying the tension between claims of ownership and real capital"
+            "ko": "신용과 가공자본이 자본의 운동을 확대하면서도 실제 가치와 청구권을 혼동하게 만드는 과정을 다룬다.",
+            "en": "Treats credit and fictitious capital as expanding capital’s movement while blurring real value and claims on value."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch25.htm",
           "lessons": [
@@ -25724,8 +25724,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "신용과 가공자본이 축적을 확장하면서도 소유권 청구와 현실자본 사이의 긴장을 키우는 방식을 분석한다",
-            "en": "Analyzes how credit and fictitious capital expand accumulation while intensifying the tension between claims of ownership and real capital"
+            "ko": "주식, 채권, 신용증서는 현실 자본과 연결되어 있지만 그 자체가 생산수단과 같은 것은 아님을 구분한다.",
+            "en": "Distinguish shares, bonds, and credit claims from the actual means of production they may be linked to."
           }
         },
         {
@@ -25742,8 +25742,8 @@
             "en": "Accumulation of Money-Capital. Its Influence on the Interest Rate."
           },
           "summary": {
-            "ko": "26장 「화폐자본의 축적과 이자율에 미치는 영향」: 대부 가능한 화폐자본의 축적이 현실 축적과 어긋날 수 있으며 이자율에 독자적 압력을 주는 방식을 분석한다",
-            "en": "Chapter 26, “Accumulation of Money-Capital. Its Influence on the Interest Rate.”: Analyzes how the accumulation of loanable money-capital can diverge from real accumulation and exert its own pressure on interest rates"
+            "ko": "대부 가능한 화폐자본의 축적이 이자율에 어떤 압력을 주는지, 현실 축적과의 차이 속에서 설명한다.",
+            "en": "Explains how accumulation of loanable money-capital pressures the interest rate while differing from real accumulation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch26.htm",
           "lessons": [
@@ -26049,8 +26049,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "대부 가능한 화폐자본의 축적이 현실 축적과 어긋날 수 있으며 이자율에 독자적 압력을 주는 방식을 분석한다",
-            "en": "Analyzes how the accumulation of loanable money-capital can diverge from real accumulation and exert its own pressure on interest rates"
+            "ko": "빌려줄 돈이 많아지는 현상을 곧바로 실제 생산 확대와 동일시하지 않는 것이 중요하다.",
+            "en": "Do not identify an abundance of loanable money directly with real expansion of production."
           }
         },
         {
@@ -26067,8 +26067,8 @@
             "en": "The Role of Credit in Capitalist Production"
           },
           "summary": {
-            "ko": "27장 「자본주의적 생산에서 신용의 역할」: 신용이 자본집중과 대규모 생산을 촉진하면서도 투기와 위기 가능성을 증폭시키는 모순적 역할을 다룬다",
-            "en": "Chapter 27, “The Role of Credit in Capitalist Production”: Examines credit’s contradictory role in promoting concentration and large-scale production while amplifying speculation and crisis"
+            "ko": "주식회사와 신용이 개인 자본가의 한계를 넘어 사회적 생산을 확대하는 동시에 모순을 키우는 방식을 설명한다.",
+            "en": "Shows how joint-stock companies and credit expand social production beyond individual capital while sharpening contradictions."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch27.htm",
           "lessons": [
@@ -26374,8 +26374,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "신용이 자본집중과 대규모 생산을 촉진하면서도 투기와 위기 가능성을 증폭시키는 모순적 역할을 다룬다",
-            "en": "Examines credit’s contradictory role in promoting concentration and large-scale production while amplifying speculation and crisis"
+            "ko": "신용은 생산의 사회화를 앞당기지만, 소유와 통제의 사적 형태를 그대로 남긴다는 점을 본다.",
+            "en": "See credit as socializing production while leaving private ownership and control in place."
           }
         },
         {
@@ -26392,8 +26392,8 @@
             "en": "Medium of Circulation and Capital; Views of Tooke and Fullarton"
           },
           "summary": {
-            "ko": "28장 「유통수단과 자본: 투크와 풀러턴의 견해」: 같은 화폐라도 유통수단, 지급수단, 대부자본으로 기능할 때 서로 다른 사회관계를 갖는다는 구분을 정리한다",
-            "en": "Chapter 28, “Medium of Circulation and Capital; Views of Tooke and Fullarton”: Clarifies that the same money-form carries different social relations when it functions as currency, means of payment, or loanable capital"
+            "ko": "통화와 자본이 신용제도 안에서 서로 다른 역할을 하지만 위기 때 쉽게 뒤섞여 보이는 이유를 다룬다.",
+            "en": "Explains why currency and capital play different roles in credit yet become confused in crisis."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch28.htm",
           "lessons": [
@@ -26699,8 +26699,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "같은 화폐라도 유통수단, 지급수단, 대부자본으로 기능할 때 서로 다른 사회관계를 갖는다는 구분을 정리한다",
-            "en": "Clarifies that the same money-form carries different social relations when it functions as currency, means of payment, or loanable capital"
+            "ko": "결제수단 부족과 생산자본 부족을 구분해야 금융위기의 성격을 더 정확히 볼 수 있다.",
+            "en": "Distinguish shortage of means of payment from shortage of productive capital when reading financial crisis."
           }
         },
         {
@@ -26717,8 +26717,8 @@
             "en": "Component Parts of Bank Capital"
           },
           "summary": {
-            "ko": "29장 「은행자본의 구성부분」: 은행자본이 현금과 준비금뿐 아니라 대출채권, 어음, 증권 같은 미래 수익청구권으로 구성되는 방식을 분석한다",
-            "en": "Chapter 29, “Component Parts of Bank Capital”: Analyzes how bank capital consists not only of cash and reserves but also claims on future income such as loans, bills, and securities"
+            "ko": "은행자본이 현금, 증권, 대출채권 등으로 구성되며 실제 자본과 가공자본을 뒤섞어 보이게 하는 과정을 설명한다.",
+            "en": "Explains bank capital as a mix of cash, securities, and claims that can blur real and fictitious capital."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch29.htm",
           "lessons": [
@@ -27024,8 +27024,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "은행자본이 현금과 준비금뿐 아니라 대출채권, 어음, 증권 같은 미래 수익청구권으로 구성되는 방식을 분석한다",
-            "en": "Analyzes how bank capital consists not only of cash and reserves but also claims on future income such as loans, bills, and securities"
+            "ko": "은행의 자산 항목을 그대로 사회의 실제 부로 읽으면 중복 계산과 착시가 생긴다는 점을 조심한다.",
+            "en": "Avoid reading bank assets directly as society’s real wealth; claims can be counted more than once."
           }
         },
         {
@@ -27042,8 +27042,8 @@
             "en": "Money-Capital and Real Capital. I"
           },
           "summary": {
-            "ko": "30장 「화폐자본과 현실자본 I」: 대부 가능한 화폐자본의 축적과 생산수단·노동력이 움직이는 현실자본의 축적을 구분하는 출발점을 세운다",
-            "en": "Chapter 30, “Money-Capital and Real Capital. I”: Establishes the starting distinction between the accumulation of loanable money-capital and real capital in means of production and labour-power"
+            "ko": "대부 가능한 화폐자본의 축적과 실제 자본축적의 관계를 첫 단계로 분석한다.",
+            "en": "Begins the analysis of the relation between loanable money-capital and real accumulation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch30.htm",
           "lessons": [
@@ -27349,8 +27349,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "대부 가능한 화폐자본의 축적과 생산수단·노동력이 움직이는 현실자본의 축적을 구분하는 출발점을 세운다",
-            "en": "Establishes the starting distinction between the accumulation of loanable money-capital and real capital in means of production and labour-power"
+            "ko": "화폐시장의 풍부함이 항상 생산의 건강함을 뜻하지 않는다는 점을 경기순환 속에서 본다.",
+            "en": "Use the cycle to see why abundance in the money market does not always mean healthy production."
           }
         },
         {
@@ -27367,8 +27367,8 @@
             "en": "Money-Capital and Real Capital. II"
           },
           "summary": {
-            "ko": "31장 「화폐자본과 현실자본 II」: 신용청구권이 자본처럼 유통되며 증식하지만 위기 때 지급연쇄와 가치실현의 한계가 드러나는 과정을 분석한다",
-            "en": "Chapter 31, “Money-Capital and Real Capital. II”: Analyzes how credit claims circulate and multiply as capital while crisis exposes their limits in payment chains and realization of value"
+            "ko": "대부자본의 축적과 현실 축적이 서로 어긋나는 국면을 더 구체적으로 추적한다.",
+            "en": "Further traces phases where accumulation of loanable capital and real accumulation diverge."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch31.htm",
           "lessons": [
@@ -27674,8 +27674,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "신용청구권이 자본처럼 유통되며 증식하지만 위기 때 지급연쇄와 가치실현의 한계가 드러나는 과정을 분석한다",
-            "en": "Analyzes how credit claims circulate and multiply as capital while crisis exposes their limits in payment chains and realization of value"
+            "ko": "신용 팽창은 실제 생산의 확대를 돕지만, 동시에 과잉청구권과 투기를 키울 수 있음을 이해한다.",
+            "en": "See credit expansion as helping real production while also fostering excess claims and speculation."
           }
         },
         {
@@ -27692,8 +27692,8 @@
             "en": "Money-Capital and Real Capital. III"
           },
           "summary": {
-            "ko": "32장 「화폐자본과 현실자본 III」: 금융청구권과 현실자본의 괴리가 순환 속에서 확대되다가 위기에서 가치실현과 지급능력의 문제로 재연결되는 과정을 정리한다",
-            "en": "Chapter 32, “Money-Capital and Real Capital. III”: Summarizes how the divergence between financial claims and real capital widens through the cycle and is reconnected in crisis through realization and capacity to pay"
+            "ko": "화폐자본과 현실자본의 관계를 보충해, 금융적 축적의 겉모습과 실제 재생산의 차이를 정리한다.",
+            "en": "Completes the discussion of money-capital and real capital by clarifying financial appearance versus actual reproduction."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch32.htm",
           "lessons": [
@@ -27999,8 +27999,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "금융청구권과 현실자본의 괴리가 순환 속에서 확대되다가 위기에서 가치실현과 지급능력의 문제로 재연결되는 과정을 정리한다",
-            "en": "Summarizes how the divergence between financial claims and real capital widens through the cycle and is reconnected in crisis through realization and capacity to pay"
+            "ko": "숫자로 불어난 금융자산과 생산과정에서 실제로 늘어난 자본을 구분하는 감각을 기른다.",
+            "en": "Develop the habit of distinguishing swollen financial assets from capital actually expanded in production."
           }
         },
         {
