@@ -381,7 +381,7 @@
     }
 
     function lessonActionTitle(lesson) {
-        return lessonLevel(lesson) + (lang === 'en' ? ' progress' : ' 학습진도');
+        return lessonLevel(lesson);
     }
 
     function startLessonLabel(lesson) {
@@ -424,34 +424,140 @@
     }
 
     function conceptMap(lesson) {
-        var part = findPart(lesson);
-        var key = part ? part.key : '';
+        var id = lesson.collectionId + ':' + lesson.chapterNumber;
         var maps = {
-            'v1-p1': { ko: ['상품의 두 얼굴', '가치형태와 화폐', '자본 분석의 출발점'], en: ['Two sides of the commodity', 'Value-form and money', 'Starting point for capital'] },
-            'v1-p2': { ko: ['화폐 순환', '노동력 상품', '잉여가치의 조건'], en: ['Money circulation', 'Labour-power as commodity', 'Condition for surplus-value'] },
-            'v1-p3': { ko: ['노동일', '절대적 잉여가치', '착취의 시간 구조'], en: ['Working day', 'Absolute surplus-value', 'Time-structure of exploitation'] },
-            'v1-p4': { ko: ['협업과 분업', '기계와 생산성', '상대적 잉여가치'], en: ['Cooperation and division of labour', 'Machinery and productivity', 'Relative surplus-value'] },
-            'v1-p7': { ko: ['잉여가치', '축적', '계급관계 재생산'], en: ['Surplus-value', 'Accumulation', 'Reproduction of class relations'] },
-            'v1-p8': { ko: ['생산자 분리', '폭력과 법', '임금노동의 형성'], en: ['Separation of producers', 'Violence and law', 'Formation of wage-labour'] },
-            'v2-p1': { ko: ['화폐자본', '생산자본', '상품자본'], en: ['Money-capital', 'Productive capital', 'Commodity-capital'] },
-            'v2-p2': { ko: ['회전시간', '선대자본', '잉여가치 연간율'], en: ['Turnover time', 'Advanced capital', 'Annual rate of surplus-value'] },
-            'v2-p3': { ko: ['부문 I/II', '사회적 총자본', '재생산 조건'], en: ['Departments I/II', 'Total social capital', 'Conditions of reproduction'] },
-            'v3-p1': { ko: ['잉여가치', '이윤 형태', '이윤율'], en: ['Surplus-value', 'Profit form', 'Rate of profit'] },
-            'v3-p2': { ko: ['개별 이윤율', '평균이윤', '생산가격'], en: ['Individual profit rates', 'Average profit', 'Prices of production'] },
-            'v3-p3': { ko: ['자본구성 상승', '이윤율 저하 경향', '반작용 요인'], en: ['Rising composition of capital', 'Tendency of profit rate to fall', 'Counteracting factors'] },
-            'v3-p4': { ko: ['상업자본', '유통비용', '이윤 분할'], en: ['Commercial capital', 'Circulation costs', 'Division of profit'] },
-            'v3-p5': { ko: ['이자 낳는 자본', '신용과 지급연쇄', '자본관계의 물신화'], en: ['Interest-bearing capital', 'Credit and payment chains', 'Fetishism of capital relation'] },
-            'v3-p6': { ko: ['생산조건 차이', '초과이윤', '지대'], en: ['Differences in production conditions', 'Surplus-profit', 'Rent'] },
-            'v3-p7': { ko: ['임금·이윤·지대', '수입의 원천이라는 착시', '계급관계'], en: ['Wages, profit, rent', 'Illusion of income sources', 'Class relations'] }
+            'capital-vol1:1': {
+                ko: [
+                    { title: '사용가치', text: '사람에게 쓸모가 있는 면. 외투는 몸을 따뜻하게 해 준다.' },
+                    { title: '가치', text: '시장에서 다른 상품과 비교되는 사회적 노동의 면. 개인의 고생이 아니라 사회적으로 필요한 노동시간이 기준이다.' },
+                    { title: '헷갈리지 말 것', text: '쓸모가 크다고 곧 가치가 큰 것은 아니다. 두 면을 구분해야 상품 분석이 시작된다.' }
+                ],
+                en: [
+                    { title: 'Use-value', text: 'The useful side of a thing: a coat keeps someone warm.' },
+                    { title: 'Value', text: 'The social labour side that makes commodities comparable in exchange.' },
+                    { title: 'Do not confuse them', text: 'Greater usefulness does not automatically mean greater value.' }
+                ]
+            },
+            'capital-vol1:2': {
+                ko: [
+                    { title: '상품', text: '스스로 시장에 가지 않는다. 상품은 소유자를 통해 교환된다.' },
+                    { title: '상품소유자', text: '서로를 소유자로 인정해야 교환이 가능하다.' },
+                    { title: '교환관계', text: '물건의 이동처럼 보이지만, 실제로는 사람들 사이의 사회적 관계가 작동한다.' }
+                ],
+                en: [
+                    { title: 'Commodity', text: 'It does not go to market by itself; it is exchanged through its owner.' },
+                    { title: 'Owner', text: 'Exchange requires owners to recognize one another.' },
+                    { title: 'Exchange relation', text: 'Behind the movement of things is a social relation among people.' }
+                ]
+            },
+            'capital-vol1:3': {
+                ko: [
+                    { title: '가치척도', text: '화폐는 상품가치를 가격으로 표현하게 해 준다.' },
+                    { title: '유통수단', text: '상품이 팔리고 사는 과정을 매개한다.' },
+                    { title: '지급수단·축장', text: '거래가 시간차를 가질 때 빚과 결제, 보유의 형태로 작동한다.' }
+                ],
+                en: [
+                    { title: 'Measure of value', text: 'Money lets commodity value appear as price.' },
+                    { title: 'Means of circulation', text: 'Money mediates buying and selling.' },
+                    { title: 'Payment and hoard', text: 'When transactions are separated in time, money appears in debts, settlement, and holding.' }
+                ]
+            },
+            'capital-vol1:10': {
+                ko: [
+                    { title: '필요노동', text: '노동자가 자기 노동력의 가치를 재생산하는 시간.' },
+                    { title: '잉여노동', text: '그 뒤에도 계속 일해 자본가에게 잉여가치를 만드는 시간.' },
+                    { title: '노동일 투쟁', text: '노동일의 길이는 자연적으로 정해지지 않고 계급투쟁과 법적 제한 속에서 정해진다.' }
+                ],
+                en: [
+                    { title: 'Necessary labour', text: 'Time in which workers reproduce the value of their labour-power.' },
+                    { title: 'Surplus labour', text: 'Additional time that creates surplus-value for capital.' },
+                    { title: 'Struggle over the day', text: 'The length of the working day is set through conflict and law, not by nature.' }
+                ]
+            },
+            'capital-vol1:16': {
+                ko: [
+                    { title: '절대적 잉여가치', text: '노동일을 늘려 잉여노동시간을 키운다.' },
+                    { title: '상대적 잉여가치', text: '생산성을 높여 필요노동시간을 줄이고 같은 노동일 안의 잉여노동을 늘린다.' },
+                    { title: '공통점', text: '방식은 다르지만 둘 다 노동일 안에서 자본의 몫을 키우는 방법이다.' }
+                ],
+                en: [
+                    { title: 'Absolute surplus-value', text: 'Lengthens the working day to expand surplus labour.' },
+                    { title: 'Relative surplus-value', text: 'Raises productivity to reduce necessary labour within the same working day.' },
+                    { title: 'Common point', text: 'Both increase capital’s share of the working day.' }
+                ]
+            },
+            'capital-vol2:7': {
+                ko: [
+                    { title: '생산시간', text: '자본이 생산과정에 묶여 있는 시간.' },
+                    { title: '유통시간', text: '판매와 구매를 기다리며 생산 밖에 머무는 시간.' },
+                    { title: '회전시간', text: '두 시간을 합친 전체 순환 시간. 빨리 돌수록 같은 자본이 더 자주 쓰인다.' }
+                ],
+                en: [
+                    { title: 'Production time', text: 'Time capital is tied up in production.' },
+                    { title: 'Circulation time', text: 'Time spent waiting for sale and purchase outside production.' },
+                    { title: 'Turnover time', text: 'The total of both; faster turnover lets the same capital function more often.' }
+                ]
+            },
+            'capital-vol2:20': {
+                ko: [
+                    { title: '부문 I', text: '생산수단을 만드는 부문.' },
+                    { title: '부문 II', text: '소비재를 만드는 부문.' },
+                    { title: '단순재생산', text: '사회가 같은 규모로 반복되려면 두 부문의 교환 비율이 맞아야 한다.' }
+                ],
+                en: [
+                    { title: 'Department I', text: 'Produces means of production.' },
+                    { title: 'Department II', text: 'Produces means of consumption.' },
+                    { title: 'Simple reproduction', text: 'For society to repeat at the same scale, exchange between the two departments must balance.' }
+                ]
+            },
+            'capital-vol3:13': {
+                ko: [
+                    { title: '불변자본 증가', text: '기계와 설비 비중이 커진다.' },
+                    { title: '가변자본의 역할', text: '새 가치를 만드는 것은 노동력이다.' },
+                    { title: '이윤율 저하 경향', text: '총자본에 견줘 잉여가치 원천의 비중이 줄어드는 압력으로 이해한다.' }
+                ],
+                en: [
+                    { title: 'More constant capital', text: 'Machinery and equipment take a larger share.' },
+                    { title: 'Role of variable capital', text: 'Labour-power is the source of new value.' },
+                    { title: 'Falling profit-rate tendency', text: 'The source of surplus-value becomes smaller relative to total capital.' }
+                ]
+            },
+            'capital-vol3:24': {
+                ko: [
+                    { title: "M-M'", text: '돈이 더 많은 돈으로 곧장 불어나는 것처럼 보인다.' },
+                    { title: '빠진 고리', text: '중간의 생산과 노동 착취가 형태상 사라진다.' },
+                    { title: '물신화', text: '사회적 관계가 돈 자체의 힘처럼 보이는 착시가 생긴다.' }
+                ],
+                en: [
+                    { title: "M-M'", text: 'Money seems to become more money directly.' },
+                    { title: 'Missing link', text: 'Production and exploitation disappear from the form.' },
+                    { title: 'Fetishism', text: 'A social relation appears as a power of money itself.' }
+                ]
+            }
         };
-        return maps[key] || { ko: [lesson.collectionTitle, chapterTitle(lesson), lessonLevel(lesson)], en: [lesson.collectionTitle, chapterTitle(lesson), lessonLevel(lesson)] };
+        return maps[id] || fallbackConceptMap(lesson);
+    }
+
+    function fallbackConceptMap(lesson) {
+        return {
+            ko: [
+                { title: '핵심 개념', text: chapterTitle(lesson) },
+                { title: '무엇을 설명하나', text: lessonSummary(lesson) },
+                { title: '문제에서 볼 것', text: lesson.focus || introFallback(lesson) }
+            ],
+            en: [
+                { title: 'Core concept', text: chapterTitle(lesson) },
+                { title: 'What it explains', text: lessonSummary(lesson) },
+                { title: 'What to watch for', text: lesson.focus || introFallback(lesson) }
+            ]
+        };
     }
 
     function renderDiagram(lesson) {
         if (!els.diagram) return;
         var nodes = conceptMap(lesson)[lang === 'en' ? 'en' : 'ko'];
-        els.diagram.innerHTML = nodes.map(function(node, index) {
-            return '<span class="commu-diagram-node">' + escapeHtml(node) + '</span>' + (index < nodes.length - 1 ? '<span class="commu-diagram-arrow" aria-hidden="true">→</span>' : '');
+        els.diagram.innerHTML = nodes.map(function(node) {
+            return '<span class="commu-diagram-node"><strong>' + escapeHtml(node.title) + '</strong><small>' + escapeHtml(node.text) + '</small></span>';
         }).join('');
     }
 
