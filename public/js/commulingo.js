@@ -168,6 +168,7 @@
                     title: text(loaded.title) || lesson.title,
                     summary: text(loaded.summary) || lesson.summary,
                     focus: text(loaded.focus) || lesson.focus,
+                    conceptMap: loaded.conceptMap || lesson.conceptMap,
                     questions: loaded.questions || [],
                     questionCount: lessonQuestionCount(loaded)
                 });
