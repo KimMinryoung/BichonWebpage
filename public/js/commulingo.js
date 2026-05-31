@@ -10,6 +10,7 @@
     var storageKey = 'commulingo-progress-v1';
     var expandedKey = 'commulingo-expanded-collection-v1';
     var progress = loadLocalProgress();
+    var lessonDetails = {};
     var active = null;
     var answered = false;
 
@@ -38,6 +39,12 @@
 
     els.back.addEventListener('click', showLessons);
     els.next.addEventListener('click', function() {
+        var finishedAction = els.next.getAttribute('data-finished');
+        if (finishedAction === '1') {
+            els.next.removeAttribute('data-finished');
+            showLessons();
+            return;
+        }
         if (!active) return;
         if (active.intro) {
             active.intro = false;
@@ -46,19 +53,13 @@
             return;
         }
         if (!answered) return;
-        var finishedAction = els.next.getAttribute('data-finished');
         if (finishedAction === 'retry') {
             var retryLesson = active.lesson;
             els.next.removeAttribute('data-finished');
             startLesson(retryLesson);
             return;
         }
-        if (finishedAction === '1') {
-            els.next.removeAttribute('data-finished');
-            showLessons();
-            return;
-        }
-        if (active.index >= active.lesson.questions.length - 1) {
+        if (active.index >= lessonQuestionCount(active.lesson) - 1) {
             finishLesson();
             return;
         }
@@ -114,7 +115,8 @@
                         title: text(lesson.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
-                        questions: lesson.questions || []
+                        questions: lesson.questions || null,
+                        questionCount: lessonQuestionCount(lesson)
                     });
                 });
                 if (!(chapter.lessons || []).length) {
@@ -127,13 +129,53 @@
                         title: text(chapter.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
-                        questions: [],
+                        questions: null,
+                        questionCount: 0,
                         locked: true
                     });
                 }
             });
         });
         return out;
+    }
+
+    function lessonQuestionCount(lesson) {
+        if (!lesson) return 0;
+        if (Array.isArray(lesson.questions)) return lesson.questions.length;
+        return Number(lesson.questionCount) || 0;
+    }
+
+    function lessonDetailUrl(lessonId) {
+        var version = data.version ? '?v=' + encodeURIComponent(data.version) : '';
+        return '/commulingo/lesson/' + encodeURIComponent(lessonId) + version;
+    }
+
+    function loadLessonDetail(lesson) {
+        if (Array.isArray(lesson.questions) && lessonQuestionCount(lesson)) return Promise.resolve(lesson);
+        if (lessonDetails[lesson.id]) return Promise.resolve(lessonDetails[lesson.id]);
+        return fetch(lessonDetailUrl(lesson.id), { credentials: 'same-origin' })
+            .then(function(res) {
+                if (!res.ok) throw new Error('lesson load failed');
+                return res.json();
+            })
+            .then(function(payload) {
+                var loaded = payload.lesson || {};
+                var merged = Object.assign({}, lesson, {
+                    collectionId: loaded.collectionId || lesson.collectionId,
+                    collectionTitle: text(loaded.collectionTitle) || lesson.collectionTitle,
+                    chapterNumber: loaded.chapterNumber || lesson.chapterNumber,
+                    chapterTitle: text(loaded.chapterTitle) || lesson.chapterTitle,
+                    title: text(loaded.title) || lesson.title,
+                    summary: text(loaded.summary) || lesson.summary,
+                    focus: text(loaded.focus) || lesson.focus,
+                    questions: loaded.questions || [],
+                    questionCount: lessonQuestionCount(loaded)
+                });
+                lessonDetails[lesson.id] = merged;
+                lesson.questions = merged.questions;
+                lesson.questionCount = merged.questionCount;
+                return merged;
+            });
     }
 
     function loadLocalProgress() {
@@ -365,12 +407,12 @@
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'commu-lesson-action ' + lessonLevelClass(lesson) + (item && item.completed ? ' is-completed' : '');
-        button.disabled = Boolean(lesson.locked || !lesson.questions.length);
+        button.disabled = Boolean(lesson.locked || !lessonQuestionCount(lesson));
         button.innerHTML = [
             '<span class="commu-lesson-action-body">',
             '<span class="commu-lesson-action-top">',
             '<strong>' + escapeHtml(lessonActionTitle(lesson)) + '</strong>',
-            '<span>' + lesson.questions.length + ' ' + escapeHtml(strings.questions || 'Questions') + '</span>',
+            '<span>' + lessonQuestionCount(lesson) + ' ' + escapeHtml(strings.questions || 'Questions') + '</span>',
             '</span>',
             '<span class="commu-progress-track"><span style="width:' + percent + '%"></span></span>',
             '<span class="commu-lesson-meta"><span>' + escapeHtml(lessonLabel(lesson, item)) + '</span><span>' + escapeHtml(startLessonLabel(lesson)) + '</span></span>',
@@ -573,16 +615,48 @@
 
     function startLesson(lesson) {
         saveExpandedCollection(lesson.collectionId || '');
-        active = { lesson: lesson, index: 0, score: 0, intro: true };
         answered = false;
         els.list.classList.add('is-hidden');
         els.quiz.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
-        renderIntro();
+        renderLoadingLesson(lesson);
+        loadLessonDetail(lesson)
+            .then(function(loadedLesson) {
+                active = { lesson: loadedLesson, index: 0, score: 0, intro: true };
+                renderIntro();
+            })
+            .catch(function() {
+                active = null;
+                els.lessonTitle.textContent = chapterTitle(lesson);
+                els.prompt.textContent = lang === 'en' ? 'Could not load this lesson. Please try again.' : '문제를 불러오지 못했습니다. 잠시 뒤 다시 시도해 주세요.';
+                els.prompt.classList.remove('is-hidden');
+                if (els.intro) els.intro.classList.add('is-hidden');
+                if (els.focus) els.focus.classList.add('is-hidden');
+                els.choices.classList.add('is-hidden');
+                els.feedback.className = 'commu-feedback is-hidden';
+                els.next.disabled = false;
+                els.next.textContent = strings.backToLessons || 'Lessons';
+                els.next.setAttribute('data-finished', '1');
+            });
+    }
+
+    function renderLoadingLesson(lesson) {
+        active = null;
+        els.count.textContent = '0 / ' + lessonQuestionCount(lesson);
+        els.meter.style.width = '0%';
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + '</span>';
+        if (els.intro) els.intro.classList.add('is-hidden');
+        if (els.focus) els.focus.classList.add('is-hidden');
+        els.prompt.textContent = lang === 'en' ? 'Loading questions...' : '문제를 불러오는 중입니다...';
+        els.prompt.classList.remove('is-hidden');
+        els.choices.classList.add('is-hidden');
+        els.feedback.className = 'commu-feedback is-hidden';
+        els.next.disabled = true;
+        els.next.textContent = strings.next || 'Next';
     }
 
     function renderIntro() {
-        els.count.textContent = '0 / ' + active.lesson.questions.length;
+        els.count.textContent = '0 / ' + lessonQuestionCount(active.lesson);
         els.meter.style.width = '0%';
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
         if (els.intro) els.intro.classList.remove('is-hidden');
@@ -613,8 +687,8 @@
         els.choices.classList.remove('is-hidden');
         var question = active.lesson.questions[active.index];
         var count = active.index + 1;
-        els.count.textContent = count + ' / ' + active.lesson.questions.length;
-        els.meter.style.width = Math.round((active.index / active.lesson.questions.length) * 100) + '%';
+        els.count.textContent = count + ' / ' + lessonQuestionCount(active.lesson);
+        els.meter.style.width = Math.round((active.index / lessonQuestionCount(active.lesson)) * 100) + '%';
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
         if (els.focus) {
             els.focus.textContent = active.lesson.focus || '';
@@ -624,7 +698,7 @@
         els.feedback.className = 'commu-feedback is-hidden';
         els.feedback.textContent = '';
         els.next.disabled = true;
-        els.next.textContent = active.index >= active.lesson.questions.length - 1 ? (strings.finish || 'Finish') : (strings.next || 'Next');
+        els.next.textContent = active.index >= lessonQuestionCount(active.lesson) - 1 ? (strings.finish || 'Finish') : (strings.next || 'Next');
         renderChoices(question);
     }
 
@@ -659,14 +733,14 @@
         els.feedback.className = 'commu-feedback' + (correct ? '' : ' is-wrong');
         els.feedback.textContent = (correct ? strings.correct : strings.incorrect) + ' ' + text(question.explanation);
         els.next.disabled = false;
-        els.meter.style.width = Math.round(((active.index + 1) / active.lesson.questions.length) * 100) + '%';
+        els.meter.style.width = Math.round(((active.index + 1) / lessonQuestionCount(active.lesson)) * 100) + '%';
     }
 
     function finishLesson() {
         var item = {
-            completed: active.score === active.lesson.questions.length,
+            completed: active.score === lessonQuestionCount(active.lesson),
             score: active.score,
-            totalQuestions: active.lesson.questions.length,
+            totalQuestions: lessonQuestionCount(active.lesson),
             updatedAt: new Date().toISOString()
         };
         progress[active.lesson.id] = mergeOne(progress[active.lesson.id], item);
@@ -681,9 +755,9 @@
         els.choices.classList.remove('is-hidden');
         els.choices.innerHTML = '';
         els.feedback.className = 'commu-feedback';
-        els.feedback.textContent = (strings.score || 'Score') + ': ' + active.score + ' / ' + active.lesson.questions.length;
+        els.feedback.textContent = (strings.score || 'Score') + ': ' + active.score + ' / ' + lessonQuestionCount(active.lesson);
         els.next.disabled = false;
-        if (active.score < active.lesson.questions.length) {
+        if (active.score < lessonQuestionCount(active.lesson)) {
             els.next.textContent = strings.tryAgain || 'Try again';
             els.next.setAttribute('data-finished', 'retry');
         } else {

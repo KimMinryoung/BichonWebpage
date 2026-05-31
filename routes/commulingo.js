@@ -11,14 +11,35 @@ const PUBLIC_CHAPTER_LIMITS = {
     'capital-vol3': 52,
 };
 
+let lessonsCache = null;
+
 function readLessons() {
+    const stat = fs.statSync(LESSONS_PATH);
+    if (lessonsCache && lessonsCache.mtimeMs === stat.mtimeMs) return lessonsCache.bundle;
     const raw = fs.readFileSync(LESSONS_PATH, 'utf8');
-    return JSON.parse(raw);
+    const bundle = JSON.parse(raw);
+    lessonsCache = {
+        mtimeMs: stat.mtimeMs,
+        version: String(Math.trunc(stat.mtimeMs)),
+        bundle,
+        publicBundle: null,
+        catalog: null,
+        lessonsById: null,
+    };
+    return bundle;
+}
+
+function currentVersion() {
+    readLessons();
+    return lessonsCache.version;
 }
 
 function publicLessons(bundle) {
-    return {
+    readLessons();
+    if (lessonsCache.publicBundle) return lessonsCache.publicBundle;
+    lessonsCache.publicBundle = {
         ...bundle,
+        version: currentVersion(),
         collections: (bundle.collections || [])
             .map(collection => {
                 const chapterLimit = PUBLIC_CHAPTER_LIMITS[collection.id] || 0;
@@ -31,6 +52,80 @@ function publicLessons(bundle) {
             })
             .filter(collection => collection.chapters.length > 0),
     };
+    return lessonsCache.publicBundle;
+}
+
+function lessonQuestionCount(lesson) {
+    return Array.isArray(lesson.questions) ? lesson.questions.length : 0;
+}
+
+function publicCatalog(bundle) {
+    readLessons();
+    if (lessonsCache.catalog) return lessonsCache.catalog;
+    const publicBundle = publicLessons(bundle);
+    lessonsCache.catalog = {
+        version: publicBundle.version,
+        collections: (publicBundle.collections || []).map(collection => ({
+            id: collection.id,
+            volumeNumber: collection.volumeNumber,
+            title: collection.title,
+            description: collection.description,
+            bookTitle: collection.bookTitle,
+            chapters: (collection.chapters || []).map(chapter => ({
+                id: chapter.id,
+                volumeNumber: chapter.volumeNumber,
+                chapterNumber: chapter.chapterNumber,
+                partNumber: chapter.partNumber,
+                partTitle: chapter.partTitle,
+                title: chapter.title,
+                summary: chapter.summary,
+                sourceUrl: chapter.sourceUrl,
+                learningFocus: chapter.learningFocus,
+                lessons: (chapter.lessons || []).map(lesson => ({
+                    id: lesson.id,
+                    level: lesson.level,
+                    title: lesson.title,
+                    questionCount: lessonQuestionCount(lesson),
+                })),
+            })),
+        })),
+    };
+    return lessonsCache.catalog;
+}
+
+function publicLessonsById(bundle) {
+    readLessons();
+    if (lessonsCache.lessonsById) return lessonsCache.lessonsById;
+    const byId = new Map();
+    const publicBundle = publicLessons(bundle);
+    (publicBundle.collections || []).forEach(collection => {
+        (collection.chapters || []).forEach(chapter => {
+            (chapter.lessons || []).forEach(lesson => {
+                byId.set(lesson.id, {
+                    id: lesson.id,
+                    collectionId: collection.id,
+                    collectionTitle: collection.title,
+                    chapterNumber: chapter.chapterNumber,
+                    chapterTitle: chapter.title,
+                    title: lesson.title,
+                    level: lesson.level,
+                    summary: chapter.summary,
+                    focus: chapter.learningFocus,
+                    questions: lesson.questions || [],
+                });
+            });
+        });
+    });
+    lessonsCache.lessonsById = byId;
+    return byId;
+}
+
+function setPublicDataCache(req, res) {
+    if (req.query && req.query.v === currentVersion()) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        return;
+    }
+    res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
 }
 
 function requireUser(req, res, next) {
@@ -51,7 +146,7 @@ function normalizeProgress(raw) {
 }
 
 router.get('/', (req, res) => {
-    const lessons = publicLessons(readLessons());
+    const lessons = publicCatalog(readLessons());
     res.render('public/commulingo', {
         lessons,
         pageTitle: res.locals.strings.commuLingo.title,
@@ -59,6 +154,19 @@ router.get('/', (req, res) => {
         pagePath: '/commulingo',
         extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
     });
+});
+
+router.get('/catalog.json', (req, res) => {
+    setPublicDataCache(req, res);
+    res.json(publicCatalog(readLessons()));
+});
+
+router.get('/lesson/:lessonId', (req, res) => {
+    const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
+    const lesson = publicLessonsById(readLessons()).get(lessonId);
+    if (!lesson) return res.status(404).json({ error: 'lesson not found' });
+    setPublicDataCache(req, res);
+    res.json({ version: currentVersion(), lesson });
 });
 
 router.get('/progress', async (req, res) => {
