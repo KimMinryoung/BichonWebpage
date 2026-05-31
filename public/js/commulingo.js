@@ -608,7 +608,7 @@
         });
 
         els.feedback.className = 'commu-feedback' + (correct ? '' : ' is-wrong');
-        els.feedback.textContent = (correct ? strings.correct : strings.incorrect) + ' ' + text(question.explanation);
+        els.feedback.innerHTML = '<strong class="commu-feedback-marker">' + escapeHtml(correct ? strings.correct : strings.incorrect) + '</strong><span>' + escapeHtml(text(question.explanation)) + '</span>';
         els.next.disabled = false;
         els.meter.style.width = Math.round(((active.index + 1) / lessonQuestionCount(active.lesson)) * 100) + '%';
     }
