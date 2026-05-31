@@ -165,27 +165,15 @@
     padding: 12px;
 }
 
-.commu-lesson-card {
+.commu-chapter-card {
     border: 1px solid var(--border);
     background: var(--bg-surface);
     color: var(--text-primary);
     padding: 14px;
-    text-align: left;
-    font-family: inherit;
-    cursor: pointer;
-    min-height: 196px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-}
-
-.commu-lesson-card:hover:not(:disabled) {
-    background: var(--bg-surface-hover);
-}
-
-.commu-lesson-card:disabled {
-    cursor: not-allowed;
-    opacity: 0.58;
+    gap: 10px;
 }
 
 .commu-lesson-title-row {
@@ -195,7 +183,7 @@
     justify-content: space-between;
 }
 
-.commu-lesson-card h2 {
+.commu-chapter-card h2 {
     font-size: 1.05rem;
     line-height: 1.35;
     margin: 0;
@@ -241,6 +229,82 @@
     padding-left: 9px;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+.commu-chapter-actions {
+    display: grid;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.commu-lesson-action {
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--bg-base);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    min-height: 74px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.commu-lesson-action:hover:not(:disabled) {
+    background: var(--bg-surface-hover);
+    border-color: var(--accent);
+}
+
+.commu-lesson-action.is-completed {
+    background: color-mix(in srgb, var(--accent-green) 18%, var(--bg-surface));
+    border-color: color-mix(in srgb, var(--accent-green) 58%, var(--border));
+}
+
+.commu-lesson-action.is-completed:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--accent-green) 25%, var(--bg-surface));
+}
+
+.commu-lesson-action.is-completed .commu-progress-track {
+    border-color: color-mix(in srgb, var(--accent-green) 65%, var(--border));
+}
+
+.commu-lesson-action:disabled {
+    cursor: not-allowed;
+    opacity: 0.58;
+}
+
+.commu-lesson-action.is-basic {
+    box-shadow: inset 4px 0 0 var(--accent-green);
+}
+
+.commu-lesson-action.is-advanced {
+    box-shadow: inset 4px 0 0 var(--accent-red);
+}
+
+.commu-lesson-action-body {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+    width: 100%;
+}
+
+.commu-lesson-action-top {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.commu-lesson-action-top strong {
+    font-size: 0.88rem;
+    line-height: 1.2;
+}
+
+.commu-lesson-action-top span,
+.commu-lesson-action .commu-lesson-meta {
+    color: var(--text-muted);
+    font-size: 0.78rem;
 }
 
 .commu-lesson-meta {

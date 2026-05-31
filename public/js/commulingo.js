@@ -226,7 +226,7 @@
             section.innerHTML = [
                 '<header class="commu-volume-header">',
                 '<button type="button" class="commu-volume-toggle" aria-expanded="' + (expanded ? 'true' : 'false') + '">',
-                '<span><strong>' + escapeHtml(group.title) + '</strong><small>' + group.lessons.length + ' ' + escapeHtml(strings.lessons || 'Lessons') + '</small></span>',
+                '<span><strong>' + escapeHtml(group.title) + '</strong><small>' + escapeHtml(chapterCountLabel(countChapters(group.lessons))) + '</small></span>',
                 '<span class="commu-volume-toggle-icon" aria-hidden="true">' + (expanded ? '−' : '+') + '</span>',
                 '</button>',
                 '</header>',
@@ -245,19 +245,31 @@
                 partNode.innerHTML = [
                     '<header class="commu-part-header">',
                     '<h3>' + escapeHtml(part.title) + '</h3>',
-                    '<p>' + part.lessons.length + ' ' + escapeHtml(strings.lessons || 'Lessons') + '</p>',
+                    '<p>' + escapeHtml(chapterCountLabel(part.chapters.length)) + '</p>',
                     '</header>',
                     '<div class="commu-volume-grid"></div>'
                 ].join('');
 
                 var grid = partNode.querySelector('.commu-volume-grid');
-                part.lessons.forEach(function(lesson) {
-                    grid.appendChild(createLessonCard(lesson));
+                part.chapters.forEach(function(chapter) {
+                    grid.appendChild(createChapterCard(chapter));
                 });
                 body.appendChild(partNode);
             });
             els.list.appendChild(section);
         });
+    }
+
+    function countChapters(items) {
+        var seen = {};
+        (items || []).forEach(function(lesson) {
+            seen[[lesson.collectionId, lesson.chapterNumber, lesson.chapterTitle].join(':')] = true;
+        });
+        return Object.keys(seen).length;
+    }
+
+    function chapterCountLabel(count) {
+        return count + ' ' + (lang === 'en' ? 'Chapters' : '챕터');
     }
 
     function groupLessons() {
@@ -281,12 +293,38 @@
             var part = findPart(lesson);
             var key = part ? part.key : 'chapters';
             if (!byPart[key]) {
-                byPart[key] = { title: part ? partTitle(part) : (strings.chapters || 'Chapters'), lessons: [] };
+                byPart[key] = { title: part ? partTitle(part) : (strings.chapters || 'Chapters'), chapters: [] };
                 groups.push(byPart[key]);
             }
-            byPart[key].lessons.push(lesson);
+            byPart[key].chapters = groupChapterLessons(byPart[key].chapters, lesson);
         });
         return groups;
+    }
+
+    function groupChapterLessons(chapters, lesson) {
+        var key = [lesson.collectionId, lesson.chapterNumber, lesson.chapterTitle].join(':');
+        var chapter = null;
+        for (var i = 0; i < chapters.length; i += 1) {
+            if (chapters[i].key === key) {
+                chapter = chapters[i];
+                break;
+            }
+        }
+        if (!chapter) {
+            chapter = {
+                key: key,
+                collectionId: lesson.collectionId,
+                collectionTitle: lesson.collectionTitle,
+                chapterNumber: lesson.chapterNumber,
+                chapterTitle: lesson.chapterTitle,
+                summary: lesson.summary,
+                focus: lesson.focus,
+                lessons: []
+            };
+            chapters.push(chapter);
+        }
+        chapter.lessons.push(lesson);
+        return chapters;
     }
 
     function findPart(lesson) {
@@ -303,25 +341,51 @@
         return lang === 'en' ? part.en : part.ko;
     }
 
-    function createLessonCard(lesson) {
+    function createChapterCard(chapter) {
+        var card = document.createElement('article');
+        card.className = 'commu-chapter-card';
+        card.innerHTML = [
+            '<div class="commu-lesson-title-row">',
+            '<h2>' + escapeHtml(chapterTitle(chapter)) + '</h2>',
+            '</div>',
+            '<p class="commu-lesson-summary">' + escapeHtml(lessonSummary(chapter)) + '</p>',
+            chapter.focus ? '<p class="commu-lesson-focus">' + escapeHtml(chapter.focus) + '</p>' : '',
+            '<div class="commu-chapter-actions"></div>'
+        ].join('');
+        var actions = card.querySelector('.commu-chapter-actions');
+        chapter.lessons.forEach(function(lesson) {
+            actions.appendChild(createLessonAction(lesson));
+        });
+        return card;
+    }
+
+    function createLessonAction(lesson) {
         var item = progress[lesson.id];
         var percent = item && item.totalQuestions ? Math.round((item.score / item.totalQuestions) * 100) : 0;
         var button = document.createElement('button');
         button.type = 'button';
-        button.className = 'commu-lesson-card';
+        button.className = 'commu-lesson-action ' + lessonLevelClass(lesson) + (item && item.completed ? ' is-completed' : '');
         button.disabled = Boolean(lesson.locked || !lesson.questions.length);
         button.innerHTML = [
-            '<div class="commu-lesson-title-row">',
-            '<h2>' + escapeHtml(chapterTitle(lesson)) + '</h2>',
-            '<span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + '</span>',
-            '</div>',
-            '<p class="commu-lesson-summary">' + escapeHtml(lessonSummary(lesson)) + '</p>',
-            lesson.focus ? '<p class="commu-lesson-focus">' + escapeHtml(lesson.focus) + '</p>' : '',
-            '<div class="commu-progress-track"><span style="width:' + percent + '%"></span></div>',
-            '<div class="commu-lesson-meta"><span>' + lesson.questions.length + ' ' + escapeHtml(strings.questions || 'Questions') + '</span><span>' + lessonLabel(lesson, item) + '</span></div>'
+            '<span class="commu-lesson-action-body">',
+            '<span class="commu-lesson-action-top">',
+            '<strong>' + escapeHtml(lessonActionTitle(lesson)) + '</strong>',
+            '<span>' + lesson.questions.length + ' ' + escapeHtml(strings.questions || 'Questions') + '</span>',
+            '</span>',
+            '<span class="commu-progress-track"><span style="width:' + percent + '%"></span></span>',
+            '<span class="commu-lesson-meta"><span>' + escapeHtml(lessonLabel(lesson, item)) + '</span><span>' + escapeHtml(startLessonLabel(lesson)) + '</span></span>',
+            '</span>'
         ].join('');
         button.addEventListener('click', function() { startLesson(lesson); });
         return button;
+    }
+
+    function lessonActionTitle(lesson) {
+        return lessonLevel(lesson) + (lang === 'en' ? ' progress' : ' 학습진도');
+    }
+
+    function startLessonLabel(lesson) {
+        return isAdvancedLesson(lesson) ? (lang === 'en' ? 'Start advanced' : '심화 학습 시작') : (lang === 'en' ? 'Start basics' : '기본 학습 시작');
     }
 
     function chapterTitle(lesson) {
