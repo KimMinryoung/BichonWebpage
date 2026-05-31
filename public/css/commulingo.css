@@ -134,6 +134,10 @@
     line-height: 1.25;
 }
 
+.commu-volume-progress-percent {
+    color: var(--accent-red);
+}
+
 .commu-volume-progress-track {
     background: var(--bg-surface);
     border: 1px solid var(--border);
@@ -144,7 +148,7 @@
 }
 
 .commu-volume-progress-track > span {
-    background: var(--accent);
+    background: var(--accent-red);
     display: block;
     height: 100%;
     transition: width 0.2s ease;

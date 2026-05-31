@@ -15081,15 +15081,15 @@
                   "choices": {
                     "ko": [
                       "고정·유동자본 구분이 회전 분석에 중요하지만 이전 이론들이 이를 물질적 형태나 소득 범주와 혼동했음을 검토한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
                       "It examines how the fixed/circulating distinction is crucial for turnover, while earlier theories confused it with material form or revenue categories.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 0,
@@ -15109,15 +15109,15 @@
                   "choices": {
                     "ko": [
                       "중농주의자는 사회적 재생산을 전체 흐름으로 보려 했지만 농업을 특권화해 일반적 산업자본의 회전을 충분히 보지 못했다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
                       "The Physiocrats tried to view social reproduction as a total flow, but privileged agriculture and did not fully grasp the turnover of industrial capital in general.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 0,
@@ -15136,16 +15136,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
                       "고정자본을 내구재나 소유자에게 수입을 주는 물건으로만 정의하는 오해를 피해야 한다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
                       "One must avoid defining fixed capital merely as durable goods or things yielding revenue to their owner.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 1,
@@ -15164,16 +15164,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
                       "외적 장소는 단서일 수 있지만, 핵심은 가치가 한 번에 회전하는지 여러 주기에 나누어 이전되는지이다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
                       "External location can be a clue, but the core is whether value turns over at once or is transferred over many cycles.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 2,
@@ -15192,15 +15192,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
                       "고정·유동자본 구분을 자본 가치의 회전 방식으로 파악하도록 개념 기준을 정리한다."
                     ],
                     "en": [
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
                       "It clarifies that fixed/circulating capital must be grasped through the turnover of capital-value."
                     ]
                   },
@@ -15231,15 +15231,15 @@
                   "choices": {
                     "ko": [
                       "선행 이론은 중요한 문제를 발견했지만 그 기준을 물질적 외관과 사회적 형식 사이에서 일관되게 유지하지 못했다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
                       "Earlier theory discovered an important problem but did not consistently maintain the criterion between material appearance and social form.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 0,
@@ -15258,16 +15258,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
                       "중농주의의 재생산 통찰과 스미스의 회전 구분을 비판적으로 분리해 받아들이는 것이 매개다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
                       "The mediation is to critically separate and appropriate the Physiocrats' insight into reproduction and Smith's turnover distinction.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 1,
@@ -15286,16 +15286,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
                       "물건의 내구성, 장소, 소득 발생 여부를 자본가치의 회전 방식과 혼동한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
                       "It confuses durability, location, and revenue-yielding with the turnover mode of capital-value.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 2,
@@ -15314,16 +15314,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
                       "물질적 형태보다 비용이 어떤 기간에 걸쳐 가치로 이전되고 어떤 방식으로 갱신되는지 물어야 한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다."
                     ],
                     "en": [
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
                       "One must ask less about material form than about the period over which cost is transferred as value and the mode of renewal.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value."
                     ]
                   },
                   "answer": 2,
@@ -15342,15 +15342,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
+                      "고정자본을 물건의 내구성이나 공장 안에 남아 있는지로만 분류하려 한다.",
+                      "상품 판매 뒤의 회수 문제를 고정자본과 유동자본의 가치 이전 방식과 무관한 실현 문제로 돌린다.",
+                      "기계가 여러 주기에 걸쳐 자기 가치를 옮기는 방식과 살아 있는 노동의 새 가치 생산을 뒤섞는다.",
                       "스미스의 혼동이 리카도에게 이어지므로 다음 장에서 그 효과를 비판해야 한다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
+                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
+                      "It shifts the recovery of capital after sale into a realization problem unrelated to the different ways fixed and circulating capital transfer value.",
+                      "It mixes up machinery transferring its value over many cycles with living labor creating new value.",
                       "Because Smith's confusion continues into Ricardo, the next chapter must criticize its effects."
                     ]
                   },
@@ -15436,15 +15436,15 @@
                   "choices": {
                     "ko": [
                       "리카도가 스미스의 혼동을 넘어서지 못하고 회전 방식과 가치·이윤 문제를 일관되게 연결하지 못했음을 비판한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
                       "It criticizes Ricardo for not overcoming Smith's confusion and for failing to consistently connect turnover forms with value and profit.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 0,
@@ -15465,14 +15465,14 @@
                     "ko": [
                       "리카도는 고정·유동 차이가 가격과 이윤율에 미치는 효과를 보려 했지만 가치생산의 원천과 가치 이전의 시간 구조를 분리하지 못했다.",
                       "판매와 구매가 그 자체로 보장된다고 전제하는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
                       "Ricardo tried to see how the fixed/circulating difference affects prices and profit rates, but did not separate the source of value production from the temporal structure of value transfer.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 0,
@@ -15484,14 +15484,14 @@
                     "ko": [
                       "핵심 확인: 리카도는 고정·유동 차이가 가격과 이윤율에 미치는 효과를 보려 했지만 가치생산의 원천과 가치 이전의 시간 구조를 분리하지 못했다. 그래서 이 장은 자본이 어느 형태로 얼마나 오래 묶이는지를 구체적으로 묻는다.",
                       "오해 진단: \"판매와 구매가 그 자체로 보장된다고 전제하는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
+                      "오해 진단: \"고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
+                      "오해 진단: \"기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
                     ],
                     "en": [
                       "Right: Ricardo tried to see how the fixed/circulating difference affects prices and profit rates, but did not separate the source of value production from the temporal structure of value transfer. The chapter therefore asks concretely in what form and for how long capital is tied up.",
-                      "Misconception check: choosing \"It assumes sale and purchase are automatically guaranteed.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It treats the issue as a merely technical classification or accounting label.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It fails to distinguish value production, value transfer, and turnover speed.\" puts another category ahead of the key relation in the correct answer."
+                      "Misconception check: choosing \"It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It turns the durability and repair cost of fixed capital directly into a question about the source of new value.\" puts another category ahead of the key relation in the correct answer.",
+                      "Misconception check: choosing \"It treats machinery gradually transferring value and labor creating new value as the same process.\" puts another category ahead of the key relation in the correct answer."
                     ]
                   }
                 },
@@ -15505,16 +15505,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
                       "고정자본 비중이 크면 기계가 이윤을 만든다는 식의 오해를 피해야 한다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
                       "One must avoid the misunderstanding that a high share of fixed capital means machines create profit.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 1,
@@ -15533,16 +15533,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
                       "서로 다른 회전과 가치 이전 방식이 가격, 이윤율, 자본 비교에 어떤 차이를 만드는지 분석해야 한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
                       "One must analyze how different modes of turnover and value transfer affect prices, profit rates, and comparison among capitals.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 2,
@@ -15561,15 +15561,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
                       "회전의 차이가 가치와 이윤의 현상형태에 영향을 주지만 가치창조의 원천과 같지는 않음을 분명히 한다."
                     ],
                     "en": [
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It treats machinery gradually transferring value and labor creating new value as the same process.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
                       "It clarifies that turnover differences affect phenomenal forms of value and profit but are not the same as the source of value creation."
                     ]
                   },
@@ -15600,15 +15600,15 @@
                   "choices": {
                     "ko": [
                       "리카도는 회전 차이를 가치론에 끌어들이지만 가치창조와 가치 이전의 시간을 충분히 구분하지 못한다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
                       "Ricardo brings turnover differences into value theory but does not sufficiently distinguish value creation from the time of value transfer.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 0,
@@ -15627,16 +15627,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
                       "임금 선대, 고정자본의 가치 이전, 이윤율 비교를 분리해 다시 연결하는 것이 매개다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
                       "The mediation is to separate and reconnect wage advances, fixed-capital value transfer, and profit-rate comparison.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 1,
@@ -15655,16 +15655,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
                       "회전 구조를 가치창조의 원천처럼 보아 살아 있는 노동의 역할을 흐린다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
                       "It treats turnover structure as if it were the source of value creation, obscuring the role of living labour.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 2,
@@ -15683,16 +15683,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
                       "설비의 가치 이전, 회전속도, 살아 있는 노동, 전체 이윤 현상형태를 구분해야 한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다."
                     ],
                     "en": [
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
                       "One must distinguish equipment value transfer, turnover speed, living labour, and the phenomenal form of total profit.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It treats machinery gradually transferring value and labor creating new value as the same process."
                     ]
                   },
                   "answer": 2,
@@ -15711,15 +15711,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
+                      "고정자본의 내구성과 보수 비용을 가치창조의 원천 문제로 곧장 바꾸어 놓는다.",
+                      "기계가 오래 버틸수록 그 가치도 매 회전마다 한꺼번에 회수된다고 전제한다.",
+                      "기계가 조금씩 가치를 이전하는 문제와 노동이 새 가치를 만드는 문제를 같은 것으로 본다.",
                       "리카도 비판을 통해 회전 범주를 정밀하게 만들어 노동기간과 생산시간 분석으로 넘어간다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
+                      "It turns the durability and repair cost of fixed capital directly into a question about the source of new value.",
+                      "It assumes that the longer a machine lasts, the more its whole value is recovered in every turnover.",
+                      "It treats machinery gradually transferring value and labor creating new value as the same process.",
                       "Through the critique of Ricardo, the category of turnover is sharpened for the analysis of working period and production time."
                     ]
                   },
@@ -15805,15 +15805,15 @@
                   "choices": {
                     "ko": [
                       "하나의 완성된 생산물을 만들기 위해 노동과정이 계속되어야 하는 기간을 분석한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
                       "It analyzes the period during which the labour-process must continue to produce one finished product.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 0,
@@ -15833,15 +15833,15 @@
                   "choices": {
                     "ko": [
                       "노동기간이 길면 완성품 판매 전까지 임금과 원료를 계속 선대해야 하므로 자본이 장기간 묶인다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
                       "If the working period is long, wages and materials must be advanced before the finished product is sold, tying capital up for a long time.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 0,
@@ -15860,16 +15860,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
                       "노동기간을 하루 노동일이나 유통시간과 혼동하는 오해를 피해야 한다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
                       "One must avoid confusing the working period with the working day or circulation time.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 1,
@@ -15888,16 +15888,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
                       "긴 노동기간 때문에 자본이 완성품 판매 전까지 생산 안에 묶이고 추가 선대가 필요하다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
                       "A long working period ties capital inside production until the finished product is sold and requires continued advances.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 2,
@@ -15916,15 +15916,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
                       "노동기간 단축은 완성품의 출현과 자본 회수를 앞당겨 회전시간을 줄이는 한 방법이다."
                     ],
                     "en": [
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
                       "Shortening the working period is one way to reduce turnover time by bringing forward the finished product and capital recovery."
                     ]
                   },
@@ -15955,15 +15955,15 @@
                   "choices": {
                     "ko": [
                       "가치가 생산되고 있어도 판매 가능한 완성품이 아직 없으면 자본이 계속 묶인다는 긴장이다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
                       "The tension is that even while value is being produced, capital remains tied up if there is no saleable finished product yet.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 0,
@@ -15982,16 +15982,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
                       "연속된 노동일들이 하나의 완성품으로 응결되는 전체 기간이 노동기간을 매개한다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
                       "The total span in which successive working days are condensed into one finished product mediates the working period.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 1,
@@ -16010,16 +16010,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
                       "기간이 길다는 사실을 더 많은 가치생산과 곧바로 동일시한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
                       "It immediately identifies longer duration with greater value production.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 2,
@@ -16038,16 +16038,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
                       "부분 지급이 긴 노동기간의 자금 압박과 자본 묶임을 어떻게 완화하는지 물어야 한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다."
                     ],
                     "en": [
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
                       "One should ask how partial payments mitigate the financing pressure and tying-up of capital caused by a long working period.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale."
                     ]
                   },
                   "answer": 2,
@@ -16066,15 +16066,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
+                      "긴 노동기간을 단순히 하루 노동시간이 길어진 경우로 읽어 선대자본이 묶이는 기간을 놓친다.",
+                      "완성품이 나오기 전에도 투하된 자본이 곧바로 판매를 통해 회수될 수 있다고 전제한다.",
+                      "노동이 여러 주기에 걸쳐 계속되는 기간과 판매 뒤 자본이 돌아오는 시간을 한 문제로 뭉뚱그린다.",
                       "노동기간은 생산시간의 일부일 뿐이므로, 노동이 직접 작용하지 않는 생산시간 분석으로 넘어간다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
+                      "It reads a long working period as merely a longer working day and misses how long advanced capital is tied up.",
+                      "It assumes advanced capital can be recovered through sale even before the finished product exists.",
+                      "It collapses the period during which labor continues across cycles into the time needed to recover capital after sale.",
                       "Because the working period is only part of production time, the argument moves to production time in which labour may not be directly acting."
                     ]
                   },
@@ -16160,15 +16160,15 @@
                   "choices": {
                     "ko": [
                       "직접 노동시간뿐 아니라 발효·숙성·건조처럼 자연과정이 진행되는 시간까지 포함할 수 있는 생산영역의 시간을 분석한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
                       "It analyzes time in the sphere of production that can include not only direct labour-time but also natural processes such as fermentation, maturation, or drying.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 0,
@@ -16188,15 +16188,15 @@
                   "choices": {
                     "ko": [
                       "생산시간이 노동시간보다 길면 자본은 가치증식하지 않는 대기 시간에도 생산영역 안에 묶인다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
                       "When production time is longer than labour-time, capital remains tied up in production even during waiting time that does not valorize.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 0,
@@ -16215,16 +16215,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
                       "생산시간을 모두 노동시간으로 보아 회전 지연과 가치생산을 혼동하는 오해를 피해야 한다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
                       "One must avoid treating all production time as labour-time and confusing turnover delay with value production.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 1,
@@ -16243,16 +16243,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
                       "자연과정도 생산시간일 수 있으며 그동안 자본은 판매 가능한 상품으로 돌아오지 못한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
                       "Natural processes can be production time, and during them capital has not yet returned as a saleable commodity.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 2,
@@ -16271,15 +16271,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
                       "생산시간 단축은 자본이 생산영역에 묶이는 시간을 줄여 회전을 빠르게 하려는 시도다."
                     ],
                     "en": [
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
                       "Reducing production time is an attempt to speed turnover by reducing the time capital is tied up in production."
                     ]
                   },
@@ -16310,15 +16310,15 @@
                   "choices": {
                     "ko": [
                       "사용가치 완성에 필요한 시간과 새 가치가 창조되는 노동시간이 일치하지 않는 긴장이다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
                       "The tension is that time needed to complete a use-value does not coincide with labour-time that creates new value.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 0,
@@ -16337,16 +16337,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
                       "자연과정, 기술적 대기, 직접 노동의 결합이 생산시간을 매개한다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
                       "Production time is mediated by the combination of natural process, technical waiting, and direct labour.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 1,
@@ -16365,16 +16365,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
                       "달력 시간이 길수록 가치가 자동으로 커진다고 본다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
                       "It assumes value automatically grows with calendar time.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 2,
@@ -16393,16 +16393,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
                       "직접 노동시간과 배양이라는 생산시간의 차이가 회전시간과 선대자본 요구에 미치는 영향을 물어야 한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다."
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다."
                     ],
                     "en": [
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It treats the issue as a merely technical classification or accounting label.",
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
                       "One should ask how the difference between direct labour-time and culture production time affects turnover time and the need for advanced capital.",
-                      "It fails to distinguish value production, value transfer, and turnover speed."
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value."
                     ]
                   },
                   "answer": 2,
@@ -16421,15 +16421,15 @@
                   },
                   "choices": {
                     "ko": [
-                      "이 문제를 단순한 기술 분류나 회계 명칭으로만 본다.",
-                      "판매와 구매가 그 자체로 보장된다고 전제한다.",
-                      "가치 생산과 가치 이전, 회전 속도를 서로 구분하지 않는다.",
+                      "생산시간 전체를 직접 노동시간과 같게 보아 자연과정 동안 자본이 묶이는 효과를 놓친다.",
+                      "자연과정이 진행되는 동안에도 선대자본이 생산에 다시 투입될 수 있다고 전제한다.",
+                      "숙성이나 발효 같은 대기 시간이 새 가치를 만드는 노동시간과 같다고 처리한다.",
                       "생산 내부의 시간 구조를 다룬 뒤, 생산 밖에서 자본을 묶는 유통시간 분석으로 넘어간다."
                     ],
                     "en": [
-                      "It treats the issue as a merely technical classification or accounting label.",
-                      "It assumes sale and purchase are automatically guaranteed.",
-                      "It fails to distinguish value production, value transfer, and turnover speed.",
+                      "It equates total production time with direct labor time and misses how capital is tied up during natural processes.",
+                      "It assumes advanced capital can be put back into production while the natural process is still unfolding.",
+                      "It treats waiting time such as aging or fermentation as if it were labor time creating new value.",
                       "After treating the time structure inside production, the argument moves to circulation time, which ties up capital outside production."
                     ]
                   },
@@ -16517,13 +16517,13 @@
                       "상품자본이 팔리고 생산요소가 다시 구매될 때까지 자본이 생산 밖에서 묶이는 시간을 분석한다.",
                       "판매가 늦어도 생산이 끝났으니 회전은 이미 완료되었다고 본다.",
                       "유통시간이 길수록 그 시간 자체가 새 가치를 만든다고 본다.",
-                      "유통시간을 단순한 운송 기술 문제로만 본다."
+                      "상품이 팔려 화폐로 돌아오기 전까지 자본이 생산으로 복귀하지 못한다는 점을 물류 속도 문제로만 좁힌다."
                     ],
                     "en": [
                       "It analyzes the time in which capital is tied up outside production while commodity-capital is sold and means of production and labour-power are bought again.",
                       "Treats turnover as completed once production is finished, even if sale is delayed.",
                       "Treats longer circulation time itself as creating new value.",
-                      "Reduces circulation time to a purely technical transport problem."
+                      "Reduces circulation time to logistics speed and misses that capital cannot return to production until the commodity is sold for money."
                     ]
                   },
                   "answer": 0,
@@ -16543,13 +16543,13 @@
                   "choices": {
                     "ko": [
                       "새 가치를 만들지 않으면서도 자본이 생산으로 돌아가는 시간을 늦추어 회전수를 줄인다.",
-                      "유통시간을 단순한 운송 기술 문제로만 본다.",
+                      "상품이 팔려 화폐로 돌아오기 전까지 자본이 생산으로 복귀하지 못한다는 점을 물류 속도 문제로만 좁힌다.",
                       "유통시간이 길수록 그 시간 자체가 새 가치를 만든다고 본다.",
                       "신용이 있으면 상품 판매와 가치 실현 문제가 사라진다고 본다."
                     ],
                     "en": [
                       "It creates no new value, yet delays capital’s return to production and reduces the number of turnovers.",
-                      "Reduces circulation time to a purely technical transport problem.",
+                      "Reduces circulation time to logistics speed and misses that capital cannot return to production until the commodity is sold for money.",
                       "Treats longer circulation time itself as creating new value.",
                       "Assumes credit abolishes the problem of sale and realization."
                     ]
@@ -16570,13 +16570,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "유통시간을 단순한 운송 기술 문제로만 본다.",
+                      "상품이 팔려 화폐로 돌아오기 전까지 자본이 생산으로 복귀하지 못한다는 점을 물류 속도 문제로만 좁힌다.",
                       "생산시간은 상품이 만들어지는 영역의 시간이고, 유통시간은 완성된 상품과 화폐가 매매를 통해 형태를 바꾸는 시간이다.",
                       "신용이 있으면 상품 판매와 가치 실현 문제가 사라진다고 본다.",
                       "생산시간과 유통시간을 같은 시간으로 취급한다."
                     ],
                     "en": [
-                      "Reduces circulation time to a purely technical transport problem.",
+                      "Reduces circulation time to logistics speed and misses that capital cannot return to production until the commodity is sold for money.",
                       "Production time belongs to the making of the commodity, while circulation time is the time in which completed commodities and money change form through sale and purchase.",
                       "Assumes credit abolishes the problem of sale and realization.",
                       "Treats production time and circulation time as the same time."
@@ -16667,13 +16667,13 @@
                       "유통은 자본에 필수적이지만, 유통시간 자체는 가치증식을 하지 않고 오히려 가치증식의 반복을 지연시킨다.",
                       "유통시간이 길수록 그 시간 자체가 새 가치를 만든다고 본다.",
                       "판매가 늦어도 생산이 끝났으니 회전은 이미 완료되었다고 본다.",
-                      "유통시간을 단순한 운송 기술 문제로만 본다."
+                      "상품이 팔려 화폐로 돌아오기 전까지 자본이 생산으로 복귀하지 못한다는 점을 물류 속도 문제로만 좁힌다."
                     ],
                     "en": [
                       "Circulation is necessary for capital, but circulation time itself does not valorize and instead delays the repetition of valorization.",
                       "Treats longer circulation time itself as creating new value.",
                       "Treats turnover as completed once production is finished, even if sale is delayed.",
-                      "Reduces circulation time to a purely technical transport problem."
+                      "Reduces circulation time to logistics speed and misses that capital cannot return to production until the commodity is sold for money."
                     ]
                   },
                   "answer": 0,
@@ -16694,13 +16694,13 @@
                     "ko": [
                       "유통시간이 길수록 그 시간 자체가 새 가치를 만든다고 본다.",
                       "선대자본이 생산자본에서 상품자본과 화폐자본을 거쳐 다시 생산자본으로 돌아오는 순환이다.",
-                      "유통시간을 단순한 운송 기술 문제로만 본다.",
+                      "상품이 팔려 화폐로 돌아오기 전까지 자본이 생산으로 복귀하지 못한다는 점을 물류 속도 문제로만 좁힌다.",
                       "신용이 있으면 상품 판매와 가치 실현 문제가 사라진다고 본다."
                     ],
                     "en": [
                       "Treats longer circulation time itself as creating new value.",
                       "The mediation is the circuit in which advanced capital moves from productive capital through commodity-capital and money-capital back to productive capital.",
-                      "Reduces circulation time to a purely technical transport problem.",
+                      "Reduces circulation time to logistics speed and misses that capital cannot return to production until the commodity is sold for money.",
                       "Assumes credit abolishes the problem of sale and realization."
                     ]
                   },
@@ -16720,13 +16720,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "유통시간을 단순한 운송 기술 문제로만 본다.",
+                      "상품이 팔려 화폐로 돌아오기 전까지 자본이 생산으로 복귀하지 못한다는 점을 물류 속도 문제로만 좁힌다.",
                       "신용이 있으면 상품 판매와 가치 실현 문제가 사라진다고 본다.",
                       "판매 가능성, 지불능력, 시장 연결처럼 가치 실현을 가능하게 하는 사회적 조건을 놓친다.",
                       "생산시간과 유통시간을 같은 시간으로 취급한다."
                     ],
                     "en": [
-                      "Reduces circulation time to a purely technical transport problem.",
+                      "Reduces circulation time to logistics speed and misses that capital cannot return to production until the commodity is sold for money.",
                       "Assumes credit abolishes the problem of sale and realization.",
                       "It misses the social conditions of realization: saleability, ability to pay, and market interconnection.",
                       "Treats production time and circulation time as the same time."

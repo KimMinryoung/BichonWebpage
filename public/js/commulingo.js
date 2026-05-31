@@ -274,7 +274,7 @@
                 '<strong>' + escapeHtml(group.title) + '</strong>',
                 '<small>' + escapeHtml(chapterCountLabel(countChapters(group.lessons))) + '</small>',
                 '<span class="commu-volume-progress">',
-                '<span class="commu-volume-progress-label">' + escapeHtml(progressLabel(groupProgress)) + '</span>',
+                '<span class="commu-volume-progress-label">' + progressLabelHtml(groupProgress) + '</span>',
                 '<span class="commu-volume-progress-track"><span style="width:' + groupProgress.percent + '%"></span></span>',
                 '</span>',
                 '</span>',
@@ -335,9 +335,12 @@
         };
     }
 
-    function progressLabel(stats) {
+    function progressLabelHtml(stats) {
         var label = lang === 'en' ? 'Progress' : '진도';
-        return label + ' ' + stats.percent + '% · ' + stats.completed + ' / ' + stats.total;
+        var percent = Number(stats.percent) || 0;
+        var completed = Number(stats.completed) || 0;
+        var total = Number(stats.total) || 0;
+        return escapeHtml(label + ' ') + '<span class="commu-volume-progress-percent">' + percent + '%</span>' + escapeHtml(' · ' + completed + ' / ' + total);
     }
 
     function groupLessons() {
