@@ -610,17 +610,31 @@
 
     function renderChoices(question) {
         els.choices.innerHTML = '';
-        var choices = question.type === 'true_false'
+        var choices = shuffleChoices((question.type === 'true_false'
             ? [lang === 'en' ? 'True' : '참', lang === 'en' ? 'False' : '거짓']
-            : text(question.choices);
-        choices.forEach(function(choice, index) {
+            : text(question.choices)).map(function(choice, index) {
+                return { label: choice, originalIndex: index };
+            }));
+        choices.forEach(function(choice) {
             var button = document.createElement('button');
             button.type = 'button';
             button.className = 'commu-choice';
-            button.textContent = choice;
-            button.addEventListener('click', function() { chooseAnswer(question, index); });
+            button.textContent = choice.label;
+            button.setAttribute('data-original-index', String(choice.originalIndex));
+            button.addEventListener('click', function() { chooseAnswer(question, choice.originalIndex); });
             els.choices.appendChild(button);
         });
+    }
+
+    function shuffleChoices(choices) {
+        var shuffled = choices.slice();
+        for (var i = shuffled.length - 1; i > 0; i -= 1) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = shuffled[i];
+            shuffled[i] = shuffled[j];
+            shuffled[j] = temp;
+        }
+        return shuffled;
     }
 
     function chooseAnswer(question, index) {
@@ -635,10 +649,11 @@
             active.streak = 0;
         }
 
-        Array.prototype.forEach.call(els.choices.children, function(button, i) {
+        Array.prototype.forEach.call(els.choices.children, function(button) {
+            var originalIndex = Number(button.getAttribute('data-original-index'));
             button.disabled = true;
-            if (i === correctIndex) button.classList.add('is-correct');
-            if (i === index && !correct) button.classList.add('is-wrong');
+            if (originalIndex === correctIndex) button.classList.add('is-correct');
+            if (originalIndex === index && !correct) button.classList.add('is-wrong');
         });
 
         els.feedback.className = 'commu-feedback' + (correct ? '' : ' is-wrong');
