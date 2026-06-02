@@ -20675,27 +20675,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본가가 폐열을 재사용하고 원료 손실을 줄이면, 새 가치가 생기지 않아도 이윤율에는 왜 변화가 생길 수 있는가?",
-                    "en": "What does Marx analyze in economy in the employment of constant capital?"
+                    "ko": "5장에서 불변자본 사용의 절약을 분석한다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that Chapter 5 analyzes economy in the employment of constant capital?"
                   },
                   "choices": {
                     "ko": [
-                      "원료, 기계, 건물, 에너지 같은 불변자본을 절약하는 방식이 이윤율을 어떻게 높일 수 있는지 분석한다.",
-                      "불변자본 절약은 대체로 노동착취율 상승과 같은 말이라고 본다.",
-                      "비용 절감은 사회 전체에 항상 같은 이익을 준다고 본다.",
-                      "원료와 기계는 새 가치를 만들기 때문에 절약이 이윤의 원천이라고 본다."
+                      "기계·건물·원료·동력 같은 불변자본 지출이 줄거나 더 효율적으로 쓰일 때, 같은 잉여가치가 더 높은 이윤율로 나타나는 과정을 분석한다.",
+                      "불변자본을 절약하면 생산수단의 사용가치가 직접 새 가치를 만들어 잉여가치 원천이 바뀌는 과정을 분석한다.",
+                      "비용 절감이 생기면 모든 사회적 비용도 같은 비율로 줄어드는 균형 과정을 분석한다.",
+                      "원료와 기계 가격이 내려가면 노동력 구매가 사라지고 이윤율이 기술비 절감률과 같아지는 과정을 분석한다."
                     ],
                     "en": [
-                      "He analyzes how economizing on constant capital such as materials, machinery, buildings, and energy can raise the rate of profit.",
-                      "Treats economy in constant capital as identical with a higher exploitation rate.",
-                      "Assumes cost saving always benefits society as a whole in the same way.",
-                      "Assumes materials and machinery create new value and are therefore the source of profit."
+                      "It analyzes how lower or more efficient outlays on constant capital, such as machinery, buildings, raw materials, and power, can make the same surplus-value appear as a higher profit rate.",
+                      "It analyzes how saving constant capital makes the use-value of means of production directly create new value and shift the source of surplus-value.",
+                      "It analyzes an equilibrium process in which every social cost falls in the same proportion whenever business costs fall.",
+                      "It analyzes how cheaper raw materials and machinery eliminate the purchase of labour-power and make the profit rate equal to the rate of technical cost saving."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "원료, 기계, 건물, 에너지 같은 불변자본을 절약하는 방식이 이윤율을 어떻게 높일 수 있는지 분석한다. 이 지점은 3권에서 잉여가치가 자본가에게 어떤 표면형태로 나타나는지 이해하는 출발점이다.",
-                    "en": "He analyzes how economizing on constant capital such as materials, machinery, buildings, and energy can raise the rate of profit. This is a starting point for understanding how surplus-value appears to capitalists in Volume III."
+                    "ko": "개념의 핵심은 분모와 비용가격이다. 불변자본은 새 가치를 만들지 않지만, 그 지출이 줄면 같은 잉여가치가 더 작은 총자본에 대해 계산되어 이윤율이 높아질 수 있다.",
+                    "en": "The conceptual point concerns the denominator and cost-price. Constant capital does not create new value, but when its outlay falls, the same surplus-value can be calculated against a smaller total capital and appear as a higher profit rate."
                   }
                 },
                 {
@@ -20703,27 +20703,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "불변자본 절약이 잉여가치율을 직접 높이지 않아도 이윤율을 높일 수 있는 이유는 무엇인가?",
-                    "en": "Why can economy in constant capital raise the profit rate even without directly raising the rate of surplus-value?"
+                    "ko": "잉여가치 s가 그대로인데 불변자본 c가 줄면 이윤율 p' = s/(c+v)는 어떻게 달라지는가?",
+                    "en": "If surplus-value s remains the same while constant capital c falls, how does the rate of profit p' = s/(c+v) change?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 잉여가치가 더 작은 총투하자본에 대해 계산되면 이윤율이 높아지기 때문이다.",
-                      "원료와 기계는 새 가치를 만들기 때문에 절약이 이윤의 원천이라고 본다.",
-                      "비용 절감은 사회 전체에 항상 같은 이익을 준다고 본다.",
-                      "작업장 안전 비용을 줄이는 것도 생산력 발전과 같은 절약이라고 본다."
+                      "분모 c+v가 작아지므로, 같은 s라도 더 높은 이윤율로 표현된다.",
+                      "분자 s가 c의 감소분만큼 자동으로 커지므로, 착취율과 이윤율이 함께 상승한다.",
+                      "분모가 작아지면 v도 같은 비율로 줄어 노동력 사용이 사라진다.",
+                      "c가 줄어도 이윤율은 판매가격 조정에서 주로 결정되어 공식의 분모 변화는 배경 조건으로 남는다."
                     ],
                     "en": [
-                      "Because the same surplus-value calculated against a smaller total advanced capital yields a higher profit rate.",
-                      "Assumes materials and machinery create new value and are therefore the source of profit.",
-                      "Assumes cost saving always benefits society as a whole in the same way.",
-                      "Treats cutting workplace safety costs as the same kind of economy as productive development."
+                      "The denominator c+v becomes smaller, so the same s is expressed as a higher rate of profit.",
+                      "The numerator s automatically grows by the amount c falls, so the exploitation rate and profit rate rise together.",
+                      "When the denominator shrinks, v also falls in the same proportion and the use of labour-power disappears.",
+                      "Even if c falls, the profit rate is treated as chiefly determined by selling-price adjustment, leaving the formula's denominator change as a background condition."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "같은 잉여가치가 더 작은 총투하자본에 대해 계산되면 이윤율이 높아지기 때문이다. 따라서 같은 착취관계도 자본구성, 회전, 가격 변동을 거치며 다른 수익성 지표로 나타난다.",
-                    "en": "Because the same surplus-value calculated against a smaller total advanced capital yields a higher profit rate. The same exploitation relation can therefore appear as different profitability measures through capital composition, turnover, and price changes."
+                    "ko": "공식상 효과는 분모에서 나온다. 불변자본 절약은 잉여가치 생산 자체를 늘리지 않아도 c+v를 낮춰 p'를 높일 수 있다. 이것이 착취율 상승과 구분되는 지점이다.",
+                    "en": "In the formula, the effect comes from the denominator. Economy in constant capital can raise p' by lowering c+v even without increasing the production of surplus-value. This distinguishes it from a rise in the rate of exploitation."
                   }
                 },
                 {
@@ -20731,27 +20731,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "불변자본 절약과 노동자 착취 강화를 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must economy in constant capital be distinguished from intensifying exploitation of workers?"
+                    "ko": "마르크스가 불변자본 절약을 단순한 사회적 합리성으로만 보지 않는 이유는 무엇인가?",
+                    "en": "Why does Marx not treat economy in constant capital simply as social rationality?"
                   },
                   "choices": {
                     "ko": [
-                      "원료와 기계는 새 가치를 만들기 때문에 절약이 이윤의 원천이라고 본다.",
-                      "전자는 주로 분모인 c+v를 줄이는 경로이고, 후자는 잉여가치 생산 자체를 늘리는 경로다.",
-                      "작업장 안전 비용을 줄이는 것도 생산력 발전과 같은 절약이라고 본다.",
-                      "이윤율의 분모 변화가 중요하지 않다고 본다."
+                      "절약은 생산력 발전에서 나오기도 하지만, 노동자의 안전·건강·공간 비용을 줄이거나 외부화하는 방식으로도 나타날 수 있기 때문이다.",
+                      "절약이 생기면 노동자에게 돌아갈 임금 몫도 같은 비율로 커져 자본과 노동의 이해가 일치하기 때문이다.",
+                      "불변자본 절약은 생산수단이 새 가치를 만드는 순간에만 성립하므로 노동조건과 별개이기 때문이다.",
+                      "작업장 비용 절감은 모두 기술 혁신의 결과라서 사회적 비용 전가와 구분할 필요가 작기 때문이다."
                     ],
                     "en": [
-                      "Assumes materials and machinery create new value and are therefore the source of profit.",
-                      "The former mainly reduces the denominator c+v, while the latter increases the production of surplus-value itself.",
-                      "Treats cutting workplace safety costs as the same kind of economy as productive development.",
-                      "Treats changes in the denominator of the profit rate as unimportant."
+                      "Because economy can arise from productive development, but also from reducing or externalizing costs of workers' safety, health, and workspace.",
+                      "Because whenever economy occurs, the wage share returning to workers grows in the same proportion, aligning the interests of capital and labour.",
+                      "Because economy in constant capital exists only when means of production create new value, making working conditions a separate matter.",
+                      "Because every reduction of workplace cost results from technical innovation, leaving little need to distinguish social cost-shifting."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "전자는 주로 분모인 c+v를 줄이는 경로이고, 후자는 잉여가치 생산 자체를 늘리는 경로다. 이 구분을 놓치면 이윤율의 표면이 잉여가치 생산관계를 대신 설명하는 것처럼 보인다.",
-                    "en": "The former mainly reduces the denominator c+v, while the latter increases the production of surplus-value itself. Without this distinction, the surface of the profit rate seems to explain the production relation of surplus-value itself."
+                    "ko": "오해는 비용 절감을 중립적 효율로만 읽는 데서 생긴다. 5장은 협업과 과학의 생산력뿐 아니라, 노동자의 안전·건강을 비용으로 계산하지 않는 자본주의적 절약도 함께 보여준다.",
+                    "en": "The misconception arises when cost saving is read as neutral efficiency alone. Chapter 5 shows not only the productive power of cooperation and science, but also capitalist economy that does not count workers' safety and health as costs."
                   }
                 },
                 {
@@ -20759,27 +20759,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "공장이 폐열을 재활용하고 원료 손실을 줄여 같은 생산량을 낸다. 이윤율 관점에서 무엇이 드러나는가?",
-                    "en": "A factory recycles waste heat and reduces material loss while producing the same output. What does this reveal for the profit rate?"
+                    "ko": "공장이 잔열을 재활용하고 원료 손실을 줄여 같은 생산량을 낸다. 5장의 관점에서 무엇이 드러나는가?",
+                    "en": "A factory reuses residual heat and reduces material loss while producing the same output. What does Chapter 5's standpoint reveal?"
                   },
                   "choices": {
                     "ko": [
-                      "작업장 안전 비용을 줄이는 것도 생산력 발전과 같은 절약이라고 본다.",
-                      "이윤율의 분모 변화가 중요하지 않다고 본다.",
-                      "불변자본 지출이 줄어 같은 잉여가치가 더 낮은 비용가격과 총자본에 대해 나타날 수 있다.",
-                      "불변자본 절약은 대체로 노동착취율 상승과 같은 말이라고 본다."
+                      "잔여물과 부산물의 활용은 원료·동력 지출을 낮춰 같은 잉여가치를 더 낮은 비용가격 위의 이윤으로 나타나게 할 수 있다.",
+                      "잔열과 부산물은 노동과 별도로 새 가치를 만들기 때문에 잉여가치율 계산의 분자가 된다.",
+                      "원료 손실이 줄면 상품의 사용가치가 커져 판매가격도 같은 비율로 상승한다.",
+                      "재활용 기술은 유통시간을 없애므로 회전수 계산을 건너뛰고 평균이윤율을 바로 만든다."
                     ],
                     "en": [
-                      "Treats cutting workplace safety costs as the same kind of economy as productive development.",
-                      "Treats changes in the denominator of the profit rate as unimportant.",
-                      "Outlays on constant capital fall, so the same surplus-value can appear against a lower cost-price and total capital.",
-                      "Treats economy in constant capital as identical with a higher exploitation rate."
+                      "The use of residual materials and by-products can lower outlays on raw materials and power, making the same surplus-value appear as profit over a lower cost-price.",
+                      "Residual heat and by-products create new value apart from labour and therefore become the numerator of the surplus-value rate.",
+                      "When material loss falls, the commodity's use-value grows and selling price rises in the same proportion.",
+                      "Recycling technology abolishes circulation time, bypasses turnover calculation, and directly forms the average rate of profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "불변자본 지출이 줄어 같은 잉여가치가 더 낮은 비용가격과 총자본에 대해 나타날 수 있다. 구체 사례에서도 핵심은 비용 절감이나 가격 변동이 잉여가치의 생산과 이윤율의 표현을 어떻게 다르게 매개하는가이다.",
-                    "en": "Outlays on constant capital fall, so the same surplus-value can appear against a lower cost-price and total capital. In concrete cases, the key is how cost saving or price movement mediates surplus-value production and the expression of the profit rate differently."
+                    "ko": "사례의 핵심은 잔여물과 부산물 활용이다. 그것은 새 가치의 원천이 아니라 불변자본 지출을 낮추는 방식이다. 그래서 같은 잉여가치가 더 낮은 비용가격에 대해 이윤으로 나타날 수 있다.",
+                    "en": "The case turns on the use of residual materials and by-products. They are not a new source of value, but a way to lower constant-capital outlays. The same surplus-value can therefore appear as profit over a lower cost-price."
                   }
                 },
                 {
@@ -20787,27 +20787,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 장이 자본주의적 생산의 사회적 성격에 대해 보여주는 것은 무엇인가?",
-                    "en": "What does this chapter show about the social character of capitalist production?"
+                    "ko": "5장의 불변자본 절약 분석은 왜 6장의 가격변동 분석으로 이어지는가?",
+                    "en": "Why does Chapter 5's analysis of economy in constant capital lead into Chapter 6's analysis of price fluctuations?"
                   },
                   "choices": {
                     "ko": [
-                      "비용 절감은 사회 전체에 항상 같은 이익을 준다고 본다.",
-                      "이윤율의 분모 변화가 중요하지 않다고 본다.",
-                      "불변자본 절약은 대체로 노동착취율 상승과 같은 말이라고 본다.",
-                      "협업, 과학, 집단적 생산조건의 발전이 개별 자본에게 비용절감과 이윤율 상승으로 전유될 수 있음을 보여준다."
+                      "5장이 불변자본 지출의 절약을 다루었다면, 6장은 원료와 생산수단의 가격 변동이 같은 분모와 비용가격을 어떻게 흔드는지 다룬다.",
+                      "5장에서 불변자본이 새 가치의 원천으로 확인되므로, 6장은 노동력 가격이 사라진 뒤의 순수 생산수단 가격을 다룬다.",
+                      "5장이 작업장 안전 문제로 끝나므로, 6장은 노동법 개정이 이윤율을 어떻게 정하는지 다룬다.",
+                      "5장에서 비용 절감이 평균이윤율을 완성하므로, 6장은 이윤율보다 지대의 가격표를 중심으로 전개된다."
                     ],
                     "en": [
-                      "Assumes cost saving always benefits society as a whole in the same way.",
-                      "Treats changes in the denominator of the profit rate as unimportant.",
-                      "Treats economy in constant capital as identical with a higher exploitation rate.",
-                      "It shows that cooperation, science, and collective conditions of production can be appropriated by individual capitals as cost savings and a higher profit rate."
+                      "If Chapter 5 treats economies in constant-capital outlay, Chapter 6 treats how price fluctuations of raw materials and means of production shake the same denominator and cost-price.",
+                      "Because Chapter 5 confirms constant capital as a source of new value, Chapter 6 treats pure means-of-production prices after the price of labour-power disappears.",
+                      "Because Chapter 5 ends with workplace safety, Chapter 6 treats how labour-law reform determines the profit rate.",
+                      "Because Chapter 5 completes the average rate of profit through cost saving, Chapter 6 develops around the price tag of rent rather than the profit rate."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "협업, 과학, 집단적 생산조건의 발전이 개별 자본에게 비용절감과 이윤율 상승으로 전유될 수 있음을 보여준다. 이 장은 앞선 이윤 개념을 더 구체적인 운동 법칙으로 밀고 나가는 역할을 한다.",
-                    "en": "It shows that cooperation, science, and collective conditions of production can be appropriated by individual capitals as cost savings and a higher profit rate. The chapter pushes the earlier concept of profit toward more concrete laws of motion."
+                    "ko": "다음 장으로의 연결은 불변자본의 가치 크기다. 5장은 절약과 효율화가 c를 낮출 수 있음을 보이고, 6장은 원료·생산수단 가격 자체의 등락이 c와 p'를 어떻게 바꾸는지 다룬다.",
+                    "en": "The link to the next chapter is the magnitude of constant-capital value. Chapter 5 shows how economy and efficiency can lower c; Chapter 6 asks how fluctuations in the prices of raw materials and means of production alter c and p'."
                   }
                 }
               ]
@@ -20825,27 +20825,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "불변자본 절약의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in economy of constant capital?"
+                    "ko": "마르크스가 대규모 협업과 기계제 생산에서 불변자본 절약을 찾는 이유는 무엇인가?",
+                    "en": "Why does Marx locate economy of constant capital in large-scale cooperation and machine production?"
                   },
                   "choices": {
                     "ko": [
-                      "사회적 생산력의 발전이 노동자를 덜 힘들게 하기보다 자본의 비용절감과 이윤율 상승으로 전환될 수 있다는 긴장이다.",
-                      "비용 절감은 사회 전체에 항상 같은 이익을 준다고 본다.",
-                      "불변자본 절약은 대체로 노동착취율 상승과 같은 말이라고 본다.",
-                      "원료와 기계는 새 가치를 만들기 때문에 절약이 이윤의 원천이라고 본다."
+                      "건물, 기계, 동력, 보조재료가 집단노동자에 의해 공동으로 사용되면서 단위 생산물에 들어가는 불변자본 부담이 줄 수 있기 때문이다.",
+                      "대규모 생산에서는 생산수단의 사용가치가 노동과 별도로 새 가치를 만들기 때문에 잉여가치율이 높아지기 때문이다.",
+                      "협업이 확대되면 임금 지출이 불변자본으로 전환되어 가변자본 항목이 비용가격에서 사라지기 때문이다.",
+                      "기계제 생산에서는 유통시간이 생산시간과 같아져 회전수 계산 없이 이윤율이 정해지기 때문이다."
                     ],
                     "en": [
-                      "The development of social productive power can be converted not into relief for workers but into cost saving and a higher profit rate for capital.",
-                      "Assumes cost saving always benefits society as a whole in the same way.",
-                      "Treats economy in constant capital as identical with a higher exploitation rate.",
-                      "Assumes materials and machinery create new value and are therefore the source of profit."
+                      "Because buildings, machinery, power, and auxiliary materials are used in common by the collective worker, reducing the burden of constant capital per unit of output.",
+                      "Because in large-scale production the use-value of means of production creates new value apart from labour and raises the rate of surplus-value.",
+                      "Because as cooperation expands wage outlay is converted into constant capital and the variable-capital item disappears from cost-price.",
+                      "Because in machine production circulation time becomes identical with production time and the profit rate is fixed without turnover calculation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "사회적 생산력의 발전이 노동자를 덜 힘들게 하기보다 자본의 비용절감과 이윤율 상승으로 전환될 수 있다는 긴장이다. 이 긴장은 이윤율이 단순한 회계비율이 아니라 착취관계의 전도된 표현임을 보여준다.",
-                    "en": "The development of social productive power can be converted not into relief for workers but into cost saving and a higher profit rate for capital. This tension shows that the rate of profit is not a mere accounting ratio but an inverted expression of exploitation."
+                    "ko": "심화의 출발점은 생산조건의 공동 사용이다. 협업과 대규모 기계제는 건물·기계·동력 등을 더 집중적으로 쓰게 하고, 그 결과 불변자본의 상대적 비용을 낮출 수 있다. 그 절약은 개별 자본의 이윤율 상승으로 전유된다.",
+                    "en": "The advanced starting point is the common use of production conditions. Cooperation and large-scale machinery let buildings, machines, and power be used more intensively, reducing the relative cost of constant capital. That economy is appropriated as a higher profit rate by individual capital."
                   }
                 },
                 {
@@ -20853,27 +20853,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "불변자본 절약과 이윤율을 매개하는 것은 무엇인가?",
-                    "en": "What mediates economy in constant capital and the rate of profit?"
+                    "ko": "불변자본 절약이 새 가치의 생산 없이도 이윤율에 작용하는 매개는 무엇인가?",
+                    "en": "What mediates the effect of constant-capital economy on the profit rate without producing new value?"
                   },
                   "choices": {
                     "ko": [
-                      "비용 절감은 사회 전체에 항상 같은 이익을 준다고 본다.",
-                      "불변자본 가치가 비용가격과 총투하자본에서 차지하는 비중이 매개한다.",
-                      "원료와 기계는 새 가치를 만들기 때문에 절약이 이윤의 원천이라고 본다.",
-                      "작업장 안전 비용을 줄이는 것도 생산력 발전과 같은 절약이라고 본다."
+                      "불변자본 가치가 비용가격과 총투하자본에서 차지하는 비중이 낮아져, 같은 s가 더 작은 c+v에 대해 계산되는 매개다.",
+                      "생산수단의 물리적 수명이 길어질수록 그 사용가치가 임금노동을 대신해 잉여가치율을 높이는 매개다.",
+                      "원료 손실 감소가 판매가격을 자동으로 올려 s 자체를 같은 비율로 늘리는 매개다.",
+                      "공동 사용이 유통시간을 없애 평균이윤율을 개별 자본의 회전수로 대체하는 매개다."
                     ],
                     "en": [
-                      "Assumes cost saving always benefits society as a whole in the same way.",
-                      "The mediation is the share of constant capital value in cost-price and total advanced capital.",
-                      "Assumes materials and machinery create new value and are therefore the source of profit.",
-                      "Treats cutting workplace safety costs as the same kind of economy as productive development."
+                      "The mediation is the reduced share of constant-capital value in cost-price and total advanced capital, so the same s is calculated against a smaller c+v.",
+                      "The longer the physical lifetime of means of production, the more their use-value replaces wage-labour and raises the rate of surplus-value.",
+                      "Reduced material loss automatically raises selling price and increases s in the same proportion.",
+                      "Common use abolishes circulation time and replaces the average rate of profit with the turnover number of individual capital."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "불변자본 가치가 비용가격과 총투하자본에서 차지하는 비중이 매개한다. 매개를 보아야 값, 비용가격, 이윤율 사이의 이동이 기계적 변환이 아니라 사회적 형식 변화임을 이해할 수 있다.",
-                    "en": "The mediation is the share of constant capital value in cost-price and total advanced capital. Seeing the mediation shows that movement between value, cost-price, and profit rate is a social change of form, not a mechanical conversion."
+                    "ko": "매개는 비용가격과 총자본의 크기다. 불변자본 절약은 s를 직접 만들지 않는다. 하지만 c를 낮추거나 같은 c를 더 많은 생산량에 분산시켜, 같은 s가 더 높은 p'로 표현되게 한다.",
+                    "en": "The mediation is the size of cost-price and total capital. Economy in constant capital does not directly create s. It lowers c or spreads the same c over more output, so the same s is expressed as a higher p'."
                   }
                 },
                 {
@@ -20881,27 +20881,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "자본가의 절약을 사회 전체의 순수한 합리성으로 보는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by treating capitalist economy as pure rationality for society as a whole?"
+                    "ko": "5장에서 ‘노동조건의 절약’이 비판적 의미를 갖는 이유는 무엇인가?",
+                    "en": "Why does “economy in the conditions of labour” have a critical meaning in Chapter 5?"
                   },
                   "choices": {
                     "ko": [
-                      "원료와 기계는 새 가치를 만들기 때문에 절약이 이윤의 원천이라고 본다.",
-                      "작업장 안전 비용을 줄이는 것도 생산력 발전과 같은 절약이라고 본다.",
-                      "비용 절감이 노동자의 안전, 건강, 작업환경 비용을 외부화하거나 집단적 생산력을 사적으로 전유할 수 있음을 놓친다.",
-                      "이윤율의 분모 변화가 중요하지 않다고 본다."
+                      "자본은 환기, 안전장치, 공간, 청결 같은 비용을 줄여 이윤율을 높일 수 있지만, 그 절약은 노동자에게 위험과 질병으로 돌아갈 수 있기 때문이다.",
+                      "노동조건 비용이 줄면 노동자의 생활비도 자동으로 낮아져 노동력 가치가 안정되기 때문이다.",
+                      "안전설비는 불변자본이 아니므로 비용가격과 총자본 계산에 들어가지 않기 때문이다.",
+                      "작업장 개선은 자본가의 비용 절감과 노동자의 건강 개선을 같은 방향의 효과로 묶는 경향이 있기 때문이다."
                     ],
                     "en": [
-                      "Assumes materials and machinery create new value and are therefore the source of profit.",
-                      "Treats cutting workplace safety costs as the same kind of economy as productive development.",
-                      "It misses that cost saving can externalize workers’ safety, health, and working-condition costs or privately appropriate collective productive powers.",
-                      "Treats changes in the denominator of the profit rate as unimportant."
+                      "Because capital can raise the profit rate by cutting costs for ventilation, safeguards, space, and cleanliness, while that economy returns to workers as danger and illness.",
+                      "Because when labour-condition costs fall, workers' living costs automatically fall and the value of labour-power stabilizes.",
+                      "Because safety equipment is not constant capital and therefore does not enter cost-price or total-capital calculation.",
+                      "Because workplace improvement tends to join capital's cost saving and workers' health improvement as effects moving in the same direction."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "비용 절감이 노동자의 안전, 건강, 작업환경 비용을 외부화하거나 집단적 생산력을 사적으로 전유할 수 있음을 놓친다. 마르크스의 비판은 현상 자체를 부정하지 않고, 그 현상이 어떤 생산관계를 가리는지 밝힌다.",
-                    "en": "It misses that cost saving can externalize workers’ safety, health, and working-condition costs or privately appropriate collective productive powers. Marx does not deny the phenomenon itself; he shows what production relation it conceals."
+                    "ko": "이 장의 비판성은 절약의 이중성에 있다. 생산력 발전에 따른 실제 절약도 있지만, 자본은 노동자의 몸과 생활조건에 비용을 전가하는 방식으로도 c를 낮출 수 있다.",
+                    "en": "The chapter's critical force lies in the dual character of economy. There is real economy from productive development, but capital can also lower c by shifting costs onto workers' bodies and living conditions."
                   }
                 },
                 {
@@ -20909,27 +20909,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "기업이 안전 설비를 줄여 유지비를 낮추고 이윤율을 올린다. 마르크스의 관점에서 무엇을 구분해야 하는가?",
-                    "en": "A firm cuts safety equipment, lowers maintenance costs, and raises its profit rate. What must be distinguished from Marx’s standpoint?"
+                    "ko": "기업이 안전 설비와 환기 비용을 줄여 유지비를 낮추고 이윤율을 올린다. 5장의 관점에서 무엇을 구분해야 하는가?",
+                    "en": "A firm cuts safety equipment and ventilation costs, lowers maintenance costs, and raises its profit rate. What must be distinguished from Chapter 5's standpoint?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율의 분모 변화가 중요하지 않다고 본다.",
-                      "작업장 안전 비용을 줄이는 것도 생산력 발전과 같은 절약이라고 본다.",
-                      "생산력 발전에 따른 실제 절약과 노동자 위험을 비용으로 계산하지 않는 자본주의적 절약을 구분해야 한다.",
-                      "불변자본 절약은 대체로 노동착취율 상승과 같은 말이라고 본다."
+                      "생산력 발전에 따른 실제 절약과 노동자 위험·질병을 비용으로 계산하지 않는 자본주의적 절약을 구분해야 한다.",
+                      "안전 설비가 줄어든 만큼 노동자의 숙련이 증가해 같은 위험을 상쇄하는지 구분해야 한다.",
+                      "유지비 절감이 판매가격을 같은 비율로 올려 잉여가치 총량을 늘렸는지 구분해야 한다.",
+                      "안전 비용이 불변자본에서 가변자본으로 이동해 임금 지출로 보상되었는지 구분해야 한다."
                     ],
                     "en": [
-                      "Treats changes in the denominator of the profit rate as unimportant.",
-                      "Treats cutting workplace safety costs as the same kind of economy as productive development.",
-                      "One must distinguish real economy from productive development and capitalist economy that does not count risks imposed on workers as costs.",
-                      "Treats economy in constant capital as identical with a higher exploitation rate."
+                      "One must distinguish real economy from productive development and capitalist economy that does not count workers' risks and illness as costs.",
+                      "One must distinguish whether workers' skill rises enough to offset the risk created by reduced safety equipment.",
+                      "One must distinguish whether lower maintenance costs raised selling price in the same proportion and increased the total mass of surplus-value.",
+                      "One must distinguish whether safety costs moved from constant capital to variable capital and were compensated through wages."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산력 발전에 따른 실제 절약과 노동자 위험을 비용으로 계산하지 않는 자본주의적 절약을 구분해야 한다. 현대 사례도 같은 기준으로 읽을 수 있다. 표면의 수익성 변화와 잉여가치 생산의 원천을 분리해야 한다.",
-                    "en": "One must distinguish real economy from productive development and capitalist economy that does not count risks imposed on workers as costs. Modern cases can be read by the same criterion: separate surface profitability changes from the source of surplus-value production."
+                    "ko": "현대 사례에서도 표면의 비용 절감만 보면 안 된다. 같은 이윤율 상승이라도 그것이 기술적 절약인지, 노동자에게 위험 비용을 전가한 결과인지 구분해야 한다.",
+                    "en": "In modern cases too, one should not stop at surface cost saving. The same rise in the profit rate must be distinguished according to whether it comes from technical economy or from shifting risk costs onto workers."
                   }
                 },
                 {
@@ -20937,27 +20937,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "불변자본 사용 절약의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of economy in constant capital?"
+                    "ko": "5장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Chapter 5?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율의 분모 변화가 중요하지 않다고 본다.",
-                      "불변자본 절약은 대체로 노동착취율 상승과 같은 말이라고 본다.",
-                      "비용 절감은 사회 전체에 항상 같은 이익을 준다고 본다.",
-                      "이윤율이 잉여가치율뿐 아니라 불변자본 비용과 생산조건의 사회적 조직에도 좌우됨을 보여준다."
+                      "이윤율이 잉여가치율뿐 아니라 불변자본의 가치 크기, 공동 사용, 잔여물 활용, 노동조건 비용 전가에도 좌우됨을 보여준다.",
+                      "이 장은 불변자본이 새 가치의 원천임을 증명해 앞선 가변자본 분석을 보완한다.",
+                      "이 장은 비용 절감을 사회 전체의 순효율로 정리해 자본과 노동 사이의 이해 충돌을 중립화한다.",
+                      "이 장은 이윤율의 분모 문제를 끝내고 다음 장부터는 순수한 시장수요 분석으로 이동한다."
                     ],
                     "en": [
-                      "Treats changes in the denominator of the profit rate as unimportant.",
-                      "Treats economy in constant capital as identical with a higher exploitation rate.",
-                      "Assumes cost saving always benefits society as a whole in the same way.",
-                      "It shows that the profit rate depends not only on the rate of surplus-value but also on constant-capital costs and the social organization of production conditions."
+                      "It shows that the profit rate depends not only on the rate of surplus-value but also on the value magnitude of constant capital, common use, residual-material utilization, and shifting the costs of labour conditions.",
+                      "The chapter proves that constant capital is a source of new value and thereby supplements the earlier analysis of variable capital.",
+                      "The chapter organizes cost saving as a net social efficiency and neutralizes the conflict of interest between capital and labour.",
+                      "The chapter completes the denominator problem of the profit rate and moves next to pure market-demand analysis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율이 잉여가치율뿐 아니라 불변자본 비용과 생산조건의 사회적 조직에도 좌우됨을 보여준다. 이 연결이 다음 장들의 평균이윤, 경쟁, 생산가격 분석으로 이어진다.",
-                    "en": "It shows that the profit rate depends not only on the rate of surplus-value but also on constant-capital costs and the social organization of production conditions. This connection leads into the later analysis of average profit, competition, and prices of production."
+                    "ko": "5장은 이윤율의 분모를 사회적 생산조건과 연결한다. 기계·건물의 공동 사용, 원료 절약, 부산물 활용, 노동조건 비용 전가가 모두 p'에 영향을 준다. 이 때문에 6장의 가격변동 분석으로 자연스럽게 이어진다.",
+                    "en": "Chapter 5 connects the denominator of the profit rate with social production conditions. Common use of machinery and buildings, raw-material economy, by-product utilization, and shifting labour-condition costs all affect p'. This naturally leads to Chapter 6's analysis of price fluctuations."
                   }
                 }
               ]
