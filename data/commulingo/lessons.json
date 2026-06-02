@@ -23160,27 +23160,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 보충 설명에서 마르크스가 생산가격 논의를 어떻게 보완하는가?",
-                    "en": "How does Marx supplement the discussion of prices of production here?"
+                    "ko": "12장의 보충 설명에서 생산가격이 변하는 두 기본 경로는 무엇인가?",
+                    "en": "What two basic paths can change a price of production in Chapter 12?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격, 시장가치, 경쟁, 임금변동이 서로 얽히는 방식을 보완해 평균이윤 분석의 조건을 더 분명히 한다.",
-                      "생산가격 공식만 알면 경쟁과 평균이윤 분석은 필요 없다고 본다.",
-                      "시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.",
-                      "가격이 가치와 다르면 가치관계는 사라졌다고 본다."
+                      "일반 이윤율이 변하거나, 일반 이윤율이 그대로인 상태에서 그 상품 자체의 재생산 가치가 변하는 경우다.",
+                      "소비자가 같은 상품을 더 자주 찾거나, 상인이 판매 문구를 더 공격적으로 바꾸는 경우다.",
+                      "개별 자본가가 평균이윤을 먼저 정하거나, 임금 지급일을 회계상 뒤로 미루는 경우다.",
+                      "시장가격이 하루 동안 상승하거나, 재고 창고의 위치가 도심에서 항구로 옮겨지는 경우다."
                     ],
                     "en": [
-                      "He clarifies the conditions of average-profit analysis by supplementing how prices of production, market-values, competition, and wage changes interrelate.",
-                      "Assumes knowing the formula for price of production makes competition and average profit unnecessary.",
-                      "Identifies short-term market-price fluctuation with the center of prices of production.",
-                      "Assumes value relations disappear when prices differ from values."
+                      "Either the general rate of profit changes, or the commodity’s own reproduction value changes while the general rate remains the same.",
+                      "Consumers may seek the same commodity more often, or merchants may change their sales language more aggressively.",
+                      "Individual capitalists may set average profit first, or postpone payday in the accounts.",
+                      "Market price may rise during a day, or warehouses may move from downtown to a port."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산가격, 시장가치, 경쟁, 임금변동이 서로 얽히는 방식을 보완해 평균이윤 분석의 조건을 더 분명히 한다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
-                    "en": "He clarifies the conditions of average-profit analysis by supplementing how prices of production, market-values, competition, and wage changes interrelate. This is the starting point for the analysis of average profit and prices of production."
+                    "ko": "마르크스는 생산가격 변화를 두 경로로 정리한다. 하나는 일반 이윤율의 변화이고, 다른 하나는 해당 상품이나 그 투입물의 재생산에 필요한 노동시간 변화다.",
+                    "en": "Marx reduces changes in prices of production to two paths: a change in the general rate of profit, or a change in the labour-time required to reproduce the commodity or its inputs."
                   }
                 },
                 {
@@ -23188,41 +23188,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산가격을 단순한 공식으로만 암기하면 왜 부족한가?",
-                    "en": "Why is it insufficient to memorize price of production as a simple formula?"
+                    "ko": "생산가격 공식 k+kp'를 암기할 때 놓치기 쉬운 점은 무엇인가?",
+                    "en": "What is easy to miss when memorizing the formula k+kp'?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격은 비용가격+평균이윤이라는 공식이지만, 그 배후에는 부문별 자본구성, 경쟁, 총잉여가치 재분배가 있다.",
-                      "가격이 가치와 다르면 가치관계는 사라졌다고 본다.",
-                      "시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.",
-                      "수요공급이 잉여가치를 생산한다고 본다.로만 설명하는 해석"
+                      "k 자체도 이미 생산가격으로 산 투입물을 포함할 수 있어, 가치와 생산가격의 차이가 비용가격 안에 들어올 수 있다.",
+                      "k는 판매 뒤에 남은 순이윤이므로 평균이윤을 더하기 전에 계산할 수 없다.",
+                      "p'는 개별 기업의 광고 효율을 뜻해 같은 부문 안에서만 비교된다.",
+                      "k+kp'는 시장가격의 단기 최고가와 최저가를 더한 뒤 평균을 내는 공식이다."
                     ],
                     "en": [
-                      "Price of production is cost-price plus average profit, but behind the formula stand branch composition, competition, and redistribution of total surplus-value.",
-                      "Assumes value relations disappear when prices differ from values.",
-                      "Identifies short-term market-price fluctuation with the center of prices of production.",
-                      "Assumes supply and demand produce surplus-value."
+                      "k itself may include inputs bought at prices of production, so divergences between value and production price can enter cost-price.",
+                      "k is the net profit left after sale and cannot be calculated before average profit is added.",
+                      "p' means an individual firm’s advertising efficiency and is compared only within one branch.",
+                      "k+kp' averages the short-term high and low points of market price."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산가격은 비용가격+평균이윤이라는 공식이지만, 그 배후에는 부문별 자본구성, 경쟁, 총잉여가치 재분배가 있다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
-                    "en": "Price of production is cost-price plus average profit, but behind the formula stand branch composition, competition, and redistribution of total surplus-value. The core is to see the mediation between individual value calculation and social competition."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 생산가격은 비용가격+평균이윤이라는 공식이지만, 그 배후에는 부문별 자본구성, 경쟁, 총잉여가치 재분배가 있다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
-                      "오해 진단: \"가격이 가치와 다르면 가치관계는 사라졌다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"수요공급이 잉여가치를 생산한다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: Price of production is cost-price plus average profit, but behind the formula stand branch composition, competition, and redistribution of total surplus-value. The core is to see the mediation between individual value calculation and social competition.",
-                      "Misconception check: choosing \"Assumes value relations disappear when prices differ from values.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Identifies short-term market-price fluctuation with the center of prices of production.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes supply and demand produce surplus-value.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "비용가격은 순수한 가치 묶음이 아닐 수 있다. 투입물도 이미 생산가격으로 구매되므로, 전환 문제는 산출물뿐 아니라 비용가격의 구성까지 건드린다.",
+                    "en": "Cost-price need not be a pure bundle of values. Inputs may already be purchased at prices of production, so transformation affects the composition of cost-price as well as outputs."
                   }
                 },
                 {
@@ -23230,27 +23216,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시장가격의 움직임과 생산가격의 중심을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must movements of market price be distinguished from the center of prices of production?"
+                    "ko": "평균 구성 자본의 상품에서 임금 변동이 생산가격을 바꾸지 않는 이유는 무엇인가?",
+                    "en": "Why does a wage change not alter the price of production of commodities produced by average-composition capital?"
                   },
                   "choices": {
                     "ko": [
-                      "가격이 가치와 다르면 가치관계는 사라졌다고 본다.",
-                      "시장가격은 수요공급으로 출렁일 수 있지만, 생산가격은 평균이윤율을 전제로 한 장기적 중심으로 작용한다.",
-                      "수요공급이 잉여가치를 생산한다고 본다.",
-                      "보충 설명을 앞 장의 단순 반복으로만 본다."
+                      "비용가격의 변화와 평균이윤율의 반대 방향 변화가 맞물려, 평균 구성에서는 생산가격이 가치와 같은 기준을 유지하기 때문이다.",
+                      "평균 구성 자본은 가변자본을 쓰지 않아 임금 변화가 비용가격에 들어오지 않기 때문이다.",
+                      "평균 구성 상품은 시장가격보다 국가 표준가격을 중심으로 거래되기 때문이다.",
+                      "임금 상승분이 전부 소비자 신용으로 이전되어 자본가의 계산표에 남지 않기 때문이다."
                     ],
                     "en": [
-                      "Assumes value relations disappear when prices differ from values.",
-                      "Market prices can fluctuate with supply and demand, while prices of production act as a longer-term center presupposing the average profit rate.",
-                      "Assumes supply and demand produce surplus-value.",
-                      "Treats the supplementary remarks as a simple repetition of the previous chapter."
+                      "The change in cost-price and the opposite movement of the average profit rate interlock, so average composition keeps price of production aligned with value.",
+                      "Average-composition capital uses no variable capital, so wage changes do not enter cost-price.",
+                      "Average-composition commodities trade around state standard prices rather than market prices.",
+                      "The wage increase is entirely transferred into consumer credit and leaves no trace in capitalist calculation."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "시장가격은 수요공급으로 출렁일 수 있지만, 생산가격은 평균이윤율을 전제로 한 장기적 중심으로 작용한다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
-                    "en": "Market prices can fluctuate with supply and demand, while prices of production act as a longer-term center presupposing the average profit rate. Without this distinction, one cannot explain how value, market-value, and price of production diverge."
+                    "ko": "평균 구성에서는 생산가격과 가치가 일치하는 기준점이 된다. 임금 변동은 잉여가치와 평균이윤율을 바꾸지만, 그 효과가 생산가격 안에서 상쇄된다.",
+                    "en": "Average composition is the benchmark where price of production and value coincide. Wage changes alter surplus-value and the average rate of profit, but their effects offset within the price of production."
                   }
                 },
                 {
@@ -23258,27 +23244,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "한 산업의 가격은 단기 수요 폭증으로 올랐지만 신규 자본 유입으로 시간이 지나며 수익률이 낮아진다. 무엇을 봐야 하는가?",
-                    "en": "An industry’s price rises with a short-term demand surge, but new capital enters and profitability later falls. What should be examined?"
+                    "ko": "한 산업의 수익률이 한동안 높다가 신규 자본 유입 뒤 낮아지는 사례를 12장으로 읽을 때 핵심은 무엇인가?",
+                    "en": "What is central in reading a branch whose return is high for a while and then falls after new capital enters?"
                   },
                   "choices": {
                     "ko": [
-                      "수요공급이 잉여가치를 생산한다고 본다.",
-                      "보충 설명을 앞 장의 단순 반복으로만 본다.",
-                      "일시적 시장가격 변동과 자본이동을 통한 생산가격·평균이윤율 중심으로의 조정을 구분해야 한다.",
-                      "생산가격 공식만 알면 경쟁과 평균이윤 분석은 필요 없다고 본다."
+                      "시장가격의 일시적 상승과, 자본 이동이 평균이윤율을 향해 가격을 조정하는 장기 과정을 구별해야 한다.",
+                      "처음 들어온 자본이 뒤따라온 자본보다 더 많은 노동시간을 소유한다는 점을 확인해야 한다.",
+                      "수익률 하락은 상품 가치가 사라진 결과이므로 이후에는 수요량만 계산하면 된다.",
+                      "신규 자본 유입은 생산가격 공식 밖의 금융 사건이라 평균이윤 분석과 별도로 처리한다."
                     ],
                     "en": [
-                      "Assumes supply and demand produce surplus-value.",
-                      "Treats the supplementary remarks as a simple repetition of the previous chapter.",
-                      "One must distinguish temporary market-price fluctuation from adjustment toward prices of production and the average profit rate through capital movement.",
-                      "Assumes knowing the formula for price of production makes competition and average profit unnecessary."
+                      "One must distinguish a temporary rise in market price from the longer process in which capital movement adjusts prices toward average profit.",
+                      "One must confirm that the first capital owns more labour-time than the later capital.",
+                      "The falling return means commodity value has disappeared, so only demand volume needs to be calculated afterward.",
+                      "New capital inflow is a financial event outside the formula of price of production and is treated separately from average profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "일시적 시장가격 변동과 자본이동을 통한 생산가격·평균이윤율 중심으로의 조정을 구분해야 한다. 구체 사례는 개별 기업의 기술 차이가 경쟁 속에서 어떤 사회적 가격형태로 나타나는지를 보여준다.",
-                    "en": "One must distinguish temporary market-price fluctuation from adjustment toward prices of production and the average profit rate through capital movement. The concrete case shows how technical differences between firms appear as social price forms through competition."
+                    "ko": "12장은 경쟁이 만든 보상 근거와 평균화의식을 다룬다. 자본은 높은 이윤이 있는 곳으로 이동하고, 그 이동은 수급과 가격을 평균이윤의 기준으로 되돌리는 압력을 만든다.",
+                    "en": "Chapter 12 treats the grounds of compensation and the consciousness of averaging produced by competition. Capital moves toward high profit, and that movement pressures supply, demand, and price back toward average profit."
                   }
                 },
                 {
@@ -23286,27 +23272,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 보충 설명이 다음 논의로 넘기는 문제는 무엇인가?",
-                    "en": "What problem do these supplementary remarks hand over to the next discussion?"
+                    "ko": "12장의 보충 설명은 13장의 이윤율 저하 경향 논의로 어떻게 넘어가는가?",
+                    "en": "How does Chapter 12 lead into Chapter 13’s tendency of the rate of profit to fall?"
                   },
                   "choices": {
                     "ko": [
-                      "시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.",
-                      "보충 설명을 앞 장의 단순 반복으로만 본다.",
-                      "생산가격 공식만 알면 경쟁과 평균이윤 분석은 필요 없다고 본다.",
-                      "평균이윤과 생산가격을 정리한 뒤, 상업이윤·이자·지대 같은 더 구체적 수익형태 분석으로 나아갈 토대를 만든다."
+                      "생산가격과 평균이윤의 보충 조건을 정리한 뒤, 평균이윤율 자체가 자본축적 속에서 어떤 압력을 받는지 묻는 단계로 넘어간다.",
+                      "상업자본의 독립 기능을 먼저 설명한 뒤, 상업이윤의 원천을 이윤율 저하로 환원하는 단계로 넘어간다.",
+                      "지대와 이자의 분배 비율을 확정한 뒤, 토지소유가 평균이윤을 고정하는 과정을 묻는다.",
+                      "임금 변동이 모든 가격을 설명한다는 결론을 세운 뒤, 생산력 발전 문제를 뒤로 미룬다."
                     ],
                     "en": [
-                      "Identifies short-term market-price fluctuation with the center of prices of production.",
-                      "Treats the supplementary remarks as a simple repetition of the previous chapter.",
-                      "Assumes knowing the formula for price of production makes competition and average profit unnecessary.",
-                      "After clarifying average profit and prices of production, they prepare the ground for more concrete revenue forms such as commercial profit, interest, and rent."
+                      "After clarifying supplementary conditions of prices of production and average profit, it turns to the pressure accumulation places on the average profit rate itself.",
+                      "It first explains the independent function of commercial capital and then reduces the source of commercial profit to the falling rate of profit.",
+                      "It fixes the distribution of rent and interest and then asks how landownership stabilizes average profit.",
+                      "It concludes that wage changes explain all prices and postpones the problem of productive development."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "평균이윤과 생산가격을 정리한 뒤, 상업이윤·이자·지대 같은 더 구체적 수익형태 분석으로 나아갈 토대를 만든다. 이는 3권의 핵심 과제인 가치법칙의 표면형태를 설명하는 과정이다.",
-                    "en": "After clarifying average profit and prices of production, they prepare the ground for more concrete revenue forms such as commercial profit, interest, and rent. This is part of Volume III’s central task: explaining the surface forms of the law of value."
+                    "ko": "12장은 2편의 평균이윤·생산가격 논의를 닫는다. 13장은 그 평균이윤율이 자본주의 생산력 발전과 유기적 구성 상승 속에서 하락 압력을 받는다는 문제를 연다.",
+                    "en": "Chapter 12 closes Part II’s analysis of average profit and prices of production. Chapter 13 opens the question of how the average profit rate comes under downward pressure as productive forces and organic composition develop."
                   }
                 }
               ]
@@ -23324,27 +23310,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "보충 설명의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of these supplementary remarks?"
+                    "ko": "일반 이윤율 변화로 어떤 상품의 생산가격이 변했다면, 그 상품 자체의 가치는 어떤 상태일 수 있는가?",
+                    "en": "If a commodity’s price of production changes because the general rate of profit changes, what may be true of its own value?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격은 가치에서 벗어난 것처럼 보이지만, 실제로는 가치와 잉여가치가 경쟁 속에서 관철되는 중심형태라는 긴장이다.",
-                      "시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.",
-                      "생산가격 공식만 알면 경쟁과 평균이윤 분석은 필요 없다고 본다.",
-                      "가격이 가치와 다르면 가치관계는 사라졌다고 본다."
+                      "그 상품 자체의 가치는 그대로일 수 있지만, 다른 상품들의 가치 변화가 일반 이윤율을 움직였을 수 있다.",
+                      "그 상품 자체의 가치도 같은 비율로 변해야 생산가격 변화가 설명된다.",
+                      "가치가 그대로라면 생산가격 변화는 광고비 계정의 착오로 처리된다.",
+                      "일반 이윤율 변화는 개별 상품 가치와 같은 부문 안에서만 발생한다."
                     ],
                     "en": [
-                      "Prices of production seem to depart from value, yet they are the central form through which value and surplus-value are enforced in competition.",
-                      "Identifies short-term market-price fluctuation with the center of prices of production.",
-                      "Assumes knowing the formula for price of production makes competition and average profit unnecessary.",
-                      "Assumes value relations disappear when prices differ from values."
+                      "Its own value may remain unchanged, while value changes in other commodities may have moved the general rate of profit.",
+                      "Its own value must change by the same ratio for the price of production to change.",
+                      "If value remains unchanged, the price change is treated as an advertising-account error.",
+                      "A change in the general rate of profit occurs only within the same branch as the individual commodity."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산가격은 가치에서 벗어난 것처럼 보이지만, 실제로는 가치와 잉여가치가 경쟁 속에서 관철되는 중심형태라는 긴장이다. 이 긴장을 보아야 가치와 가격의 차이를 가치법칙의 폐기가 아니라 매개된 형태로 이해할 수 있다.",
-                    "en": "Prices of production seem to depart from value, yet they are the central form through which value and surplus-value are enforced in competition. This tension lets us understand the divergence between value and price as a mediated form, not as the abolition of the law of value."
+                    "ko": "마르크스는 생산가격 변화를 사회적 총관계로 본다. 일반 이윤율이 바뀌면 특정 상품의 가치가 그대로여도 생산가격은 달라질 수 있다.",
+                    "en": "Marx treats price of production through social aggregate relations. If the general rate of profit changes, a commodity’s production price can change even when its own value remains unchanged."
                   }
                 },
                 {
@@ -23352,27 +23338,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "시장가격, 시장가치, 생산가격을 함께 묶는 매개는 무엇인가?",
-                    "en": "What mediates market price, market-value, and price of production together?"
+                    "ko": "평균 구성 상품의 비용가격이 투입물의 가치합과 다를 수 있다는 지적은 왜 중요한가?",
+                    "en": "Why is it important that the cost-price of average-composition commodities may differ from the sum of input values?"
                   },
                   "choices": {
                     "ko": [
-                      "시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.",
-                      "동일 부문 내부 경쟁, 부문 간 자본이동, 평균이윤율 형성이 함께 매개한다.",
-                      "가격이 가치와 다르면 가치관계는 사라졌다고 본다.",
-                      "수요공급이 잉여가치를 생산한다고 본다."
+                      "전환은 완성품의 판매가격뿐 아니라 투입물로 들어오는 생산가격까지 포함해 누적적으로 작동하기 때문이다.",
+                      "평균 구성 상품은 가치와 생산가격이 일치하므로 투입물 가격의 차이가 분석에서 사라지기 때문이다.",
+                      "비용가격 차이는 유통업자가 붙인 수수료의 크기를 말하므로 생산가격 논의와 분리되기 때문이다.",
+                      "투입물의 가치합은 노동시간이 아니라 회계연도 길이로 정해진다는 뜻이기 때문이다."
                     ],
                     "en": [
-                      "Identifies short-term market-price fluctuation with the center of prices of production.",
-                      "They are mediated together by competition within a branch, movement of capital between branches, and formation of the average rate of profit.",
-                      "Assumes value relations disappear when prices differ from values.",
-                      "Assumes supply and demand produce surplus-value."
+                      "Because transformation works cumulatively, including not only output prices but also prices of production entering as inputs.",
+                      "Because average-composition commodities have value and production price aligned, so input price differences disappear from analysis.",
+                      "Because cost-price differences mean merchant fees and are separate from prices of production.",
+                      "Because the sum of input values is determined by fiscal-year length rather than labour-time."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "동일 부문 내부 경쟁, 부문 간 자본이동, 평균이윤율 형성이 함께 매개한다. 매개를 놓치면 경쟁이 가치관계를 만들어내는 것처럼 보이거나, 반대로 경쟁을 단순한 외부 소음으로 보게 된다.",
-                    "en": "They are mediated together by competition within a branch, movement of capital between branches, and formation of the average rate of profit. Without the mediation, competition appears either to create value relations or to be mere external noise."
+                    "ko": "평균 구성이라는 기준은 단순하지만, 실제 k는 이미 전환된 투입물 가격을 포함할 수 있다. 그래서 전환 문제는 여러 생산단계를 통해 누적된다.",
+                    "en": "The benchmark of average composition is simple, but actual k may already include transformed input prices. The transformation problem therefore accumulates across stages of production."
                   }
                 },
                 {
@@ -23380,27 +23366,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가격이 가치와 다르게 움직인다는 사실만 보고 가치분석을 버리는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by abandoning value analysis simply because prices move differently from values?"
+                    "ko": "경쟁이 자본가에게 보여 주는 것과 가려 버리는 것을 가장 정확히 구분한 것은 무엇인가?",
+                    "en": "Which statement best distinguishes what competition shows to capitalists from what it hides?"
                   },
                   "choices": {
                     "ko": [
-                      "가격이 가치와 다르면 가치관계는 사라졌다고 본다.",
-                      "수요공급이 잉여가치를 생산한다고 본다.",
-                      "그 차이 자체가 총잉여가치의 분배, 평균이윤율, 경쟁이라는 가치관계의 구체적 형태라는 점을 놓친다.",
-                      "보충 설명을 앞 장의 단순 반복으로만 본다."
+                      "경쟁은 평균이윤과 보상 근거를 보여 주지만, 그 배후의 가치 규정과 총잉여가치 배분은 표면에서 흐릿하게 만든다.",
+                      "경쟁은 가치 규정을 직접 보여 주고 평균이윤의 존재를 장부에서 흐릿하게 만든다.",
+                      "경쟁은 노동시간 계산을 공개하므로 자본가는 자기 이윤의 원천을 투명하게 파악한다.",
+                      "경쟁은 생산가격을 소비자 효용으로 바꾸어 가치와 이윤의 사회적 관계를 단순화한다."
                     ],
                     "en": [
-                      "Assumes value relations disappear when prices differ from values.",
-                      "Assumes supply and demand produce surplus-value.",
-                      "It misses that the difference itself is a concrete form of value relations: distribution of total surplus-value, average profit, and competition.",
-                      "Treats the supplementary remarks as a simple repetition of the previous chapter."
+                      "Competition shows average profit and grounds of compensation, but blurs value determination and the distribution of total surplus-value at the surface.",
+                      "Competition directly shows value determination and blurs the existence of average profit in the accounts.",
+                      "Competition discloses labour-time calculation, so the capitalist transparently grasps the source of profit.",
+                      "Competition turns production price into consumer utility and simplifies the social relation of value and profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 차이 자체가 총잉여가치의 분배, 평균이윤율, 경쟁이라는 가치관계의 구체적 형태라는 점을 놓친다. 마르크스는 시장 표면을 설명하되, 그 표면이 잉여가치 분배의 특정 형식임을 밝힌다.",
-                    "en": "It misses that the difference itself is a concrete form of value relations: distribution of total surplus-value, average profit, and competition. Marx explains the market surface while showing it as a specific form of surplus-value distribution."
+                    "ko": "자본가에게는 위험, 회전, 거리 같은 보상 근거가 이윤을 만드는 원인처럼 보인다. 마르크스는 그것들이 총잉여가치를 나누는 경쟁적 형식이라고 본다.",
+                    "en": "To the capitalist, risk, turnover, distance, and similar grounds of compensation appear to create profit. Marx treats them as competitive forms for dividing total surplus-value."
                   }
                 },
                 {
@@ -23408,27 +23394,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "전기차 보조금으로 시장가격이 흔들리지만 장기적으로 자본이 몰리며 수익률이 낮아진다. 어떻게 읽어야 하는가?",
-                    "en": "EV subsidies disturb market prices, but capital flows in and profitability falls over time. How should this be read?"
+                    "ko": "보조금으로 전기차 시장가격이 흔들리고 자본 유입 뒤 수익률이 안정되는 사례에서 12장이 묻는 것은 무엇인가?",
+                    "en": "In a case where subsidies move EV market prices and returns stabilize after capital inflow, what does Chapter 12 ask?"
                   },
                   "choices": {
                     "ko": [
-                      "보충 설명을 앞 장의 단순 반복으로만 본다.",
-                      "수요공급이 잉여가치를 생산한다고 본다.",
-                      "정책이 만든 단기 시장가격 변동과 경쟁이 만드는 평균이윤율 중심의 장기 조정을 구분해 읽어야 한다.",
-                      "생산가격 공식만 알면 경쟁과 평균이윤 분석은 필요 없다고 본다."
+                      "정책 충격이 만든 시장가격 변동과 경쟁이 평균이윤율을 향해 생산가격을 조정하는 과정을 분리해 읽는 것이다.",
+                      "보조금이 지급된 순간 전기차의 가치가 소비자 효용으로 다시 계산되는지를 확인하는 것이다.",
+                      "자본 유입 뒤에도 최초 기업의 이윤이 판매량에 비례해 유지되는지를 보는 것이다.",
+                      "전기차가 내구재이므로 평균이윤 분석보다 가계 대출 분석이 먼저인지 판단하는 것이다."
                     ],
                     "en": [
-                      "Treats the supplementary remarks as a simple repetition of the previous chapter.",
-                      "Assumes supply and demand produce surplus-value.",
-                      "One should distinguish policy-driven short-term market-price changes from the longer-term adjustment around the average profit rate produced by competition.",
-                      "Assumes knowing the formula for price of production makes competition and average profit unnecessary."
+                      "It asks us to separate policy-driven market-price movement from the competitive adjustment of production price toward the average rate of profit.",
+                      "It checks whether EV value is recalculated as consumer utility at the moment subsidies are paid.",
+                      "It asks whether the first firm’s profit remains proportional to sales volume after capital inflow.",
+                      "It judges whether household credit analysis precedes average profit because EVs are durable goods."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "정책이 만든 단기 시장가격 변동과 경쟁이 만드는 평균이윤율 중심의 장기 조정을 구분해 읽어야 한다. 현대 산업의 사례도 부문별 자본구성, 경쟁, 평균수익률의 매개로 읽을 수 있다.",
-                    "en": "One should distinguish policy-driven short-term market-price changes from the longer-term adjustment around the average profit rate produced by competition. Modern industries can also be read through the mediation of capital composition, competition, and average returns."
+                    "ko": "12장의 초점은 단기 가격 흔들림과 장기 중심의 구분이다. 정책은 시장가격을 흔들 수 있지만, 자본 이동은 평균이윤 기준을 향해 조정 압력을 만든다.",
+                    "en": "Chapter 12 focuses on the distinction between short-term price movement and the long-term centre. Policy can move market price, while capital movement creates pressure toward average profit."
                   }
                 },
                 {
@@ -23436,27 +23422,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이 보충 설명의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of these supplementary remarks?"
+                    "ko": "12장의 체계적 의미를 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best captures the systematic significance of Chapter 12?"
                   },
                   "choices": {
                     "ko": [
-                      "보충 설명을 앞 장의 단순 반복으로만 본다.",
-                      "생산가격 공식만 알면 경쟁과 평균이윤 분석은 필요 없다고 본다.",
-                      "시장가격의 단기 변동과 생산가격의 중심을 같은 것으로 본다.",
-                      "가치에서 생산가격으로의 전환을 정리해, 자본주의 표면의 다양한 수익형태를 분석할 수 있게 한다."
+                      "생산가격 분석의 남은 조건을 정리해, 다음 편에서 평균 이윤율 자체의 역사적 운동을 분석할 준비를 한다.",
+                      "시장가격이 가치보다 자주 움직인다는 사실로 가치법칙의 역할을 가격표 밖으로 밀어낸다.",
+                      "상업자본과 이자 낳는 자본을 먼저 도입해 산업자본의 생산과정을 보조 사례로 낮춘다.",
+                      "임금과 생산가격의 관계를 단일 공식으로 마무리해 자본구성 차이를 분석에서 덜어낸다."
                     ],
                     "en": [
-                      "Treats the supplementary remarks as a simple repetition of the previous chapter.",
-                      "Assumes knowing the formula for price of production makes competition and average profit unnecessary.",
-                      "Identifies short-term market-price fluctuation with the center of prices of production.",
-                      "They consolidate the transition from value to price of production, enabling analysis of the various surface revenue forms of capitalism."
+                      "It clarifies remaining conditions of production-price analysis and prepares the next part’s analysis of the historical movement of the average profit rate itself.",
+                      "It uses the frequent movement of market price relative to value to push the law of value outside price analysis.",
+                      "It introduces commercial and interest-bearing capital first and demotes industrial production to a supporting case.",
+                      "It closes the relation between wages and prices of production with one formula and removes differences in capital composition from analysis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가치에서 생산가격으로의 전환을 정리해, 자본주의 표면의 다양한 수익형태를 분석할 수 있게 한다. 이 장은 다음 단계의 생산가격과 경쟁 분석을 위한 개념적 고리를 제공한다.",
-                    "en": "They consolidate the transition from value to price of production, enabling analysis of the various surface revenue forms of capitalism. The chapter provides the conceptual link for the next stage of prices of production and competition."
+                    "ko": "12장은 생산가격론의 보충 마감이다. 이 장을 지나면 질문은 개별 생산가격의 조건에서 사회적 평균 이윤율의 장기 운동으로 이동한다.",
+                    "en": "Chapter 12 is the supplementary closure of the theory of prices of production. After it, the question shifts from conditions of individual production prices to the long-term movement of the social average profit rate."
                   }
                 }
               ]
@@ -23529,27 +23515,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "기계와 설비의 비중이 커지고 같은 노동자 수가 더 많은 생산수단을 움직인다. 마르크스는 이 변화가 이윤율에 어떤 압력을 준다고 보는가?",
-                    "en": "Machinery and equipment take a larger share, and the same number of workers sets more means of production in motion. What pressure does Marx see this placing on the rate of profit?"
+                    "ko": "13장에서 이윤율 저하 경향의 기본 공식은 무엇인가?",
+                    "en": "What is the basic formula behind the tendency of the rate of profit to fall in Chapter 13?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치의 원천인 살아 있는 노동이 총자본에 비해 상대적으로 작아져 이윤율 저하 경향이 생긴다.",
-                      "생산성이 오르면 이윤율도 그 자체로 오른다.",
-                      "이윤율 저하 경향은 즉각적 붕괴 예언일 뿐이다.",
-                      "기계의 생산성 향상을 새 가치의 직접 원천으로 본다."
+                      "잉여가치율이 같아도 p'=s/(c+v)이므로 c가 v보다 빠르게 커지면 같은 s가 더 큰 총자본에 대해 낮은 비율로 표시된다.",
+                      "p'=s/v이므로 착취율이 같으면 불변자본 증가와 관계없이 이윤율도 같은 비율을 유지한다.",
+                      "p'=c/s이므로 기계와 원료가 많아질수록 새 가치의 원천도 커진다.",
+                      "p'=v/c이므로 임금 지출이 줄면 잉여가치량이 같은 폭으로 늘어난다."
                     ],
                     "en": [
-                      "Living labour, the source of surplus-value, becomes relatively smaller compared with total capital, creating a tendency for the rate of profit to fall.",
-                      "When productivity rises, the profit rate automatically rises as well.",
-                      "The tendency of the rate of profit to fall is only a prediction of immediate collapse.",
-                      "It treats machinery’s productivity effect as a direct source of new value."
+                      "Even with the same rate of surplus-value, p'=s/(c+v), so if c grows faster than v the same s appears as a lower ratio to total capital.",
+                      "Since p'=s/v, the same exploitation rate keeps the profit rate unchanged regardless of constant capital.",
+                      "Since p'=c/s, more machinery and raw materials enlarge the source of new value.",
+                      "Since p'=v/c, a fall in wage outlay increases surplus-value by the same amount."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "문제는 생산성이 높아진다는 사실 자체가 아니라, 불변자본이 커지는 가운데 새 가치를 만드는 노동의 비중이 총자본에 비해 작아지는 데 있다. 이 경향은 자동 붕괴론이 아니라 자본축적이 만드는 압력이다.",
-                    "en": "The issue is not productivity by itself, but the fact that living labour, which creates new value, becomes smaller relative to total capital as constant capital grows. This is a pressure produced by accumulation, not a theory of automatic collapse."
+                    "ko": "법칙의 핵심은 잉여가치율과 이윤율의 분모가 다르다는 점이다. 잉여가치는 산 노동에서 나오지만 이윤율은 총자본에 대해 계산된다.",
+                    "en": "The key is that the rate of surplus-value and the rate of profit have different denominators. Surplus-value comes from living labour, while the profit rate is calculated against total capital."
                   }
                 },
                 {
@@ -23557,41 +23543,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동생산성이 높아지는데도 이윤율 하락 경향이 생길 수 있는 이유는 무엇인가?",
-                    "en": "Why can a tendency for the profit rate to fall arise even as labour productivity rises?"
+                    "ko": "노동생산성이 높아질수록 이윤율 저하 압력이 생길 수 있는 이유는 무엇인가?",
+                    "en": "Why can rising labour productivity create downward pressure on the profit rate?"
                   },
                   "choices": {
                     "ko": [
-                      "생산성 상승은 더 많은 기계와 원료를 움직이게 하지만, 새 가치를 만드는 살아 있는 노동의 상대적 비중을 줄일 수 있기 때문이다.",
-                      "기계의 생산성 향상을 새 가치의 직접 원천으로 본다.",
-                      "이윤율 저하 경향을 즉각적 붕괴 예언으로만 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "불변자본과 가변자본 비중의 변화를 무시하는 식으로 자본 운동의 단계를 단순화하는 오해"
+                      "같은 노동자가 더 많은 기계와 원료를 움직이면서 총자본 안의 산 노동 비중이 줄어들 수 있기 때문이다.",
+                      "생산성이 높아지면 노동자가 받은 임금이 상품가치 전체를 차지하게 되기 때문이다.",
+                      "생산성이 높아지면 상품의 사용가치가 가치보다 먼저 사라지기 때문이다.",
+                      "기계가 많아지면 불변자본이 가변자본으로 회계상 전환되기 때문이다."
                     ],
                     "en": [
-                      "Rising productivity sets more machinery and materials in motion, but can reduce the relative share of living labour that creates new value.",
-                      "Assumes machinery directly creates new value.",
-                      "Treats the falling-profit tendency only as a prophecy of immediate collapse.",
-                      "Ignores changes in the shares of constant and variable capital."
+                      "Because the same workers set in motion more machinery and raw materials, reducing the share of living labour in total capital.",
+                      "Because higher productivity makes wages occupy the whole value of the commodity.",
+                      "Because higher productivity makes use-value disappear before value.",
+                      "Because more machinery converts constant capital into variable capital in the accounts."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산성 상승은 더 많은 기계와 원료를 움직이게 하지만, 새 가치를 만드는 살아 있는 노동의 상대적 비중을 줄일 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
-                    "en": "Rising productivity sets more machinery and materials in motion, but can reduce the relative share of living labour that creates new value. So one must look not only at surface profitability but also at the underlying production and distribution of value."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 생산성 상승은 더 많은 기계와 원료를 움직이게 하지만, 새 가치를 만드는 살아 있는 노동의 상대적 비중을 줄일 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
-                      "오해 진단: \"기계의 생산성 향상을 새 가치의 직접 원천으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"이윤율 저하 경향을 즉각적 붕괴 예언으로만 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"불변자본과 가변자본 비중의 변화를 무시하는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: Rising productivity sets more machinery and materials in motion, but can reduce the relative share of living labour that creates new value. So one must look not only at surface profitability but also at the underlying production and distribution of value.",
-                      "Misconception check: choosing \"Assumes machinery directly creates new value.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Treats the falling-profit tendency only as a prophecy of immediate collapse.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Ignores changes in the shares of constant and variable capital.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "마르크스는 생산성 상승을 단순한 해결책으로 보지 않는다. 그것은 상품을 싸게 만들지만 동시에 유기적 구성을 높여 이윤율의 분모를 키운다.",
+                    "en": "Marx does not treat productivity growth as a simple solution. It cheapens commodities but also raises organic composition and enlarges the denominator of the profit rate."
                   }
                 },
                 {
@@ -23599,27 +23571,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 법칙을 “자본주의가 곧바로 자동 붕괴한다”는 뜻으로 보면 왜 틀리는가?",
-                    "en": "Why is it wrong to read this law as meaning capitalism automatically collapses immediately?"
+                    "ko": "이 법칙을 자본주의의 즉시 붕괴론으로 읽으면 왜 부정확한가?",
+                    "en": "Why is it inaccurate to read this law as an immediate-collapse theory of capitalism?"
                   },
                   "choices": {
                     "ko": [
-                      "기계의 생산성 향상을 새 가치의 직접 원천으로 본다.",
-                      "마르크스는 필연적 직선 붕괴가 아니라 자본축적이 낳는 경향과 그 경향을 매개·상쇄하는 운동을 분석한다.",
-                      "불변자본과 가변자본 비중의 변화를 무시한다.",
-                      "이윤율을 총자본이 아니라 임금에 대한 비율로만 본다."
+                      "마르크스는 직선적 사건이 아니라 자본축적이 낳는 경향과 그 경향을 상쇄ㆍ지연하는 힘들의 운동을 분석하기 때문이다.",
+                      "마르크스는 이윤율이 한 번 내려가면 모든 생산이 같은 날 멈춘다고 설명하기 때문이다.",
+                      "마르크스는 기술혁신이 나오면 평균이윤율 계산이 중단된다고 보기 때문이다.",
+                      "마르크스는 위기를 시장가격의 일시 착오로 처리하고 축적과 분리하기 때문이다."
                     ],
                     "en": [
-                      "Assumes machinery directly creates new value.",
-                      "Marx analyzes a tendency produced by accumulation and the mediating or counteracting movements around it, not an immediate linear collapse.",
-                      "Ignores changes in the shares of constant and variable capital.",
-                      "Treats the profit rate only as a ratio to wages, not total capital."
+                      "Because Marx analyzes a tendency produced by accumulation and the forces that counteract and delay it, not a straight-line event.",
+                      "Because Marx explains that once the profit rate falls, all production stops on the same day.",
+                      "Because Marx holds that technological innovation stops the calculation of the average profit rate.",
+                      "Because Marx treats crises as temporary market-price errors separated from accumulation."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 필연적 직선 붕괴가 아니라 자본축적이 낳는 경향과 그 경향을 매개·상쇄하는 운동을 분석한다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
-                    "en": "Marx analyzes a tendency produced by accumulation and the mediating or counteracting movements around it, not an immediate linear collapse. Without this distinction, capitalist forms appear as natural facts."
+                    "ko": "13장의 법칙은 경향 법칙이다. 그래서 14장의 상쇄 요인과 함께 읽어야 실제 자본주의 운동의 복합성이 보인다.",
+                    "en": "Chapter 13 presents a law of tendency. It must be read with Chapter 14’s counteracting causes to grasp the complexity of actual capitalist movement."
                   }
                 },
                 {
@@ -23627,27 +23599,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자동화 공장이 산출량을 크게 늘렸지만 고용 노동 비중은 줄어든다. 이윤율 관점에서 무엇을 봐야 하는가?",
-                    "en": "An automated factory greatly raises output while the share of employed labour falls. What should be examined for the profit rate?"
+                    "ko": "자동화 공장이 산출량을 늘리지만 직접고용 비중을 줄이는 사례에서 무엇을 봐야 하는가?",
+                    "en": "What should be examined when an automated factory raises output while reducing direct employment share?"
                   },
                   "choices": {
                     "ko": [
-                      "불변자본과 가변자본 비중의 변화를 무시한다.",
-                      "이윤율을 총자본이 아니라 임금에 대한 비율로만 본다.",
-                      "총자본에서 불변자본 비중이 커질 때 잉여가치가 총자본에 대해 어떤 비율로 나타나는지 봐야 한다.",
-                      "생산성이 오르면 이윤율도 대체로 그 자체로 오른다고 본다."
+                      "투자가 총자본 대비 산 노동과 잉여가치의 비율을 어떻게 바꾸는지, 그리고 생산물 가격 하락과 이윤량 증가가 이윤율과 어떻게 갈라지는지 봐야 한다.",
+                      "산출량이 늘었으므로 잉여가치율과 이윤율이 같은 폭으로 상승하는지 확인하면 된다.",
+                      "직접고용이 줄면 생산된 상품이 가치 형태를 떠나 물량 지표 중심으로 계산되는지 보면 된다.",
+                      "자동화 설비의 구매가격이 높을수록 기계가 새 가치의 원천으로 이동하는지 판단하면 된다."
                     ],
                     "en": [
-                      "Ignores changes in the shares of constant and variable capital.",
-                      "Treats the profit rate only as a ratio to wages, not total capital.",
-                      "One should examine how surplus-value appears as a ratio to total capital when constant capital grows as a share of the whole.",
-                      "Assumes higher productivity always automatically raises the profit rate."
+                      "One must examine how investment changes living labour and surplus-value relative to total capital, and how falling unit prices and rising profit mass diverge from the profit rate.",
+                      "Since output rises, one only checks whether the surplus-value rate and profit rate rise by the same amount.",
+                      "When direct employment falls, commodities leave the value form and are calculated mainly by quantity.",
+                      "The higher the automation equipment price, the more machinery moves into the source of new value."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "총자본에서 불변자본 비중이 커질 때 잉여가치가 총자본에 대해 어떤 비율로 나타나는지 봐야 한다. 구체 사례에서도 핵심은 자본의 어느 형태가 어떤 관계를 가리는지다.",
-                    "en": "One should examine how surplus-value appears as a ratio to total capital when constant capital grows as a share of the whole. In concrete cases, the key is which form of capital conceals which relation."
+                    "ko": "현대 자동화 사례도 13장의 공식으로 읽을 수 있다. 물량과 이윤량은 늘 수 있지만, 총자본 대비 잉여가치 비율은 압박받을 수 있다.",
+                    "en": "Modern automation can be read through Chapter 13’s formula. Output and profit mass may rise, while surplus-value relative to total capital comes under pressure."
                   }
                 },
                 {
@@ -23655,27 +23627,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "법칙 그 자체 장이 3권의 전개에서 하는 역할은 무엇인가?",
-                    "en": "What role does the chapter on the law as such play in Volume III?"
+                    "ko": "13장은 14장으로 어떤 질문을 넘기는가?",
+                    "en": "What question does Chapter 13 hand over to Chapter 14?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율 저하 경향을 즉각적 붕괴 예언으로만 본다.",
-                      "이윤율을 총자본이 아니라 임금에 대한 비율로만 본다.",
-                      "생산성이 오르면 이윤율도 대체로 그 자체로 오른다고 본다.",
-                      "평균이윤율 분석 뒤에 자본축적 자체가 이윤율에 만드는 장기적 압력을 제시한다."
+                      "이윤율 저하 경향이 있다면 왜 현실에서는 그 효과가 완만하고 불균등하게 나타나는가라는 질문이다.",
+                      "평균이윤이 성립했다면 상업자본이 왜 상품을 두 번 판매하는가라는 질문이다.",
+                      "생산가격이 가치와 다르면 지대가 어떤 토지에서 먼저 생기는가라는 질문이다.",
+                      "임금이 변하면 평균 구성 상품의 가격이 왜 고정되는가라는 질문이다."
                     ],
                     "en": [
-                      "Treats the falling-profit tendency only as a prophecy of immediate collapse.",
-                      "Treats the profit rate only as a ratio to wages, not total capital.",
-                      "Assumes higher productivity always automatically raises the profit rate.",
-                      "After the analysis of average profit, it presents the long-term pressure that capital accumulation itself places on the rate of profit."
+                      "If there is a tendency for the profit rate to fall, why does its effect appear slowly and unevenly in reality?",
+                      "If average profit exists, why does commercial capital sell a commodity twice?",
+                      "If production price differs from value, on which land does rent first arise?",
+                      "If wages change, why does the price of average-composition commodities remain fixed?"
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "평균이윤율 분석 뒤에 자본축적 자체가 이윤율에 만드는 장기적 압력을 제시한다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다.",
-                    "en": "After the analysis of average profit, it presents the long-term pressure that capital accumulation itself places on the rate of profit. This connection leads into the more concrete forms of capital analyzed next."
+                    "ko": "13장은 법칙 그 자체를 세운다. 14장은 바로 그 법칙의 효과를 가로지르는 상쇄 요인을 설명한다.",
+                    "en": "Chapter 13 establishes the law as such. Chapter 14 explains the counteracting factors that cross its effects."
                   }
                 }
               ]
@@ -23693,27 +23665,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율 저하 경향의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the tendency of the rate of profit to fall?"
+                    "ko": "이윤율 저하 경향에서 이윤량과 이윤율의 관계는 어떻게 구분되어야 하는가?",
+                    "en": "How must the mass and rate of profit be distinguished in the tendency of the rate of profit to fall?"
                   },
                   "choices": {
                     "ko": [
-                      "자본은 노동생산성을 높여 잉여가치 생산을 확대하려 하지만, 그 과정이 살아 있는 노동의 상대적 비중을 줄여 이윤율을 압박한다.",
-                      "이윤율 저하 경향을 즉각적 붕괴 예언으로만 본다.",
-                      "생산성이 오르면 이윤율도 대체로 그 자체로 오른다고 본다.",
-                      "기계의 생산성 향상을 새 가치의 직접 원천으로 본다."
+                      "총자본이 크게 늘면 이윤량은 증가할 수 있지만, 그 이윤량이 더 큰 총자본에 대해 차지하는 비율은 낮아질 수 있다.",
+                      "이윤량이 증가하면 이윤율도 같은 방향으로 움직이므로 두 지표는 따로 볼 필요가 없다.",
+                      "이윤율이 낮아지면 개별 상품 안의 이윤량은 물량 증가와 관계없이 같은 크기로 유지된다.",
+                      "이윤량과 이윤율의 차이는 상업자본이 등장한 뒤에야 생기는 유통상의 구분이다."
                     ],
                     "en": [
-                      "Capital raises labour productivity to expand surplus-value, yet that process reduces the relative share of living labour and pressures the profit rate.",
-                      "Treats the falling-profit tendency only as a prophecy of immediate collapse.",
-                      "Assumes higher productivity always automatically raises the profit rate.",
-                      "Assumes machinery directly creates new value."
+                      "If total capital grows greatly, the mass of profit may increase while its ratio to the larger total capital falls.",
+                      "If the mass of profit increases, the rate moves in the same direction, so the two indicators need not be separated.",
+                      "If the profit rate falls, the profit mass in each commodity remains the same regardless of output growth.",
+                      "The distinction between mass and rate arises only in circulation after commercial capital appears."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본은 노동생산성을 높여 잉여가치 생산을 확대하려 하지만, 그 과정이 살아 있는 노동의 상대적 비중을 줄여 이윤율을 압박한다. 이 긴장은 마르크스가 단순한 균형모형이 아니라 자본의 모순적 운동을 분석한다는 점을 보여준다.",
-                    "en": "Capital raises labour productivity to expand surplus-value, yet that process reduces the relative share of living labour and pressures the profit rate. This tension shows that Marx analyzes the contradictory movement of capital, not a simple equilibrium model."
+                    "ko": "마르크스의 난점은 이중 운동이다. 생산성 발전과 축적은 이윤량을 키우면서도 이윤율을 낮출 수 있다.",
+                    "en": "Marx’s difficulty is the double movement: productivity and accumulation can raise the mass of profit while lowering the rate of profit."
                   }
                 },
                 {
@@ -23721,27 +23693,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "유기적 구성 상승과 이윤율 하락 경향을 매개하는 것은 무엇인가?",
-                    "en": "What mediates rising organic composition and the tendency of the profit rate to fall?"
+                    "ko": "c=50,100,200,300,400이고 v=100, s'=100%인 예가 보여 주는 것은 무엇인가?",
+                    "en": "What does the example c=50,100,200,300,400 with v=100 and s'=100% show?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율 저하 경향을 즉각적 붕괴 예언으로만 본다.",
-                      "잉여가치가 가변자본에서 나오지만 이윤율은 총자본 c+v에 대한 비율로 계산되는 형식이다.",
-                      "기계의 생산성 향상을 새 가치의 직접 원천으로 본다.",
-                      "불변자본과 가변자본 비중의 변화를 무시한다."
+                      "착취율이 같아도 총자본이 150에서 500으로 커지면 s=100은 66과 2/3%에서 20%까지 낮은 이윤율로 표시된다.",
+                      "불변자본이 커질수록 s=100도 같은 비율로 커져 이윤율 하락이 상쇄된다.",
+                      "v가 100으로 고정되면 총자본이 달라도 p'는 s/v로 계산되어 같은 값이 된다.",
+                      "c의 증가는 상품 사용가치의 확대에 치우치고 가치 및 이윤율 계산과 접점이 작다."
                     ],
                     "en": [
-                      "Treats the falling-profit tendency only as a prophecy of immediate collapse.",
-                      "The mediation is the form in which surplus-value comes from variable capital but the profit rate is calculated against total capital c+v.",
-                      "Assumes machinery directly creates new value.",
-                      "Ignores changes in the shares of constant and variable capital."
+                      "Even with the same exploitation rate, as total capital grows from 150 to 500, s=100 appears as a profit rate falling from 66 2/3% to 20%.",
+                      "As constant capital grows, s=100 grows by the same ratio and offsets the falling profit rate.",
+                      "With v fixed at 100, p' is calculated as s/v and remains the same despite different total capitals.",
+                      "The growth of c is oriented toward expanding use-values and has little contact with value or profit-rate calculation."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치가 가변자본에서 나오지만 이윤율은 총자본 c+v에 대한 비율로 계산되는 형식이다. 매개를 보아야 생산에서 생긴 잉여가치가 다른 형태의 수입으로 나타나는 과정을 이해할 수 있다.",
-                    "en": "The mediation is the form in which surplus-value comes from variable capital but the profit rate is calculated against total capital c+v. Seeing the mediation lets us understand how surplus-value produced in production appears as other revenue forms."
+                    "ko": "이 예는 잉여가치율이 같다는 조건 아래에서도 유기적 구성 상승이 이윤율을 낮추는 형식을 숫자로 보여 준다.",
+                    "en": "The example numerically shows how rising organic composition lowers the profit rate even when the rate of surplus-value remains the same."
                   }
                 },
                 {
@@ -23749,27 +23721,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "기술혁신은 언제나 자본에게 순수한 해결책이라는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying technological innovation is always a pure solution for capital?"
+                    "ko": "기술혁신이 개별 자본에는 초과이윤을 주면서도 일반화되면 이윤율을 압박할 수 있는 이유는 무엇인가?",
+                    "en": "Why can innovation give an individual capital surplus-profit yet pressure the profit rate once generalized?"
                   },
                   "choices": {
                     "ko": [
-                      "기계의 생산성 향상을 새 가치의 직접 원천으로 본다.",
-                      "불변자본과 가변자본 비중의 변화를 무시한다.",
-                      "기술혁신은 개별 자본에 초과이윤을 줄 수 있지만 일반화되면 유기적 구성을 높여 이윤율을 압박할 수 있다.",
-                      "이윤율을 총자본이 아니라 임금에 대한 비율로만 본다."
+                      "처음에는 개별 생산가격을 낮춰 시장가격과의 차이를 얻지만, 일반화되면 사회적 생산조건과 유기적 구성을 바꾸기 때문이다.",
+                      "처음에는 노동시간을 줄이고 나중에는 노동시간을 상품가치의 유일한 원천에서 제외하기 때문이다.",
+                      "처음에는 시장가격을 높이고 일반화 뒤에는 수요가 생산가격을 직접 결정하기 때문이다.",
+                      "처음에는 임금을 낮추고 일반화 뒤에는 임금이 불변자본으로 회계 처리되기 때문이다."
                     ],
                     "en": [
-                      "Assumes machinery directly creates new value.",
-                      "Ignores changes in the shares of constant and variable capital.",
-                      "Technological innovation can yield surplus-profit for an individual capital, but when generalized it can raise organic composition and pressure the profit rate.",
-                      "Treats the profit rate only as a ratio to wages, not total capital."
+                      "At first it lowers individual price of production and captures the gap with market price; once generalized, it changes social production conditions and organic composition.",
+                      "At first it reduces labour-time and later excludes labour-time from being the sole source of commodity value.",
+                      "At first it raises market price, and after generalization demand directly determines production price.",
+                      "At first it lowers wages, and after generalization wages are booked as constant capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "기술혁신은 개별 자본에 초과이윤을 줄 수 있지만 일반화되면 유기적 구성을 높여 이윤율을 압박할 수 있다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
-                    "en": "Technological innovation can yield surplus-profit for an individual capital, but when generalized it can raise organic composition and pressure the profit rate. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals."
+                    "ko": "혁신은 개별 자본의 이점과 사회적 일반화의 효과가 다르다. 경쟁이 혁신을 확산시키면 그 기술은 새로운 평균 조건이 된다.",
+                    "en": "Innovation differs as an individual advantage and as a generalized social condition. Competition spreads the innovation and turns it into the new average condition."
                   }
                 },
                 {
@@ -23777,27 +23749,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "AI 자동화 투자 붐으로 설비투자는 폭증하지만 직접고용은 크게 늘지 않는다. 마르크스의 질문은 무엇인가?",
-                    "en": "An AI automation boom sharply raises equipment investment while direct employment barely grows. What is Marx’s question?"
+                    "ko": "AI 인프라 투자 붐을 13장 관점에서 볼 때 물어야 할 질문은 무엇인가?",
+                    "en": "From Chapter 13’s standpoint, what should be asked about an AI infrastructure investment boom?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율을 총자본이 아니라 임금에 대한 비율로만 본다.",
-                      "불변자본과 가변자본 비중의 변화를 무시한다.",
-                      "그 투자가 살아 있는 노동의 상대적 비중과 총자본 대비 이윤율을 어떻게 바꾸는지 물어야 한다.",
-                      "생산성이 오르면 이윤율도 대체로 그 자체로 오른다고 본다."
+                      "거대한 설비투자가 산 노동의 상대적 비중, 총자본의 가치구성, 잉여가치가 이윤율로 표시되는 방식을 어떻게 바꾸는지다.",
+                      "모델 성능이 오르면 불변자본이 새 가치를 생산하는 범주로 이동하는지다.",
+                      "서버 수가 늘면 노동시간 측정이 중단되고 전력 사용량이 가치 척도가 되는지다.",
+                      "투자 붐이 있으면 평균이윤율이 금융시장 목표수익률과 같은 숫자로 고정되는지다."
                     ],
                     "en": [
-                      "Treats the profit rate only as a ratio to wages, not total capital.",
-                      "Ignores changes in the shares of constant and variable capital.",
-                      "One should ask how that investment changes the relative share of living labour and surplus-value relative to total capital.",
-                      "Assumes higher productivity always automatically raises the profit rate."
+                      "How massive fixed investment changes the relative share of living labour, the value composition of total capital, and the way surplus-value appears as profit rate.",
+                      "Whether improved model performance moves constant capital into the category that produces new value.",
+                      "Whether more servers stop labour-time measurement and make electricity use the measure of value.",
+                      "Whether an investment boom fixes the average profit rate at the same number as financial target returns."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 투자가 살아 있는 노동의 상대적 비중과 총자본 대비 잉여가치율을 어떻게 바꾸는지 물어야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
-                    "en": "One should ask how that investment changes the relative share of living labour and surplus-value relative to total capital. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases."
+                    "ko": "13장의 질문은 기술의 화려함이 아니라 자본구성이다. 설비와 데이터센터가 커질수록 산 노동이 총자본에서 차지하는 위치가 핵심 쟁점이 된다.",
+                    "en": "Chapter 13 asks about capital composition, not technological spectacle. As equipment and data centers grow, the position of living labour within total capital becomes central."
                   }
                 },
                 {
@@ -23805,27 +23777,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "법칙 그 자체의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the law as such?"
+                    "ko": "13장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 13?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율을 총자본이 아니라 임금에 대한 비율로만 본다.",
-                      "생산성이 오르면 이윤율도 대체로 그 자체로 오른다고 본다.",
-                      "이윤율 저하 경향을 즉각적 붕괴 예언으로만 본다.",
-                      "자본주의 생산력 발전이 이윤율을 지탱하면서 동시에 위협하는 모순을 정식화한다."
+                      "자본주의 생산력 발전이 상품을 싸게 만들고 이윤량을 키우면서도 평균 이윤율에는 장기 압력을 만든다는 모순을 공식화한다.",
+                      "생산가격 분석을 끝낸 뒤 가치법칙을 유통비용 법칙으로 대체하는 단계다.",
+                      "이윤율 저하를 임금 상승의 결과로 정리해 분배정책 분석으로 이동한다.",
+                      "상업자본의 회전 속도가 산업자본의 생산시간을 결정한다는 점을 공식화한다."
                     ],
                     "en": [
-                      "Treats the profit rate only as a ratio to wages, not total capital.",
-                      "Assumes higher productivity always automatically raises the profit rate.",
-                      "Treats the falling-profit tendency only as a prophecy of immediate collapse.",
-                      "It formulates the contradiction that capitalist development of productivity both supports and threatens the rate of profit."
+                      "It formulates the contradiction that capitalist productivity cheapens commodities and can raise profit mass while placing long-term pressure on the average profit rate.",
+                      "It replaces the law of value with a law of circulation costs after completing production-price analysis.",
+                      "It explains the falling profit rate as a result of rising wages and moves to distribution policy.",
+                      "It formulates that the turnover speed of commercial capital determines industrial production time."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본주의 생산력 발전이 이윤율을 지탱하면서 동시에 위협하는 모순을 정식화한다. 이 장의 체계적 위치를 잡으면 3권의 표면형태 분석이 왜 단계적으로 전개되는지 이해할 수 있다.",
-                    "en": "It formulates the contradiction that capitalist development of productivity both supports and threatens the rate of profit. Locating the chapter systematically shows why Volume III unfolds surface forms step by step."
+                    "ko": "13장은 3권의 중심 모순 하나를 연다. 가치증식은 생산력 발전을 밀어붙이지만, 그 발전이 가치증식의 비율을 압박한다.",
+                    "en": "Chapter 13 opens one of Volume III’s central contradictions: valorization drives productive development, yet that development pressures the rate of valorization."
                   }
                 }
               ]
@@ -23898,27 +23870,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이윤율 저하 경향이 있다면 왜 현실에서는 그 하락이 곧장, 같은 속도로만 나타나지 않는가?",
-                    "en": "If there is a tendency for the rate of profit to fall, why does the fall not appear immediately and at one uniform pace in reality?"
+                    "ko": "14장에서 상쇄 요인을 도입하는 이유는 무엇인가?",
+                    "en": "Why does Chapter 14 introduce counteracting causes?"
                   },
                   "choices": {
                     "ko": [
-                      "착취 강화, 임금 저하, 불변자본 저렴화, 해외무역 같은 요인이 그 경향을 약화하거나 지연시킬 수 있기 때문이다.",
-                      "상쇄 요인이 있으면 법칙은 처음부터 틀린 것이기 때문이다.",
-                      "불변자본의 물질량과 가치량은 구분할 필요가 없기 때문이다.",
-                      "해외무역은 이윤율 문제를 상당히 오래 해결하기 때문이다."
+                      "이윤율 저하 경향이 법칙이라면 왜 현실에서 그 하락이 더 빠르고 크게 나타나지 않는지 설명하기 위해서다.",
+                      "13장의 법칙이 계산 착오였음을 보이고 이윤율 저하 논의를 가격 변동론으로 바꾸기 위해서다.",
+                      "상업자본이 산업자본보다 먼저 잉여가치를 생산한다는 점을 증명하기 위해서다.",
+                      "평균이윤율을 각 기업의 위험수당으로 환원해 가치론의 총량 관계를 덜어내기 위해서다."
                     ],
                     "en": [
-                      "Because factors such as intensified exploitation, lower wages, cheaper constant capital, and foreign trade can weaken or delay the tendency.",
-                      "Because the existence of counteracting factors means the law was false from the start.",
-                      "Because there is no need to distinguish the material mass of constant capital from its value.",
-                      "Because foreign trade permanently solves the problem of the profit rate."
+                      "To explain why, if the tendency is a law, its fall does not appear more rapidly and strongly in reality.",
+                      "To show that Chapter 13’s law was a calculation error and replace it with price fluctuation theory.",
+                      "To prove that commercial capital produces surplus-value before industrial capital.",
+                      "To reduce average profit to each firm’s risk premium and remove aggregate value relations."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상쇄 요인은 법칙을 삭제하지 않고, 그 법칙이 현실에서 관철되는 방식을 복잡하게 만든다. 특히 불변자본이 물질적으로 늘어도 그 가치가 싸질 수 있다는 점을 구분해야 한다.",
-                    "en": "Counteracting factors do not erase the law; they complicate how it asserts itself in reality. It is especially important to distinguish the material growth of constant capital from a possible cheapening of its value."
+                    "ko": "14장은 법칙을 약화하는 힘들을 열거한다. 이것들은 법칙을 지우는 것이 아니라 그 효과를 지연하고 굴절시켜 경향으로 나타나게 한다.",
+                    "en": "Chapter 14 lists forces that weaken the law. They do not erase it; they delay and bend its effects, making it appear as a tendency."
                   }
                 },
                 {
@@ -23926,41 +23898,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "불변자본 요소가 싸지면 이윤율 저하 경향이 왜 완화될 수 있는가?",
-                    "en": "Why can cheapening elements of constant capital soften the falling-profit tendency?"
+                    "ko": "착취 강화는 이윤율 저하 경향을 어떻게 완화할 수 있는가?",
+                    "en": "How can intensified exploitation counteract the falling profit-rate tendency?"
                   },
                   "choices": {
                     "ko": [
-                      "물질적으로 더 많은 기계와 원료를 쓰더라도 그 가치가 싸지면 총자본 가치의 증가가 완화될 수 있기 때문이다.",
-                      "해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.",
-                      "불변자본의 물질량과 가치량을 구분하지 않는다.",
-                      "착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석"
+                      "노동일 연장이나 노동강도 상승은 같은 자본 안에서 더 많은 잉여노동을 끌어내 s를 늘릴 수 있다.",
+                      "착취 강화는 불변자본을 가변자본으로 바꾸어 기계가 임금을 대신 받게 한다.",
+                      "착취 강화는 상품의 사용가치를 줄여 시장가격을 평균이윤보다 높게 고정한다.",
+                      "노동강도 상승은 생산시간을 유통시간으로 바꾸어 가치생산을 판매 과정으로 이전한다."
                     ],
                     "en": [
-                      "Even if more machinery and materials are used physically, their cheaper value can moderate the rise of total capital value.",
-                      "Treats foreign trade as a permanent solution to all profit-rate problems.",
-                      "Fails to distinguish the physical mass and value magnitude of constant capital.",
-                      "Treats intensified exploitation as unrelated to the profit rate."
+                      "Lengthening the working day or raising intensity can extract more surplus-labour within the same capital and increase s.",
+                      "Intensified exploitation turns constant capital into variable capital so machines receive wages.",
+                      "Intensified exploitation reduces use-value and fixes market price above average profit.",
+                      "Higher labour intensity turns production time into circulation time and transfers value production to sale."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "물질적으로 더 많은 기계와 원료를 쓰더라도 그 가치가 싸지면 총자본 가치의 증가가 완화될 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
-                    "en": "Even if more machinery and materials are used physically, their cheaper value can moderate the rise of total capital value. So one must look not only at surface profitability but also at the underlying production and distribution of value."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 물질적으로 더 많은 기계와 원료를 쓰더라도 그 가치가 싸지면 총자본 가치의 증가가 완화될 수 있기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
-                      "오해 진단: \"해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"불변자본의 물질량과 가치량을 구분하지 않는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: Even if more machinery and materials are used physically, their cheaper value can moderate the rise of total capital value. So one must look not only at surface profitability but also at the underlying production and distribution of value.",
-                      "Misconception check: choosing \"Treats foreign trade as a permanent solution to all profit-rate problems.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Fails to distinguish the physical mass and value magnitude of constant capital.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Treats intensified exploitation as unrelated to the profit rate.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "상쇄 요인은 잉여가치량의 분자를 키우는 방식으로 작동할 수 있다. 다만 같은 과정이 노동자 수의 상대적 감소와 결합할 수 있어 긴장이 남는다.",
+                    "en": "Counteracting causes can work by increasing the numerator, the mass of surplus-value. Yet the same process may combine with a relative reduction of workers, so tension remains."
                   }
                 },
                 {
@@ -23968,27 +23926,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상쇄 요인을 법칙의 폐기로 보면 왜 부정확한가?",
-                    "en": "Why is it inaccurate to treat counteracting influences as abolishing the law?"
+                    "ko": "불변자본의 저렴화가 중요한 상쇄 요인인 이유는 무엇인가?",
+                    "en": "Why is the cheapening of constant capital an important counteracting cause?"
                   },
                   "choices": {
                     "ko": [
-                      "해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.",
-                      "상쇄 요인은 경향을 지연·완화·굴절하지만, 그 경향을 낳는 자본축적의 구조 자체를 없애지는 않는다.",
-                      "착취 강화가 이윤율과 무관하다고 본다.",
-                      "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다."
+                      "생산수단의 물량이 늘어도 그 가치가 싸지면 총자본 가치의 증가가 완화되어 p'의 분모 압력이 줄 수 있기 때문이다.",
+                      "생산수단이 싸지면 기계가 산 노동처럼 새 가치를 만들어 잉여가치율을 높이기 때문이다.",
+                      "불변자본 가격 하락은 노동력 가치와 임금을 같은 비율로 올려 평균이윤을 안정시키기 때문이다.",
+                      "원료가 싸지면 시장가격이 생산가격보다 높은 상태로 장기간 고정되기 때문이다."
                     ],
                     "en": [
-                      "Treats foreign trade as a permanent solution to all profit-rate problems.",
-                      "Counteracting influences delay, soften, or refract the tendency, but do not abolish the structure of accumulation that produces it.",
-                      "Treats intensified exploitation as unrelated to the profit rate.",
-                      "Treats counteracting influences as external variables unrelated to capitalist contradictions."
+                      "Even if the mass of means of production grows, their cheaper value can soften the growth of total capital value and reduce denominator pressure on p'.",
+                      "Cheaper means of production make machines create new value like living labour and raise the rate of surplus-value.",
+                      "A fall in constant-capital prices raises labour-power value and wages by the same ratio, stabilizing average profit.",
+                      "Cheaper raw materials fix market price above production price for a long period."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상쇄 요인은 경향을 지연·완화·굴절하지만, 그 경향을 낳는 자본축적의 구조 자체를 없애지는 않는다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
-                    "en": "Counteracting influences delay, soften, or refract the tendency, but do not abolish the structure of accumulation that produces it. Without this distinction, capitalist forms appear as natural facts."
+                    "ko": "유기적 구성 상승은 물량과 가치가 같은 속도로 움직인다는 뜻이 아니다. 생산수단 자체가 싸지면 이윤율 하락 압력은 완화될 수 있다.",
+                    "en": "Rising organic composition does not mean mass and value move at the same speed. If means of production themselves become cheaper, pressure on the profit rate can be softened."
                   }
                 },
                 {
@@ -23996,27 +23954,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "기업이 해외에서 더 싼 원료를 조달하고 임금이 낮은 지역으로 생산을 옮긴다. 어떤 상쇄 경로가 작동할 수 있는가?",
-                    "en": "A firm sources cheaper raw materials abroad and shifts production to lower-wage regions. What counteracting paths can operate?"
+                    "ko": "해외무역은 14장에서 어떤 이중적 효과를 갖는가?",
+                    "en": "What double effect does foreign trade have in Chapter 14?"
                   },
                   "choices": {
                     "ko": [
-                      "착취 강화가 이윤율과 무관하다고 본다.",
-                      "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.",
-                      "불변자본 저렴화와 임금 저하, 해외무역을 통한 이윤율 압박 완화가 함께 작동할 수 있다.",
-                      "상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다."
+                      "값싼 원료와 생활수단으로 이윤율 압박을 낮출 수 있지만, 세계시장 확대와 경쟁은 장기적으로 같은 축적 압력을 키운다.",
+                      "해외무역은 국내 가치법칙을 중단시키고 모든 이윤을 환율 차익으로 바꾼다.",
+                      "수출이 늘면 국내 유기적 구성은 낮아지고 노동자 수는 이전 수준으로 되돌아간다.",
+                      "식민지 무역의 높은 이윤은 일반 이윤율 평균화 과정에 들어오지 않는 별도 장부다."
                     ],
                     "en": [
-                      "Treats intensified exploitation as unrelated to the profit rate.",
-                      "Treats counteracting influences as external variables unrelated to capitalist contradictions.",
-                      "Cheapening constant capital, wage depression, and relief through foreign trade can operate together.",
-                      "Assumes the law is false if counteracting influences exist."
+                      "It can ease pressure through cheaper raw materials and means of subsistence, but world-market expansion and competition intensify accumulation pressure in the long run.",
+                      "Foreign trade suspends the domestic law of value and turns all profit into exchange-rate gains.",
+                      "More exports lower domestic organic composition and return worker numbers to the earlier level.",
+                      "Higher colonial-trade profit is a separate account outside the equalization of the general profit rate."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "불변자본 저렴화와 임금 저하, 해외무역을 통한 이윤율 압박 완화가 함께 작동할 수 있다. 구체 사례에서도 핵심은 자본의 어느 형태가 어떤 관계를 가리는지다.",
-                    "en": "Cheapening constant capital, wage depression, and relief through foreign trade can operate together. In concrete cases, the key is which form of capital conceals which relation."
+                    "ko": "마르크스는 해외무역을 단순 처방으로 두지 않는다. 그것은 상쇄 요인이면서 동시에 자본주의 생산양식과 세계시장 확대를 더 밀어붙인다.",
+                    "en": "Marx does not treat foreign trade as a simple remedy. It is a counteracting cause and at the same time pushes capitalist production and the world market further."
                   }
                 },
                 {
@@ -24024,27 +23982,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상쇄 요인들 장이 앞 장과 맺는 관계는 무엇인가?",
-                    "en": "How does the chapter on counteracting influences relate to the previous chapter?"
+                    "ko": "14장은 15장의 내적 모순 분석으로 무엇을 넘겨주는가?",
+                    "en": "What does Chapter 14 hand over to Chapter 15’s analysis of internal contradictions?"
                   },
                   "choices": {
                     "ko": [
-                      "불변자본의 물질량과 가치량을 구분하지 않는다.",
-                      "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.",
-                      "상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다.",
-                      "이윤율 저하 경향을 단순 직선으로 두지 않고, 실제 자본주의 운동 속의 지연과 굴절을 설명한다."
+                      "상쇄 요인이 있어도 법칙의 압력이 사라지지 않으며, 그 압력과 완화책이 축적ㆍ위기 모순 속에서 함께 전개된다는 문제다.",
+                      "상쇄 요인이 법칙을 대체했으므로 위기는 외부 정책 실패로 설명된다는 문제다.",
+                      "해외무역이 평균이윤율을 안정시키므로 과잉축적 분석이 유통론으로 이동한다는 문제다.",
+                      "착취 강화가 모든 모순을 해결하므로 다음 장은 잉여가치율 계산을 마무리한다는 문제다."
                     ],
                     "en": [
-                      "Fails to distinguish the physical mass and value magnitude of constant capital.",
-                      "Treats counteracting influences as external variables unrelated to capitalist contradictions.",
-                      "Assumes the law is false if counteracting influences exist.",
-                      "It prevents the falling-profit tendency from being treated as a straight line, explaining delays and refractions in real capitalist movement."
+                      "Even with counteracting causes, the pressure of the law remains, and pressure and remedies unfold together in contradictions of accumulation and crisis.",
+                      "Counteracting causes replace the law, so crisis is explained by external policy failure.",
+                      "Foreign trade stabilizes average profit, so overaccumulation analysis moves into circulation theory.",
+                      "Intensified exploitation resolves all contradictions, so the next chapter closes the calculation of surplus-value rate."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율 저하 경향을 단순 직선으로 두지 않고, 실제 자본주의 운동 속의 지연과 굴절을 설명한다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다.",
-                    "en": "It prevents the falling-profit tendency from being treated as a straight line, explaining delays and refractions in real capitalist movement. This connection leads into the more concrete forms of capital analyzed next."
+                    "ko": "14장은 법칙을 현실의 복합 운동으로 만든다. 15장은 그 복합 운동이 과잉축적, 평가절하, 위기로 어떻게 폭발하는지 다룬다.",
+                    "en": "Chapter 14 turns the law into a complex real movement. Chapter 15 asks how that movement erupts as overaccumulation, devaluation, and crisis."
                   }
                 }
               ]
@@ -24062,27 +24020,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상쇄 요인들의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of counteracting influences?"
+                    "ko": "상쇄 요인들의 공통된 성격은 무엇인가?",
+                    "en": "What is the common character of the counteracting causes?"
                   },
                   "choices": {
                     "ko": [
-                      "자본은 이윤율 하락 압박을 완화하려고 하지만, 그 완화책 자체가 착취 강화와 세계시장 의존 같은 새 모순을 만든다.",
-                      "불변자본의 물질량과 가치량을 구분하지 않는다.",
-                      "상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다.",
-                      "해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다."
+                      "대체로 이윤율의 분자를 키우거나 분모의 가치 증가를 늦추되, 자본축적의 기본 구조는 그대로 둔다.",
+                      "각각 독립된 외부 사건처럼 작동해 유기적 구성 상승과 접점이 작다.",
+                      "모두 임금 상승을 통해 소비수요를 키우고 평균이윤율을 안정시킨다.",
+                      "경쟁이 잠시 멈춘 예외 상황에서만 나타나는 회계 조정이다."
                     ],
                     "en": [
-                      "Capital seeks to relieve pressure on the profit rate, but the relief itself creates new contradictions such as intensified exploitation and dependence on the world market.",
-                      "Fails to distinguish the physical mass and value magnitude of constant capital.",
-                      "Assumes the law is false if counteracting influences exist.",
-                      "Treats foreign trade as a permanent solution to all profit-rate problems."
+                      "They generally enlarge the numerator or slow the value growth of the denominator, while leaving the basic structure of accumulation intact.",
+                      "They operate like independent external events with little contact with rising organic composition.",
+                      "They all raise wages, expand consumer demand, and stabilize the average profit rate.",
+                      "They are accounting adjustments that appear only when competition pauses briefly."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본은 이윤율 하락 압박을 완화하려고 하지만, 그 완화책 자체가 착취 강화와 세계시장 의존 같은 새 모순을 만든다. 이 긴장은 마르크스가 단순한 균형모형이 아니라 자본의 모순적 운동을 분석한다는 점을 보여준다.",
-                    "en": "Capital seeks to relieve pressure on the profit rate, but the relief itself creates new contradictions such as intensified exploitation and dependence on the world market. This tension shows that Marx analyzes the contradictory movement of capital, not a simple equilibrium model."
+                    "ko": "상쇄 요인은 법칙 바깥의 외부 보정값이 아니다. 자본주의 축적 자체가 유기적 구성 상승과 동시에 착취 강화, 비용 절감, 세계시장 확장을 낳는다.",
+                    "en": "Counteracting causes are not external corrections outside the law. Capitalist accumulation itself produces rising organic composition together with exploitation, cost saving, and world-market expansion."
                   }
                 },
                 {
@@ -24090,27 +24048,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "법칙과 상쇄 요인을 함께 묶는 매개는 무엇인가?",
-                    "en": "What mediates the law and the counteracting influences together?"
+                    "ko": "상대적 과잉인구가 상쇄 요인으로 작동하는 경로는 무엇인가?",
+                    "en": "How does relative surplus population act as a counteracting cause?"
                   },
                   "choices": {
                     "ko": [
-                      "불변자본의 물질량과 가치량을 구분하지 않는다.",
-                      "자본축적의 동일한 운동이 유기적 구성을 높이는 동시에 착취 강화와 비용 절감을 강제한다는 점이다.",
-                      "해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.",
-                      "착취 강화가 이윤율과 무관하다고 본다."
+                      "노동력 공급 압력을 통해 임금과 고용조건을 누르고, 주어진 자본이 더 높은 착취율을 얻는 조건을 만든다.",
+                      "실업자가 늘면 가변자본의 가치가 사회적 총자본에서 완전히 제거된다.",
+                      "노동력 공급이 많아지면 불변자본의 기술적 구성이 낮아져 기계 사용이 줄어든다.",
+                      "과잉인구는 수요를 늘려 상품가격을 생산가격보다 높은 수준에 붙잡아 둔다."
                     ],
                     "en": [
-                      "Fails to distinguish the physical mass and value magnitude of constant capital.",
-                      "The same movement of accumulation raises organic composition while also compelling intensified exploitation and cost reductions.",
-                      "Treats foreign trade as a permanent solution to all profit-rate problems.",
-                      "Treats intensified exploitation as unrelated to the profit rate."
+                      "It pressures wages and employment conditions, creating conditions for a higher rate of exploitation by a given capital.",
+                      "When unemployment grows, the value of variable capital is completely removed from total social capital.",
+                      "More labour supply lowers the technical composition of constant capital and reduces machinery use.",
+                      "Surplus population raises demand and holds commodity prices above prices of production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본축적의 동일한 운동이 유기적 구성을 높이는 동시에 착취 강화와 비용 절감을 강제한다는 점이다. 매개를 보아야 생산에서 생긴 잉여가치가 다른 형태의 수입으로 나타나는 과정을 이해할 수 있다.",
-                    "en": "The same movement of accumulation raises organic composition while also compelling intensified exploitation and cost reductions. Seeing the mediation lets us understand how surplus-value produced in production appears as other revenue forms."
+                    "ko": "과잉인구는 단순한 인구 문제가 아니라 축적의 산물이다. 그것은 임금 압박과 노동강도 상승을 통해 이윤율 저하 압력을 완화할 수 있다.",
+                    "en": "Surplus population is not a mere population issue but a product of accumulation. It can ease pressure on the profit rate through wage pressure and labour intensification."
                   }
                 },
                 {
@@ -24118,41 +24076,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "해외무역이 있으니 이윤율 저하 경향은 의미 없다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying foreign trade makes the falling-profit tendency irrelevant?"
+                    "ko": "주식자본의 증가가 보충적 상쇄 요인으로 언급되는 이유는 무엇인가?",
+                    "en": "Why is the increase of stock capital mentioned as a supplementary counteracting cause?"
                   },
                   "choices": {
                     "ko": [
-                      "해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.",
-                      "착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석",
-                      "해외무역은 원료와 임금을 낮춰 압박을 완화할 수 있지만, 세계시장 경쟁과 불균등 발전의 모순을 함께 확대한다.",
-                      "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다."
+                      "거대한 고정자본 부문이 평균 이하 배당으로 계산되면, 실제 평균 이윤율의 하락 압력이 표면에서 덜 보일 수 있기 때문이다.",
+                      "주식회사는 산업자본과 다른 가치 원천을 갖기 때문에 잉여가치 분석에서 빠져나가기 때문이다.",
+                      "배당은 임금의 변형이므로 주식자본 증가는 가변자본 비중을 직접 키우기 때문이다.",
+                      "주식시장은 상품시장과 분리되어 생산수단의 가치 변화를 반영하지 않기 때문이다."
                     ],
                     "en": [
-                      "Treats foreign trade as a permanent solution to all profit-rate problems.",
-                      "Treats intensified exploitation as unrelated to the profit rate.",
-                      "Foreign trade can relieve pressure by cheapening inputs and wages, but it also expands contradictions of world-market competition and uneven development.",
-                      "Treats counteracting influences as external variables unrelated to capitalist contradictions."
+                      "Because large fixed-capital enterprises may be counted through below-average dividends, making downward pressure on the actual average profit rate less visible.",
+                      "Because joint-stock companies have a value source different from industrial capital and escape surplus-value analysis.",
+                      "Because dividends are a transformed wage, stock capital directly raises the share of variable capital.",
+                      "Because stock markets are separate from commodity markets and do not reflect value changes in means of production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "해외무역은 원료와 임금을 낮춰 압박을 완화할 수 있지만, 세계시장 경쟁과 불균등 발전의 모순을 함께 확대한다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
-                    "en": "Foreign trade can relieve pressure by cheapening inputs and wages, but it also expands contradictions of world-market competition and uneven development. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"해외무역을 이윤율 압박을 외부로 넘기는 충분한 해결책으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 해외무역은 원료와 임금을 낮춰 압박을 완화할 수 있지만, 세계시장 경쟁과 불균등 발전의 모순을 함께 확대한다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
-                      "오해 진단: \"상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Treats foreign trade as a permanent solution to all profit-rate problems.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Treats intensified exploitation as unrelated to the profit rate.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: Foreign trade can relieve pressure by cheapening inputs and wages, but it also expands contradictions of world-market competition and uneven development. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals.",
-                      "Misconception check: choosing \"Treats counteracting influences as external variables unrelated to capitalist contradictions.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "마르크스는 주식자본을 충분히 전개하지 않지만 중요한 암시를 둔다. 거대 고정자본과 낮은 배당은 평균 이윤율의 표면적 계산을 흐릴 수 있다.",
+                    "en": "Marx does not fully develop stock capital here, but he gives an important hint: large fixed capital and low dividends can blur the surface calculation of the average profit rate."
                   }
                 },
                 {
@@ -24160,41 +24104,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "플랫폼 기업이 임금비용을 낮추기 위해 외주화와 글로벌 원격노동을 늘린다. 무엇을 분석해야 하는가?",
-                    "en": "A platform firm expands outsourcing and global remote labour to reduce wage costs. What should be analyzed?"
+                    "ko": "글로벌 외주화와 원격노동 확대 사례에서 14장의 질문은 무엇인가?",
+                    "en": "What does Chapter 14 ask in a case of global outsourcing and remote labour expansion?"
                   },
                   "choices": {
                     "ko": [
-                      "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.",
-                      "착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석",
-                      "이 조치가 가변자본 비용과 착취율, 이윤율 압박을 어떻게 상쇄하는지와 어떤 새 의존을 만드는지 함께 봐야 한다.",
-                      "상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다."
+                      "그 조치가 임금비용, 착취율, 회전 조건, 세계시장 의존을 통해 이윤율 압박을 어떻게 완화하고 새 취약성을 만드는지다.",
+                      "외주화가 일어나면 노동이 독립 서비스가 되어 잉여가치 생산과 분리되는지다.",
+                      "원격노동은 공간 이동이 없으므로 해외무역이나 세계시장 분석과 별개인지다.",
+                      "플랫폼 수수료가 생기면 산업자본의 유기적 구성이 낮아지는지다."
                     ],
                     "en": [
-                      "Treats counteracting influences as external variables unrelated to capitalist contradictions.",
-                      "Treats intensified exploitation as unrelated to the profit rate.",
-                      "One should examine how it counteracts pressure through variable-capital costs and exploitation, and what new dependencies it creates.",
-                      "Assumes the law is false if counteracting influences exist."
+                      "How the measure eases profit-rate pressure through wage costs, exploitation rate, turnover conditions, and world-market dependence while creating new vulnerabilities.",
+                      "Whether outsourcing turns labour into an independent service separated from surplus-value production.",
+                      "Whether remote work is separate from foreign trade or world-market analysis because no spatial movement occurs.",
+                      "Whether platform fees lower the organic composition of industrial capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 조치가 가변자본 비용과 착취율, 이윤율 압박을 어떻게 상쇄하는지와 어떤 새 의존을 만드는지 함께 봐야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
-                    "en": "One should examine how it counteracts pressure through variable-capital costs and exploitation, and what new dependencies it creates. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"착취 강화가 이윤율과 무관하다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 이 조치가 가변자본 비용과 착취율, 이윤율 압박을 어떻게 상쇄하는지와 어떤 새 의존을 만드는지 함께 봐야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
-                      "오해 진단: \"상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Treats counteracting influences as external variables unrelated to capitalist contradictions.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Treats intensified exploitation as unrelated to the profit rate.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: One should examine how it counteracts pressure through variable-capital costs and exploitation, and what new dependencies it creates. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases.",
-                      "Misconception check: choosing \"Assumes the law is false if counteracting influences exist.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "현대 사례에서도 상쇄 요인은 여러 경로가 겹친다. 비용 절감은 이윤율을 완화할 수 있지만, 세계시장과 노동통제의 새 의존을 만든다.",
+                    "en": "Even in modern cases, counteracting causes overlap. Cost saving can ease the profit rate while creating new dependence on world markets and labour control."
                   }
                 },
                 {
@@ -24202,27 +24132,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상쇄 요인들의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the counteracting influences?"
+                    "ko": "14장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 14?"
                   },
                   "choices": {
                     "ko": [
-                      "상쇄 요인을 자본주의 모순과 무관한 외부 변수로 본다.",
-                      "상쇄 요인의 존재를 경향 법칙의 부정으로 읽는다.",
-                      "불변자본의 물질량과 가치량을 구분하지 않는다.",
-                      "법칙을 현실의 복합 운동으로 전개해, 다음 장의 내적 모순 분석으로 넘어가게 한다."
+                      "13장의 법칙을 현실의 지연ㆍ굴절ㆍ불균등한 운동으로 바꾸어 15장의 위기 모순 분석을 준비한다.",
+                      "13장의 법칙을 철회하고 이윤율의 안정성을 경험적 사실로 확정한다.",
+                      "평균이윤율을 임금정책의 결과로 바꾸어 생산력 발전 문제를 닫는다.",
+                      "상쇄 요인을 상업자본 분석으로 전환해 산업자본의 축적 논의를 끝낸다."
                     ],
                     "en": [
-                      "Treats counteracting influences as external variables unrelated to capitalist contradictions.",
-                      "Assumes the law is false if counteracting influences exist.",
-                      "Fails to distinguish the physical mass and value magnitude of constant capital.",
-                      "They develop the law into a complex real movement, leading to the next chapter’s analysis of internal contradictions."
+                      "It turns Chapter 13’s law into a real movement of delay, bending, and unevenness, preparing Chapter 15’s crisis contradictions.",
+                      "It withdraws Chapter 13’s law and establishes profit-rate stability as an empirical fact.",
+                      "It turns average profit into a result of wage policy and closes the problem of productive development.",
+                      "It converts counteracting causes into commercial-capital analysis and ends the discussion of industrial accumulation."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "법칙을 현실의 복합 운동으로 전개해, 다음 장의 내적 모순 분석으로 넘어가게 한다. 이 장의 체계적 위치를 잡으면 3권의 표면형태 분석이 왜 단계적으로 전개되는지 이해할 수 있다.",
-                    "en": "They develop the law into a complex real movement, leading to the next chapter’s analysis of internal contradictions. Locating the chapter systematically shows why Volume III unfolds surface forms step by step."
+                    "ko": "14장은 법칙을 약하게 만드는 장이 아니라, 법칙이 왜 경향의 형태로 작동하는지를 설명하는 장이다.",
+                    "en": "Chapter 14 does not weaken the law; it explains why the law operates in the form of a tendency."
                   }
                 }
               ]
@@ -24295,27 +24225,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "법칙의 내적 모순의 전개에서 마르크스가 보여주는 것은 무엇인가?",
-                    "en": "What does Marx show in the exposition of the internal contradictions of the law?"
+                    "ko": "15장에서 법칙의 내적 모순이란 무엇인가?",
+                    "en": "What is the internal contradiction of the law in Chapter 15?"
                   },
                   "choices": {
                     "ko": [
-                      "자본은 생산력을 발전시켜 잉여가치량을 키우면서도, 바로 그 방식이 이윤율을 압박하고 과잉축적·위기를 낳는다는 점이다.",
-                      "위기를 물건의 절대적 부족 문제로 좁혀 본다.",
-                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 본다.",
-                      "과잉축적을 단순한 소비자의 변덕으로 설명한다."
+                      "자본은 생산력을 발전시켜 잉여가치량을 키우지만, 같은 과정이 이윤율을 압박하고 과잉축적과 위기를 낳을 수 있다는 점이다.",
+                      "자본은 소비를 늘리려 하지만 노동자는 상품을 생산하지 않아 시장이 축소된다는 점이다.",
+                      "자본은 기술을 싫어하지만 경쟁 때문에 기술을 도입할 수밖에 없다는 심리적 갈등이다.",
+                      "자본은 이윤율을 높이기 위해 가격을 낮추며, 그 결과 모든 상품이 가치보다 높게 팔린다는 점이다."
                     ],
                     "en": [
-                      "Capital develops productivity and expands the mass of surplus-value, yet that very method pressures the profit rate and produces overaccumulation and crisis.",
-                      "Assumes crisis always arises from an absolute shortage of goods.",
-                      "Assumes a larger mass of surplus-value necessarily raises the profit rate.",
-                      "Explains overaccumulation as mere consumer whim."
+                      "Capital develops productivity and can raise the mass of surplus-value, yet the same process pressures the profit rate and can produce overaccumulation and crisis.",
+                      "Capital tries to increase consumption, but workers do not produce commodities, so markets shrink.",
+                      "Capital dislikes technology but competition forces it to adopt technology, a psychological conflict.",
+                      "Capital lowers prices to raise the profit rate, so all commodities sell above value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본은 생산력을 발전시켜 잉여가치량을 키우면서도, 바로 그 방식이 이윤율을 압박하고 과잉축적·위기를 낳는다는 점이다. 이 문항은 장의 대상 자체를 잡기 위한 출발점이다.",
-                    "en": "Capital develops productivity and expands the mass of surplus-value, yet that very method pressures the profit rate and produces overaccumulation and crisis. This item establishes the object of the chapter."
+                    "ko": "15장의 모순은 성공의 모순이다. 자본주의적 생산력 발전이 바로 가치증식 조건을 압박한다.",
+                    "en": "The contradiction in Chapter 15 is a contradiction of success: capitalist productive development itself pressures the conditions of valorization."
                   }
                 },
                 {
@@ -24323,27 +24253,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치량은 늘어도 이윤율은 낮아질 수 있다는 말은 무엇을 뜻하는가?",
-                    "en": "What does it mean that the mass of surplus-value can rise while the rate of profit falls?"
+                    "ko": "잉여가치량이 늘어도 이윤율이 낮아질 수 있다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that the mass of surplus-value can grow while the profit rate falls?"
                   },
                   "choices": {
                     "ko": [
-                      "총자본이 더 빠르게 커지면 더 많은 잉여가치도 총자본에 대한 비율로는 낮게 나타날 수 있다는 뜻이다.",
-                      "과잉축적을 단순한 소비자의 변덕으로 설명한다.",
-                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 본다.",
-                      "신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다."
+                      "총자본이 잉여가치량보다 더 빠르게 커지면, 더 큰 s도 C에 대한 비율로는 낮게 나타날 수 있다는 뜻이다.",
+                      "잉여가치량이 늘면 이윤율은 실제로는 높지만 장부에서 낮게 적힌다는 뜻이다.",
+                      "이윤율은 판매가격으로 계산되고 잉여가치량은 소비자 만족으로 계산된다는 뜻이다.",
+                      "총자본이 커지면 가변자본이 사라져 이윤율 계산의 분자가 바뀐다는 뜻이다."
                     ],
                     "en": [
-                      "If total capital grows faster, a larger mass of surplus-value can still appear as a lower ratio to total capital.",
-                      "Explains overaccumulation as mere consumer whim.",
-                      "Assumes a larger mass of surplus-value necessarily raises the profit rate.",
-                      "Assumes credit expansion permanently solves capital’s contradictions."
+                      "If total capital grows faster than the mass of surplus-value, a larger s can appear as a lower ratio to C.",
+                      "The rate is actually higher but is written lower in the books when surplus-value grows.",
+                      "The profit rate is calculated by selling price and surplus-value by consumer satisfaction.",
+                      "When total capital grows, variable capital disappears and the numerator changes."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "총자본이 더 빠르게 커지면 더 많은 잉여가치도 총자본에 대한 비율로는 낮게 나타날 수 있다는 뜻이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
-                    "en": "If total capital grows faster, a larger mass of surplus-value can still appear as a lower ratio to total capital. So one must look not only at surface profitability but also at the underlying production and distribution of value."
+                    "ko": "이 구분은 위기 분석의 핵심이다. 자본은 더 큰 규모로 더 많은 이윤을 만들면서도 수익률 저하와 투자 정체를 겪을 수 있다.",
+                    "en": "This distinction is central to crisis analysis. Capital can produce more profit on a larger scale while facing lower profitability and investment blockage."
                   }
                 },
                 {
@@ -24351,41 +24281,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "과잉생산을 단순히 사람들이 너무 많이 소비해서 생긴 문제로 보면 왜 틀리는가?",
-                    "en": "Why is it wrong to see overproduction as a problem caused simply by people consuming too much?"
+                    "ko": "과잉생산을 사회적 필요보다 물건이 절대적으로 많은 상태로 이해하면 왜 부족한가?",
+                    "en": "Why is it insufficient to understand overproduction as an absolute excess of goods over social need?"
                   },
                   "choices": {
                     "ko": [
-                      "과잉축적을 단순한 소비자의 변덕으로 설명하는 식으로 가치관계의 매개를 지우는 오해",
-                      "위기는 사회적 필요보다 물건이 절대적으로 많아서가 아니라, 이윤을 낼 수 있는 자본증식 조건에 비해 자본과 상품이 과잉이 되는 데서 온다.",
-                      "신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다.",
-                      "평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 자본 운동의 단계를 단순화하는 오해"
+                      "자본주의 위기에서 과잉은 필요 일반이 아니라 이윤을 낼 수 있는 판매와 가치증식 조건에 대한 과잉이기 때문이다.",
+                      "과잉생산은 상품 수량이 아니라 노동자의 임금 인상 요구가 많아지는 상태이기 때문이다.",
+                      "사회적 필요가 크면 상품은 가격과 관계없이 모두 판매되어 위기가 생기기 때문이다.",
+                      "물건이 많아지는 순간 생산가격이 가치와 같은 수치로 고정되기 때문이다."
                     ],
                     "en": [
-                      "Explains overaccumulation as mere consumer whim.",
-                      "Crisis does not arise because goods are absolutely too abundant for social need, but because capital and commodities become excessive relative to profitable valorization.",
-                      "Assumes credit expansion permanently solves capital’s contradictions.",
-                      "Treats devaluation as only an accidental event external to capitalism."
+                      "Because in capitalist crisis, excess is relative not to need in general but to profitable sale and valorization conditions.",
+                      "Because overproduction means not too many commodities but too many workers demanding wages.",
+                      "Because if social need is large, all commodities sell regardless of price and crisis occurs.",
+                      "Because when goods increase, production price is fixed at the same number as value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "위기는 사회적 필요보다 물건이 절대적으로 많아서가 아니라, 이윤을 낼 수 있는 자본증식 조건에 비해 자본과 상품이 과잉이 되는 데서 온다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
-                    "en": "Crisis does not arise because goods are absolutely too abundant for social need, but because capital and commodities become excessive relative to profitable valorization. Without this distinction, capitalist forms appear as natural facts."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"과잉축적을 단순한 소비자의 변덕으로 설명하는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 위기는 사회적 필요보다 물건이 절대적으로 많아서가 아니라, 이윤을 낼 수 있는 자본증식 조건에 비해 자본과 상품이 과잉이 되는 데서 온다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
-                      "오해 진단: \"신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Explains overaccumulation as mere consumer whim.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: Crisis does not arise because goods are absolutely too abundant for social need, but because capital and commodities become excessive relative to profitable valorization. Without this distinction, capitalist forms appear as natural facts.",
-                      "Misconception check: choosing \"Assumes credit expansion permanently solves capital’s contradictions.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Treats devaluation as only an accidental event external to capitalism.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "마르크스에게 위기는 필요의 부족이 아니라 자본증식 조건의 충돌이다. 팔릴 수 있어도 충분한 이윤을 실현하지 못하면 자본은 과잉이 된다.",
+                    "en": "For Marx, crisis is not a lack of need but a conflict in the conditions of valorization. Even saleable goods can become excess capital if they do not realize sufficient profit."
                   }
                 },
                 {
@@ -24393,27 +24309,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시장은 필요한 물건이 많은데도 기업은 수익성이 낮아 투자를 멈춘다. 어떤 모순이 드러나는가?",
-                    "en": "There are many social needs, but firms stop investing because profitability is low. What contradiction is revealed?"
+                    "ko": "시장에는 필요한 물건이 많은데 기업이 수익성 악화로 투자를 멈추는 사례에서 드러나는 모순은 무엇인가?",
+                    "en": "What contradiction appears when needs remain but firms halt investment because profitability worsens?"
                   },
                   "choices": {
                     "ko": [
-                      "신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다.",
-                      "평가절하를 자본주의 외부의 우연한 사고로만 본다.",
-                      "자본주의 생산은 필요 충족이 아니라 이윤을 위한 생산이므로, 사회적 필요와 자본증식 조건이 충돌할 수 있다.",
-                      "위기를 물건의 절대적 부족 문제로 좁혀 본다."
+                      "사회적 필요 충족과 자본의 가치증식 조건이 서로 다른 기준이며, 자본주의 생산은 후자에 의해 제한된다는 모순이다.",
+                      "필요가 있으면 자본은 생산을 계속하므로 실제 문제는 상품 운송 속도라는 점이다.",
+                      "투자 중단은 노동력 부족의 결과라 이윤율과 별개의 인구 문제가 된다.",
+                      "수익성 악화는 평균이윤율이 지나치게 높아져 투자 기회가 줄었다는 뜻이다."
                     ],
                     "en": [
-                      "Assumes credit expansion permanently solves capital’s contradictions.",
-                      "Treats devaluation as only an accidental event external to capitalism.",
-                      "Capitalist production is production for profit, not need; social need and conditions of valorization can therefore collide.",
-                      "Assumes crisis always arises from an absolute shortage of goods."
+                      "The contradiction is that meeting social needs and valorizing capital are different standards, and capitalist production is limited by the latter.",
+                      "If need exists, capital continues production, so the real issue is transport speed.",
+                      "Investment stoppage results from labour shortage and is a demographic issue separate from the profit rate.",
+                      "Worsening profitability means the average profit rate is too high and investment opportunities shrink."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본주의 생산은 필요 충족이 아니라 이윤을 위한 생산이므로, 사회적 필요와 자본증식 조건이 충돌할 수 있다. 구체 사례에서도 핵심은 자본의 어느 형태가 어떤 관계를 가리는지다.",
-                    "en": "Capitalist production is production for profit, not need; social need and conditions of valorization can therefore collide. In concrete cases, the key is which form of capital conceals which relation."
+                    "ko": "15장은 자본주의 생산의 한계를 드러낸다. 자본은 필요가 아니라 이윤을 위한 생산이므로, 필요가 있어도 가치증식 조건이 막히면 생산이 멈출 수 있다.",
+                    "en": "Chapter 15 reveals the limit of capitalist production. Capital produces for profit, not need, so production can stop when valorization is blocked even if needs remain."
                   }
                 },
                 {
@@ -24421,41 +24337,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 장이 위기 분석으로 나아가는 이유는 무엇인가?",
-                    "en": "Why does this chapter move toward crisis analysis?"
+                    "ko": "15장이 위기 분석으로 나아가는 이유는 무엇인가?",
+                    "en": "Why does Chapter 15 move toward crisis analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 보는 식으로 가치관계의 매개를 지우는 오해",
-                      "평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "위기를 물건의 절대적 부족 문제로 좁혀 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "이윤율 저하 경향이 단순 수치 변화가 아니라 과잉축적, 자본 평가절하, 생산 중단 같은 모순으로 폭발할 수 있음을 보여주기 때문이다."
+                      "이윤율 저하 경향이 과잉축적, 자본 평가절하, 생산 중단, 실업과 결합해 폭발적 조정으로 나타날 수 있기 때문이다.",
+                      "위기는 평균이윤율이 충분히 안정된 뒤에 생기는 가격표 작성 오류이기 때문이다.",
+                      "이윤율이 낮아지면 자본가가 생산을 사회적 필요에 맞추어 계획하기 때문이다.",
+                      "위기는 상업자본이 생산과정 안에서 새 가치를 만든다는 사실을 보여 주기 때문이다."
                     ],
                     "en": [
-                      "Assumes a larger mass of surplus-value necessarily raises the profit rate.",
-                      "Treats devaluation as only an accidental event external to capitalism.",
-                      "Assumes crisis always arises from an absolute shortage of goods.",
-                      "Because it shows that the falling-profit tendency is not merely a numerical change but can erupt as overaccumulation, devaluation of capital, and interruption of production."
+                      "Because the tendency can combine with overaccumulation, devaluation of capital, production stoppage, and unemployment as explosive adjustment.",
+                      "Because crisis is a price-list error that appears after the average profit rate becomes stable enough.",
+                      "Because when the profit rate falls, capitalists plan production according to social need.",
+                      "Because crisis shows that commercial capital creates new value inside production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율 저하 경향이 단순 수치 변화가 아니라 과잉축적, 자본 평가절하, 생산 중단 같은 모순으로 폭발할 수 있음을 보여주기 때문이다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다.",
-                    "en": "Because it shows that the falling-profit tendency is not merely a numerical change but can erupt as overaccumulation, devaluation of capital, and interruption of production. This connection leads into the more concrete forms of capital analyzed next."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"잉여가치량이 늘면 이윤율도 곧장 오른다고 보는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"평가절하를 자본주의 외부의 우연한 사고로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"위기를 물건의 절대적 부족 문제로 좁혀 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 이윤율 저하 경향이 단순 수치 변화가 아니라 과잉축적, 자본 평가절하, 생산 중단 같은 모순으로 폭발할 수 있음을 보여주기 때문이다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Assumes a larger mass of surplus-value necessarily raises the profit rate.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Treats devaluation as only an accidental event external to capitalism.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes crisis always arises from an absolute shortage of goods.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: Because it shows that the falling-profit tendency is not merely a numerical change but can erupt as overaccumulation, devaluation of capital, and interruption of production. This connection leads into the more concrete forms of capital analyzed next."
-                    ]
+                    "ko": "위기는 우발 사건이 아니라 모순의 조정 형식이다. 자본의 평가절하와 생산 중단은 이윤율 회복 조건을 폭력적으로 만들 수 있다.",
+                    "en": "Crisis is not a mere accident but a form of adjusting contradictions. Devaluation and stoppage can violently create conditions for restoring profitability."
                   }
                 }
               ]
@@ -24473,27 +24375,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "법칙의 내적 모순에서 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the internal contradictions of the law?"
+                    "ko": "생산과 실현의 두 단계 구분이 15장에서 중요한 이유는 무엇인가?",
+                    "en": "Why is the distinction between production and realization important in Chapter 15?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 목적은 무한한 가치증식이지만, 그 수단인 생산력 발전은 주기적으로 가치증식의 조건을 훼손한다.",
-                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 본다.",
-                      "위기를 물건의 절대적 부족 문제로 좁혀 본다.",
-                      "과잉축적을 단순한 소비자의 변덕으로 설명한다."
+                      "잉여가치는 생산과정에서 만들어지지만, 상품 판매와 생산가격 실현이 막히면 그 착취가 자본가에게 이윤으로 실현되지 못하기 때문이다.",
+                      "잉여가치는 판매 순간 만들어지며 생산과정은 그 가치를 보관하는 단계이기 때문이다.",
+                      "생산과 실현은 같은 회계 항목이어서 위기 때 구분할 필요가 작기 때문이다.",
+                      "실현이 막히면 노동자가 이미 받은 임금이 잉여가치로 전환되기 때문이다."
                     ],
                     "en": [
-                      "Capital aims at unlimited valorization, but its means, the development of productivity, periodically undermines the conditions of valorization.",
-                      "Assumes a larger mass of surplus-value necessarily raises the profit rate.",
-                      "Assumes crisis always arises from an absolute shortage of goods.",
-                      "Explains overaccumulation as mere consumer whim."
+                      "Surplus-value is produced in production, but if sale and price realization are blocked, that exploitation is not realized as profit for the capitalist.",
+                      "Surplus-value is created at the moment of sale, while production merely stores that value.",
+                      "Production and realization are the same accounting item, so the distinction matters little in crisis.",
+                      "If realization is blocked, wages already paid to workers turn into surplus-value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본의 목적은 무한한 가치증식이지만, 그 수단인 생산력 발전은 주기적으로 가치증식의 조건을 훼손한다. 이 긴장은 마르크스가 단순한 균형모형이 아니라 자본의 모순적 운동을 분석한다는 점을 보여준다.",
-                    "en": "Capital aims at unlimited valorization, but its means, the development of productivity, periodically undermines the conditions of valorization. This tension shows that Marx analyzes the contradictory movement of capital, not a simple equilibrium model."
+                    "ko": "15장의 위기는 생산의 성공과 실현의 실패가 갈라지는 지점에서 나타난다. 착취가 이루어져도 판매와 이윤 실현이 막힐 수 있다.",
+                    "en": "Chapter 15’s crisis appears where successful production and failed realization diverge. Exploitation may occur, while sale and profit realization are blocked."
                   }
                 },
                 {
@@ -24501,27 +24403,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율 저하와 위기 가능성을 매개하는 것은 무엇인가?",
-                    "en": "What mediates the falling profit rate and the possibility of crisis?"
+                    "ko": "과잉자본과 과잉인구가 함께 나타나는 이유는 무엇인가?",
+                    "en": "Why can surplus capital and surplus population appear together?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 본다.",
-                      "과잉축적, 자본의 평가절하, 신용 팽창, 생산과 소비의 제한된 관계가 매개한다.",
-                      "과잉축적을 단순한 소비자의 변덕으로 설명한다.",
-                      "신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다."
+                      "가치증식 조건에서 쓰일 수 없는 자본과, 그 자본이 이윤성 있게 고용하지 못하는 노동력이 동시에 남기 때문이다.",
+                      "자본이 많아지면 노동자 임금이 높아져 모든 노동자가 생산에서 빠져나가기 때문이다.",
+                      "과잉자본은 돈이 너무 많다는 뜻이고 과잉인구는 소비자가 너무 많다는 뜻이기 때문이다.",
+                      "둘은 서로 다른 시장의 현상이므로 함께 나타나는 것은 통계상의 우연이다."
                     ],
                     "en": [
-                      "Assumes a larger mass of surplus-value necessarily raises the profit rate.",
-                      "They are mediated by overaccumulation, devaluation of capital, credit expansion, and the restricted relation between production and consumption.",
-                      "Explains overaccumulation as mere consumer whim.",
-                      "Assumes credit expansion permanently solves capital’s contradictions."
+                      "Because capital that cannot be valorized profitably and labour-power that capital cannot employ profitably remain side by side.",
+                      "Because more capital raises wages and all workers leave production.",
+                      "Because surplus capital means too much money and surplus population means too many consumers.",
+                      "They belong to separate markets, so their joint appearance is a statistical accident."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "과잉축적, 자본의 평가절하, 신용 팽창, 생산과 소비의 제한된 관계가 매개한다. 매개를 보아야 생산에서 생긴 잉여가치가 다른 형태의 수입으로 나타나는 과정을 이해할 수 있다.",
-                    "en": "They are mediated by overaccumulation, devaluation of capital, credit expansion, and the restricted relation between production and consumption. Seeing the mediation lets us understand how surplus-value produced in production appears as other revenue forms."
+                    "ko": "이 조합은 자본주의 위기의 특징이다. 자본도 노동도 사회적으로 필요할 수 있지만, 이윤성 있는 결합 조건이 막히면 둘 다 과잉으로 나타난다.",
+                    "en": "This combination is characteristic of capitalist crisis. Capital and labour may be socially needed, but when profitable combination is blocked, both appear as surplus."
                   }
                 },
                 {
@@ -24529,27 +24431,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "위기를 외부 충격이나 잘못된 정책만으로 설명하면 무엇을 놓치는가?",
-                    "en": "What is missed by explaining crisis only by external shocks or bad policy?"
+                    "ko": "위기를 외부 충격이나 정책 실패로만 설명하면 무엇을 놓치는가?",
+                    "en": "What is missed if crisis is explained mainly as external shock or policy failure?"
                   },
                   "choices": {
                     "ko": [
-                      "과잉축적을 단순한 소비자의 변덕으로 설명한다.",
-                      "신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다.",
-                      "위기가 자본축적의 정상적 성공, 즉 생산력 확대와 이윤추구 자체에서 자라날 수 있음을 놓친다.",
-                      "평가절하를 자본주의 외부의 우연한 사고로만 본다."
+                      "축적의 정상적 성공, 즉 생산력 확대와 자본집중 자체가 이윤율 압박과 과잉축적을 낳을 수 있다는 점이다.",
+                      "정책 실패가 작을수록 자본주의 경쟁도 약해져 위기 가능성이 낮아진다는 점이다.",
+                      "외부 충격은 상품가치를 늘리고 내부 축적은 가격표만 바꾼다는 점이다.",
+                      "위기는 생산보다 소비자의 심리 변화에서 먼저 시작된다는 점이다."
                     ],
                     "en": [
-                      "Explains overaccumulation as mere consumer whim.",
-                      "Assumes credit expansion permanently solves capital’s contradictions.",
-                      "It misses that crisis can grow out of the normal success of accumulation itself: expanding productivity and pursuing profit.",
-                      "Treats devaluation as only an accidental event external to capitalism."
+                      "It misses that the normal success of accumulation, expanding productivity and concentration of capital, can itself produce profit-rate pressure and overaccumulation.",
+                      "It misses that the smaller the policy failure, the weaker capitalist competition becomes and the lower crisis possibility is.",
+                      "It misses that external shocks increase commodity value while internal accumulation changes only price lists.",
+                      "It misses that crisis starts in consumer psychology before production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "위기가 자본축적의 정상적 성공, 즉 생산력 확대와 이윤추구 자체에서 자라날 수 있음을 놓친다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
-                    "en": "It misses that crisis can grow out of the normal success of accumulation itself: expanding productivity and pursuing profit. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals."
+                    "ko": "15장의 강점은 위기를 자본주의 외부의 사고로 밀어내지 않는 데 있다. 축적의 내적 동학이 위기 가능성을 만든다.",
+                    "en": "Chapter 15’s strength is that it does not push crisis outside capitalism as an accident. The internal dynamics of accumulation generate crisis possibilities."
                   }
                 },
                 {
@@ -24557,27 +24459,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "투자 붐 뒤에 설비 과잉과 가격 폭락이 오고, 기업들이 손실을 감수하며 자산을 처분한다. 무엇을 봐야 하는가?",
-                    "en": "After an investment boom, excess capacity and price collapse arrive, and firms sell assets at losses. What should be examined?"
+                    "ko": "투자 붐 뒤 설비 과잉과 가격 폭락, 자산 매각이 이어질 때 무엇을 봐야 하는가?",
+                    "en": "What should be examined when an investment boom is followed by excess capacity, price collapse, and asset sales?"
                   },
                   "choices": {
                     "ko": [
-                      "평가절하를 자본주의 외부의 우연한 사고로만 본다.",
-                      "신용 팽창이 자본의 모순을 상당히 오래 해결한다고 본다.",
-                      "과잉축적된 자본이 평가절하를 통해 다시 이윤율 회복의 조건을 만들려는 위기적 조정을 봐야 한다.",
-                      "위기를 물건의 절대적 부족 문제로 좁혀 본다."
+                      "과잉축적된 자본이 평가절하를 통해 다시 이윤율 회복 조건을 만들려는 위기적 조정을 봐야 한다.",
+                      "설비 과잉은 사용가치가 많아졌다는 뜻이므로 가치증식에는 긍정적 신호로 읽어야 한다.",
+                      "가격 폭락은 생산가격이 가치보다 높게 유지된 결과라 평균이윤율을 올린다.",
+                      "자산 매각은 유통 과정의 소유권 변경이므로 산업자본의 축적 문제와 분리된다."
                     ],
                     "en": [
-                      "Treats devaluation as only an accidental event external to capitalism.",
-                      "Assumes credit expansion permanently solves capital’s contradictions.",
-                      "One should examine the crisis adjustment in which overaccumulated capital is devalued to recreate conditions for restoring the profit rate.",
-                      "Assumes crisis always arises from an absolute shortage of goods."
+                      "One should see crisis adjustment in which overaccumulated capital is devalued to create conditions for restoring the profit rate.",
+                      "Excess capacity means more use-values and should be read as a positive sign for valorization.",
+                      "Price collapse results from production prices staying above value and raises the average profit rate.",
+                      "Asset sales are ownership changes in circulation and are separate from industrial accumulation."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "과잉축적된 자본이 평가절하를 통해 다시 이윤율 회복의 조건을 만들려는 위기적 조정을 봐야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
-                    "en": "One should examine the crisis adjustment in which overaccumulated capital is devalued to recreate conditions for restoring the profit rate. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases."
+                    "ko": "평가절하는 단순 손실이 아니라 위기 속 조정 메커니즘이다. 자본가에게는 파괴적이지만, 체계적으로는 이윤율 회복 조건을 만들 수 있다.",
+                    "en": "Devaluation is not merely loss but a crisis adjustment mechanism. It is destructive for capitalists, yet systemically can create conditions for restoring profitability."
                   }
                 },
                 {
@@ -24585,27 +24487,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "법칙의 내적 모순의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the law’s internal contradictions?"
+                    "ko": "15장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 15?"
                   },
                   "choices": {
                     "ko": [
-                      "평가절하를 자본주의 외부의 우연한 사고로만 본다.",
-                      "위기를 물건의 절대적 부족 문제로 좁혀 본다.",
-                      "잉여가치량이 늘면 이윤율도 곧장 오른다고 본다.",
-                      "이윤율 저하 경향을 자본주의 위기와 평가절하의 동학으로 연결한다."
+                      "이윤율 저하 경향을 자본주의 위기, 과잉축적, 평가절하, 생산력 발전의 역사적 한계와 연결한다.",
+                      "상쇄 요인들이 법칙을 안정화했음을 확인하고 다음 편의 상업자본 분석을 독립 교환론으로 연다.",
+                      "생산가격과 시장가격의 차이를 소비자 선택 이론으로 바꾸어 위기 분석을 닫는다.",
+                      "유기적 구성 상승을 지대론으로 넘기고 산업자본의 모순을 주변 쟁점으로 돌린다."
                     ],
                     "en": [
-                      "Treats devaluation as only an accidental event external to capitalism.",
-                      "Assumes crisis always arises from an absolute shortage of goods.",
-                      "Assumes a larger mass of surplus-value necessarily raises the profit rate.",
-                      "It connects the tendency of the profit rate to fall with the dynamics of capitalist crisis and devaluation."
+                      "It connects the falling profit-rate tendency to capitalist crisis, overaccumulation, devaluation, and the historical limits of productive development.",
+                      "It confirms that counteracting causes stabilize the law and opens commercial capital as an independent exchange theory.",
+                      "It turns the difference between production and market price into consumer choice theory and closes crisis analysis.",
+                      "It hands rising organic composition over to rent theory and turns contradictions of industrial capital into a side issue."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율 저하 경향을 자본주의 위기와 평가절하의 동학으로 연결한다. 이 장의 체계적 위치를 잡으면 3권의 표면형태 분석이 왜 단계적으로 전개되는지 이해할 수 있다.",
-                    "en": "It connects the tendency of the profit rate to fall with the dynamics of capitalist crisis and devaluation. Locating the chapter systematically shows why Volume III unfolds surface forms step by step."
+                    "ko": "15장은 13~14장의 법칙과 상쇄 요인을 위기 동학으로 끌어간다. 그래서 다음 편의 상업자본도 이미 이 모순 위에서 등장한다.",
+                    "en": "Chapter 15 carries the law and counteracting causes of Chapters 13-14 into crisis dynamics. Commercial capital then appears on the terrain of these contradictions."
                   }
                 }
               ]
@@ -24678,27 +24580,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상인이 상품을 사서 팔 뿐인데도 독립한 자본가처럼 이윤을 얻는다. 마르크스는 이 현상을 어떻게 설명하는가?",
-                    "en": "A merchant only buys and sells commodities, yet appears as an independent capitalist earning profit. How does Marx explain this?"
+                    "ko": "16장에서 상업자본은 산업자본과 어떤 관계에 있는가?",
+                    "en": "What is the relation between commercial capital and industrial capital in Chapter 16?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본의 상품자본 기능이 독립해 상업자본으로 나타나고, 유통 기능을 전문적으로 맡기 때문이다.",
-                      "상업자본은 상품을 유통시키므로 새 가치를 직접 생산하기 때문이다.",
-                      "상업이윤은 단순한 사기나 가격 조작일 뿐이기 때문이다.",
-                      "상업자본은 산업자본의 상품자본 기능과 아무 관계가 없기 때문이다."
+                      "산업자본의 상품자본 기능, 즉 상품을 화폐로 전환하는 유통 기능이 독립한 형태다.",
+                      "산업자본과 별도의 생산과정을 가져 유통 안에서 새 가치와 잉여가치를 생산하는 자본이다.",
+                      "생산수단을 직접 소유하지 않는 금융자본이 이자를 받기 위해 만든 계약 형식이다.",
+                      "토지소유자가 상품 판매를 대신하며 지대를 평균이윤으로 바꾸는 형태다."
                     ],
                     "en": [
-                      "The commodity-capital function of industrial capital separates off as commercial capital and specializes in circulation.",
-                      "Commercial capital directly produces new value because it circulates commodities.",
-                      "Commercial profit is only fraud or price manipulation.",
-                      "Commercial capital has no relation to the commodity-capital function of industrial capital."
+                      "It is the independent form of industrial capital’s commodity-capital function, the circulation function of converting commodities into money.",
+                      "It has a separate production process and creates new value and surplus-value inside circulation.",
+                      "It is a contract form created by finance capital to receive interest without owning means of production.",
+                      "It is the form in which landowners sell commodities and turn rent into average profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상업자본은 생산에서 새 가치를 만들지는 않지만, 산업자본의 유통 기능을 독립적으로 수행한다. 그래서 상업이윤을 사기나 독자적 가치창조로 보면 잉여가치 분배 관계를 놓친다.",
-                    "en": "Commercial capital does not create new value in production, but it independently performs the circulation function of industrial capital. Treating commercial profit as fraud or as independent value-creation misses the distribution of surplus-value."
+                    "ko": "상업자본은 산업자본과 분리되어 보이지만, 그 특정성은 상품자본의 유통 기능이 독립했다는 데 있다.",
+                    "en": "Commercial capital appears separate from industrial capital, but its specificity is the independence of the circulation function of commodity-capital."
                   }
                 },
                 {
@@ -24706,27 +24608,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상업자본이 직접 잉여가치를 생산하지 않아도 자본주의에 필요한 이유는 무엇인가?",
-                    "en": "Why is commercial capital necessary to capitalism even though it does not directly produce surplus-value?"
+                    "ko": "상업자본이 자본주의 재생산에 필요한 이유는 무엇인가?",
+                    "en": "Why is commercial capital necessary for capitalist reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "상품 판매와 가치 실현을 전문화해 산업자본의 회전을 빠르게 하고, 상품자본 기능을 독립적으로 수행하기 때문이다.",
-                      "산업자본의 상품자본 기능과 상업자본의 관계를 끊어 버린다.",
-                      "상업이윤을 단순한 사기나 가격 조작으로만 본다.",
-                      "판매가 빨라지면 착취관계가 사라진다고 본다."
+                      "판매와 구매를 전문화해 상품자본의 전환을 빠르게 하고 산업자본의 회전을 돕기 때문이다.",
+                      "상인이 상품을 보유하는 동안 그 상품 안에 새 노동시간이 추가되기 때문이다.",
+                      "상업자본이 생산시간을 없애 산업자본이 유통 과정만으로 재생산되게 하기 때문이다.",
+                      "상업자본이 평균이윤율과 무관한 독립 이윤율을 사회 전체에 부과하기 때문이다."
                     ],
                     "en": [
-                      "It specializes in commodity sale and value realization, accelerates industrial capital’s turnover, and independently performs the commodity-capital function.",
-                      "Cuts the relation between industrial capital’s commodity-capital function and commercial capital.",
-                      "Treats commercial profit only as fraud or price manipulation.",
-                      "Assumes faster sale abolishes exploitation relations."
+                      "Because it specializes buying and selling, speeds the metamorphosis of commodity-capital, and helps the turnover of industrial capital.",
+                      "Because new labour-time is added to the commodity while the merchant holds it.",
+                      "Because commercial capital abolishes production time and lets industrial capital reproduce through circulation alone.",
+                      "Because commercial capital imposes an independent profit rate unrelated to average profit on society."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품 판매와 가치 실현을 전문화해 산업자본의 회전을 빠르게 하고, 상품자본 기능을 독립적으로 수행하기 때문이다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
-                    "en": "It specializes in commodity sale and value realization, accelerates industrial capital’s turnover, and independently performs the commodity-capital function. So one must look not only at surface profitability but also at the underlying production and distribution of value."
+                    "ko": "상업자본은 새 가치를 직접 만들지는 않지만, 유통시간을 줄이고 판매 기능을 집중시켜 산업자본의 재생산을 원활하게 한다.",
+                    "en": "Commercial capital does not directly create new value, but it reduces circulation time and concentrates the selling function, smoothing the reproduction of industrial capital."
                   }
                 },
                 {
@@ -24734,27 +24636,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상업자본을 산업자본과 완전히 별개의 가치 원천으로 보면 무엇을 놓치는가?",
-                    "en": "What is missed if commercial capital is treated as a completely separate source of value?"
+                    "ko": "M-C-M'이라는 상업자본의 운동에서 중요한 점은 무엇인가?",
+                    "en": "What is important in the movement M-C-M' of commercial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본의 상품자본 기능과 상업자본의 관계를 끊어 버린다.",
-                      "상업자본은 독립해 보이지만 산업자본이 생산한 잉여가치의 실현과 분배에 의존한다는 점을 놓친다.",
-                      "판매가 빨라지면 착취관계가 사라진다고 본다.",
-                      "상업자본을 자본주의 이전의 상인 활동과 같은 것으로만 본다."
+                      "상인은 생산하지 않고 사서 팔며, 같은 상품의 위치 변화가 상인의 돈자본 회수를 매개한다.",
+                      "M-C-M'은 산업자본의 생산과정 안에서 노동력이 생산수단과 결합하는 공식을 뜻한다.",
+                      "상인은 처음부터 상품을 소비자에게 판매하므로 생산자에게서 사는 단계는 가치분석의 주변 단계로 처리된다.",
+                      "같은 돈이 두 번 자리를 바꾸므로 상품은 유통 중 새 가치를 얻는다."
                     ],
                     "en": [
-                      "Cuts the relation between industrial capital’s commodity-capital function and commercial capital.",
-                      "It misses that commercial capital appears independent but depends on the realization and distribution of surplus-value produced by industrial capital.",
-                      "Assumes faster sale abolishes exploitation relations.",
-                      "Treats commercial capital as simply identical with pre-capitalist merchant activity."
+                      "The merchant does not produce but buys and sells; the movement of the same commodity mediates the return of the merchant’s money-capital.",
+                      "M-C-M' means the formula in which labour-power combines with means of production inside industrial production.",
+                      "The merchant sells to consumers from the beginning, so the purchase from the producer is treated as a peripheral stage of value analysis.",
+                      "The same money changes place twice, so the commodity gains new value in circulation."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업자본은 독립해 보이지만 산업자본이 생산한 잉여가치의 실현과 분배에 의존한다는 점을 놓친다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
-                    "en": "It misses that commercial capital appears independent but depends on the realization and distribution of surplus-value produced by industrial capital. Without this distinction, capitalist forms appear as natural facts."
+                    "ko": "산업자본의 C-M-C와 달리 상업자본에서는 상인이 같은 상품을 사서 다시 판다. 이 운동은 상품자본 기능의 독립을 보여 준다.",
+                    "en": "Unlike industrial capital’s C-M-C, commercial capital buys and resells the same commodity. This movement shows the independence of the commodity-capital function."
                   }
                 },
                 {
@@ -24762,27 +24664,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "온라인 유통업체가 제조업체 상품을 대량 매입해 판매를 전담한다. 마르크스의 범주로 보면 무엇이 분리된 것인가?",
-                    "en": "An online retailer buys manufacturers’ commodities in bulk and takes over selling. In Marx’s categories, what has become separated?"
+                    "ko": "온라인 유통업체가 제조업체 상품 판매를 전담하는 사례를 16장으로 읽으면 무엇이 분리된 것인가?",
+                    "en": "In Chapter 16 terms, what is separated when an online distributor handles sales for manufacturers?"
                   },
                   "choices": {
                     "ko": [
-                      "판매가 빨라지면 착취관계가 사라진다고 본다.",
-                      "상업자본을 자본주의 이전의 상인 활동과 같은 것으로만 본다.",
-                      "산업자본 안에 있던 상품자본의 판매 기능이 상업자본의 독립 기능으로 분리된 것이다.",
-                      "상업자본이 상품을 유통시키므로 새 가치를 직접 생산한다고 본다."
+                      "산업자본 내부에 있던 상품자본의 판매ㆍ실현 기능이 별도 자본의 전문 기능으로 분리된 것이다.",
+                      "제조업체의 생산노동이 플랫폼 내부로 이전되어 상품 가치의 원천이 바뀐 것이다.",
+                      "소비자 결제가 빨라져 상품의 사용가치가 교환가치보다 먼저 생산된 것이다.",
+                      "플랫폼 수수료가 생기면서 상업자본이 산업자본보다 많은 잉여가치를 직접 생산한 것이다."
                     ],
                     "en": [
-                      "Assumes faster sale abolishes exploitation relations.",
-                      "Treats commercial capital as simply identical with pre-capitalist merchant activity.",
-                      "The selling function of commodity-capital within industrial capital has separated into the independent function of commercial capital.",
-                      "Assumes commercial capital directly produces new value because it circulates commodities."
+                      "The selling and realization function of commodity-capital inside industrial capital has separated into the specialized function of another capital.",
+                      "The manufacturer’s productive labour has moved inside the platform, changing the source of commodity value.",
+                      "Faster consumer payment makes use-value produced before exchange-value.",
+                      "Platform fees mean commercial capital directly produces more surplus-value than industrial capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "산업자본 안에 있던 상품자본의 판매 기능이 상업자본의 독립 기능으로 분리된 것이다. 구체 사례에서도 핵심은 자본의 어느 형태가 어떤 관계를 가리는지다.",
-                    "en": "The selling function of commodity-capital within industrial capital has separated into the independent function of commercial capital. In concrete cases, the key is which form of capital conceals which relation."
+                    "ko": "현대 플랫폼도 상품자본 실현 기능의 독립으로 볼 수 있다. 중요한 것은 판매 기능의 분업과 회전 가속이지, 유통 자체의 가치창조가 아니다.",
+                    "en": "A modern platform can be read as the independence of the realization function of commodity-capital. The key is division of selling labour and faster turnover, not value creation by circulation itself."
                   }
                 },
                 {
@@ -24790,27 +24692,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상업자본 분석이 다음 장으로 넘기는 문제는 무엇인가?",
-                    "en": "What problem does the analysis of commercial capital hand over to the next chapter?"
+                    "ko": "16장은 17장의 상업이윤 문제로 무엇을 넘겨주는가?",
+                    "en": "What problem does Chapter 16 hand over to Chapter 17 on commercial profit?"
                   },
                   "choices": {
                     "ko": [
-                      "상업이윤을 단순한 사기나 가격 조작으로만 본다.",
-                      "상업자본을 자본주의 이전의 상인 활동과 같은 것으로만 본다.",
-                      "상업자본이 상품을 유통시키므로 새 가치를 직접 생산한다고 본다.",
-                      "상업자본이 직접 잉여가치를 만들지 않는다면 상업이윤은 어디서 오는가라는 문제다."
+                      "상업자본의 상업이윤이 산업자본이 생산한 총잉여가치에서 어떤 몫으로 배분되는가라는 문제다.",
+                      "상업자본이 유통에서 새 가치를 생산한다면 그 가치가 임금과 지대로 어떻게 나뉘는가라는 문제다.",
+                      "상업자본이 상품을 두 번 판매하면 상품가치도 두 번 생산되는가라는 문제다.",
+                      "상업자본이 평균이윤율 밖에 있다면 산업자본의 이윤율은 어떻게 사라지는가라는 문제다."
                     ],
                     "en": [
-                      "Treats commercial profit only as fraud or price manipulation.",
-                      "Treats commercial capital as simply identical with pre-capitalist merchant activity.",
-                      "Assumes commercial capital directly produces new value because it circulates commodities.",
-                      "It raises the question of where commercial profit comes from if commercial capital does not directly create surplus-value."
+                      "What share of the total surplus-value produced by industrial capital is distributed to commercial capital as commercial profit?",
+                      "If commercial capital creates new value in circulation, how is that value divided into wages and rent?",
+                      "If commercial capital sells the commodity twice, is commodity value produced twice?",
+                      "If commercial capital stands outside average profit, how does the profit rate of industrial capital disappear?"
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업자본이 직접 잉여가치를 만들지 않는다면 상업이윤은 어디서 오는가라는 문제다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다.",
-                    "en": "It raises the question of where commercial profit comes from if commercial capital does not directly create surplus-value. This connection leads into the more concrete forms of capital analyzed next."
+                    "ko": "16장은 상업자본의 형태와 기능을 정의한다. 17장은 그 정의 위에서 상업이윤의 원천과 평균이윤 참여 방식을 묻는다.",
+                    "en": "Chapter 16 defines the form and function of commercial capital. Chapter 17 then asks about the source of commercial profit and its participation in average profit."
                   }
                 }
               ]
@@ -24828,27 +24730,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상업자본의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of commercial capital?"
+                    "ko": "상업자본과 운송ㆍ보관 같은 생산의 연장 기능을 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why distinguish commercial capital from transport and storage as continuations of production?"
                   },
                   "choices": {
                     "ko": [
-                      "상업자본은 독립 자본처럼 이윤을 얻지만, 그 이윤의 원천은 상업 내부가 아니라 산업자본이 생산한 잉여가치에 있다.",
-                      "상업이윤을 단순한 사기나 가격 조작으로만 본다.",
-                      "상업자본이 상품을 유통시키므로 새 가치를 직접 생산한다고 본다.",
-                      "산업자본의 상품자본 기능과 상업자본의 관계를 끊어 버린다."
+                      "운송ㆍ보관은 사용가치의 위치와 보존을 통해 생산과정의 연장일 수 있지만, 순수 상업자본의 특정 기능은 구매와 판매다.",
+                      "운송과 보관은 상업자본보다 높은 잉여가치율을 갖기 때문에 평균이윤 분석에서 먼저 다루어진다.",
+                      "상업자본은 물류 창고 소유가 있을 때 자본 기능이 선명해지고 구매ㆍ판매 활동은 보조 기능이 된다.",
+                      "보관 기간이 길어질수록 상품 안에 새 가치가 누적되어 상업이윤의 직접 원천이 된다."
                     ],
                     "en": [
-                      "Commercial capital earns profit like an independent capital, but the source of that profit lies not inside commerce but in surplus-value produced by industrial capital.",
-                      "Treats commercial profit only as fraud or price manipulation.",
-                      "Assumes commercial capital directly produces new value because it circulates commodities.",
-                      "Cuts the relation between industrial capital’s commodity-capital function and commercial capital."
+                      "Transport and storage may continue production through location and preservation of use-value, while pure commercial capital’s specific function is buying and selling.",
+                      "Transport and storage have a higher surplus-value rate than commercial capital and are therefore treated first in average profit.",
+                      "Commercial capital functions clearly as capital when it owns warehouses, while buying and selling become auxiliary functions.",
+                      "The longer storage lasts, the more new value accumulates in the commodity and directly sources commercial profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상업자본은 독립 자본처럼 이윤을 얻지만, 그 이윤의 원천은 상업 내부가 아니라 산업자본이 생산한 잉여가치에 있다. 이 긴장은 마르크스가 단순한 균형모형이 아니라 자본의 모순적 운동을 분석한다는 점을 보여준다.",
-                    "en": "Commercial capital earns profit like an independent capital, but the source of that profit lies not inside commerce but in surplus-value produced by industrial capital. This tension shows that Marx analyzes the contradictory movement of capital, not a simple equilibrium model."
+                    "ko": "마르크스는 유통에 붙어 있는 실제 생산 기능과 순수한 상업 기능을 분리한다. 그래야 상업자본이 새 가치를 만들지 않는다는 논점이 선명해진다.",
+                    "en": "Marx separates real production functions attached to circulation from the pure commercial function. This clarifies why commercial capital does not create new value."
                   }
                 },
                 {
@@ -24856,27 +24758,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "산업자본과 상업자본을 매개하는 것은 무엇인가?",
-                    "en": "What mediates industrial capital and commercial capital?"
+                    "ko": "상업자본의 회전은 왜 단일 산업자본의 회전과 같지 않은가?",
+                    "en": "Why is the turnover of commercial capital not identical with that of a single industrial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "상업이윤을 단순한 사기나 가격 조작으로만 본다.",
-                      "상품자본이 화폐자본으로 전환되는 판매 기능, 즉 가치 실현 과정이다.",
-                      "산업자본의 상품자본 기능과 상업자본의 관계를 끊어 버린다.",
-                      "판매가 빨라지면 착취관계가 사라진다고 본다."
+                      "같은 상인자본은 한 생산자의 상품을 판 뒤 다른 생산자나 다른 부문의 상품을 차례로 매매하며 여러 자본의 회전을 매개할 수 있기 때문이다.",
+                      "상업자본은 생산시간을 갖지 않아 회전 개념이 적용되지 않기 때문이다.",
+                      "상업자본의 회전은 상인의 개인 소비 속도로 정해지며 산업자본의 생산주기와 접점이 작기 때문이다.",
+                      "단일 산업자본이 판매를 끝내면 상업자본의 돈자본도 같은 순간 생산자에게 되돌아가기 때문이다."
                     ],
                     "en": [
-                      "Treats commercial profit only as fraud or price manipulation.",
-                      "The mediation is the selling function in which commodity-capital is transformed into money-capital: the process of realization.",
-                      "Cuts the relation between industrial capital’s commodity-capital function and commercial capital.",
-                      "Assumes faster sale abolishes exploitation relations."
+                      "The same merchant capital can sell one producer’s commodity and then successively buy and sell commodities of other producers or branches, mediating several turnovers.",
+                      "Commercial capital has no production time, so the concept of turnover does not apply.",
+                      "The turnover of commercial capital is set by the merchant’s personal consumption speed and has little contact with industrial production cycles.",
+                      "When one industrial capital completes sale, the merchant’s money-capital returns to the producer at the same moment."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상품자본이 화폐자본으로 전환되는 판매 기능, 즉 가치 실현 과정이다. 매개를 보아야 생산에서 생긴 잉여가치가 다른 형태의 수입으로 나타나는 과정을 이해할 수 있다.",
-                    "en": "The mediation is the selling function in which commodity-capital is transformed into money-capital: the process of realization. Seeing the mediation lets us understand how surplus-value produced in production appears as other revenue forms."
+                    "ko": "상업자본의 빠른 회전은 사회적 총자본에서 유통에 묶이는 돈자본의 크기를 줄일 수 있다. 이 점이 상업자본의 기능적 필요를 설명한다.",
+                    "en": "The faster turnover of commercial capital can reduce the money-capital tied up in circulation for total social capital. This explains its functional necessity."
                   }
                 },
                 {
@@ -24884,27 +24786,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상인이 싸게 사서 비싸게 팔기 때문에 이윤이 생긴다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying merchants profit simply because they buy cheap and sell dear?"
+                    "ko": "상업자본이 가치나 잉여가치를 직접 만들지 않는다는 명제는 어떤 뜻인가?",
+                    "en": "What does it mean that commercial capital does not directly create value or surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본의 상품자본 기능과 상업자본의 관계를 끊어 버린다.",
-                      "판매가 빨라지면 착취관계가 사라진다고 본다.",
-                      "개별 거래의 가격차는 상업이윤의 표면일 뿐, 사회적으로는 산업자본이 생산한 잉여가치의 일부가 상업자본에 배분된다.",
-                      "상업자본을 자본주의 이전의 상인 활동과 같은 것으로만 본다."
+                      "유통에서는 같은 가치량의 형태 전환이 일어나며, 판매에서 실현되는 잉여가치는 상품 안에 이미 생산되어 있어야 한다는 뜻이다.",
+                      "상인은 이윤을 얻지 못하며 모든 유통비용을 산업자본가가 임금으로 보전한다는 뜻이다.",
+                      "상업자본이 취급하는 상품은 가치가 없는 사용가치라 가격이 소비자 기분으로 정해진다는 뜻이다.",
+                      "유통시간이 길어질수록 상품 안의 미실현 가치가 새 잉여가치로 증식한다는 뜻이다."
                     ],
                     "en": [
-                      "Cuts the relation between industrial capital’s commodity-capital function and commercial capital.",
-                      "Assumes faster sale abolishes exploitation relations.",
-                      "The price difference in individual trade is only the surface of commercial profit; socially, part of surplus-value produced by industrial capital is allotted to commercial capital.",
-                      "Treats commercial capital as simply identical with pre-capitalist merchant activity."
+                      "It means circulation changes the form of the same value mass, and surplus-value realized in sale must already have been produced in the commodity.",
+                      "It means merchants obtain no profit and industrial capitalists reimburse all circulation costs as wages.",
+                      "It means commodities handled by commercial capital are valueless use-values priced by consumer mood.",
+                      "It means longer circulation time multiplies unrealized value into new surplus-value."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "개별 거래의 가격차는 상업이윤의 표면일 뿐, 사회적으로는 산업자본이 생산한 잉여가치의 일부가 상업자본에 배분된다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
-                    "en": "The price difference in individual trade is only the surface of commercial profit; socially, part of surplus-value produced by industrial capital is allotted to commercial capital. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals."
+                    "ko": "상업자본의 이윤은 유통에서 새 가치가 창조되어 생기는 것이 아니다. 다음 장의 문제는 산업자본이 만든 잉여가치 일부가 왜 상업자본에 돌아가는가이다.",
+                    "en": "Commercial profit does not arise because circulation creates new value. The next question is why part of surplus-value produced by industrial capital accrues to commercial capital."
                   }
                 },
                 {
@@ -24912,27 +24814,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "마켓플레이스 플랫폼이 판매, 결제, 광고, 고객관리를 장악하며 수수료를 받는다. 무엇을 분석해야 하는가?",
-                    "en": "A marketplace platform controls selling, payment, advertising, and customer management while taking fees. What should be analyzed?"
+                    "ko": "마켓플레이스 플랫폼이 판매, 결제, 광고, 고객관리를 장악하며 수수료를 받을 때 무엇을 분석해야 하는가?",
+                    "en": "What should be analyzed when a marketplace platform controls sales, payment, advertising, and customer management for fees?"
                   },
                   "choices": {
                     "ko": [
-                      "상업자본을 자본주의 이전의 상인 활동과 같은 것으로만 본다.",
-                      "판매가 빨라지면 착취관계가 사라진다고 본다.",
-                      "그 플랫폼이 상품자본의 실현 기능을 독립적으로 수행하며 산업자본의 잉여가치 일부를 어떤 형태로 가져가는지 봐야 한다.",
-                      "상업자본이 상품을 유통시키므로 새 가치를 직접 생산한다고 본다."
+                      "플랫폼이 상품자본의 실현 기능을 얼마나 독립적으로 수행하며, 산업자본이 생산한 잉여가치 일부를 어떤 수수료 형태로 배분받는지다.",
+                      "플랫폼의 광고 알고리즘이 노동시간을 대신해 상품가치를 새로 측정하는지다.",
+                      "결제 속도가 빨라지면 생산과정 없이 잉여가치가 플랫폼 서버에서 만들어지는지다.",
+                      "고객 데이터가 많아질수록 산업자본의 불변자본이 가변자본으로 이동하는지다."
                     ],
                     "en": [
-                      "Treats commercial capital as simply identical with pre-capitalist merchant activity.",
-                      "Assumes faster sale abolishes exploitation relations.",
-                      "One should examine how the platform independently performs the realization function of commodity-capital and takes part of industrial surplus-value in a specific form.",
-                      "Assumes commercial capital directly produces new value because it circulates commodities."
+                      "How independently the platform performs the realization function of commodity-capital, and in what fee form it receives part of the surplus-value produced by industrial capital.",
+                      "Whether the platform’s advertising algorithm newly measures commodity value instead of labour-time.",
+                      "Whether faster payment creates surplus-value on platform servers without production.",
+                      "Whether more customer data moves industrial constant capital into variable capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 플랫폼이 상품자본의 실현 기능을 독립적으로 수행하며 산업자본의 잉여가치 일부를 어떤 형태로 가져가는지 봐야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
-                    "en": "One should examine how the platform independently performs the realization function of commodity-capital and takes part of industrial surplus-value in a specific form. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases."
+                    "ko": "플랫폼 수수료는 유통 기능의 독립과 잉여가치 배분의 문제로 읽을 수 있다. 이것은 새 가치의 직접 생산과 구별된다.",
+                    "en": "Platform fees can be read as a problem of independent circulation functions and distribution of surplus-value. This is distinct from direct production of new value."
                   }
                 },
                 {
@@ -24940,27 +24842,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상업자본의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of commercial capital?"
+                    "ko": "16장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 16?"
                   },
                   "choices": {
                     "ko": [
-                      "상업자본을 자본주의 이전의 상인 활동과 같은 것으로만 본다.",
-                      "상업자본이 상품을 유통시키므로 새 가치를 직접 생산한다고 본다.",
-                      "상업이윤을 단순한 사기나 가격 조작으로만 본다.",
-                      "잉여가치가 생산 밖의 독립 자본형태에서도 이윤처럼 나타나는 과정을 열어 준다."
+                      "산업자본의 유통 형태가 독립 자본으로 분화하는 과정을 보여 주어, 이윤이 생산 밖의 자본형태에서도 나타나는 분석을 연다.",
+                      "이윤율 저하 경향을 상업자본의 빠른 회전으로 해결하고 위기 분석을 마무리한다.",
+                      "상업자본을 생산자본보다 앞선 가치 원천으로 세워 노동가치론의 적용 범위를 좁힌다.",
+                      "상품자본과 화폐자본의 전환을 소비자 선택의 문제로 바꾸어 평균이윤 분석을 끝낸다."
                     ],
                     "en": [
-                      "Treats commercial capital as simply identical with pre-capitalist merchant activity.",
-                      "Assumes commercial capital directly produces new value because it circulates commodities.",
-                      "Treats commercial profit only as fraud or price manipulation.",
-                      "It opens the process by which surplus-value appears as profit in an independent form of capital outside production."
+                      "It shows how industrial capital’s circulation form differentiates into an independent capital, opening analysis of profit appearing in capital forms outside production.",
+                      "It resolves the falling-profit-rate tendency through the fast turnover of commercial capital and closes crisis analysis.",
+                      "It makes commercial capital a value source prior to productive capital and narrows the scope of labour-value theory.",
+                      "It turns the metamorphosis of commodity- and money-capital into consumer choice and ends average profit analysis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치가 생산 밖의 독립 자본형태에서도 이윤처럼 나타나는 과정을 열어 준다. 이 장의 체계적 위치를 잡으면 3권의 표면형태 분석이 왜 단계적으로 전개되는지 이해할 수 있다.",
-                    "en": "It opens the process by which surplus-value appears as profit in an independent form of capital outside production. Locating the chapter systematically shows why Volume III unfolds surface forms step by step."
+                    "ko": "16장은 3권의 무대를 산업자본 내부에서 유통 자본형태로 넓힌다. 이 장은 상업이윤, 화폐취급자본, 이자 분석으로 가는 입구다.",
+                    "en": "Chapter 16 widens Volume III’s stage from industrial capital to forms of circulation capital. It opens the way to commercial profit, money-dealing capital, and interest."
                   }
                 }
               ]
