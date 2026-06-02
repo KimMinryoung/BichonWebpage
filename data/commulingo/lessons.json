@@ -37356,143 +37356,143 @@
               },
               "questions": [
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제52장이 출발점으로 삼는 현대 사회의 세 큰 계급은 어떻게 구분되는가?",
+                    "en": "How does Chapter 52 initially distinguish the three great classes of modern society?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "노동력, 자본, 토지소유를 각각 소유하며 임금, 이윤, 지대를 수입원으로 갖는 집단이다.",
+                      "소비수준, 교육자격, 주거지역을 기준으로 서로 다른 생활양식을 갖는 집단이다.",
+                      "상업, 농업, 행정 업무에 종사하며 각기 다른 직업윤리를 갖는 집단이다.",
+                      "화폐를 보유한 양에 따라 저축자, 채무자, 납세자로 나뉘는 집단이다."
+                    ],
+                    "en": [
+                      "Groups that own labour-power, capital, and landed property, with wages, profit, and rent as sources of income.",
+                      "Groups with different ways of life based on consumption level, credentials, and residential area.",
+                      "Groups engaged in commerce, agriculture, and administration with different occupational ethics.",
+                      "Groups divided by money holdings into savers, debtors, and taxpayers."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "마지막 장은 수입형태를 그것을 담지하는 사회집단과 연결해 계급 문제를 연다.",
+                    "en": "The final chapter links revenue forms to the social groups that bear them and opens the class question."
+                  },
                   "id": "q1",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "마르크스가 마지막 장에서 임금노동자, 자본가, 토지소유자를 출발점으로 삼는 이유는 무엇인가?",
-                    "en": "Why does Marx take wage-labourers, capitalists, and landowners as the starting point in the final chapter?"
+                    "ko": "마르크스가 “계급을 이루는 것은 무엇인가”를 묻기 전에 확인하는 첫 단서는 무엇인가?",
+                    "en": "What first clue does Marx examine before asking what constitutes a class?"
                   },
                   "choices": {
                     "ko": [
-                      "세 집단이 임금, 이윤, 지대라는 주요 수입형태와 연결되어 있기 때문이다.",
-                      "세 집단의 생활수준이 대체로 정확히 같기 때문이다.",
-                      "세 집단이 모두 같은 생산수단을 소유하기 때문이다.",
-                      "세 집단은 자본주의 이전에만 존재하기 때문이다."
+                      "임금, 이윤, 지대라는 수입과 그 수입원 사이의 동일성이다.",
+                      "각 개인의 정치적 견해가 같은 방향으로 모이는 정도다.",
+                      "도시와 농촌의 인구 비율이 어느 쪽으로 기우는가이다.",
+                      "직업 명칭이 법률상 면허로 보호되는지의 여부다."
                     ],
                     "en": [
-                      "Because the three groups are connected to the main income forms: wages, profit, and rent.",
-                      "Because the three groups always have exactly the same standard of living.",
-                      "Because all three groups own the same means of production.",
-                      "Because the three groups exist only before capitalism."
+                      "The identity between revenues and their sources: wages, profit, and rent.",
+                      "The degree to which individual political views converge in the same direction.",
+                      "Whether the population ratio tilts toward city or countryside.",
+                      "Whether occupational titles are protected by legal licenses."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 수입형태와 계급구성을 연결해 3권의 논의를 마무리한다. 출발점은 소득액이 아니라 어떤 수입형태가 어떤 생산관계에서 생기는지다.",
-                    "en": "Marx closes Volume III by connecting income forms and class composition. The starting point is not income amount, but which income form arises from which production relation."
+                    "ko": "수입원은 중요한 출발점이지만 곧 충분한 기준인지 검토 대상이 된다.",
+                    "en": "Revenue source is an important starting point, but it is then tested as a sufficient criterion."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q2",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "계급을 소득순위로만 나누면 왜 부족한가?",
-                    "en": "Why is it insufficient to divide classes only by income ranking?"
+                    "ko": "수입원이 같다는 기준만으로 계급을 정하면 어떤 문제가 생기는가?",
+                    "en": "What problem arises if class is defined simply by a shared source of income?"
                   },
                   "choices": {
                     "ko": [
-                      "고소득 임금노동자와 저소득 소자본가처럼 소득액과 생산관계의 위치가 어긋나는 경우를 설명하기 어렵다.",
-                      "소득순위는 어떤 사회에서도 기록할 수 없기 때문이다.",
-                      "계급은 대체로 개인의 정치성향으로만 결정되기 때문이다.",
-                      "소득이 낮으면 생산조건을 그 자체로 소유하게 되기 때문이다."
+                      "의사와 관리도 별도 계급이 되는 식으로 직업별 수입집단이 끝없이 늘어난다.",
+                      "임금노동자와 자본가가 같은 계급으로 합쳐져 세 계급 구분이 너무 단순해진다.",
+                      "토지소유자는 수입원을 잃고 생산수단 소유자 전체가 임금노동자로 바뀐다.",
+                      "수입원 기준은 농촌에서는 적용되지만 도시에서는 계급선을 지나치게 선명하게 만든다."
                     ],
                     "en": [
-                      "Because cases such as high-income wage-labourers and low-income small capitalists show that income amount and position in production relations can diverge.",
-                      "Because income rankings cannot be recorded in any society.",
-                      "Because class is always determined only by personal political preference.",
-                      "Because low income automatically gives ownership of production conditions."
+                      "Occupational income groups proliferate endlessly, so physicians and officials would become separate classes.",
+                      "Wage-labourers and capitalists merge into one class, making the three-class distinction too simple.",
+                      "Landowners lose their source of income and all owners of production conditions become wage-labourers.",
+                      "The revenue-source criterion applies in the countryside but makes urban class lines too sharp."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "소득 크기는 중요한 단서일 수 있지만 충분한 기준은 아니다. 계급 분석은 생산조건을 소유하는지, 노동력을 파는지, 잉여가치 분배에서 어떤 위치인지까지 본다.",
-                    "en": "Income size can be an important clue, but not a sufficient criterion. Class analysis asks whether one owns production conditions, sells labour-power, and occupies a position in the distribution of surplus-value."
+                    "ko": "마르크스는 수입명만으로는 계급의 사회적 관계를 충분히 포착하기 어렵다는 점을 보인다.",
+                    "en": "Marx shows that names of income alone cannot fully capture the social relation of class."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "임금노동자를 단순히 “돈을 적게 버는 사람”으로 이해하면 무엇을 놓치는가?",
-                    "en": "What is missed if wage-labourers are understood simply as people who earn little money?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "임금노동자는 어떤 경우에도 기술을 가질 수 없다는 점이다.",
-                      "임금노동자는 생산조건을 소유하지 못해 노동력을 팔아야 하는 관계로 규정된다는 점이다.",
-                      "임금노동자는 상품을 소비하지 않는다는 점이다.",
-                      "임금노동자는 지대와 이윤을 항상 동시에 받는다는 점이다."
-                    ],
-                    "en": [
-                      "That wage-labourers can never have skills.",
-                      "That wage-labourers are defined by a relation in which they lack production conditions and must sell labour-power.",
-                      "That wage-labourers do not consume commodities.",
-                      "That wage-labourers always receive rent and profit at the same time."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "임금노동은 빈곤의 다른 이름이 아니다. 핵심은 노동자가 살아가기 위해 자기 노동력을 상품으로 팔아야 하는 생산관계다.",
-                    "en": "Wage-labour is not another name for poverty. The key is the production relation in which workers must sell their labour-power as a commodity in order to live."
-                  },
                   "points": 2
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "영국에서도 계급층화가 순수한 형태로 나타나지 않는다는 언급의 의미는 무엇인가?",
+                    "en": "What is the point of saying that class stratification does not appear in pure form even in England?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "중간층과 과도적 지위가 경계선을 흐리지만, 자본주의의 기본 경향 분석은 여전히 가능하다.",
+                      "영국의 사례가 예외이므로 자본주의 계급 분석의 기준을 농촌 공동체에서 찾아야 한다.",
+                      "도시에서는 중간층이 사라져 임금노동자와 지주만 남는다는 관찰이다.",
+                      "계급 경계가 흐리므로 수입형태 분석은 직업통계 작성으로 대체된다."
+                    ],
+                    "en": [
+                      "Middle and transitional strata blur the lines, yet analysis of capitalism’s basic tendency remains possible.",
+                      "England is an exception, so the criterion for capitalist class analysis must be found in rural communities.",
+                      "It observes that middle strata disappear in cities, leaving only wage-labourers and landlords.",
+                      "Because class lines are blurred, analysis of revenue forms is replaced by occupational statistics."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "현실의 혼합성은 분석을 폐기하는 이유가 아니라 기본 경향과 매개를 함께 보게 하는 조건이다.",
+                    "en": "Mixed reality is not a reason to abandon analysis; it requires grasping the basic tendency and mediations together."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "연봉이 높은 개발자는 임금을 받고, 작은 가게 주인은 낮은 이윤에 의존한다. 이 사례가 보여주는 것은 무엇인가?",
-                    "en": "A highly paid developer receives wages, while a small shop owner depends on low profit. What does this case show?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "작은 가게 주인은 대체로 토지소유자다.",
-                      "연봉이 높으면 누구나 자본가가 된다.",
-                      "계급 분석에서는 소득 크기와 생산관계에서의 위치를 구분해야 한다.",
-                      "이윤이 낮으면 그 수입은 임금으로 바뀐다."
-                    ],
-                    "en": [
-                      "A small shop owner is always a landowner.",
-                      "Anyone with a high salary becomes a capitalist.",
-                      "Class analysis must distinguish income size from position in production relations.",
-                      "If profit is low, that income turns into wages."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "사례의 목적은 소득액만으로 계급을 판단하기 어렵다는 점을 보여주는 데 있다. 수입형태와 생산조건에 대한 관계를 함께 봐야 한다.",
-                    "en": "The point of the case is that income amount alone is not enough to judge class. Income form and relation to production conditions must be read together."
-                  },
                   "points": 2
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "미완으로 끝나는 「계급」 장은 3권 전체에 어떤 문제를 남기는가?",
-                    "en": "What problem does the unfinished chapter on classes leave for Volume III as a whole?"
+                    "ko": "3권이 미완의 「계급」 장으로 끝난다는 사실이 남기는 과제는 무엇인가?",
+                    "en": "What task is left by Volume III ending with the unfinished chapter on classes?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의에는 임금노동자가 없다는 결론을 남긴다.",
-                      "계급은 분석할 수 없으니 포기해야 한다는 결론을 남긴다.",
-                      "이윤과 지대는 같은 수입이라는 결론을 남긴다.",
-                      "수입형태 분석은 결국 자본주의 사회의 계급구조 분석으로 이어져야 한다는 문제를 남긴다."
+                      "수입형태의 분석을 생산조건의 소유와 분리에서 생기는 계급관계 분석으로 밀고 가는 일이다.",
+                      "임금, 이윤, 지대를 개인의 저축 습관으로 환원해 사회분석을 마무리하는 일이다.",
+                      "상품가격의 변동을 계급 구분보다 앞세워 세 계급 도식을 회계표로 고정하는 일이다.",
+                      "토지소유와 자본소유의 차이를 직업분류 안에 넣어 수입형태 논의를 끝내는 일이다."
                     ],
                     "en": [
-                      "It concludes that capitalism has no wage-labourers.",
-                      "It concludes that class cannot be analysed and should be abandoned.",
-                      "It concludes that profit and rent are the same income.",
-                      "It leaves the problem that analysis of income forms must ultimately lead to analysis of capitalist class structure."
+                      "To carry the analysis of revenue forms into class relations arising from ownership and separation of production conditions.",
+                      "To conclude social analysis by reducing wages, profit, and rent to individual saving habits.",
+                      "To place price fluctuations before class distinction and fix the three-class schema as an accounting table.",
+                      "To put the difference between landed property and capital ownership into occupational classification and end the revenue analysis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "장 자체는 짧고 미완이지만 위치는 중요하다. 3권의 수입형태 분석은 사회를 이루는 계급관계 문제로 되돌아온다.",
-                    "en": "The chapter is short and unfinished, but its position matters. Volume III’s analysis of income forms returns to the problem of the class relations that compose society."
+                    "ko": "미완 장은 결론이 아니라 3권의 범주들이 계급관계로 이어지는 방향을 가리킨다.",
+                    "en": "The unfinished chapter is not a closure; it points the categories of Volume III toward class relations."
                   },
+                  "id": "q5",
                   "points": 2
                 }
               ]
@@ -37506,143 +37506,143 @@
               },
               "questions": [
                 {
-                  "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "52장에서 계급 분석을 어렵게 만드는 현실적 조건은 무엇인가?",
-                    "en": "What real condition makes class analysis difficult in Chapter 52?"
+                    "ko": "제52장에서 자본주의 발전의 “계속적 경향과 법칙”으로 제시되는 것은 무엇인가?",
+                    "en": "What does Chapter 52 present as the continual tendency and law of capitalist development?"
                   },
                   "choices": {
                     "ko": [
-                      "개인들이 여러 수입을 섞어 갖거나 중간적 위치에 놓일 수 있다는 점이다.",
-                      "임금, 이윤, 지대의 존재를 부정하는 데 머문다.",
-                      "사람들이 같은 생산수단을 같은 비율로 소유한다는 점이다.",
-                      "계급은 주로 성씨로 구분된다는 점이다."
+                      "생산수단을 노동에서 분리하고 흩어진 생산수단을 큰 덩어리로 집중시키는 경향이다.",
+                      "독립 생산자의 도구 소유를 넓혀 임금노동과 자본의 구분을 완화하는 경향이다.",
+                      "수입형태를 직업별 명예 서열로 바꾸어 생산관계의 압력을 줄이는 경향이다.",
+                      "토지소유를 가족 소비재로 전환해 농업과 산업의 계급구조를 평준화하는 경향이다."
                     ],
                     "en": [
-                      "Individuals may combine several incomes or occupy intermediate positions.",
-                      "Capitalist society has no wages, profit, or rent at all.",
-                      "Everyone owns the same means of production in the same proportion.",
-                      "Classes are distinguished only by family names."
+                      "The tendency to separate means of production from labour and concentrate scattered means into large groups.",
+                      "The tendency to broaden independent producers’ tool ownership and soften the distinction between wage labour and capital.",
+                      "The tendency to turn revenue forms into occupational status ranks and reduce pressure from production relations.",
+                      "The tendency to turn landed property into family consumer goods and level class structures in agriculture and industry."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 출발점은 세 기본 계급이지만 현실은 더 복잡하다. 바로 그래서 소득명이나 직업명보다 생산관계의 위치를 따져야 한다.",
-                    "en": "Marx’s starting point is the three basic classes, but reality is more complex. That is why position in production relations matters more than income name or job title."
+                    "ko": "이 경향은 노동을 임금노동으로, 생산수단을 자본으로 전환시키는 운동이다.",
+                    "en": "This tendency transforms labour into wage labour and means of production into capital."
                   },
+                  "id": "q1",
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "토지소유의 독립적 분리가 계급 분석에서 갖는 의미는 무엇인가?",
+                    "en": "What is the significance of the independent separation of landed property in class analysis?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "토지소유가 자본과 노동에서 분리된 권리로 서며 지대라는 별도 수입형태를 만든다.",
+                      "토지소유가 자본에 흡수되어 지대와 이윤의 구별이 회계상 같은 항목으로 수렴한다.",
+                      "토지소유가 노동자의 생활공간으로 전환되어 임금관계와 같은 권리형태를 갖는다.",
+                      "토지소유가 생산과 무관한 자연 조건으로 남아 계급 구분에서 뒤로 물러난다."
+                    ],
+                    "en": [
+                      "Landed property stands as a right separated from capital and labour and generates rent as a distinct revenue form.",
+                      "Landed property is absorbed into capital, so rent and profit converge into the same accounting item.",
+                      "Landed property becomes workers’ living space and takes the same legal form as the wage relation.",
+                      "Landed property remains a natural condition unrelated to production and recedes from class distinction."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "세 계급 구도는 임금노동과 자본의 대립에 토지소유의 독립적 청구권이 결합한 결과다.",
+                    "en": "The three-class structure joins the opposition of wage labour and capital with landed property’s independent claim."
+                  },
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "자본가와 토지소유자를 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why should capitalists and landowners be distinguished?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "둘은 대체로 같은 사람이고 구분할 수 없기 때문이다.",
-                      "둘 다 잉여가치의 일부를 받더라도, 자본 소유와 토지소유는 서로 다른 권리와 수입형태를 만들기 때문이다.",
-                      "토지소유자는 임금을 받고 자본가는 지대를 받기 때문이다.",
-                      "자본가와 토지소유자는 생산조건과 아무 관계가 없기 때문이다."
-                    ],
-                    "en": [
-                      "Because they are always the same person and cannot be distinguished.",
-                      "Even if both receive portions of surplus-value, ownership of capital and ownership of land create different rights and income forms.",
-                      "Because landowners receive wages and capitalists receive rent.",
-                      "Because capitalists and landowners have no relation to production conditions."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "이윤과 지대는 모두 노동자가 만든 잉여가치와 연결되지만 같은 형태는 아니다. 서로 다른 소유권이 서로 다른 수입 청구권을 만든다.",
-                    "en": "Profit and rent are both connected to surplus-value produced by workers, but they are not the same form. Different property rights create different claims on income."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "의사와 관리의 예시가 겨냥하는 이론적 약점은 무엇인가?",
+                    "en": "What theoretical weakness is targeted by the example of physicians and officials?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "같은 수입원을 가진 집단이라는 기준을 그대로 쓰면 직업집단이 모두 계급처럼 보인다.",
+                      "전문직은 생산수단을 직접 소유하므로 자본가와 같은 수입형태를 가진다는 주장이다.",
+                      "국가 관리의 봉급은 지대에서 나오므로 토지소유자의 하위집단이라는 분류다.",
+                      "의사와 관리가 도시 중간층을 대표하므로 임금노동자 계급의 핵심이 된다는 설명이다."
+                    ],
+                    "en": [
+                      "If the criterion is simply a group with the same source of income, every occupational group begins to look like a class.",
+                      "It claims professionals directly own means of production and therefore share capitalists’ revenue form.",
+                      "It classifies officials as a subgroup of landowners because their salaries come from rent.",
+                      "It explains physicians and officials as the core of the wage-labouring class because they represent urban middle strata."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "예시는 수입의 동일성만으로 계급을 정의하면 분석 단위가 과도하게 쪼개진다는 점을 찌른다.",
+                    "en": "The example shows that defining class by revenue identity alone fragments the unit of analysis excessively."
+                  },
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "“중산층”이라는 넓은 이름만으로 계급을 설명할 때 생기는 한계는 무엇인가?",
-                    "en": "What is the limit of explaining class only through a broad name such as middle class?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "중산층은 곧장 토지소유자만 뜻하기 때문이다.",
-                      "중산층이라는 말은 어떤 사회에서도 쓰이지 않기 때문이다.",
-                      "임금, 자영업 소득, 자본수익이 섞인 사람들의 서로 다른 생산관계 위치가 한데 뭉개질 수 있다.",
-                      "중산층은 임금을 받을 수 없기 때문이다."
-                    ],
-                    "en": [
-                      "Because middle class necessarily means only landowners.",
-                      "Because the term middle class is never used in any society.",
-                      "It can blur different positions in production relations among people with wages, self-employment income, and returns on capital mixed together.",
-                      "Because the middle class cannot receive wages."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "넓은 생활수준 범주는 현실 묘사에 도움이 될 수 있지만 계급관계를 대신하지 못한다. 어떤 수입이 어떤 소유관계에서 나오는지 더 세밀하게 보아야 한다.",
-                    "en": "A broad lifestyle category may help description, but it cannot replace class relations. One must examine more precisely which income comes from which property relation."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "각 계급 내부가 포도원 소유자, 산림 소유자, 광산 소유자 등으로 쪼개지는 사실은 무엇을 보여 주는가?",
+                    "en": "What is shown by the fragmentation within classes into vineyard owners, forest owners, mine owners, and so on?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "분업과 이해관계의 세분화가 계급 내부 차이를 만들지만 기본 생산관계 기준을 대신하지는 못한다.",
+                      "토지소유의 종류가 달라지면 지대가 모두 서로 다른 가치원천에서 생긴다는 뜻이다.",
+                      "농업, 산림, 광산의 차이가 자본주의적 토지소유를 서로 관련 없는 제도로 만든다.",
+                      "소유 대상의 자연적 성질이 달라질수록 임금노동과 자본의 대립은 흐려진다."
+                    ],
+                    "en": [
+                      "Division of labour and interests create internal differences, but they do not replace the criterion of basic production relations.",
+                      "Different types of landed property mean each rent arises from a different source of value.",
+                      "Differences among agriculture, forests, and mines turn capitalist landed property into unrelated institutions.",
+                      "As the natural properties of owned objects differ, the opposition between wage labour and capital fades."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "원문은 현실의 세분화를 인정하면서도 그것을 계급의 기본 규정과 구별한다.",
+                    "en": "The text acknowledges real fragmentation while distinguishing it from the basic determination of class."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "플랫폼 노동자가 높은 월수입을 올리지만 앱, 데이터, 고객망을 소유하지 못한다. 이 사례에서 중요한 질문은 무엇인가?",
-                    "en": "A platform worker earns a high monthly income but owns neither the app, the data, nor the customer network. What is the key question here?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "고객망을 소유하지 못하면 노동을 하지 않는다고 보아야 한다.",
-                      "월수입이 높으면 생산조건도 그 자체로 소유한다고 보아야 한다.",
-                      "소득이 높은지보다 생산조건을 소유하고 통제하는지, 아니면 노동력 판매에 의존하는지 물어야 한다.",
-                      "앱을 쓰면 누구나 토지소유자가 된다고 보아야 한다."
-                    ],
-                    "en": [
-                      "If they do not own the customer network, they do not work.",
-                      "If monthly income is high, they automatically own production conditions.",
-                      "Ask less about income level than whether they own and control production conditions or depend on selling labour-power.",
-                      "Anyone who uses an app becomes a landowner."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "높은 소득은 계급 위치를 흐릴 수 있다. 하지만 생산조건을 누가 소유하고 통제하는지 보면 임금노동적 종속이 남아 있는지 판단할 수 있다.",
-                    "en": "High income can blur class position. But asking who owns and controls production conditions helps judge whether wage-labour-like dependence remains."
-                  },
                   "points": 3
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "3권이 「계급」으로 끝나는 것은 어떤 의미를 갖는가?",
-                    "en": "What is the significance of Volume III ending with Classes?"
+                    "ko": "리스트에 관한 각주가 “대토지의 자급경제와 임대농 전환”을 언급하는 맥락은 무엇인가?",
+                    "en": "What is the context of the note on List about self-sufficient large estates and the transition to leasing?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의 분석은 가격표 작성으로 충분하다는 뜻이다.",
-                      "앞의 모든 경제 범주가 개인 심리 문제였다는 뜻이다.",
-                      "계급은 생산관계와 무관한 문화 취향이라는 뜻이다.",
-                      "이윤, 이자, 지대 같은 수입형태의 분석이 결국 사회 전체의 계급관계 문제로 돌아간다는 뜻이다."
+                      "교통·상업·도시의 발달 속에서 토지소유가 자본주의적 임대관계에 맞는 형태로 바뀌는 맥락이다.",
+                      "자급적 대토지가 가장 발달한 자본주의 형태라 임금노동과 자본의 분리를 늦추는 맥락이다.",
+                      "토지소유가 상품생산 밖에 남을수록 지대가 이윤보다 현대적인 수입형태가 되는 맥락이다.",
+                      "도시의 성장이 농촌 토지소유를 해체해 지대 수입을 임금 수입으로 통합하는 맥락이다."
                     ],
                     "en": [
-                      "It means capitalist analysis is complete once price lists are written.",
-                      "It means all earlier economic categories were matters of individual psychology.",
-                      "It means class is a cultural taste unrelated to production relations.",
-                      "It means that analysis of income forms such as profit, interest, and rent ultimately returns to the class relations of society as a whole."
+                      "It concerns landed property changing into forms suited to capitalist leasing amid transport, commerce, and urban development.",
+                      "It presents self-sufficient large estates as the most developed capitalist form that slows the separation of wage labour and capital.",
+                      "It concerns rent becoming a more modern revenue form than profit as landed property remains outside commodity production.",
+                      "It concerns urban growth dissolving rural landed property and merging rent income into wage income."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "마지막 장은 짧지만 방향은 분명하다. 수입형태의 물신성을 벗기면 자본주의 사회를 구성하는 계급관계가 분석의 마지막 문제로 나타난다.",
-                    "en": "The final chapter is short, but its direction is clear. Once the fetishism of income forms is stripped away, the class relations composing capitalist society appear as the final problem of analysis."
+                    "ko": "각주는 토지소유도 고정된 법률명칭이 아니라 자본주의 발전 속에서 특수한 형태를 취함을 보강한다.",
+                    "en": "The note reinforces that landed property is not a fixed legal name; it takes a specific form in capitalist development."
                   },
+                  "id": "q5",
                   "points": 3
                 }
               ]
