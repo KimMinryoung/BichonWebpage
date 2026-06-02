@@ -32032,143 +32032,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "농업에서 자본주의적 지대를 분석하려면 먼저 어떤 관계를 보아야 하는가?",
-                    "en": "What relation must be examined first in analysing capitalist ground-rent in agriculture?"
+                    "ko": "37장에서 자본주의적 지대론의 기본 장면은 어떻게 설정되는가?",
+                    "en": "How does Chapter 37 set up the basic scene for capitalist ground-rent?"
                   },
                   "choices": {
                     "ko": [
-                      "토지를 소유한 지주, 자본을 투입하는 차지농, 임금을 받는 농업노동자의 관계를 보아야 한다.",
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다."
+                      "지주가 토지를 독점하고, 차지농이 자본을 투입하며, 농업노동자가 임금을 받는 삼자관계에서 출발한다.",
+                      "농촌 공동체의 관습권이 생산물 분배를 조정하는 장면에서 지대의 기원을 찾는다.",
+                      "도시 상인의 매점 행위가 곡물가격을 끌어올리는 유통관계를 중심에 둔다.",
+                      "농민 가족의 자급 생산이 남는 곡물을 교환하는 과정을 지대의 표준형으로 삼는다."
                     ],
                     "en": [
-                      "One must examine the relation among the landowner, the capitalist tenant farmer, and the agricultural wage-labourer.",
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "Capitalist wage-labour cannot exist in agriculture.",
-                      "The landowner creates market prices at will."
+                      "It starts from a three-part relation: landlord monopoly, tenant-capital investment, and wage labour.",
+                      "It locates rent in customary rural community rights that allocate the product.",
+                      "It centers commercial hoarding by urban merchants as the source of grain prices.",
+                      "It takes peasant household subsistence and surplus exchange as the standard form of rent."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "지대는 한 사람의 소득 항목이 아니라 세 계급 관계 속에서 생긴다. 이 출발점을 잡아야 토지가 아니라 사회관계가 분석의 대상임을 알 수 있다.",
-                    "en": "Rent is not merely one person’s income entry; it arises within a relation among three classes. This starting point shows that the object of analysis is social relation, not land as such."
-                  },
-                  "points": 2
+                    "ko": "마르크스는 농업도 자본주의적 생산이 지배한다는 전제에서 지대론을 시작한다. 지대는 이 삼자관계 속에서 분석된다.",
+                    "en": "Marx begins by assuming capitalist production in agriculture. Rent is analyzed through this three-part relation."
+                  }
                 },
                 {
                   "id": "q2",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차지농은 왜 단순한 소작인이 아니라 자본가로 다루어지는가?",
-                    "en": "Why is the tenant farmer treated not as a simple peasant tenant but as a capitalist?"
+                    "ko": "자본주의적 차지농은 어떤 의미에서 자본가인가?",
+                    "en": "In what sense is the capitalist tenant farmer a capitalist?"
                   },
                   "choices": {
                     "ko": [
-                      "차지농은 토지를 빌려 자본을 투입하고 임금노동자를 고용해 평균이윤을 얻으려 하기 때문이다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다.",
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다."
+                      "토지를 빌려 자본을 선대하고 임금노동을 고용해 평균이윤을 얻는 생산 조직자다.",
+                      "지주의 대리인으로서 토지 권리를 관리하고 임대료 수취를 집행하는 법률 담당자다.",
+                      "자신의 가족노동으로 경작하고 남는 생산물을 시장에 내놓는 독립 소농이다.",
+                      "곡물의 매매차익을 노리는 상업자본으로서 생산과정 밖에서 수익을 만든다."
                     ],
                     "en": [
-                      "Because the tenant rents land, advances capital, employs wage-labourers, and seeks average profit.",
-                      "Capitalist wage-labour cannot exist in agriculture.",
-                      "The landowner creates market prices at will.",
-                      "It treats rent as the product of land itself without mediation by labour and market price."
+                      "He leases land, advances capital, hires wage labour, and organizes production for average profit.",
+                      "He is the landlord’s legal agent who administers land rights and collects rent.",
+                      "He is an independent small peasant using family labour and selling the surplus.",
+                      "He is merchant capital seeking trading gains outside the production process."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본주의적 지대론에서 차지농은 생산을 조직하는 자본가다. 지주는 토지를 빌려 주고, 노동자는 임금을 받으며, 이 구도가 지대 문제를 만든다.",
-                    "en": "In capitalist rent theory, the tenant farmer is the capitalist organizer of production. The landowner leases land and the worker receives wages; this structure creates the problem of rent."
-                  },
-                  "points": 2
+                    "ko": "차지농은 토지소유자가 아니라 생산을 맡은 자본가다. 평균이윤과 지대의 분리가 여기서 생긴다.",
+                    "en": "The tenant farmer is not the landowner but the capitalist organizer of production. This separates profit from rent."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“농산물 가격이 높은 이유는 지주가 지대를 요구하기 때문”이라는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by the claim that agricultural prices are high simply because landlords demand rent?"
+                    "ko": "지대를 이자와 동일한 수입으로 처리하면 어떤 구분이 흐려지는가?",
+                    "en": "What distinction is blurred when ground-rent is treated as identical with interest?"
                   },
                   "choices": {
                     "ko": [
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다.",
-                      "지대가 언제나 가격을 먼저 만드는 것이 아니라, 생산조건과 시장가격 속에서 생긴 초과이윤이 지대로 이전될 수 있다는 점이다.",
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다."
+                      "토지 자체의 사용 대가와 토지에 결합된 고정자본의 이자가 서로 다른 수입이라는 구분이 흐려진다.",
+                      "임금이 노동력 가치의 화폐형태이고 이윤이 잉여가치의 형태라는 구분이 흐려진다.",
+                      "상업이윤과 산업이윤이 평균이윤율을 통해 조정되는 방식의 구분이 흐려진다.",
+                      "화폐자본의 대부와 생산자본의 회전이 서로 다른 순환이라는 구분이 흐려진다."
                     ],
                     "en": [
-                      "The landowner creates market prices at will.",
-                      "Rent does not always create price first; surplus-profit arising within production conditions and market price can be transferred as rent.",
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "Capitalist wage-labour cannot exist in agriculture."
+                      "It blurs the difference between payment for land as such and interest on fixed capital incorporated in land.",
+                      "It blurs the distinction between wages as the money form of labour-power value and profit as surplus-value.",
+                      "It blurs how commercial profit and industrial profit are regulated through the average rate of profit.",
+                      "It blurs the distinction between loanable money-capital and the turnover of productive capital."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "지대와 가격의 관계는 단순한 마음대로의 부과가 아니다. 마르크스는 초과이윤이 어떤 조건에서 지주의 몫으로 넘어가는지를 묻는다.",
-                    "en": "The relation between rent and price is not a simple arbitrary charge. Marx asks under what conditions surplus-profit passes to the landowner."
-                  },
-                  "points": 2
+                    "ko": "37장은 배수·건물 같은 토지개량의 이자가 지대에 섞일 수 있지만 실제 지대와 같지는 않다고 구분한다.",
+                    "en": "Chapter 37 distinguishes interest on improvements such as drainage or buildings from ground-rent proper."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "어떤 농장이 평균보다 좋은 조건 덕분에 같은 가격에 팔아도 더 큰 이윤을 얻는다. 이 차이는 지대론에서 어떤 문제로 이어지는가?",
-                    "en": "A farm earns more profit than average because it has better conditions but sells at the same price. What problem does this raise in rent theory?"
+                    "ko": "차지농이 배수시설을 설치한 뒤 임대기간이 끝났다. 새 계약에서 지주가 더 높은 임대료를 요구하는 장면은 무엇을 보여주는가?",
+                    "en": "A tenant installs drainage, and the lease ends. What does the landlord’s higher rent in the new lease show?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.",
-                      "그 초과이윤이 차지농에게 남는지, 토지소유를 통해 지주에게 지대로 넘어가는지가 문제가 된다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다."
+                      "차지농의 고정자본이 토지와 결합되면 계약 종료 뒤 지주의 재산처럼 취급되어 지대를 부풀릴 수 있다.",
+                      "개량된 토지에서는 농업노동자의 임금이 먼저 상승하고 그 상승분이 임대료로 환수된다.",
+                      "배수시설의 효율은 곡물시장 경쟁을 약화시켜 차지농의 평균이윤을 안정시킨다.",
+                      "토지개량 비용은 다음 차지농의 유동자본으로 계산되어 생산물 가격에 직접 더해진다."
                     ],
                     "en": [
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "Capitalist wage-labour cannot exist in agriculture.",
-                      "The problem is whether that surplus-profit remains with the tenant farmer or passes to the landowner as rent through landed property.",
-                      "The landowner creates market prices at will."
+                      "Fixed capital added by the tenant can become attached to the land and inflate the landlord’s rent after the lease.",
+                      "On improved land, wages rise first and that increase is recaptured as rent.",
+                      "Drainage weakens grain-market competition and stabilizes the tenant’s average profit.",
+                      "Improvement costs are counted as the next tenant’s circulating capital and added directly to product prices."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "좋은 조건은 차지농에게 초과이윤을 줄 수 있다. 그러나 토지소유가 개입하면 그 초과이윤은 지대라는 형태로 포획될 수 있다.",
-                    "en": "Better conditions can give the tenant farmer surplus-profit. Once landed property intervenes, that surplus-profit can be captured as rent."
-                  },
-                  "points": 2
+                    "ko": "마르크스는 임대기간 문제가 농업개량의 장애가 된다고 본다. 차지농의 성과가 계약 갱신 뒤 지주에게 넘어갈 수 있기 때문이다.",
+                    "en": "Marx treats lease terms as an obstacle to improvement because the tenant’s gains can pass to the landlord at renewal."
+                  }
                 },
                 {
                   "id": "q5",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "37장은 뒤의 차액지대와 절대지대 논의를 위해 무엇을 준비하는가?",
-                    "en": "What does Chapter 37 prepare for the later discussion of differential and absolute rent?"
+                    "ko": "37장은 뒤의 차액지대 논의로 넘어가기 전에 무엇을 정리하는가?",
+                    "en": "What does Chapter 37 establish before moving to differential rent?"
                   },
                   "choices": {
                     "ko": [
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다.",
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "지대를 토지의 자연 산물이 아니라 자본주의적 생산과 토지소유가 만나는 지점의 문제로 세운다."
+                      "지대는 토지의 자연적 성질이 아니라 자본주의적 생산, 토지소유 독점, 초과이윤의 귀속 문제라는 점을 정리한다.",
+                      "지대는 곡물가격의 일반 상승을 설명하는 소비수요 이론이라는 점을 정리한다.",
+                      "지대는 농업부문이 평균이윤율 형성에서 빠지는 역사적 예외라는 점을 정리한다.",
+                      "지대는 소농의 자급경제가 상품경제로 바뀌는 초기 교환형태라는 점을 정리한다."
                     ],
                     "en": [
-                      "Capitalist wage-labour cannot exist in agriculture.",
-                      "The landowner creates market prices at will.",
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "It frames rent not as a natural product of land, but as a problem at the intersection of capitalist production and landed property."
+                      "It establishes rent as a question of capitalist production, land monopoly, and the destination of surplus-profit.",
+                      "It establishes rent as a demand theory explaining the general rise of grain prices.",
+                      "It establishes rent as a historical exception outside the formation of the average rate of profit.",
+                      "It establishes rent as an early exchange form in the transition from peasant subsistence to commodity economy."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "서론의 역할은 범위를 정하는 것이다. 이후 장들은 이 틀 안에서 초과이윤, 차액, 토지소유 독점이 어떻게 지대로 나타나는지 분석한다.",
-                    "en": "The introduction sets the scope. Later chapters analyse, within this frame, how surplus-profit, differences, and monopoly of landownership appear as rent."
-                  },
-                  "points": 2
+                    "ko": "이 틀을 세워야 뒤에서 초과이윤이 어떤 조건에서 차액지대나 절대지대로 바뀌는지 추적할 수 있다.",
+                    "en": "This frame lets Marx trace when surplus-profit becomes differential or absolute rent in later chapters."
+                  }
                 }
               ]
             },
@@ -32182,157 +32182,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "자본주의적 농업에서 가장 중요한 긴장은 무엇인가?",
-                    "en": "What is the central tension in capitalist agriculture?"
+                    "ko": "토지소유의 “순수한 경제적 형태”라는 말은 37장에서 무엇을 뜻하는가?",
+                    "en": "What does the “purely economic form” of landed property mean in Chapter 37?"
                   },
                   "choices": {
                     "ko": [
-                      "농업도 평균이윤을 추구하는 자본주의적 생산이지만, 토지소유가 초과이윤을 별도의 지대 수입으로 바꿀 수 있다는 점이다.",
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다."
+                      "지주는 지배·복속의 직접 관계보다 토지 독점권을 통해 정기적 화폐수입을 받는 소유자로 나타난다.",
+                      "지주는 농업기술을 직접 지휘하며 생산물의 물적 형태를 결정하는 경영자로 나타난다.",
+                      "지주는 농촌 공동체의 관습을 보존하며 생산자 가족의 생계 규모를 조정하는 중재자로 나타난다.",
+                      "지주는 곡물 유통을 장악해 시장가격을 산정하는 상업조합의 대표자로 나타난다."
                     ],
                     "en": [
-                      "Agriculture is capitalist production seeking average profit, yet landed property can turn surplus-profit into a separate income called rent.",
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "Capitalist wage-labour cannot exist in agriculture.",
-                      "The landowner creates market prices at will."
+                      "The landlord appears as an owner receiving regular money revenue through land monopoly rather than direct domination.",
+                      "The landlord appears as a manager directing agricultural technique and the material form of the product.",
+                      "The landlord appears as a mediator preserving rural custom and regulating peasant subsistence.",
+                      "The landlord appears as the head of a trading association that calculates grain market prices."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "농업은 자본주의 밖의 예외가 아니다. 바로 자본주의적 생산 안에서 토지소유가 별도 권리로 작동하기 때문에 긴장이 생긴다.",
-                    "en": "Agriculture is not an exception outside capitalism. The tension arises because landed property operates as a distinct right within capitalist production."
-                  },
-                  "points": 3
+                    "ko": "자본주의는 토지소유를 정치적 장식에서 떼어 내고 화폐수입의 권리로 만든다. 그래서 지대의 경제적 형태가 전면에 선다.",
+                    "en": "Capitalism strips landed property of older political attachments and turns it into a right to money revenue."
+                  }
                 },
                 {
                   "id": "q2",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "초과이윤과 지대를 이어 주는 매개는 무엇인가?",
-                    "en": "What mediates surplus-profit and rent?"
+                    "ko": "마르크스가 지대를 분석하면서 밀 생산을 대표 사례로 잡는 이유는 무엇인가?",
+                    "en": "Why does Marx use wheat production as the representative case for rent analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.",
-                      "토지의 임대관계와 토지소유권이 초과이윤을 차지농의 이윤에서 지주의 지대로 옮기는 매개가 된다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다.",
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다."
+                      "근대 자본주의 국가에서 주요 생활수단의 생산이어서 농업 자본투자와 지대의 일반 문제를 드러내기 쉽다.",
+                      "밀은 자연조건의 영향을 받지 않아 산업상품과 같은 방식으로 가격이 정해지기 때문이다.",
+                      "밀 생산은 토지개량 비용이 거의 없어 실제 지대와 이자를 분리할 필요가 적기 때문이다.",
+                      "밀은 국제무역보다 지역 관습가격으로 팔려 토지소유권의 법적 힘이 바로 나타나기 때문이다."
                     ],
                     "en": [
-                      "Capitalist wage-labour cannot exist in agriculture.",
-                      "The lease relation and landed property mediate the transfer of surplus-profit from the tenant farmer’s profit to the landowner’s rent.",
-                      "The landowner creates market prices at will.",
-                      "It treats rent as the product of land itself without mediation by labour and market price."
+                      "Wheat is a chief means of subsistence in modern capitalist nations, making agricultural rent easier to analyze.",
+                      "Wheat is unaffected by natural conditions, so its price is fixed like an industrial commodity.",
+                      "Wheat production has almost no improvement costs, so rent and interest need little separation.",
+                      "Wheat is sold by local customary prices rather than world trade, directly displaying legal landownership."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "초과이윤이 생긴다는 사실만으로 지대가 자동 성립하지는 않는다. 누가 토지 접근권을 통제하는지가 그 이윤의 귀속을 바꾼다.",
-                    "en": "Surplus-profit alone does not automatically become rent. Who controls access to land changes where that profit goes."
-                  },
-                  "points": 3
+                    "ko": "마르크스는 지대론의 범위를 좁히기 위해 주요 식량작물에 초점을 둔다. 광업도 같은 법칙이 적용될 수 있다고 덧붙인다.",
+                    "en": "Marx narrows the scope to a chief food crop and notes that the same laws can apply to mining."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "지대를 “토지의 자연 보너스”로 설명하면 왜 부정확한가?",
-                    "en": "Why is it inaccurate to explain rent as a natural bonus of land?"
+                    "ko": "“토지에는 가치가 없지만 가격이 있다”는 명제를 어떻게 이해해야 하는가?",
+                    "en": "How should we understand the claim that land has no value but can have a price?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다.",
-                      "자연조건은 차이를 만들 수 있지만, 그 차이가 지대가 되는 것은 시장가격과 토지소유 관계를 통해서이기 때문이다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다."
+                      "토지는 노동생산물이 아니지만, 매년 받을 지대가 자본화되면 매매가격처럼 나타난다.",
+                      "토지는 자연력이므로 그 자체의 가치가 노동가치보다 먼저 화폐로 표현된다.",
+                      "토지는 생산수단이므로 투입된 임금 총액이 바로 토지가격의 기준이 된다.",
+                      "토지는 국가가 등기한 재산이므로 법적 소유권의 비용이 가치의 실체가 된다."
                     ],
                     "en": [
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "The landowner creates market prices at will.",
-                      "Natural conditions can create differences, but those differences become rent only through market price and landed property relations.",
-                      "Capitalist wage-labour cannot exist in agriculture."
+                      "Land is not a product of labour, but expected annual rent can be capitalized into a sale price.",
+                      "Land is a natural force, so its value is expressed in money before labour-value.",
+                      "Land is a means of production, so the wage sum invested in it directly sets its price.",
+                      "Land is registered property, so the legal cost of title becomes the substance of value."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 자연조건을 무시하지 않는다. 다만 자연조건이 사회관계 없이 곧장 지대가 된다고 보지 않는다.",
-                    "en": "Marx does not ignore natural conditions. He does not treat them as becoming rent directly without social relations."
-                  },
-                  "points": 3
+                    "ko": "토지가격은 토지 자체의 가치표현이 아니라 지대 수입청구권의 자본화다. 이 점이 물신적 표현을 만든다.",
+                    "en": "Land price is not the expression of land’s own value but the capitalization of a rent claim."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "임대계약이 갱신될 때 지주가 “이 땅은 더 많은 수익을 낼 수 있으니 지대를 올리겠다”고 한다. 여기서 따져야 할 것은 무엇인가?",
-                    "en": "When a lease is renewed, a landowner says the land can yield more revenue and raises rent. What should be examined?"
+                    "ko": "영국의 건물 임대 사례가 농업 지대론에 보태는 세부 포인트는 무엇인가?",
+                    "en": "What detailed point does the English building-lease example add to the rent theory?"
                   },
                   "choices": {
                     "ko": [
-                      "지주의 권리를 시장가격 형성과 직접 동일시하는 식으로 가치관계의 매개를 지우는 오해",
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "추가 수익이 차지농의 자본투자에서 나온 것인지, 토지조건에서 나온 것인지, 그리고 토지소유가 그것을 어떻게 가져가는지 따져야 한다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다."
+                      "임차인이 만든 건물이나 개량물이 계약 종료 뒤 토지와 함께 지주에게 넘어가며 지대와 토지가격을 키운다.",
+                      "건물 임대에서는 도시 노동자의 임금이 낮아져 농업 지대의 평균 수준을 함께 낮춘다.",
+                      "건물의 감가상각이 곡물가격의 조절 기준이 되어 차액지대의 한계를 정한다.",
+                      "도시 토지는 농업 토지와 달리 독점이 약해 임대료가 평균이윤으로 흡수된다."
                     ],
                     "en": [
-                      "The landowner creates market prices at will.",
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "One must ask whether the extra return came from the tenant’s capital investment or from land conditions, and how landed property captures it.",
-                      "Capitalist wage-labour cannot exist in agriculture."
+                      "Buildings and improvements made by tenants can pass to landlords at lease expiry, raising rent and land price.",
+                      "In building leases, urban wages fall and thereby lower the average level of agricultural rent.",
+                      "Building depreciation regulates grain prices and sets the limit of differential rent.",
+                      "Urban land has weaker monopoly than agricultural land, so rent is absorbed into average profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "지대는 단순한 계약 금액이 아니다. 임대계약은 생산에서 생긴 초과분이 누구에게 돌아가는지를 둘러싼 권리관계다.",
-                    "en": "Rent is not just a contract amount. The lease is a relation of rights over who receives the surplus generated in production."
-                  },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"지주의 권리를 시장가격 형성과 직접 동일시하는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 지대는 단순한 계약 금액이 아니다. 임대계약은 생산에서 생긴 초과분이 누구에게 돌아가는지를 둘러싼 권리관계다.",
-                      "오해 진단: \"농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"The landowner creates market prices at will.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It treats rent as the product of land itself without mediation by labour and market price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: Rent is not just a contract amount. The lease is a relation of rights over who receives the surplus generated in production.",
-                      "Misconception check: choosing \"Capitalist wage-labour cannot exist in agriculture.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "이 사례는 토지 자체의 지대와 토지에 붙은 고정자본 이자를 분리하게 한다. 동시에 지주의 수입이 어떻게 팽창하는지도 보여준다.",
+                    "en": "The example separates ground-rent from interest on fixed capital attached to land and shows how landlord revenue expands."
                   }
                 },
                 {
                   "id": "q5",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 서론이 3권 전체에서 중요한 이유는 무엇인가?",
-                    "en": "Why is this introduction important in Volume III as a whole?"
+                    "ko": "37장의 논의가 다음 장의 폭포 사례로 이어지는 지점은 어디인가?",
+                    "en": "Where does Chapter 37 connect to the waterfall example in the next chapter?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 노동과 시장가격의 매개 없이 토지 자체의 산물로 본다.",
-                      "농업의 지대관계를 임금노동과 분리된 전근대 관계로만 본다.",
-                      "지주의 권리를 시장가격 형성과 직접 동일시한다.",
-                      "이윤, 평균이윤, 초과이윤 분석을 토지소유와 연결해 지대라는 특수한 수입형태를 설명할 길을 연다."
+                      "토지에 묶인 자연조건이 독점될 때 초과이윤의 귀속이 바뀐다는 문제가 다음 장의 차액지대 일반론으로 이어진다.",
+                      "농업생산물이 생활수단이라는 사실이 다음 장의 임금률 결정 문제로 바로 이어진다.",
+                      "토지개량의 고정자본 성격이 다음 장의 상업신용과 어음 할인 문제로 이어진다.",
+                      "소농 소유의 해체 과정이 다음 장의 인구법칙과 실업자 형성 문제로 이어진다."
                     ],
                     "en": [
-                      "It treats rent as the product of land itself without mediation by labour and market price.",
-                      "Capitalist wage-labour cannot exist in agriculture.",
-                      "The landowner creates market prices at will.",
-                      "It connects the analysis of profit, average profit, and surplus-profit with landed property, opening the way to explain rent as a specific income form."
+                      "The issue of monopolized natural conditions changing the destination of surplus-profit leads into differential rent.",
+                      "The fact that agricultural products are means of subsistence leads directly to wage-rate determination.",
+                      "The fixed-capital character of improvements leads into commercial credit and bill discounting.",
+                      "The dissolution of small peasant property leads into population law and unemployment formation."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "3권은 잉여가치가 여러 수입형태로 바뀌는 과정을 추적한다. 지대론의 서론은 그중 토지소유가 만드는 특수한 전환을 시작한다.",
-                    "en": "Volume III traces how surplus-value takes several income forms. The introduction to rent begins the specific transformation produced by landed property."
-                  },
-                  "points": 3
+                    "ko": "다음 장은 토지에 결박된 자연력, 즉 폭포가 왜 일반 초과이윤과 다른 지대 형태를 낳는지 분석한다.",
+                    "en": "The next chapter analyzes why a natural force tied to land, such as a waterfall, yields rent-form surplus-profit."
+                  }
                 }
               ]
             }
@@ -32401,143 +32387,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차액지대 일반론에서 마르크스가 먼저 확인하는 차이는 무엇인가?",
-                    "en": "What is the first problem to grasp in Differential Rent: General Remarks?"
+                    "ko": "38장에서 차액지대 일반론의 출발 질문은 무엇인가?",
+                    "en": "What is the starting question of the general theory of differential rent in Chapter 38?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 양의 자본과 노동을 투입해도 토지의 비옥도나 위치가 다르면 개별 생산비와 수익이 달라진다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "농산물도 생산가격에 팔린다고 가정할 때, 이윤의 일부가 어떻게 지대로 바뀌는가이다.",
+                      "농산물이 가치보다 낮게 팔릴 때, 임금이 어떤 경로로 보전되는가이다.",
+                      "지주가 토지 매매가격을 정할 때, 국가가 어떤 조세율을 적용하는가이다.",
+                      "농업노동의 계절성이 유통비용을 어떤 방식으로 낮추는가이다."
                     ],
                     "en": [
-                      "Even with the same amount of capital and labour, differences in fertility or location create different individual costs and returns.",
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "Assuming agricultural products sell at prices of production, how can part of profit become rent?",
+                      "When agricultural products sell below value, how are wages restored?",
+                      "When landlords set land sale prices, what tax rate does the state apply?",
+                      "How does the seasonality of agricultural labour reduce circulation costs?"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "정답은 이 장의 출발점을 잡는다. 같은 양의 자본과 노동을 투입해도 토지의 비옥도나 위치가 다르면 개별 생산비와 수익이 달라진다.",
-                    "en": "The correct answer identifies the chapter’s starting point. Even with the same amount of capital and labour, differences in fertility or location create different individual costs and returns."
-                  },
-                  "points": 2
+                    "ko": "마르크스는 지대가 가격 밖의 임의 부과가 아니라 생산가격 체계 안에서 설명되어야 한다고 전제한다.",
+                    "en": "Marx frames rent as something to be explained within prices of production, not as an arbitrary surcharge."
+                  }
                 },
                 {
                   "id": "q2",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "토지의 비옥도나 위치 차이는 시장에서 어떻게 초과이윤으로 나타나는가?",
-                    "en": "How does this relation operate in agricultural production?"
+                    "ko": "폭포를 이용하는 공장이 증기기관 공장보다 초과이윤을 얻는 직접 조건은 무엇인가?",
+                    "en": "What directly enables a factory using a waterfall to earn surplus-profit over steam-powered factories?"
                   },
                   "choices": {
                     "ko": [
-                      "시장은 대체로 같은 상품에 하나의 가격을 만들고, 더 좋은 조건의 토지는 그 가격 아래에서 초과이윤을 얻는다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다."
+                      "동일한 시장 생산가격에 팔지만 개별 생산가격이 낮아 평균이윤을 넘는 차액이 생긴다.",
+                      "폭포 사용자는 상품을 사회적 생산가격보다 높게 팔 수 있는 특별 유통권을 갖는다.",
+                      "폭포가 투입된 노동시간을 늘려 상품가치를 증기기관 상품보다 크게 만든다.",
+                      "자연력 사용료가 임금 일부를 대체해 노동력 가치의 계산방식을 바꾼다."
                     ],
                     "en": [
-                      "The market tends to form one price for the same commodity, and better land earns surplus-profit under that price.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It says natural conditions of land directly create value apart from labour."
+                      "It sells at the same market price of production while its individual price of production is lower.",
+                      "The waterfall user has a special circulation right to sell above the social price of production.",
+                      "The waterfall increases labour-time and makes the commodity’s value greater than steam-produced goods.",
+                      "The fee for natural force replaces part of wages and changes how labour-power value is calculated."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "핵심은 지대가 생산 바깥의 단순 부과금이 아니라는 점이다. 시장은 대체로 같은 상품에 하나의 가격을 만들고, 더 좋은 조건의 토지는 그 가격 아래에서 초과이윤을 얻는다.",
-                    "en": "The point is that rent is not a mere charge outside production. The market tends to form one price for the same commodity, and better land earns surplus-profit under that price."
-                  },
-                  "points": 2
+                    "ko": "초과이윤은 일반 생산가격과 개별 생산가격의 차이에서 나온다. 폭포는 그 차이를 낳는 자연적 조건이다.",
+                    "en": "The surplus-profit comes from the gap between general and individual prices of production; the waterfall is the natural condition."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "토지는 노동 없이 가치를 직접 만든다. 이 설명은 무엇을 놓치는가?",
-                    "en": "Land directly creates value without labour. What does this explanation miss?"
+                    "ko": "폭포의 자연력이 초과이윤의 “원천”이 아니라 “자연적 기초”라는 말의 뜻은 무엇인가?",
+                    "en": "What does it mean that the waterfall is the natural basis, not the source, of surplus-profit?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 양의 자본과 노동을 투입해도 토지의 비옥도나 위치가 다르면 개별 생산비와 수익이 달라진다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "가치와 이윤의 사회적 형태는 노동과 가격관계에서 생기며, 폭포는 더 높은 생산성을 가능하게 하는 조건이다.",
+                      "폭포의 물리적 에너지가 상품가치를 직접 만들고 노동은 그 가치를 시장에 전달한다.",
+                      "폭포의 희소성이 평균이윤율을 산출하며 자본은 그 평균을 기술적으로 적용한다.",
+                      "폭포 소유권의 법적 등록이 잉여가치를 만들고 생산과정은 그 권리를 실현한다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Even with the same amount of capital and labour, differences in fertility or location create different individual costs and returns. Therefore natural conditions, price, and landed property must be read together.",
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "Value and profit forms arise through labour and price relations; the waterfall enables higher productivity.",
+                      "The physical energy of the waterfall directly creates value, and labour transfers it to the market.",
+                      "The scarcity of waterfalls calculates the average profit rate, and capital technically applies it.",
+                      "Legal registration of waterfall ownership creates surplus-value, and production realizes that right."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "토지가 직접 가치를 만든다는 설명은 노동, 시장가격, 토지소유의 매개를 지워 버린다. 마르크스가 보려는 것은 자연조건의 차이가 자본주의적 시장 안에서 초과이윤과 지대로 바뀌는 과정이다.",
-                    "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
-                  },
-                  "points": 2
+                    "ko": "자연력은 노동을 더 생산적으로 만들 수 있지만 가치의 사회적 형태를 대신 만들지는 않는다. 이 구분이 물신화를 막는다.",
+                    "en": "Natural force can make labour more productive, but it does not create the social form of value itself."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "두 농장이 같은 양의 밀을 팔지만 한 농장은 항구와 가까워 운송비가 훨씬 낮다. 이 차이를 어떻게 읽어야 하는가?",
-                    "en": "Two farms sell the same wheat, but one is near a port and has much lower transport costs. How should this difference be read?"
+                    "ko": "폭포를 소유한 지주가 제조업자에게 사용권을 빌려 줄 때 초과이윤은 어떤 형태를 띠는가?",
+                    "en": "When a landlord leases access to a waterfall to a manufacturer, what form does the surplus-profit take?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "시장은 대체로 같은 상품에 하나의 가격을 만들고, 더 좋은 조건의 토지는 그 가격 아래에서 초과이윤을 얻는다. 이 점을 보아야 사례가 지대 문제로 읽힌다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "독점 가능한 자연조건에 묶인 초과이윤이 지주에게 이전되며 차액지대의 형태를 띤다.",
+                      "제조업자의 기술혁신 수익이 상업이윤으로 바뀌어 도매상에게 분배된다.",
+                      "평균이윤의 일부가 임금 보조금으로 전환되어 노동자의 구매력을 높인다.",
+                      "물 사용료가 고정자본 감가상각으로 계산되어 생산가격의 공통 항목이 된다."
                     ],
                     "en": [
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "The market tends to form one price for the same commodity, and better land earns surplus-profit under that price. This is what makes the case a problem of rent.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "Surplus-profit tied to a monopolizable natural condition passes to the landlord as differential rent.",
+                      "The manufacturer’s innovation gain becomes commercial profit and is distributed to wholesalers.",
+                      "Part of average profit becomes a wage subsidy that raises workers’ purchasing power.",
+                      "The water fee is counted as fixed-capital depreciation and becomes a common element of production price."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "사례형 문항의 목적은 개념을 현실의 관계로 옮겨 읽는 것이다. 정답은 가격 표면보다 그 뒤의 생산조건과 소유관계를 본다.",
-                    "en": "The purpose of the scenario is to read the concept as a real relation. The correct answer looks behind the price surface to production conditions and property relations."
-                  },
-                  "points": 2
+                    "ko": "토지소유는 초과이윤을 만들지는 않지만 그것을 지대로 취득하게 한다. 이 점이 폭포 사례의 핵심이다.",
+                    "en": "Landownership does not create the surplus-profit, but it lets the owner appropriate it as rent."
+                  }
                 },
                 {
                   "id": "q5",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 왜 차액지대 I과 II로 넘어가기 전에 필요할까?",
-                    "en": "What role does this chapter play in the theory of rent as a whole?"
+                    "ko": "38장이 농업 차액지대 분석으로 넘어가기 전에 마련한 기준은 무엇인가?",
+                    "en": "What criterion does Chapter 38 establish before turning to agricultural differential rent?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "차액지대의 일반 원리를 세워 뒤의 차액지대 I과 II 분석의 기준을 마련한다."
+                      "일반 생산가격과 더 유리한 개별 생산조건의 차이가 초과이윤을 만들고, 독점된 자연조건이 그것을 지대로 고정한다.",
+                      "농업에서는 시장가격이 개별 생산자의 의지에 맞춰 조정되며 지대가 그 조정의 기준이 된다.",
+                      "자연력이 쓰인 상품은 노동가치 계산에서 빠지고 사용가치의 희소성으로 가격을 얻는다.",
+                      "토지소유권이 있으면 평균이윤율이 형성되기 전에 지대가 먼저 공통 생산비가 된다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "It establishes the general principle of differential rent and prepares the criteria for analysing Differential Rent I and II."
+                      "A gap between general production price and favorable individual conditions creates surplus-profit, fixed as rent by monopoly.",
+                      "In agriculture, market price adjusts to individual producers’ will and rent becomes the criterion.",
+                      "Commodities using natural force leave labour-value calculation and gain price through use-value scarcity.",
+                      "With landownership, rent becomes a common production cost before the average profit rate forms."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 의미는 다음 논의와의 연결에 있다. 차액지대의 일반 원리를 세워 뒤의 차액지대 I과 II 분석의 기준을 마련한다.",
-                    "en": "The chapter matters through its connection to the next steps. It establishes the general principle of differential rent and prepares the criteria for analysing Differential Rent I and II."
-                  },
-                  "points": 2
+                    "ko": "이 일반 원리가 있으면 비옥도·위치 차이가 왜 차액지대 I로 나타나는지 설명할 수 있다.",
+                    "en": "With this general principle, Marx can explain why fertility and location differences appear as Differential Rent I."
+                  }
                 }
               ]
             },
@@ -32551,157 +32537,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "토지의 자연적 차이가 곧바로 지대가 된다고 말할 수 없는 이유는 무엇인가?",
-                    "en": "What deeper tension must be seen in Differential Rent: General Remarks?"
+                    "ko": "폭포 사례에서 증기기관 공장의 생산가격 115와 폭포 공장의 낮은 비용은 어떤 관계를 만든다?",
+                    "en": "What relation is created by a steam factory’s production price of 115 and the lower cost of a waterfall factory?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 양의 자본과 노동을 투입해도 토지의 비옥도나 위치가 다르면 개별 생산비와 수익이 달라진다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "시장은 115를 기준으로 조절되지만 폭포 공장의 개별 생산가격은 낮아 초과이윤의 범위가 생긴다.",
+                      "폭포 공장은 115보다 높은 독점가격을 받아야 평균이윤율에 참여할 수 있다.",
+                      "증기기관 공장의 비용이 낮아질수록 폭포 공장의 초과이윤은 고정된 자연수입으로 커진다.",
+                    "두 공장의 비용차이는 유통비 절약으로 처리되어 상업이윤 계산에 먼저 반영된다."
                     ],
                     "en": [
-                      "Even with the same amount of capital and labour, differences in fertility or location create different individual costs and returns. But the result does not become rent directly; it hardens into rent through landed property and market price.",
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "The market is regulated around 115, while the waterfall factory’s individual production price is lower, creating surplus-profit.",
+                      "The waterfall factory must charge above 115 to participate in the average rate of profit.",
+                      "As steam costs fall, the waterfall factory’s surplus-profit grows as fixed natural revenue.",
+                      "The cost difference disappears in circulation and is excluded from production-price analysis."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                    "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
-                  },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                      "오해 진단: \"토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
-                      "Misconception check: choosing \"It says natural conditions of land directly create value apart from labour.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "마르크스의 숫자는 초과이윤이 가격 위반이 아니라 같은 시장가격 아래의 비용 차이에서 생김을 보여준다.",
+                    "en": "Marx’s numbers show that surplus-profit arises from cost differences under the same market price, not from violating price rules."
                   }
                 },
                 {
                   "id": "q2",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차액지대를 이해하려면 어떤 연결고리를 함께 보아야 하는가?",
-                    "en": "Which categories mediate this chapter’s argument?"
+                    "ko": "폭포가 일반적인 증기 탄력성과 다른 이유는 무엇인가?",
+                    "en": "Why is a waterfall different from the general elasticity of steam?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 비옥도와 위치, 하나의 시장가격, 초과이윤, 임대계약, 토지소유를 함께 보아야 한다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다."
+                      "증기의 물리적 성질은 누구나 설비로 이용할 수 있지만, 폭포는 특정 토지에 붙어 있어 배타적으로 점유된다.",
+                      "증기는 노동생산성을 높이고 폭포는 상품가치를 직접 창출한다는 기능 차이가 있다.",
+                      "증기는 산업부문에 속하고 폭포는 농업부문에 속해 평균이윤율이 다르게 계산된다.",
+                      "증기는 유동자본을 줄이고 폭포는 임금을 줄이는 방식으로 서로 다른 가치부분을 움직인다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "One must read fertility and location, a common market price, surplus-profit, lease contract, and landed property together.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It says natural conditions of land directly create value apart from labour."
+                      "Steam’s physical properties can be used through equipment, while a waterfall is tied to specific land and exclusive possession.",
+                      "Steam raises labour productivity, while a waterfall directly creates commodity value.",
+                      "Steam belongs to industry and waterfalls to agriculture, so the average profit rate is calculated differently.",
+                      "Steam reduces circulating capital, while waterfalls reduce wages, moving different value parts."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "매개를 보면 한 가지 원인으로 환원하지 않게 된다. 지대는 생산조건의 차이, 가격 형성, 소유권이 함께 움직일 때 이해된다.",
-                    "en": "Seeing the mediations prevents reduction to a single cause. Rent is understood through the movement of production differences, price formation, and property right together."
-                  },
-                  "points": 3
+                    "ko": "핵심은 자연력 일반이 아니라 독점 가능한 자연력이다. 폭포는 특정 장소와 소유권에 묶여 있다.",
+                    "en": "The issue is not natural force in general but monopolizable natural force tied to location and ownership."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장에 대한 통념적 설명이 왜 부족한가?",
-                    "en": "Why is the common-sense explanation of this chapter insufficient?"
+                    "ko": "폭포 소유자가 제조업자 자신일 때에도 마르크스가 지대 범주를 유지하는 이유는 무엇인가?",
+                    "en": "Why does Marx retain the category of rent even when the manufacturer owns the waterfall?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "토지가 직접 가치를 만든다는 설명은 노동과 시장가격, 토지소유가 어떻게 초과이윤을 지대로 바꾸는지 가린다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "그 초과분은 자본가 기능이 아니라 폭포 소유자 기능에서 발생한 귀속분으로 구분되기 때문이다.",
+                      "자기 소유 폭포에서는 평균이윤이 사라져 전체 수익이 지대 명목으로 회계 처리되기 때문이다.",
+                      "제조업자가 토지를 소유하면 상품이 농산물로 분류되어 차액지대 I의 표에 들어가기 때문이다.",
+                      "동일인이 두 권리를 가질 때 법적으로 임대계약을 작성해야 가치가 실현되기 때문이다."
                     ],
                     "en": [
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "The claim that land directly creates value obscures how labour, market price, and landed property turn surplus-profit into rent.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "The surplus is distinguished as accruing to the owner of the waterfall, not to the capitalist function as such.",
+                      "With self-owned waterfalls, average profit disappears and all revenue is booked as rent.",
+                      "If the manufacturer owns land, the commodity is classified as agricultural and enters Differential Rent I tables.",
+                      "When one person holds both rights, a legal lease must be written for value to be realized."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "토지가 직접 가치를 만든다는 통념은 자연조건을 사회관계로부터 떼어 놓는다. 그러나 차액지대는 토지 차이, 시장가격, 토지소유가 함께 작동할 때 생긴다.",
-                    "en": "Common sense stops at the cause visible on the surface. The correct answer restores the production and property relations that make that surface possible."
-                  },
-                  "points": 3
+                    "ko": "동일인이 자본가와 토지소유자의 역할을 겸해도 범주는 구분된다. 초과이윤의 근거가 자본 일반이 아니기 때문이다.",
+                    "en": "Even when one person holds both roles, the categories differ because the surplus does not arise from capital as such."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "두 농장이 같은 양의 밀을 팔지만 한 농장은 항구와 가까워 운송비가 훨씬 낮다. 이 차이를 어떻게 읽어야 하는가?",
-                    "en": "Two farms sell the same wheat, but one is near a port and has much lower transport costs. How should this difference be read?"
+                    "ko": "폭포 가격 200파운드가 연간 지대 10파운드와 이자율 5%에서 나온다는 설명은 무엇을 드러내는가?",
+                    "en": "What is shown by deriving a waterfall price of £200 from £10 annual rent and a 5% interest rate?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "먼저 시장은 대체로 같은 상품에 하나의 가격을 만들고, 더 좋은 조건의 토지는 그 가격 아래에서 초과이윤을 얻는다. 그런 다음 누가 그 초과분을 가져가는지 보아야 한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "폭포 가격은 자연물의 가치가 아니라 매년 받을 지대수입을 이자율로 자본화한 표현이다.",
+                      "폭포 가격은 물의 사용가치를 노동시간으로 환산한 뒤 평균이윤을 더한 금액이다.",
+                      "폭포 가격은 제조업자가 절약한 석탄비 전액을 일시불로 납부한 생산비다.",
+                      "폭포 가격은 국가가 희소 자연력을 공공재로 평가해 부과한 조세 기준액이다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "First, The market tends to form one price for the same commodity, and better land earns surplus-profit under that price. Then one must ask who receives the surplus.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "The waterfall price is capitalized annual rent, not the value of the natural object itself.",
+                      "The waterfall price is use-value of water translated into labour-time plus average profit.",
+                      "The waterfall price is the coal cost saved by the manufacturer, paid upfront as production cost.",
+                      "The waterfall price is a tax benchmark imposed by the state for a scarce natural force."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
-                    "en": "In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together."
-                  },
-                  "points": 3
+                    "ko": "연 10파운드가 5% 이자라면 200파운드의 이자로 보인다. 이는 자연력 가격의 비합리적 외관을 설명한다.",
+                    "en": "At 5% interest, £10 appears as interest on £200. This explains the irrational appearance of a natural-force price."
+                  }
                 },
                 {
                   "id": "q5",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 왜 차액지대 I과 II로 넘어가기 전에 필요할까?",
-                    "en": "What is the systematic significance of Differential Rent: General Remarks?"
+                    "ko": "38장의 폭포 사례가 39장의 토지 비옥도 표로 이어지는 방식은 무엇인가?",
+                    "en": "How does the waterfall example in Chapter 38 lead into the fertility tables of Chapter 39?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 자연조건이 노동과 무관하게 가치를 직접 만든다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "차액지대의 일반 원리를 세워 뒤의 차액지대 I과 II 분석의 기준을 마련한다."
+                      "독점된 자연조건이 개별 생산가격을 낮추는 원리를 세운 뒤, 농업에서는 그 조건을 비옥도와 위치 차이로 구체화한다.",
+                      "폭포의 사용료가 곡물 생산비에 더해지는 방식을 세운 뒤, 농업에서는 그 비용을 모든 토지에 나누어 배분한다.",
+                      "자연력의 가격이 상품가치를 만든다는 원리를 세운 뒤, 농업에서는 토지 종류별 가치량을 계산한다.",
+                      "산업의 평균이윤율이 붕괴되는 사례를 세운 뒤, 농업에서는 각 토지가 독자적 이윤율을 유지한다."
                     ],
                     "en": [
-                      "It says natural conditions of land directly create value apart from labour.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It establishes the general principle of differential rent and prepares the criteria for analysing Differential Rent I and II."
+                      "After establishing how monopolized natural conditions lower individual production price, agriculture specifies this as fertility and location.",
+                      "After showing how waterfall fees enter grain costs, agriculture distributes that cost across all soils.",
+                      "After proving that natural-force price creates commodity value, agriculture calculates value by soil type.",
+                      "After showing the collapse of the industrial average profit rate, agriculture preserves separate profit rates by soil."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "차액지대 일반론은 뒤의 세부 계산을 읽기 위한 기준을 세운다. 먼저 자연조건의 차이가 시장가격 안에서 초과이윤으로 나타나는 방식을 알아야 차액지대 I과 II를 따라갈 수 있다.",
-                    "en": "This chapter’s systematic point is to show rent as a historically and socially mediated income form, not as a natural yield of land."
-                  },
-                  "points": 3
+                    "ko": "38장은 일반 원리, 39장은 농업적 구체화다. 폭포의 장소 독점은 토지의 비옥도·위치 차이로 이어진다.",
+                    "en": "Chapter 38 gives the general principle; Chapter 39 specifies it in agricultural fertility and location differences."
+                  }
                 }
               ]
             }
@@ -32770,143 +32742,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차액지대 I에서 비교해야 하는 것은 무엇인가?",
-                    "en": "What is the first problem to grasp in The First Form of Differential Rent?"
+                    "ko": "차액지대 I은 무엇을 비교하는가?",
+                    "en": "What does Differential Rent I compare?"
                   },
                   "choices": {
                     "ko": [
-                      "가장 불리하지만 필요한 토지의 생산조건이 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "서로 다른 토지에 같은 양의 자본과 노동을 투입했을 때 산출 차이가 어떻게 초과이윤을 만드는지 비교한다.",
+                      "같은 토지에 연속 투입된 자본의 회전기간이 임대계약에 어떤 영향을 주는지 비교한다.",
+                      "곡물과 공산품의 유통비가 평균이윤율을 통해 어떤 비율로 나뉘는지 비교한다.",
+                      "소농의 가족노동과 임금노동이 같은 시장에서 어떻게 다른 임금을 받는지 비교한다."
                     ],
                     "en": [
-                      "When the conditions of the worst land still needed for supply regulate market price, better land earns surplus-profit at the same price.",
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "It compares how equal capital and labour on different soils produce output differences and surplus-profit.",
+                      "It compares how turnover time of successive investments on the same land affects leases.",
+                      "It compares how circulation costs of grain and manufactures are divided through the average profit rate.",
+                      "It compares how family labour and wage labour receive different wages in the same market."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "정답은 이 장의 출발점을 잡는다. 가장 불리하지만 필요한 토지의 생산조건이 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다.",
-                    "en": "The correct answer identifies the chapter’s starting point. When the conditions of the worst land still needed for supply regulate market price, better land earns surplus-profit at the same price."
-                  },
-                  "points": 2
+                    "ko": "차액지대 I의 기준은 토지 간 차이다. 같은 크기·같은 자본투입이 다른 산출을 내는지가 출발점이다.",
+                    "en": "Differential Rent I starts from differences among soils: equal area and equal capital produce unequal outputs."
+                  }
                 },
                 {
                   "id": "q2",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "여러 토지에 같은 양의 자본을 넣을 때 시장가격은 어떤 효과를 내는가?",
-                    "en": "How does this relation operate in agricultural production?"
+                    "ko": "한계지 A가 시장가격을 조절한다는 말은 어떤 뜻인가?",
+                    "en": "What does it mean that marginal soil A regulates the market price?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 시장가격이 적용되면, 더 좋은 토지는 낮은 개별 생산비 덕분에 초과이윤을 얻는다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다."
+                      "수요 충족에 필요한 최악 조건의 토지도 평균이윤을 얻을 수 있는 생산가격이 시장가격의 기준이 된다.",
+                      "가장 비옥한 토지의 낮은 개별 생산가격이 모든 곡물의 시장가격을 직접 낮춘다.",
+                      "지주가 보유한 평균 토지가 임대료 계약을 통해 곡물의 통일가격을 고시한다.",
+                      "수확량이 가장 많은 토지의 현물지대가 화폐가격의 계산단위로 쓰인다."
                     ],
                     "en": [
-                      "When the same market price applies, better land earns surplus-profit because its individual cost of production is lower.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It treats the higher return of superior land as a natural return outside labour and market price."
+                      "The price is set so the worst soil needed for supply can still secure average profit.",
+                      "The most fertile soil’s low individual production price directly lowers the market price of all grain.",
+                      "Average land held by landlords announces a unified grain price through rent contracts.",
+                      "The rent in kind from the highest-yield soil becomes the unit for money price calculation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "핵심은 지대가 생산 바깥의 단순 부과금이 아니라는 점이다. 차액지대 I은 같은 토지의 추가투자가 아니라 서로 다른 토지들 사이의 차이를 다룬다.",
-                    "en": "The point is that rent is not a mere charge outside production. Differential Rent I concerns differences among separate lands, not additional investments on the same land."
-                  },
-                  "points": 2
+                    "ko": "필요한 공급을 위해 A가 경작되어야 하면 A의 생산가격이 조절 기준이 된다. B, C, D의 지대는 그 기준과의 차이다.",
+                    "en": "If A is needed for supply, its production price regulates the market. Rents on B, C, and D are differences from it."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "우등지는 노동 없이 가치를 만든다. 이 설명은 무엇을 놓치는가?",
-                    "en": "Superior land creates value without labour. What does this explanation miss?"
+                    "ko": "토지의 자연적 비옥도와 경제적 비옥도는 어떻게 구분되는가?",
+                    "en": "How are natural fertility and economic fertility distinguished?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "가장 불리하지만 필요한 토지의 생산조건이 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "토양 성분이 같아도 농업기술과 경작법이 영양분을 이용 가능한 형태로 만들면 실제 생산성은 달라진다.",
+                      "자연적 비옥도는 시장가격으로 측정되고 경제적 비옥도는 토양의 화학성분만으로 측정된다.",
+                      "자연적 비옥도는 지주에게 속하고 경제적 비옥도는 차지농의 임금지불 능력에 속한다.",
+                      "자연적 비옥도는 수확량을 정하고 경제적 비옥도는 생산물의 사용가치만을 정한다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "When the conditions of the worst land still needed for supply regulate market price, better land earns surplus-profit at the same price. Therefore natural conditions, price, and landed property must be read together.",
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "Even with similar soil composition, technique and cultivation can make nutrients more usable and alter actual productivity.",
+                      "Natural fertility is measured by market price, while economic fertility is measured only by chemical composition.",
+                      "Natural fertility belongs to the landlord, while economic fertility belongs to the tenant’s wage-paying capacity.",
+                      "Natural fertility sets output, while economic fertility sets only the product’s use-value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "우등지가 노동 없이 가치를 만든다는 말은 문제를 자연의 힘으로 돌려 버린다. 마르크스에게 중요한 것은 같은 시장가격 아래 서로 다른 생산조건이 초과이윤을 낳는 방식이다.",
-                    "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
-                  },
-                  "points": 2
+                    "ko": "마르크스에게 비옥도는 자연성질과 농업발전 수준의 관계다. 그래서 같은 토지도 시대에 따라 다르게 작동한다.",
+                    "en": "For Marx, fertility is a relation between natural properties and the level of agricultural development."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "A, B, C 세 토지에 같은 자본을 넣었는데 C 토지가 같은 가격에서 훨씬 많은 산출을 낸다. 이 초과분은 무엇을 보여주는가?",
-                    "en": "Equal capitals are invested in lands A, B, and C, but C yields much more output at the same price. What does this surplus show?"
+                    "ko": "A, B, C, D 토지에 같은 자본을 넣고 각각 1, 2, 3, 4쿼터가 생산된다면 B, C, D의 지대는 무엇에서 생기는가?",
+                    "en": "If equal capital on soils A, B, C, D yields 1, 2, 3, 4 quarters, where do rents on B, C, D arise?"
                   },
                   "choices": {
                     "ko": [
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "차액지대 I은 같은 토지의 추가투자가 아니라 서로 다른 토지들 사이의 차이를 다룬다. 이 점을 보아야 사례가 지대 문제로 읽힌다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "A의 생산가격이 기준일 때 B, C, D가 같은 가격으로 팔아 얻는 초과분에서 생긴다.",
+                      "각 토지가 자기 산출량에 맞춰 서로 다른 시장가격을 받는 차등가격에서 생긴다.",
+                      "B, C, D의 지주가 A의 지주보다 높은 법적 소유권을 갖는 차이에서 생긴다.",
+                      "우등지의 농업노동자가 열등지보다 낮은 임금으로 고용되는 임금격차에서 생긴다."
                     ],
                     "en": [
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "Differential Rent I concerns differences among separate lands, not additional investments on the same land. This is what makes the case a problem of rent.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "They arise from the surplus obtained when B, C, and D sell at the price regulated by A.",
+                      "They arise from differential prices, with each soil receiving a market price matching its output.",
+                      "They arise from stronger legal title held by landlords of B, C, and D than the landlord of A.",
+                      "They arise from wage gaps because workers on superior soils are hired at lower wages."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "사례형 문항의 목적은 개념을 현실의 관계로 옮겨 읽는 것이다. 정답은 가격 표면보다 그 뒤의 생산조건과 소유관계를 본다.",
-                    "en": "The purpose of the scenario is to read the concept as a real relation. The correct answer looks behind the price surface to production conditions and property relations."
-                  },
-                  "points": 2
+                    "ko": "차액지대 I의 표는 같은 시장가격 아래 산출 차이가 지대로 굳어지는 과정을 보여준다.",
+                    "en": "The table for Differential Rent I shows how output differences become rent under one market price."
+                  }
                 },
                 {
                   "id": "q5",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 차액지대론에서 어떤 단계를 맡는가?",
-                    "en": "What role does this chapter play in the theory of rent as a whole?"
+                    "ko": "39장이 다음 장의 차액지대 II와 구분되는 핵심은 무엇인가?",
+                    "en": "What chiefly distinguishes Chapter 39 from Differential Rent II in the next chapter?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "차액지대 I은 토지 간 생산조건 차이가 시장가격 속에서 지대 차이로 굳어지는 과정을 보여준다."
+                      "여러 토지 사이의 차이를 다루며, 다음 장은 같은 토지 안의 연속 투자 차이를 다룬다.",
+                      "화폐지대가 아니라 현물지대의 역사적 형태를 다루며, 다음 장은 화폐지대로 넘어간다.",
+                      "농업이 아니라 광업의 지대를 다루며, 다음 장은 곡물 생산으로 돌아간다.",
+                      "평균이윤율의 형성 이전을 다루며, 다음 장은 신용제도 이후의 이윤율을 다룬다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "Differential Rent I shows how differences among lands become rent differences through market price."
+                      "It treats differences among several soils; the next chapter treats successive investments within the same soil.",
+                      "It treats rent in kind rather than money-rent; the next chapter moves to money-rent.",
+                      "It treats mining rather than agriculture; the next chapter returns to grain production.",
+                      "It treats the period before average profit forms; the next chapter treats profit after credit develops."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 의미는 다음 논의와의 연결에 있다. 차액지대 I은 토지 간 생산조건 차이가 시장가격 속에서 지대 차이로 굳어지는 과정을 보여준다.",
-                    "en": "The chapter matters through its connection to the next steps. Differential Rent I shows how differences among lands become rent differences through market price."
-                  },
-                  "points": 2
+                    "ko": "39장은 외연적 경작의 차이를 먼저 정리한다. 40장은 이 원리를 집약적 경작으로 옮긴다.",
+                    "en": "Chapter 39 first clarifies extensive differences; Chapter 40 moves the principle into intensive cultivation."
+                  }
                 }
               ]
             },
@@ -32920,157 +32892,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "가장 불리한 토지가 시장가격을 규정할 때 어떤 역전이 생기는가?",
-                    "en": "What deeper tension must be seen in The First Form of Differential Rent?"
+                    "ko": "리카도의 “같은 자본과 노동의 산출 차이” 명제에 마르크스가 덧붙이는 조건은 무엇인가?",
+                    "en": "What condition does Marx add to Ricardo’s formula about unequal output from equal capital and labour?"
                   },
                   "choices": {
                     "ko": [
-                      "가장 불리하지만 필요한 토지의 생산조건이 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
+                    "지대 문제에서는 같은 면적의 토지에 투입된 같은 자본과 노동의 결과를 비교한다.",
+                      "지대 문제에서는 같은 시장가격보다 각 토지의 개별 가치가 우선 비교되어야 한다.",
+                      "지대 문제에서는 토지소유권의 법적 등급이 자본투입량보다 먼저 측정되어야 한다.",
+                      "지대 문제에서는 산출량보다 지주의 소비성향이 수입 차이를 결정하는 기준이 된다."
                     ],
                     "en": [
-                      "When the conditions of the worst land still needed for supply regulate market price, better land earns surplus-profit at the same price. But the result does not become rent directly; it hardens into rent through landed property and market price.",
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "For ground-rent, equal capital and labour must be compared on equal areas of land.",
+                      "For ground-rent, each soil’s individual value must be compared before the common market price.",
+                      "For ground-rent, legal ranks of landownership must be measured before capital outlay.",
+                      "For ground-rent, landlords’ propensity to consume determines revenue differences more than output."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                    "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
-                  },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                      "오해 진단: \"우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
-                      "Misconception check: choosing \"It treats the higher return of superior land as a natural return outside labour and market price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "리카도 명제는 차액지대에는 맞지만 토지지대에서는 면적 조건이 필요하다. 그래야 토지 간 차이가 분명해진다.",
+                    "en": "Ricardo’s formula fits differential rent, but ground-rent requires the equal-area condition."
                   }
                 },
                 {
                   "id": "q2",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차액지대 I을 이해하려면 어떤 요소들을 함께 보아야 하는가?",
-                    "en": "Which categories mediate this chapter’s argument?"
+                    "ko": "마르크스가 위치와 비옥도가 반대 방향으로 작용할 수 있다고 말하는 이유는 무엇인가?",
+                    "en": "Why does Marx say location and fertility can work in opposite directions?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "서로 다른 토지의 생산조건, 한계지, 시장가격, 초과이윤, 토지소유를 함께 보아야 한다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다."
+                      "가까운 열등지가 먼 우등지보다 먼저 경작될 수 있고, 교통 발달은 위치 차이를 줄이거나 새로 만들 수 있다.",
+                      "위치가 좋으면 토양 성분이 화학적으로 개선되어 비옥도 순서가 즉시 바뀌기 때문이다.",
+                      "비옥도가 높으면 시장과 거리가 멀어져 운송비가 자연적으로 상승하는 경향이 있기 때문이다.",
+                      "교통망은 농업기술과 별개라서 토지의 경제적 비옥도에 영향을 주지 않기 때문이다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "One must read different land conditions, marginal land, market price, surplus-profit, and landed property together.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It treats the higher return of superior land as a natural return outside labour and market price."
+                      "Nearby inferior land may be cultivated before distant superior land, and transport can reduce or create location differences.",
+                      "Good location chemically improves soil composition and immediately changes fertility rankings.",
+                      "Higher fertility naturally increases distance from markets and raises transport costs.",
+                      "Transport networks are separate from technique and do not affect economic fertility."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "매개를 보면 한 가지 원인으로 환원하지 않게 된다. 지대는 생산조건의 차이, 가격 형성, 소유권이 함께 움직일 때 이해된다.",
-                    "en": "Seeing the mediations prevents reduction to a single cause. Rent is understood through the movement of production differences, price formation, and property right together."
-                  },
-                  "points": 3
+                    "ko": "39장은 경작 순서가 좋은 땅에서 나쁜 땅으로만 간다는 단순도를 깨뜨린다. 위치와 비옥도는 엇갈릴 수 있다.",
+                    "en": "Chapter 39 rejects a simple sequence from better to worse land: location and fertility can cross."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장에 대한 통념적 설명이 왜 부족한가?",
-                    "en": "Why is the common-sense explanation of this chapter insufficient?"
+                    "ko": "표 I에서 A가 1쿼터, D가 4쿼터를 생산하고 쿼터당 가격이 3파운드라면 D의 지대가 3쿼터가 되는 이유는 무엇인가?",
+                    "en": "In Table I, if A yields 1 quarter and D yields 4 at £3 per quarter, why is D’s rent 3 quarters?"
                   },
                   "choices": {
                     "ko": [
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "우등지가 노동 없이 가치를 만든다는 설명은 같은 시장가격 아래 생산조건 차이가 초과이윤을 낳는 과정을 가린다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "A와 같은 자본의 평균이윤을 보장한 뒤에도 D에는 A보다 3쿼터 많은 초과산물이 남기 때문이다.",
+                      "D의 지주가 네 쿼터 중 한 쿼터만 차지농에게 남기도록 계약을 정하기 때문이다.",
+                      "D의 산출 네 쿼터가 모두 평균이윤을 나타내고 A의 한 쿼터가 지대를 나타내기 때문이다.",
+                      "D에서는 생산가격이 쿼터당 3파운드에서 1파운드로 낮아져 차액이 임금으로 지급되기 때문이다."
                     ],
                     "en": [
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "The claim that superior land creates value without labour obscures how differences in production conditions create surplus-profit under one market price.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "After securing average profit equal to A, D has three more quarters of surplus product than A.",
+                      "The landlord of D contracts to leave only one of four quarters to the tenant.",
+                      "All four quarters from D express average profit, while A’s one quarter expresses rent.",
+                      "On D, production price falls from £3 to £1 per quarter and the difference is paid as wages."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "우등지의 높은 수익은 자연이 홀로 만든 선물이 아니다. 같은 가격, 서로 다른 생산조건, 토지소유가 결합하면서 차액지대 I이 성립한다.",
-                    "en": "Common sense stops at the cause visible on the surface. The correct answer restores the production and property relations that make that surface possible."
-                  },
-                  "points": 3
+                    "ko": "지대는 D의 전체 산출이 아니라 한계지 A와의 차이다. 그래서 D의 4쿼터 중 3쿼터가 차액지대로 계산된다.",
+                    "en": "Rent is not D’s whole output but its difference from marginal soil A; three of four quarters count as differential rent."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "A, B, C 세 토지에 같은 자본을 넣었는데 C 토지가 같은 가격에서 훨씬 많은 산출을 낸다. 이 초과분은 무엇을 보여주는가?",
-                    "en": "Equal capitals are invested in lands A, B, and C, but C yields much more output at the same price. What does this surplus show?"
+                    "ko": "미시간 사례가 “새로운 곡물 수출지는 더 비옥하다”는 직관을 어떻게 교정하는가?",
+                    "en": "How does the Michigan example correct the intuition that new grain-export regions are more fertile?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "먼저 차액지대 I은 같은 토지의 추가투자가 아니라 서로 다른 토지들 사이의 차이를 다룬다. 그런 다음 누가 그 초과분을 가져가는지 보아야 한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "수출 잉여는 높은 단위면적 수확보다 넓은 토지, 낮은 토지가격, 세계시장 분업에서 나올 수 있다.",
+                      "새로운 수출지는 국가 보조금으로 곡물가치를 높여 유럽보다 높은 지대를 얻기 때문이다.",
+                      "미시간의 토지는 오래된 경작지보다 화학적으로 우수해 같은 면적에서 더 많은 수확을 냈기 때문이다.",
+                      "곡물 수출은 비옥도보다 지주의 법적 권한이 강할수록 빠르게 늘어나는 현상이기 때문이다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "First, Differential Rent I concerns differences among separate lands, not additional investments on the same land. Then one must ask who receives the surplus.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "Export surplus can come from broad acreage, low land cost, and world-market division of labour, not high yield per acre.",
+                      "New export regions raise grain value through state subsidies and gain higher rent than Europe.",
+                      "Michigan’s soil was chemically superior and produced more per acre than older cultivated land.",
+                      "Grain exports grow faster where landlords’ legal powers are stronger, more than where fertility is higher."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
-                    "en": "In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together."
-                  },
-                  "points": 3
+                    "ko": "이 심화 사례는 절대적 비옥도와 경제적 조건을 분리하게 한다. 넓고 값싼 토지가 낮은 수확량에도 큰 잉여를 만들 수 있다.",
+                    "en": "This case separates absolute fertility from economic conditions: broad cheap land can yield large surplus despite low yield per acre."
+                  }
                 },
                 {
                   "id": "q5",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 차액지대론에서 어떤 단계를 맡는가?",
-                    "en": "What is the systematic significance of The First Form of Differential Rent?"
+                    "ko": "39장의 평균 지대 논의가 주는 주의점은 무엇인가?",
+                    "en": "What caution does Chapter 39 give about average rent?"
                   },
                   "choices": {
                     "ko": [
-                      "우등지의 높은 수익을 노동과 시장가격을 거치지 않는 자연수익으로 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "차액지대 I은 토지 간 생산조건 차이가 시장가격 속에서 지대 차이로 굳어지는 과정을 보여준다."
+                      "총지대와 평균 지대는 각 토지 등급이 전체 경작면적에서 차지하는 비율에 따라 달라진다.",
+                      "평균 지대는 한계지의 개별 생산가격과 같아져 토지 등급별 지대 차이를 없앤다.",
+                      "총지대가 증가하면 평균 지대도 같은 비율로 증가해 토지 구성은 계산에서 제외된다.",
+                    "평균 지대는 토양의 화학성분을 그대로 집계한 자연지표로 계산된다."
                     ],
                     "en": [
-                      "It treats the higher return of superior land as a natural return outside labour and market price.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Differential Rent I shows how differences among lands become rent differences through market price."
+                      "Total and average rent depend on the proportions of different soil grades in the cultivated area.",
+                      "Average rent becomes equal to the marginal soil’s individual production price and removes rent differences.",
+                      "When total rent rises, average rent rises in the same ratio, excluding soil composition from calculation.",
+                      "Average rent reflects only natural fertility and excludes location or transport conditions."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "차액지대 I은 여러 토지 사이의 차이가 지대로 굳어지는 첫 번째 형태다. 그래서 이후 같은 토지 안의 추가투자를 다루는 차액지대 II와 구분된다.",
-                    "en": "This chapter’s systematic point is to show rent as a historically and socially mediated income form, not as a natural yield of land."
-                  },
-                  "points": 3
+                    "ko": "같은 가격과 같은 지대율이라도 더 나은 토지가 차지하는 비중에 따라 평균 지대는 오르내린다.",
+                    "en": "Even with the same price and rent rates, average rent changes with the share of superior soils in total cultivation."
+                  }
                 }
               ]
             }
@@ -33139,157 +33097,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차액지대 II는 차액지대 I과 무엇이 다른가?",
-                    "en": "What is the first problem to grasp in The Second Form of Differential Rent?"
+                    "ko": "차액지대 II는 차액지대 I과 어떤 점에서 다르게 출발하는가?",
+                    "en": "How does Differential Rent II begin differently from Differential Rent I?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 토지라도 첫 투자와 추가투자의 생산성이 다르면, 각 투자분의 수익 차이가 초과이윤을 만들 수 있다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "서로 다른 토지의 병렬 비교가 아니라 같은 토지에 연속으로 투입되는 자본의 생산성 차이를 다룬다.",
+                      "농업이 아니라 도시 건물 임대에서 생기는 토지소유자의 화폐수입을 다룬다.",
+                      "지대가 생산가격을 조절하는 과정을 중심으로 곡물가격의 상승 원인을 다룬다.",
+                      "지주의 소비지출이 차지농의 평균이윤을 흡수하는 분배 순서를 다룬다."
                     ],
                     "en": [
-                      "Even on the same land, if initial and additional investments have different productivities, differences among investment portions can create surplus-profit.",
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "It treats productivity differences among successive capital investments on the same land, not side-by-side soils.",
+                      "It treats money revenue of landowners in urban building leases rather than agriculture.",
+                      "It treats how rent regulates production price and causes grain-price increases.",
+                      "It treats the distributive order in which landlord consumption absorbs tenant average profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "정답은 이 장의 출발점을 잡는다. 같은 토지라도 첫 투자와 추가투자의 생산성이 다르면, 각 투자분의 수익 차이가 초과이윤을 만들 수 있다.",
-                    "en": "The correct answer identifies the chapter’s starting point. Even on the same land, if initial and additional investments have different productivities, differences among investment portions can create surplus-profit."
-                  },
-                  "points": 2
+                    "ko": "차액지대 II는 집약적 경작의 문제다. 같은 밭 안에서도 투자분마다 산출이 달라질 수 있다.",
+                    "en": "Differential Rent II concerns intensive cultivation: successive investments in the same field can yield differently."
+                  }
                 },
                 {
                   "id": "q2",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "같은 토지에 추가로 자본을 넣을 때 지대 문제는 어떻게 생기는가?",
-                    "en": "How does this relation operate in agricultural production?"
+                    "ko": "같은 토지의 연속 투자도 차액지대 I과 같은 실체를 갖는 이유는 무엇인가?",
+                    "en": "Why do successive investments on the same land have the same substance as Differential Rent I?"
                   },
                   "choices": {
                     "ko": [
-                      "차액지대 II는 집약적 경작과 임대계약이 만나면서, 차지농의 개선투자가 나중에 지대 상승으로 넘어갈 수 있음을 보여준다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다."
+                      "각 투자분의 산출 차이가 한계 투자분과 비교되어 초과이윤을 만들기 때문이다.",
+                      "각 투자분이 서로 다른 지주에게 배당되어 토지소유권의 등급을 새로 만들기 때문이다.",
+                      "연속 투자는 곡물의 사용가치를 바꾸어 시장가격과 독립된 수입을 만들기 때문이다.",
+                      "같은 토지에서는 모든 투자분이 같은 생산성을 가져 평균이윤만 반복되기 때문이다."
                     ],
                     "en": [
-                      "Differential Rent II shows how intensive cultivation and lease contracts can let the tenant’s improvements later pass into higher rent.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It assumes additional investments on the same land cannot differ in productivity."
+                      "Each investment’s output difference is compared with the marginal investment and can create surplus-profit.",
+                      "Each investment is assigned to a different landlord and creates new ranks of landownership.",
+                      "Successive investment changes grain use-value and creates revenue independent of market price.",
+                      "On the same land, all investments have equal productivity and only repeat average profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "핵심은 지대가 생산 바깥의 단순 부과금이 아니라는 점이다. 차액지대 II는 집약적 경작과 임대계약이 만나면서, 차지농의 개선투자가 나중에 지대 상승으로 넘어갈 수 있음을 보여준다.",
-                    "en": "The point is that rent is not a mere charge outside production. Differential Rent II shows how intensive cultivation and lease contracts can let the tenant’s improvements later pass into higher rent."
-                  },
-                  "points": 2
+                    "ko": "실체는 초과이윤이다. 차이는 그 초과이윤이 서로 다른 토지 사이에서 생기느냐 같은 토지 안에서 생기느냐다.",
+                    "en": "The substance is surplus-profit; the difference is whether it arises among soils or within one soil."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "같은 토지에서는 어떤 추가투자도 지대를 만들 수 없다. 이 설명은 무엇을 놓치는가?",
-                    "en": "No additional investment on the same land can create rent. What does this explanation miss?"
+                    "ko": "차액지대 II에서 임대기간이 중요한 이유는 무엇인가?",
+                    "en": "Why are lease terms important for Differential Rent II?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 토지라도 첫 투자와 추가투자의 생산성이 다르면, 각 투자분의 수익 차이가 초과이윤을 만들 수 있다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "임대기간 중 생긴 연속 투자 초과이윤은 차지농에게 남고, 갱신 때 지대로 이전될 수 있다.",
+                      "임대기간이 길수록 한계지가 사라져 시장 생산가격이 지주의 계약서로 정해진다.",
+                      "임대기간은 농업노동자의 노동일을 정해 추가투자의 산출량을 균등하게 만든다.",
+                      "임대기간이 끝나면 평균이윤율이 새로 계산되어 모든 토지의 지대가 같은 액수로 조정된다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Even on the same land, if initial and additional investments have different productivities, differences among investment portions can create surplus-profit. Therefore natural conditions, price, and landed property must be read together.",
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "Surplus-profit from successive investments may remain with the tenant during the lease and pass into rent at renewal.",
+                      "Long leases remove marginal soil, so market production price is set by the landlord’s contract.",
+                      "Lease terms set the agricultural working day and equalize output from additional investments.",
+                      "At lease end the average profit rate is recalculated and all rents are equalized."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "같은 토지에서는 추가투자가 지대를 만들 수 없다는 설명은 집약적 경작의 차이를 놓친다. 같은 밭 안에서도 투자분마다 생산성이 다르면 초과이윤이 생길 수 있다.",
-                    "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
-                  },
-                  "points": 2,
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 같은 토지에서는 추가투자가 지대를 만들 수 없다는 설명은 집약적 경작의 차이를 놓친다. 같은 밭 안에서도 투자분마다 생산성이 다르면 초과이윤이 생길 수 있다.",
-                      "오해 진단: \"같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent.",
-                      "Misconception check: choosing \"It assumes additional investments on the same land cannot differ in productivity.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "40장은 초과이윤의 형성과 지대로의 전환을 구분한다. 임대기간은 그 전환의 시점과 범위를 좌우한다.",
+                    "en": "Chapter 40 separates the formation of surplus-profit from its transformation into rent; leases affect that transformation."
                   }
                 },
                 {
                   "id": "q4",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차지농이 배수시설과 비료에 투자해 같은 밭의 수확을 크게 늘렸다. 임대 갱신 때 왜 이 성과가 지대 문제가 되는가?",
-                    "en": "A tenant invests in drainage and fertilizer and greatly raises the yield of the same field. Why does this become a rent problem when the lease is renewed?"
+                    "ko": "차지농이 같은 밭에 비료와 배수시설을 더 투입해 수확을 늘린 사례는 어떤 문제를 보여주는가?",
+                    "en": "What issue is shown when a tenant adds fertilizer and drainage to the same field and increases output?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "차액지대 II는 집약적 경작과 임대계약이 만나면서, 차지농의 개선투자가 나중에 지대 상승으로 넘어갈 수 있음을 보여준다. 이 점을 보아야 사례가 지대 문제로 읽힌다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "추가투자의 생산성이 한계 기준을 넘으면 초과이윤이 생기고, 계약관계에 따라 지대로 바뀔 수 있다.",
+                      "개량투자는 토지의 자연적 성질을 제거해 모든 수확을 평균이윤으로 환원한다.",
+                      "추가투자는 시장가격을 즉시 낮춰 기존 지대가 임금기금으로 이동하게 만든다.",
+                      "배수시설은 고정자본이므로 생산물 가치와 별개인 소비재 수요로 계산된다."
                     ],
                     "en": [
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "Differential Rent II shows how intensive cultivation and lease contracts can let the tenant’s improvements later pass into higher rent. This is what makes the case a problem of rent.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "If the additional investment exceeds the marginal benchmark, it creates surplus-profit that may become rent through contracts.",
+                      "Improvements remove the natural character of land and reduce all output to average profit.",
+                      "Additional investment immediately lowers market price and moves existing rent into the wage fund.",
+                      "Drainage is fixed capital and is counted as consumer-goods demand outside product value."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "사례형 문항의 목적은 개념을 현실의 관계로 옮겨 읽는 것이다. 정답은 가격 표면보다 그 뒤의 생산조건과 소유관계를 본다.",
-                    "en": "The purpose of the scenario is to read the concept as a real relation. The correct answer looks behind the price surface to production conditions and property relations."
-                  },
-                  "points": 2
+                    "ko": "사례의 핵심은 같은 면적 안의 자본 집중이다. 차액지대 II는 집약적 경작의 성과가 누구에게 돌아가는지 묻는다.",
+                    "en": "The point is capital concentration within the same area; Differential Rent II asks who receives the gains."
+                  }
                 },
                 {
                   "id": "q5",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 집약적 경작을 지대론 안에 어떻게 끌어들이는가?",
-                    "en": "What role does this chapter play in the theory of rent as a whole?"
+                    "ko": "40장은 41장의 “생산가격 불변” 분석으로 어떻게 이어지는가?",
+                    "en": "How does Chapter 40 lead into Chapter 41’s analysis of constant production price?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
-                      "차액지대 II는 토지 사이의 차이만이 아니라 같은 토지 내부의 추가투자 차이도 지대론의 대상임을 보여준다."
+                      "연속 투자의 여러 경우를 제시한 뒤, 가격이 그대로일 때 지대가 어떻게 변하는지 따져 보게 한다.",
+                      "차액지대 II가 가격 상승에서만 생긴다는 결론을 낸 뒤, 그 상승률을 계산하게 한다.",
+                      "한계지의 퇴출이 모든 경우의 전제라는 점을 세운 뒤, 새 한계지의 가격을 계산하게 한다.",
+                      "임대기간이 끝나야 생산가격이 형성된다는 점을 세운 뒤, 갱신 계약의 법률효과를 다룬다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "Differential Rent II shows that rent theory concerns not only differences between lands but also differences among successive investments on the same land."
+                      "After presenting cases of successive investment, it asks how rent changes when price remains constant.",
+                      "After concluding Differential Rent II arises only from price increases, it calculates the rate of increase.",
+                      "After making marginal-land exit the premise of all cases, it calculates the new marginal price.",
+                      "After arguing production price forms only after lease expiry, it treats the legal effect of renewal."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 의미는 다음 논의와의 연결에 있다. 차액지대 II는 토지 사이의 차이만이 아니라 같은 토지 내부의 추가투자 차이도 지대론의 대상임을 보여준다.",
-                    "en": "The chapter matters through its connection to the next steps. Differential Rent II shows that rent theory concerns not only differences between lands but also differences among successive investments on the same land."
-                  },
-                  "points": 2
+                    "ko": "40장은 차액지대 II의 일반 틀이고, 41장은 그 첫 경우다. 가격을 고정해 두고 투자분 차이를 본다.",
+                    "en": "Chapter 40 gives the general frame; Chapter 41 studies the first case by holding price constant."
+                  }
                 }
               ]
             },
@@ -33303,171 +33247,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차지농의 개선투자가 나중에 지대 상승으로 넘어갈 수 있는 이유는 무엇인가?",
-                    "en": "What deeper tension must be seen in The Second Form of Differential Rent?"
+                    "ko": "차액지대 II가 차액지대 I을 전제한다는 말은 어떤 의미인가?",
+                    "en": "What does it mean that Differential Rent II presupposes Differential Rent I?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 토지라도 첫 투자와 추가투자의 생산성이 다르면, 각 투자분의 수익 차이가 초과이윤을 만들 수 있다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
+                      "연속 투자의 효과도 이미 여러 토지의 비옥도와 위치 차이가 만든 지대 구조 안에서 움직인다는 뜻이다.",
+                      "같은 토지의 추가투자는 먼저 다른 토지로 분할되어야 법적으로 지대로 인정된다는 뜻이다.",
+                      "차액지대 I의 표가 사라진 뒤에야 추가투자의 생산성이 독립적으로 계산된다는 뜻이다.",
+                      "토지 간 차이가 평균화된 제조업에서만 연속 투자 지대가 성립한다는 뜻이다."
                     ],
                     "en": [
-                      "Even on the same land, if initial and additional investments have different productivities, differences among investment portions can create surplus-profit. But the result does not become rent directly; it hardens into rent through landed property and market price.",
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "Successive investments move within a rent structure already shaped by differences in fertility and location among soils.",
+                      "Additional investments on the same land must first be legally divided among different plots to count as rent.",
+                      "Only after the tables of Differential Rent I disappear can productivity of additional investments be calculated independently.",
+                      "Successive-investment rent forms only in manufacture after differences among lands are averaged out."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                    "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
-                  },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                      "오해 진단: \"같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
-                      "Misconception check: choosing \"It assumes additional investments on the same land cannot differ in productivity.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "집약적 경작은 공중에 떠 있지 않다. 어느 토지가 이미 더 좋거나 나쁜지라는 외연적 구조가 배경이다.",
+                    "en": "Intensive cultivation is not isolated; it rests on the extensive pattern of better and worse soils."
                   }
                 },
                 {
                   "id": "q2",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차액지대 II를 이해하려면 어떤 연결고리를 보아야 하는가?",
-                    "en": "Which categories mediate this chapter’s argument?"
+                    "ko": "영국 차지농들이 장기 임대를 요구한 이유를 차액지대 II 관점에서 설명하면?",
+                    "en": "From the standpoint of Differential Rent II, why did English tenant farmers seek long leases?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "같은 토지 안의 연속 투자, 투자분별 생산성, 임대기간, 개선투자, 토지소유를 함께 보아야 한다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다."
+                      "임대기간이 길수록 자신이 만든 추가투자 초과이윤을 갱신 전까지 더 오래 보유할 수 있기 때문이다.",
+                      "장기 임대는 시장가격을 한계지 생산가격보다 높게 묶어 지주의 지대를 줄이기 때문이다.",
+                      "장기 임대에서는 농업노동자의 임금계약도 길어져 추가투자 비용이 사라지기 때문이다.",
+                      "장기 임대는 모든 개량물을 차지농의 영구 소유로 확정해 토지소유권을 분할하기 때문이다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "One must read successive investments on the same land, productivity of each investment, lease duration, improvements, and landed property together.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It assumes additional investments on the same land cannot differ in productivity."
+                      "Longer leases let tenants keep surplus-profit from their own additional investments for longer before renewal.",
+                      "Long leases hold market price above marginal production price and reduce landlords’ rent.",
+                      "In long leases, wage contracts also lengthen and remove the costs of additional investment.",
+                      "Long leases permanently assign all improvements to tenants and divide landownership."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "매개를 보면 한 가지 원인으로 환원하지 않게 된다. 지대는 생산조건의 차이, 가격 형성, 소유권이 함께 움직일 때 이해된다.",
-                    "en": "Seeing the mediations prevents reduction to a single cause. Rent is understood through the movement of production differences, price formation, and property right together."
-                  },
-                  "points": 3
+                    "ko": "임대기간은 투자성과의 귀속을 둘러싼 계급 갈등이다. 지주는 짧은 계약으로 갱신 때 성과를 흡수하려 한다.",
+                    "en": "Lease length is a class conflict over the destination of investment gains; landlords prefer renewal that captures them."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장에 대한 통념적 설명이 왜 부족한가?",
-                    "en": "Why is the common-sense explanation of this chapter insufficient?"
+                    "ko": "연속 투자에서 생산성이 낮아져도 지대가 늘 수 있는 이유는 무엇인가?",
+                    "en": "Why can rent rise even when productivity of successive investments declines?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 토지에서는 추가투자가 지대를 만들 수 없다는 설명은 투자분마다 생산성이 달라질 수 있다는 점을 놓친다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "추가투자가 한계 기준보다 높은 산출을 내는 한 초과이윤 총량은 늘 수 있기 때문이다.",
+                      "생산성이 낮아지면 곡물의 사용가치가 줄어 시장가격과 무관하게 지대율이 상승하기 때문이다.",
+                    "추가투자의 생산성 하락은 평균이윤을 임대료 회계로 재분류하는 계기가 되기 때문이다.",
+                      "차지농의 자본이 줄어들수록 지주의 법적 청구권이 같은 비율로 커지기 때문이다."
                     ],
                     "en": [
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "The claim that additional investment on the same land cannot create rent misses that each investment portion can have different productivity.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "As long as additional investment yields above the marginal benchmark, the total surplus-profit can grow.",
+                      "Lower productivity reduces grain use-value and raises the rent rate independently of market price.",
+                      "Declining productivity abolishes average profit and converts all revenue into rent.",
+                      "As tenant capital shrinks, the landlord’s legal claim expands in the same ratio."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "차액지대 II의 핵심은 같은 토지 안의 차이다. 추가투자, 생산성 변화, 임대계약을 함께 봐야 차지농의 개선이 어떻게 지대로 넘어가는지 이해할 수 있다.",
-                    "en": "Common sense stops at the cause visible on the surface. The correct answer restores the production and property relations that make that surface possible."
-                  },
-                  "points": 3
+                    "ko": "마르크스의 핵심은 비율과 절대량의 구분이다. 추가투자의 초과율은 낮아져도 총 초과분은 커질 수 있다.",
+                    "en": "Marx distinguishes rate from absolute amount: the surplus rate may fall while total surplus grows."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "차지농이 배수시설과 비료에 투자해 같은 밭의 수확을 크게 늘렸다. 임대 갱신 때 왜 이 성과가 지대 문제가 되는가?",
-                    "en": "A tenant invests in drainage and fertilizer and greatly raises the yield of the same field. Why does this become a rent problem when the lease is renewed?"
+                    "ko": "40장에서 “같은 결과가 여러 토지에 분산될 수도, 한 토지에 집중될 수도 있다”는 비교가 중요한 이유는 무엇인가?",
+                    "en": "Why is it important that the same result may be distributed across several soils or concentrated on one soil?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "먼저 차액지대 II는 집약적 경작과 임대계약이 만나면서, 차지농의 개선투자가 나중에 지대 상승으로 넘어갈 수 있음을 보여준다. 그런 다음 누가 그 초과분을 가져가는지 보아야 한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "총산출이 같아도 자본이 한 면적에 집중되면 에이커당 지대와 토지가격이 달라질 수 있기 때문이다.",
+                      "분산투자는 평균이윤을 만들고 집중투자는 평균이윤을 제거한다는 법칙을 세우기 때문이다.",
+                      "한 토지에 집중된 자본은 유동자본으로 바뀌어 토지소유권과의 관련을 잃기 때문이다.",
+                      "여러 토지에 분산된 자본은 모두 한계지로 계산되어 차액지대 I의 표를 없애기 때문이다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "First, Differential Rent II shows how intensive cultivation and lease contracts can let the tenant’s improvements later pass into higher rent. Then one must ask who receives the surplus.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "Even with the same total output, concentration on one area can change rent per acre and land price.",
+                      "It establishes that dispersed investment creates average profit while concentrated investment removes it.",
+                      "Capital concentrated on one soil becomes circulating capital and loses connection with landownership.",
+                      "Capital dispersed among several soils is all counted as marginal land, removing Differential Rent I tables."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
-                    "en": "In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together."
-                  },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It assumes additional investments on the same land cannot differ in productivity.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "이 비교는 차액지대 II의 독특한 효과를 보여준다. 같은 총지대라도 단위면적 지대는 집중 방식에 따라 커질 수 있다.",
+                    "en": "The comparison shows the special effect of Differential Rent II: the same total rent can mean higher rent per acre."
                   }
                 },
                 {
                   "id": "q5",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 집약적 경작을 지대론 안에 어떻게 끌어들이는가?",
-                    "en": "What is the systematic significance of The Second Form of Differential Rent?"
+                    "ko": "40장이 리카도 비판으로 이어지는 지점은 무엇인가?",
+                    "en": "Where does Chapter 40 lead into a criticism of Ricardo?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 토지의 추가투자분 사이에는 생산성 차이가 없다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "차액지대 II는 토지 사이의 차이만이 아니라 같은 토지 내부의 추가투자 차이도 지대론의 대상임을 보여준다."
+                      "리카도는 추가투자의 생산성 하락과 가격 상승을 정상형처럼 다루지만, 마르크스는 여러 조합을 따로 검토한다.",
+                      "리카도는 지대를 이자로 해석했지만, 마르크스는 지대를 임금의 변형으로 다시 정의한다.",
+                      "리카도는 비옥도를 토양 성분으로 계산했지만, 마르크스는 법률등기 순서로 계산한다.",
+                      "리카도는 차액지대 I을 부정했지만, 마르크스는 차액지대 II를 부정해 균형을 맞춘다."
                     ],
                     "en": [
-                      "It assumes additional investments on the same land cannot differ in productivity.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Differential Rent II shows that rent theory concerns not only differences between lands but also differences among successive investments on the same land."
+                      "Ricardo treats declining productivity and rising price as the normal case, while Marx separates several combinations.",
+                      "Ricardo interprets rent as interest, while Marx redefines rent as a transformed wage.",
+                      "Ricardo calculates fertility by soil composition, while Marx calculates it by title registration order.",
+                      "Ricardo denies Differential Rent I, while Marx denies Differential Rent II for symmetry."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "차액지대 II는 집약적 경작을 지대론 안으로 끌어들인다. 같은 토지에서도 추가투자의 성과가 임대계약을 거쳐 지대로 바뀔 수 있음을 보여준다.",
-                    "en": "This chapter’s systematic point is to show rent as a historically and socially mediated income form, not as a natural yield of land."
-                  },
-                  "points": 3
+                    "ko": "40장은 41장 이후의 경우 분석을 예고한다. 차액지대 II를 가격 상승 하나로 환원하지 않는 것이 핵심이다.",
+                    "en": "Chapter 40 prepares the later case analysis and refuses to reduce Differential Rent II to one rising-price scenario."
+                  }
                 }
               ]
             }
@@ -33536,157 +33452,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "생산가격이 그대로일 때에도 왜 지대가 달라질 수 있는가?",
-                    "en": "What is the first problem to grasp in Case of Constant Price of Production?"
+                    "ko": "41장의 첫 번째 경우에서 “생산가격 불변”은 어떤 전제를 뜻하는가?",
+                    "en": "In Chapter 41’s first case, what premise does “constant price of production” mean?"
                   },
                   "choices": {
                     "ko": [
-                      "시장가격이 변하지 않아도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대의 배치가 달라진다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "시장가격이 여전히 최악 토지 A에 투입된 자본의 생산가격으로 조절된다는 전제다.",
+                      "모든 토지의 추가투자가 같은 수확량을 내어 지대 차이가 사라진다는 전제다.",
+                      "지주가 계약으로 정한 임대료가 곡물가격을 고정한다는 전제다.",
+                      "농업의 평균이윤율이 산업의 평균이윤율과 다른 값으로 유지된다는 전제다."
                     ],
                     "en": [
-                      "Even if market price does not change, different productivities among investment portions on the same land alter surplus-profit and rent.",
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "The market price is still regulated by the production price of capital invested on the worst soil A.",
+                      "All additional investments on every soil yield the same output and erase rent differences.",
+                      "The rent fixed by landlords’ contracts keeps grain prices constant.",
+                      "The agricultural average profit rate remains different from the industrial average profit rate."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "정답은 이 장의 출발점을 잡는다. 시장가격이 변하지 않아도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대의 배치가 달라진다.",
-                    "en": "The correct answer identifies the chapter’s starting point. Even if market price does not change, different productivities among investment portions on the same land alter surplus-profit and rent."
-                  },
-                  "points": 2
+                    "ko": "41장은 가격 조건을 고정하고 추가투자의 효과를 본다. 기준은 여전히 지대 없는 최악 토지 A다.",
+                    "en": "Chapter 41 holds the price condition constant; the benchmark remains rentless worst soil A."
+                  }
                 },
                 {
                   "id": "q2",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "가격이 변하지 않는다는 조건은 무엇을 비교하게 해 주는가?",
-                    "en": "How does this relation operate in agricultural production?"
+                    "ko": "추가 자본이 A와 같은 산출만 낼 때 지대에는 어떤 변화가 생기는가?",
+                    "en": "What happens to rent when additional capital yields only as much as capital on A?"
                   },
                   "choices": {
                     "ko": [
-                      "가격이 그대로라는 말은 지대가 그대로라는 뜻이 아니라, 가격 조건이 일정한 상태에서 투자분별 차이를 보자는 뜻이다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다."
+                      "평균이윤만 얻고 초과이윤이 생기지 않아 지대에는 변화가 없다.",
+                      "추가 자본이 들어갔으므로 지대가 투입액과 같은 비율로 증가한다.",
+                      "A의 산출과 같아졌으므로 기존 우등지의 지대가 모두 평균이윤으로 환원된다.",
+                      "시장가격이 내려가 기존 지대는 현물지대에서 화폐지대로 전환된다."
                     ],
                     "en": [
-                      "A constant price does not mean rent is unchanged; it means examining differences among investment portions under a fixed price condition.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "If the price of production is constant, no surplus-profit can arise."
+                      "It earns only average profit and creates no surplus-profit, so rent is unchanged.",
+                      "Because additional capital is invested, rent rises in the same ratio as the outlay.",
+                      "Because it equals A’s yield, all existing superior-soil rent is reduced to average profit.",
+                      "Market price falls and existing rent changes from rent in kind to money-rent."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "핵심은 지대가 생산 바깥의 단순 부과금이 아니라는 점이다. 가격이 그대로라는 말은 지대가 그대로라는 뜻이 아니라, 가격 조건이 일정한 상태에서 투자분별 차이를 보자는 뜻이다.",
-                    "en": "The point is that rent is not a mere charge outside production. A constant price does not mean rent is unchanged; it means examining differences among investment portions under a fixed price condition."
-                  },
-                  "points": 2
+                    "ko": "41장의 경우 I은 추가투자가 지대 없는 A와 같은 성과를 낼 때다. 차액이 없으면 새 지대도 없다.",
+                    "en": "Case I concerns additional investment with the same result as A. Without a differential, no new rent forms."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "생산가격이 불변이면 어떤 초과이윤도 생길 수 없다. 이 설명은 무엇을 놓치는가?",
-                    "en": "If the price of production is constant, no surplus-profit can arise. What does this explanation miss?"
+                    "ko": "추가 자본이 기존 자본과 같은 비율로 산출을 늘리면 지대는 어떻게 변하는가?",
+                    "en": "How does rent change when additional capital increases output in the same proportion as existing capital?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "시장가격이 변하지 않아도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대의 배치가 달라진다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "지대의 상대비율은 유지되지만 산출과 지대의 절대량은 투입 증가에 맞춰 커진다.",
+                      "지대의 절대량은 유지되고 추가 산출은 모두 차지농의 평균이윤으로 들어간다.",
+                      "한계지 A의 가격이 내려가 모든 우등지의 지대율이 같은 액수로 줄어든다.",
+                      "추가 자본의 산출은 기존 산출과 구분할 수 없어 지대 계산에서 제외된다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Even if market price does not change, different productivities among investment portions on the same land alter surplus-profit and rent. Therefore natural conditions, price, and landed property must be read together.",
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "Relative proportions remain, while absolute output and rent rise with the increased outlay.",
+                      "The absolute amount of rent remains, and all additional output enters the tenant’s average profit.",
+                      "The price of marginal soil A falls, reducing rent rates on all superior soils by the same amount.",
+                      "Additional output cannot be distinguished from existing output and is excluded from rent calculation."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산가격이 변하지 않는다고 해서 초과이윤까지 사라지는 것은 아니다. 같은 토지의 투자분들이 서로 다른 생산성을 보이면 지대의 내부 구성이 달라질 수 있다.",
-                    "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
-                  },
-                  "points": 2,
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 생산가격이 변하지 않는다고 해서 초과이윤까지 사라지는 것은 아니다. 같은 토지의 투자분들이 서로 다른 생산성을 보이면 지대의 내부 구성이 달라질 수 있다.",
-                      "오해 진단: \"생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent.",
-                      "Misconception check: choosing \"If the price of production is constant, no surplus-profit can arise.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "표 II의 의미는 비율 보존과 절대량 증가다. 같은 성공률로 자본이 더 들어가면 지대 총량도 늘어난다.",
+                    "en": "Table II shows preserved proportions and larger absolute amounts: more capital at the same success rate raises total rent."
                   }
                 },
                 {
                   "id": "q4",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "밀 가격은 그대로인데 같은 농장의 두 번째 투자분이 첫 번째보다 더 높은 수확을 냈다. 무엇을 확인해야 하는가?",
-                    "en": "The wheat price stays the same, but the second investment on the same farm yields more than the first. What should be checked?"
+                    "ko": "추가투자의 초과율이 낮아지는 경우에도 지대가 증가할 수 있는 조건은 무엇인가?",
+                    "en": "Under what condition can rent rise even when the surplus rate of additional investment declines?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "가격이 그대로라는 말은 지대가 그대로라는 뜻이 아니라, 가격 조건이 일정한 상태에서 투자분별 차이를 보자는 뜻이다. 이 점을 보아야 사례가 지대 문제로 읽힌다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "추가투자가 A의 기준 산출보다 높은 생산물을 내어 초과이윤의 절대량을 더할 때다.",
+                      "추가투자의 산출이 A보다 낮아져 시장가격이 새로 상승할 때만 가능하다.",
+                      "지대율 하락분을 지주가 법률상 보상받도록 계약이 조정될 때다.",
+                      "추가투자가 기존 자본의 감가상각을 줄여 평균이윤을 지대로 이전할 때다."
                     ],
                     "en": [
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "A constant price does not mean rent is unchanged; it means examining differences among investment portions under a fixed price condition. This is what makes the case a problem of rent.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "When the additional investment still yields more than A’s benchmark and adds to the absolute surplus-profit.",
+                      "It is possible only when the additional output falls below A and market price rises anew.",
+                      "It happens when the contract legally compensates the landlord for a falling rent rate.",
+                      "It happens when additional investment reduces depreciation and transfers average profit into rent."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "사례형 문항의 목적은 개념을 현실의 관계로 옮겨 읽는 것이다. 정답은 가격 표면보다 그 뒤의 생산조건과 소유관계를 본다.",
-                    "en": "The purpose of the scenario is to read the concept as a real relation. The correct answer looks behind the price surface to production conditions and property relations."
-                  },
-                  "points": 2
+                    "ko": "41장의 경우 III은 초과율 하락과 지대 절대량 증가가 함께 갈 수 있음을 보여준다.",
+                    "en": "Case III shows that a falling surplus rate can coincide with an increase in the absolute amount of rent."
+                  }
                 },
                 {
                   "id": "q5",
+                  "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 경우가 차액지대 II 분석에 보태는 것은 무엇인가?",
-                    "en": "What role does this chapter play in the theory of rent as a whole?"
+                    "ko": "41장이 차액지대 II 분석에 보태는 핵심 결론은 무엇인가?",
+                    "en": "What central conclusion does Chapter 41 add to the analysis of Differential Rent II?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
-                      "이 경우는 가격 변화 없이도 집약적 경작의 차이가 지대 변화를 낳을 수 있음을 보여준다."
+                      "가격이 그대로여도 같은 면적에 자본이 집중되면 에이커당 지대와 토지가격이 커질 수 있다.",
+                      "가격이 그대로이면 지대는 변하지 않아 차액지대 II가 차액지대 I로 환원된다.",
+                      "가격 변화가 없을 때 지대는 자연적 비옥도보다 지주의 소비지출에 의해 결정된다.",
+                      "가격 불변 조건에서는 한계지가 사라져 평균이윤율도 함께 사라진다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "This case shows that differences in intensive cultivation can change rent even without a change in price."
+                      "Even with constant price, capital concentration on the same area can raise rent per acre and land price.",
+                      "If price is constant, rent is unchanged and Differential Rent II reduces to Differential Rent I.",
+                      "Under constant price, rent is determined by landlords’ consumption more than natural fertility.",
+                      "Under constant price, marginal land disappears and the average profit rate disappears with it."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 의미는 다음 논의와의 연결에 있다. 이 경우는 가격 변화 없이도 집약적 경작의 차이가 지대 변화를 낳을 수 있음을 보여준다.",
-                    "en": "The chapter matters through its connection to the next steps. This case shows that differences in intensive cultivation can change rent even without a change in price."
-                  },
-                  "points": 2
+                    "ko": "41장은 가격 상승 없이도 지대 변화가 가능함을 보인다. 이것이 리카도식 단순화와 다른 지점이다.",
+                    "en": "Chapter 41 shows that rent can change without a price rise, unlike Ricardo’s simplification."
+                  }
                 }
               ]
             },
@@ -33700,171 +33602,143 @@
               "questions": [
                 {
                   "id": "q1",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "시장가격은 그대로인데 지대 구성이 바뀌는 이유는 무엇인가?",
-                    "en": "What deeper tension must be seen in Case of Constant Price of Production?"
+                    "ko": "41장의 표 I에서 표 II로의 변화가 보여주는 것은 무엇인가?",
+                    "en": "What does the movement from Table I to Table II in Chapter 41 show?"
                   },
                   "choices": {
                     "ko": [
-                      "시장가격이 변하지 않아도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대의 배치가 달라진다. 하지만 그 결과가 곧장 지대가 되는 것이 아니라 토지소유와 시장가격을 거쳐 지대로 굳어진다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "A, B, C, D에 자본을 두 배로 넣고 산출도 비례해 늘면 총지대가 18파운드에서 36파운드로 커진다.",
+                      "자본을 두 배로 넣으면 한계지 A가 지대를 내기 시작해 모든 토지의 지대율이 같아진다.",
+                      "산출이 두 배가 되면 쿼터당 생산가격도 두 배가 되어 초과이윤이 사라진다.",
+                      "표 II는 우등지의 산출이 줄어도 지대가 늘어나는 가격 상승 사례를 계산한다."
                     ],
                     "en": [
-                      "Even if market price does not change, different productivities among investment portions on the same land alter surplus-profit and rent. But the result does not become rent directly; it hardens into rent through landed property and market price.",
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "When capital doubles on A, B, C, D and output rises proportionally, total rent rises from £18 to £36.",
+                      "When capital doubles, marginal soil A begins to pay rent and all rent rates become equal.",
+                      "When output doubles, production price per quarter also doubles and surplus-profit disappears.",
+                      "Table II calculates a rising-price case where superior-soil output falls but rent rises."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                    "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
-                  },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                      "오해 진단: \"생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation.",
-                      "Misconception check: choosing \"If the price of production is constant, no surplus-profit can arise.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "표 II는 가격 불변과 비례적 추가투자의 결합이다. 비율은 유지되지만 총지대와 단위면적 지대가 커진다.",
+                    "en": "Table II combines constant price with proportional additional investment: proportions remain but total and per-acre rent rise."
                   }
                 },
                 {
                   "id": "q2",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "생산가격 불변의 경우를 읽을 때 어떤 요소를 함께 봐야 하는가?",
-                    "en": "Which categories mediate this chapter’s argument?"
+                    "ko": "41장에서 산술적 차이와 비례적 차이를 구분하는 이유는 무엇인가?",
+                    "en": "Why does Chapter 41 distinguish arithmetic differences from proportional differences?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "고정된 시장가격, 투자분별 생산성, 초과이윤, 지대의 내부 구성, 임대관계를 함께 보아야 한다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다."
+                      "추가 자본이 어느 토지에 얼마나 들어갔는지가 산술적 차이를 바꾸어도, 같은 자본분의 생산성 비율은 따로 봐야 하기 때문이다.",
+                      "산술적 차이는 지주의 법적 청구권이고 비례적 차이는 차지농의 회계 장부에만 남는 숫자이기 때문이다.",
+                      "비례적 차이는 자연적 비옥도를 뜻하고 산술적 차이는 시장가격의 우연한 변동만 뜻하기 때문이다.",
+                      "차액지대 II에서는 산술적 차이가 가치량을 만들고 비례적 차이는 사용가치량을 만든다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "One must read fixed market price, productivity of each investment, surplus-profit, the internal composition of rent, and lease relations together.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "If the price of production is constant, no surplus-profit can arise."
+                      "Additional capital distribution can alter arithmetic differences, while productivity ratios for equal capital portions must be read separately.",
+                      "Arithmetic difference is the landlord’s legal claim, while proportional difference remains only in the tenant’s accounts.",
+                      "Proportional difference means natural fertility, while arithmetic difference means accidental market fluctuation.",
+                      "In Differential Rent II, arithmetic difference creates value and proportional difference creates use-value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "매개를 보면 한 가지 원인으로 환원하지 않게 된다. 지대는 생산조건의 차이, 가격 형성, 소유권이 함께 움직일 때 이해된다.",
-                    "en": "Seeing the mediations prevents reduction to a single cause. Rent is understood through the movement of production differences, price formation, and property right together."
-                  },
-                  "points": 3
+                    "ko": "차액지대 II에서는 자본투입량 자체가 달라진다. 그래서 단순 산출 차이만 보면 생산성 차이를 잘못 읽을 수 있다.",
+                    "en": "In Differential Rent II, capital outlays can differ, so simple output gaps can mislead about productivity."
+                  }
                 },
                 {
                   "id": "q3",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장에 대한 통념적 설명이 왜 부족한가?",
-                    "en": "Why is the common-sense explanation of this chapter insufficient?"
+                    "ko": "추가 자본의 생산성이 하락하는 표 III에서 마르크스가 강조하는 결과는 무엇인가?",
+                    "en": "What result does Marx stress in Table III, where productivity of additional capital declines?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "생산가격이 불변이면 초과이윤도 없다는 설명은 가격 조건과 투자분별 생산성 차이를 혼동한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "초과이윤율은 낮아져도 B, C, D의 지대는 절대량으로 증가할 수 있다.",
+                      "추가 자본의 생산성이 낮아지면 B, C, D의 기존 지대도 즉시 소멸한다.",
+                      "생산성이 하락한 추가 자본은 A의 생산가격을 올려 표 II보다 높은 곡물가격을 만든다.",
+                      "초과이윤율 하락은 차지농의 평균이윤 상승으로 상쇄되어 지대 계산에서 제외된다."
                     ],
                     "en": [
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "The claim that constant price means no surplus-profit confuses the price condition with differences in productivity among investments.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "The rate of surplus-profit falls, but the absolute rent on B, C, and D can rise.",
+                      "When productivity of additional capital falls, existing rents on B, C, and D immediately vanish.",
+                      "Less productive additional capital raises A’s production price and creates a higher grain price than Table II.",
+                      "The fall in surplus-profit rate is offset by higher tenant average profit and excluded from rent calculation."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가격 불변을 지대 불변으로 이해하면 안 된다. 마르크스는 가격 조건을 고정해 둔 상태에서 투자분별 생산성 차이가 어떤 효과를 내는지 본다.",
-                    "en": "Common sense stops at the cause visible on the surface. The correct answer restores the production and property relations that make that surface possible."
-                  },
-                  "points": 3
+                    "ko": "표 III은 비율과 절대량을 분리해 읽게 한다. 낮은 초과율도 한계 기준을 넘으면 총지대를 늘린다.",
+                    "en": "Table III separates rate from amount: a lower surplus rate can still increase total rent if it exceeds the marginal benchmark."
+                  }
                 },
                 {
                   "id": "q4",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "밀 가격은 그대로인데 같은 농장의 두 번째 투자분이 첫 번째보다 더 높은 수확을 냈다. 무엇을 확인해야 하는가?",
-                    "en": "The wheat price stays the same, but the second investment on the same farm yields more than the first. What should be checked?"
+                    "ko": "41장에서 더 생산적인 추가투자가 “자본 방출” 문제와 연결되는 이유는 무엇인가?",
+                    "en": "Why does Chapter 41 connect more productive additional investment with the release of capital?"
                   },
                   "choices": {
                     "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "먼저 가격이 그대로라는 말은 지대가 그대로라는 뜻이 아니라, 가격 조건이 일정한 상태에서 투자분별 차이를 보자는 뜻이다. 그런 다음 누가 그 초과분을 가져가는지 보아야 한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
+                      "같은 산출을 더 적은 노동과 자본으로 만들면 남는 자본과 노동을 다른 곳에 쓸 수 있기 때문이다.",
+                      "더 생산적인 추가투자는 토지가격을 없애 지주가 보유한 자본을 산업으로 이동시키기 때문이다.",
+                      "생산성이 오르면 평균이윤이 모두 임금으로 방출되어 차지농의 선대자본이 줄기 때문이다.",
+                      "추가투자의 생산성 증가는 지대계약을 무효화해 고정자본의 감가상각을 멈추기 때문이다."
                     ],
                     "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "First, A constant price does not mean rent is unchanged; it means examining differences among investment portions under a fixed price condition. Then one must ask who receives the surplus.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
+                      "If the same output is produced with less labour and capital, the saved capital and labour can be used elsewhere.",
+                      "More productive additional investment removes land price and moves landlords’ capital into industry.",
+                      "Higher productivity releases average profit as wages and reduces the tenant’s advanced capital.",
+                      "Higher productivity voids rent contracts and stops depreciation of fixed capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
-                    "en": "In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together."
-                  },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"생산가격이 같으면 투자분별 생산성 차이도 사라진다고 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 심화 사례에서는 같은 범주가 더 복잡한 조건에서 반복된다. 정답은 생산성, 가격, 소유권을 분리하지 않고 함께 본다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"If the price of production is constant, no surplus-profit can arise.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: In the advanced scenario, the same category recurs under more complex conditions. The correct answer reads productivity, price, and property right together.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "마르크스는 같은 단가 하락도 자본 절약, 산출 확대, 추가자본 투입에 따라 의미가 다르다고 세밀하게 나눈다.",
+                    "en": "Marx distinguishes capital saving, expanded output, and additional outlay even when unit cost falls similarly."
                   }
                 },
                 {
                   "id": "q5",
+                  "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 경우가 차액지대 II 분석에 보태는 것은 무엇인가?",
-                    "en": "What is the systematic significance of Case of Constant Price of Production?"
+                    "ko": "41장의 결론이 다음 가격 변동 사례들로 이어지는 방식은 무엇인가?",
+                    "en": "How does Chapter 41’s conclusion lead into the later cases with price changes?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격이 같으면 투자분별 생산성 차이도 사라진다고 본다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "이 경우는 가격 변화 없이도 집약적 경작의 차이가 지대 변화를 낳을 수 있음을 보여준다."
+                      "가격을 고정해도 지대가 변한다는 점을 세운 뒤, 이후에는 가격 하락·상승 조건에서 같은 문제를 확장한다.",
+                    "가격 불변에서는 지대 설명이 막힌다는 한계를 확인한 뒤, 이후에는 가격 상승을 주된 원인으로 둔다.",
+                      "생산가격 불변 조건에서 한계지가 사라지는 과정을 보인 뒤, 이후에는 한계지 없는 지대론을 전개한다.",
+                      "같은 면적의 자본집중이 지대를 줄인다는 결론 뒤, 이후에는 외연적 경작 확대를 중심에 둔다."
                     ],
                     "en": [
-                      "If the price of production is constant, no surplus-profit can arise.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "This case shows that differences in intensive cultivation can change rent even without a change in price."
+                      "After showing rent changes even with fixed price, later chapters extend the analysis to falling and rising prices.",
+                      "After showing rent cannot be explained under fixed price, later chapters make price rise the sole cause.",
+                      "After showing marginal land disappears under constant price, later chapters develop rent theory without marginal land.",
+                      "After concluding concentration lowers rent, later chapters center extensive expansion."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 경우는 가격이 움직이지 않아도 지대가 변할 수 있음을 보여준다. 그래서 차액지대 II를 단순한 가격변동 문제가 아니라 투자분별 생산성 문제로 읽게 한다.",
-                    "en": "This chapter’s systematic point is to show rent as a historically and socially mediated income form, not as a natural yield of land."
-                  },
-                  "points": 3
+                    "ko": "41장은 차액지대 II의 첫 경우다. 이후 장들은 생산가격 변동을 넣어 같은 구조를 더 복잡하게 전개한다.",
+                    "en": "Chapter 41 is the first case of Differential Rent II; later chapters add changing production prices to the same structure."
+                  }
                 }
               ]
             }
