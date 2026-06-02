@@ -150,7 +150,7 @@
                       "Because value is always determined by the price the seller wants."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
                     "ko": "마르크스에게 사적 노동은 교환 속에서 사회적으로 필요한 노동으로 인정될 때 가치로 나타난다. 오래 걸렸다는 사실만으로 가치가 커진다고 보면 상품생산의 사회적 기준을 개인적 고생으로 바꾸어 버린다.",
                     "en": "For Marx, private labor appears as value only insofar as it is validated in exchange as socially necessary labor. If mere duration created value, the social standard of commodity production would be replaced by individual hardship."
@@ -19965,27 +19965,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이윤율과 잉여가치율의 관계에서 마르크스가 먼저 정리하려는 것은 무엇인가?",
-                    "en": "What does Marx first clarify in the relation between the rate of profit and the rate of surplus-value?"
+                    "ko": "3장에서 마르크스가 이윤율과 잉여가치율의 관계를 다룰 때 세우는 기본 전제는 무엇인가?",
+                    "en": "What basic premise does Marx set when treating the relation between the rate of profit and the rate of surplus-value in Chapter 3?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치율은 s/v이고 이윤율은 s/(c+v)이므로, 같은 잉여가치도 서로 다른 비율로 나타난다는 점이다.",
-                      "이윤율과 잉여가치율은 분모만 다를 뿐 의미는 완전히 같다고 본다.",
-                      "기계와 원료가 많을수록 그것들이 직접 잉여가치를 만든다고 본다.",
-                      "총투하자본이 커지면 이윤율은 대체로 그 자체로 오른다고 본다."
+                      "일단 개별 자본의 이윤량을 그 자본이 생산한 잉여가치량과 같다고 놓고, 두 비율의 수학적 관계를 분석한다.",
+                      "평균이윤과 생산가격이 이미 성립한 상태에서 개별 자본의 실제 이윤 분배를 먼저 계산한다.",
+                      "이자, 지대, 조세로 나뉜 잉여가치의 하위 형태를 합산해 이윤율의 출발값을 만든다.",
+                      "유통에서 판매된 상품수량을 기준으로 잉여가치율을 다시 정의한 뒤 자본구성을 비교한다."
                     ],
                     "en": [
-                      "The rate of surplus-value is s/v and the rate of profit is s/(c+v), so the same surplus-value appears in different ratios.",
-                      "Treats the profit rate and surplus-value rate as identical in meaning except for the denominator.",
-                      "Assumes more machinery and materials directly create surplus-value.",
-                      "Assumes a larger total advanced capital always automatically raises the profit rate."
+                      "For the moment, the amount of profit of an individual capital is taken as equal to the surplus-value produced by that capital, and the mathematical relation of the two rates is analyzed.",
+                      "The actual distribution of profit among individual capitals is calculated first, assuming average profit and prices of production are already established.",
+                      "The sub-forms of surplus-value, such as interest, rent, and taxes, are added together to form the starting value of the profit rate.",
+                      "The rate of surplus-value is redefined by the quantity of commodities sold in circulation, then compared with capital composition."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 s/v이고 이윤율은 s/(c+v)이므로, 같은 잉여가치도 서로 다른 비율로 나타난다는 점이다. 이 지점은 3권에서 잉여가치가 자본가에게 어떤 표면형태로 나타나는지 이해하는 출발점이다.",
-                    "en": "The rate of surplus-value is s/v and the rate of profit is s/(c+v), so the same surplus-value appears in different ratios. This is a starting point for understanding how surplus-value appears to capitalists in Volume III."
+                    "ko": "3장은 아직 평균이윤과 생산가격을 다루지 않는다. 먼저 이윤량을 잉여가치량과 같다고 놓고, s/v와 s/(c+v)가 어떤 수학적·사회적 관계를 맺는지 정리한다.",
+                    "en": "Chapter 3 does not yet treat average profit or prices of production. It first assumes profit equals surplus-value and clarifies the mathematical and social relation between s/v and s/(c+v)."
                   }
                 },
                 {
@@ -19993,27 +19993,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치율이 같아도 이윤율이 달라질 수 있는 직접적 이유는 무엇인가?",
-                    "en": "What is the direct reason profit rates can differ even when rates of surplus-value are equal?"
+                    "ko": "공식 p' = s' × v/C가 말하는 핵심 관계는 무엇인가?",
+                    "en": "What key relation is expressed by the formula p' = s' × v/C?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율의 분모에는 가변자본뿐 아니라 불변자본도 들어가므로, c와 v의 비율이 달라지면 이윤율도 달라진다.",
-                      "총투하자본이 커지면 이윤율은 대체로 그 자체로 오른다고 본다.",
-                      "기계와 원료가 많을수록 그것들이 직접 잉여가치를 만든다고 본다.",
-                      "낮은 이윤율을 곧 낮은 노동착취의 증거로 본다."
+                      "이윤율은 잉여가치율에 총자본 중 가변자본이 차지하는 비중을 곱한 형태로 표현된다.",
+                      "이윤율은 잉여가치율에 불변자본의 절대량을 더한 뒤 상품가치 전체로 나눈 형태다.",
+                      "가변자본 비중이 커질수록 잉여가치율은 낮아지고 이윤율은 같은 크기로 오른다.",
+                      "총자본 C가 커지면 v/C도 함께 커져서 같은 잉여가치율이 더 높은 이윤율로 나타난다."
                     ],
                     "en": [
-                      "The denominator of the profit rate includes constant as well as variable capital, so a different ratio of c to v changes the profit rate.",
-                      "Assumes a larger total advanced capital always automatically raises the profit rate.",
-                      "Assumes more machinery and materials directly create surplus-value.",
-                      "Treats a lower profit rate as direct evidence of lower exploitation."
+                      "The rate of profit is expressed as the rate of surplus-value multiplied by the share of variable capital in total capital.",
+                      "The rate of profit is the rate of surplus-value plus the absolute amount of constant capital, divided by the whole commodity value.",
+                      "As the share of variable capital rises, the rate of surplus-value falls and the rate of profit rises by the same amount.",
+                      "When total capital C grows, v/C grows with it, so the same surplus-value rate appears as a higher profit rate."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이윤율의 분모에는 가변자본뿐 아니라 불변자본도 들어가므로, c와 v의 비율이 달라지면 이윤율도 달라진다. 따라서 같은 착취관계도 자본구성, 회전, 가격 변동을 거치며 다른 수익성 지표로 나타난다.",
-                    "en": "The denominator of the profit rate includes constant as well as variable capital, so a different ratio of c to v changes the profit rate. The same exploitation relation can therefore appear as different profitability measures through capital composition, turnover, and price changes."
+                    "ko": "공식은 p' = s/C이고 s = s'v이므로 p' = s' × v/C가 된다는 점을 압축한다. 따라서 같은 s'라도 v가 총자본에서 차지하는 비중이 다르면 이윤율도 달라진다.",
+                    "en": "The formula condenses the fact that p' = s/C and s = s'v, so p' = s' × v/C. Thus the same s' yields different profit rates when v has a different share in total capital."
                   }
                 },
                 {
@@ -20021,27 +20021,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치율과 이윤율을 같은 지표로 보면 무엇을 놓치게 되는가?",
-                    "en": "What is missed if the rate of surplus-value and the rate of profit are treated as the same indicator?"
+                    "ko": "p' : s' = v : C라는 비례식에서 어떤 결론이 따라나오는가?",
+                    "en": "What conclusion follows from the proportion p' : s' = v : C?"
                   },
                   "choices": {
                     "ko": [
-                      "총투하자본이 커지면 이윤율은 대체로 그 자체로 오른다고 본다.",
-                      "노동력 착취의 정도와 총투하자본의 수익성이라는 서로 다른 표현층위를 혼동하게 된다.",
-                      "낮은 이윤율을 곧 낮은 노동착취의 증거로 본다.",
-                      "이윤율을 생산관계와 무관한 회계 지표로만 본다."
+                      "불변자본이 있는 한 v는 C보다 작으므로, 이윤율은 보통 잉여가치율보다 낮은 비율로 나타난다.",
+                      "v와 C가 같은 비율로 움직이므로, 모든 자본구성에서 이윤율과 잉여가치율은 같은 크기를 유지한다.",
+                      "C가 v보다 크면 잉여가치가 불변자본에서 직접 발생한다는 점이 수식으로 확인된다.",
+                      "비례식은 판매가격과 비용가격의 차이를 보여주며 생산과정 변수는 배경 조건으로 처리한다."
                     ],
                     "en": [
-                      "Assumes a larger total advanced capital always automatically raises the profit rate.",
-                      "It confuses the degree of exploitation of labour-power with the profitability of the total advanced capital.",
-                      "Treats a lower profit rate as direct evidence of lower exploitation.",
-                      "Treats the profit rate as a bookkeeping measure unrelated to production relations."
+                      "As long as constant capital exists, v is smaller than C, so the rate of profit normally appears lower than the rate of surplus-value.",
+                      "Because v and C move in the same proportion, the rate of profit and the rate of surplus-value remain equal under every capital composition.",
+                      "When C is larger than v, the formula confirms that surplus-value arises directly from constant capital.",
+                      "The proportion shows the difference between selling price and cost-price, while variables of production are treated as background conditions."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "노동력 착취의 정도와 총투하자본의 수익성이라는 서로 다른 표현층위를 혼동하게 된다. 이 구분을 놓치면 이윤율의 표면이 잉여가치 생산관계를 대신 설명하는 것처럼 보인다.",
-                    "en": "It confuses the degree of exploitation of labour-power with the profitability of the total advanced capital. Without this distinction, the surface of the profit rate seems to explain the production relation of surplus-value itself."
+                    "ko": "마르크스는 이 비례식으로 이윤율이 잉여가치율보다 작게 나타나는 구조를 보인다. 예외는 C가 전부 v인 경우인데, 자본주의적 생산에서는 생산수단 없는 임금 선대만으로는 실제 조건이 성립하기 어렵다.",
+                    "en": "Marx uses this proportion to show why the rate of profit appears lower than the rate of surplus-value. The exception would be C consisting entirely of v, a condition hardly compatible with capitalist production without means of production."
                   }
                 },
                 {
@@ -20049,27 +20049,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "두 기업이 노동자를 같은 정도로 착취하지만 하나가 훨씬 많은 기계와 원료를 쓴다. 이윤율에서는 무엇이 달라질 수 있는가?",
-                    "en": "Two firms exploit labour to the same degree, but one uses far more machinery and materials. What can differ in the profit rate?"
+                    "ko": "80c+20v+20s에서 노동일이 길어져 80c+20v+40s가 되었다. 이 사례에서 무엇이 바뀌는가?",
+                    "en": "If 80c+20v+20s becomes 80c+20v+40s because the working day is lengthened, what changes in this case?"
                   },
                   "choices": {
                     "ko": [
-                      "낮은 이윤율을 곧 낮은 노동착취의 증거로 본다.",
-                      "이윤율을 생산관계와 무관한 회계 지표로만 본다.",
-                      "잉여가치율이 같아도 총투하자본이 큰 쪽은 이윤율이 낮게 나타날 수 있다.",
-                      "이윤율과 잉여가치율은 분모만 다를 뿐 의미는 완전히 같다고 본다."
+                      "v는 그대로지만 s가 커져 잉여가치율은 100%에서 200%로, 이윤율은 20%에서 40%로 오른다.",
+                      "c가 그대로이면 노동일 변화는 잉여가치율에 집중되고 이윤율은 기존 총자본 비율로 정리된다.",
+                      "s가 커지면 C도 같은 크기로 커지므로 이윤율은 20%에 머무르고 잉여가치율만 오른다.",
+                      "노동일 연장은 임금률의 변화이므로 v가 20에서 40으로 오르고 s는 이전 크기를 유지한다."
                     ],
                     "en": [
-                      "Treats a lower profit rate as direct evidence of lower exploitation.",
-                      "Treats the profit rate as a bookkeeping measure unrelated to production relations.",
-                      "Even with the same rate of surplus-value, the firm with the larger total advanced capital can show a lower rate of profit.",
-                      "Treats the profit rate and surplus-value rate as identical in meaning except for the denominator."
+                      "v remains the same but s increases, so the rate of surplus-value rises from 100% to 200% and the rate of profit from 20% to 40%.",
+                      "If c remains the same, a change in the working day is concentrated in the rate of surplus-value and the rate of profit is organized by the previous total-capital ratio.",
+                      "When s increases, C increases by the same amount, so the rate of profit stays at 20% while only the rate of surplus-value rises.",
+                      "A longer working day is a change in the wage rate, so v rises from 20 to 40 and s keeps its previous magnitude."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율이 같아도 총투하자본이 큰 쪽은 이윤율이 낮게 나타날 수 있다. 구체 사례에서도 핵심은 비용 절감이나 가격 변동이 잉여가치의 생산과 이윤율의 표현을 어떻게 다르게 매개하는가이다.",
-                    "en": "Even with the same rate of surplus-value, the firm with the larger total advanced capital can show a lower rate of profit. In concrete cases, the key is how cost saving or price movement mediates surplus-value production and the expression of the profit rate differently."
+                    "ko": "사례 적용의 핵심은 노동일, 임금, 노동강도 변화가 s와 v의 관계를 바꾸고 그 결과 p'도 바꾼다는 점이다. 80c+20v+20s에서는 s'=100%, p'=20%지만, 80c+20v+40s에서는 s'=200%, p'=40%다.",
+                    "en": "The applied point is that changes in the working day, wages, and labour intensity alter the relation between s and v and thereby p'. In 80c+20v+20s, s'=100% and p'=20%; in 80c+20v+40s, s'=200% and p'=40%."
                   }
                 },
                 {
@@ -20077,27 +20077,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 장이 이윤율 분석에 보태는 것은 무엇인가?",
-                    "en": "What does this chapter add to the analysis of the profit rate?"
+                    "ko": "3장 분석은 왜 4장의 “회전이 이윤율에 미치는 영향”으로 이어지는가?",
+                    "en": "Why does Chapter 3 lead into Chapter 4's analysis of the effect of turnover on the rate of profit?"
                   },
                   "choices": {
                     "ko": [
-                      "기계와 원료가 많을수록 그것들이 직접 잉여가치를 만든다고 본다.",
-                      "이윤율을 생산관계와 무관한 회계 지표로만 본다.",
-                      "이윤율과 잉여가치율은 분모만 다를 뿐 의미는 완전히 같다고 본다.",
-                      "이윤율이 잉여가치율의 단순한 다른 이름이 아니라 자본구성에 의해 변형된 표현임을 정식화한다."
+                      "3장은 일단 회전을 보류하고 s', v, C의 관계를 정리하므로, 다음에는 회전수가 이 관계를 어떻게 바꾸는지 따져야 한다.",
+                      "3장에서 이윤율과 잉여가치율이 같은 값으로 정리되므로, 4장은 공식 대신 역사적 사례만 다룬다.",
+                      "3장은 생산수단이 잉여가치를 만든다는 결론을 내리므로, 4장은 기계의 물리적 수명을 계산한다.",
+                      "3장은 판매가격 변동을 중심으로 끝나므로, 4장은 시장수요가 임금률을 결정하는 방식을 분석한다."
                     ],
                     "en": [
-                      "Assumes more machinery and materials directly create surplus-value.",
-                      "Treats the profit rate as a bookkeeping measure unrelated to production relations.",
-                      "Treats the profit rate and surplus-value rate as identical in meaning except for the denominator.",
-                      "It formulates the profit rate not as another name for the rate of surplus-value, but as a transformed expression mediated by capital composition."
+                      "Chapter 3 first brackets turnover and clarifies the relation among s', v, and C, so the next question is how the number of turnovers changes that relation.",
+                      "Because Chapter 3 reduces the rate of profit and the rate of surplus-value to the same value, Chapter 4 treats only historical examples instead of formulas.",
+                      "Because Chapter 3 concludes that means of production create surplus-value, Chapter 4 calculates the physical lifetime of machinery.",
+                      "Because Chapter 3 ends with selling-price fluctuation, Chapter 4 analyzes how market demand determines wage rates."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율이 잉여가치율의 단순한 다른 이름이 아니라 자본구성에 의해 변형된 표현임을 정식화한다. 이 장은 앞선 이윤 개념을 더 구체적인 운동 법칙으로 밀고 나가는 역할을 한다.",
-                    "en": "It formulates the profit rate not as another name for the rate of surplus-value, but as a transformed expression mediated by capital composition. The chapter pushes the earlier concept of profit toward more concrete laws of motion."
+                    "ko": "3장은 변수들을 분리해 이윤율의 기본 관계를 만든다. 그 과정에서 회전은 잠시 보류된다. 그래서 4장은 같은 공식이 연간 회전수와 결합할 때 이윤율이 어떻게 달라지는지를 다룬다.",
+                    "en": "Chapter 3 separates the variables and builds the basic relation of the profit rate. Turnover is temporarily bracketed. Chapter 4 therefore asks how the same formula changes when annual turnover is introduced."
                   }
                 }
               ]
@@ -20115,27 +20115,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율과 잉여가치율 사이의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension between the rate of profit and the rate of surplus-value?"
+                    "ko": "3장이 여러 경우를 비교할 때 사용하는 방법적 특징은 무엇인가?",
+                    "en": "What methodological feature does Chapter 3 use when comparing different cases?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치는 가변자본이 구매한 노동력에서 나오지만, 이윤율은 그것을 총자본 전체에 대한 성과처럼 표시한다.",
-                      "기계와 원료가 많을수록 그것들이 직접 잉여가치를 만든다고 본다.",
-                      "이윤율과 잉여가치율은 분모만 다를 뿐 의미는 완전히 같다고 본다.",
-                      "총투하자본이 커지면 이윤율은 대체로 그 자체로 오른다고 본다."
+                      "화폐가치와 회전 등 일부 조건을 잠정적으로 고정하고, s', v, C의 변화가 p'에 미치는 효과를 따로 비교한다.",
+                      "경쟁으로 평균이윤율이 이미 형성된 상태를 출발점으로 삼아 산업별 생산가격을 먼저 배분한다.",
+                      "개별 상품의 판매가격 변동을 모두 제거하고, 소비자의 수요 탄력성만으로 이윤율 변화를 설명한다.",
+                      "노동일, 임금, 자본구성을 하나의 원인으로 묶어 전체 이윤율을 경험적 평균값으로만 계산한다."
                     ],
                     "en": [
-                      "Surplus-value comes from labour-power bought by variable capital, but the rate of profit presents it as a result of the whole capital.",
-                      "Assumes more machinery and materials directly create surplus-value.",
-                      "Treats the profit rate and surplus-value rate as identical in meaning except for the denominator.",
-                      "Assumes a larger total advanced capital always automatically raises the profit rate."
+                      "It provisionally fixes some conditions such as the value of money and turnover, then compares separately how changes in s', v, and C affect p'.",
+                      "It begins from average profit already formed by competition and first distributes prices of production across industries.",
+                      "It removes all selling-price changes of individual commodities and explains profit-rate changes only through consumer demand elasticity.",
+                      "It bundles the working day, wages, and capital composition into one cause and calculates the total profit rate only as an empirical average."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치는 가변자본이 구매한 노동력에서 나오지만, 이윤율은 그것을 총자본 전체에 대한 성과처럼 표시한다. 이 긴장은 이윤율이 단순한 회계비율이 아니라 착취관계의 전도된 표현임을 보여준다.",
-                    "en": "Surplus-value comes from labour-power bought by variable capital, but the rate of profit presents it as a result of the whole capital. This tension shows that the rate of profit is not a mere accounting ratio but an inverted expression of exploitation."
+                    "ko": "심화의 핵심은 변수 분리다. 마르크스는 화폐가치와 회전을 일단 고정하거나 보류하고, 잉여가치율, 가변자본 비중, 총자본 크기 변화가 이윤율에 어떤 효과를 내는지 경우별로 따진다.",
+                    "en": "The advanced point is the isolation of variables. Marx temporarily fixes or brackets conditions such as the value of money and turnover, then examines case by case how changes in the rate of surplus-value, the share of variable capital, and the size of total capital affect the rate of profit."
                   }
                 },
                 {
@@ -20143,27 +20143,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "s/v에서 s/(c+v)로 표현이 바뀔 때 무엇이 매개로 작용하는가?",
-                    "en": "What mediates the shift in expression from s/v to s/(c+v)?"
+                    "ko": "잉여가치율 s'가 같아도 p'가 달라지는 경우를 가장 잘 설명하는 것은 무엇인가?",
+                    "en": "Which statement best explains cases where p' differs although the rate of surplus-value s' is the same?"
                   },
                   "choices": {
                     "ko": [
-                      "기계와 원료가 많을수록 그것들이 직접 잉여가치를 만든다고 본다.",
-                      "비용가격과 총투하자본의 관점이 매개가 되어, 잉여가치가 총자본의 수익률처럼 나타난다.",
-                      "총투하자본이 커지면 이윤율은 대체로 그 자체로 오른다고 본다.",
-                      "낮은 이윤율을 곧 낮은 노동착취의 증거로 본다."
+                      "v/C가 서로 다르면 같은 s'도 서로 다른 p'로 나타난다.",
+                      "c가 커지면 s' 자체가 같은 비율로 커지기 때문에 p'도 높아진다.",
+                      "v가 작아질수록 노동자가 만드는 잉여가치 총량은 자동으로 커진다.",
+                      "C가 같으면 s'의 차이는 판매가격 조정 속에 흡수되어 p'가 같은 지표로 정리된다."
                     ],
                     "en": [
-                      "Assumes more machinery and materials directly create surplus-value.",
-                      "The standpoint of cost-price and total advanced capital mediates the shift, making surplus-value appear as the return on total capital.",
-                      "Assumes a larger total advanced capital always automatically raises the profit rate.",
-                      "Treats a lower profit rate as direct evidence of lower exploitation."
+                      "If v/C differs, the same s' appears as different p'.",
+                      "When c grows, s' grows in the same proportion and p' rises with it.",
+                      "As v becomes smaller, the total surplus-value created by workers automatically becomes larger.",
+                      "If C is the same, differences in s' are absorbed into selling-price adjustment and p' is organized as the same index."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "비용가격과 총투하자본의 관점이 매개가 되어, 잉여가치가 총자본의 수익률처럼 나타난다. 매개를 보아야 값, 비용가격, 이윤율 사이의 이동이 기계적 변환이 아니라 사회적 형식 변화임을 이해할 수 있다.",
-                    "en": "The standpoint of cost-price and total advanced capital mediates the shift, making surplus-value appear as the return on total capital. Seeing the mediation shows that movement between value, cost-price, and profit rate is a social change of form, not a mechanical conversion."
+                    "ko": "p' = s' × v/C이므로 s'가 같아도 v/C가 달라지면 p'는 달라진다. 이것이 3장이 여러 자본구성을 비교할 때 반복해서 확인하는 기본 관계다.",
+                    "en": "Since p' = s' × v/C, p' changes when v/C changes even if s' is the same. This is the basic relation Chapter 3 repeatedly confirms when comparing different capital compositions."
                   }
                 },
                 {
@@ -20171,27 +20171,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율이 낮은 산업은 노동자를 덜 착취한다는 설명은 왜 부정확한가?",
-                    "en": "Why is it inaccurate to say that an industry with a lower profit rate exploits workers less?"
+                    "ko": "마르크스가 백분율만으로는 충분하지 않다고 보는 이유는 무엇인가?",
+                    "en": "Why does Marx regard percentages alone as insufficient?"
                   },
                   "choices": {
                     "ko": [
-                      "총투하자본이 커지면 이윤율은 대체로 그 자체로 오른다고 본다.",
-                      "낮은 이윤율을 곧 낮은 노동착취의 증거로 본다.",
-                      "낮은 이윤율은 낮은 착취율 때문만이 아니라 높은 불변자본 비중이나 느린 회전 같은 매개 때문에 나타날 수 있다.",
-                      "이윤율을 생산관계와 무관한 회계 지표로만 본다."
+                      "같은 백분율도 C, v, s의 절대량이 다르면 다른 생산조건과 잉여가치량을 가리킬 수 있기 때문이다.",
+                      "백분율은 시장가격을 계산할 때만 쓰이며 생산과정의 가치관계와는 다른 단위이기 때문이다.",
+                      "백분율은 노동일 길이를 표시하지만 임금률과 자본구성은 문자식으로만 표현되기 때문이다.",
+                      "백분율은 평균이윤율이 성립한 뒤에만 의미가 생겨 3장의 개별 자본 분석에는 맞지 않기 때문이다."
                     ],
                     "en": [
-                      "Assumes a larger total advanced capital always automatically raises the profit rate.",
-                      "Treats a lower profit rate as direct evidence of lower exploitation.",
-                      "A lower profit rate may result not only from lower exploitation but from mediations such as a high share of constant capital or slow turnover.",
-                      "Treats the profit rate as a bookkeeping measure unrelated to production relations."
+                      "Because the same percentage can point to different production conditions and different masses of surplus-value when the absolute magnitudes of C, v, and s differ.",
+                      "Because percentages are used only to calculate market prices and belong to a unit different from value relations in production.",
+                      "Because percentages express the length of the working day, while wages and capital composition can only be expressed algebraically.",
+                      "Because percentages become meaningful only after the average rate of profit is formed and therefore do not fit Chapter 3's individual-capital analysis."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "낮은 이윤율은 낮은 착취율 때문만이 아니라 높은 불변자본 비중이나 느린 회전 같은 매개 때문에 나타날 수 있다. 마르크스의 비판은 현상 자체를 부정하지 않고, 그 현상이 어떤 생산관계를 가리는지 밝힌다.",
-                    "en": "A lower profit rate may result not only from lower exploitation but from mediations such as a high share of constant capital or slow turnover. Marx does not deny the phenomenon itself; he shows what production relation it conceals."
+                    "ko": "3장은 비율만 암기하는 장이 아니다. 같은 20% 이윤율도 C가 100인지 1,000인지, v가 얼마인지, s의 절대량이 얼마인지에 따라 전혀 다른 자본구성과 잉여가치량을 뜻할 수 있다.",
+                    "en": "Chapter 3 is not a chapter for memorizing ratios alone. The same 20% rate of profit can mean very different capital compositions and masses of surplus-value depending on whether C is 100 or 1,000, how large v is, and what absolute mass of s is involved."
                   }
                 },
                 {
@@ -20199,27 +20199,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "고설비 반도체 기업과 노동집약 서비스 기업의 이윤율을 비교할 때 핵심 질문은 무엇인가?",
-                    "en": "When comparing a capital-intensive semiconductor firm with a labour-intensive service firm, what is the key question?"
+                    "ko": "고설비 반도체 기업과 노동집약 서비스 기업의 이윤율을 비교할 때 3장의 방식으로 물어야 할 질문은 무엇인가?",
+                    "en": "When comparing a capital-intensive semiconductor firm with a labour-intensive service firm, what question should be asked in Chapter 3's manner?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율을 생산관계와 무관한 회계 지표로만 본다.",
-                      "낮은 이윤율을 곧 낮은 노동착취의 증거로 본다.",
-                      "각 기업의 잉여가치율뿐 아니라 c와 v의 구성, 회전, 비용가격이 이윤율을 어떻게 매개하는지 봐야 한다.",
-                      "이윤율과 잉여가치율은 분모만 다를 뿐 의미는 완전히 같다고 본다."
+                      "각 기업의 s', v/C, C의 절대량을 분리해, 낮거나 높은 p'가 어떤 조합에서 나온 것인지 따져야 한다.",
+                      "두 기업의 기술수준이 다르면 설비의 사용가치가 새 가치의 직접 원천으로 얼마나 전환되는지 먼저 계산해야 한다.",
+                      "서비스 기업은 불변자본이 작으므로 잉여가치율보다 판매수수료율을 기준으로 이윤율을 비교해야 한다.",
+                      "반도체 기업의 가격경쟁력이 높으면 자본구성 차이는 평균이윤율 계산 전에 이미 정리된 것으로 처리해야 한다."
                     ],
                     "en": [
-                      "Treats the profit rate as a bookkeeping measure unrelated to production relations.",
-                      "Treats a lower profit rate as direct evidence of lower exploitation.",
-                      "One must examine not only each firm’s rate of surplus-value but how the composition of c and v, turnover, and cost-price mediate the profit rate.",
-                      "Treats the profit rate and surplus-value rate as identical in meaning except for the denominator."
+                      "One must separate each firm's s', v/C, and the absolute magnitude of C to see from what combination a low or high p' arises.",
+                      "If the firms have different technologies, one must first calculate how much the use-value of equipment turns directly into a source of new value.",
+                      "Because the service firm has little constant capital, its profit rate should be compared by using the sales-commission rate rather than the rate of surplus-value.",
+                      "If the semiconductor firm has strong price competitiveness, the difference in capital composition should be treated as already settled before calculating the average profit rate."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "각 기업의 잉여가치율뿐 아니라 c와 v의 구성, 회전, 비용가격이 이윤율을 어떻게 매개하는지 봐야 한다. 현대 사례도 같은 기준으로 읽을 수 있다. 표면의 수익성 변화와 잉여가치 생산의 원천을 분리해야 한다.",
-                    "en": "One must examine not only each firm’s rate of surplus-value but how the composition of c and v, turnover, and cost-price mediate the profit rate. Modern cases can be read by the same criterion: separate surface profitability changes from the source of surplus-value production."
+                    "ko": "사례 적용에서는 하나의 표면 수익률로 끝내면 안 된다. 3장의 방식은 s', v/C, C의 절대량을 분리해 묻는다. 회전 문제는 다음 장에서 별도로 들어오지만, 이미 여기서 변수 분리의 틀이 잡힌다.",
+                    "en": "In application, one should not stop at one surface profitability measure. Chapter 3's method separates s', v/C, and the absolute magnitude of C. Turnover enters separately in the next chapter, but the framework of variable isolation is already established here."
                   }
                 },
                 {
@@ -20227,27 +20227,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율과 잉여가치율 관계의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the relation between the rate of profit and the rate of surplus-value?"
+                    "ko": "3장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Chapter 3?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율을 생산관계와 무관한 회계 지표로만 본다.",
-                      "이윤율과 잉여가치율은 분모만 다를 뿐 의미는 완전히 같다고 본다.",
-                      "기계와 원료가 많을수록 그것들이 직접 잉여가치를 만든다고 본다.",
-                      "이윤율을 결정하는 여러 요인을 분석할 수 있도록 잉여가치 생산과 자본 전체의 수익성 표현을 연결한다."
+                      "이윤율을 s', v/C, C의 관계로 분해해 이후 회전, 자본절약, 가격변동, 평균이윤 분석이 들어올 수 있는 틀을 마련한다.",
+                      "잉여가치율과 이윤율의 차이를 제거해 뒤의 장들이 같은 수익률 지표만 반복해서 적용하게 한다.",
+                      "불변자본의 물리적 생산성이 이윤의 원천임을 공식화해 노동력 분석에서 생산수단 분석으로 중심을 옮긴다.",
+                      "경쟁 이전의 개별 자본 분석을 마무리하고 바로 지대와 이자라는 분배형태로 이동한다."
                     ],
                     "en": [
-                      "Treats the profit rate as a bookkeeping measure unrelated to production relations.",
-                      "Treats the profit rate and surplus-value rate as identical in meaning except for the denominator.",
-                      "Assumes more machinery and materials directly create surplus-value.",
-                      "It connects the production of surplus-value with the profitability expression of total capital so the factors determining the profit rate can be analyzed."
+                      "It decomposes the rate of profit into the relation among s', v/C, and C, preparing a framework into which turnover, capital saving, price changes, and average profit can later enter.",
+                      "It removes the difference between the rate of surplus-value and the rate of profit so later chapters can repeatedly apply one profitability index.",
+                      "It formalizes the physical productivity of constant capital as the source of profit and shifts the center from labour-power to means of production.",
+                      "It closes the analysis of individual capital before competition and moves directly to the distribution forms of rent and interest."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율을 결정하는 여러 요인을 분석할 수 있도록 잉여가치 생산과 자본 전체의 수익성 표현을 연결한다. 이 연결이 다음 장들의 평균이윤, 경쟁, 생산가격 분석으로 이어진다.",
-                    "en": "It connects the production of surplus-value with the profitability expression of total capital so the factors determining the profit rate can be analyzed. This connection leads into the later analysis of average profit, competition, and prices of production."
+                    "ko": "3장은 단순히 2장의 공식을 반복하지 않는다. 이윤율을 구성하는 변수들을 분리해, 다음 장의 회전 효과와 뒤이은 자본절약·가격변동·평균이윤 분석이 들어올 수 있는 계산 틀을 만든다.",
+                    "en": "Chapter 3 does not merely repeat Chapter 2's formula. It separates the variables composing the rate of profit and builds the calculational framework into which turnover, capital saving, price changes, and average profit can later enter."
                   }
                 }
               ]
