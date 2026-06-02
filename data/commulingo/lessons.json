@@ -20320,27 +20320,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "같은 자본이 더 빨리 생산과 판매를 반복하면, 연간 이윤율에는 어떤 변화가 생기는가?",
-                    "en": "What does Marx analyze in the effect of turnover on the rate of profit?"
+                    "ko": "4장에서 회전이 이윤율에 미치는 영향을 분석한다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that Chapter 4 analyzes the effect of turnover on the rate of profit?"
                   },
                   "choices": {
                     "ko": [
-                      "자본이 1년 동안 몇 번 회전하는지가 연간 잉여가치량과 이윤율을 어떻게 바꾸는지 분석한다.",
-                      "회전이 빠르면 노동이 없어도 잉여가치가 생긴다고 본다.",
-                      "이윤율 변화는 대체로 착취율 변화만 반영한다고 본다.",
-                      "회전시간은 물류 부서의 기술 문제일 뿐 가치관계와 무관하다고 본다."
+                      "같은 선대자본이 1년 동안 생산·유통 회로를 몇 번 완료하는지가 연간 잉여가치량과 이윤율을 바꾸는 방식을 분석한다.",
+                      "상품이 더 빨리 팔릴수록 판매 행위가 새 가치를 만들어 생산과정의 비중을 줄이는 방식을 분석한다.",
+                      "연간 이윤율을 한 번의 생산기간 수익률로 환산해 회전수 차이를 가격 변동으로 정리한다.",
+                      "운송·보관 시간이 단축될 때 이윤율이 기술 부서의 비용 절감 지표로 전환되는 방식을 분석한다."
                     ],
                     "en": [
-                      "He analyzes how the number of turnovers in a year changes the annual mass of surplus-value and the rate of profit.",
-                      "Assumes faster turnover creates surplus-value without labour.",
-                      "Assumes changes in profit rate always reflect only changes in exploitation rate.",
-                      "Treats turnover time as a technical logistics issue unrelated to value relations."
+                      "It analyzes how often the same advanced capital completes the production-circulation circuit in a year and how that changes the annual mass of surplus-value and the profit rate.",
+                      "It analyzes how faster sale lets the act of selling create new value and reduce the weight of the production process.",
+                      "It converts the annual rate of profit into the return of one production period and organizes turnover differences as price fluctuations.",
+                      "It analyzes how shorter transport and storage times turn the profit rate into a cost-saving index for technical departments."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본이 1년 동안 몇 번 회전하는지가 연간 잉여가치량과 이윤율을 어떻게 바꾸는지 분석한다. 이 지점은 3권에서 잉여가치가 자본가에게 어떤 표면형태로 나타나는지 이해하는 출발점이다.",
-                    "en": "He analyzes how the number of turnovers in a year changes the annual mass of surplus-value and the rate of profit. This is a starting point for understanding how surplus-value appears to capitalists in Volume III."
+                    "ko": "개념의 핵심은 회전수가 연간 잉여가치량을 매개한다는 점이다. 회전이 빨라지면 같은 선대자본이 더 자주 노동력 구매와 가치증식 과정에 들어갈 수 있고, 그 결과 연간 이윤율이 달라진다.",
+                    "en": "The conceptual point is that the number of turnovers mediates the annual mass of surplus-value. Faster turnover lets the same advanced capital enter the purchase of labour-power and valorization more often, changing the annual rate of profit."
                   }
                 },
                 {
@@ -20348,27 +20348,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "가변자본 회전이 빨라지면 이윤율에 어떤 효과가 생길 수 있는가?",
-                    "en": "What effect can faster turnover of variable capital have on the rate of profit?"
+                    "ko": "한 회전에서 생기는 잉여가치를 s, 연간 회전수를 n이라고 할 때 연간 잉여가치량 S는 어떻게 표현되는가?",
+                    "en": "If s is the surplus-value produced in one turnover and n is the annual number of turnovers, how is the annual mass of surplus-value S expressed?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 선대 가변자본이 더 자주 노동력을 구매해 연간 잉여가치량을 키우므로 이윤율을 높일 수 있다.",
-                      "회전시간은 물류 부서의 기술 문제일 뿐 가치관계와 무관하다고 본다.",
-                      "이윤율 변화는 대체로 착취율 변화만 반영한다고 본다.",
-                      "한 번의 생산기간 수익률과 연간 이윤율을 같은 것으로 본다."
+                      "S = sn으로, 한 회전의 잉여가치량에 1년 동안의 회전수를 곱한다.",
+                      "S = s/n으로, 회전수가 많아질수록 한 회전의 잉여가치를 더 작은 연간 몫으로 나눈다.",
+                      "S = s+v+C로, 잉여가치량을 가변자본과 총자본의 합계에 더해 계산한다.",
+                      "S = n/C로, 회전수를 총자본으로 나누어 잉여가치량을 직접 산출한다."
                     ],
                     "en": [
-                      "The same advanced variable capital buys labour-power more often, increasing annual surplus-value and potentially raising the profit rate.",
-                      "Treats turnover time as a technical logistics issue unrelated to value relations.",
-                      "Assumes changes in profit rate always reflect only changes in exploitation rate.",
-                      "Identifies the return of one production period with the annual profit rate."
+                      "S = sn: the surplus-value of one turnover is multiplied by the number of turnovers in a year.",
+                      "S = s/n: as turnovers increase, the surplus-value of one turnover is divided into smaller annual shares.",
+                      "S = s+v+C: the mass of surplus-value is calculated by adding variable capital and total capital to surplus-value.",
+                      "S = n/C: the number of turnovers divided by total capital directly yields the mass of surplus-value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "같은 선대 가변자본이 더 자주 노동력을 구매해 연간 잉여가치량을 키우므로 이윤율을 높일 수 있다. 따라서 같은 착취관계도 자본구성, 회전, 가격 변동을 거치며 다른 수익성 지표로 나타난다.",
-                    "en": "The same advanced variable capital buys labour-power more often, increasing annual surplus-value and potentially raising the profit rate. The same exploitation relation can therefore appear as different profitability measures through capital composition, turnover, and price changes."
+                    "ko": "공식의 출발점은 S = sn이다. 한 회전에서 같은 s가 생기더라도 그 회전이 1년에 한 번인지 열 번인지에 따라 연간 잉여가치량이 달라진다.",
+                    "en": "The starting formula is S = sn. Even if the same s is produced in one turnover, the annual mass of surplus-value differs depending on whether that turnover occurs once or ten times in a year."
                   }
                 },
                 {
@@ -20376,27 +20376,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "회전 효과와 착취율 변화를 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must turnover effects be distinguished from changes in exploitation?"
+                    "ko": "회전이 빠르면 잉여가치가 새로 생긴다고 이해하면 무엇이 흐려지는가?",
+                    "en": "What becomes blurred if faster turnover is understood as creating surplus-value by itself?"
                   },
                   "choices": {
                     "ko": [
-                      "회전시간은 물류 부서의 기술 문제일 뿐 가치관계와 무관하다고 본다.",
-                      "이윤율 상승이 노동일 안의 착취 강화가 아니라 같은 착취관계의 더 잦은 반복에서 나올 수 있기 때문이다.",
-                      "한 번의 생산기간 수익률과 연간 이윤율을 같은 것으로 본다.",
-                      "신용과 정산 속도가 가치 실현 문제를 완전히 없앤다고 본다."
+                      "회전은 잉여가치의 원천이 아니라 같은 자본이 잉여가치 생산에 들어가는 반복 횟수를 바꾸는 매개라는 점이 흐려진다.",
+                      "회전 단축은 생산시간을 줄일 때만 의미가 있고 유통시간 단축은 자본의 기능 방식과 별도로 남는다는 점이 흐려진다.",
+                      "회전수가 높을수록 한 회전의 착취율은 낮아지므로 연간 이윤율이 안정된다는 점이 흐려진다.",
+                      "회전은 판매 뒤 회계 정산의 이름이므로 생산된 잉여가치량과 같은 범주라는 점이 흐려진다."
                     ],
                     "en": [
-                      "Treats turnover time as a technical logistics issue unrelated to value relations.",
-                      "A rise in the profit rate can come not from intensified exploitation within the working day, but from more frequent repetition of the same exploitation relation.",
-                      "Identifies the return of one production period with the annual profit rate.",
-                      "Assumes credit and settlement speed completely abolish realization problems."
+                      "It blurs that turnover is not the source of surplus-value, but a mediation changing how often the same capital enters surplus-value production.",
+                      "It blurs that shortening turnover matters only when production time is reduced, while shorter circulation time remains separate from capital's mode of functioning.",
+                      "It blurs that a higher number of turnovers lowers the exploitation rate of one turnover and thereby stabilizes the annual profit rate.",
+                      "It blurs that turnover is a name for accounting settlement after sale and belongs to the same category as the produced mass of surplus-value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율 상승이 노동일 안의 착취 강화가 아니라 같은 착취관계의 더 잦은 반복에서 나올 수 있기 때문이다. 이 구분을 놓치면 이윤율의 표면이 잉여가치 생산관계를 대신 설명하는 것처럼 보인다.",
-                    "en": "A rise in the profit rate can come not from intensified exploitation within the working day, but from more frequent repetition of the same exploitation relation. Without this distinction, the surface of the profit rate seems to explain the production relation of surplus-value itself."
+                    "ko": "오해를 피하려면 원천과 매개를 나누어야 한다. 잉여가치는 노동력 사용에서 생산된다. 회전 단축은 그 과정이 같은 선대자본으로 1년에 더 자주 반복되도록 해 연간 이윤율을 바꾼다.",
+                    "en": "Avoiding the misconception requires separating source and mediation. Surplus-value is produced through the use of labour-power. Shorter turnover changes the annual rate of profit by letting that process repeat more often with the same advanced capital."
                   }
                 },
                 {
@@ -20404,27 +20404,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "한 플랫폼이 매주 매출을 회수하고 임금을 다시 선대한다. 같은 월간 착취율에서도 무엇이 달라질 수 있는가?",
-                    "en": "A platform recovers revenue weekly and advances wages again. What can change even with the same monthly exploitation rate?"
+                    "ko": "100의 자본 A가 1년에 두 번 회전해 매번 20의 잉여가치를 만들고, 200의 자본 B가 1년에 한 번 회전해 40의 잉여가치를 만든다. 무엇이 달라지는가?",
+                    "en": "Capital A of 100 turns over twice a year and produces 20 surplus-value each time; capital B of 200 turns over once and produces 40 surplus-value. What differs?"
                   },
                   "choices": {
                     "ko": [
-                      "한 번의 생산기간 수익률과 연간 이윤율을 같은 것으로 본다.",
-                      "신용과 정산 속도가 가치 실현 문제를 완전히 없앤다고 본다.",
-                      "선대자본의 회전수가 커져 연간 잉여가치량과 이윤율이 다르게 나타날 수 있다.",
-                      "회전이 빠르면 노동이 없어도 잉여가치가 생긴다고 본다."
+                      "연간 잉여가치량은 둘 다 40이지만, A는 선대자본 100에 대해 40%, B는 선대자본 200에 대해 20%의 이윤율을 보인다.",
+                      "두 자본의 연간 잉여가치량이 같으므로 이윤율도 같은 40%로 정리된다.",
+                      "B가 더 큰 자본을 선대했으므로 같은 잉여가치량에서도 B의 이윤율이 A보다 높다.",
+                      "A의 회전수가 높으므로 A의 한 회전 잉여가치율은 B보다 낮게 계산되어 연간 이윤율이 같아진다."
                     ],
                     "en": [
-                      "Identifies the return of one production period with the annual profit rate.",
-                      "Assumes credit and settlement speed completely abolish realization problems.",
-                      "The number of turnovers of advanced capital increases, so the annual mass of surplus-value and profit rate can appear differently.",
-                      "Assumes faster turnover creates surplus-value without labour."
+                      "Both produce an annual surplus-value of 40, but A shows a 40% profit rate on 100 advanced capital, while B shows 20% on 200.",
+                      "Because both capitals produce the same annual surplus-value, both profit rates are organized as the same 40%.",
+                      "Because B advances the larger capital, B has the higher profit rate despite the same mass of surplus-value.",
+                      "Because A turns over more often, A's surplus-value rate per turnover is calculated lower than B's and the annual profit rates become equal."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "선대자본의 회전수가 커져 연간 잉여가치량과 이윤율이 다르게 나타날 수 있다. 구체 사례에서도 핵심은 비용 절감이나 가격 변동이 잉여가치의 생산과 이윤율의 표현을 어떻게 다르게 매개하는가이다.",
-                    "en": "The number of turnovers of advanced capital increases, so the annual mass of surplus-value and profit rate can appear differently. In concrete cases, the key is how cost saving or price movement mediates surplus-value production and the expression of the profit rate differently."
+                    "ko": "원문의 핵심 사례와 같은 구조다. 연간 생산물의 잉여가치량이 같아도, 어느 정도의 선대자본이 그 결과를 냈는지가 다르면 이윤율은 달라진다. 회전은 이 차이를 만드는 시간적 매개다.",
+                    "en": "This has the same structure as Marx's key example. Even with the same annual mass of surplus-value, the profit rate differs when a different amount of advanced capital produces that result. Turnover is the temporal mediation of that difference."
                   }
                 },
                 {
@@ -20432,27 +20432,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "같은 100만 원의 자본이 1년에 한 번이 아니라 네 번 생산과 판매를 마친다면, 이윤율 분석에서 무엇이 달라지는가?",
-                    "en": "If the same capital of 1 million completes production and sale four times in a year instead of once, what changes in the analysis of the rate of profit?"
+                    "ko": "4장의 회전 분석은 왜 5장의 불변자본 사용 절약 문제로 이어지는가?",
+                    "en": "Why does Chapter 4's analysis of turnover lead into Chapter 5's problem of economy in the use of constant capital?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율 변화는 착취율 변화만 반영한다.",
-                      "신용과 정산 속도가 가치 실현 문제를 완전히 없앤다.",
-                      "회전이 빠르면 노동 없이도 잉여가치가 생긴다.",
-                      "같은 자본이 1년 동안 가치증식 과정에 들어가는 횟수가 연간 이윤율에 영향을 준다."
+                      "회전은 같은 잉여가치 생산을 더 작은 선대자본이나 더 적은 유휴자본으로 수행하게 하므로, 다음에는 불변자본 지출 절약이 이윤율에 미치는 효과가 문제가 된다.",
+                      "회전수가 정해지면 고정자본과 유동자본의 구분이 사라지므로, 다음 장은 생산수단의 물질적 형태를 떠난 순수 가격표를 다룬다.",
+                      "회전이 빨라지면 유통이 잉여가치의 원천으로 바뀌므로, 다음 장은 생산과정 없이 이윤이 생기는 방식을 다룬다.",
+                      "회전 분석은 연간 이윤율을 완결하므로, 다음 장은 이윤율 대신 지대와 이자의 분배 비율로 곧장 이동한다."
                     ],
                     "en": [
-                      "Changes in the profit rate reflect only changes in the rate of exploitation.",
-                      "Credit and settlement speed completely remove the problem of realizing value.",
-                      "Faster turnover creates surplus-value without labour.",
-                      "The number of times the same capital enters valorization during a year affects the annual rate of profit."
+                      "Turnover lets the same surplus-value production be carried out with smaller advanced capital or less idle capital, so the next issue is how saving outlays of constant capital affects the profit rate.",
+                      "Once the number of turnovers is fixed, the distinction between fixed and circulating capital disappears, so the next chapter treats pure price tags apart from the material form of means of production.",
+                      "Faster turnover turns circulation into the source of surplus-value, so the next chapter treats how profit arises without a production process.",
+                      "Turnover analysis completes the annual rate of profit, so the next chapter moves directly to the distribution ratios of rent and interest."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "회전은 잉여가치의 원천이 아니지만, 같은 선대자본이 1년 동안 몇 번 기능하는지를 바꾼다. 그래서 이윤율은 자본구성만이 아니라 시간과 회전 리듬 속에서도 파악해야 한다.",
-                    "en": "Turnover is not the source of surplus-value, but it changes how often the same advanced capital functions during a year. The profit rate must therefore be grasped not only through composition, but through time and turnover rhythm."
+                    "ko": "다음 장으로의 연결은 선대자본의 효율이다. 4장은 시간 단축이 유휴자본과 선대자본의 부담을 줄여 이윤율에 영향을 준다는 점을 보인다. 5장은 생산수단, 원료, 폐기물 등 불변자본 지출 절약이 같은 문제를 다른 측면에서 다룬다.",
+                    "en": "The link to the next chapter is the efficiency of advanced capital. Chapter 4 shows that shorter time reduces idle capital and the burden of advance, affecting the profit rate. Chapter 5 treats the same problem from another side: economies in means of production, raw materials, and waste."
                   }
                 }
               ]
@@ -20470,27 +20470,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "회전과 이윤율 사이의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension between turnover and the rate of profit?"
+                    "ko": "연간 이윤율을 정확히 표현하려면 3장의 p' = s'(v/C)를 어떻게 고쳐야 하는가?",
+                    "en": "How must Chapter 3's p' = s'(v/C) be modified to express the annual rate of profit precisely?"
                   },
                   "choices": {
                     "ko": [
-                      "회전은 새 가치의 직접 원천이 아니지만, 같은 자본이 잉여가치를 생산하는 연간 반복 횟수를 바꾼다.",
-                      "이윤율 변화는 대체로 착취율 변화만 반영한다고 본다.",
-                      "회전이 빠르면 노동이 없어도 잉여가치가 생긴다고 본다.",
-                      "회전시간은 물류 부서의 기술 문제일 뿐 가치관계와 무관하다고 본다."
+                      "단순 잉여가치율 s' 대신 연간 잉여가치율 s'n을 넣어 p' = s'n(v/C)로 표현한다.",
+                      "연간 임금 총액을 그대로 C에 더해, 회전이 빠른 자본일수록 분모도 같은 비율로 커지는 관계로 표현한다.",
+                      "s'를 회전수 n으로 나누어 한 회전의 이윤율을 연간 이윤율로 환산한다.",
+                      "회전수 n을 불변자본 c에만 곱해 고정자본의 물리적 사용기간을 이윤율 공식에 넣는다."
                     ],
                     "en": [
-                      "Turnover is not the direct source of new value, yet it changes the annual number of repetitions in which the same capital produces surplus-value.",
-                      "Assumes changes in profit rate always reflect only changes in exploitation rate.",
-                      "Assumes faster turnover creates surplus-value without labour.",
-                      "Treats turnover time as a technical logistics issue unrelated to value relations."
+                      "The simple rate of surplus-value s' is replaced by the annual rate s'n, yielding p' = s'n(v/C).",
+                      "The annual wage total is added directly to C, expressing a relation in which faster-turning capital enlarges the denominator in the same proportion.",
+                      "s' is divided by the number of turnovers n to convert the profit rate of one turnover into the annual profit rate.",
+                      "The number of turnovers n is applied only to constant capital c, bringing the physical lifetime of fixed capital into the profit-rate formula."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "회전은 새 가치의 직접 원천이 아니지만, 같은 자본이 잉여가치를 생산하는 연간 반복 횟수를 바꾼다. 이 긴장은 이윤율이 단순한 회계비율이 아니라 착취관계의 전도된 표현임을 보여준다.",
-                    "en": "Turnover is not the direct source of new value, yet it changes the annual number of repetitions in which the same capital produces surplus-value. This tension shows that the rate of profit is not a mere accounting ratio but an inverted expression of exploitation."
+                    "ko": "심화의 공식은 p' = s'n(v/C)다. 한 회전의 잉여가치율 s'에 가변자본의 연간 회전수 n을 곱해야, 같은 선대 가변자본이 1년에 여러 번 기능하는 효과가 들어간다.",
+                    "en": "The advanced formula is p' = s'n(v/C). The rate of surplus-value of one turnover, s', must be multiplied by the annual number of turnovers n of variable capital, so the repeated functioning of the same advanced variable capital is included."
                   }
                 },
                 {
@@ -20498,27 +20498,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "생산기간의 착취율과 연간 이윤율을 매개하는 것은 무엇인가?",
-                    "en": "What mediates the exploitation rate in a production period and the annual rate of profit?"
+                    "ko": "마르크스가 분자 쪽의 v와 분모 C 안의 v를 조심해서 구분하는 이유는 무엇인가?",
+                    "en": "Why does Marx carefully distinguish the v in the numerator from the v contained in denominator C?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율 변화는 대체로 착취율 변화만 반영한다고 본다.",
-                      "가변자본과 총자본의 연간 회전수, 곧 선대와 회수의 반복 리듬이 매개한다.",
-                      "회전시간은 물류 부서의 기술 문제일 뿐 가치관계와 무관하다고 본다.",
-                      "한 번의 생산기간 수익률과 연간 이윤율을 같은 것으로 본다."
+                      "연간 임금 지출 총액 vn은 한 번에 선대된 가변자본 v와 다를 수 있으므로, 둘을 섞으면 이윤율 계산이 틀어진다.",
+                      "분자 쪽 v는 불변자본의 감가상각분이고, 분모 쪽 v는 임금 지출이므로 서로 다른 물질 항목이다.",
+                      "분자와 분모의 v가 항상 같은 금액이어서, 구분은 기호를 보기 쉽게 만들기 위한 표기 관습이다.",
+                      "분자 쪽 v는 판매가격에 포함된 임금이고, 분모 쪽 v는 상품가치와 무관한 현금 잔액이다."
                     ],
                     "en": [
-                      "Assumes changes in profit rate always reflect only changes in exploitation rate.",
-                      "They are mediated by the annual number of turnovers of variable and total capital, the repeated rhythm of advance and recovery.",
-                      "Treats turnover time as a technical logistics issue unrelated to value relations.",
-                      "Identifies the return of one production period with the annual profit rate."
+                      "The total annual wage outlay vn can differ from the variable capital v advanced at one time, so mixing them distorts the profit-rate calculation.",
+                      "The v in the numerator is depreciation of constant capital, while the v in the denominator is wage outlay, making them different material items.",
+                      "The v in numerator and denominator is always the same sum, so the distinction is only a notation convention.",
+                      "The numerator v is the wage included in selling price, while denominator v is a cash balance unrelated to commodity value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가변자본과 총자본의 연간 회전수, 곧 선대와 회수의 반복 리듬이 매개한다. 매개를 보아야 값, 비용가격, 이윤율 사이의 이동이 기계적 변환이 아니라 사회적 형식 변화임을 이해할 수 있다.",
-                    "en": "They are mediated by the annual number of turnovers of variable and total capital, the repeated rhythm of advance and recovery. Seeing the mediation shows that movement between value, cost-price, and profit rate is a social change of form, not a mechanical conversion."
+                    "ko": "원문에서 중요한 세부는 vn과 v의 차이다. 자본가는 1년 동안 임금을 여러 번 지급하지만, 동시에 선대되어 묶여 있는 가변자본은 그 총액보다 작을 수 있다. 회전수가 바로 이 차이를 만든다.",
+                    "en": "A key detail in the text is the difference between vn and v. The capitalist may pay wages many times during the year, while the variable capital tied up at one time may be much smaller than that total. Turnover creates this difference."
                   }
                 },
                 {
@@ -20526,27 +20526,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "빠른 회전이 곧 기술적 효율만을 뜻한다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by treating faster turnover as merely technical efficiency?"
+                    "ko": "마르크스의 방적공장 예시에서 연간 임금지출은 2,704파운드인데 선대 가변자본은 약 318파운드로 계산된다. 이 차이는 무엇을 보여주는가?",
+                    "en": "In Marx's cotton-spinning example, annual wage expenditure is £2,704 while the advanced variable capital is calculated at about £318. What does this difference show?"
                   },
                   "choices": {
                     "ko": [
-                      "회전시간은 물류 부서의 기술 문제일 뿐 가치관계와 무관하다고 본다.",
-                      "한 번의 생산기간 수익률과 연간 이윤율을 같은 것으로 본다.",
-                      "회전 단축은 자본이 노동력 구매와 가치증식을 더 자주 반복하게 하는 사회적 시간 구조라는 점을 놓친다.",
-                      "신용과 정산 속도가 가치 실현 문제를 완전히 없앤다고 본다."
+                      "한 해 동안 지급된 임금 총액은 같은 가변자본이 여러 번 회전한 결과일 수 있으며, 선대 가변자본 자체와 같지 않다.",
+                      "연간 임금지출이 선대 가변자본보다 크면 그 차액은 불변자본이 직접 만든 새 가치로 계산된다.",
+                      "선대 가변자본이 작게 계산될수록 노동력의 착취율은 낮아지고 이윤율은 판매가격에서 결정된다.",
+                      "임금지출 총액과 선대 가변자본의 차이는 회계 장부의 누락분이므로 이윤율 공식에서 제외된다."
                     ],
                     "en": [
-                      "Treats turnover time as a technical logistics issue unrelated to value relations.",
-                      "Identifies the return of one production period with the annual profit rate.",
-                      "It misses that shortened turnover is a social time-structure letting capital repeat labour-power purchase and valorization more often.",
-                      "Assumes credit and settlement speed completely abolish realization problems."
+                      "The total wages paid during a year can be the result of the same variable capital turning over repeatedly, and is not identical with the variable capital advanced.",
+                      "If annual wage expenditure exceeds advanced variable capital, the difference is calculated as new value directly created by constant capital.",
+                      "The smaller the advanced variable capital is calculated, the lower the exploitation rate becomes and the more the profit rate is determined by selling price.",
+                      "The difference between total wage expenditure and advanced variable capital is a bookkeeping omission and is excluded from the profit-rate formula."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "회전 단축은 자본이 노동력 구매와 가치증식을 더 자주 반복하게 하는 사회적 시간 구조라는 점을 놓친다. 마르크스의 비판은 현상 자체를 부정하지 않고, 그 현상이 어떤 생산관계를 가리는지 밝힌다.",
-                    "en": "It misses that shortened turnover is a social time-structure letting capital repeat labour-power purchase and valorization more often. Marx does not deny the phenomenon itself; he shows what production relation it conceals."
+                    "ko": "방적공장 예시는 회전 분석의 계산 감각을 보여준다. 자본가는 1년 동안 2,704파운드의 임금을 지급하지만, 선대 가변자본은 약 318파운드가 8.5회 회전한 것으로 파악된다.",
+                    "en": "The spinning example gives the calculational sense of turnover analysis. The capitalist pays £2,704 in wages over the year, but the advanced variable capital is grasped as about £318 turning over 8.5 times."
                   }
                 },
                 {
@@ -20554,27 +20554,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "당일 배송과 즉시 정산을 결합한 유통망이 이윤율을 높인다면 무엇을 분석해야 하는가?",
-                    "en": "If a distribution network combines same-day delivery with instant settlement and raises the profit rate, what should be analyzed?"
+                    "ko": "당일 배송과 즉시 정산을 결합한 플랫폼이 같은 인력으로 연간 이윤율을 높였다. 4장의 관점에서 무엇을 물어야 하는가?",
+                    "en": "A platform combines same-day delivery with instant settlement and raises its annual profit rate with the same workforce. From Chapter 4's standpoint, what should be asked?"
                   },
                   "choices": {
                     "ko": [
-                      "신용과 정산 속도가 가치 실현 문제를 완전히 없앤다고 본다.",
-                      "한 번의 생산기간 수익률과 연간 이윤율을 같은 것으로 본다.",
-                      "물류 속도 자체보다 자본 회수와 재선대의 간격이 줄어 연간 회전수가 어떻게 변했는지 분석해야 한다.",
-                      "회전이 빠르면 노동이 없어도 잉여가치가 생긴다고 본다."
+                      "노동력 구매와 매출 회수 사이의 간격이 줄어 같은 선대 가변자본의 연간 회전수 n이 어떻게 바뀌었는지 물어야 한다.",
+                      "정산이 빨라지면 판매행위가 임금노동을 대신하므로 잉여가치율 계산에서 노동시간을 제외할 수 있는지 물어야 한다.",
+                      "배송속도 개선이 상품의 사용가치를 가격과 같은 크기로 바꾸었는지 물어야 한다.",
+                      "플랫폼 수수료가 높아졌다면 선대자본과 무관하게 연간 이윤율이 같은 비율로 상승했는지 물어야 한다."
                     ],
                     "en": [
-                      "Assumes credit and settlement speed completely abolish realization problems.",
-                      "Identifies the return of one production period with the annual profit rate.",
-                      "One should analyze less the logistics speed itself than how the interval between recovery and renewed advance was reduced, changing annual turnover.",
-                      "Assumes faster turnover creates surplus-value without labour."
+                      "One should ask how the interval between purchasing labour-power and recovering revenue changed the annual turnover number n of the same advanced variable capital.",
+                      "One should ask whether faster settlement lets the act of sale replace wage-labour and exclude labour-time from the calculation of the surplus-value rate.",
+                      "One should ask whether improved delivery speed transformed the commodity's use-value into the same magnitude as price.",
+                      "If platform fees rose, one should ask whether the annual profit rate rose in the same proportion regardless of advanced capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "물류 속도 자체보다 자본 회수와 재선대의 간격이 줄어 연간 회전수가 어떻게 변했는지 분석해야 한다. 현대 사례도 같은 기준으로 읽을 수 있다. 표면의 수익성 변화와 잉여가치 생산의 원천을 분리해야 한다.",
-                    "en": "One should analyze less the logistics speed itself than how the interval between recovery and renewed advance was reduced, changing annual turnover. Modern cases can be read by the same criterion: separate surface profitability changes from the source of surplus-value production."
+                    "ko": "사례 적용의 초점은 속도 자체가 아니라 선대와 회수의 시간 구조다. 같은 노동력 사용이라도 n이 커지면 s'n이 커지고, 그 결과 연간 이윤율이 달라질 수 있다.",
+                    "en": "The applied focus is not speed as such but the time-structure of advance and recovery. Even with the same use of labour-power, a larger n raises s'n and can change the annual rate of profit."
                   }
                 },
                 {
@@ -20582,27 +20582,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "회전이 이윤율에 미치는 영향의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of turnover’s effect on the rate of profit?"
+                    "ko": "4장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Chapter 4?"
                   },
                   "choices": {
                     "ko": [
-                      "신용과 정산 속도가 가치 실현 문제를 완전히 없앤다고 본다.",
-                      "회전이 빠르면 노동이 없어도 잉여가치가 생긴다고 본다.",
-                      "이윤율 변화는 대체로 착취율 변화만 반영한다고 본다.",
-                      "이윤율을 자본구성의 정태적 비율이 아니라 시간 속에서 반복되는 자본운동의 결과로 만든다."
+                      "3장의 이윤율 공식을 연간 회전수와 결합해, 이윤율이 자본구성뿐 아니라 자본의 시간적 반복 운동에도 의존함을 보인다.",
+                      "회전수를 평균이윤율로 대체해, 뒤의 생산가격 분석을 개별 자본의 유통속도 문제로 축소한다.",
+                      "유통시간을 잉여가치의 원천으로 세워, 생산과정에서 노동력이 수행하던 역할을 판매과정으로 옮긴다.",
+                      "고정자본의 감가상각을 제거해, 이윤율을 유동자본의 물리적 이동속도로만 계산하게 한다."
                     ],
                     "en": [
-                      "Assumes credit and settlement speed completely abolish realization problems.",
-                      "Assumes faster turnover creates surplus-value without labour.",
-                      "Assumes changes in profit rate always reflect only changes in exploitation rate.",
-                      "It makes the profit rate a result of capital’s repeated movement in time, not a static ratio of capital composition alone."
+                      "It combines Chapter 3's profit-rate formula with annual turnover and shows that the profit rate depends not only on capital composition but also on capital's temporal repetition.",
+                      "It replaces the number of turnovers with the average rate of profit and reduces the later analysis of production prices to the circulation speed of individual capitals.",
+                      "It establishes circulation time as the source of surplus-value and transfers the role performed by labour-power in production to the selling process.",
+                      "It removes depreciation of fixed capital and makes the profit rate calculable only by the physical movement speed of circulating capital."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율을 자본구성의 정태적 비율이 아니라 시간 속에서 반복되는 자본운동의 결과로 만든다. 이 연결이 다음 장들의 평균이윤, 경쟁, 생산가격 분석으로 이어진다.",
-                    "en": "It makes the profit rate a result of capital’s repeated movement in time, not a static ratio of capital composition alone. This connection leads into the later analysis of average profit, competition, and prices of production."
+                    "ko": "4장은 3장의 정태적 공식에 연간 시간구조를 넣는다. 그래서 이윤율은 s', v/C만이 아니라 n에 의해서도 달라진다. 이 뒤에는 선대자본을 줄이거나 효율화하는 다른 방식, 곧 불변자본 사용 절약 문제가 이어진다.",
+                    "en": "Chapter 4 inserts annual time-structure into Chapter 3's more static formula. The rate of profit depends not only on s' and v/C but also on n. The next problem is another way of reducing or economizing advanced capital: economy in the use of constant capital."
                   }
                 }
               ]
