@@ -24935,27 +24935,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상업이윤 장에서 마르크스가 묻는 핵심 질문은 무엇인가?",
-                    "en": "What central question does Marx ask in the chapter on commercial profit?"
+                    "ko": "17장에서 상업이윤을 설명할 때 가장 먼저 확인해야 할 전제는 무엇인가?",
+                    "en": "What premise must be checked first when explaining commercial profit in Chapter 17?"
                   },
                   "choices": {
                     "ko": [
-                      "상업자본이 직접 잉여가치를 생산하지 않는데도 평균이윤을 얻는 근거가 무엇인가이다.",
-                      "상업이윤은 대체로 소비자를 속여서만 생긴다고 본다.",
-                      "상업노동이 순수 판매 기능만으로 새 가치를 만든다고 본다.",
-                      "산업자본이 생산한 총잉여가치와 상업이윤의 연결을 끊는다."
+                      "순수한 구매와 판매 기능은 가치나 잉여가치를 직접 만들지 않고, 이미 생산된 가치의 실현을 맡는다는 전제다.",
+                      "상인은 상품을 더 멀리 이동시키기 때문에 모든 판매에서 새 가치를 직접 만든다는 전제다.",
+                      "상업이윤은 소비자가 상품을 비싸게 평가하는 심리에서 생긴다는 전제다.",
+                      "산업자본은 생산 담당 자본으로 한정되고 평균이윤율 형성은 상업부문에서 따로 이루어진다는 전제다."
                     ],
                     "en": [
-                      "He asks on what basis commercial capital receives average profit even though it does not directly produce surplus-value.",
-                      "Assumes commercial profit always arises only by cheating consumers.",
-                      "Assumes commercial labour creates new value through pure selling alone.",
-                      "Cuts the link between total surplus-value produced by industrial capital and commercial profit."
+                      "Pure buying and selling do not directly create value or surplus-value; they realize value already produced.",
+                      "Merchants directly create new value in every sale because they move commodities farther.",
+                      "Commercial profit arises from consumers psychologically valuing commodities more highly.",
+                      "Industrial capital is confined to production, while the average profit rate is formed separately in the commercial sector."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상업자본이 직접 잉여가치를 생산하지 않는데도 평균이윤을 얻는 근거가 무엇인가이다. 이 문항은 장의 대상 자체를 잡기 위한 출발점이다.",
-                    "en": "He asks on what basis commercial capital receives average profit even though it does not directly produce surplus-value. This item establishes the object of the chapter."
+                    "ko": "상업자본은 유통을 전문적으로 맡지만, 순수 유통 행위가 새 가치를 만드는 것은 아니다. 17장의 질문은 그래서 상업이윤이 어디서 배분되는가로 좁혀진다.",
+                    "en": "Commercial capital specializes in circulation, but pure circulation does not create new value. Chapter 17 therefore asks from where commercial profit is distributed."
                   }
                 },
                 {
@@ -24963,27 +24963,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상업이윤은 사회적으로 어디서 나오는가?",
-                    "en": "Where does commercial profit come from socially?"
+                    "ko": "상업자본이 평균이윤을 받으면 일반 이윤율 계산은 어떻게 달라지는가?",
+                    "en": "How does the calculation of the general rate of profit change when commercial capital receives average profit?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본이 생산한 총잉여가치의 일부가 상업자본에도 평균이윤으로 배분되는 데서 나온다.",
-                      "산업자본이 생산한 총잉여가치와 상업이윤의 연결을 끊는다.",
-                      "상업노동이 순수 판매 기능만으로 새 가치를 만든다고 본다.",
-                      "할인 매입과 정상 판매의 표면만으로 사회적 원천을 설명한다."
+                      "총잉여가치는 산업자본이 생산하지만, 그 잉여가치가 산업자본과 상업자본 전체에 비례 배분되어 일반 이윤율이 계산된다.",
+                      "상업자본은 별도의 잉여가치를 만들기 때문에 산업자본의 이윤율 계산과 분리해 다루어진다.",
+                      "상업자본이 들어오면 평균이윤율은 판매가격과 구매가격의 차이만으로 정해진다.",
+                      "상업자본의 규모가 커질수록 산업자본이 생산한 잉여가치량도 같은 비율로 증가한다."
                     ],
                     "en": [
-                      "It comes from part of the total surplus-value produced by industrial capital being distributed to commercial capital as average profit.",
-                      "Cuts the link between total surplus-value produced by industrial capital and commercial profit.",
-                      "Assumes commercial labour creates new value through pure selling alone.",
-                      "Explains the social source only by the surface of buying at a discount and selling normally."
+                      "Total surplus-value is produced by industrial capital, but it is distributed proportionally across industrial and commercial capital in calculating the general profit rate.",
+                      "Commercial capital creates separate surplus-value, so it is treated separately from industrial profit-rate calculation.",
+                      "Once commercial capital enters, the average profit rate is determined only by the difference between selling and purchase prices.",
+                      "As commercial capital grows, the surplus-value produced by industrial capital grows by the same ratio."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "산업자본이 생산한 총잉여가치의 일부가 상업자본에도 평균이윤으로 배분되는 데서 나온다. 따라서 표면의 수익률 변화만 보지 말고, 그 밑의 가치생산과 분배 매개를 함께 봐야 한다.",
-                    "en": "It comes from part of the total surplus-value produced by industrial capital being distributed to commercial capital as average profit. So one must look not only at surface profitability but also at the underlying production and distribution of value."
+                    "ko": "상업자본은 총사회자본의 일부로 평균이윤에 참여한다. 그래서 상업이윤은 산업자본이 생산한 총잉여가치의 배분 문제로 설명된다.",
+                    "en": "Commercial capital participates in average profit as part of total social capital. Commercial profit is therefore explained as a distribution of total surplus-value produced by industrial capital."
                   }
                 },
                 {
@@ -24991,27 +24991,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상업 노동자가 임금을 받는다는 사실만으로 그 노동이 잉여가치를 생산한다고 볼 수 없는 이유는 무엇인가?",
-                    "en": "Why does the fact that commercial workers receive wages not mean their labour produces surplus-value?"
+                    "ko": "상업이윤을 상품 가격 위에 붙는 단순 가산금으로 이해하면 왜 부족한가?",
+                    "en": "Why is it insufficient to understand commercial profit as a simple surcharge on commodity prices?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본이 생산한 총잉여가치와 상업이윤의 연결을 끊는다.",
-                      "상업노동은 상품가치의 실현을 담당할 수 있지만, 순수 판매 기능 자체가 새 가치를 창조하는 것은 아니기 때문이다.",
-                      "할인 매입과 정상 판매의 표면만으로 사회적 원천을 설명한다.",
-                      "상업자본은 평균이윤율 형성과 무관하다고 본다."
+                      "그 설명은 상인이 산업자본으로부터 상품을 어떤 가격에 사는지, 그리고 총잉여가치가 어떻게 나뉘는지를 설명하지 못한다.",
+                      "상업이윤은 실제로 장부상 할인 항목이므로 가격 가산과 관련이 작기 때문이다.",
+                      "단순 가산금 설명은 소비자의 구매력을 너무 낮게 평가해 수요곡선을 그릴 수 없기 때문이다.",
+                      "가격 가산은 국내거래에만 적용되고 외국무역에는 적용되지 않는 기술적 규칙이기 때문이다."
                     ],
                     "en": [
-                      "Cuts the link between total surplus-value produced by industrial capital and commercial profit.",
-                      "Commercial labour can handle the realization of commodity value, but the pure selling function itself does not create new value.",
-                      "Explains the social source only by the surface of buying at a discount and selling normally.",
-                      "Treats commercial capital as unrelated to formation of the average profit rate."
+                      "It fails to explain the price at which the merchant buys from industrial capital and how total surplus-value is divided.",
+                      "Commercial profit is in fact an accounting discount item and has little relation to price additions.",
+                      "The surcharge explanation undervalues consumers’ purchasing power and cannot draw a demand curve.",
+                      "Price additions are a technical rule for domestic trade but not foreign trade."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업노동은 상품가치의 실현을 담당할 수 있지만, 순수 판매 기능 자체가 새 가치를 창조하는 것은 아니기 때문이다. 이 구분을 놓치면 자본주의적 형태가 자연적 사실처럼 보인다.",
-                    "en": "Commercial labour can handle the realization of commodity value, but the pure selling function itself does not create new value. Without this distinction, capitalist forms appear as natural facts."
+                    "ko": "상인은 팔 때 차익을 얻는 것처럼 보인다. 그러나 사회적으로는 산업자본이 생산한 잉여가치 일부가 상업자본의 평균이윤으로 넘어가는 관계를 봐야 한다.",
+                    "en": "The merchant appears to gain profit in resale. Socially, however, part of the surplus-value produced by industrial capital passes to commercial capital as average profit."
                   }
                 },
                 {
@@ -25019,27 +25019,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "대형 유통사가 제조업체에서 할인된 가격으로 사서 정상 가격에 판다. 이 차익을 단순한 가격 속임수로 보면 무엇을 놓치는가?",
-                    "en": "A large retailer buys from manufacturers at a discount and sells at the normal price. What is missed if this margin is treated as mere price trickery?"
+                    "ko": "대형 유통사가 제조업체 상품을 낮은 공급가에 사서 소매가로 판매하는 사례에서 무엇을 분석해야 하는가?",
+                    "en": "What should be analyzed when a large distributor buys from manufacturers at a low supply price and sells at retail prices?"
                   },
                   "choices": {
                     "ko": [
-                      "할인 매입과 정상 판매의 표면만으로 사회적 원천을 설명할 수 있다고 본다.",
-                      "상업자본은 평균이윤율 형성과 무관하다고 본다.",
-                      "상업자본이 평균이윤을 얻도록 산업자본이 생산한 잉여가치 일부가 양도되는 관계를 놓친다.",
-                      "상업이윤은 소비자를 속일 때만 생긴다고 본다."
+                      "유통사가 상품 실현 기능을 맡는 대가로 산업부문에서 생산된 잉여가치 일부를 상업이윤 형태로 배분받는 구조다.",
+                      "낮은 공급가는 제조업 노동자가 만든 가치가 유통 창고에서 새로 생산된다는 증거다.",
+                      "소매가는 소비자가 느낀 편리함을 직접 가치로 환산한 결과라 생산과의 관련이 작다.",
+                      "유통사의 구매력은 평균이윤율과 별개의 독점가격을 모든 산업에 부과한다."
                     ],
                     "en": [
-                      "It assumes the surface of discounted purchase and normal sale explains the social source of the margin.",
-                      "It assumes commercial capital has no relation to the formation of the average rate of profit.",
-                      "It misses that part of the surplus-value produced by industrial capital may be transferred so commercial capital can receive average profit.",
-                      "It assumes commercial profit arises only by cheating consumers."
+                      "The distributor performs the realization function and receives part of surplus-value produced in industry in the form of commercial profit.",
+                      "The low supply price proves that value made by manufacturing workers is newly produced in warehouses.",
+                      "Retail price directly translates consumer convenience into value and has little relation to production.",
+                      "The distributor’s purchasing power imposes monopoly prices on all industries outside average profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업이윤은 유통 표면에서는 매입가와 판매가의 차이처럼 보인다. 그러나 마르크스의 질문은 그 차이가 어떤 잉여가치 분배를 통해 가능해지는가에 있다.",
-                    "en": "On the surface of circulation, commercial profit looks like the difference between purchase and sale price. Marx’s question is which distribution of surplus-value makes that difference possible."
+                    "ko": "현대 유통 사례도 단순한 가격 속임수로 끝나지 않는다. 핵심은 판매 기능의 독립과 총잉여가치의 분배다.",
+                    "en": "Modern distribution cases do not end with price trickery. The key is the independence of the selling function and the distribution of total surplus-value."
                   }
                 },
                 {
@@ -25047,27 +25047,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상업이윤 분석이 보여주는 전도는 무엇인가?",
-                    "en": "What inversion does the analysis of commercial profit reveal?"
+                    "ko": "17장은 18장의 상인자본 회전 분석으로 어떤 문제를 넘겨주는가?",
+                    "en": "What problem does Chapter 17 hand over to Chapter 18 on turnover of merchant capital?"
                   },
                   "choices": {
                     "ko": [
-                      "상업노동이 순수 판매 기능만으로 새 가치를 만든다고 본다.",
-                      "상업자본은 평균이윤율 형성과 무관하다고 본다.",
-                      "상업이윤은 대체로 소비자를 속여서만 생긴다고 본다.",
-                      "유통에서 생긴 것처럼 보이는 이윤도 사회적으로는 생산에서 나온 잉여가치의 분배형태일 수 있음을 보여준다."
+                      "상업이윤의 원천을 밝힌 뒤, 상인자본의 회전 속도가 상품가격의 상업이윤 가산분을 어떻게 달리 만드는지 묻게 한다.",
+                      "상업노동이 새 가치를 만든다는 결론을 세운 뒤, 그 새 가치의 임금 배분을 계산하게 한다.",
+                      "상업자본을 산업자본과 같은 생산부문으로 확정한 뒤, 생산시간의 길이를 비교하게 한다.",
+                      "상업이윤을 소비자 수요로 설명한 뒤, 수요가 생산가격을 대체하는 과정을 묻게 한다."
                     ],
                     "en": [
-                      "Assumes commercial labour creates new value through pure selling alone.",
-                      "Treats commercial capital as unrelated to formation of the average profit rate.",
-                      "Assumes commercial profit always arises only by cheating consumers.",
-                      "It shows that profit appearing to arise in circulation can socially be a distribution form of surplus-value produced in production."
+                      "After clarifying the source of commercial profit, it asks how the turnover speed of merchant capital changes the commercial-profit addition to commodity prices.",
+                      "After concluding that commercial labour creates new value, it calculates the wage distribution of that new value.",
+                      "After fixing commercial capital as a productive branch like industrial capital, it compares production times.",
+                      "After explaining commercial profit by consumer demand, it asks how demand replaces production price."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "유통에서 생긴 것처럼 보이는 이윤도 사회적으로는 생산에서 나온 잉여가치의 분배형태일 수 있음을 보여준다. 이 연결이 다음 장의 더 구체적인 자본형태 분석으로 이어진다.",
-                    "en": "It shows that profit appearing to arise in circulation can socially be a distribution form of surplus-value produced in production. This connection leads into the more concrete forms of capital analyzed next."
+                    "ko": "17장은 상업이윤의 사회적 원천을 다룬다. 18장은 같은 상업이윤이 회전수에 따라 상품 가격에 어떻게 나뉘어 얹히는지로 넘어간다.",
+                    "en": "Chapter 17 treats the social source of commercial profit. Chapter 18 turns to how that profit is distributed across commodity prices according to turnover."
                   }
                 }
               ]
@@ -25085,27 +25085,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상업이윤의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of commercial profit?"
+                    "ko": "상업노동자의 임금과 생산적 노동자의 임금을 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why distinguish wages of commercial workers from wages of productive workers?"
                   },
                   "choices": {
                     "ko": [
-                      "상업자본은 가치 실현만 담당하면서도 자본으로서 평균이윤을 요구하고, 그 이윤은 총잉여가치에서 나와야 한다.",
-                      "상업노동이 순수 판매 기능만으로 새 가치를 만든다고 본다.",
-                      "상업이윤은 대체로 소비자를 속여서만 생긴다고 본다.",
-                      "산업자본이 생산한 총잉여가치와 상업이윤의 연결을 끊는다."
+                      "상업노동은 가치 실현 비용을 줄이고 판매를 돕지만, 순수 판매 기능에서는 잉여가치의 직접 생산과 구별된다는 점이 다르다.",
+                      "상업노동자는 임금을 받지 않고 이윤 배당만 받으므로 임금노동 범주와 분리되기 때문이다.",
+                      "생산적 노동자는 유통에서 일하고 상업노동자는 공장에서 일하므로 장소가 다르기 때문이다.",
+                      "상업노동자의 임금은 상품가치가 아니라 소비자 만족도에서 직접 지급되기 때문이다."
                     ],
                     "en": [
-                      "Commercial capital handles realization, yet as capital it claims average profit, and that profit must come from total surplus-value.",
-                      "Assumes commercial labour creates new value through pure selling alone.",
-                      "Assumes commercial profit always arises only by cheating consumers.",
-                      "Cuts the link between total surplus-value produced by industrial capital and commercial profit."
+                      "Commercial labour helps realization and lowers realization costs, but pure selling functions are distinct from the direct production of surplus-value.",
+                      "Commercial workers receive no wages and only profit dividends, so they are separate from wage-labour.",
+                      "Productive workers work in circulation while commercial workers work in factories, so their places differ.",
+                      "Commercial workers’ wages are paid directly from consumer satisfaction rather than commodity value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상업자본은 가치 실현만 담당하면서도 자본으로서 평균이윤을 요구하고, 그 이윤은 총잉여가치에서 나와야 한다. 이 긴장은 마르크스가 단순한 균형모형이 아니라 자본의 모순적 운동을 분석한다는 점을 보여준다.",
-                    "en": "Commercial capital handles realization, yet as capital it claims average profit, and that profit must come from total surplus-value. This tension shows that Marx analyzes the contradictory movement of capital, not a simple equilibrium model."
+                    "ko": "마르크스는 상업노동이 자본가에게 유용하다는 점과 새 가치를 직접 만든다는 점을 구별한다. 이 구별이 상업이윤의 원천을 흐리지 않게 한다.",
+                    "en": "Marx distinguishes usefulness to capital from direct creation of new value. This prevents the source of commercial profit from becoming blurred."
                   }
                 },
                 {
@@ -25113,27 +25113,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상업자본이 평균이윤을 받도록 매개하는 것은 무엇인가?",
-                    "en": "What mediates commercial capital receiving average profit?"
+                    "ko": "상업자본이 평균이윤율 형성에 들어오면 산업자본의 상품 판매가격은 어떤 식으로 조정되는가?",
+                    "en": "How is the industrial selling price adjusted when commercial capital enters the formation of the average profit rate?"
                   },
                   "choices": {
                     "ko": [
-                      "상업노동이 순수 판매 기능만으로 새 가치를 만든다고 본다.",
-                      "상업자본이 총사회자본의 일부로 평균이윤율 형성에 참여하고, 산업자본이 상품을 상업자본에 넘기는 가격관계다.",
-                      "산업자본이 생산한 총잉여가치와 상업이윤의 연결을 끊는다.",
-                      "할인 매입과 정상 판매의 표면만으로 사회적 원천을 설명한다."
+                      "산업자본은 상품을 최종 생산가격 전체가 아니라 상업자본의 평균이윤 몫을 남기는 가격으로 넘기게 된다.",
+                      "산업자본은 상품을 가치보다 높게 팔고 상업자본은 그 차액을 소비자에게 환급한다.",
+                      "산업자본은 상업자본의 회전수와 관계없이 상품을 자기 비용가격 그대로 넘긴다.",
+                      "산업자본은 상업자본에 상품을 팔 때 그 상품의 잉여가치를 두 번째로 생산한다."
                     ],
                     "en": [
-                      "Assumes commercial labour creates new value through pure selling alone.",
-                      "It is mediated by commercial capital entering the total social capital in the formation of the average profit rate and by the price relation through which industrial capital transfers commodities to it.",
-                      "Cuts the link between total surplus-value produced by industrial capital and commercial profit.",
-                      "Explains the social source only by the surface of buying at a discount and selling normally."
+                      "Industrial capital hands over commodities at a price that leaves room for commercial capital’s share of average profit, not at the full final production price.",
+                      "Industrial capital sells above value and commercial capital refunds the difference to consumers.",
+                      "Industrial capital hands over commodities at its cost-price regardless of merchant turnover.",
+                      "Industrial capital produces the commodity’s surplus-value a second time when selling to commercial capital."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업자본이 총사회자본의 일부로 평균이윤율 형성에 참여하고, 산업자본이 상품을 상업자본에 넘기는 가격관계다. 매개를 보아야 생산에서 생긴 잉여가치가 다른 형태의 수입으로 나타나는 과정을 이해할 수 있다.",
-                    "en": "It is mediated by commercial capital entering the total social capital in the formation of the average profit rate and by the price relation through which industrial capital transfers commodities to it. Seeing the mediation lets us understand how surplus-value produced in production appears as other revenue forms."
+                    "ko": "상업이윤은 최종 가격 위에 임의로 붙는 돈이 아니다. 산업자본과 상업자본 사이의 가격관계 속에서 평균이윤 몫이 나뉜다.",
+                    "en": "Commercial profit is not arbitrary money added to the final price. The share of average profit is divided through the price relation between industrial and commercial capital."
                   }
                 },
                 {
@@ -25141,27 +25141,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상업이윤은 전부 소비자에게 비싸게 팔아 생긴다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying commercial profit comes entirely from overcharging consumers?"
+                    "ko": "상업비용 b와 그에 대한 이윤이 문제를 복잡하게 만드는 이유는 무엇인가?",
+                    "en": "Why do commercial expenses b and profit on b complicate the problem?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본이 생산한 총잉여가치와 상업이윤의 연결을 끊는다.",
-                      "할인 매입과 정상 판매의 표면만으로 사회적 원천을 설명한다.",
-                      "개별 가격차의 표면 아래에서 총잉여가치가 산업자본과 상업자본 사이에 분배되는 사회적 관계를 놓친다.",
-                      "상업자본은 평균이윤율 형성과 무관하다고 본다."
+                      "상업노동 임금과 사무비용은 가치 실현 비용이지만, 상업자본에는 선대자본으로 나타나 평균이윤 청구의 근거가 되기 때문이다.",
+                      "b는 생산적 가변자본이므로 상업노동이 만든 잉여가치율을 직접 표시하기 때문이다.",
+                      "b는 상업자본이 소비자에게 제공한 사용가치의 가격이므로 총잉여가치와 별개로 계산되기 때문이다.",
+                      "b가 커질수록 산업자본의 생산시간이 줄어 상품가치가 같은 폭으로 증가하기 때문이다."
                     ],
                     "en": [
-                      "Cuts the link between total surplus-value produced by industrial capital and commercial profit.",
-                      "Explains the social source only by the surface of buying at a discount and selling normally.",
-                      "It misses the social relation beneath individual price differences: the distribution of total surplus-value between industrial and commercial capital.",
-                      "Treats commercial capital as unrelated to formation of the average profit rate."
+                      "Commercial wages and office costs are realization costs, yet for commercial capital they appear as advanced capital and become grounds for a claim to average profit.",
+                      "b is productive variable capital and directly expresses the surplus-value rate produced by commercial labour.",
+                      "b is the price of use-value provided to consumers by commercial capital and is calculated separately from total surplus-value.",
+                      "As b grows, industrial production time falls and commodity value increases by the same amount."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "개별 가격차의 표면 아래에서 총잉여가치가 산업자본과 상업자본 사이에 분배되는 사회적 관계를 놓친다. 비판의 초점은 현상을 부정하는 것이 아니라 그 현상이 가리는 생산관계를 드러내는 데 있다.",
-                    "en": "It misses the social relation beneath individual price differences: the distribution of total surplus-value between industrial and commercial capital. The point of the critique is not to deny the phenomenon but to reveal the production relation it conceals."
+                    "ko": "상업비용은 산업자본에는 유통비용이지만 상업자본에는 자본 선대처럼 보인다. 그래서 그 비용과 이윤이 상품가격에 어떻게 들어가는지 따로 분석해야 한다.",
+                    "en": "Commercial expenses are circulation costs for industrial capital, but appear as capital advances for commercial capital. Their entry into commodity prices therefore needs separate analysis."
                   }
                 },
                 {
@@ -25169,27 +25169,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "전자상거래 플랫폼 수수료가 제조업체의 마진을 낮추지만 플랫폼은 높은 이윤을 얻는다. 무엇을 봐야 하는가?",
-                    "en": "E-commerce platform fees reduce manufacturers’ margins while the platform earns high profit. What should be examined?"
+                    "ko": "전자상거래 플랫폼 수수료가 제조업체 마진을 낮추는 사례에서 17장의 질문은 무엇인가?",
+                    "en": "What does Chapter 17 ask when e-commerce platform fees reduce manufacturers’ margins?"
                   },
                   "choices": {
                     "ko": [
-                      "상업자본은 평균이윤율 형성과 무관하다고 본다.",
-                      "할인 매입과 정상 판매의 표면만으로 사회적 원천을 설명한다.",
-                      "플랫폼이 가치 실현 기능을 장악하면서 산업부문에서 생산된 잉여가치 일부를 상업이윤 형태로 가져가는지 봐야 한다.",
-                      "상업이윤은 대체로 소비자를 속여서만 생긴다고 본다."
+                      "플랫폼이 상품 실현 기능을 장악하면서 산업자본이 생산한 잉여가치 일부를 어떤 상업이윤 형태로 가져가는지다.",
+                      "플랫폼 알고리즘이 상품을 추천하는 순간 새 가치가 생산되어 제조업체 마진을 대체하는지다.",
+                      "수수료가 높으면 소비자가 더 많은 가치를 창조해 플랫폼 이윤을 보전하는지다.",
+                      "제조업체 마진 감소가 곧 노동자의 임금 상승으로 이어지는지다."
                     ],
                     "en": [
-                      "Treats commercial capital as unrelated to formation of the average profit rate.",
-                      "Explains the social source only by the surface of buying at a discount and selling normally.",
-                      "One should examine whether the platform controls realization and captures part of surplus-value produced in industry as commercial profit.",
-                      "Assumes commercial profit always arises only by cheating consumers."
+                      "How the platform controls realization of commodities and takes part of surplus-value produced by industrial capital in the form of commercial profit.",
+                      "Whether new value is produced when the platform algorithm recommends a commodity and replaces the manufacturer’s margin.",
+                      "Whether higher fees make consumers create more value and preserve platform profit.",
+                      "Whether the manufacturer’s lower margin directly becomes higher workers’ wages."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "플랫폼이 가치 실현 기능을 장악하면서 산업부문에서 생산된 잉여가치 일부를 상업이윤 형태로 가져가는지 봐야 한다. 현대 사례도 이 범주를 통하면 비용, 회전, 수익형태 뒤의 잉여가치 관계가 보인다.",
-                    "en": "One should examine whether the platform controls realization and captures part of surplus-value produced in industry as commercial profit. The same categories make visible the surplus-value relation behind costs, turnover, and revenue forms in modern cases."
+                    "ko": "플랫폼 수수료는 현대적 상업이윤의 한 형태로 읽을 수 있다. 핵심은 플랫폼의 기술이 아니라 가치 실현 기능의 독립과 잉여가치 배분이다.",
+                    "en": "Platform fees can be read as a modern form of commercial profit. The key is not platform technology itself but the independence of realization and distribution of surplus-value."
                   }
                 },
                 {
@@ -25197,27 +25197,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상업이윤의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of commercial profit?"
+                    "ko": "17장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 17?"
                   },
                   "choices": {
                     "ko": [
-                      "상업자본은 평균이윤율 형성과 무관하다고 본다.",
-                      "상업이윤은 대체로 소비자를 속여서만 생긴다고 본다.",
-                      "상업노동이 순수 판매 기능만으로 새 가치를 만든다고 본다.",
-                      "평균이윤이 생산자본만이 아니라 유통 기능으로 독립한 자본에도 배분되는 방식을 설명한다."
+                      "평균이윤이 산업자본을 넘어 유통 기능으로 독립한 자본에도 배분되는 방식을 설명한다.",
+                      "상업자본이 산업자본보다 앞선 생산자본임을 보여 주어 가치생산의 장소를 유통으로 옮긴다.",
+                      "상업이윤을 가격 기만으로 환원해 평균이윤율 분석의 총량 관계를 닫는다.",
+                      "이자 낳는 자본을 먼저 도입해 상업자본의 이윤을 대부이자로 설명한다."
                     ],
                     "en": [
-                      "Treats commercial capital as unrelated to formation of the average profit rate.",
-                      "Assumes commercial profit always arises only by cheating consumers.",
-                      "Assumes commercial labour creates new value through pure selling alone.",
-                      "It explains how average profit is distributed not only to productive capital but also to capital that has become independent in the circulation function."
+                      "It explains how average profit is distributed beyond industrial capital to capital that has become independent in circulation functions.",
+                      "It shows that commercial capital is productive capital prior to industrial capital and moves value production into circulation.",
+                      "It reduces commercial profit to price deception and closes the aggregate relation in average profit.",
+                      "It introduces interest-bearing capital first and explains commercial profit as loan interest."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "평균이윤이 생산자본만이 아니라 유통 기능으로 독립한 자본에도 배분되는 방식을 설명한다. 이 장의 체계적 위치를 잡으면 3권의 표면형태 분석이 왜 단계적으로 전개되는지 이해할 수 있다.",
-                    "en": "It explains how average profit is distributed not only to productive capital but also to capital that has become independent in the circulation function. Locating the chapter systematically shows why Volume III unfolds surface forms step by step."
+                    "ko": "17장은 생산 밖에서 보이는 이윤도 생산된 잉여가치의 분배형태일 수 있음을 보여 준다. 이 전도가 18~21장의 유통ㆍ화폐 자본형태 분석을 연다.",
+                    "en": "Chapter 17 shows that profit appearing outside production can be a distributional form of surplus-value produced in production. This inversion opens the analyses of circulation and money forms in Chapters 18-21."
                   }
                 }
               ]
@@ -25290,27 +25290,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상인자본이 빨리 회전하면, 산업자본 전체의 이윤 분배에는 어떤 영향이 생기는가?",
-                    "en": "What does Marx analyze in the turnover of merchant capital?"
+                    "ko": "18장에서 상인자본의 회전은 산업자본의 회전과 어떻게 다른가?",
+                    "en": "How does the turnover of merchant capital differ from industrial capital in Chapter 18?"
                   },
                   "choices": {
                     "ko": [
-                      "상인자본이 상품을 사서 파는 회전속도가 상업이윤율과 산업자본의 가치실현에 미치는 효과다.",
-                      "상인자본이 빠르게 회전할수록 새 가치가 직접 생산된다고 본다.",
-                      "재고회전과 생산과정을 같은 것으로 본다.",
-                      "상업이윤율을 회전수와 무관한 단순 마진으로 본다."
+                      "상인자본의 회전은 구매와 판매의 반복인 M-C-M'이고, 산업자본의 회전은 생산시간과 유통시간을 함께 포함한다.",
+                      "상인자본의 회전은 생산시간을 포함하고 산업자본의 회전은 소비자의 구매시간만 포함한다.",
+                      "상인자본은 상품을 생산하므로 회전이 느릴수록 새 가치가 더 많이 만들어진다.",
+                      "산업자본과 상인자본은 같은 상품을 같은 장소에서 같은 주기로 회전시킨다."
                     ],
                     "en": [
-                      "He analyzes how the speed with which merchant capital buys and sells commodities affects commercial profit and the realization of industrial capital.",
-                      "Assumes faster merchant turnover directly produces new value.",
-                      "Identifies inventory turnover with the production process.",
-                      "Treats the commercial profit rate as a simple margin unrelated to turnover number."
+                      "Merchant turnover is the repeated movement M-C-M', buying and selling, while industrial turnover includes both production time and circulation time.",
+                      "Merchant turnover includes production time, while industrial turnover includes only consumers’ buying time.",
+                      "Merchant capital produces commodities, so slower turnover creates more new value.",
+                      "Industrial and merchant capital turn over the same commodity in the same place and cycle."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상인자본이 상품을 사서 파는 회전속도가 상업이윤율과 산업자본의 가치실현에 미치는 효과다. 이 지점은 해당 장이 다루는 자본형태의 기능을 잡기 위한 출발점이다.",
-                    "en": "He analyzes how the speed with which merchant capital buys and sells commodities affects commercial profit and the realization of industrial capital. This establishes the function of the capital form treated in the chapter."
+                    "ko": "18장은 회전의 형식 차이를 분명히 한다. 상인자본은 같은 상품을 사서 팔아 돈자본을 회수하지만, 산업자본은 생산과 재생산 전체를 거친다.",
+                    "en": "Chapter 18 clarifies the formal difference of turnover. Merchant capital buys and sells the same commodity to recover money-capital, while industrial capital passes through production and reproduction as a whole."
                   }
                 },
                 {
@@ -25318,41 +25318,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상인자본의 회전이 빨라지면 왜 같은 상업자본으로 더 많은 상품을 처리할 수 있는가?",
-                    "en": "Why can faster turnover of merchant capital handle more commodities with the same commercial capital?"
+                    "ko": "상인자본이 한 해에 더 자주 회전하면 상품가격의 상업이윤 가산분은 어떻게 달라지는가?",
+                    "en": "How does faster annual turnover of merchant capital affect the commercial-profit addition to commodity prices?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 화폐자본이 더 자주 상품매입과 판매를 반복하므로, 한 해 동안 중개하는 상품가치량이 커지기 때문이다.",
-                      "상업이윤율을 회전수와 무관한 단순 마진으로 본다.",
-                      "재고회전과 생산과정을 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석"
+                      "같은 연간 이윤을 더 많은 회전에 나누어 실현하므로, 한 번의 판매에 붙는 가산분은 회전수가 빠를수록 작아진다.",
+                      "회전이 빠를수록 상인이 새 가치를 더 많이 생산하므로 매 판매의 가산분도 같은 비율로 커진다.",
+                      "회전수는 가격과 관계가 없고 상업이윤 가산분은 상품의 무게로 정해진다.",
+                      "회전이 빠르면 산업자본의 생산시간이 늘어나 상품가격이 자동적으로 높아진다."
                     ],
                     "en": [
-                      "Because the same money-capital repeats purchase and sale more often, increasing the commodity value mediated during a year.",
-                      "Treats the commercial profit rate as a simple margin unrelated to turnover number.",
-                      "Identifies inventory turnover with the production process.",
-                      "Assumes no advance of merchant capital is needed."
+                      "The same annual profit is realized over more turnovers, so the addition per sale becomes smaller as turnover is faster.",
+                      "Faster turnover makes merchants produce more new value, so the addition per sale grows by the same ratio.",
+                      "Turnover has no relation to price; the commercial addition is set by commodity weight.",
+                      "Faster turnover lengthens industrial production time and automatically raises commodity prices."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "같은 화폐자본이 더 자주 상품매입과 판매를 반복하므로, 한 해 동안 중개하는 상품가치량이 커지기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "Because the same money-capital repeats purchase and sale more often, increasing the commodity value mediated during a year. So surface revenue or fees should not be treated immediately as an independent source of value."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 같은 화폐자본이 더 자주 상품매입과 판매를 반복하므로, 한 해 동안 중개하는 상품가치량이 커지기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
-                      "오해 진단: \"상업이윤율을 회전수와 무관한 단순 마진으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"재고회전과 생산과정을 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: Because the same money-capital repeats purchase and sale more often, increasing the commodity value mediated during a year. So surface revenue or fees should not be treated immediately as an independent source of value.",
-                      "Misconception check: choosing \"Treats the commercial profit rate as a simple margin unrelated to turnover number.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Identifies inventory turnover with the production process.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes no advance of merchant capital is needed.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "마르크스의 요점은 연간 평균이윤과 회전수의 관계다. 같은 15% 연간 이윤도 한 번 회전하면 크게, 다섯 번 회전하면 작게 나뉘어 가격에 들어간다.",
+                    "en": "Marx’s point is the relation between annual average profit and number of turnovers. The same 15% annual profit enters prices as a larger addition with one turnover and a smaller one with five."
                   }
                 },
                 {
@@ -25360,41 +25346,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상인자본의 회전과 상품의 실제 생산을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must the turnover of merchant capital be distinguished from actual production of commodities?"
+                    "ko": "상인자본의 회전이 빠르면 위기가 사라진다고 볼 수 없는 이유는 무엇인가?",
+                    "en": "Why does faster turnover of merchant capital not remove crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "상업이윤율을 회전수와 무관한 단순 마진으로 본다.",
-                      "상인자본의 회전은 가치 실현을 빠르게 할 수 있지만, 그 자체가 상품의 새 가치를 생산하는 것은 아니기 때문이다.",
-                      "상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석",
-                      "상품 판매 속도와 가치 실현을 완전히 분리한다."
+                      "상인자본은 재생산 과정에 의존하면서도 신용과 기대수요로 그 경계를 밀어붙여, 내부 연결이 위기에서 폭력적으로 회복될 수 있기 때문이다.",
+                      "회전이 빠르면 상품이 소비되지 않아도 가치가 계속 생산되기 때문이다.",
+                      "상인자본의 회전은 은행과 무관하므로 지급기한이나 어음 만기와 충돌할 일이 작기 때문이다.",
+                      "위기는 소매업에서 먼저 발생하고 도매와 은행은 나중에 반응하기 때문이다."
                     ],
                     "en": [
-                      "Treats the commercial profit rate as a simple margin unrelated to turnover number.",
-                      "Merchant turnover can accelerate realization of value, but it does not itself produce the commodity’s new value.",
-                      "Assumes no advance of merchant capital is needed.",
-                      "Completely separates selling speed from realization of value."
+                      "Merchant capital depends on reproduction yet can push beyond its bounds through credit and expected demand, so the internal connection may be violently restored in crisis.",
+                      "Fast turnover keeps producing value even when commodities are not consumed.",
+                      "Merchant turnover is unrelated to banks, so it rarely collides with payment dates or bills.",
+                      "Crises first arise in retail, while wholesale and banking react later."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상인자본의 회전은 가치 실현을 빠르게 할 수 있지만, 그 자체가 상품의 새 가치를 생산하는 것은 아니기 때문이다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
-                    "en": "Merchant turnover can accelerate realization of value, but it does not itself produce the commodity’s new value. This distinction clarifies the route by which produced surplus-value is distributed."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"상업이윤율을 회전수와 무관한 단순 마진으로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 상인자본의 회전은 가치 실현을 빠르게 할 수 있지만, 그 자체가 상품의 새 가치를 생산하는 것은 아니기 때문이다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
-                      "오해 진단: \"상인자본의 선대액이 필요 없다고 본다.로만 설명하는 해석\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"상품 판매 속도와 가치 실현을 완전히 분리한다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Treats the commercial profit rate as a simple margin unrelated to turnover number.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: Merchant turnover can accelerate realization of value, but it does not itself produce the commodity’s new value. This distinction clarifies the route by which produced surplus-value is distributed.",
-                      "Misconception check: choosing \"Assumes no advance of merchant capital is needed.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Completely separates selling speed from realization of value.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "18장은 회전의 속도만 보지 않는다. 상업과 신용이 재생산의 한계를 넘어 움직이면, 판매 지연과 지급 압박이 위기를 표면화할 수 있다.",
+                    "en": "Chapter 18 does not look only at speed. When commerce and credit move beyond reproduction’s limits, delayed sales and payment pressure can bring crisis to the surface."
                   }
                 },
                 {
@@ -25402,27 +25374,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "도매상이 재고를 한 달에 네 번 회전시키며 제조업체보다 빠르게 판매한다. 무엇이 달라지는가?",
-                    "en": "A wholesaler turns inventory over four times a month and sells faster than manufacturers could. What changes?"
+                    "ko": "도매상이 재고를 빠르게 돌려 같은 선대액으로 더 많은 상품을 처리할 때 무엇이 달라지는가?",
+                    "en": "What changes when a wholesaler rapidly turns inventory and handles more commodities with the same advance?"
                   },
                   "choices": {
                     "ko": [
-                      "상인자본의 선대액이 필요 없다고 본다.",
-                      "상품 판매 속도와 가치 실현을 완전히 분리한다.",
-                      "상업자본의 같은 선대액이 더 큰 상품량의 실현을 담당해 상업이윤율과 산업자본 회전에 영향을 준다.",
-                      "상인자본이 빠르게 회전할수록 새 가치가 직접 생산된다고 본다."
+                      "같은 상인자본이 더 큰 상품가치량의 실현을 매개하고, 한 상품에 배분되는 상업이윤 가산분은 작아질 수 있다.",
+                      "도매상의 창고 노동이 생산노동으로 바뀌어 상품마다 새 잉여가치가 붙는다.",
+                      "제조업체의 생산시간이 사라져 산업자본의 회전과 상인자본의 회전이 같은 말이 된다.",
+                      "빠른 재고회전은 소비자의 필요를 늘려 상품가치의 원천을 수요로 옮긴다."
                     ],
                     "en": [
-                      "Assumes no advance of merchant capital is needed.",
-                      "Completely separates selling speed from realization of value.",
-                      "The same advanced commercial capital realizes a larger mass of commodities, affecting commercial profit and industrial turnover.",
-                      "Assumes faster merchant turnover directly produces new value."
+                      "The same merchant capital mediates realization of a larger commodity value, and the commercial-profit addition per commodity can shrink.",
+                      "Warehouse labour becomes productive labour and adds new surplus-value to each commodity.",
+                      "The manufacturer’s production time disappears, making industrial and merchant turnover identical.",
+                      "Fast inventory turnover increases consumer need and moves the source of commodity value to demand."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업자본의 같은 선대액이 더 큰 상품량의 실현을 담당해 상업이윤율과 산업자본 회전에 영향을 준다. 현대 사례도 기능을 기준으로 보면 자본형태의 분화를 더 정확히 볼 수 있다.",
-                    "en": "The same advanced commercial capital realizes a larger mass of commodities, affecting commercial profit and industrial turnover. Modern cases can also be read more precisely by focusing on function."
+                    "ko": "회전이 빠를수록 같은 상업자본이 더 많은 상품을 처리한다. 이것은 유통의 효율을 높이지만 새 가치 생산과는 구별된다.",
+                    "en": "Faster turnover lets the same commercial capital handle more commodities. It raises circulation efficiency but remains distinct from producing new value."
                   }
                 },
                 {
@@ -25430,27 +25402,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상인자본 회전 분석이 상업이윤론에 보태는 것은 무엇인가?",
-                    "en": "What does the analysis of merchant turnover add to commercial profit?"
+                    "ko": "18장은 19장의 화폐거래자본으로 어떻게 이어지는가?",
+                    "en": "How does Chapter 18 lead into Chapter 19’s money-dealing capital?"
                   },
                   "choices": {
                     "ko": [
-                      "재고회전과 생산과정을 같은 것으로 본다.",
-                      "상품 판매 속도와 가치 실현을 완전히 분리한다.",
-                      "상인자본이 빠르게 회전할수록 새 가치가 직접 생산된다고 본다.",
-                      "상업이윤도 단순 가격차가 아니라 상업자본의 선대액과 회전속도에 의해 구체적으로 규정됨을 보여준다."
+                      "상업자본의 회전과 가격을 본 뒤, 유통 안의 화폐 지급ㆍ수취ㆍ결제 기능이 독립하는 과정을 분석하게 된다.",
+                      "상인자본이 새 가치를 만든다는 결론 뒤에, 화폐가 생산과정으로 들어가 기계를 대체하는 과정을 분석한다.",
+                      "상품 회전이 생산시간을 정한다는 결론 뒤에, 은행이 노동시간을 계산하는 방식을 분석한다.",
+                      "소매가격이 수요로 정해진다는 결론 뒤에, 화폐가 소비자 효용의 척도가 되는 과정을 분석한다."
                     ],
                     "en": [
-                      "Identifies inventory turnover with the production process.",
-                      "Completely separates selling speed from realization of value.",
-                      "Assumes faster merchant turnover directly produces new value.",
-                      "It shows that commercial profit is concretely determined not by price difference alone but by the advance and turnover speed of commercial capital."
+                      "After examining merchant turnover and prices, the analysis turns to how money payment, receipt, and settlement functions within circulation become independent.",
+                      "After concluding that merchant capital creates new value, it analyzes money entering production and replacing machinery.",
+                      "After concluding that commodity turnover determines production time, it analyzes how banks calculate labour-time.",
+                      "After concluding retail price is set by demand, it analyzes money as the measure of consumer utility."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업이윤도 단순 가격차가 아니라 상업자본의 선대액과 회전속도에 의해 구체적으로 규정됨을 보여준다. 이 장은 이윤이 더 구체적인 수입형태로 나뉘어 보이는 과정을 한 단계 전진시킨다.",
-                    "en": "It shows that commercial profit is concretely determined not by price difference alone but by the advance and turnover speed of commercial capital. The chapter advances the analysis of profit appearing as more concrete revenue forms."
+                    "ko": "18장은 상품을 사고파는 상업자본의 회전을 다룬다. 19장은 그 유통 과정에서 필요한 화폐 처리 기능이 별도 자본으로 분리되는 문제로 이동한다.",
+                    "en": "Chapter 18 treats the turnover of commercial capital that buys and sells commodities. Chapter 19 moves to the separation of money-handling functions required in circulation."
                   }
                 }
               ]
@@ -25468,27 +25440,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상인자본 회전의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the turnover of merchant capital?"
+                    "ko": "18장에서 “작은 이윤, 빠른 회전”이라는 상인의 원칙은 무엇을 가리키는가?",
+                    "en": "What does the merchant’s principle “small profits and quick returns” refer to in Chapter 18?"
                   },
                   "choices": {
                     "ko": [
-                      "상인자본은 가치를 생산하지 않지만, 그 회전속도는 생산된 가치가 화폐로 실현되는 리듬을 강하게 좌우한다.",
-                      "재고회전과 생산과정을 같은 것으로 본다.",
-                      "상인자본이 빠르게 회전할수록 새 가치가 직접 생산된다고 본다.",
-                      "상업이윤율을 회전수와 무관한 단순 마진으로 본다."
+                      "연간 평균이윤은 정해져 있으므로 회전이 빠른 부문에서는 각 판매에 붙는 이윤 몫이 작아지는 현상이다.",
+                      "상인이 낮은 이윤을 윤리적으로 선호해 평균이윤율보다 낮은 수익을 받아들이는 태도다.",
+                      "회전이 빠른 상품은 가치가 작으므로 생산과정의 노동시간이 사라진다는 뜻이다.",
+                      "빠른 회전이 소비자의 구매력을 높여 상인이 새 잉여가치를 직접 만든다는 원칙이다."
                     ],
                     "en": [
-                      "Merchant capital does not produce value, yet its turnover speed strongly shapes the rhythm in which produced value is realized as money.",
-                      "Identifies inventory turnover with the production process.",
-                      "Assumes faster merchant turnover directly produces new value.",
-                      "Treats the commercial profit rate as a simple margin unrelated to turnover number."
+                      "Since annual average profit is given, faster-turnover branches add a smaller profit share to each sale.",
+                      "It is the merchant’s ethical preference for low profit and acceptance of returns below average profit.",
+                      "Fast-turnover commodities have small value, so labour-time in production disappears.",
+                      "Fast turnover raises consumers’ purchasing power and lets merchants directly create new surplus-value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상인자본은 가치를 생산하지 않지만, 그 회전속도는 생산된 가치가 화폐로 실현되는 리듬을 강하게 좌우한다. 이 긴장은 자본이 생산 밖의 기능에서도 독립적 수익형태를 만들어 내는 방식을 보여준다.",
-                    "en": "Merchant capital does not produce value, yet its turnover speed strongly shapes the rhythm in which produced value is realized as money. This tension shows how capital forms independent revenue forms even in functions outside production."
+                    "ko": "상인의 표어는 도덕 원칙이 아니라 회전수와 가격 가산분의 관계를 표현한다. 빠른 회전은 같은 연간 이윤을 더 많은 거래에 나누어 담는다.",
+                    "en": "The phrase is not a moral rule but an expression of the relation between turnover number and price addition. Fast turnover spreads the same annual profit across more transactions."
                   }
                 },
                 {
@@ -25496,27 +25468,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상인자본의 선대액과 상업이윤율을 매개하는 것은 무엇인가?",
-                    "en": "What mediates the advance of merchant capital and the rate of commercial profit?"
+                    "ko": "상인자본의 회전이 가격을 임의적으로 보이게 만드는 이유는 무엇인가?",
+                    "en": "Why does merchant turnover make prices appear arbitrary?"
                   },
                   "choices": {
                     "ko": [
-                      "재고회전과 생산과정을 같은 것으로 본다.",
-                      "상품매입과 판매가 한 해 동안 반복되는 횟수, 즉 상인자본의 회전수다.",
-                      "상업이윤율을 회전수와 무관한 단순 마진으로 본다.",
-                      "상인자본의 선대액이 필요 없다고 본다."
+                      "생산과정의 가치 규정은 가려지고, 상인이 연간 목표이윤을 회전수에 맞춰 가격에 배분하는 표면만 보이기 때문이다.",
+                      "상인자본은 가격을 가치와 별도로 창조하므로 실제로 가격에 법칙이 없기 때문이다.",
+                      "상인은 상품을 산 뒤 생산시간을 다시 계산해 노동시간을 마음대로 줄일 수 있기 때문이다.",
+                      "상인자본의 회전은 각 상품의 사용가치를 새로 만들기 때문이다."
                     ],
                     "en": [
-                      "Identifies inventory turnover with the production process.",
-                      "The mediation is the number of repetitions of commodity purchase and sale during the year, the turnover number of merchant capital.",
-                      "Treats the commercial profit rate as a simple margin unrelated to turnover number.",
-                      "Assumes no advance of merchant capital is needed."
+                      "The value determination in production is hidden, while the surface shows merchants distributing annual target profit into prices according to turnover.",
+                      "Commercial capital creates prices separately from value, so prices actually have no law.",
+                      "After purchase, merchants recalculate production time and can reduce labour-time at will.",
+                      "The turnover of merchant capital newly creates the use-value of each commodity."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상품매입과 판매가 한 해 동안 반복되는 횟수, 즉 상인자본의 회전수다. 매개를 보아야 유통·화폐·신용의 기능이 생산된 잉여가치와 어떻게 연결되는지 파악할 수 있다.",
-                    "en": "The mediation is the number of repetitions of commodity purchase and sale during the year, the turnover number of merchant capital. Seeing the mediation shows how circulation, money, and credit functions connect to produced surplus-value."
+                    "ko": "18장은 유통 표면의 착시를 설명한다. 회전수는 상업가격의 가산분을 바꾸지만, 그 배후의 한계는 가치와 잉여가치 생산에 있다.",
+                    "en": "Chapter 18 explains the surface illusion of circulation. Turnover changes the addition in mercantile prices, but its limits lie in value and surplus-value production."
                   }
                 },
                 {
@@ -25524,27 +25496,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "재고회전이 빠르면 상업이윤이 새로 생산된다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying fast inventory turnover newly produces commercial profit?"
+                    "ko": "상인자본의 독립성과 산업자본에 대한 의존성이 동시에 위기를 낳는 방식은 무엇인가?",
+                    "en": "How do merchant capital’s independence and dependence on industrial capital together produce crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "상업이윤율을 회전수와 무관한 단순 마진으로 본다.",
-                      "상인자본의 선대액이 필요 없다고 본다.",
-                      "빠른 회전은 잉여가치 생산이 아니라 이미 생산된 잉여가치의 실현과 분배 속도를 바꾼다는 점을 놓친다.",
-                      "상품 판매 속도와 가치 실현을 완전히 분리한다."
+                      "상업은 신용과 투기로 재생산의 실제 한계를 넘어갈 수 있지만, 판매대금 회수와 지급기한이 닥치면 그 한계가 위기처럼 되돌아온다.",
+                      "상업은 산업자본과 독립되어 있어 생산이 멈춰도 판매와 이윤 실현이 같은 속도로 계속된다.",
+                      "상업의 독립성은 모든 상품을 소비재로 바꾸어 생산재 부문의 위기를 줄인다.",
+                      "산업자본에 대한 의존성은 상인의 가격 계산을 단순하게 만들어 신용 위험을 낮춘다."
                     ],
                     "en": [
-                      "Treats the commercial profit rate as a simple margin unrelated to turnover number.",
-                      "Assumes no advance of merchant capital is needed.",
-                      "It misses that faster turnover changes the speed of realization and distribution of already produced surplus-value, not the production of surplus-value itself.",
-                      "Completely separates selling speed from realization of value."
+                      "Commerce can move beyond actual reproductive limits through credit and speculation, but when returns and payment dates arrive those limits return as crisis.",
+                      "Commerce is independent of industrial capital, so sales and profit realization continue at the same speed even if production stops.",
+                      "Commercial independence turns all commodities into consumer goods and reduces crisis in producer goods.",
+                      "Dependence on industrial capital simplifies merchant price calculation and lowers credit risk."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "빠른 회전은 잉여가치 생산이 아니라 이미 생산된 잉여가치의 실현과 분배 속도를 바꾼다는 점을 놓친다. 마르크스의 비판은 기능의 필요성을 부정하지 않고, 그 기능이 자연적 수익원처럼 보이는 전도를 비판한다.",
-                    "en": "It misses that faster turnover changes the speed of realization and distribution of already produced surplus-value, not the production of surplus-value itself. Marx does not deny the necessity of the function; he criticizes the inversion by which it appears as a natural source of revenue."
+                    "ko": "상인자본은 독립적으로 움직이는 것처럼 보이지만 산업자본의 재생산에 묶여 있다. 이 간극이 신용 팽창과 위기 표면화를 설명한다.",
+                    "en": "Merchant capital appears to move independently but remains tied to industrial reproduction. This gap explains credit expansion and the surface outbreak of crisis."
                   }
                 },
                 {
@@ -25552,27 +25524,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "풀필먼트 플랫폼이 재고회전을 극단적으로 빠르게 만들어 높은 수수료 수익을 얻는다. 무엇을 분석해야 하는가?",
-                    "en": "A fulfilment platform greatly accelerates inventory turnover and earns high fees. What should be analyzed?"
+                    "ko": "풀필먼트 플랫폼의 빠른 재고회전을 18장으로 분석할 때 핵심은 무엇인가?",
+                    "en": "What is central when analyzing fast inventory turnover on fulfillment platforms through Chapter 18?"
                   },
                   "choices": {
                     "ko": [
-                      "상품 판매 속도와 가치 실현을 완전히 분리한다.",
-                      "상인자본의 선대액이 필요 없다고 본다.",
-                      "그 플랫폼의 회전속도가 상품가치 실현, 상업자본 선대액, 상업이윤 배분에 어떤 영향을 주는지 봐야 한다.",
-                      "상인자본이 빠르게 회전할수록 새 가치가 직접 생산된다고 본다."
+                      "플랫폼의 회전속도가 같은 선대액으로 처리하는 상품가치량과 수수료ㆍ상업이윤의 배분 방식을 어떻게 바꾸는지다.",
+                      "빠른 배송이 상품가치의 원천을 노동시간에서 소비자 편의로 바꾸는지다.",
+                      "창고 자동화가 플랫폼을 생산자본으로 바꾸어 제조업체의 잉여가치를 대체하는지다.",
+                      "재고가 줄수록 상품이 시장가치 대신 개별 포장비로 가격을 정하는지다."
                     ],
                     "en": [
-                      "Completely separates selling speed from realization of value.",
-                      "Assumes no advance of merchant capital is needed.",
-                      "One should examine how the platform’s turnover speed affects realization of commodity value, advanced commercial capital, and distribution of commercial profit.",
-                      "Assumes faster merchant turnover directly produces new value."
+                      "How the platform’s turnover speed changes the commodity value handled by the same advance and the distribution of fees and commercial profit.",
+                      "Whether fast delivery changes the source of commodity value from labour-time to consumer convenience.",
+                      "Whether warehouse automation turns the platform into productive capital replacing manufacturers’ surplus-value.",
+                      "Whether lower inventory makes prices determined by individual packaging cost instead of market-value."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 플랫폼의 회전속도가 상품가치 실현, 상업자본 선대액, 상업이윤 배분에 어떤 영향을 주는지 봐야 한다. 구체 사례에서는 수익이 어느 생산관계와 분배관계를 전제로 하는지 확인해야 한다.",
-                    "en": "One should examine how the platform’s turnover speed affects realization of commodity value, advanced commercial capital, and distribution of commercial profit. In concrete cases, one must identify the production and distribution relations presupposed by the revenue."
+                    "ko": "현대 플랫폼 사례에서도 핵심은 빠른 회전이 새 가치를 만든다는 말이 아니다. 같은 자본이 더 많은 실현 과정을 통과시키는 효과다.",
+                    "en": "Even in modern platform cases, the point is not that fast turnover creates new value. It is that the same capital pushes more realization processes through."
                   }
                 },
                 {
@@ -25580,27 +25552,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상인자본 회전의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of merchant-capital turnover?"
+                    "ko": "18장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 18?"
                   },
                   "choices": {
                     "ko": [
-                      "상품 판매 속도와 가치 실현을 완전히 분리한다.",
-                      "상인자본이 빠르게 회전할수록 새 가치가 직접 생산된다고 본다.",
-                      "재고회전과 생산과정을 같은 것으로 본다.",
-                      "상업자본도 회전과 선대액의 법칙을 갖는다는 점을 보여주어, 유통 기능의 독립적 자본형태를 더 구체화한다."
+                      "상업이윤이 회전수에 따라 상품가격에 어떻게 배분되는지를 보여 주어, 유통 표면의 가격 착시를 구체화한다.",
+                      "상업자본의 회전이 산업자본의 생산시간을 결정한다는 법칙을 세운다.",
+                      "상품가격이 생산과 무관하게 상인의 목표수익률에서 생긴다는 결론을 확정한다.",
+                      "상업자본의 회전이 이자율의 자연적 한계를 정한다는 분석을 시작한다."
                     ],
                     "en": [
-                      "Completely separates selling speed from realization of value.",
-                      "Assumes faster merchant turnover directly produces new value.",
-                      "Identifies inventory turnover with the production process.",
-                      "It shows that commercial capital too has laws of turnover and advance, making the independent capital form of circulation more concrete."
+                      "It shows how commercial profit is distributed into commodity prices according to turnover number, concretizing price illusions at the surface of circulation.",
+                      "It establishes the law that merchant turnover determines industrial production time.",
+                      "It confirms that commodity prices arise from merchant target returns independently of production.",
+                      "It begins the analysis that merchant turnover sets the natural limit of interest rates."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업자본도 회전과 선대액의 법칙을 갖는다는 점을 보여주어, 유통 기능의 독립적 자본형태를 더 구체화한다. 이 체계적 연결이 이후 신용, 가공자본, 지대 분석으로 이어지는 통로다.",
-                    "en": "It shows that commercial capital too has laws of turnover and advance, making the independent capital form of circulation more concrete. This systematic link opens the path to the later analysis of credit, fictitious capital, and rent."
+                    "ko": "18장은 상업자본을 단순 중개자가 아니라 선대액과 회전의 법칙을 갖는 자본으로 구체화한다. 동시에 그 법칙이 생산의 가치 규정을 가릴 수 있음을 보여 준다.",
+                    "en": "Chapter 18 concretizes commercial capital as capital governed by advances and turnover, not a mere intermediary. It also shows how that law can obscure value determination in production."
                   }
                 }
               ]
@@ -25673,31 +25645,59 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "지급, 환전, 장부 정리 같은 화폐 업무가 독립하면 왜 화폐거래자본이라는 별도 기능처럼 보이는가?",
-                    "en": "What does Marx analyze in money-dealing capital?"
+                    "ko": "19장에서 화폐거래자본은 어떤 기능이 독립한 형태인가?",
+                    "en": "What function becomes independent as money-dealing capital in Chapter 19?"
                   },
                   "choices": {
                     "ko": [
-                      "지불, 수취, 보관, 환전, 결제 같은 화폐 처리 기능이 독립된 자본 기능으로 분화되는 방식이다.",
-                      "화폐거래자본과 이자 낳는 자본을 같은 것으로 본다.",
-                      "결제 수수료가 곧 새 가치 생산의 증거라고 본다.",
-                      "화폐 처리 기능을 자본 순환과 무관한 기술업무로만 본다."
+                      "지불, 수취, 결제, 장부 정리, 준비금 관리 같은 화폐 유통의 기술적 기능이 별도 자본의 업무로 분리된 형태다.",
+                      "화폐가 생산과정에 들어가 기계와 원료를 직접 대체하는 생산 기능이 독립한 형태다.",
+                      "상인이 상품을 사서 파는 활동이 은행 대출로 바뀌어 상품유통을 없애는 형태다.",
+                      "소비자가 현금을 보유하는 습관이 시장가격을 정하는 제도적 기능으로 독립한 형태다."
                     ],
                     "en": [
-                      "He analyzes how money-handling functions such as payment, receipt, safekeeping, exchange, and settlement separate into an independent capital function.",
-                      "Identifies money-dealing capital with interest-bearing capital.",
-                      "Treats payment fees as proof of new value production.",
-                      "Treats money-handling as a technical task unrelated to capital circuits."
+                      "It is the separation of technical functions of money circulation: paying, receiving, settling, bookkeeping, and managing reserves.",
+                      "It is the productive function by which money enters production and directly replaces machinery and raw materials.",
+                      "It is the transformation of merchants’ buying and selling into bank lending that abolishes commodity circulation.",
+                      "It is the independence of consumers’ cash-holding habits as an institutional function determining market prices."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "지불, 수취, 보관, 환전, 결제 같은 화폐 처리 기능이 독립된 자본 기능으로 분화되는 방식이다. 이 지점은 해당 장이 다루는 자본형태의 기능을 잡기 위한 출발점이다.",
-                    "en": "He analyzes how money-handling functions such as payment, receipt, safekeeping, exchange, and settlement separate into an independent capital function. This establishes the function of the capital form treated in the chapter."
+                    "ko": "화폐거래자본은 화폐의 기술적 처리 기능이 집중된 형태다. 이것은 생산이나 상품판매의 새 가치 창조가 아니라 유통비용을 줄이는 전문 기능이다.",
+                    "en": "Money-dealing capital concentrates the technical handling of money. It is a specialized function that reduces circulation costs, not a new source of value in production or sale."
                   }
                 },
                 {
                   "id": "q2",
+                  "type": "multiple_choice",
+                  "points": 2,
+                  "prompt": {
+                    "ko": "화폐거래자본이 상업자본과 구별되는 점은 무엇인가?",
+                    "en": "How is money-dealing capital distinguished from commercial capital?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "상업자본은 상품의 구매와 판매를 맡지만, 화폐거래자본은 그 과정에서 생기는 지급ㆍ결제ㆍ환전 같은 화폐 기능을 맡는다.",
+                      "상업자본은 유통에 있고 화폐거래자본은 생산현장에 있어 노동과정의 일부를 담당한다.",
+                      "상업자본은 평균이윤율에 들어가지만 화폐거래자본은 이자 낳는 자본이라 평균이윤과 접점이 없다.",
+                      "화폐거래자본은 상품을 직접 판매하므로 상업자본보다 더 순수한 상품자본이다."
+                    ],
+                    "en": [
+                      "Commercial capital handles buying and selling commodities, while money-dealing capital handles money functions such as payment, settlement, and exchange arising from that process.",
+                      "Commercial capital is in circulation, while money-dealing capital is in production and handles part of the labour process.",
+                      "Commercial capital enters the average profit rate, while money-dealing capital is interest-bearing capital and has no contact with average profit.",
+                      "Money-dealing capital directly sells commodities and is therefore a purer commodity-capital than commercial capital."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "19장은 상품거래와 화폐거래를 구분한다. 화폐거래자본은 상품의 손바뀜이 아니라 그 손바뀜을 따라가는 화폐 기능을 전문화한다.",
+                    "en": "Chapter 19 distinguishes dealing in commodities from dealing in money. Money-dealing capital specializes not in the movement of commodities, but in money functions that follow that movement."
+                  }
+                },
+                {
+                  "id": "q3",
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
@@ -25706,50 +25706,22 @@
                   },
                   "choices": {
                     "ko": [
-                      "산업자본과 상업자본의 화폐 기능을 전문화해 유통비용과 결제 시간을 줄이고 자본 순환을 매끄럽게 하기 때문이다.",
-                      "화폐 처리 기능을 자본 순환과 무관한 기술업무로만 본다.",
-                      "결제 수수료가 곧 새 가치 생산의 증거라고 본다.",
-                      "화폐거래자본이 산업자본의 화폐 기능에서 분화된다는 점을 놓친다."
+                      "여러 자본의 지급과 수취를 집중해 결제 시간을 줄이고, 각 자본이 따로 보유해야 할 준비금을 줄일 수 있기 때문이다.",
+                      "화폐거래자는 결제 장부를 쓰는 동안 화폐의 가치량을 증가시키기 때문이다.",
+                      "은행 금고의 보관기간이 길어질수록 화폐가 이자를 포함한 새 상품으로 변하기 때문이다.",
+                      "환전 업무가 많아지면 상품의 생산시간이 짧아져 잉여가치율이 바로 높아지기 때문이다."
                     ],
                     "en": [
-                      "It specializes the money functions of industrial and commercial capital, reducing circulation costs and settlement time and smoothing capital circuits.",
-                      "Treats money-handling as a technical task unrelated to capital circuits.",
-                      "Treats payment fees as proof of new value production.",
-                      "Misses that money-dealing capital branches off from the money functions of industrial capital."
+                      "It concentrates payments and receipts for many capitals, shortening settlement time and reducing the reserves each capital would otherwise hold separately.",
+                      "Money-dealers increase the value of money while writing settlement books.",
+                      "The longer money stays in the vault, the more it becomes a new commodity containing interest.",
+                      "More exchange business shortens commodity production time and directly raises the rate of surplus-value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "산업자본과 상업자본의 화폐 기능을 전문화해 유통비용과 결제 시간을 줄이고 자본 순환을 매끄럽게 하기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "It specializes the money functions of industrial and commercial capital, reducing circulation costs and settlement time and smoothing capital circuits. So surface revenue or fees should not be treated immediately as an independent source of value."
-                  }
-                },
-                {
-                  "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 2,
-                  "prompt": {
-                    "ko": "화폐거래자본을 이자 낳는 자본과 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must money-dealing capital be distinguished from interest-bearing capital?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "화폐 처리 기능을 자본 순환과 무관한 기술업무로만 본다.",
-                      "화폐거래자본은 화폐 처리 기능을 수행하는 자본이고, 이자 낳는 자본은 화폐 자체가 대여되어 이자를 낳는 형태다.",
-                      "화폐거래자본이 산업자본의 화폐 기능에서 분화된다는 점을 놓친다.",
-                      "정산이 빨라지면 가치 실현 문제가 사라진다고 본다."
-                    ],
-                    "en": [
-                      "Treats money-handling as a technical task unrelated to capital circuits.",
-                      "Money-dealing capital performs money-handling functions, while interest-bearing capital is the form in which money itself is lent and bears interest.",
-                      "Misses that money-dealing capital branches off from the money functions of industrial capital.",
-                      "Assumes faster settlement abolishes the problem of realization."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "화폐거래자본은 화폐 처리 기능을 수행하는 자본이고, 이자 낳는 자본은 화폐 자체가 대여되어 이자를 낳는 형태다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
-                    "en": "Money-dealing capital performs money-handling functions, while interest-bearing capital is the form in which money itself is lent and bears interest. This distinction clarifies the route by which produced surplus-value is distributed."
+                    "ko": "화폐거래자본은 화폐유통의 기술을 집중하고 단축한다. 그 기능은 가치 창조가 아니라 이미 주어진 거래 결과를 더 싸고 빠르게 처리하는 데 있다.",
+                    "en": "Money-dealing capital concentrates and shortens the techniques of money circulation. Its function is not value creation but cheaper and faster handling of already given transactions."
                   }
                 },
                 {
@@ -25757,27 +25729,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "결제대행사가 수많은 판매자의 대금 수취, 정산, 환전을 처리하고 수수료를 받는다. 마르크스의 범주로 보면 무엇인가?",
-                    "en": "A payment processor handles receipts, settlement, and currency exchange for many sellers and takes fees. What is it in Marx’s categories?"
+                    "ko": "결제대행사가 판매자의 대금 수취, 정산, 환전을 처리하고 수수료를 받을 때 무엇을 분석해야 하는가?",
+                    "en": "What should be analyzed when a payment processor handles receipts, settlement, and currency exchange for sellers and charges fees?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐거래자본이 산업자본의 화폐 기능에서 분화된다는 점을 놓친다.",
-                      "정산이 빨라지면 가치 실현 문제가 사라진다고 본다.",
-                      "여러 자본의 화폐 기능이 전문화되어 독립한 화폐거래자본의 현대적 형태로 볼 수 있다.",
-                      "화폐거래자본과 이자 낳는 자본을 같은 것으로 본다."
+                      "여러 자본의 화폐 기능을 집중해 유통비용과 결제 시간을 줄이고, 그 기능에 대한 수익을 어떤 형태로 받는지다.",
+                      "결제대행사가 판매자 대신 상품을 생산해 플랫폼 수수료만큼 새 가치를 만드는지다.",
+                      "정산 속도가 빨라지면 상품가치가 노동시간 대신 결제 승인 시간으로 측정되는지다.",
+                      "환전 수수료가 생기면 세계시장 가격이 국내 생산가격을 완전히 대체하는지다."
                     ],
                     "en": [
-                      "Misses that money-dealing capital branches off from the money functions of industrial capital.",
-                      "Assumes faster settlement abolishes the problem of realization.",
-                      "It can be seen as a modern form of money-dealing capital, where the money functions of many capitals are specialized and made independent.",
-                      "Identifies money-dealing capital with interest-bearing capital."
+                      "How it concentrates money functions for many capitals, reduces circulation costs and settlement time, and receives income for that function.",
+                      "Whether the payment processor produces commodities on behalf of sellers and creates new value equal to the platform fee.",
+                      "Whether faster settlement makes commodity value measured by approval time instead of labour-time.",
+                      "Whether exchange fees make world-market prices completely replace domestic prices of production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "여러 자본의 화폐 기능이 전문화되어 독립한 화폐거래자본의 현대적 형태로 볼 수 있다. 현대 사례도 기능을 기준으로 보면 자본형태의 분화를 더 정확히 볼 수 있다.",
-                    "en": "It can be seen as a modern form of money-dealing capital, where the money functions of many capitals are specialized and made independent. Modern cases can also be read more precisely by focusing on function."
+                    "ko": "핀테크 사례도 화폐거래자본의 현대적 형태로 읽을 수 있다. 핵심은 결제 기술이 새 가치를 만드는지가 아니라 자본 순환의 화폐 단계를 어떻게 압축하는지다.",
+                    "en": "Fintech cases can be read as modern forms of money-dealing capital. The key is not whether payment technology creates new value, but how it compresses the money phase of capital circulation."
                   }
                 },
                 {
@@ -25785,27 +25757,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "화폐거래자본 분석이 다음 논의로 넘기는 것은 무엇인가?",
-                    "en": "What does the analysis of money-dealing capital hand over to the next discussion?"
+                    "ko": "19장은 21장의 이자 낳는 자본 분석으로 어떻게 이어지는가?",
+                    "en": "How does Chapter 19 lead into Chapter 21’s analysis of interest-bearing capital?"
                   },
                   "choices": {
                     "ko": [
-                      "결제 수수료가 곧 새 가치 생산의 증거라고 본다.",
-                      "정산이 빨라지면 가치 실현 문제가 사라진다고 본다.",
-                      "화폐거래자본과 이자 낳는 자본을 같은 것으로 본다.",
-                      "화폐 기능의 독립이 더 나아가 화폐자본 자체가 이자를 낳는 형태로 보이는 문제로 이어진다."
+                      "화폐 기능의 기술적 독립을 정리한 뒤, 화폐자본 자체가 대여되어 이자를 낳는 것처럼 보이는 더 전도된 형태로 넘어간다.",
+                      "화폐거래자본이 새 가치를 만든다는 결론 뒤에, 그 새 가치가 상업이윤으로 나뉘는 과정을 묻는다.",
+                      "환전 업무가 생산가격을 정한다는 결론 뒤에, 이자율이 상품가치를 측정하는 방식을 묻는다.",
+                      "화폐거래가 상품유통을 없앤다는 결론 뒤에, 자본주의 이전 화폐경제를 분석한다."
                     ],
                     "en": [
-                      "Treats payment fees as proof of new value production.",
-                      "Assumes faster settlement abolishes the problem of realization.",
-                      "Identifies money-dealing capital with interest-bearing capital.",
-                      "The independence of money functions leads further to the problem of money-capital itself appearing to bear interest."
+                      "After clarifying the technical independence of money functions, the analysis moves to the more inverted form where money-capital itself appears to be lent and to bear interest.",
+                      "After concluding that money-dealing capital creates new value, it asks how that value is divided as commercial profit.",
+                      "After concluding that exchange business determines prices of production, it asks how interest rates measure commodity value.",
+                      "After concluding that money-dealing abolishes commodity circulation, it analyzes pre-capitalist money economy."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "화폐 기능의 독립이 더 나아가 화폐자본 자체가 이자를 낳는 형태로 보이는 문제로 이어진다. 이 장은 이윤이 더 구체적인 수입형태로 나뉘어 보이는 과정을 한 단계 전진시킨다.",
-                    "en": "The independence of money functions leads further to the problem of money-capital itself appearing to bear interest. The chapter advances the analysis of profit appearing as more concrete revenue forms."
+                    "ko": "19장은 화폐 처리 기능의 독립을 다룬다. 다음 핵심은 화폐가 단지 처리되는 것을 넘어, 자본이라는 상품으로 대여되어 이자를 낳는 형태다.",
+                    "en": "Chapter 19 treats the independence of money-handling functions. The next key issue is money not merely being handled, but being loaned as the commodity capital and appearing to bear interest."
                   }
                 }
               ]
@@ -25823,27 +25795,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "화폐거래자본의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of money-dealing capital?"
+                    "ko": "화폐거래자본의 이윤이 잉여가치에서 공제된다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that money-dealing profit is a deduction from surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐거래는 자본 순환에 필수적이지만, 그 기능의 독립은 화폐 처리 자체가 수익의 원천처럼 보이게 만든다.",
-                      "결제 수수료가 곧 새 가치 생산의 증거라고 본다.",
-                      "화폐거래자본과 이자 낳는 자본을 같은 것으로 본다.",
-                      "화폐 처리 기능을 자본 순환과 무관한 기술업무로만 본다."
+                      "화폐거래 기능은 이미 실현된 가치와 지급관계를 처리하므로, 그 수익은 생산에서 생긴 잉여가치의 일부에서 나온다는 뜻이다.",
+                      "화폐거래자는 산업자본보다 먼저 잉여가치를 생산한 뒤 그 일부를 산업자본에 돌려준다는 뜻이다.",
+                      "결제 수수료는 소비자가 만든 새 가치라 생산된 잉여가치와 별도의 총량을 이룬다는 뜻이다.",
+                      "화폐거래의 장부기입이 상품의 가치를 낮춰 그 차액이 이윤으로 남는다는 뜻이다."
                     ],
                     "en": [
-                      "Money-dealing is necessary for capital’s circuit, but its independence makes money-handling itself appear as a source of revenue.",
-                      "Treats payment fees as proof of new value production.",
-                      "Identifies money-dealing capital with interest-bearing capital.",
-                      "Treats money-handling as a technical task unrelated to capital circuits."
+                      "Since money-dealing handles already realized value and payment relations, its income comes out of part of surplus-value produced in production.",
+                      "Money-dealers produce surplus-value before industrial capital and return part of it to industrial capital.",
+                      "Payment fees are new value made by consumers and form a separate aggregate from produced surplus-value.",
+                      "Book entries in money-dealing lower commodity value and leave the difference as profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "화폐거래는 자본 순환에 필수적이지만, 그 기능의 독립은 화폐 처리 자체가 수익의 원천처럼 보이게 만든다. 이 긴장은 자본이 생산 밖의 기능에서도 독립적 수익형태를 만들어 내는 방식을 보여준다.",
-                    "en": "Money-dealing is necessary for capital’s circuit, but its independence makes money-handling itself appear as a source of revenue. This tension shows how capital forms independent revenue forms even in functions outside production."
+                    "ko": "화폐거래는 기술적으로 필수적이지만 직접 생산은 아니다. 그래서 그 수익은 새 잉여가치가 아니라 생산된 잉여가치의 분배와 비용 절감에서 설명된다.",
+                    "en": "Money-dealing is technically necessary but not direct production. Its income is explained by distribution of produced surplus-value and cost reduction, not new surplus-value."
                   }
                 },
                 {
@@ -25851,27 +25823,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "산업자본의 화폐 기능과 화폐거래자본을 매개하는 것은 무엇인가?",
-                    "en": "What mediates the money functions of industrial capital and money-dealing capital?"
+                    "ko": "화폐거래자본과 신용제도를 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why distinguish money-dealing capital from the credit system?"
                   },
                   "choices": {
                     "ko": [
-                      "결제 수수료가 곧 새 가치 생산의 증거라고 본다.",
-                      "많은 자본의 지불·수취·결제 기능이 집중되어 전문적 업무로 분리되는 과정이다.",
-                      "화폐 처리 기능을 자본 순환과 무관한 기술업무로만 본다.",
-                      "화폐거래자본이 산업자본의 화폐 기능에서 분화된다는 점을 놓친다."
+                      "19장은 순수한 화폐 처리 기술을 다루며, 대부ㆍ차입과 신용의 발전된 형태는 다음 분석 단계에서 다루어지기 때문이다.",
+                      "화폐거래자본은 신용이 발달한 뒤에야 생기므로 역사적으로 신용제도의 결과이기 때문이다.",
+                      "신용제도는 상품유통에 속하지만 화폐거래자본은 생산현장에 속하기 때문이다.",
+                      "신용이 등장하면 지급과 결제 기능이 사라져 화폐거래자본의 범주가 필요 없어지기 때문이다."
                     ],
                     "en": [
-                      "Treats payment fees as proof of new value production.",
-                      "The mediation is the concentration of many capitals’ payment, receipt, and settlement functions into a specialized business.",
-                      "Treats money-handling as a technical task unrelated to capital circuits.",
-                      "Misses that money-dealing capital branches off from the money functions of industrial capital."
+                      "Chapter 19 treats pure money-handling technique, while lending, borrowing, and developed credit forms belong to the next stage of analysis.",
+                      "Money-dealing capital arises only after credit develops and is historically a result of the credit system.",
+                      "Credit belongs to commodity circulation, while money-dealing capital belongs to production sites.",
+                      "Once credit appears, payment and settlement functions disappear, making money-dealing capital unnecessary."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "많은 자본의 지불·수취·결제 기능이 집중되어 전문적 업무로 분리되는 과정이다. 매개를 보아야 유통·화폐·신용의 기능이 생산된 잉여가치와 어떻게 연결되는지 파악할 수 있다.",
-                    "en": "The mediation is the concentration of many capitals’ payment, receipt, and settlement functions into a specialized business. Seeing the mediation shows how circulation, money, and credit functions connect to produced surplus-value."
+                    "ko": "마르크스는 분석 범위를 엄격히 나눈다. 19장은 신용 전체가 아니라 화폐유통의 기술적 작업이 독립 자본으로 굳어지는 지점을 다룬다.",
+                    "en": "Marx keeps the analytical scope strict. Chapter 19 treats not the whole credit system, but the point where technical operations of money circulation harden into an independent capital."
                   }
                 },
                 {
@@ -25879,27 +25851,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "결제 수수료가 있으니 결제업이 새 가치를 만든다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying payment services create new value because they charge fees?"
+                    "ko": "환전과 귀금속 거래가 화폐거래의 역사적 토대가 되는 이유는 무엇인가?",
+                    "en": "Why do money-changing and bullion trade form historical bases of money-dealing?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐 처리 기능을 자본 순환과 무관한 기술업무로만 본다.",
-                      "화폐거래자본이 산업자본의 화폐 기능에서 분화된다는 점을 놓친다.",
-                      "수수료는 화폐 기능 수행에 대한 수익형태일 수 있지만, 순수 화폐처리 기능 자체가 새 가치를 생산한다는 뜻은 아니다.",
-                      "정산이 빨라지면 가치 실현 문제가 사라진다고 본다."
+                      "국제무역에서 서로 다른 주화와 세계화폐의 결제가 필요해지며, 화폐의 교환ㆍ보관ㆍ이동이 전문 업무로 분리되었기 때문이다.",
+                      "귀금속 자체가 모든 상품보다 많은 잉여가치를 생산해 상업이윤의 직접 원천이 되었기 때문이다.",
+                      "국가가 주화를 만들면 상품교환 없이도 화폐거래자본이 독립적으로 성장하기 때문이다.",
+                      "환전은 생산수단을 직접 만드는 노동이라 산업자본보다 먼저 가치생산을 장악했기 때문이다."
                     ],
                     "en": [
-                      "Treats money-handling as a technical task unrelated to capital circuits.",
-                      "Misses that money-dealing capital branches off from the money functions of industrial capital.",
-                      "Fees can be a revenue form for performing money functions, but pure money-handling itself does not thereby produce new value.",
-                      "Assumes faster settlement abolishes the problem of realization."
+                      "International trade required settlement among different coins and world money, separating exchange, safekeeping, and movement of money into specialized business.",
+                      "Precious metals produced more surplus-value than all other commodities and became the direct source of commercial profit.",
+                      "Once states coin money, money-dealing capital grows independently without commodity exchange.",
+                      "Money-changing directly produces means of production and seized value production before industrial capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "수수료는 화폐 기능 수행에 대한 수익형태일 수 있지만, 순수 화폐처리 기능 자체가 새 가치를 생산한다는 뜻은 아니다. 마르크스의 비판은 기능의 필요성을 부정하지 않고, 그 기능이 자연적 수익원처럼 보이는 전도를 비판한다.",
-                    "en": "Fees can be a revenue form for performing money functions, but pure money-handling itself does not thereby produce new value. Marx does not deny the necessity of the function; he criticizes the inversion by which it appears as a natural source of revenue."
+                    "ko": "화폐거래는 단순한 은행 기술이 아니라 국제상업과 세계화폐 기능에서 역사적 토대를 얻는다. 그러나 그것도 상품유통의 결과를 처리하는 기능이다.",
+                    "en": "Money-dealing is not merely a banking technique; it has historical roots in international trade and world money. Yet it still handles results of commodity circulation."
                   }
                 },
                 {
@@ -25907,27 +25879,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "핀테크 기업이 정산 시간을 줄여 판매자의 현금흐름을 개선한다. 무엇을 봐야 하는가?",
-                    "en": "A fintech firm shortens settlement time and improves sellers’ cash flow. What should be examined?"
+                    "ko": "정산 시간을 줄이는 핀테크 서비스를 19장으로 읽을 때 핵심은 무엇인가?",
+                    "en": "What is central when reading fintech services that shorten settlement time through Chapter 19?"
                   },
                   "choices": {
                     "ko": [
-                      "정산이 빨라지면 가치 실현 문제가 사라진다고 본다.",
-                      "화폐거래자본이 산업자본의 화폐 기능에서 분화된다는 점을 놓친다.",
-                      "그 기능이 자본 회전의 화폐 단계와 유통비용을 어떻게 바꾸는지, 그리고 어떤 수익형태를 얻는지 봐야 한다.",
-                      "화폐거래자본과 이자 낳는 자본을 같은 것으로 본다."
+                      "그 서비스가 여러 자본의 화폐단계를 집중ㆍ단축해 준비금 규모와 유통비용을 줄이는지 살펴보는 것이다.",
+                      "정산 속도가 빨라질수록 상품 안의 노동시간이 줄어 새 가치가 만들어지는지 보는 것이다.",
+                      "핀테크가 신용을 제공하면 곧 이자 낳는 자본이 사라지는지 확인하는 것이다.",
+                      "디지털 결제가 현금을 대체하면 가치척도 기능도 소비자 데이터로 바뀌는지 보는 것이다."
                     ],
                     "en": [
-                      "Assumes faster settlement abolishes the problem of realization.",
-                      "Misses that money-dealing capital branches off from the money functions of industrial capital.",
-                      "One should examine how the function changes the money phase of capital turnover and circulation costs, and what revenue form it receives.",
-                      "Identifies money-dealing capital with interest-bearing capital."
+                      "One should examine whether it concentrates and shortens the money phase of many capitals, reducing reserves and circulation costs.",
+                      "One should see whether faster settlement reduces labour-time inside commodities and creates new value.",
+                      "One should check whether fintech credit makes interest-bearing capital disappear.",
+                      "One should see whether digital payment replacing cash also changes the measure of value into consumer data."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 기능이 자본 회전의 화폐 단계와 유통비용을 어떻게 바꾸는지, 그리고 어떤 수익형태를 얻는지 봐야 한다. 구체 사례에서는 수익이 어느 생산관계와 분배관계를 전제로 하는지 확인해야 한다.",
-                    "en": "One should examine how the function changes the money phase of capital turnover and circulation costs, and what revenue form it receives. In concrete cases, one must identify the production and distribution relations presupposed by the revenue."
+                    "ko": "현대 결제 기술의 효과는 자본 순환의 화폐 단계를 압축하는 데 있다. 이 효과를 가치 생산과 혼동하면 19장의 범주가 흐려진다.",
+                    "en": "The effect of modern payment technology lies in compressing the money phase of capital circulation. Confusing this with value production blurs Chapter 19’s categories."
                   }
                 },
                 {
@@ -25935,27 +25907,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "화폐거래자본의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of money-dealing capital?"
+                    "ko": "19장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 19?"
                   },
                   "choices": {
                     "ko": [
-                      "정산이 빨라지면 가치 실현 문제가 사라진다고 본다.",
-                      "화폐거래자본과 이자 낳는 자본을 같은 것으로 본다.",
-                      "결제 수수료가 곧 새 가치 생산의 증거라고 본다.",
-                      "상업자본 분석에서 화폐 기능의 독립으로 이동해, 이자 낳는 자본의 더 전도된 형태를 준비한다."
+                      "상품자본의 독립에 이어 화폐자본의 기술적 기능이 독립하는 과정을 보여 주며, 이자 낳는 자본의 더 물신화된 형태를 준비한다.",
+                      "상업자본이 생산자본으로 변하는 과정을 마무리하고 산업자본 분석으로 되돌아간다.",
+                      "화폐거래가 상품가치를 결정한다는 결론을 세워 노동시간 분석을 보조 범주로 낮춘다.",
+                      "역사적 상인자본이 산업자본보다 발전된 형태임을 증명해 생산양식 분석을 끝낸다."
                     ],
                     "en": [
-                      "Assumes faster settlement abolishes the problem of realization.",
-                      "Identifies money-dealing capital with interest-bearing capital.",
-                      "Treats payment fees as proof of new value production.",
-                      "It moves from commercial capital to the independence of money functions, preparing the more inverted form of interest-bearing capital."
+                      "It shows the independence of technical functions of money-capital after commodity-capital, preparing the more fetishized form of interest-bearing capital.",
+                      "It closes the transformation of commercial capital into productive capital and returns to industrial capital analysis.",
+                      "It concludes that money-dealing determines commodity value and demotes labour-time analysis.",
+                      "It proves historical merchant capital is more advanced than industrial capital and ends mode-of-production analysis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업자본 분석에서 화폐 기능의 독립으로 이동해, 이자 낳는 자본의 더 전도된 형태를 준비한다. 이 체계적 연결이 이후 신용, 가공자본, 지대 분석으로 이어지는 통로다.",
-                    "en": "It moves from commercial capital to the independence of money functions, preparing the more inverted form of interest-bearing capital. This systematic link opens the path to the later analysis of credit, fictitious capital, and rent."
+                    "ko": "19장은 유통 기능의 분화를 더 밀고 간다. 상품의 판매 기능 다음에는 화폐의 지급ㆍ결제 기능이 독립하고, 그 다음에는 화폐자본 자체의 대여가 문제된다.",
+                    "en": "Chapter 19 pushes the differentiation of circulation functions further. After the selling function of commodities comes independent payment and settlement, and then the lending of money-capital itself."
                   }
                 }
               ]
@@ -26028,27 +26000,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상인자본에 관한 역사적 사실들에서 마르크스가 보여주려는 것은 무엇인가?",
-                    "en": "What does Marx try to show in the historical facts about merchant’s capital?"
+                    "ko": "20장에서 마르크스가 상인자본의 역사를 따로 보는 이유는 무엇인가?",
+                    "en": "Why does Marx separately examine the history of merchant capital in Chapter 20?"
                   },
                   "choices": {
                     "ko": [
-                      "상인자본은 자본주의 이전에도 존재했지만, 자본주의에서는 산업자본에 종속된 특수한 기능으로 재배치된다는 점이다.",
-                      "무역이 있으면 대체로 자본주의가 있다고 본다.",
-                      "상인자본의 전자본주의적 형태와 자본주의적 형태를 같은 것으로 본다.",
-                      "산업자본이 상업자본에 종속된다는 자본주의의 특징을 일반화한다."
+                      "상인자본은 자본주의보다 오래되었지만, 자본주의에서는 산업자본의 유통 기능으로 재배치되기 때문이다.",
+                      "상인자본이 모든 시대에 산업자본보다 발전된 생산자본이라는 점을 보이기 위해서다.",
+                      "상업이 존재한 모든 사회가 이미 임금노동과 공장제에 의해 지배되었음을 보이기 위해서다.",
+                      "상인자본의 높은 이윤이 가치법칙보다 먼저 생산가격을 만든다는 점을 보이기 위해서다."
                     ],
                     "en": [
-                      "Merchant capital existed before capitalism, but under capitalism it is rearranged as a specific function subordinated to industrial capital.",
-                      "Assumes trade always means capitalism exists.",
-                      "Identifies pre-capitalist and capitalist forms of merchant capital.",
-                      "Generalizes the subordination of industrial capital to merchant capital as if it were capitalist normality."
+                      "Because merchant capital is older than capitalism, yet within capitalism it is rearranged as a circulation function of industrial capital.",
+                      "To show that merchant capital is in every age a more developed productive capital than industrial capital.",
+                      "To show that every society with commerce was already dominated by wage-labour and factories.",
+                      "To show that merchant capital’s high profit creates prices of production before the law of value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상인자본은 자본주의 이전에도 존재했지만, 자본주의에서는 산업자본에 종속된 특수한 기능으로 재배치된다는 점이다. 이 지점은 해당 장이 다루는 자본형태의 기능을 잡기 위한 출발점이다.",
-                    "en": "Merchant capital existed before capitalism, but under capitalism it is rearranged as a specific function subordinated to industrial capital. This establishes the function of the capital form treated in the chapter."
+                    "ko": "20장의 핵심은 역사적 선행성과 체계적 종속성을 함께 보는 것이다. 상인자본은 오래되었지만 자본주의 안에서는 산업자본의 운동에 종속된다.",
+                    "en": "The key in Chapter 20 is to see historical priority together with systematic subordination. Merchant capital is old, but within capitalism it is subordinated to industrial capital."
                   }
                 },
                 {
@@ -26056,27 +26028,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본주의 이전의 상인자본과 자본주의적 상업자본은 왜 같은 것이 아닌가?",
-                    "en": "Why are pre-capitalist merchant capital and capitalist commercial capital not the same?"
+                    "ko": "자본주의 이전의 상인자본과 자본주의적 상업자본의 차이는 무엇인가?",
+                    "en": "What is the difference between pre-capitalist merchant capital and capitalist commercial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "전자는 생산양식 바깥에서 교환을 지배할 수 있었지만, 후자는 산업자본이 생산한 상품가치의 실현 기능으로 통합된다.",
-                      "산업자본이 상업자본에 종속된다는 자본주의의 특징을 일반화한다.",
-                      "상인자본의 전자본주의적 형태와 자본주의적 형태를 같은 것으로 본다.",
-                      "세계시장 연결만으로 임금노동 지배가 완성된다고 본다."
+                      "전자는 다양한 생산양식 사이의 교환을 매개하며 생산을 바깥에서 지배할 수 있었고, 후자는 산업자본이 만든 상품가치의 실현 기능으로 통합된다.",
+                      "전자는 임금노동을 전제로 하고 후자는 노예제와 공납제를 전제로 한다.",
+                      "전자는 공장제 생산 안에서만 존재하고 후자는 촌락 공동체의 직접 소비 안에서만 존재한다.",
+                      "전자는 평균이윤율에 참여하고 후자는 화폐축장에 머물러 가격형성의 주변에 놓인다."
                     ],
                     "en": [
-                      "The former could dominate exchange outside the mode of production, while the latter is integrated as the realization function of commodity value produced by industrial capital.",
-                      "Generalizes the subordination of industrial capital to merchant capital as if it were capitalist normality.",
-                      "Identifies pre-capitalist and capitalist forms of merchant capital.",
-                      "Assumes world-market connection alone completes wage-labour domination."
+                      "The former mediates exchange among varied modes of production and may dominate production from outside; the latter is integrated as the realization function of commodity value produced by industrial capital.",
+                      "The former presupposes wage-labour, while the latter presupposes slavery and tribute.",
+                      "The former exists only inside factory production, while the latter exists only in direct consumption by village communities.",
+                      "The former participates in average profit, while the latter remains hoarding and stays at the edge of price formation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "전자는 생산양식 바깥에서 교환을 지배할 수 있었지만, 후자는 산업자본이 생산한 상품가치의 실현 기능으로 통합된다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "The former could dominate exchange outside the mode of production, while the latter is integrated as the realization function of commodity value produced by industrial capital. So surface revenue or fees should not be treated immediately as an independent source of value."
+                    "ko": "상업의 존재와 자본주의 생산관계는 같은 말이 아니다. 마르크스는 오래된 상업 형태가 자본주의 안에서 다른 위치를 얻는 과정을 구분한다.",
+                    "en": "Commerce and capitalist production relations are not the same thing. Marx distinguishes old forms of commerce from their changed position within capitalism."
                   }
                 },
                 {
@@ -26084,27 +26056,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "무역이 오래전부터 있었다는 사실만으로 자본주의가 오래전부터 있었다고 말할 수 없는 이유는 무엇인가?",
-                    "en": "Why does the long existence of trade not mean capitalism has always existed?"
+                    "ko": "상업 발전이 곧 자본주의 성립을 뜻한다고 보면 왜 부족한가?",
+                    "en": "Why is it insufficient to equate commercial development with the rise of capitalism?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본이 상업자본에 종속된다는 자본주의의 특징을 일반화한다.",
-                      "상업과 화폐거래는 여러 생산양식 위에 존재할 수 있지만, 자본주의는 임금노동과 산업자본의 지배를 필요로 하기 때문이다.",
-                      "세계시장 연결만으로 임금노동 지배가 완성된다고 본다.",
-                      "역사적 사례를 자본주의 범주의 자연적 증거로 사용한다."
+                      "상업은 상품교환을 확대하지만, 생산과정이 임금노동과 산업자본의 지배로 재편되어야 자본주의 생산양식이 성립하기 때문이다.",
+                      "상업이 확대되면 모든 생산자가 즉시 공장노동자로 바뀌기 때문이다.",
+                      "상업은 사용가치를 없애고 모든 상품을 화폐축장으로 바꾸기 때문이다.",
+                      "자본주의는 상업이 줄어들고 지역 자급이 강화될 때 성립하기 때문이다."
                     ],
                     "en": [
-                      "Generalizes the subordination of industrial capital to merchant capital as if it were capitalist normality.",
-                      "Commerce and money-dealing can exist atop many modes of production, while capitalism requires wage-labour and the dominance of industrial capital.",
-                      "Assumes world-market connection alone completes wage-labour domination.",
-                      "Uses historical examples as natural proof of capitalist categories."
+                      "Commerce expands commodity exchange, but capitalist production arises only when production is reorganized under wage-labour and industrial capital.",
+                      "Expanded commerce immediately turns all producers into factory workers.",
+                      "Commerce abolishes use-value and turns all commodities into hoards.",
+                      "Capitalism arises when commerce shrinks and local self-sufficiency strengthens."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업과 화폐거래는 여러 생산양식 위에 존재할 수 있지만, 자본주의는 임금노동과 산업자본의 지배를 필요로 하기 때문이다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
-                    "en": "Commerce and money-dealing can exist atop many modes of production, while capitalism requires wage-labour and the dominance of industrial capital. This distinction clarifies the route by which produced surplus-value is distributed."
+                    "ko": "상업은 자본주의의 전제 조건이 될 수 있지만 충분조건은 아니다. 생산관계의 변화가 없으면 상인자본은 낡은 생산양식 위에서도 활동할 수 있다.",
+                    "en": "Commerce can be a precondition of capitalism, but not a sufficient condition. Without a change in production relations, merchant capital can operate on older modes of production."
                   }
                 },
                 {
@@ -26112,27 +26084,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "중세 상인이 먼 지역 상품을 중개해 높은 이윤을 얻었다. 이것만으로 무엇을 말할 수 없는가?",
-                    "en": "A medieval merchant gains high profit by mediating distant goods. What can we not infer from this alone?"
+                    "ko": "중세 상인이 먼 지역 상품을 중개해 큰 이익을 얻은 사례에서 무엇을 말할 수 있고, 무엇은 말할 수 없는가?",
+                    "en": "In a case where a medieval merchant earns large gains by mediating distant goods, what can and cannot be said?"
                   },
                   "choices": {
                     "ko": [
-                      "세계시장 연결만으로 임금노동 지배가 완성된다고 본다.",
-                      "역사적 사례를 자본주의 범주의 자연적 증거로 사용한다.",
-                      "그 사회의 생산이 이미 산업자본과 임금노동에 의해 지배되고 있었다고 말할 수는 없다.",
-                      "무역이 있으면 대체로 자본주의가 있다고 본다."
+                      "상업적 부와 교환가치 추구가 발전했다는 점은 말할 수 있지만, 생산이 이미 산업자본과 임금노동에 지배되었다는 뜻은 아니다.",
+                      "그 사회가 공장제와 평균이윤율을 갖춘 자본주의 사회였다는 말까지 할 수 있다.",
+                      "상인이 높은 이익을 얻었으므로 상품가치는 운송거리로 결정되었다고 말할 수 있다.",
+                      "먼 거리 교역이 있었으므로 토지소유와 공납 관계가 사라졌다고 말할 수 있다."
                     ],
                     "en": [
-                      "Assumes world-market connection alone completes wage-labour domination.",
-                      "Uses historical examples as natural proof of capitalist categories.",
-                      "We cannot infer that production in that society was already dominated by industrial capital and wage-labour.",
-                      "Assumes trade always means capitalism exists."
+                      "It can show developed commercial wealth and pursuit of exchange-value, but not that production was already dominated by industrial capital and wage-labour.",
+                      "One can say that society was already capitalist with factories and an average profit rate.",
+                      "Because the merchant made high gains, commodity value was determined by transport distance.",
+                      "Because long-distance trade existed, landownership and tribute relations disappeared."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 사회의 생산이 이미 산업자본과 임금노동에 의해 지배되고 있었다고 말할 수는 없다. 현대 사례도 기능을 기준으로 보면 자본형태의 분화를 더 정확히 볼 수 있다.",
-                    "en": "We cannot infer that production in that society was already dominated by industrial capital and wage-labour. Modern cases can also be read more precisely by focusing on function."
+                    "ko": "상인의 돈벌이는 자본주의 생산양식과 구별해야 한다. 상인자본은 생산을 바깥에서 매개하거나 지배할 수 있지만, 그것만으로 산업자본의 지배가 성립하지는 않는다.",
+                    "en": "Merchant gains must be distinguished from the capitalist mode of production. Merchant capital can mediate or dominate production from outside, but this alone does not establish industrial capital’s rule."
                   }
                 },
                 {
@@ -26140,27 +26112,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 장이 상업자본 분석에 보태는 것은 무엇인가?",
-                    "en": "What does this chapter add to the analysis of commercial capital?"
+                    "ko": "20장은 21장의 이자 낳는 자본으로 어떻게 이어지는가?",
+                    "en": "How does Chapter 20 lead into Chapter 21’s interest-bearing capital?"
                   },
                   "choices": {
                     "ko": [
-                      "상인자본의 전자본주의적 형태와 자본주의적 형태를 같은 것으로 본다.",
-                      "역사적 사례를 자본주의 범주의 자연적 증거로 사용한다.",
-                      "무역이 있으면 대체로 자본주의가 있다고 본다.",
-                      "상인자본의 역사적 선행성과 자본주의 안에서의 종속적 재편을 구분하게 해 준다."
+                      "상인자본이 오래된 자본형태임을 정리한 뒤, 또 다른 오래된 형태인 이자 낳는 자본의 물신화된 운동으로 넘어간다.",
+                      "상인자본이 산업자본보다 우월하다는 결론 뒤에, 이자가 상업이윤의 하위 형태임을 설명한다.",
+                      "역사적 상업이 평균이윤율을 밀어낸다는 결론 뒤에, 이자율이 자연가격을 대신하는 과정을 설명한다.",
+                      "상인자본이 생산과정을 장악했다는 결론 뒤에, 화폐대부가 임금노동을 없애는 과정을 설명한다."
                     ],
                     "en": [
-                      "Identifies pre-capitalist and capitalist forms of merchant capital.",
-                      "Uses historical examples as natural proof of capitalist categories.",
-                      "Assumes trade always means capitalism exists.",
-                      "It lets us distinguish merchant capital’s historical precedence from its subordinate reorganization within capitalism."
+                      "After clarifying merchant capital as an old form of capital, it moves to another old form: the fetishized movement of interest-bearing capital.",
+                      "After concluding merchant capital is superior to industrial capital, it explains interest as a subordinate form of commercial profit.",
+                      "After concluding historical commerce displaces average profit, it explains interest rates replacing natural prices.",
+                      "After concluding merchant capital controls production, it explains money lending abolishing wage-labour."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상인자본의 역사적 선행성과 자본주의 안에서의 종속적 재편을 구분하게 해 준다. 이 장은 이윤이 더 구체적인 수입형태로 나뉘어 보이는 과정을 한 단계 전진시킨다.",
-                    "en": "It lets us distinguish merchant capital’s historical precedence from its subordinate reorganization within capitalism. The chapter advances the analysis of profit appearing as more concrete revenue forms."
+                    "ko": "20장은 자본형태를 역사적으로 자연화하지 않게 만든다. 21장은 그보다 더 물신화된 오래된 자본형태, 즉 이자 낳는 자본을 분석한다.",
+                    "en": "Chapter 20 prevents naturalizing capital forms historically. Chapter 21 analyzes an even more fetishized old form: interest-bearing capital."
                   }
                 }
               ]
@@ -26178,27 +26150,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상인자본의 역사에서 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the history of merchant capital?"
+                    "ko": "상인자본의 독립적 발전이 사회의 일반적 경제발전과 반비례한다는 말은 무엇인가?",
+                    "en": "What does it mean that independent merchant capital develops inversely to general economic development?"
                   },
                   "choices": {
                     "ko": [
-                      "상인자본은 자본주의보다 오래되었지만, 자본주의가 발전하면 오히려 산업자본의 운동에 종속된다.",
-                      "상인자본의 전자본주의적 형태와 자본주의적 형태를 같은 것으로 본다.",
-                      "무역이 있으면 대체로 자본주의가 있다고 본다.",
-                      "산업자본이 상업자본에 종속된다는 자본주의의 특징을 일반화한다."
+                      "상인자본이 지배적일수록 생산이 아직 자본에 직접 종속되지 않은 경우가 많고, 산업자본이 지배하면 상업은 그 하위 기능으로 들어간다는 뜻이다.",
+                      "상인자본이 클수록 사회의 생산력이 더 높아지고 산업자본의 필요가 줄어드는 경향이 있다는 뜻이다.",
+                      "상업도시가 발달하면 생산과정이 이미 모두 자동화되어 노동이 사라진다는 뜻이다.",
+                      "상인자본의 독립성은 평균이윤율을 높여 모든 사회를 같은 속도로 발전시킨다는 뜻이다."
                     ],
                     "en": [
-                      "Merchant capital is older than capitalism, yet as capitalism develops it becomes subordinated to the movement of industrial capital.",
-                      "Identifies pre-capitalist and capitalist forms of merchant capital.",
-                      "Assumes trade always means capitalism exists.",
-                      "Generalizes the subordination of industrial capital to merchant capital as if it were capitalist normality."
+                      "The more merchant capital dominates, the more production often remains not directly subordinated to capital; when industrial capital dominates, commerce becomes its subordinate function.",
+                      "The larger merchant capital is, the higher productivity tends to become and the less industrial capital is needed.",
+                      "Developed merchant towns mean all production is already automated and labour has disappeared.",
+                      "The independence of merchant capital raises the average profit rate and develops all societies at the same speed."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상인자본은 자본주의보다 오래되었지만, 자본주의가 발전하면 오히려 산업자본의 운동에 종속된다. 이 긴장은 자본이 생산 밖의 기능에서도 독립적 수익형태를 만들어 내는 방식을 보여준다.",
-                    "en": "Merchant capital is older than capitalism, yet as capitalism develops it becomes subordinated to the movement of industrial capital. This tension shows how capital forms independent revenue forms even in functions outside production."
+                    "ko": "마르크스는 상인자본의 지배를 근대성의 척도로 보지 않는다. 자본주의가 성숙할수록 상업은 산업자본의 재생산 과정 안에 포섭된다.",
+                    "en": "Marx does not treat domination by merchant capital as the measure of modernity. As capitalism matures, commerce is subsumed into the reproduction of industrial capital."
                   }
                 },
                 {
@@ -26206,27 +26178,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상인자본의 역사적 형태와 자본주의적 형태를 매개하는 것은 무엇인가?",
-                    "en": "What mediates the historical and capitalist forms of merchant capital?"
+                    "ko": "상인이 소생산자를 자기에게 종속시키는 이행 형태는 무엇을 보여 주는가?",
+                    "en": "What does the transitional form in which merchants subordinate small producers show?"
                   },
                   "choices": {
                     "ko": [
-                      "상인자본의 전자본주의적 형태와 자본주의적 형태를 같은 것으로 본다.",
-                      "생산양식의 변화, 특히 독립 생산자와 장인 생산이 임금노동과 산업자본의 지배로 재편되는 과정이다.",
-                      "산업자본이 상업자본에 종속된다는 자본주의의 특징을 일반화한다.",
-                      "세계시장 연결만으로 임금노동 지배가 완성된다고 본다."
+                      "상인은 생산양식을 그대로 둔 채 원료, 판매, 신용을 장악해 잉여노동의 큰 몫을 가져갈 수 있다.",
+                      "상인이 원료를 대면 그 순간 소생산자는 완전한 공장 임금노동자로 바뀐다.",
+                      "소생산자는 상인에게 팔 때 자기 상품의 가치 전체를 잃고 단순 소비자가 된다.",
+                      "상인의 개입은 생산관계와 관련 없이 운송비만 줄이는 중립적 서비스다."
                     ],
                     "en": [
-                      "Identifies pre-capitalist and capitalist forms of merchant capital.",
-                      "The mediation is the change in the mode of production, especially the reorganization of independent producers and artisan production under wage-labour and industrial capital.",
-                      "Generalizes the subordination of industrial capital to merchant capital as if it were capitalist normality.",
-                      "Assumes world-market connection alone completes wage-labour domination."
+                      "The merchant can control raw materials, sale, and credit while leaving the mode of production formally intact, taking a large share of surplus-labour.",
+                      "When the merchant supplies raw materials, the small producer immediately becomes a full factory wage-worker.",
+                      "When selling to the merchant, the small producer loses the whole value of the commodity and becomes a mere consumer.",
+                      "Merchant intervention is a neutral service that only reduces transport costs, unrelated to production relations."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산양식의 변화, 특히 독립 생산자와 장인 생산이 임금노동과 산업자본의 지배로 재편되는 과정이다. 매개를 보아야 유통·화폐·신용의 기능이 생산된 잉여가치와 어떻게 연결되는지 파악할 수 있다.",
-                    "en": "The mediation is the change in the mode of production, especially the reorganization of independent producers and artisan production under wage-labour and industrial capital. Seeing the mediation shows how circulation, money, and credit functions connect to produced surplus-value."
+                    "ko": "20장은 이행의 중간 형태를 중요하게 다룬다. 상인자본은 생산과정을 직접 혁신하지 않아도 소생산자를 시장과 신용으로 묶을 수 있다.",
+                    "en": "Chapter 20 treats transitional forms as important. Merchant capital can bind small producers through markets and credit without directly revolutionizing production."
                   }
                 },
                 {
@@ -26234,27 +26206,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상업이 발전하면 곧 자본주의가 된다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying developed commerce immediately equals capitalism?"
+                    "ko": "상업이 생산을 교환가치 지향으로 밀어붙인다는 말의 한계는 무엇인가?",
+                    "en": "What is the limit of saying that commerce pushes production toward exchange-value?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본이 상업자본에 종속된다는 자본주의의 특징을 일반화한다.",
-                      "세계시장 연결만으로 임금노동 지배가 완성된다고 본다.",
-                      "상업 확대가 생산관계를 자동으로 임금노동과 산업자본 지배로 바꾸지는 않는다는 점을 놓친다.",
-                      "역사적 사례를 자본주의 범주의 자연적 증거로 사용한다."
+                      "상업은 상품화를 촉진하지만, 한 생산양식에서 다른 생산양식으로의 이행을 그 자체로 설명하지는 못한다.",
+                      "상업은 생산과정을 직접 운영하므로 모든 기술혁신의 원인을 충분히 설명한다.",
+                      "교환가치 지향은 생산물의 사용가치를 없애므로 더는 생산양식 구분이 필요 없어진다.",
+                      "상업 확대는 평균이윤율 없이도 산업자본의 지배를 완성한다."
                     ],
                     "en": [
-                      "Generalizes the subordination of industrial capital to merchant capital as if it were capitalist normality.",
-                      "Assumes world-market connection alone completes wage-labour domination.",
-                      "It misses that expanded commerce does not automatically transform production relations into wage-labour and industrial capital dominance.",
-                      "Uses historical examples as natural proof of capitalist categories."
+                      "Commerce promotes commodification, but by itself it does not explain the transition from one mode of production to another.",
+                      "Commerce directly operates production and fully explains all technological innovation.",
+                      "Orientation to exchange-value abolishes use-value, so distinctions among modes of production become unnecessary.",
+                      "Commercial expansion completes industrial capital’s rule without an average profit rate."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상업 확대가 생산관계를 자동으로 임금노동과 산업자본 지배로 바꾸지는 않는다는 점을 놓친다. 마르크스의 비판은 기능의 필요성을 부정하지 않고, 그 기능이 자연적 수익원처럼 보이는 전도를 비판한다.",
-                    "en": "It misses that expanded commerce does not automatically transform production relations into wage-labour and industrial capital dominance. Marx does not deny the necessity of the function; he criticizes the inversion by which it appears as a natural source of revenue."
+                    "ko": "상업은 강력한 압력이다. 그러나 자본주의의 성립은 생산과정 자체가 임금노동과 산업자본에 의해 재편되는 문제다.",
+                    "en": "Commerce is a powerful pressure. But the rise of capitalism concerns the reorganization of production itself under wage-labour and industrial capital."
                   }
                 },
                 {
@@ -26262,27 +26234,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "글로벌 무역 플랫폼이 전통 수공업 생산자를 세계시장에 연결한다. 무엇을 구분해야 하는가?",
-                    "en": "A global trade platform connects traditional artisan producers to the world market. What must be distinguished?"
+                    "ko": "글로벌 무역 플랫폼이 전통 수공업 생산자를 세계시장에 연결하는 사례에서 무엇을 구분해야 하는가?",
+                    "en": "What should be distinguished when global trade platforms connect traditional artisans to the world market?"
                   },
                   "choices": {
                     "ko": [
-                      "역사적 사례를 자본주의 범주의 자연적 증거로 사용한다.",
-                      "세계시장 연결만으로 임금노동 지배가 완성된다고 본다.",
-                      "상품 유통의 세계시장 연결과 생산과정 자체가 자본주의적 임금노동으로 재편되었는지를 구분해야 한다.",
-                      "무역이 있으면 대체로 자본주의가 있다고 본다."
+                      "상품 유통이 세계시장에 연결되는 것과, 생산과정 자체가 임금노동ㆍ산업자본의 지배로 재편되는 것은 다른 문제다.",
+                      "세계시장 연결이 생기면 장인은 즉시 산업노동자가 되고 생산도 공장제로 바뀐다.",
+                      "플랫폼이 주문을 중개하면 상품가치는 플랫폼 조회수로 측정된다.",
+                      "수공업 생산자가 수출하면 상인자본의 역사적 형태는 분석할 필요가 없어진다."
                     ],
                     "en": [
-                      "Uses historical examples as natural proof of capitalist categories.",
-                      "Assumes world-market connection alone completes wage-labour domination.",
-                      "One must distinguish world-market connection in circulation from whether the production process itself has been reorganized as capitalist wage-labour.",
-                      "Assumes trade always means capitalism exists."
+                      "Connection of commodity circulation to the world market is different from reorganization of production itself under wage-labour and industrial capital.",
+                      "Once world-market connection appears, artisans immediately become industrial workers and production becomes factory production.",
+                      "When the platform mediates orders, commodity value is measured by platform views.",
+                      "Once artisans export, historical forms of merchant capital no longer need analysis."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "상품 유통의 세계시장 연결과 생산과정 자체가 자본주의적 임금노동으로 재편되었는지를 구분해야 한다. 구체 사례에서는 수익이 어느 생산관계와 분배관계를 전제로 하는지 확인해야 한다.",
-                    "en": "One must distinguish world-market connection in circulation from whether the production process itself has been reorganized as capitalist wage-labour. In concrete cases, one must identify the production and distribution relations presupposed by the revenue."
+                    "ko": "현대 플랫폼도 오래된 상인자본의 논점을 반복할 수 있다. 세계시장 접속은 중요하지만, 그것만으로 생산관계의 자본주의적 재편을 뜻하지는 않는다.",
+                    "en": "Modern platforms can repeat older questions of merchant capital. Access to the world market matters, but it does not by itself mean capitalist reorganization of production relations."
                   }
                 },
                 {
@@ -26290,27 +26262,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "상인자본 역사 장의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the chapter on merchant capital’s history?"
+                    "ko": "20장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 20?"
                   },
                   "choices": {
                     "ko": [
-                      "역사적 사례를 자본주의 범주의 자연적 증거로 사용한다.",
-                      "무역이 있으면 대체로 자본주의가 있다고 본다.",
-                      "상인자본의 전자본주의적 형태와 자본주의적 형태를 같은 것으로 본다.",
-                      "유통형태의 오래된 존재와 자본주의적 생산관계의 특수성을 구분해, 자본형태를 역사적으로 자연화하지 못하게 한다."
+                      "유통형태의 오래된 존재와 자본주의 생산관계의 특수성을 구분해, 상업을 자본주의와 동일시하는 역사적 착시를 막는다.",
+                      "상인자본의 역사적 선행성을 근거로 산업자본을 상업자본의 파생물로 환원한다.",
+                      "상품교환의 역사를 통해 노동가치론보다 가격협상의 우위를 확정한다.",
+                      "상업도시의 발전을 위기론의 해법으로 제시해 이윤율 저하 문제를 닫는다."
                     ],
                     "en": [
-                      "Uses historical examples as natural proof of capitalist categories.",
-                      "Assumes trade always means capitalism exists.",
-                      "Identifies pre-capitalist and capitalist forms of merchant capital.",
-                      "It distinguishes the old existence of circulation forms from the specificity of capitalist production relations, preventing naturalization of capital forms."
+                      "It distinguishes the old existence of circulation forms from the specificity of capitalist production relations, preventing the historical illusion that commerce equals capitalism.",
+                      "It reduces industrial capital to a derivative of commercial capital because merchant capital historically came first.",
+                      "It uses the history of exchange to establish bargaining over labour-value theory.",
+                      "It presents merchant towns as the solution to crisis theory and closes the falling-profit-rate problem."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "유통형태의 오래된 존재와 자본주의적 생산관계의 특수성을 구분해, 자본형태를 역사적으로 자연화하지 못하게 한다. 이 체계적 연결이 이후 신용, 가공자본, 지대 분석으로 이어지는 통로다.",
-                    "en": "It distinguishes the old existence of circulation forms from the specificity of capitalist production relations, preventing naturalization of capital forms. This systematic link opens the path to the later analysis of credit, fictitious capital, and rent."
+                    "ko": "20장은 역사와 체계의 위치를 조정한다. 오래된 자본형태가 있다고 해서 자본주의 생산양식이 이미 성립한 것은 아니다.",
+                    "en": "Chapter 20 adjusts the relation between history and system. The existence of old capital forms does not mean the capitalist mode of production already exists."
                   }
                 }
               ]
@@ -26383,27 +26355,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "돈이 이자를 낳는 것처럼 보일 때, 그 표면은 생산과 착취의 어떤 고리를 가리는가?",
-                    "en": "What does Marx analyze in interest-bearing capital?"
+                    "ko": "21장에서 이자 낳는 자본은 어떤 점에서 특수한 상품인가?",
+                    "en": "In what sense is interest-bearing capital a peculiar commodity in Chapter 21?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐가 대여되어 일정 기간 뒤 이자를 붙여 돌아오는 M-M′ 형태에서 자본관계가 가장 물신화되어 보이는 방식이다.",
-                      "이자는 화폐 자체가 생산한 새 가치라고 본다.",
-                      "대부자가 생산에 관여하지 않으므로 이자는 자본주의 생산과 무관하다고 본다.",
-                      "이자와 잉여가치를 완전히 별개의 원천에서 나온 수입으로 본다."
+                      "화폐가 자본으로 기능해 이윤을 낳을 수 있는 사용가치를 가진 것으로 대여되며, 그 사용가치의 대가가 이자로 나타난다.",
+                      "화폐가 상품처럼 팔리면 그 자체의 가치보다 높은 새 교환가치를 생산하기 때문이다.",
+                      "대부자는 화폐를 넘기는 순간 생산과정을 직접 지휘해 잉여가치를 만든다.",
+                      "차입자는 화폐를 소비재로 써야 이자가 정당한 상품가격으로 성립하기 때문이다."
                     ],
                     "en": [
-                      "He analyzes how the capital relation appears most fetishized in the M-M′ form, where money is lent and returns with interest.",
-                      "Treats interest as new value produced by money itself.",
-                      "Assumes interest is unrelated to capitalist production because the lender does not enter production.",
-                      "Treats interest and surplus-value as revenues from entirely separate sources."
+                      "Money is loaned as having the use-value of functioning as capital and producing profit; payment for that use-value appears as interest.",
+                      "When money is sold like a commodity, it produces new exchange-value above its own value.",
+                      "The lender directly commands production and creates surplus-value when handing over money.",
+                      "The borrower must spend the money as consumer goods for interest to become a proper commodity price."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "화폐가 대여되어 일정 기간 뒤 이자를 붙여 돌아오는 M-M′ 형태에서 자본관계가 가장 물신화되어 보이는 방식이다. 이 지점은 해당 장이 다루는 자본형태의 기능을 잡기 위한 출발점이다.",
-                    "en": "He analyzes how the capital relation appears most fetishized in the M-M′ form, where money is lent and returns with interest. This establishes the function of the capital form treated in the chapter."
+                    "ko": "이자 낳는 자본에서 팔리는 것은 보통 상품이 아니라 자본으로서의 사용가치다. 그래서 이자는 화폐 자체의 가격처럼 보이지만 실제로는 이윤의 한 부분이다.",
+                    "en": "In interest-bearing capital, what is alienated is not an ordinary commodity but the use-value of capital. Interest looks like the price of money itself, but is actually a part of profit."
                   }
                 },
                 {
@@ -26411,27 +26383,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이자 낳는 자본이 가장 전도된 형태로 보이는 이유는 무엇인가?",
-                    "en": "Why does interest-bearing capital appear as the most inverted form?"
+                    "ko": "M-M' 형태가 자본 물신주의의 가장 강한 형태로 보이는 이유는 무엇인가?",
+                    "en": "Why does M-M' appear as the strongest form of capital fetishism?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과 유통의 매개가 사라진 것처럼 보이고, 화폐 자체가 스스로 더 많은 화폐를 낳는 것처럼 나타나기 때문이다.",
-                      "이자와 잉여가치를 완전히 별개의 원천에서 나온 수입으로 본다.",
-                      "대부자가 생산에 관여하지 않으므로 이자는 자본주의 생산과 무관하다고 본다.",
-                      "M-M′ 형식을 자본주의 관계의 투명한 설명으로 본다."
+                      "생산과 유통의 매개가 사라지고, 화폐가 자기 힘으로 더 많은 화폐를 낳는 것처럼 보이기 때문이다.",
+                      "M-M'에서는 노동자가 임금을 받지 않아 착취관계가 장부에 직접 적히기 때문이다.",
+                      "이자 낳는 자본은 상품을 생산하지 않으므로 자본주의 생산관계 밖의 자연소득이기 때문이다.",
+                      "화폐대부가 있으면 산업자본과 상업자본의 평균이윤율이 계산되지 않기 때문이다."
                     ],
                     "en": [
-                      "Because the mediations of production and circulation seem to vanish, and money appears to generate more money by itself.",
-                      "Treats interest and surplus-value as revenues from entirely separate sources.",
-                      "Assumes interest is unrelated to capitalist production because the lender does not enter production.",
-                      "Treats M-M′ as a transparent explanation of the capitalist relation."
+                      "Because the mediations of production and circulation disappear, making money appear to generate more money by its own power.",
+                      "Because in M-M' workers receive no wages, so exploitation is directly recorded in the accounts.",
+                      "Because interest-bearing capital produces no commodities and is therefore a natural income outside capitalist production relations.",
+                      "Because once money lending exists, average profit for industrial and commercial capital is not calculated."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산과 유통의 매개가 사라진 것처럼 보이고, 화폐 자체가 스스로 더 많은 화폐를 낳는 것처럼 나타나기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "Because the mediations of production and circulation seem to vanish, and money appears to generate more money by itself. So surface revenue or fees should not be treated immediately as an independent source of value."
+                    "ko": "M-M'에서는 자본의 중간 운동이 지워진다. 그래서 잉여가치의 원천인 노동과 생산과정이 가장 깊이 가려진다.",
+                    "en": "In M-M', the mediating movement of capital is erased. Labour and production, the source of surplus-value, are most deeply hidden."
                   }
                 },
                 {
@@ -26439,27 +26411,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이자와 잉여가치를 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must interest be distinguished from surplus-value?"
+                    "ko": "이자를 “돈의 가격”이라고 부르는 표현이 왜 문제적인가?",
+                    "en": "Why is it problematic to call interest the “price of money”?"
                   },
                   "choices": {
                     "ko": [
-                      "이자와 잉여가치를 완전히 별개의 원천에서 나온 수입으로 본다.",
-                      "이자는 잉여가치의 한 분배형태이지, 대여된 화폐가 생산과 무관하게 자체적으로 만든 새 가치가 아니다.",
-                      "M-M′ 형식을 자본주의 관계의 투명한 설명으로 본다.",
-                      "차입자의 생산적 사용과 잉여가치 생산을 분석에서 제거한다."
+                      "가격은 보통 가치의 화폐표현인데, 여기서는 일정한 가치액이 자기 가치와 별도의 가격을 갖는 것처럼 보이기 때문이다.",
+                      "돈의 가격은 주화의 금속함량으로 정해지므로 이자율과의 관련이 작기 때문이다.",
+                      "이자는 상품가격과 같은 법칙으로 자연가격을 갖고 경쟁은 그 주변 변동만 만든다.",
+                      "돈은 모든 상품의 척도이므로 자기 가격을 가질 때 가치법칙이 더 투명해진다."
                     ],
                     "en": [
-                      "Treats interest and surplus-value as revenues from entirely separate sources.",
-                      "Interest is a distribution form of surplus-value, not new value created by lent money independently of production.",
-                      "Treats M-M′ as a transparent explanation of the capitalist relation.",
-                      "Removes the borrower’s productive use and surplus-value production from the analysis."
+                      "Price normally expresses value in money, but here a sum of value appears to have a price distinct from its own value.",
+                      "The price of money is set by coin metal content and has little relation to interest rates.",
+                      "Interest has a natural price governed by the same law as commodity prices, and competition creates only deviations around it.",
+                      "Because money measures all commodities, value law becomes clearer when money has its own price."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이자는 잉여가치의 한 분배형태이지, 대여된 화폐가 생산과 무관하게 자체적으로 만든 새 가치가 아니다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
-                    "en": "Interest is a distribution form of surplus-value, not new value created by lent money independently of production. This distinction clarifies the route by which produced surplus-value is distributed."
+                    "ko": "마르크스는 이 표현을 비판적으로 다룬다. 이자는 보통 상품가격과 달리 자본의 자기증식 능력에 대한 몫, 즉 이윤의 일부다.",
+                    "en": "Marx treats the phrase critically. Unlike ordinary commodity price, interest is a share paid for capital’s capacity to expand itself, a part of profit."
                   }
                 },
                 {
@@ -26467,27 +26439,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "투자자가 돈을 빌려주고 생산과정에 관여하지 않은 채 이자를 받는다. 마르크스가 보려는 것은 무엇인가?",
-                    "en": "An investor lends money and receives interest without entering production. What does Marx want us to see?"
+                    "ko": "투자자가 돈을 빌려주고 생산과정에 관여하지 않은 채 이자를 받는 사례에서 무엇을 봐야 하는가?",
+                    "en": "What should be examined when an investor lends money and receives interest without participating in production?"
                   },
                   "choices": {
                     "ko": [
-                      "M-M′ 형식을 자본주의 관계의 투명한 설명으로 본다.",
-                      "차입자의 생산적 사용과 잉여가치 생산을 분석에서 제거한다.",
-                      "표면에는 화폐가 자기증식하는 것처럼 보이지만, 이자는 생산된 잉여가치가 대부자에게 분배되는 형태다.",
-                      "이자는 화폐 자체가 생산한 새 가치라고 본다."
+                      "차입자가 그 돈을 기능자본으로 사용해 이윤을 만들고, 그 이윤의 일부가 대부자에게 이자로 지급되는 매개다.",
+                      "대부자가 생산에 관여하지 않으므로 이자는 노동과 무관한 순수 시간 보상이라는 점이다.",
+                      "돈을 넘기는 법적 계약만으로 새 가치가 생겨 차입자의 생산과정은 부속 절차가 된다는 점이다.",
+                      "이자는 원금의 가치가 시간이 지나며 자연적으로 증가한 부분이라는 점이다."
                     ],
                     "en": [
-                      "Treats M-M′ as a transparent explanation of the capitalist relation.",
-                      "Removes the borrower’s productive use and surplus-value production from the analysis.",
-                      "On the surface money seems to valorize itself, but interest is a form in which produced surplus-value is distributed to the lender.",
-                      "Treats interest as new value produced by money itself."
+                      "The mediation is that the borrower uses the money as functioning capital, produces profit, and pays part of that profit to the lender as interest.",
+                      "Since the lender does not participate in production, interest is pure compensation for time unrelated to labour.",
+                      "The legal contract itself creates new value, making the borrower’s production a secondary procedure.",
+                      "Interest is the part by which principal naturally increases over time."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "표면에는 화폐가 자기증식하는 것처럼 보이지만, 이자는 생산된 잉여가치가 대부자에게 분배되는 형태다. 현대 사례도 기능을 기준으로 보면 자본형태의 분화를 더 정확히 볼 수 있다.",
-                    "en": "On the surface money seems to valorize itself, but interest is a form in which produced surplus-value is distributed to the lender. Modern cases can also be read more precisely by focusing on function."
+                    "ko": "대부자는 생산 밖에 있어 보이지만, 이자는 기능자본이 만든 이윤에서 나온다. 분석해야 할 것은 법적 소유와 실제 기능의 분리다.",
+                    "en": "The lender appears outside production, but interest comes from profit made by functioning capital. The point is the separation between legal ownership and actual functioning."
                   }
                 },
                 {
@@ -26495,27 +26467,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이자 낳는 자본 분석이 3권에서 중요한 이유는 무엇인가?",
-                    "en": "Why is the analysis of interest-bearing capital important in Volume III?"
+                    "ko": "21장은 다음 장의 이윤 분할 분석으로 어떤 문제를 넘겨주는가?",
+                    "en": "What problem does Chapter 21 hand over to the next analysis of profit division?"
                   },
                   "choices": {
                     "ko": [
-                      "대부자가 생산에 관여하지 않으므로 이자는 자본주의 생산과 무관하다고 본다.",
-                      "차입자의 생산적 사용과 잉여가치 생산을 분석에서 제거한다.",
-                      "이자는 화폐 자체가 생산한 새 가치라고 본다.",
-                      "잉여가치의 원천이 가장 깊이 가려지는 형태를 분석해, 자본 물신주의의 정점을 보여주기 때문이다."
+                      "이윤이 이자와 기업가이득으로 나뉘면서 자본 소유와 자본 기능이 서로 다른 인물과 수익형태로 갈라지는 문제다.",
+                      "이자가 상품가치 전체를 대체하면서 산업이윤이 사라지는 문제다.",
+                      "대부자가 생산을 직접 지휘하게 되어 임금노동 분석이 필요 없어지는 문제다.",
+                      "화폐거래자본이 상업자본보다 먼저 평균이윤을 받는 문제다."
                     ],
                     "en": [
-                      "Assumes interest is unrelated to capitalist production because the lender does not enter production.",
-                      "Removes the borrower’s productive use and surplus-value production from the analysis.",
-                      "Treats interest as new value produced by money itself.",
-                      "It analyzes the form in which the source of surplus-value is most deeply concealed, showing a peak of capital fetishism."
+                      "Profit splits into interest and profit of enterprise, separating ownership of capital from the function of capital into different persons and revenue forms.",
+                      "Interest replaces the whole commodity value and industrial profit disappears.",
+                      "The lender directly commands production, making analysis of wage-labour unnecessary.",
+                      "Money-dealing capital receives average profit before commercial capital."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치의 원천이 가장 깊이 가려지는 형태를 분석해, 자본 물신주의의 정점을 보여주기 때문이다. 이 장은 이윤이 더 구체적인 수입형태로 나뉘어 보이는 과정을 한 단계 전진시킨다.",
-                    "en": "It analyzes the form in which the source of surplus-value is most deeply concealed, showing a peak of capital fetishism. The chapter advances the analysis of profit appearing as more concrete revenue forms."
+                    "ko": "21장은 이자 낳는 자본의 기본 형태를 세운다. 이후 분석은 이자가 이윤에서 분리되며 기업가이득과 어떻게 대립하는지로 나아간다.",
+                    "en": "Chapter 21 establishes the basic form of interest-bearing capital. The following analysis turns to how interest separates from profit and confronts profit of enterprise."
                   }
                 }
               ]
@@ -26533,27 +26505,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이자 낳는 자본의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of interest-bearing capital?"
+                    "ko": "대부자와 차입자가 같은 화폐액을 모두 자본으로 취급한다는 점은 왜 중요한가?",
+                    "en": "Why is it important that lender and borrower both treat the same sum of money as capital?"
                   },
                   "choices": {
                     "ko": [
-                      "이자는 생산된 잉여가치의 일부인데, 표면에서는 화폐 소유 자체의 자연적 열매처럼 보인다.",
-                      "대부자가 생산에 관여하지 않으므로 이자는 자본주의 생산과 무관하다고 본다.",
-                      "이자는 화폐 자체가 생산한 새 가치라고 본다.",
-                      "이자와 잉여가치를 완전히 별개의 원천에서 나온 수입으로 본다."
+                      "같은 화폐가 두 사람에게 자본으로 나타나지만, 실제 이윤은 두 배가 되지 않고 이자와 기업가이득으로 나뉘기 때문이다.",
+                      "같은 화폐가 두 번 자본이 되므로 생산된 잉여가치도 두 배가 된다는 점을 보여 주기 때문이다.",
+                      "대부자와 차입자가 모두 생산과정에서 같은 노동자를 지휘한다는 뜻이기 때문이다.",
+                      "화폐액이 두 장부에 기록되면 그 자체로 가치가 늘어나는 회계 효과가 생기기 때문이다."
                     ],
                     "en": [
-                      "Interest is part of produced surplus-value, yet on the surface it appears as the natural fruit of money ownership itself.",
-                      "Assumes interest is unrelated to capitalist production because the lender does not enter production.",
-                      "Treats interest as new value produced by money itself.",
-                      "Treats interest and surplus-value as revenues from entirely separate sources."
+                      "The same money appears as capital for two persons, but profit is not doubled; it is divided into interest and profit of enterprise.",
+                      "The same money becomes capital twice, so produced surplus-value is also doubled.",
+                      "It means lender and borrower both command the same workers in production.",
+                      "When the sum is recorded in two accounts, its value increases by an accounting effect."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이자는 생산된 잉여가치의 일부인데, 표면에서는 화폐 소유 자체의 자연적 열매처럼 보인다. 이 긴장은 자본이 생산 밖의 기능에서도 독립적 수익형태를 만들어 내는 방식을 보여준다.",
-                    "en": "Interest is part of produced surplus-value, yet on the surface it appears as the natural fruit of money ownership itself. This tension shows how capital forms independent revenue forms even in functions outside production."
+                    "ko": "이자 낳는 자본의 착시는 여기서 강해진다. 같은 원금이 소유자에게도, 기능자본가에게도 자본으로 보이지만, 나뉘는 것은 하나의 이윤이다.",
+                    "en": "The illusion of interest-bearing capital grows here. The same principal appears as capital to both owner and functioning capitalist, but what is divided is one profit."
                   }
                 },
                 {
@@ -26561,27 +26533,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "화폐대부와 자본주의적 생산을 매개하는 것은 무엇인가?",
-                    "en": "What mediates money lending and capitalist production?"
+                    "ko": "대부에서 “판매”가 아니라 “빌려줌”의 형식을 취하는 이유는 무엇인가?",
+                    "en": "Why does lending rather than selling become the form here?"
                   },
                   "choices": {
                     "ko": [
-                      "대부자가 생산에 관여하지 않으므로 이자는 자본주의 생산과 무관하다고 본다.",
-                      "차입자가 빌린 화폐를 생산적 자본으로 전환해 잉여가치를 생산하고, 그 일부를 이자로 지급하는 과정이다.",
-                      "이자와 잉여가치를 완전히 별개의 원천에서 나온 수입으로 본다.",
-                      "M-M′ 형식을 자본주의 관계의 투명한 설명으로 본다."
+                      "자본으로서의 사용가치는 일정 기간 양도되고, 원금은 소유권을 유지한 대부자에게 되돌아와야 하기 때문이다.",
+                      "화폐는 팔 수 없는 물건이라 법적으로 모든 화폐거래가 대부 형식이어야 하기 때문이다.",
+                      "차입자는 원금을 소비재로 써야 하므로 소유권 이전이 처음부터 금지되기 때문이다.",
+                      "돈은 상품이 아니기 때문에 대부가 일어나면 가치관계가 사라지기 때문이다."
                     ],
                     "en": [
-                      "Assumes interest is unrelated to capitalist production because the lender does not enter production.",
-                      "The mediation is the borrower converting lent money into productive capital, producing surplus-value, and paying part of it as interest.",
-                      "Treats interest and surplus-value as revenues from entirely separate sources.",
-                      "Treats M-M′ as a transparent explanation of the capitalist relation."
+                      "Because the use-value of capital is alienated for a period, while the principal must return to the lender who retains ownership.",
+                      "Because money cannot legally be sold, so all money transactions must take the form of loans.",
+                      "Because the borrower must spend the principal on consumer goods, ownership transfer is prohibited from the beginning.",
+                      "Because money is not a commodity, value relations disappear when lending occurs."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "차입자가 빌린 화폐를 생산적 자본으로 전환해 잉여가치를 생산하고, 그 일부를 이자로 지급하는 과정이다. 매개를 보아야 유통·화폐·신용의 기능이 생산된 잉여가치와 어떻게 연결되는지 파악할 수 있다.",
-                    "en": "The mediation is the borrower converting lent money into productive capital, producing surplus-value, and paying part of it as interest. Seeing the mediation shows how circulation, money, and credit functions connect to produced surplus-value."
+                    "ko": "이자 낳는 자본에서는 자본으로 기능할 수 있는 능력이 빌려진다. 그래서 원금은 기능자본가에게 잠시 넘어가지만 법적 소유는 대부자에게 남는다.",
+                    "en": "In interest-bearing capital, the capacity to function as capital is loaned. The principal passes temporarily to the functioning capitalist, while legal ownership remains with the lender."
                   }
                 },
                 {
@@ -26589,27 +26561,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "돈이 돈을 낳는다는 설명은 무엇을 지운 것인가?",
-                    "en": "What is erased by the claim that money breeds money?"
+                    "ko": "자연 이자율이 없다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that there is no natural rate of interest?"
                   },
                   "choices": {
                     "ko": [
-                      "이자와 잉여가치를 완전히 별개의 원천에서 나온 수입으로 본다.",
-                      "M-M′ 형식을 자본주의 관계의 투명한 설명으로 본다.",
-                      "노동력 착취, 생산과정, 산업이윤과 이자의 분할이라는 매개 전체가 지워진다.",
-                      "차입자의 생산적 사용과 잉여가치 생산을 분석에서 제거한다."
+                      "이자는 이윤의 분할 비율이므로 상품가격처럼 가치법칙이 정해 주는 중심가격이 없고, 경쟁과 관습 속에서 정해진다는 뜻이다.",
+                      "이자율은 어떤 경우에도 경쟁과 무관하게 국가가 정하는 숫자라는 뜻이다.",
+                      "이자율은 원금의 금속함량에서 직접 계산되므로 시장관계와 접점이 작다는 뜻이다.",
+                      "이자는 자연적으로 생기는 소득이어서 경제법칙의 분석 대상이 아니라는 뜻이다."
                     ],
                     "en": [
-                      "Treats interest and surplus-value as revenues from entirely separate sources.",
-                      "Treats M-M′ as a transparent explanation of the capitalist relation.",
-                      "It erases the whole mediation of exploitation of labour-power, production, and the division of industrial profit into interest.",
-                      "Removes the borrower’s productive use and surplus-value production from the analysis."
+                      "Interest is a division of profit, so it has no central price determined by value law like commodity prices; it is fixed through competition and convention.",
+                      "Interest rates are always set by the state independently of competition.",
+                      "Interest rates are calculated directly from the metal content of principal and have little contact with market relations.",
+                      "Interest is natural income and therefore not an object of economic law."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "노동력 착취, 생산과정, 산업이윤과 이자의 분할이라는 매개 전체가 지워진다. 마르크스의 비판은 기능의 필요성을 부정하지 않고, 그 기능이 자연적 수익원처럼 보이는 전도를 비판한다.",
-                    "en": "It erases the whole mediation of exploitation of labour-power, production, and the division of industrial profit into interest. Marx does not deny the necessity of the function; he criticizes the inversion by which it appears as a natural source of revenue."
+                    "ko": "상품가격에는 생산가격이라는 중심이 있지만, 이자율에는 그런 자연적 중심이 없다. 그것은 총이윤을 대부자와 기능자본가가 나누는 비율이다.",
+                    "en": "Commodity prices have a centre in prices of production, but interest has no such natural centre. It is the ratio in which total profit is divided between lender and functioning capitalist."
                   }
                 },
                 {
@@ -26617,27 +26589,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "P2P 대출 플랫폼이 자동으로 이자를 지급한다고 광고한다. 마르크스의 범주로 무엇을 물어야 하는가?",
-                    "en": "A P2P lending platform advertises automatic interest payments. What should Marx’s categories ask?"
+                    "ko": "P2P 대출 플랫폼이 “돈이 자동으로 일한다”고 광고할 때 무엇을 물어야 하는가?",
+                    "en": "What should be asked when a P2P lending platform advertises that “money works automatically”?"
                   },
                   "choices": {
                     "ko": [
-                      "차입자의 생산적 사용과 잉여가치 생산을 분석에서 제거한다.",
-                      "M-M′ 형식을 자본주의 관계의 투명한 설명으로 본다.",
-                      "그 이자가 어떤 생산적 사용과 잉여가치 분배를 전제로 하는지, 또는 위험이 어떤 방식으로 이전되는지 물어야 한다.",
-                      "이자는 화폐 자체가 생산한 새 가치라고 본다."
+                      "그 이자가 어떤 생산적 사용, 위험 이전, 잉여가치 배분을 전제로 하는지 물어야 한다.",
+                      "자동 지급 시스템이 노동 없이 새 가치를 생산해 원금의 자연성장을 보장하는지 물어야 한다.",
+                      "플랫폼의 알고리즘이 산업자본을 대신해 상품가치를 직접 측정하는지 물어야 한다.",
+                      "투자자가 앱을 보는 시간이 대부자 노동으로 계산되어 이자를 만드는지 물어야 한다."
                     ],
                     "en": [
-                      "Removes the borrower’s productive use and surplus-value production from the analysis.",
-                      "Treats M-M′ as a transparent explanation of the capitalist relation.",
-                      "One should ask what productive use and distribution of surplus-value the interest presupposes, and how risk is transferred.",
-                      "Treats interest as new value produced by money itself."
+                      "One should ask what productive use, transfer of risk, and distribution of surplus-value the interest presupposes.",
+                      "One should ask whether automatic payment systems produce new value without labour and guarantee natural growth of principal.",
+                      "One should ask whether the platform algorithm directly measures commodity value in place of industrial capital.",
+                      "One should ask whether investors’ app-viewing time counts as lender labour that produces interest."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 이자가 어떤 생산적 사용과 잉여가치 분배를 전제로 하는지, 또는 위험이 어떤 방식으로 이전되는지 물어야 한다. 구체 사례에서는 수익이 어느 생산관계와 분배관계를 전제로 하는지 확인해야 한다.",
-                    "en": "One should ask what productive use and distribution of surplus-value the interest presupposes, and how risk is transferred. In concrete cases, one must identify the production and distribution relations presupposed by the revenue."
+                    "ko": "현대 금융 광고는 M-M'의 물신화를 반복한다. 분석은 자동 지급 표면 아래의 생산적 사용과 위험, 이윤 분할을 찾아야 한다.",
+                    "en": "Modern financial advertising repeats the fetishism of M-M'. Analysis must look beneath automatic payment to productive use, risk, and division of profit."
                   }
                 },
                 {
@@ -26645,27 +26617,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이자 낳는 자본의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of interest-bearing capital?"
+                    "ko": "21장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 21?"
                   },
                   "choices": {
                     "ko": [
-                      "차입자의 생산적 사용과 잉여가치 생산을 분석에서 제거한다.",
-                      "이자는 화폐 자체가 생산한 새 가치라고 본다.",
-                      "대부자가 생산에 관여하지 않으므로 이자는 자본주의 생산과 무관하다고 본다.",
-                      "이윤이 이자와 기업가이득으로 나뉘는 분석을 열고, 자본관계의 물신화된 표면을 가장 선명하게 드러낸다."
+                      "자본이 상품으로 대여되고 이윤이 이자와 기업가이득으로 갈라지는 분석을 열어, 자본관계의 물신화된 표면을 가장 선명하게 드러낸다.",
+                      "화폐거래자본의 기술적 기능을 마무리하고 상인자본의 역사로 되돌아간다.",
+                      "상업이윤의 원천을 소비자 수요로 바꾸어 평균이윤율 분석을 끝낸다.",
+                      "이자를 자연가격으로 세워 상품가격과 같은 법칙에 직접 종속시킨다."
                     ],
                     "en": [
-                      "Removes the borrower’s productive use and surplus-value production from the analysis.",
-                      "Treats interest as new value produced by money itself.",
-                      "Assumes interest is unrelated to capitalist production because the lender does not enter production.",
-                      "It opens the analysis of profit divided into interest and profit of enterprise, and most sharply reveals the fetishized surface of the capital relation."
+                      "It opens the analysis in which capital is loaned as a commodity and profit splits into interest and profit of enterprise, displaying the fetishized surface of capital most clearly.",
+                      "It closes the technical function of money-dealing capital and returns to the history of merchant capital.",
+                      "It changes the source of commercial profit into consumer demand and ends the average-profit analysis.",
+                      "It establishes interest as a natural price directly governed by the same law as commodity prices."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤이 이자와 기업가이득으로 나뉘는 분석을 열고, 자본관계의 물신화된 표면을 가장 선명하게 드러낸다. 이 체계적 연결이 이후 신용, 가공자본, 지대 분석으로 이어지는 통로다.",
-                    "en": "It opens the analysis of profit divided into interest and profit of enterprise, and most sharply reveals the fetishized surface of the capital relation. This systematic link opens the path to the later analysis of credit, fictitious capital, and rent."
+                    "ko": "21장은 자본의 전도를 가장 압축된 형태로 보여 준다. 돈이 돈을 낳는다는 표면 아래에는 잉여가치 생산과 이윤 분할이 놓여 있다.",
+                    "en": "Chapter 21 shows the inversion of capital in its most compressed form. Beneath the surface that money breeds money lie surplus-value production and the division of profit."
                   }
                 }
               ]
