@@ -21385,27 +21385,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "보충 설명에서 마르크스가 앞선 논의를 보완하는 방향은 무엇인가?",
-                    "en": "In the supplementary remarks, in what direction does Marx supplement the preceding analysis?"
+                    "ko": "7장의 보충 설명이 1편의 이윤율 분석에 더하는 핵심은 무엇인가?",
+                    "en": "What is the main addition Chapter 7 makes to the analysis of the rate of profit in Part I?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율이 자본구성, 회전, 불변자본 절약, 가격 변동이 얽힌 구체적 운동 속에서 변한다는 점을 보완한다.",
-                      "이윤율 변화는 항상 단일 원인으로 설명된다고 본다.",
-                      "분석상 분리한 요인들이 현실에서도 따로 작용한다고 본다.",
-                      "원료 가격이 내리면 이윤율은 대체로 오른다고 본다."
+                      "같은 잉여가치량도 선대자본의 구성, 불변자본의 재평가, 회전 조건에 따라 서로 다른 이윤율로 나타나는 과정을 정리한다.",
+                      "이윤율 계산을 중단하고 개별 자본가의 경영 판단을 가치론의 중심 변수로 세운다.",
+                      "원료 가격, 기계 효율, 회전 기간을 각각 독립된 시장 사건의 목록으로 배열한다.",
+                      "잉여가치량과 이윤량의 동일성을 생산과정의 세부 분석 없이 회계 용어로 바꾼다."
                     ],
                     "en": [
-                      "He supplements the analysis by showing that the profit rate changes through the concrete interaction of capital composition, turnover, economy in constant capital, and price fluctuations.",
-                      "Assumes every profit-rate change has a single cause.",
-                      "Assumes factors separated in analysis also act separately in reality.",
-                      "Assumes falling raw-material prices always raise the profit rate."
+                      "It gathers how the same mass of surplus-value can appear as different rates of profit according to advanced capital, revaluation of constant capital, and turnover conditions.",
+                      "It stops calculating profit rates and makes the individual capitalist’s managerial judgment the central variable of value theory.",
+                      "It lists raw-material prices, machinery efficiency, and turnover periods as separate market incidents.",
+                      "It translates the identity of surplus-value and profit into accounting terms without analyzing production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이윤율이 자본구성, 회전, 불변자본 절약, 가격 변동이 얽힌 구체적 운동 속에서 변한다는 점을 보완한다. 이 지점은 3권에서 잉여가치가 자본가에게 어떤 표면형태로 나타나는지 이해하는 출발점이다.",
-                    "en": "He supplements the analysis by showing that the profit rate changes through the concrete interaction of capital composition, turnover, economy in constant capital, and price fluctuations. This is a starting point for understanding how surplus-value appears to capitalists in Volume III."
+                    "ko": "7장은 앞선 공식들을 현실의 변동 요인과 연결한다. 잉여가치가 생산에서 생겨도 이윤율은 총선대자본을 기준으로 표시되므로, 불변자본 가치와 회전 조건의 변화가 표면에서는 결정적인 원인처럼 보인다.",
+                    "en": "Chapter 7 connects the earlier formulas to concrete fluctuations. Surplus-value arises in production, but the profit rate is measured against total advanced capital, so changes in constant capital and turnover can dominate the surface appearance."
                   }
                 },
                 {
@@ -21413,27 +21413,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "앞선 요인들을 따로따로만 보면 이윤율 운동을 왜 충분히 설명할 수 없는가?",
-                    "en": "Why can the movement of the profit rate not be sufficiently explained if the preceding factors are seen only separately?"
+                    "ko": "마르크스의 예에서 A는 9,000c+1,000v, B는 11,000c+1,000v이고 두 경우 모두 s=1,000이다. 여기서 드러나는 공식상의 요점은 무엇인가?",
+                    "en": "In Marx’s example, A has 9,000c+1,000v and B has 11,000c+1,000v, while both have s=1,000. What is the formal point?"
                   },
                   "choices": {
                     "ko": [
-                      "현실에서는 원료 가격, 회전, 설비 절약, 자본구성이 서로 결합해 같은 이윤율에도 여러 경로를 만들기 때문이다.",
-                      "원료 가격이 내리면 이윤율은 대체로 오른다고 본다.",
-                      "분석상 분리한 요인들이 현실에서도 따로 작용한다고 본다.",
-                      "회전과 감가상각은 이윤율 공식 밖의 문제라고 본다."
+                      "p'=s/C이므로 같은 착취율과 같은 잉여가치량도 C가 10,000이면 10%, C가 12,000이면 8과 1/3%의 이윤율로 표시된다.",
+                      "p'=s/v이므로 두 자본은 모두 100%의 이윤율을 기록하고 선대자본의 차이는 계산에서 사라진다.",
+                      "p'=C/s이므로 더 큰 불변자본을 가진 B가 더 높은 이윤율을 얻는다.",
+                      "p'=v/C이므로 임금 지출이 같은 두 자본은 생산조건과 관계없이 같은 이윤율을 갖는다."
                     ],
                     "en": [
-                      "In reality, raw-material prices, turnover, equipment economy, and capital composition combine, producing several paths to the same profit rate.",
-                      "Assumes falling raw-material prices always raise the profit rate.",
-                      "Assumes factors separated in analysis also act separately in reality.",
-                      "Treats turnover and depreciation as outside the profit-rate formula."
+                      "Since p'=s/C, the same exploitation and the same surplus-value appear as 10% when C is 10,000 and 8 1/3% when C is 12,000.",
+                      "Since p'=s/v, both capitals record a 100% profit rate and the difference in advanced capital disappears.",
+                      "Since p'=C/s, B with the larger constant capital obtains the higher rate of profit.",
+                      "Since p'=v/C, equal wage outlays give the two capitals the same profit rate regardless of production conditions."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "현실에서는 원료 가격, 회전, 설비 절약, 자본구성이 서로 결합해 같은 이윤율에도 여러 경로를 만들기 때문이다. 따라서 같은 착취관계도 자본구성, 회전, 가격 변동을 거치며 다른 수익성 지표로 나타난다.",
-                    "en": "In reality, raw-material prices, turnover, equipment economy, and capital composition combine, producing several paths to the same profit rate. The same exploitation relation can therefore appear as different profitability measures through capital composition, turnover, and price changes."
+                    "ko": "이윤율은 잉여가치를 총선대자본과 비교한다. 같은 1,000의 잉여가치도 선대자본이 10,000인지 12,000인지에 따라 10%와 8과 1/3%로 달라진다.",
+                    "en": "The rate of profit compares surplus-value with total advanced capital. The same 1,000 of surplus-value becomes 10% or 8 1/3% depending on whether the advanced capital is 10,000 or 12,000."
                   }
                 },
                 {
@@ -21441,27 +21441,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "개별 요인의 효과와 총체적 이윤율 운동을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must the effect of an individual factor be distinguished from the total movement of the profit rate?"
+                    "ko": "자본가가 이윤의 원천을 잉여노동보다 유통과 경영 성과에서 찾기 쉬운 이유는 무엇인가?",
+                    "en": "Why is it easy for the capitalist to locate profit in circulation or management rather than in surplus-labour?"
                   },
                   "choices": {
                     "ko": [
-                      "원료 가격이 내리면 이윤율은 대체로 오른다고 본다.",
-                      "한 요인은 이윤율을 올려도 다른 요인이 동시에 반대로 작용해 전체 결과가 달라질 수 있기 때문이다.",
-                      "회전과 감가상각은 이윤율 공식 밖의 문제라고 본다.",
-                      "보충 설명을 앞 장의 반복 요약으로만 본다."
+                      "판매 실현, 투입재 단가, 기계 활용, 부산물 절감이 이윤율을 흔들어 생산에서 생긴 잉여가치의 원천을 표면에서 흐리게 만든다.",
+                      "유통에서 가격이 정해진 뒤에야 노동시간이 사회적으로 필요한지 확인되기 때문이다.",
+                      "노동자가 받은 임금이 상품 가격에 전액 보존되어 자본가의 판매 수익으로 이동하기 때문이다.",
+                      "기계가 생산물의 사용가치를 만들 때 새 가치와 잉여가치를 동시에 창조하기 때문이다."
                     ],
                     "en": [
-                      "Assumes falling raw-material prices always raise the profit rate.",
-                      "One factor may raise the profit rate while another works in the opposite direction, changing the total result.",
-                      "Treats turnover and depreciation as outside the profit-rate formula.",
-                      "Treats the supplementary remarks as only a summary of previous chapters."
+                      "Realization of sales, raw-material prices, machinery use, and waste reduction alter the profit rate, making the source of surplus-value in production appear less visible at the surface.",
+                      "Because labour-time becomes socially necessary only after prices are set in circulation.",
+                      "Because the wage received by workers is fully preserved in commodity prices and moves into the capitalist’s sales revenue.",
+                      "Because machinery creates both new value and surplus-value when it makes the use-value of the product."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "한 요인은 이윤율을 올려도 다른 요인이 동시에 반대로 작용해 전체 결과가 달라질 수 있기 때문이다. 이 구분을 놓치면 이윤율의 표면이 잉여가치 생산관계를 대신 설명하는 것처럼 보인다.",
-                    "en": "One factor may raise the profit rate while another works in the opposite direction, changing the total result. Without this distinction, the surface of the profit rate seems to explain the production relation of surplus-value itself."
+                    "ko": "유통과 경영 요인은 이윤율의 크기와 실현을 실제로 흔든다. 그래서 자본가의 눈에는 unpaid labour이 아니라 판매, 절약, 관리가 이윤의 직접 원천처럼 나타난다.",
+                    "en": "Circulation and managerial factors really do affect the size and realization of the profit rate. Thus profit appears to the capitalist as coming directly from sales, economies, and supervision rather than from unpaid labour."
                   }
                 },
                 {
@@ -21469,27 +21469,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원료 가격은 내렸지만 회전이 느려지고 설비가 과잉이다. 이윤율을 보려면 무엇을 해야 하는가?",
-                    "en": "Raw-material prices fall, but turnover slows and equipment is excessive. What must be done to understand the profit rate?"
+                    "ko": "두 공장이 같은 노동자 수와 같은 잉여노동을 사용하지만 한쪽은 원료가 싸지고 다른 한쪽은 비싼 설비를 더 많이 묶어 둔다. 이 사례를 7장의 관점에서 어떻게 읽어야 하는가?",
+                    "en": "Two factories use the same number of workers and the same surplus-labour, but one gets cheaper raw materials while the other ties up more expensive equipment. How should this be read from Chapter 7?"
                   },
                   "choices": {
                     "ko": [
-                      "회전과 감가상각은 이윤율 공식 밖의 문제라고 본다.",
-                      "보충 설명을 앞 장의 반복 요약으로만 본다.",
-                      "각 요인을 따로 결론 내리지 말고 총투하자본, 비용가격, 연간 잉여가치의 결합 효과를 봐야 한다.",
-                      "이윤율 변화는 항상 단일 원인으로 설명된다고 본다."
+                      "잉여가치의 생산 조건과 이윤율의 표시 조건을 구별해야 하며, 불변자본의 가치 변화는 같은 잉여가치를 다른 비율로 보이게 한다.",
+                      "싼 원료를 구한 공장은 더 많은 잉여노동을 생산했기 때문에 이윤율이 오른다.",
+                      "비싼 설비를 보유한 공장은 더 큰 물적 자본을 가졌으므로 같은 비율의 이윤을 얻는다.",
+                      "두 공장의 판매가격 차이는 구매 부서의 협상력이 대부분 좌우한다."
                     ],
                     "en": [
-                      "Treats turnover and depreciation as outside the profit-rate formula.",
-                      "Treats the supplementary remarks as only a summary of previous chapters.",
-                      "One must not draw conclusions from each factor alone, but examine their combined effect on total advanced capital, cost-price, and annual surplus-value.",
-                      "Assumes every profit-rate change has a single cause."
+                      "The production of surplus-value must be distinguished from the conditions in which the profit rate is expressed; changes in constant capital make the same surplus-value appear in a different ratio.",
+                      "The factory with cheaper raw materials has a higher rate because it produced more surplus-labour.",
+                      "The factory with more expensive equipment obtains the same percentage of profit because it possesses more material capital.",
+                      "The difference in selling prices is largely governed by the purchasing department’s bargaining power."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "각 요인을 따로 결론 내리지 말고 총투하자본, 비용가격, 연간 잉여가치의 결합 효과를 봐야 한다. 구체 사례에서도 핵심은 비용 절감이나 가격 변동이 잉여가치의 생산과 이윤율의 표현을 어떻게 다르게 매개하는가이다.",
-                    "en": "One must not draw conclusions from each factor alone, but examine their combined effect on total advanced capital, cost-price, and annual surplus-value. In concrete cases, the key is how cost saving or price movement mediates surplus-value production and the expression of the profit rate differently."
+                    "ko": "핵심은 원천과 표현형태의 구별이다. 원료와 설비의 가치 변화는 총선대자본을 바꾸므로 이윤율을 바꾸지만, 그것이 곧 잉여노동의 생산량 변화를 뜻하지는 않는다.",
+                    "en": "The key is the distinction between source and form of appearance. Changes in raw materials and equipment alter total advanced capital and therefore the profit rate, but they do not automatically mean a change in the production of surplus-labour."
                   }
                 },
                 {
@@ -21497,27 +21497,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "보충 설명 장이 이 구간 전체에 주는 역할은 무엇인가?",
-                    "en": "What role do the supplementary remarks play in this whole section?"
+                    "ko": "7장의 보충 설명은 8장의 부문별 자본구성 논의로 어떻게 이어지는가?",
+                    "en": "How do Chapter 7’s supplementary remarks lead into Chapter 8’s discussion of branch-specific compositions of capital?"
                   },
                   "choices": {
                     "ko": [
-                      "분석상 분리한 요인들이 현실에서도 따로 작용한다고 본다.",
-                      "보충 설명을 앞 장의 반복 요약으로만 본다.",
-                      "이윤율 변화는 항상 단일 원인으로 설명된다고 본다.",
-                      "이윤율을 결정하는 요인들을 정리해, 다음의 부문별 이윤율 차이와 평균이윤 문제로 넘어갈 준비를 한다."
+                      "한 자본 내부에서 순차적으로 본 구성과 회전의 변화를 여러 생산부문이 동시에 가진 차이로 옮겨 읽게 만든다.",
+                      "개별 자본의 우연한 가격 변동을 제거하고 모든 부문이 같은 물적 설비를 사용한다는 가정으로 넘어간다.",
+                      "경영 절약의 효과를 가치법칙보다 앞세운 뒤 평균이윤을 기업가 보상의 이름으로 설명한다.",
+                      "생산부문 사이의 차이를 노동자 임금 수준의 차이로 환원하는 분석으로 이동한다."
                     ],
                     "en": [
-                      "Assumes factors separated in analysis also act separately in reality.",
-                      "Treats the supplementary remarks as only a summary of previous chapters.",
-                      "Assumes every profit-rate change has a single cause.",
-                      "They gather the factors determining the profit rate and prepare the transition to differences between branch profit rates and the problem of average profit."
+                      "It turns changes of composition and turnover first viewed successively within one capital into simultaneous differences among branches of production.",
+                      "It removes accidental price changes and moves to the assumption that all branches use the same material equipment.",
+                      "It places managerial economies ahead of the law of value and explains average profit as entrepreneurial reward.",
+                      "It moves toward reducing differences among branches to differences in workers’ wage levels."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율을 결정하는 요인들을 정리해, 다음의 부문별 이윤율 차이와 평균이윤 문제로 넘어갈 준비를 한다. 이 장은 앞선 이윤 개념을 더 구체적인 운동 법칙으로 밀고 나가는 역할을 한다.",
-                    "en": "They gather the factors determining the profit rate and prepare the transition to differences between branch profit rates and the problem of average profit. The chapter pushes the earlier concept of profit toward more concrete laws of motion."
+                    "ko": "8장은 7장에서 한 자본의 변동으로 검토한 요소를 여러 생산부문 사이의 동시적 차이로 확장한다. 그래서 부문별 유기적 구성 차이가 서로 다른 이윤율을 낳는 문제가 전면에 나온다.",
+                    "en": "Chapter 8 extends factors examined as changes within one capital into simultaneous differences among branches. This brings the problem of different organic compositions producing different profit rates to the foreground."
                   }
                 }
               ]
@@ -21535,27 +21535,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "보충 설명의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of the supplementary remarks?"
+                    "ko": "마르크스가 로드베르투스 논의를 검토할 때 자본 크기의 변화를 두 경우로 나누는 이유는 무엇인가?",
+                    "en": "Why does Marx divide changes in the magnitude of capital into two cases when discussing Rodbertus?"
                   },
                   "choices": {
                     "ko": [
-                      "분석상 분리한 요인들이 현실에서는 동시에 작용해 이윤율의 표면 운동을 복잡하게 만든다는 긴장이다.",
-                      "분석상 분리한 요인들이 현실에서도 따로 작용한다고 본다.",
-                      "이윤율 변화는 항상 단일 원인으로 설명된다고 본다.",
-                      "원료 가격이 내리면 이윤율은 대체로 오른다고 본다."
+                      "화폐가치의 명목 변화처럼 비율을 건드리지 않는 경우와, 실제 구성 변화처럼 c:v 관계를 바꾸는 경우의 효과가 다르기 때문이다.",
+                      "개별 자본의 장부가격과 사회적 총자본의 생산가격이 같은 수치로 기록되기 때문이다.",
+                      "이윤율 공식에서 선대자본의 크기는 계산 단위에 가까워 실제 생산관계보다 장부 표시를 좌우한다.",
+                      "자본의 절대 규모가 커질수록 모든 부문에서 산 노동의 비중도 같은 폭으로 커지기 때문이다."
                     ],
                     "en": [
-                      "The tension is that factors separated analytically act simultaneously in reality, making the surface movement of the profit rate complex.",
-                      "Assumes factors separated in analysis also act separately in reality.",
-                      "Assumes every profit-rate change has a single cause.",
-                      "Assumes falling raw-material prices always raise the profit rate."
+                      "Because nominal changes such as a change in the value of money do not disturb the ratio, whereas real changes of composition alter the c:v relation.",
+                      "Because book prices of individual capital and production prices of social capital are recorded by the same number.",
+                      "Because the magnitude of advanced capital is close to a unit of account in the profit-rate formula and mainly governs book presentation rather than production relations.",
+                      "Because whenever absolute capital grows, the share of living labour grows by the same amount in every branch."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "분석상 분리한 요인들이 현실에서는 동시에 작용해 이윤율의 표면 운동을 복잡하게 만든다는 긴장이다. 이 긴장은 이윤율이 단순한 회계비율이 아니라 착취관계의 전도된 표현임을 보여준다.",
-                    "en": "The tension is that factors separated analytically act simultaneously in reality, making the surface movement of the profit rate complex. This tension shows that the rate of profit is not a mere accounting ratio but an inverted expression of exploitation."
+                    "ko": "마르크스의 구분은 자본량 변화가 이윤율을 바꾸는 조건을 분명히 하려는 것이다. 비율이 그대로인 명목 변화와, 유기적 구성이나 가치관계를 바꾸는 실제 변화는 이윤율에 다른 효과를 낸다.",
+                    "en": "Marx’s distinction clarifies the conditions under which a change in capital magnitude affects the profit rate. A nominal change that leaves ratios intact differs from a real change in organic composition or value relations."
                   }
                 },
                 {
@@ -21563,27 +21563,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "여러 이윤율 요인을 하나의 분석으로 묶는 매개는 무엇인가?",
-                    "en": "What mediates the several factors of the profit rate into one analysis?"
+                    "ko": "7장에서 기존 불변자본의 가치는 어떤 기준으로 재평가되는가?",
+                    "en": "By what standard is existing constant capital revalued in Chapter 7?"
                   },
                   "choices": {
                     "ko": [
-                      "분석상 분리한 요인들이 현실에서도 따로 작용한다고 본다.",
-                      "총투하자본에 대한 연간 잉여가치의 비율이라는 이윤율 형식 자체가 매개한다.",
-                      "원료 가격이 내리면 이윤율은 대체로 오른다고 본다.",
-                      "회전과 감가상각은 이윤율 공식 밖의 문제라고 본다."
+                      "처음 생산될 때 들었던 노동시간이 아니라 현재 그것을 재생산하는 데 사회적으로 필요한 노동시간을 기준으로 삼는다.",
+                      "구입 당시 장부가격과 감가상각표가 일치하는 정도를 기준으로 삼는다.",
+                      "자본가가 그 설비를 얼마 동안 소유했는지와 금융비용을 더한 기간을 기준으로 삼는다.",
+                      "상품이 판매된 뒤 구매자가 인정한 효용의 크기를 기준으로 삼는다."
                     ],
                     "en": [
-                      "Assumes factors separated in analysis also act separately in reality.",
-                      "The form of the profit rate itself, the ratio of annual surplus-value to total advanced capital, mediates them.",
-                      "Assumes falling raw-material prices always raise the profit rate.",
-                      "Treats turnover and depreciation as outside the profit-rate formula."
+                      "It is measured not by the labour-time originally spent on it, but by the socially necessary labour-time currently required to reproduce it.",
+                      "It is measured by the fit between the purchase book price and the depreciation schedule.",
+                      "It is measured by how long the capitalist has owned the equipment plus financing costs.",
+                      "It is measured by the utility recognized by buyers after the commodity is sold."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "총투하자본에 대한 연간 잉여가치의 비율이라는 이윤율 형식 자체가 매개한다. 매개를 보아야 값, 비용가격, 이윤율 사이의 이동이 기계적 변환이 아니라 사회적 형식 변화임을 이해할 수 있다.",
-                    "en": "The form of the profit rate itself, the ratio of annual surplus-value to total advanced capital, mediates them. Seeing the mediation shows that movement between value, cost-price, and profit rate is a social change of form, not a mechanical conversion."
+                    "ko": "가치 규정은 재생산 조건과 연결된다. 이미 보유한 원료나 기계도 현재 더 적은 노동시간으로 재생산될 수 있으면 가치가 떨어지고, 더 많은 노동시간이 필요하면 가치가 오른다.",
+                    "en": "Value determination is tied to conditions of reproduction. Existing materials or machinery lose value if they can now be reproduced with less labour-time, and gain value if more labour-time is now required."
                   }
                 },
                 {
@@ -21591,27 +21591,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "한 가지 요인만으로 이윤율 변화를 설명하는 해설은 무엇을 놓치는가?",
-                    "en": "What is missed by an explanation that attributes a change in the profit rate to only one factor?"
+                    "ko": "같은 잉여가치율 아래에서 불변자본 가치가 모든 구성부분에 같은 비율로 변할 때와 특정 부분에 집중될 때의 차이는 무엇인가?",
+                    "en": "Under the same rate of surplus-value, what is the difference between a uniform change in the value of all components of constant capital and a change concentrated in one part?"
                   },
                   "choices": {
                     "ko": [
-                      "원료 가격이 내리면 이윤율은 대체로 오른다고 본다.",
-                      "회전과 감가상각은 이윤율 공식 밖의 문제라고 본다.",
-                      "자본주의적 경쟁 속에서는 비용, 회전, 가격, 기술 변화가 서로 상쇄하거나 증폭하는 복합 효과를 놓친다.",
-                      "보충 설명을 앞 장의 반복 요약으로만 본다."
+                      "전자는 c:v 비율을 크게 흔들지 않을 수 있지만, 후자는 유기적 구성과 총선대자본의 관계를 바꾸어 이윤율 변동을 낳기 쉽다.",
+                      "전자는 잉여가치율을 높이고 후자는 임금률을 낮추어 서로 다른 착취 형태를 만든다.",
+                      "전자는 생산가격의 기준을 바꾸고 후자는 시장가격의 단기 진폭을 만든다.",
+                      "전자는 노동시간 계산을 필요 없게 만들고 후자는 가치법칙을 원료 가격 법칙으로 대체한다."
                     ],
                     "en": [
-                      "Assumes falling raw-material prices always raise the profit rate.",
-                      "Treats turnover and depreciation as outside the profit-rate formula.",
-                      "It misses the combined effects in capitalist competition through which cost, turnover, price, and technical change offset or amplify one another.",
-                      "Treats the supplementary remarks as only a summary of previous chapters."
+                      "The former may leave the c:v ratio largely intact, while the latter can alter organic composition and the relation to total advanced capital, producing a change in the profit rate.",
+                      "The former raises the rate of surplus-value and the latter lowers wages, creating different forms of exploitation.",
+                      "The former changes the standard of prices of production, while the latter creates a short-term amplitude in market prices.",
+                      "The former makes labour-time calculation unnecessary and the latter replaces the law of value with a law of raw-material prices."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본주의적 경쟁 속에서는 비용, 회전, 가격, 기술 변화가 서로 상쇄하거나 증폭하는 복합 효과를 놓친다. 마르크스의 비판은 현상 자체를 부정하지 않고, 그 현상이 어떤 생산관계를 가리는지 밝힌다.",
-                    "en": "It misses the combined effects in capitalist competition through which cost, turnover, price, and technical change offset or amplify one another. Marx does not deny the phenomenon itself; he shows what production relation it conceals."
+                    "ko": "이윤율은 잉여가치량뿐 아니라 총선대자본과 구성비에 의해 표현된다. 그래서 가치 변화가 어디에 어떻게 걸리는지가 중요하다.",
+                    "en": "The profit rate is expressed not only through the mass of surplus-value but also through total advanced capital and its composition. Where and how a value change falls therefore matters."
                   }
                 },
                 {
@@ -21619,27 +21619,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "AI 데이터센터 기업의 이윤율이 전력가격, GPU 감가상각, 이용률, 정산주기에 따라 흔들린다. 어떤 식으로 읽어야 하는가?",
-                    "en": "An AI data-center firm’s profit rate fluctuates with electricity prices, GPU depreciation, utilization, and settlement cycles. How should this be read?"
+                    "ko": "데이터센터 기업 두 곳이 같은 수의 엔지니어와 운영 인력을 고용하지만 한쪽은 GPU 가격 하락과 전력 효율 개선을 얻었다. 7장의 분석으로 가장 정밀한 설명은 무엇인가?",
+                    "en": "Two data-center firms employ the same number of engineers and operators, but one benefits from falling GPU prices and better power efficiency. What is the most precise Chapter 7 explanation?"
                   },
                   "choices": {
                     "ko": [
-                      "보충 설명을 앞 장의 반복 요약으로만 본다.",
-                      "회전과 감가상각은 이윤율 공식 밖의 문제라고 본다.",
-                      "각 변수가 비용가격, 총투하자본, 회전수, 연간 잉여가치량에 미치는 결합 효과로 읽어야 한다.",
-                      "이윤율 변화는 항상 단일 원인으로 설명된다고 본다."
+                      "산 노동이 만든 잉여가치의 원천은 같을 수 있지만, 불변자본의 가치와 절약 조건이 달라져 같은 잉여가치가 더 높은 이윤율로 표현될 수 있다.",
+                      "GPU가 더 싸진 기업은 기계가 새 가치를 더 많이 생산했으므로 노동자 수와 관계없이 잉여가치가 증가한다.",
+                      "전력 효율은 유통 범주의 절약이라 생산과정의 이윤율 산식과 별도 항목이다.",
+                      "두 기업의 임금총액이 같으면 사회적 평균이윤이 성립하기 전에도 판매가격은 같은 수준으로 고정된다."
                     ],
                     "en": [
-                      "Treats the supplementary remarks as only a summary of previous chapters.",
-                      "Treats turnover and depreciation as outside the profit-rate formula.",
-                      "It should be read as the combined effect of each variable on cost-price, total advanced capital, turnover number, and annual surplus-value.",
-                      "Assumes every profit-rate change has a single cause."
+                      "The source of surplus-value in living labour may be the same, but different values and economies of constant capital can express that same surplus-value as a higher profit rate.",
+                      "The firm with cheaper GPUs produces more surplus-value because machines create more new value regardless of the number of workers.",
+                      "Power efficiency is a saving in circulation costs and therefore belongs to a separate item from the production profit-rate formula.",
+                      "If the two firms have equal wage bills, their selling prices are fixed at the same level even before average profit is formed."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "각 변수가 비용가격, 총투하자본, 회전수, 연간 잉여가치량에 미치는 결합 효과로 읽어야 한다. 현대 사례도 같은 기준으로 읽을 수 있다. 표면의 수익성 변화와 잉여가치 생산의 원천을 분리해야 한다.",
-                    "en": "It should be read as the combined effect of each variable on cost-price, total advanced capital, turnover number, and annual surplus-value. Modern cases can be read by the same criterion: separate surface profitability changes from the source of surplus-value production."
+                    "ko": "이 사례는 기계가 잉여가치를 만든다는 결론이 아니라, 불변자본의 가치 하락과 절약이 이윤율의 분모와 비용 구조를 바꾼다는 결론으로 읽어야 한다.",
+                    "en": "The case should not be read as machines creating surplus-value. It shows that a fall in the value of constant capital and economies in its use alter the denominator and cost structure of the profit rate."
                   }
                 },
                 {
@@ -21647,27 +21647,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "보충 설명의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the supplementary remarks?"
+                    "ko": "7장이 1편을 마무리하면서 평균이윤 논의의 문턱을 여는 이유는 무엇인가?",
+                    "en": "Why does Chapter 7 close Part I while opening the threshold to the theory of average profit?"
                   },
                   "choices": {
                     "ko": [
-                      "보충 설명을 앞 장의 반복 요약으로만 본다.",
-                      "이윤율 변화는 항상 단일 원인으로 설명된다고 본다.",
-                      "분석상 분리한 요인들이 현실에서도 따로 작용한다고 본다.",
-                      "이윤율의 여러 결정요인을 모아 평균이윤율 형성과 생산가격 분석으로 넘어가는 다리를 놓는다."
+                      "개별 이윤율을 움직이는 요인을 정리한 뒤, 그런 차이가 부문들 사이에 동시에 존재할 때 일반 이윤율 문제가 발생함을 보여 주기 때문이다.",
+                      "이윤율 차이가 개별 자본가의 도덕성 차이로 해소될 수 있음을 보인 뒤 경쟁 분석으로 넘어가기 때문이다.",
+                      "잉여가치율과 이윤율을 같은 개념으로 확정하여 이후 장들의 전환 문제를 단순화하기 때문이다.",
+                      "생산부문 차이를 소비자의 수요 강도 차이로 설명하고 시장가격 분석을 종결하기 때문이다."
                     ],
                     "en": [
-                      "Treats the supplementary remarks as only a summary of previous chapters.",
-                      "Assumes every profit-rate change has a single cause.",
-                      "Assumes factors separated in analysis also act separately in reality.",
-                      "They gather the determinants of the profit rate and bridge to the formation of the average rate of profit and prices of production."
+                      "Because after gathering the factors that move individual profit rates, it shows that when such differences coexist among branches the problem of a general rate of profit arises.",
+                      "Because it shows that differences in profit rates can be resolved by differences in the morality of individual capitalists before moving to competition.",
+                      "Because it fixes the rate of surplus-value and the rate of profit as the same concept, simplifying the later transformation problem.",
+                      "Because it explains branch differences by differences in consumer demand and closes the analysis of market prices."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율의 여러 결정요인을 모아 평균이윤율 형성과 생산가격 분석으로 넘어가는 다리를 놓는다. 이 연결이 다음 장들의 평균이윤, 경쟁, 생산가격 분석으로 이어진다.",
-                    "en": "They gather the determinants of the profit rate and bridge to the formation of the average rate of profit and prices of production. This connection leads into the later analysis of average profit, competition, and prices of production."
+                    "ko": "7장의 역할은 연결부다. 이윤율을 바꾸는 요인들을 하나의 자본 안에서 검토한 뒤, 8장부터는 그 차이가 여러 부문에 동시에 분포할 때 가치와 현실 이윤율 사이에 어떤 문제가 생기는지 다룬다.",
+                    "en": "Chapter 7 is a transition. After examining factors that alter the profit rate within one capital, Chapter 8 asks what happens when those differences are distributed simultaneously across branches."
                   }
                 }
               ]
@@ -21740,27 +21740,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "부문마다 기계와 노동력의 비율이 다를 때, 같은 착취율 아래에서도 왜 이윤율이 다르게 보이는가?",
-                    "en": "What does Marx analyze in the different compositions of capitals across branches of production?"
+                    "ko": "8장에서 마르크스가 비교하려는 부문별 자본의 차이는 무엇인가?",
+                    "en": "What branch-specific difference of capitals does Marx compare in Chapter 8?"
                   },
                   "choices": {
                     "ko": [
-                      "부문마다 c와 v의 비율이 다르기 때문에 상품이 가치대로 팔리면 서로 다른 이윤율이 생긴다는 점이다.",
-                      "기계가 많을수록 그 기계가 직접 더 많은 잉여가치를 만든다고 본다.",
-                      "모든 부문은 같은 자본구성을 갖는다고 가정한다.",
-                      "기술 수준이 높으면 이윤율도 대체로 높다고 본다."
+                      "같은 착취율을 가정한 뒤, 생산부문마다 불변자본과 가변자본의 유기적 구성이 다르다는 점을 비교한다.",
+                      "각 부문 자본가가 노동자를 대하는 태도와 계약 문구가 서로 다르다는 점을 비교한다.",
+                      "시장가격이 소비자의 취향에 따라 매일 달라지는 속도를 비교한다.",
+                      "국가별 화폐 단위와 환율이 상품명에 남기는 차이를 비교한다."
                     ],
                     "en": [
-                      "Because the ratio of c to v differs by branch, commodities sold at their values would yield different rates of profit.",
-                      "Assumes more machinery directly creates more surplus-value.",
-                      "Assumes all branches have the same capital composition.",
-                      "Assumes a higher technical level always means a higher profit rate."
+                      "He assumes the same rate of exploitation and compares how organic composition differs across branches of production.",
+                      "He compares differences in the attitude and contract wording of capitalists toward workers.",
+                      "He compares how quickly market prices change each day according to consumer taste.",
+                      "He compares differences left by national currencies and exchange rates in commodity names."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "부문마다 c와 v의 비율이 다르기 때문에 상품이 가치대로 팔리면 서로 다른 이윤율이 생긴다는 점이다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
-                    "en": "Because the ratio of c to v differs by branch, commodities sold at their values would yield different rates of profit. This is the starting point for the analysis of average profit and prices of production."
+                    "ko": "8장의 출발점은 착취율을 같게 두는 추상이다. 그 위에서 생산수단과 노동력의 비율, 즉 유기적 구성 차이가 각 부문의 이윤율을 어떻게 다르게 만드는지 본다.",
+                    "en": "Chapter 8 begins by abstracting from differences in exploitation. On that basis it asks how different proportions of means of production and labour-power, organic compositions, produce different profit rates."
                   }
                 },
                 {
@@ -21768,27 +21768,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "같은 잉여가치율 아래에서도 유기적 구성이 높은 부문은 왜 이윤율이 낮게 나타날 수 있는가?",
-                    "en": "Why can a branch with a higher organic composition show a lower profit rate even with the same rate of surplus-value?"
+                    "ko": "s'=100%이고 두 부문의 자본이 각각 80c+20v, 60c+40v라면 상품이 가치대로 팔릴 때 이윤율은 어떻게 달라지는가?",
+                    "en": "If s'=100% and two branches have 80c+20v and 60c+40v, how do profit rates differ when commodities sell at their values?"
                   },
                   "choices": {
                     "ko": [
-                      "살아 있는 노동을 고용하는 v의 비중이 작고 총자본 c+v가 크기 때문에, 같은 착취율도 낮은 s/(c+v)로 나타난다.",
-                      "기술 수준이 높으면 이윤율도 대체로 높다고 본다.",
-                      "모든 부문은 같은 자본구성을 갖는다고 가정한다.",
-                      "부문별 이윤율 차이를 오직 경영자의 능력으로 설명한다."
+                      "첫 부문은 s=20이므로 20%, 둘째 부문은 s=40이므로 40%의 이윤율을 갖는다.",
+                      "두 부문 모두 총자본이 100이므로 같은 100%의 이윤율을 갖는다.",
+                      "불변자본이 큰 첫 부문은 s=80이므로 80%, 둘째 부문은 60%가 된다.",
+                      "가변자본이 큰 둘째 부문은 비용이 크므로 이윤율이 20% 아래로 떨어진다."
                     ],
                     "en": [
-                      "Because the share of v employing living labour is smaller and total capital c+v is larger, the same exploitation rate appears as a lower s/(c+v).",
-                      "Assumes a higher technical level always means a higher profit rate.",
-                      "Assumes all branches have the same capital composition.",
-                      "Explains branch profit-rate differences only by managerial ability."
+                      "The first has s=20 and therefore a 20% profit rate; the second has s=40 and therefore a 40% profit rate.",
+                      "Both have a total capital of 100 and therefore both have a 100% profit rate.",
+                      "The first, with the larger constant capital, has s=80 and an 80% rate; the second has 60%.",
+                      "The second, with the larger variable capital, has higher costs and therefore falls below 20%."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "살아 있는 노동을 고용하는 v의 비중이 작고 총자본 c+v가 크기 때문에, 같은 착취율도 낮은 s/(c+v)로 나타난다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
-                    "en": "Because the share of v employing living labour is smaller and total capital c+v is larger, the same exploitation rate appears as a lower s/(c+v). The core is to see the mediation between individual value calculation and social competition."
+                    "ko": "같은 잉여가치율에서는 가변자본의 크기가 동원된 산 노동과 잉여노동의 지표가 된다. 총자본이 같아도 v가 20인지 40인지에 따라 s와 p'가 달라진다.",
+                    "en": "With the same rate of surplus-value, variable capital indicates the living labour and surplus-labour set in motion. Even with equal total capitals, s and p' differ according to whether v is 20 or 40."
                   }
                 },
                 {
@@ -21796,27 +21796,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "기술적으로 선진적인 부문이 항상 더 높은 이윤율을 낳는다고 보면 무엇을 놓치는가?",
-                    "en": "What is missed if technically advanced branches are assumed always to yield higher profit rates?"
+                    "ko": "기술적으로 선진적인 부문이 가치대로 판매될 때 더 높은 이윤율을 얻는다는 직관이 왜 조심스럽게 다루어져야 하는가?",
+                    "en": "Why must the intuition that a technically advanced branch obtains a higher profit rate when selling at value be treated carefully?"
                   },
                   "choices": {
                     "ko": [
-                      "기술 수준이 높으면 이윤율도 대체로 높다고 본다.",
-                      "기계와 원료 비중이 높아질수록 잉여가치를 만드는 살아 있는 노동의 비중은 상대적으로 작아질 수 있다.",
-                      "부문별 이윤율 차이를 오직 경영자의 능력으로 설명한다.",
-                      "경쟁이 없어도 이윤율은 그 자체로 평균화된다고 본다."
+                      "고도 기계화는 보통 총자본 안의 가변자본 비중을 낮추어 같은 착취율 아래 산 노동과 잉여가치의 비중을 줄일 수 있다.",
+                      "고도 기계화는 모든 기계가 임금보다 높은 새 가치를 매 회전마다 생산한다는 뜻이다.",
+                      "기술 수준은 유기적 구성보다 광고비 규모와 더 밀접하게 연결된다.",
+                      "기계화된 부문은 가치판매보다 독점가격 거래에 더 가까운 조건을 갖는다."
                     ],
                     "en": [
-                      "Assumes a higher technical level always means a higher profit rate.",
-                      "As the share of machinery and materials rises, the relative share of living labour that creates surplus-value can shrink.",
-                      "Explains branch profit-rate differences only by managerial ability.",
-                      "Assumes profit rates average out automatically without competition."
+                      "Advanced mechanization often lowers the share of variable capital in total capital, reducing the share of living labour and surplus-value under the same exploitation rate.",
+                      "Advanced mechanization means every machine produces more new value than wages in each turnover.",
+                      "Technical level is more closely connected to advertising expense than to organic composition.",
+                      "Mechanized branches have conditions closer to monopoly-price transactions than to sale at value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "기계와 원료 비중이 높아질수록 잉여가치를 만드는 살아 있는 노동의 비중은 상대적으로 작아질 수 있다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
-                    "en": "As the share of machinery and materials rises, the relative share of living labour that creates surplus-value can shrink. Without this distinction, one cannot explain how value, market-value, and price of production diverge."
+                    "ko": "마르크스에게 새 가치의 원천은 산 노동이다. 기계화가 생산성을 높여도 총자본 중 v의 비중이 낮아지면, 가치대로 판매된다는 가정 아래서는 이윤율이 낮게 나타날 수 있다.",
+                    "en": "For Marx, living labour is the source of new value. Mechanization can raise productivity, but if it lowers v as a share of total capital, the profit rate may appear lower under the assumption of sale at value."
                   }
                 },
                 {
@@ -21824,27 +21824,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자동차 산업은 설비 비중이 크고, 돌봄 서비스는 노동 비중이 크다. 가치대로 판매된다고 가정하면 무엇을 비교해야 하는가?",
-                    "en": "Automobile production has a high equipment share, while care services have a high labour share. If commodities sold at values, what should be compared?"
+                    "ko": "클라우드 인프라 부문과 돌봄 서비스 부문을 8장의 사례로 비교할 때 가장 적절한 설명은 무엇인가?",
+                    "en": "What is the best Chapter 8 comparison between cloud infrastructure and care services?"
                   },
                   "choices": {
                     "ko": [
-                      "부문별 이윤율 차이를 오직 경영자의 능력으로 설명한다.",
-                      "경쟁이 없어도 이윤율은 그 자체로 평균화된다고 본다.",
-                      "각 부문의 c:v 구성과 그에 따른 잉여가치량이 총자본에 대해 어떤 이윤율로 나타나는지 비교해야 한다.",
-                      "기계가 많을수록 그 기계가 직접 더 많은 잉여가치를 만든다고 본다."
+                      "클라우드는 서버와 설비 비중이 크고 돌봄은 산 노동 비중이 크므로, 같은 착취율과 가치판매 가정에서는 서로 다른 이윤율이 산출될 수 있다.",
+                      "클라우드는 디지털 상품을 만들기 때문에 가치 형성과 잉여노동의 분석에서 제외된다.",
+                      "돌봄 서비스는 물적 생산물이 남지 않으므로 가변자본이 투입되지 않은 부문이다.",
+                      "두 부문은 소비자가 모두 월별 요금을 내기 때문에 같은 유기적 구성을 갖는다."
                     ],
                     "en": [
-                      "Explains branch profit-rate differences only by managerial ability.",
-                      "Assumes profit rates average out automatically without competition.",
-                      "One should compare each branch’s c:v composition and how the resulting surplus-value appears as a profit rate relative to total capital.",
-                      "Assumes more machinery directly creates more surplus-value."
+                      "Cloud has a high share of servers and equipment while care has a high share of living labour, so under equal exploitation and sale at value their profit rates can differ.",
+                      "Cloud produces digital commodities and is therefore excluded from value formation and surplus-labour analysis.",
+                      "Care services leave no material product and therefore involve no variable capital.",
+                      "Both branches have the same organic composition because consumers pay monthly fees in both."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "각 부문의 c:v 구성과 그에 따른 잉여가치량이 총자본에 대해 어떤 이윤율로 나타나는지 비교해야 한다. 구체 사례는 개별 기업의 기술 차이가 경쟁 속에서 어떤 사회적 가격형태로 나타나는지를 보여준다.",
-                    "en": "One should compare each branch’s c:v composition and how the resulting surplus-value appears as a profit rate relative to total capital. The concrete case shows how technical differences between firms appear as social price forms through competition."
+                    "ko": "이 사례는 사용가치의 차이가 아니라 자본구성의 차이를 묻는다. 같은 총자본이라도 산 노동을 얼마나 동원하는지가 가치대로 판매될 때의 이윤율 차이를 만든다.",
+                    "en": "The case concerns differences in capital composition, not merely use-values. With equal total capital, the amount of living labour set in motion produces differences in the profit rate under sale at value."
                   }
                 },
                 {
@@ -21852,27 +21852,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 장이 평균이윤론으로 넘어가는 이유는 무엇인가?",
-                    "en": "Why does this chapter lead to the theory of average profit?"
+                    "ko": "8장의 결론은 9장의 평균이윤과 생산가격 논의에 어떤 문제를 넘겨주는가?",
+                    "en": "What problem does Chapter 8 hand over to Chapter 9’s discussion of average profit and prices of production?"
                   },
                   "choices": {
                     "ko": [
-                      "모든 부문은 같은 자본구성을 갖는다고 가정한다.",
-                      "경쟁이 없어도 이윤율은 그 자체로 평균화된다고 본다.",
-                      "기계가 많을수록 그 기계가 직접 더 많은 잉여가치를 만든다고 본다.",
-                      "가치대로 판매하면 부문별 이윤율이 달라지지만, 현실의 경쟁은 이 차이를 평균이윤율로 균등화하려 하기 때문이다."
+                      "상품이 가치대로 팔리면 부문별 이윤율이 크게 달라지지만, 실제 자본주의에서는 같은 크기 자본이 평균이윤을 요구한다는 문제를 제기한다.",
+                      "모든 부문이 가치대로 팔리면 이미 같은 이윤율이 성립하므로 생산가격 개념이 필요 없다는 문제를 제기한다.",
+                      "이윤율 차이가 임금 명세서의 형식에서 나오므로 회계 기준 통일이 필요하다는 문제를 제기한다.",
+                      "부문별 수요가 비슷해야 노동시간 측정이 안정된다는 문제를 제기한다."
                     ],
                     "en": [
-                      "Assumes all branches have the same capital composition.",
-                      "Assumes profit rates average out automatically without competition.",
-                      "Assumes more machinery directly creates more surplus-value.",
-                      "If sold at values, profit rates would differ by branch, but real competition tends to equalize these differences into an average rate of profit."
+                      "It poses the problem that sale at value would produce very different branch profit rates, while real capitalism makes equal capitals claim average profit.",
+                      "It poses the problem that if all branches sell at value, equal profit rates already exist and prices of production are unnecessary.",
+                      "It poses the problem that profit-rate differences arise from payroll format and require unified accounting standards.",
+                      "It poses the problem that labour-time measurement is stable only when branch demand is similar."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가치대로 판매하면 부문별 이윤율이 달라지지만, 현실의 경쟁은 이 차이를 평균이윤율로 균등화하려 하기 때문이다. 이는 3권의 핵심 과제인 가치법칙의 표면형태를 설명하는 과정이다.",
-                    "en": "If sold at values, profit rates would differ by branch, but real competition tends to equalize these differences into an average rate of profit. This is part of Volume III’s central task: explaining the surface forms of the law of value."
+                    "ko": "8장은 가치대로 판매한다는 가정과 현실의 평균이윤 경향 사이의 긴장을 만든다. 9장은 이 긴장을 일반 이윤율과 생산가격으로 풀어 간다.",
+                    "en": "Chapter 8 creates the tension between the assumption of sale at value and the real tendency toward average profit. Chapter 9 works through this tension through the general rate of profit and prices of production."
                   }
                 }
               ]
@@ -21890,27 +21890,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "부문별 자본구성 차이의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in different branch compositions of capital?"
+                    "ko": "기술적 구성, 가치 구성, 유기적 구성의 관계를 가장 정확히 정리한 것은 무엇인가?",
+                    "en": "Which statement most accurately relates technical composition, value composition, and organic composition?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치는 노동에서 나오지만, 자본주의 경쟁은 자본량에 비례한 수익을 요구한다는 긴장이다.",
-                      "모든 부문은 같은 자본구성을 갖는다고 가정한다.",
-                      "기계가 많을수록 그 기계가 직접 더 많은 잉여가치를 만든다고 본다.",
-                      "기술 수준이 높으면 이윤율도 대체로 높다고 본다."
+                      "기술적 구성은 노동력과 생산수단의 물적 비율이고, 유기적 구성은 그 기술적 구성을 반영해 결정되는 가치 구성이다.",
+                      "기술적 구성은 임금률이고, 가치 구성은 판매가격이며, 유기적 구성은 두 가격의 평균이다.",
+                      "기술적 구성은 상품의 사용가치이고, 가치 구성은 소비자 만족도이며, 유기적 구성은 시장점유율이다.",
+                      "기술적 구성과 가치 구성은 서로 독립된 명칭이므로 유기적 구성은 둘 중 하나를 임의로 고른다."
                     ],
                     "en": [
-                      "Surplus-value comes from labour, yet capitalist competition demands returns proportional to the amount of capital.",
-                      "Assumes all branches have the same capital composition.",
-                      "Assumes more machinery directly creates more surplus-value.",
-                      "Assumes a higher technical level always means a higher profit rate."
+                      "Technical composition is the material ratio of labour-power to means of production, while organic composition is the value composition insofar as it is determined by and reflects that technical composition.",
+                      "Technical composition is the wage rate, value composition is the selling price, and organic composition is their average.",
+                      "Technical composition is use-value, value composition is consumer satisfaction, and organic composition is market share.",
+                      "Technical and value composition are unrelated names, so organic composition arbitrarily selects one of them."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치는 노동에서 나오지만, 자본주의 경쟁은 자본량에 비례한 수익을 요구한다는 긴장이다. 이 긴장을 보아야 가치와 가격의 차이를 가치법칙의 폐기가 아니라 매개된 형태로 이해할 수 있다.",
-                    "en": "Surplus-value comes from labour, yet capitalist competition demands returns proportional to the amount of capital. This tension lets us understand the divergence between value and price as a mediated form, not as the abolition of the law of value."
+                    "ko": "8장의 세부 구분은 중요하다. 물적 기술 관계가 가치관계로 표현될 때 유기적 구성이 되며, 이것이 부문별 이윤율 차이를 설명하는 핵심 매개다.",
+                    "en": "The distinction matters in Chapter 8. When the material technical relation is expressed as a value relation, it becomes organic composition, the key mediator of branch differences in profit rates."
                   }
                 },
                 {
@@ -21918,27 +21918,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "개별 부문 이윤율과 일반 이윤율을 매개하는 것은 무엇인가?",
-                    "en": "What mediates branch profit rates and the general rate of profit?"
+                    "ko": "가변자본이 100 노동자의 주급을 나타내고 s'=100%라면, 가변자본은 단순한 임금액을 넘어 무엇의 지표가 되는가?",
+                    "en": "If variable capital represents the weekly wage of 100 workers and s'=100%, what does variable capital indicate beyond the wage sum?"
                   },
                   "choices": {
                     "ko": [
-                      "모든 부문은 같은 자본구성을 갖는다고 가정한다.",
-                      "자본이 더 높은 수익을 찾아 부문 사이를 이동하며 공급, 가격, 이윤율을 조정하는 경쟁이다.",
-                      "기술 수준이 높으면 이윤율도 대체로 높다고 본다.",
-                      "부문별 이윤율 차이를 오직 경영자의 능력으로 설명한다."
+                      "그 임금이 동원하는 산 노동 전체와 그 안의 잉여노동량을 추정하게 해 주는 지표가 된다.",
+                      "불변자본이 생산물에 이전하는 낡은 가치의 총액을 직접 표시한다.",
+                      "상품이 시장에서 팔릴 확률과 재고 회전 속도를 동시에 표시한다.",
+                      "기계가 노동자를 대체한 비율과 소비자의 구매력을 직접 표시한다."
                     ],
                     "en": [
-                      "Assumes all branches have the same capital composition.",
-                      "Competition mediates them as capital moves between branches seeking higher returns, adjusting supply, prices, and profit rates.",
-                      "Assumes a higher technical level always means a higher profit rate.",
-                      "Explains branch profit-rate differences only by managerial ability."
+                      "It becomes an index of the total living labour set in motion by that wage and of the surplus-labour contained in it.",
+                      "It directly indicates the total old value transferred by constant capital to the product.",
+                      "It simultaneously indicates the probability of market sale and the speed of inventory turnover.",
+                      "It directly indicates the rate at which machines replace workers and consumers’ purchasing power."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본이 더 높은 수익을 찾아 부문 사이를 이동하며 공급, 가격, 이윤율을 조정하는 경쟁이다. 매개를 놓치면 경쟁이 가치관계를 만들어내는 것처럼 보이거나, 반대로 경쟁을 단순한 외부 소음으로 보게 된다.",
-                    "en": "Competition mediates them as capital moves between branches seeking higher returns, adjusting supply, prices, and profit rates. Without the mediation, competition appears either to create value relations or to be mere external noise."
+                    "ko": "임금이 주어지고 잉여가치율이 주어지면 v는 단순한 비용항목이 아니다. 그것은 일정한 산 노동과 그 초과부분인 잉여노동을 가리키는 지표가 된다.",
+                    "en": "Given wages and the rate of surplus-value, v is not merely a cost item. It indicates a definite mass of living labour and the surplus-labour beyond necessary labour."
                   }
                 },
                 {
@@ -21946,27 +21946,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "부문별 이윤율 차이를 단순한 경영능력 차이로만 설명하면 무엇을 놓치는가?",
-                    "en": "What is missed if differences in branch profit rates are explained only by managerial ability?"
+                    "ko": "부문별 이윤율 차이를 경영능력 차이로 환원하면 8장의 논점을 놓치는 이유는 무엇인가?",
+                    "en": "Why does reducing branch profit-rate differences to managerial ability miss Chapter 8’s point?"
                   },
                   "choices": {
                     "ko": [
-                      "기술 수준이 높으면 이윤율도 대체로 높다고 본다.",
-                      "부문별 이윤율 차이를 오직 경영자의 능력으로 설명한다.",
-                      "부문별 자본구성과 살아 있는 노동의 비중이라는 구조적 차이를 놓친다.",
-                      "경쟁이 없어도 이윤율은 그 자체로 평균화된다고 본다."
+                      "8장은 평균적 정상 조건을 전제하고도 유기적 구성과 회전기간 차이만으로 이윤율 차이가 생긴다는 구조를 보여 준다.",
+                      "8장은 경영능력의 차이가 모든 부문에서 같은 유기적 구성을 만든다는 점을 증명한다.",
+                      "8장은 개별 기업의 우연한 성공만을 비교하므로 부문 평균을 다룰 필요가 없다.",
+                      "8장은 봉건적 가격질서의 잔존을 중심으로 설명해 현대 기업 평균을 다루기 어렵다."
                     ],
                     "en": [
-                      "Assumes a higher technical level always means a higher profit rate.",
-                      "Explains branch profit-rate differences only by managerial ability.",
-                      "It misses structural differences in capital composition and in the share of living labour by branch.",
-                      "Assumes profit rates average out automatically without competition."
+                      "Chapter 8 assumes average normal conditions and still shows how differences in organic composition and turnover can generate different profit rates.",
+                      "Chapter 8 proves that differences in managerial ability create the same organic composition in every branch.",
+                      "Chapter 8 compares only accidental success of individual firms and therefore need not discuss branch averages.",
+                      "Chapter 8 centers on remnants of feudal price order and therefore has difficulty treating modern business averages."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부문별 자본구성과 살아 있는 노동의 비중이라는 구조적 차이를 놓친다. 마르크스는 시장 표면을 설명하되, 그 표면이 잉여가치 분배의 특정 형식임을 밝힌다.",
-                    "en": "It misses structural differences in capital composition and in the share of living labour by branch. Marx explains the market surface while showing it as a specific form of surplus-value distribution."
+                    "ko": "마르크스는 개별 기업의 우연한 차이가 아니라 각 생산부문의 평균적 자본구성을 비교한다. 그래서 문제는 능력 차이가 아니라 산 노동을 동원하는 구조적 비율이다.",
+                    "en": "Marx compares average compositions of branches, not accidental differences among individual firms. The issue is the structural ratio through which living labour is set in motion, not managerial talent."
                   }
                 },
                 {
@@ -21974,27 +21974,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "클라우드 인프라와 음식 배달업의 이윤율을 비교할 때 어떤 매개를 봐야 하는가?",
-                    "en": "When comparing cloud infrastructure and food delivery profit rates, what mediation should be examined?"
+                    "ko": "반도체 공장과 음식점 체인을 같은 총자본 100으로 비교할 때, 8장의 계산이 묻는 핵심은 무엇인가?",
+                    "en": "When comparing a semiconductor plant and a restaurant chain with equal total capital of 100, what does Chapter 8’s calculation ask?"
                   },
                   "choices": {
                     "ko": [
-                      "경쟁이 없어도 이윤율은 그 자체로 평균화된다고 본다.",
-                      "부문별 이윤율 차이를 오직 경영자의 능력으로 설명한다.",
-                      "설비·에너지·소프트웨어의 불변자본 비중과 직접 고용 노동의 가변자본 비중이 이윤율을 어떻게 바꾸는지 봐야 한다.",
-                      "기계가 많을수록 그 기계가 직접 더 많은 잉여가치를 만든다고 본다."
+                      "각 자본 100 안에서 가변자본이 얼마이며, 그 가변자본이 같은 착취율 아래 얼마나 많은 잉여가치를 만드는가이다.",
+                      "각 상품의 브랜드 이미지가 몇 퍼센트의 프리미엄을 허용하는가이다.",
+                      "두 부문의 회계상 감가상각 기간이 법적으로 같은지이다.",
+                      "소비자가 반도체와 식사를 같은 빈도로 구매하는지이다."
                     ],
                     "en": [
-                      "Assumes profit rates average out automatically without competition.",
-                      "Explains branch profit-rate differences only by managerial ability.",
-                      "One should examine how the share of constant capital in equipment, energy, and software and the share of variable capital in directly employed labour affect the profit rate.",
-                      "Assumes more machinery directly creates more surplus-value."
+                      "It asks how much of each capital of 100 is variable capital, and how much surplus-value that variable capital produces under the same rate of exploitation.",
+                      "It asks what percentage premium the brand image of each commodity permits.",
+                      "It asks whether the legal depreciation periods of the two branches are the same.",
+                      "It asks whether consumers buy semiconductors and meals with the same frequency."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "설비·에너지·소프트웨어의 불변자본 비중과 직접 고용 노동의 가변자본 비중이 이윤율을 어떻게 바꾸는지 봐야 한다. 현대 산업의 사례도 부문별 자본구성, 경쟁, 평균수익률의 매개로 읽을 수 있다.",
-                    "en": "One should examine how the share of constant capital in equipment, energy, and software and the share of variable capital in directly employed labour affect the profit rate. Modern industries can also be read through the mediation of capital composition, competition, and average returns."
+                    "ko": "같은 총자본을 놓고 비교해야 유기적 구성 차이가 선명해진다. v가 작으면 같은 착취율에서도 생산되는 잉여가치량이 작아져 가치판매 가정의 이윤율도 달라진다.",
+                    "en": "Comparing equal total capitals makes the difference in organic composition clear. If v is smaller, the mass of surplus-value produced under the same exploitation rate is smaller, altering the profit rate under sale at value."
                   }
                 },
                 {
@@ -22002,27 +22002,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "생산부문별 자본구성 차이의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of different capital compositions across branches?"
+                    "ko": "8장이 가치론과 현실 평균이윤 사이의 긴장을 가장 날카롭게 만드는 지점은 무엇인가?",
+                    "en": "Where does Chapter 8 most sharply create the tension between value theory and real average profit?"
                   },
                   "choices": {
                     "ko": [
-                      "경쟁이 없어도 이윤율은 그 자체로 평균화된다고 본다.",
-                      "기계가 많을수록 그 기계가 직접 더 많은 잉여가치를 만든다고 본다.",
-                      "모든 부문은 같은 자본구성을 갖는다고 가정한다.",
-                      "가치대로 판매될 때 생기는 상이한 이윤율 문제를 제기해 일반 이윤율과 생산가격 분석을 필연적으로 만든다."
+                      "잉여가치의 원천은 산 노동인데, 현실에서는 같은 크기 자본이 구성 차이와 관계없이 평균이윤을 요구한다는 지점이다.",
+                      "모든 새 가치는 불변자본에서 나오지만, 현실에서는 노동자가 임금을 받는다는 지점이다.",
+                      "가치와 가격은 같은 말인데, 현실에서는 서로 다른 통화로 표시된다는 지점이다.",
+                      "경쟁은 상품 교환을 멈추게 하지만, 현실에서는 판매가 계속된다는 지점이다."
                     ],
                     "en": [
-                      "Assumes profit rates average out automatically without competition.",
-                      "Assumes more machinery directly creates more surplus-value.",
-                      "Assumes all branches have the same capital composition.",
-                      "It poses the problem of differing profit rates under sale at values, making the analysis of a general profit rate and prices of production necessary."
+                      "Surplus-value comes from living labour, yet in reality equal capitals claim average profit regardless of their composition.",
+                      "All new value comes from constant capital, yet in reality workers receive wages.",
+                      "Value and price are the same word, yet in reality they are expressed in different currencies.",
+                      "Competition stops commodity exchange, yet in reality sales continue."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가치대로 판매될 때 생기는 상이한 이윤율 문제를 제기해 일반 이윤율과 생산가격 분석을 필연적으로 만든다. 이 장은 다음 단계의 생산가격과 경쟁 분석을 위한 개념적 고리를 제공한다.",
-                    "en": "It poses the problem of differing profit rates under sale at values, making the analysis of a general profit rate and prices of production necessary. The chapter provides the conceptual link for the next stage of prices of production and competition."
+                    "ko": "8장의 긴장은 9장의 전환 논의가 필요한 이유다. 가치대로 팔면 유기적 구성에 따라 이윤율이 달라지지만, 자본주의 경쟁은 같은 크기 자본에 평균이윤을 배분하는 방향으로 움직인다.",
+                    "en": "This tension explains why Chapter 9’s transformation analysis is needed. Sale at value yields different profit rates by organic composition, while capitalist competition tends to allocate average profit to equal capitals."
                   }
                 }
               ]
@@ -22095,41 +22095,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "일반 이윤율의 형성에서 마르크스가 분석하는 핵심 문제는 무엇인가?",
-                    "en": "What central problem does Marx analyze in the formation of a general rate of profit?"
+                    "ko": "9장에서 일반 이윤율은 어떻게 형성되는가?",
+                    "en": "How is the general rate of profit formed in Chapter 9?"
                   },
                   "choices": {
                     "ko": [
-                      "서로 다른 부문 이윤율이 경쟁을 통해 평균화되고, 상품가치가 비용가격+평균이윤인 생산가격으로 나타나는 과정이다.",
-                      "생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다.",
-                      "평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.",
-                      "생산가격을 비용가격과 같은 것으로 보는 식으로 자본 운동의 단계를 단순화하는 오해"
+                      "여러 부문에서 생산된 총잉여가치를 사회적 총자본의 크기에 비례해 나누는 평균화 과정으로 형성된다.",
+                      "각 부문 노동자가 자기 임금을 동일한 비율로 저축하는 과정으로 형성된다.",
+                      "정부가 모든 상품에 같은 이윤률 상한선을 부과하는 과정으로 형성된다.",
+                      "개별 상품의 소비자 만족도를 더해 총자본의 효용 점수로 나누는 과정으로 형성된다."
                     ],
                     "en": [
-                      "He analyzes how different branch profit rates are averaged through competition and commodity values appear as prices of production: cost-price plus average profit.",
-                      "Assumes the law of value is abolished if prices of production differ from values.",
-                      "Assumes average profit always equals the surplus-value directly produced in each branch.",
-                      "Identifies price of production with cost-price."
+                      "It is formed through the averaging process that distributes total surplus-value produced in many branches in proportion to the magnitude of social capital.",
+                      "It is formed as workers in each branch save the same percentage of their wages.",
+                      "It is formed when the state imposes the same profit-rate ceiling on every commodity.",
+                      "It is formed by adding consumer satisfaction for individual commodities and dividing it by a utility score of total capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "서로 다른 부문 이윤율이 경쟁을 통해 평균화되고, 상품가치가 비용가격+평균이윤인 생산가격으로 나타나는 과정이다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
-                    "en": "He analyzes how different branch profit rates are averaged through competition and commodity values appear as prices of production: cost-price plus average profit. This is the starting point for the analysis of average profit and prices of production."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 서로 다른 부문 이윤율이 경쟁을 통해 평균화되고, 상품가치가 비용가격+평균이윤인 생산가격으로 나타나는 과정이다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
-                      "오해 진단: \"생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"생산가격을 비용가격과 같은 것으로 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: He analyzes how different branch profit rates are averaged through competition and commodity values appear as prices of production: cost-price plus average profit. This is the starting point for the analysis of average profit and prices of production.",
-                      "Misconception check: choosing \"Assumes the law of value is abolished if prices of production differ from values.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes average profit always equals the surplus-value directly produced in each branch.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Identifies price of production with cost-price.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "일반 이윤율은 부문별 잉여가치가 그대로 각 부문에 남는 결과가 아니다. 총자본의 관점에서 잉여가치 총량이 평균이윤으로 배분되는 결과다.",
+                    "en": "The general rate of profit is not the result of each branch keeping exactly the surplus-value it produced. It is the result of total surplus-value being distributed as average profit from the standpoint of total capital."
                   }
                 },
                 {
@@ -22137,27 +22123,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "생산가격은 어떤 구성으로 이루어지는가?",
-                    "en": "What is the composition of price of production?"
+                    "ko": "생산가격의 기본 공식은 무엇인가?",
+                    "en": "What is the basic formula for price of production?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격은 비용가격에 일반 이윤율에 따른 평균이윤을 더한 것이다.",
-                      "생산가격을 비용가격과 같은 것으로 본다.",
-                      "평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.",
-                      "경쟁이 잉여가치를 새로 창조한다고 본다."
+                      "생산가격은 비용가격 k에 일반 이윤율에 따른 평균이윤을 더한 것이다.",
+                      "생산가격은 가변자본 v에 잉여가치 s를 더하고 불변자본 c를 뺀 것이다.",
+                      "생산가격은 시장가격에서 임금과 세금을 제외한 순판매액이다.",
+                      "생산가격은 상품의 사용가치에 소비자 선호 지수를 곱한 것이다."
                     ],
                     "en": [
-                      "Price of production is cost-price plus the average profit determined by the general rate of profit.",
-                      "Identifies price of production with cost-price.",
-                      "Assumes average profit always equals the surplus-value directly produced in each branch.",
-                      "Assumes competition creates surplus-value."
+                      "Price of production is cost-price k plus average profit according to the general rate of profit.",
+                      "Price of production is variable capital v plus surplus-value s minus constant capital c.",
+                      "Price of production is net sales after subtracting wages and taxes from market price.",
+                      "Price of production is use-value multiplied by a consumer preference index."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산가격은 비용가격에 일반 이윤율에 따른 평균이윤을 더한 것이다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
-                    "en": "Price of production is cost-price plus the average profit determined by the general rate of profit. The core is to see the mediation between individual value calculation and social competition."
+                    "ko": "마르크스의 공식은 k+kp'이다. 여기서 p'는 개별 부문의 고유 이윤율이 아니라 사회적으로 평균화된 일반 이윤율이다.",
+                    "en": "Marx’s formula is k+kp'. Here p' is not the branch’s own immediate profit rate but the socially averaged general rate of profit."
                   }
                 },
                 {
@@ -22165,41 +22151,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "가치가 생산가격으로 전환된다는 말은 가치법칙이 사라진다는 뜻이 아닌 이유는 무엇인가?",
-                    "en": "Why does the transformation of values into prices of production not mean the law of value disappears?"
+                    "ko": "가치가 생산가격으로 전환되어도 가치법칙이 사라지지 않는다는 주장의 핵심 근거는 무엇인가?",
+                    "en": "What is the key reason the law of value does not disappear when values are transformed into prices of production?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격을 비용가격과 같은 것으로 보는 식으로 가치관계의 매개를 지우는 오해",
-                      "총가격은 총가치에, 총이윤은 총잉여가치에 의존하며, 생산가격은 잉여가치가 부문 사이에 재분배되는 형태이기 때문이다.",
-                      "경쟁이 잉여가치를 새로 창조한다고 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "총이윤과 총잉여가치의 연결을 끊어 버리는 식으로 자본 운동의 단계를 단순화하는 오해"
+                      "총생산가격은 총가치와 같고, 총평균이윤은 총잉여가치와 같다는 총량 관계가 유지되기 때문이다.",
+                      "개별 상품 가격이 모두 자기 가치와 같은 숫자로 판매되기 때문이다.",
+                      "생산가격이 정해지면 더는 노동시간 계산이 필요하지 않기 때문이다.",
+                      "평균이윤은 소비자가 지불한 추가 효용에서 새로 만들어지기 때문이다."
                     ],
                     "en": [
-                      "Identifies price of production with cost-price.",
-                      "Because total price depends on total value and total profit on total surplus-value; prices of production are the form in which surplus-value is redistributed among branches.",
-                      "Assumes competition creates surplus-value.",
-                      "Cuts the link between total profit and total surplus-value."
+                      "Because the aggregate relation remains: total prices of production equal total values, and total average profit equals total surplus-value.",
+                      "Because every individual commodity sells at exactly the same number as its own value.",
+                      "Because once prices of production are set, labour-time calculation is no longer needed.",
+                      "Because average profit is newly created out of extra utility paid by consumers."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "총가격은 총가치에, 총이윤은 총잉여가치에 의존하며, 생산가격은 잉여가치가 부문 사이에 재분배되는 형태이기 때문이다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
-                    "en": "Because total price depends on total value and total profit on total surplus-value; prices of production are the form in which surplus-value is redistributed among branches. Without this distinction, one cannot explain how value, market-value, and price of production diverge."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"생산가격을 비용가격과 같은 것으로 보는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 총가격은 총가치에, 총이윤은 총잉여가치에 의존하며, 생산가격은 잉여가치가 부문 사이에 재분배되는 형태이기 때문이다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
-                      "오해 진단: \"경쟁이 잉여가치를 새로 창조한다고 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"총이윤과 총잉여가치의 연결을 끊어 버리는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Identifies price of production with cost-price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: Because total price depends on total value and total profit on total surplus-value; prices of production are the form in which surplus-value is redistributed among branches. Without this distinction, one cannot explain how value, market-value, and price of production diverge.",
-                      "Misconception check: choosing \"Assumes competition creates surplus-value.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Cuts the link between total profit and total surplus-value.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "전환은 개별 부문에서 가치와 가격이 어긋나는 방식으로 일어난다. 하지만 사회적 총량에서는 가격 편차와 이윤 배분이 서로 상쇄되어 가치법칙의 기반이 보존된다.",
+                    "en": "The transformation creates divergences between value and price in individual branches. At the social aggregate level, however, price deviations and profit distribution offset one another, preserving the basis of the law of value."
                   }
                 },
                 {
@@ -22207,27 +22179,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "고유기적 구성 부문이 자기 부문에서 생산한 잉여가치보다 더 많은 평균이윤을 얻을 수 있다. 무엇이 일어나는가?",
-                    "en": "A high-composition branch can receive more average profit than the surplus-value produced in that branch. What is happening?"
+                    "ko": "고유기적 구성 부문과 저유기적 구성 부문은 생산가격 전환에서 각각 어떤 위치에 놓이는가?",
+                    "en": "How are high- and low-organic-composition branches positioned in the transformation into prices of production?"
                   },
                   "choices": {
                     "ko": [
-                      "경쟁이 잉여가치를 새로 창조한다고 본다.",
-                      "총이윤과 총잉여가치의 연결을 끊어 버린다.",
-                      "경쟁을 통해 사회 전체 잉여가치가 자본량에 비례해 재분배되고 있다.",
-                      "생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다."
+                      "고유기적 구성 부문은 자신이 직접 생산한 잉여가치보다 많은 평균이윤을 받을 수 있고, 저유기적 구성 부문은 그보다 적은 이윤을 받을 수 있다.",
+                      "고유기적 구성 부문은 높은 기계 비중 때문에 자기 가치보다 낮은 가격을 받을 수 없다.",
+                      "저유기적 구성 부문은 산 노동 비중이 높으므로 평균화 뒤에도 자기 잉여가치 전부를 보존한다.",
+                      "두 부문은 생산가격 전환 뒤에 유기적 구성의 차이를 회계장부에서 삭제한다."
                     ],
                     "en": [
-                      "Assumes competition creates surplus-value.",
-                      "Cuts the link between total profit and total surplus-value.",
-                      "Competition is redistributing the total social surplus-value in proportion to the amount of capital.",
-                      "Assumes the law of value is abolished if prices of production differ from values."
+                      "A high-composition branch may receive more average profit than the surplus-value it directly produces, while a low-composition branch may receive less.",
+                      "A high-composition branch cannot receive a price below its value because its share of machinery is high.",
+                      "A low-composition branch preserves all of its own surplus-value after averaging because its share of living labour is high.",
+                      "After transformation, both branches delete differences of organic composition from their accounts."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "경쟁을 통해 사회 전체 잉여가치가 자본량에 비례해 재분배되고 있다. 구체 사례는 개별 기업의 기술 차이가 경쟁 속에서 어떤 사회적 가격형태로 나타나는지를 보여준다.",
-                    "en": "Competition is redistributing the total social surplus-value in proportion to the amount of capital. The concrete case shows how technical differences between firms appear as social price forms through competition."
+                    "ko": "평균이윤은 부문별 잉여가치를 자본 크기에 비례해 재분배한다. 그래서 어떤 부문은 가치보다 높은 생산가격을, 어떤 부문은 가치보다 낮은 생산가격을 갖는다.",
+                    "en": "Average profit redistributes branch surplus-values in proportion to capital size. Thus some branches have production prices above value, and others below value."
                   }
                 },
                 {
@@ -22235,27 +22207,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 장이 3권에서 결정적인 이유는 무엇인가?",
-                    "en": "Why is this chapter decisive in Volume III?"
+                    "ko": "9장의 논의는 10장의 경쟁 분석으로 왜 이어져야 하는가?",
+                    "en": "Why must Chapter 9 lead into Chapter 10’s analysis of competition?"
                   },
                   "choices": {
                     "ko": [
-                      "평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.",
-                      "총이윤과 총잉여가치의 연결을 끊어 버린다.",
-                      "생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다.",
-                      "노동가치론과 현실의 평균이윤·가격형태 사이의 매개를 제시하기 때문이다."
+                      "9장은 평균이윤과 생산가격의 논리적 결과를 제시하고, 10장은 그 평균화가 경쟁과 자본 이동 속에서 어떻게 관철되는지 묻기 때문이다.",
+                      "9장은 경쟁을 이미 완전히 설명했으므로 10장은 같은 결론을 암기용 예시로 반복하기 때문이다.",
+                      "9장은 시장가격을 제거하고 10장은 상품교환 자체를 중단하는 단계를 설명하기 때문이다.",
+                      "9장은 임금 변동을 다루고 10장은 노동자 생계비만으로 모든 가격을 계산하기 때문이다."
                     ],
                     "en": [
-                      "Assumes average profit always equals the surplus-value directly produced in each branch.",
-                      "Cuts the link between total profit and total surplus-value.",
-                      "Assumes the law of value is abolished if prices of production differ from values.",
-                      "Because it presents the mediation between the labour theory of value and the real forms of average profit and price."
+                      "Chapter 9 presents the logical result of average profit and prices of production; Chapter 10 asks how that averaging is enforced through competition and capital movement.",
+                      "Chapter 9 has already completely explained competition, so Chapter 10 repeats the conclusion as examples for memorization.",
+                      "Chapter 9 removes market prices, and Chapter 10 explains the stopping of commodity exchange itself.",
+                      "Chapter 9 treats wage fluctuations, and Chapter 10 calculates all prices from workers’ subsistence costs."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "노동가치론과 현실의 평균이윤·가격형태 사이의 매개를 제시하기 때문이다. 이는 3권의 핵심 과제인 가치법칙의 표면형태를 설명하는 과정이다.",
-                    "en": "Because it presents the mediation between the labour theory of value and the real forms of average profit and price. This is part of Volume III’s central task: explaining the surface forms of the law of value."
+                    "ko": "9장은 전환의 구조를 세운다. 10장은 그 구조가 실제 경쟁, 수급, 시장가치, 초과이윤의 운동 속에서 어떤 방식으로 작동하는지 보완한다.",
+                    "en": "Chapter 9 establishes the structure of transformation. Chapter 10 supplements it by showing how this structure works through competition, supply and demand, market-value, and surplus-profit."
                   }
                 }
               ]
@@ -22273,27 +22245,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가치의 생산가격 전환에서 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the transformation of values into prices of production?"
+                    "ko": "평균이윤이 형성되면 개별 부문에서 잉여가치와 이윤의 관계는 어떻게 달라지는가?",
+                    "en": "Once average profit is formed, how does the relation between surplus-value and profit change within an individual branch?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치는 각 부문의 노동에서 생산되지만, 이윤은 경쟁을 통해 총자본의 크기에 비례해 분배된다.",
-                      "평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.",
-                      "생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다.",
-                      "생산가격을 비용가격과 같은 것으로 본다."
+                      "개별 부문이 실현하는 이윤은 그 부문이 직접 생산한 잉여가치와 드물게 일치하며, 보통은 사회적 총잉여가치의 배분 몫으로 정해진다.",
+                      "개별 부문이 실현하는 이윤은 대체로 그 부문 노동자가 생산한 잉여가치와 같은 크기로 남는다.",
+                      "평균이윤은 개별 부문이 생산한 잉여가치를 모두 지운 뒤 소비자의 추가 지불에서 만들어진다.",
+                      "평균이윤의 성립은 잉여가치율 확대와 이윤 항목의 회계 비용 처리로 설명된다."
                     ],
                     "en": [
-                      "Surplus-value is produced by labour in each branch, but profit is distributed through competition in proportion to the size of total capital.",
-                      "Assumes average profit always equals the surplus-value directly produced in each branch.",
-                      "Assumes the law of value is abolished if prices of production differ from values.",
-                      "Identifies price of production with cost-price."
+                      "The profit realized by an individual branch rarely coincides with the surplus-value it directly produced; usually it is a distributed share of total social surplus-value.",
+                      "The profit realized by an individual branch generally remains equal to the surplus-value produced by its own workers.",
+                      "Average profit is created from consumers’ extra payments after all surplus-value produced in the branch is erased.",
+                      "The formation of average profit is explained by an expansion of the rate of surplus-value and the accounting treatment of profit as a cost item."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치는 각 부문의 노동에서 생산되지만, 이윤은 경쟁을 통해 총자본의 크기에 비례해 분배된다. 이 긴장을 보아야 가치와 가격의 차이를 가치법칙의 폐기가 아니라 매개된 형태로 이해할 수 있다.",
-                    "en": "Surplus-value is produced by labour in each branch, but profit is distributed through competition in proportion to the size of total capital. This tension lets us understand the divergence between value and price as a mediated form, not as the abolition of the law of value."
+                    "ko": "9장에서 신비화가 깊어지는 이유가 여기에 있다. 이윤은 더 이상 한 부문 내부에서 생산된 잉여가치와 양적으로도 바로 맞지 않으므로, 노동에서 온다는 관계가 더 멀리 가려진다.",
+                    "en": "This is why mystification deepens in Chapter 9. Profit no longer directly matches, even quantitatively, the surplus-value produced inside a branch, so its origin in labour is further obscured."
                   }
                 },
                 {
@@ -22301,27 +22273,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가치와 생산가격을 매개하는 것은 무엇인가?",
-                    "en": "What mediates value and price of production?"
+                    "ko": "생산가격으로의 전환을 가치론의 포기로 읽으면 왜 부정확한가?",
+                    "en": "Why is it inaccurate to read the transformation into prices of production as an abandonment of value theory?"
                   },
                   "choices": {
                     "ko": [
-                      "평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.",
-                      "부문 간 자본이동과 이윤율 균등화, 그리고 그 결과 형성되는 평균이윤이다.",
-                      "생산가격을 비용가격과 같은 것으로 본다.",
-                      "경쟁이 잉여가치를 새로 창조한다고 본다."
+                      "전환은 가치가 경쟁 속에서 매개된 형태를 설명하며, 평균이윤의 총량도 결국 총잉여가치에서 나온다.",
+                      "전환은 가치 개념을 소비자 가격표로 바꾸어 노동시간과의 연결을 끊는 절차다.",
+                      "전환은 개별 자본가가 원하는 가격을 임의로 붙이는 권리를 이론화한다.",
+                      "전환은 모든 상품이 자기 가치와 같은 가격에 팔린다는 명제를 반복한다."
                     ],
                     "en": [
-                      "Assumes average profit always equals the surplus-value directly produced in each branch.",
-                      "The mediation is inter-branch capital movement, equalization of profit rates, and the resulting average profit.",
-                      "Identifies price of production with cost-price.",
-                      "Assumes competition creates surplus-value."
+                      "The transformation explains the mediated form value takes in competition, and the total mass of average profit ultimately comes from total surplus-value.",
+                      "The transformation changes value into a consumer price tag and cuts its link to labour-time.",
+                      "The transformation theorizes the right of individual capitalists to attach any price they want.",
+                      "The transformation simply repeats that every commodity sells at the same price as its own value."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "부문 간 자본이동과 이윤율 균등화, 그리고 그 결과 형성되는 평균이윤이다. 매개를 놓치면 경쟁이 가치관계를 만들어내는 것처럼 보이거나, 반대로 경쟁을 단순한 외부 소음으로 보게 된다.",
-                    "en": "The mediation is inter-branch capital movement, equalization of profit rates, and the resulting average profit. Without the mediation, competition appears either to create value relations or to be mere external noise."
+                    "ko": "마르크스의 논점은 가치가 사라진다는 것이 아니라 다른 형태로 나타난다는 것이다. 생산가격은 가치의 변형된 형태이며, 총량 관계가 그 연결을 붙잡고 있다.",
+                    "en": "Marx’s point is not that value disappears but that it appears in a transformed form. Price of production is a converted form of value, and the aggregate relations retain the connection."
                   }
                 },
                 {
@@ -22329,27 +22301,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "생산가격이 가치와 다르니 노동가치론은 틀렸다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying that the labour theory of value is false because prices of production differ from values?"
+                    "ko": "생산가격을 계산할 때 비용가격 k에 대한 주의점은 무엇인가?",
+                    "en": "What caution is needed about cost-price k when calculating prices of production?"
                   },
                   "choices": {
                     "ko": [
-                      "생산가격을 비용가격과 같은 것으로 본다.",
-                      "경쟁이 잉여가치를 새로 창조한다고 본다.",
-                      "생산가격의 차이는 가치법칙의 부정이 아니라 총잉여가치가 경쟁 속에서 재분배되는 매개된 형태라는 점을 놓친다.",
-                      "총이윤과 총잉여가치의 연결을 끊어 버린다."
+                      "k는 단순히 투입물의 순수 가치만이 아니라 이미 생산가격으로 구매된 투입물의 가격을 포함할 수 있다.",
+                      "k는 가변자본만을 뜻하므로 불변자본의 이전 가치는 계산에서 제외된다.",
+                      "k는 평균이윤을 더한 뒤에야 처음 생기는 사후 가산금이다.",
+                      "k는 판매가격에서 소비세를 뺀 값으로, 생산과정 내부의 비용과 별개다."
                     ],
                     "en": [
-                      "Identifies price of production with cost-price.",
-                      "Assumes competition creates surplus-value.",
-                      "It misses that the difference is not a negation of the law of value but the mediated form in which total surplus-value is redistributed through competition.",
-                      "Cuts the link between total profit and total surplus-value."
+                      "k may include the prices of inputs already purchased at prices of production, not merely the pure values of those inputs.",
+                      "k means only variable capital, so transferred value from constant capital is excluded from the calculation.",
+                      "k arises only after average profit is added as an ex post surcharge.",
+                      "k is the selling price minus consumption tax and is separate from costs inside production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산가격의 차이는 가치법칙의 부정이 아니라 총잉여가치가 경쟁 속에서 재분배되는 매개된 형태라는 점을 놓친다. 마르크스는 시장 표면을 설명하되, 그 표면이 잉여가치 분배의 특정 형식임을 밝힌다.",
-                    "en": "It misses that the difference is not a negation of the law of value but the mediated form in which total surplus-value is redistributed through competition. Marx explains the market surface while showing it as a specific form of surplus-value distribution."
+                    "ko": "9장의 계산은 단순화를 포함한다. 실제 전환에서는 산출물뿐 아니라 투입물의 비용가격도 이미 생산가격의 매개를 받을 수 있으므로, k를 순수 가치항목으로 기계적으로 읽으면 안 된다.",
+                    "en": "Chapter 9’s calculation involves simplification. In the actual transformation, not only outputs but also the cost-price of inputs may already be mediated by prices of production, so k should not be read mechanically as a pure value item."
                   }
                 },
                 {
@@ -22357,27 +22329,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "벤처자본이 여러 산업에서 비슷한 목표수익률을 요구한다. 마르크스의 범주로 보면 무엇과 닮아 있는가?",
-                    "en": "Venture capital demands similar target returns across industries. In Marx’s categories, what does this resemble?"
+                    "ko": "여러 산업에 투자하는 펀드가 같은 기대수익률을 기준으로 자금을 옮기는 사례는 9장의 어떤 논점을 보여 주는가?",
+                    "en": "What Chapter 9 point is illustrated by a fund moving money among industries according to a common target return?"
                   },
                   "choices": {
                     "ko": [
-                      "총이윤과 총잉여가치의 연결을 끊어 버린다.",
-                      "경쟁이 잉여가치를 새로 창조한다고 본다.",
-                      "자본이 특정 사용가치가 아니라 평균수익률을 기준으로 이동하며 이윤율 균등화를 압박하는 운동과 닮아 있다.",
-                      "생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다."
+                      "개별 산업의 직접 잉여가치 생산량보다 총자본의 평균수익 요구가 가격과 투자 배분에 압력을 가한다는 점이다.",
+                      "투자자가 기대수익률을 정하면 그 순간 새 가치가 금융시장에서 창조된다는 점이다.",
+                      "펀드가 여러 산업을 보유하면 각 산업의 유기적 구성은 같은 비율로 통일된다는 점이다.",
+                      "기대수익률은 노동시간과 별개이므로 생산가격은 사회적 총량과의 접점을 잃는다는 점이다."
                     ],
                     "en": [
-                      "Cuts the link between total profit and total surplus-value.",
-                      "Assumes competition creates surplus-value.",
-                      "It resembles the movement in which capital moves by average return rather than specific use-value, pressuring profit rates toward equalization.",
-                      "Assumes the law of value is abolished if prices of production differ from values."
+                      "It shows that the average return demanded by total capital pressures prices and allocation more than the direct surplus-value produced in each industry.",
+                      "It shows that when investors set a target return, new value is created in financial markets at that moment.",
+                      "It shows that when a fund owns several industries, the organic composition of each industry becomes unified.",
+                      "It shows that target returns are separate from labour-time and therefore prices of production lose contact with social aggregates."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본이 특정 사용가치가 아니라 평균수익률을 기준으로 이동하며 이윤율 균등화를 압박하는 운동과 닮아 있다. 현대 산업의 사례도 부문별 자본구성, 경쟁, 평균수익률의 매개로 읽을 수 있다.",
-                    "en": "It resembles the movement in which capital moves by average return rather than specific use-value, pressuring profit rates toward equalization. Modern industries can also be read through the mediation of capital composition, competition, and average returns."
+                    "ko": "현대적 사례에서도 핵심은 평균화다. 자본은 특정 부문에서 생산된 잉여가치량만 보는 것이 아니라, 같은 크기 자본이 받을 평균이윤을 기준으로 이동한다.",
+                    "en": "The modern case highlights averaging. Capital does not look only at the surplus-value produced in a particular branch; it moves according to the average profit expected by equal capitals."
                   }
                 },
                 {
@@ -22385,27 +22357,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "일반 이윤율과 생산가격의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the general rate of profit and prices of production?"
+                    "ko": "9장이 자본가 의식의 신비화를 더 강화한다고 말할 수 있는 이유는 무엇인가?",
+                    "en": "Why can Chapter 9 be said to intensify the mystification of capitalist consciousness?"
                   },
                   "choices": {
                     "ko": [
-                      "총이윤과 총잉여가치의 연결을 끊어 버린다.",
-                      "생산가격과 가치의 차이를 가치법칙의 폐기로 읽는다.",
-                      "평균이윤은 각 부문이 직접 생산한 잉여가치와 대체로 같다고 본다.",
-                      "가치와 잉여가치의 생산을 경쟁 속의 평균이윤과 가격형태로 전환해, 자본주의 표면의 가격운동을 설명한다."
+                      "평균이윤이 각 부문 밖의 사회적 과정으로 결정되면서, 개별 자본가에게 이윤은 자기 총자본이 낳은 자연스러운 수익처럼 보이기 때문이다.",
+                      "평균이윤이 생기면 노동자가 받은 임금이 장부에서 잉여가치로 직접 표시되기 때문이다.",
+                      "생산가격은 시장가격보다 높은 경향이 있어 자본가가 가치의 원천을 쉽게 확인하기 때문이다.",
+                      "경쟁이 멈춘 조건에서 평균이윤이 생겨 자본가는 생산과 유통을 명확히 구별하기 때문이다."
                     ],
                     "en": [
-                      "Cuts the link between total profit and total surplus-value.",
-                      "Assumes the law of value is abolished if prices of production differ from values.",
-                      "Assumes average profit always equals the surplus-value directly produced in each branch.",
-                      "They transform the production of value and surplus-value into average profit and price forms under competition, explaining price movement on capitalism’s surface."
+                      "Because average profit is determined through a social process outside the branch, profit appears to the individual capitalist as the natural yield of total capital.",
+                      "Because once average profit arises, the wages workers receive are directly recorded in the books as surplus-value.",
+                      "Because prices of production tend to stand above market prices, making the source of value easy for the capitalist to see.",
+                      "Because average profit arises under conditions where competition has stopped, allowing the capitalist to clearly distinguish production from circulation."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가치와 잉여가치의 생산을 경쟁 속의 평균이윤과 가격형태로 전환해, 자본주의 표면의 가격운동을 설명한다. 이 장은 다음 단계의 생산가격과 경쟁 분석을 위한 개념적 고리를 제공한다.",
-                    "en": "They transform the production of value and surplus-value into average profit and price forms under competition, explaining price movement on capitalism’s surface. The chapter provides the conceptual link for the next stage of prices of production and competition."
+                    "ko": "평균이윤은 잉여가치의 원천을 한층 더 숨긴다. 개별 자본가는 자기 부문 노동이 생산한 잉여가치가 아니라 총자본의 배분 몫을 받으므로, 모든 자본부분이 이윤을 낳는 것처럼 보인다.",
+                    "en": "Average profit hides the source of surplus-value more deeply. The individual capitalist receives a distributed share of total capital rather than simply the surplus-value produced by workers in his branch, so every part of capital appears to yield profit."
                   }
                 }
               ]
@@ -22478,27 +22450,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "경쟁은 서로 다른 부문의 이윤율 차이를 어떤 방식으로 평균 이윤율 쪽으로 밀어 가는가?",
-                    "en": "What does Marx analyze in the equalization of the general rate of profit through competition?"
+                    "ko": "10장에서 경쟁은 일반 이윤율 형성에 어떤 역할을 하는가?",
+                    "en": "What role does competition play in forming the general rate of profit in Chapter 10?"
                   },
                   "choices": {
                     "ko": [
-                      "자본이 높은 이윤율을 좇아 부문 사이를 이동하면서 공급, 시장가격, 이윤율을 조정하는 과정이다.",
-                      "경쟁이 잉여가치 자체를 생산한다고 본다.",
-                      "개별가치와 시장가치를 같은 것으로 본다.",
-                      "초과이윤을 대체로 독점 사기나 우연으로만 본다."
+                      "자본이 낮은 이윤율 부문에서 빠져나와 높은 이윤율 부문으로 이동하며 수급과 가격을 조정해 평균이윤을 관철한다.",
+                      "경쟁은 각 부문이 생산한 잉여가치를 그대로 보존하도록 자본 이동을 막는다.",
+                      "경쟁은 상품의 사용가치를 같은 종류로 바꾸어 모든 시장가격을 하나로 합친다.",
+                      "경쟁은 노동자 사이의 임금 차이를 지워 불변자본과 가변자본의 구분을 없앤다."
                     ],
                     "en": [
-                      "He analyzes how capital moves between branches in pursuit of higher profit rates, adjusting supply, market prices, and profit rates.",
-                      "Assumes competition produces surplus-value itself.",
-                      "Identifies individual value with market-value.",
-                      "Treats surplus-profit always as monopoly fraud or accident."
+                      "Capital leaves low-profit branches and enters high-profit branches, adjusting supply, demand, and prices so that average profit is enforced.",
+                      "Competition blocks capital movement so each branch preserves the surplus-value it produced.",
+                      "Competition turns all use-values into the same kind and merges all market prices into one.",
+                      "Competition erases wage differences among workers and abolishes the distinction between constant and variable capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본이 높은 이윤율을 좇아 부문 사이를 이동하면서 공급, 시장가격, 이윤율을 조정하는 과정이다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
-                    "en": "He analyzes how capital moves between branches in pursuit of higher profit rates, adjusting supply, market prices, and profit rates. This is the starting point for the analysis of average profit and prices of production."
+                    "ko": "10장은 평균이윤을 정적인 공식으로 두지 않는다. 자본 이동, 가격 변동, 수급 변화가 부문별 이윤율 차이를 평균 쪽으로 밀어붙이는 과정을 보여 준다.",
+                    "en": "Chapter 10 does not leave average profit as a static formula. It shows how capital movement, price changes, and shifts in supply and demand push branch profit rates toward the average."
                   }
                 },
                 {
@@ -22506,41 +22478,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "시장가치와 개별가치를 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must market-value be distinguished from individual value?"
+                    "ko": "시장가치와 개별가치의 구별에서 중요한 점은 무엇인가?",
+                    "en": "What is important in the distinction between market-value and individual value?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 종류의 상품도 생산조건이 다른 개별 자본에서 서로 다른 개별가치를 갖지만, 시장에서는 사회적으로 지배적인 조건을 반영한 시장가치로 맞부딪힌다.",
-                      "초과이윤을 대체로 독점 사기나 우연으로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "개별가치와 시장가치를 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다."
+                      "같은 종류의 상품은 하나의 시장가치를 중심으로 거래되지만, 개별 생산자는 서로 다른 조건 때문에 그보다 낮거나 높은 개별가치를 가질 수 있다.",
+                      "시장가치는 각 기업의 장부가격이고 개별가치는 소비자가 지불한 최종가격이다.",
+                      "시장가치와 개별가치는 같은 말이며 경쟁이 시작되면 둘 다 사라진다.",
+                      "개별가치는 독점기업의 내부 원가명세에 가까운 개념이다."
                     ],
                     "en": [
-                      "Commodities of the same kind have different individual values under different production conditions, but confront one another on the market through a market-value reflecting socially dominant conditions.",
-                      "Treats surplus-profit always as monopoly fraud or accident.",
-                      "Identifies individual value with market-value.",
-                      "Assumes the average profit rate forms without capital moving between branches."
+                      "Commodities of the same kind trade around one market-value, while individual producers can have lower or higher individual values because of different production conditions.",
+                      "Market-value is a firm’s book price, and individual value is the final price paid by consumers.",
+                      "Market-value and individual value mean the same thing, and both disappear once competition begins.",
+                      "Individual value is close to an internal cost statement of monopoly firms."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "같은 종류의 상품도 생산조건이 다른 개별 자본에서 서로 다른 개별가치를 갖지만, 시장에서는 사회적으로 지배적인 조건을 반영한 시장가치로 맞부딪힌다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
-                    "en": "Commodities of the same kind have different individual values under different production conditions, but confront one another on the market through a market-value reflecting socially dominant conditions. The core is to see the mediation between individual value calculation and social competition."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 같은 종류의 상품도 생산조건이 다른 개별 자본에서 서로 다른 개별가치를 갖지만, 시장에서는 사회적으로 지배적인 조건을 반영한 시장가치로 맞부딪힌다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
-                      "오해 진단: \"초과이윤을 대체로 독점 사기나 우연으로만 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"개별가치와 시장가치를 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: Commodities of the same kind have different individual values under different production conditions, but confront one another on the market through a market-value reflecting socially dominant conditions. The core is to see the mediation between individual value calculation and social competition.",
-                      "Misconception check: choosing \"Treats surplus-profit always as monopoly fraud or accident.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Identifies individual value with market-value.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes the average profit rate forms without capital moving between branches.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "시장가치는 한 부문 내부 경쟁을 이해하는 핵심이다. 같은 상품이 같은 시장가격을 받더라도 개별 생산조건이 다르면 어떤 자본은 초과이윤을 얻고 어떤 자본은 압박을 받는다.",
+                    "en": "Market-value is central to competition within a branch. Even when the same commodity receives the same market price, different individual conditions allow some capitals to obtain surplus-profit and others to face pressure."
                   }
                 },
                 {
@@ -22548,27 +22506,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "초과이윤은 왜 단순히 운 좋은 가격표가 아닌가?",
-                    "en": "Why is surplus-profit not simply a lucky price tag?"
+                    "ko": "초과이윤은 10장에서 어떤 조건에서 발생하는가?",
+                    "en": "Under what condition does surplus-profit arise in Chapter 10?"
                   },
                   "choices": {
                     "ko": [
-                      "초과이윤을 대체로 독점 사기나 우연으로만 본다.",
-                      "개별 생산조건이 사회적 평균보다 우월할 때, 시장가치와 더 낮은 개별가치의 차이가 초과이윤으로 나타날 수 있기 때문이다.",
-                      "자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다.",
-                      "시장가격을 생산조건과 무관한 심리적 숫자로만 본다."
+                      "개별 생산자의 개별가치나 개별 생산가격이 시장가치 또는 사회적 생산가격보다 낮을 때 발생한다.",
+                      "개별 생산자가 극도로 자동화된 설비로 같은 상품을 만들 때 발생한다.",
+                      "수요 위축으로 재고가 늘면 그 재고 보유분이 초과이윤의 기반이 된다.",
+                      "모든 생산자가 같은 비용으로 생산하고 같은 가격으로 판매할 때 발생한다."
                     ],
                     "en": [
-                      "Treats surplus-profit always as monopoly fraud or accident.",
-                      "When individual production conditions are superior to the social average, the difference between market-value and lower individual value can appear as surplus-profit.",
-                      "Assumes the average profit rate forms without capital moving between branches.",
-                      "Treats market price as a psychological number unrelated to production conditions."
+                      "It arises when an individual producer’s individual value or individual price of production is below the market-value or social price of production.",
+                      "It arises when an individual producer makes the same commodity with extremely automated equipment.",
+                      "It arises when falling demand increases inventory and that inventory becomes the basis of surplus-profit.",
+                      "It arises when all producers have the same costs and sell at the same price."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "개별 생산조건이 사회적 평균보다 우월할 때, 시장가치와 더 낮은 개별가치의 차이가 초과이윤으로 나타날 수 있기 때문이다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
-                    "en": "When individual production conditions are superior to the social average, the difference between market-value and lower individual value can appear as surplus-profit. Without this distinction, one cannot explain how value, market-value, and price of production diverge."
+                    "ko": "초과이윤은 시장가격이 같다는 조건 속에서 생긴다. 더 유리한 생산조건을 가진 자본은 사회적 기준보다 낮은 개별비용으로 생산하고 그 차이를 자기 몫으로 실현한다.",
+                    "en": "Surplus-profit arises under the condition of a common market price. A capital with more favourable production conditions produces below the social standard and realizes the difference as its own gain."
                   }
                 },
                 {
@@ -22576,27 +22534,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "어떤 기업이 평균보다 낮은 비용으로 같은 상품을 생산하지만 시장가격은 아직 평균 조건에 맞춰져 있다. 무엇이 생길 수 있는가?",
-                    "en": "A firm produces the same commodity below average cost while market price still reflects average conditions. What can arise?"
+                    "ko": "물류 알고리즘 개선으로 같은 상품을 경쟁사보다 낮은 비용에 생산ㆍ배송하는 기업의 이윤을 10장으로 설명하면 무엇인가?",
+                    "en": "How would Chapter 10 explain the profit of a firm that uses a logistics algorithm to produce and deliver the same commodity at lower cost than competitors?"
                   },
                   "choices": {
                     "ko": [
-                      "자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다.",
-                      "시장가격을 생산조건과 무관한 심리적 숫자로만 본다.",
-                      "그 기업은 시장가치와 자기 개별가치의 차이에서 초과이윤을 얻을 수 있다.",
-                      "경쟁이 잉여가치 자체를 생산한다고 본다."
+                      "그 기업의 개별 생산조건이 사회적 평균보다 유리해 시장가격과 개별비용의 차이가 초과이윤으로 실현된다.",
+                      "알고리즘이 직접 잉여노동을 수행해 인간 노동 없이 새 가치를 만든다.",
+                      "배송비 절감은 유통 범주의 비용 절감이므로 생산가격 분석과 별도 항목으로 처리된다.",
+                      "경쟁사가 같은 상품을 팔기 때문에 비용 차이는 시장가격에 반영될 수 없다."
                     ],
                     "en": [
-                      "Assumes the average profit rate forms without capital moving between branches.",
-                      "Treats market price as a psychological number unrelated to production conditions.",
-                      "The firm can obtain surplus-profit from the difference between market-value and its own individual value.",
-                      "Assumes competition produces surplus-value itself."
+                      "Its individual production conditions are more favourable than the social average, so the difference between market price and individual cost is realized as surplus-profit.",
+                      "The algorithm directly performs surplus-labour and creates new value without human labour.",
+                      "Savings in delivery belong to circulation and therefore are treated as a separate item from the analysis of prices of production.",
+                      "Because competitors sell the same commodity, cost differences cannot be reflected in market price."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 기업은 시장가치와 자기 개별가치의 차이에서 초과이윤을 얻을 수 있다. 구체 사례는 개별 기업의 기술 차이가 경쟁 속에서 어떤 사회적 가격형태로 나타나는지를 보여준다.",
-                    "en": "The firm can obtain surplus-profit from the difference between market-value and its own individual value. The concrete case shows how technical differences between firms appear as social price forms through competition."
+                    "ko": "10장의 사례로는 기술 자체보다 사회적 기준과 개별 조건의 차이가 중요하다. 같은 시장가격 아래 낮은 개별비용을 가진 자본은 평균을 넘는 이윤을 얻는다.",
+                    "en": "As a Chapter 10 case, the important point is the gap between the social standard and individual conditions, not the technology by itself. Under a common market price, the capital with lower individual cost obtains profit above the average."
                   }
                 },
                 {
@@ -22604,27 +22562,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "경쟁 분석이 생산가격론에 보태는 것은 무엇인가?",
-                    "en": "What does the analysis of competition add to the theory of prices of production?"
+                    "ko": "10장의 경쟁 분석은 11장의 임금변동 논의로 어떻게 이어지는가?",
+                    "en": "How does Chapter 10’s analysis of competition lead into Chapter 11’s discussion of wage fluctuations?"
                   },
                   "choices": {
                     "ko": [
-                      "개별가치와 시장가치를 같은 것으로 본다.",
-                      "시장가격을 생산조건과 무관한 심리적 숫자로만 본다.",
-                      "경쟁이 잉여가치 자체를 생산한다고 본다.",
-                      "평균이윤율이 추상적 공식이 아니라 자본 이동, 공급 변화, 시장가격 변동을 통해 형성됨을 보여준다."
+                      "생산가격과 평균이윤의 경쟁적 형성이 전제된 뒤, 일반적 임금 상승이나 하락이 서로 다른 구성의 자본에 어떤 가격 효과를 내는지 물을 수 있게 된다.",
+                      "경쟁이 끝나고 시장가격이 고정된 뒤, 임금은 가격과 분리된 분배 윤리 문제로 남기 때문이다.",
+                      "초과이윤이 모든 부문에 영구적으로 정착한 뒤, 임금은 잉여가치율과 연결되지 않기 때문이다.",
+                      "시장가치가 개별가치로 환원된 뒤, 생산가격 공식에서 평균이윤을 제거할 수 있기 때문이다."
                     ],
                     "en": [
-                      "Identifies individual value with market-value.",
-                      "Treats market price as a psychological number unrelated to production conditions.",
-                      "Assumes competition produces surplus-value itself.",
-                      "It shows that the average rate of profit is not an abstract formula but is formed through capital movement, changes in supply, and market-price fluctuations."
+                      "Once the competitive formation of production prices and average profit is assumed, one can ask how a general rise or fall in wages affects capitals of different composition.",
+                      "Because once competition ends and market prices are fixed, wages remain an ethical question of distribution separated from prices.",
+                      "Because after surplus-profit permanently settles in every branch, wages are no longer connected to the rate of surplus-value.",
+                      "Because once market-value is reduced to individual value, average profit can be removed from the production-price formula."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "평균이윤율이 추상적 공식이 아니라 자본 이동, 공급 변화, 시장가격 변동을 통해 형성됨을 보여준다. 이는 3권의 핵심 과제인 가치법칙의 표면형태를 설명하는 과정이다.",
-                    "en": "It shows that the average rate of profit is not an abstract formula but is formed through capital movement, changes in supply, and market-price fluctuations. This is part of Volume III’s central task: explaining the surface forms of the law of value."
+                    "ko": "11장은 평균이윤과 생산가격을 이미 주어진 것으로 놓고 임금 변동의 효과를 검토한다. 그러려면 10장에서 경쟁을 통한 평균화의 조건이 먼저 정리되어야 한다.",
+                    "en": "Chapter 11 treats average profit and prices of production as already given and then examines the effect of wage changes. That requires Chapter 10’s account of the competitive conditions of averaging."
                   }
                 }
               ]
@@ -22642,27 +22600,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "경쟁을 통한 균등화의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in equalization through competition?"
+                    "ko": "10장에서 경쟁은 두 수준으로 작동한다. 가장 정확한 구분은 무엇인가?",
+                    "en": "Competition operates at two levels in Chapter 10. What is the most accurate distinction?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 자본은 초과이윤을 추구하지만, 바로 그 추구가 장기적으로 이윤율을 평균화하는 압력으로 작용한다.",
-                      "개별가치와 시장가치를 같은 것으로 본다.",
-                      "경쟁이 잉여가치 자체를 생산한다고 본다.",
-                      "초과이윤을 대체로 독점 사기나 우연으로만 본다."
+                      "부문 내부에서는 같은 상품의 사회적 기준인 시장가치가 정리되고, 부문 사이에서는 자본 이동이 평균이윤과 생산가격을 밀어붙인다.",
+                      "임금 격차의 조정이 먼저 일어나고, 그 결과 노동자의 이동 비용이 각 부문의 표준 이윤으로 계산된다.",
+                      "광고비와 판매망의 순위가 시장가치를 대신하며, 생산부문 사이의 차이는 상품명 분류로 정리된다.",
+                      "재고 처분 속도가 개별가치를 정하고, 기업 규모의 법적 분류가 일반 이윤율의 기준을 제공한다."
                     ],
                     "en": [
-                      "Individual capitals seek surplus-profit, but that very pursuit acts over time as a pressure equalizing profit rates.",
-                      "Identifies individual value with market-value.",
-                      "Assumes competition produces surplus-value itself.",
-                      "Treats surplus-profit always as monopoly fraud or accident."
+                      "Within a branch, competition forms the social standard of market-value; among branches, capital movement pushes toward average profit and prices of production.",
+                      "Wage differences are adjusted first, and workers’ mobility costs are then calculated as the standard profit of each branch.",
+                      "Advertising expenses and sales networks replace market-value, while differences among branches are settled by commodity-name classification.",
+                      "Inventory clearance speed determines individual value, and the legal classification of firm size provides the standard for the general profit rate."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "개별 자본은 초과이윤을 추구하지만, 바로 그 추구가 장기적으로 이윤율을 평균화하는 압력으로 작용한다. 이 긴장을 보아야 가치와 가격의 차이를 가치법칙의 폐기가 아니라 매개된 형태로 이해할 수 있다.",
-                    "en": "Individual capitals seek surplus-profit, but that very pursuit acts over time as a pressure equalizing profit rates. This tension lets us understand the divergence between value and price as a mediated form, not as the abolition of the law of value."
+                    "ko": "이 구분을 잡아야 10장이 선명해진다. 부문 내부에서는 같은 상품의 사회적 가치가 정리되고, 부문 사이에서는 자본 이동을 통해 평균이윤이 관철된다.",
+                    "en": "This distinction clarifies Chapter 10. Within a branch, the social value of the same commodity is formed; among branches, capital movement enforces average profit."
                   }
                 },
                 {
@@ -22670,27 +22628,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "개별가치, 시장가치, 생산가격을 매개하는 것은 무엇인가?",
-                    "en": "What mediates individual value, market-value, and price of production?"
+                    "ko": "시장가치가 평균 조건, 불리한 조건, 유리한 조건 중 어느 쪽에 의해 규제되는지는 무엇에 달려 있는가?",
+                    "en": "What determines whether market-value is regulated by average, worse, or better conditions?"
                   },
                   "choices": {
                     "ko": [
-                      "개별가치와 시장가치를 같은 것으로 본다.",
-                      "동일 상품 생산자들 사이의 경쟁과 서로 다른 부문 사이의 자본이동이라는 두 수준의 경쟁이다.",
-                      "초과이윤을 대체로 독점 사기나 우연으로만 본다.",
-                      "자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다."
+                      "각 조건에서 생산된 상품량과 사회적 수요의 관계, 즉 공급 구성이 수요를 어떻게 충족하는지에 달려 있다.",
+                      "가장 오래된 기업의 설립연도와 상표권 보유 기간에 달려 있다.",
+                      "개별 자본가가 자기 비용을 가격표에 먼저 적는 순서에 달려 있다.",
+                      "노동자 임금이 현금으로 지급되는지 주식으로 지급되는지에 달려 있다."
                     ],
                     "en": [
-                      "Identifies individual value with market-value.",
-                      "They are mediated by two levels of competition: competition among producers of the same commodity and movement of capital between different branches.",
-                      "Treats surplus-profit always as monopoly fraud or accident.",
-                      "Assumes the average profit rate forms without capital moving between branches."
+                      "It depends on the relation between the quantities produced under each condition and social demand, that is, how the composition of supply satisfies demand.",
+                      "It depends on the founding year of the oldest firm and the length of trademark ownership.",
+                      "It depends on the order in which individual capitalists write their own costs on price lists.",
+                      "It depends on whether workers are paid in cash or in shares."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "동일 상품 생산자들 사이의 경쟁과 서로 다른 부문 사이의 자본이동이라는 두 수준의 경쟁이다. 매개를 놓치면 경쟁이 가치관계를 만들어내는 것처럼 보이거나, 반대로 경쟁을 단순한 외부 소음으로 보게 된다.",
-                    "en": "They are mediated by two levels of competition: competition among producers of the same commodity and movement of capital between different branches. Without the mediation, competition appears either to create value relations or to be mere external noise."
+                    "ko": "마르크스는 시장가치를 단순 평균으로만 두지 않는다. 수요를 충족하는 공급의 구성이 어떤 조건의 상품을 결정적인 위치에 놓는지가 시장가치 규제의 핵심이다.",
+                    "en": "Marx does not reduce market-value to a simple arithmetic average. The key is which production conditions become decisive in satisfying social demand through the composition of supply."
                   }
                 },
                 {
@@ -22698,27 +22656,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "경쟁이 가격을 만든다는 말만으로 충분하지 않은 이유는 무엇인가?",
-                    "en": "Why is it insufficient simply to say that competition creates prices?"
+                    "ko": "경쟁이 잉여가치를 창조한다는 설명이 10장의 관점에서 부정확한 이유는 무엇인가?",
+                    "en": "Why is it inaccurate, from Chapter 10’s standpoint, to say that competition creates surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "초과이윤을 대체로 독점 사기나 우연으로만 본다.",
-                      "자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다.",
-                      "경쟁은 가치와 잉여가치를 새로 만드는 것이 아니라 이미 생산된 가치관계를 시장가치와 생산가격의 형태로 관철한다.",
-                      "시장가격을 생산조건과 무관한 심리적 숫자로만 본다."
+                      "경쟁은 이미 생산된 잉여가치를 실현하고 배분하는 형식을 만들지만, 잉여가치의 원천은 생산과정의 잉여노동이다.",
+                      "경쟁은 상품의 사용가치를 직접 생산하므로 모든 새 가치의 물질적 원천이다.",
+                      "경쟁은 노동자가 임금을 받을 필요를 없애 잉여가치율을 무한히 만든다.",
+                      "경쟁은 시장가격을 가치보다 낮추어 자본가의 이윤을 생산과 무관하게 만든다."
                     ],
                     "en": [
-                      "Treats surplus-profit always as monopoly fraud or accident.",
-                      "Assumes the average profit rate forms without capital moving between branches.",
-                      "Competition does not create value and surplus-value; it enforces already produced value relations in the forms of market-value and price of production.",
-                      "Treats market price as a psychological number unrelated to production conditions."
+                      "Competition creates forms for realizing and distributing surplus-value already produced, but the source of surplus-value is surplus-labour in production.",
+                      "Competition directly produces use-values and is therefore the material source of all new value.",
+                      "Competition removes the need to pay wages and makes the rate of surplus-value infinite.",
+                      "Competition lowers market prices below values and makes capitalist profit unrelated to production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "경쟁은 가치와 잉여가치를 새로 만드는 것이 아니라 이미 생산된 가치관계를 시장가치와 생산가격의 형태로 관철한다. 마르크스는 시장 표면을 설명하되, 그 표면이 잉여가치 분배의 특정 형식임을 밝힌다.",
-                    "en": "Competition does not create value and surplus-value; it enforces already produced value relations in the forms of market-value and price of production. Marx explains the market surface while showing it as a specific form of surplus-value distribution."
+                    "ko": "10장의 경쟁은 강력하지만 원천은 아니다. 경쟁은 가치와 잉여가치가 어떤 가격 형태로 나타나고 누구에게 배분되는지를 조정한다.",
+                    "en": "Competition in Chapter 10 is powerful, but it is not the source. It regulates the price forms in which value and surplus-value appear and the way they are distributed."
                   }
                 },
                 {
@@ -22726,27 +22684,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "배달앱 시장에서 한 업체가 알고리즘과 규모 덕분에 낮은 단가로 운영해 초과수익을 얻는다. 무엇을 봐야 하는가?",
-                    "en": "In app-based delivery, one firm gains extra returns through algorithmic and scale advantages that lower unit costs. What should be examined?"
+                    "ko": "효율적인 기업의 초과이윤이 장기적으로 압박을 받는 이유는 무엇인가?",
+                    "en": "Why is an efficient firm’s surplus-profit pressured in the long run?"
                   },
                   "choices": {
                     "ko": [
-                      "시장가격을 생산조건과 무관한 심리적 숫자로만 본다.",
-                      "자본이 부문 사이를 이동하지 않아도 평균이윤율이 형성된다고 본다.",
-                      "그 우월한 개별 생산조건이 시장가격 또는 시장가치와 만나 초과이윤을 만드는지 봐야 한다.",
-                      "경쟁이 잉여가치 자체를 생산한다고 본다."
+                      "높은 이윤은 자본 유입과 모방을 끌어와 사회적 생산조건과 시장가치를 바꾸기 때문이다.",
+                      "초과이윤을 얻은 기업은 법적으로 다음 회전에 같은 기술을 사용할 수 없기 때문이다.",
+                      "판매량 증가분이 임금 보전 재원으로 흡수되어 초과이윤의 압력을 완화하기 때문이다.",
+                      "효율 개선은 한 번 발생하면 상품 가격과 생산조건에 기록되지 않기 때문이다."
                     ],
                     "en": [
-                      "Treats market price as a psychological number unrelated to production conditions.",
-                      "Assumes the average profit rate forms without capital moving between branches.",
-                      "One should examine whether those superior individual production conditions meet market-price or market-value in a way that creates surplus-profit.",
-                      "Assumes competition produces surplus-value itself."
+                      "High profit attracts capital inflow and imitation, changing social production conditions and market-value.",
+                      "A firm that obtains surplus-profit is legally unable to use the same technique in the next turnover.",
+                      "Because increased sales volume is absorbed as a wage-compensation fund and softens the pressure of surplus-profit.",
+                      "Once an efficiency gain occurs, it is not recorded in commodity prices or production conditions."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 우월한 개별 생산조건이 시장가격 또는 시장가치와 만나 초과이윤을 만드는지 봐야 한다. 현대 산업의 사례도 부문별 자본구성, 경쟁, 평균수익률의 매개로 읽을 수 있다.",
-                    "en": "One should examine whether those superior individual production conditions meet market-price or market-value in a way that creates surplus-profit. Modern industries can also be read through the mediation of capital composition, competition, and average returns."
+                    "ko": "초과이윤은 경쟁을 멈추게 하지 않는다. 오히려 경쟁은 초과이윤의 근거가 된 유리한 조건을 확산시키거나 시장가치 자체를 낮추는 방향으로 움직인다.",
+                    "en": "Surplus-profit does not stop competition. Competition tends to diffuse the favourable condition behind surplus-profit or to lower market-value itself."
                   }
                 },
                 {
@@ -22754,27 +22712,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "경쟁을 통한 균등화의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of equalization through competition?"
+                    "ko": "10장이 생산가격 분석에 더하는 체계적 의미는 무엇인가?",
+                    "en": "What systematic significance does Chapter 10 add to the analysis of prices of production?"
                   },
                   "choices": {
                     "ko": [
-                      "시장가격을 생산조건과 무관한 심리적 숫자로만 본다.",
-                      "경쟁이 잉여가치 자체를 생산한다고 본다.",
-                      "개별가치와 시장가치를 같은 것으로 본다.",
-                      "생산가격과 평균이윤율이 실제 시장운동 속에서 어떻게 관철되는지 보여준다."
+                      "생산가격을 추상 공식에 머물게 하지 않고, 시장가치ㆍ시장가격ㆍ자본 이동 속에서 현실적으로 관철되는 운동으로 제시한다.",
+                      "생산가격을 시장가격과 같은 말로 합쳐 가치와 잉여가치의 구분을 제거한다.",
+                      "생산가격을 독점기업의 행정가격으로 바꾸어 경쟁 분석을 종결한다.",
+                      "생산가격을 임금계약의 결과로 환원해 평균이윤 개념을 없앤다."
                     ],
                     "en": [
-                      "Treats market price as a psychological number unrelated to production conditions.",
-                      "Assumes competition produces surplus-value itself.",
-                      "Identifies individual value with market-value.",
-                      "It shows how prices of production and the average rate of profit are enforced in actual market movement."
+                      "It presents prices of production not as an abstract formula alone, but as a movement enforced through market-value, market-price, and capital movement.",
+                      "It merges price of production with market price and removes the distinction between value and surplus-value.",
+                      "It turns price of production into administrative pricing by monopoly firms and closes the analysis of competition.",
+                      "It reduces price of production to wage contracts and eliminates the concept of average profit."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산가격과 평균이윤율이 실제 시장운동 속에서 어떻게 관철되는지 보여준다. 이 장은 다음 단계의 생산가격과 경쟁 분석을 위한 개념적 고리를 제공한다.",
-                    "en": "It shows how prices of production and the average rate of profit are enforced in actual market movement. The chapter provides the conceptual link for the next stage of prices of production and competition."
+                    "ko": "10장의 체계적 역할은 매개를 보이는 것이다. 9장의 생산가격은 10장에서 경쟁과 시장가치의 운동을 통해 현실성을 얻는다.",
+                    "en": "Chapter 10’s systematic role is to show mediation. The prices of production of Chapter 9 gain reality in Chapter 10 through the movement of competition and market-value."
                   }
                 }
               ]
@@ -22847,27 +22805,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "일반적 임금변동이 생산가격에 미치는 영향에서 마르크스가 묻는 것은 무엇인가?",
-                    "en": "What does Marx ask in the effects of general wage fluctuations on prices of production?"
+                    "ko": "11장에서 마르크스가 묻는 기본 문제는 무엇인가?",
+                    "en": "What basic problem does Marx ask in Chapter 11?"
                   },
                   "choices": {
                     "ko": [
-                      "임금의 일반적 상승이나 하락이 자본구성이 다른 부문의 생산가격을 어떻게 서로 다르게 바꾸는지 묻는다.",
-                      "임금이 오르면 모든 가격이 같은 비율로 오른다고 본다.",
-                      "임금변동은 잉여가치량과 평균이윤율에 영향을 주지 않는다고 본다.",
-                      "개별 자본가의 비용전가 의지가 곧 생산가격을 결정한다고 본다."
+                      "일반 이윤율과 생산가격이 주어진 뒤, 일반적 임금 상승이나 하락이 서로 다른 자본구성의 생산가격에 어떤 영향을 주는가이다.",
+                      "임금이 오르면 가치법칙이 즉시 중단되고 모든 상품이 임금표대로 가격을 정하는가이다.",
+                      "각 부문 노동자가 소비하는 상품 종류가 시장가치를 어떻게 직접 결정하는가이다.",
+                      "자본가가 임금을 지급하지 않는 부문에서도 생산가격이 어떻게 계산되는가이다."
                     ],
                     "en": [
-                      "He asks how a general rise or fall in wages changes prices of production differently in branches with different capital compositions.",
-                      "Assumes a wage rise raises all prices by the same proportion.",
-                      "Assumes wage changes do not affect surplus-value and the average profit rate.",
-                      "Assumes an individual capitalist’s will to pass on costs directly determines prices of production."
+                      "Given the general rate of profit and prices of production, it asks how a general rise or fall in wages affects production prices for capitals of different composition.",
+                      "It asks whether a wage rise immediately stops the law of value and makes all commodities price themselves according to wage tables.",
+                      "It asks how the kinds of commodities consumed by workers in each branch directly determine market-value.",
+                      "It asks how prices of production are calculated in branches where capitalists pay no wages."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "임금의 일반적 상승이나 하락이 자본구성이 다른 부문의 생산가격을 어떻게 서로 다르게 바꾸는지 묻는다. 이 점이 평균이윤과 생산가격 분석으로 넘어가는 출발점이다.",
-                    "en": "He asks how a general rise or fall in wages changes prices of production differently in branches with different capital compositions. This is the starting point for the analysis of average profit and prices of production."
+                    "ko": "11장은 평균이윤이 이미 성립했다고 놓고 임금 변동의 효과를 따진다. 쟁점은 임금 변화가 모든 가격을 같은 방향과 같은 비율로 움직이는지가 아니다.",
+                    "en": "Chapter 11 assumes average profit is already established and then studies wage changes. The issue is not whether wages move every price in the same direction and by the same proportion."
                   }
                 },
                 {
@@ -22875,27 +22833,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금이 전반적으로 오르면 모든 상품가격이 같은 비율로 오른다고 말할 수 없는 이유는 무엇인가?",
-                    "en": "Why can we not say that all commodity prices rise by the same proportion when wages generally rise?"
+                    "ko": "일반적 임금 상승은 평균 구성, 저구성, 고구성 자본의 생산가격에 각각 어떤 효과를 낳는가?",
+                    "en": "What effects does a general wage rise have on prices of production for average-, low-, and high-composition capitals?"
                   },
                   "choices": {
                     "ko": [
-                      "부문마다 가변자본 비중과 평균이윤과의 관계가 달라 임금 상승의 효과가 생산가격에 다르게 나타나기 때문이다.",
-                      "개별 자본가의 비용전가 의지가 곧 생산가격을 결정한다고 본다.",
-                      "임금변동은 잉여가치량과 평균이윤율에 영향을 주지 않는다고 본다.",
-                      "자본구성이 다른 부문도 임금변동 효과는 같다고 본다."
+                      "평균 구성 상품의 생산가격은 유지되고, 저구성 상품은 상승하며, 고구성 상품은 하락한다.",
+                      "세 경우 모두 임금 상승률과 같은 비율로 생산가격이 상승한다.",
+                      "평균 구성 상품이 상승하고 저구성ㆍ고구성 상품은 같은 가격을 유지한다.",
+                      "고구성 상품은 기계 비중이 커서 상승하고 저구성 상품은 노동 비중이 커서 하락한다."
                     ],
                     "en": [
-                      "Because each branch has a different share of variable capital and relation to average profit, so wage increases affect prices of production differently.",
-                      "Assumes an individual capitalist’s will to pass on costs directly determines prices of production.",
-                      "Assumes wage changes do not affect surplus-value and the average profit rate.",
-                      "Assumes wage changes affect branches with different compositions in the same way."
+                      "The price of production of average-composition commodities remains unchanged, that of low-composition commodities rises, and that of high-composition commodities falls.",
+                      "In all three cases prices of production rise by the same percentage as wages.",
+                      "Average-composition commodities rise, while low- and high-composition commodities keep the same price.",
+                      "High-composition commodities rise because of their machinery share, while low-composition commodities fall because of their labour share."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "부문마다 가변자본 비중과 평균이윤과의 관계가 달라 임금 상승의 효과가 생산가격에 다르게 나타나기 때문이다. 따라서 이 장의 핵심은 개별 가치계산과 사회적 경쟁의 매개를 함께 보는 데 있다.",
-                    "en": "Because each branch has a different share of variable capital and relation to average profit, so wage increases affect prices of production differently. The core is to see the mediation between individual value calculation and social competition."
+                    "ko": "임금 상승은 잉여가치율과 일반 이윤율을 낮춘다. 평균 구성에서는 비용 증가와 평균이윤 감소가 상쇄되고, 저구성에서는 가격 상승, 고구성에서는 가격 하락이 나타난다.",
+                    "en": "A wage rise lowers the rate of surplus-value and the general rate of profit. In average composition, higher cost and lower average profit offset; in low composition price rises; in high composition price falls."
                   }
                 },
                 {
@@ -22903,27 +22861,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "임금변동 효과를 단순한 비용전가로만 보면 무엇을 놓치는가?",
-                    "en": "What is missed if wage changes are treated as simple cost pass-through?"
+                    "ko": "임금이 오르면 기업은 비용을 가격에 그대로 전가한다는 설명이 11장의 분석과 어긋나는 이유는 무엇인가?",
+                    "en": "Why does the claim that firms simply pass wage increases into prices conflict with Chapter 11’s analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 자본가의 비용전가 의지가 곧 생산가격을 결정한다고 본다.",
-                      "임금변동은 잉여가치량과 평균이윤율을 바꾸고, 그 결과 생산가격 구조 전체를 매개해 변화시킨다.",
-                      "자본구성이 다른 부문도 임금변동 효과는 같다고 본다.",
-                      "임금은 가격에만 관련되고 착취관계와는 무관하다고 본다."
+                      "생산가격은 개별 비용만이 아니라 낮아진 일반 이윤율과 자본구성의 차이를 함께 반영하기 때문이다.",
+                      "임금 상승은 생산과정 밖의 사건이어서 상품 가격에 어떤 흔적도 남기지 않기 때문이다.",
+                      "자본가는 임금 상승분을 노동시간 증가로 회수할 수 있어 가격 계산의 압력이 약해지기 때문이다.",
+                      "임금은 가변자본이 아니라 불변자본에 포함되어 평균이윤과 연결되지 않기 때문이다."
                     ],
                     "en": [
-                      "Assumes an individual capitalist’s will to pass on costs directly determines prices of production.",
-                      "Wage changes alter the mass of surplus-value and the average rate of profit, thereby mediating changes in the whole structure of prices of production.",
-                      "Assumes wage changes affect branches with different compositions in the same way.",
-                      "Treats wages as related only to prices and not to exploitation relations."
+                      "Because prices of production reflect not only individual costs but also the lowered general rate of profit and differences in capital composition.",
+                      "Because a wage rise is an event outside production and leaves no trace in commodity prices.",
+                      "Because capitalists can recover wage increases through longer labour-time, weakening the pressure of price calculation.",
+                      "Because wages belong to constant capital rather than variable capital and are not connected to average profit."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "임금변동은 잉여가치량과 평균이윤율을 바꾸고, 그 결과 생산가격 구조 전체를 매개해 변화시킨다. 이 구분 없이는 가치, 시장가치, 생산가격이 서로 어떻게 달라지는지 설명할 수 없다.",
-                    "en": "Wage changes alter the mass of surplus-value and the average rate of profit, thereby mediating changes in the whole structure of prices of production. Without this distinction, one cannot explain how value, market-value, and price of production diverge."
+                    "ko": "11장의 핵심 오해는 단순 전가론이다. 임금 상승은 비용가격을 올리지만 동시에 평균이윤율을 낮추므로, 생산가격의 결과는 자본구성에 따라 갈라진다.",
+                    "en": "The main misconception Chapter 11 corrects is simple pass-through. A wage rise raises cost-price but also lowers the average profit rate, so the result for price of production differs by composition."
                   }
                 },
                 {
@@ -22931,27 +22889,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동집약 부문과 고설비 부문이 함께 임금 상승을 겪는다. 생산가격 분석에서 무엇을 비교해야 하는가?",
-                    "en": "A labour-intensive branch and a high-equipment branch both face a wage rise. What should be compared in prices of production?"
+                    "ko": "최저임금 인상 뒤 음식점과 반도체 장비업체의 생산가격 효과를 11장 방식으로 비교하면 무엇이 핵심인가?",
+                    "en": "Using Chapter 11, what is central when comparing restaurants and semiconductor-equipment firms after a minimum-wage increase?"
                   },
                   "choices": {
                     "ko": [
-                      "자본구성이 다른 부문도 임금변동 효과는 같다고 본다.",
-                      "임금은 가격에만 관련되고 착취관계와는 무관하다고 본다.",
-                      "각 부문의 가변자본 비중과 평균이윤율 변화가 비용가격과 생산가격에 어떻게 다르게 작용하는지 비교해야 한다.",
-                      "임금이 오르면 모든 가격이 같은 비율로 오른다고 본다."
+                      "노동 비중이 큰 음식점형 자본과 불변자본 비중이 큰 장비업체형 자본이 낮아진 평균이윤율 속에서 서로 다른 가격 효과를 받는다는 점이다.",
+                      "음식점은 서비스업이라 가치 분석의 경계에 있고 장비업체 쪽이 생산가격 분석의 표준 사례라는 점이다.",
+                      "최저임금은 법률 문제라 가격표에 외부 충격으로 기록된다는 점이다.",
+                      "두 부문은 모두 임금 항목이 있으므로 생산가격이 같은 폭으로 상승한다는 점이다."
                     ],
                     "en": [
-                      "Assumes wage changes affect branches with different compositions in the same way.",
-                      "Treats wages as related only to prices and not to exploitation relations.",
-                      "One should compare how each branch’s variable-capital share and the changed average profit rate act differently on cost-price and price of production.",
-                      "Assumes a wage rise raises all prices by the same proportion."
+                      "The key is that labour-heavy restaurant-type capital and constant-capital-heavy equipment capital receive different price effects under the lowered average profit rate.",
+                      "Restaurants stand at the boundary of value analysis as services, while equipment firms are the standard case for production-price analysis.",
+                      "Minimum wage is a legal issue and therefore appears on price lists as an external shock.",
+                      "Both branches have wage items, so their prices of production rise by the same amount."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "각 부문의 가변자본 비중과 평균이윤율 변화가 비용가격과 생산가격에 어떻게 다르게 작용하는지 비교해야 한다. 구체 사례는 개별 기업의 기술 차이가 경쟁 속에서 어떤 사회적 가격형태로 나타나는지를 보여준다.",
-                    "en": "One should compare how each branch’s variable-capital share and the changed average profit rate act differently on cost-price and price of production. The concrete case shows how technical differences between firms appear as social price forms through competition."
+                    "ko": "현대 사례에서도 질문은 임금 항목의 존재 여부가 아니라 자본구성이다. 노동집약 부문과 고정설비 비중이 큰 부문은 일반 임금변동에 같은 방식으로 반응하지 않는다.",
+                    "en": "Even in a modern case, the question is not merely whether a wage item exists but capital composition. Labour-intensive branches and branches heavy in fixed equipment do not react in the same way to general wage changes."
                   }
                 },
                 {
@@ -22959,27 +22917,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 장이 생산가격 분석에 보태는 것은 무엇인가?",
-                    "en": "What does this chapter add to the analysis of prices of production?"
+                    "ko": "11장의 결론은 12장 보충 설명으로 어떤 쟁점을 넘겨주는가?",
+                    "en": "What issue does Chapter 11 hand over to Chapter 12’s supplementary remarks?"
                   },
                   "choices": {
                     "ko": [
-                      "임금변동은 잉여가치량과 평균이윤율에 영향을 주지 않는다고 본다.",
-                      "임금은 가격에만 관련되고 착취관계와는 무관하다고 본다.",
-                      "임금이 오르면 모든 가격이 같은 비율로 오른다고 본다.",
-                      "임금변동이 가격에 미치는 효과도 자본구성과 평균이윤율을 거쳐 매개된다는 점을 보여준다."
+                      "생산가격 분석이 임금 변동까지 포함해 평균이윤의 매개를 확인한 뒤, 그 분석의 남은 조건과 오해를 더 정리할 필요를 남긴다.",
+                      "임금 변동이 모든 가격을 설명했으므로 가치와 생산가격의 구분을 더 다룰 필요가 없다는 결론을 넘긴다.",
+                      "저구성 자본이 영구적으로 평균이윤을 거부하므로 경쟁 분석을 폐쇄해야 한다는 쟁점을 넘긴다.",
+                      "고구성 자본의 가격 하락이 지대를 즉시 폐지한다는 결론을 넘긴다."
                     ],
                     "en": [
-                      "Assumes wage changes do not affect surplus-value and the average profit rate.",
-                      "Treats wages as related only to prices and not to exploitation relations.",
-                      "Assumes a wage rise raises all prices by the same proportion.",
-                      "It shows that wage effects on prices are also mediated through capital composition and the average rate of profit."
+                      "After including wage fluctuations and confirming the mediation of average profit, it leaves the remaining conditions and misunderstandings of production-price analysis to be clarified.",
+                      "It concludes that wage fluctuations explain all prices, so the distinction between value and production price need not be discussed further.",
+                      "It hands over the issue that low-composition capitals permanently reject average profit and competition must be closed.",
+                      "It concludes that falling prices of high-composition capitals immediately abolish rent."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "임금변동이 가격에 미치는 효과도 자본구성과 평균이윤율을 거쳐 매개된다는 점을 보여준다. 이는 3권의 핵심 과제인 가치법칙의 표면형태를 설명하는 과정이다.",
-                    "en": "It shows that wage effects on prices are also mediated through capital composition and the average rate of profit. This is part of Volume III’s central task: explaining the surface forms of the law of value."
+                    "ko": "11장은 생산가격 이론의 보조 검토다. 임금 변동도 평균이윤의 매개를 통과한다는 점을 보인 뒤, 12장은 생산가격을 둘러싼 추가 조건과 혼동을 보충한다.",
+                    "en": "Chapter 11 is a supplementary test of the theory of prices of production. After showing that wage changes also pass through the mediation of average profit, Chapter 12 supplements the remaining conditions and confusions around production prices."
                   }
                 }
               ]
@@ -22997,27 +22955,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "일반적 임금변동의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in general wage fluctuations?"
+                    "ko": "11장에서 평균 구성 자본이 기준점이 되는 이유는 무엇인가?",
+                    "en": "Why does average-composition capital serve as the benchmark in Chapter 11?"
                   },
                   "choices": {
                     "ko": [
-                      "임금은 모든 자본가에게 비용처럼 보이지만, 그 변화는 부문별 자본구성에 따라 생산가격을 서로 다르게 재편한다.",
-                      "임금변동은 잉여가치량과 평균이윤율에 영향을 주지 않는다고 본다.",
-                      "임금이 오르면 모든 가격이 같은 비율로 오른다고 본다.",
-                      "개별 자본가의 비용전가 의지가 곧 생산가격을 결정한다고 본다."
+                      "그 경우 생산가격이 가치와 일치하므로 임금 상승이 이윤율을 낮추어도 상품의 생산가격은 변하지 않는 기준을 제공한다.",
+                      "그 경우 가변자본이 없어서 임금 변동의 효과를 가장 순수하게 볼 수 있기 때문이다.",
+                      "그 경우 불변자본이 전부 임금으로 전환되어 비용가격이 사라지기 때문이다.",
+                      "그 경우 생산가격이 시장수요와 같은 숫자로 표시되어 경쟁 분석이 필요 없기 때문이다."
                     ],
                     "en": [
-                      "Wages appear as a cost to all capitalists, but wage changes reshape prices of production differently according to branch composition.",
-                      "Assumes wage changes do not affect surplus-value and the average profit rate.",
-                      "Assumes a wage rise raises all prices by the same proportion.",
-                      "Assumes an individual capitalist’s will to pass on costs directly determines prices of production."
+                      "Because in that case price of production coincides with value, providing a benchmark in which a wage rise lowers the profit rate without changing the commodity’s price of production.",
+                      "Because in that case there is no variable capital, so the effect of wage changes can be seen most purely.",
+                      "Because in that case all constant capital turns into wages and cost-price disappears.",
+                      "Because in that case price of production is expressed by the same number as market demand and competition analysis is unnecessary."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "임금은 모든 자본가에게 비용처럼 보이지만, 그 변화는 부문별 자본구성에 따라 생산가격을 서로 다르게 재편한다. 이 긴장을 보아야 가치와 가격의 차이를 가치법칙의 폐기가 아니라 매개된 형태로 이해할 수 있다.",
-                    "en": "Wages appear as a cost to all capitalists, but wage changes reshape prices of production differently according to branch composition. This tension lets us understand the divergence between value and price as a mediated form, not as the abolition of the law of value."
+                    "ko": "평균 구성은 사회적 평균이윤을 읽는 기준이다. 여기서는 임금 상승분이 비용가격을 올리지만 낮아진 평균이윤이 이를 상쇄해 생산가격이 유지된다.",
+                    "en": "Average composition is the benchmark for reading social average profit. Here the wage rise raises cost-price, but the lower average profit offsets it, leaving price of production unchanged."
                   }
                 },
                 {
@@ -23025,27 +22983,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "임금과 생산가격 사이를 매개하는 것은 무엇인가?",
-                    "en": "What mediates wages and prices of production?"
+                    "ko": "일반적 임금 하락의 효과는 임금 상승의 효과와 어떻게 연결되는가?",
+                    "en": "How is the effect of a general wage fall related to the effect of a wage rise?"
                   },
                   "choices": {
                     "ko": [
-                      "임금변동은 잉여가치량과 평균이윤율에 영향을 주지 않는다고 본다.",
-                      "가변자본 비중, 잉여가치량의 변화, 일반 이윤율의 재계산이 매개한다.",
-                      "개별 자본가의 비용전가 의지가 곧 생산가격을 결정한다고 본다.",
-                      "자본구성이 다른 부문도 임금변동 효과는 같다고 본다."
+                      "방향이 반대가 되어 저구성 상품의 생산가격은 하락하고 고구성 상품의 생산가격은 상승한다.",
+                      "임금 하락은 이윤율을 낮추므로 임금 상승과 같은 방향의 가격 효과를 낸다.",
+                      "임금 하락은 가변자본을 없애므로 모든 생산가격을 가치와 같게 만든다.",
+                      "임금 하락은 평균 구성 상품에 집중적으로 영향을 주고 나머지 부문에는 효과가 작다."
                     ],
                     "en": [
-                      "Assumes wage changes do not affect surplus-value and the average profit rate.",
-                      "They are mediated by the share of variable capital, the changed mass of surplus-value, and recalculation of the general rate of profit.",
-                      "Assumes an individual capitalist’s will to pass on costs directly determines prices of production.",
-                      "Assumes wage changes affect branches with different compositions in the same way."
+                      "The direction is reversed: low-composition commodities fall in price of production, while high-composition commodities rise.",
+                      "A wage fall lowers the profit rate and therefore has the same price effects as a wage rise.",
+                      "A wage fall abolishes variable capital and makes all prices of production equal to values.",
+                      "A wage fall concentrates its effect on average-composition commodities and has a smaller effect on the other branches."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가변자본 비중, 잉여가치량의 변화, 일반 이윤율의 재계산이 매개한다. 매개를 놓치면 경쟁이 가치관계를 만들어내는 것처럼 보이거나, 반대로 경쟁을 단순한 외부 소음으로 보게 된다.",
-                    "en": "They are mediated by the share of variable capital, the changed mass of surplus-value, and recalculation of the general rate of profit. Without the mediation, competition appears either to create value relations or to be mere external noise."
+                    "ko": "마르크스는 임금 상승의 분석을 뒤집으면 임금 하락의 결과가 나온다고 본다. 잉여가치율과 평균이윤율이 오르며, 구성 차이에 따른 가격 효과도 반대로 나타난다.",
+                    "en": "Marx treats the wage fall as the reverse of the wage-rise analysis. The rate of surplus-value and the average profit rate rise, and the price effects by composition are reversed."
                   }
                 },
                 {
@@ -23053,27 +23011,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "임금이 오르면 자본가는 그만큼 가격에 더하면 된다는 설명은 왜 부족한가?",
-                    "en": "Why is it insufficient to say capitalists can simply add wage increases to prices?"
+                    "ko": "개별 자본가의 가격 전가 감각과 사회적 생산가격 분석은 어디에서 갈라지는가?",
+                    "en": "Where do individual capitalist pass-through intuition and social production-price analysis diverge?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 자본가의 비용전가 의지가 곧 생산가격을 결정한다고 본다.",
-                      "자본구성이 다른 부문도 임금변동 효과는 같다고 본다.",
-                      "개별 자본의 비용전가 의지와 달리 생산가격은 평균이윤율과 부문별 자본구성을 통해 사회적으로 매개되기 때문이다.",
-                      "임금은 가격에만 관련되고 착취관계와는 무관하다고 본다."
+                      "개별 자본가는 자기 임금비용 증가를 보지만, 사회적 분석은 일반 이윤율 변화와 다른 부문과의 평균화를 함께 계산한다.",
+                      "개별 자본가는 사회 전체 임금표를 완전히 알고 있어 생산가격을 직접 계산한다.",
+                      "사회적 분석은 임금비용을 비용가격에서 빼고 소비자 수요만으로 가격을 계산한다.",
+                      "개별 자본가의 가격 전가 감각은 생산가격 분석과 대체로 일치한다."
                     ],
                     "en": [
-                      "Assumes an individual capitalist’s will to pass on costs directly determines prices of production.",
-                      "Assumes wage changes affect branches with different compositions in the same way.",
-                      "Because unlike an individual capitalist’s desire to pass on costs, prices of production are socially mediated by the average profit rate and branch composition.",
-                      "Treats wages as related only to prices and not to exploitation relations."
+                      "The individual capitalist sees his own wage-cost increase, while the social analysis also calculates the change in the general profit rate and averaging across branches.",
+                      "The individual capitalist fully knows the wage table of society and directly calculates prices of production.",
+                      "The social analysis subtracts wage costs from cost-price and calculates price only from consumer demand.",
+                      "The individual capitalist’s pass-through intuition generally coincides with the formula of prices of production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "개별 자본의 비용전가 의지와 달리 생산가격은 평균이윤율과 부문별 자본구성을 통해 사회적으로 매개되기 때문이다. 마르크스는 시장 표면을 설명하되, 그 표면이 잉여가치 분배의 특정 형식임을 밝힌다.",
-                    "en": "Because unlike an individual capitalist’s desire to pass on costs, prices of production are socially mediated by the average profit rate and branch composition. Marx explains the market surface while showing it as a specific form of surplus-value distribution."
+                    "ko": "11장은 개인의 비용 경험과 사회적 평균화 사이의 차이를 보여 준다. 생산가격은 한 기업의 비용표가 아니라 총자본의 평균이윤율과 자본구성을 통해 정해진다.",
+                    "en": "Chapter 11 shows the difference between individual cost experience and social averaging. Price of production is determined not by one firm’s cost sheet alone but through the general profit rate and capital composition of total capital."
                   }
                 },
                 {
@@ -23081,27 +23039,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "최저임금 인상이 외식업과 반도체 제조업의 가격에 다른 효과를 낳는다. 무엇을 분석해야 하는가?",
-                    "en": "A minimum-wage rise affects restaurant services and semiconductor manufacturing prices differently. What should be analyzed?"
+                    "ko": "임금 상승이 고유기적 구성 부문의 생산가격을 낮출 수 있다는 결론이 중요한 이유는 무엇인가?",
+                    "en": "Why is the conclusion that a wage rise can lower prices of production in high-composition branches important?"
                   },
                   "choices": {
                     "ko": [
-                      "임금은 가격에만 관련되고 착취관계와는 무관하다고 본다.",
-                      "자본구성이 다른 부문도 임금변동 효과는 같다고 본다.",
-                      "각 부문의 가변자본 비중, 비용가격 변화, 평균이윤율 변화가 생산가격에 미치는 차이를 분석해야 한다.",
-                      "임금이 오르면 모든 가격이 같은 비율로 오른다고 본다."
+                      "임금과 가격의 관계가 직접 전가가 아니라 평균이윤율과 자본구성의 매개를 거친다는 점을 가장 선명하게 보여 주기 때문이다.",
+                      "고유기적 구성 부문에서는 임금 항목이 작아서 비용 증가를 체감하기 어렵다는 점을 보여 주기 때문이다.",
+                      "기계가 많은 부문은 임금 상승을 소비자에게 보상금으로 돌려준다는 점을 보여 주기 때문이다.",
+                      "고유기적 구성 부문은 가치법칙 밖에 있어서 가격이 임금과 반대로 움직인다는 점을 보여 주기 때문이다."
                     ],
                     "en": [
-                      "Treats wages as related only to prices and not to exploitation relations.",
-                      "Assumes wage changes affect branches with different compositions in the same way.",
-                      "One should analyze differences in variable-capital share, changes in cost-price, and changes in the average profit rate as they affect prices of production.",
-                      "Assumes a wage rise raises all prices by the same proportion."
+                      "Because it most clearly shows that the relation between wages and prices is mediated by the average profit rate and capital composition, not by direct pass-through.",
+                      "Because it shows that wage items are small in high-composition branches, making cost increases hard to feel.",
+                      "Because it shows that branches with many machines return wage increases to consumers as compensation.",
+                      "Because it shows that high-composition branches stand outside the law of value and therefore prices move opposite to wages."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "각 부문의 가변자본 비중, 비용가격 변화, 평균이윤율 변화가 생산가격에 미치는 차이를 분석해야 한다. 현대 산업의 사례도 부문별 자본구성, 경쟁, 평균수익률의 매개로 읽을 수 있다.",
-                    "en": "One should analyze differences in variable-capital share, changes in cost-price, and changes in the average profit rate as they affect prices of production. Modern industries can also be read through the mediation of capital composition, competition, and average returns."
+                    "ko": "이 결론은 11장의 가장 헷갈리는 지점이다. 임금비용은 늘지만 평균이윤율 하락 폭과 자본구성 때문에 총생산가격이 낮아질 수 있다.",
+                    "en": "This is the most counterintuitive point in Chapter 11. Wage cost increases, but because of the fall in the average profit rate and the branch’s composition, the total price of production can fall."
                   }
                 },
                 {
@@ -23109,27 +23067,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "일반적 임금변동 분석의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the analysis of general wage fluctuations?"
+                    "ko": "11장을 리카도 비판과 연결할 때 핵심은 무엇인가?",
+                    "en": "What is central when connecting Chapter 11 to Marx’s criticism of Ricardo?"
                   },
                   "choices": {
                     "ko": [
-                      "임금은 가격에만 관련되고 착취관계와는 무관하다고 본다.",
-                      "임금이 오르면 모든 가격이 같은 비율로 오른다고 본다.",
-                      "임금변동은 잉여가치량과 평균이윤율에 영향을 주지 않는다고 본다.",
-                      "생산가격이 임금이라는 분배 변수의 변화에도 자본구성과 평균이윤율을 통해 매개되어 움직임을 보여준다."
+                      "리카도는 임금 상승의 한쪽 효과를 보았지만, 평균이윤으로의 평준화와 자본구성별 상반 효과를 충분히 분석하지 못했다.",
+                      "리카도는 임금 하락이 모든 가격을 같은 비율로 올린다는 마르크스의 결론을 먼저 완성했다.",
+                      "리카도는 생산가격을 독점가격으로 설명해 평균이윤 문제를 해결했다.",
+                      "리카도는 가치와 생산가격의 총량 관계를 부정해 잉여가치 개념을 완성했다."
                     ],
                     "en": [
-                      "Treats wages as related only to prices and not to exploitation relations.",
-                      "Assumes a wage rise raises all prices by the same proportion.",
-                      "Assumes wage changes do not affect surplus-value and the average profit rate.",
-                      "It shows that prices of production move in response to wage changes only through the mediation of capital composition and the average profit rate."
+                      "Ricardo saw one effect of a wage rise but did not adequately analyze the equalization into average profit and the opposite effects by capital composition.",
+                      "Ricardo first completed Marx’s conclusion that a wage fall raises all prices by the same percentage.",
+                      "Ricardo explained prices of production as monopoly prices and thereby solved the problem of average profit.",
+                      "Ricardo denied the aggregate relation between value and price of production and thereby completed the concept of surplus-value."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산가격이 임금이라는 분배 변수의 변화에도 자본구성과 평균이윤율을 통해 매개되어 움직임을 보여준다. 이 장은 다음 단계의 생산가격과 경쟁 분석을 위한 개념적 고리를 제공한다.",
-                    "en": "It shows that prices of production move in response to wage changes only through the mediation of capital composition and the average profit rate. The chapter provides the conceptual link for the next stage of prices of production and competition."
+                    "ko": "마르크스의 비판은 단순히 리카도가 틀렸다는 말이 아니다. 임금 변동을 생산가격과 평균이윤의 체계 안에서 보지 않으면 구성별 상반 효과를 놓친다는 지적이다.",
+                    "en": "Marx’s criticism is not merely that Ricardo was wrong. It is that without placing wage changes inside the system of prices of production and average profit, one misses the opposite effects by composition."
                   }
                 }
               ]
