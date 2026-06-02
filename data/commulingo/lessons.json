@@ -26707,157 +26707,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "총이윤이 이자와 기업가이득으로 갈라질 때, 이자율은 왜 자연적으로 정해진 몫처럼 보이는가?",
-                    "en": "What does Marx analyze in the division of profit and the rate of interest?"
+                    "ko": "이자율을 다루는 22장의 출발점은 무엇인가?",
+                    "en": "What is the starting point of Chapter 22 on the rate of interest?"
                   },
                   "choices": {
                     "ko": [
-                      "총이윤이 이자와 기업가이득으로 나뉘고, 이자율이 어떤 사회적 힘관계와 시장조건 속에서 정해지는지 분석한다.",
-                      "이자와 기업가이득이 서로 다른 두 원천에서 생긴다고 본다.",
-                      "이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.",
-                      "높은 이자를 돈 자체의 생산성 증거로 본다."
+                      "이자는 총이윤의 일부이며, 이자율은 그 일부가 대부자본가와 기능자본가 사이에서 나뉘는 비율이다.",
+                      "이자는 생산 과정 안에서 임금과 별도로 생기는 독립 수입이다.",
+                      "이자율은 개별 상품의 판매가격이 오른 폭을 그대로 반영한다.",
+                      "이자율은 기술혁신이 자본가에게 주는 초과이윤의 다른 이름이다."
                     ],
                     "en": [
-                      "He analyzes how total profit divides into interest and profit of enterprise, and how the interest rate is determined through social power relations and market conditions.",
-                      "Assumes interest and profit of enterprise arise from two separate sources.",
-                      "Assumes the interest rate is directly determined in production like the rate of surplus-value.",
-                      "Treats high interest as proof of money’s own productivity."
+                      "Interest is a part of total profit, and the interest rate is the ratio in which that part is divided between money-capitalists and functioning capitalists.",
+                      "Interest is an independent income that arises inside production apart from wages.",
+                      "The interest rate directly reflects the rise in individual commodity prices.",
+                      "The interest rate is another name for extra profit from technical innovation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "총이윤이 이자와 기업가이득으로 나뉘고, 이자율이 어떤 사회적 힘관계와 시장조건 속에서 정해지는지 분석한다. 이 지점은 해당 장이 다루는 자본형태의 기능을 잡기 위한 출발점이다.",
-                    "en": "He analyzes how total profit divides into interest and profit of enterprise, and how the interest rate is determined through social power relations and market conditions. This establishes the function of the capital form treated in the chapter."
-                  }
+                    "ko": "마르크스는 이자를 잉여가치의 새 원천이 아니라 총이윤의 분할형태로 놓는다. 그래서 이자율은 생산된 이윤이 어떤 비율로 배분되는가의 문제다.",
+                    "en": "Marx treats interest not as a new source of surplus-value but as a form in which total profit is divided. The rate of interest is therefore a question of distribution within produced profit."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이자율이 잉여가치율처럼 생산 안에서 직접 결정되지 않는 이유는 무엇인가?",
-                    "en": "Why is the rate of interest not directly determined inside production like the rate of surplus-value?"
+                    "ko": "이자율의 상한과 하한을 설명할 때 핵심 관계는 무엇인가?",
+                    "en": "What relation matters when explaining the upper and lower limits of the interest rate?"
                   },
                   "choices": {
                     "ko": [
-                      "이자율은 이미 생산된 이윤을 대부자와 기능자본가가 나누는 비율로, 화폐자본 수요·공급과 계급 내 경쟁에 의해 규정되기 때문이다.",
-                      "높은 이자를 돈 자체의 생산성 증거로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해",
-                      "이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.",
-                      "자연 이자율이 모든 시대에 고정되어 있다고 본다."
+                      "상한은 총이윤에 의해 제한되고, 하한은 확정된 자연값이 아니라 대부자본 시장의 조건 속에서 흔들린다.",
+                      "상한은 임금률로 정해지고, 하한은 상품의 자연가격에 맞춰진다.",
+                      "상한과 하한은 통화량 표에 적힌 수치에서 같은 방식으로 계산된다.",
+                      "상한은 지대의 크기이고, 하한은 상업이윤의 평균 크기다."
                     ],
                     "en": [
-                      "The interest rate is the ratio in which already produced profit is divided between lender and functioning capitalist, determined by money-capital supply and demand and intra-class competition.",
-                      "Treats high interest as proof of money’s own productivity.",
-                      "Assumes the interest rate is directly determined in production like the rate of surplus-value.",
-                      "Assumes a natural rate of interest is fixed for all periods."
+                      "The upper limit is constrained by total profit, while the lower limit is not a fixed natural value and moves with money-market conditions.",
+                      "The upper limit is set by wages, and the lower limit aligns with the natural price of commodities.",
+                      "Both limits are calculated in the same way from a table of money supply.",
+                      "The upper limit is the size of rent, while the lower limit is average commercial profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이자율은 이미 생산된 이윤을 대부자와 기능자본가가 나누는 비율로, 화폐자본 수요·공급과 계급 내 경쟁에 의해 규정되기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "The interest rate is the ratio in which already produced profit is divided between lender and functioning capitalist, determined by money-capital supply and demand and intra-class competition. So surface revenue or fees should not be treated immediately as an independent source of value."
+                    "ko": "이자는 이윤의 일부이므로 총이윤이 상한을 이룬다. 그러나 실제 이자율은 대부 가능한 화폐자본의 수요와 공급, 신용상태, 경쟁 속에서 정해진다.",
+                    "en": "Interest is part of profit, so total profit sets an upper boundary. The actual rate is shaped by demand and supply for loanable money-capital, credit conditions, and competition."
                   },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 이자율은 이미 생산된 이윤을 대부자와 기능자본가가 나누는 비율로, 화폐자본 수요·공급과 계급 내 경쟁에 의해 규정되기 때문이다. 따라서 표면의 수익이나 수수료를 바로 독립적 가치 원천으로 보면 안 된다.",
-                      "오해 진단: \"높은 이자를 돈 자체의 생산성 증거로 보는 식으로 생산조건과 사회적 형태를 분리하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"자연 이자율이 모든 시대에 고정되어 있다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: The interest rate is the ratio in which already produced profit is divided between lender and functioning capitalist, determined by money-capital supply and demand and intra-class competition. So surface revenue or fees should not be treated immediately as an independent source of value.",
-                      "Misconception check: choosing \"Treats high interest as proof of money’s own productivity.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes the interest rate is directly determined in production like the rate of surplus-value.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes a natural rate of interest is fixed for all periods.\" puts another category ahead of the key relation in the correct answer."
-                    ]
-                  }
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이자와 기업가이득을 두 독립적 원천의 수입으로 보면 무엇을 놓치는가?",
-                    "en": "What is missed if interest and profit of enterprise are treated as revenues from two independent sources?"
+                    "ko": "마르크스가 “자연 이자율”이라는 관념을 비판하는 이유는 무엇인가?",
+                    "en": "Why does Marx criticize the idea of a “natural rate of interest”?"
                   },
                   "choices": {
                     "ko": [
-                      "높은 이자를 돈 자체의 생산성 증거로 본다.",
-                      "둘 다 총잉여가치 또는 총이윤의 분할형태이며, 서로 다른 원천에서 새 가치가 생기는 것이 아니라는 점을 놓친다.",
-                      "자연 이자율이 모든 시대에 고정되어 있다고 본다.",
-                      "금리 변동을 총이윤 분배와 무관한 금융 기술 문제로 본다."
+                      "이자율은 이윤율처럼 생산관계에서 직접 도출되는 법칙적 크기보다, 시장에서 매일 확정되는 대부자본의 가격에 가깝기 때문이다.",
+                      "이자율은 각 나라의 토지 비옥도가 만들어 내는 평균 수익이기 때문이다.",
+                      "이자율은 임금과 생필품 가격을 합산하면 같은 값으로 반복되기 때문이다.",
+                      "이자율은 생산부문별 평균이윤율을 대신해 모든 상품가격을 조정하기 때문이다."
                     ],
                     "en": [
-                      "Treats high interest as proof of money’s own productivity.",
-                      "It misses that both are divided forms of total surplus-value or total profit, not new values arising from separate sources.",
-                      "Assumes a natural rate of interest is fixed for all periods.",
-                      "Treats interest-rate changes as a financial technicality unrelated to distribution of total profit."
+                      "Because the interest rate is closer to a market price of loanable capital fixed daily than to a lawlike magnitude directly derived from production relations like the profit rate.",
+                      "Because the interest rate is the average return created by the fertility of land in each country.",
+                      "Because the interest rate repeats the same value once wages and subsistence prices are added.",
+                      "Because the interest rate replaces the average profit rate and adjusts all commodity prices."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "둘 다 총잉여가치 또는 총이윤의 분할형태이며, 서로 다른 원천에서 새 가치가 생기는 것이 아니라는 점을 놓친다. 이 구분은 생산된 잉여가치가 어떤 경로로 분배되는지 이해하게 해 준다.",
-                    "en": "It misses that both are divided forms of total surplus-value or total profit, not new values arising from separate sources. This distinction clarifies the route by which produced surplus-value is distributed."
-                  }
+                    "ko": "마르크스는 이자율에 평균이윤율 같은 내재적 법칙을 부여하지 않는다. 화폐시장에서 자본이 하나의 상품처럼 나타나기 때문에 이자율은 더 고정된 숫자처럼 보인다.",
+                    "en": "Marx does not assign the rate of interest an immanent law like the average rate of profit. In the money market, capital appears as a commodity, making the interest rate look like a fixed number."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "금리가 오르자 기업의 순이윤이 줄고 채권자는 더 많은 이자를 받는다. 마르크스의 범주로 보면 무엇이 바뀐 것인가?",
-                    "en": "Interest rates rise, firms’ net profit falls, and creditors receive more interest. In Marx’s categories, what has changed?"
+                    "ko": "위기 국면에 이자율이 급등하는 사례는 22장의 범주로 어떻게 읽어야 하는가?",
+                    "en": "How should a spike in interest rates during crisis be read through Chapter 22?"
                   },
                   "choices": {
                     "ko": [
-                      "자연 이자율이 모든 시대에 고정되어 있다고 본다.",
-                      "금리 변동을 총이윤 분배와 무관한 금융 기술 문제로 본다.",
-                      "생산된 총이윤 안에서 이자와 기업가이득 사이의 분할 비율이 바뀐 것이다.",
-                      "이자와 기업가이득이 서로 다른 두 원천에서 생긴다고 본다."
+                      "지급수단을 확보하려는 수요가 몰리면서 대부자본의 가격이 뛰고, 총이윤의 분할도 채권자 쪽으로 기울어진다.",
+                      "생산성이 위기 순간에 크게 개선되어 모든 기업의 평균이윤이 커진다.",
+                      "상품이 팔리지 않아도 화폐 자체가 더 많은 가치를 생산하기 시작한다.",
+                      "상업자본이 산업자본을 대신해 잉여가치를 직접 생산하는 국면이다."
                     ],
                     "en": [
-                      "Assumes a natural rate of interest is fixed for all periods.",
-                      "Treats interest-rate changes as a financial technicality unrelated to distribution of total profit.",
-                      "The division ratio within produced total profit between interest and profit of enterprise has changed.",
-                      "Assumes interest and profit of enterprise arise from two separate sources."
+                      "Demand for means of payment concentrates, the price of loanable capital rises, and the division of total profit shifts toward creditors.",
+                      "Productivity improves sharply during the crisis, increasing average profit for all firms.",
+                      "Even without commodity sales, money itself begins producing more value.",
+                      "Commercial capital replaces industrial capital as the direct producer of surplus-value."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산된 총이윤 안에서 이자와 기업가이득 사이의 분할 비율이 바뀐 것이다. 현대 사례도 기능을 기준으로 보면 자본형태의 분화를 더 정확히 볼 수 있다.",
-                    "en": "The division ratio within produced total profit between interest and profit of enterprise has changed. Modern cases can also be read more precisely by focusing on function."
-                  }
+                    "ko": "위기 때 높은 이자는 돈 자체의 생산성이 아니라 지급 압박과 신용 경색을 표현한다. 이때 증권가격 하락과 채권자 우위가 함께 나타날 수 있다.",
+                    "en": "High interest in crisis expresses payment pressure and credit stress, not money’s own productivity. Falling securities prices and creditor advantage can appear together."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "자연 이자율이라는 관념에 대해 마르크스가 비판적으로 보는 이유는 무엇인가?",
-                    "en": "Why does Marx treat the idea of a natural rate of interest critically?"
+                    "ko": "22장은 다음 장의 이자와 기업가이득 분석으로 어떻게 이어지는가?",
+                    "en": "How does Chapter 22 lead into the analysis of interest and profit of enterprise?"
                   },
                   "choices": {
                     "ko": [
-                      "이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.",
-                      "금리 변동을 총이윤 분배와 무관한 금융 기술 문제로 본다.",
-                      "이자와 기업가이득이 서로 다른 두 원천에서 생긴다고 본다.",
-                      "이자율은 이윤율처럼 명확한 생산법칙에서 직접 나오지 않고, 역사적·시장적·계급적 조건 속에서 변동하기 때문이다."
+                      "이자율이 총이윤의 분할비율임을 보인 뒤, 그 분할이 왜 서로 다른 수입원처럼 굳어지는지 묻는다.",
+                      "이자율을 자연가격으로 확정한 뒤, 기업가이득을 그 자연가격의 보조항목으로 다룬다.",
+                      "이자를 임금의 일부로 정리한 뒤, 관리노동의 임금표를 계산한다.",
+                      "화폐시장을 생산과 분리한 뒤, 신용제도를 순수한 회계기술로 다룬다."
                     ],
                     "en": [
-                      "Assumes the interest rate is directly determined in production like the rate of surplus-value.",
-                      "Treats interest-rate changes as a financial technicality unrelated to distribution of total profit.",
-                      "Assumes interest and profit of enterprise arise from two separate sources.",
-                      "The interest rate does not follow directly from a clear production law like the profit rate; it varies with historical, market, and class conditions."
+                      "After showing the interest rate as a ratio in the division of total profit, it asks why that division hardens into apparently different sources of income.",
+                      "After fixing interest as a natural price, it treats profit of enterprise as a subsidiary item of that price.",
+                      "After classifying interest as part of wages, it calculates a wage schedule for management labour.",
+                      "After separating the money market from production, it treats credit as a pure accounting technique."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이자율은 이윤율처럼 명확한 생산법칙에서 직접 나오지 않고, 역사적·시장적·계급적 조건 속에서 변동하기 때문이다. 이 장은 이윤이 더 구체적인 수입형태로 나뉘어 보이는 과정을 한 단계 전진시킨다.",
-                    "en": "The interest rate does not follow directly from a clear production law like the profit rate; it varies with historical, market, and class conditions. The chapter advances the analysis of profit appearing as more concrete revenue forms."
-                  }
+                    "ko": "22장은 이자의 크기와 변동을 다룬다. 23장은 이 분할이 자본가계급 내부의 두 역할과 두 수입형태로 어떻게 굳어지는지 보여준다.",
+                    "en": "Chapter 22 treats the size and movement of interest. Chapter 23 shows how this division hardens into two roles and two income forms within the capitalist class."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 }
               ]
             },
@@ -26871,143 +26857,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이윤의 분할에서 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the division of profit?"
+                    "ko": "22장에서 이자율이 이윤율보다 더 “명확한 숫자”처럼 보이는 이유는 무엇인가?",
+                    "en": "Why does the interest rate appear as a more definite number than the profit rate in Chapter 22?"
                   },
                   "choices": {
                     "ko": [
-                      "하나의 잉여가치가 이자와 기업가이득으로 갈라지면서, 화폐소유와 자본기능이 각각 독립적 수입원처럼 보인다.",
-                      "이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.",
-                      "이자와 기업가이득이 서로 다른 두 원천에서 생긴다고 본다.",
-                      "높은 이자를 돈 자체의 생산성 증거로 본다."
+                      "화폐시장에서는 여러 자본의 특수한 생산형태가 지워지고, 대부 가능한 자본이 하나의 동질적 상품처럼 거래되기 때문이다.",
+                      "이자율은 각 산업의 노동시간을 먼저 계산한 뒤 같은 비율로 배분되기 때문이다.",
+                      "이자율은 상품시장 밖에서 정해져 생산가격 형성에 참여하지 않기 때문이다.",
+                      "이자율은 개별 자본가의 경영능력을 수치화한 표준 점수로 쓰이기 때문이다."
                     ],
                     "en": [
-                      "One surplus-value divides into interest and profit of enterprise, making money ownership and capital function appear as independent revenue sources.",
-                      "Assumes the interest rate is directly determined in production like the rate of surplus-value.",
-                      "Assumes interest and profit of enterprise arise from two separate sources.",
-                      "Treats high interest as proof of money’s own productivity."
+                      "Because the money market effaces the specific production forms of different capitals and trades loanable capital as a homogeneous commodity.",
+                      "Because the interest rate is distributed after first calculating labour-time in each industry.",
+                      "Because the interest rate is fixed outside the commodity market and does not participate in prices of production.",
+                      "Because the interest rate is used as a standard score for an individual capitalist’s managerial ability."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "하나의 잉여가치가 이자와 기업가이득으로 갈라지면서, 화폐소유와 자본기능이 각각 독립적 수입원처럼 보인다. 이 긴장은 자본이 생산 밖의 기능에서도 독립적 수익형태를 만들어 내는 방식을 보여준다.",
-                    "en": "One surplus-value divides into interest and profit of enterprise, making money ownership and capital function appear as independent revenue sources. This tension shows how capital forms independent revenue forms even in functions outside production."
-                  }
+                    "ko": "화폐시장에서는 자본이 사용처와 무관한 화폐 형태로 제시된다. 그래서 이자율은 신문에 매일 공표되는 “돈의 가격”처럼 보인다.",
+                    "en": "In the money market, capital appears in the money form indifferent to its use. Thus the interest rate appears like the daily quoted “price of money.”"
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "대부자와 기능자본가 사이의 분할을 매개하는 것은 무엇인가?",
-                    "en": "What mediates the division between lender and functioning capitalist?"
+                    "ko": "이자율과 평균이윤율의 관계를 가장 정밀하게 표현한 것은 무엇인가?",
+                    "en": "Which formulation best captures the relation between the interest rate and the average profit rate?"
                   },
                   "choices": {
                     "ko": [
-                      "이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.",
-                      "대부 가능한 화폐자본의 수요와 공급, 신용관계, 그리고 총이윤을 나누는 경쟁이다.",
-                      "높은 이자를 돈 자체의 생산성 증거로 본다.",
-                      "자연 이자율이 모든 시대에 고정되어 있다고 본다."
+                      "평균이윤율은 이자율의 최대 한계를 규정하지만, 실제 이자율은 대부자본의 수급과 신용관계 속에서 별도 운동을 보인다.",
+                      "평균이윤율과 이자율은 같은 법칙으로 같은 날 같은 폭만큼 변한다.",
+                      "평균이윤율은 이자율을 계산한 뒤 기업가이득을 더해 얻는 파생값이다.",
+                      "평균이윤율이 낮아지면 이자율은 생산부문마다 다른 자연값으로 갈라진다."
                     ],
                     "en": [
-                      "Assumes the interest rate is directly determined in production like the rate of surplus-value.",
-                      "It is mediated by supply and demand for loanable money-capital, credit relations, and competition over the division of total profit.",
-                      "Treats high interest as proof of money’s own productivity.",
-                      "Assumes a natural rate of interest is fixed for all periods."
+                      "The average profit rate sets the maximum boundary of the interest rate, but the actual rate moves through loanable-capital supply and demand and credit relations.",
+                      "The average profit rate and interest rate move by the same law and by the same amount on the same day.",
+                      "The average profit rate is derived by calculating interest first and adding profit of enterprise.",
+                      "When the average profit rate falls, the interest rate splits into different natural values by branch."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "대부 가능한 화폐자본의 수요와 공급, 신용관계, 그리고 총이윤을 나누는 경쟁이다. 매개를 보아야 유통·화폐·신용의 기능이 생산된 잉여가치와 어떻게 연결되는지 파악할 수 있다.",
-                    "en": "It is mediated by supply and demand for loanable money-capital, credit relations, and competition over the division of total profit. Seeing the mediation shows how circulation, money, and credit functions connect to produced surplus-value."
-                  }
+                    "ko": "이자는 총이윤에서 지급되므로 이윤율과 연결된다. 하지만 실제 이자율은 화폐시장의 경쟁과 신용상태를 통해 별도의 변동을 갖는다.",
+                    "en": "Interest is paid out of total profit, so it is connected to the profit rate. Yet the actual rate has its own movement through money-market competition and credit conditions."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "높은 이자는 돈의 생산성이 높다는 뜻이라는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying high interest means money is highly productive?"
+                    "ko": "“낮은 이자율은 호황의 확실한 표시”라는 설명에서 빠지는 것은 무엇인가?",
+                    "en": "What is missing from the claim that a low interest rate is a sure sign of prosperity?"
                   },
                   "choices": {
                     "ko": [
-                      "높은 이자를 돈 자체의 생산성 증거로 본다.",
-                      "자연 이자율이 모든 시대에 고정되어 있다고 본다.",
-                      "이자율은 돈의 자연적 생산성이 아니라 총이윤을 둘러싼 분배관계와 화폐자본 시장조건을 표현한다는 점을 놓친다.",
-                      "금리 변동을 총이윤 분배와 무관한 금융 기술 문제로 본다."
+                      "낮은 이자율은 호황뿐 아니라 투자처 부족, 유휴 화폐자본, 위기 뒤 대부수요 약화에서도 나타날 수 있다.",
+                      "낮은 이자율은 모든 상품의 가치가 금으로 직접 표시되는 순간에만 나타난다.",
+                      "낮은 이자율은 기능자본가의 기업가이득이 법적으로 금지된 상태를 뜻한다.",
+                      "낮은 이자율은 지대가 이윤을 완전히 대체한 농업 국면을 뜻한다."
                     ],
                     "en": [
-                      "Treats high interest as proof of money’s own productivity.",
-                      "Assumes a natural rate of interest is fixed for all periods.",
-                      "It misses that the interest rate expresses distributional relations over total profit and money-capital market conditions, not money’s natural productivity.",
-                      "Treats interest-rate changes as a financial technicality unrelated to distribution of total profit."
+                      "A low rate can appear not only in prosperity but also with scarce outlets for investment, idle money-capital, or weakened demand for loans after crisis.",
+                      "A low rate appears only when every commodity’s value is directly expressed in gold.",
+                      "A low rate means that profit of enterprise has been legally prohibited.",
+                      "A low rate means an agricultural phase in which rent has replaced profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이자율은 돈의 자연적 생산성이 아니라 총이윤을 둘러싼 분배관계와 화폐자본 시장조건을 표현한다는 점을 놓친다. 마르크스의 비판은 기능의 필요성을 부정하지 않고, 그 기능이 자연적 수익원처럼 보이는 전도를 비판한다.",
-                    "en": "It misses that the interest rate expresses distributional relations over total profit and money-capital market conditions, not money’s natural productivity. Marx does not deny the necessity of the function; he criticizes the inversion by which it appears as a natural source of revenue."
-                  }
+                    "ko": "마르크스는 산업순환 속에서 이자율의 위치가 달라진다고 본다. 같은 저금리도 활발한 축적의 징후일 수 있고, 정체와 투자처 부족의 징후일 수도 있다.",
+                    "en": "Marx places the interest rate inside the industrial cycle. The same low rate can signal active accumulation or stagnation with few profitable outlets."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "중앙은행 금리 인상 뒤 금융기관 수익은 늘고 차입 기업의 이윤은 압박받는다. 무엇을 분석해야 하는가?",
-                    "en": "After a central-bank rate hike, financial institutions earn more while borrowing firms’ profits are squeezed. What should be analyzed?"
+                    "ko": "국제 금융시장에서 같은 날 단기금리와 장기대출 조건이 다르게 움직일 때, 22장의 관점은 무엇을 요구하는가?",
+                    "en": "What does Chapter 22 require when short-term rates and long-term loan terms move differently in world finance?"
                   },
                   "choices": {
                     "ko": [
-                      "금리 변동을 총이윤 분배와 무관한 금융 기술 문제로 본다.",
-                      "자연 이자율이 모든 시대에 고정되어 있다고 본다.",
-                      "총이윤 중 이자로 이전되는 몫과 기업가이득으로 남는 몫의 변화, 그리고 신용조건의 변화를 함께 봐야 한다.",
-                      "이자와 기업가이득이 서로 다른 두 원천에서 생긴다고 본다."
+                      "평균적 이자율, 시장금리, 대출기간, 세계시장 자금흐름을 구분해 대부자본의 구체 조건을 살핀다.",
+                      "모든 금리 차이를 개별 상품의 생산가격 차이로 환산한다.",
+                      "단기금리가 정해지면 장기대출의 수익분배도 끝난 것으로 처리한다.",
+                      "세계시장 금리는 국내 산업순환과 나란히 움직인다고 계산한다."
                     ],
                     "en": [
-                      "Treats interest-rate changes as a financial technicality unrelated to distribution of total profit.",
-                      "Assumes a natural rate of interest is fixed for all periods.",
-                      "One should examine the change in the share of total profit transferred as interest, the share remaining as profit of enterprise, and changed credit conditions.",
-                      "Assumes interest and profit of enterprise arise from two separate sources."
+                      "It distinguishes average interest, market rates, loan duration, and world-market flows to grasp the concrete conditions of loanable capital.",
+                      "It converts all rate differences into differences in prices of production for individual commodities.",
+                      "Once the short-term rate is set, it treats the distribution of returns on long-term loans as finished.",
+                      "It calculates world-market rates as moving alongside the domestic industrial cycle."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "총이윤 중 이자로 이전되는 몫과 기업가이득으로 남는 몫의 변화, 그리고 신용조건의 변화를 함께 봐야 한다. 구체 사례에서는 수익이 어느 생산관계와 분배관계를 전제로 하는지 확인해야 한다.",
-                    "en": "One should examine the change in the share of total profit transferred as interest, the share remaining as profit of enterprise, and changed credit conditions. In concrete cases, one must identify the production and distribution relations presupposed by the revenue."
-                  }
+                    "ko": "22장은 이자율을 단일한 자연값으로 환원하지 않는다. 대부기간과 시장범위가 달라지면 같은 “이자율”이라는 이름 아래 서로 다른 조건이 작동한다.",
+                    "en": "Chapter 22 does not reduce the interest rate to a single natural value. Different maturities and market scales can operate under the same name of “interest rate.”"
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이윤의 분할과 이자율 분석의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the division of profit and the rate of interest?"
+                    "ko": "22장의 체계적 의의는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 22?"
                   },
                   "choices": {
                     "ko": [
-                      "금리 변동을 총이윤 분배와 무관한 금융 기술 문제로 본다.",
-                      "이자와 기업가이득이 서로 다른 두 원천에서 생긴다고 본다.",
-                      "이자율을 생산 안에서 잉여가치율처럼 직접 결정된다고 본다.",
-                      "이자 낳는 자본의 물신적 외관을 더 구체화하고, 이자와 기업가이득이라는 수입형태의 분리를 설명한다."
+                      "잉여가치가 이윤으로 전환된 뒤 다시 이자와 기업가이득으로 갈라지는 과정을 분석할 토대를 놓는다.",
+                      "상업이윤을 폐지하고 산업이윤 하나로 돌아가는 절차를 제시한다.",
+                      "화폐의 가치척도 기능을 중심으로 상품유통의 첫 장면을 다시 설명한다.",
+                      "지대가 이자율을 대신해 자본주의 분배 전체를 조직한다는 결론을 마련한다."
                     ],
                     "en": [
-                      "Treats interest-rate changes as a financial technicality unrelated to distribution of total profit.",
-                      "Assumes interest and profit of enterprise arise from two separate sources.",
-                      "Assumes the interest rate is directly determined in production like the rate of surplus-value.",
-                      "It makes the fetishized appearance of interest-bearing capital more concrete and explains the separation of the revenue forms interest and profit of enterprise."
+                      "It lays the basis for analysing how surplus-value, after becoming profit, is further divided into interest and profit of enterprise.",
+                      "It presents a procedure for abolishing commercial profit and returning to industrial profit alone.",
+                      "It explains commodity circulation again through money’s function as measure of value.",
+                      "It prepares the conclusion that rent organizes all capitalist distribution in place of the interest rate."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이자 낳는 자본의 물신적 외관을 더 구체화하고, 이자와 기업가이득이라는 수입형태의 분리를 설명한다. 이 체계적 연결이 이후 신용, 가공자본, 지대 분석으로 이어지는 통로다.",
-                    "en": "It makes the fetishized appearance of interest-bearing capital more concrete and explains the separation of the revenue forms interest and profit of enterprise. This systematic link opens the path to the later analysis of credit, fictitious capital, and rent."
-                  }
+                    "ko": "이 장은 대부자본을 생산 밖의 독립 세계로 두지 않고, 총이윤의 분할이라는 축 위에 세운다. 그 위에서 23장의 수입형태 분석이 가능해진다.",
+                    "en": "This chapter does not place loan capital in an independent world outside production. It grounds it in the division of total profit, enabling Chapter 23’s analysis of income forms."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 }
               ]
             }
@@ -27076,143 +27062,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "한쪽은 돈을 빌려주고 이자를 받고, 다른 쪽은 그 돈을 굴려 기업가이득을 얻는다. 마르크스는 이 분할에서 무엇을 보려 하는가?",
-                    "en": "One side lends money and receives interest; another puts that money to work and receives profit of enterprise. What does Marx look for in this division?"
+                    "ko": "23장에서 이자와 기업가이득의 분할은 무엇을 보여주는가?",
+                    "en": "What does the division between interest and profit of enterprise show in Chapter 23?"
                   },
                   "choices": {
                     "ko": [
-                      "총이윤이 화폐소유자에게 돌아가는 이자와 기능자본가에게 남는 기업가이득으로 나뉘는 방식이다.",
-                      "기업가이득은 자본가가 일한 임금일 뿐이다.",
-                      "이자와 기업가이득은 서로 다른 두 잉여가치 원천에서 생긴다.",
-                      "이자율이 정해지면 총이윤의 크기도 그 자체로 정해진다."
+                      "같은 총이윤이 화폐자본의 소유에 대한 이자와 기능자본의 수행에 대한 기업가이득으로 나뉘어 나타난다.",
+                      "이자는 유통에서 생기고 기업가이득은 생산 밖 관리회의에서 생긴다.",
+                      "기업가이득은 임금의 한 종류이고 이자는 상품가격의 할인분이다.",
+                      "이자와 기업가이득은 서로 다른 계급이 생산한 별개의 가치량이다."
                     ],
                     "en": [
-                      "The way total profit is divided into interest for the money-owner and profit of enterprise for the functioning capitalist.",
-                      "Profit of enterprise is simply the capitalist’s wage for working.",
-                      "Interest and profit of enterprise arise from two different sources of surplus-value.",
-                      "Once the interest rate is fixed, the size of total profit is automatically fixed too."
+                      "The same total profit appears divided into interest for ownership of money-capital and profit of enterprise for the functioning of capital.",
+                      "Interest arises in circulation and profit of enterprise arises in management meetings outside production.",
+                      "Profit of enterprise is a kind of wage and interest is a discount on commodity prices.",
+                      "Interest and profit of enterprise are separate quantities of value produced by different classes."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "분할된 두 수입은 서로 다른 원천에서 생기는 것이 아니라 총이윤의 내부 분배다. 이 점을 놓치면 기업가이득은 노동임금처럼, 이자는 돈의 자연수익처럼 보인다.",
-                    "en": "The two revenues do not arise from separate sources; they are an internal division of total profit. Missing this makes profit of enterprise look like wages for work and interest like the natural fruit of money."
-                  }
+                    "ko": "분할은 잉여가치의 원천이 둘이라는 뜻이 아니다. 하나의 총이윤이 자본가계급 내부의 두 역할에 따라 다른 수입형태로 나타난다.",
+                    "en": "The division does not mean there are two sources of surplus-value. One total profit appears as different income forms according to two roles within the capitalist class."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "기업가이득이 노동감독의 보수처럼 보일 수 있는 이유는 무엇인가?",
-                    "en": "Why can profit of enterprise appear as a wage of supervision?"
+                    "ko": "차입자본을 쓰는 기능자본가에게 총이윤은 어떻게 계산되는가?",
+                    "en": "How is total profit calculated for a functioning capitalist using borrowed capital?"
                   },
                   "choices": {
                     "ko": [
-                      "이자가 화폐소유의 몫으로 분리되면, 남은 이윤은 기능자본가의 활동 보수처럼 보이기 때문이다.",
-                      "이자율이 정해지면 총이윤의 크기도 그 자체로 정해진다고 본다.",
-                      "이자와 기업가이득이 서로 다른 두 잉여가치 원천에서 생긴다고 본다.",
-                      "관리활동의 필요성과 자본수익의 정당성을 같은 것으로 본다."
+                      "총이윤에서 약정된 이자를 지급하고 남은 부분이 기업가이득으로 나타난다.",
+                      "총이윤에서 임금을 다시 더한 금액이 이자로 확정된다.",
+                      "총이윤은 이자율을 먼저 정한 뒤 생산량과 별개로 만들어진다.",
+                      "총이윤은 관리자의 보수와 주주의 배당을 합친 회계항목이다."
                     ],
                     "en": [
-                      "Once interest is separated as the share of money ownership, the remaining profit appears as payment for the functioning capitalist’s activity.",
-                      "Assumes the size of total profit is automatically determined once the interest rate is set.",
-                      "Assumes interest and profit of enterprise arise from two separate sources of surplus-value.",
-                      "Identifies the necessity of management activity with the legitimacy of capital revenue."
+                      "After paying the agreed interest out of total profit, the remaining part appears as profit of enterprise.",
+                      "Interest is fixed by adding wages back into total profit.",
+                      "Total profit is produced independently of output after the interest rate is set.",
+                      "Total profit is an accounting item combining managers’ pay and shareholders’ dividends."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이자가 화폐소유의 몫으로 분리되면, 남은 이윤은 기능자본가의 활동 보수처럼 보이기 때문이다. 따라서 표면의 금융수익이나 경영상 보수를 곧 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "Once interest is separated as the share of money ownership, the remaining profit appears as payment for the functioning capitalist’s activity. So surface financial returns or managerial rewards should not be treated as independent sources of value."
-                  }
+                    "ko": "차입자본에서는 이자가 생산 전에 약정된 비용처럼 보인다. 그래서 기능자본가에게 남는 몫은 자기 활동의 산물처럼 나타난다.",
+                    "en": "With borrowed capital, interest appears like a cost fixed before production. The remainder then appears to the functioning capitalist as the product of his own activity."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이자와 기업가이득을 서로 다른 원천의 수입으로 보면 무엇을 놓치는가?",
-                    "en": "What is missed if interest and profit of enterprise are treated as revenues from different sources?"
+                    "ko": "기업가이득을 “감독노동의 임금”으로 설명할 때 생기는 혼동은 무엇인가?",
+                    "en": "What confusion arises when profit of enterprise is explained as “wages of supervision”?"
                   },
                   "choices": {
                     "ko": [
-                      "이자율이 정해지면 총이윤의 크기도 그 자체로 정해진다고 본다.",
-                      "둘 다 생산된 잉여가치의 분할형태이며, 각각 돈과 경영활동이 독립적으로 새 가치를 만든 것이 아니라는 점을 놓친다.",
-                      "관리활동의 필요성과 자본수익의 정당성을 같은 것으로 본다.",
-                      "기능자본가가 남기는 몫은 노동자 착취와 무관하다고 본다."
+                      "관리노동의 필요성과 타인의 무급노동에서 나온 잉여가치의 취득을 같은 범주로 섞는다.",
+                      "관리자가 받는 임금과 노동자의 생활수단 가격을 같은 표에 적는다.",
+                      "주식회사의 배당을 공장 안의 생산기술 변화 중심으로 설명한다.",
+                      "화폐자본가가 원금을 돌려받는 절차를 기업 내부 회계로 처리한다."
                     ],
                     "en": [
-                      "Assumes the size of total profit is automatically determined once the interest rate is set.",
-                      "Both are divided forms of produced surplus-value; neither money nor management activity independently creates new value.",
-                      "Identifies the necessity of management activity with the legitimacy of capital revenue.",
-                      "Treats the functioning capitalist’s retained share as unrelated to exploitation of workers."
+                      "It mixes the need for management labour with the appropriation of surplus-value produced by others’ unpaid labour.",
+                      "It places managers’ wages and workers’ subsistence prices in the same table.",
+                      "It explains joint-stock dividends chiefly through technical changes inside the factory.",
+                      "It treats repayment of principal to the money-capitalist as internal company accounting."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "둘 다 생산된 잉여가치의 분할형태이며, 각각 돈과 경영활동이 독립적으로 새 가치를 만든 것이 아니라는 점을 놓친다. 이 구분은 금융·신용 형태가 생산관계와 어떻게 연결되는지 보여준다.",
-                    "en": "Both are divided forms of produced surplus-value; neither money nor management activity independently creates new value. This distinction shows how financial and credit forms are connected to production relations."
-                  }
+                    "ko": "마르크스는 관리 기능 자체를 부정하지 않는다. 문제는 그 기능의 임금과 자본소유자가 취하는 잉여가치를 같은 보수처럼 만드는 데 있다.",
+                    "en": "Marx does not deny the management function itself. The issue is turning wages for that function and the surplus-value appropriated by capital ownership into the same kind of reward."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "투자자는 이자를 받고, 스타트업 창업자는 “운영 성과” 명목의 이익을 가져간다. 무엇을 구분해야 하는가?",
-                    "en": "An investor receives interest while a start-up founder takes profit as “operating performance.” What must be distinguished?"
+                    "ko": "주식회사에서 실제 경영자는 급여를 받고 소유자는 배당을 받는다. 이 사례는 23장의 어떤 논점을 선명하게 하는가?",
+                    "en": "In a joint-stock company, managers receive salaries while owners receive dividends. What point of Chapter 23 becomes clearer?"
                   },
                   "choices": {
                     "ko": [
-                      "관리활동의 필요성과 자본수익의 정당성을 같은 것으로 본다.",
-                      "기능자본가가 남기는 몫은 노동자 착취와 무관하다고 본다.",
-                      "총이윤이 화폐소유에 대한 이자와 기능자본 수행에 대한 기업가이득으로 나뉘어 보이는 형태를 구분해야 한다.",
-                      "기업가이득은 자본가가 일한 임금일 뿐이라고 본다."
+                      "관리 기능은 자본소유와 분리될 수 있으며, 기업가이득을 관리임금으로 꾸미는 설명이 약해진다.",
+                      "소유자가 경영하지 않는 회사에서는 이윤의 생산 원천도 주식시장으로 이동한다.",
+                      "배당이 지급되면 노동과정의 협업은 자본주의적 성격을 잃는다.",
+                      "경영자의 급여가 생기면 이자와 배당은 모두 임금 항목으로 정리된다."
                     ],
                     "en": [
-                      "Identifies the necessity of management activity with the legitimacy of capital revenue.",
-                      "Treats the functioning capitalist’s retained share as unrelated to exploitation of workers.",
-                      "One must distinguish the form in which total profit appears divided into interest for money ownership and profit of enterprise for functioning capital.",
-                      "Treats profit of enterprise simply as the capitalist’s wage."
+                      "The management function can be separated from capital ownership, weakening the claim that profit of enterprise is simply management wages.",
+                      "When owners do not manage, the source of profit moves to the stock market.",
+                      "Once dividends are paid, cooperation in the labour process loses its capitalist character.",
+                      "Once managers are salaried, interest and dividends are both classified as wages."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "총이윤이 화폐소유에 대한 이자와 기능자본 수행에 대한 기업가이득으로 나뉘어 보이는 형태를 구분해야 한다. 구체 사례에서도 핵심은 돈과 증권의 표면 운동이 어떤 자본관계를 가리는가이다.",
-                    "en": "One must distinguish the form in which total profit appears divided into interest for money ownership and profit of enterprise for functioning capital. In concrete cases, the key is what capital relation is concealed by the surface movement of money and securities."
-                  }
+                    "ko": "주식회사와 협동공장은 관리노동이 별도 임금으로 지불될 수 있음을 보여준다. 그때 이윤은 관리임금이 아니라 잉여가치의 분할형태로 더 뚜렷해진다.",
+                    "en": "Joint-stock and cooperative factories show that management labour can be paid separately as wages. Profit then appears more clearly as a divided form of surplus-value, not as management wages."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이 장이 이자 낳는 자본 분석에 보태는 것은 무엇인가?",
-                    "en": "What does this chapter add to the analysis of interest-bearing capital?"
+                    "ko": "23장은 24장의 물신성 분석으로 어떻게 넘어가는가?",
+                    "en": "How does Chapter 23 lead into Chapter 24’s analysis of fetishism?"
                   },
                   "choices": {
                     "ko": [
-                      "이자와 기업가이득이 서로 다른 두 잉여가치 원천에서 생긴다고 본다.",
-                      "기능자본가가 남기는 몫은 노동자 착취와 무관하다고 본다.",
-                      "기업가이득은 자본가가 일한 임금일 뿐이라고 본다.",
-                      "이윤의 내부 분할이 자본가계급 안에서도 화폐소유자와 기능자본가의 상이한 수입형태를 만든다는 점을 보여준다."
+                      "이자와 기업가이득이 독립 수입처럼 굳어질수록, 돈이 스스로 이자를 낳는 외관이 더 강해진다.",
+                      "기업가이득을 임금으로 환산한 뒤, 화폐의 가치척도 기능만 남겨 둔다.",
+                      "관리노동의 기술 수준을 계산한 뒤, 이자율의 자연값을 산출한다.",
+                      "주식회사 사례를 통해 생산과 유통의 구분을 초기 상품교환으로 되돌린다."
                     ],
                     "en": [
-                      "Assumes interest and profit of enterprise arise from two separate sources of surplus-value.",
-                      "Treats the functioning capitalist’s retained share as unrelated to exploitation of workers.",
-                      "Treats profit of enterprise simply as the capitalist’s wage.",
-                      "It shows that the internal division of profit creates distinct revenue forms within the capitalist class: money-owner and functioning capitalist."
+                      "As interest and profit of enterprise harden into independent incomes, the appearance that money produces interest by itself becomes stronger.",
+                      "After converting profit of enterprise into wages, only money’s measure-of-value function remains.",
+                      "After calculating the skill level of management labour, the natural rate of interest is derived.",
+                      "The joint-stock example returns the distinction between production and circulation to simple exchange."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤의 내부 분할이 자본가계급 안에서도 화폐소유자와 기능자본가의 상이한 수입형태를 만든다는 점을 보여준다. 이 장은 이자 낳는 자본의 전도를 더 구체적 제도와 수익형태로 밀고 간다.",
-                    "en": "It shows that the internal division of profit creates distinct revenue forms within the capitalist class: money-owner and functioning capitalist. The chapter pushes the inversion of interest-bearing capital into more concrete institutions and revenue forms."
-                  }
+                    "ko": "23장은 분할된 수입형태가 어떻게 독립 원천처럼 보이는지 설명한다. 24장은 그 전도가 M-M′라는 가장 압축된 형태에서 극대화되는 장면을 다룬다.",
+                    "en": "Chapter 23 explains how divided income forms appear as independent sources. Chapter 24 treats the culmination of this inversion in the condensed form M-M′."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 }
               ]
             },
@@ -27226,143 +27212,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이자와 기업가이득의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension between interest and profit of enterprise?"
+                    "ko": "순수한 양적 분할이 질적 구분으로 바뀐다는 말의 뜻은 무엇인가?",
+                    "en": "What does it mean that a purely quantitative division turns into a qualitative distinction?"
                   },
                   "choices": {
                     "ko": [
-                      "하나의 잉여가치가 둘로 나뉘면서 돈은 이자를, 경영은 기업가이득을 자연적으로 낳는 것처럼 보인다.",
-                      "이자와 기업가이득이 서로 다른 두 잉여가치 원천에서 생긴다고 본다.",
-                      "기업가이득은 자본가가 일한 임금일 뿐이라고 본다.",
-                      "이자율이 정해지면 총이윤의 크기도 그 자체로 정해진다고 본다."
+                      "총이윤의 일부를 나누는 비율이 반복되면서, 이자와 기업가이득이 서로 다른 성격의 수입처럼 굳어진다는 뜻이다.",
+                      "이자율의 숫자가 커질수록 생산수단의 물리적 양도 같은 비율로 증가한다는 뜻이다.",
+                      "차입자본과 자기자본이 법적으로 같은 이름을 얻어 소유권 차이가 사라진다는 뜻이다.",
+                      "이윤을 나눈 뒤에는 잉여가치가 생산과정 밖에서 새로 형성된다는 뜻이다."
                     ],
                     "en": [
-                      "One surplus-value divides in two, making money appear to naturally yield interest and management to naturally yield profit of enterprise.",
-                      "Assumes interest and profit of enterprise arise from two separate sources of surplus-value.",
-                      "Treats profit of enterprise simply as the capitalist’s wage.",
-                      "Assumes the size of total profit is automatically determined once the interest rate is set."
+                      "A repeated ratio for dividing total profit hardens into the appearance that interest and profit of enterprise are incomes of different kinds.",
+                      "As the interest-rate number grows, the physical quantity of means of production grows in the same ratio.",
+                      "Borrowed and owned capital receive the same legal name, erasing ownership differences.",
+                      "After profit is divided, surplus-value is newly formed outside production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "하나의 잉여가치가 둘로 나뉘면서 돈은 이자를, 경영은 기업가이득을 자연적으로 낳는 것처럼 보인다. 이 긴장을 보아야 신용과 금융이 단순한 기술 장치가 아니라 자본관계의 전도된 형태임을 이해할 수 있다.",
-                    "en": "One surplus-value divides in two, making money appear to naturally yield interest and management to naturally yield profit of enterprise. This tension shows that credit and finance are not mere technical devices but inverted forms of the capital relation."
-                  }
+                    "ko": "처음에는 총이윤을 몇 대 몇으로 나누는 문제다. 그러나 사회적 역할이 분리되면 이자는 소유의 산물, 기업가이득은 기능의 산물처럼 보인다.",
+                    "en": "At first the issue is a ratio in which total profit is divided. Once social roles separate, interest appears as the product of ownership and profit of enterprise as the product of function."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이자와 기업가이득의 분할을 매개하는 것은 무엇인가?",
-                    "en": "What mediates the division between interest and profit of enterprise?"
+                    "ko": "차입자본을 쓰는 자본가와 자기자본을 쓰는 자본가의 차이를 마르크스는 어떻게 정리하는가?",
+                    "en": "How does Marx distinguish a capitalist using borrowed capital from one using owned capital?"
                   },
                   "choices": {
                     "ko": [
-                      "이자와 기업가이득이 서로 다른 두 잉여가치 원천에서 생긴다고 본다.",
-                      "대부자본 관계와 이자율, 그리고 기능자본가가 총이윤 중 이자를 지급하고 남기는 분할관계다.",
-                      "이자율이 정해지면 총이윤의 크기도 그 자체로 정해진다고 본다.",
-                      "관리활동의 필요성과 자본수익의 정당성을 같은 것으로 본다."
+                      "둘 다 자본을 생산에 투입하지만, 차입자는 이자를 지급하고 자기자본가는 그 몫을 자신에게 귀속시켜 계산할 수 있다.",
+                      "차입자는 잉여가치를 생산하고 자기자본가는 오직 이자만 생산한다.",
+                      "차입자는 상품을 판매해야 하고 자기자본가는 판매 없이 이윤을 실현한다.",
+                      "차입자는 원금을 상환하므로 자본으로 기능하지 못하고 자기자본만 자본으로 기능한다."
                     ],
                     "en": [
-                      "Assumes interest and profit of enterprise arise from two separate sources of surplus-value.",
-                      "It is mediated by the loan-capital relation, the rate of interest, and the division in which the functioning capitalist pays interest out of total profit and retains the remainder.",
-                      "Assumes the size of total profit is automatically determined once the interest rate is set.",
-                      "Identifies the necessity of management activity with the legitimacy of capital revenue."
+                      "Both put capital into production, but the borrower pays interest while the owner-user can impute that portion to himself.",
+                      "The borrower produces surplus-value, while the owner-user produces only interest.",
+                      "The borrower must sell commodities, while the owner-user realizes profit without sale.",
+                      "Because the borrower repays principal, borrowed capital cannot function as capital; only owned capital can."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "대부자본 관계와 이자율, 그리고 기능자본가가 총이윤 중 이자를 지급하고 남기는 분할관계다. 매개를 놓치면 이자, 신용, 증권가격이 스스로 가치를 낳는 것처럼 보인다.",
-                    "en": "It is mediated by the loan-capital relation, the rate of interest, and the division in which the functioning capitalist pays interest out of total profit and retains the remainder. Without the mediation, interest, credit, and security prices appear to create value by themselves."
-                  }
+                    "ko": "소유와 기능은 구별되지만 생산에서 자본으로 기능한다는 점은 같다. 바로 이 때문에 자기자본을 쓰는 자본가도 장부상 이자와 기업가이득을 나눠 생각할 수 있다.",
+                    "en": "Ownership and function differ, but both capitals can function in production. This is why even an owner-user can calculate an imputed split between interest and profit of enterprise."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "기업가이득을 자본가의 노동임금으로 보는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by treating profit of enterprise as the capitalist’s wage for labour?"
+                    "ko": "협동공장 사례가 기업가이득의 apologetic 설명을 흔드는 이유는 무엇인가?",
+                    "en": "Why do cooperative factories unsettle the apologetic explanation of profit of enterprise?"
                   },
                   "choices": {
                     "ko": [
-                      "이자율이 정해지면 총이윤의 크기도 그 자체로 정해진다고 본다.",
-                      "관리활동의 필요성과 자본수익의 정당성을 같은 것으로 본다.",
-                      "기업가이득은 노동임금이 아니라 잉여가치의 한 분할형태이며, 관리노동의 필요성과 자본소유의 수익을 혼동한다.",
-                      "기능자본가가 남기는 몫은 노동자 착취와 무관하다고 본다."
+                      "관리자는 임금을 받고도 생산이 운영될 수 있어, 자본가의 소유자 지위를 관리노동의 필수조건으로 만들기 어렵기 때문이다.",
+                      "협동공장은 생산수단 없이도 노동자들이 시장가격을 정할 수 있음을 보이기 때문이다.",
+                      "협동공장은 이자를 현물 임금으로 바꾸어 신용관계를 단순화하기 때문이다.",
+                      "협동공장은 모든 이윤을 기술자의 성과급으로 분배해 평균이윤을 없애기 때문이다."
                     ],
                     "en": [
-                      "Assumes the size of total profit is automatically determined once the interest rate is set.",
-                      "Identifies the necessity of management activity with the legitimacy of capital revenue.",
-                      "Profit of enterprise is not a wage but a divided form of surplus-value; the view confuses necessary management labour with the revenue of capital ownership.",
-                      "Treats the functioning capitalist’s retained share as unrelated to exploitation of workers."
+                      "Because production can be run with managers paid wages, making it hard to present capitalist ownership as a necessary condition of management labour.",
+                      "Because cooperatives show that workers can set market prices without means of production.",
+                      "Because cooperatives convert interest into in-kind wages and simplify credit relations.",
+                      "Because cooperatives distribute all profit as technicians’ bonuses and remove average profit."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "기업가이득은 노동임금이 아니라 잉여가치의 한 분할형태이며, 관리노동의 필요성과 자본소유의 수익을 혼동한다. 마르크스의 비판은 금융 현상의 현실성을 부정하지 않고, 그 현실성이 어떤 생산관계에 의존하는지 밝힌다.",
-                    "en": "Profit of enterprise is not a wage but a divided form of surplus-value; the view confuses necessary management labour with the revenue of capital ownership. Marx does not deny financial phenomena; he shows which production relations they depend on."
-                  }
+                    "ko": "마르크스는 협동공장을 통해 관리 기능과 자본가 소유를 분리해 볼 수 있다고 본다. 이 분리는 기업가이득을 감독임금으로 꾸미는 설명을 약화한다.",
+                    "en": "Marx uses cooperatives to show that management function and capitalist ownership can be separated. This weakens the claim that profit of enterprise is simply wages of supervision."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "사모펀드가 차입금 이자를 지급한 뒤 남은 수익을 “운영 개선 성과”로 설명한다. 무엇을 물어야 하는가?",
-                    "en": "A private-equity fund pays interest on debt and explains the remaining gain as “operational improvement.” What should be asked?"
+                    "ko": "사모펀드가 차입 인수 뒤 “운영 개선 성과”를 강조할 때, 23장의 질문은 무엇이어야 하는가?",
+                    "en": "When a private equity fund stresses “operational improvement” after a leveraged buyout, what question does Chapter 23 suggest?"
                   },
                   "choices": {
                     "ko": [
-                      "기능자본가가 남기는 몫은 노동자 착취와 무관하다고 본다.",
-                      "관리활동의 필요성과 자본수익의 정당성을 같은 것으로 본다.",
-                      "총이윤이 이자와 기업가이득으로 어떻게 나뉘며, 그 총이윤이 어떤 노동과 생산관계에서 나왔는지 물어야 한다.",
-                      "기업가이득은 자본가가 일한 임금일 뿐이라고 본다."
+                      "총이윤이 이자와 기업가이득으로 어떻게 나뉘며, 그 총이윤이 어떤 노동과 비용절감에서 나왔는지를 물어야 한다.",
+                      "대출계약의 문구가 길수록 기업가이득이 임금에 가까워지는지를 물어야 한다.",
+                      "채권자가 이자를 받는 순간 생산과정의 잉여가치가 금융수수료로 바뀌는지를 물어야 한다.",
+                      "경영자가 성과급을 받으면 노동자의 임금과 자본수익이 같은 항목이 되는지를 물어야 한다."
                     ],
                     "en": [
-                      "Treats the functioning capitalist’s retained share as unrelated to exploitation of workers.",
-                      "Identifies the necessity of management activity with the legitimacy of capital revenue.",
-                      "One should ask how total profit is divided into interest and profit of enterprise, and from what labour and production relations that total profit arose.",
-                      "Treats profit of enterprise simply as the capitalist’s wage."
+                      "One should ask how total profit is divided into interest and profit of enterprise, and from what labour and cost reductions that total profit came.",
+                      "One should ask whether longer loan contracts make profit of enterprise closer to wages.",
+                      "One should ask whether surplus-value in production turns into financial fees once creditors receive interest.",
+                      "One should ask whether managers’ bonuses make workers’ wages and capital returns the same item."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "총이윤이 이자와 기업가이득으로 어떻게 나뉘며, 그 총이윤이 어떤 노동과 생산관계에서 나왔는지 물어야 한다. 현대 사례도 수익의 표면형태와 그 배후의 잉여가치 분배를 나누어 읽어야 한다.",
-                    "en": "One should ask how total profit is divided into interest and profit of enterprise, and from what labour and production relations that total profit arose. Modern cases must also separate the surface form of revenue from the distribution of surplus-value behind it."
-                  }
+                    "ko": "현대 사례에서도 “운영”이라는 말은 관리노동과 자본수익을 섞기 쉽다. 마르크스의 구분은 총이윤의 원천과 분할을 따로 묻도록 만든다.",
+                    "en": "Modern language of “operations” easily mixes management labour with capital returns. Marx’s distinction asks separately about the source of total profit and its division."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이자와 기업가이득의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of interest and profit of enterprise?"
+                    "ko": "23장의 체계적 위치를 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best explains the systematic place of Chapter 23?"
                   },
                   "choices": {
                     "ko": [
-                      "기능자본가가 남기는 몫은 노동자 착취와 무관하다고 본다.",
-                      "기업가이득은 자본가가 일한 임금일 뿐이라고 본다.",
-                      "이자와 기업가이득이 서로 다른 두 잉여가치 원천에서 생긴다고 본다.",
-                      "이자 낳는 자본의 물신성을 강화해, 수입형태들이 서로 독립 원천처럼 보이는 과정을 설명한다."
+                      "이자 낳는 자본의 외관을 강화하는 중간 단계로서, 수입형태의 분리가 물신적 전도를 준비한다.",
+                      "지대론을 마무리한 뒤 농업 이윤을 상업이윤으로 바꾸는 연결부다.",
+                      "화폐의 유통수단 기능을 통해 상품의 가치형태를 처음 도출하는 장이다.",
+                      "산업자본의 순환을 끝내고 단순재생산 도식을 다시 계산하는 장이다."
                     ],
                     "en": [
-                      "Treats the functioning capitalist’s retained share as unrelated to exploitation of workers.",
-                      "Treats profit of enterprise simply as the capitalist’s wage.",
-                      "Assumes interest and profit of enterprise arise from two separate sources of surplus-value.",
-                      "It intensifies the fetishism of interest-bearing capital by explaining how revenue forms appear as independent sources."
+                      "It is an intermediate step that strengthens the appearance of interest-bearing capital, preparing fetishistic inversion through separated income forms.",
+                      "It is a transition that finishes rent theory and turns agricultural profit into commercial profit.",
+                      "It first derives the value-form of commodities through money’s function as means of circulation.",
+                      "It ends the circuit of industrial capital and recalculates the schema of simple reproduction."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이자 낳는 자본의 물신성을 강화해, 수입형태들이 서로 독립 원천처럼 보이는 과정을 설명한다. 이 체계적 위치가 뒤의 은행자본과 화폐자본/현실자본 분석으로 이어진다.",
-                    "en": "It intensifies the fetishism of interest-bearing capital by explaining how revenue forms appear as independent sources. This systematic position leads into the later analysis of bank capital and money-capital versus real capital."
-                  }
+                    "ko": "23장은 아직 신용제도의 세부로 가지 않지만, 이자와 기업가이득이 별개 수입처럼 굳어지는 논리를 세운다. 이 논리가 24장의 M-M′ 물신성으로 이어진다.",
+                    "en": "Chapter 23 does not yet enter the details of the credit system, but it establishes how interest and profit of enterprise harden as separate incomes. This leads to Chapter 24’s fetishism of M-M′."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 }
               ]
             }
@@ -27431,143 +27417,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이자 낳는 자본 형태에서 자본관계의 외화란 무엇을 뜻하는가?",
-                    "en": "What does externalisation of the capital relation in interest-bearing capital mean?"
+                    "ko": "이자 낳는 자본에서 자본관계가 “외화”된다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that capital relations are externalized in interest-bearing capital?"
                   },
                   "choices": {
                     "ko": [
-                      "자본이 생산과 착취의 관계가 아니라 돈이 스스로 증식하는 사물의 성질처럼 나타나는 극단적 전도다.",
-                      "돈은 생산과 무관하게 자기 힘으로 이자를 낳는다고 본다.",
-                      "M-M′가 자본주의 생산관계를 가장 투명하게 보여준다고 본다.",
-                      "금융수익률을 노동과 생산관계 없이 설명할 수 있다고 본다."
+                      "생산과 착취의 사회관계가 지워지고, 돈이 자기 성질로 더 많은 돈을 낳는 것처럼 나타난다는 뜻이다.",
+                      "화폐가 상품유통을 떠나면 가치척도의 기능을 잃는다는 뜻이다.",
+                      "상업자본이 구매와 판매의 두 단계를 통해 생산을 투명하게 보여준다는 뜻이다.",
+                      "이자율이 낮아지면 자본관계가 노동자의 임금계약으로 바뀐다는 뜻이다."
                     ],
                     "en": [
-                      "It is the extreme inversion in which capital appears not as a relation of production and exploitation but as a thing-like property of money to grow by itself.",
-                      "Assumes money bears interest by its own power, independently of production.",
-                      "Treats M-M′ as the most transparent presentation of capitalist production relations.",
-                      "Assumes financial returns can be explained without labour and production relations."
+                      "It means that social relations of production and exploitation disappear from view, while money appears to generate more money by its own property.",
+                      "It means money loses its measure-of-value function when it leaves commodity circulation.",
+                      "It means merchant’s capital transparently shows production through purchase and sale.",
+                      "It means a lower interest rate turns capital relations into workers’ wage contracts."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본이 생산과 착취의 관계가 아니라 돈이 스스로 증식하는 사물의 성질처럼 나타나는 극단적 전도다. 이 문항은 이 장에서 분리되어 보이는 수입형태가 어떤 잉여가치 분배를 전제로 하는지 잡기 위한 출발점이다.",
-                    "en": "It is the extreme inversion in which capital appears not as a relation of production and exploitation but as a thing-like property of money to grow by itself. This establishes which distribution of surplus-value is presupposed by the revenue form treated in the chapter."
-                  }
+                    "ko": "24장의 핵심은 M-M′ 형태다. 이 형태에서는 생산, 노동력 착취, 판매, 이윤 분할의 매개가 사라져 자본의 물신성이 극대화된다.",
+                    "en": "The core of Chapter 24 is the form M-M′. In it, production, exploitation of labour-power, sale, and division of profit disappear, intensifying capital fetishism."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "M-M′ 형태가 자본관계를 가장 깊이 가리는 이유는 무엇인가?",
-                    "en": "Why does the M-M′ form conceal the capital relation most deeply?"
+                    "ko": "M-M′가 M-C-M′보다 더 물신적인 이유는 무엇인가?",
+                    "en": "Why is M-M′ more fetishistic than M-C-M′?"
                   },
                   "choices": {
                     "ko": [
-                      "상품생산, 노동력 착취, 판매, 이윤 분할의 매개가 모두 생략되고 화폐의 자기증식만 남기 때문이다.",
-                      "금융수익률을 노동과 생산관계 없이 설명할 수 있다고 본다.",
-                      "M-M′가 자본주의 생산관계를 가장 투명하게 보여준다고 본다.",
-                      "이자를 위험 보상의 심리 문제로만 환원한다."
+                      "M-C-M′에는 구매와 판매라는 운동의 흔적이 남지만, M-M′에는 중간 과정이 생략되어 화폐의 자기증식만 보인다.",
+                      "M-C-M′는 상품을 포함하므로 이윤이 노동자에게 귀속되는 형식이다.",
+                      "M-M′에서는 이자율이 생산수단의 물리적 증가율과 같은 단위로 측정된다.",
+                      "M-M′는 상업자본의 공식이어서 산업자본의 순환과 같은 구조를 가진다."
                     ],
                     "en": [
-                      "Because the mediations of commodity production, exploitation of labour-power, sale, and division of profit are all omitted, leaving only money’s self-expansion.",
-                      "Assumes financial returns can be explained without labour and production relations.",
-                      "Treats M-M′ as the most transparent presentation of capitalist production relations.",
-                      "Reduces interest to a psychological reward for risk."
+                      "M-C-M′ still leaves traces of purchase and sale, while M-M′ omits the middle process and shows only money’s self-expansion.",
+                      "Because M-C-M′ includes commodities, profit is formally attributed to workers.",
+                      "In M-M′ the interest rate is measured in the same unit as the physical growth of means of production.",
+                      "M-M′ is the formula of merchant’s capital and has the same structure as industrial capital’s circuit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품생산, 노동력 착취, 판매, 이윤 분할의 매개가 모두 생략되고 화폐의 자기증식만 남기 때문이다. 따라서 표면의 금융수익이나 경영상 보수를 곧 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "Because the mediations of commodity production, exploitation of labour-power, sale, and division of profit are all omitted, leaving only money’s self-expansion. So surface financial returns or managerial rewards should not be treated as independent sources of value."
-                  }
+                    "ko": "상업자본의 공식에도 최소한 과정의 흔적은 있다. 이자 낳는 자본에서는 그 흔적마저 축약되어 결과가 사물의 속성처럼 제시된다.",
+                    "en": "The formula of merchant’s capital still contains traces of a process. In interest-bearing capital, even those traces are condensed, and the result appears as a property of the thing."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "자본을 “이자를 낳는 가치”로만 이해하면 무엇을 놓치는가?",
-                    "en": "What is missed if capital is understood only as “value bearing interest”?"
+                    "ko": "복리 계산의 환상이 24장에서 중요한 이유는 무엇인가?",
+                    "en": "Why is the fantasy of compound interest important in Chapter 24?"
                   },
                   "choices": {
                     "ko": [
-                      "금융수익률을 노동과 생산관계 없이 설명할 수 있다고 본다.",
-                      "자본이 노동력과 생산수단의 특정 사회관계 속에서만 잉여가치를 생산한다는 점을 놓친다.",
-                      "이자를 위험 보상의 심리 문제로만 환원한다.",
-                      "자본 물신주의를 단순한 착각이라서 현실효과가 없다고 본다."
+                      "잉여가치의 질적 한계를 지우고, 돈이 시간만 지나면 무한히 증식할 수 있다는 물신적 상상을 만들기 때문이다.",
+                      "복리는 실제 축적에서 이윤율 저하를 수학적으로 제거하는 공식이기 때문이다.",
+                      "복리는 노동일의 길이를 늘리지 않고도 잉여노동을 직접 생산하는 기술이기 때문이다.",
+                      "복리는 국채가 생산수단보다 더 많은 사용가치를 만든다는 증거이기 때문이다."
                     ],
                     "en": [
-                      "Assumes financial returns can be explained without labour and production relations.",
-                      "It misses that capital produces surplus-value only within a specific social relation of labour-power and means of production.",
-                      "Reduces interest to a psychological reward for risk.",
-                      "Treats capital fetishism as a mere illusion without real effects."
+                      "Because it erases the qualitative limits of surplus-value and produces the fetishistic imagination that money can grow without limit merely through time.",
+                      "Because compound interest is a formula that mathematically removes the fall in the profit rate from real accumulation.",
+                      "Because compound interest is a technique for directly producing surplus labour without lengthening the working day.",
+                      "Because compound interest proves that public debt creates more use-values than means of production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본이 노동력과 생산수단의 특정 사회관계 속에서만 잉여가치를 생산한다는 점을 놓친다. 이 구분은 금융·신용 형태가 생산관계와 어떻게 연결되는지 보여준다.",
-                    "en": "It misses that capital produces surplus-value only within a specific social relation of labour-power and means of production. This distinction shows how financial and credit forms are connected to production relations."
-                  }
+                    "ko": "마르크스는 복리의 수학을 부정하는 것이 아니라, 그 계산이 현실 축적의 조건을 가리는 방식을 비판한다. 잉여가치는 살아 있는 노동과 자본관계를 전제로 한다.",
+                    "en": "Marx does not deny the arithmetic of compound interest. He criticizes how it conceals the conditions of real accumulation, which depend on living labour and capital relations."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "채권 가격표만 보면 돈이 시간이 지나며 자연히 불어나는 것처럼 보인다. 마르크스는 무엇을 복원하려 하는가?",
-                    "en": "Looking only at bond prices, money seems naturally to grow over time. What does Marx try to restore?"
+                    "ko": "“돈이 일하게 하라”는 금융 광고를 24장의 개념으로 읽으면 무엇이 드러나는가?",
+                    "en": "What does Chapter 24 reveal in the slogan “make your money work”?"
                   },
                   "choices": {
                     "ko": [
-                      "이자를 위험 보상의 심리 문제로만 환원한다.",
-                      "자본 물신주의를 단순한 착각이라서 현실효과가 없다고 본다.",
-                      "그 이자가 생산된 잉여가치의 분배형태라는 매개, 곧 생산과 착취의 사라진 연결을 복원하려 한다.",
-                      "돈은 생산과 무관하게 자기 힘으로 이자를 낳는다고 본다."
+                      "수익을 가능하게 하는 생산과 분배의 매개가 지워지고, 돈 자체가 활동하는 주체처럼 제시된다.",
+                      "투자자는 실제 생산과정을 직접 지휘하므로 이자를 관리임금으로 받는다.",
+                      "광고 문구는 상품의 가치형태를 설명하는 정확한 이론적 표현이다.",
+                      "금융수익은 노동과정이 끝난 뒤 별도 자연과정에서 생기는 성과다."
                     ],
                     "en": [
-                      "Reduces interest to a psychological reward for risk.",
-                      "Treats capital fetishism as a mere illusion without real effects.",
-                      "He restores the missing link to production and exploitation: interest as a distribution form of produced surplus-value.",
-                      "Assumes money bears interest by its own power, independently of production."
+                      "The mediations of production and distribution that make returns possible disappear, while money itself is presented as the acting subject.",
+                      "The investor directly directs production and therefore receives interest as management wages.",
+                      "The slogan is an exact theoretical expression of the value-form of commodities.",
+                      "Financial return is an outcome of a separate natural process after the labour process ends."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 이자가 생산된 잉여가치의 분배형태라는 매개, 곧 생산과 착취의 사라진 연결을 복원하려 한다. 구체 사례에서도 핵심은 돈과 증권의 표면 운동이 어떤 자본관계를 가리는가이다.",
-                    "en": "He restores the missing link to production and exploitation: interest as a distribution form of produced surplus-value. In concrete cases, the key is what capital relation is concealed by the surface movement of money and securities."
-                  }
+                    "ko": "광고는 M-M′의 일상적 표현이다. 마르크스의 분석은 그 문구 뒤에 있는 노동, 생산, 이윤 분할의 사라진 연결을 복원한다.",
+                    "en": "The slogan is an everyday expression of M-M′. Marx’s analysis restores the vanished links to labour, production, and the division of profit."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이 장이 자본 물신주의 분석에 주는 의미는 무엇인가?",
-                    "en": "What is this chapter’s significance for the analysis of capital fetishism?"
+                    "ko": "24장은 25장의 신용과 가공자본 논의로 어떻게 이어지는가?",
+                    "en": "How does Chapter 24 lead to Chapter 25 on credit and fictitious capital?"
                   },
                   "choices": {
                     "ko": [
-                      "M-M′가 자본주의 생산관계를 가장 투명하게 보여준다고 본다.",
-                      "자본 물신주의를 단순한 착각이라서 현실효과가 없다고 본다.",
-                      "돈은 생산과 무관하게 자기 힘으로 이자를 낳는다고 본다.",
-                      "자본관계가 사물의 자연적 능력처럼 외화되는 가장 완성된 형태를 보여준다."
+                      "M-M′의 물신적 외관이 신용증서와 증권에서 제도화되어, 청구권이 자본처럼 거래되는 문제로 이어진다.",
+                      "복리 계산이 완성되면 신용제도는 생산관계와 별개인 계산법으로 정리된다.",
+                      "화폐의 자기증식이 확인되면 주식과 채권은 생산수단과 같은 물적 자본이 된다.",
+                      "이자율의 자연값이 정해지면 은행은 단순한 금고 기능만 맡게 된다."
                     ],
                     "en": [
-                      "Treats M-M′ as the most transparent presentation of capitalist production relations.",
-                      "Treats capital fetishism as a mere illusion without real effects.",
-                      "Assumes money bears interest by its own power, independently of production.",
-                      "It shows the most complete form in which the capital relation is externalised as a natural power of a thing."
+                      "The fetishistic appearance of M-M′ becomes institutionalized in credit instruments and securities, leading to claims traded as capital.",
+                      "Once compound-interest calculation is complete, credit becomes a method of calculation separate from production relations.",
+                      "Once money’s self-expansion is confirmed, stocks and bonds become physical capital like means of production.",
+                      "Once the natural rate of interest is fixed, banks serve only as vaults."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본관계가 사물의 자연적 능력처럼 외화되는 가장 완성된 형태를 보여준다. 이 장은 이자 낳는 자본의 전도를 더 구체적 제도와 수익형태로 밀고 간다.",
-                    "en": "It shows the most complete form in which the capital relation is externalised as a natural power of a thing. The chapter pushes the inversion of interest-bearing capital into more concrete institutions and revenue forms."
-                  }
+                    "ko": "24장은 물신적 형태를 가장 추상적으로 보여준다. 25장은 그 형태가 어음, 예금, 주식, 채권 같은 신용제도 속에서 현실적으로 움직이는 방식을 다룬다.",
+                    "en": "Chapter 24 shows the fetishistic form in its most abstract shape. Chapter 25 treats how it moves materially through bills, deposits, shares, bonds, and the credit system."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 }
               ]
             },
@@ -27581,143 +27567,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "자본관계 외화의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the externalisation of the capital relation?"
+                    "ko": "“자본이 사물로서 자본이다”라는 외관은 어떤 전도를 담고 있는가?",
+                    "en": "What inversion is contained in the appearance that “capital is capital as a thing”?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치는 사회적 생산관계에서 나오지만, 이자 낳는 자본에서는 그 관계가 완전히 사물의 속성처럼 나타난다.",
-                      "M-M′가 자본주의 생산관계를 가장 투명하게 보여준다고 본다.",
-                      "돈은 생산과 무관하게 자기 힘으로 이자를 낳는다고 본다.",
-                      "금융수익률을 노동과 생산관계 없이 설명할 수 있다고 본다."
+                      "사회적 생산관계의 결과가 화폐나 가치 자체의 자연적 능력처럼 나타나는 전도다.",
+                      "상품의 사용가치가 교환가치보다 먼저 평균이윤율을 정하는 전도다.",
+                      "임금노동이 사라지고 화폐소유자가 직접 잉여노동을 수행하는 전도다.",
+                      "상업자본이 산업자본보다 먼저 생산수단을 창조하는 전도다."
                     ],
                     "en": [
-                      "Surplus-value arises from social production relations, yet in interest-bearing capital that relation appears entirely as a property of a thing.",
-                      "Treats M-M′ as the most transparent presentation of capitalist production relations.",
-                      "Assumes money bears interest by its own power, independently of production.",
-                      "Assumes financial returns can be explained without labour and production relations."
+                      "It is the inversion in which the result of social production relations appears as a natural power of money or value itself.",
+                      "It is the inversion in which use-value fixes the average profit rate before exchange-value.",
+                      "It is the inversion in which wage-labour disappears and the money owner directly performs surplus labour.",
+                      "It is the inversion in which merchant’s capital creates means of production before industrial capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치는 사회적 생산관계에서 나오지만, 이자 낳는 자본에서는 그 관계가 완전히 사물의 속성처럼 나타난다. 이 긴장을 보아야 신용과 금융이 단순한 기술 장치가 아니라 자본관계의 전도된 형태임을 이해할 수 있다.",
-                    "en": "Surplus-value arises from social production relations, yet in interest-bearing capital that relation appears entirely as a property of a thing. This tension shows that credit and finance are not mere technical devices but inverted forms of the capital relation."
-                  }
+                    "ko": "이자 낳는 자본은 관계의 결과를 사물의 속성으로 만든다. 그래서 자본은 생산과 재생산의 과정을 거치지 않고도 이미 증식 능력을 가진 것처럼 보인다.",
+                    "en": "Interest-bearing capital turns the result of relations into a property of a thing. Capital therefore appears to possess the power of expansion before the process of production and reproduction."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "M-M′와 실제 자본주의 생산을 매개하는 것은 무엇인가?",
-                    "en": "What mediates M-M′ and actual capitalist production?"
+                    "ko": "24장에서 이자와 기업가이득의 관계는 어떻게 뒤집혀 보이는가?",
+                    "en": "How does the relation between interest and profit of enterprise appear inverted in Chapter 24?"
                   },
                   "choices": {
                     "ko": [
-                      "M-M′가 자본주의 생산관계를 가장 투명하게 보여준다고 본다.",
-                      "대여된 화폐가 생산적 자본으로 전환되어 노동력을 착취하고, 생산된 이윤 일부가 이자로 돌아오는 과정이다.",
-                      "금융수익률을 노동과 생산관계 없이 설명할 수 있다고 본다.",
-                      "이자를 위험 보상의 심리 문제로만 환원한다."
+                      "이자는 자본의 본래 산물처럼 보이고, 기업가이득은 생산과정에 붙은 부가적 몫처럼 보인다.",
+                      "기업가이득이 이자의 원금으로 바뀌어 화폐자본가의 소유권을 만든다.",
+                      "이자는 임금의 한 형태로 낮아지고, 기업가이득은 지대의 자연적 근거가 된다.",
+                      "이자와 기업가이득은 평균이윤율과 독립된 두 생산가격을 각각 형성한다."
                     ],
                     "en": [
-                      "Treats M-M′ as the most transparent presentation of capitalist production relations.",
-                      "The mediation is lent money being converted into productive capital, exploiting labour-power, and returning part of produced profit as interest.",
-                      "Assumes financial returns can be explained without labour and production relations.",
-                      "Reduces interest to a psychological reward for risk."
+                      "Interest appears as capital’s proper product, while profit of enterprise appears as an added share attached to the production process.",
+                      "Profit of enterprise turns into the principal of interest and creates the money-capitalist’s ownership.",
+                      "Interest is reduced to a form of wages, while profit of enterprise becomes the natural ground of rent.",
+                      "Interest and profit of enterprise each form separate prices of production independent of the average profit rate."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "대여된 화폐가 생산적 자본으로 전환되어 노동력을 착취하고, 생산된 이윤 일부가 이자로 돌아오는 과정이다. 매개를 놓치면 이자, 신용, 증권가격이 스스로 가치를 낳는 것처럼 보인다.",
-                    "en": "The mediation is lent money being converted into productive capital, exploiting labour-power, and returning part of produced profit as interest. Without the mediation, interest, credit, and security prices appear to create value by themselves."
-                  }
+                    "ko": "실제로 이자는 총이윤의 일부다. 그러나 M-M′ 형태에서는 이자가 자본의 대표 산물처럼 앞에 서고, 생산과정에서 남는 몫이 부속물처럼 보인다.",
+                    "en": "In reality, interest is part of total profit. In the form M-M′, however, interest stands forward as capital’s representative product, while the remainder from production appears secondary."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "금융수익률 그래프만 보면 자본주의를 설명할 수 있다는 관점은 무엇을 놓치는가?",
-                    "en": "What is missed by the view that capitalism can be explained by financial return charts alone?"
+                    "ko": "마르크스가 Price의 국채·복리 환상을 비판하는 초점은 무엇인가?",
+                    "en": "What is Marx’s focus in criticizing Price’s fantasy of public debt and compound interest?"
                   },
                   "choices": {
                     "ko": [
-                      "금융수익률을 노동과 생산관계 없이 설명할 수 있다고 본다.",
-                      "이자를 위험 보상의 심리 문제로만 환원한다.",
-                      "수익률이 전제하는 생산, 노동, 신용위험, 잉여가치 분배의 매개 전체를 놓친다.",
-                      "자본 물신주의를 단순한 착각이라서 현실효과가 없다고 본다."
+                      "복리의 숫자가 현실 축적의 조건, 이윤율 저하, 노동일의 한계를 지운 채 무한 증식처럼 보이게 한다는 점이다.",
+                      "국채 이자가 모든 조세를 없애고 국가재정을 스스로 불려 준다는 점이다.",
+                      "복리 계산이 정확하지 않아 같은 원금에서 단리보다 적은 금액을 산출한다는 점이다.",
+                      "국채가 금 보유고와 같은 물적 생산수단이어서 산업투자를 대체한다는 점이다."
                     ],
                     "en": [
-                      "Assumes financial returns can be explained without labour and production relations.",
-                      "Reduces interest to a psychological reward for risk.",
-                      "It misses the whole mediation presupposed by returns: production, labour, credit risk, and distribution of surplus-value.",
-                      "Treats capital fetishism as a mere illusion without real effects."
+                      "Compound-interest numbers make accumulation look infinite while erasing the conditions of real accumulation, the fall in profit rate, and limits of the working day.",
+                      "Public-debt interest abolishes all taxation and makes state finance expand by itself.",
+                      "Compound-interest calculation is inaccurate and yields less than simple interest from the same principal.",
+                      "Public debt is a physical means of production like a gold reserve and replaces industrial investment."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "수익률이 전제하는 생산, 노동, 신용위험, 잉여가치 분배의 매개 전체를 놓친다. 마르크스의 비판은 금융 현상의 현실성을 부정하지 않고, 그 현실성이 어떤 생산관계에 의존하는지 밝힌다.",
-                    "en": "It misses the whole mediation presupposed by returns: production, labour, credit risk, and distribution of surplus-value. Marx does not deny financial phenomena; he shows which production relations they depend on."
-                  }
+                    "ko": "Price가 놓친 것은 이자가 지속되려면 그 배후에 이윤과 잉여노동이 있어야 한다는 점이다. 숫자의 진전은 현실의 질적 한계를 대신할 수 없다.",
+                    "en": "Price misses that continuing interest presupposes profit and surplus labour behind it. Numerical progression cannot replace the qualitative limits of reality."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "자동 투자 앱이 “돈이 일하게 하라”고 광고한다. 마르크스의 범주로 무엇이 문제인가?",
-                    "en": "An automated investment app advertises “make your money work.” What is the issue in Marx’s categories?"
+                    "ko": "채권 포트폴리오 수익률만 보고 “자본이 알아서 불어난다”고 말할 때, 24장의 비판은 무엇인가?",
+                    "en": "What is Chapter 24’s critique of saying that capital “grows by itself” from a bond portfolio yield?"
                   },
                   "choices": {
                     "ko": [
-                      "자본 물신주의를 단순한 착각이라서 현실효과가 없다고 본다.",
-                      "이자를 위험 보상의 심리 문제로만 환원한다.",
-                      "돈이 일하는 것이 아니라 생산과 분배관계가 이자를 가능하게 하는데, 광고는 그 매개를 사라지게 만든다.",
-                      "돈은 생산과 무관하게 자기 힘으로 이자를 낳는다고 본다."
+                      "수익률은 이자 지급 청구권의 표면이고, 그 지급은 다른 곳의 생산·조세·잉여가치 실현에 기대고 있다.",
+                      "채권 보유자는 생산수단을 직접 운영하므로 수익률은 감독노동의 임금이다.",
+                      "채권 가격이 오르면 같은 크기의 생산설비가 이미 추가된 것으로 계산된다.",
+                      "수익률 그래프는 상품교환 없이도 가치형태를 완성하는 독립 순환이다."
                     ],
                     "en": [
-                      "Treats capital fetishism as a mere illusion without real effects.",
-                      "Reduces interest to a psychological reward for risk.",
-                      "Money does not work; production and distribution relations make interest possible, but the advertisement makes that mediation disappear.",
-                      "Assumes money bears interest by its own power, independently of production."
+                      "The yield is the surface of a claim to interest, and payment depends on production, taxation, or realization of surplus-value elsewhere.",
+                      "Bondholders directly operate means of production, so yield is wages for supervision.",
+                      "When bond prices rise, the same amount of productive equipment has already been added.",
+                      "A yield graph is an independent circuit that completes the value-form without commodity exchange."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "돈이 일하는 것이 아니라 생산과 분배관계가 이자를 가능하게 하는데, 광고는 그 매개를 사라지게 만든다. 현대 사례도 수익의 표면형태와 그 배후의 잉여가치 분배를 나누어 읽어야 한다.",
-                    "en": "Money does not work; production and distribution relations make interest possible, but the advertisement makes that mediation disappear. Modern cases must also separate the surface form of revenue from the distribution of surplus-value behind it."
-                  }
+                    "ko": "채권수익률은 현실적 힘을 갖지만 그 힘은 사물 자체에서 나오지 않는다. 24장의 비판은 표면의 자율성을 배후의 사회관계와 다시 연결한다.",
+                    "en": "Bond yields have real force, but that force does not come from the thing itself. Chapter 24 reconnects surface autonomy to the social relations behind it."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "자본관계 외화 분석의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of analyzing this externalisation?"
+                    "ko": "24장의 체계적 의의는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 24?"
                   },
                   "choices": {
                     "ko": [
-                      "자본 물신주의를 단순한 착각이라서 현실효과가 없다고 본다.",
-                      "돈은 생산과 무관하게 자기 힘으로 이자를 낳는다고 본다.",
-                      "M-M′가 자본주의 생산관계를 가장 투명하게 보여준다고 본다.",
-                      "이자 낳는 자본이 왜 자본주의 표면에서 가장 자명하고 자연적인 수익형태로 보이는지 설명한다."
+                      "자본주의적 수입형태가 사물의 자연능력처럼 보이는 물신성을 최고도로 드러낸다.",
+                      "생산가격 이론을 끝내고 상품의 단순가격 변동만 남긴다.",
+                      "상업자본의 회전기간을 계산해 평균이윤율을 처음 도출한다.",
+                      "지대와 이자를 같은 토지수익으로 묶어 분배론을 단순화한다."
                     ],
                     "en": [
-                      "Treats capital fetishism as a mere illusion without real effects.",
-                      "Assumes money bears interest by its own power, independently of production.",
-                      "Treats M-M′ as the most transparent presentation of capitalist production relations.",
-                      "It explains why interest-bearing capital appears on capitalism’s surface as the most self-evident and natural revenue form."
+                      "It reveals the highest form of fetishism in which capitalist income forms appear as natural powers of things.",
+                      "It ends the theory of prices of production and leaves only simple commodity-price changes.",
+                      "It calculates the turnover time of merchant’s capital and first derives the average profit rate.",
+                      "It simplifies distribution by grouping rent and interest as the same land return."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이자 낳는 자본이 왜 자본주의 표면에서 가장 자명하고 자연적인 수익형태로 보이는지 설명한다. 이 체계적 위치가 뒤의 은행자본과 화폐자본/현실자본 분석으로 이어진다.",
-                    "en": "It explains why interest-bearing capital appears on capitalism’s surface as the most self-evident and natural revenue form. This systematic position leads into the later analysis of bank capital and money-capital versus real capital."
-                  }
+                    "ko": "24장은 신용의 구체 제도에 들어가기 전, 이자 낳는 자본의 물신적 논리를 압축해 보여준다. 이 압축형이 25장의 가공자본 분석을 준비한다.",
+                    "en": "Before entering concrete credit institutions, Chapter 24 condenses the fetishistic logic of interest-bearing capital. This prepares the analysis of fictitious capital in Chapter 25."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 }
               ]
             }
@@ -27786,143 +27772,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "어떤 회사가 새 공장을 짓지 않았는데도, 장래 배당 기대 때문에 주식 가격이 크게 올랐다. 마르크스의 구분으로 먼저 보아야 할 것은 무엇인가?",
-                    "en": "A company has built no new factory, but its share price rises sharply because investors expect future dividends. In Marx’s terms, what should be seen first?"
+                    "ko": "25장에서 신용제도를 다룰 때 가장 먼저 잡아야 할 구분은 무엇인가?",
+                    "en": "What distinction must be grasped first in Chapter 25 on credit?"
                   },
                   "choices": {
                     "ko": [
-                      "주식 가격은 장래 수익에 대한 청구권의 가격일 수 있으며, 그 자체가 새 생산수단의 증가를 뜻하지는 않는다.",
-                      "주가가 올랐으므로 같은 크기의 기계와 원료가 이미 사회 안에 추가되었다.",
-                      "배당 기대가 생기는 순간 생산과 노동 없이도 새 가치가 만들어진다.",
-                      "주식은 종이 약속일 뿐이므로 현실 경제에는 아무 영향도 주지 않는다."
+                      "어음·예금·은행권 같은 지급수단의 확대와, 실제 생산수단 및 노동력의 확대를 구분한다.",
+                      "신용거래와 현금거래는 모두 같은 방식으로 상품의 사용가치를 생산한다.",
+                      "은행권이 늘면 그만큼 평균이윤율도 같은 비율로 커진다.",
+                      "상업신용은 산업관계 밖에서 독립적으로 생기는 화폐의 순환이다."
                     ],
                     "en": [
-                      "The share price can be the price of a claim on future revenue; it does not itself mean new means of production have increased.",
-                      "Because the share price rose, an equal amount of machinery and raw material has already been added to society.",
-                      "Once dividends are expected, new value is created without production and labour.",
-                      "Shares are only paper promises, so they have no real effect on the economy."
+                      "It distinguishes the expansion of means of payment such as bills, deposits, and banknotes from the expansion of actual means of production and labour-power.",
+                      "Credit transactions and cash transactions produce commodity use-values in the same way.",
+                      "When banknotes increase, the average profit rate rises by the same ratio.",
+                      "Commercial credit is a circulation of money that arises independently outside industrial relations."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "가공자본은 허공의 환상이 아니라 장래 잉여가치에 대한 청구권이 가격을 갖는 형태다. 여기서 흔한 오해는 증권가격 상승을 곧 현실 생산자본의 증가로 읽거나, 반대로 아무 효과 없는 종이로만 보는 것이다.",
-                    "en": "Fictitious capital is not a mere fantasy; it is a priced claim on future surplus-value. The common errors are to read a higher security price as an equal increase in real productive capital, or to dismiss it as paper with no effects."
-                  }
+                    "ko": "마르크스는 신용을 단순한 화폐 증가로 보지 않는다. 상업신용은 상품거래의 지급유예에서 출발하지만, 그 증서가 다시 지급수단처럼 순환한다.",
+                    "en": "Marx does not treat credit as a simple increase of money. Commercial credit begins from deferred payment in commodity trade, and its instruments then circulate as means of payment."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "국채나 회사채가 시장에서 사고팔릴 때, 그것은 왜 공장이나 기계와 같은 의미의 자본이 아닌가?",
-                    "en": "When government or corporate bonds are bought and sold, why are they not capital in the same sense as factories or machinery?"
+                    "ko": "가공자본의 가격은 어떤 과정을 통해 형성되는가?",
+                    "en": "How is the price of fictitious capital formed?"
                   },
                   "choices": {
                     "ko": [
-                      "그것은 이자 지급을 요구할 권리의 가격이지, 직접 노동자를 고용해 새 가치를 만드는 생산수단 자체가 아니기 때문이다.",
-                      "채권은 곧장 상품 생산에 투입되므로 대체로 현실자본과 1대1로 대응하기 때문이다.",
-                      "채권 거래는 단순한 사기라서 국가 재정이나 기업 운영과는 연결되지 않기 때문이다.",
-                      "이자는 법률이 정한 숫자일 뿐이라서 잉여가치 분배와는 아무 관련이 없기 때문이다."
+                      "장래 이자·배당·지대 같은 수입청구권이 현재의 이자율과 위험평가를 거쳐 자본가격처럼 계산된다.",
+                      "증권 종이의 인쇄비와 보관비를 더해 생산가격으로 계산된다.",
+                      "거래소에서 체결된 가격이 공장 안의 노동시간을 그대로 늘린다.",
+                      "은행이 예금을 받는 순간 예금액만큼 새 기계가 생산된다."
                     ],
                     "en": [
-                      "They are prices of rights to receive interest, not means of production that directly employ labour and create new value.",
-                      "Bonds are necessarily put into commodity production, so they always correspond one-to-one to real capital.",
-                      "Bond trading is merely fraud and has no connection to state finance or business operations.",
-                      "Interest is only a legal number and has nothing to do with the distribution of surplus-value."
+                      "Claims to future income such as interest, dividends, or rent are calculated as capital prices through the current interest rate and risk assessments.",
+                      "It is calculated as a price of production by adding printing and storage costs of securities.",
+                      "The exchange price directly lengthens labour-time inside factories.",
+                      "When a bank receives a deposit, new machinery is produced in the same amount."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "채권은 이자를 받을 법적 청구권이고, 그 가격은 현실 생산과 연결되지만 동일하지는 않다. 마르크스가 겨냥하는 혼동은 청구권의 거래를 곧 생산수단의 운동으로 착각하는 데 있다.",
-                    "en": "A bond is a legal claim to interest, and its price is connected to real production without being identical to it. Marx targets the confusion that treats trade in claims as if it were the movement of means of production themselves."
-                  }
+                    "ko": "가공자본은 장래 수입흐름의 자본화다. 이 가격은 현실 생산과 연결되어 있지만, 생산수단 자체와 같은 것은 아니다.",
+                    "en": "Fictitious capital is the capitalization of future income streams. Its price is connected to real production, but it is not identical with means of production themselves."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "신용제도가 자본주의 생산을 빠르게 키운다는 말만으로는 왜 부족한가?",
-                    "en": "Why is it insufficient simply to say that the credit system rapidly expands capitalist production?"
+                    "ko": "“가공자본은 가짜라서 분석할 필요가 작다”는 설명의 문제는 무엇인가?",
+                    "en": "What is wrong with saying that fictitious capital is “fake” and therefore of little analytical importance?"
                   },
                   "choices": {
                     "ko": [
-                      "신용을 쓰는 기업은 더 이상 이윤을 목표로 하지 않는다는 점을 놓치기 때문이다.",
-                      "신용은 축적을 앞당기지만, 동시에 상환 약속과 수익 기대를 쌓아 투기와 위기의 폭발력도 키우기 때문이다.",
-                      "신용을 소비자 결제 편의로만 보고 생산 확대와 투자 선대의 관계를 놓치기 때문이다.",
-                      "은행이 대출을 하면 그 순간 상품 일반이 이미 팔린 것과 같아지기 때문이다."
+                      "가공자본은 청구권이지만 신용 배분, 소유권, 위기 전개에 실제 영향력을 행사한다.",
+                      "가공자본은 상품보다 더 직접적으로 잉여가치를 생산하는 물적 자본이다.",
+                      "가공자본은 자본주의 이전의 세금 장부에만 남아 있는 낡은 명칭이다.",
+                      "가공자본은 은행이 금속화폐를 보관할 때 붙이는 회계 수수료다."
                     ],
                     "en": [
-                      "It misses that firms using credit no longer aim at profit.",
-                      "Credit brings accumulation forward, but it also builds repayment promises and revenue expectations that intensify speculation and the explosive force of crisis.",
-                      "Credit only improves consumer payment convenience and has no relation to production.",
-                      "When banks lend, all commodities are already as good as sold."
+                      "Fictitious capital is a claim, but it exerts real force over credit allocation, ownership, and the development of crisis.",
+                      "Fictitious capital is physical capital that produces surplus-value more directly than commodities.",
+                      "Fictitious capital is an old name left only in pre-capitalist tax ledgers.",
+                      "Fictitious capital is an accounting fee banks charge for storing metallic money."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용은 자본의 운동을 실제로 넓히지만, 그만큼 미래의 가치실현을 현재로 끌어와 청구권을 겹겹이 만든다. 그래서 신용을 단순한 해결책으로 보면 축적의 지렛대와 위기의 통로가 한 제도 안에 있다는 점을 놓친다.",
-                    "en": "Credit really widens capital’s movement, but it pulls future realization of value into the present and layers claims upon claims. Treating it as a simple solution misses how the same institution is both a lever of accumulation and a channel of crisis."
-                  }
+                    "ko": "“가공”이라는 말은 무효라는 뜻이 아니다. 장래 잉여가치에 대한 청구권이 현재의 자본처럼 거래되고, 그 거래가 현실 경제에 영향을 준다는 뜻이다.",
+                    "en": "“Fictitious” does not mean ineffective. Claims on future surplus-value are traded as present capital, and that trading affects the real economy."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "한 플랫폼 기업의 시가총액은 커졌지만, 실제 고용과 설비는 거의 늘지 않았다. 이 사례에서 마르크스의 구분으로 가장 정확한 해석은 무엇인가?",
-                    "en": "A platform firm’s market capitalization has grown, but its employment and equipment have barely increased. In Marx’s terms, what is the most accurate reading?"
+                    "ko": "어음이 만기 전에 여러 차례 배서되어 지급수단처럼 쓰이는 사례는 무엇을 보여주는가?",
+                    "en": "What is shown when bills of exchange are endorsed several times before maturity and function like means of payment?"
                   },
                   "choices": {
                     "ko": [
-                      "시가총액은 그 기업 안에 들어 있는 사회적 노동량을 직접 측정한 값이다.",
-                      "고용과 설비가 늘지 않았으므로 금융시장의 평가는 현실 경제와 아무 관련이 없다.",
-                      "시가총액 증가분을 곧바로 같은 규모의 현실 생산자본 증가분으로 계산하면 안 된다.",
-                      "주가 상승은 생산에서 잉여가치가 만들어지는 과정을 이미 대신했다는 뜻이다."
+                      "신용증서가 실제 화폐를 대체해 결제를 매개하면서, 신용관계가 상품거래의 시간차를 넓힌다.",
+                      "어음이 유통될수록 그 종이 자체가 생산수단으로 전환된다.",
+                      "배서 횟수가 늘면 각 거래의 상품이 이미 최종 소비된 것으로 처리된다.",
+                      "만기 전 어음은 국가화폐보다 안정적인 자연화폐로 기능한다."
                     ],
                     "en": [
-                      "Market capitalization directly measures the amount of social labour contained inside the firm.",
-                      "Because employment and equipment did not grow, financial-market valuation has no relation to the real economy.",
-                      "The increase in market capitalization should not be counted immediately as an equal increase in real productive capital.",
-                      "A higher share price means the production of surplus-value has already been replaced."
+                      "Credit instruments mediate payments in place of actual money, widening the time gap within commodity transactions.",
+                      "As bills circulate, the paper itself turns into means of production.",
+                      "More endorsements mean each traded commodity has already been finally consumed.",
+                      "Before maturity, bills function as a natural money more stable than state money."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "시가총액은 청구권의 현재 평가이므로 현실 생산자본의 양과 구분해야 한다. 그렇다고 금융가격이 무의미하다는 뜻은 아니며, 문제는 그 가격이 장래 수익과 잉여가치 실현에 어떻게 기대고 있는가이다.",
-                    "en": "Market capitalization is a present valuation of claims, so it must be distinguished from the quantity of real productive capital. That does not make financial prices meaningless; the point is how they depend on future revenue and the realization of surplus-value."
-                  }
+                    "ko": "25장은 어음과 청산이 화폐의 지급수단 기능을 어떻게 확장하는지 보여준다. 동시에 만기와 상환의 사슬이 끊기면 위기가 커질 수 있다.",
+                    "en": "Chapter 25 shows how bills and clearing expand money’s function as means of payment. At the same time, if maturity and repayment chains break, crisis can intensify."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이 장을 지나면, 학습자는 신용과 가공자본을 어떤 관계로 이해해야 하는가?",
-                    "en": "After this chapter, how should a learner understand the relation between credit and fictitious capital?"
+                    "ko": "25장은 26장의 화폐자본 축적 논의로 어떻게 이어지는가?",
+                    "en": "How does Chapter 25 lead into Chapter 26 on the accumulation of money-capital?"
                   },
                   "choices": {
                     "ko": [
-                      "신용은 위기를 없애는 중립적 기술이고, 가공자본은 그 기술의 작은 부작용이다.",
-                      "가공자본은 이름 그대로 가짜라서 자본주의 분석에서 빼도 되는 허상이다.",
-                      "신용이 충분하면 생산에서 잉여가치가 만들어지는 과정은 더 이상 중요하지 않다.",
-                      "신용은 축적을 확대하는 지렛대이면서, 장래 잉여가치 청구권이 독자적 자본처럼 움직이게 하는 조건이다."
+                      "신용제도가 예금과 유휴자금을 대부 가능한 화폐자본으로 집중시키는 방식을 보인 뒤, 그 축적이 이자율에 미치는 효과를 묻는다.",
+                      "가공자본이 현실자본과 같다는 결론을 낸 뒤, 생산수단의 물리적 증가율을 계산한다.",
+                      "은행권을 금 보유량과 같은 것으로 처리한 뒤, 금 생산의 노동시간을 분석한다.",
+                      "어음 유통을 마무리한 뒤, 지대가 신용제도의 중심 수입이 되는 과정을 다룬다."
                     ],
                     "en": [
-                      "Credit is a neutral technique that abolishes crisis, and fictitious capital is only a minor side effect.",
-                      "Fictitious capital is fake by name and can be left out of capitalist analysis as a mere illusion.",
-                      "Once credit is sufficient, the production of surplus-value in production no longer matters.",
-                      "Credit is a lever that expands accumulation and a condition that lets claims on future surplus-value move as if they were independent capital."
+                      "After showing how credit centralizes deposits and idle funds as loanable money-capital, it asks how that accumulation affects the interest rate.",
+                      "After concluding that fictitious capital is identical with real capital, it calculates the physical growth of means of production.",
+                      "After treating banknotes as identical with gold reserves, it analyses the labour-time of gold production.",
+                      "After finishing bill circulation, it treats how rent becomes the central income of the credit system."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 요점은 신용을 찬양하거나 부정하는 데 있지 않다. 신용은 현실 축적과 이어져 있지만, 동시에 장래 수익청구권을 현재의 자본처럼 만들며 자본주의의 물신성을 더 복잡하게 만든다.",
-                    "en": "The point of the chapter is neither to praise nor to dismiss credit. Credit is tied to real accumulation, while it also turns claims on future revenue into present capital-like things and deepens capitalist fetishism."
-                  }
+                    "ko": "25장은 신용이 지급수단과 청구권을 어떻게 증식시키는지 다룬다. 26장은 이렇게 모인 대부 가능한 화폐자본이 현실축적과 어긋날 수 있음을 분석한다.",
+                    "en": "Chapter 25 treats how credit multiplies means of payment and claims. Chapter 26 analyses how the resulting loanable money-capital can diverge from real accumulation."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 }
               ]
             },
@@ -27936,143 +27922,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "신용제도는 현실 축적을 촉진하면서도 왜 자본의 운동을 더 불안정하게 만드는가?",
-                    "en": "Why does the credit system make capital’s movement more unstable while also promoting real accumulation?"
+                    "ko": "상업신용과 은행신용의 관계를 가장 정확히 표현한 것은 무엇인가?",
+                    "en": "Which statement best captures the relation between commercial credit and bank credit?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과 판매가 끝나기 전에 미래 수익을 담보로 현재 투자를 확대하므로, 현실 가치실현이 어긋나면 청구권의 사슬 전체가 흔들릴 수 있다.",
-                      "신용이 생산과정을 대체한다고 보아 생산·판매·상환의 시간차를 놓친다.",
-                      "신용제도에서는 상품이 팔리지 않아도 모든 이윤이 법적으로 보장된다.",
-                      "불안정성을 투기 심리로만 돌리고 자본 축적의 시간차와 청구권 확대를 보지 않는다."
+                      "상업신용은 상품거래의 지급유예에서 생기고, 은행신용은 그 청구권과 유휴자금을 집중해 대부자본으로 조직한다.",
+                      "상업신용은 금속화폐의 보관이고, 은행신용은 상품을 직접 생산하는 공장 운영이다.",
+                      "상업신용은 소비자의 외상구매이고, 은행신용은 자본주의 생산과 별개인 국가 명령이다.",
+                      "상업신용과 은행신용은 모두 어음의 인쇄비를 자본가격으로 바꾸는 절차다."
                     ],
                     "en": [
-                      "It expands present investment against future revenues before production and sale are completed, so if real realization fails, the whole chain of claims can shake.",
-                      "Credit turns all workers’ wages into interest and therefore abolishes the production process.",
-                      "In the credit system, all profit is legally guaranteed even if commodities are not sold.",
-                      "Instability comes only from speculators’ psychology and has no relation to capital accumulation."
+                      "Commercial credit arises from deferred payment in commodity trade, while bank credit centralizes those claims and idle funds as loan capital.",
+                      "Commercial credit stores metallic money, while bank credit operates factories that directly produce commodities.",
+                      "Commercial credit is consumer buying on account, while bank credit is a state command separate from capitalist production.",
+                      "Both commercial and bank credit are procedures for turning printing costs of bills into capital prices."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "신용은 미래의 잉여가치 실현을 앞당겨 현재의 구매력과 투자로 만든다. 그래서 생산, 판매, 상환의 시간차가 맞물리지 않으면 단순한 심리 문제가 아니라 자본관계 자체의 긴장이 위기로 나타난다.",
-                    "en": "Credit brings the future realization of surplus-value forward into present purchasing power and investment. If production, sale, and repayment fall out of step, the crisis is not merely psychological but expresses a tension in the capital relation itself."
-                  }
+                    "ko": "마르크스는 은행을 단순 중개자로만 두지 않는다. 은행은 사회 곳곳의 유휴자금과 청구권을 집중해 대부 가능한 화폐자본의 조직된 덩어리로 만든다.",
+                    "en": "Marx does not treat banks as mere intermediaries. Banks concentrate idle funds and claims from across society into an organized mass of loanable money-capital."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "가공자본의 가격은 어떤 매개를 통해 현실자본과 연결되는가?",
-                    "en": "Through what mediation is the price of fictitious capital connected to real capital?"
+                    "ko": "가공자본이 현실자본과 연결되면서도 동일하지 않은 이유는 무엇인가?",
+                    "en": "Why is fictitious capital connected to real capital but not identical with it?"
                   },
                   "choices": {
                     "ko": [
-                      "증권을 인쇄하는 비용이 곧 그 증권의 가치가 되는 매개를 통해 연결된다.",
-                      "장래 이윤·이자·지대에 대한 청구권이 이자율과 위험평가를 거쳐 현재 가격으로 자본화되는 과정을 통해 연결된다.",
-                      "거래소가 정한 가격이 곧바로 공장 안의 노동시간을 결정하는 과정을 통해 연결된다.",
-                      "국가가 모든 금융가격을 보증하기 때문에 현실 생산과 무관하게 연결된다."
+                      "증권가격은 장래 수입의 청구권을 자본화한 것이며, 그 수입은 현실 생산과 실현에 기대지만 증권 자체가 생산수단은 아니다.",
+                      "증권가격은 거래소 노동자의 노동시간을 기준으로 정해지며, 현실 생산과는 별도 경로를 갖는다.",
+                      "증권은 생산수단의 소유권을 표시하므로 각 가격 상승이 같은 양의 기계 증가를 뜻한다.",
+                      "증권은 금속화폐와 같은 자연가치를 가져서 이자율 변화와 별개로 유지된다."
                     ],
                     "en": [
-                      "It is connected through the cost of printing the security, which becomes the security’s value.",
-                      "It is connected through capitalization: claims on future profit, interest, or rent are turned into a present price through the interest rate and risk assessment.",
-                      "It is connected because stock-exchange prices directly determine labour-time inside factories.",
-                      "It is connected because the state guarantees all financial prices independently of real production."
+                      "A security price capitalizes a claim to future income; that income depends on real production and realization, but the security itself is not a means of production.",
+                      "A security price is set by the labour-time of exchange workers and follows a separate path from real production.",
+                      "Because securities mark ownership of means of production, each price rise means the same increase in machinery.",
+                      "Securities have natural value like metallic money and remain separate from interest-rate changes."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본화는 장래 수입흐름을 현재의 자본가격처럼 계산하는 과정이다. 이 매개를 놓치면 증권가격이 스스로 가치를 낳는 것처럼 보이거나, 반대로 현실 생산과 전혀 무관한 숫자로만 보인다.",
-                    "en": "Capitalization calculates a future stream of revenue as if it were a present capital price. Missing this mediation makes security prices look either self-valorizing or completely unrelated to real production."
-                  }
+                    "ko": "가공자본의 독자성은 가격 변동과 거래 가능성에서 나온다. 그러나 그 독자성은 장래 수익을 전제로 하므로 현실 축적과 끊어진 것이 아니다.",
+                    "en": "The autonomy of fictitious capital comes from price movement and tradability. Yet that autonomy presupposes future revenue, so it is not severed from real accumulation."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "“가공자본은 가짜니까 분석할 필요가 없다”는 설명은 왜 마르크스의 비판과 어긋나는가?",
-                    "en": "Why does the claim “fictitious capital is fake, so it need not be analyzed” miss Marx’s critique?"
+                    "ko": "청산소에서 거액의 지급이 적은 현금으로 상계되는 현상은 무엇을 보여주는가?",
+                    "en": "What is shown by large payments being cleared with little cash at a clearing house?"
                   },
                   "choices": {
                     "ko": [
-                      "마르크스는 금융가격이 대체로 현실자본과 정확히 같다고 보기 때문이다.",
-                      "가공자본은 생산수단보다 더 근본적인 가치 원천이라고 보기 때문이다.",
-                      "가공자본은 현실 생산에서 분리되어 보이지만, 신용 배분·소유권·위기 전개에 실제 힘을 행사하기 때문이다.",
-                      "가공자본은 자본주의 이전 사회에서만 나타나는 낡은 형태이기 때문이다."
+                      "신용관계가 서로 맞물리면 실제 화폐 이동보다 훨씬 큰 지급이 상계될 수 있다.",
+                      "현금 사용이 줄어들수록 상품의 가치형태도 함께 사라진다.",
+                      "청산소의 상계는 모든 채무의 상환 위험을 균등하게 없애 준다.",
+                      "적은 현금으로 결제되면 그 차액만큼 생산수단이 새로 생긴다."
                     ],
                     "en": [
-                      "Because Marx thinks financial prices are always exactly equal to real capital.",
-                      "Because fictitious capital is a more fundamental source of value than means of production.",
-                      "Because fictitious capital appears detached from real production while exercising real power over credit allocation, ownership, and the course of crisis.",
-                      "Because fictitious capital appears only in pre-capitalist societies as an archaic form."
+                      "When credit relations interlock, payments far larger than actual cash movements can be offset against one another.",
+                      "As cash use decreases, the value-form of commodities disappears as well.",
+                      "Clearing-house offsetting evenly removes repayment risk from all debts.",
+                      "When settlement uses little cash, new means of production arise by the difference."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가공자본은 “거짓이라서 무효”가 아니라, 청구권이 자본처럼 행동하는 현실적 형태다. 마르크스의 비판은 그 힘을 인정하면서도 그 힘의 바탕이 장래 잉여가치와 생산관계에 있음을 드러내는 데 있다.",
-                    "en": "Fictitious capital is not “false and therefore void”; it is a real form in which claims act like capital. Marx’s critique recognizes its power while showing that this power rests on future surplus-value and production relations."
-                  }
+                    "ko": "청산은 신용의 효율을 보여주는 동시에 취약성도 드러낸다. 상계망의 한 고리가 끊기면 적은 현금 부족이 큰 지급위기로 바뀔 수 있다.",
+                    "en": "Clearing shows credit’s efficiency and vulnerability at once. If one link in the offsetting network breaks, a small cash shortage can become a large payments crisis."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "부동산 개발 채권이 계속 거래되지만 공사는 멈추고 분양도 지연된다. 이 상황을 이 장의 개념으로 읽으면 무엇이 드러나는가?",
-                    "en": "Real-estate development bonds continue to trade while construction has stopped and sales are delayed. What does this chapter’s concept reveal in that situation?"
+                    "ko": "부동산 개발 채권이 계속 거래되지만 공사가 지연되는 사례에서 무엇을 물어야 하는가?",
+                    "en": "What should be asked when real-estate development bonds keep trading while construction is delayed?"
                   },
                   "choices": {
                     "ko": [
-                      "채권이 거래되는 한 현실 생산과 판매가 멈췄다는 사실은 중요하지 않다.",
-                      "공사가 멈췄으므로 그 채권은 누구에게도 손실을 주지 않는 단순한 종이가 된다.",
-                      "거래되는 것은 장래 수입청구권의 가격이며, 그 가격은 실제 생산 진행과 가치실현 가능성에 의해 위협받을 수 있다.",
-                      "부동산 가격은 토지의 자연적 힘에서 나오므로 신용과 잉여가치 분석은 필요 없다."
+                      "거래되는 청구권의 가격이 어떤 장래 수입에 기대며, 그 수입의 실현 조건이 어떻게 흔들리는지 살핀다.",
+                      "채권이 거래되는 동안 공사의 지연은 생산관계 분석에서 제외할 수 있다.",
+                      "채권 가격이 유지되면 분양수입은 이미 화폐로 실현된 것으로 처리된다.",
+                      "공사가 멈추면 채권은 곧 물적 생산수단으로 전환되어 손실을 흡수한다."
                     ],
                     "en": [
-                      "As long as the bonds are traded, it does not matter that real production and sale have stopped.",
-                      "Because construction has stopped, the bonds become mere paper that can harm no one.",
-                      "What trades is the price of a claim on future revenue, and that price can be threatened by the real progress of production and the possibility of realizing value.",
-                      "Real-estate prices come from the natural power of land, so credit and surplus-value analysis are unnecessary."
+                      "It asks what future income the traded claim depends on and how the conditions for realizing that income are being shaken.",
+                      "While bonds are traded, construction delay can be left out of the analysis of production relations.",
+                      "If bond prices hold, presale revenue should be treated as already realized in money.",
+                      "When construction stops, bonds immediately turn into physical means of production and absorb losses."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 사례는 가공자본의 현실성을 잘 보여준다. 청구권은 계속 가격을 갖고 이전될 수 있지만, 그 가격은 결국 생산의 완료와 수입 실현이라는 조건에 부딪힌다.",
-                    "en": "The case shows the reality of fictitious capital. Claims can keep a price and circulate, but that price eventually confronts the conditions of completed production and realized revenue."
-                  }
+                    "ko": "가공자본의 가격은 현실에서 멀리 떠 있는 숫자가 아니다. 공사, 판매, 상환의 조건이 흔들릴 때 청구권의 가격도 위협받는다.",
+                    "en": "The price of fictitious capital is not a number floating far from reality. When construction, sale, and repayment conditions shake, the price of the claim is threatened too."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이 장은 앞의 이자 낳는 자본 분석을 어떤 방향으로 밀고 나가는가?",
-                    "en": "In what direction does this chapter push the earlier analysis of interest-bearing capital?"
+                    "ko": "25장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 25?"
                   },
                   "choices": {
                     "ko": [
-                      "이자가 노동과 무관한 자연수익이라는 생각을 받아들이는 방향으로 나아간다.",
-                      "기업가이득이 사라지고 모든 이윤이 임금으로 환원된다는 결론으로 나아간다.",
-                      "은행과 증권시장이 생산관계 밖의 독립 세계라는 결론으로 나아간다.",
-                      "M-M'의 물신적 형태가 신용증서, 주식, 채권 속에서 제도화되어 독자적 자본세계처럼 보이는 과정을 보여주는 방향으로 나아간다."
+                      "M-M′의 물신적 형태가 신용증서와 증권의 제도 속에서 현실적 힘을 얻는 과정을 보여준다.",
+                      "이자 낳는 자본의 분석을 끝내고 토지소유의 자연적 수익으로 이동한다.",
+                      "산업자본의 생산과정을 건너뛰고 상품교환의 단순형태로 돌아간다.",
+                      "은행을 회계 장부의 보조기관으로 한정해 신용의 사회적 효과를 축소한다."
                     ],
                     "en": [
-                      "It moves toward accepting interest as a natural revenue unrelated to labour.",
-                      "It moves toward the conclusion that profit of enterprise disappears and all profit is reduced to wages.",
-                      "It moves toward the conclusion that banks and securities markets are an independent world outside production relations.",
-                      "It shows how the fetishized M-M' form becomes institutionalized in credit instruments, shares, and bonds until it appears as an independent world of capital."
+                      "It shows how the fetishistic form M-M′ gains real force through the institutions of credit instruments and securities.",
+                      "It ends the analysis of interest-bearing capital and moves to the natural return of landed property.",
+                      "It skips the production process of industrial capital and returns to the simple form of commodity exchange.",
+                      "It confines banks to auxiliary bookkeeping and reduces the social effects of credit."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "앞 장의 M-M'에서는 생산과 착취가 형태상 사라졌다. 25장은 그 전도가 신용제도와 증권시장에서 사회적 제도로 굳어지며, 뒤의 은행자본과 화폐자본/현실자본 논의로 이어지는 길을 연다.",
-                    "en": "In the earlier M-M' form, production and exploitation disappear from the form. Chapter 25 shows that inversion hardening into social institutions in the credit system and securities markets, opening the path to bank capital and money-capital versus real capital."
-                  }
+                    "ko": "25장은 물신성을 단순한 착각으로 처리하지 않는다. 신용제도는 자본주의 생산을 확장하면서도 청구권의 세계를 키워 위기의 통로를 만든다.",
+                    "en": "Chapter 25 does not treat fetishism as mere illusion. The credit system expands capitalist production while enlarging a world of claims that can become a channel of crisis."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 }
               ]
             }
@@ -28141,157 +28127,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "은행에는 예금과 단기자금이 넉넉한데, 기업들은 새 설비투자를 망설이고 이자율은 내려간다. 마르크스라면 이 장면에서 무엇을 먼저 구분하겠는가?",
-                    "en": "Banks have ample deposits and short-term funds, yet firms hesitate to invest in new equipment and the interest rate falls. What distinction would Marx make first?"
+                    "ko": "26장에서 화폐자본의 축적을 다룰 때 핵심 구분은 무엇인가?",
+                    "en": "What key distinction matters in Chapter 26 on the accumulation of money-capital?"
                   },
                   "choices": {
                     "ko": [
-                      "대부 가능한 화폐자본의 축적과 현실 생산자본의 축적은 같은 속도로 움직이지 않을 수 있다.",
-                      "빌려줄 돈이 많으면 같은 양의 공장과 기계가 이미 늘어난 것이다.",
-                      "이자율은 대체로 중앙은행의 임의 결정만으로 정해진다.",
-                      "낮은 금리는 곧장 강한 투자수요와 산업 호황을 뜻한다."
+                      "대부 가능한 화폐자본의 축적과 현실 생산자본의 축적은 서로 연결되지만 같은 속도로 움직이지 않을 수 있다.",
+                      "은행 예금의 증가는 같은 양의 기계와 원료가 이미 생산되었다는 뜻이다.",
+                      "화폐자본이 쌓이면 상품의 판매가 없어도 평균이윤율이 확정된다.",
+                      "현실축적은 금 보유고의 증가와 같은 회계 항목으로 처리된다."
                     ],
                     "en": [
-                      "The accumulation of loanable money-capital and the accumulation of real productive capital need not move at the same pace.",
-                      "If there is more money to lend, the same amount of factories and machinery has already increased.",
-                      "The interest rate is always determined only by arbitrary central-bank decision.",
-                      "A low interest rate necessarily means strong investment demand and industrial prosperity."
+                      "The accumulation of loanable money-capital and the accumulation of real productive capital are connected, but they may not move at the same pace.",
+                      "An increase in bank deposits means the same amount of machinery and raw materials has already been produced.",
+                      "When money-capital accumulates, the average profit rate is fixed without commodity sales.",
+                      "Real accumulation is treated as the same accounting item as an increase in gold reserves."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "화폐시장에 돈이 많다는 사실은 현실 축적의 한 조건일 수 있지만, 곧바로 생산 확대를 뜻하지는 않는다. 마르크스는 이 어긋남 속에서 이자율이 산업순환, 유휴자금, 투자처 부족과 어떻게 얽히는지 본다.",
-                    "en": "Abundant money in the money market can be one condition for real accumulation, but it does not immediately mean expanded production. Marx reads the interest rate through this divergence, alongside the cycle, idle funds, and a lack of profitable outlets."
-                  }
+                    "ko": "마르크스는 “돈이 많다”와 “생산이 확대된다”를 구분한다. 예금, 유휴자금, 상환금은 대부자본으로 쌓일 수 있지만 곧 현실투자가 되는 것은 아니다.",
+                    "en": "Marx distinguishes “there is much money” from “production expands.” Deposits, idle funds, and repayments can accumulate as loan capital without immediately becoming real investment."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "화폐자본이 많이 쌓였다는 사실이 곧 현실 생산자본이 늘었다는 뜻이 아닌 이유는 무엇인가?",
-                    "en": "Why does a large accumulation of money-capital not necessarily mean real productive capital has increased?"
+                    "ko": "화폐자본의 축적이 이자율에 미치는 일반적 압력은 어떻게 설명되는가?",
+                    "en": "How is the general pressure of money-capital accumulation on the interest rate explained?"
                   },
                   "choices": {
                     "ko": [
-                      "유휴 화폐, 예금, 상환금, 수익청구권은 대부 가능 자금으로 쌓일 수 있지만 곧바로 생산수단과 노동력의 확대를 뜻하지는 않는다.",
-                      "낮은 금리를 대체로 강한 투자수요의 증거로 본다.",
-                      "이자율을 중앙은행 결정으로만 보고 대부자본의 수급과 산업순환을 약하게 본다.",
-                      "화폐자본 축적과 현실축적을 구분하지 않는 식으로 자본 운동의 단계를 단순화하는 오해"
+                      "수익성 있는 투자처보다 대부 가능한 자금이 더 빠르게 모이면, 이자율을 낮추는 압력이 생긴다.",
+                      "대부 가능한 자금이 늘수록 노동일이 길어져 이자율을 높이는 법칙이 생긴다.",
+                      "예금이 늘면 은행권 발행량이 고정되어 이자율이 같은 수준에 묶인다.",
+                      "화폐자본이 축적되면 지대가 이자를 대신해 금융시장의 가격이 된다."
                     ],
                     "en": [
-                      "Idle money, deposits, repayments, and revenue claims can accumulate as loanable funds without immediately meaning expanded means of production and labour-power.",
-                      "Treats low interest as always evidence of strong investment demand.",
-                      "Explains interest rates only by central bank decisions.",
-                      "Fails to distinguish money-capital accumulation from real accumulation."
+                      "If loanable funds accumulate faster than profitable outlets for investment, downward pressure on the interest rate emerges.",
+                      "As loanable funds grow, the working day lengthens and creates a law raising the interest rate.",
+                      "When deposits grow, banknote issue is fixed and the interest rate is held at the same level.",
+                      "When money-capital accumulates, rent replaces interest as the price in the money market."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "유휴 화폐, 예금, 상환금, 수익청구권은 대부 가능 자금으로 쌓일 수 있지만 곧바로 생산수단과 노동력의 확대를 뜻하지는 않는다. 따라서 표면의 금융수익이나 경영상 보수를 곧 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "Idle money, deposits, repayments, and revenue claims can accumulate as loanable funds without immediately meaning expanded means of production and labour-power. So surface financial returns or managerial rewards should not be treated as independent sources of value."
+                    "ko": "26장은 대부 가능한 돈의 공급과 투자수요의 어긋남을 본다. 유휴자금이 많고 투자처가 부족하면 낮은 이자율과 정체가 함께 나타날 수 있다.",
+                    "en": "Chapter 26 examines the divergence between the supply of loanable money and demand for investment. Abundant idle funds and scarce outlets can produce low interest and stagnation together."
                   },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 유휴 화폐, 예금, 상환금, 수익청구권은 대부 가능 자금으로 쌓일 수 있지만 곧바로 생산수단과 노동력의 확대를 뜻하지는 않는다. 따라서 표면의 금융수익이나 경영상 보수를 곧 독립적 가치 원천으로 보면 안 된다.",
-                      "오해 진단: \"낮은 금리를 대체로 강한 투자수요의 증거로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"이자율을 중앙은행 결정으로만 보고 대부자본의 수급과 산업순환을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"화폐자본 축적과 현실축적을 구분하지 않는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: Idle money, deposits, repayments, and revenue claims can accumulate as loanable funds without immediately meaning expanded means of production and labour-power. So surface financial returns or managerial rewards should not be treated as independent sources of value.",
-                      "Misconception check: choosing \"Treats low interest as always evidence of strong investment demand.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Explains interest rates only by central bank decisions.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Fails to distinguish money-capital accumulation from real accumulation.\" puts another category ahead of the key relation in the correct answer."
-                    ]
-                  }
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이자율을 단순히 산업이 잘되는 정도로만 설명하면 무엇을 놓치는가?",
-                    "en": "What is missed if the interest rate is explained only by how well industry is doing?"
+                    "ko": "“저금리는 산업이 건강하다는 표시”라는 해석의 약점은 무엇인가?",
+                    "en": "What is weak about interpreting low interest as a sign of healthy industry?"
                   },
                   "choices": {
                     "ko": [
-                      "낮은 금리를 대체로 강한 투자수요의 증거로 본다.",
-                      "대부 가능한 화폐자본의 공급, 신용상태, 투기수요, 위기 국면 같은 금융시장 조건을 놓친다.",
-                      "화폐자본 축적과 현실축적을 구분하지 않는다.",
-                      "신용상태와 산업순환 국면이 이자율에 미치는 효과를 무시한다."
+                      "저금리는 활발한 축적뿐 아니라 불황 뒤의 유휴자금, 신용 위축, 투자수요 약화에서도 나타날 수 있다.",
+                      "저금리는 은행이 이윤을 포기하고 사회 전체의 임금을 높였다는 표시다.",
+                      "저금리는 금 보유고가 생산수단으로 전환된 뒤에만 나타나는 특수 현상이다.",
+                      "저금리는 상업신용이 사라지고 모든 거래가 현금거래로 바뀐 결과다."
                     ],
                     "en": [
-                      "Treats low interest as always evidence of strong investment demand.",
-                      "It misses financial-market conditions such as the supply of loanable money-capital, credit conditions, speculative demand, and crisis phases.",
-                      "Fails to distinguish money-capital accumulation from real accumulation.",
-                      "Ignores the effects of credit conditions and the industrial cycle on interest rates."
+                      "Low interest can arise not only from active accumulation but also from idle funds after downturn, credit contraction, or weak investment demand.",
+                      "Low interest means banks have given up profit and raised wages across society.",
+                      "Low interest appears only after gold reserves have turned into means of production.",
+                      "Low interest results from the disappearance of commercial credit and a shift to all-cash trade."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "대부 가능한 화폐자본의 공급, 신용상태, 투기수요, 위기 국면 같은 금융시장 조건을 놓친다. 이 구분은 금융·신용 형태가 생산관계와 어떻게 연결되는지 보여준다.",
-                    "en": "It misses financial-market conditions such as the supply of loanable money-capital, credit conditions, speculative demand, and crisis phases. This distinction shows how financial and credit forms are connected to production relations."
-                  }
+                    "ko": "같은 금리 수준도 산업순환의 국면에 따라 의미가 달라진다. 26장은 금리를 생산의 건강도 하나로 읽는 단순화를 피한다.",
+                    "en": "The same rate can mean different things in different phases of the industrial cycle. Chapter 26 avoids reducing interest to a single measure of industrial health."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "은행 예금과 투자대기 자금은 넘치지만 실제 설비투자는 부진하다. 무엇을 구분해야 하는가?",
-                    "en": "Bank deposits and investable funds are abundant, but real equipment investment is weak. What must be distinguished?"
+                    "ko": "불황 뒤 기업의 현금보유와 은행예금은 늘었지만 설비투자는 부진하다. 26장의 관점에서 무엇을 봐야 하는가?",
+                    "en": "After a downturn, firms hold more cash and bank deposits rise while fixed investment remains weak. What should Chapter 26 lead us to examine?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐자본 축적과 현실축적을 구분하지 않는다.",
-                      "신용상태와 산업순환 국면이 이자율에 미치는 효과를 무시한다.",
-                      "대부 가능한 화폐자본의 축적과 현실 생산자본의 축적을 구분해야 한다.",
-                      "대부 가능한 돈이 많으면 현실자본도 같은 만큼 늘었다고 본다."
+                      "화폐자본이 대부 가능한 형태로 축적되지만, 수익성 있는 현실투자로 전환되는 조건이 막혀 있는지 살핀다.",
+                      "예금 증가가 이미 생산설비 증가를 뜻하므로 투자 부진 통계는 보조자료로 처리한다.",
+                      "현금보유가 늘면 기업가이득은 임금으로 전환되어 분배문제가 끝난다.",
+                      "은행예금은 상품판매와 분리된 자연수익이어서 산업순환과 함께 볼 필요가 작다."
                     ],
                     "en": [
-                      "Fails to distinguish money-capital accumulation from real accumulation.",
-                      "Ignores the effects of credit conditions and the industrial cycle on interest rates.",
-                      "One must distinguish accumulation of loanable money-capital from accumulation of real productive capital.",
-                      "Assumes abundant loanable money means real capital has grown by the same amount."
+                      "It examines whether money-capital is accumulating in loanable form while conditions for conversion into profitable real investment are blocked.",
+                      "Deposit growth already means increased productive equipment, so weak investment data are treated as secondary.",
+                      "When cash holdings grow, profit of enterprise turns into wages and the distribution problem ends.",
+                      "Bank deposits are natural returns separate from commodity sale, so there is little need to connect them to the industrial cycle."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "대부 가능한 화폐자본의 축적과 현실 생산자본의 축적을 구분해야 한다. 구체 사례에서도 핵심은 돈과 증권의 표면 운동이 어떤 자본관계를 가리는가이다.",
-                    "en": "One must distinguish accumulation of loanable money-capital from accumulation of real productive capital. In concrete cases, the key is what capital relation is concealed by the surface movement of money and securities."
-                  }
+                    "ko": "이 사례는 화폐자본 축적과 현실축적의 어긋남을 보여준다. 돈의 풍부함은 생산 확대의 조건일 수 있지만, 수익성 있는 투자처가 있어야 현실축적으로 이어진다.",
+                    "en": "This case shows the divergence between money-capital accumulation and real accumulation. Abundant money can be a condition of expansion, but real accumulation requires profitable outlets."
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "불황 뒤 기업들이 현금을 보유하고 은행 예금은 늘었지만, 생산 확대는 아직 살아나지 않았다. 이 장의 논점으로 보면 무엇이 드러나는가?",
-                    "en": "After a downturn, firms hold cash and bank deposits grow, but expanded production has not yet revived. What does this chapter’s argument reveal?"
+                    "ko": "26장은 뒤의 화폐자본과 현실자본 논의로 어떤 길을 여는가?",
+                    "en": "How does Chapter 26 open the way to the later discussion of money-capital and real capital?"
                   },
                   "choices": {
                     "ko": [
-                      "이자율을 중앙은행 발표문으로만 읽고 화폐자본 축적과 투자처 부족을 보지 않는다.",
-                      "신용상태와 산업순환 국면이 이자율에 미치는 효과는 무시해도 된다.",
-                      "대부 가능한 돈이 많으면 현실자본도 같은 만큼 늘었다.",
-                      "화폐자본은 축적되어도 수익성 있는 투자처가 부족하면 낮은 이자율과 정체된 생산이 함께 나타날 수 있다."
+                      "화폐시장에 축적된 대부자본과 생산과정의 현실자본이 서로 맞물리면서도 어긋나는 문제를 전면에 세운다.",
+                      "은행권 발행량과 상품가격이 같은 법칙으로 움직인다는 결론을 마련한다.",
+                      "가공자본의 가격을 생산수단의 물리적 크기와 같은 것으로 정리한다.",
+                      "이자율을 토지 지대의 자연적 한계로 환원해 분배론을 끝낸다."
                     ],
                     "en": [
-                      "The interest rate is explained only by central-bank statements.",
-                      "The effects of credit conditions and the industrial cycle on the interest rate can be ignored.",
-                      "If there is more loanable money, real capital has increased by the same amount.",
-                      "Money-capital can accumulate while a lack of profitable outlets produces low interest rates together with stagnant production."
+                      "It foregrounds how loan capital accumulated in the money market interlocks with, yet can diverge from, real capital in production.",
+                      "It prepares the conclusion that banknote issue and commodity prices move by the same law.",
+                      "It identifies the price of fictitious capital with the physical size of means of production.",
+                      "It reduces the interest rate to the natural limit of ground rent and ends the theory of distribution."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장은 돈의 풍부함과 생산의 활력이 항상 함께 가지 않는다는 점을 붙든다. 낮은 이자율은 강한 축적만이 아니라 유휴자금과 투자 부진의 표현일 수도 있다.",
-                    "en": "The chapter holds onto the fact that abundant money and vigorous production do not always go together. A low interest rate can express idle funds and weak investment, not only strong accumulation."
-                  }
+                    "ko": "26장은 “화폐가 많다”는 표면을 분석의 끝으로 삼지 않는다. 그 화폐가 어떤 조건에서 현실자본으로 전환되는지 묻는 다음 논의로 넘어간다.",
+                    "en": "Chapter 26 does not end with the surface fact that money is abundant. It moves to the next question: under what conditions does that money become real capital?"
+                  },
+                  "type": "multiple_choice",
+                  "points": 2
                 }
               ]
             },
@@ -28305,143 +28277,143 @@
               "questions": [
                 {
                   "id": "q1",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "대부 가능한 돈은 넘치는데 새 공장 투자는 늘지 않는 국면은 어떤 긴장을 보여주는가?",
-                    "en": "What tension is shown by a phase in which loanable money is abundant but investment in new factories does not rise?"
+                    "ko": "26장에서 말하는 “유휴자본의 축적”은 어떤 긴장을 표현하는가?",
+                    "en": "What tension is expressed by the “accumulation of unemployed capital” in Chapter 26?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐자본은 풍부해도 그것이 곧 수익성 있는 현실투자 기회와 일치하지 않을 수 있다는 긴장이다.",
-                      "이자율을 중앙은행 결정으로만 설명하려는 관점이다.",
-                      "대부 가능한 돈이 많으면 현실자본도 곧장 같은 만큼 늘어난다는 긴장이다.",
-                      "낮은 금리는 대체로 강한 투자수요를 증명한다는 긴장이다."
+                      "사회 안에 투자처를 찾는 화폐가 쌓이지만, 그것을 흡수할 수익성 있는 현실축적의 장이 충분하지 않은 긴장이다.",
+                      "산업자본이 생산수단을 모두 소비재로 바꾸어 화폐수요를 없애는 긴장이다.",
+                      "은행이 예금을 받는 순간 그 예금이 상품의 사용가치로 변하는 긴장이다.",
+                      "금 보유고가 늘수록 노동자의 임금이 이자수입으로 바뀌는 긴장이다."
                     ],
                     "en": [
-                      "Money-capital may be abundant without coinciding with profitable opportunities for real investment.",
-                      "The interest rate can be explained only by central-bank decision.",
-                      "If loanable money is abundant, real capital must increase by the same amount.",
-                      "Low interest always proves strong investment demand."
+                      "Money seeking investment accumulates in society, while profitable fields of real accumulation able to absorb it may be insufficient.",
+                      "Industrial capital turns all means of production into consumer goods and removes demand for money.",
+                      "When banks receive deposits, those deposits turn into commodity use-values.",
+                      "As gold reserves grow, workers’ wages turn into interest income."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화 학습의 초점은 “돈이 많다”와 “자본이 생산에서 확장된다” 사이의 매개를 보는 것이다. 수익성 있는 투자처가 막히면 화폐자본은 많아도 현실 축적은 둔화될 수 있다.",
-                    "en": "The advanced point is to see the mediation between “there is much money” and “capital expands in production.” If profitable outlets are blocked, money-capital can be abundant while real accumulation slows."
-                  }
+                    "ko": "마르크스가 인용하는 논의의 초점은 과잉 유휴자금이 투자처를 찾아 움직인다는 점이다. 이 긴장은 투기적 흥분과 낮은 이자율을 함께 낳을 수 있다.",
+                    "en": "The discussion Marx cites focuses on surplus idle funds seeking investment outlets. This tension can generate speculative excitement together with low interest."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "화폐자본 축적과 이자율을 매개하는 것은 무엇인가?",
-                    "en": "What mediates money-capital accumulation and the rate of interest?"
+                    "ko": "금 유출, 지급압박, 높은 할인율이 함께 나타나는 위기 국면은 무엇을 보여주는가?",
+                    "en": "What is shown by a crisis phase with gold drain, payment pressure, and a high discount rate?"
                   },
                   "choices": {
                     "ko": [
-                      "이자율을 중앙은행 결정으로만 보고 대부자본의 수급과 산업순환을 약하게 본다.",
-                      "대부 가능한 화폐자본의 수요와 공급, 신용의 신뢰상태, 산업순환의 국면이 매개한다.",
-                      "낮은 금리를 대체로 강한 투자수요의 증거로 본다.",
-                      "화폐자본 축적과 현실축적을 구분하지 않는다."
+                      "문제는 단순한 자본 부족이 아니라, 자본을 지급 가능한 화폐형태로 전환하는 어려움으로 나타날 수 있다.",
+                      "높은 할인율은 생산수단의 물리적 희소성이 이미 해결되었음을 보여준다.",
+                      "금 유출이 생기면 상품가격은 안정되고 신용위험도 같은 폭으로 줄어든다.",
+                      "지급압박은 은행의 회계오류이며 산업순환과 연결해 볼 필요가 작다."
                     ],
                     "en": [
-                      "Explains interest rates only by central bank decisions.",
-                      "They are mediated by supply and demand for loanable money-capital, the state of credit confidence, and the phase of the industrial cycle.",
-                      "Treats low interest as always evidence of strong investment demand.",
-                      "Fails to distinguish money-capital accumulation from real accumulation."
+                      "The problem may appear not as a simple lack of capital, but as difficulty converting capital into payable money form.",
+                      "A high discount rate shows that the physical scarcity of means of production has already been solved.",
+                      "When gold drains occur, commodity prices stabilize and credit risk falls by the same amount.",
+                      "Payment pressure is a banking bookkeeping error with little need to connect it to the industrial cycle."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "대부 가능한 화폐자본의 수요와 공급, 신용의 신뢰상태, 산업순환의 국면이 매개한다. 매개를 놓치면 이자, 신용, 증권가격이 스스로 가치를 낳는 것처럼 보인다.",
-                    "en": "They are mediated by supply and demand for loanable money-capital, the state of credit confidence, and the phase of the industrial cycle. Without the mediation, interest, credit, and security prices appear to create value by themselves."
-                  }
+                    "ko": "26장은 “자본”과 “화폐”를 뒤섞는 통화학파의 혼동을 비판한다. 위기 때 절박한 것은 종종 상품 일반이 아니라 지급을 끝낼 화폐형태다.",
+                    "en": "Chapter 26 criticizes currency-school confusions between “capital” and “money.” In crisis, what is urgent is often not commodities in general but the money form needed for payment."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "저금리는 항상 산업이 건강하다는 뜻이라는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying low interest rates always mean industry is healthy?"
+                    "ko": "Overstone식으로 “자본 수요가 이자율을 정한다”고 말할 때 마르크스가 문제 삼는 지점은 무엇인가?",
+                    "en": "What does Marx criticize in Overstone’s claim that demand for capital determines the interest rate?"
                   },
                   "choices": {
                     "ko": [
-                      "낮은 금리를 대체로 강한 투자수요의 증거로 본다.",
-                      "화폐자본 축적과 현실축적을 구분하지 않는다.",
-                      "저금리는 투자 부진과 과잉 유휴자금, 또는 위기 뒤 대부수요 위축에서도 나타날 수 있다.",
-                      "신용상태와 산업순환 국면이 이자율에 미치는 효과를 무시한다."
+                      "그 말이 생산수단 일반에 대한 수요와 대부 가능한 화폐자본에 대한 수요를 뒤섞어 금리 문제를 흐린다는 점이다.",
+                      "그 말이 이자율을 평균이윤율의 최대 한계 안에 놓는다는 점이다.",
+                      "그 말이 은행을 예금자와 차입자의 매개기관으로 인정한다는 점이다.",
+                      "그 말이 위기 때 금리가 오를 수 있다는 경험적 사실을 제시한다는 점이다."
                     ],
                     "en": [
-                      "Treats low interest as always evidence of strong investment demand.",
-                      "Fails to distinguish money-capital accumulation from real accumulation.",
-                      "Low interest can also arise from weak investment, surplus idle funds, or contracted loan demand after crisis.",
-                      "Ignores the effects of credit conditions and the industrial cycle on interest rates."
+                      "It blurs the interest-rate question by mixing demand for means of production in general with demand for loanable money-capital.",
+                      "It places the interest rate within the maximum boundary of the average profit rate.",
+                      "It recognizes banks as intermediaries between depositors and borrowers.",
+                      "It presents the empirical fact that rates can rise during crisis."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "저금리는 투자 부진과 과잉 유휴자금, 또는 위기 뒤 대부수요 위축에서도 나타날 수 있다. 마르크스의 비판은 금융 현상의 현실성을 부정하지 않고, 그 현실성이 어떤 생산관계에 의존하는지 밝힌다.",
-                    "en": "Low interest can also arise from weak investment, surplus idle funds, or contracted loan demand after crisis. Marx does not deny financial phenomena; he shows which production relations they depend on."
-                  }
+                    "ko": "마르크스는 금리의 대상이 “자본 일반”이 아니라 대부 가능한 화폐자본이라고 짚는다. 이 구분이 없으면 위기의 지급문제가 생산수단 부족처럼 표현된다.",
+                    "en": "Marx stresses that the object of the interest rate is not “capital in general” but loanable money-capital. Without this distinction, payment difficulty in crisis appears as a shortage of means of production."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "벤처 투자자금은 많지만 수익성 있는 프로젝트가 부족해 자금이 단기채와 예금에 몰린다. 무엇을 봐야 하는가?",
-                    "en": "Venture funds are abundant, but profitable projects are scarce, so funds flow into short bonds and deposits. What should be examined?"
+                    "ko": "벤처자금은 많지만 기업공개와 인수합병 출구가 막혀 자금이 단기채로 이동한다. 26장의 분석틀로 무엇을 읽을 수 있는가?",
+                    "en": "Venture funds are abundant, but IPO and acquisition exits are blocked, so funds move into short-term bonds. What can Chapter 26’s framework read here?"
                   },
                   "choices": {
                     "ko": [
-                      "신용상태와 산업순환 국면이 이자율에 미치는 효과를 무시한다.",
-                      "화폐자본 축적과 현실축적을 구분하지 않는다.",
-                      "화폐자본 축적이 현실 축적으로 전환되지 못하는 조건과 이자율에 미치는 압력을 봐야 한다.",
-                      "대부 가능한 돈이 많으면 현실자본도 같은 만큼 늘었다고 본다."
+                      "대부 가능한 화폐자본의 풍부함과 현실축적의 수익성·실현 조건 사이에 어긋남이 생긴 것이다.",
+                      "단기채 이동은 생산과정이 활발해져 노동력 수요가 크게 늘었다는 직접 증거다.",
+                      "투자출구가 막히면 가공자본은 생산수단과 같은 안정성을 얻는다.",
+                      "벤처자금의 이동은 이자율을 지대율로 바꾸는 토지소유의 효과다."
                     ],
                     "en": [
-                      "Ignores the effects of credit conditions and the industrial cycle on interest rates.",
-                      "Fails to distinguish money-capital accumulation from real accumulation.",
-                      "One should examine the conditions preventing money-capital accumulation from becoming real accumulation and its pressure on interest rates.",
-                      "Assumes abundant loanable money means real capital has grown by the same amount."
+                      "There is a divergence between abundant loanable money-capital and the profitability and realization conditions of real accumulation.",
+                      "A move into short-term bonds is direct evidence that production is active and labour-power demand has sharply increased.",
+                      "When exits are blocked, fictitious capital gains the same stability as means of production.",
+                      "The movement of venture funds is an effect of landed property turning interest into rent."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "화폐자본 축적이 현실 축적으로 전환되지 못하는 조건과 이자율에 미치는 압력을 봐야 한다. 현대 사례도 수익의 표면형태와 그 배후의 잉여가치 분배를 나누어 읽어야 한다.",
-                    "en": "One should examine the conditions preventing money-capital accumulation from becoming real accumulation and its pressure on interest rates. Modern cases must also separate the surface form of revenue from the distribution of surplus-value behind it."
-                  }
+                    "ko": "현대 금융사례도 26장의 구분으로 읽을 수 있다. 돈이 투자처를 찾는다는 사실과 수익성 있는 생산 확대가 가능하다는 사실은 서로 다른 문제다.",
+                    "en": "Modern financial cases can be read through Chapter 26’s distinction. The fact that money seeks outlets differs from the fact that profitable productive expansion is possible."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 },
                 {
                   "id": "q5",
-                  "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이 장은 뒤의 화폐자본/현실자본 논의로 넘어가기 전에 어떤 길을 연다?",
-                    "en": "What path does this chapter open before the later discussion of money-capital and real capital?"
+                    "ko": "26장의 체계적 의미를 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best explains the systematic significance of Chapter 26?"
                   },
                   "choices": {
                     "ko": [
-                      "신용상태와 산업순환 국면이 이자율에 미치는 효과를 무시하는 길이다.",
-                      "대부 가능한 돈이 많으면 현실자본도 같은 만큼 늘었다고 보는 길이다.",
-                      "이자율을 중앙은행 결정의 결과로만 좁혀 보는 길이다.",
-                      "화폐자본의 운동이 현실 축적과 연결되면서도 어긋날 수 있음을 추적하는 길이다."
+                      "신용제도가 집중한 화폐자본의 운동을 산업순환, 지급위기, 현실축적의 조건과 연결해 다음 장들의 분석 기반을 만든다.",
+                      "가공자본의 가격을 현실자본과 일치시켜 신용제도의 모순을 정리한다.",
+                      "이자율을 중앙은행의 단일 명령으로 환원해 화폐시장 분석을 단순화한다.",
+                      "기업가이득과 관리임금을 같은 항목으로 묶어 23장의 문제를 해결한다."
                     ],
                     "en": [
-                      "It opens the path of ignoring how credit conditions and the industrial cycle affect the interest rate.",
-                      "It opens the path of assuming abundant loanable money means real capital has grown by the same amount.",
-                      "It opens the path of explaining interest rates only by central-bank decisions.",
-                      "It opens the path of tracing how the movement of money-capital is connected to real accumulation while also diverging from it."
+                      "It links the movement of money-capital centralized by credit to the industrial cycle, payment crisis, and conditions of real accumulation, preparing the following chapters.",
+                      "It identifies fictitious-capital prices with real capital and resolves the contradictions of credit.",
+                      "It reduces the interest rate to a single central-bank command and simplifies money-market analysis.",
+                      "It groups profit of enterprise and management wages as one item and solves Chapter 23’s problem."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "26장은 이자율을 고립된 가격으로 보지 않고 화폐자본 축적과 산업순환 속에 놓는다. 이 관점이 뒤에서 화폐자본과 현실자본의 어긋남을 더 정밀하게 분석하는 발판이 된다.",
-                    "en": "Chapter 26 does not treat the interest rate as an isolated price; it places it within money-capital accumulation and the industrial cycle. That becomes the basis for the later, more precise analysis of the divergence between money-capital and real capital."
-                  }
+                    "ko": "26장은 신용과 가공자본의 논의를 현실축적의 리듬과 다시 맞물리게 한다. 이 연결이 뒤의 화폐자본/현실자본 논쟁을 읽는 기준이 된다.",
+                    "en": "Chapter 26 reconnects credit and fictitious capital to the rhythm of real accumulation. This connection becomes the standard for reading the later debate on money-capital and real capital."
+                  },
+                  "type": "multiple_choice",
+                  "points": 3
                 }
               ]
             }
