@@ -28483,142 +28483,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "자본주의적 생산에서 신용의 역할은 무엇인가?",
-                    "en": "What is the role of credit in capitalist production?"
+                    "ko": "27장에서 신용제도의 기본 역할은 무엇인가?",
+                    "en": "What is the basic role of the credit system in Chapter 27?"
                   },
                   "choices": {
                     "ko": [
-                      "신용은 개별 자본의 한계를 넘어 자본집중, 주식회사, 대규모 투자, 세계시장 확장을 가능하게 하는 지렛대다.",
-                      "신용은 자본주의 위기를 없애는 순수한 조정장치라고 본다.",
-                      "주식회사는 자본주의적 착취를 그 자체로 폐지한다고 본다.",
-                      "대규모 차입은 대체로 같은 규모의 현실 수익을 보장한다고 본다."
+                      "개별 자본의 한계를 넘어 자본 집중, 대규모 사업, 세계시장 확대를 밀어붙이는 지렛대다.",
+                      "이윤율 차이를 보존해 각 산업이 따로 움직이게 하는 장치다.",
+                      "생산과 판매의 시간차를 없애 모든 거래를 현금거래로 되돌리는 제도다.",
+                      "소규모 자본가의 사적 저축만으로 축적을 설명하는 방식이다."
                     ],
                     "en": [
-                      "Credit is a lever that lets capital move beyond individual limits, enabling concentration, joint-stock companies, large-scale investment, and world-market expansion.",
-                      "Treats credit as a pure coordinating device that abolishes capitalist crisis.",
-                      "Assumes joint-stock companies automatically abolish capitalist exploitation.",
-                      "Assumes large borrowing always guarantees real returns of the same scale."
+                      "It is a lever that pushes capital concentration, large-scale enterprise, and world-market expansion beyond the limits of individual capitals.",
+                      "It preserves differences in profit rates and keeps each industry moving separately.",
+                      "It removes time gaps between production and sale and returns all trade to cash transactions.",
+                      "It explains accumulation only by the private savings of small capitalists."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "신용은 개별 자본의 한계를 넘어 자본집중, 주식회사, 대규모 투자, 세계시장 확장을 가능하게 하는 지렛대다. 이 문항은 이 장에서 분리되어 보이는 수입형태가 어떤 잉여가치 분배를 전제로 하는지 잡기 위한 출발점이다.",
-                    "en": "Credit is a lever that lets capital move beyond individual limits, enabling concentration, joint-stock companies, large-scale investment, and world-market expansion. This establishes which distribution of surplus-value is presupposed by the revenue form treated in the chapter."
-                  }
+                    "ko": "신용은 자본주의 생산의 규모와 속도를 키운다. 그러나 그 힘은 생산관계 밖의 중립 기술이 아니라 자본 집중과 세계시장 확대의 형태로 작동한다.",
+                    "en": "Credit enlarges the scale and speed of capitalist production. Its force does not operate as a neutral technique outside production relations, but through capital concentration and world-market expansion."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "신용이 생산력 발전을 촉진하면서도 위기를 키울 수 있는 이유는 무엇인가?",
-                    "en": "Why can credit promote productive development while also intensifying crisis?"
+                    "ko": "신용이 유통비를 줄이는 방식으로 적절한 것은 무엇인가?",
+                    "en": "Which is a proper way credit reduces circulation costs?"
                   },
                   "choices": {
                     "ko": [
-                      "신용은 투자를 앞당기고 규모를 키우지만, 미래 잉여가치 실현을 앞당겨 전제하므로 과잉투자와 연쇄불이행 위험도 키운다.",
-                      "대규모 차입은 대체로 같은 규모의 현실 수익을 보장한다고 본다.",
-                      "주식회사는 자본주의적 착취를 그 자체로 폐지한다고 본다.",
-                      "신용과 투기를 충분히 구분되한 것으로 본다."
+                      "많은 거래에서 현금 사용을 줄이고, 지급의 속도를 높이며, 금 대신 신용수단을 쓰게 만든다.",
+                      "상품의 생산비를 장부상에서 없애 평균이윤율 계산을 생략한다.",
+                      "노동력 구매를 현물교환으로 바꾸어 임금 지급을 축소한다.",
+                      "개별 기업의 재고를 국가가 직접 소비하게 만들어 판매과정을 끝낸다."
                     ],
                     "en": [
-                      "Credit advances and enlarges investment, but it anticipates future realization of surplus-value, increasing risks of overinvestment and chain default.",
-                      "Assumes large borrowing always guarantees real returns of the same scale.",
-                      "Assumes joint-stock companies automatically abolish capitalist exploitation.",
-                      "Treats credit and speculation as entirely unrelated."
+                      "It reduces cash use in many transactions, accelerates payments, and substitutes credit instruments for gold.",
+                      "It removes production costs on paper and skips calculation of the average profit rate.",
+                      "It turns the purchase of labour-power into barter and reduces wage payments.",
+                      "It makes the state directly consume each firm’s inventory and ends the sale process."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "신용은 투자를 앞당기고 규모를 키우지만, 미래 잉여가치 실현을 앞당겨 전제하므로 과잉투자와 연쇄불이행 위험도 키운다. 따라서 표면의 금융수익이나 경영상 보수를 곧 독립적 가치 원천으로 보면 안 된다.",
-                    "en": "Credit advances and enlarges investment, but it anticipates future realization of surplus-value, increasing risks of overinvestment and chain default. So surface financial returns or managerial rewards should not be treated as independent sources of value."
-                  }
+                    "ko": "27장은 신용이 화폐 자체를 절약하고 유통 속도를 높인다고 설명한다. 이 절약은 생산을 확장하지만 동시에 구매와 판매를 더 멀리 떼어 투기의 토대가 되기도 한다.",
+                    "en": "Chapter 27 explains that credit economizes money itself and quickens circulation. This economy expands production, while also separating purchase and sale and creating a basis for speculation."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "주식회사가 사적 자본주의를 넘어선 형태처럼 보이지만 여전히 자본주의적인 이유는 무엇인가?",
-                    "en": "Why do joint-stock companies appear to go beyond private capitalism yet remain capitalist?"
+                    "ko": "주식회사가 “자본주의 안의 사적 자본 폐지”처럼 보이는 이유는 무엇인가?",
+                    "en": "Why does the joint-stock company appear as an abolition of private capital within capitalism?"
                   },
                   "choices": {
                     "ko": [
-                      "대규모 차입은 대체로 같은 규모의 현실 수익을 보장한다고 본다.",
-                      "소유와 기능이 분리되고 사회적 자본처럼 보이지만, 생산은 여전히 이윤과 잉여가치 지배 아래 조직되기 때문이다.",
-                      "신용과 투기를 충분히 구분되한 것으로 본다.",
-                      "자본집중을 개별 기업가의 저축만으로 설명한다."
+                      "소유는 주식으로 분산되고 기능은 관리자에게 넘어가지만, 생산은 여전히 이윤과 잉여가치의 지배 아래 있기 때문이다.",
+                      "주식이 발행되면 노동자는 생산수단을 공동으로 소유하고 이윤분배를 직접 결정하기 때문이다.",
+                      "배당이 이자로 계산되면 상품생산의 가치법칙이 생산현장에서 사라지기 때문이다.",
+                      "주식거래가 활발해지면 고정자본의 물리적 마모도 함께 줄어들기 때문이다."
                     ],
                     "en": [
-                      "Assumes large borrowing always guarantees real returns of the same scale.",
-                      "Ownership and function separate and capital appears social, but production remains organized under profit and surplus-value.",
-                      "Treats credit and speculation as entirely unrelated.",
-                      "Explains capital concentration only by individual capitalist saving."
+                      "Ownership is dispersed as shares and function passes to managers, while production remains governed by profit and surplus-value.",
+                      "When shares are issued, workers collectively own the means of production and directly decide profit distribution.",
+                      "When dividends are calculated as interest, the law of value disappears from production.",
+                      "When stock trading becomes active, the physical wear of fixed capital decreases with it."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "소유와 기능이 분리되고 사회적 자본처럼 보이지만, 생산은 여전히 이윤과 잉여가치 지배 아래 조직되기 때문이다. 이 구분은 금융·신용 형태가 생산관계와 어떻게 연결되는지 보여준다.",
-                    "en": "Ownership and function separate and capital appears social, but production remains organized under profit and surplus-value. This distinction shows how financial and credit forms are connected to production relations."
-                  }
+                    "ko": "주식회사는 소유와 기능을 분리해 자본의 사회적 성격을 드러낸다. 그러나 그 사회화는 사적 전유 안에 갇혀 있어 모순적인 전환형태가 된다.",
+                    "en": "The joint-stock company separates ownership from function and reveals capital’s social character. Yet this socialization remains trapped within private appropriation, making it a contradictory transitional form."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "거대한 인프라 사업이 신용 없이는 불가능하지만, 수익 회수가 지연되자 금융위험이 커진다. 무엇이 드러나는가?",
-                    "en": "A huge infrastructure project is impossible without credit, but delayed returns increase financial risk. What is revealed?"
+                    "ko": "신용이 위기를 키우는 방식은 무엇인가?",
+                    "en": "How does credit intensify crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "신용과 투기를 충분히 구분되한 것으로 본다.",
-                      "자본집중을 개별 기업가의 저축만으로 설명한다.",
-                      "신용이 생산 규모를 확장하는 동시에 미래 수익 실현에 대한 의존과 위기 가능성을 키운다는 점이다.",
-                      "신용은 자본주의 위기를 없애는 순수한 조정장치라고 본다."
+                      "미래의 판매와 수익을 앞당겨 현재의 투자로 만들기 때문에, 실현이 어긋나면 과잉생산과 지급불능이 커진다.",
+                      "금속화폐의 사용량을 늘려 모든 기업이 같은 속도로 현금을 축적하게 만든다.",
+                      "주식회사의 관리자를 생산노동자로 바꾸어 잉여가치 생산을 중단시킨다.",
+                      "세계시장 거래를 국내 소매거래와 같은 규모로 축소해 수요를 줄인다."
                     ],
                     "en": [
-                      "Treats credit and speculation as entirely unrelated.",
-                      "Explains capital concentration only by individual capitalist saving.",
-                      "Credit expands the scale of production while increasing dependence on future realization and the possibility of crisis.",
-                      "Treats credit as a pure coordinating device that abolishes capitalist crisis."
+                      "It turns expected future sales and returns into present investment, so failed realization magnifies overproduction and insolvency.",
+                      "It increases the use of metallic money and makes every firm accumulate cash at the same speed.",
+                      "It turns joint-stock managers into productive workers and stops surplus-value production.",
+                      "It reduces world-market trade to the scale of domestic retail trade and lowers demand."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용이 생산 규모를 확장하는 동시에 미래 수익 실현에 대한 의존과 위기 가능성을 키운다는 점이다. 구체 사례에서도 핵심은 돈과 증권의 표면 운동이 어떤 자본관계를 가리는가이다.",
-                    "en": "Credit expands the scale of production while increasing dependence on future realization and the possibility of crisis. In concrete cases, the key is what capital relation is concealed by the surface movement of money and securities."
-                  }
+                    "ko": "신용은 축적의 장벽을 밀어내지만 장벽 자체를 없애지는 않는다. 그래서 확장은 더 멀리 가고, 파열은 더 넓은 지급연쇄를 통해 나타난다.",
+                    "en": "Credit pushes back the barriers of accumulation without abolishing them. Expansion goes further, and rupture appears through a wider chain of payments."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "신용의 역할 분석이 3권에서 중요한 이유는 무엇인가?",
-                    "en": "Why is the analysis of credit’s role important in Volume III?"
+                    "ko": "27장은 다음의 화폐자본과 현실자본 논의로 어떻게 이어지는가?",
+                    "en": "How does Chapter 27 lead into the later discussion of money-capital and real capital?"
                   },
                   "choices": {
                     "ko": [
-                      "주식회사는 자본주의적 착취를 그 자체로 폐지한다고 본다.",
-                      "자본집중을 개별 기업가의 저축만으로 설명한다.",
-                      "신용은 자본주의 위기를 없애는 순수한 조정장치라고 본다.",
-                      "신용이 자본주의를 사회화된 생산 쪽으로 밀어붙이면서도 사적 전유와 위기를 더 날카롭게 만든다는 모순을 보여준다."
+                      "신용이 사회적 자본을 집중시키는 동시에 청구권과 투기를 키우므로, 금융적 축적과 현실축적의 차이를 묻게 만든다.",
+                      "신용이 생산의 모순을 해결한다는 결론에서 은행자본 분석이 끝난다.",
+                      "주식회사가 협동공장을 대체해 임금노동 문제를 정리한다.",
+                      "유통비 절감이 생산가격을 없애 상품가치를 단순가격으로 바꾼다."
                     ],
                     "en": [
-                      "Assumes joint-stock companies automatically abolish capitalist exploitation.",
-                      "Explains capital concentration only by individual capitalist saving.",
-                      "Treats credit as a pure coordinating device that abolishes capitalist crisis.",
-                      "It shows the contradiction that credit pushes capitalism toward socialized production while sharpening private appropriation and crisis."
+                      "Because credit centralizes social capital while enlarging claims and speculation, it raises the difference between financial accumulation and real accumulation.",
+                      "The analysis of bank capital ends with the conclusion that credit resolves the contradictions of production.",
+                      "Joint-stock companies replace cooperatives and settle the problem of wage labour.",
+                      "Reduced circulation costs abolish prices of production and turn commodity value into simple price."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용이 자본주의를 사회화된 생산 쪽으로 밀어붙이면서도 사적 전유와 위기를 더 날카롭게 만든다는 모순을 보여준다. 이 장은 이자 낳는 자본의 전도를 더 구체적 제도와 수익형태로 밀고 간다.",
-                    "en": "It shows the contradiction that credit pushes capitalism toward socialized production while sharpening private appropriation and crisis. The chapter pushes the inversion of interest-bearing capital into more concrete institutions and revenue forms."
-                  }
+                    "ko": "27장은 신용을 발전의 가속장치이자 모순의 증폭장치로 둔다. 이 양면성이 이후 은행자본, 가공자본, 현실자본의 구분으로 이어진다.",
+                    "en": "Chapter 27 presents credit as both an accelerator of development and an amplifier of contradictions. This double character leads into the distinctions among bank capital, fictitious capital, and real capital."
+                  },
+                  "points": 2
                 }
               ]
             },
@@ -28633,142 +28633,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "자본주의적 신용의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of capitalist credit?"
+                    "ko": "신용제도의 양면성을 가장 정확히 표현한 것은 무엇인가?",
+                    "en": "Which statement best captures the double character of the credit system?"
                   },
                   "choices": {
                     "ko": [
-                      "신용은 자본주의의 물질적 한계를 넘어서는 힘처럼 작동하지만, 바로 그 방식으로 더 큰 투기와 위기 가능성을 만든다.",
-                      "주식회사는 자본주의적 착취를 그 자체로 폐지한다고 본다.",
-                      "신용은 자본주의 위기를 없애는 순수한 조정장치라고 본다.",
-                      "대규모 차입은 대체로 같은 규모의 현실 수익을 보장한다고 본다."
+                      "생산의 사회적 성격을 발전시키면서도 사적 전유, 투기, 금융귀족을 더 강한 형태로 재생산한다.",
+                      "개별 자본가의 소유를 그대로 보존해 생산의 사회적 성격이 드러나지 않게 한다.",
+                      "신용을 통해 이윤이 임금으로 바뀌면서 착취관계가 회계상 정리된다.",
+                      "은행이 생산을 직접 운영하므로 산업자본과 상업자본의 차이가 사라진다."
                     ],
                     "en": [
-                      "Credit acts as if it overcomes capital’s material limits, but in that very way creates greater possibilities of speculation and crisis.",
-                      "Assumes joint-stock companies automatically abolish capitalist exploitation.",
-                      "Treats credit as a pure coordinating device that abolishes capitalist crisis.",
-                      "Assumes large borrowing always guarantees real returns of the same scale."
+                      "It develops the social character of production while reproducing private appropriation, speculation, and financial aristocracy in stronger forms.",
+                      "It preserves individual capitalist ownership unchanged so the social character of production does not appear.",
+                      "Through credit, profit turns into wages and the relation of exploitation is settled as accounting.",
+                      "Because banks directly operate production, the difference between industrial and commercial capital disappears."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "신용은 자본주의의 물질적 한계를 넘어서는 힘처럼 작동하지만, 바로 그 방식으로 더 큰 투기와 위기 가능성을 만든다. 이 긴장을 보아야 신용과 금융이 단순한 기술 장치가 아니라 자본관계의 전도된 형태임을 이해할 수 있다.",
-                    "en": "Credit acts as if it overcomes capital’s material limits, but in that very way creates greater possibilities of speculation and crisis. This tension shows that credit and finance are not mere technical devices but inverted forms of the capital relation."
-                  }
+                    "ko": "마르크스가 말하는 전환형태는 곧바로 해방된 형태가 아니다. 신용은 새 생산양식의 물질적 요소를 키우면서도 낡은 전유형태를 더 날카롭게 만든다.",
+                    "en": "Marx’s transitional form is not immediately emancipated. Credit develops material elements of a new mode of production while sharpening the old form of appropriation."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "신용과 자본집중을 매개하는 것은 무엇인가?",
-                    "en": "What mediates credit and concentration of capital?"
+                    "ko": "원문에서 “bare interest”만 내도 가능한 사업이 언급되는 이유는 무엇인가?",
+                    "en": "Why does the text mention enterprises that can operate with only “bare interest”?"
                   },
                   "choices": {
                     "ko": [
-                      "주식회사는 자본주의적 착취를 그 자체로 폐지한다고 본다.",
-                      "분산된 화폐자본과 소유권이 은행, 증권시장, 주식회사 형태로 집중되어 대규모 자본처럼 기능하는 과정이다.",
-                      "대규모 차입은 대체로 같은 규모의 현실 수익을 보장한다고 본다.",
-                      "신용과 투기를 충분히 구분되한 것으로 본다."
+                      "주식회사 형태에서는 총이윤이 이자처럼 나타나며, 거대한 고정자본 사업이 일반 이윤율 균등화에 다른 방식으로 관계하기 때문이다.",
+                      "이런 사업은 잉여가치 없이도 자연수익을 만들어 이자율의 하한을 고정하기 때문이다.",
+                      "관리자 임금이 배당보다 커져 주주 소유가 생산과정에서 사라지기 때문이다.",
+                      "주식회사가 생기면 유통비가 늘어나 이윤율 저하 경향이 멈추기 때문이다."
                     ],
                     "en": [
-                      "Assumes joint-stock companies automatically abolish capitalist exploitation.",
-                      "The mediation is the concentration of dispersed money-capitals and ownership claims through banks, securities markets, and joint-stock companies so they function as large capital.",
-                      "Assumes large borrowing always guarantees real returns of the same scale.",
-                      "Treats credit and speculation as entirely unrelated."
+                      "Because in joint-stock form total profit appears like interest, and giant fixed-capital enterprises relate differently to the equalization of the general profit rate.",
+                      "Because such enterprises create natural returns without surplus-value and fix the lower limit of interest.",
+                      "Because managers’ wages exceed dividends and shareholder ownership disappears from production.",
+                      "Because joint-stock companies increase circulation costs and halt the tendency of the profit rate to fall."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "분산된 화폐자본과 소유권이 은행, 증권시장, 주식회사 형태로 집중되어 대규모 자본처럼 기능하는 과정이다. 매개를 놓치면 이자, 신용, 증권가격이 스스로 가치를 낳는 것처럼 보인다.",
-                    "en": "The mediation is the concentration of dispersed money-capitals and ownership claims through banks, securities markets, and joint-stock companies so they function as large capital. Without the mediation, interest, credit, and security prices appear to create value by themselves."
-                  }
+                    "ko": "이 세부는 27장의 중요한 난점이다. 주식회사는 거대한 자본구성을 가진 사업을 가능하게 하고, 배당은 이자형태로 나타나 일반 이윤율과의 관계를 흐린다.",
+                    "en": "This detail is an important difficulty in Chapter 27. Joint-stock companies make possible enterprises with enormous capital composition, and dividends appear in the form of interest, blurring their relation to the general profit rate."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "신용은 자본주의를 조화롭게 만든다는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by saying credit makes capitalism harmonious?"
+                    "ko": "협동공장과 주식회사를 모두 전환형태로 부르면서도 구분하는 기준은 무엇인가?",
+                    "en": "What distinguishes cooperatives and joint-stock companies even though both are transitional forms?"
                   },
                   "choices": {
                     "ko": [
-                      "대규모 차입은 대체로 같은 규모의 현실 수익을 보장한다고 본다.",
-                      "신용과 투기를 충분히 구분되한 것으로 본다.",
-                      "신용은 조정능력을 키우지만 동시에 과잉생산, 투기, 지급불능의 연쇄를 확대할 수 있다는 점을 놓친다.",
-                      "자본집중을 개별 기업가의 저축만으로 설명한다."
+                      "주식회사는 모순을 사적 전유 안에서 부정적으로 드러내고, 협동공장은 결합노동이 자기 노동을 사용한다는 방향을 긍정적으로 드러낸다.",
+                      "주식회사는 노동자가 주식을 보유하므로 착취를 폐지하고, 협동공장은 은행이 운영하므로 자본주의를 강화한다.",
+                      "두 형태 모두 생산수단의 사적 소유를 같은 방식으로 확대한다.",
+                      "협동공장은 신용 없이 생기고 주식회사는 상품생산 없이 생긴다."
                     ],
                     "en": [
-                      "Assumes large borrowing always guarantees real returns of the same scale.",
-                      "Treats credit and speculation as entirely unrelated.",
-                      "It misses that credit increases coordinating power while also expanding overproduction, speculation, and chains of insolvency.",
-                      "Explains capital concentration only by individual capitalist saving."
+                      "The joint-stock company reveals the contradiction negatively within private appropriation, while the cooperative positively points toward associated labour using its own means.",
+                      "Joint-stock companies abolish exploitation because workers hold shares, while cooperatives strengthen capitalism because banks run them.",
+                      "Both forms expand private ownership of means of production in the same way.",
+                      "Cooperatives arise without credit, while joint-stock companies arise without commodity production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용은 조정능력을 키우지만 동시에 과잉생산, 투기, 지급불능의 연쇄를 확대할 수 있다는 점을 놓친다. 마르크스의 비판은 금융 현상의 현실성을 부정하지 않고, 그 현실성이 어떤 생산관계에 의존하는지 밝힌다.",
-                    "en": "It misses that credit increases coordinating power while also expanding overproduction, speculation, and chains of insolvency. Marx does not deny financial phenomena; he shows which production relations they depend on."
-                  }
+                    "ko": "마르크스는 둘을 단순히 동일시하지 않는다. 주식회사는 자본주의 안의 사회화이고, 협동공장은 낡은 형식 안에서 새 생산양식의 싹을 보여준다.",
+                    "en": "Marx does not simply identify the two. The joint-stock company is socialization inside capitalism, while the cooperative shows a germ of a new mode of production within the old form."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "클라우드 기업이 미래 매출을 담보로 대규모 차입을 해 설비를 선점한다. 무엇을 분석해야 하는가?",
-                    "en": "A cloud company borrows heavily against future revenue to pre-empt capacity. What should be analyzed?"
+                    "ko": "대형 플랫폼 기업이 이용자 데이터와 미래 매출 전망을 근거로 계속 자금을 조달한다. 27장의 관점은 무엇을 묻는가?",
+                    "en": "A large platform firm keeps raising funds based on user data and expected future revenue. What does Chapter 27 ask us to examine?"
                   },
                   "choices": {
                     "ko": [
-                      "자본집중을 개별 기업가의 저축만으로 설명한다.",
-                      "신용과 투기를 충분히 구분되한 것으로 본다.",
-                      "신용이 자본집중과 선투자를 가능하게 하면서 미래 잉여가치 실현 실패에 어떤 위기를 쌓는지 봐야 한다.",
-                      "신용은 자본주의 위기를 없애는 순수한 조정장치라고 본다."
+                      "신용이 현재의 확장을 가능하게 하는 동시에 미래 가치실현 실패의 부담을 어느 청구권 사슬에 쌓는지 살핀다.",
+                      "이용자 수가 늘면 그 자체로 평균이윤율이 안정되는지를 계산한다.",
+                      "데이터가 축적되면 생산수단의 사적 소유가 이미 사회적 소유로 바뀌었는지 확인한다.",
+                      "플랫폼 주가가 오르면 같은 규모의 현실 생산자본이 추가되었는지 산정한다."
                     ],
                     "en": [
-                      "Explains capital concentration only by individual capitalist saving.",
-                      "Treats credit and speculation as entirely unrelated.",
-                      "One should examine how credit enables concentration and advance investment while building crisis risk if future surplus-value is not realized.",
-                      "Treats credit as a pure coordinating device that abolishes capitalist crisis."
+                      "It examines how credit enables present expansion while loading the risk of failed future realization onto chains of claims.",
+                      "It calculates whether a larger user base stabilizes the average profit rate by itself.",
+                      "It checks whether accumulated data has already changed private ownership of means of production into social ownership.",
+                      "It estimates whether a rise in platform share prices has added the same amount of real productive capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용이 자본집중과 선투자를 가능하게 하면서 미래 잉여가치 실현 실패에 어떤 위기를 쌓는지 봐야 한다. 현대 사례도 수익의 표면형태와 그 배후의 잉여가치 분배를 나누어 읽어야 한다.",
-                    "en": "One should examine how credit enables concentration and advance investment while building crisis risk if future surplus-value is not realized. Modern cases must also separate the surface form of revenue from the distribution of surplus-value behind it."
-                  }
+                    "ko": "현대 사례에서도 핵심은 신용이 확장을 가능하게 하는 방식과 그 확장이 어떤 실현 조건에 기대는가다. 기대수익은 현재의 자금조달을 가능하게 하지만 위기 조건도 만든다.",
+                    "en": "In modern cases, the issue is how credit enables expansion and what conditions of realization that expansion depends on. Expected returns can finance the present while creating crisis conditions."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "신용의 역할의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of credit’s role?"
+                    "ko": "27장의 결론에서 신용의 역사적 의미는 무엇인가?",
+                    "en": "What is the historical significance of credit in Chapter 27’s conclusion?"
                   },
                   "choices": {
                     "ko": [
-                      "자본집중을 개별 기업가의 저축만으로 설명한다.",
-                      "신용은 자본주의 위기를 없애는 순수한 조정장치라고 본다.",
-                      "주식회사는 자본주의적 착취를 그 자체로 폐지한다고 본다.",
-                      "신용을 자본주의 발전의 가속장치이자 모순 증폭장치로 제시해, 화폐자본과 현실자본의 괴리 분석으로 넘어간다."
+                      "생산력과 세계시장을 발전시키면서 동시에 위기와 해체 요소를 앞당기는 모순적 역사적 수단이다.",
+                      "자본주의적 생산의 장벽을 제거해 균형성장을 보장하는 제도적 완성이다.",
+                      "사적 소유를 강화해 결합노동의 가능성을 생산과정 밖으로 밀어내는 장치다.",
+                      "화폐유통을 단순화해 은행자본의 분석 필요성을 줄이는 부속 제도다."
                     ],
                     "en": [
-                      "Explains capital concentration only by individual capitalist saving.",
-                      "Treats credit as a pure coordinating device that abolishes capitalist crisis.",
-                      "Assumes joint-stock companies automatically abolish capitalist exploitation.",
-                      "It presents credit as both an accelerator of capitalist development and an amplifier of contradictions, leading to the analysis of money-capital versus real capital."
+                      "It is a contradictory historical means that develops productive forces and the world market while hastening crises and elements of dissolution.",
+                      "It is an institutional completion that removes the barriers of capitalist production and guarantees balanced growth.",
+                      "It strengthens private ownership and pushes the possibility of associated labour outside production.",
+                      "It is an auxiliary institution that simplifies money circulation and reduces the need to analyse bank capital."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용을 자본주의 발전의 가속장치이자 모순 증폭장치로 제시해, 화폐자본과 현실자본의 괴리 분석으로 넘어간다. 이 체계적 위치가 뒤의 은행자본과 화폐자본/현실자본 분석으로 이어진다.",
-                    "en": "It presents credit as both an accelerator of capitalist development and an amplifier of contradictions, leading to the analysis of money-capital versus real capital. This systematic position leads into the later analysis of bank capital and money-capital versus real capital."
-                  }
+                    "ko": "신용은 자본주의의 역사적 사명을 수행하게 하는 장치이면서 그 한계를 폭발적으로 드러낸다. 그래서 마르크스에게 신용 찬양과 신용 부정은 모두 부족하다.",
+                    "en": "Credit enables capitalism to perform its historical mission while explosively revealing its limits. For Marx, both praise of credit and simple rejection of it are insufficient."
+                  },
+                  "points": 3
                 }
               ]
             }
@@ -28838,142 +28838,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "투크와 풀러턴 논의에서 마르크스가 붙드는 핵심 구분은 무엇인가?",
-                    "en": "What key distinction does Marx hold onto in discussing Tooke and Fullarton?"
+                    "ko": "28장에서 마르크스가 투크와 풀러턴 논의에서 붙드는 핵심 구분은 무엇인가?",
+                    "en": "What core distinction does Marx hold onto in his discussion of Tooke and Fullarton in Chapter 28?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 화폐라도 단순 지급·유통수단으로 기능할 때와 가치증식을 위해 대부되는 자본으로 기능할 때를 구분해야 한다.",
-                      "돈은 대체로 자본이므로 어떤 지불이든 같은 기능을 한다고 본다.",
-                      "지급 기술이 빨라지면 그 자체로 새로운 가치가 생긴다고 본다.",
-                      "위기는 대체로 유통화폐 수량 부족만으로 설명된다고 본다."
+                      "같은 화폐라도 수입의 유통을 매개할 때와 자본의 이전·전진을 매개할 때 기능이 다르다는 구분이다.",
+                      "금화는 주로 소매 유통에, 은행권은 주로 생산적 거래에 배치된다는 구분이다.",
+                      "소매거래의 돈은 자본이고 도매거래의 돈은 수입이라는 구분이다.",
+                      "지급수단은 상품가치를 만들고 구매수단은 상품가치를 없앤다는 구분이다."
                     ],
                     "en": [
-                      "The same money must be distinguished when it functions as a mere means of payment or circulation and when it functions as capital lent for valorization.",
-                      "Treats money as always capital, so every payment has the same function.",
-                      "Assumes faster payment technology itself creates new value.",
-                      "Explains every crisis only by a shortage in the quantity of currency."
+                      "The same money functions differently when mediating the circulation of revenue and when mediating the transfer or advance of capital.",
+                      "Gold coin is placed mainly in retail circulation, while banknotes are placed mainly in productive transactions.",
+                      "Money in retail trade is capital while money in wholesale trade is revenue.",
+                      "Means of payment create commodity value while means of purchase abolish it."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "같은 화폐라도 단순 지급·유통수단으로 기능할 때와 가치증식을 위해 대부되는 자본으로 기능할 때를 구분해야 한다. 이 장의 출발점은 화폐의 물질형태가 아니라 사회적 기능이다. 같은 돈도 지불을 끝내는 수단일 수도 있고, 이자를 낳는 자본으로 전진될 수도 있다.",
-                    "en": "The same money must be distinguished when it functions as a mere means of payment or circulation and when it functions as capital lent for valorization. The chapter begins from money’s social function, not its material form. The same money can settle a payment or be advanced as interest-bearing capital."
-                  }
+                    "ko": "마르크스는 물질형태가 아니라 기능을 본다. 같은 지폐나 금화도 수입 지출을 매개할 수 있고, 자본의 이전을 매개할 수도 있다.",
+                    "en": "Marx looks at function rather than material form. The same note or coin can mediate expenditure of revenue or transfer of capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "유통수단으로서의 돈과 대부자본으로서의 돈이 헷갈리면 어떤 오류가 생기는가?",
-                    "en": "What error follows if money as currency is confused with money as loanable capital?"
+                    "ko": "화폐량 문제를 기능 구분 없이 다루면 어떤 혼동이 생기는가?",
+                    "en": "What confusion arises if the quantity of money is discussed without distinguishing functions?"
                   },
                   "choices": {
                     "ko": [
-                      "거래를 결제하려는 화폐수요와 이윤을 얻기 위해 빌리는 자본수요를 같은 현상으로 보게 된다.",
-                      "중앙은행이 지폐를 더 찍기만 하면 이윤율과 자본수요가 그 자체로 해결된다고 본다.",
-                      "지급 기술이 빨라지면 그 자체로 새로운 가치가 생긴다고 본다.",
-                      "은행 준비금이 곧바로 공장과 노동력으로 움직이는 생산자본이라고 본다."
+                      "소비자 지출, 임금 지급, 상인 간 결제, 대부자본 수요를 모두 같은 “통화량” 문제로 합쳐 버린다.",
+                      "상품가격의 합계와 지급잔액이 유통화폐량에 영향을 준다는 점을 과도하게 강조한다.",
+                      "같은 화폐가 여러 번 회전할 수 있다는 사실을 유통속도 분석에 넣게 된다.",
+                      "수입의 유통과 자본의 유통이 재생산 과정에서 연결되어 있다는 점을 보게 된다."
                     ],
                     "en": [
-                      "One treats demand for money to settle transactions and demand for capital to earn profit as the same phenomenon.",
-                      "Assumes that merely issuing more notes automatically solves profitability and demand for capital.",
-                      "Assumes faster payment technology itself creates new value.",
-                      "Treats bank reserves as productive capital directly operating factories and labour-power."
+                      "Consumer spending, wage payments, settlements among merchants, and demand for loan capital are all merged into one problem of “currency.”",
+                      "The sum of commodity prices and payment balances are overemphasized as affecting money in circulation.",
+                      "The fact that the same money can turn over several times is included in the analysis of velocity.",
+                      "The circulation of revenue and capital is seen as connected inside reproduction."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "거래를 결제하려는 화폐수요와 이윤을 얻기 위해 빌리는 자본수요를 같은 현상으로 보게 된다. 마르크스의 비판은 기능 구분을 흐리는 데 향한다. 결제수단 부족과 대부자본 부족은 연결될 수 있지만 같은 말은 아니다.",
-                    "en": "One treats demand for money to settle transactions and demand for capital to earn profit as the same phenomenon. Marx criticizes the blurring of functions. A shortage of means of payment and a shortage of loanable capital can be connected, but they are not identical."
-                  }
+                    "ko": "마르크스는 통화량이 가격합계, 지급잔액, 회전속도와 관련된다는 점을 인정한다. 문제는 서로 다른 기능을 “통화 대 자본”이라는 잘못된 대립으로 바꾸는 데 있다.",
+                    "en": "Marx accepts that the quantity of currency relates to price sums, payment balances, and velocity. The problem is turning different functions into a false opposition between currency and capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "한 기업이 임금을 지급할 때의 은행이체와 설비 확대를 위한 신용한도는 어떻게 다르게 읽어야 하는가?",
-                    "en": "How should a wage payment by bank transfer differ from a credit line for expanding equipment?"
+                    "ko": "임금으로 지급된 돈이 소매상에게 갔다가 은행예금으로 돌아오는 사례는 무엇을 보여주는가?",
+                    "en": "What is shown by money paid as wages moving to retailers and then returning as bank deposits?"
                   },
                   "choices": {
                     "ko": [
-                      "돈은 대체로 자본이므로 어떤 지불이든 같은 기능을 한다고 본다.",
-                      "전자는 이미 발생한 지급을 결제하는 유통·지급 기능이고, 후자는 미래 가치증식을 기대하며 자본을 전진시키는 기능이다.",
-                      "거래용 화폐수요와 대부자본 수요를 같은 것으로 본다.",
-                      "지급 기술이 빨라지면 그 자체로 새로운 가치가 생긴다고 본다."
+                      "같은 화폐가 수입의 유통과 자본의 화폐형태 회복을 차례로 수행할 수 있다.",
+                      "임금 지급에 쓰인 돈은 은행으로 돌아오는 순간 생산수단으로 전환된다.",
+                      "노동자의 소비는 상인의 자본을 줄이고 은행의 자기자본을 늘린다.",
+                      "소매거래의 돈은 재생산 과정과 접점이 없는 독립 통화다."
                     ],
                     "en": [
-                      "Treats money as always capital, so every payment has the same function.",
-                      "The former settles an already due payment; the latter advances capital in expectation of future valorization.",
-                      "Identifies transaction demand for money with demand for loanable capital.",
-                      "Assumes faster payment technology itself creates new value."
+                      "The same money can successively mediate the circulation of revenue and restore the money-form of a merchant’s capital.",
+                      "Money used for wages turns into means of production the moment it returns to the bank.",
+                      "Workers’ consumption reduces merchant capital and increases bank equity.",
+                      "Money in retail trade is an independent currency with no connection to reproduction."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "전자는 이미 발생한 지급을 결제하는 유통·지급 기능이고, 후자는 미래 가치증식을 기대하며 자본을 전진시키는 기능이다. 형식은 모두 은행 장부의 이동처럼 보일 수 있다. 하지만 자본주의 분석에서는 그 돈이 어떤 회로 안에서 기능하는지가 결정적이다.",
-                    "en": "The former settles an already due payment; the latter advances capital in expectation of future valorization. Both may look like movements on bank ledgers. For capitalist analysis, the decisive point is the circuit in which the money functions."
-                  }
+                    "ko": "이 세부는 투크식 구분의 약점을 드러낸다. 돈은 노동자에게는 수입 지출 수단이지만, 소매상에게 돌아오면 자본의 화폐형태를 회복시킨다.",
+                    "en": "This detail exposes the weakness of Tooke’s distinction. Money is a means of revenue expenditure for workers, but when it returns to the retailer it restores the money-form of capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "투크와 풀러턴에 대한 마르크스의 비판이 겨냥하는 것은 무엇인가?",
-                    "en": "What does Marx’s criticism of Tooke and Fullarton target?"
+                    "ko": "위기 때 은행권 수요가 늘어나는 현상을 28장은 어떻게 읽는가?",
+                    "en": "How does Chapter 28 read the increased demand for banknotes during crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "위기는 대체로 유통화폐 수량 부족만으로 설명된다고 본다.",
-                      "은행 준비금이 곧바로 공장과 노동력으로 움직이는 생산자본이라고 본다.",
-                      "화폐의 기술적 이동이 비슷하다는 이유로 유통수단, 지급수단, 자본 기능의 차이를 충분히 구분하지 못하는 점이다.",
-                      "지급 기술이 빨라지면 그 자체로 새로운 가치가 생긴다고 본다."
+                      "유통수단 일반보다 만기 지급을 끝낼 현금과 준비금에 대한 수요가 커지는 현상으로 읽는다.",
+                      "소비가 늘어 소매거래용 동전 수요가 정상적으로 증가한 현상으로 읽는다.",
+                      "상품재고가 부족해 생산자본이 물리적으로 모자란 결과로 읽는다.",
+                      "금리가 낮아져 모든 차입자가 장기투자를 시작한 결과로 읽는다."
                     ],
                     "en": [
-                      "Explains every crisis only by a shortage in the quantity of currency.",
-                      "Treats bank reserves as productive capital directly operating factories and labour-power.",
-                      "It targets their failure to distinguish sufficiently between currency, means of payment, and capital functions just because the technical movement of money may look similar.",
-                      "Assumes faster payment technology itself creates new value."
+                      "It is read as a demand for cash and reserves to settle due payments rather than for circulation in general.",
+                      "It is read as a normal increase in demand for retail coin caused by higher consumption.",
+                      "It is read as the result of a physical shortage of productive capital caused by scarce inventories.",
+                      "It is read as the result of low interest rates leading all borrowers into long-term investment."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "화폐의 기술적 이동이 비슷하다는 이유로 유통수단, 지급수단, 자본 기능의 차이를 충분히 구분하지 못하는 점이다. 마르크스는 화폐량 논쟁을 단순히 반복하지 않는다. 그는 같은 화폐형태 안에서 다른 사회적 관계가 작동한다는 점을 드러낸다.",
-                    "en": "It targets their failure to distinguish sufficiently between currency, means of payment, and capital functions just because the technical movement of money may look similar. Marx is not simply repeating a quantity-of-money debate. He shows that different social relations operate within the same money form."
-                  }
+                    "ko": "마르크스는 위기 때 돈이 절대적 가치형태로 요구된다는 점을 강조한다. 여기서 문제는 단순 구매수단보다 지급수단과 준비금의 압박이다.",
+                    "en": "Marx stresses that in crisis money is demanded as the absolute form of value. The pressure concerns means of payment and reserves more than simple means of purchase."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "이 장이 은행자본 분석으로 넘어가기 전에 정리하는 이론적 발판은 무엇인가?",
-                    "en": "What theoretical footing does this chapter establish before the analysis of bank capital?"
+                    "ko": "28장이 29장의 은행자본 분석으로 넘어가기 전에 마련하는 기준은 무엇인가?",
+                    "en": "What criterion does Chapter 28 establish before moving to bank capital in Chapter 29?"
                   },
                   "choices": {
                     "ko": [
-                      "위기는 대체로 유통화폐 수량 부족만으로 설명된다고 본다.",
-                      "돈은 대체로 자본이므로 어떤 지불이든 같은 기능을 한다고 본다.",
-                      "은행 대차대조표 총액이 곧 사회의 현실적 생산부라고 본다.",
-                      "화폐형태가 같아 보여도 그것이 유통수단인지 자본인지 기능을 따져야 은행의 자산과 청구권을 제대로 볼 수 있다는 점이다."
+                      "은행 장부의 돈과 증권을 볼 때, 그것이 유통수단인지 지급수단인지 대부자본인지 기능을 먼저 따지는 기준이다.",
+                      "은행권 발행량을 사회 전체의 현실자본량과 같은 것으로 놓는 기준이다.",
+                      "소매유통에서 움직이는 돈을 은행자본의 유일한 구성부분으로 보는 기준이다.",
+                      "금 보유고가 증가하면 모든 신용위기가 끝난다는 기준이다."
                     ],
                     "en": [
-                      "Explains every crisis only by a shortage in the quantity of currency.",
-                      "Treats money as always capital, so every payment has the same function.",
-                      "Equates a bank balance-sheet total with society’s real productive wealth.",
-                      "Even when the money-form looks the same, one must ask whether it functions as currency or capital in order to understand bank assets and claims."
+                      "When looking at bank money and securities, one must first ask whether they function as means of circulation, means of payment, or loan capital.",
+                      "Banknote issue is treated as identical with the total amount of real capital in society.",
+                      "Money moving in retail circulation is treated as the sole component of bank capital.",
+                      "An increase in gold reserves is taken to end every credit crisis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "화폐형태가 같아 보여도 그것이 유통수단인지 자본인지 기능을 따져야 은행의 자산과 청구권을 제대로 볼 수 있다는 점이다. 은행자본은 현금, 예금, 대출, 증권, 지급청구권이 뒤섞여 보인다. 그래서 기능 구분이 다음 장의 전제가 된다.",
-                    "en": "Even when the money-form looks the same, one must ask whether it functions as currency or capital in order to understand bank assets and claims. Bank capital appears as a mix of cash, deposits, loans, securities, and claims. Functional distinction is therefore the premise of the next chapter."
-                  }
+                    "ko": "28장의 기능 구분이 없으면 은행자본의 구성부분을 현실자본처럼 착각하기 쉽다. 그래서 29장의 청구권 분석으로 넘어갈 발판이 된다.",
+                    "en": "Without Chapter 28’s functional distinction, it is easy to mistake components of bank capital for real capital. This prepares Chapter 29’s analysis of claims."
+                  },
+                  "points": 2
                 }
               ]
             },
@@ -28988,142 +28988,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "유통수단과 자본의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension between means of circulation and capital?"
+                    "ko": "투크의 “currency”와 “capital” 구분이 마르크스에게 불충분한 이유는 무엇인가?",
+                    "en": "Why is Tooke’s distinction between “currency” and “capital” insufficient for Marx?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐의 장부상 이동은 비슷해 보여도, 한 경우에는 결제를 끝내고 다른 경우에는 잉여가치 획득을 위한 자본관계를 시작한다.",
-                      "위기는 대체로 유통화폐 수량 부족만으로 설명된다고 본다.",
-                      "지급 기술이 빨라지면 그 자체로 새로운 가치가 생긴다고 본다.",
-                      "돈은 대체로 자본이므로 어떤 지불이든 같은 기능을 한다고 본다."
+                      "수입의 유통과 자본의 유통을 구분하려다 화폐의 기능 차이를 통화와 자본이라는 두 물건의 차이처럼 만들기 때문이다.",
+                      "수입의 유통과 자본의 유통을 모두 상품생산 밖의 자연교환으로 설명하기 때문이다.",
+                      "은행권을 금속화폐보다 더 안정적인 가치척도로 제시하기 때문이다.",
+                      "상인 간 거래와 소비자 거래의 연결을 지나치게 강조해 기능 구분을 강화하기 때문이다."
                     ],
                     "en": [
-                      "The ledger movement of money may look similar, yet in one case it closes a payment and in another it begins a capital relation aimed at surplus-value.",
-                      "Explains every crisis only by a shortage in the quantity of currency.",
-                      "Assumes faster payment technology itself creates new value.",
-                      "Treats money as always capital, so every payment has the same function."
+                      "It tries to distinguish circulation of revenue and capital but turns functional differences of money into a difference between two things, currency and capital.",
+                      "It explains both circulation of revenue and capital as natural exchange outside commodity production.",
+                      "It presents banknotes as a more stable measure of value than metallic money.",
+                      "It overemphasizes the connection between merchant trade and consumer trade and strengthens functional distinctions."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "화폐의 장부상 이동은 비슷해 보여도, 한 경우에는 결제를 끝내고 다른 경우에는 잉여가치 획득을 위한 자본관계를 시작한다. 이 긴장을 놓치면 금융시장 긴장을 단순 화폐량 문제로만 읽게 된다. 마르크스는 기능과 회로를 통해 차이를 잡는다.",
-                    "en": "The ledger movement of money may look similar, yet in one case it closes a payment and in another it begins a capital relation aimed at surplus-value. Missing this tension reduces financial strain to a mere quantity-of-money problem. Marx grasps the difference through function and circuit."
-                  }
+                    "ko": "마르크스의 비판은 구분 자체를 버리는 것이 아니다. 같은 화폐가 여러 회로에서 다른 기능을 수행한다는 점을 더 정확히 붙드는 것이다.",
+                    "en": "Marx’s criticism does not discard distinction as such. It holds more precisely that the same money performs different functions in different circuits."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "지급수단 부족이 곧 생산적 자본 부족과 동일하지 않은 이유는 무엇인가?",
-                    "en": "Why is a shortage of means of payment not simply identical with a shortage of productive capital?"
+                    "ko": "Fullarton이 공황기의 은행권 수요를 “유통”이 아니라고 처리할 때 빠지는 것은 무엇인가?",
+                    "en": "What is missed when Fullarton treats crisis demand for banknotes as not “circulation”?"
                   },
                   "choices": {
                     "ko": [
-                      "거래용 화폐수요와 대부자본 수요를 같은 것으로 본다.",
-                      "지급수단 부족은 만기와 결제의 문제일 수 있지만, 생산적 자본 부족은 수익성 있게 투입될 수단과 노동력의 문제이기 때문이다.",
-                      "은행 준비금이 곧바로 공장과 노동력으로 움직이는 생산자본이라고 본다.",
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다고 본다."
+                      "공황기에는 은행권이 구매수단보다 지급수단과 비축수단으로 요구되며, 이것도 화폐 기능의 핵심 국면이라는 점이다.",
+                      "공황기에는 소비재 구매가 크게 늘어 소매유통이 호황보다 활발해진다는 점이다.",
+                      "공황기 은행권은 상품가격을 직접 높여 과잉생산을 해결한다는 점이다.",
+                      "공황기 은행권 수요는 노동자의 임금 상승에서 주로 나온다는 점이다."
                     ],
                     "en": [
-                      "Identifies transaction demand for money with demand for loanable capital.",
-                      "A shortage of means of payment can be a problem of maturity and settlement, whereas a shortage of productive capital concerns means of production and labour-power that can be profitably employed.",
-                      "Treats bank reserves as productive capital directly operating factories and labour-power.",
-                      "Assumes all savings automatically become productive investment."
+                      "In panic, banknotes are demanded as means of payment and reserve more than as means of purchase, and this is a core phase of money’s function.",
+                      "In panic, consumer-goods purchases rise sharply and retail circulation becomes more active than in prosperity.",
+                      "In panic, banknotes directly raise commodity prices and resolve overproduction.",
+                      "In panic, demand for banknotes mainly comes from workers’ wage increases."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "지급수단 부족은 만기와 결제의 문제일 수 있지만, 생산적 자본 부족은 수익성 있게 투입될 수단과 노동력의 문제이기 때문이다. 둘은 위기 속에서 결합될 수 있다. 그러나 분석적으로는 결제의 병목과 현실 축적의 조건을 구분해야 한다.",
-                    "en": "A shortage of means of payment can be a problem of maturity and settlement, whereas a shortage of productive capital concerns means of production and labour-power that can be profitably employed. The two can combine in crisis. Analytically, however, settlement bottlenecks must be distinguished from the conditions of real accumulation."
-                  }
+                    "ko": "이 디테일은 28장의 중요한 대목이다. 공황기의 현금 수요는 “정상 유통” 밖의 우연이 아니라 지급사슬이 끊길 때 화폐가 절대적 형태로 요구되는 현상이다.",
+                    "en": "This detail is important in Chapter 28. Crisis demand for cash is not an accident outside “normal circulation,” but the demand for money as absolute form when payment chains break."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "스테이블코인 결제와 벤처 신용한도를 같은 금융혁신으로만 보면 무엇을 놓치는가?",
-                    "en": "What is missed if stablecoin payments and a venture credit line are treated merely as the same financial innovation?"
+                    "ko": "금 유출이 위기의 원인처럼 보일 때, 마르크스가 덧붙이는 구분은 무엇인가?",
+                    "en": "What distinction does Marx add when gold drain appears to be the cause of crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "지급 기술이 빨라지면 그 자체로 새로운 가치가 생긴다고 본다.",
-                      "돈은 대체로 자본이므로 어떤 지불이든 같은 기능을 한다고 본다.",
-                      "하나는 지급·유통 기능을 수행하고, 다른 하나는 미래 수익을 전제로 자본을 대부하는 관계라는 차이다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다."
+                      "금은 국제 지급수단으로 요구되지만, 이 현상은 상품자본이나 생산자본의 일반적 부족과 구별된다.",
+                      "금 유출은 소비재 부족에서 주로 시작되어 상품시장 과잉과 별도 경로를 갖는다.",
+                      "금은 국내 소매유통의 보조동전 역할에 가까워 위기 분석의 주변에 놓인다.",
+                      "금 유출이 생기면 은행 준비금과 산업재고가 같은 방향으로 증가한다."
                     ],
                     "en": [
-                      "Assumes faster payment technology itself creates new value.",
-                      "Treats money as always capital, so every payment has the same function.",
-                      "One performs a payment or circulation function, while the other lends capital on the premise of future returns.",
-                      "Assumes confidence alone creates value without actual realization."
+                      "Gold is demanded as international means of payment, but this phenomenon is distinct from a general shortage of commodity-capital or productive capital.",
+                      "Gold drain mainly begins from a shortage of consumer goods and follows a path separate from overstocked commodity markets.",
+                      "Gold is close to a supplementary coin in domestic retail circulation and belongs at the margins of crisis analysis.",
+                      "When gold drains occur, bank reserves and industrial inventories rise in the same direction."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "하나는 지급·유통 기능을 수행하고, 다른 하나는 미래 수익을 전제로 자본을 대부하는 관계라는 차이다. 현대 사례에서도 기술의 표면보다 기능이 중요하다. 결제 인프라와 대부자본 관계는 서로 다른 분석 대상을 만든다.",
-                    "en": "One performs a payment or circulation function, while the other lends capital on the premise of future returns. Even in modern cases, function matters more than technical appearance. Payment infrastructure and loanable-capital relations create different objects of analysis."
-                  }
+                    "ko": "마르크스는 위기 때 시장이 오히려 상품자본으로 넘쳐날 수 있다고 본다. 부족한 것은 종종 상품 일반이 아니라 국제 지급을 끝낼 화폐형태다.",
+                    "en": "Marx notes that markets can be overstocked with commodity-capital in crisis. What is scarce is often not commodities in general, but the money form needed for international payment."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "마르크스가 화폐수요를 기능별로 나누는 이유는 무엇인가?",
-                    "en": "Why does Marx divide demand for money by function?"
+                    "ko": "호황기에 임금과 소비가 늘어 통화수요가 증가하는 현상과, 위기 때 할인 요구가 커지는 현상은 어떻게 다르게 읽어야 하는가?",
+                    "en": "How should one distinguish increased currency demand in prosperity from increased discount demand in crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "거래용 화폐수요와 대부자본 수요를 같은 것으로 본다.",
-                      "위기는 대체로 유통화폐 수량 부족만으로 설명된다고 본다.",
-                      "위기 때 사람들이 원하는 것이 거래용 통화인지, 지급을 끝낼 현금인지, 이윤을 낳을 대부자본인지에 따라 원인과 효과가 달라지기 때문이다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다."
+                      "전자는 수입 지출과 거래량 확대에 따른 유통수단 수요이고, 후자는 만기 지급과 차환 압박에 따른 대부·지급수단 수요다.",
+                      "전자는 생산자본 부족이고, 후자는 소비자의 소매 구매가 늘어난 결과다.",
+                      "전자는 금 유출의 직접 결과이고, 후자는 임금 상승의 직접 결과다.",
+                      "두 현상 모두 같은 통화량 법칙으로 같은 사회관계를 표현한다."
                     ],
                     "en": [
-                      "Identifies transaction demand for money with demand for loanable capital.",
-                      "Explains every crisis only by a shortage in the quantity of currency.",
-                      "Because causes and effects differ depending on whether people need transaction currency, cash to settle payments, or loanable capital to produce profit.",
-                      "Treats finance as fully autonomous from production and realization."
+                      "The former is demand for means of circulation from expanded revenue spending and trade volume, while the latter is demand for loans and means of payment under maturity and refinancing pressure.",
+                      "The former is a shortage of productive capital, while the latter results from increased retail purchases by consumers.",
+                      "The former directly results from gold drain, while the latter directly results from wage increases.",
+                      "Both express the same social relation through the same law of currency quantity."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "위기 때 사람들이 원하는 것이 거래용 통화인지, 지급을 끝낼 현금인지, 이윤을 낳을 대부자본인지에 따라 원인과 효과가 달라지기 때문이다. 이 구분은 신용경색을 더 정밀하게 설명하게 한다. 모든 요구를 그냥 “돈 부족”으로 부르면 자본관계가 사라진다.",
-                    "en": "Because causes and effects differ depending on whether people need transaction currency, cash to settle payments, or loanable capital to produce profit. This distinction makes credit stringency more precise. Calling everything a “money shortage” erases the capital relation."
-                  }
+                    "ko": "28장의 요점은 “돈이 더 필요하다”는 말이 하나의 뜻을 갖지 않는다는 데 있다. 국면과 기능을 나눠야 위기 원인이 보인다.",
+                    "en": "The point of Chapter 28 is that “more money is needed” does not have one meaning. The phase and function must be distinguished to see the cause of crisis."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "같은 1억 원이 한 번은 임금 지급을 끝내고, 다른 한 번은 이자를 얻기 위해 대출된다. 이 차이를 설명하려면 무엇을 봐야 하는가?",
-                    "en": "The same 100 million won once settles wage payments and another time is lent to earn interest. What must be examined to explain the difference?"
+                    "ko": "28장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 28?"
                   },
                   "choices": {
                     "ko": [
-                      "돈은 대체로 자본이므로 어떤 지불이든 같은 기능을 한다.",
-                      "지급 기술이 빨라지면 그 자체로 새로운 가치가 생긴다.",
-                      "위기는 유통화폐 수량 부족만으로 설명된다.",
-                      "돈의 물질형태가 아니라 돈이 놓인 회로와 기능이 유통수단, 지급수단, 대부자본을 구별한다."
+                      "은행과 신용을 분석할 때 화폐의 기능, 대부자본의 수요, 현실자본의 상태를 섞지 않도록 범주를 정리한다.",
+                      "은행권 발행을 늘리면 현실자본 부족이 해결된다는 통화주의 결론을 마련한다.",
+                      "소매유통을 자본주의 재생산의 중심으로 놓아 산업자본 분석을 대체한다.",
+                      "금의 국제 지급기능을 배제하고 국내 통화량만으로 위기를 설명한다."
                     ],
                     "en": [
-                      "Money is always capital, so every payment has the same function.",
-                      "Faster payment technology creates new value by itself.",
-                      "Crisis is explained only by a shortage of circulating money.",
-                      "Not the material form of money, but the circuit and function in which it is placed distinguishes means of circulation, means of payment, and loan capital."
+                      "It clarifies categories so that the functions of money, demand for loan capital, and the state of real capital are not mixed in analysing banks and credit.",
+                      "It prepares a currency-theory conclusion that issuing more banknotes resolves shortages of real capital.",
+                      "It replaces the analysis of industrial capital by placing retail circulation at the center of capitalist reproduction.",
+                      "It excludes gold’s function as international means of payment and explains crisis only by domestic currency quantity."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "투크와 풀러턴 비판의 요점은 같은 화폐형태 아래 다른 사회적 기능이 있다는 데 있다. 결제를 끝내는 돈과 이자를 낳도록 전진되는 돈을 구분해야 신용경색도 단순한 “돈 부족”으로 환원하지 않는다.",
-                    "en": "The point of the critique of Tooke and Fullarton is that different social functions exist under the same money form. Distinguishing money that settles payment from money advanced to bear interest prevents credit tightness from being reduced to a simple “lack of money.”"
-                  }
+                    "ko": "이 장은 다음의 은행자본 분석을 위한 정리 장이다. 마르크스는 화폐량 논쟁을 넘어, 같은 화폐형태 안에서 다른 자본관계가 작동한다는 점을 세운다.",
+                    "en": "This chapter organizes the ground for the analysis of bank capital. Marx moves beyond currency-quantity debate by showing different capital relations inside the same money form."
+                  },
+                  "points": 3
                 }
               ]
             }
@@ -29193,142 +29193,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "은행자본의 구성부분을 분석할 때 먼저 보아야 할 점은 무엇인가?",
-                    "en": "What must be seen first when analyzing the component parts of bank capital?"
+                    "ko": "29장에서 은행자본의 구성부분으로 먼저 제시되는 것은 무엇인가?",
+                    "en": "What components of bank capital are first presented in Chapter 29?"
                   },
                   "choices": {
                     "ko": [
-                      "은행의 자산에는 현금과 준비금뿐 아니라 대출, 어음, 증권처럼 미래 지급에 대한 청구권이 포함된다는 점이다.",
-                      "예금은 모두 은행이 자기 자본으로 소유한 것이라고 본다.",
-                      "증권 가격은 같은 금액의 기계와 원료가 새로 존재한다는 뜻이라고 본다.",
-                      "준비금, 자기자본, 예금을 모두 같은 항목으로 본다."
+                      "현금과 준비금, 어음 같은 상업증권, 국채·주식 같은 이자 낳는 증권이다.",
+                      "공장 설비, 원료 재고, 노동자의 생활수단 세 가지다.",
+                      "소매점 동전, 노동자 임금, 토지 지대 세 가지다.",
+                      "은행장의 개인재산, 고객 소비지출, 국가 조세수입이다."
                     ],
                     "en": [
-                      "Bank assets include not only cash and reserves but also claims on future payment such as loans, bills, and securities.",
-                      "Assumes all deposits are capital owned outright by the bank.",
-                      "Treats securities prices as proof that the same amount of machinery and materials newly exists.",
-                      "Treats reserves, equity capital, and deposits as the same balance-sheet item."
+                      "Cash and reserves, commercial paper such as bills, and interest-bearing securities such as government bonds and shares.",
+                      "Factory equipment, raw-material stocks, and workers’ means of subsistence.",
+                      "Retail coins, workers’ wages, and ground rent.",
+                      "The banker’s private property, customers’ consumption spending, and state tax revenue."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "은행의 자산에는 현금과 준비금뿐 아니라 대출, 어음, 증권처럼 미래 지급에 대한 청구권이 포함된다는 점이다. 은행자본의 상당 부분은 직접적인 현실자본이 아니라 청구권의 형태를 띤다. 이 점이 은행자본의 특수한 성격을 만든다.",
-                    "en": "Bank assets include not only cash and reserves but also claims on future payment such as loans, bills, and securities. A large part of bank capital takes the form of claims rather than direct real capital. This gives bank capital its special character."
-                  }
+                    "ko": "은행자본은 현금만으로 이루어지지 않는다. 중요한 부분은 미래 지급과 수입에 대한 청구권으로, 이것이 현실자본과 혼동되기 쉽다.",
+                    "en": "Bank capital is not made only of cash. A major part consists of claims to future payment and revenue, which can easily be confused with real capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
                     "ko": "예금과 은행 자기자본을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must deposits be distinguished from a bank’s own capital?"
+                    "en": "Why must deposits be distinguished from bank equity?"
                   },
                   "choices": {
                     "ko": [
-                      "예금은 은행의 부채로서 고객에게 갚아야 할 돈이고, 자기자본은 손실을 흡수하는 소유자의 몫이기 때문이다.",
-                      "은행 대차대조표 총액이 곧 사회의 현실적 생산부라고 본다.",
-                      "예금은 모두 은행이 자기 자본으로 소유한 것이라고 본다.",
-                      "은행 준비금이 곧바로 공장과 노동력으로 움직이는 생산자본이라고 본다."
+                      "예금은 은행이 갚아야 할 부채이고, 자기자본은 손실을 흡수하는 소유자의 몫이다.",
+                      "예금은 생산수단이고 자기자본은 소비재라서 서로 다른 상품군에 속한다.",
+                      "예금은 노동자가 만든 가치이고 자기자본은 자연이 만든 가치다.",
+                      "예금은 은행권으로 바뀌면 부채 성격을 잃고 순자산이 된다."
                     ],
                     "en": [
-                      "Deposits are liabilities owed to customers, while equity capital is the owners’ share that absorbs losses.",
-                      "Equates a bank balance-sheet total with society’s real productive wealth.",
-                      "Assumes all deposits are capital owned outright by the bank.",
-                      "Treats bank reserves as productive capital directly operating factories and labour-power."
+                      "Deposits are liabilities the bank must repay, while equity is the owners’ share that absorbs losses.",
+                      "Deposits are means of production and equity is consumer goods, so they belong to different commodity groups.",
+                      "Deposits are value created by workers while equity is value created by nature.",
+                      "When deposits become banknotes, they lose their liability character and become net assets."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "예금은 은행의 부채로서 고객에게 갚아야 할 돈이고, 자기자본은 손실을 흡수하는 소유자의 몫이기 때문이다. 은행 장부에서 예금은 자금 원천처럼 기능하지만 은행의 순자산은 아니다. 이 구분 없이는 은행자본이 과장되어 보인다.",
-                    "en": "Deposits are liabilities owed to customers, while equity capital is the owners’ share that absorbs losses. Deposits function as a funding source on bank ledgers but are not the bank’s net asset. Without this distinction bank capital appears inflated."
-                  }
+                    "ko": "은행 장부에서 예금은 대출의 자금 원천처럼 보인다. 하지만 은행의 순자산이 아니므로, 이를 자기자본과 섞으면 은행자본이 과장된다.",
+                    "en": "On a bank balance sheet, deposits appear as a funding source for loans. But they are not the bank’s net assets, so mixing them with equity exaggerates bank capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "은행이 보유한 국채나 회사채가 현실 생산자본과 같은 것이 아닌 이유는 무엇인가?",
-                    "en": "Why are government bonds or corporate bonds held by a bank not the same as real productive capital?"
+                    "ko": "국채가 가공자본의 전형적 사례가 되는 이유는 무엇인가?",
+                    "en": "Why is public debt a typical example of fictitious capital?"
                   },
                   "choices": {
                     "ko": [
-                      "증권 가격은 같은 금액의 기계와 원료가 새로 존재한다는 뜻이라고 본다.",
-                      "그것들은 기계나 원료 자체가 아니라 미래 이자와 원금 지급에 대한 소유권·청구권이기 때문이다.",
-                      "대출 계약 자체가 생산과 무관하게 잉여가치를 직접 만든다고 본다.",
-                      "금융자산의 증가는 같은 규모의 공장 증가와 같다고 본다."
+                      "국가가 이미 써 버린 돈에 대한 청구권이 조세수입의 일부를 받을 권리로 거래되기 때문이다.",
+                      "국채를 사면 그 금액만큼 국가가 새 공장과 기계를 즉시 만든다.",
+                      "국채 이자는 조세와 생산관계에서 분리된 자연수익으로 지급된다.",
+                      "국채의 시장가격은 이자율과 수입의 신뢰도와 관계없이 명목가에 고정된다."
                     ],
                     "en": [
-                      "Treats securities prices as proof that the same amount of machinery and materials newly exists.",
-                      "They are not machinery or materials themselves, but property titles and claims to future interest and principal payments.",
-                      "Assumes the loan contract itself directly creates surplus-value apart from production.",
-                      "Equates growth of financial assets with the same growth of factories."
+                      "A claim on money already spent by the state is traded as a right to receive part of tax revenue.",
+                      "When public debt is bought, the state immediately creates new factories and machinery in that amount.",
+                      "Interest on public debt is paid as a natural return separate from taxation and production relations.",
+                      "The market price of public debt is fixed at par regardless of interest rates and reliability of income."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그것들은 기계나 원료 자체가 아니라 미래 이자와 원금 지급에 대한 소유권·청구권이기 때문이다. 증권은 은행에게 수익을 낳는 자산처럼 기능한다. 그러나 사회 전체로 보면 그것은 현실자본 위에 세워진 청구권이다.",
-                    "en": "They are not machinery or materials themselves, but property titles and claims to future interest and principal payments. Securities function as income-bearing assets for the bank. For society as a whole, however, they are claims built upon real capital."
-                  }
+                    "ko": "국채의 원래 자본은 국가 지출로 사라졌지만, 그 청구권은 매매 가능한 자본처럼 움직인다. 이 점이 가공자본의 성격을 잘 보여준다.",
+                    "en": "The original capital of public debt has disappeared in state expenditure, yet the claim moves as saleable capital. This clearly shows the character of fictitious capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "은행 대차대조표가 자본주의적 부를 과장해 보이게 하는 방식은 무엇인가?",
-                    "en": "How can a bank balance sheet make capitalist wealth appear inflated?"
+                    "ko": "주식 가격이 실제 기업 설비와 같은 자본이 아닌 이유는 무엇인가?",
+                    "en": "Why is a share price not the same capital as the firm’s actual equipment?"
                   },
                   "choices": {
                     "ko": [
-                      "은행 대차대조표 총액이 곧 사회의 현실적 생산부라고 본다.",
-                      "준비금, 자기자본, 예금을 모두 같은 항목으로 본다.",
-                      "같은 현실 가치 위에 예금, 대출채권, 증권 같은 여러 청구권이 겹쳐져 자본처럼 계산되기 때문이다.",
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다고 본다."
+                      "주식은 실제 자본이 낳을 잉여가치 일부에 대한 소유권이지, 같은 자본이 두 번 존재한다는 뜻이 아니다.",
+                      "주식 가격 상승은 기업의 기계와 원료 증가율을 대체로 반영한다.",
+                      "주식은 생산과정에 직접 투입되는 노동력의 물리적 단위다.",
+                      "주식거래는 상품거래와 달라 가격 변동보다 배당 절차가 중심에 놓인다."
                     ],
                     "en": [
-                      "Equates a bank balance-sheet total with society’s real productive wealth.",
-                      "Treats reserves, equity capital, and deposits as the same balance-sheet item.",
-                      "Multiple claims such as deposits, loan claims, and securities can be layered over the same real value and counted as capital.",
-                      "Assumes all savings automatically become productive investment."
+                      "A share is a title to a portion of surplus-value produced by actual capital; it does not mean the same capital exists twice.",
+                      "A rise in share prices broadly reflects the growth rate of the firm’s machinery and raw materials.",
+                      "A share is a physical unit of labour-power directly inserted into production.",
+                      "Unlike commodity trade, share trade centers more on dividend procedure than price movement."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "같은 현실 가치 위에 예금, 대출채권, 증권 같은 여러 청구권이 겹쳐져 자본처럼 계산되기 때문이다. 마르크스가 문제 삼는 것은 단순한 회계 착오가 아니다. 청구권이 자본처럼 기능하면서 현실부와 다른 규모로 팽창한다는 점이다.",
-                    "en": "Multiple claims such as deposits, loan claims, and securities can be layered over the same real value and counted as capital. Marx is not pointing to a mere accounting mistake. Claims function as capital while expanding on a scale different from real wealth."
-                  }
+                    "ko": "현실자본은 기업 안에서 기능한다. 주식은 그 자본이 낳을 수익에 대한 권리이며, 독자적 가격을 갖기 때문에 현실자본처럼 보일 뿐이다.",
+                    "en": "Real capital functions inside the enterprise. A share is a right to revenue from that capital and appears as capital because it has an independent price."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "은행 준비금과 대출자산의 차이는 무엇인가?",
-                    "en": "What is the difference between bank reserves and loan assets?"
+                    "ko": "29장이 다음 장의 화폐자본과 현실자본 구분으로 이어지는 이유는 무엇인가?",
+                    "en": "Why does Chapter 29 lead into the distinction between money-capital and real capital?"
                   },
                   "choices": {
                     "ko": [
-                      "잠시 현금을 구할 수 있으면 지급능력 문제도 사라진다고 본다.",
-                      "준비금, 자기자본, 예금을 모두 같은 항목으로 본다.",
-                      "은행 준비금이 곧바로 공장과 노동력으로 움직이는 생산자본이라고 본다.",
-                      "준비금은 지급 요구에 대응하는 유동적 보유분이고, 대출자산은 차입자의 미래 상환에 대한 청구권이다."
+                      "은행자본의 상당 부분이 현금과 현실자본이 아니라 수익청구권과 자본화된 가격으로 이루어져 있기 때문이다.",
+                      "은행자본이 모두 생산수단으로 구성되어 현실축적과 같은 속도로 움직이기 때문이다.",
+                      "예금이 자기자본과 같아져 은행 장부의 모든 항목이 사회의 순부가 되기 때문이다.",
+                      "국채와 주식이 상품생산 없이 잉여가치를 직접 만들어 내기 때문이다."
                     ],
                     "en": [
-                      "Assumes temporary access to cash eliminates solvency problems.",
-                      "Treats reserves, equity capital, and deposits as the same balance-sheet item.",
-                      "Treats bank reserves as productive capital directly operating factories and labour-power.",
-                      "Reserves are liquid holdings against payment demands, while loan assets are claims on borrowers’ future repayment."
+                      "A large part of bank capital consists not of cash or real capital but of revenue claims and capitalized prices.",
+                      "Bank capital consists entirely of means of production and therefore moves at the same pace as real accumulation.",
+                      "Deposits become identical with equity, so every bank-book item is net social wealth.",
+                      "Public debt and shares directly produce surplus-value without commodity production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "준비금은 지급 요구에 대응하는 유동적 보유분이고, 대출자산은 차입자의 미래 상환에 대한 청구권이다. 둘 다 은행 장부의 자산이지만 기능이 다르다. 준비금은 지급 능력의 완충이고 대출은 이자수익을 낳는 청구권이다.",
-                    "en": "Reserves are liquid holdings against payment demands, while loan assets are claims on borrowers’ future repayment. Both are bank assets, but they function differently. Reserves buffer payments; loans are interest-bearing claims."
-                  }
+                    "ko": "29장은 은행자산의 자본형태가 얼마나 청구권에 의존하는지 보여준다. 이 때문에 30장부터 화폐자본과 현실자본의 관계를 더 분명히 따져야 한다.",
+                    "en": "Chapter 29 shows how much the capital form of bank assets depends on claims. This makes it necessary from Chapter 30 onward to clarify the relation between money-capital and real capital."
+                  },
+                  "points": 2
                 }
               ]
             },
@@ -29343,142 +29343,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "은행자본의 핵심 긴장은 무엇인가?",
-                    "en": "What is the core tension in bank capital?"
+                    "ko": "“자본화”란 무엇인가?",
+                    "en": "What is “capitalization”?"
                   },
                   "choices": {
                     "ko": [
-                      "은행에게 자본처럼 기능하는 많은 자산이 사회 전체로는 현실 생산자본이 아니라 미래 수익에 대한 청구권이라는 점이다.",
-                      "증권 가격은 같은 금액의 기계와 원료가 새로 존재한다는 뜻이라고 본다.",
-                      "은행 대차대조표 총액이 곧 사회의 현실적 생산부라고 본다.",
-                      "대출 계약 자체가 생산과 무관하게 잉여가치를 직접 만든다고 본다."
+                      "정기적 수입을 평균 이자율로 환산해, 그 수입을 낳는 것처럼 보이는 자본가치를 계산하는 것이다.",
+                      "상품의 생산비를 더해 평균이윤율을 붙인 뒤 생산가격을 산출하는 것이다.",
+                      "은행예금을 금으로 바꾸어 국제 지급수단을 늘리는 것이다.",
+                      "노동자의 임금을 생산수단의 물리적 마모분으로 이전하는 것이다."
                     ],
                     "en": [
-                      "Many assets function as capital for the bank while, for society as a whole, they are claims on future income rather than real productive capital.",
-                      "Treats securities prices as proof that the same amount of machinery and materials newly exists.",
-                      "Equates a bank balance-sheet total with society’s real productive wealth.",
-                      "Assumes the loan contract itself directly creates surplus-value apart from production."
+                      "It calculates a capital value by converting a regular income through the average interest rate, as if a capital yielded that income.",
+                      "It adds production costs and average profit to calculate a price of production.",
+                      "It converts bank deposits into gold to increase international means of payment.",
+                      "It transfers workers’ wages into the physical depreciation of means of production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "은행에게 자본처럼 기능하는 많은 자산이 사회 전체로는 현실 생산자본이 아니라 미래 수익에 대한 청구권이라는 점이다. 은행자본은 개인 은행의 관점과 사회 전체의 관점이 어긋나는 지점이다. 그래서 다음 장의 화폐자본과 현실자본 구분이 필요해진다.",
-                    "en": "Many assets function as capital for the bank while, for society as a whole, they are claims on future income rather than real productive capital. Bank capital is where the standpoint of the individual bank diverges from that of society as a whole. This prepares the distinction between money-capital and real capital."
-                  }
+                    "ko": "가공자본은 자본화 과정을 통해 생긴다. 예컨대 연 100의 수입이 5% 이자로 환산되면 2,000의 자본가치처럼 보인다.",
+                    "en": "Fictitious capital arises through capitalization. For example, an annual income of 100 capitalized at 5 percent appears as a capital value of 2,000."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "은행자본에서 가공자본의 성격이 강하게 나타나는 이유는 무엇인가?",
-                    "en": "Why does fictitious capital appear strongly in bank capital?"
+                    "ko": "마르크스가 임금을 자본화하는 통계적 발상을 비판하는 이유는 무엇인가?",
+                    "en": "Why does Marx criticize the statistical idea of capitalizing wages?"
                   },
                   "choices": {
                     "ko": [
-                      "가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.",
-                      "은행이 보유하는 증권과 대출채권은 미래 수입을 현재 가격으로 자본화한 청구권으로 거래되기 때문이다.",
-                      "증권 가격은 같은 금액의 기계와 원료가 새로 존재한다는 뜻이라고 본다.",
-                      "가격과 자산가치는 신용과 자본화 없이 생산만으로 설명된다고 본다."
+                      "노동자는 임금을 얻기 위해 일해야 하며, 자신의 노동력을 자본가치처럼 팔아 현금화할 수 없기 때문이다.",
+                      "임금은 이자보다 높은 수익률을 보이므로 은행자본보다 더 안정적인 증권이기 때문이다.",
+                      "노동력은 국채와 같은 방식으로 조세수입의 일부를 청구하기 때문이다.",
+                      "임금이 자본화되면 노동자는 생산수단을 소유한 주주가 되기 때문이다."
                     ],
                     "en": [
-                      "Assumes fictitious capital is harmless because it is fictitious.",
-                      "Because securities and loan claims held by banks are traded as capitalized claims on future income.",
-                      "Treats securities prices as proof that the same amount of machinery and materials newly exists.",
-                      "Explains prices and asset values by production alone, without credit and capitalization."
+                      "Because the worker must work to receive wages and cannot sell labour-power itself as a capital value for cash.",
+                      "Because wages yield a higher return than interest and are therefore more stable securities than bank capital.",
+                      "Because labour-power claims part of tax revenue in the same way as public debt.",
+                      "Because when wages are capitalized, workers become shareholders owning means of production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "은행이 보유하는 증권과 대출채권은 미래 수입을 현재 가격으로 자본화한 청구권으로 거래되기 때문이다. 은행은 청구권을 사고팔고 담보로 삼는다. 이 과정에서 미래 수익은 현재의 자본가치처럼 나타난다.",
-                    "en": "Because securities and loan claims held by banks are traded as capitalized claims on future income. Banks buy, sell, and collateralize claims. Future income thereby appears as present capital value."
-                  }
+                    "ko": "이 심화 디테일은 물신성의 극단을 보여준다. 임금을 이자로, 노동력을 자본으로 계산하면 착취관계가 거꾸로 설명된다.",
+                    "en": "This advanced detail shows an extreme of fetishism. When wages are treated as interest and labour-power as capital, the relation of exploitation is explained upside down."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "금리 상승으로 은행의 채권 포트폴리오 가격이 하락하는 사례는 무엇을 보여주는가?",
-                    "en": "What is shown when rising rates reduce the price of a bank’s bond portfolio?"
+                    "ko": "증권의 시장가치가 명목가치와 달라지는 주요 이유는 무엇인가?",
+                    "en": "Why does the market value of securities diverge from their nominal value?"
                   },
                   "choices": {
                     "ko": [
-                      "주가 폭락은 같은 비율로 기계와 건물을 물리적으로 파괴한다고 본다.",
-                      "은행 준비금이 곧바로 공장과 노동력으로 움직이는 생산자본이라고 본다.",
-                      "은행자산으로 계산되는 청구권의 가격은 현실 생산설비의 물리량이 아니라 자본화 조건과 이자율에 따라 변한다.",
-                      "잠시 현금을 구할 수 있으면 지급능력 문제도 사라진다고 본다."
+                      "예상 수입의 크기와 신뢰도, 그리고 이자율 변화에 따라 청구권의 현재가격이 달라지기 때문이다.",
+                      "증권의 종이 품질과 인쇄비가 매일 달라져 생산가격이 변하기 때문이다.",
+                      "증권이 팔릴 때마다 같은 현실자본이 새 소유자에게 물리적으로 이전되기 때문이다.",
+                      "명목가치가 낮아지면 기업의 실제 설비도 같은 비율로 줄어들기 때문이다."
                     ],
                     "en": [
-                      "Assumes a stock crash physically destroys machines and buildings in the same proportion.",
-                      "Treats bank reserves as productive capital directly operating factories and labour-power.",
-                      "The price of claims counted as bank assets changes with capitalization conditions and interest rates, not with the physical quantity of productive equipment.",
-                      "Assumes temporary access to cash eliminates solvency problems."
+                      "Because the present price of the claim changes with the size and reliability of expected income and with movements in the interest rate.",
+                      "Because the paper quality and printing costs of securities change daily, altering their price of production.",
+                      "Because each sale of a security physically transfers the same real capital to the new owner.",
+                      "Because when nominal value falls, the firm’s actual equipment decreases in the same ratio."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "은행자산으로 계산되는 청구권의 가격은 현실 생산설비의 물리량이 아니라 자본화 조건과 이자율에 따라 변한다. 이 사례는 은행자산의 상당 부분이 현실자본 그 자체가 아니라 가격 변동에 노출된 청구권임을 보여준다.",
-                    "en": "The price of claims counted as bank assets changes with capitalization conditions and interest rates, not with the physical quantity of productive equipment. The case shows that much bank wealth consists of claims exposed to price changes rather than real capital itself."
-                  }
+                    "ko": "증권은 청구권이지만 상품처럼 거래되며 고유한 가격운동을 갖는다. 이 가격운동은 현실자본의 물리적 변화와 다른 층위에서 움직일 수 있다.",
+                    "en": "Securities are claims, but they trade as commodities and have their own price movement. That movement can operate on a different level from physical changes in real capital."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "은행자본 분석이 단순한 금융기관 설명을 넘어서는 이유는 무엇인가?",
-                    "en": "Why does the analysis of bank capital go beyond a description of financial institutions?"
+                    "ko": "Bank of England의 발권부와 은행부 준비금 논의가 보여주는 세부 논점은 무엇인가?",
+                    "en": "What detail is shown by the discussion of the Bank of England’s issue department and banking department reserves?"
                   },
                   "choices": {
                     "ko": [
-                      "예금은 모두 은행이 자기 자본으로 소유한 것이라고 본다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
-                      "자본주의에서는 청구권, 신용, 지급약속이 자본처럼 기능하며 현실 축적과 다른 층위를 형성하기 때문이다.",
-                      "은행 대차대조표 총액이 곧 사회의 현실적 생산부라고 본다."
+                      "같은 준비금도 법적 발권 한도와 예금 지급능력 안에서 이중적으로 나타나며, 장부상 안전과 실제 유동성이 갈라질 수 있다.",
+                      "발권부의 금 보유가 많으면 은행부는 예금 지급과 무관하게 파산 위험을 피한다.",
+                      "은행부 준비금은 전부 산업자본가의 고정자본으로 이미 전환되어 있다.",
+                      "발권부와 은행부가 분리되면 은행권은 금 보유와 관계없이 상품가치를 직접 만든다."
                     ],
                     "en": [
-                      "Assumes all deposits are capital owned outright by the bank.",
-                      "Treats finance as fully autonomous from production and realization.",
-                      "Because in capitalism claims, credit, and payment promises function as capital and form a layer distinct from real accumulation.",
-                      "Equates a bank balance-sheet total with society’s real productive wealth."
+                      "The same reserve appears doubly within legal note issue limits and deposit-paying capacity, so book safety and actual liquidity can diverge.",
+                      "If the issue department holds much gold, the banking department avoids failure independently of deposit payments.",
+                      "The banking department reserve has already been fully converted into industrial fixed capital.",
+                      "Once the two departments are separated, banknotes directly create commodity value regardless of gold reserves."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본주의에서는 청구권, 신용, 지급약속이 자본처럼 기능하며 현실 축적과 다른 층위를 형성하기 때문이다. 은행은 단순한 중개자가 아니다. 은행 장부는 사회적 청구권이 자본 형태를 얻는 중심 장소다.",
-                    "en": "Because in capitalism claims, credit, and payment promises function as capital and form a layer distinct from real accumulation. Banks are not mere intermediaries. Bank ledgers are central sites where social claims acquire the form of capital."
-                  }
+                    "ko": "29장의 이 세부는 은행자본 분석을 회계표 읽기로 끝낼 수 없게 만든다. 법적 보증과 지급 가능한 준비금 사이의 간극이 위기 때 중요해진다.",
+                    "en": "This detail in Chapter 29 prevents the analysis of bank capital from ending with bookkeeping. The gap between legal backing and available reserve becomes decisive in crisis."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "은행자본의 구성부분을 가장 정확히 요약한 문장은 무엇인가?",
-                    "en": "Which sentence best summarizes the component parts of bank capital?"
+                    "ko": "29장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 29?"
                   },
                   "choices": {
                     "ko": [
-                      "준비금, 자기자본, 예금을 모두 같은 항목으로 본다.",
-                      "증권 가격은 같은 금액의 기계와 원료가 새로 존재한다는 뜻이라고 본다.",
-                      "은행 대차대조표 총액이 곧 사회의 현실적 생산부라고 본다.",
-                      "은행자본은 현금·준비금과 함께 대출채권·어음·증권 같은 수익청구권으로 이루어지며, 그 모두가 현실자본과 동일하지는 않다."
+                      "은행자본이 현금, 예금, 어음, 증권, 수익청구권의 결합체로 나타나며 그 상당 부분이 가공자본임을 밝힌다.",
+                      "은행자본을 모두 생산수단으로 환원해 현실축적과 금융축적의 차이를 지운다.",
+                      "이자 낳는 자본을 노동자의 임금형태로 정리해 분배론을 단순화한다.",
+                      "국가채무와 주식을 상품교환 이전의 자연적 부로 설명한다."
                     ],
                     "en": [
-                      "Treats reserves, equity capital, and deposits as the same balance-sheet item.",
-                      "Treats securities prices as proof that the same amount of machinery and materials newly exists.",
-                      "Equates a bank balance-sheet total with society’s real productive wealth.",
-                      "Bank capital consists of cash and reserves together with income claims such as loans, bills, and securities, and these are not all identical with real capital."
+                      "It shows bank capital as a combination of cash, deposits, bills, securities, and revenue claims, a large part of which is fictitious capital.",
+                      "It reduces bank capital entirely to means of production and erases the difference between real and financial accumulation.",
+                      "It classifies interest-bearing capital as a wage form of workers and simplifies distribution theory.",
+                      "It explains public debt and shares as natural wealth prior to commodity exchange."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "은행자본은 현금·준비금과 함께 대출채권·어음·증권 같은 수익청구권으로 이루어지며, 그 모두가 현실자본과 동일하지는 않다. 이 문장은 장 전체의 균형점을 잡는다. 은행자산은 자본처럼 기능하지만 그 사회적 실체를 따져 보아야 한다.",
-                    "en": "Bank capital consists of cash and reserves together with income claims such as loans, bills, and securities, and these are not all identical with real capital. This captures the chapter’s balance. Bank assets function as capital, but their social substance must be examined."
-                  }
+                    "ko": "29장은 은행자본의 외관을 해부한다. 이 해부가 있어야 30~32장의 화폐자본과 현실자본 논쟁을 단순한 금융시장 뉴스가 아니라 범주 문제로 읽을 수 있다.",
+                    "en": "Chapter 29 dissects the appearance of bank capital. This is needed to read Chapters 30-32 on money-capital and real capital as a categorical problem, not just financial-market news."
+                  },
+                  "points": 3
                 }
               ]
             }
@@ -29548,142 +29548,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "회사들이 현금과 예금을 많이 들고 있지만 공장 가동률은 낮고 채용도 늘지 않는다. 이 장의 첫 구분은 무엇인가?",
-                    "en": "Firms hold large amounts of cash and deposits, but factory utilization is low and hiring does not rise. What is this chapter’s first distinction?"
+                    "ko": "30장이 제기하는 첫 번째 어려운 질문은 무엇인가?",
+                    "en": "What is the first difficult question raised in Chapter 30?"
                   },
                   "choices": {
                     "ko": [
-                      "대부 가능한 화폐자본의 축적과 생산수단·노동력이 실제로 움직이는 현실자본의 축적은 같지 않다.",
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다.",
-                      "현금 보유액은 그 자체로 이미 작동 중인 현실자본이다.",
-                      "낮은 이자율은 대체로 현실 축적의 호황을 증명한다."
+                      "대부 가능한 화폐자본의 축적이 현실자본의 확대재생산을 어느 정도 반영하는가라는 질문이다.",
+                      "은행권 발행량이 임금률을 어느 정도 직접 결정하는가라는 질문이다.",
+                      "상품가격이 금 보유고의 물리량과 같은 속도로 변하는가라는 질문이다.",
+                      "상업신용이 소비자의 현금구매를 완전히 대체하는가라는 질문이다."
                     ],
                     "en": [
-                      "The accumulation of loanable money-capital is not the same as the accumulation of real capital in which means of production and labour-power actually function.",
-                      "All saving is automatically converted into productive investment.",
-                      "Cash holdings are already functioning real capital by themselves.",
-                      "A low interest rate always proves a boom in real accumulation."
+                      "To what extent the accumulation of loanable money-capital reflects expanded reproduction of real capital.",
+                      "To what extent banknote issue directly determines the wage rate.",
+                      "Whether commodity prices change at the same speed as the physical quantity of gold reserves.",
+                      "Whether commercial credit completely replaces consumers’ cash purchases."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 돈이 쌓이는 현상과 생산이 확대되는 현상을 분리해 본다. 돈이 현실자본이 되려면 생산수단과 노동력이 수익성 있는 생산과정으로 들어가야 한다.",
-                    "en": "Marx separates the accumulation of money from the expansion of production. Money becomes real capital only when means of production and labour-power enter a profitable production process."
-                  }
+                    "ko": "30장은 화폐자본의 축적과 현실축적의 일치 여부를 문제 삼는다. 둘은 연결되어 있지만 언제나 같은 크기와 속도로 움직이지 않는다.",
+                    "en": "Chapter 30 asks whether accumulation of money-capital coincides with real accumulation. They are connected, but they do not always move at the same size and speed."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "대부 가능한 화폐자본이 늘어도 현실자본이 늘지 않을 수 있는 이유는 무엇인가?",
-                    "en": "Why can loanable money-capital grow without real capital growing?"
+                    "ko": "상업신용의 기초로서 어음은 무엇에 의존하는가?",
+                    "en": "On what do bills of exchange, as the basis of commercial credit, depend?"
                   },
                   "choices": {
                     "ko": [
-                      "유휴자금, 감가상각기금, 예금, 상환금이 금융시장에 모일 수 있지만 그것이 곧바로 수익성 있는 생산확대를 뜻하지는 않기 때문이다.",
-                      "금융자산의 증가는 같은 규모의 공장 증가와 같다고 본다.",
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다고 본다.",
-                      "신용이 있으면 수익성의 제약이 사라진다고 본다."
+                      "상품이 팔려 화폐로 되돌아오는 환류와, 서로 얽힌 채무자들의 지급능력에 의존한다.",
+                      "어음 종이의 명목금액이 금 보유고와 같은 비율로 늘어나는 데 의존한다.",
+                      "소비자가 상품을 이미 최종 소비했다는 회계처리에 의존한다.",
+                      "은행이 모든 어음을 자기자본으로 흡수해 손실을 제거하는 데 의존한다."
                     ],
                     "en": [
-                      "Idle funds, depreciation funds, deposits, and repayments can collect in the money market without immediately meaning profitable expansion of production.",
-                      "Equates growth of financial assets with the same growth of factories.",
-                      "Assumes all savings automatically become productive investment.",
-                      "Assumes credit removes the constraint of profitability."
+                      "They depend on the return flow of capital through commodity sales and on the solvency of interlinked debtors.",
+                      "They depend on the nominal amount printed on the bill growing at the same rate as gold reserves.",
+                      "They depend on accounting that treats commodities as already finally consumed by consumers.",
+                      "They depend on banks absorbing all bills as equity and removing losses."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "유휴자금, 감가상각기금, 예금, 상환금이 금융시장에 모일 수 있지만 그것이 곧바로 수익성 있는 생산확대를 뜻하지는 않기 때문이다. 화폐시장에는 여러 이유로 돈이 모인다. 그러나 현실자본이 되려면 수익성 있는 생산조건 속에서 투입되어야 한다.",
-                    "en": "Idle funds, depreciation funds, deposits, and repayments can collect in the money market without immediately meaning profitable expansion of production. Money gathers in the money market for many reasons. To become real capital it must be employed under profitable conditions of production."
-                  }
+                    "ko": "어음은 지급을 미룬 약속이다. 그 약속이 실현되려면 상품판매와 환류가 이루어져야 하며, 한 사람의 지급능력이 다른 사람의 지급능력과 연결된다.",
+                    "en": "A bill is a promise of deferred payment. For that promise to be realized, commodity sale and return flow must occur, and one person’s solvency is tied to another’s."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "불황기에 현금 보유와 예금이 늘면서 공장이 놀고 있는 사례는 무엇을 보여주는가?",
-                    "en": "What is shown when cash holdings and deposits rise during a slump while factories stand idle?"
+                    "ko": "상업신용이 현금 지급의 필요를 없애지 못하는 이유는 무엇인가?",
+                    "en": "Why can commercial credit not eliminate the need for cash payment?"
                   },
                   "choices": {
                     "ko": [
-                      "낮은 이자율은 대체로 현실 축적의 호황을 증명한다고 본다.",
-                      "화폐자본의 풍부함이 현실 생산자본의 활발한 축적과 일치하지 않을 수 있음을 보여준다.",
-                      "현금 보유액은 그 자체로 이미 작동 중인 현실자본이라고 본다.",
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다고 본다."
+                      "임금·세금 같은 지출과 어음 만기 불일치 때문에 일정한 현금과 준비금이 계속 필요하기 때문이다.",
+                      "상업신용은 모든 거래를 동시에 마감시켜 지급기한 차이를 완전히 없애기 때문이다.",
+                      "어음은 만기 전에 이미 금속화폐로 변해 상품판매와 무관하게 결제되기 때문이다.",
+                      "신용이 발달하면 노동력 구매가 현물 지급 쪽으로 이동해 화폐 기능이 약해지기 때문이다."
                     ],
                     "en": [
-                      "Takes low interest rates as always proving a boom in real accumulation.",
-                      "It shows that the abundance of money-capital need not coincide with active accumulation of real productive capital.",
-                      "Treats cash hoards themselves as real capital already in motion.",
-                      "Assumes all savings automatically become productive investment."
+                      "Because expenses such as wages and taxes and mismatches in bill maturities keep requiring cash and reserves.",
+                      "Because commercial credit closes all trades simultaneously and removes all differences in payment dates.",
+                      "Because bills turn into metallic money before maturity and settle independently of commodity sale.",
+                      "Because with developed credit, the purchase of labour-power moves toward in-kind payment and the monetary function weakens."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "화폐자본의 풍부함이 현실 생산자본의 활발한 축적과 일치하지 않을 수 있음을 보여준다. 돈이 많다는 것은 투입될 곳이 많다는 뜻이 아니다. 수익성, 수요, 신뢰가 막히면 화폐는 대부 가능 형태로 머문다.",
-                    "en": "It shows that the abundance of money-capital need not coincide with active accumulation of real productive capital. Having much money does not mean there are many viable outlets. If profitability, demand, or confidence is blocked, money remains in loanable form."
-                  }
+                    "ko": "마르크스는 신용의 상계 기능을 인정하지만, 재생산 회로가 완전히 닫힌 원으로 맞아떨어지는 경우는 예외적이라고 본다. 그래서 현금 지급의 지점이 남는다.",
+                    "en": "Marx recognizes credit’s offsetting function, but a reproduction circuit rarely closes as a perfect circle. Points requiring cash payment therefore remain."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "낮은 이자율을 현실 축적의 호황으로 곧장 읽으면 왜 위험한가?",
-                    "en": "Why is it risky to read low interest rates directly as a boom in real accumulation?"
+                    "ko": "일반 위기 때 여러 나라가 모두 과잉수입과 과잉수출을 겪는다는 논점은 무엇을 뜻하는가?",
+                    "en": "What does it mean that in a general crisis many countries have both over-imported and over-exported?"
                   },
                   "choices": {
                     "ko": [
-                      "낮은 이자율은 대체로 현실 축적의 호황을 증명한다고 본다.",
-                      "신용이 있으면 수익성의 제약이 사라진다고 본다.",
-                      "낮은 이자율은 대부 가능한 자금의 과잉이나 투자 부진에서도 나올 수 있기 때문이다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다."
+                      "신용이 세계시장 전체에서 과잉생산과 과잉거래를 밀어붙였고, 지급기한이 압축되며 각국의 금 유출이 차례로 나타난다는 뜻이다.",
+                      "각국이 같은 상품의 생산을 동시에 줄여 무역 흐름이 자연스럽게 둔화된다는 뜻이다.",
+                      "무역수지가 유리한 국가는 지급위기의 압력을 낮은 강도로 겪는다는 뜻이다.",
+                      "금 유출이 위기의 원인이므로 상품시장 과잉은 분석에서 제외된다는 뜻이다."
                     ],
                     "en": [
-                      "Takes low interest rates as always proving a boom in real accumulation.",
-                      "Assumes credit removes the constraint of profitability.",
-                      "Low rates can arise from an excess of loanable funds or weak investment, not only from a boom in real accumulation.",
-                      "Treats finance as fully autonomous from production and realization."
+                      "Credit has pushed overproduction and overtrading across the world market, and compressed payment dates make gold drains appear in succession by country.",
+                      "It means all countries reduce production of the same commodities at the same time, naturally slowing trade flows.",
+                      "It means a country with a favorable trade balance experiences payment crisis only at the margins.",
+                      "Gold drain is the cause of crisis, so overstocked commodity markets are excluded from analysis."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "낮은 이자율은 대부 가능한 자금의 과잉이나 투자 부진에서도 나올 수 있기 때문이다. 이자율은 화폐자본의 수급을 반영하지만 그것만으로 현실 생산의 건강을 말해 주지 않는다. 국면 분석이 필요하다.",
-                    "en": "Low rates can arise from an excess of loanable funds or weak investment, not only from a boom in real accumulation. The interest rate reflects the supply and demand of money-capital, but by itself it does not state the health of real production. The cycle must be analyzed."
-                  }
+                    "ko": "30장은 금 유출을 위기의 원인으로 단순화하지 않는다. 그것은 세계시장 신용관계가 지급기한 속에서 폭로되는 현상으로 나타난다.",
+                    "en": "Chapter 30 does not simplify gold drain into the cause of crisis. It appears as the world-market credit relation exposed through payment dates."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "기업이 현금을 쌓고 채권을 사지만 설비투자를 늘리지 않는다면, 마르크스의 구분으로 무엇인가?",
-                    "en": "If firms pile up cash and buy bonds without increasing equipment investment, what does Marx’s distinction show?"
+                    "ko": "30장은 31장의 논의로 어떻게 이어지는가?",
+                    "en": "How does Chapter 30 lead into Chapter 31?"
                   },
                   "choices": {
                     "ko": [
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다고 본다.",
-                      "금융자산의 증가는 같은 규모의 공장 증가와 같다고 본다.",
-                      "현금 보유액은 그 자체로 이미 작동 중인 현실자본이라고 본다.",
-                      "금융적·화폐자본 형태의 축적은 늘지만 현실 생산능력의 확대는 제한될 수 있다는 사례다."
+                      "화폐자본과 현실자본의 관계를 제기한 뒤, 대부자본이 실제 축적 없이도 늘어나는 경로를 더 세밀하게 추적한다.",
+                      "상업신용이 현금 지급을 끝냈다는 결론에서 은행 준비금 분석을 중단한다.",
+                      "국제 금 유출을 위기의 단일 원인으로 확정하고 국내 재생산 분석을 닫는다.",
+                      "어음의 상계가 생산과 소비의 모든 불일치를 해결한다는 결론으로 간다."
                     ],
                     "en": [
-                      "Assumes all savings automatically become productive investment.",
-                      "Equates growth of financial assets with the same growth of factories.",
-                      "Treats cash hoards themselves as real capital already in motion.",
-                      "It is a case where accumulation in financial or money-capital form grows while the expansion of real productive capacity remains limited."
+                      "After raising the relation between money-capital and real capital, it traces more closely how loan capital can grow without actual accumulation.",
+                      "It stops analysing bank reserves after concluding that commercial credit has ended cash payment.",
+                      "It fixes international gold drain as the sole cause of crisis and closes the analysis of domestic reproduction.",
+                      "It concludes that offsetting bills resolves all mismatches between production and consumption."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "금융적·화폐자본 형태의 축적은 늘지만 현실 생산능력의 확대는 제한될 수 있다는 사례다. 자본은 여러 형태로 존재한다. 문제는 그 형태가 실제 생산과 가치증식 과정으로 들어갔는지다.",
-                    "en": "It is a case where accumulation in financial or money-capital form grows while the expansion of real productive capacity remains limited. Capital exists in several forms. The question is whether that form has entered the actual process of production and valorization."
-                  }
+                    "ko": "30장은 문제를 열어 놓는다. 31장은 화폐가 대부자본으로 바뀌는 경로와, 예금·은행·어음이 실제 축적과 다르게 움직이는 방식을 더 구체화한다.",
+                    "en": "Chapter 30 leaves the problem open. Chapter 31 concretizes the paths through which money becomes loan capital and how deposits, banks, and bills move differently from actual accumulation."
+                  },
+                  "points": 2
                 }
               ]
             },
@@ -29698,142 +29698,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "화폐자본 축적의 핵심 긴장은 무엇인가?",
-                    "en": "What is the core tension in the accumulation of money-capital?"
+                    "ko": "30장에서 국채와 주식 같은 소유권 증서가 “종이 복제물”로 불리는 이유는 무엇인가?",
+                    "en": "Why are ownership titles such as public debt and shares treated as “paper duplicates” in Chapter 30?"
                   },
                   "choices": {
                     "ko": [
-                      "대부 가능한 돈은 풍부해 보여도 그것이 곧 수익성 있는 현실투자 기회와 일치하지 않을 수 있다는 긴장이다.",
-                      "신용이 있으면 수익성의 제약이 사라진다고 본다.",
-                      "낮은 이자율은 대체로 현실 축적의 호황을 증명한다고 본다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다."
+                      "그것들은 현실자본이나 이미 소비된 자본에 대한 청구권으로 거래되며, 그 자체가 같은 자본의 두 번째 물적 존재는 아니기 때문이다.",
+                      "그것들은 종이로 만들어졌기 때문에 생산수단보다 사용가치가 작다는 뜻이다.",
+                      "그것들은 은행이 보관하는 금과 같은 양으로 발행되어 금의 복사본이기 때문이다.",
+                      "그것들은 상품판매 이후 시장가격보다 회계상 명목가를 중심으로 움직이기 때문이다."
                     ],
                     "en": [
-                      "Loanable money may appear abundant without corresponding to profitable opportunities for real investment.",
-                      "Assumes credit removes the constraint of profitability.",
-                      "Takes low interest rates as always proving a boom in real accumulation.",
-                      "Treats finance as fully autonomous from production and realization."
+                      "They trade as claims on real capital or already consumed capital, but are not a second physical existence of the same capital.",
+                      "They are made of paper and therefore have less use-value than means of production.",
+                      "They are issued in the same quantity as gold held by banks and are copies of gold.",
+                      "Because after commodity sale they move around accounting par value rather than market price."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "대부 가능한 돈은 풍부해 보여도 그것이 곧 수익성 있는 현실투자 기회와 일치하지 않을 수 있다는 긴장이다. 이 긴장은 금융시장의 풍부함과 생산의 정체가 함께 나타나는 이유를 설명한다. 둘은 연결되어도 동일하지 않다.",
-                    "en": "Loanable money may appear abundant without corresponding to profitable opportunities for real investment. This tension explains why financial abundance and stagnant production can appear together. They are connected but not identical."
-                  }
+                    "ko": "이 세부는 가공자본의 중복 외관을 설명한다. 권리는 거래되지만, 그 권리가 가리키는 현실자본이 주식거래마다 다시 생기는 것은 아니다.",
+                    "en": "This detail explains the duplicate appearance of fictitious capital. The right is traded, but the real capital it points to is not recreated with each stock transaction."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "감가상각기금이 화폐시장에 쌓일 때 그것을 현실자본 증가로 보면 안 되는 이유는 무엇인가?",
-                    "en": "Why should depreciation funds accumulating in the money market not be counted simply as growth of real capital?"
+                    "ko": "상업신용에서 한 사람의 지급능력이 다른 사람의 지급능력에 묶이는 이유는 무엇인가?",
+                    "en": "Why is one person’s solvency tied to another’s in commercial credit?"
                   },
                   "choices": {
                     "ko": [
-                      "현금 보유액은 그 자체로 이미 작동 중인 현실자본이라고 본다.",
-                      "그 돈은 기존 고정자본을 장차 대체하기 위해 잠시 화폐형태로 머무는 것이지, 이미 추가 생산수단이 된 것은 아니기 때문이다.",
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다고 본다.",
-                      "금융자산의 증가는 같은 규모의 공장 증가와 같다고 본다."
+                      "각자가 자기 상품의 판매환류나 제삼자의 어음 만기를 기대해 지급약속을 세우기 때문이다.",
+                      "모든 어음이 중앙은행의 자기자본으로 즉시 전환되어 같은 담보를 갖기 때문이다.",
+                      "상업신용에서는 상품이 판매되기 전에 이미 최종 소비가 완료되기 때문이다.",
+                      "어음은 발행되는 순간 현금과 같은 국제 지급수단으로 확정되기 때문이다."
                     ],
                     "en": [
-                      "Treats cash hoards themselves as real capital already in motion.",
-                      "The money temporarily remains in money-form to replace existing fixed capital later; it has not already become additional means of production.",
-                      "Assumes all savings automatically become productive investment.",
-                      "Equates growth of financial assets with the same growth of factories."
+                      "Each payment promise is built on expected return flow from one’s own commodity sale or on a third party’s maturing bill.",
+                      "All bills immediately turn into central-bank equity and have the same collateral.",
+                      "In commercial credit, final consumption is completed before commodities are sold.",
+                      "A bill becomes international means of payment equivalent to cash the moment it is issued."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "그 돈은 기존 고정자본을 장차 대체하기 위해 잠시 화폐형태로 머무는 것이지, 이미 추가 생산수단이 된 것은 아니기 때문이다. 감가상각기금은 화폐자본 공급을 늘릴 수 있다. 그러나 그것은 현실자본의 물리적 확대와 같은 순간에 일어나지 않는다.",
-                    "en": "The money temporarily remains in money-form to replace existing fixed capital later; it has not already become additional means of production. Depreciation funds can increase the supply of money-capital. But this does not occur at the same moment as physical expansion of real capital."
-                  }
+                    "ko": "마르크스는 상업신용을 상호의존적 지급망으로 본다. 그래서 한 고리의 지연은 단순한 개인 실패를 넘어 연쇄 지급 문제로 번진다.",
+                    "en": "Marx sees commercial credit as an interdependent payment network. A delay in one link therefore becomes a chain payment problem, not merely an individual failure."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "신용제도는 화폐자본과 현실자본의 차이를 어떻게 매개하는가?",
-                    "en": "How does the credit system mediate the difference between money-capital and real capital?"
+                    "ko": "위기 때 가공자본 가격 하락이 현실자본 파괴와 같은 뜻이 아닌 이유는 무엇인가?",
+                    "en": "Why is a fall in fictitious-capital prices during crisis not the same as destruction of real capital?"
                   },
                   "choices": {
                     "ko": [
-                      "신용이 있으면 수익성의 제약이 사라진다고 본다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
-                      "분산된 유휴자금과 청구권을 대부 가능한 자금으로 모아 현실투자에 연결하지만, 그 연결은 수익성과 상환 가능성에 의존한다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다."
+                      "증권가격은 이자율, 신용, 예상수입에 따라 떨어질 수 있지만, 그 증권이 가리키는 설비와 생산수단이 같은 비율로 사라지는 것은 아니다.",
+                      "증권가격이 하락하면 해당 기업의 모든 상품재고가 즉시 소비재로 바뀌기 때문이다.",
+                      "가공자본은 현실에서 힘이 약하므로 가격 하락도 지급문제와 느슨하게 연결되기 때문이다.",
+                      "위기 때 증권가격은 명목가에 고정되어 실제로 하락하지 않기 때문이다."
                     ],
                     "en": [
-                      "Assumes credit removes the constraint of profitability.",
-                      "Treats finance as fully autonomous from production and realization.",
-                      "It gathers dispersed idle funds and claims into loanable funds and links them to real investment, but the link depends on profitability and repayment capacity.",
-                      "Assumes confidence alone creates value without actual realization."
+                      "Security prices can fall with interest rates, credit, and expected income, without the equipment and means of production they reference disappearing in the same proportion.",
+                      "When security prices fall, all inventories of the firm immediately turn into consumer goods.",
+                      "Because fictitious capital has weak real force, so its price fall is only loosely connected to payment problems.",
+                      "During crisis, security prices are fixed at par and do not actually fall."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "분산된 유휴자금과 청구권을 대부 가능한 자금으로 모아 현실투자에 연결하지만, 그 연결은 수익성과 상환 가능성에 의존한다. 신용은 연결 장치이지 마법이 아니다. 현실 가치증식 조건이 약하면 화폐자본은 생산으로 넘어가지 못하거나 손실로 돌아온다.",
-                    "en": "It gathers dispersed idle funds and claims into loanable funds and links them to real investment, but the link depends on profitability and repayment capacity. Credit is a mediating device, not magic. If real valorization conditions are weak, money-capital cannot move into production or returns as loss."
-                  }
+                    "ko": "30장은 증권가격 하락이 소유자의 차입능력과 지급능력을 크게 흔든다고 본다. 그러나 그것은 현실자본의 물리적 크기와 같은 운동이 아니다.",
+                    "en": "Chapter 30 sees falling security prices as seriously shaking owners’ borrowing power and solvency. But this is not the same movement as the physical size of real capital."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "이 장이 금융자산 증가를 현실 축적으로 오해하지 말라고 하는 이유는 무엇인가?",
-                    "en": "Why does this chapter warn against mistaking financial-asset growth for real accumulation?"
+                    "ko": "국제 위기에서 금 유출이 나라별로 차례로 나타나는 현상은 무엇을 보여주는가?",
+                    "en": "What is shown by gold drain appearing successively from country to country in an international crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "시가총액이 곧 같은 양의 현실자본이라고 본다.",
-                      "금융자산의 증가는 같은 규모의 공장 증가와 같다고 본다.",
-                      "금융자산은 청구권과 화폐형태의 축적일 수 있으며, 같은 규모의 생산수단·노동력 확대를 의미하지 않을 수 있기 때문이다.",
-                      "가격과 자산가치는 신용과 자본화 없이 생산만으로 설명된다고 본다."
+                      "금 유출은 위기의 일반 원인이라기보다 각국의 지급기한이 닥칠 때 잠재된 과잉거래가 드러나는 형태다.",
+                      "금 유출이 먼저 나타난 나라만 과잉생산을 겪고 나머지 국가는 균형상태에 있다는 뜻이다.",
+                      "무역수지가 유리한 국가는 지급기한 압축에서 비교적 자유롭고 금 유출도 제한적이라는 뜻이다.",
+                      "국제 위기에서는 상품자본이 부족해져 모든 시장의 재고가 같은 날 사라진다는 뜻이다."
                     ],
                     "en": [
-                      "Equates market capitalization with the same quantity of real capital.",
-                      "Equates growth of financial assets with the same growth of factories.",
-                      "Financial assets can be an accumulation of claims and money-forms without implying an equal expansion of means of production and labour-power.",
-                      "Explains prices and asset values by production alone, without credit and capitalization."
+                      "Gold drain is less the general cause of crisis than the form in which latent overtrading appears when each country’s payment dates arrive.",
+                      "Only the country first hit by gold drain has overproduction, while the rest remain in equilibrium.",
+                      "It means a country with a favorable trade balance is relatively free from compressed payment dates and faces limited gold drain.",
+                      "In international crisis, commodity-capital becomes scarce and all inventories disappear on the same day."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "금융자산은 청구권과 화폐형태의 축적일 수 있으며, 같은 규모의 생산수단·노동력 확대를 의미하지 않을 수 있기 때문이다. 금융자산은 현실 축적 위에 세워지지만 독자적 가격과 거래를 갖는다. 그래서 둘의 비례를 곧장 가정할 수 없다.",
-                    "en": "Financial assets can be an accumulation of claims and money-forms without implying an equal expansion of means of production and labour-power. Financial assets are built upon real accumulation but have their own prices and circulation. Their proportionality cannot be assumed directly."
-                  }
+                    "ko": "마르크스는 국제 지급위기의 순차성을 중요하게 본다. 같은 세계시장 모순이 각국의 결제 일정에 따라 다른 시점에 폭로된다.",
+                    "en": "Marx treats the sequence of international payment crisis as important. The same world-market contradiction is exposed at different times according to each country’s settlement schedule."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "대부 가능한 자금은 풍부한데 투자와 고용은 정체된 국면을 분석할 때, 어떤 결론이 가장 정확한가?",
-                    "en": "When analyzing a phase with abundant loanable funds but stagnant investment and employment, which conclusion is most accurate?"
+                    "ko": "30장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 30?"
                   },
                   "choices": {
                     "ko": [
-                      "낮은 이자율은 대체로 현실 축적의 호황을 증명한다.",
-                      "모든 저축은 그 자체로 생산적 투자로 전환된다.",
-                      "현금 보유액은 그 자체로 이미 작동 중인 현실자본이다.",
-                      "화폐자본의 축적은 현실 축적과 연결되지만, 원천·속도·국면이 달라 둘은 구분되어야 한다."
+                      "화폐자본의 축적, 상업신용, 가공자본 가격, 세계시장 지급위기를 현실자본과 구분해 읽는 틀을 세운다.",
+                      "신용제도가 모든 지급문제를 해결한다는 결론으로 27장의 양면성을 닫는다.",
+                      "은행자본을 생산수단과 동일시해 가공자본 분석을 현실축적 분석으로 대체한다.",
+                      "금 유출을 위기의 단일 원인으로 삼아 과잉생산 문제를 제거한다."
                     ],
                     "en": [
-                      "A low interest rate always proves a boom in real accumulation.",
-                      "All saving is automatically converted into productive investment.",
-                      "Cash holdings are already functioning real capital by themselves.",
-                      "The accumulation of money-capital is connected to real accumulation, but their sources, tempo, and phases differ, so they must be distinguished."
+                      "It establishes a framework for distinguishing money-capital accumulation, commercial credit, fictitious-capital prices, and world-market payment crisis from real capital.",
+                      "It closes Chapter 27’s double character by concluding that the credit system resolves all payment problems.",
+                      "It identifies bank capital with means of production and replaces the analysis of fictitious capital with real accumulation.",
+                      "It takes gold drain as the sole cause of crisis and removes the problem of overproduction."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "정확한 결론은 완전 분리도 완전 동일도 아니다. 화폐자본은 현실 축적과 이어지지만, 감가상각기금·유휴자금·상환금처럼 다른 경로로 쌓이며 생산투자와 다른 속도로 움직일 수 있다.",
-                    "en": "The accurate conclusion is neither total separation nor identity. Money-capital is connected to real accumulation, but it can gather through depreciation funds, idle money, and repayments, moving at a different pace from productive investment."
-                  }
+                    "ko": "30장은 “돈이 부족하다” 또는 “자본이 많다” 같은 표면 문장을 해체한다. 무엇이 화폐형태이고 무엇이 현실 생산의 조건인지 나누는 장이다.",
+                    "en": "Chapter 30 dismantles surface statements such as “money is scarce” or “capital is abundant.” It separates the money form from the conditions of real production."
+                  },
+                  "points": 3
                 }
               ]
             }
@@ -29903,142 +29903,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "호황기에는 어음과 예금, 증권이 서로를 대신하며 자본이 넉넉한 것처럼 보인다. 마르크스가 여기서 더 깊게 보려는 것은 무엇인가?",
-                    "en": "In a boom, bills, deposits, and securities substitute for one another and make capital appear abundant. What does Marx look at more deeply here?"
+                    "ko": "31장에서 화폐가 대부자본으로 바뀌는 문제를 다룰 때 첫 구분은 무엇인가?",
+                    "en": "What first distinction matters in Chapter 31 when treating money turning into loan capital?"
                   },
                   "choices": {
                     "ko": [
-                      "청구권이 현실자본보다 빠르게 불어날 수 있고, 위기 때 그 차이가 지급 요구 속에서 드러나는 방식이다.",
-                      "어음과 차용증은 최종 지급 그 자체다.",
-                      "청구권은 현실 가치와 무관하게 계속 늘어도 문제가 없다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다."
+                      "단순히 돈이 대부자본으로 바뀌는 것과, 자본이나 수입이 돈으로 바뀐 뒤 대부자본이 되는 것을 구분한다.",
+                      "은행권이 금으로 바뀌는 것과 금이 소비재로 바뀌는 것을 구분한다.",
+                      "노동자가 임금을 받는 것과 주주가 배당을 받는 것을 같은 과정으로 묶는다.",
+                      "상업신용이 없어지는 것과 은행신용이 현물교환으로 바뀌는 것을 구분한다."
                     ],
                     "en": [
-                      "Claims can grow faster than real capital, and in crisis the difference appears through demands for payment.",
-                      "Bills and IOUs are final payment itself.",
-                      "Claims can expand without limit independently of real value and cause no problem.",
-                      "Trust alone creates value without actual realization."
+                      "It distinguishes the mere transformation of money into loan capital from capital or revenue first becoming money and then loan capital.",
+                      "It distinguishes banknotes turning into gold from gold turning into consumer goods.",
+                      "It groups workers receiving wages and shareholders receiving dividends as the same process.",
+                      "It distinguishes the disappearance of commercial credit from bank credit turning into barter."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "평상시에는 청구권이 자본처럼 유통되어 차이를 가린다. 그러나 지급이 요구되는 순간, 그 청구권이 실제 판매와 실현된 가치에 기대고 있었음이 드러난다.",
-                    "en": "In ordinary times, claims circulate like capital and hide the difference. When payment is demanded, it becomes clear that those claims depended on actual sale and realized value."
-                  }
+                    "ko": "31장은 대부자본 증가가 실제 축적과 연결되는 경우와 그렇지 않은 경우를 나눈다. 수입이나 자본이 화폐화되어 예금으로 모이는 경로가 중요하다.",
+                    "en": "Chapter 31 separates cases where loan-capital growth is connected to actual accumulation from cases where it is not. The path by which revenue or capital becomes money and deposits is crucial."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "어음과 상호신용이 호황기에 자본이 풍부한 것처럼 보이게 하는 이유는 무엇인가?",
-                    "en": "Why can bills and mutual credit make capital appear abundant in prosperity?"
+                    "ko": "위기 직후 대부자본이 풍부해 보일 수 있는 이유는 무엇인가?",
+                    "en": "Why can loan capital appear abundant just after a crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "지급 약속들이 서로를 대신하며 유통되어 당장의 현금과 현실자본 제약을 느슨하게 만들기 때문이다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다.",
-                      "어음과 차용증은 최종 지급 그 자체라고 본다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다."
+                      "생산과 상업에서 빠져나온 돈이 유휴 대부자본으로 남아 있고, 현실투자 수요는 아직 약하기 때문이다.",
+                      "위기 직후 상품시장이 모두 비어 있어 생산자본 수요가 폭발하기 때문이다.",
+                      "금리가 높아지면 모든 기업이 같은 속도로 설비투자를 늘리기 때문이다.",
+                      "은행이 예금을 자기자본으로 전환해 부채를 제거하기 때문이다."
                     ],
                     "en": [
-                      "Payment promises circulate in place of one another, loosening the immediate constraints of cash and real capital.",
-                      "Assumes confidence alone creates value without actual realization.",
-                      "Treats bills and IOUs as final payment itself.",
-                      "Treats finance as fully autonomous from production and realization."
+                      "Money withdrawn from production and commerce remains as idle loan capital, while demand for real investment is still weak.",
+                      "After a crisis, commodity markets are empty and demand for productive capital explodes.",
+                      "When interest rises, all firms increase fixed investment at the same speed.",
+                      "Banks convert deposits into equity and remove liabilities."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "지급 약속들이 서로를 대신하며 유통되어 당장의 현금과 현실자본 제약을 느슨하게 만들기 때문이다. 신용은 실제 결제를 연기하고 연결한다. 그래서 미래 가치실현이 순조로울 것이라는 전제 아래 현재의 활동을 확대한다.",
-                    "en": "Payment promises circulate in place of one another, loosening the immediate constraints of cash and real capital. Credit postpones and links actual settlement. It expands present activity on the premise that future realization will proceed smoothly."
-                  }
+                    "ko": "대부 가능한 돈의 풍부함은 때때로 현실축적의 활력이 아니라 산업자본의 정체를 표현한다. 이 점이 31장의 중요한 구분이다.",
+                    "en": "An abundance of loanable money sometimes expresses stagnation of industrial capital rather than vitality of real accumulation. This is a key distinction in Chapter 31."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "한 기업의 부도가 여러 기업의 지급불능으로 번지는 사례는 무엇을 보여주는가?",
-                    "en": "What is shown when one firm’s default spreads into many firms’ inability to pay?"
+                    "ko": "은행제도의 확장만으로 대부 가능한 화폐자본이 늘 수 있는 이유는 무엇인가?",
+                    "en": "Why can loanable money-capital increase through the expansion of banking alone?"
                   },
                   "choices": {
                     "ko": [
-                      "위기를 생산과 지급 연쇄의 문제가 아니라 심리적 공포로만 본다.",
-                      "청구권들이 독립된 부처럼 보였지만 실제로는 지급 연쇄와 가치실현에 묶여 있었다는 점이다.",
-                      "잠시 현금을 구할 수 있으면 지급능력 문제도 사라진다고 본다.",
-                      "어음과 차용증은 최종 지급 그 자체라고 본다."
+                      "분산된 예금과 준비금이 집중되고 회전이 빨라져, 실제 축적과 별도로 단기 대부자금이 커질 수 있기 때문이다.",
+                      "은행 지점이 늘면 같은 수의 상품이 더 많은 사용가치를 갖게 되기 때문이다.",
+                      "예금이 장부에 기록되는 순간 모두 새 생산수단으로 전환되기 때문이다.",
+                      "은행이 모든 어음을 현금으로 보관해 신용의 회전을 늦추기 때문이다."
                     ],
                     "en": [
-                      "Reduces crisis to psychological panic rather than production and payment chains.",
-                      "Claims appeared as independent wealth, but were in fact tied to payment chains and realization of value.",
-                      "Assumes temporary access to cash eliminates solvency problems.",
-                      "Treats bills and IOUs as final payment itself."
+                      "Dispersed deposits and reserves are concentrated and turn over faster, so short-term loan funds can grow apart from actual accumulation.",
+                      "When bank branches increase, the same number of commodities gains more use-value.",
+                      "The moment deposits are recorded, they all turn into new means of production.",
+                      "Banks keep all bills as cash and slow the turnover of credit."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "청구권들이 독립된 부처럼 보였지만 실제로는 지급 연쇄와 가치실현에 묶여 있었다는 점이다. 위기는 청구권의 사회적 연결을 드러낸다. 한 고리의 파열은 단순한 심리 문제가 아니라 지급구조의 문제다.",
-                    "en": "Claims appeared as independent wealth, but were in fact tied to payment chains and realization of value. Crisis reveals the social linkage of claims. A broken link is not merely psychological; it is a problem in the payment structure."
-                  }
+                    "ko": "31장은 기술적·제도적 경로로 대부자본 공급이 커질 수 있음을 보여준다. 이는 현실 생산능력의 증가와 같은 사건이 아니다.",
+                    "en": "Chapter 31 shows that the supply of loan capital can grow through technical and institutional channels. This is not the same event as an increase in real productive capacity."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "유동성과 지급능력을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must liquidity be distinguished from solvency?"
+                    "ko": "같은 100파운드가 여러 번 예금으로 나타나는 예시는 무엇을 보여주는가?",
+                    "en": "What is shown by the example in which the same £100 appears repeatedly as deposits?"
                   },
                   "choices": {
                     "ko": [
-                      "잠시 현금을 구할 수 있으면 지급능력 문제도 사라진다고 본다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다.",
-                      "잠시 현금을 조달할 수 있는 능력과 최종적으로 부채를 감당할 만큼 가치가 실현되는지는 다른 문제이기 때문이다.",
-                      "준비금, 자기자본, 예금을 모두 같은 항목으로 본다."
+                      "같은 화폐가 지급과 환류를 반복하며 여러 예금항목을 만들 수 있어, 예금 총액이 곧 별개의 현금 총량은 아니다.",
+                      "예금이 반복될수록 같은 금액의 기계가 매번 새로 생산된다.",
+                      "소매상의 예금은 노동자의 임금과 관계없이 은행 자기자본으로 쌓인다.",
+                      "화폐의 반복 회전은 신용제도가 없는 사회에서만 가능한 현상이다."
                     ],
                     "en": [
-                      "Assumes temporary access to cash eliminates solvency problems.",
-                      "Assumes confidence alone creates value without actual realization.",
-                      "The ability to obtain cash temporarily differs from whether enough value is ultimately realized to meet debts.",
-                      "Treats reserves, equity capital, and deposits as the same balance-sheet item."
+                      "The same money can repeat payment and return flows, creating several deposit entries, so total deposits are not the same as separate cash amounts.",
+                      "Each repeated deposit produces machinery of the same amount anew.",
+                      "Retail deposits accumulate as bank equity independently of workers’ wages.",
+                      "Repeated turnover of money is possible only in societies without a credit system."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잠시 현금을 조달할 수 있는 능력과 최종적으로 부채를 감당할 만큼 가치가 실현되는지는 다른 문제이기 때문이다. 유동성은 시간을 벌 수 있지만 가치 부족을 없애지는 못한다. 이 차이가 신용위기의 핵심 분석점이다.",
-                    "en": "The ability to obtain cash temporarily differs from whether enough value is ultimately realized to meet debts. Liquidity can buy time but cannot eliminate a lack of value. This difference is central to credit crises."
-                  }
+                    "ko": "이 예시는 대부자본 통계를 읽을 때 중요하다. 예금의 합계는 신용과 회전의 산물이므로, 현금이나 현실자본의 단순한 물리량이 아니다.",
+                    "en": "This example matters for reading loan-capital statistics. The sum of deposits is a product of credit and turnover, not a simple physical quantity of cash or real capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "위기 때 청구권이 갑자기 현금 지급을 요구받으면 어떤 일이 생기는가?",
-                    "en": "What happens when claims are suddenly required to be settled in cash during crisis?"
+                    "ko": "31장은 다음 논의로 어떤 문제를 넘겨주는가?",
+                    "en": "What problem does Chapter 31 pass on to the following discussion?"
                   },
                   "choices": {
                     "ko": [
-                      "청구권은 현실 가치와 무관하게 계속 늘어도 문제가 없다고 본다.",
-                      "어음과 차용증은 최종 지급 그 자체라고 본다.",
-                      "위기를 생산과 지급 연쇄의 문제가 아니라 심리적 공포로만 본다.",
-                      "서로를 대신하던 신용수단들이 할인되거나 거부되고, 현실 지급수단과 실현된 가치의 부족이 드러난다."
+                      "대부자본이 실제 축적과 함께 늘 때와, 신용·예금·회전의 효과로 별도 팽창할 때를 더 구분하는 문제다.",
+                      "은행권 발행이 생산가격을 직접 만든다는 결론을 검증하는 문제다.",
+                      "상업신용이 현금 지급의 필요를 없앴다는 결론을 확정하는 문제다.",
+                      "금 유출이 세계시장 위기의 유일한 원인이라는 명제를 확장하는 문제다."
                     ],
                     "en": [
-                      "Assumes claims can grow without limit regardless of real value.",
-                      "Treats bills and IOUs as final payment itself.",
-                      "Reduces crisis to psychological panic rather than production and payment chains.",
-                      "Credit instruments that substituted for one another are discounted or refused, revealing shortages of real means of payment and realized value."
+                      "It passes on the problem of distinguishing when loan capital grows with actual accumulation and when it expands separately through credit, deposits, and turnover.",
+                      "It passes on the task of verifying that banknote issue directly creates prices of production.",
+                      "It confirms the conclusion that commercial credit has abolished the need for cash payment.",
+                      "It extends the thesis that gold drain is the sole cause of world-market crisis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "서로를 대신하던 신용수단들이 할인되거나 거부되고, 현실 지급수단과 실현된 가치의 부족이 드러난다. 신용의 확장은 지급 요구가 평온하게 이어질 때 안정적으로 보인다. 위기는 그 전제를 시험한다.",
-                    "en": "Credit instruments that substituted for one another are discounted or refused, revealing shortages of real means of payment and realized value. Credit expansion looks stable while payment demands proceed calmly. Crisis tests that premise."
-                  }
+                    "ko": "31장은 단순한 풍부함과 실제 축적을 분리하는 작업을 이어간다. 다음 논의는 이 차이를 더 구체적 국면과 통계 속에서 추적한다.",
+                    "en": "Chapter 31 continues separating apparent abundance from actual accumulation. The following discussion traces this difference through more concrete phases and data."
+                  },
+                  "points": 2
                 }
               ]
             },
@@ -30053,142 +30053,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "신용은 미래 가치에 대한 지배권을 현재로 끌어오지만, 왜 그 힘이 무제한적일 수 없는가?",
-                    "en": "Credit brings command over future value into the present, but why can that power not be unlimited?"
+                    "ko": "31장에서 “floating capital”이라는 용어가 혼란을 낳는 이유는 무엇인가?",
+                    "en": "Why does the term “floating capital” create confusion in Chapter 31?"
                   },
                   "choices": {
                     "ko": [
-                      "그 권리는 결국 실제 생산과 판매의 성공, 그리고 지급능력에 의존하기 때문이다.",
-                      "청구권은 현실 가치와 무관하게 계속 늘어도 문제가 없기 때문이다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어지기 때문이다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직이기 때문이다."
+                      "화폐시장에서는 단기 대부 가능 자금, 은행준비금, 지폐, 금까지 뒤섞어 부르며 고전적 유동자본 개념과 달라지기 때문이다.",
+                      "이 용어가 공장 설비처럼 오래 쓰이는 고정자본만을 가리키기 때문이다.",
+                      "이 용어가 노동자의 소비재를 뜻해 대부시장과 접점이 없기 때문이다.",
+                      "이 용어가 상품자본의 재고량을 정확히 측정하는 통계명칭이기 때문이다."
                     ],
                     "en": [
-                      "Because that command ultimately depends on successful production and sale, and on the capacity to pay.",
-                      "Because claims can expand without limit independently of real value and cause no problem.",
-                      "Because trust alone creates value without actual realization.",
-                      "Because finance moves in complete independence from production and realization."
+                      "In the money market it mixes short-term loanable funds, bank reserves, notes, and gold, differing from the classical concept of circulating capital.",
+                      "The term refers only to fixed capital used for a long time, such as factory equipment.",
+                      "The term means workers’ consumer goods and has no connection to the loan market.",
+                      "The term is a statistical name that precisely measures stocks of commodity-capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "신용은 미래 실현을 현재의 권리처럼 만들지만, 그 권리가 결제되는 순간에는 현실의 가치와 지급수단이 필요하다. 그래서 위기는 심리의 붕괴만이 아니라 청구권과 현실자본 사이의 긴장을 폭로한다.",
-                    "en": "Credit turns future realization into a present right, but when that right must be settled, actual value and means of payment are needed. Crisis therefore reveals not just a collapse of confidence, but the tension between claims and real capital."
-                  }
+                    "ko": "이 디테일은 31장의 범주 비판을 잘 보여준다. 화폐시장 용어는 정치경제학의 기존 범주를 바꿔 쓰며, 그 결과 현실자본과 대부자본의 차이가 흐려진다.",
+                    "en": "This detail shows Chapter 31’s critique of categories. Money-market language repurposes political-economic terms, blurring the difference between real capital and loan capital."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "청구권이 유통된다는 사실만으로 그것을 현실자본과 동일시할 수 없는 이유는 무엇인가?",
-                    "en": "Why can claims not be equated with real capital merely because they circulate?"
+                    "ko": "런던 bill-broker를 통한 재할인 구조는 무엇을 보여주는가?",
+                    "en": "What is shown by the rediscounting structure through London bill-brokers?"
                   },
                   "choices": {
                     "ko": [
-                      "증권 가격은 같은 금액의 기계와 원료가 새로 존재한다는 뜻이라고 본다.",
-                      "청구권의 유통은 소유권과 지급약속의 이전이지, 그 자체로 추가 생산수단과 노동력을 창조하는 것은 아니기 때문이다.",
-                      "어음과 차용증은 최종 지급 그 자체라고 본다.",
-                      "금융자산의 증가는 같은 규모의 공장 증가와 같다고 본다."
+                      "지방의 유휴 예금이 런던으로 모여 어음 재할인을 통해 대부자본처럼 움직이고, 그 과정에서 허위신용도 커질 수 있다.",
+                      "재할인은 모든 어음을 금으로 바꾸어 은행 준비금을 물리적으로 늘린다.",
+                      "bill-broker는 생산수단을 직접 운영해 어음의 잉여가치를 생산한다.",
+                      "지방 은행의 예금은 런던으로 이동하면 은행의 부채 성격을 잃는다."
                     ],
                     "en": [
-                      "Treats securities prices as proof that the same amount of machinery and materials newly exists.",
-                      "The circulation of claims transfers titles and promises of payment; it does not itself create additional means of production and labour-power.",
-                      "Treats bills and IOUs as final payment itself.",
-                      "Equates growth of financial assets with the same growth of factories."
+                      "Idle deposits from the provinces gather in London and move as loan capital through rediscounting bills, while fictitious credit can expand in the process.",
+                      "Rediscounting turns all bills into gold and physically increases bank reserves.",
+                      "Bill-brokers directly operate means of production and produce surplus-value for bills.",
+                      "Deposits from country banks lose their liability character when moved to London."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "청구권의 유통은 소유권과 지급약속의 이전이지, 그 자체로 추가 생산수단과 노동력을 창조하는 것은 아니기 때문이다. 청구권은 현실자본에 대한 권리를 나타낼 수 있다. 그러나 권리의 이동과 현실 생산능력의 증가는 같은 사건이 아니다.",
-                    "en": "The circulation of claims transfers titles and promises of payment; it does not itself create additional means of production and labour-power. Claims may represent rights to real capital. But movement of rights and growth of real productive capacity are not the same event."
-                  }
+                    "ko": "마르크스가 이 사례를 길게 다루는 이유는 신용의 기술적 집중이 실제 축적과 다른 방식으로 대부자본을 키우기 때문이다. 재할인은 편의이자 취약성의 통로다.",
+                    "en": "Marx treats this case at length because technical concentration of credit expands loan capital differently from actual accumulation. Rediscounting is both a convenience and a channel of fragility."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "단기자금시장이 얼어붙는 현대적 사례는 이 장의 어떤 논점을 보여주는가?",
-                    "en": "What point of this chapter is shown by a modern short-term funding freeze?"
+                    "ko": "예금 증가가 실제 축적의 결과이면서도 생산자본 자체가 아닌 이유는 무엇인가?",
+                    "en": "Why can deposit growth be a result of actual accumulation without being productive capital itself?"
                   },
                   "choices": {
                     "ko": [
-                      "위기를 생산과 지급 연쇄의 문제가 아니라 심리적 공포로만 본다.",
-                      "잠시 현금을 구할 수 있으면 지급능력 문제도 사라진다고 본다.",
-                      "평소에는 담보와 차환으로 굴러가던 청구권 체계가 신뢰가 흔들릴 때 즉각 지급수단과 현실 가치의 문제로 돌아간다는 점이다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다."
+                      "상품자본이 판매되어 수입이 화폐형태를 얻은 결과일 수 있지만, 생산자본이 되려면 다시 생산요소로 전환되어야 하기 때문이다.",
+                      "예금이 늘면 같은 순간 노동력과 생산수단이 이미 결합되어 새 가치를 만들기 때문이다.",
+                      "예금은 현금과 달리 소비되지 않는 자연수익이라 생산과정과 분리되기 때문이다.",
+                      "은행에 맡긴 돈은 국채 이자 수입을 매개해 생산적 투자와 다른 경로를 갖기 때문이다."
                     ],
                     "en": [
-                      "Reduces crisis to psychological panic rather than production and payment chains.",
-                      "Assumes temporary access to cash eliminates solvency problems.",
-                      "A system of claims that normally rolls over through collateral and refinancing returns, when confidence breaks, to the problem of means of payment and real value.",
-                      "Assumes confidence alone creates value without actual realization."
+                      "It may result from commodity-capital being sold and revenue taking money form, but to become productive capital it must be reconverted into elements of production.",
+                      "When deposits grow, labour-power and means of production are already combined at the same moment to create new value.",
+                      "Deposits are natural returns that, unlike cash, are not consumed and are separate from production.",
+                      "Because money deposited in banks mediates public-debt interest income and follows a path different from productive investment."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "평소에는 담보와 차환으로 굴러가던 청구권 체계가 신뢰가 흔들릴 때 즉각 지급수단과 현실 가치의 문제로 돌아간다는 점이다. 자금시장 경색은 단순한 기분 변화가 아니다. 청구권의 상호승인이 멈출 때 지급의 물질적 조건이 전면에 나온다.",
-                    "en": "A system of claims that normally rolls over through collateral and refinancing returns, when confidence breaks, to the problem of means of payment and real value. A funding freeze is not a mere change in mood. When mutual recognition of claims stops, the material conditions of payment come to the front."
-                  }
+                    "ko": "31장은 실제 축적의 결과가 일정 기간 대부자본 형태로 머무를 수 있음을 보여준다. 그래서 예금 증가는 현실축적의 표현일 수도 있지만 생산자본 그 자체는 아니다.",
+                    "en": "Chapter 31 shows that a result of actual accumulation can remain for a time in the form of loan capital. Deposit growth may express real accumulation, but it is not productive capital itself."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "위기를 “공포심”만으로 설명하면 무엇을 놓치는가?",
-                    "en": "What is missed if crisis is explained only as panic?"
+                    "ko": "수입으로 소비될 돈도 잠시 대부자본으로 나타날 수 있다는 논점의 의미는 무엇인가?",
+                    "en": "What is the significance of the claim that money intended for consumption can temporarily appear as loan capital?"
                   },
                   "choices": {
                     "ko": [
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다.",
-                      "위기를 생산과 지급 연쇄의 문제가 아니라 심리적 공포로만 본다.",
-                      "공포가 왜 생기는지, 즉 과잉 청구권과 지급 연쇄가 실제 가치실현에 비해 팽창했다는 구조를 놓친다.",
-                      "청구권은 현실 가치와 무관하게 계속 늘어도 문제가 없다고 본다."
+                      "자본가의 소비수입, 지대, 높은 임금 등도 점진적으로 쓰이는 동안 예금이 되어 대부 가능한 자금처럼 기능할 수 있다는 뜻이다.",
+                      "소비수입은 은행에 들어가면 소비되지 않고 모두 고정자본 투자로 확정된다는 뜻이다.",
+                      "임금이 예금되면 노동자는 이자 낳는 자본가가 되어 임금노동 관계가 끝난다는 뜻이다.",
+                      "지대와 임금은 생산된 가치와 접점이 없어 신용제도 밖에서만 순환한다는 뜻이다."
                     ],
                     "en": [
-                      "Assumes confidence alone creates value without actual realization.",
-                      "Reduces crisis to psychological panic rather than production and payment chains.",
-                      "It misses why panic arises: the structure in which excessive claims and payment chains have expanded beyond actual realization of value.",
-                      "Assumes claims can grow without limit regardless of real value."
+                      "Capitalists’ consumption revenue, rent, higher wages, and similar incomes can become deposits and function as loanable funds while they are spent gradually.",
+                      "Consumption revenue, once deposited, is no longer consumed and is fixed as investment in fixed capital.",
+                      "When wages are deposited, workers become interest-bearing capitalists and the wage-labour relation ends.",
+                      "Rent and wages have no connection to produced value and circulate only outside the credit system."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "공포가 왜 생기는지, 즉 과잉 청구권과 지급 연쇄가 실제 가치실현에 비해 팽창했다는 구조를 놓친다. 심리는 위기의 형식일 수 있지만 원인 전체는 아니다. 마르크스는 신용관계의 구조적 한계를 본다.",
-                    "en": "It misses why panic arises: the structure in which excessive claims and payment chains have expanded beyond actual realization of value. Psychology can be a form of crisis, but not its whole cause. Marx looks at the structural limits of credit relations."
-                  }
+                    "ko": "이 세부는 대부자본의 공급이 왜 실제 투자목적의 저축에만 의존하지 않는지 보여준다. 점진적으로 소비되는 수입도 은행을 거치며 일시적 대부자본이 된다.",
+                    "en": "This detail shows why the supply of loan capital does not depend only on savings intended for investment. Revenue consumed gradually can pass through banks and become temporary loan capital."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "어음과 증권이 호황기에는 자본처럼 원활히 돌다가 위기 때 갑자기 할인되거나 거부된다. 이 변화가 보여주는 것은 무엇인가?",
-                    "en": "Bills and securities circulate smoothly like capital in a boom, then are suddenly discounted or refused in crisis. What does this shift show?"
+                    "ko": "31장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 31?"
                   },
                   "choices": {
                     "ko": [
-                      "어음과 차용증은 최종 지급 그 자체다.",
-                      "청구권은 현실 가치와 무관하게 계속 늘어도 문제가 없다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다.",
-                      "신용청구권은 축적을 확대하지만, 위기는 그 청구권이 현실 가치와 지급능력에 묶여 있음을 드러낸다."
+                      "대부 가능한 화폐자본의 증식 경로를 산업축적, 은행집중, 예금회전, 수입의 화폐화로 나누어 현실자본과의 관계를 더 정밀하게 만든다.",
+                      "화폐자본과 현실자본의 차이를 없애고 모든 예금을 생산수단으로 계산한다.",
+                      "상업신용이 지급수단 문제를 해결하므로 위기 분석에서 현금을 제외한다.",
+                      "증권가격 하락을 현실 생산설비의 같은 비율 파괴로 확정한다."
                     ],
                     "en": [
-                      "Bills and IOUs are final payment itself.",
-                      "Claims can expand without limit independently of real value and cause no problem.",
-                      "Finance moves in complete independence from production and realization.",
-                      "Credit claims expand accumulation, but crisis shows that they are tied to real value and the capacity to pay."
+                      "It separates paths of loanable money-capital growth through industrial accumulation, bank concentration, deposit turnover, and monetized revenue, sharpening its relation to real capital.",
+                      "It removes the difference between money-capital and real capital and counts all deposits as means of production.",
+                      "It excludes cash from crisis analysis because commercial credit solves the problem of means of payment.",
+                      "It identifies falling security prices with destruction of productive equipment in the same proportion."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "호황의 원활한 유통은 청구권과 현실자본의 차이를 숨긴다. 위기는 그 차이를 폭로하면서도, 신용이 단순한 허상이 아니라 실제 축적을 확장해 온 형태였음을 함께 보여준다.",
-                    "en": "Smooth circulation in a boom hides the difference between claims and real capital. Crisis exposes that difference while also showing that credit was not a mere illusion, but a form that had expanded real accumulation."
-                  }
+                    "ko": "31장은 30장의 문제를 더 촘촘하게 만든다. 대부자본은 현실축적과 이어지지만, 은행제도와 예금의 회전 때문에 독자적 팽창 경로를 갖는다.",
+                    "en": "Chapter 31 makes Chapter 30’s problem more precise. Loan capital is linked to real accumulation, but banking and deposit turnover give it distinct paths of expansion."
+                  },
+                  "points": 3
                 }
               ]
             }
