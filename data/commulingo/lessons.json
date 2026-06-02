@@ -19255,27 +19255,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "비용가격과 이윤에서 마르크스가 분석 대상으로 삼는 문제는 무엇인가?",
-                    "en": "What problem does Marx take as his object in Cost-Price and Profit?"
+                    "ko": "3권 1장에서 마르크스가 비용가격과 이윤을 분석하는 출발점은 무엇인가?",
+                    "en": "What is Marx's starting point in analyzing cost-price and profit in Volume III, Chapter 1?"
                   },
                   "choices": {
                     "ko": [
-                      "상품가치가 비용가격과 이윤으로 나타날 때, 잉여가치의 원천이 어떻게 가려지는지 분석한다.",
-                      "이윤을 생산수단과 노동력이 똑같이 만든 자연적 수익으로 본다.",
-                      "비용가격을 상품가치 전체와 같은 것으로 본다.",
-                      "임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다."
+                      "상품가치가 비용가격과 이윤으로 표현되면서 잉여가치의 생산원천이 표면에서 달라 보이는 과정이다.",
+                      "개별 자본가가 실제로 지불한 구매가격을 모두 더해 상품의 사회적 가치를 확정하는 과정이다.",
+                      "시장가격이 수요 변화에 맞춰 움직일 때 노동시간 계산이 회계 항목으로 전환되는 과정이다.",
+                      "생산수단과 노동력이 각각 독립된 수익권을 갖고 이윤을 나누어 받는 과정이다."
                     ],
                     "en": [
-                      "It analyzes how the source of surplus-value is concealed when commodity value appears as cost-price plus profit.",
-                      "Treats profit as a natural return produced equally by means of production and labour-power.",
-                      "Identifies cost-price with the whole value of the commodity.",
-                      "Erases the specificity of labour-power because wages appear as a cost."
+                      "The process in which commodity value appears as cost-price plus profit, making the source of surplus-value look different on the surface.",
+                      "The process of fixing a commodity's social value by adding together all purchase prices actually paid by the individual capitalist.",
+                      "The process in which labour-time calculation becomes an accounting item as market price moves with demand.",
+                      "The process in which means of production and labour-power each hold an independent claim to revenue and divide profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품가치가 비용가격과 이윤으로 나타날 때, 잉여가치의 원천이 어떻게 가려지는지 분석한다. 이 문제를 보아야 개별 자본의 표면적 거래가 사회 전체의 재생산 조건으로 연결된다.",
-                    "en": "It analyzes how the source of surplus-value is concealed when commodity value appears as cost-price plus profit. Seeing this links the surface transactions of individual capitals to the conditions of social reproduction as a whole."
+                    "ko": "1장의 개념적 출발점은 잉여가치가 이윤이라는 표면형태로 바뀌어 나타나는 방식이다. 자본가에게는 상품가치가 비용가격 위의 초과분처럼 보이지만, 그 초과분의 원천은 여전히 노동력의 사용에서 생산된 잉여가치다.",
+                    "en": "The conceptual starting point is the way surplus-value appears in the surface form of profit. To the capitalist, commodity value looks like an excess over cost-price, but the source of that excess remains surplus-value produced through the use of labour-power."
                   }
                 },
                 {
@@ -19283,41 +19283,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본가에게 이윤이 총투하자본 전체에서 나온 것처럼 보이는 이유는 무엇인가?",
-                    "en": "Why does profit appear to the capitalist as if it arose from the whole advanced capital?"
+                    "ko": "1장의 기본 공식 C = c + v + s가 C = k + s로 바뀔 때, k는 무엇을 가리키는가?",
+                    "en": "When the formula C = c + v + s becomes C = k + s in Chapter 1, what does k indicate?"
                   },
                   "choices": {
                     "ko": [
-                      "자본가는 임금과 생산수단 지출을 모두 비용가격으로 합쳐 보며, 잉여가치를 노동력의 특수한 역할이 아니라 총비용 위의 초과분으로 경험하기 때문이다.",
-                      "임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다.",
-                      "비용가격을 상품가치 전체와 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다."
+                      "상품 생산에 소비되어 보충되어야 하는 자본가의 지출분, 곧 비용가격 c+v다.",
+                      "상품 안에 들어 있는 잉여가치가 경쟁을 거치기 전에 임시로 붙는 이름이다.",
+                      "생산수단 전체의 구매가격이며 임금 지출은 이윤 계산에서 따로 처리된다.",
+                      "상품이 시장에서 팔릴 때 수요에 따라 새로 만들어지는 판매가격의 기준점이다."
                     ],
                     "en": [
-                      "The capitalist groups wages and means-of-production outlays together as cost-price, experiencing surplus-value not as the specific result of labour-power but as an excess over total cost.",
-                      "Erases the specificity of labour-power because wages appear as a cost.",
-                      "Identifies cost-price with the whole value of the commodity.",
-                      "Assumes exploitation need not be analyzed if one sees only the margin over price."
+                      "The capitalist's outlay consumed in production and needing replacement: the cost-price c+v.",
+                      "A provisional name for the surplus-value contained in the commodity before competition acts on it.",
+                      "The purchase price of all means of production, with wage outlay treated separately in profit calculation.",
+                      "The baseline of selling price newly formed by demand when the commodity reaches the market."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본가는 임금과 생산수단 지출을 모두 비용가격으로 합쳐 보며, 잉여가치를 노동력의 특수한 역할이 아니라 총비용 위의 초과분으로 경험하기 때문이다. 따라서 핵심은 판매량 하나가 아니라 가치보충과 물질보충이 동시에 맞는가이다.",
-                    "en": "The capitalist groups wages and means-of-production outlays together as cost-price, experiencing surplus-value not as the specific result of labour-power but as an excess over total cost. The core issue is therefore not sales volume alone, but whether value replacement and material replacement fit together."
-                  },
-                  "choiceFeedback": {
-                    "ko": [
-                      "핵심 확인: 자본가는 임금과 생산수단 지출을 모두 비용가격으로 합쳐 보며, 잉여가치를 노동력의 특수한 역할이 아니라 총비용 위의 초과분으로 경험하기 때문이다. 따라서 핵심은 판매량 하나가 아니라 가치보충과 물질보충이 동시에 맞는가이다.",
-                      "오해 진단: \"임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"비용가격을 상품가치 전체와 같은 것으로 보는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Right: The capitalist groups wages and means-of-production outlays together as cost-price, experiencing surplus-value not as the specific result of labour-power but as an excess over total cost. The core issue is therefore not sales volume alone, but whether value replacement and material replacement fit together.",
-                      "Misconception check: choosing \"Erases the specificity of labour-power because wages appear as a cost.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Identifies cost-price with the whole value of the commodity.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes exploitation need not be analyzed if one sees only the margin over price.\" puts another category ahead of the key relation in the correct answer."
-                    ]
+                    "ko": "공식의 핵심은 비용가격 k가 상품가치 전체가 아니라는 점이다. k는 생산에 소비된 불변자본과 가변자본의 보충분이고, 상품가치는 여기에 잉여가치 s를 더한 C = k + s로 나타난다.",
+                    "en": "The point of the formula is that cost-price k is not the whole commodity value. It is the replacement of the constant and variable capital consumed in production, while commodity value appears as C = k + s."
                   }
                 },
                 {
@@ -19325,27 +19311,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "비용가격과 가치를 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must cost-price be distinguished from value?"
+                    "ko": "비용가격을 상품가치의 형성 원천처럼 이해하면 무엇이 잘못 보이는가?",
+                    "en": "What is distorted if cost-price is understood as a source of commodity-value formation?"
                   },
                   "choices": {
                     "ko": [
-                      "임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다.",
-                      "비용가격은 자본가가 지출한 c+v만 나타내지만, 상품가치는 c+v+m으로 잉여가치를 포함한다.",
-                      "가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다.",
-                      "불변자본과 가변자본의 차이를 회계상 비용항목 차이로만 본다."
+                      "비용가격은 소비된 자본의 보충분인데, 그것이 새 가치와 잉여가치를 생산한 항목처럼 보이게 된다.",
+                      "비용가격은 시장가격의 변동폭을 뜻하므로 생산과정의 가치관계가 가격표에 흡수된다.",
+                      "비용가격은 불변자본만의 이름이므로 임금 지출은 상품가치 바깥에서 처리된다.",
+                      "비용가격은 판매 뒤 이윤을 정리하는 회계 기준에 가까워서 생산 중 가치형성과 같은 층위에 놓인다."
                     ],
                     "en": [
-                      "Erases the specificity of labour-power because wages appear as a cost.",
-                      "Cost-price represents only the capitalist’s outlay c+v, while commodity value is c+v+s and includes surplus-value.",
-                      "Assumes exploitation need not be analyzed if one sees only the margin over price.",
-                      "Treats the distinction between constant and variable capital as only an accounting line-item difference."
+                      "Cost-price is the replacement of consumed capital, yet it comes to appear as an item that produced new value and surplus-value.",
+                      "Cost-price means the fluctuation range of market price, so value relations in production are absorbed into the price tag.",
+                      "Cost-price names constant capital alone, so wage outlay is treated outside commodity value.",
+                      "Cost-price is closer to an accounting basis for organizing profit after sale and stands on the same level as value formation in production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "비용가격은 자본가가 지출한 c+v만 나타내지만, 상품가치는 c+v+m으로 잉여가치를 포함한다. 이 구분을 놓치면 표면의 수입형태나 가격형태가 관계의 본질처럼 보인다.",
-                    "en": "Cost-price represents only the capitalist’s outlay c+v, while commodity value is c+v+s and includes surplus-value. Without this distinction, surface revenue or price forms appear as the essence of the relation."
+                    "ko": "마르크스는 비용가격이 실천적 범주임을 인정하지만, 그것이 가치형성 범주가 되는 것은 아니라고 구분한다. 비용가격은 소비된 자본가치의 보충분이며, 새 가치와 잉여가치는 살아 있는 노동의 사용에서 나온다.",
+                    "en": "Marx treats cost-price as a practical category, but not as a category of value formation. It is the replacement of consumed capital-value, while new value and surplus-value arise from the use of living labour."
                   }
                 },
                 {
@@ -19353,27 +19339,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "기업 회계에는 원료비와 임금이 모두 비용으로 들어가고 이윤은 총비용 위의 마진으로 보인다. 무엇이 가려지는가?",
-                    "en": "In company accounts, materials and wages both appear as costs, and profit appears as a margin over total cost. What is concealed?"
+                    "ko": "가치가 600원이고 비용가격이 500원인 상품을 560원에 팔았다. 1장의 분석으로 이 판매를 어떻게 읽어야 하는가?",
+                    "en": "A commodity has a value of 600 and a cost-price of 500, but sells for 560. How should Chapter 1 read this sale?"
                   },
                   "choices": {
                     "ko": [
-                      "가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다.",
-                      "불변자본과 가변자본의 차이를 회계상 비용항목 차이로만 본다.",
-                      "불변자본과 가변자본의 차이, 곧 노동력만이 새 가치와 잉여가치를 만든다는 관계가 가려진다.",
-                      "이윤을 생산수단과 노동력이 똑같이 만든 자연적 수익으로 본다."
+                      "가치보다 낮게 팔렸지만 비용가격보다 높으므로 잉여가치의 일부가 이윤으로 실현된다.",
+                      "가치보다 낮은 판매에서는 비용가격 보충도 이루어지지 않아 생산자본이 전부 손실된다.",
+                      "판매가격이 가치와 다르면 상품 안의 잉여가치도 판매 순간 새로 계산된다.",
+                      "560원은 비용가격과 가치의 중간값이므로 이윤과 손실이 동시에 같은 크기로 발생한다."
                     ],
                     "en": [
-                      "Assumes exploitation need not be analyzed if one sees only the margin over price.",
-                      "Treats the distinction between constant and variable capital as only an accounting line-item difference.",
-                      "The difference between constant and variable capital is concealed: only labour-power creates new value and surplus-value.",
-                      "Treats profit as a natural return produced equally by means of production and labour-power."
+                      "It sells below value but above cost-price, so part of the surplus-value is realized as profit.",
+                      "A sale below value cannot even replace cost-price, so the productive capital is entirely lost.",
+                      "When selling price differs from value, the surplus-value inside the commodity is recalculated at the moment of sale.",
+                      "Since 560 lies between cost-price and value, profit and loss occur at the same magnitude."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "불변자본과 가변자본의 차이, 곧 노동력만이 새 가치와 잉여가치를 만든다는 관계가 가려진다. 구체 사례에서도 마르크스의 기준은 자본가치가 어떤 형태로 보충되고 다시 운동하는가이다.",
-                    "en": "The difference between constant and variable capital is concealed: only labour-power creates new value and surplus-value. In concrete cases too, Marx’s criterion is how capital-value is replaced and moves again."
+                    "ko": "마르크스는 가치와 비용가격 사이의 가격에서도 이윤이 가능하다고 본다. 600원 가치의 상품을 560원에 팔면 가치보다 40원 낮지만 비용가격 500원을 넘기 때문에 60원의 이윤이 실현된다.",
+                    "en": "Marx shows that profit is possible at prices between value and cost-price. If a commodity worth 600 sells for 560, it is 40 below value but 60 above the cost-price of 500, so 60 is realized as profit."
                   }
                 },
                 {
@@ -19381,27 +19367,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "비용가격과 이윤 장은 전체 논지에서 어떤 역할을 하는가?",
-                    "en": "What role does the chapter on Cost-Price and Profit play in the overall argument?"
+                    "ko": "1장의 비용가격·이윤 분석은 왜 2장의 이윤율 분석으로 이어지는가?",
+                    "en": "Why does Chapter 1's analysis of cost-price and profit lead into Chapter 2's analysis of the rate of profit?"
                   },
                   "choices": {
                     "ko": [
-                      "비용가격을 상품가치 전체와 같은 것으로 본다.",
-                      "불변자본과 가변자본의 차이를 회계상 비용항목 차이로만 본다.",
-                      "이윤을 생산수단과 노동력이 똑같이 만든 자연적 수익으로 본다.",
-                      "3권의 출발점으로서 잉여가치가 이윤이라는 더 구체적이고 전도된 표면형태로 나타나는 방식을 연다."
+                      "이윤이 총투하자본의 성과처럼 나타나면, 잉여가치가 전체 자본에 대해 어떤 비율로 보이는지가 다음 문제가 된다.",
+                      "비용가격이 확인되면 잉여가치의 원천 문제는 끝나고 다음 장은 시장가격의 우연한 변동만 다룬다.",
+                      "이윤이 판매가격의 일부로 실현되면 상품가치 공식은 유통에서의 화폐 회전 공식으로 곧장 전개된다.",
+                      "자본가의 비용 계산이 안정되면 불변자본과 가변자본의 구분은 기업 내부의 원가 항목으로 재배열된다."
                     ],
                     "en": [
-                      "Identifies cost-price with the whole value of the commodity.",
-                      "Treats the distinction between constant and variable capital as only an accounting line-item difference.",
-                      "Treats profit as a natural return produced equally by means of production and labour-power.",
-                      "As the starting point of Volume III, it opens the analysis of surplus-value appearing in the more concrete and inverted surface form of profit."
+                      "Once profit appears as the result of the total advanced capital, the next problem is the ratio in which surplus-value appears relative to that total capital.",
+                      "Once cost-price is identified, the source of surplus-value is settled and the next chapter treats only accidental market-price movements.",
+                      "Once profit is realized as part of selling price, the commodity-value formula develops directly into a formula for monetary turnover in circulation.",
+                      "Once the capitalist's cost calculation stabilizes, the distinction between constant and variable capital is rearranged as internal cost items of the firm."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "3권의 출발점으로서 잉여가치가 이윤이라는 더 구체적이고 전도된 표면형태로 나타나는 방식을 연다. 이 역할 때문에 해당 장은 앞선 분석의 반복이 아니라 다음 단계의 조건을 만든다.",
-                    "en": "As the starting point of Volume III, it opens the analysis of surplus-value appearing in the more concrete and inverted surface form of profit. This role makes the chapter not a repetition of earlier analysis but a condition for the next step."
+                    "ko": "다음 장으로의 연결은 이윤이 총자본의 산물처럼 보인다는 데 있다. 그래서 2장은 같은 잉여가치가 잉여가치율이 아니라 이윤율, 곧 총투하자본에 대한 비율로 어떻게 나타나는지를 분석한다.",
+                    "en": "The link to the next chapter lies in profit appearing as the product of total capital. Chapter 2 therefore asks how the same surplus-value appears not as the rate of surplus-value but as the rate of profit, a ratio to the total advanced capital."
                   }
                 }
               ]
@@ -19419,27 +19405,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "비용가격과 이윤에서 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in cost-price and profit?"
+                    "ko": "마르크스가 “자본가에게 든 비용”과 “상품의 실제 생산비”를 구분할 때, 핵심 차이는 무엇인가?",
+                    "en": "When Marx distinguishes what the commodity costs the capitalist from its actual cost of production, what is the key difference?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치는 가변자본이 구매한 노동력에서 나오지만, 이윤은 총투하자본 전체의 산물처럼 나타난다.",
-                      "비용가격을 상품가치 전체와 같은 것으로 본다.",
-                      "이윤을 생산수단과 노동력이 똑같이 만든 자연적 수익으로 본다.",
-                      "임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다."
+                      "자본가에게 든 비용은 지불한 자본 c+v이지만, 실제 생산비는 지불노동과 부불노동을 포함한 노동지출과 연결된다.",
+                      "자본가에게 든 비용은 임금만이고, 실제 생산비는 생산수단 가격만을 따로 계산한 것이다.",
+                      "자본가에게 든 비용은 판매 뒤의 회계 수치이고, 실제 생산비는 소비자가 지불한 최종가격이다.",
+                      "자본가에게 든 비용과 실제 생산비는 같은 크기이며, 구분은 경쟁 분석에서만 임시로 쓰인다."
                     ],
                     "en": [
-                      "Surplus-value arises from labour-power bought by variable capital, but profit appears as the product of the whole advanced capital.",
-                      "Identifies cost-price with the whole value of the commodity.",
-                      "Treats profit as a natural return produced equally by means of production and labour-power.",
-                      "Erases the specificity of labour-power because wages appear as a cost."
+                      "The capitalist's cost is the paid-out capital c+v, whereas the actual cost is tied to the expenditure of labour, including paid and unpaid labour.",
+                      "The capitalist's cost is wages alone, whereas the actual cost separately calculates only the price of means of production.",
+                      "The capitalist's cost is an accounting number after sale, whereas the actual cost is the final price paid by consumers.",
+                      "The capitalist's cost and the actual cost are the same magnitude, with the distinction used only temporarily in competition analysis."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치는 가변자본이 구매한 노동력에서 나오지만, 이윤은 총투하자본 전체의 산물처럼 나타난다. 이 긴장은 자본주의적 재생산이 사적 결정과 사회적 의존을 동시에 갖는다는 데서 나온다.",
-                    "en": "Surplus-value arises from labour-power bought by variable capital, but profit appears as the product of the whole advanced capital. This tension arises because capitalist reproduction combines private decisions with social interdependence."
+                    "ko": "심화의 첫 구분은 자본가의 지출과 노동의 지출을 나누는 것이다. 비용가격은 자본가가 보충해야 할 지불분을 나타내지만, 상품가치에는 노동자가 지불받지 못한 노동으로 만든 잉여가치도 포함된다.",
+                    "en": "The advanced distinction separates the capitalist's outlay from the expenditure of labour. Cost-price expresses what the capitalist must replace, but commodity value also contains surplus-value produced by unpaid labour."
                   }
                 },
                 {
@@ -19447,27 +19433,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "잉여가치가 이윤으로 나타나는 매개는 무엇인가?",
-                    "en": "What mediates the appearance of surplus-value as profit?"
+                    "ko": "노동일과 생산수단 조건은 그대로인데 노동력 가격만 오르면, 1장의 예시가 보여주는 변화는 무엇인가?",
+                    "en": "If the working day and means of production remain unchanged but the price of labour-power rises, what change does Chapter 1's example show?"
                   },
                   "choices": {
                     "ko": [
-                      "비용가격을 상품가치 전체와 같은 것으로 본다.",
-                      "자본가의 지출이 비용가격으로 묶이고, 잉여가치가 그 비용가격 위의 초과분으로 계산되는 형식이다.",
-                      "임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다.",
-                      "가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다."
+                      "상품가치의 총액은 그대로이고, 새 가치 안에서 임금 보충분은 커지며 잉여가치분은 작아진다.",
+                      "상품가치의 총액은 임금 상승분만큼 커지고, 잉여가치분은 이전 크기를 유지한다.",
+                      "비용가격은 그대로이고, 임금 상승분은 판매가격이 결정될 때만 뒤늦게 반영된다.",
+                      "노동력 가격이 오르면 생산수단이 이전하는 가치도 같은 비율로 증가한다."
                     ],
                     "en": [
-                      "Identifies cost-price with the whole value of the commodity.",
-                      "The mediation is the form in which the capitalist’s outlays are grouped as cost-price and surplus-value is calculated as the excess over that cost-price.",
-                      "Erases the specificity of labour-power because wages appear as a cost.",
-                      "Assumes exploitation need not be analyzed if one sees only the margin over price."
+                      "The total commodity value remains unchanged, while within the new value the wage-replacing portion grows and surplus-value shrinks.",
+                      "The total commodity value rises by the wage increase, while surplus-value keeps its previous magnitude.",
+                      "Cost-price remains unchanged, and the wage increase is reflected only later when selling price is determined.",
+                      "When the price of labour-power rises, the value transferred by means of production rises in the same proportion."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자본가의 지출이 비용가격으로 묶이고, 잉여가치가 그 비용가격 위의 초과분으로 계산되는 형식이다. 매개를 보아야 한 부문의 운동이 다른 부문의 재생산 조건이 되는 방식을 이해할 수 있다.",
-                    "en": "The mediation is the form in which the capitalist’s outlays are grouped as cost-price and surplus-value is calculated as the excess over that cost-price. Seeing the mediation shows how the movement of one department becomes a condition for reproduction in another."
+                    "ko": "마르크스의 예시는 가변자본의 크기 변화가 곧바로 새 가치 총액의 변화를 뜻하지 않는다는 점을 보여준다. 노동이 같은 새 가치를 만들면, 노동력 가격 상승은 그 새 가치 안에서 v와 s의 비율을 바꾼다.",
+                    "en": "Marx's example shows that a change in variable capital does not directly mean a change in the total new value. If labour creates the same new value, a rise in the price of labour-power changes the proportion between v and s within that new value."
                   }
                 },
                 {
@@ -19475,27 +19461,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤을 자본 전체의 자연적 산물로 보는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by treating profit as the natural product of total capital?"
+                    "ko": "비용가격 계산에서 고정자본·유동자본 구분이 앞에 서면, 불변자본·가변자본 구분은 어떻게 흐려지는가?",
+                    "en": "When the fixed/circulating distinction comes forward in calculating cost-price, how is the constant/variable distinction blurred?"
                   },
                   "choices": {
                     "ko": [
-                      "임금을 비용으로 보이게 하는 형식 때문에 노동력의 특수성을 지운다.",
-                      "가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다.",
-                      "생산수단은 자기 가치를 이전할 뿐이고, 새 가치와 잉여가치는 노동력의 사용에서 나온다는 차이를 놓친다.",
-                      "불변자본과 가변자본의 차이를 회계상 비용항목 차이로만 본다."
+                      "감가상각, 원료, 임금이 모두 비용 보충 항목으로 배열되면서 노동력의 가치창조 기능이 원료의 가치이전과 같은 비용 항목처럼 보인다.",
+                      "고정자본은 새 가치를 만들고 유동자본은 기존 가치를 보존한다는 생산상의 역할 분담이 확정된다.",
+                      "기계의 남은 가치는 모두 상품가치에 한 번에 들어가고 임금은 다음 회전에서만 비용가격에 들어간다.",
+                      "불변자본과 가변자본은 유통기간의 길이를 표시하는 이름으로 바뀌어 생산과정과 분리된다."
                     ],
                     "en": [
-                      "Erases the specificity of labour-power because wages appear as a cost.",
-                      "Assumes exploitation need not be analyzed if one sees only the margin over price.",
-                      "It misses the difference that means of production only transfer their value, while new value and surplus-value arise from the use of labour-power.",
-                      "Treats the distinction between constant and variable capital as only an accounting line-item difference."
+                      "Depreciation, materials, and wages are arranged as replacement costs, making labour-power's value-creating role look like another cost item alongside value transferred from materials.",
+                      "A production role is fixed in which fixed capital creates new value and circulating capital preserves existing value.",
+                      "The remaining value of machinery enters commodity value all at once, while wages enter cost-price only in the next turnover.",
+                      "Constant and variable capital become names for the length of circulation time and are separated from the production process."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "생산수단은 자기 가치를 이전할 뿐이고, 새 가치와 잉여가치는 노동력의 사용에서 나온다는 차이를 놓친다. 마르크스의 비판은 시장 표면을 지우는 것이 아니라 그 표면이 어떤 사회적 조건을 전제하는지 밝힌다.",
-                    "en": "It misses the difference that means of production only transfer their value, while new value and surplus-value arise from the use of labour-power. Marx’s critique does not erase the market surface; it reveals the social conditions presupposed by that surface."
+                    "ko": "1장은 비용가격 형식이 왜 신비화를 낳는지 세밀하게 보여준다. 비용 보충의 관점에서는 감가상각, 원료, 임금이 모두 지출 항목으로 나란히 놓이지만, 가치형성에서는 생산수단의 가치이전과 노동력의 새 가치 창조가 다르다.",
+                    "en": "Chapter 1 shows in detail why the cost-price form produces mystification. From the standpoint of replacement costs, depreciation, materials, and wages stand side by side as outlays; in value formation, however, transferred value from means of production differs from new value created by labour-power."
                   }
                 },
                 {
@@ -19503,27 +19489,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "자동화 공장이 높은 마진을 내자 경영진은 설비투자 전체가 이윤을 낳았다고 말한다. 무엇을 구분해야 하는가?",
-                    "en": "An automated factory earns a high margin, and management says the whole equipment investment produced the profit. What must be distinguished?"
+                    "ko": "자동화 설비 비중이 큰 공장이 높은 마진을 내자 경영진은 설비투자 전체가 이윤을 낳았다고 말한다. 1장의 관점에서 무엇을 구분해야 하는가?",
+                    "en": "A heavily automated factory earns a high margin, and management says the whole equipment investment produced the profit. From Chapter 1's standpoint, what must be distinguished?"
                   },
                   "choices": {
                     "ko": [
-                      "불변자본과 가변자본의 차이를 회계상 비용항목 차이로만 본다.",
-                      "가격 위의 마진만 보면 착취관계는 분석할 필요가 없다고 본다.",
-                      "설비의 가치 이전, 노동력의 가치창조, 경쟁상 우위가 가격과 이윤형태에서 어떻게 결합되어 보이는지 구분해야 한다.",
-                      "이윤을 생산수단과 노동력이 똑같이 만든 자연적 수익으로 본다."
+                      "설비가 이전하는 가치, 노동력이 새로 만드는 가치, 경쟁상 우위가 이윤형태에서 함께 나타나는 방식을 구분해야 한다.",
+                      "설비가 많이 쓰인 생산에서는 임금 지출이 비용가격에 포함되지 않고 순수 기술비로 처리된다.",
+                      "높은 마진은 생산과정의 가치관계보다 판매 부서의 가격 책정 능력에서 먼저 설명된다.",
+                      "자동화가 높아지면 생산수단의 사용가치가 상품가치의 새 원천으로 직접 전환된다."
                     ],
                     "en": [
-                      "Treats the distinction between constant and variable capital as only an accounting line-item difference.",
-                      "Assumes exploitation need not be analyzed if one sees only the margin over price.",
-                      "One must distinguish value transfer by equipment, value creation by labour-power, and competitive advantages as they appear combined in price and profit.",
-                      "Treats profit as a natural return produced equally by means of production and labour-power."
+                      "One must distinguish the value transferred by equipment, the new value created by labour-power, and the way competitive advantages appear together in the profit form.",
+                      "In production using much equipment, wage outlay is not included in cost-price and is treated as a pure technology cost.",
+                      "A high margin is explained first by the pricing ability of the sales department rather than by value relations in production.",
+                      "When automation rises, the use-value of means of production directly becomes a new source of commodity value."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "설비의 가치 이전, 노동력의 가치창조, 경쟁상 우위가 가격과 이윤형태에서 어떻게 결합되어 보이는지 구분해야 한다. 현대적 사례에서도 문제는 동일하다. 화폐수익만이 아니라 재생산의 물질적·가치적 조건을 함께 봐야 한다.",
-                    "en": "One must distinguish value transfer by equipment, value creation by labour-power, and competitive advantages as they appear combined in price and profit. The issue is the same in modern cases: not money revenue alone, but the material and value conditions of reproduction together."
+                    "ko": "사례의 핵심은 높은 이윤형태가 생산의 서로 다른 역할을 한데 섞어 보이게 한다는 점이다. 설비는 자기 가치를 이전하고, 노동력은 새 가치를 만들며, 경쟁상 우위는 개별 판매가격과 이윤형태에서 함께 나타날 수 있다.",
+                    "en": "The case turns on profit form mixing distinct roles in production. Equipment transfers its value, labour-power creates new value, and competitive advantage may appear together with these in the individual selling price and profit form."
                   }
                 },
                 {
@@ -19531,27 +19517,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "비용가격과 이윤의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of Cost-Price and Profit?"
+                    "ko": "3권 1장의 체계적 위치를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic place of Volume III, Chapter 1?"
                   },
                   "choices": {
                     "ko": [
-                      "불변자본과 가변자본의 차이를 회계상 비용항목 차이로만 본다.",
-                      "이윤을 생산수단과 노동력이 똑같이 만든 자연적 수익으로 본다.",
-                      "비용가격을 상품가치 전체와 같은 것으로 본다.",
-                      "잉여가치론에서 이윤론으로 넘어가며, 이후 이윤율과 평균이윤 분석의 출발 범주를 마련한다."
+                      "생산과 유통의 운동을 전제한 뒤, 잉여가치가 경쟁과 일상 의식에서 이윤이라는 더 구체적인 표면형태로 나타나는 분석을 시작한다.",
+                      "1권의 잉여가치론을 경쟁의 가격운동 속에 흡수하고, 이윤을 생산요소들이 각자 받은 보상으로 다시 정리한다.",
+                      "2권의 유통 분석을 마친 뒤, 상품가치 공식 대신 판매가격 통계만으로 자본 운동을 설명한다.",
+                      "개별 상품의 비용가격을 국가 회계 기준으로 통일해 산업별 가격표를 작성하는 문제로 이동한다."
                     ],
                     "en": [
-                      "Treats the distinction between constant and variable capital as only an accounting line-item difference.",
-                      "Treats profit as a natural return produced equally by means of production and labour-power.",
-                      "Identifies cost-price with the whole value of the commodity.",
-                      "It moves from the theory of surplus-value to the theory of profit, providing the starting category for the rate of profit and average profit."
+                      "After presupposing the movements of production and circulation, it begins the analysis of surplus-value appearing in the more concrete surface form of profit in competition and everyday consciousness.",
+                      "It absorbs Volume I's theory of surplus-value into the price movements of competition and reorganizes profit as the reward received separately by the factors of production.",
+                      "After Volume II's circulation analysis, it replaces the formula of commodity value with sales-price statistics as the explanation of capital's movement.",
+                      "It moves to the problem of standardizing individual cost-prices by state accounting rules and drawing up industrial price lists."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치론에서 이윤론으로 넘어가며, 이후 이윤율과 평균이윤 분석의 출발 범주를 마련한다. 이 연결을 통해 분석은 더 구체적인 형태 또는 다음 권의 표면형태로 이동한다.",
-                    "en": "It moves from the theory of surplus-value to the theory of profit, providing the starting category for the rate of profit and average profit. Through this connection, the analysis moves to a more concrete form or to the surface forms treated in the next volume."
+                    "ko": "1장은 3권 전체의 문턱이다. 1권의 생산과 2권의 유통을 전제하고, 자본의 전체 운동에서 생겨나는 더 구체적인 표면형태를 다루기 시작한다. 이 출발점 위에서 이윤율, 평균이윤, 생산가격 분석이 가능해진다.",
+                    "en": "Chapter 1 is the threshold of Volume III. It presupposes production from Volume I and circulation from Volume II, then begins treating the more concrete surface forms arising from capital's movement as a whole. On this basis the analyses of profit rate, average profit, and prices of production become possible."
                   }
                 }
               ]
@@ -19624,27 +19610,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이윤율에서 마르크스가 분석 대상으로 삼는 문제는 무엇인가?",
-                    "en": "What problem does Marx take as his object in The Rate of Profit?"
+                    "ko": "2장에서 이윤율은 어떤 비율로 정의되는가?",
+                    "en": "How is the rate of profit defined in Chapter 2?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치가 총투하자본에 대한 비율인 이윤율로 표현될 때 착취관계가 어떻게 변형되어 나타나는지 분석한다.",
-                      "이윤율을 곧바로 착취율과 같은 것으로 본다.",
-                      "총자본 구성의 차이가 이윤율에 미치는 효과를 무시한다.",
-                      "기계가 많으면 기계가 직접 잉여가치를 만든다고 본다."
+                      "잉여가치를 가변자본 v가 아니라 총투하자본 C, 곧 c+v에 대한 비율로 나타낸 것이다.",
+                      "잉여가치를 임금 총액 v에 대한 비율로 나타내 노동력 착취 정도를 직접 표시한 것이다.",
+                      "판매가격에서 비용가격을 뺀 차액을 상품의 사용가치 수량으로 나눈 것이다.",
+                      "생산수단의 가치이전분을 새 가치 총액과 비교해 기술 효율을 표시한 것이다."
                     ],
                     "en": [
-                      "It analyzes how exploitation is transformed in appearance when surplus-value is expressed as the rate of profit, a ratio to total advanced capital.",
-                      "Identifies the rate of profit directly with the rate of exploitation.",
-                      "Ignores the effect of total capital composition on the rate of profit.",
-                      "Assumes more machinery means machinery directly creates surplus-value."
+                      "It expresses surplus-value as a ratio not to variable capital v but to the total advanced capital C, that is, c+v.",
+                      "It expresses surplus-value as a ratio to the wage sum v and directly measures the degree of exploitation of labour-power.",
+                      "It divides the difference between selling price and cost-price by the quantity of the commodity's use-value.",
+                      "It compares the value transferred by means of production with the total new value as a measure of technical efficiency."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치가 총투하자본에 대한 비율인 이윤율로 표현될 때 착취관계가 어떻게 변형되어 나타나는지 분석한다. 이 문제를 보아야 개별 자본의 표면적 거래가 사회 전체의 재생산 조건으로 연결된다.",
-                    "en": "It analyzes how exploitation is transformed in appearance when surplus-value is expressed as the rate of profit, a ratio to total advanced capital. Seeing this links the surface transactions of individual capitals to the conditions of social reproduction as a whole."
+                    "ko": "2장의 개념은 이윤율이다. 잉여가치율은 s/v로 노동력 착취 정도를 표현하지만, 이윤율은 같은 잉여가치를 전체 선대자본 C = c+v에 견주어 p' = s/C로 표현한다.",
+                    "en": "Chapter 2's concept is the rate of profit. The rate of surplus-value, s/v, expresses the exploitation of labour-power, while the rate of profit expresses the same surplus-value against the total advanced capital C = c+v, as p' = s/C."
                   }
                 },
                 {
@@ -19652,27 +19638,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치율 m/v와 이윤율 m/(c+v)는 왜 다르게 움직일 수 있는가?",
-                    "en": "Why can the rate of surplus-value s/v and the rate of profit s/(c+v) move differently?"
+                    "ko": "자본이 80c+20v이고 잉여가치가 20s라면, 잉여가치율과 이윤율은 어떻게 다른가?",
+                    "en": "If a capital is 80c+20v and surplus-value is 20s, how do the rate of surplus-value and the rate of profit differ?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율은 잉여가치를 가변자본이 아니라 총자본 c+v와 비교하므로, 자본구성 변화가 같은 착취율도 다르게 보이게 만든다.",
-                      "기계가 많으면 기계가 직접 잉여가치를 만든다고 본다.",
-                      "총자본 구성의 차이가 이윤율에 미치는 효과를 무시한다.",
-                      "수익성 지표가 높으면 노동착취도 곧장 높다고 본다."
+                      "잉여가치율은 20/20 = 100%이고, 이윤율은 20/(80+20) = 20%다.",
+                      "착취 정도를 보려면 20s를 임금 지출 20v와 비교하지만, 수익성을 보려면 같은 20s를 전체 선대자본과 비교한다.",
+                      "불변자본 80c가 가장 큰 항목이므로 두 비율의 기준은 생산수단의 가치이전분으로 잡힌다.",
+                      "상품가치가 120이므로 두 비율은 잉여가치를 상품가치 전체와 비교해 같은 값으로 정리된다."
                     ],
                     "en": [
-                      "The rate of profit compares surplus-value with total capital c+v rather than variable capital, so changes in capital composition make the same exploitation rate appear differently.",
-                      "Assumes more machinery means machinery directly creates surplus-value.",
-                      "Ignores the effect of total capital composition on the rate of profit.",
-                      "Assumes higher profitability necessarily means higher labour exploitation."
+                      "The rate of surplus-value is 20/20 = 100%, while the rate of profit is 20/(80+20) = 20%.",
+                      "To examine exploitation, 20s is compared with the wage outlay 20v; to examine profitability, the same 20s is compared with the whole advanced capital.",
+                      "Because constant capital 80c is the largest item, both ratios take the transferred value of means of production as their basis.",
+                      "Because commodity value is 120, both ratios compare surplus-value with the whole commodity value and settle at the same figure."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이윤율은 잉여가치를 가변자본이 아니라 총자본 c+v와 비교하므로, 자본구성 변화가 같은 착취율도 다르게 보이게 만든다. 따라서 핵심은 판매량 하나가 아니라 가치보충과 물질보충이 동시에 맞는가이다.",
-                    "en": "The rate of profit compares surplus-value with total capital c+v rather than variable capital, so changes in capital composition make the same exploitation rate appear differently. The core issue is therefore not sales volume alone, but whether value replacement and material replacement fit together."
+                    "ko": "공식의 차이는 분모에서 나온다. s/v는 노동력에 대한 잉여노동의 비율이고, s/(c+v)는 같은 잉여가치를 총자본과 비교한다. 그래서 같은 20s도 100%의 착취율과 20%의 이윤율로 나타난다.",
+                    "en": "The difference lies in the denominator. s/v is the ratio of surplus labour to labour-power, while s/(c+v) compares the same surplus-value with total capital. The same 20s therefore appears as a 100% exploitation rate and a 20% profit rate."
                   }
                 },
                 {
@@ -19680,27 +19666,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이윤율과 잉여가치율을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must the rate of profit be distinguished from the rate of surplus-value?"
+                    "ko": "이윤율을 잉여가치율과 같은 지표처럼 읽으면 어떤 오해가 생기는가?",
+                    "en": "What misconception arises if the rate of profit is read as the same kind of index as the rate of surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "기계가 많으면 기계가 직접 잉여가치를 만든다고 본다.",
-                      "잉여가치율은 노동력 착취 정도를 나타내고, 이윤율은 그 잉여가치가 총투하자본에 대해 얼마나 큰지 나타낸다.",
-                      "수익성 지표가 높으면 노동착취도 곧장 높다고 본다.",
-                      "비용가격과 이윤의 표현형식을 단순한 회계 공식으로만 본다."
+                      "총자본 구성과 분모의 변화가 사라져, 수익성의 차이가 곧 착취 정도의 차이처럼 보인다.",
+                      "임금 지출이 커질수록 잉여가치율과 이윤율이 같은 폭으로 함께 상승한다고 계산된다.",
+                      "불변자본이 커질 때마다 노동자가 만든 새 가치도 같은 비율로 커진다고 정리된다.",
+                      "이윤율의 분모가 상품가치 전체로 바뀌어 생산가격 분석이 바로 완성된다."
                     ],
                     "en": [
-                      "Assumes more machinery means machinery directly creates surplus-value.",
-                      "The rate of surplus-value expresses the degree of exploitation of labour-power, while the rate of profit expresses how large that surplus-value is relative to total advanced capital.",
-                      "Assumes higher profitability necessarily means higher labour exploitation.",
-                      "Treats the form of cost-price and profit as a mere accounting formula."
+                      "The composition of total capital and the change of denominator disappear, so differences in profitability look like differences in exploitation.",
+                      "It calculates that whenever wage outlay rises, the rate of surplus-value and the rate of profit rise together by the same amount.",
+                      "It treats every rise in constant capital as producing a proportional rise in the new value created by workers.",
+                      "It changes the denominator of the rate of profit to the whole commodity value, immediately completing the analysis of prices of production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 노동력 착취 정도를 나타내고, 이윤율은 그 잉여가치가 총투하자본에 대해 얼마나 큰지 나타낸다. 이 구분을 놓치면 표면의 수입형태나 가격형태가 관계의 본질처럼 보인다.",
-                    "en": "The rate of surplus-value expresses the degree of exploitation of labour-power, while the rate of profit expresses how large that surplus-value is relative to total advanced capital. Without this distinction, surface revenue or price forms appear as the essence of the relation."
+                    "ko": "오해의 핵심은 수익성 지표를 착취율 자체로 읽는 데 있다. 이윤율은 착취율을 숨기는 방식으로 표현된다. 같은 노동력 착취라도 c와 v의 구성, 총자본의 크기에 따라 이윤율은 다르게 나타난다.",
+                    "en": "The misconception is to read a profitability measure as the rate of exploitation itself. The rate of profit expresses exploitation in a concealed form. Even with the same exploitation of labour-power, differences in the composition and size of total capital can produce different profit rates."
                   }
                 },
                 {
@@ -19708,27 +19694,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "두 기업의 착취율은 같지만 한 기업은 기계와 원료 비중이 훨씬 크다. 이윤율 비교에서 무엇이 나타날 수 있는가?",
-                    "en": "Two firms have the same exploitation rate, but one has a much higher share of machinery and materials. What can appear in comparing profit rates?"
+                    "ko": "A기업은 50c+50v+50s, B기업은 90c+10v+10s다. 두 기업의 잉여가치율이 같을 때 이윤율은 어떻게 나타나는가?",
+                    "en": "Firm A is 50c+50v+50s, and firm B is 90c+10v+10s. If both have the same rate of surplus-value, how do their profit rates appear?"
                   },
                   "choices": {
                     "ko": [
-                      "수익성 지표가 높으면 노동착취도 곧장 높다고 본다.",
-                      "비용가격과 이윤의 표현형식을 단순한 회계 공식으로만 본다.",
-                      "총자본이 더 큰 기업은 같은 잉여가치율에서도 이윤율이 낮게 나타날 수 있다.",
-                      "이윤율을 곧바로 착취율과 같은 것으로 본다."
+                      "A의 이윤율은 50%, B의 이윤율은 10%로 나타나며, 같은 착취율도 자본구성에 따라 다르게 보인다.",
+                      "두 기업의 잉여가치율이 같으므로 이윤율도 모두 100%로 나타난다.",
+                      "B는 불변자본이 크기 때문에 잉여가치율과 이윤율이 모두 A보다 높게 나타난다.",
+                      "A와 B의 이윤율 차이는 판매가격이 주어져야만 계산되며 가치구성만으로는 어떤 비교도 시작할 수 없다."
                     ],
                     "en": [
-                      "Assumes higher profitability necessarily means higher labour exploitation.",
-                      "Treats the form of cost-price and profit as a mere accounting formula.",
-                      "The firm with the larger total capital can show a lower rate of profit even with the same rate of surplus-value.",
-                      "Identifies the rate of profit directly with the rate of exploitation."
+                      "A's profit rate appears as 50% and B's as 10%, so the same exploitation rate appears differently according to capital composition.",
+                      "Because both firms have the same rate of surplus-value, both profit rates appear as 100%.",
+                      "Because B has more constant capital, both its rate of surplus-value and its rate of profit appear higher than A's.",
+                      "The difference between A and B can be calculated only after selling prices are given, so no comparison can begin from value composition."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "총자본이 더 큰 기업은 같은 잉여가치율에서도 이윤율이 낮게 나타날 수 있다. 구체 사례에서도 마르크스의 기준은 자본가치가 어떤 형태로 보충되고 다시 운동하는가이다.",
-                    "en": "The firm with the larger total capital can show a lower rate of profit even with the same rate of surplus-value. In concrete cases too, Marx’s criterion is how capital-value is replaced and moves again."
+                    "ko": "사례는 자본구성의 효과를 보여준다. 두 기업 모두 s/v = 100%지만, 이윤율은 A가 50/(50+50) = 50%, B가 10/(90+10) = 10%다. 같은 착취율이 같은 이윤율을 뜻하지 않는다.",
+                    "en": "The case shows the effect of capital composition. Both firms have s/v = 100%, but A's profit rate is 50/(50+50) = 50%, while B's is 10/(90+10) = 10%. The same exploitation rate does not mean the same profit rate."
                   }
                 },
                 {
@@ -19736,27 +19722,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이윤율 장은 전체 논지에서 어떤 역할을 하는가?",
-                    "en": "What role does the chapter on The Rate of Profit play in the overall argument?"
+                    "ko": "2장의 이윤율 분석은 왜 3장의 “이윤율과 잉여가치율의 관계”로 이어지는가?",
+                    "en": "Why does Chapter 2's analysis of the rate of profit lead into Chapter 3's “relation of the rate of profit to the rate of surplus-value”?"
                   },
                   "choices": {
                     "ko": [
-                      "총자본 구성의 차이가 이윤율에 미치는 효과를 무시한다.",
-                      "비용가격과 이윤의 표현형식을 단순한 회계 공식으로만 본다.",
-                      "이윤율을 곧바로 착취율과 같은 것으로 본다.",
-                      "착취관계가 시장의 수익성 지표로 변형되는 첫 단계를 보여주어, 이윤율 변동과 평균이윤 분석으로 나아가게 한다."
+                      "이윤율의 분모가 총자본으로 바뀌었으므로, 다음에는 s/v와 s/(c+v)가 어떤 조건에서 어떻게 연결되는지 따져야 한다.",
+                      "이윤율이 정의되면 잉여가치율은 같은 값으로 환원되어 별도의 관계 분석이 필요 없어진다.",
+                      "총자본을 분모로 쓰면 불변자본의 가치이전 문제는 끝나고 생산수단의 물량 계산으로 넘어간다.",
+                      "수익성 계산이 가능해진 뒤에는 착취율 대신 임금 수준만으로 모든 이윤율 변동을 설명할 수 있다."
                     ],
                     "en": [
-                      "Ignores the effect of total capital composition on the rate of profit.",
-                      "Treats the form of cost-price and profit as a mere accounting formula.",
-                      "Identifies the rate of profit directly with the rate of exploitation.",
-                      "It shows the first step by which exploitation is transformed into a market profitability measure, leading to changes in profit rates and average profit."
+                      "Because the denominator has shifted to total capital, the next question is how s/v and s/(c+v) are connected under definite conditions.",
+                      "Once the rate of profit is defined, the rate of surplus-value reduces to the same value and no separate analysis of their relation is needed.",
+                      "Once total capital is used as denominator, the problem of transferred constant-capital value ends and the analysis moves to physical quantities of means of production.",
+                      "After profitability can be calculated, all changes in the profit rate can be explained by wage levels instead of the rate of exploitation."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "착취관계가 시장의 수익성 지표로 변형되는 첫 단계를 보여주어, 이윤율 변동과 평균이윤 분석으로 나아가게 한다. 이 역할 때문에 해당 장은 앞선 분석의 반복이 아니라 다음 단계의 조건을 만든다.",
-                    "en": "It shows the first step by which exploitation is transformed into a market profitability measure, leading to changes in profit rates and average profit. This role makes the chapter not a repetition of earlier analysis but a condition for the next step."
+                    "ko": "다음 장으로의 연결은 공식의 관계다. 2장은 이윤율을 정의하고, 3장은 이 비율이 잉여가치율, 가변자본 비중, 총자본 구성과 어떤 관계를 맺는지 더 체계적으로 전개한다.",
+                    "en": "The link to the next chapter is the relation between the formulas. Chapter 2 defines the rate of profit; Chapter 3 develops more systematically how that ratio relates to the rate of surplus-value, the share of variable capital, and the composition of total capital."
                   }
                 }
               ]
@@ -19774,27 +19760,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in the rate of profit?"
+                    "ko": "이윤율 p' = s/C에서 C를 총투하자본으로 잡는다는 것은 무엇을 의미하는가?",
+                    "en": "What does it mean that C in the rate of profit p' = s/C is total advanced capital?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치의 원천은 노동력이지만, 이윤율은 그 잉여가치를 총자본 전체의 수익성으로 표시한다.",
-                      "총자본 구성의 차이가 이윤율에 미치는 효과를 무시한다.",
-                      "이윤율을 곧바로 착취율과 같은 것으로 본다.",
-                      "기계가 많으면 기계가 직접 잉여가치를 만든다고 본다."
+                      "잉여가치를 그것을 직접 낳은 v가 아니라 생산에 선대한 전체 자본 c+v의 성과처럼 표시한다는 뜻이다.",
+                      "잉여가치를 상품가치 c+v+s 전체로 나누어 판매가격의 실현 정도를 표시한다는 뜻이다.",
+                      "잉여가치를 불변자본 c와만 비교해 생산수단의 가치이전 능력을 측정한다는 뜻이다.",
+                      "잉여가치를 유통비와 비교해 판매 활동이 만든 초과수입을 분리한다는 뜻이다."
                     ],
                     "en": [
-                      "The source of surplus-value is labour-power, but the rate of profit presents that surplus-value as profitability of the whole capital.",
-                      "Ignores the effect of total capital composition on the rate of profit.",
-                      "Identifies the rate of profit directly with the rate of exploitation.",
-                      "Assumes more machinery means machinery directly creates surplus-value."
+                      "It means surplus-value is presented not in relation to the v that directly gives rise to it, but as the result of the whole advanced capital c+v.",
+                      "It means surplus-value is divided by the whole commodity value c+v+s to show the degree of selling-price realization.",
+                      "It means surplus-value is compared with constant capital c alone to measure the value-transferring capacity of means of production.",
+                      "It means surplus-value is compared with circulation costs to isolate the extra revenue produced by selling activity."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치의 원천은 노동력이지만, 이윤율은 그 잉여가치를 총자본 전체의 수익성으로 표시한다. 이 긴장은 자본주의적 재생산이 사적 결정과 사회적 의존을 동시에 갖는다는 데서 나온다.",
-                    "en": "The source of surplus-value is labour-power, but the rate of profit presents that surplus-value as profitability of the whole capital. This tension arises because capitalist reproduction combines private decisions with social interdependence."
+                    "ko": "심화의 핵심은 분모가 바뀌면서 원천이 바뀐 것처럼 보이는 전도다. 잉여가치는 노동력의 사용에서 생기지만, 이윤율에서는 총자본 C에 대한 수익률로 표시되어 전체 자본이 낳은 성과처럼 나타난다.",
+                    "en": "The advanced point is the inversion created by the changed denominator. Surplus-value arises from the use of labour-power, but in the rate of profit it appears as a return on total capital C, as if it were the achievement of the whole capital."
                   }
                 },
                 {
@@ -19802,27 +19788,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "잉여가치율에서 이윤율로 넘어가는 매개는 무엇인가?",
-                    "en": "What mediates the transition from the rate of surplus-value to the rate of profit?"
+                    "ko": "공식 p' = s' × v/C는 이윤율과 잉여가치율의 관계를 어떻게 압축하는가?",
+                    "en": "How does the formula p' = s' × v/C condense the relation between the rate of profit and the rate of surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "총자본 구성의 차이가 이윤율에 미치는 효과를 무시한다.",
-                      "분모가 가변자본 v에서 총투하자본 c+v로 바뀌는 표현형식, 즉 비용가격과 이윤의 관점이다.",
-                      "기계가 많으면 기계가 직접 잉여가치를 만든다고 본다.",
-                      "수익성 지표가 높으면 노동착취도 곧장 높다고 본다."
+                      "이윤율은 잉여가치율에 총자본 중 가변자본의 비중을 곱한 형태로 나타난다.",
+                      "이윤율은 잉여가치율에 불변자본의 크기를 더한 뒤 상품가치로 나눈 형태다.",
+                      "이윤율은 잉여가치율에서 임금률을 뺀 값으로, 자본구성과는 별개로 정해진다.",
+                      "이윤율은 잉여가치율과 같은 값이지만 경쟁 때문에 회계상 다른 기호를 쓴다."
                     ],
                     "en": [
-                      "Ignores the effect of total capital composition on the rate of profit.",
-                      "The mediation is the change in expression from variable capital v to total advanced capital c+v as denominator: the standpoint of cost-price and profit.",
-                      "Assumes more machinery means machinery directly creates surplus-value.",
-                      "Assumes higher profitability necessarily means higher labour exploitation."
+                      "The rate of profit appears as the rate of surplus-value multiplied by the share of variable capital in total capital.",
+                      "The rate of profit is the rate of surplus-value plus the size of constant capital, divided by commodity value.",
+                      "The rate of profit is the rate of surplus-value minus the wage rate, determined apart from capital composition.",
+                      "The rate of profit is the same value as the rate of surplus-value, but competition uses a different accounting symbol."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "분모가 가변자본 v에서 총투하자본 c+v로 바뀌는 표현형식, 즉 비용가격과 이윤의 관점이다. 매개를 보아야 한 부문의 운동이 다른 부문의 재생산 조건이 되는 방식을 이해할 수 있다.",
-                    "en": "The mediation is the change in expression from variable capital v to total advanced capital c+v as denominator: the standpoint of cost-price and profit. Seeing the mediation shows how the movement of one department becomes a condition for reproduction in another."
+                    "ko": "이 공식은 2장에서 3장으로 넘어가는 다리다. s'가 같아도 v/C가 작아지면 p'는 낮아진다. 그래서 이윤율은 착취율뿐 아니라 자본구성의 영향을 함께 받는 변형된 비율이다.",
+                    "en": "This formula is the bridge from Chapter 2 to Chapter 3. Even if s' is the same, p' falls when v/C becomes smaller. The rate of profit is therefore a transformed ratio shaped by capital composition as well as exploitation."
                   }
                 },
                 {
@@ -19830,27 +19816,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율만 보고 착취 정도를 직접 읽을 수 있다고 하면 왜 부정확한가?",
-                    "en": "Why is it inaccurate to read the degree of exploitation directly from the rate of profit alone?"
+                    "ko": "이윤율이 낮은 기업을 보고 착취가 약하다고 바로 판단하면 무엇을 놓치는가?",
+                    "en": "What is missed if one immediately judges a firm with a low profit rate to have weak exploitation?"
                   },
                   "choices": {
                     "ko": [
-                      "기계가 많으면 기계가 직접 잉여가치를 만든다고 본다.",
-                      "수익성 지표가 높으면 노동착취도 곧장 높다고 본다.",
-                      "이윤율은 착취율뿐 아니라 자본구성, 회전, 비용가격 등 여러 매개를 거쳐 나타난 변형된 비율이기 때문이다.",
-                      "비용가격과 이윤의 표현형식을 단순한 회계 공식으로만 본다."
+                      "낮은 이윤율은 낮은 s'뿐 아니라 높은 c/v, 긴 회전, 큰 선대자본 같은 매개를 통해서도 나타날 수 있다.",
+                      "낮은 이윤율은 노동자가 만든 새 가치가 모두 임금으로 지급되었다는 직접 증거가 된다.",
+                      "낮은 이윤율은 생산수단이 잉여가치를 만들지 못하고 임금만 잉여가치를 만든다는 뜻이다.",
+                      "낮은 이윤율은 상품이 가치대로 팔렸다는 표시이므로 착취관계와 같은 층위의 지표다."
                     ],
                     "en": [
-                      "Assumes more machinery means machinery directly creates surplus-value.",
-                      "Assumes higher profitability necessarily means higher labour exploitation.",
-                      "Because the rate of profit is a transformed ratio mediated not only by exploitation but also by capital composition, turnover, and cost-price.",
-                      "Treats the form of cost-price and profit as a mere accounting formula."
+                      "A low profit rate can arise not only from a low s' but also through mediations such as a high c/v, long turnover, or large advanced capital.",
+                      "A low profit rate is direct evidence that all new value created by workers has been paid out as wages.",
+                      "A low profit rate means means of production do not create surplus-value whereas wages do create it.",
+                      "A low profit rate indicates that commodities sold at value, making it an index on the same level as exploitation."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율은 착취율뿐 아니라 자본구성, 회전, 비용가격 등 여러 매개를 거쳐 나타난 변형된 비율이기 때문이다. 마르크스의 비판은 시장 표면을 지우는 것이 아니라 그 표면이 어떤 사회적 조건을 전제하는지 밝힌다.",
-                    "en": "Because the rate of profit is a transformed ratio mediated not only by exploitation but also by capital composition, turnover, and cost-price. Marx’s critique does not erase the market surface; it reveals the social conditions presupposed by that surface."
+                    "ko": "오해를 피하려면 이윤율을 착취율의 단순한 얼굴로 읽지 않아야 한다. 이윤율은 s가 C 전체에 대해 표시된 비율이므로, 가변자본 비중과 총자본 규모가 해석에 함께 들어간다.",
+                    "en": "Avoiding the misconception requires not reading the rate of profit as a simple face of the exploitation rate. Since it expresses s relative to the whole C, the share of variable capital and the size of total capital enter the interpretation."
                   }
                 },
                 {
@@ -19858,27 +19844,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "노동집약 기업과 설비집약 기업의 이윤율이 다르다. 임금착취만 비교하면 무엇을 놓칠 수 있는가?",
-                    "en": "A labour-intensive firm and a capital-intensive firm have different profit rates. What can be missed by comparing wage exploitation alone?"
+                    "ko": "AI 설비 투자 뒤 한 기업의 노동자 수는 줄었지만 매출 대비 이윤율은 비슷하게 유지된다. 2장 관점에서 어떤 분석이 필요할까?",
+                    "en": "After investment in AI equipment, a firm has fewer workers but maintains a similar profit rate relative to revenue. From Chapter 2's standpoint, what analysis is needed?"
                   },
                   "choices": {
                     "ko": [
-                      "비용가격과 이윤의 표현형식을 단순한 회계 공식으로만 본다.",
-                      "수익성 지표가 높으면 노동착취도 곧장 높다고 본다.",
-                      "같은 잉여가치율도 c와 v의 구성비가 다르면 이윤율로는 다르게 나타난다는 매개를 놓칠 수 있다.",
-                      "이윤율을 곧바로 착취율과 같은 것으로 본다."
+                      "노동력 사용에서 나온 s, 늘어난 c, 줄어든 v, 회전과 판매조건이 함께 이윤율 형태에서 어떻게 결합되는지 따져야 한다.",
+                      "노동자 수가 줄었으므로 잉여가치 생산도 같은 비율로 줄고 이윤율 분석은 임금총액 계산으로 끝난다.",
+                      "AI 설비가 주요 투자 항목이 되면 불변자본은 새 가치의 직접 원천으로 분류된다.",
+                      "매출 대비 이윤율이 유지되면 자본구성 변화는 가격경쟁 속에서 이미 수익성 지표로 흡수된 것으로 처리된다."
                     ],
                     "en": [
-                      "Treats the form of cost-price and profit as a mere accounting formula.",
-                      "Assumes higher profitability necessarily means higher labour exploitation.",
-                      "One can miss the mediation that the same rate of surplus-value appears differently as a profit rate when the proportions of c and v differ.",
-                      "Identifies the rate of profit directly with the rate of exploitation."
+                      "One must examine how s from the use of labour-power, increased c, reduced v, turnover, and selling conditions combine in the profit-rate form.",
+                      "Since the number of workers fell, surplus-value production fell in the same proportion and profit-rate analysis ends with the wage bill.",
+                      "Once AI equipment becomes the main investment item, constant capital is classified as a direct source of new value.",
+                      "If profit relative to revenue is maintained, the change in capital composition is treated as already absorbed into the profitability index through price competition."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "같은 잉여가치율도 c와 v의 구성비가 다르면 이윤율로는 다르게 나타난다는 매개를 놓칠 수 있다. 현대적 사례에서도 문제는 동일하다. 화폐수익만이 아니라 재생산의 물질적·가치적 조건을 함께 봐야 한다.",
-                    "en": "One can miss the mediation that the same rate of surplus-value appears differently as a profit rate when the proportions of c and v differ. The issue is the same in modern cases: not money revenue alone, but the material and value conditions of reproduction together."
+                    "ko": "사례 적용에서는 수익률 표면만으로 원천을 판단하면 안 된다. 설비 증가는 c를 키우고 v의 비중을 바꾼다. 동시에 회전, 가격, 노동강도 변화가 이윤율 형태에서 함께 나타날 수 있다.",
+                    "en": "In application, the surface rate of return is not enough to judge the source. Equipment investment raises c and changes the share of v, while turnover, price, and labour-intensity changes may appear together in the profit-rate form."
                   }
                 },
                 {
@@ -19886,27 +19872,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이윤율의 체계적 의미를 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of The Rate of Profit?"
+                    "ko": "2장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Chapter 2?"
                   },
                   "choices": {
                     "ko": [
-                      "비용가격과 이윤의 표현형식을 단순한 회계 공식으로만 본다.",
-                      "이윤율을 곧바로 착취율과 같은 것으로 본다.",
-                      "총자본 구성의 차이가 이윤율에 미치는 효과를 무시한다.",
-                      "비용가격과 이윤의 전도를 수량적 비율로 정식화해, 이후 이윤율에 영향을 주는 요인들과 평균이윤 문제로 넘어간다."
+                      "잉여가치가 총자본의 수익률로 나타나는 형식을 정식화해, 3장에서 그 비율과 잉여가치율의 관계를 더 엄밀하게 전개할 수 있게 한다.",
+                      "1장의 비용가격 논의를 가격표 계산으로 좁혀, 3장에서 개별 상품의 판매전략으로 곧장 이동하게 한다.",
+                      "이윤율을 착취율의 다른 이름으로 정리해, 뒤의 평균이윤 분석에서 자본구성 문제를 단순화한다.",
+                      "이윤율을 유통비 절감의 지표로 세워, 생산과정의 가치형성 문제를 이 장에서 마무리한다."
                     ],
                     "en": [
-                      "Treats the form of cost-price and profit as a mere accounting formula.",
-                      "Identifies the rate of profit directly with the rate of exploitation.",
-                      "Ignores the effect of total capital composition on the rate of profit.",
-                      "It formulates the inversion of cost-price and profit as a quantitative ratio, leading to factors affecting the profit rate and the problem of average profit."
+                      "It formalizes the appearance of surplus-value as a return on total capital, allowing Chapter 3 to develop the relation between that ratio and the rate of surplus-value more rigorously.",
+                      "It narrows Chapter 1's cost-price discussion to price-tag calculation, so Chapter 3 can move directly to individual selling strategy.",
+                      "It reorganizes the rate of profit as another name for the rate of exploitation, simplifying capital composition for the later analysis of average profit.",
+                      "It establishes the rate of profit as an index of lower circulation costs and closes the problem of value formation in production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "비용가격과 이윤의 전도를 수량적 비율로 정식화해, 이후 이윤율에 영향을 주는 요인들과 평균이윤 문제로 넘어간다. 이 연결을 통해 분석은 더 구체적인 형태 또는 다음 권의 표면형태로 이동한다.",
-                    "en": "It formulates the inversion of cost-price and profit as a quantitative ratio, leading to factors affecting the profit rate and the problem of average profit. Through this connection, the analysis moves to a more concrete form or to the surface forms treated in the next volume."
+                    "ko": "2장은 1장의 질적 전도, 곧 잉여가치가 이윤으로 보이는 문제를 수량적 비율로 정식화한다. 이 때문에 3장은 이윤율이 잉여가치율, 자본구성, 회전 조건과 어떤 관계를 맺는지 더 세밀하게 다룰 수 있다.",
+                    "en": "Chapter 2 turns Chapter 1's qualitative inversion, surplus-value appearing as profit, into a quantitative ratio. This lets Chapter 3 treat more precisely how the rate of profit relates to the rate of surplus-value, capital composition, and turnover conditions."
                   }
                 }
               ]
