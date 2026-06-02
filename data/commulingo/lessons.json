@@ -19494,13 +19494,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "설비가 이전하는 가치, 노동력이 새로 만드는 가치, 경쟁상 우위가 이윤형태에서 함께 나타나는 방식을 구분해야 한다.",
+                      "설비가 이전하는 가치, 노동력이 새로 만드는 가치, 경쟁상 우위가 이윤형태에서 함께 나타나는 방식을 구분하는 데 있다.",
                       "설비가 많이 쓰인 생산에서는 임금 지출이 비용가격에 포함되지 않고 순수 기술비로 처리된다.",
                       "높은 마진은 생산과정의 가치관계보다 판매 부서의 가격 책정 능력에서 먼저 설명된다.",
                       "자동화가 높아지면 생산수단의 사용가치가 상품가치의 새 원천으로 직접 전환된다."
                     ],
                     "en": [
-                      "One must distinguish the value transferred by equipment, the new value created by labour-power, and the way competitive advantages appear together in the profit form.",
+                      "It lies in distinguishing the value transferred by equipment, the new value created by labour-power, and the way competitive advantages appear together in the profit form.",
                       "In production using much equipment, wage outlay is not included in cost-price and is treated as a pure technology cost.",
                       "A high margin is explained first by the pricing ability of the sales department rather than by value relations in production.",
                       "When automation rises, the use-value of means of production directly becomes a new source of commodity value."
@@ -20123,13 +20123,13 @@
                       "화폐가치와 회전 등 일부 조건을 잠정적으로 고정하고, s', v, C의 변화가 p'에 미치는 효과를 따로 비교한다.",
                       "경쟁으로 평균이윤율이 이미 형성된 상태를 출발점으로 삼아 산업별 생산가격을 먼저 배분한다.",
                       "개별 상품의 판매가격 변동을 모두 제거하고, 소비자의 수요 탄력성만으로 이윤율 변화를 설명한다.",
-                      "노동일, 임금, 자본구성을 하나의 원인으로 묶어 전체 이윤율을 경험적 평균값으로만 계산한다."
+                      "노동일, 임금, 자본구성을 하나의 원인으로 묶어 전체 이윤율을 경험적 평균값으로 처리한다."
                     ],
                     "en": [
                       "It provisionally fixes some conditions such as the value of money and turnover, then compares separately how changes in s', v, and C affect p'.",
                       "It begins from average profit already formed by competition and first distributes prices of production across industries.",
                       "It removes all selling-price changes of individual commodities and explains profit-rate changes only through consumer demand elasticity.",
-                      "It bundles the working day, wages, and capital composition into one cause and calculates the total profit rate only as an empirical average."
+                      "It bundles the working day, wages, and capital composition into one cause and treats the total profit rate as an empirical average."
                     ]
                   },
                   "answer": 0,
@@ -20150,13 +20150,13 @@
                     "ko": [
                       "v/C가 서로 다르면 같은 s'도 서로 다른 p'로 나타난다.",
                       "c가 커지면 s' 자체가 같은 비율로 커지기 때문에 p'도 높아진다.",
-                      "v가 작아질수록 노동자가 만드는 잉여가치 총량은 자동으로 커진다.",
+                      "v가 작아질수록 노동자가 만드는 잉여가치 총량도 비례해 커지는 것으로 처리한다.",
                       "C가 같으면 s'의 차이는 판매가격 조정 속에 흡수되어 p'가 같은 지표로 정리된다."
                     ],
                     "en": [
                       "If v/C differs, the same s' appears as different p'.",
                       "When c grows, s' grows in the same proportion and p' rises with it.",
-                      "As v becomes smaller, the total surplus-value created by workers automatically becomes larger.",
+                      "As v becomes smaller, the total surplus-value created by workers is treated as rising proportionally.",
                       "If C is the same, differences in s' are absorbed into selling-price adjustment and p' is organized as the same index."
                     ]
                   },
@@ -20178,13 +20178,13 @@
                     "ko": [
                       "같은 백분율도 C, v, s의 절대량이 다르면 다른 생산조건과 잉여가치량을 가리킬 수 있기 때문이다.",
                       "백분율은 시장가격을 계산할 때만 쓰이며 생산과정의 가치관계와는 다른 단위이기 때문이다.",
-                      "백분율은 노동일 길이를 표시하지만 임금률과 자본구성은 문자식으로만 표현되기 때문이다.",
+                      "백분율은 노동일 길이를 표시하고 임금률과 자본구성은 문자식 중심으로 표현된다는 이유다.",
                       "백분율은 평균이윤율이 성립한 뒤에만 의미가 생겨 3장의 개별 자본 분석에는 맞지 않기 때문이다."
                     ],
                     "en": [
                       "Because the same percentage can point to different production conditions and different masses of surplus-value when the absolute magnitudes of C, v, and s differ.",
                       "Because percentages are used only to calculate market prices and belong to a unit different from value relations in production.",
-                      "Because percentages express the length of the working day, while wages and capital composition can only be expressed algebraically.",
+                      "Because percentages express the working day, while wages and capital composition are treated as mainly algebraic expressions.",
                       "Because percentages become meaningful only after the average rate of profit is formed and therefore do not fit Chapter 3's individual-capital analysis."
                     ]
                   },
@@ -20204,16 +20204,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "각 기업의 s', v/C, C의 절대량을 분리해, 낮거나 높은 p'가 어떤 조합에서 나온 것인지 따져야 한다.",
-                      "두 기업의 기술수준이 다르면 설비의 사용가치가 새 가치의 직접 원천으로 얼마나 전환되는지 먼저 계산해야 한다.",
-                      "서비스 기업은 불변자본이 작으므로 잉여가치율보다 판매수수료율을 기준으로 이윤율을 비교해야 한다.",
-                      "반도체 기업의 가격경쟁력이 높으면 자본구성 차이는 평균이윤율 계산 전에 이미 정리된 것으로 처리해야 한다."
+                      "각 기업의 s', v/C, C의 절대량을 분리해, 낮거나 높은 p'가 어떤 조합에서 나온 것인지 따지는 데 있다.",
+                      "두 기업의 기술수준이 다르면 설비의 사용가치가 새 가치의 직접 원천으로 전환되는 정도를 먼저 계산한다.",
+                      "서비스 기업은 불변자본이 작으므로 잉여가치율보다 판매수수료율을 기준으로 이윤율을 비교한다.",
+                      "반도체 기업의 가격경쟁력이 높으면 자본구성 차이는 평균이윤율 계산 전에 정리된 것으로 처리한다."
                     ],
                     "en": [
-                      "One must separate each firm's s', v/C, and the absolute magnitude of C to see from what combination a low or high p' arises.",
-                      "If the firms have different technologies, one must first calculate how much the use-value of equipment turns directly into a source of new value.",
-                      "Because the service firm has little constant capital, its profit rate should be compared by using the sales-commission rate rather than the rate of surplus-value.",
-                      "If the semiconductor firm has strong price competitiveness, the difference in capital composition should be treated as already settled before calculating the average profit rate."
+                      "It separates each firm's s', v/C, and the absolute magnitude of C to see from what combination a low or high p' arises.",
+                      "If the firms have different technologies, it first calculates how much the use-value of equipment turns directly into a source of new value.",
+                      "Because the service firm has little constant capital, it compares profit rates by sales-commission rate rather than the rate of surplus-value.",
+                      "If the semiconductor firm has strong price competitiveness, the difference in capital composition is treated as settled before calculating the average profit rate."
                     ]
                   },
                   "answer": 0,
@@ -20505,13 +20505,13 @@
                     "ko": [
                       "연간 임금 지출 총액 vn은 한 번에 선대된 가변자본 v와 다를 수 있으므로, 둘을 섞으면 이윤율 계산이 틀어진다.",
                       "분자 쪽 v는 불변자본의 감가상각분이고, 분모 쪽 v는 임금 지출이므로 서로 다른 물질 항목이다.",
-                      "분자와 분모의 v가 항상 같은 금액이어서, 구분은 기호를 보기 쉽게 만들기 위한 표기 관습이다.",
+                      "분자와 분모의 v가 같은 금액으로 맞춰진다는 가정에서, 구분은 표기 관습으로 처리된다.",
                       "분자 쪽 v는 판매가격에 포함된 임금이고, 분모 쪽 v는 상품가치와 무관한 현금 잔액이다."
                     ],
                     "en": [
                       "The total annual wage outlay vn can differ from the variable capital v advanced at one time, so mixing them distorts the profit-rate calculation.",
                       "The v in the numerator is depreciation of constant capital, while the v in the denominator is wage outlay, making them different material items.",
-                      "The v in numerator and denominator is always the same sum, so the distinction is only a notation convention.",
+                      "It assumes the v in numerator and denominator is set as the same sum, so the distinction becomes a notation convention.",
                       "The numerator v is the wage included in selling price, while denominator v is a cash balance unrelated to commodity value."
                     ]
                   },
@@ -20590,13 +20590,13 @@
                       "3장의 이윤율 공식을 연간 회전수와 결합해, 이윤율이 자본구성뿐 아니라 자본의 시간적 반복 운동에도 의존함을 보인다.",
                       "회전수를 평균이윤율로 대체해, 뒤의 생산가격 분석을 개별 자본의 유통속도 문제로 축소한다.",
                       "유통시간을 잉여가치의 원천으로 세워, 생산과정에서 노동력이 수행하던 역할을 판매과정으로 옮긴다.",
-                      "고정자본의 감가상각을 제거해, 이윤율을 유동자본의 물리적 이동속도로만 계산하게 한다."
+                      "고정자본의 감가상각을 제거해, 이윤율을 유동자본의 물리적 이동속도 기준으로 계산하게 한다."
                     ],
                     "en": [
                       "It combines Chapter 3's profit-rate formula with annual turnover and shows that the profit rate depends not only on capital composition but also on capital's temporal repetition.",
                       "It replaces the number of turnovers with the average rate of profit and reduces the later analysis of production prices to the circulation speed of individual capitals.",
                       "It establishes circulation time as the source of surplus-value and transfers the role performed by labour-power in production to the selling process.",
-                      "It removes depreciation of fixed capital and makes the profit rate calculable only by the physical movement speed of circulating capital."
+                      "It removes depreciation of fixed capital and makes the profit rate calculable by the physical movement speed of circulating capital."
                     ]
                   },
                   "answer": 0,
@@ -20709,13 +20709,13 @@
                   "choices": {
                     "ko": [
                       "분모 c+v가 작아지므로, 같은 s라도 더 높은 이윤율로 표현된다.",
-                      "분자 s가 c의 감소분만큼 자동으로 커지므로, 착취율과 이윤율이 함께 상승한다.",
+                      "분자 s가 c의 감소분만큼 커지는 구조라고 보고, 착취율과 이윤율이 함께 상승한다고 처리한다.",
                       "분모가 작아지면 v도 같은 비율로 줄어 노동력 사용이 사라진다.",
                       "c가 줄어도 이윤율은 판매가격 조정에서 주로 결정되어 공식의 분모 변화는 배경 조건으로 남는다."
                     ],
                     "en": [
                       "The denominator c+v becomes smaller, so the same s is expressed as a higher rate of profit.",
-                      "The numerator s automatically grows by the amount c falls, so the exploitation rate and profit rate rise together.",
+                      "It treats the numerator s as growing by the amount c falls, so exploitation rate and profit rate rise together.",
                       "When the denominator shrinks, v also falls in the same proportion and the use of labour-power disappears.",
                       "Even if c falls, the profit rate is treated as chiefly determined by selling-price adjustment, leaving the formula's denominator change as a background condition."
                     ]
@@ -20860,13 +20860,13 @@
                     "ko": [
                       "불변자본 가치가 비용가격과 총투하자본에서 차지하는 비중이 낮아져, 같은 s가 더 작은 c+v에 대해 계산되는 매개다.",
                       "생산수단의 물리적 수명이 길어질수록 그 사용가치가 임금노동을 대신해 잉여가치율을 높이는 매개다.",
-                      "원료 손실 감소가 판매가격을 자동으로 올려 s 자체를 같은 비율로 늘리는 매개다.",
+                      "원료 손실 감소가 판매가격을 올리는 요인으로 작용해 s 자체를 같은 비율로 늘리는 매개다.",
                       "공동 사용이 유통시간을 없애 평균이윤율을 개별 자본의 회전수로 대체하는 매개다."
                     ],
                     "en": [
                       "The mediation is the reduced share of constant-capital value in cost-price and total advanced capital, so the same s is calculated against a smaller c+v.",
                       "The longer the physical lifetime of means of production, the more their use-value replaces wage-labour and raises the rate of surplus-value.",
-                      "Reduced material loss automatically raises selling price and increases s in the same proportion.",
+                      "Reduced material loss acts as a factor raising selling price and increasing s in the same proportion.",
                       "Common use abolishes circulation time and replaces the average rate of profit with the turnover number of individual capital."
                     ]
                   },
@@ -20887,13 +20887,13 @@
                   "choices": {
                     "ko": [
                       "자본은 환기, 안전장치, 공간, 청결 같은 비용을 줄여 이윤율을 높일 수 있지만, 그 절약은 노동자에게 위험과 질병으로 돌아갈 수 있기 때문이다.",
-                      "노동조건 비용이 줄면 노동자의 생활비도 자동으로 낮아져 노동력 가치가 안정되기 때문이다.",
+                      "노동조건 비용이 줄면 노동자의 생활비도 함께 낮아져 노동력 가치가 안정된다는 이유다.",
                       "안전설비는 불변자본이 아니므로 비용가격과 총자본 계산에 들어가지 않기 때문이다.",
                       "작업장 개선은 자본가의 비용 절감과 노동자의 건강 개선을 같은 방향의 효과로 묶는 경향이 있기 때문이다."
                     ],
                     "en": [
                       "Because capital can raise the profit rate by cutting costs for ventilation, safeguards, space, and cleanliness, while that economy returns to workers as danger and illness.",
-                      "Because when labour-condition costs fall, workers' living costs automatically fall and the value of labour-power stabilizes.",
+                      "Because when labour-condition costs fall, workers' living costs also fall and the value of labour-power stabilizes.",
                       "Because safety equipment is not constant capital and therefore does not enter cost-price or total-capital calculation.",
                       "Because workplace improvement tends to join capital's cost saving and workers' health improvement as effects moving in the same direction."
                     ]
@@ -20914,16 +20914,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "생산력 발전에 따른 실제 절약과 노동자 위험·질병을 비용으로 계산하지 않는 자본주의적 절약을 구분해야 한다.",
-                      "안전 설비가 줄어든 만큼 노동자의 숙련이 증가해 같은 위험을 상쇄하는지 구분해야 한다.",
-                      "유지비 절감이 판매가격을 같은 비율로 올려 잉여가치 총량을 늘렸는지 구분해야 한다.",
-                      "안전 비용이 불변자본에서 가변자본으로 이동해 임금 지출로 보상되었는지 구분해야 한다."
+                      "생산력 발전에 따른 실제 절약과 노동자 위험·질병을 비용으로 계산하지 않는 자본주의적 절약의 차이다.",
+                      "안전 설비가 줄어든 만큼 노동자의 숙련이 증가해 같은 위험을 상쇄하는지의 문제다.",
+                      "유지비 절감이 판매가격을 같은 비율로 올려 잉여가치 총량을 늘렸는지의 문제다.",
+                      "안전 비용이 불변자본에서 가변자본으로 이동해 임금 지출로 보상되었는지의 문제다."
                     ],
                     "en": [
-                      "One must distinguish real economy from productive development and capitalist economy that does not count workers' risks and illness as costs.",
-                      "One must distinguish whether workers' skill rises enough to offset the risk created by reduced safety equipment.",
-                      "One must distinguish whether lower maintenance costs raised selling price in the same proportion and increased the total mass of surplus-value.",
-                      "One must distinguish whether safety costs moved from constant capital to variable capital and were compensated through wages."
+                      "It is the difference between real economy from productive development and capitalist economy that does not count workers' risks and illness as costs.",
+                      "It asks whether workers' skill rises enough to offset the risk created by reduced safety equipment.",
+                      "It asks whether lower maintenance costs raised selling price in the same proportion and increased the total mass of surplus-value.",
+                      "It asks whether safety costs moved from constant capital to variable capital and were compensated through wages."
                     ]
                   },
                   "answer": 0,
@@ -21066,13 +21066,13 @@
                       "가격이 내리면 s/(C-d)로 이윤율이 오르고, 가격이 오르면 s/(C+d)로 이윤율이 낮아진다.",
                       "가격이 내리면 생산량이 같은 비율로 줄어 총잉여가치량이 작아지고, 가격이 오르면 생산량 증가가 이윤율을 보상한다.",
                       "가격 변동은 분모 C와 별개이므로 공식은 s/C로 유지되고 판매가격만 달라진다.",
-                      "가격이 오르면 v가 자동으로 커지므로 이윤율 공식은 s/(c+v+d)가 아니라 s/(c+d)로 바뀐다."
+                      "가격이 오르면 v도 함께 커지는 것으로 보아 이윤율 공식을 s/(c+d)로 단순화한다."
                     ],
                     "en": [
                       "If prices fall, the rate rises as s/(C-d); if prices rise, it falls as s/(C+d).",
                       "If prices fall, output falls in the same proportion and the total surplus-value mass shrinks; if prices rise, expanded output compensates the profit rate.",
                       "Price fluctuation is separate from denominator C, so the formula remains s/C and only selling price changes.",
-                      "When prices rise, v automatically grows, so the formula changes not to s/(c+v+d) but to s/(c+d)."
+                      "When prices rise, it treats v as growing with them and simplifies the profit-rate formula to s/(c+d)."
                     ]
                   },
                   "answer": 0,
@@ -21120,13 +21120,13 @@
                   "choices": {
                     "ko": [
                       "보유 면화와 그 면화로 만든 반제품·완제품이 평가상승해 이익처럼 보일 수 있지만, 이는 새 잉여가치 생산과 구분되어야 한다.",
-                      "면화 가격 상승은 노동일 안의 필요노동을 줄여 같은 임금에서도 착취율을 자동으로 높인다.",
+                      "면화 가격 상승은 노동일 안의 필요노동을 줄여 같은 임금에서도 착취율을 높이는 방향으로 작용한다.",
                       "싸게 산 원료가 비싸지면 그 차액은 다음 임금 지급분으로 전환되어 가변자본을 대체한다.",
                       "반제품 가격 상승은 생산과정을 거치지 않은 상품도 새 가치를 생산한다는 점을 보여준다."
                     ],
                     "en": [
                       "The held cotton and the semi-finished or finished goods made from it can appreciate and appear as a gain, but this must be distinguished from new surplus-value production.",
-                      "The rise in cotton price reduces necessary labour within the working day and automatically raises the exploitation rate at the same wage.",
+                      "The rise in cotton price reduces necessary labour within the working day and pushes the exploitation rate upward at the same wage.",
                       "When raw material bought cheaply becomes dearer, the difference turns into the next wage fund and replaces variable capital.",
                       "A rise in semi-finished goods prices shows that commodities can produce new value without passing through production."
                     ]
@@ -21187,13 +21187,13 @@
                     "ko": [
                       "원료와 보조재는 소비될 때 가치가 한꺼번에 제품으로 이전되므로, 그 가격 변동이 비용가격과 이윤율에 직접 압력을 준다.",
                       "원료는 고정자본처럼 여러 해에 걸쳐 조금씩 감가상각되므로, 가격 변동이 제품가격에 늦게 반영된다.",
-                      "원료 가격은 노동력 가치만 바꾸고 불변자본 가치에는 들어가지 않기 때문에 이윤율에는 간접적으로만 작용한다.",
+                      "원료 가격은 노동력 가치만 바꾸고 불변자본 가치에는 들어가지 않기 때문에 이윤율에는 주로 간접 경로로 작용한다.",
                       "원료 가격이 오르면 원료의 사용가치가 새 가치를 만들어 제품가격 상승을 보상한다."
                     ],
                     "en": [
                       "Because raw and auxiliary materials transfer their value to the product all at once when consumed, their price fluctuation directly pressures cost-price and the rate of profit.",
                       "Because raw materials depreciate gradually over many years like fixed capital, price changes enter product prices only with delay.",
-                      "Because raw-material prices change only the value of labour-power and do not enter constant-capital value, they affect the profit rate only indirectly.",
+                      "Because raw-material prices change only the value of labour-power and do not enter constant-capital value, they affect the profit rate mainly through indirect paths.",
                       "Because when raw-material prices rise, their use-value creates new value and compensates for the rise in product prices."
                     ]
                   },
@@ -21242,13 +21242,13 @@
                   "choices": {
                     "ko": [
                       "세계시장, 관세, 공급 조건, 보조재 가격처럼 불변자본 가격을 통해 이윤율에 작용하는 독자적 경로를 놓친다.",
-                      "임금 상승은 항상 원료 가격 상승보다 먼저 발생해 원료 가격의 실제 원인이 된다는 점을 놓친다.",
+                      "임금 상승이 원료 가격 상승에 앞서 나타나는 일반 원인이라는 점을 놓친다.",
                       "원료 가격이 오르면 노동자의 필요생활수단이 싸져 노동력 가치가 하락한다는 점을 놓친다.",
                       "임금과 원료 가격은 모두 가변자본에 속하므로 같은 분모 항목이라는 점을 놓친다."
                     ],
                     "en": [
                       "It misses the distinct paths through which the world market, tariffs, supply conditions, and auxiliary-material prices affect the profit rate through constant-capital prices.",
-                      "It misses that wage increases always occur before raw-material price increases and are the real cause of raw-material prices.",
+                      "It misses that wage increases are the general cause appearing before raw-material price increases.",
                       "It misses that when raw-material prices rise, workers' necessary means of subsistence become cheaper and the value of labour-power falls.",
                       "It misses that wages and raw-material prices both belong to variable capital and are therefore the same denominator item."
                     ]
@@ -21269,16 +21269,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "에너지라는 보조재 가격 상승이 비용가격과 선대 불변자본을 키워 같은 잉여가치의 이윤율 표현을 어떻게 낮추는지 분석해야 한다.",
-                      "에너지 가격 상승이 노동자 임금을 자동으로 올려 잉여가치율을 먼저 바꾸는지 분석해야 한다.",
-                      "전력 사용량이 늘면 데이터의 사용가치가 새 가치를 만들어 가격 상승분을 보상하는지 분석해야 한다.",
-                      "에너지 비용이 높아질수록 기존 서버 재고가 가변자본으로 전환되는지 분석해야 한다."
+                      "에너지라는 보조재 가격 상승이 비용가격과 선대 불변자본을 키워 같은 잉여가치의 이윤율 표현을 낮추는 경로다.",
+                      "에너지 가격 상승이 임금 인상을 통해 잉여가치율을 먼저 바꾸는 경로다.",
+                      "전력 사용량이 늘면 데이터의 사용가치가 새 가치를 만들어 가격 상승분을 보상하는 경로다.",
+                      "에너지 비용이 높아질수록 기존 서버 재고가 가변자본으로 전환되는 경로다."
                     ],
                     "en": [
-                      "One should analyze how the rise in energy as an auxiliary material enlarges cost-price and advanced constant capital, lowering the profit-rate expression of the same surplus-value.",
-                      "One should analyze whether rising energy prices automatically raise workers' wages and first alter the rate of surplus-value.",
-                      "One should analyze whether greater electricity use lets the use-value of data create new value and compensate for the price rise.",
-                      "One should analyze whether higher energy costs convert the existing server stock into variable capital."
+                      "It tracks how the rise in energy as an auxiliary material enlarges cost-price and advanced constant capital, lowering the profit-rate expression of the same surplus-value.",
+                      "It treats rising energy prices as first altering the rate of surplus-value through wage increases.",
+                      "It treats greater electricity use as letting the use-value of data create new value and compensate for the price rise.",
+                      "It treats higher energy costs as converting the existing server stock into variable capital."
                     ]
                   },
                   "answer": 0,
@@ -23249,14 +23249,14 @@
                   },
                   "choices": {
                     "ko": [
-                      "시장가격의 일시적 상승과, 자본 이동이 평균이윤율을 향해 가격을 조정하는 장기 과정을 구별해야 한다.",
-                      "처음 들어온 자본이 뒤따라온 자본보다 더 많은 노동시간을 소유한다는 점을 확인해야 한다.",
+                      "시장가격의 일시적 상승과, 자본 이동이 평균이윤율을 향해 가격을 조정하는 장기 과정을 구별하는 데 있다.",
+                      "처음 들어온 자본이 뒤따라온 자본보다 더 많은 노동시간을 소유한다는 점을 확인하는 데 있다.",
                       "수익률 하락은 상품 가치가 사라진 결과이므로 이후에는 수요량만 계산하면 된다.",
                       "신규 자본 유입은 생산가격 공식 밖의 금융 사건이라 평균이윤 분석과 별도로 처리한다."
                     ],
                     "en": [
-                      "One must distinguish a temporary rise in market price from the longer process in which capital movement adjusts prices toward average profit.",
-                      "One must confirm that the first capital owns more labour-time than the later capital.",
+                      "It distinguishes a temporary rise in market price from the longer process in which capital movement adjusts prices toward average profit.",
+                      "It confirms that the first capital owns more labour-time than the later capital.",
                       "The falling return means commodity value has disappeared, so only demand volume needs to be calculated afterward.",
                       "New capital inflow is a financial event outside the formula of price of production and is treated separately from average profit."
                     ]
@@ -23604,13 +23604,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "투자가 총자본 대비 산 노동과 잉여가치의 비율을 어떻게 바꾸는지, 그리고 생산물 가격 하락과 이윤량 증가가 이윤율과 어떻게 갈라지는지 봐야 한다.",
+                      "투자가 총자본 대비 산 노동과 잉여가치의 비율을 어떻게 바꾸는지, 생산물 가격 하락과 이윤량 증가가 이윤율과 어떻게 갈라지는지 살핀다.",
                       "산출량이 늘었으므로 잉여가치율과 이윤율이 같은 폭으로 상승하는지 확인하면 된다.",
                       "직접고용이 줄면 생산된 상품이 가치 형태를 떠나 물량 지표 중심으로 계산되는지 보면 된다.",
                       "자동화 설비의 구매가격이 높을수록 기계가 새 가치의 원천으로 이동하는지 판단하면 된다."
                     ],
                     "en": [
-                      "One must examine how investment changes living labour and surplus-value relative to total capital, and how falling unit prices and rising profit mass diverge from the profit rate.",
+                      "It examines how investment changes living labour and surplus-value relative to total capital, and how falling unit prices and rising profit mass diverge from the profit rate.",
                       "Since output rises, one only checks whether the surplus-value rate and profit rate rise by the same amount.",
                       "When direct employment falls, commodities leave the value form and are calculated mainly by quantity.",
                       "The higher the automation equipment price, the more machinery moves into the source of new value."
@@ -24464,13 +24464,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "과잉축적된 자본이 평가절하를 통해 다시 이윤율 회복 조건을 만들려는 위기적 조정을 봐야 한다.",
+                      "과잉축적된 자본이 평가절하를 통해 다시 이윤율 회복 조건을 만들려는 위기적 조정을 읽는 데 있다.",
                       "설비 과잉은 사용가치가 많아졌다는 뜻이므로 가치증식에는 긍정적 신호로 읽어야 한다.",
                       "가격 폭락은 생산가격이 가치보다 높게 유지된 결과라 평균이윤율을 올린다.",
                       "자산 매각은 유통 과정의 소유권 변경이므로 산업자본의 축적 문제와 분리된다."
                     ],
                     "en": [
-                      "One should see crisis adjustment in which overaccumulated capital is devalued to create conditions for restoring the profit rate.",
+                      "It reads crisis adjustment in which overaccumulated capital is devalued to create conditions for restoring the profit rate.",
                       "Excess capacity means more use-values and should be read as a positive sign for valorization.",
                       "Price collapse results from production prices staying above value and raises the average profit rate.",
                       "Asset sales are ownership changes in circulation and are separate from industrial accumulation."
