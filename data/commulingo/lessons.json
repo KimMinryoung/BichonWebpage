@@ -33900,15 +33900,15 @@
                   "choices": {
                     "ko": [
                       "A의 평균 산출이 새 조절 기준이 되고, 이전의 불충분한 자본투입은 낡은 경작수준으로 밀려난다.",
-                    "A의 첫 투자분이 계속 기준이 되고 추가투자의 산출은 별도 개량수익으로 처리된다.",
+                      "A의 첫 투자분이 계속 기준이 되고 추가투자의 산출은 별도 개량수익으로 처리된다.",
                       "A가 우등지로 바뀌면 B, C, D는 모두 경작에서 제외되어 차액지대가 끝난다.",
-                    "추가 자본은 토지개량 이자 항목으로 처리되어 곡물 생산가격과 별도 계산된다."
+                      "추가 자본은 토지개량 이자 항목으로 처리되어 곡물 생산가격과 별도 계산된다."
                     ],
                     "en": [
                       "A’s average output becomes the new regulator, and insufficient old capital outlay becomes outdated cultivation.",
-                    "A’s first investment remains regulatory, while additional output is treated as a separate improvement gain.",
+                      "A’s first investment remains regulatory, while additional output is treated as a separate improvement gain.",
                       "Once A becomes superior, B, C, and D all leave cultivation and differential rent ends.",
-                    "Additional capital is treated as interest on improvements and calculated separately from grain production price."
+                      "Additional capital is treated as interest on improvements and calculated separately from grain production price."
                     ]
                   },
                   "answer": 0,
@@ -33929,13 +33929,13 @@
                     "ko": [
                       "추가투자와 한계지의 변화가 지대를 낮출 수도 있지만, 조건이 바뀌면 가격 상승과 지대 확대도 낳는다는 점이다.",
                       "생산가격 하락이 모든 지대를 없앤 뒤 절대지대만 남긴다는 점이다.",
-                    "곡물지대가 화폐지대보다 안정적인 지표라서 가격 변화 분석의 비중이 작다는 점이다.",
+                      "곡물지대가 화폐지대보다 안정적인 지표라서 가격 변화 분석의 비중이 작다는 점이다.",
                       "토지소유가 사라지면 추가투자의 생산성도 사라진다는 점이다."
                     ],
                     "en": [
                       "Additional investment and marginal shifts can lower rent, but altered conditions can also raise price and rent.",
                       "A falling production price eliminates all rent and leaves only absolute rent.",
-                    "Rent in grain is treated as a more stable indicator, reducing the weight of price-change analysis.",
+                      "Rent in grain is treated as a more stable indicator, reducing the weight of price-change analysis.",
                       "If landownership disappears, productivity of additional investment disappears too."
                     ]
                   },
@@ -34433,13 +34433,13 @@
                   "choices": {
                     "ko": [
                       "가격 상승을 새 열등지 투입, A의 생산성 변화, 우등지 추가투자의 저생산성이라는 여러 경로로 나누어 본다.",
-                    "가격 상승을 지주의 독점가격 문제로 환원해 차액지대 계산을 간략히 처리한다.",
+                      "가격 상승을 지주의 독점가격 문제로 환원해 차액지대 계산을 간략히 처리한다.",
                       "가격 상승의 원인을 농업노동자의 소비 증가로 제한하고 토지 차이를 제외한다.",
                       "가격 상승을 생산가격과 무관한 유통상인의 매점 결과로 처리한다."
                     ],
                     "en": [
                       "It separates rising price into several routes: worse new land, changes on A, and under-productive additions on superior land.",
-                    "It reduces rising price to landlords’ monopoly price and handles differential calculations only briefly.",
+                      "It reduces rising price to landlords’ monopoly price and handles differential calculations only briefly.",
                       "It limits the cause of price rises to workers’ consumption growth and excludes land differences.",
                       "It treats rising price as merchant hoarding unrelated to production price."
                     ]
@@ -34527,13 +34527,13 @@
                     "ko": [
                       "더 좋은 토지의 저생산 추가투자가 새 조절가격을 만들면, 이전 최악지 A도 차액을 얻는 경우다.",
                       "최악지의 지주가 평균이윤을 포기해 차지농에게 무상으로 토지를 빌려주는 경우다.",
-                    "최악지에서 생산된 곡물이 지역 내부에서 처리되어 지대가 현물 형태로 굳는 경우다.",
+                      "최악지에서 생산된 곡물이 지역 내부에서 처리되어 지대가 현물 형태로 굳는 경우다.",
                       "최악지의 자연비옥도가 가장 높게 재평가되어 모든 우등지를 대체하는 경우다."
                     ],
                     "en": [
                       "Under-productive additional investment on better land can set a new regulating price, giving former A a differential.",
                       "The landlord of the worst soil waives average profit and leases land free of charge.",
-                    "Grain from the worst soil is handled locally and rent hardens into a rent-in-kind form.",
+                      "Grain from the worst soil is handled locally and rent hardens into a rent-in-kind form.",
                       "The worst soil is reclassified as naturally most fertile and replaces all superior soils."
                     ]
                   },
@@ -34584,13 +34584,13 @@
                       "A의 평균 생산가격이 내려가며 새 정상 경작수준이 형성될 수 있다.",
                       "첫 투자분의 낡은 생산가격이 유지되어 모든 추가 산출이 독점가격으로 팔린다.",
                       "A가 우등지가 되어 B, C, D의 평균 생산가격을 올리는 기준이 된다.",
-                    "생산성 증가는 토지개량 이자 항목으로 처리되어 곡물가격과 별도 계산된다."
+                      "생산성 증가는 토지개량 이자 항목으로 처리되어 곡물가격과 별도 계산된다."
                     ],
                     "en": [
                       "A’s average production price can fall and form a new normal cultivation level.",
                       "The old price of the first investment remains and all additional output sells at monopoly price.",
                       "A becomes superior and raises the average production price of B, C, and D.",
-                    "Higher productivity is treated as interest on improvements and calculated separately from grain price."
+                      "Higher productivity is treated as interest on improvements and calculated separately from grain price."
                     ]
                   },
                   "answer": 0,
@@ -34706,13 +34706,13 @@
                       "개선된 부분의 초과이윤을 임대 갱신에서 지대로 고정해 평균가격 하락을 늦출 수 있다.",
                       "개선된 부분을 한계지로 등기해 모든 우등지의 지대를 법적으로 삭제할 수 있다.",
                       "개선 이전의 낮은 생산성을 보상금으로 청구해 차지농의 평균이윤을 올릴 수 있다.",
-                    "개선된 산출을 현물지대 항목에 넣어 화폐지대 계산을 뒤로 미룰 수 있다."
+                      "개선된 산출을 현물지대 항목에 넣어 화폐지대 계산을 뒤로 미룰 수 있다."
                     ],
                     "en": [
                       "They can fix surplus-profit from improved plots as rent at lease renewal and slow the fall of average price.",
                       "They can register improved plots as marginal land and legally delete superior-soil rents.",
                       "They can claim compensation for old low productivity and raise the tenant’s average profit.",
-                    "They can place improved output under rent in kind and postpone money-rent calculation."
+                      "They can place improved output under rent in kind and postpone money-rent calculation."
                     ]
                   },
                   "answer": 0,
@@ -34965,13 +34965,13 @@
                   "choices": {
                     "ko": [
                       "토지소유가 농업 잉여가치의 평균이윤화 일부를 막아 지주에게 이전시키는 구조로 설명된다.",
-                    "구매자의 변덕과 지불능력이 상품가치보다 앞서 가격을 정하는 경우로 설명된다.",
+                      "구매자의 변덕과 지불능력이 상품가치보다 앞서 가격을 정하는 경우로 설명된다.",
                       "지주가 원하는 임대료를 말하면 차지농이 평균이윤과 관계없이 그대로 지불하는 관습이다.",
                       "국가가 토지에 독점세를 부과해 지대 수입을 공공재정으로 환수하는 제도다."
                     ],
                     "en": [
                       "It is explained by landownership blocking part of agricultural surplus-value from equalizing into average profit.",
-                    "It is explained as a case where buyers’ whim and ability to pay come before commodity value.",
+                      "It is explained as a case where buyers’ whim and ability to pay come before commodity value.",
                       "It is a custom where tenants pay whatever rent landlords ask regardless of average profit.",
                       "It is a system in which the state imposes a monopoly tax on land and recovers rent revenue."
                     ]
@@ -35058,13 +35058,13 @@
                   },
                   "choices": {
                     "ko": [
-                    "그 토지가 지주의 소유물이어서, 평균이윤 조건 위에 지대 지불 조건이 덧붙을 수 있기 때문이다.",
+                      "그 토지가 지주의 소유물이어서, 평균이윤 조건 위에 지대 지불 조건이 덧붙을 수 있기 때문이다.",
                       "평균이윤이 가능한 토지는 이미 자본가의 자연소유물이 되어 임대계약이 필요 없기 때문이다.",
                       "최악 토지는 평균이윤을 보장하면 법적으로 공동소유가 되어 지주가 처분할 수 없기 때문이다.",
                       "농업 자본은 평균이윤을 얻는 순간 산업 자본으로 전환되어 토지를 떠나기 때문이다."
                     ],
                     "en": [
-                    "Because the land belongs to a landlord and rent payment can be added on top of average-profit conditions.",
+                      "Because the land belongs to a landlord and rent payment can be added on top of average-profit conditions.",
                       "Land capable of average profit naturally becomes capitalist property and needs no lease.",
                       "Worst soil legally becomes common property once it can yield average profit.",
                       "Agricultural capital turns into industrial capital as soon as it earns average profit and leaves the land."
@@ -35088,13 +35088,13 @@
                     "ko": [
                       "같은 크기의 자본이 더 많은 살아있는 노동을 움직이면 더 많은 잉여가치가 생기고, 토지소유가 그 일부를 붙잡을 수 있다.",
                       "낮은 유기적 구성은 농업상품을 가치 아래로 팔게 만들어 지주가 임금을 보전하게 한다.",
-                    "농업 자본의 구성이 낮으면 평균이윤율이 농업 내부에서 따로 형성되어 산업과 느슨하게 연결된다.",
+                      "농업 자본의 구성이 낮으면 평균이윤율이 농업 내부에서 따로 형성되어 산업과 느슨하게 연결된다.",
                       "살아있는 노동이 많을수록 토지의 자연력이 상품가치를 대신 만들어 절대지대가 사라진다."
                     ],
                     "en": [
                       "If equal capital sets more living labour in motion, more surplus-value arises and landownership can retain part of it.",
                       "Low organic composition makes agricultural commodities sell below value and landlords compensate wages.",
-                    "Low agricultural composition forms an average profit rate inside agriculture only loosely connected with industry.",
+                      "Low agricultural composition forms an average profit rate inside agriculture only loosely connected with industry.",
                       "More living labour lets natural force replace commodity value and abolish absolute rent."
                     ]
                   },
@@ -35115,15 +35115,15 @@
                   "choices": {
                     "ko": [
                       "자연산물처럼 보여도 벌목 자본은 주로 노동을 투입하므로 잉여가치 초과분이 지대로 넘어갈 수 있다.",
-                    "자연림은 자연산물의 성격이 강해 가격이 순수 독점가격에 가깝게 형성된다.",
+                      "자연림은 자연산물의 성격이 강해 가격이 순수 독점가격에 가깝게 형성된다.",
                       "목재 지대는 광산 지대와 달리 토지소유가 아니라 운송상인의 매점에서 나온다.",
-                    "숲은 재생 가능한 자연물이어서 평균이윤율과 생산가격 분석보다 생태적 회전이 앞선다."
+                      "숲은 재생 가능한 자연물이어서 평균이윤율과 생산가격 분석보다 생태적 회전이 앞선다."
                     ],
                     "en": [
                       "Although it looks like a pure natural product, timber capital chiefly employs labour, so surplus-value can pass into rent.",
-                    "Natural forests look strongly like natural products, so their price appears close to pure monopoly price.",
+                      "Natural forests look strongly like natural products, so their price appears close to pure monopoly price.",
                       "Timber rent comes from transport merchants’ hoarding, not landownership, unlike mining rent.",
-                    "Forests are renewable natural things, so ecological turnover appears before average profit and production price."
+                      "Forests are renewable natural things, so ecological turnover appears before average profit and production price."
                     ]
                   },
                   "answer": 0,
@@ -35142,13 +35142,13 @@
                   },
                   "choices": {
                     "ko": [
-                    "목축지가 경작지로 전환될 수 있으면, 가축 가격은 같은 토지가 곡물에서 얻을 지대까지 보상한다.",
+                      "목축지가 경작지로 전환될 수 있으면, 가축 가격은 같은 토지가 곡물에서 얻을 지대까지 보상한다.",
                       "가축은 곡물보다 노동이 적게 들어가므로 평균이윤 없이도 지대만으로 가격이 정해진다.",
                       "목축지의 최악 토지는 곡물의 최악 토지보다 비옥해 차액지대가 반대로 계산된다.",
-                    "가축 가격은 도시 소비자의 기호가 크게 작용해 농업지대와 생산가격의 영향이 작다."
+                      "가축 가격은 도시 소비자의 기호가 크게 작용해 농업지대와 생산가격의 영향이 작다."
                     ],
                     "en": [
-                    "If pasture could become arable land, cattle price compensates the rent that the same land could earn in grain.",
+                      "If pasture could become arable land, cattle price compensates the rent that the same land could earn in grain.",
                       "Cattle require less labour than grain, so price is set by rent alone without average profit.",
                       "The worst pasture is more fertile than the worst grain land, reversing differential rent calculation.",
                       "Cattle prices are set only by urban tastes and are unaffected by agricultural rent or production price."
@@ -35236,15 +35236,15 @@
                   "choices": {
                     "ko": [
                       "비옥도보다 위치가 강하게 작용하고, 도시 성장과 공간 독점이 지대수입을 키운다.",
-                    "건물의 감가상각이 지대의 주된 실체가 되고 토지 위치는 부속 조건으로 처리된다.",
-                    "도시 토지는 농업 토지와 달리 토지소유 독점보다 건물 설계가 중심 변수다.",
-                    "건축지 지대는 노동자 주거비와 분리된 도시 회계 항목으로 처리된다."
+                      "건물의 감가상각이 지대의 주된 실체가 되고 토지 위치는 부속 조건으로 처리된다.",
+                      "도시 토지는 농업 토지와 달리 토지소유 독점보다 건물 설계가 중심 변수다.",
+                      "건축지 지대는 노동자 주거비와 분리된 도시 회계 항목으로 처리된다."
                     ],
                     "en": [
                       "Location dominates more than fertility, and urban growth plus spatial monopoly raises rent revenue.",
-                    "Building depreciation becomes the main substance of rent, while location is treated as an attached condition.",
-                    "Urban land differs from agricultural land because building design is treated as the main variable over land monopoly.",
-                    "Building-site rent is treated as an urban accounting item separate from workers’ housing costs."
+                      "Building depreciation becomes the main substance of rent, while location is treated as an attached condition.",
+                      "Urban land differs from agricultural land because building design is treated as the main variable over land monopoly.",
+                      "Building-site rent is treated as an urban accounting item separate from workers’ housing costs."
                     ]
                   },
                   "answer": 0,
@@ -35294,13 +35294,13 @@
                       "매장량·품질·위치 차이가 개별 생산가격을 낮추면 초과이윤이 생기고 지대로 이전될 수 있다.",
                       "광물은 노동생산물이 아니므로 모든 광산 수입이 가치와 무관한 독점가격으로 정해진다.",
                       "광산에서는 토지소유자가 직접 채굴할 때만 평균이윤과 지대가 함께 생긴다.",
-                    "광산 지대는 농업지대와 달리 국가 허가 수수료가 중심 기준이 된다."
+                      "광산 지대는 농업지대와 달리 국가 허가 수수료가 중심 기준이 된다."
                     ],
                     "en": [
                       "Differences in deposit, quality, and location can lower individual production price and create rent-form surplus-profit.",
                       "Minerals are not products of labour, so all mining revenue is monopoly price unrelated to value.",
                       "In mining, average profit and rent arise only when the landowner mines directly.",
-                    "Unlike agricultural rent, mining rent is treated as mainly set by state license fees."
+                      "Unlike agricultural rent, mining rent is treated as mainly set by state license fees."
                     ]
                   },
                   "answer": 0,
@@ -35416,13 +35416,13 @@
                       "임대기간이 끝나면 토지와 건물이 지주에게 돌아가고, 그동안 오른 지대수입도 함께 포획된다.",
                       "장기 임대가 끝나면 건물은 차지농에게 남고 지주는 토지 원가만 회수한다.",
                       "99년 임대는 토지소유권을 소멸시켜 건축업자가 지대를 계속 보유하게 한다.",
-                    "임대기간이 길수록 지대가 평균이윤에 흡수되어 토지가격 계산이 뒤로 밀린다."
+                      "임대기간이 길수록 지대가 평균이윤에 흡수되어 토지가격 계산이 뒤로 밀린다."
                     ],
                     "en": [
                       "At lease expiry, land and buildings revert to the landlord, along with increased ground-rent.",
                       "At the end of a long lease, buildings remain with the tenant and the landlord recovers only land cost.",
                       "A 99-year lease extinguishes landownership and lets the builder keep rent permanently.",
-                    "The longer the lease, the more rent is absorbed into average profit and land-price calculation is delayed."
+                      "The longer the lease, the more rent is absorbed into average profit and land-price calculation is delayed."
                     ]
                   },
                   "answer": 0,
@@ -35443,13 +35443,13 @@
                     "ko": [
                       "희귀 포도주처럼 구매자의 지불의지가 초과가격을 만들 수도 있고, 토지소유 장벽이 가격을 가치 위로 밀 수도 있다.",
                       "두 표현은 같은 말이며 모두 지주가 임대료를 마음대로 정한다는 뜻이다.",
-                    "전자는 농업에 주로 적용되고 후자는 광산에 주로 적용되는 별개 유형이다.",
+                      "전자는 농업에 주로 적용되고 후자는 광산에 주로 적용되는 별개 유형이다.",
                       "전자는 평균이윤의 법칙이고 후자는 노동가치론의 예외라는 뜻이다."
                     ],
                     "en": [
                       "Rare wine may gain extra price from buyers’ willingness, while landownership can also push price above value.",
                       "The two expressions mean the same thing: landlords freely set rent.",
-                    "The former mainly applies to agriculture, while the latter mainly applies to mines as a separate type.",
+                      "The former mainly applies to agriculture, while the latter mainly applies to mines as a separate type.",
                       "The former is the law of average profit and the latter an exception to labour-value theory."
                     ]
                   },
@@ -35498,13 +35498,13 @@
                   "choices": {
                     "ko": [
                       "단위가격이 내려도 생산량 증가가 더 크면 같은 자본이 만드는 총가치와 차액지대가 커질 수 있기 때문이다.",
-                    "농산물 가격이 하락하면 이자율도 함께 낮아져 토지가격을 밀어 올리기 때문이다.",
+                      "농산물 가격이 하락하면 이자율도 함께 낮아져 토지가격을 밀어 올리기 때문이다.",
                       "가격 하락은 지주에게 보상금을 주는 법률효과를 낳아 지대를 안정시키기 때문이다.",
                       "농산물 가격이 낮아질수록 토지의 자연가치가 독립적으로 상승하기 때문이다."
                     ],
                     "en": [
                       "If output grows more than unit price falls, the total value and differential rent produced by the same capital can rise.",
-                    "A fall in agricultural price also lowers interest rates and pushes land prices up.",
+                      "A fall in agricultural price also lowers interest rates and pushes land prices up.",
                       "A price fall legally compensates landlords and stabilizes rent.",
                       "As agricultural prices fall, land’s natural value rises independently."
                     ]
@@ -35581,157 +35581,143 @@
               },
               "questions": [
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제47장에서 자본주의적 지대를 설명할 때 먼저 풀어야 할 문제는 무엇인가?",
+                    "en": "What is the first problem Marx must solve in explaining capitalist rent in Chapter 47?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "평균이윤이 성립한 뒤에도 농업 초과이윤이 토지소유자에게 귀속되는 조건이다.",
+                      "농업 노동이 다른 산업보다 본성상 더 많은 가치를 만든다는 증명이다.",
+                      "토지 가격이 오르면 생산물 가치도 같은 비율로 커지는 과정이다.",
+                      "지주가 직접 경영자가 되면 이윤과 지대의 구별이 사라지는 이유다."
+                    ],
+                    "en": [
+                      "The condition under which agricultural surplus profit accrues to landowners after average profit is formed.",
+                      "The proof that agricultural labor naturally creates more value than other branches.",
+                      "The process by which product value rises in the same proportion as land prices.",
+                      "The reason profit and rent disappear when the landlord becomes the direct manager."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "문제의 핵심은 잉여가치 일반이 아니라 평균이윤을 넘는 초과분이 지대로 고정되는 방식이다.",
+                    "en": "The issue is not surplus-value in general, but how the excess above average profit is fixed as rent."
+                  },
                   "id": "q1",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "자본주의적 지대의 발생을 보려면 어떤 역사적 변화를 따라가야 하는가?",
-                    "en": "What is the first problem to grasp in Genesis of Capitalist Ground-Rent?"
+                    "ko": "노동지대, 생산물지대, 화폐지대, 자본주의적 지대의 차이를 가르는 기준으로 가장 알맞은 것은 무엇인가?",
+                    "en": "What best distinguishes labour-rent, rent in kind, money-rent, and capitalist rent?"
                   },
                   "choices": {
                     "ko": [
-                      "노동지대에서는 직접 노동이, 생산물지대에서는 산물이, 화폐지대에서는 돈이 지대형태가 되지만 각각의 배후 생산관계는 다르다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "잉여노동이 어떤 사회관계 속에서 누구에게 어떤 형태로 이전되는가이다.",
+                      "지대가 곡물로 지급되는지 현금으로 지급되는지라는 지급 수단이다.",
+                      "토지가 개인 소유인지 공동 소유인지라는 법률상의 명칭이다.",
+                      "농민이 농기구를 직접 보유하는지 임차인이 구매하는지의 기술 차이다."
                     ],
                     "en": [
-                      "In labour-rent direct labour, in rent in kind product, and in money-rent money becomes the rent form, but the production relations behind each differ.",
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "The social relation in which surplus labour is transferred, to whom, and in what form.",
+                      "The means of payment, whether rent is paid in grain or in cash.",
+                      "The legal title of whether land is privately or communally owned.",
+                      "The technical difference of whether peasants hold tools or tenants buy them."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "정답은 이 장의 출발점을 잡는다. 노동지대에서는 직접 노동이, 생산물지대에서는 산물이, 화폐지대에서는 돈이 지대형태가 되지만 각각의 배후 생산관계는 다르다.",
-                    "en": "The correct answer identifies the chapter’s starting point. In labour-rent direct labour, in rent in kind product, and in money-rent money becomes the rent form, but the production relations behind each differ."
+                    "ko": "지급 형태는 단서일 뿐이며, 결정적인 것은 잉여노동을 둘러싼 생산관계다.",
+                    "en": "The payment form is only a clue; the decisive issue is the relation governing surplus labour."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q2",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "화폐로 지대를 낸다는 사실만으로 왜 자본주의적 지대라고 할 수 없는가?",
-                    "en": "How does this relation operate in agricultural production?"
+                    "ko": "마르크스가 중농주의를 평가하는 방식으로 가장 적절한 것은 무엇인가?",
+                    "en": "Which statement best captures Marx’s assessment of the Physiocrats?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐로 낸다고 해서 곧바로 자본주의적 지대가 되는 것은 아니며, 임금노동과 자본가적 차지농의 성립이 중요하다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다."
+                      "잉여가치를 생산자본과 연결한 점은 진전이지만, 농업지대를 유일한 원천처럼 다룬 한계가 있다.",
+                      "상업이 잉여가치의 근원이라는 통찰을 고전파보다 먼저 완성했다.",
+                      "공업 노동을 가치의 원천으로 세우면서 토지소유의 역할을 제거했다.",
+                      "자본주의 지대를 평균이윤의 한 변형으로 해명해 차액지대론을 완성했다."
                     ],
                     "en": [
-                      "Payment in money does not by itself make rent capitalist; the formation of wage-labour and the capitalist tenant farmer matters.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Whenever rent is paid in money, it is capitalist rent."
+                      "They advanced by linking surplus-value to productive capital, but limited it by treating agricultural rent as the sole source.",
+                      "They completed before the classical economists the insight that commerce is the source of surplus-value.",
+                      "They made industrial labour the source of value while removing landed property from the analysis.",
+                      "They explained capitalist rent as a form of average profit and completed the theory of differential rent."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "핵심은 지대가 생산 바깥의 단순 부과금이 아니라는 점이다. 화폐로 낸다고 해서 곧바로 자본주의적 지대가 되는 것은 아니며, 임금노동과 자본가적 차지농의 성립이 중요하다.",
-                    "en": "The point is that rent is not a mere charge outside production. Payment in money does not by itself make rent capitalist; the formation of wage-labour and the capitalist tenant farmer matters."
+                    "ko": "중농주의는 잉여가치를 생산으로 돌렸지만, 그것을 농업과 지대에 묶어 버렸다.",
+                    "en": "Physiocracy shifted surplus-value to production, but tied it too tightly to agriculture and rent."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "화폐로 지대를 내면 언제나 자본주의적 지대다. 이 설명은 무엇을 놓치는가?",
-                    "en": "Whenever rent is paid in money, it is capitalist rent. What does this explanation miss?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "노동지대에서는 직접 노동이, 생산물지대에서는 산물이, 화폐지대에서는 돈이 지대형태가 되지만 각각의 배후 생산관계는 다르다. 따라서 자연조건, 가격, 토지소유의 매개를 함께 보아야 한다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시하는 식으로 현상과 원인을 바로 동일시하는 오해",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해"
-                    ],
-                    "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "In labour-rent direct labour, in rent in kind product, and in money-rent money becomes the rent form, but the production relations behind each differ. Therefore natural conditions, price, and landed property must be read together.",
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "화폐로 냈다는 형식만으로 자본주의적 지대를 판정할 수는 없다. 임금노동, 자본가적 차지농, 토지소유의 관계가 성립하는지가 더 중요하다.",
-                    "en": "The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent."
-                  },
-                  "points": 2,
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 화폐로 냈다는 형식만으로 자본주의적 지대를 판정할 수는 없다. 임금노동, 자본가적 차지농, 토지소유의 관계가 성립하는지가 더 중요하다.",
-                      "오해 진단: \"화폐지대와 자본주의적 지대를 지불수단만 보고 동일시하는 식으로 현상과 원인을 바로 동일시하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"It weakens how location and fertility can create surplus profit under a market price.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: The wrong answers reduce rent to a natural property or landlord whim. Marx instead analyses the social conditions under which surplus-profit becomes rent.",
-                      "Misconception check: choosing \"Whenever rent is paid in money, it is capitalist rent.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Rent always arises only from the landlord’s arbitrary decision.\" puts another category ahead of the key relation in the correct answer."
-                    ]
-                  }
-                },
-                {
-                  "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "농민이 예전에는 영주 땅에서 며칠 일했고, 나중에는 산물 일부를 냈으며, 다시 돈으로 지대를 내게 되었다. 무엇이 달라졌는가?",
-                    "en": "A peasant once worked several days on the lord’s land, later delivered part of the product, and later paid rent in money. What has changed?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "화폐로 낸다고 해서 곧바로 자본주의적 지대가 되는 것은 아니며, 임금노동과 자본가적 차지농의 성립이 중요하다. 이 점을 보아야 사례가 지대 문제로 읽힌다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
-                    ],
-                    "en": [
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "Payment in money does not by itself make rent capitalist; the formation of wage-labour and the capitalist tenant farmer matters. This is what makes the case a problem of rent.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "사례형 문항의 목적은 개념을 현실의 관계로 옮겨 읽는 것이다. 정답은 가격 표면보다 그 뒤의 생산조건과 소유관계를 본다.",
-                    "en": "The purpose of the scenario is to read the concept as a real relation. The correct answer looks behind the price surface to production conditions and property relations."
-                  },
                   "points": 2
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 지대를 역사적으로 이해하는 데 어떤 의미가 있는가?",
-                    "en": "What role does this chapter play in the theory of rent as a whole?"
+                    "ko": "봉건적 생산물지대가 자본주의적 관계 속에 남아 있을 때 생길 수 있는 결과는 무엇인가?",
+                    "en": "What can happen when rent in kind survives within capitalist relations?"
                   },
                   "choices": {
                     "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "이 장은 지대가 영원한 자연형태가 아니라 역사적으로 변하는 착취와 소유관계의 표현임을 보여준다."
+                      "실제 지대보다 높은 부담이 이윤이나 자본보충분까지 잠식할 수 있다.",
+                      "현물 수취에서는 임대료가 생산물의 양을 기준으로 정해져 평균이윤 계산이 뒤로 밀린다.",
+                      "농업 생산물은 시장에 팔리지 않기 때문에 가격 변동에서 벗어난다.",
+                      "현물 납부가 지속되면 임차인은 토지를 점차 무상으로 취득한다."
                     ],
                     "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "This chapter shows rent is not an eternal natural form, but an expression of historically changing exploitation and property relations."
+                      "A burden above actual rent can eat into profit or even replacement of capital.",
+                      "With payment in kind, rent is set by the amount of produce and average-profit calculation recedes.",
+                      "Agricultural products escape price movements because they are not sold on the market.",
+                      "Continued payment in kind gradually gives the tenant land without payment."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 의미는 다음 논의와의 연결에 있다. 이 장은 지대가 영원한 자연형태가 아니라 역사적으로 변하는 착취와 소유관계의 표현임을 보여준다.",
-                    "en": "The chapter matters through its connection to the next steps. This chapter shows rent is not an eternal natural form, but an expression of historically changing exploitation and property relations."
+                    "ko": "현물 형태가 남아도 관계는 시장 속에 놓이며, 과도한 부담은 생산자본을 갉아먹는다.",
+                    "en": "Even with payment in kind, the relation is in the market; excessive rent can consume productive capital."
                   },
+                  "id": "q4",
+                  "points": 2
+                },
+                {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제47장의 논의가 다음 장의 삼위일체 공식과 이어지는 지점은 무엇인가?",
+                    "en": "How does Chapter 47 lead into the trinity formula in the next chapter?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "지대가 토지의 자연 산물이 아니라 특정 생산관계의 수입형태임을 드러낸다.",
+                      "토지가 가치를 낳는다는 결론을 통해 지대와 이자의 동일성을 밝힌다.",
+                      "임금, 이윤, 지대를 모두 토지소유의 파생형태로 배열한다.",
+                      "농업의 자연 생산성이 모든 자본 수입을 직접 설명한다는 틀을 세운다."
+                    ],
+                    "en": [
+                      "It shows rent as a revenue form of a definite production relation, not a natural product of land.",
+                      "It proves that land produces value and therefore reveals the identity of rent and interest.",
+                      "It arranges wages, profit, and rent as derivative forms of landed property.",
+                      "It establishes that natural agricultural productivity directly explains every capitalist revenue."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "지대의 사회적 성격을 밝히는 작업은 토지-지대라는 자연화된 공식 비판으로 이어진다.",
+                    "en": "Showing rent’s social character prepares the critique of the naturalized land-rent formula."
+                  },
+                  "id": "q5",
                   "points": 2
                 }
               ]
@@ -35745,143 +35731,143 @@
               },
               "questions": [
                 {
-                  "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "같은 “지대”라는 말 아래 어떤 생산관계의 차이가 숨어 있는가?",
-                    "en": "What deeper tension must be seen in Genesis of Capitalist Ground-Rent?"
+                    "ko": "소농적 토지소유에서 토지 매입가격이 농업자본에 미치는 효과로 가장 적절한 것은 무엇인가?",
+                    "en": "What is the best description of how land purchase price affects agricultural capital under peasant proprietorship?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 지대라는 이름 아래에도 직접 강제, 현물 납부, 화폐 납부, 자본주의적 임대처럼 서로 다른 생산관계가 들어 있다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다."
+                      "자본화된 지대를 선불하게 하여 생산에 투입될 자금을 줄이고 채무 의존을 키운다.",
+                      "지대를 선불했으므로 이후의 생산비에서 토지 비용이 완전히 제거된다.",
+                      "토지 가격이 생산수단으로 기능해 생산성 상승분을 직접 만들어낸다.",
+                      "매입가격은 토지 취득의 사법상 비용이라 농업 신용과 저당 부담보다 앞선다."
                     ],
                     "en": [
-                      "Under the same name rent, there can be different production relations: direct coercion, payment in kind, money payment, and capitalist leasing.",
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price."
+                      "It advances capitalized rent, reducing funds for production and increasing dependence on debt.",
+                      "Because rent is prepaid, land cost is fully removed from later production costs.",
+                      "Land price functions as means of production and directly creates productivity gains.",
+                      "The purchase price is a civil cost of acquiring land and precedes agricultural credit and mortgage burdens."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화 문항은 자연조건과 사회관계의 긴장을 묻는다. 지대는 둘 중 하나가 아니라 둘이 자본주의적으로 매개된 결과다.",
-                    "en": "The advanced question asks about the tension between natural condition and social relation. Rent is not one or the other, but their capitalist mediation."
+                    "ko": "토지 매입은 생산자본의 확장이 아니라 자본화된 지대의 선불이 되어 소농을 압박한다.",
+                    "en": "Land purchase is an advance of capitalized rent, not expansion of productive capital, and pressures the peasant."
                   },
+                  "id": "q1",
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "마르크스가 소토지소유와 대토지소유를 함께 비판하는 근거는 무엇인가?",
+                    "en": "On what basis does Marx criticize both small and large landed property?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "둘 다 사적 소유의 장벽 속에서 토양 보전과 합리적 농업을 제한한다.",
+                      "소토지는 시장을 배제하고 대토지는 시장을 과도하게 확대한다.",
+                      "두 형태 모두 지대를 현물로 지급하게 만들어 화폐관계를 약화한다.",
+                      "두 형태 모두 농민을 토지에서 분리하지 않아 임금노동을 축소한다."
+                    ],
+                    "en": [
+                      "Both restrict soil preservation and rational agriculture through the barrier of private property.",
+                      "Small property excludes the market, while large property expands it too far.",
+                      "Both forms force payment of rent in kind and weaken monetary relations.",
+                      "Both keep peasants on the land and reduce wage labour."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "비판의 초점은 규모가 아니라 토지를 사적 수입원으로 가두는 관계 자체다.",
+                    "en": "The focus is not size alone, but the relation that confines land to private revenue."
+                  },
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "노동지대에서 자본주의적 지대로 가는 과정을 이해하려면 무엇을 함께 보아야 하는가?",
-                    "en": "Which categories mediate this chapter’s argument?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "노동지대, 생산물지대, 화폐지대, 임금노동, 자본가적 차지농, 토지소유를 함께 보아야 한다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다."
-                    ],
-                    "en": [
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "One must read labour-rent, rent in kind, money-rent, wage-labour, the capitalist tenant farmer, and landed property together.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Whenever rent is paid in money, it is capitalist rent."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "매개를 보면 한 가지 원인으로 환원하지 않게 된다. 지대는 생산조건의 차이, 가격 형성, 소유권이 함께 움직일 때 이해된다.",
-                    "en": "Seeing the mediations prevents reduction to a single cause. Rent is understood through the movement of production differences, price formation, and property right together."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제47장의 역사적 순서를 이해한 설명으로 가장 적절한 것은 무엇인가?",
+                    "en": "Which explanation best understands the historical sequence in Chapter 47?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "잉여노동의 직접 수취에서 시장 매개와 자본주의적 초과이윤의 고정으로 이동한다.",
+                      "화폐지대가 먼저 등장하고 이후 생산물지대와 노동지대가 시장에서 분화한다.",
+                      "자본주의적 지대는 노동지대의 관습을 계약 형식으로 옮긴 형태라 임차자본의 비중이 작다.",
+                      "생산물지대가 발전할수록 토지소유자는 상품가격 결정에서 사라진다."
+                    ],
+                    "en": [
+                      "It moves from direct appropriation of surplus labour to market mediation and fixation of capitalist surplus profit.",
+                      "Money-rent appears first, after which rent in kind and labour-rent differentiate in the market.",
+                      "Capitalist rent carries labour-rent custom into contract form, with tenant capital playing a minor role.",
+                      "As rent in kind develops, landowners disappear from commodity-price determination."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "형태 변화는 지급수단의 변화보다 잉여노동을 매개하는 사회관계의 변화다.",
+                    "en": "The change is less about payment means than about the social mediation of surplus labour."
+                  },
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "이 장에 대한 통념적 설명이 왜 부족한가?",
-                    "en": "Why is the common-sense explanation of this chapter insufficient?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "화폐로 지대를 낸다는 사실만으로는 자본주의적 지대인지 알 수 없다. 지불 형태보다 그 뒤의 생산관계가 중요하다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
-                    ],
-                    "en": [
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "The fact that rent is paid in money does not by itself show that it is capitalist rent. The production relation behind the payment matters more than the payment form.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "화폐지대는 전환의 중요한 단계지만 곧바로 자본주의적 지대와 같지는 않다. 지대형태 뒤의 생산관계가 어떻게 바뀌었는지를 보아야 한다.",
-                    "en": "Common sense stops at the cause visible on the surface. The correct answer restores the production and property relations that make that surface possible."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "농업 생산성의 자연적 토대와 자본주의적 지대의 관계를 구별한 설명은 무엇인가?",
+                    "en": "Which statement distinguishes the natural basis of agricultural productivity from capitalist rent?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "농업 잉여는 여러 사회의 물질적 전제지만, 현대 지대는 평균이윤 초과분의 소유관계다.",
+                      "농업 잉여가 존재하면 모든 사회에서 같은 방식의 지대가 곧 형성된다.",
+                      "자연비옥도는 가치량을 직접 정하므로 사회관계 분석을 대신한다.",
+                      "현대 지대는 농업 생산물이 노동 없이 생겨나는 부분을 가격화한 것이다."
+                    ],
+                    "en": [
+                      "Agricultural surplus is a material premise in many societies, while modern rent is a property relation over excess above average profit.",
+                      "Once agricultural surplus exists, the same kind of rent immediately forms in every society.",
+                      "Natural fertility directly fixes value magnitude and replaces analysis of social relations.",
+                      "Modern rent prices the portion of agricultural products that arises without labour."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "자연적 전제와 자본주의적 형태를 혼동하면 지대를 토지의 선물처럼 보게 된다.",
+                    "en": "Confusing natural premise with capitalist form makes rent look like a gift of land."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "농민이 예전에는 영주 땅에서 며칠 일했고, 나중에는 산물 일부를 냈으며, 다시 돈으로 지대를 내게 되었다. 무엇이 달라졌는가?",
-                    "en": "A peasant once worked several days on the lord’s land, later delivered part of the product, and later paid rent in money. What has changed?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "먼저 지대가 노동, 산물, 화폐 중 어떤 형태로 걷히는지 보고, 그 뒤에 있는 강제와 소유관계가 어떻게 바뀌었는지 보아야 한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다."
-                    ],
-                    "en": [
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "First see whether rent is taken as labour, product, or money, and then examine how the compulsion and property relation behind it changed.",
-                      "Rent always arises only from the landlord’s arbitrary decision."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "역사적 사례에서는 지불 형태만 보면 부족하다. 같은 지대라도 직접 강제, 현물 납부, 화폐 납부, 자본주의적 임대는 서로 다른 생산관계를 담는다.",
-                    "en": "In a historical case, the form of payment alone is not enough. The same word rent can contain direct coercion, payment in kind, money payment, or capitalist leasing, each with different production relations."
-                  },
                   "points": 3
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 지대를 역사적으로 이해하는 데 어떤 의미가 있는가?",
-                    "en": "What is the systematic significance of Genesis of Capitalist Ground-Rent?"
+                    "ko": "리비히의 토양 고갈 논점을 끌어오는 이유로 가장 알맞은 것은 무엇인가?",
+                    "en": "Why does Marx invoke Liebig’s point about soil exhaustion?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐지대와 자본주의적 지대를 지불수단만 보고 동일시한다.",
-                      "지대를 토지소유자의 요구만으로 설명하고 생산조건 차이를 약하게 본다.",
-                      "토지의 위치와 비옥도가 시장가격 아래 초과이윤을 낳는 과정을 약하게 본다.",
-                      "이 장은 지대가 영원한 자연형태가 아니라 역사적으로 변하는 착취와 소유관계의 표현임을 보여준다."
+                      "사적 토지소유와 이윤 동기가 장기적 토양 대사를 훼손하는 방식을 보이기 위해서다.",
+                      "화학비료의 사용이 지대를 제거하고 평균이윤을 단일하게 만든다는 예시로 쓰기 위해서다.",
+                      "자연과학이 가치론을 대신해 농산물 가격을 계산할 수 있음을 보이기 위해서다.",
+                      "소농 경영이 대농보다 토양을 더 오래 보전한다는 경험 법칙을 확정하기 위해서다."
                     ],
                     "en": [
-                      "Whenever rent is paid in money, it is capitalist rent.",
-                      "Rent always arises only from the landlord’s arbitrary decision.",
-                      "It weakens how location and fertility can create surplus profit under a market price.",
-                      "This chapter shows rent is not an eternal natural form, but an expression of historically changing exploitation and property relations."
+                      "To show how private landed property and profit motives damage long-term soil metabolism.",
+                      "To show that chemical fertilizers remove rent and unify average profit.",
+                      "To show that natural science can replace value theory in calculating agricultural prices.",
+                      "To establish the empirical rule that small farming preserves soil longer than large farming."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장은 지대를 역사적 형태로 보게 한다. 지대는 영원한 자연소득이 아니라 착취와 소유관계가 바뀌면서 함께 바뀌는 수입형태다.",
-                    "en": "This chapter’s systematic point is to show rent as a historically and socially mediated income form, not as a natural yield of land."
+                    "ko": "토양 문제는 지대론이 자연과 사회의 대사를 어떻게 왜곡하는지 보여 주는 디테일이다.",
+                    "en": "The soil point details how rent relations distort the metabolism between society and nature."
                   },
+                  "id": "q5",
                   "points": 3
                 }
               ]
@@ -35950,143 +35936,143 @@
               },
               "questions": [
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "삼위일체 공식이 배열하는 세 수입형태의 짝으로 가장 정확한 것은 무엇인가?",
+                    "en": "Which pairing of revenue forms is most accurate in the trinity formula?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "자본-이윤 또는 이자, 토지-지대, 노동-임금이다.",
+                      "상품-가격, 화폐-이자, 토지-세금이다.",
+                      "생산수단-감가상각, 노동력-이윤, 자연-임금이다.",
+                      "상업-이윤, 산업-지대, 국가-임금이다."
+                    ],
+                    "en": [
+                      "Capital-profit or interest, land-rent, and labour-wages.",
+                      "Commodity-price, money-interest, and land-tax.",
+                      "Means of production-depreciation, labour-power-profit, and nature-wages.",
+                      "Commerce-profit, industry-rent, and state-wages."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "공식은 자본, 토지, 노동을 각각 독립적 수입 원천처럼 나란히 세운다.",
+                    "en": "The formula places capital, land, and labour side by side as independent sources of revenue."
+                  },
                   "id": "q1",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "사람들이 “자본은 이윤을 낳고, 땅은 지대를 낳고, 노동은 임금을 낳는다”고 말할 때 마르크스가 문제 삼는 점은 무엇인가?",
-                    "en": "When people say that capital yields profit, land yields rent, and labour yields wages, what does Marx find problematic?"
+                    "ko": "마르크스가 “자본은 사물이 아니라 사회관계”라고 하는 까닭은 무엇인가?",
+                    "en": "Why does Marx say that capital is not a thing but a social relation?"
                   },
                   "choices": {
                     "ko": [
-                      "사회적 관계의 결과인 수입들이 자본, 토지, 노동의 자연스러운 산물처럼 보인다는 점이다.",
-                      "이윤, 지대, 임금이 실제로는 아무 관계도 없는 말이라는 점이다.",
-                      "노동만이 수입을 얻고 자본과 토지는 아무 몫도 받지 않는다는 점이다.",
-                      "가격이 오를 때만 자본주의가 작동한다는 점이다."
+                      "생산수단이 임금노동을 지배하고 잉여가치를 흡수하는 관계 속에서 자본이 되기 때문이다.",
+                      "기계와 원료는 물리적 성질만으로 이자를 낳는 능력을 지니기 때문이다.",
+                      "자본은 회계장부의 명목이어서 실제 생산과정과 분리되어 있기 때문이다.",
+                      "모든 노동도구는 어느 시대에서나 같은 의미의 자본으로 기능하기 때문이다."
                     ],
                     "en": [
-                      "Income forms that result from social relations appear as natural products of capital, land, and labour.",
-                      "Profit, rent, and wages are actually unrelated terms.",
-                      "Only labour receives income, while capital and land receive no share.",
-                      "Capitalism works only when prices rise."
+                      "Means of production become capital within a relation that dominates wage labour and absorbs surplus-value.",
+                      "Machines and materials by their physical properties possess the power to yield interest.",
+                      "Capital is an accounting title separated from the actual production process.",
+                      "All instruments of labour function as capital in the same sense in every epoch."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "정답은 삼위일체 공식의 전도를 짚는다. 이 공식은 수입이 생기는 사회적 과정을 지우고, 사물 자체가 돈을 벌어 주는 것처럼 보이게 만든다.",
-                    "en": "The correct answer identifies the inversion in the trinity formula. It erases the social process that produces income and makes things themselves appear to earn money."
+                    "ko": "자본의 물신성은 특정 사회관계가 사물의 자연적 능력처럼 나타나는 데서 생긴다.",
+                    "en": "Capital fetishism arises when a definite social relation appears as a natural power of things."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q2",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "삼위일체 공식은 왜 그럴듯하게 들리는가?",
-                    "en": "Why does the trinity formula sound plausible?"
+                    "ko": "삼위일체 공식에서 토지-지대의 결합이 갖는 문제는 무엇인가?",
+                    "en": "What is the problem with the land-rent pair in the trinity formula?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의 사회에서는 실제로 임금, 이윤, 지대가 서로 다른 사람에게 따로 지급되기 때문이다.",
-                      "모든 수입이 노동자에게 한꺼번에 지급되기 때문이다.",
-                      "토지와 기계가 인간 노동 없이 새 가치를 직접 만들기 때문이다.",
-                      "경쟁이 사라지면 임금과 이윤도 함께 사라지기 때문이다."
+                      "토지는 사용가치의 자연 조건인데, 지대는 토지소유가 매개한 사회적 수입형태다.",
+                      "토지는 모든 상품가치의 공통 실체이므로 지대가 임금보다 먼저 결정된다.",
+                      "토지의 자연비옥도는 지대와 이자를 같은 회계 항목으로 만든다.",
+                      "지대는 생산물의 물리적 증가분이라 시장가격과 별개로 계산된다."
                     ],
                     "en": [
-                      "Because in capitalist society wages, profit, and rent are in fact paid separately to different people.",
-                      "Because all income is paid to workers at once.",
-                      "Because land and machinery directly create new value without human labour.",
-                      "Because wages and profit disappear once competition disappears."
+                      "Land is a natural condition of use-value, while rent is a social revenue form mediated by landed property.",
+                      "Land is the common substance of all commodity value, so rent is determined before wages.",
+                      "Natural fertility makes rent and interest the same accounting item.",
+                      "Rent is the physical increment of the product and is calculated apart from market price."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "표면에서는 세 수입이 따로 움직이므로 공식이 상식처럼 보인다. 그러나 마르크스는 그 분리가 잉여가치의 생산과 분배를 가리는 방식이라고 본다.",
-                    "en": "On the surface, the three income forms move separately, so the formula looks like common sense. Marx treats that separation as a way the production and distribution of surplus-value is obscured."
+                    "ko": "토지가 자연이라는 사실은 지대가 사회적 관계라는 사실을 설명하지 못한다.",
+                    "en": "The fact that land is nature does not explain rent as a social relation."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "“각 생산요소가 자기 기여만큼 보상받는다”는 설명이 놓치는 것은 무엇인가?",
-                    "en": "What is missed by the claim that each factor of production is rewarded for its own contribution?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "임금은 대체로 노동자가 만든 전체 가치와 정확히 같다는 점이다.",
-                      "이윤과 지대가 잉여가치의 분배 형태라는 점이다.",
-                      "토지소유를 단순한 법적 배경으로만 보고 지대형태의 역할을 놓친다.",
-                      "상품가격은 수요만으로 정해진다는 점이다."
-                    ],
-                    "en": [
-                      "Wages are always exactly equal to the total value workers create.",
-                      "Profit and rent are forms in which surplus-value is distributed.",
-                      "Land plays no role under capitalism.",
-                      "Commodity prices are determined by demand alone."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "생산요소 보상론은 이윤과 지대를 자연적 기여의 대가처럼 만든다. 마르크스에게 그것들은 노동이 만든 잉여가치가 특정 소유관계 안에서 나뉜 형태다.",
-                    "en": "The factor-reward view makes profit and rent look like payment for natural contributions. For Marx, they are forms in which surplus-value produced by labour is divided within definite property relations."
-                  },
                   "points": 2
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "“현상형태와 본질이 곧 일치한다면 과학은 필요 없을 것”이라는 말의 의미는 무엇인가?",
+                    "en": "What does Marx mean when he says science would be unnecessary if appearance and essence directly coincided?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "경쟁의 표면에서는 수입들이 독립 원천처럼 보이므로 내적 관계를 분석해야 한다는 뜻이다.",
+                      "가격표에 나타난 숫자가 가치의 본질을 완전히 보여 주므로 이론이 간단하다는 뜻이다.",
+                      "일상 경험은 본질을 숨기지 않으므로 경제학은 회계기술로 충분하다는 뜻이다.",
+                      "본질은 관찰 가능한 가격 운동 뒤에 놓이므로 과학적 설명은 수입형태 밖에서 출발한다."
+                    ],
+                    "en": [
+                      "On the surface of competition revenues look independent, so their inner relation must be analyzed.",
+                      "Numbers on price lists fully reveal the essence of value, so theory is simple.",
+                      "Everyday experience does not conceal essence, so bookkeeping is enough for economics.",
+                      "Essence lies behind observable price movements, so scientific explanation begins outside revenue forms."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "마르크스의 비판은 표면을 버리는 것이 아니라 표면이 왜 그렇게 보이는지 밝히는 것이다.",
+                    "en": "Marx does not discard appearances; he explains why they appear as they do."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "부동산 광고가 “건물이 월세를 벌어 준다”고 말하고 금융 광고가 “돈이 스스로 일한다”고 말한다. 마르크스의 관점에서 이 말들은 무엇을 흐리게 하는가?",
-                    "en": "Real-estate ads say a building earns rent, and finance ads say money works by itself. From Marx’s view, what do these phrases obscure?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "금융수익은 토지소유와 같은 말이라는 사실을 흐리게 한다.",
-                      "건물과 돈은 아무 가격도 가질 수 없다는 사실을 흐리게 한다.",
-                      "임대료와 이윤이 어떤 소유관계와 노동과정에 기대고 있는지 흐리게 한다.",
-                      "월세는 항상 임금보다 낮아야 한다는 사실을 흐리게 한다."
-                    ],
-                    "en": [
-                      "They obscure the fact that financial returns and landownership are the same thing.",
-                      "They obscure the fact that buildings and money can have no price.",
-                      "They obscure the property relations and labour processes on which rent and profit depend.",
-                      "They obscure the fact that rent must always be lower than wages."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "광고 문구는 사물이 스스로 수입을 낳는 것처럼 말한다. 정답은 그 표현이 노동, 소유, 분배의 관계를 보이지 않게 만든다는 점을 잡아낸다.",
-                    "en": "The advertising phrases make things sound as if they generate income by themselves. The correct answer catches how that expression hides relations of labour, property, and distribution."
-                  },
                   "points": 2
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장을 이해하면 3권 앞부분에서 다룬 이윤, 이자, 지대 분석이 어떻게 이어지는가?",
-                    "en": "How does this chapter connect the earlier Volume III analyses of profit, interest, and rent?"
+                    "ko": "삼위일체 공식이 제49장의 생산과정 분석으로 넘어가는 연결고리는 무엇인가?",
+                    "en": "How does the trinity formula lead into Chapter 49’s analysis of production?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율 문제는 오직 회계 기술의 문제로 정리된다.",
-                      "앞의 분석은 모두 취소되고 임금만 남는다.",
-                      "지대 분석은 이 장과 아무 관련이 없다.",
-                      "각 수입형태가 따로 연구된 뒤, 여기서 하나의 물신적 공식으로 묶여 나타난다."
+                      "수입형태의 독립성을 깨는 분석은 총생산물과 새 가치의 구성 관계로 되돌아간다.",
+                      "수입형태를 독립 원천으로 확인한 뒤 각 수입의 윤리적 분배 기준을 세운다.",
+                      "토지와 노동의 자연적 생산력을 합산해 총가격을 계산하는 절차가 필요하다.",
+                      "이자율 변동만 추적하면 임금과 지대의 발생도 함께 설명된다."
                     ],
                     "en": [
-                      "The problem of the rate of profit is reduced to accounting technique.",
-                      "All earlier analysis is cancelled and only wages remain.",
-                      "The analysis of rent has no relation to this chapter.",
-                      "After each income form has been studied separately, they appear here joined in one fetishized formula."
+                      "Analysis that breaks the independence of revenue forms returns to the relation between total product and new value.",
+                      "After confirming revenues as independent sources, it sets ethical standards for distribution.",
+                      "A procedure is needed to add natural powers of land and labour to calculate total price.",
+                      "Tracking interest-rate changes also explains the origin of wages and rent."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "48장은 3권의 여러 전환형태를 한꺼번에 보여준다. 그래서 수입형태가 완성된 상식처럼 보일수록 그 배후 관계를 다시 물어야 한다.",
-                    "en": "Chapter 48 brings together several transformed forms from Volume III. The more the income forms look like completed common sense, the more their underlying relations must be questioned."
+                    "ko": "삼위일체 비판은 수입의 표면에서 생산과 재생산의 구조로 분석을 되돌린다.",
+                    "en": "The critique of the trinity formula returns the analysis from revenue surfaces to production and reproduction."
                   },
+                  "id": "q5",
                   "points": 2
                 }
               ]
@@ -36100,143 +36086,143 @@
               },
               "questions": [
                 {
-                  "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "삼위일체 공식에서 가장 큰 전도는 어디에서 일어나는가?",
-                    "en": "Where does the deepest inversion in the trinity formula occur?"
+                    "ko": "마르크스가 자본, 토지, 노동을 “변호사 수임료, 사탕무, 음악”에 빗대는 이유는 무엇인가?",
+                    "en": "Why does Marx compare capital, land, and labour to “lawyer’s fees, red beets, and music”?"
                   },
                   "choices": {
                     "ko": [
-                      "자본, 토지, 노동이 각각 자기 힘으로 가치를 생산하는 독립 원천처럼 보이는 데서 일어난다.",
-                      "임금 지급을 착취관계의 종식으로 오해하는 데서 일어난다.",
-                      "지대가 이윤보다 항상 크다고 보는 데서 일어난다.",
-                      "상품가격이 어떤 경우에도 변하지 않는다고 보는 데서 일어난다."
+                      "서로 다른 범주의 항목을 같은 종류의 수입 원천처럼 나열하는 부조리를 드러내기 위해서다.",
+                      "세 항목이 모두 같은 노동시간으로 환원되어 단일 가격표에 놓인다는 뜻이다.",
+                      "법률, 농업, 예술이 자본주의 분업의 세 주요 부문이라는 역사적 예시다.",
+                      "각 항목이 자연적 생산성을 지니므로 이자, 지대, 임금을 낳는다는 비유다."
                     ],
                     "en": [
-                      "It occurs when capital, land, and labour appear as independent sources that each produce value by their own power.",
-                      "It occurs when wages are taken to prove that no exploitation exists.",
-                      "It occurs when rent is assumed always to be larger than profit.",
-                      "It occurs when commodity prices are assumed never to change."
+                      "To expose the absurdity of listing items from different categories as if they were equivalent revenue sources.",
+                      "It means all three reduce to the same labour-time and fit one price list.",
+                      "It is a historical example of law, agriculture, and art as the three main branches of capitalist division of labour.",
+                      "It is an analogy that each item has natural productivity and yields interest, rent, and wages."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "삼위일체 공식의 핵심은 생산관계가 자연적 원천처럼 뒤집혀 보인다는 데 있다. 임금, 이윤, 지대의 분리는 그 전도를 더 설득력 있게 만든다.",
-                    "en": "The point of the trinity formula is that production relations appear inverted as natural sources. The separation of wages, profit, and rent makes that inversion more convincing."
+                    "ko": "비유의 힘은 삼위일체 공식이 범주 차이를 지운 채 나란히 세우는 데 있다.",
+                    "en": "The analogy targets how the trinity formula erases categorical differences by placing them side by side."
                   },
+                  "id": "q1",
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "자본-이자가 자본-이윤보다 더 물신적인 형태가 되는 이유는 무엇인가?",
+                    "en": "Why is capital-interest a more fetishized form than capital-profit?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "생산과정의 매개가 사라지고 돈 자체가 돈을 낳는 관계처럼 보이기 때문이다.",
+                      "이자는 산업이윤보다 더 긴 노동과정을 포함해 착취 관계가 선명해지기 때문이다.",
+                      "이자율은 토지비옥도에 의해 결정되어 사회관계와 자연조건이 분리되기 때문이다.",
+                      "대부자본은 상품교환을 거치지 않아 가치법칙의 적용을 받지 않기 때문이다."
+                    ],
+                    "en": [
+                      "The mediation of production disappears, so money seems to generate money by itself.",
+                      "Interest includes a longer labour process than industrial profit, making exploitation clearer.",
+                      "The interest rate is determined by soil fertility, separating social relations from natural conditions.",
+                      "Loan capital does not pass through commodity exchange and is outside the law of value."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "이자는 잉여가치의 기원을 가장 멀리 감추며 자본의 자기증식처럼 나타난다.",
+                    "en": "Interest most thoroughly hides surplus-value’s origin and appears as capital’s self-expansion."
+                  },
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "임금형태, 평균이윤, 이자, 지대는 삼위일체 공식에서 어떤 역할을 하는가?",
-                    "en": "What role do wage-form, average profit, interest, and rent play in the trinity formula?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "서로 무관한 네 현상이라서 함께 분석할 필요가 없다.",
-                      "잉여가치와 생산관계가 표면에서 독립 수입처럼 보이도록 이어 주는 매개들이다.",
-                      "노동시간 계산을 완전히 불가능하게 만드는 예외들이다.",
-                      "자본주의 이전 사회에서만 나타나는 낡은 형식들이다."
-                    ],
-                    "en": [
-                      "They are four unrelated phenomena that need not be analysed together.",
-                      "They mediate the appearance of surplus-value and production relations as independent incomes on the surface.",
-                      "They are exceptions that make labour-time calculation completely impossible.",
-                      "They are archaic forms that appear only before capitalism."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "이 범주들은 단순한 목록이 아니다. 각각이 잉여가치의 생산과 분배를 다른 모습으로 바꾸어, 삼위일체 공식이 자연스러운 상식처럼 보이게 한다.",
-                    "en": "These categories are not a mere list. Each transforms the production and distribution of surplus-value into another appearance, making the trinity formula look like natural common sense."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "“노동의 가격”이라는 표현이 비합리적이라는 비판의 핵심은 무엇인가?",
+                    "en": "What is the core of Marx’s critique that “price of labour” is irrational?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "가격을 갖는 것은 노동력이지만, 임금형태는 노동 전체가 지급받는 것처럼 보이게 한다.",
+                      "노동이 상품이 아니라는 점에서 임금 지급은 생산물 분배의 관습적 명칭이 된다.",
+                      "임금은 생산물의 물리적 양을 기준으로 정해져 가치관계보다 산출량과 가까워진다.",
+                      "노동의 가격은 지대와 이자의 평균값으로 계산되어 개별 노동자에게 배분된다."
+                    ],
+                    "en": [
+                      "Labour-power has a price, but the wage form makes it appear that all labour is paid.",
+                      "Because labour is not a commodity, wage payment becomes a customary name for distributing the product.",
+                      "Wages are set by the physical quantity of output and therefore stand closer to output than value relations.",
+                      "The price of labour is calculated from the average of rent and interest and then distributed to individual workers."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "임금형태는 필요노동과 잉여노동의 구별을 가려 착취를 등가교환처럼 보이게 한다.",
+                    "en": "The wage form hides the split between necessary and surplus labour, making exploitation look like exchange of equivalents."
+                  },
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "“자본도 땅도 노동도 각자 생산에 기여했으니 각자의 몫을 받는다”는 설명이 비판받아야 하는 이유는 무엇인가?",
-                    "en": "Why should the claim that capital, land, and labour each receive a share for their contribution be criticized?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "그 설명은 모든 임금이 곧 지대라고 보기 때문이다.",
-                      "그 설명은 토지소유가 법적으로 금지되어 있다고 보기 때문이다.",
-                      "그 설명은 계급관계와 잉여가치 분배를 자연적 기여의 문제로 바꾸기 때문이다.",
-                      "그 설명은 노동자가 어떤 경우에도 임금을 받지 않는다고 보기 때문이다."
-                    ],
-                    "en": [
-                      "Because it treats all wages as rent.",
-                      "Because it assumes landownership is legally prohibited.",
-                      "Because it turns class relations and the distribution of surplus-value into a question of natural contribution.",
-                      "Because it assumes workers never receive wages."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "문제는 생산에 여러 조건이 필요하다는 사실 자체가 아니다. 그 조건들의 소유관계가 어떤 수입형태를 만들고, 착취를 어떻게 자연화하는지가 쟁점이다.",
-                    "en": "The issue is not that production needs several conditions. The issue is how ownership of those conditions produces income forms and naturalizes exploitation."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "삼위일체 공식에서 속류경제학이 맡는 역할은 무엇인가?",
+                    "en": "What role does vulgar economy play in the trinity formula?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "일상 경쟁에서 생긴 수입 원천의 환상을 이론처럼 정리하고 체계화한다.",
+                      "고전파의 잉여가치 분석을 더 밀고 나가 착취 구조를 명확히 한다.",
+                      "상품형태를 역사적으로 해체해 임금노동의 기원을 설명한다.",
+                      "생산물의 가치와 가격의 차이를 수학적으로 제거하는 역할을 한다."
+                    ],
+                    "en": [
+                      "It organizes and systematizes the illusion of revenue sources produced in everyday competition.",
+                      "It extends classical surplus-value analysis and clarifies exploitation.",
+                      "It historically dissolves the commodity form and explains the origin of wage labour.",
+                      "It mathematically eliminates the difference between value and price."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "속류경제학은 표면의 언어를 설명 대상으로 삼지 않고 설명 자체로 만든다.",
+                    "en": "Vulgar economy turns surface language into explanation instead of explaining it."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "한 플랫폼이 “노동자는 임금, 투자자는 수익률, 건물주는 임대료를 받으니 모두 공정한 보상”이라고 홍보한다. 여기서 먼저 따져야 할 질문은 무엇인가?",
-                    "en": "A platform says workers receive wages, investors returns, and landlords rent, so everyone receives fair compensation. What should be asked first?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "세 수입이 같은 이름으로 회계 처리되는지 여부만 물어야 한다.",
-                      "투자자가 노동자보다 더 많은 시간을 일했는지부터 물어야 한다.",
-                      "각 수입이 어떤 노동과 소유관계, 잉여가치 분배를 전제로 하는지 물어야 한다.",
-                      "임대료가 존재하면 플랫폼은 자본주의 기업이 아니라고 보아야 한다."
-                    ],
-                    "en": [
-                      "Only whether the three incomes are booked under the same accounting name should be asked.",
-                      "First ask whether investors worked more hours than workers.",
-                      "Ask what labour, property relations, and distribution of surplus-value each income presupposes.",
-                      "If rent exists, the platform should not be treated as a capitalist firm."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "공정한 보상이라는 말은 수입의 형태만 보여줄 수 있다. 마르크스식 질문은 그 수입들이 어떤 생산관계에서 반복적으로 생기는지를 묻는다.",
-                    "en": "The language of fair compensation may show only the form of income. A Marxian question asks from what production relations those incomes repeatedly arise."
-                  },
                   "points": 3
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "삼위일체 공식이 3권 전체에서 갖는 의미는 무엇인가?",
-                    "en": "What is the significance of the trinity formula within Volume III as a whole?"
+                    "ko": "제48장의 자유의 왕국 논의가 앞선 수입형태 비판과 연결되는 방식은 무엇인가?",
+                    "en": "How does Chapter 48’s discussion of the realm of freedom connect to the critique of revenue forms?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율 저하 경향이 실제로는 존재하지 않는다고 선언한다.",
-                      "상품, 화폐, 자본의 구분이 더 이상 필요 없다는 결론을 낸다.",
-                      "지대와 이자를 모두 임금의 한 종류로 환원한다.",
-                      "자본주의 사회의 일상 의식이 왜 착취관계를 자연 질서처럼 받아들이는지 압축해서 보여준다."
+                      "연합한 생산자들이 자연과의 물질대사를 합리적으로 조절해야 수입형태의 물신성을 넘어선다.",
+                      "임금, 이윤, 지대가 조화롭게 유지될 때 자유의 왕국이 시장 안에서 완성된다.",
+                      "자유는 필요노동의 확대에서 생기므로 노동일 단축은 분석의 주변 조건이다.",
+                      "자연법칙을 거부하면 생산과 분배의 사회적 조정 없이도 자유가 실현된다."
                     ],
                     "en": [
-                      "It declares that the tendency of the rate of profit to fall does not exist.",
-                      "It concludes that the distinction between commodity, money, and capital is no longer needed.",
-                      "It reduces rent and interest to kinds of wages.",
-                      "It condenses why everyday consciousness in capitalist society accepts exploitative relations as a natural order."
+                      "Associated producers must rationally regulate their metabolism with nature to move beyond fetishized revenue forms.",
+                      "The realm of freedom is completed inside the market when wages, profit, and rent remain harmonious.",
+                      "Freedom arises from expanding necessary labour, so shortening the working day is peripheral.",
+                      "Freedom is realized by rejecting natural laws without social regulation of production and distribution."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "삼위일체 공식은 단순한 오류가 아니라 자본주의의 표면에서 반복적으로 생기는 의식형태다. 그래서 3권의 전환형태 분석을 물신성 비판으로 묶어 준다.",
-                    "en": "The trinity formula is not a simple mistake but a form of consciousness repeatedly generated on the surface of capitalism. It links Volume III’s transformed forms to a critique of fetishism."
+                    "ko": "물신적 수입형태를 넘는 길은 의식적 사회조정과 노동일 단축이라는 조건으로 제시된다.",
+                    "en": "Moving beyond fetishized revenue forms requires conscious social regulation and a shorter working day."
                   },
+                  "id": "q5",
                   "points": 3
                 }
               ]
@@ -36305,143 +36291,143 @@
               },
               "questions": [
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제49장에서 이윤과 지대는 가치생산 안에서 어떤 위치를 갖는가?",
+                    "en": "In Chapter 49, what place do profit and rent occupy in value production?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "둘 다 잉여가치의 분할형태이며 합계는 총잉여가치를 넘어설 수 없다.",
+                      "이윤은 자본의 산물이고 지대는 토지의 산물이어서 서로 다른 가치원천이다.",
+                      "지대가 먼저 결정되고 남은 부분이 평균이윤으로 산업자본에 배분된다.",
+                      "이윤과 지대는 생산 후 세금처럼 붙는 항목이므로 상품가치 밖에 있다."
+                    ],
+                    "en": [
+                      "Both are divided forms of surplus-value, and their sum cannot exceed total surplus-value.",
+                      "Profit is the product of capital and rent the product of land, so they are different value sources.",
+                      "Rent is determined first, and the remainder is distributed to industrial capital as average profit.",
+                      "Profit and rent are added like taxes after production and stand outside commodity value."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "평균이윤과 지대의 분배는 잉여가치의 형태 변화이지 새 원천의 추가가 아니다.",
+                    "en": "Average profit and rent are transformations of surplus-value, not additions of new sources."
+                  },
                   "id": "q1",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "수입표에 임금, 이윤, 이자, 지대가 나란히 적혀 있을 때 마르크스가 다시 물으려는 것은 무엇인가?",
-                    "en": "When wages, profit, interest, and rent stand side by side in an income table, what does Marx want to ask again?"
+                    "ko": "연간 새 가치와 총생산물의 가치 구성을 구별한 설명으로 가장 적절한 것은 무엇인가?",
+                    "en": "Which statement best distinguishes annual new value from the value composition of the total product?"
                   },
                   "choices": {
                     "ko": [
-                      "그 수입들이 생산과정에서 생긴 가치와 어떻게 이어져 있는지다.",
-                      "어느 항목의 글자 수가 가장 많은지다.",
-                      "수입표가 있으면 생산과정 분석은 필요 없다는 점이다.",
-                      "모든 수입이 같은 사람에게 지급되는지다."
+                      "새 가치는 임금, 이윤, 지대로 분해되지만 총생산물에는 보충되어야 할 불변자본도 들어 있다.",
+                      "총생산물의 가치는 모두 임금, 이윤, 지대라서 불변자본은 회계상 중복 항목이다.",
+                      "불변자본은 새 가치를 창조하므로 임금보다 먼저 수입으로 분배된다.",
+                      "새 가치는 생산수단의 이전가치이고 총생산물은 노동자의 소비재 가치다."
                     ],
                     "en": [
-                      "How those incomes are connected to value produced in the production process.",
-                      "Which entry has the most letters.",
-                      "That once there is an income table, analysis of production is unnecessary.",
-                      "Whether all incomes are paid to the same person."
+                      "New value resolves into wages, profit, and rent, but the total product also contains constant capital to be replaced.",
+                      "The total product is entirely wages, profit, and rent, so constant capital is a duplicate accounting item.",
+                      "Constant capital creates new value and is distributed as revenue before wages.",
+                      "New value is the transferred value of means of production, while total product is workers’ consumption goods."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "수입표는 분배의 결과를 보여줄 뿐이다. 마르크스는 그 결과를 이해하려면 가치가 생산되는 과정으로 되돌아가야 한다고 본다.",
-                    "en": "The income table shows only the result of distribution. Marx argues that understanding that result requires returning to the process in which value is produced."
+                    "ko": "스미스식 수입분해는 새 가치에는 맞지만 총생산물 전체에는 맞지 않는다.",
+                    "en": "Smith’s revenue decomposition fits new value, not the whole total product."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q2",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "생산과정 분석에서 불변자본, 가변자본, 잉여가치를 구분하는 이유는 무엇인가?",
-                    "en": "Why distinguish constant capital, variable capital, and surplus-value in analysing production?"
+                    "ko": "불변자본 보충 문제가 중요한 이유는 무엇인가?",
+                    "en": "Why is the replacement of constant capital important?"
                   },
                   "choices": {
                     "ko": [
-                      "새 가치가 어디서 생기고 그중 어떤 부분이 임금과 잉여가치로 갈라지는지 보기 위해서다.",
-                      "기계와 원료가 새 가치를 전부 만든다는 점을 보이기 위해서다.",
-                      "지대가 대체로 임금보다 먼저 지급된다는 점을 보이기 위해서다.",
-                      "회계장부의 모든 항목을 같은 성격으로 만들기 위해서다."
+                      "사회가 같은 규모로 재생산되려면 소비된 생산수단이 물적으로 다시 마련되어야 한다.",
+                      "불변자본은 임금으로 소비되므로 노동자의 구매력이 충분하면 보충이 끝난다.",
+                      "생산수단은 이전 생산물이라 현재 연간생산물의 가치와 관계가 없다.",
+                      "지대가 현금으로 지급되면 생산수단 보충은 가격 계산에서 제외된다."
                     ],
                     "en": [
-                      "To see where new value arises and how part of it divides into wages and surplus-value.",
-                      "To show that machinery and raw materials create all new value.",
-                      "To show that rent is always paid before wages.",
-                      "To make every accounting entry have the same character."
+                      "For society to reproduce on the same scale, consumed means of production must be physically replaced.",
+                      "Constant capital is consumed as wages, so replacement is complete if workers’ purchasing power is sufficient.",
+                      "Means of production are past products and have no relation to the current annual product’s value.",
+                      "When rent is paid in money, replacement of means of production is excluded from price calculation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "불변자본은 기존 가치를 이전하고, 가변자본은 노동력을 통해 새 가치와 잉여가치 생산에 연결된다. 이 구분이 있어야 수입형태의 출처를 혼동하지 않는다.",
-                    "en": "Constant capital transfers existing value, while variable capital is connected through labour-power to new value and surplus-value. This distinction prevents confusion about the source of income forms."
+                    "ko": "총생산물 분석은 가치분해만이 아니라 물적 재생산 조건까지 포함한다.",
+                    "en": "Analysis of the total product must include physical reproduction, not only value decomposition."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "분배 항목만 보고 “임금도 이윤도 지대도 모두 생산비”라고 말하면 무엇이 흐려지는가?",
-                    "en": "What is obscured if one looks only at distribution entries and says wages, profit, and rent are all costs of production?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "상품은 교환되지 않는다는 점이다.",
-                      "노동이 새 가치를 만들고 잉여가치가 나중에 여러 수입형태로 나뉜다는 점이다.",
-                      "자본가는 어떤 경우에도 돈을 쓰지 않는다는 점이다.",
-                      "토지는 대체로 무료로 사용할 수 있다는 점이다."
-                    ],
-                    "en": [
-                      "That commodities are not exchanged.",
-                      "That labour creates new value and surplus-value is later divided into several income forms.",
-                      "That capitalists never spend money.",
-                      "That land can always be used for free."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "비용처럼 보이는 항목들을 그대로 병렬하면 생산과 분배의 차이가 사라진다. 마르크스는 임금과 잉여가치 분배를 같은 층위의 항목으로 보지 않는다.",
-                    "en": "If entries that look like costs are simply placed side by side, the difference between production and distribution disappears. Marx does not treat wages and the distribution of surplus-value as entries on the same level."
-                  },
                   "points": 2
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "한 사람에게 수입인 것이 다른 사람에게 자본일 수 있다는 말의 정확한 의미는 무엇인가?",
+                    "en": "What is the precise meaning of saying that what is revenue for one person may be capital for another?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "거래 당사자의 사용 방식은 달라도 같은 상품가치의 구성 자체는 그대로 유지된다.",
+                      "수입으로 받은 화폐는 다음 거래에서 소비기금으로 성격이 바뀌어 생산비와 거리를 둔다.",
+                      "판매자의 이윤은 구매자의 임금으로 변하므로 가치 총량이 새로 증가한다.",
+                      "상품의 사회적 기능이 바뀌면 그 상품을 만든 노동시간도 뒤따라 바뀐다."
+                    ],
+                    "en": [
+                      "The parties may use it differently, but the value composition of the same commodity remains intact.",
+                      "Money received as revenue changes into a consumption fund in the next transaction and stands apart from production costs.",
+                      "The seller’s profit becomes the buyer’s wage, so total value newly increases.",
+                      "When a commodity’s social function changes, the labour-time that produced it changes too."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "수입과 자본의 역할 전환은 가치 구성의 원천을 설명하는 방식이 아니다.",
+                    "en": "The switch between revenue and capital use does not explain the source of value composition."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "회사 대시보드가 인건비, 금융비용, 임대료, 배당을 같은 색 막대로 보여준다. 이 자료를 읽을 때 필요한 질문은 무엇인가?",
-                    "en": "A company dashboard shows labour costs, financial costs, rent, and dividends as bars of the same colour. What question is needed when reading it?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "어떤 막대가 화면에서 가장 보기 좋은지다.",
-                      "막대가 같은 색이면 모두 같은 원천에서 나온다는 뜻인지다.",
-                      "그 항목들이 가치생산의 조건인지, 잉여가치가 분배된 결과인지 구분되어 있는지다.",
-                      "배당이 있으면 임금노동이 사라지는지다."
-                    ],
-                    "en": [
-                      "Which bar looks best on the screen.",
-                      "Whether the same colour means all entries come from the same source.",
-                      "Whether the entries distinguish conditions of value production from results of surplus-value distribution.",
-                      "Whether wage-labour disappears once dividends exist."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "보기 좋은 표가 분석까지 대신해 주지는 않는다. 같은 형식으로 표시된 항목도 생산과정 안에서의 위치는 서로 다를 수 있다.",
-                    "en": "A clean chart does not perform the analysis for us. Entries displayed in the same form may occupy different positions in the process of production."
-                  },
                   "points": 2
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장이 삼위일체 공식 뒤에 놓는 분석 기준은 무엇인가?",
-                    "en": "What analytical standard does this chapter place behind the trinity formula?"
+                    "ko": "제49장이 제50장의 경쟁 환상 비판으로 이어지는 이유는 무엇인가?",
+                    "en": "Why does Chapter 49 lead into Chapter 50’s critique of competition illusions?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정은 가격표를 보면 그 자체로 이해된다.",
-                      "수입형태는 설명할 수 없으므로 그대로 받아들여야 한다.",
-                      "임금, 이윤, 지대는 모두 자연이 만든 몫이다.",
-                      "수입형태를 설명하려면 먼저 생산과정에서 가치가 어떻게 만들어지고 나뉘는지 보아야 한다."
+                      "새 가치가 수입으로 분배되는 사실이 수입들이 가치를 만든다는 역전으로 나타나기 때문이다.",
+                      "총생산물이 수입으로 완전히 분해되므로 경쟁은 가치법칙을 그대로 투명하게 보여 주기 때문이다.",
+                      "불변자본 보충이 시장 밖에서 끝나 경쟁가격 분석이 필요 없어지기 때문이다.",
+                      "임금과 지대가 생산물 가치에서 사라져 이윤율만 남기 때문이다."
                     ],
                     "en": [
-                      "The production process is automatically understood from price lists.",
-                      "Income forms cannot be explained and must simply be accepted.",
-                      "Wages, profit, and rent are all shares created by nature.",
-                      "To explain income forms, one must first see how value is produced and divided in the production process."
+                      "Because the fact that new value is distributed as revenues appears inverted as if revenues create value.",
+                      "Because the total product fully decomposes into revenues, competition transparently shows the law of value.",
+                      "Because constant-capital replacement occurs outside the market, price analysis becomes unnecessary.",
+                      "Because wages and rent vanish from product value, leaving only the profit rate."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "49장은 48장의 전도를 풀기 위한 방법을 분명히 한다. 표면의 수입이 아니라 가치생산의 구조가 출발점이다.",
-                    "en": "Chapter 49 clarifies the method for undoing the inversion of Chapter 48. The starting point is not surface income, but the structure of value production."
+                    "ko": "생산과정의 분석은 경쟁 속에서 생기는 원인과 결과의 뒤집힘을 비판할 토대를 준다.",
+                    "en": "Analysis of production provides the basis for criticizing the reversal of cause and effect in competition."
                   },
+                  "id": "q5",
                   "points": 2
                 }
               ]
@@ -36455,143 +36441,143 @@
               },
               "questions": [
                 {
-                  "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "생산과정 분석과 수입형태 분석 사이의 긴장은 무엇인가?",
-                    "en": "What tension lies between analysis of production and analysis of income forms?"
+                    "ko": "단순재생산 도식 I 4000c+1000v+1000s, II 2000c+500v+500s에서 핵심 교환조건은 무엇인가?",
+                    "en": "In the simple reproduction schema I 4000c+1000v+1000s and II 2000c+500v+500s, what is the key exchange condition?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정은 보이지 않고 수입형태는 표면에 보이기 때문에, 결과가 원인처럼 보일 수 있다.",
-                      "생산과정은 항상 수입표보다 단순하기 때문에 분석할 필요가 없다.",
-                      "수입형태를 보면 노동시간을 정확히 알 수 있기 때문에 긴장이 없다.",
-                      "지대가 사라지면 모든 생산과정도 사라진다."
+                      "I의 1000v+1000s가 II의 2000c와 교환되어 소비재와 생산수단 보충이 맞물린다.",
+                      "I의 4000c가 II의 500v와 교환되어 노동자의 소비재 수요를 모두 충족한다.",
+                      "II의 500s가 I의 4000c를 대체하므로 사치소비가 생산수단을 보충한다.",
+                      "두 부문의 잉여가치 1500이 모두 I 내부에서 축적되어 단순재생산을 이룬다."
                     ],
                     "en": [
-                      "Because the production process is not visible while income forms are visible on the surface, results can appear as causes.",
-                      "Because the production process is always simpler than income tables and need not be analysed.",
-                      "Because income forms reveal labour-time exactly, there is no tension.",
-                      "If rent disappears, every production process disappears too."
+                      "I’s 1000v+1000s exchanges with II’s 2000c, linking consumer goods and replacement of means of production.",
+                      "I’s 4000c exchanges with II’s 500v and satisfies all workers’ demand for consumer goods.",
+                      "II’s 500s replaces I’s 4000c, so luxury consumption replaces means of production.",
+                      "The 1500 of surplus-value in both departments is accumulated inside I, producing simple reproduction."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "표면에 보이는 것은 분배된 수입이다. 마르크스의 분석은 그 수입들이 원인처럼 행세할 때 생산과정이 가려진다고 본다.",
-                    "en": "What appears on the surface is distributed income. Marx’s analysis sees the production process being obscured when those incomes pose as causes."
+                    "ko": "I(v+s)=IIc는 새 가치의 수입분배와 불변자본의 물적 보충을 함께 보여 준다.",
+                    "en": "I(v+s)=IIc shows both revenue distribution of new value and physical replacement of constant capital."
                   },
+                  "id": "q1",
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "아담 스미스식 “모든 가치는 수입으로 분해된다”는 명제가 제49장에서 비판받는 지점은 무엇인가?",
+                    "en": "Where does Chapter 49 criticize Adam Smith’s claim that all value resolves into revenues?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "개별 새 가치에는 맞아 보여도 사회적 총생산물의 불변자본 부분을 지워 버린다.",
+                      "수입 항목을 너무 많이 세분해 이윤과 지대를 별개로 계산한다.",
+                      "임금을 생산비에 넣기 때문에 노동자의 소비를 과소평가한다.",
+                      "상품가격이 시장에서 결정된다는 점을 인정해 가치론과 충돌한다."
+                    ],
+                    "en": [
+                      "It may seem plausible for new value, but erases the constant-capital part of the social total product.",
+                      "It subdivides revenue items too much by calculating profit and rent separately.",
+                      "It includes wages in cost price and therefore underestimates workers’ consumption.",
+                      "It accepts that commodity prices are determined in the market and conflicts with value theory."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "사회적 재생산을 보려면 수입으로 소비되는 부분과 생산수단으로 보충되는 부분을 나눠야 한다.",
+                    "en": "Social reproduction requires separating the part consumed as revenue from the part replaced as means of production."
+                  },
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "총생산물을 분석할 때 “대체되어야 할 가치”와 “새로 만들어진 가치”를 나누는 이유는 무엇인가?",
-                    "en": "Why separate value that must be replaced from newly produced value in analysing the total product?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "둘은 이름만 다르고 거의 같은 것이기 때문이다.",
-                      "둘을 나누지 않으면 잉여가치가 어디서 생기는지 알 수 없기 때문이다.",
-                      "대체가치는 대체로 지주에게만 가기 때문이다.",
-                      "새 가치는 회계연도 마지막 날에만 생기기 때문이다."
-                    ],
-                    "en": [
-                      "Because they are only different names for exactly the same thing.",
-                      "Because without separating them, we cannot see where surplus-value arises.",
-                      "Because replacement value always goes only to landlords.",
-                      "Because new value arises only on the last day of the accounting year."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "생산수단의 가치는 상품에 이전되지만, 새 가치는 노동과정에서 생긴다. 이 차이를 놓치면 잉여가치를 비용 항목들 사이에 묻어 버리게 된다.",
-                    "en": "The value of means of production is transferred to the commodity, while new value arises in the labour process. Missing this difference buries surplus-value among cost entries."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "자본주의 이후에도 가치규정이 의미를 갖는다는 논점으로 가장 적절한 것은 무엇인가?",
+                    "en": "Which point best explains why value determination still matters beyond capitalism?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "사회적 노동시간의 배분과 생산의 장부 계산은 사회형태가 바뀌어도 필요하기 때문이다.",
+                      "교환가치가 사라지면 모든 노동시간 계산도 함께 사라져 계획이 필요 없기 때문이다.",
+                      "이윤율 평균화가 계속되어야 생산수단의 물적 보충이 가능하기 때문이다.",
+                      "지대와 이자가 유지되어야 노동생산성이 사회적으로 비교될 수 있기 때문이다."
+                    ],
+                    "en": [
+                      "Allocation of social labour-time and accounting for production remain necessary even when the social form changes.",
+                      "Once exchange-value disappears, all calculation of labour-time disappears and planning is unnecessary.",
+                      "Equalization of the profit rate must continue for means of production to be physically replaced.",
+                      "Rent and interest must be retained so labour productivity can be socially compared."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "마르크스는 가치형태를 역사화하지만 노동시간의 사회적 배분 문제까지 없애지는 않는다.",
+                    "en": "Marx historicizes the value form without abolishing the problem of allocating social labour-time."
+                  },
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "“모든 수입은 생산에 기여한 대가”라는 설명이 특히 약한 지점은 어디인가?",
-                    "en": "Where is the explanation that all income is payment for contribution to production especially weak?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "노동자가 임금을 받는다는 사실을 부정하기 때문이다.",
-                      "임금이 화폐로 지급될 수 있다는 사실을 인정하기 때문이다.",
-                      "잉여가치가 먼저 생산되고 나중에 이윤, 이자, 지대로 나뉘는 과정을 설명하지 못한다.",
-                      "생산수단이 상품에 들어간다는 점을 지나치게 강조하기 때문이다."
-                    ],
-                    "en": [
-                      "Because it denies that workers receive wages.",
-                      "Because it admits that wages can be paid in money.",
-                      "It cannot explain how surplus-value is first produced and later divided into profit, interest, and rent.",
-                      "Because it overemphasizes that means of production enter commodities."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "기여 보상론은 결과를 자연스럽게 보이게 하지만 생성 과정을 설명하지 못한다. 마르크스에게 관건은 잉여가치의 생산과 그 뒤의 분배를 구분하는 일이다.",
-                    "en": "The contribution-reward view makes the result look natural but cannot explain its genesis. For Marx, the key is distinguishing the production of surplus-value from its later distribution."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "실잣값을 짜는 사람에게서 분석할 때 생기는 혼동을 피한 설명은 무엇인가?",
+                    "en": "Which explanation avoids the confusion in analyzing the value of yarn for a weaver?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "방적업자의 임금·이윤·지대 배분은 실의 가치 구성과 구별되어야 한다.",
+                      "짜는 사람이 실을 자본으로 쓰면 방적업자의 불변자본은 실값에서 사라진다.",
+                      "실이 원료로 들어가면 그 이전 노동은 새로 수행된 노동으로 다시 계산된다.",
+                      "구매자의 생산과정에서 쓰인다는 사실이 판매자의 잉여가치를 임금으로 전환한다."
+                    ],
+                    "en": [
+                      "The spinner’s distribution into wages, profit, and rent must be distinguished from the value composition of the yarn.",
+                      "When the weaver uses yarn as capital, the spinner’s constant capital disappears from the yarn’s value.",
+                      "Once yarn enters as material, the previous labour is recalculated as newly performed labour.",
+                      "Its use in the buyer’s production turns the seller’s surplus-value into wages."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "상품의 용도 변화와 그 상품에 응고된 가치의 출처를 섞으면 총생산물 분석이 흐려진다.",
+                    "en": "Confusing a commodity’s use with the source of its embodied value blurs the analysis of the total product."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "기업이 “우리는 인건비, 임대료, 이자비용을 모두 지불했으니 이윤은 경영능력의 순수한 보상”이라고 말한다. 어떻게 읽어야 하는가?",
-                    "en": "A firm says that after paying labour costs, rent, and interest, profit is pure reward for management ability. How should this be read?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "임대료가 있으면 생산과정은 분석할 수 없다고 보아야 한다.",
-                      "경영자가 있으면 노동자는 더 이상 가치를 만들지 않는다고 보아야 한다.",
-                      "경영능력이라는 말이 잉여가치 생산과 분배의 구조를 가리고 있는지 따져야 한다.",
-                      "이자가 지급되면 이윤은 곧장 사라진다고 보아야 한다."
-                    ],
-                    "en": [
-                      "Assume the production process cannot be analysed once rent exists.",
-                      "Assume that once managers exist, workers no longer create value.",
-                      "Ask whether the language of management ability hides the structure of surplus-value production and distribution.",
-                      "Assume profit must disappear once interest is paid."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "이윤이 여러 비용을 뺀 뒤 남는 것처럼 보인다고 해서 그 원천까지 설명된 것은 아니다. 분석은 비용 표시 뒤에 있는 가치생산 관계를 확인해야 한다.",
-                    "en": "The appearance of profit as what remains after costs does not explain its source. Analysis must examine the value-producing relation behind the cost entries."
-                  },
                   "points": 3
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장이 3권 마지막 논의에서 맡는 역할은 무엇인가?",
-                    "en": "What role does this chapter play in the closing argument of Volume III?"
+                    "ko": "제49장의 분석에서 “수입”이라는 범주를 다룰 때 가장 주의해야 할 점은 무엇인가?",
+                    "en": "What is the main caution when using the category “revenue” in Chapter 49?"
                   },
                   "choices": {
                     "ko": [
-                      "모든 수입을 개인의 성실성 문제로 바꾼다.",
-                      "삼위일체 공식이 옳다는 결론을 내린다.",
-                      "계급 분석을 회계 양식 분석으로 대체한다.",
-                      "수입형태의 물신성을 비판할 수 있도록 생산과정이라는 기준점을 다시 세운다."
+                      "수입은 새 가치의 분배형태이지 총생산물의 모든 가치성분을 대신하는 이름이 아니다.",
+                      "수입은 생산 이전에 확정되는 자연 몫이라 가치분석과 독립해 계산된다.",
+                      "수입은 개인 소비로 쓰이는 경우에만 가치가 되고 생산적 사용에서는 가치가 사라진다.",
+                      "수입은 화폐 형태를 취하면 생산수단과 소비재의 물적 차이를 제거한다."
                     ],
                     "en": [
-                      "It turns all income into a question of individual diligence.",
-                      "It concludes that the trinity formula is correct.",
-                      "It replaces class analysis with analysis of accounting forms.",
-                      "It restores the production process as the standard from which the fetishism of income forms can be criticized."
+                      "Revenue is a distribution form of new value, not a name replacing every value component of the total product.",
+                      "Revenue is a natural share fixed before production and calculated independently of value analysis.",
+                      "Revenue becomes value only in personal consumption and loses value when used productively.",
+                      "In money form, revenue removes the physical difference between means of production and consumer goods."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "49장은 표면에서 생산으로 분석의 방향을 되돌린다. 이 기준이 있어야 뒤의 경쟁, 분배관계, 계급 논의가 수입형태의 착시를 넘어설 수 있다.",
-                    "en": "Chapter 49 turns analysis from the surface back to production. This standard allows the later discussions of competition, distribution relations, and classes to move beyond the illusion of income forms."
+                    "ko": "수입 범주의 과잉확대가 불변자본 보충 문제와 부문 간 교환 조건을 가린다.",
+                    "en": "Overextending the revenue category conceals constant-capital replacement and interdepartmental exchange conditions."
                   },
+                  "id": "q5",
                   "points": 3
                 }
               ]
@@ -36660,143 +36646,143 @@
               },
               "questions": [
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제50장에서 경쟁이 만들어내는 핵심 환상은 무엇인가?",
+                    "en": "What is the central illusion created by competition in Chapter 50?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "새 가치가 임금·이윤·지대로 분배되는 사실이 세 수입이 가치를 만든다는 모습으로 뒤집힌다.",
+                      "경쟁이 상품가치와 생산가격의 차이를 제거해 가치법칙을 직접 드러낸다.",
+                      "시장가격이 매일 변하므로 노동시간은 상품의 사회적 관계를 표현하지 못한다.",
+                      "수요가 충분하면 불변자본 보충도 가격표 안에서 완성된다."
+                    ],
+                    "en": [
+                      "The fact that new value is distributed into wages, profit, and rent is inverted into the appearance that these revenues create value.",
+                      "Competition removes the difference between commodity value and price of production and directly reveals the law of value.",
+                      "Because market prices change daily, labour-time cannot express a social relation of commodities.",
+                      "If demand is sufficient, replacement of constant capital is completed inside the price list."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "경쟁은 분배형태를 생산원천처럼 보이게 만들어 원인과 결과를 뒤집는다.",
+                    "en": "Competition makes distribution forms look like sources of production, reversing cause and effect."
+                  },
                   "id": "q1",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "자본가가 “경쟁에서 가격을 잘 맞춰서 이윤을 냈다”고 말할 때 마르크스가 덧붙일 설명은 무엇인가?",
-                    "en": "When a capitalist says profit came from pricing well in competition, what would Marx add?"
+                    "ko": "상품가치 400c+100v+150s=650에서 임금이 150으로 오르고 노동생산성이 변하지 않는 경우를 어떻게 이해해야 하는가?",
+                    "en": "How should we understand the case 400c+100v+150s=650 when wages rise to 150 without a change in productivity?"
                   },
                   "choices": {
                     "ko": [
-                      "가격전략은 이윤의 실현에 중요하지만, 이윤의 궁극적 원천까지 설명하지는 못한다.",
-                      "가격전략이 있으면 노동과 생산과정은 필요 없다.",
-                      "경쟁은 모든 자본가에게 같은 이윤액을 보장한다.",
-                      "이윤은 대체로 소비자의 착각에서만 생긴다."
+                      "새 가치 250 안에서 임금 몫이 늘고 잉여가치가 줄어 상품가치는 650으로 남는다.",
+                      "임금 상승분 50이 상품가치에 더해져 총가치는 700으로 오른다.",
+                      "잉여가치율이 내려가면 불변자본 400도 같은 비율로 줄어든다.",
+                      "임금과 잉여가치가 함께 오르므로 평균이윤율은 변화 없이 유지된다."
                     ],
                     "en": [
-                      "Pricing strategy matters for realizing profit, but it does not explain profit’s ultimate source.",
-                      "Once pricing strategy exists, labour and production are unnecessary.",
-                      "Competition guarantees the same amount of profit to every capitalist.",
-                      "Profit always arises only from consumer illusion."
+                      "Within the new value of 250, wages rise and surplus-value falls, while commodity value remains 650.",
+                      "The wage increase of 50 is added to commodity value, raising total value to 700.",
+                      "When the surplus-value rate falls, constant capital of 400 falls in the same proportion.",
+                      "Wages and surplus-value rise together, so the average profit rate is unchanged."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "경쟁은 이윤을 현실에서 배분하고 실현하는 장이다. 그러나 마르크스는 그 표면운동이 잉여가치 생산을 대신 설명할 수 없다고 본다.",
-                    "en": "Competition is the field in which profit is distributed and realized. But for Marx, its surface movement cannot replace the explanation of surplus-value production."
+                    "ko": "생산성이 같다면 새 가치량은 그대로이고, 변화는 임금과 잉여가치의 분배에서 생긴다.",
+                    "en": "If productivity is unchanged, the amount of new value stays the same; distribution changes."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q2",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "경쟁은 왜 자본주의의 내적 법칙을 곧장 보여주지 않는가?",
-                    "en": "Why does competition not directly reveal capitalism’s inner laws?"
+                    "ko": "자본가의 계산에서 임금, 평균이윤, 이자, 지대가 가격 구성요소처럼 보이는 이유는 무엇인가?",
+                    "en": "Why do wages, average profit, interest, and rent appear as price-forming components in capitalist calculation?"
                   },
                   "choices": {
                     "ko": [
-                      "경쟁 속에서는 가격, 비용, 수익률의 움직임이 원인처럼 경험되기 때문이다.",
-                      "경쟁이 시작되면 상품은 더 이상 팔리지 않기 때문이다.",
-                      "경쟁은 주로 농업에서 일어나기 때문이다.",
-                      "경쟁이 있으면 평균이윤율은 존재할 수 없기 때문이다."
+                      "개별 자본가에게는 이미 주어진 비용과 청구권으로 나타나 가격 산정에 들어오기 때문이다.",
+                      "각 항목이 서로 다른 자연 생산력을 대표해 상품가치에 독립적으로 더해지기 때문이다.",
+                      "경쟁이 모든 항목을 생산과정 밖으로 밀어내 순수한 유통비로 만들기 때문이다.",
+                      "상품이 판매된 뒤에만 임금과 지대가 생겨 생산가격과 시간적으로 분리되기 때문이다."
                     ],
                     "en": [
-                      "Because movements of prices, costs, and rates of return are experienced as causes in competition.",
-                      "Because commodities can no longer be sold once competition begins.",
-                      "Because competition occurs only in agriculture.",
-                      "Because the average rate of profit cannot exist where competition exists."
+                      "For the individual capitalist they appear as given costs and claims entering price calculation.",
+                      "Each item represents a different natural productivity and independently adds to commodity value.",
+                      "Competition pushes all items outside production and turns them into pure circulation costs.",
+                      "Wages and rent arise only after sale and are temporally separated from price of production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본가는 시장에서 가격과 수익률을 직접 경험한다. 바로 그 경험이 가치생산과 잉여가치 분배의 매개를 가릴 수 있다.",
-                    "en": "Capitalists directly experience prices and returns in the market. That experience can obscure the mediation of value production and the distribution of surplus-value."
+                    "ko": "개별 계산의 현실성이 곧 가치창조의 원천이라는 뜻은 아니다.",
+                    "en": "Their reality in individual calculation does not make them sources of value creation."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "“공급과 수요가 이윤을 만든다”는 말만으로 부족한 이유는 무엇인가?",
-                    "en": "Why is it insufficient to say that supply and demand create profit?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "공급과 수요는 어떤 가격에도 영향을 주지 않기 때문이다.",
-                      "공급과 수요가 균형일 때에도 평균이윤이 왜 존재하는지 설명해야 하기 때문이다.",
-                      "이윤은 항상 국가가 직접 지급하기 때문이다.",
-                      "수요가 있으면 생산비는 사라지기 때문이다."
-                    ],
-                    "en": [
-                      "Because supply and demand affect no prices at all.",
-                      "Because one still has to explain why average profit exists when supply and demand balance.",
-                      "Because profit is always paid directly by the state.",
-                      "Because production costs disappear whenever there is demand."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "공급과 수요는 가격 변동을 설명하는 데 필요하지만, 이윤의 근본 원천을 설명하지는 않는다. 균형 상태에서도 남는 평균이윤이 바로 문제다.",
-                    "en": "Supply and demand are needed to explain price fluctuations, but not the fundamental source of profit. The average profit that remains even at balance is the problem."
-                  },
                   "points": 2
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "소상품생산자가 자기 토지와 도구로 일하는 사례가 환상을 강화하는 방식은 무엇인가?",
+                    "en": "How does the small producer working with their own land and tools strengthen the illusion?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "한 사람의 수입을 임금·이윤·지대로 나누어 자본주의 범주가 자연적 몫처럼 보이게 한다.",
+                      "소상품생산에는 상품판매가 없으므로 임금과 이윤의 구별이 실제로 폐지된다.",
+                      "토지와 도구가 한 사람에게 속하면 생산물 가치는 노동시간과 분리된다.",
+                      "가족노동은 시장가격보다 생활비 기준을 앞세워 지대와 이자의 사회적 계산을 약화한다."
+                    ],
+                    "en": [
+                      "One person’s income is split into wages, profit, and rent, making capitalist categories look like natural shares.",
+                      "Small production has no commodity sale, so the distinction between wages and profit is actually abolished.",
+                      "When land and tools belong to one person, product value separates from labour-time.",
+                      "Family labour gives priority to living-cost measures and weakens the social calculation of rent and interest."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "동일 인물 안의 가상 분할은 역사적 범주를 초역사적 보수처럼 보이게 한다.",
+                    "en": "The imaginary split within one person makes historical categories look like timeless remuneration."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "배달 플랫폼이 알고리즘 가격조정만을 수익의 비결로 홍보한다. 마르크스식으로 보면 무엇을 더 보아야 하는가?",
-                    "en": "A delivery platform presents algorithmic pricing as the secret of its returns. From a Marxian view, what else must be examined?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "알고리즘의 색상과 화면 배치만 보면 된다.",
-                      "알고리즘이 있으면 임금노동은 존재하지 않는다고 보면 된다.",
-                      "가격조정이 어떤 노동통제, 수수료 구조, 잉여가치 분배와 연결되는지 보아야 한다.",
-                      "수익률이 높으면 경쟁은 사라졌다고 보면 된다."
-                    ],
-                    "en": [
-                      "Only the colour and screen layout of the algorithm need to be examined.",
-                      "Once an algorithm exists, wage-labour no longer exists.",
-                      "How pricing is connected to labour control, fee structures, and the distribution of surplus-value must be examined.",
-                      "A high return means competition has disappeared."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "현대적 가격기술도 사회관계 바깥에 있지 않다. 정답은 가격 표면을 노동과 분배 구조에 연결해 읽는다.",
-                    "en": "Modern pricing technology is not outside social relations. The correct answer connects the price surface to labour and distribution structures."
-                  },
                   "points": 2
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "경쟁의 환상을 비판하면 무엇을 배울 수 있는가?",
-                    "en": "What can be learned by criticizing the illusions of competition?"
+                    "ko": "제50장의 경쟁 환상 비판이 제51장의 분배관계 논의로 이어지는 지점은 무엇인가?",
+                    "en": "How does Chapter 50’s critique of competition illusions lead into Chapter 51’s discussion of distribution relations?"
                   },
                   "choices": {
                     "ko": [
-                      "모든 기업은 같은 방식으로 같은 이윤을 얻는다는 점이다.",
-                      "경쟁을 잉여가치 분배의 장이 아니라 단순한 표면 소음으로만 본다.",
-                      "가격은 분석하지 않아도 된다는 점이다.",
-                      "자본가가 경험하는 시장 표면과 그 배후의 가치관계를 구분할 수 있다."
+                      "분배항목이 가치 원천처럼 보이는 현상은 분배관계와 생산관계의 연결을 다시 묻게 한다.",
+                      "경쟁이 분배관계를 자연법칙으로 확정하므로 생산관계 분석은 뒤로 밀린다.",
+                      "수입항목이 가격을 만든다는 결론에서 계급관계의 역사성이 증명된다.",
+                      "임금 상승이 가치 상승을 낳는 사례가 분배관계의 독립성을 완성한다."
                     ],
                     "en": [
-                      "All firms obtain the same profit in the same way.",
-                      "Competition plays no role in the real economy.",
-                      "Prices do not need to be analysed.",
-                      "We can distinguish the market surface experienced by capitalists from the value relations behind it."
+                      "The appearance that distribution items are value sources raises again the link between distribution and production relations.",
+                      "Competition fixes distribution relations as natural laws, so production relations are set aside.",
+                      "The conclusion that revenue items create price proves the historicity of class relations.",
+                      "The case where wage increases create value increases completes the independence of distribution relations."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 경쟁을 무시하지 않는다. 오히려 경쟁이 내적 법칙을 드러내면서 동시에 가리는 형식임을 보여준다.",
-                    "en": "Marx does not ignore competition. He shows that competition is the form in which inner laws are expressed and obscured at the same time."
+                    "ko": "경쟁 환상은 분배를 독립 영역처럼 보이게 하므로, 다음 장은 그 생산적 토대를 묻는다.",
+                    "en": "Competition makes distribution look independent, so the next chapter asks about its productive basis."
                   },
+                  "id": "q5",
                   "points": 2
                 }
               ]
@@ -36810,157 +36796,143 @@
               },
               "questions": [
                 {
-                  "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "경쟁의 표면운동이 낳는 가장 중요한 착시는 무엇인가?",
-                    "en": "What is the most important illusion produced by the surface movement of competition?"
+                    "ko": "임금 상승이 가격 상승처럼 보이는 현상을 마르크스가 비판하는 방식은 무엇인가?",
+                    "en": "How does Marx criticize the appearance that wage increases raise prices?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤이 생산과정의 잉여가치가 아니라 경쟁 자체에서 생기는 것처럼 보이는 착시다.",
-                      "모든 가격이 국가 명령으로만 정해진다는 착시다.",
-                      "노동자가 시장에서 상품을 사지 않는다는 착시다.",
-                      "토지소유가 산업자본과 같은 말이라는 착시다."
+                      "동일한 노동생산성에서는 가치량이 유지되고 임금 상승은 잉여가치 몫을 줄인다고 본다.",
+                      "임금이 오르면 노동자가 더 많은 가치를 창조하므로 생산성 변화 없이 가격이 오른다고 본다.",
+                      "임금 상승은 불변자본의 이전가치를 늘려 모든 부문의 가치구성을 바꾼다고 본다.",
+                      "노동일이 같아도 임금률이 오르면 새 가치량 자체가 같은 비율로 커진다고 본다."
                     ],
                     "en": [
-                      "The illusion that profit arises from competition itself rather than from surplus-value in production.",
-                      "The illusion that all prices are set only by state command.",
-                      "The illusion that workers do not buy commodities in the market.",
-                      "The illusion that landownership and industrial capital are the same thing."
+                      "With the same productivity, value remains unchanged and higher wages reduce the surplus-value share.",
+                      "When wages rise, workers create more value, so prices rise without productivity changes.",
+                      "Wage increases raise transferred value of constant capital and alter every branch’s value composition.",
+                      "Even with the same working day, a higher wage rate enlarges the new value in the same ratio."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "경쟁은 이윤을 둘러싼 직접 경험을 만든다. 그 경험이 강할수록 이윤의 원천이 생산과정에 있다는 점은 뒤로 밀린다.",
-                    "en": "Competition creates the immediate experience around profit. The stronger that experience, the more the source of profit in production recedes from view."
+                    "ko": "임금은 새 가치의 분배항목이지 같은 생산조건에서 새 가치량을 키우는 원인이 아니다.",
+                    "en": "Wages are a distribution item of new value, not the cause of a larger new value under the same conditions."
                   },
+                  "id": "q1",
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "경쟁이 평균이윤을 가격 구성요소로 보이게 하는 구체적 경로는 무엇인가?",
+                    "en": "What concrete path makes average profit appear as a price-forming component in competition?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "자본이 부문 사이를 이동하며 평균수익을 요구하므로 개별 가격계산에 이윤이 선결 항목처럼 들어온다.",
+                      "각 부문이 자신의 잉여가치만 실현하므로 평균이윤은 시장가격에서 제거된다.",
+                      "평균이윤율은 국가가 고정한 비용률이라 생산가격과 가치의 차이를 없앤다.",
+                      "상업자본이 모든 잉여가치를 직접 생산해 산업자본의 비용으로 청구한다."
+                    ],
+                    "en": [
+                      "Capital moves among branches and demands average returns, so profit enters individual price calculation as if presupposed.",
+                      "Each branch realizes only its own surplus-value, so average profit is removed from market price.",
+                      "The average profit rate is a state-fixed cost rate that removes the difference between production price and value.",
+                      "Merchant capital directly produces all surplus-value and charges it as industrial capital’s cost."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "평균이윤은 총잉여가치의 분배 결과지만 경쟁 속에서는 사전 비용처럼 나타난다.",
+                    "en": "Average profit is a result of distributing total surplus-value, but competition makes it appear as a prior cost."
+                  },
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "평균이윤율은 경쟁을 통해 나타나지만, 왜 경쟁만으로 설명될 수 없는가?",
-                    "en": "The average rate of profit appears through competition, but why can it not be explained by competition alone?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "경쟁은 평균을 만들 수 없고 항상 무질서만 만들기 때문이다.",
-                      "경쟁은 이미 생산된 잉여가치의 분배를 매개할 뿐, 그 잉여가치가 왜 존재하는지는 따로 설명해야 하기 때문이다.",
-                      "평균이윤율은 농업지대의 다른 이름이기 때문이다.",
-                      "경쟁은 가격을 움직이지 못하기 때문이다."
-                    ],
-                    "en": [
-                      "Because competition cannot create averages and only creates disorder.",
-                      "Because competition mediates the distribution of already produced surplus-value, while the existence of that surplus-value must be explained separately.",
-                      "Because the average rate of profit is another name for agricultural rent.",
-                      "Because competition cannot move prices."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "경쟁은 자본들을 움직여 평균화를 실현한다. 그러나 평균화될 잉여가치 총량이 어디서 왔는지는 생산 분석으로 돌아가야 설명된다.",
-                    "en": "Competition moves capitals and realizes equalization. But where the total surplus-value to be equalized comes from is explained only by returning to production."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "세계시장과 경쟁이 수입형태의 환상을 강화하는 이유는 무엇인가?",
+                    "en": "Why do the world market and competition intensify the illusion of revenue forms?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "임금, 이자, 지대가 외부에서 주어진 시장률처럼 마주쳐 가격의 조절자처럼 보이기 때문이다.",
+                      "세계시장에서는 상품교환이 사라져 생산자들이 직접 노동시간으로 결산하기 때문이다.",
+                      "국제경쟁은 모든 토지소유를 제거해 지대가 가치분석에서 빠지게 하기 때문이다.",
+                      "시장률이 사라지면 각 수입형태가 생산과정 안에서 투명하게 드러나기 때문이다."
+                    ],
+                    "en": [
+                      "Wages, interest, and rent confront agents as externally given market rates and seem to regulate prices.",
+                      "On the world market commodity exchange disappears and producers settle directly by labour-time.",
+                      "International competition removes all landed property and leaves rent out of value analysis.",
+                      "When market rates disappear, each revenue form becomes transparent inside production."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "외부의 주어진 비율처럼 보이는 것이 사회적 생산관계의 결과라는 점이 가려진다.",
+                    "en": "What appears as an external given rate hides its origin in social production relations."
+                  },
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "“시장 압박 때문에 임금을 낮췄고 그래서 이윤이 생겼다”는 설명을 어떻게 보아야 하는가?",
-                    "en": "How should we view the claim that market pressure lowered wages and therefore created profit?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "임금 하락을 지대와 이윤의 분배관계와 분리해 본다.",
-                      "임금 하락만으로 잉여가치 원천 문제가 해결된다고 본다.",
-                      "시장 압박은 노동력 가치와 잉여가치 분배에 영향을 줄 수 있지만, 착취관계 자체를 설명하는 충분한 원인은 아니다.",
-                      "시장 압박을 임금형태 자체의 소멸로 오해한다."
-                    ],
-                    "en": [
-                      "Wage cuts always abolish rent.",
-                      "It assumes wage reduction alone solves the source of surplus-value.",
-                      "Market pressure can affect the value of labour-power and distribution of surplus-value, but it is not a sufficient explanation of exploitation itself.",
-                      "If market pressure exists, workers receive no wages."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "시장 압박은 현실적 힘이다. 하지만 그것이 왜 노동력이 상품이 되고 잉여노동이 가능한지까지 설명해 주지는 않는다.",
-                    "en": "Market pressure is a real force. But it does not by itself explain why labour-power is a commodity and surplus labour is possible."
-                  },
                   "points": 3
                 },
                 {
-                  "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "투자자가 “우리가 경쟁자를 이겼기 때문에 이윤을 받을 자격이 있다”고 말한다. 이 주장의 한계는 무엇인가?",
-                    "en": "An investor says they deserve profit because they beat competitors. What is the limit of this claim?"
+                    "ko": "생산가격과 가치의 차이가 경쟁 환상에 주는 효과로 가장 적절한 것은 무엇인가?",
+                    "en": "What effect does the difference between production price and value have on competition illusions?"
                   },
                   "choices": {
                     "ko": [
-                      "경쟁의 결과를 수입형태들 사이의 이름 바꾸기로 본다.",
-                      "경쟁 우위를 노동 고용과 무관한 순수한 시장성과로 본다.",
-                      "경쟁 승리는 특정 자본이 더 큰 몫을 가져가는 이유일 수 있지만, 이윤이라는 몫이 생기는 원천은 따로 설명해야 한다.",
-                      "경쟁가격의 차이를 가치관계의 소멸로 보는 식으로 자본 운동의 단계를 단순화하는 오해"
+                      "개별 가격이 자기 부문의 직접 잉여가치와 어긋나며 이윤이 독자적 부가분처럼 보인다.",
+                      "가격과 가치가 같은 방향으로 움직이며 이윤의 잉여가치 기원을 직접 드러낸다.",
+                      "생산가격은 임금만 포함하므로 지대와 이자는 계산에서 사라진다.",
+                      "가치가 생산가격으로 전환되면 총이윤과 총잉여가치의 관계가 끊어진다."
                     ],
                     "en": [
-                      "Competitive victory is a legal act that turns rent into wages.",
-                      "A capital that wins in competition no longer employs workers.",
-                      "Competitive victory may explain why a particular capital gets a larger share, but the source of profit as such still needs explanation.",
-                      "If one wins in competition, commodity value disappears."
+                      "Individual prices diverge from directly produced surplus-value, making profit look like an independent addition.",
+                      "Price and value move in the same direction and directly reveal profit’s origin in surplus-value.",
+                      "Production price includes only wages, so rent and interest disappear from calculation.",
+                      "Once value turns into production price, the relation between total profit and total surplus-value is broken."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "개별 자본의 성공과 자본 전체의 이윤 원천은 다른 문제다. 경쟁은 몫의 배분을 설명할 수 있지만, 그 몫의 재료가 되는 잉여가치까지 만들어내지는 않는다.",
-                    "en": "The success of an individual capital and the source of profit for capital as a whole are different questions. Competition can explain allocation of shares, not the production of the surplus-value that supplies them."
+                    "ko": "전환은 총관계를 보존하지만 개별 표면에서는 잉여가치의 출처를 더 흐린다.",
+                    "en": "The transformation preserves the total relation while further obscuring the source of surplus-value on the surface."
                   },
-                  "points": 3,
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"경쟁의 결과를 수입형태들 사이의 이름 바꾸기로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"경쟁 우위를 노동 고용과 무관한 순수한 시장성과로 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 개별 자본의 성공과 자본 전체의 이윤 원천은 다른 문제다. 경쟁은 몫의 배분을 설명할 수 있지만, 그 몫의 재료가 되는 잉여가치까지 만들어내지는 않는다.",
-                      "오해 진단: \"경쟁가격의 차이를 가치관계의 소멸로 보는 식으로 자본 운동의 단계를 단순화하는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Competitive victory is a legal act that turns rent into wages.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"A capital that wins in competition no longer employs workers.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: The success of an individual capital and the source of profit for capital as a whole are different questions. Competition can explain allocation of shares, not the production of the surplus-value that supplies them.",
-                      "Misconception check: choosing \"If one wins in competition, commodity value disappears.\" puts another category ahead of the key relation in the correct answer."
-                    ]
-                  }
+                  "id": "q4",
+                  "points": 3
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 삼위일체 공식 비판에 어떤 도움을 주는가?",
-                    "en": "How does this chapter help criticize the trinity formula?"
+                    "ko": "제50장의 논의에서 경쟁을 분석할 때 지켜야 할 구별은 무엇인가?",
+                    "en": "What distinction must be kept when analyzing competition in Chapter 50?"
                   },
                   "choices": {
                     "ko": [
-                      "모든 수입형태를 가격 할인으로 환원한다.",
-                      "삼위일체 공식을 역사적 수입형태가 아니라 중립적 분배 공식으로 본다.",
-                      "경쟁을 분석하면 생산관계는 볼 필요가 없다고 말한다.",
-                      "수입형태가 경쟁의 일상 경험 속에서 왜 원인처럼 보이는지 설명한다."
+                      "경쟁이 집행하는 내적 법칙과 경쟁 당사자의 가격계산 의식을 구별하는 데 있다.",
+                      "경쟁의 시장가격과 생산과정의 가치법칙을 서로 독립된 두 법칙으로 분리한다.",
+                      "개별 자본가의 비용계산을 사회 전체 가치생산의 직접 원천으로 받아들여야 한다.",
+                      "수요와 공급이 균형을 이루는 순간 잉여가치 분석이 가격 분석으로 대체된다."
                     ],
                     "en": [
-                      "It reduces every income form to price discounts.",
-                      "It proves that the trinity formula is a law of natural science.",
-                      "It says that once competition is analysed, production relations need not be examined.",
-                      "It explains why income forms appear as causes within the everyday experience of competition."
+                      "It lies in distinguishing the inner law competition executes from competitors’ price-calculation consciousness.",
+                      "It separates market price and the law of value in production as two independent laws.",
+                      "One must accept individual cost calculation as the direct source of social value production.",
+                      "At the moment supply and demand balance, surplus-value analysis is replaced by price analysis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "경쟁은 삼위일체 공식이 살아 움직이는 무대다. 이 장은 그 무대가 어떻게 착시를 강화하는지 보여준다.",
-                    "en": "Competition is the stage on which the trinity formula moves. This chapter shows how that stage strengthens the illusion."
+                    "ko": "경쟁은 법칙을 없애지 않고, 법칙이 행위자에게 거꾸로 보이는 방식을 만든다.",
+                    "en": "Competition does not abolish the law; it produces the inverted form in which agents perceive it."
                   },
+                  "id": "q5",
                   "points": 3
                 }
               ]
@@ -37029,143 +37001,143 @@
               },
               "questions": [
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "제51장에서 분배관계와 생산관계의 관계를 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best explains the relation between distribution and production relations in Chapter 51?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "분배관계는 생산관계와 대응하며 그 역사적 형태를 표현한다.",
+                      "분배관계는 자연적으로 주어진 소비 몫이고 생산관계와 별도의 영역이다.",
+                      "생산관계는 기술 문제이고 분배관계만 계급관계를 담는다.",
+                      "분배관계가 먼저 정해진 뒤 생산관계가 그에 맞춰 우연히 생긴다."
+                    ],
+                    "en": [
+                      "Distribution relations correspond to production relations and express their historical form.",
+                      "Distribution relations are naturally given consumption shares and form a separate sphere from production relations.",
+                      "Production relations are technical matters, while only distribution relations contain class relations.",
+                      "Distribution relations are fixed first, and production relations happen to arise afterward."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "마르크스는 분배를 생산 바깥의 몫 나누기가 아니라 생산관계의 표현으로 다룬다.",
+                    "en": "Marx treats distribution not as sharing outside production, but as an expression of production relations."
+                  },
                   "id": "q1",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“분배만 공정하게 바꾸면 생산방식은 그대로 둬도 된다”는 주장에 대해 마르크스가 묻는 것은 무엇인가?",
-                    "en": "What would Marx ask of the claim that distribution can be made fair while the mode of production remains unchanged?"
+                    "ko": "“생산물은 임금, 이윤, 지대로 배분된다”는 표현을 조심해야 하는 이유는 무엇인가?",
+                    "en": "Why must one be careful with the phrase “the product is distributed into wages, profit, and rent”?"
                   },
                   "choices": {
                     "ko": [
-                      "그 분배가 어떤 생산조건의 소유관계에서 반복적으로 생기는지다.",
-                      "분배표의 항목 이름을 더 짧게 바꿀 수 있는지다.",
-                      "생산방식은 어떤 사회에서도 분배와 무관하다는 점이다.",
-                      "임금과 이윤이 같은 사람에게만 지급되는지다."
+                      "생산물 일부는 먼저 자본으로 기능하며, 임금도 노동자에게는 자본의 형태로 마주선다.",
+                      "임금, 이윤, 지대는 모두 개인 소비재라 생산수단 보충과 관련이 없다.",
+                      "생산물 전체가 노동자에게 지급된 뒤 자본가와 지주가 다시 구매한다.",
+                      "이 표현은 지대의 존재만 설명하고 임금과 이윤의 존재를 설명하지 못한다."
                     ],
                     "en": [
-                      "From what ownership of production conditions that distribution repeatedly arises.",
-                      "Whether the names of distribution entries can be shortened.",
-                      "That in every society production is unrelated to distribution.",
-                      "Whether wages and profit are paid only to the same person."
+                      "Part of the product first functions as capital, and wages confront workers in the form of capital.",
+                      "Wages, profit, and rent are all consumer goods and have no relation to replacing means of production.",
+                      "The whole product is first paid to workers, then capitalists and landlords buy it back.",
+                      "The phrase explains only rent, not wages and profit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스에게 분배는 생산과 분리된 두 번째 문제가 아니다. 특정 생산관계가 특정 분배형태를 반복해서 만들어낸다.",
-                    "en": "For Marx, distribution is not a second problem separated from production. Specific production relations repeatedly generate specific forms of distribution."
+                    "ko": "분배는 소비 몫만이 아니라 생산조건이 계급적으로 배치되는 방식까지 포함한다.",
+                    "en": "Distribution includes not only consumption shares but the class arrangement of production conditions."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q2",
+                  "points": 2
+                },
+                {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "임금, 이윤, 지대가 서로 다른 계급의 수입으로 나타나는 이유는 무엇인가?",
-                    "en": "Why do wages, profit, and rent appear as incomes of different classes?"
+                    "ko": "자본주의적 생산의 첫 번째 특징으로 제시되는 것은 무엇인가?",
+                    "en": "What is presented as the first feature of capitalist production?"
                   },
                   "choices": {
                     "ko": [
-                      "각 계급이 생산조건에 대해 서로 다른 위치에 있기 때문이다.",
-                      "사람들이 같은 생산수단을 똑같이 소유하기 때문이다.",
-                      "분배관계는 법률문서의 표현일 뿐 생산과 무관하기 때문이다.",
-                      "수입형태는 매년 무작위로 배정되기 때문이다."
+                      "생산물이 상품으로, 더 구체적으로 자본의 생산물인 상품으로 나타난다는 점이다.",
+                      "생산물이 공동체 안에서 직접 사용가치의 필요에 따라 분배된다는 점이다.",
+                      "모든 생산수단이 토지소유자에게 속해 현물지대로 납부된다는 점이다.",
+                      "노동자가 생산물 전부를 소유한 뒤 시장에서 일부를 판매한다는 점이다."
                     ],
                     "en": [
-                      "Because each class occupies a different position toward the conditions of production.",
-                      "Because everyone owns the same means of production equally.",
-                      "Because distribution relations are only legal wording unrelated to production.",
-                      "Because income forms are assigned randomly each year."
+                      "The product appears as a commodity, more specifically as the commodity product of capital.",
+                      "The product is distributed directly within the community according to use-value needs.",
+                      "All means of production belong to landowners and are paid as rent in kind.",
+                      "Workers own the whole product and sell part of it on the market."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "임금노동자, 자본가, 토지소유자는 단지 소득액이 다른 사람들이 아니다. 생산조건에 대한 위치가 다르기 때문에 수입형태도 다르게 나타난다.",
-                    "en": "Wage-labourers, capitalists, and landowners are not merely people with different income amounts. Their income forms differ because their positions toward the conditions of production differ."
+                    "ko": "상품형태는 단순한 교환기술이 아니라 자본주의적 생산관계의 표현이다.",
+                    "en": "The commodity form is not merely a technique of exchange but an expression of capitalist production relations."
                   },
-                  "points": 2
-                },
-                {
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "분배관계를 순수한 회계 문제로만 보면 무엇을 놓치는가?",
-                    "en": "What is missed if distribution relations are treated as a purely accounting matter?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "회계표에는 숫자가 들어갈 수 없다는 점을 놓친다.",
-                      "소득 항목 뒤에 있는 생산수단 소유, 노동력 판매, 잉여가치 분배의 관계를 놓친다.",
-                      "분배는 어떤 사회에서도 반복되지 않는다는 점을 놓친다.",
-                      "이윤과 지대는 대체로 임금보다 작다는 점을 놓친다."
-                    ],
-                    "en": [
-                      "That numbers cannot be entered into accounting tables.",
-                      "The relations of ownership of means of production, sale of labour-power, and distribution of surplus-value behind income entries.",
-                      "That distribution is never repeated in any society.",
-                      "That profit and rent are always smaller than wages."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "회계는 결과를 정리하지만 관계의 원인을 설명하지 않는다. 마르크스는 분배형태를 생산관계의 표현으로 읽는다.",
-                    "en": "Accounting organizes results but does not explain the cause of relations. Marx reads distribution forms as expressions of production relations."
-                  },
                   "points": 2
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "자본주의적 생산의 두 번째 특징으로 가장 적절한 것은 무엇인가?",
+                    "en": "What is the best description of the second feature of capitalist production?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "잉여가치 생산이 직접 목적이자 생산의 결정적 동기가 된다.",
+                      "사용가치의 균등한 배분이 모든 가격 운동을 지배한다.",
+                      "생산수단 보전이 이윤보다 앞서는 유일한 목적이 된다.",
+                      "노동시간 단축이 개별 자본의 경쟁 목표로 즉시 자리 잡는다."
+                    ],
+                    "en": [
+                      "The production of surplus-value becomes the direct aim and decisive motive of production.",
+                      "Equal distribution of use-values governs every price movement.",
+                      "Preservation of means of production becomes the sole aim ahead of profit.",
+                      "Shortening labour-time immediately becomes the competitive aim of individual capitals."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "자본주의 생산은 필요 충족이 아니라 가치증식의 운동으로 조직된다.",
+                    "en": "Capitalist production is organized as valorization, not as direct satisfaction of needs."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "정부가 임금 몫을 조금 높이고 이윤 몫을 조금 낮추는 정책을 냈다. 이 정책을 평가할 때 추가로 보아야 할 것은 무엇인가?",
-                    "en": "A government raises the wage share a little and lowers the profit share a little. What else should be considered in evaluating this policy?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "분배정책은 생산관계와 대체로 충분히 구분되하다고 보아야 한다.",
-                      "임금 몫이 오르면 계급관계는 그 자체로 사라진다고 보아야 한다.",
-                      "그 변화가 생산수단 소유와 노동통제 관계까지 바꾸는지, 아니면 분배비율만 조정하는지 보아야 한다.",
-                      "이윤 몫이 줄면 상품생산도 곧바로 중단된다고 보아야 한다."
-                    ],
-                    "en": [
-                      "Distribution policy is always completely unrelated to production relations.",
-                      "If the wage share rises, class relations automatically disappear.",
-                      "Whether the change alters ownership of means of production and labour control, or only adjusts distributive ratios.",
-                      "If the profit share falls, commodity production immediately stops."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "분배비율의 변화는 중요할 수 있지만 충분한 분석은 아니다. 그 변화가 생산관계의 구조를 건드리는지까지 물어야 한다.",
-                    "en": "A change in distributive ratios can matter, but it is not enough for analysis. One must also ask whether it touches the structure of production relations."
-                  },
                   "points": 2
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 마지막 계급 장으로 어떻게 이어지는가?",
-                    "en": "How does this chapter lead into the final chapter on classes?"
+                    "ko": "제51장이 마지막 계급 장으로 넘어가는 연결고리는 무엇인가?",
+                    "en": "How does Chapter 51 lead into the final chapter on classes?"
                   },
                   "choices": {
                     "ko": [
-                      "생산관계 대신 소비습관만 보면 된다고 말한다.",
-                      "분배문제가 해결되면 계급은 분석할 필요가 없다고 말한다.",
-                      "계급은 개인의 취향으로 정해진다고 결론낸다.",
-                      "분배형태를 생산관계의 표현으로 보게 하여, 수입형태와 계급구성을 연결한다."
+                      "임금, 이윤, 지대의 분배형태가 노동력·자본·토지소유의 계급 배치를 가리키기 때문이다.",
+                      "분배형태가 생산관계와 분리되어 개인 취향의 차이로 정리되기 때문이다.",
+                      "가치법칙이 사라진 뒤 남는 유일한 분석 대상이 직업 분류이기 때문이다.",
+                      "자본주의 생산의 위기가 계급 구분을 없애 단일한 생산자층을 만들기 때문이다."
                     ],
                     "en": [
-                      "It says consumption habits should replace production relations.",
-                      "It says that once distribution is solved, classes need not be analysed.",
-                      "It concludes that class is determined by personal taste.",
-                      "By treating distribution forms as expressions of production relations, it connects income forms to class composition."
+                      "The distribution forms of wages, profit, and rent point to the class arrangement of labour-power, capital, and landed property.",
+                      "Distribution forms are separated from production relations and become differences of personal preference.",
+                      "After the law of value disappears, the only object left is occupational classification.",
+                      "The crisis of capitalist production removes class divisions and creates one producer stratum."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "51장은 분배와 생산을 다시 연결한다. 그래서 52장에서 계급을 단순한 소득순위가 아니라 생산관계의 문제로 볼 수 있게 한다.",
-                    "en": "Chapter 51 reconnects distribution and production. That makes it possible in Chapter 52 to treat class not as a simple income ranking but as a problem of production relations."
+                    "ko": "분배관계의 역사성을 추적하면 곧 그 관계를 담지하는 계급 구성이 문제로 떠오른다.",
+                    "en": "Tracing the historicity of distribution relations raises the class structure that bears those relations."
                   },
+                  "id": "q5",
                   "points": 2
                 }
               ]
@@ -37179,143 +37151,143 @@
               },
               "questions": [
                 {
-                  "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "분배관계와 생산관계를 분리해서 볼 때 생기는 가장 큰 문제는 무엇인가?",
-                    "en": "What is the main problem with separating distribution relations from production relations?"
+                    "ko": "분배관계를 자연적 관계로 다루는 견해에 대한 마르크스의 비판은 무엇인가?",
+                    "en": "What is Marx’s critique of treating distribution relations as natural relations?"
                   },
                   "choices": {
                     "ko": [
-                      "분배의 불평등이 어디서 반복적으로 재생산되는지 설명하기 어렵다.",
-                      "분배를 분리하면 가격표를 만들 수 없게 된다.",
-                      "생산관계는 자연현상이므로 사회분석의 대상이 아니게 된다.",
-                      "분배를 생산관계와 무관한 개인 선택 문제로 돌린다."
+                      "생산조건의 소유와 노동자의 분리가 만든 역사적 관계를 자연 몫처럼 바꿔 놓는다는 것이다.",
+                      "분배관계가 실제로 자연법칙이므로 역사분석은 가격 변동에만 필요하다는 것이다.",
+                      "생산관계만 역사적이고 분배관계는 모든 사회에서 같은 이름으로 유지된다는 것이다.",
+                      "소비재 배분이 바뀌면 생산조건의 소유 구조도 별도 충돌 없이 바뀐다는 것이다."
                     ],
                     "en": [
-                      "It becomes hard to explain where distributive inequality is repeatedly reproduced.",
-                      "If distribution is separated, price lists cannot be made.",
-                      "Production relations become natural phenomena and no longer objects of social analysis.",
-                      "Distribution is determined only by personal taste."
+                      "It turns the historical relation created by ownership of production conditions and separation of workers into natural shares.",
+                      "Distribution relations really are natural laws, so historical analysis is needed only for price movements.",
+                      "Only production relations are historical, while distribution relations keep the same names in every society.",
+                      "When consumer-goods distribution changes, ownership of production conditions changes without separate conflict."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "분배 결과만 보면 매번 몫을 조정하는 문제처럼 보인다. 생산관계를 함께 봐야 특정 계급이 특정 수입형태를 반복해서 갖는 이유가 드러난다.",
-                    "en": "If only distributive results are seen, the issue looks like repeated adjustment of shares. Production relations reveal why certain classes repeatedly receive certain income forms."
+                    "ko": "마르크스에게 분배의 자연화는 생산조건 배분의 계급적 토대를 감춘다.",
+                    "en": "For Marx, naturalizing distribution conceals the class basis in the distribution of production conditions."
                   },
+                  "id": "q1",
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "“한 부분이 자본으로 전환되지 않으면 다른 부분도 임금·이윤·지대 형식을 취하지 않는다”는 말의 의미는 무엇인가?",
+                    "en": "What does it mean that unless one part becomes capital, the other part does not take the forms of wages, profit, and rent?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "수입형태는 자본으로 조직된 생산조건과 임금노동 관계를 전제로 한다는 뜻이다.",
+                      "자본이 없어도 임금, 이윤, 지대는 자연 생산력의 세 몫으로 생긴다는 뜻이다.",
+                      "생산물 일부가 소비되면 나머지는 가치형태와 상관없이 모두 자본이 된다는 뜻이다.",
+                      "지대가 먼저 자본으로 바뀌어야 임금노동자가 토지를 소유한다는 뜻이다."
+                    ],
+                    "en": [
+                      "Revenue forms presuppose production conditions organized as capital and the relation of wage labour.",
+                      "Even without capital, wages, profit, and rent arise as three natural shares of productive power.",
+                      "Once part of the product is consumed, the rest becomes capital regardless of value form.",
+                      "Rent must first become capital so wage labourers own land."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "분배형태는 독립 이름이 아니라 자본주의 생산관계가 재생산될 때 생기는 형태다.",
+                    "en": "Distribution forms are not independent names; they arise as capitalist production relations are reproduced."
+                  },
                   "id": "q2",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "법적으로는 모두 자유로운 계약처럼 보이는데도 마르크스가 생산관계를 묻는 이유는 무엇인가?",
-                    "en": "Why does Marx ask about production relations even when everything legally appears as free contract?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "자유로운 계약에서는 임금이 존재할 수 없기 때문이다.",
-                      "계약의 자유가 생산조건 소유의 불평등과 노동력 판매의 강제를 가릴 수 있기 때문이다.",
-                      "법률관계는 대체로 생산관계를 완전히 폐지하기 때문이다.",
-                      "계약이 있으면 지대와 이윤은 모두 같은 수입이 되기 때문이다."
-                    ],
-                    "en": [
-                      "Because wages cannot exist under free contract.",
-                      "Because contractual freedom can hide inequality in ownership of production conditions and compulsion to sell labour-power.",
-                      "Because legal relations always completely abolish production relations.",
-                      "Because once contracts exist, rent and profit become the same income."
-                    ]
-                  },
-                  "answer": 1,
-                  "explanation": {
-                    "ko": "자본주의의 강제는 늘 직접 폭력으로만 나타나지 않는다. 법적 자유의 형식 안에서도 생산조건을 갖지 못한 사람은 노동력을 팔아야 한다.",
-                    "en": "Capitalist compulsion does not always appear as direct violence. Even under legal freedom, those without production conditions must sell labour-power."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "자본주의 생산이 재생산하는 것은 물질적 생산물만이 아니라 무엇인가?",
+                    "en": "Besides material products, what does capitalist production reproduce?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "노동자와 생산조건의 분리, 자본과 토지소유의 지배 같은 사회관계다.",
+                      "각 개인의 소비 취향과 상품 선택의 동일한 목록이다.",
+                      "토지의 자연비옥도와 기계의 물리적 내구성 그 자체다.",
+                      "시장가격의 하루 변동과 회계장부의 항목 순서다."
+                    ],
+                    "en": [
+                      "Social relations such as the separation of workers from production conditions and the domination of capital and landed property.",
+                      "The same list of each person’s consumer tastes and commodity choices.",
+                      "Natural fertility of land and physical durability of machinery itself.",
+                      "Daily fluctuations of market prices and the order of ledger entries."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "재생산은 물건의 반복 생산인 동시에 계급관계의 반복 생산이다.",
+                    "en": "Reproduction repeats not only things but class relations."
+                  },
                   "id": "q3",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "분배정의론만으로 자본주의를 설명할 때 약해지는 지점은 무엇인가?",
-                    "en": "Where does a theory of distributive justice alone become weak in explaining capitalism?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "분배정의론은 상품교환이 없다고 전제하기 때문이다.",
-                      "분배정의론은 어떤 경우에도 임금을 인정하지 않기 때문이다.",
-                      "누가 얼마를 받는지 말할 수 있어도, 왜 그런 수입형태가 계속 생기는지는 설명하기 어렵다.",
-                      "분배정의론은 모든 생산수단이 이미 공동소유라고 보기 때문이다."
-                    ],
-                    "en": [
-                      "Because they presuppose there is no commodity exchange.",
-                      "Because theories of distributive justice never recognize wages.",
-                      "It may say who receives how much, but struggles to explain why those income forms keep arising.",
-                      "Because they assume all means of production are already commonly owned."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "마르크스의 비판은 분배 문제가 중요하지 않다는 말이 아니다. 분배의 규칙을 낳는 생산관계를 보지 않으면 문제의 반복성을 설명할 수 없다는 말이다.",
-                    "en": "Marx’s criticism is not that distribution is unimportant. It is that without the production relations that generate distributive rules, their repetition cannot be explained."
-                  },
                   "points": 3
                 },
                 {
+                  "type": "multiple_choice",
+                  "prompt": {
+                    "ko": "이윤이 제51장에서 단순한 분배 몫 이상의 의미를 갖는 이유는 무엇인가?",
+                    "en": "Why does profit have more than the meaning of a distribution share in Chapter 51?"
+                  },
+                  "choices": {
+                    "ko": [
+                      "평균이윤과 이윤율은 자본 이동, 투자, 신용을 조절하는 생산의 실질적 신호로 작용한다.",
+                      "이윤은 상품 판매 뒤 정산되는 보너스 성격이 강해 생산 배치와 느슨하게 연결된다.",
+                      "이윤은 지대보다 자연적이어서 사회관계 분석 없이도 생산을 조절한다.",
+                      "이윤율이 낮아지면 가치법칙의 압력이 약해지고 가격은 소비자 선호를 더 크게 따른다."
+                    ],
+                    "en": [
+                      "Average profit and the profit rate act as real signals regulating capital movement, investment, and credit.",
+                      "Profit has the character of a bonus settled after sale and is only loosely connected with production allocation.",
+                      "Profit is more natural than rent and regulates production without analysis of social relations.",
+                      "When the profit rate falls, the pressure of the law of value weakens and prices follow consumer preference more strongly."
+                    ]
+                  },
+                  "answer": 0,
+                  "explanation": {
+                    "ko": "이윤은 분배 결과이면서 자본주의 생산을 움직이는 압력으로 되돌아온다.",
+                    "en": "Profit is a result of distribution that returns as pressure regulating capitalist production."
+                  },
                   "id": "q4",
-                  "type": "multiple_choice",
-                  "prompt": {
-                    "ko": "플랫폼이 수수료율을 낮추며 “이제 공정분배가 실현됐다”고 주장한다. 더 깊이 따져야 할 점은 무엇인가?",
-                    "en": "A platform lowers its fee rate and claims fair distribution has now been achieved. What needs deeper examination?"
-                  },
-                  "choices": {
-                    "ko": [
-                      "수수료율이 낮아졌는지보다 앱 아이콘이 바뀌었는지를 먼저 보아야 한다.",
-                      "수수료가 있으면 노동자는 더 이상 노동자가 아니라고 보아야 한다.",
-                      "수수료 조정이 노동자의 생산조건 접근권과 통제권을 바꾸는지 보아야 한다.",
-                      "수수료율이 낮아지면 자본소유는 그 자체로 공동소유가 된다."
-                    ],
-                    "en": [
-                      "One should first check whether the app icon changed rather than whether the fee rate fell.",
-                      "If there is a fee, workers should no longer be considered workers.",
-                      "Whether the fee change alters workers’ access to and control over production conditions should be examined.",
-                      "If the fee rate falls, capital ownership automatically becomes common ownership."
-                    ]
-                  },
-                  "answer": 2,
-                  "explanation": {
-                    "ko": "분배율 조정은 표면의 몫을 바꿀 수 있다. 그러나 노동자가 플랫폼, 데이터, 고객접근권을 통제하지 못한다면 생산관계는 그대로 남을 수 있다.",
-                    "en": "Changing a distributive rate can alter surface shares. But if workers do not control the platform, data, and access to customers, the production relation may remain intact."
-                  },
                   "points": 3
                 },
                 {
-                  "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장의 체계적 의미를 가장 잘 설명하는 말은 무엇인가?",
-                    "en": "Which statement best captures the systematic significance of this chapter?"
+                    "ko": "생산력과 사회형태의 충돌이라는 제51장의 결론을 가장 잘 이해한 것은 무엇인가?",
+                    "en": "Which statement best understands Chapter 51’s conclusion about conflict between productive forces and social form?"
                   },
                   "choices": {
                     "ko": [
-                      "분배관계 분석은 삼위일체 공식의 비판과 관계가 없다.",
-                      "분배관계는 생산관계와 무관하므로 따로 떼어내야 한다.",
-                      "분배관계는 자연적 재능의 차이만 보여준다.",
-                      "분배관계는 계급관계를 생산관계 속에서 파악하게 하는 통로다."
+                      "생산력 발전이 자본주의적 소유·분배형태와 충돌할 때 역사적 한계와 위기가 드러난다.",
+                      "생산력이 발전할수록 자본주의 분배형태는 자연법칙으로 굳어 위기가 줄어든다.",
+                      "사회형태와 생산력은 서로 다른 영역이라 충돌은 가격의 일시적 오차일 뿐이다.",
+                      "분배관계의 변화는 생산력과 관련 없이 도덕적 합의만으로 완성된다."
                     ],
                     "en": [
-                      "Analysis of distribution relations has no relation to the critique of the trinity formula.",
-                      "Distribution relations are unrelated to production relations and should be separated.",
-                      "Distribution relations show only differences in natural talent.",
-                      "Distribution relations are a route to grasping class relations within production relations."
+                      "When productive forces develop into conflict with capitalist ownership and distribution forms, historical limits and crises appear.",
+                      "As productive forces develop, capitalist distribution forms harden as natural laws and crises diminish.",
+                      "Social form and productive forces are separate spheres, so conflict is only a temporary price error.",
+                      "Changes in distribution relations are completed by moral agreement without relation to productive forces."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "51장은 수입형태를 계급관계로 연결하는 다리다. 이 다리가 있어야 마지막 계급 장이 단순한 소득분류로 떨어지지 않는다.",
-                    "en": "Chapter 51 is the bridge from income forms to class relations. Without this bridge, the final chapter on classes would collapse into a simple income classification."
+                    "ko": "분배관계의 비판은 자본주의 생산양식 전체의 역사적 한계를 가리킨다.",
+                    "en": "Critique of distribution relations points to the historical limit of the capitalist mode of production."
                   },
+                  "id": "q5",
                   "points": 3
                 }
               ]
