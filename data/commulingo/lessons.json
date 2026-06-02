@@ -30258,142 +30258,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "금융청구권은 계속 늘어났지만 실제 판매와 지급이 막히자 위기가 터진다. 화폐자본과 현실자본 III에서 이 장면은 무엇을 보여주는가?",
-                    "en": "Financial claims keep growing, but crisis breaks out when actual sale and payment are blocked. What does Money-Capital and Real Capital III show in this scene?"
+                    "ko": "32장에서 대부 가능한 화폐자본의 축적을 읽을 때 핵심 구분은 무엇인가?",
+                    "en": "What key distinction matters when reading the accumulation of loanable money-capital in Chapter 32?"
                   },
                   "choices": {
                     "ko": [
-                      "금융적 청구권의 축적과 현실 생산자본의 축적은 다르게 움직이다가, 위기 속에서 가치실현과 지급의 문제로 다시 연결된다.",
-                      "시가총액을 같은 양의 현실 생산자본으로 곧장 대응시킨다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다.",
-                      "가공자본을 현실 축적과 분리된 장부상의 환상으로만 본다."
+                      "화폐가 대부 가능한 형태로 쌓이는 것과, 생산수단·노동력이 실제로 확대되는 것은 구별된다.",
+                      "예금 총액이 늘면 같은 크기의 공장과 원료가 이미 추가된 것으로 계산된다.",
+                      "수입으로 쓰일 돈은 은행에 들어가면 생산자본과 같은 기능을 얻는다.",
+                      "금융청구권의 가격은 상품 판매와 별도인 자연수익을 표시한다."
                     ],
                     "en": [
-                      "The accumulation of financial claims and real productive capital move differently, then reconnect in crisis through the problems of realization and payment.",
-                      "It directly maps market capitalization onto the same amount of real productive capital.",
-                      "Finance moves in complete independence from production and realization.",
-                      "Fictitious capital is fictional and therefore has no effect on the real economy."
+                      "Money accumulating in loanable form is distinct from the actual expansion of means of production and labour-power.",
+                      "When total deposits rise, the same amount of factories and raw materials has already been added.",
+                      "Money intended as revenue gains the same function as productive capital once it enters a bank.",
+                      "The price of financial claims expresses a natural return separate from commodity sale."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이 장은 앞선 두 장의 구분을 순환 전체 속에서 정리한다. 금융형태는 자율적으로 보이지만, 위기에서는 판매되지 않은 상품과 결제되지 않는 청구권을 통해 현실 가치와 다시 맞부딪힌다.",
-                    "en": "This chapter gathers the distinctions of the previous two chapters within the whole circuit. Financial forms look autonomous, but in crisis they collide again with real value through unsold commodities and unsettled claims."
-                  }
+                    "ko": "32장은 대부자본의 축적이 현실축적보다 크게 보일 수 있음을 설명한다. 이유는 소비수입, 유휴자금, 청구권이 잠시 대부자본 형태를 취하기 때문이다.",
+                    "en": "Chapter 32 explains why accumulation of loan capital can appear larger than real accumulation, since revenue, idle funds, and claims can temporarily take the form of loan capital."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "자산가격 폭락 때 공장과 노동자가 그대로 있는데도 부가 사라진 것처럼 보이는 이유는 무엇인가?",
-                    "en": "Why can wealth seem to vanish in an asset-price crash even when factories and workers remain?"
+                    "ko": "소비에 쓰일 수입이 잠시 대부자본처럼 나타나는 이유는 무엇인가?",
+                    "en": "Why can revenue intended for consumption temporarily appear as loan capital?"
                   },
                   "choices": {
                     "ko": [
-                      "사라진 것은 주로 미래 수익청구권의 자본화된 가격이며, 그것이 현실자본과 같은 것이 아니기 때문이다.",
-                      "시가총액이 곧 같은 양의 현실자본이라고 본다.",
-                      "주가 폭락은 같은 비율로 기계와 건물을 물리적으로 파괴한다고 본다.",
-                      "가격과 자산가치는 신용과 자본화 없이 생산만으로 설명된다고 본다."
+                      "수입이 점진적으로 지출되기 전에는 예금이나 은행 잔액으로 머물며 대부 가능한 돈처럼 기능할 수 있기 때문이다.",
+                      "소비수입은 은행에 들어가는 순간 생산수단 구입으로 이미 확정되기 때문이다.",
+                      "개인소비가 늘면 그 소비액과 같은 규모의 고정자본이 생기기 때문이다.",
+                      "수입의 화폐형태는 임금과 지대를 이윤율 계산에서 제외하기 때문이다."
                     ],
                     "en": [
-                      "What largely vanishes is the capitalized price of claims on future income, which is not identical with real capital itself.",
-                      "Equates market capitalization with the same quantity of real capital.",
-                      "Assumes a stock crash physically destroys machines and buildings in the same proportion.",
-                      "Explains prices and asset values by production alone, without credit and capitalization."
+                      "Before revenue is gradually spent, it may remain as deposits or bank balances and function like loanable money.",
+                      "Consumption revenue is already fixed as a purchase of means of production the moment it enters a bank.",
+                      "When personal consumption rises, fixed capital arises in the same amount.",
+                      "The money form of revenue excludes wages and rent from profit-rate calculation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "사라진 것은 주로 미래 수익청구권의 자본화된 가격이며, 그것이 현실자본과 같은 것이 아니기 때문이다. 폭락은 현실 생산수단을 즉시 같은 비율로 없애지 않는다. 다만 그 생산수단이 낳을 미래 수익에 대한 평가를 급격히 바꾼다.",
-                    "en": "What largely vanishes is the capitalized price of claims on future income, which is not identical with real capital itself. A crash does not immediately erase means of production in the same proportion. It sharply changes the valuation of claims on future income."
-                  }
+                    "ko": "마르크스는 소비수입의 화폐형태가 대부자본 통계를 부풀릴 수 있다고 본다. 이것은 소비가 생산투자로 바뀌었다는 뜻은 아니다.",
+                    "en": "Marx argues that the money form of consumption revenue can inflate loan-capital statistics. This does not mean consumption has become productive investment."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "가공자본을 “허구니까 무해하다”고 보면 왜 틀리는가?",
-                    "en": "Why is it wrong to say fictitious capital is harmless because it is fictitious?"
+                    "ko": "원료 가격 하락으로 일부 돈이 생산회로에서 빠져나올 때, 그것은 어떻게 대부자본이 되는가?",
+                    "en": "How can money released by falling raw-material prices become loan capital?"
                   },
                   "choices": {
                     "ko": [
-                      "가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.",
-                      "가공자본은 청구권이지만 담보, 투자, 지급능력, 위기 전파를 통해 현실 생산과 생활에 강한 효과를 미치기 때문이다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다."
+                      "같은 생산 규모에 필요한 선불금이 줄어 남은 돈이 일시적으로 화폐시장에 나올 수 있다.",
+                      "원료 가격 하락은 완제품 가격을 같은 비율로 올려 이자를 직접 만든다.",
+                      "가격이 내려간 원료는 은행권 발행의 담보 기능이 커져 생산회로와 느슨하게 연결된다.",
+                      "원료가 싸지면 상인은 상품 판매 없이도 환류를 완료한 것으로 처리한다."
                     ],
                     "en": [
-                      "Assumes fictitious capital is harmless because it is fictitious.",
-                      "Fictitious capital is a set of claims, but through collateral, investment, solvency, and crisis transmission it has strong effects on production and life.",
-                      "Treats finance as fully autonomous from production and realization.",
-                      "Assumes confidence alone creates value without actual realization."
+                      "If the same scale of production needs less advance, the remaining money can temporarily enter the money market.",
+                      "A fall in raw-material prices raises finished-goods prices by the same ratio and directly creates interest.",
+                      "Cheaper raw materials gain importance as collateral for banknote issue and become loosely connected to the production circuit.",
+                      "When raw materials become cheaper, merchants treat return flow as complete without sale."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가공자본은 청구권이지만 담보, 투자, 지급능력, 위기 전파를 통해 현실 생산과 생활에 강한 효과를 미치기 때문이다. “가공”은 아무것도 아니라는 뜻이 아니다. 그것은 현실자본과 다른 방식으로 존재하는 자본화된 청구권이라는 뜻이다.",
-                    "en": "Fictitious capital is a set of claims, but through collateral, investment, solvency, and crisis transmission it has strong effects on production and life. “Fictitious” does not mean nothing. It means capitalized claims that exist differently from real capital."
-                  }
+                    "ko": "32장은 대부자본 증가가 서로 다른 원인을 가질 수 있음을 보여준다. 가격 하락은 실제 축적을 돕는 자본 방출일 수도 있다.",
+                    "en": "Chapter 32 shows that increases in loan capital can have different causes. A price fall may release capital in a way that helps actual accumulation."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "시가총액을 사회의 현실자본과 동일시하면 무엇을 놓치는가?",
-                    "en": "What is missed if market capitalization is equated with society’s real capital?"
+                    "ko": "상인의 거래가 중단되어 현금이 남는 경우는 무엇을 뜻하는가?",
+                    "en": "What does it mean when a merchant holds cash because a new series of transactions is interrupted?"
                   },
                   "choices": {
                     "ko": [
-                      "시가총액이 곧 같은 양의 현실자본이라고 본다.",
-                      "증권 가격은 같은 금액의 기계와 원료가 새로 존재한다는 뜻이라고 본다.",
-                      "시가총액은 미래 수익에 대한 할인된 평가이며, 같은 금액의 기계·원료·노동력이 존재한다는 뜻은 아니라는 점이다.",
-                      "금융자산의 증가는 같은 규모의 공장 증가와 같다고 본다."
+                      "그 돈은 대부 가능한 형태로 쌓이지만, 여기서는 재생산의 확대보다 거래 흐름의 중단을 표현한다.",
+                      "그 돈은 새 상품의 판매가 이미 끝났다는 증거로 은행 장부에 기록된다.",
+                      "거래 중단은 대부자본 수요가 강해져 현실투자가 늘어난 국면을 표시한다.",
+                      "상인의 현금 보유는 소비재 생산자가 고정자본을 대체했다는 뜻이다."
                     ],
                     "en": [
-                      "Equates market capitalization with the same quantity of real capital.",
-                      "Treats securities prices as proof that the same amount of machinery and materials newly exists.",
-                      "Market capitalization is a discounted valuation of future income, not proof that the same amount of machinery, materials, and labour-power exists.",
-                      "Equates growth of financial assets with the same growth of factories."
+                      "The money accumulates in loanable form, but here it expresses an interruption of trade flow rather than expanded reproduction.",
+                      "It is recorded in bank books as evidence that new commodities have already been sold.",
+                      "Interrupted trade marks a phase of strong demand for loan capital and rising real investment.",
+                      "A merchant’s cash holding means consumer-goods producers have replaced fixed capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "시가총액은 미래 수익에 대한 할인된 평가이며, 같은 금액의 기계·원료·노동력이 존재한다는 뜻은 아니라는 점이다. 자산가치는 현실 축적과 관련되지만 같은 척도가 아니다. 이자율, 기대, 신용상태가 가격을 크게 흔든다.",
-                    "en": "Market capitalization is a discounted valuation of future income, not proof that the same amount of machinery, materials, and labour-power exists. Asset value is related to real accumulation but is not the same measure. Interest rates, expectations, and credit conditions move prices strongly."
-                  }
+                    "ko": "같은 대부자본 증가라도 어떤 경우에는 축적의 촉진을, 어떤 경우에는 재생산의 장애를 표현한다. 32장의 핵심은 이 차이다.",
+                    "en": "The same increase in loan capital can express either support for accumulation or an obstacle in reproduction. Chapter 32 centers on this difference."
+                  },
+                  "points": 2
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 2,
                   "prompt": {
-                    "ko": "번영기와 위기에서 화폐자본과 현실자본의 관계는 어떻게 달라 보이는가?",
-                    "en": "How does the relation between money-capital and real capital appear differently in prosperity and crisis?"
+                    "ko": "32장은 30~31장의 논의를 어떻게 정리하는가?",
+                    "en": "How does Chapter 32 organize the discussion from Chapters 30-31?"
                   },
                   "choices": {
                     "ko": [
-                      "낮은 이자율은 대체로 현실 축적의 호황을 증명한다고 본다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
-                      "청구권은 현실 가치와 무관하게 계속 늘어도 문제가 없다고 본다.",
-                      "번영기에는 신용과 자산가격이 현실 축적을 넘어 자율적으로 팽창하는 듯 보이고, 위기에는 지급과 가치실현의 한계가 그 팽창을 되돌려 세운다."
+                      "화폐자본 축적은 현실축적과 연결되지만, 소비수입·유휴자금·청구권·신용회전 때문에 독자적 팽창을 보인다.",
+                      "화폐자본 축적은 현실축적과 같은 크기로 움직이므로 별도 범주가 필요 없다.",
+                      "은행의 중개가 커질수록 생산과 판매의 실현 조건은 분석 밖으로 이동한다.",
+                      "대부자본의 풍부함은 자본주의 생산의 한계를 해소한 결과로 정리된다."
                     ],
                     "en": [
-                      "Takes low interest rates as always proving a boom in real accumulation.",
-                      "Treats finance as fully autonomous from production and realization.",
-                      "Assumes claims can grow without limit regardless of real value.",
-                      "In prosperity credit and asset prices seem to expand autonomously beyond real accumulation; in crisis the limits of payment and realization pull that expansion back."
+                      "Money-capital accumulation is connected to real accumulation, but revenue, idle funds, claims, and credit turnover give it a distinct expansion.",
+                      "Money-capital accumulation moves in the same magnitude as real accumulation, so no separate category is needed.",
+                      "As banking mediation grows, conditions of production and sale move outside the analysis.",
+                      "Abundant loan capital is summarized as the result of resolving the limits of capitalist production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "번영기에는 신용과 자산가격이 현실 축적을 넘어 자율적으로 팽창하는 듯 보이고, 위기에는 지급과 가치실현의 한계가 그 팽창을 되돌려 세운다. 마르크스는 순환 국면마다 같은 관계가 다르게 나타난다고 본다. 자율성의 외관과 강제적 재연결이 함께 중요하다.",
-                    "en": "In prosperity credit and asset prices seem to expand autonomously beyond real accumulation; in crisis the limits of payment and realization pull that expansion back. Marx sees the same relation appearing differently across the cycle. Both the appearance of autonomy and forced reconnection matter."
-                  }
+                    "ko": "32장은 세 장의 결론부다. 연결과 차이를 함께 보아야 금융적 풍부함과 현실축적의 어긋남을 설명할 수 있다.",
+                    "en": "Chapter 32 is the conclusion of the three-chapter discussion. Both connection and difference must be seen to explain the divergence between financial abundance and real accumulation."
+                  },
+                  "points": 2
                 }
               ]
             },
@@ -30408,156 +30408,142 @@
                 {
                   "id": "q1",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "화폐자본과 현실자본 III의 핵심 긴장은 무엇인가?",
-                    "en": "What is the core tension in Money-Capital and Real Capital III?"
+                    "ko": "“대부자본의 과잉”이 자본주의 생산의 한계를 드러내는 방식은 무엇인가?",
+                    "en": "How does a “plethora of loan capital” reveal the limits of capitalist production?"
                   },
                   "choices": {
                     "ko": [
-                      "금융청구권은 독자적으로 증식하는 것처럼 보이지만, 주기적으로 생산과 판매, 지급능력의 조건으로 되돌아간다.",
-                      "가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
-                      "신뢰만 있으면 실제 가치실현 없이도 가치가 만들어진다고 본다."
+                      "투자처를 찾는 돈은 많아도, 자본이 이윤을 실현할 수 있는 조건이 제한되어 있을 수 있다.",
+                      "대부자본 과잉은 생산수단이 물리적으로 부족해 모든 이자가 높아지는 현상이다.",
+                      "투자처 부족은 신용사기가 생기면 사라지는 외부 장벽에 가깝다.",
+                      "돈이 화폐시장에 많아지면 상품의 가치실현도 같은 속도로 확대된다."
                     ],
                     "en": [
-                      "Financial claims appear to multiply independently, but periodically return to the conditions of production, sale, and capacity to pay.",
-                      "Assumes fictitious capital is harmless because it is fictitious.",
-                      "Treats finance as fully autonomous from production and realization.",
-                      "Assumes confidence alone creates value without actual realization."
+                      "There may be much money seeking investment while the conditions for capital to realize profit remain limited.",
+                      "A plethora of loan capital is a physical shortage of means of production that raises all interest.",
+                      "A lack of outlets is close to an external barrier that disappears once credit swindles arise.",
+                      "When money is abundant in the money market, commodity realization expands at the same speed."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "금융청구권은 독자적으로 증식하는 것처럼 보이지만, 주기적으로 생산과 판매, 지급능력의 조건으로 되돌아간다. 이 긴장은 금융의 현실효과와 현실 의존성을 동시에 잡는다. 금융은 단순 반영도 아니고 완전 독립도 아니다.",
-                    "en": "Financial claims appear to multiply independently, but periodically return to the conditions of production, sale, and capacity to pay. This tension grasps both finance’s real effects and its dependence on reality. Finance is neither mere reflection nor complete independence."
-                  }
+                    "ko": "마르크스는 과잉 대부자본을 단순한 돈의 많음으로 보지 않는다. 그것은 자본이 자본으로 실현될 수 있는 범위의 한계를 드러낸다.",
+                    "en": "Marx does not treat surplus loan capital as mere abundance of money. It reveals limits in the range within which capital can realize itself as capital."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q2",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "기술주 시가총액이 크게 줄었지만 서버와 노동자가 즉시 사라지지 않은 사례는 무엇을 설명하는가?",
-                    "en": "What is explained by a case where tech market capitalization falls sharply while servers and workers do not immediately disappear?"
+                    "ko": "산업자본가가 “자기 저축”보다 타인의 저축을 지휘한다는 논점의 의미는 무엇인가?",
+                    "en": "What is the significance of the claim that industrial capitalists command others’ savings more than their own?"
                   },
                   "choices": {
                     "ko": [
-                      "주가 폭락은 같은 비율로 기계와 건물을 물리적으로 파괴한다고 본다.",
-                      "자산가격의 변동은 미래 수익청구권의 평가 변화이며, 현실 생산수단의 물리적 변화와 구분되어야 한다.",
-                      "시가총액이 곧 같은 양의 현실자본이라고 본다.",
-                      "가격과 자산가치는 신용과 자본화 없이 생산만으로 설명된다고 본다."
+                      "신용제도에서는 예금자와 대중의 돈이 은행을 거쳐 산업자본의 지휘 아래 들어가며, 사적 축적의 외관을 약화한다.",
+                      "산업자본가는 자기 노동으로 축적한 돈을 주로 쓰기 때문에 신용의 역할이 줄어든다.",
+                      "타인의 저축은 은행에 들어가면 노동자 임금으로 고정되어 투자와 분리된다.",
+                      "저축의 소유자가 바뀌면 생산과정의 잉여가치 원천도 금융시장으로 이동한다."
                     ],
                     "en": [
-                      "Assumes a stock crash physically destroys machines and buildings in the same proportion.",
-                      "Asset-price movement is a change in the valuation of claims on future income and must be distinguished from physical changes in real means of production.",
-                      "Equates market capitalization with the same quantity of real capital.",
-                      "Explains prices and asset values by production alone, without credit and capitalization."
+                      "Through credit, depositors’ and the public’s money passes through banks into the command of industrial capital, weakening the appearance of private self-accumulation.",
+                      "Industrial capitalists mainly use money accumulated by their own labour, reducing the role of credit.",
+                      "Others’ savings become fixed as workers’ wages once deposited and are separated from investment.",
+                      "When ownership of savings shifts, the source of surplus-value moves to the financial market."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "자산가격의 변동은 미래 수익청구권의 평가 변화이며, 현실 생산수단의 물리적 변화와 구분되어야 한다. 물론 가격 폭락은 투자와 고용에 영향을 줄 수 있다. 하지만 그 효과는 청구권 가격과 현실자본을 동일시해서가 아니라 매개를 통해 생긴다.",
-                    "en": "Asset-price movement is a change in the valuation of claims on future income and must be distinguished from physical changes in real means of production. A price crash can of course affect investment and employment. But it does so through mediations, not because claim prices are identical with real capital."
-                  }
+                    "ko": "32장은 자본이 자기 노동과 절약의 산물이라는 환상을 공격한다. 이윤도 타인의 노동이고, 운용되는 자금도 타인의 재산일 수 있다.",
+                    "en": "Chapter 32 attacks the illusion that capital is the fruit of one’s own labour and saving. Profit comes from others’ labour, and the funds set in motion may also be others’ property."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q3",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "금융형태가 현실에 영향을 주면서도 현실자본과 같지 않다는 말의 뜻은 무엇인가?",
-                    "en": "What does it mean that financial forms affect reality but are not identical with real capital?"
+                    "ko": "같은 돈이 여러 번 대부자본을 대표할 수 있다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that the same money can represent loan capital several times?"
                   },
                   "choices": {
                     "ko": [
-                      "가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
-                      "증권가격과 신용조건은 투자, 담보, 지급능력을 바꾸지만, 그것들은 여전히 생산과 가치실현에서 나오는 수익청구권의 형태다.",
-                      "가격과 자산가치는 신용과 자본화 없이 생산만으로 설명된다고 본다."
+                      "실제 화폐는 한 지점에 있어도, 예금·수표·대출 같은 청구권이 겹치며 여러 자본가치처럼 기능할 수 있다는 뜻이다.",
+                      "한 장의 지폐가 동시에 여러 사람의 금고에 물리적으로 존재한다는 뜻이다.",
+                      "은행이 같은 지폐를 여러 번 찍어내도 가치척도 기능이 보존된다는 뜻이다.",
+                      "대출이 반복되면 각 반복마다 같은 양의 생산수단이 새로 만들어진다는 뜻이다."
                     ],
                     "en": [
-                      "Assumes fictitious capital is harmless because it is fictitious.",
-                      "Treats finance as fully autonomous from production and realization.",
-                      "Security prices and credit conditions alter investment, collateral, and solvency, yet they remain forms of claims on income arising from production and realization.",
-                      "Explains prices and asset values by production alone, without credit and capitalization."
+                      "Actual money may be at one point, while deposits, cheques, and loans overlap as claims and function like several capital values.",
+                      "A single note physically exists in several people’s safes at the same time.",
+                      "The bank can print the same note several times while preserving money’s measure-of-value function.",
+                      "Each repeated loan creates a new amount of means of production equal to the loan."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "증권가격과 신용조건은 투자, 담보, 지급능력을 바꾸지만, 그것들은 여전히 생산과 가치실현에서 나오는 수익청구권의 형태다. 이 균형이 중요하다. 금융을 허상으로만 보아도 틀리고, 생산과 완전히 독립한 힘으로 보아도 틀린다.",
-                    "en": "Security prices and credit conditions alter investment, collateral, and solvency, yet they remain forms of claims on income arising from production and realization. This balance is crucial. It is wrong to see finance as mere illusion, and wrong to see it as a force wholly independent of production."
-                  }
+                    "ko": "이 세부는 신용의 중복 효과를 보여준다. 현실 화폐와 청구권의 층위를 나누지 않으면 대부자본의 크기가 과장되어 보인다.",
+                    "en": "This detail shows credit’s duplication effect. Without separating actual money from layers of claims, the size of loan capital appears exaggerated."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q4",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "위기가 금융청구권을 현실 가치에 재연결한다는 말은 무엇인가?",
-                    "en": "What does it mean that crisis reconnects financial claims to real value?"
+                    "ko": "위기 때 상품가치가 화폐가치 보전을 위해 희생된다는 말의 뜻은 무엇인가?",
+                    "en": "What does it mean that commodity values are sacrificed to preserve money-value during crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "잠시 현금을 구할 수 있으면 지급능력 문제도 사라진다고 본다.",
-                      "청구권은 현실 가치와 무관하게 계속 늘어도 문제가 없다고 본다.",
-                      "평소 자본처럼 거래되던 청구권들이 지급, 매각, 상환을 요구받으면서 실제 수익과 담보가 충분한지 검증된다는 뜻이다.",
-                      "위기를 생산과 지급 연쇄의 문제가 아니라 심리적 공포로만 본다."
+                      "지급수단으로서 화폐를 확보하려는 압박 때문에 상품이 헐값에 팔리고 생산이 중단될 수 있다는 뜻이다.",
+                      "상품이 싸게 팔리면 그만큼 화폐의 노동시간도 줄어들어 가치척도가 사라진다는 뜻이다.",
+                      "화폐가치 보전은 상품판매와 별도 경로를 가져 실제 생산 부담과 느슨하게 연결된다는 뜻이다.",
+                      "위기에는 모든 청구권이 명목가로 유지되어 상품가격 하락을 흡수한다는 뜻이다."
                     ],
                     "en": [
-                      "Assumes temporary access to cash eliminates solvency problems.",
-                      "Assumes claims can grow without limit regardless of real value.",
-                      "Claims that normally trade as capital are tested through payment, sale, and repayment demands to see whether actual income and collateral are sufficient.",
-                      "Reduces crisis to psychological panic rather than production and payment chains."
+                      "The pressure to secure money as means of payment can force commodities to be sold cheaply and production to stop.",
+                      "When commodities are sold cheaply, the labour-time of money falls and the measure of value disappears.",
+                      "It means preserving money-value follows a separate path from commodity sale and is only loosely connected to burdens on production.",
+                      "In crisis, all claims remain at par and absorb the fall in commodity prices."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "평소 자본처럼 거래되던 청구권들이 지급, 매각, 상환을 요구받으면서 실제 수익과 담보가 충분한지 검증된다는 뜻이다. 위기는 단순한 가격 조정 이상이다. 그것은 청구권 체계가 현실 가치생산과 얼마나 맞물려 있었는지 강제로 묻는다.",
-                    "en": "Claims that normally trade as capital are tested through payment, sale, and repayment demands to see whether actual income and collateral are sufficient. Crisis is more than price adjustment. It forcibly asks how the system of claims was linked to real value production."
-                  }
+                    "ko": "마르크스는 화폐의 안전이 자본주의에서 사물화된 사회관계의 안전이라고 본다. 그래서 많은 상품가치가 몇몇 지급수단을 위해 희생될 수 있다.",
+                    "en": "Marx sees the security of money as the security of a reified social relation. Many commodity values can therefore be sacrificed for a few means of payment."
+                  },
+                  "points": 3
                 },
                 {
                   "id": "q5",
                   "type": "multiple_choice",
-                  "points": 3,
                   "prompt": {
-                    "ko": "화폐자본과 현실자본 세 장의 결론을 가장 잘 담은 문장은 무엇인가?",
-                    "en": "Which sentence best captures the conclusion of the three chapters on money-capital and real capital?"
+                    "ko": "32장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 32?"
                   },
                   "choices": {
                     "ko": [
-                      "시가총액이 곧 같은 양의 현실자본이라고 보는 식으로 가치관계의 매개를 지우는 오해",
-                      "금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.",
-                      "가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.",
-                      "화폐자본과 금융청구권은 현실 축적을 매개하고 확대하지만, 그것들의 축적은 현실자본의 축적과 동일하지 않으며 위기 속에서 그 차이가 드러난다."
+                      "화폐자본/현실자본 논의를 마무리하며 신용의 풍부함, 중복 청구권, 위기의 강제적 재연결을 하나로 묶는다.",
+                      "가공자본의 현실효과를 지우고 대부자본을 단순 현금 보유로 정리한다.",
+                      "은행제도의 발전을 자본주의 생산의 한계 해소로 해석한다.",
+                      "상품과 화폐의 관계를 국내 소매유통 안에서만 설명한다."
                     ],
                     "en": [
-                      "Equates market capitalization with the same quantity of real capital.",
-                      "Treats finance as fully autonomous from production and realization.",
-                      "Assumes fictitious capital is harmless because it is fictitious.",
-                      "Money-capital and financial claims mediate and expand real accumulation, but their accumulation is not identical with the accumulation of real capital, and crisis reveals the difference."
+                      "It concludes the money-capital/real-capital discussion by linking credit abundance, duplicated claims, and crisis-enforced reconnection.",
+                      "It erases the real effects of fictitious capital and reduces loan capital to cash holdings.",
+                      "It interprets banking development as the resolution of the limits of capitalist production.",
+                      "It explains the relation of commodities and money only within domestic retail circulation."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "화폐자본과 금융청구권은 현실 축적을 매개하고 확대하지만, 그것들의 축적은 현실자본의 축적과 동일하지 않으며 위기 속에서 그 차이가 드러난다. 이 결론은 30-32장의 학습 목표다. 연결, 차이, 위기 속 검증이라는 세 요소를 함께 이해해야 한다.",
-                    "en": "Money-capital and financial claims mediate and expand real accumulation, but their accumulation is not identical with the accumulation of real capital, and crisis reveals the difference. This is the learning goal of chapters 30-32: connection, difference, and verification in crisis must be understood together."
+                    "ko": "32장은 다음 장의 신용제도 속 유통수단 논의로 넘어가는 연결부다. 이제 문제는 이런 대부자본이 유통에서 어떤 화폐형태를 취하는가로 이동한다.",
+                    "en": "Chapter 32 links to the next chapter on the medium of circulation in the credit system. The question shifts to the money forms taken by this loan capital in circulation."
                   },
-                  "choiceFeedback": {
-                    "ko": [
-                      "오해 진단: \"시가총액이 곧 같은 양의 현실자본이라고 보는 식으로 가치관계의 매개를 지우는 오해\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"금융은 생산과 가치실현에서 완전히 독립해 움직인다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "오해 진단: \"가공자본은 허구이므로 현실 경제에 아무 영향도 없다고 본다.\" 쪽으로 읽으면 정답의 핵심 범주와 다른 범주를 앞세우게 된다.",
-                      "핵심 확인: 화폐자본과 금융청구권은 현실 축적을 매개하고 확대하지만, 그것들의 축적은 현실자본의 축적과 동일하지 않으며 위기 속에서 그 차이가 드러난다. 이 결론은 30-32장의 학습 목표다. 연결, 차이, 위기 속 검증이라는 세 요소를 함께 이해해야 한다."
-                    ],
-                    "en": [
-                      "Misconception check: choosing \"Equates market capitalization with the same quantity of real capital.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Treats finance as fully autonomous from production and realization.\" puts another category ahead of the key relation in the correct answer.",
-                      "Misconception check: choosing \"Assumes fictitious capital is harmless because it is fictitious.\" puts another category ahead of the key relation in the correct answer.",
-                      "Right: Money-capital and financial claims mediate and expand real accumulation, but their accumulation is not identical with the accumulation of real capital, and crisis reveals the difference. This is the learning goal of chapters 30-32: connection, difference, and verification in crisis must be understood together."
-                    ]
-                  }
+                  "points": 3
                 }
               ]
             }
@@ -30628,27 +30614,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "기업들이 상품을 사고팔면서 매번 금화를 주고받지 않고 어음과 은행 결제로 처리한다. 이때 신용제도가 줄여 주는 것은 무엇인가?",
-                    "en": "Firms buy and sell without handing over gold coins each time, using bills and bank settlement. What does the credit system reduce here?"
+                    "ko": "33장에서 신용제도가 유통수단을 절약하는 기본 방식은 무엇인가?",
+                    "en": "What is the basic way the credit system economizes means of circulation in Chapter 33?"
                   },
                   "choices": {
                     "ko": [
-                      "상품거래마다 필요한 현금 이동과 금속화폐 보유량을 줄인다.",
-                      "신용이나 이자는 대체로 생산관계와 무관한 기술 문제다.",
-                      "화폐가 있으면 상품판매와 지급위기는 사라진다.",
-                      "은행권력만으로 시장가격과 지급압력을 설명할 수 있다고 본다."
+                      "어음, 예금, 청산을 통해 채권과 채무를 상계하고 실제 현금 이동을 순액으로 줄인다.",
+                      "모든 상품거래를 금속화폐 교환으로 되돌려 신용위험을 낮춘다.",
+                      "소비자의 소매구매를 생산자 간 거래보다 우선해 은행권 수요를 키운다.",
+                      "지급기한을 없애 각 거래가 생산과 동시에 현금으로 마감되게 한다."
                     ],
                     "en": [
-                      "It reduces the cash movement and metallic money holdings needed for each commodity transaction.",
-                      "Credit or interest is always a technical issue unrelated to production relations.",
-                      "If money exists, commodity sale and payment crisis disappear.",
-                      "It explains market prices and payment pressure by banking power alone."
+                      "Bills, deposits, and clearing offset claims and debts, reducing actual cash movement to balances.",
+                      "It returns all commodity trade to metallic-money exchange and lowers credit risk.",
+                      "It prioritizes consumers’ retail purchases over producer trade and increases demand for banknotes.",
+                      "It removes due dates so every transaction closes in cash at the moment of production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "신용은 화폐를 완전히 폐지하는 것이 아니라 유통에서 필요한 현금 이동을 줄인다. 지급 약속이 서로 맞물릴 때 화폐는 덜 움직이지만, 최종 지급수단 기능은 남아 있다.",
-                    "en": "Credit does not abolish money; it reduces the cash movement needed in circulation. When payment promises interlock, less money moves, but money remains as final means of payment."
+                    "ko": "신용은 화폐를 폐지하지 않는다. 다만 지급 약속들이 서로 상계되면서 실제로 필요한 현금량을 크게 줄인다.",
+                    "en": "Credit does not abolish money. It greatly reduces the amount of cash needed by offsetting payment promises against one another."
                   },
                   "points": 2
                 },
@@ -30656,27 +30642,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "어음교환소에서 여러 기업의 받을 돈과 줄 돈을 서로 상계하면 어떤 일이 일어나는가?",
-                    "en": "What happens when a clearing house offsets what firms owe and are owed?"
+                    "ko": "500파운드 지폐가 예금과 대출을 거치며 빠르게 도는 예시는 무엇을 보여주는가?",
+                    "en": "What does the example of a £500 note moving through deposits and loans show?"
                   },
                   "choices": {
                     "ko": [
-                      "서로 맞물린 채권과 채무가 상계되어 남은 순액만 실제 지급된다.",
-                      "모든 지급은 항상 금속화폐로만 이루어진다.",
-                      "신용관계는 생산과 유통에 아무 영향을 주지 않는다.",
-                      "이자는 대체로 노동자의 임금과 같은 말이다."
+                      "지폐의 회전속도는 단순 구매만이 아니라 예금과 할인 같은 신용작용으로도 빨라질 수 있다.",
+                      "지폐가 한 번 예금되면 같은 금액의 금이 은행 안에서 새로 생긴다.",
+                      "지폐의 빠른 회전은 상품거래의 가격합계와 관계없이 통화량을 정한다.",
+                      "예금과 대출을 거치면 지폐는 지급수단 기능을 잃고 상품이 된다."
                     ],
                     "en": [
-                      "Interlocking claims and debts are offset, so only the remaining net balance is actually paid.",
-                      "All payments are always made only in metallic money.",
-                      "Credit relations have no effect on production and circulation.",
-                      "Interest is always another name for workers’ wages."
+                      "The velocity of a note can be increased not only by purchases but also by credit operations such as deposits and discounting.",
+                      "Once a note is deposited, the same amount of gold is newly created inside the bank.",
+                      "The rapid turnover of notes determines currency quantity independently of commodity price sums.",
+                      "After passing through deposits and loans, the note loses its payment function and becomes a commodity."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상계는 신용제도가 화폐를 절약하는 구체적 방식이다. 총거래액 전체가 현금으로 움직이지 않고, 남은 차액만 지급된다.",
-                    "en": "Clearing is a concrete way the credit system economizes money. The total volume of transactions does not move in cash; only the balance is paid."
+                    "ko": "마르크스는 신용이 지폐의 손바뀜 속도까지 바꾼다고 본다. 예금과 할인은 같은 지폐가 더 많은 지급을 수행하게 만든다.",
+                    "en": "Marx argues that credit changes even the speed at which notes change hands. Depositing and discounting let the same note perform more payments."
                   },
                   "points": 2
                 },
@@ -30684,27 +30670,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“신용화폐가 있으니 화폐위기는 더 이상 불가능하다”는 말은 무엇을 놓치는가?",
-                    "en": "What is missed by the claim that credit money makes monetary crisis impossible?"
+                    "ko": "은행이 마음대로 유통 중인 은행권 수를 늘릴 수 없는 이유는 무엇인가?",
+                    "en": "Why can banks not arbitrarily increase the number of circulating banknotes?"
                   },
                   "choices": {
                     "ko": [
-                      "기술이나 지폐 수량만 보면 모든 문제가 설명된다.",
-                      "신용수단은 평상시 화폐를 대신하지만, 신뢰가 무너지면 현금과 최종 지급수단 요구가 다시 나타난다는 점이다.",
-                      "신용위기를 국내 통화량 문제로만 좁혀 본다.",
-                      "이자가 있으면 어떤 사회든 곧바로 자본주의다."
+                      "거래에 필요 없는 은행권은 지급과 예금을 통해 발행자에게 되돌아가기 때문이다.",
+                      "은행권은 발행되는 순간 소비재가 되어 유통에서 빠져나가기 때문이다.",
+                      "소액권과 고액권의 비율이 법으로 고정되어 상업 규모와 연결되지 않기 때문이다.",
+                      "은행권 발행은 모든 상품가격을 같은 폭으로 올려 수요를 즉시 흡수하기 때문이다."
                     ],
                     "en": [
-                      "Technology or paper quantity explains every problem.",
-                      "Credit instruments may replace money in normal times, but when trust collapses, demands for cash and final means of payment return.",
-                      "The world market and payment dates are unrelated to credit crisis.",
-                      "If interest exists, every society is already capitalist."
+                      "Banknotes not needed for transactions return to the issuer through payments and deposits.",
+                      "A banknote becomes a consumer good at issue and leaves circulation.",
+                      "The ratio of small and large notes is legally fixed and disconnected from business scale.",
+                      "Banknote issue raises all commodity prices equally and immediately absorbs demand."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용은 지급 약속의 연쇄다. 그 연쇄가 믿음을 잃으면 모두가 약속이 아니라 최종 지급을 요구하게 된다.",
-                    "en": "Credit is a chain of payment promises. When that chain loses credibility, everyone demands final payment rather than another promise."
+                    "ko": "33장은 발권의 한계를 실제 유통 필요에서 찾는다. 교환 가능한 은행권은 필요 이상으로 나가면 다시 은행으로 되돌아온다.",
+                    "en": "Chapter 33 locates the limit of note issue in actual circulation needs. Convertible notes return to the bank when issued beyond what transactions require."
                   },
                   "points": 2
                 },
@@ -30712,27 +30698,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "거래처 부도 뒤 기업들이 어음 대신 현금 결제를 요구하기 시작했다. 이 사례는 무엇을 보여주는가?",
-                    "en": "After a major default, firms begin demanding cash instead of bills. What does this show?"
+                    "ko": "상업 규모가 커졌는데도 고액권 유통이 줄어든 사례는 무엇을 뜻하는가?",
+                    "en": "What does it mean when large-denomination note circulation falls despite expanding commerce?"
                   },
                   "choices": {
                     "ko": [
-                      "위기를 개별 거래 실패로만 보고 지급연쇄의 구조를 약하게 본다.",
-                      "채무의 만기와 지급수단 수요를 부차적 현상으로 본다.",
-                      "신용수단의 유통은 신뢰와 지급연쇄에 의존하며, 위기 때에는 화폐가 최종 지급수단으로 다시 요구된다는 점이다.",
-                      "위기 때에도 지급약속이 평상시와 같은 신뢰를 유지한다고 본다."
+                      "청산소와 은행 간 결제가 발달해 도매거래의 큰 지급이 장부상 이전으로 처리되었음을 뜻한다.",
+                      "대규모 거래가 줄고 소매거래만 성장해 전체 상업 규모가 실제로 축소되었음을 뜻한다.",
+                      "고액권이 줄면 같은 금액의 금속화폐가 모든 도매거래에 투입되었음을 뜻한다.",
+                      "은행권 수량 감소가 상품가격의 하락과 같은 원인에서 나온다는 뜻이다."
                     ],
                     "en": [
-                      "The case is merely an individual mistake unrelated to social relations.",
-                      "Means of payment or debt relations need not be analysed.",
-                      "The circulation of credit instruments depends on trust and payment chains, and in crisis money is again demanded as final means of payment.",
-                      "In crisis every payment promise automatically becomes safe."
+                      "It means clearing houses and interbank settlement developed so large wholesale payments were handled by book transfers.",
+                      "It means large transactions shrank and only retail trade grew, so total commerce actually contracted.",
+                      "It means the same amount of metallic money entered all wholesale transactions when large notes fell.",
+                      "It means the fall in banknote quantity came from the same cause as falling commodity prices."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "사례의 핵심은 신용의 한계다. 평상시에는 약속이 약속을 대신하지만, 위기에는 약속보다 현금 지급능력이 중요해진다.",
-                    "en": "The case shows the limit of credit. In normal times promises replace promises; in crisis, cash-paying capacity becomes decisive."
+                    "ko": "마르크스는 1844~1857년 자료에서 총거래가 커져도 고액권이 줄 수 있음을 본다. 신용과 청산이 현금의 기능을 대체했기 때문이다.",
+                    "en": "Marx notes from 1844-1857 data that large notes can fall even as total trade grows, because credit and clearing replace cash functions."
                   },
                   "points": 2
                 },
@@ -30740,27 +30726,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 신용제도 논의에서 어떤 위치를 차지하는가?",
-                    "en": "What place does this chapter occupy in the discussion of the credit system?"
+                    "ko": "33장은 34장의 은행법 비판으로 어떻게 이어지는가?",
+                    "en": "How does Chapter 33 lead into the critique of bank legislation in Chapter 34?"
                   },
                   "choices": {
                     "ko": [
-                      "앞의 생산관계 분석을 접고 통화 현상만 독립적으로 본다.",
-                      "신용과 이자를 역사적 생산관계보다 보편적 금융기술로 본다.",
-                      "이 장의 논점을 뒤의 지대와 수입형태 분석으로 이어 보지 않는다.",
-                      "신용이 유통을 확장하고 화폐를 절약하지만, 지급능력과 현실 가치실현의 한계를 없애지는 못한다는 점을 보여준다."
+                      "신용제도 안의 유통수단은 단순 은행권 수량보다 청산, 예금, 할인, 준비금과 함께 움직인다는 점을 보여준다.",
+                      "은행권 수량만 조절하면 신용제도 전체가 안정된다는 결론을 마련한다.",
+                      "고액권 감소가 금 보유 증가와 같은 뜻임을 보여 은행법의 전제를 강화한다.",
+                      "발권은행이 유통량을 임의로 정할 수 있어 법적 규칙이 충분하다는 점을 보인다."
                     ],
                     "en": [
-                      "It cancels all previous discussion and leaves only money.",
-                      "It treats credit and interest as universal financial techniques rather than historical production relations.",
-                      "This chapter is not connected to the later argument.",
-                      "It shows that credit expands circulation and economizes money, but does not abolish the limits of solvency and real value realization."
+                      "It shows that means of circulation in the credit system move with clearing, deposits, discounting, and reserves, not merely banknote quantity.",
+                      "It prepares the conclusion that adjusting banknote quantity stabilizes the entire credit system.",
+                      "It strengthens bank legislation by showing that fewer large notes mean more gold reserves.",
+                      "It shows that issuing banks can choose circulation volume at will, making legal rules sufficient."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장은 신용의 편리함과 취약성을 함께 보여준다. 신용은 유통을 빠르게 하지만 위기의 가능성도 더 넓은 지급연쇄 속에 묶어 둔다.",
-                    "en": "This chapter shows both the convenience and fragility of credit. Credit accelerates circulation, but ties the possibility of crisis to a wider payment chain."
+                    "ko": "33장은 실제 신용유통의 복잡성을 보여준다. 34장의 통화원리 비판은 이 복잡성을 은행권 수량 규칙으로 축소한 데서 출발한다.",
+                    "en": "Chapter 33 shows the complexity of actual credit circulation. Chapter 34’s critique of the currency principle begins from its reduction of this complexity to rules about banknote quantity."
                   },
                   "points": 2
                 }
@@ -30778,27 +30764,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "신용이 화폐를 대체하는 것처럼 보이는데도 화폐가 사라지지 않는 이유는 무엇인가?",
-                    "en": "Why does money not disappear even though credit seems to replace it?"
+                    "ko": "청산소가 유통수단 절약의 최고 형태처럼 보이는 이유는 무엇인가?",
+                    "en": "Why does the clearing house appear as the highest form of economizing means of circulation?"
                   },
                   "choices": {
                     "ko": [
-                      "신용수단은 최종 지급이 가능하다는 믿음 위에서만 화폐를 대신할 수 있기 때문이다.",
-                      "화폐와 신용의 차이를 지급기한의 차이가 아니라 유통수단의 종류 차이로만 본다.",
-                      "이자 낳는 자본의 오래된 형태를 산업자본 이후의 파생물로만 본다.",
-                      "세계시장에서는 국내 신용관계와 같은 지급 문제가 반복되지 않는다고 본다."
+                      "만기가 된 청구권을 서로 맞추어 장부상 상계하고, 남은 차액 지급에만 화폐가 필요하기 때문이다.",
+                      "청산소가 모든 상품을 직접 보관해 판매과정을 대신하기 때문이다.",
+                      "청산소에서는 어음이 금속화폐로 바뀌어 각 거래마다 전액 지급되기 때문이다.",
+                      "청산소가 이자율을 임금률과 같은 방식으로 결정하기 때문이다."
                     ],
                     "en": [
-                      "Because credit instruments can replace money only on the belief that final payment remains possible.",
-                      "Money and credit always perform exactly the same function.",
-                      "Interest first appears only under capitalism.",
-                      "In the world market the problem of means of payment disappears."
+                      "Because matured claims are matched and offset in accounts, and money is needed only to settle balances.",
+                      "Because the clearing house directly stores all commodities and replaces the sale process.",
+                      "Because bills become metallic money in the clearing house and every transaction is fully paid in cash.",
+                      "Because the clearing house determines the interest rate in the same way as the wage rate."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "신용의 힘은 화폐를 배경으로 삼는 데 있다. 최종 지급 가능성이 흔들리면 신용수단은 다시 화폐 요구로 바뀐다.",
-                    "en": "Credit’s power rests on money in the background. When the possibility of final payment is shaken, credit instruments turn back into demands for money."
+                    "ko": "청산소의 힘은 지급수단 기능을 집중하는 데 있다. 그러나 상계될 청구권 자체가 신용에 의존하므로, 신용이 흔들리면 절약 효과도 약해진다.",
+                    "en": "The clearing house’s power lies in concentrating the means-of-payment function. But the claims being offset depend on credit, so the saving effect weakens when credit shakes."
                   },
                   "points": 3
                 },
@@ -30806,27 +30792,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "신용수단의 유통을 가능하게 하는 연결고리는 무엇인가?",
-                    "en": "What connections make the circulation of credit instruments possible?"
+                    "ko": "1844~1857년 자료에서 소액권은 늘고 고액권은 줄어든 세부는 무엇을 보여주는가?",
+                    "en": "What is shown by the detail that small notes rose while large notes fell in the 1844-1857 data?"
                   },
                   "choices": {
                     "ko": [
-                      "신용관계를 지폐 수량의 문제로만 좁혀 본다.",
-                      "은행 신뢰, 결제망, 상호청구권, 만기일, 필요할 때 최종 지급으로 바뀔 수 있다는 기대가 함께 작동한다.",
-                      "신용관계를 현재의 잔액만으로 보고 만기 구조를 약하게 본다.",
-                      "이자율을 대부자본 수급과 경쟁이 아니라 중립적 기술비율로 본다."
+                      "소매·일상 지급의 은행권 수요와 도매·은행 간 결제의 청산화가 서로 다른 방향으로 움직일 수 있다.",
+                      "소액권 증가는 산업투자의 축소를, 고액권 감소는 임금 상승을 직접 표시한다.",
+                      "고액권이 줄면 은행권 총액과 상업 규모도 같은 비율로 줄어든다.",
+                      "소액권과 고액권의 변화는 신용제도와 별도인 인쇄비 변화에서 나온다."
                     ],
                     "en": [
-                      "It narrows credit relations to the quantity of paper money.",
-                      "Bank trust, clearing networks, mutual claims, maturity dates, and the expectation of conversion into final payment all operate together.",
-                      "It reads credit only as a current balance and weakens the importance of maturity structure.",
-                      "It treats the interest rate as a neutral technical ratio rather than an outcome of loanable-capital supply, demand, and competition."
+                      "Demand for notes in retail and everyday payments can move differently from wholesale and interbank settlement handled through clearing.",
+                      "More small notes directly indicate reduced industrial investment, while fewer large notes indicate higher wages.",
+                      "When large notes fall, total banknote circulation and commerce shrink in the same ratio.",
+                      "Changes in small and large notes arise from printing-cost changes separate from the credit system."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용수단은 종이 한 장이나 장부 숫자만으로 움직이지 않는다. 그것을 받아 줄 제도와 지급연쇄, 최종 지급 기대가 함께 있어야 한다.",
-                    "en": "Credit instruments do not move by paper or ledger entries alone. Institutions that accept them, payment chains, and expectations of final payment must all be present."
+                    "ko": "이 세부 문항은 33장의 표를 반영한다. 거래 규모가 커져도 신용기술이 발전하면 큰 지급에 필요한 지폐는 줄 수 있다.",
+                    "en": "This detailed question reflects the table in Chapter 33. Even as trade expands, developed credit techniques can reduce the notes needed for large payments."
                   },
                   "points": 3
                 },
@@ -30834,27 +30820,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“결제 기술이 발전하면 화폐위기는 사라진다”는 설명은 왜 약한가?",
-                    "en": "Why is the claim that better payment technology abolishes monetary crisis weak?"
+                    "ko": "은행이 무담보 발권으로 “추가 자본”을 만드는 것처럼 보이는 이유는 무엇인가?",
+                    "en": "Why can banks appear to create “additional capital” by issuing notes without metallic backing?"
                   },
                   "choices": {
                     "ko": [
-                      "결제 기술이 충분히 빠르면 지급능력의 문제도 함께 해결된다고 본다.",
-                      "신용의 확대가 최종 지급능력 문제를 충분히 흡수한다고 본다.",
-                      "결제 기술은 지급 약속을 빠르게 처리할 수 있지만, 약속을 실제 지급능력으로 바꾸어 주지는 못하기 때문이다.",
-                      "상품 판매의 지연과 지급 약속의 만기를 서로 분리해 본다."
+                      "발행된 은행권이 유통수단으로 기능하며 은행에는 이윤을 낳는 신용자산처럼 보이기 때문이다.",
+                      "무담보 은행권은 발행 즉시 같은 금액의 생산수단을 은행 소유로 만든다.",
+                      "은행권이 금으로 덮이지 않으면 상품가치와의 관계가 끊어져 손실이 사라진다.",
+                      "발권 이윤은 은행가의 절약노동에서 나오므로 생산관계와 분리된다."
                     ],
                     "en": [
-                      "If payment technology is fast enough, the problem of capacity to pay is solved as well.",
-                      "It assumes that credit expansion sufficiently absorbs the problem of final capacity to pay.",
-                      "Payment technology can process promises faster, but it cannot turn promises themselves into real capacity to pay.",
-                      "It separates delays in commodity sale from the maturities of payment promises."
+                      "Because issued notes function as means of circulation and appear to the bank as a credit asset yielding profit.",
+                      "Unbacked notes immediately make the same amount of means of production the bank’s property.",
+                      "If notes are not backed by gold, their relation to commodity value is cut and losses disappear.",
+                      "Profit from note issue comes from the banker’s saving labour and is separate from production relations."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 논점은 기술 부족이 아니라 사회적 지급관계다. 결제망이 정교할수록 한 고장의 충격이 더 넓게 번질 수도 있다.",
-                    "en": "Marx’s point is not a lack of technology but social payment relations. The more elaborate the clearing network, the wider a disruption can spread."
+                    "ko": "마르크스는 은행이 국민적 화폐절약을 사적 이윤으로 바꾸는 점을 강조한다. 이것은 현실자본 창조가 아니라 신용권력의 수익화다.",
+                    "en": "Marx emphasizes that banks turn a national saving of money into private profit. This is not creation of real capital but monetization of credit power."
                   },
                   "points": 3
                 },
@@ -30862,27 +30848,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "카드결제와 은행이체가 일상 거래를 처리하지만 금융불안 때 중앙은행 유동성 요구가 급증한다. 여기서 무엇을 물어야 하는가?",
-                    "en": "Card payments and bank transfers handle everyday transactions, but in financial panic demand for central-bank liquidity jumps. What should be asked?"
+                    "ko": "Bank of England가 평상시와 압박기에 다른 힘을 갖는 이유는 무엇인가?",
+                    "en": "Why does the Bank of England have different power in normal times and times of pressure?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 결제제도는 고전적 신용 분석을 거의 대체한다고 본다.",
-                      "이자율과 지급수단 수요는 따로 움직일 뿐이다.",
-                      "평상시 신용수단이 유통수단을 대신하는 조건과, 위기 때 최종 지급수단 요구가 다시 나타나는 조건을 함께 물어야 한다.",
-                      "위기 때에는 더 많은 지급약속만 있으면 충분하다."
+                      "평상시에는 민간은행과 bill-broker가 할인수요를 흡수하지만, 압박기에는 이들이 중앙은행에 의존하게 되기 때문이다.",
+                      "평상시에는 금 준비가 필요하고 압박기에는 금 준비 기능이 사라지기 때문이다.",
+                      "압박기에는 모든 대출이 장기 고정자본 대출로 바뀌어 할인율이 의미를 잃기 때문이다.",
+                      "민간은행은 위기 때 은행권을 발행할 수 있어 중앙은행의 역할을 대신하기 때문이다."
                     ],
                     "en": [
-                      "Modern cases have no relation to analysis of the credit system.",
-                      "Interest rates and demand for means of payment move separately.",
-                      "Ask both under what conditions credit instruments replace means of circulation in normal times and under what conditions demand for final means of payment returns in crisis.",
-                      "In crisis more payment promises are sufficient."
+                      "In normal times private banks and bill-brokers absorb discount demand, but in pressure they become dependent on the central bank.",
+                      "Gold reserves are needed in normal times, while their function disappears in pressure.",
+                      "In pressure, all loans become long-term fixed-capital loans, so the discount rate loses meaning.",
+                      "Private banks can issue notes during crisis and replace the central bank’s role."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "현대적 결제수단도 지급관계의 바깥에 있지 않다. 위기 때 무엇이 최종적으로 받아들여지는지가 신용의 한계를 드러낸다.",
-                    "en": "Modern payment instruments are not outside payment relations. What is finally accepted in crisis reveals the limit of credit."
+                    "ko": "33장은 중앙은행 권력이 항상 같은 방식으로 작동하지 않음을 보여준다. 시장이 막힐 때 최종 할인처가 되는 능력이 결정적이다.",
+                    "en": "Chapter 33 shows that central-bank power does not operate in the same way at all times. Its ability to become the final discounting point matters when markets seize up."
                   },
                   "points": 3
                 },
@@ -30890,27 +30876,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장이 3권의 신용론에서 맡는 역할은 무엇인가?",
-                    "en": "What role does this chapter play in Volume III’s theory of credit?"
+                    "ko": "33장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 33?"
                   },
                   "choices": {
                     "ko": [
-                      "이 장은 앞뒤 논의와의 연결을 약하게 본다.",
-                      "수입형태를 생산관계와 분리된 회계 항목으로 본다.",
-                      "화폐와 신용을 모두 단순한 유통 편의로만 본다.",
-                      "신용제도가 자본주의 유통을 넓히지만 화폐의 최종 지급수단 기능을 폐지하지 못한다는 점을 분명히 한다."
+                      "신용제도 속 화폐유통을 은행권 수량이 아니라 청산, 예금, 할인, 중앙은행 권력의 결합으로 설명한다.",
+                      "신용제도가 발전할수록 화폐의 지급수단 기능이 사라진다는 결론을 제시한다.",
+                      "고액권 감소를 현실자본 증가의 직접 지표로 삼아 금융통계를 단순화한다.",
+                      "은행 이윤을 생산과 분리된 순수 기술보수로 설명한다."
                     ],
                     "en": [
-                      "This chapter is not connected to the surrounding argument.",
-                      "Income forms are unrelated to production relations.",
-                      "The difference between money and credit need not be analysed.",
-                      "It clarifies that the credit system expands capitalist circulation but cannot abolish money’s function as final means of payment."
+                      "It explains money circulation in the credit system through clearing, deposits, discounting, and central-bank power, not banknote quantity alone.",
+                      "It concludes that as credit develops, money’s function as means of payment disappears.",
+                      "It takes fewer large notes as a direct index of real-capital growth and simplifies financial statistics.",
+                      "It explains bank profit as a pure technical reward separate from production."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이 장은 신용을 단순한 효율성으로 보지 않게 한다. 신용은 유통을 확장하는 동시에 위기의 지급압력을 더 복잡하게 만든다.",
-                    "en": "The chapter prevents credit from being seen as mere efficiency. Credit expands circulation while making the payment pressure of crisis more complex."
+                    "ko": "33장은 34장의 통화원리 비판을 위한 실증적 기반이다. 실제 유통수단의 운동은 은행권 발행량보다 훨씬 복합적이다.",
+                    "en": "Chapter 33 provides the empirical basis for the critique of the currency principle in Chapter 34. The movement of means of circulation is far more complex than banknote issue."
                   },
                   "points": 3
                 }
@@ -30983,27 +30969,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "통화원리는 은행권을 어떻게 이해했는가?",
-                    "en": "How did the currency principle understand banknotes?"
+                    "ko": "34장에서 통화원리의 핵심 주장은 무엇인가?",
+                    "en": "What is the core claim of the currency principle in Chapter 34?"
                   },
                   "choices": {
                     "ko": [
-                      "은행권을 금속화폐의 단순한 대리물처럼 보고, 발행량을 금 보유 증감에 맞추려 했다.",
-                      "신용이나 이자는 대체로 생산관계와 무관한 기술 문제다.",
-                      "화폐가 있으면 상품판매와 지급위기는 사라진다.",
-                      "은행권력만으로 시장가격과 지급압력을 설명할 수 있다고 본다."
+                      "은행권 유통을 금속화폐 유통처럼 다루고, 금 유출입에 맞춰 발행량을 조절해야 한다는 주장이다.",
+                      "신용제도는 은행권 수량과 별개이므로 법적 규제가 필요 없다는 주장이다.",
+                      "상품가격은 생산조건보다 은행가의 도덕성에서 주로 나온다는 주장이다.",
+                      "중앙은행은 어음 할인보다 소매거래용 동전 공급에 집중해야 한다는 주장이다."
                     ],
                     "en": [
-                      "It treated banknotes as simple representatives of metallic money and tried to match their issue to changes in gold reserves.",
-                      "Credit or interest is always a technical issue unrelated to production relations.",
-                      "If money exists, commodity sale and payment crisis disappear.",
-                      "It explains market prices and payment pressure by banking power alone."
+                      "It treats banknote circulation like metallic circulation and argues that note issue should adjust to gold inflows and outflows.",
+                      "It argues that the credit system is separate from banknote quantity and needs no legal regulation.",
+                      "It claims commodity prices arise mainly from bankers’ morality rather than production conditions.",
+                      "It argues the central bank should focus on small coin for retail trade rather than bill discounting."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "통화원리는 지폐와 금의 관계를 기계적으로 보았다. 마르크스는 이 관점이 신용제도의 실제 복잡성을 축소한다고 비판한다.",
-                    "en": "The currency principle saw the relation between notes and gold mechanically. Marx criticizes it for reducing the real complexity of the credit system."
+                    "ko": "마르크스는 통화원리가 리카도의 화폐론을 신용제도에 기계적으로 적용했다고 본다. 은행권 수량을 위기의 핵심 원인처럼 다룬 점이 문제다.",
+                    "en": "Marx argues that the currency principle mechanically applied Ricardo’s money theory to the credit system. It treated banknote quantity as the central cause of crisis."
                   },
                   "points": 2
                 },
@@ -31011,27 +30997,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "1844년 영국 은행법은 어떤 방식으로 통화원리를 제도화했는가?",
-                    "en": "How did the Bank Act of 1844 institutionalize the currency principle?"
+                    "ko": "1844년 영국 은행법은 통화원리를 어떻게 제도화했는가?",
+                    "en": "How did the English Bank Act of 1844 institutionalize the currency principle?"
                   },
                   "choices": {
                     "ko": [
-                      "발행부와 은행부를 나누고 은행권 발행을 금 보유와 엄격히 연결하려 했다.",
-                      "모든 지급은 항상 금속화폐로만 이루어진다.",
-                      "신용관계는 생산과 유통에 아무 영향을 주지 않는다.",
-                      "이자는 대체로 노동자의 임금과 같은 말이다."
+                      "Bank of England를 발행부와 은행부로 나누고, 추가 은행권 발행을 금 보유와 연결했다.",
+                      "상업어음의 만기 구조를 모두 없애고 모든 거래를 현금 결제로 바꾸었다.",
+                      "민간은행의 예금과 중앙은행의 금 준비를 하나의 자기자본 항목으로 합쳤다.",
+                      "금 유출이 있을 때 상품가격을 법정가격에 가깝게 안정시키려 했다."
                     ],
                     "en": [
-                      "It separated the issue department from the banking department and tried to strictly connect note issue to gold reserves.",
-                      "All payments are always made only in metallic money.",
-                      "Credit relations have no effect on production and circulation.",
-                      "Interest is always another name for workers’ wages."
+                      "It divided the Bank of England into issue and banking departments and linked additional note issue to gold reserves.",
+                      "It abolished all maturity structures of commercial bills and turned all trade into cash settlement.",
+                      "It merged private-bank deposits and central-bank gold reserves into one equity item.",
+                      "When gold drained, it tried to stabilize commodity prices near legal prices."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "법은 은행권 발행을 금 보유량에 묶어 위기를 통제하려 했다. 하지만 신용위기는 은행권만이 아니라 예금, 어음, 대출, 지급수단 수요 전체에서 일어난다.",
-                    "en": "The Act tried to control crisis by tying note issue to gold reserves. But credit crisis occurs not only in notes, but across deposits, bills, loans, and demand for means of payment."
+                    "ko": "법은 발권을 금 보유에 묶으면 신용위기를 통제할 수 있다고 보았다. 마르크스와 엥겔스는 이 구분이 실제 위기에서 작동하지 못했다고 본다.",
+                    "en": "The Act assumed that tying note issue to gold reserves could control credit crisis. Marx and Engels argue that this division failed in actual crisis."
                   },
                   "points": 2
                 },
@@ -31039,27 +31025,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "공황을 “은행권이 너무 많이 발행된 탓”으로만 보면 무엇을 놓치는가?",
-                    "en": "What is missed if panic is explained only as the result of too many banknotes being issued?"
+                    "ko": "공황을 지폐 과잉으로 설명하는 방식의 약점은 무엇인가?",
+                    "en": "What is weak about explaining crisis by over-issue of paper money?"
                   },
                   "choices": {
                     "ko": [
-                      "기술이나 지폐 수량만 보면 모든 문제가 설명된다.",
-                      "예금, 어음, 할인시장, 지급연쇄, 대부자본 수요가 함께 움직인다는 점을 놓친다.",
-                      "신용위기를 국내 통화량 문제로만 좁혀 본다.",
-                      "이자가 있으면 어떤 사회든 곧바로 자본주의다."
+                      "과잉생산, 상품가격 하락, 신용수축, 지급기한 압박을 은행권 수량 문제로 바꾸어 버린다.",
+                      "지폐 과잉은 상품생산의 내부 모순보다 더 넓은 원인을 함께 분석한다.",
+                      "은행권 수량 분석은 예금, 어음, 금 준비의 운동을 지나치게 복잡하게 만든다.",
+                      "지폐 발행을 생산수단의 물리적 증가와 구분해 위기를 더 정밀하게 설명한다."
                     ],
                     "en": [
-                      "Technology or paper quantity explains every problem.",
-                      "It misses how deposits, bills, discount markets, payment chains, and demand for loanable capital move together.",
-                      "The world market and payment dates are unrelated to credit crisis.",
-                      "If interest exists, every society is already capitalist."
+                      "It turns overproduction, falling commodity prices, credit contraction, and payment pressure into a problem of banknote quantity.",
+                      "Over-issue of paper money analyses broader causes than the internal contradictions of commodity production.",
+                      "Analysis of banknote quantity makes deposits, bills, and gold reserves overly complex.",
+                      "It distinguishes note issue from physical growth of means of production and explains crisis more precisely."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "은행권 수량은 한 부분일 뿐이다. 위기 때 중요한 것은 서로 물린 지급 약속과 현금화 요구가 동시에 압박을 만든다는 점이다.",
-                    "en": "The quantity of notes is only one part. In crisis, interlocked payment promises and demands for cash conversion create pressure together."
+                    "ko": "마르크스는 가격 하락을 돈가치 상승이라는 말로 바꾸는 것이 설명이 아니라고 비판한다. 원인은 생산과 신용의 모순 속에서 찾아야 한다.",
+                    "en": "Marx criticizes the move of translating falling prices into rising money-value as no explanation. The cause must be sought in contradictions of production and credit."
                   },
                   "points": 2
                 },
@@ -31067,27 +31053,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "은행권 발행 제한이 있었는데도 위기 때 법을 일시 정지해야 했다. 이 사례는 무엇을 보여주는가?",
-                    "en": "A legal limit on note issue existed, but in crisis the law had to be suspended. What does this show?"
+                    "ko": "1847년과 1857년에 은행법을 정지해야 했던 사실은 무엇을 보여주는가?",
+                    "en": "What is shown by the suspension of the Bank Act in 1847 and 1857?"
                   },
                   "choices": {
                     "ko": [
-                      "위기를 개별 거래 실패로만 보고 지급연쇄의 구조를 약하게 본다.",
-                      "채무의 만기와 지급수단 수요를 부차적 현상으로 본다.",
-                      "기계적 통화규칙이 실제 신용경색과 지급수단 수요를 감당하지 못했다는 점이다.",
-                      "위기 때에도 지급약속이 평상시와 같은 신뢰를 유지한다고 본다."
+                      "위기 때 기계적 발권 제한이 지급수단 수요와 신용경색을 감당하지 못했다.",
+                      "법의 정지는 은행권 발행 제한이 평상시와 위기 모두에서 충분했음을 입증했다.",
+                      "위기 때 상품시장은 비어 있었고 생산수단 부족이 단일 원인으로 드러났다.",
+                      "금 보유가 줄어도 예금 지급과 어음 할인은 법의 영향을 받지 않았다."
                     ],
                     "en": [
-                      "The case is merely an individual mistake unrelated to social relations.",
-                      "Means of payment or debt relations need not be analysed.",
-                      "It shows that mechanical currency rules could not handle real credit contraction and demand for means of payment.",
-                      "In crisis every payment promise automatically becomes safe."
+                      "In crisis, mechanical limits on note issue could not handle demand for means of payment and credit stringency.",
+                      "The suspension proved that limits on note issue were sufficient in both calm and crisis.",
+                      "In crisis, markets were empty and shortage of means of production appeared as the sole cause.",
+                      "Even when gold reserves fell, deposit payment and bill discounting were unaffected by the law."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "위기가 오면 문제는 규칙의 깔끔함이 아니라 지급수단을 실제로 확보할 수 있는가로 이동한다. 그래서 법 자체가 예외를 필요로 했다.",
-                    "en": "In crisis the problem shifts from the neatness of rules to actual access to means of payment. That is why the law itself required exception."
+                    "ko": "법은 위기를 막으려 했지만 위기 때에는 예외 조치가 필요했다. 이것이 통화원리의 실제 실패를 보여주는 핵심 사례다.",
+                    "en": "The law aimed to prevent crisis, yet crisis required exceptional suspension. This is the key practical failure of the currency principle."
                   },
                   "points": 2
                 },
@@ -31095,27 +31081,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 통화정책 비판에서 무엇을 보여주는가?",
-                    "en": "What does this chapter show in its critique of monetary policy?"
+                    "ko": "34장은 35장의 귀금속과 환율 논의로 어떻게 이어지는가?",
+                    "en": "How does Chapter 34 lead into Chapter 35 on precious metal and exchange rates?"
                   },
                   "choices": {
                     "ko": [
-                      "앞의 생산관계 분석을 접고 통화 현상만 독립적으로 본다.",
-                      "신용과 이자를 역사적 생산관계보다 보편적 금융기술로 본다.",
-                      "이 장의 논점을 뒤의 지대와 수입형태 분석으로 이어 보지 않는다.",
-                      "신용제도의 모순을 은행권 수량과 금 보유의 기계적 관계만으로 해결하려는 정책적 환상을 비판한다."
+                      "국내 발권규칙의 한계를 보인 뒤, 금 준비와 국제 지급압력이 신용제도에 미치는 효과로 넘어간다.",
+                      "은행법이 국제 지급문제를 해결했음을 보인 뒤, 환율을 부속 현상으로 다룬다.",
+                      "은행권 수량이 상품가격을 직접 결정한다는 결론에서 금 이동 분석을 닫는다.",
+                      "국내 소매유통의 동전 수요가 세계시장 결제보다 우선한다는 논점으로 넘어간다."
                     ],
                     "en": [
-                      "It cancels all previous discussion and leaves only money.",
-                      "It treats credit and interest as universal financial techniques rather than historical production relations.",
-                      "This chapter is not connected to the later argument.",
-                      "It criticizes the policy illusion that contradictions of the credit system can be solved solely by a mechanical relation between note quantity and gold reserves."
+                      "After showing the limits of domestic note-issue rules, it moves to the effects of gold reserves and international payment pressure on credit.",
+                      "After showing that the Bank Act solved international payment problems, it treats exchange rates as secondary.",
+                      "It closes the analysis of gold movement by concluding that banknote quantity directly determines commodity prices.",
+                      "It moves to the claim that small coin demand in domestic retail circulation comes before world-market settlement."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 통화량을 무시하지 않는다. 다만 신용위기를 지폐 수량 문제 하나로 환원하면 실제 지급관계와 생산관계가 가려진다고 본다.",
-                    "en": "Marx does not ignore the quantity of currency. He argues that reducing credit crisis to note quantity alone hides real payment and production relations."
+                    "ko": "34장은 국내 통화규칙이 충분하지 않음을 보인다. 35장은 금과 환율을 통해 신용제도가 세계시장에 묶여 있음을 다룬다.",
+                    "en": "Chapter 34 shows that domestic currency rules are insufficient. Chapter 35 treats gold and exchange rates to show how the credit system is tied to the world market."
                   },
                   "points": 2
                 }
@@ -31133,27 +31119,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "은행권을 금 보유에 맞춰 통제하면 왜 위기가 해결되지 않는가?",
-                    "en": "Why is crisis not solved by controlling banknotes according to gold reserves?"
+                    "ko": "리카도식 화폐론을 신용제도에 적용할 때 생기는 문제는 무엇인가?",
+                    "en": "What problem arises when Ricardian money theory is applied to the credit system?"
                   },
                   "choices": {
                     "ko": [
-                      "실제 위기는 은행권만이 아니라 예금, 어음, 대출, 담보, 지급연쇄 전체에서 전개되기 때문이다.",
-                      "화폐와 신용의 차이를 지급기한의 차이가 아니라 유통수단의 종류 차이로만 본다.",
-                      "이자 낳는 자본의 오래된 형태를 산업자본 이후의 파생물로만 본다.",
-                      "세계시장에서는 국내 신용관계와 같은 지급 문제가 반복되지 않는다고 본다."
+                      "금속화폐 유통 법칙을 은행권과 신용화폐에 그대로 옮겨, 신용위기의 특수한 지급관계를 지운다.",
+                      "신용화폐를 분석하면서 예금과 어음의 만기 구조를 지나치게 강조한다.",
+                      "금 유출과 환율을 생산가격 형성과 연결해 통화량 설명을 약화한다.",
+                      "은행권 발행량보다 신용관계의 질적 차이를 앞세워 법적 통제를 강화한다."
                     ],
                     "en": [
-                      "Because real crisis unfolds not only in banknotes but across deposits, bills, loans, collateral, and payment chains.",
-                      "Money and credit always perform exactly the same function.",
-                      "Interest first appears only under capitalism.",
-                      "In the world market the problem of means of payment disappears."
+                      "It transfers laws of metallic circulation directly to banknotes and credit-money, erasing the specific payment relations of credit crisis.",
+                      "It overemphasizes deposits and the maturity structure of bills when analysing credit-money.",
+                      "It connects gold drain and exchange rates to prices of production and weakens quantity-of-money explanations.",
+                      "It places qualitative differences in credit relations ahead of note issue and strengthens legal control."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "통화원리는 보이는 지폐량에 집중한다. 그러나 자본주의 신용은 훨씬 넓은 지급 약속의 구조로 움직인다.",
-                    "en": "The currency principle focuses on the visible quantity of notes. Capitalist credit moves through a much wider structure of payment promises."
+                    "ko": "34장은 리카도 화폐론의 단순 반복이 아니라 그 이론이 은행법의 실험으로 바뀐 결과를 비판한다. 신용제도는 금속유통과 같은 방식으로 움직이지 않는다.",
+                    "en": "Chapter 34 criticizes not simply Ricardo’s money theory but its transformation into a bank-law experiment. The credit system does not move like metallic circulation."
                   },
                   "points": 3
                 },
@@ -31161,27 +31147,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "통화원리 비판에서 함께 보아야 할 요소들은 무엇인가?",
-                    "en": "What elements must be read together in criticizing the currency principle?"
+                    "ko": "Hubbard의 표가 통화원리 비판에 제공하는 세부 논점은 무엇인가?",
+                    "en": "What detailed point do Hubbard’s tables provide for the critique of the currency principle?"
                   },
                   "choices": {
                     "ko": [
-                      "신용관계를 지폐 수량의 문제로만 좁혀 본다.",
-                      "은행권 발행, 예금통화, 상업어음, 할인율, 금 유출입, 지급수단 수요를 함께 보아야 한다.",
-                      "신용관계를 현재의 잔액만으로 보고 만기 구조를 약하게 본다.",
-                      "이자율을 대부자본 수급과 경쟁이 아니라 중립적 기술비율로 본다."
+                      "주요 상품가격 변화는 금 수출입이나 이자율과 단순히 같은 방향으로 움직이지 않았다.",
+                      "금 준비가 줄 때 모든 주요 상품가격이 같은 폭으로 상승했다.",
+                      "할인율이 낮아질 때 상품가격과 은행권 유통량이 같은 비율로 줄었다.",
+                      "상품가격은 금 준비보다 은행권 발행부의 법정 한도에 직접 묶여 있었다."
                     ],
                     "en": [
-                      "It narrows credit relations to the quantity of paper money.",
-                      "One must read note issue, deposit money, commercial bills, discount rate, gold flows, and demand for means of payment together.",
-                      "It reads credit only as a current balance and weakens the importance of maturity structure.",
-                      "It treats the interest rate as a neutral technical ratio rather than an outcome of loanable-capital supply, demand, and competition."
+                      "Changes in major commodity prices did not simply move in the same direction as gold imports/exports or interest rates.",
+                      "When gold reserves fell, all major commodity prices rose by the same amount.",
+                      "When the discount rate fell, commodity prices and banknote circulation fell in the same ratio.",
+                      "Commodity prices were directly tied to the legal limit of the issue department rather than gold reserves."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "어느 하나만 떼어 내면 위기의 압력을 설명하기 어렵다. 마르크스는 통화량보다 넓은 신용관계의 운동을 본다.",
-                    "en": "Isolating one element makes the pressure of crisis hard to explain. Marx looks at the movement of credit relations broader than currency quantity."
+                    "ko": "이 세부는 통화원리의 가격 설명을 흔든다. 금 이동은 이자율과 연결될 수 있지만 상품가격 전체를 기계적으로 설명하지 못한다.",
+                    "en": "This detail challenges the currency principle’s price explanation. Gold movements may connect to interest rates, but they do not mechanically explain commodity prices as a whole."
                   },
                   "points": 3
                 },
@@ -31189,27 +31175,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“지폐 남발만 막으면 공황을 막을 수 있다”는 설명은 왜 부족한가?",
-                    "en": "Why is it insufficient to say that preventing over-issue of paper money prevents panic?"
+                    "ko": "Palmer가 1844년 법 아래 “어떤 이자율도 기꺼이 지불했을 것”이라고 말한 대목은 무엇을 보여주는가?",
+                    "en": "What is shown by Palmer’s remark that under the 1844 Act firms would have paid almost any rate of interest?"
                   },
                   "choices": {
                     "ko": [
-                      "공황은 은행권 발행량을 알맞게 조절하면 생산과 신용의 긴장 없이 설명된다고 본다.",
-                      "신용의 확대가 최종 지급능력 문제를 충분히 흡수한다고 본다.",
-                      "과잉생산, 신용팽창, 담보가격 하락, 지급연쇄 단절을 지폐 수량 문제로 환원하기 때문이다.",
-                      "상품 판매의 지연과 지급 약속의 만기를 서로 분리해 본다."
+                      "법적 발권 제한이 내부 신용불안에서 지급수단을 극도로 귀하게 만들어 이자율 압박을 키웠다는 점이다.",
+                      "높은 이자율이 생산수단의 풍부함을 표시해 위기 완화를 돕는다는 점이다.",
+                      "은행권 발행 제한이 민간 할인시장의 신용공급을 안정적으로 확대했다는 점이다.",
+                      "위기 때 기업들이 상품판매보다 장기투자를 선호했다는 점이다."
                     ],
                     "en": [
-                      "Panic can be explained by proper regulation of note issue without examining tensions in production and credit.",
-                      "It assumes that credit expansion sufficiently absorbs the problem of final capacity to pay.",
-                      "Because it reduces overproduction, credit expansion, falling collateral prices, and broken payment chains to the quantity of paper money.",
-                      "It separates delays in commodity sale from the maturities of payment promises."
+                      "Legal limits on note issue made means of payment extremely scarce under internal distrust, intensifying interest-rate pressure.",
+                      "A high interest rate indicated abundant means of production and helped relieve crisis.",
+                      "Limits on note issue steadily expanded credit supply in the private discount market.",
+                      "In crisis, firms preferred long-term investment to commodity sale."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "공황은 유통의 표면에서만 생기지 않는다. 생산과 신용, 지급관계가 함께 꼬일 때 통화규칙은 오히려 압박을 키울 수 있다.",
-                    "en": "Panic does not arise only on the surface of circulation. When production, credit, and payments are entangled, currency rules can intensify pressure."
+                    "ko": "이 증언은 34장의 디테일한 반증이다. 법은 신용불안을 진정시키기보다 지급수단 압박과 고금리를 강화할 수 있었다.",
+                    "en": "This testimony is a detailed counterexample in Chapter 34. The law could intensify pressure for means of payment and high interest instead of calming credit distrust."
                   },
                   "points": 3
                 },
@@ -31217,27 +31203,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "은행 규제가 현금성 자산을 요구해도 단기자금 차환과 담보가격 붕괴가 동시에 오면 위기가 터진다. 여기서 무엇을 보아야 하는가?",
-                    "en": "Even when banking regulation requires liquid assets, crisis erupts if short-term funding rollover and collateral prices collapse together. What should be examined?"
+                    "ko": "스코틀랜드 은행들이 금 보유를 강제당한 사례는 무엇을 보여주는가?",
+                    "en": "What is shown by the case of Scottish banks being forced to hold gold?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 결제제도는 고전적 신용 분석을 거의 대체한다고 본다.",
-                      "이자율과 지급수단 수요는 따로 움직일 뿐이다.",
-                      "현금성 규제만이 아니라 예금인출, 단기자금 차환, 담보가격 하락, 지급연쇄 붕괴가 함께 만드는 압력을 보아야 한다.",
-                      "위기 때에는 더 많은 지급약속만 있으면 충분하다."
+                      "현지 유통에서 금을 거의 쓰지 않아도 법은 금을 묶어 두게 만들었고, 그 금은 실제 지급 필요와 어긋날 수 있었다.",
+                      "스코틀랜드에서 금 유통이 활발해져 소액권 유통을 완전히 대체했다.",
+                      "금 보유 강제는 런던의 금 준비 압박을 줄여 외환 지급을 안정시켰다.",
+                      "지방 은행의 금 보유는 예금부채를 자기자본으로 바꾸는 역할을 했다."
                     ],
                     "en": [
-                      "Modern cases have no relation to analysis of the credit system.",
-                      "Interest rates and demand for means of payment move separately.",
-                      "One must examine not only liquidity regulation but the combined pressure of deposit withdrawals, short-term refinancing, falling collateral prices, and collapsing payment chains.",
-                      "In crisis more payment promises are sufficient."
+                      "Even where gold was scarcely used in local circulation, the law tied up gold, and that reserve could diverge from actual payment needs.",
+                      "Gold circulation became active in Scotland and completely replaced small-note circulation.",
+                      "Forced gold holding reduced pressure on London gold reserves and stabilized foreign payments.",
+                      "Gold held by country banks turned deposit liabilities into equity."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "현대 사례도 마르크스의 문제의식을 반복한다. 통화 규칙 하나로 신용관계 전체의 불안을 처리할 수 없다.",
-                    "en": "The modern case repeats Marx’s problem. One monetary rule cannot handle the instability of the whole credit relation."
+                    "ko": "엥겔스가 보탠 이 사례는 통화규칙의 기계성을 잘 보여준다. 사람들은 금을 쓰지 않는데, 법은 금을 준비금으로 묶어 두었다.",
+                    "en": "This example added by Engels shows the mechanical character of currency rules. People did not use gold locally, yet the law tied it up as reserve."
                   },
                   "points": 3
                 },
@@ -31245,27 +31231,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장이 다음의 귀금속·환율 논의로 이어지는 이유는 무엇인가?",
-                    "en": "Why does this chapter lead into the discussion of precious metals and exchange rates?"
+                    "ko": "34장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 34?"
                   },
                   "choices": {
                     "ko": [
-                      "이 장은 앞뒤 논의와의 연결을 약하게 본다.",
-                      "수입형태를 생산관계와 분리된 회계 항목으로 본다.",
-                      "화폐와 신용을 모두 단순한 유통 편의로만 본다.",
-                      "국내 통화규칙만으로 신용위기를 설명할 수 없고, 금 유출과 국제 지급압력까지 보아야 하기 때문이다."
+                      "신용위기를 은행권과 금 보유의 비율 문제로 축소하는 통화원리를 이론과 실제 양쪽에서 비판한다.",
+                      "신용제도의 모든 불안을 발권은행의 기술 부족으로 환원해 정책 해법을 단순화한다.",
+                      "은행법의 성공을 통해 금속화폐 유통법칙이 신용제도에도 그대로 적용됨을 보인다.",
+                      "상품가격과 금 준비의 직접 비례를 입증해 세계시장 분석의 필요를 줄인다."
                     ],
                     "en": [
-                      "This chapter is not connected to the surrounding argument.",
-                      "Income forms are unrelated to production relations.",
-                      "The difference between money and credit need not be analysed.",
-                      "Because domestic currency rules cannot explain credit crisis by themselves; gold outflows and international payment pressure must also be examined."
+                      "It criticizes the currency principle, theoretically and practically, for reducing credit crisis to the ratio of banknotes and gold reserves.",
+                      "It simplifies policy by reducing all credit instability to technical failure by issuing banks.",
+                      "It shows the success of bank legislation and proves metallic-currency laws apply directly to credit.",
+                      "It proves direct proportionality between commodity prices and gold reserves, reducing the need for world-market analysis."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "은행법 비판은 국내 제도 안에서 끝나지 않는다. 금과 환율 문제는 신용제도가 세계시장과 어떻게 연결되는지 보여준다.",
-                    "en": "The critique of the Bank Act does not end within domestic institutions. Gold and exchange rates show how the credit system is connected to the world market."
+                    "ko": "34장은 은행법 논쟁을 통해 신용제도의 범주를 다시 세운다. 위기는 지폐 수량이 아니라 생산, 신용, 지급관계의 결합에서 이해되어야 한다.",
+                    "en": "Chapter 34 reestablishes the categories of the credit system through the bank-law debate. Crisis must be understood through production, credit, and payment relations, not note quantity."
                   },
                   "points": 3
                 }
@@ -31338,27 +31324,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "국내에서는 신용이 금속화폐를 줄이는 듯한데, 국제 결제에서는 왜 금이 다시 중요해지는가?",
-                    "en": "Credit seems to reduce metallic money domestically, so why does gold become important again in international settlement?"
+                    "ko": "35장에서 금 준비의 세 가지 기능으로 적절한 것은 무엇인가?",
+                    "en": "Which are proper functions of the gold reserve in Chapter 35?"
                   },
                   "choices": {
                     "ko": [
-                      "국제 결제에서 금은 최종 지급수단이자 세계화폐로 요구될 수 있기 때문이다.",
-                      "신용이나 이자는 대체로 생산관계와 무관한 기술 문제다.",
-                      "화폐가 있으면 상품판매와 지급위기는 사라진다.",
-                      "은행권력만으로 시장가격과 지급압력을 설명할 수 있다고 본다."
+                      "국제 지급 준비, 국내 금속유통의 완충, 예금 지급과 은행권 태환의 보증이다.",
+                      "임금률 결정, 지대율 산정, 생산가격의 법정 고정이다.",
+                      "소매 동전 공급, 노동자 소비 관리, 상품재고 보관이다.",
+                      "주식 배당 지급, 국채 원금 소각, 공장 설비 감가상각이다."
                     ],
                     "en": [
-                      "Because gold can be demanded as final means of payment and world money in international settlement.",
-                      "Credit or interest is always a technical issue unrelated to production relations.",
-                      "If money exists, commodity sale and payment crisis disappear.",
-                      "It explains market prices and payment pressure by banking power alone."
+                      "Reserve for international payments, buffer for domestic metallic circulation, and security for deposits and convertibility of notes.",
+                      "Determination of wage rates, calculation of rent rates, and legal fixing of prices of production.",
+                      "Supply of retail coin, management of worker consumption, and storage of commodity inventories.",
+                      "Payment of stock dividends, cancellation of public debt principal, and depreciation of factory equipment."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "국내 신용은 국경 밖의 지급문제를 자동으로 없애지 못한다. 세계시장에서는 결제의 최종성이 다시 문제가 된다.",
-                    "en": "Domestic credit does not automatically abolish payment problems beyond the border. In the world market, final settlement becomes a problem again."
+                    "ko": "마르크스는 금 준비를 하나의 단순한 금고로 보지 않는다. 같은 금 보유도 세계화폐, 국내 유통, 은행 지급능력이라는 서로 다른 기능을 수행한다.",
+                    "en": "Marx does not treat the gold reserve as a simple vault. The same reserve performs different functions as world money, domestic circulation buffer, and banking security."
                   },
                   "points": 2
                 },
@@ -31366,27 +31352,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "불리한 환율과 금 유출은 국내 신용시장에 어떤 압력을 줄 수 있는가?",
-                    "en": "What pressure can an unfavourable exchange rate and gold outflow put on the domestic credit market?"
+                    "ko": "금 유출이 곧 실제 공황의 원인이라고 말하기 어려운 이유는 무엇인가?",
+                    "en": "Why is it difficult to say that gold drain is simply the cause of real crisis?"
                   },
                   "choices": {
                     "ko": [
-                      "은행 준비금을 줄이고 할인율을 높이며 대부자본과 지급수단 압박을 키울 수 있다.",
-                      "모든 지급은 항상 금속화폐로만 이루어진다.",
-                      "신용관계는 생산과 유통에 아무 영향을 주지 않는다.",
-                      "이자는 대체로 노동자의 임금과 같은 말이다."
+                      "여러 사례에서 금 유출이 멈춘 뒤에 실제 상업공황이 터졌고, 금 유출은 위기의 전조나 국면으로 나타났다.",
+                      "금 유출은 상품가격과 느슨하게 연결되어 이자율에는 제한된 영향만 준다.",
+                      "금 유출은 국내 신용시장에 들어온 대부자본 증가를 뜻한다.",
+                      "금 유출이 나타나면 상품시장의 과잉재고가 즉시 해소된다."
                     ],
                     "en": [
-                      "They can reduce bank reserves, raise the discount rate, and intensify pressure on loanable capital and means of payment.",
-                      "All payments are always made only in metallic money.",
-                      "Credit relations have no effect on production and circulation.",
-                      "Interest is always another name for workers’ wages."
+                      "In several cases, the real commercial crash came after the gold drain had stopped; the drain appeared as a precursor or phase of crisis.",
+                      "Gold drain is loosely connected to commodity prices and gives only limited pressure to interest rates.",
+                      "Gold drain means an increase of loan capital entering the domestic credit market.",
+                      "When gold drains occur, overstocked commodity markets are immediately cleared."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "금 유출은 단순한 금고의 변화가 아니다. 은행 준비, 이자율, 대부자본 시장을 통해 국내 신용조건을 흔든다.",
-                    "en": "Gold outflow is not a mere change in vault contents. Through bank reserves, interest rates, and the loanable-capital market, it shakes domestic credit conditions."
+                    "ko": "35장은 1847년과 1857년 같은 사례에서 금 유출과 실제 공황의 시차를 강조한다. 금 유출은 원인 하나가 아니라 신용위기의 한 표현이다.",
+                    "en": "Chapter 35 stresses the time lag between gold drain and the real crash in cases such as 1847 and 1857. Gold drain is one expression of credit crisis, not a single cause."
                   },
                   "points": 2
                 },
@@ -31394,27 +31380,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "환율 문제를 “지폐가 너무 많아서 생긴 일”로만 보면 무엇을 놓치는가?",
-                    "en": "What is missed if exchange-rate trouble is explained only by saying there is too much paper money?"
+                    "ko": "불리한 환율이 국내 신용시장에 압력을 주는 경로는 무엇인가?",
+                    "en": "How can an unfavorable exchange rate pressure the domestic credit market?"
                   },
                   "choices": {
                     "ko": [
-                      "기술이나 지폐 수량만 보면 모든 문제가 설명된다.",
-                      "무역수지, 국제 지급기한, 금 이동, 신용상태, 이자율 차이가 함께 작동한다는 점이다.",
-                      "신용위기를 국내 통화량 문제로만 좁혀 본다.",
-                      "이자가 있으면 어떤 사회든 곧바로 자본주의다."
+                      "금 준비를 줄이고 할인율 인상을 유도해 지급수단과 대부자본 비용을 압박한다.",
+                      "국내 소매거래의 동전 수요를 줄여 모든 은행의 예금을 늘린다.",
+                      "상품수입을 멈추게 해 생산수단 부족을 즉시 해결한다.",
+                      "주식가격을 명목가에 고정해 담보가치를 안정시킨다."
                     ],
                     "en": [
-                      "Technology or paper quantity explains every problem.",
-                      "It misses how trade balance, international payment dates, gold movements, credit conditions, and interest-rate differences work together.",
-                      "The world market and payment dates are unrelated to credit crisis.",
-                      "If interest exists, every society is already capitalist."
+                      "It can reduce gold reserves and induce higher discount rates, pressuring means of payment and the cost of loan capital.",
+                      "It reduces coin demand in domestic retail trade and increases all bank deposits.",
+                      "It stops commodity imports and immediately resolves shortages of means of production.",
+                      "It fixes share prices at par and stabilizes collateral values."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "환율은 지폐 수량 하나로 설명되지 않는다. 세계시장 지급관계와 국내 신용조건이 함께 움직인다.",
-                    "en": "Exchange rates are not explained by paper quantity alone. World-market payment relations and domestic credit conditions move together."
+                    "ko": "불리한 환율은 단순한 외환 숫자가 아니다. 금 준비, 할인율, 신용조건을 통해 국내 재생산에도 압력을 준다.",
+                    "en": "An unfavorable exchange rate is not a mere foreign-exchange number. Through gold reserves, discount rates, and credit conditions, it pressures domestic reproduction."
                   },
                   "points": 2
                 },
@@ -31422,27 +31408,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "수입대금 결제가 몰리면서 환율이 불리해지고 금이 빠져나가 은행이 할인율을 올린다. 이 사례는 무엇을 보여주는가?",
-                    "en": "Import payments pile up, the exchange rate turns unfavourable, gold flows out, and banks raise the discount rate. What does this show?"
+                    "ko": "무역수지와 지급수지를 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must the balance of trade be distinguished from the balance of payments?"
                   },
                   "choices": {
                     "ko": [
-                      "위기를 개별 거래 실패로만 보고 지급연쇄의 구조를 약하게 본다.",
-                      "채무의 만기와 지급수단 수요를 부차적 현상으로 본다.",
-                      "세계시장 지급관계가 국내 대부자본 시장과 신용조건을 직접 압박할 수 있다는 점이다.",
-                      "위기 때에도 지급약속이 평상시와 같은 신뢰를 유지한다고 본다."
+                      "지급수지는 특정 시점에 만기가 온 결제를 다루므로, 무역수지와 다른 방향의 압력을 만들 수 있다.",
+                      "무역수지는 금 이동과 관련되고 지급수지는 상품가격과 관련되어 서로 접점이 작다.",
+                      "지급수지는 국내 소매거래만 다루고 무역수지는 은행예금만 다룬다.",
+                      "무역수지가 유리하면 지급기한 압박도 같은 시점에 해소된다."
                     ],
                     "en": [
-                      "The case is merely an individual mistake unrelated to social relations.",
-                      "Means of payment or debt relations need not be analysed.",
-                      "It shows that world-market payment relations can directly pressure the domestic loanable-capital market and credit conditions.",
-                      "In crisis every payment promise automatically becomes safe."
+                      "The balance of payments concerns settlements due at a specific time, so it can create pressure different from the balance of trade.",
+                      "The balance of trade relates to gold movement while the balance of payments relates to commodity prices, with little contact between them.",
+                      "The balance of payments deals only with domestic retail trade, while the balance of trade deals only with bank deposits.",
+                      "If the balance of trade is favorable, payment-date pressure is resolved at the same time."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "국제 결제는 국내 금융의 외부 사건이 아니다. 만기와 지급수단 수요가 겹치면 국내 이자율과 신용조건이 압박받는다.",
-                    "en": "International settlement is not external to domestic finance. When maturities and demand for means of payment coincide, domestic interest rates and credit conditions are pressured."
+                    "ko": "35장은 “특정 시점”의 결제가 중요하다고 본다. 수출입 총액보다 당장 결제해야 할 만기가 환율과 금 이동을 흔들 수 있다.",
+                    "en": "Chapter 35 treats settlement at a specific moment as decisive. Due payments can move exchange rates and gold flows more sharply than aggregate exports and imports."
                   },
                   "points": 2
                 },
@@ -31450,27 +31436,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 통화원리 비판 뒤에 어떤 문제를 덧붙이는가?",
-                    "en": "What problem does this chapter add after the critique of the currency principle?"
+                    "ko": "35장은 신용제도 분석에서 어떤 위치를 차지하는가?",
+                    "en": "What place does Chapter 35 occupy in the analysis of the credit system?"
                   },
                   "choices": {
                     "ko": [
-                      "앞의 생산관계 분석을 접고 통화 현상만 독립적으로 본다.",
-                      "신용과 이자를 역사적 생산관계보다 보편적 금융기술로 본다.",
-                      "이 장의 논점을 뒤의 지대와 수입형태 분석으로 이어 보지 않는다.",
-                      "국내 통화규칙만으로는 세계화폐, 금 이동, 국제 지급압력을 설명할 수 없다는 점이다."
+                      "국내 신용과 은행법 논의를 세계화폐, 금 준비, 환율, 국제 지급압력으로 확장한다.",
+                      "국제 지급문제를 국내 은행권 발행량으로 환원해 통화원리를 보완한다.",
+                      "금 준비의 기능을 소매유통의 동전 수요 하나로 좁혀 설명한다.",
+                      "환율을 생산과 신용의 문제에서 떼어 낸 가격표로 다룬다."
                     ],
                     "en": [
-                      "It cancels all previous discussion and leaves only money.",
-                      "It treats credit and interest as universal financial techniques rather than historical production relations.",
-                      "This chapter is not connected to the later argument.",
-                      "Domestic currency rules alone cannot explain world money, gold movements, and international payment pressure."
+                      "It extends the discussion of domestic credit and bank law to world money, gold reserves, exchange rates, and international payment pressure.",
+                      "It supplements the currency principle by reducing international payments to domestic banknote issue.",
+                      "It narrows the function of gold reserves to small-coin demand in retail circulation.",
+                      "It treats exchange rates as price lists detached from production and credit."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용제도는 국내 제도만으로 닫혀 있지 않다. 환율과 금 이동은 자본주의 신용이 세계시장 속에서 흔들린다는 점을 보여준다.",
-                    "en": "The credit system is not closed within domestic institutions. Exchange rates and gold movements show capitalist credit being shaken within the world market."
+                    "ko": "35장은 신용제도가 국내 장부 안에서 닫히지 않음을 보여준다. 세계시장 결제는 금과 환율을 통해 국내 신용조건을 흔든다.",
+                    "en": "Chapter 35 shows that the credit system is not closed within domestic accounts. World-market settlement shakes domestic credit conditions through gold and exchange rates."
                   },
                   "points": 2
                 }
@@ -31488,27 +31474,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "신용이 국내 유통에서 금을 밀어내도 세계시장에서는 어떤 긴장이 남는가?",
-                    "en": "Even when credit displaces gold in domestic circulation, what tension remains in the world market?"
+                    "ko": "금 준비 감소가 항상 금 수출 증가만을 뜻하지 않는 이유는 무엇인가?",
+                    "en": "Why does a decrease in gold reserves not always mean increased gold export alone?"
                   },
                   "choices": {
                     "ko": [
-                      "세계시장 결제에서는 금이나 국제 지급수단이 최종 결제의 형태로 다시 요구될 수 있다.",
-                      "화폐와 신용의 차이를 지급기한의 차이가 아니라 유통수단의 종류 차이로만 본다.",
-                      "이자 낳는 자본의 오래된 형태를 산업자본 이후의 파생물로만 본다.",
-                      "세계시장에서는 국내 신용관계와 같은 지급 문제가 반복되지 않는다고 본다."
+                      "국내 금속유통 확대나 예금 지급 준비 변화도 중앙은행 금 준비를 줄일 수 있기 때문이다.",
+                      "금 준비 감소는 상품가격 상승과 같은 뜻이어서 수출입과 별도 경로를 갖기 때문이다.",
+                      "금이 줄면 같은 금액의 은행권 발행 여지가 커져 준비금 감소를 일부 상쇄한다.",
+                      "금 준비는 중앙은행 장부에 고정되어 실제 이동과 관계가 없기 때문이다."
                     ],
                     "en": [
-                      "In world-market settlement, gold or international means of payment can again be demanded as final settlement.",
-                      "Money and credit always perform exactly the same function.",
-                      "Interest first appears only under capitalism.",
-                      "In the world market the problem of means of payment disappears."
+                      "Expansion of domestic metallic circulation or changes in deposit-payment reserves can also reduce the central bank’s gold reserve.",
+                      "A fall in gold reserves means rising commodity prices and follows a path separate from trade.",
+                      "When gold falls, room for banknote issue in the same amount grows and partly offsets the reserve decrease.",
+                      "Gold reserves are fixed in central-bank books and have no relation to actual movement."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "국내 신용은 세계화폐 기능을 없애지 못한다. 국제 지급의 순간에는 최종 결제가 다시 중요해진다.",
-                    "en": "Domestic credit cannot abolish the function of world money. At the moment of international payment, final settlement becomes important again."
+                    "ko": "35장은 금 준비의 세 기능 때문에 금 이동 해석이 복잡하다고 본다. 국제 유출, 국내 유통, 은행 지급능력을 구분해야 한다.",
+                    "en": "Chapter 35 argues that interpretation of gold movements is complex because the reserve has three functions. International drain, domestic circulation, and banking security must be distinguished."
                   },
                   "points": 3
                 },
@@ -31516,27 +31502,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "환율과 금 이동을 이해하려면 어떤 요소를 함께 보아야 하는가?",
-                    "en": "What elements must be read together to understand exchange rates and gold movements?"
+                    "ko": "1847년 사례에서 금 유출이 멈춘 뒤 10월 공황이 온 세부는 무엇을 말해 주는가?",
+                    "en": "What does the 1847 detail that the crash came in October after the gold drain had stopped show?"
                   },
                   "choices": {
                     "ko": [
-                      "신용관계를 지폐 수량의 문제로만 좁혀 본다.",
-                      "국제 지급수지와 만기, 금 준비 변화, 할인율 조정, 대부자본 유입과 유출을 함께 보아야 한다.",
-                      "신용관계를 현재의 잔액만으로 보고 만기 구조를 약하게 본다.",
-                      "이자율을 대부자본 수급과 경쟁이 아니라 중립적 기술비율로 본다."
+                      "금 유출은 위기의 선행 국면일 수 있지만, 실제 공황은 신용·상품판매·지급연쇄의 다른 조건에서 폭발할 수 있다.",
+                      "금 유출이 멈추면 위기의 모든 조건도 같은 시점에 사라진다.",
+                      "10월 공황은 금 유출과 관계가 없고 국내 소매소비의 계절 변화에서 나왔다.",
+                      "금 유출이 끝난 뒤에는 은행 할인율이 생산가격을 안정적으로 낮춘다."
                     ],
                     "en": [
-                      "It narrows credit relations to the quantity of paper money.",
-                      "One must read the balance and timing of international payments, changes in gold reserves, discount-rate adjustments, and inflows and outflows of loanable capital together.",
-                      "It reads credit only as a current balance and weakens the importance of maturity structure.",
-                      "It treats the interest rate as a neutral technical ratio rather than an outcome of loanable-capital supply, demand, and competition."
+                      "Gold drain can be a preceding phase of crisis, while the actual crash can erupt from other conditions of credit, commodity sale, and payment chains.",
+                      "When gold drain stops, all conditions of crisis disappear at the same moment.",
+                      "The October crash was unrelated to gold drain and came from seasonal changes in domestic retail consumption.",
+                      "After gold drain ends, the bank discount rate steadily lowers prices of production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "환율은 단순한 숫자가 아니다. 결제기한, 금 준비, 이자율, 자본 이동이 함께 압축되어 나타나는 지표다.",
-                    "en": "The exchange rate is not a mere number. It condenses payment dates, gold reserves, interest rates, and capital movements."
+                    "ko": "이 디테일은 금 유출을 단일 원인으로 보는 설명을 약화한다. 마르크스는 위기의 시간표 안에서 금 이동의 위치를 따진다.",
+                    "en": "This detail weakens explanations that treat gold drain as the single cause. Marx places gold movement within the timing of crisis."
                   },
                   "points": 3
                 },
@@ -31544,27 +31530,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“금 유출은 곧바로 그 나라가 가난해졌다는 뜻”이라는 설명은 왜 부족한가?",
-                    "en": "Why is it insufficient to say that gold outflow simply means a country has become poor?"
+                    "ko": "England의 수출이 늘어도 환율 압박이 생길 수 있는 이유는 무엇인가?",
+                    "en": "Why can exchange pressure arise even when England’s exports increase?"
                   },
                   "choices": {
                     "ko": [
-                      "금 유출은 국내 생산력의 장기적 약화만을 직접 반영한다고 본다.",
-                      "신용의 확대가 최종 지급능력 문제를 충분히 흡수한다고 본다.",
-                      "금 유출은 국제 지급 시기, 신용상태, 이자율 차이, 단기 자금 이동과도 관련되기 때문이다.",
-                      "상품 판매의 지연과 지급 약속의 만기를 서로 분리해 본다."
+                      "수출은 장기 신용으로 이루어지고 수입은 현금 결제를 요구하면, 같은 해의 지급수지가 불리해질 수 있기 때문이다.",
+                      "수출 증가가 국내 소비재 가격을 낮춰 금 준비를 직접 줄이기 때문이다.",
+                      "수출이 늘면 해외 채무자가 같은 날 모든 이자를 현금으로 갚기 때문이다.",
+                      "수입은 상품으로 계산되고 수출은 금으로 계산되어 비교가 성립하지 않기 때문이다."
                     ],
                     "en": [
-                      "Gold outflow directly reflects only a long-term weakening of domestic productive power.",
-                      "It assumes that credit expansion sufficiently absorbs the problem of final capacity to pay.",
-                      "Because gold outflow is also related to timing of international payments, credit conditions, interest-rate differences, and short-term capital movements.",
-                      "It separates delays in commodity sale from the maturities of payment promises."
+                      "If exports are sold on long credit while imports require ready payment, the balance of payments for that year can become unfavorable.",
+                      "Export growth directly lowers domestic consumer-goods prices and reduces gold reserves.",
+                      "When exports grow, foreign debtors repay all interest in cash on the same day.",
+                      "Imports are counted in commodities and exports in gold, so comparison cannot be made."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "금 이동을 국부의 단순한 증감으로 보면 지급관계가 사라진다. 마르크스는 금 유출을 세계시장 신용압력 안에서 본다.",
-                    "en": "If gold movement is seen as a simple change in national wealth, payment relations disappear. Marx reads gold outflow within world-market credit pressure."
+                    "ko": "35장은 무역수지보다 결제의 시차를 중요하게 본다. 장기 신용 수출과 현금 수입 결제가 어긋나면 환율 압박이 생긴다.",
+                    "en": "Chapter 35 treats timing of settlement as more important than trade balance alone. Long-credit exports and cash import payments can produce exchange pressure."
                   },
                   "points": 3
                 },
@@ -31572,27 +31558,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "달러 유동성 부족으로 신흥국 환율이 흔들리고 국내 금리가 급등한다. 이 사례에서 무엇을 물어야 하는가?",
-                    "en": "Dollar liquidity shortage shakes an emerging-market exchange rate and domestic interest rates jump. What should be asked?"
+                    "ko": "“화폐제도는 가톨릭적이고 신용제도는 프로테스탄트적”이라는 비유의 의미는 무엇인가?",
+                    "en": "What is the meaning of the metaphor that the monetary system is Catholic and the credit system Protestant?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 결제제도는 고전적 신용 분석을 거의 대체한다고 본다.",
-                      "이자율과 지급수단 수요는 따로 움직일 뿐이다.",
-                      "국제 지급수단 수요가 국내 신용조건과 대부자본 비용을 어떻게 압박하는지 물어야 한다.",
-                      "위기 때에는 더 많은 지급약속만 있으면 충분하다."
+                      "신용은 믿음과 사회적 승인 위에서 움직이지만, 그 기반은 여전히 화폐와 세계화폐 기능에서 벗어나지 못한다는 뜻이다.",
+                      "신용제도는 종교개혁 이후에 생겼고 금속화폐는 중세 교회가 만든 제도라는 역사적 설명이다.",
+                      "은행권은 신뢰의 문제라서 생산과 지급관계보다 심리적 승인에 더 가깝다는 뜻이다.",
+                      "금은 국내 결제에서만 쓰이고 신용은 국제 결제에서만 쓰인다는 구분이다."
                     ],
                     "en": [
-                      "Modern cases have no relation to analysis of the credit system.",
-                      "Interest rates and demand for means of payment move separately.",
-                      "Ask how demand for international means of payment pressures domestic credit conditions and the cost of loanable capital.",
-                      "In crisis more payment promises are sufficient."
+                      "Credit moves through faith and social recognition, but it still does not escape the foundation of money and world-money functions.",
+                      "It is a historical claim that credit arose after the Reformation and metallic money was created by the medieval Church.",
+                      "It means banknotes are a matter of trust and are closer to psychological recognition than to production and payment relations.",
+                      "Gold is used only in domestic settlement, while credit is used only in international settlement."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "현대의 달러 유동성 문제도 세계화폐 논리와 연결된다. 국제 지급수단 부족은 국내 금리와 신용조건을 흔들 수 있다.",
-                    "en": "The modern problem of dollar liquidity is also linked to the logic of world money. Shortage of international means of payment can shake domestic rates and credit conditions."
+                    "ko": "이 비유는 35장의 유명한 세부다. 신용은 믿음을 통해 금을 대체하는 듯 보이지만, 위기와 세계시장에서는 화폐의 토대로 되돌아간다.",
+                    "en": "This is a famous detail in Chapter 35. Credit seems to replace gold through faith, but in crisis and the world market it returns to the monetary foundation."
                   },
                   "points": 3
                 },
@@ -31600,27 +31586,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장이 신용제도 분석에서 중요한 이유는 무엇인가?",
-                    "en": "Why is this chapter important for analysing the credit system?"
+                    "ko": "35장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 35?"
                   },
                   "choices": {
                     "ko": [
-                      "이 장은 앞뒤 논의와의 연결을 약하게 본다.",
-                      "수입형태를 생산관계와 분리된 회계 항목으로 본다.",
-                      "화폐와 신용을 모두 단순한 유통 편의로만 본다.",
-                      "국내에서 신용이 화폐를 대체해도 세계시장에서는 최종 결제와 환율을 통해 세계화폐 기능이 다시 문제화되기 때문이다."
+                      "신용제도의 국내적 운동을 금 준비, 환율, 세계화폐 기능과 연결해 국제 지급의 압력을 설명한다.",
+                      "금 이동을 국내 지폐수량의 단순 결과로 보아 통화원리를 완성한다.",
+                      "환율 문제를 상품생산과 분리된 외환시장 기술로 정리한다.",
+                      "세계시장을 배제하고 은행부 준비금만으로 신용위기를 설명한다."
                     ],
                     "en": [
-                      "This chapter is not connected to the surrounding argument.",
-                      "Income forms are unrelated to production relations.",
-                      "The difference between money and credit need not be analysed.",
-                      "Because even when credit replaces money domestically, in the world market the function of world money returns through final settlement and exchange rates."
+                      "It connects domestic movements of the credit system to gold reserves, exchange rates, and world money in order to explain international payment pressure.",
+                      "It completes the currency principle by treating gold movement as a simple result of domestic paper quantity.",
+                      "It classifies exchange rates as a foreign-exchange technique separate from commodity production.",
+                      "It excludes the world market and explains credit crisis only by banking-department reserves."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "신용제도의 한계는 국내 은행문제만이 아니다. 세계시장의 지급압력은 신용의 안정성을 바깥에서 흔든다.",
-                    "en": "The limit of the credit system is not merely a domestic banking problem. Payment pressure from the world market shakes credit stability from outside."
+                    "ko": "35장은 36장으로 넘어가기 전 신용제도의 역사적·세계시장적 한계를 보여준다. 다음 장은 이자 낳는 자본의 더 오래된 형태로 시야를 넓힌다.",
+                    "en": "Chapter 35 shows the historical and world-market limits of the credit system before Chapter 36. The next chapter broadens the view to older forms of interest-bearing capital."
                   },
                   "points": 3
                 }
@@ -31693,27 +31679,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "고리대자본은 산업자본과 무엇이 다른가?",
-                    "en": "How does usury capital differ from industrial capital?"
+                    "ko": "36장에서 고리대자본은 어떤 역사적 형태로 제시되는가?",
+                    "en": "How is usurer’s capital presented historically in Chapter 36?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정을 새로 조직하기보다 농민, 장인, 귀족의 기존 수입을 이자로 빨아들이는 경우가 많다.",
-                      "신용이나 이자는 대체로 생산관계와 무관한 기술 문제다.",
-                      "화폐가 있으면 상품판매와 지급위기는 사라진다.",
-                      "은행권력만으로 시장가격과 지급압력을 설명할 수 있다고 본다."
+                      "상인자본과 함께 자본주의보다 오래된 이자 낳는 자본의 전(前)자본주의적 형태다.",
+                      "산업자본이 완성된 뒤 은행제도 내부에서만 생기는 최신 금융형태다.",
+                      "임금노동자가 생산수단을 소유한 뒤 생기는 협동조합의 수입형태다.",
+                      "토지소유가 사라진 뒤 지대가 이자로 바뀌는 과도기적 제도다."
                     ],
                     "en": [
-                      "It often absorbs the existing incomes of peasants, artisans, or nobles as interest rather than reorganizing production.",
-                      "Credit or interest is always a technical issue unrelated to production relations.",
-                      "If money exists, commodity sale and payment crisis disappear.",
-                      "It explains market prices and payment pressure by banking power alone."
+                      "Together with merchant’s capital, it is a pre-capitalist form of interest-bearing capital older than capitalism.",
+                      "It is a modern financial form that arises only inside the banking system after industrial capital is complete.",
+                      "It is the income form of cooperatives after wage-workers own means of production.",
+                      "It is a transitional institution in which rent turns into interest after landed property disappears."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "고리대자본도 돈을 불리지만, 그 방식은 산업자본과 다르다. 생산을 혁신하기보다 기존 생산자를 채무로 압박한다.",
-                    "en": "Usury capital also expands money, but differently from industrial capital. It pressures existing producers through debt rather than revolutionizing production."
+                    "ko": "마르크스는 이자가 존재했다는 사실만으로 자본주의가 있었다고 보지 않는다. 고리대자본은 여러 생산양식 안에서 다른 기능을 가진다.",
+                    "en": "Marx does not infer capitalism merely from the existence of interest. Usurer’s capital has different functions inside different modes of production."
                   },
                   "points": 2
                 },
@@ -31721,27 +31707,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "화폐채무와 높은 이자는 전통적 생산자를 어떻게 흔들 수 있는가?",
-                    "en": "How can money debt and high interest shake traditional producers?"
+                    "ko": "고리대자본의 두 특징적 대상은 누구인가?",
+                    "en": "Who are the two characteristic targets of usurer’s capital?"
                   },
                   "choices": {
                     "ko": [
-                      "생산자를 자급적 관계에서 떼어내고 재산 상실과 채권자 종속으로 몰아갈 수 있다.",
-                      "모든 지급은 항상 금속화폐로만 이루어진다.",
-                      "신용관계는 생산과 유통에 아무 영향을 주지 않는다.",
-                      "이자는 대체로 노동자의 임금과 같은 말이다."
+                      "사치 지출을 하는 상층 소유자와, 자기 노동조건을 가진 소농·장인 같은 소생산자다.",
+                      "대규모 주식회사 관리자와 중앙은행 발권부 직원이다.",
+                      "임금노동자 전체와 국제 금 거래를 담당하는 국가기관이다.",
+                      "산업자본가와 상업자본가 중 평균이윤율이 높은 부문이다."
                     ],
                     "en": [
-                      "They can detach producers from subsistence relations and drive them toward loss of property and dependence on creditors.",
-                      "All payments are always made only in metallic money.",
-                      "Credit relations have no effect on production and circulation.",
-                      "Interest is always another name for workers’ wages."
+                      "Extravagant upper-class owners and small producers such as peasants and artisans who possess their own conditions of labour.",
+                      "Managers of large joint-stock companies and officials in the central bank’s issue department.",
+                      "All wage-workers and state agencies responsible for international gold trade.",
+                      "Industrial and commercial capitalists in branches with high average profit rates."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "빚은 단순한 개인 문제가 아니다. 화폐채무가 반복되면 생산자는 토지와 도구를 잃고 새로운 종속관계로 밀려날 수 있다.",
-                    "en": "Debt is not merely an individual issue. Repeated money debt can make producers lose land and tools and push them into new dependence."
+                    "ko": "36장은 고리대가 부유한 지주와 소생산자 모두를 대상으로 삼는다고 본다. 전자는 재산을 담보로, 후자는 생계와 생산조건을 담보로 종속된다.",
+                    "en": "Chapter 36 treats usury as targeting both rich landowners and small producers. The former are tied through property, the latter through subsistence and conditions of production."
                   },
                   "points": 2
                 },
@@ -31749,27 +31735,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“이자가 있었으니 이미 자본주의였다”는 말은 무엇을 놓치는가?",
-                    "en": "What is missed by saying that because interest existed, capitalism already existed?"
+                    "ko": "고리대가 산업자본과 다른 점은 무엇인가?",
+                    "en": "How does usury differ from industrial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "기술이나 지폐 수량만 보면 모든 문제가 설명된다.",
-                      "자본주의는 단순한 이자수취가 아니라 임금노동과 생산수단으로부터의 분리를 전제로 한다는 점이다.",
-                      "신용위기를 국내 통화량 문제로만 좁혀 본다.",
-                      "이자가 있으면 어떤 사회든 곧바로 자본주의다."
+                      "고리대는 생산을 새롭게 조직하기보다 기존 생산자의 잉여와 조건을 이자로 빨아들이는 경향을 갖는다.",
+                      "고리대는 노동자를 대공장에 결합해 기계제 생산을 발전시키는 방식으로 축적한다.",
+                      "고리대는 평균이윤율 형성을 통해 여러 산업부문의 이윤을 균등화한다.",
+                      "고리대는 은행권 발행량을 조절해 상품가격을 안정시키는 중앙은행 기능이다."
                     ],
                     "en": [
-                      "Technology or paper quantity explains every problem.",
-                      "Capitalism presupposes not mere receipt of interest, but wage-labour and separation from the means of production.",
-                      "The world market and payment dates are unrelated to credit crisis.",
-                      "If interest exists, every society is already capitalist."
+                      "Usury tends to draw off existing producers’ surplus and conditions as interest rather than reorganize production.",
+                      "Usury accumulates by combining workers in large factories and developing machine production.",
+                      "Usury equalizes profits across branches through formation of the average profit rate.",
+                      "Usury is a central-bank function that stabilizes commodity prices by regulating note issue."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이자 형태는 오래전부터 존재할 수 있다. 중요한 것은 그 이자가 어떤 생산관계 속에서 생기는가이다.",
-                    "en": "The interest form can exist for a long time before capitalism. The key is the production relation within which that interest arises."
+                    "ko": "산업자본은 노동을 자기 아래 조직해 잉여가치를 생산한다. 고리대는 많은 경우 낡은 생산양식에 붙어 그것을 더 피폐하게 만든다.",
+                    "en": "Industrial capital organizes labour under itself to produce surplus-value. Usury often attaches itself to an old mode of production and makes it more miserable."
                   },
                   "points": 2
                 },
@@ -31777,27 +31763,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "흉년 뒤 빚을 진 농민이 토지를 잃고 채권자에게 종속된다. 이 사례는 무엇을 보여주는가?",
-                    "en": "After a bad harvest, an indebted peasant loses land and becomes dependent on a creditor. What does this show?"
+                    "ko": "고리대가 전(前)자본주의 사회에서 파괴적이면서도 보수적인 이유는 무엇인가?",
+                    "en": "Why is usury both destructive and conservative in pre-capitalist societies?"
                   },
                   "choices": {
                     "ko": [
-                      "위기를 개별 거래 실패로만 보고 지급연쇄의 구조를 약하게 본다.",
-                      "채무의 만기와 지급수단 수요를 부차적 현상으로 본다.",
-                      "고리대자본이 기존 생산자를 해체하고 종속시킬 수 있지만, 그것만으로 곧바로 산업자본의 생산조직을 만들지는 않는다는 점이다.",
-                      "위기 때에도 지급약속이 평상시와 같은 신뢰를 유지한다고 본다."
+                      "소생산자와 지주를 몰락시키지만, 생산방식 자체는 바꾸지 않고 그 위에 기생하는 경우가 많기 때문이다.",
+                      "채무자를 해방해 임금노동과 기계제 생산을 즉시 조직하기 때문이다.",
+                      "고리대는 신용을 없애고 모든 지급을 현물 공납으로 되돌리기 때문이다.",
+                      "높은 이자율이 기술혁신을 직접 촉진해 생산력을 빠르게 높이기 때문이다."
                     ],
                     "en": [
-                      "The case is merely an individual mistake unrelated to social relations.",
-                      "Means of payment or debt relations need not be analysed.",
-                      "It shows that usury capital can dissolve and subordinate existing producers, but does not by itself immediately create industrial capital’s organization of production.",
-                      "In crisis every payment promise automatically becomes safe."
+                      "It can ruin small producers and landowners, yet often parasitically preserves the mode of production instead of transforming it.",
+                      "It immediately liberates debtors and organizes wage labour and machine production.",
+                      "Usury abolishes credit and returns all payments to tribute in kind.",
+                      "High interest directly promotes technical innovation and rapidly raises productive forces."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "고리대는 낡은 관계를 무너뜨릴 수 있다. 그러나 해체와 자본주의적 생산조직의 성립은 같은 일이 아니다.",
-                    "en": "Usury can break down old relations. But dissolution and the formation of capitalist production organization are not the same thing."
+                    "ko": "고리대는 낡은 소유와 소생산을 해체할 수 있다. 그러나 자본주의적 생산조직이 성립하려면 다른 역사적 조건도 필요하다.",
+                    "en": "Usury can dissolve old property and small production. But capitalist production requires additional historical conditions."
                   },
                   "points": 2
                 },
@@ -31805,27 +31791,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장은 왜 신용론 뒤에서 지대론으로 넘어가는 길목에 놓이는가?",
-                    "en": "Why does this chapter stand between the discussion of credit and the discussion of rent?"
+                    "ko": "36장이 3권의 다음 지대론으로 넘어가는 데 갖는 의미는 무엇인가?",
+                    "en": "What is the significance of Chapter 36 for the move to rent theory in Volume III?"
                   },
                   "choices": {
                     "ko": [
-                      "앞의 생산관계 분석을 접고 통화 현상만 독립적으로 본다.",
-                      "신용과 이자를 역사적 생산관계보다 보편적 금융기술로 본다.",
-                      "이 장의 논점을 뒤의 지대와 수입형태 분석으로 이어 보지 않는다.",
-                      "이자 낳는 자본의 오래된 형태를 정리하고, 토지소유와 지대처럼 오래된 관계가 자본주의 안에서 변형되는 문제로 넘어가기 때문이다."
+                      "이자 낳는 자본의 오래된 형태를 정리한 뒤, 오래된 토지소유가 자본주의 안에서 변형되는 문제로 넘어간다.",
+                      "고리대가 지대를 없앤다는 결론을 통해 토지소유 분석을 생략할 수 있게 한다.",
+                      "은행법 비판을 마친 뒤 국내 소매유통의 동전 문제로 되돌아간다.",
+                      "세계화폐 논의를 끝내고 모든 수입형태를 임금으로 통일한다."
                     ],
                     "en": [
-                      "It cancels all previous discussion and leaves only money.",
-                      "It treats credit and interest as universal financial techniques rather than historical production relations.",
-                      "This chapter is not connected to the later argument.",
-                      "Because it clarifies older forms of interest-bearing capital and then moves toward how old relations such as landed property and rent are transformed within capitalism."
+                      "After clarifying older forms of interest-bearing capital, it turns to how older landed property is transformed within capitalism.",
+                      "It concludes that usury abolishes rent, allowing the analysis of landed property to be skipped.",
+                      "After the critique of bank law, it returns to small coin in domestic retail circulation.",
+                      "After world money, it unifies all income forms as wages."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "36장은 역사적 연결부다. 이자 낳는 자본이 자본주의보다 오래될 수 있음을 보인 뒤, 오래된 토지소유가 자본주의 안에서 어떻게 지대로 바뀌는지로 넘어간다.",
-                    "en": "Chapter 36 is a historical hinge. After showing that interest-bearing capital can predate capitalism, it moves to how older landed property becomes rent within capitalism."
+                    "ko": "36장은 신용론의 종결부이자 지대론의 입구다. 오래된 수입형태는 생산관계가 바뀌면 다른 의미를 갖는다.",
+                    "en": "Chapter 36 closes the credit discussion and opens the way to rent theory. Older income forms take on different meanings when production relations change."
                   },
                   "points": 2
                 }
@@ -31843,27 +31829,27 @@
                   "id": "q1",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "고리대자본의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension of usury capital?"
+                    "ko": "고리대 이자율과 근대 이자율을 단순 비교하면 왜 오류가 생기는가?",
+                    "en": "Why is it mistaken to simply compare usury rates with modern interest rates?"
                   },
                   "choices": {
                     "ko": [
-                      "화폐를 증식하지만 생산을 자본주의적으로 조직하기보다 기존 생산자를 채무로 수탈하고 해체한다는 점이다.",
-                      "화폐와 신용의 차이를 지급기한의 차이가 아니라 유통수단의 종류 차이로만 본다.",
-                      "이자 낳는 자본의 오래된 형태를 산업자본 이후의 파생물로만 본다.",
-                      "세계시장에서는 국내 신용관계와 같은 지급 문제가 반복되지 않는다고 본다."
+                      "고리대 이자는 직접생산자의 생계 초과분 대부분을 빨아들일 수 있고, 근대 이자는 총잉여가치의 한 분할형태이기 때문이다.",
+                      "고리대 이자는 평균이윤율 아래의 관습적 범위에서 정해지고 근대 이자는 조세수입과 더 가깝기 때문이다.",
+                      "근대 이자는 생산관계와 접점이 작고 고리대 이자는 산업자본의 정상 이윤이기 때문이다.",
+                      "두 이자율은 같은 법칙으로 움직이므로 역사적 생산양식 차이가 분석에 필요 없기 때문이다."
                     ],
                     "en": [
-                      "It expands money, but rather than organizing production capitalistically, it exploits and dissolves existing producers through debt.",
-                      "Money and credit always perform exactly the same function.",
-                      "Interest first appears only under capitalism.",
-                      "In the world market the problem of means of payment disappears."
+                      "Usury interest can absorb most of the direct producer’s surplus above subsistence, while modern interest is a divided part of total surplus-value.",
+                      "Because usury interest is set within a customary range below the average profit rate, while modern interest is closer to tax revenue.",
+                      "Modern interest has little contact with production relations, while usury is the normal profit of industrial capital.",
+                      "Both rates move by the same law, so differences in historical modes of production are unnecessary."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "고리대자본은 자본처럼 보이지만 산업자본과 같은 생산혁신의 논리로 움직이지 않는다. 이 차이를 보아야 역사적 형태를 구분할 수 있다.",
-                    "en": "Usury capital looks like capital, but it does not move by the same logic of productive transformation as industrial capital. This difference is needed to distinguish historical forms."
+                    "ko": "마르크스는 이자율 숫자만 비교하는 방식을 비판한다. 같은 “이자”라도 어떤 잉여를 어떤 생산관계에서 가져가는지가 다르다.",
+                    "en": "Marx criticizes comparing only the numerical rate of interest. The same word “interest” can appropriate different surpluses under different production relations."
                   },
                   "points": 3
                 },
@@ -31871,27 +31857,27 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "채권자와 채무자의 관계를 매개하는 것은 무엇인가?",
-                    "en": "What mediates the relation between creditor and debtor?"
+                    "ko": "소생산자가 고리대자본과 만나는 조건은 무엇인가?",
+                    "en": "Under what condition does the small producer confront usurer’s capital?"
                   },
                   "choices": {
                     "ko": [
-                      "신용관계를 지폐 수량의 문제로만 좁혀 본다.",
-                      "화폐채무, 담보, 조세와 공납 압박, 기존 수입에 대한 청구권이 채권자와 채무자를 묶는다.",
-                      "신용관계를 현재의 잔액만으로 보고 만기 구조를 약하게 본다.",
-                      "이자율을 대부자본 수급과 경쟁이 아니라 중립적 기술비율로 본다."
+                      "생산자가 토지나 도구 같은 노동조건을 소유하거나 점유하지만 화폐채무를 갚아야 할 때다.",
+                      "생산자가 이미 임금노동자로 완전히 분리되어 생산수단을 소유하지 않을 때다.",
+                      "생산자가 주식회사의 관리자 임금을 받아 기업가이득을 정산할 때다.",
+                      "생산자가 중앙은행에서 할인율을 정해 상업어음을 재할인할 때다."
                     ],
                     "en": [
-                      "It narrows credit relations to the quantity of paper money.",
-                      "Money debt, collateral, tax and tribute pressure, and claims on existing income bind creditor and debtor.",
-                      "It reads credit only as a current balance and weakens the importance of maturity structure.",
-                      "It treats the interest rate as a neutral technical ratio rather than an outcome of loanable-capital supply, demand, and competition."
+                      "When the producer owns or possesses conditions of labour such as land or tools but must meet money debts.",
+                      "When the producer is already fully separated as a wage-worker and owns no means of production.",
+                      "When the producer receives management wages in a joint-stock company and settles profit of enterprise.",
+                      "When the producer sets the discount rate at the central bank and rediscounts commercial bills."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "고리대의 힘은 단순히 높은 이자율에 있지 않다. 생산자가 이미 부담하는 조세, 공납, 생계압박과 결합할 때 더 강하게 작동한다.",
-                    "en": "The power of usury is not simply a high interest rate. It works more strongly when combined with taxes, tributes, and subsistence pressures already borne by producers."
+                    "ko": "고리대는 생산자가 아직 자기 노동조건과 연결되어 있을 때 그 조건을 담보로 압박한다. 임금노동자는 생산자로서는 이미 그 조건에서 분리되어 있다.",
+                    "en": "Usury pressures producers through conditions of labour they still possess. The wage-worker, as producer, is already separated from those conditions."
                   },
                   "points": 3
                 },
@@ -31899,27 +31885,27 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“고리대가 곧 자본주의를 만든다”는 설명은 왜 부정확한가?",
-                    "en": "Why is it inaccurate to say that usury directly creates capitalism?"
+                    "ko": "중세의 높은 이자율 사례들이 보여주는 핵심은 무엇인가?",
+                    "en": "What is the key point shown by medieval examples of high interest rates?"
                   },
                   "choices": {
                     "ko": [
-                      "고리대가 낡은 생산자를 압박하면 그것만으로 산업자본의 생산조직도 곧바로 생긴다고 본다.",
-                      "신용의 확대가 최종 지급능력 문제를 충분히 흡수한다고 본다.",
-                      "낡은 생산관계의 해체와 산업자본이 임금노동을 조직하는 과정을 혼동하기 때문이다.",
-                      "상품 판매의 지연과 지급 약속의 만기를 서로 분리해 본다."
+                      "일반 이자율이 형성되지 않은 조건에서 법, 교회, 독점적 대부관계에 따라 지역별 이자가 크게 달랐다.",
+                      "중세에는 은행제도가 발달해 모든 지역에서 같은 시장 이자율이 빠르게 형성되었다.",
+                      "높은 이자율은 산업자본의 평균이윤율이 이미 안정적으로 존재했다는 증거다.",
+                      "교회의 이자 금지는 대부관계를 없애 상업신용의 성장을 멈추게 했다."
                     ],
                     "en": [
-                      "If usury pressures old producers, the productive organization of industrial capital immediately follows.",
-                      "It assumes that credit expansion sufficiently absorbs the problem of final capacity to pay.",
-                      "Because it confuses the dissolution of old production relations with the process by which industrial capital organizes wage-labour.",
-                      "It separates delays in commodity sale from the maturities of payment promises."
+                      "Without a general rate of interest, rates differed greatly by region under law, Church rules, and monopolistic lending relations.",
+                      "In the Middle Ages, developed banking quickly formed the same market interest rate across all regions.",
+                      "High interest rates prove that the average profit rate of industrial capital already existed stably.",
+                      "The Church ban on interest abolished lending relations and stopped commercial credit from growing."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "고리대는 낡은 관계를 약화시킬 수 있지만, 그 자체가 공장과 임금노동의 조직을 만들어내는 것은 아니다.",
-                    "en": "Usury can weaken old relations, but by itself it does not create the organization of factories and wage-labour."
+                    "ko": "36장의 중세 사례는 단순 잡학이 아니다. 일반 이자율은 특정한 시장과 생산관계가 발달해야 형성된다는 점을 보여준다.",
+                    "en": "The medieval examples in Chapter 36 are not trivia. They show that a general rate of interest requires developed markets and production relations."
                   },
                   "points": 3
                 },
@@ -31927,27 +31913,27 @@
                   "id": "q4",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "고금리 사채가 영세자영업자의 수입을 빨아들이지만 생산방식을 바꾸지는 않는다. 여기서 무엇을 구분해야 하는가?",
-                    "en": "High-interest debt absorbs a small proprietor’s income but does not change the method of production. What must be distinguished here?"
+                    "ko": "교회의 이자 금지가 오히려 교회 재산 확대에 도움이 되었다는 세부는 무엇을 보여주는가?",
+                    "en": "What is shown by the detail that the Church’s ban on interest helped expand Church property?"
                   },
                   "choices": {
                     "ko": [
-                      "현대 결제제도는 고전적 신용 분석을 거의 대체한다고 본다.",
-                      "이자율과 지급수단 수요는 따로 움직일 뿐이다.",
-                      "이자 낳는 자본이 산업자본처럼 생산을 조직하는 경우와 채무를 통해 기존 수입을 수탈하는 경우를 구분해야 한다.",
-                      "위기 때에는 더 많은 지급약속만 있으면 충분하다."
+                      "이자 금지가 담보 이전과 사용수익 같은 우회 형태를 낳아 고정재산이 교회로 집중될 수 있었다.",
+                      "이자 금지가 모든 대부를 중단시켜 교회가 상업거래에서 빠졌다는 점을 보여준다.",
+                      "교회는 금속화폐 발행권을 통해 은행권 수량을 조절했다.",
+                      "교회 재산 확대는 고리대자본과 별도인 토지의 자연 생산성에서 나왔다."
                     ],
                     "en": [
-                      "Modern cases have no relation to analysis of the credit system.",
-                      "Interest rates and demand for means of payment move separately.",
-                      "One must distinguish cases where interest-bearing capital organizes production like industrial capital from cases where it extracts existing income through debt.",
-                      "In crisis more payment promises are sufficient."
+                      "The ban encouraged indirect forms such as pledged property and usufruct, allowing fixed property to concentrate in Church hands.",
+                      "The ban stopped all lending and removed the Church from commercial transactions.",
+                      "The Church regulated banknote quantity through the right to issue metallic money.",
+                      "Church property expanded from the natural productivity of land separate from usurer’s capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "같은 이자라도 생산관계가 다르면 의미가 달라진다. 이 사례는 수탈이 곧 자본주의적 생산조직은 아니라는 점을 보여준다.",
-                    "en": "The same interest form means different things under different production relations. This case shows that extraction is not the same as capitalist organization of production."
+                    "ko": "이 디테일은 법적 금지가 사회관계를 없애기보다 다른 형태로 우회시킬 수 있음을 보여준다. 고리대적 수취는 명칭을 바꾸어 계속될 수 있었다.",
+                    "en": "This detail shows that legal prohibition can divert social relations into other forms rather than abolish them. Usurious appropriation could continue under another name."
                   },
                   "points": 3
                 },
@@ -31955,27 +31941,27 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장이 3권 전체에서 중요한 이유는 무엇인가?",
-                    "en": "Why is this chapter important within Volume III as a whole?"
+                    "ko": "36장의 체계적 의미는 무엇인가?",
+                    "en": "What is the systematic significance of Chapter 36?"
                   },
                   "choices": {
                     "ko": [
-                      "이 장은 앞뒤 논의와의 연결을 약하게 본다.",
-                      "수입형태를 생산관계와 분리된 회계 항목으로 본다.",
-                      "화폐와 신용을 모두 단순한 유통 편의로만 본다.",
-                      "이자 낳는 자본이 자본주의보다 오래된 형태를 가질 수 있음을 보여 주어, 수입형태를 반드시 생산관계 속에서 읽게 한다."
+                      "이자 낳는 자본을 역사적으로 상대화해, 같은 이자형태도 생산양식에 따라 다른 기능을 갖는다는 점을 확정한다.",
+                      "고리대자본을 산업자본과 동일시해 신용론과 지대론의 차이를 줄인다.",
+                      "전자본주의적 형태를 부수적 사례로 처리하고 수입형태 분석에서 제외한다.",
+                      "상업자본과 고리대자본이 자본주의 생산을 완성한 뒤에만 나타난다는 결론을 낸다."
                     ],
                     "en": [
-                      "This chapter is not connected to the surrounding argument.",
-                      "Income forms are unrelated to production relations.",
-                      "The difference between money and credit need not be analysed.",
-                      "It shows that interest-bearing capital can have forms older than capitalism, forcing income forms to be read within production relations."
+                      "It historicizes interest-bearing capital and establishes that the same interest form has different functions in different modes of production.",
+                      "It identifies usurer’s capital with industrial capital and reduces the difference between credit theory and rent theory.",
+                      "It treats pre-capitalist forms as incidental cases and excludes them from income-form analysis.",
+                      "It concludes that merchant’s and usurer’s capital appear only after capitalist production is complete."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "수입형태만 보면 모든 이자가 같은 것처럼 보인다. 이 장은 같은 이자라도 어떤 사회관계에서 생기는지에 따라 의미가 달라진다고 가르친다.",
-                    "en": "If only the income form is seen, all interest looks the same. This chapter teaches that the meaning of interest changes according to the social relation in which it arises."
+                    "ko": "36장은 수입형태를 생산관계 속에서 읽어야 한다는 3권의 원칙을 강화한다. 이 원칙이 뒤의 지대 분석에도 그대로 이어진다.",
+                    "en": "Chapter 36 reinforces Volume III’s principle that income forms must be read within production relations. The same principle carries into the analysis of rent."
                   },
                   "points": 3
                 }
