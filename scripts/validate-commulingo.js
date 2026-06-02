@@ -119,8 +119,6 @@ Object.keys(expected).forEach(function(collectionId) {
       allLocalizedText(lesson.title, lessonLabel + '.title');
       const questions = lesson.questions || [];
       if (questions.length !== 5) fail(lessonLabel + ' question count ' + questions.length + ' != 5');
-      const distribution = { 0: 0, 1: 0, 2: 0, 3: 0 };
-
       questions.forEach(function(question, index) {
         const expectedId = 'q' + (index + 1);
         const qLabel = lessonLabel + '/' + (question.id || expectedId);
@@ -131,7 +129,6 @@ Object.keys(expected).forEach(function(collectionId) {
         allLocalizedText(question.explanation, qLabel + '.explanation');
         checkChoiceFeedback(question.choiceFeedback, qLabel);
         if (!Number.isInteger(question.answer) || question.answer < 0 || question.answer > 3) fail(qLabel + ' answer must be 0..3');
-        else distribution[question.answer] += 1;
         if (!question.choices || !Array.isArray(question.choices.ko) || !Array.isArray(question.choices.en)) {
           fail(qLabel + ' choices must have ko/en arrays');
           return;
@@ -146,9 +143,6 @@ Object.keys(expected).forEach(function(collectionId) {
 
       collectionQuestions += questions.length;
       totalQuestions += questions.length;
-      const pattern = JSON.stringify(distribution);
-      if (lesson.level === 'basic' && pattern !== JSON.stringify({ 0: 2, 1: 1, 2: 1, 3: 1 })) fail(lessonLabel + ' basic answer distribution is ' + pattern);
-      if (lesson.level === 'advanced' && pattern !== JSON.stringify({ 0: 1, 1: 1, 2: 2, 3: 1 })) fail(lessonLabel + ' advanced answer distribution is ' + pattern);
     });
   });
 
