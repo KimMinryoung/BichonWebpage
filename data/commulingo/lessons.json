@@ -21030,27 +21030,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원료값이나 임금이 흔들릴 때, 이미 계산된 비용가격과 이윤율은 어떤 압력을 받는가?",
-                    "en": "What does Marx analyze in the effect of price fluctuations?"
+                    "ko": "6장에서 가격 변동의 영향을 분석한다는 말은 무엇을 뜻하는가?",
+                    "en": "What does it mean that Chapter 6 analyzes the effect of price fluctuations?"
                   },
                   "choices": {
                     "ko": [
-                      "원료와 생산수단 가격 변동이 비용가격, 기존 자본가치의 재평가, 이윤율에 어떤 영향을 주는지 분석한다.",
-                      "가격 상승은 대체로 새 가치 생산의 증가를 뜻한다고 본다.",
-                      "원료 가격 변동은 이윤율과 무관한 구매부서 문제라고 본다.",
-                      "재고 평가 이익을 새 잉여가치와 같은 것으로 본다."
+                      "원료·보조재 같은 불변자본 가격의 등락이 비용가격, 기존 자본가치 평가, 이윤율을 어떻게 흔드는지 분석한다.",
+                      "시장가격 상승이 생산과정 안의 새 가치 증가로 곧장 전환되는 과정을 분석한다.",
+                      "구매부서가 원료를 싸게 확보하면 잉여가치율이 같은 비율로 상승하는 과정을 분석한다.",
+                      "완제품 가격이 오를 때 소비자의 지불능력이 생산수단의 가치이전을 대신하는 과정을 분석한다."
                     ],
                     "en": [
-                      "He analyzes how price changes of raw materials and means of production affect cost-price, revaluation of existing capital-value, and the rate of profit.",
-                      "Assumes price increases always mean more new value has been produced.",
-                      "Treats raw-material price changes as a purchasing issue unrelated to the profit rate.",
-                      "Identifies inventory revaluation gains with new surplus-value."
+                      "It analyzes how rises and falls in the prices of constant-capital elements such as raw and auxiliary materials disturb cost-price, valuation of existing capital, and the rate of profit.",
+                      "It analyzes how market-price increases directly turn into increases of new value inside the production process.",
+                      "It analyzes how cheaper purchasing by the buying department raises the rate of surplus-value in the same proportion.",
+                      "It analyzes how consumers' ability to pay replaces the transfer of value from means of production when finished-goods prices rise."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "원료와 생산수단 가격 변동이 비용가격, 기존 자본가치의 재평가, 이윤율에 어떤 영향을 주는지 분석한다. 이 지점은 3권에서 잉여가치가 자본가에게 어떤 표면형태로 나타나는지 이해하는 출발점이다.",
-                    "en": "He analyzes how price changes of raw materials and means of production affect cost-price, revaluation of existing capital-value, and the rate of profit. This is a starting point for understanding how surplus-value appears to capitalists in Volume III."
+                    "ko": "개념의 출발점은 불변자본 가격 변동이다. 잉여가치율이 그대로여도 원료·보조재 가격이 오르거나 내리면 c와 C가 바뀌고, 그 결과 같은 s가 다른 이윤율로 나타난다.",
+                    "en": "The conceptual starting point is price fluctuation of constant capital. Even if the rate of surplus-value remains unchanged, rises or falls in raw and auxiliary material prices alter c and C, so the same s appears as a different rate of profit."
                   }
                 },
                 {
@@ -21058,27 +21058,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원료 가격이 급등하면 이윤율에 어떤 경로로 압박이 생기는가?",
-                    "en": "Through what path does a sharp rise in raw-material prices pressure the rate of profit?"
+                    "ko": "원료 가격이 d만큼 오르거나 내릴 때 이윤율 공식은 어떻게 바뀌는가?",
+                    "en": "How does the profit-rate formula change when raw-material prices rise or fall by d?"
                   },
                   "choices": {
                     "ko": [
-                      "비용가격과 선대해야 할 불변자본이 커져 같은 잉여가치가 더 큰 총자본에 대해 계산되기 때문이다.",
-                      "재고 평가 이익을 새 잉여가치와 같은 것으로 본다.",
-                      "원료 가격 변동은 이윤율과 무관한 구매부서 문제라고 본다.",
-                      "투입재 가격 압박을 전부 임금 문제로 환원한다."
+                      "가격이 내리면 s/(C-d)로 이윤율이 오르고, 가격이 오르면 s/(C+d)로 이윤율이 낮아진다.",
+                      "가격이 내리면 생산량이 같은 비율로 줄어 총잉여가치량이 작아지고, 가격이 오르면 생산량 증가가 이윤율을 보상한다.",
+                      "가격 변동은 분모 C와 별개이므로 공식은 s/C로 유지되고 판매가격만 달라진다.",
+                      "가격이 오르면 v가 자동으로 커지므로 이윤율 공식은 s/(c+v+d)가 아니라 s/(c+d)로 바뀐다."
                     ],
                     "en": [
-                      "Cost-price and the constant capital that must be advanced rise, so the same surplus-value is calculated against a larger total capital.",
-                      "Identifies inventory revaluation gains with new surplus-value.",
-                      "Treats raw-material price changes as a purchasing issue unrelated to the profit rate.",
-                      "Reduces input price pressure entirely to wages."
+                      "If prices fall, the rate rises as s/(C-d); if prices rise, it falls as s/(C+d).",
+                      "If prices fall, output falls in the same proportion and the total surplus-value mass shrinks; if prices rise, expanded output compensates the profit rate.",
+                      "Price fluctuation is separate from denominator C, so the formula remains s/C and only selling price changes.",
+                      "When prices rise, v automatically grows, so the formula changes not to s/(c+v+d) but to s/(c+d)."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "비용가격과 선대해야 할 불변자본이 커져 같은 잉여가치가 더 큰 총자본에 대해 계산되기 때문이다. 따라서 같은 착취관계도 자본구성, 회전, 가격 변동을 거치며 다른 수익성 지표로 나타난다.",
-                    "en": "Cost-price and the constant capital that must be advanced rise, so the same surplus-value is calculated against a larger total capital. The same exploitation relation can therefore appear as different profitability measures through capital composition, turnover, and price changes."
+                    "ko": "공식의 핵심은 원료 가격이 C의 크기를 바꾼다는 점이다. 다른 조건이 같다면 원료 가격과 이윤율은 반대로 움직인다. 가격 하락은 분모를 줄이고, 가격 상승은 분모를 키운다.",
+                    "en": "The point of the formula is that raw-material prices alter the magnitude of C. Other conditions equal, raw-material prices and the rate of profit move inversely: a fall reduces the denominator, while a rise enlarges it."
                   }
                 },
                 {
@@ -21086,27 +21086,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "가격 변동과 가치 생산을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must price fluctuation be distinguished from value production?"
+                    "ko": "재고 가격이 올라 장부상 이익이 생긴 것을 새 잉여가치 생산과 구분해야 하는 이유는 무엇인가?",
+                    "en": "Why must an accounting gain from rising inventory prices be distinguished from new surplus-value production?"
                   },
                   "choices": {
                     "ko": [
-                      "재고 평가 이익을 새 잉여가치와 같은 것으로 본다.",
-                      "가격 변동은 기존 자본의 평가와 비용가격을 바꿀 수 있지만, 그 자체가 새 가치를 생산하는 것은 아니다.",
-                      "투입재 가격 압박을 전부 임금 문제로 환원한다.",
-                      "불변자본 가격은 비용가격에 들어가지 않는다고 본다."
+                      "재고 평가상승은 이미 보유한 자본가치의 평가 변화이지, 생산과정에서 노동이 새로 만든 잉여가치가 아니기 때문이다.",
+                      "재고 가격 상승은 판매가 이루어지기 전에도 노동시간을 추가해 상품가치 자체를 새로 생산하기 때문이다.",
+                      "평가상승은 불변자본을 가변자본으로 바꾸어 임금 지출 없이 잉여노동을 늘리기 때문이다.",
+                      "장부상 이익은 원료가 실제로 생산에 들어간 뒤에만 비용가격에서 사라지는 항목이기 때문이다."
                     ],
                     "en": [
-                      "Identifies inventory revaluation gains with new surplus-value.",
-                      "Price fluctuation can change the valuation of existing capital and cost-price, but it does not itself produce new value.",
-                      "Reduces input price pressure entirely to wages.",
-                      "Assumes constant-capital prices do not enter cost-price."
+                      "Because appreciation of inventory is a change in the valuation of already held capital-value, not surplus-value newly produced by labour in production.",
+                      "Because rising inventory prices add labour-time before sale and newly produce the commodity's value itself.",
+                      "Because appreciation converts constant capital into variable capital and expands surplus labour without wage outlay.",
+                      "Because accounting gains disappear from cost-price only after the raw material actually enters production."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "가격 변동은 기존 자본의 평가와 비용가격을 바꿀 수 있지만, 그 자체가 새 가치를 생산하는 것은 아니다. 이 구분을 놓치면 이윤율의 표면이 잉여가치 생산관계를 대신 설명하는 것처럼 보인다.",
-                    "en": "Price fluctuation can change the valuation of existing capital and cost-price, but it does not itself produce new value. Without this distinction, the surface of the profit rate seems to explain the production relation of surplus-value itself."
+                    "ko": "오해의 핵심은 평가이익을 잉여가치와 섞는 데 있다. 원료 재고가 비싸지면 기존 자본이 평가상승할 수 있지만, 그것은 노동력 사용에서 새로 생산된 s와 구분된다.",
+                    "en": "The misconception is to mix revaluation gains with surplus-value. If raw-material stocks become dearer, existing capital may appreciate, but this is distinct from s newly produced through the use of labour-power."
                   }
                 },
                 {
@@ -21114,27 +21114,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "한 기업이 싸게 산 원료를 보유한 상태에서 원료 시장가격이 급등했다. 무엇이 발생할 수 있는가?",
-                    "en": "A firm holds raw materials bought cheaply when their market price suddenly rises. What can happen?"
+                    "ko": "한 기업이 싸게 산 면화를 보유한 상태에서 면화 시장가격이 급등했다. 6장의 관점에서 무엇이 발생할 수 있는가?",
+                    "en": "A firm holds cotton bought cheaply when the market price of cotton suddenly rises. What can happen from Chapter 6's standpoint?"
                   },
                   "choices": {
                     "ko": [
-                      "투입재 가격 압박을 전부 임금 문제로 환원한다.",
-                      "불변자본 가격은 비용가격에 들어가지 않는다고 본다.",
-                      "보유 재고가 재평가되어 일시적 이익처럼 나타날 수 있지만, 이는 새 잉여가치 생산과 구분되어야 한다.",
-                      "가격 상승은 대체로 새 가치 생산의 증가를 뜻한다고 본다."
+                      "보유 면화와 그 면화로 만든 반제품·완제품이 평가상승해 이익처럼 보일 수 있지만, 이는 새 잉여가치 생산과 구분되어야 한다.",
+                      "면화 가격 상승은 노동일 안의 필요노동을 줄여 같은 임금에서도 착취율을 자동으로 높인다.",
+                      "싸게 산 원료가 비싸지면 그 차액은 다음 임금 지급분으로 전환되어 가변자본을 대체한다.",
+                      "반제품 가격 상승은 생산과정을 거치지 않은 상품도 새 가치를 생산한다는 점을 보여준다."
                     ],
                     "en": [
-                      "Reduces input price pressure entirely to wages.",
-                      "Assumes constant-capital prices do not enter cost-price.",
-                      "The held inventory can be revalued and appear as a temporary gain, but this must be distinguished from new surplus-value production.",
-                      "Assumes price increases always mean more new value has been produced."
+                      "The held cotton and the semi-finished or finished goods made from it can appreciate and appear as a gain, but this must be distinguished from new surplus-value production.",
+                      "The rise in cotton price reduces necessary labour within the working day and automatically raises the exploitation rate at the same wage.",
+                      "When raw material bought cheaply becomes dearer, the difference turns into the next wage fund and replaces variable capital.",
+                      "A rise in semi-finished goods prices shows that commodities can produce new value without passing through production."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "보유 재고가 재평가되어 일시적 이익처럼 나타날 수 있지만, 이는 새 잉여가치 생산과 구분되어야 한다. 구체 사례에서도 핵심은 비용 절감이나 가격 변동이 잉여가치의 생산과 이윤율의 표현을 어떻게 다르게 매개하는가이다.",
-                    "en": "The held inventory can be revalued and appear as a temporary gain, but this must be distinguished from new surplus-value production. In concrete cases, the key is how cost saving or price movement mediates surplus-value production and the expression of the profit rate differently."
+                    "ko": "사례의 핵심은 평가상승이다. 원료 가격 상승은 이미 존재하는 원료, 반제품, 완제품의 가치를 높여 개별 자본가에게 이익처럼 나타날 수 있다. 그러나 그것은 생산과정에서 새로 만든 잉여가치가 아니다.",
+                    "en": "The case turns on appreciation. A rise in raw-material prices can raise the value of existing raw materials, semi-finished goods, and finished goods, appearing as a gain to an individual capitalist. But it is not surplus-value newly produced in the production process."
                   }
                 },
                 {
@@ -21142,27 +21142,27 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "가격 변동 분석이 이윤율론에 보태는 것은 무엇인가?",
-                    "en": "What does analysis of price fluctuations add to the theory of the profit rate?"
+                    "ko": "6장의 가격변동 분석은 왜 7장의 보충설명으로 이어지는가?",
+                    "en": "Why does Chapter 6's analysis of price fluctuations lead into Chapter 7's supplementary remarks?"
                   },
                   "choices": {
                     "ko": [
-                      "원료 가격 변동은 이윤율과 무관한 구매부서 문제라고 본다.",
-                      "불변자본 가격은 비용가격에 들어가지 않는다고 본다.",
-                      "가격 상승은 대체로 새 가치 생산의 증가를 뜻한다고 본다.",
-                      "이윤율이 생산 내부의 착취관계뿐 아니라 투입재 가격과 기존 자본의 평가변동에도 민감하게 움직임을 보여준다."
+                      "4~6장이 회전, 불변자본 절약, 가격변동을 통해 이윤율의 여러 매개를 보였으므로, 7장은 이 매개들을 보충적으로 정리한다.",
+                      "6장에서 가격변동이 새 잉여가치를 만든다는 결론이 나오므로, 7장은 잉여가치율 공식을 배경으로 물리고 가격표 분석을 앞세운다.",
+                      "6장에서 불변자본 가격이 비용가격에서 분리되므로, 7장은 생산수단을 빼고 임금만으로 이윤율을 계산한다.",
+                      "6장에서 원료 가격 문제가 끝나므로, 7장은 곧장 지대와 이자라는 분배형태로 이동한다."
                     ],
                     "en": [
-                      "Treats raw-material price changes as a purchasing issue unrelated to the profit rate.",
-                      "Assumes constant-capital prices do not enter cost-price.",
-                      "Assumes price increases always mean more new value has been produced.",
-                      "It shows that the profit rate is sensitive not only to exploitation inside production but also to input prices and revaluation of existing capital."
+                      "Because Chapters 4-6 have shown several mediations of the profit rate through turnover, economy of constant capital, and price fluctuation, Chapter 7 supplements and gathers these mediations.",
+                      "Because Chapter 6 concludes that price fluctuation creates new surplus-value, Chapter 7 moves the formula for the rate of surplus-value into the background and foregrounds price-tag analysis.",
+                      "Because Chapter 6 separates constant-capital prices from cost-price, Chapter 7 calculates the profit rate with wages alone.",
+                      "Because Chapter 6 finishes the raw-material price problem, Chapter 7 moves directly to the distribution forms of rent and interest."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율이 생산 내부의 착취관계뿐 아니라 투입재 가격과 기존 자본의 평가변동에도 민감하게 움직임을 보여준다. 이 장은 앞선 이윤 개념을 더 구체적인 운동 법칙으로 밀고 나가는 역할을 한다.",
-                    "en": "It shows that the profit rate is sensitive not only to exploitation inside production but also to input prices and revaluation of existing capital. The chapter pushes the earlier concept of profit toward more concrete laws of motion."
+                    "ko": "다음 장으로의 연결은 정리와 보충이다. 4장은 회전, 5장은 불변자본 절약, 6장은 가격변동과 재평가를 다루었다. 7장은 이윤율에 작용하는 이런 요인들을 보충적으로 묶어 다음 분석 단계로 넘긴다.",
+                    "en": "The link to the next chapter is consolidation and supplementation. Chapter 4 treated turnover, Chapter 5 economy of constant capital, and Chapter 6 price fluctuation and revaluation. Chapter 7 gathers these factors supplementarily before the next stage of analysis."
                   }
                 }
               ]
@@ -21180,27 +21180,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가격 변동의 핵심 긴장은 무엇인가?",
-                    "en": "What is the central tension in price fluctuations?"
+                    "ko": "원료 가격이 제품 가격과 이윤율에 특히 강하게 작용하는 이유는 무엇인가?",
+                    "en": "Why do raw-material prices act especially strongly on product prices and the rate of profit?"
                   },
                   "choices": {
                     "ko": [
-                      "새 가치가 생산되지 않아도 기존 자본가치의 평가가 변하면서 이윤율과 자본가의 손익이 크게 바뀔 수 있다는 긴장이다.",
-                      "원료 가격 변동은 이윤율과 무관한 구매부서 문제라고 본다.",
-                      "가격 상승은 대체로 새 가치 생산의 증가를 뜻한다고 본다.",
-                      "재고 평가 이익을 새 잉여가치와 같은 것으로 본다."
+                      "원료와 보조재는 소비될 때 가치가 한꺼번에 제품으로 이전되므로, 그 가격 변동이 비용가격과 이윤율에 직접 압력을 준다.",
+                      "원료는 고정자본처럼 여러 해에 걸쳐 조금씩 감가상각되므로, 가격 변동이 제품가격에 늦게 반영된다.",
+                      "원료 가격은 노동력 가치만 바꾸고 불변자본 가치에는 들어가지 않기 때문에 이윤율에는 간접적으로만 작용한다.",
+                      "원료 가격이 오르면 원료의 사용가치가 새 가치를 만들어 제품가격 상승을 보상한다."
                     ],
                     "en": [
-                      "Even without new value being produced, changes in the valuation of existing capital can strongly alter profit rates and capitalist gains or losses.",
-                      "Treats raw-material price changes as a purchasing issue unrelated to the profit rate.",
-                      "Assumes price increases always mean more new value has been produced.",
-                      "Identifies inventory revaluation gains with new surplus-value."
+                      "Because raw and auxiliary materials transfer their value to the product all at once when consumed, their price fluctuation directly pressures cost-price and the rate of profit.",
+                      "Because raw materials depreciate gradually over many years like fixed capital, price changes enter product prices only with delay.",
+                      "Because raw-material prices change only the value of labour-power and do not enter constant-capital value, they affect the profit rate only indirectly.",
+                      "Because when raw-material prices rise, their use-value creates new value and compensates for the rise in product prices."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "새 가치가 생산되지 않아도 기존 자본가치의 평가가 변하면서 이윤율과 자본가의 손익이 크게 바뀔 수 있다는 긴장이다. 이 긴장은 이윤율이 단순한 회계비율이 아니라 착취관계의 전도된 표현임을 보여준다.",
-                    "en": "Even without new value being produced, changes in the valuation of existing capital can strongly alter profit rates and capitalist gains or losses. This tension shows that the rate of profit is not a mere accounting ratio but an inverted expression of exploitation."
+                    "ko": "심화의 첫 구분은 원료와 고정자본의 가치 이전 방식이다. 원료와 보조재는 한 번에 제품가치로 들어가므로 가격 변동의 충격이 빠르다. 기계 같은 고정자본은 마모분만 점진적으로 이전한다.",
+                    "en": "The first advanced distinction is how raw materials and fixed capital transfer value. Raw and auxiliary materials enter product value all at once, so their price changes strike quickly. Fixed capital such as machinery transfers only its wear and tear gradually."
                   }
                 },
                 {
@@ -21208,27 +21208,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "투입재 가격과 이윤율 사이를 매개하는 것은 무엇인가?",
-                    "en": "What mediates input prices and the rate of profit?"
+                    "ko": "자본의 평가상승·평가절하와 자본의 방출·묶임은 어떻게 구분되는가?",
+                    "en": "How are appreciation/depreciation of capital distinguished from release/tie-up of capital?"
                   },
                   "choices": {
                     "ko": [
-                      "원료 가격 변동은 이윤율과 무관한 구매부서 문제라고 본다.",
-                      "원료와 보조재 가격이 비용가격, 선대 불변자본, 재고 평가에 들어가는 방식이 매개한다.",
-                      "재고 평가 이익을 새 잉여가치와 같은 것으로 본다.",
-                      "투입재 가격 압박을 전부 임금 문제로 환원한다."
+                      "평가상승·평가절하는 이미 투자된 자본가치의 크기가 변하는 것이고, 방출·묶임은 같은 규모의 생산을 계속하는 데 필요한 자본분이 줄거나 늘어나는 것이다.",
+                      "평가상승은 잉여가치 생산량 증가이고, 자본 방출은 자본가의 소비수입이 줄어드는 현상이다.",
+                      "평가절하는 원료가 생산에 들어갈 때 가치 이전을 멈추는 것이고, 자본 묶임은 노동자가 임금을 받지 못하는 상태다.",
+                      "두 구분은 모두 신용제도 이후에만 생기므로 6장의 일반 분석에서는 같은 현상으로 처리된다."
                     ],
                     "en": [
-                      "Treats raw-material price changes as a purchasing issue unrelated to the profit rate.",
-                      "The mediation is how raw and auxiliary material prices enter cost-price, advanced constant capital, and inventory valuation.",
-                      "Identifies inventory revaluation gains with new surplus-value.",
-                      "Reduces input price pressure entirely to wages."
+                      "Appreciation/depreciation changes the value magnitude of already invested capital, while release/tie-up concerns whether less or more capital is required to continue production on the same scale.",
+                      "Appreciation is increased surplus-value production, while release of capital is a fall in the capitalist's consumption revenue.",
+                      "Depreciation means raw material stops transferring value when it enters production, while tie-up of capital means workers do not receive wages.",
+                      "Both distinctions arise only after the credit system, so Chapter 6 treats them as the same phenomenon in the general analysis."
                     ]
                   },
-                  "answer": 1,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "원료와 보조재 가격이 비용가격, 선대 불변자본, 재고 평가에 들어가는 방식이 매개한다. 매개를 보아야 값, 비용가격, 이윤율 사이의 이동이 기계적 변환이 아니라 사회적 형식 변화임을 이해할 수 있다.",
-                    "en": "The mediation is how raw and auxiliary material prices enter cost-price, advanced constant capital, and inventory valuation. Seeing the mediation shows that movement between value, cost-price, and profit rate is a social change of form, not a mechanical conversion."
+                    "ko": "원문은 이 구분을 세밀하게 둔다. 가격 변동은 기존 자본가치의 평가를 바꾸기도 하고, 같은 생산규모를 유지하는 데 필요한 자본을 방출하거나 추가로 묶기도 한다. 둘은 연결되지만 같은 말이 아니다.",
+                    "en": "The text keeps this distinction precise. Price changes can alter the valuation of existing capital, and they can also release capital or tie up additional capital required to maintain the same scale of production. The two are connected, but not identical."
                   }
                 },
                 {
@@ -21236,27 +21236,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "원료 가격 상승을 노동자 임금 탓으로만 돌리는 설명은 무엇을 놓치는가?",
-                    "en": "What is missed by blaming rising raw-material prices simply on workers’ wages?"
+                    "ko": "원료 가격 상승을 임금 문제로만 설명하면 무엇을 놓치는가?",
+                    "en": "What is missed if rising raw-material prices are explained only as a wage problem?"
                   },
                   "choices": {
                     "ko": [
-                      "재고 평가 이익을 새 잉여가치와 같은 것으로 본다.",
-                      "투입재 가격 압박을 전부 임금 문제로 환원한다.",
-                      "세계시장, 공급 조건, 재고 평가, 불변자본 가격 변동이 이윤율을 압박하는 독자적 경로를 놓친다.",
-                      "불변자본 가격은 비용가격에 들어가지 않는다고 본다."
+                      "세계시장, 관세, 공급 조건, 보조재 가격처럼 불변자본 가격을 통해 이윤율에 작용하는 독자적 경로를 놓친다.",
+                      "임금 상승은 항상 원료 가격 상승보다 먼저 발생해 원료 가격의 실제 원인이 된다는 점을 놓친다.",
+                      "원료 가격이 오르면 노동자의 필요생활수단이 싸져 노동력 가치가 하락한다는 점을 놓친다.",
+                      "임금과 원료 가격은 모두 가변자본에 속하므로 같은 분모 항목이라는 점을 놓친다."
                     ],
                     "en": [
-                      "Identifies inventory revaluation gains with new surplus-value.",
-                      "Reduces input price pressure entirely to wages.",
-                      "It misses the distinct paths through which the world market, supply conditions, inventory valuation, and constant-capital prices pressure the profit rate.",
-                      "Assumes constant-capital prices do not enter cost-price."
+                      "It misses the distinct paths through which the world market, tariffs, supply conditions, and auxiliary-material prices affect the profit rate through constant-capital prices.",
+                      "It misses that wage increases always occur before raw-material price increases and are the real cause of raw-material prices.",
+                      "It misses that when raw-material prices rise, workers' necessary means of subsistence become cheaper and the value of labour-power falls.",
+                      "It misses that wages and raw-material prices both belong to variable capital and are therefore the same denominator item."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "세계시장, 공급 조건, 재고 평가, 불변자본 가격 변동이 이윤율을 압박하는 독자적 경로를 놓친다. 마르크스의 비판은 현상 자체를 부정하지 않고, 그 현상이 어떤 생산관계를 가리는지 밝힌다.",
-                    "en": "It misses the distinct paths through which the world market, supply conditions, inventory valuation, and constant-capital prices pressure the profit rate. Marx does not deny the phenomenon itself; he shows what production relation it conceals."
+                    "ko": "6장은 임금과 별개의 경로를 분명히 둔다. 원료·보조재 가격은 불변자본 가격으로 비용가격과 C에 들어간다. 그래서 세계무역, 관세, 공급 충격은 임금 변동 없이도 이윤율을 압박할 수 있다.",
+                    "en": "Chapter 6 makes clear that there is a path distinct from wages. Raw and auxiliary material prices enter cost-price and C as prices of constant capital. World trade, tariffs, and supply shocks can therefore pressure the profit rate even without wage changes."
                   }
                 },
                 {
@@ -21264,27 +21264,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "에너지 가격이 급등해 데이터센터의 수익성이 낮아진다. 무엇을 분석해야 하는가?",
-                    "en": "Energy prices surge and data-center profitability falls. What should be analyzed?"
+                    "ko": "에너지 가격이 급등해 데이터센터의 수익성이 낮아진다. 6장의 관점에서 무엇을 분석해야 하는가?",
+                    "en": "Energy prices surge and data-center profitability falls. What should be analyzed from Chapter 6's standpoint?"
                   },
                   "choices": {
                     "ko": [
-                      "불변자본 가격은 비용가격에 들어가지 않는다고 본다.",
-                      "투입재 가격 압박을 전부 임금 문제로 환원한다.",
-                      "에너지라는 보조재 가격 상승이 비용가격과 선대 불변자본을 키워 이윤율을 어떻게 압박하는지 분석해야 한다.",
-                      "가격 상승은 대체로 새 가치 생산의 증가를 뜻한다고 본다."
+                      "에너지라는 보조재 가격 상승이 비용가격과 선대 불변자본을 키워 같은 잉여가치의 이윤율 표현을 어떻게 낮추는지 분석해야 한다.",
+                      "에너지 가격 상승이 노동자 임금을 자동으로 올려 잉여가치율을 먼저 바꾸는지 분석해야 한다.",
+                      "전력 사용량이 늘면 데이터의 사용가치가 새 가치를 만들어 가격 상승분을 보상하는지 분석해야 한다.",
+                      "에너지 비용이 높아질수록 기존 서버 재고가 가변자본으로 전환되는지 분석해야 한다."
                     ],
                     "en": [
-                      "Assumes constant-capital prices do not enter cost-price.",
-                      "Reduces input price pressure entirely to wages.",
-                      "One should analyze how the rise in the price of energy as an auxiliary material increases cost-price and advanced constant capital, pressuring the profit rate.",
-                      "Assumes price increases always mean more new value has been produced."
+                      "One should analyze how the rise in energy as an auxiliary material enlarges cost-price and advanced constant capital, lowering the profit-rate expression of the same surplus-value.",
+                      "One should analyze whether rising energy prices automatically raise workers' wages and first alter the rate of surplus-value.",
+                      "One should analyze whether greater electricity use lets the use-value of data create new value and compensate for the price rise.",
+                      "One should analyze whether higher energy costs convert the existing server stock into variable capital."
                     ]
                   },
-                  "answer": 2,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "에너지라는 보조재 가격 상승이 비용가격과 선대 불변자본을 키워 이윤율을 어떻게 압박하는지 분석해야 한다. 현대 사례도 같은 기준으로 읽을 수 있다. 표면의 수익성 변화와 잉여가치 생산의 원천을 분리해야 한다.",
-                    "en": "One should analyze how the rise in the price of energy as an auxiliary material increases cost-price and advanced constant capital, pressuring the profit rate. Modern cases can be read by the same criterion: separate surface profitability changes from the source of surplus-value production."
+                    "ko": "현대 사례에서도 기준은 같다. 에너지는 보조재로서 불변자본 비용에 들어간다. 그 가격 상승은 새 가치 생산 없이도 비용가격과 C를 키워 이윤율을 낮출 수 있다.",
+                    "en": "The same criterion applies in a modern case. Energy is an auxiliary material entering constant-capital cost. Its price rise can enlarge cost-price and C and lower the rate of profit without producing new value."
                   }
                 },
                 {
@@ -21292,27 +21292,27 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가격 변동의 영향의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of the effect of price fluctuations?"
+                    "ko": "6장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Chapter 6?"
                   },
                   "choices": {
                     "ko": [
-                      "불변자본 가격은 비용가격에 들어가지 않는다고 본다.",
-                      "가격 상승은 대체로 새 가치 생산의 증가를 뜻한다고 본다.",
-                      "원료 가격 변동은 이윤율과 무관한 구매부서 문제라고 본다.",
-                      "이윤율의 운동이 가치 생산뿐 아니라 자본가치의 재평가와 시장가격 변동 속에서 현실적으로 굴절됨을 보여준다."
+                      "이윤율의 운동이 잉여가치 생산뿐 아니라 원료·보조재 가격, 자본가치의 평가상승·평가절하, 자본 방출·묶임 속에서 굴절됨을 보여준다.",
+                      "이 장은 원료 가격이 잉여가치의 새 원천임을 밝혀 이윤율 공식에서 노동력 항목을 제거한다.",
+                      "이 장은 가격 변동을 구매부서의 기술 문제로 한정해 생산과정 분석과 분리한다.",
+                      "이 장은 세계시장 변동을 평균이윤율의 직접 원인으로 세워 개별 자본의 비용가격 분석을 끝낸다."
                     ],
                     "en": [
-                      "Assumes constant-capital prices do not enter cost-price.",
-                      "Assumes price increases always mean more new value has been produced.",
-                      "Treats raw-material price changes as a purchasing issue unrelated to the profit rate.",
-                      "It shows that movement of the profit rate is concretely refracted not only through value production but through revaluation of capital-value and market price changes."
+                      "It shows that the movement of the profit rate is refracted not only through surplus-value production but also through raw and auxiliary material prices, appreciation/depreciation of capital-value, and release/tie-up of capital.",
+                      "The chapter reveals raw-material prices as a new source of surplus-value and removes labour-power from the profit-rate formula.",
+                      "The chapter confines price fluctuation to a technical purchasing issue and separates it from analysis of production.",
+                      "The chapter makes world-market fluctuation the direct cause of the average rate of profit and closes the analysis of individual cost-price."
                     ]
                   },
-                  "answer": 3,
+                  "answer": 0,
                   "explanation": {
-                    "ko": "이윤율의 운동이 가치 생산뿐 아니라 자본가치의 재평가와 시장가격 변동 속에서 현실적으로 굴절됨을 보여준다. 이 연결이 다음 장들의 평균이윤, 경쟁, 생산가격 분석으로 이어진다.",
-                    "en": "It shows that movement of the profit rate is concretely refracted not only through value production but through revaluation of capital-value and market price changes. This connection leads into the later analysis of average profit, competition, and prices of production."
+                    "ko": "6장은 이윤율을 더 현실적인 변동 속에 놓는다. 같은 착취관계라도 원료 가격, 보조재 가격, 재고 평가, 자본 방출·묶임이 p'를 흔든다. 이 정리는 7장의 보충설명으로 이어진다.",
+                    "en": "Chapter 6 places the rate of profit in more concrete fluctuations. Even with the same exploitation relation, raw-material prices, auxiliary-material prices, inventory valuation, and release or tie-up of capital disturb p'. This leads into Chapter 7's supplementary remarks."
                   }
                 }
               ]
