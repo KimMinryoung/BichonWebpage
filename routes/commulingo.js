@@ -1,32 +1,29 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
 const db = require('../config/database');
+const { loadCommuLingoBundle } = require('../data/commulingo');
 
 const router = express.Router();
-const LESSONS_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'lessons.json');
 const PUBLIC_CHAPTER_LIMITS = {
     'capital-vol1': 33,
     'capital-vol2': 21,
     'capital-vol3': 52,
+    'lenin-imperialism': 10,
 };
 
 let lessonsCache = null;
 
 function readLessons() {
-    const stat = fs.statSync(LESSONS_PATH);
-    if (lessonsCache && lessonsCache.mtimeMs === stat.mtimeMs) return lessonsCache.bundle;
-    const raw = fs.readFileSync(LESSONS_PATH, 'utf8');
-    const bundle = JSON.parse(raw);
+    const loaded = loadCommuLingoBundle();
+    if (lessonsCache && lessonsCache.mtimeMs === loaded.mtimeMs) return lessonsCache.bundle;
     lessonsCache = {
-        mtimeMs: stat.mtimeMs,
-        version: String(Math.trunc(stat.mtimeMs)),
-        bundle,
+        mtimeMs: loaded.mtimeMs,
+        version: loaded.version,
+        bundle: loaded.bundle,
         publicBundle: null,
         catalog: null,
         lessonsById: null,
     };
-    return bundle;
+    return loaded.bundle;
 }
 
 function currentVersion() {

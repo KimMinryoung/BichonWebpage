@@ -1,10 +1,7 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+const { loadCommuLingoBundle } = require('../data/commulingo');
 
-const root = path.join(__dirname, '..');
-const lessonsPath = path.join(root, 'data', 'commulingo', 'lessons.json');
-const data = JSON.parse(fs.readFileSync(lessonsPath, 'utf8'));
+const data = loadCommuLingoBundle().bundle;
 
 const honorific = /(습니다|습니까|십시오|세요|합니다|됩니다|입니다|였습니다|했습니다|봅니다|보세요)/;
 const embeddedMarker = /(정답입니다|오답입니다|Correct\.|Incorrect\.)/;

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-const fs = require('fs');
 const path = require('path');
+const { loadCommuLingoBundle } = require('../data/commulingo');
 
 const root = path.join(__dirname, '..');
-const lessonsPath = path.join(root, 'data', 'commulingo', 'lessons.json');
 const expected = {
   'capital-vol1': { chapters: 33, questions: 330, lessons: 66 },
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },
   'capital-vol3': { chapters: 52, questions: 520, lessons: 104 },
+  'lenin-imperialism': { chapters: 10, questions: 100, lessons: 20 },
 };
 const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7 };
 const banned = [
@@ -24,7 +24,7 @@ const banned = [
 ];
 
 const errors = [];
-const data = JSON.parse(fs.readFileSync(lessonsPath, 'utf8'));
+const data = loadCommuLingoBundle().bundle;
 const collections = new Map((data.collections || []).map(function(collection) { return [collection.id, collection]; }));
 
 function fail(message) { errors.push(message); }
@@ -128,7 +128,7 @@ Object.keys(expected).forEach(function(collectionId) {
         allLocalizedText(question.prompt, qLabel + '.prompt');
         allLocalizedText(question.explanation, qLabel + '.explanation');
         checkChoiceFeedback(question.choiceFeedback, qLabel);
-        if (!Number.isInteger(question.answer) || question.answer < 0 || question.answer > 3) fail(qLabel + ' answer must be 0..3');
+        if (question.answer !== 0) fail(qLabel + ' answer must be 0 with the correct choice first');
         if (!question.choices || !Array.isArray(question.choices.ko) || !Array.isArray(question.choices.en)) {
           fail(qLabel + ' choices must have ko/en arrays');
           return;
@@ -152,8 +152,8 @@ Object.keys(expected).forEach(function(collectionId) {
 });
 
 (data.collections || []).forEach(function(collection) { if (!expected[collection.id]) fail('unexpected collection ' + collection.id); });
-if (totalQuestions !== 1060) fail('total question count ' + totalQuestions + ' != 1060');
-if (totalLessons !== 212) fail('total lesson count ' + totalLessons + ' != 212');
+if (totalQuestions !== 1160) fail('total question count ' + totalQuestions + ' != 1160');
+if (totalLessons !== 232) fail('total lesson count ' + totalLessons + ' != 232');
 
 if (errors.length) {
   console.error('Commulingo validation failed with ' + errors.length + ' issue(s):');
