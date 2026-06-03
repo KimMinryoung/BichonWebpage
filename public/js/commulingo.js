@@ -13,6 +13,7 @@
     var lessonDetails = {};
     var active = null;
     var answered = false;
+    var returnScrollLesson = null;
 
     var els = {
         list: document.getElementById('commuLessonList'),
@@ -37,12 +38,15 @@
 
     syncServerProgress().finally(renderLessons);
 
-    els.back.addEventListener('click', showLessons);
+    els.back.addEventListener('click', function() {
+        showLessons(scrollTargetForLesson(active && active.lesson || returnScrollLesson, false));
+    });
     els.next.addEventListener('click', function() {
         var finishedAction = els.next.getAttribute('data-finished');
         if (finishedAction === '1') {
+            var finishedLesson = active && active.lesson || returnScrollLesson;
             els.next.removeAttribute('data-finished');
-            showLessons();
+            showLessons(scrollTargetForLesson(finishedLesson, true));
             return;
         }
         if (!active) return;
@@ -412,9 +416,56 @@
         return lang === 'en' ? part.en : part.ko;
     }
 
+    function chapterScrollKey(lesson) {
+        if (!lesson) return '';
+        return [
+            lesson.collectionId || '',
+            lesson.chapterNumber || '',
+            lesson.chapterTitle || ''
+        ].join('::');
+    }
+
+    function scrollTargetForLesson(lesson, advanceAfterAdvanced) {
+        if (!lesson) return '';
+        if (advanceAfterAdvanced && isAdvancedLesson(lesson)) {
+            return nextChapterScrollKey(lesson) || chapterScrollKey(lesson);
+        }
+        return chapterScrollKey(lesson);
+    }
+
+    function nextChapterScrollKey(lesson) {
+        var current = Number(lesson && lesson.chapterNumber) || 0;
+        var collectionId = lesson && lesson.collectionId;
+        var next = null;
+        lessons.forEach(function(item) {
+            if (item.locked || item.collectionId !== collectionId) return;
+            var chapterNumber = Number(item.chapterNumber) || 0;
+            if (chapterNumber <= current) return;
+            if (!next || chapterNumber < Number(next.chapterNumber)) next = item;
+        });
+        return chapterScrollKey(next);
+    }
+
+    function scrollToChapter(scrollKey) {
+        if (!scrollKey) return;
+        window.requestAnimationFrame(function() {
+            var cards = els.list.querySelectorAll('[data-commu-chapter-key]');
+            var target = null;
+            for (var i = 0; i < cards.length; i += 1) {
+                if (cards[i].getAttribute('data-commu-chapter-key') === scrollKey) {
+                    target = cards[i];
+                    break;
+                }
+            }
+            if (!target) return;
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
+
     function createChapterCard(chapter) {
         var card = document.createElement('article');
         card.className = 'commu-chapter-card';
+        card.setAttribute('data-commu-chapter-key', chapterScrollKey(chapter));
         card.innerHTML = [
             '<div class="commu-lesson-title-row">',
             '<h2>' + escapeHtml(chapterTitle(chapter)) + '</h2>',
@@ -519,6 +570,7 @@
     }
 
     function startLesson(lesson) {
+        returnScrollLesson = lesson;
         saveExpandedCollection(lesson.collectionId || '');
         answered = false;
         els.list.classList.add('is-hidden');
@@ -577,13 +629,15 @@
         els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';
     }
 
-    function showLessons() {
+    function showLessons(scrollTarget) {
+        scrollTarget = scrollTarget || scrollTargetForLesson(active && active.lesson || returnScrollLesson, false);
         active = null;
         answered = false;
         els.quiz.classList.add('is-hidden');
         els.list.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
         renderLessons();
+        scrollToChapter(scrollTarget);
     }
 
     function renderQuestion() {
