@@ -15,6 +15,10 @@ Created after the first concept-summary cleanup pass. The current data validates
 - Capital Volume II ch01-ch07 were rewritten around circuit notation, turnover time, and circulation-cost distinctions.
 - Capital Volume II ch20-ch21 were rewritten around Department I/II and reproduction scheme conditions.
 - Capital Volume III ch08-ch12 were rewritten around capital composition, average profit, production price, market-value, wage changes, and the transition to the falling-rate analysis.
+- Capital Volume III ch16-ch23 were rewritten around commercial capital, commercial profit, money-dealing capital, interest, interest rate, and profit of enterprise.
+- Capital Volume III ch27-ch32 were rewritten around credit, bank capital, fictitious capital, money-capital, real capital, and claims.
+- Capital Volume III ch37-ch52 were rewritten around differential rent, absolute rent, land price, capitalist rent, trinity formula, income forms, distribution relations, and class.
+- Remaining generic concept-card titles were removed across Capital Volumes I-III.
 
 ## Priority 1: Formula and notation chapters
 
@@ -32,14 +36,14 @@ These should use cards that explain symbols, formulas, and category relations di
 
 - Capital Volume III
   - DONE ch08-ch12: replace remaining generic cards with average profit / production price / market value concepts.
-  - ch16-ch23: explain commercial capital, commercial profit, interest, profit of enterprise, and `M-M'` as terms, not just chapter links.
-  - ch27-ch32: explain credit, bank capital, fictitious capital, money-capital, real capital, and claims.
-  - ch37-ch47: explain differential rent I/II, absolute rent, land price, and capitalist rent forms.
-  - ch48-ch52: explain the trinity formula, income forms, distribution relations, and class categories.
+  - DONE ch16-ch23: explain commercial capital, commercial profit, interest, profit of enterprise, and `M-M'` as terms, not just chapter links.
+  - DONE ch27-ch32: explain credit, bank capital, fictitious capital, money-capital, real capital, and claims.
+  - DONE ch37-ch47: explain differential rent I/II, absolute rent, land price, and capitalist rent forms.
+  - DONE ch48-ch52: explain the trinity formula, income forms, distribution relations, and class categories.
 
 ## Priority 2: Replace generic card titles
 
-Remaining chapters with useful but generic card labels should be rewritten so each card title itself teaches the concept.
+DONE. Remaining chapters with useful but generic card labels were rewritten so each card title itself teaches the concept.
 
 Examples of the target style:
 

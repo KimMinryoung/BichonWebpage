@@ -1764,30 +1764,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "등가교환만으로는 잉여가치가 생기지 않지만, 유통 바깥에서도 자본은 설명되지 않는다는 난점을 다룬다."
+                "title": "등가교환의 난점",
+                "text": "상품이 가치대로 교환된다면 단순한 교환만으로는 잉여가치가 생기지 않는다."
               },
               {
-                "title": "구분할 점",
-                "text": "사기나 비싸게 팔기만으로는 전체 자본주의의 이윤을 설명할 수 없다는 점을 확인한다."
+                "title": "비싸게 팔기의 한계",
+                "text": "한 사람이 비싸게 팔아 얻는 이득은 다른 사람의 손실일 뿐이다. 사회 전체의 자본 이윤을 설명하지 못한다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 해답을 직접 주지 않고 조건을 좁힌다. 잉여가치를 설명하려면 등가교환을 깨지 않으면서도 사용과정에서 새 가치를 창조하는 상품, 곧 노동력을 찾아야 한다."
+                "title": "해답의 조건",
+                "text": "잉여가치를 설명하려면 등가교환을 깨지 않으면서 사용과정에서 새 가치를 만드는 상품, 곧 노동력을 찾아야 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Examines the difficulty that surplus-value cannot arise from equal exchange alone, yet capital cannot be explained outside circulation either."
+                "title": "Problem of equivalent exchange",
+                "text": "If commodities exchange at their values, surplus-value cannot arise from exchange alone."
               },
               {
-                "title": "Key distinction",
-                "text": "See why fraud or selling dear cannot explain profit for capitalist society as a whole."
+                "title": "Limit of selling dear",
+                "text": "One person’s gain from selling dear is another person’s loss. It cannot explain profit for capitalist society as a whole."
               },
               {
-                "title": "Next link",
-                "text": "This chapter does not yet give the answer; it narrows the conditions. To explain surplus-value without violating equivalent exchange, the analysis must find a commodity whose use creates new value: labor-power."
+                "title": "Condition of the answer",
+                "text": "Surplus-value requires a commodity whose use creates new value while equivalent exchange remains intact: labor-power."
               }
             ]
           }
@@ -2119,30 +2119,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "노동력이 상품으로 등장하면서 잉여가치 생산의 조건이 마련되는 과정을 설명한다."
+                "title": "노동력 상품",
+                "text": "자본가는 노동 자체가 아니라 노동할 능력, 곧 노동력을 산다."
               },
               {
-                "title": "구분할 점",
-                "text": "자본가는 노동이 아니라 노동력을 사고, 그 사용 과정에서 가치보다 더 큰 가치를 얻는다는 차이를 잡는다."
+                "title": "노동력의 가치",
+                "text": "노동력의 가치는 노동자가 살아가고 다시 일할 수 있게 하는 생활수단의 가치로 정해진다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 시장에서 노동력 상품을 발견하지만, 해답은 그 상품의 사용과정에 있다. 그래서 다음 장부터는 자유롭고 등가적인 교환의 표면 뒤에서 노동력이 어떻게 소비되는지를 분석한다."
+                "title": "사용가치의 특수성",
+                "text": "노동력의 사용가치는 자기 가치보다 더 큰 가치를 만들 수 있다는 데 있다. 여기서 잉여가치 생산의 문이 열린다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how labor-power becomes a commodity and makes the production of surplus-value possible."
+                "title": "Labor-power as commodity",
+                "text": "The capitalist buys not labor itself, but the capacity to labor: labor-power."
               },
               {
-                "title": "Key distinction",
-                "text": "Grasp the difference between buying labor-power and using it to produce more value than it costs."
+                "title": "Value of labor-power",
+                "text": "The value of labor-power is determined by the value of the means of subsistence needed for workers to live and return to work."
               },
               {
-                "title": "Next link",
-                "text": "This chapter discovers labor-power as a commodity in the market, but the answer lies in the process of using that commodity. The following chapters therefore analyze how labor-power is consumed behind the surface of free and equivalent exchange."
+                "title": "Specific use-value",
+                "text": "The use-value of labor-power is its capacity to create more value than its own value. This opens the door to surplus-value production."
               }
             ]
           }
@@ -2474,30 +2474,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "노동과정과 가치증식과정을 구분해, 같은 생산 현장이 어떻게 사용가치와 잉여가치를 동시에 낳는지 보여 준다."
+                "title": "노동과정",
+                "text": "사람이 목적을 가지고 자연물을 바꾸어 사용가치를 만드는 과정이다."
               },
               {
-                "title": "구분할 점",
-                "text": "노동과정은 물건을 만드는 과정이고, 가치증식과정은 자본이 지불한 가치보다 더 큰 가치를 얻는 과정임을 구분한다."
+                "title": "가치증식과정",
+                "text": "자본가가 산 노동력이 자기 가치보다 더 큰 새 가치를 만들 때, 생산은 가치증식과정이 된다."
               },
               {
-                "title": "다음 연결",
-                "text": "「노동력의 구매와 판매」의 해답은 노동력 상품의 발견이고, 이 장의 해답은 그 상품의 소비과정이다. 자본주의적 생산의 비밀은 시장의 계약만이 아니라 생산 안에서 노동력이 어떻게 사용되는가에 있다."
+                "title": "두 과정의 결합",
+                "text": "같은 작업장 안에서 물건을 만드는 과정과 잉여가치를 만드는 과정이 동시에 일어난다. 이것이 자본주의적 생산의 핵심이다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Distinguishes the labor-process from the valorization-process, showing how production makes use-values and surplus-value at once."
+                "title": "Labor-process",
+                "text": "The purposeful process in which people transform natural materials and produce use-values."
               },
               {
-                "title": "Key distinction",
-                "text": "Separate making useful things from capital’s process of producing more value than it advanced."
+                "title": "Valorization-process",
+                "text": "Production becomes valorization when purchased labor-power creates more new value than its own value."
               },
               {
-                "title": "Next link",
-                "text": "“The Buying and Selling of Labour-Power” discovers the commodity labor-power; this chapter examines the consumption of that commodity. The secret of capitalist production lies not only in the market contract but in how labor-power is used in production."
+                "title": "Unity of two processes",
+                "text": "In the same workplace, useful things are produced and surplus-value is produced at once. This is the core of capitalist production."
               }
             ]
           }
@@ -4249,30 +4249,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "상대적 잉여가치가 노동일을 늘리지 않고도 필요노동시간을 줄여 생긴다는 점을 설명한다."
+                "title": "상대적 잉여가치",
+                "text": "노동일을 늘리지 않고 필요노동시간을 줄여 잉여노동시간을 늘리는 방식이다."
               },
               {
-                "title": "구분할 점",
-                "text": "생산성 향상이 노동자를 편하게 만드는 데 그치지 않고 자본의 잉여노동 확대 수단이 될 수 있음을 본다."
+                "title": "생산성의 역할",
+                "text": "생활수단을 더 싸게 만들면 노동력 가치가 낮아지고, 같은 노동일 안에서 잉여노동이 늘 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 상대적 잉여가치의 원리를 제시하고, 이후 장들은 그 원리가 자본주의적 생산조직에서 어떻게 실현되는지를 분석한다. 그래서 협업, 분업, 기계는 단순 기술사가 아니라 잉여가치 생산의 형식이다."
+                "title": "기술의 사회적 의미",
+                "text": "생산성 향상은 중립적 편의만이 아니라 자본 아래에서 잉여가치 확대의 수단이 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains relative surplus-value as the reduction of necessary labor-time without lengthening the working day."
+                "title": "Relative surplus-value",
+                "text": "Surplus labor is expanded by shortening necessary labor-time without lengthening the working day."
               },
               {
-                "title": "Key distinction",
-                "text": "See how higher productivity can expand surplus labor for capital rather than simply easing work."
+                "title": "Role of productivity",
+                "text": "If means of subsistence become cheaper, the value of labor-power falls and surplus labor can grow within the same working day."
               },
               {
-                "title": "Next link",
-                "text": "This chapter presents the principle of relative surplus-value, and the following chapters analyze how that principle is realized in capitalist organization of production. Cooperation, division of labor, and machinery are therefore not mere technical history but forms of surplus-value production."
+                "title": "Social meaning of technique",
+                "text": "Higher productivity is not merely neutral convenience; under capital it becomes a means of expanding surplus-value."
               }
             ]
           }
@@ -4604,30 +4604,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "협업이 개인 노동의 단순한 합을 넘어 자본의 지휘 아래 새로운 생산력을 만든다는 점을 다룬다."
+                "title": "협업",
+                "text": "많은 노동자가 같은 계획 아래 함께 일하면서 개인 노동의 단순 합보다 큰 생산력을 만든다."
               },
               {
-                "title": "구분할 점",
-                "text": "많은 사람이 함께 일할 때 생기는 힘이 왜 자본가의 능력처럼 보이는지 주목한다."
+                "title": "자본의 지휘",
+                "text": "협업의 사회적 힘은 노동자들의 결합에서 나오지만, 자본주의에서는 자본가의 지휘 능력처럼 나타난다."
               },
               {
-                "title": "다음 연결",
-                "text": "상대적 잉여가치는 생산성 향상을 요구한다. 협업은 자본이 노동을 사회적으로 결합해 생산성을 높이는 출발점이며, 이후 매뉴팩처와 기계제 대공업의 전제가 된다."
+                "title": "상대적 잉여가치와 연결",
+                "text": "협업은 생산성을 높여 상대적 잉여가치 생산의 첫 조직형태가 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows how cooperation under capitalist command creates a productive power greater than isolated labor."
+                "title": "Cooperation",
+                "text": "Many workers laboring together under one plan create a productive power greater than isolated individual labor."
               },
               {
-                "title": "Key distinction",
-                "text": "Notice how the collective power of many workers comes to appear as the capitalist’s own power."
+                "title": "Command of capital",
+                "text": "The social power of cooperation comes from combined workers, but under capitalism it appears as the capitalist’s power of command."
               },
               {
-                "title": "Next link",
-                "text": "Relative surplus-value requires increases in productivity. Cooperation is the starting point at which capital socially combines labor to raise productivity, preparing manufacture and modern industry."
+                "title": "Link to relative surplus-value",
+                "text": "Cooperation raises productivity and becomes the first organized form of relative surplus-value production."
               }
             ]
           }
@@ -4959,30 +4959,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "분업과 매뉴팩처가 노동자를 부분 작업에 묶어 생산성을 높이는 동시에 능력을 좁히는 과정을 설명한다."
+                "title": "매뉴팩처",
+                "text": "수공업적 숙련을 바탕으로 노동자를 부분작업에 고정해 생산과정을 분업화한 형태다."
               },
               {
-                "title": "구분할 점",
-                "text": "전문화가 효율만 뜻하지 않고 노동자의 전체적 기능을 분해하는 방식도 함께 본다."
+                "title": "부분노동자",
+                "text": "노동자는 전체 생산물을 만드는 사람이 아니라 특정 부분기능에 묶인다. 생산성은 오르지만 능력은 좁아진다."
               },
               {
-                "title": "다음 연결",
-                "text": "매뉴팩처는 협업을 더 조직화하지만 여전히 숙련된 인간 손동작에 의존한다. 이 생산형태의 성과와 한계가 기계제 대공업으로 넘어가는 역사적·논리적 다리가 된다."
+                "title": "기계제 대공업으로",
+                "text": "매뉴팩처의 분업은 이후 기계가 노동자를 더 직접적으로 지배하는 대공업의 전제가 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how division of labor and manufacture raise productivity while narrowing workers into partial tasks."
+                "title": "Manufacture",
+                "text": "A form that divides the labor-process by fixing workers to partial tasks on the basis of handicraft skill."
               },
               {
-                "title": "Key distinction",
-                "text": "Read specialization as both efficiency and a decomposition of workers’ broader capacities."
+                "title": "Detail worker",
+                "text": "The worker no longer produces the whole product but is tied to a partial function. Productivity rises while capacities narrow."
               },
               {
-                "title": "Next link",
-                "text": "Manufacture organizes cooperation more deeply, but it still depends on skilled human hand operations. Its achievements and limits form the historical and logical bridge to machinery and modern industry."
+                "title": "Toward modern industry",
+                "text": "The division of labor in manufacture prepares modern industry, where machinery dominates workers more directly."
               }
             ]
           }
@@ -5314,30 +5314,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "기계제 대공업이 노동과정, 숙련, 가족생활, 노동강도를 어떻게 바꾸는지 추적한다."
+                "title": "기계제 대공업",
+                "text": "기계체계가 노동과정을 재편하고 노동자의 숙련, 속도, 감독 방식을 바꾼다."
               },
               {
-                "title": "구분할 점",
-                "text": "기계는 중립적 도구가 아니라 자본 아래에서 노동자를 통제하고 상대적 잉여가치를 늘리는 장치로 작동한다."
+                "title": "상대적 잉여가치 장치",
+                "text": "기계는 자본 아래에서 필요노동을 줄이고 노동강도를 높여 상대적 잉여가치를 확대하는 수단이 된다."
               },
               {
-                "title": "다음 연결",
-                "text": "마르크스는 기계 자체를 악마화하지 않는다. 쟁점은 기계가 자본의 손에서 상대적 잉여가치 생산과 노동자 지배의 수단으로 사용된다는 사회적 형식이다."
+                "title": "중립적 도구 아님",
+                "text": "문제는 기계 자체가 아니라 기계가 자본의 소유와 지휘 아래 노동자를 통제하는 사회적 형태다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Traces how machinery and large-scale industry transform work, skill, family life, and labor intensity."
+                "title": "Modern industry",
+                "text": "A machinery system reorganizes the labor-process and changes skill, pace, and supervision."
               },
               {
-                "title": "Key distinction",
-                "text": "See machinery under capital as a means of control and relative surplus-value, not as a neutral tool."
+                "title": "Device for relative surplus-value",
+                "text": "Under capital, machinery reduces necessary labor and raises intensity, becoming a means of expanding relative surplus-value."
               },
               {
-                "title": "Next link",
-                "text": "Marx does not demonize machinery as such. The issue is the social form in which machinery, in the hands of capital, is used as a means of producing relative surplus-value and dominating workers."
+                "title": "Not a neutral tool",
+                "text": "The issue is not machinery itself, but the social form in which machinery under capital’s ownership and command controls workers."
               }
             ]
           }
@@ -6024,30 +6024,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "노동력 가치, 잉여가치, 노동일의 길이가 서로 변할 때 각 몫이 어떻게 달라지는지 종합한다."
+                "title": "세 변수",
+                "text": "노동력 가치, 잉여가치, 노동일 길이는 서로 맞물려 변한다. 하나만 보면 착취율 변화를 오해한다."
               },
               {
-                "title": "구분할 점",
-                "text": "하나의 변수만 보지 말고 생산성, 임금, 노동시간이 함께 움직일 때 착취율이 어떻게 달라지는지 읽는다."
+                "title": "생산성·강도·시간",
+                "text": "생산성 상승, 노동강도 변화, 노동일 연장은 서로 다른 방식으로 필요노동과 잉여노동을 바꾼다."
               },
               {
-                "title": "다음 연결",
-                "text": "노동력 가격과 잉여가치의 변동은 한 원인으로 환원되지 않는다. 마르크스는 변수를 분리해 어떤 변화가 절대적 잉여가치, 상대적 잉여가치, 강도 변화와 관련되는지 보여준다."
+                "title": "읽는 기준",
+                "text": "임금이 올랐는지 내렸는지만 보지 말고 노동일 안에서 노동자 몫과 자본 몫이 어떻게 재배치되는지 봐야 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Synthesizes how labor-power value, surplus-value, and the working day vary in relation to one another."
+                "title": "Three variables",
+                "text": "Value of labor-power, surplus-value, and length of the working day change in relation to one another. Looking at one alone misreads exploitation."
               },
               {
-                "title": "Key distinction",
-                "text": "Track productivity, wages, and labor-time together when judging changes in exploitation."
+                "title": "Productivity, intensity, time",
+                "text": "Higher productivity, changed intensity, and a longer working day alter necessary and surplus labor in different ways."
               },
               {
-                "title": "Next link",
-                "text": "Changes in the price of labor-power and surplus-value cannot be reduced to one cause. Marx separates variables to show which changes belong to absolute surplus-value, relative surplus-value, or intensified labor."
+                "title": "How to read it",
+                "text": "Do not look only at whether wages rise or fall; examine how the working day is redistributed between workers’ share and capital’s share."
               }
             ]
           }
@@ -6734,30 +6734,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "노동력의 가치가 임금 형태로 나타나면서 노동 전체가 지불받는 것처럼 보이는 과정을 설명한다."
+                "title": "임금형태",
+                "text": "노동력의 가치가 임금으로 나타나면, 노동 전체가 지불받는 것처럼 보인다."
               },
               {
-                "title": "구분할 점",
-                "text": "임금은 노동의 가격처럼 보이지만 실제로는 노동력의 가치가 변형되어 나타난 형태임을 이해한다."
+                "title": "노동의 가격 착시",
+                "text": "실제로 팔리는 것은 노동이 아니라 노동력이다. “노동의 가격”이라는 말은 무급노동을 가린다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 임금형태의 일반적 전도를 설명한다. 「시간임금」과 「성과임금」에서는 이 전도가 시간 단위와 생산물 단위라는 구체적 형태에서 어떻게 작동하는지를 보여준다."
+                "title": "전도의 효과",
+                "text": "임금형태는 필요노동과 잉여노동의 구분을 지워 착취관계를 공정한 지불관계처럼 보이게 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how the value of labor-power appears as wages, making all labor seem paid."
+                "title": "Wage-form",
+                "text": "When the value of labor-power appears as wages, all labor seems to be paid."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand wages as the transformed appearance of labor-power’s value, not the price of labor itself."
+                "title": "Illusion of price of labor",
+                "text": "What is sold is labor-power, not labor itself. The phrase “price of labor” conceals unpaid labor."
               },
               {
-                "title": "Next link",
-                "text": "This chapter explains the general inversion of the wage-form. Chapters 20 and 21 show how that inversion operates in the concrete forms of time-wages and piece-wages."
+                "title": "Effect of inversion",
+                "text": "The wage-form erases the distinction between necessary and surplus labor, making exploitation appear as fair payment."
               }
             ]
           }
@@ -7089,30 +7089,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "시간임금이 노동시간을 기준으로 임금을 계산하면서도 무급노동을 숨기는 방식을 설명한다."
+                "title": "시간임금",
+                "text": "임금이 시간 단위로 계산되는 형태다. 시급이나 일급은 노동시간 전체가 지불되는 것처럼 보이게 한다."
               },
               {
-                "title": "구분할 점",
-                "text": "시급이 공정해 보여도 노동일의 길이와 강도에 따라 착취가 달라질 수 있음을 본다."
+                "title": "노동가격",
+                "text": "시간임금은 노동력 가치가 “한 시간 노동의 가격”처럼 쪼개져 나타난 것이다."
               },
               {
-                "title": "다음 연결",
-                "text": "「노동력의 가치 또는 가격이 임금으로 전환됨」이 임금 일반의 전도를 설명했다면, 이 장은 그 전도가 시간당 노동가격이라는 구체적 형태를 취할 때 생기는 효과를 분석한다."
+                "title": "착취의 변수",
+                "text": "시급이 같아도 노동일 길이와 강도가 바뀌면 무급노동과 착취율은 달라질 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how time-wages calculate pay by time while still concealing unpaid labor."
+                "title": "Time-wages",
+                "text": "A wage form calculated by units of time. Hourly or daily wages make the whole labor-time appear paid."
               },
               {
-                "title": "Key distinction",
-                "text": "See why hourly pay can look fair while exploitation varies with the length and intensity of labor."
+                "title": "Price of labor",
+                "text": "Time-wages make the value of labor-power appear as the “price of one hour of labor.”"
               },
               {
-                "title": "Next link",
-                "text": "If “The Transformation of the Value (and Respective Price) of Labour-Power into Wages” explains the general inversion of wages, this chapter analyzes the effects when that inversion takes the concrete form of a price per hour of labor."
+                "title": "Variables of exploitation",
+                "text": "Even with the same hourly wage, changes in length and intensity of the working day can change unpaid labor and exploitation."
               }
             ]
           }
@@ -7444,30 +7444,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "성과임금이 산출량을 임금 기준으로 삼아 감시와 노동강도를 강화하는 방식을 다룬다."
+                "title": "성과임금",
+                "text": "임금이 생산물 수량이나 작업량에 따라 계산되는 형태다."
               },
               {
-                "title": "구분할 점",
-                "text": "성과급은 자유로운 보상처럼 보이지만 노동자가 스스로 속도를 높이게 만드는 통제 장치가 될 수 있다."
+                "title": "자기감독",
+                "text": "노동자는 더 많이 벌기 위해 스스로 속도를 높이고 품질·시간 압박을 내면화할 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "시간임금은 노동시간 단위, 성과임금은 생산물 단위로 노동의 가격처럼 보인다. 두 형태 모두 노동력 가치의 전도된 임금형태라는 점에서 연결된다."
+                "title": "임금형태의 본질",
+                "text": "성과급도 노동의 가격처럼 보이지만, 실제로는 노동력 가치가 산출량 단위로 변형되어 나타난 것이다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows how piece-wages use output as the wage measure and intensify supervision and effort."
+                "title": "Piece-wages",
+                "text": "A wage form calculated by quantity of product or task completed."
               },
               {
-                "title": "Key distinction",
-                "text": "Read piece-wages as a form that can make workers drive their own pace, not simply as free reward."
+                "title": "Self-supervision",
+                "text": "Workers may speed themselves up and internalize pressure over quality and time in order to earn more."
               },
               {
-                "title": "Next link",
-                "text": "Time-wages make labor appear priced by time; piece-wages make it appear priced by output. Both are connected as inverted wage-forms of the value of labor-power."
+                "title": "Essence of wage-form",
+                "text": "Piece-wages also appear as the price of labor, but are a transformed appearance of labor-power’s value in output units."
               }
             ]
           }
@@ -7799,30 +7799,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "나라마다 임금 수준이 달라지는 이유를 생산성, 생활수준, 노동강도 같은 조건과 연결해 살핀다."
+                "title": "국민적 임금차",
+                "text": "나라별 임금 차이는 단순 물가 차이가 아니라 생산성, 노동강도, 생활수준, 화폐가치의 결합이다."
               },
               {
-                "title": "구분할 점",
-                "text": "국민별 임금 차이를 단순한 물가 차이나 문화 차이로 보지 말고 자본주의적 생산조건의 차이와 함께 본다."
+                "title": "비교의 함정",
+                "text": "명목임금만 비교하면 실제 노동력 가치와 착취율을 놓친다. 같은 임금도 사회적 조건에 따라 다른 의미를 가진다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 임금형태 분석을 세계시장과 국민적 조건으로 확장한다. 같은 임금이라는 말도 생활수준, 생산성, 강도, 화폐가치에 따라 전혀 다른 의미를 가질 수 있다."
+                "title": "세계시장 관점",
+                "text": "임금형태는 국민적 조건 안에서 다르게 나타나지만, 세계시장 경쟁 속에서 서로 비교되고 압박받는다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Examines national differences in wages through productivity, standards of life, and intensity of labor."
+                "title": "National wage differences",
+                "text": "Wage differences among countries combine productivity, intensity, standard of life, and money value, not merely price levels."
               },
               {
-                "title": "Key distinction",
-                "text": "Read national wage differences through capitalist production conditions, not merely prices or culture."
+                "title": "Trap of comparison",
+                "text": "Comparing nominal wages alone misses value of labor-power and rate of exploitation. The same wage can mean different things under different social conditions."
               },
               {
-                "title": "Next link",
-                "text": "This chapter extends the analysis of wage-forms to the world market and national conditions. The same “wage” can mean very different things depending on standard of life, productivity, intensity, and money value."
+                "title": "World-market view",
+                "text": "Wage forms appear differently in national conditions, but are compared and pressured through world-market competition."
               }
             ]
           }
@@ -8154,30 +8154,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "단순재생산을 통해 자본주의 생산이 같은 계급관계를 매번 다시 만들어 내는 과정을 보여 준다."
+                "title": "단순재생산",
+                "text": "축적 없이 같은 규모의 생산이 반복되는 경우다. 하지만 단순 반복만으로도 계급관계는 다시 만들어진다."
               },
               {
-                "title": "구분할 점",
-                "text": "재생산은 물건을 다시 만드는 일만이 아니라 자본가와 임금노동자의 관계를 반복해서 유지하는 과정이다."
+                "title": "노동자 재생산",
+                "text": "노동자는 임금을 받아 생활하지만, 그 과정은 다시 노동력을 팔아야 하는 조건을 재생산한다."
               },
               {
-                "title": "다음 연결",
-                "text": "마르크스는 축적을 말하기 전에 단순한 반복만으로도 자본관계가 재생산됨을 보인다. 이 토대 위에서 잉여가치가 추가 자본으로 바뀔 때 관계가 확대되는 방식을 설명할 수 있다."
+                "title": "자본관계 재생산",
+                "text": "자본가는 생산수단을 계속 소유하고 노동자는 노동력을 계속 판다. 재생산은 물건뿐 아니라 관계의 반복이다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows through simple reproduction how capitalist production repeatedly recreates the same class relation."
+                "title": "Simple reproduction",
+                "text": "Production repeats on the same scale without accumulation. Yet even simple repetition reproduces class relations."
               },
               {
-                "title": "Key distinction",
-                "text": "See reproduction as maintaining the capital-wage labor relation, not only as replacing things."
+                "title": "Reproduction of workers",
+                "text": "Workers live from wages, but this process reproduces the condition that they must sell labor-power again."
               },
               {
-                "title": "Next link",
-                "text": "Before discussing accumulation, Marx shows that even mere repetition reproduces the capital relation. On that basis he can explain how the relation expands when surplus-value becomes additional capital."
+                "title": "Reproduction of capital relation",
+                "text": "Capitalists continue to own means of production and workers continue to sell labor-power. Reproduction repeats relations, not only things."
               }
             ]
           }
@@ -8509,30 +8509,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "잉여가치가 다시 자본으로 바뀌면서 축적이 시작되고 생산 규모가 확대되는 과정을 설명한다."
+                "title": "축적",
+                "text": "잉여가치 일부가 자본가의 소비로 끝나지 않고 추가 생산수단과 노동력 구매로 돌아가는 과정이다."
               },
               {
-                "title": "구분할 점",
-                "text": "축적은 돈을 쌓아 두는 일이 아니라 잉여가치를 생산수단과 노동력 구매로 되돌리는 과정임을 잡는다."
+                "title": "잉여가치의 자본화",
+                "text": "노동자가 만든 잉여가치가 다시 노동자를 고용하고 지배하는 추가 자본으로 바뀐다."
               },
               {
-                "title": "다음 연결",
-                "text": "마르크스는 교환의 법적 외관이 축적의 반복 속에서 어떻게 뒤집히는지 보인다. 등가교환의 형식은 유지되지만 그 결과는 타인의 무급노동에 대한 지배의 확대다."
+                "title": "소유법칙의 전도",
+                "text": "등가교환의 형식은 유지되지만, 반복된 축적 속에서 자본가의 소유는 타인의 무급노동에 대한 소유로 확대된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how surplus-value becomes capital again, beginning accumulation and expanding production."
+                "title": "Accumulation",
+                "text": "Part of surplus-value does not end as capitalist consumption but returns to buy additional means of production and labor-power."
               },
               {
-                "title": "Key distinction",
-                "text": "See accumulation as returning surplus-value to purchases of means of production and labor-power, not hoarding money."
+                "title": "Capitalization of surplus-value",
+                "text": "Surplus-value produced by workers becomes additional capital that hires and commands workers again."
               },
               {
-                "title": "Next link",
-                "text": "Marx shows how the legal appearance of exchange is inverted through repeated accumulation. The form of equivalent exchange remains, but its result is the expanded command over others’ unpaid labour."
+                "title": "Inversion of property law",
+                "text": "The form of equivalent exchange remains, but through repeated accumulation capitalist property expands as ownership of others’ unpaid labor."
               }
             ]
           }
@@ -9219,30 +9219,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "마르크스가 ‘원시축적’이라는 이름으로 자본주의의 역사적 출발점을 다시 묻는 대목이다."
+                "title": "원시적 축적",
+                "text": "자본과 임금노동이 만나기 전, 생산자가 생산수단에서 분리되는 역사적 과정을 가리킨다."
               },
               {
-                "title": "구분할 점",
-                "text": "자본과 임금노동이 처음부터 자연스럽게 있었던 것이 아니라 특정한 분리 과정의 결과라는 점을 확인한다."
+                "title": "분리의 핵심",
+                "text": "노동자가 자유롭게 계약하려면 역설적으로 자기 생계수단을 잃고 노동력밖에 팔 것이 없어야 한다."
               },
               {
-                "title": "다음 연결",
-                "text": "앞 장들은 노동력이 상품으로 존재한다는 전제 위에서 진행된다. 원시적 축적은 그 전제가 자연적 사실이 아니라 역사적으로 만들어진 결과임을 보여준다."
+                "title": "신화 비판",
+                "text": "자본주의의 출발은 근면한 저축가와 게으른 빈민의 이야기가 아니라 수탈과 분리의 역사다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Reopens the historical starting point of capitalism under the name primitive accumulation."
+                "title": "Primitive accumulation",
+                "text": "The historical process before the encounter of capital and wage-labor, in which producers are separated from means of production."
               },
               {
-                "title": "Key distinction",
-                "text": "Confirm that capital and wage labor are results of a specific separation, not timeless natural facts."
+                "title": "Core of separation",
+                "text": "For workers to contract freely, they must paradoxically lose their own means of subsistence and have only labor-power to sell."
               },
               {
-                "title": "Next link",
-                "text": "The earlier chapters proceed on the premise that labour-power exists as a commodity. Primitive accumulation shows that this premise is not a natural fact but a historically produced result."
+                "title": "Critique of myth",
+                "text": "The origin of capitalism is not a story of diligent savers and lazy poor people, but a history of expropriation and separation."
               }
             ]
           }
@@ -9574,30 +9574,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "농민이 토지에서 쫓겨나 임금노동자로 내몰리는 영국의 역사적 과정을 다룬다."
+                "title": "토지로부터 분리",
+                "text": "농민이 토지와 공동권에서 쫓겨나면서 독립 생산자로 살 수 있는 조건을 잃는다."
               },
               {
-                "title": "구분할 점",
-                "text": "노동시장은 자유계약만으로 생긴 것이 아니라 생계 기반을 잃은 사람들이 만들어 낸 역사적 결과임을 본다."
+                "title": "자유로운 노동자",
+                "text": "봉건적 예속에서 풀려나는 자유와 생계수단을 잃는 자유가 동시에 생긴다. 이 이중성이 임금노동의 조건이다."
               },
               {
-                "title": "다음 연결",
-                "text": "마르크스의 “자유로운 노동자”에는 이중성이 있다. 예속에서 풀려나는 동시에 생계수단에서 분리되면, 자유는 임금노동 의존의 형태를 띤다."
+                "title": "노동시장 형성",
+                "text": "노동시장은 자연스럽게 생기지 않았다. 토지를 잃은 사람들이 노동력을 팔 수밖에 없게 되면서 형성되었다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Treats the English history in which peasants were driven from the land and forced toward wage labor."
+                "title": "Separation from land",
+                "text": "Peasants lose the conditions for living as independent producers when expelled from land and common rights."
               },
               {
-                "title": "Key distinction",
-                "text": "See the labor market as a historical result of lost means of subsistence, not simply free contract."
+                "title": "Free worker",
+                "text": "Freedom from feudal bondage and freedom from means of subsistence arise together. This double freedom is the condition of wage-labor."
               },
               {
-                "title": "Next link",
-                "text": "Marx’s “free worker” is double. If people are freed from bondage while separated from means of subsistence, freedom takes the form of dependence on wage-labour."
+                "title": "Formation of labor market",
+                "text": "The labor market did not arise naturally. It formed as dispossessed people were forced to sell labor-power."
               }
             ]
           }
@@ -9929,30 +9929,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "토지를 잃은 사람들을 노동규율에 묶기 위해 국가가 폭력적 법률을 사용한 과정을 보여 준다."
+                "title": "유혈입법",
+                "text": "토지를 잃은 사람들을 부랑자로 처벌하고 낮은 임금노동에 묶기 위한 폭력적 법률들이다."
               },
               {
-                "title": "구분할 점",
-                "text": "임금노동의 자유는 처음부터 법과 처벌을 통해 강제된 질서였다는 점을 이해한다."
+                "title": "강제된 규율",
+                "text": "임금노동의 “자유”는 법과 처벌을 통해 강제된 노동규율 위에서 만들어졌다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 원시적 축적이 한 번의 수탈 사건이 아니라 규율화 과정임을 보여준다. 노동력 상품은 법적 폭력 속에서 자본에 적합한 형태로 만들어졌다."
+                "title": "국가의 역할",
+                "text": "국가는 시장 밖의 중립자가 아니라 노동력 상품을 자본에 맞게 형성하는 폭력적 장치로 작동했다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows how the state used violent laws to bind dispossessed people to labor discipline."
+                "title": "Bloody legislation",
+                "text": "Violent laws punished dispossessed people as vagabonds and bound them to low-wage labor."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand free wage labor as a legally enforced order, not as pure voluntary choice."
+                "title": "Enforced discipline",
+                "text": "The “freedom” of wage-labor was built on labor discipline enforced by law and punishment."
               },
               {
-                "title": "Next link",
-                "text": "This chapter shows that primitive accumulation is not a single act of expropriation but a process of discipline. Labour-power as a commodity was shaped for capital through legal violence."
+                "title": "Role of the state",
+                "text": "The state was not neutral outside the market; it acted as a coercive apparatus shaping labor-power for capital."
               }
             ]
           }
@@ -10284,30 +10284,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "자본주의적 농업이 농민을 몰아내고 농업자본가와 임금노동자를 형성하는 과정을 설명한다."
+                "title": "차지농업가",
+                "text": "토지를 소유하지 않아도 임차해 자본을 투입하고 임금노동자를 고용해 이윤을 얻는 농업자본가다."
               },
               {
-                "title": "구분할 점",
-                "text": "농업의 변화가 단지 생산기술 문제가 아니라 계급구조 재편이라는 점을 본다."
+                "title": "농업의 계급재편",
+                "text": "농업은 지주, 차지농업가, 농업노동자의 관계로 재편된다. 생산기술 변화만의 문제가 아니다."
               },
               {
-                "title": "다음 연결",
-                "text": "원시적 축적은 노동자 쪽만 만드는 과정이 아니다. 토지소유, 차지농업가, 농업 임금노동자가 결합되면서 농업 자체가 자본주의적으로 재편된다."
+                "title": "원시축적의 다른 쪽",
+                "text": "원시축적은 노동자를 만드는 동시에 자본주의적 농업경영자를 만든다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how capitalist agriculture expelled peasants and formed capitalist farmers and wage laborers."
+                "title": "Capitalist tenant farmer",
+                "text": "An agricultural capitalist who may not own land, but leases it, advances capital, hires wage-laborers, and seeks profit."
               },
               {
-                "title": "Key distinction",
-                "text": "Read changes in agriculture as a reorganization of class relations, not merely technique."
+                "title": "Class restructuring of agriculture",
+                "text": "Agriculture is reorganized into relations among landowner, tenant capitalist, and agricultural laborer. It is not merely technical change."
               },
               {
-                "title": "Next link",
-                "text": "Primitive accumulation does not create only the worker side. Landed property, capitalist tenant farmers, and agricultural wage-labourers combine to reorganize agriculture capitalistically."
+                "title": "Other side of primitive accumulation",
+                "text": "Primitive accumulation creates not only workers, but also capitalist agricultural managers."
               }
             ]
           }
@@ -10639,30 +10639,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "토지에서 쫓겨난 사람들이 도시 산업 노동력으로 흡수되며 국내시장이 형성되는 과정을 다룬다."
+                "title": "국내시장",
+                "text": "수탈된 농민은 자급 생산자가 아니라 임금으로 상품을 사야 하는 소비자가 된다."
               },
               {
-                "title": "구분할 점",
-                "text": "노동자와 시장은 따로 생기는 것이 아니라 생산수단 박탈과 함께 만들어진다는 점을 연결한다."
+                "title": "공업노동력",
+                "text": "토지에서 밀려난 사람들은 도시와 공업으로 흡수되어 산업자본의 노동력 공급원이 된다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 농업혁명이 산업자본의 전제 조건을 어떻게 낳는지 연결한다. 수탈된 농민은 노동자일 뿐 아니라 상품 구매자가 되고, 농산물도 공업 원료로 재편된다."
+                "title": "농업과 공업의 연결",
+                "text": "농업혁명은 공업에 노동자, 원료, 시장을 제공한다. 원시축적은 산업자본의 국내 조건을 만든다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows how the expelled rural population became industrial labor-power and helped form the home market."
+                "title": "Home market",
+                "text": "Expropriated peasants become consumers who must buy commodities with wages instead of self-sufficient producers."
               },
               {
-                "title": "Key distinction",
-                "text": "Connect the making of workers and markets to the loss of means of production."
+                "title": "Industrial labor-power",
+                "text": "People driven from the land are absorbed into towns and industry as a labor-power supply for industrial capital."
               },
               {
-                "title": "Next link",
-                "text": "This chapter connects the agricultural revolution to the conditions of industrial capital. Expropriated peasants become not only workers but commodity buyers, while agricultural products are reorganized as industrial raw materials."
+                "title": "Link between agriculture and industry",
+                "text": "The agricultural revolution supplies industry with workers, raw materials, and markets. Primitive accumulation creates domestic conditions for industrial capital."
               }
             ]
           }
@@ -10994,30 +10994,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "국가부채, 세금, 보호무역, 식민지 약탈이 자본축적을 밀어붙인 방식을 정리한다."
+                "title": "산업자본가의 발생",
+                "text": "상업, 국가부채, 세금, 보호무역, 식민지 약탈은 산업자본 형성을 가속했다."
               },
               {
-                "title": "구분할 점",
-                "text": "자본주의의 성장을 시장의 평화로운 확대만이 아니라 국가권력과 폭력의 결합으로 읽는다."
+                "title": "국가와 폭력",
+                "text": "자본주의 성장은 평화로운 시장 확대만이 아니라 국가권력과 강제의 도움을 받았다."
               },
               {
-                "title": "다음 연결",
-                "text": "원시적 축적은 한쪽에서 노동자를 만들고 다른 쪽에서 자본을 집중시킨다. 이 장은 특히 후자의 역사적 폭력과 제도적 장치를 전면에 놓는다."
+                "title": "축적의 집중",
+                "text": "원시축적은 한쪽에서 노동자를 만들고 다른 쪽에서 돈과 생산수단을 자본가 손에 집중시켰다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Summarizes how public debt, taxes, protectionism, and colonial plunder propelled accumulation."
+                "title": "Genesis of industrial capitalist",
+                "text": "Commerce, public debt, taxation, protectionism, and colonial plunder accelerated the formation of industrial capital."
               },
               {
-                "title": "Key distinction",
-                "text": "Read capitalist growth as tied to state power and violence, not merely peaceful market expansion."
+                "title": "State and violence",
+                "text": "Capitalist growth was not merely peaceful market expansion; it relied on state power and coercion."
               },
               {
-                "title": "Next link",
-                "text": "Primitive accumulation creates workers on one side and concentrates capital on the other. This chapter foregrounds the historical violence and institutional mechanisms of the latter."
+                "title": "Concentration of accumulation",
+                "text": "Primitive accumulation created workers on one side and concentrated money and means of production in capitalist hands on the other."
               }
             ]
           }
@@ -11704,30 +11704,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "식민지에서 토지 접근성이 임금노동 형성을 방해하는 사례를 통해 자본주의 조건을 역으로 드러낸다."
+                "title": "식민지의 역설",
+                "text": "토지 접근이 쉬운 식민지에서는 사람들이 임금노동자로 머물지 않고 독립 생산자가 되려 한다."
               },
               {
-                "title": "구분할 점",
-                "text": "자본주의에는 돈과 상품만으로 부족하며, 생계수단에서 분리된 노동자가 필요하다는 결론을 확인한다."
+                "title": "자본주의의 조건",
+                "text": "돈, 상품, 생산수단만으로는 부족하다. 노동자가 생계수단에서 분리되어 노동력을 팔아야 자본주의가 안정된다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 1권의 논지를 선명하게 되돌린다. 생산수단과 돈이 있어도 노동자가 분리되어 있지 않으면 자본주의적 생산관계는 안정적으로 성립하지 않는다."
+                "title": "역으로 드러난 결론",
+                "text": "식민지 사례는 1권 전체의 결론을 역으로 보여준다. 자본은 노동력 상품을 필요로 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Uses colonial conditions, where access to land obstructs wage labor, to reveal capitalism’s necessary conditions."
+                "title": "Colonial paradox",
+                "text": "Where land is easily accessible in colonies, people tend to become independent producers rather than remain wage-laborers."
               },
               {
-                "title": "Key distinction",
-                "text": "Confirm that capitalism needs separated workers, not just money and commodities."
+                "title": "Condition of capitalism",
+                "text": "Money, commodities, and means of production are not enough. Capitalism stabilizes only when workers are separated from means of subsistence and must sell labor-power."
               },
               {
-                "title": "Next link",
-                "text": "This chapter sharply returns to the argument of Volume I. Even if money and means of production exist, capitalist production relations do not stably arise unless workers are separated from them."
+                "title": "Conclusion shown in reverse",
+                "text": "The colonial case shows the conclusion of Volume I in reverse: capital needs labor-power as a commodity."
               }
             ]
           }
@@ -15982,30 +15982,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "노동기간의 길이가 자본 회전과 선대자본의 묶임에 어떤 영향을 주는지 분석한다."
+                "title": "노동기간",
+                "text": "하나의 상품이나 생산물 단위가 완성될 때까지 실제 노동이 계속 투입되는 기간이다."
               },
               {
-                "title": "구분할 점",
-                "text": "상품이 완성되기까지 오래 걸릴수록 자본이 더 오래 묶이고 회전 속도가 느려진다는 점을 본다."
+                "title": "자본의 묶임",
+                "text": "노동기간이 길면 완성품이 늦게 나오고, 선대자본도 더 오래 회수되지 못한다."
               },
               {
-                "title": "다음 연결",
-                "text": "분업과 협업이 중요한 이유는 같은 완성품을 더 짧은 전체 기간에 만들어 낼 수 있기 때문이다. 노동기간이 줄면 완성품이 더 빨리 나타나고, 판매와 자본 회수도 앞당겨질 수 있다. 하지만 노동기간은 생산시간의 일부일 뿐이므로, 다음 장은 직접 노동이 멈춘 뒤에도 자본을 묶는 자연과정과 대기시간으로 넘어간다."
+                "title": "단축의 효과",
+                "text": "협업, 분업, 기술은 노동기간을 줄여 상품 완성과 자본 회수를 앞당길 수 있다. 하지만 생산시간 전체와는 구분해야 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Analyzes how the length of the working period affects turnover and ties up advanced capital."
+                "title": "Labor-period",
+                "text": "The period during which actual labor continues to be applied until one commodity or product unit is completed."
               },
               {
-                "title": "Key distinction",
-                "text": "See why long production periods keep capital tied up and slow turnover."
+                "title": "Capital tied up",
+                "text": "A longer labor-period delays the finished product and keeps advanced capital unrecovered for longer."
               },
               {
-                "title": "Next link",
-                "text": "Division of labour and cooperation matter because they can produce the same finished product in a shorter total span. A shorter working period brings the finished product forward and can accelerate sale and recovery of capital. But the working period is only part of production time, so the next chapter turns to natural processes and waiting times that tie up capital even when direct labour pauses."
+                "title": "Effect of shortening",
+                "text": "Cooperation, division of labor, and technique can shorten the labor-period and speed completion and recovery. But it must be distinguished from production time as a whole."
               }
             ]
           }
@@ -19558,7 +19558,7 @@
                 "text": "잉여가치 s가 상품 판매 뒤에는 전체 선대자본이 낳은 초과분, 즉 이윤 p처럼 나타난다."
               },
               {
-                "title": "다음 연결",
+                "title": "이윤율로",
                 "text": "s가 p로 보이면 다음 문제는 그 p를 무엇과 비교할 것인가다. 그래서 바로 이윤율 p/(c+v)의 분석으로 넘어간다."
               }
             ],
@@ -19572,7 +19572,7 @@
                 "text": "After sale, surplus-value s appears as profit p, an excess seemingly produced by the whole advanced capital."
               },
               {
-                "title": "Next link",
+                "title": "Toward profit rate",
                 "text": "Once s appears as p, the next question is what p is compared with. This leads directly to the rate of profit, p/(c+v)."
               }
             ]
@@ -20623,8 +20623,8 @@
                 "text": "한 회전의 조건이 같아도 회전수가 늘면 같은 선대자본이 1년에 더 많은 잉여가치를 실현할 수 있어 연간 p'가 달라진다."
               },
               {
-                "title": "다음 연결",
-                "text": "시간 단축은 선대자본의 부담을 줄인다. 다음 장의 불변자본 절약은 같은 이윤율 문제를 비용 절감의 측면에서 본다."
+                "title": "시간과 수익성",
+                "text": "시간 단축은 선대자본의 부담을 줄인다. 불변자본 절약은 같은 이윤율 문제를 비용 절감의 측면에서 본다."
               }
             ],
             "en": [
@@ -20637,8 +20637,8 @@
                 "text": "Even with the same conditions in one turnover, more turnovers let the same advanced capital realize more surplus-value in a year, changing annual p'."
               },
               {
-                "title": "Next link",
-                "text": "Shorter time reduces the burden of advance. The following analysis of economies in constant capital treats the same profit-rate problem from the side of cost reduction."
+                "title": "Time and profitability",
+                "text": "Shorter time reduces the burden of advance. Economies in constant capital treat the same profit-rate problem from the side of cost reduction."
               }
             ]
           }
@@ -20970,30 +20970,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "경제적 자원 사용과 낭비가 이윤율에 어떤 영향을 주는지, 불변자본 절약을 중심으로 분석한다."
+                "title": "불변자본 절약",
+                "text": "기계, 건물, 원료, 보조재료 같은 c 지출을 줄이면 같은 s라도 p' = s/(c+v)가 올라갈 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "비용 절감은 기술적 효율만이 아니라 노동조건 악화나 사회적 비용 전가와도 연결될 수 있음을 본다."
+                "title": "절약의 양면성",
+                "text": "절약은 기술적 효율일 수도 있지만 노동조건 악화, 안전비용 절감, 사회적 비용 전가일 수도 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "다음 논의로 이어지는 지점은 불변자본의 가치 크기다. 이 장은 절약과 효율화가 c를 낮출 수 있음을 보이고, 「가격 변동의 영향」에서는 원료·생산수단 가격 자체의 등락이 c와 p'를 어떻게 바꾸는지 다룬다."
+                "title": "이윤율 효과",
+                "text": "불변자본 절약은 새 가치를 만들지 않아도 분모 C를 줄여 이윤율에 영향을 준다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Analyzes how economies in the use of constant capital affect the profit rate."
+                "title": "Economy of constant capital",
+                "text": "Reducing outlays for c such as machinery, buildings, materials, and auxiliaries can raise p' = s/(c+v) even with the same s."
               },
               {
-                "title": "Key distinction",
-                "text": "Read cost saving as tied not only to efficiency but also to worsened labor conditions and shifted social costs."
+                "title": "Double character of economy",
+                "text": "Economy can mean technical efficiency, but also worsening labor conditions, cutting safety costs, or shifting costs onto society."
               },
               {
-                "title": "Next link",
-                "text": "The link to the next chapter is the magnitude of constant-capital value. This chapter shows how economy and efficiency can lower c; “The Effect of Price Fluctuations” asks how fluctuations in the prices of raw materials and means of production alter c and p'."
+                "title": "Profit-rate effect",
+                "text": "Economy in constant capital affects the profit rate by reducing denominator C, even without creating new value."
               }
             ]
           }
@@ -21325,30 +21325,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "원료 가격 변동이 생산비와 이윤율을 크게 흔드는 이유를 설명한다."
+                "title": "원료 가격",
+                "text": "원료는 계속 다시 사야 하므로 가격 변동이 비용가격과 이윤율을 즉시 흔든다."
               },
               {
-                "title": "구분할 점",
-                "text": "원료는 생산과정에서 계속 필요하므로 가격 변화가 개별 기업의 계산을 넘어 전체 순환에 영향을 준다."
+                "title": "재평가와 감가",
+                "text": "이미 보유한 원료와 생산수단도 시장가격 변화에 따라 장부상 재평가되거나 감가될 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "다음 논의로 이어지는 지점은 정리와 보충이다. 「회전이 이윤율에 미치는 영향」에서는 회전, 「불변자본 사용의 절약」에서는 불변자본 절약, 이 장은 가격변동과 재평가를 다루었다. 「보충 설명」에서는 이윤율에 작용하는 이런 요인들을 보충적으로 묶어 다음 분석 단계로 넘긴다."
+                "title": "순환 전체 효과",
+                "text": "가격 변동은 한 기업의 계산 문제가 아니라 생산 중단, 재고 손실, 신용 압박으로 이어질 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains why changes in raw material prices can strongly disturb costs and profit rates."
+                "title": "Raw-material prices",
+                "text": "Because raw materials must be bought repeatedly, price changes immediately disturb cost-price and profit rate."
               },
               {
-                "title": "Key distinction",
-                "text": "See raw material prices as affecting the whole circuit, not just a firm’s accounting."
+                "title": "Revaluation and depreciation",
+                "text": "Materials and means of production already held can be revalued or depreciated when market prices change."
               },
               {
-                "title": "Next link",
-                "text": "The link to the next chapter is consolidation and supplementation. “The Effect of the Turnover on the Rate of Profit” treated turnover, “Economy in the Employment of Constant Capital” economy of constant capital, and this chapter price fluctuation and revaluation. “Supplementary Remarks” gathers these factors supplementarily before the next stage of analysis."
+                "title": "Effect on the whole circuit",
+                "text": "Price changes are not just individual accounting issues; they can lead to interrupted production, inventory losses, and credit pressure."
               }
             ]
           }
@@ -21680,30 +21680,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "제1편의 보충 논의를 통해 비용가격, 이윤, 이윤율의 착시를 다시 정리한다."
+                "title": "보충의 역할",
+                "text": "앞선 비용가격, 이윤, 이윤율 논의에서 실제 계산상 생기는 혼동을 정리하는 장이다."
               },
               {
-                "title": "구분할 점",
-                "text": "보충 설명은 단순 반복이 아니라 앞선 범주들이 실제 자본 계산에서 어떻게 보이는지 확인하는 단계다."
+                "title": "표면형태 점검",
+                "text": "자본가의 장부에는 비용 절감, 가격 변화, 회전 효과가 이윤의 직접 원인처럼 보일 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "「생산부문별 자본구성 차이와 이윤율 차이」에서는 이 장에서 한 자본의 변동으로 검토한 요소를 여러 생산부문 사이의 동시적 차이로 확장한다. 그래서 부문별 유기적 구성 차이가 서로 다른 이윤율을 낳는 문제가 전면에 나온다."
+                "title": "다음 단계",
+                "text": "이제 한 자본 내부의 변화가 아니라 생산부문마다 다른 자본구성이 서로 다른 이윤율을 만드는 문제로 넘어간다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Adds supplementary clarification on cost-price, profit, and the rate of profit."
+                "title": "Role of supplement",
+                "text": "This chapter clarifies confusions that arise in practical calculation after cost-price, profit, and profit rate have been introduced."
               },
               {
-                "title": "Key distinction",
-                "text": "Treat the supplement as a check on how earlier categories appear in actual capitalist calculation."
+                "title": "Checking surface forms",
+                "text": "In capitalist accounts, cost reduction, price changes, and turnover effects can appear as direct causes of profit."
               },
               {
-                "title": "Next link",
-                "text": "This chapter extends factors examined as changes within one capital into simultaneous differences among branches. This brings the problem of different organic compositions producing different profit rates to the foreground."
+                "title": "Next stage",
+                "text": "The analysis now moves from changes within one capital to different capital compositions among branches producing different profit rates."
               }
             ]
           }
@@ -24165,30 +24165,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "이윤율 저하 경향을 완화하거나 늦추는 여러 반작용 요인을 설명한다."
+                "title": "상쇄 요인",
+                "text": "이윤율 저하 경향을 늦추거나 완화하는 요인들이다. 법칙을 취소하는 것이 아니라 함께 작동한다."
               },
               {
-                "title": "구분할 점",
-                "text": "경향은 자동 붕괴 예언이 아니라 반대 요인들과 함께 작동하는 구조적 압력임을 구분한다."
+                "title": "주요 방식",
+                "text": "착취도 상승, 임금의 가치 이하 하락, 불변자본 저렴화, 상대적 과잉인구, 대외무역 등이 압력을 상쇄할 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 법칙을 현실의 복합 운동으로 만든다. 「법칙의 내적 모순의 전개」에서는 그 복합 운동이 과잉축적, 평가절하, 위기로 어떻게 폭발하는지 다룬다."
+                "title": "읽는 기준",
+                "text": "경향은 자동 붕괴 예언이 아니다. 반대 요인들과 충돌하면서 현실의 복합 운동을 만든다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains counteracting factors that can slow or offset the falling tendency of the profit rate."
+                "title": "Counteracting factors",
+                "text": "Factors that slow or soften the tendency of the profit rate to fall. They do not abolish the law; they operate with it."
               },
               {
-                "title": "Key distinction",
-                "text": "Read the tendency as a structural pressure working with counterforces, not as an automatic collapse prediction."
+                "title": "Main forms",
+                "text": "Higher exploitation, wages below value, cheapening constant capital, relative surplus population, and foreign trade can counteract the pressure."
               },
               {
-                "title": "Next link",
-                "text": "This chapter turns the law into a complex real movement. “Exposition of the Internal Contradictions of the Law” asks how that movement erupts as overaccumulation, devaluation, and crisis."
+                "title": "How to read it",
+                "text": "The tendency is not an automatic collapse prophecy. It forms a complex real movement through conflict with counteracting factors."
               }
             ]
           }
@@ -24875,30 +24875,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "상업자본이 산업자본의 유통 기능을 맡으며 독립된 자본 형태로 나타나는 과정을 설명한다."
+                "title": "상업자본",
+                "text": "산업자본의 상품 판매 기능이 독립한 자본 형태다. 상품을 생산하지 않고, 이미 생산된 상품의 실현을 맡는다."
               },
               {
-                "title": "구분할 점",
-                "text": "상업자본은 새 가치를 직접 만들지 않지만, 실현 시간을 줄이며 총잉여가치의 일부를 이윤으로 가져간다."
+                "title": "가치 창조와 실현",
+                "text": "상업자본은 새 가치를 직접 만들지 않는다. 그러나 판매 시간을 줄이고 산업자본의 회전을 빠르게 해 총자본의 운동에 필요해진다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 상업자본의 형태와 기능을 정의한다. 「상업이윤」에서는 그 정의 위에서 상업이윤의 원천과 평균이윤 참여 방식을 묻는다."
+                "title": "이윤의 근거",
+                "text": "상업자본의 이윤은 상인이 따로 가치를 만든 결과가 아니라, 산업자본이 생산한 총잉여가치의 일부를 나눠 받는 형태다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how commercial capital takes over circulation functions and appears as an independent form of capital."
+                "title": "Commercial capital",
+                "text": "A capital form in which the selling function of industrial capital becomes independent. It does not produce commodities; it realizes commodities already produced."
               },
               {
-                "title": "Key distinction",
-                "text": "See commercial capital as sharing surplus-value by shortening realization time, not as directly creating new value."
+                "title": "Value creation and realization",
+                "text": "Commercial capital does not directly create new value. But it shortens selling time and speeds the turnover of industrial capital, so it becomes necessary to total capital."
               },
               {
-                "title": "Next link",
-                "text": "This chapter defines the form and function of commercial capital. “Commercial Profit” then asks about the source of commercial profit and its participation in average profit."
+                "title": "Basis of profit",
+                "text": "Commercial profit does not come from merchants creating separate value. It is a share of the total surplus-value produced by industrial capital."
               }
             ]
           }
@@ -25230,30 +25230,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "상업이윤이 어디서 나오는지, 산업자본이 만든 잉여가치가 어떻게 나뉘는지 다룬다."
+                "title": "상업이윤",
+                "text": "상업자본이 평균이윤에 참여하면서 얻는 이윤이다. 겉으로는 싸게 사서 비싸게 팔아 생긴 것처럼 보인다."
               },
               {
-                "title": "구분할 점",
-                "text": "상인이 싸게 사서 비싸게 파는 겉모습 뒤에 총잉여가치의 분배 문제가 있다는 점을 본다."
+                "title": "실제 원천",
+                "text": "상업이윤의 원천은 유통 자체가 아니라 생산에서 만들어진 총잉여가치다. 문제는 그 잉여가치가 산업자본과 상업자본 사이에 어떻게 나뉘는가다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 상업이윤의 사회적 원천을 다룬다. 「상인자본의 회전」에서는 같은 상업이윤이 회전수에 따라 상품 가격에 어떻게 나뉘어 얹히는지로 넘어간다."
+                "title": "가격 효과",
+                "text": "상업자본도 평균이윤을 요구하므로 상품가격에는 상업부문의 이윤 몫이 반영된다. 하지만 이것이 새 가치 창조를 뜻하지는 않는다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Treats the source of commercial profit and how surplus-value produced by industrial capital is divided."
+                "title": "Commercial profit",
+                "text": "Profit received by commercial capital through participation in average profit. On the surface it appears to arise from buying cheap and selling dear."
               },
               {
-                "title": "Key distinction",
-                "text": "Look behind buying cheap and selling dear to the distribution of total surplus-value."
+                "title": "Real source",
+                "text": "The source of commercial profit is not circulation itself, but total surplus-value produced in production. The issue is how that surplus-value is divided between industrial and commercial capital."
               },
               {
-                "title": "Next link",
-                "text": "This chapter treats the social source of commercial profit. “The Turnover of Merchant's Capital” turns to how that profit is distributed across commodity prices according to turnover."
+                "title": "Price effect",
+                "text": "Commercial capital also demands average profit, so commodity prices reflect the commercial share of profit. This does not mean new value is created in circulation."
               }
             ]
           }
@@ -25585,30 +25585,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "상업자본의 회전 속도가 가격, 이윤, 필요한 자본 규모에 미치는 영향을 설명한다."
+                "title": "상인자본의 회전",
+                "text": "상업자본이 상품 매입과 판매를 얼마나 빨리 반복하는지를 본다. 회전이 빠를수록 같은 상업자본이 더 많은 상품량을 처리할 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "상업 부문의 빠른 회전은 유통비와 이윤분배를 바꾸지만 가치 창조의 장소를 바꾸지는 않는다."
+                "title": "이윤과 가격",
+                "text": "상업이윤 총량이 같아도 회전수가 다르면 각 상품에 얹히는 상업이윤 몫이 달라진다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 상품을 사고파는 상업자본의 회전을 다룬다. 「화폐거래자본」에서는 그 유통 과정에서 필요한 화폐 처리 기능이 별도 자본으로 분리되는 문제로 이동한다."
+                "title": "가치 창조 아님",
+                "text": "빠른 회전은 유통비와 가격 배분을 바꾸지만, 잉여가치의 생산 장소를 유통으로 옮기지는 않는다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how the turnover of commercial capital affects prices, profit, and the amount of capital needed."
+                "title": "Turnover of merchant capital",
+                "text": "This asks how quickly commercial capital repeats purchase and sale. Faster turnover lets the same commercial capital handle a larger mass of commodities."
               },
               {
-                "title": "Key distinction",
-                "text": "See fast commercial turnover as altering circulation costs and profit distribution, not the site of value creation."
+                "title": "Profit and price",
+                "text": "Even with the same total commercial profit, different turnover speeds change how much commercial profit is added to each commodity."
               },
               {
-                "title": "Next link",
-                "text": "This chapter treats the turnover of commercial capital that buys and sells commodities. “Money-Dealing Capital” moves to the separation of money-handling functions required in circulation."
+                "title": "Not value creation",
+                "text": "Faster turnover changes circulation costs and price distribution, but it does not move the production of surplus-value into circulation."
               }
             ]
           }
@@ -25940,30 +25940,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "화폐거래자본이 지불, 보관, 결제 같은 화폐 기능을 전문적으로 담당하는 과정을 설명한다."
+                "title": "화폐거래자본",
+                "text": "지불, 결제, 보관, 환전, 장부 처리 같은 화폐 기능이 전문화되어 독립한 자본이다."
               },
               {
-                "title": "구분할 점",
-                "text": "금융적 기능이 독립해 보여도 그 바탕에는 산업자본과 상업자본의 순환 필요가 있다는 점을 잡는다."
+                "title": "독립의 이유",
+                "text": "산업자본과 상업자본이 각자 화폐 기능을 처리하면 비용과 시간이 커진다. 이를 집중하면 전체 자본의 유통비가 절약된다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 화폐 처리 기능의 독립을 다룬다. 다음 핵심은 화폐가 단지 처리되는 것을 넘어, 자본이라는 상품으로 대여되어 이자를 낳는 형태다."
+                "title": "한계",
+                "text": "화폐거래자본은 화폐 기능을 처리할 뿐, 돈 자체가 새 가치를 낳는다는 뜻은 아니다. 이 점이 다음 이자 낳는 자본과 구분된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains money-dealing capital as the specialized handling of payments, safekeeping, and settlement."
+                "title": "Money-dealing capital",
+                "text": "An independent capital specializing in money functions such as payment, settlement, safekeeping, exchange, and bookkeeping."
               },
               {
-                "title": "Key distinction",
-                "text": "See specialized financial functions as rooted in the circulation needs of industrial and commercial capital."
+                "title": "Why it becomes independent",
+                "text": "If each industrial and commercial capital handles money functions separately, costs and time rise. Concentrating them economizes circulation costs for total capital."
               },
               {
-                "title": "Next link",
-                "text": "This chapter treats the independence of money-handling functions. The next key issue is money not merely being handled, but being loaned as the commodity capital and appearing to bear interest."
+                "title": "Limit",
+                "text": "Money-dealing capital handles money functions; it does not mean money itself creates new value. This distinguishes it from interest-bearing capital."
               }
             ]
           }
@@ -26295,30 +26295,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "상인자본의 역사적 위치를 통해 자본주의 이전의 상업과 자본주의적 생산의 차이를 보여 준다."
+                "title": "역사적 상인자본",
+                "text": "상업은 자본주의보다 오래되었다. 상인자본은 여러 생산양식 사이에서 물건을 중개하며 먼저 발전할 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "상업이 오래되었다고 해서 곧 자본주의가 있었던 것은 아니며, 생산을 지배하는 방식이 핵심이다."
+                "title": "자본주의와 차이",
+                "text": "상업이 오래되었다고 자본주의가 이미 있다는 뜻은 아니다. 자본주의에서는 산업자본이 생산을 지배하고 상업자본은 그 유통 기능에 종속된다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 자본형태를 역사적으로 자연화하지 않게 만든다. 「이자 낳는 자본」에서는 그보다 더 물신화된 오래된 자본형태, 즉 이자 낳는 자본을 분석한다."
+                "title": "읽는 기준",
+                "text": "상인자본의 역사적 선행성과 자본주의 안의 체계적 종속을 함께 봐야 한다. 오래된 자본형태가 곧 자본주의적 생산양식은 아니다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Uses the history of merchant capital to distinguish pre-capitalist commerce from capitalist production."
+                "title": "Historical merchant capital",
+                "text": "Commerce is older than capitalism. Merchant capital can develop early by mediating goods among different modes of production."
               },
               {
-                "title": "Key distinction",
-                "text": "Remember that old commerce is not the same as capitalism; the key is whether capital dominates production."
+                "title": "Difference from capitalism",
+                "text": "Old commerce does not mean capitalism already exists. In capitalism, industrial capital dominates production and commercial capital is subordinated to its circulation function."
               },
               {
-                "title": "Next link",
-                "text": "This chapter prevents naturalizing capital forms historically. “Interest-Bearing Capital” analyzes an even more fetishized old form: interest-bearing capital."
+                "title": "How to read it",
+                "text": "Hold together historical priority and systematic subordination. An old capital form is not the same as the capitalist mode of production."
               }
             ]
           }
@@ -26650,30 +26650,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "이자가 이윤의 일부로 분리되면서 자본 소유와 자본 사용이 나뉘어 보이는 과정을 설명한다."
+                "title": "이자 낳는 자본",
+                "text": "돈이 자본으로 빌려지고, 일정 기간 뒤 이자와 함께 돌아오는 형태다. 돈이 사용가치처럼 “자본으로 기능할 능력”을 가진 상품처럼 나타난다."
               },
               {
-                "title": "구분할 점",
-                "text": "이자는 돈 자체가 낳는 열매처럼 보이지만, 실제로는 생산된 잉여가치의 분할 형태임을 이해한다."
+                "title": "이자의 원천",
+                "text": "이자는 돈 자체가 낳는 열매가 아니다. 기능자본이 생산과 유통에서 얻은 이윤 중 일부가 대부자본가에게 넘어간 것이다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 이자 낳는 자본의 기본 형태를 세운다. 이후 분석은 이자가 이윤에서 분리되며 기업가이득과 어떻게 대립하는지로 나아간다."
+                "title": "형태의 전도",
+                "text": "소유자는 돈을 빌려준 것만으로 이자를 받는 것처럼 보인다. 그래서 생산, 노동력 착취, 이윤 분할의 매개가 가려진다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how interest separates from profit, making ownership of capital appear distinct from its use."
+                "title": "Interest-bearing capital",
+                "text": "Money is lent as capital and returns after a period with interest. Money appears as a commodity whose use-value is the ability to function as capital."
               },
               {
-                "title": "Key distinction",
-                "text": "See interest as a share of produced surplus-value, not as fruit naturally borne by money."
+                "title": "Source of interest",
+                "text": "Interest is not fruit produced by money itself. It is a part of profit obtained by functioning capital in production and circulation, transferred to the lender."
               },
               {
-                "title": "Next link",
-                "text": "This chapter establishes the basic form of interest-bearing capital. The following analysis turns to how interest separates from profit and confronts profit of enterprise."
+                "title": "Inverted form",
+                "text": "The owner seems to receive interest merely by lending money. Production, exploitation of labor-power, and division of profit are concealed."
               }
             ]
           }
@@ -27005,30 +27005,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "총이윤이 이자와 기업가이득으로 나뉘고, 이자율이 어떤 사회적 힘 속에서 정해지는지 살핀다."
+                "title": "이윤의 분할",
+                "text": "총이윤은 이자와 기업가이득으로 나뉜다. 이 분할은 자본 소유자와 자본 사용자 사이의 관계로 나타난다."
               },
               {
-                "title": "구분할 점",
-                "text": "이자율은 자연적으로 주어진 가격이 아니라 대부자본과 기능자본 사이의 힘 관계 속에서 형성된다는 점을 본다."
+                "title": "이자율",
+                "text": "이자율은 자연법칙처럼 정해지지 않는다. 대부 가능한 돈의 공급, 차입 수요, 경기 국면, 신용상태가 함께 작용한다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 이자의 크기와 변동을 다룬다. 「이자와 기업가이득」에서는 이 분할이 자본가계급 내부의 두 역할과 두 수입형태로 어떻게 굳어지는지 보여준다."
+                "title": "자연 이자율 비판",
+                "text": "이자에는 가치나 평균이윤율처럼 하나의 내재적 자연률이 없다. 그래서 이자율은 경쟁과 권력관계 속에서 더 직접적으로 변동한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Examines how total profit divides into interest and profit of enterprise, and how the interest rate is formed."
+                "title": "Division of profit",
+                "text": "Total profit divides into interest and profit of enterprise. This division appears as a relation between owner of capital and user of capital."
               },
               {
-                "title": "Key distinction",
-                "text": "See the interest rate as shaped by social relations between loan capital and functioning capital, not as a natural price."
+                "title": "Rate of interest",
+                "text": "The interest rate is not fixed like a natural law. Supply of loanable money, demand for borrowing, phase of the cycle, and credit conditions act together."
               },
               {
-                "title": "Next link",
-                "text": "This chapter treats the size and movement of interest. “Interest and Profit of Enterprise” shows how this division hardens into two roles and two income forms within the capitalist class."
+                "title": "Critique of natural rate",
+                "text": "Interest has no single intrinsic natural rate like value or the average profit rate. It therefore fluctuates more directly through competition and power relations."
               }
             ]
           }
@@ -27360,30 +27360,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "이윤이 이자와 기업가이득으로 갈라지면서 자본 소유와 자본 사용이 서로 다른 역할처럼 보이는 과정을 다룬다."
+                "title": "기업가이득",
+                "text": "이자 지급 뒤 기능자본가에게 남는 이윤 몫이다. 겉으로는 경영·감독 노동의 보수처럼 보일 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "기업가이득은 감독 노동의 임금이 아니라 잉여가치 분할 속에서 생기는 형태라는 점을 구분한다."
+                "title": "감독임금 아님",
+                "text": "기업가이득은 단순한 관리 임금이 아니라 잉여가치의 분할 형태다. 자본 사용자가 이윤의 일부를 자기 몫으로 받는 것이다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 분할된 수입형태가 어떻게 독립 원천처럼 보이는지 설명한다. 「이자 낳는 자본 형태에서 자본관계의 외화」에서는 그 전도가 M-M′라는 가장 압축된 형태에서 극대화되는 장면을 다룬다."
+                "title": "두 자본가 역할",
+                "text": "대부자본가는 소유자로 이자를 받고, 기능자본가는 사용자로 기업가이득을 받는다. 이 분리는 자본 내부의 수입형태를 독립 원천처럼 보이게 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Treats the split of profit into interest and profit of enterprise, making ownership and use of capital appear as separate roles."
+                "title": "Profit of enterprise",
+                "text": "The part of profit left to the functioning capitalist after interest is paid. On the surface it can appear as payment for management or supervision."
               },
               {
-                "title": "Key distinction",
-                "text": "Distinguish profit of enterprise from wages of supervision; it is a form within the division of surplus-value."
+                "title": "Not a supervision wage",
+                "text": "Profit of enterprise is not simply a managerial wage; it is a divided form of surplus-value. The user of capital receives part of profit as its own share."
               },
               {
-                "title": "Next link",
-                "text": "This chapter explains how divided income forms appear as independent sources. “Externalisation of the Relations of Capital in the Form of Interest-Bearing Capital” treats the culmination of this inversion in the condensed form M-M′."
+                "title": "Two capitalist roles",
+                "text": "The money-capitalist receives interest as owner; the functioning capitalist receives profit of enterprise as user. This separation makes income forms appear as independent sources."
               }
             ]
           }
@@ -28780,30 +28780,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "주식회사와 신용이 개인 자본가의 한계를 넘어 사회적 생산을 확대하는 동시에 모순을 키우는 방식을 설명한다."
+                "title": "신용의 역할",
+                "text": "신용은 흩어진 돈을 모아 큰 투자와 빠른 회전을 가능하게 한다. 개인 자본가의 한계를 넘어 사회적 생산을 확대한다."
               },
               {
-                "title": "구분할 점",
-                "text": "신용은 생산의 사회화를 앞당기지만, 소유와 통제의 사적 형태를 그대로 남긴다는 점을 본다."
+                "title": "주식회사",
+                "text": "주식회사는 거대한 생산수단을 개인 자본가 한 명의 소유 한계 밖에서 조직한다. 생산은 사회화되지만 소유권은 주식과 배당 청구권으로 남는다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 신용을 발전의 가속장치이자 모순의 증폭장치로 둔다. 이 양면성이 이후 은행자본, 가공자본, 현실자본의 구분으로 이어진다."
+                "title": "양면성",
+                "text": "신용은 생산력 발전을 가속하지만 투기, 과잉투자, 위기의 전파도 키운다. 발전 장치와 모순 증폭 장치가 동시에 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows how joint-stock companies and credit expand social production beyond individual capital while sharpening contradictions."
+                "title": "Role of credit",
+                "text": "Credit gathers scattered money and makes large investment and faster turnover possible. It expands social production beyond the limits of individual capitalists."
               },
               {
-                "title": "Key distinction",
-                "text": "See credit as socializing production while leaving private ownership and control in place."
+                "title": "Joint-stock company",
+                "text": "The joint-stock company organizes huge means of production beyond the ownership limit of one individual capitalist. Production is socialized, while ownership remains as shares and dividend claims."
               },
               {
-                "title": "Next link",
-                "text": "This chapter presents credit as both an accelerator of development and an amplifier of contradictions. This double character leads into the distinctions among bank capital, fictitious capital, and real capital."
+                "title": "Double character",
+                "text": "Credit accelerates productive development, but also enlarges speculation, overinvestment, and transmission of crisis. It is both a development mechanism and a contradiction amplifier."
               }
             ]
           }
@@ -29135,30 +29135,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "통화와 자본이 신용제도 안에서 서로 다른 역할을 하지만 위기 때 쉽게 뒤섞여 보이는 이유를 다룬다."
+                "title": "유통수단",
+                "text": "일상 거래에서 필요한 돈이다. 상품이 사고팔릴 때 지급을 매개한다."
               },
               {
-                "title": "구분할 점",
-                "text": "결제수단 부족과 생산자본 부족을 구분해야 금융위기의 성격을 더 정확히 볼 수 있다."
+                "title": "자본으로서의 돈",
+                "text": "위기 때 기업이 요구하는 돈은 단순한 잔돈이 아니라 만기 채무를 갚고 자본순환을 이어 갈 지급수단이다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장의 기능 구분이 없으면 은행자본의 구성부분을 현실자본처럼 착각하기 쉽다. 그래서 「은행자본의 구성부분」의 청구권 분석으로 넘어갈 발판이 된다."
+                "title": "구분의 효과",
+                "text": "통화량 부족과 자본 부족을 섞으면 위기의 성격을 잘못 본다. 어떤 기능의 돈이 부족한지를 물어야 은행자본 분석으로 넘어갈 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains why currency and capital play different roles in credit yet become confused in crisis."
+                "title": "Means of circulation",
+                "text": "Money needed for ordinary transactions, mediating payment when commodities are bought and sold."
               },
               {
-                "title": "Key distinction",
-                "text": "Distinguish shortage of means of payment from shortage of productive capital when reading financial crisis."
+                "title": "Money as capital",
+                "text": "In crisis, firms demand not pocket change but means of payment to meet maturing debts and continue the circuit of capital."
               },
               {
-                "title": "Next link",
-                "text": "Without this chapter’s functional distinction, it is easy to mistake components of bank capital for real capital. This prepares “Component Parts of Bank Capital”’s analysis of claims."
+                "title": "Effect of the distinction",
+                "text": "If shortage of currency and shortage of capital are confused, the crisis is misread. One must ask which function of money is lacking before analyzing bank capital."
               }
             ]
           }
@@ -29490,30 +29490,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "은행자본이 현금, 증권, 대출채권 등으로 구성되며 실제 자본과 가공자본을 뒤섞어 보이게 하는 과정을 설명한다."
+                "title": "은행자본",
+                "text": "은행 장부에는 현금, 예금, 대출채권, 국채, 주식 같은 항목이 자본처럼 나타난다."
               },
               {
-                "title": "구분할 점",
-                "text": "은행의 자산 항목을 그대로 사회의 실제 부로 읽으면 중복 계산과 착시가 생긴다는 점을 조심한다."
+                "title": "가공자본",
+                "text": "증권과 채권은 미래 수입에 대한 청구권이다. 그것이 가격을 갖고 매매된다고 해서 같은 크기의 현실자본이 따로 존재하는 것은 아니다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 은행자산의 자본형태가 얼마나 청구권에 의존하는지 보여준다. 이 때문에 「화폐자본과 현실자본 I」부터 화폐자본과 현실자본의 관계를 더 분명히 따져야 한다."
+                "title": "착시와 중복",
+                "text": "한쪽의 채권은 다른 쪽의 채무일 수 있다. 은행자산을 그대로 사회 전체의 실제 부로 읽으면 청구권을 현실자본과 중복 계산하게 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains bank capital as a mix of cash, securities, and claims that can blur real and fictitious capital."
+                "title": "Bank capital",
+                "text": "In bank accounts, cash, deposits, loan claims, government bonds, and shares all appear as capital."
               },
               {
-                "title": "Key distinction",
-                "text": "Avoid reading bank assets directly as society’s real wealth; claims can be counted more than once."
+                "title": "Fictitious capital",
+                "text": "Securities and debt claims are claims on future income. Their having a price and being traded does not mean an equal amount of real capital separately exists."
               },
               {
-                "title": "Next link",
-                "text": "This chapter shows how much the capital form of bank assets depends on claims. This makes it necessary from “Money-Capital and Real Capital. I” onward to clarify the relation between money-capital and real capital."
+                "title": "Illusion and duplication",
+                "text": "One side’s claim can be another side’s debt. Reading bank assets as social wealth directly double-counts claims as if they were real capital."
               }
             ]
           }
@@ -30555,30 +30555,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "화폐자본과 현실자본의 관계를 보충해, 금융적 축적의 겉모습과 실제 재생산의 차이를 정리한다."
+                "title": "세 장의 결론",
+                "text": "화폐자본과 현실자본의 관계는 단순히 “돈이 많다/적다”로 설명되지 않는다. 신용, 청구권, 실제 생산이 서로 엇갈릴 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "숫자로 불어난 금융자산과 생산과정에서 실제로 늘어난 자본을 구분하는 감각을 기른다."
+                "title": "금융적 축적",
+                "text": "예금, 증권, 대출채권은 숫자로 빠르게 늘어날 수 있다. 하지만 그것이 곧 기계, 원료, 고용, 생산능력의 증가를 뜻하지는 않는다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 세 장의 결론부다. 연결과 차이를 함께 보아야 금융적 풍부함과 현실축적의 어긋남을 설명할 수 있다."
+                "title": "판단 기준",
+                "text": "금융시장의 풍부함과 현실축적의 건강함을 구분해야 한다. 핵심은 청구권이 실제 생산과 판매에서 실현될 수 있는가다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Completes the discussion of money-capital and real capital by clarifying financial appearance versus actual reproduction."
+                "title": "Conclusion of the sequence",
+                "text": "The relation between money-capital and real capital cannot be explained simply as “more or less money.” Credit, claims, and actual production can diverge."
               },
               {
-                "title": "Key distinction",
-                "text": "Develop the habit of distinguishing swollen financial assets from capital actually expanded in production."
+                "title": "Financial accumulation",
+                "text": "Deposits, securities, and loan claims can grow rapidly as numbers. This does not directly mean more machinery, materials, employment, or productive capacity."
               },
               {
-                "title": "Next link",
-                "text": "This chapter is the conclusion of the three-chapter discussion. Both connection and difference must be seen to explain the divergence between financial abundance and real accumulation."
+                "title": "Criterion",
+                "text": "Financial abundance must be distinguished from healthy real accumulation. The key is whether claims can be realized through actual production and sale."
               }
             ]
           }
@@ -31620,30 +31620,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "국내 신용이 금속화폐를 밀어내는 듯 보여도 국제 결제에서는 금과 환율이 세계화폐, 지급기한, 금 유출, 이자율 압력의 문제로 다시 등장한다."
+                "title": "세계화폐",
+                "text": "국내 신용이 발달해도 국제 결제에서는 금과 외환이 최종 지급수단으로 다시 중요해진다."
               },
               {
-                "title": "구분할 점",
-                "text": "국제 지급관계가 국내 신용시장과 이자율을 어떻게 압박하는지 이해한다."
+                "title": "환율과 금 유출",
+                "text": "국제 지급 압박은 환율 변동, 금 유출, 이자율 상승 압력으로 국내 신용시장에 돌아온다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 신용제도가 국내 장부 안에서 닫히지 않음을 보여준다. 세계시장 결제는 금과 환율을 통해 국내 신용조건을 흔든다."
+                "title": "국내 신용의 한계",
+                "text": "신용제도는 한 나라 장부 안에서 닫히지 않는다. 세계시장 결제 조건이 국내 금융을 흔든다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Even when domestic credit appears to displace metallic money, in international settlement gold and exchange rates return as problems of world money, payment dates, gold outflows, and interest-rate pressure."
+                "title": "World money",
+                "text": "Even when domestic credit is developed, gold and foreign exchange regain importance as final means of payment in international settlement."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how international payment relations pressure domestic credit markets and interest rates."
+                "title": "Exchange rate and gold drain",
+                "text": "International payment pressure returns to domestic credit markets through exchange-rate movement, gold outflow, and pressure on interest rates."
               },
               {
-                "title": "Next link",
-                "text": "This chapter shows that the credit system is not closed within domestic accounts. World-market settlement shakes domestic credit conditions through gold and exchange rates."
+                "title": "Limit of domestic credit",
+                "text": "The credit system is not closed inside one country’s books. Conditions of world-market settlement disturb domestic finance."
               }
             ]
           }
@@ -31975,30 +31975,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "고리대자본은 자본주의보다 오래된 형태로 존재하며, 생산을 자본주의적으로 조직하기보다 기존 생산자의 수입과 재산을 이자로 빨아들이고 해체할 수 있다."
+                "title": "고리대자본",
+                "text": "이자를 받는 자본은 자본주의보다 오래된 형태로 존재했다. 농민, 장인, 영주, 국가의 수입을 빨아들일 수 있었다."
               },
               {
-                "title": "구분할 점",
-                "text": "이자가 있다고 곧 자본주의가 있는 것은 아니라는 점, 고리대자본이 기존 생산관계를 해체할 수는 있어도 산업자본과 같은 방식으로 생산을 조직하지는 않는다는 점을 이해한다."
+                "title": "산업자본과 차이",
+                "text": "고리대자본은 생산을 자본주의적으로 조직하기보다 기존 생산자를 압박하고 해체하는 방식으로 작동할 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 신용론의 종결부이자 지대론의 입구다. 오래된 수입형태는 생산관계가 바뀌면 다른 의미를 갖는다."
+                "title": "역사적 전환",
+                "text": "이자가 있다고 곧 자본주의는 아니다. 이자 형태의 의미는 어떤 생산관계 안에 놓이는가에 따라 달라진다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Usury capital exists in forms older than capitalism; rather than organizing production capitalistically, it can absorb and dissolve the income and property of existing producers through interest."
+                "title": "Usury capital",
+                "text": "Capital receiving interest existed before capitalism. It could absorb the income of peasants, artisans, lords, and states."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand that the presence of interest does not by itself mean capitalism, and that usury can dissolve existing production relations without organizing production in the manner of industrial capital."
+                "title": "Difference from industrial capital",
+                "text": "Usury capital can pressure and dissolve existing producers rather than organize production capitalistically."
               },
               {
-                "title": "Next link",
-                "text": "This chapter closes the credit discussion and opens the way to rent theory. Older income forms take on different meanings when production relations change."
+                "title": "Historical transition",
+                "text": "The presence of interest does not by itself mean capitalism. The meaning of the interest form changes with the production relation in which it stands."
               }
             ]
           }
@@ -32330,30 +32330,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "자본주의적 농업에서 지주, 자본가적 차지농, 농업노동자가 분리되고 초과이윤이 토지소유를 통해 지대로 전환되는 문제를 제기한다."
+                "title": "세 계급",
+                "text": "자본주의적 농업은 지주, 자본가적 차지농, 농업노동자의 관계로 구성된다. 지대는 이 관계 안에서 이해해야 한다."
               },
               {
-                "title": "구분할 점",
-                "text": "지대를 토지가 저절로 낳는 소득으로 보지 않고, 자본주의적 농업의 세 계급 관계와 초과이윤의 이전 문제로 이해한다."
+                "title": "초과이윤",
+                "text": "평균이윤을 넘는 이윤이 생길 때, 토지소유는 그 일부를 지대로 전환할 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 틀을 세워야 뒤에서 초과이윤이 어떤 조건에서 차액지대나 절대지대로 바뀌는지 추적할 수 있다."
+                "title": "지대의 문제",
+                "text": "토지가 소득을 저절로 낳는 것이 아니다. 자본주의적 농업에서 초과이윤이 토지소유를 통해 이전되는 방식이 문제다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Introduces capitalist agriculture as a relation among landowner, capitalist tenant farmer, and agricultural wage-labourer, and asks how surplus-profit is transformed into rent through landed property."
+                "title": "Three classes",
+                "text": "Capitalist agriculture is structured by the relation among landowner, capitalist tenant farmer, and agricultural wage-laborer. Rent must be understood within this relation."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand rent not as income naturally produced by land, but as a problem of three class relations in capitalist agriculture and the transfer of surplus-profit."
+                "title": "Surplus-profit",
+                "text": "When profit above average profit arises, landed property can transform part of it into rent."
               },
               {
-                "title": "Next link",
-                "text": "This frame lets Marx trace when surplus-profit becomes differential or absolute rent in later chapters."
+                "title": "Problem of rent",
+                "text": "Land does not naturally produce income by itself. The question is how surplus-profit is transferred through landed property in capitalist agriculture."
               }
             ]
           }
@@ -32685,30 +32685,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "차액지대: 일반적 고찰: 같은 양의 자본과 노동을 투입해도 토지의 비옥도나 위치가 다르면 개별 생산비와 수익이 달라진다."
+                "title": "차액지대",
+                "text": "같은 시장가격 아래에서 더 좋은 토지나 위치가 낮은 개별 생산비를 만들면 초과이윤이 생기고, 그것이 지대로 전환될 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "토지의 비옥도와 위치 차이가 같은 시장가격 아래 어떻게 초과이윤과 지대로 이어지는지 이해한다."
+                "title": "비옥도와 위치",
+                "text": "차액은 자연적 비옥도뿐 아니라 시장과의 거리, 운송조건, 위치에서도 생긴다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 일반 원리가 있으면 비옥도·위치 차이가 왜 차액지대 I로 나타나는지 설명할 수 있다."
+                "title": "공통 시장가격",
+                "text": "차액지대는 각 토지가 따로 가격을 정해서가 아니라, 같은 시장가격 아래 생산조건 차이가 드러나기 때문에 생긴다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Differential Rent: General Remarks: Even with the same amount of capital and labour, differences in fertility or location create different individual costs and returns."
+                "title": "Differential rent",
+                "text": "Under a common market price, better land or location can lower individual cost and create surplus-profit that can be transformed into rent."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how differences in fertility and location lead to surplus-profit and rent under a common market price."
+                "title": "Fertility and location",
+                "text": "Differences arise not only from natural fertility, but also from distance to market, transport conditions, and location."
               },
               {
-                "title": "Next link",
-                "text": "With this general principle, Marx can explain why fertility and location differences appear as Differential Rent I."
+                "title": "Common market price",
+                "text": "Differential rent arises because differences in production conditions appear under one market price, not because each plot sets its own price."
               }
             ]
           }
@@ -33040,30 +33040,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "차액지대의 첫 번째 형태: 가장 불리하지만 필요한 토지의 생산조건이 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다."
+                "title": "차액지대 I",
+                "text": "서로 다른 토지에 같은 양의 자본과 노동이 투입될 때 생기는 차액지대다."
               },
               {
-                "title": "구분할 점",
-                "text": "서로 다른 토지에 같은 양의 자본이 투입될 때 우등지와 열등지의 차이가 초과이윤을 만드는 방식을 이해한다."
+                "title": "한계지",
+                "text": "공급에 필요한 가장 불리한 토지가 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 외연적 경작의 차이를 먼저 정리한다. 「차액지대의 두 번째 형태」에서는 이 원리를 집약적 경작으로 옮긴다."
+                "title": "외연적 차이",
+                "text": "핵심은 여러 토지 사이의 차이다. 같은 토지 안의 추가투자 차이는 다음 차액지대 II에서 다룬다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "The First Form of Differential Rent: When the conditions of the worst land still needed for supply regulate market price, better land earns surplus-profit at the same price."
+                "title": "Differential rent I",
+                "text": "This is differential rent arising when equal amounts of capital and labor are invested on different plots of land."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how differences between superior and inferior lands create surplus-profit when equal capitals are invested in different plots."
+                "title": "Marginal land",
+                "text": "If the worst land needed for supply regulates market price, better land earns surplus-profit at the same price."
               },
               {
-                "title": "Next link",
-                "text": "This chapter first clarifies extensive differences; “The Second Form of Differential Rent” moves the principle into intensive cultivation."
+                "title": "Extensive difference",
+                "text": "The key is the difference among plots of land. Differences among successive investments on the same land belong to differential rent II."
               }
             ]
           }
@@ -33395,30 +33395,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "차액지대의 두 번째 형태: 같은 토지라도 첫 투자와 추가투자의 생산성이 다르면, 각 투자분의 수익 차이가 초과이윤을 만들 수 있다."
+                "title": "차액지대 II",
+                "text": "같은 토지에 자본을 여러 번 추가 투입할 때, 각 투자분의 생산성이 달라 생기는 차액지대다."
               },
               {
-                "title": "구분할 점",
-                "text": "같은 토지에 자본을 거듭 투입할 때 각 추가투자의 생산성이 달라지며 차액지대가 생기는 방식을 이해한다."
+                "title": "집약적 투자",
+                "text": "토지를 넓히는 것이 아니라 같은 토지에 더 많은 자본을 투입한다. 그래서 문제는 추가투자의 생산성이다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 차액지대 II의 일반 틀이고, 「생산가격 불변의 경우」에서는 그 첫 경우다. 가격을 고정해 두고 투자분 차이를 본다."
+                "title": "가격 조건",
+                "text": "추가투자가 더 좋거나 나쁜 결과를 내는지는 생산가격이 불변, 하락, 상승하는 경우에 따라 다르게 나타난다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "The Second Form of Differential Rent: Even on the same land, if initial and additional investments have different productivities, differences among investment portions can create surplus-profit."
+                "title": "Differential rent II",
+                "text": "This is differential rent arising when successive investments on the same land have different productivities."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how differential rent arises when successive investments on the same land have different productivities."
+                "title": "Intensive investment",
+                "text": "The issue is not extending to more land, but investing more capital on the same land. The productivity of additional investment is decisive."
               },
               {
-                "title": "Next link",
-                "text": "This chapter gives the general frame; “Case of Constant Price of Production” studies the first case by holding price constant."
+                "title": "Price conditions",
+                "text": "The result of additional investment differs depending on whether the price of production remains constant, falls, or rises."
               }
             ]
           }
@@ -33750,30 +33750,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "생산가격 불변의 경우: 시장가격이 변하지 않아도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대의 배치가 달라진다."
+                "title": "가격 불변",
+                "text": "시장가격이 그대로여도 같은 토지의 투자분마다 생산성이 다르면 초과이윤과 지대가 달라진다."
               },
               {
-                "title": "구분할 점",
-                "text": "생산가격이 그대로일 때 추가투자의 생산성 차이가 지대의 내부 구성을 어떻게 바꾸는지 이해한다."
+                "title": "투자분 차이",
+                "text": "첫 투자와 추가투자는 같은 토지에 있어도 같은 효과를 내지 않을 수 있다. 차액은 투자분 사이에서도 생긴다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 가격 상승 없이도 지대 변화가 가능함을 보인다. 이것이 리카도식 단순화와 다른 지점이다."
+                "title": "리카도와 차이",
+                "text": "지대 변화를 항상 가격 상승이나 열등지 확대만으로 설명할 수 없다. 가격이 불변이어도 내부 구성이 바뀔 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Case of Constant Price of Production: Even if market price does not change, different productivities among investment portions on the same land alter surplus-profit and rent."
+                "title": "Constant price",
+                "text": "Even if market price remains unchanged, different productivities among investment portions on the same land alter surplus-profit and rent."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how productivity differences among additional investments alter the internal composition of rent when the price of production remains constant."
+                "title": "Difference among investments",
+                "text": "Initial and additional investments on the same land need not have the same effect. Differential gains can arise among investment portions."
               },
               {
-                "title": "Next link",
-                "text": "This chapter shows that rent can change without a price rise, unlike Ricardo’s simplification."
+                "title": "Difference from Ricardo",
+                "text": "Changes in rent cannot always be explained by rising prices or extension to worse land. Rent can be reorganized even with constant price."
               }
             ]
           }
@@ -34105,30 +34105,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "생산가격 하락의 경우: 가격 하락은 일부 토지나 투자분의 지대를 줄일 수 있지만, 더 우월한 조건에는 새로운 차액을 만들 수도 있다."
+                "title": "가격 하락",
+                "text": "생산성이 올라 생산가격이 떨어지면 일부 지대는 줄 수 있지만, 우월한 투자분에는 새로운 차액이 생길 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "생산성 향상으로 생산가격이 내려갈 때 지대가 단순히 사라지는 것이 아니라 재편될 수 있음을 이해한다."
+                "title": "지대의 재편",
+                "text": "가격 하락은 지대의 단순 소멸이 아니다. 어느 토지와 투자분이 기준이 되는지에 따라 지대가 재배치된다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 하락의 경우를 끝낸 뒤 가격 변화가 한 방향이 아님을 보여준다. 「생산가격 상승의 경우」에서는 반대 경우인 상승을 다룬다."
+                "title": "생산성 효과",
+                "text": "더 싼 생산은 사회적 가격을 낮추지만, 생산조건 차이를 없애지 않는 한 차액지대의 형태는 남을 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Case of Falling Price of Production: A falling price can reduce rent on some lands or investment portions, while creating new differences for superior conditions."
+                "title": "Falling price",
+                "text": "If productivity rises and the price of production falls, some rent can shrink while superior investments create new differentials."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand that when productivity improvements lower the price of production, rent does not simply disappear but can be reorganized."
+                "title": "Reorganization of rent",
+                "text": "Falling price does not simply abolish rent. Rent is rearranged according to which land and investment portions regulate price."
               },
               {
-                "title": "Next link",
-                "text": "After the falling case, Marx shows price movement is not one-directional. This chapter takes up rising price."
+                "title": "Productivity effect",
+                "text": "Cheaper production lowers the social price, but differential rent can remain as long as differences in production conditions persist."
               }
             ]
           }
@@ -34460,30 +34460,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "생산가격 상승의 경우: 더 나쁜 조건의 토지나 투자분까지 필요해지면 사회적 생산가격이 오르고, 기존 우등지의 차액이 커질 수 있다."
+                "title": "가격 상승",
+                "text": "수요 증가나 조건 악화로 더 나쁜 토지나 투자분이 필요해지면 사회적 생산가격이 오른다."
               },
               {
-                "title": "구분할 점",
-                "text": "수요 증가나 조건 악화로 생산가격이 오를 때 열등지 경작과 우등지 지대가 어떻게 확대되는지 이해한다."
+                "title": "우등지의 이득",
+                "text": "가격이 오르면 기존 우등지나 더 생산적인 투자분의 차액이 커질 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 한계 기준이 이동하면 최악 토지의 지위도 바뀜을 보여준다. 「가장 열등한 경작지에서도 생기는 차액지대」에서는 이 점을 별도로 분석한다."
+                "title": "한계 기준 이동",
+                "text": "최악 토지의 지위는 고정된 자연표지가 아니다. 사회적 수요와 생산조건에 따라 한계 기준이 이동한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Case of Rising Price of Production: When worse land or investment portions become necessary, the social price of production rises and the differential on existing superior land can grow."
+                "title": "Rising price",
+                "text": "If rising demand or worsening conditions make worse land or investment portions necessary, the social price of production rises."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how cultivation of inferior land and rent on superior land expand when demand growth or worsening conditions raises the price of production."
+                "title": "Gain of superior land",
+                "text": "When price rises, the differential of existing superior land or more productive investments can grow."
               },
               {
-                "title": "Next link",
-                "text": "This chapter shows that a shifting benchmark changes the status of the worst soil; “Differential Rent on the Worst Cultivated Land” analyzes this separately."
+                "title": "Moving margin",
+                "text": "The status of worst land is not a fixed natural label. The margin shifts with social demand and production conditions."
               }
             ]
           }
@@ -34815,30 +34815,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "가장 열등한 경작지에서도 생기는 차액지대: 한계지로 보이는 토지에서도 서로 다른 투자분의 생산성이 달라지면 일부 투자분이 초과이윤을 낼 수 있다."
+                "title": "최열등지의 차액",
+                "text": "최열등지로 보이는 토지에서도 추가투자분의 생산성이 다르면 일부 투자분이 초과이윤을 낼 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "가장 열등한 토지라는 지위도 고정된 자연딱지가 아니며, 추가투자와 가격 조건에 따라 차액지대가 생길 수 있음을 이해한다."
+                "title": "고정된 등급 아님",
+                "text": "“가장 나쁜 토지”라는 말은 한 시점의 기준이다. 가격, 수요, 투자 조건이 바뀌면 그 안에서도 차액이 생긴다."
               },
               {
-                "title": "다음 연결",
-                "text": "개량된 장점이 자본이자와 겹칠 수 있지만, 자본이 상각되면 생산성 차이는 순수 차액지대처럼 나타난다."
+                "title": "개량과 지대",
+                "text": "토지개량의 효과가 자본이자와 겹칠 수 있지만, 자본이 상각된 뒤에는 생산성 차이가 지대처럼 굳어질 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Differential Rent on the Worst Cultivated Land: Even on land that appears marginal, different productivities among investment portions can let some portions earn surplus-profit."
+                "title": "Differential on worst land",
+                "text": "Even land that appears marginal can yield surplus-profit if different investment portions have different productivities."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand that the status of worst land is not a fixed natural label, and that additional investments and price conditions can produce differential rent even there."
+                "title": "Not a fixed rank",
+                "text": "“Worst land” names a margin at a given moment. Changes in price, demand, and investment conditions can produce differentials even there."
               },
               {
-                "title": "Next link",
-                "text": "Improved advantages can overlap with interest, but after amortization the productivity difference appears as differential rent."
+                "title": "Improvement and rent",
+                "text": "The effect of land improvement can overlap with interest on capital, but after capital is amortized the productivity difference can harden into rent."
               }
             ]
           }
@@ -35170,30 +35170,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "절대지대: 토지소유자는 토지 접근을 허락하지 않음으로써 최열등지에서도 평균이윤을 넘는 지불을 요구할 수 있다."
+                "title": "절대지대",
+                "text": "토지소유가 자본의 자유로운 진입을 막기 때문에, 차액이 없는 최열등지에서도 지대가 요구될 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "차액과 무관하게 토지소유의 독점이 자본의 자유로운 진입을 막아 절대지대가 성립하는 논리를 이해한다."
+                "title": "차액지대와 차이",
+                "text": "차액지대는 생산조건 차이에서 나오지만, 절대지대는 토지소유의 독점 장벽에서 나온다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 토지소유의 장벽을 이론적으로 정리한다. 「건축지 지대, 광산 지대, 토지가격」에서는 그 장벽이 도시와 광산에서 나타나는 형태를 다룬다."
+                "title": "가치와 생산가격",
+                "text": "농업의 가치가 생산가격보다 높을 때, 토지소유는 그 차이 일부를 지대로 붙잡을 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Absolute Rent: By withholding access to land, the landowner can demand payment above average profit even on the worst land."
+                "title": "Absolute rent",
+                "text": "Because landed property blocks free entry of capital, rent can be demanded even on the worst land without differential advantage."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how absolute rent can arise independently of differential advantage because monopoly of landed property blocks free entry of capital."
+                "title": "Difference from differential rent",
+                "text": "Differential rent comes from differences in production conditions; absolute rent comes from the monopoly barrier of landed property."
               },
               {
-                "title": "Next link",
-                "text": "This chapter theorizes landownership as a barrier; “Building-Site Rent, Mining Rent, and Land Price” examines its urban and mining forms."
+                "title": "Value and production price",
+                "text": "When agricultural value stands above price of production, landed property can capture part of that difference as rent."
               }
             ]
           }
@@ -35525,30 +35525,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "건축지 지대, 광산 지대, 토지가격: 도심 위치나 광산 매장조건처럼 독점된 공간 조건은 반복적 지대수입의 근거가 되고, 그 수입 예상이 토지가격으로 계산된다."
+                "title": "건축지 지대",
+                "text": "도심 위치, 접근성, 인구 집중 같은 공간 독점이 건축지 지대의 근거가 된다."
               },
               {
-                "title": "구분할 점",
-                "text": "건축지와 광산에서도 위치, 매장조건, 독점권이 지대를 만들고 반복 수입이 토지가격으로 자본화되는 과정을 이해한다."
+                "title": "광산 지대",
+                "text": "광물 매장량과 채굴조건의 차이는 농업의 비옥도 차이처럼 초과이윤과 지대를 만들 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장의 결론은 토지사유를 역사적 형태로 상대화한다. 토지는 사고파는 물건 이전에 사회적 생존조건이다."
+                "title": "토지가격",
+                "text": "토지가격은 토지 자체의 가치가 아니라 예상 지대수입을 이자율로 자본화한 가격이다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Building-Site Rent, Mining Rent, and Land Price: Monopolized spatial conditions such as urban location or mineral deposits ground recurring rent, and expected rent is calculated as land price."
+                "title": "Building-site rent",
+                "text": "Urban location, accessibility, and population concentration create spatial monopoly as the basis of building-site rent."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand how location, deposit conditions, and monopoly rights produce rent in building sites and mines, and how recurring income is capitalized as land price."
+                "title": "Mining rent",
+                "text": "Differences in mineral deposits and extraction conditions can create surplus-profit and rent, much like differences in agricultural fertility."
               },
               {
-                "title": "Next link",
-                "text": "This chapter relativizes private landed property historically: land is a social condition of life before it is a saleable thing."
+                "title": "Land price",
+                "text": "Land price is not the value of land itself; it is expected rent capitalized at the interest rate."
               }
             ]
           }
@@ -35880,30 +35880,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "자본주의적 지대의 발생: 노동지대에서는 직접 노동이, 생산물지대에서는 산물이, 화폐지대에서는 돈이 지대형태가 되지만 각각의 배후 생산관계는 다르다."
+                "title": "노동지대",
+                "text": "직접 노동이 지대 형태로 지주에게 제공된다. 생산자와 잉여노동의 관계가 아직 직접적으로 보인다."
               },
               {
-                "title": "구분할 점",
-                "text": "노동지대, 생산물지대, 화폐지대가 자본주의적 지대로 바뀌는 역사적 과정을 통해 지대형태가 생산관계에 따라 달라짐을 이해한다."
+                "title": "생산물·화폐지대",
+                "text": "잉여노동이 생산물이나 돈으로 바뀌어 지불된다. 형태가 바뀔수록 생산관계는 더 간접적으로 보인다."
               },
               {
-                "title": "다음 연결",
-                "text": "지대의 사회적 성격을 밝히는 작업은 토지-지대라는 자연화된 공식 비판으로 이어진다."
+                "title": "자본주의적 지대",
+                "text": "자본주의에서는 차지농업가가 노동자를 고용해 이윤을 얻고, 토지소유자는 그 초과분을 지대로 받는다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Genesis of Capitalist Ground-Rent: In labour-rent direct labour, in rent in kind product, and in money-rent money becomes the rent form, but the production relations behind each differ."
+                "title": "Labor-rent",
+                "text": "Direct labor is delivered to the landlord as rent. The relation between producer and surplus labor remains visibly direct."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand through the historical movement from labour-rent, rent in kind, and money-rent to capitalist rent that rent forms change with production relations."
+                "title": "Rent in kind and money-rent",
+                "text": "Surplus labor is paid as product or money. As the form changes, the production relation appears more indirect."
               },
               {
-                "title": "Next link",
-                "text": "Showing rent’s social character prepares the critique of the naturalized land-rent formula."
+                "title": "Capitalist rent",
+                "text": "Under capitalism, the tenant farmer employs workers for profit, while the landowner receives rent from the surplus above average profit."
               }
             ]
           }
@@ -36235,30 +36235,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "자본-이윤, 토지-지대, 노동-임금이라는 공식이 자본주의적 생산관계를 자연스러운 수입 원천처럼 보이게 만드는 과정을 분석한다."
+                "title": "삼위일체 공식",
+                "text": "자본-이윤, 토지-지대, 노동-임금이 각각 자연스러운 수입 원천처럼 나란히 놓이는 공식이다."
               },
               {
-                "title": "구분할 점",
-                "text": "수입의 세 갈래가 각각 자연물에서 나오는 것처럼 보이는 착시를 걷어내고, 그 뒤에 있는 생산관계와 잉여가치 분배를 읽는다."
+                "title": "물신적 착시",
+                "text": "이 공식은 이윤과 지대가 잉여가치의 분할형태라는 사실을 가리고, 사물 자체가 소득을 낳는 것처럼 보이게 한다."
               },
               {
-                "title": "다음 연결",
-                "text": "삼위일체 비판은 수입의 표면에서 생산과 재생산의 구조로 분석을 되돌린다."
+                "title": "비판의 초점",
+                "text": "마르크스는 수입 항목을 부정하는 것이 아니라, 그 항목들이 어떤 생산관계와 착취관계를 가리는지 드러낸다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Examines how the formula capital-profit, land-rent, and labour-wages makes capitalist production relations appear as natural sources of income."
+                "title": "Trinity formula",
+                "text": "Capital-profit, land-rent, and labor-wages stand side by side as if each were a natural source of income."
               },
               {
-                "title": "Key distinction",
-                "text": "Strip away the illusion that the three income forms arise naturally from things, and read the production relations and distribution of surplus-value behind them."
+                "title": "Fetishistic illusion",
+                "text": "The formula hides that profit and rent are divided forms of surplus-value and makes things appear to generate income by themselves."
               },
               {
-                "title": "Next link",
-                "text": "The critique of the trinity formula returns the analysis from revenue surfaces to production and reproduction."
+                "title": "Point of critique",
+                "text": "Marx does not deny the income items; he shows which production and exploitation relations those items conceal."
               }
             ]
           }
@@ -36590,30 +36590,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "수입의 표면에서 출발하면 임금, 이윤, 지대가 독립 원천처럼 보이므로, 총생산물의 가치구성과 잉여가치 생산으로 돌아가야 함을 밝힌다."
+                "title": "수입형태의 표면",
+                "text": "임금, 이윤, 지대만 보면 각 수입이 독립 원천에서 생기는 것처럼 보인다."
               },
               {
-                "title": "구분할 점",
-                "text": "분배표에 나란히 놓인 수입들을 그대로 믿지 않고, 새 가치가 생산되고 나뉘는 과정을 먼저 따져 본다."
+                "title": "생산과정으로 복귀",
+                "text": "분석은 총생산물의 가치구성, 불변자본 보전, 새 가치 생산, 잉여가치 분배로 돌아가야 한다."
               },
               {
-                "title": "다음 연결",
-                "text": "생산과정의 분석은 경쟁 속에서 생기는 원인과 결과의 뒤집힘을 비판할 토대를 준다."
+                "title": "핵심 구분",
+                "text": "분배는 생산과 별개의 장부 문제가 아니다. 무엇이 생산되고 어떻게 나뉘는지를 함께 봐야 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows that starting from income forms makes wages, profit, and rent look like independent sources, so analysis must return to the value composition of the total product and the production of surplus-value."
+                "title": "Surface of income forms",
+                "text": "If one looks only at wages, profit, and rent, each income seems to arise from an independent source."
               },
               {
-                "title": "Key distinction",
-                "text": "Do not take side-by-side income entries at face value; first examine how new value is produced and divided."
+                "title": "Return to production process",
+                "text": "Analysis must return to the value composition of the total product, replacement of constant capital, production of new value, and distribution of surplus-value."
               },
               {
-                "title": "Next link",
-                "text": "Analysis of production provides the basis for criticizing the reversal of cause and effect in competition."
+                "title": "Core distinction",
+                "text": "Distribution is not a bookkeeping problem separate from production. What is produced and how it is divided must be read together."
               }
             ]
           }
@@ -36945,30 +36945,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "경쟁의 가격운동과 평균이윤이 자본가에게는 이윤의 원천처럼 보이지만, 실제로는 내적 가치관계가 표면에서 나타나는 방식임을 분석한다."
+                "title": "경쟁의 환상",
+                "text": "경쟁은 가격과 이윤율을 실제로 움직이지만, 그래서 이윤을 경쟁이 만들어내는 것처럼 보이게 한다."
               },
               {
-                "title": "구분할 점",
-                "text": "경쟁이 이윤을 만들어내는 것처럼 보이는 이유와, 그 표면 뒤에 남아 있는 잉여가치 생산의 관계를 구분한다."
+                "title": "원인과 결과의 전도",
+                "text": "평균이윤과 생산가격은 잉여가치 생산을 전제로 하지만, 표면에서는 가격운동이 이윤의 원인처럼 보인다."
               },
               {
-                "title": "다음 연결",
-                "text": "경쟁 환상은 분배를 독립 영역처럼 보이게 하므로, 다음 장은 그 생산적 토대를 묻는다."
+                "title": "읽는 기준",
+                "text": "경쟁은 내적 가치관계를 표면에 실현하는 방식이지, 착취와 잉여가치 생산을 대체하는 원천이 아니다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Analyses how price movements and average profit in competition appear to capitalists as the source of profit, while actually expressing underlying value relations on the surface."
+                "title": "Illusion of competition",
+                "text": "Competition really moves prices and profit rates, but this makes profit appear to be created by competition itself."
               },
               {
-                "title": "Key distinction",
-                "text": "Distinguish why competition appears to create profit from the underlying relation of surplus-value production."
+                "title": "Inversion of cause and effect",
+                "text": "Average profit and prices of production presuppose surplus-value production, but on the surface price movement appears to cause profit."
               },
               {
-                "title": "Next link",
-                "text": "Competition makes distribution look independent, so the next chapter asks about its productive basis."
+                "title": "How to read it",
+                "text": "Competition is the way inner value relations are realized on the surface; it is not a substitute source for exploitation and surplus-value production."
               }
             ]
           }
@@ -37300,30 +37300,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "임금, 이윤, 지대 같은 분배관계가 독립된 회계 문제가 아니라 생산수단 소유와 임금노동 관계의 역사적 표현임을 분석한다."
+                "title": "분배관계",
+                "text": "임금, 이윤, 지대는 사회적 생산물의 몫을 나누는 형태다. 그러나 이 몫은 생산관계와 떨어져 있지 않다."
               },
               {
-                "title": "구분할 점",
-                "text": "분배의 몫만 보지 않고, 그런 몫이 반복해서 생기게 하는 생산조건의 소유관계와 계급관계를 함께 읽는다."
+                "title": "생산관계",
+                "text": "누가 생산수단을 소유하고, 누가 노동력을 팔며, 잉여가치가 누구에게 귀속되는지가 분배형태를 만든다."
               },
               {
-                "title": "다음 연결",
-                "text": "분배관계의 역사성을 추적하면 곧 그 관계를 담지하는 계급 구성이 문제로 떠오른다."
+                "title": "역사성",
+                "text": "분배관계는 영원한 자연법칙이 아니라 특정 생산양식의 역사적 표현이다. 분배를 바꾸려면 생산관계를 봐야 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Analyses wages, profit, and rent not as an independent accounting problem but as historical expressions of ownership of production conditions and wage-labour relations."
+                "title": "Distribution relations",
+                "text": "Wages, profit, and rent are forms in which shares of the social product are distributed. But these shares are not separate from production relations."
               },
               {
-                "title": "Key distinction",
-                "text": "Read not only distributive shares, but the ownership of production conditions and class relations that repeatedly generate those shares."
+                "title": "Production relations",
+                "text": "Who owns means of production, who sells labor-power, and who appropriates surplus-value shape the forms of distribution."
               },
               {
-                "title": "Next link",
-                "text": "Tracing the historicity of distribution relations raises the class structure that bears those relations."
+                "title": "Historicity",
+                "text": "Distribution relations are not eternal natural laws; they are historical expressions of a definite mode of production. To change distribution, one must examine production relations."
               }
             ]
           }
@@ -37655,30 +37655,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "임금, 이윤, 지대를 주요 수입으로 삼는 임금노동자, 자본가, 토지소유자를 출발점으로 제시하면서, 계급을 소득액이 아니라 생산조건에 대한 관계로 보아야 함을 보여준다."
+                "title": "세 계급",
+                "text": "임금노동자, 자본가, 토지소유자는 각각 임금, 이윤, 지대를 주요 수입형태로 갖는 계급으로 제시된다."
               },
               {
-                "title": "구분할 점",
-                "text": "계급을 직업명이나 소득순위가 아니라 생산조건 소유, 노동력 판매, 잉여가치 분배에서 차지하는 위치로 파악한다."
+                "title": "계급 기준",
+                "text": "계급은 소득액이나 직업명이 아니라 생산조건에 대한 관계, 노동력 판매 여부, 잉여가치 분배 위치로 파악해야 한다."
               },
               {
-                "title": "다음 연결",
-                "text": "미완 장은 결론이 아니라 3권의 범주들이 계급관계로 이어지는 방향을 가리킨다."
+                "title": "미완의 의미",
+                "text": "장 자체는 미완이지만, 3권의 수입형태 분석이 결국 계급관계 분석으로 이어진다는 방향을 보여준다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Takes wage-labourers, capitalists, and landowners, tied to wages, profit, and rent, as a starting point, while showing that class must be understood by relation to production conditions rather than income level."
+                "title": "Three classes",
+                "text": "Wage-laborers, capitalists, and landowners are presented through their main income forms: wages, profit, and rent."
               },
               {
-                "title": "Key distinction",
-                "text": "Grasp class not as job title or income ranking, but as position in ownership of production conditions, sale of labour-power, and distribution of surplus-value."
+                "title": "Criterion of class",
+                "text": "Class must be grasped not by income level or job title, but by relation to conditions of production, sale of labor-power, and position in distribution of surplus-value."
               },
               {
-                "title": "Next link",
-                "text": "The unfinished chapter is not a closure; it points the categories of Volume III toward class relations."
+                "title": "Meaning of the fragment",
+                "text": "The chapter is unfinished, but it shows the direction: Volume III’s analysis of income forms leads to analysis of class relations."
               }
             ]
           }
