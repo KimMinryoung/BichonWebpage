@@ -43,10 +43,10 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 - DB tables: `users` (id, username, is_admin), `user_passkeys` (credential_id, public_key, counter, transports, device_name, backed_up). The old `admins` table is dropped by the migration.
 
 ### Deployment / Data-only updates
-- Production container mounts host data with `-v /home/grass/frontend/data:/app/data`; JSON data changes under `data/` are visible to the running app without rebuilding the Docker image.
-- For CommuLingo content-only edits such as `data/commulingo/lessons.json`, do not run `scripts/deploy` just to rebuild/restart the frontend. Commit/push the data change, then verify the live API/page.
-- `routes/commulingo.js` caches `lessons.json` by file mtime, so a changed host file is picked up on the next request after the mtime changes. Verify with `curl -s http://127.0.0.1:3000/commulingo/lesson/<lesson-id>`.
-- Run the full deploy script only for code, dependency, CSS/JS/template, server, route, config, or Docker image changes that require a new container image/restart.
+- Production container mounts host data with `-v /home/grass/frontend/data:/app/data`; data-only changes under `data/` are visible to the running app without rebuilding the Docker image.
+- For CommuLingo content-only edits in `data/commulingo/lessons.json` or `data/commulingo/courses/*.js`, do not run `scripts/deploy` just to rebuild/restart the frontend. Commit/push the data change, then verify the live API/page.
+- `routes/commulingo.js` loads CommuLingo through `data/commulingo/index.js` and caches the bundle by the maximum mtime across `lessons.json` and `courses/*.js`, so changed host data is picked up on the next request after mtime changes. Verify with `curl -s http://127.0.0.1:3000/commulingo/lesson/<lesson-id>`.
+- Run the full deploy script for code, dependency, CSS/JS/template, server, route, config, or Docker image changes that require a new container image/restart.
 
 ### CSS / Mobile
 - CSS cache busting is active: `?v=<%= Date.now() %>` in head.ejs

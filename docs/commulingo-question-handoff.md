@@ -2,7 +2,7 @@
 
 ## Purpose
 
-CommuLingo is a chapter-by-chapter learning path for visitors who are not already comfortable with Marxist theory. The current public scope is Marx's Capital, volumes 1-3.
+CommuLingo is a chapter-by-chapter learning path for visitors who are not already comfortable with Marxist theory. The current public scope is Marx's Capital, volumes 1-3, plus Lenin's Imperialism.
 
 The service should feel like guided study, not an exam ambush. The learner should be able to read a short chapter card, get a concept brief before the quiz, answer five questions, and understand why the distinction matters.
 
@@ -11,22 +11,26 @@ The service should feel like guided study, not an exam ambush. The learner shoul
 - Capital Volume I: 33 chapters
 - Capital Volume II: 21 chapters
 - Capital Volume III: 52 chapters
+- Lenin, Imperialism: 10 chapters
 - Two lessons per chapter:
   - Basic: 5 multiple-choice questions
   - Advanced: 5 multiple-choice questions
 - Current totals:
-  - 106 chapters
-  - 212 lessons
-  - 1,060 questions
+  - 116 chapters
+  - 232 lessons
+  - 1,160 questions
 
 ## Current Files
 
-- Data: `data/commulingo/lessons.json`
+- Base Capital data: `data/commulingo/lessons.json`
+- Additional course modules: `data/commulingo/courses/*.js`
+- Data loader: `data/commulingo/index.js`
 - Public route and data API: `routes/commulingo.js`
 - Page template: `views/public/commulingo.ejs`
 - Client UI: `public/js/commulingo.js`
 - Styles: `public/css/commulingo.css`
 - Content validator: `scripts/validate-commulingo.js`
+- Quality audit: `scripts/audit-commulingo-quality.js`
 - Progress table migration: `scripts/migrations/005_commulingo_progress.sql`
 
 ## Completed Work, May 31 2026
@@ -39,7 +43,7 @@ Completed content work:
 - Rewrote and improved late Volume III questions, especially chapters 33-52.
 - Improved card summaries and learning-focus text for Volume I, Volume II, and earlier Volume III chapters.
 - Removed exact duplicate card text such as the old Volume I Chapter 1 repetition.
-- Added a validator script for collection counts, lesson counts, question counts, answer distribution, and known bad phrase checks.
+- Added a validator script for collection counts, lesson counts, question counts, correct-choice-first answers, and known bad phrase checks.
 
 Completed UI work:
 
@@ -64,7 +68,7 @@ Completed UI work:
 
 Completed performance work:
 
-- Server now memoizes `lessons.json` by file mtime instead of parsing the 2.4MB file on every request.
+- Server now memoizes the loaded CommuLingo bundle by the maximum mtime across `lessons.json` and `courses/*.js` instead of rebuilding it on every request.
 - The initial `/commulingo` HTML embeds only a slim catalog:
   - collection data
   - chapter titles
@@ -89,7 +93,9 @@ Production verification from the last deployment:
 
 ## Current Data Shape
 
-The source data still keeps questions in `data/commulingo/lessons.json`:
+Runtime data is loaded through `data/commulingo/index.js`. It combines the base Capital collections in `data/commulingo/lessons.json` with additional course modules from `data/commulingo/courses/*.js`.
+
+Capital still keeps questions directly in `data/commulingo/lessons.json`:
 
 ```json
 {
@@ -119,7 +125,7 @@ The source data still keeps questions in `data/commulingo/lessons.json`:
 }
 ```
 
-Each question should preserve the existing fields:
+Each question should preserve the existing fields. For multiple-choice questions, source data must keep the correct choice first and `answer: 0`; the browser shuffles choices at render time while preserving the original index for grading:
 
 ```json
 {
@@ -133,9 +139,11 @@ Each question should preserve the existing fields:
 }
 ```
 
+Additional courses can be authored as CommonJS modules under `data/commulingo/courses/`, exporting one collection object. The Lenin course uses local helpers to keep authoring compact, but the exported shape must match the same collection/chapter/lesson/question schema.
+
 Runtime delivery is different from source storage:
 
-- `/commulingo` receives a slim catalog generated from the source JSON.
+- `/commulingo` receives a slim catalog generated from the loaded bundle.
 - `/commulingo/lesson/:lessonId` returns full questions for one lesson.
 - Do not assume question arrays are present in the browser's initial `commulingo-data` script tag.
 
@@ -378,7 +386,7 @@ Then produce only the replacement questions needed:
 - no obvious joke choices
 - first Basic question must be low-pressure and concrete
 
-Only after the questions pass this rubric, update data/commulingo/lessons.json.
+Only after the questions pass this rubric, update the relevant source file: `data/commulingo/lessons.json` for Capital, or a module under `data/commulingo/courses/` for newer courses.
 ```
 
 ## Validation Commands
@@ -389,6 +397,8 @@ Run these after content or UI changes:
 node scripts/validate-commulingo.js
 node --check public/js/commulingo.js
 node --check routes/commulingo.js
+node --check data/commulingo/index.js
+node --check data/commulingo/courses/lenin-imperialism.js
 ```
 
 For local UI smoke testing, run a temporary server on an unused port and check:
@@ -400,17 +410,20 @@ For local UI smoke testing, run a temporary server on an unused port and check:
 - Starting a lesson fetches exactly one `/commulingo/lesson/:lessonId?v=...` request.
 - The concept brief appears before questions.
 - Returning to lessons keeps the selected volume expanded.
+- Returning to lessons scrolls back to the selected chapter; after completing an Advanced lesson, it scrolls to the next chapter when one exists.
 - Mobile viewport has no horizontal overflow.
 
-## Suggested Automation
+## Quality Audit
 
-Add a script later, for example `scripts/audit_commulingo_quality.js`, that:
+`scripts/audit-commulingo-quality.js` reads the loaded CommuLingo bundle, including `courses/*.js`, and reports common quality risks:
 
-1. Reads one chapter or all chapters from `data/commulingo/lessons.json`.
-2. Computes prompt/explanation similarity within each lesson.
-3. Flags repeated stems and repeated conceptual answers.
-4. Flags obvious or caricatured distractors.
-5. Flags missing or overly generic custom concept diagrams.
-6. Outputs a chapter-by-chapter quality report.
+1. Honorific or translationese phrasing.
+2. Embedded "Correct"/"Incorrect" markers.
+3. Generic prompt stems.
+4. Overly extreme or caricatured distractors.
+5. Choice length skew.
+6. Repeated openings within a lesson.
+
+The audit is heuristic. Treat hits as review prompts, not automatic failures; `scripts/validate-commulingo.js` is the blocking structural gate.
 
 A separate generation script can then rewrite only flagged chapters, rather than regenerating the whole dataset.
