@@ -1409,30 +1409,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "돈이 어떻게 더 많은 돈을 낳는 자본의 운동으로 바뀌는지, 그 수수께끼를 제기한다."
+                "title": "M-C-M'",
+                "text": "화폐 M이 상품 C를 거쳐 더 큰 화폐 M'로 돌아오는 운동이다. 여기서 목적은 사용가치가 아니라 더 많은 화폐다."
               },
               {
-                "title": "구분할 점",
-                "text": "자본의 출발점은 돈 자체가 아니라 M-C-M' 운동이며, 잉여가치가 어디서 생기는지 묻는 데 있다."
+                "title": "증식분 ΔM",
+                "text": "M' = M + ΔM이다. 이 ΔM이 잉여가치의 표면적 형태이며, 이 장은 그것이 어디서 가능한지 문제를 세운다."
               },
               {
-                "title": "다음 연결",
-                "text": "「화폐 또는 상품 유통」에서는 화폐가 상품유통에서 어떻게 기능하는지 보여주고, 이 장은 그 화폐가 더 많은 화폐를 목적으로 움직일 때 자본의 형식을 취한다는 점을 보여준다. 따라서 자본은 화폐와 같지 않고, 화폐의 특정한 사회적 운동이다."
+                "title": "화폐와 자본",
+                "text": "화폐가 있다고 곧 자본은 아니다. 화폐가 자기증식을 목적으로 반복 운동할 때 자본의 일반 공식이 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Poses the puzzle of how money becomes capital, a movement that returns as more money."
+                "title": "M-C-M'",
+                "text": "Money M passes through commodity C and returns as more money, M'. The aim is not use-value but more money."
               },
               {
-                "title": "Key distinction",
-                "text": "Focus on M-C-M' as capital’s form of motion and on the question of where surplus-value can arise."
+                "title": "Increment ΔM",
+                "text": "M' = M + ΔM. This ΔM is the surface form of surplus-value, and the chapter poses the problem of how it is possible."
               },
               {
-                "title": "Next link",
-                "text": "“Money, or the Circulation of Commodities” shows how money functions in commodity circulation; this chapter shows that money takes the form of capital when it moves for the sake of more money. Capital is therefore not identical with money, but a specific social movement of money."
+                "title": "Money and capital",
+                "text": "Money is not automatically capital. It becomes capital when it moves repeatedly for self-expansion."
               }
             ]
           }
@@ -3894,30 +3894,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "노동일이 그대로일 때 노동력 가치와 잉여가치의 비율이 어떻게 달라지는지 살핀다."
+                "title": "잉여가치율",
+                "text": "s/v는 가변자본에 대한 잉여가치의 비율이다. 노동일 안에서 필요노동과 잉여노동의 비율을 보여준다."
               },
               {
-                "title": "구분할 점",
-                "text": "임금과 이윤의 몫은 고정된 것이 아니라 필요노동과 잉여노동의 관계에 따라 바뀐다는 점을 이해한다."
+                "title": "잉여가치량",
+                "text": "자본가가 실제로 얻는 총 잉여가치량은 착취율만이 아니라 고용한 노동력의 수에도 달려 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "자본은 단지 높은 착취율만이 아니라 충분한 잉여가치량도 요구한다. 그래서 생산규모, 고용 노동력의 양, 노동일, 착취율이 축적 문제에서 함께 등장한다."
+                "title": "왜 둘 다 보나",
+                "text": "착취율이 높아도 노동자가 적으면 총 잉여가치량은 작을 수 있다. 축적은 비율과 규모를 함께 요구한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Examines how the shares of labor-power value and surplus-value change when the working day is fixed."
+                "title": "Rate of surplus-value",
+                "text": "s/v is surplus-value compared with variable capital. It shows the ratio of surplus labor to necessary labor in the working day."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand wages and surplus-value as changing shares of the working day, not fixed magnitudes."
+                "title": "Mass of surplus-value",
+                "text": "The total surplus-value capital actually obtains depends not only on exploitation rate, but also on the number of labor-powers employed."
               },
               {
-                "title": "Next link",
-                "text": "Capital requires not only a high rate of exploitation but also a sufficient mass of surplus-value. This is why scale of production, the quantity of labor-power employed, the working day, and the rate of exploitation appear together in the problem of accumulation."
+                "title": "Why both matter",
+                "text": "A high exploitation rate can still yield a small mass of surplus-value if few workers are employed. Accumulation requires both rate and scale."
               }
             ]
           }
@@ -12077,30 +12077,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "화폐자본이 구매, 생산, 판매를 거쳐 다시 화폐로 돌아오는 순환을 설명한다."
+                "title": "순환 공식",
+                "text": "화폐자본의 순환은 M-C ... P ... C'-M'로 읽는다. 돈이 생산요소를 사고, 생산을 거쳐, 더 큰 돈으로 돌아오는 운동이다."
               },
               {
-                "title": "구분할 점",
-                "text": "자본은 한 번의 거래가 아니라 형태를 바꾸며 계속 돌아와야 하는 운동이라는 점을 잡는다."
+                "title": "출발점 M",
+                "text": "처음에는 화폐가 주인공처럼 보인다. 그러나 M'가 나오려면 중간의 생산과정 P에서 노동력이 사용되어야 한다."
               },
               {
-                "title": "다음 연결",
-                "text": "화폐는 자본의 출발형태일 뿐이다. 그것이 생산자본으로 전환되어 노동력을 착취하고 다시 판매되어야 M'가 된다."
+                "title": "핵심 질문",
+                "text": "돈이 더 큰 돈으로 돌아오는 것은 단순한 매매 기술이 아니다. 생산과 유통이 한 순환 안에서 맞물려야 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains the circuit in which money-capital passes through purchase, production, and sale before returning as money."
+                "title": "Circuit formula",
+                "text": "The circuit of money-capital is M-C ... P ... C'-M'. Money buys production elements, passes through production, and returns as more money."
               },
               {
-                "title": "Key distinction",
-                "text": "See capital as a movement that must repeatedly change form and return, not as a single transaction."
+                "title": "Starting point M",
+                "text": "Money seems to be the protagonist at first. But M' requires the use of labor-power in the intervening production process P."
               },
               {
-                "title": "Next link",
-                "text": "Money is only the starting form of capital. It must be converted into productive capital, exploit labour-power, and be sold again to become M'."
+                "title": "Core question",
+                "text": "Money returning as more money is not a mere trading trick. Production and circulation must interlock within one circuit."
               }
             ]
           }
@@ -12432,30 +12432,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "생산자본의 순환을 통해 생산과정이 전체 자본 운동의 한 국면임을 보여 준다."
+                "title": "순환 공식",
+                "text": "생산자본의 순환은 P ... C'-M'-C ... P로 읽는다. 생산이 다시 생산으로 돌아오는 반복이 중심이다."
               },
               {
-                "title": "구분할 점",
-                "text": "생산은 유통과 분리된 내부 과정이 아니라 자본이 다시 증식하기 위해 지나야 하는 핵심 단계임을 본다."
+                "title": "P의 의미",
+                "text": "P는 단순한 공장이 아니라 노동력과 생산수단이 자본의 지휘 아래 결합되는 생산과정이다."
               },
               {
-                "title": "다음 연결",
-                "text": "생산자본의 순환은 자본이 P로 돌아와야 함을 보여준다. 그래서 단일 생산행위가 아니라 자본주의적 생산의 계속성과 조건 갱신이 핵심이 된다."
+                "title": "재생산 관점",
+                "text": "이 순환에서는 한 번의 판매보다 생산 조건이 다시 준비되는지가 중요하다. 자본은 계속 생산할 수 있어야 한다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Uses the circuit of productive capital to show production as one phase of the total movement of capital."
+                "title": "Circuit formula",
+                "text": "The circuit of productive capital is P ... C'-M'-C ... P. The focus is production returning to production."
               },
               {
-                "title": "Key distinction",
-                "text": "See production as a necessary phase of capital’s reproduction, not as isolated from circulation."
+                "title": "Meaning of P",
+                "text": "P is not just a factory; it is the production process where labor-power and means of production are combined under capital."
               },
               {
-                "title": "Next link",
-                "text": "The circuit of productive capital shows that capital must return to P. The key is therefore not a single act of production but the continuity of capitalist production and renewal of its conditions."
+                "title": "Reproduction view",
+                "text": "This circuit stresses whether the conditions of production are renewed, not merely whether one sale succeeds. Capital must be able to continue producing."
               }
             ]
           }
@@ -12787,30 +12787,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "상품자본의 순환을 통해 이미 생산된 가치가 판매와 재생산을 요구하는 방식을 다룬다."
+                "title": "순환 공식",
+                "text": "상품자본의 순환은 C'-M'-C ... P ... C'로 읽는다. 이미 잉여가치를 품은 상품 C'에서 출발한다."
               },
               {
-                "title": "구분할 점",
-                "text": "상품이 팔리지 않으면 가치증식이 완성되지 않는다는 점에서 판매는 부차적 절차가 아님을 이해한다."
+                "title": "실현 문제",
+                "text": "C'는 팔려야 M'가 된다. 판매가 막히면 생산된 가치와 잉여가치가 자본가에게 실현되지 않는다."
               },
               {
-                "title": "다음 연결",
-                "text": "상품자본에서 출발하면 실현 문제가 사회적 문제로 확장된다. 사회 전체가 어떤 상품을 어떤 비율로 생산하고 교환해야 하는지가 중요해진다."
+                "title": "사회적 시야",
+                "text": "상품자본에서 출발하면 한 기업의 판매를 넘어, 사회 전체가 어떤 상품을 어떤 비율로 교환해야 하는지가 보인다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Treats the circuit of commodity-capital, where produced value must be sold and reproduced."
+                "title": "Circuit formula",
+                "text": "The circuit of commodity-capital is C'-M'-C ... P ... C'. It begins from C', a commodity already bearing surplus-value."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand sale as essential: without it, valorization is not completed."
+                "title": "Realization problem",
+                "text": "C' must be sold to become M'. If sale is blocked, produced value and surplus-value are not realized for capital."
               },
               {
-                "title": "Next link",
-                "text": "Starting from commodity-capital expands realization into a social problem. It becomes crucial what commodities society as a whole produces and exchanges, and in what proportions."
+                "title": "Social view",
+                "text": "Starting from commodity-capital points beyond one firm’s sale to the proportions in which society must exchange different products."
               }
             ]
           }
@@ -13142,30 +13142,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "세 가지 순환이 서로 맞물려 산업자본의 전체 운동을 이룬다는 점을 정리한다."
+                "title": "세 공식",
+                "text": "화폐자본, 생산자본, 상품자본의 순환은 같은 산업자본 운동을 서로 다른 출발점에서 본 것이다."
               },
               {
-                "title": "구분할 점",
-                "text": "화폐, 생산, 상품 형태 중 하나만 보면 자본의 재생산 과정을 놓친다는 점을 주의한다."
+                "title": "동시성",
+                "text": "현실의 산업자본은 한 부분은 화폐, 한 부분은 생산, 한 부분은 상품 형태로 동시에 존재한다."
               },
               {
-                "title": "다음 연결",
-                "text": "마르크스의 요점은 한 공식의 선택이 아니라 통일이다. 어느 형식이 끊겨도 산업자본의 순환 전체가 중단된다."
+                "title": "끊김의 의미",
+                "text": "구매, 생산, 판매 중 하나가 막히면 전체 순환이 멈춘다. 자본은 한 형태가 아니라 형태변환의 연속이다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Shows how the three circuits interlock to form the total movement of industrial capital."
+                "title": "Three formulas",
+                "text": "The circuits of money-capital, productive capital, and commodity-capital view the same movement of industrial capital from different starting points."
               },
               {
-                "title": "Key distinction",
-                "text": "Avoid reducing capital to only money, production, or commodities; reproduction requires all three forms."
+                "title": "Simultaneity",
+                "text": "Real industrial capital exists at the same time partly as money, partly in production, and partly as commodities."
               },
               {
-                "title": "Next link",
-                "text": "Marx's point is unity, not choosing one formula. If any form is blocked, the whole circuit of industrial capital is interrupted."
+                "title": "Meaning of interruption",
+                "text": "If purchase, production, or sale is blocked, the whole circuit is interrupted. Capital is not one form but a continuous change of forms."
               }
             ]
           }
@@ -13497,30 +13497,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "상품이 팔리고 생산요소가 다시 구매되기까지 걸리는 유통시간이 자본 운동을 늦추는 방식을 설명한다."
+                "title": "유통시간",
+                "text": "상품 판매와 생산요소 재구매에 걸리는 시간이다. 이 시간에는 자본이 생산에서 직접 가치증식을 하지 못한다."
               },
               {
-                "title": "구분할 점",
-                "text": "생산 밖에서 보내는 시간도 자본에는 멈춤이며, 판매와 구매 지연이 회전 전체를 바꾼다는 점을 본다."
+                "title": "회전 지연",
+                "text": "유통시간이 길수록 같은 자본이 다시 생산에 들어가기까지 오래 걸린다. 그래서 연간 회전수가 줄어든다."
               },
               {
-                "title": "다음 연결",
-                "text": "유통시간 단축은 가치를 직접 만들지 않지만 자본을 빨리 풀어 준다. 그래서 회전과 연간 수익성에 큰 영향을 준다."
+                "title": "왜 중요한가",
+                "text": "유통시간은 새 가치를 만들지 않지만 이윤율과 축적 속도에 영향을 준다. 시장의 거리와 판매 조건도 자본의 시간표를 바꾼다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how circulation time, the time needed to sell and buy again, slows the movement of capital."
+                "title": "Circulation time",
+                "text": "The time needed to sell commodities and repurchase production elements. During it, capital does not directly valorize itself in production."
               },
               {
-                "title": "Key distinction",
-                "text": "See time spent outside production as a pause for capital, since delays in sale and purchase reshape turnover."
+                "title": "Turnover delay",
+                "text": "The longer circulation time is, the longer the same capital takes to re-enter production. Annual turnover falls."
               },
               {
-                "title": "Next link",
-                "text": "Reducing circulation time does not directly create value, but releases capital more quickly. It strongly affects turnover and annual profitability."
+                "title": "Why it matters",
+                "text": "Circulation time creates no new value, but affects profit rate and the speed of accumulation. Distance to market and selling conditions change capital’s timetable."
               }
             ]
           }
@@ -13852,30 +13852,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "유통비용을 순수한 거래비용과 보관·운송처럼 사용가치와 관련된 비용으로 나누어 살핀다."
+                "title": "순수 유통비",
+                "text": "매매, 회계, 광고처럼 가치형태의 변화에 필요한 비용이다. 필요할 수는 있지만 새 가치를 만들지는 않는다."
               },
               {
-                "title": "구분할 점",
-                "text": "모든 유통비가 새 가치를 만드는 것은 아니며, 비용의 성격을 구분해야 한다는 점을 익힌다."
+                "title": "보관과 운송",
+                "text": "사용가치를 보존하거나 장소를 바꾸는 활동은 조건에 따라 생산과정의 연장처럼 작동할 수 있다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 비용의 필요성과 가치창조를 분리한다. 이 구분이 있어야 뒤의 회전 분석에서 생산 안에 묶인 자본, 상품 형태로 묶인 자본, 순수 유통비로 공제되는 부분을 구별할 수 있다."
+                "title": "구분 기준",
+                "text": "비용이 필요하다는 말과 가치가 새로 생긴다는 말은 다르다. 이 장의 핵심은 두 문제를 섞지 않는 것이다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Distinguishes pure circulation costs from costs tied to use-values, such as storage and transport."
+                "title": "Pure circulation costs",
+                "text": "Costs such as buying, selling, accounting, and advertising are needed for changes of value-form. They may be necessary, but they do not create new value."
               },
               {
-                "title": "Key distinction",
-                "text": "Learn why not every circulation cost creates new value, and why the kind of cost matters."
+                "title": "Storage and transport",
+                "text": "Activities that preserve use-value or change location can, under definite conditions, function as extensions of production."
               },
               {
-                "title": "Next link",
-                "text": "This chapter separates the necessity of a cost from the creation of value. That distinction is needed later to distinguish capital tied up in production, capital tied up as commodities, and portions deducted as pure circulation costs."
+                "title": "Criterion",
+                "text": "A cost being necessary is not the same as new value being created. The point is to avoid mixing these two questions."
               }
             ]
           }
@@ -14207,30 +14207,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "생산시간",
-                "text": "자본이 생산과정에 묶여 있는 시간."
-              },
-              {
-                "title": "유통시간",
-                "text": "판매와 구매를 기다리며 생산 밖에 머무는 시간."
-              },
-              {
                 "title": "회전시간",
-                "text": "두 시간을 합친 전체 순환 시간. 빨리 돌수록 같은 자본이 더 자주 쓰인다."
+                "text": "생산시간과 유통시간을 합친 시간이다. 자본이 한 순환을 마치고 다시 출발점으로 돌아오는 데 걸리는 전체 기간이다."
+              },
+              {
+                "title": "회전수",
+                "text": "한 해 동안 같은 자본이 몇 번 회전하는지를 나타낸다. 회전수가 커지면 같은 선대자본의 연간 작용이 달라진다."
+              },
+              {
+                "title": "다음 분석",
+                "text": "회전시간을 알면 고정자본과 유동자본이 왜 다르게 계산되는지 볼 수 있다. 가치가 돌아오는 속도가 핵심 문제가 된다."
               }
             ],
             "en": [
               {
-                "title": "Production time",
-                "text": "Time capital is tied up in production."
-              },
-              {
-                "title": "Circulation time",
-                "text": "Time spent waiting for sale and purchase outside production."
-              },
-              {
                 "title": "Turnover time",
-                "text": "The total of both; faster turnover lets the same capital function more often."
+                "text": "The sum of production time and circulation time. It is the whole period capital needs to complete one circuit and return to its starting point."
+              },
+              {
+                "title": "Number of turnovers",
+                "text": "This shows how many times the same capital turns over in a year. A higher number changes the annual effect of the same advanced capital."
+              },
+              {
+                "title": "Next analysis",
+                "text": "Once turnover time is clear, fixed and circulating capital can be distinguished by the speed at which advanced value returns."
               }
             ]
           }
@@ -18822,30 +18822,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "부문 I",
-                "text": "생산수단을 만드는 부문."
-              },
-              {
-                "title": "부문 II",
-                "text": "소비재를 만드는 부문."
-              },
-              {
                 "title": "단순재생산",
-                "text": "사회가 같은 규모로 반복되려면 두 부문의 교환 비율이 맞아야 한다."
+                "text": "축적 없이 같은 규모로 생산이 반복되는 경우다. 잉여가치는 자본가의 소비로 빠져나간다고 가정한다."
+              },
+              {
+                "title": "부문 I과 II",
+                "text": "부문 I은 생산수단, 부문 II는 소비수단을 만든다. 두 부문이 서로 필요한 것을 교환해야 다음 생산이 가능하다."
+              },
+              {
+                "title": "교환 조건",
+                "text": "핵심은 I(v+s) = IIc다. 생산수단 부문의 임금·잉여가치 몫이 소비수단으로 교환되고, 소비수단 부문은 생산수단을 보충한다."
               }
             ],
             "en": [
               {
-                "title": "Department I",
-                "text": "Produces means of production."
-              },
-              {
-                "title": "Department II",
-                "text": "Produces means of consumption."
-              },
-              {
                 "title": "Simple reproduction",
-                "text": "For society to repeat at the same scale, exchange between the two departments must balance."
+                "text": "Production repeats on the same scale without accumulation. Surplus-value is assumed to leave as capitalist consumption."
+              },
+              {
+                "title": "Departments I and II",
+                "text": "Department I produces means of production; Department II produces means of consumption. They must exchange what each needs for the next production cycle."
+              },
+              {
+                "title": "Exchange condition",
+                "text": "The key condition is I(v+s) = IIc. Department I’s wages and surplus-value exchange for consumption goods, while Department II replaces its means of production."
               }
             ]
           }
@@ -19177,30 +19177,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "확대재생산 도식을 통해 축적이 부문 간 균형 조건을 더 복잡하게 만든다는 점을 보여 준다."
+                "title": "확대재생산",
+                "text": "잉여가치 일부가 소비되지 않고 추가 자본으로 전환되어 생산 규모가 커지는 경우다."
               },
               {
-                "title": "구분할 점",
-                "text": "성장은 아무 부문에서나 마음대로 늘어나는 것이 아니라 생산수단과 소비재의 비례 관계를 요구한다."
+                "title": "축적의 물적 조건",
+                "text": "돈만 더 있다고 확대재생산이 되는 것은 아니다. 추가 생산수단과 추가 노동력, 그리고 그 노동자를 먹일 소비수단이 필요하다."
               },
               {
-                "title": "다음 연결",
-                "text": "자본주의 축적이 개별 의지의 합이 아니라 사회적 총생산물의 부문 비례에 의존함을 보여준다. 이 역할 때문에 해당 장은 앞선 분석의 반복이 아니라 다음 단계의 조건을 만든다."
+                "title": "부문 간 비례",
+                "text": "부문 I과 II가 맞는 비율로 커지지 않으면 한쪽에는 팔리지 않는 상품이, 다른 쪽에는 부족한 생산조건이 생긴다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Uses expanded reproduction schemes to show how accumulation complicates the balance between departments."
+                "title": "Expanded reproduction",
+                "text": "Part of surplus-value is not consumed but converted into additional capital, so production grows in scale."
               },
               {
-                "title": "Key distinction",
-                "text": "Growth requires proportional relations between means of production and consumption goods, not arbitrary expansion."
+                "title": "Material conditions",
+                "text": "More money alone is not enough. Additional means of production, additional labor-power, and consumption goods for those workers are required."
               },
               {
-                "title": "Next link",
-                "text": "It shows that capitalist accumulation depends not on the sum of individual wills but on the departmental proportions of the total social product. This role makes the chapter not a repetition of earlier analysis but a condition for the next step."
+                "title": "Departmental proportion",
+                "text": "If Departments I and II do not expand in compatible proportions, one side faces unsold commodities while the other lacks conditions of production."
               }
             ]
           }
@@ -22035,30 +22035,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "서로 다른 생산부문의 이윤율이 경쟁을 통해 평균이윤율로 기울어지는 과정을 설명한다."
+                "title": "자본구성 차이",
+                "text": "생산부문마다 c와 v의 비율이 다르다. 같은 잉여가치율이어도 각 부문의 이윤율은 달라질 수 있다."
               },
               {
-                "title": "구분할 점",
-                "text": "개별 상품이 자기 가치대로 팔린다는 단순 그림에서 벗어나, 자본 이동이 가격을 어떻게 바꾸는지 본다."
+                "title": "문제의 출발",
+                "text": "상품이 모두 자기 가치대로 팔린다고 가정하면, 자본구성이 다른 부문들은 서로 다른 이윤율을 갖게 된다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 가치대로 판매한다는 가정과 현실의 평균이윤 경향 사이의 긴장을 만든다. 「일반 이윤율의 형성과 가치의 생산가격으로의 전환」에서는 이 긴장을 일반 이윤율과 생산가격으로 풀어 간다."
+                "title": "다음 질문",
+                "text": "현실 경쟁에서는 자본이 높은 이윤율을 찾아 이동한다. 그래서 서로 다른 이윤율이 평균이윤으로 어떻게 바뀌는지가 문제가 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how competition tends to equalize different branch profit rates into an average rate of profit."
+                "title": "Different compositions",
+                "text": "Branches differ in the ratio of c to v. Even with the same surplus-value rate, their profit rates can differ."
               },
               {
-                "title": "Key distinction",
-                "text": "Move beyond the simple picture of each commodity selling at value, and see how capital movement reshapes prices."
+                "title": "Starting problem",
+                "text": "If all commodities sell at their values, branches with different compositions produce different profit rates."
               },
               {
-                "title": "Next link",
-                "text": "This chapter creates the tension between the assumption of sale at value and the real tendency toward average profit. “Formation of a General Rate of Profit (Average Rate of Profit) and Transformation of the Values of Commodities into Prices of Production” works through this tension through the general rate of profit and prices of production."
+                "title": "Next question",
+                "text": "In real competition, capital moves toward higher profit rates. The question becomes how different profit rates are transformed into average profit."
               }
             ]
           }
@@ -22390,30 +22390,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "평균이윤이 형성되면서 가치가 생산가격으로 전환되는 논리를 다룬다."
+                "title": "일반 이윤율",
+                "text": "여러 부문의 잉여가치가 경쟁을 통해 총자본에 비례해 나뉘면 평균적인 이윤율이 형성된다."
               },
               {
-                "title": "구분할 점",
-                "text": "생산가격은 가치론의 폐기가 아니라 잉여가치가 자본들 사이에 재분배되는 형태임을 이해한다."
+                "title": "평균이윤",
+                "text": "각 자본은 자기가 직접 생산한 잉여가치만이 아니라, 총사회적 잉여가치에서 자기 자본 크기에 비례한 몫을 받는다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 전환의 구조를 세운다. 「경쟁을 통한 일반 이윤율의 균등화」에서는 그 구조가 실제 경쟁, 수급, 시장가치, 초과이윤의 운동 속에서 어떤 방식으로 작동하는지 보완한다."
+                "title": "생산가격",
+                "text": "생산가격은 비용가격 k에 평균이윤을 더한 가격이다. 그래서 개별 상품가격은 가치와 달라질 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Treats the transformation of values into prices of production through the formation of average profit."
+                "title": "General rate of profit",
+                "text": "Competition distributes surplus-value among branches in proportion to total capital, forming an average profit rate."
               },
               {
-                "title": "Key distinction",
-                "text": "Understand prices of production as redistribution of surplus-value among capitals, not abandonment of value theory."
+                "title": "Average profit",
+                "text": "Each capital receives not simply the surplus-value it directly produced, but a share of total social surplus-value proportional to its size."
               },
               {
-                "title": "Next link",
-                "text": "This chapter establishes the structure of transformation. “Equalisation of the General Rate of Profit Through Competition. Market-Prices and Market-Values. Surplus-Profit.” supplements it by showing how this structure works through competition, supply and demand, market-value, and surplus-profit."
+                "title": "Price of production",
+                "text": "Price of production is cost-price k plus average profit. Individual commodity prices can therefore differ from values."
               }
             ]
           }
@@ -22745,30 +22745,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "경쟁이 시장가격과 시장가치를 조정하며 평균이윤율을 현실에서 관철하는 방식을 설명한다."
+                "title": "경쟁의 역할",
+                "text": "경쟁은 잉여가치를 만들지 않는다. 이미 생산된 잉여가치를 자본들 사이에 평균이윤 형태로 재분배한다."
               },
               {
-                "title": "구분할 점",
-                "text": "경쟁은 단순히 가격을 낮추는 힘이 아니라 자본 사이의 사회적 규칙을 집행하는 과정임을 본다."
+                "title": "시장가치",
+                "text": "같은 종류의 상품이라도 개별 생산조건이 다르면 개별가치가 다르다. 시장가치는 그 차이가 사회적으로 평균화된 형태다."
               },
               {
-                "title": "다음 연결",
-                "text": "「일반적 임금변동이 생산가격에 미치는 영향」에서는 평균이윤과 생산가격을 이미 주어진 것으로 놓고 임금 변동의 효과를 검토한다. 그러려면 이 장에서 경쟁을 통한 평균화의 조건이 먼저 정리되어야 한다."
+                "title": "초과이윤",
+                "text": "더 좋은 조건의 자본은 시장가치 아래에서 생산해 같은 시장가격으로 팔 수 있으므로 초과이윤을 얻을 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Explains how competition adjusts market prices and market values while enforcing the average profit rate."
+                "title": "Role of competition",
+                "text": "Competition does not create surplus-value. It redistributes already produced surplus-value among capitals as average profit."
               },
               {
-                "title": "Key distinction",
-                "text": "See competition as enforcing social rules among capitals, not merely lowering prices."
+                "title": "Market-value",
+                "text": "Commodities of the same kind can have different individual values because production conditions differ. Market-value is their socially averaged form."
               },
               {
-                "title": "Next link",
-                "text": "“Effects of General Wage Fluctuations on Prices of Production” treats average profit and prices of production as already given and then examines the effect of wage changes. That requires this chapter’s account of the competitive conditions of averaging."
+                "title": "Surplus-profit",
+                "text": "Capital with better conditions can produce below market-value and sell at the common market price, gaining surplus-profit."
               }
             ]
           }
@@ -23100,30 +23100,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "임금 변동이 생산가격과 이윤율에 미치는 영향을 자본구성 차이와 함께 분석한다."
+                "title": "임금변동",
+                "text": "임금이 오르면 잉여가치가 줄어들고 평균이윤율도 압박받는다. 하지만 모든 생산가격이 같은 방향·같은 크기로 움직이지는 않는다."
               },
               {
-                "title": "구분할 점",
-                "text": "임금 상승이 모든 가격에 같은 방식으로 반영되지 않는 이유를 자본구성의 차이에서 찾는다."
+                "title": "자본구성 효과",
+                "text": "가변자본 비중이 큰 부문과 작은 부문은 임금변동의 영향을 다르게 받는다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 생산가격 이론의 보조 검토다. 임금 변동도 평균이윤의 매개를 통과한다는 점을 보인 뒤, 「보충 설명」에서는 생산가격을 둘러싼 추가 조건과 혼동을 보충한다."
+                "title": "읽는 기준",
+                "text": "임금 상승이 곧 모든 가격 상승이라는 단순식은 틀리다. 평균이윤과 자본구성의 매개를 거쳐 생산가격이 조정된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Analyzes how wage changes affect prices of production and profit rates across different capital compositions."
+                "title": "Wage change",
+                "text": "A rise in wages reduces surplus-value and pressures the average rate of profit. But all prices of production do not move in the same direction or magnitude."
               },
               {
-                "title": "Key distinction",
-                "text": "Use differences in capital composition to understand why wage changes do not affect all prices alike."
+                "title": "Composition effect",
+                "text": "Branches with high or low shares of variable capital are affected differently by wage changes."
               },
               {
-                "title": "Next link",
-                "text": "This chapter is a supplementary test of the theory of prices of production. After showing that wage changes also pass through the mediation of average profit, “Supplementary Remarks” supplements the remaining conditions and confusions around production prices."
+                "title": "How to read it",
+                "text": "The simple formula “higher wages mean all prices rise” is wrong. Prices of production adjust through average profit and capital composition."
               }
             ]
           }
@@ -23455,30 +23455,30 @@
           "conceptMap": {
             "ko": [
               {
-                "title": "분석 대상",
-                "text": "생산가격론의 보충 논의를 통해 가치, 가격, 평균이윤 사이의 관계를 더 정밀하게 다룬다."
+                "title": "보충 검토",
+                "text": "생산가격 분석에서 헷갈리기 쉬운 조건들을 정리하는 장이다. 핵심은 가치, 비용가격, 평균이윤을 섞지 않는 것이다."
               },
               {
-                "title": "구분할 점",
-                "text": "가격이 가치에서 벗어나 보이는 지점에서도 전체 잉여가치와 전체 이윤의 관계를 놓치지 않는다."
+                "title": "가치와 생산가격",
+                "text": "생산가격은 가치와 다를 수 있지만, 총가격과 총가치, 총이윤과 총잉여가치의 관계를 전제한다."
               },
               {
-                "title": "다음 연결",
-                "text": "이 장은 2편의 평균이윤·생산가격 논의를 닫는다. 「법칙 그 자체」에서는 그 평균이윤율이 자본주의 생산력 발전과 유기적 구성 상승 속에서 하락 압력을 받는다는 문제를 연다."
+                "title": "다음 전환",
+                "text": "평균이윤이 정리되면 이제 그 평균 이윤율 자체가 자본주의 발전 속에서 왜 하락 압력을 받는지가 문제가 된다."
               }
             ],
             "en": [
               {
-                "title": "Object of analysis",
-                "text": "Further clarifies the relation among value, price, and average profit in the theory of prices of production."
+                "title": "Supplementary check",
+                "text": "This chapter clarifies conditions that easily confuse the analysis of prices of production. The point is not to mix value, cost-price, and average profit."
               },
               {
-                "title": "Key distinction",
-                "text": "Keep the relation between total surplus-value and total profit in view when prices diverge from values."
+                "title": "Value and production price",
+                "text": "Prices of production can differ from values, but the analysis presupposes the relation of total price to total value and total profit to total surplus-value."
               },
               {
-                "title": "Next link",
-                "text": "This chapter closes Part II’s analysis of average profit and prices of production. “The Law as Such” opens the question of how the average profit rate comes under downward pressure as productive forces and organic composition develop."
+                "title": "Next transition",
+                "text": "Once average profit is clarified, the next problem is why the average profit rate itself comes under downward pressure in capitalist development."
               }
             ]
           }
