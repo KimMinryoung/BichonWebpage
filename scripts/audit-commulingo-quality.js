@@ -2,6 +2,7 @@
 const { loadCommuLingoBundle } = require('../data/commulingo');
 
 const data = loadCommuLingoBundle().bundle;
+const strict = process.argv.includes('--strict');
 
 const honorific = /(습니다|습니까|십시오|세요|합니다|됩니다|입니다|였습니다|했습니다|봅니다|보세요)/;
 const embeddedMarker = /(정답입니다|오답입니다|Correct\.|Incorrect\.)/;
@@ -74,11 +75,26 @@ const counts = issues.reduce((acc, issue) => {
   acc[issue.kind] = (acc[issue.kind] || 0) + 1;
   return acc;
 }, {});
-const blockingKinds = new Set(['honorific', 'embedded-marker', 'generic-prompt', 'extreme-distractor', 'weak-distractor']);
-const blocking = issues.filter(issue => blockingKinds.has(issue.kind)).length;
+const fatalKinds = new Set(['embedded-marker', 'choice-feedback-shape']);
+const fatal = issues.filter(issue => fatalKinds.has(issue.kind)).length;
+const advisory = issues.length - fatal;
+const ok = fatal === 0 && (!strict || issues.length === 0);
 
-console.log(JSON.stringify({ ok: blocking === 0, blocking, counts, total: issues.length, choiceFeedbackQuestions }, null, 2));
+console.log(JSON.stringify({
+  ok,
+  mode: strict ? 'strict' : 'advisory',
+  fatal,
+  advisory,
+  counts,
+  total: issues.length,
+  choiceFeedbackQuestions,
+  note: strict
+    ? 'Strict mode fails on any audit hit.'
+    : 'Heuristic hits are review prompts; only fatal issues fail this audit. Use --strict to fail on any hit.',
+}, null, 2));
 issues.slice(0, 200).forEach(issue => {
-  console.log([issue.kind, issue.label, issue.text].join(' | '));
+  const severity = fatalKinds.has(issue.kind) ? 'fatal' : 'advisory';
+  console.log([severity, issue.kind, issue.label, issue.text].join(' | '));
 });
 if (issues.length > 200) console.log('... ' + (issues.length - 200) + ' more');
+if (!ok) process.exit(1);

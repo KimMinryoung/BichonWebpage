@@ -424,6 +424,6 @@ For local UI smoke testing, run a temporary server on an unused port and check:
 5. Choice length skew.
 6. Repeated openings within a lesson.
 
-The audit is heuristic. Treat hits as review prompts, not automatic failures; `scripts/validate-commulingo.js` is the blocking structural gate.
+The audit is heuristic. By default it reports advisory hits and only fails on clear fatal content-shape problems, such as embedded Correct/Incorrect markers or malformed choice feedback. Treat advisory hits as review prompts, not automatic failures; `scripts/validate-commulingo.js` is the blocking structural gate. Use `node scripts/audit-commulingo-quality.js --strict` only when intentionally gating on every heuristic hit.
 
 A separate generation script can then rewrite only flagged chapters, rather than regenerating the whole dataset.
