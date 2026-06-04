@@ -22029,18 +22029,18 @@
             }
           ],
           "learningFocus": {
-            "ko": "c, v, s, p'의 기본 계산을 잡고, 고구성ㆍ저구성 자본이 왜 서로 다른 이윤율을 갖는지 본다.",
-            "en": "Grasp the basic calculation of c, v, s, and p', then see why high- and low-composition capitals have different profit rates."
+            "ko": "c와 v의 의미, c:v 비율의 높고 낮음, 그리고 그 비율이 p'=s/(c+v)에 주는 효과를 차례로 잡는다.",
+            "en": "Grasp c and v, the meaning of high and low c:v ratios, and the effect of that ratio on p'=s/(c+v)."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "c와 v",
-                "text": "불변자본 c는 기계ㆍ원료처럼 기존 가치를 이전하고, 가변자본 v는 노동력 구매분이다. 새 가치와 잉여가치는 산 노동에서 나온다."
+                "text": "불변자본 c는 기계ㆍ건물ㆍ원료처럼 생산물에 기존 가치를 이전하는 부분이고, 가변자본 v는 노동력 구매에 든 임금 부분이다. 새 가치와 잉여가치는 v가 산 노동을 움직일 때 생긴다."
               },
               {
                 "title": "구성의 높고 낮음",
-                "text": "고구성 자본은 총자본 중 c 비중이 높고 v 비중이 낮다. 저구성 자본은 그 반대로 v 비중이 높다. 평균 구성은 사회적 평균 비율에 가까운 경우다."
+                "text": "높고 낮다는 말은 총자본 안에서 불변자본 c가 가변자본 v에 비해 얼마나 큰가를 가리킨다. 고구성은 c:v가 높은 기계ㆍ설비 집약 부문이고, 저구성은 v 비중이 큰 노동집약 부문이다."
               },
               {
                 "title": "가치판매의 결과",
@@ -22050,11 +22050,11 @@
             "en": [
               {
                 "title": "c and v",
-                "text": "Constant capital c transfers old value through machinery and materials; variable capital v buys labour-power. New value and surplus-value come from living labour."
+                "text": "Constant capital c is machinery, buildings, and materials that transfer existing value to the product; variable capital v is the wage outlay for labour-power. New value and surplus-value arise when v sets living labour in motion."
               },
               {
                 "title": "High and low composition",
-                "text": "High-composition capital has a high share of c and a low share of v. Low-composition capital has the reverse. Average composition is close to the social average ratio."
+                "text": "High and low refer to how large constant capital c is relative to variable capital v within total capital. High composition means a high c:v ratio, machinery- or equipment-heavy; low composition means a larger share of v, labour-intensive."
               },
               {
                 "title": "Result of sale at value",
@@ -22142,8 +22142,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 공식은 k+kp'이다. 여기서 p'는 개별 부문의 고유 이윤율이 아니라 사회적으로 평균화된 일반 이윤율이다.",
-                    "en": "Marx’s formula is k+kp'. Here p' is not the branch’s own immediate profit rate but the socially averaged general rate of profit."
+                    "ko": "생산가격은 자본가의 원가로 보이는 비용가격 k에 사회적으로 평균화된 이윤을 붙인 가격이다. 그래서 공식은 k+kp'이다. 여기서 p'는 개별 부문의 고유 이윤율이 아니라 일반 이윤율이다.",
+                    "en": "Price of production is cost-price k, the capitalist's apparent cost, plus socially averaged profit. The formula is k+kp'. Here p' is the general profit rate, not the branch's own immediate profit rate."
                   }
                 },
                 {
@@ -22384,36 +22384,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "생산가격 = 비용가격 k + 평균이윤(k x 일반 이윤율)이라는 공식을 통해 가치와 가격의 차이를 이해한다.",
-            "en": "Understand the difference between value and price through the formula: price of production = cost-price k + average profit (k times the general profit rate)."
+            "ko": "비용가격을 자본가가 회수해야 할 원가로, 생산가격을 평균이윤이 붙은 경쟁의 중심가격으로 구분한다.",
+            "en": "Distinguish cost-price as the capitalist's recoverable cost from price of production as competition's centre-price with average profit added."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "일반 이윤율",
-                "text": "일반 이윤율은 총잉여가치 / 사회적 총자본이다. 각 부문이 직접 만든 잉여가치율이 아니라 전체 자본의 평균 수익률이다."
+                "title": "비용가격 k",
+                "text": "비용가격은 자본가가 상품을 만들며 실제로 선지출했다고 계산하는 부분, 곧 소모된 c와 v의 합이다. 상품가치 전체가 아니라 자본가가 회수해야 한다고 보는 원가다."
               },
               {
-                "title": "평균이윤",
-                "text": "평균이윤은 각 자본이 자기 크기에 비례해 받는 이윤이다. 같은 100의 자본은 어느 부문에 있든 평균적으로 같은 이윤을 요구한다."
+                "title": "생산가격",
+                "text": "생산가격은 어떤 부문 상품이 경쟁 속에서 평균이윤을 보장받는 중심가격이다. 개별 부문이 직접 만든 잉여가치가 아니라 사회적 평균이윤이 붙은 가격이다."
               },
               {
-                "title": "생산가격 공식",
-                "text": "생산가격은 k + kp'이다. k는 비용가격, p'는 일반 이윤율이다. 그래서 고구성 상품은 가치보다 높게, 저구성 상품은 가치보다 낮게 팔릴 수 있다."
+                "title": "공식과 전환",
+                "text": "공식은 k + kp'이다. p'는 일반 이윤율이다. 그래서 생산가격은 가치의 폐기가 아니라, 가치와 잉여가치가 경쟁을 거쳐 평균이윤 형태로 재배분된 가격이다."
               }
             ],
             "en": [
               {
-                "title": "General profit rate",
-                "text": "The general profit rate is total surplus-value divided by total social capital. It is the average return of total capital, not the immediate surplus-value rate of one branch."
+                "title": "Cost-price k",
+                "text": "Cost-price is the part the capitalist counts as actually advanced and used up in making the commodity, the sum of consumed c and v. It is not the whole commodity value, but the cost the capitalist thinks must be recovered."
               },
               {
-                "title": "Average profit",
-                "text": "Average profit is the profit each capital receives in proportion to its magnitude. Equal capitals of 100 claim the same average profit across branches."
+                "title": "Price of production",
+                "text": "Price of production is the regulating centre-price through which a commodity in a branch secures average profit in competition. It includes social average profit, not simply the surplus-value directly produced in that branch."
               },
               {
-                "title": "Formula for price of production",
-                "text": "Price of production is k + kp'. Here k is cost-price and p' is the general profit rate. High-composition commodities can sell above value, and low-composition commodities below value."
+                "title": "Formula and transformation",
+                "text": "The formula is k + kp'. Here p' is the general profit rate. Price of production is not the abolition of value, but value and surplus-value redistributed through competition as average profit."
               }
             ]
           }
@@ -22824,8 +22824,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "11장은 평균이윤과 생산가격이 이미 성립한 뒤를 전제한다. 생산가격은 k + kp'이므로, 임금 변동은 비용가격 k와 일반 이윤율 p'를 동시에 건드린다.",
-                    "en": "Chapter 11 assumes that average profit and prices of production already exist. Since price of production is k + kp', a wage change affects both cost-price k and the general profit rate p'."
+                    "ko": "11장은 평균이윤과 생산가격이 이미 성립한 뒤를 전제한다. 비용가격 k는 자본가가 회수해야 할 원가로 보는 c+v이고, 생산가격은 여기에 일반 이윤율 p'에 따른 평균이윤을 붙인 k+kp'이다.",
+                    "en": "Chapter 11 assumes that average profit and prices of production already exist. Cost-price k is c+v as the cost the capitalist must recover; price of production is k+kp', k plus average profit according to the general profit rate p'."
                   }
                 },
                 {
@@ -22852,8 +22852,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "예를 들어 총자본 100, 평균 이윤율 20%에서 평균 구성 80k+20p=100이라고 하자. 임금 상승 뒤 p'가 15%로 내려가고 평균 구성의 k가 약 87이 되면 87+13=100으로 상쇄된다. 저구성은 v 비중이 커서 k 상승분이 더 크므로 생산가격이 오르고, 고구성은 v 비중이 작아 k 상승은 작지만 평균이윤 감소분이 커서 내려간다.",
-                    "en": "For example, with total capital 100 and a 20% average profit rate, an average-composition commodity may be 80k + 20p = 100. After a wage rise, p' may fall to 15% and average-composition k may rise to about 87, giving 87 + 13 = 100. In low composition, the larger v share makes k rise more, so price rises; in high composition, k rises little while average profit falls more, so price falls."
+                    "ko": "숫자로 보면 더 분명하다. 평균 구성 상품을 80c+20v+20s라고 두면, 비용가격 k는 80c+20v=100이고 평균이윤은 20이어서 생산가격은 120이다. 일반적 임금 상승 뒤 같은 새 가치 40이 25v+15s로 나뉜다고 하자. 그러면 k는 80c+25v=105로 오르지만, 일반 이윤율 하락으로 평균이윤은 15로 줄어 105+15=120이 된다. 저구성은 v 비중이 더 커서 k 상승분이 평균이윤 감소분보다 커지므로 생산가격이 오르고, 고구성은 v 비중이 작아 k 상승은 작지만 평균이윤 감소분이 더 커서 생산가격이 내려간다.",
+                    "en": "The numerical mechanism is clearer this way. Take an average-composition commodity as 80c+20v+20s. Its cost-price k is 80c+20v=100 and average profit is 20, so its price of production is 120. After a general wage rise, suppose the same new value of 40 is divided as 25v+15s. Then k rises to 80c+25v=105, but the fall in the general profit rate reduces average profit to 15, giving 105+15=120. In low composition, the larger v share makes the rise in k exceed the fall in average profit, so price of production rises. In high composition, the v share is smaller, so k rises little while average profit falls more, and price of production falls."
                   }
                 },
                 {
@@ -23094,18 +23094,18 @@
             }
           ],
           "learningFocus": {
-            "ko": "임금 상승 = 모든 가격 상승이라는 직관을 넘어서, k + kp'에서 k의 상승과 p'의 하락이 어떻게 결합되는지 계산한다.",
-            "en": "Move beyond the intuition that wage rises simply raise all prices, and calculate how a rise in k combines with a fall in p' in k + kp'."
+            "ko": "임금변동 문제를 풀기 전에 비용가격 k, 생산가격, 평균ㆍ저구성ㆍ고구성의 뜻을 먼저 구분한다.",
+            "en": "Before solving wage-change effects, distinguish cost-price k, price of production, and average-, low-, and high-composition capital."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "생산가격",
-                "text": "생산가격은 비용가격 k에 평균이윤을 더한 것이다. 공식은 k + kp'이고, p'는 개별 기업 이윤율이 아니라 일반 이윤율이다."
+                "title": "비용가격과 생산가격",
+                "text": "비용가격 k는 소모된 c+v, 곧 자본가의 원가로 보이는 부분이다. 생산가격은 그 k에 일반 이윤율 p'에 따른 평균이윤을 붙인 경쟁의 중심가격이다."
               },
               {
                 "title": "세 가지 구성",
-                "text": "평균 구성은 c:v 비율이 사회 평균과 가까운 경우다. 저구성은 v 비중이 평균보다 높고, 고구성은 c 비중이 평균보다 높다."
+                "text": "평균 구성은 c:v 비율이 사회 평균과 가까운 경우다. 저구성은 v 비중이 평균보다 높아 노동집약적이고, 고구성은 c 비중이 평균보다 높아 설비ㆍ원료 집약적이다."
               },
               {
                 "title": "임금 상승의 계산",
@@ -23114,12 +23114,12 @@
             ],
             "en": [
               {
-                "title": "Price of production",
-                "text": "Price of production is cost-price k plus average profit. The formula is k + kp', where p' is the general profit rate, not one firm’s private rate."
+                "title": "Cost-price and production price",
+                "text": "Cost-price k is consumed c+v, the part appearing to the capitalist as cost. Price of production is the centre-price of competition formed by adding average profit according to the general profit rate p' to k."
               },
               {
                 "title": "Three compositions",
-                "text": "Average composition is close to the social average c:v ratio. Low composition has a higher-than-average share of v; high composition has a higher-than-average share of c."
+                "text": "Average composition is close to the social average c:v ratio. Low composition has a higher-than-average share of v and is labour-intensive; high composition has a higher-than-average share of c and is equipment- or materials-intensive."
               },
               {
                 "title": "Wage-rise calculation",
