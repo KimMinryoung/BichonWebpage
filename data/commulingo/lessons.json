@@ -19576,6 +19576,64 @@
                 "text": "Once s appears as p, the next question is what p is compared with. This leads directly to the rate of profit, p/(c+v)."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "상품가치 c+v+s가 자본가에게는 비용가격 k와 이윤 p로 보인다.",
+                  "이때 잉여가치가 노동에서 나왔다는 관계가 비용과 판매수익의 관계처럼 뒤집혀 나타난다."
+                ]
+              },
+              {
+                "title": "기본 정의",
+                "items": [
+                  "비용가격 k: 상품 생산에 소비되어 자본가가 보충해야 한다고 계산하는 c+v다.",
+                  "이윤 p: 잉여가치 s가 총선대자본의 초과수익처럼 나타나는 형태다.",
+                  "상품가치 공식은 c+v+s이고, 자본가의 표면 공식은 k+p다."
+                ]
+              },
+              {
+                "title": "숫자 예시",
+                "text": "80c+20v+20s라면 상품가치는 120이다. 자본가에게는 100을 들여 120에 판 것이므로 20의 이윤처럼 보인다. 그러나 그 20은 80c가 만든 것도, 총자본 100이 자연히 낳은 것도 아니라 노동력이 새로 만든 잉여가치다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "k는 상품가치 전체가 아니라 자본가가 회수해야 한다고 보는 원가다.",
+                  "p는 s의 다른 이름이지만, 표면에서는 전체 자본이 낳은 결과처럼 보인다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Commodity value c+v+s appears to the capitalist as cost-price k plus profit p.",
+                  "The origin of surplus-value in labour is inverted into a relation between costs and sale proceeds."
+                ]
+              },
+              {
+                "title": "Basic definitions",
+                "items": [
+                  "Cost-price k: the consumed c+v that the capitalist calculates as needing replacement.",
+                  "Profit p: surplus-value s appearing as excess return on the total advanced capital.",
+                  "The value formula is c+v+s; the surface formula is k+p."
+                ]
+              },
+              {
+                "title": "Numerical example",
+                "text": "If a commodity is 80c+20v+20s, its value is 120. To the capitalist it looks like 100 was spent and 20 profit was made. But that 20 is surplus-value created by labour-power, not a natural yield of the whole 100."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "k is not the whole commodity value; it is the outlay the capitalist expects to recover.",
+                  "p is a transformed form of s, but it appears as the result of total capital."
+                ]
+              }
+            ]
           }
         },
         {
@@ -19929,6 +19987,62 @@
               {
                 "title": "Why it matters",
                 "text": "In the profit rate, surplus-value appears as if it were produced by the whole capital, not by labour-power. This inversion opens Volume III."
+              }
+            ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "잉여가치율은 노동력 착취의 비율이고, 이윤율은 총자본에 대한 수익률이다.",
+                  "같은 잉여가치라도 무엇을 분모로 삼는지에 따라 전혀 다른 지표가 된다."
+                ]
+              },
+              {
+                "title": "공식",
+                "items": [
+                  "잉여가치율: s/v. 노동자가 받은 임금 v와 생산한 잉여가치 s의 관계다.",
+                  "이윤율: s/(c+v). 자본가가 선대한 총자본에 대해 잉여가치가 얼마나 되는지 보는 비율이다."
+                ]
+              },
+              {
+                "title": "숫자 예시",
+                "text": "80c+20v+20s이면 s/v=20/20=100%다. 그러나 이윤율은 s/(c+v)=20/100=20%다. 착취율은 100%여도, 기계·원료 같은 c가 분모에 들어오면 이윤율은 낮아진다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "이윤율이 낮다고 곧 착취가 약하다는 뜻은 아니다.",
+                  "이윤율은 착취관계를 총자본의 수익성 문제로 보이게 만드는 표면형태다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "The rate of surplus-value measures exploitation of labour-power; the rate of profit measures return on total capital.",
+                  "The same surplus-value becomes a different indicator depending on the denominator."
+                ]
+              },
+              {
+                "title": "Formulas",
+                "items": [
+                  "Rate of surplus-value: s/v, the relation between wages v and surplus-value s.",
+                  "Rate of profit: s/(c+v), surplus-value measured against total advanced capital."
+                ]
+              },
+              {
+                "title": "Numerical example",
+                "text": "With 80c+20v+20s, s/v=20/20=100%. But the profit rate is s/(c+v)=20/100=20%. Exploitation can be high while the profit rate is lower because c enters the denominator."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "A low profit rate does not by itself mean weak exploitation.",
+                  "The profit rate makes exploitation appear as a return on total capital."
+                ]
               }
             ]
           }
@@ -20286,6 +20400,64 @@
                 "text": "The formula gives a framework for separating how wages, the working day, capital composition, and turnover affect the profit rate."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "이 장은 이윤율이 잉여가치율, 자본구성, 회전, 비용 절약의 결합 결과임을 공식으로 정리한다.",
+                  "입문자는 p'와 s'를 같은 것으로 읽지 않는 것이 중요하다."
+                ]
+              },
+              {
+                "title": "관계식",
+                "items": [
+                  "s'=s/v이고 p'=s/(c+v)다.",
+                  "총자본 C=c+v라 하면 p'=s/C다.",
+                  "s=s'v이므로 p'=s'v/C다. 즉 가변자본 비중 v/C가 작아지면 같은 s'에서도 p'는 낮아질 수 있다."
+                ]
+              },
+              {
+                "title": "숫자 예시",
+                "text": "s'=100%라고 하자. A는 50c+50v라서 s=50, p'=50/100=50%다. B는 90c+10v라서 s=10, p'=10/100=10%다. 착취율이 같아도 자본구성이 다르면 이윤율은 달라진다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "마르크스가 여러 변수를 따지는 이유는 “무엇이 이윤율을 결정하는가”를 한 문장으로 뭉개지 않기 위해서다.",
+                  "핵심은 노동 착취와 총자본 수익성 사이의 매개를 드러내는 것이다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "This chapter expresses the profit rate as a result of surplus-value rate, capital composition, turnover, and cost economy.",
+                  "Do not read p' and s' as the same thing."
+                ]
+              },
+              {
+                "title": "Relation",
+                "items": [
+                  "s'=s/v and p'=s/(c+v).",
+                  "If total capital C=c+v, then p'=s/C.",
+                  "Since s=s'v, p'=s'v/C. A lower variable-capital share v/C can lower p' even with the same s'."
+                ]
+              },
+              {
+                "title": "Numerical example",
+                "text": "Suppose s'=100%. A has 50c+50v, so s=50 and p'=50/100=50%. B has 90c+10v, so s=10 and p'=10/100=10%. Equal exploitation can yield different profit rates because composition differs."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Marx lists variables to avoid vague claims that many factors determine profit.",
+                  "The point is to show the mediations between exploitation and total-capital profitability."
+                ]
+              }
+            ]
           }
         },
         {
@@ -20639,6 +20811,62 @@
               {
                 "title": "Time and profitability",
                 "text": "Shorter time reduces the burden of advance. Economies in constant capital treat the same profit-rate problem from the side of cost reduction."
+              }
+            ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "같은 자본이라도 1년에 몇 번 회전하는가에 따라 연간 잉여가치량과 연간 이윤율이 달라진다.",
+                  "회전은 가치가 한 번 생산되는 문제가 아니라, 같은 자본이 1년에 몇 번 다시 투입되는가의 문제다."
+                ]
+              },
+              {
+                "title": "공식",
+                "items": [
+                  "1회전 잉여가치가 s이고 연간 회전수가 n이면 연간 잉여가치량은 ns다.",
+                  "연간 이윤율은 ns/(c+v)로 볼 수 있다. 같은 착취율에서도 n이 크면 연간 이윤율은 올라간다."
+                ]
+              },
+              {
+                "title": "숫자 예시",
+                "text": "자본 100이 한 번 돌 때 20s를 만든다고 하자. 1년에 1회전이면 연간 이윤율은 20/100=20%다. 1년에 4회전이면 연간 잉여가치는 80이고 연간 이윤율은 80/100=80%다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "회전이 빠르다고 한 회전 안의 착취율이 자동으로 오른다는 뜻은 아니다.",
+                  "회전은 같은 자본이 같은 해 안에 잉여가치를 몇 번 실현하고 다시 선대되는지를 바꾼다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "The annual mass of surplus-value and annual profit rate depend on how often capital turns over in a year.",
+                  "Turnover concerns how often the same capital is advanced again, not only value created in one cycle."
+                ]
+              },
+              {
+                "title": "Formula",
+                "items": [
+                  "If one turnover produces s and the annual number of turnovers is n, annual surplus-value is ns.",
+                  "The annual profit rate can be read as ns/(c+v). With the same exploitation, a higher n raises the annual profit rate."
+                ]
+              },
+              {
+                "title": "Numerical example",
+                "text": "If capital 100 produces 20s in one turnover, one annual turnover gives 20/100=20%. Four annual turnovers produce 80s, so the annual profit rate is 80/100=80%."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Faster turnover does not automatically mean higher exploitation in one production process.",
+                  "It changes how often surplus-value is realized and capital is advanced again within the year."
+                ]
               }
             ]
           }
@@ -22061,6 +22289,64 @@
                 "text": "Even if s'=s/v is equal, p'=s/(c+v). A low-composition branch with more v can show a higher profit rate, while a high-composition branch can show a lower one."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "자본구성이 다르면 같은 잉여가치율에서도 부문별 이윤율이 달라진다.",
+                  "8장은 평균이윤이 아직 성립하기 전, 가치대로 판매될 때 생기는 차이를 보여주는 출발점이다."
+                ]
+              },
+              {
+                "title": "기본 정의",
+                "items": [
+                  "고구성 자본: 총자본 중 c 비중이 높고 v 비중이 낮은 자본이다. 기계·원료 비중이 큰 부문을 생각하면 된다.",
+                  "저구성 자본: 총자본 중 v 비중이 높고 c 비중이 낮은 자본이다. 산 노동 투입 비중이 큰 부문이다.",
+                  "평균 구성 자본: 사회적 평균과 비슷한 c:v 비율을 가진 자본이다."
+                ]
+              },
+              {
+                "title": "숫자 예시",
+                "text": "s'=100%라면 80c+20v는 20s를 만들고 이윤율은 20%다. 90c+10v는 10s를 만들고 이윤율은 10%다. 60c+40v는 40s를 만들고 이윤율은 40%다. 차이는 노동이 새 가치와 잉여가치를 만든다는 전제에서 나온다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "높고 낮은 것은 기술 수준 자체가 아니라 c와 v의 비율이다.",
+                  "8장은 9장의 생산가격 전환을 이해하기 위한 계산상의 전 단계다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Different capital compositions yield different branch profit rates even with the same rate of surplus-value.",
+                  "Chapter 8 shows the starting point before average profit: what happens if commodities sell at values."
+                ]
+              },
+              {
+                "title": "Basic definitions",
+                "items": [
+                  "High-composition capital: high c and low v within total capital, typical of machinery- and materials-heavy branches.",
+                  "Low-composition capital: high v and low c, with a larger share of living labour.",
+                  "Average-composition capital: a c:v ratio close to the social average."
+                ]
+              },
+              {
+                "title": "Numerical example",
+                "text": "If s'=100%, 80c+20v creates 20s and has a 20% profit rate. 90c+10v creates 10s and has a 10% profit rate. 60c+40v creates 40s and has a 40% profit rate. The difference follows from living labour creating new value and surplus-value."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "High and low refer to the c:v ratio, not simply technological sophistication.",
+                  "Chapter 8 is the calculation step needed before Chapter 9’s transformation into prices of production."
+                ]
+              }
+            ]
           }
         },
         {
@@ -23186,6 +23472,72 @@
                 "text": "A wage rise increases v and therefore k, but reduces s and lowers p'. In average composition the effects offset; low composition rises because k rises more; high composition falls because the lower p' weighs more."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "일반적 임금 상승은 잉여가치율과 일반 이윤율을 낮춘다.",
+                  "하지만 생산가격의 변화는 모든 부문에서 같은 방향으로 나타나지 않는다. 자본구성에 따라 달라진다."
+                ]
+              },
+              {
+                "title": "계산 기준",
+                "items": [
+                  "생산가격 공식은 k+kp'이다.",
+                  "임금이 오르면 v가 커지고 s가 줄어들어 p'가 낮아진다.",
+                  "평균 구성 상품은 k 상승과 평균이윤 감소가 서로 상쇄되어 생산가격이 대체로 유지된다."
+                ]
+              },
+              {
+                "title": "구성별 효과",
+                "items": [
+                  "저구성 상품은 v 비중이 커서 임금 상승으로 k가 많이 오른다. 평균이윤 감소보다 k 상승이 커 생산가격이 오른다.",
+                  "고구성 상품은 v 비중이 작아 k 상승은 작지만, 평균이윤율 하락의 영향을 받으므로 생산가격이 내려간다.",
+                  "평균 구성 상품은 양쪽 효과가 균형을 이룬다."
+                ]
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "임금 상승이 모든 가격을 자동으로 올린다는 주장을 반박하는 장이다.",
+                  "핵심은 임금이 비용가격과 일반 이윤율을 동시에 바꾼다는 점이다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "A general wage rise lowers the rate of surplus-value and the general profit rate.",
+                  "But prices of production do not all move in the same direction; the effect depends on capital composition."
+                ]
+              },
+              {
+                "title": "Calculation basis",
+                "items": [
+                  "The production-price formula is k+kp'.",
+                  "When wages rise, v rises, s falls, and p' falls.",
+                  "For average-composition commodities, the rise in k and fall in average profit tend to offset each other."
+                ]
+              },
+              {
+                "title": "Effects by composition",
+                "items": [
+                  "Low-composition commodities have a high v share, so k rises strongly; their production prices rise.",
+                  "High-composition commodities have a low v share, so k rises little, while the fall in average profit lowers their production prices.",
+                  "Average-composition commodities balance the two effects."
+                ]
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "This chapter rejects the claim that a wage rise automatically raises all prices.",
+                  "The point is that wages affect both cost-price and the general profit rate."
+                ]
+              }
+            ]
           }
         },
         {
@@ -23541,6 +23893,64 @@
                 "text": "An individual commodity’s price of production can differ from its value. The analytical benchmark is the social relation: total prices of production equal total values, and total profit equals total surplus-value."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "생산가격 변동은 비용가격 k의 변동과 일반 이윤율 p'의 변동이라는 두 경로로 생긴다.",
+                  "12장은 9-11장의 계산에서 어떤 단순화가 있었는지 정리한다."
+                ]
+              },
+              {
+                "title": "두 경로",
+                "items": [
+                  "k 변동: 원료·기계·임금 등 투입물 가격이 바뀌면 생산가격의 출발점이 바뀐다.",
+                  "p' 변동: 사회 전체의 잉여가치와 총자본 관계가 바뀌면 평균이윤이 바뀐다.",
+                  "생산가격은 k+kp'이므로 두 변화가 같은 방향일 수도, 반대 방향일 수도 있다."
+                ]
+              },
+              {
+                "title": "투입물 전환의 함의",
+                "text": "k는 순수한 가치합만이 아닐 수 있다. 자본가는 투입물을 이미 생산가격으로 산다. 그래서 산출물의 생산가격 계산에는 이전 부문들의 전환 결과가 들어와 있다. 이는 가치법칙이 사라진다는 뜻이 아니라, 실제 가격형태에서는 전환이 한 번에 고립적으로 끝나지 않는다는 뜻이다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "총량 관계, 곧 총생산가격=총가치와 총이윤=총잉여가치는 분석의 기준으로 남는다.",
+                  "개별 가격 계산이 복잡해질수록 가치와 생산가격의 층위를 더 분명히 구분해야 한다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Prices of production change through two channels: changes in cost-price k and changes in the general profit rate p'.",
+                  "Chapter 12 clarifies the simplifications behind Chapters 9-11."
+                ]
+              },
+              {
+                "title": "Two channels",
+                "items": [
+                  "Change in k: input prices such as materials, machinery, or wages change the starting point.",
+                  "Change in p': changes in the relation between total surplus-value and total capital alter average profit.",
+                  "Since production price is k+kp', the two changes may move together or against each other."
+                ]
+              },
+              {
+                "title": "Input transformation",
+                "text": "k may not be a pure value sum. Capitalists buy inputs at prices of production already. Thus the calculation of an output price includes previous transformations of input prices. This does not abolish the law of value; it means actual price forms are mediated across connected branches."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Aggregate relations, total production prices = total values and total profit = total surplus-value, remain the benchmark.",
+                  "The more complex individual price calculation becomes, the more clearly value and price of production must be distinguished."
+                ]
+              }
+            ]
           }
         },
         {
@@ -23894,6 +24304,64 @@
               {
                 "title": "Mass and rate",
                 "text": "The mass of surplus-value s can grow, while the profit rate falls if total capital C grows faster. This is the tension of the law."
+              }
+            ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "자본주의가 발전하면 생산수단 비중 c가 커지고 산 노동 비중 v가 상대적으로 작아지는 경향이 있다.",
+                  "잉여가치는 산 노동에서 나오므로, 총자본 대비 잉여가치 비율인 이윤율은 하락 압력을 받는다."
+                ]
+              },
+              {
+                "title": "공식으로 보기",
+                "items": [
+                  "이윤율 p'=s/(c+v)다.",
+                  "s=s'v이므로 p'=s'v/(c+v)다.",
+                  "s'가 같다면 v/(c+v)가 작아질수록 p'는 낮아진다."
+                ]
+              },
+              {
+                "title": "숫자 예시",
+                "text": "s'=100%일 때 50c+50v는 50s를 만들고 이윤율은 50%다. 90c+10v는 10s를 만들고 이윤율은 10%다. 생산력이 발전해 더 많은 기계와 원료가 쓰이면, 같은 착취율에서도 이윤율은 낮아지는 압력을 받는다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "법칙은 이윤량이 반드시 줄어든다는 말이 아니다. 자본 규모가 커지면 이윤량은 늘면서 이윤율은 낮아질 수 있다.",
+                  "하락은 단순한 경기 변동이 아니라 자본축적의 구조적 경향이다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "As capitalism develops, the share of means of production c tends to rise while the share of living labour v falls relatively.",
+                  "Since surplus-value comes from living labour, the profit rate faces downward pressure."
+                ]
+              },
+              {
+                "title": "Formula",
+                "items": [
+                  "The profit rate is p'=s/(c+v).",
+                  "Since s=s'v, p'=s'v/(c+v).",
+                  "If s' is constant, p' falls as v/(c+v) falls."
+                ]
+              },
+              {
+                "title": "Numerical example",
+                "text": "With s'=100%, 50c+50v produces 50s and a 50% profit rate. 90c+10v produces 10s and a 10% profit rate. More machinery and materials can lower the profit rate even with the same exploitation."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "The law does not say the mass of profit must fall. A larger capital can produce more profit while the rate falls.",
+                  "The tendency is structural to accumulation, not just a business-cycle fluctuation."
+                ]
               }
             ]
           }
@@ -24604,6 +25072,62 @@
               {
                 "title": "Function of crisis",
                 "text": "Crisis violently reorganizes overaccumulated capital through devaluation, bankruptcy, and unemployment, creating new profit-rate conditions."
+              }
+            ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "이윤율 하락 경향은 단순한 숫자 문제가 아니라 과잉축적과 위기의 모순으로 전개된다.",
+                  "자본은 더 많은 이윤량을 얻으려 커지지만, 그 확대가 수익성 조건을 동시에 압박한다."
+                ]
+              },
+              {
+                "title": "기본 정의",
+                "items": [
+                  "과잉축적: 주어진 착취·수익성 조건에서 이윤을 충분히 얻기 어려울 만큼 자본이 축적된 상태다.",
+                  "절대적 과잉생산: 추가 자본이 추가 이윤을 낳지 못하거나 기존 이윤까지 압박하는 경우다."
+                ]
+              },
+              {
+                "title": "위기의 역할",
+                "text": "위기는 가치절하, 도산, 임금 압박, 자본 재편을 통해 축적 조건을 폭력적으로 다시 맞추는 과정으로 나타난다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "과잉축적은 물건이 절대적으로 너무 많다는 단순 과잉생산론과 다르다.",
+                  "문제는 사회적 필요가 아니라 이윤을 낳는 자본으로 기능할 수 있는가다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "The tendency of the profit rate to fall develops into contradictions of overaccumulation and crisis.",
+                  "Capital expands to obtain a greater mass of profit, but expansion also pressures profitability."
+                ]
+              },
+              {
+                "title": "Basic definitions",
+                "items": [
+                  "Overaccumulation: too much capital relative to given exploitation and profitability conditions.",
+                  "Absolute overproduction of capital: additional capital cannot produce additional profit and may pressure existing profit."
+                ]
+              },
+              {
+                "title": "Role of crisis",
+                "text": "Crisis violently resets accumulation conditions through devaluation, bankruptcy, wage pressure, and reorganization."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Overaccumulation is not a simple claim that there are too many goods absolutely.",
+                  "The issue is whether wealth can function as profit-producing capital."
+                ]
               }
             ]
           }
@@ -26736,6 +27260,54 @@
                 "text": "The owner seems to receive interest merely by lending money. Production, exploitation of labor-power, and division of profit are concealed."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "이자 낳는 자본에서는 돈이 곧바로 더 많은 돈을 낳는 것처럼 보인다.",
+                  "하지만 이자는 산업·상업 자본이 얻은 이윤의 일부가 대부자본가에게 분할된 것이다."
+                ]
+              },
+              {
+                "title": "형태",
+                "items": [
+                  "겉모습은 M-M'이다. 생산과 유통의 매개가 사라진다.",
+                  "실제 운동은 돈이 기능자본가에게 넘어가 생산·판매 과정을 거친 뒤, 이윤 일부가 이자로 지급되는 것이다."
+                ]
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "이자는 돈의 자연적 번식력이 아니다.",
+                  "이자형태는 잉여가치의 원천을 가장 멀리 감추는 형태 중 하나다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "In interest-bearing capital, money appears to generate more money directly.",
+                  "But interest is a portion of profit transferred to the money-capitalist."
+                ]
+              },
+              {
+                "title": "Form",
+                "items": [
+                  "The surface form is M-M': the mediations of production and circulation vanish.",
+                  "The real movement passes through functioning capital, which produces and realizes profit, part of which is paid as interest."
+                ]
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Interest is not the natural fertility of money.",
+                  "The interest form hides the source of surplus-value especially deeply."
+                ]
+              }
+            ]
           }
         },
         {
@@ -28154,6 +28726,56 @@
               {
                 "title": "Risk of double counting",
                 "text": "The price of a share or bond does not mean an equal amount of real productive capital has been newly created. Claims must be distinguished from real capital."
+              }
+            ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "신용은 현실자본의 운동을 확장하지만, 동시에 소유권 청구가 독립된 자본처럼 거래되는 가공자본을 낳는다.",
+                  "가공자본은 종이 조각이 가짜라는 뜻이 아니라, 수익 청구권이 자본가치처럼 가격을 갖는다는 뜻이다."
+                ]
+              },
+              {
+                "title": "자본화 공식",
+                "items": [
+                  "정기 수입이 있으면 그것을 이자율로 나누어 자본가치처럼 환산한다.",
+                  "예를 들어 연 10의 수입이 있고 이자율이 5%라면 자본화된 가격은 10/0.05=200이다.",
+                  "이 200은 새 공장 200이 생겼다는 뜻이 아니라, 수입 청구권의 가격이다."
+                ]
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "주식·채권 가격 상승을 곧 현실 생산수단 증가로 읽으면 중복 계산이 생긴다.",
+                  "신용은 축적을 가속하지만 위기 때 청구권과 현실가치의 차이를 폭로한다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Credit expands real capital, but also produces fictitious capital: claims traded as if they were capital.",
+                  "Fictitious capital means revenue claims acquire prices as capital-values."
+                ]
+              },
+              {
+                "title": "Capitalization formula",
+                "items": [
+                  "A regular revenue can be converted into a capital sum by dividing it by the interest rate.",
+                  "If annual revenue is 10 and the interest rate is 5%, the capitalized price is 10/0.05=200.",
+                  "This 200 is not a new factory worth 200; it is the price of a revenue claim."
+                ]
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Rising stock or bond prices are not automatically increases in real means of production.",
+                  "Credit accelerates accumulation but crises expose the gap between claims and real value."
+                ]
               }
             ]
           }
@@ -29929,6 +30551,56 @@
               {
                 "title": "Meaning of price falls",
                 "text": "A fall in securities prices shakes collateral and solvency, but does not mean factories and inventories physically disappear in the same proportion."
+              }
+            ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "화폐자본의 축적과 현실자본의 축적은 같은 것이 아니다.",
+                  "대부 가능한 돈이 많아 보여도 그것이 곧 생산수단·노동력·상품판매의 확장을 뜻하지는 않는다."
+                ]
+              },
+              {
+                "title": "구분",
+                "items": [
+                  "현실자본: 생산수단, 노동력, 상품재고처럼 실제 생산·유통 과정에 묶인 자본이다.",
+                  "화폐자본: 대부 가능 자금, 예금, 신용청구권처럼 돈 형태로 집중된 자본이다.",
+                  "둘은 연결되어 있지만 위기 때는 서로 어긋날 수 있다."
+                ]
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "금리가 낮고 대부자금이 풍부하다는 사실만으로 현실축적이 건강하다고 볼 수 없다.",
+                  "마르크스는 금융지표와 현실 생산과정의 차이를 추적한다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Accumulation of money-capital is not identical with accumulation of real capital.",
+                  "Abundant loanable money does not by itself mean expansion of means of production, labour-power, and sales."
+                ]
+              },
+              {
+                "title": "Distinction",
+                "items": [
+                  "Real capital: means of production, labour-power, and commodity stocks tied to production and circulation.",
+                  "Money-capital: loanable funds, deposits, and credit claims concentrated in money form.",
+                  "They are connected, but can diverge sharply in crisis."
+                ]
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Low interest rates and plentiful loanable funds do not automatically indicate healthy real accumulation.",
+                  "Marx tracks the difference between financial indicators and the real production process."
+                ]
               }
             ]
           }
@@ -32771,6 +33443,56 @@
                 "text": "Surplus-profit is not fully erased by competition; because landownership monopolizes the condition, it can be transferred to the landlord as rent."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "차액지대는 토지 소유가 임의로 붙이는 추가요금이 아니라, 더 좋은 토지에서 생기는 초과이윤이 지대로 전환된 것이다.",
+                  "농산물의 생산가격은 보통 수요를 충족하는 데 필요한 열등지 조건에 의해 규제된다."
+                ]
+              },
+              {
+                "title": "기본 구조",
+                "items": [
+                  "한계지: 지대를 내지 않아도 시장 공급에 필요한 열등한 토지다.",
+                  "우등지: 같은 투자로 더 많은 산출을 내거나 위치가 좋아 비용이 낮은 토지다.",
+                  "차액지대: 우등지의 낮은 개별 생산가격과 시장을 규제하는 생산가격의 차이에서 생기는 초과이윤이다."
+                ]
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "지대는 농산물 가격에 덧붙는 임의 가산금이 아니라 가격 형성 조건과 토지 독점이 만나는 결과다.",
+                  "비옥도뿐 아니라 위치 차이도 차액지대의 원천이 될 수 있다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Differential rent is not an arbitrary surcharge by landownership; it is surplus-profit on better land converted into rent.",
+                  "Agricultural production price is usually regulated by the inferior land needed to meet demand."
+                ]
+              },
+              {
+                "title": "Basic structure",
+                "items": [
+                  "Marginal land: inferior land needed for supply, which may pay no rent.",
+                  "Better land: land with greater fertility or better location, yielding lower individual costs.",
+                  "Differential rent: surplus-profit from the gap between lower individual production price and the regulating market production price."
+                ]
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Rent is not just an arbitrary addition to price; it joins price formation with landed monopoly.",
+                  "Location as well as fertility can generate differential rent."
+                ]
+              }
+            ]
           }
         },
         {
@@ -35256,6 +35978,56 @@
                 "text": "Differential rent starts from differences in production conditions; absolute rent starts from monopoly of landownership and an entry barrier."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "절대지대는 우등지와 열등지의 차이에서 생기는 차액지대와 다르다.",
+                  "토지소유 독점이 자본의 자유로운 진입을 막아, 농산물이 생산가격이 아니라 가치에 더 가까운 가격으로 팔릴 수 있게 할 때 생긴다."
+                ]
+              },
+              {
+                "title": "전제",
+                "items": [
+                  "농업의 유기적 구성이 사회 평균보다 낮으면, 농산물 가치는 생산가격보다 높을 수 있다.",
+                  "토지소유가 진입 장벽으로 작용하면 이 차이가 평균화로 완전히 사라지지 않고 지대로 남을 수 있다."
+                ]
+              },
+              {
+                "title": "차액지대와 구분",
+                "items": [
+                  "차액지대는 토지들 사이의 차이에서 나온다.",
+                  "절대지대는 토지소유 독점 자체가 평균이윤화를 가로막는 데서 나온다.",
+                  "따라서 최열등지에서도 절대지대가 가능하다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Absolute rent differs from differential rent, which comes from differences among lands.",
+                  "It arises when landed monopoly blocks free capital entry, allowing agricultural commodities to sell closer to value than to price of production."
+                ]
+              },
+              {
+                "title": "Premise",
+                "items": [
+                  "If agriculture has a lower organic composition than the social average, agricultural value can stand above its price of production.",
+                  "If landownership blocks entry, this difference is not fully averaged away and can remain as rent."
+                ]
+              },
+              {
+                "title": "Distinction",
+                "items": [
+                  "Differential rent comes from differences between plots.",
+                  "Absolute rent comes from landed monopoly obstructing average-profit equalisation.",
+                  "Thus even the worst cultivated land can pay absolute rent."
+                ]
+              }
+            ]
           }
         },
         {
@@ -36321,6 +37093,56 @@
                 "text": "Marx does not deny the income items; he shows which production and exploitation relations those items conceal."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "삼위일체 공식은 자본-이윤, 토지-지대, 노동-임금이 각각 독립적으로 수입을 낳는다는 표면 인식이다.",
+                  "마르크스는 이 공식을 자본주의 물신성의 완성된 표현으로 비판한다."
+                ]
+              },
+              {
+                "title": "왜 전도인가",
+                "items": [
+                  "이윤·이자·지대는 모두 잉여가치의 분할 형태다.",
+                  "하지만 표면에서는 자본, 토지, 노동이라는 세 생산요소가 각자 자기 몫을 자연스럽게 낳는 것처럼 보인다.",
+                  "그 결과 계급관계와 착취관계가 사물의 속성처럼 보인다."
+                ]
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "노동-임금도 중립 공식이 아니다. 임금은 노동 전체의 가격처럼 보이지만 실제로는 노동력 가치의 형태다.",
+                  "삼위일체 공식 비판은 분배 항목을 생산관계로 되돌려 읽는 작업이다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "The trinity formula says capital-profit, land-rent, and labour-wages are independent sources of revenue.",
+                  "Marx criticizes it as the completed expression of capitalist fetishism."
+                ]
+              },
+              {
+                "title": "Why inverted",
+                "items": [
+                  "Profit, interest, and rent are divided forms of surplus-value.",
+                  "On the surface, capital, land, and labour appear as three factors naturally producing their own revenues.",
+                  "Class and exploitation relations appear as properties of things."
+                ]
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Labour-wages is not a neutral formula: wages appear as the price of labour, but are the value-form of labour-power.",
+                  "Critique of the trinity formula means reading distribution forms back into production relations."
+                ]
+              }
+            ]
           }
         },
         {
@@ -37029,6 +37851,56 @@
               {
                 "title": "How to read it",
                 "text": "Competition is the way inner value relations are realized on the surface; it is not a substitute source for exploitation and surplus-value production."
+              }
+            ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "경쟁은 자본주의 법칙을 실현하지만, 동시에 그 법칙의 원인과 결과를 거꾸로 보이게 만든다.",
+                  "자본가에게는 가격·이윤·임금·이자가 시장에서 서로 외적으로 결정되는 것처럼 보인다."
+                ]
+              },
+              {
+                "title": "환상의 구조",
+                "items": [
+                  "개별 자본가는 이미 형성된 생산가격과 평균이윤을 전제로 행동한다.",
+                  "그래서 평균이윤이 잉여가치의 재분배 결과라는 사실보다, 경쟁이 이윤을 만들어내는 것처럼 보인다.",
+                  "표면의 운동을 부정하는 것이 아니라, 그 표면이 어떤 생산관계를 전제하는지 물어야 한다."
+                ]
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "경쟁은 법칙을 없애는 것이 아니라 법칙이 관철되는 형태다.",
+                  "하지만 그 형태만 보면 가치, 잉여가치, 계급관계가 사라진 것처럼 보인다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "Competition realizes capitalist laws, but also makes cause and effect appear inverted.",
+                  "To capitalists, prices, profits, wages, and interest seem externally determined by the market."
+                ]
+              },
+              {
+                "title": "Structure of illusion",
+                "items": [
+                  "Individual capitalists act on already formed prices of production and average profit.",
+                  "Thus competition appears to create profit, rather than redistribute surplus-value.",
+                  "The surface movement is real, but it must be related back to the production relations it presupposes."
+                ]
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "Competition does not abolish the law; it is the form through which the law is enforced.",
+                  "But if one sees only that form, value, surplus-value, and class relations seem to disappear."
+                ]
               }
             ]
           }
