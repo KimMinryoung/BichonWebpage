@@ -39,6 +39,73 @@ function map(ko, en) {
     };
 }
 
+const briefNotes = {
+    1: t(
+        '집중은 기업이 커지는 현상이고, 독점은 그 집중이 가격·생산량·시장·원료를 통제하는 힘으로 굳어진 단계다. 레닌의 핵심은 독점이 자유경쟁 바깥에서 온 예외가 아니라 자유경쟁 자체가 낳은 결과라는 점이다.',
+        'Concentration is the growth of giant firms; monopoly is the stage where concentration hardens into power over prices, output, markets, and raw materials. Lenin’s point is that monopoly is not an exception from outside free competition, but its own result.'
+    ),
+    2: t(
+        '은행은 단순한 송금·결제 중개자가 아니다. 예금, 계좌, 지점망, 신용 정보를 집중하면서 어떤 기업에 돈을 줄지 끊을지 결정하는 통제 기관으로 변한다.',
+        'Banks are not mere payment middlemen. By concentrating deposits, accounts, branch networks, and credit information, they become institutions of control deciding which firms receive or lose credit.'
+    ),
+    3: t(
+        '금융자본은 은행자본과 산업자본이 독점 단계에서 융합한 자본이다. 금융과두제는 이 융합을 이용해 적은 직접 소유로도 참여제도와 지분망을 통해 거대한 자본을 지배하는 층이다.',
+        'Finance capital is the fusion of bank capital and industrial capital in the monopoly stage. The financial oligarchy is the layer that uses this fusion, participation systems, and shareholding chains to control vast capital with limited direct ownership.'
+    ),
+    4: t(
+        '상품수출은 물건을 파는 것이고, 자본수출은 돈이나 생산자본을 해외에 투자해 이자·배당·이윤을 얻는 것이다. 레닌에게 제국주의 단계의 특징은 상품수출보다 자본수출의 비중이 결정적으로 커지는 데 있다.',
+        'Export of commodities means selling goods; export of capital means investing money or productive capital abroad to obtain interest, dividends, or profit. For Lenin, the imperialist stage is marked by the decisive growth of capital export.'
+    ),
+    5: t(
+        '세계분할은 단순한 지도 색칠이 아니다. 국제 카르텔과 독점체들이 판매시장, 원료지, 투자처를 자본력에 따라 나누는 경제적 분할이다. 자본력은 불균등하게 변하므로 분할은 언제나 재분할 압력을 낳는다.',
+        'World division is not merely colouring maps. International cartels and monopolies divide markets, raw materials, and investment fields according to capital strength. Since capital strength changes unevenly, division creates pressure for redivision.'
+    ),
+    6: t(
+        '식민지, 반식민지, 세력권은 지배의 강도가 다른 형태다. 레닌은 직접 통치만 보지 않고, 차관·철도·항만·외국 금융을 통한 종속도 세계분할의 일부로 본다.',
+        'Colonies, semi-colonies, and spheres of influence are different forms of domination. Lenin does not look only at direct rule; dependence through loans, railways, ports, and foreign finance also belongs to world partition.'
+    ),
+    7: t(
+        '레닌의 짧은 정의는 제국주의를 독점 단계의 자본주의라고 잡는다. 다섯 특징은 생산집중과 독점, 금융자본, 자본수출, 국제 독점체의 세계분할, 열강의 영토분할이다.',
+        'Lenin’s short definition identifies imperialism as capitalism at the monopoly stage. The five features are concentration and monopoly, finance capital, export of capital, world division by international monopolies, and territorial division by great powers.'
+    ),
+    8: t(
+        '기생성은 발전이 완전히 멈춘다는 뜻이 아니다. 독점이 기술과 생산을 발전시키면서도 금리생활자, 초과이윤, 노동귀족 매수, 정체 경향을 함께 낳는 모순적 성격을 뜻한다.',
+        'Parasitism does not mean development simply stops. It names the contradictory character by which monopoly can develop technique and production while also producing rentiers, superprofits, bribery of a labour aristocracy, and stagnation tendencies.'
+    ),
+    9: t(
+        '레닌의 비판 대상은 제국주의를 나쁜 정책이나 금융만의 일탈로 보는 설명이다. 카우츠키 비판의 핵심은 제국주의가 독점자본주의의 경제구조이지 선택 가능한 평화정책의 반대말이 아니라는 점이다.',
+        'Lenin targets explanations that treat imperialism as a bad policy or a deviation of finance alone. His critique of Kautsky insists that imperialism is the economic structure of monopoly capitalism, not merely the opposite of a selectable peaceful policy.'
+    ),
+    10: t(
+        '역사적 위치란 제국주의가 자본주의 발전에서 어떤 단계인가를 묻는 말이다. 레닌은 그것을 독점자본주의, 기생적·부패한 자본주의, 이행기의 자본주의로 종합한다.',
+        'Historical place asks what stage imperialism occupies in capitalist development. Lenin synthesizes it as monopoly capitalism, parasitic and decaying capitalism, and capitalism in transition.'
+    ),
+};
+
+function brief(ch, conceptKo, conceptEn, focusKo, focusEn) {
+    function sections(lang, concepts, focus) {
+        const note = briefNotes[ch][lang];
+        return [
+            {
+                title: lang === 'ko' ? '핵심 개념 먼저' : 'Core concepts first',
+                items: concepts.map(([title, text]) => title + ': ' + text),
+            },
+            {
+                title: lang === 'ko' ? '기호와 구분' : 'Terms and distinctions',
+                items: [note],
+            },
+            {
+                title: lang === 'ko' ? '이 장의 초점' : 'Chapter focus',
+                text: focus,
+            },
+        ];
+    }
+    return {
+        ko: sections('ko', conceptKo, focusKo),
+        en: sections('en', conceptEn, focusEn),
+    };
+}
+
 function chapter(ch, titleKo, titleEn, summaryKo, summaryEn, focusKo, focusEn, conceptKo, conceptEn, basic, advanced) {
     return {
         id: `imperialism-ch${String(ch).padStart(2, '0')}`,
@@ -48,6 +115,7 @@ function chapter(ch, titleKo, titleEn, summaryKo, summaryEn, focusKo, focusEn, c
         sourceUrl: `https://www.marxists.org/archive/lenin/works/1916/imp-hsc/ch${String(ch).padStart(2, '0')}.htm`,
         summary: t(summaryKo, summaryEn),
         learningFocus: t(focusKo, focusEn),
+        conceptBrief: brief(ch, conceptKo, conceptEn, focusKo, focusEn),
         conceptMap: map(conceptKo, conceptEn),
         lessons: [
             lesson(ch, 'basic', `${titleKo} 기본`, `${titleEn}: Basics`, basic),
