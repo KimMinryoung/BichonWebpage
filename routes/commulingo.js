@@ -108,6 +108,7 @@ function publicLessonsById(bundle) {
                     level: lesson.level,
                     summary: chapter.summary,
                     focus: chapter.learningFocus,
+                    conceptBrief: chapter.conceptBrief,
                     conceptMap: chapter.conceptMap,
                     questions: lesson.questions || [],
                 });

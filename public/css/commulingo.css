@@ -461,6 +461,44 @@
     line-height: 1.42;
 }
 
+.commu-brief {
+    display: grid;
+    gap: 12px;
+    grid-column: 1 / -1;
+}
+
+.commu-brief-section {
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 8px;
+    padding-top: 12px;
+}
+
+.commu-brief-section:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.commu-brief-section h3 {
+    color: var(--accent);
+    font-size: 0.94rem;
+    margin: 0;
+}
+
+.commu-brief-section p,
+.commu-brief-section ul {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.commu-brief-section ul {
+    display: grid;
+    gap: 6px;
+    padding-left: 18px;
+}
+
 .commu-question-focus {
     background: var(--bg-surface);
     border-left: 4px solid var(--accent);

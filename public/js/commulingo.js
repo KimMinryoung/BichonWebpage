@@ -172,6 +172,7 @@
                     title: text(loaded.title) || lesson.title,
                     summary: text(loaded.summary) || lesson.summary,
                     focus: text(loaded.focus) || lesson.focus,
+                    conceptBrief: loaded.conceptBrief || lesson.conceptBrief,
                     conceptMap: loaded.conceptMap || lesson.conceptMap,
                     questions: loaded.questions || [],
                     questionCount: lessonQuestionCount(loaded)
@@ -551,8 +552,31 @@
         return { ko: [], en: [] };
     }
 
+    function conceptBrief(lesson) {
+        var brief = lesson.conceptBrief || {};
+        var preferred = brief[lang === 'en' ? 'en' : 'ko'] || brief.ko || brief.en;
+        return Array.isArray(preferred) ? preferred : [];
+    }
+
+    function renderBriefSection(section) {
+        var html = '<section class="commu-brief-section">';
+        if (section.title) html += '<h3>' + escapeHtml(section.title) + '</h3>';
+        if (section.text) html += '<p>' + escapeHtml(section.text) + '</p>';
+        if (Array.isArray(section.items) && section.items.length) {
+            html += '<ul>' + section.items.map(function(item) {
+                return '<li>' + escapeHtml(item) + '</li>';
+            }).join('') + '</ul>';
+        }
+        return html + '</section>';
+    }
+
     function renderDiagram(lesson) {
         if (!els.diagram) return;
+        var sections = conceptBrief(lesson);
+        if (sections.length) {
+            els.diagram.innerHTML = '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
+            return;
+        }
         var nodes = conceptMap(lesson)[lang === 'en' ? 'en' : 'ko'];
         els.diagram.innerHTML = nodes.map(function(node) {
             return '<span class="commu-diagram-node"><strong>' + escapeHtml(node.title) + '</strong><small>' + escapeHtml(node.text) + '</small></span>';

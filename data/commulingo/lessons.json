@@ -22416,6 +22416,66 @@
                 "text": "The formula is k + kp'. Here p' is the general profit rate. Price of production is not the abolition of value, but value and surplus-value redistributed through competition as average profit."
               }
             ]
+          },
+          "conceptBrief": {
+            "ko": [
+              {
+                "title": "핵심 문제",
+                "items": [
+                  "상품이 자기 가치대로만 팔리면 유기적 구성이 다른 부문들은 서로 다른 이윤율을 얻는다.",
+                  "하지만 경쟁 속 자본은 같은 크기 자본에 평균이윤을 요구하므로, 가치가 생산가격으로 전환되는 문제가 생긴다."
+                ]
+              },
+              {
+                "title": "기본 정의",
+                "items": [
+                  "가치: 상품 생산에 사회적으로 필요한 노동시간으로 규정되는 크기다. 가치 공식은 c + v + s다.",
+                  "비용가격 k: 비용가격은 자본가가 상품을 만들며 실제로 선지출했다고 계산하는 부분, 곧 소모된 c와 v의 합이다. 상품가치 전체가 아니라 자본가가 회수해야 한다고 보는 원가다.",
+                  "평균이윤: 총잉여가치가 사회적 총자본의 크기에 비례해 각 자본에 배분된 몫이다.",
+                  "생산가격: 생산가격은 어떤 부문 상품이 경쟁 속에서 평균이윤을 보장받는 중심가격이다. 개별 부문이 직접 만든 잉여가치가 아니라 사회적 평균이윤이 붙은 가격이다."
+                ]
+              },
+              {
+                "title": "숫자 예시",
+                "text": "예를 들어 같은 자본 100을 쓰고 s'=100%라고 하자. 저구성 부문은 60c+40v+40s라서 가치가 140이고, 고구성 부문은 90c+10v+10s라서 가치가 110이다. 두 부문의 총잉여가치 50이 평균화되면 각 자본 100은 평균이윤 25를 받는다. 그래서 두 상품의 생산가격은 각각 100+25=125가 되고, 저구성 상품은 가치보다 낮게, 고구성 상품은 가치보다 높게 팔릴 수 있다."
+              },
+              {
+                "title": "헷갈리지 말 것",
+                "items": [
+                  "공식은 k + kp'이다. p'는 일반 이윤율이다. 그래서 생산가격은 가치의 폐기가 아니라, 가치와 잉여가치가 경쟁을 거쳐 평균이윤 형태로 재배분된 가격이다.",
+                  "개별 상품에서는 가치와 생산가격이 어긋날 수 있지만, 사회 전체에서는 총생산가격=총가치, 총이윤=총잉여가치 관계를 붙잡아야 한다."
+                ]
+              }
+            ],
+            "en": [
+              {
+                "title": "Core problem",
+                "items": [
+                  "If commodities sold simply at their own values, branches with different organic compositions would earn different profit rates.",
+                  "But in competition, capital of the same size demands average profit, so values must be transformed into prices of production."
+                ]
+              },
+              {
+                "title": "Basic definitions",
+                "items": [
+                  "Value: the magnitude regulated by the socially necessary labour-time required to produce the commodity. The value formula is c + v + s.",
+                  "Cost-price k: Cost-price is the part the capitalist counts as actually advanced and used up in making the commodity, the sum of consumed c and v. It is not the whole commodity value, but the cost the capitalist thinks must be recovered.",
+                  "Average profit: the share of total surplus-value distributed to each capital in proportion to the magnitude of social total capital.",
+                  "Price of production: Price of production is the regulating centre-price through which a commodity in a branch secures average profit in competition. It includes social average profit, not simply the surplus-value directly produced in that branch."
+                ]
+              },
+              {
+                "title": "Numerical example",
+                "text": "Suppose two branches each advance capital of 100 and s'=100%. A low-composition branch has 60c+40v+40s, so its value is 140. A high-composition branch has 90c+10v+10s, so its value is 110. Total surplus-value is 50; after averaging, each capital of 100 receives average profit of 25. The production price of each commodity is therefore 100+25=125. The low-composition commodity can sell below its value, while the high-composition commodity can sell above its value."
+              },
+              {
+                "title": "Do not confuse",
+                "items": [
+                  "The formula is k + kp'. Here p' is the general profit rate. Price of production is not the abolition of value, but value and surplus-value redistributed through competition as average profit.",
+                  "For individual commodities, value and price of production can diverge; at the social level, keep hold of total prices of production = total values and total profit = total surplus-value."
+                ]
+              }
+            ]
           }
         },
         {
