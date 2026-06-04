@@ -21385,8 +21385,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "7장의 보충 설명이 1편의 이윤율 분석에 더하는 핵심은 무엇인가?",
-                    "en": "What is the main addition Chapter 7 makes to the analysis of the rate of profit in Part I?"
+                    "ko": "p'=s/(c+v)를 실제 자본 계산에 적용할 때, 7장의 보충 설명은 무엇을 정리하는가?",
+                    "en": "When p'=s/(c+v) is applied to practical capitalist calculation, what does Chapter 7 clarify?"
                   },
                   "choices": {
                     "ko": [
@@ -21419,13 +21419,13 @@
                   "choices": {
                     "ko": [
                       "p'=s/C이므로 같은 착취율과 같은 잉여가치량도 C가 10,000이면 10%, C가 12,000이면 8과 1/3%의 이윤율로 표시된다.",
-                      "p'=s/v이므로 두 자본은 모두 100%의 이윤율을 기록하고 선대자본의 차이는 계산에서 사라진다.",
+                      "s'=s/v는 착취율 공식이므로, 그것만으로 총선대자본 차이가 반영된 이윤율을 계산할 수 없다.",
                       "p'=C/s이므로 더 큰 불변자본을 가진 B가 더 높은 이윤율을 얻는다.",
                       "p'=v/C이므로 임금 지출이 같은 두 자본은 생산조건과 관계없이 같은 이윤율을 갖는다."
                     ],
                     "en": [
                       "Since p'=s/C, the same exploitation and the same surplus-value appear as 10% when C is 10,000 and 8 1/3% when C is 12,000.",
-                      "Since p'=s/v, both capitals record a 100% profit rate and the difference in advanced capital disappears.",
+                      "s'=s/v is the formula for the exploitation rate, so by itself it cannot calculate the profit rate that reflects different total advanced capitals.",
                       "Since p'=C/s, B with the larger constant capital obtains the higher rate of profit.",
                       "Since p'=v/C, equal wage outlays give the two capitals the same profit rate regardless of production conditions."
                     ]
@@ -21653,13 +21653,13 @@
                   "choices": {
                     "ko": [
                       "개별 이윤율을 움직이는 요인을 정리한 뒤, 그런 차이가 부문들 사이에 동시에 존재할 때 일반 이윤율 문제가 발생함을 보여 주기 때문이다.",
-                      "이윤율 차이가 개별 자본가의 도덕성 차이로 해소될 수 있음을 보인 뒤 경쟁 분석으로 넘어가기 때문이다.",
+                      "이윤율 차이가 회계상 표시방식에서만 생기므로 부문별 자본구성 분석은 불필요하다고 보기 때문이다.",
                       "잉여가치율과 이윤율을 같은 개념으로 확정하여 이후 장들의 전환 문제를 단순화하기 때문이다.",
                       "생산부문 차이를 소비자의 수요 강도 차이로 설명하고 시장가격 분석을 종결하기 때문이다."
                     ],
                     "en": [
                       "Because after gathering the factors that move individual profit rates, it shows that when such differences coexist among branches the problem of a general rate of profit arises.",
-                      "Because it shows that differences in profit rates can be resolved by differences in the morality of individual capitalists before moving to competition.",
+                      "It treats profit-rate differences as merely accounting presentation and therefore makes branch composition analysis unnecessary.",
                       "Because it fixes the rate of surplus-value and the rate of profit as the same concept, simplifying the later transformation problem.",
                       "Because it explains branch differences by differences in consumer demand and closes the analysis of market prices."
                     ]
@@ -21674,36 +21674,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "보충 설명은 단순 반복이 아니라 앞선 범주들이 실제 자본 계산에서 어떻게 보이는지 확인하는 단계다.",
-            "en": "Treat the supplement as a check on how earlier categories appear in actual capitalist calculation."
+            "ko": "보충 설명을 p'=s/(c+v), 비용가격 k, 회전ㆍ재평가 효과의 정리로 읽고 8장의 부문별 자본구성 문제로 넘어간다.",
+            "en": "Read the supplement as a review of p'=s/(c+v), cost-price k, turnover, and revaluation effects before moving to branch composition in Chapter 8."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "보충의 역할",
-                "text": "앞선 비용가격, 이윤, 이윤율 논의에서 실제 계산상 생기는 혼동을 정리하는 장이다."
+                "title": "공식 재점검",
+                "text": "보충 설명은 p'=s/(c+v)를 현실 계산에 다시 적용한다. 같은 s라도 총선대자본 C가 달라지면 이윤율은 달라진다."
               },
               {
-                "title": "표면형태 점검",
-                "text": "자본가의 장부에는 비용 절감, 가격 변화, 회전 효과가 이윤의 직접 원인처럼 보일 수 있다."
+                "title": "가치변동의 효과",
+                "text": "원료와 기계의 가격 변동은 새 잉여가치를 만들지 않아도 비용가격 k와 분모 C를 바꾸어 이윤율을 흔든다."
               },
               {
-                "title": "다음 단계",
-                "text": "이제 한 자본 내부의 변화가 아니라 생산부문마다 다른 자본구성이 서로 다른 이윤율을 만드는 문제로 넘어간다."
+                "title": "다음 편의 문턱",
+                "text": "한 자본 내부의 요인을 정리한 뒤, 여러 부문이 서로 다른 C 구성으로 동시에 존재할 때 평균이윤 문제가 열린다."
               }
             ],
             "en": [
               {
-                "title": "Role of supplement",
-                "text": "This chapter clarifies confusions that arise in practical calculation after cost-price, profit, and profit rate have been introduced."
+                "title": "Formula review",
+                "text": "The supplement applies p'=s/(c+v) to practical calculation. Even with the same s, the profit rate changes when total advanced capital C changes."
               },
               {
-                "title": "Checking surface forms",
-                "text": "In capitalist accounts, cost reduction, price changes, and turnover effects can appear as direct causes of profit."
+                "title": "Effect of value changes",
+                "text": "Changes in raw-material or machinery prices can alter cost-price k and denominator C without creating new surplus-value."
               },
               {
-                "title": "Next stage",
-                "text": "The analysis now moves from changes within one capital to different capital compositions among branches producing different profit rates."
+                "title": "Threshold to the next part",
+                "text": "After sorting factors within one capital, the analysis can ask what happens when many branches have different compositions at once."
               }
             ]
           }
@@ -23804,36 +23804,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "기계와 설비가 늘어도 새 가치를 만드는 것은 노동력이라는 점에서 이윤율 저하 경향을 이해한다.",
-            "en": "Understand the tendency through the fact that labor-power creates new value while machinery and equipment do not."
+            "ko": "p'=s/(c+v)와 유기적 구성 상승을 연결해, 잉여가치량 증가와 이윤율 하락 압력이 함께 존재할 수 있음을 이해한다.",
+            "en": "Connect p'=s/(c+v) with rising organic composition, and see how surplus-value can grow while the profit rate faces downward pressure."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "불변자본 증가",
-                "text": "기계와 설비 비중이 커진다."
+                "title": "법칙의 공식",
+                "text": "이윤율은 p'=s/(c+v)이다. 생산력 발전으로 c가 v보다 빠르게 커지면 같은 착취율에서도 p'는 하락 압력을 받는다."
               },
               {
-                "title": "가변자본의 역할",
-                "text": "새 가치를 만드는 것은 노동력이다."
+                "title": "유기적 구성",
+                "text": "유기적 구성 상승은 더 많은 기계ㆍ원료가 더 적은 노동력을 움직이는 비율 변화다. 새 가치는 여전히 산 노동에서 나온다."
               },
               {
-                "title": "이윤율 저하 경향",
-                "text": "총자본에 견줘 잉여가치 원천의 비중이 줄어드는 압력으로 이해한다."
+                "title": "양과 비율",
+                "text": "잉여가치량 s는 커질 수 있지만, 총자본 C가 더 빠르게 커지면 이윤율은 낮아질 수 있다. 이것이 법칙의 긴장이다."
               }
             ],
             "en": [
               {
-                "title": "More constant capital",
-                "text": "Machinery and equipment take a larger share."
+                "title": "Formula of the law",
+                "text": "The profit rate is p'=s/(c+v). If c grows faster than v as productivity develops, p' faces downward pressure even with the same exploitation rate."
               },
               {
-                "title": "Role of variable capital",
-                "text": "Labour-power is the source of new value."
+                "title": "Organic composition",
+                "text": "A rising organic composition means more machinery and materials set less labour-power in motion. New value still comes from living labour."
               },
               {
-                "title": "Falling profit-rate tendency",
-                "text": "The source of surplus-value becomes smaller relative to total capital."
+                "title": "Mass and rate",
+                "text": "The mass of surplus-value s can grow, while the profit rate falls if total capital C grows faster. This is the tension of the law."
               }
             ]
           }
@@ -24159,36 +24159,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "경향은 자동 붕괴 예언이 아니라 반대 요인들과 함께 작동하는 구조적 압력임을 구분한다.",
-            "en": "Read the tendency as a structural pressure working with counterforces, not as an automatic collapse prediction."
+            "ko": "상쇄 요인을 p'=s/(c+v)의 분자와 분모에 작용하는 구체적 통로로 읽는다.",
+            "en": "Read counteracting factors as concrete channels acting on the numerator and denominator of p'=s/(c+v)."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "상쇄 요인",
-                "text": "이윤율 저하 경향을 늦추거나 완화하는 요인들이다. 법칙을 취소하는 것이 아니라 함께 작동한다."
+                "title": "상쇄의 위치",
+                "text": "상쇄 요인은 p'=s/(c+v)의 분자 s를 키우거나, 분모 c+v의 부담을 낮추거나, 시장 확대를 통해 압력을 늦춘다."
               },
               {
-                "title": "주요 방식",
-                "text": "착취도 상승, 임금의 가치 이하 하락, 불변자본 저렴화, 상대적 과잉인구, 대외무역 등이 압력을 상쇄할 수 있다."
+                "title": "주요 통로",
+                "text": "착취도 상승은 s'를 높이고, 임금의 가치 이하 하락은 v를 줄이며, 불변자본 저렴화는 c의 가치부담을 낮춘다."
               },
               {
-                "title": "읽는 기준",
-                "text": "경향은 자동 붕괴 예언이 아니다. 반대 요인들과 충돌하면서 현실의 복합 운동을 만든다."
+                "title": "취소가 아님",
+                "text": "상쇄 요인은 법칙을 폐기하지 않는다. 이윤율 저하 압력이 왜 불균등하고 지연된 형태로 나타나는지 설명한다."
               }
             ],
             "en": [
               {
-                "title": "Counteracting factors",
-                "text": "Factors that slow or soften the tendency of the profit rate to fall. They do not abolish the law; they operate with it."
+                "title": "Place of counteraction",
+                "text": "Counteracting factors raise numerator s in p'=s/(c+v), reduce the burden of c+v, or delay pressure through market expansion."
               },
               {
-                "title": "Main forms",
-                "text": "Higher exploitation, wages below value, cheapening constant capital, relative surplus population, and foreign trade can counteract the pressure."
+                "title": "Main channels",
+                "text": "A higher rate of exploitation raises s', wages below value reduce v, and cheaper constant capital lowers the value burden of c."
               },
               {
-                "title": "How to read it",
-                "text": "The tendency is not an automatic collapse prophecy. It forms a complex real movement through conflict with counteracting factors."
+                "title": "Not cancellation",
+                "text": "Counteracting factors do not abolish the law; they explain why its pressure appears unevenly and with delay."
               }
             ]
           }
@@ -24514,36 +24514,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "위기는 외부 사고가 아니라 자본이 생산력을 키우는 방식 자체에서 생기는 긴장과 연결된다.",
-            "en": "See crisis as tied to capital’s own development of productive forces, not as an outside accident."
+            "ko": "과잉축적을 ‘수요 부족’ 일반론이 아니라 이윤율 조건에서 가치증식하기 어려운 자본의 누적으로 이해한다.",
+            "en": "Understand overaccumulation not as generic weak demand, but as accumulated capital that cannot valorize at the given profit-rate conditions."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "과잉축적",
-                "text": "자본이 너무 많다는 말은 물건이 절대적으로 너무 많다는 뜻이 아니라, 주어진 이윤율로 가치증식하기 어려운 자본이 쌓였다는 뜻이다."
+                "title": "과잉축적 정의",
+                "text": "과잉축적은 물건이 절대적으로 많다는 뜻이 아니라, 주어진 이윤율에서 가치증식할 수 있는 범위를 넘어 자본이 쌓였다는 뜻이다."
               },
               {
-                "title": "위기의 형태",
-                "text": "이윤율 압박은 투자 중단, 자본 평가절하, 실업, 과잉생산으로 폭발할 수 있다."
+                "title": "이윤량과 이윤율",
+                "text": "자본은 이윤량을 키우려 축적하지만, 축적이 유기적 구성을 높이면 이윤율을 압박한다. 양적 확대가 비율 문제를 해결하지 못한다."
               },
               {
-                "title": "핵심 모순",
-                "text": "자본은 생산력을 키워 잉여가치를 늘리려 하지만, 그 과정이 동시에 이윤율을 압박한다. 위기는 이 모순의 표면화다."
+                "title": "위기의 기능",
+                "text": "위기는 자본 평가절하, 파산, 실업을 통해 과잉자본을 폭력적으로 정리하고 새로운 이윤율 조건을 만든다."
               }
             ],
             "en": [
               {
-                "title": "Overaccumulation",
-                "text": "Too much capital does not mean too many things absolutely; it means capital has accumulated that cannot valorize itself at the given profit rate."
+                "title": "Definition of overaccumulation",
+                "text": "Overaccumulation does not mean too many things absolutely; it means capital has accumulated beyond profitable valorization at the given profit rate."
               },
               {
-                "title": "Form of crisis",
-                "text": "Pressure on the profit rate can erupt as halted investment, devaluation of capital, unemployment, and overproduction."
+                "title": "Mass and rate of profit",
+                "text": "Capital accumulates to raise the mass of profit, but the same accumulation can raise organic composition and pressure the rate of profit."
               },
               {
-                "title": "Core contradiction",
-                "text": "Capital raises productivity to expand surplus-value, but the same process pressures the profit rate. Crisis is this contradiction coming to the surface."
+                "title": "Function of crisis",
+                "text": "Crisis violently reorganizes overaccumulated capital through devaluation, bankruptcy, and unemployment, creating new profit-rate conditions."
               }
             ]
           }
@@ -25524,8 +25524,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "풀필먼트 플랫폼의 빠른 재고회전을 18장으로 분석할 때 핵심은 무엇인가?",
-                    "en": "What is central when analyzing fast inventory turnover on fulfillment platforms through Chapter 18?"
+                    "ko": "풀필먼트 플랫폼의 빠른 재고회전을 18장식으로 계산하면 어떤 항목이 달라지는가?",
+                    "en": "In a Chapter 18 calculation of a fulfilment platform's fast inventory turnover, which items change?"
                   },
                   "choices": {
                     "ko": [
@@ -25579,36 +25579,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "상업 부문의 빠른 회전은 유통비와 이윤분배를 바꾸지만 가치 창조의 장소를 바꾸지는 않는다.",
-            "en": "See fast commercial turnover as altering circulation costs and profit distribution, not the site of value creation."
+            "ko": "상업자본 회전수를 상품당 상업이윤과 필요한 선대액을 바꾸는 변수로 읽는다.",
+            "en": "Read merchant turnover as a variable that changes commercial profit per commodity and the required advance."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "상인자본의 회전",
-                "text": "상업자본이 상품 매입과 판매를 얼마나 빨리 반복하는지를 본다. 회전이 빠를수록 같은 상업자본이 더 많은 상품량을 처리할 수 있다."
+                "title": "회전수와 선대액",
+                "text": "상업자본 회전수가 높으면 같은 선대 상업자본으로 더 큰 상품가치량을 실현할 수 있다."
               },
               {
-                "title": "이윤과 가격",
-                "text": "상업이윤 총량이 같아도 회전수가 다르면 각 상품에 얹히는 상업이윤 몫이 달라진다."
+                "title": "상품당 상업이윤",
+                "text": "상업이윤 총량이 주어져도 회전이 빠르면 각 상품에 얹히는 이윤 몫과 필요한 상업자본 규모가 달라진다."
               },
               {
-                "title": "가치 창조 아님",
-                "text": "빠른 회전은 유통비와 가격 배분을 바꾸지만, 잉여가치의 생산 장소를 유통으로 옮기지는 않는다."
+                "title": "가치 원천 구분",
+                "text": "빠른 회전은 실현과 분배를 바꾸지만 새 가치를 만들지는 않는다. 잉여가치 원천은 여전히 생산의 잉여노동이다."
               }
             ],
             "en": [
               {
-                "title": "Turnover of merchant capital",
-                "text": "This asks how quickly commercial capital repeats purchase and sale. Faster turnover lets the same commercial capital handle a larger mass of commodities."
+                "title": "Turnover and advance",
+                "text": "A higher turnover of merchant capital lets the same advanced merchant capital realize a larger mass of commodity value."
               },
               {
-                "title": "Profit and price",
-                "text": "Even with the same total commercial profit, different turnover speeds change how much commercial profit is added to each commodity."
+                "title": "Commercial profit per commodity",
+                "text": "Even with a given total commercial profit, faster turnover changes the profit share added to each commodity and the capital required."
               },
               {
-                "title": "Not value creation",
-                "text": "Faster turnover changes circulation costs and price distribution, but it does not move the production of surplus-value into circulation."
+                "title": "Source of value",
+                "text": "Fast turnover changes realization and distribution, not the source of new value; surplus-value still comes from surplus-labour in production."
               }
             ]
           }
@@ -25879,8 +25879,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "정산 시간을 줄이는 핀테크 서비스를 19장으로 읽을 때 핵심은 무엇인가?",
-                    "en": "What is central when reading fintech services that shorten settlement time through Chapter 19?"
+                    "ko": "정산 시간을 줄이는 핀테크 서비스를 19장식으로 보면, 생산가치가 아니라 어떤 비용이 줄어드는가?",
+                    "en": "Seen through Chapter 19, when a fintech service shortens settlement time, what cost is reduced rather than production value being created?"
                   },
                   "choices": {
                     "ko": [
@@ -25934,36 +25934,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "금융적 기능이 독립해 보여도 그 바탕에는 산업자본과 상업자본의 순환 필요가 있다는 점을 잡는다.",
-            "en": "See specialized financial functions as rooted in the circulation needs of industrial and commercial capital."
+            "ko": "화폐거래자본을 결제ㆍ보관ㆍ장부 기능의 집중과 유통비 절약으로 정의하고, 새 가치 창조와 구분한다.",
+            "en": "Define money-dealing capital as concentration of settlement, safekeeping, and bookkeeping functions that saves circulation costs, not as new value creation."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "화폐거래자본",
-                "text": "지불, 결제, 보관, 환전, 장부 처리 같은 화폐 기능이 전문화되어 독립한 자본이다."
+                "title": "화폐 기능의 분업",
+                "text": "지불, 결제, 보관, 환전, 장부 처리가 독립 업무로 집중되면 여러 자본의 화폐단계 비용이 줄어든다."
               },
               {
-                "title": "독립의 이유",
-                "text": "산업자본과 상업자본이 각자 화폐 기능을 처리하면 비용과 시간이 커진다. 이를 집중하면 전체 자본의 유통비가 절약된다."
+                "title": "유통비 절약",
+                "text": "화폐거래자본의 이윤은 새 가치 창조가 아니라 총자본의 유통비 절약과 총잉여가치 분배에서 나온다."
               },
               {
-                "title": "한계",
-                "text": "화폐거래자본은 화폐 기능을 처리할 뿐, 돈 자체가 새 가치를 낳는다는 뜻은 아니다. 이 점이 다음 이자 낳는 자본과 구분된다."
+                "title": "이자자본과 구분",
+                "text": "화폐를 처리하는 기능과 돈을 자본으로 빌려주는 기능은 다르다. 이 구분이 다음 이자 낳는 자본 분석의 전제다."
               }
             ],
             "en": [
               {
-                "title": "Money-dealing capital",
-                "text": "An independent capital specializing in money functions such as payment, settlement, safekeeping, exchange, and bookkeeping."
+                "title": "Division of monetary functions",
+                "text": "Payments, settlement, safekeeping, exchange, and bookkeeping can be concentrated as specialized functions, reducing monetary-stage costs for many capitals."
               },
               {
-                "title": "Why it becomes independent",
-                "text": "If each industrial and commercial capital handles money functions separately, costs and time rise. Concentrating them economizes circulation costs for total capital."
+                "title": "Saving circulation costs",
+                "text": "The profit of money-dealing capital comes from saving circulation costs and sharing total surplus-value, not from creating new value."
               },
               {
-                "title": "Limit",
-                "text": "Money-dealing capital handles money functions; it does not mean money itself creates new value. This distinguishes it from interest-bearing capital."
+                "title": "Distinct from interest-bearing capital",
+                "text": "Handling money functions differs from lending money as capital; this distinction prepares the analysis of interest-bearing capital."
               }
             ]
           }
@@ -26062,13 +26062,13 @@
                   "choices": {
                     "ko": [
                       "상업은 상품교환을 확대하지만, 생산과정이 임금노동과 산업자본의 지배로 재편되어야 자본주의 생산양식이 성립하기 때문이다.",
-                      "상업이 확대되면 모든 생산자가 즉시 공장노동자로 바뀌기 때문이다.",
+                      "상업 확대는 생산자를 시장에 묶을 수 있지만, 임금노동과 산업자본의 지배가 곧바로 성립하는 것은 아니다.",
                       "상업은 사용가치를 없애고 모든 상품을 화폐축장으로 바꾸기 때문이다.",
                       "자본주의는 상업이 줄어들고 지역 자급이 강화될 때 성립하기 때문이다."
                     ],
                     "en": [
                       "Commerce expands commodity exchange, but capitalist production arises only when production is reorganized under wage-labour and industrial capital.",
-                      "Expanded commerce immediately turns all producers into factory workers.",
+                      "Commercial expansion can bind producers to markets, but wage-labour and industrial-capital domination do not follow simply from that.",
                       "Commerce abolishes use-value and turns all commodities into hoards.",
                       "Capitalism arises when commerce shrinks and local self-sufficiency strengthens."
                     ]
@@ -26157,13 +26157,13 @@
                     "ko": [
                       "상인자본이 지배적일수록 생산이 아직 자본에 직접 종속되지 않은 경우가 많고, 산업자본이 지배하면 상업은 그 하위 기능으로 들어간다는 뜻이다.",
                       "상인자본이 클수록 사회의 생산력이 더 높아지고 산업자본의 필요가 줄어드는 경향이 있다는 뜻이다.",
-                      "상업도시가 발달하면 생산과정이 이미 모두 자동화되어 노동이 사라진다는 뜻이다.",
+                      "상업도시가 커져도 생산자가 여전히 독립 장인이나 농민이면 상인자본이 생산을 직접 조직한다고 볼 수 없다.",
                       "상인자본의 독립성은 평균이윤율을 높여 모든 사회를 같은 속도로 발전시킨다는 뜻이다."
                     ],
                     "en": [
                       "The more merchant capital dominates, the more production often remains not directly subordinated to capital; when industrial capital dominates, commerce becomes its subordinate function.",
                       "The larger merchant capital is, the higher productivity tends to become and the less industrial capital is needed.",
-                      "Developed merchant towns mean all production is already automated and labour has disappeared.",
+                      "Even if commercial cities grow, if producers remain independent artisans or peasants, merchant capital does not directly organize production.",
                       "The independence of merchant capital raises the average profit rate and develops all societies at the same speed."
                     ]
                   },
@@ -26240,13 +26240,13 @@
                   "choices": {
                     "ko": [
                       "상품 유통이 세계시장에 연결되는 것과, 생산과정 자체가 임금노동ㆍ산업자본의 지배로 재편되는 것은 다른 문제다.",
-                      "세계시장 연결이 생기면 장인은 즉시 산업노동자가 되고 생산도 공장제로 바뀐다.",
+                      "세계시장 연결은 생산자에게 가격 압력을 주지만, 그것만으로 임금노동과 공장제 생산이 성립하지는 않는다.",
                       "플랫폼이 주문을 중개하면 상품가치는 플랫폼 조회수로 측정된다.",
                       "수공업 생산자가 수출하면 상인자본의 역사적 형태는 분석할 필요가 없어진다."
                     ],
                     "en": [
                       "Connection of commodity circulation to the world market is different from reorganization of production itself under wage-labour and industrial capital.",
-                      "Once world-market connection appears, artisans immediately become industrial workers and production becomes factory production.",
+                      "World-market connection pressures producers through prices, but it does not by itself establish wage-labour and factory production.",
                       "When the platform mediates orders, commodity value is measured by platform views.",
                       "Once artisans export, historical forms of merchant capital no longer need analysis."
                     ]
@@ -26999,36 +26999,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "이자율은 자연적으로 주어진 가격이 아니라 대부자본과 기능자본 사이의 힘 관계 속에서 형성된다는 점을 본다.",
-            "en": "See the interest rate as shaped by social relations between loan capital and functioning capital, not as a natural price."
+            "ko": "총이윤 p가 이자 i와 기업가이득 e로 나뉘는 공식과 이자율의 사회적 결정 방식을 구분한다.",
+            "en": "Distinguish the formula dividing total profit into interest i and enterprise gain e from the social determination of the interest rate."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "이윤의 분할",
-                "text": "총이윤은 이자와 기업가이득으로 나뉜다. 이 분할은 자본 소유자와 자본 사용자 사이의 관계로 나타난다."
+                "title": "분할 공식",
+                "text": "총이윤 p는 이자 i와 기업가이득 e로 나뉜다. 단순히 쓰면 p = i + e이다."
               },
               {
                 "title": "이자율",
-                "text": "이자율은 자연법칙처럼 정해지지 않는다. 대부 가능한 돈의 공급, 차입 수요, 경기 국면, 신용상태가 함께 작용한다."
+                "text": "이자율은 대부원금에 대한 이자의 비율이다. i = 대부자본 × 이자율로 계산되지만, 그 비율에는 단일한 자연률이 없다."
               },
               {
-                "title": "자연 이자율 비판",
-                "text": "이자에는 가치나 평균이윤율처럼 하나의 내재적 자연률이 없다. 그래서 이자율은 경쟁과 권력관계 속에서 더 직접적으로 변동한다."
+                "title": "힘 관계",
+                "text": "이자율은 대부 가능한 돈의 공급, 차입 수요, 경기 국면, 신용상태가 맞부딪히는 경쟁적 결과다."
               }
             ],
             "en": [
               {
-                "title": "Division of profit",
-                "text": "Total profit divides into interest and profit of enterprise. This division appears as a relation between owner of capital and user of capital."
+                "title": "Formula of division",
+                "text": "Total profit p divides into interest i and profit of enterprise e. In simple form, p = i + e."
               },
               {
-                "title": "Rate of interest",
-                "text": "The interest rate is not fixed like a natural law. Supply of loanable money, demand for borrowing, phase of the cycle, and credit conditions act together."
+                "title": "Interest rate",
+                "text": "The interest rate is interest relative to loan principal. i = loan capital times interest rate, but the rate has no single natural level."
               },
               {
-                "title": "Critique of natural rate",
-                "text": "Interest has no single intrinsic natural rate like value or the average profit rate. It therefore fluctuates more directly through competition and power relations."
+                "title": "Relation of forces",
+                "text": "The interest rate is a competitive result of loanable money supply, borrowing demand, business conditions, and credit conditions."
               }
             ]
           }
@@ -27247,13 +27247,13 @@
                   "choices": {
                     "ko": [
                       "둘 다 자본을 생산에 투입하지만, 차입자는 이자를 지급하고 자기자본가는 그 몫을 자신에게 귀속시켜 계산할 수 있다.",
-                      "차입자는 잉여가치를 생산하고 자기자본가는 오직 이자만 생산한다.",
+                      "차입자와 자기자본가는 모두 생산에서 잉여가치를 실현하지만, 차입자는 그 일부를 이자로 외부에 지급한다.",
                       "차입자는 상품을 판매해야 하고 자기자본가는 판매 없이 이윤을 실현한다.",
                       "차입자는 원금을 상환하므로 자본으로 기능하지 못하고 자기자본만 자본으로 기능한다."
                     ],
                     "en": [
                       "Both put capital into production, but the borrower pays interest while the owner-user can impute that portion to himself.",
-                      "The borrower produces surplus-value, while the owner-user produces only interest.",
+                      "Borrower and owner-capitalist both realize surplus-value in production, but the borrower pays part of it outward as interest.",
                       "The borrower must sell commodities, while the owner-user realizes profit without sale.",
                       "Because the borrower repays principal, borrowed capital cannot function as capital; only owned capital can."
                     ]
@@ -27709,36 +27709,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "M-M'라는 짧은 형태가 중간의 생산과 착취를 지워 버리는 착시를 만든다는 점을 본다.",
-            "en": "See how the abbreviated M-M' form erases production and exploitation from view."
+            "ko": "M-M'라는 짧은 공식이 M-C...P...C'-M'의 생산 매개를 어떻게 지우는지 본다.",
+            "en": "See how the short formula M-M' erases the productive mediation of M-C...P...C'-M'."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "M-M'",
-                "text": "돈이 더 많은 돈으로 곧장 불어나는 것처럼 보인다."
+                "text": "이자 낳는 자본은 M-M'로 보인다. 돈 M이 중간 과정 없이 더 큰 돈 M'로 돌아오는 듯한 형태다."
               },
               {
-                "title": "빠진 고리",
-                "text": "중간의 생산과 노동 착취가 형태상 사라진다."
+                "title": "빠진 매개",
+                "text": "실제 운동에는 M-C...P...C'-M'가 있어야 한다. 생산, 노동력 사용, 잉여가치 생산이 형태상 삭제된다."
               },
               {
-                "title": "물신화",
-                "text": "사회적 관계가 돈 자체의 힘처럼 보이는 착시가 생긴다."
+                "title": "물신성",
+                "text": "관계가 사라지면 돈 자체가 이자를 낳는 사물처럼 보인다. 이것이 자본관계의 가장 외화된 형태다."
               }
             ],
             "en": [
               {
                 "title": "M-M'",
-                "text": "Money seems to become more money directly."
+                "text": "Interest-bearing capital appears as M-M': money M returning as more money M' without mediation."
               },
               {
-                "title": "Missing link",
-                "text": "Production and exploitation disappear from the form."
+                "title": "Missing mediation",
+                "text": "The real movement requires M-C...P...C'-M'. Production, use of labour-power, and surplus-value production disappear from the visible form."
               },
               {
                 "title": "Fetishism",
-                "text": "A social relation appears as a power of money itself."
+                "text": "When the relation disappears, money seems to bear interest by itself. This is the most externalized form of the capital relation."
               }
             ]
           }
@@ -28064,36 +28064,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "주식, 채권, 신용증서는 현실 자본과 연결되어 있지만 그 자체가 생산수단과 같은 것은 아님을 구분한다.",
-            "en": "Distinguish shares, bonds, and credit claims from the actual means of production they may be linked to."
+            "ko": "가공자본을 미래수입 청구권의 자본화로 정의하고, 예상수입/이자율의 가격 논리를 익힌다.",
+            "en": "Define fictitious capital as capitalization of future revenue claims and learn the expected-revenue/interest-rate pricing logic."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "현실 생산자본",
-                "text": "공장, 기계, 원료, 노동력이 실제 생산과정에서 가치증식에 들어간다."
+                "title": "가공자본 정의",
+                "text": "가공자본은 생산수단 자체가 아니라 미래 이자ㆍ배당ㆍ조세수입에 대한 청구권이 가격을 갖고 거래되는 형태다."
               },
               {
-                "title": "수익청구권",
-                "text": "주식과 채권은 장래 이윤, 이자, 배당을 받을 권리로 거래된다."
+                "title": "자본화 공식",
+                "text": "청구권 가격은 대체로 예상수입 / 이자율로 자본화된다. 같은 수입도 이자율이 낮으면 더 높은 가격이 된다."
               },
               {
-                "title": "자본화와 착시",
-                "text": "청구권이 현재 가격을 가지면 독자적 자본처럼 보이지만, 그 바탕은 장래 잉여가치 실현에 있다."
+                "title": "중복 계산 위험",
+                "text": "주식이나 국채 가격이 있다고 같은 크기의 현실 생산자본이 새로 생긴 것은 아니다. 청구권과 현실자본을 구분해야 한다."
               }
             ],
             "en": [
               {
-                "title": "Real productive capital",
-                "text": "Factories, machinery, materials, and labour-power enter the actual process of valorization."
+                "title": "Definition of fictitious capital",
+                "text": "Fictitious capital is not means of production themselves, but tradable claims on future interest, dividends, or tax revenue."
               },
               {
-                "title": "Revenue claims",
-                "text": "Shares and bonds trade as rights to future profit, interest, or dividends."
+                "title": "Capitalization formula",
+                "text": "The claim price is roughly expected revenue divided by the interest rate. The same revenue is priced higher when interest rates are lower."
               },
               {
-                "title": "Capitalization",
-                "text": "Once claims get present prices, they look like independent capital, but they rest on future realization of surplus-value."
+                "title": "Risk of double counting",
+                "text": "The price of a share or bond does not mean an equal amount of real productive capital has been newly created. Claims must be distinguished from real capital."
               }
             ]
           }
@@ -28284,13 +28284,13 @@
                   "choices": {
                     "ko": [
                       "사회 안에 투자처를 찾는 화폐가 쌓이지만, 그것을 흡수할 수익성 있는 현실축적의 장이 충분하지 않은 긴장이다.",
-                      "산업자본이 생산수단을 모두 소비재로 바꾸어 화폐수요를 없애는 긴장이다.",
+                      "현실축적이 충분하지 않을 때 화폐자본이 투기적 투자처로 몰리며 이자율을 낮출 수 있다는 긴장이다.",
                       "은행이 예금을 받는 순간 그 예금이 상품의 사용가치로 변하는 긴장이다.",
                       "금 보유고가 늘수록 노동자의 임금이 이자수입으로 바뀌는 긴장이다."
                     ],
                     "en": [
                       "Money seeking investment accumulates in society, while profitable fields of real accumulation able to absorb it may be insufficient.",
-                      "Industrial capital turns all means of production into consumer goods and removes demand for money.",
+                      "It is the tension in which money-capital flows toward speculative outlets and can lower interest rates when real accumulation is insufficient.",
                       "When banks receive deposits, those deposits turn into commodity use-values.",
                       "As gold reserves grow, workers’ wages turn into interest income."
                     ]
@@ -28419,36 +28419,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "빌려줄 돈이 많아지는 현상을 곧바로 실제 생산 확대와 동일시하지 않는 것이 중요하다.",
-            "en": "Do not identify an abundance of loanable money directly with real expansion of production."
+            "ko": "대부 가능한 화폐자본의 축적을 현실 생산자본의 축적과 구분하고 이자율 압력을 읽는다.",
+            "en": "Distinguish accumulation of loanable money-capital from real productive accumulation and read its pressure on interest rates."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "대부 가능한 돈",
-                "text": "예금, 상환금, 유휴자금이 금융시장에 모여 빌려줄 자금처럼 나타난다."
+                "title": "대부 가능 화폐",
+                "text": "예금, 상환금, 유휴자금은 금융시장에 모여 빌려줄 수 있는 화폐자본처럼 나타난다."
               },
               {
-                "title": "현실 축적",
-                "text": "생산수단과 노동력이 수익성 있는 생산과정에 실제로 투입되는 일이다."
+                "title": "현실축적과 차이",
+                "text": "빌려줄 돈의 증가는 곧 기계, 원료, 고용의 증가가 아니다. 화폐자본 축적과 현실자본 축적은 어긋날 수 있다."
               },
               {
-                "title": "이자율",
-                "text": "돈이 풍부하다는 사실만으로 산업이 건강하다고 말할 수 없다. 국면과 투자처를 함께 봐야 한다."
+                "title": "이자율 압력",
+                "text": "대부 가능한 돈이 많고 수익성 있는 투자처가 부족하면 이자율 하락, 투기, 신용 팽창이 함께 나타날 수 있다."
               }
             ],
             "en": [
               {
                 "title": "Loanable money",
-                "text": "Deposits, repayments, and idle funds gather in the money market as funds available to lend."
+                "text": "Deposits, repayments, and idle funds gather in financial markets and appear as money-capital available for lending."
               },
               {
-                "title": "Real accumulation",
-                "text": "Means of production and labour-power actually enter profitable production."
+                "title": "Difference from real accumulation",
+                "text": "More lendable money does not immediately mean more machinery, materials, or employment. Money-capital accumulation can diverge from real accumulation."
               },
               {
-                "title": "Interest rate",
-                "text": "Abundant money alone does not prove healthy industry; the phase of the cycle and investment outlets matter."
+                "title": "Pressure on interest",
+                "text": "When loanable money is abundant and profitable outlets are scarce, falling interest, speculation, and credit expansion can appear together."
               }
             ]
           }
@@ -28662,8 +28662,8 @@
                   "id": "q2",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "원문에서 “bare interest”만 내도 가능한 사업이 언급되는 이유는 무엇인가?",
-                    "en": "Why does the text mention enterprises that can operate with only “bare interest”?"
+                    "ko": "거대한 철도ㆍ인프라 사업이 평균이윤 대신 “bare interest” 수준으로도 운영될 수 있다는 언급은 무엇을 보여주는가?",
+                    "en": "What is shown by the remark that large railway or infrastructure undertakings can operate at the level of “bare interest” rather than average profit?"
                   },
                   "choices": {
                     "ko": [
@@ -29256,13 +29256,13 @@
                   "choices": {
                     "ko": [
                       "국가가 이미 써 버린 돈에 대한 청구권이 조세수입의 일부를 받을 권리로 거래되기 때문이다.",
-                      "국채를 사면 그 금액만큼 국가가 새 공장과 기계를 즉시 만든다.",
+                      "국채 매입은 국가에 대한 수입청구권을 사는 것이지, 같은 금액의 새 생산수단을 취득한다는 뜻은 아니다.",
                       "국채 이자는 조세와 생산관계에서 분리된 자연수익으로 지급된다.",
                       "국채의 시장가격은 이자율과 수입의 신뢰도와 관계없이 명목가에 고정된다."
                     ],
                     "en": [
                       "A claim on money already spent by the state is traded as a right to receive part of tax revenue.",
-                      "When public debt is bought, the state immediately creates new factories and machinery in that amount.",
+                      "Buying a government bond purchases a revenue claim on the state; it does not mean acquiring the same amount of new means of production.",
                       "Interest on public debt is paid as a natural return separate from taxation and production relations.",
                       "The market price of public debt is fixed at par regardless of interest rates and reliability of income."
                     ]
@@ -29733,13 +29733,13 @@
                   "choices": {
                     "ko": [
                       "각자가 자기 상품의 판매환류나 제삼자의 어음 만기를 기대해 지급약속을 세우기 때문이다.",
-                      "모든 어음이 중앙은행의 자기자본으로 즉시 전환되어 같은 담보를 갖기 때문이다.",
+                      "어음은 판매환류를 앞당겨 쓰는 지급약속이므로, 한 고리의 지연이 다른 고리의 지급능력을 압박하기 때문이다.",
                       "상업신용에서는 상품이 판매되기 전에 이미 최종 소비가 완료되기 때문이다.",
                       "어음은 발행되는 순간 현금과 같은 국제 지급수단으로 확정되기 때문이다."
                     ],
                     "en": [
                       "Each payment promise is built on expected return flow from one’s own commodity sale or on a third party’s maturing bill.",
-                      "All bills immediately turn into central-bank equity and have the same collateral.",
+                      "Because a bill is a payment promise drawing on expected sales returns, a delay in one link pressures the paying ability of others.",
                       "In commercial credit, final consumption is completed before commodities are sold.",
                       "A bill becomes international means of payment equivalent to cash the moment it is issued."
                     ]
@@ -29761,13 +29761,13 @@
                   "choices": {
                     "ko": [
                       "증권가격은 이자율, 신용, 예상수입에 따라 떨어질 수 있지만, 그 증권이 가리키는 설비와 생산수단이 같은 비율로 사라지는 것은 아니다.",
-                      "증권가격이 하락하면 해당 기업의 모든 상품재고가 즉시 소비재로 바뀌기 때문이다.",
+                      "증권가격 하락은 담보가치와 지급능력을 흔들지만, 생산수단의 물리적 양과 같은 비율로 움직이지 않기 때문이다.",
                       "가공자본은 현실에서 힘이 약하므로 가격 하락도 지급문제와 느슨하게 연결되기 때문이다.",
                       "위기 때 증권가격은 명목가에 고정되어 실제로 하락하지 않기 때문이다."
                     ],
                     "en": [
                       "Security prices can fall with interest rates, credit, and expected income, without the equipment and means of production they reference disappearing in the same proportion.",
-                      "When security prices fall, all inventories of the firm immediately turn into consumer goods.",
+                      "Because a securities-price fall shakes collateral and solvency, but does not move in the same proportion as the physical mass of means of production.",
                       "Because fictitious capital has weak real force, so its price fall is only loosely connected to payment problems.",
                       "During crisis, security prices are fixed at par and do not actually fall."
                     ]
@@ -29839,36 +29839,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "화폐시장의 풍부함이 항상 생산의 건강함을 뜻하지 않는다는 점을 경기순환 속에서 본다.",
-            "en": "Use the cycle to see why abundance in the money market does not always mean healthy production."
+            "ko": "화폐자본과 현실자본의 축적을 구분하고, 어음ㆍ증권가격ㆍ지급연쇄가 위기 때 어떻게 엮이는지 본다.",
+            "en": "Distinguish accumulation of money-capital from real capital, and see how bills, securities prices, and payment chains connect in crisis."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "화폐자본",
-                "text": "빌려줄 수 있는 돈, 예금, 준비금처럼 아직 생산과정 밖에 머무는 자본형태."
+                "title": "두 축적의 구분",
+                "text": "화폐자본 축적은 대부 가능한 돈과 청구권의 증가이고, 현실자본 축적은 생산수단과 노동력이 실제 생산에 투입되는 증가다."
               },
               {
-                "title": "현실자본",
-                "text": "기계, 원료, 노동력이 생산 안에서 움직이며 가치증식에 참여하는 자본형태."
+                "title": "상업신용망",
+                "text": "어음과 외상거래는 한 자본의 지급능력을 다른 자본의 판매환류와 만기에 묶는다. 그래서 위기는 지급연쇄로 번진다."
               },
               {
-                "title": "엇갈림",
-                "text": "돈은 넘치는데 투자와 고용은 멈출 수 있다. 풍부한 유동성과 건강한 축적은 같은 말이 아니다."
+                "title": "가격 하락의 의미",
+                "text": "증권가격 하락은 담보와 지급능력을 흔들지만, 같은 비율로 공장과 재고가 물리적으로 사라졌다는 뜻은 아니다."
               }
             ],
             "en": [
               {
-                "title": "Money-capital",
-                "text": "Lendable money, deposits, and reserves that may still stand outside production."
+                "title": "Two accumulations",
+                "text": "Money-capital accumulation is growth of loanable money and claims; real-capital accumulation is growth of means of production and labour-power actually entering production."
               },
               {
-                "title": "Real capital",
-                "text": "Machinery, materials, and labour-power functioning inside production and valorization."
+                "title": "Commercial-credit network",
+                "text": "Bills and trade credit tie one capital’s ability to pay to another’s sales return and maturity dates, so crisis spreads through payment chains."
               },
               {
-                "title": "Divergence",
-                "text": "Money can be abundant while investment and employment stall; liquidity is not the same as healthy accumulation."
+                "title": "Meaning of price falls",
+                "text": "A fall in securities prices shakes collateral and solvency, but does not mean factories and inventories physically disappear in the same proportion."
               }
             ]
           }
@@ -30678,13 +30678,13 @@
                       "거래에 필요 없는 은행권은 지급과 예금을 통해 발행자에게 되돌아가기 때문이다.",
                       "은행권은 발행되는 순간 소비재가 되어 유통에서 빠져나가기 때문이다.",
                       "소액권과 고액권의 비율이 법으로 고정되어 상업 규모와 연결되지 않기 때문이다.",
-                      "은행권 발행은 모든 상품가격을 같은 폭으로 올려 수요를 즉시 흡수하기 때문이다."
+                      "필요 이상의 은행권은 유통에 머물지 못하고 예금ㆍ상환을 통해 돌아오므로, 발행량이 곧바로 모든 가격을 흡수하지 않는다."
                     ],
                     "en": [
                       "Banknotes not needed for transactions return to the issuer through payments and deposits.",
                       "A banknote becomes a consumer good at issue and leaves circulation.",
                       "The ratio of small and large notes is legally fixed and disconnected from business scale.",
-                      "Banknote issue raises all commodity prices equally and immediately absorbs demand."
+                      "Banknotes beyond circulation needs return through deposits and repayments; issuance does not immediately absorb all prices."
                     ]
                   },
                   "answer": 0,
@@ -30826,13 +30826,13 @@
                   "choices": {
                     "ko": [
                       "발행된 은행권이 유통수단으로 기능하며 은행에는 이윤을 낳는 신용자산처럼 보이기 때문이다.",
-                      "무담보 은행권은 발행 즉시 같은 금액의 생산수단을 은행 소유로 만든다.",
+                      "무담보 발권은 은행에 이자 낳는 청구권을 만들 수 있지만, 같은 금액의 생산수단 소유를 뜻하지는 않는다.",
                       "은행권이 금으로 덮이지 않으면 상품가치와의 관계가 끊어져 손실이 사라진다.",
                       "발권 이윤은 은행가의 절약노동에서 나오므로 생산관계와 분리된다."
                     ],
                     "en": [
                       "Because issued notes function as means of circulation and appear to the bank as a credit asset yielding profit.",
-                      "Unbacked notes immediately make the same amount of means of production the bank’s property.",
+                      "Uncovered note issue can create an interest-bearing claim for the bank, but it does not mean ownership of an equal amount of means of production.",
                       "If notes are not backed by gold, their relation to commodity value is cut and losses disappear.",
                       "Profit from note issue comes from the banker’s saving labour and is separate from production relations."
                     ]
@@ -30976,13 +30976,13 @@
                     "ko": [
                       "은행권 유통을 금속화폐 유통처럼 다루고, 금 유출입에 맞춰 발행량을 조절해야 한다는 주장이다.",
                       "신용제도는 은행권 수량과 별개이므로 법적 규제가 필요 없다는 주장이다.",
-                      "상품가격은 생산조건보다 은행가의 도덕성에서 주로 나온다는 주장이다.",
+                      "통화원리는 위기를 은행권 수량과 금 보유의 기계적 관계로 설명하려 하며, 상품가격을 은행가의 품성 문제로 환원하지 않는다.",
                       "중앙은행은 어음 할인보다 소매거래용 동전 공급에 집중해야 한다는 주장이다."
                     ],
                     "en": [
                       "It treats banknote circulation like metallic circulation and argues that note issue should adjust to gold inflows and outflows.",
                       "It argues that the credit system is separate from banknote quantity and needs no legal regulation.",
-                      "It claims commodity prices arise mainly from bankers’ morality rather than production conditions.",
+                      "The currency principle tries to explain crisis through a mechanical relation between note quantity and gold reserves; it does not reduce commodity prices to bankers’ character.",
                       "It argues the central bank should focus on small coin for retail trade rather than bill discounting."
                     ]
                   },
@@ -31003,13 +31003,13 @@
                   "choices": {
                     "ko": [
                       "Bank of England를 발행부와 은행부로 나누고, 추가 은행권 발행을 금 보유와 연결했다.",
-                      "상업어음의 만기 구조를 모두 없애고 모든 거래를 현금 결제로 바꾸었다.",
+                      "상업어음과 예금 신용은 계속 남아 있었고, 법은 주로 발권을 금 준비와 묶는 방식으로 개입했다.",
                       "민간은행의 예금과 중앙은행의 금 준비를 하나의 자기자본 항목으로 합쳤다.",
                       "금 유출이 있을 때 상품가격을 법정가격에 가깝게 안정시키려 했다."
                     ],
                     "en": [
                       "It divided the Bank of England into issue and banking departments and linked additional note issue to gold reserves.",
-                      "It abolished all maturity structures of commercial bills and turned all trade into cash settlement.",
+                      "Commercial bills and deposit credit remained; the law intervened mainly by tying note issue to gold reserves.",
                       "It merged private-bank deposits and central-bank gold reserves into one equity item.",
                       "When gold drained, it tried to stabilize commodity prices near legal prices."
                     ]
@@ -31360,13 +31360,13 @@
                       "여러 사례에서 금 유출이 멈춘 뒤에 실제 상업공황이 터졌고, 금 유출은 위기의 전조나 국면으로 나타났다.",
                       "금 유출은 상품가격과 느슨하게 연결되어 이자율에는 제한된 영향만 준다.",
                       "금 유출은 국내 신용시장에 들어온 대부자본 증가를 뜻한다.",
-                      "금 유출이 나타나면 상품시장의 과잉재고가 즉시 해소된다."
+                      "금 유출은 과잉재고를 자동 해소하지 않으며, 오히려 할인율과 지급조건을 통해 압력을 전달할 수 있다."
                     ],
                     "en": [
                       "In several cases, the real commercial crash came after the gold drain had stopped; the drain appeared as a precursor or phase of crisis.",
                       "Gold drain is loosely connected to commodity prices and gives only limited pressure to interest rates.",
                       "Gold drain means an increase of loan capital entering the domestic credit market.",
-                      "When gold drains occur, overstocked commodity markets are immediately cleared."
+                      "Gold outflow does not automatically clear overstocked goods; it can transmit pressure through discount rates and payment conditions."
                     ]
                   },
                   "answer": 0,
@@ -31387,13 +31387,13 @@
                     "ko": [
                       "금 준비를 줄이고 할인율 인상을 유도해 지급수단과 대부자본 비용을 압박한다.",
                       "국내 소매거래의 동전 수요를 줄여 모든 은행의 예금을 늘린다.",
-                      "상품수입을 멈추게 해 생산수단 부족을 즉시 해결한다.",
+                      "수입 중단이 아니라 금 준비 감소와 할인율 상승이 신용조건을 압박하는 경로가 문제다.",
                       "주식가격을 명목가에 고정해 담보가치를 안정시킨다."
                     ],
                     "en": [
                       "It can reduce gold reserves and induce higher discount rates, pressuring means of payment and the cost of loan capital.",
                       "It reduces coin demand in domestic retail trade and increases all bank deposits.",
-                      "It stops commodity imports and immediately resolves shortages of means of production.",
+                      "The issue is not an automatic stop to imports, but the path through falling gold reserves and rising discount rates that pressures credit conditions.",
                       "It fixes share prices at par and stabilizes collateral values."
                     ]
                   },
@@ -31769,13 +31769,13 @@
                   "choices": {
                     "ko": [
                       "소생산자와 지주를 몰락시키지만, 생산방식 자체는 바꾸지 않고 그 위에 기생하는 경우가 많기 때문이다.",
-                      "채무자를 해방해 임금노동과 기계제 생산을 즉시 조직하기 때문이다.",
+                      "고리대는 생산자를 몰락시킬 수 있지만, 그 자체가 임금노동과 기계제 생산을 조직하는 산업자본은 아니다.",
                       "고리대는 신용을 없애고 모든 지급을 현물 공납으로 되돌리기 때문이다.",
                       "높은 이자율이 기술혁신을 직접 촉진해 생산력을 빠르게 높이기 때문이다."
                     ],
                     "en": [
                       "It can ruin small producers and landowners, yet often parasitically preserves the mode of production instead of transforming it.",
-                      "It immediately liberates debtors and organizes wage labour and machine production.",
+                      "Usury can ruin producers, but by itself it is not industrial capital organizing wage-labour and machine production.",
                       "Usury abolishes credit and returns all payments to tribute in kind.",
                       "High interest directly promotes technical innovation and rapidly raises productive forces."
                     ]
@@ -31885,8 +31885,8 @@
                   "id": "q3",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "중세의 높은 이자율 사례들이 보여주는 핵심은 무엇인가?",
-                    "en": "What is the key point shown by medieval examples of high interest rates?"
+                    "ko": "중세의 높은 이자율 사례는 일반 이자율이 성립하려면 어떤 조건이 필요함을 보여주는가?",
+                    "en": "What conditions for a general rate of interest are shown by the medieval examples of high interest rates?"
                   },
                   "choices": {
                     "ko": [
@@ -32679,36 +32679,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "토지의 비옥도와 위치 차이가 같은 시장가격 아래 어떻게 초과이윤과 지대로 이어지는지 이해한다.",
-            "en": "Understand how differences in fertility and location lead to surplus-profit and rent under a common market price."
+            "ko": "차액지대를 시장 생산가격과 개별 생산가격의 차액이 토지소유를 통해 지대로 전환되는 공식으로 이해한다.",
+            "en": "Understand differential rent as the difference between market and individual prices of production converted into rent through landownership."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "차액지대",
-                "text": "같은 시장가격 아래에서 더 좋은 토지나 위치가 낮은 개별 생산비를 만들면 초과이윤이 생기고, 그것이 지대로 전환될 수 있다."
+                "title": "차액지대 공식",
+                "text": "차액지대는 대략 (시장 생산가격 - 개별 생산가격) × 산출량이다. 낮은 개별 생산가격이 초과이윤을 만든다."
               },
               {
                 "title": "비옥도와 위치",
-                "text": "차액은 자연적 비옥도뿐 아니라 시장과의 거리, 운송조건, 위치에서도 생긴다."
+                "text": "비옥도, 위치, 운송조건은 같은 투입으로 다른 산출이나 다른 비용을 만들며 개별 생산가격을 바꾼다."
               },
               {
-                "title": "공통 시장가격",
-                "text": "차액지대는 각 토지가 따로 가격을 정해서가 아니라, 같은 시장가격 아래 생산조건 차이가 드러나기 때문에 생긴다."
+                "title": "지대로 전환",
+                "text": "초과이윤은 경쟁으로 완전히 사라지지 않고, 토지소유의 독점 때문에 지주에게 지대로 이전될 수 있다."
               }
             ],
             "en": [
               {
-                "title": "Differential rent",
-                "text": "Under a common market price, better land or location can lower individual cost and create surplus-profit that can be transformed into rent."
+                "title": "Formula for differential rent",
+                "text": "Differential rent is roughly (market price of production minus individual price of production) times output. Lower individual production price creates surplus-profit."
               },
               {
                 "title": "Fertility and location",
-                "text": "Differences arise not only from natural fertility, but also from distance to market, transport conditions, and location."
+                "text": "Fertility, location, and transport conditions change output or cost for the same input, altering individual prices of production."
               },
               {
-                "title": "Common market price",
-                "text": "Differential rent arises because differences in production conditions appear under one market price, not because each plot sets its own price."
+                "title": "Conversion into rent",
+                "text": "Surplus-profit is not fully erased by competition; because landownership monopolizes the condition, it can be transferred to the landlord as rent."
               }
             ]
           }
@@ -32857,18 +32857,18 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "39장이 다음 장의 차액지대 II와 구분되는 핵심은 무엇인가?",
-                    "en": "What chiefly distinguishes Chapter 39 from Differential Rent II in the next chapter?"
+                    "ko": "39장의 차액지대 I과 40장의 차액지대 II는 계산 단위가 어떻게 다른가?",
+                    "en": "How does the unit of calculation differ between Chapter 39’s differential rent I and Chapter 40’s differential rent II?"
                   },
                   "choices": {
                     "ko": [
-                      "여러 토지 사이의 차이를 다루며, 다음 장은 같은 토지 안의 연속 투자 차이를 다룬다.",
+                      "39장은 여러 토지 사이의 외연적 차이를 다루며, 40장은 같은 토지 안의 연속 투자 차이를 다룬다.",
                       "화폐지대가 아니라 현물지대의 역사적 형태를 다루며, 다음 장은 화폐지대로 넘어간다.",
                       "농업이 아니라 광업의 지대를 다루며, 다음 장은 곡물 생산으로 돌아간다.",
                       "평균이윤율의 형성 이전을 다루며, 다음 장은 신용제도 이후의 이윤율을 다룬다."
                     ],
                     "en": [
-                      "It treats differences among several soils; the next chapter treats successive investments within the same soil.",
+                      "Chapter 39 treats extensive differences between different lands, while Chapter 40 treats successive investments on the same land.",
                       "It treats rent in kind rather than money-rent; the next chapter moves to money-rent.",
                       "It treats mining rather than agriculture; the next chapter returns to grain production.",
                       "It treats the period before average profit forms; the next chapter treats profit after credit develops."
@@ -32929,13 +32929,13 @@
                   "choices": {
                     "ko": [
                       "가까운 열등지가 먼 우등지보다 먼저 경작될 수 있고, 교통 발달은 위치 차이를 줄이거나 새로 만들 수 있다.",
-                      "위치가 좋으면 토양 성분이 화학적으로 개선되어 비옥도 순서가 즉시 바뀌기 때문이다.",
+                      "가까운 열등지는 운송비가 낮아 경제적으로 유리할 수 있고, 먼 우등지는 높은 운송비 때문에 그 장점이 줄 수 있기 때문이다.",
                       "비옥도가 높으면 시장과 거리가 멀어져 운송비가 자연적으로 상승하는 경향이 있기 때문이다.",
                       "교통망은 농업기술과 별개라서 토지의 경제적 비옥도에 영향을 주지 않기 때문이다."
                     ],
                     "en": [
                       "Nearby inferior land may be cultivated before distant superior land, and transport can reduce or create location differences.",
-                      "Good location chemically improves soil composition and immediately changes fertility rankings.",
+                      "Because nearby poorer land can be economically favoured by lower transport costs, while distant better land can lose part of its advantage through higher transport costs.",
                       "Higher fertility naturally increases distance from markets and raises transport costs.",
                       "Transport networks are separate from technique and do not affect economic fertility."
                     ]
@@ -33034,36 +33034,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "서로 다른 토지에 같은 양의 자본이 투입될 때 우등지와 열등지의 차이가 초과이윤을 만드는 방식을 이해한다.",
-            "en": "Understand how differences between superior and inferior lands create surplus-profit when equal capitals are invested in different plots."
+            "ko": "차액지대 I을 여러 토지 사이의 한계지 생산가격과 우등지 개별 생산가격 차이로 계산한다.",
+            "en": "Calculate differential rent I from the difference between marginal-land production price and better-land individual production price."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "차액지대 I",
-                "text": "서로 다른 토지에 같은 양의 자본과 노동이 투입될 때 생기는 차액지대다."
+                "text": "차액지대 I은 여러 토지 사이의 비옥도ㆍ위치 차이에서 나온다. 같은 자본이 서로 다른 토지에 투입되는 경우다."
               },
               {
-                "title": "한계지",
-                "text": "공급에 필요한 가장 불리한 토지가 시장가격을 규정하면, 더 좋은 토지는 같은 가격에서 초과이윤을 얻는다."
+                "title": "한계지 가격",
+                "text": "공급에 필요한 가장 불리한 토지가 시장 생산가격을 규정하면, 우등지는 같은 가격에서 차액을 얻는다."
               },
               {
-                "title": "외연적 차이",
-                "text": "핵심은 여러 토지 사이의 차이다. 같은 토지 안의 추가투자 차이는 다음 차액지대 II에서 다룬다."
+                "title": "계산 방식",
+                "text": "우등지 지대 = (한계지 생산가격 - 우등지 개별 생산가격) × 우등지 산출량으로 읽을 수 있다."
               }
             ],
             "en": [
               {
                 "title": "Differential rent I",
-                "text": "This is differential rent arising when equal amounts of capital and labor are invested on different plots of land."
+                "text": "Differential rent I arises from fertility and location differences between plots, with equal capitals invested on different lands."
               },
               {
-                "title": "Marginal land",
-                "text": "If the worst land needed for supply regulates market price, better land earns surplus-profit at the same price."
+                "title": "Marginal land price",
+                "text": "If the worst land needed for supply regulates market price of production, better lands gain a differential at the same price."
               },
               {
-                "title": "Extensive difference",
-                "text": "The key is the difference among plots of land. Differences among successive investments on the same land belong to differential rent II."
+                "title": "Calculation",
+                "text": "Rent on better land can be read as (marginal production price minus individual production price) times output of the better land."
               }
             ]
           }
@@ -33191,13 +33191,13 @@
                     "ko": [
                       "추가투자의 생산성이 한계 기준을 넘으면 초과이윤이 생기고, 계약관계에 따라 지대로 바뀔 수 있다.",
                       "개량투자는 토지의 자연적 성질을 제거해 모든 수확을 평균이윤으로 환원한다.",
-                      "추가투자는 시장가격을 즉시 낮춰 기존 지대가 임금기금으로 이동하게 만든다.",
+                      "추가투자의 생산성이 사회적 기준보다 높으면 같은 시장가격에서 초과이윤이 생기지만, 시장가격 자체가 곧바로 내려간다는 뜻은 아니다.",
                       "배수시설은 고정자본이므로 생산물 가치와 별개인 소비재 수요로 계산된다."
                     ],
                     "en": [
                       "If the additional investment exceeds the marginal benchmark, it creates surplus-profit that may become rent through contracts.",
                       "Improvements remove the natural character of land and reduce all output to average profit.",
-                      "Additional investment immediately lowers market price and moves existing rent into the wage fund.",
+                      "If the additional investment is more productive than the social standard, it creates surplus-profit at the same market price; this does not mean market price immediately falls.",
                       "Drainage is fixed capital and is counted as consumer-goods demand outside product value."
                     ]
                   },
@@ -33342,13 +33342,13 @@
                       "총산출이 같아도 자본이 한 면적에 집중되면 에이커당 지대와 토지가격이 달라질 수 있기 때문이다.",
                       "분산투자는 평균이윤을 만들고 집중투자는 평균이윤을 제거한다는 법칙을 세우기 때문이다.",
                       "한 토지에 집중된 자본은 유동자본으로 바뀌어 토지소유권과의 관련을 잃기 때문이다.",
-                      "여러 토지에 분산된 자본은 모두 한계지로 계산되어 차액지대 I의 표를 없애기 때문이다."
+                      "여러 토지에 분산된 경우와 한 토지에 집중된 경우는 총산출이 비슷해도 에이커당 지대와 토지가격 효과가 달라질 수 있다."
                     ],
                     "en": [
                       "Even with the same total output, concentration on one area can change rent per acre and land price.",
                       "It establishes that dispersed investment creates average profit while concentrated investment removes it.",
                       "Capital concentrated on one soil becomes circulating capital and loses connection with landownership.",
-                      "Capital dispersed among several soils is all counted as marginal land, removing Differential Rent I tables."
+                      "Dispersed investments and concentrated investments can have similar total output while producing different effects on rent per acre and land price."
                     ]
                   },
                   "answer": 0,
@@ -33389,36 +33389,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "같은 토지에 자본을 거듭 투입할 때 각 추가투자의 생산성이 달라지며 차액지대가 생기는 방식을 이해한다.",
-            "en": "Understand how differential rent arises when successive investments on the same land have different productivities."
+            "ko": "차액지대 II를 같은 토지 안의 추가투자분별 생산가격 차이와 임대관계의 문제로 파악한다.",
+            "en": "Understand differential rent II as differences between successive investment portions on the same land and as a lease-relation problem."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "차액지대 II",
-                "text": "같은 토지에 자본을 여러 번 추가 투입할 때, 각 투자분의 생산성이 달라 생기는 차액지대다."
+                "text": "차액지대 II는 같은 토지에 연속적으로 추가 투입된 자본들의 생산성 차이에서 나온다."
               },
               {
-                "title": "집약적 투자",
-                "text": "토지를 넓히는 것이 아니라 같은 토지에 더 많은 자본을 투입한다. 그래서 문제는 추가투자의 생산성이다."
+                "title": "투자분별 계산",
+                "text": "각 추가투자분은 자기 개별 생산가격을 가진다. 시장가격보다 낮게 생산하는 투자분은 초과이윤을 만든다."
               },
               {
-                "title": "가격 조건",
-                "text": "추가투자가 더 좋거나 나쁜 결과를 내는지는 생산가격이 불변, 하락, 상승하는 경우에 따라 다르게 나타난다."
+                "title": "지대와 임대기간",
+                "text": "차지농이 만든 개량 효과도 임대기간이 끝나면 지주가 지대로 흡수할 수 있다. 그래서 계약관계가 중요하다."
               }
             ],
             "en": [
               {
                 "title": "Differential rent II",
-                "text": "This is differential rent arising when successive investments on the same land have different productivities."
+                "text": "Differential rent II arises from productivity differences between successive additional capitals invested on the same land."
               },
               {
-                "title": "Intensive investment",
-                "text": "The issue is not extending to more land, but investing more capital on the same land. The productivity of additional investment is decisive."
+                "title": "Calculation by investment portion",
+                "text": "Each additional investment has its own individual price of production. Portions producing below market price create surplus-profit."
               },
               {
-                "title": "Price conditions",
-                "text": "The result of additional investment differs depending on whether the price of production remains constant, falls, or rises."
+                "title": "Rent and lease term",
+                "text": "Improvements made by the tenant can be absorbed as rent by the landlord after the lease ends, so contract relations matter."
               }
             ]
           }
@@ -33667,13 +33667,13 @@
                   "choices": {
                     "ko": [
                       "초과이윤율은 낮아져도 B, C, D의 지대는 절대량으로 증가할 수 있다.",
-                      "추가 자본의 생산성이 낮아지면 B, C, D의 기존 지대도 즉시 소멸한다.",
+                      "추가 자본의 초과이윤율은 낮아져도 산출량과 투자규모 때문에 지대의 절대량은 늘 수 있다.",
                       "생산성이 하락한 추가 자본은 A의 생산가격을 올려 표 II보다 높은 곡물가격을 만든다.",
                       "초과이윤율 하락은 차지농의 평균이윤 상승으로 상쇄되어 지대 계산에서 제외된다."
                     ],
                     "en": [
                       "The rate of surplus-profit falls, but the absolute rent on B, C, and D can rise.",
-                      "When productivity of additional capital falls, existing rents on B, C, and D immediately vanish.",
+                      "Even if the surplus-profit rate of additional capital falls, the absolute amount of rent can rise because output and investment scale increase.",
                       "Less productive additional capital raises A’s production price and creates a higher grain price than Table II.",
                       "The fall in surplus-profit rate is offset by higher tenant average profit and excluded from rent calculation."
                     ]
@@ -33995,13 +33995,13 @@
                     "ko": [
                       "정상 경작에 필요한 자본이 부족하면 같은 토지도 낮은 산출을 내어 토지 등급 차이처럼 나타나기 때문이다.",
                       "자본이 부족하면 지주가 임대료를 면제해 토지 등급표가 법적으로 다시 작성되기 때문이다.",
-                      "자본 부족은 토양의 화학성분을 바꾸어 자연적 비옥도를 영구히 낮추기 때문이다.",
+                      "자본 부족은 토양의 자연성분을 바꾸는 것이 아니라, 필요한 투입 부족으로 경제적 생산성을 낮게 나타나게 한다.",
                       "자본 부족은 평균이윤율을 높여 열등지의 지대율을 우등지보다 크게 만들기 때문이다."
                     ],
                     "en": [
                       "If capital is below the normal level, the same soil yields less and appears like a lower soil grade.",
                       "Capital shortage makes landlords waive rent and legally rewrite the soil hierarchy.",
-                      "Capital shortage changes soil chemistry and permanently lowers natural fertility.",
+                      "Capital shortage does not change the soil’s natural chemistry; insufficient input makes economic productivity appear lower.",
                       "Capital shortage raises the average profit rate and makes inferior-soil rent rates higher."
                     ]
                   },
@@ -34351,13 +34351,13 @@
                       "이미 지대로 지급된 초과이윤이 낮은 생산성 투자분의 손실을 상쇄하는 데 쓰일 수 없기 때문이다.",
                       "낮은 생산성 투자분은 지주의 토지를 법적으로 평균이윤 없는 토지로 바꾸기 때문이다.",
                       "차지농은 낮은 생산성 투자분을 회계에서 제외해 실제 공급량을 줄이기 때문이다.",
-                      "추가투자가 낮은 생산성을 보이면 한계지 A가 즉시 모든 우등지를 대체하기 때문이다."
+                      "낮은 생산성의 추가투자가 한계 조건을 악화시킬 수는 있지만, 한계지 A가 모든 우등지를 대체한다는 뜻은 아니다."
                     ],
                     "en": [
                       "Surplus-profit already paid as rent cannot offset deficits from less productive later investments.",
                       "Less productive investment legally turns the landlord’s land into land without average profit.",
                       "Tenants exclude low-productivity investments from accounts and reduce real supply.",
-                      "Once additional investment is less productive, marginal soil A immediately replaces all superior soils."
+                      "Less productive additional investment can worsen marginal conditions, but it does not mean marginal land A replaces all better lands."
                     ]
                   },
                   "answer": 0,
@@ -34554,13 +34554,13 @@
                   "choices": {
                     "ko": [
                       "B의 추가투자가 조절 기준이 되어 시장가격을 올리고, A에도 작은 차액지대를 만들 수 있다.",
-                      "B의 추가투자는 평균이윤을 잃어 경작에서 빠지고 A-1이 즉시 기준이 된다.",
+                      "B의 추가투자는 평균이윤을 보장하면서도 A-1보다 싸면 새 조절 기준이 될 수 있다.",
                       "A의 기존 생산가격이 유지되어 B의 추가투자분은 시장가격보다 낮게 팔린다.",
                       "B가 조절 기준이 되면 C와 D의 지대가 지워지고 A의 지대만 남는다."
                     ],
                     "en": [
                       "The B addition can become regulatory, raise market price, and create a small differential rent on A.",
-                      "The B addition loses average profit, leaves cultivation, and A-1 immediately regulates.",
+                      "B’s additional investment can become the new regulating condition if it secures average profit while remaining cheaper than A-1.",
                       "A’s old production price remains, so B’s addition sells below market price.",
                       "When B regulates, rents on C and D vanish and only A’s rent remains."
                     ]
@@ -34604,8 +34604,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "A 토지에서 추가투자의 생산성이 감소할 때 가격 상승 폭이 새 열등지 투입보다 작을 수 있는 이유는 무엇인가?",
-                    "en": "Why can the price rise be smaller with declining productivity on A than by taking worse new land?"
+                    "ko": "새 열등지를 투입하는 경우와 달리, A 내부의 추가투자는 왜 가격 상승 폭을 다르게 만들 수 있는가?",
+                    "en": "Unlike bringing new inferior land into cultivation, why can additional investment within A produce a different scale of price increase?"
                   },
                   "choices": {
                     "ko": [
@@ -34732,13 +34732,13 @@
                   "choices": {
                     "ko": [
                       "해외 가격과 경쟁 가능한 무지대 토지를 목축 등 다른 용도로 돌리면 곡물에는 지대 토지만 남을 수 있기 때문이다.",
-                      "자유수입은 국내 지대를 모두 없애지만 지주가 수입곡물 관세를 받아 같은 수입을 얻기 때문이다.",
+                      "자유수입이 국내 지대를 압박해도, 토지의 다른 용도 전환이 곡물 경작지의 지대 조건을 보존할 수 있다.",
                       "해외 곡물은 국내 토지의 비옥도를 낮추어 생산가격을 다시 올리기 때문이다.",
                       "자유수입은 차지농의 임금을 해외 수준으로 낮추어 절대지대를 자동 형성하기 때문이다."
                     ],
                     "en": [
                       "Land that could grow grain without rent may be diverted to pasture, leaving only rent-bearing land for grain.",
-                      "Free imports abolish domestic rent, but landlords receive import duties as the same revenue.",
+                      "Even if free imports pressure domestic rent, conversion of land to other uses can preserve rent conditions for corn land.",
                       "Foreign grain lowers domestic soil fertility and raises production price again.",
                       "Free imports lower tenant wages to foreign levels and automatically form absolute rent."
                     ]
@@ -34937,13 +34937,13 @@
                   "choices": {
                     "ko": [
                       "평균이윤만 보장되는 가격으로는 토지를 내주지 않는 장벽으로 작용할 수 있다.",
-                      "농업 자본이 평균이윤을 얻으면 토지소유권이 즉시 무상 사용권으로 바뀐다.",
+                      "평균이윤이 가능해도 토지소유자가 토지 접근을 허락하지 않으면 추가 지불 조건이 붙을 수 있다.",
                       "토지소유는 차지농에게 신용을 제공해 시장가격을 생산가격 아래로 낮춘다.",
                       "토지소유는 경작기술을 표준화해 모든 토지를 같은 생산성으로 만든다."
                     ],
                     "en": [
                       "It can act as a barrier that withholds land when price yields only average profit.",
-                      "Once agricultural capital earns average profit, landownership immediately becomes free use-right.",
+                      "Even if average profit is possible, the landlord can attach an additional payment condition by withholding access to land.",
                       "Landownership provides credit to tenants and lowers market price below production price.",
                       "Landownership standardizes cultivation technique and makes all soils equally productive."
                     ]
@@ -35164,36 +35164,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "차액과 무관하게 토지소유의 독점이 자본의 자유로운 진입을 막아 절대지대가 성립하는 논리를 이해한다.",
-            "en": "Understand how absolute rent can arise independently of differential advantage because monopoly of landed property blocks free entry of capital."
+            "ko": "절대지대를 생산조건 차이가 아니라 토지소유 장벽과 가치-생산가격 차이에서 설명한다.",
+            "en": "Explain absolute rent through the landownership barrier and the value-production price difference, not through differential production conditions."
           },
           "conceptMap": {
             "ko": [
               {
-                "title": "절대지대",
-                "text": "토지소유가 자본의 자유로운 진입을 막기 때문에, 차액이 없는 최열등지에서도 지대가 요구될 수 있다."
-              },
-              {
-                "title": "차액지대와 차이",
-                "text": "차액지대는 생산조건 차이에서 나오지만, 절대지대는 토지소유의 독점 장벽에서 나온다."
+                "title": "절대지대 정의",
+                "text": "절대지대는 차액이 없어도 토지소유가 진입 장벽으로 작용해 평균이윤 위의 지불을 요구할 수 있는 지대다."
               },
               {
                 "title": "가치와 생산가격",
-                "text": "농업의 가치가 생산가격보다 높을 때, 토지소유는 그 차이 일부를 지대로 붙잡을 수 있다."
+                "text": "농업 가치가 생산가격보다 높을 때, 토지소유는 그 차액 일부가 평균화로 사라지는 것을 막아 지대로 붙잡을 수 있다."
+              },
+              {
+                "title": "차액지대와 구분",
+                "text": "차액지대는 생산조건 차이에서, 절대지대는 토지소유 독점과 진입 장벽에서 출발한다."
               }
             ],
             "en": [
               {
-                "title": "Absolute rent",
-                "text": "Because landed property blocks free entry of capital, rent can be demanded even on the worst land without differential advantage."
+                "title": "Definition of absolute rent",
+                "text": "Absolute rent can arise even without differential advantage when landownership blocks entry and demands payment above average profit."
               },
               {
-                "title": "Difference from differential rent",
-                "text": "Differential rent comes from differences in production conditions; absolute rent comes from the monopoly barrier of landed property."
+                "title": "Value and price of production",
+                "text": "When agricultural value exceeds price of production, landownership can prevent part of the difference from being averaged away and capture it as rent."
               },
               {
-                "title": "Value and production price",
-                "text": "When agricultural value stands above price of production, landed property can capture part of that difference as rent."
+                "title": "Distinction from differential rent",
+                "text": "Differential rent starts from differences in production conditions; absolute rent starts from monopoly of landownership and an entry barrier."
               }
             ]
           }
@@ -35519,36 +35519,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "건축지와 광산에서도 위치, 매장조건, 독점권이 지대를 만들고 반복 수입이 토지가격으로 자본화되는 과정을 이해한다.",
-            "en": "Understand how location, deposit conditions, and monopoly rights produce rent in building sites and mines, and how recurring income is capitalized as land price."
+            "ko": "건축지ㆍ광산 지대를 공간/매장조건의 독점으로, 토지가격을 연간 지대/이자율로 이해한다.",
+            "en": "Understand building-site and mining rent through spatial/deposit monopolies, and land price as annual rent divided by interest rate."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "건축지 지대",
-                "text": "도심 위치, 접근성, 인구 집중 같은 공간 독점이 건축지 지대의 근거가 된다."
+                "text": "도심 위치, 접근성, 인구 집중은 공간 독점으로 지대를 만든다. 건물가치와 토지위치 지대를 구분해야 한다."
               },
               {
                 "title": "광산 지대",
-                "text": "광물 매장량과 채굴조건의 차이는 농업의 비옥도 차이처럼 초과이윤과 지대를 만들 수 있다."
+                "text": "매장량, 품질, 채굴비 차이는 농업의 비옥도 차이처럼 개별 생산가격 차이와 지대를 만든다."
               },
               {
-                "title": "토지가격",
-                "text": "토지가격은 토지 자체의 가치가 아니라 예상 지대수입을 이자율로 자본화한 가격이다."
+                "title": "토지가격 공식",
+                "text": "토지가격은 예상 지대수입의 자본화다. 단순식은 토지가격 = 연간 지대 / 이자율이다."
               }
             ],
             "en": [
               {
                 "title": "Building-site rent",
-                "text": "Urban location, accessibility, and population concentration create spatial monopoly as the basis of building-site rent."
+                "text": "Urban location, access, and population concentration create rent through spatial monopoly. Building value must be distinguished from site rent."
               },
               {
                 "title": "Mining rent",
-                "text": "Differences in mineral deposits and extraction conditions can create surplus-profit and rent, much like differences in agricultural fertility."
+                "text": "Differences in deposits, quality, and extraction costs create individual production-price differences and rent, like fertility differences in agriculture."
               },
               {
-                "title": "Land price",
-                "text": "Land price is not the value of land itself; it is expected rent capitalized at the interest rate."
+                "title": "Land-price formula",
+                "text": "Land price is capitalization of expected rent revenue. In simple form: land price = annual rent divided by interest rate."
               }
             ]
           }
@@ -36144,8 +36144,8 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“노동의 가격”이라는 표현이 비합리적이라는 비판의 핵심은 무엇인가?",
-                    "en": "What is the core of Marx’s critique that “price of labour” is irrational?"
+                    "ko": "임금형태가 “노동의 가격”처럼 보일 때, 실제로 가격을 갖는 상품은 무엇인가?",
+                    "en": "When the wage-form appears as the “price of labour,” what commodity actually has a price?"
                   },
                   "choices": {
                     "ko": [
@@ -37037,13 +37037,13 @@
                   "choices": {
                     "ko": [
                       "생산물 일부는 먼저 자본으로 기능하며, 임금도 노동자에게는 자본의 형태로 마주선다.",
-                      "임금, 이윤, 지대는 모두 개인 소비재라 생산수단 보충과 관련이 없다.",
+                      "생산물 일부는 생산수단을 보충해야 하며, 임금ㆍ이윤ㆍ지대만으로 총생산물 전체를 설명할 수 없다.",
                       "생산물 전체가 노동자에게 지급된 뒤 자본가와 지주가 다시 구매한다.",
                       "이 표현은 지대의 존재만 설명하고 임금과 이윤의 존재를 설명하지 못한다."
                     ],
                     "en": [
                       "Part of the product first functions as capital, and wages confront workers in the form of capital.",
-                      "Wages, profit, and rent are all consumer goods and have no relation to replacing means of production.",
+                      "Part of the product must replace means of production; wages, profit, and rent alone cannot explain the total product.",
                       "The whole product is first paid to workers, then capitalists and landlords buy it back.",
                       "The phrase explains only rent, not wages and profit."
                     ]
@@ -37095,13 +37095,13 @@
                       "잉여가치 생산이 직접 목적이자 생산의 결정적 동기가 된다.",
                       "사용가치의 균등한 배분이 모든 가격 운동을 지배한다.",
                       "생산수단 보전이 이윤보다 앞서는 유일한 목적이 된다.",
-                      "노동시간 단축이 개별 자본의 경쟁 목표로 즉시 자리 잡는다."
+                      "노동시간 단축은 자본의 직접 목적이 아니라, 가치증식 목적과 충돌하는 노동자 투쟁의 요구로 나타난다."
                     ],
                     "en": [
                       "The production of surplus-value becomes the direct aim and decisive motive of production.",
                       "Equal distribution of use-values governs every price movement.",
                       "Preservation of means of production becomes the sole aim ahead of profit.",
-                      "Shortening labour-time immediately becomes the competitive aim of individual capitals."
+                      "Shortening labour-time is not capital’s direct goal; it appears as a workers’ demand that conflicts with valorization."
                     ]
                   },
                   "answer": 0,
