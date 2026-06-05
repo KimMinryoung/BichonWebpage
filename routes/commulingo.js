@@ -120,11 +120,7 @@ function publicLessonsById(bundle) {
 }
 
 function setPublicDataCache(req, res) {
-    if (req.query && req.query.v === currentVersion()) {
-        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-        return;
-    }
-    res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
 }
 
 function requireUser(req, res, next) {

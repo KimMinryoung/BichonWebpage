@@ -14,6 +14,7 @@
     var active = null;
     var answered = false;
     var returnScrollLesson = null;
+    var dataRequestVersion = String(Date.now());
 
     var els = {
         list: document.getElementById('commuLessonList'),
@@ -150,8 +151,10 @@
     }
 
     function lessonDetailUrl(lessonId) {
-        var version = data.version ? '?v=' + encodeURIComponent(data.version) : '';
-        return '/commulingo/lesson/' + encodeURIComponent(lessonId) + version;
+        var params = [];
+        if (data.version) params.push('v=' + encodeURIComponent(data.version));
+        params.push('r=' + encodeURIComponent(dataRequestVersion));
+        return '/commulingo/lesson/' + encodeURIComponent(lessonId) + '?' + params.join('&');
     }
 
     function loadLessonDetail(lesson) {
