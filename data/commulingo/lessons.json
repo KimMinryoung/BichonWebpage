@@ -33313,13 +33313,13 @@
                   "choices": {
                     "ko": [
                       "각자가 자기 상품의 판매환류나 제삼자의 어음 만기를 기대해 지급약속을 세우기 때문이다.",
-                      "어음은 판매환류를 앞당겨 쓰는 지급약속이므로, 한 고리의 지연이 다른 고리의 지급능력을 압박하기 때문이다.",
+                      "어음은 실제 판매환류와 무관한 독립 화폐자본이므로, 한 고리의 지연이 다른 고리의 지급능력에 영향을 주지 않기 때문이다.",
                       "상업신용에서는 상품이 판매되기 전에 이미 최종 소비가 완료되기 때문이다.",
                       "어음은 발행되는 순간 현금과 같은 국제 지급수단으로 확정되기 때문이다."
                     ],
                     "en": [
                       "Each payment promise is built on expected return flow from one’s own commodity sale or on a third party’s maturing bill.",
-                      "Because a bill is a payment promise drawing on expected sales returns, a delay in one link pressures the paying ability of others.",
+                      "Because a bill is independent money-capital unrelated to actual sales returns, a delay in one link does not affect others’ paying ability.",
                       "In commercial credit, final consumption is completed before commodities are sold.",
                       "A bill becomes international means of payment equivalent to cash the moment it is issued."
                     ]
