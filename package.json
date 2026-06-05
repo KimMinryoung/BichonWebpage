@@ -8,6 +8,7 @@
     "dev": "node --watch server.js",
     "dev:preview": "scripts/dev-preview",
     "cf:purge": "node scripts/cloudflare-purge.js",
+    "cf:purge:commulingo": "node scripts/purge-commulingo.js",
     "sprite:generate": "node tools/sprite-pipeline.js generate",
     "sprite:process": "node tools/sprite-pipeline.js process",
     "sprite:batch": "node tools/sprite-pipeline.js batch",

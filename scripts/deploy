@@ -32,6 +32,11 @@ warm() {
         warn "Warm-up failed for ${path}"
     fi
 }
+commulingo_version() {
+    curl -fsS --max-time 10 "http://localhost:3000/commulingo/catalog.json" 2>/dev/null \
+        | node -e "let s=''; process.stdin.on('data', d => s += d); process.stdin.on('end', () => { try { process.stdout.write(JSON.parse(s).version || ''); } catch (err) {} });" \
+        || true
+}
 
 FORCE_RESTART=0
 for arg in "$@"; do
@@ -73,6 +78,10 @@ if [[ -n "$(git status --porcelain)" ]]; then
 fi
 
 DEPLOYED=$(docker inspect -f "{{ index .Config.Labels \"$REVISION_LABEL\" }}" "$CONTAINER_NAME" 2>/dev/null || true)
+OLD_COMMULINGO_VERSION=""
+if [[ -n "$DEPLOYED" ]]; then
+    OLD_COMMULINGO_VERSION="$(commulingo_version)"
+fi
 
 if [[ "$FORCE_RESTART" -eq 0 && "$LOCAL" == "$DEPLOYED" ]]; then
     log "Already deployed ($LOCAL). Use --restart to force."
@@ -134,6 +143,20 @@ done
 
 if (( elapsed >= 15 )); then
     warn "Health check timed out — check logs with: docker logs $CONTAINER_NAME"
+fi
+
+if [[ -n "$DEPLOYED" && "$LOCAL" != "$DEPLOYED" ]]; then
+    CHANGED_COMMULINGO_LESSONS="$(node scripts/changed-commulingo-lessons.js "$DEPLOYED" "$LOCAL" 2>/dev/null || true)"
+    if [[ -n "$CHANGED_COMMULINGO_LESSONS" ]]; then
+        log "Purging CommuLingo lesson cache for changed lessons..."
+        PURGE_ARGS=(scripts/purge-commulingo.js)
+        if [[ -n "$OLD_COMMULINGO_VERSION" ]]; then
+            PURGE_ARGS+=(--old-version "$OLD_COMMULINGO_VERSION")
+        fi
+        if ! printf '%s\n' "$CHANGED_COMMULINGO_LESSONS" | node "${PURGE_ARGS[@]}" --stdin; then
+            warn "CommuLingo cache purge failed; deploy will continue."
+        fi
+    fi
 fi
 
 log "Warming public pages..."
