@@ -20919,7 +20919,7 @@
               },
               {
                 "title": "교환 조건",
-                "text": "핵심은 I(v+s) = IIc다. 생산수단 부문의 임금·잉여가치 몫이 소비수단으로 교환되고, 소비수단 부문은 생산수단을 보충한다."
+                "text": "핵심은 I(v+s) = IIc다. 이 식은 곱셈식이 아니라, 생산수단 부문 I의 v+s와 소비재 부문 II의 c의 양이 일치해야 한다는 뜻이다."
               }
             ],
             "en": [
@@ -20933,7 +20933,7 @@
               },
               {
                 "title": "Exchange condition",
-                "text": "The key condition is I(v+s) = IIc. Department I’s wages and surplus-value exchange for consumption goods, while Department II replaces its means of production."
+                "text": "The key condition is I(v+s) = IIc. This is not multiplication: it means the amount of v+s in means-of-production Department I must equal the amount of c in consumption-goods Department II."
               }
             ]
           },
@@ -20944,7 +20944,7 @@
                 "items": [
                   "단순재생산: 축적 없이 같은 규모로 생산이 반복되는 경우다. 잉여가치는 자본가의 소비로 빠져나간다고 가정한다.",
                   "부문 I과 II: 부문 I은 생산수단, 부문 II는 소비수단을 만든다. 두 부문이 서로 필요한 것을 교환해야 다음 생산이 가능하다.",
-                  "교환 조건: 핵심은 I(v+s) = IIc다. 생산수단 부문의 임금·잉여가치 몫이 소비수단으로 교환되고, 소비수단 부문은 생산수단을 보충한다."
+                  "교환 조건: 핵심은 I(v+s) = IIc다. 여기서 I(v+s)는 생산수단 부문 I의 v+s, IIc는 소비재 부문 II의 c를 뜻하며, 두 양이 일치해야 한다."
                 ]
               },
               {
@@ -20952,7 +20952,7 @@
                 "items": [
                   "단순재생산은 축적 없이 같은 규모로 반복되는 사회적 생산이다.",
                   "부문 I은 생산수단, 부문 II는 소비수단을 생산한다.",
-                  "기본 교환조건은 I(v+s)=IIc다. I의 임금·잉여가치에 해당하는 소비수단 수요가 II의 불변자본 보충 필요와 맞아야 한다."
+                  "기본 교환조건은 I(v+s)=IIc다. 생산수단 부문 I의 임금·잉여가치 몫의 양이 소비재 부문 II의 불변자본 보충 필요량과 일치해야 한다는 표기다."
                 ]
               },
               {
@@ -20966,7 +20966,7 @@
                 "items": [
                   "Simple reproduction: Production repeats on the same scale without accumulation. Surplus-value is assumed to leave as capitalist consumption.",
                   "Departments I and II: Department I produces means of production; Department II produces means of consumption. They must exchange what each needs for the next production cycle.",
-                  "Exchange condition: The key condition is I(v+s) = IIc. Department I’s wages and surplus-value exchange for consumption goods, while Department II replaces its means of production."
+                  "Exchange condition: The key condition is I(v+s) = IIc. Here I(v+s) means v+s in means-of-production Department I, and IIc means c in consumption-goods Department II; the two amounts must be equal."
                 ]
               },
               {
@@ -20974,7 +20974,7 @@
                 "items": [
                   "Simple reproduction is social production repeated on the same scale without accumulation.",
                   "Department I produces means of production; Department II produces means of consumption.",
-                  "The basic exchange condition is I(v+s)=IIc: Department I’s demand for consumption goods must match Department II’s need to replace constant capital."
+                  "The basic exchange condition is I(v+s)=IIc. It says the amount of wages plus surplus-value in means-of-production Department I must equal consumption-goods Department II's need to replace constant capital."
                 ]
               },
               {
@@ -40777,8 +40777,8 @@
             "en": "On the Analysis of the Process of Production"
           },
           "summary": {
-            "ko": "49장은 총생산물의 가치가 `c+v+s`로 구성되며, 수입으로 소비되는 새 가치는 `v+s`뿐이라는 점에서 스미스식 “모든 가치는 수입으로 분해된다”는 명제를 비판한다.",
-            "en": "Chapter 49 criticizes the Smithian claim that all value resolves into revenue by distinguishing total product value `c+v+s` from new value consumed as revenue, `v+s`."
+            "ko": "49장은 총생산물의 가치가 c+v+s로 구성되며, 수입으로 소비되는 새 가치는 v+s뿐이라는 점에서 스미스식 “모든 가치는 수입으로 분해된다”는 명제를 비판한다.",
+            "en": "Chapter 49 criticizes the Smithian claim that all value resolves into revenue by distinguishing total product value c+v+s from new value consumed as revenue, v+s."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch49.htm",
           "lessons": [
@@ -40798,13 +40798,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "둘 다 `s`(잉여가치)의 분할형태이며, 정상적으로 `평균이윤+지대 <= s`다.",
+                      "둘 다 s(잉여가치)의 분할형태이며, 정상적으로 평균이윤+지대 <= s다.",
                       "이윤은 자본의 산물이고 지대는 토지의 산물이어서 서로 다른 가치원천이다.",
                       "지대가 먼저 결정되고 남은 부분이 평균이윤으로 산업자본에 배분된다.",
                       "이윤과 지대는 생산 후 세금처럼 붙는 항목이므로 상품가치 밖에 있다."
                     ],
                     "en": [
-                      "Both are divided forms of `s` (surplus-value), and normally `average profit + rent <= s`.",
+                      "Both are divided forms of s (surplus-value), and normally average profit + rent <= s.",
                       "Profit is the product of capital and rent the product of land, so they are different value sources.",
                       "Rent is determined first, and the remainder is distributed to industrial capital as average profit.",
                       "Profit and rent are added like taxes after production and stand outside commodity value."
@@ -40812,8 +40812,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "평균이윤과 지대는 새 가치 원천이 아니다. `s`가 이윤ㆍ이자ㆍ지대 등으로 나뉘므로, 그 합계는 총잉여가치 `s`를 넘어설 수 없다.",
-                    "en": "Average profit and rent are not new sources of value. Since `s` is divided into profit, interest, rent, and related forms, their sum cannot exceed total surplus-value `s`."
+                    "ko": "평균이윤과 지대는 새 가치 원천이 아니다. s가 이윤ㆍ이자ㆍ지대 등으로 나뉘므로, 그 합계는 총잉여가치 s를 넘어설 수 없다. 부등호가 등호가 아니라 <=로 표시되는 이유는 s의 일부가 이자나 상업이윤 같은 다른 잉여가치 분할형태로 갈 수 있기 때문이다.",
+                    "en": "Average profit and rent are not new sources of value. Since s is divided into profit, interest, rent, and related forms, their sum cannot exceed total surplus-value s. The sign is <= rather than equality because part of s may go to other divided forms of surplus-value, such as interest or commercial profit."
                   },
                   "id": "q1",
                   "points": 2
@@ -40826,13 +40826,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "새 가치는 `v+s`로 임금ㆍ이윤ㆍ지대로 분해되지만, 총생산물 가치는 `c+v+s`라서 보충되어야 할 `c`도 들어 있다.",
+                      "새 가치는 v+s로 임금ㆍ이윤ㆍ지대로 분해되지만, 총생산물 가치는 c+v+s라서 보충되어야 할 c도 들어 있다.",
                       "총생산물의 가치는 모두 임금, 이윤, 지대라서 불변자본은 회계상 중복 항목이다.",
                       "불변자본은 새 가치를 창조하므로 임금보다 먼저 수입으로 분배된다.",
                       "새 가치는 생산수단의 이전가치이고 총생산물은 노동자의 소비재 가치다."
                     ],
                     "en": [
-                      "New value `v+s` resolves into wages, profit, and rent, but total product value is `c+v+s`, so it also contains `c` to be replaced.",
+                      "New value v+s resolves into wages, profit, and rent, but total product value is c+v+s, so it also contains c to be replaced.",
                       "The total product is entirely wages, profit, and rent, so constant capital is a duplicate accounting item.",
                       "Constant capital creates new value and is distributed as revenue before wages.",
                       "New value is the transferred value of means of production, while total product is workers’ consumption goods."
@@ -40840,8 +40840,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "스미스식 수입분해는 `v+s`에는 맞아 보여도 `c+v+s` 전체에는 맞지 않는다. `c`는 수입으로 소비되는 것이 아니라 생산수단으로 보충되어야 한다.",
-                    "en": "The Smithian revenue decomposition may seem true of `v+s`, but not of the whole `c+v+s`. `c` is not consumed as revenue; it must be replaced as means of production."
+                    "ko": "스미스식 수입분해는 v+s에는 맞아 보여도 c+v+s 전체에는 맞지 않는다. c는 수입으로 소비되는 것이 아니라 생산수단으로 보충되어야 한다.",
+                    "en": "The Smithian revenue decomposition may seem true of v+s, but not of the whole c+v+s. c is not consumed as revenue; it must be replaced as means of production."
                   },
                   "id": "q2",
                   "points": 2
@@ -40868,8 +40868,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "총생산물 분석은 가치분해만이 아니라 물적 재생산 조건을 포함한다. `c`는 새 가치가 아니지만, 같은 규모의 재생산을 위해 생산수단 형태로 다시 마련되어야 한다.",
-                    "en": "Analysis of the total product includes not only value decomposition but material reproduction. `c` is not new value, but it must be replaced in the form of means of production for reproduction on the same scale."
+                    "ko": "총생산물 분석은 가치분해만이 아니라 물적 재생산 조건을 포함한다. c는 새 가치가 아니지만, 같은 규모의 재생산을 위해 생산수단 형태로 다시 마련되어야 한다.",
+                    "en": "Analysis of the total product includes not only value decomposition but material reproduction. c is not new value, but it must be replaced in the form of means of production for reproduction on the same scale."
                   },
                   "id": "q3",
                   "points": 2
@@ -40877,27 +40877,27 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "“한 사람에게 수입인 것이 다른 사람에게 자본일 수 있다”는 말을 제49장의 `c+v+s` 분석 안에서 어떻게 이해해야 하는가?",
-                    "en": "How should the claim “what is revenue for one person may be capital for another” be understood within Chapter 49’s `c+v+s` analysis?"
+                    "ko": "“한 사람에게 수입인 것이 다른 사람에게 자본일 수 있다”는 말을 제49장의 c+v+s 분석 안에서 어떻게 이해해야 하는가?",
+                    "en": "How should the claim “what is revenue for one person may be capital for another” be understood within Chapter 49’s c+v+s analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "상품의 사용 방식은 구매자와 판매자에게 다를 수 있지만, 그 상품가치가 `c+v+s` 중 어떤 성분으로 이루어졌는지는 그 때문에 사라지지 않는다.",
-                      "수입으로 받은 화폐가 다음 거래에서 자본으로 쓰이면, 그 상품을 만든 불변자본 `c`는 사회 전체에서 없어졌다는 뜻이다.",
+                      "상품의 사용 방식은 구매자와 판매자에게 다를 수 있지만, 그 상품가치가 c+v+s 중 어떤 성분으로 이루어졌는지는 그 때문에 사라지지 않는다.",
+                      "수입으로 받은 화폐가 다음 거래에서 자본으로 쓰이면, 그 상품을 만든 불변자본 c는 사회 전체에서 없어졌다는 뜻이다.",
                       "판매자의 이윤은 구매자의 임금으로 변하므로 같은 가치가 거래될 때마다 새 가치가 추가로 생긴다는 뜻이다.",
                       "구매자가 생산수단으로 쓰는 상품은 이전 노동시간과 무관해져 오직 현재 사용목적만으로 가치가 정해진다는 뜻이다."
                     ],
                     "en": [
-                      "The use of a commodity can differ for buyer and seller, but that does not erase which parts of its value belong to `c+v+s`.",
-                      "If money received as revenue is next used as capital, the constant capital `c` that made the commodity disappears from society as a whole.",
+                      "The use of a commodity can differ for buyer and seller, but that does not erase which parts of its value belong to c+v+s.",
+                      "If money received as revenue is next used as capital, the constant capital c that made the commodity disappears from society as a whole.",
                       "The seller’s profit becomes the buyer’s wage, so new value is added each time the same value is traded.",
                       "A commodity used as a means of production becomes unrelated to past labour-time and is valued only by its current use."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스가 비판하는 혼동은 개인별 사용형태와 사회적 가치구성을 섞는 데서 생긴다. 어떤 상품이 구매자에게 자본으로 쓰여도, 그 상품가치 안의 `c`, `v`, `s` 성분과 사회적 보충 문제는 없어지지 않는다.",
-                    "en": "The confusion comes from mixing individual use with social value composition. Even if a commodity functions as capital for the buyer, the `c`, `v`, and `s` contained in its value, and the problem of social replacement, do not disappear."
+                    "ko": "마르크스가 비판하는 혼동은 개인별 사용형태와 사회적 가치구성을 섞는 데서 생긴다. 어떤 상품이 구매자에게 자본으로 쓰여도, 그 상품가치 안의 c, v, s 성분과 사회적 보충 문제는 없어지지 않는다.",
+                    "en": "The confusion comes from mixing individual use with social value composition. Even if a commodity functions as capital for the buyer, the c, v, and s contained in its value, and the problem of social replacement, do not disappear."
                   },
                   "id": "q4",
                   "points": 2
@@ -40910,13 +40910,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "새 가치 `v+s`가 임금ㆍ이윤ㆍ지대로 분배되는 사실이, 경쟁 속에서는 그 수입들이 가치를 만든다는 역전으로 나타나기 때문이다.",
+                      "새 가치 v+s가 임금ㆍ이윤ㆍ지대로 분배되는 사실이, 경쟁 속에서는 그 수입들이 가치를 만드는 것처럼 보이는 역전으로 나타나기 때문이다.",
                       "총생산물이 수입으로 완전히 분해되므로 경쟁은 가치법칙을 그대로 투명하게 보여 주기 때문이다.",
                       "불변자본 보충이 시장 밖에서 끝나 경쟁가격 분석이 필요 없어지기 때문이다.",
                       "임금과 지대가 생산물 가치에서 사라져 이윤율만 남기 때문이다."
                     ],
                     "en": [
-                      "Because the fact that new value `v+s` is distributed into wages, profit, and rent appears in competition as if those revenues create value.",
+                      "Because the fact that new value v+s is distributed into wages, profit, and rent appears in competition as if those revenues create value.",
                       "Because the total product fully decomposes into revenues, competition transparently shows the law of value.",
                       "Because constant-capital replacement occurs outside the market, price analysis becomes unnecessary.",
                       "Because wages and rent vanish from product value, leaving only the profit rate."
@@ -40924,8 +40924,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산과정 분석은 `c+v+s`와 `v+s`를 구분하게 해 준다. 이 구분이 있어야 경쟁 속에서 수입항목이 가격 원천처럼 보이는 전도를 비판할 수 있다.",
-                    "en": "Production-process analysis distinguishes `c+v+s` from `v+s`. This distinction is needed to criticize the inversion in competition, where revenue items appear as price sources."
+                    "ko": "생산과정 분석은 c+v+s와 v+s를 구분하게 해 준다. 이 구분이 있어야 경쟁 속에서 수입항목이 가격 원천처럼 보이는 전도를 비판할 수 있다.",
+                    "en": "Production-process analysis distinguishes c+v+s from v+s. This distinction is needed to criticize the inversion in competition, where revenue items appear as price sources."
                   },
                   "id": "q5",
                   "points": 2
@@ -40943,18 +40943,18 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "단순재생산 도식 `I 4000c+1000v+1000s`, `II 2000c+500v+500s`에서 핵심 교환조건은 무엇인가?",
-                    "en": "In the simple reproduction schema `I 4000c+1000v+1000s`, `II 2000c+500v+500s`, what is the key exchange condition?"
+                    "ko": "단순재생산 도식 I 4000c+1000v+1000s, II 2000c+500v+500s에서 핵심 교환조건은 무엇인가?",
+                    "en": "In the simple reproduction schema I 4000c+1000v+1000s, II 2000c+500v+500s, what is the key exchange condition?"
                   },
                   "choices": {
                     "ko": [
-                      "`I(v+s)=IIc`, 즉 `1000v+1000s=2000c`가 성립해 I의 수입과 II의 불변자본 보충이 맞물린다.",
+                      "I(v+s)=IIc, 즉 1000v+1000s=2000c가 성립해 생산수단 부문 I의 v+s 가치량과 소비재 부문 II의 불변자본 보충량이 일치한다.",
                       "I의 4000c가 II의 500v와 교환되어 노동자의 소비재 수요를 모두 충족한다.",
                       "II의 500s가 I의 4000c를 대체하므로 사치소비가 생산수단을 보충한다.",
                       "두 부문의 잉여가치 1500이 모두 I 내부에서 축적되어 단순재생산을 이룬다."
                     ],
                     "en": [
-                      "`I(v+s)=IIc`, that is, `1000v+1000s=2000c`: I’s revenue and II’s replacement of constant capital interlock.",
+                      "I(v+s)=IIc, that is, 1000v+1000s=2000c: the v+s value amount in means-of-production Department I equals the amount needed to replace constant capital in consumption-goods Department II.",
                       "I’s 4000c exchanges with II’s 500v and satisfies all workers’ demand for consumer goods.",
                       "II’s 500s replaces I’s 4000c, so luxury consumption replaces means of production.",
                       "The 1500 of surplus-value in both departments is accumulated inside I, producing simple reproduction."
@@ -40962,8 +40962,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "`I(v+s)=IIc`는 I의 노동자ㆍ자본가ㆍ지주가 II의 소비재를 사고, II가 I의 생산수단으로 자기 `2000c`를 보충한다는 뜻이다.",
-                    "en": "`I(v+s)=IIc` means workers, capitalists, and landlords in I buy II consumption goods, while II replaces its `2000c` with means of production from I."
+                    "ko": "I(v+s)=IIc는 생산수단 부문 I의 v+s가 소비재 부문 II의 c와 같은 양이라는 뜻이다. 생산수단 부문 I의 노동자ㆍ자본가ㆍ지주는 소비재 부문 II의 소비재를 사고, 소비재 부문 II는 생산수단 부문 I의 생산수단으로 자기 2000c를 보충한다.",
+                    "en": "I(v+s)=IIc means that v+s in means-of-production Department I equals c in consumption-goods Department II. Workers, capitalists, and landlords in means-of-production Department I buy consumption goods from Department II, while consumption-goods Department II replaces its 2000c with means of production from Department I."
                   },
                   "id": "q1",
                   "points": 3
@@ -41027,7 +41027,7 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "실잣값을 짜는 사람에게서 분석할 때 생기는 혼동을 피한 설명은 무엇인가?",
+                    "ko": "짜는 사람이 원료로 쓰는 실의 가치를 분석할 때 생기는 혼동을 피한 설명은 무엇인가?",
                     "en": "Which explanation avoids the confusion in analyzing the value of yarn for a weaver?"
                   },
                   "choices": {
@@ -41074,8 +41074,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "수입은 `v+s`의 분배형태이지 총생산물 `c+v+s` 전체의 이름이 아니다. 수입 범주의 과잉확대가 `c`의 보충 문제와 부문 간 교환 조건을 가린다.",
-                    "en": "Revenue is a distribution form of `v+s`, not the name of the whole total product `c+v+s`. Overextending the revenue category conceals replacement of `c` and interdepartmental exchange conditions."
+                    "ko": "수입은 v+s의 분배형태이지 총생산물 c+v+s 전체의 이름이 아니다. 수입 범주의 과잉확대가 c의 보충 문제와 부문 간 교환 조건을 가린다.",
+                    "en": "Revenue is a distribution form of v+s, not the name of the whole total product c+v+s. Overextending the revenue category conceals replacement of c and interdepartmental exchange conditions."
                   },
                   "id": "q5",
                   "points": 3
@@ -41084,36 +41084,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "기호 `c`(불변자본), `v`(가변자본), `s`(잉여가치)를 놓고 `profit+rent <= s`, `새 가치=v+s`, `총생산물=c+v+s`, `I(v+s)=IIc`의 의미를 잡는다.",
-            "en": "Use the symbols `c` (constant capital), `v` (variable capital), and `s` (surplus-value) to grasp `profit+rent <= s`, `new value=v+s`, `total product=c+v+s`, and `I(v+s)=IIc`."
+            "ko": "기호 c(불변자본), v(가변자본), s(잉여가치)를 놓고 이윤+지대 <= s, 새 가치=v+s, 총생산물=c+v+s, 그리고 생산수단 부문 I과 소비재 부문 II의 교환조건 I(v+s)=IIc의 의미를 잡는다.",
+            "en": "Use the symbols c (constant capital), v (variable capital), and s (surplus-value) to grasp profit+rent <= s, new value=v+s, total product=c+v+s, and the exchange condition I(v+s)=IIc between means-of-production Department I and consumption-goods Department II."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "가치 구성",
-                "text": "총생산물의 가치는 `c+v+s`다. `v+s`는 새로 추가된 노동이 만든 새 가치이고, `c`는 이전 생산수단의 이전가치다."
+                "text": "총생산물의 가치는 c+v+s다. v+s는 새로 추가된 노동이 만든 새 가치이고, c는 이전 생산수단의 이전가치다."
               },
               {
                 "title": "수입의 한계",
-                "text": "임금은 `v`의 수입형태이고, 이윤ㆍ이자ㆍ지대는 `s`의 분할형태다. 따라서 정상적으로 `평균이윤+지대 <= s`다."
+                "text": "임금은 v의 수입형태이고, 이윤ㆍ이자ㆍ지대는 s의 분할형태다. 따라서 정상적으로 평균이윤+지대 <= s다. s의 일부가 이자 등 다른 형태로 나뉠 수 있으므로 항상 등호가 되는 것은 아니다."
               },
               {
                 "title": "재생산 조건",
-                "text": "단순재생산 도식에서 `I:4000c+1000v+1000s`, `II:2000c+500v+500s`이면 핵심 교환은 `I(v+s)=IIc=2000`이다."
+                "text": "단순재생산 도식에서 I:4000c+1000v+1000s, II:2000c+500v+500s이면 핵심 교환은 I(v+s)=IIc=2000이다. 생산수단 부문 I의 v+s와 소비재 부문 II의 c의 양이 모두 2000으로 일치한다."
               }
             ],
             "en": [
               {
                 "title": "Value composition",
-                "text": "The total product has value `c+v+s`. `v+s` is new value created by newly added labour, while `c` is transferred value of means of production."
+                "text": "The total product has value c+v+s. v+s is new value created by newly added labour, while c is transferred value of means of production."
               },
               {
                 "title": "Limit of revenues",
-                "text": "Wages are the revenue-form of `v`, while profit, interest, and rent are divided forms of `s`. Thus normally `average profit + rent <= s`."
+                "text": "Wages are the revenue-form of v, while profit, interest, and rent are divided forms of s. Thus normally average profit + rent <= s. Equality is not guaranteed because part of s may be divided into other forms, such as interest."
               },
               {
                 "title": "Reproduction condition",
-                "text": "In simple reproduction, `I:4000c+1000v+1000s`, `II:2000c+500v+500s`; the key exchange is `I(v+s)=IIc=2000`."
+                "text": "In simple reproduction, I:4000c+1000v+1000s, II:2000c+500v+500s; the key exchange is I(v+s)=IIc=2000. The amount of v+s in means-of-production Department I equals the amount of c in consumption-goods Department II: both are 2000."
               }
             ]
           },
@@ -41122,16 +41122,16 @@
               {
                 "title": "기호와 수식",
                 "items": [
-                  "`c` = 불변자본: 원료ㆍ기계 등 생산수단에서 이전되는 가치다. 새 가치를 만들지는 않지만 총생산물 안에 보존되어 보충되어야 한다.",
-                  "`v` = 가변자본: 노동력 구매에 선대된 가치이며 임금으로 나타난다. 노동자는 `v`를 재생산하고 그 이상으로 `s`를 만든다.",
-                  "`s` = 잉여가치: 미지불 잉여노동이 만든 가치다. 이윤, 이자, 지대는 `s`의 분할형태다."
+                  "c = 불변자본: 원료ㆍ기계 등 생산수단에서 이전되는 가치다. 새 가치를 만들지는 않지만 총생산물 안에 보존되어 보충되어야 한다.",
+                  "v = 가변자본: 노동력 구매에 선대된 가치이며 임금으로 나타난다. 노동자는 v를 재생산하고 그 이상으로 s를 만든다.",
+                  "s = 잉여가치: 미지불 잉여노동이 만든 가치다. 이윤, 이자, 지대는 s의 분할형태다. 그래서 이윤+지대는 s를 넘을 수 없지만, 이자 등 다른 몫이 있으면 s보다 작을 수 있다."
                 ]
               },
               {
                 "title": "새 가치와 총생산물",
                 "items": [
-                  "새 가치 = `v+s` = 임금 + 이윤 + 지대. 이 식은 “올해 추가된 노동이 만든 가치”에 대해서만 맞다.",
-                  "총생산물 가치 = `c+v+s`. 총생산물에는 수입으로 소비될 수 없는 `c`가 들어 있고, 이 부분은 생산수단으로 물적으로 보충되어야 한다.",
+                  "새 가치 = v+s = 임금 + 이윤 + 지대. 이 식은 “올해 추가된 노동이 만든 가치”에 대해서만 맞다.",
+                  "총생산물 가치 = c+v+s. 총생산물에는 수입으로 소비될 수 없는 c가 들어 있고, 이 부분은 생산수단으로 물적으로 보충되어야 한다.",
                   "그래서 “모든 가치는 임금ㆍ이윤ㆍ지대로 분해된다”는 말은 새 가치에는 맞아 보여도 사회적 총생산물에는 틀리다."
                 ]
               },
@@ -41139,8 +41139,8 @@
                 "title": "단순재생산 도식",
                 "items": [
                   "부문 I은 생산수단을 만들고, 부문 II는 소비재를 만든다.",
-                  "도식: `I 4000c+1000v+1000s=6000`, `II 2000c+500v+500s=3000`.",
-                  "정상적 단순재생산의 핵심 조건은 `I(v+s)=IIc`, 즉 `1000v+1000s=2000c`다. I의 수입은 II의 소비재를 사고, II는 그 대가로 I의 생산수단을 받아 자기 `c`를 보충한다."
+                  "도식: I 4000c+1000v+1000s=6000, II 2000c+500v+500s=3000.",
+                  "정상적 단순재생산의 핵심 조건은 I(v+s)=IIc, 즉 1000v+1000s=2000c다. 여기서 생산수단 부문 I의 v+s는 임금과 잉여가치로 이루어진 가치량이며, 소비재 구매에 수입으로 지출된다. 이 v+s 가치량은 소비재 부문 II의 불변자본 보충량과 일치해야 한다. 생산수단 부문 I의 노동자와 자본가는 소비재 부문 II의 소비재를 사고, 소비재 부문 II는 그 대가로 생산수단 부문 I의 생산수단을 받아 자기 c를 보충한다."
                 ]
               }
             ],
@@ -41148,16 +41148,16 @@
               {
                 "title": "Symbols And Formulas",
                 "items": [
-                  "`c` = constant capital: value transferred from means of production such as raw materials and machinery. It does not create new value, but it is preserved in the total product and must be replaced.",
-                  "`v` = variable capital: value advanced to buy labour-power, appearing as wages. Labour reproduces `v` and creates `s` beyond it.",
-                  "`s` = surplus-value: value created by unpaid surplus labour. Profit, interest, and rent are divided forms of `s`."
+                  "c = constant capital: value transferred from means of production such as raw materials and machinery. It does not create new value, but it is preserved in the total product and must be replaced.",
+                  "v = variable capital: value advanced to buy labour-power, appearing as wages. Labour reproduces v and creates s beyond it.",
+                  "s = surplus-value: value created by unpaid surplus labour. Profit, interest, and rent are divided forms of s. Profit plus rent cannot exceed s, but it can be smaller than s when other portions, such as interest, are separated out."
                 ]
               },
               {
                 "title": "New Value And Total Product",
                 "items": [
-                  "New value = `v+s` = wages + profit + rent. This is valid only for the value newly added by labour during the year.",
-                  "Total product value = `c+v+s`. The total product contains `c`, which cannot be consumed as revenue and must be replaced materially as means of production.",
+                  "New value = v+s = wages + profit + rent. This is valid only for the value newly added by labour during the year.",
+                  "Total product value = c+v+s. The total product contains c, which cannot be consumed as revenue and must be replaced materially as means of production.",
                   "Thus “all value resolves into wages, profit, and rent” may seem true of new value, but it is false for the social total product."
                 ]
               },
@@ -41165,8 +41165,8 @@
                 "title": "Simple Reproduction Schema",
                 "items": [
                   "Department I produces means of production; Department II produces articles of consumption.",
-                  "Schema: `I 4000c+1000v+1000s=6000`, `II 2000c+500v+500s=3000`.",
-                  "The key condition for normal simple reproduction is `I(v+s)=IIc`, or `1000v+1000s=2000c`. I spends its revenue on II consumption goods, while II replaces its `c` with means of production from I."
+                  "Schema: I 4000c+1000v+1000s=6000, II 2000c+500v+500s=3000.",
+                  "The key condition for normal simple reproduction is I(v+s)=IIc, or 1000v+1000s=2000c. Here v+s in means-of-production Department I is the value amount made up of wages and surplus-value, spent as revenue on consumption goods. This v+s value amount must equal consumption-goods Department II's constant-capital replacement. Workers and capitalists in means-of-production Department I buy consumption goods from Department II, while consumption-goods Department II replaces its c with means of production from Department I."
                 ]
               }
             ]
