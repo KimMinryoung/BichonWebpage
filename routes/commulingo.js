@@ -1,126 +1,11 @@
 const express = require('express');
 const db = require('../config/database');
-const { loadCommuLingoBundle } = require('../data/commulingo');
+const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 
 const router = express.Router();
-const PUBLIC_CHAPTER_LIMITS = {
-    'capital-vol1': 33,
-    'capital-vol2': 21,
-    'capital-vol3': 52,
-    'lenin-imperialism': 10,
-};
 
-let lessonsCache = null;
-
-function readLessons() {
-    const loaded = loadCommuLingoBundle();
-    if (lessonsCache && lessonsCache.mtimeMs === loaded.mtimeMs) return lessonsCache.bundle;
-    lessonsCache = {
-        mtimeMs: loaded.mtimeMs,
-        version: loaded.version,
-        bundle: loaded.bundle,
-        publicBundle: null,
-        catalog: null,
-        lessonsById: null,
-    };
-    return loaded.bundle;
-}
-
-function currentVersion() {
-    readLessons();
-    return lessonsCache.version;
-}
-
-function publicLessons(bundle) {
-    readLessons();
-    if (lessonsCache.publicBundle) return lessonsCache.publicBundle;
-    lessonsCache.publicBundle = {
-        ...bundle,
-        version: currentVersion(),
-        collections: (bundle.collections || [])
-            .map(collection => {
-                const chapterLimit = PUBLIC_CHAPTER_LIMITS[collection.id] || 0;
-                return {
-                    ...collection,
-                    chapters: (collection.chapters || []).filter(chapter => (
-                        chapterLimit > 0 && Number(chapter.chapterNumber) <= chapterLimit
-                    )),
-                };
-            })
-            .filter(collection => collection.chapters.length > 0),
-    };
-    return lessonsCache.publicBundle;
-}
-
-function lessonQuestionCount(lesson) {
-    return Array.isArray(lesson.questions) ? lesson.questions.length : 0;
-}
-
-function publicCatalog(bundle) {
-    readLessons();
-    if (lessonsCache.catalog) return lessonsCache.catalog;
-    const publicBundle = publicLessons(bundle);
-    lessonsCache.catalog = {
-        version: publicBundle.version,
-        collections: (publicBundle.collections || []).map(collection => ({
-            id: collection.id,
-            volumeNumber: collection.volumeNumber,
-            title: collection.title,
-            description: collection.description,
-            bookTitle: collection.bookTitle,
-            chapters: (collection.chapters || []).map(chapter => ({
-                id: chapter.id,
-                volumeNumber: chapter.volumeNumber,
-                chapterNumber: chapter.chapterNumber,
-                partNumber: chapter.partNumber,
-                partTitle: chapter.partTitle,
-                title: chapter.title,
-                summary: chapter.summary,
-                sourceUrl: chapter.sourceUrl,
-                learningFocus: chapter.learningFocus,
-                lessons: (chapter.lessons || []).map(lesson => ({
-                    id: lesson.id,
-                    level: lesson.level,
-                    title: lesson.title,
-                    questionCount: lessonQuestionCount(lesson),
-                })),
-            })),
-        })),
-    };
-    return lessonsCache.catalog;
-}
-
-function publicLessonsById(bundle) {
-    readLessons();
-    if (lessonsCache.lessonsById) return lessonsCache.lessonsById;
-    const byId = new Map();
-    const publicBundle = publicLessons(bundle);
-    (publicBundle.collections || []).forEach(collection => {
-        (collection.chapters || []).forEach(chapter => {
-            (chapter.lessons || []).forEach(lesson => {
-                byId.set(lesson.id, {
-                    id: lesson.id,
-                    collectionId: collection.id,
-                    collectionTitle: collection.title,
-                    chapterNumber: chapter.chapterNumber,
-                    chapterTitle: chapter.title,
-                    title: lesson.title,
-                    level: lesson.level,
-                    summary: chapter.summary,
-                    focus: chapter.learningFocus,
-                    conceptBrief: chapter.conceptBrief,
-                    conceptMap: chapter.conceptMap,
-                    questions: lesson.questions || [],
-                });
-            });
-        });
-    });
-    lessonsCache.lessonsById = byId;
-    return byId;
-}
-
-function setPublicDataCache(req, res) {
-    if (req.query && req.query.v === currentVersion()) {
+function setPublicDataCache(req, res, version) {
+    if (req.query && req.query.v === version) {
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
         return;
     }
@@ -145,7 +30,7 @@ function normalizeProgress(raw) {
 }
 
 router.get('/', (req, res) => {
-    const lessons = publicCatalog(readLessons());
+    const lessons = loadCommuLingoCatalog();
     res.render('public/commulingo', {
         lessons,
         pageTitle: res.locals.strings.commuLingo.title,
@@ -156,16 +41,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/catalog.json', (req, res) => {
-    setPublicDataCache(req, res);
-    res.json(publicCatalog(readLessons()));
+    const catalog = loadCommuLingoCatalog();
+    setPublicDataCache(req, res, catalog.version);
+    res.json(catalog);
 });
 
 router.get('/lesson/:lessonId', (req, res) => {
     const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
-    const lesson = publicLessonsById(readLessons()).get(lessonId);
-    if (!lesson) return res.status(404).json({ error: 'lesson not found' });
-    setPublicDataCache(req, res);
-    res.json({ version: currentVersion(), lesson });
+    const payload = loadCommuLingoLesson(lessonId);
+    if (!payload) return res.status(404).json({ error: 'lesson not found' });
+    setPublicDataCache(req, res, payload.version);
+    res.json(payload);
 });
 
 router.get('/progress', async (req, res) => {

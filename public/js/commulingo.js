@@ -500,7 +500,15 @@
             '</span>'
         ].join('');
         button.addEventListener('click', function() { startLesson(lesson); });
+        button.addEventListener('mouseenter', function() { prefetchLessonDetail(lesson); });
+        button.addEventListener('focus', function() { prefetchLessonDetail(lesson); });
+        button.addEventListener('touchstart', function() { prefetchLessonDetail(lesson); }, { passive: true });
         return button;
+    }
+
+    function prefetchLessonDetail(lesson) {
+        if (lesson.locked || !lessonQuestionCount(lesson) || lessonDetails[lesson.id]) return;
+        loadLessonDetail(lesson).catch(function() {});
     }
 
     function lessonActionTitle(lesson) {

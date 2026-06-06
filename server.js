@@ -56,6 +56,12 @@ function isPublicHtmlPath(reqPath) {
         || /^\/p\/[^/]+$/.test(reqPath);
 }
 
+function isPublicCommuLingoDataPath(reqPath) {
+    const lessonPrefix = '/commulingo/lesson/';
+    return reqPath === '/commulingo/catalog.json'
+        || (reqPath.startsWith(lessonPrefix) && !reqPath.slice(lessonPrefix.length).includes('/'));
+}
+
 function hasSessionCookie(req) {
     return Boolean(req.cookies && req.cookies['connect.sid']);
 }
@@ -66,7 +72,7 @@ function hasLanguageCookie(req) {
 
 function isSessionFreeRequest(req) {
     if (req.method !== 'GET' && req.method !== 'HEAD') return false;
-    if (isStaticAssetPath(req.path) || isCacheablePublicTextPath(req.path)) return true;
+    if (isStaticAssetPath(req.path) || isCacheablePublicTextPath(req.path) || isPublicCommuLingoDataPath(req.path)) return true;
     return isPublicHtmlPath(req.path) && !hasSessionCookie(req);
 }
 
@@ -201,7 +207,7 @@ app.use((req, res, next) => {
         res.locals.isAuthenticated = false;
         res.locals.adminUser = null;
         res.locals.currentUser = null;
-        const lang = isCacheablePublicTextPath(req.path)
+        const lang = (isCacheablePublicTextPath(req.path) || isPublicCommuLingoDataPath(req.path))
             ? (normalizeLanguage(req.cookies.lang) || 'ko')
             : (normalizeLanguage(req.cookies.lang) || resolveLanguage(req, res));
         res.locals.lang = lang;

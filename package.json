@@ -12,7 +12,8 @@
     "sprite:generate": "node tools/sprite-pipeline.js generate",
     "sprite:process": "node tools/sprite-pipeline.js process",
     "sprite:batch": "node tools/sprite-pipeline.js batch",
-    "sprite:list": "node tools/sprite-pipeline.js list"
+    "sprite:list": "node tools/sprite-pipeline.js list",
+    "commulingo:build": "node scripts/build-commulingo-shards.js"
   },
   "dependencies": {
     "@simplewebauthn/server": "^13.3.0",
