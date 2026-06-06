@@ -306,6 +306,7 @@ app.use((req, res, next) => {
         return next();
     }
     const isHtmlRequest = (req.method === 'GET' || req.method === 'HEAD')
+        && !isPublicCommuLingoDataPath(req.path)
         && !path.extname(req.path)
         && !req.path.startsWith('/api/')
         && !req.path.startsWith('/admin')
