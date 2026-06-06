@@ -40469,26 +40469,26 @@
                   "type": "multiple_choice",
                   "prompt": {
                     "ko": "“현상형태와 본질이 곧 일치한다면 과학은 필요 없을 것”이라는 말의 의미는 무엇인가?",
-                    "en": "What does Marx mean when he says science would be unnecessary if appearance and essence directly coincided?"
+                    "en": "What does Marx mean by saying that all science would be superfluous if appearance and essence directly coincided?"
                   },
                   "choices": {
                     "ko": [
-                      "경쟁의 표면에서는 수입들이 독립 원천처럼 보이므로 내적 관계를 분석해야 한다는 뜻이다.",
-                      "가격표에 나타난 숫자가 가치의 본질을 완전히 보여 주므로 이론이 간단하다는 뜻이다.",
+                      "경쟁의 표면에서는 수입들이 독립 원천처럼 보이므로, 과학은 그 표면이 생기는 내적 관계를 분석해야 한다는 뜻이다.",
+                      "가격표에 나타난 숫자가 가치의 본질을 완전히 보여 주므로 이론은 단순한 계산표로 충분하다는 뜻이다.",
                       "일상 경험은 본질을 숨기지 않으므로 경제학은 회계기술로 충분하다는 뜻이다.",
-                      "본질은 관찰 가능한 가격 운동 뒤에 놓이므로 과학적 설명은 수입형태 밖에서 출발한다."
+                      "본질은 가격표에 직접 보이지 않으므로 임금ㆍ이윤ㆍ지대 같은 실제 수입형태는 분석에서 버려야 한다는 뜻이다."
                     ],
                     "en": [
-                      "On the surface of competition revenues look independent, so their inner relation must be analyzed.",
-                      "Numbers on price lists fully reveal the essence of value, so theory is simple.",
-                      "Everyday experience does not conceal essence, so bookkeeping is enough for economics.",
-                      "Essence lies behind observable price movements, so scientific explanation begins outside revenue forms."
+                      "On the surface of competition, revenues appear as independent sources, so science must analyze the inner relations that produce this surface.",
+                      "The numbers on price lists fully reveal the essence of value, so theory is only a simple table of calculation.",
+                      "Everyday experience does not hide essence, so economics is enough as bookkeeping technique.",
+                      "Essence is not directly visible on price lists, so real revenue forms such as wages, profit, and rent should be discarded from analysis."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 비판은 표면을 버리는 것이 아니라 표면이 왜 그렇게 보이는지 밝히는 것이다.",
-                    "en": "Marx does not discard appearances; he explains why they appear as they do."
+                    "ko": "핵심은 표면을 무시하는 것이 아니다. 임금ㆍ이윤ㆍ지대가 실제 경쟁에서는 가격 구성요소처럼 보이지만, 과학적 설명은 그 현상형태가 `v+s`의 생산과 분배관계에서 어떻게 생기는지 밝혀야 한다.",
+                    "en": "The point is not to ignore the surface. Wages, profit, and rent really appear in competition as price components, but scientific explanation must show how that form arises from the production and distribution of `v+s`."
                   },
                   "id": "q4",
                   "points": 2
@@ -40713,25 +40713,25 @@
               {
                 "title": "공식과 기호",
                 "items": [
-                  "삼위일체 공식: `자본-이자, 토지-지대, 노동-임금`. 더 일반적으로는 `자본-이윤, 토지-지대, 노동-임금`이다.",
-                  "`s`는 잉여가치다. 이윤, 기업가이득, 이자, 지대는 새 가치 원천이 아니라 `s`가 나뉘어 취하는 형태다.",
-                  "임금은 “노동의 가격”처럼 보이지만, 실제로 가격을 갖는 것은 노동이 아니라 노동력이다."
+                  "삼위일체 공식은 `자본-이자`, `토지-지대`, `노동-임금`을 나란히 놓는다. 더 일반적으로는 `자본-이윤`, `토지-지대`, `노동-임금`이다.",
+                  "`s`는 잉여가치다. 이윤, 기업가이득, 이자, 지대는 별도의 가치 원천이 아니라 `s`가 나뉘어 취하는 분배형태다.",
+                  "임금은 “노동의 가격”처럼 보이지만, 실제로 상품으로 팔리는 것은 노동 자체가 아니라 노동력이다."
                 ]
               },
               {
                 "title": "왜 물신적인가",
                 "items": [
-                  "자본은 물건이 아니라 생산수단이 임금노동에 맞서는 특정한 사회관계다.",
-                  "토지는 사용가치를 만드는 자연조건일 수 있지만, 가치나 지대의 직접 원천은 아니다.",
-                  "노동은 어떤 사회에도 있는 활동이지만, 임금노동은 자본주의적 사회형태다. 이 차이가 지워질 때 수입이 자연물에서 솟는 것처럼 보인다."
+                  "자본은 생산수단이라는 물건이 아니라, 생산수단이 임금노동을 지배하고 잉여가치를 흡수하는 사회관계다.",
+                  "토지는 사용가치의 자연조건일 수 있지만 가치의 실체가 아니며, 지대는 토지소유가 매개한 사회적 수입형태다.",
+                  "삼위일체 공식은 이 사회관계를 지워서 자본ㆍ토지ㆍ노동이 각각 자연적으로 이자ㆍ지대ㆍ임금을 낳는 것처럼 보이게 한다."
                 ]
               },
               {
-                "title": "비판의 방향",
+                "title": "현상과 본질",
                 "items": [
-                  "마르크스는 임금ㆍ이자ㆍ지대가 실제 수입형태라는 점을 부정하지 않는다.",
-                  "문제는 이 수입형태가 생산과정의 착취, 잉여가치의 생산, 계급관계를 가리는 방식이다.",
-                  "속류경제학은 이 표면을 설명해야 할 대상으로 삼지 않고, 오히려 그 표면을 이론으로 체계화한다."
+                  "마르크스가 말하는 과학은 현상형태를 버리는 일이 아니다. 경쟁의 표면에서 실제로 그렇게 보이는 이유를 내적 관계로 설명하는 일이다.",
+                  "따라서 분석은 임금ㆍ이윤ㆍ지대라는 수입형태를 무시하지 않는다. 다만 그것들이 가치의 독립 원천이라는 표면의 해석을 비판한다.",
+                  "속류경제학은 표면을 설명해야 할 대상으로 삼지 않고, 그 표면을 그대로 이론으로 체계화한다."
                 ]
               }
             ],
@@ -40739,25 +40739,25 @@
               {
                 "title": "Formula And Symbols",
                 "items": [
-                  "Trinity formula: `capital-interest, land-rent, labour-wages`; more generally, `capital-profit, land-rent, labour-wages`.",
-                  "`s` means surplus-value. Profit, profit of enterprise, interest, and rent are not new value sources; they are divided forms of `s`.",
-                  "Wages appear as the “price of labour,” but what actually has a price is labour-power, not labour as such."
+                  "The trinity formula sets out `capital-interest`, `land-rent`, and `labour-wages`; more generally, `capital-profit`, `land-rent`, and `labour-wages`.",
+                  "`s` means surplus-value. Profit, profit of enterprise, interest, and rent are not separate sources of value but distributional forms of `s`.",
+                  "Wages appear as the “price of labour”, but the commodity actually sold is labour-power, not labour itself."
                 ]
               },
               {
                 "title": "Why It Is Fetishistic",
                 "items": [
-                  "Capital is not a thing, but a specific social relation in which means of production confront wage-labour.",
-                  "Land can be a natural condition of use-value, but it is not the direct source of value or rent.",
-                  "Labour exists in every society, but wage-labour is a capitalist social form. When this difference disappears, revenues seem to spring from things by nature."
+                  "Capital is not the thing called means of production, but a social relation in which means of production dominate wage-labour and absorb surplus-value.",
+                  "Land can be a natural condition of use-value, but it is not the substance of value; rent is a social revenue form mediated by landed property.",
+                  "The trinity formula erases these social relations and makes capital, land, and labour appear to naturally yield interest, rent, and wages."
                 ]
               },
               {
-                "title": "Direction Of Critique",
+                "title": "Appearance And Essence",
                 "items": [
-                  "Marx does not deny that wages, interest, and rent are real revenue forms.",
-                  "The problem is how these forms conceal exploitation in production, production of surplus-value, and class relations.",
-                  "Vulgar economy does not explain this surface; it systematizes the surface as theory."
+                  "For Marx, science does not discard forms of appearance. It explains why the surface of competition really appears as it does by uncovering inner relations.",
+                  "The analysis therefore does not ignore wages, profit, and rent as revenue forms; it criticizes the surface reading that treats them as independent sources of value.",
+                  "Vulgar economics turns the surface into theory instead of explaining it."
                 ]
               }
             ]
@@ -40877,27 +40877,27 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "한 사람에게 수입인 것이 다른 사람에게 자본일 수 있다는 말의 정확한 의미는 무엇인가?",
-                    "en": "What is the precise meaning of saying that what is revenue for one person may be capital for another?"
+                    "ko": "“한 사람에게 수입인 것이 다른 사람에게 자본일 수 있다”는 말을 제49장의 `c+v+s` 분석 안에서 어떻게 이해해야 하는가?",
+                    "en": "How should the claim “what is revenue for one person may be capital for another” be understood within Chapter 49’s `c+v+s` analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "거래 당사자의 사용 방식은 달라도 같은 상품가치의 구성 자체는 그대로 유지된다.",
-                      "수입으로 받은 화폐는 다음 거래에서 소비기금으로 성격이 바뀌어 생산비와 거리를 둔다.",
-                      "판매자의 이윤은 구매자의 임금으로 변하므로 가치 총량이 새로 증가한다.",
-                      "상품의 사회적 기능이 바뀌면 그 상품을 만든 노동시간도 뒤따라 바뀐다."
+                      "상품의 사용 방식은 구매자와 판매자에게 다를 수 있지만, 그 상품가치가 `c+v+s` 중 어떤 성분으로 이루어졌는지는 그 때문에 사라지지 않는다.",
+                      "수입으로 받은 화폐가 다음 거래에서 자본으로 쓰이면, 그 상품을 만든 불변자본 `c`는 사회 전체에서 없어졌다는 뜻이다.",
+                      "판매자의 이윤은 구매자의 임금으로 변하므로 같은 가치가 거래될 때마다 새 가치가 추가로 생긴다는 뜻이다.",
+                      "구매자가 생산수단으로 쓰는 상품은 이전 노동시간과 무관해져 오직 현재 사용목적만으로 가치가 정해진다는 뜻이다."
                     ],
                     "en": [
-                      "The parties may use it differently, but the value composition of the same commodity remains intact.",
-                      "Money received as revenue changes into a consumption fund in the next transaction and stands apart from production costs.",
-                      "The seller’s profit becomes the buyer’s wage, so total value newly increases.",
-                      "When a commodity’s social function changes, the labour-time that produced it changes too."
+                      "The use of a commodity can differ for buyer and seller, but that does not erase which parts of its value belong to `c+v+s`.",
+                      "If money received as revenue is next used as capital, the constant capital `c` that made the commodity disappears from society as a whole.",
+                      "The seller’s profit becomes the buyer’s wage, so new value is added each time the same value is traded.",
+                      "A commodity used as a means of production becomes unrelated to past labour-time and is valued only by its current use."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "수입과 자본의 역할 전환은 가치 구성의 원천을 설명하는 방식이 아니다.",
-                    "en": "The switch between revenue and capital use does not explain the source of value composition."
+                    "ko": "마르크스가 비판하는 혼동은 개인별 사용형태와 사회적 가치구성을 섞는 데서 생긴다. 어떤 상품이 구매자에게 자본으로 쓰여도, 그 상품가치 안의 `c`, `v`, `s` 성분과 사회적 보충 문제는 없어지지 않는다.",
+                    "en": "The confusion comes from mixing individual use with social value composition. Even if a commodity functions as capital for the buyer, the `c`, `v`, and `s` contained in its value, and the problem of social replacement, do not disappear."
                   },
                   "id": "q4",
                   "points": 2
@@ -41640,26 +41640,26 @@
                   "type": "multiple_choice",
                   "prompt": {
                     "ko": "“생산물은 임금, 이윤, 지대로 배분된다”는 표현을 조심해야 하는 이유는 무엇인가?",
-                    "en": "Why must one be careful with the phrase “the product is distributed into wages, profit, and rent”?"
+                    "en": "Why must we be careful with the statement that “the product is distributed into wages, profit, and rent”?"
                   },
                   "choices": {
                     "ko": [
-                      "생산물 일부는 먼저 자본으로 기능하며, 임금도 노동자에게는 자본의 형태로 마주선다.",
-                      "생산물 일부는 생산수단을 보충해야 하며, 임금ㆍ이윤ㆍ지대만으로 총생산물 전체를 설명할 수 없다.",
-                      "생산물 전체가 노동자에게 지급된 뒤 자본가와 지주가 다시 구매한다.",
-                      "이 표현은 지대의 존재만 설명하고 임금과 이윤의 존재를 설명하지 못한다."
+                      "총생산물에는 생산수단을 보충해야 하는 `c`가 들어 있으므로, 임금ㆍ이윤ㆍ지대만으로 사회적 총생산물 전체를 설명할 수 없기 때문이다.",
+                      "생산물 전체가 먼저 노동자에게 지급된 뒤 자본가와 지주가 다시 구매하기 때문이다.",
+                      "임금ㆍ이윤ㆍ지대는 모두 개인 소비 취향의 이름일 뿐 생산관계와 관계가 없기 때문이다.",
+                      "이 표현은 지대의 존재만 설명하고 임금과 이윤의 존재는 법률제도 밖에 남겨 두기 때문이다."
                     ],
                     "en": [
-                      "Part of the product first functions as capital, and wages confront workers in the form of capital.",
-                      "Part of the product must replace means of production; wages, profit, and rent alone cannot explain the total product.",
-                      "The whole product is first paid to workers, then capitalists and landlords buy it back.",
-                      "The phrase explains only rent, not wages and profit."
+                      "Because the total product includes `c`, which must replace means of production, so wages, profit, and rent cannot explain the whole social product.",
+                      "Because the whole product is first paid to workers and then bought back by capitalists and landlords.",
+                      "Because wages, profit, and rent are only names for personal consumption tastes and have no relation to production relations.",
+                      "Because the statement explains only rent and leaves wages and profit outside legal institutions."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "분배는 소비 몫만이 아니라 생산조건이 계급적으로 배치되는 방식까지 포함한다.",
-                    "en": "Distribution includes not only consumption shares but the class arrangement of production conditions."
+                    "ko": "분배관계는 새 가치 `v+s`의 분할을 설명하지만, 총생산물은 `c+v+s`다. `c`의 물적 보충을 지우면 분배관계가 생산관계와 재생산 조건에서 떨어져 나온 것처럼 보인다.",
+                    "en": "Distribution relations explain the division of new value `v+s`, but the total product is `c+v+s`. If replacement of `c` is erased, distribution appears detached from production relations and reproduction conditions."
                   },
                   "id": "q2",
                   "points": 2
@@ -41695,27 +41695,27 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "자본주의적 생산의 두 번째 특징으로 가장 적절한 것은 무엇인가?",
-                    "en": "What is the best description of the second feature of capitalist production?"
+                    "ko": "제51장에서 자본주의적 생산의 두 번째 특징으로 제시되는 것은 무엇인가?",
+                    "en": "What is presented in Chapter 51 as the second distinctive feature of capitalist production?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치 생산이 직접 목적이자 생산의 결정적 동기가 된다.",
-                      "사용가치의 균등한 배분이 모든 가격 운동을 지배한다.",
-                      "생산수단 보전이 이윤보다 앞서는 유일한 목적이 된다.",
-                      "노동시간 단축은 자본의 직접 목적이 아니라, 가치증식 목적과 충돌하는 노동자 투쟁의 요구로 나타난다."
+                      "잉여가치 생산이 직접 목적이자 생산의 결정적 동기가 된다는 점이다.",
+                      "사용가치의 균등한 배분이 모든 가격 운동을 지배한다는 점이다.",
+                      "생산수단 보전이 이윤보다 앞서는 유일한 목적이 된다는 점이다.",
+                      "상품이 팔린 뒤 남는 잔액을 도덕적으로 나누는 것이 생산의 중심 목적이 된다는 점이다."
                     ],
                     "en": [
                       "The production of surplus-value becomes the direct aim and decisive motive of production.",
-                      "Equal distribution of use-values governs every price movement.",
-                      "Preservation of means of production becomes the sole aim ahead of profit.",
-                      "Shortening labour-time is not capital’s direct goal; it appears as a workers’ demand that conflicts with valorization."
+                      "The equal distribution of use-values governs every movement of price.",
+                      "Preserving means of production becomes the only aim, ahead of profit.",
+                      "The central aim of production becomes the moral division of the balance left after sale."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본주의 생산은 필요 충족이 아니라 가치증식의 운동으로 조직된다.",
-                    "en": "Capitalist production is organized as valorization, not as direct satisfaction of needs."
+                    "ko": "첫 번째 특징은 생산물이 상품, 더 정확히는 자본의 상품생산물로 나타난다는 점이고, 두 번째 특징은 잉여가치 생산이 직접 목적이 된다는 점이다.",
+                    "en": "The first feature is that the product appears as a commodity, more precisely as the commodity-product of capital; the second is that surplus-value production becomes the direct aim."
                   },
                   "id": "q4",
                   "points": 2
@@ -42048,27 +42048,27 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "마르크스가 “계급을 이루는 것은 무엇인가”를 묻기 전에 확인하는 첫 단서는 무엇인가?",
-                    "en": "What first clue does Marx examine before asking what constitutes a class?"
+                    "ko": "제52장에서 임금ㆍ이윤ㆍ지대라는 수입원은 계급 분석에서 어떤 지위를 갖는가?",
+                    "en": "In Chapter 52, what status do wages, profit, and rent have in class analysis?"
                   },
                   "choices": {
                     "ko": [
-                      "임금, 이윤, 지대라는 수입과 그 수입원 사이의 동일성이다.",
-                      "각 개인의 정치적 견해가 같은 방향으로 모이는 정도다.",
-                      "도시와 농촌의 인구 비율이 어느 쪽으로 기우는가이다.",
-                      "직업 명칭이 법률상 면허로 보호되는지의 여부다."
+                      "노동력ㆍ자본ㆍ토지소유와 연결된 출발 단서이지만, 그것만으로 계급의 충분한 정의가 되지는 않는다.",
+                      "세 수입원이 같으면 직업과 생산조건이 달라도 모두 같은 계급이라는 완성된 정의다.",
+                      "수입원은 개인의 소비수준만 가리키므로 계급 분석에서는 처음부터 제외된다.",
+                      "임금ㆍ이윤ㆍ지대는 법률상의 납세 항목일 뿐 생산조건에 대한 관계를 전혀 말하지 않는다."
                     ],
                     "en": [
-                      "The identity between revenues and their sources: wages, profit, and rent.",
-                      "The degree to which individual political views converge in the same direction.",
-                      "Whether the population ratio tilts toward city or countryside.",
-                      "Whether occupational titles are protected by legal licenses."
+                      "They are starting clues linked to labour-power, capital, and landed property, but not by themselves a sufficient definition of class.",
+                      "They are a complete definition: if revenue sources are the same, occupation and relation to production conditions do not matter.",
+                      "Revenue source indicates only personal consumption level and is excluded from class analysis from the start.",
+                      "Wages, profit, and rent are merely legal tax headings and say nothing about relations to production conditions."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "수입원은 중요한 출발점이지만 곧 충분한 기준인지 검토 대상이 된다.",
-                    "en": "Revenue source is an important starting point, but it is then tested as a sufficient criterion."
+                    "ko": "마르크스는 세 수입형태에서 출발하지만 곧 “계급을 이루는 것은 무엇인가”를 묻는다. 답은 수입명 자체가 아니라 생산조건에 대한 사회적 관계로 나아가야 한다.",
+                    "en": "Marx starts from the three revenue forms but then asks what constitutes a class. The answer must move beyond the revenue name itself to social relations to the conditions of production."
                   },
                   "id": "q2",
                   "points": 2
