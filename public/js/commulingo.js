@@ -591,15 +591,6 @@
         }).join('');
     }
 
-    function positionIntroDiagram(lesson) {
-        if (!els.intro || !els.diagram || !els.introSummary) return;
-        if (conceptBrief(lesson).length) {
-            els.intro.insertBefore(els.diagram, els.introSummary);
-        } else if (els.introFocus && els.introFocus.nextSibling !== els.diagram) {
-            els.intro.insertBefore(els.diagram, els.introFocus.nextSibling);
-        }
-    }
-
     function lessonLabel(lesson, item) {
         if (lesson.locked) return escapeHtml(strings.locked || 'Coming soon');
         if (item && item.totalQuestions) {
@@ -663,10 +654,9 @@
         els.choices.classList.add('is-hidden');
         els.feedback.className = 'commu-feedback is-hidden';
         if (els.introTitle) els.introTitle.textContent = lang === 'en' ? 'Concept brief before the quiz' : '문제를 풀기 전, 개념 먼저 잡기';
-        renderDiagram(active.lesson);
-        positionIntroDiagram(active.lesson);
         if (els.introSummary) els.introSummary.textContent = lessonSummary(active.lesson);
         if (els.introFocus) els.introFocus.textContent = active.lesson.focus || introFallback(active.lesson);
+        renderDiagram(active.lesson);
         els.next.disabled = false;
         els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';
     }
