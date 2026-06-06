@@ -40487,8 +40487,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "핵심은 표면을 무시하는 것이 아니다. 임금ㆍ이윤ㆍ지대가 실제 경쟁에서는 가격 구성요소처럼 보이지만, 과학적 설명은 그 현상형태가 `v+s`의 생산과 분배관계에서 어떻게 생기는지 밝혀야 한다.",
-                    "en": "The point is not to ignore the surface. Wages, profit, and rent really appear in competition as price components, but scientific explanation must show how that form arises from the production and distribution of `v+s`."
+                    "ko": "핵심은 표면을 무시하는 것이 아니다. 임금ㆍ이윤ㆍ지대가 실제 경쟁에서는 가격 구성요소처럼 보이지만, 과학적 설명은 그 현상형태가 v+s의 생산과 분배관계에서 어떻게 생기는지 밝혀야 한다.",
+                    "en": "The point is not to ignore the surface. Wages, profit, and rent really appear in competition as price components, but scientific explanation must show how that form arises from the production and distribution of v+s."
                   },
                   "id": "q4",
                   "points": 2
@@ -40675,14 +40675,14 @@
             }
           ],
           "learningFocus": {
-            "ko": "공식 `자본-이자, 토지-지대, 노동-임금`이 서로 다른 범주를 같은 수입원처럼 나열하며 사회관계를 사물의 자연능력으로 바꾸는 방식을 읽는다.",
-            "en": "Read how the formula `capital-interest, land-rent, labour-wages` lines up different categories as if they were equivalent revenue sources and turns social relations into natural powers of things."
+            "ko": "공식 자본-이자, 토지-지대, 노동-임금이 서로 다른 범주를 같은 수입원처럼 나열하며 사회관계를 사물의 자연능력으로 바꾸는 방식을 읽는다.",
+            "en": "Read how the formula capital-interest, land-rent, labour-wages lines up different categories as if they were equivalent revenue sources and turns social relations into natural powers of things."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "공식의 표면",
-                "text": "`자본-이자, 토지-지대, 노동-임금`은 세 항목이 각각 자기 수입을 낳는 것처럼 보이게 한다. 이때 이윤은 이자로 환원되어 생산과정의 매개가 더 사라진다."
+                "text": "자본-이자, 토지-지대, 노동-임금은 세 항목이 각각 자기 수입을 낳는 것처럼 보이게 한다. 이때 이윤은 이자로 환원되어 생산과정의 매개가 더 사라진다."
               },
               {
                 "title": "범주 착종",
@@ -40690,13 +40690,13 @@
               },
               {
                 "title": "잉여가치의 은폐",
-                "text": "공식은 `s -> 이윤/이자 + 지대`라는 분배를 `자본/토지/노동 -> 수입`이라는 생산원천처럼 뒤집는다. 임금도 노동 전체의 가격이 아니라 노동력 가치의 형태다."
+                "text": "공식은 s -> 이윤/이자 + 지대라는 분배를 자본/토지/노동 -> 수입이라는 생산원천처럼 뒤집는다. 임금도 노동 전체의 가격이 아니라 노동력 가치의 형태다."
               }
             ],
             "en": [
               {
                 "title": "Surface formula",
-                "text": "`Capital-interest, land-rent, labour-wages` makes each item appear to generate its own revenue. Profit is reduced to interest, further erasing the mediation of production."
+                "text": "Capital-interest, land-rent, labour-wages makes each item appear to generate its own revenue. Profit is reduced to interest, further erasing the mediation of production."
               },
               {
                 "title": "Category confusion",
@@ -40704,7 +40704,7 @@
               },
               {
                 "title": "Concealment of surplus-value",
-                "text": "The formula inverts `s -> profit/interest + rent` into `capital/land/labour -> revenues`. Wages too are not the price of all labour, but the value-form of labour-power."
+                "text": "The formula inverts s -> profit/interest + rent into capital/land/labour -> revenues. Wages too are not the price of all labour, but the value-form of labour-power."
               }
             ]
           },
@@ -40713,8 +40713,8 @@
               {
                 "title": "공식과 기호",
                 "items": [
-                  "삼위일체 공식은 `자본-이자`, `토지-지대`, `노동-임금`을 나란히 놓는다. 더 일반적으로는 `자본-이윤`, `토지-지대`, `노동-임금`이다.",
-                  "`s`는 잉여가치다. 이윤, 기업가이득, 이자, 지대는 별도의 가치 원천이 아니라 `s`가 나뉘어 취하는 분배형태다.",
+                  "삼위일체 공식은 자본-이자, 토지-지대, 노동-임금을 나란히 놓는다. 더 일반적으로는 자본-이윤, 토지-지대, 노동-임금이다.",
+                  "s는 잉여가치다. 이윤, 기업가이득, 이자, 지대는 별도의 가치 원천이 아니라 s가 나뉘어 취하는 분배형태다.",
                   "임금은 “노동의 가격”처럼 보이지만, 실제로 상품으로 팔리는 것은 노동 자체가 아니라 노동력이다."
                 ]
               },
@@ -40739,8 +40739,8 @@
               {
                 "title": "Formula And Symbols",
                 "items": [
-                  "The trinity formula sets out `capital-interest`, `land-rent`, and `labour-wages`; more generally, `capital-profit`, `land-rent`, and `labour-wages`.",
-                  "`s` means surplus-value. Profit, profit of enterprise, interest, and rent are not separate sources of value but distributional forms of `s`.",
+                  "The trinity formula sets out capital-interest, land-rent, and labour-wages; more generally, capital-profit, land-rent, and labour-wages.",
+                  "s means surplus-value. Profit, profit of enterprise, interest, and rent are not separate sources of value but distributional forms of s.",
                   "Wages appear as the “price of labour”, but the commodity actually sold is labour-power, not labour itself."
                 ]
               },
@@ -41186,8 +41186,8 @@
             "en": "Illusions Created by Competition"
           },
           "summary": {
-            "ko": "50장은 경쟁 속에서 `c+v+s`의 결과가 거꾸로 보이는 과정을 다룬다. 임금, 평균이윤, 이자, 지대가 가치의 결과가 아니라 가격을 만드는 독립 구성요소처럼 나타난다.",
-            "en": "Chapter 50 shows how competition inverts the result of `c+v+s`: wages, average profit, interest, and rent appear not as results of value production but as independent price-forming components."
+            "ko": "50장은 경쟁 속에서 c+v+s의 결과가 거꾸로 보이는 과정을 다룬다. 임금, 평균이윤, 이자, 지대가 가치의 결과가 아니라 가격을 만드는 독립 구성요소처럼 나타난다.",
+            "en": "Chapter 50 shows how competition inverts the result of c+v+s: wages, average profit, interest, and rent appear not as results of value production but as independent price-forming components."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch50.htm",
           "lessons": [
@@ -41207,13 +41207,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "새 가치 `v+s`가 임금ㆍ이윤ㆍ지대로 분배되는 사실이, 세 수입이 가치를 만든다는 모습으로 뒤집힌다.",
+                      "새 가치 v+s가 임금ㆍ이윤ㆍ지대로 분배되는 사실이, 세 수입이 가치를 만든다는 모습으로 뒤집힌다.",
                       "경쟁이 상품가치와 생산가격의 차이를 제거해 가치법칙을 직접 드러낸다.",
                       "시장가격이 매일 변하므로 노동시간은 상품의 사회적 관계를 표현하지 못한다.",
                       "수요가 충분하면 불변자본 보충도 가격표 안에서 완성된다."
                     ],
                     "en": [
-                      "The fact that new value `v+s` is distributed into wages, profit, and rent is inverted into the appearance that those revenues create value.",
+                      "The fact that new value v+s is distributed into wages, profit, and rent is inverted into the appearance that those revenues create value.",
                       "Competition removes the difference between commodity value and price of production and directly reveals the law of value.",
                       "Because market prices change daily, labour-time cannot express a social relation of commodities.",
                       "If demand is sufficient, replacement of constant capital is completed inside the price list."
@@ -41221,8 +41221,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "경쟁은 `v+s -> 임금+이윤+지대`라는 분배 결과를 `임금+이윤+지대 -> 가격`이라는 생산원천처럼 보이게 만든다.",
-                    "en": "Competition makes the distribution result `v+s -> wages+profit+rent` appear as a source relation `wages+profit+rent -> price`."
+                    "ko": "경쟁은 v+s -> 임금+이윤+지대라는 분배 결과를 임금+이윤+지대 -> 가격이라는 생산원천처럼 보이게 만든다.",
+                    "en": "Competition makes the distribution result v+s -> wages+profit+rent appear as a source relation wages+profit+rent -> price."
                   },
                   "id": "q1",
                   "points": 2
@@ -41230,27 +41230,27 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "상품가치 `400c+100v+150s=650`에서 임금이 150으로 오르고 노동생산성이 변하지 않는 경우를 어떻게 이해해야 하는가?",
-                    "en": "How should we understand `400c+100v+150s=650` when wages rise to 150 without a change in productivity?"
+                    "ko": "만약 임금이 150으로 오르되 노동생산성은 변하지 않는다면, 다음 설명 중 옳은 것은?",
+                    "en": "If wages rise to 150 while productivity remains unchanged, which statement is correct?"
                   },
                   "choices": {
                     "ko": [
-                      "새 가치 `v+s=250` 안에서 `100v+150s`가 `150v+100s`로 바뀌므로 상품가치는 `400c+250=650`으로 남는다.",
-                      "임금 상승분 50이 상품가치에 더해져 `400c+150v+150s=700`이 된다.",
+                      "새 가치 v+s=250 안에서 100v+150s가 150v+100s로 바뀌므로 상품가치는 400c+250=650으로 남는다.",
+                      "임금 상승분 50이 상품가치에 더해져 400c+150v+150s=700이 된다.",
                       "잉여가치율이 내려가면 불변자본 400도 같은 비율로 줄어든다.",
                       "임금과 잉여가치가 함께 오르므로 평균이윤율은 변화 없이 유지된다."
                     ],
                     "en": [
-                      "Within new value `v+s=250`, `100v+150s` becomes `150v+100s`, so commodity value remains `400c+250=650`.",
-                      "The wage increase of 50 is added to commodity value, making `400c+150v+150s=700`.",
+                      "Within new value v+s=250, 100v+150s becomes 150v+100s, so commodity value remains 400c+250=650.",
+                      "The wage increase of 50 is added to commodity value, making 400c+150v+150s=700.",
                       "When the surplus-value rate falls, constant capital of 400 falls in the same proportion.",
                       "Wages and surplus-value rise together, so the average profit rate is unchanged."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산성이 같으면 새 가치량은 `250`으로 그대로다. 변화는 `v`와 `s`의 분할이다: `100v+150s`에서 `150v+100s`로 바뀌며, 총가치는 여전히 `400c+250=650`이다.",
-                    "en": "If productivity is unchanged, new value remains `250`. What changes is the division between `v` and `s`: `100v+150s` becomes `150v+100s`, while total value remains `400c+250=650`."
+                    "ko": "생산성이 같으면 새 가치량은 250으로 그대로다. 변화는 v와 s의 분할이다: 100v+150s에서 150v+100s로 바뀌며, 총가치는 여전히 400c+250=650이다.",
+                    "en": "If productivity is unchanged, new value remains 250. What changes is the division between v and s: 100v+150s becomes 150v+100s, while total value remains 400c+250=650."
                   },
                   "id": "q2",
                   "points": 2
@@ -41357,13 +41357,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "동일한 노동생산성에서는 새 가치 `v+s`가 유지되고, 임금 상승은 `v`를 늘리는 만큼 `s`를 줄인다고 본다.",
+                      "동일한 노동생산성에서는 새 가치 v+s가 유지되고, 임금 상승은 v를 늘리는 만큼 s를 줄인다고 본다.",
                       "임금이 오르면 노동자가 더 많은 가치를 창조하므로 생산성 변화 없이 가격이 오른다고 본다.",
                       "임금 상승은 불변자본의 이전가치를 늘려 모든 부문의 가치구성을 바꾼다고 본다.",
                       "노동일이 같아도 임금률이 오르면 새 가치량 자체가 같은 비율로 커진다고 본다."
                     ],
                     "en": [
-                      "With the same labour productivity, new value `v+s` remains unchanged; a wage rise increases `v` and reduces `s` by the same amount.",
+                      "With the same labour productivity, new value v+s remains unchanged; a wage rise increases v and reduces s by the same amount.",
                       "When wages rise, workers create more value, so prices rise without productivity changes.",
                       "Wage increases raise transferred value of constant capital and alter every branch’s value composition.",
                       "Even with the same working day, a higher wage rate enlarges the new value in the same ratio."
@@ -41371,8 +41371,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "임금은 새 가치의 분배항목이지 같은 생산조건에서 새 가치량을 키우는 원인이 아니다. 예컨대 `100v+150s=250`이 `150v+100s=250`으로 바뀐다.",
-                    "en": "Wages are a distribution item of new value, not a cause increasing new value under the same production conditions. For example, `100v+150s=250` becomes `150v+100s=250`."
+                    "ko": "임금은 새 가치의 분배항목이지 같은 생산조건에서 새 가치량을 키우는 원인이 아니다. 예컨대 100v+150s=250이 150v+100s=250으로 바뀐다.",
+                    "en": "Wages are a distribution item of new value, not a cause increasing new value under the same production conditions. For example, 100v+150s=250 becomes 150v+100s=250."
                   },
                   "id": "q1",
                   "points": 3
@@ -41455,8 +41455,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산가격으로의 전환은 총관계, 즉 총이윤과 총잉여가치의 연결을 보존한다. 그러나 개별 상품 표면에서는 자기 부문의 직접 `s`와 이윤이 어긋나 이윤이 독자적 부가분처럼 보인다.",
-                    "en": "Transformation into prices of production preserves the total relation, the link between total profit and total surplus-value. But on the surface of individual commodities, profit diverges from the branch’s direct `s`, making profit appear as an independent addition."
+                    "ko": "생산가격으로의 전환은 총관계, 즉 총이윤과 총잉여가치의 연결을 보존한다. 그러나 개별 상품 표면에서는 자기 부문의 직접 s와 이윤이 어긋나 이윤이 독자적 부가분처럼 보인다.",
+                    "en": "Transformation into prices of production preserves the total relation, the link between total profit and total surplus-value. But on the surface of individual commodities, profit diverges from the branch’s direct s, making profit appear as an independent addition."
                   },
                   "id": "q4",
                   "points": 3
@@ -41493,36 +41493,36 @@
             }
           ],
           "learningFocus": {
-            "ko": "예시 `400c+100v+150s=650`과 `400c+150v+100s=650`을 통해 임금 변화가 새 가치량을 자동으로 키우는 것이 아니라 `v`와 `s`의 분할을 바꾼다는 점을 구분한다.",
-            "en": "Use `400c+100v+150s=650` and `400c+150v+100s=650` to distinguish a change in the division of `v` and `s` from an automatic increase in new value caused by wages."
+            "ko": "예시 400c+100v+150s=650과 400c+150v+100s=650을 통해 임금 변화가 새 가치량을 자동으로 키우는 것이 아니라 v와 s의 분할을 바꾼다는 점을 구분한다.",
+            "en": "Use 400c+100v+150s=650 and 400c+150v+100s=650 to distinguish a change in the division of v and s from an automatic increase in new value caused by wages."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "결과의 전도",
-                "text": "가치 구성은 `c+v+s`인데 경쟁의 표면에서는 임금, 이윤, 이자, 지대가 가격을 만드는 독립 항목처럼 보인다."
+                "text": "가치 구성은 c+v+s인데 경쟁의 표면에서는 임금, 이윤, 이자, 지대가 가격을 만드는 독립 항목처럼 보인다."
               },
               {
                 "title": "임금 상승 예시",
-                "text": "생산성이 같으면 새 가치 `v+s=250`은 그대로다. `100v+150s`가 `150v+100s`로 바뀌면 총가치 `400c+250=650`은 유지된다."
+                "text": "생산성이 같으면 새 가치 v+s=250은 그대로다. 100v+150s가 150v+100s로 바뀌면 총가치 400c+250=650은 유지된다."
               },
               {
                 "title": "두 비율",
-                "text": "잉여가치율은 `s/v`, 총이윤율은 `s/(c+v)`다. 예시에서 `150/100=150%`가 `100/150=66 2/3%`로 떨어지고, `150/500=30%`는 `100/550=18 2/11%`로 떨어진다."
+                "text": "잉여가치율은 s/v, 총이윤율은 s/(c+v)다. 예시에서 150/100=150%가 100/150=66 2/3%로 떨어지고, 150/500=30%는 100/550=18 2/11%로 떨어진다."
               }
             ],
             "en": [
               {
                 "title": "Inversion of result",
-                "text": "The value composition is `c+v+s`, but on the surface of competition wages, profit, interest, and rent appear as independent price-forming items."
+                "text": "The value composition is c+v+s, but on the surface of competition wages, profit, interest, and rent appear as independent price-forming items."
               },
               {
                 "title": "Wage-rise example",
-                "text": "If productivity is unchanged, new value `v+s=250` remains the same. When `100v+150s` becomes `150v+100s`, total value `400c+250=650` remains unchanged."
+                "text": "If productivity is unchanged, new value v+s=250 remains the same. When 100v+150s becomes 150v+100s, total value 400c+250=650 remains unchanged."
               },
               {
                 "title": "Two rates",
-                "text": "The rate of surplus-value is `s/v`; gross profit rate is `s/(c+v)`. In the example, `150/100=150%` falls to `100/150=66 2/3%`, while `150/500=30%` falls to `100/550=18 2/11%`."
+                "text": "The rate of surplus-value is s/v; gross profit rate is s/(c+v). In the example, 150/100=150% falls to 100/150=66 2/3%, while 150/500=30% falls to 100/550=18 2/11%."
               }
             ]
           },
@@ -41531,17 +41531,17 @@
               {
                 "title": "기본 수식",
                 "items": [
-                  "상품자본의 가치는 `c+v+s`로 분석한다. `c`는 이전가치, `v`는 임금으로 나타나는 필요노동의 가치, `s`는 잉여노동의 가치다.",
-                  "경쟁 속 자본가에게는 `v`, 평균이윤, 이자, 지대가 모두 외부에서 주어진 비용ㆍ청구권처럼 보인다.",
-                  "이 표면 때문에 `v+s`가 먼저 생산되고 나중에 분배된다는 관계가, 각 수입항목이 가격을 만든다는 관계로 뒤집힌다."
+                  "상품자본의 가치는 c+v+s로 분석한다. c는 이전가치, v는 임금으로 나타나는 필요노동의 가치, s는 잉여노동의 가치다.",
+                  "경쟁 속 자본가에게는 v, 평균이윤, 이자, 지대가 모두 외부에서 주어진 비용ㆍ청구권처럼 보인다.",
+                  "이 표면 때문에 v+s가 먼저 생산되고 나중에 분배된다는 관계가, 각 수입항목이 가격을 만든다는 관계로 뒤집힌다."
                 ]
               },
               {
                 "title": "임금 상승 예시",
                 "items": [
-                  "첫 경우: `400c+100v+150s=650`. 새 가치는 `100v+150s=250`, 잉여가치율은 `s/v=150/100=150%`, 총이윤율은 `s/(c+v)=150/500=30%`다.",
-                  "둘째 경우: 같은 노동량과 생산성에서 임금만 150으로 오르면 `400c+150v+100s=650`. 새 가치는 여전히 `250`이다.",
-                  "따라서 임금 상승분 50이 가격에 더해져 700이 되는 것이 아니라, `v+s=250` 안에서 `v`가 커지고 `s`가 줄어든다."
+                  "첫 경우: 400c+100v+150s=650. 새 가치는 100v+150s=250, 잉여가치율은 s/v=150/100=150%, 총이윤율은 s/(c+v)=150/500=30%다.",
+                  "둘째 경우: 같은 노동량과 생산성에서 임금만 150으로 오르면 400c+150v+100s=650. 새 가치는 여전히 250이다.",
+                  "따라서 임금 상승분 50이 가격에 더해져 700이 되는 것이 아니라, v+s=250 안에서 v가 커지고 s가 줄어든다."
                 ]
               },
               {
@@ -41557,17 +41557,17 @@
               {
                 "title": "Basic Formula",
                 "items": [
-                  "Commodity-capital is analyzed as `c+v+s`: `c` is transferred old value, `v` is the value of necessary labour appearing as wages, and `s` is surplus-labour value.",
-                  "In competition, `v`, average profit, interest, and rent confront the capitalist as externally given costs and claims.",
-                  "This surface inverts the relation: instead of `v+s` being produced and then distributed, revenue items appear to create price."
+                  "Commodity-capital is analyzed as c+v+s: c is transferred old value, v is the value of necessary labour appearing as wages, and s is surplus-labour value.",
+                  "In competition, v, average profit, interest, and rent confront the capitalist as externally given costs and claims.",
+                  "This surface inverts the relation: instead of v+s being produced and then distributed, revenue items appear to create price."
                 ]
               },
               {
                 "title": "Wage-Rise Example",
                 "items": [
-                  "First case: `400c+100v+150s=650`. New value is `100v+150s=250`; rate of surplus-value is `s/v=150/100=150%`; gross profit rate is `s/(c+v)=150/500=30%`.",
-                  "Second case: with the same labour quantity and productivity, wages rise to 150: `400c+150v+100s=650`. New value is still `250`.",
-                  "So the wage increase of 50 is not added to price to make 700; within `v+s=250`, `v` rises and `s` falls."
+                  "First case: 400c+100v+150s=650. New value is 100v+150s=250; rate of surplus-value is s/v=150/100=150%; gross profit rate is s/(c+v)=150/500=30%.",
+                  "Second case: with the same labour quantity and productivity, wages rise to 150: 400c+150v+100s=650. New value is still 250.",
+                  "So the wage increase of 50 is not added to price to make 700; within v+s=250, v rises and s falls."
                 ]
               },
               {
@@ -41595,8 +41595,8 @@
             "en": "Distribution Relations and Production Relations"
           },
           "summary": {
-            "ko": "51장은 새 가치 `v+s`가 임금, 이윤, 지대로 분배되는 관계가 생산관계 바깥의 자연적 나눔이 아니라, 자본ㆍ임금노동ㆍ토지소유라는 역사적 생산관계의 다른 면임을 밝힌다.",
-            "en": "Chapter 51 shows that the distribution of new value `v+s` into wages, profit, and rent is not a natural division outside production relations, but the reverse side of the historical relations of capital, wage-labour, and landed property."
+            "ko": "51장은 새 가치 v+s가 임금, 이윤, 지대로 분배되는 관계가 생산관계 바깥의 자연적 나눔이 아니라, 자본ㆍ임금노동ㆍ토지소유라는 역사적 생산관계의 다른 면임을 밝힌다.",
+            "en": "Chapter 51 shows that the distribution of new value v+s into wages, profit, and rent is not a natural division outside production relations, but the reverse side of the historical relations of capital, wage-labour, and landed property."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1894-c3/ch51.htm",
           "lessons": [
@@ -41644,13 +41644,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "총생산물에는 생산수단을 보충해야 하는 `c`가 들어 있으므로, 임금ㆍ이윤ㆍ지대만으로 사회적 총생산물 전체를 설명할 수 없기 때문이다.",
+                      "총생산물에는 생산수단을 보충해야 하는 c가 들어 있으므로, 임금ㆍ이윤ㆍ지대만으로 사회적 총생산물 전체를 설명할 수 없기 때문이다.",
                       "생산물 전체가 먼저 노동자에게 지급된 뒤 자본가와 지주가 다시 구매하기 때문이다.",
                       "임금ㆍ이윤ㆍ지대는 모두 개인 소비 취향의 이름일 뿐 생산관계와 관계가 없기 때문이다.",
                       "이 표현은 지대의 존재만 설명하고 임금과 이윤의 존재는 법률제도 밖에 남겨 두기 때문이다."
                     ],
                     "en": [
-                      "Because the total product includes `c`, which must replace means of production, so wages, profit, and rent cannot explain the whole social product.",
+                      "Because the total product includes c, which must replace means of production, so wages, profit, and rent cannot explain the whole social product.",
                       "Because the whole product is first paid to workers and then bought back by capitalists and landlords.",
                       "Because wages, profit, and rent are only names for personal consumption tastes and have no relation to production relations.",
                       "Because the statement explains only rent and leaves wages and profit outside legal institutions."
@@ -41658,8 +41658,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "분배관계는 새 가치 `v+s`의 분할을 설명하지만, 총생산물은 `c+v+s`다. `c`의 물적 보충을 지우면 분배관계가 생산관계와 재생산 조건에서 떨어져 나온 것처럼 보인다.",
-                    "en": "Distribution relations explain the division of new value `v+s`, but the total product is `c+v+s`. If replacement of `c` is erased, distribution appears detached from production relations and reproduction conditions."
+                    "ko": "분배관계는 새 가치 v+s의 분할을 설명하지만, 총생산물은 c+v+s다. c의 물적 보충을 지우면 분배관계가 생산관계와 재생산 조건에서 떨어져 나온 것처럼 보인다.",
+                    "en": "Distribution relations explain the division of new value v+s, but the total product is c+v+s. If replacement of c is erased, distribution appears detached from production relations and reproduction conditions."
                   },
                   "id": "q2",
                   "points": 2
@@ -41902,14 +41902,14 @@
             }
           ],
           "learningFocus": {
-            "ko": "분배관계 `임금/이윤/지대`를 독립 규칙으로 보지 않고, 생산조건이 자본으로, 노동이 임금노동으로, 토지가 독립 소유권으로 서는 관계에서 파악한다.",
-            "en": "Grasp the distribution relations `wages/profit/rent` not as independent rules, but through conditions of production standing as capital, labour as wage-labour, and land as independent property."
+            "ko": "분배관계 임금/이윤/지대를 독립 규칙으로 보지 않고, 생산조건이 자본으로, 노동이 임금노동으로, 토지가 독립 소유권으로 서는 관계에서 파악한다.",
+            "en": "Grasp the distribution relations wages/profit/rent not as independent rules, but through conditions of production standing as capital, labour as wage-labour, and land as independent property."
           },
           "conceptMap": {
             "ko": [
               {
                 "title": "분배의 대상",
-                "text": "분배되는 것은 총생산물 전체가 아니라 새 가치 `v+s`의 수입형태다. 총생산물에는 보충되어야 할 `c`도 남아 있다."
+                "text": "분배되는 것은 총생산물 전체가 아니라 새 가치 v+s의 수입형태다. 총생산물에는 보충되어야 할 c도 남아 있다."
               },
               {
                 "title": "생산관계의 반대면",
@@ -41923,7 +41923,7 @@
             "en": [
               {
                 "title": "Object of distribution",
-                "text": "What is distributed as revenue is not the whole total product, but new value `v+s`. The total product still contains `c` that must be replaced."
+                "text": "What is distributed as revenue is not the whole total product, but new value v+s. The total product still contains c that must be replaced."
               },
               {
                 "title": "Reverse side of production relations",
@@ -41940,9 +41940,9 @@
               {
                 "title": "수식으로 보는 분배",
                 "items": [
-                  "새 가치는 `v+s`다. `v`는 임금으로, `s`는 이윤ㆍ이자ㆍ지대 등으로 나뉜다.",
-                  "그러나 총생산물은 `c+v+s`이므로, 분배관계만 보면 생산수단 보충과 재생산 조건을 놓친다.",
-                  "“생산물은 임금ㆍ이윤ㆍ지대로 배분된다”는 말은 `c`를 지우면 틀린 명제가 된다."
+                  "새 가치는 v+s다. v는 임금으로, s는 이윤ㆍ이자ㆍ지대 등으로 나뉜다.",
+                  "그러나 총생산물은 c+v+s이므로, 분배관계만 보면 생산수단 보충과 재생산 조건을 놓친다.",
+                  "“생산물은 임금ㆍ이윤ㆍ지대로 배분된다”는 말은 c를 지우면 틀린 명제가 된다."
                 ]
               },
               {
@@ -41966,9 +41966,9 @@
               {
                 "title": "Distribution In Formula Form",
                 "items": [
-                  "New value is `v+s`. `v` appears as wages; `s` is divided into profit, interest, rent, and related forms.",
-                  "But the total product is `c+v+s`, so looking only at distribution relations misses replacement of means of production and reproduction conditions.",
-                  "The phrase “the product is distributed into wages, profit, and rent” becomes false if it erases `c`."
+                  "New value is v+s. v appears as wages; s is divided into profit, interest, rent, and related forms.",
+                  "But the total product is c+v+s, so looking only at distribution relations misses replacement of means of production and reproduction conditions.",
+                  "The phrase “the product is distributed into wages, profit, and rent” becomes false if it erases c."
                 ]
               },
               {
@@ -42311,8 +42311,8 @@
             }
           ],
           "learningFocus": {
-            "ko": "계급을 `노동력-임금`, `자본-이윤`, `토지소유-지대`라는 수입쌍에서 출발하되, 생산조건에 대한 관계와 자본주의 발전 경향으로 더 깊게 규정한다.",
-            "en": "Start from the revenue pairs `labour-power-wages`, `capital-profit`, `landed property-rent`, but determine class more deeply through relation to production conditions and capitalist development tendencies."
+            "ko": "계급을 노동력-임금, 자본-이윤, 토지소유-지대라는 수입쌍에서 출발하되, 생산조건에 대한 관계와 자본주의 발전 경향으로 더 깊게 규정한다.",
+            "en": "Start from the revenue pairs labour-power-wages, capital-profit, landed property-rent, but determine class more deeply through relation to production conditions and capitalist development tendencies."
           },
           "conceptMap": {
             "ko": [
@@ -42349,8 +42349,8 @@
               {
                 "title": "계급 분석의 출발점",
                 "items": [
-                  "원문은 세 큰 계급을 `노동력의 소유자`, `자본의 소유자`, `토지소유자`로 둔다.",
-                  "각각의 주요 수입형태는 `임금`, `이윤`, `지대`다.",
+                  "원문은 세 큰 계급을 노동력의 소유자, 자본의 소유자, 토지소유자로 둔다.",
+                  "각각의 주요 수입형태는 임금, 이윤, 지대다.",
                   "하지만 이 수입형태의 대응은 계급 분석의 첫 단서일 뿐, 계급의 충분한 정의는 아니다."
                 ]
               },
@@ -42376,7 +42376,7 @@
                 "title": "Starting Point Of Class Analysis",
                 "items": [
                   "The text begins with three great classes: owners of labour-power, owners of capital, and landowners.",
-                  "Their main revenue forms are `wages`, `profit`, and `rent`.",
+                  "Their main revenue forms are wages, profit, and rent.",
                   "But this correspondence of revenue forms is only the first clue, not a sufficient definition of class."
                 ]
               },
