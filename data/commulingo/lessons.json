@@ -41892,8 +41892,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "분배관계의 비판은 자본주의 생산양식 전체의 역사적 한계를 가리킨다.",
-                    "en": "Critique of distribution relations points to the historical limit of the capitalist mode of production."
+                    "ko": "51장의 최종 결론은 분배관계만 역사적이고 생산관계는 자연적이라는 관점을 뒤집는 데 있다. 임금ㆍ이윤ㆍ지대라는 분배형태는 자본ㆍ임금노동ㆍ토지소유라는 생산관계의 다른 면이므로, 생산력이 발전해 이 사회형태와 충돌하면 자본주의 생산양식 자체의 역사적 한계와 위기가 드러난다.",
+                    "en": "Chapter 51's final conclusion reverses the view that only distribution relations are historical while production relations are natural. Wages, profit, and rent are the reverse side of capital, wage-labour, and landed property; when developed productive forces conflict with this social form, the historical limit and crisis of the capitalist mode of production appear."
                   },
                   "id": "q5",
                   "points": 3
@@ -41917,7 +41917,7 @@
               },
               {
                 "title": "역사적 한계",
-                "text": "자본주의는 상품생산의 일반화와 잉여가치 생산을 직접 목적으로 삼는다. 이 생산형태가 발전한 생산력과 충돌할 때 역사적 한계가 드러난다."
+                "text": "최종 결론은 분배관계의 역사성이 곧 생산관계의 역사성이라는 점이다. 생산력이 발전해 자본주의적 소유ㆍ분배형태와 충돌하면, 문제는 공정한 몫 조정이 아니라 이 생산양식 자체의 역사적 한계로 나타난다."
               }
             ],
             "en": [
@@ -41931,7 +41931,7 @@
               },
               {
                 "title": "Historical limit",
-                "text": "Capitalism generalizes commodity production and makes surplus-value the direct aim. Its historical limit appears when this form of production conflicts with developed productive forces."
+                "text": "The final conclusion is that the historical character of distribution relations is the historical character of production relations. When developed productive forces conflict with capitalist ownership and distribution forms, the issue is not fairer shares but the historical limit of this mode of production."
               }
             ]
           },
@@ -41958,7 +41958,7 @@
                 "items": [
                   "자본주의 생산의 첫 특징은 생산물이 상품으로, 더 정확히는 자본의 상품생산물로 나타난다는 점이다.",
                   "둘째 특징은 잉여가치 생산이 직접 목적이라는 점이다. 생산력 향상도 이 목적 아래에서는 자본의 생산성처럼 나타난다.",
-                  "그래서 분배관계 비판은 단순한 공정분배론이 아니라 생산양식 전체의 역사성을 묻는 문제다."
+                  "최종 결론은 생산력과 사회형태의 충돌이다. 분배관계가 생산관계의 다른 면이라면, 임금ㆍ이윤ㆍ지대를 조금 더 공정하게 나누는 문제가 아니라 자본주의 생산양식 자체의 역사적 한계가 문제가 된다."
                 ]
               }
             ],
@@ -41984,7 +41984,7 @@
                 "items": [
                   "The first feature of capitalist production is that its product appears as a commodity, more precisely as a commodity product of capital.",
                   "The second feature is that production of surplus-value is the direct aim; productivity growth appears under this aim as productivity of capital.",
-                  "Thus critique of distribution relations is not mere fair-share theory, but a question of the historicity of the whole mode of production."
+                  "The final conclusion is the conflict between productive forces and social form. If distribution relations are the reverse side of production relations, the issue is not merely fairer shares of wages, profit, and rent, but the historical limit of the capitalist mode of production itself."
                 ]
               }
             ]
@@ -42095,8 +42095,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 수입명만으로는 계급의 사회적 관계를 충분히 포착하기 어렵다는 점을 보인다.",
-                    "en": "Marx shows that names of income alone cannot fully capture the social relation of class."
+                    "ko": "“같은 수입원”을 생산조건에 대한 관계가 아니라 구체적 직업 수입의 공통 원천으로 이해하면 기준이 계속 잘게 내려간다. 의사는 환자 진료에서 얻는 보수, 관리는 관직 봉급처럼 각 직업집단 안에서 같은 원천의 수입을 받으므로 별도 계급처럼 세어질 수 있다. 이것이 마르크스가 겨냥한 부조리다. 따라서 문제는 의사나 관리가 임금노동자인지 아닌지를 여기서 판정하는 것이 아니라, 수입원 동일성만으로는 계급을 구성하는 사회관계를 정할 수 없다는 데 있다.",
+                    "en": "If “same source of revenue” is understood not as a relation to the conditions of production but as the concrete common source of an occupation’s income, the criterion keeps moving downward. Physicians receive income from medical practice, officials from official salaries, so each occupational group can be counted as a separate class. That is the absurdity Marx is targeting. The issue here is therefore not to decide whether physicians or officials are wage-labourers, but to show that identity of revenue source alone cannot define the social relation that constitutes a class."
                   },
                   "id": "q3",
                   "points": 2
@@ -42245,8 +42245,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "예시는 수입의 동일성만으로 계급을 정의하면 분석 단위가 과도하게 쪼개진다는 점을 찌른다.",
-                    "en": "The example shows that defining class by revenue identity alone fragments the unit of analysis excessively."
+                    "ko": "“같은 수입원”을 생산조건에 대한 관계가 아니라 구체적 직업 수입의 공통 원천으로 이해하면 기준이 계속 잘게 내려간다. 의사는 환자 진료에서 얻는 보수, 관리는 관직 봉급처럼 각 직업집단 안에서 같은 원천의 수입을 받으므로 별도 계급처럼 세어질 수 있다. 이것이 마르크스가 겨냥한 부조리다. 계급 기준이 되려면 “수입이 어디서 나오느냐”가 직업별 현금흐름의 이름에 머물러서는 안 되고, 노동력ㆍ자본ㆍ토지소유처럼 생산조건에 대해 어떤 관계를 맺는지를 가리켜야 한다.",
+                    "en": "If “same source of revenue” is understood not as a relation to the conditions of production but as the concrete common source of an occupation’s income, the criterion keeps moving downward. Physicians receive income from medical practice, officials from official salaries, so each occupational group can be counted as a separate class. That is the absurdity Marx is targeting. To serve as a class criterion, “where income comes from” cannot remain at the level of occupational cash-flow names; it must point to relations to the conditions of production, such as labour-power, capital, and landed property."
                   },
                   "id": "q3",
                   "points": 3
@@ -42282,27 +42282,27 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "리스트에 관한 각주가 “대토지의 자급경제와 임대농 전환”을 언급하는 맥락은 무엇인가?",
-                    "en": "What is the context of the note on List about self-sufficient large estates and the transition to leasing?"
+                    "ko": "리스트 각주는 대토지의 자급경제를 이렇게 설명한다. 교통ㆍ상업ㆍ도시가 충분히 발전하지 않은 조건에서는 큰 영지가 자체 수요를 스스로 조달하는 폐쇄적 경제로 남기 쉽고, 영국에서는 상업과 교통의 발전 속에서 이런 형태가 중간 규모 경영과 임대관계로 바뀌었다. 마르크스가 이 언급을 끌어오는 이유는 무엇인가?",
+                    "en": "The note on List describes self-sufficient large estates this way: where transport, commerce, and towns are insufficiently developed, a great estate can remain a closed economy supplying its own needs; in England, the growth of trade and transport helped transform this form into middle-scale estates and leasing relations. Why does Marx cite this point?"
                   },
                   "choices": {
                     "ko": [
-                      "교통·상업·도시의 발달 속에서 토지소유가 자본주의적 임대관계에 맞는 형태로 바뀌는 맥락이다.",
-                      "자급적 대토지가 가장 발달한 자본주의 형태라 임금노동과 자본의 분리를 늦추는 맥락이다.",
-                      "토지소유가 상품생산 밖에 남을수록 지대가 이윤보다 현대적인 수입형태가 되는 맥락이다.",
-                      "도시의 성장이 농촌 토지소유를 해체해 지대 수입을 임금 수입으로 통합하는 맥락이다."
+                      "대토지의 자급경제가 자본주의적 토지소유의 성숙한 형태가 아니라 교통ㆍ상업ㆍ도시 발달이 낮은 조건과 관련되며, 발전이 진행되면 토지소유도 임대관계에 맞게 재편된다는 점을 보이기 위해서다.",
+                      "자급적 대토지가 가장 발달한 자본주의 형태라 임금노동과 자본의 분리를 늦춘다는 점을 보이기 위해서다.",
+                      "토지소유가 상품생산 밖에 남을수록 지대가 이윤보다 현대적인 수입형태가 된다는 점을 보이기 위해서다.",
+                      "도시의 성장이 농촌 토지소유를 해체해 지대 수입을 임금 수입으로 통합한다는 점을 보이기 위해서다."
                     ],
                     "en": [
-                      "It concerns landed property changing into forms suited to capitalist leasing amid transport, commerce, and urban development.",
-                      "It presents self-sufficient large estates as the most developed capitalist form that slows the separation of wage labour and capital.",
-                      "It concerns rent becoming a more modern revenue form than profit as landed property remains outside commodity production.",
-                      "It concerns urban growth dissolving rural landed property and merging rent income into wage income."
+                      "To show that self-sufficient large estates are not the mature capitalist form of landed property, but are linked to weak transport, commerce, and urban development; as development proceeds, landed property is reorganized for leasing relations.",
+                      "To show that self-sufficient large estates are the most developed capitalist form and slow the separation of wage-labour and capital.",
+                      "To show that the more landed property remains outside commodity production, the more rent becomes a modern revenue form than profit.",
+                      "To show that urban growth dissolves rural landed property and merges rent income into wage income."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "각주는 토지소유도 고정된 법률명칭이 아니라 자본주의 발전 속에서 특수한 형태를 취함을 보강한다.",
-                    "en": "The note reinforces that landed property is not a fixed legal name; it takes a specific form in capitalist development."
+                    "ko": "리스트 각주의 요지는 “대토지 자급경제”를 봉건적ㆍ낙후적 조건의 표시로 본다는 데 있다. 교통, 상업, 국내 수공업, 부유한 도시가 발전하지 않았을 때 큰 영지가 스스로 필요한 것을 조달하는 폐쇄적 경제로 남기 쉽고, 영국에서도 상업과 교통이 발전하면서 그런 형태가 중간 규모 경영과 임대관계로 바뀌었다는 설명이다. 마르크스는 이 각주로 토지소유도 고정된 법률명칭이 아니라 자본주의 발전 속에서 자본과 노동에서 분리된 임대ㆍ지대 관계에 맞게 재편된다는 점을 보강한다.",
+                    "en": "The note on List treats self-sufficient large estates as a sign of backward conditions rather than as the mature capitalist form. Where transport, commerce, domestic trades, and wealthy towns are weak, large estates can remain closed economies supplying their own needs; in England, the growth of trade and commerce helped replace that form with middle-scale estates and leasing. Marx uses the note to reinforce that landed property is not a fixed legal label, but is reshaped under capitalist development into leasing and rent relations separated from capital and labour."
                   },
                   "id": "q5",
                   "points": 3
@@ -42322,7 +42322,7 @@
               },
               {
                 "title": "수입원 기준의 한계",
-                "text": "수입원이 같다는 기준만 쓰면 의사, 관리, 여러 직업집단까지 끝없이 별도 계급처럼 보인다."
+                "text": "수입원을 생산관계가 아니라 직업별 수입 원천으로 잡으면 의사는 진료 보수, 관리는 관직 봉급을 받는 집단으로 각각 별도 계급처럼 보인다. 이처럼 기준이 직업분업만큼 쪼개지는 것이 문제다."
               },
               {
                 "title": "발전 경향",
@@ -42336,7 +42336,7 @@
               },
               {
                 "title": "Limit of revenue-source criterion",
-                "text": "If identical revenue source is the sole criterion, physicians, officials, and many occupational groups proliferate as separate classes."
+                "text": "If revenue source is taken as an occupational source of income rather than a production relation, physicians appear as a group living from medical fees and officials as a group living from official salaries. The problem is that the criterion fragments along the division of labour."
               },
               {
                 "title": "Development tendency",
@@ -42357,16 +42357,16 @@
               {
                 "title": "왜 수입원만으로 부족한가",
                 "items": [
-                  "수입원이 같다는 점만 기준으로 삼으면 의사와 관리도 별도 계급이 되고, 직업분업만큼 계급이 잘게 쪼개진다.",
+                  "“같은 수입원”을 직업별 수입 원천으로 잡으면 의사는 진료 보수, 관리는 관직 봉급처럼 각자 집단 안에서 같은 원천의 수입을 받는다. 그러면 의사와 관리도 별도 계급처럼 세어야 하고, 계급 구분은 직업분업만큼 잘게 쪼개진다.",
                   "현실에는 중간층과 과도적 지위가 있어 계급선이 순수하게 나타나지 않는다. 이것은 분석을 폐기할 이유가 아니라 매개를 보아야 할 이유다.",
-                  "계급은 소득액이나 직업명이 아니라 생산조건에 대한 사회적 관계로 파악해야 한다."
+                  "따라서 계급은 소득액이나 직업명이 아니라 생산조건에 대한 사회적 관계로 파악해야 한다. 임금노동자 내부의 전문직ㆍ관리직 차이는 중요한 층화일 수 있지만, 그것만으로 별도 계급을 정의하지는 않는다."
                 ]
               },
               {
                 "title": "미완 장이 남기는 방향",
                 "items": [
                   "자본주의의 경향은 직접 생산자를 생산수단에서 분리하고, 생산수단을 자본으로 집중시키는 것이다.",
-                  "여기에 토지소유가 자본과 노동에서 독립된 권리로 분리되어 지대라는 별도 수입형태를 만든다.",
+                  "여기에 토지소유가 자본과 노동에서 독립된 권리로 분리되어 지대라는 별도 수입형태를 만든다. 리스트 각주는 대토지 자급경제가 영원한 토지소유 형태가 아니라, 교통ㆍ상업ㆍ도시 발달 속에서 임대관계에 맞게 재편될 수 있음을 보강한다.",
                   "따라서 3권의 수입형태 분석은 단순 회계표가 아니라 계급관계 분석으로 넘어가야 한다."
                 ]
               }
@@ -42383,16 +42383,16 @@
               {
                 "title": "Why Revenue Source Is Not Enough",
                 "items": [
-                  "If identical source of income were the only criterion, physicians and officials would become separate classes, and classes would fragment with every occupational division.",
+                  "If “same source of revenue” is taken as an occupational income source, physicians receive income from medical practice and officials from official salaries, each from a common source within its group. Physicians and officials would then have to count as separate classes, and class divisions would fragment with the division of labour.",
                   "Middle and transitional strata mean class lines do not appear in pure form. This is not a reason to abandon analysis, but a reason to study mediations.",
-                  "Class must be grasped by social relation to production conditions, not by income level or job title."
+                  "Class must therefore be grasped by social relation to production conditions, not by income level or job title. Professional or official strata within wage-labour can be important layers, but they do not by themselves define separate classes."
                 ]
               },
               {
                 "title": "Direction Left By The Fragment",
                 "items": [
                   "The tendency of capitalism is to separate direct producers from means of production and concentrate those means as capital.",
-                  "Landed property is separated as an independent right over against capital and labour, creating rent as a distinct revenue form.",
+                  "Landed property is separated as an independent right over against capital and labour, creating rent as a distinct revenue form. The note on List reinforces that self-sufficient large estates are not an eternal form of landed property; with transport, commerce, and urban development, they can be reorganized around leasing relations.",
                   "Thus Volume III’s analysis of revenue forms must pass into analysis of class relations, not end as an accounting table."
                 ]
               }
