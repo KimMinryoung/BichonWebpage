@@ -155,8 +155,8 @@
     }
 
     function loadLessonDetail(lesson) {
-        if (Array.isArray(lesson.questions) && lessonQuestionCount(lesson)) return Promise.resolve(lesson);
         if (lessonDetails[lesson.id]) return Promise.resolve(lessonDetails[lesson.id]);
+        if (Array.isArray(lesson.questions) && lessonQuestionCount(lesson) && (lesson.conceptBrief || lesson.conceptMap)) return Promise.resolve(lesson);
         return fetch(lessonDetailUrl(lesson.id), { credentials: 'same-origin' })
             .then(function(res) {
                 if (!res.ok) throw new Error('lesson load failed');
@@ -178,8 +178,7 @@
                     questionCount: lessonQuestionCount(loaded)
                 });
                 lessonDetails[lesson.id] = merged;
-                lesson.questions = merged.questions;
-                lesson.questionCount = merged.questionCount;
+                Object.assign(lesson, merged);
                 return merged;
             });
     }
