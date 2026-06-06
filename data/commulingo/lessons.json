@@ -41230,8 +41230,8 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "만약 임금이 150으로 오르되 노동생산성은 변하지 않는다면, 다음 설명 중 옳은 것은?",
-                    "en": "If wages rise to 150 while productivity remains unchanged, which statement is correct?"
+                    "ko": "상품가치 400c+100v+150s=650에서, 만약 임금이 150으로 오르되 노동생산성은 변하지 않는다면, 다음 설명 중 옳은 것은?",
+                    "en": "Given the commodity value 400c+100v+150s=650, if wages rise to 150 while productivity remains unchanged, which statement is correct?"
                   },
                   "choices": {
                     "ko": [
@@ -41291,22 +41291,22 @@
                   },
                   "choices": {
                     "ko": [
-                      "한 사람의 수입을 임금·이윤·지대로 나누어 자본주의 범주가 자연적 몫처럼 보이게 한다.",
+                      "한 사람이 직접 일하고 자기 도구와 토지를 써서 얻은 수입도 임금·이윤·지대로 나누어 설명하게 되어, 그 범주들이 특정 사회관계가 아니라 모든 생산에 자연스럽게 붙는 몫처럼 보이게 한다.",
                       "소상품생산에는 상품판매가 없으므로 임금과 이윤의 구별이 실제로 폐지된다.",
-                      "토지와 도구가 한 사람에게 속하면 생산물 가치는 노동시간과 분리된다.",
+                      "토지와 도구가 한 사람에게 속하면 생산물 가치는 노동시간과 분리되어 자연물이 직접 가격을 만든다.",
                       "가족노동은 시장가격보다 생활비 기준을 앞세워 지대와 이자의 사회적 계산을 약화한다."
                     ],
                     "en": [
-                      "One person’s income is split into wages, profit, and rent, making capitalist categories look like natural shares.",
+                      "Even income earned by one person working directly with their own tools and land is explained as wages, profit, and rent, making those categories look like natural shares attached to all production rather than specific social relations.",
                       "Small production has no commodity sale, so the distinction between wages and profit is actually abolished.",
-                      "When land and tools belong to one person, product value separates from labour-time.",
+                      "When land and tools belong to one person, product value separates from labour-time and natural things directly create price.",
                       "Family labour gives priority to living-cost measures and weakens the social calculation of rent and interest."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "동일 인물 안의 가상 분할은 역사적 범주를 초역사적 보수처럼 보이게 한다.",
-                    "en": "The imaginary split within one person makes historical categories look like timeless remuneration."
+                    "ko": "소상품생산자에게는 노동자, 자본가, 지주가 실제로 분리되어 있지 않다. 그런데 경쟁의 표면에서는 그의 수입도 자기 노동의 임금, 자기 도구의 이윤, 자기 토지의 지대처럼 쪼개어 해석된다. 그래서 임금·이윤·지대가 자본주의적 생산관계의 역사적 형태가 아니라 노동·도구·토지에 원래 붙어 있는 자연적 몫처럼 보이는 환상이 강화된다.",
+                    "en": "In the small producer, worker, capitalist, and landowner are not actually separated. On the surface of competition, however, that producer’s income is still read as wages for their labour, profit on their tools, and rent from their land. This strengthens the illusion that wages, profit, and rent are natural shares attached to labour, tools, and land themselves, rather than historical forms of capitalist production relations."
                   },
                   "id": "q4",
                   "points": 2
@@ -41357,13 +41357,13 @@
                   },
                   "choices": {
                     "ko": [
-                      "동일한 노동생산성에서는 새 가치 v+s가 유지되고, 임금 상승은 v를 늘리는 만큼 s를 줄인다고 본다.",
+                      "같은 노동량과 노동생산성에서는 새 가치 v+s가 250으로 유지되므로, 임금 상승분 50이 가격에 더해져 700이 되는 것이 아니라 v가 늘고 s가 줄어 총가치는 650으로 남는다고 본다.",
                       "임금이 오르면 노동자가 더 많은 가치를 창조하므로 생산성 변화 없이 가격이 오른다고 본다.",
                       "임금 상승은 불변자본의 이전가치를 늘려 모든 부문의 가치구성을 바꾼다고 본다.",
                       "노동일이 같아도 임금률이 오르면 새 가치량 자체가 같은 비율로 커진다고 본다."
                     ],
                     "en": [
-                      "With the same labour productivity, new value v+s remains unchanged; a wage rise increases v and reduces s by the same amount.",
+                      "With the same labour quantity and productivity, new value v+s remains 250, so the wage increase of 50 is not added to price to make 700; v rises, s falls, and total value remains 650.",
                       "When wages rise, workers create more value, so prices rise without productivity changes.",
                       "Wage increases raise transferred value of constant capital and alter every branch’s value composition.",
                       "Even with the same working day, a higher wage rate enlarges the new value in the same ratio."
@@ -41371,8 +41371,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "임금은 새 가치의 분배항목이지 같은 생산조건에서 새 가치량을 키우는 원인이 아니다. 예컨대 100v+150s=250이 150v+100s=250으로 바뀐다.",
-                    "en": "Wages are a distribution item of new value, not a cause increasing new value under the same production conditions. For example, 100v+150s=250 becomes 150v+100s=250."
+                    "ko": "마르크스가 비판하는 것은 임금 상승을 상품가격에 단순히 더해 버리는 사고방식이다. 예컨대 400c+100v+150s=650에서 같은 노동량과 노동생산성이 유지되면 새 가치는 100v+150s=250으로 이미 정해져 있다. 임금이 150으로 오르면 400c+150v+100s=650이 되어 잉여가치가 줄어들 뿐, 임금 상승분 50이 추가 비용처럼 붙어 700이 되는 것은 아니다.",
+                    "en": "Marx criticizes the habit of simply adding a wage rise to the commodity price. In 400c+100v+150s=650, if the same labour quantity and productivity are maintained, new value is already fixed at 100v+150s=250. If wages rise to 150, the result is 400c+150v+100s=650: surplus-value falls, rather than the wage increase of 50 being added as an extra cost to make 700."
                   },
                   "id": "q1",
                   "points": 3
