@@ -1643,15 +1643,15 @@
                   "choices": {
                     "ko": [
                       "등가교환만으로는 추가 가치가 어디서 생기는지 설명할 수 없다는 문제",
-                      "판매자들이 서로 곧장 손해를 보므로 교환이 곧바로 중단된다는 문제",
-                      "가치가 없기 때문에 가격도 설명하기 어렵다는 문제",
-                      "사용가치가 충분하면 돈 없이도 자본이 그 자체로 증식한다는 문제"
+                      "등가교환에서는 아무도 이득을 보지 못하므로, 자본가는 거래를 그만둘 수밖에 없다는 문제",
+                      "상품이 가치대로 팔린다면, 자본가의 110원은 누군가를 속인 결과일 수밖에 없다는 문제",
+                      "잉여가치는 유통 밖의 생산에서만 나오므로, 시장 분석은 더 이상 필요 없다는 문제"
                     ],
                     "en": [
                       "The problem that equivalent exchange alone cannot explain where the additional value comes from",
-                      "The problem that every seller must lose, so exchange immediately stops",
-                      "The problem that because value does not exist, price cannot arise at all",
-                      "The problem that if use-value is sufficient, capital automatically expands without money"
+                      "The problem that no one gains in equivalent exchange, so the capitalist has no choice but to stop trading",
+                      "The problem that if commodities sell at their value, the capitalist's 110 won must be the result of cheating someone",
+                      "The problem that surplus-value arises only in production outside circulation, so market analysis is no longer needed"
                     ]
                   },
                   "answer": 0,
@@ -1671,15 +1671,15 @@
                   "choices": {
                     "ko": [
                       "한 사람의 초과이득은 다른 사람의 손실일 수 있어, 전체 가치총액의 증가를 설명하지 못하기 때문이다.",
-                      "가격이 가치보다 높으면 상품은 사용가치를 잃어버리기 때문이다.",
-                      "비싸게 파는 행위는 모든 역사적 시장에서 완전히 불가능했기 때문이다.",
-                      "상인은 생산자와 달라서 어떤 경우에도 돈을 받을 수 없기 때문이다."
+                      "비싸게 파는 사람이 늘어나면 유통에 필요한 화폐량이 부족해져 거래가 멈추기 때문이다.",
+                      "가격 인상분은 시간이 지나면 반드시 원래 가치 수준으로 되돌아오기 때문이다.",
+                      "비싸게 판 사람도 살 때는 비싸게 사야 하므로, 개인조차 이득을 볼 수 없기 때문이다."
                     ],
                     "en": [
                       "Because one person’s extra gain can be another person’s loss, so it does not explain an increase in the total mass of value.",
-                      "Because if price rises above value, the commodity loses its use-value.",
-                      "Because selling dear has been completely impossible in every historical market.",
-                      "Because merchants, unlike producers, can never receive money."
+                      "Because as more people sell dear, the money needed for circulation runs short and trade comes to a halt.",
+                      "Because any price increase necessarily falls back to the original value level over time.",
+                      "Because whoever sells dear must also buy dear, so not even an individual can gain."
                     ]
                   },
                   "answer": 0,
@@ -1699,15 +1699,15 @@
                   "choices": {
                     "ko": [
                       "모두가 판매자인 동시에 구매자이므로, 보편적 속임수는 총체적으로 새 가치를 만들지 않고 가격상의 이전만 만들 수 있다.",
-                      "속임수는 도덕적으로 나쁘기 때문에 경제분석의 대상이 될 수 없다.",
-                      "상품교환에서는 누구도 가격을 제시할 수 없으므로 속임수도 불가능하다.",
-                      "모두가 속이면 각 상품의 사용가치가 더 유용해가 된다."
+                      "속임수는 법으로 처벌되므로, 장기적으로는 시장에서 저절로 사라지기 때문이다.",
+                      "이윤은 판매자의 정당한 노력의 대가이므로 속임수라고 부를 수 없기 때문이다.",
+                      "모두가 속이면 가격이 함께 올라, 모두의 실질 구매력도 그만큼 커지기 때문이다."
                     ],
                     "en": [
                       "Because everyone is both seller and buyer, universal cheating can at most create price transfers, not new value in the aggregate.",
-                      "Because cheating is morally wrong and therefore cannot be an object of economic analysis.",
-                      "Because no one can name a price in commodity exchange, so cheating is impossible.",
-                      "Because if everyone cheats, the use-value of every commodity physically doubles."
+                      "Because cheating is punished by law and therefore disappears from the market by itself in the long run.",
+                      "Because profit is the just reward of the seller's effort and so cannot be called cheating.",
+                      "Because if everyone cheats, prices rise together and everyone's real purchasing power grows by as much."
                     ]
                   },
                   "answer": 0,
@@ -1727,14 +1727,14 @@
                   "choices": {
                     "ko": [
                       "자본가는 시장에서 어떤 상품을 사야 하지만, 단순한 사고팔기 자체는 새 가치를 만들지 못한다는 뜻이다.",
-                      "자본가는 시장에 나가면 안 되며 모든 잉여가치는 고립된 개인 생산에서 생긴다는 뜻이다.",
-                      "유통은 가치와 아무 관련이 없으므로 분석에서 완전히 제외해야 한다는 뜻이다.",
+                      "잉여가치의 절반은 유통에서, 나머지 절반은 생산에서 나누어 생긴다는 뜻이다.",
+                      "자본가가 사는 상품과 파는 상품이 다르기 때문에 생기는 표현상의 말장난일 뿐이라는 뜻이다.",
                       "모순이 있으므로 자본주의적 교환은 논리적으로 존재할 수 없다는 뜻이다."
                     ],
                     "en": [
                       "The capitalist must buy some commodity in the market, but the mere act of buying and selling does not create new value.",
-                      "The capitalist must not enter the market, and all surplus-value arises in isolated individual production.",
-                      "Circulation has nothing to do with value and should be excluded entirely from the analysis.",
+                      "It means half of surplus-value arises in circulation and the other half in production.",
+                      "It means the contradiction is a mere play on words arising because the capitalist buys one commodity and sells another.",
                       "Because there is a contradiction, capitalist exchange cannot logically exist."
                     ]
                   },
@@ -1755,15 +1755,15 @@
                   "choices": {
                     "ko": [
                       "등가로 구매되지만 사용될 때 자기 가치보다 더 큰 가치를 만들 수 있는 상품이 필요하기 때문이다.",
-                      "자본가는 생산수단을 충분히 확보하지 않고 노동자도 고용하지 않기 때문이다.",
+                      "화폐 소유자는 시장에서 생산수단만 사들이면 잉여가치를 얻을 수 있기 때문이다.",
                       "상품 일반은 구매되는 순간 그 자체로 자기 가치보다 더 큰 가치를 만들기 때문이다.",
-                      "잉여가치는 오직 상인의 속임수에서 나오므로 노동력은 분석할 필요가 없기 때문이다."
+                      "등가교환의 가정을 버리면 모순이 풀리므로, 6장은 부등가교환의 사례를 모으기 때문이다."
                     ],
                     "en": [
                       "Because the analysis needs a commodity that is bought at its value but can create more value than its own value when used.",
-                      "Because the capitalist buys no means of production and employs no workers.",
+                      "Because the money-owner can obtain surplus-value just by buying means of production in the market.",
                       "Because every commodity automatically creates more value than its own value the moment it is bought.",
-                      "Because surplus-value comes only from merchant fraud, so labor-power need not be analyzed."
+                      "Because dropping the assumption of equivalent exchange dissolves the contradiction, Chapter 6 collects cases of non-equivalent exchange."
                     ]
                   },
                   "answer": 0,
@@ -1821,15 +1821,15 @@
                   "choices": {
                     "ko": [
                       "그는 자기 노동으로 상품가치를 가질 수는 있지만, 자기 상품을 자기에게 더 비싸게 팔아 가치증식을 만들 수는 없기 때문이다.",
-                      "유통 바깥에서는 사용가치가 대체로 약해져 어떤 물건도 생산될 수 없기 때문이다.",
-                      "자기 상품을 소유하면 그 자체로 화폐가 두 배가 되기 때문이다.",
-                      "유통 바깥에서는 노동이 대체로 추상노동이 아니라 가치분석 밖으로 밀려나기 때문이다."
+                      "유통 바깥에서는 노동이 가치를 만들 수 없으므로, 그의 상품에는 애초에 가치가 없기 때문이다.",
+                      "상품 소유자는 교환 없이는 자기 상품의 가치 크기를 알 수 없기 때문이다.",
+                      "고립된 생산자는 자기 필요를 넘는 잉여노동을 할 수 없기 때문이다."
                     ],
                     "en": [
                       "They may have a commodity with value from their labor, but they cannot sell their own commodity to themselves at a higher value and produce valorization.",
-                      "Outside circulation all use-values disappear, so no thing can be produced.",
-                      "Owning one’s own commodity automatically doubles money.",
-                      "Outside circulation labor always ceases to be abstract labor and becomes leisure."
+                      "Because labor cannot create value outside circulation, so his commodity has no value to begin with.",
+                      "Because without exchange the commodity owner cannot know the magnitude of his commodity’s value.",
+                      "Because an isolated producer cannot perform surplus labor beyond his own needs."
                     ]
                   },
                   "answer": 0,
@@ -1849,15 +1849,15 @@
                   "choices": {
                     "ko": [
                       "그는 개별 상업이득의 존재가 아니라, 그것만으로 총잉여가치의 발생을 설명할 수 있다는 주장을 비판한다.",
-                      "그는 상인이 역사적으로 존재하지 않았다고 주장한다.",
-                      "그는 유통에서 가격차이가 절대 생기지 않는다고 주장한다.",
-                      "그는 생산자본 없이도 상업자본이 모든 새 가치를 생산한다고 주장한다."
+                      "그는 상업이윤이 모두 착시이며 실제로는 존재하지 않는다고 주장한다.",
+                      "그는 자본주의에서는 가격과 가치의 편차가 일어나지 않는다고 주장한다.",
+                      "그는 상업의 이득이 모두 운송 같은 생산적 노동의 대가라고 주장한다."
                     ],
                     "en": [
                       "He criticizes not the existence of individual commercial gains, but the claim that such gains explain the origin of total surplus-value.",
-                      "He claims that merchants never existed historically.",
-                      "He claims that price differences can never arise in circulation.",
-                      "He claims that merchant capital produces all new value without productive capital."
+                      "He claims that commercial profit is entirely an illusion and does not really exist.",
+                      "He claims that under capitalism prices never deviate from values.",
+                      "He claims that all commercial gains are payment for productive labor such as transport."
                     ]
                   },
                   "answer": 0,
@@ -1877,15 +1877,15 @@
                   "choices": {
                     "ko": [
                       "그 상품은 시장에서 가치대로 팔리지만, 그 사용가치가 가치의 원천이어야 한다.",
-                      "그 상품은 판매자가 속여 팔 수 있을 때만 자본이 된다.",
+                      "그 상품은 가치보다 싸게 살 수 있어야 한다.",
                       "그 상품은 아무 사용가치도 없어야 순수한 가치가 된다.",
-                      "그 상품은 자연물이어서 사회관계와 무관해야 한다."
+                      "그 상품은 생산비가 들지 않아 공짜로 얻을 수 있어야 한다."
                     ],
                     "en": [
                       "It must be sold at its value in the market, while its use-value is a source of value.",
-                      "It becomes capital only when the seller can cheat the buyer.",
+                      "That commodity must be purchasable below its value.",
                       "It must have no use-value in order to become pure value.",
-                      "It must be a natural object unrelated to social relations."
+                      "That commodity must cost nothing to produce and be obtainable for free."
                     ]
                   },
                   "answer": 0,
@@ -1906,14 +1906,14 @@
                     "ko": [
                       "착취를 단순한 사기나 불공정교환이 아니라 자유롭고 등가적인 교환을 통과해 성립하는 관계로 분석할 길을 열기 때문이다.",
                       "착취는 임금 미지급 같은 예외적 부정행위에서 생기기 때문이다.",
-                      "자본주의에서는 모든 이윤이 도둑질이므로 생산과정은 분석할 필요가 없다고 보기 때문이다.",
-                      "노동자가 상품을 사는 순간 자본가가 된다는 점을 증명하기 때문이다."
+                      "착취가 도덕적 부정의임을 보이면 충분하므로, 정상적 교환의 분석은 필요 없기 때문이다.",
+                      "등가교환이 성립하는 한 착취는 있을 수 없다는 결론을 확정해 주기 때문이다."
                     ],
                     "en": [
                       "Because it opens the way to analyze exploitation not as mere fraud or unequal exchange, but as a relation that passes through free and equivalent exchange.",
                       "Because it concludes that exploitation exists only when workers receive no wage at all.",
-                      "Because it treats all profit under capitalism as theft and makes analysis of production unnecessary.",
-                      "Because it proves that workers become capitalists as soon as they buy commodities."
+                      "Because showing exploitation to be a moral injustice is enough, so no analysis of normal exchange is needed.",
+                      "Because it settles the conclusion that as long as exchange is equivalent, there can be no exploitation."
                     ]
                   },
                   "answer": 0,
