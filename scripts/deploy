@@ -15,6 +15,7 @@ IMAGE_NAME="leninbot-frontend"
 NETWORK="leninbot_default"
 IPV6_NETWORK="leninbot_ipv6"
 REVISION_LABEL="com.cyber-lenin.frontend.git-revision"
+RUN_AS_UID_GID="$(id -u):$(id -g)"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -107,8 +108,10 @@ log "Recreating container..."
 docker stop "$CONTAINER_NAME" 2>/dev/null || true
 docker rm "$CONTAINER_NAME" 2>/dev/null || true
 
+log "Running container as host user ${RUN_AS_UID_GID}."
 docker run -d \
     --name "$CONTAINER_NAME" \
+    --user "$RUN_AS_UID_GID" \
     --label "$REVISION_LABEL=$LOCAL" \
     --add-host=host.docker.internal:host-gateway \
     -p 127.0.0.1:3000:3000 \
