@@ -2,7 +2,7 @@
 
 ## Purpose
 
-CommuLingo is a chapter-by-chapter learning path for visitors who are not already comfortable with Marxist theory. The current public scope is Marx's Capital, volumes 1-3, plus Lenin's Imperialism.
+CommuLingo is a chapter-by-chapter learning path for visitors who are not already comfortable with Marxist theory. The current public scope is Marx's Capital, volumes 1-3, plus Lenin's Imperialism and Lenin's The State and Revolution.
 
 The service should feel like guided study, not an exam ambush. The learner should be able to read a short chapter card, get a concept brief before the quiz, answer five questions, and understand why the distinction matters.
 
@@ -12,13 +12,14 @@ The service should feel like guided study, not an exam ambush. The learner shoul
 - Capital Volume II: 21 chapters
 - Capital Volume III: 52 chapters
 - Lenin, Imperialism: 10 chapters
+- Lenin, The State and Revolution: 6 chapters
 - Two lessons per chapter:
   - Basic: 5 multiple-choice questions
   - Advanced: 5 multiple-choice questions
 - Current totals:
-  - 116 chapters
-  - 232 lessons
-  - 1,160 questions
+  - 122 chapters
+  - 244 lessons
+  - 1,220 questions
 
 ## Current Files
 
@@ -32,6 +33,22 @@ The service should feel like guided study, not an exam ambush. The learner shoul
 - Content validator: `scripts/validate-commulingo.js`
 - Quality audit: `scripts/audit-commulingo-quality.js`
 - Progress table migration: `scripts/migrations/005_commulingo_progress.sql`
+
+## Completed Work, June 10 2026
+
+Quality pass on Capital Volume I, chapters 1-6 (Parts I-II), one commit per chapter:
+
+- Fixed a real grading bug in V1 ch1 basic q4: the correct choice (socially necessary labor-time) was not in the first slot, so `answer: 0` graded a wrong choice as correct.
+- Replaced joke, extreme-template, and incoherent distractors across ch1-6 with plausible misunderstandings that diagnose real confusions (money held is already capital, exploitation as fraud, buying labor-power below value, fetishism as advertising/deception, free contract implying fairness, and so on).
+- Fixed Korean typos and awkward phrasing ("없어 진다", "유용해가 된다", "의사로 주로").
+- Aligned ch1-6 concept brief cards with their titles (fetishism, general equivalent, payment-crisis, double freedom cards previously repeated the generic learning focus or duplicated the previous card).
+
+New course: Lenin, The State and Revolution (`data/commulingo/courses/lenin-state-revolution.js`):
+
+- 6 chapters, 12 lessons, 60 bilingual questions following the Basic/Advanced lesson arcs of this document.
+- Per-chapter concept briefs with core concepts, term guide, modern application, and chapter focus; conceptMap nodes for the pre-quiz diagram.
+- Registered in `PUBLIC_CHAPTER_LIMITS` (data/commulingo/shards.js) and in the validator's expected counts (totals now 1,220 questions / 244 lessons).
+- `scripts/audit-commulingo-quality.js` reports zero advisory hits for the new course.
 
 ## Completed Work, May 31 2026
 
