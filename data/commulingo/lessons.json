@@ -85,13 +85,13 @@
                       "가치는 노동자의 개인적 고생의 양이 아니라 사회적으로 필요한 노동시간과 관련된다.",
                       "개별 작업장이 실제로 쓴 시간이 길수록 그 상품의 사회적 가치는 그대로 커진다.",
                       "가치는 대체로 물건의 쓸모가 커진 만큼 그 자체로 커진다.",
-                      "새 기술은 상품의 사용가치만 바꾸며 가치에는 아무런 영향을 주지 않는다."
+                      "새 기술로 생산력이 높아지면 외투 한 벌에 담기는 가치도 그만큼 커진다."
                     ],
                     "en": [
                       "Value is tied to socially necessary labor-time, not to the worker's private amount of effort.",
                       "The longer an individual workshop takes, the greater the commodity's social value becomes.",
                       "Value always rises automatically whenever the thing becomes more useful.",
-                      "New technique changes only use-value and has no bearing on value."
+                      "When new technique raises productivity, each coat comes to contain that much more value."
                     ]
                   },
                   "answer": 0,
@@ -138,16 +138,16 @@
                   },
                   "choices": {
                     "ko": [
-                      "손으로 만든 물건은 시장에 들어가도 상품이 될 수 없기 때문이다.",
-                      "낡은 도구로 생산한 물건은 사용가치가 없으므로 아무 가치도 갖지 않기 때문이다.",
                       "상품의 가치는 사적 노동시간이 아니라 사회적으로 필요한 노동시간을 통해 인정되기 때문이다.",
-                      "가치는 대체로 판매자가 원하는 가격에 의해 결정되기 때문이다."
+                      "낡은 도구로 만든 의자는 품질이 떨어져 사용가치가 적고, 사용가치가 적은 만큼 가치도 작아지기 때문이다.",
+                      "수공업 노동은 기계제 노동보다 강도가 낮아, 같은 시간을 일해도 가치를 덜 만들기 때문이다.",
+                      "의자의 가치는 결국 판매자가 부르는 가격에 따라 정해지기 때문이다."
                     ],
                     "en": [
-                      "Because handmade objects cannot become commodities once they enter the market.",
-                      "Because a thing made with outdated tools has no use-value and therefore no value at all.",
                       "Because commodity value is validated through socially necessary labor-time, not through private labor-time.",
-                      "Because value is always determined by the price the seller wants."
+                      "Because a chair made with outdated tools is poorer in quality, and less use-value means proportionally less value.",
+                      "Because handicraft labor is less intense than machine labor, so the same hours create less value.",
+                      "Because the chair's value is ultimately set by whatever price the seller asks."
                     ]
                   },
                   "answer": 0,
@@ -205,15 +205,15 @@
                   "choices": {
                     "ko": [
                       "사적인 구체적 노동들이 어떻게 사회적으로 동일한 가치의 형태를 얻는가",
-                      "생산자가 자신의 물건을 얼마나 사랑하는지가 교환비율을 어떻게 정하는가",
+                      "수요와 공급의 변동이 개별 가격을 어떻게 끌어올리고 끌어내리는가",
                       "국가가 어떤 법률로 상품 일반가격을 같은 수준에 묶어 두는가",
-                      "자연적으로 유용한 물건이 왜 시장 없이도 곧바로 자본이 되는가"
+                      "유용한 물건이 많이 생산될수록 사회의 가치총량도 그만큼 늘어나는가"
                     ],
                     "en": [
                       "How private concrete labors acquire the social form of equal value",
-                      "How much the producer loves the object and how that fixes the exchange ratio",
+                      "How fluctuations of supply and demand push individual prices up and down",
                       "Which law the state uses to hold all commodity prices at the same level",
-                      "Why a naturally useful thing becomes capital directly, even without a market"
+                      "Whether producing more useful things increases the total value in society by the same amount"
                     ]
                   },
                   "answer": 0,
@@ -261,15 +261,15 @@
                   "choices": {
                     "ko": [
                       "욕구는 사용가치를 설명할 수 있지만, 가치로 비교되는 것은 사회적으로 필요한 추상적 노동이라는 점",
-                      "사람들이 원한다는 사실만으로 모든 물건의 가격이 항상 같아진다는 점",
-                      "사용가치는 아무 의미가 없고, 사람들의 욕구는 상품 분석에서 완전히 제외된다는 점",
-                      "가치는 생산과 무관하며 소비자가 느끼는 만족의 강도만으로 충분히 측정된다는 점"
+                      "빵에 대한 욕구가 강할수록 빵을 만드는 데 필요한 노동시간 자체가 늘어난다고 본다는 점",
+                      "개인마다 다른 욕구를 평균 내면 그것이 곧 가치가 된다고 본다는 점",
+                      "욕구가 없으면 노동생산물은 아예 상품이 될 수 없다고 본다는 점"
                     ],
                     "en": [
                       "Want explains use-value, but what is compared as value is socially necessary abstract labor.",
-                      "The mere fact that people want things makes all prices equal all the time.",
-                      "Use-value has no significance, and human wants must be excluded entirely from commodity analysis.",
-                      "Value has nothing to do with production and can be fully measured by the intensity of consumer satisfaction."
+                      "It assumes that the stronger the want for bread, the more labor-time bread itself requires.",
+                      "It assumes that averaging individuals' different wants directly yields value.",
+                      "It assumes that without a want, a product of labor cannot become a commodity at all."
                     ]
                   },
                   "answer": 0,
@@ -289,14 +289,14 @@
                   "choices": {
                     "ko": [
                       "사람들의 사회적 노동관계가 물건들의 객관적 성질과 물건들 사이의 관계처럼 나타난다는 점",
-                      "상품에는 실제 사용가치가 없고 모든 필요가 광고로 만들어진 표면형태라는 점",
-                      "상인이 일부러 가격표를 복잡하게 만들어 소비자를 속인다는 점",
+                      "소비자의 필요가 사실은 광고가 만들어 낸 가짜 욕구일 뿐이라는 점",
+                      "판매자들이 꾸민 의도적 속임수이므로, 정보만 투명해지면 사라질 착시라는 점",
                       "화폐가 등장하면 생산과 노동은 경제에서 더 이상 중요하지 않게 된다는 점"
                     ],
                     "en": [
                       "That social relations among people's labor appear as objective properties of things and relations among things",
-                      "That commodities have no real use-value and all needs are illusions produced by advertising",
-                      "That merchants deliberately make price tags complicated in order to deceive consumers",
+                      "That consumers' needs are merely false wants manufactured by advertising",
+                      "That it is a deliberate trick staged by sellers, an illusion that transparent information would dispel",
                       "That once money appears, production and labor no longer matter in the economy"
                     ]
                   },
