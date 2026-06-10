@@ -391,7 +391,7 @@
               },
               {
                 "title": "물신성으로 가는 출발점",
-                "text": "쓸모와 교환가치를 구분하고, 가치가 개인의 수고가 아니라 사회적으로 필요한 노동시간과 연결된다는 점을 잡는다."
+                "text": "가치는 사람들 사이의 노동관계인데도 물건 자체의 성질처럼 보인다. 사적 노동이 교환을 통해서만 사회적으로 인정되기 때문에 생기는 이 외양이 상품물신성이다."
               }
             ],
             "en": [
@@ -413,7 +413,7 @@
               },
               {
                 "title": "Starting Point for Fetishism",
-                "text": "Distinguish usefulness from exchange-value, and see why value depends on socially necessary labor-time rather than private effort."
+                "text": "Value is a relation among people's labors, yet it appears as a property of things themselves. This appearance, which arises because private labor is socially validated only through exchange, is commodity fetishism."
               }
             ]
           }
@@ -784,7 +784,7 @@
               },
               {
                 "title": "일반적 등가물의 필요",
-                "text": "교환은 물건끼리 자동으로 일어나는 일이 아니라, 사적 소유자들이 서로를 인정하는 관계 위에서 가능하다는 점을 본다."
+                "text": "모든 소유자가 자기 상품을 곧바로 교환 가능한 것으로 인정받고 싶어 하지만, 모두가 동시에 그럴 수는 없다. 그래서 특정 상품이 사회적으로 일반적 등가물의 자리에 서며, 여기서 화폐가 생겨난다."
               }
             ],
             "en": [
@@ -798,7 +798,7 @@
               },
               {
                 "title": "Need for a General Equivalent",
-                "text": "See exchange as a relation among private owners who recognize one another, not as an automatic movement of things."
+                "text": "Every owner wants their commodity recognized as directly exchangeable, but not all can be at once. So one commodity comes to occupy the place of the general equivalent, and money arises here."
               }
             ]
           }
@@ -1177,7 +1177,7 @@
               },
               {
                 "title": "지급수단과 위기 가능성",
-                "text": "화폐를 단순한 동전이나 지폐가 아니라 상품세계의 가치관계를 표현하고 움직이는 형태로 이해한다."
+                "text": "외상과 만기가 일반화되면 판매와 결제가 시간적으로 분리된다. 결제 사슬의 한 고리가 끊기면 지급불능이 연쇄로 번질 수 있어, 화폐의 지급수단 기능에는 위기의 형식적 가능성이 들어 있다."
               }
             ],
             "en": [
@@ -1199,7 +1199,7 @@
               },
               {
                 "title": "Means of Payment and Crisis",
-                "text": "Understand money as a form that expresses and moves value relations in commodity society, not merely as coins or notes."
+                "text": "When credit and due dates become general, sale and settlement separate in time. If one link in the chain of payments breaks, defaults can spread; the means-of-payment function carries the formal possibility of crisis."
               }
             ]
           }
@@ -2373,9 +2373,9 @@
               {
                 "title": "이중의 자유",
                 "items": [
-                  "노동력은 인간이 노동할 수 있는 능력이다.",
-                  "노동력의 가치는 노동자를 재생산하는 데 필요한 생활수단의 가치로 정해진다.",
-                  "노동력의 사용가치는 자기 가치보다 더 큰 가치를 만들 수 있다는 데 있다."
+                  "인격적 자유: 노동자는 자기 노동력을 일정 기간 상품으로 팔 수 있는 법적 주체다.",
+                  "생산수단으로부터의 ‘자유’: 토지도 도구도 없어, 살기 위해 노동력을 팔 수밖에 없다.",
+                  "이 두 자유가 함께 갖춰질 때에만 노동력이 시장에 상품으로 나온다."
                 ]
               },
               {
@@ -2395,9 +2395,9 @@
               {
                 "title": "Double Freedom",
                 "items": [
-                  "Labour-power is the human capacity to work.",
-                  "The value of labour-power is determined by the value of the means of subsistence needed to reproduce the worker.",
-                  "Its use-value is that it can create more value than it itself costs."
+                  "Personal freedom: the worker is a legal subject who can sell their labor-power as a commodity for a limited time.",
+                  "'Freedom' from the means of production: owning neither land nor tools, they must sell their labor-power to live.",
+                  "Only when both freedoms hold together does labor-power appear on the market as a commodity."
                 ]
               },
               {
