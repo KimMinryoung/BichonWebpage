@@ -15,6 +15,7 @@ const PUBLIC_CHAPTER_LIMITS = {
     'capital-vol2': 21,
     'capital-vol3': 52,
     'lenin-imperialism': 10,
+    'lenin-state-revolution': 6,
 };
 
 let freshnessCache = null;
