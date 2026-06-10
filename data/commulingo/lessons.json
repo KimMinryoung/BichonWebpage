@@ -925,14 +925,14 @@
                   "choices": {
                     "ko": [
                       "화폐가 판매와 구매를 매개하면서도 둘을 분리해, 한 판매가 곧바로 다른 구매를 보장하지 않기 때문이다.",
-                      "돈을 보유하는 순간 판매자는 이미 생산자본가가 되어 다음 생산을 시작하기 때문이다.",
-                      "판매 뒤 구매가 늦어지면 상품의 사용가치가 같은 비율로 늘어나기 때문이다.",
+                      "판매로 얻은 돈은 그 자체로 자본이므로, 보유하는 동안에도 저절로 가치가 늘어나기 때문이다.",
+                      "판매가 끝나도 상품이 소비되기 전까지는 교환이 완료되지 않아, 구매자의 소비 시점까지 따라가야 하기 때문이다.",
                       "구매 지연은 개인의 저축 습관이며 상품유통의 구조와는 별도의 생활양식이기 때문이다."
                     ],
                     "en": [
                       "Because money mediates sale and purchase while also separating them, so one sale does not immediately guarantee another purchase.",
-                      "Because the moment money is held, the seller has already become a productive capitalist and begins the next production process.",
-                      "Because when purchase is delayed after sale, the commodity’s use-value rises in the same proportion.",
+                      "Because the money from the sale is already capital in itself, growing in value of its own accord while it is held.",
+                      "Because exchange is not complete until the commodity is consumed, so the analysis must follow the buyer's act of consumption.",
                       "Because delayed purchase is a personal saving habit, a lifestyle separate from the structure of commodity circulation."
                     ]
                   },
@@ -1047,14 +1047,14 @@
                   "choices": {
                     "ko": [
                       "같은 화폐라도 가격을 표현할 때, 상품의 손바뀜을 매개할 때, 채무를 결제할 때 서로 다른 기능을 수행하기 때문이다.",
-                      "세 기능은 같은 이름의 반복이며 모두 가격표를 붙이는 행위로 끝나기 때문이다.",
-                      "지급수단은 상품교환 이전의 선물 관습이고 유통수단은 생산과정 안의 기계 장치이기 때문이다.",
+                      "세 기능은 화폐 발전의 역사적 단계를 가리키므로, 오늘날의 화폐에는 마지막 기능만 남아 있기 때문이다.",
+                      "기능마다 서로 다른 화폐가 필요해서, 하나의 화폐는 한 가지 기능만 수행할 수 있기 때문이다.",
                       "가치척도는 금속화폐에만 적용되고 지급수단은 종이화폐에만 적용되는 물질 구분이기 때문이다."
                     ],
                     "en": [
                       "Because the same money performs different functions when it expresses price, mediates the change of hands of commodities, and settles debts.",
-                      "Because the three functions repeat the same name and all end with attaching a price tag.",
-                      "Because means of payment is a pre-exchange gift custom, while means of circulation is a machine inside production.",
+                      "Because the three functions name historical stages of money's development, and only the last survives in today's money.",
+                      "Because each function requires a different money, so one money can perform only one function.",
                       "Because measure of value applies only to metallic money, while means of payment applies only to paper money."
                     ]
                   },
@@ -1075,15 +1075,15 @@
                   "choices": {
                     "ko": [
                       "판매와 지급이 시간적으로 벌어지면서 한 결제 실패가 연쇄적 지급불능으로 번질 수 있다.",
-                      "외상거래가 생기면 상품의 가치는 채무자의 서명에서 새로 생산된다.",
+                      "외상거래에서는 신용이 가치를 대신 만들어 내므로, 결제가 미뤄질수록 유통되는 가치도 함께 늘어난다.",
                       "만기일이 정해지면 모든 판매는 이미 완전한 현금판매와 같은 구조가 된다.",
-                      "신용은 상품유통을 생활물자의 직접 분배로 바꾸어 화폐 기능을 끝낸다."
+                      "외상이 일반화되면 화폐는 더 이상 필요 없어지므로, 위험은 화폐가 아니라 상품의 부족에서만 생긴다."
                     ],
                     "en": [
                       "Because sale and payment are separated in time, one failed payment can spread into a chain of insolvency.",
-                      "Once credit appears, commodity value is newly produced by the debtor’s signature.",
+                      "That in credit dealings credit itself creates value, so the longer settlement is deferred, the more value circulates.",
                       "Once a due date is fixed, every sale has the same structure as a completed cash sale.",
-                      "Credit turns commodity circulation into direct distribution of means of life and ends the functions of money."
+                      "That once credit is general, money is no longer needed, so risk can only come from a shortage of goods, not from money."
                     ]
                   },
                   "answer": 0,
