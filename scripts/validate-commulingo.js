@@ -8,6 +8,7 @@ const expected = {
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },
   'capital-vol3': { chapters: 52, questions: 520, lessons: 104 },
   'lenin-imperialism': { chapters: 10, questions: 100, lessons: 20 },
+  'lenin-state-revolution': { chapters: 6, questions: 60, lessons: 12 },
 };
 const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7 };
 const banned = [
@@ -152,8 +153,8 @@ Object.keys(expected).forEach(function(collectionId) {
 });
 
 (data.collections || []).forEach(function(collection) { if (!expected[collection.id]) fail('unexpected collection ' + collection.id); });
-if (totalQuestions !== 1160) fail('total question count ' + totalQuestions + ' != 1160');
-if (totalLessons !== 232) fail('total lesson count ' + totalLessons + ' != 232');
+if (totalQuestions !== 1220) fail('total question count ' + totalQuestions + ' != 1220');
+if (totalLessons !== 244) fail('total lesson count ' + totalLessons + ' != 244');
 
 if (errors.length) {
   console.error('Commulingo validation failed with ' + errors.length + ' issue(s):');
