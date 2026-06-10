@@ -458,13 +458,13 @@
                       "상품을 소유하고 서로를 사적 소유자로 인정하는 사람들",
                       "국가가 교환 일반비율을 미리 계산해 주는 행정기관",
                       "물건 자체에 들어 있는 자연적 교환 본능",
-                      "생산이 끝난 뒤에는 더 이상 필요하지 않은 노동과정"
+                      "상품마다 가격을 매겨 교환을 대신 성사시켜 주는 상인 계층"
                     ],
                     "en": [
                       "People who own commodities and recognize one another as private owners",
                       "An administrative body that calculates every exchange ratio in advance",
                       "A natural instinct for exchange contained in the things themselves",
-                      "The labor process, which becomes irrelevant once production is finished"
+                      "A merchant class that prices each commodity and arranges exchanges on the owners' behalf"
                     ]
                   },
                   "answer": 0,
@@ -541,13 +541,13 @@
                     "ko": [
                       "모든 사적 상품이 동시에 보편적 등가물이 될 수 없으므로, 특정 상품이 사회적으로 일반적 등가물 역할을 맡아야 한다.",
                       "각 상품 소유자가 마음속으로 자기 상품을 높이 평가하면 교환문제는 사라진다.",
-                      "교환은 애초에 불가능하므로 상품생산은 화폐 없이도 곧바로 계획경제로 바뀐다.",
+                      "거래가 반복되어 서로 믿음이 쌓이면, 등가물 없이도 모든 상품이 직접 교환된다.",
                       "사용가치가 충분히 크면 어떤 매개 없이도 상품 일반과 그 자체로 교환된다."
                     ],
                     "en": [
                       "Since every private commodity cannot be the universal equivalent at once, one particular commodity must socially take on the role of general equivalent.",
                       "If each owner privately esteems their commodity highly enough, the exchange problem disappears.",
-                      "Exchange is impossible from the start, so commodity production directly becomes a planned economy without money.",
+                      "Once repeated dealings build mutual trust, all commodities can be exchanged directly without any equivalent.",
                       "If use-value is large enough, a commodity automatically exchanges with all others without mediation."
                     ]
                   },
@@ -606,15 +606,15 @@
                   "choices": {
                     "ko": [
                       "소유자들의 의지는 상품의 교환가능성을 실현해야 하지만, 그 실현 방식은 개인 의지 바깥의 사회적 형식에 의해 제한된다.",
-                      "경제적 강제는 존재하지 않고 교환 일반은 순수한 도덕적 합의이다.",
-                      "개인의 의지가 모든 가치를 창조하므로 사회적 형식은 분석할 필요가 없다.",
-                      "상품의 성격은 중요하지 않으며 법률 문서가 곧바로 가치를 만든다."
+                      "교환은 두 당사자의 계약이므로, 합의된 비율이 곧 그 상품들의 가치가 된다.",
+                      "소유자들은 자유로워 보일 뿐, 실제로는 국가가 교환 조건을 일일이 지정한다.",
+                      "상품의 경제적 성격은 소유자의 의지가 만든 것이므로, 둘 사이에 긴장은 애초에 없다."
                     ],
                     "en": [
                       "The owners’ wills must realize the exchangeability of commodities, but the way this happens is constrained by a social form beyond individual will.",
-                      "Economic compulsion does not exist; every exchange is a purely moral agreement.",
-                      "Individual will creates all value, so there is no need to analyze social form.",
-                      "The character of the commodity does not matter; legal documents directly create value."
+                      "Exchange is a contract, so whatever ratio the two parties agree on becomes the value of the commodities.",
+                      "The owners only look free; in reality the state dictates every condition of exchange.",
+                      "The commodity's economic character is itself a creation of the owner's will, so there is no real tension between them."
                     ]
                   },
                   "answer": 0,
@@ -634,15 +634,15 @@
                   "choices": {
                     "ko": [
                       "상품 소유자들의 상호 인정과 양도 행위가 가치형태의 요구를 실제 교환과정으로 옮긴다.",
-                      "국가가 가치형태를 폐지하고 상품 일반을 직접 배급한다.",
-                      "생산자는 자기 상품을 소비하지 않기만 하면 그 자체로 화폐를 만들어 낸다.",
-                      "교환비율은 생산과 무관하게 우연한 심리상태로 결정된다."
+                      "오랜 관습이 쌓이면 가치형태의 논리와 무관하게 화폐가 저절로 생겨난다.",
+                      "가치형태는 머릿속 추상이므로, 현실의 교환과는 만나지 않는 평행선으로 남는다.",
+                      "국가의 화폐 발행이 가치형태의 논리를 현실로 옮기는 유일한 매개다."
                     ],
                     "en": [
                       "The mutual recognition and acts of alienation by commodity owners carry the requirements of the value-form into the actual exchange process.",
-                      "The state abolishes the value-form and directly distributes all commodities.",
-                      "Producers automatically create money merely by not consuming their own commodities.",
-                      "Exchange ratios are determined by accidental psychological states unrelated to production."
+                      "Long-standing custom by itself gives rise to money, independently of the logic of the value-form.",
+                      "The value-form is a mental abstraction that runs parallel to real exchange without ever meeting it.",
+                      "State issuance of money is the sole mediation that carries the logic of the value-form into reality."
                     ]
                   },
                   "answer": 0,
@@ -690,13 +690,13 @@
                   "choices": {
                     "ko": [
                       "보편적 교환가능성은 각자의 사적 주장으로 성립하지 않고, 사회적으로 인정된 일반적 등가물의 형성을 필요로 한다.",
-                      "교환의 문제는 각 판매자가 가격을 더 높게 부르면 해결된다.",
+                      "각 판매자가 자기 상품의 품질을 충분히 증명하면, 모두가 서로의 상품을 등가물로 받아들이게 된다.",
                       "상품 일반이 동시에 화폐가 되면 교환은 더 단순해진다.",
-                      "사용가치가 충분히 다양하면 가치형태는 필요 없어 진다."
+                      "사용가치가 충분히 다양하면 가치형태는 필요 없어진다."
                     ],
                     "en": [
                       "Universal exchangeability cannot be established by each person’s private claim; it requires the formation of a socially recognized general equivalent.",
-                      "The problem of exchange is solved when every seller asks for a higher price.",
+                      "If each seller sufficiently proves the quality of their commodity, everyone will accept one another's goods as equivalents.",
                       "Exchange becomes simpler when every commodity becomes money at the same time.",
                       "If use-values are diverse enough, the value-form becomes unnecessary."
                     ]
@@ -718,15 +718,15 @@
                   "choices": {
                     "ko": [
                       "특정 상품이 일반적 등가물로 고정되면, 이제 그 상품이 가치척도와 유통수단 등으로 어떻게 기능하는지 분석할 수 있다.",
-                      "상품교환이 실패했으므로 3장은 화폐 없는 직접 생산을 분석한다.",
+                      "3장은 화폐라는 새 주제를 다루므로, 2장의 등가물 논의와는 별도의 출발점에서 시작한다.",
                       "화폐가 단순한 이름표에 불과하므로 더 이상 상품가치를 다룰 필요가 없다.",
-                      "교환과정은 생산과 무관하므로 3장은 노동시간 개념을 폐기한다."
+                      "2장에서 화폐가 확립되었으므로, 3장부터는 가치 분석이 가격 분석으로 대체된다."
                     ],
                     "en": [
                       "Once a particular commodity is fixed as the general equivalent, we can analyze how it functions as measure of value, means of circulation, and so on.",
-                      "Since commodity exchange has failed, Chapter 3 analyzes direct production without money.",
+                      "Chapter 3 takes up money as a new topic, starting from a point separate from Chapter 2's account of the equivalent.",
                       "Since money is merely a label, there is no further need to discuss commodity value.",
-                      "Since exchange is unrelated to production, Chapter 3 abandons the concept of labor-time."
+                      "Since money is established in Chapter 2, from Chapter 3 onward the analysis of value is replaced by the analysis of price."
                     ]
                   },
                   "answer": 0,
