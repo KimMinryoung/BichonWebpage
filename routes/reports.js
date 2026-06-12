@@ -8,6 +8,7 @@ const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
 const { sanitizeRich } = require('../utils/sanitize');
+const errorPage = require('../utils/error-page');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const ADMIN_KEY = process.env.LENINBOT_ADMIN_KEY || '';
@@ -332,10 +333,7 @@ router.get('/', async (req, res) => {
 // Private research/report detail — admin-only, integrated into the public reports viewer.
 router.get('/private/:slug', async (req, res) => {
     if (!req.session.adminUser) {
-        return res.status(404).render('layouts/main', {
-            pageTitle: '404',
-            body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/reports">${res.locals.strings.public.backToList}</a></div>`
-        });
+        return errorPage.notFound(res, { backHref: '/reports', backLabel: res.locals.strings.public.backToList });
     }
     try {
         res.setHeader('Cache-Control', 'no-store');
@@ -345,11 +343,7 @@ router.get('/private/:slug', async (req, res) => {
         const pagePath = `/reports/private/${slug}`;
         const data = await getPrivateReport(slug);
         if (!data) {
-            return res.status(404).render('layouts/main', {
-                pageTitle: '404',
-                robotsMeta: 'noindex, nofollow',
-                body: '<div class="box"><h1>404</h1><p>비공개 보고서를 찾을 수 없습니다.</p><a href="/reports">목록으로</a></div>'
-            });
+            return errorPage.notFound(res, { message: '비공개 보고서를 찾을 수 없습니다.', backHref: '/reports', backLabel: '목록으로', robotsMeta: 'noindex, nofollow' });
         }
 
         const markdown = researchMarkdown(data);
@@ -365,11 +359,7 @@ router.get('/private/:slug', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching private report:', error);
-        res.status(500).render('layouts/main', {
-            pageTitle: 'Error',
-            robotsMeta: 'noindex, nofollow',
-            body: '<div class="box"><h1>Error</h1><p>비공개 보고서를 불러올 수 없습니다.</p><a href="/reports">목록으로</a></div>'
-        });
+        errorPage.serverError(res, { message: '비공개 보고서를 불러올 수 없습니다.', backHref: '/reports', backLabel: '목록으로', robotsMeta: 'noindex, nofollow' });
     }
 });
 
@@ -390,10 +380,7 @@ router.get('/research/:filename', async (req, res) => {
             if (wantsMarkdown) {
                 const cachedMarkdown = researchMarkdown(cached);
                 if (!cachedMarkdown) {
-                    return res.status(404).render('layouts/main', {
-                        pageTitle: '404',
-                        body: '<div class="box"><h1>404</h1><p>마크다운 원문을 찾을 수 없습니다.</p><a href="/reports">목록으로</a></div>'
-                    });
+                    return errorPage.notFound(res, { message: '마크다운 원문을 찾을 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
                 }
                 res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
                 return res.type('text/markdown; charset=utf-8').send(cachedMarkdown);
@@ -412,10 +399,7 @@ router.get('/research/:filename', async (req, res) => {
 
         const data = await researchStore.getResearch(filename, lang);
         if (!data) {
-            return res.status(404).render('layouts/main', {
-                pageTitle: '404',
-                body: '<div class="box"><h1>404</h1><p>리서치를 찾을 수 없습니다.</p><a href="/reports">목록으로</a></div>'
-            });
+            return errorPage.notFound(res, { message: '리서치를 찾을 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
         }
 
         const markdown = researchMarkdown(data);
@@ -444,20 +428,14 @@ router.get('/research/:filename', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching research:', error);
-        res.status(500).render('layouts/main', {
-            pageTitle: 'Error',
-            body: '<div class="box"><h1>Error</h1><p>리서치를 불러올 수 없습니다.</p><a href="/reports">목록으로</a></div>'
-        });
+        errorPage.serverError(res, { message: '리서치를 불러올 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
     }
 });
 
 // 리포트 개별 조회 — admin-only
 router.get('/:id', async (req, res) => {
     if (!req.session.adminUser) {
-        return res.status(404).render('layouts/main', {
-            pageTitle: '404',
-            body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/reports">${res.locals.strings.public.backToList}</a></div>`
-        });
+        return errorPage.notFound(res, { backHref: '/reports', backLabel: res.locals.strings.public.backToList });
     }
     try {
         const id = parseInt(req.params.id);
@@ -479,10 +457,7 @@ router.get('/:id', async (req, res) => {
             timeoutMs: 5000
         });
         if (!response.ok) {
-            return res.status(404).render('layouts/main', {
-                pageTitle: '404',
-                body: '<div class="box"><h1>404</h1><p>리포트를 찾을 수 없습니다.</p><a href="/reports">목록으로</a></div>'
-            });
+            return errorPage.notFound(res, { message: '리포트를 찾을 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
         }
 
         const data = await response.json();
@@ -497,10 +472,7 @@ router.get('/:id', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching report:', error);
-        res.status(500).render('layouts/main', {
-            pageTitle: 'Error',
-            body: '<div class="box"><h1>Error</h1><p>리포트를 불러올 수 없습니다.</p><a href="/reports">목록으로</a></div>'
-        });
+        errorPage.serverError(res, { message: '리포트를 불러올 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
     }
 });
 

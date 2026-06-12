@@ -3,6 +3,7 @@ const router = express.Router();
 const hubStore = require('../config/hub-store');
 const seo = require('../utils/seo');
 const { clampInteger } = require('../utils/http');
+const errorPage = require('../utils/error-page');
 
 const PER_PAGE = 20;
 
@@ -50,10 +51,7 @@ router.get('/:slug', async (req, res) => {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         const item = await hubStore.getHubCuration(slug, lang);
         if (!item) {
-            return res.status(404).render('layouts/main', {
-                pageTitle: '404',
-                body: '<div class="box"><h1>404</h1><p>큐레이션을 찾을 수 없습니다.</p><a href="/hub">큐레이션으로</a></div>'
-            });
+            return errorPage.notFound(res, { message: '큐레이션을 찾을 수 없습니다.', backHref: '/hub', backLabel: '큐레이션으로' });
         }
         const pageDescription = seo.excerpt(`${item.selection_rationale || ''} ${item.context || ''}`, 160);
         res.render('public/hub-view', {
@@ -73,10 +71,7 @@ router.get('/:slug', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching hub entry:', error);
-        res.status(500).render('layouts/main', {
-            pageTitle: 'Error',
-            body: '<div class="box"><h1>Error</h1><p>큐레이션을 불러올 수 없습니다.</p><a href="/hub">큐레이션으로</a></div>'
-        });
+        errorPage.serverError(res, { message: '큐레이션을 불러올 수 없습니다.', backHref: '/hub', backLabel: '큐레이션으로' });
     }
 });
 

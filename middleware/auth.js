@@ -1,8 +1,14 @@
 // Authentication middleware for admin routes
 
+const errorPage = require('../utils/error-page');
+
+let allowedIpsCache = null;
 function parseAllowedIps() {
-    const raw = process.env.ADMIN_ALLOWED_IPS || '';
-    return raw.split(',').map(s => s.trim()).filter(Boolean);
+    if (!allowedIpsCache) {
+        const raw = process.env.ADMIN_ALLOWED_IPS || '';
+        allowedIpsCache = raw.split(',').map(s => s.trim()).filter(Boolean);
+    }
+    return allowedIpsCache;
 }
 
 function normalizeIp(ip) {
@@ -21,10 +27,7 @@ function isAllowedIp(req) {
 
 function denyAdmin(req, res) {
     console.warn(`[admin-ip-block] denied ip=${req.ip} method=${req.method} url=${req.originalUrl}`);
-    return res.status(404).render('layouts/main', {
-        pageTitle: '404',
-        body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/">${res.locals.strings.error.backHome}</a></div>`
-    });
+    return errorPage.notFound(res);
 }
 
 function requireAdminIp(req, res, next) {

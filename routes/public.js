@@ -11,6 +11,7 @@ const hubStore = require('../config/hub-store');
 const researchStore = require('../config/research-store');
 const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
+const errorPage = require('../utils/error-page');
 
 const POSTS_PER_PAGE = 20;
 
@@ -115,17 +116,16 @@ router.get('/', async (req, res) => {
 router.get('/posts', async (req, res) => {
     try {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        const currentPage = parseInt(req.query.page) || 1;
-        const cacheKey = `page:${currentPage}`;
+        const currentPage = parseInt(req.query.page, 10) || 1;
 
-        const cached = await cache.getIndex(lang);
-        if (cached && cached[cacheKey]) {
+        const cached = await cache.getIndexPage(currentPage, lang);
+        if (cached) {
             return res.render('public/posts', {
-                ...cached[cacheKey],
+                ...cached,
                 pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts',
                 pageTitle: res.locals.strings.nav.bichonPosts,
                 pageDescription: res.locals.strings.home.postsDesc,
-                jsonLd: seo.itemListJsonLd((cached[cacheKey].posts || []).map(post => ({ title: post.title, href: `/post/${post.id}` }))),
+                jsonLd: seo.itemListJsonLd((cached.posts || []).map(post => ({ title: post.title, href: `/post/${post.id}` }))),
             });
         }
 
@@ -145,9 +145,7 @@ router.get('/posts', async (req, res) => {
 
         const pageData = { posts, currentPage, totalPages, paginationBase: '/posts?page=', pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts' };
 
-        const indexData = cached || {};
-        indexData[cacheKey] = pageData;
-        await cache.setIndex(indexData, lang);
+        await cache.setIndexPage(currentPage, pageData, lang);
 
         res.render('public/posts', {
             ...pageData,
@@ -192,10 +190,7 @@ router.get('/post/:id', async (req, res) => {
             );
 
             if (posts.length === 0) {
-                return res.status(404).render('layouts/main', {
-                    title: '404 - Post Not Found',
-                    body: '<div class="box"><h1>404</h1><p>Post not found.</p><a href="/">Go back home</a></div>'
-                });
+                return errorPage.notFound(res);
             }
 
             post = localizedRecord(posts[0], lang);
@@ -234,10 +229,7 @@ router.get('/post/:id', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching post:', error);
-        res.status(500).render('layouts/main', {
-            title: 'Error',
-            body: '<div class="box"><h1>Error</h1><p>Could not load post.</p><a href="/">Go back home</a></div>'
-        });
+        errorPage.serverError(res);
     }
 });
 

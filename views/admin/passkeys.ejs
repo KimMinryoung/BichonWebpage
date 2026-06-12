@@ -85,7 +85,7 @@
             }
             const table = document.createElement('table');
             table.className = 'posts-table';
-            table.innerHTML = '<thead><tr><th>' + (strings.unnamed === strings.unnamed ? 'Device' : '') + '</th><th>' + strings.created + '</th><th>' + strings.lastUsed + '</th><th></th></tr></thead><tbody></tbody>';
+            table.innerHTML = '<thead><tr><th>Device</th><th>' + strings.created + '</th><th>' + strings.lastUsed + '</th><th></th></tr></thead><tbody></tbody>';
             const tbody = table.querySelector('tbody');
             passkeys.forEach((p) => {
                 const tr = document.createElement('tr');
@@ -137,7 +137,12 @@
             }
         });
 
-        load().catch((err) => { list.innerHTML = '<p class="message message-error">' + (err.message || '') + '</p>'; });
+        load().catch((err) => {
+            const p = document.createElement('p');
+            p.className = 'message message-error';
+            p.textContent = err.message || strings.failed;
+            list.replaceChildren(p);
+        });
     })();
     </script>
 

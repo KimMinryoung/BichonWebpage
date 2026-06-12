@@ -15,6 +15,8 @@ const crypto = require('crypto');
 const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
 const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
 const { normalizeLanguage, resolveLanguage, languageCookieOptions } = require('./utils/language');
+const { truncateHtml } = require('./utils/truncate-html');
+const errorPage = require('./utils/error-page');
 const { requireAdminIp } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -181,7 +183,9 @@ app.use(helmet({
         useDefaults: false,
         directives: {
             defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com', "'unsafe-inline'", "'unsafe-eval'"],
+            // NOTE: no 'unsafe-eval'. PIXI.js v7 needs it — if the Babel Express
+            // game page is re-enabled, add a route-level CSP override there.
+            scriptSrc: ["'self'", 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com', "'unsafe-inline'"],
             workerSrc: ["'self'", 'blob:'],
             styleSrc: ["'self'", "'unsafe-inline'"],
             imgSrc: ["'self'", 'data:', 'https://assets.cyber-lenin.com'],
@@ -202,97 +206,28 @@ app.use('/admin/webauthn', requireAdminIp, webauthnLimiter);
 app.use((req, res, next) => {
     if ((req.method === 'GET' || req.method === 'HEAD') && isStaticAssetPath(req.path)) return next();
 
-    const sessionFreePublicRead = isSessionFreeRequest(req);
-    if (sessionFreePublicRead) {
-        res.locals.isAuthenticated = false;
-        res.locals.adminUser = null;
-        res.locals.currentUser = null;
-        const lang = (isCacheablePublicTextPath(req.path) || isPublicCommuLingoDataPath(req.path))
-            ? (normalizeLanguage(req.cookies.lang) || 'ko')
-            : (normalizeLanguage(req.cookies.lang) || resolveLanguage(req, res));
-        res.locals.lang = lang;
-        res.locals.strings = allStrings[lang];
-        res.locals.siteOrigin = seo.SITE_ORIGIN;
-        res.locals.absoluteUrl = seo.absoluteUrl;
-        res.locals.jsonLdScript = seo.jsonLdScript;
-        res.locals.assetVersion = ASSET_VERSION;
-        res.locals.sanitize = sanitizeBasic;
-        res.locals.sanitizePost = sanitizePost;
-        res.locals.truncateHtml = function(html, maxLen) {
-            var result = '';
-            var textLen = 0;
-            var openTags = [];
-            var i = 0;
-            while (i < html.length && textLen < maxLen) {
-                if (html[i] === '<') {
-                    var end = html.indexOf('>', i);
-                    if (end === -1) break;
-                    var tag = html.substring(i, end + 1);
-                    var closing = tag[1] === '/';
-                    if (closing) {
-                        openTags.pop();
-                    } else if (!tag.endsWith('/>') && !tag.startsWith('<!')) {
-                        var name = tag.match(/^<\s*([a-zA-Z][a-zA-Z0-9]*)/);
-                        if (name) openTags.push(name[1]);
-                    }
-                    result += tag;
-                    i = end + 1;
-                } else {
-                    result += html[i];
-                    textLen++;
-                    i++;
-                }
-            }
-            var truncated = textLen < html.replace(/<[^>]*>/g, '').length;
-            while (openTags.length) result += '</' + openTags.pop() + '>';
-            if (truncated) result += '...';
-            return result;
-        };
-        return next();
-    }
-
-    res.locals.isAuthenticated = req.session.isAuthenticated || false;
-    res.locals.adminUser = req.session.adminUser || null;
-    res.locals.currentUser = req.session.user || null;
-    var lang = resolveLanguage(req, res);
-    res.locals.lang = lang;
-    res.locals.strings = allStrings[lang];
     res.locals.siteOrigin = seo.SITE_ORIGIN;
     res.locals.absoluteUrl = seo.absoluteUrl;
     res.locals.jsonLdScript = seo.jsonLdScript;
     res.locals.assetVersion = ASSET_VERSION;
     res.locals.sanitize = sanitizeBasic;
     res.locals.sanitizePost = sanitizePost;
-    res.locals.truncateHtml = function(html, maxLen) {
-        var result = '';
-        var textLen = 0;
-        var openTags = [];
-        var i = 0;
-        while (i < html.length && textLen < maxLen) {
-            if (html[i] === '<') {
-                var end = html.indexOf('>', i);
-                if (end === -1) break;
-                var tag = html.substring(i, end + 1);
-                var closing = tag[1] === '/';
-                if (closing) {
-                    openTags.pop();
-                } else if (!tag.endsWith('/>') && !tag.startsWith('<!')) {
-                    var name = tag.match(/^<\s*([a-zA-Z][a-zA-Z0-9]*)/);
-                    if (name) openTags.push(name[1]);
-                }
-                result += tag;
-                i = end + 1;
-            } else {
-                result += html[i];
-                textLen++;
-                i++;
-            }
-        }
-        var truncated = textLen < html.replace(/<[^>]*>/g, '').length;
-        while (openTags.length) result += '</' + openTags.pop() + '>';
-        if (truncated) result += '...';
-        return result;
-    };
+    res.locals.truncateHtml = truncateHtml;
+
+    if (isSessionFreeRequest(req)) {
+        res.locals.isAuthenticated = false;
+        res.locals.adminUser = null;
+        res.locals.currentUser = null;
+        res.locals.lang = (isCacheablePublicTextPath(req.path) || isPublicCommuLingoDataPath(req.path))
+            ? (normalizeLanguage(req.cookies.lang) || 'ko')
+            : (normalizeLanguage(req.cookies.lang) || resolveLanguage(req, res));
+    } else {
+        res.locals.isAuthenticated = req.session.isAuthenticated || false;
+        res.locals.adminUser = req.session.adminUser || null;
+        res.locals.currentUser = req.session.user || null;
+        res.locals.lang = resolveLanguage(req, res);
+    }
+    res.locals.strings = allStrings[res.locals.lang];
     next();
 });
 
@@ -449,21 +384,42 @@ app.get('/health', (req, res) => { res.status(200).send('ok'); });
 
 // 404 handler
 app.use((req, res) => {
-    res.status(404).render('layouts/main', {
-        pageTitle: '404',
-        body: `<div class="box"><h1>404</h1><p>${res.locals.strings.error.notFound}</p><a href="/">${res.locals.strings.error.backHome}</a></div>`
-    });
+    errorPage.notFound(res);
 });
 
 // Error handler
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).render('layouts/main', {
-        pageTitle: 'Error',
-        body: `<div class="box"><h1>Error</h1><p>${res.locals.strings.error.serverError}</p><a href="/">${res.locals.strings.error.backHome}</a></div>`
-    });
+    errorPage.serverError(res);
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// Graceful shutdown: stop accepting connections, then close DB pool and Redis.
+let shuttingDown = false;
+function shutdown(signal) {
+    if (shuttingDown) return;
+    shuttingDown = true;
+    console.log(`[shutdown] ${signal} received, closing server`);
+    const forceExit = setTimeout(() => {
+        console.error('[shutdown] timed out, forcing exit');
+        process.exit(1);
+    }, 10000);
+    forceExit.unref();
+    server.close(async () => {
+        try {
+            const db = require('./config/database');
+            await db.end();
+            if (redisClient.isOpen) await redisClient.quit();
+            console.log('[shutdown] clean exit');
+            process.exit(0);
+        } catch (err) {
+            console.error('[shutdown] error during cleanup:', err.message);
+            process.exit(1);
+        }
+    });
+}
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+process.on('SIGINT', () => shutdown('SIGINT'));

@@ -146,7 +146,12 @@
             }
         });
 
-        load().catch((err) => { list.innerHTML = '<p class="message message-error">' + (err.message || '') + '</p>'; });
+        load().catch((err) => {
+            const p = document.createElement('p');
+            p.className = 'message message-error';
+            p.textContent = err.message || strings.failed;
+            list.replaceChildren(p);
+        });
     })();
     </script>
 

@@ -246,3 +246,48 @@ Game Loop reads STATE → systems update STATE → GSAP tweens STATE
   Timeline reacts to entropy → act transitions → palette/speed/atmosphere changes
   Act 5 → _triggerEnding() → reads act4Choice → ending sequence → overlay
 ```
+
+## Improvement Backlog (2026-06 code review)
+
+Findings from a code review pass; recorded here for future work, not yet fixed.
+Note: init-time listeners (touch canvas handlers, renderer resize, the main ticker)
+are registered once in `init()` and are NOT re-registered by `Game.restart()` —
+earlier suspicions of per-restart listener/ticker accumulation were checked and
+are false.
+
+**Status / prerequisites**
+
+- The game page is currently unreachable: no route renders `views/public/game.ejs`
+  (`/game` 301-redirects to `/nonogram/`). Before re-enabling it, note that the
+  global CSP in `server.js` no longer includes `'unsafe-eval'`, which PIXI.js v7
+  requires — add a route-level CSP override on the game route when reviving it.
+
+**Restart lifecycle (highest priority once page is live)**
+
+- `intervention.js` (~line 359): a new restart button is created and appended to
+  `endingOverlay` on every ending. Verify the overlay is emptied in `reset()`;
+  otherwise buttons accumulate across playthroughs in one page session.
+- `events.js` (~line 613): the tower-infection `setInterval` stored in
+  `ev.data._towerInterval` can keep firing (tint writes every 600ms) if the game
+  ends while the event is unresolved. `Events.reset()` should clear it
+  unconditionally.
+
+**Performance**
+
+- `renderer.js` (~lines 169–190): the sky gradient redraws ~24 Graphics bands
+  every tick. Draw the banded gradient once into a texture/sprite and tween its
+  tint/position instead.
+- `touch.js` (~line 383): `Touch.addTargets()` dedups with `indexOf` per push —
+  O(n²) during infection waves with 160+ building entities. Use a `Set` for the
+  membership check.
+
+**Tunability / structure**
+
+- `entities.js`: ~40 hardcoded placement/spacing tuples (e.g. `minOff: 0.15`,
+  `maxOff: 1.3`) should move into `config.js` so entity density can be tuned
+  without reading a 400-line file.
+- `particles.js`: single `MAX_PARTICLES = 120` cap applies uniformly; consider
+  per-act caps (Act 5 climax could afford more).
+- Gotcha #6 says to prefer `targetTypes` over `tapTargets`, but
+  `intervention.js` (~line 121) passes both simultaneously. Works, but clarify
+  the intent or drop the redundant `tapTargets` pass.

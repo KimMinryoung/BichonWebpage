@@ -5,6 +5,7 @@ const { isConnectionError } = require('../config/database');
 const { requireAuth } = require('../middleware/auth');
 const cache = require('../config/diary-cache');
 const seo = require('../utils/seo');
+const errorPage = require('../utils/error-page');
 
 const DIARIES_PER_PAGE = 20;
 
@@ -28,17 +29,16 @@ router.get('/', async (req, res) => {
     const pagePath = currentPage > 1 ? `/ai-diary?page=${currentPage}` : '/ai-diary';
     try {
         const offset = (currentPage - 1) * DIARIES_PER_PAGE;
-        const cacheKey = `page:${currentPage}`;
 
-        // Check index cache
-        const cached = await cache.getIndex(lang);
-        if (cached && cached[cacheKey]) {
+        // Check index cache (per-page keys)
+        const cached = await cache.getIndexPage(currentPage, lang);
+        if (cached) {
             return res.render('public/ai-diary', {
-                ...cached[cacheKey],
+                ...cached,
                 pagePath,
                 pageTitle: res.locals.strings.nav.diary,
                 pageDescription: res.locals.strings.home.diaryDesc,
-                jsonLd: seo.itemListJsonLd((cached[cacheKey].diaries || []).map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` }))),
+                jsonLd: seo.itemListJsonLd((cached.diaries || []).map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` }))),
             });
         }
 
@@ -58,10 +58,8 @@ router.get('/', async (req, res) => {
 
         const pageData = { diaries, currentPage, totalPages, paginationBase: '/ai-diary?page=' };
 
-        // Cache index (TTL-based)
-        const indexData = cached || {};
-        indexData[cacheKey] = pageData;
-        await cache.setIndex(indexData, lang);
+        // Cache index page (TTL-based)
+        await cache.setIndexPage(currentPage, pageData, lang);
 
         res.render('public/ai-diary', {
             ...pageData,
@@ -94,10 +92,7 @@ router.get('/:id', async (req, res) => {
         if (!diary) {
             const { rows } = await db.query('SELECT * FROM ai_diary WHERE id = $1', [id]);
             if (rows.length === 0) {
-                return res.status(404).render('layouts/main', {
-                    pageTitle: '404',
-                    body: '<div class="box"><h1>404</h1><p>일기를 찾을 수 없습니다.</p><a href="/ai-diary">목록으로</a></div>'
-                });
+                return errorPage.notFound(res, { message: '일기를 찾을 수 없습니다.', backHref: '/ai-diary', backLabel: '목록으로' });
             }
             diary = localizedDiary(rows[0], lang);
             await cache.setEntry(diary, lang);
@@ -133,10 +128,7 @@ router.get('/:id', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching diary:', error);
-        res.status(500).render('layouts/main', {
-            pageTitle: 'Error',
-            body: '<div class="box"><h1>Error</h1><p>일기를 불러올 수 없습니다.</p><a href="/ai-diary">목록으로</a></div>'
-        });
+        errorPage.serverError(res, { message: '일기를 불러올 수 없습니다.', backHref: '/ai-diary', backLabel: '목록으로' });
     }
 });
 

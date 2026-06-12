@@ -36,12 +36,16 @@
         urlInput.focus();
     });
 
+    function escapeHtml(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
     document.getElementById('linkInsertBtn').addEventListener('click', function() {
         var url = urlInput.value.trim();
         if (!url) { urlInput.focus(); return; }
         var title = titleInput.value.trim();
         var text = textInput.value.trim() || url;
-        var tag = '<a href="' + url + '" target="_blank"' + (title ? ' title="' + title + '"' : '') + '>' + text + '</a>';
+        var tag = '<a href="' + escapeHtml(url) + '" target="_blank"' + (title ? ' title="' + escapeHtml(title) + '"' : '') + '>' + escapeHtml(text) + '</a>';
         var before = content.value.substring(0, selStart);
         var after = content.value.substring(selEnd);
         content.value = before + tag + after;

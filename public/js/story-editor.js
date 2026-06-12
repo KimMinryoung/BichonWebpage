@@ -23,8 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     option.textContent = file;
                     fileSelect.appendChild(option);
                 });
+            } else {
+                showMessage('Error: ' + data.error, 'error');
             }
-        });
+        })
+        .catch(err => showMessage('Failed to load files: ' + err.message, 'error'));
 
     // Handle file selection
     fileSelect.addEventListener('change', () => {
@@ -40,8 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data.success) {
                     renderSceneList(data.scenes);
+                } else {
+                    showMessage('Error: ' + data.error, 'error');
                 }
-            });
+            })
+            .catch(err => showMessage('Failed to load scenes: ' + err.message, 'error'));
     });
 
     function renderSceneList(scenes) {
@@ -78,8 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Trigger auto-resize
                     autoResize(sceneScript);
                     autoResize(sceneActions);
+                } else {
+                    showMessage('Error: ' + data.error, 'error');
                 }
-            });
+            })
+            .catch(err => showMessage('Failed to load scene: ' + err.message, 'error'));
     }
 
     function autoResize(textarea) {
@@ -128,10 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 
+    let messageTimer = null;
     function showMessage(text, type) {
         statusMsg.textContent = text;
         statusMsg.className = `status-message ${type}`;
-        setTimeout(() => {
+        statusMsg.style.display = '';
+        clearTimeout(messageTimer);
+        messageTimer = setTimeout(() => {
             statusMsg.style.display = 'none';
         }, 3000);
     }
