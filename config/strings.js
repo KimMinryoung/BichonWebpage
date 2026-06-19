@@ -183,7 +183,12 @@ const ko = {
         error: '오류가 발생했습니다.',
         notSaved: '답변을 받지 못했습니다. 메시지를 다시 보내주세요.',
         retry: '↻ 다시 보내기',
-        personaLabel: '대화 상대'
+        personaLabel: '대화 상대',
+        feedbackSaved: '반영됨',
+        feedbackError: '피드백 저장 실패',
+        feedbackNote: '짧은 피드백',
+        regenerate: '다시 생성',
+        regenerating: '응답을 다시 생성하는 중...'
     },
 
     commuLingo: {
@@ -390,7 +395,12 @@ const en = {
         error: 'An error occurred.',
         notSaved: "The reply didn't come through. Please resend your message.",
         retry: '↻ Retry',
-        personaLabel: 'Chat with'
+        personaLabel: 'Chat with',
+        feedbackSaved: 'Saved',
+        feedbackError: 'Feedback failed',
+        feedbackNote: 'Short feedback',
+        regenerate: 'Regenerate',
+        regenerating: 'Regenerating...'
     },
 
     commuLingo: {

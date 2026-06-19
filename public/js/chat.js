@@ -1,10 +1,21 @@
 (function () {
     var API_URL = document.querySelector('meta[name="api-url"]').content;
+
+    function metaContent(name, fallback) {
+        var el = document.querySelector('meta[name="' + name + '"]');
+        return el ? el.content : fallback;
+    }
+
     var STRINGS = {
-        thinking: document.querySelector('meta[name="str-thinking"]').content,
-        error: document.querySelector('meta[name="str-error"]').content,
-        notSaved: document.querySelector('meta[name="str-not-saved"]').content,
-        retry: document.querySelector('meta[name="str-retry"]').content
+        thinking: metaContent('str-thinking', '생각 중...'),
+        error: metaContent('str-error', '오류가 발생했습니다.'),
+        notSaved: metaContent('str-not-saved', '답변을 받지 못했습니다. 메시지를 다시 보내주세요.'),
+        retry: metaContent('str-retry', '↻ 다시 보내기'),
+        feedbackSaved: metaContent('str-feedback-saved', '반영됨'),
+        feedbackError: metaContent('str-feedback-error', '피드백 저장 실패'),
+        feedbackNote: metaContent('str-feedback-note', '짧은 피드백'),
+        regenerate: metaContent('str-regenerate', '다시 생성'),
+        regenerating: metaContent('str-regenerating', '응답을 다시 생성하는 중...')
     };
 
     var chatBox = document.getElementById('chatBox');
@@ -320,28 +331,43 @@
         });
     }
 
+    function renderMarkdownInto(container, text) {
+        var dirtyHTML = marked.parse(text || '');
+        var cleanHTML = DOMPurify.sanitize(dirtyHTML, {ADD_ATTR: ['target']});
+        container.innerHTML = cleanHTML;
+        var links = container.querySelectorAll('a');
+        links.forEach(function(link) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
+    }
+
     function appendMessage(text, className) {
         var div = document.createElement('div');
         div.className = 'chat-message ' + className;
-        if(className === 'chat-message-ai'){
-            // AI 답변의 마크다운을 HTML 문자열로 변환
-            var dirtyHTML = marked.parse(text);
-            // (보안-XSS 방어) 변환된 HTML에서 위험한 스크립트 제거
-            var cleanHTML = DOMPurify.sanitize(dirtyHTML, {ADD_ATTR: ['target']});
-            div.innerHTML = cleanHTML;
-            // --- 답변 내 링크 클릭시 새 탭 열기 로직
-            var links = div.querySelectorAll('a'); // div 안의 모든 링크(a 태그) 선택
-                links.forEach(function(link) {
-                link.setAttribute('target', '_blank');    // 새 탭에서 열기
-                link.setAttribute('rel', 'noopener noreferrer'); // 보안 강화 (권장)
-            });
+        if (className === 'chat-message-ai') {
+            var body = document.createElement('div');
+            body.className = 'chat-message-body';
+            renderMarkdownInto(body, text);
+            div.appendChild(body);
         } else {
-            // 인간이 입력한 메시지는 텍스트 그대로 출력
             div.textContent = text;
         }
         chatBox.appendChild(div);
         chatBox.scrollTop = chatBox.scrollHeight;
         return div;
+    }
+
+    function aiBody(aiDiv) {
+        if (!aiDiv) return null;
+        var body = aiDiv.querySelector('.chat-message-body');
+        if (!body) {
+            body = document.createElement('div');
+            body.className = 'chat-message-body';
+            while (aiDiv.firstChild) body.appendChild(aiDiv.firstChild);
+            aiDiv.appendChild(body);
+        }
+        return body;
     }
 
     function createToolStatusMessage() {
@@ -374,14 +400,147 @@
         busy = on;
         chatSend.disabled = on;
         chatInput.disabled = on;
+        if (personaSelector) personaSelector.disabled = on;
     }
 
-    chatForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        var message = chatInput.value.trim();
+    var isEnglish = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+    var TONE_OPTIONS = isEnglish ? [
+        ['', 'Tone'],
+        ['shorter', 'Shorter'],
+        ['longer', 'Longer'],
+        ['warmer', 'Warmer'],
+        ['colder', 'Colder'],
+        ['more_direct', 'More direct'],
+        ['more_in_character', 'In character'],
+        ['less_formal', 'Less formal'],
+        ['more_cited', 'More cited']
+    ] : [
+        ['', '톤'],
+        ['shorter', '짧게'],
+        ['longer', '길게'],
+        ['warmer', '따뜻하게'],
+        ['colder', '차갑게'],
+        ['more_direct', '직설적으로'],
+        ['more_in_character', '캐릭터답게'],
+        ['less_formal', '덜 딱딱하게'],
+        ['more_cited', '근거 강화']
+    ];
+
+    async function postFeedback(messageId, rating, toneFeedback, note, statusEl) {
+        if (!messageId) return false;
+        if (statusEl) statusEl.textContent = '';
+        try {
+            var res = await fetch(API_URL + '/chat/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message_id: messageId,
+                    session_id: sessionId,
+                    fingerprint: userId,
+                    persona: selectedPersona,
+                    rating: rating || null,
+                    tone_feedback: toneFeedback || null,
+                    note: note || ''
+                })
+            });
+            if (!res.ok) throw new Error(res.statusText);
+            if (statusEl) statusEl.textContent = STRINGS.feedbackSaved;
+            return true;
+        } catch (err) {
+            console.error('feedback error:', err);
+            if (statusEl) statusEl.textContent = STRINGS.feedbackError;
+            return false;
+        }
+    }
+
+    function attachFeedbackControls(aiDiv, messageId, sourceMessage) {
+        if (!aiDiv || !messageId || aiDiv.querySelector('.chat-feedback')) return;
+
+        var controls = document.createElement('div');
+        controls.className = 'chat-feedback';
+
+        var status = document.createElement('span');
+        status.className = 'chat-feedback-status';
+
+        function currentTone() {
+            return toneSelect.value || '';
+        }
+        function currentNote() {
+            return noteInput.value.trim();
+        }
+
+        for (var rating = 1; rating <= 4; rating++) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.textContent = String(rating);
+            btn.title = rating + '/4';
+            btn.setAttribute('aria-label', rating + '/4');
+            btn.addEventListener('click', function (value, button) {
+                return async function () {
+                    if (busy) return;
+                    var ok = await postFeedback(messageId, value, currentTone(), currentNote(), status);
+                    if (ok) {
+                        controls.querySelectorAll('button[data-rating]').forEach(function (b) { b.classList.remove('active'); });
+                        button.classList.add('active');
+                    }
+                };
+            }(rating, btn));
+            btn.setAttribute('data-rating', String(rating));
+            controls.appendChild(btn);
+        }
+
+        var toneSelect = document.createElement('select');
+        toneSelect.setAttribute('aria-label', 'tone feedback');
+        TONE_OPTIONS.forEach(function (entry) {
+            var opt = document.createElement('option');
+            opt.value = entry[0];
+            opt.textContent = entry[1];
+            toneSelect.appendChild(opt);
+        });
+        toneSelect.addEventListener('change', function () {
+            if (busy || !toneSelect.value) return;
+            postFeedback(messageId, null, currentTone(), currentNote(), status);
+        });
+        controls.appendChild(toneSelect);
+
+        var noteInput = document.createElement('input');
+        noteInput.type = 'text';
+        noteInput.maxLength = 500;
+        noteInput.placeholder = STRINGS.feedbackNote;
+        noteInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                if (!busy) postFeedback(messageId, null, currentTone(), currentNote(), status);
+            }
+        });
+        noteInput.addEventListener('blur', function () {
+            if (!busy && currentNote()) postFeedback(messageId, null, currentTone(), currentNote(), status);
+        });
+        controls.appendChild(noteInput);
+
+        var regenBtn = document.createElement('button');
+        regenBtn.type = 'button';
+        regenBtn.textContent = STRINGS.regenerate;
+        regenBtn.addEventListener('click', function () {
+            if (busy) return;
+            sendChat(sourceMessage || STRINGS.regenerate, {
+                suppressUserMessage: true,
+                regenerateFromId: messageId,
+                toneFeedback: currentTone(),
+                feedbackNote: currentNote()
+            });
+        });
+        controls.appendChild(regenBtn);
+        controls.appendChild(status);
+        aiDiv.appendChild(controls);
+    }
+
+    async function sendChat(message, options) {
+        options = options || {};
+        message = (message || '').trim();
         if (!message || busy) return;
 
-        appendMessage(message, 'chat-message-user');
+        if (!options.suppressUserMessage) appendMessage(message, 'chat-message-user');
         chatInput.value = '';
         hiddenDuringRequest = false;
         streamDied = false;
@@ -389,7 +548,7 @@
         recoveryContext = null;
         setLoading(true);
 
-        var logDiv = appendMessage(STRINGS.thinking, 'chat-message-log');
+        var logDiv = appendMessage(options.regenerateFromId ? STRINGS.regenerating : STRINGS.thinking, 'chat-message-log');
         var aiDiv = null;
         var streamedText = '';
         var renderScheduled = false;
@@ -425,9 +584,7 @@
                 activeTools[key] = data.content || ((data.label || '도구') + ' 사용 중');
             }
 
-            var active = Object.keys(activeTools).map(function (name) {
-                return activeTools[name];
-            });
+            var active = Object.keys(activeTools).map(function (name) { return activeTools[name]; });
             if (active.length > 0) {
                 setToolStatusText(toolStatusDiv, active.join(' · '), false);
             } else {
@@ -444,14 +601,7 @@
 
         function renderAiMarkdown() {
             if (!aiDiv) return;
-            var dirty = marked.parse(streamedText);
-            var clean = DOMPurify.sanitize(dirty, { ADD_ATTR: ['target'] });
-            aiDiv.innerHTML = clean;
-            var links = aiDiv.querySelectorAll('a');
-            links.forEach(function (link) {
-                link.setAttribute('target', '_blank');
-                link.setAttribute('rel', 'noopener noreferrer');
-            });
+            renderMarkdownInto(aiBody(aiDiv), streamedText);
         }
 
         function scheduleRender() {
@@ -465,15 +615,20 @@
         }
 
         try {
+            var payload = {
+                message: message,
+                session_id: sessionId,
+                fingerprint: userId,
+                persona: selectedPersona
+            };
+            if (options.regenerateFromId) payload.regenerate_from_id = options.regenerateFromId;
+            if (options.toneFeedback) payload.tone_feedback = options.toneFeedback;
+            if (options.feedbackNote) payload.feedback_note = options.feedbackNote;
+
             var res = await fetch(API_URL + '/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: message,
-                    session_id: sessionId,
-                    fingerprint: userId,
-                    persona: selectedPersona,
-                }),
+                body: JSON.stringify(payload)
             });
 
             if (!res.ok) throw new Error(res.statusText);
@@ -481,7 +636,7 @@
             var reader = res.body.getReader();
             var decoder = new TextDecoder();
             var buffer = '';
-            var accumulatedLog = ""; // 로그를 계속 쌓아둘 변수
+            var accumulatedLog = '';
 
             while (true) {
                 var result = await reader.read();
@@ -499,18 +654,15 @@
 
                     try {
                         var data = JSON.parse(jsonStr);
-                        
+
                         if (data.type === 'log') {
                             if (data.node === 'tool') continue;
-                            // 새로운 로그 조각을 기존 로그에 추가
-                            accumulatedLog += data.content + "\n\n";
+                            accumulatedLog += data.content + '\n\n';
                             if (logDiv && logDiv.parentNode) logDiv.textContent = accumulatedLog;
-
-                            // 스크롤 조절
                             chatBox.scrollTop = chatBox.scrollHeight;
                         } else if (data.type === 'status' || data.type === 'warning') {
                             var prefix = data.type === 'warning' ? '주의: ' : '';
-                            accumulatedLog += prefix + data.content + "\n\n";
+                            accumulatedLog += prefix + data.content + '\n\n';
                             if (logDiv && logDiv.parentNode) {
                                 logDiv.textContent = accumulatedLog;
                             } else if (!aiDiv) {
@@ -525,20 +677,21 @@
                         } else if (data.type === 'tool_done') {
                             updateToolStatus(data, true);
                         } else if (data.type === 'chunk') {
-                            // 첫 조각 도착 시 로그창 제거하고 답변 칸 생성
                             if (!aiDiv) {
-                                accumulatedLog = "";
+                                accumulatedLog = '';
                                 if (logDiv) { logDiv.remove(); logDiv = null; }
                                 clearToolStatus();
                                 aiDiv = document.createElement('div');
                                 aiDiv.className = 'chat-message chat-message-ai';
+                                var body = document.createElement('div');
+                                body.className = 'chat-message-body';
+                                aiDiv.appendChild(body);
                                 chatBox.appendChild(aiDiv);
                             }
                             streamedText += data.content;
                             scheduleRender();
                         } else if (data.type === 'answer') {
-                            // 최종 답변 수신 — 스트림 내용과 같으면 그대로, 다르면 대체
-                            accumulatedLog = "";
+                            accumulatedLog = '';
                             if (logDiv) { logDiv.remove(); logDiv = null; }
                             clearToolStatus();
                             if (!aiDiv) {
@@ -547,6 +700,10 @@
                                 streamedText = data.content;
                                 renderAiMarkdown();
                                 chatBox.scrollTop = chatBox.scrollHeight;
+                            }
+                            if (data.message_id) {
+                                aiDiv.dataset.messageId = String(data.message_id);
+                                attachFeedbackControls(aiDiv, data.message_id, message);
                             }
                             if (document.visibilityState === 'hidden') {
                                 document.title = '💬 답변 도착 — ' + originalTitle;
@@ -568,29 +725,30 @@
                 }
             }
         } catch (err) {
-            console.error("Chat Error: ", err);
+            console.error('Chat Error: ', err);
             streamDied = true;
             clearToolStatus();
-            var errDiv = (typeof aiDiv !== 'undefined' && aiDiv) ? aiDiv : appendMessage('', 'chat-message-ai');
+            var errDiv = aiDiv ? aiDiv : appendMessage('', 'chat-message-ai');
 
-            if (hiddenDuringRequest) {
-                // Stream died while tab was hidden — attempt to recover answer from history.
-                // Store context so visibilitychange can trigger recovery if tab is still hidden.
+            if (hiddenDuringRequest && !options.regenerateFromId) {
                 recoveryContext = { message: message, errorDiv: errDiv, logDiv: logDiv };
                 if (document.visibilityState === 'visible') {
                     tryRecoverFromHistory(message, errDiv);
                 } else {
-                    // Tab still hidden: show placeholder; visibilitychange → visible will start recovery
                     errDiv.textContent = '연결이 끊겼습니다. 탭으로 돌아오면 답변을 복구합니다...';
                 }
             } else {
                 showRetryError(errDiv, STRINGS.error, message);
             }
-
             chatBox.scrollTop = chatBox.scrollHeight;
         }
 
         setLoading(false);
         chatInput.focus();
+    }
+
+    chatForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        sendChat(chatInput.value);
     });
 })();

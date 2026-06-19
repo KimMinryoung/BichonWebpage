@@ -1265,6 +1265,63 @@ footer .footer-tagline {
 .chat-message-ai a { color: var(--link); text-decoration: none; }
 .chat-message-ai a:hover { text-decoration: underline; }
 
+.chat-feedback {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+.chat-feedback button,
+.chat-feedback select,
+.chat-feedback input {
+    height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--bg-inset);
+    color: var(--text-secondary);
+    font: inherit;
+    font-size: 12px;
+}
+
+.chat-feedback button {
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.chat-feedback button:hover:not(:disabled),
+.chat-feedback button.active {
+    border-color: var(--accent);
+    color: var(--text-primary);
+}
+
+.chat-feedback button:disabled,
+.chat-feedback select:disabled,
+.chat-feedback input:disabled {
+    opacity: 0.58;
+    cursor: not-allowed;
+}
+
+.chat-feedback select {
+    max-width: 160px;
+    padding: 0 6px;
+}
+
+.chat-feedback input {
+    min-width: 140px;
+    flex: 1 1 160px;
+    padding: 0 8px;
+}
+
+.chat-feedback-status {
+    color: var(--text-muted);
+    font-size: 12px;
+    min-width: 42px;
+}
+
 .chat-message-log {
     background-color: var(--bg-inset);
     border: 1px solid var(--border);
