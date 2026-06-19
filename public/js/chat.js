@@ -23,6 +23,13 @@
     var chatForm = document.getElementById('chatForm');
     var chatInput = document.getElementById('chatInput');
     var chatSend = document.getElementById('chatSend');
+    var feedbackBar = document.getElementById('chatFeedbackBar');
+    var feedbackTone = document.getElementById('feedbackTone');
+    var feedbackNote = document.getElementById('feedbackNote');
+    var feedbackSave = document.getElementById('feedbackSave');
+    var feedbackRegenerate = document.getElementById('feedbackRegenerate');
+    var feedbackStatus = document.getElementById('feedbackStatus');
+    var activeFeedbackTarget = null; // { messageId, sourceMessage, aiDiv }
     var busy = false;
     var originalTitle = document.title;
     var hiddenDuringRequest = false;
@@ -204,6 +211,7 @@
     }
 
     function renderSessionTurns(turns) {
+        clearFeedbackTarget();
         chatBox.innerHTML = '';
         for (var i = 0; i < turns.length; i++) {
             var item = turns[i];
@@ -236,6 +244,7 @@
     }
 
     function startNewSession() {
+        clearFeedbackTarget();
         sessionId = 'tab-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
         sessionStorage.setItem('chatSessionId', sessionId);
         chatBox.innerHTML = '';
@@ -249,6 +258,7 @@
             var data = await res.json();
             var sessions = data.sessions || [];
 
+            clearFeedbackTarget();
             chatBox.innerHTML = '';
             var container = document.createElement('div');
             container.id = 'historyContainer';
@@ -402,6 +412,10 @@
         chatSend.disabled = on;
         chatInput.disabled = on;
         if (personaSelector) personaSelector.disabled = on;
+        if (feedbackTone) feedbackTone.disabled = on;
+        if (feedbackNote) feedbackNote.disabled = on;
+        if (feedbackSave) feedbackSave.disabled = on;
+        if (feedbackRegenerate) feedbackRegenerate.disabled = on;
     }
 
     var isEnglish = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
@@ -457,68 +471,75 @@
         }
     }
 
-    function attachFeedbackControls(aiDiv, messageId, sourceMessage) {
-        if (!aiDiv || !messageId || aiDiv.querySelector('.chat-feedback')) return;
+    function clearFeedbackTarget() {
+        activeFeedbackTarget = null;
+        if (feedbackBar) feedbackBar.hidden = true;
+        if (feedbackStatus) feedbackStatus.textContent = '';
+        if (feedbackTone) feedbackTone.value = '';
+        if (feedbackNote) feedbackNote.value = '';
+    }
 
-        var controls = document.createElement('div');
-        controls.className = 'chat-feedback';
+    function setFeedbackTarget(messageId, sourceMessage, aiDiv) {
+        if (!messageId || !feedbackBar) return;
+        activeFeedbackTarget = {
+            messageId: messageId,
+            sourceMessage: sourceMessage || '',
+            aiDiv: aiDiv || null
+        };
+        feedbackBar.hidden = false;
+        if (feedbackStatus) feedbackStatus.textContent = '';
+        if (feedbackTone) feedbackTone.value = '';
+        if (feedbackNote) feedbackNote.value = '';
+    }
 
-        var status = document.createElement('span');
-        status.className = 'chat-feedback-status';
+    function currentFeedbackTone() {
+        return feedbackTone ? (feedbackTone.value || '') : '';
+    }
 
-        function currentTone() {
-            return toneSelect.value || '';
-        }
-        function currentNote() {
-            return noteInput.value.trim();
-        }
+    function currentFeedbackNote() {
+        return feedbackNote ? feedbackNote.value.trim() : '';
+    }
 
-        var toneSelect = document.createElement('select');
-        toneSelect.setAttribute('aria-label', 'tone feedback');
+    if (feedbackTone) {
         TONE_OPTIONS.forEach(function (entry) {
             var opt = document.createElement('option');
             opt.value = entry[0];
             opt.textContent = entry[1];
-            toneSelect.appendChild(opt);
+            feedbackTone.appendChild(opt);
         });
-        controls.appendChild(toneSelect);
+    }
 
-        var noteInput = document.createElement('input');
-        noteInput.type = 'text';
-        noteInput.maxLength = 500;
-        noteInput.placeholder = STRINGS.feedbackNote;
-        noteInput.addEventListener('keydown', function (event) {
+    if (feedbackNote) {
+        feedbackNote.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
-                if (!busy) postFeedback(messageId, currentTone(), currentNote(), status);
+                if (busy || !activeFeedbackTarget) return;
+                postFeedback(activeFeedbackTarget.messageId, currentFeedbackTone(), currentFeedbackNote(), feedbackStatus);
             }
         });
-        controls.appendChild(noteInput);
+    }
 
-        var saveBtn = document.createElement('button');
-        saveBtn.type = 'button';
-        saveBtn.textContent = STRINGS.feedbackSave;
-        saveBtn.addEventListener('click', function () {
-            if (busy) return;
-            postFeedback(messageId, currentTone(), currentNote(), status);
+    if (feedbackSave) {
+        feedbackSave.addEventListener('click', function () {
+            if (busy || !activeFeedbackTarget) return;
+            postFeedback(activeFeedbackTarget.messageId, currentFeedbackTone(), currentFeedbackNote(), feedbackStatus);
         });
-        controls.appendChild(saveBtn);
+    }
 
-        var regenBtn = document.createElement('button');
-        regenBtn.type = 'button';
-        regenBtn.textContent = STRINGS.regenerate;
-        regenBtn.addEventListener('click', function () {
-            if (busy) return;
-            sendChat(sourceMessage || STRINGS.regenerate, {
+    if (feedbackRegenerate) {
+        feedbackRegenerate.addEventListener('click', function () {
+            if (busy || !activeFeedbackTarget) return;
+            var target = activeFeedbackTarget;
+            if (target.aiDiv && target.aiDiv.parentNode) {
+                target.aiDiv.remove();
+            }
+            sendChat(target.sourceMessage || STRINGS.regenerate, {
                 suppressUserMessage: true,
-                regenerateFromId: messageId,
-                toneFeedback: currentTone(),
-                feedbackNote: currentNote()
+                regenerateFromId: target.messageId,
+                toneFeedback: currentFeedbackTone(),
+                feedbackNote: currentFeedbackNote()
             });
         });
-        controls.appendChild(regenBtn);
-        controls.appendChild(status);
-        aiDiv.appendChild(controls);
     }
 
     async function sendChat(message, options) {
@@ -527,6 +548,7 @@
         if (!message || busy) return;
 
         if (!options.suppressUserMessage) appendMessage(message, 'chat-message-user');
+        if (options.regenerateFromId) clearFeedbackTarget();
         chatInput.value = '';
         hiddenDuringRequest = false;
         streamDied = false;
@@ -689,7 +711,7 @@
                             }
                             if (data.message_id) {
                                 aiDiv.dataset.messageId = String(data.message_id);
-                                attachFeedbackControls(aiDiv, data.message_id, message);
+                                setFeedbackTarget(data.message_id, message, aiDiv);
                             }
                             if (document.visibilityState === 'hidden') {
                                 document.title = '💬 답변 도착 — ' + originalTitle;

@@ -33,6 +33,20 @@
 
             <div class="chat-box" id="chatBox"></div>
 
+            <div class="chat-feedback-bar" id="chatFeedbackBar" hidden>
+                <select id="feedbackTone" aria-label="tone feedback"></select>
+                <input
+                    type="text"
+                    id="feedbackNote"
+                    maxlength="500"
+                    placeholder="<%= strings.chat.feedbackNote %>"
+                    autocomplete="off"
+                />
+                <button type="button" id="feedbackSave"><%= strings.chat.feedbackSave %></button>
+                <button type="button" id="feedbackRegenerate"><%= strings.chat.regenerate %></button>
+                <span class="chat-feedback-status" id="feedbackStatus"></span>
+            </div>
+
             <form class="chat-input-row" id="chatForm">
                 <input
                     type="text"

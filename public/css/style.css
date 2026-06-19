@@ -1265,54 +1265,60 @@ footer .footer-tagline {
 .chat-message-ai a { color: var(--link); text-decoration: none; }
 .chat-message-ai a:hover { text-decoration: underline; }
 
-.chat-feedback {
+.chat-feedback-bar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 6px;
-    margin-top: 10px;
-    padding-top: 8px;
+    padding: 8px 10px;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
     border-top: 1px solid var(--border);
+    background-color: var(--bg-surface);
 }
 
-.chat-feedback button,
-.chat-feedback select,
-.chat-feedback input {
-    height: 28px;
+.chat-feedback-bar[hidden] {
+    display: none;
+}
+
+.chat-feedback-bar button,
+.chat-feedback-bar select,
+.chat-feedback-bar input {
+    height: 30px;
     border: 1px solid var(--border);
     border-radius: 0;
     background: var(--bg-inset);
     color: var(--text-secondary);
     font: inherit;
-    font-size: 12px;
+    font-size: 13px;
 }
 
-.chat-feedback button {
-    padding: 0 9px;
+.chat-feedback-bar button {
+    padding: 0 10px;
     cursor: pointer;
     white-space: nowrap;
 }
 
-.chat-feedback button:hover:not(:disabled) {
+.chat-feedback-bar button:hover:not(:disabled) {
     border-color: var(--accent);
     color: var(--text-primary);
 }
 
-.chat-feedback button:disabled,
-.chat-feedback select:disabled,
-.chat-feedback input:disabled {
+.chat-feedback-bar button:disabled,
+.chat-feedback-bar select:disabled,
+.chat-feedback-bar input:disabled {
     opacity: 0.58;
     cursor: not-allowed;
 }
 
-.chat-feedback select {
-    max-width: 160px;
+.chat-feedback-bar select {
+    width: 132px;
     padding: 0 6px;
 }
 
-.chat-feedback input {
-    min-width: 170px;
-    flex: 1 1 220px;
+.chat-feedback-bar input {
+    min-width: 180px;
+    flex: 1 1 240px;
     padding: 0 8px;
 }
 
