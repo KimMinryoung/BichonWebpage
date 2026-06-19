@@ -188,7 +188,7 @@ const ko = {
         feedbackError: '피드백 저장 실패',
         feedbackNote: '피드백을 입력하세요',
         feedbackSave: '피드백 저장',
-        regenerate: '피드백으로 다시 생성',
+        regenerate: '다시 생성',
         regenerating: '응답을 다시 생성하는 중...'
     },
 
@@ -401,7 +401,7 @@ const en = {
         feedbackError: 'Feedback failed',
         feedbackNote: 'Write feedback',
         feedbackSave: 'Save feedback',
-        regenerate: 'Regenerate with feedback',
+        regenerate: 'Regenerate',
         regenerating: 'Regenerating...'
     },
 
