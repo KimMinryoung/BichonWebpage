@@ -616,6 +616,34 @@ header h1 {
     padding: 18px 44px 18px 24px;
 }
 
+/* Highlighted interactive cards (chat, CommuLingo) — accent fill to draw the eye.
+   Accent is the same dark green in both themes, so cream text reads well on it. */
+.home-card-highlight {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.home-card-highlight h2 {
+    color: var(--clr-cream-light);
+}
+
+.home-card-highlight p {
+    color: color-mix(in srgb, var(--clr-cream-light) 82%, var(--accent));
+}
+
+.home-card-highlight::after {
+    color: var(--clr-cream-light);
+}
+
+.home-card-highlight:hover {
+    background-color: color-mix(in srgb, var(--accent) 86%, var(--clr-white));
+}
+
+.home-card-highlight:hover::after {
+    color: var(--clr-cream-light);
+    transform: translate(4px, -50%);
+}
+
 .home-section {
     margin-top: 24px;
 }
