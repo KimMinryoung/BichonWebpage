@@ -617,10 +617,10 @@ header h1 {
 }
 
 /* Highlighted interactive cards (chat, CommuLingo) — accent fill to draw the eye.
-   Accent is the same dark green in both themes, so cream text reads well on it. */
+   Accent-red is the same in both themes, so cream text reads well on it. */
 .home-card-highlight {
-    background-color: var(--accent);
-    border-color: var(--accent);
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
 }
 
 .home-card-highlight h2 {
@@ -628,7 +628,7 @@ header h1 {
 }
 
 .home-card-highlight p {
-    color: color-mix(in srgb, var(--clr-cream-light) 82%, var(--accent));
+    color: color-mix(in srgb, var(--clr-cream-light) 82%, var(--accent-red));
 }
 
 .home-card-highlight::after {
@@ -636,7 +636,7 @@ header h1 {
 }
 
 .home-card-highlight:hover {
-    background-color: color-mix(in srgb, var(--accent) 86%, var(--clr-white));
+    background-color: color-mix(in srgb, var(--accent-red) 88%, var(--clr-black));
 }
 
 .home-card-highlight:hover::after {
