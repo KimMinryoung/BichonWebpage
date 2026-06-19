@@ -249,6 +249,28 @@ header h1 {
     font-weight: 600;
 }
 
+/* Persona selector + history button group on the right of the chat header */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.persona-select {
+    background: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 0;
+    font-size: 0.9rem;
+    max-width: 45vw;
+}
+
+.persona-select:focus {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
 /* Chat history separator */
 .chat-history-separator {
     text-align: center;

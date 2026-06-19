@@ -177,12 +177,13 @@ const ko = {
     // 채팅 페이지
     chat: {
         title: '사이버-레닌과 대화',
-        placeholder: '레닌 동지에게 질문하세요...',
+        placeholder: '동지에게 질문하세요...',
         send: '전송',
         thinking: '동지가 생각 중...',
         error: '오류가 발생했습니다.',
         notSaved: '답변을 받지 못했습니다. 메시지를 다시 보내주세요.',
-        retry: '↻ 다시 보내기'
+        retry: '↻ 다시 보내기',
+        personaLabel: '대화 상대'
     },
 
     commuLingo: {
@@ -383,12 +384,13 @@ const en = {
 
     chat: {
         title: 'Chat with Cyber-Lenin',
-        placeholder: 'Ask Comrade Lenin...',
+        placeholder: 'Ask the comrade...',
         send: 'Send',
         thinking: 'Comrade is thinking...',
         error: 'An error occurred.',
         notSaved: "The reply didn't come through. Please resend your message.",
-        retry: '↻ Retry'
+        retry: '↻ Retry',
+        personaLabel: 'Chat with'
     },
 
     commuLingo: {

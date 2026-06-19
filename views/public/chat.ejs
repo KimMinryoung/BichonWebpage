@@ -9,6 +9,7 @@
     <meta name="str-error" content="<%= strings.chat.error %>">
     <meta name="str-not-saved" content="<%= strings.chat.notSaved %>">
     <meta name="str-retry" content="<%= strings.chat.retry %>">
+    <meta name="str-persona-label" content="<%= strings.chat.personaLabel %>">
 </head>
 <body>
     <script src="/js/chat-viewport.js?v=<%= assetVersion %>"></script>
@@ -18,7 +19,10 @@
         <div class="container">
             <header class="box compact-header">
                 <h1><%= strings.chat.title %></h1>
-                <button type="button" class="btn btn-secondary" id="historyBtn"><%= strings.public.chatHistory %></button>
+                <div class="header-actions">
+                    <select id="personaSelector" class="persona-select" aria-label="<%= strings.chat.personaLabel %>" hidden></select>
+                    <button type="button" class="btn btn-secondary" id="historyBtn"><%= strings.public.chatHistory %></button>
+                </div>
             </header>
 
             <div class="chat-box" id="chatBox"></div>
