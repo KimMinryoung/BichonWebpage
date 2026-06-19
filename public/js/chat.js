@@ -41,10 +41,18 @@
     var selectedPersona = localStorage.getItem('cl_persona') || DEFAULT_PERSONA;
     var personaSelector = document.getElementById('personaSelector');
 
+    // 관리자 키 — localStorage('cyberLeninAdminKey')에 저장되어 있으면 X-Admin-Key로
+    // 전송한다. 관리자 전용 페르소나(예: 성인 역할극)를 잠금 해제하는 데만 쓰인다.
+    // 키 설정: 콘솔에서 localStorage.setItem('cyberLeninAdminKey', '<키>') 후 새로고침.
+    function adminHeaders() {
+        var key = (localStorage.getItem('cyberLeninAdminKey') || '').trim();
+        return key ? { 'X-Admin-Key': key } : {};
+    }
+
     async function initPersonas() {
         if (!personaSelector) return;
         try {
-            var res = await fetch(API_URL + '/personas');
+            var res = await fetch(API_URL + '/personas', { headers: adminHeaders() });
             if (!res.ok) return;
             var data = await res.json();
             var personas = (data && data.personas) || [];
@@ -193,7 +201,7 @@
 
     async function resumeSession(sid) {
         try {
-            var res = await fetch(API_URL + '/history?session_id=' + encodeURIComponent(sid) + '&fingerprint=' + encodeURIComponent(userId) + '&persona=' + encodeURIComponent(selectedPersona) + '&limit=200');
+            var res = await fetch(API_URL + '/history?session_id=' + encodeURIComponent(sid) + '&fingerprint=' + encodeURIComponent(userId) + '&persona=' + encodeURIComponent(selectedPersona) + '&limit=200', { headers: adminHeaders() });
             if (!res.ok) throw new Error('서버 응답 오류');
             var data = await res.json();
             renderSessionTurns(data.history || []);
@@ -216,7 +224,7 @@
 
     async function loadSessions() {
         try {
-            var res = await fetch(API_URL + '/sessions?fingerprint=' + encodeURIComponent(userId) + '&persona=' + encodeURIComponent(selectedPersona) + '&limit=50');
+            var res = await fetch(API_URL + '/sessions?fingerprint=' + encodeURIComponent(userId) + '&persona=' + encodeURIComponent(selectedPersona) + '&limit=50', { headers: adminHeaders() });
             if (!res.ok) throw new Error('서버 응답 오류');
             var data = await res.json();
             var sessions = data.sessions || [];
@@ -451,7 +459,7 @@
         try {
             var res = await fetch(API_URL + '/chat', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: Object.assign({ 'Content-Type': 'application/json' }, adminHeaders()),
                 body: JSON.stringify({
                     message: message,
                     session_id: sessionId,
