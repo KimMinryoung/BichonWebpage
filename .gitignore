@@ -27,3 +27,6 @@ Thumbs.db
 
 # temp files for dev
 temp_dev/
+
+# CommuLingo generated artifacts (regenerated from source; not tracked)
+data/commulingo/generated/
