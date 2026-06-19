@@ -616,32 +616,23 @@ header h1 {
     padding: 18px 44px 18px 24px;
 }
 
-/* Highlighted interactive cards (chat, CommuLingo) — brand-red fill to draw the eye.
-   Uses --accent-red, the same red as the logo and hero tagline. Keeps the
-   default --border (cream in dark, ink in light) so the card frame stays visible. */
+/* Highlighted interactive cards (chat, CommuLingo) — restrained brand-red accent.
+   No fill: a left bar + red title using --accent-red (the logo/tagline red) draws
+   the eye while keeping red usage minimal, mirroring .home-section-header. */
 .home-card-highlight {
-    background-color: var(--accent-red);
+    border-left: 3px solid var(--accent-red);
 }
 
 .home-card-highlight h2 {
-    color: var(--clr-cream-light);
-}
-
-.home-card-highlight p {
-    color: color-mix(in srgb, var(--clr-cream-light) 82%, var(--accent-red));
+    color: var(--accent-red);
 }
 
 .home-card-highlight::after {
-    color: var(--clr-cream-light);
-}
-
-.home-card-highlight:hover {
-    background-color: color-mix(in srgb, var(--accent-red) 88%, var(--clr-black));
+    color: var(--accent-red);
 }
 
 .home-card-highlight:hover::after {
-    color: var(--clr-cream-light);
-    transform: translate(4px, -50%);
+    color: var(--accent-red);
 }
 
 .home-section {
