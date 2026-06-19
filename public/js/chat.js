@@ -25,11 +25,24 @@
         sessionStorage.setItem('chatSessionId', sessionId);
     }
 
+    // UUID 생성 — crypto.randomUUID()는 secure context(https/localhost)에서만
+    // 존재한다. http로 접속하는 개발 인스턴스에서도 동작하도록 폴백을 둔다.
+    function randomUuid() {
+        if (window.crypto && typeof crypto.randomUUID === 'function') {
+            return crypto.randomUUID();
+        }
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = (Math.random() * 16) | 0;
+            var v = c === 'x' ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+        });
+    }
+
     // 고유 사용자 ID — localStorage에 영구 저장 (서버 재시작 후에도 유지, 탭 간 공유)
     function getUserId() {
         var stored = localStorage.getItem('cl_user_id');
         if (stored) return stored;
-        var uid = crypto.randomUUID();
+        var uid = randomUuid();
         localStorage.setItem('cl_user_id', uid);
         return uid;
     }
