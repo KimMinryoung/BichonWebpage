@@ -13,8 +13,9 @@
         retry: metaContent('str-retry', '↻ 다시 보내기'),
         feedbackSaved: metaContent('str-feedback-saved', '반영됨'),
         feedbackError: metaContent('str-feedback-error', '피드백 저장 실패'),
-        feedbackNote: metaContent('str-feedback-note', '짧은 피드백'),
-        regenerate: metaContent('str-regenerate', '다시 생성'),
+        feedbackNote: metaContent('str-feedback-note', '피드백을 입력하세요'),
+        feedbackSave: metaContent('str-feedback-save', '피드백 저장'),
+        regenerate: metaContent('str-regenerate', '피드백으로 다시 생성'),
         regenerating: metaContent('str-regenerating', '응답을 다시 생성하는 중...')
     };
 
@@ -426,8 +427,12 @@
         ['more_cited', '근거 강화']
     ];
 
-    async function postFeedback(messageId, rating, toneFeedback, note, statusEl) {
+    async function postFeedback(messageId, toneFeedback, note, statusEl) {
         if (!messageId) return false;
+        if (!toneFeedback && !note) {
+            if (statusEl) statusEl.textContent = STRINGS.feedbackNote;
+            return false;
+        }
         if (statusEl) statusEl.textContent = '';
         try {
             var res = await fetch(API_URL + '/chat/feedback', {
@@ -438,7 +443,6 @@
                     session_id: sessionId,
                     fingerprint: userId,
                     persona: selectedPersona,
-                    rating: rating || null,
                     tone_feedback: toneFeedback || null,
                     note: note || ''
                 })
@@ -469,26 +473,6 @@
             return noteInput.value.trim();
         }
 
-        for (var rating = 1; rating <= 4; rating++) {
-            var btn = document.createElement('button');
-            btn.type = 'button';
-            btn.textContent = String(rating);
-            btn.title = rating + '/4';
-            btn.setAttribute('aria-label', rating + '/4');
-            btn.addEventListener('click', function (value, button) {
-                return async function () {
-                    if (busy) return;
-                    var ok = await postFeedback(messageId, value, currentTone(), currentNote(), status);
-                    if (ok) {
-                        controls.querySelectorAll('button[data-rating]').forEach(function (b) { b.classList.remove('active'); });
-                        button.classList.add('active');
-                    }
-                };
-            }(rating, btn));
-            btn.setAttribute('data-rating', String(rating));
-            controls.appendChild(btn);
-        }
-
         var toneSelect = document.createElement('select');
         toneSelect.setAttribute('aria-label', 'tone feedback');
         TONE_OPTIONS.forEach(function (entry) {
@@ -496,10 +480,6 @@
             opt.value = entry[0];
             opt.textContent = entry[1];
             toneSelect.appendChild(opt);
-        });
-        toneSelect.addEventListener('change', function () {
-            if (busy || !toneSelect.value) return;
-            postFeedback(messageId, null, currentTone(), currentNote(), status);
         });
         controls.appendChild(toneSelect);
 
@@ -510,13 +490,19 @@
         noteInput.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
-                if (!busy) postFeedback(messageId, null, currentTone(), currentNote(), status);
+                if (!busy) postFeedback(messageId, currentTone(), currentNote(), status);
             }
         });
-        noteInput.addEventListener('blur', function () {
-            if (!busy && currentNote()) postFeedback(messageId, null, currentTone(), currentNote(), status);
-        });
         controls.appendChild(noteInput);
+
+        var saveBtn = document.createElement('button');
+        saveBtn.type = 'button';
+        saveBtn.textContent = STRINGS.feedbackSave;
+        saveBtn.addEventListener('click', function () {
+            if (busy) return;
+            postFeedback(messageId, currentTone(), currentNote(), status);
+        });
+        controls.appendChild(saveBtn);
 
         var regenBtn = document.createElement('button');
         regenBtn.type = 'button';

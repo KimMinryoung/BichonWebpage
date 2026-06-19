@@ -1288,12 +1288,12 @@ footer .footer-tagline {
 }
 
 .chat-feedback button {
-    padding: 0 8px;
+    padding: 0 9px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
-.chat-feedback button:hover:not(:disabled),
-.chat-feedback button.active {
+.chat-feedback button:hover:not(:disabled) {
     border-color: var(--accent);
     color: var(--text-primary);
 }
@@ -1311,8 +1311,8 @@ footer .footer-tagline {
 }
 
 .chat-feedback input {
-    min-width: 140px;
-    flex: 1 1 160px;
+    min-width: 170px;
+    flex: 1 1 220px;
     padding: 0 8px;
 }
 
