@@ -35,6 +35,51 @@
     }
     var userId = getUserId();
 
+    // 선택된 대화 상대(페르소나) — localStorage에 영구 저장. 서버 /personas가
+    // 카탈로그를 제공하며, 선택지가 2개 이상일 때만 셀렉터를 노출한다.
+    var DEFAULT_PERSONA = 'cyber-lenin';
+    var selectedPersona = localStorage.getItem('cl_persona') || DEFAULT_PERSONA;
+    var personaSelector = document.getElementById('personaSelector');
+
+    async function initPersonas() {
+        if (!personaSelector) return;
+        try {
+            var res = await fetch(API_URL + '/personas');
+            if (!res.ok) return;
+            var data = await res.json();
+            var personas = (data && data.personas) || [];
+            if (personas.length < 2) return; // 선택지가 하나면 숨김 유지
+            var ids = personas.map(function (p) { return p.id; });
+            // 저장된 선택이 더 이상 유효하지 않으면 서버 기본값으로 보정
+            if (ids.indexOf(selectedPersona) === -1) {
+                selectedPersona = (data.default && ids.indexOf(data.default) !== -1) ? data.default : ids[0];
+                localStorage.setItem('cl_persona', selectedPersona);
+            }
+            personaSelector.innerHTML = '';
+            personas.forEach(function (p) {
+                var opt = document.createElement('option');
+                opt.value = p.id;
+                opt.textContent = p.display_name || p.id;
+                if (p.description) opt.title = p.description;
+                if (p.id === selectedPersona) opt.selected = true;
+                personaSelector.appendChild(opt);
+            });
+            personaSelector.hidden = false;
+            personaSelector.addEventListener('change', function () {
+                // 응답 처리 중에는 전환 금지 — 선택을 되돌린다.
+                if (busy) { personaSelector.value = selectedPersona; return; }
+                if (personaSelector.value === selectedPersona) return;
+                selectedPersona = personaSelector.value;
+                localStorage.setItem('cl_persona', selectedPersona);
+                // 페르소나별 히스토리는 분리되므로 새 세션으로 시작한다.
+                startNewSession();
+            });
+        } catch (err) {
+            console.error('persona load error:', err);
+        }
+    }
+    initPersonas();
+
     // Render a connection-drop error in `errDiv` with an inline "다시 보내기" button.
     // Clicking the button re-fires the form submission with the lost message,
     // preserving any draft the user has typed since the failure.
@@ -148,7 +193,7 @@
 
     async function resumeSession(sid) {
         try {
-            var res = await fetch(API_URL + '/history?session_id=' + encodeURIComponent(sid) + '&fingerprint=' + encodeURIComponent(userId) + '&limit=200');
+            var res = await fetch(API_URL + '/history?session_id=' + encodeURIComponent(sid) + '&fingerprint=' + encodeURIComponent(userId) + '&persona=' + encodeURIComponent(selectedPersona) + '&limit=200');
             if (!res.ok) throw new Error('서버 응답 오류');
             var data = await res.json();
             renderSessionTurns(data.history || []);
@@ -171,7 +216,7 @@
 
     async function loadSessions() {
         try {
-            var res = await fetch(API_URL + '/sessions?fingerprint=' + encodeURIComponent(userId) + '&limit=50');
+            var res = await fetch(API_URL + '/sessions?fingerprint=' + encodeURIComponent(userId) + '&persona=' + encodeURIComponent(selectedPersona) + '&limit=50');
             if (!res.ok) throw new Error('서버 응답 오류');
             var data = await res.json();
             var sessions = data.sessions || [];
@@ -411,6 +456,7 @@
                     message: message,
                     session_id: sessionId,
                     fingerprint: userId,
+                    persona: selectedPersona,
                 }),
             });
 
