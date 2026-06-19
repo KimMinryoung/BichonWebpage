@@ -616,11 +616,11 @@ header h1 {
     padding: 18px 44px 18px 24px;
 }
 
-/* Highlighted interactive cards (chat, CommuLingo) — accent fill to draw the eye.
-   Accent-red is the same in both themes, so cream text reads well on it. */
+/* Highlighted interactive cards (chat, CommuLingo) — brand-red fill to draw the eye.
+   Uses --accent-red, the same red as the logo and hero tagline. Keeps the
+   default --border (cream in dark, ink in light) so the card frame stays visible. */
 .home-card-highlight {
     background-color: var(--accent-red);
-    border-color: var(--accent-red);
 }
 
 .home-card-highlight h2 {
