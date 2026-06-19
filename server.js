@@ -158,6 +158,19 @@ app.use('/api/proxy', createProxyMiddleware({
             if (Array.isArray(req.userFingerprints) && req.userFingerprints.length) {
                 proxyReq.setHeader('X-User-Fingerprints', req.userFingerprints.join(','));
             }
+            // Admin identity is the passkey session, not a browser-supplied key.
+            // Always strip any client X-Admin-Key (anti-spoof), then inject the
+            // real backend admin key server-side only for authenticated admins —
+            // this unlocks admin-only chat personas without exposing the key to
+            // the browser. The dev instance (tailnet IP-restricted, http-only so
+            // WebAuthn/passkey login is unavailable) treats every request as admin
+            // so the feature can be tested there.
+            proxyReq.removeHeader('X-Admin-Key');
+            const isAdmin = !!(req.session && req.session.adminUser);
+            const devUnlock = process.env.NODE_ENV === 'development';
+            if (process.env.LENINBOT_ADMIN_KEY && (isAdmin || devUnlock)) {
+                proxyReq.setHeader('X-Admin-Key', process.env.LENINBOT_ADMIN_KEY);
+            }
         },
         proxyRes: (proxyRes) => {
             proxyRes.headers['X-Accel-Buffering'] = 'no';
