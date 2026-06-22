@@ -78,8 +78,8 @@ module.exports = {
     title: t('레닌: 국가와 혁명', 'Lenin: The State and Revolution'),
     bookTitle: t('국가와 혁명', 'The State and Revolution'),
     description: t(
-        '레닌의 『국가와 혁명』을 6개 장별로 읽으며 국가의 계급적 본질, 국가기구의 분쇄, 파리코뮌의 경험, 국가사멸의 경제적 기초, 기회주의 비판을 학습합니다.',
-        'Study Lenin’s The State and Revolution chapter by chapter: the class nature of the state, smashing the state machine, the Paris Commune, the economic basis of withering away, and the critique of opportunism.'
+        '국가의 계급적 본질에서 출발해 국가기구의 분쇄, 파리코뮌의 경험, 국가 사멸의 경제적 기초, 기회주의 비판을 학습합니다.',
+        'Start from the class nature of the state, then study smashing the state machine, the Paris Commune, the economic basis of the state’s withering away, and the critique of opportunism.'
     ),
     chapters: [
         chapter(

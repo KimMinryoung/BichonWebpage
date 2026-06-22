@@ -89,6 +89,24 @@
         return count + ' ' + (lang === 'en' ? 'Chapters' : '챕터');
     }
 
+    var bookGroups = [
+        { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id); } },
+        { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } }
+    ];
+
+    function groupBooks() {
+        var groups = [];
+        var assigned = {};
+        bookGroups.forEach(function(def) {
+            var items = books.filter(def.match);
+            items.forEach(function(book) { assigned[book.id] = true; });
+            if (items.length) groups.push({ label: def.label(), books: items });
+        });
+        var rest = books.filter(function(book) { return !assigned[book.id]; });
+        if (rest.length) groups.push({ label: strings.authorOther || (lang === 'en' ? 'Other' : '그 외'), books: rest });
+        return groups;
+    }
+
     function render() {
         renderResume();
         var allIds = [];
@@ -99,8 +117,18 @@
         if (els.total) els.total.textContent = Math.round((done / (allIds.length || 1)) * 100) + '%';
 
         els.list.innerHTML = '';
-        books.forEach(function(book) {
-            els.list.appendChild(createBookCard(book));
+        groupBooks().forEach(function(group) {
+            var section = document.createElement('section');
+            section.className = 'commu-book-group';
+            var heading = document.createElement('h3');
+            heading.className = 'commu-book-group-title';
+            heading.textContent = group.label;
+            var grid = document.createElement('div');
+            grid.className = 'commulingo-books';
+            group.books.forEach(function(book) { grid.appendChild(createBookCard(book)); });
+            section.appendChild(heading);
+            section.appendChild(grid);
+            els.list.appendChild(section);
         });
     }
 

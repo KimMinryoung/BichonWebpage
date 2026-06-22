@@ -221,7 +221,10 @@ const ko = {
         backToBooks: '책 목록',
         nextLesson: '다음 레슨',
         bookProgressEmpty: '아직 시작하지 않음',
-        chapters: '챕터'
+        chapters: '챕터',
+        authorMarx: '카를 마르크스',
+        authorLenin: '블라디미르 레닌',
+        authorOther: '그 외'
     },
 
     // 에러 페이지
@@ -441,7 +444,10 @@ const en = {
         backToBooks: 'Books',
         nextLesson: 'Next lesson',
         bookProgressEmpty: 'Not started yet',
-        chapters: 'Chapters'
+        chapters: 'Chapters',
+        authorMarx: 'Karl Marx',
+        authorLenin: 'Vladimir Lenin',
+        authorOther: 'Other'
     },
 
     error: {

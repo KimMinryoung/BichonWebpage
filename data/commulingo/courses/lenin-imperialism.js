@@ -448,8 +448,8 @@ module.exports = {
     title: t('레닌: 제국주의론', 'Lenin: Imperialism'),
     bookTitle: t('제국주의, 자본주의의 최고 단계', 'Imperialism, the Highest Stage of Capitalism'),
     description: t(
-        '레닌의 『제국주의, 자본주의의 최고 단계』를 10개 장별로 읽으며 독점, 금융자본, 자본수출, 세계분할, 기회주의 비판을 학습합니다.',
-        'Study Lenin’s Imperialism, the Highest Stage of Capitalism chapter by chapter: monopoly, finance capital, export of capital, world division, and the critique of opportunism.'
+        '자유경쟁이 독점으로 전화하는 과정을 따라가며 금융자본, 자본수출, 열강의 세계 분할, 기회주의 비판을 학습합니다.',
+        'Follow free competition turning into monopoly, then study finance capital, the export of capital, the great powers’ division of the world, and the critique of opportunism.'
     ),
     chapters: [
         chapter(
