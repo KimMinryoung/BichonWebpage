@@ -10,10 +10,12 @@
     <main class="container commulingo-shell" data-lang="<%= lang %>">
         <script id="commulingo-data" type="application/json"><%- JSON.stringify(lessons).replace(/</g, '\\u003c') %></script>
 
+        <a class="commu-back-link" href="/commulingo">← <%= strings.commuLingo.backToBooks %></a>
+
         <header class="box commulingo-hero">
             <div>
-                <h1><%= strings.commuLingo.title %></h1>
-                <p><%= strings.commuLingo.description %></p>
+                <h1><%= bookTitle %></h1>
+                <p><%= bookDescription %></p>
             </div>
             <div class="commulingo-total">
                 <span id="commuProgressText">0%</span>
@@ -21,8 +23,7 @@
             </div>
         </header>
 
-
-        <section class="commulingo-lessons" id="commuLessonList" aria-label="<%= strings.commuLingo.title %>"></section>
+        <section class="commulingo-lessons" id="commuLessonList" aria-label="<%= bookTitle %>"></section>
 
         <section class="commu-quiz is-hidden" id="commuQuiz" aria-live="polite">
             <div class="commu-quiz-top">
@@ -45,7 +46,10 @@
                 <h2 id="commuPrompt"></h2>
                 <div class="commu-choices" id="commuChoices"></div>
                 <div class="commu-feedback is-hidden" id="commuFeedback"></div>
-                <button type="button" class="btn btn-primary" id="commuNextBtn" disabled><%= strings.commuLingo.next %></button>
+                <div class="commu-quiz-actions">
+                    <button type="button" class="btn btn-primary" id="commuNextBtn" disabled><%= strings.commuLingo.next %></button>
+                    <button type="button" class="btn btn-secondary is-hidden" id="commuNextLessonBtn"></button>
+                </div>
             </article>
         </section>
     </main>

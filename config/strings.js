@@ -214,7 +214,14 @@ const ko = {
         syncSaved: '진도 저장됨',
         syncLocal: '이 브라우저에 진도를 저장합니다.',
         allDone: '오늘의 학습 완료',
-        backToLessons: '챕터 목록'
+        backToLessons: '챕터 목록',
+        chooseBook: '책을 선택하세요',
+        chooseBookHint: '읽고 싶은 책을 골라 챕터별 퀴즈로 학습하세요.',
+        continueLearning: '이어서 학습하기',
+        backToBooks: '책 목록',
+        nextLesson: '다음 레슨',
+        bookProgressEmpty: '아직 시작하지 않음',
+        chapters: '챕터'
     },
 
     // 에러 페이지
@@ -427,7 +434,14 @@ const en = {
         syncSaved: 'Progress saved',
         syncLocal: 'Progress is saved in this browser.',
         allDone: "Today's lesson complete",
-        backToLessons: 'Lessons'
+        backToLessons: 'Lessons',
+        chooseBook: 'Choose a book',
+        chooseBookHint: 'Pick a book and learn it chapter by chapter through quizzes.',
+        continueLearning: 'Continue learning',
+        backToBooks: 'Books',
+        nextLesson: 'Next lesson',
+        bookProgressEmpty: 'Not started yet',
+        chapters: 'Chapters'
     },
 
     error: {

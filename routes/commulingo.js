@@ -29,13 +29,56 @@ function normalizeProgress(raw) {
     };
 }
 
+function localize(value, lang) {
+    if (!value) return '';
+    if (typeof value === 'string') return value;
+    return value[lang] || value.ko || value.en || '';
+}
+
+function summarizeBooks(catalog) {
+    return (catalog.collections || []).map(collection => {
+        const chapters = collection.chapters || [];
+        const lessonIds = [];
+        chapters.forEach(chapter => {
+            (chapter.lessons || []).forEach(lesson => {
+                if (lesson && lesson.id && Number(lesson.questionCount) > 0) lessonIds.push(lesson.id);
+            });
+        });
+        return {
+            id: collection.id,
+            title: collection.title,
+            description: collection.description,
+            chapterCount: chapters.length,
+            lessonIds,
+        };
+    });
+}
+
 router.get('/', (req, res) => {
-    const lessons = loadCommuLingoCatalog();
-    res.render('public/commulingo', {
-        lessons,
+    const catalog = loadCommuLingoCatalog();
+    res.render('public/commulingo-index', {
+        books: { version: catalog.version, collections: summarizeBooks(catalog) },
         pageTitle: res.locals.strings.commuLingo.title,
         pageDescription: res.locals.strings.commuLingo.description,
         pagePath: '/commulingo',
+        extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+    });
+});
+
+router.get('/book/:collectionId', (req, res) => {
+    const collectionId = typeof req.params.collectionId === 'string' ? req.params.collectionId.trim() : '';
+    const catalog = loadCommuLingoCatalog();
+    const collection = (catalog.collections || []).find(item => item.id === collectionId);
+    if (!collection) return res.redirect('/commulingo');
+
+    const bookTitle = localize(collection.title, res.locals.lang);
+    res.render('public/commulingo-book', {
+        lessons: { version: catalog.version, collections: [collection] },
+        bookTitle,
+        bookDescription: localize(collection.description, res.locals.lang),
+        pageTitle: bookTitle,
+        pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
+        pagePath: `/commulingo/book/${collection.id}`,
         extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
     });
 });

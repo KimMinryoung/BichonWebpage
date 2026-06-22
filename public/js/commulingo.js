@@ -8,7 +8,7 @@
     var data = JSON.parse(raw.textContent);
     var lessons = flattenLessons(data);
     var storageKey = 'commulingo-progress-v1';
-    var expandedKey = 'commulingo-expanded-collection-v1';
+    var lastKey = 'commulingo-last-v1';
     var progress = loadLocalProgress();
     var lessonDetails = {};
     var active = null;
@@ -33,14 +33,24 @@
         introSummary: document.getElementById('commuIntroSummary'),
         introFocus: document.getElementById('commuIntroFocus'),
         diagram: document.getElementById('commuDiagram'),
-        next: document.getElementById('commuNextBtn')
+        next: document.getElementById('commuNextBtn'),
+        nextLesson: document.getElementById('commuNextLessonBtn')
     };
 
-    syncServerProgress().finally(renderLessons);
+    syncServerProgress().finally(function() {
+        renderLessons();
+        handleDeepLink();
+    });
 
     els.back.addEventListener('click', function() {
         showLessons(scrollTargetForLesson(active && active.lesson || returnScrollLesson, false));
     });
+    if (els.nextLesson) {
+        els.nextLesson.addEventListener('click', function() {
+            var lesson = els.nextLesson.commuNextLesson;
+            if (lesson) startLesson(lesson);
+        });
+    }
     els.next.addEventListener('click', function() {
         var finishedAction = els.next.getAttribute('data-finished');
         if (finishedAction === '1') {
@@ -195,18 +205,18 @@
         localStorage.setItem(storageKey, JSON.stringify(progress));
     }
 
-    function loadExpandedCollection() {
+    function saveLast(lesson) {
+        if (!lesson) return;
         try {
-            return localStorage.getItem(expandedKey) || '';
-        } catch (err) {
-            return '';
-        }
-    }
-
-    function saveExpandedCollection(collectionId) {
-        try {
-            if (collectionId) localStorage.setItem(expandedKey, collectionId);
-            else localStorage.removeItem(expandedKey);
+            localStorage.setItem(lastKey, JSON.stringify({
+                lessonId: lesson.id,
+                collectionId: lesson.collectionId,
+                collectionTitle: lesson.collectionTitle,
+                chapterNumber: lesson.chapterNumber,
+                chapterTitle: lesson.chapterTitle,
+                title: lesson.title,
+                updatedAt: new Date().toISOString()
+            }));
         } catch (err) {}
     }
 
@@ -265,35 +275,7 @@
         els.total.textContent = Math.round((completeCount / (playable.length || 1)) * 100) + '%';
         els.list.innerHTML = '';
 
-        var expandedCollection = loadExpandedCollection();
         groupLessons().forEach(function(group) {
-            var expanded = expandedCollection === group.id;
-            var section = document.createElement('section');
-            section.className = 'commu-volume-section' + (expanded ? ' is-expanded' : ' is-collapsed');
-            var groupProgress = progressStats(group.lessons);
-            section.innerHTML = [
-                '<header class="commu-volume-header">',
-                '<button type="button" class="commu-volume-toggle" aria-expanded="' + (expanded ? 'true' : 'false') + '">',
-                '<span class="commu-volume-title">',
-                '<strong>' + escapeHtml(group.title) + '</strong>',
-                '<small>' + escapeHtml(chapterCountLabel(countChapters(group.lessons))) + '</small>',
-                '<span class="commu-volume-progress">',
-                '<span class="commu-volume-progress-label">' + progressLabelHtml(groupProgress) + '</span>',
-                '<span class="commu-volume-progress-track"><span style="width:' + groupProgress.percent + '%"></span></span>',
-                '</span>',
-                '</span>',
-                '<span class="commu-volume-toggle-icon" aria-hidden="true">' + (expanded ? '−' : '+') + '</span>',
-                '</button>',
-                '</header>',
-                '<div class="commu-volume-body' + (expanded ? '' : ' is-hidden') + '"></div>'
-            ].join('');
-
-            section.querySelector('.commu-volume-toggle').addEventListener('click', function() {
-                saveExpandedCollection(expanded ? '' : group.id);
-                renderLessons();
-            });
-
-            var body = section.querySelector('.commu-volume-body');
             groupPartLessons(group.lessons).forEach(function(part) {
                 var partNode = document.createElement('section');
                 partNode.className = 'commu-part-section';
@@ -309,42 +291,13 @@
                 part.chapters.forEach(function(chapter) {
                     grid.appendChild(createChapterCard(chapter));
                 });
-                body.appendChild(partNode);
+                els.list.appendChild(partNode);
             });
-            els.list.appendChild(section);
         });
-    }
-
-    function countChapters(items) {
-        var seen = {};
-        (items || []).forEach(function(lesson) {
-            seen[[lesson.collectionId, lesson.chapterNumber, lesson.chapterTitle].join(':')] = true;
-        });
-        return Object.keys(seen).length;
     }
 
     function chapterCountLabel(count) {
         return count + ' ' + (lang === 'en' ? 'Chapters' : '챕터');
-    }
-
-    function progressStats(items) {
-        var playable = (items || []).filter(function(lesson) { return !lesson.locked && lessonQuestionCount(lesson); });
-        var completed = playable.filter(function(lesson) {
-            return progress[lesson.id] && progress[lesson.id].completed;
-        }).length;
-        return {
-            completed: completed,
-            total: playable.length,
-            percent: Math.round((completed / (playable.length || 1)) * 100)
-        };
-    }
-
-    function progressLabelHtml(stats) {
-        var label = lang === 'en' ? 'Progress' : '진도';
-        var percent = Number(stats.percent) || 0;
-        var completed = Number(stats.completed) || 0;
-        var total = Number(stats.total) || 0;
-        return escapeHtml(label + ' ') + '<span class="commu-volume-progress-percent">' + percent + '%</span>' + escapeHtml(' · ' + completed + ' / ' + total);
     }
 
     function groupLessons() {
@@ -595,8 +548,9 @@
 
     function startLesson(lesson) {
         returnScrollLesson = lesson;
-        saveExpandedCollection(lesson.collectionId || '');
+        saveLast(lesson);
         answered = false;
+        hideNextLesson();
         els.list.classList.add('is-hidden');
         els.quiz.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
@@ -657,11 +611,62 @@
         scrollTarget = scrollTarget || scrollTargetForLesson(active && active.lesson || returnScrollLesson, false);
         active = null;
         answered = false;
+        hideNextLesson();
         els.quiz.classList.add('is-hidden');
         els.list.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
         renderLessons();
         scrollToChapter(scrollTarget);
+    }
+
+    function hideNextLesson() {
+        if (!els.nextLesson) return;
+        els.nextLesson.classList.add('is-hidden');
+        els.nextLesson.commuNextLesson = null;
+    }
+
+    function showNextLesson(lesson) {
+        if (!els.nextLesson || !lesson) return;
+        els.nextLesson.commuNextLesson = lesson;
+        els.nextLesson.textContent = (strings.nextLesson || (lang === 'en' ? 'Next lesson' : '다음 레슨')) + ' · ' + chapterTitle(lesson) + ' (' + lessonLevel(lesson) + ')';
+        els.nextLesson.classList.remove('is-hidden');
+    }
+
+    function lessonsInChapter(collectionId, chapterNumber) {
+        return lessons.filter(function(item) {
+            return !item.locked
+                && item.collectionId === collectionId
+                && Number(item.chapterNumber) === Number(chapterNumber)
+                && lessonQuestionCount(item);
+        });
+    }
+
+    function nextLessonFor(lesson) {
+        if (!lesson) return null;
+        if (!isAdvancedLesson(lesson)) {
+            var advanced = lessonsInChapter(lesson.collectionId, lesson.chapterNumber).filter(isAdvancedLesson)[0];
+            if (advanced && advanced.id !== lesson.id) return advanced;
+        }
+        var current = Number(lesson.chapterNumber) || 0;
+        var next = null;
+        lessons.forEach(function(item) {
+            if (item.locked || item.collectionId !== lesson.collectionId || !lessonQuestionCount(item)) return;
+            var chapterNumber = Number(item.chapterNumber) || 0;
+            if (chapterNumber <= current) return;
+            if (!next) { next = item; return; }
+            var nextChapter = Number(next.chapterNumber) || 0;
+            if (chapterNumber < nextChapter) { next = item; return; }
+            if (chapterNumber === nextChapter && isAdvancedLesson(next) && !isAdvancedLesson(item)) next = item;
+        });
+        return next;
+    }
+
+    function handleDeepLink() {
+        var match = /(?:^|[#&])lesson=([^&]+)/.exec(window.location.hash || '');
+        if (!match) return;
+        var lessonId = decodeURIComponent(match[1]);
+        var target = lessons.filter(function(item) { return item.id === lessonId && !item.locked && lessonQuestionCount(item); })[0];
+        if (target) startLesson(target);
     }
 
     function renderQuestion() {
@@ -785,6 +790,7 @@
         progress[active.lesson.id] = mergeOne(progress[active.lesson.id], item);
         saveLocalProgress();
         postProgress(active.lesson.id, progress[active.lesson.id], false);
+        saveLast(active.lesson);
 
         els.prompt.textContent = strings.allDone || 'Lesson complete';
         if (els.focus) els.focus.classList.add('is-hidden');
@@ -805,6 +811,9 @@
             els.next.textContent = strings.backToLessons || 'Lessons';
             els.next.setAttribute('data-finished', '1');
         }
+        var recommended = nextLessonFor(active.lesson);
+        if (recommended) showNextLesson(recommended);
+        else hideNextLesson();
         answered = true;
     }
 
