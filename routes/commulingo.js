@@ -46,6 +46,7 @@ function summarizeBooks(catalog) {
         });
         return {
             id: collection.id,
+            volumeNumber: collection.volumeNumber,
             title: collection.title,
             description: collection.description,
             chapterCount: chapters.length,

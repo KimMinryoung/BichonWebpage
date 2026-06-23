@@ -6,7 +6,9 @@
     if (!raw) return;
 
     var data = JSON.parse(raw.textContent);
-    var books = data.collections || [];
+    var books = (data.collections || []).slice().sort(function(a, b) {
+        return (a.volumeNumber || 0) - (b.volumeNumber || 0);
+    });
     var storageKey = 'commulingo-progress-v1';
     var lastKey = 'commulingo-last-v1';
     var progress = loadLocalProgress();
@@ -90,7 +92,7 @@
     }
 
     var bookGroups = [
-        { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id); } },
+        { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id) || /^marx-/.test(b.id); } },
         { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } }
     ];
 
