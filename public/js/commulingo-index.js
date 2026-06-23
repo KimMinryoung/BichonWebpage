@@ -142,8 +142,10 @@
         var progressLabel = stats.completed
             ? escapeHtml((strings.progress || '진도') + ' ' + stats.percent + '% · ' + stats.completed + ' / ' + stats.total)
             : escapeHtml(strings.bookProgressEmpty || (lang === 'en' ? 'Not started yet' : '아직 시작하지 않음'));
+        var badge = text(book.badge);
         card.innerHTML = [
             '<div class="commu-book-card-body">',
+            badge ? '<span class="commu-book-badge">' + escapeHtml(badge) + '</span>' : '',
             '<h3>' + escapeHtml(text(book.title)) + '</h3>',
             '<p class="commu-book-desc">' + escapeHtml(text(book.description)) + '</p>',
             '<p class="commu-book-meta">' + escapeHtml(chapterCountLabel(book.chapterCount || 0)) + '</p>',

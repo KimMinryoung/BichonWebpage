@@ -48,6 +48,7 @@ function summarizeBooks(catalog) {
             id: collection.id,
             volumeNumber: collection.volumeNumber,
             title: collection.title,
+            badge: collection.badge,
             description: collection.description,
             chapterCount: chapters.length,
             lessonIds,

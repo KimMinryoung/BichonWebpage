@@ -118,6 +118,7 @@ function buildPayloads(bundle, version) {
             id: collection.id,
             volumeNumber: collection.volumeNumber,
             title: collection.title,
+            badge: collection.badge,
             description: collection.description,
             bookTitle: collection.bookTitle,
             chapters: (collection.chapters || []).map(chapter => ({

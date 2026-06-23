@@ -725,6 +725,7 @@
     color: var(--text-secondary);
     font-size: 0.88rem;
     font-weight: 700;
+    margin-top: 14px;
     text-decoration: none;
 }
 
@@ -817,6 +818,18 @@
 .commu-book-card:hover {
     background: var(--bg-surface-hover);
     border-left-color: var(--accent-red);
+}
+
+.commu-book-badge {
+    align-self: flex-start;
+    background: var(--accent-red);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin: 0 0 8px;
+    padding: 3px 9px;
+    text-transform: uppercase;
 }
 
 .commu-book-card h3 {
