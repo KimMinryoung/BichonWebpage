@@ -26,14 +26,14 @@ function collectCitationLinks(markdown = '') {
         }
         if (inCode) continue;
 
-        const reference = line.match(/^\s*\[\^?([1-9]\d*)\]:\s*(?:.*?\s)?(https?:\/\/[^\s<>)]+)/);
+        const reference = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\]:\s*(?:.*?\s)?(https?:\/\/[^\s<>)]+)/);
         if (reference) {
             links.set(reference[1], cleanCitationUrl(reference[2]));
             pendingNumber = null;
             continue;
         }
 
-        const bracketed = line.match(/^\s*\[\^?([1-9]\d*)\][^\n]*(https?:\/\/[^\s<>)]+)/);
+        const bracketed = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\][^\n]*(https?:\/\/[^\s<>)]+)/);
         if (bracketed) {
             links.set(bracketed[1], cleanCitationUrl(bracketed[2]));
             pendingNumber = null;
@@ -77,7 +77,7 @@ function collectFootnoteDefinitions(markdown = '') {
         }
         if (inCode) continue;
 
-        const reference = line.match(/^\s*\[\^?([1-9]\d*)\]:\s*/);
+        const reference = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\]:\s*/);
         if (reference) definitions.add(reference[1]);
     }
 
@@ -95,10 +95,10 @@ function inlineMarkdown(text, citationLinks = new Map(), footnoteDefinitions = n
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
         .replace(/\*([^*]+)\*/g, '<em>$1</em>')
         .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-        .replace(/\[\^?([1-9]\d*)\]/g, (match, number) => {
-            const href = citationLinks.get(number);
-            if (href) return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">[${number}]</a>`;
-            if (footnoteDefinitions.has(number)) return `<a href="#fn-${number}" class="footnote-ref">[${number}]</a>`;
+        .replace(/\[\^?([A-Za-z0-9_]+)\]/g, (match, label) => {
+            const href = citationLinks.get(label);
+            if (href) return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">[${label}]</a>`;
+            if (footnoteDefinitions.has(label)) return `<a href="#fn-${escapeHtml(label)}" class="footnote-ref">[${label}]</a>`;
             return match;
         })
         .replace(/\u0000CODE(\d+)\u0000/g, (_match, index) => codeSegments[Number(index)] || '');
@@ -215,13 +215,13 @@ function renderMarkdown(markdown = '') {
             continue;
         }
 
-        const footnote = line.match(/^\s*\[\^?([1-9]\d*)\]:\s*(.*)$/);
+        const footnote = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\]:\s*(.*)$/);
         if (footnote) {
             flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
             flushList(out, list, citationLinks, footnoteDefinitions);
-            const number = footnote[1];
+            const label = footnote[1];
             const text = footnote[2] || '';
-            out.push(`<p id="fn-${number}" class="footnote-def"><span class="footnote-label">[${number}]</span> ${inlineMarkdown(text, citationLinks, footnoteDefinitions)}</p>`);
+            out.push(`<p id="fn-${escapeHtml(label)}" class="footnote-def"><span class="footnote-label">[${label}]</span> ${inlineMarkdown(text, citationLinks, footnoteDefinitions)}</p>`);
             continue;
         }
 
