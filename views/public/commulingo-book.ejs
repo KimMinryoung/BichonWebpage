@@ -7,10 +7,24 @@
 <body class="commulingo-page">
     <%- include('../partials/nav') %>
 
+    <% var isGraph = (typeof bookFormat !== 'undefined' && bookFormat === 'concept-graph'); %>
     <main class="container commulingo-shell" data-lang="<%= lang %>">
-        <script id="commulingo-data" type="application/json"><%- JSON.stringify(lessons).replace(/</g, '\\u003c') %></script>
-
         <a class="commu-back-link" href="/commulingo">← <%= strings.commuLingo.backToBooks %></a>
+
+        <% if (isGraph) { %>
+        <% var graph = lessons.collections[0].conceptGraph; %>
+        <script id="commulingo-graph" type="application/json"><%- JSON.stringify(graph).replace(/</g, '\\u003c') %></script>
+
+        <header class="box commulingo-hero commulingo-hero--graph">
+            <div>
+                <h1><%= bookTitle %></h1>
+                <p><%= bookDescription %></p>
+            </div>
+        </header>
+
+        <section class="commu-graph" id="commuGraph" aria-label="<%= bookTitle %>"></section>
+        <% } else { %>
+        <script id="commulingo-data" type="application/json"><%- JSON.stringify(lessons).replace(/</g, '\\u003c') %></script>
 
         <header class="box commulingo-hero">
             <div>
@@ -52,12 +66,17 @@
                 </div>
             </article>
         </section>
+        <% } %>
     </main>
 
     <%- include('../partials/footer') %>
     <script>
         window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
     </script>
+    <% if (isGraph) { %>
+    <script src="/js/commulingo-graph.js?v=<%= assetVersion %>"></script>
+    <% } else { %>
     <script src="/js/commulingo.js?v=<%= assetVersion %>"></script>
+    <% } %>
 </body>
 </html>

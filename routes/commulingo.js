@@ -44,13 +44,16 @@ function summarizeBooks(catalog) {
                 if (lesson && lesson.id && Number(lesson.questionCount) > 0) lessonIds.push(lesson.id);
             });
         });
+        const graph = collection.conceptGraph;
         return {
             id: collection.id,
             volumeNumber: collection.volumeNumber,
             title: collection.title,
             badge: collection.badge,
             description: collection.description,
+            format: collection.format,
             chapterCount: chapters.length,
+            nodeCount: graph && Array.isArray(graph.nodes) ? graph.nodes.length : 0,
             lessonIds,
         };
     });
@@ -76,6 +79,7 @@ router.get('/book/:collectionId', (req, res) => {
     const bookTitle = localize(collection.title, res.locals.lang);
     res.render('public/commulingo-book', {
         lessons: { version: catalog.version, collections: [collection] },
+        bookFormat: collection.format || 'quiz',
         bookTitle,
         bookDescription: localize(collection.description, res.locals.lang),
         pageTitle: bookTitle,

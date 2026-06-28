@@ -93,6 +93,7 @@
 
     var bookGroups = [
         { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id) || /^marx-/.test(b.id); } },
+        { label: function() { return strings.authorEngels || '프리드리히 엥겔스'; }, match: function(b) { return /^engels/.test(b.id); } },
         { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } }
     ];
 
@@ -135,14 +136,28 @@
     }
 
     function createBookCard(book) {
-        var stats = bookStats(book);
         var card = document.createElement('a');
         card.className = 'commu-book-card';
         card.setAttribute('href', '/commulingo/book/' + encodeURIComponent(book.id));
+        var badge = text(book.badge);
+        if (book.format === 'concept-graph') {
+            card.innerHTML = [
+                '<div class="commu-book-card-body">',
+                badge ? '<span class="commu-book-badge">' + escapeHtml(badge) + '</span>' : '',
+                '<h3>' + escapeHtml(text(book.title)) + '</h3>',
+                '<p class="commu-book-desc">' + escapeHtml(text(book.description)) + '</p>',
+                '<p class="commu-book-meta">' + escapeHtml(nodeCountLabel(book.nodeCount || 0)) + '</p>',
+                '</div>',
+                '<div class="commu-book-progress">',
+                '<span class="commu-book-progress-label">' + escapeHtml(strings.exploreMode || (lang === 'en' ? 'Tap to explore' : '클릭하며 탐색')) + '</span>',
+                '</div>'
+            ].join('');
+            return card;
+        }
+        var stats = bookStats(book);
         var progressLabel = stats.completed
             ? escapeHtml((strings.progress || '진도') + ' ' + stats.percent + '% · ' + stats.completed + ' / ' + stats.total)
             : escapeHtml(strings.bookProgressEmpty || (lang === 'en' ? 'Not started yet' : '아직 시작하지 않음'));
-        var badge = text(book.badge);
         card.innerHTML = [
             '<div class="commu-book-card-body">',
             badge ? '<span class="commu-book-badge">' + escapeHtml(badge) + '</span>' : '',
@@ -156,6 +171,11 @@
             '</div>'
         ].join('');
         return card;
+    }
+
+    function nodeCountLabel(count) {
+        if (lang === 'en') return (strings.conceptMapLabel || 'Interactive concept map') + ' · ' + count + ' nodes';
+        return (strings.conceptMapLabel || '인터랙티브 개념지도') + ' · 노드 ' + count + '개';
     }
 
     function renderResume() {

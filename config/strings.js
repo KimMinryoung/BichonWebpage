@@ -223,8 +223,12 @@ const ko = {
         bookProgressEmpty: '아직 시작하지 않음',
         chapters: '챕터',
         authorMarx: '카를 마르크스',
+        authorEngels: '프리드리히 엥겔스',
         authorLenin: '블라디미르 레닌',
-        authorOther: '그 외'
+        authorOther: '그 외',
+        conceptMapLabel: '인터랙티브 개념지도',
+        exploreMode: '클릭하며 탐색',
+        graphHint: '아래 사슬의 고리를 하나씩 눌러 「쉬운 설명 → 엥겔스의 주장 → 현대적 비판」 순으로 펼쳐 보세요.'
     },
 
     // 에러 페이지
@@ -446,8 +450,12 @@ const en = {
         bookProgressEmpty: 'Not started yet',
         chapters: 'Chapters',
         authorMarx: 'Karl Marx',
+        authorEngels: 'Friedrich Engels',
         authorLenin: 'Vladimir Lenin',
-        authorOther: 'Other'
+        authorOther: 'Other',
+        conceptMapLabel: 'Interactive concept map',
+        exploreMode: 'Tap to explore',
+        graphHint: 'Open each link of the chain below in turn: plain explanation → Engels’s argument → modern critique.'
     },
 
     error: {

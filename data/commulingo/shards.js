@@ -90,7 +90,7 @@ function publicCollections(bundle) {
                 )),
             };
         })
-        .filter(collection => collection.chapters.length > 0);
+        .filter(collection => collection.chapters.length > 0 || collection.conceptGraph);
 }
 
 function publicLessonPayload(collection, chapter, lesson) {
@@ -121,6 +121,8 @@ function buildPayloads(bundle, version) {
             badge: collection.badge,
             description: collection.description,
             bookTitle: collection.bookTitle,
+            format: collection.format,
+            conceptGraph: collection.conceptGraph,
             chapters: (collection.chapters || []).map(chapter => ({
                 id: chapter.id,
                 volumeNumber: chapter.volumeNumber,
