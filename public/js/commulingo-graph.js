@@ -50,6 +50,85 @@
 
         var myths = renderMisconceptions();
         if (myths) root.appendChild(myths);
+
+        var cases = renderApplications();
+        if (cases) root.appendChild(cases);
+
+        var debates = renderDebates();
+        if (debates) root.appendChild(debates);
+    }
+
+    function renderApplications() {
+        var ap = graph.applications;
+        if (!ap || !Array.isArray(ap.cases) || !ap.cases.length) return null;
+        var sec = document.createElement('section');
+        sec.className = 'commu-cases';
+        sec.innerHTML = [
+            '<h2 class="commu-section-title">' + escapeHtml(text(ap.title) || (en ? 'Apply it today' : '오늘에 적용하기')) + '</h2>',
+            ap.hint ? '<p class="commu-section-hint">' + escapeHtml(text(ap.hint)) + '</p>' : '',
+            '<div class="commu-case-grid"></div>'
+        ].join('');
+        var grid = sec.querySelector('.commu-case-grid');
+        ap.cases.forEach(function(item, index) { grid.appendChild(renderCaseCard(item, index)); });
+        return sec;
+    }
+
+    function renderCaseCard(item, index) {
+        var el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'commu-case-card';
+        el.setAttribute('aria-expanded', 'false');
+        var letter = String.fromCharCode(65 + index);
+        el.innerHTML = [
+            '<span class="commu-case-label">' + escapeHtml((en ? 'Case ' : '사례 ') + letter + ' · ' + text(item.label)) + '</span>',
+            '<p class="commu-case-scene">' + escapeHtml(text(item.scene)) + '</p>',
+            '<p class="commu-case-question">' + escapeHtml('Q. ' + text(item.question)) + '</p>',
+            '<div class="commu-case-answer">',
+            '<span class="commu-case-answer-tag">' + escapeHtml(en ? 'Through Engels’s lens' : '엥겔스의 렌즈') + '</span>',
+            '<p>' + escapeHtml(text(item.answer)) + '</p>',
+            '</div>',
+            '<span class="commu-case-reveal">' + escapeHtml(en ? 'Tap to open the reading →' : '눌러서 생각 펼치기 →') + '</span>'
+        ].join('');
+        el.addEventListener('click', function() {
+            var open = el.classList.toggle('is-revealed');
+            el.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        return el;
+    }
+
+    function renderDebates() {
+        var db = graph.debates;
+        if (!db || !Array.isArray(db.rounds) || !db.rounds.length) return null;
+        var sec = document.createElement('section');
+        sec.className = 'commu-debates';
+        sec.innerHTML = [
+            '<h2 class="commu-section-title">' + escapeHtml(text(db.title) || (en ? 'Engels vs. a modern scholar' : '엥겔스 vs 현대 학자')) + '</h2>',
+            db.hint ? '<p class="commu-section-hint">' + escapeHtml(text(db.hint)) + '</p>' : '',
+            '<div class="commu-debate-list"></div>'
+        ].join('');
+        var list = sec.querySelector('.commu-debate-list');
+        db.rounds.forEach(function(round) { list.appendChild(renderDebateCard(round)); });
+        return sec;
+    }
+
+    function renderDebateCard(round) {
+        var card = document.createElement('div');
+        card.className = 'commu-debate-card';
+        var ask = en ? 'So what remains? →' : '그럼 무엇이 남는가? →';
+        card.innerHTML = [
+            '<span class="commu-debate-topic">' + escapeHtml((en ? 'Dispute · ' : '쟁점 · ') + text(round.topic)) + '</span>',
+            '<div class="commu-debate-line is-engels"><span class="commu-debate-who">' + escapeHtml(en ? 'Engels' : '엥겔스') + '</span><p>' + escapeHtml(text(round.engels)) + '</p></div>',
+            '<div class="commu-debate-line is-critic"><span class="commu-debate-who">' + escapeHtml(en ? 'Modern scholar' : '현대 학자') + '</span><p>' + escapeHtml(text(round.critic)) + '</p></div>',
+            '<button type="button" class="commu-debate-toggle" aria-expanded="false">' + escapeHtml(ask) + '</button>',
+            '<div class="commu-debate-takeaway"><p>' + escapeHtml(text(round.takeaway)) + '</p></div>'
+        ].join('');
+        var btn = card.querySelector('.commu-debate-toggle');
+        btn.addEventListener('click', function() {
+            var open = card.classList.toggle('is-revealed');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            btn.textContent = open ? (en ? 'Hide' : '접기') : ask;
+        });
+        return card;
     }
 
     function renderMisconceptions() {

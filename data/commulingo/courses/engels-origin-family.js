@@ -42,6 +42,28 @@ function myth(claimKo, claimEn, verdictKo, verdictEn, truthKo, truthEn) {
     };
 }
 
+// A "modern application" case: a present-day scene, a question, and a suggested
+// reading through Engels's lens (revealed on tap). These are modern extensions,
+// not direct conclusions of the 1884 text — the answer text says so where it matters.
+function acase(labelKo, labelEn, sceneKo, sceneEn, questionKo, questionEn, answerKo, answerEn) {
+    return {
+        label: t(labelKo, labelEn),
+        scene: t(sceneKo, sceneEn),
+        question: t(questionKo, questionEn),
+        answer: t(answerKo, answerEn),
+    };
+}
+
+// A debate round: Engels's claim, a modern scholar's objection, and what remains.
+function round(topicKo, topicEn, engelsKo, engelsEn, criticKo, criticEn, takeawayKo, takeawayEn) {
+    return {
+        topic: t(topicKo, topicEn),
+        engels: t(engelsKo, engelsEn),
+        critic: t(criticKo, criticEn),
+        takeaway: t(takeawayKo, takeawayEn),
+    };
+}
+
 module.exports = {
     id: 'engels-origin-family',
     volumeNumber: 0,
@@ -253,6 +275,83 @@ module.exports = {
                     '엥겔스는 반박한다', 'Engels refutes this',
                     '엥겔스는 국가가 계급 대립이 화해 불가능해진 지점에서 생겨나, 겉으로는 질서를 지키는 듯하지만 실은 가진 계급의 지배를 떠받친다고 본다. 다만 국가를 순전히 도구로만 보는 환원은 현대 정치학에서 비판받으며, 국가는 상대적 자율성과 공공 기능도 가진다.',
                     'Engels holds that the state arises where class antagonisms become irreconcilable and, while appearing to keep order, in fact upholds the rule of the propertied class. That said, reducing the state to a pure instrument is criticized in modern political science; the state also has relative autonomy and public functions.'
+                ),
+            ],
+        },
+        applications: {
+            title: t('오늘에 적용하기', 'Apply it today'),
+            hint: t('엥겔스의 렌즈로 현대 사례를 보면 어떤 질문이 열리는가. 먼저 스스로 생각한 뒤 카드를 눌러 펼쳐 보세요. (원문의 직접 결론이 아니라 현대적 확장입니다.)',
+                'What questions open up when you look at present-day cases through Engels’s lens? Think first, then tap a card to reveal. (These are modern extensions, not direct conclusions of the text.)'),
+            cases: [
+                acase(
+                    '결혼과 주택', 'Marriage and housing',
+                    '현대 한국에서 결혼은 사랑만의 문제가 아니라 주택·소득·상속·돌봄 비용과 강하게 얽혀 있다.',
+                    'In Korea today, marriage is not a matter of love alone but is tightly bound up with housing, income, inheritance and the cost of care.',
+                    '결혼을 「두 사람의 사적 감정」으로만 보면 무엇을 놓치는가?',
+                    'What do we miss if we see marriage as nothing but “the private feelings of two people”?',
+                    '가족은 사적 감정의 영역처럼 보이지만, 실제로는 재산·주거·노동력 재생산의 제도와 연결되어 있다. 엥겔스의 렌즈는 「왜 사랑이 자꾸 집값·상속과 함께 계산되는가」를 묻게 한다.',
+                    'The family looks like a sphere of private feeling, yet it is tied to the institutions of property, housing and the reproduction of labour-power. Engels’s lens prompts the question: why does love keep getting calculated together with house prices and inheritance?'
+                ),
+                acase(
+                    '돌봄노동', 'Care work',
+                    '출산·육아·간병 같은 돌봄의 큰 몫이 여전히 가족 안에서, 주로 여성에게 무급으로 흡수된다.',
+                    'A large share of care—childbirth, child-rearing, nursing the sick—is still absorbed within the family, unpaid and mostly by women.',
+                    '왜 가족은 돌봄 비용을 떠안는 장치로 작동하는가?',
+                    'Why does the family work as a device for absorbing the cost of care?',
+                    '엥겔스는 여성 해방의 조건으로 가사·돌봄의 「사회화」를 들었다. 돌봄이 가족 안 무급노동으로 남는 한, 노동력을 재생산하는 비용이 사적으로 여성에게 전가된다는 시선을 열어 준다.',
+                    'Engels named the “socialization” of housework and care as a condition of women’s emancipation. As long as care remains unpaid labour inside the family, it opens the view that the cost of reproducing labour-power is privately shifted onto women.'
+                ),
+                acase(
+                    '상속과 가족 갈등', 'Inheritance and family conflict',
+                    '가족은 흔히 사랑의 공동체로 이야기되지만, 상속 분쟁은 가장 격렬한 가족 갈등 가운데 하나다.',
+                    'The family is often described as a community of love, yet disputes over inheritance are among the fiercest of family conflicts.',
+                    '가족이 순수한 사랑의 공동체라면, 왜 상속을 둘러싼 다툼은 그토록 치열한가?',
+                    'If the family were a pure community of love, why are fights over inheritance so bitter?',
+                    '엥겔스의 사슬(재산→상속→가족)을 따르면, 가족은 애정의 공동체이면서 동시에 재산을 다음 세대로 넘기는 제도이기도 하다. 상속 갈등은 그 두 얼굴이 정면으로 부딪히는 지점이다.',
+                    'Following Engels’s chain (property → inheritance → family), the family is at once a community of affection and an institution for passing property to the next generation. Inheritance conflict is exactly where those two faces collide.'
+                ),
+                acase(
+                    '저출생과 가족의 변형', 'Falling birth rates and changing families',
+                    '많은 사회에서 결혼·출산이 줄고 가족 형태가 빠르게 다양해진다 — 비혼, 1인 가구, 동거, 비혈연 공동체.',
+                    'In many societies marriage and childbirth are declining and family forms are diversifying fast—non-marriage, single-person households, cohabitation, non-kin communities.',
+                    '「가족은 자연이라 변하지 않는다」는 통념을 이 변화는 어떻게 시험하는가?',
+                    'How does this change test the common belief that “the family is natural and never changes”?',
+                    '엥겔스의 핵심 통찰—가족 형태는 물질적 조건과 함께 변한다—은 바로 이런 변동을 설명하는 틀이 된다. 그러면 이 변화는 「가족의 위기」가 아니라 물질적 조건에 따른 형태 변동으로 읽을 수 있다.',
+                    'Engels’s core insight—that family forms change together with material conditions—becomes the frame for exactly this shift. Read that way, the change is not “the crisis of the family” but a change of form driven by material conditions.'
+                ),
+            ],
+        },
+        debates: {
+            title: t('엥겔스 vs 현대 학자', 'Engels vs. a modern scholar'),
+            hint: t('각 쟁점에서 엥겔스의 주장과 현대의 반론을 나란히 두고, 「그럼 무엇이 남는가」를 눌러 가려 보세요.',
+                'For each dispute, set Engels’s claim beside a modern objection, then tap “So what remains?” to sort it out.'),
+            rounds: [
+                round(
+                    '일부일처제의 기원', 'The origin of monogamy',
+                    '일부일처제는 개인적 성애의 산물이 아니라, 사유재산과 상속 문제 속에서 강화된 가족 형태다.',
+                    'Monogamy is not the product of individual sex-love but a family form hardened amid the problems of private property and inheritance.',
+                    '그 도식은 너무 단선적이다. 사회마다 결혼·친족·재산 구조는 훨씬 다양했고, 친밀성·돌봄·문화도 함께 작동한다.',
+                    'That scheme is too single-tracked. Marriage, kinship and property structures varied widely across societies, and intimacy, care and culture are at work too.',
+                    '남길 것 — 가족 형태가 사랑만이 아니라 경제적 조건과 연결된다는 문제의식. 버릴 것 — 모든 사회를 하나의 발전 단계로 줄 세우는 단선적 환원.',
+                    'Keep — the insight that family form is tied not only to love but to economic conditions. Discard — the single-line reduction that lines every society up along one stage of development.'
+                ),
+                round(
+                    '모권에서 부권으로의 이행', 'The shift from mother-right to father-right',
+                    '모권의 전복은 「여성의 세계사적 패배」이며, 여성 억압의 뿌리는 생물학이 아니라 재산·노동 구조에 있다.',
+                    'The overthrow of mother-right is “the world-historic defeat of the female sex”; the root of women’s oppression lies not in biology but in the structure of property and labour.',
+                    '보편적 「모권 단계」가 실재했다는 증거는 약하고, 모계 사회가 곧 여성 우위를 뜻하지도 않았다.',
+                    'Evidence for a universal “matriarchal stage” is weak, and matrilineal societies did not amount to the supremacy of women.',
+                    '남길 것 — 여성 억압을 생물학이 아니라 노동·재산·가족 구조에서 보라는 요청. 버릴 것 — 「태초의 모권」을 모든 인류의 보편 단계로 못박는 역사 도식.',
+                    'Keep — the demand to seek women’s oppression in the structure of labour, property and family rather than in biology. Discard — the historical scheme that fixes a “primeval mother-right” as a universal stage for all humanity.'
+                ),
+                round(
+                    '국가의 성격', 'The character of the state',
+                    '국가는 계급 대립이 화해 불가능해진 지점에서 생겨난, 그 대립을 관리하는 권력이며, 계급과 함께 사라질 것이다.',
+                    'The state arises where class antagonisms become irreconcilable, as a power that manages them, and it will vanish together with classes.',
+                    '국가는 단순한 계급 도구가 아니다. 상대적 자율성을 가지며, 계급 지배로 환원되지 않는 공공 기능도 수행한다.',
+                    'The state is not a mere instrument of class. It has relative autonomy and performs public functions that do not reduce to class rule.',
+                    '남길 것 — 국가를 자연이나 중립으로 신비화하지 말고 그 계급적 토대를 물으라는 요구. 버릴 것 — 국가를 순전히 지배계급의 도구로만 보는 단순 환원.',
+                    'Keep — the demand to stop mystifying the state as natural or neutral and to ask after its class foundations. Discard — the flat reduction of the state to nothing but a tool of the ruling class.'
                 ),
             ],
         },
