@@ -47,6 +47,43 @@
             chain.appendChild(renderNode(node, index));
         });
         root.appendChild(chain);
+
+        var myths = renderMisconceptions();
+        if (myths) root.appendChild(myths);
+    }
+
+    function renderMisconceptions() {
+        var mc = graph.misconceptions;
+        if (!mc || !Array.isArray(mc.cards) || !mc.cards.length) return null;
+        var sec = document.createElement('section');
+        sec.className = 'commu-myths';
+        sec.innerHTML = [
+            '<h2 class="commu-myths-title">' + escapeHtml(text(mc.title) || (en ? 'Correcting common misreadings' : '흔한 오해 바로잡기')) + '</h2>',
+            mc.hint ? '<p class="commu-myths-hint">' + escapeHtml(text(mc.hint)) + '</p>' : '',
+            '<div class="commu-myth-grid"></div>'
+        ].join('');
+        var grid = sec.querySelector('.commu-myth-grid');
+        mc.cards.forEach(function(card) { grid.appendChild(renderMythCard(card)); });
+        return sec;
+    }
+
+    function renderMythCard(card) {
+        var el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'commu-myth-card';
+        el.setAttribute('aria-expanded', 'false');
+        el.innerHTML = [
+            '<span class="commu-myth-tag">' + escapeHtml(en ? 'Common misreading' : '흔한 오해') + '</span>',
+            '<p class="commu-myth-claim">“' + escapeHtml(text(card.claim)) + '”</p>',
+            '<span class="commu-myth-verdict">' + escapeHtml(text(card.verdict)) + '</span>',
+            '<div class="commu-myth-truth"><p>' + escapeHtml(text(card.truth)) + '</p></div>',
+            '<span class="commu-myth-reveal">' + escapeHtml(en ? 'Tap to see the correction →' : '눌러서 정정 확인 →') + '</span>'
+        ].join('');
+        el.addEventListener('click', function() {
+            var open = el.classList.toggle('is-revealed');
+            el.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        return el;
     }
 
     function renderCentral() {
@@ -99,13 +136,11 @@
         var panel = document.createElement('div');
         panel.className = 'commu-graph-stages';
         panel.id = panelId;
-        panel.hidden = true;
         panel.innerHTML = (node.stages || []).map(renderStage).join('');
 
         button.addEventListener('click', function() {
             var open = li.classList.toggle('is-open');
             button.setAttribute('aria-expanded', open ? 'true' : 'false');
-            panel.hidden = !open;
             button.querySelector('.commu-graph-node-toggle').textContent = open ? '−' : '+';
         });
 

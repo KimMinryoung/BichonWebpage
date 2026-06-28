@@ -1091,10 +1091,14 @@
 }
 
 .commu-graph-stages {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 12px;
     padding: 4px 18px 18px;
+}
+
+.commu-graph-node.is-open .commu-graph-stages {
+    display: flex;
 }
 
 .commu-graph-stage {
@@ -1126,9 +1130,90 @@
     line-height: 1.7;
 }
 
+/* ── Misconception cards ────────────────────────────────────────── */
+.commu-myths {
+    margin-top: 6px;
+}
+
+.commu-myths-title {
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.commu-myths-hint {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.commu-myth-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+.commu-myth-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-surface);
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.commu-myth-card:hover { border-color: var(--accent-red); }
+
+.commu-myth-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-red);
+}
+
+.commu-myth-claim {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.commu-myth-verdict {
+    align-self: flex-start;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--accent-red);
+    color: #fff;
+}
+
+.commu-myth-truth { display: none; }
+.commu-myth-card.is-revealed .commu-myth-truth { display: block; }
+
+.commu-myth-truth p {
+    margin: 0;
+    padding-top: 4px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.commu-myth-reveal {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.commu-myth-card.is-revealed .commu-myth-reveal { display: none; }
+
 @media (max-width: 640px) {
     .commu-graph-question { font-size: 1.2rem; }
     .commu-graph-node-head { padding: 14px; gap: 10px; }
     .commu-graph-stages { padding: 4px 14px 14px; }
+    .commu-myth-grid { grid-template-columns: 1fr; }
 }
 

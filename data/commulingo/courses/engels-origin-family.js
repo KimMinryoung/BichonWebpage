@@ -33,6 +33,15 @@ function node(id, labelKo, labelEn, summaryKo, summaryEn, plain, engels, critiqu
     };
 }
 
+// A misconception card: the common misreading, a short verdict tag, and the correction.
+function myth(claimKo, claimEn, verdictKo, verdictEn, truthKo, truthEn) {
+    return {
+        claim: t(claimKo, claimEn),
+        verdict: t(verdictKo, verdictEn),
+        truth: t(truthKo, truthEn),
+    };
+}
+
 module.exports = {
     id: 'engels-origin-family',
     volumeNumber: 0,
@@ -205,5 +214,47 @@ module.exports = {
                 ]
             ),
         ],
+        misconceptions: {
+            title: t('흔한 오해 바로잡기', 'Correcting common misreadings'),
+            hint: t('카드를 눌러 정정을 확인하세요. 이 책은 오독이 많아, 무엇을 버리고 무엇을 남길지 가려내는 것이 중요합니다.',
+                'Tap a card to reveal the correction. This book is often misread, so it matters to sort out what to discard and what to keep.'),
+            cards: [
+                myth(
+                    '엥겔스는 아주 먼 옛날에 여성이 지배하는 낙원이 있었다고 주장했다.',
+                    'Engels claimed there was once, in the distant past, a paradise ruled by women.',
+                    '사실과 다르다', 'Not what he said',
+                    '엥겔스는 모계적 친족 질서가 부계로 넘어가며 여성의 지위가 하락했다고 보았을 뿐, 고대를 「여성이 지배하던 낙원」으로 그리지 않았다. 모권(모계)은 「여성 지배」가 아니라 혈통을 어머니 쪽으로 세는 방식을 가리킨다.',
+                    'Engels held that women’s status fell as a matrilineal kinship order gave way to a patrilineal one—he did not paint antiquity as a “paradise ruled by women.” Mother-right (matriliny) means reckoning descent through the mother, not rule by women.'
+                ),
+                myth(
+                    '엥겔스는 그저 「가족을 없애자」고 말했다.',
+                    'Engels simply said, “abolish the family.”',
+                    '부정확하다', 'Inaccurate',
+                    '엥겔스가 겨냥한 것은 「가족 일반」이 아니라 사유재산·상속·여성의 경제적 종속 위에 세워진 특정한 부르주아 가족 형태다. 그는 가족을 없애자기보다, 그 경제적 토대가 바뀌면 가족 형태도 함께 달라진다고 보았다.',
+                    'What Engels targeted was not “the family in general” but a specific bourgeois family form built on private property, inheritance and women’s economic dependence. Rather than abolishing the family, he held that when its economic basis changes, the family form changes with it.'
+                ),
+                myth(
+                    '일부일처제는 사랑이 무르익어 자연스럽게 도달한 제도다.',
+                    'Monogamy is the institution that love naturally arrived at as it matured.',
+                    '엥겔스는 반대한다', 'Engels disagrees',
+                    '엥겔스에게 일부일처제의 역사적 기원은 개인적 사랑이 아니라, 재산을 「확실한」 상속자에게 넘기려는 요구와 친자 확인을 위한 여성 통제에 얽혀 있다. 사랑은 그 제도 안에서 나중에 자라난 것이지, 그 제도를 만든 원인이 아니다.',
+                    'For Engels the historical origin of monogamy lies not in individual love but in the demand to pass property to “certain” heirs, entangled with the control of women to secure paternity. Love grew up later within the institution; it was not its cause.'
+                ),
+                myth(
+                    '엥겔스의 발전 도식은 모든 인류가 똑같은 단계를 똑같은 순서로 거쳤음을 증명한다.',
+                    'Engels’s scheme proves that all of humanity passed through the same stages in the same order.',
+                    '현대 인류학의 비판', 'Criticized by modern anthropology',
+                    '모건을 따른 엥겔스의 단선적 단계 도식(야만→미개→문명)은 오늘날 인류학에서 지지받지 못한다. 사회마다 친족·재산·결혼의 경로는 훨씬 다양했다. 버릴 것은 「모두가 같은 순서를 밟는다」는 단선성이고, 남길 것은 「가족 형태가 물질적 조건과 함께 변한다」는 문제의식이다.',
+                    'The single-line stage scheme Engels took from Morgan (savagery → barbarism → civilization) is not supported by anthropology today; the paths of kinship, property and marriage varied widely across societies. Discard the single line—“everyone follows the same order”—and keep the insight that family forms change together with material conditions.'
+                ),
+                myth(
+                    '국가는 사회 전체 위에 선 중립적인 심판자다.',
+                    'The state is a neutral arbiter standing above society as a whole.',
+                    '엥겔스는 반박한다', 'Engels refutes this',
+                    '엥겔스는 국가가 계급 대립이 화해 불가능해진 지점에서 생겨나, 겉으로는 질서를 지키는 듯하지만 실은 가진 계급의 지배를 떠받친다고 본다. 다만 국가를 순전히 도구로만 보는 환원은 현대 정치학에서 비판받으며, 국가는 상대적 자율성과 공공 기능도 가진다.',
+                    'Engels holds that the state arises where class antagonisms become irreconcilable and, while appearing to keep order, in fact upholds the rule of the propertied class. That said, reducing the state to a pure instrument is criticized in modern political science; the state also has relative autonomy and public functions.'
+                ),
+            ],
+        },
     },
 };
