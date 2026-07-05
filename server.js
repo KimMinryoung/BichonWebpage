@@ -161,7 +161,13 @@ app.use((req, res, next) => {
 app.use('/api/proxy/writer', requireWriterAdminSession);
 
 // Preload user's bound fingerprints into req so the proxy can stamp them.
-app.use('/api/proxy', chatProxyLimiter);
+// Writer calls are owner-authenticated and can legitimately make several
+// autosave/load/SSE requests in one turn, so keep them out of the public chat
+// limiter.
+app.use('/api/proxy', (req, res, next) => {
+    if (req.path.startsWith('/writer')) return next();
+    return chatProxyLimiter(req, res, next);
+});
 
 app.use('/api/proxy', async (req, res, next) => {
     if (req.session && req.session.user && req.session.user.id) {
@@ -180,6 +186,8 @@ app.use('/api/proxy', async (req, res, next) => {
 app.use('/api/proxy', createProxyMiddleware({
     target: CHAT_API_URL,
     changeOrigin: true,
+    timeout: 15 * 60 * 1000,
+    proxyTimeout: 15 * 60 * 1000,
     pathRewrite: { '^/api/proxy': '' },
     on: {
         proxyReq: (proxyReq, req) => {
