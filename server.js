@@ -97,7 +97,7 @@ function isAdminHost(req) {
 
 function hideWriterRoute(res) {
     res.setHeader('Cache-Control', 'no-store');
-    return errorPage.notFound(res);
+    return res.status(404).type('text/plain').send('Not Found');
 }
 
 function requireWriterAdminSession(req, res, next) {
