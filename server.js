@@ -84,7 +84,24 @@ function setDynamicLanguageCacheHeaders(res) {
     res.setHeader('Cache-Control', 'private, no-cache, max-age=0, must-revalidate');
 }
 
+const ADMIN_HOST = (process.env.ADMIN_RP_ID || 'leninbot.tail6ecbbc.ts.net').toLowerCase();
+
+function requestHostname(req) {
+    const host = (req.headers.host || '').split(':')[0].toLowerCase();
+    return host;
+}
+
+function isAdminHost(req) {
+    return requestHostname(req) === ADMIN_HOST;
+}
+
+function hideWriterRoute(res) {
+    res.setHeader('Cache-Control', 'no-store');
+    return errorPage.notFound(res);
+}
+
 function requireWriterAdminSession(req, res, next) {
+    if (!isAdminHost(req)) return hideWriterRoute(res);
     if (req.session && req.session.adminUser) return next();
     if (req.method === 'GET' || req.method === 'HEAD') {
         return res.redirect('/admin/login');
