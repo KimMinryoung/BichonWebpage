@@ -17,7 +17,7 @@ const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
 const { normalizeLanguage, resolveLanguage, languageCookieOptions } = require('./utils/language');
 const { truncateHtml } = require('./utils/truncate-html');
 const errorPage = require('./utils/error-page');
-const { requireAdminIp, requireAuth } = require('./middleware/auth');
+const { requireAdminIp } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -84,6 +84,14 @@ function setDynamicLanguageCacheHeaders(res) {
     res.setHeader('Cache-Control', 'private, no-cache, max-age=0, must-revalidate');
 }
 
+function requireWriterAdminSession(req, res, next) {
+    if (req.session && req.session.adminUser) return next();
+    if (req.method === 'GET' || req.method === 'HEAD') {
+        return res.redirect('/admin/login');
+    }
+    return res.status(403).json({ error: 'admin login required' });
+}
+
 // Trust proxy for Render/Heroku (needed for secure cookies behind load balancer)
 if (process.env.NODE_ENV === 'production') {
     app.set('trust proxy', 1);
@@ -133,7 +141,7 @@ app.use((req, res, next) => {
 
 // The personal writer UI/API is owner-only. The frontend session is the
 // credential boundary; the backend admin key is injected server-side below.
-app.use('/api/proxy/writer', requireAuth);
+app.use('/api/proxy/writer', requireWriterAdminSession);
 
 // Preload user's bound fingerprints into req so the proxy can stamp them.
 app.use('/api/proxy', chatProxyLimiter);
@@ -384,12 +392,12 @@ const reportRoutes = require('./routes/reports');
 const hubRoutes = require('./routes/hub');
 const pageRoutes = require('./routes/pages');
 
+app.get('/writer', requireWriterAdminSession, (req, res) => res.redirect('/api/proxy/writer'));
 app.use('/', publicRoutes);
 app.use('/auth', authRoutes);
 app.use('/admin/webauthn', requireAdminIp, webauthnRoutes);
 app.get('/private', (req, res) => res.redirect('/reports'));
 app.get('/admin/private-reports', requireAdminIp, (req, res) => res.redirect('/reports'));
-app.get('/writer', requireAuth, (req, res) => res.redirect('/api/proxy/writer'));
 app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
