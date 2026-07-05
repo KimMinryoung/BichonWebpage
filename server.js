@@ -190,7 +190,14 @@ app.use('/api/proxy', createProxyMiddleware({
     proxyTimeout: 15 * 60 * 1000,
     pathRewrite: { '^/api/proxy': '' },
     on: {
-        proxyReq: (proxyReq, req) => {
+        proxyReq: (proxyReq, req, res) => {
+            if (req.url && req.url.startsWith('/writer/')) {
+                res.on('close', () => {
+                    if (!res.writableEnded && !proxyReq.destroyed) {
+                        proxyReq.destroy(new Error('writer client connection closed'));
+                    }
+                });
+            }
             proxyReq.removeHeader('X-User-Fingerprints');
             if (Array.isArray(req.userFingerprints) && req.userFingerprints.length) {
                 proxyReq.setHeader('X-User-Fingerprints', req.userFingerprints.join(','));
