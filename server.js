@@ -17,7 +17,7 @@ const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
 const { normalizeLanguage, resolveLanguage, languageCookieOptions } = require('./utils/language');
 const { truncateHtml } = require('./utils/truncate-html');
 const errorPage = require('./utils/error-page');
-const { requireAdminIp } = require('./middleware/auth');
+const { requireAdminIp, requireAuth } = require('./middleware/auth');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -130,6 +130,10 @@ app.use((req, res, next) => {
     }
     return sessionMiddleware(req, res, next);
 });
+
+// The personal writer UI/API is owner-only. The frontend session is the
+// credential boundary; the backend admin key is injected server-side below.
+app.use('/api/proxy/writer', requireAuth);
 
 // Preload user's bound fingerprints into req so the proxy can stamp them.
 app.use('/api/proxy', chatProxyLimiter);
@@ -385,6 +389,7 @@ app.use('/auth', authRoutes);
 app.use('/admin/webauthn', requireAdminIp, webauthnRoutes);
 app.get('/private', (req, res) => res.redirect('/reports'));
 app.get('/admin/private-reports', requireAdminIp, (req, res) => res.redirect('/reports'));
+app.get('/writer', requireAuth, (req, res) => res.redirect('/api/proxy/writer'));
 app.use('/admin', requireAdminIp, adminRoutes);
 app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
