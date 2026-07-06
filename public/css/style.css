@@ -1406,26 +1406,34 @@ footer .footer-tagline {
 .chat-input-row {
     display: flex;
     gap: 0;
+    align-items: stretch;
 }
 
-.chat-input-row input {
+.chat-input-row textarea {
     flex: 1;
+    min-height: 44px;
+    max-height: 160px;
     padding: 10px 12px;
     background-color: var(--input-bg);
     border: 1px solid var(--border);
     border-radius: 0;
     color: var(--text-primary);
+    font: inherit;
     font-size: 1rem;
+    line-height: 1.45;
+    resize: none;
+    overflow-y: auto;
     transition: border-color 0.15s;
 }
 
-.chat-input-row input:focus {
+.chat-input-row textarea:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .chat-input-row button {
+    min-height: 44px;
     white-space: nowrap;
 }
 

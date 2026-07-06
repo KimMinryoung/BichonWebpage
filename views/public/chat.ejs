@@ -48,12 +48,14 @@
             </div>
 
             <form class="chat-input-row" id="chatForm">
-                <input
-                    type="text"
+                <textarea
                     id="chatInput"
                     placeholder="<%= strings.chat.placeholder %>"
+                    aria-label="<%= strings.chat.inputLabel %>"
+                    title="<%= strings.chat.inputHint %>"
                     autocomplete="off"
-                />
+                    rows="1"
+                ></textarea>
                 <button type="submit" class="btn btn-primary" id="chatSend">
                     <%= strings.chat.send %>
                 </button>

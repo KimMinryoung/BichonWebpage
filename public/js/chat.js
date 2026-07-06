@@ -135,11 +135,15 @@
             if (busy) return;
             var draft = chatInput.value;
             chatInput.value = retryMessage;
+            resizeChatInput();
             // requestSubmit dispatches the submit event synchronously; the handler
             // reads chatInput.value and clears it before awaiting, so we can safely
             // restore the user's draft right after.
             chatForm.requestSubmit();
-            if (draft) chatInput.value = draft;
+            if (draft) {
+                chatInput.value = draft;
+                resizeChatInput();
+            }
         });
         errDiv.appendChild(btn);
     }
@@ -196,6 +200,12 @@
 
     var inHistoryMode = false;
     var originalPlaceholder = chatInput.placeholder;
+
+    function resizeChatInput() {
+        if (!chatInput) return;
+        chatInput.style.height = 'auto';
+        chatInput.style.height = Math.min(chatInput.scrollHeight, 160) + 'px';
+    }
 
     function formatRelative(iso) {
         if (!iso) return '';
@@ -550,6 +560,7 @@
         if (!options.suppressUserMessage) appendMessage(message, 'chat-message-user');
         if (options.regenerateFromId) clearFeedbackTarget();
         chatInput.value = '';
+        resizeChatInput();
         hiddenDuringRequest = false;
         streamDied = false;
         recovering = false;
@@ -759,4 +770,16 @@
         e.preventDefault();
         sendChat(chatInput.value);
     });
+
+    chatInput.addEventListener('input', resizeChatInput);
+    chatInput.addEventListener('keydown', function (event) {
+        if (event.key !== 'Enter') return;
+        if (event.shiftKey) return;
+        if (event.isComposing || event.keyCode === 229) return;
+
+        event.preventDefault();
+        if (busy || !chatInput.value.trim()) return;
+        chatForm.requestSubmit();
+    });
+    resizeChatInput();
 })();
