@@ -774,8 +774,8 @@
     chatInput.addEventListener('input', resizeChatInput);
     chatInput.addEventListener('keydown', function (event) {
         if (event.key !== 'Enter') return;
-        if (event.shiftKey) return;
         if (event.isComposing || event.keyCode === 229) return;
+        if (!event.ctrlKey && !event.metaKey) return;
 
         event.preventDefault();
         if (busy || !chatInput.value.trim()) return;
