@@ -16,4 +16,11 @@
             location.assign(url.toString());
         }
     });
+
+    // When the nav overflows (narrow screens), keep the current page's link in view
+    var links = document.querySelector('nav .nav-links');
+    var current = links && links.querySelector('a[aria-current="page"]');
+    if (links && current && links.scrollWidth > links.clientWidth) {
+        links.scrollLeft = current.offsetLeft - (links.clientWidth - current.offsetWidth) / 2;
+    }
 })();

@@ -31,6 +31,15 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Keyboard focus: visible ring on links/buttons without affecting mouse users */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--accent-red);
+    outline-offset: 2px;
+}
+
 /* ===== Container ===== */
 .container {
     max-width: 800px;
@@ -102,6 +111,13 @@ nav .nav-links {
     gap: 0;
     align-items: stretch;
     flex: 1;
+    /* Narrow screens: swipe the nav itself instead of overflowing the page */
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+nav .nav-links::-webkit-scrollbar {
+    display: none;
 }
 
 nav .nav-links a,
@@ -146,6 +162,11 @@ nav .nav-links .lang-btn:hover,
 nav .nav-links .nav-logout-btn:hover {
     background-color: var(--bg-surface-hover);
     text-decoration: none;
+}
+
+nav .nav-links a[aria-current="page"] {
+    box-shadow: inset 0 -3px 0 var(--accent-red);
+    font-weight: 600;
 }
 
 /* Theme toggle */
@@ -296,7 +317,7 @@ header h1 {
     text-align: left;
     background: var(--bg-secondary, rgba(127, 127, 127, 0.08));
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 12px 14px;
     cursor: pointer;
     font-family: inherit;
@@ -1025,6 +1046,7 @@ form {
 .login-box h1 {
     text-align: center;
     margin-bottom: 30px;
+    font-size: 1.5rem;
 }
 
 .auth-divider {
@@ -1212,6 +1234,24 @@ footer .footer-tagline {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
+}
+
+/* Empty state: centered hint until the first message is appended */
+.chat-box:empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-box:empty::before {
+    content: attr(data-empty-hint);
+    display: block;
+    max-width: 36ch;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 0 16px;
 }
 
 .chat-message {
@@ -1488,8 +1528,14 @@ footer .footer-tagline {
     nav .nav-links .theme-toggle,
     nav .nav-links .lang-btn,
     nav .nav-links .nav-logout-btn {
-        padding: 8px 8px;
+        padding: 12px 10px;
         font-size: 0.82rem;
+    }
+
+    .home-toolbar .theme-toggle,
+    .home-toolbar .lang-btn,
+    .toolbar-link {
+        padding: 8px 10px;
     }
 
     .compact-header {
