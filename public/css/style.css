@@ -1532,6 +1532,10 @@ footer .footer-tagline {
         min-height: 0;
     }
 
+    .chat-input-row textarea {
+        max-height: min(120px, 24dvh);
+    }
+
     .post-content {
         padding: 20px 16px;
     }

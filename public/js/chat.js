@@ -203,8 +203,19 @@
 
     function resizeChatInput() {
         if (!chatInput) return;
+        var viewport = window.visualViewport || window;
+        var viewportHeight = viewport.height || window.innerHeight || 0;
+        var isSmallScreen = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
+        var computed = window.getComputedStyle(chatInput);
+        var minHeight = parseFloat(computed.minHeight) || 44;
+        var cssMaxHeight = parseFloat(computed.maxHeight) || 160;
+        var viewportMax = viewportHeight ? Math.floor(viewportHeight * (isSmallScreen ? 0.24 : 0.32)) : cssMaxHeight;
+        var maxHeight = Math.max(minHeight, Math.min(cssMaxHeight, viewportMax));
+
         chatInput.style.height = 'auto';
-        chatInput.style.height = Math.min(chatInput.scrollHeight, 160) + 'px';
+        var nextHeight = Math.max(minHeight, Math.min(chatInput.scrollHeight, maxHeight));
+        chatInput.style.height = nextHeight + 'px';
+        chatInput.style.overflowY = chatInput.scrollHeight > maxHeight ? 'auto' : 'hidden';
     }
 
     function formatRelative(iso) {
@@ -772,6 +783,7 @@
     });
 
     chatInput.addEventListener('input', resizeChatInput);
+    (window.visualViewport || window).addEventListener('resize', resizeChatInput);
     chatInput.addEventListener('keydown', function (event) {
         if (event.key !== 'Enter') return;
         if (event.isComposing || event.keyCode === 229) return;

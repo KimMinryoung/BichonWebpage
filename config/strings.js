@@ -177,9 +177,9 @@ const ko = {
     // 채팅 페이지
     chat: {
         title: '사이버-레닌과 대화',
-        placeholder: '메시지를 입력하세요. Enter는 줄바꿈, Ctrl+Enter는 전송',
+        placeholder: '메시지를 입력하세요. Enter 줄바꿈, Ctrl/Cmd+Enter 전송',
         inputLabel: '메시지 입력',
-        inputHint: 'Enter로 줄바꿈, Ctrl+Enter 또는 Command+Enter로 전송',
+        inputHint: 'Enter 줄바꿈, Ctrl/Cmd+Enter 전송',
         send: '전송',
         thinking: '동지가 생각 중...',
         error: '오류가 발생했습니다.',
@@ -406,9 +406,9 @@ const en = {
 
     chat: {
         title: 'Chat with Cyber-Lenin',
-        placeholder: 'Type a message. Enter adds a line, Ctrl+Enter sends',
+        placeholder: 'Type a message. Enter adds a line, Ctrl/Cmd+Enter sends',
         inputLabel: 'Message input',
-        inputHint: 'Enter adds a line, Ctrl+Enter or Command+Enter sends',
+        inputHint: 'Enter adds a line, Ctrl/Cmd+Enter sends',
         send: 'Send',
         thinking: 'Comrade is thinking...',
         error: 'An error occurred.',
