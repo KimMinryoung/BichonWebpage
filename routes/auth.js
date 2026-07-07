@@ -210,7 +210,12 @@ router.post('/webauthn/register/verify', async (req, res) => {
 // POST /auth/webauthn/auth/options
 router.post('/webauthn/auth/options', async (req, res) => {
     try {
-        const options = await buildAuthenticationOptions({ session: req.session, req });
+        const username = normalizeUsername(req.body && req.body.username);
+        const options = await buildAuthenticationOptions({
+            session: req.session,
+            req,
+            username: username || null,
+        });
         res.json(options);
     } catch (err) {
         console.error('auth auth/options:', err);

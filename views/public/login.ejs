@@ -103,7 +103,9 @@
         signinBtn.addEventListener('click', async () => {
             signinBtn.disabled = true;
             try {
-                const options = await jsonFetch('/auth/webauthn/auth/options');
+                const options = await jsonFetch('/auth/webauthn/auth/options', {
+                    username: document.getElementById('username').value.trim(),
+                });
                 const assertion = await window.SimpleWebAuthnBrowser.startAuthentication({ optionsJSON: options });
                 const result = await jsonFetch('/auth/webauthn/auth/verify', {
                     response: assertion,

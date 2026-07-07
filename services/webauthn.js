@@ -48,6 +48,27 @@ async function listCredentialsForUser(userId) {
     return rows;
 }
 
+async function listCredentialsForUsername(username) {
+    const { rows } = await db.query(
+        `SELECT p.credential_id, p.public_key, p.counter, p.transports
+           FROM user_passkeys p
+           JOIN users u ON u.id = p.user_id
+          WHERE u.username = $1 AND u.is_admin = FALSE`,
+        [username]
+    );
+    return rows;
+}
+
+async function listCredentialsForRegularUsers() {
+    const { rows } = await db.query(
+        `SELECT p.credential_id, p.public_key, p.counter, p.transports
+           FROM user_passkeys p
+           JOIN users u ON u.id = p.user_id
+          WHERE u.is_admin = FALSE`
+    );
+    return rows;
+}
+
 async function buildRegistrationOptions({ user, session, req }) {
     const rp = rpFromReq(req);
     const existing = await listCredentialsForUser(user.id);
@@ -118,12 +139,18 @@ async function confirmRegistration({ response, session, deviceName, req }) {
     return { userId: state.userId };
 }
 
-async function buildAuthenticationOptions({ session, req }) {
+async function buildAuthenticationOptions({ session, req, username }) {
     const rp = rpFromReq(req);
-    // Discoverable-credential flow: no allowCredentials, client picks.
+    const credentials = username
+        ? await listCredentialsForUsername(username)
+        : await listCredentialsForRegularUsers();
     const options = await generateAuthenticationOptions({
         rpID: rp.id,
         userVerification: 'preferred',
+        allowCredentials: credentials.length ? credentials.map(c => ({
+            id: c.credential_id,
+            transports: c.transports || undefined,
+        })) : undefined,
     });
     session.webauthn = {
         mode: 'authenticate',
