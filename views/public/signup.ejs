@@ -19,22 +19,27 @@
 
             <div id="auth-message" class="message" style="display:none;"></div>
 
-            <div class="form-group">
-                <label for="username"><%= strings.userAuth.username %></label>
-                <input type="text" id="username" name="username" autocomplete="username" required>
-                <small style="display:block;margin-top:4px;color:var(--clr-text-soft,#888);">
-                    <%= strings.userAuth.usernameHint %>
-                </small>
-            </div>
+            <form id="password-signup-form">
+                <div class="form-group">
+                    <label for="username"><%= strings.userAuth.username %></label>
+                    <input type="text" id="username" name="username" autocomplete="username" required>
+                    <small style="display:block;margin-top:4px;color:var(--clr-text-soft,#888);">
+                        <%= strings.userAuth.usernameHint %>
+                    </small>
+                </div>
 
-            <div class="form-group">
-                <label for="device-name"><%= strings.login.deviceName %></label>
-                <input type="text" id="device-name" placeholder="<%= strings.login.deviceNamePlaceholder %>">
-            </div>
+                <div class="form-group">
+                    <label for="password"><%= strings.userAuth.password %></label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" minlength="8" maxlength="128" required>
+                    <small style="display:block;margin-top:4px;color:var(--clr-text-soft,#888);">
+                        <%= strings.userAuth.passwordHint %>
+                    </small>
+                </div>
 
-            <button type="button" class="btn btn-primary" id="signup-btn" style="width:100%;">
-                <%= strings.userAuth.signUp %>
-            </button>
+                <button type="submit" class="btn btn-primary" id="signup-btn" style="width:100%;">
+                    <%= strings.userAuth.signUp %>
+                </button>
+            </form>
 
             <p style="margin-top:20px; text-align:center;">
                 <%= strings.userAuth.haveAccount %>
@@ -43,15 +48,13 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.umd.min.js"></script>
     <script>
     (function () {
         const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
         const msg = document.getElementById('auth-message');
+        const signupForm = document.getElementById('password-signup-form');
         const signupBtn = document.getElementById('signup-btn');
         const S = {
-            notSupported: <%- JSON.stringify(strings.login.notSupported) %>,
-            cancelled: <%- JSON.stringify(strings.login.cancelled) %>,
             failed: <%- JSON.stringify(strings.login.failed) %>,
             usernameRequired: <%- JSON.stringify(strings.login.usernameRequired) %>,
             registered: <%- JSON.stringify(strings.login.registered) %>,
@@ -78,37 +81,29 @@
             try { return localStorage.getItem('cl_user_id'); } catch { return null; }
         }
 
-        if (!window.SimpleWebAuthnBrowser || !window.PublicKeyCredential) {
-            showMessage(S.notSupported, 'error');
-            signupBtn.disabled = true;
-        }
-
-        signupBtn.addEventListener('click', async () => {
+        signupForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
             const username = document.getElementById('username').value.trim();
-            const deviceName = document.getElementById('device-name').value.trim();
+            const password = document.getElementById('password').value;
             if (!username) {
                 showMessage(S.usernameRequired, 'error');
                 return;
             }
             signupBtn.disabled = true;
             try {
-                const options = await jsonFetch('/auth/webauthn/register/options', { username });
-                const attestation = await window.SimpleWebAuthnBrowser.startRegistration({ optionsJSON: options });
-                const result = await jsonFetch('/auth/webauthn/register/verify', {
-                    response: attestation,
+                const result = await jsonFetch('/auth/password/signup', {
                     username,
-                    deviceName: deviceName || null,
+                    password,
                     fingerprint: currentFingerprint(),
                 });
-                if (result.verified) {
+                if (result.ok) {
                     showMessage(S.registered, 'success');
                     window.location.href = result.redirect || '/';
                     return;
                 }
                 showMessage(S.failed, 'error');
             } catch (err) {
-                const isCancel = err && (err.name === 'NotAllowedError' || /cancel/i.test(err.message || ''));
-                showMessage(isCancel ? S.cancelled : (err.message || S.failed), 'error');
+                showMessage(err.message || S.failed, 'error');
             } finally {
                 signupBtn.disabled = false;
             }

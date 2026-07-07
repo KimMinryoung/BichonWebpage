@@ -15,6 +15,13 @@ const {
     listPasskeys,
     deletePasskey,
 } = require('../services/webauthn');
+const {
+    createRegularUserWithPassword,
+    findPasswordUserByUsername,
+    markPasswordLogin,
+    validatePassword,
+    verifyPassword,
+} = require('../services/password-auth');
 
 function requireUser(req, res, next) {
     if (req.session.user && req.session.user.id) return next();
@@ -29,6 +36,17 @@ function normalizeUsername(raw) {
     return s;
 }
 
+function loginUser(req, res, user) {
+    req.session.regenerate((err) => {
+        if (err) {
+            console.error('session regenerate:', err);
+            return res.status(500).json({ error: 'session error' });
+        }
+        req.session.user = { id: user.id, username: user.username };
+        res.json({ ok: true, redirect: '/' });
+    });
+}
+
 // GET /auth/login — passkey sign-in page
 router.get('/login', (req, res) => {
     if (req.session.user && req.session.user.id) return res.redirect('/');
@@ -39,6 +57,59 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     if (req.session.user && req.session.user.id) return res.redirect('/');
     res.render('public/signup');
+});
+
+// POST /auth/password/signup
+router.post('/password/signup', async (req, res) => {
+    try {
+        const username = normalizeUsername(req.body && req.body.username);
+        const password = req.body && req.body.password;
+        if (!username) {
+            return res.status(400).json({ error: 'invalid username (3-30 chars, letters/digits/Korean/_)' });
+        }
+        if (!validatePassword(password)) {
+            return res.status(400).json({ error: 'password must be 8-128 characters' });
+        }
+        const existing = await findUserByUsername(username);
+        if (existing) {
+            return res.status(409).json({ error: 'username taken' });
+        }
+        const user = await createRegularUserWithPassword(username, password);
+        const fingerprint = typeof req.body.fingerprint === 'string' ? req.body.fingerprint.trim() : null;
+        if (fingerprint) await bindFingerprint(user.id, fingerprint);
+        loginUser(req, res, user);
+    } catch (err) {
+        if (err && err.code === '23505') {
+            return res.status(409).json({ error: 'username taken' });
+        }
+        console.error('auth password/signup:', err);
+        res.status(500).json({ error: 'signup failed' });
+    }
+});
+
+// POST /auth/password/login
+router.post('/password/login', async (req, res) => {
+    try {
+        const username = normalizeUsername(req.body && req.body.username);
+        const password = req.body && req.body.password;
+        if (!username || typeof password !== 'string') {
+            return res.status(400).json({ error: 'invalid username or password' });
+        }
+
+        const user = await findPasswordUserByUsername(username);
+        const ok = user && !user.is_admin && await verifyPassword(password, user.password_hash);
+        if (!ok) {
+            return res.status(401).json({ error: 'invalid username or password' });
+        }
+
+        await markPasswordLogin(user.id);
+        const fingerprint = typeof req.body.fingerprint === 'string' ? req.body.fingerprint.trim() : null;
+        if (fingerprint) await bindFingerprint(user.id, fingerprint);
+        loginUser(req, res, user);
+    } catch (err) {
+        console.error('auth password/login:', err);
+        res.status(500).json({ error: 'login failed' });
+    }
 });
 
 // POST /auth/webauthn/register/options

@@ -14,8 +14,26 @@
 
             <div id="auth-message" class="message" style="display:none;"></div>
 
-            <button type="button" class="btn btn-primary" id="signin-btn" style="width:100%;">
-                <%= strings.userAuth.signIn %>
+            <form id="password-login-form">
+                <div class="form-group">
+                    <label for="username"><%= strings.userAuth.username %></label>
+                    <input type="text" id="username" name="username" autocomplete="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password"><%= strings.userAuth.password %></label>
+                    <input type="password" id="password" name="password" autocomplete="current-password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="password-signin-btn" style="width:100%;">
+                    <%= strings.userAuth.passwordSignIn %>
+                </button>
+            </form>
+
+            <div class="auth-divider"></div>
+
+            <button type="button" class="btn" id="signin-btn" style="width:100%;">
+                <%= strings.userAuth.passkeySignIn %>
             </button>
 
             <p style="margin-top:20px; text-align:center;">
@@ -30,6 +48,8 @@
     (function () {
         const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
         const msg = document.getElementById('auth-message');
+        const passwordForm = document.getElementById('password-login-form');
+        const passwordSigninBtn = document.getElementById('password-signin-btn');
         const signinBtn = document.getElementById('signin-btn');
         const S = {
             notSupported: <%- JSON.stringify(strings.login.notSupported) %>,
@@ -59,9 +79,26 @@
         }
 
         if (!window.SimpleWebAuthnBrowser || !window.PublicKeyCredential) {
-            showMessage(S.notSupported, 'error');
             signinBtn.disabled = true;
+            signinBtn.title = S.notSupported;
         }
+
+        passwordForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            passwordSigninBtn.disabled = true;
+            try {
+                const result = await jsonFetch('/auth/password/login', {
+                    username: document.getElementById('username').value.trim(),
+                    password: document.getElementById('password').value,
+                    fingerprint: currentFingerprint(),
+                });
+                window.location.href = result.redirect || '/';
+            } catch (err) {
+                showMessage(err.message || S.failed, 'error');
+            } finally {
+                passwordSigninBtn.disabled = false;
+            }
+        });
 
         signinBtn.addEventListener('click', async () => {
             signinBtn.disabled = true;

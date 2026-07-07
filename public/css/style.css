@@ -1027,6 +1027,12 @@ form {
     margin-bottom: 30px;
 }
 
+.auth-divider {
+    height: 1px;
+    margin: 22px 0;
+    background-color: var(--border);
+}
+
 /* ===== Footer ===== */
 footer {
     margin-top: 32px;
