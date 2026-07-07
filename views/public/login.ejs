@@ -55,6 +55,8 @@
             notSupported: <%- JSON.stringify(strings.login.notSupported) %>,
             cancelled: <%- JSON.stringify(strings.login.cancelled) %>,
             failed: <%- JSON.stringify(strings.login.failed) %>,
+            usernameOrPasswordInvalid: <%- JSON.stringify(strings.userAuth.usernameOrPasswordInvalid) %>,
+            loginFailed: <%- JSON.stringify(strings.userAuth.loginFailed) %>,
         };
 
         function showMessage(text, kind) {
@@ -72,6 +74,13 @@
             const data = await res.json().catch(() => ({}));
             if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
             return data;
+        }
+
+        function friendlyError(err) {
+            const message = err && err.message ? err.message : '';
+            if (message === 'invalid username or password') return S.usernameOrPasswordInvalid;
+            if (message === 'login failed') return S.loginFailed;
+            return message || S.failed;
         }
 
         function currentFingerprint() {
@@ -94,7 +103,7 @@
                 });
                 window.location.href = result.redirect || '/';
             } catch (err) {
-                showMessage(err.message || S.failed, 'error');
+                showMessage(friendlyError(err), 'error');
             } finally {
                 passwordSigninBtn.disabled = false;
             }

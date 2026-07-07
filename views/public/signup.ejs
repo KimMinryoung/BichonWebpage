@@ -58,6 +58,10 @@
             failed: <%- JSON.stringify(strings.login.failed) %>,
             usernameRequired: <%- JSON.stringify(strings.login.usernameRequired) %>,
             registered: <%- JSON.stringify(strings.login.registered) %>,
+            usernameInvalid: <%- JSON.stringify(strings.userAuth.usernameInvalid) %>,
+            usernameTaken: <%- JSON.stringify(strings.userAuth.usernameTaken) %>,
+            passwordInvalid: <%- JSON.stringify(strings.userAuth.passwordInvalid) %>,
+            signupFailed: <%- JSON.stringify(strings.userAuth.signupFailed) %>,
         };
 
         function showMessage(text, kind) {
@@ -75,6 +79,15 @@
             const data = await res.json().catch(() => ({}));
             if (!res.ok) throw new Error(data.error || ('HTTP ' + res.status));
             return data;
+        }
+
+        function friendlyError(err) {
+            const message = err && err.message ? err.message : '';
+            if (message === 'invalid username') return S.usernameInvalid;
+            if (message === 'username taken') return S.usernameTaken;
+            if (message === 'password must be 1-128 characters') return S.passwordInvalid;
+            if (message === 'signup failed') return S.signupFailed;
+            return message || S.failed;
         }
 
         function currentFingerprint() {
@@ -103,7 +116,7 @@
                 }
                 showMessage(S.failed, 'error');
             } catch (err) {
-                showMessage(err.message || S.failed, 'error');
+                showMessage(friendlyError(err), 'error');
             } finally {
                 signupBtn.disabled = false;
             }

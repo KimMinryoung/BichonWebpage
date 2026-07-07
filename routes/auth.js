@@ -33,8 +33,9 @@ function requireUser(req, res, next) {
 function normalizeUsername(raw) {
     if (typeof raw !== 'string') return '';
     const s = raw.trim();
-    if (s.length < 3 || s.length > 30) return '';
-    if (!/^[A-Za-z0-9가-힣_][A-Za-z0-9가-힣_.\- ]*$/.test(s)) return '';
+    const length = Array.from(s).length;
+    if (length < 1 || length > 30) return '';
+    if (!/^[\p{L}\p{N}_][\p{L}\p{N}_.\- ]*$/u.test(s)) return '';
     return s;
 }
 
@@ -67,7 +68,7 @@ router.post('/password/signup', async (req, res) => {
         const username = normalizeUsername(req.body && req.body.username);
         const password = req.body && req.body.password;
         if (!username) {
-            return res.status(400).json({ error: 'invalid username (3-30 chars, letters/digits/Korean/_)' });
+            return res.status(400).json({ error: 'invalid username' });
         }
         if (!validatePassword(password)) {
             return res.status(400).json({ error: 'password must be 1-128 characters' });
@@ -157,7 +158,7 @@ router.post('/webauthn/register/options', async (req, res) => {
     try {
         const username = normalizeUsername(req.body && req.body.username);
         if (!username) {
-            return res.status(400).json({ error: 'invalid username (3-30 chars, letters/digits/Korean/_)' });
+            return res.status(400).json({ error: 'invalid username' });
         }
         const existing = await findUserByUsername(username);
         if (existing) {
