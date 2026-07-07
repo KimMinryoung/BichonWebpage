@@ -70,7 +70,7 @@ router.post('/password/signup', async (req, res) => {
             return res.status(400).json({ error: 'invalid username (3-30 chars, letters/digits/Korean/_)' });
         }
         if (!validatePassword(password)) {
-            return res.status(400).json({ error: 'password must be 8-128 characters' });
+            return res.status(400).json({ error: 'password must be 1-128 characters' });
         }
         const existing = await findUserByUsername(username);
         if (existing) {
@@ -131,7 +131,7 @@ router.post('/password/set', requireUser, async (req, res) => {
         const currentPassword = req.body && req.body.currentPassword;
         const newPassword = req.body && req.body.newPassword;
         if (!validatePassword(newPassword)) {
-            return res.status(400).json({ error: 'password must be 8-128 characters' });
+            return res.status(400).json({ error: 'password must be 1-128 characters' });
         }
 
         const user = await findPasswordUserById(req.session.user.id);

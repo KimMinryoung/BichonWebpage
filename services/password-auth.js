@@ -8,7 +8,7 @@ const PASSWORD_SCHEME = 'scrypt';
 
 function validatePassword(raw) {
     if (typeof raw !== 'string') return false;
-    return raw.length >= 8 && raw.length <= 128;
+    return raw.length >= 1 && raw.length <= 128;
 }
 
 async function hashPassword(password) {
