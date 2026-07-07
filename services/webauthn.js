@@ -59,16 +59,6 @@ async function listCredentialsForUsername(username) {
     return rows;
 }
 
-async function listCredentialsForRegularUsers() {
-    const { rows } = await db.query(
-        `SELECT p.credential_id, p.public_key, p.counter, p.transports
-           FROM user_passkeys p
-           JOIN users u ON u.id = p.user_id
-          WHERE u.is_admin = FALSE`
-    );
-    return rows;
-}
-
 async function buildRegistrationOptions({ user, session, req }) {
     const rp = rpFromReq(req);
     const existing = await listCredentialsForUser(user.id);
@@ -141,9 +131,7 @@ async function confirmRegistration({ response, session, deviceName, req }) {
 
 async function buildAuthenticationOptions({ session, req, username }) {
     const rp = rpFromReq(req);
-    const credentials = username
-        ? await listCredentialsForUsername(username)
-        : await listCredentialsForRegularUsers();
+    const credentials = username ? await listCredentialsForUsername(username) : [];
     const options = await generateAuthenticationOptions({
         rpID: rp.id,
         userVerification: 'preferred',

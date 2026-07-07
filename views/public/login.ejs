@@ -14,6 +14,12 @@
 
             <div id="auth-message" class="message" style="display:none;"></div>
 
+            <button type="button" class="btn btn-primary" id="signin-btn" style="width:100%;">
+                <%= strings.userAuth.passkeySignIn %>
+            </button>
+
+            <div class="auth-divider"></div>
+
             <form id="password-login-form">
                 <div class="form-group">
                     <label for="username"><%= strings.userAuth.username %></label>
@@ -29,12 +35,6 @@
                     <%= strings.userAuth.passwordSignIn %>
                 </button>
             </form>
-
-            <div class="auth-divider"></div>
-
-            <button type="button" class="btn" id="signin-btn" style="width:100%;">
-                <%= strings.userAuth.passkeySignIn %>
-            </button>
 
             <p style="margin-top:20px; text-align:center;">
                 <%= strings.userAuth.noAccount %>
