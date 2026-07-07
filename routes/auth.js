@@ -17,8 +17,10 @@ const {
 } = require('../services/webauthn');
 const {
     createRegularUserWithPassword,
+    findPasswordUserById,
     findPasswordUserByUsername,
     markPasswordLogin,
+    setPasswordForUser,
     validatePassword,
     verifyPassword,
 } = require('../services/password-auth');
@@ -109,6 +111,44 @@ router.post('/password/login', async (req, res) => {
     } catch (err) {
         console.error('auth password/login:', err);
         res.status(500).json({ error: 'login failed' });
+    }
+});
+
+// GET /auth/password/status
+router.get('/password/status', requireUser, async (req, res) => {
+    try {
+        const user = await findPasswordUserById(req.session.user.id);
+        res.json({ hasPassword: !!(user && user.password_hash) });
+    } catch (err) {
+        console.error('auth password/status:', err);
+        res.status(500).json({ error: 'status failed' });
+    }
+});
+
+// POST /auth/password/set
+router.post('/password/set', requireUser, async (req, res) => {
+    try {
+        const currentPassword = req.body && req.body.currentPassword;
+        const newPassword = req.body && req.body.newPassword;
+        if (!validatePassword(newPassword)) {
+            return res.status(400).json({ error: 'password must be 8-128 characters' });
+        }
+
+        const user = await findPasswordUserById(req.session.user.id);
+        if (!user || user.is_admin) {
+            return res.status(403).json({ error: 'regular user required' });
+        }
+
+        if (user.password_hash) {
+            const ok = await verifyPassword(currentPassword, user.password_hash);
+            if (!ok) return res.status(401).json({ error: 'current password is incorrect' });
+        }
+
+        await setPasswordForUser(user.id, newPassword);
+        res.json({ ok: true });
+    } catch (err) {
+        console.error('auth password/set:', err);
+        res.status(500).json({ error: 'password update failed' });
     }
 });
 

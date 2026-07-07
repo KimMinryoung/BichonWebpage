@@ -22,6 +22,27 @@
         </div>
 
         <div class="box">
+            <h2><%= strings.userAuth.passwordSection %></h2>
+            <div id="password-message" class="message" style="display:none;"></div>
+            <form id="password-form" style="margin-top:10px;">
+                <div class="form-group" id="current-password-group" hidden>
+                    <label for="current-password"><%= strings.userAuth.currentPassword %></label>
+                    <input type="password" id="current-password" autocomplete="current-password">
+                </div>
+                <div class="form-group">
+                    <label for="new-password"><%= strings.userAuth.newPassword %></label>
+                    <input type="password" id="new-password" autocomplete="new-password" minlength="8" maxlength="128" required>
+                    <small style="display:block;margin-top:4px;color:var(--clr-text-soft,#888);">
+                        <%= strings.userAuth.passwordHint %>
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary" id="password-btn">
+                    <%= strings.userAuth.setPassword %>
+                </button>
+            </form>
+        </div>
+
+        <div class="box">
             <h2><%= strings.admin.passkeys %></h2>
             <p><%= strings.admin.passkeysHint %></p>
             <div id="passkey-list" style="margin-top: 15px;"></div>
@@ -47,6 +68,10 @@
         const list = document.getElementById('passkey-list');
         const addBtn = document.getElementById('add-btn');
         const msg = document.getElementById('add-message');
+        const passwordForm = document.getElementById('password-form');
+        const passwordBtn = document.getElementById('password-btn');
+        const passwordMsg = document.getElementById('password-message');
+        const currentPasswordGroup = document.getElementById('current-password-group');
         const strings = {
             added: <%- JSON.stringify(strings.admin.passkeyAdded) %>,
             deleteConfirm: <%- JSON.stringify(strings.admin.passkeyDeleteConfirm) %>,
@@ -58,12 +83,21 @@
             lastUsed: <%- JSON.stringify(strings.admin.passkeyLastUsed) %>,
             never: <%- JSON.stringify(strings.admin.passkeyNever) %>,
             delete: <%- JSON.stringify(strings.admin.delete) %>,
+            setPassword: <%- JSON.stringify(strings.userAuth.setPassword) %>,
+            updatePassword: <%- JSON.stringify(strings.userAuth.updatePassword) %>,
+            passwordSaved: <%- JSON.stringify(strings.userAuth.passwordSaved) %>,
         };
 
         function showMessage(text, kind) {
             msg.textContent = text;
             msg.className = 'message message-' + (kind || 'info');
             msg.style.display = 'block';
+        }
+
+        function showPasswordMessage(text, kind) {
+            passwordMsg.textContent = text;
+            passwordMsg.className = 'message message-' + (kind || 'info');
+            passwordMsg.style.display = 'block';
         }
 
         async function jsonFetch(url, body) {
@@ -124,6 +158,33 @@
             list.appendChild(table);
         }
 
+        async function loadPasswordStatus() {
+            const status = await jsonFetch('/auth/password/status');
+            currentPasswordGroup.hidden = !status.hasPassword;
+            document.getElementById('current-password').required = !!status.hasPassword;
+            passwordBtn.textContent = status.hasPassword ? strings.updatePassword : strings.setPassword;
+        }
+
+        passwordForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            passwordBtn.disabled = true;
+            passwordMsg.style.display = 'none';
+            try {
+                await jsonFetch('/auth/password/set', {
+                    currentPassword: document.getElementById('current-password').value,
+                    newPassword: document.getElementById('new-password').value,
+                });
+                document.getElementById('current-password').value = '';
+                document.getElementById('new-password').value = '';
+                showPasswordMessage(strings.passwordSaved, 'success');
+                await loadPasswordStatus();
+            } catch (err) {
+                showPasswordMessage(err.message || strings.failed, 'error');
+            } finally {
+                passwordBtn.disabled = false;
+            }
+        });
+
         addBtn.addEventListener('click', async () => {
             const deviceName = document.getElementById('add-device').value.trim();
             addBtn.disabled = true;
@@ -144,6 +205,10 @@
             } finally {
                 addBtn.disabled = false;
             }
+        });
+
+        loadPasswordStatus().catch((err) => {
+            showPasswordMessage(err.message || strings.failed, 'error');
         });
 
         load().catch((err) => {

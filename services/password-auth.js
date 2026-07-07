@@ -69,14 +69,32 @@ async function findPasswordUserByUsername(username) {
     return rows[0] || null;
 }
 
+async function findPasswordUserById(userId) {
+    const { rows } = await db.query(
+        'SELECT id, username, is_admin, password_hash FROM users WHERE id = $1',
+        [userId]
+    );
+    return rows[0] || null;
+}
+
+async function setPasswordForUser(userId, password) {
+    const passwordHash = await hashPassword(password);
+    await db.query(
+        'UPDATE users SET password_hash = $1, password_updated_at = NOW() WHERE id = $2',
+        [passwordHash, userId]
+    );
+}
+
 async function markPasswordLogin(userId) {
     await db.query('UPDATE users SET last_login_at = NOW() WHERE id = $1', [userId]);
 }
 
 module.exports = {
     createRegularUserWithPassword,
+    findPasswordUserById,
     findPasswordUserByUsername,
     markPasswordLogin,
+    setPasswordForUser,
     validatePassword,
     verifyPassword,
 };

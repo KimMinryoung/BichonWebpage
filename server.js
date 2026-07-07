@@ -259,6 +259,7 @@ app.use('/auth/webauthn/register/options', signupLimiter);
 app.use('/auth/webauthn', webauthnLimiter);
 app.use('/auth/password/signup', signupLimiter);
 app.use('/auth/password/login', webauthnLimiter);
+app.use('/auth/password/set', webauthnLimiter);
 app.use('/admin/webauthn', requireAdminIp, webauthnLimiter);
 
 // Make session and strings available in all views
