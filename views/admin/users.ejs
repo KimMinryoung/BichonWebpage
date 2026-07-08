@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <% pageTitle = strings.admin.users %>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/admin-users.css?v=<%= assetVersion %>">
+</head>
+<body>
+    <%- include('../partials/nav') %>
+
+    <div class="container admin-users-page">
+        <div class="admin-header">
+            <h1><%= strings.admin.users %></h1>
+        </div>
+
+        <div class="users-toolbar">
+            <input id="userSearch" type="search" placeholder="<%= strings.admin.usersSearch %>" autocomplete="off">
+            <select id="userLimit">
+                <option value="25">25</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+            </select>
+            <button class="btn" id="refreshUsers"><%= strings.admin.chatLogsRefresh %></button>
+        </div>
+
+        <div id="usersStatus" class="users-status"></div>
+
+        <div class="users-shell">
+            <section class="users-list-panel" aria-label="<%= strings.admin.users %>">
+                <div id="usersList" class="users-list">
+                    <div class="loading-spinner"><%= strings.admin.chatLogsLoading %></div>
+                </div>
+                <div class="pagination" id="usersPagination"></div>
+            </section>
+
+            <section class="user-detail-panel" aria-live="polite">
+                <div id="userDetail" class="user-detail-empty">
+                    <%= strings.admin.usersSelectHint %>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        window.ADMIN_USERS_TEXT = {
+            loading: '<%= strings.admin.chatLogsLoading %>',
+            empty: '<%= strings.admin.usersEmpty %>',
+            selectHint: '<%= strings.admin.usersSelectHint %>',
+            rename: '<%= strings.admin.usersRename %>',
+            merge: '<%= strings.admin.usersMerge %>',
+            delete: '<%= strings.admin.delete %>',
+            save: '<%= strings.admin.update %>',
+            cancel: '<%= strings.admin.cancel %>',
+            source: '<%= strings.admin.usersMergeSource %>',
+            target: '<%= strings.admin.usersMergeTarget %>',
+            confirmDelete: '<%= strings.admin.usersDeleteConfirm %>',
+            adminBadge: '<%= strings.admin.usersAdminBadge %>',
+            password: '<%= strings.admin.usersPassword %>',
+            passkeys: '<%= strings.admin.usersPasskeys %>',
+            fingerprints: '<%= strings.admin.usersFingerprints %>',
+            chatLogs: '<%= strings.admin.chatLogs %>',
+            created: '<%= strings.admin.postCreated %>',
+            lastLogin: '<%= strings.admin.usersLastLogin %>',
+            lastChat: '<%= strings.admin.usersLastChat %>',
+            never: '<%= strings.admin.passkeyNever %>',
+            noFingerprints: '<%= strings.admin.usersNoFingerprints %>',
+            noPasskeys: '<%= strings.admin.passkeysEmpty %>',
+            error: '<%= strings.chat.error %>'
+        };
+        window.ADMIN_CSRF_TOKEN = '<%= csrfToken %>';
+    </script>
+    <script src="/js/admin-users.js?v=<%= assetVersion %>"></script>
+    <%- include('../partials/footer') %>
+</body>
+</html>

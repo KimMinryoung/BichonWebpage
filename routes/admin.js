@@ -213,6 +213,11 @@ router.get('/chat-logs', requireAuth, (req, res) => {
     res.render('admin/chat-logs');
 });
 
+// User account management
+router.get('/users', requireAuth, (req, res) => {
+    res.render('admin/users');
+});
+
 // Chat Logs API proxy — forwards to LeninBot with admin key
 router.get('/api/logs', requireAuth, adminApiLimiter, async (req, res) => {
     const apiUrl = process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
@@ -232,6 +237,130 @@ router.get('/api/logs', requireAuth, adminApiLimiter, async (req, res) => {
     } catch (err) {
         console.error('Chat logs proxy error:', err.message);
         res.status(502).json({ error: 'Failed to fetch logs from LeninBot' });
+    }
+});
+
+function leninbotAdminBase() {
+    return process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
+}
+
+function leninbotAdminHeaders(extra = {}) {
+    return {
+        'X-Admin-Key': process.env.LENINBOT_ADMIN_KEY || '',
+        ...extra,
+    };
+}
+
+// User account API proxy — forwards to LeninBot with admin key.
+router.get('/api/users', requireAuth, adminApiLimiter, async (req, res) => {
+    const limit = clampInteger(req.query.limit, { fallback: 50, min: 1, max: 200 });
+    const offset = clampInteger(req.query.offset, { fallback: 0, min: 0, max: 100000 });
+    const search = typeof req.query.search === 'string' ? req.query.search.trim().slice(0, 80) : '';
+    const params = new URLSearchParams({ limit: String(limit), offset: String(offset) });
+    if (search) params.set('search', search);
+
+    try {
+        const response = await fetchWithTimeout(
+            `${leninbotAdminBase()}/admin/users?${params.toString()}`,
+            { headers: leninbotAdminHeaders(), timeoutMs: 6000 }
+        );
+        if (!response.ok) {
+            return res.status(response.status).json({ error: 'LeninBot API error' });
+        }
+        res.json(await response.json());
+    } catch (err) {
+        console.error('Users proxy error:', err.message);
+        res.status(502).json({ error: 'Failed to fetch users from LeninBot' });
+    }
+});
+
+router.get('/api/users/:id', requireAuth, adminApiLimiter, async (req, res) => {
+    const userId = clampInteger(req.params.id, { fallback: 0, min: 0, max: 2147483647 });
+    if (!userId) return res.status(400).json({ error: 'invalid user id' });
+
+    try {
+        const response = await fetchWithTimeout(
+            `${leninbotAdminBase()}/admin/users/${userId}`,
+            { headers: leninbotAdminHeaders(), timeoutMs: 6000 }
+        );
+        if (!response.ok) {
+            return res.status(response.status).json({ error: 'LeninBot API error' });
+        }
+        res.json(await response.json());
+    } catch (err) {
+        console.error('User detail proxy error:', err.message);
+        res.status(502).json({ error: 'Failed to fetch user from LeninBot' });
+    }
+});
+
+router.patch('/api/users/:id', requireAuth, adminApiLimiter, async (req, res) => {
+    const userId = clampInteger(req.params.id, { fallback: 0, min: 0, max: 2147483647 });
+    if (!userId) return res.status(400).json({ error: 'invalid user id' });
+
+    try {
+        const response = await fetchWithTimeout(
+            `${leninbotAdminBase()}/admin/users/${userId}`,
+            {
+                method: 'PATCH',
+                headers: leninbotAdminHeaders({ 'Content-Type': 'application/json' }),
+                body: JSON.stringify({ username: req.body && req.body.username }),
+                timeoutMs: 6000,
+            }
+        );
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) return res.status(response.status).json(data);
+        res.json(data);
+    } catch (err) {
+        console.error('User rename proxy error:', err.message);
+        res.status(502).json({ error: 'Failed to rename user' });
+    }
+});
+
+router.post('/api/users/:id/merge', requireAuth, adminApiLimiter, async (req, res) => {
+    const sourceId = clampInteger(req.params.id, { fallback: 0, min: 0, max: 2147483647 });
+    const targetUserId = clampInteger(req.body && req.body.targetUserId, { fallback: 0, min: 1, max: 2147483647 });
+    if (!sourceId || !targetUserId) return res.status(400).json({ error: 'invalid user id' });
+
+    try {
+        const response = await fetchWithTimeout(
+            `${leninbotAdminBase()}/admin/users/${sourceId}/merge`,
+            {
+                method: 'POST',
+                headers: leninbotAdminHeaders({ 'Content-Type': 'application/json' }),
+                body: JSON.stringify({ target_user_id: targetUserId }),
+                timeoutMs: 6000,
+            }
+        );
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) return res.status(response.status).json(data);
+        res.json(data);
+    } catch (err) {
+        console.error('User merge proxy error:', err.message);
+        res.status(502).json({ error: 'Failed to merge user' });
+    }
+});
+
+router.delete('/api/users/:id', requireAuth, adminApiLimiter, async (req, res) => {
+    const userId = clampInteger(req.params.id, { fallback: 0, min: 0, max: 2147483647 });
+    const confirmUsername = typeof req.body?.confirmUsername === 'string' ? req.body.confirmUsername.trim() : '';
+    if (!userId || !confirmUsername) return res.status(400).json({ error: 'invalid delete confirmation' });
+
+    try {
+        const params = new URLSearchParams({ confirm_username: confirmUsername });
+        const response = await fetchWithTimeout(
+            `${leninbotAdminBase()}/admin/users/${userId}?${params.toString()}`,
+            {
+                method: 'DELETE',
+                headers: leninbotAdminHeaders(),
+                timeoutMs: 6000,
+            }
+        );
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) return res.status(response.status).json(data);
+        res.json(data);
+    } catch (err) {
+        console.error('User delete proxy error:', err.message);
+        res.status(502).json({ error: 'Failed to delete user' });
     }
 });
 
