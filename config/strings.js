@@ -121,8 +121,7 @@ const ko = {
         totalPosts: '전체 게시물',
         recentPosts: '이번 달 게시물',
         quickActions: '빠른 작업',
-        viewSite: '사이트 보기',
-        storyEditor: '스토리 편집기',
+        novelWriter: '소설 창작',
         recentPostsTitle: '최근 게시물',
 
         // 게시물 관리
@@ -394,8 +393,7 @@ const en = {
         totalPosts: 'Total Posts',
         recentPosts: 'Posts This Month',
         quickActions: 'Quick Actions',
-        viewSite: 'View Site',
-        storyEditor: 'Story Editor',
+        novelWriter: 'Novel Writer',
         recentPostsTitle: 'Recent Posts',
 
         postId: 'ID',
