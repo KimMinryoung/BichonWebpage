@@ -94,7 +94,8 @@
     var bookGroups = [
         { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id) || /^marx-/.test(b.id); } },
         { label: function() { return strings.authorEngels || '프리드리히 엥겔스'; }, match: function(b) { return /^engels/.test(b.id); } },
-        { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } }
+        { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } },
+        { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); } }
     ];
 
     function groupBooks() {
@@ -140,6 +141,20 @@
         card.className = 'commu-book-card';
         card.setAttribute('href', '/commulingo/book/' + encodeURIComponent(book.id));
         var badge = text(book.badge);
+        if (book.format === 'decision-history') {
+            card.innerHTML = [
+                '<div class="commu-book-card-body">',
+                badge ? '<span class="commu-book-badge">' + escapeHtml(badge) + '</span>' : '',
+                '<h3>' + escapeHtml(text(book.title)) + '</h3>',
+                '<p class="commu-book-desc">' + escapeHtml(text(book.description)) + '</p>',
+                '<p class="commu-book-meta">' + escapeHtml(episodeCountLabel(book.episodeCount || 0)) + '</p>',
+                '</div>',
+                '<div class="commu-book-progress">',
+                '<span class="commu-book-progress-label">' + escapeHtml(strings.decideMode || (lang === 'en' ? 'Decide & learn' : '선택하며 학습')) + '</span>',
+                '</div>'
+            ].join('');
+            return card;
+        }
         if (book.format === 'concept-graph') {
             card.innerHTML = [
                 '<div class="commu-book-card-body">',
@@ -171,6 +186,11 @@
             '</div>'
         ].join('');
         return card;
+    }
+
+    function episodeCountLabel(count) {
+        if (lang === 'en') return (strings.decisionSimLabel || 'Decision simulation') + ' · ' + count + ' turning points';
+        return (strings.decisionSimLabel || '결정 시뮬레이션') + ' · 갈림길 ' + count + '개';
     }
 
     function nodeCountLabel(count) {

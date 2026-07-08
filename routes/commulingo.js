@@ -45,6 +45,10 @@ function summarizeBooks(catalog) {
             });
         });
         const graph = collection.conceptGraph;
+        const timeline = collection.decisionTimeline;
+        const episodeCount = timeline && Array.isArray(timeline.eras)
+            ? timeline.eras.reduce((sum, era) => sum + (Array.isArray(era.episodes) ? era.episodes.length : 0), 0)
+            : 0;
         return {
             id: collection.id,
             volumeNumber: collection.volumeNumber,
@@ -54,6 +58,7 @@ function summarizeBooks(catalog) {
             format: collection.format,
             chapterCount: chapters.length,
             nodeCount: graph && Array.isArray(graph.nodes) ? graph.nodes.length : 0,
+            episodeCount,
             lessonIds,
         };
     });

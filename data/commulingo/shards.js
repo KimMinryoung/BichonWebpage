@@ -90,7 +90,7 @@ function publicCollections(bundle) {
                 )),
             };
         })
-        .filter(collection => collection.chapters.length > 0 || collection.conceptGraph);
+        .filter(collection => collection.chapters.length > 0 || collection.conceptGraph || collection.decisionTimeline);
 }
 
 function publicLessonPayload(collection, chapter, lesson) {
@@ -123,6 +123,7 @@ function buildPayloads(bundle, version) {
             bookTitle: collection.bookTitle,
             format: collection.format,
             conceptGraph: collection.conceptGraph,
+            decisionTimeline: collection.decisionTimeline,
             chapters: (collection.chapters || []).map(chapter => ({
                 id: chapter.id,
                 volumeNumber: chapter.volumeNumber,
