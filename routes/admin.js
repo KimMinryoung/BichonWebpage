@@ -218,6 +218,13 @@ router.get('/users', requireAuth, (req, res) => {
     res.render('admin/users');
 });
 
+// Private reports shell
+router.get('/private-reports', requireAuth, (req, res) => {
+    res.setHeader('Cache-Control', 'no-store');
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    res.render('admin/private-reports');
+});
+
 // Chat Logs API proxy — forwards to LeninBot with admin key
 router.get('/api/logs', requireAuth, adminApiLimiter, async (req, res) => {
     const apiUrl = process.env.CHAT_API_URL || 'https://leninbot.duckdns.org';
