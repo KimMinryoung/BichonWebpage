@@ -74,6 +74,36 @@
     }
 
     var episodes = allEpisodes();
+    var epNodes = {};
+
+    function setOpen(li, open) {
+        li.classList.toggle('is-open', open);
+        var head = li.querySelector('.commu-dc-head');
+        if (head) {
+            head.setAttribute('aria-expanded', open ? 'true' : 'false');
+            var toggle = head.querySelector('.commu-dc-toggle');
+            if (toggle) toggle.textContent = open ? '−' : '+';
+        }
+    }
+
+    // Opens the first undecided episode at (or after) the given index, so the
+    // learner always has the next fork in front of them.
+    function openNextUndecided(fromIndex) {
+        for (var i = fromIndex; i < episodes.length; i++) {
+            var ep = episodes[i];
+            if (choices[ep.id]) continue;
+            var li = epNodes[ep.id];
+            if (li) setOpen(li, true);
+            return;
+        }
+    }
+
+    function episodeIndex(id) {
+        for (var i = 0; i < episodes.length; i++) {
+            if (episodes[i].id === id) return i;
+        }
+        return -1;
+    }
 
     function decidedCount() {
         return episodes.filter(function(ep) { return choices[ep.id]; }).length;
@@ -85,6 +115,7 @@
     }
 
     function render() {
+        epNodes = {};
         root.innerHTML = '';
         root.appendChild(renderCentral());
         (timeline.eras || []).forEach(function(era) {
@@ -94,6 +125,7 @@
         var epi = renderEpilogue();
         if (epi) root.appendChild(epi);
         updateProgress();
+        openNextUndecided(0);
     }
 
     function renderCentral() {
@@ -165,6 +197,7 @@
 
         li.appendChild(head);
         li.appendChild(body);
+        epNodes[ep.id] = li;
         paintEpisode(li, ep);
         return li;
     }
@@ -237,6 +270,7 @@
                     paintEpisode(li, ep);
                     refreshVerdict();
                     updateProgress();
+                    openNextUndecided(episodeIndex(ep.id) + 1);
                 });
             });
         } else {
