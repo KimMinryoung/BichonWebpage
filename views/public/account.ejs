@@ -23,6 +23,13 @@
 
         <div class="box">
             <h2><%= strings.userAuth.passwordSection %></h2>
+            <p style="margin:6px 0 10px;color:var(--clr-text-soft,#888);">
+                <%= strings.userAuth.passwordLoginHint %>
+            </p>
+            <p style="margin:0 0 14px;">
+                <strong><%= strings.userAuth.loginUsernameLabel %>:</strong>
+                <code><%= currentUser.username %></code>
+            </p>
             <div id="password-message" class="message" style="display:none;"></div>
             <form id="password-form" style="margin-top:10px;">
                 <div class="form-group" id="current-password-group" hidden>
