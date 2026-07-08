@@ -18,6 +18,7 @@ const { normalizeLanguage, resolveLanguage, languageCookieOptions } = require('.
 const { truncateHtml } = require('./utils/truncate-html');
 const errorPage = require('./utils/error-page');
 const { requireAdminIp } = require('./middleware/auth');
+const db = require('./config/database');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -180,6 +181,121 @@ app.use('/api/proxy', async (req, res, next) => {
         }
     }
     next();
+});
+
+function clampPositiveInteger(value, fallback, max) {
+    const n = Number.parseInt(value, 10);
+    if (!Number.isFinite(n) || n < 1) return fallback;
+    return Math.min(n, max);
+}
+
+function chatLookupFingerprints(req) {
+    const values = [];
+    if (typeof req.query.fingerprint === 'string' && req.query.fingerprint.trim()) {
+        values.push(req.query.fingerprint.trim());
+    }
+    if (Array.isArray(req.userFingerprints)) {
+        for (const fingerprint of req.userFingerprints) {
+            if (typeof fingerprint === 'string' && fingerprint.trim()) {
+                values.push(fingerprint.trim());
+            }
+        }
+    }
+    return [...new Set(values)];
+}
+
+function requestedPersona(req) {
+    return typeof req.query.persona === 'string' && req.query.persona.trim()
+        ? req.query.persona.trim()
+        : null;
+}
+
+// Serve chat history from the frontend DB so logged-in users can see every
+// fingerprint bound to their account even if the backend only filters by the
+// current browser fingerprint.
+app.get('/api/proxy/sessions', async (req, res, next) => {
+    if (req.path.startsWith('/writer')) return next();
+
+    const fingerprints = chatLookupFingerprints(req);
+    if (!fingerprints.length) return res.json({ sessions: [] });
+
+    const limit = clampPositiveInteger(req.query.limit, 50, 200);
+    const persona = requestedPersona(req);
+    const params = [fingerprints, limit];
+    const personaClause = persona ? 'AND COALESCE(persona, $3) = $3' : '';
+    if (persona) params.push(persona);
+
+    try {
+        const { rows } = await db.query(
+            `SELECT session_id,
+                    (ARRAY_AGG(user_query ORDER BY created_at ASC))[1] AS first_query,
+                    MIN(created_at) AS first_at,
+                    MAX(created_at) AS last_at,
+                    COUNT(*)::int AS message_count
+               FROM chat_logs
+              WHERE fingerprint = ANY($1)
+                AND session_id IS NOT NULL
+                ${personaClause}
+              GROUP BY session_id
+              ORDER BY last_at DESC
+              LIMIT $2`,
+            params
+        );
+        res.json({ sessions: rows });
+    } catch (err) {
+        console.error('local chat sessions:', err.message);
+        next();
+    }
+});
+
+app.get('/api/proxy/history', async (req, res, next) => {
+    if (req.path.startsWith('/writer')) return next();
+
+    const fingerprints = chatLookupFingerprints(req);
+    if (!fingerprints.length) return res.json({ history: [] });
+
+    const limit = clampPositiveInteger(req.query.limit, 50, 500);
+    const persona = requestedPersona(req);
+    const sessionId = typeof req.query.session_id === 'string' && req.query.session_id.trim()
+        ? req.query.session_id.trim()
+        : null;
+
+    const params = [fingerprints, limit];
+    const clauses = ['fingerprint = ANY($1)'];
+    if (sessionId) {
+        params.push(sessionId);
+        clauses.push(`session_id = $${params.length}`);
+    }
+    if (persona) {
+        params.push(persona);
+        clauses.push(`COALESCE(persona, $${params.length}) = $${params.length}`);
+    }
+
+    try {
+        const { rows } = await db.query(
+            `SELECT id AS message_id,
+                    user_query,
+                    bot_answer,
+                    route,
+                    documents_count,
+                    web_search_used,
+                    strategy,
+                    processing_logs,
+                    fingerprint,
+                    session_id,
+                    persona,
+                    created_at
+               FROM chat_logs
+              WHERE ${clauses.join(' AND ')}
+              ORDER BY created_at ${sessionId ? 'ASC' : 'DESC'}
+              LIMIT $2`,
+            params
+        );
+        res.json({ history: sessionId ? rows : rows.reverse() });
+    } catch (err) {
+        console.error('local chat history:', err.message);
+        next();
+    }
 });
 
 // Backend API proxy — must be before body parsers and CSRF for streaming integrity.
