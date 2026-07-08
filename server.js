@@ -25,6 +25,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
+const WRITER_API_URL = process.env.WRITER_API_URL || 'http://172.17.0.1:8001';
 const ASSET_VERSION = process.env.ASSET_VERSION || process.env.GIT_SHA || String(Date.now());
 const DEV_MODE = process.env.DEV_MODE === '1' || process.env.NODE_ENV !== 'production';
 
@@ -301,6 +302,7 @@ app.get('/api/proxy/history', async (req, res, next) => {
 // Backend API proxy — must be before body parsers and CSRF for streaming integrity.
 app.use('/api/proxy', createProxyMiddleware({
     target: CHAT_API_URL,
+    router: (req) => (req.url && req.url.startsWith('/writer') ? WRITER_API_URL : CHAT_API_URL),
     changeOrigin: true,
     timeout: 15 * 60 * 1000,
     proxyTimeout: 15 * 60 * 1000,
