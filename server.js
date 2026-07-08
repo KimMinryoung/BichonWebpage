@@ -302,7 +302,10 @@ app.get('/api/proxy/history', async (req, res, next) => {
 });
 
 // Public A2A proxy — must be before body parsers for JSON-RPC request integrity.
-app.use(['/.well-known/agent-card.json', '/a2a'], createProxyMiddleware({
+// Root mount + pathFilter (not an app.use path): a mounted path is stripped
+// from req.url, so the backend would receive "/" instead of the real path.
+app.use(createProxyMiddleware({
+    pathFilter: ['/.well-known/agent-card.json', '/a2a'],
     target: A2A_API_URL,
     changeOrigin: true,
     timeout: 120 * 1000,
