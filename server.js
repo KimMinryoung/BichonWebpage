@@ -26,6 +26,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
 const WRITER_API_URL = process.env.WRITER_API_URL || 'http://172.17.0.1:8001';
+const EMAIL_API_URL = process.env.EMAIL_API_URL || 'http://172.17.0.1:8002';
+const A2A_API_URL = process.env.A2A_API_URL || 'http://172.17.0.1:8003';
 const ASSET_VERSION = process.env.ASSET_VERSION || process.env.GIT_SHA || String(Date.now());
 const DEV_MODE = process.env.DEV_MODE === '1' || process.env.NODE_ENV !== 'production';
 
@@ -299,10 +301,30 @@ app.get('/api/proxy/history', async (req, res, next) => {
     }
 });
 
+// Public A2A proxy — must be before body parsers for JSON-RPC request integrity.
+app.use(['/.well-known/agent-card.json', '/a2a'], createProxyMiddleware({
+    target: A2A_API_URL,
+    changeOrigin: true,
+    timeout: 120 * 1000,
+    proxyTimeout: 120 * 1000,
+    on: {
+        proxyRes: (proxyRes) => {
+            proxyRes.headers['X-Accel-Buffering'] = 'no';
+        },
+    },
+}));
+
+function routeBackendApi(req) {
+    const url = req.url || '';
+    if (url.startsWith('/writer')) return WRITER_API_URL;
+    if (url.startsWith('/email')) return EMAIL_API_URL;
+    return CHAT_API_URL;
+}
+
 // Backend API proxy — must be before body parsers and CSRF for streaming integrity.
 app.use('/api/proxy', createProxyMiddleware({
     target: CHAT_API_URL,
-    router: (req) => (req.url && req.url.startsWith('/writer') ? WRITER_API_URL : CHAT_API_URL),
+    router: routeBackendApi,
     changeOrigin: true,
     timeout: 15 * 60 * 1000,
     proxyTimeout: 15 * 60 * 1000,
