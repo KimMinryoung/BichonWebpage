@@ -457,36 +457,41 @@ header h1 {
     white-space: nowrap;
 }
 
-.toolbar-user {
-    color: var(--text-secondary);
-    max-width: 160px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.toolbar-link {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 4px 8px;
-    font-family: inherit;
+/* Login / account button in the top toolbar */
+.toolbar-account-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 14px;
+    background-color: var(--btn-bg);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
-    transition: color 0.15s;
+    transition: background-color 0.15s, border-color 0.15s;
 }
 
-.toolbar-link:hover {
+.toolbar-account-btn:hover {
+    background-color: var(--btn-hover);
+    border-color: var(--border-emphasis);
     color: var(--text-primary);
     text-decoration: none;
 }
 
-.toolbar-inline-form {
-    display: inline;
-    margin: 0;
-    white-space: nowrap;
+.account-icon {
+    width: 15px;
+    height: 15px;
+    color: currentColor;
+    flex-shrink: 0;
+}
+
+.toolbar-account-name {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media (max-width: 480px) {
@@ -494,11 +499,12 @@ header h1 {
         gap: 4px;
         font-size: 0.82rem;
     }
-    .toolbar-user {
-        max-width: 90px;
+    .toolbar-account-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
     }
-    .toolbar-link {
-        padding: 4px 4px;
+    .toolbar-account-name {
+        max-width: 90px;
     }
 }
 
@@ -1533,8 +1539,7 @@ footer .footer-tagline {
     }
 
     .home-toolbar .theme-toggle,
-    .home-toolbar .lang-btn,
-    .toolbar-link {
+    .home-toolbar .lang-btn {
         padding: 8px 10px;
     }
 

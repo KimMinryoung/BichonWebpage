@@ -1,11 +1,20 @@
 <div class="home-toolbar">
     <a href="/" class="toolbar-logo"><%= strings.siteName %></a>
     <div class="toolbar-center">
-        <% if (currentUser) { %>
-            <a href="/auth/account" class="toolbar-link"><%= currentUser.username %> <%= strings.userAuth.accountMenu %></a>
-        <% } else { %>
-            <a href="/auth/login" class="toolbar-link"><%= strings.userAuth.login %></a>
-        <% } %>
+        <a href="<%= currentUser ? '/auth/account' : '/auth/login' %>" class="toolbar-account-btn"<% if (currentUser) { %> title="<%= strings.userAuth.accountMenu %>"<% } %>>
+            <svg class="account-icon" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 aria-hidden="true">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" />
+            </svg>
+            <% if (currentUser) { %>
+                <span class="toolbar-account-name"><%= currentUser.username %></span>
+            <% } else { %>
+                <%= strings.userAuth.login %>
+            <% } %>
+        </a>
     </div>
     <div class="toolbar-right">
         <button type="button" class="theme-toggle" id="themeToggle" title="Toggle theme">&#x263E;</button>
