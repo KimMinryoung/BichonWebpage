@@ -658,5 +658,231 @@ module.exports = {
                 ['history-soviet-union', 'august-1991'],
             ],
         },
+
+        // ─── 시대별 추가 인물 (책 본문 미등장 인물 포함: scenes는 비워 둔다) ───
+        {
+            id: 'rasputin',
+            group: 'old-regime',
+            initial: 'Р',
+            cyrillic: 'Григорий Распутин',
+            name: t('그리고리 라스푸틴', 'Grigori Rasputin'),
+            years: '1869–1916',
+            epithet: t('제국의 침실까지 들어온 시베리아의 「성자」', 'The Siberian “holy man” who reached the imperial bedchamber'),
+            bio: t(
+                '황태자의 혈우병을 「다스리는」 듯 보인 신비가 황후의 절대 신임이 되었고, 1915년 차르가 전선으로 떠나자 장관들의 운명이 그의 응접실에서 갈렸다. 군주정을 구하겠다는 귀족들이 1916년 12월 그를 독살하고 쏘고 강에 던졌다 — 왕조는 그보다 두 달을 더 살았을 뿐이다.',
+                'His seeming power over the heir’s haemophilia became the Empress’s absolute faith, and once the Tsar left for the front in 1915, ministers’ fates were decided in his parlour. In December 1916 aristocrats out to save the monarchy poisoned him, shot him and put him through the river ice — the dynasty outlived him by two months.'
+            ),
+            fate: fate('murdered', '살해 1916', 'Murdered, 1916'),
+            aliases: { ko: ['라스푸틴'], en: ['Rasputin'] },
+            scenes: [],
+        },
+        {
+            id: 'plekhanov',
+            group: 'old-regime',
+            initial: 'П',
+            cyrillic: 'Георгий Плеханов',
+            name: t('게오르기 플레하노프', 'Georgi Plekhanov'),
+            years: '1856–1918',
+            epithet: t('러시아 마르크스주의의 아버지 — 제자들의 혁명에 반대하다', 'The father of Russian Marxism — against his own pupils’ revolution'),
+            bio: t(
+                '나로드니키로 출발해 러시아에 마르크스주의를 이식한 사람 — 레닌 세대 전체가 그의 책으로 배웠다. 그러나 1917년 37년 만에 귀국한 그는 10월 봉기를 「역사의 단계를 무시한 시기상조」라 규탄했다. 제자들이 세운 정권 아래에서 결핵으로 죽었고, 장례식은 반(半)야당 시위가 되었다.',
+                'He began as a Populist and transplanted Marxism into Russia — Lenin’s whole generation learned from his books. But returning in 1917 after thirty-seven years abroad, he condemned the October rising as premature, a violation of history’s stages. He died of tuberculosis under the regime his pupils had built, and his funeral became a half-opposition demonstration.'
+            ),
+            fate: fate('natural', '자연사 1918', 'Died 1918'),
+            aliases: { ko: ['플레하노프'], en: ['Plekhanov'] },
+            scenes: [],
+        },
+        {
+            id: 'martov',
+            group: 'old-regime',
+            initial: 'М',
+            cyrillic: 'Юлий Мартов',
+            name: t('율리 마르토프', 'Julius Martov'),
+            years: '1873–1923',
+            epithet: t('레닌의 가장 오랜 벗이자 가장 원칙적인 적수', 'Lenin’s oldest friend and most principled adversary'),
+            bio: t(
+                '이스크라를 레닌과 함께 만든 동지였으나, 1903년 당원 자격 조항 하나를 두고 갈라져 멘셰비키의 지도자가 되었다. 10월 이후에도 나라를 떠나지 않고 합법 야당의 자리를 지키려 애썼고, 1920년 출국을 「허락받아」 베를린에서 결핵으로 죽었다. 병상의 레닌이 그의 안부를 물었다는 이야기가 전한다.',
+                'He built Iskra alongside Lenin, then split with him in 1903 over a single clause on party membership and led the Mensheviks. After October he stayed, fighting to keep a legal opposition alive, and in 1920 was permitted to leave — he died of tuberculosis in Berlin. It is told that the dying Lenin asked after him.'
+            ),
+            fate: fate('exile', '망명 · 1923 베를린', 'Exile · d. 1923, Berlin'),
+            aliases: { ko: ['마르토프'], en: ['Martov'] },
+            scenes: [],
+        },
+        {
+            id: 'dzerzhinsky',
+            group: 'bolshevik',
+            initial: 'Д',
+            cyrillic: 'Феликс Дзержинский',
+            name: t('펠릭스 제르진스키', 'Felix Dzerzhinsky'),
+            years: '1877–1926',
+            epithet: t('「철의 펠릭스」 — 혁명의 칼을 만든 금욕주의자', '“Iron Felix” — the ascetic who forged the revolution’s sword'),
+            bio: t(
+                '차르의 감옥과 유형지에서 11년을 보낸 폴란드 귀족 가문 출신 혁명가. 1917년 12월 체카를 창설해 적색 테러를 집행했고, 요원들에게 「깨끗한 손, 차가운 머리, 뜨거운 심장」을 요구했다. 1926년 중앙위원회에서 격렬한 연설을 마친 직후 심장마비로 죽었다 — 그가 만든 기관은 이름을 바꿔 가며 그보다 오래 살았다.',
+                'Born to Polish gentry, he spent eleven years in Tsarist prisons and exile. In December 1917 he founded the Cheka and administered the Red Terror, demanding of his men “clean hands, a cool head and a burning heart.” He died of a heart attack in 1926, minutes after a furious speech to the Central Committee — the institution he built outlived him under many names.'
+            ),
+            fate: fate('natural', '자연사 1926', 'Died 1926'),
+            aliases: { ko: ['제르진스키'], en: ['Dzerzhinsky'] },
+            scenes: [],
+        },
+        {
+            id: 'kollontai',
+            group: 'bolshevik',
+            initial: 'К',
+            cyrillic: 'Александра Коллонтай',
+            name: t('알렉산드라 콜론타이', 'Alexandra Kollontai'),
+            years: '1872–1952',
+            epithet: t('여성 해방을 혁명의 의제로 만든 최초의 여성 각료', 'She made women’s liberation the revolution’s business'),
+            bio: t(
+                '장군의 딸로 태어나 세계 최초의 여성 정부 각료(복지인민위원)가 되었고, 자유연애론과 가사노동의 사회화 주장으로 당 안에서도 논쟁을 일으켰다. 노동자 반대파에 섰다가 외교관으로 「명예 유배」되었는데 — 노르웨이와 스웨덴의 대사관저가 그녀를 대숙청에서 살렸다. 옛 볼셰비키 가운데 드물게 침대에서 죽었다.',
+                'A general’s daughter who became the world’s first woman cabinet minister, as Commissar of Welfare, and scandalized even her own party with free love and the socialization of housework. Siding with the Workers’ Opposition earned her an honourable exile into diplomacy — and the embassies of Norway and Sweden carried her alive through the Terror. One of the few Old Bolsheviks to die in bed.'
+            ),
+            fate: fate('natural', '자연사 1952', 'Died 1952'),
+            aliases: { ko: ['콜론타이'], en: ['Kollontai'] },
+            scenes: [],
+        },
+        {
+            id: 'tukhachevsky',
+            group: 'stalin-era',
+            initial: 'Т',
+            cyrillic: 'Михаил Тухачевский',
+            name: t('미하일 투하쳅스키', 'Mikhail Tukhachevsky'),
+            years: '1893–1937',
+            epithet: t('「붉은 나폴레옹」 — 자신이 만든 군대의 손에 죽다', '“The Red Napoleon,” killed by the army he built'),
+            bio: t(
+                '27세에 바르샤바까지 진격한 내전의 신동이자, 크론시타트와 탐보프 농민 반란의 진압자. 종심작전 교리로 붉은 군대를 현대화한 원수였으나, 1937년 「독일 간첩」으로 몰려 비밀 재판 하루 만에 총살되었다. 그와 함께 시작된 장교단 숙청의 청구서는 1941년 6월에 도착했다.',
+                'The civil-war prodigy who marched on Warsaw at twenty-seven — and the suppressor of Kronstadt and the Tambov peasant rising. The marshal whose deep-operations doctrine modernized the Red Army was branded a German spy in 1937 and shot within a day of a secret trial. The bill for the officer-corps purge that began with him was delivered in June 1941.'
+            ),
+            fate: fate('executed', '처형 1937', 'Shot, 1937'),
+            aliases: { ko: ['투하쳅스키'], en: ['Tukhachevsky'] },
+            scenes: [],
+        },
+        {
+            id: 'yezhov',
+            group: 'stalin-era',
+            initial: 'Е',
+            cyrillic: 'Николай Ежов',
+            name: t('니콜라이 예조프', 'Nikolai Yezhov'),
+            years: '1895–1940',
+            epithet: t('대숙청의 집행자, 같은 지하실에서 끝나다', 'The executor of the Terror, finished in the same cellar'),
+            bio: t(
+                '키 151센티미터로 「피의 난쟁이」라 불린 내무인민위원. 1937~38년의 대테러를 집행해 그 시기에 「예조프시나(예조프의 시대)」라는 이름이 붙었다. 쓸모가 다하자 그 자신이 「간첩」으로 체포되어, 자신이 세운 절차 그대로 1940년 총살되었다. 오늘날 그는 스탈린 곁에서 지워진 사진 속의 빈자리로 가장 유명하다.',
+                'The five-foot Commissar of Internal Affairs whom prisoners called “the bloody dwarf.” He administered the Terror of 1937–38 — an era named the Yezhovshchina after him — and when his usefulness ended, he was arrested as a “spy” himself and shot in 1940 by the very procedure he had built. He is most famous today as the empty space airbrushed out of the photographs beside Stalin.'
+            ),
+            fate: fate('executed', '처형 1940', 'Shot, 1940'),
+            aliases: { ko: ['예조프'], en: ['Yezhov'] },
+            scenes: [],
+        },
+        {
+            id: 'ordzhonikidze',
+            group: 'stalin-era',
+            initial: 'О',
+            cyrillic: 'Серго Орджоникидзе',
+            name: t('세르고 오르조니키제', 'Sergo Ordzhonikidze'),
+            years: '1886–1937',
+            epithet: t('대전환의 공업 사령관, 스스로 방아쇠를 당기다', 'Commander of the industrial front — he pulled the trigger himself'),
+            bio: t(
+                '스탈린의 오랜 조지아 동향 친구이자 중공업인민위원 — 마그니토고르스크의 용광로들이 그의 관할이었다. 대숙청이 자신의 공장장들과 친형을 삼키자 스탈린과 정면으로 충돌했고, 1937년 2월 자택에서 권총으로 목숨을 끊었다. 공식 발표는 심장마비였다.',
+                'Stalin’s old Georgian comrade and Commissar of Heavy Industry — the blast furnaces of Magnitogorsk answered to him. When the Terror began devouring his plant directors and his own brother, he collided head-on with Stalin, and in February 1937 shot himself at home. The official bulletin said heart failure.'
+            ),
+            fate: fate('suicide', '자살 1937', 'Suicide, 1937'),
+            aliases: { ko: ['오르조니키제'], en: ['Ordzhonikidze'] },
+            scenes: [],
+        },
+        {
+            id: 'korolev',
+            group: 'thaw',
+            initial: 'К',
+            cyrillic: 'Сергей Королёв',
+            name: t('세르게이 코롤료프', 'Sergei Korolev'),
+            years: '1907–1966',
+            epithet: t('수용소에서 우주로 — 이름조차 국가기밀이었던 설계자', 'From the Gulag to space — the designer whose name was a state secret'),
+            bio: t(
+                '1938년 숙청에 걸려 콜리마 금광에서 건강과 이를 잃은 로켓 기술자. 살아 돌아와 스푸트니크와 가가린을 쏘아 올린 로켓을 만들었지만, 생전에 그의 이름은 기밀이었다 — 노벨상 위원회의 문의에 소련은 「수석설계자」라고만 답했다. 수용소가 망가뜨린 몸은 1966년의 수술을 견디지 못했다.',
+                'A rocket engineer swept up in the 1938 purge, he left his health and his teeth in the Kolyma gold mines. He came back to build the rockets that lifted Sputnik and Gagarin — yet in his lifetime his name was classified: to the Nobel committee’s inquiry, the USSR answered only “the Chief Designer.” The body the camps had broken did not survive surgery in 1966.'
+            ),
+            fate: fate('natural', '자연사 1966', 'Died 1966'),
+            aliases: { ko: ['코롤료프'], en: ['Korolev'] },
+            scenes: [],
+        },
+        {
+            id: 'gagarin',
+            group: 'thaw',
+            initial: 'Г',
+            cyrillic: 'Юрий Гагарин',
+            name: t('유리 가가린', 'Yuri Gagarin'),
+            years: '1934–1968',
+            epithet: t('인류 최초로 지구를 벗어난 미소', 'The first human smile to leave the Earth'),
+            bio: t(
+                '집단농장 목수의 아들이 1961년 4월 12일, 108분 만에 지구를 한 바퀴 돌았다 — 「파예할리!(갑시다!)」. 냉전의 한복판에서 두 진영이 함께 사랑한 유일한 사람이 되었고, 우주로 돌아갈 날을 준비하며 훈련하다 1968년 미그기 추락으로 죽었다. 서른네 살이었다.',
+                'A collective-farm carpenter’s son circled the planet in 108 minutes on April 12, 1961 — “Poyekhali!”, let’s go. In the middle of the Cold War he became the one man both camps loved. Training for a return to space, he died in a MiG crash in 1968. He was thirty-four.'
+            ),
+            fate: fate('killed', '추락사 1968', 'Killed in crash, 1968'),
+            aliases: { ko: ['가가린'], en: ['Gagarin'] },
+            scenes: [],
+        },
+        {
+            id: 'solzhenitsyn',
+            group: 'thaw',
+            initial: 'С',
+            cyrillic: 'Александр Солженицын',
+            name: t('알렉산드르 솔제니친', 'Aleksandr Solzhenitsyn'),
+            years: '1918–2008',
+            epithet: t('수용소 군도를 세계에 증언한 죄수 Щ-854', 'Prisoner Shch-854, who told the world about the Archipelago'),
+            bio: t(
+                '포병 대위로 참전 중 사신(私信)에서 스탈린을 비꼬았다가 8년형을 받았다. 『이반 데니소비치의 하루』(1962)로 해빙의 상징이 되었고, 『수용소군도』로 노벨상과 국외 추방(1974)을 함께 얻었다. 1994년 귀국해 러시아에서 죽었다 — 자신이 증언한 체제보다 17년을 더 살았다.',
+                'An artillery captain sentenced to eight years for mocking Stalin in a private letter. One Day in the Life of Ivan Denisovich (1962) made him the emblem of the thaw; The Gulag Archipelago earned him the Nobel Prize and deportation (1974) together. He returned in 1994 and died in Russia — outliving the system he had testified against by seventeen years.'
+            ),
+            fate: fate('exile', '추방 1974 · 귀국 1994', 'Deported 1974 · returned 1994'),
+            aliases: { ko: ['솔제니친'], en: ['Solzhenitsyn'] },
+            scenes: [],
+        },
+        {
+            id: 'shevardnadze',
+            group: 'perestroika',
+            initial: 'Ш',
+            cyrillic: 'Эдуард Шеварднадзе',
+            name: t('예두아르트 셰바르드나제', 'Eduard Shevardnadze'),
+            years: '1928–2014',
+            epithet: t('냉전을 끝낸 외무장관, 내전의 대통령으로', 'The foreign minister who ended the Cold War — then a president in a civil war'),
+            bio: t(
+                '그로미코의 「니예트」 28년을 물려받아, 5년 만에 군축과 아프가니스탄 철군과 독일 통일 협상을 끝냈다. 1990년 12월 「독재가 다가오고 있다」고 경고하며 전격 사임했고 — 8개월 뒤의 쿠데타가 그 예언을 증명했다. 소련이 무너지자 고향 조지아로 돌아가 내전과 암살 기도 속에서 대통령으로 통치했다.',
+                'Inheriting twenty-eight years of Gromyko’s “nyet,” he needed five to negotiate the arms cuts, the Afghan withdrawal and German unification. In December 1990 he resigned overnight, warning that “dictatorship is coming” — a prophecy the coup honoured eight months later. When the Union fell he went home to Georgia, governing as president through civil war and assassination attempts.'
+            ),
+            fate: fate('natural', '자연사 2014', 'Died 2014'),
+            aliases: { ko: ['셰바르드나제'], en: ['Shevardnadze'] },
+            scenes: [],
+        },
+        {
+            id: 'yakovlev',
+            group: 'perestroika',
+            initial: 'Я',
+            cyrillic: 'Александр Яковлев',
+            name: t('알렉산드르 야코블레프', 'Alexander Yakovlev'),
+            years: '1923–2005',
+            epithet: t('글라스노스트의 설계자 — 이념 담당이 이념을 해체하다', 'The architect of glasnost — the ideology chief who dismantled the ideology'),
+            bio: t(
+                '전쟁에서 다리를 다친 상이군인이자 당 선전부의 엘리트. 러시아 민족주의를 비판한 논문으로 캐나다 대사 10년의 「유배」를 살았고, 그곳에서 시찰 온 고르바초프를 만났다. 정치국의 이념 담당으로 글라스노스트와 역사 재심을 밀어붙였고, 말년에는 비밀 의정서와 숙청 문서의 공개·복권 작업을 이끌었다.',
+                'A war invalid and an elite of the party’s propaganda department. An article criticizing Russian nationalism bought him a ten-year “exile” as ambassador to Canada — where he met a visiting Gorbachev. As the Politburo’s ideology chief he drove glasnost and the re-examination of history, and in his last years led the publication of the secret protocols and the rehabilitation of the purged.'
+            ),
+            fate: fate('natural', '자연사 2005', 'Died 2005'),
+            aliases: { ko: ['야코블레프'], en: ['Yakovlev'] },
+            scenes: [],
+        },
+        {
+            id: 'kryuchkov',
+            group: 'perestroika',
+            initial: 'К',
+            cyrillic: 'Владимир Крючков',
+            name: t('블라디미르 크류치코프', 'Vladimir Kryuchkov'),
+            years: '1924–2007',
+            epithet: t('8월 쿠데타를 설계한 KGB 의장', 'The KGB chairman who designed the August coup'),
+            bio: t(
+                '1956년 부다페스트의 안드로포프 밑에서 경력을 시작해 KGB 의장까지 오른 심복. 1991년 8월 국가비상사태위원회를 조직해 고르바초프를 크림에 연금했으나, 군이 움직이지 않자 쿠데타는 사흘 만에 무너졌다. 감옥에서 회고록을 썼고, 1994년 사면되어 조용히 죽었다 — 그가 지키려던 나라보다 16년을 더 살았다.',
+                'Andropov’s man from Budapest 1956, risen to chairman of the KGB. In August 1991 he organized the State Emergency Committee and confined Gorbachev in Crimea — and when the army would not move, the coup collapsed in three days. He wrote his memoirs in prison, was amnestied in 1994, and died quietly — outliving the country he meant to save by sixteen years.'
+            ),
+            fate: fate('deposed', '체포 1991 · 사면 1994', 'Arrested 1991 · amnestied 1994'),
+            aliases: { ko: ['크류치코프'], en: ['Kryuchkov'] },
+            scenes: [['history-soviet-union', 'august-1991']],
+        },
     ],
 };

@@ -17,7 +17,7 @@
 }
 
 .commulingo-kicker {
-    color: var(--accent);
+    color: var(--link);
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0;
@@ -157,7 +157,7 @@
 .commu-volume-toggle-icon {
     align-items: center;
     border: 1px solid var(--border);
-    color: var(--accent);
+    color: var(--link);
     display: inline-flex;
     flex: 0 0 auto;
     font-size: 1.25rem;
@@ -399,7 +399,7 @@
 
 .commu-lesson-title {
     align-items: center;
-    color: var(--accent);
+    color: var(--link);
     display: flex;
     flex-wrap: wrap;
     font-weight: 700;
@@ -450,7 +450,7 @@
 }
 
 .commu-diagram-node strong {
-    color: var(--accent);
+    color: var(--link);
     font-size: 0.88rem;
     line-height: 1.25;
 }
@@ -480,7 +480,7 @@
 }
 
 .commu-brief-section h3 {
-    color: var(--accent);
+    color: var(--link);
     font-size: 0.94rem;
     margin: 0;
 }
@@ -730,7 +730,7 @@
 }
 
 .commu-back-link:hover {
-    color: var(--accent);
+    color: var(--link);
 }
 
 .commulingo-resume {
@@ -947,7 +947,7 @@
 }
 
 .commu-graph-kicker {
-    color: var(--accent);
+    color: var(--link);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -988,7 +988,7 @@
     color: var(--text-secondary);
 }
 
-.commu-graph-legend-item.is-plain { border-color: var(--accent); color: var(--accent); }
+.commu-graph-legend-item.is-plain { border-color: var(--accent); color: var(--link); }
 .commu-graph-legend-item.is-engels { border-color: var(--accent-red); color: var(--accent-red); }
 .commu-graph-legend-item.is-critique { border-color: var(--accent-green); color: var(--accent-green); }
 
@@ -1020,7 +1020,7 @@
     left: 50%;
     bottom: -26px;
     transform: translateX(-50%);
-    color: var(--accent);
+    color: var(--link);
     font-size: 1.1rem;
     line-height: 1;
 }
@@ -1106,7 +1106,7 @@
     padding: 4px 0 4px 14px;
 }
 
-.commu-graph-stage.is-plain { border-left-color: var(--accent); }
+.commu-graph-stage.is-plain { border-left-color: var(--link); }
 .commu-graph-stage.is-engels { border-left-color: var(--accent-red); }
 .commu-graph-stage.is-critique { border-left-color: var(--accent-green); }
 
@@ -1120,7 +1120,7 @@
     color: var(--text-secondary);
 }
 
-.commu-graph-stage.is-plain .commu-graph-stage-label { color: var(--accent); }
+.commu-graph-stage.is-plain .commu-graph-stage-label { color: var(--link); }
 .commu-graph-stage.is-engels .commu-graph-stage-label { color: var(--accent-red); }
 .commu-graph-stage.is-critique .commu-graph-stage-label { color: var(--accent-green); }
 
@@ -1254,7 +1254,7 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--link);
 }
 
 .commu-case-scene {
@@ -1283,7 +1283,7 @@
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--link);
     margin-bottom: 4px;
 }
 
@@ -1330,7 +1330,7 @@
 }
 
 .commu-debate-line.is-engels { border-left-color: var(--accent-red); }
-.commu-debate-line.is-critic { border-left-color: var(--accent); }
+.commu-debate-line.is-critic { border-left-color: var(--link); }
 
 .commu-debate-who {
     display: block;
@@ -1341,7 +1341,7 @@
 }
 
 .commu-debate-line.is-engels .commu-debate-who { color: var(--accent-red); }
-.commu-debate-line.is-critic .commu-debate-who { color: var(--accent); }
+.commu-debate-line.is-critic .commu-debate-who { color: var(--link); }
 
 .commu-debate-line p {
     margin: 0;
@@ -1412,7 +1412,7 @@
 }
 
 .commu-dc-stance.is-radical { border-color: var(--accent-red); color: var(--accent-red); }
-.commu-dc-stance.is-cautious { border-color: var(--accent); color: var(--accent); }
+.commu-dc-stance.is-cautious { border-color: var(--accent); color: var(--link); }
 .commu-dc-stance.is-reform { border-color: var(--accent-green); color: var(--accent-green); }
 
 .commu-dc-progress {
@@ -1454,7 +1454,7 @@
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    color: var(--accent);
+    color: var(--link);
 }
 
 .commu-dc-era-head h2 {
@@ -1518,7 +1518,7 @@
     flex-shrink: 0;
     font-size: 0.76rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--link);
     min-width: 92px;
 }
 
@@ -1567,7 +1567,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--accent);
+    color: var(--link);
 }
 
 .commu-dc-briefing {
@@ -1663,7 +1663,7 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 }
 
 .commu-dc-block.is-outcome { border-left-color: var(--accent-red); }
-.commu-dc-block.is-ripple { border-left-color: var(--accent); }
+.commu-dc-block.is-ripple { border-left-color: var(--link); }
 .commu-dc-block.is-insight { border-left-color: var(--accent-green); }
 
 .commu-dc-block-label {
@@ -1676,7 +1676,7 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 }
 
 .commu-dc-block.is-outcome .commu-dc-block-label { color: var(--accent-red); }
-.commu-dc-block.is-ripple .commu-dc-block-label { color: var(--accent); }
+.commu-dc-block.is-ripple .commu-dc-block-label { color: var(--link); }
 .commu-dc-block.is-insight .commu-dc-block-label { color: var(--accent-green); }
 
 .commu-dc-block p {
@@ -1728,7 +1728,7 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 }
 
 .commu-dc-bar-label.is-radical { color: var(--accent-red); }
-.commu-dc-bar-label.is-cautious { color: var(--accent); }
+.commu-dc-bar-label.is-cautious { color: var(--link); }
 .commu-dc-bar-label.is-reform { color: var(--accent-green); }
 
 .commu-dc-bar-track {
@@ -1794,9 +1794,9 @@ button.commu-dc-option:hover { border-color: var(--accent); }
     margin-top: 10px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
-    border-bottom: 1px dashed var(--accent);
+    border-bottom: 1px dashed color-mix(in srgb, var(--link) 55%, transparent);
     padding-bottom: 1px;
 }
 
@@ -1806,9 +1806,9 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 
 /* person-name links inside decision book prose */
 .commu-person-link {
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
-    border-bottom: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+    border-bottom: 1px dashed color-mix(in srgb, var(--link) 55%, transparent);
 }
 
 .commu-person-link:hover {
@@ -1875,8 +1875,8 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 }
 
 .commu-person-card.is-focused {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+    border-color: var(--link);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--link) 35%, transparent);
 }
 
 .commu-person-top {
@@ -1956,6 +1956,7 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 .commu-fate.is-executed,
 .commu-fate.is-assassinated,
 .commu-fate.is-murdered,
+.commu-fate.is-suicide,
 .commu-fate.is-killed {
     border-color: color-mix(in srgb, #d05252 60%, transparent);
     color: #d05252;
@@ -2017,7 +2018,7 @@ button.commu-dc-option:hover { border-color: var(--accent); }
     padding: 5px 9px;
     border-radius: 999px;
     border: 1px solid var(--border);
-    color: var(--accent);
+    color: var(--link);
     text-decoration: none;
     background: var(--bg-surface);
     max-width: 100%;
@@ -2027,7 +2028,30 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 }
 
 .commu-scene-chip:hover {
-    border-color: var(--accent);
+    border-color: var(--link);
+}
+
+/* book-list group header row: title + people-index CTA */
+.commu-book-group-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.commu-group-cta {
+    flex: 0 0 auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px dashed color-mix(in srgb, var(--link) 55%, transparent);
+    padding-bottom: 1px;
+    white-space: nowrap;
+}
+
+.commu-group-cta:hover {
+    border-bottom-style: solid;
 }
 
 @media (max-width: 540px) {

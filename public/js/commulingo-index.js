@@ -95,7 +95,7 @@
         { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id) || /^marx-/.test(b.id); } },
         { label: function() { return strings.authorEngels || '프리드리히 엥겔스'; }, match: function(b) { return /^engels/.test(b.id); } },
         { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } },
-        { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); } }
+        { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); }, peopleLink: true }
     ];
 
     function groupBooks() {
@@ -104,7 +104,7 @@
         bookGroups.forEach(function(def) {
             var items = books.filter(def.match);
             items.forEach(function(book) { assigned[book.id] = true; });
-            if (items.length) groups.push({ label: def.label(), books: items });
+            if (items.length) groups.push({ label: def.label(), books: items, peopleLink: def.peopleLink });
         });
         var rest = books.filter(function(book) { return !assigned[book.id]; });
         if (rest.length) groups.push({ label: strings.authorOther || (lang === 'en' ? 'Other' : '그 외'), books: rest });
@@ -124,13 +124,23 @@
         groupBooks().forEach(function(group) {
             var section = document.createElement('section');
             section.className = 'commu-book-group';
+            var head = document.createElement('div');
+            head.className = 'commu-book-group-head';
             var heading = document.createElement('h3');
             heading.className = 'commu-book-group-title';
             heading.textContent = group.label;
+            head.appendChild(heading);
+            if (group.peopleLink) {
+                var peopleCta = document.createElement('a');
+                peopleCta.className = 'commu-group-cta';
+                peopleCta.setAttribute('href', '/commulingo/people');
+                peopleCta.textContent = (lang === 'en' ? 'People of the era' : '인물 사전') + ' →';
+                head.appendChild(peopleCta);
+            }
             var grid = document.createElement('div');
             grid.className = 'commulingo-books';
             group.books.forEach(function(book) { grid.appendChild(createBookCard(book)); });
-            section.appendChild(heading);
+            section.appendChild(head);
             section.appendChild(grid);
             els.list.appendChild(section);
         });
