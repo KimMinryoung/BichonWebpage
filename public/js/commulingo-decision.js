@@ -52,6 +52,42 @@
             .replace(/'/g, '&#39;');
     }
 
+    // Person-name auto-linking. `data.people` = [{id, name, epithet, aliases}]
+    // for the current language. BLOCKED lists compounds that contain an alias
+    // but must not link (Hangul has no \b word boundary, so 레닌 would otherwise
+    // match inside 레닌그라드); they join the alternation so the regex consumes
+    // them first, and the replacer passes them through untouched.
+    var BLOCKED = ['레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의'];
+    var personByAlias = {};
+    var aliasTokens = [];
+    (data.people || []).forEach(function(person) {
+        (person.aliases || []).forEach(function(alias) {
+            if (!alias || personByAlias[alias]) return;
+            personByAlias[alias] = person;
+            aliasTokens.push(alias);
+        });
+    });
+    var linkPattern = null;
+    if (aliasTokens.length) {
+        var tokens = BLOCKED.concat(aliasTokens).sort(function(a, b) { return b.length - a.length; });
+        var alternation = tokens.map(function(token) {
+            return token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }).join('|');
+        linkPattern = new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
+    }
+
+    // escape + linkify: use for narrative prose only, never inside <button>.
+    function rich(value) {
+        var escaped = escapeHtml(text(value));
+        if (!linkPattern) return escaped;
+        return escaped.replace(linkPattern, function(match) {
+            var person = personByAlias[match];
+            if (!person) return match;
+            return '<a class="commu-person-link" href="/commulingo/people#p-' + person.id
+                + '" title="' + escapeHtml(person.name + ' — ' + person.epithet) + '">' + match + '</a>';
+        });
+    }
+
     function loadChoices() {
         try {
             var parsed = JSON.parse(localStorage.getItem(storageKey) || '{}');
@@ -126,6 +162,19 @@
         if (epi) root.appendChild(epi);
         updateProgress();
         openNextUndecided(0);
+        openHashEpisode();
+    }
+
+    // Deep links from the people page ("등장 장면" chips) arrive as
+    // /commulingo/book/<id>#<episodeId> — open that scene and scroll to it once.
+    var hashHandled = false;
+    function openHashEpisode() {
+        if (hashHandled) return;
+        var hash = window.location.hash ? window.location.hash.slice(1) : '';
+        if (!hash || !epNodes[hash]) return;
+        hashHandled = true;
+        setOpen(epNodes[hash], true);
+        epNodes[hash].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function renderCentral() {
@@ -138,7 +187,7 @@
         box.innerHTML = [
             '<span class="commu-graph-kicker">' + escapeHtml(en ? 'Central question' : '핵심 질문') + '</span>',
             '<h2 class="commu-graph-question">' + escapeHtml(text(timeline.question)) + '</h2>',
-            timeline.thesis ? '<p class="commu-graph-thesis">' + escapeHtml(text(timeline.thesis)) + '</p>' : '',
+            timeline.thesis ? '<p class="commu-graph-thesis">' + rich(timeline.thesis) + '</p>' : '',
             timeline.howTo ? '<p class="commu-graph-hint">' + escapeHtml(text(timeline.howTo)) + '</p>' : '',
             '<div class="commu-dc-legend">' + legend + '</div>',
             '<div class="commu-dc-progress"><span id="commuDcProgressText"></span>',
@@ -163,7 +212,7 @@
             '<header class="commu-dc-era-head">',
             '<span class="commu-dc-era-range">' + escapeHtml(text(era.range)) + '</span>',
             '<h2>' + escapeHtml(text(era.title)) + '</h2>',
-            era.intro ? '<p>' + escapeHtml(text(era.intro)) + '</p>' : '',
+            era.intro ? '<p>' + rich(era.intro) + '</p>' : '',
             '</header>'
         ].join('');
         var list = document.createElement('ol');
@@ -221,8 +270,8 @@
         ].join('');
 
         var parts = [
-            '<p class="commu-dc-role"><span>' + escapeHtml(L.role) + '</span> ' + escapeHtml(text(ep.role)) + '</p>',
-            '<p class="commu-dc-briefing">' + escapeHtml(text(ep.briefing)) + '</p>',
+            '<p class="commu-dc-role"><span>' + escapeHtml(L.role) + '</span> ' + rich(ep.role) + '</p>',
+            '<p class="commu-dc-briefing">' + rich(ep.briefing) + '</p>',
             '<p class="commu-dc-question">' + escapeHtml(text(ep.question)) + '</p>'
         ];
 
@@ -244,7 +293,7 @@
                 if (opt.stance) cls += ' stance-' + opt.stance;
                 return '<div class="' + cls + '">'
                     + '<span class="commu-dc-option-label">' + escapeHtml(text(opt.label)) + (chips ? '<span class="commu-dc-chips">' + chips + '</span>' : '') + '</span>'
-                    + (opt.note ? '<p class="commu-dc-option-note">' + escapeHtml(text(opt.note)) + '</p>' : '')
+                    + (opt.note ? '<p class="commu-dc-option-note">' + rich(opt.note) + '</p>' : '')
                     + '</div>';
             }).join('') + '</div>');
 
@@ -254,9 +303,9 @@
             else matchLine = chosenId === ep.actualId ? L.matched : L.diverged;
             parts.push('<p class="commu-dc-matchline ' + (chosenId === ep.actualId && scored ? 'is-match' : '') + '">' + escapeHtml(matchLine) + '</p>');
 
-            parts.push('<div class="commu-dc-block is-outcome"><span class="commu-dc-block-label">' + escapeHtml(L.outcome) + '</span><p>' + escapeHtml(text(ep.outcome)) + '</p></div>');
-            if (ep.ripple) parts.push('<div class="commu-dc-block is-ripple"><span class="commu-dc-block-label">→ ' + escapeHtml(L.ripple) + '</span><p>' + escapeHtml(text(ep.ripple)) + '</p></div>');
-            if (ep.insight) parts.push('<div class="commu-dc-block is-insight"><span class="commu-dc-block-label">' + escapeHtml(L.insight) + '</span><p>' + escapeHtml(text(ep.insight)) + '</p></div>');
+            parts.push('<div class="commu-dc-block is-outcome"><span class="commu-dc-block-label">' + escapeHtml(L.outcome) + '</span><p>' + rich(ep.outcome) + '</p></div>');
+            if (ep.ripple) parts.push('<div class="commu-dc-block is-ripple"><span class="commu-dc-block-label">→ ' + escapeHtml(L.ripple) + '</span><p>' + rich(ep.ripple) + '</p></div>');
+            if (ep.insight) parts.push('<div class="commu-dc-block is-insight"><span class="commu-dc-block-label">' + escapeHtml(L.insight) + '</span><p>' + rich(ep.insight) + '</p></div>');
             parts.push('<button type="button" class="commu-dc-redo">' + escapeHtml(L.redo) + '</button>');
         }
 

@@ -1,8 +1,27 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const db = require('../config/database');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 
 const router = express.Router();
+
+const PEOPLE_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'people.js');
+let peopleCache = null;
+
+function loadCommuLingoPeople() {
+    let mtimeMs = 0;
+    try {
+        mtimeMs = fs.statSync(PEOPLE_PATH).mtimeMs;
+    } catch (err) {
+        return { groups: [], people: [] };
+    }
+    if (peopleCache && peopleCache.mtimeMs === mtimeMs) return peopleCache.data;
+    delete require.cache[require.resolve(PEOPLE_PATH)];
+    const data = require(PEOPLE_PATH);
+    peopleCache = { mtimeMs, data };
+    return data;
+}
 
 function setPublicDataCache(req, res, version) {
     if (req.query && req.query.v === version) {
@@ -75,15 +94,83 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/people', (req, res) => {
+    const lang = res.locals.lang;
+    const data = loadCommuLingoPeople();
+    const catalog = loadCommuLingoCatalog();
+
+    const sceneIndex = {};
+    (catalog.collections || []).forEach(collection => {
+        const timeline = collection.decisionTimeline;
+        if (!timeline) return;
+        (timeline.eras || []).forEach(era => {
+            (era.episodes || []).forEach(episode => {
+                sceneIndex[`${collection.id}/${episode.id}`] = {
+                    bookId: collection.id,
+                    episodeId: episode.id,
+                    title: localize(episode.title, lang),
+                    bookTitle: localize(collection.bookTitle || collection.title, lang),
+                };
+            });
+        });
+    });
+
+    const people = (data.people || []).map(person => ({
+        id: person.id,
+        group: person.group,
+        initial: person.initial,
+        cyrillic: person.cyrillic,
+        name: localize(person.name, lang),
+        years: person.years,
+        epithet: localize(person.epithet, lang),
+        bio: localize(person.bio, lang),
+        fateKind: person.fate ? person.fate.kind : '',
+        fateLabel: person.fate ? localize(person.fate.label, lang) : '',
+        scenes: (person.scenes || [])
+            .map(scene => sceneIndex[`${scene[0]}/${scene[1]}`])
+            .filter(Boolean),
+    }));
+
+    const groups = (data.groups || []).map(group => ({
+        id: group.id,
+        range: group.range || '',
+        title: localize(group.title, lang),
+        blurb: localize(group.blurb, lang),
+        people: people.filter(person => person.group === group.id),
+    })).filter(group => group.people.length);
+
+    res.render('public/commulingo-people', {
+        groups,
+        peopleCount: people.length,
+        pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
+        pageDescription: lang === 'en'
+            ? 'The people who stood at the forks of the two decision-simulation history books.'
+            : '두 권의 결정 시뮬레이션 역사책, 그 갈림길에 서 있던 사람들.',
+        pagePath: '/commulingo/people',
+        extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+    });
+});
+
 router.get('/book/:collectionId', (req, res) => {
     const collectionId = typeof req.params.collectionId === 'string' ? req.params.collectionId.trim() : '';
     const catalog = loadCommuLingoCatalog();
     const collection = (catalog.collections || []).find(item => item.id === collectionId);
     if (!collection) return res.redirect('/commulingo');
 
+    let decisionPeople = [];
+    if (collection.format === 'decision-history') {
+        decisionPeople = (loadCommuLingoPeople().people || []).map(person => ({
+            id: person.id,
+            name: localize(person.name, res.locals.lang),
+            epithet: localize(person.epithet, res.locals.lang),
+            aliases: (person.aliases && person.aliases[res.locals.lang]) || [],
+        })).filter(person => person.aliases.length);
+    }
+
     const bookTitle = localize(collection.title, res.locals.lang);
     res.render('public/commulingo-book', {
         lessons: { version: catalog.version, collections: [collection] },
+        decisionPeople,
         bookFormat: collection.format || 'quiz',
         bookTitle,
         bookDescription: localize(collection.description, res.locals.lang),

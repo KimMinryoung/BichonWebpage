@@ -1786,3 +1786,260 @@ button.commu-dc-option:hover { border-color: var(--accent); }
     .commu-dc-episode.is-open .commu-dc-body { padding: 2px 14px 16px; }
     .commu-dc-bar-label { width: 88px; }
 }
+
+/* ── People index (인물 사전) ─────────────────────────────── */
+
+.commu-people-cta {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--accent);
+    padding-bottom: 1px;
+}
+
+.commu-people-cta:hover {
+    border-bottom-style: solid;
+}
+
+/* person-name links inside decision book prose */
+.commu-person-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.commu-person-link:hover {
+    border-bottom-style: solid;
+}
+
+.commu-people-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.commu-people-group {
+    margin-top: 34px;
+}
+
+.commu-people-group-head {
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 4px solid var(--border);
+}
+
+.commu-people-group.is-old-regime .commu-people-group-head { border-left-color: #b08d3f; }
+.commu-people-group.is-bolshevik .commu-people-group-head { border-left-color: #c0453c; }
+.commu-people-group.is-stalin-era .commu-people-group-head { border-left-color: #8a93a6; }
+.commu-people-group.is-thaw .commu-people-group-head { border-left-color: #4d8fc4; }
+.commu-people-group.is-perestroika .commu-people-group-head { border-left-color: #4aa578; }
+
+.commu-people-range {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+}
+
+.commu-people-group-head h2 {
+    margin: 2px 0 4px;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.commu-people-group-head p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+}
+
+.commu-people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+}
+
+.commu-person-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    scroll-margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.commu-person-card.is-focused {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.commu-person-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.commu-person-medal {
+    flex: 0 0 auto;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    background: var(--bg-surface);
+    border: 2px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.commu-person-medal.is-old-regime { border-color: #b08d3f; color: #b08d3f; }
+.commu-person-medal.is-bolshevik { border-color: #c0453c; color: #c0453c; }
+.commu-person-medal.is-stalin-era { border-color: #8a93a6; color: #8a93a6; }
+.commu-person-medal.is-thaw { border-color: #4d8fc4; color: #4d8fc4; }
+.commu-person-medal.is-perestroika { border-color: #4aa578; color: #4aa578; }
+
+.commu-person-idbox {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.commu-person-idbox h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.25;
+}
+
+.commu-person-cyr {
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.commu-person-sidebox {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.commu-person-years {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.commu-fate {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.commu-fate.is-executed,
+.commu-fate.is-assassinated,
+.commu-fate.is-murdered,
+.commu-fate.is-killed {
+    border-color: color-mix(in srgb, #d05252 60%, transparent);
+    color: #d05252;
+    background: color-mix(in srgb, #d05252 10%, transparent);
+}
+
+.commu-fate.is-deposed {
+    border-color: color-mix(in srgb, #d09040 60%, transparent);
+    color: #c07f2d;
+    background: color-mix(in srgb, #d09040 10%, transparent);
+}
+
+.commu-fate.is-exile {
+    border-color: color-mix(in srgb, #9d7bd8 60%, transparent);
+    color: #9d7bd8;
+    background: color-mix(in srgb, #9d7bd8 10%, transparent);
+}
+
+.commu-fate.is-natural {
+    border-color: var(--border);
+    color: var(--text-muted);
+    background: var(--bg-surface);
+}
+
+.commu-person-epithet {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--text-primary);
+}
+
+.commu-person-bio {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+.commu-person-scenes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+.commu-person-scenes-label {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    margin-right: 2px;
+}
+
+.commu-scene-chip {
+    display: inline-block;
+    font-size: 0.76rem;
+    line-height: 1;
+    padding: 5px 9px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    text-decoration: none;
+    background: var(--bg-surface);
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.commu-scene-chip:hover {
+    border-color: var(--accent);
+}
+
+@media (max-width: 540px) {
+    .commu-people-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .commu-person-sidebox {
+        align-items: flex-start;
+    }
+
+    .commu-person-top {
+        flex-wrap: wrap;
+    }
+}

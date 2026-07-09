@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <%
+    var en = lang === 'en';
+    var fateIcons = {
+        executed: '✕', assassinated: '✕', murdered: '✕', killed: '✕',
+        deposed: '↓', exile: '→', natural: '○'
+    };
+    %>
+    <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo">← <%= strings.commuLingo.backToBooks %></a>
+
+        <header class="box commulingo-hero commulingo-hero--graph">
+            <div>
+                <h1><%= en ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들' %></h1>
+                <p><%= en
+                    ? 'The ' + peopleCount + ' people who stood at the forks of the two decision-simulation books. Each card ends with a fate chip — notice how rare “died of old age” is on this page. That, too, is the lesson.'
+                    : '두 권의 결정 시뮬레이션 — 러시아 혁명사와 소련사 — 의 갈림길에 서 있던 ' + peopleCount + '인. 카드마다 붙은 운명 칩에서 「자연사」가 얼마나 드문지 눈여겨보세요. 그것 자체가 이 두 책의 주제입니다.' %></p>
+                <p class="commu-people-legend" aria-label="<%= en ? 'Fate legend' : '운명 칩 범례' %>">
+                    <span class="commu-fate is-executed">✕ <%= en ? 'executed · assassinated' : '처형 · 암살 · 살해' %></span>
+                    <span class="commu-fate is-deposed">↓ <%= en ? 'deposed' : '실각' %></span>
+                    <span class="commu-fate is-exile">→ <%= en ? 'exile' : '망명 · 유형' %></span>
+                    <span class="commu-fate is-natural">○ <%= en ? 'natural death' : '자연사' %></span>
+                </p>
+            </div>
+        </header>
+
+        <% groups.forEach(function(group) { %>
+        <section class="commu-people-group is-<%= group.id %>">
+            <header class="commu-people-group-head">
+                <span class="commu-people-range"><%= group.range %></span>
+                <h2><%= group.title %></h2>
+                <p><%= group.blurb %></p>
+            </header>
+            <div class="commu-people-grid">
+                <% group.people.forEach(function(person) { %>
+                <article class="commu-person-card" id="p-<%= person.id %>">
+                    <div class="commu-person-top">
+                        <span class="commu-person-medal is-<%= group.id %>" aria-hidden="true"><%= person.initial %></span>
+                        <div class="commu-person-idbox">
+                            <h3><%= person.name %></h3>
+                            <span class="commu-person-cyr"><%= person.cyrillic %></span>
+                        </div>
+                        <div class="commu-person-sidebox">
+                            <span class="commu-person-years"><%= person.years %></span>
+                            <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
+                        </div>
+                    </div>
+                    <p class="commu-person-epithet"><%= person.epithet %></p>
+                    <p class="commu-person-bio"><%= person.bio %></p>
+                    <% if (person.scenes.length) { %>
+                    <div class="commu-person-scenes">
+                        <span class="commu-person-scenes-label"><%= en ? 'Scenes' : '등장 장면' %></span>
+                        <% person.scenes.forEach(function(scene) { %>
+                        <a class="commu-scene-chip" href="/commulingo/book/<%= scene.bookId %>#<%= scene.episodeId %>" title="<%= scene.bookTitle %>"><%= scene.title %></a>
+                        <% }) %>
+                    </div>
+                    <% } %>
+                </article>
+                <% }) %>
+            </div>
+        </section>
+        <% }) %>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script>
+        // Highlight the card targeted by the URL hash (arriving from a book's name link).
+        (function() {
+            function focusHash() {
+                var hash = window.location.hash;
+                if (!hash || hash.indexOf('#p-') !== 0) return;
+                var card = document.getElementById(hash.slice(1));
+                if (!card) return;
+                document.querySelectorAll('.commu-person-card.is-focused').forEach(function(el) {
+                    el.classList.remove('is-focused');
+                });
+                card.classList.add('is-focused');
+            }
+            window.addEventListener('hashchange', focusHash);
+            focusHash();
+        })();
+    </script>
+</body>
+</html>
