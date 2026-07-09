@@ -293,7 +293,7 @@
 
 .commu-lesson-action:hover:not(:disabled) {
     background: var(--bg-surface-hover);
-    border-color: var(--accent);
+    border-color: var(--link);
 }
 
 .commu-lesson-action.is-completed {
@@ -537,7 +537,7 @@
 
 .commu-choice:hover:not(:disabled) {
     background: color-mix(in srgb, var(--accent) 14%, var(--bg-surface));
-    border-color: var(--accent);
+    border-color: var(--link);
     box-shadow: 0 8px 0 color-mix(in srgb, var(--accent) 18%, transparent);
     transform: translateY(-2px);
 }
@@ -550,7 +550,7 @@
 .commu-choice.is-correct {
     animation: commu-correct-pop 520ms ease;
     background: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
-    border-color: var(--accent);
+    border-color: var(--link);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-green) 28%, transparent), 0 10px 0 color-mix(in srgb, var(--accent-green) 18%, transparent);
     color: var(--text-primary);
 }
@@ -988,7 +988,7 @@
     color: var(--text-secondary);
 }
 
-.commu-graph-legend-item.is-plain { border-color: var(--accent); color: var(--link); }
+.commu-graph-legend-item.is-plain { border-color: var(--link); color: var(--link); }
 .commu-graph-legend-item.is-engels { border-color: var(--accent-red); color: var(--accent-red); }
 .commu-graph-legend-item.is-critique { border-color: var(--accent-green); color: var(--accent-green); }
 
@@ -1086,7 +1086,7 @@
 
 .commu-graph-node.is-open .commu-graph-node-toggle {
     background: var(--accent);
-    border-color: var(--accent);
+    border-color: var(--link);
     color: #fff;
 }
 
@@ -1247,7 +1247,7 @@
     color: var(--text-primary);
 }
 
-.commu-case-card:hover { border-color: var(--accent); }
+.commu-case-card:hover { border-color: var(--link); }
 
 .commu-case-label {
     font-size: 0.72rem;
@@ -1412,7 +1412,7 @@
 }
 
 .commu-dc-stance.is-radical { border-color: var(--accent-red); color: var(--accent-red); }
-.commu-dc-stance.is-cautious { border-color: var(--accent); color: var(--link); }
+.commu-dc-stance.is-cautious { border-color: var(--link); color: var(--link); }
 .commu-dc-stance.is-reform { border-color: var(--accent-green); color: var(--accent-green); }
 
 .commu-dc-progress {
@@ -1497,7 +1497,7 @@
     background: var(--border);
 }
 
-.commu-dc-episode.is-decided { border-color: var(--accent); }
+.commu-dc-episode.is-decided { border-color: var(--link); }
 
 .commu-dc-head {
     display: flex;
@@ -1609,10 +1609,10 @@
     line-height: 1.5;
 }
 
-button.commu-dc-option:hover { border-color: var(--accent); }
+button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-dc-option.is-done { cursor: default; }
-.commu-dc-option.is-chosen { border-color: var(--accent); }
+.commu-dc-option.is-chosen { border-color: var(--link); }
 .commu-dc-option.is-actual { background: var(--bg-surface); }
 
 .commu-dc-option-label {
@@ -1699,7 +1699,7 @@ button.commu-dc-option:hover { border-color: var(--accent); }
 }
 
 .commu-dc-redo:hover,
-.commu-dc-reset:hover { border-color: var(--accent); }
+.commu-dc-reset:hover { border-color: var(--link); }
 
 .commu-dc-verdict {
     display: flex;
