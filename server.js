@@ -176,6 +176,7 @@ app.use('/api/proxy', (req, res, next) => {
 
 app.use('/api/proxy', async (req, res, next) => {
     if (req.session && req.session.user && req.session.user.id) {
+        req.chatAccountUserId = req.session.user.id;
         try {
             const { fingerprintsForUser } = require('./services/webauthn');
             req.userFingerprints = await fingerprintsForUser(req.session.user.id);
@@ -208,24 +209,32 @@ function chatLookupFingerprints(req) {
     return [...new Set(values)];
 }
 
+function chatAccountUserId(req) {
+    const value = req.chatAccountUserId || (req.session && req.session.user && req.session.user.id);
+    const n = Number.parseInt(value, 10);
+    return Number.isFinite(n) && n > 0 ? n : null;
+}
+
 function requestedPersona(req) {
     return typeof req.query.persona === 'string' && req.query.persona.trim()
         ? req.query.persona.trim()
         : null;
 }
 
-// Serve chat history from the frontend DB so logged-in users can see every
-// fingerprint bound to their account even if the backend only filters by the
-// current browser fingerprint.
+// Serve chat history from the frontend DB. Logged-in users are scoped by the
+// account id stamped into chat_logs; anonymous visitors fall back to the
+// browser fingerprint.
 app.get('/api/proxy/sessions', async (req, res, next) => {
     if (req.path.startsWith('/writer')) return next();
 
+    const accountUserId = chatAccountUserId(req);
     const fingerprints = chatLookupFingerprints(req);
-    if (!fingerprints.length) return res.json({ sessions: [] });
+    if (!accountUserId && !fingerprints.length) return res.json({ sessions: [] });
 
     const limit = clampPositiveInteger(req.query.limit, 50, 200);
     const persona = requestedPersona(req);
-    const params = [fingerprints, limit];
+    const params = [accountUserId || fingerprints, limit];
+    const identityClause = accountUserId ? 'user_id = $1' : 'fingerprint = ANY($1)';
     const personaClause = persona ? 'AND COALESCE(persona, $3) = $3' : '';
     if (persona) params.push(persona);
 
@@ -237,7 +246,7 @@ app.get('/api/proxy/sessions', async (req, res, next) => {
                     MAX(created_at) AS last_at,
                     COUNT(*)::int AS message_count
                FROM chat_logs
-              WHERE fingerprint = ANY($1)
+              WHERE ${identityClause}
                 AND session_id IS NOT NULL
                 ${personaClause}
               GROUP BY session_id
@@ -255,8 +264,9 @@ app.get('/api/proxy/sessions', async (req, res, next) => {
 app.get('/api/proxy/history', async (req, res, next) => {
     if (req.path.startsWith('/writer')) return next();
 
+    const accountUserId = chatAccountUserId(req);
     const fingerprints = chatLookupFingerprints(req);
-    if (!fingerprints.length) return res.json({ history: [] });
+    if (!accountUserId && !fingerprints.length) return res.json({ history: [] });
 
     const limit = clampPositiveInteger(req.query.limit, 50, 500);
     const persona = requestedPersona(req);
@@ -264,8 +274,8 @@ app.get('/api/proxy/history', async (req, res, next) => {
         ? req.query.session_id.trim()
         : null;
 
-    const params = [fingerprints, limit];
-    const clauses = ['fingerprint = ANY($1)'];
+    const params = [accountUserId || fingerprints, limit];
+    const clauses = [accountUserId ? 'user_id = $1' : 'fingerprint = ANY($1)'];
     if (sessionId) {
         params.push(sessionId);
         clauses.push(`session_id = $${params.length}`);
@@ -343,6 +353,14 @@ app.use('/api/proxy', createProxyMiddleware({
                 });
             }
             proxyReq.removeHeader('X-User-Fingerprints');
+            proxyReq.removeHeader('X-Authenticated-User-Id');
+            proxyReq.removeHeader('X-Webchat-Proxy-Secret');
+            if (process.env.WEBCHAT_PROXY_SECRET) {
+                proxyReq.setHeader('X-Webchat-Proxy-Secret', process.env.WEBCHAT_PROXY_SECRET);
+            }
+            if (req.chatAccountUserId) {
+                proxyReq.setHeader('X-Authenticated-User-Id', String(req.chatAccountUserId));
+            }
             if (Array.isArray(req.userFingerprints) && req.userFingerprints.length) {
                 proxyReq.setHeader('X-User-Fingerprints', req.userFingerprints.join(','));
             }
