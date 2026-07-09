@@ -325,6 +325,12 @@ header h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.header-actions .btn {
+    white-space: nowrap;
 }
 
 .persona-select {
@@ -1601,6 +1607,31 @@ footer .footer-tagline {
 
     .compact-header h1 {
         font-size: 1rem;
+    }
+
+    .chat-page .compact-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .chat-page .header-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+    }
+
+    .chat-page .persona-select {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: none;
+    }
+
+    .chat-page .header-actions .btn {
+        min-width: 0;
+        padding-inline: 10px;
     }
 
     .post-item {
