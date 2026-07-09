@@ -32,8 +32,8 @@ module.exports = {
     bookTitle: t('소련사 1941–1991', 'The Soviet Union, 1941–1991'),
     badge: t('결정 시뮬레이션', 'Decision simulation'),
     description: t(
-        '초강대국은 왜 스스로 무너졌는가. 1941년 독일 침공 전야부터 1991년 8월의 전차 부대까지, 13개의 갈림길에 직접 서 봅니다. 그때 그 자리의 정보만 갖고 먼저 결정하고, 그다음 실제 역사와 각 선택의 운명, 다음 장면으로 번지는 파장을 확인합니다.',
-        'Why did a superpower dismantle itself? Stand at 13 forks in the road, from the eve of the German invasion in 1941 to the tank crews of August 1991. Decide first with only what was known at the time — then see what actually happened, the fate of each path, and the ripple into the next scene.'
+        '초강대국은 왜 스스로 무너졌는가. 1941년 독일 침공 전야부터 1991년 8월의 전차 부대까지, 15개의 갈림길에 직접 서 봅니다. 그때 그 자리의 정보만 갖고 먼저 결정하고, 그다음 실제 역사와 각 선택의 운명, 다음 장면으로 번지는 파장을 확인합니다.',
+        'Why did a superpower dismantle itself? Stand at 15 forks in the road, from the eve of the German invasion in 1941 to the tank crews of August 1991. Decide first with only what was known at the time — then see what actually happened, the fate of each path, and the ripple into the next scene.'
     ),
     chapters: [],
     decisionTimeline: {
@@ -144,12 +144,56 @@ module.exports = {
                             'Stalin stayed. When radio announced that Stalin was in Moscow, the panic began to subside. When Sorge signalled that Japan would not strike north, the Siberian divisions rolled west — and on December 5, under Zhukov, the first great counteroffensive of the war opened before Moscow. Blitzkrieg died at the gates of the capital. The war was now attrition, and attrition is won by whoever mobilizes more.'
                         ),
                         ripple: t(
-                            '스탈린그라드(1942–43)와 쿠르스크(1943)를 거쳐 전선은 서쪽으로 되감긴다. 1945년 5월, 적기가 국회의사당 위에 오른다 — 그리고 승전국 소련 앞에는 전혀 다른 종류의 질문이 놓인다: 미국이 지배하는 전후 세계에서 어디에 설 것인가.',
-                            'Through Stalingrad (1942–43) and Kursk (1943) the front rewinds westward. In May 1945 the red banner rises over the Reichstag — and before the victorious USSR stands a question of an entirely different kind: where to stand in a postwar world dominated by America.'
+                            '모스크바 앞에서 살아난 전쟁은 이듬해 여름 남쪽으로 방향을 튼다 — 히틀러의 새 목표는 캅카스의 석유, 그리고 볼가 강가의 도시 하나다. 그 도시에는 최고지도자의 이름이 붙어 있다.',
+                            'The war that survived before Moscow turns south the next summer — Hitler’s new objectives are the oil of the Caucasus, and one city on the Volga. The city bears the supreme leader’s name.'
                         ),
                         insight: t(
                             '독재의 역설이 응축된 장면이다 — 6월의 재앙을 만든 바로 그 권력 집중이, 10월에는 도시 하나의 사기를 한 사람의 잔류로 지탱해 냈다. 같은 구조가 정세에 따라 치명적 약점도, 비상한 강점도 된다.',
                             'The paradox of dictatorship, compressed into one scene: the same concentration of power that produced June’s catastrophe held a city’s morale together in October by one man’s staying. The same structure is a fatal weakness or an extraordinary strength, depending on the hour.'
+                        ),
+                    },
+                    {
+                        id: 'stalingrad-1942',
+                        date: t('1942년 9월 12일', 'September 12, 1942'),
+                        title: t('스탈린그라드 — 하나뿐인 예비대', 'Stalingrad — the only reserve there is'),
+                        role: t(
+                            '당신은 최고사령부(스타프카)의 작전 참모다. 지도 앞에서 주코프와 바실렙스키가 속삭이는 것을 스탈린이 들었다.',
+                            'You are an operations officer of the Supreme Headquarters (Stavka). Stalin has just overheard Zhukov and Vasilevsky whispering at the map.'
+                        ),
+                        briefing: t(
+                            '독일군의 여름 공세가 볼가에 닿았다. 추이코프의 제62군은 강을 등지고 도시의 폐허에 몰려 있고, 밤마다 강을 건너 들어가는 증원 사단이 며칠 만에 갈려 나간다. 7월의 명령 제227호 — 「한 걸음도 물러서지 마라」 — 이후 무단 후퇴는 형벌 부대행이다. 남쪽에는 캅카스의 유전이 걸려 있고, 도시에는 최고지도자의 이름이 붙어 있다. 방금 스탈린이 고개를 들고 물었다: 「방금 말한 「다른 해법」이란 게 무엇인가?」 회의실의 모두가 같은 산수를 알고 있다 — 전략 예비대는 하나뿐이고, 두 번 쓸 수 없다.',
+                            'The German summer offensive has reached the Volga. Chuikov’s 62nd Army stands with its back to the river in the rubble of the city, and the divisions ferried across each night are ground away within days. Since July’s Order No. 227 — “Not one step back” — unauthorized retreat means a penal battalion. To the south lie the oilfields of the Caucasus; on the city hangs the supreme leader’s name. Stalin has just looked up: “And what is this ‘other solution’ you were discussing?” Everyone in the room knows the same arithmetic — there is one strategic reserve, and it cannot be spent twice.'
+                        ),
+                        question: t('하나뿐인 예비대, 어디에 거는가?', 'The only reserve — where do you stake it?'),
+                        options: [
+                            o('pour-in', 'radical',
+                                '도시에 쏟는다 — 즉시 대반격으로 포위를 풀고 시가전에서 끝장을 본다',
+                                'Pour it into the city — counterattack now, break the grip, finish it street by street',
+                                '9월 초 도시 북쪽에서 실제로 반복된 시도들의 연장선이다. 준비 없이 투입된 반격은 며칠 만에 피만 남기고 멎었다 — 다만 그 압박이 독일군 예비대를 도시에 묶어 두기는 했다.',
+                                'The extension of the attacks actually launched north of the city in early September. Thrown in unprepared, they bled out within days — though their pressure did pin German reserves to the city.'),
+                            o('flank', 'cautious',
+                                '도시는 버티게만 한다 — 예비대는 숨겨 두 달을 모으고, 측면의 루마니아군을 친다',
+                                'Let the city just hold — hide the reserve, build it for two months, then strike the Romanian flanks',
+                                '주코프·바실렙스키의 「다른 해법」, 실제의 길. 두 달 동안 백만이 넘는 병력이 무선 침묵 속에 집결했다 — 도시가 그때까지 버틴다는 전제 위에 세워진 계획이었다.',
+                                'Zhukov’s and Vasilevsky’s “other solution” — the actual road. For two months over a million men assembled under radio silence: a plan built on the premise that the city holds until then.'),
+                            o('east-bank', 'reform',
+                                '도시를 내준다 — 볼가 동안으로 물러나 전선을 펴고 병력을 보존한다',
+                                'Give up the city — pull back across the Volga, straighten the line, save the men',
+                                '군사 교범으로는 논거가 있는 길이다. 그러나 볼가는 남부의 마지막 대동맥이었고, 도시의 이름이 이미 전쟁의 상징이 되어 있었다 — 명령 제227호가 나온 나라에서 이 안을 올린 사람은 없었다.',
+                                'A road with textbook arguments behind it. But the Volga was the last great artery of the south, and the city’s name had already become the war’s symbol — in the country of Order No. 227, no one put this motion forward.'),
+                        ],
+                        actualId: 'flank',
+                        outcome: t(
+                            '제62군은 「볼가 너머에 우리 땅은 없다」를 구호로 폐허에서 버텼다 — 어떤 주에는 강가까지 수백 미터가 남아 있었다. 11월 19일, 천왕성 작전이 시작되었다. 포위망은 나흘 만에 칼라치에서 닫혔고, 파울루스의 제6군 약 30만이 갇혔다. 만슈타인의 구출 시도도, 괴링이 장담한 공중 보급도 실패했다. 1943년 2월 2일, 항복 전날 원수로 진급한 파울루스가 포로가 되었다 — 프로이센-독일 역사상 원수가 항복한 첫 사례였다. 전쟁의 주도권은 이날 이후 다시는 독일로 돌아가지 않았다.',
+                            'The 62nd Army held in the rubble under the watchword “There is no land for us beyond the Volga” — some weeks, a few hundred metres of riverbank were all that remained. On November 19, Operation Uranus began; the ring closed at Kalach within four days, trapping some 300,000 men of Paulus’s Sixth Army. Manstein’s relief drive failed; so did the airlift Göring had promised. On February 2, 1943, Paulus — promoted field marshal the day before the end — surrendered: the first field marshal in Prussian-German history to do so. The initiative never returned to Germany again.'
+                        ),
+                        ripple: t(
+                            '쿠르스크(1943년 7월)에서 독일의 마지막 전략 공세가 부러지고, 전선은 베를린까지 되감긴다. 그리고 승리는 정치가 된다 — 「스탈린그라드」는 이후 반세기 동안 체제 정당성의 가장 단단한 담보가 된다. 1945년의 승전국 앞에는 전혀 다른 질문이 놓인다: 미국이 지배하는 전후 세계에서 어디에 설 것인가.',
+                            'At Kursk (July 1943) Germany’s last strategic offensive breaks, and the front rewinds all the way to Berlin. And victory becomes politics — for the next half-century, “Stalingrad” is the regime’s hardest collateral of legitimacy. Before the victor of 1945 stands an entirely different question: where to stand in a postwar world dominated by America.'
+                        ),
+                        insight: t(
+                            '이 승리의 회계장부에는 잔혹한 항목이 있다 — 계획의 눈으로 제62군은 구원의 대상이 아니라 독일군을 도시에 묶어 갈아 없애는 맷돌이자 미끼였다. 버티는 쪽에는 그 사실이 알려지지 않았다. 승리한 결정의 장부에도 대개 이런 줄이 있다는 것 — 이 장면이 남기는 각주다.',
+                            'The ledger of this victory carries a brutal line: seen from the plan, the 62nd Army was not the object of rescue but the millstone and the bait, pinning the Germans in the city to be ground down — a fact not shared with those doing the holding. That even victorious decisions keep such a line in their books is this scene’s footnote.'
                         ),
                     },
                     {
@@ -573,12 +617,56 @@ module.exports = {
                             'Gorbachev was elected unanimously. He began with modest “acceleration” — but when Chernobyl (1986) exposed the price of a culture of concealment, the prescription went to the root: glasnost, perestroika, and by 1988 even competitive elections. The Politburo had ordered a young manager to repair the system. What they had actually chosen would become clear within six years.'
                         ),
                         ripple: t(
-                            '글라스노스트가 문서고를 열자 이 책 앞부분의 장면들 — 1937년, 몰로토프-리벤트로프 비밀 의정서, 카틴 — 이 신문 1면으로 돌아온다. 진실은 다시 배급량을 지키지 않는다. 그리고 진영의 가장 약한 고리들이 먼저 움직인다.',
-                            'As glasnost opens the archives, the scenes from earlier in this book — 1937, the secret protocols, Katyn — return on front pages. Once again, truth does not respect its ration. And the weakest links of the bloc move first.'
+                            '새 서기장의 첫 시험은 정치국 회의장이 아니라 우크라이나의 원자력 발전소에서 온다 — 취임 13개월째의 어느 토요일 새벽, 체르노빌 4호기의 제어반 계기들이 미쳐 돌아가기 시작한다.',
+                            'The new General Secretary’s first test comes not in the Politburo chamber but at a nuclear power station in Ukraine — one Saturday before dawn, thirteen months into his tenure, the instruments in the control room of Chernobyl’s reactor No. 4 begin to go mad.'
                         ),
                         insight: t(
                             '「체제가 스스로 개혁가를 뽑았다」는 이 장면은 붕괴 논쟁의 핵심 증거물이다 — 구조가 개혁을 강제했다는 쪽도, 고르바초프라는 우연이 결정적이었다는 쪽도, 같은 회의실을 가리킨다. 같은 사실이 두 개의 정반대 서사를 먹여 살린다.',
                             'That the system elected its own reformer is the key exhibit in the collapse debate — those who say structure compelled reform and those who say the accident named Gorbachev was decisive both point at the same room. One fact feeds two opposite narratives.'
+                        ),
+                    },
+                    {
+                        id: 'chernobyl-1986',
+                        date: t('1986년 4월 28일', 'April 28, 1986'),
+                        title: t('체르노빌 — 무엇을, 언제, 얼마나 말하는가', 'Chernobyl — what to say, when, and how much'),
+                        role: t(
+                            '당신은 정치국원이다. 사고 사흘째 아침, 스웨덴의 공식 문의가 외무부에 도착했다.',
+                            'You are on the Politburo. On the third morning after the accident, Sweden’s official query has reached the Foreign Ministry.'
+                        ),
+                        briefing: t(
+                            '토요일 새벽, 우크라이나의 체르노빌 원전 4호기가 시험 가동 중 폭발했다. 현지의 첫 보고는 「원자로는 건재, 방사선은 정상 범위」 — 그러나 정찰기가 찍어 온 사진에는 뚜껑이 날아간 노심이 하늘을 향해 타고 있다. 발전소 도시 프리퍄티의 주민 4만 9천 명은 사고 36시간이 지나서야 소개되었다. 그리고 오늘 아침, 1,200킬로미터 밖 스웨덴 포르스마르크 원전에서 출근하던 직원의 신발에서 방사능이 검출되었다 — 스톡홀름이 「귀국에서 무슨 일이 있었는가」를 공식으로 묻고 있다. 탁자 위에는 네 문장짜리 타스 발표문 초안이 놓여 있다. 사흘 뒤는 메이데이다 — 키예프의 퍼레이드를 취소하면 그 자체가 공황의 신호탄이 될 것이다. 글라스노스트를 선언한 지 1년이 되어 간다.',
+                            'Before dawn on Saturday, reactor No. 4 at Chernobyl exploded during a test run. The first reports from the site: the reactor is intact, radiation within norms — but the reconnaissance photographs show the core, its lid blown off, burning open to the sky. The 49,000 residents of the plant town, Pripyat, were evacuated only 36 hours after the blast. And this morning, 1,200 kilometres away at Sweden’s Forsmark plant, radioactivity was detected on the shoes of a worker arriving for his shift — Stockholm is formally asking what has happened in your country. On the table lies a four-sentence draft for TASS. May Day is three days off — and cancelling the Kiev parade would itself be a starting gun for panic. It is nearly a year since glasnost was proclaimed.'
+                        ),
+                        question: t('정치국의 결정은?', 'What does the Politburo decide?'),
+                        options: [
+                            o('minimal', 'cautious',
+                                '최소 발표 — 네 문장을 내보내고, 메이데이 퍼레이드는 예정대로 연다',
+                                'Minimal statement — release the four sentences, hold the May Day parade as planned',
+                                '실제의 길. 4월 28일 밤 타스는 「사고가 있었고 수습 중」이라는 짧은 발표를 냈고, 5월 1일 키예프의 퍼레이드는 낙진 속에 예정대로 열렸다. 고르바초프가 TV 앞에 선 것은 사고 18일 뒤였다.',
+                                'The actual road. On the night of April 28 TASS issued a brief “an accident has occurred; measures are being taken”; on May 1 the Kiev parade went ahead under the fallout. Gorbachev faced the cameras eighteen days after the blast.'),
+                            o('full-open', 'reform',
+                                '전면 공개 — 오염 지도를 발표하고 소개를 확대하며 국제 지원을 요청한다',
+                                'Full disclosure — publish the contamination maps, widen the evacuations, ask for international help',
+                                '글라스노스트의 문자적 이행이자, 몇 달에 걸쳐 결국 단계적으로 채택된 길이다. 8월 빈의 IAEA 회의에서 소련 대표단은 이례적으로 상세한 보고서를 내놓아 세계를 놀라게 했다 — 처음부터 그랬다면 무엇이 달랐을지가 이 장면의 반사실이다.',
+                                'Glasnost taken literally — and the road eventually adopted, by degrees, over the following months. At the IAEA conference in Vienna that August the Soviet delegation stunned the world with an unusually candid report. What would have differed had it begun that way is this scene’s counterfactual.'),
+                            o('lockdown', 'radical',
+                                '봉쇄한다 — 지역을 차단하고 유언비어를 단속하며, 서방 보도는 반소 선전으로 규정해 맞받는다',
+                                'Seal it off — cordon the zone, prosecute “rumour-mongering,” and answer Western reports as anti-Soviet propaganda',
+                                '체제의 오랜 기본기이자, 관영 매체가 처음 며칠 실제로 병행한 길이다 — 「서방이 과장 선전을 편다」. 문제는 방사능 구름이 국경 검문을 받지 않는다는 것이었다.',
+                                'The system’s oldest reflex — and what the official media in fact ran in parallel for the first days: the West is peddling exaggerations. The trouble was that a radioactive cloud does not stop at border control.'),
+                        ],
+                        actualId: 'minimal',
+                        outcome: t(
+                            '은폐는 물리 법칙에 패배했다 — 방사능 구름이 발표문보다 먼저 유럽의 계측기에 도착했다. 발표는 짧았고 늦었으며, 키예프 시민들은 낙진 아래에서 행진했다. 불타는 노심을 덮은 것은 결국 헬기 조종사들과 60만 「리크비다토르(수습 작업자)」의 몸이었다. 그리고 정치적 낙진이 더 오래갔다: 국가가 말하는 것과 사람들이 겪는 것의 간극이 만천하에 드러나자, 고르바초프는 글라스노스트를 장식에서 수술칼로 바꿨다. 그 자신이 훗날 썼다 — 체르노빌이야말로 페레스트로이카의 진짜 출발점이었는지 모른다고.',
+                            'The concealment lost to the laws of physics — the cloud reached Europe’s instruments before the communiqué did. The statement was short and late, and the people of Kiev marched under the fallout. What finally smothered the burning core were the bodies of helicopter pilots and 600,000 “liquidators.” And the political fallout outlasted the physical: with the gap between what the state said and what people lived through exposed to the world, Gorbachev turned glasnost from an ornament into a scalpel. He himself later wrote that Chernobyl, perhaps, was the real beginning of perestroika.'
+                        ),
+                        ripple: t(
+                            '열린 언로는 원자로 다음에 문서고를 겨눈다 — 1937년, 몰로토프-리벤트로프 비밀 의정서, 카틴, 아프가니스탄의 아연 관들이 신문 1면으로 돌아온다. 우크라이나에서 체르노빌은 「중앙이 우리를 어떻게 다루는가」의 기억으로 남아 1991년의 독립 투표까지 흐른다. 그리고 진영의 가장 약한 고리들이 움직이기 시작한다.',
+                            'Once opened, the channels of speech point past the reactor to the archives — 1937, the secret protocols, Katyn, the zinc coffins of Afghanistan return on front pages. In Ukraine, Chernobyl settles into memory as “how the centre treats us,” flowing on to the independence vote of 1991. And the weakest links of the bloc begin to move.'
+                        ),
+                        insight: t(
+                            '사고와 은폐는 한 몸이었다 — RBMK 원자로의 결함은 앞선 사고들과 함께 기밀로 봉인되어 있었고, 운전원들은 자기 기계의 병력(病歷)을 모른 채 시험 버튼을 눌렀다. 비밀이 사고를 만들고, 사고가 비밀의 체제를 죽였다. 정보를 억누르는 비용은 장부에 늦게, 그리고 한꺼번에 계상된다.',
+                            'The accident and the secrecy were one body: the RBMK reactor’s design flaws, like the accidents before it, were sealed as classified, and the operators pressed the test button not knowing their machine’s medical history. Secrecy made the accident, and the accident killed the regime of secrecy. The cost of suppressing information is booked late — and all at once.'
                         ),
                     },
                     {
