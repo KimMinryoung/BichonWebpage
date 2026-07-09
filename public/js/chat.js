@@ -83,6 +83,31 @@
     var DEFAULT_PERSONA = 'cyber-lenin';
     var selectedPersona = localStorage.getItem('cl_persona') || DEFAULT_PERSONA;
     var personaSelector = document.getElementById('personaSelector');
+    var pageLang = (document.documentElement.getAttribute('lang') || 'ko').toLowerCase();
+    var PERSONA_LABELS_EN = {
+        'cyber-lenin': 'Cyber-Lenin',
+        'gramsci': 'Antonio Gramsci',
+        'yezhov': 'Nikolai Yezhov',
+        'bichon': 'Bichon',
+        'default': 'Cyber-Lenin'
+    };
+    var PERSONA_DISPLAY_LABELS_EN = {
+        '사이버-레닌': 'Cyber-Lenin',
+        '안토니오 그람시': 'Antonio Gramsci',
+        '니콜라이 예조프': 'Nikolai Yezhov',
+        '비숑': 'Bichon'
+    };
+
+    function personaLabel(persona) {
+        var id = persona && persona.id;
+        if (pageLang.indexOf('en') === 0 && id && PERSONA_LABELS_EN[id]) {
+            return PERSONA_LABELS_EN[id];
+        }
+        if (pageLang.indexOf('en') === 0 && persona && PERSONA_DISPLAY_LABELS_EN[persona.display_name]) {
+            return PERSONA_DISPLAY_LABELS_EN[persona.display_name];
+        }
+        return (persona && persona.display_name) || id || '';
+    }
 
     // 관리자 전용 페르소나는 별도의 키 입력 없이, Passkey로 로그인한 관리자 세션을
     // 프론트 프록시가 서버사이드에서 인증해 잠금 해제한다(브라우저에 키 노출 없음).
@@ -105,7 +130,7 @@
             personas.forEach(function (p) {
                 var opt = document.createElement('option');
                 opt.value = p.id;
-                opt.textContent = p.display_name || p.id;
+                opt.textContent = personaLabel(p);
                 if (p.description) opt.title = p.description;
                 if (p.id === selectedPersona) opt.selected = true;
                 personaSelector.appendChild(opt);
