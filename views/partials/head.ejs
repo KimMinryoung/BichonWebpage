@@ -24,6 +24,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<%= _title %>">
 <meta name="twitter:description" content="<%= _desc %>">
+<link rel="preload" href="/fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex/ibm-plex-sans-400.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex/ibm-plex-sans-600.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/ibm-plex/ibm-plex-sans-condensed-700.ttf" as="font" type="font/ttf" crossorigin>
 <% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
 <script type="application/ld+json"><%- jsonLdScript(jsonLd) %></script>
 <% } %>

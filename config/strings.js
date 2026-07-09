@@ -308,7 +308,7 @@ const en = {
         reports: "Cyber-Lenin's Reports",
         reportsShort: 'Reports',
         hub: 'Curation',
-        commuLingo: 'commulingo',
+        commuLingo: 'Commulingo',
         game: 'Game',
         dashboard: 'Dashboard',
         posts: 'Manage Posts',
