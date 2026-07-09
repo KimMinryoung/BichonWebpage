@@ -52,6 +52,7 @@ const ko = {
         noDiaries: '아직 작성된 일기가 없습니다.',
         deleteDiaryConfirm: '정말 이 일기를 삭제하시겠습니까?',
         chatHistory: '이전 대화',
+        chatNew: '새 대화',
         prevPost: '이전',
         nextPost: '다음'
     },
@@ -327,6 +328,7 @@ const en = {
         noDiaries: 'No diary entries yet.',
         deleteDiaryConfirm: 'Are you sure you want to delete this diary entry?',
         chatHistory: 'History',
+        chatNew: 'New chat',
         prevPost: 'Prev',
         nextPost: 'Next'
     },

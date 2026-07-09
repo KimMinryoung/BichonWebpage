@@ -37,11 +37,22 @@
     var recovering = false;
     var recoveryContext = null; // { message, errorDiv } — set in catch, read by visibilitychange
 
-    // 탭별 고유 세션 ID — 탭을 닫으면 초기화, 새로고침해도 유지
+    // 탭별 고유 세션 ID — 새로고침해도 유지되지만, 마지막 메시지 후
+    // 6시간이 지난 탭 세션은 새 세션으로 시작한다. 모바일 브라우저는 탭을
+    // 며칠씩 복원하므로, 이 컷오프가 없으면 옛 대화 하나에 계속 이어붙는다.
+    var SESSION_STALE_MS = 6 * 60 * 60 * 1000;
     var sessionId = sessionStorage.getItem('chatSessionId');
+    var lastMsgAt = parseInt(sessionStorage.getItem('chatLastMsgAt') || '0', 10);
+    if (sessionId && lastMsgAt && (Date.now() - lastMsgAt) > SESSION_STALE_MS) {
+        sessionId = null;
+    }
     if (!sessionId) {
         sessionId = 'tab-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
         sessionStorage.setItem('chatSessionId', sessionId);
+        sessionStorage.removeItem('chatLastMsgAt');
+    }
+    function touchSessionActivity() {
+        sessionStorage.setItem('chatLastMsgAt', String(Date.now()));
     }
 
     // UUID 생성 — crypto.randomUUID()는 secure context(https/localhost)에서만
@@ -256,6 +267,7 @@
             renderSessionTurns(data.history || []);
             sessionId = sid;
             sessionStorage.setItem('chatSessionId', sid);
+            touchSessionActivity();
             exitHistoryMode();
             return true;
         } catch (err) {
@@ -268,6 +280,7 @@
         clearFeedbackTarget();
         sessionId = 'tab-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
         sessionStorage.setItem('chatSessionId', sessionId);
+        sessionStorage.removeItem('chatLastMsgAt');
         chatBox.innerHTML = '';
         exitHistoryMode();
     }
@@ -339,6 +352,15 @@
         historyBtn.textContent = '이전 대화';
         chatInput.placeholder = originalPlaceholder;
         inHistoryMode = false;
+    }
+
+    var newChatBtn = document.getElementById('newChatBtn');
+    if (newChatBtn) {
+        newChatBtn.addEventListener('click', function () {
+            if (busy) return; // 응답 처리 중에는 세션 교체 금지
+            startNewSession();
+            chatInput.focus();
+        });
     }
 
     var historyBtn = document.getElementById('historyBtn');
@@ -645,6 +667,7 @@
         }
 
         try {
+            touchSessionActivity();
             var payload = {
                 message: message,
                 session_id: sessionId,
