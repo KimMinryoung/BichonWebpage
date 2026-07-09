@@ -1,4 +1,12 @@
 /* ===== Reset ===== */
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/space-grotesk/space-grotesk-700.ttf') format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -89,6 +97,8 @@ nav .nav-content {
 nav .logo {
     font-size: 1.4rem;
     font-weight: 700;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    letter-spacing: 0;
     color: var(--text-primary);
     display: flex;
     align-items: center;
@@ -426,9 +436,10 @@ header h1 {
 }
 
 .toolbar-logo {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     color: var(--accent-red);
     padding: 4px 6px;
     text-decoration: none;

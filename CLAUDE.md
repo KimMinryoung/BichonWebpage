@@ -48,6 +48,9 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 - For CommuLingo content-only edits in `data/commulingo/lessons.json` or `data/commulingo/courses/*.js`, do not run `scripts/deploy` just to rebuild/restart the frontend. Commit/push the data change, then verify the live API/page.
 - `routes/commulingo.js` loads CommuLingo through `data/commulingo/index.js` and caches the bundle by the maximum mtime across `lessons.json` and `courses/*.js`, so changed host data is picked up on the next request after mtime changes. Verify with `curl -s http://127.0.0.1:3000/commulingo/lesson/<lesson-id>`.
 - Run the full deploy script for code, dependency, CSS/JS/template, server, route, config, or Docker image changes that require a new container image/restart.
+- Never recreate or restart the production `leninbot-frontend` container with an ad hoc `docker run`. Use `scripts/deploy --restart` so the required labels, host data mount, Redis network, and IPv6 network are applied consistently.
+- The frontend connects directly to Supabase Postgres. Supabase resolves to IPv6 for this host, so the production container must be connected to `leninbot_ipv6` as well as `leninbot_default`. If recent posts/reports/hub/diary suddenly render as empty, check `docker logs leninbot-frontend` for `ENETUNREACH ... :5432`, then verify with `docker inspect leninbot-frontend --format '{{range $name,$net := .NetworkSettings.Networks}}{{println $name $net.IPAddress $net.GlobalIPv6Address}}{{end}}'`.
+- If `leninbot_ipv6` is missing from the running production container, reconnect it with `docker network connect leninbot_ipv6 leninbot-frontend`, then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content again.
 
 ### CSS / Mobile
 - CSS cache busting is active: `?v=<%= Date.now() %>` in head.ejs

@@ -43,6 +43,7 @@ function isCacheablePublicTextPath(reqPath) {
 function isStaticAssetPath(reqPath) {
     return reqPath.startsWith('/css/')
         || reqPath.startsWith('/js/')
+        || reqPath.startsWith('/fonts/')
         || reqPath.startsWith('/img/')
         || reqPath.startsWith('/puzzles/')
         || reqPath === '/BingSiteAuth.xml';
@@ -540,7 +541,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
             res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
             return;
         }
-        if (/\.(?:png|jpe?g|gif|webp|svg|ico|woff2?)$/i.test(normalized)) {
+        if (/\.(?:png|jpe?g|gif|webp|svg|ico|woff2?|ttf)$/i.test(normalized)) {
             res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
             return;
         }
