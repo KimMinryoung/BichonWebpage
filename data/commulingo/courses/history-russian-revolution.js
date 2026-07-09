@@ -49,10 +49,6 @@ module.exports = {
             '1905년부터 1937년까지, 러시아의 역사는 몇 개의 갈림길에서 결정되었다. 각 장면에서 당신은 그때 그 자리의 사람이 되어, 그들이 알던 것만 알고 결정한다. 실제 역사와 다른 선택이 「틀린」 것이 아니다 — 그 갈림길이 실제로 존재했다는 것, 그것이 이 책의 요점이다. (1918년 2월 이전의 날짜는 당시 러시아 달력(구력) 기준.)',
             'From 1905 to 1937, Russian history was decided at a handful of forks. In each scene you become a person of that time and place, knowing only what they knew, and you decide. Choosing differently from actual history is not “wrong” — the point of this book is that the fork really existed. (Dates before February 1918 follow the Russian calendar of the time.)'
         ),
-        howTo: t(
-            '장면을 열고 상황 브리핑을 읽은 뒤, 실제 역사를 보기 전에 먼저 결정하세요. 결정해야 결과가 열립니다.',
-            'Open a scene, read the briefing, and commit to a decision before the reveal. The outcome unlocks only after you decide.'
-        ),
         stances: [
             { id: 'radical', label: t('정면 돌파', 'Head-on'), desc: t('지금 밀어붙인다. 기다림은 패배다.', 'Push through now; waiting is defeat.') },
             { id: 'cautious', label: t('신중한 계산', 'Careful calculation'), desc: t('살아남는 것이 먼저다. 후퇴도 무기다.', 'Survival first; retreat is also a weapon.') },

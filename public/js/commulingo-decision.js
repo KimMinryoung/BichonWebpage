@@ -21,7 +21,6 @@
 
     var L = {
         role: en ? 'Your role' : '당신의 역할',
-        decide: en ? 'Decide first. The reveal comes after.' : '먼저 결정하세요. 결과는 그다음에 열립니다.',
         yourChoice: en ? 'Your choice' : '당신의 선택',
         actual: en ? 'What history did' : '실제 역사',
         outcome: en ? 'What actually happened' : '실제로 일어난 일',
@@ -80,7 +79,11 @@
     function rich(value) {
         var escaped = escapeHtml(text(value));
         if (!linkPattern) return escaped;
-        return escaped.replace(linkPattern, function(match) {
+        return escaped.replace(linkPattern, function(match, _token, offset, source) {
+            if (!en) {
+                var prev = offset > 0 ? source.charAt(offset - 1) : '';
+                if (/[0-9A-Za-z가-힣]/.test(prev)) return match;
+            }
             var person = personByAlias[match];
             if (!person) return match;
             return '<a class="commu-person-link" href="/commulingo/people#p-' + person.id
@@ -188,7 +191,6 @@
             '<span class="commu-graph-kicker">' + escapeHtml(en ? 'Central question' : '핵심 질문') + '</span>',
             '<h2 class="commu-graph-question">' + escapeHtml(text(timeline.question)) + '</h2>',
             timeline.thesis ? '<p class="commu-graph-thesis">' + rich(timeline.thesis) + '</p>' : '',
-            timeline.howTo ? '<p class="commu-graph-hint">' + escapeHtml(text(timeline.howTo)) + '</p>' : '',
             '<div class="commu-dc-legend">' + legend + '</div>',
             '<div class="commu-dc-progress"><span id="commuDcProgressText"></span>',
             '<span class="commu-dc-progress-track"><span id="commuDcProgressFill"></span></span></div>'
@@ -276,7 +278,6 @@
         ];
 
         if (!chosenId) {
-            parts.push('<p class="commu-dc-hint">' + escapeHtml(L.decide) + '</p>');
             parts.push('<div class="commu-dc-options">' + (ep.options || []).map(function(opt) {
                 return '<button type="button" class="commu-dc-option" data-option="' + escapeHtml(opt.id) + '">'
                     + '<span class="commu-dc-option-label">' + escapeHtml(text(opt.label)) + '</span>'

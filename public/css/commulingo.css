@@ -1583,12 +1583,6 @@
     color: var(--text-primary);
 }
 
-.commu-dc-hint {
-    margin: 0;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-}
-
 .commu-dc-options {
     display: flex;
     flex-direction: column;

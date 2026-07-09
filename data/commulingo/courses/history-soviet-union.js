@@ -45,10 +45,6 @@ module.exports = {
             '1941년부터 1991년까지, 소련의 역사는 몇 개의 갈림길에서 결정되었다. 전쟁을 이긴 나라가 반세기 뒤 총성 없이 해체된다 — 그 사이에 놓인 결정들을, 당신은 그때 그 자리의 사람이 되어 그들이 알던 것만 알고 내린다. 실제 역사와 다른 선택이 「틀린」 것이 아니다 — 그 갈림길이 실제로 존재했다는 것, 그것이 이 책의 요점이다.',
             'From 1941 to 1991, Soviet history was decided at a handful of forks. A country that won the greatest of wars dissolved itself half a century later without a shot — and the decisions in between are yours to make, as a person of that time and place, knowing only what they knew. Choosing differently from actual history is not “wrong” — the point of this book is that the fork really existed.'
         ),
-        howTo: t(
-            '장면을 열고 상황 브리핑을 읽은 뒤, 실제 역사를 보기 전에 먼저 결정하세요. 결정해야 결과가 열립니다.',
-            'Open a scene, read the briefing, and commit to a decision before the reveal. The outcome unlocks only after you decide.'
-        ),
         stances: [
             { id: 'radical', label: t('힘의 해결', 'Force'), desc: t('질서는 힘으로 지킨다. 물러서면 전부 무너진다.', 'Order is kept by force; yield once and everything falls.') },
             { id: 'cautious', label: t('안정과 통제', 'Stability & control'), desc: t('흔들지 마라. 체제의 생존이 먼저다.', 'Do not rock the boat; the system’s survival comes first.') },
