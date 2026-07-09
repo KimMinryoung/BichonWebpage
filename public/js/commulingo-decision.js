@@ -21,7 +21,7 @@
 
     var L = {
         role: en ? 'Your role' : '당신의 역할',
-        decide: en ? 'Decide first — the reveal comes after.' : '먼저 결정하세요 — 결과는 그다음에 열립니다.',
+        decide: en ? 'Decide first. The reveal comes after.' : '먼저 결정하세요. 결과는 그다음에 열립니다.',
         yourChoice: en ? 'Your choice' : '당신의 선택',
         actual: en ? 'What history did' : '실제 역사',
         outcome: en ? 'What actually happened' : '실제로 일어난 일',
@@ -84,7 +84,7 @@
             var person = personByAlias[match];
             if (!person) return match;
             return '<a class="commu-person-link" href="/commulingo/people#p-' + person.id
-                + '" title="' + escapeHtml(person.name + ' — ' + person.epithet) + '">' + match + '</a>';
+                + '" title="' + escapeHtml(person.name + ': ' + person.epithet) + '">' + match + '</a>';
         });
     }
 

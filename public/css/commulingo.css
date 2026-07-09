@@ -1793,15 +1793,19 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: inline-block;
     margin-top: 10px;
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--link);
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent-red), #d4552f);
+    border: 1px solid color-mix(in srgb, var(--accent-red) 82%, #000 18%);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-red) 25%, transparent);
     text-decoration: none;
-    border-bottom: 1px dashed color-mix(in srgb, var(--link) 55%, transparent);
-    padding-bottom: 1px;
+    padding: 8px 13px;
+    border-radius: 6px;
 }
 
 .commu-people-cta:hover {
-    border-bottom-style: solid;
+    background: linear-gradient(135deg, #d81828, #bd3e21);
+    color: #fff;
 }
 
 /* person-name links inside decision book prose */
@@ -2096,16 +2100,20 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-group-cta {
     flex: 0 0 auto;
     font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--link);
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent-red), #d4552f);
+    border: 1px solid color-mix(in srgb, var(--accent-red) 82%, #000 18%);
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--accent-red) 22%, transparent);
     text-decoration: none;
-    border-bottom: 1px dashed color-mix(in srgb, var(--link) 55%, transparent);
-    padding-bottom: 1px;
+    padding: 7px 11px;
+    border-radius: 6px;
     white-space: nowrap;
 }
 
 .commu-group-cta:hover {
-    border-bottom-style: solid;
+    background: linear-gradient(135deg, #d81828, #bd3e21);
+    color: #fff;
 }
 
 @media (max-width: 540px) {
