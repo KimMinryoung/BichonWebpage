@@ -1996,6 +1996,60 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-secondary);
 }
 
+.commu-person-more {
+    border-top: 1px dashed var(--border);
+    padding-top: 8px;
+}
+
+.commu-person-more summary {
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--link);
+    list-style: none;
+}
+
+.commu-person-more summary::before {
+    content: '+ ';
+}
+
+.commu-person-more[open] summary::before {
+    content: '− ';
+}
+
+.commu-person-more summary::-webkit-details-marker {
+    display: none;
+}
+
+.commu-person-career {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.commu-person-career li {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.commu-career-year {
+    flex: 0 0 84px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.commu-career-role {
+    color: var(--text-secondary);
+}
+
 .commu-person-scenes {
     display: flex;
     flex-wrap: wrap;

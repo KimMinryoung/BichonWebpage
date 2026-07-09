@@ -54,6 +54,16 @@
                     </div>
                     <p class="commu-person-epithet"><%= person.epithet %></p>
                     <p class="commu-person-bio"><%= person.bio %></p>
+                    <% if (person.career.length) { %>
+                    <details class="commu-person-more">
+                        <summary><%= en ? 'Career timeline' : '상세 이력 보기' %></summary>
+                        <ul class="commu-person-career">
+                            <% person.career.forEach(function(item) { %>
+                            <li><span class="commu-career-year"><%= item.y %></span><span class="commu-career-role"><%= item.r %></span></li>
+                            <% }) %>
+                        </ul>
+                    </details>
+                    <% } %>
                     <% if (person.scenes.length) { %>
                     <div class="commu-person-scenes">
                         <span class="commu-person-scenes-label"><%= en ? 'Scenes' : '등장 장면' %></span>

@@ -126,6 +126,10 @@ router.get('/people', (req, res) => {
         bio: localize(person.bio, lang),
         fateKind: person.fate ? person.fate.kind : '',
         fateLabel: person.fate ? localize(person.fate.label, lang) : '',
+        career: ((data.careers || {})[person.id] || []).map(entry => ({
+            y: entry.y,
+            r: localize(entry.r, lang),
+        })),
         scenes: (person.scenes || [])
             .map(scene => sceneIndex[`${scene[0]}/${scene[1]}`])
             .filter(Boolean),
