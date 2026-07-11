@@ -38,33 +38,28 @@ const ROLE_OFFICE_TITLES = {
     comintern: { ko: '코민테른 지도부', en: 'Comintern leadership' },
 };
 
-// Runtime DB data should use commulingo_person_roles; ROLE_RULES is the seed and file-fallback source.
-const ROLE_RULES = [
-    { officeId: 'security', icon: 'eye', people: ['beria', 'dzerzhinsky', 'menzhinsky', 'yagoda', 'yezhov', 'merkulov', 'abakumov', 'ignatiev', 'serov', 'shelepin', 'semichastny', 'andropov', 'fedorchuk', 'chebrikov', 'kryuchkov', 'sorge'] },
-    { officeId: 'defence', icon: 'star', people: ['trotsky', 'zhukov', 'tukhachevsky', 'chuikov', 'vasilevsky', 'frunze', 'voroshilov', 'timoshenko', 'malinovsky', 'grechko', 'ustinov', 'sokolov', 'yazov', 'kornilov'] },
-    { officeId: 'foreign-affairs', icon: 'handshake', people: ['chicherin', 'litvinov', 'molotov', 'vyshinsky', 'gromyko', 'shevardnadze', 'bessmertnykh', 'pankin', 'kollontai'] },
-    { officeId: 'ideology-propaganda', icon: 'megaphone', people: ['lunacharsky', 'zhdanov', 'shepilov', 'suslov', 'demichev', 'ponomarev', 'yakovlev', 'solzhenitsyn', 'sakharov'] },
-    { officeId: 'culture-literature', icon: 'paintbrush', people: ['fadeyev', 'furtseva', 'gubenko'] },
-    { officeId: 'heavy-industry-mic', icon: 'factory', people: ['ordzhonikidze', 'tevosian', 'malyshev', 'vannikov', 'slavsky', 'afanasyev'] },
-    { officeId: 'science-nuclear-space', icon: 'atom', people: ['kurchatov', 'korolev', 'keldysh', 'kerimov', 'gagarin'] },
-    { officeId: 'agriculture', icon: 'wheat', people: ['yakov-yakovlev', 'benediktov', 'matskevich', 'polyansky', 'mesyats', 'murakhovsky'] },
-    { officeId: 'state-head', icon: 'landmark', people: ['kalinin', 'shvernik', 'podgorny', 'mikoyan'] },
-    { officeId: 'nationalities-federal', icon: 'map', people: ['shayakhmetov', 'paleckis', 'nasriddinova', 'voss', 'nishonov'] },
-    { officeId: 'party-leadership', icon: 'flag', people: ['lenin', 'stalin', 'khrushchev', 'brezhnev', 'chernenko', 'gorbachev'] },
-    { officeId: 'party-secretariat-cadres', icon: 'folder', people: ['malenkov', 'stasova', 'sverdlov', 'krestinsky', 'kaganovich', 'kirov', 'kirichenko', 'kirilenko', 'ligachev', 'ivashko'] },
-    { officeId: 'government', icon: 'briefcase', people: ['rykov', 'bulganin', 'kosygin', 'tikhonov', 'ryzhkov', 'pavlov'] },
-    { officeId: 'planning', icon: 'chart', people: ['krzhizhanovsky', 'kuibyshev', 'mezhlauk', 'voznesensky', 'saburov', 'baibakov', 'maslyukov'] },
-    { officeId: 'economic-management', icon: 'chart', people: ['sokolnikov', 'zverev', 'garbuzov', 'alkhimov', 'gerashchenko', 'katushev'] },
-    { officeId: 'comintern', icon: 'globe', people: ['zinoviev', 'kamenev', 'bukharin', 'manuilsky', 'dimitrov'] },
-    { officeId: '', icon: 'rose', label: { ko: '비소련 혁명가', en: 'Non-Soviet revolutionary' }, people: ['luxemburg'] },
-    { officeId: '', icon: 'dove', label: { ko: '사회주의권 개혁 지도자', en: 'Socialist-bloc reform leader' }, people: ['nagy', 'dubcek'] },
-    { officeId: '', icon: 'landmark', label: { ko: '러시아 공화국 지도자', en: 'Russian republic leader' }, people: ['yeltsin'] },
-];
-
-const OFFICE_ICON = ROLE_RULES.reduce((index, rule) => {
-    if (rule.officeId && rule.icon && !index[rule.officeId]) index[rule.officeId] = rule.icon;
-    return index;
-}, {});
+// Person→role mappings live ONLY in the commulingo_person_roles DB table
+// (edited via the admin API or the leninbot agent). OFFICE_ICON seeds
+// commulingo_offices.icon and is the last-resort icon fallback; on DB
+// outage the file-fallback path renders default icons (crown/circle-help).
+const OFFICE_ICON = {
+    security: 'eye',
+    defence: 'star',
+    'foreign-affairs': 'handshake',
+    'ideology-propaganda': 'megaphone',
+    'culture-literature': 'paintbrush',
+    'heavy-industry-mic': 'factory',
+    'science-nuclear-space': 'atom',
+    agriculture: 'wheat',
+    'state-head': 'landmark',
+    'nationalities-federal': 'map',
+    'party-leadership': 'flag',
+    'party-secretariat-cadres': 'folder',
+    government: 'briefcase',
+    planning: 'chart',
+    'economic-management': 'chart',
+    comintern: 'globe',
+};
 
 function localize(value, lang) {
     if (!value) return '';
@@ -149,20 +144,10 @@ function roleForPerson(person, lang, data, officeTitles, officeIcons) {
         };
     }
 
-    let role = null;
-    for (const rule of ROLE_RULES) {
-        if (rule.people.includes(id)) {
-            role = rule;
-            break;
-        }
-    }
-    if (!role && person.group === 'old-regime') return { icon: 'crown', officeId: '', label: '' };
-    if (!role) return { icon: 'circle-help', officeId: '', label: '' };
-    return {
-        icon: role.icon,
-        officeId: role.officeId,
-        label: role.label ? localize(role.label, lang) : localize(ROLE_OFFICE_TITLES[role.officeId], lang),
-    };
+    // File-fallback path (DB unavailable): role mappings live only in the DB,
+    // so default icons are all we can offer.
+    if (person.group === 'old-regime') return { icon: 'crown', officeId: '', label: '' };
+    return { icon: 'circle-help', officeId: '', label: '' };
 }
 
 function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons) {
@@ -332,13 +317,6 @@ function validateCommuLingoPeople(data) {
             if (!icon && !officeId) issues.push({ level: 'error', code: 'person_role_missing_icon', personId });
             if (officeId && !officeIds.has(officeId)) issues.push({ level: 'error', code: 'person_role_unknown_office', personId, officeId });
         });
-    } else {
-        ROLE_RULES.forEach(rule => {
-            if (rule.officeId && !officeIds.has(rule.officeId)) issues.push({ level: 'error', code: 'role_rule_unknown_office', officeId: rule.officeId });
-            rule.people.forEach(personId => {
-                if (!peopleIds.has(personId)) issues.push({ level: 'error', code: 'role_rule_unknown_person', officeId: rule.officeId, personId });
-            });
-        });
     }
     return issues;
 }
@@ -347,7 +325,6 @@ module.exports = {
     SCHEMA_VERSION,
     OFFICE_DISPLAY_ORDER,
     ROLE_OFFICE_TITLES,
-    ROLE_RULES,
     OFFICE_ICON,
     localize,
     composePersonName,

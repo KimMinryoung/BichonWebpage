@@ -4,13 +4,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const db = require('../config/database');
-const { ROLE_RULES } = require('../data/commulingo/people-standard');
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
-}
+const { OFFICE_ICON } = require('../data/commulingo/people-standard');
 
 async function applyPersonRolesMigration(client) {
     const schemaPath = path.join(__dirname, 'migrations', '008_commulingo_person_roles.sql');
@@ -19,18 +13,11 @@ async function applyPersonRolesMigration(client) {
 }
 
 async function seedCommuLingoPersonRoles(client) {
-    let inserted = 0;
-    let skipped = 0;
+    // Person->role rows live only in the DB (created via admin API / agent);
+    // this seed only fills office icons. After a --replace --force, restore
+    // commulingo_person_roles from a DB backup.
     let officeIconsUpdated = 0;
-
-    const officeIcons = new Map();
-    for (const rule of ROLE_RULES) {
-        if (rule.officeId && rule.icon && !officeIcons.has(rule.officeId)) {
-            officeIcons.set(rule.officeId, rule.icon);
-        }
-    }
-
-    for (const [officeId, icon] of officeIcons.entries()) {
+    for (const [officeId, icon] of Object.entries(OFFICE_ICON)) {
         const result = await client.query(
             `UPDATE commulingo_offices
              SET icon = $2
@@ -40,34 +27,7 @@ async function seedCommuLingoPersonRoles(client) {
         );
         officeIconsUpdated += result.rowCount;
     }
-
-    for (const rule of ROLE_RULES) {
-        for (const personId of rule.people || []) {
-            const result = await client.query(
-                `INSERT INTO commulingo_person_roles
-                    (person_id, icon, office_id, label_ko, label_en, updated_at)
-                 SELECT id, $2, NULLIF($3, ''), $4, $5, NOW()
-                 FROM commulingo_people
-                 WHERE id = $1
-                 ON CONFLICT (person_id) DO NOTHING
-                 RETURNING person_id`,
-                [
-                    personId,
-                    rule.officeId ? '' : rule.icon || '',
-                    rule.officeId || '',
-                    rule.label ? localize(rule.label, 'ko') : '',
-                    rule.label ? localize(rule.label, 'en') : '',
-                ]
-            );
-            if (result.rows.length) {
-                inserted += 1;
-            } else {
-                skipped += 1;
-            }
-        }
-    }
-
-    return { inserted, skipped, officeIconsUpdated };
+    return { officeIconsUpdated };
 }
 
 async function main() {

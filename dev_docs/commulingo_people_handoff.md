@@ -167,11 +167,14 @@ Governance/scaffold tables:
 
 The people page no longer uses emoji role icons. It uses Lucide-style inline SVG paths in `views/public/commulingo-people.ejs`.
 
-Runtime role mappings live in `commulingo_person_roles`. `ROLE_RULES` in
-`data/commulingo/people-standard.js` is now only the seed and file-fallback
-source. Offices carry their normal role icon in `commulingo_offices.icon`;
-`commulingo_person_roles.icon` is now an override field and may be empty when
-the role derives from `officeId`. It stores icon ids, not raw SVG:
+Person→role mappings live ONLY in `commulingo_person_roles` (no file copy —
+`ROLE_RULES` was removed 2026-07-11; on DB outage the file-fallback path
+renders default icons). Offices carry their icon in `commulingo_offices.icon`,
+seeded from the `OFFICE_ICON` map in `data/commulingo/people-standard.js`;
+`commulingo_person_roles.icon` is an override field and may be empty when the
+role derives from `officeId`. After a `--replace --force`, person roles must
+be restored from a DB backup — the seed only refills office icons. Icon ids,
+not raw SVG:
 
 - security: `eye`
 - defence: `star`
@@ -190,6 +193,7 @@ the role derives from `officeId`. It stores icon ids, not raw SVG:
 - Comintern: `globe`
 - non-Soviet revolutionary: `rose`
 - socialist-bloc reform leader: `dove`
+- writer (office-less role, label '작가'/'Writer'): `feather`
 
 Design decision: do not use swords for defence. The Cheka/security tradition uses the "sword" symbol, so defence currently uses `star` for Red Army association.
 
