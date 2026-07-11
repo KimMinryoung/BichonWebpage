@@ -69,7 +69,7 @@ Current DB-shaped data count:
 - career entries: `574`
 - offices: `16`
 - office timeline rows: `141`
-- role categories: seeded in DB (`writer`, `intl-revolutionary`, `bloc-reformer`, `russian-republic-leader`)
+- role categories: seeded in DB (`writer`, `intl-revolutionary`, `bloc-reformer`, `russian-republic-leader`, `left-opposition`)
 - person detail sections: DB-only content in `commulingo_person_sections`
 - historical events: DB-backed `commulingo_history_events` with one relation row per linked person in `commulingo_history_event_people`; each relationship has a stable `relation_kind` (`executor` or `target`) for event-specific color coding: targets use red and executors use ochre, even when an executor was later purged. The first event is `great-terror` (1937–1938)
 - validator issues: none
@@ -236,6 +236,7 @@ categories. Icon ids, not raw SVG:
 - non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11)
 - socialist-bloc reform leader: `dove`
 - writer (office-less role, label '작가'/'Writer'): `feather`
+- left opposition (office-less role, label '좌익 반대파'/'Left Opposition'): `git-branch`
 
 Design decision: do not use swords for defence. The Cheka/security tradition uses the "sword" symbol, so defence currently uses `star` for Red Army association.
 
