@@ -37,6 +37,7 @@ async function seedCommuLingoPersonRoles(client) {
         ['bloc-reformer', 3, 'dove', '사회주의권 개혁 지도자', 'Socialist-bloc reform leader'],
         ['russian-republic-leader', 4, 'landmark', '러시아 공화국 지도자', 'Russian republic leader'],
         ['left-opposition', 5, 'git-branch', '좌익 반대파', 'Left Opposition'],
+        ['socialist-bloc-leader', 6, 'landmark', '사회주의권 지도자', 'Socialist-bloc leader'],
     ];
     let roleCategoriesInserted = 0;
     for (const category of roleCategories) {
