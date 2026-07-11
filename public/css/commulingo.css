@@ -1982,6 +1982,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-people-group.is-old-regime .commu-people-group-head { border-left-color: #b08d3f; }
 .commu-people-group.is-bolshevik .commu-people-group-head { border-left-color: #c0453c; }
+.commu-people-group.is-international-revolutionary .commu-people-group-head { border-left-color: #b84f7a; }
 .commu-people-group.is-stalin-era .commu-people-group-head { border-left-color: #8a93a6; }
 .commu-people-group.is-thaw .commu-people-group-head { border-left-color: #4d8fc4; }
 .commu-people-group.is-perestroika .commu-people-group-head { border-left-color: #4aa578; }
@@ -2041,9 +2042,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-secondary);
     display: flex;
     flex: 0 0 auto;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.25rem;
-    font-weight: 800;
     height: 46px;
     justify-content: center;
     text-decoration: none;
@@ -2058,9 +2056,21 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-person-medal.is-old-regime { border-color: #b08d3f; color: #b08d3f; }
 .commu-person-medal.is-bolshevik { border-color: #c0453c; color: #c0453c; }
+.commu-person-medal.is-international-revolutionary { border-color: #b84f7a; color: #b84f7a; }
 .commu-person-medal.is-stalin-era { border-color: #8a93a6; color: #8a93a6; }
 .commu-person-medal.is-thaw { border-color: #4d8fc4; color: #4d8fc4; }
 .commu-person-medal.is-perestroika { border-color: #4aa578; color: #4aa578; }
+
+.commu-role-icon {
+    display: block;
+    fill: none;
+    height: 23px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.9;
+    width: 23px;
+}
 
 .commu-person-idbox {
     flex: 1 1 auto;
