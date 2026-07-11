@@ -1,0 +1,12 @@
+<script>
+    (function() {
+        document.addEventListener('click', function(event) {
+            var card = event.target.closest('.commu-person-card[data-person-href]');
+            if (!card) return;
+            if (event.target.closest('a, details.commu-person-more, .commu-person-medal')) return;
+            var selection = window.getSelection && window.getSelection();
+            if (selection && selection.toString()) return;
+            window.location.href = card.getAttribute('data-person-href');
+        });
+    })();
+</script>

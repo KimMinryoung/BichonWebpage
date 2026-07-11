@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
+
+        <header class="commu-hub-head">
+            <span class="commu-office-range"><%= office.range %></span>
+            <h1><%= office.title %></h1>
+            <p><%= office.blurb %></p>
+        </header>
+
+        <section class="commu-hub-section" aria-labelledby="office-timeline">
+            <h2 id="office-timeline"><%= en ? 'Leadership Timeline' : '지도부 타임라인' %></h2>
+            <ol class="commu-office-rows commu-hub-office-rows">
+                <% office.rows.forEach(function(row) { %>
+                <li>
+                    <span class="commu-office-years"><%= row.years %></span>
+                    <span class="commu-office-main">
+                        <% if (row.personId) { %>
+                        <a href="/commulingo/people/<%= row.personId %>"><%= row.displayName || row.name %></a>
+                        <% } else { %>
+                        <strong><%= row.displayName || row.name %></strong>
+                        <% } %>
+                        <small><%= row.body %></small>
+                        <% if (row.note) { %><em><%= row.note %></em><% } %>
+                    </span>
+                </li>
+                <% }) %>
+            </ol>
+        </section>
+
+        <section class="commu-hub-section" aria-labelledby="office-people">
+            <h2 id="office-people"><%= en ? 'People' : '소속 인물' %></h2>
+            <div class="commu-people-grid">
+                <% people.forEach(function(person) { %>
+                <%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref }) %>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/commulingo-person-card-click-script') %>
+</body>
+</html>

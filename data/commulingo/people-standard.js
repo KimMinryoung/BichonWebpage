@@ -284,6 +284,14 @@ function normalizeCommuLingoPeople(data, options = {}) {
         lang,
         groups,
         offices,
+        roleCategories: Object.entries(data.roleCategories || {}).reduce((index, [id, category]) => {
+            index[id] = {
+                id,
+                icon: category.icon || '',
+                label: localize(category.label, lang),
+            };
+            return index;
+        }, {}),
         people,
         peopleById,
         officeDisplayOrder: OFFICE_DISPLAY_ORDER.slice(),

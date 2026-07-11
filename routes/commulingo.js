@@ -7,6 +7,7 @@ const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
 const { loadCommuLingoPeopleFromDb, loadCommuLingoPersonSections } = require('../data/commulingo/people-store');
+const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 
 const router = express.Router();
 
@@ -137,6 +138,8 @@ router.get('/people', async (req, res) => {
             offices: standardized.offices,
             groups: standardized.groups,
             peopleCount: standardized.people.length,
+            roleIconSvg,
+            roleHubHref,
             pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
             pageDescription: lang === 'en'
                 ? 'The people who stood at the forks of the two decision-simulation history books.'
@@ -147,6 +150,76 @@ router.get('/people', async (req, res) => {
     } catch (err) {
         console.error('commulingo people:', err);
         res.status(500).send('Failed to load people data');
+    }
+});
+
+router.get('/offices/:officeId', async (req, res) => {
+    try {
+        const officeId = typeof req.params.officeId === 'string' ? req.params.officeId.trim() : '';
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const office = standardized.offices.find(item => item.id === officeId);
+        if (!office) {
+            return errorPage.notFound(res, {
+                message: lang === 'en' ? 'Office not found.' : '기관을 찾을 수 없습니다.',
+                backHref: '/commulingo/people',
+                backLabel: lang === 'en' ? 'People' : '인물 사전',
+            });
+        }
+        const people = standardized.people.filter(person => person.role && person.role.officeId === office.id);
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        res.render('public/commulingo-office', {
+            office,
+            people,
+            roleIconSvg,
+            roleHubHref,
+            pageTitle: lang === 'en' ? `${office.title} — People` : `${office.title} — 인물 사전`,
+            pageDescription: office.blurb,
+            pagePath: `/commulingo/offices/${office.id}`,
+            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+        });
+    } catch (err) {
+        console.error('commulingo office page:', err);
+        errorPage.serverError(res, {
+            message: res.locals.lang === 'en' ? 'Failed to load office data.' : '기관 정보를 불러올 수 없습니다.',
+            backHref: '/commulingo/people',
+            backLabel: res.locals.lang === 'en' ? 'People' : '인물 사전',
+        });
+    }
+});
+
+router.get('/roles/:categoryId', async (req, res) => {
+    try {
+        const categoryId = typeof req.params.categoryId === 'string' ? req.params.categoryId.trim() : '';
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const category = standardized.roleCategories[categoryId];
+        if (!category) {
+            return errorPage.notFound(res, {
+                message: lang === 'en' ? 'Role category not found.' : '역할 범주를 찾을 수 없습니다.',
+                backHref: '/commulingo/people',
+                backLabel: lang === 'en' ? 'People' : '인물 사전',
+            });
+        }
+        const people = standardized.people.filter(person => person.role && person.role.categoryId === category.id);
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        res.render('public/commulingo-role', {
+            category,
+            people,
+            roleIconSvg,
+            roleHubHref,
+            pageTitle: lang === 'en' ? `${category.label} — People` : `${category.label} — 인물 사전`,
+            pageDescription: lang === 'en'
+                ? `People in the ${category.label} role category.`
+                : `${category.label} 역할 범주의 인물들.`,
+            pagePath: `/commulingo/roles/${category.id}`,
+            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+        });
+    } catch (err) {
+        console.error('commulingo role page:', err);
+        errorPage.serverError(res, {
+            message: res.locals.lang === 'en' ? 'Failed to load role data.' : '역할 정보를 불러올 수 없습니다.',
+            backHref: '/commulingo/people',
+            backLabel: res.locals.lang === 'en' ? 'People' : '인물 사전',
+        });
     }
 });
 
@@ -168,6 +241,8 @@ router.get('/people/:personId', async (req, res) => {
         res.render('public/commulingo-person', {
             person,
             sections,
+            roleIconSvg,
+            roleHubHref,
             pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,
             pageDescription: person.bio || person.epithet,
             pagePath: `/commulingo/people/${person.id}`,

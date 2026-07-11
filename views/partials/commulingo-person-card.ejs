@@ -1,0 +1,50 @@
+<%
+var cardGroupId = groupId || person.groupId || person.group || '';
+var fateIcons = {
+    executed: '✕', assassinated: '✕', murdered: '✕', killed: '✕', suicide: '✕',
+    deposed: '↓', exile: '→', natural: '○'
+};
+var personHref = '/commulingo/people/' + person.id;
+var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
+var medalTitle = person.role && person.role.label ? person.role.label : (en ? 'Context marker' : '맥락 표식');
+%>
+<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
+    <div class="commu-person-top">
+        <% if (medalHref) { %>
+        <a class="commu-person-medal is-<%= cardGroupId %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
+        <% } else { %>
+        <span class="commu-person-medal is-<%= cardGroupId %>" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
+        <% } %>
+        <div class="commu-person-idbox">
+            <h3><a href="<%= personHref %>"><%= person.displayName || person.name %></a></h3>
+            <span class="commu-person-cyr"><%= person.cyrillic %></span>
+        </div>
+        <div class="commu-person-sidebox">
+            <span class="commu-person-years"><%= person.years %></span>
+            <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
+        </div>
+    </div>
+    <p class="commu-person-epithet"><%= person.epithet %></p>
+    <% if (person.moment) { %>
+    <p class="commu-person-moment"><%= person.moment %></p>
+    <% } %>
+    <p class="commu-person-bio"><%= person.bio %></p>
+    <% if (person.career.length) { %>
+    <details class="commu-person-more">
+        <summary><%= en ? 'Career timeline' : '상세 이력 보기' %></summary>
+        <ul class="commu-person-career">
+            <% person.career.forEach(function(item) { %>
+            <li><span class="commu-career-year"><%= item.y %></span><span class="commu-career-role"><%= item.r %></span></li>
+            <% }) %>
+        </ul>
+    </details>
+    <% } %>
+    <% if (person.scenes.length) { %>
+    <div class="commu-person-scenes">
+        <span class="commu-person-scenes-label"><%= en ? 'Scenes' : '등장 장면' %></span>
+        <% person.scenes.forEach(function(scene) { %>
+        <a class="commu-scene-chip" href="/commulingo/book/<%= scene.bookId %>#<%= scene.episodeId %>" title="<%= scene.bookTitle %>"><%= scene.title %></a>
+        <% }) %>
+    </div>
+    <% } %>
+</article>

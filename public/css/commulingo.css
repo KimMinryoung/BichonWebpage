@@ -411,7 +411,7 @@
     background: var(--bg-surface);
     border-left: 4px solid var(--accent);
     margin-bottom: 18px;
-    padding: 16px;
+    padding: 16px 42px 16px 16px;
 }
 
 .commu-intro h2 {
@@ -2016,6 +2016,21 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-muted);
 }
 
+.commu-office-page-link {
+    border-top: 1px solid var(--border);
+    color: var(--link);
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 800;
+    padding: 10px 14px 12px;
+    text-decoration: none;
+}
+
+.commu-office-page-link:hover {
+    background: var(--bg-surface-hover);
+    color: var(--text-primary);
+}
+
 .commu-people-group {
     margin-top: 34px;
 }
@@ -2118,11 +2133,38 @@ button.commu-dc-option:hover { border-color: var(--link); }
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 0;
+    cursor: pointer;
     padding: 16px;
+    position: relative;
     scroll-margin-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.commu-person-card::after {
+    color: var(--text-muted);
+    content: '→';
+    font-size: 1rem;
+    font-weight: 800;
+    opacity: 0;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    transition: color 0.16s ease, opacity 0.16s ease, transform 0.16s ease;
+}
+
+.commu-person-card:hover,
+.commu-person-card:focus-within {
+    border-color: color-mix(in srgb, var(--link) 72%, var(--border));
+}
+
+.commu-person-card:hover::after,
+.commu-person-card:focus-within::after {
+    color: var(--link);
+    opacity: 1;
+    transform: translateX(2px);
 }
 
 .commu-person-card.is-focused {
@@ -2148,6 +2190,12 @@ button.commu-dc-option:hover { border-color: var(--link); }
     justify-content: center;
     text-decoration: none;
     width: 46px;
+}
+
+.commu-person-medal,
+.commu-person-more,
+.commu-person-scenes {
+    cursor: auto;
 }
 
 .commu-person-medal[href]:hover {
@@ -2184,6 +2232,16 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 1.05rem;
     color: var(--text-primary);
     line-height: 1.25;
+}
+
+.commu-person-idbox h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.commu-person-idbox h3 a:hover,
+.commu-person-idbox h3 a:focus-visible {
+    color: var(--link);
 }
 
 .commu-person-cyr {
@@ -2362,21 +2420,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
     border-color: var(--link);
 }
 
-.commu-person-detail-link {
-    align-self: flex-start;
-    border-top: 1px dashed var(--border);
-    color: var(--link);
-    font-size: 0.82rem;
-    font-weight: 700;
-    margin-top: auto;
-    padding-top: 8px;
-    text-decoration: none;
-}
-
-.commu-person-detail-link:hover {
-    color: var(--text-primary);
-}
-
 .commu-person-page {
     max-width: 920px;
 }
@@ -2531,6 +2574,64 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-person-detail-back {
     display: inline-block;
     margin-top: 26px;
+}
+
+.commu-person-hub-page {
+    max-width: 1040px;
+}
+
+.commu-hub-head {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--link);
+    border-radius: 0;
+    margin-top: 18px;
+    padding: 18px;
+}
+
+.commu-hub-head h1 {
+    color: var(--text-primary);
+    font-size: clamp(1.55rem, 3vw, 2.3rem);
+    letter-spacing: 0;
+    line-height: 1.15;
+    margin: 2px 0 7px;
+}
+
+.commu-hub-head p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.commu-role-hub-head {
+    align-items: center;
+    display: flex;
+    gap: 14px;
+}
+
+.commu-role-hub-head .commu-person-medal {
+    background: var(--bg-surface);
+    height: 52px;
+    width: 52px;
+}
+
+.commu-hub-section {
+    border-top: 1px solid var(--border);
+    margin-top: 26px;
+    padding-top: 20px;
+}
+
+.commu-hub-section h2 {
+    color: var(--text-primary);
+    font-size: 1.24rem;
+    line-height: 1.25;
+    margin: 0 0 14px;
+}
+
+.commu-hub-office-rows {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
 }
 
 /* book-list group header row: title + people-index CTA */

@@ -52,6 +52,8 @@ The people dictionary is now DB-backed at runtime.
   - `GET /commulingo/api/offices`
   - `GET /commulingo/api/offices/:officeId`
 - Detail page: `/commulingo/people/:personId`
+- Office hub page: `/commulingo/offices/:officeId`
+- Role-category hub page: `/commulingo/roles/:categoryId`
 - Admin CRUD API:
   - mounted at `/commulingo/admin/api`
   - protected by `requireAdminIp`
@@ -128,10 +130,17 @@ Routes and views:
   - admin CRUD API
 - `views/public/commulingo-people.ejs`
   - people page SSR template
-  - inline Lucide-style role SVG path map
+- `views/partials/commulingo-person-card.ejs`
+  - shared person card partial used by the people page and hub pages
 - `views/public/commulingo-person.ejs`
   - person detail page SSR template
   - renders long-form DB sections as localized markdown HTML
+- `views/public/commulingo-office.ejs`
+  - office hub: localized office header, full office timeline, and matching person cards
+- `views/public/commulingo-role.ejs`
+  - role-category hub: localized role medal/header and matching person cards
+- `data/commulingo/role-icons.js`
+  - shared Lucide-style role SVG path map, `roleIconSvg`, and medal hub target helper
 - `public/css/commulingo.css`
   - page layout, cards, accordions, role icon styling
 
@@ -226,13 +235,24 @@ Current `/commulingo/people` UX:
 
 - `소련 기관별 지도부 타임라인` is collapsed by default.
 - Each individual office timeline card inside it is also collapsed by default.
+- Each office timeline card includes a small `기관 페이지 →` / `Office page →`
+  link to `/commulingo/offices/:officeId`.
 - People groups are collapsed by default.
 - Group headers have hover/focus background and border changes to show clickability.
 - People cards are max two columns on desktop.
 - People cards collapse to one column under the existing mobile breakpoint.
 - `moment` renders as an optional restrained pull-quote between the epithet and bio when non-empty.
-- Cards are summaries. If `commulingo_person_sections` has rows for a person,
-  the card gets a `자세히 →` / `Details →` link to `/commulingo/people/:personId`.
+- Cards are summaries and the whole card is clickable to `/commulingo/people/:personId`.
+  Progressive enhancement keeps the person name as a real `<a>` so navigation
+  works without JavaScript; a delegated click handler navigates from the rest of
+  the card unless the click starts inside an anchor, the career accordion
+  (`details.commu-person-more`), the role medal, or the user is selecting text.
+- Cards no longer render the old `자세히 →` / `Details →` link; people without
+  detail sections still navigate to their detail route.
+- Role medals now link to hub pages instead of in-page office anchors:
+  `role.officeId` → `/commulingo/offices/:officeId`,
+  `role.categoryId` → `/commulingo/roles/:categoryId`, and fallback crown/help
+  medals remain non-links.
 - Person detail pages reuse the card header language, show the full career
   timeline, and render localized markdown sections with anchors `s-<slug>`.
 - Empty localized section bodies are skipped on the detail page and API.
