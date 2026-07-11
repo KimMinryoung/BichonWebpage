@@ -50,11 +50,11 @@
 
         <% var officesList = (typeof offices !== 'undefined' && offices) || []; %>
         <% if (officesList.length) { %>
-        <section class="commu-office-index" aria-label="<%= en ? 'Soviet institution leadership timelines' : '소련 기관별 지도부 타임라인' %>">
-            <header class="commu-office-index-head">
+        <details class="commu-office-index" aria-label="<%= en ? 'Soviet institution leadership timelines' : '소련 기관별 지도부 타임라인' %>">
+            <summary class="commu-office-index-head">
                 <span class="commu-people-range">1917–1991</span>
                 <h2><%= en ? 'Soviet Institution Timelines' : '소련 기관별 지도부 타임라인' %></h2>
-            </header>
+            </summary>
             <div class="commu-office-grid">
                 <% officesList.forEach(function(office) { %>
                 <details class="commu-office-card is-<%= office.id %>" id="office-<%= office.id %>">
@@ -82,7 +82,7 @@
                 </details>
                 <% }) %>
             </div>
-        </section>
+        </details>
         <% } %>
 
         <% groups.forEach(function(group) { %>
@@ -146,7 +146,14 @@
                 if (!hash) return;
                 if (hash.indexOf('#office-') === 0) {
                     var office = document.getElementById(hash.slice(1));
-                    if (office && office.tagName === 'DETAILS') office.open = true;
+                    var officeIndex = document.querySelector('details.commu-office-index');
+                    if (officeIndex) officeIndex.open = true;
+                    if (office && office.tagName === 'DETAILS') {
+                        office.open = true;
+                        window.requestAnimationFrame(function() {
+                            office.scrollIntoView({ block: 'start' });
+                        });
+                    }
                     return;
                 }
                 if (hash.indexOf('#p-') !== 0) return;

@@ -1825,9 +1825,55 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-office-index-head {
+    background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
+    border: 1px solid var(--border);
     border-left: 4px solid var(--accent);
+    cursor: pointer;
+    display: block;
+    list-style: none;
+    padding: 12px 38px 12px 14px;
+    position: relative;
+    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.commu-office-index-head::-webkit-details-marker {
+    display: none;
+}
+
+.commu-office-index-head:hover,
+.commu-office-index-head:focus-visible {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+}
+
+.commu-office-index-head:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent);
+    outline-offset: 2px;
+}
+
+.commu-office-index-head::after {
+    color: var(--text-muted);
+    content: '›';
+    font-size: 1.5rem;
+    line-height: 1;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transition: color 0.16s ease, transform 0.16s ease;
+}
+
+.commu-office-index-head:hover::after,
+.commu-office-index-head:focus-visible::after {
+    color: var(--link);
+}
+
+.commu-office-index[open] .commu-office-index-head {
     margin-bottom: 14px;
-    padding-left: 14px;
+}
+
+.commu-office-index[open] .commu-office-index-head::after {
+    transform: translateY(-50%) rotate(-90deg);
 }
 
 .commu-office-index-head h2 {
@@ -2054,7 +2100,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-people-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
 }
 
