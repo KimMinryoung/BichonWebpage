@@ -41,8 +41,8 @@ const ROLE_OFFICE_TITLES = {
 const ROLE_RULES = [
     { officeId: 'security', icon: '🕵️', people: ['beria', 'dzerzhinsky', 'menzhinsky', 'yagoda', 'yezhov', 'merkulov', 'abakumov', 'ignatiev', 'serov', 'shelepin', 'semichastny', 'andropov', 'fedorchuk', 'chebrikov', 'kryuchkov'] },
     { officeId: 'defence', icon: '🛡️', people: ['trotsky', 'zhukov', 'tukhachevsky', 'chuikov', 'frunze', 'voroshilov', 'timoshenko', 'malinovsky', 'grechko', 'ustinov', 'sokolov', 'yazov', 'kornilov'] },
-    { officeId: 'foreign-affairs', icon: '🤝', people: ['chicherin', 'litvinov', 'molotov', 'vyshinsky', 'gromyko', 'shevardnadze', 'shepilov', 'bessmertnykh', 'pankin', 'kollontai'] },
-    { officeId: 'ideology-propaganda', icon: '📣', people: ['lunacharsky', 'zhdanov', 'suslov', 'demichev', 'ponomarev', 'yakovlev', 'solzhenitsyn', 'sakharov'] },
+    { officeId: 'foreign-affairs', icon: '🤝', people: ['chicherin', 'litvinov', 'molotov', 'vyshinsky', 'gromyko', 'shevardnadze', 'bessmertnykh', 'pankin', 'kollontai'] },
+    { officeId: 'ideology-propaganda', icon: '📣', people: ['lunacharsky', 'zhdanov', 'shepilov', 'suslov', 'demichev', 'ponomarev', 'yakovlev', 'solzhenitsyn', 'sakharov'] },
     { officeId: 'culture-literature', icon: '🎭', people: ['fadeyev', 'furtseva', 'gubenko'] },
     { officeId: 'heavy-industry-mic', icon: '🏭', people: ['ordzhonikidze', 'tevosian', 'malyshev', 'vannikov', 'slavsky', 'afanasyev'] },
     { officeId: 'science-nuclear-space', icon: '⚛️', people: ['kurchatov', 'korolev', 'keldysh', 'kerimov', 'gagarin'] },
