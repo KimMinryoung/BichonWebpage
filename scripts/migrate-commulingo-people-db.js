@@ -6,6 +6,7 @@ const path = require('path');
 const db = require('../config/database');
 const data = require('../data/commulingo/people');
 const { parsePeriod, validateCommuLingoPeople } = require('../data/commulingo/people-standard');
+const { applyPersonRolesMigration, seedCommuLingoPersonRoles } = require('./seed-commulingo-person-roles');
 
 const replaceExisting = process.argv.includes('--replace');
 const forceReplace = process.argv.includes('--force');
@@ -214,6 +215,7 @@ async function main() {
     try {
         await client.query('BEGIN');
         await client.query(schemaSql);
+        await applyPersonRolesMigration(client);
 
         const existing = await client.query('SELECT COUNT(*)::int AS count FROM commulingo_people');
         if (existing.rows[0].count > 0 && !replaceExisting) {
@@ -238,6 +240,7 @@ async function main() {
                     commulingo_person_aliases,
                     commulingo_person_scenes,
                     commulingo_person_career_entries,
+                    commulingo_person_roles,
                     commulingo_office_rows,
                     commulingo_person_patronymics,
                     commulingo_offices,
@@ -251,6 +254,7 @@ async function main() {
         await insertPeople(client);
         await insertCareers(client);
         await insertOffices(client);
+        const roleSeed = await seedCommuLingoPersonRoles(client);
 
         const counts = await client.query(
             `SELECT
@@ -258,10 +262,11 @@ async function main() {
                 (SELECT COUNT(*)::int FROM commulingo_people) AS people,
                 (SELECT COUNT(*)::int FROM commulingo_person_career_entries) AS career_entries,
                 (SELECT COUNT(*)::int FROM commulingo_offices) AS offices,
-                (SELECT COUNT(*)::int FROM commulingo_office_rows) AS office_rows`
+                (SELECT COUNT(*)::int FROM commulingo_office_rows) AS office_rows,
+                (SELECT COUNT(*)::int FROM commulingo_person_roles) AS person_roles`
         );
         await client.query('COMMIT');
-        console.log(JSON.stringify({ migrated: true, replaceExisting, counts: counts.rows[0] }, null, 2));
+        console.log(JSON.stringify({ migrated: true, replaceExisting, counts: counts.rows[0], roleSeed }, null, 2));
     } catch (err) {
         await client.query('ROLLBACK');
         console.error(err.message);

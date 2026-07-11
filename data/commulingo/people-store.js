@@ -29,6 +29,7 @@ async function fetchRows() {
         careers,
         offices,
         officeRows,
+        personRoles,
     ] = await Promise.all([
         db.query(
             `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
@@ -62,7 +63,7 @@ async function fetchRows() {
              ORDER BY person_id, sort_order, id`
         ),
         db.query(
-            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
+            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon
              FROM commulingo_offices
              ORDER BY sort_order, id`
         ),
@@ -71,6 +72,11 @@ async function fetchRows() {
                     name_ko, name_en, note_ko, note_en
              FROM commulingo_office_rows
              ORDER BY office_id, sort_order, id`
+        ),
+        db.query(
+            `SELECT person_id, icon, office_id, label_ko, label_en
+             FROM commulingo_person_roles
+             ORDER BY person_id`
         ),
     ]);
 
@@ -83,6 +89,7 @@ async function fetchRows() {
         careers: careers.rows,
         offices: offices.rows,
         officeRows: officeRows.rows,
+        personRoles: personRoles.rows,
     };
 }
 
@@ -125,6 +132,16 @@ function rowsToPeopleData(rows) {
         });
     });
 
+    const personRoles = {};
+    rows.personRoles.forEach(row => {
+        const label = t(row.label_ko, row.label_en);
+        personRoles[row.person_id] = {
+            icon: row.icon || '',
+            officeId: row.office_id || '',
+            label: label.ko || label.en ? label : null,
+        };
+    });
+
     return {
         groups: rows.groups.map(row => ({
             id: row.id,
@@ -137,6 +154,7 @@ function rowsToPeopleData(rows) {
             range: row.range_label || '',
             title: t(row.title_ko, row.title_en),
             blurb: t(row.blurb_ko, row.blurb_en),
+            icon: row.icon || '',
             rows: officeRowsByOffice[row.id] || [],
         })),
         people: rows.people.map(row => ({
@@ -158,6 +176,7 @@ function rowsToPeopleData(rows) {
         careers,
         patronymics,
         cyrillicPatronymics,
+        personRoles,
     };
 }
 

@@ -104,10 +104,11 @@ Data and normalization:
   - groups, people, offices, careers, patronymics
 - `data/commulingo/people-standard.js`
   - normalization layer used by SSR and APIs
-  - `ROLE_RULES` maps people to role icon ids and office links
+  - `ROLE_RULES` seeds and file-fallback maps people to role icon ids and office links
   - validator lives here
 - `data/commulingo/people-store.js`
   - reads normalized DB tables and reconstructs the old `people.js` shape
+  - loads `commulingo_person_roles` as the runtime role-icon source
   - used by runtime public page/API
 - `data/commulingo/people-admin-store.js`
   - admin CRUD functions
@@ -151,6 +152,7 @@ Main tables:
 - `commulingo_person_aliases`
 - `commulingo_person_scenes`
 - `commulingo_person_career_entries`
+- `commulingo_person_roles`
 - `commulingo_offices`
 - `commulingo_office_rows`
 
@@ -165,7 +167,11 @@ Governance/scaffold tables:
 
 The people page no longer uses emoji role icons. It uses Lucide-style inline SVG paths in `views/public/commulingo-people.ejs`.
 
-`ROLE_RULES` in `data/commulingo/people-standard.js` stores icon ids, not raw SVG:
+Runtime role mappings live in `commulingo_person_roles`. `ROLE_RULES` in
+`data/commulingo/people-standard.js` is now only the seed and file-fallback
+source. Offices carry their normal role icon in `commulingo_offices.icon`;
+`commulingo_person_roles.icon` is now an override field and may be empty when
+the role derives from `officeId`. It stores icon ids, not raw SVG:
 
 - security: `eye`
 - defence: `star`
@@ -231,6 +237,11 @@ Notes:
 - Writes require CSRF unless called in an authenticated internal path that explicitly bypasses it later.
 - Writes record snapshots in `commulingo_people_revisions`.
 - Deletes are real DB deletes.
+- Person create/update accepts optional `payload.role`:
+  - absent: leave the existing role row untouched
+  - `null`: delete the role row
+  - object: upsert `{ icon?, officeId?, label? }`; `icon` is optional when `officeId` is present, `officeId` must exist in `commulingo_offices` when non-empty, and `label` may include `{ ko, en }`
+  - at least one of `icon` or `officeId` is required; use explicit icons for special non-institution roles such as `rose`, `dove`, and `landmark`
 - For AI agents, prefer suggestion/approval workflow before allowing direct writes.
 
 ## Common Workflows
@@ -248,6 +259,16 @@ npm run commulingo:people:migrate -- --replace
 ```
 
 Use this only if `people.js` is the intended source of truth for the change.
+
+Seed role rows from `ROLE_RULES` without replacing runtime edits:
+
+```bash
+node scripts/seed-commulingo-person-roles.js
+```
+
+The role seed applies migration 008, fills blank `commulingo_offices.icon`
+values from `ROLE_RULES`, inserts only missing `commulingo_person_roles` rows,
+skips missing people, and never overwrites existing runtime role edits.
 
 Check runtime DB reconstruction:
 
@@ -342,10 +363,10 @@ docker logs --tail 80 leninbot-frontend
 3. ~~Add a review/approval workflow.~~ Done 2026-07-11 (`leninbot/scripts/commulingo_suggestions.py`; direct mode currently active by owner choice).
 4. Decide source-of-truth strategy: currently DB primary (guarded `--replace`); a DB→`people.js` export script would restore repo tracking.
 5. Move role icon SVG path map out of the EJS template if it grows further.
-6. Consider moving `ROLE_RULES` into DB if non-developer admins need to edit role mappings.
+6. ~~Move `ROLE_RULES` into DB if non-developer admins need to edit role mappings.~~ Done 2026-07-11 (`commulingo_person_roles`; `ROLE_RULES` remains seed/fallback only).
 7. Source citations: `commulingo_edit` requires per-edit source refs (stored in `commulingo_agent_suggestions.source_refs`); per-career-row citations in the schema remain open.
 8. Add focused tests around DB reconstruction and admin CRUD rollback.
-9. New people added by the agent get the `circle-help` role icon until `ROLE_RULES` in `data/commulingo/people-standard.js` maps them — check after approving person creates.
+9. New people added by the agent/admin API can now be mapped through `payload.role` / `commulingo_person_roles`; unmapped people still fall back to `circle-help`.
 
 ## Useful Commit Trail
 

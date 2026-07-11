@@ -38,6 +38,7 @@ const ROLE_OFFICE_TITLES = {
     comintern: { ko: '코민테른 지도부', en: 'Comintern leadership' },
 };
 
+// Runtime DB data should use commulingo_person_roles; ROLE_RULES is the seed and file-fallback source.
 const ROLE_RULES = [
     { officeId: 'security', icon: 'eye', people: ['beria', 'dzerzhinsky', 'menzhinsky', 'yagoda', 'yezhov', 'merkulov', 'abakumov', 'ignatiev', 'serov', 'shelepin', 'semichastny', 'andropov', 'fedorchuk', 'chebrikov', 'kryuchkov', 'sorge'] },
     { officeId: 'defence', icon: 'star', people: ['trotsky', 'zhukov', 'tukhachevsky', 'chuikov', 'vasilevsky', 'frunze', 'voroshilov', 'timoshenko', 'malinovsky', 'grechko', 'ustinov', 'sokolov', 'yazov', 'kornilov'] },
@@ -59,6 +60,11 @@ const ROLE_RULES = [
     { officeId: '', icon: 'dove', label: { ko: '사회주의권 개혁 지도자', en: 'Socialist-bloc reform leader' }, people: ['nagy', 'dubcek'] },
     { officeId: '', icon: 'landmark', label: { ko: '러시아 공화국 지도자', en: 'Russian republic leader' }, people: ['yeltsin'] },
 ];
+
+const OFFICE_ICON = ROLE_RULES.reduce((index, rule) => {
+    if (rule.officeId && rule.icon && !index[rule.officeId]) index[rule.officeId] = rule.icon;
+    return index;
+}, {});
 
 function localize(value, lang) {
     if (!value) return '';
@@ -126,8 +132,23 @@ function buildSceneIndex(catalog, lang) {
     return sceneIndex;
 }
 
-function roleForPerson(person, lang) {
+function roleForPerson(person, lang, data, officeTitles, officeIcons) {
     const id = person.id || '';
+    if (data && Object.prototype.hasOwnProperty.call(data, 'personRoles')) {
+        const mappedRole = (data.personRoles || {})[id];
+        if (!mappedRole && person.group === 'old-regime') return { icon: 'crown', officeId: '', label: '' };
+        if (!mappedRole) return { icon: 'circle-help', officeId: '', label: '' };
+
+        const officeId = mappedRole.officeId || '';
+        const explicitLabel = mappedRole.label ? localize(mappedRole.label, lang) : '';
+        const officeLabel = officeId ? localize(officeTitles[officeId] || ROLE_OFFICE_TITLES[officeId], lang) : '';
+        return {
+            icon: mappedRole.icon || officeIcons[officeId] || OFFICE_ICON[officeId] || 'circle-help',
+            officeId,
+            label: explicitLabel || officeLabel || '',
+        };
+    }
+
     let role = null;
     for (const rule of ROLE_RULES) {
         if (rule.people.includes(id)) {
@@ -144,7 +165,7 @@ function roleForPerson(person, lang) {
     };
 }
 
-function normalizePerson(raw, data, lang, sceneIndex) {
+function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons) {
     const patronymic = localize((data.patronymics || {})[raw.id], lang);
     const cyrillicPatronymic = (data.cyrillicPatronymics || {})[raw.id] || '';
     const years = parseLifeYears(raw.years);
@@ -188,7 +209,7 @@ function normalizePerson(raw, data, lang, sceneIndex) {
             ko: raw.aliases && Array.isArray(raw.aliases.ko) ? raw.aliases.ko : [],
             en: raw.aliases && Array.isArray(raw.aliases.en) ? raw.aliases.en : [],
         },
-        role: roleForPerson(raw, lang),
+        role: roleForPerson(raw, lang, data, officeTitles, officeIcons),
         career,
         scenes: (raw.scenes || [])
             .map(scene => sceneIndex[scene[0] + '/' + scene[1]])
@@ -214,7 +235,15 @@ function normalizeOfficeRow(row, office, peopleById, lang) {
 function normalizeCommuLingoPeople(data, options = {}) {
     const lang = options.lang || 'ko';
     const sceneIndex = buildSceneIndex(options.catalog, lang);
-    const people = (data.people || []).map(person => normalizePerson(person, data, lang, sceneIndex));
+    const officeTitles = (data.offices || []).reduce((index, office) => {
+        index[office.id] = office.title || {};
+        return index;
+    }, {});
+    const officeIcons = (data.offices || []).reduce((index, office) => {
+        index[office.id] = office.icon || '';
+        return index;
+    }, {});
+    const people = (data.people || []).map(person => normalizePerson(person, data, lang, sceneIndex, officeTitles, officeIcons));
     const peopleById = people.reduce((index, person) => {
         index[person.id] = person;
         return index;
@@ -294,12 +323,22 @@ function validateCommuLingoPeople(data) {
             }
         });
     });
-    ROLE_RULES.forEach(rule => {
-        if (rule.officeId && !officeIds.has(rule.officeId)) issues.push({ level: 'error', code: 'role_rule_unknown_office', officeId: rule.officeId });
-        rule.people.forEach(personId => {
-            if (!peopleIds.has(personId)) issues.push({ level: 'error', code: 'role_rule_unknown_person', officeId: rule.officeId, personId });
+    if (Object.prototype.hasOwnProperty.call(data, 'personRoles')) {
+        Object.entries(data.personRoles || {}).forEach(([personId, role]) => {
+            if (!peopleIds.has(personId)) issues.push({ level: 'error', code: 'person_role_unknown_person', personId });
+            const officeId = role && role.officeId || '';
+            const icon = role && role.icon || '';
+            if (!icon && !officeId) issues.push({ level: 'error', code: 'person_role_missing_icon', personId });
+            if (officeId && !officeIds.has(officeId)) issues.push({ level: 'error', code: 'person_role_unknown_office', personId, officeId });
         });
-    });
+    } else {
+        ROLE_RULES.forEach(rule => {
+            if (rule.officeId && !officeIds.has(rule.officeId)) issues.push({ level: 'error', code: 'role_rule_unknown_office', officeId: rule.officeId });
+            rule.people.forEach(personId => {
+                if (!peopleIds.has(personId)) issues.push({ level: 'error', code: 'role_rule_unknown_person', officeId: rule.officeId, personId });
+            });
+        });
+    }
     return issues;
 }
 
@@ -308,6 +347,7 @@ module.exports = {
     OFFICE_DISPLAY_ORDER,
     ROLE_OFFICE_TITLES,
     ROLE_RULES,
+    OFFICE_ICON,
     localize,
     composePersonName,
     parseLifeYears,

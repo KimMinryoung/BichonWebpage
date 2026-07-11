@@ -1,5 +1,5 @@
 const db = require('../../config/database');
-const { parsePeriod } = require('./people-standard');
+const { OFFICE_ICON, parsePeriod } = require('./people-standard');
 const { clearCommuLingoPeopleCache } = require('./people-store');
 
 function t(ko, en) {
@@ -10,6 +10,12 @@ function localized(value, lang) {
     if (!value) return '';
     if (typeof value === 'string') return lang === 'ko' ? value : '';
     return value[lang] || '';
+}
+
+function badRequest(message) {
+    const err = new Error(message);
+    err.status = 400;
+    return err;
 }
 
 function parseLifeYears(label) {
@@ -84,6 +90,44 @@ async function writeRevision(client, entityType, entityId, note, snapshot, chang
     );
 }
 
+async function replaceRole(client, personId, role) {
+    if (role === undefined) return;
+    if (role === null) {
+        await client.query('DELETE FROM commulingo_person_roles WHERE person_id = $1', [personId]);
+        return;
+    }
+    if (!role || typeof role !== 'object') throw badRequest('role must be an object or null');
+
+    const icon = typeof role.icon === 'string' ? role.icon.trim() : '';
+    const officeId = typeof role.officeId === 'string' ? role.officeId.trim() : '';
+    if (!icon && !officeId) throw badRequest('role.icon or role.officeId is required');
+    if (officeId) {
+        const officeResult = await client.query('SELECT 1 FROM commulingo_offices WHERE id = $1', [officeId]);
+        if (!officeResult.rows.length) throw badRequest('role.officeId not found');
+    }
+
+    const label = role.label || {};
+    await client.query(
+        `INSERT INTO commulingo_person_roles
+            (person_id, icon, office_id, label_ko, label_en, updated_at)
+         VALUES ($1, $2, NULLIF($3, ''), $4, $5, NOW())
+         ON CONFLICT (person_id)
+         DO UPDATE SET
+            icon = EXCLUDED.icon,
+            office_id = EXCLUDED.office_id,
+            label_ko = EXCLUDED.label_ko,
+            label_en = EXCLUDED.label_en,
+            updated_at = NOW()`,
+        [
+            personId,
+            icon,
+            officeId,
+            localized(label, 'ko'),
+            localized(label, 'en'),
+        ]
+    );
+}
+
 function rowToPerson(row) {
     return {
         id: row.id,
@@ -146,6 +190,7 @@ async function getPersonAdmin(personId, options = {}) {
         sceneResult,
         careerResult,
         officeRowResult,
+        roleResult,
     ] = await Promise.all([
         client.query(
             `SELECT patronymic_ko, patronymic_en, cyrillic_patronymic
@@ -183,6 +228,13 @@ async function getPersonAdmin(personId, options = {}) {
              ORDER BY o.sort_order, r.sort_order, r.id`,
             [id]
         ),
+        client.query(
+            `SELECT r.icon, r.office_id, r.label_ko, r.label_en, o.icon AS office_icon
+             FROM commulingo_person_roles r
+             LEFT JOIN commulingo_offices o ON o.id = r.office_id
+             WHERE r.person_id = $1`,
+            [id]
+        ),
     ]);
 
     const person = rowToPerson(personResult.rows[0]);
@@ -213,6 +265,12 @@ async function getPersonAdmin(personId, options = {}) {
         body: t(row.body_ko, row.body_en),
         note: t(row.note_ko, row.note_en),
     }));
+    person.role = roleResult.rows.length ? {
+        icon: roleResult.rows[0].icon || '',
+        officeId: roleResult.rows[0].office_id || '',
+        label: t(roleResult.rows[0].label_ko, roleResult.rows[0].label_en),
+        resolvedIcon: roleResult.rows[0].icon || roleResult.rows[0].office_icon || OFFICE_ICON[roleResult.rows[0].office_id] || 'circle-help',
+    } : null;
     return person;
 }
 
@@ -342,6 +400,7 @@ async function createPersonAdmin(payload, options = {}) {
         await replaceAliases(client, id, payload.aliases || { ko: [nameKo], en: [nameEn] });
         await replaceScenes(client, id, payload.scenes || []);
         await replaceCareer(client, id, payload.career || []);
+        if (payload.role !== undefined) await replaceRole(client, id, payload.role);
         const person = await getPersonAdmin(id, { client });
         await writeRevision(client, 'person', id, 'create person', person, options.changedBy);
         return person;
@@ -401,6 +460,7 @@ async function updatePersonAdmin(personId, payload, options = {}) {
         if (payload.aliases !== undefined) await replaceAliases(client, id, payload.aliases);
         if (payload.scenes !== undefined) await replaceScenes(client, id, payload.scenes);
         if (payload.career !== undefined) await replaceCareer(client, id, payload.career);
+        if (payload.role !== undefined) await replaceRole(client, id, payload.role);
         const after = await getPersonAdmin(id, { client });
         await writeRevision(client, 'person', id, 'update person', { before, after }, options.changedBy);
         return after;
@@ -424,7 +484,7 @@ async function deletePersonAdmin(personId, options = {}) {
 
 async function listOfficesAdmin() {
     const { rows } = await db.query(
-        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
+        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon
          FROM commulingo_offices
          ORDER BY sort_order, id`
     );
@@ -433,6 +493,7 @@ async function listOfficesAdmin() {
         range: row.range_label || '',
         title: t(row.title_ko, row.title_en),
         blurb: t(row.blurb_ko, row.blurb_en),
+        icon: row.icon || '',
     }));
 }
 
@@ -440,7 +501,7 @@ async function getOfficeAdmin(officeId, options = {}) {
     const id = requireId(officeId, 'office id');
     const client = options.client || db;
     const officeResult = await client.query(
-        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
+        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon
          FROM commulingo_offices
          WHERE id = $1`,
         [id]
@@ -460,6 +521,7 @@ async function getOfficeAdmin(officeId, options = {}) {
         range: officeRow.range_label || '',
         title: t(officeRow.title_ko, officeRow.title_en),
         blurb: t(officeRow.blurb_ko, officeRow.blurb_en),
+        icon: officeRow.icon || '',
         rows: rowsResult.rows.map(row => ({
             id: row.id,
             years: row.period_label || '',
