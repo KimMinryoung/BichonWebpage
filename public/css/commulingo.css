@@ -1820,6 +1820,156 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin-top: 12px;
 }
 
+.commu-office-index {
+    margin-top: 28px;
+}
+
+.commu-office-index-head {
+    border-left: 4px solid var(--accent);
+    margin-bottom: 14px;
+    padding-left: 14px;
+}
+
+.commu-office-index-head h2 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin: 2px 0 4px;
+}
+
+.commu-office-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.commu-office-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.commu-office-card[open] {
+    border-color: color-mix(in srgb, var(--link) 42%, var(--border));
+}
+
+.commu-office-card-head {
+    background: var(--bg-surface);
+    cursor: pointer;
+    display: block;
+    list-style: none;
+    padding: 13px 44px 12px 14px;
+    position: relative;
+}
+
+.commu-office-card[open] .commu-office-card-head {
+    border-bottom: 1px solid var(--border);
+}
+
+.commu-office-card-head::-webkit-details-marker {
+    display: none;
+}
+
+.commu-office-card-head::after {
+    align-items: center;
+    border: 1px solid var(--border);
+    color: var(--link);
+    content: '+';
+    display: flex;
+    font-size: 1rem;
+    font-weight: 800;
+    height: 24px;
+    justify-content: center;
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    width: 24px;
+}
+
+.commu-office-card[open] .commu-office-card-head::after {
+    content: '-';
+}
+
+.commu-office-range {
+    color: var(--text-muted);
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.commu-office-card-head h3 {
+    color: var(--text-primary);
+    font-size: 1.02rem;
+    line-height: 1.25;
+    margin: 0 0 5px;
+}
+
+.commu-office-card-head p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.commu-office-rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.commu-office-rows li {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 112px minmax(0, 1fr);
+    padding: 10px 14px;
+}
+
+.commu-office-rows li + li {
+    border-top: 1px solid var(--border);
+}
+
+.commu-office-years {
+    color: var(--text-muted);
+    font-family: 'Courier New', monospace;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.commu-office-main {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+}
+
+.commu-office-main a,
+.commu-office-main strong {
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-decoration: none;
+}
+
+.commu-office-main a:hover {
+    color: var(--link);
+}
+
+.commu-office-main small,
+.commu-office-main em {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-style: normal;
+    line-height: 1.35;
+}
+
+.commu-office-main em {
+    color: var(--text-muted);
+}
+
 .commu-people-group {
     margin-top: 34px;
 }
@@ -1864,7 +2014,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-person-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 16px;
     scroll-margin-top: 80px;
     display: flex;
@@ -1884,19 +2034,26 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-person-medal {
-    flex: 0 0 auto;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.45rem;
-    font-weight: 700;
     background: var(--bg-surface);
     border: 2px solid var(--border);
+    border-radius: 0;
     color: var(--text-secondary);
+    display: flex;
+    flex: 0 0 auto;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    height: 46px;
+    justify-content: center;
+    text-decoration: none;
+    width: 46px;
+}
+
+.commu-person-medal[href]:hover {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+    color: var(--link);
 }
 
 .commu-person-medal.is-old-regime { border-color: #b08d3f; color: #b08d3f; }
@@ -2110,9 +2267,24 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: #fff;
 }
 
+@media (max-width: 720px) {
+    .commu-office-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .commu-office-rows li {
+        grid-template-columns: 92px minmax(0, 1fr);
+    }
+}
+
 @media (max-width: 540px) {
     .commu-people-grid {
         grid-template-columns: 1fr;
+    }
+
+    .commu-office-rows li {
+        grid-template-columns: 1fr;
+        gap: 4px;
     }
 
     .commu-person-sidebox {

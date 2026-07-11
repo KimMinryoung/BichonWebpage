@@ -28,6 +28,43 @@
             </div>
         </header>
 
+        <% var officesList = (typeof offices !== 'undefined' && offices) || []; %>
+        <% if (officesList.length) { %>
+        <section class="commu-office-index" aria-label="<%= en ? 'Soviet institution leadership timelines' : '소련 기관별 지도부 타임라인' %>">
+            <header class="commu-office-index-head">
+                <span class="commu-people-range">1917–1991</span>
+                <h2><%= en ? 'Soviet Institution Timelines' : '소련 기관별 지도부 타임라인' %></h2>
+            </header>
+            <div class="commu-office-grid">
+                <% officesList.forEach(function(office) { %>
+                <details class="commu-office-card is-<%= office.id %>" id="office-<%= office.id %>">
+                    <summary class="commu-office-card-head">
+                        <span class="commu-office-range"><%= office.range %></span>
+                        <h3><%= office.title %></h3>
+                        <p><%= office.blurb %></p>
+                    </summary>
+                    <ol class="commu-office-rows">
+                        <% office.rows.forEach(function(row) { %>
+                        <li>
+                            <span class="commu-office-years"><%= row.years %></span>
+                            <span class="commu-office-main">
+                                <% if (row.personId) { %>
+                                <a href="#p-<%= row.personId %>"><%= row.name %></a>
+                                <% } else { %>
+                                <strong><%= row.name %></strong>
+                                <% } %>
+                                <small><%= row.body %></small>
+                                <% if (row.note) { %><em><%= row.note %></em><% } %>
+                            </span>
+                        </li>
+                        <% }) %>
+                    </ol>
+                </details>
+                <% }) %>
+            </div>
+        </section>
+        <% } %>
+
         <% groups.forEach(function(group) { %>
         <section class="commu-people-group is-<%= group.id %>">
             <header class="commu-people-group-head">
@@ -39,9 +76,13 @@
                 <% group.people.forEach(function(person) { %>
                 <article class="commu-person-card" id="p-<%= person.id %>">
                     <div class="commu-person-top">
-                        <span class="commu-person-medal is-<%= group.id %>" aria-hidden="true"><%= person.initial %></span>
+                        <% if (person.role && person.role.officeId) { %>
+                        <a class="commu-person-medal is-<%= group.id %>" href="#office-<%= person.role.officeId %>" title="<%= person.role.label %>" aria-label="<%= person.role.label %>"><%= person.role.icon %></a>
+                        <% } else { %>
+                        <span class="commu-person-medal is-<%= group.id %>" title="<%= en ? 'Context marker' : '맥락 표식' %>" aria-hidden="true"><%= person.role ? person.role.icon : '•' %></span>
+                        <% } %>
                         <div class="commu-person-idbox">
-                            <h3><%= person.name %></h3>
+                            <h3><%= person.displayName || person.name %></h3>
                             <span class="commu-person-cyr"><%= person.cyrillic %></span>
                         </div>
                         <div class="commu-person-sidebox">
@@ -82,7 +123,13 @@
         (function() {
             function focusHash() {
                 var hash = window.location.hash;
-                if (!hash || hash.indexOf('#p-') !== 0) return;
+                if (!hash) return;
+                if (hash.indexOf('#office-') === 0) {
+                    var office = document.getElementById(hash.slice(1));
+                    if (office && office.tagName === 'DETAILS') office.open = true;
+                    return;
+                }
+                if (hash.indexOf('#p-') !== 0) return;
                 var card = document.getElementById(hash.slice(1));
                 if (!card) return;
                 document.querySelectorAll('.commu-person-card.is-focused').forEach(function(el) {
