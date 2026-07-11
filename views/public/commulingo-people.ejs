@@ -111,6 +111,9 @@
                         </div>
                     </div>
                     <p class="commu-person-epithet"><%= person.epithet %></p>
+                    <% if (person.moment) { %>
+                    <p class="commu-person-moment"><%= person.moment %></p>
+                    <% } %>
                     <p class="commu-person-bio"><%= person.bio %></p>
                     <% if (person.career.length) { %>
                     <details class="commu-person-more">

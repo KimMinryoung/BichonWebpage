@@ -203,6 +203,7 @@ Current `/commulingo/people` UX:
 - Group headers have hover/focus background and border changes to show clickability.
 - People cards are max two columns on desktop.
 - People cards collapse to one column under the existing mobile breakpoint.
+- `moment` renders as an optional restrained pull-quote between the epithet and bio when non-empty.
 - Hash behavior:
   - `#office-...` opens the outer office timeline and the target office card.
   - `#p-...` opens the target people group and scrolls to the person card.
@@ -237,6 +238,7 @@ Notes:
 - Writes require CSRF unless called in an authenticated internal path that explicitly bypasses it later.
 - Writes record snapshots in `commulingo_people_revisions`.
 - Deletes are real DB deletes.
+- Person create/update accepts optional localized `payload.moment` (`{ ko, en }` or string); absent leaves existing DB text untouched on update, and empty text is not rendered on public cards.
 - Person create/update accepts optional `payload.role`:
   - absent: leave the existing role row untouched
   - `null`: delete the role row

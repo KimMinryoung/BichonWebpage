@@ -38,7 +38,7 @@ async function fetchRows() {
         ),
         db.query(
             `SELECT id, group_id, initial, cyrillic, years_label,
-                    name_ko, name_en, epithet_ko, epithet_en, bio_ko, bio_en,
+                    name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                     fate_kind, fate_label_ko, fate_label_en
              FROM commulingo_people
              ORDER BY sort_order, id`
@@ -165,6 +165,7 @@ function rowsToPeopleData(rows) {
             name: t(row.name_ko, row.name_en),
             years: row.years_label || '',
             epithet: t(row.epithet_ko, row.epithet_en),
+            moment: t(row.moment_ko, row.moment_en),
             bio: t(row.bio_ko, row.bio_en),
             fate: {
                 kind: row.fate_kind || '',

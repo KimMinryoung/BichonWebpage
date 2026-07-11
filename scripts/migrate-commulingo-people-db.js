@@ -209,8 +209,11 @@ async function main() {
         return;
     }
 
-    const schemaPath = path.join(__dirname, 'migrations', '007_commulingo_people.sql');
-    const schemaSql = fs.readFileSync(schemaPath, 'utf8');
+    const schemaPaths = [
+        path.join(__dirname, 'migrations', '007_commulingo_people.sql'),
+        path.join(__dirname, 'migrations', '009_commulingo_person_moment.sql'),
+    ];
+    const schemaSql = schemaPaths.map(schemaPath => fs.readFileSync(schemaPath, 'utf8')).join('\n');
     const client = await db.connect();
     try {
         await client.query('BEGIN');

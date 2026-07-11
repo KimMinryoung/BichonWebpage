@@ -140,6 +140,7 @@ function rowToPerson(row) {
         deathYear: row.death_year,
         name: t(row.name_ko, row.name_en),
         epithet: t(row.epithet_ko, row.epithet_en),
+        moment: t(row.moment_ko, row.moment_en),
         bio: t(row.bio_ko, row.bio_en),
         fate: {
             kind: row.fate_kind || '',
@@ -155,7 +156,7 @@ async function listPeopleAdmin(options = {}) {
     const offset = normalizeOffset(options.offset);
     const { rows } = await db.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
-                name_ko, name_en, epithet_ko, epithet_en, bio_ko, bio_en,
+                name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en
          FROM commulingo_people
          WHERE ($1 = ''
@@ -176,7 +177,7 @@ async function getPersonAdmin(personId, options = {}) {
     const client = options.client || db;
     const personResult = await client.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
-                name_ko, name_en, epithet_ko, epithet_en, bio_ko, bio_en,
+                name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en
          FROM commulingo_people
          WHERE id = $1`,
@@ -370,12 +371,12 @@ async function createPersonAdmin(payload, options = {}) {
         await client.query(
             `INSERT INTO commulingo_people
                 (id, group_id, sort_order, initial, cyrillic, years_label, birth_year, death_year,
-                 name_ko, name_en, epithet_ko, epithet_en, bio_ko, bio_en,
+                 name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                  fate_kind, fate_label_ko, fate_label_en, updated_at)
              VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8,
-                 $9, $10, $11, $12, $13, $14,
-                 $15, $16, $17, NOW())`,
+                 $9, $10, $11, $12, $13, $14, $15, $16,
+                 $17, $18, $19, NOW())`,
             [
                 id,
                 groupId,
@@ -389,6 +390,8 @@ async function createPersonAdmin(payload, options = {}) {
                 nameEn,
                 localized(payload.epithet, 'ko'),
                 localized(payload.epithet, 'en'),
+                localized(payload.moment, 'ko'),
+                localized(payload.moment, 'en'),
                 localized(payload.bio, 'ko'),
                 localized(payload.bio, 'en'),
                 payload.fate ? payload.fate.kind || '' : '',
@@ -438,6 +441,10 @@ async function updatePersonAdmin(personId, payload, options = {}) {
         if (payload.epithet !== undefined) {
             set('epithet_ko', localized(payload.epithet, 'ko'));
             set('epithet_en', localized(payload.epithet, 'en'));
+        }
+        if (payload.moment !== undefined) {
+            set('moment_ko', localized(payload.moment, 'ko'));
+            set('moment_en', localized(payload.moment, 'en'));
         }
         if (payload.bio !== undefined) {
             set('bio_ko', localized(payload.bio, 'ko'));

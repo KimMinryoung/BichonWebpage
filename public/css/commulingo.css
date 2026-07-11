@@ -2246,6 +2246,16 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-primary);
 }
 
+.commu-person-moment {
+    border-left: 3px solid color-mix(in srgb, var(--link) 72%, var(--border));
+    color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-muted));
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.55;
+    margin: 0;
+    padding-left: 10px;
+}
+
 .commu-person-bio {
     margin: 0;
     font-size: 0.88rem;

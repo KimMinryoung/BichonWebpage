@@ -198,6 +198,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         displayName: composePersonName(localize(raw.name, lang), patronymic),
         cyrillic: composePersonName(raw.cyrillic, cyrillicPatronymic),
         epithet: localize(raw.epithet, lang),
+        moment: localize(raw.moment, lang),
         bio: localize(raw.bio, lang),
         fate: raw.fate ? {
             kind: raw.fate.kind || '',

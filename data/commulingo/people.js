@@ -8,8 +8,7 @@
 //
 // Card design: Cyrillic monogram medallion + one-line epithet + short
 // story-style bio + a FATE CHIP (executed/assassinated/murdered/killed/
-// deposed/exile/natural). The fate chips are the page's visual thesis:
-// how rare "natural" is in this list is itself the lesson of both books.
+// deposed/exile/natural).
 //
 // aliases.ko/en are the exact strings that appear in book text. The client
 // linkifier blocks known compounds (레닌그라드, 스탈린그라드, …) — see
