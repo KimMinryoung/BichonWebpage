@@ -75,7 +75,7 @@ Current people groups:
 - `thaw`
 - `perestroika`
 
-`international-revolutionary` currently contains Rosa Luxemburg. It exists for non-Soviet revolutionaries who belong in the intellectual/political context but should not be presented as Soviet institutional figures.
+`international-revolutionary` holds non-Soviet revolutionaries (Luxemburg, Liebknecht, Gramsci, Mao, Guevara, ...). It renders LAST, under its own '소련 밖의 혁명가들' section heading, independent of the Soviet-era sequence (sort_order 99; standalone list in commulingo-people.ejs). Convention: their `cyrillic` column carries the NATIVE-script name instead (毛泽东, Hồ Chí Minh, Amílcar Cabral, ...).
 
 ## Important Source-of-Truth Warning
 
@@ -191,7 +191,7 @@ not raw SVG:
 - government: `briefcase`
 - planning/economic management: `chart`
 - Comintern: `globe`
-- non-Soviet revolutionary: `rose`
+- non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11)
 - socialist-bloc reform leader: `dove`
 - writer (office-less role, label '작가'/'Writer'): `feather`
 
@@ -247,7 +247,7 @@ Notes:
   - absent: leave the existing role row untouched
   - `null`: delete the role row
   - object: upsert `{ icon?, officeId?, label? }`; `icon` is optional when `officeId` is present, `officeId` must exist in `commulingo_offices` when non-empty, and `label` may include `{ ko, en }`
-  - at least one of `icon` or `officeId` is required; use explicit icons for special non-institution roles such as `rose`, `dove`, and `landmark`
+  - at least one of `icon` or `officeId` is required; use explicit icons for special non-institution roles such as `flame` (non-Soviet revolutionary), `feather` (writer), `dove`, and `landmark`
 - For AI agents, prefer suggestion/approval workflow before allowing direct writes.
 
 ## Common Workflows
