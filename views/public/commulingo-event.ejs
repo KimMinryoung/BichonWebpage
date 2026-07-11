@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-event-page" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo/events">← <%= en ? 'Historical events' : '역사 사건' %></a>
+        <header class="commu-event-head">
+            <span class="commu-event-period"><%= event.period %></span>
+            <h1><%= event.title %></h1>
+            <p class="commu-event-question"><%= event.question %></p>
+            <p><%= event.summary %></p>
+        </header>
+        <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
+            <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
+            <ol class="commu-event-timeline-list"><% event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%= item.body %></p></div></li><% }) %></ol>
+        </section>
+        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%= event.outcome %></p></section>
+        <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
+            <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %></h2>
+            <div class="commu-event-people-grid"><% event.people.forEach(function(person) { %><a href="/commulingo/people/<%= person.id %>"><span class="commu-event-person-relation"><%= person.relation %></span><strong><%= person.name %></strong><small><%= person.years %></small><p><%= person.note %></p></a><% }) %></div>
+        </section>
+        <% if (event.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% event.sources.forEach(function(source, index) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% }) %></p><% } %>
+        <a class="commu-back-link commu-person-detail-back" href="/commulingo/events">← <%= en ? 'Historical events' : '역사 사건' %></a>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

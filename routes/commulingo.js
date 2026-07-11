@@ -7,6 +7,7 @@ const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
 const { loadCommuLingoPeopleFromDb, loadCommuLingoPersonSections } = require('../data/commulingo/people-store');
+const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 
 const router = express.Router();
@@ -130,6 +131,8 @@ router.get('/', (req, res) => {
     });
 });
 
+router.use('/events', require('./commulingo-events'));
+
 router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(req, res);
@@ -245,10 +248,16 @@ router.get('/people/:personId', async (req, res) => {
         }
         const rawSections = loaded.source === 'db' ? await loadCommuLingoPersonSections(personId) : [];
         const sections = localizedPersonSections(rawSections, lang);
+        const historyEvents = loaded.source === 'db'
+            ? (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
+                ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
+            }))
+            : [];
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-person', {
             person,
             sections,
+            historyEvents,
             roleIconSvg,
             roleHubHref,
             pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,

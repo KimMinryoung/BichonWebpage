@@ -53,6 +53,13 @@
         </section>
         <% } %>
 
+        <% if (historyEvents && historyEvents.length) { %>
+        <section class="commu-person-detail-section commu-person-history-events" aria-labelledby="history-events">
+            <h2 id="history-events"><%= en ? "Related historical events" : "관련 역사 사건" %></h2>
+            <ul class="commu-person-event-links"><% historyEvents.forEach(function(event) { %><li><a href="/commulingo/events/<%= event.id %>"><span><%= event.period %></span><strong><%= event.title %></strong><em><%= event.relation %></em><small><%= event.note %></small></a></li><% }) %></ul>
+        </section>
+        <% } %>
+
         <% sections.forEach(function(section) { %>
         <section class="commu-person-detail-section" id="s-<%= section.slug %>">
             <% if (section.heading) { %><h2><%= section.heading %></h2><% } %>

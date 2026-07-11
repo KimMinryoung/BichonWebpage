@@ -51,6 +51,9 @@ The people dictionary is now DB-backed at runtime.
   - `GET /commulingo/api/people/:personId` (includes localized detail `sections`)
   - `GET /commulingo/api/offices`
   - `GET /commulingo/api/offices/:officeId`
+- Historical event pages:
+  - `GET /commulingo/events`
+  - `GET /commulingo/events/:eventId`
 - Detail page: `/commulingo/people/:personId`
 - Office hub page: `/commulingo/offices/:officeId`
 - Role-category hub page: `/commulingo/roles/:categoryId`
@@ -68,6 +71,7 @@ Current DB-shaped data count:
 - office timeline rows: `141`
 - role categories: seeded in DB (`writer`, `intl-revolutionary`, `bloc-reformer`, `russian-republic-leader`)
 - person detail sections: DB-only content in `commulingo_person_sections`
+- historical events: DB-backed `commulingo_history_events` with one relation row per linked person in `commulingo_history_event_people`; the first event is `great-terror` (1937–1938)
 - validator issues: none
 - unmapped role icons: none
 
@@ -124,6 +128,7 @@ Data and normalization:
 Routes and views:
 
 - `routes/commulingo.js`
+  - mounts `routes/commulingo-events.js` at `/commulingo/events`; person detail pages query and render their linked events
   - public page and read APIs
   - DB-first load with file fallback
 - `routes/commulingo-admin-api.js`
@@ -133,6 +138,9 @@ Routes and views:
 - `views/partials/commulingo-person-card.ejs`
   - shared person card partial used by the people page and hub pages
 - `views/public/commulingo-person.ejs`
+  - includes linked historical-event cards when present
+- `views/public/commulingo-events.ejs` and `views/public/commulingo-event.ejs`
+  - event index and detail page; detail pages list related people with person links
   - person detail page SSR template
   - renders long-form DB sections as localized markdown HTML
 - `views/public/commulingo-office.ejs`
@@ -173,6 +181,8 @@ Main tables:
 - `commulingo_person_sections`
 - `commulingo_offices`
 - `commulingo_office_rows`
+- `commulingo_history_events`
+- `commulingo_history_event_people`
 
 Governance/scaffold tables:
 

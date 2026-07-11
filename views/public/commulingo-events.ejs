@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-events-page" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
+        <header class="box commulingo-hero commulingo-hero--graph">
+            <div><h1><%= en ? 'Historical Events' : '역사 사건' %></h1><p><%= en ? 'Events, institutions, and people viewed as one connected history.' : '사건·기관·인물을 하나의 연결된 역사로 읽습니다.' %></p></div>
+        </header>
+        <section class="commu-event-grid" aria-label="<%= en ? 'Historical events' : '역사 사건 목록' %>">
+            <% events.forEach(function(event) { %>
+            <a class="commu-event-card" href="/commulingo/events/<%= event.id %>">
+                <span class="commu-event-period"><%= event.period %></span>
+                <h2><%= event.title %></h2>
+                <p><%= event.summary %></p>
+                <span class="commu-event-card-link"><%= en ? 'Open event →' : '사건 보기 →' %></span>
+            </a>
+            <% }) %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>
