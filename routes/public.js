@@ -429,7 +429,7 @@ router.get('/hub.md', async (req, res) => {
         href: `/hub/${item.slug}`,
         date: item.published_at ? new Date(item.published_at).toISOString().split('T')[0] : '',
     }));
-    res.type('text/markdown; charset=utf-8').send(markdownIndex('큐레이션', '사이버-레닌이 선별한 한국어권 진보 글 목록입니다.', items));
+    res.type('text/markdown; charset=utf-8').send(markdownIndex('큐레이션', '사이버-레닌이 선별한 진보적인 글 목록입니다.', items));
 });
 
 router.get('/atom.xml', async (req, res) => {

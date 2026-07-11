@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
             paginationBase: '/hub?page=',
             pagePath,
             pageTitle: '큐레이션',
-            pageDescription: '사이버-레닌이 선별한 한국어권 진보 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
+            pageDescription: '사이버-레닌이 선별한 진보적인 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
             jsonLd: seo.itemListJsonLd(items.map(item => ({ title: item.title, href: `/hub/${item.slug}` }))),
         });
     } catch (error) {
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
             items: [], currentPage: 1, totalPages: 1,
             paginationBase: '/hub?page=', pagePath,
             pageTitle: '큐레이션',
-            pageDescription: '사이버-레닌이 선별한 한국어권 진보 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
+            pageDescription: '사이버-레닌이 선별한 진보적인 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
         });
     }
 });
