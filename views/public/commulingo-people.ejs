@@ -86,12 +86,12 @@
         <% } %>
 
         <% groups.forEach(function(group) { %>
-        <section class="commu-people-group is-<%= group.id %>">
-            <header class="commu-people-group-head">
+        <details class="commu-people-group is-<%= group.id %>">
+            <summary class="commu-people-group-head">
                 <span class="commu-people-range"><%= group.range %></span>
                 <h2><%= group.title %></h2>
                 <p><%= group.blurb %></p>
-            </header>
+            </summary>
             <div class="commu-people-grid">
                 <% group.people.forEach(function(person) { %>
                 <article class="commu-person-card" id="p-<%= person.id %>">
@@ -133,7 +133,7 @@
                 </article>
                 <% }) %>
             </div>
-        </section>
+        </details>
         <% }) %>
     </main>
 
@@ -152,10 +152,15 @@
                 if (hash.indexOf('#p-') !== 0) return;
                 var card = document.getElementById(hash.slice(1));
                 if (!card) return;
+                var group = card.closest('details.commu-people-group');
+                if (group) group.open = true;
                 document.querySelectorAll('.commu-person-card.is-focused').forEach(function(el) {
                     el.classList.remove('is-focused');
                 });
                 card.classList.add('is-focused');
+                window.requestAnimationFrame(function() {
+                    card.scrollIntoView({ block: 'start' });
+                });
             }
             window.addEventListener('hashchange', focusHash);
             focusHash();

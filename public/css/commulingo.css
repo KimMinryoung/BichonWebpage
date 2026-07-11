@@ -1975,9 +1975,37 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-people-group-head {
-    margin-bottom: 14px;
-    padding-left: 14px;
     border-left: 4px solid var(--border);
+    cursor: pointer;
+    display: block;
+    list-style: none;
+    padding-left: 14px;
+    padding-right: 34px;
+    position: relative;
+}
+
+.commu-people-group-head::-webkit-details-marker {
+    display: none;
+}
+
+.commu-people-group-head::after {
+    color: var(--text-muted);
+    content: '›';
+    font-size: 1.5rem;
+    line-height: 1;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.16s ease;
+}
+
+.commu-people-group[open] .commu-people-group-head {
+    margin-bottom: 14px;
+}
+
+.commu-people-group[open] .commu-people-group-head::after {
+    transform: translateY(-50%) rotate(-90deg);
 }
 
 .commu-people-group.is-old-regime .commu-people-group-head { border-left-color: #b08d3f; }
