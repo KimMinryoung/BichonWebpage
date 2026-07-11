@@ -2808,3 +2808,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-person-event-links strong { font-size: 1.05rem; }
 .commu-person-event-links em, .commu-person-event-links small { grid-column: 2; }
 @media (max-width: 560px) { .commu-events-cta { float: none; display: inline-block; margin: .7rem 0 0; } .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
+
+.commu-event-people-grid > a.is-executor, .commu-person-event-links li.is-executor a { border-color: #a74a42; background: color-mix(in srgb, #a74a42 14%, transparent); }
+.commu-event-people-grid > a.is-executor .commu-event-person-relation, .commu-person-event-links li.is-executor span, .commu-person-event-links li.is-executor em { color: #cf6b5f; }
+.commu-event-people-grid > a.is-target, .commu-person-event-links li.is-target a { border-color: #46779b; background: color-mix(in srgb, #46779b 14%, transparent); }
+.commu-event-people-grid > a.is-target .commu-event-person-relation, .commu-person-event-links li.is-target span, .commu-person-event-links li.is-target em { color: #6fa9d1; }

@@ -19,7 +19,7 @@
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%= event.outcome %></p></section>
         <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
             <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %></h2>
-            <div class="commu-event-people-grid"><% event.people.forEach(function(person) { %><a href="/commulingo/people/<%= person.id %>"><span class="commu-event-person-relation"><%= person.relation %></span><strong><%= person.name %></strong><small><%= person.years %></small><p><%= person.note %></p></a><% }) %></div>
+            <div class="commu-event-people-grid"><% event.people.forEach(function(person) { %><a class="is-<%= person.kind %>" href="/commulingo/people/<%= person.id %>"><span class="commu-event-person-relation"><%= person.relation %></span><strong><%= person.name %></strong><small><%= person.years %></small><p><%= person.note %></p></a><% }) %></div>
         </section>
         <% if (event.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% event.sources.forEach(function(source, index) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% }) %></p><% } %>
         <a class="commu-back-link commu-person-detail-back" href="/commulingo/events">← <%= en ? 'Historical events' : '역사 사건' %></a>

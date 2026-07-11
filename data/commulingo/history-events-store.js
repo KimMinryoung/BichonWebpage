@@ -17,7 +17,7 @@ async function fetchEvents() {
              ORDER BY sort_order, id`
         ),
         db.query(
-            `SELECT ep.event_id, ep.person_id, ep.relation_ko, ep.relation_en, ep.note_ko, ep.note_en,
+            `SELECT ep.event_id, ep.person_id, ep.relation_kind, ep.relation_ko, ep.relation_en, ep.note_ko, ep.note_en,
                     p.name_ko, p.name_en, p.cyrillic, p.years_label
              FROM commulingo_history_event_people ep
              JOIN commulingo_people p ON p.id = ep.person_id
@@ -29,6 +29,7 @@ async function fetchEvents() {
         if (!peopleByEvent[row.event_id]) peopleByEvent[row.event_id] = [];
         peopleByEvent[row.event_id].push({
             id: row.person_id,
+            kind: row.relation_kind || "target",
             name: t(row.name_ko, row.name_en),
             cyrillic: row.cyrillic || '',
             years: row.years_label || '',
@@ -69,6 +70,7 @@ async function loadCommuLingoPersonHistoryEvents(personId, options = {}) {
         const relation = event.people.find(person => person.id === id);
         return relation ? [{
             id: event.id,
+            kind: relation.kind,
             period: event.period,
             title: event.title,
             relation: relation.relation,
