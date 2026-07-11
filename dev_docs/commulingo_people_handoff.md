@@ -4,6 +4,43 @@ Last updated: 2026-07-11
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
 
+## AI Agent Editing (leninbot) — added 2026-07-11
+
+The leninbot agent (Cyber-Lenin) can now continue the people-dictionary work
+itself. Implementation lives in the leninbot repo:
+
+- `leninbot/runtime_tools/commulingo_people.py`
+  - `commulingo_people` — read tool: list_groups / search_people / get_person /
+    list_offices / get_office / list_suggestions
+  - `commulingo_edit` — write tool: create/update/delete for `person` and
+    `office_row`, patch shape identical to the admin API payloads, source
+    citations required
+- Exposed to the Telegram orchestrator and the analyst agent; blocked for
+  public web chat and inbound MCP.
+
+`commulingo_edit` has two modes, switched by
+`leninbot/config/commulingo_people.json` → `"direct_apply"` (mtime-cached,
+no restart needed):
+
+- `true` (current): edits apply immediately in one transaction, write a
+  snapshot to `commulingo_people_revisions` (same semantics as
+  `people-admin-store.js`), and log an auto-approved row in
+  `commulingo_agent_suggestions` so sources/confidence are always on record.
+- `false`: edits are staged as `pending` rows in `commulingo_agent_suggestions`;
+  review them with `leninbot/scripts/commulingo_suggestions.py`
+  (`list` / `show <id>` / `approve <id>` / `reject <id> --note`), which reuses
+  the same Python apply path.
+
+Freshness: agent writes bypass this app's process, so changes appear after the
+30s people-store cache + ~30s CDN max-age expire (≈1 minute). No restart or
+purge needed.
+
+Footgun mitigation: `npm run commulingo:people:migrate -- --replace` now
+refuses to run when `commulingo_people_revisions` has rows (i.e. the DB was
+edited after seeding) unless `--force` is also passed. `people.js` is a
+bootstrap seed only — the DB is the source of truth once agent/admin edits
+exist.
+
 ## Current State
 
 The people dictionary is now DB-backed at runtime.
@@ -51,13 +88,12 @@ npm run commulingo:people:migrate
 npm run commulingo:people:migrate -- --replace
 ```
 
-Be careful: `--replace` truncates and reloads the people DB tables from `data/commulingo/people.js`. If future admin API edits are made directly in DB and not synced back to `people.js`, running `--replace` will overwrite those DB edits.
+Be careful: `--replace` truncates and reloads the people DB tables from `data/commulingo/people.js`. Admin API and AI-agent edits live only in the DB, so `--replace` would overwrite them — since 2026-07-11 the script refuses to run when `commulingo_people_revisions` has rows unless you also pass `--force`. Treat the DB as the source of truth and `people.js` as a bootstrap seed.
 
-Before making AI-agent write workflows serious, add one of these:
+Still open if you want repo-tracked data again:
 
 - DB export script that writes the current DB state back to a canonical source file
 - migration away from `people.js` as seed source
-- admin review workflow where approved edits are committed back to repo data
 
 ## Key Files
 
@@ -302,16 +338,14 @@ docker logs --tail 80 leninbot-frontend
 ## Known Gaps / Recommended Next Work
 
 1. Build an admin UI around the CRUD API.
-2. Add an AI suggestion flow using `commulingo_agent_suggestions`.
-3. Add a review/approval endpoint rather than direct AI writes.
-4. Decide source-of-truth strategy:
-   - DB primary with export/backups, or
-   - repo data primary with generated DB, or
-   - hybrid with explicit sync tooling.
+2. ~~Add an AI suggestion flow using `commulingo_agent_suggestions`.~~ Done 2026-07-11 (leninbot `commulingo_edit`, staging mode).
+3. ~~Add a review/approval workflow.~~ Done 2026-07-11 (`leninbot/scripts/commulingo_suggestions.py`; direct mode currently active by owner choice).
+4. Decide source-of-truth strategy: currently DB primary (guarded `--replace`); a DB→`people.js` export script would restore repo tracking.
 5. Move role icon SVG path map out of the EJS template if it grows further.
 6. Consider moving `ROLE_RULES` into DB if non-developer admins need to edit role mappings.
-7. Add source citations per person/career row before allowing autonomous AI enrichment.
+7. Source citations: `commulingo_edit` requires per-edit source refs (stored in `commulingo_agent_suggestions.source_refs`); per-career-row citations in the schema remain open.
 8. Add focused tests around DB reconstruction and admin CRUD rollback.
+9. New people added by the agent get the `circle-help` role icon until `ROLE_RULES` in `data/commulingo/people-standard.js` maps them — check after approving person creates.
 
 ## Useful Commit Trail
 

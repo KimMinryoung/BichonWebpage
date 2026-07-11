@@ -8,6 +8,7 @@ const data = require('../data/commulingo/people');
 const { parsePeriod, validateCommuLingoPeople } = require('../data/commulingo/people-standard');
 
 const replaceExisting = process.argv.includes('--replace');
+const forceReplace = process.argv.includes('--force');
 
 function localize(value, lang) {
     if (!value) return '';
@@ -220,6 +221,18 @@ async function main() {
         }
 
         if (replaceExisting) {
+            // DB rows edited after the last seed (admin API or AI agent edits,
+            // both leave revisions) are NOT in people.js and would be lost.
+            const revisions = await client.query(
+                'SELECT COUNT(*)::int AS count FROM commulingo_people_revisions'
+            );
+            if (revisions.rows[0].count > 0 && !forceReplace) {
+                throw new Error(
+                    `refusing --replace: ${revisions.rows[0].count} revision(s) show the DB was edited ` +
+                    'after seeding (admin/agent edits live only in the DB and would be overwritten). ' +
+                    'Rerun with --replace --force to overwrite anyway.'
+                );
+            }
             await client.query(
                 `TRUNCATE
                     commulingo_person_aliases,
