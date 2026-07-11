@@ -233,7 +233,7 @@ const ko = {
 
     commuLingo: {
         title: '공산링고',
-        description: '혁명 이론을 책별·챕터별 퀴즈로 익히는 학습장입니다.',
+        description: '혁명 이론과 혁명 역사를 익히는 학습장입니다.',
         kicker: '자본론 1권',
         start: '학습 시작',
         continue: '이어하기',
@@ -498,7 +498,7 @@ const en = {
 
     commuLingo: {
         title: 'commulingo',
-        description: 'Learn revolutionary theory book by book and chapter by chapter through short quizzes.',
+        description: 'A learning space for revolutionary theory and revolutionary history.',
         kicker: 'Capital Volume I',
         start: 'Start',
         continue: 'Continue',

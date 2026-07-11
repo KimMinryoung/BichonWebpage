@@ -32,14 +32,14 @@ module.exports = {
     bookTitle: t('소련사 1941–1991', 'The Soviet Union, 1941–1991'),
     badge: t('결정 시뮬레이션', 'Decision simulation'),
     description: t(
-        '초강대국은 왜 스스로 무너졌는가. 1941년 독일 침공 전야부터 1991년 8월의 전차 부대까지, 15개의 갈림길에 직접 서 봅니다. 그때 그 자리의 정보만 갖고 먼저 결정하고, 그다음 실제 역사와 각 선택의 운명, 다음 장면으로 번지는 파장을 확인합니다.',
-        'Why did a superpower dismantle itself? Stand at 15 forks in the road, from the eve of the German invasion in 1941 to the tank crews of August 1991. Decide first with only what was known at the time — then see what actually happened, the fate of each path, and the ripple into the next scene.'
+        '노동자국가는 왜 스스로 무너졌는가. 1941년 독일 침공 전야부터 1991년 8월의 전차 부대까지, 15개의 갈림길에 직접 서 봅니다.',
+        'Why did a workers’ state dismantle itself? Stand at 15 forks in the road, from the eve of the German invasion in 1941 to the tank crews of August 1991.'
     ),
     chapters: [],
     decisionTimeline: {
         question: t(
-            '초강대국의 붕괴는 필연이었는가, 선택의 연쇄였는가?',
-            'Was the superpower’s collapse inevitable, or a chain of choices?'
+            '소련의 붕괴는 필연이었는가, 선택의 연쇄였는가?',
+            'Was the Soviet Union’s collapse inevitable, or a chain of choices?'
         ),
         thesis: t(
             '1941년부터 1991년까지, 소련의 역사는 몇 개의 갈림길에서 결정되었다. 전쟁을 이긴 나라가 반세기 뒤 총성 없이 해체된다 — 그 사이에 놓인 결정들을, 당신은 그때 그 자리의 사람이 되어 그들이 알던 것만 알고 내린다. 실제 역사와 다른 선택이 「틀린」 것이 아니다 — 그 갈림길이 실제로 존재했다는 것, 그것이 이 책의 요점이다.',

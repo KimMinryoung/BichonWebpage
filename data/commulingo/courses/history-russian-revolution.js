@@ -36,8 +36,8 @@ module.exports = {
     bookTitle: t('러시아 혁명사 1905–1937', 'The Russian Revolution, 1905–1937'),
     badge: t('결정 시뮬레이션', 'Decision simulation'),
     description: t(
-        '연표 암기 대신, 1905년 피의 일요일부터 1937년 대숙청까지 14개의 갈림길에 직접 서 봅니다. 그때 그 자리의 정보만 갖고 먼저 결정하고, 그다음 실제 역사와 각 선택의 운명, 다음 장면으로 번지는 파장을 확인합니다.',
-        'Instead of memorizing a timeline, stand at 14 forks in the road from Bloody Sunday 1905 to the Great Terror of 1937. Decide first with only what was known at the time — then see what actually happened, the fate of each path, and the ripple into the next scene.'
+        '연표 암기 대신, 1905년 피의 일요일부터 1937년 대숙청까지 14개의 갈림길에 직접 서 봅니다.',
+        'Instead of memorizing a timeline, stand at 14 forks in the road from Bloody Sunday 1905 to the Great Terror of 1937.'
     ),
     chapters: [],
     decisionTimeline: {

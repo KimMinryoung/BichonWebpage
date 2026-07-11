@@ -1905,12 +1905,38 @@ button.commu-dc-option:hover { border-color: var(--link); }
     cursor: pointer;
     display: block;
     list-style: none;
-    padding: 13px 44px 12px 14px;
+    padding: 13px 44px 12px 58px;
     position: relative;
 }
 
 .commu-office-card[open] .commu-office-card-head {
     border-bottom: 1px solid var(--border);
+}
+
+.commu-office-icon-link {
+    align-items: center;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    left: 14px;
+    position: absolute;
+    text-decoration: none;
+    top: 14px;
+    width: 32px;
+}
+
+.commu-office-icon-link:hover,
+.commu-office-icon-link:focus-visible {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+    color: var(--link);
+}
+
+.commu-office-icon-link:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
 }
 
 .commu-office-card-head::-webkit-details-marker {

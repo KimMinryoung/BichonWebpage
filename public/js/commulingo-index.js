@@ -92,10 +92,10 @@
     }
 
     var bookGroups = [
+        { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); }, peopleLink: true },
         { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id) || /^marx-/.test(b.id); } },
         { label: function() { return strings.authorEngels || '프리드리히 엥겔스'; }, match: function(b) { return /^engels/.test(b.id); } },
-        { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } },
-        { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); }, peopleLink: true }
+        { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } }
     ];
 
     function groupBooks() {

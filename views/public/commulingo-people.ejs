@@ -29,6 +29,7 @@
                 <% officesList.forEach(function(office) { %>
                 <details class="commu-office-card is-<%= office.id %>" id="office-<%= office.id %>">
                     <summary class="commu-office-card-head">
+                        <a class="commu-office-icon-link" href="/commulingo/offices/<%= office.id %>" title="<%= office.title %>" aria-label="<%= en ? 'Open ' + office.title + ' page' : office.title + ' 기관 페이지 열기' %>" onclick="event.stopPropagation()"><%- roleIconSvg(office.icon) %></a>
                         <span class="commu-office-range"><%= office.range %></span>
                         <h3><%= office.title %></h3>
                         <p><%= office.blurb %></p>
