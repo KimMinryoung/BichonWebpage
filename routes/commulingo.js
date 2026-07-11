@@ -134,8 +134,16 @@ router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(req, res);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        const roleCategories = Object.values(standardized.roleCategories || {}).map(category => ({
+            ...category,
+            label: category.id === 'intl-revolutionary'
+                ? (lang === 'en' ? 'Revolutionaries beyond the Soviet Union' : '소련 밖의 혁명가들')
+                : category.label,
+            peopleCount: standardized.people.filter(person => person.role && person.role.categoryId === category.id).length,
+        })).filter(category => category.peopleCount > 0);
         res.render('public/commulingo-people', {
             offices: standardized.offices,
+            roleCategories,
             groups: standardized.groups,
             peopleCount: standardized.people.length,
             roleIconSvg,

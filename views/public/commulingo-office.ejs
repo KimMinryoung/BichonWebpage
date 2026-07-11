@@ -10,10 +10,13 @@
     <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
         <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
 
-        <header class="commu-hub-head">
-            <span class="commu-office-range"><%= office.range %></span>
-            <h1><%= office.title %></h1>
-            <p><%= office.blurb %></p>
+        <header class="commu-hub-head commu-role-hub-head">
+            <span class="commu-person-medal" aria-hidden="true"><%- roleIconSvg(office.icon) %></span>
+            <div>
+                <span class="commu-office-range"><%= office.range %></span>
+                <h1><%= office.title %></h1>
+                <p><%= office.blurb %></p>
+            </div>
         </header>
 
         <section class="commu-hub-section" aria-labelledby="office-timeline">

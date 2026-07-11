@@ -1900,6 +1900,59 @@ button.commu-dc-option:hover { border-color: var(--link); }
     border-color: color-mix(in srgb, var(--link) 42%, var(--border));
 }
 
+.commu-role-category-link {
+    align-items: center;
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    display: flex;
+    gap: 12px;
+    min-height: 76px;
+    padding: 12px 14px;
+    position: relative;
+    text-decoration: none;
+}
+
+.commu-role-category-link:hover,
+.commu-role-category-link:focus-visible {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+}
+
+.commu-role-category-link:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+.commu-role-category-link .commu-office-icon-link {
+    flex: 0 0 auto;
+    left: auto;
+    position: static;
+    top: auto;
+}
+
+.commu-role-category-copy {
+    min-width: 0;
+}
+
+.commu-role-category-copy h3 {
+    font-size: 1.02rem;
+    line-height: 1.25;
+    margin: 0 0 5px;
+}
+
+.commu-role-category-copy p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    margin: 0;
+}
+
+.commu-role-category-arrow {
+    color: var(--link);
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-left: auto;
+}
+
 .commu-office-card-head {
     background: var(--bg-surface);
     cursor: pointer;

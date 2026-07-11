@@ -19,13 +19,24 @@
         </header>
 
         <% var officesList = (typeof offices !== 'undefined' && offices) || []; %>
-        <% if (officesList.length) { %>
-        <details class="commu-office-index" aria-label="<%= en ? 'Soviet institution leadership timelines' : '소련 기관별 지도부 타임라인' %>">
+        <% var roleCategoriesList = (typeof roleCategories !== 'undefined' && roleCategories) || []; %>
+        <% if (officesList.length || roleCategoriesList.length) { %>
+        <details class="commu-office-index" aria-label="<%= en ? 'People categories and Soviet institution leadership timelines' : '인물 분류와 소련 기관별 지도부 타임라인' %>">
             <summary class="commu-office-index-head">
-                <span class="commu-people-range">1917–1991</span>
-                <h2><%= en ? 'Soviet Institution Timelines' : '소련 기관별 지도부 타임라인' %></h2>
+                <span class="commu-people-range">INDEX</span>
+                <h2><%= en ? 'People Categories and Soviet Institution Timelines' : '인물 분류와 소련 기관별 지도부' %></h2>
             </summary>
             <div class="commu-office-grid">
+                <% roleCategoriesList.forEach(function(category) { %>
+                <a class="commu-office-card commu-role-category-link" href="/commulingo/roles/<%= category.id %>">
+                    <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(category.icon) %></span>
+                    <span class="commu-role-category-copy">
+                        <h3><%= category.label %></h3>
+                        <p><%= category.peopleCount %> <%= en ? (category.peopleCount === 1 ? 'person' : 'people') : '명' %></p>
+                    </span>
+                    <span class="commu-role-category-arrow" aria-hidden="true">→</span>
+                </a>
+                <% }) %>
                 <% officesList.forEach(function(office) { %>
                 <details class="commu-office-card is-<%= office.id %>" id="office-<%= office.id %>">
                     <summary class="commu-office-card-head">
