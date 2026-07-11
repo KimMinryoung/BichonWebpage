@@ -2362,6 +2362,177 @@ button.commu-dc-option:hover { border-color: var(--link); }
     border-color: var(--link);
 }
 
+.commu-person-detail-link {
+    align-self: flex-start;
+    border-top: 1px dashed var(--border);
+    color: var(--link);
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 8px;
+    text-decoration: none;
+}
+
+.commu-person-detail-link:hover {
+    color: var(--text-primary);
+}
+
+.commu-person-page {
+    max-width: 920px;
+}
+
+.commu-person-detail-head {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--border);
+    border-radius: 0;
+    margin-top: 18px;
+    padding: 18px;
+}
+
+.commu-person-detail-head.is-old-regime { border-left-color: #b08d3f; }
+.commu-person-detail-head.is-bolshevik { border-left-color: #c0453c; }
+.commu-person-detail-head.is-international-revolutionary { border-left-color: #9c2d3f; }
+.commu-person-detail-head.is-stalin-era { border-left-color: #8a93a6; }
+.commu-person-detail-head.is-thaw { border-left-color: #4d8fc4; }
+.commu-person-detail-head.is-perestroika { border-left-color: #4aa578; }
+
+.commu-person-detail-top {
+    align-items: flex-start;
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.commu-person-detail-title {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.commu-person-detail-title h1 {
+    color: var(--text-primary);
+    font-size: clamp(1.6rem, 3vw, 2.45rem);
+    letter-spacing: 0;
+    line-height: 1.12;
+    margin: 0;
+}
+
+.commu-person-detail-title span {
+    color: var(--text-muted);
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.98rem;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.commu-person-detail-section {
+    border-top: 1px solid var(--border);
+    margin-top: 26px;
+    padding-top: 20px;
+    scroll-margin-top: 82px;
+}
+
+.commu-person-detail-section h2 {
+    color: var(--text-primary);
+    font-size: 1.24rem;
+    line-height: 1.25;
+    margin: 0 0 12px;
+}
+
+.commu-person-detail-career .commu-person-career {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    margin-top: 0;
+    padding: 12px;
+}
+
+.commu-person-markdown {
+    color: var(--text-secondary);
+    font-size: 0.96rem;
+    line-height: 1.78;
+}
+
+.commu-person-markdown > *:first-child {
+    margin-top: 0;
+}
+
+.commu-person-markdown > *:last-child {
+    margin-bottom: 0;
+}
+
+.commu-person-markdown p,
+.commu-person-markdown ul,
+.commu-person-markdown ol,
+.commu-person-markdown blockquote,
+.commu-person-markdown table,
+.commu-person-markdown pre {
+    margin: 0 0 1em;
+}
+
+.commu-person-markdown h1,
+.commu-person-markdown h2,
+.commu-person-markdown h3,
+.commu-person-markdown h4,
+.commu-person-markdown h5,
+.commu-person-markdown h6 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 1.2em 0 0.5em;
+}
+
+.commu-person-markdown blockquote {
+    border-left: 3px solid color-mix(in srgb, var(--link) 65%, var(--border));
+    color: var(--text-muted);
+    padding-left: 12px;
+}
+
+.commu-person-markdown a {
+    color: var(--link);
+}
+
+.commu-person-markdown code {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    font-size: 0.9em;
+    padding: 1px 4px;
+}
+
+.commu-person-markdown pre {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    overflow-x: auto;
+    padding: 12px;
+}
+
+.commu-person-markdown pre code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.commu-person-markdown table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.commu-person-markdown th,
+.commu-person-markdown td {
+    border: 1px solid var(--border);
+    padding: 7px 9px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.commu-person-detail-back {
+    display: inline-block;
+    margin-top: 26px;
+}
+
 /* book-list group header row: title + people-index CTA */
 .commu-book-group-head {
     display: flex;
@@ -2415,5 +2586,14 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
     .commu-person-top {
         flex-wrap: wrap;
+    }
+
+    .commu-person-detail-top {
+        flex-wrap: wrap;
+    }
+
+    .commu-person-page .commu-person-sidebox {
+        align-items: flex-start;
+        width: 100%;
     }
 }

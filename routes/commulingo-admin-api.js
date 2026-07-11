@@ -11,6 +11,9 @@ const {
     createOfficeRowAdmin,
     updateOfficeRowAdmin,
     deleteOfficeRowAdmin,
+    listPersonSectionsAdmin,
+    upsertPersonSectionAdmin,
+    deletePersonSectionAdmin,
 } = require('../data/commulingo/people-admin-store');
 
 const router = express.Router();
@@ -72,6 +75,53 @@ router.patch('/people/:personId', async (req, res) => {
 router.delete('/people/:personId', async (req, res) => {
     try {
         const result = await deletePersonAdmin(req.params.personId, { changedBy: changedBy(req) });
+        res.json(result);
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+router.get('/people/:personId/sections', async (req, res) => {
+    try {
+        const sections = await listPersonSectionsAdmin(req.params.personId);
+        res.json({ sections });
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+router.get('/people/:personId/sections/:slug', async (req, res) => {
+    try {
+        const sections = await listPersonSectionsAdmin(req.params.personId);
+        const section = sections.find(item => item.slug === req.params.slug);
+        if (!section) return res.status(404).json({ error: 'section not found' });
+        res.json({ section });
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+router.put('/people/:personId/sections/:slug', async (req, res) => {
+    try {
+        const section = await upsertPersonSectionAdmin(
+            req.params.personId,
+            req.params.slug,
+            req.body || {},
+            { changedBy: changedBy(req) }
+        );
+        res.json({ section });
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+router.delete('/people/:personId/sections/:slug', async (req, res) => {
+    try {
+        const result = await deletePersonSectionAdmin(
+            req.params.personId,
+            req.params.slug,
+            { changedBy: changedBy(req) }
+        );
         res.json(result);
     } catch (err) {
         sendError(res, err);

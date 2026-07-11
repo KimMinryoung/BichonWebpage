@@ -2,9 +2,11 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const db = require('../config/database');
+const errorPage = require('../utils/error-page');
+const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
-const { loadCommuLingoPeopleFromDb } = require('../data/commulingo/people-store');
+const { loadCommuLingoPeopleFromDb, loadCommuLingoPersonSections } = require('../data/commulingo/people-store');
 
 const router = express.Router();
 
@@ -75,6 +77,18 @@ function localize(value, lang) {
     return localizeCommuLingoValue(value, lang);
 }
 
+function localizedPersonSections(sections, lang) {
+    return (sections || []).map(section => {
+        const body = localize(section.body, lang);
+        if (!body) return null;
+        return {
+            slug: section.slug,
+            heading: localize(section.heading, lang),
+            bodyHtml: renderMarkdown(body),
+        };
+    }).filter(Boolean);
+}
+
 function summarizeBooks(catalog) {
     return (catalog.collections || []).map(collection => {
         const chapters = collection.chapters || [];
@@ -118,6 +132,7 @@ router.get('/', (req, res) => {
 router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(req, res);
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             groups: standardized.groups,
@@ -132,6 +147,39 @@ router.get('/people', async (req, res) => {
     } catch (err) {
         console.error('commulingo people:', err);
         res.status(500).send('Failed to load people data');
+    }
+});
+
+router.get('/people/:personId', async (req, res) => {
+    try {
+        const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
+        const { lang, loaded, standardized } = await loadStandardizedPeople(req, res);
+        const person = standardized.peopleById[personId];
+        if (!person) {
+            return errorPage.notFound(res, {
+                message: lang === 'en' ? 'Person not found.' : '인물을 찾을 수 없습니다.',
+                backHref: '/commulingo/people',
+                backLabel: lang === 'en' ? 'People' : '인물 사전',
+            });
+        }
+        const rawSections = loaded.source === 'db' ? await loadCommuLingoPersonSections(personId) : [];
+        const sections = localizedPersonSections(rawSections, lang);
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        res.render('public/commulingo-person', {
+            person,
+            sections,
+            pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,
+            pageDescription: person.bio || person.epithet,
+            pagePath: `/commulingo/people/${person.id}`,
+            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+        });
+    } catch (err) {
+        console.error('commulingo person detail:', err);
+        errorPage.serverError(res, {
+            message: res.locals.lang === 'en' ? 'Failed to load person data.' : '인물 정보를 불러올 수 없습니다.',
+            backHref: '/commulingo/people',
+            backLabel: res.locals.lang === 'en' ? 'People' : '인물 사전',
+        });
     }
 });
 
@@ -169,8 +217,11 @@ router.get('/api/people/:personId', async (req, res) => {
         const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
         const person = standardized.peopleById[personId];
         if (!person) return res.status(404).json({ error: 'person not found' });
+        const sections = loaded.source === 'db'
+            ? localizedPersonSections(await loadCommuLingoPersonSections(personId), standardized.lang)
+            : [];
         setShortPeopleApiCache(res);
-        res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, person });
+        res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, person, sections });
     } catch (err) {
         console.error('commulingo person api:', err);
         res.status(500).json({ error: 'failed to load person data' });

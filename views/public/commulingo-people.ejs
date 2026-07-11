@@ -146,6 +146,9 @@
                         <% }) %>
                     </div>
                     <% } %>
+                    <% if (person.hasDetail) { %>
+                    <a class="commu-person-detail-link" href="/commulingo/people/<%= person.id %>"><%= en ? 'Details →' : '자세히 →' %></a>
+                    <% } %>
                 </article>
                 <% }) %>
             </div>

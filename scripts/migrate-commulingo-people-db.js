@@ -211,7 +211,10 @@ async function main() {
 
     const schemaPaths = [
         path.join(__dirname, 'migrations', '007_commulingo_people.sql'),
+        path.join(__dirname, 'migrations', '008_commulingo_person_roles.sql'),
         path.join(__dirname, 'migrations', '009_commulingo_person_moment.sql'),
+        path.join(__dirname, 'migrations', '010_commulingo_role_categories.sql'),
+        path.join(__dirname, 'migrations', '011_commulingo_person_sections.sql'),
     ];
     const schemaSql = schemaPaths.map(schemaPath => fs.readFileSync(schemaPath, 'utf8')).join('\n');
     const client = await db.connect();
@@ -240,10 +243,12 @@ async function main() {
             }
             await client.query(
                 `TRUNCATE
+                    commulingo_person_sections,
                     commulingo_person_aliases,
                     commulingo_person_scenes,
                     commulingo_person_career_entries,
                     commulingo_person_roles,
+                    commulingo_role_categories,
                     commulingo_office_rows,
                     commulingo_person_patronymics,
                     commulingo_offices,
@@ -266,7 +271,9 @@ async function main() {
                 (SELECT COUNT(*)::int FROM commulingo_person_career_entries) AS career_entries,
                 (SELECT COUNT(*)::int FROM commulingo_offices) AS offices,
                 (SELECT COUNT(*)::int FROM commulingo_office_rows) AS office_rows,
-                (SELECT COUNT(*)::int FROM commulingo_person_roles) AS person_roles`
+                (SELECT COUNT(*)::int FROM commulingo_person_roles) AS person_roles,
+                (SELECT COUNT(*)::int FROM commulingo_role_categories) AS role_categories,
+                (SELECT COUNT(*)::int FROM commulingo_person_sections) AS person_sections`
         );
         await client.query('COMMIT');
         console.log(JSON.stringify({ migrated: true, replaceExisting, counts: counts.rows[0], roleSeed }, null, 2));

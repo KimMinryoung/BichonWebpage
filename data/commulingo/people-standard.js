@@ -135,12 +135,16 @@ function roleForPerson(person, lang, data, officeTitles, officeIcons) {
         if (!mappedRole) return { icon: 'circle-help', officeId: '', label: '' };
 
         const officeId = mappedRole.officeId || '';
+        const categoryId = mappedRole.categoryId || '';
+        const category = categoryId ? (data.roleCategories || {})[categoryId] : null;
+        const categoryLabel = category ? localize(category.label, lang) : '';
         const explicitLabel = mappedRole.label ? localize(mappedRole.label, lang) : '';
         const officeLabel = officeId ? localize(officeTitles[officeId] || ROLE_OFFICE_TITLES[officeId], lang) : '';
         return {
-            icon: mappedRole.icon || officeIcons[officeId] || OFFICE_ICON[officeId] || 'circle-help',
+            icon: category && category.icon || mappedRole.icon || officeIcons[officeId] || OFFICE_ICON[officeId] || 'circle-help',
             officeId,
-            label: explicitLabel || officeLabel || '',
+            categoryId,
+            label: categoryLabel || explicitLabel || officeLabel || '',
         };
     }
 
@@ -196,6 +200,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
             en: raw.aliases && Array.isArray(raw.aliases.en) ? raw.aliases.en : [],
         },
         role: roleForPerson(raw, lang, data, officeTitles, officeIcons),
+        hasDetail: !!((data.sectionCounts || {})[raw.id]),
         career,
         scenes: (raw.scenes || [])
             .map(scene => sceneIndex[scene[0] + '/' + scene[1]])
@@ -314,8 +319,12 @@ function validateCommuLingoPeople(data) {
             if (!peopleIds.has(personId)) issues.push({ level: 'error', code: 'person_role_unknown_person', personId });
             const officeId = role && role.officeId || '';
             const icon = role && role.icon || '';
-            if (!icon && !officeId) issues.push({ level: 'error', code: 'person_role_missing_icon', personId });
+            const categoryId = role && role.categoryId || '';
+            if (!icon && !officeId && !categoryId) issues.push({ level: 'error', code: 'person_role_missing_icon', personId });
             if (officeId && !officeIds.has(officeId)) issues.push({ level: 'error', code: 'person_role_unknown_office', personId, officeId });
+            if (categoryId && !(data.roleCategories || {})[categoryId]) {
+                issues.push({ level: 'error', code: 'person_role_unknown_category', personId, categoryId });
+            }
         });
     }
     return issues;

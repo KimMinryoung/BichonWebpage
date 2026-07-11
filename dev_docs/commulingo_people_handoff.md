@@ -48,9 +48,10 @@ The people dictionary is now DB-backed at runtime.
 - Public page: `/commulingo/people`
 - Public read API:
   - `GET /commulingo/api/people`
-  - `GET /commulingo/api/people/:personId`
+  - `GET /commulingo/api/people/:personId` (includes localized detail `sections`)
   - `GET /commulingo/api/offices`
   - `GET /commulingo/api/offices/:officeId`
+- Detail page: `/commulingo/people/:personId`
 - Admin CRUD API:
   - mounted at `/commulingo/admin/api`
   - protected by `requireAdminIp`
@@ -63,6 +64,8 @@ Current DB-shaped data count:
 - career entries: `574`
 - offices: `16`
 - office timeline rows: `141`
+- role categories: seeded in DB (`writer`, `intl-revolutionary`, `bloc-reformer`, `russian-republic-leader`)
+- person detail sections: DB-only content in `commulingo_person_sections`
 - validator issues: none
 - unmapped role icons: none
 
@@ -108,7 +111,8 @@ Data and normalization:
   - validator lives here
 - `data/commulingo/people-store.js`
   - reads normalized DB tables and reconstructs the old `people.js` shape
-  - loads `commulingo_person_roles` as the runtime role-icon source
+  - loads `commulingo_person_roles`, `commulingo_role_categories`, and per-person section counts
+  - exports `loadCommuLingoPersonSections(personId)` for detail/API body loads
   - used by runtime public page/API
 - `data/commulingo/people-admin-store.js`
   - admin CRUD functions
@@ -125,6 +129,9 @@ Routes and views:
 - `views/public/commulingo-people.ejs`
   - people page SSR template
   - inline Lucide-style role SVG path map
+- `views/public/commulingo-person.ejs`
+  - person detail page SSR template
+  - renders long-form DB sections as localized markdown HTML
 - `public/css/commulingo.css`
   - page layout, cards, accordions, role icon styling
 
@@ -153,6 +160,8 @@ Main tables:
 - `commulingo_person_scenes`
 - `commulingo_person_career_entries`
 - `commulingo_person_roles`
+- `commulingo_role_categories`
+- `commulingo_person_sections`
 - `commulingo_offices`
 - `commulingo_office_rows`
 
@@ -163,18 +172,32 @@ Governance/scaffold tables:
 
 `commulingo_agent_suggestions` exists for future AI-agent suggested edits, but there is not yet a complete approval UI/workflow around it.
 
-## Role Icons
+## Role Categories and Icons
 
 The people page no longer uses emoji role icons. It uses Lucide-style inline SVG paths in `views/public/commulingo-people.ejs`.
 
 Person→role mappings live ONLY in `commulingo_person_roles` (no file copy —
 `ROLE_RULES` was removed 2026-07-11; on DB outage the file-fallback path
 renders default icons). Offices carry their icon in `commulingo_offices.icon`,
-seeded from the `OFFICE_ICON` map in `data/commulingo/people-standard.js`;
-`commulingo_person_roles.icon` is an override field and may be empty when the
-role derives from `officeId`. After a `--replace --force`, person roles must
-be restored from a DB backup — the seed only refills office icons. Icon ids,
-not raw SVG:
+seeded from the `OFFICE_ICON` map in `data/commulingo/people-standard.js`.
+
+Office-less roles now use `commulingo_role_categories`; clients and agents
+should send `payload.role.category` for writer / non-Soviet revolutionary /
+bloc reformer / Russian republic leader roles, or `payload.role.officeId` for
+institution-derived roles. Icons and localized labels are a frontend/runtime
+resolution concern, not an API-client concern. Runtime role resolution order:
+
+1. `person_roles.category_id` → category icon and category label
+2. legacy `person_roles.icon`, then office icon
+3. label fallback: category label → legacy explicit label → office title
+
+`commulingo_person_roles.icon`, `label_ko`, and `label_en` remain in the table
+only for backward compatibility with currently deployed code and older clients.
+Do not blank them during category backfill. A later manual cleanup can drop or
+clear those legacy columns after all deployed readers resolve categories first.
+After a `--replace --force`, person roles and detail sections must be restored
+from a DB backup; the seed only refills office icons and canonical role
+categories. Icon ids, not raw SVG:
 
 - security: `eye`
 - defence: `star`
@@ -208,6 +231,11 @@ Current `/commulingo/people` UX:
 - People cards are max two columns on desktop.
 - People cards collapse to one column under the existing mobile breakpoint.
 - `moment` renders as an optional restrained pull-quote between the epithet and bio when non-empty.
+- Cards are summaries. If `commulingo_person_sections` has rows for a person,
+  the card gets a `자세히 →` / `Details →` link to `/commulingo/people/:personId`.
+- Person detail pages reuse the card header language, show the full career
+  timeline, and render localized markdown sections with anchors `s-<slug>`.
+- Empty localized section bodies are skipped on the detail page and API.
 - Hash behavior:
   - `#office-...` opens the outer office timeline and the target office card.
   - `#p-...` opens the target people group and scrolls to the person card.
@@ -246,8 +274,21 @@ Notes:
 - Person create/update accepts optional `payload.role`:
   - absent: leave the existing role row untouched
   - `null`: delete the role row
-  - object: upsert `{ icon?, officeId?, label? }`; `icon` is optional when `officeId` is present, `officeId` must exist in `commulingo_offices` when non-empty, and `label` may include `{ ko, en }`
-  - at least one of `icon` or `officeId` is required; use explicit icons for special non-institution roles such as `flame` (non-Soviet revolutionary), `feather` (writer), `dove`, and `landmark`
+  - object: prefer `{ category }` for office-less roles or `{ officeId }` for
+    institution roles; `category` must exist in `commulingo_role_categories`
+    and `officeId` must exist in `commulingo_offices`
+  - legacy `{ icon?, officeId?, label? }` remains accepted for back-compat, but
+    new clients and agents should not send icons for office-less categories
+  - when `category` is sent, the admin store writes `category_id`, clears
+    `office_id`, and writes empty legacy icon/label columns
+- Person section endpoints:
+  - `GET /commulingo/admin/api/people/:personId/sections`
+  - `GET /commulingo/admin/api/people/:personId/sections/:slug`
+  - `PUT /commulingo/admin/api/people/:personId/sections/:slug`
+  - `DELETE /commulingo/admin/api/people/:personId/sections/:slug`
+  - section payload: `{ heading: {ko,en}, body: {ko,en}, sortOrder, sources: [] }`
+  - writes are transactional and snapshot `entity_type='person'` revisions with
+    notes such as `upsert section <slug>` / `delete section <slug>`
 - For AI agents, prefer suggestion/approval workflow before allowing direct writes.
 
 ## Common Workflows

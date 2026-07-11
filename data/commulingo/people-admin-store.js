@@ -47,6 +47,16 @@ function requireId(id, label) {
     return value;
 }
 
+function requireSlug(slug) {
+    return requireId(slug, 'section slug');
+}
+
+function normalizeSources(sources) {
+    if (sources === undefined) return [];
+    if (!Array.isArray(sources)) throw badRequest('sources must be an array');
+    return sources;
+}
+
 function normalizeLimit(value, fallback = 100) {
     const parsed = Number.parseInt(value, 10);
     if (!Number.isFinite(parsed) || parsed <= 0) return fallback;
@@ -98,10 +108,15 @@ async function replaceRole(client, personId, role) {
     }
     if (!role || typeof role !== 'object') throw badRequest('role must be an object or null');
 
+    const category = typeof role.category === 'string' ? role.category.trim() : '';
     const icon = typeof role.icon === 'string' ? role.icon.trim() : '';
     const officeId = typeof role.officeId === 'string' ? role.officeId.trim() : '';
-    if (!icon && !officeId) throw badRequest('role.icon or role.officeId is required');
-    if (officeId) {
+    if (!category && !icon && !officeId) throw badRequest('role.category, role.icon, or role.officeId is required');
+    if (category) {
+        const categoryResult = await client.query('SELECT 1 FROM commulingo_role_categories WHERE id = $1', [category]);
+        if (!categoryResult.rows.length) throw badRequest('role.category not found');
+    }
+    if (!category && officeId) {
         const officeResult = await client.query('SELECT 1 FROM commulingo_offices WHERE id = $1', [officeId]);
         if (!officeResult.rows.length) throw badRequest('role.officeId not found');
     }
@@ -109,21 +124,23 @@ async function replaceRole(client, personId, role) {
     const label = role.label || {};
     await client.query(
         `INSERT INTO commulingo_person_roles
-            (person_id, icon, office_id, label_ko, label_en, updated_at)
-         VALUES ($1, $2, NULLIF($3, ''), $4, $5, NOW())
+            (person_id, icon, office_id, category_id, label_ko, label_en, updated_at)
+         VALUES ($1, $2, NULLIF($3, ''), NULLIF($4, ''), $5, $6, NOW())
          ON CONFLICT (person_id)
          DO UPDATE SET
             icon = EXCLUDED.icon,
             office_id = EXCLUDED.office_id,
+            category_id = EXCLUDED.category_id,
             label_ko = EXCLUDED.label_ko,
             label_en = EXCLUDED.label_en,
             updated_at = NOW()`,
         [
             personId,
-            icon,
-            officeId,
-            localized(label, 'ko'),
-            localized(label, 'en'),
+            category ? '' : icon,
+            category ? '' : officeId,
+            category,
+            category ? '' : localized(label, 'ko'),
+            category ? '' : localized(label, 'en'),
         ]
     );
 }
@@ -230,9 +247,12 @@ async function getPersonAdmin(personId, options = {}) {
             [id]
         ),
         client.query(
-            `SELECT r.icon, r.office_id, r.label_ko, r.label_en, o.icon AS office_icon
+            `SELECT r.icon, r.office_id, r.category_id, r.label_ko, r.label_en,
+                    o.icon AS office_icon, o.title_ko AS office_title_ko, o.title_en AS office_title_en,
+                    c.icon AS category_icon, c.label_ko AS category_label_ko, c.label_en AS category_label_en
              FROM commulingo_person_roles r
              LEFT JOIN commulingo_offices o ON o.id = r.office_id
+             LEFT JOIN commulingo_role_categories c ON c.id = r.category_id
              WHERE r.person_id = $1`,
             [id]
         ),
@@ -266,12 +286,21 @@ async function getPersonAdmin(personId, options = {}) {
         body: t(row.body_ko, row.body_en),
         note: t(row.note_ko, row.note_en),
     }));
-    person.role = roleResult.rows.length ? {
-        icon: roleResult.rows[0].icon || '',
-        officeId: roleResult.rows[0].office_id || '',
-        label: t(roleResult.rows[0].label_ko, roleResult.rows[0].label_en),
-        resolvedIcon: roleResult.rows[0].icon || roleResult.rows[0].office_icon || OFFICE_ICON[roleResult.rows[0].office_id] || 'circle-help',
-    } : null;
+    if (roleResult.rows.length) {
+        const role = roleResult.rows[0];
+        const categoryLabel = t(role.category_label_ko, role.category_label_en);
+        const legacyLabel = t(role.label_ko, role.label_en);
+        const officeLabel = t(role.office_title_ko, role.office_title_en);
+        person.role = {
+            category: role.category_id || '',
+            officeId: role.office_id || '',
+            icon: role.icon || '',
+            label: categoryLabel.ko || categoryLabel.en ? categoryLabel : (legacyLabel.ko || legacyLabel.en ? legacyLabel : officeLabel),
+            resolvedIcon: role.category_icon || role.icon || role.office_icon || OFFICE_ICON[role.office_id] || 'circle-help',
+        };
+    } else {
+        person.role = null;
+    }
     return person;
 }
 
@@ -673,6 +702,102 @@ async function deleteOfficeRowAdmin(rowId, options = {}) {
     });
 }
 
+function rowToPersonSection(row) {
+    return {
+        slug: row.slug,
+        sortOrder: row.sort_order || 0,
+        heading: t(row.heading_ko, row.heading_en),
+        body: t(row.body_ko, row.body_en),
+        sources: Array.isArray(row.sources) ? row.sources : [],
+        createdAt: row.created_at,
+        updatedAt: row.updated_at,
+    };
+}
+
+async function ensurePersonExists(client, personId) {
+    const result = await client.query('SELECT 1 FROM commulingo_people WHERE id = $1', [personId]);
+    if (!result.rows.length) {
+        const err = new Error('person not found');
+        err.status = 404;
+        throw err;
+    }
+}
+
+async function listPersonSectionsAdmin(personId, options = {}) {
+    const id = requireId(personId, 'person id');
+    const client = options.client || db;
+    await ensurePersonExists(client, id);
+    const { rows } = await client.query(
+        `SELECT slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, created_at, updated_at
+         FROM commulingo_person_sections
+         WHERE person_id = $1
+         ORDER BY sort_order, id`,
+        [id]
+    );
+    return rows.map(rowToPersonSection);
+}
+
+async function upsertPersonSectionAdmin(personId, slug, payload, options = {}) {
+    return withTransaction(options, async client => {
+        const id = requireId(personId, 'person id');
+        const sectionSlug = requireSlug(slug);
+        await ensurePersonExists(client, id);
+        const before = await getPersonAdmin(id, { client });
+        const sortOrder = Number.parseInt(payload.sortOrder, 10);
+        const heading = payload.heading || {};
+        const body = payload.body || {};
+        await client.query(
+            `INSERT INTO commulingo_person_sections
+                (person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, NOW())
+             ON CONFLICT (person_id, slug)
+             DO UPDATE SET
+                sort_order = EXCLUDED.sort_order,
+                heading_ko = EXCLUDED.heading_ko,
+                heading_en = EXCLUDED.heading_en,
+                body_ko = EXCLUDED.body_ko,
+                body_en = EXCLUDED.body_en,
+                sources = EXCLUDED.sources,
+                updated_at = NOW()`,
+            [
+                id,
+                sectionSlug,
+                Number.isFinite(sortOrder) ? sortOrder : 0,
+                localized(heading, 'ko'),
+                localized(heading, 'en'),
+                localized(body, 'ko'),
+                localized(body, 'en'),
+                JSON.stringify(normalizeSources(payload.sources)),
+            ]
+        );
+        const sections = await listPersonSectionsAdmin(id, { client });
+        const after = await getPersonAdmin(id, { client });
+        await writeRevision(client, 'person', id, `upsert section ${sectionSlug}`, { before, after, sections }, options.changedBy);
+        return sections.find(section => section.slug === sectionSlug);
+    });
+}
+
+async function deletePersonSectionAdmin(personId, slug, options = {}) {
+    return withTransaction(options, async client => {
+        const id = requireId(personId, 'person id');
+        const sectionSlug = requireSlug(slug);
+        await ensurePersonExists(client, id);
+        const before = await getPersonAdmin(id, { client });
+        const result = await client.query(
+            'DELETE FROM commulingo_person_sections WHERE person_id = $1 AND slug = $2',
+            [id, sectionSlug]
+        );
+        if (!result.rowCount) {
+            const err = new Error('section not found');
+            err.status = 404;
+            throw err;
+        }
+        const after = await getPersonAdmin(id, { client });
+        await writeRevision(client, 'person', id, `delete section ${sectionSlug}`, { before, after }, options.changedBy);
+        return { deleted: true, personId: id, slug: sectionSlug };
+    });
+}
+
 module.exports = {
     listPeopleAdmin,
     getPersonAdmin,
@@ -684,4 +809,7 @@ module.exports = {
     createOfficeRowAdmin,
     updateOfficeRowAdmin,
     deleteOfficeRowAdmin,
+    listPersonSectionsAdmin,
+    upsertPersonSectionAdmin,
+    deletePersonSectionAdmin,
 };

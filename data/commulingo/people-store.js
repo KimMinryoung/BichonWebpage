@@ -30,6 +30,8 @@ async function fetchRows() {
         offices,
         officeRows,
         personRoles,
+        roleCategories,
+        sectionCounts,
     ] = await Promise.all([
         db.query(
             `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
@@ -74,9 +76,19 @@ async function fetchRows() {
              ORDER BY office_id, sort_order, id`
         ),
         db.query(
-            `SELECT person_id, icon, office_id, label_ko, label_en
+            `SELECT person_id, icon, office_id, category_id, label_ko, label_en
              FROM commulingo_person_roles
              ORDER BY person_id`
+        ),
+        db.query(
+            `SELECT id, icon, label_ko, label_en
+             FROM commulingo_role_categories
+             ORDER BY sort_order, id`
+        ),
+        db.query(
+            `SELECT person_id, COUNT(*)::int AS section_count
+             FROM commulingo_person_sections
+             GROUP BY person_id`
         ),
     ]);
 
@@ -90,6 +102,8 @@ async function fetchRows() {
         offices: offices.rows,
         officeRows: officeRows.rows,
         personRoles: personRoles.rows,
+        roleCategories: roleCategories.rows,
+        sectionCounts: sectionCounts.rows,
     };
 }
 
@@ -138,8 +152,22 @@ function rowsToPeopleData(rows) {
         personRoles[row.person_id] = {
             icon: row.icon || '',
             officeId: row.office_id || '',
+            categoryId: row.category_id || '',
             label: label.ko || label.en ? label : null,
         };
+    });
+
+    const roleCategories = {};
+    rows.roleCategories.forEach(row => {
+        roleCategories[row.id] = {
+            icon: row.icon || '',
+            label: t(row.label_ko, row.label_en),
+        };
+    });
+
+    const sectionCounts = {};
+    rows.sectionCounts.forEach(row => {
+        sectionCounts[row.person_id] = row.section_count || 0;
     });
 
     return {
@@ -178,6 +206,8 @@ function rowsToPeopleData(rows) {
         patronymics,
         cyrillicPatronymics,
         personRoles,
+        roleCategories,
+        sectionCounts,
     };
 }
 
@@ -213,7 +243,27 @@ function clearCommuLingoPeopleCache() {
     pendingLoad = null;
 }
 
+async function loadCommuLingoPersonSections(personId) {
+    const id = typeof personId === 'string' ? personId.trim() : '';
+    if (!id) return [];
+    const { rows } = await db.query(
+        `SELECT slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources
+         FROM commulingo_person_sections
+         WHERE person_id = $1
+         ORDER BY sort_order, id`,
+        [id]
+    );
+    return rows.map(row => ({
+        slug: row.slug || '',
+        sortOrder: row.sort_order || 0,
+        heading: t(row.heading_ko, row.heading_en),
+        body: t(row.body_ko, row.body_en),
+        sources: Array.isArray(row.sources) ? row.sources : [],
+    }));
+}
+
 module.exports = {
     loadCommuLingoPeopleFromDb,
+    loadCommuLingoPersonSections,
     clearCommuLingoPeopleCache,
 };
