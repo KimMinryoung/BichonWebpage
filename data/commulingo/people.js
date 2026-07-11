@@ -1605,6 +1605,241 @@ module.exports = {
     // Per-person career timeline, keyed by person id — rendered as the
     // click-to-expand "상세 이력" <details> on each card. c(y, r) = one row.
     careers: {
+        'chicherin': [
+            c('1923–1930', '외무인민위원', 'People’s Commissar for Foreign Affairs'),
+        ],
+        'litvinov': [
+            c('1930–1939', '외무인민위원', 'People’s Commissar for Foreign Affairs'),
+        ],
+        'vyshinsky': [
+            c('1949–1953', '외무장관', 'Minister of Foreign Affairs'),
+        ],
+        'menzhinsky': [
+            c('1926–1934', 'OGPU 의장', 'Chairman of OGPU'),
+        ],
+        'yagoda': [
+            c('1934–1936', 'NKVD 내무인민위원', 'People’s Commissar for Internal Affairs, NKVD'),
+        ],
+        'lunacharsky': [
+            c('1917–1929', '계몽인민위원', 'People’s Commissar for Enlightenment'),
+        ],
+        'zhdanov': [
+            c('1946–1948', '중앙위 서기 · 전후 서기국의 제2인자', 'CC secretary and postwar second figure in the Secretariat'),
+            c('1934–1948', '중앙위 서기 · 문화/이념 총괄', 'CC secretary for culture and ideology'),
+            c('1934–1948', '중앙위 문화/이념 총괄', 'CC culture and ideology overseer'),
+        ],
+        'suslov': [
+            c('1947–1982', '중앙위 서기 · 이념 담당', 'CC secretary for ideology'),
+        ],
+        'demichev': [
+            c('1961–1974', '중앙위 서기 · 이념/문화 담당', 'CC secretary for ideology and culture'),
+            c('1974–1986', '문화장관', 'Minister of Culture'),
+        ],
+        'ponomarev': [
+            c('1955–1986', '국제부장 · 국제공산주의 노선 관리', 'International Department chief and guardian of the communist line'),
+        ],
+        'sokolnikov': [
+            c('1922–1926', '재무인민위원 · 네프 화폐 안정', 'Finance commissar and NEP monetary stabilization'),
+        ],
+        'zverev': [
+            c('1938–1960', '재무인민위원 · 재무장관', 'Finance commissar, then Minister of Finance'),
+        ],
+        'garbuzov': [
+            c('1960–1985', '재무장관', 'Minister of Finance'),
+        ],
+        'alkhimov': [
+            c('1963–1986', '국가은행 총재', 'Chairman of Gosbank'),
+        ],
+        'gerashchenko': [
+            c('1988–1991', '국가은행 총재', 'Chairman of Gosbank'),
+        ],
+        'katushev': [
+            c('1988–1991', '대외경제관계 장관', 'Minister of Foreign Economic Relations'),
+        ],
+        'tevosian': [
+            c('1940–1953', '금속 · 조선 · 수송기계 공업 지도부', 'Metallurgy, shipbuilding and transport-machine industry leadership'),
+        ],
+        'malyshev': [
+            c('1941–1953', '전차 · 수송기계 · 중형기계공업 지도부', 'Tank, transport-machine and medium-machine industry leadership'),
+        ],
+        'vannikov': [
+            c('1941–1953', '탄약 · 원자력 행정 지도부', 'Ammunition and atomic-administration leadership'),
+            c('1945–1953', '제1총국 · 원자력 행정', 'First Main Directorate and atomic administration'),
+        ],
+        'slavsky': [
+            c('1957–1986', '중형기계공업 장관 · 핵산업', 'Minister of Medium Machine-Building and nuclear industry'),
+        ],
+        'afanasyev': [
+            c('1965–1983', '일반기계공업 장관 · 미사일/우주산업', 'Minister of General Machine-Building and missile/space industry'),
+            c('1965–1983', '일반기계공업 장관', 'Minister of General Machine-Building'),
+        ],
+        'yakov-yakovlev': [
+            c('1929–1934', '농업인민위원 · 집단화 행정', 'Agriculture commissar and collectivization administrator'),
+        ],
+        'benediktov': [
+            c('1938–1955', '농업인민위원 · 농업장관', 'Agriculture commissar, then Minister of Agriculture'),
+        ],
+        'matskevich': [
+            c('1955–1960, 1965–1973', '농업장관 · 처녀지 이후 농정', 'Minister of Agriculture after the virgin-lands drive'),
+        ],
+        'polyansky': [
+            c('1973–1976', '농업장관', 'Minister of Agriculture'),
+        ],
+        'mesyats': [
+            c('1976–1985', '농업장관', 'Minister of Agriculture'),
+        ],
+        'murakhovsky': [
+            c('1985–1989', '국가농공위원회 의장', 'Chairman of Gosagroprom'),
+        ],
+        'shayakhmetov': [
+            c('1950–1954', '민족소비에트 의장', 'Chairman of the Soviet of Nationalities'),
+        ],
+        'paleckis': [
+            c('1966–1970', '민족소비에트 의장', 'Chairman of the Soviet of Nationalities'),
+        ],
+        'nasriddinova': [
+            c('1970–1974', '민족소비에트 의장', 'Chairman of the Soviet of Nationalities'),
+        ],
+        'voss': [
+            c('1984–1989', '민족소비에트 의장', 'Chairman of the Soviet of Nationalities'),
+        ],
+        'nishonov': [
+            c('1989–1991', '민족소비에트 의장', 'Chairman of the Soviet of Nationalities'),
+        ],
+        'kurchatov': [
+            c('1943–1960', '원자력 과학지도자', 'Scientific leader of the atomic project'),
+        ],
+        'keldysh': [
+            c('1961–1975', '과학아카데미 총재 · 우주과학 조정', 'Academy president and space-science coordinator'),
+        ],
+        'kerimov': [
+            c('1966–1991', '국가위원회 의장 · 유인우주비행', 'State Commission chair for crewed spaceflight'),
+        ],
+        'fadeyev': [
+            c('1946–1954', '작가동맹 서기장 · 의장', 'Writers’ Union secretary and chairman'),
+        ],
+        'furtseva': [
+            c('1960–1974', '문화장관', 'Minister of Culture'),
+        ],
+        'gubenko': [
+            c('1989–1991', '문화장관', 'Minister of Culture'),
+        ],
+        'chernenko': [
+            c('1984–1985', '서기장', 'General Secretary'),
+            c('1984–1985', '최고소비에트 상무회 의장', 'Chairman of the Presidium of the Supreme Soviet'),
+        ],
+        'shepilov': [
+            c('1956–1957', '외무장관', 'Minister of Foreign Affairs'),
+        ],
+        'bessmertnykh': [
+            c('1991.1–8', '외무장관', 'Minister of Foreign Affairs'),
+        ],
+        'pankin': [
+            c('1991.8–11', '외무장관', 'Minister of Foreign Affairs'),
+        ],
+        'merkulov': [
+            c('1941, 1943–1946', 'NKGB 국가보안인민위원', 'People’s Commissar for State Security, NKGB'),
+        ],
+        'abakumov': [
+            c('1946–1951', 'MGB 국가보안장관', 'Minister of State Security, MGB'),
+        ],
+        'ignatiev': [
+            c('1951–1953', 'MGB 국가보안장관', 'Minister of State Security, MGB'),
+        ],
+        'serov': [
+            c('1954–1958', 'KGB 의장', 'Chairman of the KGB'),
+        ],
+        'shelepin': [
+            c('1958–1961', 'KGB 의장', 'Chairman of the KGB'),
+        ],
+        'semichastny': [
+            c('1961–1967', 'KGB 의장', 'Chairman of the KGB'),
+        ],
+        'fedorchuk': [
+            c('1982', 'KGB 의장', 'Chairman of the KGB'),
+        ],
+        'chebrikov': [
+            c('1982–1988', 'KGB 의장', 'Chairman of the KGB'),
+        ],
+        'rykov': [
+            c('1924–1930', '인민위원회의 의장', 'Chairman of Sovnarkom'),
+        ],
+        'bulganin': [
+            c('1955–1958', '각료회의 의장', 'Chairman of the Council of Ministers'),
+            c('1953–1955', '국방장관', 'Minister of Defence'),
+        ],
+        'tikhonov': [
+            c('1980–1985', '각료회의 의장', 'Chairman of the Council of Ministers'),
+        ],
+        'ryzhkov': [
+            c('1985–1991.1', '각료회의 의장', 'Chairman of the Council of Ministers'),
+        ],
+        'pavlov': [
+            c('1991.1–8', '총리', 'Prime Minister'),
+        ],
+        'frunze': [
+            c('1925', '전쟁인민위원', 'People’s Commissar for Military and Naval Affairs'),
+        ],
+        'voroshilov': [
+            c('1953–1960', '최고소비에트 상무회 의장', 'Chairman of the Presidium of the Supreme Soviet'),
+            c('1925–1940', '전쟁 · 국방인민위원', 'People’s Commissar for Military Affairs, then Defence'),
+        ],
+        'timoshenko': [
+            c('1940–1941', '국방인민위원', 'People’s Commissar for Defence'),
+        ],
+        'malinovsky': [
+            c('1957–1967', '국방장관', 'Minister of Defence'),
+        ],
+        'grechko': [
+            c('1967–1976', '국방장관', 'Minister of Defence'),
+        ],
+        'ustinov': [
+            c('1976–1984', '국방장관 · 군산복합체 원로', 'Defence minister and military-industrial elder'),
+            c('1976–1984', '국방장관', 'Minister of Defence'),
+        ],
+        'sokolov': [
+            c('1984–1987', '국방장관', 'Minister of Defence'),
+        ],
+        'yazov': [
+            c('1987–1991', '국방장관', 'Minister of Defence'),
+        ],
+        'krzhizhanovsky': [
+            c('1921–1923, 1925–1930', '고스플란 의장', 'Chairman of Gosplan'),
+        ],
+        'kuibyshev': [
+            c('1930–1934', '고스플란 의장', 'Chairman of Gosplan'),
+        ],
+        'mezhlauk': [
+            c('1934–1937', '고스플란 의장', 'Chairman of Gosplan'),
+        ],
+        'voznesensky': [
+            c('1938–1941, 1942–1949', '고스플란 · 국가계획위원회 의장', 'Chairman of Gosplan, then State Planning Committee'),
+        ],
+        'saburov': [
+            c('1941–1942, 1949–1953, 1953–1955', '국가계획 지도부', 'State planning leadership'),
+        ],
+        'baibakov': [
+            c('1965–1985', '국가계획위원회 의장', 'Chairman of the State Planning Committee'),
+        ],
+        'maslyukov': [
+            c('1988–1991', '국가계획위원회 의장', 'Chairman of the State Planning Committee'),
+        ],
+        'kalinin': [
+            c('1922–1946', '중앙집행위원회 · 최고소비에트 상무회 의장', 'CEC chairman, then Presidium chairman'),
+        ],
+        'shvernik': [
+            c('1946–1953', '최고소비에트 상무회 의장', 'Chairman of the Presidium of the Supreme Soviet'),
+            c('1938–1946', '민족소비에트 의장', 'Chairman of the Soviet of Nationalities'),
+        ],
+        'podgorny': [
+            c('1965–1977', '최고소비에트 상무회 의장', 'Chairman of the Presidium of the Supreme Soviet'),
+        ],
+        'manuilsky': [
+            c('1929–1934', '사실상 지도자', 'De facto leader'),
+        ],
+        'dimitrov': [
+            c('1934–1943', '서기장', 'General Secretary'),
+        ],
         'stasova': [
             c('1917–18', '중앙위 기술서기, 합법화된 당 조직의 기록과 연락 실무', 'Central Committee technical secretary: records and communications for the legalized party'),
             c('1919', '중앙위 서기국 의장', 'Chairwoman of the Central Committee Secretariat'),
