@@ -23,7 +23,7 @@ FROM (VALUES
     ('zinoviev', 20, 'target', '표적', 'Target', '1936년 첫 모스크바 재판에서 사형을 선고받은 옛 볼셰비키 지도자였다.', 'An Old Bolshevik leader sentenced to death at the first Moscow Trial in 1936.'),
     ('kamenev', 21, 'target', '표적', 'Target', '1936년 첫 모스크바 재판에서 처형된 옛 볼셰비키 지도자였다.', 'An Old Bolshevik leader executed after the first Moscow Trial in 1936.'),
     ('rykov', 22, 'target', '표적', 'Target', '1938년 모스크바 재판 뒤 처형된 전 정부수반이었다.', 'A former head of government executed after the 1938 Moscow Trial.'),
-    ('krestinsky', 23, 'target', 'Target', 'Target', '1938년 모스크바 재판에서 유죄 판결 뒤 처형된 옛 볼셰비키였다.', 'An Old Bolshevik convicted and executed after the 1938 Moscow Trial.'),
+    ('krestinsky', 23, 'target', '표적', 'Target', '1938년 모스크바 재판에서 유죄 판결 뒤 처형된 옛 볼셰비키였다.', 'An Old Bolshevik convicted and executed after the 1938 Moscow Trial.'),
     ('mezhlauk', 24, 'target', '표적', 'Target', '국가계획위원장 출신으로 1938년 처형됐다.', 'A former head of Gosplan executed in 1938.'),
     ('yakov-yakovlev', 25, 'target', '표적', 'Target', '농업 정책을 맡았던 당 지도자로 1938년 처형됐다.', 'A party leader associated with agricultural policy who was executed in 1938.'),
     ('babel', 26, 'target', '표적', 'Target', '1939년 체포되어 1940년 처형된 작가였다.', 'A writer arrested in 1939 and executed in 1940.')
