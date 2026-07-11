@@ -72,6 +72,12 @@ module.exports = {
             blurb: t('10월을 만들었고, 대부분 10월의 이름으로 죽었다.', 'They made October — and most of them died in its name.'),
         },
         {
+            id: 'international-revolutionary',
+            range: '1871–1919',
+            title: t('비소련 혁명가', 'Non-Soviet revolutionaries'),
+            blurb: t('러시아 혁명과 대화했지만 소련 국가의 기관에는 속하지 않았던 혁명가들.', 'Revolutionaries who argued with and around the Russian Revolution without belonging to Soviet state institutions.'),
+        },
+        {
             id: 'stalin-era',
             range: '1929–1953',
             title: t('스탈린 시대의 사람들', 'People of the Stalin era'),
@@ -596,7 +602,7 @@ module.exports = {
         },
         {
             id: 'luxemburg',
-            group: 'bolshevik',
+            group: 'international-revolutionary',
             initial: 'Р',
             cyrillic: 'Роза Люксембург',
             name: t('로자 룩셈부르크', 'Rosa Luxemburg'),
