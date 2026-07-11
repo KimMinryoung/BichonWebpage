@@ -1975,13 +1975,26 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-people-group-head {
+    background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
+    border: 1px solid var(--border);
     border-left: 4px solid var(--border);
     cursor: pointer;
     display: block;
     list-style: none;
-    padding-left: 14px;
-    padding-right: 34px;
+    padding: 12px 38px 12px 14px;
     position: relative;
+    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.commu-people-group-head:hover,
+.commu-people-group-head:focus-visible {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+}
+
+.commu-people-group-head:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent);
+    outline-offset: 2px;
 }
 
 .commu-people-group-head::-webkit-details-marker {
@@ -1997,7 +2010,12 @@ button.commu-dc-option:hover { border-color: var(--link); }
     right: 8px;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
-    transition: transform 0.16s ease;
+    transition: color 0.16s ease, transform 0.16s ease;
+}
+
+.commu-people-group-head:hover::after,
+.commu-people-group-head:focus-visible::after {
+    color: var(--link);
 }
 
 .commu-people-group[open] .commu-people-group-head {
