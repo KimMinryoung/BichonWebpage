@@ -4,13 +4,14 @@ const path = require('path');
 const db = require('../config/database');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
+const { loadCommuLingoPeopleFromDb } = require('../data/commulingo/people-store');
 
 const router = express.Router();
 
 const PEOPLE_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'people.js');
 let peopleCache = null;
 
-function loadCommuLingoPeople() {
+function loadCommuLingoPeopleFromFile() {
     let mtimeMs = 0;
     try {
         mtimeMs = fs.statSync(PEOPLE_PATH).mtimeMs;
@@ -22,6 +23,27 @@ function loadCommuLingoPeople() {
     const data = require(PEOPLE_PATH);
     peopleCache = { mtimeMs, data };
     return data;
+}
+
+async function loadCommuLingoPeople(options = {}) {
+    if (process.env.COMMULINGO_PEOPLE_SOURCE === 'file') {
+        return { data: loadCommuLingoPeopleFromFile(), source: 'file' };
+    }
+    try {
+        const data = await loadCommuLingoPeopleFromDb({ fresh: options.fresh });
+        return { data, source: 'db' };
+    } catch (err) {
+        console.error('[commulingo people] DB load failed, falling back to file:', err.message);
+        return { data: loadCommuLingoPeopleFromFile(), source: 'file' };
+    }
+}
+
+async function loadStandardizedPeople(req, res, options = {}) {
+    const lang = res.locals.lang;
+    const catalog = loadCommuLingoCatalog();
+    const loaded = await loadCommuLingoPeople(options);
+    const standardized = normalizeCommuLingoPeople(loaded.data, { lang, catalog });
+    return { lang, catalog, loaded, standardized };
 }
 
 function setPublicDataCache(req, res, version) {
@@ -93,56 +115,132 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/people', (req, res) => {
-    const lang = res.locals.lang;
-    const data = loadCommuLingoPeople();
-    const catalog = loadCommuLingoCatalog();
-
-    const standardized = normalizeCommuLingoPeople(data, { lang, catalog });
-    const offices = standardized.offices;
-    const groups = standardized.groups;
-
-    res.render('public/commulingo-people', {
-        offices,
-        groups,
-        peopleCount: standardized.people.length,
-        pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
-        pageDescription: lang === 'en'
-            ? 'The people who stood at the forks of the two decision-simulation history books.'
-            : '두 권의 결정 시뮬레이션 역사책, 그 갈림길에 서 있던 사람들.',
-        pagePath: '/commulingo/people',
-        extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
-    });
+router.get('/people', async (req, res) => {
+    try {
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        res.render('public/commulingo-people', {
+            offices: standardized.offices,
+            groups: standardized.groups,
+            peopleCount: standardized.people.length,
+            pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
+            pageDescription: lang === 'en'
+                ? 'The people who stood at the forks of the two decision-simulation history books.'
+                : '두 권의 결정 시뮬레이션 역사책, 그 갈림길에 서 있던 사람들.',
+            pagePath: '/commulingo/people',
+            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+        });
+    } catch (err) {
+        console.error('commulingo people:', err);
+        res.status(500).send('Failed to load people data');
+    }
 });
 
-router.get('/book/:collectionId', (req, res) => {
-    const collectionId = typeof req.params.collectionId === 'string' ? req.params.collectionId.trim() : '';
-    const catalog = loadCommuLingoCatalog();
-    const collection = (catalog.collections || []).find(item => item.id === collectionId);
-    if (!collection) return res.redirect('/commulingo');
+function setShortPeopleApiCache(res) {
+    res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+}
 
-    let decisionPeople = [];
-    if (collection.format === 'decision-history') {
-        decisionPeople = (loadCommuLingoPeople().people || []).map(person => ({
-            id: person.id,
-            name: localize(person.name, res.locals.lang),
-            epithet: localize(person.epithet, res.locals.lang),
-            aliases: (person.aliases && person.aliases[res.locals.lang]) || [],
-        })).filter(person => person.aliases.length);
+router.get('/api/people', async (req, res) => {
+    try {
+        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        setShortPeopleApiCache(res);
+        res.json({
+            schemaVersion: standardized.schemaVersion,
+            source: loaded.source,
+            lang: standardized.lang,
+            peopleCount: standardized.people.length,
+            people: standardized.people,
+            groups: standardized.groups.map(group => ({
+                id: group.id,
+                range: group.range,
+                title: group.title,
+                blurb: group.blurb,
+                people: group.people.map(person => person.id),
+            })),
+        });
+    } catch (err) {
+        console.error('commulingo people api:', err);
+        res.status(500).json({ error: 'failed to load people data' });
     }
+});
 
-    const bookTitle = localize(collection.title, res.locals.lang);
-    res.render('public/commulingo-book', {
-        lessons: { version: catalog.version, collections: [collection] },
-        decisionPeople,
-        bookFormat: collection.format || 'quiz',
-        bookTitle,
-        bookDescription: localize(collection.description, res.locals.lang),
-        pageTitle: bookTitle,
-        pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
-        pagePath: `/commulingo/book/${collection.id}`,
-        extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
-    });
+router.get('/api/people/:personId', async (req, res) => {
+    try {
+        const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
+        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        const person = standardized.peopleById[personId];
+        if (!person) return res.status(404).json({ error: 'person not found' });
+        setShortPeopleApiCache(res);
+        res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, person });
+    } catch (err) {
+        console.error('commulingo person api:', err);
+        res.status(500).json({ error: 'failed to load person data' });
+    }
+});
+
+router.get('/api/offices', async (req, res) => {
+    try {
+        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        setShortPeopleApiCache(res);
+        res.json({
+            schemaVersion: standardized.schemaVersion,
+            source: loaded.source,
+            lang: standardized.lang,
+            offices: standardized.offices,
+        });
+    } catch (err) {
+        console.error('commulingo offices api:', err);
+        res.status(500).json({ error: 'failed to load offices data' });
+    }
+});
+
+router.get('/api/offices/:officeId', async (req, res) => {
+    try {
+        const officeId = typeof req.params.officeId === 'string' ? req.params.officeId.trim() : '';
+        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        const office = standardized.offices.find(item => item.id === officeId);
+        if (!office) return res.status(404).json({ error: 'office not found' });
+        setShortPeopleApiCache(res);
+        res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, office });
+    } catch (err) {
+        console.error('commulingo office api:', err);
+        res.status(500).json({ error: 'failed to load office data' });
+    }
+});
+
+router.get('/book/:collectionId', async (req, res) => {
+    try {
+        const collectionId = typeof req.params.collectionId === 'string' ? req.params.collectionId.trim() : '';
+        const catalog = loadCommuLingoCatalog();
+        const collection = (catalog.collections || []).find(item => item.id === collectionId);
+        if (!collection) return res.redirect('/commulingo');
+
+        let decisionPeople = [];
+        if (collection.format === 'decision-history') {
+            const loaded = await loadCommuLingoPeople();
+            decisionPeople = (loaded.data.people || []).map(person => ({
+                id: person.id,
+                name: localize(person.name, res.locals.lang),
+                epithet: localize(person.epithet, res.locals.lang),
+                aliases: (person.aliases && person.aliases[res.locals.lang]) || [],
+            })).filter(person => person.aliases.length);
+        }
+
+        const bookTitle = localize(collection.title, res.locals.lang);
+        res.render('public/commulingo-book', {
+            lessons: { version: catalog.version, collections: [collection] },
+            decisionPeople,
+            bookFormat: collection.format || 'quiz',
+            bookTitle,
+            bookDescription: localize(collection.description, res.locals.lang),
+            pageTitle: bookTitle,
+            pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
+            pagePath: `/commulingo/book/${collection.id}`,
+            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+        });
+    } catch (err) {
+        console.error('commulingo book:', err);
+        res.status(500).send('Failed to load book data');
+    }
 });
 
 router.get('/catalog.json', (req, res) => {

@@ -13,7 +13,8 @@
     "sprite:process": "node tools/sprite-pipeline.js process",
     "sprite:batch": "node tools/sprite-pipeline.js batch",
     "sprite:list": "node tools/sprite-pipeline.js list",
-    "commulingo:build": "node scripts/build-commulingo-shards.js"
+    "commulingo:build": "node scripts/build-commulingo-shards.js",
+    "commulingo:people:migrate": "node scripts/migrate-commulingo-people-db.js"
   },
   "dependencies": {
     "@simplewebauthn/server": "^13.3.0",
