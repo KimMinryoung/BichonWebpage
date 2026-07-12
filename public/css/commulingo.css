@@ -2813,3 +2813,13 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-event-people-grid > a.is-executor .commu-event-person-relation, .commu-person-event-links li.is-executor span, .commu-person-event-links li.is-executor em { color: #d4bb61; }
 .commu-event-people-grid > a.is-target, .commu-person-event-links li.is-target a { border-color: #a74a42; background: color-mix(in srgb, #a74a42 14%, transparent); }
 .commu-event-people-grid > a.is-target .commu-event-person-relation, .commu-person-event-links li.is-target span, .commu-person-event-links li.is-target em { color: #cf6b5f; }
+.commu-event-people-grid > a.is-leader, .commu-person-event-links li.is-leader a { border-color: #b8564f; background: color-mix(in srgb, #b8564f 14%, transparent); }
+.commu-event-people-grid > a.is-leader .commu-event-person-relation, .commu-person-event-links li.is-leader span, .commu-person-event-links li.is-leader em { color: #de7c74; }
+.commu-event-people-grid > a.is-participant, .commu-person-event-links li.is-participant a { border-color: #4d6f9c; background: color-mix(in srgb, #4d6f9c 14%, transparent); }
+.commu-event-people-grid > a.is-participant .commu-event-person-relation, .commu-person-event-links li.is-participant span, .commu-person-event-links li.is-participant em { color: #7ba3d4; }
+.commu-event-people-grid > a.is-opponent, .commu-person-event-links li.is-opponent a { border-color: #6f6f6f; background: color-mix(in srgb, #6f6f6f 14%, transparent); }
+.commu-event-people-grid > a.is-opponent .commu-event-person-relation, .commu-person-event-links li.is-opponent span, .commu-person-event-links li.is-opponent em { color: #a8a8a8; }
+.commu-event-people-grid > a.is-witness, .commu-person-event-links li.is-witness a { border-color: #7a6699; background: color-mix(in srgb, #7a6699 14%, transparent); }
+.commu-event-people-grid > a.is-witness .commu-event-person-relation, .commu-person-event-links li.is-witness span, .commu-person-event-links li.is-witness em { color: #a892cc; }
+.commu-event-source-text { display: inline-block; margin-left: .45rem; }
+.commu-event-source-text + .commu-event-source-text::before { content: '·'; margin-right: .45rem; opacity: .6; }
