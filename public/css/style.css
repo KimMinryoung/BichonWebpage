@@ -1249,6 +1249,13 @@ footer .footer-tagline {
 
 /* ===== Chat Page Layout ===== */
 .chat-page {
+    /* Pin to the layout viewport so we can counter the visual-viewport
+       offset iOS introduces when the keyboard pushes the page up (see
+       chat-viewport.js). Height tracks the visible area via --vh. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
