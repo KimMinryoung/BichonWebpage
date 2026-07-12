@@ -1293,11 +1293,35 @@ footer .footer-tagline {
     display: none;
 }
 
-/* Collapsible nav (mobile only). On desktop the toggle is hidden and the
-   group is transparent to layout (display:contents), so the toolbar + nav
-   behave exactly as before. */
+/* Top control bar + collapsible nav.
+   Desktop order via flex `order`: logo/menu (nav-group) first, then the
+   control bar (persona / new / history), then messages — matching the old
+   compact-header position. The ☰ toggle is hidden on desktop. Mobile
+   overrides the order so the toggle bar sits on top and the menu expands
+   beneath it. */
 .chat-nav-group {
-    display: contents;
+    order: 1;
+    flex: 0 0 auto;
+}
+
+.chat-topbar {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 16px 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-top: none;
+}
+
+.chat-topbar .btn {
+    white-space: nowrap;
+}
+
+.chat-page .container {
+    order: 3;
 }
 
 .chat-nav-toggle {
@@ -1676,29 +1700,39 @@ footer .footer-tagline {
         font-size: 1rem;
     }
 
-    /* Replace the logo row + menu row with one minimal bar that expands
-       on tap, reclaiming vertical space for the messages. */
+    /* One persistent bar: ☰ toggle + persona + new/history. The logo row
+       and menu row live in the collapsible nav-group beneath it. */
+    .chat-topbar {
+        order: 0;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 6px 10px;
+        flex: 0 0 auto;
+        background-color: var(--bg-surface);
+        border: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .chat-nav-group {
+        order: 1;
+    }
+
+    .chat-page .container {
+        order: 2;
+    }
+
     .chat-page .chat-nav-toggle {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 10px;
+        justify-content: center;
         flex: 0 0 auto;
-        height: 38px;
-        padding: 0 14px;
-        background: var(--bg-surface);
-        border: none;
-        border-bottom: 1px solid var(--border);
+        width: 40px;
+        height: 36px;
+        padding: 0;
+        background: var(--bg-inset);
+        border: 1px solid var(--border);
         color: var(--text-secondary);
-        font: inherit;
         cursor: pointer;
-    }
-
-    .chat-nav-toggle-label {
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: var(--text-primary);
-        letter-spacing: 0.02em;
     }
 
     .chat-nav-toggle-icon::before {
@@ -1715,30 +1749,21 @@ footer .footer-tagline {
         display: none;
     }
 
-    .chat-page .compact-header {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-        align-items: stretch;
-    }
-
-    .chat-page .header-actions {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 8px;
-        width: 100%;
-    }
-
     .chat-page .persona-select {
         flex: 1 1 auto;
         min-width: 0;
         max-width: none;
     }
 
-    .chat-page .header-actions .btn {
+    .chat-topbar .btn {
         flex: 0 0 auto;
         padding-inline: 10px;
+    }
+
+    /* Push the action buttons to the right; when the persona select is
+       visible it flexes to fill instead, so this only matters when hidden. */
+    .chat-topbar #newChatBtn {
+        margin-left: auto;
     }
 
     .post-item {

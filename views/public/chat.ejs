@@ -20,29 +20,26 @@
 <body>
     <script src="/js/chat-viewport.js?v=<%= assetVersion %>"></script>
     <div class="chat-page nav-collapsed">
-        <button
-            type="button"
-            class="chat-nav-toggle"
-            id="chatNavToggle"
-            aria-expanded="false"
-            aria-controls="chatNavGroup"
-        >
-            <span class="chat-nav-toggle-label"><%= strings.siteName %></span>
-            <span class="chat-nav-toggle-icon" aria-hidden="true"></span>
-        </button>
+        <div class="chat-topbar">
+            <button
+                type="button"
+                class="chat-nav-toggle"
+                id="chatNavToggle"
+                aria-expanded="false"
+                aria-controls="chatNavGroup"
+                aria-label="<%= strings.siteName %>"
+            >
+                <span class="chat-nav-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <select id="personaSelector" class="persona-select" aria-label="<%= strings.chat.personaLabel %>" hidden></select>
+            <button type="button" class="btn btn-secondary" id="newChatBtn"><%= strings.public.chatNew %></button>
+            <button type="button" class="btn btn-secondary" id="historyBtn"><%= strings.public.chatHistory %></button>
+        </div>
         <div class="chat-nav-group" id="chatNavGroup">
             <%- include('../partials/nav') %>
         </div>
 
         <div class="container">
-            <header class="box compact-header">
-                <div class="header-actions">
-                    <select id="personaSelector" class="persona-select" aria-label="<%= strings.chat.personaLabel %>" hidden></select>
-                    <button type="button" class="btn btn-secondary" id="newChatBtn"><%= strings.public.chatNew %></button>
-                    <button type="button" class="btn btn-secondary" id="historyBtn"><%= strings.public.chatHistory %></button>
-                </div>
-            </header>
-
             <div class="chat-box" id="chatBox" data-empty-hint="<%= strings.chat.emptyHint %>"></div>
 
             <div class="chat-feedback-bar collapsed" id="chatFeedbackBar" hidden>
