@@ -428,12 +428,12 @@ INSERT INTO commulingo_person_sections
 SELECT 'agranov', 'chekist-among-poets', 0,
     '살롱의 체키스트, 문학을 담당한 심문관',
     'The Chekist in the Salons, an Interrogator Assigned to Literature',
-    $ko$야코프 아그라노프는 체카와 그 후신 기관들에서 인텔리겐치아 사건을 전담한 인물이었다. 1921년 그는 이른바 「탕체프 음모」 사건의 수사를 지휘했고, 이 사건으로 시인 니콜라이 구밀료프를 포함한 60여 명이 총살됐다. 크론시타트 봉기와 탐보프 농민 봉기의 사후 심문도 그의 손을 거쳤다. 지식인 사회를 다루는 국가보안기관의 얼굴이 곧 그였다.
+    $ko$야코프 아그라노프는 체카와 그 후신 기관들에서 인텔리겐치아 사건을 전담한 인물이었다. 시인 구밀료프가 처형된 1921년 타간체프 사건을 비롯해, 크론시타트 봉기와 탐보프 농민 봉기의 사후 심문이 그의 손을 거쳤다. 지식인 사회를 다루는 국가보안기관의 얼굴이 곧 그였다.
 
 기이한 것은 그가 동시에 그 지식인 사회의 일원처럼 살았다는 점이다. 아그라노프 부부는 마야콥스키와 릴리 브릭을 중심으로 한 레프(LEF) 그룹의 살롱에 드나들었고, 작가들과 어울리며 원고를 먼저 읽는 특권적 독자를 자처했다. 1930년 마야콥스키가 자살했을 때 사건 수사를 맡은 것도, 시인의 뇌를 연구소로 보내는 절차를 처리한 것도 그였다.
 
 감시자와 친구라는 두 역할은 그에게 모순이 아니라 직무였다. 작가들의 저녁 식탁에서 얻은 신뢰는 조서의 재료가 됐고, 1930년대의 문학 관련 사건들에서 그 재료는 차례로 사용됐다. 훗날 비탈리 셴탈린스키가 루뱐카 문서고에서 발굴한 작가 파일들은, 살롱의 체키스트가 남긴 기록이 얼마나 방대했는지를 보여 준다.$ko$,
-    $en$Yakov Agranov was the man who handled intelligentsia cases in the Cheka and its successor agencies. In 1921 he directed the investigation of the so-called Tagantsev conspiracy, in which some sixty people were shot, among them the poet Nikolai Gumilev. The interrogations that followed the Kronstadt rising and the Tambov peasant revolt also passed through his hands. He was the face the security organs turned toward the world of the intellectuals.
+    $en$Yakov Agranov was the man who handled intelligentsia cases in the Cheka and its successor agencies. The 1921 Tagantsev case in which the poet Gumilev was executed, and the interrogations that followed the Kronstadt rising and the Tambov peasant revolt, all passed through his hands. He was the face the security organs turned toward the world of the intellectuals.
 
 The strange thing is that he lived at the same time as if he were a member of that world. The Agranovs frequented the salon of the LEF circle around Mayakovsky and Lili Brik, mixing with writers and playing the privileged first reader of their manuscripts. When Mayakovsky shot himself in 1930, it was Agranov who took charge of the case, and Agranov who processed the transfer of the poet's brain to the research institute.
 
@@ -477,7 +477,9 @@ ON CONFLICT (person_id, slug) DO UPDATE SET
 
 INSERT INTO commulingo_person_sections
     (person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at)
-SELECT 'frinovsky', 'mass-operations-desk', 0,
+-- Reuses the slug created by the commulingo-maintainer service (2026-07-12)
+-- so this richer version replaces its brief overview instead of duplicating it.
+SELECT 'frinovsky', 'great-terror', 0,
     '1937년 여름, 대량 작전의 실무 책상',
     'Summer 1937: The Working Desk of the Mass Operations',
     $ko$미하일 프리놉스키는 예조프의 제1부인민위원이자 국가보안총국(GUGB)의 장으로서, 1937년과 1938년의 대량 작전을 날마다 굴러가게 만든 실무 총책이었다. 작전명령 제00447호에 따른 지역별 할당의 집계와 증액 승인, 민족 작전의 「앨범 절차」 심사가 그의 책상을 거쳤다. 예조프와 프리놉스키 두 사람의 서명이 곧 수천 명 단위의 처형 승인이 되는 절차였다.
