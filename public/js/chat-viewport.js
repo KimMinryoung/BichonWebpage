@@ -16,3 +16,20 @@ window.addEventListener('orientationchange', setVH);
 // padding-bottom: env(safe-area-inset-bottom) on .chat-input-row, so no
 // JS probe/fallback is needed (the old 34px fallback misfired on
 // fullscreen non-notch devices, leaving a large empty gap below the input).
+//
+// When the on-screen keyboard is up, there is no home indicator to clear —
+// the keyboard sits over it — so that safe-area padding becomes a dead gap
+// between the input and the keyboard. Drop it while the input is focused.
+// focusin/focusout bubble, so we can delegate from document even though
+// #chatInput does not exist yet when this script runs.
+function setKeyboardOpen(open) {
+    var page = document.querySelector('.chat-page');
+    if (page) page.classList.toggle('keyboard-open', open);
+}
+
+document.addEventListener('focusin', function (e) {
+    if (e.target && e.target.id === 'chatInput') setKeyboardOpen(true);
+});
+document.addEventListener('focusout', function (e) {
+    if (e.target && e.target.id === 'chatInput') setKeyboardOpen(false);
+});

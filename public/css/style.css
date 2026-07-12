@@ -1561,6 +1561,12 @@ footer .footer-tagline {
     padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* While the keyboard is up it covers the home-indicator area, so the
+   safe-area padding is just a dead gap between the input and the keyboard. */
+.chat-page.keyboard-open .chat-input-row {
+    padding-bottom: 0;
+}
+
 .chat-input-row textarea {
     flex: 1;
     min-height: 44px;
