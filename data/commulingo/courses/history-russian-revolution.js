@@ -66,6 +66,7 @@ module.exports = {
                 episodes: [
                     {
                         id: 'bloody-sunday',
+                        historyEventId: 'revolution-1905',
                         date: t('1905년 1월 9일', 'January 9, 1905'),
                         title: t('피의 일요일', 'Bloody Sunday'),
                         role: t(
@@ -253,6 +254,7 @@ module.exports = {
                 episodes: [
                     {
                         id: 'february-soldier',
+                        historyEventId: 'february-revolution',
                         date: t('1917년 2월 27일', 'February 27, 1917'),
                         title: t('페트로그라드의 병사', 'A soldier in Petrograd'),
                         role: t(
@@ -385,6 +387,7 @@ module.exports = {
                     },
                     {
                         id: 'october',
+                        historyEventId: 'october-revolution',
                         date: t('1917년 10월 10일', 'October 10, 1917'),
                         title: t('봉기 전야', 'The eve of insurrection'),
                         role: t(
@@ -528,6 +531,7 @@ module.exports = {
                     },
                     {
                         id: 'kronstadt-nep',
+                        historyEventId: 'new-economic-policy',
                         date: t('1921년 3월', 'March 1921'),
                         title: t('크론시타트, 그리고 후퇴', 'Kronstadt, and the retreat'),
                         role: t(
@@ -627,6 +631,7 @@ module.exports = {
                     },
                     {
                         id: 'great-break',
+                        historyEventId: 'five-year-plans',
                         date: t('1928–1929년', '1928–1929'),
                         title: t('대전환 — 네프를 죽일 것인가', 'The Great Break — kill NEP?'),
                         role: t(
@@ -671,6 +676,7 @@ module.exports = {
                     },
                     {
                         id: 'great-terror',
+                        historyEventId: 'great-terror',
                         date: t('1937년', '1937'),
                         title: t('대숙청 — 선택이 사라진 방', 'The Great Terror — a room without choices'),
                         role: t(

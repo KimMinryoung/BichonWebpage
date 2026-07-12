@@ -62,6 +62,7 @@ module.exports = {
                 episodes: [
                     {
                         id: 'barbarossa-eve',
+                        historyEventId: 'great-patriotic-war',
                         date: t('1941년 6월 21일', 'June 21, 1941'),
                         title: t('침공 전야 — 경보를 울릴 것인가', 'The eve of invasion — sound the alarm?'),
                         role: t(
@@ -106,6 +107,7 @@ module.exports = {
                     },
                     {
                         id: 'moscow-panic',
+                        historyEventId: 'great-patriotic-war',
                         date: t('1941년 10월 16일', 'October 16, 1941'),
                         title: t('모스크바의 공황 — 수도를 버릴 것인가', 'The Moscow panic — abandon the capital?'),
                         role: t(
@@ -150,6 +152,7 @@ module.exports = {
                     },
                     {
                         id: 'stalingrad-1942',
+                        historyEventId: 'great-patriotic-war',
                         date: t('1942년 9월 12일', 'September 12, 1942'),
                         title: t('스탈린그라드 — 하나뿐인 예비대', 'Stalingrad — the only reserve there is'),
                         role: t(

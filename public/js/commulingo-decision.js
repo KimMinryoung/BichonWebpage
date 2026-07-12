@@ -307,6 +307,7 @@
             parts.push('<div class="commu-dc-block is-outcome"><span class="commu-dc-block-label">' + escapeHtml(L.outcome) + '</span><p>' + rich(ep.outcome) + '</p></div>');
             if (ep.ripple) parts.push('<div class="commu-dc-block is-ripple"><span class="commu-dc-block-label">→ ' + escapeHtml(L.ripple) + '</span><p>' + rich(ep.ripple) + '</p></div>');
             if (ep.insight) parts.push('<div class="commu-dc-block is-insight"><span class="commu-dc-block-label">' + escapeHtml(L.insight) + '</span><p>' + rich(ep.insight) + '</p></div>');
+            if (ep.historyEventId) parts.push('<a class="commu-dc-event-link" href="/commulingo/events/' + encodeURIComponent(ep.historyEventId) + '">' + escapeHtml(en ? 'Read the connected historical event' : '연결된 역사 사건 자세히 보기') + ' →</a>');
             parts.push('<button type="button" class="commu-dc-redo">' + escapeHtml(L.redo) + '</button>');
         }
 

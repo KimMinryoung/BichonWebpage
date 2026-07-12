@@ -21,7 +21,10 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
-                <a class="commu-people-cta" href="/commulingo/people"><%= lang === 'en' ? 'People of this era' : '인물 사전' %> →</a>
+                <div class="commu-book-reference-links">
+                    <a class="commu-people-cta is-events" href="/commulingo/events"><%= lang === 'en' ? 'Historical events' : '역사 사건' %> →</a>
+                    <a class="commu-people-cta" href="/commulingo/people"><%= lang === 'en' ? 'People of this era' : '인물 사전' %> →</a>
+                </div>
             </div>
         </header>
 
