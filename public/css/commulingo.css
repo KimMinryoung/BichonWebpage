@@ -1844,6 +1844,14 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 /* People dictionary search */
+/* .commu-person-card sets display:flex, which (as a class rule) would override
+   the UA [hidden]{display:none}. Force the search-driven hidden state to win so
+   filtering actually shows/hides cards and groups. */
+.commu-person-card[hidden],
+.commu-people-group[hidden] {
+    display: none !important;
+}
+
 .commu-people-search {
     position: relative;
     display: flex;
