@@ -419,4 +419,106 @@ ON CONFLICT (person_id, slug) DO UPDATE SET
     body_ko = EXCLUDED.body_ko, body_en = EXCLUDED.body_en,
     sources = EXCLUDED.sources, updated_at = NOW();
 
--- __APPEND__
+-- ============================================================
+-- agranov (야코프 아그라노프, 1893–1938)
+-- ============================================================
+
+INSERT INTO commulingo_person_sections
+    (person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at)
+SELECT 'agranov', 'chekist-among-poets', 0,
+    '살롱의 체키스트, 문학을 담당한 심문관',
+    'The Chekist in the Salons, an Interrogator Assigned to Literature',
+    $ko$야코프 아그라노프는 체카와 그 후신 기관들에서 인텔리겐치아 사건을 전담한 인물이었다. 1921년 그는 이른바 「탕체프 음모」 사건의 수사를 지휘했고, 이 사건으로 시인 니콜라이 구밀료프를 포함한 60여 명이 총살됐다. 크론시타트 봉기와 탐보프 농민 봉기의 사후 심문도 그의 손을 거쳤다. 지식인 사회를 다루는 국가보안기관의 얼굴이 곧 그였다.
+
+기이한 것은 그가 동시에 그 지식인 사회의 일원처럼 살았다는 점이다. 아그라노프 부부는 마야콥스키와 릴리 브릭을 중심으로 한 레프(LEF) 그룹의 살롱에 드나들었고, 작가들과 어울리며 원고를 먼저 읽는 특권적 독자를 자처했다. 1930년 마야콥스키가 자살했을 때 사건 수사를 맡은 것도, 시인의 뇌를 연구소로 보내는 절차를 처리한 것도 그였다.
+
+감시자와 친구라는 두 역할은 그에게 모순이 아니라 직무였다. 작가들의 저녁 식탁에서 얻은 신뢰는 조서의 재료가 됐고, 1930년대의 문학 관련 사건들에서 그 재료는 차례로 사용됐다. 훗날 비탈리 셴탈린스키가 루뱐카 문서고에서 발굴한 작가 파일들은, 살롱의 체키스트가 남긴 기록이 얼마나 방대했는지를 보여 준다.$ko$,
+    $en$Yakov Agranov was the man who handled intelligentsia cases in the Cheka and its successor agencies. In 1921 he directed the investigation of the so-called Tagantsev conspiracy, in which some sixty people were shot, among them the poet Nikolai Gumilev. The interrogations that followed the Kronstadt rising and the Tambov peasant revolt also passed through his hands. He was the face the security organs turned toward the world of the intellectuals.
+
+The strange thing is that he lived at the same time as if he were a member of that world. The Agranovs frequented the salon of the LEF circle around Mayakovsky and Lili Brik, mixing with writers and playing the privileged first reader of their manuscripts. When Mayakovsky shot himself in 1930, it was Agranov who took charge of the case, and Agranov who processed the transfer of the poet's brain to the research institute.
+
+Watcher and friend were not a contradiction for him but a job description. The trust gathered at writers' dinner tables became material for case files, and in the literary cases of the 1930s that material was used, piece by piece. The writers' dossiers Vitaly Shentalinsky later unearthed in the Lubyanka archives show how vast a record the chekist of the salons left behind.$en$,
+    $src$["Vitaly Shentalinsky, Arrested Voices: Resurrecting the Disappeared Writers of the Soviet Regime (1996)", "Bengt Jangfeldt, Mayakovsky: A Biography (2014)", "N. V. Petrov and K. V. Skorkin, Kto rukovodil NKVD, 1934–1941 (1999)"]$src$::jsonb,
+    NOW()
+WHERE EXISTS (SELECT 1 FROM commulingo_people p WHERE p.id = 'agranov')
+ON CONFLICT (person_id, slug) DO UPDATE SET
+    sort_order = EXCLUDED.sort_order,
+    heading_ko = EXCLUDED.heading_ko, heading_en = EXCLUDED.heading_en,
+    body_ko = EXCLUDED.body_ko, body_en = EXCLUDED.body_en,
+    sources = EXCLUDED.sources, updated_at = NOW();
+
+INSERT INTO commulingo_person_sections
+    (person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at)
+SELECT 'agranov', 'kirov-case-and-fall', 1,
+    '1934년 12월, 키로프 사건의 심문관에서 1938년의 피고인으로',
+    'December 1934: From Interrogator of the Kirov Case to Defendant in 1938',
+    $ko$1934년 12월 1일 키로프가 스몰니에서 살해되자, 아그라노프는 그날 밤 스탈린과 함께 레닌그라드로 내려간 수사 책임자 중 한 사람이었다. 그는 레닌그라드 NKVD를 임시로 지휘하며 암살범 니콜라예프의 단독 범행을 「레닌그라드 중심」과 「모스크바 중심」이라는 조직 사건으로 확장하는 심문을 이끌었다. 지노비예프와 카메네프를 도덕적 책임에서 형사적 책임으로 끌어들인 이 사건 구성은, 1936년 8월 첫 모스크바 재판으로 가는 길을 닦았다.
+
+야고다 밑에서 제1부인민위원까지 오른 그는 예조프 체제 초기에도 심문의 기술자로 중용됐다. 그러나 1937년 봄부터 그 기술은 그를 향하기 시작했다. 그는 사라토프 지방 NKVD로 좌천됐고, 그곳에서도 할당량을 채우는 체포를 집행하다가 1937년 7월 20일 자신이 체포됐다.
+
+1938년 8월 1일 그는 총살됐다. 그가 평생 만들어 낸 사건 구성의 문법, 즉 강요된 자백으로 조직을 그려 내는 방식이 그대로 그에게 적용됐다. 아그라노프는 복권되지 않았다. 그의 이력은 대숙청이 집행자와 표적을 가르는 선이 얼마나 얇았는지를 보여 주는 가장 선명한 사례 중 하나로 남아 있다.$ko$,
+    $en$When Kirov was murdered at the Smolny on 1 December 1934, Agranov was among the investigation chiefs who went down to Leningrad with Stalin that same night. Temporarily commanding the Leningrad NKVD, he led the interrogations that expanded the assassin Nikolaev's lone act into the organizational cases of the "Leningrad Center" and "Moscow Center". This construction, which moved Zinoviev and Kamenev from moral to criminal responsibility, paved the road to the first Moscow Trial of August 1936.
+
+Having risen to first deputy people's commissar under Yagoda, he was retained in the early Yezhov period as a technician of interrogation. But from the spring of 1937 the technique began to turn toward him. He was demoted to the Saratov regional NKVD, and while filling arrest quotas there he was himself arrested on 20 July 1937.
+
+He was shot on 1 August 1938. The grammar of case construction he had spent a lifetime perfecting, drawing organizations out of coerced confessions, was applied to him unchanged. Agranov was never rehabilitated. His career remains one of the starkest examples of how thin the Great Terror's line between implementer and target really was.$en$,
+    $src$["Matthew E. Lenoe, The Kirov Murder and Soviet History (2010)", "Oleg Khlevniuk, Master of the House: Stalin and His Inner Circle (2009)", "N. V. Petrov and K. V. Skorkin, Kto rukovodil NKVD, 1934–1941 (1999)", "J. Arch Getty and Oleg V. Naumov, The Road to Terror: Stalin and the Self-Destruction of the Bolsheviks, 1932–1939 (1999)"]$src$::jsonb,
+    NOW()
+WHERE EXISTS (SELECT 1 FROM commulingo_people p WHERE p.id = 'agranov')
+ON CONFLICT (person_id, slug) DO UPDATE SET
+    sort_order = EXCLUDED.sort_order,
+    heading_ko = EXCLUDED.heading_ko, heading_en = EXCLUDED.heading_en,
+    body_ko = EXCLUDED.body_ko, body_en = EXCLUDED.body_en,
+    sources = EXCLUDED.sources, updated_at = NOW();
+
+-- ============================================================
+-- frinovsky (미하일 프리놉스키, 1898–1940)
+-- ============================================================
+
+INSERT INTO commulingo_person_sections
+    (person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at)
+SELECT 'frinovsky', 'mass-operations-desk', 0,
+    '1937년 여름, 대량 작전의 실무 책상',
+    'Summer 1937: The Working Desk of the Mass Operations',
+    $ko$미하일 프리놉스키는 예조프의 제1부인민위원이자 국가보안총국(GUGB)의 장으로서, 1937년과 1938년의 대량 작전을 날마다 굴러가게 만든 실무 총책이었다. 작전명령 제00447호에 따른 지역별 할당의 집계와 증액 승인, 민족 작전의 「앨범 절차」 심사가 그의 책상을 거쳤다. 예조프와 프리놉스키 두 사람의 서명이 곧 수천 명 단위의 처형 승인이 되는 절차였다.
+
+그의 활동은 국내에 머물지 않았다. 1937년 8월 그는 소련 대표단을 이끌고 몽골에 들어가 몽골 지도부에 대규모 숙청을 강제하는 작업을 감독했고, 몽골의 대숙청은 이후 수만 명의 희생자를 냈다. 국가보안기관의 폭력이 국경을 넘어 수출되는 경로에도 그가 서 있었다.
+
+프리놉스키는 심문실의 구타에 직접 가담한 것으로 다수의 진술에서 지목된 인물이기도 하다. 대테러의 문서들이 공개된 뒤, 그는 정책으로서의 테러와 폭력으로서의 테러가 한 사람 안에서 어떻게 결합했는지를 보여 주는 사례로 연구자들에게 주목받았다.$ko$,
+    $en$Mikhail Frinovsky, Yezhov's first deputy people's commissar and head of the Main Directorate of State Security (GUGB), was the operational chief who kept the mass operations of 1937 and 1938 turning day by day. The tallying of regional quotas under Operational Order 00447 and the approval of their increases, and the review of the "album procedure" of the national operations, crossed his desk. The signatures of two men, Yezhov and Frinovsky, constituted execution approval by the thousands.
+
+His activity did not stop at the border. In August 1937 he led a Soviet delegation into Mongolia and supervised the imposition of a sweeping purge on the Mongolian leadership; the Mongolian terror that followed took tens of thousands of victims. He stood on the route by which the violence of the security organs was exported abroad.
+
+Frinovsky is also named in numerous statements as a man who took part personally in the beatings of the interrogation rooms. After the documents of the terror were opened, researchers came to treat him as a case study in how terror as policy and terror as violence combined in a single person.$en$,
+    $src$["Marc Jansen and Nikita Petrov, Stalinist Executioner: People's Commissar Nikolai Ezhov (2002)", "J. Arch Getty and Oleg V. Naumov, Yezhov: The Rise of Stalin's 'Iron Fist' (2008)", "Baldan Shirendev et al., History of the Mongolian People's Republic (1976), with post-1990 Mongolian rehabilitation commission figures", "Rolf Binner and Marc Junge, Kak terror stal 'bolshim' (2003)"]$src$::jsonb,
+    NOW()
+WHERE EXISTS (SELECT 1 FROM commulingo_people p WHERE p.id = 'frinovsky')
+ON CONFLICT (person_id, slug) DO UPDATE SET
+    sort_order = EXCLUDED.sort_order,
+    heading_ko = EXCLUDED.heading_ko, heading_en = EXCLUDED.heading_en,
+    body_ko = EXCLUDED.body_ko, body_en = EXCLUDED.body_en,
+    sources = EXCLUDED.sources, updated_at = NOW();
+
+INSERT INTO commulingo_person_sections
+    (person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at)
+SELECT 'frinovsky', 'navy-arrest-statement', 1,
+    '1939년 4월 11일, 집행자의 자술서',
+    '11 April 1939: The Implementer''s Own Statement',
+    $ko$1938년 9월, 대량 작전이 종결 국면에 들어서고 예조프 체제가 해체되기 시작하자 프리놉스키는 해군 인민위원으로 전보됐다. 함대를 지휘해 본 적 없는 그에게 이 인사는 명예로운 승진이 아니라 보안기관으로부터의 격리였다. 반년 뒤인 1939년 4월 6일 그는 체포됐다.
+
+체포 닷새 뒤 그가 베리야 앞으로 쓴 장문의 자술서는 대테러 연구의 핵심 문서 중 하나가 됐다. 그 안에서 프리놉스키는 자백이 어떻게 만들어졌는지를 내부자의 언어로 서술했다. 심문관들이 먼저 사건의 구도를 짜고, 구타로 서명을 받아 내고, 조서를 「문학적으로」 다듬는 과정이 문서 안에 적혀 있다. 물론 이 자술서 자체도 구금 상태에서 작성된 문서로서 사료 비판이 필요하지만, 작전의 기술적 세부에 관한 한 집행 총책 본인의 증언이라는 무게를 지닌다.
+
+1940년 2월 초 그는 비공개 재판에서 사형을 선고받고 총살됐다. 아내와 열일곱 살 아들도 처형됐다. 프리놉스키는 복권되지 않았다. 대테러의 기구는 자신의 집행자들을 소비하는 방식으로 스스로를 닫았고, 그 마지막 문서들 속에서 기구의 작동 원리가 후대에 남겨졌다.$ko$,
+    $en$In September 1938, as the mass operations entered their termination phase and the Yezhov apparatus began to be dismantled, Frinovsky was transferred to be People's Commissar of the Navy. For a man who had never commanded a fleet the appointment was not an honor but a quarantine from the security organs. Half a year later, on 6 April 1939, he was arrested.
+
+The long statement he wrote to Beria five days after his arrest became one of the key documents of Great Terror scholarship. In it Frinovsky described in an insider's language how confessions were manufactured: interrogators first drew up the outline of a case, extracted signatures by beating, and then polished the protocols "literarily". The statement itself, written in custody, naturally requires source criticism, but on the technical details of the operations it carries the weight of testimony from the operations' own chief implementer.
+
+In early February 1940 he was sentenced to death at a closed trial and shot. His wife and seventeen-year-old son were executed as well. Frinovsky was never rehabilitated. The machinery of the terror closed itself down by consuming its own implementers, and in its final documents the machine's working principles were left to posterity.$en$,
+    $src$["Marc Jansen and Nikita Petrov, Stalinist Executioner: People's Commissar Nikolai Ezhov (2002)", "Frinovsky's statement to Beria, 11 April 1939, in Lubyanka: Stalin i NKVD-NKGB-GUKR 'Smersh', 1939–1946 (2006)", "Oleg Khlevniuk, Master of the House: Stalin and His Inner Circle (2009)", "N. V. Petrov and K. V. Skorkin, Kto rukovodil NKVD, 1934–1941 (1999)"]$src$::jsonb,
+    NOW()
+WHERE EXISTS (SELECT 1 FROM commulingo_people p WHERE p.id = 'frinovsky')
+ON CONFLICT (person_id, slug) DO UPDATE SET
+    sort_order = EXCLUDED.sort_order,
+    heading_ko = EXCLUDED.heading_ko, heading_en = EXCLUDED.heading_en,
+    body_ko = EXCLUDED.body_ko, body_en = EXCLUDED.body_en,
+    sources = EXCLUDED.sources, updated_at = NOW();
