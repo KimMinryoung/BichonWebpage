@@ -1811,7 +1811,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-red) 25%, transparent);
     text-decoration: none;
     padding: 8px 13px;
-    border-radius: 6px;
+    border-radius: 0;
 }
 
 .commu-people-cta:hover {
@@ -2761,7 +2761,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     box-shadow: 0 6px 14px color-mix(in srgb, var(--accent-red) 22%, transparent);
     text-decoration: none;
     padding: 7px 11px;
-    border-radius: 6px;
+    border-radius: 0;
     white-space: nowrap;
 }
 
@@ -2810,10 +2810,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 
 /* Historical event pages */
-.commu-events-cta { float: right; margin-top: .1rem; font-weight: 900; color: #fff; padding: .7rem 1.15rem; border: 1px solid color-mix(in srgb, var(--accent-red) 75%, #fff 25%); border-radius: 8px; background: linear-gradient(135deg, #8f1d2c, var(--accent-red), #d4552f); box-shadow: 0 8px 22px color-mix(in srgb, var(--accent-red) 32%, transparent); text-decoration: none; letter-spacing: .01em; transition: transform .15s ease, box-shadow .15s ease; }
+.commu-events-cta { float: right; margin-top: .1rem; font-weight: 900; color: #fff; padding: .7rem 1.15rem; border: 1px solid color-mix(in srgb, var(--accent-red) 75%, #fff 25%); border-radius: 0; background: linear-gradient(135deg, #8f1d2c, var(--accent-red), #d4552f); box-shadow: 0 8px 22px color-mix(in srgb, var(--accent-red) 32%, transparent); text-decoration: none; letter-spacing: .01em; transition: transform .15s ease, box-shadow .15s ease; }
 .commu-events-cta:hover { color: #fff; transform: translateY(-1px); box-shadow: 0 11px 26px color-mix(in srgb, var(--accent-red) 42%, transparent); }
 .commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
-.commu-event-card, .commu-event-people-grid > a { display: block; border: 1px solid var(--border, #555); border-radius: 10px; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
+.commu-event-card, .commu-event-people-grid > a { display: block; border: 1px solid var(--border, #555); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
 .commu-event-card:hover, .commu-event-people-grid > a:hover { border-color: var(--accent, #b84f4f); }
 .commu-event-card h2 { margin: .3rem 0 .6rem; }
 .commu-event-card p, .commu-event-head > p, .commu-event-people-grid p { line-height: 1.65; }
@@ -2833,7 +2833,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-event-sources a { margin-left: .45rem; }
 .commu-person-event-links { list-style: none; padding: 0; margin: 0; }
 .commu-person-event-links li + li { margin-top: .6rem; }
-.commu-person-event-links a { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border, #555); border-radius: 8px; color: inherit; text-decoration: none; }
+.commu-person-event-links a { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; }
 .commu-person-event-links a:hover { border-color: var(--accent, #b84f4f); }
 .commu-person-event-links span { color: var(--accent, #b84f4f); font-weight: 700; }
 .commu-person-event-links strong { font-size: 1.05rem; }
