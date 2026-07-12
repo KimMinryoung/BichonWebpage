@@ -597,6 +597,16 @@
         });
     }
 
+    // 모바일: 상단 로고/메뉴 줄을 얇은 바로 접었다 폈다 한다.
+    var chatNavToggle = document.getElementById('chatNavToggle');
+    var chatPageEl = document.querySelector('.chat-page');
+    if (chatNavToggle && chatPageEl) {
+        chatNavToggle.addEventListener('click', function () {
+            var collapsed = chatPageEl.classList.toggle('nav-collapsed');
+            chatNavToggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        });
+    }
+
     if (feedbackToggle) {
         feedbackToggle.addEventListener('click', function () {
             var willExpand = feedbackBar.classList.contains('collapsed');

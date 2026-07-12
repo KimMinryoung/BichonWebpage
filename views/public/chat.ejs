@@ -19,8 +19,20 @@
 </head>
 <body>
     <script src="/js/chat-viewport.js?v=<%= assetVersion %>"></script>
-    <div class="chat-page">
-        <%- include('../partials/nav') %>
+    <div class="chat-page nav-collapsed">
+        <button
+            type="button"
+            class="chat-nav-toggle"
+            id="chatNavToggle"
+            aria-expanded="false"
+            aria-controls="chatNavGroup"
+        >
+            <span class="chat-nav-toggle-label"><%= strings.siteName %></span>
+            <span class="chat-nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <div class="chat-nav-group" id="chatNavGroup">
+            <%- include('../partials/nav') %>
+        </div>
 
         <div class="container">
             <header class="box compact-header">

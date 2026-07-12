@@ -1293,6 +1293,17 @@ footer .footer-tagline {
     display: none;
 }
 
+/* Collapsible nav (mobile only). On desktop the toggle is hidden and the
+   group is transparent to layout (display:contents), so the toolbar + nav
+   behave exactly as before. */
+.chat-nav-group {
+    display: contents;
+}
+
+.chat-nav-toggle {
+    display: none;
+}
+
 /* Chat Box */
 .chat-box {
     background-color: var(--bg-surface);
@@ -1663,6 +1674,45 @@ footer .footer-tagline {
 
     .compact-header h1 {
         font-size: 1rem;
+    }
+
+    /* Replace the logo row + menu row with one minimal bar that expands
+       on tap, reclaiming vertical space for the messages. */
+    .chat-page .chat-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex: 0 0 auto;
+        height: 38px;
+        padding: 0 14px;
+        background: var(--bg-surface);
+        border: none;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-secondary);
+        font: inherit;
+        cursor: pointer;
+    }
+
+    .chat-nav-toggle-label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text-primary);
+        letter-spacing: 0.02em;
+    }
+
+    .chat-nav-toggle-icon::before {
+        content: "\2630"; /* ☰ */
+        font-size: 1.15rem;
+        line-height: 1;
+    }
+
+    .chat-page:not(.nav-collapsed) .chat-nav-toggle-icon::before {
+        content: "\2715"; /* ✕ */
+    }
+
+    .chat-page.nav-collapsed .chat-nav-group {
+        display: none;
     }
 
     .chat-page .compact-header {
