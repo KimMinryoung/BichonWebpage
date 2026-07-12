@@ -7,8 +7,18 @@ var fateIcons = {
 var personHref = '/commulingo/people/' + person.id;
 var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
 var medalTitle = person.role && person.role.label ? person.role.label : (en ? 'Context marker' : '맥락 표식');
+var searchTerms = [
+    person.names && person.names.ko,
+    person.names && person.names.en,
+    person.displayName,
+    person.cyrillic,
+    person.epithet
+].concat(
+    (person.aliases && person.aliases.ko) || [],
+    (person.aliases && person.aliases.en) || []
+).filter(Boolean).join(' ').toLowerCase();
 %>
-<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
+<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>" data-search="<%= searchTerms %>">
     <div class="commu-person-top">
         <% if (medalHref) { %>
         <a class="commu-person-medal is-<%= cardGroupId %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>

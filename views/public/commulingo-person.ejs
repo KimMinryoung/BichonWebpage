@@ -39,7 +39,7 @@
             <% if (person.moment) { %>
             <p class="commu-person-moment"><%= person.moment %></p>
             <% } %>
-            <p class="commu-person-bio"><%= person.bio %></p>
+            <p class="commu-person-bio"><%- typeof bioHtml !== 'undefined' ? bioHtml : person.bio %></p>
         </header>
 
         <% if (person.career.length) { %>

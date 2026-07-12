@@ -8,6 +8,7 @@ const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commuli
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
 const { loadCommuLingoPeopleFromDb, loadCommuLingoPersonSections } = require('../data/commulingo/people-store');
 const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
+const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 
 const router = express.Router();
@@ -248,6 +249,10 @@ router.get('/people/:personId', async (req, res) => {
         }
         const rawSections = loaded.source === 'db' ? await loadCommuLingoPersonSections(personId) : [];
         const sections = localizedPersonSections(rawSections, lang);
+        // Auto-link mentions of other people in the bio and detail sections.
+        const linkIndex = buildPersonLinkIndex(standardized.people, { lang, excludeId: person.id });
+        const bioHtml = linkifyPlain(person.bio, linkIndex);
+        sections.forEach(section => { section.bodyHtml = linkifyHtml(section.bodyHtml, linkIndex); });
         const historyEvents = loaded.source === 'db'
             ? (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
                 ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
@@ -256,6 +261,7 @@ router.get('/people/:personId', async (req, res) => {
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-person', {
             person,
+            bioHtml,
             sections,
             historyEvents,
             roleIconSvg,

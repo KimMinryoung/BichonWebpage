@@ -4,6 +4,30 @@ Last updated: 2026-07-11
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
 
+## Search + auto-linking — added 2026-07-12
+
+Two UX features on the dictionary:
+
+- **Person search** on `/commulingo/people`. Each card carries a `data-search`
+  haystack (ko/en name, cyrillic, ko/en aliases, epithet — built in
+  `views/partials/commulingo-person-card.ejs`). An inline script in
+  `views/public/commulingo-people.ejs` live-filters cards as you type: terms are
+  AND-matched across whitespace, matching groups auto-open, empty groups + the
+  office index + the standalone head hide, and a status line reports the count.
+  Purely client-side, no new route. Styles: `.commu-people-search*` in
+  `public/css/commulingo.css`.
+- **Auto-linking of other people** inside the person detail bio and detail
+  sections. Server-side in `routes/commulingo.js` (`/people/:personId`) via
+  `data/commulingo/people-linkify.js`: `buildPersonLinkIndex` builds an
+  alias→person index (short/display name + `aliases[lang]`, current person
+  excluded so no self-link); `linkifyPlain` handles the escaped bio, `linkifyHtml`
+  walks section HTML and skips tag internals + existing `<a>`. Language handling
+  mirrors `public/js/commulingo-decision.js`: English uses `\b`, Korean uses a
+  preceding-char guard plus a `BLOCKED_KO` compound list (레닌그라드, 스탈린주의…)
+  so particles still link (레닌과) but compounds do not. Renders as
+  `.commu-person-link` (style already existed). Template change: bio now uses
+  `<%- bioHtml %>`.
+
 ## AI Agent Editing (leninbot) — added 2026-07-11
 
 The leninbot agent (Cyber-Lenin) can now continue the people-dictionary work

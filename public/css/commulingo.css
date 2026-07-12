@@ -1843,6 +1843,75 @@ button.commu-dc-option:hover { border-color: var(--link); }
     border-bottom-style: solid;
 }
 
+/* People dictionary search */
+.commu-people-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.25rem;
+}
+
+.commu-people-search-icon {
+    position: absolute;
+    left: 0.9rem;
+    font-size: 1.15rem;
+    color: var(--muted, #8a94a6);
+    pointer-events: none;
+}
+
+.commu-people-search-input {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 0.7rem 2.4rem 0.7rem 2.5rem;
+    font: inherit;
+    color: var(--text, #e6e9ef);
+    background: color-mix(in srgb, var(--card, #161b26) 92%, transparent);
+    border: 1px solid color-mix(in srgb, var(--link) 30%, transparent);
+    border-radius: 999px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.commu-people-search-input:focus {
+    border-color: var(--link);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--link) 22%, transparent);
+}
+
+.commu-people-search-input::-webkit-search-cancel-button { display: none; }
+
+.commu-people-search-clear {
+    position: absolute;
+    right: 0.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: var(--muted, #8a94a6);
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.commu-people-search-clear:hover {
+    color: var(--text, #e6e9ef);
+    background: color-mix(in srgb, var(--link) 18%, transparent);
+}
+
+.commu-people-search-status {
+    position: absolute;
+    left: 1rem;
+    bottom: -1.4rem;
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--muted, #8a94a6);
+}
+
 .commu-people-legend {
     display: flex;
     flex-wrap: wrap;

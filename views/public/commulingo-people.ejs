@@ -19,6 +19,16 @@
             </div>
         </header>
 
+        <div class="commu-people-search">
+            <span class="commu-people-search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="commu-people-search-input" class="commu-people-search-input"
+                placeholder="<%= en ? 'Search people by name, alias, or role…' : '이름 · 별칭 · 역할로 인물 검색…' %>"
+                autocomplete="off" spellcheck="false"
+                aria-label="<%= en ? 'Search people' : '인물 검색' %>">
+            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= en ? 'Clear search' : '검색 지우기' %>" hidden>×</button>
+            <p class="commu-people-search-status" id="commu-people-search-status" role="status" aria-live="polite" hidden></p>
+        </div>
+
         <% var officesList = (typeof offices !== 'undefined' && offices) || []; %>
         <% var roleCategoriesList = (typeof roleCategories !== 'undefined' && roleCategories) || []; %>
         <% if (officesList.length || roleCategoriesList.length) { %>
@@ -130,6 +140,73 @@
             }
             window.addEventListener('hashchange', focusHash);
             focusHash();
+        })();
+    </script>
+    <script>
+        // Live client-side person search: every card carries a `data-search`
+        // haystack (name, aliases, cyrillic, epithet). Matching is AND across
+        // whitespace-separated terms so "vladimir lenin" narrows correctly.
+        (function() {
+            var input = document.getElementById('commu-people-search-input');
+            var clearBtn = document.getElementById('commu-people-search-clear');
+            var status = document.getElementById('commu-people-search-status');
+            if (!input) return;
+            var en = <%- en ? 'true' : 'false' %>;
+            var cards = Array.prototype.slice.call(document.querySelectorAll('.commu-person-card[data-search]'));
+            var groups = Array.prototype.slice.call(document.querySelectorAll('details.commu-people-group'));
+            var chrome = Array.prototype.slice.call(document.querySelectorAll(
+                'details.commu-office-index, .commu-people-standalone-head'));
+
+            function statusText(count) {
+                if (en) return count === 0 ? 'No people found' : count + (count === 1 ? ' person' : ' people') + ' found';
+                return count === 0 ? '검색 결과가 없습니다' : count + '명 검색됨';
+            }
+
+            function reset() {
+                cards.forEach(function(card) { card.hidden = false; });
+                groups.forEach(function(group) {
+                    group.hidden = false;
+                    group.open = false;
+                });
+                chrome.forEach(function(el) { el.hidden = false; });
+                status.hidden = true;
+                clearBtn.hidden = true;
+            }
+
+            function apply(query) {
+                var terms = query.split(/\s+/).filter(Boolean);
+                if (!terms.length) { reset(); return; }
+                clearBtn.hidden = false;
+                chrome.forEach(function(el) { el.hidden = true; });
+                var total = 0;
+                cards.forEach(function(card) {
+                    var hay = card.getAttribute('data-search') || '';
+                    var match = terms.every(function(term) { return hay.indexOf(term) !== -1; });
+                    card.hidden = !match;
+                    if (match) total++;
+                });
+                groups.forEach(function(group) {
+                    var visible = group.querySelector('.commu-person-card:not([hidden])');
+                    group.hidden = !visible;
+                    group.open = !!visible;
+                });
+                status.textContent = statusText(total);
+                status.hidden = false;
+            }
+
+            var raf = null;
+            function onInput() {
+                if (raf) cancelAnimationFrame(raf);
+                raf = requestAnimationFrame(function() { apply(input.value.trim().toLowerCase()); });
+            }
+            input.addEventListener('input', onInput);
+            clearBtn.addEventListener('click', function() {
+                input.value = '';
+                reset();
+                input.focus();
+            });
+            // Restore filtering if the browser repopulates the field on back-nav.
+            if (input.value.trim()) apply(input.value.trim().toLowerCase());
         })();
     </script>
     <%- include('../partials/commulingo-person-card-click-script') %>
