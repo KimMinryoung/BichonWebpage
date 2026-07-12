@@ -33,18 +33,27 @@
 
             <div class="chat-box" id="chatBox" data-empty-hint="<%= strings.chat.emptyHint %>"></div>
 
-            <div class="chat-feedback-bar" id="chatFeedbackBar" hidden>
-                <select id="feedbackTone" aria-label="tone feedback"></select>
-                <input
-                    type="text"
-                    id="feedbackNote"
-                    maxlength="500"
-                    placeholder="<%= strings.chat.feedbackNote %>"
-                    autocomplete="off"
-                />
-                <button type="button" id="feedbackSave"><%= strings.chat.feedbackSave %></button>
-                <button type="button" id="feedbackRegenerate"><%= strings.chat.regenerate %></button>
-                <span class="chat-feedback-status" id="feedbackStatus"></span>
+            <div class="chat-feedback-bar collapsed" id="chatFeedbackBar" hidden>
+                <button
+                    type="button"
+                    class="chat-feedback-toggle"
+                    id="feedbackToggle"
+                    aria-expanded="false"
+                    aria-controls="feedbackControls"
+                ><%= strings.chat.feedbackToggle %></button>
+                <div class="chat-feedback-controls" id="feedbackControls">
+                    <select id="feedbackTone" aria-label="tone feedback"></select>
+                    <input
+                        type="text"
+                        id="feedbackNote"
+                        maxlength="500"
+                        placeholder="<%= strings.chat.feedbackNote %>"
+                        autocomplete="off"
+                    />
+                    <button type="button" id="feedbackSave"><%= strings.chat.feedbackSave %></button>
+                    <button type="button" id="feedbackRegenerate"><%= strings.chat.regenerate %></button>
+                    <span class="chat-feedback-status" id="feedbackStatus"></span>
+                </div>
             </div>
 
             <form class="chat-input-row" id="chatForm">

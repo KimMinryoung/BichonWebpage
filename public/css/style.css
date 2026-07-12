@@ -1376,8 +1376,8 @@ footer .footer-tagline {
 
 .chat-feedback-bar {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 6px;
     padding: 8px 10px;
     border-left: 1px solid var(--border);
@@ -1390,9 +1390,49 @@ footer .footer-tagline {
     display: none;
 }
 
-.chat-feedback-bar button,
-.chat-feedback-bar select,
-.chat-feedback-bar input {
+/* Collapsed by default: only the toggle button shows; the controls stay
+   hidden until the user opens them. */
+.chat-feedback-toggle {
+    height: 28px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: var(--bg-inset);
+    color: var(--text-secondary);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.chat-feedback-toggle:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+}
+
+.chat-feedback-toggle::after {
+    content: ' ▾';
+}
+
+.chat-feedback-bar:not(.collapsed) .chat-feedback-toggle::after {
+    content: ' ▴';
+}
+
+.chat-feedback-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.chat-feedback-bar.collapsed .chat-feedback-controls {
+    display: none;
+}
+
+.chat-feedback-controls button,
+.chat-feedback-controls select,
+.chat-feedback-controls input {
     height: 30px;
     border: 1px solid var(--border);
     border-radius: 0;
@@ -1402,30 +1442,30 @@ footer .footer-tagline {
     font-size: 13px;
 }
 
-.chat-feedback-bar button {
+.chat-feedback-controls button {
     padding: 0 10px;
     cursor: pointer;
     white-space: nowrap;
 }
 
-.chat-feedback-bar button:hover:not(:disabled) {
+.chat-feedback-controls button:hover:not(:disabled) {
     border-color: var(--accent);
     color: var(--text-primary);
 }
 
-.chat-feedback-bar button:disabled,
-.chat-feedback-bar select:disabled,
-.chat-feedback-bar input:disabled {
+.chat-feedback-controls button:disabled,
+.chat-feedback-controls select:disabled,
+.chat-feedback-controls input:disabled {
     opacity: 0.58;
     cursor: not-allowed;
 }
 
-.chat-feedback-bar select {
+.chat-feedback-controls select {
     width: 132px;
     padding: 0 6px;
 }
 
-.chat-feedback-bar input {
+.chat-feedback-controls input {
     min-width: 180px;
     flex: 1 1 240px;
     padding: 0 8px;
@@ -1516,6 +1556,9 @@ footer .footer-tagline {
     display: flex;
     gap: 0;
     align-items: stretch;
+    /* Keep the input clear of the home indicator without a fixed guess:
+       0 on non-notch devices, the real inset on notched ones. */
+    padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .chat-input-row textarea {
@@ -1674,6 +1717,50 @@ footer .footer-tagline {
 
     .chat-input-row textarea {
         max-height: min(120px, 24dvh);
+    }
+
+    /* Compact the feedback controls into two rows so they stop eating the
+       message area. Tone + Regenerate share row 1; Note + Save share row 2.
+       Status only claims a row when it has text. */
+    .chat-feedback-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "tone regen"
+            "note save";
+        gap: 6px;
+    }
+
+    .chat-feedback-bar.collapsed .chat-feedback-controls {
+        display: none;
+    }
+
+    .chat-feedback-controls #feedbackTone {
+        grid-area: tone;
+        width: 100%;
+    }
+
+    .chat-feedback-controls #feedbackNote {
+        grid-area: note;
+        min-width: 0;
+    }
+
+    .chat-feedback-controls #feedbackSave {
+        grid-area: save;
+    }
+
+    .chat-feedback-controls #feedbackRegenerate {
+        grid-area: regen;
+    }
+
+    .chat-feedback-controls .chat-feedback-status {
+        grid-column: 1 / -1;
+        min-width: 0;
+        text-align: right;
+    }
+
+    .chat-feedback-controls .chat-feedback-status:empty {
+        display: none;
     }
 
     .post-content {

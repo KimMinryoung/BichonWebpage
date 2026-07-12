@@ -24,6 +24,7 @@
     var chatInput = document.getElementById('chatInput');
     var chatSend = document.getElementById('chatSend');
     var feedbackBar = document.getElementById('chatFeedbackBar');
+    var feedbackToggle = document.getElementById('feedbackToggle');
     var feedbackTone = document.getElementById('feedbackTone');
     var feedbackNote = document.getElementById('feedbackNote');
     var feedbackSave = document.getElementById('feedbackSave');
@@ -539,9 +540,17 @@
         }
     }
 
+    // 피드백 컨트롤은 기본적으로 접혀 있고, 토글 버튼을 눌러야 펼쳐진다.
+    function collapseFeedback() {
+        if (!feedbackBar) return;
+        feedbackBar.classList.add('collapsed');
+        if (feedbackToggle) feedbackToggle.setAttribute('aria-expanded', 'false');
+    }
+
     function clearFeedbackTarget() {
         activeFeedbackTarget = null;
         if (feedbackBar) feedbackBar.hidden = true;
+        collapseFeedback();
         if (feedbackStatus) feedbackStatus.textContent = '';
         if (feedbackTone) feedbackTone.value = '';
         if (feedbackNote) feedbackNote.value = '';
@@ -555,6 +564,7 @@
             aiDiv: aiDiv || null
         };
         feedbackBar.hidden = false;
+        collapseFeedback();
         if (feedbackStatus) feedbackStatus.textContent = '';
         if (feedbackTone) feedbackTone.value = '';
         if (feedbackNote) feedbackNote.value = '';
@@ -584,6 +594,15 @@
                 if (busy || !activeFeedbackTarget) return;
                 postFeedback(activeFeedbackTarget.messageId, currentFeedbackTone(), currentFeedbackNote(), feedbackStatus);
             }
+        });
+    }
+
+    if (feedbackToggle) {
+        feedbackToggle.addEventListener('click', function () {
+            var willExpand = feedbackBar.classList.contains('collapsed');
+            feedbackBar.classList.toggle('collapsed');
+            feedbackToggle.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
+            if (willExpand && feedbackNote) feedbackNote.focus();
         });
     }
 
