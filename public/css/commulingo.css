@@ -1857,67 +1857,102 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin: 0 0 1.25rem;
+    margin: 18px 0 0;
 }
 
 .commu-people-search-icon {
     position: absolute;
-    left: 0.9rem;
-    font-size: 1.15rem;
-    color: var(--muted, #8a94a6);
+    left: 0.85rem;
+    font-size: 1.2rem;
+    color: var(--text-muted);
     pointer-events: none;
 }
 
 .commu-people-search-input {
     flex: 1 1 auto;
     width: 100%;
-    padding: 0.7rem 2.4rem 0.7rem 2.5rem;
+    padding: 0.72rem 2.4rem 0.72rem 2.5rem;
     font: inherit;
-    color: var(--text, #e6e9ef);
-    background: color-mix(in srgb, var(--card, #161b26) 92%, transparent);
-    border: 1px solid color-mix(in srgb, var(--link) 30%, transparent);
-    border-radius: 999px;
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 0;
     outline: none;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .commu-people-search-input:focus {
     border-color: var(--link);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--link) 22%, transparent);
+    box-shadow: inset 0 -2px 0 0 var(--link);
 }
 
 .commu-people-search-input::-webkit-search-cancel-button { display: none; }
 
 .commu-people-search-clear {
     position: absolute;
-    right: 0.55rem;
+    right: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.9rem;
+    height: 1.9rem;
     padding: 0;
     font-size: 1.35rem;
     line-height: 1;
-    color: var(--muted, #8a94a6);
+    color: var(--text-muted);
     background: none;
     border: none;
-    border-radius: 50%;
+    border-radius: 0;
     cursor: pointer;
 }
 
 .commu-people-search-clear:hover {
-    color: var(--text, #e6e9ef);
-    background: color-mix(in srgb, var(--link) 18%, transparent);
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--link) 16%, transparent);
 }
 
-.commu-people-search-status {
-    position: absolute;
-    left: 1rem;
-    bottom: -1.4rem;
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--muted, #8a94a6);
+/* Search results: name matches (top) and description mentions (bottom) */
+.commu-people-results {
+    margin-top: 24px;
+}
+
+.commu-people-result-section + .commu-people-result-section {
+    margin-top: 30px;
+}
+
+.commu-people-result-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 8px 12px;
+    margin-bottom: 14px;
+}
+
+.commu-people-result-section#commu-people-result-desc .commu-people-result-head {
+    border-left-color: var(--text-muted);
+}
+
+.commu-people-result-label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+}
+
+.commu-people-result-count {
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.commu-people-result-empty {
+    margin: 8px 0 0;
+    padding: 18px 12px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    border: 1px dashed var(--border);
 }
 
 .commu-people-legend {
