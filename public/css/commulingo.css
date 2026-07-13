@@ -2558,6 +2558,41 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-primary);
 }
 
+/* Role-category tag on a person card (surfaces the person's category) */
+.commu-person-role-tag {
+    align-self: flex-start;
+    display: inline-block;
+    max-width: 100%;
+    margin: -2px 0 0;
+    padding: 2px 8px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--bg-surface) 60%, transparent);
+    border: 1px solid var(--border);
+    border-left-width: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--link); }
+.commu-person-role-tag.is-old-regime { border-left-color: #b08d3f; }
+.commu-person-role-tag.is-bolshevik { border-left-color: #c0453c; }
+.commu-person-role-tag.is-international-revolutionary { border-left-color: #9c2d3f; }
+.commu-person-role-tag.is-stalin-era { border-left-color: #8a93a6; }
+.commu-person-role-tag.is-thaw { border-left-color: #4d8fc4; }
+.commu-person-role-tag.is-perestroika { border-left-color: #4aa578; }
+
+.commu-people-group-count,
+.commu-event-people-count {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
 .commu-person-moment {
     border-left: 3px solid color-mix(in srgb, var(--link) 72%, var(--border));
     color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-muted));

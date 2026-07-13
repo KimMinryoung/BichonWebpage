@@ -80,6 +80,22 @@ function localize(value, lang) {
     return localizeCommuLingoValue(value, lang);
 }
 
+// Chronological order for a person list: by birth year, then death year, then
+// name. People without a parsed birth year sort to the end. Returns a new array.
+function sortPeopleChronologically(people) {
+    return (people || []).slice().sort((a, b) => {
+        const ay = a.yearsData && a.yearsData.birthYear;
+        const by = b.yearsData && b.yearsData.birthYear;
+        if (ay && by && ay !== by) return ay - by;
+        if (ay && !by) return -1;
+        if (!ay && by) return 1;
+        const ad = a.yearsData && a.yearsData.deathYear;
+        const bd = b.yearsData && b.yearsData.deathYear;
+        if (ad && bd && ad !== bd) return ad - bd;
+        return (a.displayName || '').localeCompare(b.displayName || '');
+    });
+}
+
 function localizedPersonSections(sections, lang) {
     return (sections || []).map(section => {
         const body = localize(section.body, lang);
@@ -145,10 +161,14 @@ router.get('/people', async (req, res) => {
                 : category.label,
             peopleCount: standardized.people.filter(person => person.role && person.role.categoryId === category.id).length,
         })).filter(category => category.peopleCount > 0);
+        const orderedGroups = standardized.groups.map(group => ({
+            ...group,
+            people: sortPeopleChronologically(group.people),
+        }));
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             roleCategories,
-            groups: standardized.groups,
+            groups: orderedGroups,
             peopleCount: standardized.people.length,
             roleIconSvg,
             roleHubHref,
@@ -177,7 +197,7 @@ router.get('/offices/:officeId', async (req, res) => {
                 backLabel: lang === 'en' ? 'People' : '인물 사전',
             });
         }
-        const people = standardized.people.filter(person => person.role && person.role.officeId === office.id);
+        const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.officeId === office.id));
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-office', {
             office,
@@ -211,7 +231,7 @@ router.get('/roles/:categoryId', async (req, res) => {
                 backLabel: lang === 'en' ? 'People' : '인물 사전',
             });
         }
-        const people = standardized.people.filter(person => person.role && person.role.categoryId === category.id);
+        const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.categoryId === category.id));
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-role', {
             category,

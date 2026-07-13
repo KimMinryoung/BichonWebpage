@@ -18,7 +18,7 @@
         </section>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%= event.outcome %></p></section>
         <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
-            <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %></h2>
+            <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %> <span class="commu-event-people-count"><%= event.people.length %><%= en ? '' : '명' %></span></h2>
             <% event.peopleGroups.forEach(function(group) { %>
             <div class="commu-event-people-group is-<%= group.kind %>">
                 <h3 class="commu-event-people-group-head"><%= group.label %><span class="commu-event-people-group-count"><%= group.people.length %></span></h3>

@@ -46,6 +46,13 @@ var descSearch = [
             <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
         </div>
     </div>
+    <% if (person.role && person.role.label) { %>
+    <% if (medalHref) { %>
+    <a class="commu-person-role-tag is-<%= cardGroupId %>" href="<%= medalHref %>" onclick="event.stopPropagation()"><%= person.role.label %></a>
+    <% } else { %>
+    <span class="commu-person-role-tag is-<%= cardGroupId %>"><%= person.role.label %></span>
+    <% } %>
+    <% } %>
     <p class="commu-person-epithet"><%= person.epithet %></p>
     <% if (person.moment) { %>
     <p class="commu-person-moment"><%= person.moment %></p>
