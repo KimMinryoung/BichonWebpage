@@ -2518,7 +2518,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-flag {
     height: 0.86em;
     width: auto;
-    border-radius: 1.5px;
+    border-radius: 0;
     box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.28);
     vertical-align: middle;
     object-fit: contain;

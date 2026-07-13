@@ -55,6 +55,7 @@ const FLAG_NAMES = {
     chile: { ko: '칠레', en: 'Chile' },
     'north-korea': { ko: '조선', en: 'North Korea' },
     'south-korea': { ko: '대한민국', en: 'South Korea' },
+    vietnam: { ko: '베트남', en: 'Vietnam' },
 };
 
 function hasFlag(code) {
