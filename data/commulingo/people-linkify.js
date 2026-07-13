@@ -34,10 +34,32 @@ function buildPersonLinkIndex(people, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
     const excludeId = options.excludeId || '';
+    const list = people || [];
+
+    // Canonical-name words per person, and how many distinct people share each
+    // word. Used to (a) trust only aliases that are part of the person's own
+    // name, and (b) refuse to link a bare word owned by more than one person —
+    // a generic given name (안드레이, 알렉산드르) or a shared surname
+    // (야코블레프) can't disambiguate, so it must never auto-link.
+    const canonicalWordsById = {};
+    const wordOwners = {};
+    list.forEach(person => {
+        if (!person || !person.id) return;
+        const words = new Set();
+        [person.names && person.names.short, person.names && person.names.display, person.displayName]
+            .forEach(value => {
+                if (typeof value !== 'string') return;
+                value.trim().toLowerCase().split(/\s+/).forEach(word => { if (word) words.add(word); });
+            });
+        canonicalWordsById[person.id] = words;
+        words.forEach(word => { (wordOwners[word] || (wordOwners[word] = new Set())).add(person.id); });
+    });
+
     const byAlias = {};
     const tokens = [];
-    (people || []).forEach(person => {
+    list.forEach(person => {
         if (!person || !person.id || person.id === excludeId) return;
+        const canonicalWords = canonicalWordsById[person.id] || new Set();
         const candidates = [];
         if (person.names) {
             candidates.push(person.names.short, person.names.display);
@@ -48,6 +70,14 @@ function buildPersonLinkIndex(people, options = {}) {
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
+            const words = alias.toLowerCase().split(/\s+/).filter(Boolean);
+            // Only link aliases made of this person's own canonical-name words…
+            if (!words.every(word => canonicalWords.has(word))) return;
+            // …and never link a single word shared by two or more people.
+            if (words.length === 1) {
+                const owners = wordOwners[words[0]];
+                if (!owners || owners.size > 1) return;
+            }
             if (byAlias[alias]) return;
             byAlias[alias] = person;
             tokens.push(alias);
