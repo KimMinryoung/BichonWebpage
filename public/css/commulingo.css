@@ -2505,9 +2505,24 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-person-years {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     font-family: 'Courier New', monospace;
     font-size: 0.78rem;
     color: var(--text-muted);
+}
+
+/* Nationality flags: citizenship first, then birthplace origin. Sized to the
+   year text so the card height never grows — the flags only add width. */
+.commu-flag {
+    height: 0.86em;
+    width: auto;
+    border-radius: 1.5px;
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.28);
+    vertical-align: middle;
+    object-fit: contain;
+    flex: 0 0 auto;
 }
 
 .commu-fate {

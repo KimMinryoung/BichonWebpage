@@ -41,7 +41,9 @@ async function fetchRows() {
         db.query(
             `SELECT id, group_id, initial, cyrillic, years_label,
                     name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
-                    fate_kind, fate_label_ko, fate_label_en
+                    fate_kind, fate_label_ko, fate_label_en,
+                    citizenship_code, citizenship_label_ko, citizenship_label_en,
+                    origin_code, origin_label_ko, origin_label_en
              FROM commulingo_people
              ORDER BY sort_order, id`
         ),
@@ -198,6 +200,14 @@ function rowsToPeopleData(rows) {
             fate: {
                 kind: row.fate_kind || '',
                 label: t(row.fate_label_ko, row.fate_label_en),
+            },
+            citizenship: {
+                code: row.citizenship_code || '',
+                label: t(row.citizenship_label_ko, row.citizenship_label_en),
+            },
+            origin: {
+                code: row.origin_code || '',
+                label: t(row.origin_label_ko, row.origin_label_en),
             },
             aliases: aliasesByPerson[row.id] || { ko: [], en: [] },
             scenes: scenesByPerson[row.id] || [],

@@ -31,7 +31,13 @@
                     <span><%= person.cyrillic %></span>
                 </div>
                 <div class="commu-person-sidebox">
-                    <span class="commu-person-years"><%= person.years %></span>
+                    <span class="commu-person-years">
+                        <% if (typeof flagImg === 'function') { %>
+                        <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, en ? 'Citizenship' : '국적') %><% } %>
+                        <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, en ? 'Origin' : '출신') %><% } %>
+                        <% } %>
+                        <%= person.years %>
+                    </span>
                     <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
                 </div>
             </div>

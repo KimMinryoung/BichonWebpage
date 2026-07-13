@@ -1,4 +1,16 @@
+const { hasFlag, flagLabel } = require('./flag-icons');
+
 const SCHEMA_VERSION = 'commulingo.people.v1';
+
+// Flatten a stored {code, label:{ko,en}} nationality into a localized card field,
+// dropping codes we have no vendored flag for and falling back to the flag's
+// default localized name when the row carries no explicit label.
+function normalizeFlag(raw, lang) {
+    const code = raw && typeof raw.code === 'string' ? raw.code : '';
+    if (!hasFlag(code)) return null;
+    const label = (raw.label && localize(raw.label, lang)) || flagLabel(code, lang);
+    return { code, label };
+}
 
 const OFFICE_DISPLAY_ORDER = [
     'party-leadership',
@@ -195,6 +207,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         } : { kind: '', label: '' },
         fateKind: raw.fate ? raw.fate.kind || '' : '',
         fateLabel: raw.fate ? localize(raw.fate.label, lang) : '',
+        citizenship: normalizeFlag(raw.citizenship, lang),
+        origin: normalizeFlag(raw.origin, lang),
         aliases: {
             ko: raw.aliases && Array.isArray(raw.aliases.ko) ? raw.aliases.ko : [],
             en: raw.aliases && Array.isArray(raw.aliases.en) ? raw.aliases.en : [],

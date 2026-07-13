@@ -10,8 +10,15 @@ const { loadCommuLingoPeopleFromDb, loadCommuLingoPersonSections } = require('..
 const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
+const { flagImg } = require('../data/commulingo/flag-icons');
 
 const router = express.Router();
+
+// Expose the flag renderer to every CommuLingo template (and their partials).
+router.use((req, res, next) => {
+    res.locals.flagImg = flagImg;
+    next();
+});
 
 const PEOPLE_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'people.js');
 let peopleCache = null;
