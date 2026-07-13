@@ -30,6 +30,17 @@
     margin-bottom: 8px;
 }
 
+/* People hero title: keep on a single line; JS shrinks font to fit width. */
+.commu-people-title-wrap {
+    width: 100%;
+    min-width: 0;
+}
+
+.commu-people-title {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .commulingo-hero p:last-child {
     color: var(--text-secondary);
     line-height: 1.55;
@@ -1930,8 +1941,20 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin-bottom: 14px;
 }
 
+.commu-people-result-section#commu-people-result-role .commu-people-result-head {
+    border-left-color: var(--link);
+}
+
 .commu-people-result-section#commu-people-result-desc .commu-people-result-head {
     border-left-color: var(--text-muted);
+}
+
+/* Matched-term highlight inside result cards */
+.commu-search-hl {
+    background: color-mix(in srgb, var(--link) 34%, transparent);
+    color: inherit;
+    padding: 0 1px;
+    border-radius: 0;
 }
 
 .commu-people-result-label {

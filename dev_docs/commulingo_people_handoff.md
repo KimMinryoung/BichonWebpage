@@ -8,19 +8,24 @@ This note is for the next person or AI agent continuing work on `/commulingo/peo
 
 Two UX features on the dictionary:
 
-- **Person search** on `/commulingo/people`. Each card carries two haystacks
+- **Person search** on `/commulingo/people`. Each card carries three haystacks
   (built in `views/partials/commulingo-person-card.ejs`): `data-name`
-  (ko/en name, cyrillic, ko/en aliases) and `data-desc` (epithet, moment, bio).
+  (ko/en name, cyrillic, ko/en aliases), `data-role` (role category label +
+  career entries + institution posts), and `data-desc` (epithet, moment, bio).
   An inline script in `views/public/commulingo-people.ejs` live-filters as you
-  type (terms AND-matched across whitespace) and splits hits into two result
-  containers: **name matches on top**, **people merely mentioned in a bio/
-  description below** (a hit is a description match only if it is not already a
-  name match). Matched cards are physically moved into the two result grids and
-  moved back on clear; the browse groups + office index + standalone head hide
-  while searching. Enter jumps to the first result, Esc clears. Purely
-  client-side, no new route. Styles: `.commu-people-search*` /
-  `.commu-people-result*` in `public/css/commulingo.css` (square corners, per
-  the site's angular-container convention — no rounded search box).
+  type (terms AND-matched across whitespace) and buckets each hit
+  most-identity-first into three result containers: **name → role →
+  description** (a card falls to the next bucket only if it did not already
+  match a higher one). Matched cards are physically moved into the result grids
+  and moved back on clear; the browse groups + office index + standalone head
+  hide while searching. Matched substrings are wrapped in
+  `<mark class="commu-search-hl">` (unwrapped on clear). Enter jumps to the
+  first result, Esc clears. Purely client-side, no new route. Styles:
+  `.commu-people-search*` / `.commu-people-result*` / `.commu-search-hl` in
+  `public/css/commulingo.css` (square corners, per the site's angular-container
+  convention — no rounded search box). The hero `<h1>` (`.commu-people-title`)
+  is kept to one line by a small auto-fit script that shrinks its font-size to
+  the container width on load/resize.
 - **Auto-linking of other people** inside the person detail bio and detail
   sections. Server-side in `routes/commulingo.js` (`/people/:personId`) via
   `data/commulingo/people-linkify.js`: `buildPersonLinkIndex` builds an

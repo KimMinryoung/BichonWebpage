@@ -14,8 +14,8 @@
         <a class="commu-events-cta" href="/commulingo/events"><span aria-hidden="true">◉</span> <%= en ? "Explore historical events →" : "역사 사건 둘러보기 →" %></a>
 
         <header class="box commulingo-hero commulingo-hero--graph">
-            <div>
-                <h1><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>
+            <div class="commu-people-title-wrap">
+                <h1 class="commu-people-title"><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>
             </div>
         </header>
 
@@ -35,6 +35,13 @@
                     <span class="commu-people-result-count" id="commu-people-result-name-count"></span>
                 </div>
                 <div class="commu-people-grid" id="commu-people-result-name-grid"></div>
+            </section>
+            <section class="commu-people-result-section" id="commu-people-result-role" hidden>
+                <div class="commu-people-result-head">
+                    <span class="commu-people-result-label"><%= en ? 'Role matches' : '역할 일치' %></span>
+                    <span class="commu-people-result-count" id="commu-people-result-role-count"></span>
+                </div>
+                <div class="commu-people-grid" id="commu-people-result-role-grid"></div>
             </section>
             <section class="commu-people-result-section" id="commu-people-result-desc" hidden>
                 <div class="commu-people-result-head">
@@ -125,6 +132,27 @@
 
     <%- include('../partials/footer') %>
     <script>
+        // Auto-fit the hero title to one line: shrink font-size until it stops
+        // overflowing its container (re-run on resize).
+        (function() {
+            var title = document.querySelector('.commu-people-title');
+            if (!title) return;
+            function fit() {
+                title.style.fontSize = '';
+                var size = parseFloat(window.getComputedStyle(title).fontSize) || 29;
+                var guard = 0;
+                while (title.scrollWidth > title.clientWidth && size > 12 && guard < 120) {
+                    size -= 1;
+                    title.style.fontSize = size + 'px';
+                    guard++;
+                }
+            }
+            window.addEventListener('resize', fit);
+            if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+            fit();
+        })();
+    </script>
+    <script>
         // Highlight the card targeted by the URL hash (arriving from a book's name link).
         (function() {
             function focusHash() {
@@ -160,42 +188,88 @@
         })();
     </script>
     <script>
-        // Live person search. Each card carries `data-name` (identity: name,
-        // aliases, cyrillic) and `data-desc` (prose: epithet, moment, bio).
-        // Matching is AND across whitespace-separated terms. Results split into
-        // two buckets: name matches on top, people merely mentioned in a
-        // description below. Matched cards are physically moved into the result
-        // grids and moved back on clear (browse groups hide while searching).
+        // Live person search. Each card carries three haystacks: data-name
+        // (identity), data-role (category/career/institution), data-desc (prose).
+        // Terms are AND-matched and bucketed most-identity-first into three
+        // result containers: name → role → description. Matched cards are moved
+        // into the result grids (restored on clear) and the matched substrings
+        // are wrapped in <mark> for highlighting.
         (function() {
             var input = document.getElementById('commu-people-search-input');
             var clearBtn = document.getElementById('commu-people-search-clear');
             if (!input) return;
             var en = <%- en ? 'true' : 'false' %>;
             var results = document.getElementById('commu-people-results');
-            var nameSection = document.getElementById('commu-people-result-name');
-            var descSection = document.getElementById('commu-people-result-desc');
-            var nameGrid = document.getElementById('commu-people-result-name-grid');
-            var descGrid = document.getElementById('commu-people-result-desc-grid');
-            var nameCount = document.getElementById('commu-people-result-name-count');
-            var descCount = document.getElementById('commu-people-result-desc-count');
             var emptyMsg = document.getElementById('commu-people-result-empty');
+            var buckets = ['name', 'role', 'desc'].map(function(key) {
+                return {
+                    key: key,
+                    section: document.getElementById('commu-people-result-' + key),
+                    grid: document.getElementById('commu-people-result-' + key + '-grid'),
+                    count: document.getElementById('commu-people-result-' + key + '-count')
+                };
+            });
             var cards = Array.prototype.slice.call(document.querySelectorAll('.commu-person-card[data-name]'));
             var groups = Array.prototype.slice.call(document.querySelectorAll('details.commu-people-group'));
             var chrome = Array.prototype.slice.call(document.querySelectorAll(
                 'details.commu-office-index, .commu-people-standalone-head'));
             // Remember each card's home so search can restore browse order.
             var origin = cards.map(function(card) { return { card: card, parent: card.parentNode }; });
+            var highlighted = [];
 
             function countText(n) {
                 if (en) return n + (n === 1 ? ' person' : ' people');
                 return n + '명';
             }
-
+            function escapeRegExp(value) {
+                return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
             function homeAllCards() {
                 origin.forEach(function(o) { o.parent.appendChild(o.card); });
             }
+            function clearHighlights(card) {
+                var marks = card.querySelectorAll('mark.commu-search-hl');
+                for (var i = 0; i < marks.length; i++) {
+                    var mark = marks[i];
+                    var parent = mark.parentNode;
+                    while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+                    parent.removeChild(mark);
+                    parent.normalize();
+                }
+            }
+            function highlight(card, re) {
+                var walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, {
+                    acceptNode: function(node) {
+                        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                });
+                var nodes = [], n;
+                while ((n = walker.nextNode())) nodes.push(n);
+                nodes.forEach(function(node) {
+                    var text = node.nodeValue;
+                    re.lastIndex = 0;
+                    if (!re.test(text)) return;
+                    re.lastIndex = 0;
+                    var frag = document.createDocumentFragment();
+                    var last = 0, match;
+                    while ((match = re.exec(text))) {
+                        if (match.index > last) frag.appendChild(document.createTextNode(text.slice(last, match.index)));
+                        var mark = document.createElement('mark');
+                        mark.className = 'commu-search-hl';
+                        mark.textContent = match[0];
+                        frag.appendChild(mark);
+                        last = match.index + match[0].length;
+                        if (re.lastIndex === match.index) re.lastIndex++;
+                    }
+                    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+                    node.parentNode.replaceChild(frag, node);
+                });
+            }
 
             function reset() {
+                highlighted.forEach(clearHighlights);
+                highlighted = [];
                 homeAllCards();
                 results.hidden = true;
                 groups.forEach(function(group) { group.hidden = false; group.open = false; });
@@ -206,29 +280,39 @@
             function apply(query) {
                 var terms = query.split(/\s+/).filter(Boolean);
                 if (!terms.length) { reset(); return; }
+                highlighted.forEach(clearHighlights);
+                highlighted = [];
                 homeAllCards();
                 clearBtn.hidden = false;
                 groups.forEach(function(group) { group.hidden = true; });
                 chrome.forEach(function(el) { el.hidden = true; });
 
-                var nameHits = [];
-                var descHits = [];
+                var hits = { name: [], role: [], desc: [] };
                 cards.forEach(function(card) {
                     var nameHay = card.getAttribute('data-name') || '';
-                    var isName = terms.every(function(term) { return nameHay.indexOf(term) !== -1; });
-                    if (isName) { nameHits.push(card); return; }
-                    var combined = nameHay + ' ' + (card.getAttribute('data-desc') || '');
-                    var isDesc = terms.every(function(term) { return combined.indexOf(term) !== -1; });
-                    if (isDesc) descHits.push(card);
+                    var roleHay = nameHay + ' ' + (card.getAttribute('data-role') || '');
+                    var descHay = roleHay + ' ' + (card.getAttribute('data-desc') || '');
+                    function all(hay) { return terms.every(function(t) { return hay.indexOf(t) !== -1; }); }
+                    if (all(nameHay)) hits.name.push(card);
+                    else if (all(roleHay)) hits.role.push(card);
+                    else if (all(descHay)) hits.desc.push(card);
                 });
-                nameHits.forEach(function(card) { nameGrid.appendChild(card); });
-                descHits.forEach(function(card) { descGrid.appendChild(card); });
 
-                nameSection.hidden = nameHits.length === 0;
-                descSection.hidden = descHits.length === 0;
-                nameCount.textContent = countText(nameHits.length);
-                descCount.textContent = countText(descHits.length);
-                emptyMsg.hidden = (nameHits.length + descHits.length) > 0;
+                var re = new RegExp('(' + terms.slice().sort(function(a, b) { return b.length - a.length; })
+                    .map(escapeRegExp).join('|') + ')', 'gi');
+                var total = 0;
+                buckets.forEach(function(bucket) {
+                    var list = hits[bucket.key];
+                    list.forEach(function(card) {
+                        bucket.grid.appendChild(card);
+                        highlight(card, re);
+                        highlighted.push(card);
+                    });
+                    bucket.section.hidden = list.length === 0;
+                    bucket.count.textContent = countText(list.length);
+                    total += list.length;
+                });
+                emptyMsg.hidden = total > 0;
                 results.hidden = false;
             }
 
@@ -244,9 +328,7 @@
                     input.value = '';
                     reset();
                 } else if (event.key === 'Enter') {
-                    // Jump straight to the first name match.
-                    var first = nameGrid.querySelector('.commu-person-card[data-person-href]')
-                        || descGrid.querySelector('.commu-person-card[data-person-href]');
+                    var first = results.querySelector('.commu-person-card[data-person-href]');
                     if (first) window.location.href = first.getAttribute('data-person-href');
                 }
             });

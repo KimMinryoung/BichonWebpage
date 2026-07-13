@@ -7,8 +7,8 @@ var fateIcons = {
 var personHref = '/commulingo/people/' + person.id;
 var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
 var medalTitle = person.role && person.role.label ? person.role.label : (en ? 'Context marker' : '맥락 표식');
-// Name haystack (identity fields) vs description haystack (prose). Search ranks
-// name matches above people merely mentioned in a bio/epithet.
+// Three search haystacks, ranked most-identity-first: name (+aliases) → role
+// (category, career, institution posts) → description prose (epithet/bio).
 var nameSearch = [
     person.names && person.names.ko,
     person.names && person.names.en,
@@ -18,13 +18,19 @@ var nameSearch = [
     (person.aliases && person.aliases.ko) || [],
     (person.aliases && person.aliases.en) || []
 ).filter(Boolean).join(' ').toLowerCase();
+var roleSearch = [
+    person.role && person.role.label
+].concat(
+    (person.career || []).map(function(item) { return item.r; }),
+    (person.institutionRoles || []).map(function(item) { return (item.role || '') + ' ' + (item.officeTitle || ''); })
+).filter(Boolean).join(' ').toLowerCase();
 var descSearch = [
     person.epithet,
     person.moment,
     person.bio
 ].filter(Boolean).join(' ').toLowerCase();
 %>
-<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>" data-name="<%= nameSearch %>" data-desc="<%= descSearch %>">
+<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>" data-name="<%= nameSearch %>" data-role="<%= roleSearch %>" data-desc="<%= descSearch %>">
     <div class="commu-person-top">
         <% if (medalHref) { %>
         <a class="commu-person-medal is-<%= cardGroupId %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
