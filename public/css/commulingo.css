@@ -3042,5 +3042,29 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-people-group.is-target .commu-event-people-group-head { border-left-color: #a74a42; color: #cf6b5f; }
 .commu-event-people-group.is-witness .commu-event-people-group-head { border-left-color: #7a6699; color: #a892cc; }
 
+/* Prev / next navigation between event pages */
+.commu-event-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+    margin: 1.8rem 0 1rem;
+}
+.commu-event-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    padding: .7rem .9rem;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .15s ease;
+}
+.commu-event-nav-link:hover { border-color: var(--accent); }
+.commu-event-nav-link.is-next { text-align: right; }
+.commu-event-nav-dir { font-size: .8rem; font-weight: 700; color: var(--accent); letter-spacing: .03em; }
+.commu-event-nav-period { font-family: 'Courier New', monospace; font-size: .78rem; color: var(--text-muted); }
+@media (max-width: 560px) { .commu-event-nav { grid-template-columns: 1fr; } }
+
 .commu-event-source-text { display: inline-block; margin-left: .45rem; }
 .commu-event-source-text + .commu-event-source-text::before { content: '·'; margin-right: .45rem; opacity: .6; }

@@ -4,6 +4,23 @@ Last updated: 2026-07-11
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
 
+## Card ordering, category tags, event pages — added 2026-07-13
+
+- **Chronological ordering.** `routes/commulingo.js` → `sortPeopleChronologically`
+  (birth year → death year → name; undated last) sorts each era group on
+  `/people` and the person lists on `/roles/:id` and `/offices/:id`. Previously
+  the order was raw data order.
+- **Role-category tag.** `commulingo-person-card.ejs` renders `person.role.label`
+  as a `.commu-person-role-tag` chip (colored by era, links to the role/office
+  hub) so a card's category is visible, not just an icon.
+- **Counts.** Era group headers show `group.people.length`; the event page shows
+  `event.people.length` next to "관련 인물".
+- **Event prev/next.** `routes/commulingo-events.js` passes `prevEvent`/`nextEvent`
+  (neighbors in the sort_order list); `commulingo-event.ejs` renders a
+  `.commu-event-nav`. Related people are still bucketed by involvement kind, and
+  the DB mappings were expanded in migrations 034 (Great Terror) and 035 (all
+  other events).
+
 ## Search + auto-linking — added 2026-07-12
 
 Two UX features on the dictionary:

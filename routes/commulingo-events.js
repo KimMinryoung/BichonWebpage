@@ -85,15 +85,23 @@ router.get('/:eventId', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const eventId = typeof req.params.eventId === 'string' ? req.params.eventId.trim() : '';
-        const raw = (await loadCommuLingoHistoryEvents()).find(event => event.id === eventId);
+        const allEvents = await loadCommuLingoHistoryEvents();
+        const index = allEvents.findIndex(event => event.id === eventId);
+        const raw = index === -1 ? null : allEvents[index];
         if (!raw) return errorPage.notFound(res, {
             message: lang === 'en' ? 'Historical event not found.' : '역사 사건을 찾을 수 없습니다.',
             backHref: '/commulingo/events', backLabel: lang === 'en' ? 'Historical events' : '역사 사건',
         });
         const event = presentEvent(raw, lang);
+        const neighbor = offset => {
+            const item = allEvents[index + offset];
+            return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
+        };
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-event', {
             event,
+            prevEvent: neighbor(-1),
+            nextEvent: neighbor(1),
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,

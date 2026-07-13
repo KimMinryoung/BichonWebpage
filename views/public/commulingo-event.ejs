@@ -27,6 +27,16 @@
             <% }) %>
         </section>
         <% if (event.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% event.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>
+        <% if ((typeof prevEvent !== 'undefined' && prevEvent) || (typeof nextEvent !== 'undefined' && nextEvent)) { %>
+        <nav class="commu-event-nav" aria-label="<%= en ? 'Other events' : '다른 사건' %>">
+            <% if (typeof prevEvent !== 'undefined' && prevEvent) { %>
+            <a class="commu-event-nav-link is-prev" href="/commulingo/events/<%= prevEvent.id %>"><span class="commu-event-nav-dir">← <%= en ? 'Previous' : '이전' %></span><span class="commu-event-nav-period"><%= prevEvent.period %></span><strong><%= prevEvent.title %></strong></a>
+            <% } else { %><span></span><% } %>
+            <% if (typeof nextEvent !== 'undefined' && nextEvent) { %>
+            <a class="commu-event-nav-link is-next" href="/commulingo/events/<%= nextEvent.id %>"><span class="commu-event-nav-dir"><%= en ? 'Next' : '다음' %> →</span><span class="commu-event-nav-period"><%= nextEvent.period %></span><strong><%= nextEvent.title %></strong></a>
+            <% } %>
+        </nav>
+        <% } %>
         <a class="commu-back-link commu-person-detail-back" href="/commulingo/events">← <%= en ? 'Historical events' : '역사 사건' %></a>
     </main>
     <%- include('../partials/footer') %>
