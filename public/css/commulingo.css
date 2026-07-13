@@ -2987,5 +2987,25 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-event-people-grid > a.is-opponent .commu-event-person-relation, .commu-person-event-links li.is-opponent span, .commu-person-event-links li.is-opponent em { color: #a8a8a8; }
 .commu-event-people-grid > a.is-witness, .commu-person-event-links li.is-witness a { border-color: #7a6699; background: color-mix(in srgb, #7a6699 14%, transparent); }
 .commu-event-people-grid > a.is-witness .commu-event-person-relation, .commu-person-event-links li.is-witness span, .commu-person-event-links li.is-witness em { color: #a892cc; }
+/* Related-people groups by involvement kind */
+.commu-event-people-group { margin-top: 1.5rem; }
+.commu-event-people-group:first-of-type { margin-top: .4rem; }
+.commu-event-people-group-head {
+    display: flex; align-items: baseline; gap: .5rem;
+    margin: 0 0 .75rem; padding: .32rem .6rem;
+    border-left: 3px solid var(--border);
+    font-size: 1rem; font-weight: 700; letter-spacing: .01em;
+}
+.commu-event-people-group-count {
+    font-family: 'Courier New', monospace; font-size: .8rem;
+    font-weight: 400; color: var(--text-muted);
+}
+.commu-event-people-group.is-executor .commu-event-people-group-head { border-left-color: #8c7734; color: #d4bb61; }
+.commu-event-people-group.is-leader .commu-event-people-group-head { border-left-color: #b8564f; color: #de7c74; }
+.commu-event-people-group.is-participant .commu-event-people-group-head { border-left-color: #4d6f9c; color: #7ba3d4; }
+.commu-event-people-group.is-opponent .commu-event-people-group-head { border-left-color: #6f6f6f; color: #a8a8a8; }
+.commu-event-people-group.is-target .commu-event-people-group-head { border-left-color: #a74a42; color: #cf6b5f; }
+.commu-event-people-group.is-witness .commu-event-people-group-head { border-left-color: #7a6699; color: #a892cc; }
+
 .commu-event-source-text { display: inline-block; margin-left: .45rem; }
 .commu-event-source-text + .commu-event-source-text::before { content: '·'; margin-right: .45rem; opacity: .6; }

@@ -10,7 +10,45 @@ function localize(value, lang) {
     return value[lang] || value.ko || value.en || '';
 }
 
+// Related people are grouped by manner of involvement instead of one arbitrary
+// list. Order runs perpetrators → leadership → participants → opposition →
+// targets → witnesses; unknown kinds fall through to the end.
+const KIND_ORDER = ['executor', 'leader', 'participant', 'opponent', 'target', 'witness'];
+const KIND_LABELS = {
+    executor: { ko: '주도 · 집행', en: 'Drivers & enforcers' },
+    leader: { ko: '지도부', en: 'Leadership' },
+    participant: { ko: '참여', en: 'Participants' },
+    opponent: { ko: '반대 · 저항', en: 'Opposition & resistance' },
+    target: { ko: '대상 · 피해', en: 'Targets & victims' },
+    witness: { ko: '목격 · 증언', en: 'Witnesses' },
+};
+
+function groupEventPeople(people, lang) {
+    const buckets = {};
+    people.forEach(person => {
+        const kind = person.kind || 'target';
+        (buckets[kind] || (buckets[kind] = [])).push(person);
+    });
+    const groups = [];
+    const seen = new Set();
+    KIND_ORDER.forEach(kind => {
+        if (buckets[kind] && buckets[kind].length) {
+            groups.push({ kind, label: localize(KIND_LABELS[kind], lang), people: buckets[kind] });
+            seen.add(kind);
+        }
+    });
+    Object.keys(buckets).forEach(kind => {
+        if (seen.has(kind)) return;
+        groups.push({ kind, label: KIND_LABELS[kind] ? localize(KIND_LABELS[kind], lang) : kind, people: buckets[kind] });
+    });
+    return groups;
+}
+
 function presentEvent(raw, lang) {
+    const people = (raw.people || []).map(person => ({
+        ...person,
+        name: localize(person.name, lang), relation: localize(person.relation, lang), note: localize(person.note, lang),
+    }));
     return {
         ...raw,
         title: localize(raw.title, lang),
@@ -20,10 +58,8 @@ function presentEvent(raw, lang) {
         timeline: (raw.timeline || []).map(item => ({
             date: item.date || '', title: localize(item.title, lang), body: localize(item.body, lang),
         })),
-        people: (raw.people || []).map(person => ({
-            ...person,
-            name: localize(person.name, lang), relation: localize(person.relation, lang), note: localize(person.note, lang),
-        })),
+        people,
+        peopleGroups: groupEventPeople(people, lang),
     };
 }
 
