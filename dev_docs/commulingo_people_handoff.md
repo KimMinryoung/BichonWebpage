@@ -351,7 +351,7 @@ categories. Icon ids, not raw SVG:
 - non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11)
 - socialist-bloc reform leader: `dove`
 - imperial establishment and White movement: `crown`
-- writer (office-less role, label '작가'/'Writer'): `feather`
+- writer (office-less role, label '작가·예술가'/'Writers and artists'): `feather`
 - left opposition (office-less role, label '좌익 반대파'/'Left Opposition'): `git-branch`
 - Russian republic leader: `building`
 - socialist-bloc leader (office-less role, label '사회주의권 지도자'/'Socialist-bloc leader'): `orbit`

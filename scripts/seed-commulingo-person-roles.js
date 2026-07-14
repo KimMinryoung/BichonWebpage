@@ -33,7 +33,7 @@ async function seedCommuLingoPersonRoles(client) {
 
     const roleCategories = [
         ['old-regime', 1, 'crown', '제정·백색진영', 'Imperial establishment and White movement'],
-        ['writer', 2, 'feather', '작가', 'Writer'],
+        ['writer', 2, 'feather', '작가·예술가', 'Writers and artists'],
         ['theorist', 3, 'book-open', '이론가', 'Theorist'],
         ['intl-revolutionary', 4, 'flame', '비소련 혁명가', 'Non-Soviet revolutionary'],
         ['bloc-reformer', 5, 'dove', '사회주의권 개혁 지도자', 'Socialist-bloc reform leader'],
