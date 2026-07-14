@@ -44,8 +44,27 @@ mini-sentences — put burial, prison names, etc. in bio or sections).
 - `scripts/normalize-commulingo-fate-db.js` was the one-off that normalized all
   535 existing DB rows to this standard (dry-run by default; `--apply` writes).
 
-The people cards are DB-backed (`commulingo_people`); `data/commulingo/people.js`
-is the seed/fallback and is kept in sync with the DB for its subset.
+## Serving from a local snapshot — added 2026-07-14
+
+The people dictionary lives in the DB (`commulingo_people` + related tables), but
+the site no longer queries Supabase per request — that cross-region round-trip
+made `/commulingo/people` slow. Instead:
+
+- `data/commulingo/people-store.js` → `loadCommuLingoPeople` serves a local JSON
+  snapshot (`data/commulingo/people-snapshot.json`, bind-mounted so it persists
+  across restarts and doubles as an on-disk backup). Hot path is in-memory; no
+  DB.
+- The DB is touched only to **rebuild** the snapshot: on a background timer
+  (`COMMULINGO_PEOPLE_REFRESH_MS`, default 10 min), synchronously the first time
+  when no snapshot exists, and immediately when the frontend admin store edits a
+  person (`clearCommuLingoPeopleCache` → `refreshFromDb`).
+- Agent/DB edits therefore surface within the refresh interval (~10 min), which
+  is acceptable. Pre-warm or force a rebuild with
+  `npm run commulingo:people:snapshot` (`scripts/snapshot-commulingo-people.js`,
+  run where the DB is reachable — inside the frontend container).
+- There is no longer a `people.js` seed file; the DB is the single source of
+  truth and the snapshot is its cache. The old seed→DB migrate/validate scripts
+  were removed with it.
 
 ## Card ordering, category tags, event pages — added 2026-07-13
 
