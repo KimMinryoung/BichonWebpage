@@ -350,7 +350,7 @@ categories. Icon ids, not raw SVG:
 - Comintern: `globe`
 - non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11)
 - socialist-bloc reform leader: `dove`
-- old regime and its challengers: `crown`
+- imperial establishment and White movement: `crown`
 - writer (office-less role, label '작가'/'Writer'): `feather`
 - left opposition (office-less role, label '좌익 반대파'/'Left Opposition'): `git-branch`
 - Russian republic leader: `building`
