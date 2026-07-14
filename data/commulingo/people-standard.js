@@ -62,7 +62,7 @@ const OFFICE_ICON = {
     'culture-literature': 'paintbrush',
     'heavy-industry-mic': 'factory',
     'science-nuclear-space': 'atom',
-    agriculture: 'wheat',
+    agriculture: 'corn',
     'state-head': 'landmark',
     'nationalities-federal': 'map',
     'party-leadership': 'flag',

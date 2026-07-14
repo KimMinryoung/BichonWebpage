@@ -339,7 +339,7 @@ categories. Icon ids, not raw SVG:
 - culture/literature: `paintbrush`
 - heavy industry/MIC: `factory`
 - science/nuclear/space: `atom`
-- agriculture: `wheat`
+- agriculture: `corn` (Pictogrammers Material Design Icons, Apache-2.0)
 - state head: `landmark`
 - nationalities/federal: `map`
 - party leadership: `flag`
@@ -352,7 +352,8 @@ categories. Icon ids, not raw SVG:
 - socialist-bloc reform leader: `dove`
 - writer (office-less role, label '작가'/'Writer'): `feather`
 - left opposition (office-less role, label '좌익 반대파'/'Left Opposition'): `git-branch`
-- socialist-bloc leader (office-less role, label '사회주의권 지도자'/'Socialist-bloc leader'): `landmark`
+- Russian republic leader: `building`
+- socialist-bloc leader (office-less role, label '사회주의권 지도자'/'Socialist-bloc leader'): `orbit`
 
 Design decision: do not use swords for defence. The Cheka/security tradition uses the "sword" symbol, so defence currently uses `star` for Red Army association.
 
