@@ -175,7 +175,15 @@ function roleForPerson(person, lang, data, officeTitles, officeIcons) {
     const id = person.id || '';
     if (data && Object.prototype.hasOwnProperty.call(data, 'personRoles')) {
         const mappedRole = (data.personRoles || {})[id];
-        if (!mappedRole && person.group === 'old-regime') return { icon: 'crown', officeId: '', label: '' };
+        if (!mappedRole && person.group === 'old-regime') {
+            const category = (data.roleCategories || {})['old-regime'];
+            return {
+                icon: category && category.icon || 'crown',
+                officeId: '',
+                categoryId: category ? 'old-regime' : '',
+                label: category ? localize(category.label, lang) : '',
+            };
+        }
         if (!mappedRole) return { icon: 'circle-help', officeId: '', label: '' };
 
         const officeId = mappedRole.officeId || '';
