@@ -15,17 +15,17 @@ function normalizeFlag(raw, lang) {
 const OFFICE_DISPLAY_ORDER = [
     'party-leadership',
     'party-secretariat-cadres',
-    'government',
+    'head-of-government',
     'defence',
-    'security',
+    'state-security',
     'ideology-propaganda',
     'culture-literature',
     'state-head',
     'foreign-affairs',
     'nationalities-federal',
-    'planning',
+    'central-planning',
     'economic-management',
-    'heavy-industry-mic',
+    'heavy-military-industry',
     'agriculture',
     'science-nuclear-space',
     'comintern',
@@ -34,17 +34,17 @@ const OFFICE_DISPLAY_ORDER = [
 const ROLE_OFFICE_TITLES = {
     'party-leadership': { ko: '당 최고 지도자', en: 'Party leadership' },
     'party-secretariat-cadres': { ko: '당 서기국 · 조직인사', en: 'Party Secretariat and cadres' },
-    government: { ko: '정부 수반', en: 'Heads of government' },
+    'head-of-government': { ko: '정부 수반', en: 'Heads of government' },
     defence: { ko: '군사 · 국방', en: 'Military and defence' },
-    security: { ko: '국가보안 기관', en: 'State security agencies' },
+    'state-security': { ko: '국가보안 기관', en: 'State security agencies' },
     'ideology-propaganda': { ko: '이념 · 선전', en: 'Ideology and propaganda' },
     'culture-literature': { ko: '문화 · 문학예술 통제', en: 'Culture and literary control' },
     'state-head': { ko: '국가원수', en: 'Formal heads of state' },
     'foreign-affairs': { ko: '외교', en: 'Foreign affairs' },
     'nationalities-federal': { ko: '민족문제 · 연방 관리', en: 'Nationalities and federal management' },
-    planning: { ko: '중앙계획 기관', en: 'Central planning agencies' },
+    'central-planning': { ko: '중앙계획 기관', en: 'Central planning agencies' },
     'economic-management': { ko: '경제 운영', en: 'Economic management' },
-    'heavy-industry-mic': { ko: '중공업 · 군수공업', en: 'Heavy industry and military industry' },
+    'heavy-military-industry': { ko: '중공업 · 군수공업', en: 'Heavy industry and military industry' },
     agriculture: { ko: '농업', en: 'Agriculture' },
     'science-nuclear-space': { ko: '과학 · 원자력 · 우주 개발', en: 'Science, nuclear and space development' },
     comintern: { ko: '코민테른', en: 'Comintern' },
@@ -55,20 +55,20 @@ const ROLE_OFFICE_TITLES = {
 // commulingo_offices.icon and is the last-resort icon fallback; on DB
 // outage the file-fallback path renders default icons (crown/circle-help).
 const OFFICE_ICON = {
-    security: 'eye',
+    'state-security': 'eye',
     defence: 'star',
     'foreign-affairs': 'handshake',
     'ideology-propaganda': 'megaphone',
     'culture-literature': 'paintbrush',
-    'heavy-industry-mic': 'factory',
+    'heavy-military-industry': 'factory',
     'science-nuclear-space': 'atom',
     agriculture: 'corn',
     'state-head': 'landmark',
     'nationalities-federal': 'map',
     'party-leadership': 'flag',
     'party-secretariat-cadres': 'folder',
-    government: 'briefcase',
-    planning: 'chart',
+    'head-of-government': 'briefcase',
+    'central-planning': 'chart',
     'economic-management': 'coins',
     comintern: 'globe',
 };
@@ -176,11 +176,11 @@ function roleForPerson(person, lang, data, officeTitles, officeIcons) {
     if (data && Object.prototype.hasOwnProperty.call(data, 'personRoles')) {
         const mappedRole = (data.personRoles || {})[id];
         if (!mappedRole && person.group === 'old-regime') {
-            const category = (data.roleCategories || {})['old-regime'];
+            const category = (data.roleCategories || {})['imperial-white'];
             return {
                 icon: category && category.icon || 'crown',
                 officeId: '',
-                categoryId: category ? 'old-regime' : '',
+                categoryId: category ? 'imperial-white' : '',
                 label: category ? localize(category.label, lang) : '',
             };
         }

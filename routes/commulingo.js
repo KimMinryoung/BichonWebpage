@@ -12,6 +12,20 @@ const { flagImg } = require('../data/commulingo/flag-icons');
 
 const router = express.Router();
 
+const LEGACY_OFFICE_IDS = {
+    'heavy-industry-mic': 'heavy-military-industry',
+    security: 'state-security',
+    government: 'head-of-government',
+    planning: 'central-planning',
+};
+
+const LEGACY_ROLE_CATEGORY_IDS = {
+    writer: 'writer-artist',
+    'old-regime': 'imperial-white',
+    'intl-revolutionary': 'non-soviet-revolutionary',
+    'bloc-reformer': 'socialist-bloc-reform-leader',
+};
+
 // Expose the flag renderer to every CommuLingo template (and their partials).
 router.use((req, res, next) => {
     res.locals.flagImg = flagImg;
@@ -160,7 +174,7 @@ router.get('/people', async (req, res) => {
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         const roleCategories = Object.values(standardized.roleCategories || {}).map(category => ({
             ...category,
-            label: category.id === 'intl-revolutionary'
+            label: category.id === 'non-soviet-revolutionary'
                 ? (lang === 'en' ? 'Revolutionaries beyond the Soviet Union' : '소련 밖의 혁명가들')
                 : category.label,
             peopleCount: standardized.people.filter(person => person.role && person.role.categoryId === category.id).length,
@@ -192,6 +206,9 @@ router.get('/people', async (req, res) => {
 router.get('/offices/:officeId', async (req, res) => {
     try {
         const officeId = typeof req.params.officeId === 'string' ? req.params.officeId.trim() : '';
+        if (LEGACY_OFFICE_IDS[officeId]) {
+            return res.redirect(301, `/commulingo/offices/${LEGACY_OFFICE_IDS[officeId]}`);
+        }
         const { lang, standardized } = await loadStandardizedPeople(req, res);
         const office = standardized.offices.find(item => item.id === officeId);
         if (!office) {
@@ -226,8 +243,8 @@ router.get('/offices/:officeId', async (req, res) => {
 router.get('/roles/:categoryId', async (req, res) => {
     try {
         const categoryId = typeof req.params.categoryId === 'string' ? req.params.categoryId.trim() : '';
-        if (categoryId === 'writer') {
-            return res.redirect(301, '/commulingo/roles/writer-artist');
+        if (LEGACY_ROLE_CATEGORY_IDS[categoryId]) {
+            return res.redirect(301, `/commulingo/roles/${LEGACY_ROLE_CATEGORY_IDS[categoryId]}`);
         }
         const { lang, standardized } = await loadStandardizedPeople(req, res);
         const category = standardized.roleCategories[categoryId];
