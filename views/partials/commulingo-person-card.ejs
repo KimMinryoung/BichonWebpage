@@ -38,8 +38,15 @@ var descSearch = [
         <span class="commu-person-medal is-<%= cardGroupId %>" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
         <% } %>
         <div class="commu-person-idbox">
-            <h3><a href="<%= personHref %>"><%= person.displayName || person.name %></a></h3>
+            <h3><a href="<%= personHref %>" title="<%= person.displayName || person.name %>"><%= person.displayName || person.name %></a></h3>
             <span class="commu-person-cyr"><%= person.cyrillic %></span>
+            <% if (person.role && person.role.label) { %>
+            <% if (medalHref) { %>
+            <a class="commu-person-role-tag is-<%= cardGroupId %>" href="<%= medalHref %>" onclick="event.stopPropagation()"><%= person.role.label %></a>
+            <% } else { %>
+            <span class="commu-person-role-tag is-<%= cardGroupId %>"><%= person.role.label %></span>
+            <% } %>
+            <% } %>
         </div>
         <div class="commu-person-sidebox">
             <span class="commu-person-years">
@@ -52,13 +59,6 @@ var descSearch = [
             <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
         </div>
     </div>
-    <% if (person.role && person.role.label) { %>
-    <% if (medalHref) { %>
-    <a class="commu-person-role-tag is-<%= cardGroupId %>" href="<%= medalHref %>" onclick="event.stopPropagation()"><%= person.role.label %></a>
-    <% } else { %>
-    <span class="commu-person-role-tag is-<%= cardGroupId %>"><%= person.role.label %></span>
-    <% } %>
-    <% } %>
     <p class="commu-person-epithet"><%= person.epithet %></p>
     <% if (person.moment) { %>
     <p class="commu-person-moment"><%= person.moment %></p>
