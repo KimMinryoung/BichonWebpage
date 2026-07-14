@@ -4,7 +4,7 @@ const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
-const { loadCommuLingoPeople: loadCommuLingoPeopleData, loadCommuLingoPersonSections } = require('../data/commulingo/people-store');
+const { loadCommuLingoPeople: loadCommuLingoPeopleData } = require('../data/commulingo/people-store');
 const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
@@ -25,12 +25,34 @@ async function loadCommuLingoPeople(options = {}) {
     return loadCommuLingoPeopleData(options);
 }
 
+// normalizeCommuLingoPeople (535 people) and the full person link index are pure
+// functions of the snapshot data + catalog, which only change on the ~10-min
+// refresh. Memoize them keyed by those object references so we rebuild at most
+// once per refresh instead of on every request. A fresh snapshot (new reference,
+// including ?fresh=1) invalidates the memo automatically.
+let stdMemo = { dataRef: null, catalogRef: null, byLang: {} };
+
+function getStandardized(data, catalog, lang) {
+    if (stdMemo.dataRef !== data || stdMemo.catalogRef !== catalog) {
+        stdMemo = { dataRef: data, catalogRef: catalog, byLang: {} };
+    }
+    let entry = stdMemo.byLang[lang];
+    if (!entry) {
+        const standardized = normalizeCommuLingoPeople(data, { lang, catalog });
+        // Full index over all people (no excludeId); self-links are dropped at
+        // linkify time via excludeId so this can be shared across every page.
+        const linkIndex = buildPersonLinkIndex(standardized.people, { lang });
+        entry = stdMemo.byLang[lang] = { standardized, linkIndex };
+    }
+    return entry;
+}
+
 async function loadStandardizedPeople(req, res, options = {}) {
     const lang = res.locals.lang;
     const catalog = loadCommuLingoCatalog();
     const loaded = await loadCommuLingoPeople(options);
-    const standardized = normalizeCommuLingoPeople(loaded.data, { lang, catalog });
-    return { lang, catalog, loaded, standardized };
+    const { standardized, linkIndex } = getStandardized(loaded.data, catalog, lang);
+    return { lang, catalog, loaded, standardized, linkIndex };
 }
 
 function setPublicDataCache(req, res, version) {
@@ -240,7 +262,7 @@ router.get('/roles/:categoryId', async (req, res) => {
 router.get('/people/:personId', async (req, res) => {
     try {
         const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
-        const { lang, loaded, standardized } = await loadStandardizedPeople(req, res);
+        const { lang, loaded, standardized, linkIndex } = await loadStandardizedPeople(req, res);
         const person = standardized.peopleById[personId];
         if (!person) {
             return errorPage.notFound(res, {
@@ -249,17 +271,15 @@ router.get('/people/:personId', async (req, res) => {
                 backLabel: lang === 'en' ? 'People' : '인물 사전',
             });
         }
-        const rawSections = loaded.source === 'db' ? await loadCommuLingoPersonSections(personId) : [];
+        // Sections come from the snapshot (loaded.data); history events from their
+        // own cached store. excludeId keeps the person's own name from self-linking.
+        const rawSections = (loaded.data.sections || {})[personId] || [];
         const sections = localizedPersonSections(rawSections, lang);
-        // Auto-link mentions of other people in the bio and detail sections.
-        const linkIndex = buildPersonLinkIndex(standardized.people, { lang, excludeId: person.id });
-        const bioHtml = linkifyPlain(person.bio, linkIndex);
-        sections.forEach(section => { section.bodyHtml = linkifyHtml(section.bodyHtml, linkIndex); });
-        const historyEvents = loaded.source === 'db'
-            ? (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
-                ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
-            }))
-            : [];
+        const bioHtml = linkifyPlain(person.bio, linkIndex, person.id);
+        sections.forEach(section => { section.bodyHtml = linkifyHtml(section.bodyHtml, linkIndex, person.id); });
+        const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
+            ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
+        }));
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-person', {
             person,
@@ -317,9 +337,7 @@ router.get('/api/people/:personId', async (req, res) => {
         const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
         const person = standardized.peopleById[personId];
         if (!person) return res.status(404).json({ error: 'person not found' });
-        const sections = loaded.source === 'db'
-            ? localizedPersonSections(await loadCommuLingoPersonSections(personId), standardized.lang)
-            : [];
+        const sections = localizedPersonSections((loaded.data.sections || {})[personId] || [], standardized.lang);
         setShortPeopleApiCache(res);
         res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, person, sections });
     } catch (err) {

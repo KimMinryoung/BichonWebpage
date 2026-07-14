@@ -93,7 +93,11 @@ function buildPersonLinkIndex(people, options = {}) {
     return { pattern, byAlias, en };
 }
 
-function makeReplacer(index) {
+// excludeId lets a single shared index be reused across every person's page: the
+// index is built once for all people (see buildPersonLinkIndex without
+// excludeId, memoized per language), and self-links are dropped here at replace
+// time instead of by rebuilding a per-person index each request.
+function makeReplacer(index, excludeId) {
     return function replacer(match, _token, offset, source) {
         if (!index.en) {
             const prev = offset > 0 ? source.charAt(offset - 1) : '';
@@ -101,6 +105,7 @@ function makeReplacer(index) {
         }
         const person = index.byAlias[match];
         if (!person) return match;
+        if (excludeId && person.id === excludeId) return match;
         const label = person.displayName || person.name || match;
         const title = escapeHtml(person.epithet ? label + ': ' + person.epithet : label);
         return '<a class="commu-person-link" href="/commulingo/people/'
@@ -109,17 +114,17 @@ function makeReplacer(index) {
 }
 
 // Escapes raw text, then links person names. Use for plain prose (e.g. bio).
-function linkifyPlain(rawText, index) {
+function linkifyPlain(rawText, index, excludeId) {
     const escaped = escapeHtml(rawText || '');
     if (!index) return escaped;
-    return escaped.replace(index.pattern, makeReplacer(index));
+    return escaped.replace(index.pattern, makeReplacer(index, excludeId));
 }
 
 // Links person names inside already-rendered HTML, skipping tag internals and
 // text already wrapped in an anchor (so no nested links are produced).
-function linkifyHtml(html, index) {
+function linkifyHtml(html, index, excludeId) {
     if (!index || !html) return html || '';
-    const replacer = makeReplacer(index);
+    const replacer = makeReplacer(index, excludeId);
     let anchorDepth = 0;
     return String(html).replace(/(<[^>]+>)|([^<]+)/g, function (_m, tag, textChunk) {
         if (tag) {

@@ -41,7 +41,7 @@ async function fetchRows() {
         officeRows,
         personRoles,
         roleCategories,
-        sectionCounts,
+        sections,
     ] = await Promise.all([
         db.query(
             `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
@@ -98,9 +98,9 @@ async function fetchRows() {
              ORDER BY sort_order, id`
         ),
         db.query(
-            `SELECT person_id, COUNT(*)::int AS section_count
+            `SELECT person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources
              FROM commulingo_person_sections
-             GROUP BY person_id`
+             ORDER BY person_id, sort_order, id`
         ),
     ]);
 
@@ -115,7 +115,7 @@ async function fetchRows() {
         officeRows: officeRows.rows,
         personRoles: personRoles.rows,
         roleCategories: roleCategories.rows,
-        sectionCounts: sectionCounts.rows,
+        sections: sections.rows,
     };
 }
 
@@ -177,9 +177,20 @@ function rowsToPeopleData(rows) {
         };
     });
 
+    // Full detail-page sections, snapshotted so /commulingo/people/<id> renders
+    // them locally instead of a per-request DB query. sectionCounts (used for the
+    // card's hasDetail flag) is derived from the same rows.
+    const sectionsByPerson = {};
     const sectionCounts = {};
-    rows.sectionCounts.forEach(row => {
-        sectionCounts[row.person_id] = row.section_count || 0;
+    rows.sections.forEach(row => {
+        addListItem(sectionsByPerson, row.person_id, {
+            slug: row.slug || '',
+            sortOrder: row.sort_order || 0,
+            heading: t(row.heading_ko, row.heading_en),
+            body: t(row.body_ko, row.body_en),
+            sources: Array.isArray(row.sources) ? row.sources : [],
+        });
+        sectionCounts[row.person_id] = (sectionCounts[row.person_id] || 0) + 1;
     });
 
     return {
@@ -228,6 +239,7 @@ function rowsToPeopleData(rows) {
         personRoles,
         roleCategories,
         sectionCounts,
+        sections: sectionsByPerson,
     };
 }
 
