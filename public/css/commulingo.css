@@ -2400,12 +2400,12 @@ button.commu-dc-option:hover { border-color: var(--link); }
     transition: color 0.16s ease, opacity 0.16s ease, transform 0.16s ease;
 }
 
-.commu-person-card:has(.commu-person-top:hover),
+.commu-person-card:has(.commu-person-top:hover):not(:has(.commu-person-medal:hover)),
 .commu-person-card:has(.commu-person-idbox a:focus-visible) {
     border-color: color-mix(in srgb, var(--link) 72%, var(--border));
 }
 
-.commu-person-card:has(.commu-person-top:hover)::after,
+.commu-person-card:has(.commu-person-top:hover):not(:has(.commu-person-medal:hover))::after,
 .commu-person-card:has(.commu-person-idbox a:focus-visible)::after {
     color: var(--link);
     opacity: 1;
@@ -2424,6 +2424,12 @@ button.commu-dc-option:hover { border-color: var(--link); }
     gap: 12px;
     margin: -16px -16px -10px;
     padding: 16px 16px 10px;
+    transition: background-color 0.16s ease;
+}
+
+.commu-person-top:hover:not(:has(.commu-person-medal:hover)),
+.commu-person-top:has(.commu-person-idbox a:focus-visible) {
+    background: color-mix(in srgb, var(--link) 7%, transparent);
 }
 
 .commu-person-medal {
@@ -2492,10 +2498,13 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-person-idbox h3 a {
     color: inherit;
     text-decoration: none;
+    transition: color 0.16s ease;
 }
 
-.commu-person-idbox h3 a:hover,
-.commu-person-idbox h3 a:focus-visible {
+.commu-person-top:hover:not(:has(.commu-person-medal:hover)) .commu-person-idbox h3 a,
+.commu-person-top:hover:not(:has(.commu-person-medal:hover)) .commu-person-cyr,
+.commu-person-top:has(.commu-person-idbox a:focus-visible) .commu-person-idbox h3 a,
+.commu-person-top:has(.commu-person-idbox a:focus-visible) .commu-person-cyr {
     color: var(--link);
 }
 
@@ -2505,6 +2514,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 0.82rem;
     color: var(--text-muted);
     font-style: italic;
+    transition: color 0.16s ease;
 }
 
 /* Single meta line under the name, flush to the card's left edge:

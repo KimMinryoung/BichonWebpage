@@ -170,7 +170,7 @@ router.use('/events', require('./commulingo-events'));
 
 router.get('/people', async (req, res) => {
     try {
-        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         const roleCategories = Object.values(standardized.roleCategories || {}).map(category => ({
             ...category,
@@ -190,6 +190,8 @@ router.get('/people', async (req, res) => {
             peopleCount: standardized.people.length,
             roleIconSvg,
             roleHubHref,
+            personLinkIndex: linkIndex,
+            linkifyPersonText: linkifyPlain,
             pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
             pageDescription: lang === 'en'
                 ? 'The people who stood at the forks of the two decision-simulation history books.'
@@ -209,7 +211,7 @@ router.get('/offices/:officeId', async (req, res) => {
         if (LEGACY_OFFICE_IDS[officeId]) {
             return res.redirect(301, `/commulingo/offices/${LEGACY_OFFICE_IDS[officeId]}`);
         }
-        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
         const office = standardized.offices.find(item => item.id === officeId);
         if (!office) {
             return errorPage.notFound(res, {
@@ -225,6 +227,8 @@ router.get('/offices/:officeId', async (req, res) => {
             people,
             roleIconSvg,
             roleHubHref,
+            personLinkIndex: linkIndex,
+            linkifyPersonText: linkifyPlain,
             pageTitle: lang === 'en' ? `${office.title} — People` : `${office.title} — 인물 사전`,
             pageDescription: office.blurb,
             pagePath: `/commulingo/offices/${office.id}`,
@@ -246,7 +250,7 @@ router.get('/roles/:categoryId', async (req, res) => {
         if (LEGACY_ROLE_CATEGORY_IDS[categoryId]) {
             return res.redirect(301, `/commulingo/roles/${LEGACY_ROLE_CATEGORY_IDS[categoryId]}`);
         }
-        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
         const category = standardized.roleCategories[categoryId];
         if (!category) {
             return errorPage.notFound(res, {
@@ -262,6 +266,8 @@ router.get('/roles/:categoryId', async (req, res) => {
             people,
             roleIconSvg,
             roleHubHref,
+            personLinkIndex: linkIndex,
+            linkifyPersonText: linkifyPlain,
             pageTitle: lang === 'en' ? `${category.label} — People` : `${category.label} — 인물 사전`,
             pageDescription: lang === 'en'
                 ? `People in the ${category.label} role category.`
