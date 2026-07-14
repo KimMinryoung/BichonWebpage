@@ -1,8 +1,51 @@
 # CommuLingo People Dictionary Handoff
 
-Last updated: 2026-07-11
+Last updated: 2026-07-14
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
+
+## Fate label standard — added 2026-07-14
+
+The fate chip (`.commu-fate`) has two parts: **`kind`** drives colour/icon
+(executed·assassinated·murdered·killed·suicide = red ✕, deposed = orange ↓,
+exile = purple →, natural = grey ○) and **`label`** is the localized text. The
+`kind` is a category; the `label` is normalized as follows.
+
+**Rule: the label is the cause of death ONLY, with no death year** — the year
+already renders from `years` / `deathYear`, so repeating it is noise.
+
+| Situation | Standard |
+| --- | --- |
+| Execution | Unified to `처형` / `Executed` (no shot/hanged split) |
+| Natural death, vague (`사망`, `노환 사망`, `재임 중 사망`, `급사`) | `자연사` / `Natural causes` |
+| Natural death, specific illness | Keep the illness word, drop a redundant `사망` suffix: `심장마비`/`Heart attack`, `폐암`/`Lung cancer`, `결핵`/`Tuberculosis`, `병사`/`Illness` |
+| Prison / camp / custody death | `옥사` / `Died in prison` (explicit murder → `옥중 살해` / `Killed in prison`) |
+| Murder / assassination | `살해` / `Murdered`, `암살` / `Assassinated` |
+| War / accident | `전사` / `Killed in action`, `추락사` / `Killed in crash`, `교통사고` / `Car crash` |
+| Suicide | `자살` / `Suicide` |
+| Place of death (symbolic) | Append with ` · `: `암살 · 멕시코` / `Assassinated · Mexico` |
+| Political fate (deposed / exile) | Keep the EVENT year (differs from the death year): `실각 1964`, `퇴임 1985`, `체포 1991`. Canonical EN: 실각=Removed, 해임=Dismissed, 퇴임=Left office, 전보=Transferred, 은퇴=Retired, 체포=Arrested, 추방=Deported, 유형=Internal exile, 당 해체=Party dissolved |
+| Political + cause | `실각 1964 · 자연사` / `Removed 1964 · natural causes` |
+| Still living | `생존` / `Living` |
+
+Char limits: **22 KO / 50 EN** (fits compound political+cause labels; rejects
+mini-sentences — put burial, prison names, etc. in bio or sections).
+
+**Where it is enforced (keep all three in sync):**
+
+- `data/commulingo/people-standard.js` → `normalizeFateLabel(label, deathYear)`
+  strips the death year (handles `년`, parens, full dates, legacy `d.`) while
+  preserving political-event years. The frontend admin store
+  (`people-admin-store.js`) runs create/update fate labels through it.
+- leninbot `runtime_tools/commulingo_people.py` → `_normalize_fate_label` is the
+  Python port (same logic); `commulingo_edit` applies it on save and validates
+  the 22/50 limits. Its tool description carries the vocabulary guide for the
+  agent.
+- `scripts/normalize-commulingo-fate-db.js` was the one-off that normalized all
+  535 existing DB rows to this standard (dry-run by default; `--apply` writes).
+
+The people cards are DB-backed (`commulingo_people`); `data/commulingo/people.js`
+is the seed/fallback and is kept in sync with the DB for its subset.
 
 ## Card ordering, category tags, event pages — added 2026-07-13
 
