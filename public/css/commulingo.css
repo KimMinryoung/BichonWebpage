@@ -2499,6 +2499,15 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-style: italic;
 }
 
+/* Single meta line under the name, flush to the card's left edge:
+   office label · nationality · years · fate */
+.commu-person-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+}
+
 .commu-person-sidebox {
     flex: 0 0 auto;
     display: flex;
@@ -2578,10 +2587,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 /* Role-category tag on a person card (surfaces the person's category) */
 .commu-person-role-tag {
-    align-self: flex-start;
     display: inline-block;
     max-width: 100%;
-    margin: 5px 0 0;
+    margin: 0;
     padding: 2px 8px;
     font-size: 0.74rem;
     font-weight: 600;
