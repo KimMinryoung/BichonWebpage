@@ -182,7 +182,7 @@ Current DB-shaped data count:
 - career entries: `574`
 - offices: `16`
 - office timeline rows: `141`
-- role categories: seeded in DB (`old-regime`, `writer`, `theorist`, `intl-revolutionary`, `bloc-reformer`, `russian-republic-leader`, `left-opposition`, `socialist-bloc-leader`)
+- role categories: seeded in DB (`old-regime`, `writer-artist`, `theorist`, `intl-revolutionary`, `bloc-reformer`, `russian-republic-leader`, `left-opposition`, `socialist-bloc-leader`)
 - person detail sections: DB-only content in `commulingo_person_sections`
 - historical events: DB-backed `commulingo_history_events` with one relation row per linked person in `commulingo_history_event_people`; each relationship has a stable `relation_kind` for event-specific color coding. Supported kinds and colors (`public/css/commulingo.css`): `leader` (crimson), `participant` (blue), `executor` (ochre), `target` (red), `opponent` (gray), `witness` (violet). As of 2026-07-12 there are ten events in chronological `sort_order`: `revolution-1905` (10), `february-revolution` (20), `october-revolution` (30), `civil-war` (40), `ussr-formation` (45), `new-economic-policy` (50), `five-year-plans` (60), `great-terror` (70), `great-patriotic-war` (80), `soviet-space-program` (90); content migrations live in `scripts/migrations/020`–`028`. Event `sources` entries may be plain book citations as well as URLs; the event view renders non-URL sources as text.
 - bulk person sections: migrations `029`–`033` (2026-07-12) added two narrative sections for each of the 50 people that previously had none, so every person now has detail sections. The 5-minute `leninbot-commulingo-maintainer` systemd timer (DeepSeek curator in the leninbot repo) keeps enriching sparse cards and registering new people in parallel; when hand-writing sections, check `commulingo_person_sections` for maintainer-created slugs first to avoid duplicating a topic (see `vasily-grossman`/`manuscript-arrest`)
@@ -315,7 +315,7 @@ renders default icons). Offices carry their icon in `commulingo_offices.icon`,
 seeded from the `OFFICE_ICON` map in `data/commulingo/people-standard.js`.
 
 Office-less roles now use `commulingo_role_categories`; clients and agents
-should send `payload.role.category` for writer / non-Soviet revolutionary /
+should send `payload.role.category` for writer-artist / non-Soviet revolutionary /
 bloc reformer / Russian republic leader roles, or `payload.role.officeId` for
 institution-derived roles. Icons and localized labels are a frontend/runtime
 resolution concern, not an API-client concern. Runtime role resolution order:
@@ -351,7 +351,7 @@ categories. Icon ids, not raw SVG:
 - non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11)
 - socialist-bloc reform leader: `dove`
 - imperial establishment and White movement: `crown`
-- writer (office-less role, label '작가·예술가'/'Writers and artists'): `feather`
+- writer-artist (office-less role, label '작가·예술가'/'Writers and artists'): `feather`
 - left opposition (office-less role, label '좌익 반대파'/'Left Opposition'): `git-branch`
 - Russian republic leader: `building`
 - socialist-bloc leader (office-less role, label '사회주의권 지도자'/'Socialist-bloc leader'): `orbit`

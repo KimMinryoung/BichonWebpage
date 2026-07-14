@@ -226,6 +226,9 @@ router.get('/offices/:officeId', async (req, res) => {
 router.get('/roles/:categoryId', async (req, res) => {
     try {
         const categoryId = typeof req.params.categoryId === 'string' ? req.params.categoryId.trim() : '';
+        if (categoryId === 'writer') {
+            return res.redirect(301, '/commulingo/roles/writer-artist');
+        }
         const { lang, standardized } = await loadStandardizedPeople(req, res);
         const category = standardized.roleCategories[categoryId];
         if (!category) {
