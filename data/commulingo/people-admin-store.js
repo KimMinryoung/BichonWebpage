@@ -1,5 +1,5 @@
 const db = require('../../config/database');
-const { OFFICE_ICON, parsePeriod } = require('./people-standard');
+const { OFFICE_ICON, parsePeriod, normalizeFateLabel } = require('./people-standard');
 const { clearCommuLingoPeopleCache } = require('./people-store');
 
 function t(ko, en) {
@@ -424,8 +424,8 @@ async function createPersonAdmin(payload, options = {}) {
                 localized(payload.bio, 'ko'),
                 localized(payload.bio, 'en'),
                 payload.fate ? payload.fate.kind || '' : '',
-                payload.fate ? localized(payload.fate.label, 'ko') : '',
-                payload.fate ? localized(payload.fate.label, 'en') : '',
+                payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'ko'), years.deathYear) : '',
+                payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), years.deathYear) : '',
             ]
         );
         await replacePatronymic(client, id, payload);
@@ -480,9 +480,14 @@ async function updatePersonAdmin(personId, payload, options = {}) {
             set('bio_en', localized(payload.bio, 'en'));
         }
         if (payload.fate !== undefined) {
+            // Death year comes from an incoming years payload if present, else the
+            // stored record — so the fate label is stripped against the right year.
+            const deathYear = payload.years !== undefined
+                ? parseLifeYears(payload.years || '').deathYear
+                : before.deathYear;
             set('fate_kind', payload.fate ? payload.fate.kind || '' : '');
-            set('fate_label_ko', payload.fate ? localized(payload.fate.label, 'ko') : '');
-            set('fate_label_en', payload.fate ? localized(payload.fate.label, 'en') : '');
+            set('fate_label_ko', payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'ko'), deathYear) : '');
+            set('fate_label_en', payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), deathYear) : '');
         }
         if (sets.length) {
             set('updated_at', new Date());

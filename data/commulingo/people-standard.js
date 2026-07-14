@@ -96,6 +96,38 @@ function parseLifeYears(label) {
     };
 }
 
+// Fate labels carry the cause of death only — the death year already lives in
+// `years` / deathYear, so it must not be repeated here. Political-event years
+// (실각 1964) differ from the death year and are preserved; only the death-year
+// token is stripped, then dangling separators / legacy "d." tails are tidied.
+// See data/commulingo/people.js for the standard this enforces.
+function normalizeFateLabel(label, deathYear) {
+    const text = typeof label === 'string' ? label.trim() : '';
+    if (!text || !deathYear) return text;
+    const y = String(deathYear);
+    let out = text;
+    // Parenthesized death year: "(1980)".
+    out = out.replace(new RegExp('\\(\\s*' + y + '\\s*\\)', 'g'), '');
+    // Korean date headed by the death year: "1956년 4월 20일", "1957년".
+    out = out.replace(new RegExp(y + '\\s*년(?:\\s*\\d{1,2}\\s*월)?(?:\\s*\\d{1,2}\\s*일)?', 'g'), '');
+    // English dates around the death year: "20 April 1956", "April 20, 1956".
+    out = out.replace(new RegExp('\\d{1,2}\\s+[A-Z][a-z]+\\s+' + y, 'g'), '');
+    out = out.replace(new RegExp('[A-Z][a-z]+\\s+\\d{1,2},?\\s+' + y, 'g'), '');
+    // Bare death year token, and the legacy EN "d." that prefixed it.
+    out = out.replace(new RegExp('\\b' + y + '\\b', 'g'), '');
+    out = out.replace(/\bd\.\s*/g, '');
+    // Artifacts left behind: empty parens, an orphaned Korean "년".
+    out = out.replace(/\(\s*\)/g, '');
+    out = out.replace(/(^|[\s·,])년(?=[\s·,]|$)/g, '$1');
+    // Normalize separators and collapse runs left by the removals.
+    out = out.replace(/\s*·\s*/g, ' · ');
+    out = out.replace(/\s*,\s*/g, ', ');
+    out = out.replace(/([·,])(?:\s*[·,])+/g, '$1');
+    out = out.replace(/\s{2,}/g, ' ');
+    out = out.replace(/^[\s·,]+|[\s·,]+$/g, '').trim();
+    return out;
+}
+
 function parseDateToken(token, fallbackYear) {
     if (!token) return null;
     const cleaned = token.trim();
@@ -362,6 +394,7 @@ module.exports = {
     composePersonName,
     parseLifeYears,
     parsePeriod,
+    normalizeFateLabel,
     normalizeCommuLingoPeople,
     validateCommuLingoPeople,
 };

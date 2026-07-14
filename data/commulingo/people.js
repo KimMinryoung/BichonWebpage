@@ -380,7 +380,7 @@ module.exports = {
                 '1905년 군중에게 발포한 뒤에도, 1915년 총사령관을 자임해 패전의 책임을 스스로 뒤집어쓴 뒤에도, 그는 물려받은 전제를 한 치도 내줄 수 없는 신탁으로 믿었다. 1917년 2월 쏠 군대가 사라지자 300년 왕조는 일주일 만에 끝났고, 이듬해 7월 예카테린부르크의 지하실에서 가족과 함께 총살되었다.',
                 'After the shootings of 1905, and even after taking personal command in 1915 and with it the blame for defeat, he held autocracy to be a trust from God that could not be yielded by an inch. In February 1917, when no army would fire for him, three hundred years of Romanov rule ended in a week; in July 1918 he was shot with his family in a cellar in Yekaterinburg.'
             ),
-            fate: fate('executed', '처형 1918', 'Shot, 1918'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['니콜라이 2세'], en: ['Nicholas II'] },
             scenes: [
                 ['history-russian-revolution', 'bloody-sunday'],
@@ -400,7 +400,7 @@ module.exports = {
                 '1905년 1월 9일, 성상과 차르의 초상을 든 15만의 청원 행진을 겨울궁전으로 이끌었다. 학살에서 살아남아 「우리에게 더 이상 차르는 없다」는 격문을 쓰고 망명했으나, 경찰과의 오랜 이중 관계가 드러나 이듬해 사회혁명당 전투단에게 빈 별장에서 처형당했다.',
                 'On January 9, 1905, he led 150,000 petitioners — icons and portraits of the Tsar in hand — to the Winter Palace. He survived the massacre to write “We no longer have a Tsar,” fled abroad, and when his long double game with the police surfaced, was hanged in an empty dacha by SR combatants the next year.'
             ),
-            fate: fate('murdered', '살해 1906', 'Killed, 1906'),
+            fate: fate('murdered', '살해', 'Murdered'),
             aliases: { ko: ['가폰'], en: ['Gapon'] },
             scenes: [['history-russian-revolution', 'bloody-sunday']],
         },
@@ -416,7 +416,7 @@ module.exports = {
                 '시베리아 횡단철도와 금본위제를 만든 제국 근대화의 설계자. 1905년 일본과의 강화를 성사시키고, 궁지에 몰린 차르에게서 10월 선언을 받아 낸 것도 그였다. 차르는 위기를 넘기게 해 준 그 공로를 평생 용서하지 않았고, 그는 한직에서 회고록을 쓰다 죽었다.',
                 'Architect of the empire’s modernization — the Trans-Siberian railway, the gold standard. In 1905 he negotiated peace with Japan and wrung the October Manifesto out of a cornered Tsar, who never forgave him for saving the throne. He died in the political wilderness, writing his memoirs.'
             ),
-            fate: fate('natural', '자연사 1915', 'Died 1915'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['비테'], en: ['Witte'] },
             scenes: [['history-russian-revolution', 'october-manifesto']],
         },
@@ -432,7 +432,7 @@ module.exports = {
                 '1905년 혁명을 야전 군법회의로 짓눌렀고 — 교수형 밧줄에 「스톨리핀의 넥타이」라는 이름이 붙었다 — 동시에 공동체 농지를 해체해 부농을 키우는 농업개혁으로 체제의 새 지지 기반을 만들려 했다. 「국가에 20년의 평온을 달라」고 했지만, 1911년 키예프 오페라 극장에서 암살당했다. 그 20년은 주어지지 않았다.',
                 'He crushed the 1905 revolution with field courts-martial — the noose was nicknamed “Stolypin’s necktie” — while breaking up the commune to breed prosperous farmers as a new base for the regime. “Give the state twenty years of quiet,” he asked. He was shot at the Kiev opera in 1911, and the twenty years were never given.'
             ),
-            fate: fate('assassinated', '암살 1911', 'Assassinated, 1911'),
+            fate: fate('assassinated', '암살', 'Assassinated'),
             aliases: { ko: ['스톨리핀'], en: ['Stolypin'] },
             scenes: [['history-russian-revolution', 'october-manifesto']],
         },
@@ -448,7 +448,7 @@ module.exports = {
                 '1917년 임시정부의 얼굴이자 마지막 총리. 8월에는 코르닐로프를 막기 위해 감옥의 볼셰비키까지 무장시켰고, 10월에는 그를 지키러 올 군대가 어디에도 없었다. 여장 탈출설은 소비에트의 날조다 — 그는 반세기를 망명지에서 「무엇이 잘못이었는가」를 강연하며 살다 뉴욕에서 죽었다.',
                 'The face of the Provisional Government and its last premier. In August 1917 he armed even the jailed Bolsheviks to stop Kornilov; in October, no army anywhere would come to save him. The story of his escaping in a dress is a Soviet fabrication — he spent half a century in exile lecturing on what had gone wrong, and died in New York.'
             ),
-            fate: fate('exile', '망명 · 1970 뉴욕', 'Exile · d. 1970, New York'),
+            fate: fate('exile', '망명 · 뉴욕', 'Émigré · New York'),
             aliases: { ko: ['케렌스키'], en: ['Kerensky'] },
             scenes: [
                 ['history-russian-revolution', 'kornilov'],
@@ -467,7 +467,7 @@ module.exports = {
                 '카자크 병사의 아들로 태어나 총사령관까지 오른 입지전의 군인. 1917년 8월 소비에트를 부수러 수도로 군단을 보냈으나, 철도 노동자와 선동가들 앞에서 군대는 도착하기도 전에 녹았다. 내전 초기 백군 의용군을 이끌다 1918년 예카테리노다르 공격 중 포탄에 죽었다.',
                 'A Cossack soldier’s son risen to commander-in-chief. In August 1917 he sent a cavalry corps against the Soviet — and railwaymen and agitators dissolved it before it arrived. Leading the White Volunteer Army in the early civil war, he was killed by a shell before Yekaterinodar in 1918.'
             ),
-            fate: fate('killed', '전사 1918', 'Killed in action, 1918'),
+            fate: fate('killed', '전사', 'Killed in action'),
             aliases: { ko: ['코르닐로프'], en: ['Kornilov'] },
             scenes: [['history-russian-revolution', 'kornilov']],
         },
@@ -485,7 +485,7 @@ module.exports = {
                 '1917년 4월에는 모두가 미쳤다던 테제로 당을 뒤집었고, 10월에는 봉기를 밀어붙였으며, 1918년 브레스트에서는 회의실에서 가장 신중한 후퇴파였고, 1921년에는 네프로 다시 후퇴했다. 확신과 유연함의 그 결합은 복제되지 못했다. 1922년부터 뇌졸중이 그를 삼켰고, 마지막 구술은 스탈린을 서기장에서 옮기라는 경고였다 — 경고는 봉인되었다.',
                 'In April 1917 he upended his party with theses everyone called mad; in October he forced the insurrection; at Brest in 1918 he was the most cautious retreater in the room; in 1921 he retreated again, into NEP. That fusion of certainty and flexibility was never replicated. From 1922 strokes consumed him, and his last dictation warned the party to move Stalin from the General Secretaryship. The warning was sealed away.'
             ),
-            fate: fate('natural', '병사(病死) 1924', 'Died of illness, 1924'),
+            fate: fate('natural', '병사', 'Illness'),
             aliases: { ko: ['레닌'], en: ['Lenin'] },
             scenes: [
                 ['history-russian-revolution', 'duma-boycott'],
@@ -507,7 +507,7 @@ module.exports = {
                 '1905년 26세에 페테르부르크 소비에트 의장, 1917년 10월 봉기의 연출가, 내전에서는 장갑열차를 타고 다니며 적군을 벼려 낸 전쟁인민위원. 그러나 당 기구의 조용한 싸움에서는 번번이 늦었다. 1929년 국외로 추방되었고, 1940년 멕시코시티의 서재에서 스탈린이 보낸 자객의 얼음도끼에 죽었다.',
                 'Chairman of the Petersburg Soviet at 26 in 1905, stage-director of the October rising in 1917, then War Commissar forging the Red Army from an armoured train. But in the quiet war of the party apparatus he was always late. Deported in 1929, he was killed in his study in Mexico City in 1940 by an ice axe in the hand of Stalin’s assassin.'
             ),
-            fate: fate('assassinated', '암살 1940 멕시코', 'Assassinated, 1940, Mexico'),
+            fate: fate('assassinated', '암살 · 멕시코', 'Assassinated · Mexico'),
             aliases: { ko: ['트로츠키'], en: ['Trotsky'] },
             scenes: [
                 ['history-russian-revolution', 'october-manifesto'],
@@ -528,7 +528,7 @@ module.exports = {
                 '1917년에는 조연이었고 1924년에는 위험해 보이지 않는 서기장이었다 — 그 「실무」, 곧 인사권이 권력의 본체임을 라이벌들은 너무 늦게 알았다. 집단화와 공업화, 대숙청과 굴라크, 그리고 전쟁의 승리가 모두 한 장부에 적혀 있다. 1953년 뇌일혈로 쓰러졌을 때, 곁의 누구도 감히 먼저 의사를 부르지 못했다.',
                 'A supporting actor in 1917, a harmless-looking General Secretary in 1924 — his rivals understood too late that the “administration,” the power of appointment, was power itself. Collectivization and industrialization, the Terror and the Gulag, and victory in the war are all entered in the same ledger. When a stroke felled him in 1953, no one at his side dared be the first to call a doctor.'
             ),
-            fate: fate('natural', '자연사 1953', 'Died 1953'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['스탈린'], en: ['Stalin'] },
             scenes: [
                 ['history-russian-revolution', 'april-theses'],
@@ -551,7 +551,7 @@ module.exports = {
                 '레닌의 오랜 망명 동지이자 코민테른 의장. 1917년 10월 봉기에 카메네프와 함께 반대표를 던졌고, 1924년에는 트로츠키를 막으려 「스탈린 동지는 우려를 불식했다」며 유언 공개를 막았다. 그 12년 뒤, 첫 모스크바 전시재판에서 「테러 음모」를 자백하고 총살되었다.',
                 'Lenin’s long companion of exile and chairman of the Comintern. With Kamenev he voted against the October rising in 1917; in 1924, to block Trotsky, he vouched that “Comrade Stalin has dispelled the fears” and helped seal Lenin’s testament. Twelve years later he confessed to a “terrorist conspiracy” at the first Moscow show trial and was shot.'
             ),
-            fate: fate('executed', '처형 1936', 'Shot, 1936'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['지노비예프'], en: ['Zinoviev'] },
             scenes: [
                 ['history-russian-revolution', 'october'],
@@ -571,7 +571,7 @@ module.exports = {
                 '4월 테제에 반대했고, 10월 봉기에 반대했고, 그때마다 표결에서 지고도 당에 남아 일했다. 그의 경고 — 성급한 봉기는 고립과 내전을 부른다 — 는 틀리지 않았지만, 이긴 쪽의 역사에서 그는 「동요분자」로 기록되었다. 1936년 지노비예프와 나란히 법정에 세워져 총살되었다.',
                 'He argued against the April Theses, argued against the October rising, lost the votes, and stayed to serve. His warning — that a premature rising meant isolation and civil war — was not wrong; but in the victors’ history he was filed under “waverers.” In 1936 he stood beside Zinoviev in the dock, and was shot.'
             ),
-            fate: fate('executed', '처형 1936', 'Shot, 1936'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['카메네프'], en: ['Kamenev'] },
             scenes: [
                 ['history-russian-revolution', 'april-theses'],
@@ -591,7 +591,7 @@ module.exports = {
                 '레닌이 유언에서 「당 전체의 총아」라 부른 명민한 이론가. 브레스트에서는 혁명전쟁을 외친 최좌파였고, 10년 뒤에는 네프와 농민을 지키려 스탈린의 대전환에 맞선 「우편향」이 되었다. 1938년 재판 끝에 총살되었다. 스탈린에게 남긴 마지막 편지 — 「코바, 왜 나의 죽음이 필요한가?」 — 는 스탈린의 책상에서 발견되었다.',
                 'The brilliant theorist Lenin’s testament called “the favourite of the whole party.” At Brest he was the far-left voice for revolutionary war; a decade later, defending NEP and the peasants against Stalin’s Great Break, he became the “Right Deviation.” Shot after the 1938 trial. His last note — “Koba, why do you need me to die?” — was found in Stalin’s desk.'
             ),
-            fate: fate('executed', '처형 1938', 'Shot, 1938'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['부하린'], en: ['Bukharin'] },
             scenes: [
                 ['history-russian-revolution', 'brest-litovsk'],
@@ -611,7 +611,7 @@ module.exports = {
                 '폴란드 태생의 독일 혁명가이자 볼셰비키의 가장 날카로운 동지적 비판자. 감옥에서 러시아 혁명을 옹호하는 바로 그 글에 제헌의회 해산과 언론 통제를 겨눈 경고를 함께 적었다. 1919년 1월 베를린 봉기 진압 때 우익 의용군에게 살해되어 란트베어 운하에 버려졌다.',
                 'Polish-born German revolutionary, and the Bolsheviks’ sharpest comradely critic. From prison she wrote the defence of the Russian Revolution that also carried her warning against the dissolved Assembly and the muzzled press. Murdered by right-wing Freikorps troops during the January 1919 Berlin rising, her body thrown into the Landwehr Canal.'
             ),
-            fate: fate('murdered', '살해 1919 베를린', 'Murdered, 1919, Berlin'),
+            fate: fate('murdered', '살해 · 베를린', 'Murdered · Berlin'),
             aliases: { ko: ['로자 룩셈부르크', '룩셈부르크'], en: ['Rosa Luxemburg', 'Luxemburg'] },
             scenes: [['history-russian-revolution', 'constituent-assembly']],
         },
@@ -627,7 +627,7 @@ module.exports = {
                 '귀족 가문 출신의 망명 사회주의자였고, 브레스트 강화 뒤 소련 외교의 얼굴이 되었다. 라팔로 조약으로 고립된 독일과 손을 잡으며 봉쇄를 뚫었고, 병과 과로 속에서 1930년 리트비노프에게 자리를 넘겼다.',
                 'An aristocratic-born socialist exile, he became the face of Soviet diplomacy after Brest-Litovsk. At Rapallo he broke isolation by reaching an accord with Germany, then handed the post to Litvinov in 1930 amid illness and exhaustion.'
             ),
-            fate: fate('natural', '자연사 1936', 'Died 1936'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['치체린'], en: ['Chicherin'] },
             scenes: [],
         },
@@ -643,7 +643,7 @@ module.exports = {
                 '국제연맹과 집단안보 노선의 상징이었다. 파시즘에 맞선 광범한 동맹을 추구했지만, 독일과의 협상으로 방향을 바꾸려던 스탈린은 1939년 그를 해임하고 몰로토프를 세웠다. 그의 해임 자체가 외교 노선 전환의 신호였다.',
                 'He was the symbol of League of Nations diplomacy and collective security. Seeking a broad front against fascism, he was dismissed in 1939 when Stalin turned toward talks with Germany and installed Molotov. The dismissal itself signaled the change of line.'
             ),
-            fate: fate('natural', '자연사 1951', 'Died 1951'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['리트비노프'], en: ['Litvinov'] },
             scenes: [],
         },
@@ -659,7 +659,7 @@ module.exports = {
                 '대숙청 공개재판에서 피고들을 향해 「미친 개」라는 말을 퍼부은 검사로 악명 높았다. 전후에는 유엔 무대와 외무장관직에서 스탈린 말기의 강경한 외교 언어를 대표했다. 1954년 뉴욕에서 사망했다.',
                 'Notorious as the prosecutor of the Moscow show trials, where he hurled the language of enemies and “mad dogs” at the accused. After the war he carried Stalin’s hard diplomatic language onto the UN stage and into the Foreign Ministry. He died in New York in 1954.'
             ),
-            fate: fate('natural', '자연사 1954 뉴욕', 'Died 1954, New York'),
+            fate: fate('natural', '자연사 뉴욕', 'Natural causes 뉴욕'),
             aliases: { ko: ['비신스키'], en: ['Vyshinsky'] },
             scenes: [],
         },
@@ -677,7 +677,7 @@ module.exports = {
                 '독소불가침조약과 마셜 플랜 거부에 서명한 외무인민위원 — 별명 「돌엉덩이」는 그 지치지 않는 완고함에 레닌이 붙였다고 전한다. 아내가 수용소로 끌려갈 때도 스탈린 곁을 지켰고, 1957년 흐루쇼프 축출에 실패해 몽골 대사로 좌천되었다. 96세로 죽는 날까지 스탈린 시대를 후회하지 않았다.',
                 'The Foreign Commissar whose signature sits on the Nazi–Soviet pact and the Marshall Plan refusal — the nickname “stone-arse,” for his tireless obstinacy, is said to go back to Lenin. He stood by Stalin even as his own wife was taken to the camps; in 1957 he tried to oust Khrushchev, failed, and was exiled as ambassador to Mongolia. He died at 96, regretting nothing.'
             ),
-            fate: fate('natural', '자연사 1986', 'Died 1986'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['몰로토프'], en: ['Molotov'] },
             scenes: [
                 ['history-soviet-union', 'barbarossa-eve'],
@@ -697,7 +697,7 @@ module.exports = {
                 '스탈린의 마지막 비밀경찰 총수이자 원폭 계획의 감독자 — 그리고 스탈린이 죽자 가장 급진적인 개혁안을 쏟아 낸 사람. 동료들이 두려워한 것은 그의 개혁이 아니라 그의 서류함이었다. 1953년 6월 회의장에서 주코프의 손에 체포되어 12월 총살되었다. 소련 최고 권력투쟁의 마지막 처형이다.',
                 'Stalin’s last secret-police chief and overseer of the bomb project — and, the moment Stalin died, the man pouring out the most radical reforms. What his colleagues feared was not his reforms but his files. Arrested by Zhukov’s officers in mid-session in June 1953 and shot in December: the last execution in a Soviet succession struggle.'
             ),
-            fate: fate('executed', '처형 1953', 'Shot, 1953'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['베리야'], en: ['Beria'] },
             scenes: [
                 ['history-soviet-union', 'moscow-panic'],
@@ -716,7 +716,7 @@ module.exports = {
                 '아제르바이잔 재건을 거쳐 1926년 레닌그라드 당 조직을 맡아 도시의 공업화를 이끈, 연설로 사랑받던 정치국원. 1934년 12월 1일 스몰니 청사 복도에서 해고에 앙심을 품은 전 당원 레오니트 니콜라예프의 총에 죽었다 — 문서고 개방 이후의 연구들은 단독 범행으로 결론짓는 쪽이다. 확실한 것은 그다음이다: 사건 당일 발효된 신속 처형령(「12월 1일법」)과 함께, 그의 죽음은 당 전체를 향한 숙청의 법적 구실이 되었다.',
                 'A Politburo member who rebuilt Azerbaijan’s oil industry, then from 1926 ran the Leningrad organization and its industrialization — and was genuinely loved as a speaker. On December 1, 1934, he was shot in the corridor of the Smolny by Leonid Nikolaev, an expelled party member with a grudge; post-archive scholarship largely concludes the assassin acted alone. What is certain is what followed: with the express-execution decree issued that same day, his death became the legal pretext for the purge of the whole party.'
             ),
-            fate: fate('assassinated', '암살 1934', 'Assassinated, 1934'),
+            fate: fate('assassinated', '암살', 'Assassinated'),
             aliases: { ko: ['키로프'], en: ['Kirov'] },
             scenes: [
                 ['history-russian-revolution', 'great-break'],
@@ -735,7 +735,7 @@ module.exports = {
                 '모스크바, 스탈린그라드, 레닌그라드, 베를린 — 전쟁의 고비마다 그가 파견되었고, 1945년 베를린의 항복 문서를 받은 것도 그였다. 1953년 베리야 체포조를 이끌었고 1957년 흐루쇼프를 구했다. 너무 큰 명성의 값은 두 번의 실각(1946, 1957)으로 치렀다 — 그래도 회고록을 남기고 침대에서 죽었다.',
                 'Moscow, Stalingrad, Leningrad, Berlin — he was sent wherever the war was breaking, and it was he who took Germany’s surrender in 1945. He led Beria’s arrest in 1953 and saved Khrushchev in 1957. The price of so much glory was two disgraces (1946, 1957) — yet he lived to publish his memoirs and die in bed.'
             ),
-            fate: fate('natural', '두 번 실각 · 자연사 1974', 'Twice disgraced · d. 1974'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['주코프'], en: ['Zhukov'] },
             scenes: [
                 ['history-soviet-union', 'barbarossa-eve'],
@@ -756,7 +756,7 @@ module.exports = {
                 '도쿄 주재 독일 신문 특파원으로 위장한 소련 정보원. 바르바로사의 날짜를 타전했으나 무시당했고, 「일본은 북진하지 않는다」는 그의 마지막 정보는 시베리아 사단들을 모스크바 방어전으로 불러왔다. 1941년 일본에 체포되어 1944년 처형되었다. 소련은 20년간 그의 존재 자체를 부인하다 1964년에야 영웅 칭호를 추서했다.',
                 'A Soviet officer under cover as a German correspondent in Tokyo. His warning of Barbarossa’s date was ignored; his last signal — Japan will not strike north — released the Siberian divisions for the defence of Moscow. Arrested by Japan in 1941 and hanged in 1944. For twenty years the USSR denied he existed, then made him a Hero of the Soviet Union in 1964.'
             ),
-            fate: fate('executed', '처형 1944 도쿄', 'Hanged, 1944, Tokyo'),
+            fate: fate('executed', '처형 · 도쿄', 'Executed · Tokyo'),
             aliases: { ko: ['조르게'], en: ['Sorge'] },
             scenes: [
                 ['history-soviet-union', 'barbarossa-eve'],
@@ -775,7 +775,7 @@ module.exports = {
                 '스탈린그라드 폐허의 제62군 사령관. 독일군과 수류탄 투척 거리에 지휘소를 두는 「포옹 전술」로 도시를 버텼고, 자신의 군대가 계획의 미끼였다는 사실은 나중에야 알았다. 그 부대는 근위 제8군이 되어 베를린까지 걸어갔다. 유언대로 스탈린그라드의 마마예프 언덕, 자기 병사들 곁에 묻혔다.',
                 'Commander of the 62nd Army in the rubble of Stalingrad. He held the city by “hugging” the enemy — keeping his command post within grenade range — and learned only later that his army had been the plan’s bait. That army, renamed the 8th Guards, walked all the way to Berlin. As he willed, he is buried on Mamayev Kurgan at Stalingrad, beside his soldiers.'
             ),
-            fate: fate('natural', '자연사 1982', 'Died 1982'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['추이코프'], en: ['Chuikov'] },
             scenes: [['history-soviet-union', 'stalingrad-1942']],
         },
@@ -791,7 +791,7 @@ module.exports = {
                 '사제가 되려던 신학생에서 참모총장까지 간 사람. 주코프와 함께 스탈린그라드의 「다른 해법」 — 천왕성 작전 — 을 설계했고, 전쟁 후반 소련군의 거의 모든 대작전 기획에 그의 서명이 있다. 스탈린에게 이견을 말하고도 살아남는 드문 재주가 있었고, 조용히 은퇴해 조용히 죽었다 — 이 목록에서 흔치 않은 결말이다.',
                 'A seminary student who became Chief of the General Staff. With Zhukov he designed Stalingrad’s “other solution,” Operation Uranus, and his signature is on nearly every great Soviet operation of the war’s second half. He had the rare gift of disagreeing with Stalin and surviving it, retired quietly and died quietly — an uncommon ending on this list.'
             ),
-            fate: fate('natural', '자연사 1977', 'Died 1977'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['바실렙스키'], en: ['Vasilevsky'] },
             scenes: [['history-soviet-union', 'stalingrad-1942']],
         },
@@ -809,7 +809,7 @@ module.exports = {
                 '스탈린의 궁정에서 광대 역까지 견디며 살아남았고, 1956년 비밀연설로 관 뚜껑을 열었다. 헝가리를 진압했고, 쿠바에서 물러서 세계를 구했으며, 그 후퇴의 값으로 1964년 동료들에게 해임당했다. 실각 후 이렇게 말했다고 전한다 — 「그들이 나를 총살이 아니라 표결로 보낼 수 있었다는 것, 그것이 나의 업적이다.」',
                 'He survived Stalin’s court — playing the fool when required — and in 1956 opened the coffin lid with the Secret Speech. He crushed Hungary, backed down over Cuba and saved the world, and paid for the retreat in 1964, when his colleagues voted him out. In retirement he is said to have remarked: that they could remove me by a vote and not a bullet — that is my achievement.'
             ),
-            fate: fate('deposed', '실각 1964 · 자연사 1971', 'Deposed 1964 · d. 1971'),
+            fate: fate('deposed', '실각 1964', 'Removed 1964'),
             aliases: { ko: ['흐루쇼프'], en: ['Khrushchev'] },
             scenes: [
                 ['history-soviet-union', 'beria-question'],
@@ -830,7 +830,7 @@ module.exports = {
                 '스탈린의 서류를 관리하던 후계 서열 1위. 스탈린 사후 총리가 되어 소비재와 감세를 말한 첫 지도자였지만, 당 기구를 쥔 흐루쇼프에게 밀렸고 1957년 「반당 그룹」으로 몰려 카자흐스탄의 수력발전소 소장으로 좌천되었다. 총살 대신 좌천 — 새 규칙의 첫 수혜자로 30년을 더 살았다.',
                 'Keeper of Stalin’s paperwork and first in the line of succession. As premier after Stalin’s death he was the first leader to talk of consumer goods and lower taxes — but Khrushchev held the party machine, and in 1957 the “Anti-Party Group” label sent him to manage a power station in Kazakhstan. Demotion instead of a bullet: first beneficiary of the new rule, he lived another thirty years.'
             ),
-            fate: fate('deposed', '실각 1957 · 자연사 1988', 'Deposed 1957 · d. 1988'),
+            fate: fate('deposed', '실각 1957', 'Removed 1957'),
             aliases: { ko: ['말렌코프'], en: ['Malenkov'] },
             scenes: [['history-soviet-union', 'beria-question']],
         },
@@ -846,7 +846,7 @@ module.exports = {
                 '반세기 동안 소련의 먹고 사는 일을 관장한 실무의 거장. 식품공업인민위원으로서 1936년 두 달간 미국의 공장들을 시찰하고 돌아와 통조림·소시지·냉동식품 산업과 대량생산 아이스크림을 이식했고 — 「미코얀 커틀릿」이라는 이름이 붙은 것도 있다 — 이후 수십 년간 대외무역과 소비재 공급을 맡았다. 정치에서는 1956년 헝가리 무력 개입에 거의 홀로 반대했고, 쿠바 위기 뒷수습으로 아바나에서 카스트로를 3주간 설득했다. 「일리치(레닌)에서 일리치(브레즈네프)까지」 최고 지도부를 통과하고 은퇴를 「허락받은」 드문 거물.',
                 'For half a century the master craftsman of how the USSR ate and traded. As Commissar of the Food Industry he spent two months touring American plants in 1936 and came home to transplant canning, sausage-making, frozen food and mass-produced ice cream — a cutlet still bears his name — then ran foreign trade and consumer supply for decades. In politics he stood almost alone against the second intervention in Hungary in 1956, and spent three weeks in Havana talking Castro through the aftermath of the missile crisis. He passed through the top leadership “from Ilyich to Ilyich” — Lenin to Brezhnev — and was one of the few grandees permitted to retire.'
             ),
-            fate: fate('natural', '자연사 1978', 'Died 1978'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['미코얀'], en: ['Mikoyan'] },
             scenes: [['history-soviet-union', 'hungary-1956']],
         },
@@ -862,7 +862,7 @@ module.exports = {
                 '모스크바 망명을 거친 개혁 공산주의자 — 1956년 봉기가 그를 총리로 불러냈고, 그는 대중을 따라 다당제와 바르샤바조약 탈퇴 선언까지 갔다. 유고슬라비아 대사관에서 안전 통행을 약속받고 나오다 납치되었고, 1958년 비밀 재판 뒤 교수형당했다. 1989년 부다페스트 영웅광장의 재매장에 20만이 모였다 — 그의 복권이자, 체제의 부고였다.',
                 'A reform communist seasoned by Moscow exile — the 1956 rising called him to the premiership, and he followed the people all the way to multi-party rule and withdrawal from the Warsaw Pact. Leaving the Yugoslav embassy under a promise of safe conduct, he was abducted; after a secret trial he was hanged in 1958. In 1989 two hundred thousand attended his reburial on Heroes’ Square — his rehabilitation, and the system’s obituary.'
             ),
-            fate: fate('executed', '처형 1958', 'Hanged, 1958'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['너지 임레', '너지'], en: ['Imre Nagy', 'Nagy'] },
             scenes: [['history-soviet-union', 'hungary-1956']],
         },
@@ -878,7 +878,7 @@ module.exports = {
                 '흐루쇼프를 밀어낸 「안정」의 얼굴. 프라하와 아프가니스탄에 군대를 보냈고, 국내에서는 아무것도 흔들지 않았다 — 간부들은 종신이 되었고, 문제들은 이월되었다. 말년의 훈장 수집벽과 노쇠는 농담의 소재가 되었지만, 그 18년의 청구서는 후임들에게 넘어갔다. 그의 장례식은 정체(застой) 그 자체의 장례식으로 기억된다.',
                 'The face of the “stability” that removed Khrushchev. He sent armies to Prague and Afghanistan and rocked nothing at home — officials served for life, and the problems rolled over. His late-life medal collecting and frailty fed a thousand jokes, but the bill for those eighteen years was passed to his successors. His funeral is remembered as the funeral of the stagnation itself.'
             ),
-            fate: fate('natural', '자연사 1982', 'Died 1982'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['브레즈네프'], en: ['Brezhnev'] },
             scenes: [
                 ['history-soviet-union', 'prague-1968'],
@@ -897,7 +897,7 @@ module.exports = {
                 '레닌그라드 봉쇄의 「생명의 길」 수송을 지휘했던 테크노크라트. 1965년 총리로서 이윤과 자율을 계획경제에 심으려 했으나, 프라하 이후 자신의 개혁이 소리 없이 회수되는 것을 지켜보았다. 1979년 아프가니스탄 파병에 반대한 몇 안 되는 목소리였고 — 「파병만은 안 된다」 — 실각 두 달 뒤 죽었다.',
                 'The technocrat who ran the “Road of Life” supply line into besieged Leningrad. As premier in 1965 he tried to plant profit and autonomy inside the planned economy, then watched his reform being quietly withdrawn after Prague. In 1979 his was one of the few voices against sending troops to Afghanistan — “troops, never” — and he died two months after losing office.'
             ),
-            fate: fate('natural', '자연사 1980', 'Died 1980'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['코시긴'], en: ['Kosygin'] },
             scenes: [
                 ['history-soviet-union', 'kosygin-reform'],
@@ -916,7 +916,7 @@ module.exports = {
                 '소련에서 자란 슬로바키아인 — 당이 스스로 뽑은 제1서기로서 검열을 없애고 「인간의 얼굴을 한 사회주의」를 열었다. 침공 후 모스크바로 연행되어 서명을 강요당했고, 서기장에서 대사로, 대사에서 산림청 말단으로 한 계단씩 지워졌다. 1989년 벨벳 혁명의 발코니에 하벨과 나란히 다시 섰고, 3년 뒤 교통사고로 죽었다.',
                 'A Slovak raised in the USSR — the First Secretary the party itself elected, who lifted censorship and opened “socialism with a human face.” Abducted to Moscow after the invasion and made to sign, he was then erased a step at a time: from General Secretary to ambassador, from ambassador to a forestry office. In 1989 he stood beside Havel on the balcony of the Velvet Revolution; three years later he died after a car crash.'
             ),
-            fate: fate('deposed', '실각 1969 · 사고사 1992', 'Removed 1969 · d. 1992'),
+            fate: fate('deposed', '실각 1969', 'Removed 1969'),
             aliases: { ko: ['두브체크'], en: ['Dubček', 'Dubcek'] },
             scenes: [['history-soviet-union', 'prague-1968']],
         },
@@ -932,7 +932,7 @@ module.exports = {
                 '소련 수소폭탄의 아버지이자 32세의 최연소 정회원 원사(院士) — 그리고 그 모든 특권을 내려놓은 반체제의 양심. 1968년 프라하 진압 즈음 체제와 공개적으로 갈라섰고, 아프가니스탄 침공을 비판하다 1980년 고리키로 유형당했다. 1986년 고르바초프의 전화 한 통으로 돌아와, 인민대의원 자격으로 연단에서 싸우다 죽었다.',
                 'Father of the Soviet hydrogen bomb, a full academician at 32 — and the conscience that laid all those privileges down. He broke openly with the system around the crushing of Prague in 1968, and criticism of the Afghan invasion sent him into internal exile in Gorky in 1980. A single telephone call from Gorbachev brought him back in 1986; he died a people’s deputy, still fighting from the rostrum.'
             ),
-            fate: fate('exile', '유형 1980 · 복권 1986', 'Internal exile 1980 · returned 1986'),
+            fate: fate('exile', '유형 1980', 'Internal exile 1980'),
             aliases: { ko: ['사하로프'], en: ['Sakharov'] },
             scenes: [['history-soviet-union', 'prague-1968']],
         },
@@ -948,7 +948,7 @@ module.exports = {
                 '1956년 부다페스트 주재 대사로 탱크를 부른 사람, 15년간 KGB 의장으로 반체제를 짓밟은 사람 — 그리고 체제의 실상을 가장 정확히 알았기에 고르바초프를 발탁해 키운 사람. 서기장 15개월의 「규율 캠페인」은 신부전이 먼저 끝냈다. 그의 유산이 탄압인지 개혁의 씨앗인지, 답은 아직 갈린다.',
                 'As ambassador in Budapest in 1956 he called in the tanks; for fifteen years as KGB chairman he broke the dissidents — and, knowing better than anyone the true state of the system, he picked out and promoted Gorbachev. His fifteen-month “discipline campaign” as General Secretary was ended first by kidney failure. Whether his legacy is repression or the seed of reform is still an open verdict.'
             ),
-            fate: fate('natural', '자연사 1984', 'Died 1984'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['안드로포프'], en: ['Andropov'] },
             scenes: [
                 ['history-soviet-union', 'afghanistan-1979'],
@@ -967,7 +967,7 @@ module.exports = {
                 '28년간 외무장관 — 얄타에서 쿠바 위기, 데탕트까지 모든 협상 탁자에 그가 앉아 있었고, 서방은 그 완강함에 「미스터 니예트」라는 별명을 붙였다. 1985년 3월, 최고참 보수파로서 고르바초프 추천 연설에 나섰다: 「이 사람은 미소가 부드럽지만 이빨은 강철입니다.」 자신이 세운 개혁가가 여는 시대를 지켜보다 죽었다.',
                 'Foreign minister for twenty-eight years — from Yalta through the missile crisis to détente, he sat at every table, and the West named his obduracy “Mister Nyet.” In March 1985, doyen of the conservatives, he rose to nominate Gorbachev: “This man has a nice smile, but teeth of iron.” He died watching the era his own protégé had opened.'
             ),
-            fate: fate('natural', '자연사 1989', 'Died 1989'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['그로미코'], en: ['Gromyko'] },
             scenes: [
                 ['history-soviet-union', 'afghanistan-1979'],
@@ -988,7 +988,7 @@ module.exports = {
                 '체제가 스스로 뽑은 개혁가. 글라스노스트와 페레스트로이카로 체제를 구하려 했고, 1989년 동유럽에서 쏘지 않기로 결정했으며, 1991년 크림 연금에서 돌아와 자신의 자리가 사라지는 문서에 서명했다. 서방의 갈채와 국내의 원망을 동시에 받으며, 자신이 끝낸 나라보다 31년을 더 살았다.',
                 'The reformer the system elected for itself. He tried to save it with glasnost and perestroika, decided in 1989 that the tanks would not fire in Eastern Europe, and in 1991 — back from house arrest in Crimea — signed the papers in which his own office ceased to exist. Applauded abroad and resented at home, he outlived the country he ended by thirty-one years.'
             ),
-            fate: fate('natural', '자연사 2022', 'Died 2022'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['고르바초프'], en: ['Gorbachev'] },
             scenes: [
                 ['history-soviet-union', 'gorbachev-1985'],
@@ -1009,7 +1009,7 @@ module.exports = {
                 '고르바초프가 모스크바로 불러올린 지방 서기 — 그리고 그를 밀어낸 사람. 1987년 당 지도부를 정면 비판해 좌천되었다가 선거로 되살아났고, 1991년 8월 백악관 앞 전차 위에 올라선 사진 한 장으로 러시아의 권력이 되었다. 그해 12월 벨라베자 숲에서 소련을 서명으로 끝냈고, 1999년 마지막 연설에서 국민에게 용서를 구하며 물러났다.',
                 'The provincial secretary Gorbachev brought to Moscow — and the man who displaced him. Demoted in 1987 for attacking the leadership to its face, he was resurrected by the ballot box, and one photograph — standing on a tank before the White House in August 1991 — made him Russia’s power. That December, in the Belavezha forest, he signed the Soviet Union out of existence; in his last address, in 1999, he asked his people’s forgiveness and stepped down.'
             ),
-            fate: fate('natural', '자연사 2007', 'Died 2007'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['옐친'], en: ['Yeltsin'] },
             scenes: [
                 ['history-soviet-union', 'gorbachev-1985'],
@@ -1030,7 +1030,7 @@ module.exports = {
                 '황태자의 혈우병을 「다스리는」 듯 보인 신비가 황후의 절대 신임이 되었고, 1915년 차르가 전선으로 떠나자 장관들의 운명이 그의 응접실에서 갈렸다. 군주정을 구하겠다는 귀족들이 1916년 12월 그를 독살하고 쏘고 강에 던졌다 — 왕조는 그보다 두 달을 더 살았을 뿐이다.',
                 'His seeming power over the heir’s haemophilia became the Empress’s absolute faith, and once the Tsar left for the front in 1915, ministers’ fates were decided in his parlour. In December 1916 aristocrats out to save the monarchy poisoned him, shot him and put him through the river ice — the dynasty outlived him by two months.'
             ),
-            fate: fate('murdered', '살해 1916', 'Murdered, 1916'),
+            fate: fate('murdered', '살해', 'Murdered'),
             aliases: { ko: ['라스푸틴'], en: ['Rasputin'] },
             scenes: [],
         },
@@ -1046,7 +1046,7 @@ module.exports = {
                 '나로드니키로 출발해 러시아에 마르크스주의를 이식한 사람 — 레닌 세대 전체가 그의 책으로 배웠다. 그러나 1917년 37년 만에 귀국한 그는 10월 봉기를 「역사의 단계를 무시한 시기상조」라 규탄했다. 제자들이 세운 정권 아래에서 결핵으로 죽었고, 장례식은 반(半)야당 시위가 되었다.',
                 'He began as a Populist and transplanted Marxism into Russia — Lenin’s whole generation learned from his books. But returning in 1917 after thirty-seven years abroad, he condemned the October rising as premature, a violation of history’s stages. He died of tuberculosis under the regime his pupils had built, and his funeral became a half-opposition demonstration.'
             ),
-            fate: fate('natural', '자연사 1918', 'Died 1918'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['플레하노프'], en: ['Plekhanov'] },
             scenes: [],
         },
@@ -1062,7 +1062,7 @@ module.exports = {
                 '이스크라를 레닌과 함께 만든 동지였으나, 1903년 당원 자격 조항 하나를 두고 갈라져 멘셰비키의 지도자가 되었다. 10월 이후에도 나라를 떠나지 않고 합법 야당의 자리를 지키려 애썼고, 1920년 출국을 「허락받아」 베를린에서 결핵으로 죽었다. 병상의 레닌이 그의 안부를 물었다는 이야기가 전한다.',
                 'He built Iskra alongside Lenin, then split with him in 1903 over a single clause on party membership and led the Mensheviks. After October he stayed, fighting to keep a legal opposition alive, and in 1920 was permitted to leave — he died of tuberculosis in Berlin. It is told that the dying Lenin asked after him.'
             ),
-            fate: fate('exile', '망명 · 1923 베를린', 'Exile · d. 1923, Berlin'),
+            fate: fate('exile', '망명지 사망', 'Died in exile'),
             aliases: { ko: ['마르토프'], en: ['Martov'] },
             scenes: [],
         },
@@ -1078,7 +1078,7 @@ module.exports = {
                 '차르의 감옥과 유형지에서 11년을 보낸 폴란드 귀족 가문 출신 혁명가. 1917년 12월 체카를 창설해 적색 테러를 집행했고, 요원들에게 「깨끗한 손, 차가운 머리, 뜨거운 심장」을 요구했다. 1926년 중앙위원회에서 격렬한 연설을 마친 직후 심장마비로 죽었다 — 그가 만든 기관은 이름을 바꿔 가며 그보다 오래 살았다.',
                 'Born to Polish gentry, he spent eleven years in Tsarist prisons and exile. In December 1917 he founded the Cheka and administered the Red Terror, demanding of his men “clean hands, a cool head and a burning heart.” He died of a heart attack in 1926, minutes after a furious speech to the Central Committee — the institution he built outlived him under many names.'
             ),
-            fate: fate('natural', '자연사 1926', 'Died 1926'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['제르진스키'], en: ['Dzerzhinsky'] },
             scenes: [],
         },
@@ -1094,7 +1094,7 @@ module.exports = {
                 '제르진스키 사후 OGPU 의장이 되었지만 건강은 이미 무너져 있었다. 일상 업무는 야고다 같은 부하들에게 넘어갔고, 그가 병상에서 서명한 기관은 집단화와 반대파 탄압의 도구로 더 커졌다.',
                 'He succeeded Dzerzhinsky as OGPU chairman, but his health had already collapsed. Daily power shifted to subordinates such as Yagoda, while the agency he signed for from his sickbed grew into an instrument of collectivization and repression.'
             ),
-            fate: fate('natural', '자연사 1934', 'Died 1934'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['멘진스키'], en: ['Menzhinsky'] },
             scenes: [],
         },
@@ -1110,7 +1110,7 @@ module.exports = {
                 'OGPU와 NKVD의 실무 권력자로 백해-발트 운하 같은 강제노동 사업을 지휘했다. 키로프 사건 이후 첫 대숙청 국면을 열었지만, 곧 예조프에게 밀려 체포되었고 제3차 모스크바 재판 뒤 총살되었다.',
                 'A practical power inside OGPU and NKVD, he oversaw forced-labour projects such as the White Sea-Baltic Canal. He opened the first phase after Kirov’s murder, then was displaced by Yezhov, arrested, and shot after the third Moscow trial.'
             ),
-            fate: fate('executed', '처형 1938', 'Shot, 1938'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['야고다'], en: ['Yagoda'] },
             scenes: [],
         },
@@ -1126,7 +1126,7 @@ module.exports = {
                 '장군의 딸로 태어나 세계 최초의 여성 정부 각료(복지인민위원)가 되었고, 자유연애론과 가사노동의 사회화 주장으로 당 안에서도 논쟁을 일으켰다. 노동자 반대파에 섰다가 외교관으로 「명예 유배」되었는데 — 노르웨이와 스웨덴의 대사관저가 그녀를 대숙청에서 살렸다. 옛 볼셰비키 가운데 드물게 침대에서 죽었다.',
                 'A general’s daughter who became the world’s first woman cabinet minister, as Commissar of Welfare, and scandalized even her own party with free love and the socialization of housework. Siding with the Workers’ Opposition earned her an honourable exile into diplomacy — and the embassies of Norway and Sweden carried her alive through the Terror. One of the few Old Bolsheviks to die in bed.'
             ),
-            fate: fate('natural', '자연사 1952', 'Died 1952'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['콜론타이'], en: ['Kollontai'] },
             scenes: [],
         },
@@ -1142,7 +1142,7 @@ module.exports = {
                 '27세에 바르샤바까지 진격한 내전의 신동이자, 크론시타트와 탐보프 농민 반란의 진압자. 종심작전 교리로 붉은 군대를 현대화한 원수였으나, 1937년 「독일 간첩」으로 몰려 비밀 재판 하루 만에 총살되었다. 그와 함께 시작된 장교단 숙청의 청구서는 1941년 6월에 도착했다.',
                 'The civil-war prodigy who marched on Warsaw at twenty-seven — and the suppressor of Kronstadt and the Tambov peasant rising. The marshal whose deep-operations doctrine modernized the Red Army was branded a German spy in 1937 and shot within a day of a secret trial. The bill for the officer-corps purge that began with him was delivered in June 1941.'
             ),
-            fate: fate('executed', '처형 1937', 'Shot, 1937'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['투하쳅스키'], en: ['Tukhachevsky'] },
             scenes: [],
         },
@@ -1158,7 +1158,7 @@ module.exports = {
                 '키 151센티미터로 「피의 난쟁이」라 불린 내무인민위원. 1937~38년의 대테러를 집행해 그 시기에 「예조프시나(예조프의 시대)」라는 이름이 붙었다. 쓸모가 다하자 그 자신이 「간첩」으로 체포되어, 자신이 세운 절차 그대로 1940년 총살되었다. 오늘날 그는 스탈린 곁에서 지워진 사진 속의 빈자리로 가장 유명하다.',
                 'The five-foot Commissar of Internal Affairs whom prisoners called “the bloody dwarf.” He administered the Terror of 1937–38 — an era named the Yezhovshchina after him — and when his usefulness ended, he was arrested as a “spy” himself and shot in 1940 by the very procedure he had built. He is most famous today as the empty space airbrushed out of the photographs beside Stalin.'
             ),
-            fate: fate('executed', '처형 1940', 'Shot, 1940'),
+            fate: fate('executed', '처형', 'Executed'),
             aliases: { ko: ['예조프'], en: ['Yezhov'] },
             scenes: [],
         },
@@ -1174,7 +1174,7 @@ module.exports = {
                 '스탈린의 오랜 조지아 동향 친구이자 중공업인민위원 — 마그니토고르스크의 용광로들이 그의 관할이었다. 대숙청이 자신의 공장장들과 친형을 삼키자 스탈린과 정면으로 충돌했고, 1937년 2월 자택에서 권총으로 목숨을 끊었다. 공식 발표는 심장마비였다.',
                 'Stalin’s old Georgian comrade and Commissar of Heavy Industry — the blast furnaces of Magnitogorsk answered to him. When the Terror began devouring his plant directors and his own brother, he collided head-on with Stalin, and in February 1937 shot himself at home. The official bulletin said heart failure.'
             ),
-            fate: fate('suicide', '자살 1937', 'Suicide, 1937'),
+            fate: fate('suicide', '자살', 'Suicide'),
             aliases: { ko: ['오르조니키제'], en: ['Ordzhonikidze'] },
             scenes: [],
         },
@@ -1190,7 +1190,7 @@ module.exports = {
                 '1938년 숙청에 걸려 콜리마 금광에서 건강과 이를 잃은 로켓 기술자. 살아 돌아와 스푸트니크와 가가린을 쏘아 올린 로켓을 만들었지만, 생전에 그의 이름은 기밀이었다 — 노벨상 위원회의 문의에 소련은 「수석설계자」라고만 답했다. 수용소가 망가뜨린 몸은 1966년의 수술을 견디지 못했다.',
                 'A rocket engineer swept up in the 1938 purge, he left his health and his teeth in the Kolyma gold mines. He came back to build the rockets that lifted Sputnik and Gagarin — yet in his lifetime his name was classified: to the Nobel committee’s inquiry, the USSR answered only “the Chief Designer.” The body the camps had broken did not survive surgery in 1966.'
             ),
-            fate: fate('natural', '자연사 1966', 'Died 1966'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['코롤료프'], en: ['Korolev'] },
             scenes: [],
         },
@@ -1206,7 +1206,7 @@ module.exports = {
                 '집단농장 목수의 아들이 1961년 4월 12일, 108분 만에 지구를 한 바퀴 돌았다 — 「파예할리!(갑시다!)」. 냉전의 한복판에서 두 진영이 함께 사랑한 유일한 사람이 되었고, 우주로 돌아갈 날을 준비하며 훈련하다 1968년 미그기 추락으로 죽었다. 서른네 살이었다.',
                 'A collective-farm carpenter’s son circled the planet in 108 minutes on April 12, 1961 — “Poyekhali!”, let’s go. In the middle of the Cold War he became the one man both camps loved. Training for a return to space, he died in a MiG crash in 1968. He was thirty-four.'
             ),
-            fate: fate('killed', '추락사 1968', 'Killed in crash, 1968'),
+            fate: fate('killed', '추락사', 'Killed in crash'),
             aliases: { ko: ['가가린'], en: ['Gagarin'] },
             scenes: [],
         },
@@ -1222,7 +1222,7 @@ module.exports = {
                 '포병 대위로 참전 중 사신(私信)에서 스탈린을 비꼬았다가 8년형을 받았다. 『이반 데니소비치의 하루』(1962)로 해빙의 상징이 되었고, 『수용소군도』로 노벨상과 국외 추방(1974)을 함께 얻었다. 1994년 귀국해 러시아에서 죽었다 — 자신이 증언한 체제보다 17년을 더 살았다.',
                 'An artillery captain sentenced to eight years for mocking Stalin in a private letter. One Day in the Life of Ivan Denisovich (1962) made him the emblem of the thaw; The Gulag Archipelago earned him the Nobel Prize and deportation (1974) together. He returned in 1994 and died in Russia — outliving the system he had testified against by seventeen years.'
             ),
-            fate: fate('exile', '추방 1974 · 귀국 1994', 'Deported 1974 · returned 1994'),
+            fate: fate('exile', '추방 1974', 'Deported 1974'),
             aliases: { ko: ['솔제니친'], en: ['Solzhenitsyn'] },
             scenes: [],
         },
@@ -1238,7 +1238,7 @@ module.exports = {
                 '그로미코의 「니예트」 28년을 물려받아, 5년 만에 군축과 아프가니스탄 철군과 독일 통일 협상을 끝냈다. 1990년 12월 「독재가 다가오고 있다」고 경고하며 전격 사임했고 — 8개월 뒤의 쿠데타가 그 예언을 증명했다. 소련이 무너지자 고향 조지아로 돌아가 내전과 암살 기도 속에서 대통령으로 통치했다.',
                 'Inheriting twenty-eight years of Gromyko’s “nyet,” he needed five to negotiate the arms cuts, the Afghan withdrawal and German unification. In December 1990 he resigned overnight, warning that “dictatorship is coming” — a prophecy the coup honoured eight months later. When the Union fell he went home to Georgia, governing as president through civil war and assassination attempts.'
             ),
-            fate: fate('natural', '자연사 2014', 'Died 2014'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['셰바르드나제'], en: ['Shevardnadze'] },
             scenes: [],
         },
@@ -1254,7 +1254,7 @@ module.exports = {
                 '전쟁에서 다리를 다친 상이군인이자 당 선전부의 엘리트. 러시아 민족주의를 비판한 논문으로 캐나다 대사 10년의 「유배」를 살았고, 그곳에서 시찰 온 고르바초프를 만났다. 정치국의 이념 담당으로 글라스노스트와 역사 재심을 밀어붙였고, 말년에는 비밀 의정서와 숙청 문서의 공개·복권 작업을 이끌었다.',
                 'A war invalid and an elite of the party’s propaganda department. An article criticizing Russian nationalism bought him a ten-year “exile” as ambassador to Canada — where he met a visiting Gorbachev. As the Politburo’s ideology chief he drove glasnost and the re-examination of history, and in his last years led the publication of the secret protocols and the rehabilitation of the purged.'
             ),
-            fate: fate('natural', '자연사 2005', 'Died 2005'),
+            fate: fate('natural', '자연사', 'Natural causes'),
             aliases: { ko: ['야코블레프'], en: ['Yakovlev'] },
             scenes: [],
         },
@@ -1270,88 +1270,88 @@ module.exports = {
                 '1956년 부다페스트의 안드로포프 밑에서 경력을 시작해 KGB 의장까지 오른 심복. 1991년 8월 국가비상사태위원회를 조직해 고르바초프를 크림에 연금했으나, 군이 움직이지 않자 쿠데타는 사흘 만에 무너졌다. 감옥에서 회고록을 썼고, 1994년 사면되어 조용히 죽었다 — 그가 지키려던 나라보다 16년을 더 살았다.',
                 'Andropov’s man from Budapest 1956, risen to chairman of the KGB. In August 1991 he organized the State Emergency Committee and confined Gorbachev in Crimea — and when the army would not move, the coup collapsed in three days. He wrote his memoirs in prison, was amnestied in 1994, and died quietly — outliving the country he meant to save by sixteen years.'
             ),
-            fate: fate('deposed', '체포 1991 · 사면 1994', 'Arrested 1991 · amnestied 1994'),
+            fate: fate('deposed', '체포 1991', 'Arrested 1991'),
             aliases: { ko: ['크류치코프'], en: ['Kryuchkov'] },
             scenes: [['history-soviet-union', 'august-1991']],
         },
-        pc('lunacharsky', 'bolshevik', 'Л', 'Анатолий Луначарский', '아나톨리 루나차르스키', 'Anatoly Lunacharsky', '1875–1933', '혁명 뒤 문화와 교육을 맡은 계몽인민위원', 'The Enlightenment Commissar of early Soviet culture', '10월 혁명 뒤 교육, 박물관, 극장, 문학 정책을 맡은 계몽인민위원이었다. 전위예술과 옛 문화유산 사이에서 초기 소비에트 문화정책의 폭을 열어 둔 인물이다.', 'After October he headed education, museums, theatre and literary policy as Commissar of Enlightenment. He kept early Soviet cultural policy open between avant-garde experiment and inherited culture.', 'natural', '자연사 1933', 'Died 1933', ['루나차르스키'], ['Lunacharsky']),
-        pc('zhdanov', 'stalin-era', 'Ж', 'Андрей Жданов', '안드레이 즈다노프', 'Andrei Zhdanov', '1896–1948', '스탈린주의 문화정책에 이름을 남긴 이념 관리자', 'The ideology manager whose name marked Stalinist culture', '레닌그라드 당 조직과 중앙위 서기를 거쳐 전후 문화 숙청을 주도했다. 문학, 음악, 철학에 대한 공격은 「즈다노프주의」라는 이름으로 남았다.', 'After leading the Leningrad party organization and serving as a CC secretary, he drove postwar cultural purges. His campaigns against literature, music and philosophy survived under the name Zhdanovshchina.', 'natural', '자연사 1948', 'Died 1948', ['즈다노프'], ['Zhdanov']),
-        pc('suslov', 'thaw', 'С', 'Михаил Суслов', '미하일 수슬로프', 'Mikhail Suslov', '1902–1982', '브레즈네프 시대 정통 노선의 회계원', 'The accountant of orthodoxy in the Brezhnev era', '스탈린 말기부터 브레즈네프 말기까지 중앙위 이념 담당으로 오래 버텼다. 화려한 연설가라기보다 노선의 문구와 경계를 관리한 보수적 심판관이었다.', 'From late Stalinism to late Brezhnevism he endured as the Central Committee’s ideology guardian. Less a flamboyant speaker than a conservative arbiter of wording, boundaries and orthodoxy.', 'natural', '자연사 1982', 'Died 1982', ['수슬로프'], ['Suslov']),
-        pc('demichev', 'thaw', 'Д', 'Пётр Демичев', '표트르 데미체프', 'Pyotr Demichev', '1917–2010', '문화정책을 관리한 브레즈네프 시대 관료', 'A Brezhnev-era manager of cultural policy', '중앙위 서기와 문화부 장관을 지내며 해빙 이후의 문화 통제를 관리했다. 수슬로프식 정통 노선을 일상 행정으로 옮기는 역할에 가까웠다.', 'As a Central Committee secretary and then Minister of Culture, he managed cultural control after the thaw. His role was to translate Suslov-style orthodoxy into daily administration.', 'natural', '자연사 2010', 'Died 2010', ['데미체프'], ['Demichev']),
-        pc('ponomarev', 'thaw', 'П', 'Борис Пономарёв', '보리스 포노마료프', 'Boris Ponomarev', '1905–1995', '국제공산주의 노선을 관리한 당 국제부장', 'The party international chief who managed the communist line abroad', '중앙위 국제부를 수십 년 동안 이끌며 각국 공산당과 국제공산주의 노선을 관리했다. 외교부가 국가외교를 맡았다면, 그는 당 외교와 이념 네트워크를 맡았다.', 'For decades he led the Central Committee International Department, managing foreign communist parties and the international communist line. If the Foreign Ministry handled state diplomacy, he handled party diplomacy and ideology networks.', 'natural', '자연사 1995', 'Died 1995', ['포노마료프'], ['Ponomarev']),
-        pc('sokolnikov', 'bolshevik', 'С', 'Григорий Сокольников', '그리고리 소콜니코프', 'Grigory Sokolnikov', '1888–1939', '네프의 화폐 안정화를 이끈 재무인민위원', 'The finance commissar of NEP stabilization', '내전 뒤 붕괴한 화폐체계를 안정시키고 체르보네츠를 도입한 재무인민위원. 훗날 반대파와 연루되어 체포되었고 수용소에서 살해되었다.', 'Finance commissar after the civil war, he helped stabilize the currency and introduce the chervonets. Later linked to opposition circles, he was arrested and killed in prison.', 'murdered', '수용소에서 살해 1939', 'Killed in prison 1939', ['소콜니코프'], ['Sokolnikov']),
-        pc('zverev', 'stalin-era', 'З', 'Арсений Зверев', '아르세니 즈베레프', 'Arseny Zverev', '1900–1969', '전쟁과 전후 재정을 버틴 장기 재무장관', 'Long-serving finance minister through war and reconstruction', '1938년 재무인민위원이 되어 전쟁 재정과 전후 재건 재정을 관리했다. 스탈린과 흐루쇼프 시대를 걸친 보기 드문 장기 재정 관료였다.', 'He became finance commissar in 1938 and managed wartime finance and postwar reconstruction finance. He was a rare long-serving fiscal official across Stalin and Khrushchev.', 'natural', '자연사 1969', 'Died 1969', ['즈베레프'], ['Zverev']),
-        pc('garbuzov', 'thaw', 'Г', 'Василий Гарбузов', '바실리 가르부조프', 'Vasily Garbuzov', '1911–1985', '정체기의 장기 재무장관', 'The long-serving finance minister of stagnation', '1960년부터 1985년까지 재무장관으로 예산과 재정 운용을 관리했다. 브레즈네프 시대의 조용한 재정 지속성을 상징한다.', 'Finance minister from 1960 to 1985, he managed budgets and fiscal operations. He symbolizes the quiet fiscal continuity of the Brezhnev era.', 'natural', '자연사 1985', 'Died 1985', ['가르부조프'], ['Garbuzov']),
-        pc('alkhimov', 'thaw', 'А', 'Владимир Алхимов', '블라디미르 알히모프', 'Vladimir Alkhimov', '1919–1993', '국가은행을 오래 이끈 통화 관료', 'Long-serving head of Gosbank', '1963년부터 1986년까지 국가은행 총재를 맡아 계획경제의 결제, 신용, 통화 관리를 담당했다.', 'From 1963 to 1986 he headed Gosbank, overseeing payments, credit and monetary administration inside the planned economy.', 'natural', '자연사 1993', 'Died 1993', ['알히모프'], ['Alkhimov']),
-        pc('gerashchenko', 'perestroika', 'Г', 'Виктор Геращенко', '빅토르 게라셴코', 'Viktor Gerashchenko', '1937–2022', '소련 말기와 러시아 초기의 중앙은행가', 'Central banker of the Soviet collapse and Russian transition', '1988년 국가은행 총재가 되어 붕괴 직전의 통화체계를 다뤘고, 이후 러시아 중앙은행에서도 핵심 역할을 했다.', 'He became Gosbank chairman in 1988 and managed the monetary system in the final Soviet years, later playing a central role in Russia’s central bank.', 'natural', '자연사 2022', 'Died 2022', ['게라셴코'], ['Gerashchenko']),
-        pc('katushev', 'perestroika', 'К', 'Константин Катушев', '콘스탄틴 카투셰프', 'Konstantin Katushev', '1927–2010', '대외경제관계를 맡은 말기 경제 관료', 'Late Soviet foreign-economic official', '브레즈네프 시대 당 서기와 각료회의 부의장을 거쳐, 페레스트로이카 말기 대외경제관계 장관을 맡았다.', 'A party secretary and deputy premier in the Brezhnev era, he later became minister for foreign economic relations during perestroika.', 'natural', '자연사 2010', 'Died 2010', ['카투셰프'], ['Katushev']),
-        pc('tevosian', 'stalin-era', 'Т', 'Иван Тевосян', '이반 테보샨', 'Ivan Tevosian', '1902–1958', '스탈린 공업화의 금속 관료', 'Metallurgy administrator of Stalinist industrialization', '중공업, 조선, 금속 부문을 오가며 전시와 전후 공업생산을 관리했다. 스탈린식 산업국가의 핵심 생산 관료였다.', 'He moved through heavy industry, shipbuilding and metallurgy posts, managing wartime and postwar production. He was a core production administrator of Stalin’s industrial state.', 'natural', '자연사 1958', 'Died 1958', ['테보샨'], ['Tevosian']),
-        pc('malyshev', 'stalin-era', 'М', 'Вячеслав Малышев', '뱌체슬라프 말리셰프', 'Vyacheslav Malyshev', '1902–1957', '전차와 원자력 산업을 잇는 생산 관료', 'Production boss from tanks to atomic industry', '전시 전차생산과 전후 중형기계공업을 맡았다. 군수공업과 원자력 행정이 맞물리던 시기의 핵심 기술관료였다.', 'He oversaw wartime tank production and postwar medium machine-building. He was a key technocrat where armaments and atomic administration overlapped.', 'natural', '자연사 1957', 'Died 1957', ['말리셰프'], ['Malyshev']),
-        pc('vannikov', 'stalin-era', 'В', 'Борис Ванников', '보리스 반니코프', 'Boris Vannikov', '1897–1962', '탄약과 원자력 행정을 맡은 베리야의 생산 관리자', 'Ammunition and atomic administrator under Beria', '전시 탄약 생산을 관리했고, 전후에는 제1총국에서 원자폭탄 계획의 행정을 맡았다. 비밀 군수국가의 대표적 생산 관료다.', 'He managed wartime ammunition production and then atomic administration in the First Main Directorate. He was a representative production official of the secret military-industrial state.', 'natural', '자연사 1962', 'Died 1962', ['반니코프'], ['Vannikov']),
-        pc('slavsky', 'thaw', 'С', 'Ефим Славский', '예핌 슬라프스키', 'Yefim Slavsky', '1898–1991', '핵산업을 장기 지휘한 중형기계공업 장관', 'Long-serving nuclear industry minister', '1957년부터 거의 30년 동안 중형기계공업 장관으로 핵무기와 원자력 산업을 지휘했다.', 'From 1957 for nearly three decades he led the Ministry of Medium Machine-Building, commanding nuclear weapons and atomic industry.', 'natural', '자연사 1991', 'Died 1991', ['슬라프스키'], ['Slavsky']),
-        pc('afanasyev', 'thaw', 'А', 'Сергей Афанасьев', '세르게이 아파나시예프', 'Sergey Afanasyev', '1918–2001', '미사일과 우주산업의 장기 장관', 'Long-serving minister of missile and space industry', '1965년 일반기계공업 장관이 되어 탄도미사일, 발사체, 위성 산업을 관리했다. 소련 우주산업의 비밀 행정가였다.', 'He became minister of general machine-building in 1965, overseeing ballistic missiles, launch vehicles and satellites. He was a secret administrator of the Soviet space industry.', 'natural', '자연사 2001', 'Died 2001', ['아파나시예프'], ['Afanasyev']),
-        pc('yakov-yakovlev', 'stalin-era', 'Я', 'Яков Яковлев', '야코프 야코블레프', 'Yakov Yakovlev', '1896–1938', '집단화 행정을 맡은 농업인민위원', 'Agriculture commissar of collectivization', '1929년 농업인민위원이 되어 집단화 행정을 담당했다. 대숙청 중 체포되어 1938년 처형되었다.', 'He became agriculture commissar in 1929 and administered collectivization. During the Great Terror he was arrested and shot in 1938.', 'executed', '처형 1938', 'Shot 1938', ['야코블레프'], ['Yakovlev']),
-        pc('benediktov', 'stalin-era', 'Б', 'Иван Бенедиктов', '이반 베네딕토프', 'Ivan Benediktov', '1902–1983', '스탈린 말기와 전후 농업행정의 장기 관료', 'Long-serving agriculture administrator of late Stalinism and reconstruction', '1938년부터 여러 차례 농업 행정을 맡아 전쟁과 전후 식량문제를 관리했다. 흐루쇼프 시대 초에 자리에서 물러났다.', 'From 1938 he repeatedly held agricultural posts, managing war and postwar food problems. He left the central agricultural post early in the Khrushchev era.', 'natural', '자연사 1983', 'Died 1983', ['베네딕토프'], ['Benediktov']),
-        pc('matskevich', 'thaw', 'М', 'Владимир Мацкевич', '블라디미르 마츠케비치', 'Vladimir Matskevich', '1909–1998', '처녀지 이후 농정을 맡은 농업장관', 'Agriculture minister after the virgin-lands drive', '흐루쇼프와 브레즈네프 초기에 농업장관을 맡아 처녀지 개간 이후의 농업 행정을 관리했다.', 'He served as agriculture minister under Khrushchev and early Brezhnev, managing agricultural administration after the virgin-lands campaign.', 'natural', '자연사 1998', 'Died 1998', ['마츠케비치'], ['Matskevich']),
+        pc('lunacharsky', 'bolshevik', 'Л', 'Анатолий Луначарский', '아나톨리 루나차르스키', 'Anatoly Lunacharsky', '1875–1933', '혁명 뒤 문화와 교육을 맡은 계몽인민위원', 'The Enlightenment Commissar of early Soviet culture', '10월 혁명 뒤 교육, 박물관, 극장, 문학 정책을 맡은 계몽인민위원이었다. 전위예술과 옛 문화유산 사이에서 초기 소비에트 문화정책의 폭을 열어 둔 인물이다.', 'After October he headed education, museums, theatre and literary policy as Commissar of Enlightenment. He kept early Soviet cultural policy open between avant-garde experiment and inherited culture.', 'natural', '자연사', 'Natural causes', ['루나차르스키'], ['Lunacharsky']),
+        pc('zhdanov', 'stalin-era', 'Ж', 'Андрей Жданов', '안드레이 즈다노프', 'Andrei Zhdanov', '1896–1948', '스탈린주의 문화정책에 이름을 남긴 이념 관리자', 'The ideology manager whose name marked Stalinist culture', '레닌그라드 당 조직과 중앙위 서기를 거쳐 전후 문화 숙청을 주도했다. 문학, 음악, 철학에 대한 공격은 「즈다노프주의」라는 이름으로 남았다.', 'After leading the Leningrad party organization and serving as a CC secretary, he drove postwar cultural purges. His campaigns against literature, music and philosophy survived under the name Zhdanovshchina.', 'natural', '자연사', 'Natural causes', ['즈다노프'], ['Zhdanov']),
+        pc('suslov', 'thaw', 'С', 'Михаил Суслов', '미하일 수슬로프', 'Mikhail Suslov', '1902–1982', '브레즈네프 시대 정통 노선의 회계원', 'The accountant of orthodoxy in the Brezhnev era', '스탈린 말기부터 브레즈네프 말기까지 중앙위 이념 담당으로 오래 버텼다. 화려한 연설가라기보다 노선의 문구와 경계를 관리한 보수적 심판관이었다.', 'From late Stalinism to late Brezhnevism he endured as the Central Committee’s ideology guardian. Less a flamboyant speaker than a conservative arbiter of wording, boundaries and orthodoxy.', 'natural', '자연사', 'Natural causes', ['수슬로프'], ['Suslov']),
+        pc('demichev', 'thaw', 'Д', 'Пётр Демичев', '표트르 데미체프', 'Pyotr Demichev', '1917–2010', '문화정책을 관리한 브레즈네프 시대 관료', 'A Brezhnev-era manager of cultural policy', '중앙위 서기와 문화부 장관을 지내며 해빙 이후의 문화 통제를 관리했다. 수슬로프식 정통 노선을 일상 행정으로 옮기는 역할에 가까웠다.', 'As a Central Committee secretary and then Minister of Culture, he managed cultural control after the thaw. His role was to translate Suslov-style orthodoxy into daily administration.', 'natural', '자연사', 'Natural causes', ['데미체프'], ['Demichev']),
+        pc('ponomarev', 'thaw', 'П', 'Борис Пономарёв', '보리스 포노마료프', 'Boris Ponomarev', '1905–1995', '국제공산주의 노선을 관리한 당 국제부장', 'The party international chief who managed the communist line abroad', '중앙위 국제부를 수십 년 동안 이끌며 각국 공산당과 국제공산주의 노선을 관리했다. 외교부가 국가외교를 맡았다면, 그는 당 외교와 이념 네트워크를 맡았다.', 'For decades he led the Central Committee International Department, managing foreign communist parties and the international communist line. If the Foreign Ministry handled state diplomacy, he handled party diplomacy and ideology networks.', 'natural', '자연사', 'Natural causes', ['포노마료프'], ['Ponomarev']),
+        pc('sokolnikov', 'bolshevik', 'С', 'Григорий Сокольников', '그리고리 소콜니코프', 'Grigory Sokolnikov', '1888–1939', '네프의 화폐 안정화를 이끈 재무인민위원', 'The finance commissar of NEP stabilization', '내전 뒤 붕괴한 화폐체계를 안정시키고 체르보네츠를 도입한 재무인민위원. 훗날 반대파와 연루되어 체포되었고 수용소에서 살해되었다.', 'Finance commissar after the civil war, he helped stabilize the currency and introduce the chervonets. Later linked to opposition circles, he was arrested and killed in prison.', 'murdered', '옥중 살해', 'Killed in prison', ['소콜니코프'], ['Sokolnikov']),
+        pc('zverev', 'stalin-era', 'З', 'Арсений Зверев', '아르세니 즈베레프', 'Arseny Zverev', '1900–1969', '전쟁과 전후 재정을 버틴 장기 재무장관', 'Long-serving finance minister through war and reconstruction', '1938년 재무인민위원이 되어 전쟁 재정과 전후 재건 재정을 관리했다. 스탈린과 흐루쇼프 시대를 걸친 보기 드문 장기 재정 관료였다.', 'He became finance commissar in 1938 and managed wartime finance and postwar reconstruction finance. He was a rare long-serving fiscal official across Stalin and Khrushchev.', 'natural', '자연사', 'Natural causes', ['즈베레프'], ['Zverev']),
+        pc('garbuzov', 'thaw', 'Г', 'Василий Гарбузов', '바실리 가르부조프', 'Vasily Garbuzov', '1911–1985', '정체기의 장기 재무장관', 'The long-serving finance minister of stagnation', '1960년부터 1985년까지 재무장관으로 예산과 재정 운용을 관리했다. 브레즈네프 시대의 조용한 재정 지속성을 상징한다.', 'Finance minister from 1960 to 1985, he managed budgets and fiscal operations. He symbolizes the quiet fiscal continuity of the Brezhnev era.', 'natural', '자연사', 'Natural causes', ['가르부조프'], ['Garbuzov']),
+        pc('alkhimov', 'thaw', 'А', 'Владимир Алхимов', '블라디미르 알히모프', 'Vladimir Alkhimov', '1919–1993', '국가은행을 오래 이끈 통화 관료', 'Long-serving head of Gosbank', '1963년부터 1986년까지 국가은행 총재를 맡아 계획경제의 결제, 신용, 통화 관리를 담당했다.', 'From 1963 to 1986 he headed Gosbank, overseeing payments, credit and monetary administration inside the planned economy.', 'natural', '자연사', 'Natural causes', ['알히모프'], ['Alkhimov']),
+        pc('gerashchenko', 'perestroika', 'Г', 'Виктор Геращенко', '빅토르 게라셴코', 'Viktor Gerashchenko', '1937–2022', '소련 말기와 러시아 초기의 중앙은행가', 'Central banker of the Soviet collapse and Russian transition', '1988년 국가은행 총재가 되어 붕괴 직전의 통화체계를 다뤘고, 이후 러시아 중앙은행에서도 핵심 역할을 했다.', 'He became Gosbank chairman in 1988 and managed the monetary system in the final Soviet years, later playing a central role in Russia’s central bank.', 'natural', '자연사', 'Natural causes', ['게라셴코'], ['Gerashchenko']),
+        pc('katushev', 'perestroika', 'К', 'Константин Катушев', '콘스탄틴 카투셰프', 'Konstantin Katushev', '1927–2010', '대외경제관계를 맡은 말기 경제 관료', 'Late Soviet foreign-economic official', '브레즈네프 시대 당 서기와 각료회의 부의장을 거쳐, 페레스트로이카 말기 대외경제관계 장관을 맡았다.', 'A party secretary and deputy premier in the Brezhnev era, he later became minister for foreign economic relations during perestroika.', 'natural', '자연사', 'Natural causes', ['카투셰프'], ['Katushev']),
+        pc('tevosian', 'stalin-era', 'Т', 'Иван Тевосян', '이반 테보샨', 'Ivan Tevosian', '1902–1958', '스탈린 공업화의 금속 관료', 'Metallurgy administrator of Stalinist industrialization', '중공업, 조선, 금속 부문을 오가며 전시와 전후 공업생산을 관리했다. 스탈린식 산업국가의 핵심 생산 관료였다.', 'He moved through heavy industry, shipbuilding and metallurgy posts, managing wartime and postwar production. He was a core production administrator of Stalin’s industrial state.', 'natural', '자연사', 'Natural causes', ['테보샨'], ['Tevosian']),
+        pc('malyshev', 'stalin-era', 'М', 'Вячеслав Малышев', '뱌체슬라프 말리셰프', 'Vyacheslav Malyshev', '1902–1957', '전차와 원자력 산업을 잇는 생산 관료', 'Production boss from tanks to atomic industry', '전시 전차생산과 전후 중형기계공업을 맡았다. 군수공업과 원자력 행정이 맞물리던 시기의 핵심 기술관료였다.', 'He oversaw wartime tank production and postwar medium machine-building. He was a key technocrat where armaments and atomic administration overlapped.', 'natural', '자연사', 'Natural causes', ['말리셰프'], ['Malyshev']),
+        pc('vannikov', 'stalin-era', 'В', 'Борис Ванников', '보리스 반니코프', 'Boris Vannikov', '1897–1962', '탄약과 원자력 행정을 맡은 베리야의 생산 관리자', 'Ammunition and atomic administrator under Beria', '전시 탄약 생산을 관리했고, 전후에는 제1총국에서 원자폭탄 계획의 행정을 맡았다. 비밀 군수국가의 대표적 생산 관료다.', 'He managed wartime ammunition production and then atomic administration in the First Main Directorate. He was a representative production official of the secret military-industrial state.', 'natural', '자연사', 'Natural causes', ['반니코프'], ['Vannikov']),
+        pc('slavsky', 'thaw', 'С', 'Ефим Славский', '예핌 슬라프스키', 'Yefim Slavsky', '1898–1991', '핵산업을 장기 지휘한 중형기계공업 장관', 'Long-serving nuclear industry minister', '1957년부터 거의 30년 동안 중형기계공업 장관으로 핵무기와 원자력 산업을 지휘했다.', 'From 1957 for nearly three decades he led the Ministry of Medium Machine-Building, commanding nuclear weapons and atomic industry.', 'natural', '자연사', 'Natural causes', ['슬라프스키'], ['Slavsky']),
+        pc('afanasyev', 'thaw', 'А', 'Сергей Афанасьев', '세르게이 아파나시예프', 'Sergey Afanasyev', '1918–2001', '미사일과 우주산업의 장기 장관', 'Long-serving minister of missile and space industry', '1965년 일반기계공업 장관이 되어 탄도미사일, 발사체, 위성 산업을 관리했다. 소련 우주산업의 비밀 행정가였다.', 'He became minister of general machine-building in 1965, overseeing ballistic missiles, launch vehicles and satellites. He was a secret administrator of the Soviet space industry.', 'natural', '자연사', 'Natural causes', ['아파나시예프'], ['Afanasyev']),
+        pc('yakov-yakovlev', 'stalin-era', 'Я', 'Яков Яковлев', '야코프 야코블레프', 'Yakov Yakovlev', '1896–1938', '집단화 행정을 맡은 농업인민위원', 'Agriculture commissar of collectivization', '1929년 농업인민위원이 되어 집단화 행정을 담당했다. 대숙청 중 체포되어 1938년 처형되었다.', 'He became agriculture commissar in 1929 and administered collectivization. During the Great Terror he was arrested and shot in 1938.', 'executed', '처형', 'Executed', ['야코블레프'], ['Yakovlev']),
+        pc('benediktov', 'stalin-era', 'Б', 'Иван Бенедиктов', '이반 베네딕토프', 'Ivan Benediktov', '1902–1983', '스탈린 말기와 전후 농업행정의 장기 관료', 'Long-serving agriculture administrator of late Stalinism and reconstruction', '1938년부터 여러 차례 농업 행정을 맡아 전쟁과 전후 식량문제를 관리했다. 흐루쇼프 시대 초에 자리에서 물러났다.', 'From 1938 he repeatedly held agricultural posts, managing war and postwar food problems. He left the central agricultural post early in the Khrushchev era.', 'natural', '자연사', 'Natural causes', ['베네딕토프'], ['Benediktov']),
+        pc('matskevich', 'thaw', 'М', 'Владимир Мацкевич', '블라디미르 마츠케비치', 'Vladimir Matskevich', '1909–1998', '처녀지 이후 농정을 맡은 농업장관', 'Agriculture minister after the virgin-lands drive', '흐루쇼프와 브레즈네프 초기에 농업장관을 맡아 처녀지 개간 이후의 농업 행정을 관리했다.', 'He served as agriculture minister under Khrushchev and early Brezhnev, managing agricultural administration after the virgin-lands campaign.', 'natural', '자연사', 'Natural causes', ['마츠케비치'], ['Matskevich']),
         pc('polyansky', 'thaw', 'П', 'Дмитрий Полянский', '드미트리 폴랸스키', 'Dmitry Polyansky', '1917–2001', '농업과 정부 부문을 오간 브레즈네프 시대 관료', 'Brezhnev-era official across agriculture and government', '각료회의 부의장과 농업장관을 지내며 브레즈네프 시대 농업 행정에 관여했다. 이후 외교직으로 이동했다.', 'A deputy premier and agriculture minister, he was involved in Brezhnev-era agricultural administration before moving into diplomacy.', 'deposed', '전보 1976', 'Transferred 1976', ['폴랸스키'], ['Polyansky']),
         pc('mesyats', 'thaw', 'М', 'Валентин Месяц', '발렌틴 메시야츠', 'Valentin Mesyats', '1928–2019', '정체 말기의 농업장관', 'Agriculture minister of late stagnation', '1976년부터 1985년까지 농업장관을 맡았다. 식량수입과 농업 침체가 굳어진 시기의 행정 책임자였다.', 'Agriculture minister from 1976 to 1985, he administered the sector as food imports and agricultural stagnation hardened.', 'deposed', '퇴임 1985', 'Left office 1985', ['메시야츠'], ['Mesyats']),
         pc('murakhovsky', 'perestroika', 'М', 'Всеволод Мураховский', '브세볼로드 무라홉스키', 'Vsevolod Murakhovsky', '1926–2017', '고스아그로프롬의 초대 의장', 'First chairman of Gosagroprom', '1985년 농업 관련 부처들을 묶은 국가농공위원회 의장이 되었다. 페레스트로이카식 농업 행정개편의 얼굴이었다.', 'In 1985 he became chairman of Gosagroprom, which merged agricultural ministries. He was the face of perestroika-era agricultural administrative reform.', 'deposed', '퇴임 1989', 'Left office 1989', ['무라홉스키'], ['Murakhovsky']),
         pc('shayakhmetov', 'thaw', 'Ш', 'Жумабай Шаяхметов', '주마바이 샤야흐메토프', 'Zhumabay Shayakhmetov', '1902–1966', '카자흐 SSR 출신 민족소비에트 의장', 'Kazakh SSR figure who chaired the Soviet of Nationalities', '카자흐 당 지도부에서 올라와 민족소비에트 의장을 맡았다. 스탈린 말기와 흐루쇼프 초의 공화국 대표제 라인을 보여준다.', 'Rising from the Kazakh party leadership, he chaired the Soviet of Nationalities. His career shows the republic-representation line from late Stalinism into early Khrushchev.', 'deposed', '실각 1954', 'Removed 1954', ['샤야흐메토프'], ['Shayakhmetov']),
-        pc('paleckis', 'thaw', 'П', 'Юстас Палецкис', '유스타스 팔레츠키스', 'Justas Paleckis', '1899–1980', '리투아니아 소비에트화의 얼굴', 'A face of Soviet Lithuania', '리투아니아의 소비에트화 과정에서 지도자가 되었고, 이후 민족소비에트 의장을 지냈다. 발트 공화국 대표제의 상징적 인물이다.', 'He became a leader during Lithuania’s Sovietization and later chaired the Soviet of Nationalities. He is a symbolic figure of Baltic republic representation.', 'natural', '자연사 1980', 'Died 1980', ['팔레츠키스'], ['Paleckis']),
+        pc('paleckis', 'thaw', 'П', 'Юстас Палецкис', '유스타스 팔레츠키스', 'Justas Paleckis', '1899–1980', '리투아니아 소비에트화의 얼굴', 'A face of Soviet Lithuania', '리투아니아의 소비에트화 과정에서 지도자가 되었고, 이후 민족소비에트 의장을 지냈다. 발트 공화국 대표제의 상징적 인물이다.', 'He became a leader during Lithuania’s Sovietization and later chaired the Soviet of Nationalities. He is a symbolic figure of Baltic republic representation.', 'natural', '자연사', 'Natural causes', ['팔레츠키스'], ['Paleckis']),
         pc('nasriddinova', 'thaw', 'Н', 'Ядгар Насриддинова', '야드가르 나스리디노바', 'Yadgar Nasriddinova', '1920–2006', '우즈베크 SSR 출신 민족소비에트 의장', 'Uzbek SSR figure who chaired the Soviet of Nationalities', '우즈베크 공화국 지도부에서 올라와 민족소비에트 의장을 지냈다. 브레즈네프 시대 중앙과 공화국 엘리트의 연결을 보여준다.', 'Rising from the Uzbek republic leadership, she chaired the Soviet of Nationalities. Her career shows the link between central power and republic elites under Brezhnev.', 'deposed', '퇴임 1974', 'Left office 1974', ['나스리디노바'], ['Nasriddinova']),
         pc('voss', 'thaw', 'В', 'Август Восс', '아우구스트 보스', 'Augusts Voss', '1916–1994', '라트비아 당 지도자 출신 민족소비에트 의장', 'Latvian party boss turned Soviet of Nationalities chairman', '라트비아 공산당 제1서기를 지낸 뒤 민족소비에트 의장이 되었다. 정체 말기 발트 공화국 관리의 한 얼굴이었다.', 'After serving as First Secretary in Latvia, he became chairman of the Soviet of Nationalities. He was one face of late-stagnation Baltic republic management.', 'deposed', '퇴임 1989', 'Left office 1989', ['보스'], ['Voss']),
         pc('nishonov', 'perestroika', 'Н', 'Рафик Нишанов', '라피크 니쇼노프', 'Rafiq Nishonov', '1926–2023', '소련 말기의 마지막 민족소비에트 의장', 'The last chairman of the Soviet of Nationalities', '우즈베크 당 지도부 출신으로 1989년 민족소비에트 의장이 되었다. 그의 임기는 연방 자체가 해체되는 시기와 겹쳤다.', 'From the Uzbek party leadership, he became chairman of the Soviet of Nationalities in 1989. His term overlapped with the dissolution of the Union itself.', 'deposed', '퇴임 1991', 'Left office 1991', ['니쇼노프'], ['Nishonov']),
-        pc('kurchatov', 'stalin-era', 'К', 'Игорь Курчатов', '이고리 쿠르차토프', 'Igor Kurchatov', '1903–1960', '소련 원자폭탄의 과학 책임자', 'Scientific head of the Soviet atomic bomb', '베리야의 비밀 행정 아래 원자폭탄 계획의 과학 책임자가 되었다. 1949년 첫 소련 핵실험은 그의 연구소와 네트워크의 성과였다.', 'Under Beria’s secret administration he became scientific head of the atomic bomb project. The 1949 first Soviet nuclear test was the achievement of his institute and network.', 'natural', '자연사 1960', 'Died 1960', ['쿠르차토프'], ['Kurchatov']),
-        pc('keldysh', 'thaw', 'К', 'Мстислав Келдыш', '므스티슬라프 켈디시', 'Mstislav Keldysh', '1911–1978', '우주과학을 조정한 과학아카데미 총재', 'Academy president who coordinated space science', '응용수학자이자 과학아카데미 총재로 우주개발의 과학적 조정을 맡았다. 코롤료프와 함께 소련 우주계획의 핵심 과학 지도부였다.', 'An applied mathematician and president of the Academy of Sciences, he coordinated the scientific side of the space program. Alongside Korolev, he was core scientific leadership of Soviet space.', 'natural', '자연사 1978', 'Died 1978', ['켈디시'], ['Keldysh']),
-        pc('kerimov', 'thaw', 'К', 'Керим Керимов', '케림 케리모프', 'Kerim Kerimov', '1917–2003', '오랫동안 이름이 숨겨진 유인우주비행 관리자', 'The long-hidden manager of crewed spaceflight', '국가위원회 의장으로 유인우주비행 발사를 감독했지만, 소련 시기에는 이름이 공개되지 않았다. 우주개발의 비밀 행정 얼굴이었다.', 'As State Commission chair he oversaw crewed space launches, but his name was not public in the Soviet era. He was a hidden administrative face of the space program.', 'natural', '자연사 2003', 'Died 2003', ['케리모프'], ['Kerimov']),
-        pc('fadeyev', 'stalin-era', 'Ф', 'Александр Фадеев', '알렉산드르 파데예프', 'Alexander Fadeyev', '1901–1956', '작가동맹의 관리자, 해빙 앞에서 자살하다', 'Writers’ Union manager who killed himself at the thaw', '작가동맹 지도자로 사회주의 리얼리즘과 문학 통제의 행정가였다. 스탈린 사후 자신의 역할을 견디지 못하고 1956년 자살했다.', 'As a Writers’ Union leader he administered socialist realism and literary control. After Stalin’s death he could not bear his own role and killed himself in 1956.', 'suicide', '자살 1956', 'Suicide 1956', ['파데예프'], ['Fadeyev']),
-        pc('furtseva', 'thaw', 'Ф', 'Екатерина Фурцева', '예카테리나 푸르체바', 'Yekaterina Furtseva', '1910–1974', '해빙과 통제 사이의 장기 문화장관', 'Long-serving culture minister between thaw and control', '정치국 후보위원을 거쳐 1960년 문화장관이 되었다. 해빙 이후 예술과 공연, 검열의 경계를 관리했다.', 'After serving as a candidate Politburo member, she became Minister of Culture in 1960. She managed the boundaries of art, performance and censorship after the thaw.', 'natural', '자연사 1974', 'Died 1974', ['푸르체바'], ['Furtseva']),
-        pc('gubenko', 'perestroika', 'Г', 'Николай Губенко', '니콜라이 구벤코', 'Nikolai Gubenko', '1941–2020', '소련의 마지막 문화장관', 'The last Soviet culture minister', '배우이자 영화감독 출신으로 페레스트로이카 말기 문화장관이 되었다. 검열체제가 해체되는 시기의 문화 행정을 맡았다.', 'An actor and film director, he became culture minister in late perestroika. He administered culture as the censorship system was coming apart.', 'natural', '자연사 2020', 'Died 2020', ['구벤코'], ['Gubenko']),
-        pc('chernenko', 'thaw', 'Ч', 'Константин Черненко', '콘스탄틴 체르넨코', 'Konstantin Chernenko', '1911–1985', '브레즈네프 체제의 마지막 서기장', 'The last General Secretary of the Brezhnev order', '브레즈네프의 비서 출신으로 안드로포프 사후 서기장이 되었지만, 건강 악화로 통치 능력은 제한적이었다. 그의 짧은 집권은 고르바초프 등장의 막간이 되었다.', 'A Brezhnev aide who became General Secretary after Andropov, but whose failing health sharply limited his rule. His short tenure became the interlude before Gorbachev.', 'natural', '자연사 1985', 'Died 1985', ['체르넨코'], ['Chernenko']),
-        pc('shepilov', 'thaw', 'Ш', 'Дмитрий Шепилов', '드미트리 셰필로프', 'Dmitri Shepilov', '1905–1995', '흐루쇼프의 이론가에서 「그들에게 가담한 셰필로프」가 된 사람', 'Khrushchev’s theoretician who became “Shepilov who joined them”', '경제학자 출신의 당 이론가. 전후 선전선동부와 『프라우다』를 거치며 스탈린 말기 이념 장치를 운영했고, 흐루쇼프 초에는 말렌코프 비판과 비밀연설의 이론적 언어를 제공했다. 1956년 외무장관으로 수에즈 위기 국면에 등장했지만, 1957년 반당그룹에 가담했다가 「그들에게 가담한 셰필로프」라는 조롱 속에 몰락했다. 이후 키르기스 경제연구소와 국가문서보관소로 밀려났다.', 'An economist turned party theoretician. After the war he moved through Agitprop and Pravda, helping run late-Stalin ideology; under early Khrushchev he supplied the theoretical language for attacking Malenkov and for the Secret Speech. In 1956 he briefly became foreign minister during the Suez crisis, but in 1957 joined the Anti-Party Group and fell under the mocking formula “Shepilov who joined them.” He was then pushed to a Kyrgyz economics institute and later the state archive.', 'deposed', '실각 1957 · 주변화', 'Removed 1957 · sidelined', ['셰필로프'], ['Shepilov']),
+        pc('kurchatov', 'stalin-era', 'К', 'Игорь Курчатов', '이고리 쿠르차토프', 'Igor Kurchatov', '1903–1960', '소련 원자폭탄의 과학 책임자', 'Scientific head of the Soviet atomic bomb', '베리야의 비밀 행정 아래 원자폭탄 계획의 과학 책임자가 되었다. 1949년 첫 소련 핵실험은 그의 연구소와 네트워크의 성과였다.', 'Under Beria’s secret administration he became scientific head of the atomic bomb project. The 1949 first Soviet nuclear test was the achievement of his institute and network.', 'natural', '자연사', 'Natural causes', ['쿠르차토프'], ['Kurchatov']),
+        pc('keldysh', 'thaw', 'К', 'Мстислав Келдыш', '므스티슬라프 켈디시', 'Mstislav Keldysh', '1911–1978', '우주과학을 조정한 과학아카데미 총재', 'Academy president who coordinated space science', '응용수학자이자 과학아카데미 총재로 우주개발의 과학적 조정을 맡았다. 코롤료프와 함께 소련 우주계획의 핵심 과학 지도부였다.', 'An applied mathematician and president of the Academy of Sciences, he coordinated the scientific side of the space program. Alongside Korolev, he was core scientific leadership of Soviet space.', 'natural', '자연사', 'Natural causes', ['켈디시'], ['Keldysh']),
+        pc('kerimov', 'thaw', 'К', 'Керим Керимов', '케림 케리모프', 'Kerim Kerimov', '1917–2003', '오랫동안 이름이 숨겨진 유인우주비행 관리자', 'The long-hidden manager of crewed spaceflight', '국가위원회 의장으로 유인우주비행 발사를 감독했지만, 소련 시기에는 이름이 공개되지 않았다. 우주개발의 비밀 행정 얼굴이었다.', 'As State Commission chair he oversaw crewed space launches, but his name was not public in the Soviet era. He was a hidden administrative face of the space program.', 'natural', '자연사', 'Natural causes', ['케리모프'], ['Kerimov']),
+        pc('fadeyev', 'stalin-era', 'Ф', 'Александр Фадеев', '알렉산드르 파데예프', 'Alexander Fadeyev', '1901–1956', '작가동맹의 관리자, 해빙 앞에서 자살하다', 'Writers’ Union manager who killed himself at the thaw', '작가동맹 지도자로 사회주의 리얼리즘과 문학 통제의 행정가였다. 스탈린 사후 자신의 역할을 견디지 못하고 1956년 자살했다.', 'As a Writers’ Union leader he administered socialist realism and literary control. After Stalin’s death he could not bear his own role and killed himself in 1956.', 'suicide', '자살', 'Suicide', ['파데예프'], ['Fadeyev']),
+        pc('furtseva', 'thaw', 'Ф', 'Екатерина Фурцева', '예카테리나 푸르체바', 'Yekaterina Furtseva', '1910–1974', '해빙과 통제 사이의 장기 문화장관', 'Long-serving culture minister between thaw and control', '정치국 후보위원을 거쳐 1960년 문화장관이 되었다. 해빙 이후 예술과 공연, 검열의 경계를 관리했다.', 'After serving as a candidate Politburo member, she became Minister of Culture in 1960. She managed the boundaries of art, performance and censorship after the thaw.', 'natural', '자연사', 'Natural causes', ['푸르체바'], ['Furtseva']),
+        pc('gubenko', 'perestroika', 'Г', 'Николай Губенко', '니콜라이 구벤코', 'Nikolai Gubenko', '1941–2020', '소련의 마지막 문화장관', 'The last Soviet culture minister', '배우이자 영화감독 출신으로 페레스트로이카 말기 문화장관이 되었다. 검열체제가 해체되는 시기의 문화 행정을 맡았다.', 'An actor and film director, he became culture minister in late perestroika. He administered culture as the censorship system was coming apart.', 'natural', '자연사', 'Natural causes', ['구벤코'], ['Gubenko']),
+        pc('chernenko', 'thaw', 'Ч', 'Константин Черненко', '콘스탄틴 체르넨코', 'Konstantin Chernenko', '1911–1985', '브레즈네프 체제의 마지막 서기장', 'The last General Secretary of the Brezhnev order', '브레즈네프의 비서 출신으로 안드로포프 사후 서기장이 되었지만, 건강 악화로 통치 능력은 제한적이었다. 그의 짧은 집권은 고르바초프 등장의 막간이 되었다.', 'A Brezhnev aide who became General Secretary after Andropov, but whose failing health sharply limited his rule. His short tenure became the interlude before Gorbachev.', 'natural', '자연사', 'Natural causes', ['체르넨코'], ['Chernenko']),
+        pc('shepilov', 'thaw', 'Ш', 'Дмитрий Шепилов', '드미트리 셰필로프', 'Dmitri Shepilov', '1905–1995', '흐루쇼프의 이론가에서 「그들에게 가담한 셰필로프」가 된 사람', 'Khrushchev’s theoretician who became “Shepilov who joined them”', '경제학자 출신의 당 이론가. 전후 선전선동부와 『프라우다』를 거치며 스탈린 말기 이념 장치를 운영했고, 흐루쇼프 초에는 말렌코프 비판과 비밀연설의 이론적 언어를 제공했다. 1956년 외무장관으로 수에즈 위기 국면에 등장했지만, 1957년 반당그룹에 가담했다가 「그들에게 가담한 셰필로프」라는 조롱 속에 몰락했다. 이후 키르기스 경제연구소와 국가문서보관소로 밀려났다.', 'An economist turned party theoretician. After the war he moved through Agitprop and Pravda, helping run late-Stalin ideology; under early Khrushchev he supplied the theoretical language for attacking Malenkov and for the Secret Speech. In 1956 he briefly became foreign minister during the Suez crisis, but in 1957 joined the Anti-Party Group and fell under the mocking formula “Shepilov who joined them.” He was then pushed to a Kyrgyz economics institute and later the state archive.', 'deposed', '실각 1957', 'Removed 1957', ['셰필로프'], ['Shepilov']),
         pc('bessmertnykh', 'perestroika', 'Б', 'Александр Бессмертных', '알렉산드르 베스메르트니흐', 'Alexander Bessmertnykh', '1933–', '소련 말기의 마지막 정규 외무장관', 'The last regular Soviet foreign minister', '셰바르드나제 사임 뒤 외무장관이 되었고, 1991년 8월 쿠데타 직후 해임되었다. 냉전 종결 외교의 끝자락을 담당한 전문 외교관이었다.', 'He became foreign minister after Shevardnadze resigned and was dismissed after the August 1991 coup. A professional diplomat at the tail end of Cold War diplomacy.', 'deposed', '해임 1991', 'Dismissed 1991', ['베스메르트니흐'], ['Bessmertnykh']),
         pc('pankin', 'perestroika', 'П', 'Борис Панкин', '보리스 판킨', 'Boris Pankin', '1931–', '쿠데타 이후 붕괴 직전의 외무장관', 'The post-coup foreign minister of the collapsing Union', '8월 쿠데타에 반대한 대사 출신 외교관으로, 쿠데타 실패 뒤 외무장관이 되었다. 그의 임기는 소련 외무부 자체가 해체되는 과정과 겹쳤다.', 'A former ambassador who opposed the August coup and became foreign minister after it failed. His tenure overlapped with the dissolution of the Soviet foreign ministry itself.', 'deposed', '퇴임 1991', 'Left office 1991', ['판킨'], ['Pankin']),
-        pc('merkulov', 'stalin-era', 'М', 'Всеволод Меркулов', '브세볼로드 메르쿨로프', 'Vsevolod Merkulov', '1895–1953', '베리야의 측근이었던 국가보안인민위원', 'Beria’s lieutenant in state security', 'NKGB와 초기 MGB를 이끈 베리야 계열 보안 관료. 스탈린 사후 베리야와 함께 숙청되어 1953년 총살되었다.', 'A Beria-aligned security official who led the NKGB and early MGB. After Stalin’s death he was purged with Beria and shot in 1953.', 'executed', '처형 1953', 'Shot 1953', ['메르쿨로프'], ['Merkulov']),
-        pc('abakumov', 'stalin-era', 'А', 'Виктор Абакумов', '빅토르 아바쿠모프', 'Viktor Abakumov', '1908–1954', '스메르시에서 MGB로 오른 보안 수장', 'From SMERSH to the MGB', '전시 방첩기관 스메르시를 지휘했고 전후 MGB 장관이 되었다. 레닌그라드 사건 이후 권력투쟁 속에서 체포되어 스탈린 사후 처형되었다.', 'He led wartime SMERSH counterintelligence and became MGB minister after the war. Arrested amid postwar factional struggles, he was executed after Stalin’s death.', 'executed', '처형 1954', 'Shot 1954', ['아바쿠모프'], ['Abakumov']),
+        pc('merkulov', 'stalin-era', 'М', 'Всеволод Меркулов', '브세볼로드 메르쿨로프', 'Vsevolod Merkulov', '1895–1953', '베리야의 측근이었던 국가보안인민위원', 'Beria’s lieutenant in state security', 'NKGB와 초기 MGB를 이끈 베리야 계열 보안 관료. 스탈린 사후 베리야와 함께 숙청되어 1953년 총살되었다.', 'A Beria-aligned security official who led the NKGB and early MGB. After Stalin’s death he was purged with Beria and shot in 1953.', 'executed', '처형', 'Executed', ['메르쿨로프'], ['Merkulov']),
+        pc('abakumov', 'stalin-era', 'А', 'Виктор Абакумов', '빅토르 아바쿠모프', 'Viktor Abakumov', '1908–1954', '스메르시에서 MGB로 오른 보안 수장', 'From SMERSH to the MGB', '전시 방첩기관 스메르시를 지휘했고 전후 MGB 장관이 되었다. 레닌그라드 사건 이후 권력투쟁 속에서 체포되어 스탈린 사후 처형되었다.', 'He led wartime SMERSH counterintelligence and became MGB minister after the war. Arrested amid postwar factional struggles, he was executed after Stalin’s death.', 'executed', '처형', 'Executed', ['아바쿠모프'], ['Abakumov']),
         pc('ignatiev', 'stalin-era', 'И', 'Семён Игнатьев', '세묜 이그나티예프', 'Semyon Ignatiev', '1904–1983', '스탈린 말기의 마지막 MGB 장관', 'The last MGB minister of Stalin’s final years', '스탈린 말기 MGB를 맡아 「의사 음모」 국면에 관여했다. 스탈린 사후 베리야에게 공격받았으나 처형은 피하고 지방 당직으로 밀려났다.', 'He headed the MGB during Stalin’s final years and the Doctors’ Plot period. Attacked by Beria after Stalin’s death, he avoided execution and was pushed into provincial party work.', 'deposed', '실각 1953', 'Removed 1953', ['이그나티예프'], ['Ignatiev']),
         pc('serov', 'thaw', 'С', 'Иван Серов', '이반 세로프', 'Ivan Serov', '1905–1990', '초대 KGB 의장', 'The first chairman of the KGB', '1954년 신설 KGB의 초대 의장이 되었고, 뒤에는 GRU를 지휘했다. 흐루쇼프 시대 보안기관 재편의 핵심 인물이었다.', 'He became the first chairman of the newly created KGB in 1954 and later led the GRU. He was central to the Khrushchev-era reshaping of security organs.', 'deposed', '해임 1963', 'Dismissed 1963', ['세로프'], ['Serov']),
-        pc('shelepin', 'thaw', 'Ш', 'Александр Шелепин', '알렉산드르 셸레핀', 'Alexander Shelepin', '1918–1994', '청년동맹에서 KGB로 간 야심가', 'The Komsomol boss who took over the KGB', '콤소몰 지도자에서 KGB 의장으로 옮겨 보안기관의 세대교체를 상징했다. 이후 당 지도부에서 브레즈네프의 경쟁자로 여겨졌고 점차 밀려났다.', 'A Komsomol leader turned KGB chairman, he symbolized a generational reshuffle of the security organs. Later seen as a possible rival to Brezhnev, he was gradually pushed aside.', 'deposed', '실각 1975', 'Sidelined 1975', ['셸레핀'], ['Shelepin']),
-        pc('semichastny', 'thaw', 'С', 'Владимир Семичастный', '블라디미르 세미차스트니', 'Vladimir Semichastny', '1924–2001', '흐루쇼프 축출을 지켜본 KGB 의장', 'The KGB chairman during Khrushchev’s fall', '셸레핀 계열의 KGB 의장으로, 1964년 흐루쇼프 축출 과정에 있었다. 브레즈네프 체제에서 곧 우크라이나 직책으로 밀려났다.', 'A Shelepin-aligned KGB chairman present during Khrushchev’s removal in 1964. Under Brezhnev he was soon moved aside to a Ukrainian post.', 'deposed', '해임 1967', 'Removed 1967', ['세미차스트니'], ['Semichastny']),
+        pc('shelepin', 'thaw', 'Ш', 'Александр Шелепин', '알렉산드르 셸레핀', 'Alexander Shelepin', '1918–1994', '청년동맹에서 KGB로 간 야심가', 'The Komsomol boss who took over the KGB', '콤소몰 지도자에서 KGB 의장으로 옮겨 보안기관의 세대교체를 상징했다. 이후 당 지도부에서 브레즈네프의 경쟁자로 여겨졌고 점차 밀려났다.', 'A Komsomol leader turned KGB chairman, he symbolized a generational reshuffle of the security organs. Later seen as a possible rival to Brezhnev, he was gradually pushed aside.', 'deposed', '실각 1975', 'Removed 1975', ['셸레핀'], ['Shelepin']),
+        pc('semichastny', 'thaw', 'С', 'Владимир Семичастный', '블라디미르 세미차스트니', 'Vladimir Semichastny', '1924–2001', '흐루쇼프 축출을 지켜본 KGB 의장', 'The KGB chairman during Khrushchev’s fall', '셸레핀 계열의 KGB 의장으로, 1964년 흐루쇼프 축출 과정에 있었다. 브레즈네프 체제에서 곧 우크라이나 직책으로 밀려났다.', 'A Shelepin-aligned KGB chairman present during Khrushchev’s removal in 1964. Under Brezhnev he was soon moved aside to a Ukrainian post.', 'deposed', '해임 1967', 'Dismissed 1967', ['세미차스트니'], ['Semichastny']),
         pc('fedorchuk', 'thaw', 'Ф', 'Виталий Федорчук', '비탈리 페도르추크', 'Vitaly Fedorchuk', '1918–2008', '안드로포프 뒤의 짧은 KGB 의장', 'The brief KGB chairman after Andropov', '안드로포프가 서기장이 되자 KGB 의장을 이어받았지만 곧 내무장관으로 이동했다. 전환기의 짧은 보안기관 수장이었다.', 'He succeeded Andropov as KGB chairman when Andropov became General Secretary, but was soon moved to the Interior Ministry. His chairmanship was a brief transition.', 'deposed', '전보 1982', 'Transferred 1982', ['페도르추크'], ['Fedorchuk']),
-        pc('chebrikov', 'thaw', 'Ч', 'Виктор Чебриков', '빅토르 체브리코프', 'Viktor Chebrikov', '1923–1999', '정체 말기와 페레스트로이카 초의 KGB 의장', 'KGB chairman from late stagnation into perestroika', '브레즈네프 말기 보안기관에서 올라와 1982년부터 KGB를 이끌었다. 고르바초프 시기에도 한동안 자리를 지켰으나 개혁의 속도와 맞지 않아 교체되었다.', 'Rising through the late-Brezhnev security apparatus, he led the KGB from 1982. He initially survived under Gorbachev, then was replaced as reform gathered pace.', 'deposed', '해임 1988', 'Removed 1988', ['체브리코프'], ['Chebrikov']),
-        pc('rykov', 'bolshevik', 'Р', 'Алексей Рыков', '알렉세이 리코프', 'Alexei Rykov', '1881–1938', '레닌 뒤의 총리, 우파 반대파로 몰리다', 'Lenin’s successor as premier, destroyed as the Right Opposition', '레닌 사후 인민위원회의 의장이 되었고 네프의 행정적 연속성을 대표했다. 스탈린의 대전환에 밀려난 뒤 제3차 모스크바 재판에서 처형되었다.', 'He became chairman of Sovnarkom after Lenin and embodied the administrative continuity of NEP. Pushed aside by Stalin’s Great Break, he was shot after the third Moscow trial.', 'executed', '처형 1938', 'Shot 1938', ['리코프'], ['Rykov']),
+        pc('chebrikov', 'thaw', 'Ч', 'Виктор Чебриков', '빅토르 체브리코프', 'Viktor Chebrikov', '1923–1999', '정체 말기와 페레스트로이카 초의 KGB 의장', 'KGB chairman from late stagnation into perestroika', '브레즈네프 말기 보안기관에서 올라와 1982년부터 KGB를 이끌었다. 고르바초프 시기에도 한동안 자리를 지켰으나 개혁의 속도와 맞지 않아 교체되었다.', 'Rising through the late-Brezhnev security apparatus, he led the KGB from 1982. He initially survived under Gorbachev, then was replaced as reform gathered pace.', 'deposed', '해임 1988', 'Dismissed 1988', ['체브리코프'], ['Chebrikov']),
+        pc('rykov', 'bolshevik', 'Р', 'Алексей Рыков', '알렉세이 리코프', 'Alexei Rykov', '1881–1938', '레닌 뒤의 총리, 우파 반대파로 몰리다', 'Lenin’s successor as premier, destroyed as the Right Opposition', '레닌 사후 인민위원회의 의장이 되었고 네프의 행정적 연속성을 대표했다. 스탈린의 대전환에 밀려난 뒤 제3차 모스크바 재판에서 처형되었다.', 'He became chairman of Sovnarkom after Lenin and embodied the administrative continuity of NEP. Pushed aside by Stalin’s Great Break, he was shot after the third Moscow trial.', 'executed', '처형', 'Executed', ['리코프'], ['Rykov']),
         pc('bulganin', 'thaw', 'Б', 'Николай Булганин', '니콜라이 불가닌', 'Nikolai Bulganin', '1895–1975', '군복을 입은 총리, 흐루쇼프에게 밀려나다', 'The uniformed premier pushed aside by Khrushchev', '전후 국방장관과 총리를 지냈지만 독자적 권력 기반은 약했다. 1957년 반당 그룹에 기울었다가 흐루쇼프에게 제거되었다.', 'He served as defence minister and premier after the war, but had a weak independent base. After leaning toward the Anti-Party Group in 1957, Khrushchev removed him.', 'deposed', '실각 1958', 'Removed 1958', ['불가닌'], ['Bulganin']),
         pc('tikhonov', 'thaw', 'Т', 'Николай Тихонов', '니콜라이 티호노프', 'Nikolai Tikhonov', '1905–1997', '브레즈네프 말기의 보수적 총리', 'The conservative premier of late Brezhnevism', '중공업 관료 출신으로 코시긴 뒤 총리가 되었다. 정체 말기의 경제 운영을 대표했고 고르바초프 초기에 리시코프로 교체되었다.', 'A heavy-industry official who succeeded Kosygin as premier. He represented late-stagnation economic administration and was replaced by Ryzhkov early under Gorbachev.', 'deposed', '퇴임 1985', 'Left office 1985', ['티호노프'], ['Tikhonov']),
         pc('ryzhkov', 'perestroika', 'Р', 'Николай Рыжков', '니콜라이 리시코프', 'Nikolai Ryzhkov', '1929–2024', '페레스트로이카 경제개혁기의 총리', 'Premier during perestroika’s economic crisis', '우랄 공업 관리자 출신으로 고르바초프의 총리가 되었지만, 시장개혁과 계획경제 보존 사이에서 흔들렸다. 경제 위기 속에서 1991년 초 물러났다.', 'A former Urals industrial manager who became Gorbachev’s premier, caught between market reform and preservation of planning. He left office in early 1991 amid economic crisis.', 'deposed', '퇴임 1991', 'Left office 1991', ['리시코프'], ['Ryzhkov']),
         pc('pavlov', 'perestroika', 'П', 'Валентин Павлов', '발렌틴 파블로프', 'Valentin Pavlov', '1937–2003', '소련의 마지막 총리이자 8월 쿠데타 가담자', 'The last Soviet premier and an August coup participant', '1991년 총리가 되어 화폐개혁과 긴축을 밀어붙였다. 8월 국가비상사태위원회에 참여했다가 쿠데타 실패 뒤 체포되었다.', 'He became premier in 1991, pushing monetary reform and austerity. He joined the August State Emergency Committee and was arrested after the coup failed.', 'deposed', '체포 1991', 'Arrested 1991', ['파블로프'], ['Pavlov']),
-        pc('frunze', 'bolshevik', 'Ф', 'Михаил Фрунзе', '미하일 프룬제', 'Mikhail Frunze', '1885–1925', '트로츠키 뒤의 붉은 군대 개편자', 'The Red Army reorganizer after Trotsky', '내전 지휘관으로 명성을 얻었고 1925년 전쟁인민위원이 되어 군 개편을 추진했다. 같은 해 수술 중 사망했고, 그 죽음은 오래 의심의 대상이 되었다.', 'A celebrated civil-war commander, he became War Commissar in 1925 and pushed military reorganization. He died during surgery that same year, a death long surrounded by suspicion.', 'natural', '수술 중 사망 1925', 'Died after surgery 1925', ['프룬제'], ['Frunze']),
-        pc('voroshilov', 'stalin-era', 'В', 'Климент Ворошилов', '클리멘트 보로실로프', 'Kliment Voroshilov', '1881–1969', '스탈린의 원수, 군사적 무능을 정치적 충성으로 버티다', 'Stalin’s marshal, sustained by loyalty more than command', '내전기 차리친 인맥으로 스탈린과 가까웠고 오랫동안 군사 지도부에 있었다. 겨울전쟁과 독소전 초기의 실패 뒤에도 상징적 원로로 살아남았다.', 'Close to Stalin from the Tsaritsyn circle, he remained in military leadership for years. Despite failures in the Winter War and early German invasion, he survived as a symbolic elder.', 'natural', '자연사 1969', 'Died 1969', ['보로실로프'], ['Voroshilov']),
-        pc('timoshenko', 'stalin-era', 'Т', 'Семён Тимошенко', '세묜 티모셴코', 'Semyon Timoshenko', '1895–1970', '전쟁 직전의 국방인민위원', 'Defence commissar on the eve of war', '겨울전쟁 뒤 보로실로프를 대신해 국방인민위원이 되었다. 1941년 침공 직전 군 재건을 맡았지만 시간은 너무 부족했다.', 'He replaced Voroshilov after the Winter War as defence commissar. He tried to rebuild the army before the 1941 invasion, but time was too short.', 'natural', '자연사 1970', 'Died 1970', ['티모셴코'], ['Timoshenko']),
-        pc('malinovsky', 'thaw', 'М', 'Родион Малиновский', '로디온 말리놉스키', 'Rodion Malinovsky', '1898–1967', '흐루쇼프 시대의 전쟁영웅 국방장관', 'The war-hero defence minister of the Khrushchev era', '제2차 세계대전 원수로 전후 국방장관이 되어 핵·미사일 시대의 군을 관리했다. 흐루쇼프의 군축과 전략전환 속에서 군부의 얼굴이었다.', 'A Second World War marshal, he became defence minister and managed the armed forces in the nuclear-missile age. He was the military face of Khrushchev’s strategic shifts.', 'natural', '자연사 1967', 'Died 1967', ['말리놉스키'], ['Malinovsky']),
-        pc('grechko', 'thaw', 'Г', 'Андрей Гречко', '안드레이 그레치코', 'Andrei Grechko', '1903–1976', '브레즈네프 체제 초의 국방장관', 'Brezhnev-era defence minister', '전쟁 원수 출신으로 1967년 국방장관이 되었다. 브레즈네프 시대 군사력 확대와 바르샤바조약군 체제를 대표했다.', 'A wartime marshal who became defence minister in 1967. He represented Brezhnev-era military expansion and the Warsaw Pact command system.', 'natural', '자연사 1976', 'Died 1976', ['그레치코'], ['Grechko']),
-        pc('ustinov', 'thaw', 'У', 'Дмитрий Устинов', '드미트리 우스티노프', 'Dmitry Ustinov', '1908–1984', '군수공업의 사람, 국방장관이 되다', 'The defence-industry man who became defence minister', '전시 군수생산과 전후 군산복합체를 관리한 관료. 1976년 국방장관이 되어 아프가니스탄 파병 결정의 핵심 원로 중 하나가 되었다.', 'An administrator of wartime armaments and the postwar military-industrial complex. He became defence minister in 1976 and was one of the elders behind the Afghan intervention.', 'natural', '자연사 1984', 'Died 1984', ['우스티노프'], ['Ustinov']),
-        pc('sokolov', 'perestroika', 'С', 'Сергей Соколов', '세르게이 소콜로프', 'Sergei Sokolov', '1911–2012', '마티아스 루스트 사건으로 해임된 국방장관', 'The defence minister removed after the Rust affair', '아프가니스탄 전쟁기의 원수로 1984년 국방장관이 되었다. 1987년 마티아스 루스트의 모스크바 착륙 사건 뒤 해임되었다.', 'A marshal of the Afghan-war period, he became defence minister in 1984. He was dismissed after Mathias Rust landed in Moscow in 1987.', 'deposed', '해임 1987', 'Removed 1987', ['소콜로프'], ['Sokolov']),
+        pc('frunze', 'bolshevik', 'Ф', 'Михаил Фрунзе', '미하일 프룬제', 'Mikhail Frunze', '1885–1925', '트로츠키 뒤의 붉은 군대 개편자', 'The Red Army reorganizer after Trotsky', '내전 지휘관으로 명성을 얻었고 1925년 전쟁인민위원이 되어 군 개편을 추진했다. 같은 해 수술 중 사망했고, 그 죽음은 오래 의심의 대상이 되었다.', 'A celebrated civil-war commander, he became War Commissar in 1925 and pushed military reorganization. He died during surgery that same year, a death long surrounded by suspicion.', 'natural', '수술 중 사망', 'Died in surgery', ['프룬제'], ['Frunze']),
+        pc('voroshilov', 'stalin-era', 'В', 'Климент Ворошилов', '클리멘트 보로실로프', 'Kliment Voroshilov', '1881–1969', '스탈린의 원수, 군사적 무능을 정치적 충성으로 버티다', 'Stalin’s marshal, sustained by loyalty more than command', '내전기 차리친 인맥으로 스탈린과 가까웠고 오랫동안 군사 지도부에 있었다. 겨울전쟁과 독소전 초기의 실패 뒤에도 상징적 원로로 살아남았다.', 'Close to Stalin from the Tsaritsyn circle, he remained in military leadership for years. Despite failures in the Winter War and early German invasion, he survived as a symbolic elder.', 'natural', '자연사', 'Natural causes', ['보로실로프'], ['Voroshilov']),
+        pc('timoshenko', 'stalin-era', 'Т', 'Семён Тимошенко', '세묜 티모셴코', 'Semyon Timoshenko', '1895–1970', '전쟁 직전의 국방인민위원', 'Defence commissar on the eve of war', '겨울전쟁 뒤 보로실로프를 대신해 국방인민위원이 되었다. 1941년 침공 직전 군 재건을 맡았지만 시간은 너무 부족했다.', 'He replaced Voroshilov after the Winter War as defence commissar. He tried to rebuild the army before the 1941 invasion, but time was too short.', 'natural', '자연사', 'Natural causes', ['티모셴코'], ['Timoshenko']),
+        pc('malinovsky', 'thaw', 'М', 'Родион Малиновский', '로디온 말리놉스키', 'Rodion Malinovsky', '1898–1967', '흐루쇼프 시대의 전쟁영웅 국방장관', 'The war-hero defence minister of the Khrushchev era', '제2차 세계대전 원수로 전후 국방장관이 되어 핵·미사일 시대의 군을 관리했다. 흐루쇼프의 군축과 전략전환 속에서 군부의 얼굴이었다.', 'A Second World War marshal, he became defence minister and managed the armed forces in the nuclear-missile age. He was the military face of Khrushchev’s strategic shifts.', 'natural', '자연사', 'Natural causes', ['말리놉스키'], ['Malinovsky']),
+        pc('grechko', 'thaw', 'Г', 'Андрей Гречко', '안드레이 그레치코', 'Andrei Grechko', '1903–1976', '브레즈네프 체제 초의 국방장관', 'Brezhnev-era defence minister', '전쟁 원수 출신으로 1967년 국방장관이 되었다. 브레즈네프 시대 군사력 확대와 바르샤바조약군 체제를 대표했다.', 'A wartime marshal who became defence minister in 1967. He represented Brezhnev-era military expansion and the Warsaw Pact command system.', 'natural', '자연사', 'Natural causes', ['그레치코'], ['Grechko']),
+        pc('ustinov', 'thaw', 'У', 'Дмитрий Устинов', '드미트리 우스티노프', 'Dmitry Ustinov', '1908–1984', '군수공업의 사람, 국방장관이 되다', 'The defence-industry man who became defence minister', '전시 군수생산과 전후 군산복합체를 관리한 관료. 1976년 국방장관이 되어 아프가니스탄 파병 결정의 핵심 원로 중 하나가 되었다.', 'An administrator of wartime armaments and the postwar military-industrial complex. He became defence minister in 1976 and was one of the elders behind the Afghan intervention.', 'natural', '자연사', 'Natural causes', ['우스티노프'], ['Ustinov']),
+        pc('sokolov', 'perestroika', 'С', 'Сергей Соколов', '세르게이 소콜로프', 'Sergei Sokolov', '1911–2012', '마티아스 루스트 사건으로 해임된 국방장관', 'The defence minister removed after the Rust affair', '아프가니스탄 전쟁기의 원수로 1984년 국방장관이 되었다. 1987년 마티아스 루스트의 모스크바 착륙 사건 뒤 해임되었다.', 'A marshal of the Afghan-war period, he became defence minister in 1984. He was dismissed after Mathias Rust landed in Moscow in 1987.', 'deposed', '해임 1987', 'Dismissed 1987', ['소콜로프'], ['Sokolov']),
         pc('yazov', 'perestroika', 'Я', 'Дмитрий Язов', '드미트리 야조프', 'Dmitry Yazov', '1924–2020', '8월 쿠데타의 국방장관', 'The defence minister of the August coup', '고르바초프 말기 국방장관으로 군의 불만을 대표했다. 1991년 국가비상사태위원회에 참여했으나 군이 결정적으로 움직이지 않으면서 체포되었다.', 'Gorbachev’s last defence minister, he embodied military discontent. He joined the 1991 State Emergency Committee, but the army did not move decisively and he was arrested.', 'deposed', '체포 1991', 'Arrested 1991', ['야조프'], ['Yazov']),
-        pc('krzhizhanovsky', 'bolshevik', 'К', 'Глеб Кржижановский', '글렙 크르지자놉스키', 'Gleb Krzhizhanovsky', '1872–1959', '전력화와 계획의 초기 설계자', 'Early architect of electrification and planning', '레닌의 오랜 동지이자 GOELRO 전력화 계획의 핵심 인물. 초기 고스플란을 이끌며 계획경제의 기술관료적 언어를 세웠다.', 'An old comrade of Lenin and central figure in the GOELRO electrification plan. As an early Gosplan chairman he helped create the technocratic language of planning.', 'natural', '자연사 1959', 'Died 1959', ['크르지자놉스키'], ['Krzhizhanovsky']),
-        pc('kuibyshev', 'stalin-era', 'К', 'Валериан Куйбышев', '발레리안 쿠이비셰프', 'Valerian Kuibyshev', '1888–1935', '제1차 5개년계획기의 계획 관료', 'Planning official of the first Five-Year Plans', '스탈린의 공업화 국면에서 고스플란과 경제 행정을 맡았다. 도시와 공장에 이름이 붙을 만큼 체제의 충성스러운 공업화 상징이 되었다.', 'He held planning and economic posts during Stalin’s industrialization drive. Cities and factories bore his name as a loyal symbol of Soviet industrialization.', 'natural', '자연사 1935', 'Died 1935', ['쿠이비셰프'], ['Kuibyshev']),
-        pc('mezhlauk', 'stalin-era', 'М', 'Валерий Межлаук', '발레리 메즐라우크', 'Valery Mezhlauk', '1893–1938', '계획경제의 숫자를 만들다 숙청된 관료', 'A planner purged by the system he served', '고스플란 의장으로 공업화의 지표와 계획을 다뤘다. 대숙청 속에서 체포되어 1938년 총살되었다.', 'As Gosplan chairman he handled the indicators and targets of industrialization. During the Great Terror he was arrested and shot in 1938.', 'executed', '처형 1938', 'Shot 1938', ['메즐라우크'], ['Mezhlauk']),
-        pc('voznesensky', 'stalin-era', 'В', 'Николай Вознесенский', '니콜라이 보즈네센스키', 'Nikolai Voznesensky', '1903–1950', '전시계획의 천재, 레닌그라드 사건에 죽다', 'Wartime planning prodigy killed in the Leningrad Affair', '젊은 경제관료로 전시 생산계획을 조정했고 전후 유력 인물로 떠올랐다. 레닌그라드 사건에 연루되어 1950년 처형되었다.', 'A young economic official who coordinated wartime production planning and rose after the war. He was caught in the Leningrad Affair and executed in 1950.', 'executed', '처형 1950', 'Shot 1950', ['보즈네센스키'], ['Voznesensky']),
+        pc('krzhizhanovsky', 'bolshevik', 'К', 'Глеб Кржижановский', '글렙 크르지자놉스키', 'Gleb Krzhizhanovsky', '1872–1959', '전력화와 계획의 초기 설계자', 'Early architect of electrification and planning', '레닌의 오랜 동지이자 GOELRO 전력화 계획의 핵심 인물. 초기 고스플란을 이끌며 계획경제의 기술관료적 언어를 세웠다.', 'An old comrade of Lenin and central figure in the GOELRO electrification plan. As an early Gosplan chairman he helped create the technocratic language of planning.', 'natural', '자연사', 'Natural causes', ['크르지자놉스키'], ['Krzhizhanovsky']),
+        pc('kuibyshev', 'stalin-era', 'К', 'Валериан Куйбышев', '발레리안 쿠이비셰프', 'Valerian Kuibyshev', '1888–1935', '제1차 5개년계획기의 계획 관료', 'Planning official of the first Five-Year Plans', '스탈린의 공업화 국면에서 고스플란과 경제 행정을 맡았다. 도시와 공장에 이름이 붙을 만큼 체제의 충성스러운 공업화 상징이 되었다.', 'He held planning and economic posts during Stalin’s industrialization drive. Cities and factories bore his name as a loyal symbol of Soviet industrialization.', 'natural', '자연사', 'Natural causes', ['쿠이비셰프'], ['Kuibyshev']),
+        pc('mezhlauk', 'stalin-era', 'М', 'Валерий Межлаук', '발레리 메즐라우크', 'Valery Mezhlauk', '1893–1938', '계획경제의 숫자를 만들다 숙청된 관료', 'A planner purged by the system he served', '고스플란 의장으로 공업화의 지표와 계획을 다뤘다. 대숙청 속에서 체포되어 1938년 총살되었다.', 'As Gosplan chairman he handled the indicators and targets of industrialization. During the Great Terror he was arrested and shot in 1938.', 'executed', '처형', 'Executed', ['메즐라우크'], ['Mezhlauk']),
+        pc('voznesensky', 'stalin-era', 'В', 'Николай Вознесенский', '니콜라이 보즈네센스키', 'Nikolai Voznesensky', '1903–1950', '전시계획의 천재, 레닌그라드 사건에 죽다', 'Wartime planning prodigy killed in the Leningrad Affair', '젊은 경제관료로 전시 생산계획을 조정했고 전후 유력 인물로 떠올랐다. 레닌그라드 사건에 연루되어 1950년 처형되었다.', 'A young economic official who coordinated wartime production planning and rose after the war. He was caught in the Leningrad Affair and executed in 1950.', 'executed', '처형', 'Executed', ['보즈네센스키'], ['Voznesensky']),
         pc('saburov', 'stalin-era', 'С', 'Максим Сабуров', '막심 사부로프', 'Maksim Saburov', '1900–1977', '스탈린 말기와 말렌코프기의 계획 관료', 'Planner of the late Stalin and Malenkov years', '고스플란과 국가계획위원회에서 여러 차례 경제계획을 맡았다. 1957년 반당 그룹에 가담한 뒤 중앙 권력에서 밀려났다.', 'He repeatedly held planning posts in Gosplan and the State Planning Committee. After joining the Anti-Party Group in 1957, he was pushed out of central power.', 'deposed', '실각 1957', 'Removed 1957', ['사부로프'], ['Saburov']),
-        pc('baibakov', 'thaw', 'Б', 'Николай Байбаков', '니콜라이 바이바코프', 'Nikolai Baibakov', '1911–2008', '장기 정체기의 고스플란 의장', 'Long-serving Gosplan chairman of the stagnation era', '석유산업 관료 출신으로 1965년부터 20년간 국가계획위원회를 이끌었다. 코시긴 개혁 이후의 계획경제 운영을 상징한다.', 'An oil-industry administrator, he led the State Planning Committee for two decades from 1965. He symbolizes the planned economy after the Kosygin reform moment.', 'natural', '자연사 2008', 'Died 2008', ['바이바코프'], ['Baibakov']),
+        pc('baibakov', 'thaw', 'Б', 'Николай Байбаков', '니콜라이 바이바코프', 'Nikolai Baibakov', '1911–2008', '장기 정체기의 고스플란 의장', 'Long-serving Gosplan chairman of the stagnation era', '석유산업 관료 출신으로 1965년부터 20년간 국가계획위원회를 이끌었다. 코시긴 개혁 이후의 계획경제 운영을 상징한다.', 'An oil-industry administrator, he led the State Planning Committee for two decades from 1965. He symbolizes the planned economy after the Kosygin reform moment.', 'natural', '자연사', 'Natural causes', ['바이바코프'], ['Baibakov']),
         pc('maslyukov', 'perestroika', 'М', 'Юрий Маслюков', '유리 마슬류코프', 'Yuri Maslyukov', '1937–2010', '소련 말기의 마지막 고스플란 세대', 'The last Gosplan generation', '군수공업과 계획기관을 거쳐 페레스트로이카 말기 국가계획위원회를 맡았다. 계획경제가 해체되는 순간의 기술관료였다.', 'Coming from defence industry and planning organs, he headed the State Planning Committee in late perestroika. He was a technocrat at the moment planning was being dismantled.', 'deposed', '퇴임 1991', 'Left office 1991', ['마슬류코프'], ['Maslyukov']),
-        pc('kalinin', 'stalin-era', 'К', 'Михаил Калинин', '미하일 칼리닌', 'Mikhail Kalinin', '1875–1946', '소련의 장기 공식 국가원수', 'The long-serving formal head of state', '농민 출신 볼셰비키로 중앙집행위원회와 최고소비에트 상무회 의장을 오래 맡았다. 실제 권력은 작았지만, 체제는 그를 「전연방의 장로」처럼 사용했다.', 'A peasant-born Bolshevik who long chaired the Soviet state presidium. His real power was limited, but the regime used him as a symbolic elder of the Union.', 'natural', '자연사 1946', 'Died 1946', ['칼리닌'], ['Kalinin']),
-        pc('shvernik', 'stalin-era', 'Ш', 'Николай Шверник', '니콜라이 슈베르니크', 'Nikolai Shvernik', '1888–1970', '스탈린 말기의 공식 국가원수', 'Formal head of state in late Stalinism', '노조와 당 행정에서 올라와 1946년 칼리닌 뒤를 이었다. 스탈린 말기의 국가원수였지만 실권은 정치국과 스탈린에게 있었다.', 'Rising through trade-union and party administration, he succeeded Kalinin in 1946. He was formal head of state, while real power remained with Stalin and the Politburo.', 'natural', '자연사 1970', 'Died 1970', ['슈베르니크'], ['Shvernik']),
+        pc('kalinin', 'stalin-era', 'К', 'Михаил Калинин', '미하일 칼리닌', 'Mikhail Kalinin', '1875–1946', '소련의 장기 공식 국가원수', 'The long-serving formal head of state', '농민 출신 볼셰비키로 중앙집행위원회와 최고소비에트 상무회 의장을 오래 맡았다. 실제 권력은 작았지만, 체제는 그를 「전연방의 장로」처럼 사용했다.', 'A peasant-born Bolshevik who long chaired the Soviet state presidium. His real power was limited, but the regime used him as a symbolic elder of the Union.', 'natural', '자연사', 'Natural causes', ['칼리닌'], ['Kalinin']),
+        pc('shvernik', 'stalin-era', 'Ш', 'Николай Шверник', '니콜라이 슈베르니크', 'Nikolai Shvernik', '1888–1970', '스탈린 말기의 공식 국가원수', 'Formal head of state in late Stalinism', '노조와 당 행정에서 올라와 1946년 칼리닌 뒤를 이었다. 스탈린 말기의 국가원수였지만 실권은 정치국과 스탈린에게 있었다.', 'Rising through trade-union and party administration, he succeeded Kalinin in 1946. He was formal head of state, while real power remained with Stalin and the Politburo.', 'natural', '자연사', 'Natural causes', ['슈베르니크'], ['Shvernik']),
         pc('podgorny', 'thaw', 'П', 'Николай Подгорный', '니콜라이 포드고르니', 'Nikolai Podgorny', '1903–1983', '브레즈네프-코시긴 집단지도부의 국가원수', 'Head of state in the Brezhnev-Kosygin collective leadership', '흐루쇼프 축출 뒤 집단지도부의 한 축으로 최고소비에트 상무회 의장이 되었다. 브레즈네프가 권력을 집중하면서 1977년 밀려났다.', 'After Khrushchev’s removal he became one pillar of collective leadership and chairman of the Supreme Soviet Presidium. As Brezhnev concentrated power, Podgorny was removed in 1977.', 'deposed', '실각 1977', 'Removed 1977', ['포드고르니'], ['Podgorny']),
-        pc('manuilsky', 'stalin-era', 'М', 'Дмитрий Мануильский', '드미트리 마누일스키', 'Dmitry Manuilsky', '1883–1959', '스탈린 시대 코민테른의 실무 관리자', 'Stalin-era manager of the Comintern apparatus', '코민테른 집행부에서 각국 공산당 노선을 조정했고, 스탈린 시대에는 숙청과 노선 통제의 실무자가 되었다. 뒤에는 우크라이나 외교 직책을 맡았다.', 'In the Comintern executive he coordinated foreign communist parties and, under Stalin, became an operator of line control and purges. Later he held Ukrainian diplomatic posts.', 'natural', '자연사 1959', 'Died 1959', ['마누일스키'], ['Manuilsky']),
-        pc('dimitrov', 'stalin-era', 'Д', 'Георги Димитров', '게오르기 디미트로프', 'Georgi Dimitrov', '1882–1949', '라이프치히 재판의 피고에서 코민테른 서기장으로', 'From Leipzig defendant to Comintern General Secretary', '라이프치히 방화 재판에서 나치에 맞선 피고로 국제적 명성을 얻었다. 1934년부터 코민테른 서기장으로 인민전선 노선을 대표했고, 전후 불가리아 지도자가 되었다.', 'He gained international fame defying the Nazis at the Leipzig trial. From 1934 he served as Comintern General Secretary, symbolizing the Popular Front line, and later led Bulgaria.', 'natural', '자연사 1949', 'Died 1949', ['디미트로프'], ['Dimitrov']),
-        pc('stasova', 'bolshevik', 'С', 'Елена Стасова', '옐레나 스타소바', 'Elena Stasova', '1873–1966', '혁명 직후 당 서기국의 실무 관리자', 'The early Secretariat’s practical organizer', '볼셰비키 중앙위의 기술서기와 서기국 의장을 맡아 합법화된 당 조직의 장부, 연락, 회의 실무를 정리했다. 초기 당 기구가 사람과 기록을 통제하는 방식의 한 출발점이었다.', 'A Bolshevik Central Committee technical secretary and later chairwoman of the Secretariat, she organized records, communications and meeting work for the newly legal party. She marks one starting point of the party apparatus as a system of people and files.', 'natural', '자연사 1966', 'Died 1966', ['스타소바'], ['Stasova']),
-        pc('sverdlov', 'bolshevik', 'С', 'Яков Свердлов', '야코프 스베르들로프', 'Yakov Sverdlov', '1885–1919', '혁명 직후 당과 국가를 연결한 조직가', 'The organizer who linked party and state after October', '중앙위 서기국 의장과 전러시아 중앙집행위원회 의장을 겸하며 혁명 직후 볼셰비키 권력의 실무를 묶었다. 레닌의 정치 결정을 표결, 인사, 기관 운영으로 바꾸는 데 핵심이었다.', 'As chairman of the Secretariat and of the All-Russian Central Executive Committee, he tied together the practical machinery of early Bolshevik power. He turned Lenin’s political decisions into votes, appointments and institutional operation.', 'natural', '병사 1919', 'Died 1919', ['스베르들로프'], ['Sverdlov']),
-        pc('krestinsky', 'bolshevik', 'К', 'Николай Крестинский', '니콜라이 크레스틴스키', 'Nikolay Krestinsky', '1883–1938', '책임서기에서 피고석으로 간 초기 볼셰비키', 'An early Bolshevik responsible secretary later put in the dock', '책임서기와 재무인민위원을 지낸 초기 지도자였지만, 권력투쟁에서 트로츠키 쪽에 가까웠고 점차 밀려났다. 대숙청기 제3차 모스크바 재판에서 처형되었다.', 'An early Bolshevik leader who served as responsible secretary and finance commissar, he leaned toward Trotsky in the power struggle and was pushed aside. During the Great Terror he was executed after the Third Moscow Trial.', 'executed', '처형 1938', 'Shot 1938', ['크레스틴스키'], ['Krestinsky']),
-        pc('kaganovich', 'stalin-era', 'К', 'Лазарь Каганович', '라자르 카가노비치', 'Lazar Kaganovich', '1893–1991', '스탈린의 조직부 사람', 'Stalin’s man in the party apparatus', '조직부와 서기국에서 임명과 배치를 관리하며 스탈린의 지지자들을 당 기구 곳곳에 심었다. 철도, 공업, 우크라이나, 숙청 실무까지 옮겨 다닌 스탈린 체제의 강경한 집행자였다.', 'In the Organization Department and Secretariat he managed appointments and placements, helping Stalin’s supporters spread through the party machine. Moving through railways, industry, Ukraine and purge work, he was a hard executor of Stalinism.', 'deposed', '실각 1957 · 자연사 1991', 'Removed 1957 · d. 1991', ['카가노비치'], ['Kaganovich']),
+        pc('manuilsky', 'stalin-era', 'М', 'Дмитрий Мануильский', '드미트리 마누일스키', 'Dmitry Manuilsky', '1883–1959', '스탈린 시대 코민테른의 실무 관리자', 'Stalin-era manager of the Comintern apparatus', '코민테른 집행부에서 각국 공산당 노선을 조정했고, 스탈린 시대에는 숙청과 노선 통제의 실무자가 되었다. 뒤에는 우크라이나 외교 직책을 맡았다.', 'In the Comintern executive he coordinated foreign communist parties and, under Stalin, became an operator of line control and purges. Later he held Ukrainian diplomatic posts.', 'natural', '자연사', 'Natural causes', ['마누일스키'], ['Manuilsky']),
+        pc('dimitrov', 'stalin-era', 'Д', 'Георги Димитров', '게오르기 디미트로프', 'Georgi Dimitrov', '1882–1949', '라이프치히 재판의 피고에서 코민테른 서기장으로', 'From Leipzig defendant to Comintern General Secretary', '라이프치히 방화 재판에서 나치에 맞선 피고로 국제적 명성을 얻었다. 1934년부터 코민테른 서기장으로 인민전선 노선을 대표했고, 전후 불가리아 지도자가 되었다.', 'He gained international fame defying the Nazis at the Leipzig trial. From 1934 he served as Comintern General Secretary, symbolizing the Popular Front line, and later led Bulgaria.', 'natural', '자연사', 'Natural causes', ['디미트로프'], ['Dimitrov']),
+        pc('stasova', 'bolshevik', 'С', 'Елена Стасова', '옐레나 스타소바', 'Elena Stasova', '1873–1966', '혁명 직후 당 서기국의 실무 관리자', 'The early Secretariat’s practical organizer', '볼셰비키 중앙위의 기술서기와 서기국 의장을 맡아 합법화된 당 조직의 장부, 연락, 회의 실무를 정리했다. 초기 당 기구가 사람과 기록을 통제하는 방식의 한 출발점이었다.', 'A Bolshevik Central Committee technical secretary and later chairwoman of the Secretariat, she organized records, communications and meeting work for the newly legal party. She marks one starting point of the party apparatus as a system of people and files.', 'natural', '자연사', 'Natural causes', ['스타소바'], ['Stasova']),
+        pc('sverdlov', 'bolshevik', 'С', 'Яков Свердлов', '야코프 스베르들로프', 'Yakov Sverdlov', '1885–1919', '혁명 직후 당과 국가를 연결한 조직가', 'The organizer who linked party and state after October', '중앙위 서기국 의장과 전러시아 중앙집행위원회 의장을 겸하며 혁명 직후 볼셰비키 권력의 실무를 묶었다. 레닌의 정치 결정을 표결, 인사, 기관 운영으로 바꾸는 데 핵심이었다.', 'As chairman of the Secretariat and of the All-Russian Central Executive Committee, he tied together the practical machinery of early Bolshevik power. He turned Lenin’s political decisions into votes, appointments and institutional operation.', 'natural', '병사', 'Illness', ['스베르들로프'], ['Sverdlov']),
+        pc('krestinsky', 'bolshevik', 'К', 'Николай Крестинский', '니콜라이 크레스틴스키', 'Nikolay Krestinsky', '1883–1938', '책임서기에서 피고석으로 간 초기 볼셰비키', 'An early Bolshevik responsible secretary later put in the dock', '책임서기와 재무인민위원을 지낸 초기 지도자였지만, 권력투쟁에서 트로츠키 쪽에 가까웠고 점차 밀려났다. 대숙청기 제3차 모스크바 재판에서 처형되었다.', 'An early Bolshevik leader who served as responsible secretary and finance commissar, he leaned toward Trotsky in the power struggle and was pushed aside. During the Great Terror he was executed after the Third Moscow Trial.', 'executed', '처형', 'Executed', ['크레스틴스키'], ['Krestinsky']),
+        pc('kaganovich', 'stalin-era', 'К', 'Лазарь Каганович', '라자르 카가노비치', 'Lazar Kaganovich', '1893–1991', '스탈린의 조직부 사람', 'Stalin’s man in the party apparatus', '조직부와 서기국에서 임명과 배치를 관리하며 스탈린의 지지자들을 당 기구 곳곳에 심었다. 철도, 공업, 우크라이나, 숙청 실무까지 옮겨 다닌 스탈린 체제의 강경한 집행자였다.', 'In the Organization Department and Secretariat he managed appointments and placements, helping Stalin’s supporters spread through the party machine. Moving through railways, industry, Ukraine and purge work, he was a hard executor of Stalinism.', 'deposed', '실각 1957', 'Removed 1957', ['카가노비치'], ['Kaganovich']),
         pc('kirichenko', 'thaw', 'К', 'Алексей Кириченко', '알렉세이 키리첸코', 'Aleksey Kirichenko', '1908–1975', '흐루쇼프 초의 당 임명 담당 서기', 'Khrushchev-era secretary for party appointments', '우크라이나 당 지도부에서 올라와 1957년 흐루쇼프를 지지한 뒤 모스크바 중앙위 서기가 되었다. 당 임명 업무를 맡았지만 흐루쇼프의 신임을 오래 유지하지 못하고 주변부로 밀려났다.', 'Rising from the Ukrainian party leadership, he backed Khrushchev in 1957 and became a Central Committee secretary in Moscow. He handled party appointments, but did not keep Khrushchev’s confidence for long and was pushed to the margins.', 'deposed', '실각 1960', 'Removed 1960', ['키리첸코'], ['Kirichenko']),
-        pc('kirilenko', 'thaw', 'К', 'Андрей Кириленко', '안드레이 키릴렌코', 'Andrei Kirilenko', '1906–1990', '브레즈네프 시대의 간부 담당 선임서기', 'Brezhnev-era senior secretary for cadres', '브레즈네프의 오래된 동맹으로 중앙위 서기국에서 간부와 조직 문제를 맡았다. 정체기 당 관료제의 승진 통로와 충성 네트워크를 대표하다가 안드로포프 집권 직후 밀려났다.', 'A long-time Brezhnev ally, he handled cadres and organization in the Central Committee Secretariat. He represented the promotion channels and loyalty networks of the stagnation-era party bureaucracy, then was pushed out soon after Andropov took power.', 'deposed', '은퇴 1982 · 자연사 1990', 'Retired 1982 · d. 1990', ['키릴렌코'], ['Kirilenko']),
-        pc('ligachev', 'perestroika', 'Л', 'Егор Лигачёв', '예고르 리가초프', 'Yegor Ligachev', '1920–2021', '페레스트로이카 안의 보수적 제2서기', 'The conservative Second Secretary inside perestroika', '안드로포프 말기에 조직당사업부장으로 발탁되었고, 고르바초프 초기에 제2서기로 올라섰다. 처음에는 개혁을 지지했지만 곧 글라스노스트와 옐친을 견제하는 당 기구 보수파의 얼굴이 되었다.', 'Brought into Moscow under Andropov as head of organizational-party work, he became Second Secretary under early Gorbachev. Initially a supporter of reform, he soon became the face of the party-apparatus conservatives checking glasnost and Yeltsin.', 'deposed', '실각 1990 · 자연사 2021', 'Removed 1990 · d. 2021', ['리가초프'], ['Ligachev']),
-        pc('ivashko', 'perestroika', 'И', 'Владимир Ивашко', '블라디미르 이바시코프', 'Vladimir Ivashko', '1932–1994', '해체 직전 공산당의 마지막 부서기장', 'The last deputy general secretary before dissolution', '우크라이나 당 지도자에서 고르바초프의 부서기장으로 옮겨 왔다. 1991년 8월 쿠데타 뒤 고르바초프가 당 서기장직을 사임하자 며칠 동안 대행이 되었지만, 곧 공산당 자체가 정지되었다.', 'Moved from the Ukrainian party leadership to become Gorbachev’s deputy general secretary. After the August 1991 coup, he briefly acted as party leader when Gorbachev resigned as general secretary, but the party itself was soon suspended.', 'deposed', '당 해체 1991 · 자연사 1994', 'Party dissolved 1991 · d. 1994', ['이바시코프'], ['Ivashko']),
+        pc('kirilenko', 'thaw', 'К', 'Андрей Кириленко', '안드레이 키릴렌코', 'Andrei Kirilenko', '1906–1990', '브레즈네프 시대의 간부 담당 선임서기', 'Brezhnev-era senior secretary for cadres', '브레즈네프의 오래된 동맹으로 중앙위 서기국에서 간부와 조직 문제를 맡았다. 정체기 당 관료제의 승진 통로와 충성 네트워크를 대표하다가 안드로포프 집권 직후 밀려났다.', 'A long-time Brezhnev ally, he handled cadres and organization in the Central Committee Secretariat. He represented the promotion channels and loyalty networks of the stagnation-era party bureaucracy, then was pushed out soon after Andropov took power.', 'deposed', '은퇴 1982', 'Retired 1982', ['키릴렌코'], ['Kirilenko']),
+        pc('ligachev', 'perestroika', 'Л', 'Егор Лигачёв', '예고르 리가초프', 'Yegor Ligachev', '1920–2021', '페레스트로이카 안의 보수적 제2서기', 'The conservative Second Secretary inside perestroika', '안드로포프 말기에 조직당사업부장으로 발탁되었고, 고르바초프 초기에 제2서기로 올라섰다. 처음에는 개혁을 지지했지만 곧 글라스노스트와 옐친을 견제하는 당 기구 보수파의 얼굴이 되었다.', 'Brought into Moscow under Andropov as head of organizational-party work, he became Second Secretary under early Gorbachev. Initially a supporter of reform, he soon became the face of the party-apparatus conservatives checking glasnost and Yeltsin.', 'deposed', '실각 1990', 'Removed 1990', ['리가초프'], ['Ligachev']),
+        pc('ivashko', 'perestroika', 'И', 'Владимир Ивашко', '블라디미르 이바시코프', 'Vladimir Ivashko', '1932–1994', '해체 직전 공산당의 마지막 부서기장', 'The last deputy general secretary before dissolution', '우크라이나 당 지도자에서 고르바초프의 부서기장으로 옮겨 왔다. 1991년 8월 쿠데타 뒤 고르바초프가 당 서기장직을 사임하자 며칠 동안 대행이 되었지만, 곧 공산당 자체가 정지되었다.', 'Moved from the Ukrainian party leadership to become Gorbachev’s deputy general secretary. After the August 1991 coup, he briefly acted as party leader when Gorbachev resigned as general secretary, but the party itself was soon suspended.', 'deposed', '당 해체 1991', 'Party dissolved 1991', ['이바시코프'], ['Ivashko']),
     ],
     patronymics: {
         'witte': t('율리예비치', 'Yulyevich'),
