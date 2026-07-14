@@ -33,21 +33,21 @@ const OFFICE_DISPLAY_ORDER = [
 
 const ROLE_OFFICE_TITLES = {
     'party-leadership': { ko: '당 최고 지도자', en: 'Party leadership' },
-    'party-secretariat-cadres': { ko: '당 서기국 · 조직인사 지도부', en: 'Party Secretariat and cadres leadership' },
+    'party-secretariat-cadres': { ko: '당 서기국 · 조직인사', en: 'Party Secretariat and cadres' },
     government: { ko: '정부 수반', en: 'Heads of government' },
-    defence: { ko: '군사 · 국방 지도부', en: 'Military and defence leadership' },
-    security: { ko: '국가보안 기관 지도부', en: 'State security leadership' },
-    'ideology-propaganda': { ko: '이념 · 선전 지도부', en: 'Ideology and propaganda leadership' },
+    defence: { ko: '군사 · 국방', en: 'Military and defence' },
+    security: { ko: '국가보안 기관', en: 'State security agencies' },
+    'ideology-propaganda': { ko: '이념 · 선전', en: 'Ideology and propaganda' },
     'culture-literature': { ko: '문화 · 문학예술 통제', en: 'Culture and literary control' },
     'state-head': { ko: '국가원수', en: 'Formal heads of state' },
-    'foreign-affairs': { ko: '외교 지도부', en: 'Foreign affairs leadership' },
+    'foreign-affairs': { ko: '외교', en: 'Foreign affairs' },
     'nationalities-federal': { ko: '민족문제 · 연방 관리', en: 'Nationalities and federal management' },
-    planning: { ko: '중앙계획 기관 지도부', en: 'Central planning leadership' },
-    'economic-management': { ko: '경제 운영 지도부', en: 'Economic management leadership' },
-    'heavy-industry-mic': { ko: '중공업 · 군수공업 지도부', en: 'Heavy industry and military-industrial leadership' },
-    agriculture: { ko: '농업 지도부', en: 'Agricultural leadership' },
+    planning: { ko: '중앙계획 기관', en: 'Central planning agencies' },
+    'economic-management': { ko: '경제 운영', en: 'Economic management' },
+    'heavy-industry-mic': { ko: '중공업 · 군수공업', en: 'Heavy industry and military industry' },
+    agriculture: { ko: '농업', en: 'Agriculture' },
     'science-nuclear-space': { ko: '과학 · 원자력 · 우주 개발', en: 'Science, nuclear and space development' },
-    comintern: { ko: '코민테른 지도부', en: 'Comintern leadership' },
+    comintern: { ko: '코민테른', en: 'Comintern' },
 };
 
 // Person→role mappings live ONLY in the commulingo_person_roles DB table
@@ -69,7 +69,7 @@ const OFFICE_ICON = {
     'party-secretariat-cadres': 'folder',
     government: 'briefcase',
     planning: 'chart',
-    'economic-management': 'chart',
+    'economic-management': 'coins',
     comintern: 'globe',
 };
 

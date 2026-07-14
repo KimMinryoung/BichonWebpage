@@ -345,7 +345,8 @@ categories. Icon ids, not raw SVG:
 - party leadership: `flag`
 - party secretariat/cadres: `folder`
 - government: `briefcase`
-- planning/economic management: `chart`
+- planning: `chart`
+- economic management: `coins`
 - Comintern: `globe`
 - non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11)
 - socialist-bloc reform leader: `dove`
