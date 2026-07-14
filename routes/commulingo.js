@@ -1,12 +1,10 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
 const db = require('../config/database');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
-const { loadCommuLingoPeopleFromDb, loadCommuLingoPersonSections } = require('../data/commulingo/people-store');
+const { loadCommuLingoPeople: loadCommuLingoPeopleData, loadCommuLingoPersonSections } = require('../data/commulingo/people-store');
 const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
@@ -20,34 +18,11 @@ router.use((req, res, next) => {
     next();
 });
 
-const PEOPLE_PATH = path.join(__dirname, '..', 'data', 'commulingo', 'people.js');
-let peopleCache = null;
-
-function loadCommuLingoPeopleFromFile() {
-    let mtimeMs = 0;
-    try {
-        mtimeMs = fs.statSync(PEOPLE_PATH).mtimeMs;
-    } catch (err) {
-        return { groups: [], people: [] };
-    }
-    if (peopleCache && peopleCache.mtimeMs === mtimeMs) return peopleCache.data;
-    delete require.cache[require.resolve(PEOPLE_PATH)];
-    const data = require(PEOPLE_PATH);
-    peopleCache = { mtimeMs, data };
-    return data;
-}
-
+// People are served from a local JSON snapshot maintained by people-store.js
+// (DB only on refresh/cold-start), so page loads don't wait on a Supabase
+// round-trip. Returns { data, source }.
 async function loadCommuLingoPeople(options = {}) {
-    if (process.env.COMMULINGO_PEOPLE_SOURCE === 'file') {
-        return { data: loadCommuLingoPeopleFromFile(), source: 'file' };
-    }
-    try {
-        const data = await loadCommuLingoPeopleFromDb({ fresh: options.fresh });
-        return { data, source: 'db' };
-    } catch (err) {
-        console.error('[commulingo people] DB load failed, falling back to file:', err.message);
-        return { data: loadCommuLingoPeopleFromFile(), source: 'file' };
-    }
+    return loadCommuLingoPeopleData(options);
 }
 
 async function loadStandardizedPeople(req, res, options = {}) {

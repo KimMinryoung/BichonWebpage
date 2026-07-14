@@ -30,3 +30,7 @@ temp_dev/
 
 # CommuLingo generated artifacts (regenerated from source; not tracked)
 data/commulingo/generated/
+
+# CommuLingo people snapshot (rebuilt from the DB at runtime; on-disk cache/backup)
+data/commulingo/people-snapshot.json
+data/commulingo/people-snapshot.json.tmp
