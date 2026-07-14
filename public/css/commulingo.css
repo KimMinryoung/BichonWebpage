@@ -2377,7 +2377,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 0;
-    cursor: pointer;
+    cursor: default;
     padding: 16px;
     position: relative;
     scroll-margin-top: 80px;
@@ -2393,19 +2393,20 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 1rem;
     font-weight: 800;
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     right: 12px;
     top: 10px;
     transition: color 0.16s ease, opacity 0.16s ease, transform 0.16s ease;
 }
 
-.commu-person-card:hover,
-.commu-person-card:focus-within {
+.commu-person-card:has(.commu-person-top:hover),
+.commu-person-card:has(.commu-person-idbox a:focus-visible) {
     border-color: color-mix(in srgb, var(--link) 72%, var(--border));
 }
 
-.commu-person-card:hover::after,
-.commu-person-card:focus-within::after {
+.commu-person-card:has(.commu-person-top:hover)::after,
+.commu-person-card:has(.commu-person-idbox a:focus-visible)::after {
     color: var(--link);
     opacity: 1;
     transform: translateX(2px);
@@ -2417,9 +2418,12 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-person-top {
+    cursor: pointer;
     display: flex;
     align-items: flex-start;
     gap: 12px;
+    margin: -16px -16px -10px;
+    padding: 16px 16px 10px;
 }
 
 .commu-person-medal {
@@ -2446,6 +2450,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
     background: var(--bg-surface-hover);
     border-color: var(--link);
     color: var(--link);
+}
+
+.commu-person-medal[href] {
+    cursor: pointer;
 }
 
 .commu-person-medal.is-old-regime { border-color: #b08d3f; color: #b08d3f; }
