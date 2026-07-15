@@ -242,13 +242,14 @@ app.get('/api/proxy/sessions', async (req, res, next) => {
     try {
         const { rows } = await db.query(
             `SELECT session_id,
-                    (ARRAY_AGG(user_query ORDER BY created_at ASC))[1] AS first_query,
+                    (ARRAY_AGG(user_query ORDER BY created_at ASC) FILTER (WHERE user_query_active))[1] AS first_query,
                     MIN(created_at) AS first_at,
                     MAX(created_at) AS last_at,
-                    COUNT(*)::int AS message_count
+                    SUM(user_query_active::int + bot_answer_active::int)::int AS message_count
                FROM chat_logs
               WHERE ${identityClause}
                 AND session_id IS NOT NULL
+                AND (user_query_active OR bot_answer_active)
                 ${personaClause}
               GROUP BY session_id
               ORDER BY last_at DESC
@@ -289,8 +290,10 @@ app.get('/api/proxy/history', async (req, res, next) => {
     try {
         const { rows } = await db.query(
             `SELECT id AS message_id,
-                    user_query,
-                    bot_answer,
+                    CASE WHEN user_query_active THEN user_query ELSE NULL END AS user_query,
+                    CASE WHEN bot_answer_active THEN bot_answer ELSE NULL END AS bot_answer,
+                    user_query_active,
+                    bot_answer_active,
                     route,
                     documents_count,
                     web_search_used,

@@ -16,7 +16,11 @@
         feedbackNote: metaContent('str-feedback-note', '피드백을 입력하세요'),
         feedbackSave: metaContent('str-feedback-save', '피드백 저장'),
         regenerate: metaContent('str-regenerate', '피드백으로 다시 생성'),
-        regenerating: metaContent('str-regenerating', '응답을 다시 생성하는 중...')
+        regenerating: metaContent('str-regenerating', '응답을 다시 생성하는 중...'),
+        deleteLabel: metaContent('str-delete-label', '삭제'),
+        deleteConfirmUser: metaContent('str-delete-confirm-user', '이 질문을 삭제할까요?'),
+        deleteConfirmAssistant: metaContent('str-delete-confirm-assistant', '이 응답을 삭제할까요?'),
+        deleteError: metaContent('str-delete-error', '메시지를 삭제하지 못했습니다.')
     };
 
     var chatBox = document.getElementById('chatBox');
@@ -203,7 +207,12 @@
                     if (history[j].user_query === msg) {
                         errDiv.remove();
                         if (logDiv) logDiv.remove();
-                        appendMessage(history[j].bot_answer, 'chat-message-ai');
+                        var recoveredAi = appendMessage(history[j].bot_answer, 'chat-message-ai');
+                        decorateDeletableMessage(recoveredAi, history[j].message_id, 'assistant');
+                        var pendingUsers = chatBox.querySelectorAll('.chat-message-user:not(.chat-message-deletable)');
+                        if (pendingUsers.length) {
+                            decorateDeletableMessage(pendingUsers[pendingUsers.length - 1], history[j].message_id, 'user');
+                        }
                         chatBox.scrollTop = chatBox.scrollHeight;
                         if (document.visibilityState === 'hidden') {
                             document.title = '💬 답변 도착 — ' + originalTitle;
@@ -273,14 +282,14 @@
         chatBox.innerHTML = '';
         for (var i = 0; i < turns.length; i++) {
             var item = turns[i];
-            var userMsg = document.createElement('div');
-            userMsg.className = 'chat-message chat-message-user';
-            userMsg.textContent = item.user_query;
-            chatBox.appendChild(userMsg);
-            var aiMsg = document.createElement('div');
-            aiMsg.className = 'chat-message chat-message-ai';
-            aiMsg.innerHTML = DOMPurify.sanitize(marked.parse(item.bot_answer || ''), {ADD_ATTR: ['target']});
-            chatBox.appendChild(aiMsg);
+            if (item.user_query_active !== false && item.user_query) {
+                var userMsg = appendMessage(item.user_query, 'chat-message-user');
+                decorateDeletableMessage(userMsg, item.message_id, 'user');
+            }
+            if (item.bot_answer_active !== false && item.bot_answer) {
+                var aiMsg = appendMessage(item.bot_answer, 'chat-message-ai');
+                decorateDeletableMessage(aiMsg, item.message_id, 'assistant');
+            }
         }
         chatBox.scrollTop = chatBox.scrollHeight;
     }
@@ -338,7 +347,7 @@
 
                 var q = document.createElement('div');
                 q.className = 'session-card-query';
-                q.textContent = s.first_query || '(빈 대화)';
+                q.textContent = s.first_query || (isEnglish ? '(Question deleted)' : '(질문이 삭제된 대화)');
                 card.appendChild(q);
 
                 var meta = document.createElement('div');
@@ -425,17 +434,64 @@
     function appendMessage(text, className) {
         var div = document.createElement('div');
         div.className = 'chat-message ' + className;
+        var body = document.createElement('div');
+        body.className = 'chat-message-body';
         if (className === 'chat-message-ai') {
-            var body = document.createElement('div');
-            body.className = 'chat-message-body';
             renderMarkdownInto(body, text);
-            div.appendChild(body);
         } else {
-            div.textContent = text;
+            body.textContent = text;
         }
+        div.appendChild(body);
         chatBox.appendChild(div);
         chatBox.scrollTop = chatBox.scrollHeight;
         return div;
+    }
+
+    async function deactivateMessage(messageId, part, div) {
+        if (!messageId || busy) return;
+        var prompt = part === 'user' ? STRINGS.deleteConfirmUser : STRINGS.deleteConfirmAssistant;
+        if (!window.confirm(prompt)) return;
+        var button = div.querySelector('.chat-message-delete');
+        if (button) button.disabled = true;
+        try {
+            var res = await fetch(API_URL + '/chat/messages/' + encodeURIComponent(messageId) + '/deactivate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    part: part,
+                    fingerprint: userId,
+                    session_id: sessionId,
+                    persona: selectedPersona
+                })
+            });
+            if (!res.ok) throw new Error(res.statusText);
+            if (activeFeedbackTarget && String(activeFeedbackTarget.messageId) === String(messageId)) {
+                clearFeedbackTarget();
+            }
+            div.remove();
+        } catch (err) {
+            console.error('message delete error:', err);
+            if (button) button.disabled = false;
+            window.alert(STRINGS.deleteError);
+        }
+    }
+
+    function decorateDeletableMessage(div, messageId, part) {
+        if (!div || !messageId || div.querySelector('.chat-message-delete')) return;
+        div.dataset.messageId = String(messageId);
+        div.classList.add('chat-message-deletable');
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'chat-message-delete';
+        button.textContent = '×';
+        button.title = STRINGS.deleteLabel;
+        button.setAttribute('aria-label', STRINGS.deleteLabel);
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            deactivateMessage(messageId, part, div);
+        });
+        div.appendChild(button);
     }
 
     function aiBody(aiDiv) {
@@ -644,7 +700,8 @@
         message = (message || '').trim();
         if (!message || busy) return;
 
-        if (!options.suppressUserMessage) appendMessage(message, 'chat-message-user');
+        var userDiv = null;
+        if (!options.suppressUserMessage) userDiv = appendMessage(message, 'chat-message-user');
         if (options.regenerateFromId) clearFeedbackTarget();
         chatInput.value = '';
         resizeChatInput();
@@ -809,7 +866,8 @@
                                 chatBox.scrollTop = chatBox.scrollHeight;
                             }
                             if (data.message_id) {
-                                aiDiv.dataset.messageId = String(data.message_id);
+                                decorateDeletableMessage(aiDiv, data.message_id, 'assistant');
+                                if (userDiv) decorateDeletableMessage(userDiv, data.message_id, 'user');
                                 setFeedbackTarget(data.message_id, message, aiDiv);
                             }
                             if (document.visibilityState === 'hidden') {
