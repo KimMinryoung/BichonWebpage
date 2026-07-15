@@ -231,8 +231,8 @@ const ko = {
         regenerate: '다시 생성',
         regenerating: '응답을 다시 생성하는 중...',
         deleteLabel: '삭제',
-        deleteConfirmUser: '이 질문을 삭제할까요? DB 원문은 보존되지만 이후 대화 맥락에서는 제외됩니다.',
-        deleteConfirmAssistant: '이 응답을 삭제할까요? DB 원문은 보존되지만 이후 대화 맥락에서는 제외됩니다.',
+        deleteConfirmUser: '이 질문을 삭제할까요? 이후 대화 맥락에서 제외됩니다.',
+        deleteConfirmAssistant: '이 응답을 삭제할까요? 이후 대화 맥락에서 제외됩니다.',
         deleteError: '메시지를 삭제하지 못했습니다.'
     },
 
@@ -501,8 +501,8 @@ const en = {
         regenerate: 'Regenerate',
         regenerating: 'Regenerating...',
         deleteLabel: 'Delete',
-        deleteConfirmUser: 'Delete this question? The original stays in the database but will be excluded from future chat context.',
-        deleteConfirmAssistant: 'Delete this response? The original stays in the database but will be excluded from future chat context.',
+        deleteConfirmUser: 'Delete this question? It will be excluded from future chat context.',
+        deleteConfirmAssistant: 'Delete this response? It will be excluded from future chat context.',
         deleteError: 'Could not delete the message.'
     },
 
