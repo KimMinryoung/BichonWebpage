@@ -1,8 +1,25 @@
 const db = require('../../config/database');
+const fs = require('fs');
+const path = require('path');
 
-const CACHE_MS = Number.parseInt(process.env.COMMULINGO_HISTORY_EVENTS_CACHE_MS || '30000', 10);
-let cache = null;
-let pendingLoad = null;
+// History events are served from a local JSON snapshot, mirroring people-store:
+// the hot path never awaits the DB. The DB is only touched to (re)build that
+// snapshot, on a background timer every REFRESH_MS or synchronously the first
+// time when no snapshot exists yet. The snapshot lives in the bind-mounted data
+// dir so it survives container restarts and doubles as an on-disk backup.
+//
+// This replaced a plain expiring cache that awaited fetchEvents() on every
+// expiry: with a 30s TTL that made one request per 30s pay the full Supabase
+// round trip (measured at ~2.5s against ~6ms for a cache hit), and every person
+// page pays it too via loadCommuLingoPersonHistoryEvents. Serving stale while
+// refreshing in the background removes that spike entirely.
+const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_HISTORY_EVENTS_CACHE_MS || '600000', 10);
+const SNAPSHOT_PATH = process.env.COMMULINGO_HISTORY_EVENTS_SNAPSHOT
+    || path.join(__dirname, 'history-events-snapshot.json');
+
+let memory = null;          // { data, source, at } — in-process copy served on the hot path
+let pendingRefresh = null;  // coalesced in-flight DB refresh
+let refreshTimer = null;
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -50,16 +67,95 @@ async function fetchEvents() {
     }));
 }
 
+function readSnapshotFile() {
+    try {
+        const data = JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
+        if (Array.isArray(data) && data.length) return data;
+    } catch (err) {
+        if (err.code !== 'ENOENT') {
+            console.error('[commulingo events] snapshot read failed:', err.message);
+        }
+    }
+    return null;
+}
+
+function writeSnapshotFile(data) {
+    try {
+        const tmp = SNAPSHOT_PATH + '.tmp';
+        fs.writeFileSync(tmp, JSON.stringify(data));
+        fs.renameSync(tmp, SNAPSHOT_PATH); // atomic swap so readers never see a partial file
+    } catch (err) {
+        console.error('[commulingo events] snapshot write failed:', err.message);
+    }
+}
+
+// Rebuild from the DB, persist the snapshot, refresh the in-memory copy.
+// Coalesced so overlapping callers share one query.
+function refreshFromDb() {
+    if (pendingRefresh) return pendingRefresh;
+    pendingRefresh = fetchEvents()
+        .then(data => {
+            if (!data.length) {
+                const err = new Error('commulingo_history_events has no rows');
+                err.code = 'COMMULINGO_EVENTS_EMPTY';
+                throw err;
+            }
+            memory = { data, source: 'db', at: Date.now() };
+            writeSnapshotFile(data);
+            return data;
+        })
+        .finally(() => {
+            pendingRefresh = null;
+        });
+    return pendingRefresh;
+}
+
+function ensureRefreshTimer() {
+    if (refreshTimer) return;
+    refreshTimer = setInterval(() => {
+        refreshFromDb().catch(err =>
+            console.error('[commulingo events] scheduled refresh failed:', err.message));
+    }, REFRESH_MS);
+    if (refreshTimer.unref) refreshTimer.unref(); // don't keep the process alive
+}
+
 async function loadCommuLingoHistoryEvents(options = {}) {
-    const now = Date.now();
-    const cacheMs = Number.isFinite(CACHE_MS) && CACHE_MS >= 0 ? CACHE_MS : 30000;
-    if (!options.fresh && cache && now < cache.expiresAt) return cache.data;
-    if (!options.fresh && pendingLoad) return pendingLoad;
-    pendingLoad = fetchEvents().then(data => {
-        cache = { data, expiresAt: Date.now() + cacheMs };
-        return data;
-    }).finally(() => { pendingLoad = null; });
-    return pendingLoad;
+    ensureRefreshTimer();
+
+    if (options.fresh) {
+        try {
+            return await refreshFromDb();
+        } catch (err) {
+            if (memory) return memory.data;
+            const snap = readSnapshotFile();
+            if (snap) return snap;
+            throw err;
+        }
+    }
+
+    // Hot path: serve the in-memory copy. If it is older than REFRESH_MS, kick a
+    // background refresh but still return the current data immediately.
+    if (memory) {
+        if (Date.now() - memory.at >= REFRESH_MS) refreshFromDb().catch(() => {});
+        return memory.data;
+    }
+
+    // Cold start: load the on-disk snapshot (fast), then refresh in the
+    // background. at:0 marks it stale so the next call triggers that refresh too.
+    const snap = readSnapshotFile();
+    if (snap) {
+        memory = { data: snap, source: 'snapshot', at: 0 };
+        refreshFromDb().catch(() => {});
+        return snap;
+    }
+
+    // No snapshot yet: build it from the DB this once (the only hot-path DB hit).
+    try {
+        return await refreshFromDb();
+    } catch (err) {
+        console.error('[commulingo events] no snapshot and DB load failed:', err.message);
+        return [];
+    }
 }
 
 async function loadCommuLingoPersonHistoryEvents(personId, options = {}) {
@@ -79,4 +175,16 @@ async function loadCommuLingoPersonHistoryEvents(personId, options = {}) {
     });
 }
 
-module.exports = { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents };
+// Rebuild the snapshot from the DB now (used after a migration or an edit so the
+// change surfaces without waiting for the timer).
+async function snapshotCommuLingoHistoryEvents() {
+    const data = await refreshFromDb();
+    return { path: SNAPSHOT_PATH, events: data.length };
+}
+
+module.exports = {
+    loadCommuLingoHistoryEvents,
+    loadCommuLingoPersonHistoryEvents,
+    snapshotCommuLingoHistoryEvents,
+    SNAPSHOT_PATH,
+};

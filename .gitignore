@@ -34,3 +34,7 @@ data/commulingo/generated/
 # CommuLingo people snapshot (rebuilt from the DB at runtime; on-disk cache/backup)
 data/commulingo/people-snapshot.json
 data/commulingo/people-snapshot.json.tmp
+
+# CommuLingo history-events snapshot (same pattern as the people snapshot)
+data/commulingo/history-events-snapshot.json
+data/commulingo/history-events-snapshot.json.tmp
