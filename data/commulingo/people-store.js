@@ -77,7 +77,7 @@ async function fetchRows() {
              ORDER BY person_id, sort_order, id`
         ),
         db.query(
-            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon
+            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage
              FROM commulingo_offices
              ORDER BY sort_order, id`
         ),
@@ -206,6 +206,7 @@ function rowsToPeopleData(rows) {
             title: t(row.title_ko, row.title_en),
             blurb: t(row.blurb_ko, row.blurb_en),
             icon: row.icon || '',
+            lineage: Array.isArray(row.lineage) ? row.lineage : [],
             rows: officeRowsByOffice[row.id] || [],
         })),
         people: rows.people.map(row => ({

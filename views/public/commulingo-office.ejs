@@ -19,6 +19,23 @@
             </div>
         </header>
 
+        <% if (office.lineage && office.lineage.length) { %>
+        <section class="commu-hub-section" aria-labelledby="office-lineage">
+            <h2 id="office-lineage"><%= en ? 'Organizational Lineage' : '조직 변천' %></h2>
+            <ol class="commu-office-lineage">
+                <% office.lineage.forEach(function(step) { %>
+                <li class="commu-lineage-step">
+                    <div class="commu-lineage-node">
+                        <strong><%= step.name %></strong>
+                        <span class="commu-office-years"><%= step.period %></span>
+                    </div>
+                    <p><%= step.body %></p>
+                </li>
+                <% }) %>
+            </ol>
+        </section>
+        <% } %>
+
         <section class="commu-hub-section" aria-labelledby="office-timeline">
             <h2 id="office-timeline"><%= en ? 'Leadership Timeline' : '지도부 타임라인' %></h2>
             <ol class="commu-office-rows commu-hub-office-rows">
