@@ -406,8 +406,6 @@ app.use(helmet({
         useDefaults: false,
         directives: {
             defaultSrc: ["'self'"],
-            // NOTE: no 'unsafe-eval'. PIXI.js v7 needs it — if the Babel Express
-            // game page is re-enabled, add a route-level CSP override there.
             scriptSrc: ["'self'", 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com', "'unsafe-inline'"],
             workerSrc: ["'self'", 'blob:'],
             styleSrc: ["'self'", "'unsafe-inline'"],
@@ -541,10 +539,6 @@ app.get('/reports/research/setlog-privacy-audit', (req, res) => {
     res.status(410).type('text/plain').send('Gone');
 });
 
-app.use('/img/game/raw', (req, res) => {
-    res.status(404).type('text/plain').send('Not found');
-});
-
 app.use(express.static(path.join(__dirname, 'public'), {
     index: false,
     setHeaders: (res, filePath) => {
@@ -585,11 +579,9 @@ const publicRoutes = require('./routes/public');
 const adminRoutes = require('./routes/admin');
 const webauthnRoutes = require('./routes/webauthn');
 const authRoutes = require('./routes/auth');
-const storyApiRoutes = require('./routes/story-api');
 const aiDiaryRoutes = require('./routes/ai-diary');
 const commuLingoRoutes = require('./routes/commulingo');
 const commuLingoAdminApiRoutes = require('./routes/commulingo-admin-api');
-const gameRoutes = require('./routes/game');
 const reportRoutes = require('./routes/reports');
 const hubRoutes = require('./routes/hub');
 const pageRoutes = require('./routes/pages');
@@ -600,14 +592,12 @@ app.use('/auth', authRoutes);
 app.use('/admin/webauthn', requireAdminIp, webauthnRoutes);
 app.get('/private', (req, res) => res.redirect('/reports'));
 app.use('/admin', requireAdminIp, adminRoutes);
-app.use('/api/story', storyApiRoutes);
 app.use('/ai-diary', aiDiaryRoutes);
 app.use('/commulingo/admin/api', commuLingoAdminApiRoutes);
 app.use('/commulingo', commuLingoRoutes);
 app.use('/reports', reportRoutes);
 app.use('/hub', hubRoutes);
 app.use('/p', pageRoutes);
-app.use('/game', gameRoutes);
 app.get('/health', (req, res) => { res.status(200).send('ok'); });
 
 // 404 handler

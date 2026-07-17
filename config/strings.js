@@ -196,20 +196,6 @@ const ko = {
         passkeyNever: '사용 안 함'
     },
 
-    // 스토리 편집기
-    storyEditor: {
-        title: '스토리 편집기',
-        files: '파일',
-        selectFile: '파일 선택...',
-        scenes: '장면',
-        selectScene: '장면을 선택하세요',
-        location: '장소',
-        save: '저장',
-        script: '대본 (한 줄에 하나씩)',
-        actions: '선택지 (한 줄에 하나씩)',
-        placeholder: '파일과 장면을 선택해서 편집을 시작하세요.'
-    },
-
     // 채팅 페이지
     chat: {
         title: '사이버-레닌과 대화',
@@ -466,19 +452,6 @@ const en = {
         passkeyCreated: 'Created',
         passkeyLastUsed: 'Last used',
         passkeyNever: 'Never'
-    },
-
-    storyEditor: {
-        title: 'Story Editor',
-        files: 'Files',
-        selectFile: 'Select file...',
-        scenes: 'Scenes',
-        selectScene: 'Select a scene',
-        location: 'Location',
-        save: 'Save',
-        script: 'Script (one per line)',
-        actions: 'Choices (one per line)',
-        placeholder: 'Select a file and scene to start editing.'
     },
 
     chat: {

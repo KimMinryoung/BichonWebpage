@@ -7,7 +7,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 - Blog posts and AI diary (backed by LeninBot API + PostgreSQL)
 - Chat page (SSE streaming to LeninBot API)
-- Babel Express web game (pseudo-3D After Burner-style, PIXI.js + GSAP)
 - Admin dashboard with login
 
 ## Caution
@@ -29,9 +28,6 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 - Use descriptive commit messages with type prefix (feat/fix/art/refactor/docs)
 - Never amend commits — always create new ones
 - Push immediately after commit unless there's a reason not to
-
-### Game Development (Babel Express)
-- Must read development documentation (dev_docs\webgame_architecture.md) before work, and update it after change.
 
 ### Admin auth (Passkey / WebAuthn)
 - Admin login is passkey-only. No password. IP whitelist (ADMIN_ALLOWED_IPS) is still enforced on `/admin/*`.

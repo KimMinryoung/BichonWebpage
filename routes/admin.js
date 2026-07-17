@@ -371,12 +371,4 @@ router.delete('/api/users/:id', requireAuth, adminApiLimiter, async (req, res) =
     }
 });
 
-// Story Editor
-router.get('/story-editor', requireAuth, (req, res) => {
-    res.render('admin/story-editor', {
-        title: 'Story Editor',
-        adminUser: req.session.adminUser
-    });
-});
-
 module.exports = router;
