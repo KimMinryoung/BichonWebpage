@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+    <style>
+        .novel-content { max-width: 720px; margin: 0 auto; }
+        .novel-body { line-height: 1.85; }
+        .novel-body p { margin: 0 0 1.1em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <article class="post-content novel-content">
+            <h1><%= novel.title %></h1>
+            <div class="post-meta">
+                <time datetime="<%= new Date(novel.updated_at).toISOString() %>"><%= new Date(novel.updated_at).toISOString().slice(0, 10) %></time>
+            </div>
+            <div class="post-body novel-body">
+                <%- bodyHtml %>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

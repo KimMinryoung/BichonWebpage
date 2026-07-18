@@ -233,6 +233,67 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+// Public novel pages, backed by the writer API. Reachable only by direct URL:
+// intentionally absent from nav, sitemap, and feeds, and served with noindex —
+// the only discovery path is the owner sharing the link.
+const WRITER_API_URL = process.env.WRITER_API_URL || 'http://172.17.0.1:8001';
+
+function novelEscapeHtml(text) {
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function novelBodyHtml(body) {
+    return body
+        .replace(/\r\n/g, '\n')
+        .split(/\n{2,}/)
+        .map((block) => {
+            const trimmed = block.trim();
+            if (!trimmed) return '';
+            const heading = /^(#{1,3})\s+(.+)$/.exec(trimmed);
+            if (heading) {
+                const level = heading[1].length + 1; // markdown # → h2..h4
+                return `<h${level}>${novelEscapeHtml(heading[2])}</h${level}>`;
+            }
+            return `<p>${novelEscapeHtml(trimmed).replace(/\n/g, '<br>')}</p>`;
+        })
+        .filter(Boolean)
+        .join('\n');
+}
+
+router.get('/novels/:slug', async (req, res) => {
+    const slug = req.params.slug;
+    if (!/^[A-Za-z0-9_-]{4,64}$/.test(slug)) {
+        return errorPage.notFound(res, { robotsMeta: 'noindex, nofollow' });
+    }
+    try {
+        const upstream = await fetch(`${WRITER_API_URL}/writer/public/${slug}`, {
+            signal: AbortSignal.timeout(10000),
+        });
+        if (upstream.status === 404) {
+            return errorPage.notFound(res, { robotsMeta: 'noindex, nofollow' });
+        }
+        if (!upstream.ok) throw new Error(`writer api responded ${upstream.status}`);
+        const { novel } = await upstream.json();
+        res.set('Cache-Control', 'no-store');
+        res.set('X-Robots-Tag', 'noindex, nofollow');
+        res.render('public/novel-view', {
+            novel,
+            bodyHtml: novelBodyHtml(novel.body || ''),
+            pageTitle: novel.title,
+            pageDescription: seo.excerpt(novel.body || novel.title, 160),
+            pagePath: `/novels/${slug}`,
+            robotsMeta: 'noindex, nofollow',
+        });
+    } catch (error) {
+        console.error('Error fetching public novel:', error);
+        errorPage.serverError(res);
+    }
+});
+
 // robots.txt
 router.get('/robots.txt', (req, res) => {
     res.type('text/plain').send(
