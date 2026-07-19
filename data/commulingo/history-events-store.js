@@ -46,7 +46,7 @@ async function fetchEvents() {
         if (!peopleByEvent[row.event_id]) peopleByEvent[row.event_id] = [];
         peopleByEvent[row.event_id].push({
             id: row.person_id,
-            kind: row.relation_kind || "target",
+            kind: row.relation_kind || "unclassified",
             name: t(row.name_ko, row.name_en),
             cyrillic: row.cyrillic || '',
             years: row.years_label || '',

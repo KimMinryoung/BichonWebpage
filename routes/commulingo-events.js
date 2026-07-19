@@ -12,8 +12,10 @@ function localize(value, lang) {
 
 // Related people are grouped by manner of involvement instead of one arbitrary
 // list. Order runs perpetrators → leadership → participants → opposition →
-// targets → witnesses; unknown kinds fall through to the end.
-const KIND_ORDER = ['executor', 'leader', 'participant', 'opponent', 'target', 'witness'];
+// targets → witnesses → unclassified; unknown kinds fall through to the end.
+// 'unclassified' is the neutral bucket for auto-linked people whose role has not
+// been classified yet — never silently treat a missing kind as a victim.
+const KIND_ORDER = ['executor', 'leader', 'participant', 'opponent', 'target', 'witness', 'unclassified'];
 const KIND_LABELS = {
     executor: { ko: '주도 · 집행', en: 'Drivers & enforcers' },
     leader: { ko: '지도부', en: 'Leadership' },
@@ -21,12 +23,13 @@ const KIND_LABELS = {
     opponent: { ko: '반대 · 저항', en: 'Opposition & resistance' },
     target: { ko: '대상 · 피해', en: 'Targets & victims' },
     witness: { ko: '목격 · 증언', en: 'Witnesses' },
+    unclassified: { ko: '관련 · 미분류', en: 'Involved · unclassified' },
 };
 
 function groupEventPeople(people, lang) {
     const buckets = {};
     people.forEach(person => {
-        const kind = person.kind || 'target';
+        const kind = person.kind || 'unclassified';
         (buckets[kind] || (buckets[kind] = [])).push(person);
     });
     const groups = [];
