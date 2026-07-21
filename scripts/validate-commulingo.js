@@ -9,6 +9,12 @@ const expected = {
   'capital-vol3': { chapters: 52, questions: 520, lessons: 104 },
   'lenin-imperialism': { chapters: 10, questions: 100, lessons: 20 },
   'lenin-state-revolution': { chapters: 6, questions: 60, lessons: 12 },
+  'marx-wage-labour-capital': { chapters: 6, questions: 60, lessons: 12 },
+};
+const expectedSpecial = {
+  'engels-origin-family': { format: 'concept-graph', nodes: 8, stages: 24 },
+  'history-russian-revolution': { format: 'decision-history', eras: 4, episodes: 14 },
+  'history-soviet-union': { format: 'decision-history', eras: 4, episodes: 15 },
 };
 const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7 };
 const banned = [
@@ -44,6 +50,67 @@ function allLocalizedText(value, label) {
   localized(value, label);
   checkText(value && value.ko, label + '.ko');
   checkText(value && value.en, label + '.en');
+}
+
+function checkLocalizedItems(items, label, fields) {
+  if (!Array.isArray(items) || !items.length) { fail(label + ' must be a non-empty array'); return; }
+  items.forEach(function(item, index) {
+    fields.forEach(function(field) { allLocalizedText(item && item[field], label + '[' + index + '].' + field); });
+  });
+}
+
+function checkSpecialCollection(collectionId, spec) {
+  const collection = collections.get(collectionId);
+  if (!collection) { fail('missing collection ' + collectionId); return; }
+  if (collection.format !== spec.format) fail(collectionId + ' format ' + collection.format + ' != ' + spec.format);
+  if ((collection.chapters || []).length) fail(collectionId + ' special collection must not have quiz chapters');
+  allLocalizedText(collection.title, collectionId + '.title');
+  allLocalizedText(collection.description, collectionId + '.description');
+
+  if (spec.format === 'concept-graph') {
+    const graph = collection.conceptGraph;
+    if (!graph || typeof graph !== 'object') { fail(collectionId + '.conceptGraph is missing'); return; }
+    allLocalizedText(graph.question, collectionId + '.conceptGraph.question');
+    allLocalizedText(graph.thesis, collectionId + '.conceptGraph.thesis');
+    const nodes = graph.nodes || [];
+    if (nodes.length !== spec.nodes) fail(collectionId + ' node count ' + nodes.length + ' != ' + spec.nodes);
+    checkLocalizedItems(nodes, collectionId + '.conceptGraph.nodes', ['label', 'summary']);
+    const seenNodeIds = new Set();
+    let stageCount = 0;
+    nodes.forEach(function(node, nodeIndex) {
+      if (!node || !String(node.id || '').trim()) fail(collectionId + '.conceptGraph.nodes[' + nodeIndex + '].id is empty');
+      else if (seenNodeIds.has(node.id)) fail(collectionId + ' duplicate concept node id ' + node.id);
+      else seenNodeIds.add(node.id);
+      const stages = (node && node.stages) || [];
+      stageCount += stages.length;
+      checkLocalizedItems(stages, collectionId + '.conceptGraph.nodes[' + nodeIndex + '].stages', ['label', 'text']);
+    });
+    if (stageCount !== spec.stages) fail(collectionId + ' stage count ' + stageCount + ' != ' + spec.stages);
+    return;
+  }
+
+  const timeline = collection.decisionTimeline;
+  if (!timeline || typeof timeline !== 'object') { fail(collectionId + '.decisionTimeline is missing'); return; }
+  allLocalizedText(timeline.question, collectionId + '.decisionTimeline.question');
+  allLocalizedText(timeline.thesis, collectionId + '.decisionTimeline.thesis');
+  checkLocalizedItems(timeline.stances, collectionId + '.decisionTimeline.stances', ['label', 'desc']);
+  const eras = timeline.eras || [];
+  if (eras.length !== spec.eras) fail(collectionId + ' era count ' + eras.length + ' != ' + spec.eras);
+  checkLocalizedItems(eras, collectionId + '.decisionTimeline.eras', ['range', 'title', 'intro']);
+  const seenEpisodeIds = new Set();
+  let episodeCount = 0;
+  eras.forEach(function(era, eraIndex) {
+    const episodes = (era && era.episodes) || [];
+    episodeCount += episodes.length;
+    checkLocalizedItems(episodes, collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes', ['date', 'title', 'role', 'briefing', 'question', 'outcome', 'ripple', 'insight']);
+    episodes.forEach(function(episode, episodeIndex) {
+      if (!episode || !String(episode.id || '').trim()) fail(collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes[' + episodeIndex + '].id is empty');
+      else if (seenEpisodeIds.has(episode.id)) fail(collectionId + ' duplicate episode id ' + episode.id);
+      else seenEpisodeIds.add(episode.id);
+      checkLocalizedItems(episode && episode.options, collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes[' + episodeIndex + '].options', ['label', 'note']);
+    });
+  });
+  if (episodeCount !== spec.episodes) fail(collectionId + ' episode count ' + episodeCount + ' != ' + spec.episodes);
 }
 
 function checkChoiceFeedback(value, qLabel) {
@@ -152,9 +219,13 @@ Object.keys(expected).forEach(function(collectionId) {
   if (partNumbers.size && partNumbers.size !== requiredParts[collectionId]) fail(collectionId + ' part count ' + partNumbers.size + ' != ' + requiredParts[collectionId]);
 });
 
-(data.collections || []).forEach(function(collection) { if (!expected[collection.id]) fail('unexpected collection ' + collection.id); });
-if (totalQuestions !== 1220) fail('total question count ' + totalQuestions + ' != 1220');
-if (totalLessons !== 244) fail('total lesson count ' + totalLessons + ' != 244');
+Object.keys(expectedSpecial).forEach(function(collectionId) { checkSpecialCollection(collectionId, expectedSpecial[collectionId]); });
+
+(data.collections || []).forEach(function(collection) {
+  if (!expected[collection.id] && !expectedSpecial[collection.id]) fail('unexpected collection ' + collection.id);
+});
+if (totalQuestions !== 1280) fail('total question count ' + totalQuestions + ' != 1280');
+if (totalLessons !== 256) fail('total lesson count ' + totalLessons + ' != 256');
 
 if (errors.length) {
   console.error('Commulingo validation failed with ' + errors.length + ' issue(s):');
@@ -162,4 +233,4 @@ if (errors.length) {
   if (errors.length > 80) console.error('... ' + (errors.length - 80) + ' more');
   process.exit(1);
 }
-console.log(JSON.stringify({ ok: true, collections: Object.keys(expected).length, lessons: totalLessons, questions: totalQuestions }));
+console.log(JSON.stringify({ ok: true, collections: Object.keys(expected).length + Object.keys(expectedSpecial).length, lessons: totalLessons, questions: totalQuestions }));
