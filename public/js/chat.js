@@ -190,21 +190,29 @@
     }
 
     // Recovery: poll /history after a background connection drop to find the completed answer
-    async function tryRecoverFromHistory(msg, errDiv, logDiv) {
+    async function tryRecoverFromHistory(msg, errDiv, logDiv, startedAt) {
         if (recovering) return;
         recovering = true;
         errDiv.textContent = '연결이 끊겼습니다. 답변을 복구하는 중...';
 
-        var delays = [2000, 4000, 8000];
+        // The API owns generation after an SSE drop, so allow enough time for
+        // multi-round tool work (notably vector searches) to finish and save.
+        var delays = [2000, 4000, 8000, 15000, 30000, 45000, 60000];
         for (var i = 0; i < delays.length; i++) {
             await new Promise(function (resolve) { setTimeout(resolve, delays[i]); });
             try {
-                var res = await fetch(API_URL + '/history?fingerprint=' + encodeURIComponent(userId) + '&limit=10');
+                var res = await fetch(
+                    API_URL + '/history?fingerprint=' + encodeURIComponent(userId) +
+                    '&session_id=' + encodeURIComponent(sessionId) +
+                    '&persona=' + encodeURIComponent(selectedPersona) +
+                    '&limit=10'
+                );
                 if (!res.ok) continue;
                 var data = await res.json();
                 var history = data.history || [];
                 for (var j = 0; j < history.length; j++) {
-                    if (history[j].user_query === msg) {
+                    var savedAt = Date.parse(history[j].created_at || '') || 0;
+                    if (history[j].user_query === msg && (!startedAt || savedAt >= startedAt - 5000)) {
                         errDiv.remove();
                         if (logDiv) logDiv.remove();
                         var recoveredAi = appendMessage(history[j].bot_answer, 'chat-message-ai');
@@ -217,6 +225,8 @@
                         if (document.visibilityState === 'hidden') {
                             document.title = '💬 답변 도착 — ' + originalTitle;
                         }
+                        streamDied = false;
+                        recoveryContext = null;
                         recovering = false;
                         return;
                     }
@@ -227,6 +237,7 @@
         // All attempts failed — the answer was never saved (server died mid-generation
         // before _log_chat ran). Surface that truthfully and offer a one-click resend.
         showRetryError(errDiv, STRINGS.notSaved, msg);
+        recoveryContext = null;
         recovering = false;
     }
 
@@ -239,7 +250,12 @@
             chatBox.scrollTop = chatBox.scrollHeight;
             // If stream died while we were away, try to recover the answer from history
             if (streamDied && hiddenDuringRequest && recoveryContext) {
-                tryRecoverFromHistory(recoveryContext.message, recoveryContext.errorDiv, recoveryContext.logDiv);
+                tryRecoverFromHistory(
+                    recoveryContext.message,
+                    recoveryContext.errorDiv,
+                    recoveryContext.logDiv,
+                    recoveryContext.startedAt
+                );
             }
         }
     });
@@ -710,10 +726,14 @@
         recovering = false;
         recoveryContext = null;
         setLoading(true);
+        var requestStartedAt = Date.now();
 
         var logDiv = appendMessage(options.regenerateFromId ? STRINGS.regenerating : STRINGS.thinking, 'chat-message-log');
         var aiDiv = null;
         var streamedText = '';
+        var terminalEventReceived = false;
+        var serverRunStarted = false;
+        var activeRequestId = '';
         var renderScheduled = false;
         var toolStatusDiv = null;
         var toolStatusRemoveTimer = null;
@@ -819,7 +839,10 @@
                     try {
                         var data = JSON.parse(jsonStr);
 
-                        if (data.type === 'log') {
+                        if (data.type === 'run_started') {
+                            serverRunStarted = true;
+                            activeRequestId = data.request_id || '';
+                        } else if (data.type === 'log') {
                             if (data.node === 'tool') continue;
                             accumulatedLog += data.content + '\n\n';
                             if (logDiv && logDiv.parentNode) logDiv.textContent = accumulatedLog;
@@ -855,6 +878,7 @@
                             streamedText += data.content;
                             scheduleRender();
                         } else if (data.type === 'answer') {
+                            terminalEventReceived = true;
                             accumulatedLog = '';
                             if (logDiv) { logDiv.remove(); logDiv = null; }
                             clearToolStatus();
@@ -878,6 +902,7 @@
                                 warn.classList.add('chat-message-warning');
                             }
                         } else if (data.type === 'error') {
+                            terminalEventReceived = true;
                             if (logDiv) logDiv.remove();
                             clearToolStatus();
                             var errMsg = appendMessage(data.content, 'chat-message-ai');
@@ -889,19 +914,26 @@
                     }
                 }
             }
+            if (!terminalEventReceived) {
+                throw new Error('chat stream ended before a terminal event');
+            }
         } catch (err) {
-            console.error('Chat Error: ', err);
+            console.error('Chat Error:', activeRequestId || 'no-request-id', err);
             streamDied = true;
             clearToolStatus();
             var errDiv = aiDiv ? aiDiv : appendMessage('', 'chat-message-ai');
 
-            if (hiddenDuringRequest && !options.regenerateFromId) {
-                recoveryContext = { message: message, errorDiv: errDiv, logDiv: logDiv };
-                if (document.visibilityState === 'visible') {
-                    tryRecoverFromHistory(message, errDiv);
-                } else {
+            if (!options.regenerateFromId && serverRunStarted) {
+                recoveryContext = {
+                    message: message,
+                    errorDiv: errDiv,
+                    logDiv: logDiv,
+                    startedAt: requestStartedAt
+                };
+                if (document.visibilityState !== 'visible') {
                     errDiv.textContent = '연결이 끊겼습니다. 탭으로 돌아오면 답변을 복구합니다...';
                 }
+                await tryRecoverFromHistory(message, errDiv, logDiv, requestStartedAt);
             } else {
                 showRetryError(errDiv, STRINGS.error, message);
             }

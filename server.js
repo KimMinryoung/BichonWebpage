@@ -356,6 +356,16 @@ app.use('/api/proxy', createProxyMiddleware({
                     }
                 });
             }
+            if (req.method === 'POST' && req.url === '/chat') {
+                const startedAt = Date.now();
+                res.on('close', () => {
+                    if (!res.writableEnded) {
+                        console.warn('[chat-proxy] downstream closed before stream completion', {
+                            elapsedMs: Date.now() - startedAt,
+                        });
+                    }
+                });
+            }
             proxyReq.removeHeader('X-User-Fingerprints');
             proxyReq.removeHeader('X-Authenticated-User-Id');
             proxyReq.removeHeader('X-Webchat-Proxy-Secret');
@@ -384,6 +394,20 @@ app.use('/api/proxy', createProxyMiddleware({
         },
         proxyRes: (proxyRes) => {
             proxyRes.headers['X-Accel-Buffering'] = 'no';
+        },
+        error: (err, req, res) => {
+            console.error('[api-proxy] upstream error', {
+                method: req.method,
+                path: (req.url || '').split('?')[0],
+                code: err.code || '',
+                message: err.message,
+            });
+            if (!res.headersSent) {
+                res.writeHead(502, { 'Content-Type': 'application/json; charset=utf-8' });
+            }
+            if (!res.writableEnded) {
+                res.end(JSON.stringify({ error: 'upstream unavailable' }));
+            }
         },
     },
 }));
