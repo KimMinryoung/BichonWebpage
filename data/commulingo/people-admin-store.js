@@ -1,6 +1,8 @@
 const db = require('../../config/database');
 const { OFFICE_ICON, parsePeriod, normalizeFateLabel } = require('./people-standard');
 const { clearCommuLingoPeopleCache } = require('./people-store');
+const { checkNativeScript } = require('./native-script');
+const { hasFlag, flagLabel } = require('./flag-icons');
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -145,6 +147,59 @@ async function replaceRole(client, personId, role) {
     );
 }
 
+function nationality(code, ko, en) {
+    if (!code) return null;
+    return { code, label: t(ko || flagLabel(code, 'ko'), en || flagLabel(code, 'en')) };
+}
+
+// citizenship / origin payload: { code, label? } — the label defaults to the
+// flag table, and {} (or null) clears the field. An unknown code is rejected
+// rather than stored, since the card would render no flag for it.
+function normalizeNationality(node, field) {
+    if (node === null) return { code: '', ko: '', en: '' };
+    if (typeof node !== 'object') throw badRequest(`${field} must be an object { code, label }`);
+    const code = typeof node.code === 'string' ? node.code.trim() : '';
+    if (!code) return { code: '', ko: '', en: '' };
+    if (!hasFlag(code)) {
+        throw badRequest(
+            `${field}.code '${code}' is not a known nationality code (no flag icon). `
+            + 'See FLAG_NAMES in data/commulingo/flag-icons.js.'
+        );
+    }
+    return {
+        code,
+        ko: localized(node.label, 'ko') || flagLabel(code, 'ko'),
+        en: localized(node.label, 'en') || flagLabel(code, 'en'),
+    };
+}
+
+// The native-name line must be written in the person's own script. Rejecting the
+// mismatch here is what keeps a Russian transliteration from being filed under a
+// Korean, Hungarian or Chinese figure (see data/commulingo/native-script.js).
+function assertNativeScript(payload, { citizenship, origin }) {
+    if (payload.nativeScriptOverride === true) return;
+    const checks = [
+        ['cyrillic', payload.cyrillic],
+        ['cyrillicPatronymic', payload.cyrillicPatronymic],
+    ];
+    for (const [field, value] of checks) {
+        if (value === undefined || value === null || value === '') continue;
+        const problem = checkNativeScript(value, { citizenship, origin, field });
+        if (problem) throw badRequest(problem.message);
+    }
+}
+
+// `cyrillic` is the legacy column name for the native-script name; `nativeName`
+// is the same field under a name that does not mislead. Accept both on input.
+function withNativeNameAliases(payload) {
+    const merged = { ...payload };
+    if (merged.cyrillic === undefined && merged.nativeName !== undefined) merged.cyrillic = merged.nativeName;
+    if (merged.cyrillicPatronymic === undefined && merged.nativePatronymic !== undefined) {
+        merged.cyrillicPatronymic = merged.nativePatronymic;
+    }
+    return merged;
+}
+
 function rowToPerson(row) {
     return {
         id: row.id,
@@ -152,6 +207,9 @@ function rowToPerson(row) {
         groupId: row.group_id,
         initial: row.initial || '',
         cyrillic: row.cyrillic || '',
+        nativeName: row.cyrillic || '',
+        citizenship: nationality(row.citizenship_code, row.citizenship_label_ko, row.citizenship_label_en),
+        origin: nationality(row.origin_code, row.origin_label_ko, row.origin_label_en),
         years: row.years_label || '',
         birthYear: row.birth_year,
         deathYear: row.death_year,
@@ -174,7 +232,9 @@ async function listPeopleAdmin(options = {}) {
     const { rows } = await db.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
                 name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
-                fate_kind, fate_label_ko, fate_label_en
+                fate_kind, fate_label_ko, fate_label_en,
+                citizenship_code, citizenship_label_ko, citizenship_label_en,
+                origin_code, origin_label_ko, origin_label_en
          FROM commulingo_people
          WHERE ($1 = ''
                 OR id ILIKE '%' || $1 || '%'
@@ -195,7 +255,9 @@ async function getPersonAdmin(personId, options = {}) {
     const personResult = await client.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
                 name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
-                fate_kind, fate_label_ko, fate_label_en
+                fate_kind, fate_label_ko, fate_label_en,
+                citizenship_code, citizenship_label_ko, citizenship_label_en,
+                origin_code, origin_label_ko, origin_label_en
          FROM commulingo_people
          WHERE id = $1`,
         [id]
@@ -382,9 +444,13 @@ async function replaceCareer(client, personId, career) {
     }
 }
 
-async function createPersonAdmin(payload, options = {}) {
+async function createPersonAdmin(rawPayload, options = {}) {
+    const payload = withNativeNameAliases(rawPayload || {});
     return withTransaction(options, async client => {
         const id = requireId(payload.id, 'person id');
+        const citizenship = normalizeNationality(payload.citizenship || null, 'citizenship');
+        const origin = normalizeNationality(payload.origin || null, 'origin');
+        assertNativeScript(payload, { citizenship: citizenship.code, origin: origin.code });
         const groupId = requireId(payload.groupId || payload.group, 'group id');
         const nameKo = localized(payload.name, 'ko');
         const nameEn = localized(payload.name, 'en');
@@ -401,11 +467,15 @@ async function createPersonAdmin(payload, options = {}) {
             `INSERT INTO commulingo_people
                 (id, group_id, sort_order, initial, cyrillic, years_label, birth_year, death_year,
                  name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
-                 fate_kind, fate_label_ko, fate_label_en, updated_at)
+                 fate_kind, fate_label_ko, fate_label_en,
+                 citizenship_code, citizenship_label_ko, citizenship_label_en,
+                 origin_code, origin_label_ko, origin_label_en, updated_at)
              VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8,
                  $9, $10, $11, $12, $13, $14, $15, $16,
-                 $17, $18, $19, NOW())`,
+                 $17, $18, $19,
+                 $20, $21, $22,
+                 $23, $24, $25, NOW())`,
             [
                 id,
                 groupId,
@@ -426,6 +496,12 @@ async function createPersonAdmin(payload, options = {}) {
                 payload.fate ? payload.fate.kind || '' : '',
                 payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'ko'), years.deathYear) : '',
                 payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), years.deathYear) : '',
+                citizenship.code,
+                citizenship.ko,
+                citizenship.en,
+                origin.code,
+                origin.ko,
+                origin.en,
             ]
         );
         await replacePatronymic(client, id, payload);
@@ -439,7 +515,8 @@ async function createPersonAdmin(payload, options = {}) {
     });
 }
 
-async function updatePersonAdmin(personId, payload, options = {}) {
+async function updatePersonAdmin(personId, rawPayload, options = {}) {
+    const payload = withNativeNameAliases(rawPayload || {});
     return withTransaction(options, async client => {
         const id = requireId(personId, 'person id');
         const before = await getPersonAdmin(id, { client });
@@ -448,6 +525,25 @@ async function updatePersonAdmin(personId, payload, options = {}) {
             err.status = 404;
             throw err;
         }
+        // The script check runs against the nationality the record will HAVE
+        // after this patch, so fixing a wrong citizenship and the native name in
+        // one call is accepted while either alone is still checked.
+        const citizenship = payload.citizenship !== undefined
+            ? normalizeNationality(payload.citizenship, 'citizenship')
+            : { code: before.citizenship ? before.citizenship.code : '' };
+        const origin = payload.origin !== undefined
+            ? normalizeNationality(payload.origin, 'origin')
+            : { code: before.origin ? before.origin.code : '' };
+        assertNativeScript(
+            {
+                ...payload,
+                cyrillic: payload.cyrillic !== undefined ? payload.cyrillic : before.cyrillic,
+                cyrillicPatronymic: payload.cyrillicPatronymic !== undefined
+                    ? payload.cyrillicPatronymic
+                    : undefined,
+            },
+            { citizenship: citizenship.code, origin: origin.code }
+        );
         const sets = [];
         const values = [];
         function set(column, value) {
@@ -478,6 +574,18 @@ async function updatePersonAdmin(personId, payload, options = {}) {
         if (payload.bio !== undefined) {
             set('bio_ko', localized(payload.bio, 'ko'));
             set('bio_en', localized(payload.bio, 'en'));
+        }
+        if (payload.citizenship !== undefined) {
+            const value = normalizeNationality(payload.citizenship, 'citizenship');
+            set('citizenship_code', value.code);
+            set('citizenship_label_ko', value.ko);
+            set('citizenship_label_en', value.en);
+        }
+        if (payload.origin !== undefined) {
+            const value = normalizeNationality(payload.origin, 'origin');
+            set('origin_code', value.code);
+            set('origin_label_ko', value.ko);
+            set('origin_label_en', value.en);
         }
         if (payload.fate !== undefined) {
             // Death year comes from an incoming years payload if present, else the

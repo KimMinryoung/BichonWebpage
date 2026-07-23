@@ -41,6 +41,7 @@ const FLAG_NAMES = {
     cuba: { ko: '쿠바', en: 'Cuba' },
     spain: { ko: '스페인', en: 'Spain' },
     romania: { ko: '루마니아', en: 'Romania' },
+    yugoslavia: { ko: '유고슬라비아', en: 'Yugoslavia' },
     czechia: { ko: '체코', en: 'Czechia' },
     'east-germany': { ko: '동독', en: 'East Germany' },
     uzbekistan: { ko: '우즈베키스탄', en: 'Uzbekistan' },

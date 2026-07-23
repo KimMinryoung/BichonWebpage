@@ -1,8 +1,62 @@
 # CommuLingo People Dictionary Handoff
 
-Last updated: 2026-07-14
+Last updated: 2026-07-23
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
+
+## Native-name script standard — added 2026-07-23
+
+`commulingo_people.cyrillic` is misnamed: it is the **name in the person's own
+script**, rendered under the display name on the card and detail page. Because
+the column says "cyrillic", curators and ingest agents filled it with a Russian
+transliteration for everyone — 박헌영 showed as `Пак Хон Ён`, Kádár János as
+`Янош Кадар`, 片山潜 as `Сэн Катаяма`. Migration 057 rewrote 51 such rows.
+
+**Rule: the field carries the person's name as their own nation writes it.**
+
+| Nationality | Script | Example |
+| --- | --- | --- |
+| soviet, russia, ukraine, belarus, bulgaria, kazakhstan, kyrgyzstan, tajikistan | Cyrillic | `Иосиф Сталин`, `Дінмұхамед Қонаев` |
+| Latin-alphabet nations (Poland, Hungary, Czechia, the Baltics, Germany, France, USA, Africa, Latin America…) | Latin, with diacritics | `Kádár János`, `Mārtiņš Lācis`, `Władysław Gomułka` |
+| north-korea, south-korea | Hangul (Hanja allowed) | `박헌영` |
+| china | Hanzi | `李大钊` |
+| japan | Kanji/kana | `片山潜` |
+| georgia / armenia | Georgian / Armenian | `ედუარდ შევარდნაძე` |
+| uzbekistan, azerbaijan, turkmenistan, moldova | modern Latin or Soviet-era Cyrillic | `Heydər Əliyev` |
+| india | Devanagari, Bengali or Latin | `মানবেন্দ্র নাথ রায়` |
+
+Hungarians follow family-name-first (`Nagy Imre`, `Kun Béla`), matching the
+entries that were already correct.
+
+`cyrillic_patronymic` is the middle slot of the same line and follows the same
+rule: a Western middle name in Latin (`Earl` + `Russell` + `Browder`), a
+Russian-style patronymic only for people who actually used one. It is dropped,
+not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
+
+**Where it is enforced (keep all four in sync):**
+
+- `data/commulingo/native-script.js` — `NATION_SCRIPTS` (nationality code →
+  allowed scripts) plus `checkNativeScript()`. Single source of the rule.
+- `data/commulingo/people-admin-store.js` — create/update run
+  `assertNativeScript()` and return HTTP 400 with the rule in the message.
+  Payload alias `nativeName` / `nativePatronymic` is accepted for the same
+  columns; `nativeScriptOverride: true` is the deliberate escape hatch. The same
+  store now also reads and writes `citizenship` / `origin` (`{code, label}`),
+  which it previously ignored.
+- leninbot `runtime_tools/commulingo_people.py` — `_NATION_SCRIPTS` and
+  `_check_native_script()` are the Python port, wired into `_validate` so
+  `commulingo_edit` rejects the mismatch before staging or applying. Its tool
+  description carries the rule for the agent.
+- `scripts/audit-person-native-names.js` — backstop for rows written before the
+  guard or by hand-run SQL; exits 1 when mismatches remain.
+
+Because the check keys off `citizenship_code`, a wrong citizenship produces a
+wrong name. **Citizenship is the state the person belonged to for the work they
+are known for — not their birthplace and not where they died.** A Soviet
+official who was born in Poland and died in exile in New York is `soviet`, with
+`origin` carrying the birthplace. Migration 058 fixed eight records that had the
+place of death or of birth in the citizenship slot (Rokossovsky, Radek, Armand,
+Kamo, Rakovsky, Tsereteli, Alexei Kuznetsov, Tito).
 
 ## Fate label standard — added 2026-07-14
 
