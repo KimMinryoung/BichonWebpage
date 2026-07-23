@@ -111,21 +111,24 @@ function scriptsFor(code) {
     return Object.prototype.hasOwnProperty.call(NATION_SCRIPTS, key) ? NATION_SCRIPTS[key] : null;
 }
 
-// Check one native-name string against a nationality code.
+// Check one native-name string against a person's nationality.
 // Returns null when it is fine (or when there is nothing to check against), or
 // { code, allowed, found, message } describing the mismatch.
 //
-// `citizenship` is the nationality that governs. `origin` is only consulted when
-// there is no citizenship code, since birthplace does not decide how a person
-// writes their own name.
+// Both nationalities count: the convention files Soviet republic officials as
+// citizenship 'soviet' + origin 'latvia'/'georgia'/…, and a Latvian in the USSR
+// legitimately writes Mārtiņš Lācis in Latin, not only Мартын Лацис. So the
+// allowed set is the union of what each code permits — still enough to catch a
+// Russian transliteration standing in for Hangul, Hanzi or Georgian.
 function checkNativeScript(text, { citizenship, origin, field = 'cyrillic' } = {}) {
     const value = String(text || '').trim();
     if (!value) return null;
-    const code = (typeof citizenship === 'string' && citizenship.trim())
-        || (typeof origin === 'string' && origin.trim())
-        || '';
-    const allowed = scriptsFor(code);
-    if (!allowed) return null;
+    const codes = [citizenship, origin]
+        .map(entry => (typeof entry === 'string' ? entry.trim() : ''))
+        .filter(Boolean);
+    const code = codes.join(' + ');
+    const allowed = [...new Set(codes.flatMap(entry => scriptsFor(entry) || []))];
+    if (!allowed.length) return null;
     const found = detectScripts(value);
     if (!found.length) return null;
     const wrong = found.filter(script => !allowed.includes(script));
@@ -135,7 +138,7 @@ function checkNativeScript(text, { citizenship, origin, field = 'cyrillic' } = {
         allowed,
         found: wrong,
         message:
-            `${field} "${value}" is written in ${wrong.join('/')} but citizenship '${code}' `
+            `${field} "${value}" is written in ${wrong.join('/')} but nationality '${code}' `
             + `writes its names in ${allowed.join(' or ')}. `
             + `${field} is the person's name in their OWN script, not a Russian transliteration `
             + `(박헌영, not Пак Хон Ён; Kádár János, not Янош Кадар). `
