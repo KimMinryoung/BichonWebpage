@@ -92,6 +92,9 @@ The two flags are navigable facets. Citizenship links to
 `/commulingo/people/national-origin/:code`. Both pages reuse the standard
 chronological person cards. Migration 063 corrects Kim Jong Il from a
 birthplace-derived Russian background to DPRK/Korean background.
+Migration 064 makes the same legacy correction for Dzerzhinsky: present-day
+Belarus is his birthplace geography, while his documented national background
+and own-script name are Polish (`Feliks Dzierżyński`).
 
 ## Fate label standard — added 2026-07-14
 
