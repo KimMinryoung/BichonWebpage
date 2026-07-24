@@ -152,6 +152,18 @@
     border-bottom-style: solid;
 }
 
+/* Deep links from 관련 보고서 sections land on a first-mention anchor:
+   keep it clear of the sticky nav and flag the landing spot. */
+.report-body .commu-person-link,
+.report-body .commu-topic-link,
+.report-body .commu-event-link {
+    scroll-margin-top: 90px;
+}
+
+.report-body a:target {
+    background: color-mix(in srgb, var(--link, #5d7a5a) 30%, transparent);
+}
+
 .report-body .commu-event-link {
     color: var(--accent-red, #b84f4f);
     border-bottom-color: color-mix(in srgb, currentColor 80%, transparent);

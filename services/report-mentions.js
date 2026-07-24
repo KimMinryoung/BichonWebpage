@@ -9,7 +9,7 @@
 // Only the very first request after a process start awaits the build.
 
 const researchStore = require('../config/research-store');
-const { getReportLinkContext, findEntityMentions } = require('../data/commulingo/report-links');
+const { getReportLinkContext, findEntityMentions, mentionAnchor } = require('../data/commulingo/report-links');
 
 const REFRESH_MS = Number.parseInt(process.env.REPORT_MENTIONS_REFRESH_MS || '600000', 10);
 const MAX_REPORTS_PER_ENTITY = 12;
@@ -74,10 +74,14 @@ async function getMentionsIndex() {
     return refresh();
 }
 
-function present(list, lang) {
+// anchor deep-links each report to the entity's first mention (the id that
+// linkifyReportHtml stamps on the link). If the mention only exists in the
+// other language's text, the fragment simply has no target and the page opens
+// at the top — harmless.
+function present(list, lang, anchor) {
     return (list || []).slice(0, MAX_REPORTS_PER_ENTITY).map(doc => ({
         slug: doc.slug,
-        href: doc.href,
+        href: anchor ? doc.href + '#' + anchor : doc.href,
         title: (lang === 'en' ? doc.title.en : doc.title.ko) || doc.title.ko,
         dateLabel: doc.dateLabel,
     }));
@@ -87,14 +91,14 @@ async function getReportsForPerson(personId, lang) {
     const id = typeof personId === 'string' ? personId.trim() : '';
     if (!id) return [];
     const index = await getMentionsIndex();
-    return present(index.byPerson.get(id), lang);
+    return present(index.byPerson.get(id), lang, mentionAnchor('', id));
 }
 
 async function getReportsForEvent(eventId, lang) {
     const id = typeof eventId === 'string' ? eventId.trim() : '';
     if (!id) return [];
     const index = await getMentionsIndex();
-    return present(index.byEvent.get(id), lang);
+    return present(index.byEvent.get(id), lang, mentionAnchor('event', id));
 }
 
 // kind: 'role' | 'office' (classification pages, see topic-linkify.js)
@@ -102,7 +106,7 @@ async function getReportsForTopic(kind, topicId, lang) {
     const id = typeof topicId === 'string' ? topicId.trim() : '';
     if (!id) return [];
     const index = await getMentionsIndex();
-    return present(index.byTopic.get(kind + ':' + id), lang);
+    return present(index.byTopic.get(kind + ':' + id), lang, mentionAnchor(kind, id));
 }
 
 module.exports = {

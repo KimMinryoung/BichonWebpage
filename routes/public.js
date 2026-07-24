@@ -12,6 +12,8 @@ const researchStore = require('../config/research-store');
 const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
+const { sanitizePost } = require('../utils/sanitize');
+const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 
 const POSTS_PER_PAGE = 20;
 
@@ -208,9 +210,19 @@ router.get('/post/:id', async (req, res) => {
         const prevId = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
         const nextId = idx > 0 ? nav[idx - 1] : null;
 
+        // CommuLingo entity links (inline only — posts stay out of the
+        // reverse report-mentions index). Failure only costs the links.
+        let contentHtml = sanitizePost(post.content || '').replace(/\n/g, '<br>');
+        try {
+            contentHtml = linkifyReportHtml(contentHtml, await getReportLinkContext(lang)).html;
+        } catch (e) {
+            console.error('post entity links:', e);
+        }
+
         const plainText = seo.excerpt(post.content, 160);
         res.render('public/post', {
             post,
+            contentHtml,
             prevId,
             nextId,
             pageTitle: post.title,

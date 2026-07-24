@@ -16,7 +16,7 @@
                 <% } %>
             </div>
             <div class="post-body">
-                <%- sanitize(diary.content).replace(/\n/g, '<br>') %>
+                <%- typeof contentHtml !== 'undefined' ? contentHtml : sanitize(diary.content).replace(/\n/g, '<br>') %>
             </div>
         </article>
 

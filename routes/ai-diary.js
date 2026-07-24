@@ -6,6 +6,8 @@ const { requireAuth } = require('../middleware/auth');
 const cache = require('../config/diary-cache');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
+const { sanitizeBasic } = require('../utils/sanitize');
+const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 
 const DIARIES_PER_PAGE = 20;
 
@@ -109,9 +111,18 @@ router.get('/:id', async (req, res) => {
         const prevId = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
         const nextId = idx > 0 ? nav[idx - 1] : null;
 
+        // CommuLingo entity links (inline only — diaries stay out of the
+        // reverse report-mentions index). Failure only costs the links.
+        let contentHtml = sanitizeBasic(diary.content || '').replace(/\n/g, '<br>');
+        try {
+            contentHtml = linkifyReportHtml(contentHtml, await getReportLinkContext(lang)).html;
+        } catch (e) {
+            console.error('diary entity links:', e);
+        }
+
         const plainText = seo.excerpt(diary.content || '', 160);
         res.render('public/ai-diary-view', {
-            diary, prevId, nextId,
+            diary, contentHtml, prevId, nextId,
             pageTitle: diary.title,
             pageDescription: plainText,
             pagePath: `/ai-diary/${diary.id}`,

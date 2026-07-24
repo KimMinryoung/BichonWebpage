@@ -56,11 +56,20 @@ function guardedMatch(index, match, offset, source) {
     return index.byAlias[match] || null;
 }
 
+// Anchor ids marking an entity's first mention, so related-report links can
+// deep-link to the spot (see services/report-mentions.js). Kinds get distinct
+// prefixes: person 'mention-<id>', event 'mention-event-<id>', classification
+// 'mention-<role|office>-<id>'.
+function mentionAnchor(kind, id) {
+    return 'mention-' + (kind ? kind + '-' : '') + id;
+}
+
 // Links the first occurrence of each entity inside rendered report HTML.
 // Events are linked before topics and people so multiword event names
 // ('레닌그라드 사건') win over the shorter aliases they contain; later passes
 // skip text already inside anchors. Returns { html, people, events, topics }
-// listing the linked entities in order of first appearance.
+// listing the linked entities in order of first appearance. Each first-mention
+// link carries a mentionAnchor id.
 function linkifyReportHtml(html, context) {
     const result = { html: html || '', people: [], events: [], topics: [] };
     if (!html || !context) return result;
@@ -74,7 +83,8 @@ function linkifyReportHtml(html, context) {
             seen.add('event:' + event.id);
             result.events.push(event);
             const title = escapeHtml(event.period ? event.period + ' · ' + event.title : event.title);
-            return '<a class="commu-event-link" href="/commulingo/events/'
+            return '<a class="commu-event-link" id="' + mentionAnchor('event', event.id)
+                + '" href="/commulingo/events/'
                 + encodeURIComponent(event.id) + '" title="' + title + '">' + match + '</a>';
         }));
     }
@@ -84,7 +94,8 @@ function linkifyReportHtml(html, context) {
             if (!topic || seen.has('topic:' + topic.kind + ':' + topic.id)) return match;
             seen.add('topic:' + topic.kind + ':' + topic.id);
             result.topics.push(topic);
-            return '<a class="commu-topic-link" href="' + topic.href + '" title="'
+            return '<a class="commu-topic-link" id="' + mentionAnchor(topic.kind, topic.id)
+                + '" href="' + topic.href + '" title="'
                 + escapeHtml(topic.label) + '">' + match + '</a>';
         }));
     }
@@ -96,7 +107,8 @@ function linkifyReportHtml(html, context) {
             result.people.push(person);
             const label = person.displayName || person.name || match;
             const title = escapeHtml(person.epithet ? label + ': ' + person.epithet : label);
-            return '<a class="commu-person-link" href="/commulingo/people/'
+            return '<a class="commu-person-link" id="' + mentionAnchor('', person.id)
+                + '" href="/commulingo/people/'
                 + encodeURIComponent(person.id) + '" title="' + title + '">' + match + '</a>';
         }));
     }
@@ -132,4 +144,5 @@ module.exports = {
     getReportLinkContext,
     linkifyReportHtml,
     findEntityMentions,
+    mentionAnchor,
 };
