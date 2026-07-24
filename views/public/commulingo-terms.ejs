@@ -7,12 +7,22 @@
     <main class="container commulingo-shell commu-terms-page" data-lang="<%= lang %>">
         <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
         <%- include('../partials/commulingo-dict-nav', { active: 'terms' }) %>
+        <%- include('../partials/commulingo-dict-search', {
+            target: '#commu-term-list',
+            placeholder: en ? 'Search by term, original, or definition…' : '용어 · 원어 · 정의로 검색…',
+            ariaLabel: en ? 'Search glossary' : '용어 사전 검색',
+            clearLabel: en ? 'Clear search' : '검색 지우기',
+            resultOne: en ? 'term found' : '개의 용어',
+            resultMany: en ? 'terms found' : '개의 용어',
+            emptyLabel: en ? 'No glossary terms found' : '검색 결과가 없습니다'
+        }) %>
         <header class="box commulingo-hero commulingo-hero--graph">
             <div><h1><%= en ? 'Glossary' : '용어 사전' %></h1><p><%= en ? 'The concepts of Soviet and revolutionary history, connected to people, events, and reports.' : '혁명과 소련사의 개념들을 인물·사건·보고서와 연결해 읽습니다.' %></p></div>
         </header>
-        <section class="commu-event-grid" aria-label="<%= en ? 'Glossary terms' : '용어 목록' %>">
+        <section class="commu-event-grid" id="commu-term-list" aria-label="<%= en ? 'Glossary terms' : '용어 목록' %>">
             <% terms.forEach(function(term) { %>
-            <a class="commu-event-card" href="/commulingo/terms/<%= term.id %>">
+            <a class="commu-event-card" href="/commulingo/terms/<%= term.id %>"
+                data-search="<%= [term.original, term.term, term.termOther, term.definition].filter(Boolean).join(' ') %>">
                 <span class="commu-event-period"><%= term.original || term.period %></span>
                 <h2><%= term.term %></h2>
                 <p><%= term.definition %></p>
@@ -22,5 +32,6 @@
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

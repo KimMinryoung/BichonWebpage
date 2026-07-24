@@ -1,0 +1,14 @@
+<div class="commu-dict-search" data-commu-dict-search data-target="<%= target %>"
+    data-result-one="<%= resultOne %>" data-result-many="<%= resultMany %>"
+    data-result-empty="<%= emptyLabel %>">
+    <div class="commu-people-search">
+        <span class="commu-people-search-icon" aria-hidden="true">⌕</span>
+        <input type="search" class="commu-people-search-input" data-commu-dict-search-input
+            placeholder="<%= placeholder %>" autocomplete="off" spellcheck="false"
+            aria-label="<%= ariaLabel %>">
+        <button type="button" class="commu-people-search-clear" data-commu-dict-search-clear
+            aria-label="<%= clearLabel %>" hidden>×</button>
+    </div>
+    <p class="commu-dict-search-status" data-commu-dict-search-status
+        role="status" aria-live="polite" hidden></p>
+</div>

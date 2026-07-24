@@ -1976,6 +1976,24 @@ button.commu-dc-option:hover { border-color: var(--link); }
     border: 1px dashed var(--border);
 }
 
+.commu-dict-search-status {
+    margin: 8px 0 0;
+    color: var(--text-muted);
+    font-family: 'Courier New', monospace;
+    font-size: 0.86rem;
+}
+
+.commu-dict-search-status.is-empty {
+    padding: 18px 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border: 1px dashed var(--border);
+}
+
+.commu-event-card[hidden] {
+    display: none !important;
+}
+
 .commu-people-legend {
     display: flex;
     flex-wrap: wrap;
