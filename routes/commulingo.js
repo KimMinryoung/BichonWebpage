@@ -182,6 +182,7 @@ router.get('/', (req, res) => {
 
 router.use('/events', require('./commulingo-events'));
 router.use('/terms', require('./commulingo-terms'));
+router.use('/docs', require('./commulingo-docs'));
 
 router.get('/people', async (req, res) => {
     try {

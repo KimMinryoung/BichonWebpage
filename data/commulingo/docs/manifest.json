@@ -1,0 +1,30 @@
+{
+  "docs": [
+    {
+      "id": "yezhov-pavlyukov",
+      "file": "yezhov-pavlyukov.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "알렉세이 파블류코프, 『예조프: 전기』 한국어 번역",
+        "en": "Aleksei Pavlyukov, Yezhov: A Biography (Korean translation)"
+      },
+      "description": {
+        "ko": "알렉세이 파블류코프의 평전 『예조프: 전기』(2007)의 한국어 번역 전문. 4부 구성으로 예조프의 유년기와 제정군 복무부터 당 인사기구에서의 부상, NKVD 수장 시기, 실각과 처형까지를 다룬다.",
+        "en": "The full Korean translation of Aleksei Pavlyukov's biography Yezhov (2007), covering Yezhov's childhood and imperial army service, his rise in the party's personnel apparatus, his years as NKVD chief, and his fall and execution."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Алексей Павлюков, Ежов. Биография (Москва: Захаров, 2007)",
+      "tocExclude": ["^인쇄면\\s*\\d+쪽", "^제\\d+장\\s"],
+      "people": [
+        {
+          "id": "yezhov",
+          "name": { "ko": "니콜라이 예조프", "en": "Nikolai Yezhov" }
+        }
+      ],
+      "addedAt": "2026-07-23"
+    }
+  ]
+}

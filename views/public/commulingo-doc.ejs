@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="<%= docLang %>">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title><%= pageTitle %></title>
+<meta name="description" content="<%= pageDescription %>">
+<link rel="stylesheet" href="/css/commulingo-doc.css?v=<%= assetVersion %>">
+</head>
+<body>
+<% var en = lang === 'en'; %>
+<header class="doc-topbar">
+    <a href="/commulingo/docs">← <%= en ? 'Reference Library' : '참고 문헌' %></a>
+    <% doc.people.forEach(function(person) { %>
+    <a href="/commulingo/people/<%= person.id %>"><%= person.name %> →</a>
+    <% }) %>
+</header>
+<main class="book">
+<%- bodyTopHtml %>
+<% if (toc.length) { %>
+<nav class="doc-toc" aria-label="<%= en ? 'Table of contents' : '목차' %>">
+<details>
+<summary><%= en ? 'Table of contents' : '목차' %></summary>
+<ol class="doc-toc-parts">
+    <% toc.forEach(function(part) { %>
+    <li>
+        <% if (part.id) { %><a class="doc-toc-part" href="#<%= part.id %>"><%= part.text %></a><% } %>
+        <% if (part.chapters.length) { %>
+        <ol class="doc-toc-chapters">
+            <% part.chapters.forEach(function(chapter) { %>
+            <li><a href="#<%= chapter.id %>"><%= chapter.text %></a></li>
+            <% }) %>
+        </ol>
+        <% } %>
+    </li>
+    <% }) %>
+</ol>
+</details>
+</nav>
+<% } %>
+<%- bodyRestHtml %>
+<footer class="doc-colophon">
+    <% if (doc.source) { %><p><%= en ? 'Source' : '원전' %>: <%= doc.source %></p><% } %>
+    <p><a href="/commulingo/docs"><%= en ? 'CommuLingo Reference Library' : '공산링고 참고 문헌' %></a></p>
+</footer>
+</main>
+</body>
+</html>
