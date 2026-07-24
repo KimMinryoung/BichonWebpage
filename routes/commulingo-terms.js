@@ -2,7 +2,23 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
+const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForTerm } = require('../services/report-mentions');
+
+// Reference documents (참고 문헌) linked to this term/event via the docs
+// manifest. Failure only costs the section, never the page.
+function relatedDocsFor(kind, id, lang) {
+    try {
+        return listCommuLingoDocsFor(kind, id).map(doc => ({
+            id: doc.id,
+            title: localize(doc.title, lang),
+            kind: localize(doc.kind, lang),
+        }));
+    } catch (e) {
+        console.error(`commulingo ${kind} related docs:`, e);
+        return [];
+    }
+}
 
 const router = express.Router();
 
@@ -69,6 +85,7 @@ router.get('/:termId', async (req, res) => {
             term,
             bodyHtml,
             relatedReports,
+            relatedDocs: relatedDocsFor('terms', termId, lang),
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,
             pagePath: `/commulingo/terms/${term.id}`,

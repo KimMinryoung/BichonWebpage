@@ -94,13 +94,13 @@ function langPair(value, fallback) {
     };
 }
 
-function normalizePeople(people) {
-    if (!Array.isArray(people)) return [];
-    return people.map(person => {
-        if (!person || typeof person.id !== 'string' || !/^[a-z0-9-]+$/.test(person.id)) {
-            throw badRequest('people entries need an id of lowercase letters, digits, hyphens');
+function normalizeRefs(refs, label) {
+    if (!Array.isArray(refs)) return [];
+    return refs.map(ref => {
+        if (!ref || typeof ref.id !== 'string' || !/^[a-z0-9-]+$/.test(ref.id)) {
+            throw badRequest(`${label} entries need an id of lowercase letters, digits, hyphens`);
         }
-        return { id: person.id, name: langPair(person.name) };
+        return { id: ref.id, name: langPair(ref.name) };
     });
 }
 
@@ -116,7 +116,11 @@ function canonicalEntry(entry) {
         source: typeof entry.source === 'string' ? entry.source : '',
     };
     if (Array.isArray(entry.tocExclude) && entry.tocExclude.length) out.tocExclude = entry.tocExclude.map(String);
-    out.people = normalizePeople(entry.people);
+    out.people = normalizeRefs(entry.people, 'people');
+    const terms = normalizeRefs(entry.terms, 'terms');
+    if (terms.length) out.terms = terms;
+    const events = normalizeRefs(entry.events, 'events');
+    if (events.length) out.events = events;
     out.addedAt = entry.addedAt || new Date().toISOString().slice(0, 10);
     return out;
 }
@@ -181,6 +185,8 @@ function updateDocMeta(id, patch = {}) {
         source: patch.source !== undefined ? patch.source : current.source,
         tocExclude: patch.tocExclude !== undefined ? patch.tocExclude : current.tocExclude,
         people: patch.people !== undefined ? patch.people : current.people,
+        terms: patch.terms !== undefined ? patch.terms : current.terms,
+        events: patch.events !== undefined ? patch.events : current.events,
         addedAt: patch.addedAt !== undefined ? patch.addedAt : current.addedAt,
     });
     manifest.docs[index] = merged;

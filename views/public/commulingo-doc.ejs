@@ -30,6 +30,12 @@
     <% doc.people.forEach(function(person) { %>
     <a href="/commulingo/people/<%= person.id %>"><%= person.name %> →</a>
     <% }) %>
+    <% doc.terms.forEach(function(term) { %>
+    <a href="/commulingo/terms/<%= term.id %>"><%= term.name %> →</a>
+    <% }) %>
+    <% doc.events.forEach(function(event) { %>
+    <a href="/commulingo/events/<%= event.id %>"><%= event.name %> →</a>
+    <% }) %>
 </header>
 <main class="book">
 <%- bodyTopHtml %>

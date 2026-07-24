@@ -1,9 +1,25 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
+const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForEvent } = require('../services/report-mentions');
 
 const router = express.Router();
+
+// Reference documents (참고 문헌) linked to this event via the docs manifest.
+// Failure only costs the section, never the page.
+function relatedDocsForEvent(eventId, lang) {
+    try {
+        return listCommuLingoDocsFor('events', eventId).map(doc => ({
+            id: doc.id,
+            title: localize(doc.title, lang),
+            kind: localize(doc.kind, lang),
+        }));
+    } catch (e) {
+        console.error('commulingo event related docs:', e);
+        return [];
+    }
+}
 
 function localize(value, lang) {
     if (!value) return '';
@@ -115,6 +131,7 @@ router.get('/:eventId', async (req, res) => {
             prevEvent: neighbor(-1),
             nextEvent: neighbor(1),
             relatedReports,
+            relatedDocs: relatedDocsForEvent(eventId, lang),
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,

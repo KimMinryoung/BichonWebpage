@@ -29,6 +29,24 @@
           }
         }
       ],
+      "terms": [
+        {
+          "id": "yezhovshchina",
+          "name": {
+            "ko": "예조프시나",
+            "en": "Yezhovshchina"
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "great-terror",
+          "name": {
+            "ko": "대테러",
+            "en": "The Great Terror"
+          }
+        }
+      ],
       "addedAt": "2026-07-23"
     }
   ]

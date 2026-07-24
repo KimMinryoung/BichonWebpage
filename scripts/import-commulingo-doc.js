@@ -17,6 +17,8 @@
  *   --source "<citation>"      Original-work citation for the colophon
  *   --lang <ko|en>             Body language (default: ko)
  *   --person <id=이름ko|NameEn>  Related person (repeatable)
+ *   --term <id=이름ko|NameEn>    Related glossary term (repeatable)
+ *   --event <id=이름ko|NameEn>   Related history event (repeatable)
  *   --dry-run            Print what would be written without writing
  *   --force              Overwrite an existing doc with the same id
  */
@@ -29,8 +31,10 @@ function fail(msg) {
     process.exit(1);
 }
 
+const REF_FLAGS = { person: 'people', term: 'terms', event: 'events' };
+
 function parseArgs(argv) {
-    const args = { people: [], input: null };
+    const args = { people: [], terms: [], events: [], input: null };
     for (let i = 0; i < argv.length; i++) {
         const a = argv[i];
         if (a === '--dry-run') args.dryRun = true;
@@ -39,12 +43,20 @@ function parseArgs(argv) {
             const key = a.slice(2);
             const value = argv[++i];
             if (value === undefined) fail(`missing value for --${key}`);
-            if (key === 'person') args.people.push(value);
+            if (REF_FLAGS[key]) args[REF_FLAGS[key]].push(value);
             else args[key.replace(/-([a-z])/g, (m, c) => c.toUpperCase())] = value;
         } else if (!args.input) args.input = a;
         else fail(`unexpected argument: ${a}`);
     }
     return args;
+}
+
+function parseRefs(specs, flag) {
+    return specs.map(spec => {
+        const m = spec.match(/^([a-z0-9-]+)=([^|]*)\|?(.*)$/);
+        if (!m) fail(`--${flag} format is id=이름ko|NameEn (got "${spec}")`);
+        return { id: m[1], name: { ko: m[2], en: m[3] || m[2] } };
+    });
 }
 
 function main() {
@@ -65,11 +77,9 @@ function main() {
                 description: { ko: args.descKo, en: args.descEn },
                 kind: args.kindKo || args.kindEn ? { ko: args.kindKo, en: args.kindEn } : undefined,
                 source: args.source,
-                people: args.people.map(spec => {
-                    const m = spec.match(/^([a-z0-9-]+)=([^|]*)\|?(.*)$/);
-                    if (!m) fail(`--person format is id=이름ko|NameEn (got "${spec}")`);
-                    return { id: m[1], name: { ko: m[2], en: m[3] || m[2] } };
-                }),
+                people: parseRefs(args.people, 'person'),
+                terms: parseRefs(args.terms, 'term'),
+                events: parseRefs(args.events, 'event'),
             },
         });
     } catch (err) {

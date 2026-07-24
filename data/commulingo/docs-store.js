@@ -63,6 +63,12 @@ function getCommuLingoDoc(docId) {
     return loadManifest().find(doc => doc.id === docId) || null;
 }
 
+// Docs associated with a person/term/event via the manifest's people/terms/
+// events arrays — powers the "참고 문헌" sections on those detail pages.
+function listCommuLingoDocsFor(kind, id) {
+    return loadManifest().filter(doc => (doc[kind] || []).some(ref => ref && ref.id === id));
+}
+
 function getCommuLingoDocContent(doc) {
     const filePath = path.join(DOCS_DIR, doc.file);
     const stat = fs.statSync(filePath);
@@ -74,4 +80,4 @@ function getCommuLingoDocContent(doc) {
     return entry;
 }
 
-module.exports = { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent };
+module.exports = { listCommuLingoDocs, getCommuLingoDoc, listCommuLingoDocsFor, getCommuLingoDocContent };

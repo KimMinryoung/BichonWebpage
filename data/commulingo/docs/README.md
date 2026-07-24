@@ -66,8 +66,12 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
    - `title` / `description` / `kind` — `{ko, en}` 객체. `kind`는 목록 카드의
      분류 라벨 (예: 번역 전문, 사료, 회고록)
    - `source` — 원전 서지 정보 (문자열, 리더 콜로폰에 표시)
-   - `people` — 관련 인물 `[{id, name: {ko, en}}]`. `id`는
-     `/commulingo/people/<id>` 슬러그. 리더 상단바에 링크된다.
+   - `people` / `terms` / `events` — 관련 인물·용어·역사 사건
+     `[{id, name: {ko, en}}]`. `id`는 각각 `/commulingo/people/<id>`,
+     `/commulingo/terms/<id>`, `/commulingo/events/<id>` 슬러그.
+     리더 상단바에 링크되고, **역방향으로** 해당 용어·사건 상세 페이지에
+     "참고 문헌" 섹션이 자동으로 나타난다 (인물 페이지는 본문 섹션에서
+     마크다운 링크로 연결하는 기존 방식 유지).
    - `addedAt` — YYYY-MM-DD
 3. 인물 페이지 등에서 링크할 때는 `/commulingo/docs/<id>` (확장자 없음)를 쓴다.
    구형 `…/docs/<id>.html` URL은 301로 새 URL에 리다이렉트된다.

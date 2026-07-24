@@ -37,6 +37,8 @@ function presentDoc(raw, lang) {
         description: localize(raw.description, lang),
         kind: localize(raw.kind, lang),
         people: (raw.people || []).map(person => ({ ...person, name: localize(person.name, lang) })),
+        terms: (raw.terms || []).map(term => ({ ...term, name: localize(term.name, lang) })),
+        events: (raw.events || []).map(event => ({ ...event, name: localize(event.name, lang) })),
     };
 }
 
