@@ -95,6 +95,7 @@ const NATION_SCRIPTS = {
     ireland: LATIN,
     slovakia: LATIN,
     czechoslovakia: LATIN,
+    martinique: LATIN,
     china: ['han'],
     japan: ['kana', 'han'],
     'north-korea': ['hangul', 'han'],
