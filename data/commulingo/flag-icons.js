@@ -69,6 +69,17 @@ const FLAG_NAMES = {
     peru: { ko: '페루', en: 'Peru' },
     trinidad: { ko: '트리니다드 토바고', en: 'Trinidad and Tobago' },
     portugal: { ko: '포르투갈', en: 'Portugal' },
+    brazil: { ko: '브라질', en: 'Brazil' },
+    'el-salvador': { ko: '엘살바도르', en: 'El Salvador' },
+    grenada: { ko: '그레나다', en: 'Grenada' },
+    guyana: { ko: '가이아나', en: 'Guyana' },
+    nicaragua: { ko: '니카라과', en: 'Nicaragua' },
+    'south-africa': { ko: '남아프리카 공화국', en: 'South Africa' },
+    tanzania: { ko: '탄자니아', en: 'Tanzania' },
+    ireland: { ko: '아일랜드', en: 'Ireland' },
+    slovakia: { ko: '슬로바키아', en: 'Slovakia' },
+    czechoslovakia: { ko: '체코슬로바키아', en: 'Czechoslovakia' },
+    korea: { ko: '조선', en: 'Korea' },
 };
 
 function hasFlag(code) {
