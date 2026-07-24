@@ -109,8 +109,16 @@ async function getReportsForTopic(kind, topicId, lang) {
     return present(index.byTopic.get(kind + ':' + id), lang, mentionAnchor(kind, id));
 }
 
+// Startup warm-up (server.js): build the index in the background so the first
+// person/event page request after a restart doesn't wait the ~2.5s full-text
+// query. Coalesced with any request-triggered build.
+function warmReportMentions() {
+    refresh().catch(err => console.error('report mentions warm-up failed:', err.message));
+}
+
 module.exports = {
     getReportsForPerson,
     getReportsForEvent,
     getReportsForTopic,
+    warmReportMentions,
 };

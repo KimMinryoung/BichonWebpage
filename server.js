@@ -637,6 +637,9 @@ app.use((err, req, res, next) => {
 
 const server = app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+    // Pre-build the report-mentions reverse index so the first CommuLingo
+    // person/event page after a restart doesn't pay the cold-start DB query.
+    require('./services/report-mentions').warmReportMentions();
 });
 
 // Graceful shutdown: stop accepting connections, then close DB pool and Redis.
