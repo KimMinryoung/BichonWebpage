@@ -15,6 +15,8 @@ const {
     upsertPersonSectionAdmin,
     deletePersonSectionAdmin,
 } = require('../data/commulingo/people-admin-store');
+const { importDoc, updateDocMeta, removeDoc } = require('../data/commulingo/docs-import');
+const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 
 const router = express.Router();
 
@@ -169,6 +171,66 @@ router.delete('/office-rows/:rowId', async (req, res) => {
     try {
         const result = await deleteOfficeRowAdmin(req.params.rowId, { changedBy: changedBy(req) });
         res.json(result);
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+// ---- Reference documents (참고 문헌) ----------------------------------------
+// Files under the host-mounted data/commulingo/docs/, so API writes land in
+// the working tree — review and commit them afterwards.
+
+router.get('/docs', (req, res) => {
+    try {
+        res.json({ docs: listCommuLingoDocs() });
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+// Upload a document: raw HTML body (Content-Type: text/html), slug and flags
+// in the query string. Converts to a fragment and registers it, exactly like
+// scripts/import-commulingo-doc.js. ?dryRun=1 previews without writing.
+//   curl -sS -X POST -H 'Content-Type: text/html' --data-binary @doc.html \
+//     '<admin-origin>/commulingo/admin/api/docs?id=my-doc'
+const rawHtmlBody = express.text({ type: ['text/html', 'application/xhtml+xml'], limit: '20mb' });
+router.post('/docs', rawHtmlBody, (req, res) => {
+    try {
+        if (typeof req.body !== 'string') {
+            return res.status(415).json({ error: 'send the document as the raw request body with Content-Type: text/html' });
+        }
+        const result = importDoc({
+            rawHtml: req.body,
+            id: req.query.id,
+            dryRun: req.query.dryRun === '1' || req.query.dryRun === 'true',
+            force: req.query.force === '1' || req.query.force === 'true',
+            overrides: { docLang: req.query.lang },
+        });
+        res.status(result.overwrote ? 200 : 201).json({
+            ...result,
+            url: `/commulingo/docs/${result.entry.id}`,
+            next: 'fill in title.en/description/source via PATCH or by editing manifest.json, then commit data/commulingo/docs/',
+        });
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+// Merge metadata into a manifest entry ({ko,en} fields merge per-language;
+// people/tocExclude replace wholesale).
+//   curl -sS -X PATCH -H 'Content-Type: application/json' \
+//     -d '{"description":{"ko":"…"},"source":"…"}' '<admin-origin>/commulingo/admin/api/docs/my-doc'
+router.patch('/docs/:docId', (req, res) => {
+    try {
+        res.json({ entry: updateDocMeta(req.params.docId, req.body || {}) });
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+router.delete('/docs/:docId', (req, res) => {
+    try {
+        res.json({ removed: removeDoc(req.params.docId) });
     } catch (err) {
         sendError(res, err);
     }

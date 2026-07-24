@@ -17,11 +17,16 @@
         "en": "Full translation"
       },
       "source": "Алексей Павлюков, Ежов. Биография (Москва: Захаров, 2007)",
-      "tocExclude": ["^제\\d+장\\s"],
+      "tocExclude": [
+        "^제\\d+장\\s"
+      ],
       "people": [
         {
           "id": "yezhov",
-          "name": { "ko": "니콜라이 예조프", "en": "Nikolai Yezhov" }
+          "name": {
+            "ko": "니콜라이 예조프",
+            "en": "Nikolai Yezhov"
+          }
         }
       ],
       "addedAt": "2026-07-23"

@@ -592,7 +592,11 @@ app.use(express.static(path.join(__dirname, 'public'), {
 }));
 
 // CSRF protection (exclude API-key-authenticated routes and cacheable public reads)
-const csrfMiddleware = csrfProtection([]);
+// /commulingo/admin/api/docs is excluded for curl use: it is IP-allowlisted,
+// session-independent, and every write needs a non-simple content type or
+// method (text/html POST, JSON PATCH, DELETE), so a browser cross-site
+// request dies at CORS preflight rather than reaching the handler.
+const csrfMiddleware = csrfProtection(['/commulingo/admin/api/docs']);
 app.use((req, res, next) => {
     if (isSessionFreeRequest(req)) return next();
     return csrfMiddleware(req, res, next);

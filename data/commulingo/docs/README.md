@@ -16,18 +16,34 @@ store가 mtime으로 캐시를 무효화하므로 **문서 추가/수정은 배�
 
 ## 문서 추가 절차
 
-임의의 .html이 있으면 임포트 스크립트가 fragment 변환(헤드/스타일/스크립트
-제거, `<article>` 래핑)과 manifest 등록을 자동으로 해준다:
+가장 쉬운 방법은 admin API다. 임의의 .html을 fragment로 변환(헤드/스타일/
+스크립트 제거, `<article>` 래핑)하고 manifest에 등록까지 해준다. 테일넷
+allowlist IP에서 (CSRF 면제, `requireAdminIp`로 보호):
 
 ```sh
-docker run --rm -v /home/grass/frontend:/app -w /app node:20-alpine \
-  node scripts/import-commulingo-doc.js <입력.html> --id <slug> \
-  --source "원전 서지" --person "person-id=이름ko|NameEn"
+ADMIN=https://leninbot.tail6ecbbc.ts.net:8443/commulingo/admin/api
+
+# 업로드 (?dryRun=1 붙이면 미리보기만, ?force=1로 덮어쓰기)
+curl -sS -X POST -H 'Content-Type: text/html' --data-binary @문서.html \
+  "$ADMIN/docs?id=my-doc"
+
+# 메타데이터 채우기 ({ko,en}는 언어별 병합, people/tocExclude는 통째로 교체)
+curl -sS -X PATCH -H 'Content-Type: application/json' "$ADMIN/docs/my-doc" -d '{
+  "title": {"en": "..."}, "description": {"ko": "...", "en": "..."},
+  "source": "원전 서지",
+  "people": [{"id": "yezhov", "name": {"ko": "니콜라이 예조프", "en": "Nikolai Yezhov"}}]
+}'
+
+curl -sS "$ADMIN/docs"              # 목록
+curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 ```
 
-`--dry-run`으로 미리보기. 실행 후 manifest의 `title.en`/`description`을 채우고,
-출력된 목차 미리보기에 잡티 제목이 보이면 `tocExclude`를 추가한다.
-아래는 수동으로 만들 때의 규칙(스크립트 출력도 같은 형식이어야 한다).
+응답의 `toc` 미리보기에 잡티 제목이 보이면 `tocExclude` 정규식을 PATCH로
+추가한다. API가 쓴 파일은 호스트 `data/commulingo/docs/` 워킹트리에 그대로
+남으므로 확인 후 커밋/푸시할 것. 같은 일을 하는 CLI도 있다
+(`scripts/import-commulingo-doc.js`, node:20-alpine docker로 실행, `--help`
+대신 파일 상단 주석 참조). 아래는 수동으로 만들 때의 규칙(자동 변환 출력도
+같은 형식이어야 한다).
 
 1. 본문 fragment를 `<id>.html`로 저장한다.
    - `<article>…</article>`로 시작하고, 각주가 있으면
