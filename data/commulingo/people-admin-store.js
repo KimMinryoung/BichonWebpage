@@ -4,6 +4,7 @@ const { clearCommuLingoPeopleCache } = require('./people-store');
 const { checkNativeScript } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { canonicalNationalityLabel } = require('./nationality-filter');
+const { normalizeSovietKoreanText } = require('./korean-terminology');
 const {
     mergePatronymicPatch,
     patronymicProblem,
@@ -18,6 +19,11 @@ function localized(value, lang) {
     if (!value) return '';
     if (typeof value === 'string') return lang === 'ko' ? value : '';
     return value[lang] || '';
+}
+
+function contentLocalized(value, lang) {
+    const text = localized(value, lang);
+    return lang === 'ko' ? normalizeSovietKoreanText(text) : text;
 }
 
 function badRequest(message) {
@@ -147,7 +153,7 @@ async function replaceRole(client, personId, role) {
             category ? '' : icon,
             category ? '' : officeId,
             category,
-            category ? '' : localized(label, 'ko'),
+            category ? '' : contentLocalized(label, 'ko'),
             category ? '' : localized(label, 'en'),
         ]
     );
@@ -500,7 +506,7 @@ async function replaceCareer(client, personId, career) {
                 cols.startMonth,
                 cols.endYear,
                 cols.endMonth,
-                localized(role, 'ko'),
+                contentLocalized(role, 'ko'),
                 localized(role, 'en'),
             ]
         );
@@ -559,14 +565,14 @@ async function createPersonAdmin(rawPayload, options = {}) {
                 partsEn.given,
                 partsKo.family,
                 partsEn.family,
-                localized(payload.epithet, 'ko'),
+                contentLocalized(payload.epithet, 'ko'),
                 localized(payload.epithet, 'en'),
-                localized(payload.moment, 'ko'),
+                contentLocalized(payload.moment, 'ko'),
                 localized(payload.moment, 'en'),
-                localized(payload.bio, 'ko'),
+                contentLocalized(payload.bio, 'ko'),
                 localized(payload.bio, 'en'),
                 payload.fate ? payload.fate.kind || '' : '',
-                payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'ko'), years.deathYear) : '',
+                payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), years.deathYear) : '',
                 payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), years.deathYear) : '',
                 citizenship.code,
                 citizenship.ko,
@@ -682,15 +688,15 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             assertPatronymicSeparate(newPartsEn || storedParts('en'), patronymicState.en, 'en');
         }
         if (payload.epithet !== undefined) {
-            set('epithet_ko', localized(payload.epithet, 'ko'));
+            set('epithet_ko', contentLocalized(payload.epithet, 'ko'));
             set('epithet_en', localized(payload.epithet, 'en'));
         }
         if (payload.moment !== undefined) {
-            set('moment_ko', localized(payload.moment, 'ko'));
+            set('moment_ko', contentLocalized(payload.moment, 'ko'));
             set('moment_en', localized(payload.moment, 'en'));
         }
         if (payload.bio !== undefined) {
-            set('bio_ko', localized(payload.bio, 'ko'));
+            set('bio_ko', contentLocalized(payload.bio, 'ko'));
             set('bio_en', localized(payload.bio, 'en'));
         }
         if (payload.citizenship !== undefined) {
@@ -712,7 +718,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
                 ? parseLifeYears(payload.years || '').deathYear
                 : before.deathYear;
             set('fate_kind', payload.fate ? payload.fate.kind || '' : '');
-            set('fate_label_ko', payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'ko'), deathYear) : '');
+            set('fate_label_ko', payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), deathYear) : '');
             set('fate_label_en', payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), deathYear) : '');
         }
         if (sets.length) {
@@ -836,12 +842,12 @@ async function createOfficeRowAdmin(officeId, payload, options = {}) {
                 cols.startMonth,
                 cols.endYear,
                 cols.endMonth,
-                localized(payload.body, 'ko'),
+                contentLocalized(payload.body, 'ko'),
                 localized(payload.body, 'en'),
                 payload.personId || '',
                 localized(payload.name, 'ko'),
                 localized(payload.name, 'en'),
-                localized(payload.note, 'ko'),
+                contentLocalized(payload.note, 'ko'),
                 localized(payload.note, 'en'),
             ]
         );
@@ -884,7 +890,7 @@ async function updateOfficeRowAdmin(rowId, payload, options = {}) {
             set('end_month', cols.endMonth);
         }
         if (payload.body !== undefined) {
-            set('body_ko', localized(payload.body, 'ko'));
+            set('body_ko', contentLocalized(payload.body, 'ko'));
             set('body_en', localized(payload.body, 'en'));
         }
         if (payload.personId !== undefined) set('person_id', payload.personId || null);
@@ -893,7 +899,7 @@ async function updateOfficeRowAdmin(rowId, payload, options = {}) {
             set('name_en', localized(payload.name, 'en'));
         }
         if (payload.note !== undefined) {
-            set('note_ko', localized(payload.note, 'ko'));
+            set('note_ko', contentLocalized(payload.note, 'ko'));
             set('note_en', localized(payload.note, 'en'));
         }
         if (sets.length) {
@@ -994,9 +1000,9 @@ async function upsertPersonSectionAdmin(personId, slug, payload, options = {}) {
                 id,
                 sectionSlug,
                 Number.isFinite(sortOrder) ? sortOrder : 0,
-                localized(heading, 'ko'),
+                contentLocalized(heading, 'ko'),
                 localized(heading, 'en'),
-                localized(body, 'ko'),
+                contentLocalized(body, 'ko'),
                 localized(body, 'en'),
                 JSON.stringify(normalizeSources(payload.sources)),
             ]

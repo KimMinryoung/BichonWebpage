@@ -98,6 +98,11 @@ and own-script name are Polish (`Feliks Dzierżyński`).
 For the `georgia` national-background facet, Korean UI and ingestion use the
 Soviet-era name `그루지야`; migration 065 normalizes all existing origin labels.
 This does not mechanically rewrite prose about the modern state of Georgia.
+Migration 066 extends `그루지야` to current Korean Soviet-history prose
+(person bio/epithet/moment, career, sections, and event-link descriptions).
+Frontend and leninbot write boundaries normalize the same Korean content on
+future writes. Citizenship labels remain `조지아`; revision/suggestion history
+is intentionally immutable.
 
 ## Fate label standard — added 2026-07-14
 
