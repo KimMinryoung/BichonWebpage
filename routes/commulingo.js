@@ -33,6 +33,10 @@ const LEGACY_OFFICE_IDS = {
     planning: 'central-planning',
 };
 
+const LEGACY_PERSON_IDS = {
+    'stepan-shahumyan': 'stepan-shaumyan',
+};
+
 const LEGACY_ROLE_CATEGORY_IDS = {
     writer: 'writer-artist',
     'old-regime': 'imperial-white',
@@ -352,6 +356,9 @@ router.get('/people/national-origin/:code', (req, res) => renderNationalityPeopl
 router.get('/people/:personId', async (req, res) => {
     try {
         const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
+        if (LEGACY_PERSON_IDS[personId]) {
+            return res.redirect(301, `/commulingo/people/${LEGACY_PERSON_IDS[personId]}`);
+        }
         const { lang, loaded, standardized, linkIndex } = await loadStandardizedPeople(req, res);
         const person = standardized.peopleById[personId];
         if (!person) {
@@ -446,6 +453,9 @@ router.get('/api/people', async (req, res) => {
 router.get('/api/people/:personId', async (req, res) => {
     try {
         const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
+        if (LEGACY_PERSON_IDS[personId]) {
+            return res.redirect(301, `/commulingo/api/people/${LEGACY_PERSON_IDS[personId]}`);
+        }
         const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
         const person = standardized.peopleById[personId];
         if (!person) return res.status(404).json({ error: 'person not found' });
