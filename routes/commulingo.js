@@ -38,9 +38,11 @@ const LEGACY_ROLE_CATEGORY_IDS = {
     'bloc-reformer': 'socialist-bloc-reform-leader',
 };
 
-// Expose the flag renderer to every CommuLingo template (and their partials).
+// Expose the flag and role-icon renderers to every CommuLingo template (and
+// their partials — the dictionary switcher nav needs roleIconSvg everywhere).
 router.use((req, res, next) => {
     res.locals.flagImg = flagImg;
+    res.locals.roleIconSvg = roleIconSvg;
     next();
 });
 

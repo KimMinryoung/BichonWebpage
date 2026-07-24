@@ -11,10 +11,7 @@
     %>
     <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>">
         <a class="commu-back-link" href="/commulingo">← <%= strings.commuLingo.backToBooks %></a>
-        <div class="commu-cta-row">
-            <a class="commu-events-cta" href="/commulingo/events"><span aria-hidden="true">◉</span> <%= en ? "Explore historical events →" : "역사 사건 둘러보기 →" %></a>
-            <a class="commu-events-cta" href="/commulingo/terms"><span aria-hidden="true">◆</span> <%= en ? "Glossary →" : "용어 사전 →" %></a>
-        </div>
+        <%- include('../partials/commulingo-dict-nav', { active: 'people' }) %>
 
         <header class="box commulingo-hero commulingo-hero--graph">
             <div class="commu-people-title-wrap">

@@ -5,8 +5,8 @@
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-terms-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
-        <a class="commu-events-cta" href="/commulingo/events"><span aria-hidden="true">◉</span> <%= en ? "Historical events →" : "역사 사건 →" %></a>
+        <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
+        <%- include('../partials/commulingo-dict-nav', { active: 'terms' }) %>
         <header class="box commulingo-hero commulingo-hero--graph">
             <div><h1><%= en ? 'Glossary' : '용어 사전' %></h1><p><%= en ? 'The concepts of Soviet and revolutionary history, connected to people, events, and reports.' : '혁명과 소련사의 개념들을 인물·사건·보고서와 연결해 읽습니다.' %></p></div>
         </header>
