@@ -9,6 +9,7 @@
 
     <main class="container commulingo-shell" data-lang="<%= lang %>">
         <script id="commulingo-books" type="application/json"><%- JSON.stringify(books).replace(/</g, '\\u003c') %></script>
+        <template id="commuDictNavTpl"><%- include('../partials/commulingo-dict-nav', { active: '' }) %></template>
 
         <header class="box commulingo-hero">
             <div>

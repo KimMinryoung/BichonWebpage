@@ -131,24 +131,13 @@
             heading.textContent = group.label;
             head.appendChild(heading);
             if (group.historyLinks) {
-                var ctas = document.createElement('div');
-                ctas.className = 'commu-group-ctas';
-                var eventsCta = document.createElement('a');
-                eventsCta.className = 'commu-group-cta is-events';
-                eventsCta.setAttribute('href', '/commulingo/events');
-                eventsCta.textContent = (lang === 'en' ? 'Historical events' : '역사 사건') + ' →';
-                ctas.appendChild(eventsCta);
-                var peopleCta = document.createElement('a');
-                peopleCta.className = 'commu-group-cta';
-                peopleCta.setAttribute('href', '/commulingo/people');
-                peopleCta.textContent = (lang === 'en' ? 'People of the era' : '인물 사전') + ' →';
-                ctas.appendChild(peopleCta);
-                var termsCta = document.createElement('a');
-                termsCta.className = 'commu-group-cta';
-                termsCta.setAttribute('href', '/commulingo/terms');
-                termsCta.textContent = (lang === 'en' ? 'Glossary' : '용어 사전') + ' →';
-                ctas.appendChild(termsCta);
-                head.appendChild(ctas);
+                // The unified dictionary switcher is server-rendered once into
+                // #commuDictNavTpl (partials/commulingo-dict-nav.ejs) and
+                // cloned here, so the three-tab nav has a single source.
+                var navTpl = document.getElementById('commuDictNavTpl');
+                if (navTpl && navTpl.content) {
+                    head.appendChild(navTpl.content.cloneNode(true));
+                }
             }
             var grid = document.createElement('div');
             grid.className = 'commulingo-books';

@@ -3009,25 +3009,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     align-items: baseline;
     justify-content: space-between;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
-.commu-group-cta {
-    flex: 0 0 auto;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    text-decoration: none;
-    padding: 7px 11px;
-    border-radius: 0;
-    white-space: nowrap;
-}
-
-.commu-group-cta:hover {
-    background: var(--bg-surface-hover);
-    border-color: var(--accent-red);
-    color: var(--text-primary);
+/* The dictionary switcher cloned into the history group takes its own row. */
+.commu-book-group-head .commu-dict-nav {
+    flex: 1 1 100%;
 }
 
 @media (max-width: 720px) {
