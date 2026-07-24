@@ -143,6 +143,11 @@
                 peopleCta.setAttribute('href', '/commulingo/people');
                 peopleCta.textContent = (lang === 'en' ? 'People of the era' : '인물 사전') + ' →';
                 ctas.appendChild(peopleCta);
+                var termsCta = document.createElement('a');
+                termsCta.className = 'commu-group-cta';
+                termsCta.setAttribute('href', '/commulingo/terms');
+                termsCta.textContent = (lang === 'en' ? 'Glossary' : '용어 사전') + ' →';
+                ctas.appendChild(termsCta);
                 head.appendChild(ctas);
             }
             var grid = document.createElement('div');

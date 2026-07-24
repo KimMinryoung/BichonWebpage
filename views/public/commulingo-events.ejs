@@ -6,6 +6,10 @@
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-events-page" data-lang="<%= lang %>">
         <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
+        <div class="commu-cta-row">
+            <a class="commu-events-cta" href="/commulingo/people"><span aria-hidden="true">◉</span> <%= en ? "People →" : "인물 사전 →" %></a>
+            <a class="commu-events-cta" href="/commulingo/terms"><span aria-hidden="true">◆</span> <%= en ? "Glossary →" : "용어 사전 →" %></a>
+        </div>
         <header class="box commulingo-hero commulingo-hero--graph">
             <div><h1><%= en ? 'Historical Events' : '역사 사건' %></h1><p><%= en ? 'Events, institutions, and people viewed as one connected history.' : '사건·기관·인물을 하나의 연결된 역사로 읽습니다.' %></p></div>
         </header>
