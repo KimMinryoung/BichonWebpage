@@ -83,7 +83,18 @@ function composePersonName(name, patronymic) {
     if (!name || !patronymic) return name || '';
     const parts = name.split(' ');
     if (parts.length < 2) return name;
+    // Legacy bad data guard: if the full name already embeds the patronymic,
+    // inserting it again would double it (오토 율리예비치 율리예비치 시미트).
+    if (parts.includes(patronymic)) return name;
     return [parts[0], patronymic, ...parts.slice(1)].join(' ');
+}
+
+// Preferred composition when structured name parts exist (given/family columns,
+// migration 060): the patronymic sits between given and family names, which
+// also places it correctly after multi-word given names where the legacy
+// insert-after-first-token compose cannot.
+function composeFromParts(given, patronymic, family) {
+    return [given, patronymic, family].filter(Boolean).join(' ');
 }
 
 function parseLifeYears(label) {
@@ -210,6 +221,17 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
     const patronymic = localize((data.patronymics || {})[raw.id], lang);
     const cyrillicPatronymic = (data.cyrillicPatronymics || {})[raw.id] || '';
     const years = parseLifeYears(raw.years);
+    // Full name with patronymic per language: from structured parts when the
+    // snapshot has them, else composed from the legacy full-name string.
+    // Parts are read strictly per language — localize()'s ko/en fallback would
+    // splice the other language's parts into the name (Kim Il 김일성).
+    const fullName = l => {
+        const given = (raw.givenName && raw.givenName[l]) || '';
+        const family = (raw.familyName && raw.familyName[l]) || '';
+        const pat = localize((data.patronymics || {})[raw.id], l);
+        if (given || family) return composeFromParts(given, pat, family);
+        return composePersonName(localize(raw.name, l), pat);
+    };
     const career = ((data.careers || {})[raw.id] || []).map(entry => ({
         period: parsePeriod(entry.y),
         y: entry.y,
@@ -223,10 +245,10 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         groupId: raw.group,
         initial: raw.initial || '',
         names: {
-            ko: composePersonName(localize(raw.name, 'ko'), localize((data.patronymics || {})[raw.id], 'ko')),
-            en: composePersonName(localize(raw.name, 'en'), localize((data.patronymics || {})[raw.id], 'en')),
+            ko: fullName('ko'),
+            en: fullName('en'),
             ru: composePersonName(raw.cyrillic, cyrillicPatronymic),
-            display: composePersonName(localize(raw.name, lang), patronymic),
+            display: fullName(lang),
             short: localize(raw.name, lang),
             cyrillic: composePersonName(raw.cyrillic, cyrillicPatronymic),
             patronymic,
@@ -235,8 +257,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         years: years.label,
         yearsData: years,
         yearsLabel: years.label,
-        name: composePersonName(localize(raw.name, lang), patronymic),
-        displayName: composePersonName(localize(raw.name, lang), patronymic),
+        name: fullName(lang),
+        displayName: fullName(lang),
         cyrillic: composePersonName(raw.cyrillic, cyrillicPatronymic),
         epithet: localize(raw.epithet, lang),
         moment: localize(raw.moment, lang),

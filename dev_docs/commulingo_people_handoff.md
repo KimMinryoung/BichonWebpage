@@ -4,6 +4,28 @@ Last updated: 2026-07-23
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
 
+## Structured name parts — added 2026-07-24
+
+`commulingo_people` now stores names as parts: `given_name_ko/en`,
+`family_name_ko/en`, with the patronymic staying in
+`commulingo_person_patronymics`. `name_ko/en` remain as the DERIVED full name
+(given + family, patronymic never embedded) and are recomputed by the admin
+store whenever any name field changes — do not write them independently.
+
+Admin API (`POST/PATCH /commulingo/admin/api/people`):
+- Preferred payload: `givenName: {ko,en}`, `familyName: {ko,en}`,
+  `patronymic: {ko,en}`. Non-Russian-style names simply omit `patronymic`.
+- Legacy `name: {ko,en}` is still accepted and split (family = last token,
+  given = the rest); single-token names (김일성, 카모) go wholly to familyName.
+- A name that embeds the patronymic as one of its tokens is rejected with 400
+  — that duplication (오토 율리예비치 율리예비치 시미트) is the bug the split
+  exists to prevent. Middle names (Gurley, Auguste) belong in givenName, NOT
+  in the patronymic field.
+
+Display composes `given + patronymic + family` (people-standard.js
+`composeFromParts`); migration `060_commulingo_person_name_parts.sql` did the
+backfill and repaired the five bad records found in the 2026-07-24 audit.
+
 ## Native-name script standard — added 2026-07-23
 
 `commulingo_people.cyrillic` is misnamed: it is the **name in the person's own

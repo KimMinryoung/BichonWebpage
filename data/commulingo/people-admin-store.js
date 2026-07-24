@@ -200,6 +200,48 @@ function withNativeNameAliases(payload) {
     return merged;
 }
 
+function collapseSpaces(value) {
+    return (value || '').trim().replace(/\s+/g, ' ');
+}
+
+function splitFullName(full) {
+    const name = collapseSpaces(full);
+    if (!name) return { given: '', family: '' };
+    const idx = name.lastIndexOf(' ');
+    // Single-token names (East Asian fused names, mononyms) live in family.
+    if (idx === -1) return { given: '', family: name };
+    return { given: name.slice(0, idx), family: name.slice(idx + 1) };
+}
+
+// Name parts for one language from a payload: structured givenName/familyName
+// win; the legacy full `name` is split (family = last token, given = the rest).
+function resolveNameParts(payload, lang) {
+    const given = collapseSpaces(localized(payload.givenName, lang));
+    const family = collapseSpaces(localized(payload.familyName, lang));
+    if (given || family) {
+        return { given, family, full: [given, family].filter(Boolean).join(' ') };
+    }
+    const full = collapseSpaces(localized(payload.name, lang));
+    return { ...splitFullName(full), full };
+}
+
+// The patronymic lives only in commulingo_person_patronymics; a name that
+// embeds it doubles on display (오토 율리예비치 율리예비치 시미트). Reject at
+// the API instead of storing the duplication.
+function assertPatronymicSeparate(parts, patronymic, lang) {
+    const pat = collapseSpaces(patronymic);
+    if (!pat) return;
+    const tokens = `${parts.given} ${parts.family}`.split(' ').filter(Boolean);
+    const embedded = lang === 'en'
+        ? tokens.some(token => token.toLowerCase() === pat.toLowerCase())
+        : tokens.includes(pat);
+    if (embedded) {
+        throw badRequest(
+            `name (${lang}) embeds the patronymic '${pat}' — keep given/family names and the patronymic in separate fields`
+        );
+    }
+}
+
 function rowToPerson(row) {
     return {
         id: row.id,
@@ -214,6 +256,8 @@ function rowToPerson(row) {
         birthYear: row.birth_year,
         deathYear: row.death_year,
         name: t(row.name_ko, row.name_en),
+        givenName: t(row.given_name_ko, row.given_name_en),
+        familyName: t(row.family_name_ko, row.family_name_en),
         epithet: t(row.epithet_ko, row.epithet_en),
         moment: t(row.moment_ko, row.moment_en),
         bio: t(row.bio_ko, row.bio_en),
@@ -231,7 +275,8 @@ async function listPeopleAdmin(options = {}) {
     const offset = normalizeOffset(options.offset);
     const { rows } = await db.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
-                name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
+                name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
                 origin_code, origin_label_ko, origin_label_en
@@ -254,7 +299,8 @@ async function getPersonAdmin(personId, options = {}) {
     const client = options.client || db;
     const personResult = await client.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
-                name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
+                name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
                 origin_code, origin_label_ko, origin_label_en
@@ -452,13 +498,15 @@ async function createPersonAdmin(rawPayload, options = {}) {
         const origin = normalizeNationality(payload.origin || null, 'origin');
         assertNativeScript(payload, { citizenship: citizenship.code, origin: origin.code });
         const groupId = requireId(payload.groupId || payload.group, 'group id');
-        const nameKo = localized(payload.name, 'ko');
-        const nameEn = localized(payload.name, 'en');
-        if (!nameKo || !nameEn) {
-            const err = new Error('name.ko and name.en are required');
-            err.status = 400;
-            throw err;
+        const partsKo = resolveNameParts(payload, 'ko');
+        const partsEn = resolveNameParts(payload, 'en');
+        if (!partsKo.full || !partsEn.full) {
+            throw badRequest('name.ko and name.en (or givenName/familyName per language) are required');
         }
+        assertPatronymicSeparate(partsKo, localized(payload.patronymic, 'ko'), 'ko');
+        assertPatronymicSeparate(partsEn, localized(payload.patronymic, 'en'), 'en');
+        const nameKo = partsKo.full;
+        const nameEn = partsEn.full;
         const sortResult = await client.query(
             'SELECT COALESCE(MAX(sort_order), -1) + 1 AS next_sort FROM commulingo_people'
         );
@@ -466,16 +514,17 @@ async function createPersonAdmin(rawPayload, options = {}) {
         await client.query(
             `INSERT INTO commulingo_people
                 (id, group_id, sort_order, initial, cyrillic, years_label, birth_year, death_year,
-                 name_ko, name_en, epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
+                 name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                 epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                  fate_kind, fate_label_ko, fate_label_en,
                  citizenship_code, citizenship_label_ko, citizenship_label_en,
                  origin_code, origin_label_ko, origin_label_en, updated_at)
              VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8,
-                 $9, $10, $11, $12, $13, $14, $15, $16,
-                 $17, $18, $19,
-                 $20, $21, $22,
-                 $23, $24, $25, NOW())`,
+                 $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
+                 $21, $22, $23,
+                 $24, $25, $26,
+                 $27, $28, $29, NOW())`,
             [
                 id,
                 groupId,
@@ -487,6 +536,10 @@ async function createPersonAdmin(rawPayload, options = {}) {
                 years.deathYear,
                 nameKo,
                 nameEn,
+                partsKo.given,
+                partsEn.given,
+                partsKo.family,
+                partsEn.family,
                 localized(payload.epithet, 'ko'),
                 localized(payload.epithet, 'en'),
                 localized(payload.moment, 'ko'),
@@ -559,9 +612,50 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             set('birth_year', years.birthYear);
             set('death_year', years.deathYear);
         }
-        if (payload.name !== undefined) {
-            set('name_ko', localized(payload.name, 'ko'));
-            set('name_en', localized(payload.name, 'en'));
+        // Name parts: any of name / givenName / familyName recomputes all six
+        // name columns so parts and the derived full name never diverge.
+        const nameChanged = payload.name !== undefined
+            || payload.givenName !== undefined
+            || payload.familyName !== undefined;
+        const storedParts = lang => ({
+            given: collapseSpaces(localized(before.givenName, lang)),
+            family: collapseSpaces(localized(before.familyName, lang)),
+        });
+        const effectiveParts = lang => {
+            if (payload.givenName !== undefined || payload.familyName !== undefined) {
+                const stored = storedParts(lang);
+                const given = payload.givenName !== undefined
+                    ? collapseSpaces(localized(payload.givenName, lang)) : stored.given;
+                const family = payload.familyName !== undefined
+                    ? collapseSpaces(localized(payload.familyName, lang)) : stored.family;
+                return { given, family, full: [given, family].filter(Boolean).join(' ') };
+            }
+            const full = collapseSpaces(localized(payload.name, lang));
+            return { ...splitFullName(full), full };
+        };
+        let newPartsKo = null;
+        let newPartsEn = null;
+        if (nameChanged) {
+            newPartsKo = effectiveParts('ko');
+            newPartsEn = effectiveParts('en');
+            if (!newPartsKo.full || !newPartsEn.full) {
+                throw badRequest('name.ko and name.en (or givenName/familyName per language) are required');
+            }
+            set('name_ko', newPartsKo.full);
+            set('name_en', newPartsEn.full);
+            set('given_name_ko', newPartsKo.given);
+            set('given_name_en', newPartsEn.given);
+            set('family_name_ko', newPartsKo.family);
+            set('family_name_en', newPartsEn.family);
+        }
+        // Guard against embedding whenever the record's name or patronymic is
+        // touched, checked against what the record will hold AFTER the patch.
+        if (nameChanged || payload.patronymic !== undefined) {
+            const patronymicAfter = lang => (payload.patronymic !== undefined
+                ? localized(payload.patronymic, lang)
+                : localized(before.patronymic, lang));
+            assertPatronymicSeparate(newPartsKo || storedParts('ko'), patronymicAfter('ko'), 'ko');
+            assertPatronymicSeparate(newPartsEn || storedParts('en'), patronymicAfter('en'), 'en');
         }
         if (payload.epithet !== undefined) {
             set('epithet_ko', localized(payload.epithet, 'ko'));
