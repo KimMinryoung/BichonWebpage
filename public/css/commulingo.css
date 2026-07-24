@@ -3054,7 +3054,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* Historical event pages */
 /* Dictionary switcher (people / events / terms), shared by the three list
    pages via partials/commulingo-dict-nav.ejs. The open page's tab is painted. */
-.commu-dict-nav { display: flex; position: static; border: 1px solid var(--border); background: var(--bg-surface); }
+.commu-dict-nav { display: flex; position: static; z-index: auto; border: 1px solid var(--border); background: var(--bg-surface); }
 .commu-dict-tab { flex: 1; display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .7rem .9rem; color: var(--text-primary); text-decoration: none; font-weight: 700; border-left: 1px solid var(--border); transition: background-color .15s ease; }
 .commu-dict-tab:first-child { border-left: 0; }
 .commu-dict-tab .commu-role-icon { width: 17px; height: 17px; flex: 0 0 auto; }
