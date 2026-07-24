@@ -1815,19 +1815,19 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: inline-block;
     margin-top: 10px;
     font-size: 0.9rem;
-    font-weight: 800;
-    color: #fff;
-    background: linear-gradient(135deg, var(--accent-red), #d4552f);
-    border: 1px solid color-mix(in srgb, var(--accent-red) 82%, #000 18%);
-    box-shadow: 0 8px 18px color-mix(in srgb, var(--accent-red) 25%, transparent);
+    font-weight: 700;
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
     text-decoration: none;
     padding: 8px 13px;
     border-radius: 0;
 }
 
 .commu-people-cta:hover {
-    background: linear-gradient(135deg, #d81828, #bd3e21);
-    color: #fff;
+    background: var(--bg-surface-hover);
+    border-color: var(--accent-red);
+    color: var(--text-primary);
 }
 
 .commu-book-reference-links,
@@ -1837,11 +1837,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     gap: 8px;
 }
 
-.commu-people-cta.is-events,
-.commu-group-cta.is-events {
-    background: linear-gradient(135deg, #8f1d2c, var(--accent-red));
-    border-color: color-mix(in srgb, var(--accent-red) 75%, #fff 25%);
-}
+/* The events/glossary variants share the flat base style; no gradient. */
 
 /* person-name links inside decision book prose */
 .commu-person-link {
@@ -3018,11 +3014,10 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-group-cta {
     flex: 0 0 auto;
     font-size: 0.85rem;
-    font-weight: 800;
-    color: #fff;
-    background: linear-gradient(135deg, var(--accent-red), #d4552f);
-    border: 1px solid color-mix(in srgb, var(--accent-red) 82%, #000 18%);
-    box-shadow: 0 6px 14px color-mix(in srgb, var(--accent-red) 22%, transparent);
+    font-weight: 700;
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
     text-decoration: none;
     padding: 7px 11px;
     border-radius: 0;
@@ -3030,8 +3025,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 
 .commu-group-cta:hover {
-    background: linear-gradient(135deg, #d81828, #bd3e21);
-    color: #fff;
+    background: var(--bg-surface-hover);
+    border-color: var(--accent-red);
+    color: var(--text-primary);
 }
 
 @media (max-width: 720px) {
@@ -3069,8 +3065,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 
 /* Historical event pages */
-.commu-events-cta { float: right; margin-top: .1rem; font-weight: 900; color: #fff; padding: .7rem 1.15rem; border: 1px solid color-mix(in srgb, var(--accent-red) 75%, #fff 25%); border-radius: 0; background: linear-gradient(135deg, #8f1d2c, var(--accent-red), #d4552f); box-shadow: 0 8px 22px color-mix(in srgb, var(--accent-red) 32%, transparent); text-decoration: none; letter-spacing: .01em; transition: transform .15s ease, box-shadow .15s ease; }
-.commu-events-cta:hover { color: #fff; transform: translateY(-1px); box-shadow: 0 11px 26px color-mix(in srgb, var(--accent-red) 42%, transparent); }
+.commu-events-cta { float: right; margin-top: .1rem; font-weight: 700; color: var(--text-primary); padding: .7rem 1.15rem; border: 1px solid var(--border); border-radius: 0; background: var(--bg-surface); text-decoration: none; letter-spacing: .01em; transition: border-color .15s ease, background-color .15s ease; }
+.commu-events-cta:hover { color: var(--text-primary); background: var(--bg-surface-hover); border-color: var(--accent-red); }
+.commu-events-cta > span[aria-hidden] { color: var(--accent-red); }
 .commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
 .commu-event-card, .commu-event-people-grid > a { display: block; border: 1px solid var(--border, #555); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
 .commu-event-card:hover, .commu-event-people-grid > a:hover { border-color: var(--accent, #b84f4f); }
