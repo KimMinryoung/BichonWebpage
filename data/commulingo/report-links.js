@@ -8,6 +8,7 @@
 const { loadCommuLingoCatalog } = require('./shards');
 const { loadCommuLingoPeople } = require('./people-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
+const { loadCommuLingoTerms } = require('./terms-store');
 const { normalizeCommuLingoPeople } = require('./people-standard');
 const {
     WORD_CHAR,
@@ -17,21 +18,24 @@ const {
 } = require('./people-linkify');
 const { buildEventLinkIndex } = require('./event-linkify');
 const { buildTopicLinkIndex } = require('./topic-linkify');
+const { buildTermLinkIndex } = require('./term-linkify');
 
 // Indexes are pure functions of the people snapshot + catalog + events list,
 // which only change on their ~10-min store refreshes. Memoized by those object
 // references, same pattern as getStandardized in routes/commulingo.js.
-let memo = { peopleRef: null, catalogRef: null, eventsRef: null, byLang: {} };
+let memo = { peopleRef: null, catalogRef: null, eventsRef: null, termsRef: null, byLang: {} };
 
 async function getReportLinkContext(lang) {
     const safeLang = lang === 'en' ? 'en' : 'ko';
     const catalog = loadCommuLingoCatalog();
-    const [loaded, events] = await Promise.all([
+    const [loaded, events, terms] = await Promise.all([
         loadCommuLingoPeople(),
         loadCommuLingoHistoryEvents(),
+        loadCommuLingoTerms(),
     ]);
-    if (memo.peopleRef !== loaded.data || memo.catalogRef !== catalog || memo.eventsRef !== events) {
-        memo = { peopleRef: loaded.data, catalogRef: catalog, eventsRef: events, byLang: {} };
+    if (memo.peopleRef !== loaded.data || memo.catalogRef !== catalog
+        || memo.eventsRef !== events || memo.termsRef !== terms) {
+        memo = { peopleRef: loaded.data, catalogRef: catalog, eventsRef: events, termsRef: terms, byLang: {} };
     }
     let entry = memo.byLang[safeLang];
     if (!entry) {
@@ -41,6 +45,7 @@ async function getReportLinkContext(lang) {
             personIndex: buildPersonLinkIndex(standardized.people, { lang: safeLang }),
             eventIndex: buildEventLinkIndex(events, { lang: safeLang }),
             topicIndex: buildTopicLinkIndex(standardized, { lang: safeLang }),
+            termIndex: buildTermLinkIndex(terms, { lang: safeLang }),
         };
     }
     return entry;
@@ -71,11 +76,11 @@ function mentionAnchor(kind, id) {
 // listing the linked entities in order of first appearance. Each first-mention
 // link carries a mentionAnchor id.
 function linkifyReportHtml(html, context) {
-    const result = { html: html || '', people: [], events: [], topics: [] };
+    const result = { html: html || '', people: [], events: [], topics: [], terms: [] };
     if (!html || !context) return result;
     const seen = new Set();
 
-    const { eventIndex, topicIndex, personIndex } = context;
+    const { eventIndex, termIndex, topicIndex, personIndex } = context;
     if (eventIndex) {
         result.html = mapLinkableText(result.html, text => text.replace(eventIndex.pattern, (match, _t, offset, source) => {
             const event = guardedMatch(eventIndex, match, offset, source);
@@ -86,6 +91,17 @@ function linkifyReportHtml(html, context) {
             return '<a class="commu-event-link" id="' + mentionAnchor('event', event.id)
                 + '" href="/commulingo/events/'
                 + encodeURIComponent(event.id) + '" title="' + title + '">' + match + '</a>';
+        }));
+    }
+    if (termIndex) {
+        result.html = mapLinkableText(result.html, text => text.replace(termIndex.pattern, (match, _t, offset, source) => {
+            const term = guardedMatch(termIndex, match, offset, source);
+            if (!term || seen.has('term:' + term.id)) return match;
+            seen.add('term:' + term.id);
+            result.terms.push(term);
+            const title = escapeHtml(term.original ? term.label + ' · ' + term.original : term.label);
+            return '<a class="commu-term-link" id="' + mentionAnchor('term', term.id)
+                + '" href="' + term.href + '" title="' + title + '">' + match + '</a>';
         }));
     }
     if (topicIndex) {
@@ -123,10 +139,12 @@ function findEntityMentions(text, context) {
     const personIds = new Set();
     const eventIds = new Set();
     const topicIds = new Set();
+    const termIds = new Set();
     const source = String(text || '');
-    if (!source || !context) return { personIds, eventIds, topicIds };
+    if (!source || !context) return { personIds, eventIds, topicIds, termIds };
     [
         { index: context.eventIndex, ids: eventIds, key: entity => entity.id },
+        { index: context.termIndex, ids: termIds, key: entity => entity.id },
         { index: context.topicIndex, ids: topicIds, key: entity => entity.kind + ':' + entity.id },
         { index: context.personIndex, ids: personIds, key: entity => entity.id },
     ].forEach(({ index, ids, key }) => {
@@ -137,7 +155,7 @@ function findEntityMentions(text, context) {
             return match;
         });
     });
-    return { personIds, eventIds, topicIds };
+    return { personIds, eventIds, topicIds, termIds };
 }
 
 module.exports = {

@@ -43,6 +43,7 @@ async function buildIndex() {
     const byPerson = new Map();
     const byEvent = new Map();
     const byTopic = new Map();  // keyed 'role:<id>' / 'office:<id>'
+    const byTerm = new Map();
     const add = (map, id, doc) => {
         if (!map.has(id)) map.set(id, []);
         map.get(id).push(doc);
@@ -54,8 +55,9 @@ async function buildIndex() {
         new Set([...ko.personIds, ...en.personIds]).forEach(id => add(byPerson, id, doc));
         new Set([...ko.eventIds, ...en.eventIds]).forEach(id => add(byEvent, id, doc));
         new Set([...ko.topicIds, ...en.topicIds]).forEach(id => add(byTopic, id, doc));
+        new Set([...ko.termIds, ...en.termIds]).forEach(id => add(byTerm, id, doc));
     });
-    return { byPerson, byEvent, byTopic, at: Date.now() };
+    return { byPerson, byEvent, byTopic, byTerm, at: Date.now() };
 }
 
 function refresh() {
@@ -109,6 +111,13 @@ async function getReportsForTopic(kind, topicId, lang) {
     return present(index.byTopic.get(kind + ':' + id), lang, mentionAnchor(kind, id));
 }
 
+async function getReportsForTerm(termId, lang) {
+    const id = typeof termId === 'string' ? termId.trim() : '';
+    if (!id) return [];
+    const index = await getMentionsIndex();
+    return present(index.byTerm.get(id), lang, mentionAnchor('term', id));
+}
+
 // Startup warm-up (server.js): build the index in the background so the first
 // person/event page request after a restart doesn't wait the ~2.5s full-text
 // query. Coalesced with any request-triggered build.
@@ -120,5 +129,6 @@ module.exports = {
     getReportsForPerson,
     getReportsForEvent,
     getReportsForTopic,
+    getReportsForTerm,
     warmReportMentions,
 };

@@ -138,6 +138,7 @@
    vocabulary as the dictionary pages (see commulingo.css .commu-person-link). */
 .report-body .commu-person-link,
 .report-body .commu-topic-link,
+.report-body .commu-term-link,
 .report-body .commu-event-link {
     color: inherit;
     text-decoration: none;
@@ -148,6 +149,7 @@
 
 .report-body .commu-person-link:hover,
 .report-body .commu-topic-link:hover,
+.report-body .commu-term-link:hover,
 .report-body .commu-event-link:hover {
     border-bottom-style: solid;
 }
@@ -156,6 +158,7 @@
    keep it clear of the sticky nav and flag the landing spot. */
 .report-body .commu-person-link,
 .report-body .commu-topic-link,
+.report-body .commu-term-link,
 .report-body .commu-event-link {
     scroll-margin-top: 90px;
 }

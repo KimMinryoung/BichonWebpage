@@ -1950,6 +1950,7 @@ footer .footer-tagline {
    report-body variant). */
 .post-body .commu-person-link,
 .post-body .commu-topic-link,
+.post-body .commu-term-link,
 .post-body .commu-event-link {
     color: inherit;
     text-decoration: none;
@@ -1958,6 +1959,7 @@ footer .footer-tagline {
 
 .post-body .commu-person-link:hover,
 .post-body .commu-topic-link:hover,
+.post-body .commu-term-link:hover,
 .post-body .commu-event-link:hover {
     border-bottom-style: solid;
 }

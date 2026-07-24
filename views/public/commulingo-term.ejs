@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-event-page commu-term-page" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo/terms">← <%= en ? 'Glossary' : '용어 사전' %></a>
+        <header class="commu-event-head">
+            <span class="commu-event-period"><%= term.original %><% if (term.period && term.period !== '개념') { %> · <%= term.period %><% } %></span>
+            <h1><%= term.term %></h1>
+            <% if (term.termOther) { %><p class="commu-event-question"><%= term.termOther %></p><% } %>
+            <p><%= term.definition %></p>
+        </header>
+        <% if (bodyHtml) { %>
+        <section class="commu-person-detail-section" aria-labelledby="term-body">
+            <h2 id="term-body"><%= en ? 'In depth' : '상세' %></h2>
+            <div class="commu-person-markdown"><%- bodyHtml %></div>
+        </section>
+        <% } %>
+        <% if (term.people.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="term-people">
+            <h2 id="term-people"><%= en ? 'Related people' : '관련 인물' %></h2>
+            <div class="commu-term-chips">
+                <% term.people.forEach(function(person) { %>
+                <a class="commu-term-chip" href="/commulingo/people/<%= encodeURIComponent(person.id) %>"><%= person.name %></a>
+                <% }) %>
+            </div>
+        </section>
+        <% } %>
+        <% if (term.events.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="term-events">
+            <h2 id="term-events"><%= en ? 'Related historical events' : '관련 역사 사건' %></h2>
+            <ul class="commu-person-event-links">
+                <% term.events.forEach(function(event) { %>
+                <li><a href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><span><%= event.period %></span><strong><%= event.title %></strong></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+        <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
+        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
+            <h2 id="related-reports"><%= en ? 'Related reports' : '관련 보고서' %></h2>
+            <ul class="commu-related-report-list">
+                <% relatedReports.forEach(function(report) { %>
+                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (en ? 'Report' : '보고서') %></span><strong><%= report.title %></strong></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+        <% if (term.sources && term.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% term.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>
+        <a class="commu-back-link commu-person-detail-back" href="/commulingo/terms">← <%= en ? 'Glossary' : '용어 사전' %></a>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

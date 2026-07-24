@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-terms-page" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
+        <a class="commu-events-cta" href="/commulingo/events"><span aria-hidden="true">◉</span> <%= en ? "Historical events →" : "역사 사건 →" %></a>
+        <header class="box commulingo-hero commulingo-hero--graph">
+            <div><h1><%= en ? 'Glossary' : '용어 사전' %></h1><p><%= en ? 'The concepts of Soviet and revolutionary history, connected to people, events, and reports.' : '혁명과 소련사의 개념들을 인물·사건·보고서와 연결해 읽습니다.' %></p></div>
+        </header>
+        <section class="commu-event-grid" aria-label="<%= en ? 'Glossary terms' : '용어 목록' %>">
+            <% terms.forEach(function(term) { %>
+            <a class="commu-event-card" href="/commulingo/terms/<%= term.id %>">
+                <span class="commu-event-period"><%= term.original || term.period %></span>
+                <h2><%= term.term %></h2>
+                <p><%= term.definition %></p>
+                <span class="commu-event-card-link"><%= en ? 'Open term →' : '용어 보기 →' %></span>
+            </a>
+            <% }) %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

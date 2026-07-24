@@ -3170,3 +3170,14 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-related-report-list span { color: var(--link, #b84f4f); font-weight: 700; font-family: 'Courier New', monospace; }
 .commu-related-report-list strong { font-size: 1.02rem; }
 @media (max-width: 560px) { .commu-related-report-list a { grid-template-columns: 1fr; } }
+
+/* Glossary term pages (/commulingo/terms) */
+.commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 999px; color: inherit; text-decoration: none; font-size: .95rem; }
+.commu-term-chip:hover { border-color: var(--link, #b84f4f); }
+/* The shell is a flex column, so a floated CTA would stretch full-width on
+   pages without adjacent inline content: shrink it and pin it right. */
+.commu-terms-page > .commu-events-cta { float: none; align-self: flex-end; }
+/* Sibling-dictionary CTAs share one row (people page: events + glossary). */
+.commu-cta-row { display: flex; gap: .6rem; flex-wrap: wrap; }
+.commu-cta-row .commu-events-cta { float: none; flex: 1 1 220px; text-align: center; margin: 0; }

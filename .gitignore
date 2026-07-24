@@ -38,3 +38,7 @@ data/commulingo/people-snapshot.json.tmp
 # CommuLingo history-events snapshot (same pattern as the people snapshot)
 data/commulingo/history-events-snapshot.json
 data/commulingo/history-events-snapshot.json.tmp
+
+# CommuLingo glossary snapshot (same pattern as the people snapshot)
+data/commulingo/terms-snapshot.json
+data/commulingo/terms-snapshot.json.tmp
