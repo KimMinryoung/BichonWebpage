@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 const assert = require('assert');
-const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
+const {
+    nationalityHubHref,
+    buildNationalityFilter,
+    canonicalNationalityLabel,
+} = require('../data/commulingo/nationality-filter');
 const { flagImg, flagLabel } = require('../data/commulingo/flag-icons');
 
 const people = [
@@ -19,6 +23,9 @@ assert.strictEqual(
 assert.strictEqual(nationalityHubHref('birthplace', 'russia'), '');
 assert.strictEqual(nationalityHubHref('citizenship', 'not-a-flag'), '');
 assert.strictEqual(flagLabel('north-korea', 'ko'), '조선민주주의인민공화국');
+assert.strictEqual(flagLabel('georgia', 'ko'), '그루지야');
+assert.strictEqual(canonicalNationalityLabel('nationalOrigin', 'georgia', '조지아', 'ko'), '그루지야');
+assert.strictEqual(canonicalNationalityLabel('citizenship', 'georgia', '조지아', 'ko'), '조지아');
 assert.match(
     flagImg('poland', '폴란드', '민족·국가적 배경', '/commulingo/people/national-origin/poland'),
     /<a class="commu-flag-link" href="\/commulingo\/people\/national-origin\/poland"/

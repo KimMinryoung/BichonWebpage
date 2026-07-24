@@ -3,6 +3,7 @@ const { OFFICE_ICON, parsePeriod, normalizeFateLabel } = require('./people-stand
 const { clearCommuLingoPeopleCache } = require('./people-store');
 const { checkNativeScript } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
+const { canonicalNationalityLabel } = require('./nationality-filter');
 const {
     mergePatronymicPatch,
     patronymicProblem,
@@ -173,8 +174,8 @@ function normalizeNationality(node, field) {
     }
     return {
         code,
-        ko: localized(node.label, 'ko') || flagLabel(code, 'ko'),
-        en: localized(node.label, 'en') || flagLabel(code, 'en'),
+        ko: canonicalNationalityLabel(field, code, localized(node.label, 'ko'), 'ko'),
+        en: canonicalNationalityLabel(field, code, localized(node.label, 'en'), 'en'),
     };
 }
 

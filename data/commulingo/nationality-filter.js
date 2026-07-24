@@ -13,6 +13,11 @@ const FILTER_KINDS = {
     },
 };
 
+function canonicalNationalityLabel(kind, code, label, lang) {
+    if (kind === 'nationalOrigin' && code === 'georgia' && lang !== 'en') return '그루지야';
+    return label || flagLabel(code, lang);
+}
+
 function nationalityHubHref(kind, code) {
     const config = FILTER_KINDS[kind];
     if (!config || !hasFlag(code)) return '';
@@ -37,4 +42,4 @@ function buildNationalityFilter(people, kind, code, lang) {
     };
 }
 
-module.exports = { nationalityHubHref, buildNationalityFilter };
+module.exports = { nationalityHubHref, buildNationalityFilter, canonicalNationalityLabel };

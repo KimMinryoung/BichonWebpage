@@ -95,6 +95,9 @@ birthplace-derived Russian background to DPRK/Korean background.
 Migration 064 makes the same legacy correction for Dzerzhinsky: present-day
 Belarus is his birthplace geography, while his documented national background
 and own-script name are Polish (`Feliks Dzierżyński`).
+For the `georgia` national-background facet, Korean UI and ingestion use the
+Soviet-era name `그루지야`; migration 065 normalizes all existing origin labels.
+This does not mechanically rewrite prose about the modern state of Georgia.
 
 ## Fate label standard — added 2026-07-14
 
