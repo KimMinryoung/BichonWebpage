@@ -9,6 +9,7 @@ const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = requi
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
+const { getReportsForPerson } = require('../services/report-mentions');
 
 const router = express.Router();
 
@@ -306,12 +307,21 @@ router.get('/people/:personId', async (req, res) => {
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
         }));
+        // Public research reports that mention this person. Failure only costs
+        // the section, never the page.
+        let relatedReports = [];
+        try {
+            relatedReports = await getReportsForPerson(personId, lang);
+        } catch (e) {
+            console.error('commulingo person related reports:', e);
+        }
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-person', {
             person,
             bioHtml,
             sections,
             historyEvents,
+            relatedReports,
             roleIconSvg,
             roleHubHref,
             pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,

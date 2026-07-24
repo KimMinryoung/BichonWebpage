@@ -3159,3 +3159,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 .commu-event-source-text { display: inline-block; margin-left: .45rem; }
 .commu-event-source-text + .commu-event-source-text::before { content: '·'; margin-right: .45rem; opacity: .6; }
+
+/* Related research reports on person/event pages (services/report-mentions.js) */
+.commu-related-report-list { list-style: none; padding: 0; margin: 0; }
+.commu-related-report-list li + li { margin-top: .6rem; }
+.commu-related-report-list a { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; }
+.commu-related-report-list a:hover { border-color: var(--link, #b84f4f); }
+.commu-related-report-list span { color: var(--link, #b84f4f); font-weight: 700; font-family: 'Courier New', monospace; }
+.commu-related-report-list strong { font-size: 1.02rem; }
+@media (max-width: 560px) { .commu-related-report-list a { grid-template-columns: 1fr; } }

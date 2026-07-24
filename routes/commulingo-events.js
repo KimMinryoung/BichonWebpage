@@ -1,6 +1,7 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
+const { getReportsForEvent } = require('../services/report-mentions');
 
 const router = express.Router();
 
@@ -100,11 +101,20 @@ router.get('/:eventId', async (req, res) => {
             const item = allEvents[index + offset];
             return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
         };
+        // Public research reports that mention this event. Failure only costs
+        // the section, never the page.
+        let relatedReports = [];
+        try {
+            relatedReports = await getReportsForEvent(eventId, lang);
+        } catch (e) {
+            console.error('commulingo event related reports:', e);
+        }
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-event', {
             event,
             prevEvent: neighbor(-1),
             nextEvent: neighbor(1),
+            relatedReports,
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,

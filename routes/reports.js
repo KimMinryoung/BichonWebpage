@@ -8,6 +8,7 @@ const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
 const { sanitizeRich } = require('../utils/sanitize');
+const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 const errorPage = require('../utils/error-page');
 
 const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
@@ -103,17 +104,35 @@ async function getPrivateReport(slug) {
     return privateReportFromRow(rows[0], true);
 }
 
-function renderResearch(res, { filename, slug, pagePath, data, seriesNav = null }) {
+async function renderResearch(res, { filename, slug, pagePath, data, seriesNav = null }) {
     const markdown = researchMarkdown(data);
     const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
     const descriptionSource = markdown || data.summary || data.excerpt || data.html_body || data.htmlBody || '';
     const pageDescription = seo.excerpt(descriptionSource, 160);
 
+    // Cross-link CommuLingo entities: first occurrence of each known person /
+    // history-event name becomes a dictionary link, and the found entities feed
+    // the related-entries panel under the body. Failure only costs the links.
+    let htmlBody = researchHtmlBody(data, markdown);
+    let relatedPeople = [];
+    let relatedEvents = [];
+    try {
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        const linked = linkifyReportHtml(htmlBody, await getReportLinkContext(lang));
+        htmlBody = linked.html;
+        relatedPeople = linked.people;
+        relatedEvents = linked.events;
+    } catch (e) {
+        console.error('Error linking commulingo entities:', e);
+    }
+
     return res.render('public/research-view', {
         filename,
         isPrivate: Boolean(data.private),
         markdown: stripFirstHeading(markdown),
-        htmlBody: researchHtmlBody(data, markdown),
+        htmlBody,
+        relatedPeople,
+        relatedEvents,
         markdownUrl: `${pagePath}.md`,
         seriesNav,
         pageTitle: title,
@@ -351,7 +370,7 @@ router.get('/private/:slug', async (req, res) => {
             res.setHeader('Content-Disposition', `inline; filename="${slug}.md"`);
             return res.type('text/markdown; charset=utf-8').send(markdown);
         }
-        return renderResearch(res, {
+        return await renderResearch(res, {
             filename: `${slug}.md`,
             slug,
             pagePath,
@@ -388,7 +407,7 @@ router.get('/research/:filename', async (req, res) => {
             const cachedMarkdown = researchMarkdown(cached);
             const cachedTitle = cached.title || titleFromMarkdown(cachedMarkdown, slug.replace(/_/g, ' '));
             seriesNav = await researchSeriesNavFor({ filename, slug, title: cachedTitle, ...cached }, lang);
-            return renderResearch(res, {
+            return await renderResearch(res, {
                 filename,
                 slug,
                 pagePath,
@@ -419,7 +438,7 @@ router.get('/research/:filename', async (req, res) => {
         }, lang);
         seriesNav = await researchSeriesNavFor({ filename, slug, title, ...data }, lang);
 
-        renderResearch(res, {
+        await renderResearch(res, {
             filename,
             slug,
             pagePath,

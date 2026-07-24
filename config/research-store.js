@@ -110,7 +110,22 @@ async function getResearch(filenameOrSlug, lang = 'ko') {
     return localize(rows[0], lang, true);
 }
 
+// Full text of every public research document, for the report-mentions scanner
+// (services/report-mentions.js). Raw rows, not localized: the scanner reads
+// both language bodies itself.
+async function listResearchTexts() {
+    const { rows } = await db.query(
+        `SELECT filename, slug, title, title_en, markdown, markdown_en,
+                published_at, updated_at
+           FROM research_documents
+          WHERE status = 'public'
+          ORDER BY updated_at DESC, id DESC`
+    );
+    return rows;
+}
+
 module.exports = {
     listResearch,
     getResearch,
+    listResearchTexts,
 };

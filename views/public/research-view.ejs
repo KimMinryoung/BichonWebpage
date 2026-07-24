@@ -53,6 +53,35 @@
                 </nav>
             <% } %>
             <div class="report-body" id="report-content"><%- htmlBody %></div>
+
+            <%
+            var relEvents = typeof relatedEvents !== 'undefined' && relatedEvents ? relatedEvents : [];
+            var relPeople = typeof relatedPeople !== 'undefined' && relatedPeople ? relatedPeople : [];
+            %>
+            <% if (relEvents.length || relPeople.length) { %>
+            <aside class="report-related" aria-label="<%= lang === 'ko' ? '연관 사전 항목' : 'Related encyclopedia entries' %>">
+                <h2 class="report-related-title"><%= lang === 'ko' ? '연관 사전 항목' : 'Related entries' %></h2>
+                <% if (relEvents.length) { %>
+                <div class="report-related-events">
+                    <% relEvents.forEach(function(event) { %>
+                    <a class="report-related-event" href="/commulingo/events/<%= encodeURIComponent(event.id) %>">
+                        <span class="report-related-kicker"><%= lang === 'ko' ? '역사 사건' : 'Historical event' %></span>
+                        <strong><%= event.title %></strong>
+                        <span class="report-related-period"><%= event.period %></span>
+                    </a>
+                    <% }) %>
+                </div>
+                <% } %>
+                <% if (relPeople.length) { %>
+                <div class="report-related-people">
+                    <span class="report-related-kicker"><%= lang === 'ko' ? '인물 사전' : 'People' %></span>
+                    <% relPeople.forEach(function(person) { %>
+                    <a class="report-related-person" href="/commulingo/people/<%= encodeURIComponent(person.id) %>"<% if (person.epithet) { %> title="<%= person.epithet %>"<% } %>><%= person.displayName || person.name %></a>
+                    <% }) %>
+                </div>
+                <% } %>
+            </aside>
+            <% } %>
         </article>
 
         <div class="box post-nav">

@@ -26,6 +26,16 @@
             </div>
             <% }) %>
         </section>
+        <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
+        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
+            <h2 id="related-reports"><%= en ? 'Related reports' : '관련 보고서' %></h2>
+            <ul class="commu-related-report-list">
+                <% relatedReports.forEach(function(report) { %>
+                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (en ? 'Report' : '보고서') %></span><strong><%= report.title %></strong></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
         <% if (event.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% event.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>
         <% if ((typeof prevEvent !== 'undefined' && prevEvent) || (typeof nextEvent !== 'undefined' && nextEvent)) { %>
         <nav class="commu-event-nav" aria-label="<%= en ? 'Other events' : '다른 사건' %>">

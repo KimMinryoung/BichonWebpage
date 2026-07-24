@@ -120,27 +120,49 @@ function linkifyPlain(rawText, index, excludeId) {
     return escaped.replace(index.pattern, makeReplacer(index, excludeId));
 }
 
+// Tags whose text content must never be linkified: existing anchors (no nested
+// links) and literal/code contexts.
+const SKIP_TAGS = ['a', 'code', 'pre', 'script', 'style'];
+
+// Walks already-rendered HTML and applies mapText to every text chunk that is
+// not inside a skip tag. Tag internals pass through untouched.
+function mapLinkableText(html, mapText) {
+    const depth = {};
+    SKIP_TAGS.forEach(name => { depth[name] = 0; });
+    let skipping = 0;
+    return String(html).replace(/(<[^>]+>)|([^<]+)/g, function (_m, tag, textChunk) {
+        if (tag) {
+            const match = tag.match(/^<\s*(\/?)\s*([a-zA-Z0-9]+)/);
+            if (match && SKIP_TAGS.includes(match[2].toLowerCase())) {
+                const name = match[2].toLowerCase();
+                if (match[1]) {
+                    if (depth[name] > 0) { depth[name]--; skipping--; }
+                } else if (!/\/\s*>$/.test(tag)) {
+                    depth[name]++; skipping++;
+                }
+            }
+            return tag;
+        }
+        if (skipping > 0) return textChunk;
+        return mapText(textChunk);
+    });
+}
+
 // Links person names inside already-rendered HTML, skipping tag internals and
 // text already wrapped in an anchor (so no nested links are produced).
 function linkifyHtml(html, index, excludeId) {
     if (!index || !html) return html || '';
     const replacer = makeReplacer(index, excludeId);
-    let anchorDepth = 0;
-    return String(html).replace(/(<[^>]+>)|([^<]+)/g, function (_m, tag, textChunk) {
-        if (tag) {
-            const lower = tag.toLowerCase();
-            if (/^<a[\s>]/.test(lower)) anchorDepth++;
-            else if (/^<\/a\s*>/.test(lower)) anchorDepth = Math.max(0, anchorDepth - 1);
-            return tag;
-        }
-        if (anchorDepth > 0) return textChunk;
-        return textChunk.replace(index.pattern, replacer);
-    });
+    return mapLinkableText(html, text => text.replace(index.pattern, replacer));
 }
 
 module.exports = {
     BLOCKED_KO,
+    WORD_CHAR,
+    escapeHtml,
+    escapeRegExp,
     buildPersonLinkIndex,
     linkifyPlain,
     linkifyHtml,
+    mapLinkableText,
 };
