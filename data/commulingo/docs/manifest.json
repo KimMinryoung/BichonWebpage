@@ -17,7 +17,7 @@
         "en": "Full translation"
       },
       "source": "Алексей Павлюков, Ежов. Биография (Москва: Захаров, 2007)",
-      "tocExclude": ["^인쇄면\\s*\\d+쪽", "^제\\d+장\\s"],
+      "tocExclude": ["^제\\d+장\\s"],
       "people": [
         {
           "id": "yezhov",
