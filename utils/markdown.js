@@ -158,6 +158,45 @@ function flushTable(out, table, citationLinks, footnoteDefinitions) {
     table.length = 0;
 }
 
+// ::: 외부문헌 / ::: source — a fenced card that introduces an important
+// external text (a translation, an archive edition) with its site/translator
+// instead of a bare inline link:
+//   :::외부문헌
+//   제목: 「이행 강령」(1938) 한국어 전문 번역
+//   출처: 볼셰비키그룹 (bolky.jinbo.net)
+//   번역: ...            (optional)
+//   링크: https://...
+//   :::
+const SOURCE_CARD_OPEN = /^:::\s*(외부문헌|source)\s*$/;
+const SOURCE_CARD_LABELS = { '외부문헌': '외부 문헌', source: 'External text' };
+
+function renderSourceCard(kind, lines) {
+    const fields = {};
+    for (const line of lines) {
+        const match = line.match(/^\s*(제목|출처|번역|링크|설명|title|source|translator|url|note)\s*:\s*(.+)$/);
+        if (match) fields[match[1]] = match[2].trim();
+    }
+    const title = fields['제목'] || fields.title || '';
+    const origin = fields['출처'] || fields.source || '';
+    const translator = fields['번역'] || fields.translator || '';
+    const note = fields['설명'] || fields.note || '';
+    const url = cleanCitationUrl(fields['링크'] || fields.url || '');
+    if (!title || !/^https?:\/\//.test(url)) {
+        // Malformed card: fall back to plain paragraphs so nothing is lost.
+        return lines.map(line => `<p>${inlineMarkdown(line)}</p>`).join('\n');
+    }
+    const meta = [origin, translator].filter(Boolean).join(' · ');
+    const parts = [
+        '<div class="report-source-card">',
+        `<span class="report-source-kicker">${escapeHtml(SOURCE_CARD_LABELS[kind] || SOURCE_CARD_LABELS['외부문헌'])}</span>`,
+        `<p class="report-source-title"><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(title)}</a></p>`,
+    ];
+    if (meta) parts.push(`<p class="report-source-meta">${escapeHtml(meta)}</p>`);
+    if (note) parts.push(`<p class="report-source-note">${escapeHtml(note)}</p>`);
+    parts.push('</div>');
+    return parts.join('\n');
+}
+
 function renderMarkdown(markdown = '') {
     const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
     const citationLinks = collectCitationLinks(markdown);
@@ -168,9 +207,28 @@ function renderMarkdown(markdown = '') {
     const table = [];
     let inCode = false;
     let code = [];
+    let sourceCard = null;  // { kind, lines } while inside a ::: fence
 
     for (const rawLine of lines) {
         const line = rawLine.replace(/\s+$/, '');
+
+        if (sourceCard) {
+            if (/^:::\s*$/.test(line)) {
+                out.push(renderSourceCard(sourceCard.kind, sourceCard.lines));
+                sourceCard = null;
+            } else {
+                sourceCard.lines.push(line);
+            }
+            continue;
+        }
+        const sourceOpen = line.match(SOURCE_CARD_OPEN);
+        if (sourceOpen && !inCode) {
+            flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
+            flushList(out, list, citationLinks, footnoteDefinitions);
+            flushTable(out, table, citationLinks, footnoteDefinitions);
+            sourceCard = { kind: sourceOpen[1], lines: [] };
+            continue;
+        }
 
         if (line.startsWith('```')) {
             flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);

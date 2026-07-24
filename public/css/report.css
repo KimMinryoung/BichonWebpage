@@ -244,3 +244,37 @@
 .report-related-person:hover {
     border-color: var(--accent-red, #b84f4f);
 }
+
+/* External-text source card (::: 외부문헌 blocks, utils/markdown.js) */
+.report-body .report-source-card {
+    margin: 1.2em 0;
+    padding: 0.9em 1.1em;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-red, #b84f4f);
+    background: var(--bg-surface);
+}
+
+.report-body .report-source-card .report-source-kicker {
+    display: block;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent-red, #b84f4f);
+}
+
+.report-body .report-source-card .report-source-title {
+    margin: 0.25em 0 0;
+    font-size: 1.05em;
+    font-weight: 700;
+}
+
+.report-body .report-source-card .report-source-title a {
+    color: inherit;
+}
+
+.report-body .report-source-card .report-source-meta,
+.report-body .report-source-card .report-source-note {
+    margin: 0.25em 0 0;
+    font-size: 0.88em;
+    color: var(--text-muted);
+}

@@ -8,6 +8,7 @@ const textTags = [
 const richTags = [
     ...textTags,
     'hr', 'table', 'thead', 'tbody', 'tr', 'th', 'td',
+    'div',  // report source cards (utils/markdown.js renderSourceCard)
 ];
 
 const baseOptions = {
@@ -45,6 +46,7 @@ function sanitizeRich(html) {
             ...baseOptions.allowedAttributes,
             p: ['id', 'class'],
             span: ['class'],
+            div: ['class'],
             th: ['align'],
             td: ['align'],
         },
