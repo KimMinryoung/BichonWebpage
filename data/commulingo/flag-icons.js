@@ -6,7 +6,8 @@
 // how many cards reuse it.
 //
 // A person shows up to two flags, citizenship first (the more important one),
-// then birthplace origin: e.g. Stalin → 🇸🇺 Soviet Union, then Georgia.
+// then documented national/ethnic background: e.g. Stalin → 🇸🇺 Soviet Union,
+// then Georgia. The second flag must never be inferred from birthplace alone.
 //
 // To add a nation: drop public/flags/<code>.svg in place and add the code to
 // FLAG_NAMES below; the curator may then set citizenship_code / origin_code to

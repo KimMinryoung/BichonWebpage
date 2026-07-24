@@ -1,7 +1,9 @@
 -- 058: Correct citizenship codes that held a birthplace or a place of death.
 --
 -- citizenship = the state the person belonged to for the work they are known
--- for; origin = birthplace. Neither is "where they happened to die". These eight
+-- for; at the time this migration treated origin as birthplace. Migration 062
+-- supersedes that interpretation: origin_* now stores curated national/ethnic
+-- background and must not be inferred from birthplace. These eight
 -- rows had one of the wrong things in the citizenship slot, which put a Polish
 -- flag on a Soviet marshal, an Uzbek flag on the Leningrad Affair's Kuznetsov
 -- and a Hungarian flag on Tito. Citizenship also drives the native-name script

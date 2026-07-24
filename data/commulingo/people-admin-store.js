@@ -3,6 +3,11 @@ const { OFFICE_ICON, parsePeriod, normalizeFateLabel } = require('./people-stand
 const { clearCommuLingoPeopleCache } = require('./people-store');
 const { checkNativeScript } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
+const {
+    mergePatronymicPatch,
+    patronymicProblem,
+    nationalOriginInput,
+} = require('./person-name-validation');
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -173,6 +178,19 @@ function normalizeNationality(node, field) {
     };
 }
 
+function requireNationalOrigin(payload) {
+    const resolved = nationalOriginInput(payload);
+    if (resolved.invalid) throw badRequest(resolved.invalid);
+    return resolved;
+}
+
+function requirePatronymicState(payload, before, nativeName) {
+    const state = mergePatronymicPatch(payload, before);
+    const problem = patronymicProblem(state, nativeName);
+    if (problem) throw badRequest(problem);
+    return state;
+}
+
 // The native-name line must be written in the person's own script. Rejecting the
 // mismatch here is what keeps a Russian transliteration from being filed under a
 // Korean, Hungarian or Chinese figure (see data/commulingo/native-script.js).
@@ -243,6 +261,7 @@ function assertPatronymicSeparate(parts, patronymic, lang) {
 }
 
 function rowToPerson(row) {
+    const origin = nationality(row.origin_code, row.origin_label_ko, row.origin_label_en);
     return {
         id: row.id,
         group: row.group_id,
@@ -251,7 +270,8 @@ function rowToPerson(row) {
         cyrillic: row.cyrillic || '',
         nativeName: row.cyrillic || '',
         citizenship: nationality(row.citizenship_code, row.citizenship_label_ko, row.citizenship_label_en),
-        origin: nationality(row.origin_code, row.origin_label_ko, row.origin_label_en),
+        origin,
+        nationalOrigin: origin,
         years: row.years_label || '',
         birthYear: row.birth_year,
         deathYear: row.death_year,
@@ -448,18 +468,14 @@ async function replaceScenes(client, personId, scenes) {
     }
 }
 
-async function replacePatronymic(client, personId, payload) {
-    if (!payload) return;
+async function replacePatronymic(client, personId, state) {
     await client.query('DELETE FROM commulingo_person_patronymics WHERE person_id = $1', [personId]);
-    const patronymicKo = localized(payload.patronymic || payload, 'ko');
-    const patronymicEn = localized(payload.patronymic || payload, 'en');
-    const cyrillic = payload.cyrillicPatronymic || payload.cyrillic || '';
-    if (!patronymicKo && !patronymicEn && !cyrillic) return;
+    if (!state.ko && !state.en && !state.native) return;
     await client.query(
         `INSERT INTO commulingo_person_patronymics
             (person_id, patronymic_ko, patronymic_en, cyrillic_patronymic, updated_at)
          VALUES ($1, $2, $3, $4, NOW())`,
-        [personId, patronymicKo, patronymicEn, cyrillic]
+        [personId, state.ko, state.en, state.native]
     );
 }
 
@@ -495,7 +511,9 @@ async function createPersonAdmin(rawPayload, options = {}) {
     return withTransaction(options, async client => {
         const id = requireId(payload.id, 'person id');
         const citizenship = normalizeNationality(payload.citizenship || null, 'citizenship');
-        const origin = normalizeNationality(payload.origin || null, 'origin');
+        const originInput = requireNationalOrigin(payload);
+        const origin = normalizeNationality(originInput.touched ? originInput.value : null, 'nationalOrigin');
+        const patronymicState = requirePatronymicState(payload, {}, payload.cyrillic || '');
         assertNativeScript(payload, { citizenship: citizenship.code, origin: origin.code });
         const groupId = requireId(payload.groupId || payload.group, 'group id');
         const partsKo = resolveNameParts(payload, 'ko');
@@ -503,8 +521,8 @@ async function createPersonAdmin(rawPayload, options = {}) {
         if (!partsKo.full || !partsEn.full) {
             throw badRequest('name.ko and name.en (or givenName/familyName per language) are required');
         }
-        assertPatronymicSeparate(partsKo, localized(payload.patronymic, 'ko'), 'ko');
-        assertPatronymicSeparate(partsEn, localized(payload.patronymic, 'en'), 'en');
+        assertPatronymicSeparate(partsKo, patronymicState.ko, 'ko');
+        assertPatronymicSeparate(partsEn, patronymicState.en, 'en');
         const nameKo = partsKo.full;
         const nameEn = partsEn.full;
         const sortResult = await client.query(
@@ -557,7 +575,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
                 origin.en,
             ]
         );
-        await replacePatronymic(client, id, payload);
+        await replacePatronymic(client, id, patronymicState);
         await replaceAliases(client, id, payload.aliases || { ko: [nameKo], en: [nameEn] });
         await replaceScenes(client, id, payload.scenes || []);
         await replaceCareer(client, id, payload.career || []);
@@ -584,16 +602,24 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         const citizenship = payload.citizenship !== undefined
             ? normalizeNationality(payload.citizenship, 'citizenship')
             : { code: before.citizenship ? before.citizenship.code : '' };
-        const origin = payload.origin !== undefined
-            ? normalizeNationality(payload.origin, 'origin')
+        const originInput = requireNationalOrigin(payload);
+        const origin = originInput.touched
+            ? normalizeNationality(originInput.value, 'nationalOrigin')
             : { code: before.origin ? before.origin.code : '' };
+        const patronymicState = requirePatronymicState(
+            payload,
+            {
+                ko: localized(before.patronymic, 'ko'),
+                en: localized(before.patronymic, 'en'),
+                native: before.cyrillicPatronymic,
+            },
+            payload.cyrillic !== undefined ? payload.cyrillic : before.cyrillic
+        );
         assertNativeScript(
             {
                 ...payload,
                 cyrillic: payload.cyrillic !== undefined ? payload.cyrillic : before.cyrillic,
-                cyrillicPatronymic: payload.cyrillicPatronymic !== undefined
-                    ? payload.cyrillicPatronymic
-                    : undefined,
+                cyrillicPatronymic: patronymicState.native,
             },
             { citizenship: citizenship.code, origin: origin.code }
         );
@@ -650,12 +676,9 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         }
         // Guard against embedding whenever the record's name or patronymic is
         // touched, checked against what the record will hold AFTER the patch.
-        if (nameChanged || payload.patronymic !== undefined) {
-            const patronymicAfter = lang => (payload.patronymic !== undefined
-                ? localized(payload.patronymic, lang)
-                : localized(before.patronymic, lang));
-            assertPatronymicSeparate(newPartsKo || storedParts('ko'), patronymicAfter('ko'), 'ko');
-            assertPatronymicSeparate(newPartsEn || storedParts('en'), patronymicAfter('en'), 'en');
+        if (nameChanged || patronymicState.touched) {
+            assertPatronymicSeparate(newPartsKo || storedParts('ko'), patronymicState.ko, 'ko');
+            assertPatronymicSeparate(newPartsEn || storedParts('en'), patronymicState.en, 'en');
         }
         if (payload.epithet !== undefined) {
             set('epithet_ko', localized(payload.epithet, 'ko'));
@@ -675,8 +698,8 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             set('citizenship_label_ko', value.ko);
             set('citizenship_label_en', value.en);
         }
-        if (payload.origin !== undefined) {
-            const value = normalizeNationality(payload.origin, 'origin');
+        if (originInput.touched) {
+            const value = normalizeNationality(originInput.value, 'nationalOrigin');
             set('origin_code', value.code);
             set('origin_label_ko', value.ko);
             set('origin_label_en', value.en);
@@ -699,7 +722,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
                 values
             );
         }
-        if (payload.patronymic !== undefined || payload.cyrillicPatronymic !== undefined) await replacePatronymic(client, id, payload);
+        if (patronymicState.touched) await replacePatronymic(client, id, patronymicState);
         if (payload.aliases !== undefined) await replaceAliases(client, id, payload.aliases);
         if (payload.scenes !== undefined) await replaceScenes(client, id, payload.scenes);
         if (payload.career !== undefined) await replaceCareer(client, id, payload.career);

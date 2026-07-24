@@ -21,6 +21,12 @@ Admin API (`POST/PATCH /commulingo/admin/api/people`):
   — that duplication (오토 율리예비치 율리예비치 시미트) is the bug the split
   exists to prevent. Middle names (Gurley, Auguste) belong in givenName, NOT
   in the patronymic field.
+- Patronymic PATCHes merge subfields: sending only `cyrillicPatronymic` keeps
+  the stored Korean/English values, and sending one localized language keeps
+  the other. The resulting row must have both `patronymic.ko` and `.en`; a
+  Cyrillic native name with a localized patronymic must also have
+  `cyrillicPatronymic`. This closes the old replace-whole-row bug that silently
+  blanked whichever half a PATCH omitted.
 
 Display composes `given + patronymic + family` (people-standard.js
 `composeFromParts`); migration `060_commulingo_person_name_parts.sql` did the
@@ -63,8 +69,8 @@ not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
   `assertNativeScript()` and return HTTP 400 with the rule in the message.
   Payload alias `nativeName` / `nativePatronymic` is accepted for the same
   columns; `nativeScriptOverride: true` is the deliberate escape hatch. The same
-  store now also reads and writes `citizenship` / `origin` (`{code, label}`),
-  which it previously ignored.
+  store now also reads and writes `citizenship` / `nationalOrigin`
+  (`{code, label}`); legacy `origin` remains a compatible alias.
 - leninbot `runtime_tools/commulingo_people.py` — `_NATION_SCRIPTS` and
   `_check_native_script()` are the Python port, wired into `_validate` so
   `commulingo_edit` rejects the mismatch before staging or applying. Its tool
@@ -72,13 +78,14 @@ not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
 - `scripts/audit-person-native-names.js` — backstop for rows written before the
   guard or by hand-run SQL; exits 1 when mismatches remain.
 
-Because the check keys off `citizenship_code`, a wrong citizenship produces a
-wrong name. **Citizenship is the state the person belonged to for the work they
-are known for — not their birthplace and not where they died.** A Soviet
-official who was born in Poland and died in exile in New York is `soviet`, with
-`origin` carrying the birthplace. Migration 058 fixed eight records that had the
-place of death or of birth in the citizenship slot (Rokossovsky, Radek, Armand,
-Kamo, Rakovsky, Tsereteli, Alexei Kuznetsov, Tito).
+Because the check keys off nationality fields, a wrong code produces a wrong
+name. **Citizenship is the state the person belonged to for the work they are
+known for; `nationalOrigin` is national/ethnic background. Neither field is a
+birthplace or place of death.** Thus Radek is Soviet + Polish despite being born
+in Lemberg (today Lviv), while Yezhov is Soviet + Russian despite being born in
+Lithuania. Migration 062 corrected those two rows and repaired legacy
+patronymic gaps. Migration 058 had earlier fixed eight records whose
+citizenship slot contained a place of death or birth.
 
 ## Fate label standard — added 2026-07-14
 
