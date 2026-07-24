@@ -104,25 +104,28 @@ function linkifyReportHtml(html, context) {
 }
 
 // Scans plain text (raw markdown) and returns the ids of every mentioned
-// entity: { personIds: Set, eventIds: Set }. Used to build the reverse
-// report-mentions index; no HTML is produced.
+// entity: { personIds, eventIds, topicIds } (Sets; topic ids are keyed
+// 'role:<id>' / 'office:<id>'). Used to build the reverse report-mentions
+// index; no HTML is produced.
 function findEntityMentions(text, context) {
     const personIds = new Set();
     const eventIds = new Set();
+    const topicIds = new Set();
     const source = String(text || '');
-    if (!source || !context) return { personIds, eventIds };
+    if (!source || !context) return { personIds, eventIds, topicIds };
     [
-        { index: context.eventIndex, ids: eventIds },
-        { index: context.personIndex, ids: personIds },
-    ].forEach(({ index, ids }) => {
+        { index: context.eventIndex, ids: eventIds, key: entity => entity.id },
+        { index: context.topicIndex, ids: topicIds, key: entity => entity.kind + ':' + entity.id },
+        { index: context.personIndex, ids: personIds, key: entity => entity.id },
+    ].forEach(({ index, ids, key }) => {
         if (!index) return;
         source.replace(index.pattern, (match, _t, offset) => {
             const entity = guardedMatch(index, match, offset, source);
-            if (entity) ids.add(entity.id);
+            if (entity) ids.add(key(entity));
             return match;
         });
     });
-    return { personIds, eventIds };
+    return { personIds, eventIds, topicIds };
 }
 
 module.exports = {

@@ -9,7 +9,18 @@ const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = requi
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
-const { getReportsForPerson } = require('../services/report-mentions');
+const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
+
+// Public research reports that mention this classification page's curated
+// terms (topic-linkify.js). Failure only costs the section, never the page.
+async function relatedReportsForTopic(kind, id, lang) {
+    try {
+        return await getReportsForTopic(kind, id, lang);
+    } catch (e) {
+        console.error(`commulingo ${kind} related reports:`, e);
+        return [];
+    }
+}
 
 const router = express.Router();
 
@@ -222,10 +233,12 @@ router.get('/offices/:officeId', async (req, res) => {
             });
         }
         const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.officeId === office.id));
+        const relatedReports = await relatedReportsForTopic('office', office.id, lang);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-office', {
             office,
             people,
+            relatedReports,
             roleIconSvg,
             roleHubHref,
             personLinkIndex: linkIndex,
@@ -261,10 +274,12 @@ router.get('/roles/:categoryId', async (req, res) => {
             });
         }
         const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.categoryId === category.id));
+        const relatedReports = await relatedReportsForTopic('role', category.id, lang);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-role', {
             category,
             people,
+            relatedReports,
             roleIconSvg,
             roleHubHref,
             personLinkIndex: linkIndex,

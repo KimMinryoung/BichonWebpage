@@ -42,6 +42,7 @@ async function buildIndex() {
     ]);
     const byPerson = new Map();
     const byEvent = new Map();
+    const byTopic = new Map();  // keyed 'role:<id>' / 'office:<id>'
     const add = (map, id, doc) => {
         if (!map.has(id)) map.set(id, []);
         map.get(id).push(doc);
@@ -50,12 +51,11 @@ async function buildIndex() {
         const doc = docEntry(row);
         const ko = findEntityMentions(row.markdown, ctxKo);
         const en = findEntityMentions(row.markdown_en, ctxEn);
-        const personIds = new Set([...ko.personIds, ...en.personIds]);
-        const eventIds = new Set([...ko.eventIds, ...en.eventIds]);
-        personIds.forEach(id => add(byPerson, id, doc));
-        eventIds.forEach(id => add(byEvent, id, doc));
+        new Set([...ko.personIds, ...en.personIds]).forEach(id => add(byPerson, id, doc));
+        new Set([...ko.eventIds, ...en.eventIds]).forEach(id => add(byEvent, id, doc));
+        new Set([...ko.topicIds, ...en.topicIds]).forEach(id => add(byTopic, id, doc));
     });
-    return { byPerson, byEvent, at: Date.now() };
+    return { byPerson, byEvent, byTopic, at: Date.now() };
 }
 
 function refresh() {
@@ -97,7 +97,16 @@ async function getReportsForEvent(eventId, lang) {
     return present(index.byEvent.get(id), lang);
 }
 
+// kind: 'role' | 'office' (classification pages, see topic-linkify.js)
+async function getReportsForTopic(kind, topicId, lang) {
+    const id = typeof topicId === 'string' ? topicId.trim() : '';
+    if (!id) return [];
+    const index = await getMentionsIndex();
+    return present(index.byTopic.get(kind + ':' + id), lang);
+}
+
 module.exports = {
     getReportsForPerson,
     getReportsForEvent,
+    getReportsForTopic,
 };

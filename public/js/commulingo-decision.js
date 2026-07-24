@@ -60,7 +60,7 @@
     // data/commulingo/people-linkify.js.
     var BLOCKED = [
         '레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의',
-        '탈레반', '넵스키 대로', '로마노프 왕조'
+        '탈레반', '넵스키 대로', '로마노프 왕조', '사이버-레닌', '사이버 레닌'
     ];
     // Aliases that are also ordinary Korean words (카스트로 = 카스트+로) never link.
     var NEVER_LINK = ['카스트로', '보스', '미신'];

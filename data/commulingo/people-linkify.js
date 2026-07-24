@@ -15,7 +15,7 @@ const WORD_CHAR = /[0-9A-Za-z가-힣]/;
 // Korean compounds that contain a person alias but must never link.
 const BLOCKED_KO = [
     '레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의',
-    '탈레반', '넵스키 대로', '로마노프 왕조',
+    '탈레반', '넵스키 대로', '로마노프 왕조', '사이버-레닌', '사이버 레닌',
 ];
 
 // Bare aliases that are also ordinary Korean words or word+josa homographs
