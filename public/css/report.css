@@ -143,7 +143,7 @@
     text-decoration: none;
     /* Full-strength link green: a low-opacity currentColor dash was invisible
        against the dark canvas. */
-    border-bottom: 1px dashed var(--link, #5d7a5a);
+    border-bottom: 2px dashed var(--link, #5d7a5a);
 }
 
 .report-body .commu-person-link:hover,
