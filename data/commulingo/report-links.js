@@ -16,6 +16,7 @@ const {
     mapLinkableText,
 } = require('./people-linkify');
 const { buildEventLinkIndex } = require('./event-linkify');
+const { buildTopicLinkIndex } = require('./topic-linkify');
 
 // Indexes are pure functions of the people snapshot + catalog + events list,
 // which only change on their ~10-min store refreshes. Memoized by those object
@@ -39,6 +40,7 @@ async function getReportLinkContext(lang) {
             lang: safeLang,
             personIndex: buildPersonLinkIndex(standardized.people, { lang: safeLang }),
             eventIndex: buildEventLinkIndex(events, { lang: safeLang }),
+            topicIndex: buildTopicLinkIndex(standardized, { lang: safeLang }),
         };
     }
     return entry;
@@ -55,16 +57,16 @@ function guardedMatch(index, match, offset, source) {
 }
 
 // Links the first occurrence of each entity inside rendered report HTML.
-// Events are linked before people so multiword event names ('레닌그라드 사건')
-// win over the person aliases they contain; the person pass skips text already
-// inside anchors. Returns { html, people, events } where people/events list the
-// entities that were linked, in order of first appearance.
+// Events are linked before topics and people so multiword event names
+// ('레닌그라드 사건') win over the shorter aliases they contain; later passes
+// skip text already inside anchors. Returns { html, people, events, topics }
+// listing the linked entities in order of first appearance.
 function linkifyReportHtml(html, context) {
-    const result = { html: html || '', people: [], events: [] };
+    const result = { html: html || '', people: [], events: [], topics: [] };
     if (!html || !context) return result;
     const seen = new Set();
 
-    const { eventIndex, personIndex } = context;
+    const { eventIndex, topicIndex, personIndex } = context;
     if (eventIndex) {
         result.html = mapLinkableText(result.html, text => text.replace(eventIndex.pattern, (match, _t, offset, source) => {
             const event = guardedMatch(eventIndex, match, offset, source);
@@ -74,6 +76,16 @@ function linkifyReportHtml(html, context) {
             const title = escapeHtml(event.period ? event.period + ' · ' + event.title : event.title);
             return '<a class="commu-event-link" href="/commulingo/events/'
                 + encodeURIComponent(event.id) + '" title="' + title + '">' + match + '</a>';
+        }));
+    }
+    if (topicIndex) {
+        result.html = mapLinkableText(result.html, text => text.replace(topicIndex.pattern, (match, _t, offset, source) => {
+            const topic = guardedMatch(topicIndex, match, offset, source);
+            if (!topic || seen.has('topic:' + topic.kind + ':' + topic.id)) return match;
+            seen.add('topic:' + topic.kind + ':' + topic.id);
+            result.topics.push(topic);
+            return '<a class="commu-topic-link" href="' + topic.href + '" title="'
+                + escapeHtml(topic.label) + '">' + match + '</a>';
         }));
     }
     if (personIndex) {

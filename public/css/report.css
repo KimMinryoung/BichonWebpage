@@ -137,6 +137,7 @@
 /* CommuLingo entity links inside report prose: quiet dashed underline, same
    vocabulary as the dictionary pages (see commulingo.css .commu-person-link). */
 .report-body .commu-person-link,
+.report-body .commu-topic-link,
 .report-body .commu-event-link {
     color: inherit;
     text-decoration: none;
@@ -144,6 +145,7 @@
 }
 
 .report-body .commu-person-link:hover,
+.report-body .commu-topic-link:hover,
 .report-body .commu-event-link:hover {
     border-bottom-style: solid;
 }

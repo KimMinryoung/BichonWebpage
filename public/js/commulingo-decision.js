@@ -56,12 +56,20 @@
     // but must not link (Hangul has no \b word boundary, so 레닌 would otherwise
     // match inside 레닌그라드); they join the alternation so the regex consumes
     // them first, and the replacer passes them through untouched.
-    var BLOCKED = ['레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의'];
+    // Keep in sync with BLOCKED_KO / NEVER_LINK_ALIAS_KO in
+    // data/commulingo/people-linkify.js.
+    var BLOCKED = [
+        '레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의',
+        '탈레반', '넵스키 대로', '로마노프 왕조'
+    ];
+    // Aliases that are also ordinary Korean words (카스트로 = 카스트+로) never link.
+    var NEVER_LINK = ['카스트로', '보스', '미신'];
     var personByAlias = {};
     var aliasTokens = [];
     (data.people || []).forEach(function(person) {
         (person.aliases || []).forEach(function(alias) {
             if (!alias || personByAlias[alias]) return;
+            if (!en && NEVER_LINK.indexOf(alias) !== -1) return;
             personByAlias[alias] = person;
             aliasTokens.push(alias);
         });

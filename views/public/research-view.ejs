@@ -57,8 +57,9 @@
             <%
             var relEvents = typeof relatedEvents !== 'undefined' && relatedEvents ? relatedEvents : [];
             var relPeople = typeof relatedPeople !== 'undefined' && relatedPeople ? relatedPeople : [];
+            var relTopics = typeof relatedTopics !== 'undefined' && relatedTopics ? relatedTopics : [];
             %>
-            <% if (relEvents.length || relPeople.length) { %>
+            <% if (relEvents.length || relPeople.length || relTopics.length) { %>
             <aside class="report-related" aria-label="<%= lang === 'ko' ? '연관 사전 항목' : 'Related encyclopedia entries' %>">
                 <h2 class="report-related-title"><%= lang === 'ko' ? '연관 사전 항목' : 'Related entries' %></h2>
                 <% if (relEvents.length) { %>
@@ -69,6 +70,14 @@
                         <strong><%= event.title %></strong>
                         <span class="report-related-period"><%= event.period %></span>
                     </a>
+                    <% }) %>
+                </div>
+                <% } %>
+                <% if (relTopics.length) { %>
+                <div class="report-related-people">
+                    <span class="report-related-kicker"><%= lang === 'ko' ? '분류 · 기관' : 'Categories' %></span>
+                    <% relTopics.forEach(function(topic) { %>
+                    <a class="report-related-person" href="<%= topic.href %>"><%= topic.label %></a>
                     <% }) %>
                 </div>
                 <% } %>

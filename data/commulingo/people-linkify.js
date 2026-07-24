@@ -13,7 +13,15 @@
 const WORD_CHAR = /[0-9A-Za-z가-힣]/;
 
 // Korean compounds that contain a person alias but must never link.
-const BLOCKED_KO = ['레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의'];
+const BLOCKED_KO = [
+    '레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의',
+    '탈레반', '넵스키 대로', '로마노프 왕조',
+];
+
+// Bare aliases that are also ordinary Korean words or word+josa homographs
+// (카스트로 = 카스트+로, 보스, 미신) must never auto-link on their own; the
+// person still links via longer aliases like the full name.
+const NEVER_LINK_ALIAS_KO = ['카스트로', '보스', '미신'];
 
 function escapeHtml(value = '') {
     return String(value)
@@ -70,6 +78,7 @@ function buildPersonLinkIndex(people, options = {}) {
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
+            if (!en && NEVER_LINK_ALIAS_KO.includes(alias)) return;
             const words = alias.toLowerCase().split(/\s+/).filter(Boolean);
             // Only link aliases made of this person's own canonical-name words…
             if (!words.every(word => canonicalWords.has(word))) return;

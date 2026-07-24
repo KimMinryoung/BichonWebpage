@@ -116,12 +116,14 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
     let htmlBody = researchHtmlBody(data, markdown);
     let relatedPeople = [];
     let relatedEvents = [];
+    let relatedTopics = [];
     try {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         const linked = linkifyReportHtml(htmlBody, await getReportLinkContext(lang));
         htmlBody = linked.html;
         relatedPeople = linked.people;
         relatedEvents = linked.events;
+        relatedTopics = linked.topics;
     } catch (e) {
         console.error('Error linking commulingo entities:', e);
     }
@@ -133,6 +135,7 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
         htmlBody,
         relatedPeople,
         relatedEvents,
+        relatedTopics,
         markdownUrl: `${pagePath}.md`,
         seriesNav,
         pageTitle: title,
