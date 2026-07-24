@@ -55,7 +55,7 @@ const FLAG_NAMES = {
     turkey: { ko: '튀르키예', en: 'Turkey' },
     argentina: { ko: '아르헨티나', en: 'Argentina' },
     chile: { ko: '칠레', en: 'Chile' },
-    'north-korea': { ko: '조선', en: 'North Korea' },
+    'north-korea': { ko: '조선민주주의인민공화국', en: "Democratic People's Republic of Korea" },
     'south-korea': { ko: '대한민국', en: 'South Korea' },
     vietnam: { ko: '베트남', en: 'Vietnam' },
     albania: { ko: '알바니아', en: 'Albania' },
@@ -90,15 +90,20 @@ function flagLabel(code, lang) {
     return (lang === 'en' ? entry.en : entry.ko) || entry.en || entry.ko || '';
 }
 
-// One flag <img>, or '' if the code has no vendored flag. `label` overrides the
-// default tooltip text; `kindLabel` (e.g. 국적/출신) prefixes the tooltip.
-function flagImg(code, label, kindLabel) {
+// One flag <img>, optionally wrapped in a link to its people filter page.
+// `label` overrides the default tooltip text; `kindLabel` prefixes the tooltip.
+function flagImg(code, label, kindLabel, href) {
     if (!hasFlag(code)) return '';
     const name = label || FLAG_NAMES[code].ko;
     const title = kindLabel ? `${kindLabel}: ${name}` : name;
-    return (
+    const img = (
         `<img class="commu-flag" src="/flags/${code}.svg" ` +
         `alt="${escapeAttr(name)}" title="${escapeAttr(title)}" loading="lazy" decoding="async" width="20" height="14">`
+    );
+    if (!href) return img;
+    return (
+        `<a class="commu-flag-link" href="${escapeAttr(href)}" ` +
+        `aria-label="${escapeAttr(title)}">${img}</a>`
     );
 }
 

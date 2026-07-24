@@ -33,8 +33,8 @@
                 <div class="commu-person-sidebox">
                     <span class="commu-person-years">
                         <% if (typeof flagImg === 'function') { %>
-                        <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, en ? 'Citizenship' : '국적') %><% } %>
-                        <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, en ? 'National background' : '민족·국가적 배경') %><% } %>
+                        <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, en ? 'Citizenship' : '국적', nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>
+                        <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, en ? 'National background' : '민족·국가적 배경', nationalityHubHref('nationalOrigin', person.origin.code)) %><% } %>
                         <% } %>
                         <%= person.years %>
                     </span>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
+        <%- include('../partials/commulingo-dict-nav', { active: 'people' }) %>
+
+        <header class="commu-hub-head commu-nationality-hub-head">
+            <span class="commu-nationality-hub-flag" aria-hidden="true"><%- flagImg(filter.code, filter.label) %></span>
+            <div>
+                <span class="commu-nationality-kind"><%= filter.kindLabel %></span>
+                <h1><%= filter.label %></h1>
+                <p><%= people.length %> <%= en ? (people.length === 1 ? 'person' : 'people') : '명' %></p>
+            </div>
+        </header>
+
+        <section class="commu-hub-section" aria-labelledby="nationality-people">
+            <h2 id="nationality-people"><%= en ? 'People' : '해당 인물' %></h2>
+            <div class="commu-people-grid">
+                <% people.forEach(function(person) { %>
+                <%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/commulingo-person-card-click-script') %>
+</body>
+</html>

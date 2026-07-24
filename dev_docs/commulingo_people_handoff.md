@@ -87,6 +87,12 @@ Lithuania. Migration 062 corrected those two rows and repaired legacy
 patronymic gaps. Migration 058 had earlier fixed eight records whose
 citizenship slot contained a place of death or birth.
 
+The two flags are navigable facets. Citizenship links to
+`/commulingo/people/citizenship/:code`; national/ethnic background links to
+`/commulingo/people/national-origin/:code`. Both pages reuse the standard
+chronological person cards. Migration 063 corrects Kim Jong Il from a
+birthplace-derived Russian background to DPRK/Korean background.
+
 ## Fate label standard — added 2026-07-14
 
 The fate chip (`.commu-fate`) has two parts: **`kind`** drives colour/icon

@@ -10,6 +10,7 @@ const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
+const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
 
 // Public research reports that mention this classification page's curated
@@ -43,6 +44,7 @@ const LEGACY_ROLE_CATEGORY_IDS = {
 // their partials — the dictionary switcher nav needs roleIconSvg everywhere).
 router.use((req, res, next) => {
     res.locals.flagImg = flagImg;
+    res.locals.nationalityHubHref = nationalityHubHref;
     res.locals.roleIconSvg = roleIconSvg;
     next();
 });
@@ -305,6 +307,47 @@ router.get('/roles/:categoryId', async (req, res) => {
         });
     }
 });
+
+async function renderNationalityPeople(req, res, kind) {
+    try {
+        const code = typeof req.params.code === 'string' ? req.params.code.trim() : '';
+        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
+        const filter = buildNationalityFilter(standardized.people, kind, code, lang);
+        if (!filter) {
+            return errorPage.notFound(res, {
+                message: lang === 'en' ? 'Nationality filter not found.' : '국적·배경 필터를 찾을 수 없습니다.',
+                backHref: '/commulingo/people',
+                backLabel: lang === 'en' ? 'People' : '인물 사전',
+            });
+        }
+        filter.people = sortPeopleChronologically(filter.people);
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        return res.render('public/commulingo-nationality', {
+            filter,
+            people: filter.people,
+            roleIconSvg,
+            roleHubHref,
+            personLinkIndex: linkIndex,
+            linkifyPersonText: linkifyPlain,
+            pageTitle: `${filter.kindLabel}: ${filter.label} — ${lang === 'en' ? 'People' : '인물 사전'}`,
+            pageDescription: lang === 'en'
+                ? `People whose ${filter.kindLabel.toLowerCase()} is ${filter.label}.`
+                : `${filter.kindLabel}이(가) ${filter.label}인 인물들.`,
+            pagePath: filter.href,
+            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
+        });
+    } catch (err) {
+        console.error(`commulingo ${kind} page:`, err);
+        return errorPage.serverError(res, {
+            message: res.locals.lang === 'en' ? 'Failed to load nationality data.' : '국적·배경 정보를 불러올 수 없습니다.',
+            backHref: '/commulingo/people',
+            backLabel: res.locals.lang === 'en' ? 'People' : '인물 사전',
+        });
+    }
+}
+
+router.get('/people/citizenship/:code', (req, res) => renderNationalityPeople(req, res, 'citizenship'));
+router.get('/people/national-origin/:code', (req, res) => renderNationalityPeople(req, res, 'nationalOrigin'));
 
 router.get('/people/:personId', async (req, res) => {
     try {
