@@ -17,6 +17,9 @@ const {
 } = require('../data/commulingo/people-admin-store');
 const { importDoc, updateDocMeta, removeDoc } = require('../data/commulingo/docs-import');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
+const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
+const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
+const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 
 const router = express.Router();
 
@@ -183,6 +186,21 @@ router.delete('/office-rows/:rowId', async (req, res) => {
 router.get('/docs', (req, res) => {
     try {
         res.json({ docs: listCommuLingoDocs() });
+    } catch (err) {
+        sendError(res, err);
+    }
+});
+
+// id + bilingual name for every linkable person/term/event — feeds the admin
+// GUI's link pickers.
+router.get('/docs-link-options', async (req, res) => {
+    try {
+        const [people, terms, events] = await Promise.all([
+            loadCommuLingoPeople().then(loaded => (loaded.data.people || []).map(p => ({ id: p.id, name: p.name }))),
+            loadCommuLingoTerms().then(list => list.map(t => ({ id: t.id, name: t.term }))),
+            loadCommuLingoHistoryEvents().then(list => list.map(e => ({ id: e.id, name: e.title }))),
+        ]);
+        res.json({ people, terms, events });
     } catch (err) {
         sendError(res, err);
     }

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <% pageTitle = strings.admin.commulingoDocs %>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/admin-commulingo-docs.css?v=<%= assetVersion %>">
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; %>
+
+    <div class="container cdocs-page">
+        <div class="admin-header">
+            <h1><%= strings.admin.commulingoDocs %></h1>
+            <a href="/commulingo/docs" class="btn" target="_blank" rel="noopener"><%= en ? 'Public page' : '공개 페이지' %> ↗</a>
+        </div>
+
+        <div class="box cdocs-upload">
+            <h2><%= en ? 'Upload document' : '문서 업로드' %></h2>
+            <p class="cdocs-hint"><%= en
+                ? 'Any .html file works — head/style/script are stripped and the body becomes an <article> fragment. Preview first to check the table of contents and warnings.'
+                : '아무 .html 파일이나 올리면 head/style/script를 제거하고 본문을 <article> fragment로 변환합니다. 미리보기로 목차와 경고를 먼저 확인하세요.' %></p>
+            <div class="cdocs-upload-row">
+                <input type="file" id="uploadFile" accept=".html,.htm,text/html">
+                <input type="text" id="uploadId" placeholder="<%= en ? 'slug (e.g. yezhov-pavlyukov)' : '슬러그 (예: yezhov-pavlyukov)' %>" autocomplete="off" spellcheck="false">
+                <button class="btn" id="previewBtn"><%= en ? 'Preview' : '미리보기' %></button>
+                <button class="btn btn-primary" id="uploadBtn"><%= en ? 'Upload' : '업로드' %></button>
+            </div>
+            <div id="uploadStatus" class="cdocs-status"></div>
+            <div id="uploadResult" class="cdocs-preview" hidden>
+                <div id="uploadWarnings"></div>
+                <div id="uploadToc"></div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2><%= en ? 'Documents' : '문서 목록' %></h2>
+            <div id="docsStatus" class="cdocs-status"></div>
+            <div id="docsList" class="cdocs-list"></div>
+        </div>
+
+        <div class="box cdocs-editor" id="editorBox" hidden>
+            <h2><%= en ? 'Edit' : '편집' %>: <span id="editorDocId"></span></h2>
+            <form id="editorForm">
+                <div class="cdocs-grid">
+                    <label><%= en ? 'Title (ko)' : '제목 (ko)' %><input type="text" name="titleKo"></label>
+                    <label><%= en ? 'Title (en)' : '제목 (en)' %><input type="text" name="titleEn"></label>
+                    <label><%= en ? 'Kind (ko)' : '분류 (ko)' %><input type="text" name="kindKo" placeholder="번역 전문"></label>
+                    <label><%= en ? 'Kind (en)' : '분류 (en)' %><input type="text" name="kindEn" placeholder="Full translation"></label>
+                    <label class="cdocs-wide"><%= en ? 'Description (ko)' : '설명 (ko)' %><textarea name="descKo" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= en ? 'Description (en)' : '설명 (en)' %><textarea name="descEn" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= en ? 'Source citation' : '원전 서지' %><input type="text" name="source"></label>
+                    <label><%= en ? 'Body language' : '본문 언어' %>
+                        <select name="docLang"><option value="ko">ko</option><option value="en">en</option></select>
+                    </label>
+                    <label><%= en ? 'TOC exclude regexes (one per line)' : '목차 제외 정규식 (줄당 하나)' %><textarea name="tocExclude" rows="2" spellcheck="false"></textarea></label>
+                </div>
+
+                <% ['people', 'terms', 'events'].forEach(function(kind) { %>
+                <fieldset class="cdocs-links" data-kind="<%= kind %>">
+                    <legend><%= kind === 'people' ? (en ? 'Linked people' : '연결된 인물') : kind === 'terms' ? (en ? 'Linked terms' : '연결된 용어') : (en ? 'Linked events' : '연결된 사건') %></legend>
+                    <div class="cdocs-chips" data-chips="<%= kind %>"></div>
+                    <input type="text" list="options-<%= kind %>" data-picker="<%= kind %>"
+                        placeholder="<%= en ? 'Type to search, pick to add' : '검색해서 선택하면 추가됩니다' %>" autocomplete="off">
+                    <datalist id="options-<%= kind %>"></datalist>
+                </fieldset>
+                <% }) %>
+
+                <div class="cdocs-editor-actions">
+                    <button type="submit" class="btn btn-primary" id="saveBtn"><%= en ? 'Save' : '저장' %></button>
+                    <button type="button" class="btn" id="closeEditorBtn"><%= en ? 'Close' : '닫기' %></button>
+                    <span id="editorStatus" class="cdocs-status"></span>
+                </div>
+            </form>
+        </div>
+
+        <p class="cdocs-hint"><%= en
+            ? 'Changes are written to data/commulingo/docs/ on the host — remember to commit & push afterwards (data-only, no deploy needed).'
+            : '변경은 호스트의 data/commulingo/docs/에 기록됩니다 — 작업 후 커밋 & 푸시하세요 (data-only라 배포는 불필요).' %></p>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        var EN = <%- JSON.stringify(lang === 'en') %>;
+        var API = '/commulingo/admin/api/docs';
+        var t = function (ko, en) { return EN ? en : ko; };
+
+        var docs = [];
+        var options = { people: [], terms: [], events: [] };
+        var optionLabel = {};   // kind -> label -> option
+        var editing = null;     // current doc object being edited
+        var links = { people: [], terms: [], events: [] };
+
+        var $ = function (id) { return document.getElementById(id); };
+        var esc = function (s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        };
+        var status = function (el, msg, isError) {
+            el.textContent = msg || '';
+            el.classList.toggle('cdocs-error', !!isError);
+        };
+
+        function api(path, opts) {
+            return fetch(API + (path || ''), opts).then(function (res) {
+                return res.json().catch(function () { return {}; }).then(function (body) {
+                    if (!res.ok) throw new Error(body.error || ('HTTP ' + res.status));
+                    return body;
+                });
+            });
+        }
+
+        // ---- documents list ----
+        function loadDocs() {
+            return api('').then(function (body) {
+                docs = body.docs || [];
+                renderDocs();
+            }).catch(function (err) { status($('docsStatus'), err.message, true); });
+        }
+
+        function linkSummary(doc) {
+            var parts = [];
+            ['people', 'terms', 'events'].forEach(function (kind) {
+                (doc[kind] || []).forEach(function (ref) {
+                    parts.push((ref.name && (EN ? ref.name.en : ref.name.ko)) || ref.id);
+                });
+            });
+            return parts.length ? parts.join(' · ') : t('연결 없음', 'no links');
+        }
+
+        function renderDocs() {
+            var host = $('docsList');
+            if (!docs.length) {
+                host.innerHTML = '<p class="cdocs-hint">' + t('등록된 문서가 없습니다.', 'No documents yet.') + '</p>';
+                return;
+            }
+            host.innerHTML = docs.map(function (doc) {
+                var title = (doc.title && (EN ? doc.title.en || doc.title.ko : doc.title.ko)) || doc.id;
+                var kind = (doc.kind && (EN ? doc.kind.en : doc.kind.ko)) || '';
+                return '<div class="cdocs-item" data-id="' + esc(doc.id) + '">'
+                    + '<div class="cdocs-item-main"><strong>' + esc(title) + '</strong>'
+                    + '<span class="cdocs-item-meta">' + esc(doc.id) + (kind ? ' · ' + esc(kind) : '') + ' · ' + esc(doc.addedAt || '') + '</span>'
+                    + '<span class="cdocs-item-meta">' + esc(linkSummary(doc)) + '</span></div>'
+                    + '<div class="cdocs-item-actions">'
+                    + '<a class="btn btn-small" target="_blank" rel="noopener" href="/commulingo/docs/' + esc(doc.id) + '">' + t('보기', 'View') + '</a>'
+                    + '<button type="button" class="btn btn-small" data-edit="' + esc(doc.id) + '">' + t('편집', 'Edit') + '</button>'
+                    + '<button type="button" class="btn btn-small btn-danger" data-delete="' + esc(doc.id) + '">' + t('삭제', 'Delete') + '</button>'
+                    + '</div></div>';
+            }).join('');
+        }
+
+        $('docsList').addEventListener('click', function (e) {
+            var editId = e.target.getAttribute && e.target.getAttribute('data-edit');
+            var deleteId = e.target.getAttribute && e.target.getAttribute('data-delete');
+            if (editId) openEditor(editId);
+            if (deleteId && confirm(t('정말 삭제할까요? fragment 파일도 함께 삭제됩니다: ', 'Really delete? The fragment file is removed too: ') + deleteId)) {
+                api('/' + encodeURIComponent(deleteId), { method: 'DELETE' }).then(function () {
+                    if (editing && editing.id === deleteId) closeEditor();
+                    status($('docsStatus'), t('삭제됨: ', 'Deleted: ') + deleteId);
+                    loadDocs();
+                }).catch(function (err) { status($('docsStatus'), err.message, true); });
+            }
+        });
+
+        // ---- link pickers ----
+        function loadOptions() {
+            return api('-link-options').then(function (body) {
+                ['people', 'terms', 'events'].forEach(function (kind) {
+                    options[kind] = body[kind] || [];
+                    optionLabel[kind] = {};
+                    var list = document.getElementById('options-' + kind);
+                    list.innerHTML = options[kind].map(function (opt) {
+                        var label = (opt.name.ko || opt.name.en) + (opt.name.en && opt.name.ko !== opt.name.en ? ' / ' + opt.name.en : '') + ' [' + opt.id + ']';
+                        optionLabel[kind][label] = opt;
+                        return '<option value="' + esc(label) + '"></option>';
+                    }).join('');
+                });
+            }).catch(function (err) { status($('docsStatus'), t('링크 옵션 로드 실패: ', 'Failed to load link options: ') + err.message, true); });
+        }
+
+        function renderChips(kind) {
+            var host = document.querySelector('[data-chips="' + kind + '"]');
+            host.innerHTML = links[kind].map(function (ref, i) {
+                var name = (EN ? ref.name.en || ref.name.ko : ref.name.ko || ref.name.en) || ref.id;
+                return '<span class="cdocs-chip">' + esc(name) + ' <small>' + esc(ref.id) + '</small>'
+                    + '<button type="button" data-unlink="' + kind + ':' + i + '" aria-label="remove">✕</button></span>';
+            }).join('');
+        }
+
+        document.querySelectorAll('[data-picker]').forEach(function (input) {
+            var kind = input.getAttribute('data-picker');
+            input.addEventListener('change', function () {
+                var opt = optionLabel[kind][input.value];
+                if (!opt) return;
+                if (!links[kind].some(function (ref) { return ref.id === opt.id; })) {
+                    links[kind].push({ id: opt.id, name: { ko: opt.name.ko || '', en: opt.name.en || '' } });
+                    renderChips(kind);
+                }
+                input.value = '';
+            });
+        });
+
+        document.querySelector('.cdocs-editor').addEventListener('click', function (e) {
+            var spec = e.target.getAttribute && e.target.getAttribute('data-unlink');
+            if (!spec) return;
+            var kind = spec.split(':')[0];
+            links[kind].splice(Number(spec.split(':')[1]), 1);
+            renderChips(kind);
+        });
+
+        // ---- editor ----
+        function openEditor(docId) {
+            var doc = docs.find(function (d) { return d.id === docId; });
+            if (!doc) return;
+            editing = doc;
+            var form = $('editorForm');
+            $('editorDocId').textContent = doc.id;
+            form.titleKo.value = (doc.title && doc.title.ko) || '';
+            form.titleEn.value = (doc.title && doc.title.en) || '';
+            form.kindKo.value = (doc.kind && doc.kind.ko) || '';
+            form.kindEn.value = (doc.kind && doc.kind.en) || '';
+            form.descKo.value = (doc.description && doc.description.ko) || '';
+            form.descEn.value = (doc.description && doc.description.en) || '';
+            form.source.value = doc.source || '';
+            form.docLang.value = doc.docLang || 'ko';
+            form.tocExclude.value = (doc.tocExclude || []).join('\n');
+            ['people', 'terms', 'events'].forEach(function (kind) {
+                links[kind] = (doc[kind] || []).map(function (ref) {
+                    return { id: ref.id, name: { ko: (ref.name && ref.name.ko) || '', en: (ref.name && ref.name.en) || '' } };
+                });
+                renderChips(kind);
+            });
+            status($('editorStatus'), '');
+            $('editorBox').hidden = false;
+            $('editorBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function closeEditor() {
+            editing = null;
+            $('editorBox').hidden = true;
+        }
+        $('closeEditorBtn').addEventListener('click', closeEditor);
+
+        $('editorForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!editing) return;
+            var form = $('editorForm');
+            var patch = {
+                title: { ko: form.titleKo.value, en: form.titleEn.value },
+                description: { ko: form.descKo.value, en: form.descEn.value },
+                kind: { ko: form.kindKo.value, en: form.kindEn.value },
+                source: form.source.value,
+                docLang: form.docLang.value,
+                tocExclude: form.tocExclude.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean),
+                people: links.people,
+                terms: links.terms,
+                events: links.events,
+            };
+            status($('editorStatus'), '…');
+            api('/' + encodeURIComponent(editing.id), {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(patch),
+            }).then(function () {
+                status($('editorStatus'), t('저장됨', 'Saved'));
+                loadDocs();
+            }).catch(function (err) { status($('editorStatus'), err.message, true); });
+        });
+
+        // ---- upload ----
+        function readUploadFile() {
+            var file = $('uploadFile').files[0];
+            if (!file) throw new Error(t('.html 파일을 선택하세요.', 'Choose an .html file.'));
+            var id = $('uploadId').value.trim();
+            if (!/^[a-z0-9-]+$/.test(id)) throw new Error(t('슬러그는 소문자·숫자·하이픈만 가능합니다.', 'Slug must be lowercase letters, digits, hyphens.'));
+            return file.text().then(function (html) { return { id: id, html: html }; });
+        }
+
+        function showUploadResult(body) {
+            $('uploadResult').hidden = false;
+            $('uploadWarnings').innerHTML = (body.warnings || []).map(function (w) {
+                return '<p class="cdocs-warning">⚠ ' + esc(w) + '</p>';
+            }).join('') || '<p class="cdocs-hint">' + t('경고 없음', 'No warnings') + '</p>';
+            var toc = body.toc || [];
+            var parts = toc.filter(function (x) { return x.level === 1; }).length;
+            $('uploadToc').innerHTML = '<p class="cdocs-hint">' + t('목차: ', 'TOC: ') + parts + t('부 ', ' part(s), ')
+                + toc.filter(function (x) { return x.level === 2; }).length + t('장', ' chapter(s)') + '</p>'
+                + '<ul class="cdocs-toc">' + toc.map(function (x) {
+                    return '<li class="cdocs-toc-l' + x.level + '">' + esc(x.text) + '</li>';
+                }).join('') + '</ul>';
+        }
+
+        function upload(dryRun) {
+            status($('uploadStatus'), '…');
+            $('uploadResult').hidden = true;
+            Promise.resolve().then(readUploadFile).then(function (payload) {
+                var existing = docs.some(function (d) { return d.id === payload.id; });
+                if (existing && !dryRun && !confirm(t('이미 존재하는 문서입니다. 덮어쓸까요? ', 'Document exists. Overwrite? ') + payload.id)) {
+                    throw new Error(t('취소됨', 'Cancelled'));
+                }
+                var query = '?id=' + encodeURIComponent(payload.id) + (dryRun ? '&dryRun=1' : existing ? '&force=1' : '');
+                return api(query, { method: 'POST', headers: { 'Content-Type': 'text/html' }, body: payload.html });
+            }).then(function (body) {
+                showUploadResult(body);
+                if (body.entry && !dryRun) {
+                    status($('uploadStatus'), t('업로드 완료: ', 'Uploaded: ') + body.entry.id + ' → ' + t('아래에서 메타데이터를 채우세요.', 'fill in the metadata below.'));
+                    loadDocs().then(function () { openEditor(body.entry.id); });
+                } else {
+                    status($('uploadStatus'), t('미리보기 (아직 저장 안 됨)', 'Preview (nothing written yet)'));
+                }
+            }).catch(function (err) { status($('uploadStatus'), err.message, true); });
+        }
+
+        $('previewBtn').addEventListener('click', function () { upload(true); });
+        $('uploadBtn').addEventListener('click', function () { upload(false); });
+        $('uploadFile').addEventListener('change', function () {
+            var file = $('uploadFile').files[0];
+            if (file && !$('uploadId').value) {
+                $('uploadId').value = file.name.replace(/\.html?$/i, '').toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
+            }
+        });
+
+        loadDocs();
+        loadOptions();
+    })();
+    </script>
+    <%- include('../partials/footer') %>
+</body>
+</html>

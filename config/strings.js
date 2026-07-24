@@ -123,6 +123,7 @@ const ko = {
         recentPosts: '이번 달 게시물',
         quickActions: '빠른 작업',
         novelWriter: '소설 창작',
+        commulingoDocs: '참고 문헌',
         recentPostsTitle: '최근 게시물',
 
         // 게시물 관리
@@ -387,6 +388,7 @@ const en = {
         recentPosts: 'Posts This Month',
         quickActions: 'Quick Actions',
         novelWriter: 'Novel Writer',
+        commulingoDocs: 'Reference Docs',
         recentPostsTitle: 'Recent Posts',
 
         postId: 'ID',

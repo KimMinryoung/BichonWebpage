@@ -218,6 +218,11 @@ router.get('/users', requireAuth, (req, res) => {
     res.render('admin/users');
 });
 
+// CommuLingo reference documents (참고 문헌) manager
+router.get('/commulingo-docs', requireAuth, (req, res) => {
+    res.render('admin/commulingo-docs');
+});
+
 // Private reports shell
 router.get('/private-reports', requireAuth, (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
