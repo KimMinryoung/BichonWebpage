@@ -28,7 +28,7 @@ function buildNationalityFilter(people, kind, code, lang) {
     const config = FILTER_KINDS[kind];
     if (!config || !hasFlag(code)) return null;
     const localizedKind = config.label[lang === 'en' ? 'en' : 'ko'];
-    const nationLabel = flagLabel(code, lang);
+    const nationLabel = canonicalNationalityLabel(kind, code, flagLabel(code, lang), lang);
     return {
         kind,
         code,

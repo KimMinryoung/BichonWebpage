@@ -19,7 +19,7 @@ const FLAG_NAMES = {
     soviet: { ko: '소련', en: 'Soviet Union' },
     russia: { ko: '러시아', en: 'Russia' },
     ukraine: { ko: '우크라이나', en: 'Ukraine' },
-    georgia: { ko: '그루지야', en: 'Georgia' },
+    georgia: { ko: '조지아', en: 'Georgia' },
     armenia: { ko: '아르메니아', en: 'Armenia' },
     azerbaijan: { ko: '아제르바이잔', en: 'Azerbaijan' },
     belarus: { ko: '벨라루스', en: 'Belarus' },

@@ -23,7 +23,7 @@ assert.strictEqual(
 assert.strictEqual(nationalityHubHref('birthplace', 'russia'), '');
 assert.strictEqual(nationalityHubHref('citizenship', 'not-a-flag'), '');
 assert.strictEqual(flagLabel('north-korea', 'ko'), '조선민주주의인민공화국');
-assert.strictEqual(flagLabel('georgia', 'ko'), '그루지야');
+assert.strictEqual(flagLabel('georgia', 'ko'), '조지아');
 assert.strictEqual(canonicalNationalityLabel('nationalOrigin', 'georgia', '조지아', 'ko'), '그루지야');
 assert.strictEqual(canonicalNationalityLabel('citizenship', 'georgia', '조지아', 'ko'), '조지아');
 assert.match(
@@ -38,5 +38,10 @@ assert.deepStrictEqual(citizenship.people.map(person => person.id), ['kim-jong-i
 const origin = buildNationalityFilter(people, 'nationalOrigin', 'poland', 'en');
 assert.strictEqual(origin.kindLabel, 'National background');
 assert.deepStrictEqual(origin.people.map(person => person.id), ['radek']);
+
+const georgianOrigin = buildNationalityFilter([], 'nationalOrigin', 'georgia', 'ko');
+const georgianCitizenship = buildNationalityFilter([], 'citizenship', 'georgia', 'ko');
+assert.strictEqual(georgianOrigin.label, '그루지야');
+assert.strictEqual(georgianCitizenship.label, '조지아');
 
 console.log('OK — CommuLingo nationality filter smoke passed.');
