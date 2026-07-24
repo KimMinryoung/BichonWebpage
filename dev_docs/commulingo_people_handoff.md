@@ -104,6 +104,14 @@ Frontend and leninbot write boundaries normalize the same Korean content on
 future writes. Citizenship labels remain `조지아`; revision/suggestion history
 is intentionally immutable.
 
+## Short-name auto-link exclusions
+
+`data/commulingo/people-linkify.js` keeps a small language-specific denylist
+for bare aliases that are too ambiguous for automatic prose/report linking.
+Paul Levi remains searchable by the stored aliases `레비` / `Levi`, but those
+bare surnames are excluded from auto-links and reverse related-report matching;
+only `파울 레비` / `Paul Levi` can establish a report mention.
+
 ## Fate label standard — added 2026-07-14
 
 The fate chip (`.commu-fate`) has two parts: **`kind`** drives colour/icon

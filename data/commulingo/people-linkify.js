@@ -21,7 +21,8 @@ const BLOCKED_KO = [
 // Bare aliases that are also ordinary Korean words or word+josa homographs
 // (카스트로 = 카스트+로, 보스, 미신) must never auto-link on their own; the
 // person still links via longer aliases like the full name.
-const NEVER_LINK_ALIAS_KO = ['카스트로', '보스', '미신'];
+const NEVER_LINK_ALIAS_KO = ['카스트로', '보스', '미신', '레비'];
+const NEVER_LINK_ALIAS_EN = ['levi'];
 
 function escapeHtml(value = '') {
     return String(value)
@@ -79,6 +80,7 @@ function buildPersonLinkIndex(people, options = {}) {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
             if (!en && NEVER_LINK_ALIAS_KO.includes(alias)) return;
+            if (en && NEVER_LINK_ALIAS_EN.includes(alias.toLowerCase())) return;
             const words = alias.toLowerCase().split(/\s+/).filter(Boolean);
             // Only link aliases made of this person's own canonical-name words…
             if (!words.every(word => canonicalWords.has(word))) return;
@@ -167,6 +169,8 @@ function linkifyHtml(html, index, excludeId) {
 
 module.exports = {
     BLOCKED_KO,
+    NEVER_LINK_ALIAS_KO,
+    NEVER_LINK_ALIAS_EN,
     WORD_CHAR,
     escapeHtml,
     escapeRegExp,
