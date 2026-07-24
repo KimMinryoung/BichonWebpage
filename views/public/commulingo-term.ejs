@@ -41,7 +41,7 @@
         <% if (typeof relatedDocs !== 'undefined' && relatedDocs && relatedDocs.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
             <h2 id="related-docs"><%= en ? 'Reference documents' : '참고 문헌' %></h2>
-            <ul class="commu-related-report-list">
+            <ul class="commu-related-report-list commu-related-doc-list">
                 <% relatedDocs.forEach(function(doc) { %>
                 <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
                 <% }) %>

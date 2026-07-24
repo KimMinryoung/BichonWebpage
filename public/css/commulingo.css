@@ -3161,6 +3161,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-related-report-list span { color: var(--link, #b84f4f); font-weight: 700; font-family: 'Courier New', monospace; }
 .commu-related-report-list strong { font-size: 1.02rem; }
 @media (max-width: 560px) { .commu-related-report-list a { grid-template-columns: 1fr; } }
+/* Reference-document lists reuse the report-list layout, but the label is a
+   category word (번역 전문), not a date — body typeface, not the mono date font. */
+.commu-related-doc-list span { font-family: inherit; font-weight: 600; }
 
 /* Glossary term pages (/commulingo/terms) */
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }

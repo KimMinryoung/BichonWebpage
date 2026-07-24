@@ -6,6 +6,7 @@ const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commuli
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
 const { loadCommuLingoPeople: loadCommuLingoPeopleData } = require('../data/commulingo/people-store');
 const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
+const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
@@ -334,6 +335,18 @@ router.get('/people/:personId', async (req, res) => {
         } catch (e) {
             console.error('commulingo person related reports:', e);
         }
+        // Reference documents (참고 문헌) linked to this person via the docs
+        // manifest. Failure only costs the section, never the page.
+        let relatedDocs = [];
+        try {
+            relatedDocs = listCommuLingoDocsFor('people', personId).map(doc => ({
+                id: doc.id,
+                title: localize(doc.title, lang),
+                kind: localize(doc.kind, lang),
+            }));
+        } catch (e) {
+            console.error('commulingo person related docs:', e);
+        }
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-person', {
             person,
@@ -341,6 +354,7 @@ router.get('/people/:personId', async (req, res) => {
             sections,
             historyEvents,
             relatedReports,
+            relatedDocs,
             roleIconSvg,
             roleHubHref,
             pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,
