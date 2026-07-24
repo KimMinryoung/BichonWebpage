@@ -16,6 +16,19 @@ store가 mtime으로 캐시를 무효화하므로 **문서 추가/수정은 배�
 
 ## 문서 추가 절차
 
+임의의 .html이 있으면 임포트 스크립트가 fragment 변환(헤드/스타일/스크립트
+제거, `<article>` 래핑)과 manifest 등록을 자동으로 해준다:
+
+```sh
+docker run --rm -v /home/grass/frontend:/app -w /app node:20-alpine \
+  node scripts/import-commulingo-doc.js <입력.html> --id <slug> \
+  --source "원전 서지" --person "person-id=이름ko|NameEn"
+```
+
+`--dry-run`으로 미리보기. 실행 후 manifest의 `title.en`/`description`을 채우고,
+출력된 목차 미리보기에 잡티 제목이 보이면 `tocExclude`를 추가한다.
+아래는 수동으로 만들 때의 규칙(스크립트 출력도 같은 형식이어야 한다).
+
 1. 본문 fragment를 `<id>.html`로 저장한다.
    - `<article>…</article>`로 시작하고, 각주가 있으면
      `<section class="notes" aria-labelledby="notes-heading">…</section>`이 뒤따른다.
