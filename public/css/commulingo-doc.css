@@ -19,7 +19,9 @@
   line-height: 1.35;
   word-break: keep-all;
   text-wrap: balance;
-  scroll-margin-top: 1rem;
+  /* Clears the collapsed contents bar, which stays pinned at the top of the
+     viewport: at 1rem the heading a reader jumped to landed behind it. */
+  scroll-margin-top: 5rem;
 }
 
 .book h1 {
@@ -111,6 +113,12 @@
 
 /* Table of contents (auto-built from h1/h2 by docs-store; slots in after the
    title). Bordered-box idiom shared with the rest of the site. */
+/* This is a <nav>, so it picks up the sticky rule in style.css and pins to the
+   top of the viewport. Collapsed that is useful; expanded it was 1360px tall
+   against a 900px viewport and covered the whole page, hiding the very section
+   the reader had just jumped to. The list is capped to the viewport and scrolls
+   inside itself, so an open contents panel can never blank the page even if the
+   script below fails to run. */
 .doc-toc {
   margin: 1.4rem 0 2rem;
 }
@@ -119,6 +127,12 @@
   border: 1px solid var(--border);
   background: var(--bg-surface);
   padding: 0.8rem 1rem;
+}
+
+.doc-toc details[open] > .doc-toc-parts {
+  max-height: calc(100dvh - 8rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .doc-toc summary {

@@ -66,5 +66,22 @@
     <p><a href="/commulingo/docs"><%= en ? 'CommuLingo Reference Library' : '공산링고 참고 문헌' %></a></p>
 </footer>
 </main>
+<% if (toc.length) { %>
+<script>
+// Collapse the contents panel when a reader picks an entry. It is a sticky
+// <nav>, so leaving it open pins a full-height panel over the section just
+// jumped to. Closing it here, synchronously in the click, shrinks the layout
+// before the browser resolves the fragment, so the heading lands where the
+// reader expects it.
+(function () {
+    var details = document.querySelector('.doc-toc details');
+    if (!details) return;
+    details.addEventListener('click', function (event) {
+        var link = event.target.closest('a[href^="#"]');
+        if (link) details.open = false;
+    });
+})();
+</script>
+<% } %>
 </body>
 </html>
