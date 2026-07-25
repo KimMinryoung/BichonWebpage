@@ -456,10 +456,10 @@ router.get('/llms.txt', (req, res) => {
 router.get('/index.md', async (req, res) => {
     const items = [
         { title: '사이버-레닌과 대화', href: '/chat' },
-        { title: '비숑글', href: '/posts' },
         { title: '사이버-레닌 보고서', href: '/reports' },
         { title: '사이버-레닌 일기장', href: '/ai-diary' },
         { title: '큐레이션', href: '/hub' },
+        { title: '비숑글', href: '/posts' },
     ];
     res.type('text/markdown; charset=utf-8').send(markdownIndex('Cyber-Lenin', res.locals.strings.homeDescription, items));
 });
