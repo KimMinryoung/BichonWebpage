@@ -2,7 +2,7 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
-const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocs, listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForTerm } = require('../services/report-mentions');
 const {
     termCategoriesWithCounts,
@@ -13,6 +13,11 @@ const {
     linkifyTermsHtml,
     linkifyTermsPlain,
 } = require('../data/commulingo/term-linkify');
+const {
+    docLinkIndexFor,
+    linkifyDocsHtml,
+    linkifyDocsPlain,
+} = require('../data/commulingo/doc-linkify');
 
 // Reference documents (참고 문헌) linked to this term/event via the docs
 // manifest. Failure only costs the section, never the page.
@@ -246,9 +251,23 @@ router.get('/:termId', async (req, res) => {
         // another term links, later ones stay plain.
         const linkIndex = termLinkIndexFor(allTerms, lang);
         const linked = new Set();
-        const definitionHtml = linkifyTermsPlain(term.definition, linkIndex, term.id, linked);
+        // Reference documents link first and terms second. A document alias is
+        // a whole work title and a term alias can sit inside one (『현물세』
+        // against 현물세), and whichever pass runs first keeps the match,
+        // because the other skips anchor contents. The doc pass also does the
+        // escaping for the definition, so the term pass takes its HTML output
+        // rather than escaping a second time.
+        const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
+        const linkedDocs = new Set();
+        const definitionHtml = linkifyTermsHtml(
+            linkifyDocsPlain(term.definition, docIndex, null, linkedDocs),
+            linkIndex, term.id, linked,
+        );
         const bodyHtml = term.body
-            ? linkifyTermsHtml(renderMarkdown(term.body), linkIndex, term.id, linked)
+            ? linkifyTermsHtml(
+                linkifyDocsHtml(renderMarkdown(term.body), docIndex, null, linkedDocs),
+                linkIndex, term.id, linked,
+            )
             : '';
         // Public research reports that mention this term. Failure only costs
         // the section, never the page.

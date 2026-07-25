@@ -6,7 +6,12 @@ const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commuli
 const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
 const { loadCommuLingoPeople: loadCommuLingoPeopleData } = require('../data/commulingo/people-store');
 const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
-const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocs, listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const {
+    docLinkIndexFor,
+    linkifyDocsHtml,
+    linkifyDocsPlain,
+} = require('../data/commulingo/doc-linkify');
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
@@ -372,8 +377,23 @@ router.get('/people/:personId', async (req, res) => {
         // own cached store. excludeId keeps the person's own name from self-linking.
         const rawSections = (loaded.data.sections || {})[personId] || [];
         const sections = localizedPersonSections(rawSections, lang);
-        const bioHtml = linkifyPlain(person.bio, linkIndex, person.id);
-        sections.forEach(section => { section.bodyHtml = linkifyHtml(section.bodyHtml, linkIndex, person.id); });
+        // Reference documents link before people, for the same reason terms do
+        // on the glossary page: a work title is the more specific match and the
+        // later pass skips anchor contents. This replaces the hand-written
+        // markdown links that data/commulingo/docs/README.md used to require in
+        // person sections. The doc pass escapes the bio, so linkifyPlain's own
+        // escaping would double up and linkifyHtml takes over.
+        const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
+        const linkedDocs = new Set();
+        const bioHtml = linkifyHtml(
+            linkifyDocsPlain(person.bio, docIndex, null, linkedDocs), linkIndex, person.id,
+        );
+        sections.forEach(section => {
+            section.bodyHtml = linkifyHtml(
+                linkifyDocsHtml(section.bodyHtml, docIndex, null, linkedDocs),
+                linkIndex, person.id,
+            );
+        });
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
         }));

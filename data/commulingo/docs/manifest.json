@@ -47,7 +47,15 @@
           }
         }
       ],
-      "addedAt": "2026-07-23"
+      "addedAt": "2026-07-23",
+      "aliases": {
+        "ko": [
+          "『예조프: 전기』"
+        ],
+        "en": [
+          "Yezhov: A Biography"
+        ]
+      }
     },
     {
       "id": "lenin-tax-in-kind",
@@ -96,7 +104,15 @@
       "addedAt": "2026-07-25",
       "tocExclude": [
         "."
-      ]
+      ],
+      "aliases": {
+        "ko": [
+          "『현물세』"
+        ],
+        "en": [
+          "The Tax in Kind"
+        ]
+      }
     }
   ]
 }

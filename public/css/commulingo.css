@@ -3348,6 +3348,17 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 .commu-term-page .commu-term-link:hover { border-bottom-style: solid; }
 
+/* Links to a reference-library full text, wherever prose names one. Dotted
+   rather than dashed so a work title reads as a different destination from a
+   glossary entry without adding a second colour to the page. */
+.commu-term-page .commu-doc-link,
+.commu-person-page .commu-doc-link {
+    color: inherit; text-decoration: none;
+    border-bottom: 2px dotted var(--link, #5d7a5a);
+}
+.commu-term-page .commu-doc-link:hover,
+.commu-person-page .commu-doc-link:hover { border-bottom-style: solid; }
+
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 999px; color: inherit; text-decoration: none; font-size: .95rem; }
 .commu-term-chip:hover { border-color: var(--link, #b84f4f); }
