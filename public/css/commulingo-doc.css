@@ -4,13 +4,44 @@
    scale mirrors report.css (.report-body). */
 
 .book {
-  max-width: 800px;
+  /* 980px matches .commulingo-page .container, so the reader shares the width of
+     the rest of CommuLingo instead of sitting 180px narrower. At 1440 that cuts
+     the empty margin each side from 320px to 230px. The measure grows with it,
+     from 52 Korean characters a line to 73, which is long for prose; narrow this
+     back toward 900px if it reads worse than the extra width is worth. */
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 20px clamp(3rem, 8vw, 5rem);
   line-height: 1.88;
   word-break: keep-all;
   overflow-wrap: break-word;
   text-wrap: pretty;
+}
+
+/* Justify the prose so line ends align down the right edge of the column, but
+   only once the column is wide enough to absorb it. word-break: keep-all above
+   means Korean 어절 and Latin words are never split, so justification widens the
+   gaps between them instead of hyphenating, and a narrow column has too few
+   words per line to spread the slack. Measured worst-case gap against a normal
+   4px space: 350px column 86px (21 spaces), 440px 49px, 520px 23px, 660px 13px.
+   The 95th percentile tells the same story: 19.8px at 350px, 9.3px at 760px.
+   700px of viewport gives a 660px column, which is where it stops showing.
+   Headings stay ragged at every width: they are short, and text-wrap: balance
+   below already evens their line lengths. */
+@media (min-width: 700px) {
+  .book p,
+  .book blockquote,
+  .book ul li,
+  .book ol li {
+    text-align: justify;
+  }
+
+  /* The contents list is navigation, not prose. Needs .book in front to
+     outweigh '.book ol li' above, which otherwise justifies wrapped entries. */
+  .book .doc-toc li,
+  .book .doc-toc p {
+    text-align: start;
+  }
 }
 
 .book h1,
@@ -88,7 +119,7 @@
 
 /* Reader chrome: standard header/footer added by the commulingo-doc template. */
 .doc-topbar {
-  max-width: 800px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 1rem 20px 0;
   display: flex;
