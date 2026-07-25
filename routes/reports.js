@@ -6,7 +6,12 @@ const researchStore = require('../config/research-store');
 const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
-const { renderMarkdown, stripFirstHeading, titleFromMarkdown } = require('../utils/markdown');
+const {
+    downgradeUnknownReportLinks,
+    renderMarkdown,
+    stripFirstHeading,
+    titleFromMarkdown,
+} = require('../utils/markdown');
 const { sanitizeRich } = require('../utils/sanitize');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 const errorPage = require('../utils/error-page');
@@ -19,8 +24,16 @@ function researchMarkdown(data) {
     return data && (data.content || data.markdown || data.body || data.text || '');
 }
 
-function researchHtmlBody(data, markdown) {
-    const html = (data && (data.html_body || data.htmlBody)) || renderMarkdown(stripFirstHeading(markdown));
+function researchHtmlBody(data, markdown, knownSlugs) {
+    // A report links its predecessors by slug, and slugs get renamed or never
+    // published, so an unresolvable one renders as plain text instead of a link
+    // that 404s. knownSlugs is undefined when the lookup failed, and then the
+    // links are left exactly as written.
+    const isKnownReport = knownSlugs ? slug => knownSlugs.has(slug) : undefined;
+    const prerendered = data && (data.html_body || data.htmlBody);
+    const html = prerendered
+        ? downgradeUnknownReportLinks(prerendered, isKnownReport)
+        : renderMarkdown(stripFirstHeading(markdown), { isKnownReport });
     return sanitizeRich(html);
 }
 
@@ -113,7 +126,9 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
     // Cross-link CommuLingo entities: first occurrence of each known person /
     // history-event name becomes a dictionary link, and the found entities feed
     // the related-entries panel under the body. Failure only costs the links.
-    let htmlBody = researchHtmlBody(data, markdown);
+    let htmlBody = researchHtmlBody(
+        data, markdown, await publishedReportSlugs(res.locals.lang === 'en' ? 'en' : 'ko')
+    );
     let relatedPeople = [];
     let relatedEvents = [];
     let relatedTopics = [];
@@ -206,13 +221,33 @@ function buildResearchSeriesNav({ current, items, lang }) {
     };
 }
 
-async function researchSeriesNavFor(current, lang) {
-    let researchFiles = await cache.getResearchList(lang);
-    if (!researchFiles) {
-        researchFiles = await researchStore.listResearch(lang);
-        await cache.setResearchList(researchFiles, lang);
+// The full published list, from Redis when it is warm (10 minute TTL, shared
+// with the listing page) and from the database otherwise. Three call sites want
+// it: the series nav, the listing, and the slug set below.
+async function cachedResearchList(lang) {
+    const cached = await cache.getResearchList(lang);
+    if (cached) return cached;
+    const items = await researchStore.listResearch(lang);
+    await cache.setResearchList(items, lang);
+    return items;
+}
+
+// Slugs a report may link to. Reports reference their predecessors by slug and
+// slugs get renamed or never published, so the renderer checks against this
+// before emitting an anchor. Undefined when the list cannot be loaded, which
+// leaves the links exactly as written.
+async function publishedReportSlugs(lang) {
+    try {
+        const items = await cachedResearchList(lang);
+        return new Set((items || []).map(item => item && item.slug).filter(Boolean));
+    } catch (err) {
+        console.error('[reports] published slug list failed:', err.message);
+        return undefined;
     }
-    return buildResearchSeriesNav({ current, items: researchFiles, lang });
+}
+
+async function researchSeriesNavFor(current, lang) {
+    return buildResearchSeriesNav({ current, items: await cachedResearchList(lang), lang });
 }
 
 // POST /cache/clear — manual cache purge
@@ -273,15 +308,11 @@ router.get('/', async (req, res) => {
         // Fetch research list directly from the shared database. Title/excerpt are returned
         // with the row, so no per-document request is needed.
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        let researchFiles = await cache.getResearchList(lang);
-        if (!researchFiles) {
-            try {
-                researchFiles = await researchStore.listResearch(lang);
-                await cache.setResearchList(researchFiles, lang);
-            } catch (e) {
-                console.error('Error loading research list:', e);
-                researchFiles = [];
-            }
+        let researchFiles = [];
+        try {
+            researchFiles = await cachedResearchList(lang);
+        } catch (e) {
+            console.error('Error loading research list:', e);
         }
 
         let privateReports = [];

@@ -216,7 +216,24 @@ function renderSourceCard(kind, lines) {
     return parts.join('\n');
 }
 
-function renderMarkdown(markdown = '') {
+// Internal report links whose target is not published render as plain text.
+// The '선행 보고서' line links sibling reports by slug, and slugs get renamed or
+// never published: 38 of the 177 such references in the database point at
+// nothing. Showing the title without a link beats a live 404, and beats hiding
+// the reference. Applied as a pass over the HTML this module just produced,
+// rather than threaded through every flush* helper.
+const REPORT_ANCHOR_RE = /<a href="(\/reports\/[^"]*)"[^>]*>((?:(?!<\/a>)[\s\S])*)<\/a>/g;
+
+function downgradeUnknownReportLinks(html, isKnownReport) {
+    if (typeof isKnownReport !== 'function') return html;
+    return String(html).replace(REPORT_ANCHOR_RE, (match, href, label) => {
+        const slug = href.split(/[?#]/)[0].split('/').filter(Boolean).pop();
+        if (!slug) return label;
+        return isKnownReport(slug) ? match : label;
+    });
+}
+
+function renderMarkdown(markdown = '', options = {}) {
     const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
     const citationLinks = collectCitationLinks(markdown);
     const footnoteDefinitions = collectFootnoteDefinitions(markdown);
@@ -344,7 +361,7 @@ function renderMarkdown(markdown = '') {
     flushList(out, list, citationLinks, footnoteDefinitions);
     flushTable(out, table, citationLinks, footnoteDefinitions);
 
-    return out.join('\n');
+    return downgradeUnknownReportLinks(out.join('\n'), options.isKnownReport);
 }
 
 function stripFirstHeading(markdown = '') {
@@ -357,6 +374,7 @@ function titleFromMarkdown(markdown = '', fallback = '') {
 }
 
 module.exports = {
+    downgradeUnknownReportLinks,
     escapeHtml,
     renderMarkdown,
     stripFirstHeading,
