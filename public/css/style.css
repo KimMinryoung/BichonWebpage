@@ -1974,6 +1974,28 @@ footer .footer-tagline {
     hyphens: auto;
 }
 
+/* Markdown output (utils/markdown.js) appears in reports, posts, diary entries
+   and CommuLingo term bodies, so these two live in the global sheet.
+   Tables scroll inside their own box instead of widening the page: a report
+   table measured 410px against a 366px column on a phone. The wrapper keeps the
+   table layout algorithm, which display:block on the table itself would break. */
+.table-scroll {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    max-width: 100%;
+}
+
+.table-scroll > table {
+    margin: 0;
+}
+
+/* Footnote definitions end in a bare source URL with no break opportunity. One
+   measured 732px of content inside a 366px column, and that, not the table, is
+   what actually put the page into horizontal scroll. */
+.footnote-def {
+    overflow-wrap: anywhere;
+}
+
 /* Justification must not reach monospace, tabular or heading content, which
    inherits from the container above. */
 .post-body pre,

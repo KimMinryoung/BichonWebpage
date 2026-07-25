@@ -140,6 +140,12 @@ function flushTable(out, table, citationLinks, footnoteDefinitions) {
     }
 
     const headers = splitTableRow(header) || [];
+    // Tables are the one block that will not fit a phone: a four-column report
+    // table measured 410px against a 366px column, pushing the whole page into
+    // horizontal scroll. Wrapping it lets the table scroll inside itself and
+    // keeps the table layout algorithm, which display:block on the table would
+    // break.
+    out.push('<div class="table-scroll">');
     out.push('<table>');
     out.push('<thead><tr>');
     for (const cell of headers) out.push(`<th>${inlineMarkdown(cell, citationLinks, footnoteDefinitions)}</th>`);
@@ -155,6 +161,7 @@ function flushTable(out, table, citationLinks, footnoteDefinitions) {
         out.push('</tbody>');
     }
     out.push('</table>');
+    out.push('</div>');
     table.length = 0;
 }
 
