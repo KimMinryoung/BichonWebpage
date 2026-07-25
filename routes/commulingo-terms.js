@@ -28,9 +28,18 @@ function localize(value, lang) {
     return value[lang] || value.ko || value.en || '';
 }
 
+// Both languages' aliases feed the client-side card search: readers look terms
+// up by the spelling they already know ('쿨락', 'prodrazverstka', 'kolkhozy'),
+// which is exactly what the alias lists hold.
+function aliasSearchText(raw) {
+    const aliases = raw.aliases || {};
+    return [...(aliases.ko || []), ...(aliases.en || [])].join(' ');
+}
+
 function presentTerm(raw, lang) {
     return {
         ...raw,
+        aliasSearchText: aliasSearchText(raw),
         term: localize(raw.term, lang),
         termOther: lang === 'en' ? localize(raw.term, 'ko') : localize(raw.term, 'en'),
         definition: localize(raw.definition, lang),

@@ -62,6 +62,7 @@
             highlighted.forEach(clearHighlights);
             highlighted = [];
             cards.forEach(function(card) { card.hidden = false; });
+            list.classList.remove('is-filtering');
             clearButton.hidden = true;
             status.hidden = true;
             status.textContent = '';
@@ -76,6 +77,8 @@
 
             highlighted.forEach(clearHighlights);
             highlighted = [];
+            // Lets card CSS drop any preview clamp so highlights stay visible.
+            list.classList.add('is-filtering');
             clearButton.hidden = false;
             var visible = 0;
             cards.forEach(function(card) {
