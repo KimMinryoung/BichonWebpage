@@ -129,7 +129,26 @@
   padding: 0.8rem 1rem;
 }
 
+/* The open list overlays the page instead of expanding in flow. In flow it made
+   the document 1304px taller, which moved all 9,180 paragraphs below it: a
+   no-op frame on this page costs 15.8ms and a full style recalc 16.3ms, but the
+   toggle cost 46.5ms, and the difference is that shift being laid out and
+   repainted. Out of flow the toggle changes no geometry outside this box. */
+.doc-toc details {
+  position: relative;
+}
+
 .doc-toc details[open] > .doc-toc-parts {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 60;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-top: 0;
   max-height: calc(100dvh - 8rem);
   overflow-y: auto;
   overscroll-behavior: contain;
