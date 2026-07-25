@@ -2042,7 +2042,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 1.5rem;
     line-height: 1;
     position: absolute;
-    right: 8px;
+    /* The glyph is rotated, so its rendered box is wider than the unrotated one.
+       At right: 8px it reached 5px past the summary and put the whole page into a
+       4px horizontal scroll; 14px keeps it inside the 38px padding. */
+    right: 14px;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
     transition: color 0.16s ease, transform 0.16s ease;
@@ -2380,7 +2383,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 1.5rem;
     line-height: 1;
     position: absolute;
-    right: 8px;
+    /* The glyph is rotated, so its rendered box is wider than the unrotated one.
+       At right: 8px it reached 5px past the summary and put the whole page into a
+       4px horizontal scroll; 14px keeps it inside the 38px padding. */
+    right: 14px;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
     transition: color 0.16s ease, transform 0.16s ease;

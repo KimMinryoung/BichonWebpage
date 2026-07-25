@@ -1989,11 +1989,69 @@ footer .footer-tagline {
     margin: 0;
 }
 
-/* Footnote definitions end in a bare source URL with no break opportunity. One
-   measured 732px of content inside a 366px column, and that, not the table, is
-   what actually put the page into horizontal scroll. */
-.footnote-def {
+/* Generic net for rendered markdown, rather than a patch per case. Reports are
+   written by an agent and bring whatever markdown they like: wide tables, bare
+   source URLs, images, embeds. A footnote URL with no break opportunity held
+   732px of content inside a 366px column and put the whole page into horizontal
+   scroll; anywhere lets tokens like that break so a new document cannot repeat
+   it. Tables are handled by .table-scroll above. */
+.report-body,
+.post-body,
+.commu-person-markdown {
     overflow-wrap: anywhere;
+}
+
+/* Prose wants 'anywhere', table cells do not: inherited into cells it broke
+   words mid-word ("semiconduct/or") to squeeze a 410px table into a 366px
+   column. Cells keep their words whole and .table-scroll scrolls instead. */
+.report-body table,
+.post-body table,
+.commu-person-markdown table {
+    overflow-wrap: normal;
+}
+
+.report-body img,
+.report-body video,
+.report-body svg,
+.report-body canvas,
+.post-body img,
+.post-body video,
+.post-body svg,
+.post-body canvas,
+.commu-person-markdown img,
+.commu-person-markdown video,
+.commu-person-markdown svg,
+.commu-person-markdown canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.report-body iframe,
+.post-body iframe,
+.commu-person-markdown iframe {
+    max-width: 100%;
+}
+
+/* Scroll affordance: a permanently visible thin scrollbar under the table. The
+   usual trick, gradients with background-attachment local/scroll, paints in the
+   container's own background, which the table then covers, so nothing showed on
+   either theme. A scrollbar is conventional, needs no colour guessing beyond the
+   theme tokens, and is the one hint a reader already knows how to read. */
+.table-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--text-primary) 32%, transparent) transparent;
+}
+
+.table-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--text-primary) 32%, transparent);
+}
+
+.table-scroll::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 /* Justification must not reach monospace, tabular or heading content, which
