@@ -4,7 +4,10 @@ const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForTerm } = require('../services/report-mentions');
-const { termCategoriesWithCounts } = require('../data/commulingo/term-categories');
+const {
+    termCategoriesWithCounts,
+    termCategoryLabel,
+} = require('../data/commulingo/term-categories');
 const {
     buildTermLinkIndex,
     linkifyTermsHtml,
@@ -38,6 +41,9 @@ function presentTerm(raw, lang) {
     return {
         ...raw,
         aliasSearchText: aliasSearchText(raw),
+        // Blank for an entry whose category has not been set yet; the card
+        // simply omits the pill rather than showing 'Uncategorized'.
+        categoryLabel: raw.category ? termCategoryLabel(raw.category, lang) : '',
         term: localize(raw.term, lang),
         termOther: lang === 'en' ? localize(raw.term, 'ko') : localize(raw.term, 'en'),
         period: localize(raw.period, lang),

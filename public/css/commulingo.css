@@ -2439,6 +2439,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
+    /* Without this the shorter card in each pair stretches to its neighbour's
+       height, leaving about 46px of empty space below its content. */
+    align-items: start;
 }
 
 .commu-person-card {
@@ -3116,15 +3119,41 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-dict-tab.is-active { background: color-mix(in srgb, var(--accent-red) 26%, var(--bg-canvas)); color: var(--text-primary); }
 .commu-dict-tab.is-active .commu-role-icon { color: var(--accent-red); }
 @media (max-width: 560px) { .commu-dict-tab { padding: .6rem .3rem; font-size: .85rem; gap: .3rem; } .commu-dict-tab .commu-role-icon { width: 14px; height: 14px; } }
-.commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: .5rem; }
+/* Two wide columns rather than three narrow ones, matching the person cards:
+   at the 940px container a third column cuts the definition to about 35
+   characters a line, which reads worse than it looks. */
+/* A 340px floor holds two columns from roughly 700px up to the 940px
+   container, the same shape as the person grid, and drops to one column below
+   that. min() keeps the floor from overflowing a narrower container. */
+.commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 1rem; margin-top: .5rem; }
 .commu-event-card, .commu-event-people-grid > a { display: block; border: 1px solid var(--border, #555); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
 .commu-event-card:hover, .commu-event-people-grid > a:hover { border-color: var(--accent, #b84f4f); }
-.commu-event-card h2, .commu-event-card h3 { margin: .3rem 0 .6rem; font-size: 1.15rem; }
+.commu-event-card h2, .commu-event-card h3 { margin: .1rem 0 .15rem; font-size: 1.05rem; }
 .commu-event-card p, .commu-event-head > p, .commu-event-people-grid p { line-height: 1.65; }
-/* Dictionary cards are index entries, not article intros: title and preview
-   sit a step below body type so a screenful holds more of the list. */
-.commu-event-card p { font-size: .94rem; line-height: 1.6; }
-.commu-event-card .commu-event-period { font-size: .8rem; }
+/* Type scale taken from the person card: name 1.05rem, prose .88rem, meta
+   .78rem, so the card has a hierarchy to scan rather than one flat block. */
+.commu-event-card p { margin: .45rem 0 0; font-size: .88rem; line-height: 1.6; }
+.commu-event-card .commu-event-period { font-size: .78rem; }
+
+/* Meta row above the title: original script, period, category. Mirrors
+   .commu-person-meta so the three dictionaries read as one family. */
+.commu-event-meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px;
+    margin-bottom: .1rem;
+}
+.commu-event-meta .commu-event-period { margin: 0; }
+.commu-event-original {
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: .82rem; font-style: italic; color: var(--text-muted);
+}
+.commu-event-category {
+    padding: 2px 8px; font-size: .74rem; font-weight: 600; letter-spacing: .01em;
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--bg-surface) 60%, transparent);
+    border: 1px solid var(--border); border-left-width: 3px;
+    white-space: nowrap;
+}
 /* Metadata labels (period, original script, dates) stay muted rather than
    --accent: the accent green fails contrast as text on the dark canvas. */
 .commu-event-period { display: block; color: var(--text-muted); font-weight: 700; letter-spacing: .04em; }
