@@ -48,6 +48,55 @@
         }
       ],
       "addedAt": "2026-07-23"
+    },
+    {
+      "id": "lenin-tax-in-kind",
+      "file": "lenin-tax-in-kind.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "레닌, 『현물세』 한국어 번역",
+        "en": "Lenin, The Tax in Kind (Korean translation)"
+      },
+      "description": {
+        "ko": "1921년 4월 레닌이 신경제정책으로의 전환을 설명하기 위해 쓴 팸플릿의 한국어 번역 전문. 러시아 경제를 가부장적 농민경제부터 사회주의까지 다섯 형태로 나누고, 소상품생산이 지배적인 조건에서 국가자본주의는 사회주의와 견줄 것이 아니라 소생산자 요소와 견주어야 하며 그에 비하면 한 걸음 전진이라고 논증한다.",
+        "en": "The full Korean translation of the pamphlet Lenin wrote in April 1921 to explain the turn to the New Economic Policy. It divides the Russian economy into five forms, from patriarchal peasant farming to socialism, and argues that where small commodity production predominates state capitalism must be measured against the small-proprietor element rather than against socialism, and is a step forward by that measure."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "В. И. Ленин, «О продовольственном налоге» (1921). 영역 유리 스도브니코프. 『레닌 전집』 영어판 제1판, 프로그레스 출판사, 모스크바, 1965년, 제32권, 329–365쪽",
+      "people": [
+        {
+          "id": "lenin",
+          "name": {
+            "ko": "블라디미르 레닌",
+            "en": "Vladimir Lenin"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "id": "state-capitalism",
+          "name": {
+            "ko": "국가자본주의",
+            "en": "State Capitalism"
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "new-economic-policy",
+          "name": {
+            "ko": "신경제정책(네프)",
+            "en": "New Economic Policy"
+          }
+        }
+      ],
+      "addedAt": "2026-07-25",
+      "tocExclude": [
+        "."
+      ]
     }
   ]
 }
