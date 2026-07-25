@@ -11,37 +11,42 @@
      back toward 900px if it reads worse than the extra width is worth. */
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 20px clamp(3rem, 8vw, 5rem);
+  /* Side padding shrinks to 12px on a phone to buy back column width. It only
+     buys about two characters a line (26 to 28 at 390px) because the padding was
+     already small; going below 12px gains nothing and crowds the screen edge. */
+  padding-inline: clamp(12px, 2.5vw, 20px);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
   line-height: 1.88;
-  word-break: keep-all;
   overflow-wrap: break-word;
   text-wrap: pretty;
 }
 
-/* Justify the prose so line ends align down the right edge of the column, but
-   only once the column is wide enough to absorb it. word-break: keep-all above
-   means Korean 어절 and Latin words are never split, so justification widens the
-   gaps between them instead of hyphenating, and a narrow column has too few
-   words per line to spread the slack. Measured worst-case gap against a normal
-   4px space: 350px column 86px (21 spaces), 440px 49px, 520px 23px, 660px 13px.
-   The 95th percentile tells the same story: 19.8px at 350px, 9.3px at 760px.
-   700px of viewport gives a 660px column, which is where it stops showing.
-   Headings stay ragged at every width: they are short, and text-wrap: balance
-   below already evens their line lengths. */
-@media (min-width: 700px) {
-  .book p,
-  .book blockquote,
-  .book ul li,
-  .book ol li {
-    text-align: justify;
-  }
+/* Justify the prose so line ends align down the right edge of the column, at
+   every width including a phone.
+   word-break matters more than the justification itself here. Under keep-all,
+   which the reader used before, no Korean 어절 can be split, so a narrow column
+   has too few words per line to absorb the slack and the gaps blow out: measured
+   at a 350px column the median gap was 7.4px against a 4px space, the 95th
+   percentile 19px and the worst 33px. Korean prose is normally set breaking
+   between characters, and word-break: normal restores that, which brings the
+   same column to a 4.8px median, 6.3px p95 and 11px worst. Latin and Cyrillic
+   words are still never split by normal; overflow-wrap above remains the escape
+   hatch for a token longer than the line.
+   Headings keep keep-all and stay ragged: they are short, mid-word breaks read
+   badly in a title, and text-wrap: balance below already evens their lines. */
+.book p,
+.book blockquote,
+.book ul li,
+.book ol li {
+  text-align: justify;
+  word-break: normal;
+}
 
-  /* The contents list is navigation, not prose. Needs .book in front to
-     outweigh '.book ol li' above, which otherwise justifies wrapped entries. */
-  .book .doc-toc li,
-  .book .doc-toc p {
-    text-align: start;
-  }
+/* The contents list is navigation, not prose. Needs .book in front to outweigh
+   '.book ol li' above, which otherwise justifies wrapped entries. */
+.book .doc-toc li,
+.book .doc-toc p {
+  text-align: start;
 }
 
 .book h1,
@@ -121,7 +126,7 @@
 .doc-topbar {
   max-width: 980px;
   margin: 0 auto;
-  padding: 1rem 20px 0;
+  padding: 1rem clamp(12px, 2.5vw, 20px) 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 1.1rem;
