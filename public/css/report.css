@@ -1,4 +1,9 @@
 .report-body { line-height: 1.88; }
+/* Justified prose, matching the document reader; see the note in style.css for
+   why word-break stays normal. Tables, code blocks and headings are excluded. */
+.report-body p,
+.report-body li,
+.report-body blockquote { text-align: justify; word-break: normal; hyphens: auto; }
 .report-body h1 { font-size: 1.6em; margin: 1.2em 0 0.6em; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
 .report-body h2 { font-size: 1.3em; margin: 1em 0 0.5em; }
 .report-body h3 { font-size: 1.1em; margin: 0.8em 0 0.4em; }

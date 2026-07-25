@@ -99,6 +99,14 @@ select:focus-visible,
     max-width: 960px;
 }
 
+/* Article pages (posts, diary, novels, reports, research, pages) match the
+   CommuLingo document reader at 980px instead of 800px, which takes the empty
+   band each side at 1440 from 373px to 253px. Scoped by content class so
+   listings, chat and admin keep the narrower default. */
+.container:has(> .post-content) {
+    max-width: 980px;
+}
+
 /* ===== Box (generic surface) ===== */
 .box {
     background-color: var(--card-bg);
@@ -1893,7 +1901,9 @@ footer .footer-tagline {
     }
 
     .post-content {
-        padding: 20px 16px;
+        /* 11px + 1px border puts the text 12px from the screen edge, the same as
+           the document reader; it was 17px. */
+        padding: 20px 11px;
     }
 }
 
@@ -1948,6 +1958,37 @@ footer .footer-tagline {
 
 /* CommuLingo entity links inside diary/post prose (see report.css for the
    report-body variant). */
+/* Justified prose, matching the document reader. word-break stays normal so
+   Korean breaks between characters and the gaps between 어절 stay tight; under
+   keep-all a narrow column stretches them badly (see the measurements in
+   commulingo-doc.css).
+   Set on the container, not on p: post and diary bodies are raw text nodes
+   separated by <br>, with no paragraph elements to target. A line ending in a
+   forced break counts as a last line, so it is left unstretched, which is the
+   behaviour paragraph ends want anyway. */
+.post-body {
+    text-align: justify;
+    word-break: normal;
+    /* Inert for Korean, which has no hyphenation dictionary to apply, but it
+       tightens justified English: p95 gap 7px to 6.1px on an English report. */
+    hyphens: auto;
+}
+
+/* Justification must not reach monospace, tabular or heading content, which
+   inherits from the container above. */
+.post-body pre,
+.post-body code,
+.post-body table,
+.post-body th,
+.post-body td,
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body figcaption {
+    text-align: start;
+}
+
 .post-body .commu-person-link,
 .post-body .commu-topic-link,
 .post-body .commu-term-link,
