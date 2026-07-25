@@ -5,7 +5,22 @@
 .commulingo-shell {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
+}
+
+/* Page heading for assistive tech and crawlers on the dictionary pages, where
+   the tab strip already names the section on screen. */
+.commu-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
 }
 
 .commulingo-hero {
@@ -28,17 +43,6 @@
     color: var(--text-primary);
     font-size: 1.8rem;
     margin-bottom: 8px;
-}
-
-/* People hero title: keep on a single line; JS shrinks font to fit width. */
-.commu-people-title-wrap {
-    width: 100%;
-    min-width: 0;
-}
-
-.commu-people-title {
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .commulingo-hero p:last-child {
@@ -1866,7 +1870,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin: 18px 0 0;
+    margin: 9px 0 0;
 }
 
 .commu-people-search-icon {
@@ -2002,7 +2006,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-office-index {
-    margin-top: 28px;
+    margin-top: 14px;
 }
 
 .commu-office-index-head {
@@ -2340,7 +2344,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-people-group {
-    margin-top: 34px;
+    margin-top: 17px;
 }
 
 .commu-people-group-head {
@@ -2408,7 +2412,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.06em;
-    margin: 30px 0 6px;
+    margin: 15px 0 6px;
     padding-top: 20px;
 }
 
@@ -3112,7 +3116,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-dict-tab.is-active { background: color-mix(in srgb, var(--accent-red) 26%, var(--bg-canvas)); color: var(--text-primary); }
 .commu-dict-tab.is-active .commu-role-icon { color: var(--accent-red); }
 @media (max-width: 560px) { .commu-dict-tab { padding: .6rem .3rem; font-size: .85rem; gap: .3rem; } .commu-dict-tab .commu-role-icon { width: 14px; height: 14px; } }
-.commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: .5rem; }
 .commu-event-card, .commu-event-people-grid > a { display: block; border: 1px solid var(--border, #555); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
 .commu-event-card:hover, .commu-event-people-grid > a:hover { border-color: var(--accent, #b84f4f); }
 .commu-event-card h2, .commu-event-card h3 { margin: .3rem 0 .6rem; font-size: 1.15rem; }
@@ -3243,7 +3247,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 .commu-dict-toolbar {
     display: flex; flex-wrap: wrap; align-items: baseline;
-    justify-content: space-between; gap: .5rem 1rem; margin-top: .6rem;
+    justify-content: space-between; gap: .5rem 1rem; margin-top: .3rem;
 }
 .commu-dict-count { margin: 0; color: var(--text-muted); font-size: .9rem; }
 .commu-dict-sort { display: flex; gap: .5rem; font-size: .9rem; }
@@ -3259,7 +3263,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 /* Category chips filter the same list the search box does (one pass, see
    public/js/commulingo-dict-search.js). */
-.commu-dict-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.commu-dict-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
 .commu-dict-chip {
     padding: .3rem .7rem; border: 1px solid var(--border); border-radius: 999px;
     background: transparent; color: var(--text-muted); font: inherit;
@@ -3276,7 +3280,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 /* Index bar: initial consonants / letters when sorted by name, decades when
    sorted chronologically. */
-.commu-dict-index { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .8rem; }
+.commu-dict-index { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .4rem; }
 .commu-dict-index a {
     min-width: 2rem; padding: .2rem .4rem; border: 1px solid var(--border);
     color: var(--text-muted); text-decoration: none; text-align: center;

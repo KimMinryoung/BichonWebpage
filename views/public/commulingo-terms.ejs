@@ -7,9 +7,7 @@
     <main class="container commulingo-shell commu-terms-page" data-lang="<%= lang %>">
         <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
         <%- include('../partials/commulingo-dict-nav', { active: 'terms' }) %>
-        <header class="box commulingo-hero commulingo-hero--graph">
-            <div><h1><%= en ? 'Glossary' : '용어 사전' %></h1><p><%= en ? 'The concepts of Soviet and revolutionary history, connected to people, events, and reports.' : '혁명과 소련사의 개념들을 인물·사건·보고서와 연결해 읽습니다.' %></p></div>
-        </header>
+        <h1 class="commu-sr-only"><%= en ? 'Glossary' : '용어 사전' %></h1>
         <div class="commu-dict-toolbar">
             <p class="commu-dict-count"><%= en ? terms.length + (terms.length === 1 ? ' term' : ' terms') : '총 ' + terms.length + '개의 용어' %></p>
             <nav class="commu-dict-sort" aria-label="<%= en ? 'Sort order' : '정렬 순서' %>">

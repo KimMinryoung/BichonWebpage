@@ -13,11 +13,7 @@
         <a class="commu-back-link" href="/commulingo">← <%= strings.commuLingo.backToBooks %></a>
         <%- include('../partials/commulingo-dict-nav', { active: 'people' }) %>
 
-        <header class="box commulingo-hero commulingo-hero--graph">
-            <div class="commu-people-title-wrap">
-                <h1 class="commu-people-title"><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>
-            </div>
-        </header>
+        <h1 class="commu-sr-only"><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>
 
         <div class="commu-people-search">
             <span class="commu-people-search-icon" aria-hidden="true">⌕</span>
@@ -131,27 +127,6 @@
     </main>
 
     <%- include('../partials/footer') %>
-    <script>
-        // Auto-fit the hero title to one line: shrink font-size until it stops
-        // overflowing its container (re-run on resize).
-        (function() {
-            var title = document.querySelector('.commu-people-title');
-            if (!title) return;
-            function fit() {
-                title.style.fontSize = '';
-                var size = parseFloat(window.getComputedStyle(title).fontSize) || 29;
-                var guard = 0;
-                while (title.scrollWidth > title.clientWidth && size > 12 && guard < 120) {
-                    size -= 1;
-                    title.style.fontSize = size + 'px';
-                    guard++;
-                }
-            }
-            window.addEventListener('resize', fit);
-            if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-            fit();
-        })();
-    </script>
     <script>
         // Highlight the card targeted by the URL hash (arriving from a book's name link).
         (function() {
