@@ -94,7 +94,19 @@ function inlineMarkdown(text, citationLinks = new Map(), footnoteDefinitions = n
     return escapeHtml(protectedText)
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
         .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-        .replace(/\[([^\]]+)]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        // Only absolute URLs used to be linked, so the 'Preceding reports' lines
+        // that point at /reports/... rendered their markdown source as text, and
+        // the bare (/reports/very-long-slug) made one unbreakable token that
+        // stretched the justified line around it. Site-relative and in-page
+        // targets link too, and stay in the same tab; anything with another
+        // scheme is left exactly as written rather than turned into a link.
+        .replace(/\[([^\]]+)]\(([^)\s]+)\)/g, (match, label, href) => {
+            if (/^https?:\/\//i.test(href)) {
+                return `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+            }
+            if (/^[/#]/.test(href)) return `<a href="${href}">${label}</a>`;
+            return match;
+        })
         .replace(/\[\^?([A-Za-z0-9_]+)\]/g, (match, label) => {
             const href = citationLinks.get(label);
             if (href) return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">[${label}]</a>`;
