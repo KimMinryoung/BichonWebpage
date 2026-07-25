@@ -10,12 +10,22 @@
             <span class="commu-event-period"><%= term.original %><% if (term.period && term.period !== '개념') { %> · <%= term.period %><% } %></span>
             <h1><%= term.term %></h1>
             <% if (term.termOther) { %><p class="commu-event-question"><%= term.termOther %></p><% } %>
-            <p><%= term.definition %></p>
+            <p><%- definitionHtml %></p>
         </header>
         <% if (bodyHtml) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-body">
             <h2 id="term-body"><%= en ? 'In depth' : '상세' %></h2>
             <div class="commu-person-markdown"><%- bodyHtml %></div>
+        </section>
+        <% } %>
+        <% if (term.related && term.related.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="term-related">
+            <h2 id="term-related"><%= en ? 'Related terms' : '관련 용어' %></h2>
+            <div class="commu-term-chips">
+                <% term.related.forEach(function(entry) { %>
+                <a class="commu-term-chip" href="/commulingo/terms/<%= encodeURIComponent(entry.id) %>"><%= entry.term %></a>
+                <% }) %>
+            </div>
         </section>
         <% } %>
         <% if (term.people.length) { %>
@@ -58,7 +68,19 @@
             </ul>
         </section>
         <% } %>
-        <% if (term.sources && term.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% term.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>
+        <% if (sources && sources.length) { %>
+        <section class="commu-term-sources" aria-labelledby="term-sources">
+            <h2 id="term-sources"><%= en ? 'Sources' : '출처' %></h2>
+            <ol>
+                <% sources.forEach(function(source) { %>
+                <li>
+                    <% if (source.url) { %><a href="<%= source.url %>" target="_blank" rel="noopener noreferrer"><%= source.label %></a><% } else { %><span><%= source.label %></span><% } %>
+                    <% if (source.note) { %><span class="commu-term-source-note"><%= source.note %></span><% } %>
+                </li>
+                <% }) %>
+            </ol>
+        </section>
+        <% } %>
         <a class="commu-back-link commu-person-detail-back" href="/commulingo/terms">← <%= en ? 'Glossary' : '용어 사전' %></a>
     </main>
     <%- include('../partials/footer') %>

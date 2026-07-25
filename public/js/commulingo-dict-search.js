@@ -52,43 +52,57 @@
         var input = root.querySelector('[data-commu-dict-search-input]');
         var clearButton = root.querySelector('[data-commu-dict-search-clear]');
         var status = root.querySelector('[data-commu-dict-search-status]');
-        var list = document.querySelector(root.getAttribute('data-target'));
+        var target = root.getAttribute('data-target');
+        var list = document.querySelector(target);
         if (!input || !clearButton || !status || !list) return;
 
         var cards = Array.prototype.slice.call(list.querySelectorAll('[data-search]'));
         var highlighted = [];
+        // Optional category chips over the same list (glossary only). Query and
+        // category are one filter with two inputs, so they share this state and
+        // one visibility pass; two independent scripts toggling .hidden would
+        // fight over the same cards.
+        var chipRoot = document.querySelector('[data-commu-dict-chips][data-target="' + target + '"]');
+        var chips = chipRoot ? Array.prototype.slice.call(chipRoot.querySelectorAll('[data-category]')) : [];
+        var category = '';
 
-        function reset() {
+        function apply() {
+            var terms = input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+            var searching = terms.length > 0;
+            var categorized = category !== '';
+
             highlighted.forEach(clearHighlights);
             highlighted = [];
-            cards.forEach(function(card) { card.hidden = false; });
-            list.classList.remove('is-filtering');
-            clearButton.hidden = true;
-            status.hidden = true;
-            status.textContent = '';
-        }
 
-        function apply(query) {
-            var terms = query.toLocaleLowerCase().split(/\s+/).filter(Boolean);
-            if (!terms.length) {
-                reset();
+            if (!searching && !categorized) {
+                cards.forEach(function(card) { card.hidden = false; });
+                list.classList.remove('is-filtering');
+                list.classList.remove('is-ungrouped');
+                clearButton.hidden = true;
+                status.hidden = true;
+                status.textContent = '';
                 return;
             }
 
-            highlighted.forEach(clearHighlights);
-            highlighted = [];
-            // Lets card CSS drop any preview clamp so highlights stay visible.
-            list.classList.add('is-filtering');
-            clearButton.hidden = false;
+            // is-filtering lets card CSS drop the preview clamp so a highlight
+            // can't hide in the overflow; both classes hide the group headings,
+            // which would otherwise label sections that filtered down to empty.
+            list.classList.toggle('is-filtering', searching);
+            list.classList.toggle('is-ungrouped', categorized);
+            clearButton.hidden = !searching;
+
             var visible = 0;
             cards.forEach(function(card) {
-                var haystack = (card.getAttribute('data-search') || '').toLocaleLowerCase();
-                var matches = terms.every(function(term) { return haystack.indexOf(term) !== -1; });
+                var matches = !categorized || card.getAttribute('data-category') === category;
+                if (matches && searching) {
+                    var haystack = (card.getAttribute('data-search') || '').toLocaleLowerCase();
+                    matches = terms.every(function(term) { return haystack.indexOf(term) !== -1; });
+                }
                 card.hidden = !matches;
                 if (matches) visible++;
             });
 
-            if (visible) {
+            if (visible && searching) {
                 var re = new RegExp('(' + terms.slice().sort(function(a, b) { return b.length - a.length; })
                     .map(escapeRegExp).join('|') + ')', 'gi');
                 cards.forEach(function(card) {
@@ -96,6 +110,8 @@
                     highlight(card, re);
                     highlighted.push(card);
                 });
+            }
+            if (visible) {
                 var separator = document.documentElement.lang.indexOf('ko') === 0 ? '' : ' ';
                 status.textContent = visible + separator + (visible === 1
                     ? root.getAttribute('data-result-one')
@@ -110,13 +126,13 @@
         var frame = null;
         input.addEventListener('input', function() {
             if (frame) cancelAnimationFrame(frame);
-            frame = requestAnimationFrame(function() { apply(input.value.trim()); });
+            frame = requestAnimationFrame(apply);
         });
         input.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && input.value) {
                 event.preventDefault();
                 input.value = '';
-                reset();
+                apply();
             } else if (event.key === 'Enter') {
                 var first = cards.find(function(card) { return !card.hidden; });
                 if (first && input.value.trim()) window.location.href = first.href;
@@ -124,10 +140,23 @@
         });
         clearButton.addEventListener('click', function() {
             input.value = '';
-            reset();
+            apply();
             input.focus();
         });
-        if (input.value.trim()) apply(input.value.trim());
+        chips.forEach(function(chip) {
+            chip.addEventListener('click', function() {
+                var next = chip.getAttribute('data-category') || '';
+                // Clicking the active chip clears the filter, same as 'All'.
+                category = category === next ? '' : next;
+                chips.forEach(function(other) {
+                    var active = (other.getAttribute('data-category') || '') === category;
+                    other.classList.toggle('is-active', active);
+                    other.setAttribute('aria-pressed', active ? 'true' : 'false');
+                });
+                apply();
+            });
+        });
+        if (input.value.trim()) apply();
     }
 
     Array.prototype.forEach.call(document.querySelectorAll('[data-commu-dict-search]'), initialize);

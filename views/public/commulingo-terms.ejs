@@ -10,7 +10,15 @@
         <header class="box commulingo-hero commulingo-hero--graph">
             <div><h1><%= en ? 'Glossary' : '용어 사전' %></h1><p><%= en ? 'The concepts of Soviet and revolutionary history, connected to people, events, and reports.' : '혁명과 소련사의 개념들을 인물·사건·보고서와 연결해 읽습니다.' %></p></div>
         </header>
-        <p class="commu-dict-count"><%= en ? terms.length + (terms.length === 1 ? ' term' : ' terms') : '총 ' + terms.length + '개의 용어' %></p>
+        <div class="commu-dict-toolbar">
+            <p class="commu-dict-count"><%= en ? terms.length + (terms.length === 1 ? ' term' : ' terms') : '총 ' + terms.length + '개의 용어' %></p>
+            <nav class="commu-dict-sort" aria-label="<%= en ? 'Sort order' : '정렬 순서' %>">
+                <a href="/commulingo/terms" class="<%= sort === 'name' ? 'is-active' : '' %>"
+                    <% if (sort === 'name') { %>aria-current="true"<% } %>><%= en ? 'A–Z' : '가나다순' %></a>
+                <a href="/commulingo/terms?sort=chrono" class="<%= sort === 'chrono' ? 'is-active' : '' %>"
+                    <% if (sort === 'chrono') { %>aria-current="true"<% } %>><%= en ? 'Chronological' : '연대순' %></a>
+            </nav>
+        </div>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-term-list',
             placeholder: en ? 'Search by term, original, alias, or definition…' : '용어 · 원어 · 별칭 · 정의로 검색…',
@@ -20,14 +28,32 @@
             resultMany: en ? 'terms found' : '개의 용어',
             emptyLabel: en ? 'No glossary terms found' : '검색 결과가 없습니다'
         }) %>
+        <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-term-list"
+            role="group" aria-label="<%= en ? 'Filter by category' : '분류로 걸러보기' %>">
+            <button type="button" class="commu-dict-chip is-active" data-category="" aria-pressed="true"><%= en ? 'All' : '전체' %></button>
+            <% categories.forEach(function(category) { %>
+            <button type="button" class="commu-dict-chip" data-category="<%= category.id || '__none__' %>" aria-pressed="false"><%= category.label %> <span><%= category.count %></span></button>
+            <% }) %>
+        </div>
+        <% if (groups.length > 1) { %>
+        <nav class="commu-dict-index" aria-label="<%= en ? 'Jump to group' : '그룹으로 이동' %>">
+            <% groups.forEach(function(group) { %>
+            <a href="#<%= group.id %>"><%= group.label %></a>
+            <% }) %>
+        </nav>
+        <% } %>
         <section class="commu-event-grid" id="commu-term-list" aria-label="<%= en ? 'Glossary terms' : '용어 목록' %>">
-            <% terms.forEach(function(term) { %>
+            <% groups.forEach(function(group) { %>
+            <h2 class="commu-term-group-head" id="<%= group.id %>"><%= group.label %></h2>
+            <% group.terms.forEach(function(term) { %>
             <a class="commu-event-card" href="/commulingo/terms/<%= term.id %>"
-                data-search="<%= [term.original, term.term, term.termOther, term.aliasSearchText, term.definition].filter(Boolean).join(' ') %>">
+                data-category="<%= term.category || '__none__' %>"
+                data-search="<%= [term.original, term.term, term.termOther, term.aliasSearchText, term.period, term.definition].filter(Boolean).join(' ') %>">
                 <span class="commu-event-period"><%= term.original || term.period %></span>
-                <h2><%= term.term %></h2>
+                <h3><%= term.term %></h3>
                 <p><%= term.definition %></p>
             </a>
+            <% }) %>
             <% }) %>
         </section>
     </main>

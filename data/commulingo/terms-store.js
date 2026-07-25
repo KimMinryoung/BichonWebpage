@@ -18,9 +18,10 @@ function t(ko, en) {
 }
 
 async function fetchTerms() {
-    const [terms, aliases, people, events] = await Promise.all([
+    const [terms, aliases, people, events, relations] = await Promise.all([
         db.query(
             `SELECT id, term_ko, term_en, original, period_label,
+                    period_ko, period_en, start_year, end_year, category,
                     definition_ko, definition_en, body_ko, body_en, sources
              FROM commulingo_terms
              ORDER BY sort_order, id`
@@ -41,6 +42,11 @@ async function fetchTerms() {
              FROM commulingo_term_events te
              JOIN commulingo_history_events e ON e.id = te.event_id
              ORDER BY te.term_id, te.sort_order, te.event_id`
+        ),
+        db.query(
+            `SELECT term_id, related_id
+             FROM commulingo_term_relations
+             ORDER BY term_id, sort_order, related_id`
         ),
     ]);
     const aliasesByTerm = {};
@@ -63,17 +69,42 @@ async function fetchTerms() {
             title: t(row.title_ko, row.title_en),
         });
     });
+    // Relations are stored one way round and mirrored here, so a single
+    // ('nep','nepman') row shows up on both entries.
+    const termLabels = {};
+    terms.rows.forEach(row => {
+        termLabels[row.id] = { id: row.id, term: t(row.term_ko, row.term_en) };
+    });
+    const relatedByTerm = {};
+    const addRelation = (from, to) => {
+        const label = termLabels[to];
+        if (!label || from === to) return;
+        const list = relatedByTerm[from] || (relatedByTerm[from] = []);
+        if (!list.some(entry => entry.id === to)) list.push(label);
+    };
+    relations.rows.forEach(row => {
+        addRelation(row.term_id, row.related_id);
+        addRelation(row.related_id, row.term_id);
+    });
+
     return terms.rows.map(row => ({
         id: row.id,
         term: t(row.term_ko, row.term_en),
         original: row.original || '',
-        period: row.period_label || '',
+        // period_label is the frozen pre-071 column; rows added since then may
+        // still arrive with only period_ko/en, and rows added by hand may have
+        // only the legacy label, so either one can stand in for the other.
+        period: t(row.period_ko || row.period_label, row.period_en || row.period_label),
+        startYear: Number.isInteger(row.start_year) ? row.start_year : null,
+        endYear: Number.isInteger(row.end_year) ? row.end_year : null,
+        category: row.category || '',
         definition: t(row.definition_ko, row.definition_en),
         body: t(row.body_ko, row.body_en),
         sources: Array.isArray(row.sources) ? row.sources : [],
         aliases: aliasesByTerm[row.id] || { ko: [], en: [] },
         people: peopleByTerm[row.id] || [],
         events: eventsByTerm[row.id] || [],
+        related: relatedByTerm[row.id] || [],
     }));
 }
 

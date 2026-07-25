@@ -7,6 +7,10 @@
     <main class="container commulingo-shell commu-events-page" data-lang="<%= lang %>">
         <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
         <%- include('../partials/commulingo-dict-nav', { active: 'events' }) %>
+        <header class="box commulingo-hero commulingo-hero--graph">
+            <div><h1><%= en ? 'Historical Events' : '역사 사건' %></h1><p><%= en ? 'Events, institutions, and people viewed as one connected history.' : '사건·기관·인물을 하나의 연결된 역사로 읽습니다.' %></p></div>
+        </header>
+        <p class="commu-dict-count"><%= en ? events.length + (events.length === 1 ? ' event' : ' events') : '총 ' + events.length + '개의 사건' %></p>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-event-list',
             placeholder: en ? 'Search by period, event, or description…' : '시기 · 사건명 · 설명으로 검색…',
@@ -16,9 +20,6 @@
             resultMany: en ? 'events found' : '개의 사건',
             emptyLabel: en ? 'No historical events found' : '검색 결과가 없습니다'
         }) %>
-        <header class="box commulingo-hero commulingo-hero--graph">
-            <div><h1><%= en ? 'Historical Events' : '역사 사건' %></h1><p><%= en ? 'Events, institutions, and people viewed as one connected history.' : '사건·기관·인물을 하나의 연결된 역사로 읽습니다.' %></p></div>
-        </header>
         <section class="commu-event-grid" id="commu-event-list" aria-label="<%= en ? 'Historical events' : '역사 사건 목록' %>">
             <% events.forEach(function(event) { %>
             <a class="commu-event-card" href="/commulingo/events/<%= event.id %>"
@@ -26,7 +27,6 @@
                 <span class="commu-event-period"><%= event.period %></span>
                 <h2><%= event.title %></h2>
                 <p><%= event.summary %></p>
-                <span class="commu-event-card-link"><%= en ? 'Open event →' : '사건 보기 →' %></span>
             </a>
             <% }) %>
         </section>
