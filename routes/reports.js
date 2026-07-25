@@ -239,7 +239,14 @@ async function cachedResearchList(lang) {
 async function publishedReportSlugs(lang) {
     try {
         const items = await cachedResearchList(lang);
-        return new Set((items || []).map(item => item && item.slug).filter(Boolean));
+        const slugs = new Set();
+        (items || []).forEach(item => {
+            if (!item) return;
+            // Links in the corpus use either form, and the route resolves both.
+            if (item.slug) slugs.add(String(item.slug).replace(/\.md$/, ''));
+            if (item.filename) slugs.add(String(item.filename).replace(/\.md$/, ''));
+        });
+        return slugs;
     } catch (err) {
         console.error('[reports] published slug list failed:', err.message);
         return undefined;

@@ -227,7 +227,12 @@ const REPORT_ANCHOR_RE = /<a href="(\/reports\/[^"]*)"[^>]*>((?:(?!<\/a>)[\s\S])
 function downgradeUnknownReportLinks(html, isKnownReport) {
     if (typeof isKnownReport !== 'function') return html;
     return String(html).replace(REPORT_ANCHOR_RE, (match, href, label) => {
-        const slug = href.split(/[?#]/)[0].split('/').filter(Boolean).pop();
+        // routes/reports.js resolves a report by filename or slug and strips a
+        // trailing .md, so the same normalization has to happen here. Without it
+        // the 144 '.md'-suffixed references in the corpus, which all resolve,
+        // were being stripped of their anchors.
+        const last = href.split(/[?#]/)[0].split('/').filter(Boolean).pop();
+        const slug = (last || '').replace(/\.md$/, '');
         if (!slug) return label;
         return isKnownReport(slug) ? match : label;
     });
