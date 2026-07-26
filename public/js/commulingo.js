@@ -129,6 +129,10 @@
                         title: text(lesson.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
+                        // Linked by the book route; absent on an older payload,
+                        // in which case the renderers escape the plain fields.
+                        summaryHtml: text(chapter.summaryHtml),
+                        focusHtml: text(chapter.focusHtml),
                         questions: lesson.questions || null,
                         questionCount: lessonQuestionCount(lesson)
                     });
@@ -143,6 +147,10 @@
                         title: text(chapter.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
+                        // Linked by the book route; absent on an older payload,
+                        // in which case the renderers escape the plain fields.
+                        summaryHtml: text(chapter.summaryHtml),
+                        focusHtml: text(chapter.focusHtml),
                         questions: null,
                         questionCount: 0,
                         locked: true
@@ -182,6 +190,8 @@
                     title: text(loaded.title) || lesson.title,
                     summary: text(loaded.summary) || lesson.summary,
                     focus: text(loaded.focus) || lesson.focus,
+                    summaryHtml: text(loaded.summaryHtml) || lesson.summaryHtml,
+                    focusHtml: text(loaded.focusHtml) || lesson.focusHtml,
                     conceptBrief: loaded.conceptBrief || lesson.conceptBrief,
                     conceptMap: loaded.conceptMap || lesson.conceptMap,
                     questions: loaded.questions || [],
@@ -347,6 +357,8 @@
                 chapterTitle: lesson.chapterTitle,
                 summary: lesson.summary,
                 focus: lesson.focus,
+                summaryHtml: lesson.summaryHtml,
+                focusHtml: lesson.focusHtml,
                 lessons: []
             };
             chapters.push(chapter);
@@ -423,8 +435,8 @@
             '<div class="commu-lesson-title-row">',
             '<h2>' + escapeHtml(chapterTitle(chapter)) + '</h2>',
             '</div>',
-            '<p class="commu-lesson-summary">' + escapeHtml(lessonSummary(chapter)) + '</p>',
-            chapter.focus ? '<p class="commu-lesson-focus">' + escapeHtml(chapter.focus) + '</p>' : '',
+            '<p class="commu-lesson-summary">' + (chapter.summaryHtml || escapeHtml(lessonSummary(chapter))) + '</p>',
+            chapter.focus ? '<p class="commu-lesson-focus">' + (chapter.focusHtml || escapeHtml(chapter.focus)) + '</p>' : '',
             '<div class="commu-chapter-actions"></div>'
         ].join('');
         var actions = card.querySelector('.commu-chapter-actions');
@@ -608,8 +620,11 @@
         els.choices.classList.add('is-hidden');
         els.feedback.className = 'commu-feedback is-hidden';
         if (els.introTitle) els.introTitle.textContent = lang === 'en' ? 'Concept brief before the quiz' : '문제를 풀기 전, 개념 먼저 잡기';
-        if (els.introSummary) els.introSummary.textContent = lessonSummary(active.lesson);
-        if (els.introFocus) els.introFocus.textContent = active.lesson.focus || introFallback(active.lesson);
+        if (els.introSummary) els.introSummary.innerHTML = active.lesson.summaryHtml || escapeHtml(lessonSummary(active.lesson));
+        if (els.introFocus) {
+            els.introFocus.innerHTML = active.lesson.focusHtml
+                || escapeHtml(active.lesson.focus || introFallback(active.lesson));
+        }
         renderDiagram(active.lesson);
         els.next.disabled = false;
         els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';

@@ -13,6 +13,15 @@ const {
 // Korean compounds that contain a term alias but must never link.
 const BLOCKED_TERM_KO = ['집단농장화'];
 
+// Aliases that are also ordinary Korean words — the term counterpart of
+// NEVER_LINK_ALIAS_KO in people-linkify. They surfaced when lesson prose
+// started being linked: 『자본론』 using 주체 in the plain sense of "subject"
+// was pointed at 주체사상, and 소개 meaning "introduction" at the 1941
+// evacuation. Each entry stays reachable by its headword and its longer
+// aliases; only the bare ambiguous string is refused, and only when it is not
+// the headword itself.
+const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '씨밤'];
+
 // A word can name a thing that has its own main entry while a second entry
 // exists about the word itself. '예조프시나' is the euphemism the post-Stalin
 // USSR used for the 1937–38 campaign: the campaign is 대숙청, and the
@@ -54,6 +63,7 @@ function buildTermLinkIndex(terms, options = {}) {
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2 || byAlias[alias]) return;
+            if (!en && alias !== label && NEVER_LINK_TERM_ALIAS_KO.includes(alias)) return;
             byAlias[alias] = entry;
             tokens.push(alias);
         });

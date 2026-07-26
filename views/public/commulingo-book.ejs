@@ -55,6 +55,33 @@
             </div>
         </header>
 
+        <%# Dictionary entries this book's prose actually names, read off the links
+            the linkifier found in its lessons. The chapter list is titles and
+            one-line summaries, so without this the page gives no sign that the
+            people and glossary entries behind it exist. %>
+        <% var dict = (typeof dictionaryEntries !== 'undefined' && dictionaryEntries) || { people: [], terms: [] }; %>
+        <% if ((dict.terms && dict.terms.length) || (dict.people && dict.people.length)) { %>
+        <section class="box commu-book-dictionary" aria-labelledby="book-dictionary">
+            <h2 id="book-dictionary"><%= lang === 'en' ? 'Dictionary entries in this book' : '이 책이 다루는 사전 항목' %></h2>
+            <% if (dict.terms && dict.terms.length) { %>
+            <h3><%= lang === 'en' ? 'Terms' : '용어' %></h3>
+            <div class="commu-term-chips">
+                <% dict.terms.forEach(function(entry) { %>
+                <a class="commu-term-chip" href="/commulingo/terms/<%= encodeURIComponent(entry.id) %>"><%= entry.label %></a>
+                <% }) %>
+            </div>
+            <% } %>
+            <% if (dict.people && dict.people.length) { %>
+            <h3><%= lang === 'en' ? 'People' : '인물' %></h3>
+            <div class="commu-term-chips">
+                <% dict.people.forEach(function(entry) { %>
+                <a class="commu-term-chip" href="/commulingo/people/<%= encodeURIComponent(entry.id) %>"><%= entry.label %></a>
+                <% }) %>
+            </div>
+            <% } %>
+        </section>
+        <% } %>
+
         <section class="commulingo-lessons" id="commuLessonList" aria-label="<%= bookTitle %>"></section>
 
         <section class="commu-quiz is-hidden" id="commuQuiz" aria-live="polite">

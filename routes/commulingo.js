@@ -559,9 +559,30 @@ router.get('/book/:collectionId', async (req, res) => {
             })).filter(person => person.aliases.length);
         }
 
+        // Chapter summaries and learning focuses are the prose the book's own
+        // page shows before a lesson is ever opened, so they carry the same
+        // dictionary links the concept briefs do.
+        let linked = collection;
+        let dictionaryEntries = { people: [], terms: [] };
+        try {
+            const linkers = await commuLingoLinkers();
+            linked = {
+                ...collection,
+                chapters: (collection.chapters || []).map(chapter => ({
+                    ...chapter,
+                    summaryHtml: linkLocalized(linkers, chapter.summary),
+                    focusHtml: linkLocalized(linkers, chapter.learningFocus),
+                })),
+            };
+            dictionaryEntries = await bookDictionaryEntries(collection, res.locals.lang);
+        } catch (err) {
+            console.error('commulingo book linkify:', err);
+        }
+
         const bookTitle = localize(collection.title, res.locals.lang);
         res.render('public/commulingo-book', {
-            lessons: { version: catalog.version, collections: [collection] },
+            lessons: { version: catalog.version, collections: [linked] },
+            dictionaryEntries,
             decisionPeople,
             bookFormat: collection.format || 'quiz',
             bookTitle,
@@ -593,19 +614,22 @@ router.get('/catalog.json', (req, res) => {
 // Prompts and choices are deliberately left unlinked. A link inside a question
 // invites the reader out of it mid-answer, and on a multiple-choice item it can
 // point at the answer.
-async function linkifyLessonPayload(lesson) {
+// One set of indexes per language, shared by the book page and the lesson
+// payload. Each returned factory opens a fresh seen-set, so a passage links a
+// term at its first mention and leaves the rest plain — the rule the person and
+// glossary pages already apply to their own prose. Documents link first, then
+// people, then terms: the same order and the same escaping hand-off as the
+// person detail page.
+async function commuLingoLinkers() {
     const catalog = loadCommuLingoCatalog();
     const [people, terms] = await Promise.all([loadCommuLingoPeople(), loadCommuLingoTerms()]);
     const docs = listCommuLingoDocs();
+    const byLang = {};
     for (const lang of ['ko', 'en']) {
         const { linkIndex } = getStandardized(people.data, catalog, lang);
         const termIndex = personTermIndexFor(terms, lang);
         const docIndex = docLinkIndexFor(docs, lang);
-        // Documents link first, then people, then terms: the same order and the
-        // same escaping hand-off as the person detail page. The seen-sets keep
-        // a term that runs through a whole passage to a link at its first
-        // mention.
-        const linker = () => {
+        byLang[lang] = () => {
             const seenDocs = new Set();
             const seenTerms = new Set();
             return value => (typeof value === 'string' && value
@@ -615,6 +639,79 @@ async function linkifyLessonPayload(lesson) {
                 )
                 : '');
         };
+    }
+    return byLang;
+}
+
+// {ko, en} of prose in, {ko, en} of linked HTML out, each language with its own
+// seen-set. Returns null for anything that is not a bilingual object, so the
+// client keeps falling back to the plain field.
+function linkLocalized(linkers, value) {
+    if (!value || typeof value !== 'object') return null;
+    const out = {};
+    for (const lang of ['ko', 'en']) out[lang] = linkers[lang]()(value[lang] || '');
+    return out;
+}
+
+const ENTITY_LINK_RE = /<a class="commu-(person|term)-link" href="\/commulingo\/(people|terms)\/([^"]+)"[^>]*>/g;
+
+// Which dictionary entries a book actually talks about, read off the links the
+// linkifier already found rather than curated by hand — a chapter list of
+// one-line summaries shows almost none of them, so the book page would
+// otherwise give no sign that the entries exist. Runs over the collection's
+// lesson shards once per request; they are small local files and the page is
+// rendered rarely enough that this stays cheaper than storing a second index.
+async function bookDictionaryEntries(collection, lang) {
+    const [linkers, catalog, loadedPeople, allTerms] = await Promise.all([
+        commuLingoLinkers(), loadCommuLingoCatalog(), loadCommuLingoPeople(), loadCommuLingoTerms(),
+    ]);
+    // A chip carries the entry's headword, not whichever alias the prose
+    // happened to use: prose saying 맬서스 인구론 or 감소되지 않은 노동수익
+    // should list 맬서스주의 and 노동전수익권, the names those entries are filed
+    // under.
+    const { standardized } = getStandardized(loadedPeople.data, catalog, lang);
+    const personNames = new Map(standardized.people.map(p => [p.id, p.displayName || localize(p.name, lang)]));
+    const termNames = new Map((allTerms || []).map(t => [t.id, localize(t.term, lang)]));
+    const people = new Map();
+    const terms = new Map();
+    const collect = value => {
+        const html = linkers[lang]()(value || '');
+        for (const match of html.matchAll(ENTITY_LINK_RE)) {
+            const [, , kind, rawId] = match;
+            const id = decodeURIComponent(rawId);
+            const bucket = kind === 'people' ? people : terms;
+            const label = (kind === 'people' ? personNames : termNames).get(id);
+            if (label && !bucket.has(id)) bucket.set(id, { id, label });
+        }
+    };
+    for (const chapter of collection.chapters || []) {
+        collect(chapter.summary && chapter.summary[lang]);
+        collect(chapter.learningFocus && chapter.learningFocus[lang]);
+        for (const stub of chapter.lessons || []) {
+            const payload = loadCommuLingoLesson(stub.id);
+            if (!payload) continue;
+            const lesson = payload.lesson;
+            ((lesson.conceptBrief && lesson.conceptBrief[lang]) || []).forEach(section => {
+                collect(section.text);
+                (section.items || []).forEach(collect);
+            });
+            ((lesson.conceptMap && lesson.conceptMap[lang]) || []).forEach(node => collect(node.text));
+            (lesson.questions || []).forEach(question => {
+                collect(question.explanation && question.explanation[lang]);
+            });
+        }
+    }
+    return { people: [...people.values()], terms: [...terms.values()] };
+}
+
+async function linkifyLessonPayload(lesson) {
+    const linkers = await commuLingoLinkers();
+    // The chapter summary and focus shown above the brief, linked the same way
+    // the book page links them so the two screens do not disagree.
+    lesson.summaryHtml = linkLocalized(linkers, lesson.summary);
+    lesson.focusHtml = linkLocalized(linkers, lesson.focus);
+    for (const lang of ['ko', 'en']) {
+        const linker = linkers[lang];
         // The brief and the map are one passage and share a set. Each
         // explanation gets its own, because the reader meets it on its own card
         // after answering — sharing the brief's set would leave the quiz almost

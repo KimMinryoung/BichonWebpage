@@ -3378,3 +3378,15 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-term-chip:hover { border-color: var(--link, #b84f4f); }
 /* A chip for a nested entry, shown under its parent on the event page. */
 .commu-term-chip.is-child { font-size: .88rem; opacity: .85; border-style: dashed; }
+
+/* The dictionary entries a book's lessons name, listed under its hero. Two
+   chip rows under one heading, so the h3 labels sit tighter than a section
+   heading would. */
+.commu-book-dictionary { margin-bottom: 1.5rem; }
+.commu-book-dictionary h3 {
+    margin: 1rem 0 .5rem;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: .75;
+}
+.commu-book-dictionary h3:first-of-type { margin-top: .75rem; }
