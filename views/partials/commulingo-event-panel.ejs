@@ -1,0 +1,59 @@
+<%
+/* The narrative half of an entry. Rendered on its own for an ordinary event,
+   and as one of two tab panels when a glossary term covers the same subject.
+   Locals: p (the panel object from buildEventPanel), en. */
+%>
+        <header class="commu-event-head">
+            <span class="commu-event-period"><%= p.event.period %></span>
+            <h1><%= p.event.title %></h1>
+            <p class="commu-event-question"><%= p.event.question %></p>
+            <p><%= p.event.summary %></p>
+        </header>
+        <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
+            <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
+            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%= item.body %></p></div></li><% }) %></ol>
+        </section>
+        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%= p.event.outcome %></p></section>
+        <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
+            <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %> <span class="commu-event-people-count"><%= p.event.people.length %><%= en ? '' : '명' %></span></h2>
+            <% p.event.peopleGroups.forEach(function(group) { %>
+            <div class="commu-event-people-group is-<%= group.kind %>">
+                <h3 class="commu-event-people-group-head"><%= group.label %><span class="commu-event-people-group-count"><%= group.people.length %></span></h3>
+                <div class="commu-event-people-grid"><% group.people.forEach(function(person) { %><a class="is-<%= person.kind %>" href="/commulingo/people/<%= person.id %>"><span class="commu-event-person-relation"><%= person.relation %></span><strong><%= person.name %></strong><small><%= person.years %></small><p><%= person.note %></p></a><% }) %></div>
+            </div>
+            <% }) %>
+        </section>
+        <% if (p.relatedTerms && p.relatedTerms.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="event-terms">
+            <h2 id="event-terms"><%= en ? 'Related terms' : '관련 용어' %></h2>
+            <div class="commu-term-chips">
+                <% p.relatedTerms.forEach(function(entry) { %>
+                <a class="commu-term-chip" href="/commulingo/terms/<%= encodeURIComponent(entry.id) %>"><%= entry.term %></a>
+                <% entry.children.forEach(function(child) { %>
+                <a class="commu-term-chip is-child" href="/commulingo/terms/<%= encodeURIComponent(child.id) %>">└ <%= child.term %></a>
+                <% }) %>
+                <% }) %>
+            </div>
+        </section>
+        <% } %>
+        <% if (p.relatedDocs && p.relatedDocs.length) { %>
+        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
+            <h2 id="related-docs"><%= en ? 'Reference documents' : '참고 문헌' %></h2>
+            <ul class="commu-related-report-list commu-related-doc-list">
+                <% p.relatedDocs.forEach(function(doc) { %>
+                <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+        <% if (p.relatedReports && p.relatedReports.length) { %>
+        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
+            <h2 id="related-reports"><%= en ? 'Related reports' : '관련 보고서' %></h2>
+            <ul class="commu-related-report-list">
+                <% p.relatedReports.forEach(function(report) { %>
+                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (en ? 'Report' : '보고서') %></span><strong><%= report.title %></strong></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
+        <% if (p.event.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% p.event.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>

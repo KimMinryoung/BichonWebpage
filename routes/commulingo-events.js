@@ -26,25 +26,11 @@ function relatedDocsForEvent(eventId, lang) {
 // events; the event page listed nothing back, so a reader on 대숙청 had no way
 // through to 예조프시나 or 모스크바 재판. Children are folded under their
 // parent so one campaign does not spread across six sibling chips.
-// The concept half of a paired entry: the glossary holds the definition and the
-// nested entries, which the event record has no field for. Shown here rather
-// than linked from the bottom, the same way the term page carries the timeline.
-async function pairedTermForEvent(eventId, lang) {
+async function pairedTermIdFor(eventId) {
     try {
         const terms = await loadCommuLingoTerms();
         const term = terms.find(item => item.sameSubjectEvent && item.sameSubjectEvent.id === eventId);
-        if (!term) return null;
-        return {
-            id: term.id,
-            term: localize(term.term, lang),
-            original: term.original || '',
-            definition: localize(term.definition, lang),
-            children: (term.children || []).map(child => ({
-                id: child.id,
-                term: localize(child.term, lang),
-                period: localize(child.period, lang),
-            })),
-        };
+        return term ? term.id : null;
     } catch (e) {
         console.error('commulingo event paired term:', e);
         return null;
@@ -57,8 +43,8 @@ async function relatedTermsForEvent(eventId, lang) {
         const linked = terms.filter(term => (term.events || []).some(event => event.id === eventId));
         const linkedIds = new Set(linked.map(term => term.id));
         return linked
-            // The paired term is carried by the transcluded definition above,
-            // and its nested entries ride along there too.
+            // The paired term is a whole panel of its own on this page, and
+            // its nested entries ride along inside it.
             .filter(term => !(term.sameSubjectEvent && term.sameSubjectEvent.id === eventId))
             .filter(term => !(term.parent && linkedIds.has(term.parent.id)))
             .map(term => ({
@@ -136,6 +122,34 @@ function presentEvent(raw, lang) {
     };
 }
 
+// Everything the event half of a page needs. Exported so the glossary route can
+// render this panel beside its own when the two entries are the same subject:
+// the reader switches between concept and narrative without leaving the page,
+// and nothing has to be copied from one record into the other.
+async function buildEventPanel(eventId, lang) {
+    const events = await loadCommuLingoHistoryEvents();
+    const index = events.findIndex(event => event.id === eventId);
+    if (index === -1) return null;
+    let relatedReports = [];
+    try {
+        relatedReports = await getReportsForEvent(eventId, lang);
+    } catch (e) {
+        console.error('commulingo event related reports:', e);
+    }
+    const neighbor = offset => {
+        const item = events[index + offset];
+        return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
+    };
+    return {
+        event: presentEvent(events[index], lang),
+        relatedTerms: await relatedTermsForEvent(eventId, lang),
+        relatedDocs: relatedDocsForEvent(eventId, lang),
+        relatedReports,
+        prevEvent: neighbor(-1),
+        nextEvent: neighbor(1),
+    };
+}
+
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
@@ -158,35 +172,23 @@ router.get('/:eventId', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const eventId = typeof req.params.eventId === 'string' ? req.params.eventId.trim() : '';
-        const allEvents = await loadCommuLingoHistoryEvents();
-        const index = allEvents.findIndex(event => event.id === eventId);
-        const raw = index === -1 ? null : allEvents[index];
-        if (!raw) return errorPage.notFound(res, {
+        const panel = await buildEventPanel(eventId, lang);
+        if (!panel) return errorPage.notFound(res, {
             message: lang === 'en' ? 'Historical event not found.' : '역사 사건을 찾을 수 없습니다.',
             backHref: '/commulingo/events', backLabel: lang === 'en' ? 'Historical events' : '역사 사건',
         });
-        const event = presentEvent(raw, lang);
-        const neighbor = offset => {
-            const item = allEvents[index + offset];
-            return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
-        };
-        // Public research reports that mention this event. Failure only costs
-        // the section, never the page.
-        let relatedReports = [];
-        try {
-            relatedReports = await getReportsForEvent(eventId, lang);
-        } catch (e) {
-            console.error('commulingo event related reports:', e);
-        }
+        const event = panel.event;
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        // The glossary half, when the two entries are the same subject. Required
+        // here rather than at the top of the file: the two routes reach into
+        // each other and a top-level require would be a cycle.
+        const { buildTermPanel } = require('./commulingo-terms');
+        const pairedTerm = await pairedTermIdFor(eventId);
         res.render('public/commulingo-event', {
+            ...panel,
             event,
-            pairedTerm: await pairedTermForEvent(eventId, lang),
-            relatedTerms: await relatedTermsForEvent(eventId, lang),
-            prevEvent: neighbor(-1),
-            nextEvent: neighbor(1),
-            relatedReports,
-            relatedDocs: relatedDocsForEvent(eventId, lang),
+            termPanel: pairedTerm ? await buildTermPanel(pairedTerm, lang) : null,
+            activePanel: 'event',
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,
@@ -202,3 +204,6 @@ router.get('/:eventId', async (req, res) => {
 });
 
 module.exports = router;
+// Attached to the router so the glossary route can build this panel. See the
+// lazy require in the detail handler for why this is not a shared module.
+module.exports.buildEventPanel = buildEventPanel;

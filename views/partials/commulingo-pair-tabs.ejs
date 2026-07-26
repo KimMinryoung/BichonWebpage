@@ -1,0 +1,25 @@
+<%
+/* Switcher between the two halves of one subject — the glossary entry and the
+   history entry — when both exist. Reuses the dictionary switcher's look, since
+   it is the same gesture one level down. `activePanel` is 'term' or 'event';
+   the labels carry the dictionary each panel comes from, so it is clear the tab
+   is not a section of one entry but the other entry.
+
+   Both panels are already in the page, so switching is a class change, not a
+   navigation. The inactive tab is also a real link to the counterpart's URL, so
+   the page works without JavaScript and each half keeps its own address. */
+var pairTabs = [
+    { key: 'term', href: '/commulingo/terms/' + encodeURIComponent(pairTermId),
+      label: en ? 'Glossary' : '용어 사전', sub: en ? 'Concept' : '개념' },
+    { key: 'event', href: '/commulingo/events/' + encodeURIComponent(pairEventId),
+      label: en ? 'Historical event' : '역사 사건', sub: en ? 'Narrative' : '사건 서사' },
+];
+%>
+<nav class="commu-dict-nav commu-pair-tabs" aria-label="<%= en ? 'Two entries on this subject' : '같은 주제의 두 항목' %>" data-active="<%= activePanel %>">
+    <% pairTabs.forEach(function(tab) { %>
+    <a class="commu-dict-tab commu-pair-tab<%= activePanel === tab.key ? ' is-active' : '' %>"
+       href="<%= tab.href %>" data-panel="<%= tab.key %>"<% if (activePanel === tab.key) { %> aria-current="page"<% } %>>
+        <span><%= tab.sub %><small><%= tab.label %></small></span>
+    </a>
+    <% }) %>
+</nav>

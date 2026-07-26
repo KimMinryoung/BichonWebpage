@@ -2,7 +2,6 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
-const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { listCommuLingoDocs, listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForTerm } = require('../services/report-mentions');
 const {
@@ -37,33 +36,6 @@ function relatedDocsFor(kind, id, lang) {
 
 const router = express.Router();
 
-// The narrative half of a paired entry. The term page owns the definition, the
-// aliases, the category and the nesting; the event record owns the timeline and
-// the consequences. Neither is a summary of the other, so the term page shows
-// both rather than linking to the second from a list at the bottom. Failure
-// costs the two sections, never the page.
-async function pairedEventNarrative(eventId, lang) {
-    try {
-        const events = await loadCommuLingoHistoryEvents();
-        const event = events.find(item => item.id === eventId);
-        if (!event) return null;
-        return {
-            id: event.id,
-            title: localize(event.title, lang),
-            period: event.period || event.period_label || '',
-            outcome: localize(event.outcome, lang),
-            timeline: (event.timeline || []).map(item => ({
-                date: item.date || '',
-                title: localize(item.title, lang),
-                body: localize(item.body, lang),
-            })),
-        };
-    } catch (e) {
-        console.error('commulingo term paired event:', e);
-        return null;
-    }
-}
-
 function localize(value, lang) {
     if (!value) return '';
     if (typeof value === 'string') return value;
@@ -83,8 +55,7 @@ function presentTerm(raw, lang) {
         definition: localize(raw.definition, lang),
         body: localize(raw.body, lang),
         people: (raw.people || []).map(person => ({ ...person, name: localize(person.name, lang) })),
-        // The paired event is carried by the header note and the transcluded
-        // timeline, so it would be a third mention of itself in this list.
+        // The paired event is a whole panel of its own on this page.
         events: (raw.events || [])
             .filter(event => !(raw.sameSubjectEvent && event.id === raw.sameSubjectEvent.id))
             .map(event => ({ ...event, title: localize(event.title, lang) })),
@@ -277,58 +248,75 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Everything the glossary half of a page needs. Exported so the events route
+// can render this panel beside its own when the two entries are the same
+// subject. Returns null when the id is unknown.
+async function buildTermPanel(termId, lang) {
+    const allTerms = await loadCommuLingoTerms();
+    const raw = allTerms.find(item => item.id === termId);
+    if (!raw) return null;
+    const term = presentTerm(raw, lang);
+    // One `seen` set across definition and body: the first mention of another
+    // term links, later ones stay plain.
+    const linkIndex = termLinkIndexFor(allTerms, lang);
+    const linked = new Set();
+    // Reference documents link first and terms second. A document alias is a
+    // whole work title and a term alias can sit inside one (『현물세』 against
+    // 현물세), and whichever pass runs first keeps the match, because the other
+    // skips anchor contents. The doc pass also does the escaping for the
+    // definition, so the term pass takes its HTML output rather than escaping a
+    // second time.
+    const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
+    const linkedDocs = new Set();
+    const definitionHtml = linkifyTermsHtml(
+        linkifyDocsPlain(term.definition, docIndex, null, linkedDocs),
+        linkIndex, term.id, linked,
+    );
+    const bodyHtml = term.body
+        ? linkifyTermsHtml(
+            linkifyDocsHtml(renderMarkdown(term.body), docIndex, null, linkedDocs),
+            linkIndex, term.id, linked,
+        )
+        : '';
+    // Public research reports that mention this term. Failure only costs the
+    // section, never the page.
+    let relatedReports = [];
+    try {
+        relatedReports = await getReportsForTerm(termId, lang);
+    } catch (e) {
+        console.error('commulingo term related reports:', e);
+    }
+    return {
+        term,
+        definitionHtml,
+        bodyHtml,
+        sources: presentSources(term.sources, lang, relatedReports),
+        relatedReports,
+        relatedDocs: relatedDocsFor('terms', termId, lang),
+    };
+}
+
 router.get('/:termId', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const termId = typeof req.params.termId === 'string' ? req.params.termId.trim() : '';
-        const allTerms = await loadCommuLingoTerms();
-        const raw = allTerms.find(term => term.id === termId);
-        if (!raw) return errorPage.notFound(res, {
+        const panel = await buildTermPanel(termId, lang);
+        if (!panel) return errorPage.notFound(res, {
             message: lang === 'en' ? 'Term not found.' : '용어를 찾을 수 없습니다.',
             backHref: '/commulingo/terms', backLabel: lang === 'en' ? 'Glossary' : '용어 사전',
         });
-        const term = presentTerm(raw, lang);
-        // One `seen` set across definition and body: the first mention of
-        // another term links, later ones stay plain.
-        const linkIndex = termLinkIndexFor(allTerms, lang);
-        const linked = new Set();
-        // Reference documents link first and terms second. A document alias is
-        // a whole work title and a term alias can sit inside one (『현물세』
-        // against 현물세), and whichever pass runs first keeps the match,
-        // because the other skips anchor contents. The doc pass also does the
-        // escaping for the definition, so the term pass takes its HTML output
-        // rather than escaping a second time.
-        const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
-        const linkedDocs = new Set();
-        const definitionHtml = linkifyTermsHtml(
-            linkifyDocsPlain(term.definition, docIndex, null, linkedDocs),
-            linkIndex, term.id, linked,
-        );
-        const bodyHtml = term.body
-            ? linkifyTermsHtml(
-                linkifyDocsHtml(renderMarkdown(term.body), docIndex, null, linkedDocs),
-                linkIndex, term.id, linked,
-            )
-            : '';
-        // Public research reports that mention this term. Failure only costs
-        // the section, never the page.
-        let relatedReports = [];
-        try {
-            relatedReports = await getReportsForTerm(termId, lang);
-        } catch (e) {
-            console.error('commulingo term related reports:', e);
-        }
+        const term = panel.term;
+        // The narrative half, when the two entries are the same subject. Lazy
+        // require: the two routes reach into each other.
+        const { buildEventPanel } = require('./commulingo-events');
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-term', {
+            ...panel,
             term,
-            pairedEvent: term.sameSubjectEvent
-                ? await pairedEventNarrative(term.sameSubjectEvent.id, lang)
+            eventPanel: term.sameSubjectEvent
+                ? await buildEventPanel(term.sameSubjectEvent.id, lang)
                 : null,
-            definitionHtml,
-            bodyHtml,
-            sources: presentSources(term.sources, lang, relatedReports),
-            relatedReports,
-            relatedDocs: relatedDocsFor('terms', termId, lang),
+            activePanel: 'term',
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,
             pagePath: `/commulingo/terms/${term.id}`,
@@ -344,3 +332,6 @@ router.get('/:termId', async (req, res) => {
 });
 
 module.exports = router;
+// Attached to the router so the events route can build this panel. See the lazy
+// require in the detail handler for why this is not a shared module.
+module.exports.buildTermPanel = buildTermPanel;
