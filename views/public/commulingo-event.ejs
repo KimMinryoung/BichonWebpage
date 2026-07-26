@@ -10,8 +10,29 @@
             <span class="commu-event-period"><%= event.period %></span>
             <h1><%= event.title %></h1>
             <p class="commu-event-question"><%= event.question %></p>
+            <% if (typeof pairedTerm !== 'undefined' && pairedTerm) { %>
+            <p class="commu-term-paired"><%= en ? 'Also a glossary entry' : '용어 사전에도 수록' %> ·
+                <a href="/commulingo/terms/<%= encodeURIComponent(pairedTerm.id) %>"><%= pairedTerm.term %></a>
+            </p>
+            <% } %>
             <p><%= event.summary %></p>
         </header>
+        <% if (typeof pairedTerm !== 'undefined' && pairedTerm) { %>
+        <section class="commu-person-detail-section" aria-labelledby="event-definition">
+            <h2 id="event-definition"><%= en ? 'Definition' : '정의' %>
+                <a class="commu-term-paired-source" href="/commulingo/terms/<%= encodeURIComponent(pairedTerm.id) %>"><%= en ? 'from the glossary' : '용어 사전 항목에서' %></a>
+            </h2>
+            <% if (pairedTerm.original) { %><p class="commu-event-period"><%= pairedTerm.original %></p><% } %>
+            <p><%= pairedTerm.definition %></p>
+            <% if (pairedTerm.children.length) { %>
+            <ul class="commu-person-event-links commu-term-child-list">
+                <% pairedTerm.children.forEach(function(child) { %>
+                <li><a href="/commulingo/terms/<%= encodeURIComponent(child.id) %>"><span><%= child.period %></span><strong><%= child.term %></strong></a></li>
+                <% }) %>
+            </ul>
+            <% } %>
+        </section>
+        <% } %>
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
             <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
             <ol class="commu-event-timeline-list"><% event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%= item.body %></p></div></li><% }) %></ol>

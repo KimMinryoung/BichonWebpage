@@ -10,6 +10,11 @@
             <span class="commu-event-period"><%= term.original %><% if (term.period && term.period !== '개념') { %> · <%= term.period %><% } %></span>
             <h1><%= term.term %></h1>
             <% if (term.termOther) { %><p class="commu-event-question"><%= term.termOther %></p><% } %>
+            <% if (typeof pairedEvent !== 'undefined' && pairedEvent) { %>
+            <p class="commu-term-paired"><%= en ? 'Also a historical event' : '역사 사건으로도 수록' %> ·
+                <a href="/commulingo/events/<%= encodeURIComponent(pairedEvent.id) %>"><%= pairedEvent.title %></a>
+            </p>
+            <% } %>
             <% if (term.parent) { %>
             <p class="commu-term-parent"><%= en ? 'Part of' : '상위 항목' %> ·
                 <a href="/commulingo/terms/<%= encodeURIComponent(term.parent.id) %>"><%= term.parent.term %></a>
@@ -21,6 +26,20 @@
         <section class="commu-person-detail-section" aria-labelledby="term-body">
             <h2 id="term-body"><%= en ? 'In depth' : '상세' %></h2>
             <div class="commu-person-markdown"><%- bodyHtml %></div>
+        </section>
+        <% } %>
+        <% if (typeof pairedEvent !== 'undefined' && pairedEvent && pairedEvent.timeline.length) { %>
+        <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="term-timeline">
+            <h2 id="term-timeline"><%= en ? 'Timeline' : '연표' %>
+                <a class="commu-term-paired-source" href="/commulingo/events/<%= encodeURIComponent(pairedEvent.id) %>"><%= en ? 'from the historical event' : '역사 사건 항목에서' %></a>
+            </h2>
+            <ol class="commu-event-timeline-list"><% pairedEvent.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%= item.body %></p></div></li><% }) %></ol>
+        </section>
+        <% } %>
+        <% if (typeof pairedEvent !== 'undefined' && pairedEvent && pairedEvent.outcome) { %>
+        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="term-outcome">
+            <h2 id="term-outcome"><%= en ? 'Consequences' : '결과' %></h2>
+            <p><%= pairedEvent.outcome %></p>
         </section>
         <% } %>
         <% if (term.children && term.children.length) { %>

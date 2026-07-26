@@ -26,12 +26,40 @@ function relatedDocsForEvent(eventId, lang) {
 // events; the event page listed nothing back, so a reader on 대숙청 had no way
 // through to 예조프시나 or 모스크바 재판. Children are folded under their
 // parent so one campaign does not spread across six sibling chips.
+// The concept half of a paired entry: the glossary holds the definition and the
+// nested entries, which the event record has no field for. Shown here rather
+// than linked from the bottom, the same way the term page carries the timeline.
+async function pairedTermForEvent(eventId, lang) {
+    try {
+        const terms = await loadCommuLingoTerms();
+        const term = terms.find(item => item.sameSubjectEvent && item.sameSubjectEvent.id === eventId);
+        if (!term) return null;
+        return {
+            id: term.id,
+            term: localize(term.term, lang),
+            original: term.original || '',
+            definition: localize(term.definition, lang),
+            children: (term.children || []).map(child => ({
+                id: child.id,
+                term: localize(child.term, lang),
+                period: localize(child.period, lang),
+            })),
+        };
+    } catch (e) {
+        console.error('commulingo event paired term:', e);
+        return null;
+    }
+}
+
 async function relatedTermsForEvent(eventId, lang) {
     try {
         const terms = await loadCommuLingoTerms();
         const linked = terms.filter(term => (term.events || []).some(event => event.id === eventId));
         const linkedIds = new Set(linked.map(term => term.id));
         return linked
+            // The paired term is carried by the transcluded definition above,
+            // and its nested entries ride along there too.
+            .filter(term => !(term.sameSubjectEvent && term.sameSubjectEvent.id === eventId))
             .filter(term => !(term.parent && linkedIds.has(term.parent.id)))
             .map(term => ({
                 id: term.id,
@@ -153,6 +181,7 @@ router.get('/:eventId', async (req, res) => {
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-event', {
             event,
+            pairedTerm: await pairedTermForEvent(eventId, lang),
             relatedTerms: await relatedTermsForEvent(eventId, lang),
             prevEvent: neighbor(-1),
             nextEvent: neighbor(1),

@@ -2,6 +2,7 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
+const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { listCommuLingoDocs, listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForTerm } = require('../services/report-mentions');
 const {
@@ -36,6 +37,33 @@ function relatedDocsFor(kind, id, lang) {
 
 const router = express.Router();
 
+// The narrative half of a paired entry. The term page owns the definition, the
+// aliases, the category and the nesting; the event record owns the timeline and
+// the consequences. Neither is a summary of the other, so the term page shows
+// both rather than linking to the second from a list at the bottom. Failure
+// costs the two sections, never the page.
+async function pairedEventNarrative(eventId, lang) {
+    try {
+        const events = await loadCommuLingoHistoryEvents();
+        const event = events.find(item => item.id === eventId);
+        if (!event) return null;
+        return {
+            id: event.id,
+            title: localize(event.title, lang),
+            period: event.period || event.period_label || '',
+            outcome: localize(event.outcome, lang),
+            timeline: (event.timeline || []).map(item => ({
+                date: item.date || '',
+                title: localize(item.title, lang),
+                body: localize(item.body, lang),
+            })),
+        };
+    } catch (e) {
+        console.error('commulingo term paired event:', e);
+        return null;
+    }
+}
+
 function localize(value, lang) {
     if (!value) return '';
     if (typeof value === 'string') return value;
@@ -55,9 +83,16 @@ function presentTerm(raw, lang) {
         definition: localize(raw.definition, lang),
         body: localize(raw.body, lang),
         people: (raw.people || []).map(person => ({ ...person, name: localize(person.name, lang) })),
-        events: (raw.events || []).map(event => ({ ...event, title: localize(event.title, lang) })),
+        // The paired event is carried by the header note and the transcluded
+        // timeline, so it would be a third mention of itself in this list.
+        events: (raw.events || [])
+            .filter(event => !(raw.sameSubjectEvent && event.id === raw.sameSubjectEvent.id))
+            .map(event => ({ ...event, title: localize(event.title, lang) })),
         related: (raw.related || []).map(entry => ({ id: entry.id, term: localize(entry.term, lang) })),
         parent: raw.parent ? { id: raw.parent.id, term: localize(raw.parent.term, lang) } : null,
+        sameSubjectEvent: raw.sameSubjectEvent
+            ? { id: raw.sameSubjectEvent.id, title: localize(raw.sameSubjectEvent.title, lang) }
+            : null,
         children: (raw.children || []).map(entry => ({
             id: entry.id,
             term: localize(entry.term, lang),
@@ -286,6 +321,9 @@ router.get('/:termId', async (req, res) => {
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-term', {
             term,
+            pairedEvent: term.sameSubjectEvent
+                ? await pairedEventNarrative(term.sameSubjectEvent.id, lang)
+                : null,
             definitionHtml,
             bodyHtml,
             sources: presentSources(term.sources, lang, relatedReports),

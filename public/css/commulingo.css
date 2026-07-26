@@ -3170,6 +3170,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
 .commu-term-parent { margin: .3rem 0 0; font-size: .92rem; color: var(--text-muted); font-weight: 700; letter-spacing: .02em; }
 .commu-term-parent a { color: var(--accent, #b84f4f); }
+/* '역사 사건으로도 수록 · 대숙청' — the counterpart entry, stated in the
+   header rather than in a list at the foot of the page. */
+.commu-term-paired { margin: .3rem 0 0; font-size: .92rem; font-weight: 700; letter-spacing: .02em; }
+.commu-term-paired a { color: var(--accent, #b84f4f); }
+/* Marks a section whose content is transcluded from the counterpart. */
+.commu-term-paired-source { font-size: .8rem; font-weight: 400; opacity: .75; margin-left: .5rem; }
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
 .commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; }

@@ -39,7 +39,8 @@ async function fetchTerms() {
              ORDER BY tp.term_id, tp.sort_order, tp.person_id`
         ),
         db.query(
-            `SELECT te.term_id, te.event_id, e.period_label, e.title_ko, e.title_en
+            `SELECT te.term_id, te.event_id, te.same_subject,
+                    e.period_label, e.title_ko, e.title_en
              FROM commulingo_term_events te
              JOIN commulingo_history_events e ON e.id = te.event_id
              ORDER BY te.term_id, te.sort_order, te.event_id`
@@ -63,12 +64,18 @@ async function fetchTerms() {
         });
     });
     const eventsByTerm = {};
+    // The one event that is the same subject as the term, kept apart from the
+    // 'related events' list: the pages transclude each other's content, which
+    // is a claim you can only make about one counterpart.
+    const sameSubjectByTerm = {};
     events.rows.forEach(row => {
-        (eventsByTerm[row.term_id] || (eventsByTerm[row.term_id] = [])).push({
+        const entry = {
             id: row.event_id,
             period: row.period_label || '',
             title: t(row.title_ko, row.title_en),
-        });
+        };
+        (eventsByTerm[row.term_id] || (eventsByTerm[row.term_id] = [])).push(entry);
+        if (row.same_subject) sameSubjectByTerm[row.term_id] = entry;
     });
     // Relations are stored one way round and mirrored here, so a single
     // ('nep','nepman') row shows up on both entries.
@@ -124,6 +131,7 @@ async function fetchTerms() {
         aliases: aliasesByTerm[row.id] || { ko: [], en: [] },
         people: peopleByTerm[row.id] || [],
         events: eventsByTerm[row.id] || [],
+        sameSubjectEvent: sameSubjectByTerm[row.id] || null,
         related: relatedByTerm[row.id] || [],
         parent: (row.parent_id && termLabels[row.parent_id] && row.parent_id !== row.id)
             ? termLabels[row.parent_id]
