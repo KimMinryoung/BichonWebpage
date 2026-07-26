@@ -4,6 +4,9 @@ const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-even
 const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { getReportsForEvent } = require('../services/report-mentions');
+const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
+const { buildTermLinkIndex, linkifyTermsHtml } = require('../data/commulingo/term-linkify');
+const { docLinkIndexFor, linkifyDocsPlain } = require('../data/commulingo/doc-linkify');
 
 const router = express.Router();
 
@@ -126,6 +129,39 @@ function presentEvent(raw, lang) {
 // render this panel beside its own when the two entries are the same subject:
 // the reader switches between concept and narrative without leaving the page,
 // and nothing has to be copied from one record into the other.
+// Glossary and reference-document links inside the event's own prose. The
+// report pages have linked entity names in running text for a long time and the
+// glossary pages link terms in theirs; the history pages were the one surface
+// left out, so a reader met 콜호스 or 쿨라크 in a summary with nothing under it.
+//
+// Documents link first and terms second, the order the glossary pages use: a
+// document alias is a whole work title and a term alias can sit inside one, and
+// whichever pass runs first keeps the match because the other skips anchor
+// contents.
+let termIndexMemo = { termsRef: null, byLang: {} };
+function eventTermIndexFor(terms, lang) {
+    if (termIndexMemo.termsRef !== terms) termIndexMemo = { termsRef: terms, byLang: {} };
+    if (!(lang in termIndexMemo.byLang)) {
+        termIndexMemo.byLang[lang] = buildTermLinkIndex(terms, { lang });
+    }
+    return termIndexMemo.byLang[lang];
+}
+
+// One `seen` set for the whole page, so a term named in the summary and again
+// in four timeline entries is a link once, at its first mention.
+function makeEventLinkifier(terms, lang, excludeTermId) {
+    const termIndex = eventTermIndexFor(terms, lang);
+    const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
+    const seenTerms = new Set();
+    const seenDocs = new Set();
+    return function (text) {
+        return linkifyTermsHtml(
+            linkifyDocsPlain(text, docIndex, null, seenDocs),
+            termIndex, excludeTermId, seenTerms,
+        );
+    };
+}
+
 async function buildEventPanel(eventId, lang) {
     const events = await loadCommuLingoHistoryEvents();
     const index = events.findIndex(event => event.id === eventId);
@@ -140,8 +176,23 @@ async function buildEventPanel(eventId, lang) {
         const item = events[index + offset];
         return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
     };
+    const terms = await loadCommuLingoTerms();
+    // The paired glossary entry is the other half of this page; linking its name
+    // here would point the reader at the tab they are already on.
+    const paired = terms.find(item => item.sameSubjectEvent && item.sameSubjectEvent.id === eventId);
+    const link = makeEventLinkifier(terms, lang, paired ? paired.id : null);
+    const event = presentEvent(events[index], lang);
+    // Reading order, so the first mention that links is the first one a reader
+    // reaches: question, summary, timeline, consequences.
+    // These four carry the rendered prose the panel prints with <%- %>. The
+    // panel has no escaped fallback on purpose: a caller that forgets them
+    // should show 'undefined', not print the raw text unescaped.
+    event.questionHtml = link(event.question);
+    event.summaryHtml = link(event.summary);
+    event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
+    event.outcomeHtml = link(event.outcome);
     return {
-        event: presentEvent(events[index], lang),
+        event,
         relatedTerms: await relatedTermsForEvent(eventId, lang),
         relatedDocs: relatedDocsForEvent(eventId, lang),
         relatedReports,

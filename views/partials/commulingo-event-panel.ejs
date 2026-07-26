@@ -6,14 +6,14 @@
         <header class="commu-event-head">
             <span class="commu-event-period"><%= p.event.period %></span>
             <h1><%= p.event.title %></h1>
-            <p class="commu-event-question"><%= p.event.question %></p>
-            <p><%= p.event.summary %></p>
+            <p class="commu-event-question"><%- p.event.questionHtml %></p>
+            <p><%- p.event.summaryHtml %></p>
         </header>
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
             <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
-            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%= item.body %></p></div></li><% }) %></ol>
+            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
-        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%= p.event.outcome %></p></section>
+        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
         <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
             <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %> <span class="commu-event-people-count"><%= p.event.people.length %><%= en ? '' : '명' %></span></h2>
             <% p.event.peopleGroups.forEach(function(group) { %>
