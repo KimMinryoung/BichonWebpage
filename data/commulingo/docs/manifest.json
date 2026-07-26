@@ -85,6 +85,13 @@
       ],
       "terms": [
         {
+          "id": "prodnalog",
+          "name": {
+            "ko": "현물세",
+            "en": "Prodnalog"
+          }
+        },
+        {
           "id": "state-capitalism",
           "name": {
             "ko": "국가자본주의",
