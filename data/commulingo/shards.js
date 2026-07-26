@@ -17,6 +17,7 @@ const PUBLIC_CHAPTER_LIMITS = {
     'lenin-imperialism': 10,
     'lenin-state-revolution': 6,
     'marx-wage-labour-capital': 6,
+    'marx-wages-and-programme': 8,
 };
 
 let freshnessCache = null;
