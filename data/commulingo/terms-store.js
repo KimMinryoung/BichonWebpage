@@ -17,6 +17,13 @@ function t(ko, en) {
     return { ko: ko || '', en: en || '' };
 }
 
+// Headwords are compared case-insensitively and without the article the event
+// titles carry — the glossary writes 'Great Purge', the history dictionary
+// 'The Great Purge', and they are the same name.
+function normalizeHeadword(value) {
+    return String(value || '').trim().toLowerCase().replace(/^the\s+/, '');
+}
+
 async function fetchTerms() {
     const [terms, aliases, people, events, relations] = await Promise.all([
         db.query(
@@ -64,10 +71,20 @@ async function fetchTerms() {
         });
     });
     const eventsByTerm = {};
-    // The one event that is the same subject as the term, kept apart from the
-    // 'related events' list: the pages transclude each other's content, which
-    // is a claim you can only make about one counterpart.
+    // The one event that is the same subject as the term rather than merely
+    // related to it, which is what puts the two entries behind tabs on one page.
+    //
+    // Decided by name: the two dictionaries printing the same headword is the
+    // statement that they are writing up the same thing, so it does not need a
+    // second statement in a flag column. Only an entry already linked to the
+    // event is considered, so two pages cannot be joined by a coincidence of
+    // wording. same_subject overrides in both directions when the names are
+    // wrong about it — TRUE pairs anyway, FALSE never pairs.
     const sameSubjectByTerm = {};
+    const headwords = {};
+    terms.rows.forEach(row => {
+        headwords[row.id] = [row.term_ko, row.term_en].map(normalizeHeadword).filter(Boolean);
+    });
     events.rows.forEach(row => {
         const entry = {
             id: row.event_id,
@@ -75,7 +92,10 @@ async function fetchTerms() {
             title: t(row.title_ko, row.title_en),
         };
         (eventsByTerm[row.term_id] || (eventsByTerm[row.term_id] = [])).push(entry);
-        if (row.same_subject) sameSubjectByTerm[row.term_id] = entry;
+        if (row.same_subject === false) return;
+        const named = (headwords[row.term_id] || []).some(word =>
+            word === normalizeHeadword(row.title_ko) || word === normalizeHeadword(row.title_en));
+        if (row.same_subject === true || named) sameSubjectByTerm[row.term_id] = entry;
     });
     // Relations are stored one way round and mirrored here, so a single
     // ('nep','nepman') row shows up on both entries.

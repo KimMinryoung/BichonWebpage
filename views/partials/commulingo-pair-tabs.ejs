@@ -10,15 +10,18 @@
    the page works without JavaScript and each half keeps its own address. */
 var pairTabs = [
     { key: 'term', href: '/commulingo/terms/' + encodeURIComponent(pairTermId),
-      label: en ? 'Glossary' : '용어 사전', sub: en ? 'Concept' : '개념' },
+      label: en ? 'Glossary' : '용어 사전', sub: en ? 'Concept' : '개념',
+      backHref: '/commulingo/terms' },
     { key: 'event', href: '/commulingo/events/' + encodeURIComponent(pairEventId),
-      label: en ? 'Historical event' : '역사 사건', sub: en ? 'Narrative' : '사건 서사' },
+      label: en ? 'Historical event' : '역사 사건', sub: en ? 'Narrative' : '사건 서사',
+      backHref: '/commulingo/events' },
 ];
 %>
 <nav class="commu-dict-nav commu-pair-tabs" aria-label="<%= en ? 'Two entries on this subject' : '같은 주제의 두 항목' %>" data-active="<%= activePanel %>">
     <% pairTabs.forEach(function(tab) { %>
     <a class="commu-dict-tab commu-pair-tab<%= activePanel === tab.key ? ' is-active' : '' %>"
-       href="<%= tab.href %>" data-panel="<%= tab.key %>"<% if (activePanel === tab.key) { %> aria-current="page"<% } %>>
+       href="<%= tab.href %>" data-panel="<%= tab.key %>"
+       data-back-href="<%= tab.backHref %>" data-back-label="<%= tab.label %>"<% if (activePanel === tab.key) { %> aria-current="page"<% } %>>
         <span><%= tab.sub %><small><%= tab.label %></small></span>
     </a>
     <% }) %>

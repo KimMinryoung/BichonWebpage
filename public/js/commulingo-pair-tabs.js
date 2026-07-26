@@ -14,6 +14,21 @@
     var panels = Array.prototype.slice.call(document.querySelectorAll('.commu-pair-panel'));
     if (tabs.length < 2 || panels.length < 2) return;
 
+    var backLinks = Array.prototype.slice.call(document.querySelectorAll('[data-pair-back]'));
+
+    // The back link belongs to whichever half is open, not to the URL the
+    // reader happened to arrive on: reading the glossary panel and being
+    // offered '← 역사 사건' points at the wrong shelf.
+    function updateBackLinks(tab) {
+        var href = tab.getAttribute('data-back-href');
+        var label = tab.getAttribute('data-back-label');
+        if (!href || !label) return;
+        backLinks.forEach(function (link) {
+            link.setAttribute('href', href);
+            link.textContent = '← ' + label;
+        });
+    }
+
     function show(key, href, push) {
         panels.forEach(function (panel) {
             var active = panel.getAttribute('data-panel') === key;
@@ -23,8 +38,12 @@
         tabs.forEach(function (tab) {
             var active = tab.getAttribute('data-panel') === key;
             tab.classList.toggle('is-active', active);
-            if (active) tab.setAttribute('aria-current', 'page');
-            else tab.removeAttribute('aria-current');
+            if (active) {
+                tab.setAttribute('aria-current', 'page');
+                updateBackLinks(tab);
+            } else {
+                tab.removeAttribute('aria-current');
+            }
         });
         nav.setAttribute('data-active', key);
         if (push && href && window.history && window.history.pushState) {
