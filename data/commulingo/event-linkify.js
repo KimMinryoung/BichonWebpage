@@ -19,7 +19,9 @@ const EXTRA_TERMS = {
     'civil-war': { ko: ['러시아 내전'], en: ['Russian Civil War'] },
     'ussr-formation': { ko: ['소련 결성'], en: ['Formation of the Soviet Union'] },
     'five-year-plans': { ko: ['5개년 계획', '5개년계획'], en: ['Five-Year Plan', 'Five-Year Plans'] },
-    'great-terror': { ko: ['대숙청'], en: ['Great Purge'] },
+    // Title is now 대숙청 / The Great Purge, matching the glossary entry.
+    // The former title stays a match term so older prose still links.
+    'great-terror': { ko: ['대테러'], en: ['Great Terror'] },
     'great-patriotic-war': { ko: ['독소전쟁', '독소 전쟁'] },
     'marshall-plan': { ko: ['마셜 플랜', '마셜플랜', '마샬 플랜'] },
     'doctors-plot': { ko: ['의사들의 음모 사건'], en: ["Doctors' Plot"] },

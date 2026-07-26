@@ -57,6 +57,12 @@ function presentTerm(raw, lang) {
         people: (raw.people || []).map(person => ({ ...person, name: localize(person.name, lang) })),
         events: (raw.events || []).map(event => ({ ...event, title: localize(event.title, lang) })),
         related: (raw.related || []).map(entry => ({ id: entry.id, term: localize(entry.term, lang) })),
+        parent: raw.parent ? { id: raw.parent.id, term: localize(raw.parent.term, lang) } : null,
+        children: (raw.children || []).map(entry => ({
+            id: entry.id,
+            term: localize(entry.term, lang),
+            period: localize(entry.period, lang),
+        })),
     };
 }
 

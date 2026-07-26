@@ -22,7 +22,8 @@ async function fetchTerms() {
         db.query(
             `SELECT id, term_ko, term_en, original, period_label,
                     period_ko, period_en, start_year, end_year, category,
-                    definition_ko, definition_en, body_ko, body_en, sources
+                    definition_ko, definition_en, body_ko, body_en, sources,
+                    parent_id
              FROM commulingo_terms
              ORDER BY sort_order, id`
         ),
@@ -87,6 +88,25 @@ async function fetchTerms() {
         addRelation(row.related_id, row.term_id);
     });
 
+    // parent_id nests one level (예조프시나 under 대숙청). Both directions are
+    // resolved here so a page renders from the term alone: the child carries its
+    // parent, the parent carries its children in chronological order.
+    const childrenByTerm = {};
+    terms.rows.forEach(row => {
+        if (!row.parent_id || !termLabels[row.parent_id] || row.parent_id === row.id) return;
+        (childrenByTerm[row.parent_id] || (childrenByTerm[row.parent_id] = [])).push({
+            id: row.id,
+            term: t(row.term_ko, row.term_en),
+            period: t(row.period_ko || row.period_label, row.period_en || row.period_label),
+            startYear: Number.isInteger(row.start_year) ? row.start_year : null,
+        });
+    });
+    Object.values(childrenByTerm).forEach(list => list.sort((a, b) => {
+        const ay = a.startYear, by = b.startYear;
+        if (ay !== by) return (ay === null) - (by === null) || (ay || 0) - (by || 0);
+        return a.id.localeCompare(b.id);
+    }));
+
     return terms.rows.map(row => ({
         id: row.id,
         term: t(row.term_ko, row.term_en),
@@ -105,6 +125,10 @@ async function fetchTerms() {
         people: peopleByTerm[row.id] || [],
         events: eventsByTerm[row.id] || [],
         related: relatedByTerm[row.id] || [],
+        parent: (row.parent_id && termLabels[row.parent_id] && row.parent_id !== row.id)
+            ? termLabels[row.parent_id]
+            : null,
+        children: childrenByTerm[row.id] || [],
     }));
 }
 

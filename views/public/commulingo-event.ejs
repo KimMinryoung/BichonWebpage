@@ -26,6 +26,19 @@
             </div>
             <% }) %>
         </section>
+        <% if (typeof relatedTerms !== 'undefined' && relatedTerms && relatedTerms.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="event-terms">
+            <h2 id="event-terms"><%= en ? 'Related terms' : '관련 용어' %></h2>
+            <div class="commu-term-chips">
+                <% relatedTerms.forEach(function(entry) { %>
+                <a class="commu-term-chip" href="/commulingo/terms/<%= encodeURIComponent(entry.id) %>"><%= entry.term %></a>
+                <% entry.children.forEach(function(child) { %>
+                <a class="commu-term-chip is-child" href="/commulingo/terms/<%= encodeURIComponent(child.id) %>">└ <%= child.term %></a>
+                <% }) %>
+                <% }) %>
+            </div>
+        </section>
+        <% } %>
         <% if (typeof relatedDocs !== 'undefined' && relatedDocs && relatedDocs.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
             <h2 id="related-docs"><%= en ? 'Reference documents' : '참고 문헌' %></h2>

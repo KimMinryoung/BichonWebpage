@@ -2,6 +2,7 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { getReportsForEvent } = require('../services/report-mentions');
 
 const router = express.Router();
@@ -17,6 +18,30 @@ function relatedDocsForEvent(eventId, lang) {
         }));
     } catch (e) {
         console.error('commulingo event related docs:', e);
+        return [];
+    }
+}
+
+// Glossary entries that name this event. The term page has always listed its
+// events; the event page listed nothing back, so a reader on 대숙청 had no way
+// through to 예조프시나 or 모스크바 재판. Children are folded under their
+// parent so one campaign does not spread across six sibling chips.
+async function relatedTermsForEvent(eventId, lang) {
+    try {
+        const terms = await loadCommuLingoTerms();
+        const linked = terms.filter(term => (term.events || []).some(event => event.id === eventId));
+        const linkedIds = new Set(linked.map(term => term.id));
+        return linked
+            .filter(term => !(term.parent && linkedIds.has(term.parent.id)))
+            .map(term => ({
+                id: term.id,
+                term: localize(term.term, lang),
+                children: (term.children || [])
+                    .filter(child => linkedIds.has(child.id))
+                    .map(child => ({ id: child.id, term: localize(child.term, lang) })),
+            }));
+    } catch (e) {
+        console.error('commulingo event related terms:', e);
         return [];
     }
 }
@@ -128,6 +153,7 @@ router.get('/:eventId', async (req, res) => {
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-event', {
             event,
+            relatedTerms: await relatedTermsForEvent(eventId, lang),
             prevEvent: neighbor(-1),
             nextEvent: neighbor(1),
             relatedReports,

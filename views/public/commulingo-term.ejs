@@ -10,12 +10,27 @@
             <span class="commu-event-period"><%= term.original %><% if (term.period && term.period !== '개념') { %> · <%= term.period %><% } %></span>
             <h1><%= term.term %></h1>
             <% if (term.termOther) { %><p class="commu-event-question"><%= term.termOther %></p><% } %>
+            <% if (term.parent) { %>
+            <p class="commu-term-parent"><%= en ? 'Part of' : '상위 항목' %> ·
+                <a href="/commulingo/terms/<%= encodeURIComponent(term.parent.id) %>"><%= term.parent.term %></a>
+            </p>
+            <% } %>
             <p><%- definitionHtml %></p>
         </header>
         <% if (bodyHtml) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-body">
             <h2 id="term-body"><%= en ? 'In depth' : '상세' %></h2>
             <div class="commu-person-markdown"><%- bodyHtml %></div>
+        </section>
+        <% } %>
+        <% if (term.children && term.children.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="term-children">
+            <h2 id="term-children"><%= en ? 'Within this entry' : '하위 항목' %></h2>
+            <ul class="commu-person-event-links commu-term-child-list">
+                <% term.children.forEach(function(child) { %>
+                <li><a href="/commulingo/terms/<%= encodeURIComponent(child.id) %>"><span><%= child.period %></span><strong><%= child.term %></strong></a></li>
+                <% }) %>
+            </ul>
         </section>
         <% } %>
         <% if (term.related && term.related.length) { %>

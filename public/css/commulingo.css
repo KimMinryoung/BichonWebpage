@@ -3167,6 +3167,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-head { border-left: 4px solid var(--accent, #b84f4f); padding: .5rem 0 .5rem 1.1rem; margin: 1.1rem 0 1.5rem; }
 .commu-event-head h1 { margin: .25rem 0; }
 .commu-event-question { font-weight: 700; font-size: 1.08rem; }
+/* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
+.commu-term-parent { margin: .3rem 0 0; font-size: .92rem; color: var(--text-muted); font-weight: 700; letter-spacing: .02em; }
+.commu-term-parent a { color: var(--accent, #b84f4f); }
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
 .commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; }
@@ -3362,3 +3365,5 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 999px; color: inherit; text-decoration: none; font-size: .95rem; }
 .commu-term-chip:hover { border-color: var(--link, #b84f4f); }
+/* A chip for a nested entry, shown under its parent on the event page. */
+.commu-term-chip.is-child { font-size: .88rem; opacity: .85; border-style: dashed; }
