@@ -15,6 +15,7 @@ const {
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { buildTermLinkIndex, linkifyTermsHtml } = require('../data/commulingo/term-linkify');
+const { buildEventLinkIndex, linkifyEventsHtml } = require('../data/commulingo/event-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
@@ -44,6 +45,19 @@ function personTermIndexFor(terms, lang) {
         personTermIndexMemo.byLang[lang] = buildTermLinkIndex(terms, { lang });
     }
     return personTermIndexMemo.byLang[lang];
+}
+
+// Same memoization for the history-event index, which learning content links
+// alongside people and terms.
+let learningEventIndexMemo = { eventsRef: null, byLang: {} };
+function learningEventIndexFor(events, lang) {
+    if (learningEventIndexMemo.eventsRef !== events) {
+        learningEventIndexMemo = { eventsRef: events, byLang: {} };
+    }
+    if (!(lang in learningEventIndexMemo.byLang)) {
+        learningEventIndexMemo.byLang[lang] = buildEventLinkIndex(events, { lang });
+    }
+    return learningEventIndexMemo.byLang[lang];
 }
 
 const LEGACY_OFFICE_IDS = {
@@ -563,7 +577,7 @@ router.get('/book/:collectionId', async (req, res) => {
         // page shows before a lesson is ever opened, so they carry the same
         // dictionary links the concept briefs do.
         let linked = collection;
-        let dictionaryEntries = { people: [], terms: [] };
+        let dictionaryEntries = { people: [], terms: [], events: [] };
         try {
             const linkers = await commuLingoLinkers();
             linked = {
@@ -614,29 +628,49 @@ router.get('/catalog.json', (req, res) => {
 // Prompts and choices are deliberately left unlinked. A link inside a question
 // invites the reader out of it mid-answer, and on a multiple-choice item it can
 // point at the answer.
+// Learning content opens dictionary links in a new tab. A reader who follows a
+// name out of a concept brief has to come back to the lesson they were in, and
+// the book is a single page whose quiz position and answered state do not
+// survive a navigation.
+const LEARNING_ANCHOR_RE = /<a class="commu-(?:person|term|event|doc)-link"/g;
+function openEntityLinksInNewTab(html) {
+    return String(html || '').replace(
+        LEARNING_ANCHOR_RE, match => match.replace('<a ', '<a target="_blank" rel="noopener" '),
+    );
+}
+
 // One set of indexes per language, shared by the book page and the lesson
-// payload. Each returned factory opens a fresh seen-set, so a passage links a
-// term at its first mention and leaves the rest plain — the rule the person and
+// payload. Each returned factory opens a fresh seen-set, so a passage links an
+// entry at its first mention and leaves the rest plain — the rule the person and
 // glossary pages already apply to their own prose. Documents link first, then
-// people, then terms: the same order and the same escaping hand-off as the
-// person detail page.
+// people, then terms, then history events: the same order and the same escaping
+// hand-off as the person detail page, with events last so a headword both
+// dictionaries carry (대숙청) resolves to the glossary entry, which shows the
+// paired event on its own page anyway.
 async function commuLingoLinkers() {
     const catalog = loadCommuLingoCatalog();
-    const [people, terms] = await Promise.all([loadCommuLingoPeople(), loadCommuLingoTerms()]);
+    const [people, terms, events] = await Promise.all([
+        loadCommuLingoPeople(), loadCommuLingoTerms(), loadCommuLingoHistoryEvents(),
+    ]);
     const docs = listCommuLingoDocs();
     const byLang = {};
     for (const lang of ['ko', 'en']) {
         const { linkIndex } = getStandardized(people.data, catalog, lang);
         const termIndex = personTermIndexFor(terms, lang);
         const docIndex = docLinkIndexFor(docs, lang);
+        const eventIndex = learningEventIndexFor(events, lang);
         byLang[lang] = () => {
             const seenDocs = new Set();
             const seenTerms = new Set();
+            const seenEvents = new Set();
             return value => (typeof value === 'string' && value
-                ? linkifyTermsHtml(
-                    linkifyHtml(linkifyDocsPlain(value, docIndex, null, seenDocs), linkIndex, null),
-                    termIndex, null, seenTerms,
-                )
+                ? openEntityLinksInNewTab(linkifyEventsHtml(
+                    linkifyTermsHtml(
+                        linkifyHtml(linkifyDocsPlain(value, docIndex, null, seenDocs), linkIndex, null),
+                        termIndex, null, seenTerms,
+                    ),
+                    eventIndex, null, seenEvents,
+                ))
                 : '');
         };
     }
@@ -653,7 +687,9 @@ function linkLocalized(linkers, value) {
     return out;
 }
 
-const ENTITY_LINK_RE = /<a class="commu-(person|term)-link" href="\/commulingo\/(people|terms)\/([^"]+)"[^>]*>/g;
+// Matches the anchors commuLingoLinkers produces, whose attribute order the
+// new-tab rewrite shifts — hence the loose prefix rather than an exact one.
+const ENTITY_LINK_RE = /<a [^>]*class="commu-(?:person|term|event)-link" href="\/commulingo\/(people|terms|events)\/([^"]+)"/g;
 
 // Which dictionary entries a book actually talks about, read off the links the
 // linkifier already found rather than curated by hand — a chapter list of
@@ -662,26 +698,28 @@ const ENTITY_LINK_RE = /<a class="commu-(person|term)-link" href="\/commulingo\/
 // lesson shards once per request; they are small local files and the page is
 // rendered rarely enough that this stays cheaper than storing a second index.
 async function bookDictionaryEntries(collection, lang) {
-    const [linkers, catalog, loadedPeople, allTerms] = await Promise.all([
-        commuLingoLinkers(), loadCommuLingoCatalog(), loadCommuLingoPeople(), loadCommuLingoTerms(),
+    const [linkers, catalog, loadedPeople, allTerms, allEvents] = await Promise.all([
+        commuLingoLinkers(), loadCommuLingoCatalog(), loadCommuLingoPeople(),
+        loadCommuLingoTerms(), loadCommuLingoHistoryEvents(),
     ]);
     // A chip carries the entry's headword, not whichever alias the prose
     // happened to use: prose saying 맬서스 인구론 or 감소되지 않은 노동수익
     // should list 맬서스주의 and 노동전수익권, the names those entries are filed
     // under.
     const { standardized } = getStandardized(loadedPeople.data, catalog, lang);
-    const personNames = new Map(standardized.people.map(p => [p.id, p.displayName || localize(p.name, lang)]));
-    const termNames = new Map((allTerms || []).map(t => [t.id, localize(t.term, lang)]));
-    const people = new Map();
-    const terms = new Map();
+    const names = {
+        people: new Map(standardized.people.map(p => [p.id, p.displayName || localize(p.name, lang)])),
+        terms: new Map((allTerms || []).map(t => [t.id, localize(t.term, lang)])),
+        events: new Map((allEvents || []).map(e => [e.id, localize(e.title, lang)])),
+    };
+    const found = { people: new Map(), terms: new Map(), events: new Map() };
     const collect = value => {
         const html = linkers[lang]()(value || '');
         for (const match of html.matchAll(ENTITY_LINK_RE)) {
-            const [, , kind, rawId] = match;
+            const [, kind, rawId] = match;
             const id = decodeURIComponent(rawId);
-            const bucket = kind === 'people' ? people : terms;
-            const label = (kind === 'people' ? personNames : termNames).get(id);
-            if (label && !bucket.has(id)) bucket.set(id, { id, label });
+            const label = names[kind].get(id);
+            if (label && !found[kind].has(id)) found[kind].set(id, { id, label });
         }
     };
     for (const chapter of collection.chapters || []) {
@@ -701,7 +739,11 @@ async function bookDictionaryEntries(collection, lang) {
             });
         }
     }
-    return { people: [...people.values()], terms: [...terms.values()] };
+    return {
+        people: [...found.people.values()],
+        terms: [...found.terms.values()],
+        events: [...found.events.values()],
+    };
 }
 
 async function linkifyLessonPayload(lesson) {

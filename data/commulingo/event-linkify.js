@@ -3,7 +3,12 @@
 // Korean preceding-char guard mirror buildPersonLinkIndex so both indexes can
 // share one replacer pipeline (see report-links.js).
 
-const { escapeRegExp } = require('./people-linkify');
+const {
+    WORD_CHAR,
+    escapeHtml,
+    escapeRegExp,
+    mapLinkableText,
+} = require('./people-linkify');
 
 // Korean compounds that contain an event term but must never link. '대테러'
 // (the event title for the Great Terror) is also the ordinary word for
@@ -88,7 +93,33 @@ function buildEventLinkIndex(events, options = {}) {
     return { pattern, byAlias, en };
 }
 
+// Prose linking for the history dictionary, matching linkifyTermsHtml exactly
+// in shape so the three indexes can be run one after another over the same
+// html. report-links.js keeps its own replacer because its anchors also carry
+// the mention ids that related-report deep links point at.
+function makeEventReplacer(index, excludeId, seen) {
+    return function replacer(match, _token, offset, source) {
+        if (!index.en) {
+            const prev = offset > 0 ? source.charAt(offset - 1) : '';
+            if (WORD_CHAR.test(prev)) return match;
+        }
+        const event = index.byAlias[match];
+        if (!event || event.id === excludeId || seen.has(event.id)) return match;
+        seen.add(event.id);
+        const title = escapeHtml(event.period ? event.period + ' · ' + event.title : event.title);
+        return '<a class="commu-event-link" href="/commulingo/events/'
+            + encodeURIComponent(event.id) + '" title="' + title + '">' + match + '</a>';
+    };
+}
+
+function linkifyEventsHtml(html, index, excludeId, seen) {
+    if (!html || !index) return html || '';
+    const replacer = makeEventReplacer(index, excludeId, seen || new Set());
+    return mapLinkableText(html, text => text.replace(index.pattern, replacer));
+}
+
 module.exports = {
     BLOCKED_EVENT_KO,
     buildEventLinkIndex,
+    linkifyEventsHtml,
 };
