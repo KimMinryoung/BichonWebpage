@@ -511,13 +511,21 @@
         return Array.isArray(preferred) ? preferred : [];
     }
 
+    // textHtml / itemsHtml arrive from /commulingo/lesson already escaped and
+    // linked to the people and glossary dictionaries. A payload cached before
+    // that route linked anything carries only the plain fields, so both paths
+    // stay.
     function renderBriefSection(section) {
         var html = '<section class="commu-brief-section">';
         if (section.title) html += '<h3>' + escapeHtml(section.title) + '</h3>';
-        if (section.text) html += '<p>' + escapeHtml(section.text) + '</p>';
-        if (Array.isArray(section.items) && section.items.length) {
-            html += '<ul>' + section.items.map(function(item) {
-                return '<li>' + escapeHtml(item) + '</li>';
+        if (section.textHtml) html += '<p>' + section.textHtml + '</p>';
+        else if (section.text) html += '<p>' + escapeHtml(section.text) + '</p>';
+        var items = Array.isArray(section.itemsHtml) && section.itemsHtml.length
+            ? section.itemsHtml
+            : (Array.isArray(section.items) ? section.items.map(escapeHtml) : []);
+        if (items.length) {
+            html += '<ul>' + items.map(function(item) {
+                return '<li>' + item + '</li>';
             }).join('') + '</ul>';
         }
         return html + '</section>';
@@ -532,7 +540,7 @@
         }
         var nodes = conceptMap(lesson)[lang === 'en' ? 'en' : 'ko'];
         els.diagram.innerHTML = nodes.map(function(node) {
-            return '<span class="commu-diagram-node"><strong>' + escapeHtml(node.title) + '</strong><small>' + escapeHtml(node.text) + '</small></span>';
+            return '<span class="commu-diagram-node"><strong>' + escapeHtml(node.title) + '</strong><small>' + (node.textHtml || escapeHtml(node.text)) + '</small></span>';
         }).join('');
     }
 
@@ -748,9 +756,13 @@
 
     function feedbackHtml(question, index, correct) {
         var selectedFeedback = choiceFeedback(question, index);
+        // The explanation is shown only after the question has been answered,
+        // which is why it carries dictionary links where the prompt and the
+        // choices do not.
+        var explanation = text(question.explanationHtml) || escapeHtml(text(question.explanation));
         var parts = [
             '<strong class="commu-feedback-marker">' + escapeHtml(correct ? strings.correct : strings.incorrect) + '</strong>',
-            '<span>' + escapeHtml(text(question.explanation)) + '</span>'
+            '<span>' + explanation + '</span>'
         ];
         if (selectedFeedback) {
             parts.push('<span class="commu-choice-feedback">' + escapeHtml(selectedFeedback) + '</span>');

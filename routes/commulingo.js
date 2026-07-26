@@ -583,11 +583,76 @@ router.get('/catalog.json', (req, res) => {
     res.json(catalog);
 });
 
-router.get('/lesson/:lessonId', (req, res) => {
+// Lessons speak the same vocabulary as the three dictionaries — 마르크스,
+// 라살레, 임금철칙, 노동전수익권 — and said it in plain text, so a reader who
+// met a name or a term in a concept brief had to go looking for it. The payload
+// keeps its bilingual shape and gains *Html siblings; the client renders those
+// where it has them and escapes the plain text where it does not, so a payload
+// cached before this change still displays.
+//
+// Prompts and choices are deliberately left unlinked. A link inside a question
+// invites the reader out of it mid-answer, and on a multiple-choice item it can
+// point at the answer.
+async function linkifyLessonPayload(lesson) {
+    const catalog = loadCommuLingoCatalog();
+    const [people, terms] = await Promise.all([loadCommuLingoPeople(), loadCommuLingoTerms()]);
+    const docs = listCommuLingoDocs();
+    for (const lang of ['ko', 'en']) {
+        const { linkIndex } = getStandardized(people.data, catalog, lang);
+        const termIndex = personTermIndexFor(terms, lang);
+        const docIndex = docLinkIndexFor(docs, lang);
+        // Documents link first, then people, then terms: the same order and the
+        // same escaping hand-off as the person detail page. The seen-sets keep
+        // a term that runs through a whole passage to a link at its first
+        // mention.
+        const linker = () => {
+            const seenDocs = new Set();
+            const seenTerms = new Set();
+            return value => (typeof value === 'string' && value
+                ? linkifyTermsHtml(
+                    linkifyHtml(linkifyDocsPlain(value, docIndex, null, seenDocs), linkIndex, null),
+                    termIndex, null, seenTerms,
+                )
+                : '');
+        };
+        // The brief and the map are one passage and share a set. Each
+        // explanation gets its own, because the reader meets it on its own card
+        // after answering — sharing the brief's set would leave the quiz almost
+        // link-free for anyone who read the brief first.
+        const linkBrief = linker();
+        ((lesson.conceptBrief && lesson.conceptBrief[lang]) || []).forEach(section => {
+            if (section.text) section.textHtml = linkBrief(section.text);
+            if (Array.isArray(section.items)) section.itemsHtml = section.items.map(linkBrief);
+        });
+        ((lesson.conceptMap && lesson.conceptMap[lang]) || []).forEach(node => {
+            if (node.text) node.textHtml = linkBrief(node.text);
+        });
+        (lesson.questions || []).forEach(question => {
+            const explanation = question.explanation && question.explanation[lang];
+            if (!explanation) return;
+            question.explanationHtml = question.explanationHtml || {};
+            question.explanationHtml[lang] = linker()(explanation);
+        });
+    }
+    return lesson;
+}
+
+router.get('/lesson/:lessonId', async (req, res) => {
     const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
     const payload = loadCommuLingoLesson(lessonId);
     if (!payload) return res.status(404).json({ error: 'lesson not found' });
-    setPublicDataCache(req, res, payload.version);
+    try {
+        await linkifyLessonPayload(payload.lesson);
+    } catch (err) {
+        // Losing the links costs a hyperlink; losing the payload costs the
+        // quiz. Serve it plain.
+        console.error('commulingo lesson linkify:', err);
+    }
+    // Deliberately not setPublicDataCache: the payload is no longer a pure
+    // function of the course sources, so its year-long immutable branch would
+    // freeze the links against dictionaries that keep changing. Thirty seconds
+    // is what the glossary and people pages already serve.
+    res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
     res.json(payload);
 });
 
