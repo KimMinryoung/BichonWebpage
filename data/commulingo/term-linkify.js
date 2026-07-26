@@ -13,12 +13,31 @@ const {
 // Korean compounds that contain a term alias but must never link.
 const BLOCKED_TERM_KO = ['집단농장화'];
 
+// A word can name a thing that has its own main entry while a second entry
+// exists about the word itself. '예조프시나' is the euphemism the post-Stalin
+// USSR used for the 1937–38 campaign: the campaign is 대숙청, and the
+// 예조프시나 entry is there to explain the naming. A reader who meets the word
+// in prose wants the campaign, so the link points at 대숙청; the entry stays
+// reachable from 대숙청's nested list and from the glossary index.
+//
+// This cannot be expressed in the alias table alone. Headwords are registered
+// in the index alongside aliases and the first registration of a string wins,
+// so the entry whose headword is the word always claims it first.
+//
+// Keys are alias strings, values are the term id to point them at. Only strings
+// already in the index are repointed: an override never creates a new match.
+const LINK_OVERRIDES = {
+    '예조프시나': 'great-purge',
+    'Yezhovshchina': 'great-purge',
+};
+
 // Builds an alias→term index from the terms snapshot
 // ({ id, term: {ko,en}, aliases: {ko:[],en:[]}, ... }).
 function buildTermLinkIndex(terms, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
     const byAlias = {};
+    const byId = {};
     const tokens = [];
     (terms || []).forEach(term => {
         if (!term || !term.id) return;
@@ -30,6 +49,7 @@ function buildTermLinkIndex(terms, options = {}) {
             original: term.original || '',
             href: '/commulingo/terms/' + encodeURIComponent(term.id),
         };
+        byId[term.id] = entry;
         const candidates = [label].concat((term.aliases && term.aliases[lang]) || []);
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
@@ -37,6 +57,9 @@ function buildTermLinkIndex(terms, options = {}) {
             byAlias[alias] = entry;
             tokens.push(alias);
         });
+    });
+    Object.entries(LINK_OVERRIDES).forEach(([alias, targetId]) => {
+        if (byAlias[alias] && byId[targetId]) byAlias[alias] = byId[targetId];
     });
     if (!tokens.length) return null;
     const all = (en ? tokens : BLOCKED_TERM_KO.concat(tokens)).slice().sort((a, b) => b.length - a.length);
