@@ -3349,24 +3349,29 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-term-sources a { color: var(--link); }
 .commu-term-source-note { display: block; color: var(--text-muted); }
 
-/* Links to other glossary entries inside a term's own definition and body,
-   matching the dashed treatment used for entity links in post/report prose. */
-.commu-term-page .commu-term-link {
+/* Entity links inside dictionary prose, on every page that has them rather
+   than per page type. These were scoped to .commu-term-page, so the same link
+   on a history-event or person page fell through to the default anchor colour —
+   link green as text, which is barely legible on the dark canvas. The dashed
+   underline is the treatment: the text keeps its own colour and the rule
+   underneath says it leads somewhere.
+
+   Dotted rather than dashed for a reference-library full text, so a work title
+   reads as a different destination from a glossary entry without spending a
+   second colour on it. */
+.commu-term-link,
+.commu-event-link {
     color: inherit; text-decoration: none;
     border-bottom: 2px dashed var(--link, #5d7a5a);
 }
-.commu-term-page .commu-term-link:hover { border-bottom-style: solid; }
+.commu-term-link:hover,
+.commu-event-link:hover { border-bottom-style: solid; }
 
-/* Links to a reference-library full text, wherever prose names one. Dotted
-   rather than dashed so a work title reads as a different destination from a
-   glossary entry without adding a second colour to the page. */
-.commu-term-page .commu-doc-link,
-.commu-person-page .commu-doc-link {
+.commu-doc-link {
     color: inherit; text-decoration: none;
     border-bottom: 2px dotted var(--link, #5d7a5a);
 }
-.commu-term-page .commu-doc-link:hover,
-.commu-person-page .commu-doc-link:hover { border-bottom-style: solid; }
+.commu-doc-link:hover { border-bottom-style: solid; }
 
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 999px; color: inherit; text-decoration: none; font-size: .95rem; }

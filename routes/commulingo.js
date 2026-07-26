@@ -13,6 +13,8 @@ const {
     linkifyDocsPlain,
 } = require('../data/commulingo/doc-linkify');
 const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
+const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
+const { buildTermLinkIndex, linkifyTermsHtml } = require('../data/commulingo/term-linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
@@ -30,6 +32,19 @@ async function relatedReportsForTopic(kind, id, lang) {
 }
 
 const router = express.Router();
+
+// Rebuilding the alias index walks every alias of every term, so it is memoized
+// against the snapshot the store hands out, exactly as the glossary route does.
+let personTermIndexMemo = { termsRef: null, byLang: {} };
+function personTermIndexFor(terms, lang) {
+    if (personTermIndexMemo.termsRef !== terms) {
+        personTermIndexMemo = { termsRef: terms, byLang: {} };
+    }
+    if (!(lang in personTermIndexMemo.byLang)) {
+        personTermIndexMemo.byLang[lang] = buildTermLinkIndex(terms, { lang });
+    }
+    return personTermIndexMemo.byLang[lang];
+}
 
 const LEGACY_OFFICE_IDS = {
     'heavy-industry-mic': 'heavy-military-industry',
@@ -385,14 +400,22 @@ router.get('/people/:personId', async (req, res) => {
         // escaping would double up and linkifyHtml takes over.
         const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
         const linkedDocs = new Set();
-        const bioHtml = linkifyHtml(
+        // Glossary terms link last, after documents and people. A bio saying
+        // 쿨라크 or 노멘클라투라 meant the reader had to go looking; the person
+        // pages were reading the same vocabulary as the other two dictionaries
+        // without pointing at it. One seen-set across the bio and every section,
+        // so a term used throughout a career is a link at its first mention.
+        const termIndex = personTermIndexFor(await loadCommuLingoTerms(), lang);
+        const linkedTerms = new Set();
+        const withTerms = html => linkifyTermsHtml(html, termIndex, null, linkedTerms);
+        const bioHtml = withTerms(linkifyHtml(
             linkifyDocsPlain(person.bio, docIndex, null, linkedDocs), linkIndex, person.id,
-        );
+        ));
         sections.forEach(section => {
-            section.bodyHtml = linkifyHtml(
+            section.bodyHtml = withTerms(linkifyHtml(
                 linkifyDocsHtml(section.bodyHtml, docIndex, null, linkedDocs),
                 linkIndex, person.id,
-            );
+            ));
         });
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
