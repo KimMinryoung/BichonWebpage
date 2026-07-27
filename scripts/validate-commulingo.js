@@ -10,13 +10,14 @@ const expected = {
   'lenin-imperialism': { chapters: 10, questions: 100, lessons: 20 },
   'lenin-state-revolution': { chapters: 6, questions: 60, lessons: 12 },
   'marx-wage-labour-capital': { chapters: 6, questions: 60, lessons: 12 },
+  'marx-wages-and-programme': { chapters: 8, questions: 80, lessons: 16 },
 };
 const expectedSpecial = {
   'engels-origin-family': { format: 'concept-graph', nodes: 8, stages: 24 },
   'history-russian-revolution': { format: 'decision-history', eras: 4, episodes: 14 },
   'history-soviet-union': { format: 'decision-history', eras: 4, episodes: 15 },
 };
-const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7 };
+const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'marx-wages-and-programme': 2 };
 const banned = [
   '핵심은 무엇입니까',
   '더 엄밀히 이해한 설명',
@@ -129,12 +130,18 @@ function checkChoiceFeedback(value, qLabel) {
   });
 }
 
+// Most chapters carry three concept nodes; a chapter that has to introduce its
+// source document before its concepts may carry four. More than that stops
+// being a map, and the two languages must always describe the same nodes.
 function checkConceptMap(value, label) {
   if (!value || typeof value !== 'object') { fail(label + ' must have conceptMap'); return; }
+  if (Array.isArray(value.ko) && Array.isArray(value.en) && value.ko.length !== value.en.length) {
+    fail(label + '.conceptMap node counts differ between ko and en');
+  }
   ['ko', 'en'].forEach(function(locale) {
     const nodes = value[locale];
-    if (!Array.isArray(nodes) || nodes.length !== 3) {
-      fail(label + '.conceptMap.' + locale + ' must have 3 nodes');
+    if (!Array.isArray(nodes) || nodes.length < 3 || nodes.length > 4) {
+      fail(label + '.conceptMap.' + locale + ' must have 3 or 4 nodes');
       return;
     }
     nodes.forEach(function(node, index) {
@@ -224,8 +231,8 @@ Object.keys(expectedSpecial).forEach(function(collectionId) { checkSpecialCollec
 (data.collections || []).forEach(function(collection) {
   if (!expected[collection.id] && !expectedSpecial[collection.id]) fail('unexpected collection ' + collection.id);
 });
-if (totalQuestions !== 1280) fail('total question count ' + totalQuestions + ' != 1280');
-if (totalLessons !== 256) fail('total lesson count ' + totalLessons + ' != 256');
+if (totalQuestions !== 1360) fail('total question count ' + totalQuestions + ' != 1360');
+if (totalLessons !== 272) fail('total lesson count ' + totalLessons + ' != 272');
 
 if (errors.length) {
   console.error('Commulingo validation failed with ' + errors.length + ' issue(s):');
