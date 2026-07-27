@@ -761,8 +761,8 @@ chapter({
         ['The list of deductions', 'From the total product come replacement of means of production, a portion for expansion and reserve funds against accidents; from what remains for consumption come administration, common provision such as schools and health services, and funds for those unable to work. The "undiminished" proceeds vanish along the way.'],
         ['Distribution is a consequence', 'Any distribution of means of consumption follows from the distribution of the conditions of production. Treating distribution as independent and presenting socialism as turning principally on it is what Marx called vulgar socialism.'],
     ],
-    termKo: '「노동전수익권」은 라살레파의 구호로, 노동자가 자기 노동이 낳은 수익 전부를 돌려받아야 한다는 요구다. 낱말이 딱딱하지만 「노동의 전체 수익에 대한 권리」라는 뜻일 뿐이다. 마르크스의 공제 목록은 이 「전부」가 어떤 사회에서도 성립할 수 없음을 보이는 계산이다.',
-    termEn: 'The "undiminished proceeds of labour" is the Lassallean demand that the worker receive the entire proceeds of his labour. Marx\'s list of deductions is a demonstration that the "entire" can hold in no society whatever.',
+    termKo: '「노동전수익권」은 라살레파의 구호로, 노동자가 자기 노동이 낳은 수익 전부를 돌려받아야 한다는 요구다. 낱말이 딱딱하지만 「노동의 전체 수익에 대한 권리」라는 뜻일 뿐이다. 마르크스의 공제 목록은 이 「전부」가 어떤 사회에서도 성립할 수 없음을 보이는 계산이다. 원문 전체를 조항 순서대로 읽으려면 고타강령 비판 전문 해설을 보라.',
+    termEn: 'The "undiminished proceeds of labour" is the Lassallean demand that the worker receive the entire proceeds of his labour. Marx\'s list of deductions is a demonstration that the "entire" can hold in no society whatever. For the full text, clause by clause, see the guided reading of the Critique of the Gotha Programme.',
     modernKo: '소유 구조를 그대로 둔 채 몫을 다시 나누어 문제를 풀려는 모든 제안이 이 계보에 놓인다. 마르크스의 답은 그런 제안이 틀렸다는 것이 아니라 그것으로 사회주의를 정의할 수는 없다는 것이다.',
     modernEn: 'Every proposal that leaves ownership untouched and solves the problem by redividing shares stands in this line. Marx\'s answer is not that such proposals are wrong but that socialism cannot be defined by them.',
     basic: [
