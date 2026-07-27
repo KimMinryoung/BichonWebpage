@@ -1,6 +1,8 @@
-// Auto-links other people's names inside a person's prose (bio + detail
-// sections) to their dictionary page. Mirrors the client-side aliasing in
-// public/js/commulingo-decision.js so the two behave identically.
+// The person alias index, plus the HTML-walking and escaping helpers every
+// index shares. Who links where, in what order, and how one link is written is
+// linkify.js; this file only answers which strings belong to which person.
+// Mirrors the client-side aliasing in public/js/commulingo-decision.js so the
+// two behave identically.
 //
 // Korean has no \b word boundary and names take trailing particles (레닌과,
 // 레닌은), so a next-char guard is impossible there. Instead the match is
@@ -105,33 +107,6 @@ function buildPersonLinkIndex(people, options = {}) {
     return { pattern, byAlias, en };
 }
 
-// excludeId lets a single shared index be reused across every person's page: the
-// index is built once for all people (see buildPersonLinkIndex without
-// excludeId, memoized per language), and self-links are dropped here at replace
-// time instead of by rebuilding a per-person index each request.
-function makeReplacer(index, excludeId) {
-    return function replacer(match, _token, offset, source) {
-        if (!index.en) {
-            const prev = offset > 0 ? source.charAt(offset - 1) : '';
-            if (WORD_CHAR.test(prev)) return match;
-        }
-        const person = index.byAlias[match];
-        if (!person) return match;
-        if (excludeId && person.id === excludeId) return match;
-        const label = person.displayName || person.name || match;
-        const title = escapeHtml(person.epithet ? label + ': ' + person.epithet : label);
-        return '<a class="commu-person-link" href="/commulingo/people/'
-            + encodeURIComponent(person.id) + '" title="' + title + '">' + match + '</a>';
-    };
-}
-
-// Escapes raw text, then links person names. Use for plain prose (e.g. bio).
-function linkifyPlain(rawText, index, excludeId) {
-    const escaped = escapeHtml(rawText || '');
-    if (!index) return escaped;
-    return escaped.replace(index.pattern, makeReplacer(index, excludeId));
-}
-
 // Tags whose text content must never be linkified: existing anchors (no nested
 // links) and literal/code contexts.
 const SKIP_TAGS = ['a', 'code', 'pre', 'script', 'style'];
@@ -160,14 +135,6 @@ function mapLinkableText(html, mapText) {
     });
 }
 
-// Links person names inside already-rendered HTML, skipping tag internals and
-// text already wrapped in an anchor (so no nested links are produced).
-function linkifyHtml(html, index, excludeId) {
-    if (!index || !html) return html || '';
-    const replacer = makeReplacer(index, excludeId);
-    return mapLinkableText(html, text => text.replace(index.pattern, replacer));
-}
-
 module.exports = {
     BLOCKED_KO,
     NEVER_LINK_ALIAS_KO,
@@ -176,7 +143,5 @@ module.exports = {
     escapeHtml,
     escapeRegExp,
     buildPersonLinkIndex,
-    linkifyPlain,
-    linkifyHtml,
     mapLinkableText,
 };

@@ -14,8 +14,8 @@
 
         <% if (isDecision) { %>
         <% var timeline = lessons.collections[0].decisionTimeline; %>
-        <% var people = (typeof decisionPeople !== 'undefined' && decisionPeople) || []; %>
-        <script id="commulingo-decision" type="application/json"><%- JSON.stringify({ bookId: lessons.collections[0].id, timeline: timeline, people: people }).replace(/</g, '\\u003c') %></script>
+        <% var links = (typeof decisionLinks !== 'undefined' && decisionLinks) || { blocked: [], people: [] }; %>
+        <script id="commulingo-decision" type="application/json"><%- JSON.stringify({ bookId: lessons.collections[0].id, timeline: timeline, people: links.people || [], blocked: links.blocked || [] }).replace(/</g, '\\u003c') %></script>
 
         <header class="box commulingo-hero commulingo-hero--graph">
             <div>

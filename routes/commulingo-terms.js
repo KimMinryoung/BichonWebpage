@@ -2,22 +2,13 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
-const { listCommuLingoDocs, listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForTerm } = require('../services/report-mentions');
 const {
     termCategoriesWithCounts,
     termCategoryLabel,
 } = require('../data/commulingo/term-categories');
-const {
-    buildTermLinkIndex,
-    linkifyTermsHtml,
-    linkifyTermsPlain,
-} = require('../data/commulingo/term-linkify');
-const {
-    docLinkIndexFor,
-    linkifyDocsHtml,
-    linkifyDocsPlain,
-} = require('../data/commulingo/doc-linkify');
+const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 
 // Reference documents (참고 문헌) linked to this term/event via the docs
 // manifest. Failure only costs the section, never the page.
@@ -206,22 +197,6 @@ function sortTerms(terms, sort, lang) {
     });
 }
 
-// ── In-text term links ─────────────────────────────────────────────────
-
-// Index building walks every alias of every term, so memoize it against the
-// snapshot reference the store hands out (same approach as report-links.js).
-let indexMemo = { termsRef: null, byLang: {} };
-
-function termLinkIndexFor(allTerms, lang) {
-    if (indexMemo.termsRef !== allTerms) {
-        indexMemo = { termsRef: allTerms, byLang: {} };
-    }
-    if (!(lang in indexMemo.byLang)) {
-        indexMemo.byLang[lang] = buildTermLinkIndex(allTerms, { lang });
-    }
-    return indexMemo.byLang[lang];
-}
-
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
@@ -256,28 +231,17 @@ async function buildTermPanel(termId, lang) {
     const raw = allTerms.find(item => item.id === termId);
     if (!raw) return null;
     const term = presentTerm(raw, lang);
-    // One `seen` set across definition and body: the first mention of another
-    // term links, later ones stay plain.
-    const linkIndex = termLinkIndexFor(allTerms, lang);
-    const linked = new Set();
-    // Reference documents link first and terms second. A document alias is a
-    // whole work title and a term alias can sit inside one (『현물세』 against
-    // 현물세), and whichever pass runs first keeps the match, because the other
-    // skips anchor contents. The doc pass also does the escaping for the
-    // definition, so the term pass takes its HTML output rather than escaping a
-    // second time.
-    const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
-    const linkedDocs = new Set();
-    const definitionHtml = linkifyTermsHtml(
-        linkifyDocsPlain(term.definition, docIndex, null, linkedDocs),
-        linkIndex, term.id, linked,
-    );
-    const bodyHtml = term.body
-        ? linkifyTermsHtml(
-            linkifyDocsHtml(renderMarkdown(term.body), docIndex, null, linkedDocs),
-            linkIndex, term.id, linked,
-        )
-        : '';
+    // One linker across definition and body: the first mention of an entry
+    // links, later ones stay plain. The entry itself is excluded, and so is the
+    // history event that is the same subject — the event panel is the other half
+    // of this page, so linking its title would point at the tab the reader is
+    // already on.
+    const link = createLinker(await getLinkIndexes(lang), {
+        surface: 'term',
+        exclude: { term: term.id, event: term.sameSubjectEvent ? term.sameSubjectEvent.id : '' },
+    });
+    const definitionHtml = link.plain(term.definition);
+    const bodyHtml = term.body ? link.html(renderMarkdown(term.body)) : '';
     // Public research reports that mention this term. Failure only costs the
     // section, never the page.
     let relatedReports = [];

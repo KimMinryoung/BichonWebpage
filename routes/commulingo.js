@@ -3,19 +3,17 @@ const db = require('../config/database');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
-const { localize: localizeCommuLingoValue, normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
+const { localize: localizeCommuLingoValue } = require('../data/commulingo/people-standard');
 const { loadCommuLingoPeople: loadCommuLingoPeopleData } = require('../data/commulingo/people-store');
-const { loadCommuLingoHistoryEvents, loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
-const { listCommuLingoDocs, listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
+const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const {
-    docLinkIndexFor,
-    linkifyDocsHtml,
-    linkifyDocsPlain,
-} = require('../data/commulingo/doc-linkify');
-const { buildPersonLinkIndex, linkifyPlain, linkifyHtml } = require('../data/commulingo/people-linkify');
-const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
-const { buildTermLinkIndex, linkifyTermsHtml } = require('../data/commulingo/term-linkify');
-const { buildEventLinkIndex, linkifyEventsHtml } = require('../data/commulingo/event-linkify');
+    standardizedFor,
+    getLinkIndexes,
+    createLinker,
+    createCardTextLinker,
+    clientPersonLinkPayload,
+} = require('../data/commulingo/linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
@@ -33,32 +31,6 @@ async function relatedReportsForTopic(kind, id, lang) {
 }
 
 const router = express.Router();
-
-// Rebuilding the alias index walks every alias of every term, so it is memoized
-// against the snapshot the store hands out, exactly as the glossary route does.
-let personTermIndexMemo = { termsRef: null, byLang: {} };
-function personTermIndexFor(terms, lang) {
-    if (personTermIndexMemo.termsRef !== terms) {
-        personTermIndexMemo = { termsRef: terms, byLang: {} };
-    }
-    if (!(lang in personTermIndexMemo.byLang)) {
-        personTermIndexMemo.byLang[lang] = buildTermLinkIndex(terms, { lang });
-    }
-    return personTermIndexMemo.byLang[lang];
-}
-
-// Same memoization for the history-event index, which learning content links
-// alongside people and terms.
-let learningEventIndexMemo = { eventsRef: null, byLang: {} };
-function learningEventIndexFor(events, lang) {
-    if (learningEventIndexMemo.eventsRef !== events) {
-        learningEventIndexMemo = { eventsRef: events, byLang: {} };
-    }
-    if (!(lang in learningEventIndexMemo.byLang)) {
-        learningEventIndexMemo.byLang[lang] = buildEventLinkIndex(events, { lang });
-    }
-    return learningEventIndexMemo.byLang[lang];
-}
 
 const LEGACY_OFFICE_IDS = {
     'heavy-industry-mic': 'heavy-military-industry',
@@ -94,34 +66,22 @@ async function loadCommuLingoPeople(options = {}) {
     return loadCommuLingoPeopleData(options);
 }
 
-// normalizeCommuLingoPeople (535 people) and the full person link index are pure
-// functions of the snapshot data + catalog, which only change on the ~10-min
-// refresh. Memoize them keyed by those object references so we rebuild at most
-// once per refresh instead of on every request. A fresh snapshot (new reference,
-// including ?fresh=1) invalidates the memo automatically.
-let stdMemo = { dataRef: null, catalogRef: null, byLang: {} };
-
-function getStandardized(data, catalog, lang) {
-    if (stdMemo.dataRef !== data || stdMemo.catalogRef !== catalog) {
-        stdMemo = { dataRef: data, catalogRef: catalog, byLang: {} };
-    }
-    let entry = stdMemo.byLang[lang];
-    if (!entry) {
-        const standardized = normalizeCommuLingoPeople(data, { lang, catalog });
-        // Full index over all people (no excludeId); self-links are dropped at
-        // linkify time via excludeId so this can be shared across every page.
-        const linkIndex = buildPersonLinkIndex(standardized.people, { lang });
-        entry = stdMemo.byLang[lang] = { standardized, linkIndex };
-    }
-    return entry;
-}
-
+// normalizeCommuLingoPeople and the person link index are memoized against the
+// snapshot + catalog references in linkify.js, so this route, the report linker,
+// and the shared index set all read one copy per refresh.
 async function loadStandardizedPeople(req, res, options = {}) {
     const lang = res.locals.lang;
     const catalog = loadCommuLingoCatalog();
     const loaded = await loadCommuLingoPeople(options);
-    const { standardized, linkIndex } = getStandardized(loaded.data, catalog, lang);
-    return { lang, catalog, loaded, standardized, linkIndex };
+    const { standardized } = standardizedFor(loaded.data, catalog, lang);
+    return { lang, catalog, loaded, standardized };
+}
+
+// Card prose (epithet, moment, bio) on the list and hub pages. Person names
+// only — see the `card` surface in linkify.js — with one seen-set per card, and
+// a fresh set of linkers per request.
+async function cardTextLinker(res) {
+    return createCardTextLinker(await getLinkIndexes(res.locals.lang));
 }
 
 function setPublicDataCache(req, res, version) {
@@ -227,7 +187,7 @@ router.use('/docs', require('./commulingo-docs'));
 
 router.get('/people', async (req, res) => {
     try {
-        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         const roleCategories = Object.values(standardized.roleCategories || {}).map(category => ({
             ...category,
@@ -247,8 +207,7 @@ router.get('/people', async (req, res) => {
             peopleCount: standardized.people.length,
             roleIconSvg,
             roleHubHref,
-            personLinkIndex: linkIndex,
-            linkifyPersonText: linkifyPlain,
+            linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
             pageDescription: lang === 'en'
                 ? 'The people who stood at the forks of the two decision-simulation history books.'
@@ -268,7 +227,7 @@ router.get('/offices/:officeId', async (req, res) => {
         if (LEGACY_OFFICE_IDS[officeId]) {
             return res.redirect(301, `/commulingo/offices/${LEGACY_OFFICE_IDS[officeId]}`);
         }
-        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
         const office = standardized.offices.find(item => item.id === officeId);
         if (!office) {
             return errorPage.notFound(res, {
@@ -286,8 +245,7 @@ router.get('/offices/:officeId', async (req, res) => {
             relatedReports,
             roleIconSvg,
             roleHubHref,
-            personLinkIndex: linkIndex,
-            linkifyPersonText: linkifyPlain,
+            linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? `${office.title} — People` : `${office.title} — 인물 사전`,
             pageDescription: office.blurb,
             pagePath: `/commulingo/offices/${office.id}`,
@@ -309,7 +267,7 @@ router.get('/roles/:categoryId', async (req, res) => {
         if (LEGACY_ROLE_CATEGORY_IDS[categoryId]) {
             return res.redirect(301, `/commulingo/roles/${LEGACY_ROLE_CATEGORY_IDS[categoryId]}`);
         }
-        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
         const category = standardized.roleCategories[categoryId];
         if (!category) {
             return errorPage.notFound(res, {
@@ -327,8 +285,7 @@ router.get('/roles/:categoryId', async (req, res) => {
             relatedReports,
             roleIconSvg,
             roleHubHref,
-            personLinkIndex: linkIndex,
-            linkifyPersonText: linkifyPlain,
+            linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? `${category.label} — People` : `${category.label} — 인물 사전`,
             pageDescription: lang === 'en'
                 ? `People in the ${category.label} role category.`
@@ -349,7 +306,7 @@ router.get('/roles/:categoryId', async (req, res) => {
 async function renderNationalityPeople(req, res, kind) {
     try {
         const code = typeof req.params.code === 'string' ? req.params.code.trim() : '';
-        const { lang, standardized, linkIndex } = await loadStandardizedPeople(req, res);
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
         const filter = buildNationalityFilter(standardized.people, kind, code, lang);
         if (!filter) {
             return errorPage.notFound(res, {
@@ -365,8 +322,7 @@ async function renderNationalityPeople(req, res, kind) {
             people: filter.people,
             roleIconSvg,
             roleHubHref,
-            personLinkIndex: linkIndex,
-            linkifyPersonText: linkifyPlain,
+            linkifyPersonText: await cardTextLinker(res),
             pageTitle: `${filter.kindLabel}: ${filter.label} — ${lang === 'en' ? 'People' : '인물 사전'}`,
             pageDescription: lang === 'en'
                 ? `People whose ${filter.kindLabel.toLowerCase()} is ${filter.label}.`
@@ -393,7 +349,7 @@ router.get('/people/:personId', async (req, res) => {
         if (LEGACY_PERSON_IDS[personId]) {
             return res.redirect(301, `/commulingo/people/${LEGACY_PERSON_IDS[personId]}`);
         }
-        const { lang, loaded, standardized, linkIndex } = await loadStandardizedPeople(req, res);
+        const { lang, loaded, standardized } = await loadStandardizedPeople(req, res);
         const person = standardized.peopleById[personId];
         if (!person) {
             return errorPage.notFound(res, {
@@ -403,33 +359,20 @@ router.get('/people/:personId', async (req, res) => {
             });
         }
         // Sections come from the snapshot (loaded.data); history events from their
-        // own cached store. excludeId keeps the person's own name from self-linking.
+        // own cached store.
         const rawSections = (loaded.data.sections || {})[personId] || [];
         const sections = localizedPersonSections(rawSections, lang);
-        // Reference documents link before people, for the same reason terms do
-        // on the glossary page: a work title is the more specific match and the
-        // later pass skips anchor contents. This replaces the hand-written
-        // markdown links that data/commulingo/docs/README.md used to require in
-        // person sections. The doc pass escapes the bio, so linkifyPlain's own
-        // escaping would double up and linkifyHtml takes over.
-        const docIndex = docLinkIndexFor(listCommuLingoDocs(), lang);
-        const linkedDocs = new Set();
-        // Glossary terms link last, after documents and people. A bio saying
-        // 쿨라크 or 노멘클라투라 meant the reader had to go looking; the person
-        // pages were reading the same vocabulary as the other two dictionaries
-        // without pointing at it. One seen-set across the bio and every section,
-        // so a term used throughout a career is a link at its first mention.
-        const termIndex = personTermIndexFor(await loadCommuLingoTerms(), lang);
-        const linkedTerms = new Set();
-        const withTerms = html => linkifyTermsHtml(html, termIndex, null, linkedTerms);
-        const bioHtml = withTerms(linkifyHtml(
-            linkifyDocsPlain(person.bio, docIndex, null, linkedDocs), linkIndex, person.id,
-        ));
+        // One linker for the whole page — bio and every section share its
+        // seen-set, so a document, event, term, or colleague named throughout a
+        // career is a link at its first mention. The person's own name is
+        // excluded so the page never links to itself.
+        const link = createLinker(await getLinkIndexes(lang), {
+            surface: 'person',
+            exclude: { person: person.id },
+        });
+        const bioHtml = link.plain(person.bio);
         sections.forEach(section => {
-            section.bodyHtml = withTerms(linkifyHtml(
-                linkifyDocsHtml(section.bodyHtml, docIndex, null, linkedDocs),
-                linkIndex, person.id,
-            ));
+            section.bodyHtml = link.html(section.bodyHtml);
         });
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
@@ -562,15 +505,13 @@ router.get('/book/:collectionId', async (req, res) => {
         const collection = (catalog.collections || []).find(item => item.id === collectionId);
         if (!collection) return res.redirect('/commulingo');
 
-        let decisionPeople = [];
+        // The decision-history book renders its episodes in the browser, so the
+        // person index goes with the payload instead of a linker: the aliases
+        // below are the ones buildPersonLinkIndex kept, so the client applies the
+        // shared policy rather than a hand-synced copy of it.
+        let decisionLinks = { blocked: [], people: [] };
         if (collection.format === 'decision-history') {
-            const loaded = await loadCommuLingoPeople();
-            decisionPeople = (loaded.data.people || []).map(person => ({
-                id: person.id,
-                name: localize(person.name, res.locals.lang),
-                epithet: localize(person.epithet, res.locals.lang),
-                aliases: (person.aliases && person.aliases[res.locals.lang]) || [],
-            })).filter(person => person.aliases.length);
+            decisionLinks = clientPersonLinkPayload(await getLinkIndexes(res.locals.lang));
         }
 
         // Chapter summaries and learning focuses are the prose the book's own
@@ -597,7 +538,7 @@ router.get('/book/:collectionId', async (req, res) => {
         res.render('public/commulingo-book', {
             lessons: { version: catalog.version, collections: [linked] },
             dictionaryEntries,
-            decisionPeople,
+            decisionLinks,
             bookFormat: collection.format || 'quiz',
             bookTitle,
             bookDescription: localize(collection.description, res.locals.lang),
@@ -628,50 +569,19 @@ router.get('/catalog.json', (req, res) => {
 // Prompts and choices are deliberately left unlinked. A link inside a question
 // invites the reader out of it mid-answer, and on a multiple-choice item it can
 // point at the answer.
-// Learning content opens dictionary links in a new tab. A reader who follows a
-// name out of a concept brief has to come back to the lesson they were in, and
-// the book is a single page whose quiz position and answered state do not
-// survive a navigation.
-const LEARNING_ANCHOR_RE = /<a class="commu-(?:person|term|event|doc)-link"/g;
-function openEntityLinksInNewTab(html) {
-    return String(html || '').replace(
-        LEARNING_ANCHOR_RE, match => match.replace('<a ', '<a target="_blank" rel="noopener" '),
-    );
-}
-
+//
 // One set of indexes per language, shared by the book page and the lesson
-// payload. Each returned factory opens a fresh seen-set, so a passage links an
-// entry at its first mention and leaves the rest plain — the rule the person and
-// glossary pages already apply to their own prose. Documents link first, then
-// people, then terms, then history events: the same order and the same escaping
-// hand-off as the person detail page, with events last so a headword both
-// dictionaries carry (대숙청) resolves to the glossary entry, which shows the
-// paired event on its own page anyway.
+// payload. Each returned factory opens a fresh linker, so a passage links an
+// entry at its first mention and leaves the rest plain. Everything else about
+// the pass — which dictionaries, in what order, and the new tab a lesson's links
+// open in — is the `learning` surface in linkify.js.
 async function commuLingoLinkers() {
-    const catalog = loadCommuLingoCatalog();
-    const [people, terms, events] = await Promise.all([
-        loadCommuLingoPeople(), loadCommuLingoTerms(), loadCommuLingoHistoryEvents(),
-    ]);
-    const docs = listCommuLingoDocs();
     const byLang = {};
     for (const lang of ['ko', 'en']) {
-        const { linkIndex } = getStandardized(people.data, catalog, lang);
-        const termIndex = personTermIndexFor(terms, lang);
-        const docIndex = docLinkIndexFor(docs, lang);
-        const eventIndex = learningEventIndexFor(events, lang);
+        const indexes = await getLinkIndexes(lang);
         byLang[lang] = () => {
-            const seenDocs = new Set();
-            const seenTerms = new Set();
-            const seenEvents = new Set();
-            return value => (typeof value === 'string' && value
-                ? openEntityLinksInNewTab(linkifyEventsHtml(
-                    linkifyTermsHtml(
-                        linkifyHtml(linkifyDocsPlain(value, docIndex, null, seenDocs), linkIndex, null),
-                        termIndex, null, seenTerms,
-                    ),
-                    eventIndex, null, seenEvents,
-                ))
-                : '');
+            const link = createLinker(indexes, { surface: 'learning' });
+            return value => (typeof value === 'string' && value ? link.plain(value) : '');
         };
     }
     return byLang;
@@ -687,40 +597,37 @@ function linkLocalized(linkers, value) {
     return out;
 }
 
-// Matches the anchors commuLingoLinkers produces, whose attribute order the
-// new-tab rewrite shifts — hence the loose prefix rather than an exact one.
-const ENTITY_LINK_RE = /<a [^>]*class="commu-(?:person|term|event)-link" href="\/commulingo\/(people|terms|events)\/([^"]+)"/g;
-
-// Which dictionary entries a book actually talks about, read off the links the
-// linkifier already found rather than curated by hand — a chapter list of
-// one-line summaries shows almost none of them, so the book page would
-// otherwise give no sign that the entries exist. Runs over the collection's
-// lesson shards once per request; they are small local files and the page is
-// rendered rarely enough that this stays cheaper than storing a second index.
+// Which dictionary entries a book actually talks about, read off what the
+// linker found rather than curated by hand — a chapter list of one-line
+// summaries shows almost none of them, so the book page would otherwise give no
+// sign that the entries exist. Runs over the collection's lesson shards once per
+// request; they are small local files and the page is rendered rarely enough
+// that this stays cheaper than storing a second index.
+//
+// A chip carries the entry's headword, not whichever alias the prose happened to
+// use: prose saying 맬서스 인구론 or 감소되지 않은 노동수익 lists 맬서스주의 and
+// 노동전수익권, the names those entries are filed under. The index entries carry
+// exactly those labels, so no second lookup table is needed.
 async function bookDictionaryEntries(collection, lang) {
-    const [linkers, catalog, loadedPeople, allTerms, allEvents] = await Promise.all([
-        commuLingoLinkers(), loadCommuLingoCatalog(), loadCommuLingoPeople(),
-        loadCommuLingoTerms(), loadCommuLingoHistoryEvents(),
-    ]);
-    // A chip carries the entry's headword, not whichever alias the prose
-    // happened to use: prose saying 맬서스 인구론 or 감소되지 않은 노동수익
-    // should list 맬서스주의 and 노동전수익권, the names those entries are filed
-    // under.
-    const { standardized } = getStandardized(loadedPeople.data, catalog, lang);
-    const names = {
-        people: new Map(standardized.people.map(p => [p.id, p.displayName || localize(p.name, lang)])),
-        terms: new Map((allTerms || []).map(t => [t.id, localize(t.term, lang)])),
-        events: new Map((allEvents || []).map(e => [e.id, localize(e.title, lang)])),
-    };
+    const indexes = await getLinkIndexes(lang);
     const found = { people: new Map(), terms: new Map(), events: new Map() };
+    const LABELS = {
+        people: entry => entry.displayName || localize(entry.name, lang),
+        terms: entry => entry.label,
+        events: entry => entry.title,
+    };
     const collect = value => {
-        const html = linkers[lang]()(value || '');
-        for (const match of html.matchAll(ENTITY_LINK_RE)) {
-            const [, kind, rawId] = match;
-            const id = decodeURIComponent(rawId);
-            const label = names[kind].get(id);
-            if (label && !found[kind].has(id)) found[kind].set(id, { id, label });
-        }
+        if (!value) return;
+        // A fresh linker per passage, the same restraint the reader sees: an
+        // entry linked once in a passage, and the book's chip list is the union.
+        const link = createLinker(indexes, { surface: 'learning' });
+        link.plain(value);
+        Object.keys(found).forEach(kind => {
+            link.found[kind].forEach(entry => {
+                const label = LABELS[kind](entry);
+                if (label && !found[kind].has(entry.id)) found[kind].set(entry.id, { id: entry.id, label });
+            });
+        });
     };
     for (const chapter of collection.chapters || []) {
         collect(chapter.summary && chapter.summary[lang]);

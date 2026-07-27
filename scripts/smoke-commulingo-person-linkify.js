@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 const assert = require('assert');
-const { buildPersonLinkIndex, linkifyPlain } = require('../data/commulingo/people-linkify');
-const { findEntityMentions } = require('../data/commulingo/report-links');
+const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
+const { createLinker, findEntityMentions } = require('../data/commulingo/linkify');
+
+// The alias rules below are about the index alone, so one bare person surface
+// is enough; the policy the surfaces share is covered by
+// scripts/smoke-commulingo-linkify-policy.js.
+const linkPlain = (text, index) => createLinker({ person: index }, { surface: 'person' }).plain(text);
 
 const paulLevi = {
     id: 'paul-levi',
@@ -16,10 +21,10 @@ const paulLevi = {
 const koIndex = buildPersonLinkIndex([paulLevi], { lang: 'ko' });
 assert.strictEqual(koIndex.byAlias['레비'], undefined);
 assert.strictEqual(koIndex.byAlias['파울 레비'].id, 'paul-levi');
-assert.doesNotMatch(linkifyPlain('비센테 데 라 오 레비 장관', koIndex), /paul-levi/);
-assert.match(linkifyPlain('파울 레비는 독일 공산주의자였다.', koIndex), /paul-levi/);
+assert.doesNotMatch(linkPlain('비센테 데 라 오 레비 장관', koIndex), /paul-levi/);
+assert.match(linkPlain('파울 레비는 독일 공산주의자였다.', koIndex), /paul-levi/);
 assert.strictEqual(
-    findEntityMentions('비센테 데 라 오 레비 장관', { personIndex: koIndex }).personIds.has('paul-levi'),
+    findEntityMentions('비센테 데 라 오 레비 장관', { person: koIndex }).personIds.has('paul-levi'),
     false
 );
 
@@ -32,11 +37,11 @@ const enIndex = buildPersonLinkIndex([enPerson], { lang: 'en' });
 assert.strictEqual(enIndex.byAlias.Levi, undefined);
 assert.strictEqual(enIndex.byAlias['Paul Levi'].id, 'paul-levi');
 assert.strictEqual(
-    findEntityMentions('Isaac Levi authored the report.', { personIndex: enIndex }).personIds.has('paul-levi'),
+    findEntityMentions('Isaac Levi authored the report.', { person: enIndex }).personIds.has('paul-levi'),
     false
 );
 assert.strictEqual(
-    findEntityMentions('Paul Levi opposed the March Action.', { personIndex: enIndex }).personIds.has('paul-levi'),
+    findEntityMentions('Paul Levi opposed the March Action.', { person: enIndex }).personIds.has('paul-levi'),
     true
 );
 

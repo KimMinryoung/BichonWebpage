@@ -51,26 +51,22 @@
             .replace(/'/g, '&#39;');
     }
 
-    // Person-name auto-linking. `data.people` = [{id, name, epithet, aliases}]
-    // for the current language. BLOCKED lists compounds that contain an alias
-    // but must not link (Hangul has no \b word boundary, so 레닌 would otherwise
-    // match inside 레닌그라드); they join the alternation so the regex consumes
-    // them first, and the replacer passes them through untouched.
-    // Keep in sync with BLOCKED_KO / NEVER_LINK_ALIAS_KO in
-    // data/commulingo/people-linkify.js.
-    var BLOCKED = [
-        '레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의',
-        '마르크스-레닌주의', '라살레주의', '라살레파',
-        '탈레반', '넵스키 대로', '로마노프 왕조', '사이버-레닌', '사이버 레닌'
-    ];
-    // Aliases that are also ordinary Korean words (카스트로 = 카스트+로) never link.
-    var NEVER_LINK = ['카스트로', '보스', '미신'];
+    // Person-name auto-linking. This page renders its episodes in the browser,
+    // so it cannot call the shared linker (data/commulingo/linkify.js) — the
+    // server ships it that linker's index instead. `data.people` =
+    // [{id, name, epithet, aliases}] whose aliases already went through
+    // buildPersonLinkIndex (bare words two people share are dropped there), and
+    // `data.blocked` = the Korean compounds that contain an alias but must not
+    // link (Hangul has no \b word boundary, so 레닌 would otherwise match inside
+    // 레닌그라드); they join the alternation so the regex consumes them first and
+    // the replacer passes them through untouched. Nothing below is a rule of its
+    // own — the rules live server-side and this only applies them.
+    var BLOCKED = data.blocked || [];
     var personByAlias = {};
     var aliasTokens = [];
     (data.people || []).forEach(function(person) {
         (person.aliases || []).forEach(function(alias) {
             if (!alias || personByAlias[alias]) return;
-            if (!en && NEVER_LINK.indexOf(alias) !== -1) return;
             personByAlias[alias] = person;
             aliasTokens.push(alias);
         });
@@ -85,17 +81,24 @@
     }
 
     // escape + linkify: use for narrative prose only, never inside <button>.
+    // One passage, one seen-set: the first mention links and later ones stay
+    // plain, and the link opens in a new tab — the same two rules the served
+    // learning content follows, because leaving this page loses the reader's
+    // place in the episode.
     function rich(value) {
         var escaped = escapeHtml(text(value));
         if (!linkPattern) return escaped;
+        var seen = {};
         return escaped.replace(linkPattern, function(match, _token, offset, source) {
             if (!en) {
                 var prev = offset > 0 ? source.charAt(offset - 1) : '';
                 if (/[0-9A-Za-z가-힣]/.test(prev)) return match;
             }
             var person = personByAlias[match];
-            if (!person) return match;
-            return '<a class="commu-person-link" href="/commulingo/people#p-' + person.id
+            if (!person || seen[person.id]) return match;
+            seen[person.id] = true;
+            return '<a class="commu-person-link" target="_blank" rel="noopener"'
+                + ' href="/commulingo/people/' + encodeURIComponent(person.id)
                 + '" title="' + escapeHtml(person.name + ': ' + person.epithet) + '">' + match + '</a>';
         });
     }

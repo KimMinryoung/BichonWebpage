@@ -214,16 +214,54 @@ Two UX features on the dictionary:
   is kept to one line by a small auto-fit script that shrinks its font-size to
   the container width on load/resize.
 - **Auto-linking of other people** inside the person detail bio and detail
-  sections. Server-side in `routes/commulingo.js` (`/people/:personId`) via
-  `data/commulingo/people-linkify.js`: `buildPersonLinkIndex` builds an
-  alias→person index (short/display name + `aliases[lang]`, current person
-  excluded so no self-link); `linkifyPlain` handles the escaped bio, `linkifyHtml`
-  walks section HTML and skips tag internals + existing `<a>`. Language handling
-  mirrors `public/js/commulingo-decision.js`: English uses `\b`, Korean uses a
-  preceding-char guard plus a `BLOCKED_KO` compound list (레닌그라드, 스탈린주의…)
-  so particles still link (레닌과) but compounds do not. Renders as
-  `.commu-person-link` (style already existed). Template change: bio now uses
-  `<%- bioHtml %>`.
+  sections. `buildPersonLinkIndex` in `data/commulingo/people-linkify.js` builds
+  the alias→person index (short/display name + `aliases[lang]`). Language
+  handling mirrors `public/js/commulingo-decision.js`: English uses `\b`, Korean
+  uses a preceding-char guard plus a `BLOCKED_KO` compound list (레닌그라드,
+  스탈린주의…) so particles still link (레닌과) but compounds do not. Renders as
+  `.commu-person-link`. Template change: bio now uses `<%- bioHtml %>`.
+  Since 2026-07-27 this is one pass of the shared policy below rather than a
+  pipeline of its own.
+
+## One linking policy for every surface — 2026-07-27
+
+`data/commulingo/linkify.js` owns who links what, everywhere: the person,
+glossary, and history pages, learning content, person cards, and research
+reports. Each surface used to carry its own pipeline — different kinds, in
+different orders, with different repeat rules — so the same reader met a
+different rule per page and a new entry had to be wired into four places.
+
+- **Order** `KIND_ORDER = doc → event → term → topic → person`, most specific
+  match first: whichever pass runs first keeps the match, because every later
+  pass skips anchor contents. The two headwords both dictionaries carry
+  (`대숙청`, `신경제정책`) are same-subject pairs whose pages each show the other
+  half, so events winning them costs the reader nothing.
+- **Restraint** the first mention of an entry links and later ones stay plain,
+  per linker. One linker = one reading unit: a person's bio + sections, a term's
+  definition + body, an event's summary + timeline, one lesson passage, one card,
+  one report. This is what people links gained — they used to repeat on every
+  occurrence while every other kind linked once.
+- **Self-exclusion** `exclude` is keyed by kind; a page passes its own id, and
+  the same-subject twin it is already showing beside it.
+- **Allowed differences**, declared in `SURFACES` and nowhere else: which kinds
+  (only cards narrow it, to people — they are three-line snippets rendered by the
+  hundred), `newTab` (learning content only, so a lesson does not lose its quiz
+  state), and `anchors` (reports only, the `mention-*` ids report-mentions
+  deep-links to). Every linker reports what it linked in `.found`, which the
+  report panel and the book chip list read instead of re-parsing HTML.
+- The per-kind modules (`people-`/`term-`/`event-`/`doc-`/`topic-linkify.js`) are
+  now index builders only: which strings belong to which entry. `report-links.js`
+  is the report adapter over the shared linker.
+- **The one surface that cannot call the linker** is the decision-history book,
+  which renders its episodes in the browser. It is served the index instead
+  (`clientPersonLinkPayload` → the `commulingo-decision` JSON payload:
+  index-vetted aliases + the `BLOCKED_KO` compounds), so
+  `public/js/commulingo-decision.js` applies the policy without keeping a
+  hand-synced copy of it. It links people only, to the person page, in a new tab,
+  first mention per passage.
+- Covered by `scripts/smoke-commulingo-linkify-policy.js` (no DB needed) and
+  `scripts/smoke-commulingo-decision-links.js` (runs the client script against a
+  stub DOM).
 
 ## AI Agent Editing (leninbot) — added 2026-07-11
 

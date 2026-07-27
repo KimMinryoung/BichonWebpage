@@ -59,8 +59,9 @@
             var relPeople = typeof relatedPeople !== 'undefined' && relatedPeople ? relatedPeople : [];
             var relTopics = typeof relatedTopics !== 'undefined' && relatedTopics ? relatedTopics : [];
             var relTerms = typeof relatedTerms !== 'undefined' && relatedTerms ? relatedTerms : [];
+            var relDocs = typeof relatedDocs !== 'undefined' && relatedDocs ? relatedDocs : [];
             %>
-            <% if (relEvents.length || relPeople.length || relTopics.length || relTerms.length) { %>
+            <% if (relEvents.length || relPeople.length || relTopics.length || relTerms.length || relDocs.length) { %>
             <aside class="report-related" aria-label="<%= lang === 'ko' ? '연관 사전 항목' : 'Related encyclopedia entries' %>">
                 <h2 class="report-related-title"><%= lang === 'ko' ? '연관 사전 항목' : 'Related entries' %></h2>
                 <% if (relEvents.length) { %>
@@ -87,6 +88,14 @@
                     <span class="report-related-kicker"><%= lang === 'ko' ? '분류 · 기관' : 'Categories' %></span>
                     <% relTopics.forEach(function(topic) { %>
                     <a class="report-related-person" href="<%= topic.href %>"><%= topic.label %></a>
+                    <% }) %>
+                </div>
+                <% } %>
+                <% if (relDocs.length) { %>
+                <div class="report-related-people">
+                    <span class="report-related-kicker"><%= lang === 'ko' ? '참고 문헌' : 'Reference library' %></span>
+                    <% relDocs.forEach(function(doc) { %>
+                    <a class="report-related-person" href="<%= doc.href %>"<% if (doc.note) { %> title="<%= doc.note %>"<% } %>><%= doc.label %></a>
                     <% }) %>
                 </div>
                 <% } %>

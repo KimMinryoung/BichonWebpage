@@ -59,11 +59,11 @@ var descSearch = [
         </span>
         <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
     </div>
-    <p class="commu-person-epithet"><%- linkifyPersonText(person.epithet, personLinkIndex, person.id) %></p>
+    <p class="commu-person-epithet"><%- linkifyPersonText(person.epithet, person.id) %></p>
     <% if (person.moment) { %>
-    <p class="commu-person-moment"><%- linkifyPersonText(person.moment, personLinkIndex, person.id) %></p>
+    <p class="commu-person-moment"><%- linkifyPersonText(person.moment, person.id) %></p>
     <% } %>
-    <p class="commu-person-bio"><%- linkifyPersonText(person.bio, personLinkIndex, person.id) %></p>
+    <p class="commu-person-bio"><%- linkifyPersonText(person.bio, person.id) %></p>
     <% if (person.career.length) { %>
     <details class="commu-person-more">
         <summary><%= en ? 'Career timeline' : '상세 이력 보기' %></summary>

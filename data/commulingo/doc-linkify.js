@@ -1,7 +1,6 @@
-// Auto-links reference-library documents inside prose, the document
-// counterpart of term-linkify. Index shape ({ pattern, byAlias, en }) and the
-// Korean preceding-char guard mirror buildTermLinkIndex so every index shares
-// one replacer pipeline (see report-links.js).
+// The reference-library alias index: which strings belong to which document.
+// Index shape ({ pattern, byAlias, en }) matches the other indexes so linkify.js
+// can run them all through one replacer.
 //
 // Unlike terms, a document's aliases are always declared by hand in
 // manifest.json. A catalogue title ('레닌, 『현물세』 한국어 번역') is not what
@@ -52,42 +51,6 @@ function buildDocLinkIndex(docs, options = {}) {
     return { pattern, byAlias, en };
 }
 
-// Links the FIRST mention of each document and leaves later ones plain, the
-// same restraint the term and report replacers use. excludeId keeps a page from
-// linking to itself; `seen` is shared across calls so a document linked in a
-// definition is not linked again in the body below it.
-function makeDocReplacer(index, excludeId, seen) {
-    return function replacer(match, _token, offset, source) {
-        if (!index.en) {
-            const prev = offset > 0 ? source.charAt(offset - 1) : '';
-            if (WORD_CHAR.test(prev)) return match;
-        }
-        const doc = index.byAlias[match];
-        if (!doc || doc.id === excludeId || seen.has(doc.id)) return match;
-        seen.add(doc.id);
-        const title = escapeHtml(doc.note ? doc.label + ' · ' + doc.note : doc.label);
-        return '<a class="commu-doc-link" href="' + doc.href
-            + '" title="' + title + '">' + match + '</a>';
-    };
-}
-
-// Links documents inside already-rendered HTML (a term body, a person section).
-// Run this BEFORE the term pass: document aliases are specific work titles and
-// the term pass would otherwise claim a shorter alias inside one of them, and
-// whichever runs first wins because mapLinkableText skips anchor contents.
-function linkifyDocsHtml(html, index, excludeId, seen) {
-    if (!html || !index) return html || '';
-    const replacer = makeDocReplacer(index, excludeId, seen || new Set());
-    return mapLinkableText(html, text => text.replace(index.pattern, replacer));
-}
-
-// Escapes raw text, then links documents. Use for plain prose (a definition).
-function linkifyDocsPlain(rawText, index, excludeId, seen) {
-    const escaped = escapeHtml(rawText || '');
-    if (!index) return escaped;
-    return escaped.replace(index.pattern, makeDocReplacer(index, excludeId, seen || new Set()));
-}
-
 // Index building walks every alias of every document, so memoize it against the
 // manifest array the store hands out. docs-store rebuilds that array only when
 // manifest.json's mtime changes, so the reference doubles as the cache key
@@ -108,6 +71,4 @@ function docLinkIndexFor(docs, lang) {
 module.exports = {
     buildDocLinkIndex,
     docLinkIndexFor,
-    linkifyDocsHtml,
-    linkifyDocsPlain,
 };
