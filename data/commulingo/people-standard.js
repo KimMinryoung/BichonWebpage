@@ -250,6 +250,11 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
             ru: composePersonName(raw.cyrillic, cyrillicPatronymic),
             display: fullName(lang),
             short: localize(raw.name, lang),
+            // The family name as its own part, read strictly per language. Prose
+            // calls people by it (류시코프), and the last word of a display name
+            // is not always it: 쿤 벨러 keeps the Hungarian order, and
+            // 프라무디아 아난타 투르 has a two-word family name.
+            family: (raw.familyName && raw.familyName[lang]) || '',
             cyrillic: composePersonName(raw.cyrillic, cyrillicPatronymic),
             patronymic,
             cyrillicPatronymic,

@@ -16,9 +16,34 @@ const { KIND_ORDER, SURFACES, createLinker, createCardTextLinker } = require('..
 const people = [{
     id: 'stalin',
     displayName: '이오시프 스탈린',
-    names: { short: '스탈린', display: '이오시프 스탈린' },
+    names: { short: '스탈린', display: '이오시프 스탈린', family: '스탈린' },
     epithet: '강철의 사내',
     aliases: { ko: ['이오시프 스탈린', '스탈린'], en: ['Joseph Stalin', 'Stalin'] },
+}, {
+    // No alias row: the family name is the only short form, and it has to come
+    // from the name parts.
+    id: 'lyushkov',
+    displayName: '겐리흐 류시코프',
+    names: { short: '겐리흐 류시코프', display: '겐리흐 류시코프', family: '류시코프' },
+    epithet: '망명한 NKVD 장군',
+    aliases: { ko: [], en: [] },
+}, {
+    // Two people share this family name, so neither may claim it alone.
+    id: 'yakovlev-a',
+    displayName: '알렉산드르 야코블레프',
+    names: { short: '알렉산드르 야코블레프', display: '알렉산드르 야코블레프', family: '야코블레프' },
+    aliases: { ko: [], en: [] },
+}, {
+    id: 'yakovlev-b',
+    displayName: '니콜라이 야코블레프',
+    names: { short: '니콜라이 야코블레프', display: '니콜라이 야코블레프', family: '야코블레프' },
+    aliases: { ko: [], en: [] },
+}, {
+    // A regnal number is the family-name field for monarchs and is never a name.
+    id: 'nicholas-ii',
+    displayName: '니콜라이 2세',
+    names: { short: '니콜라이 2세', display: '니콜라이 2세', family: '2세' },
+    aliases: { ko: [], en: [] },
 }];
 
 const terms = [
@@ -88,6 +113,16 @@ assert.doesNotMatch(paged.html('<p>겨울전쟁이 또 나온다.</p>'), /commu-
 assert.match(linker('person').plain('대숙청이 시작됐다.'), /\/commulingo\/events\/great-terror/);
 assert.doesNotMatch(linker('person').plain('대숙청이 시작됐다.'), /commu-term-link/);
 assert.match(linker('person').plain('『현물세』를 읽었다.'), /commu-doc-link/);
+
+// The family name links on its own, with no alias row to declare it…
+assert.match(linker('person').plain('류시코프의 전보'), /\/commulingo\/people\/lyushkov/);
+// …unless two people share it, or it is a regnal number, or a longer word
+// merely starts with it.
+assert.doesNotMatch(linker('person').plain('야코블레프가 서명했다'), /commu-person-link/);
+assert.strictEqual(ko.person.byAlias['2세'], undefined, 'a regnal number is not a family name');
+assert.doesNotMatch(linker('person').plain('표트르 2세의 치세'), /people\/nicholas-ii/);
+// The full name still links, regnal number and all.
+assert.match(linker('person').plain('니콜라이 2세 시대'), /people\/nicholas-ii/);
 
 // Korean refuses a match glued to a preceding word character.
 assert.doesNotMatch(linker('person').plain('요시프스탈린'), /commu-person-link/);

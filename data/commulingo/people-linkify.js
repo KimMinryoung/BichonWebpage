@@ -14,18 +14,40 @@
 
 const WORD_CHAR = /[0-9A-Za-z가-힣]/;
 
-// Korean compounds that contain a person alias but must never link.
+// Korean compounds that contain a person alias but must never link. The second
+// group are longer words that begin with a family name the index now offers on
+// its own; each one was found firing in real dictionary prose by
+// scripts/audit-family-name-collisions.js, not guessed.
 const BLOCKED_KO = [
     '레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의',
     '마르크스-레닌주의', '라살레주의', '라살레파',
     '탈레반', '넵스키 대로', '로마노프 왕조', '사이버-레닌', '사이버 레닌',
+    '만네르헤임', '만네르하임', '디아스포라', '베르그송', '플린트', '노긴스크', '바우만스카야',
+    '루벤스타인', '차야노프시치나', '콘드라티예프시치나', '콘드라티예프시나', '수하노프카',
+    '바쿠닌주의', '콘드라티예프주의', '블랑키즘', '블랑키스트', '흐빌로비즘',
 ];
 
 // Bare aliases that are also ordinary Korean words or word+josa homographs
 // (카스트로 = 카스트+로, 보스, 미신) must never auto-link on their own; the
 // person still links via longer aliases like the full name.
-const NEVER_LINK_ALIAS_KO = ['카스트로', '보스', '미신', '레비'];
-const NEVER_LINK_ALIAS_EN = ['levi'];
+//
+// The second row is family names, which the index offers on its own since
+// 2026-07-27. Three kinds are refused: ordinary loanwords a report will use in
+// its plain sense (스트롱 달러, 논의를 리드, ROSTA 포스터, 퍼스트레이디, 피크
+// 아웃), verb forms (빠르게 팔린 책, 풀어 보시지), and famous surnames a second
+// bearer outside the dictionary shares — 캐롤 보이스 데이비스 is not Angela
+// Davis, 르로이 존스 is not Claudia Jones, 제임스 보그스 is not Grace Lee Boggs.
+// Each was found in real prose by scripts/audit-family-name-collisions.js.
+const NEVER_LINK_ALIAS_KO = [
+    '카스트로', '보스', '미신', '레비',
+    '스트롱', '리드', '포스터', '퍼스트', '피크', '더트', '보시', '팔린',
+    '데이비스', '존스', '보그스',
+];
+// English keeps \b on both sides and matches case-sensitively, so only the
+// homographs that survive both need listing: 'First' opens sentences and titles
+// 465 times in this corpus (First Secretary, First Five-Year Plan), and the
+// shared surnames are the same two people as above.
+const NEVER_LINK_ALIAS_EN = ['levi', 'first', 'davis', 'jones', 'boggs'];
 
 function escapeHtml(value = '') {
     return String(value)
@@ -37,6 +59,22 @@ function escapeHtml(value = '') {
 
 function escapeRegExp(value) {
     return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Regnal numbers are stored in the family-name field for monarchs but are never
+// a name a reader looks up: '니콜라이 2세' must not put '2세' in the index, nor
+// 'Nicholas II' an 'II'. Anything carrying brackets or a comma is a note that
+// leaked into the field, not a name.
+const NOT_A_FAMILY_NAME = /^(?:[ivxlcdm]+|\d+(?:세|st|nd|rd|th)?)$/i;
+const NAME_PUNCTUATION = /[()[\]{}<>,;:"'`]/;
+
+// The family name to offer as a bare alias, or '' when there is none to trust.
+// Taken from the structured part rather than the last word of the display name,
+// which is the given name in the naming orders Korean keeps (쿤 벨러).
+function familyNameOf(person) {
+    const name = String((person.names && person.names.family) || '').trim();
+    if (!name || NOT_A_FAMILY_NAME.test(name) || NAME_PUNCTUATION.test(name)) return '';
+    return name;
 }
 
 // Builds an alias→person index and a matching regex from the standardized
@@ -79,6 +117,15 @@ function buildPersonLinkIndex(people, options = {}) {
         candidates.push(person.displayName);
         const aliasList = person.aliases && person.aliases[lang];
         if (Array.isArray(aliasList)) aliasList.forEach(alias => candidates.push(alias));
+        // Prose calls people by the family name — 류시코프, not 겐리흐 류시코프 —
+        // and only the few hundred with a hand-written alias row used to link
+        // that way. The family name is offered as a candidate so the rest link
+        // too, and the checks below still decide: one that two people share
+        // (야코블레프) is refused as ambiguous, one that is also an ordinary word
+        // (레비, 리드) is on the never-link list, and a compound containing one
+        // (레닌그라드) is consumed by BLOCKED_KO first. Single-word names — 박헌영,
+        // 마오쩌둥 — are their own family name field, so nothing changes for them.
+        candidates.push(familyNameOf(person));
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;

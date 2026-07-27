@@ -370,6 +370,12 @@ router.get('/people/:personId', async (req, res) => {
             surface: 'person',
             exclude: { person: person.id },
         });
+        // Reading order: epithet, moment, bio, then the sections. The moment is a
+        // scene with other people in it — 예조프가 류시코프의 전보를 스탈린에게 —
+        // and it printed as plain text here while the same sentence linked on the
+        // person's card in the list.
+        const epithetHtml = link.plain(person.epithet);
+        const momentHtml = link.plain(person.moment);
         const bioHtml = link.plain(person.bio);
         sections.forEach(section => {
             section.bodyHtml = link.html(section.bodyHtml);
@@ -400,6 +406,8 @@ router.get('/people/:personId', async (req, res) => {
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-person', {
             person,
+            epithetHtml,
+            momentHtml,
             bioHtml,
             sections,
             historyEvents,

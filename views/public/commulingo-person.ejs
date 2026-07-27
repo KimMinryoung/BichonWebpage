@@ -41,9 +41,12 @@
                     <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
                 </div>
             </div>
-            <p class="commu-person-epithet"><%= person.epithet %></p>
+            <%# The three header fields carry dictionary links like the card does,
+                and in reading order, so the first mention that links is the first
+                one reached. Each falls back to the escaped plain text. %>
+            <p class="commu-person-epithet"><%- typeof epithetHtml !== 'undefined' ? epithetHtml : person.epithet %></p>
             <% if (person.moment) { %>
-            <p class="commu-person-moment"><%= person.moment %></p>
+            <p class="commu-person-moment"><%- typeof momentHtml !== 'undefined' ? momentHtml : person.moment %></p>
             <% } %>
             <p class="commu-person-bio"><%- typeof bioHtml !== 'undefined' ? bioHtml : person.bio %></p>
         </header>
