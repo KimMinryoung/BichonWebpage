@@ -10,7 +10,8 @@
 // an alias (레닌그라드, 스탈린주의) are listed in BLOCKED so the longest-first
 // alternation consumes them first and the replacer passes them through
 // untouched. English uses regex \b on both sides, which already keeps 'Lenin'
-// out of 'Leningrad'.
+// out of 'Leningrad' — but not out of 'Leonid Pasternak', so it has a blocked
+// list of its own for the names one surname sits inside.
 
 const WORD_CHAR = /[0-9A-Za-z가-힣]/;
 
@@ -36,9 +37,9 @@ const BLOCKED_KO = [
     '알렉산드르 안드레예프', '니콜라이 안드레예프', '블라디미르 표도로프', '알렉세이 표도로프',
     '세르게이 코로빈', '스타니슬라프 멘시코프', '니키타 모이세예프', '겐리흐 노보질로프',
     '유리 주코프', '알렉산드르 지노비예프', '세르게이 두비닌', '알렉산드르 막시모프',
-    '레프 톨스토이', '레오니트 파스테르나크', '세르게이 불가코프', '빌리 피셔',
+    '레오니트 파스테르나크', '세르게이 불가코프', '빌리 피셔',
     '안드레이 카피차', '세르게이 플라토노프', '예브게니 리프시츠', '일리야 리프시츠',
-    '드미트리 수하노프', '알렉산드르 넵스키', '알렉산드르 말리놉스키', '니콜라이 소콜로프',
+    '드미트리 수하노프', '이반 보로딘', '알렉산드르 넵스키', '알렉산드르 말리놉스키', '니콜라이 소콜로프',
     '이반 플료로프', '아타만 칼미코프', '보리스 슬루츠키', '알렉산드르 야쿠봅스키',
     '바실리 자이체프', '세르게이 이그나티예프', '바딤 트라페즈니코프', '이반 모로조프',
     '니콜라이 모로조프', '니콜라이 볼스키', '빅토르 사프로노프', '뱌체슬라프 티호노프',
@@ -58,19 +59,37 @@ const BLOCKED_KO = [
 // Davis, 르로이 존스 is not Claudia Jones, 제임스 보그스 is not Grace Lee Boggs.
 // Each was found in real prose by scripts/audit-family-name-collisions.js.
 // A fourth kind: a surname whose famous bearer is NOT the dictionary entry.
-// Every 푸시킨 in this corpus is the poet, not Georgy Pushkin the diplomat, and
-// every 시테른 is Lina Stern or Lev Shternberg, not Grigory Shtern.
+// Every 푸시킨 in this corpus is the poet, not Georgy Pushkin the diplomat;
+// every 시테른 is Lina Stern or Lev Shternberg, not Grigory Shtern; and every
+// 톨스토이 is Leo, not Alexei. Each of the three keeps their full name.
 const NEVER_LINK_ALIAS_KO = [
     '카스트로', '보스', '미신', '레비',
     '스트롱', '리드', '포스터', '퍼스트', '피크', '더트', '보시', '팔린',
     '데이비스', '존스', '보그스',
-    '푸시킨', '시테른',
+    '푸시킨', '시테른', '톨스토이',
 ];
 // English keeps \b on both sides and matches case-sensitively, so only the
 // homographs that survive both need listing: 'First' opens sentences and titles
 // 465 times in this corpus (First Secretary, First Five-Year Plan), and the
 // shared surnames are the same two people as above.
-const NEVER_LINK_ALIAS_EN = ['levi', 'first', 'davis', 'jones', 'boggs', 'pushkin'];
+const NEVER_LINK_ALIAS_EN = ['levi', 'first', 'davis', 'jones', 'boggs', 'pushkin', 'tolstoy'];
+
+// \b keeps English out of longer WORDS, but not out of longer NAMES: 'Borodin'
+// sits inside 'Ivan Borodin' with a boundary on both sides. So English needs the
+// same blocked phrases Korean does — namesakes who are not in the dictionary,
+// and institutions named after someone else. Institutes named after the entry
+// itself (Kurchatov, Bauman) are deliberately absent: that link is informative.
+const BLOCKED_EN = [
+    'Ivan Borodin', 'Alexander Nevsky', 'Nevsky Prospect', 'Sergei Bulgakov',
+    'Yuri Zhukov', 'Alexander Zinoviev', 'Nikolai Sokolov', 'Ivan Flyorov',
+    'Boris Slutsky', 'Alexander Yakubovsky', 'Sergei Ignatiev', 'Vadim Trapeznikov',
+    'Ivan Morozov', 'Nikolai Morozov', 'Nikolai Volsky', 'Viktor Safronov',
+    'Vyacheslav Tikhonov', 'Andrei Voznesensky', 'Alexei Razumovsky', 'Lev Karpov',
+    'Gleb Uspensky', 'Leonid Pasternak', 'Andrei Kapitsa', 'Sergei Platonov',
+    'Evgeny Lifshitz', 'Ilya Lifshitz', 'Nikolai Andreyev', 'Sergei Korovin',
+    'Stanislav Menshikov', 'Sverdlov Communist University', 'Rumyantsev Museum',
+    'Steklov Institute',
+];
 
 function escapeHtml(value = '') {
     return String(value)
@@ -168,10 +187,10 @@ function buildPersonLinkIndex(people, options = {}) {
         });
     });
     if (!tokens.length) return null;
-    // BLOCKED tokens join the alternation (Korean only) so they are consumed
-    // before their inner alias; longest-first keeps multi-word names and
-    // compounds ahead of their short forms.
-    const all = (en ? tokens : BLOCKED_KO.concat(tokens)).slice().sort((a, b) => b.length - a.length);
+    // BLOCKED tokens join the alternation so they are consumed before the alias
+    // inside them; longest-first keeps multi-word names and compounds ahead of
+    // their short forms.
+    const all = (en ? BLOCKED_EN : BLOCKED_KO).concat(tokens).slice().sort((a, b) => b.length - a.length);
     const alternation = all.map(escapeRegExp).join('|');
     const pattern = new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
     return { pattern, byAlias, en };
@@ -207,6 +226,7 @@ function mapLinkableText(html, mapText) {
 
 module.exports = {
     BLOCKED_KO,
+    BLOCKED_EN,
     NEVER_LINK_ALIAS_KO,
     NEVER_LINK_ALIAS_EN,
     WORD_CHAR,

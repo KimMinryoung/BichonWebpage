@@ -45,6 +45,13 @@ const people = [{
     names: { short: '세르게이 비테', display: '세르게이 비테', family: '비테' },
     aliases: { ko: ['비테'], en: [] },
 }, {
+    // English \b stops a surname inside a longer WORD but not inside a longer
+    // NAME, so BLOCKED_EN carries the namesakes who are not in the dictionary.
+    id: 'boris-pasternak',
+    displayName: 'Boris Pasternak',
+    names: { short: 'Boris Pasternak', display: 'Boris Pasternak', family: 'Pasternak' },
+    aliases: { ko: [], en: [] },
+}, {
     // A regnal number is the family-name field for monarchs and is never a name.
     id: 'nicholas-ii',
     displayName: '니콜라이 2세',
@@ -134,6 +141,14 @@ assert.match(linker('person').plain('니콜라이 2세 시대'), /people\/nichol
 // the name inside it never links (BLOCKED_KO).
 assert.doesNotMatch(linker('person').plain('비테프스크와 레닌그라드'), /commu-person-link/);
 assert.match(linker('person').plain('비테의 권고에 따라'), /\/commulingo\/people\/witte/);
+
+// Same rule in English, where the longer string is another person's name.
+const enLinker = createLinker(en, { surface: 'person' });
+assert.doesNotMatch(enLinker.plain('a sketch by Leonid Pasternak'), /commu-person-link/);
+assert.match(
+    createLinker(en, { surface: 'person' }).plain('Pasternak refused the prize'),
+    /\/commulingo\/people\/boris-pasternak/,
+);
 
 // Korean refuses a match glued to a preceding word character.
 assert.doesNotMatch(linker('person').plain('요시프스탈린'), /commu-person-link/);
