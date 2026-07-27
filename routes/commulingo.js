@@ -526,7 +526,7 @@ router.get('/book/:collectionId', async (req, res) => {
         // page shows before a lesson is ever opened, so they carry the same
         // dictionary links the concept briefs do.
         let linked = collection;
-        let dictionaryEntries = { people: [], terms: [], events: [] };
+        let dictionaryEntries = { people: [], terms: [], events: [], docs: [] };
         try {
             const linkers = await commuLingoLinkers();
             linked = {
@@ -618,11 +618,12 @@ function linkLocalized(linkers, value) {
 // exactly those labels, so no second lookup table is needed.
 async function bookDictionaryEntries(collection, lang) {
     const indexes = await getLinkIndexes(lang);
-    const found = { people: new Map(), terms: new Map(), events: new Map() };
+    const found = { people: new Map(), terms: new Map(), events: new Map(), docs: new Map() };
     const LABELS = {
         people: entry => entry.displayName || localize(entry.name, lang),
         terms: entry => entry.label,
         events: entry => entry.title,
+        docs: entry => entry.label,
     };
     const collect = value => {
         if (!value) return;
@@ -658,6 +659,7 @@ async function bookDictionaryEntries(collection, lang) {
         people: [...found.people.values()],
         terms: [...found.terms.values()],
         events: [...found.events.values()],
+        docs: [...found.docs.values()],
     };
 }
 

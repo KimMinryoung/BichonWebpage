@@ -65,7 +65,8 @@
         <% var dictGroups = [
                { items: dict.terms || [], base: '/commulingo/terms/', label: lang === 'en' ? 'Terms' : '용어' },
                { items: dict.people || [], base: '/commulingo/people/', label: lang === 'en' ? 'People' : '인물' },
-               { items: dict.events || [], base: '/commulingo/events/', label: lang === 'en' ? 'Historical events' : '역사 사건' }
+               { items: dict.events || [], base: '/commulingo/events/', label: lang === 'en' ? 'Historical events' : '역사 사건' },
+               { items: dict.docs || [], base: '/commulingo/docs/', label: lang === 'en' ? 'Reference texts' : '참고 문헌' }
            ].filter(function(group) { return group.items.length; }); %>
         <% if (dictGroups.length) { %>
         <section class="box commu-book-dictionary" aria-labelledby="book-dictionary">
