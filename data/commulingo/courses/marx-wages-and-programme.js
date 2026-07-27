@@ -131,8 +131,8 @@ chapter({
         ['Production as a variable', 'Accumulation and the productive powers of labour change continuously, so national production is not a constant but a variable. The first premise is simply untrue.'],
         ['The bowl and the spoons', 'Weston said the soup in the bowl is fixed, so widening the spoons changes nothing. Marx answers that the bowl holds the whole produce of national labour, and what stops the workers taking more is neither the narrowness of the bowl nor the scantiness of its contents but only the smallness of their spoons.'],
     ],
-    termKo: '웨스턴의 논법은 임금기금설이다. 임금으로 지불될 자본의 총액이 미리 정해져 있다는 고전파 경제학의 교리로, 여기서는 노동조합이 그 총액을 바꾸지 못하고 노동자들 사이의 분배만 바꿀 뿐이라는 결론이 나온다. 이 교리를 가장 정연하게 정리했던 J. S. 밀 자신이 1869년 「널리 퍼진 해로운 오류」라며 철회했다.',
-    termEn: "Weston's reasoning is the wages-fund doctrine: the classical claim that the capital available for wages is settled in advance, so unions cannot change the total and only redistribute it among workers. In 1869 J. S. Mill, who had written its definitive statement, withdrew it as a 'prevailing and mischievous error'.",
+    termKo: '웨스턴의 논법은 임금기금설이다. 임금으로 지불될 자본의 총액이 미리 정해져 있다는 고전파 경제학의 교리로, 여기서는 노동조합이 그 총액을 바꾸지 못하고 노동자들 사이의 분배만 바꿀 뿐이라는 결론이 나온다. 이 교리를 가장 정연하게 정리했던 J. S. 밀 자신이 1869년 「널리 퍼진 해로운 오류」라며 철회했다. 마르크스가 이 논법을 한 겹씩 벗겨 내는 대목은 『임금, 가격, 이윤』 전문 해설 제1절과 제2절에서 원문으로 읽을 수 있다.',
+    termEn: "Weston's reasoning is the wages-fund doctrine: the classical claim that the capital available for wages is settled in advance, so unions cannot change the total and only redistribute it among workers. In 1869 J. S. Mill, who had written its definitive statement, withdrew it as a 'prevailing and mischievous error'. Sections I and II are read in full in the guided reading of Value, Price and Profit.",
     modernKo: '최저임금을 올리면 그만큼 일자리가 사라진다는 주장이 같은 구조로 서 있다. 정해진 파이를 전제로 깔아 놓고, 그 전제는 검사하지 않은 채 결론만 말하는 것이다. 마르크스가 웨스턴에게 요구한 것도 반대 구호가 아니라, 전제를 진술하고 증명하라는 것이었다.',
     modernEn: 'The claim that raising the minimum wage destroys jobs one for one has the same shape: a fixed pie assumed at the start and never examined, with only the conclusion stated. What Marx demanded of Weston was not the opposite assertion but that he state and prove the premise.',
     basic: [
@@ -289,8 +289,8 @@ chapter({
         ['The area of a triangle', 'To compare triangles of every shape you reduce them to an expression quite different from their visible form — half the base times the height. Commodities must be reduced to a common expression in the same way.'],
         ['Social labour', 'The common substance is labour, and not labour as such but social labour: an article made for one\'s own use is a product, not a commodity. The magnitude of value is the quantity of social labour crystallised in it, measured by labour-time.'],
     ],
-    termKo: '「사회적으로 필요한 노동」은 게으른 노동자가 더 오래 걸린다고 그 상품의 가치가 커진다는 뜻이 아니다. 모든 노동은 평균 노동, 곧 단순 노동을 단위로 환원되어 계산된다. 그래서 숙련 노동은 더 많은 단순 노동으로 셈해진다.',
-    termEn: '"Socially necessary labour" does not mean a lazy worker makes his product more valuable by taking longer. All kinds of labour are reduced to average or simple labour as their unit, so skilled labour counts as a multiple of simple labour.',
+    termKo: '「사회적으로 필요한 노동」은 게으른 노동자가 더 오래 걸린다고 그 상품의 가치가 커진다는 뜻이 아니다. 모든 노동은 평균 노동, 곧 단순 노동을 단위로 환원되어 계산된다. 그래서 숙련 노동은 더 많은 단순 노동으로 셈해진다. 가치론을 세우는 제6절의 원문과 해설은 『임금, 가격, 이윤』 전문 해설에 있다.',
+    termEn: '"Socially necessary labour" does not mean a lazy worker makes his product more valuable by taking longer. All kinds of labour are reduced to average or simple labour as their unit, so skilled labour counts as a multiple of simple labour. Section VI is read in full in the guided reading of Value, Price and Profit.',
     modernKo: '「가격은 수요와 공급이 정한다」는 설명은 시장가격이 왜 어떤 중심 둘레에서 오르내리는지를 말해 주지 못한다. 수요와 공급이 정확히 일치하는 순간에도 가격은 어떤 수준에 가 있는데, 그 수준을 정하는 것은 수요·공급이 아닌 다른 무엇일 수밖에 없다. 마르크스가 찾는 것이 바로 그 중심이다.',
     modernEn: 'Saying that price is set by supply and demand does not say why market prices oscillate around some centre at all. If price does not vanish when supply and demand balance, something else must fix that centre — and the centre is what Marx is after.',
     basic: [
@@ -441,8 +441,8 @@ chapter({
         ['Surplus labour', 'The value of labour-power is fixed by the labour needed to maintain it, but its use runs as far as the worker\'s strength allows. A worker who reproduces his wages in six hours and works twelve performs six hours of surplus labour.'],
         ['Profit from selling at value', 'The capitalist makes his profit not by selling above value but by selling at value, because part of the labour in the commodity was paid for and part was not.'],
     ],
-    termKo: '마르크스는 「노동의 가치」를 「노동력의 가치」를 가리키는 통속적 은어로만 쓰겠다고 명시한다. 열 시간 노동일의 가치가 열 시간의 노동이라는 말은 동어반복이고, 그래서 무의미하다.',
-    termEn: 'Marx states that he will use "value of labour" only as a popular slang term for "value of labouring power". To say the value of a ten-hour working day equals ten hours\' labour is a tautology, and therefore senseless.',
+    termKo: '마르크스는 「노동의 가치」를 「노동력의 가치」를 가리키는 통속적 은어로만 쓰겠다고 명시한다. 열 시간 노동일의 가치가 열 시간의 노동이라는 말은 동어반복이고, 그래서 무의미하다. 노동력과 잉여가치를 다룬 제7절부터 제10절까지의 원문은 『임금, 가격, 이윤』 전문 해설에서 이어 읽을 수 있다.',
+    termEn: 'Marx states that he will use "value of labour" only as a popular slang term for "value of labouring power". To say the value of a ten-hour working day equals ten hours\' labour is a tautology, and therefore senseless. Sections VII to X are read in full in the guided reading of Value, Price and Profit.',
     modernKo: '급여명세서 위에서는 일한 모든 시간이 지불된 시간으로 보인다. 임금노동에서는 지불되지 않은 노동까지 지불된 것처럼 보인다는 말이다. 농노제에서는 자기 밭 사흘과 영주의 땅 사흘이 눈에 보이게 갈라져 있었다. 오늘의 계약과 급여가 그 경계를 지운다는 것이 이 장의 요지다.',
     modernEn: 'A payslip records only paid hours. Under wage labour even unpaid labour looks paid, whereas the serf\'s three days for himself and three for his lord were visibly separated in time and space. The contract and the weekly wage erase that boundary — that is the point of the chapter.',
     basic: [
@@ -599,8 +599,8 @@ chapter({
         ['Five cases of wage struggle', 'When the value of necessaries rises, when the value of money falls, when the working day lengthens, when the intensity of labour increases, and across the phases of the industrial cycle. In ninety-nine cases out of a hundred the struggle is a reaction of labour to a prior action of capital.'],
         ['Time is the room of human development', 'The fight to shorten the working day sets limits to the tyrannical usurpations of capital. A man with no free time is less than a beast of burden, and capital unchecked will drive the whole working class into that state.'],
     ],
-    termKo: '「상대적 임금」은 절대적 생활수준과 다른 개념이다. 생산력이 올라 임금의 구매력이 예전과 같이 유지되더라도, 늘어난 생산력의 몫이 전부 자본가에게 돌아간다면 자본가에 대한 노동자의 사회적 지위는 낮아진 것이다.',
-    termEn: '"Relative wages" are not the absolute standard of living. If productivity rises and the same money buys as much as before, the worker\'s absolute standard is unchanged — but if he receives no share of the increase, his social position relative to the capitalist has fallen.',
+    termKo: '「상대적 임금」은 절대적 생활수준과 다른 개념이다. 생산력이 올라 임금의 구매력이 예전과 같이 유지되더라도, 늘어난 생산력의 몫이 전부 자본가에게 돌아간다면 자본가에 대한 노동자의 사회적 지위는 낮아진 것이다. 임금 투쟁의 다섯 가지 사례와 마지막 세 결의안은 『임금, 가격, 이윤』 전문 해설 제13절과 제14절에 있다.',
+    termEn: '"Relative wages" are not the absolute standard of living. If productivity rises and the same money buys as much as before, the worker\'s absolute standard is unchanged — but if he receives no share of the increase, his social position relative to the capitalist has fallen. The five cases of wage struggle and the closing resolutions are read in sections XIII and XIV of the guided reading of Value, Price and Profit.',
     modernKo: '생산성은 오르는데 실질임금이 제자리인 상황을 두고 「임금은 그대로인데 왜 불만인가」라고 묻는 논법이 있다. 마르크스의 답은 상대적 임금이다. 절대 수준이 유지되어도 늘어난 생산력의 몫에서 배제되면 사회적 지위는 하락한다.',
     modernEn: 'When productivity rises and real wages stand still, the reply "your wages have not fallen, so what is the complaint?" is common. Marx\'s answer is relative wages: an unchanged absolute standard, combined with exclusion from the increase, is a decline in social position.',
     basic: [
