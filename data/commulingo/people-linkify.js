@@ -14,17 +14,36 @@
 
 const WORD_CHAR = /[0-9A-Za-z가-힣]/;
 
-// Korean compounds that contain a person alias but must never link. The second
-// group are longer words that begin with a family name the index now offers on
-// its own; each one was found firing in real dictionary prose by
-// scripts/audit-family-name-collisions.js, not guessed.
+// Korean compounds that contain a person alias but must never link. Every entry
+// past the first group was found firing in real dictionary prose by
+// scripts/audit-family-name-collisions.js, which runs the shipping index over
+// every published passage — none of them are guesses.
 const BLOCKED_KO = [
     '레닌그라드', '스탈린그라드', '레닌주의', '스탈린주의', '마르크스주의', '트로츠키주의',
     '마르크스-레닌주의', '라살레주의', '라살레파',
     '탈레반', '넵스키 대로', '로마노프 왕조', '사이버-레닌', '사이버 레닌',
+    // Longer words that begin with a one-word alias: place names, institutes,
+    // and ordinary words. 비테프스크 is Vitebsk, not Count Witte; 펠셰르 is a
+    // medical assistant, not Arvīds Pelše.
     '만네르헤임', '만네르하임', '디아스포라', '베르그송', '플린트', '노긴스크', '바우만스카야',
     '루벤스타인', '차야노프시치나', '콘드라티예프시치나', '콘드라티예프시나', '수하노프카',
+    '비테프스크', '펠셰르',
     '바쿠닌주의', '콘드라티예프주의', '블랑키즘', '블랑키스트', '흐빌로비즘',
+    // Full names of people who share a surname with a dictionary entry but are
+    // not in it. Blocking the phrase keeps the surname linking everywhere else,
+    // which is what you want when the entry is the famous bearer: 주코프 should
+    // link, but 유리 주코프 of Pravda is not the marshal.
+    '알렉산드르 안드레예프', '니콜라이 안드레예프', '블라디미르 표도로프', '알렉세이 표도로프',
+    '세르게이 코로빈', '스타니슬라프 멘시코프', '니키타 모이세예프', '겐리흐 노보질로프',
+    '유리 주코프', '알렉산드르 지노비예프', '세르게이 두비닌', '알렉산드르 막시모프',
+    '레프 톨스토이', '레오니트 파스테르나크', '세르게이 불가코프', '빌리 피셔',
+    '안드레이 카피차', '세르게이 플라토노프', '예브게니 리프시츠', '일리야 리프시츠',
+    '드미트리 수하노프', '알렉산드르 넵스키', '알렉산드르 말리놉스키', '니콜라이 소콜로프',
+    '이반 플료로프', '아타만 칼미코프', '보리스 슬루츠키', '알렉산드르 야쿠봅스키',
+    '바실리 자이체프', '세르게이 이그나티예프', '바딤 트라페즈니코프', '이반 모로조프',
+    '니콜라이 모로조프', '니콜라이 볼스키', '빅토르 사프로노프', '뱌체슬라프 티호노프',
+    '안드레이 보즈네센스키', '알렉세이 라주몹스키', '레프 카르포프', '글레프 우스펜스키',
+    '스베르들로프 공산대학',
 ];
 
 // Bare aliases that are also ordinary Korean words or word+josa homographs
@@ -38,16 +57,20 @@ const BLOCKED_KO = [
 // bearer outside the dictionary shares — 캐롤 보이스 데이비스 is not Angela
 // Davis, 르로이 존스 is not Claudia Jones, 제임스 보그스 is not Grace Lee Boggs.
 // Each was found in real prose by scripts/audit-family-name-collisions.js.
+// A fourth kind: a surname whose famous bearer is NOT the dictionary entry.
+// Every 푸시킨 in this corpus is the poet, not Georgy Pushkin the diplomat, and
+// every 시테른 is Lina Stern or Lev Shternberg, not Grigory Shtern.
 const NEVER_LINK_ALIAS_KO = [
     '카스트로', '보스', '미신', '레비',
     '스트롱', '리드', '포스터', '퍼스트', '피크', '더트', '보시', '팔린',
     '데이비스', '존스', '보그스',
+    '푸시킨', '시테른',
 ];
 // English keeps \b on both sides and matches case-sensitively, so only the
 // homographs that survive both need listing: 'First' opens sentences and titles
 // 465 times in this corpus (First Secretary, First Five-Year Plan), and the
 // shared surnames are the same two people as above.
-const NEVER_LINK_ALIAS_EN = ['levi', 'first', 'davis', 'jones', 'boggs'];
+const NEVER_LINK_ALIAS_EN = ['levi', 'first', 'davis', 'jones', 'boggs', 'pushkin'];
 
 function escapeHtml(value = '') {
     return String(value)

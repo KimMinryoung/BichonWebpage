@@ -39,6 +39,12 @@ const people = [{
     names: { short: '니콜라이 야코블레프', display: '니콜라이 야코블레프', family: '야코블레프' },
     aliases: { ko: [], en: [] },
 }, {
+    // A family name that opens a longer word: 비테프스크 is Vitebsk, not Witte.
+    id: 'witte',
+    displayName: '세르게이 비테',
+    names: { short: '세르게이 비테', display: '세르게이 비테', family: '비테' },
+    aliases: { ko: ['비테'], en: [] },
+}, {
     // A regnal number is the family-name field for monarchs and is never a name.
     id: 'nicholas-ii',
     displayName: '니콜라이 2세',
@@ -123,6 +129,11 @@ assert.strictEqual(ko.person.byAlias['2세'], undefined, 'a regnal number is not
 assert.doesNotMatch(linker('person').plain('표트르 2세의 치세'), /people\/nicholas-ii/);
 // The full name still links, regnal number and all.
 assert.match(linker('person').plain('니콜라이 2세 시대'), /people\/nicholas-ii/);
+
+// A longer word that merely starts with a family name is consumed whole, and
+// the name inside it never links (BLOCKED_KO).
+assert.doesNotMatch(linker('person').plain('비테프스크와 레닌그라드'), /commu-person-link/);
+assert.match(linker('person').plain('비테의 권고에 따라'), /\/commulingo\/people\/witte/);
 
 // Korean refuses a match glued to a preceding word character.
 assert.doesNotMatch(linker('person').plain('요시프스탈린'), /commu-person-link/);
