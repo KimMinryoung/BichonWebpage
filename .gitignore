@@ -1,5 +1,6 @@
-# Environment variables
+# Environment variables (.env.example is tracked; backups like .env.bak-* hold credentials)
 .env
+.env.bak*
 
 # Database setup (contains credentials)
 setup.sql

@@ -59,9 +59,9 @@ router.use((req, res, next) => {
     next();
 });
 
-// People are served from a local JSON snapshot maintained by people-store.js
-// (DB only on refresh/cold-start), so page loads don't wait on a Supabase
-// round-trip. Returns { data, source }.
+// People are served from the in-memory copy maintained by people-store.js
+// (DB only on refresh/cold-start), so page loads never wait on the DB.
+// Returns { data, source }.
 async function loadCommuLingoPeople(options = {}) {
     return loadCommuLingoPeopleData(options);
 }

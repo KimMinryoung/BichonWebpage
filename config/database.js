@@ -13,6 +13,10 @@ const pool = new Pool({
     database: process.env.DB_NAME || 'bichon_website',
     application_name: process.env.DB_APPLICATION_NAME || 'leninbot-frontend',
     max: intFromEnv('DB_POOL_MAX', 15),
+    // The DB is the local leninbot-pg container on the same Docker network;
+    // fail fast instead of letting requests hang when it is down.
+    connectionTimeoutMillis: intFromEnv('DB_CONNECT_TIMEOUT_MS', 3000),
+    keepAlive: true,
     ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
 

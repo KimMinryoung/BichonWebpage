@@ -1,17 +1,21 @@
 const db = require('../../config/database');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
-// Glossary terms served from a local JSON snapshot, mirroring
-// history-events-store: the hot path never awaits the DB; the DB is only
-// touched to (re)build the snapshot on a background timer or on cold start.
-const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_TERMS_CACHE_MS || '600000', 10);
+// Glossary terms served from an in-memory copy, mirroring people-store: the
+// hot path never awaits the DB; the DB is only touched to (re)build the copy
+// on a background timer or on cold start. The on-disk snapshot gives instant
+// warm starts and covers leninbot-pg restarts. Unchanged refreshes keep the
+// previous object and skip the disk write.
+const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_TERMS_CACHE_MS || '60000', 10);
 const SNAPSHOT_PATH = process.env.COMMULINGO_TERMS_SNAPSHOT
     || path.join(__dirname, 'terms-snapshot.json');
 
 let memory = null;          // { data, source, at }
 let pendingRefresh = null;  // coalesced in-flight DB refresh
 let refreshTimer = null;
+let lastSnapshotHash = null; // sha1 of the last serialized snapshot, for change detection
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -172,16 +176,18 @@ function readSnapshotFile() {
     return null;
 }
 
-function writeSnapshotFile(data) {
+function writeSnapshotFile(serialized) {
     try {
         const tmp = SNAPSHOT_PATH + '.tmp';
-        fs.writeFileSync(tmp, JSON.stringify(data));
+        fs.writeFileSync(tmp, serialized);
         fs.renameSync(tmp, SNAPSHOT_PATH); // atomic swap so readers never see a partial file
     } catch (err) {
         console.error('[commulingo terms] snapshot write failed:', err.message);
     }
 }
 
+// Unchanged refreshes keep the previous object (reference identity for
+// downstream memoization) and skip the disk write.
 function refreshFromDb() {
     if (pendingRefresh) return pendingRefresh;
     pendingRefresh = fetchTerms()
@@ -191,8 +197,15 @@ function refreshFromDb() {
                 err.code = 'COMMULINGO_TERMS_EMPTY';
                 throw err;
             }
+            const serialized = JSON.stringify(data);
+            const hash = crypto.createHash('sha1').update(serialized).digest('hex');
+            if (memory && hash === lastSnapshotHash) {
+                memory = { data: memory.data, source: 'db', at: Date.now() };
+                return memory.data;
+            }
             memory = { data, source: 'db', at: Date.now() };
-            writeSnapshotFile(data);
+            lastSnapshotHash = hash;
+            writeSnapshotFile(serialized);
             return data;
         })
         .finally(() => {

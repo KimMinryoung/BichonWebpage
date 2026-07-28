@@ -1,25 +1,27 @@
 const db = require('../../config/database');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
-// History events are served from a local JSON snapshot, mirroring people-store:
+// History events are served from an in-memory copy, mirroring people-store:
 // the hot path never awaits the DB. The DB is only touched to (re)build that
-// snapshot, on a background timer every REFRESH_MS or synchronously the first
-// time when no snapshot exists yet. The snapshot lives in the bind-mounted data
-// dir so it survives container restarts and doubles as an on-disk backup.
+// copy, on a background timer every REFRESH_MS or synchronously the first
+// time when no snapshot exists yet. The on-disk snapshot in the bind-mounted
+// data dir gives instant warm starts and covers leninbot-pg restarts.
+// Unchanged refreshes keep the previous object and skip the disk write.
 //
-// This replaced a plain expiring cache that awaited fetchEvents() on every
-// expiry: with a 30s TTL that made one request per 30s pay the full Supabase
-// round trip (measured at ~2.5s against ~6ms for a cache hit), and every person
-// page pays it too via loadCommuLingoPersonHistoryEvents. Serving stale while
-// refreshing in the background removes that spike entirely.
-const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_HISTORY_EVENTS_CACHE_MS || '600000', 10);
+// (The serve-stale design predates the DB migration to the local leninbot-pg
+// container — it was built when a cache miss paid a ~2.5s Supabase round trip.
+// Local queries cost ~1ms, but keeping the hot path DB-free is still the
+// simplest way to make person pages immune to DB restarts.)
+const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_HISTORY_EVENTS_CACHE_MS || '60000', 10);
 const SNAPSHOT_PATH = process.env.COMMULINGO_HISTORY_EVENTS_SNAPSHOT
     || path.join(__dirname, 'history-events-snapshot.json');
 
 let memory = null;          // { data, source, at } — in-process copy served on the hot path
 let pendingRefresh = null;  // coalesced in-flight DB refresh
 let refreshTimer = null;
+let lastSnapshotHash = null; // sha1 of the last serialized snapshot, for change detection
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -79,10 +81,10 @@ function readSnapshotFile() {
     return null;
 }
 
-function writeSnapshotFile(data) {
+function writeSnapshotFile(serialized) {
     try {
         const tmp = SNAPSHOT_PATH + '.tmp';
-        fs.writeFileSync(tmp, JSON.stringify(data));
+        fs.writeFileSync(tmp, serialized);
         fs.renameSync(tmp, SNAPSHOT_PATH); // atomic swap so readers never see a partial file
     } catch (err) {
         console.error('[commulingo events] snapshot write failed:', err.message);
@@ -90,7 +92,8 @@ function writeSnapshotFile(data) {
 }
 
 // Rebuild from the DB, persist the snapshot, refresh the in-memory copy.
-// Coalesced so overlapping callers share one query.
+// Coalesced so overlapping callers share one query. Unchanged refreshes keep
+// the previous object and skip the disk write.
 function refreshFromDb() {
     if (pendingRefresh) return pendingRefresh;
     pendingRefresh = fetchEvents()
@@ -100,8 +103,15 @@ function refreshFromDb() {
                 err.code = 'COMMULINGO_EVENTS_EMPTY';
                 throw err;
             }
+            const serialized = JSON.stringify(data);
+            const hash = crypto.createHash('sha1').update(serialized).digest('hex');
+            if (memory && hash === lastSnapshotHash) {
+                memory = { data: memory.data, source: 'db', at: Date.now() };
+                return memory.data;
+            }
             memory = { data, source: 'db', at: Date.now() };
-            writeSnapshotFile(data);
+            lastSnapshotHash = hash;
+            writeSnapshotFile(serialized);
             return data;
         })
         .finally(() => {

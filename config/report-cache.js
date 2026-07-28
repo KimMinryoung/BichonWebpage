@@ -8,7 +8,10 @@
 
 const redis = require('./redis');
 
-const LIST_TTL = 600; // 10 minutes in seconds
+// Listing queries hit the local leninbot-pg container (~1ms), so the list
+// cache only needs to absorb burst traffic — keep the TTL short so new
+// entries appear quickly.
+const LIST_TTL = 60;
 
 // ── Report cache (permanent) ──
 

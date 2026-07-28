@@ -1,19 +1,24 @@
 const db = require('../../config/database');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
-// The people dictionary is served from a local JSON snapshot (fast, no
-// per-request DB round-trip). The DB is only touched to (re)build that
-// snapshot: on a background timer every REFRESH_MS, or synchronously the first
-// time when no snapshot exists yet. The snapshot lives in the bind-mounted data
-// dir so it persists across container restarts and doubles as an on-disk backup.
-const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_PEOPLE_REFRESH_MS || '600000', 10);
+// The people dictionary is served from a pre-normalized in-memory copy (no
+// per-request DB round-trip or re-normalization). The DB is only touched to
+// (re)build that copy: on a background timer every REFRESH_MS, or synchronously
+// the first time when no snapshot exists yet. The on-disk snapshot in the
+// bind-mounted data dir gives instant warm starts and keeps pages up when the
+// local leninbot-pg container is down or restarting. Refreshes that fetch
+// identical data keep the previous object (so downstream memoization in
+// linkify.js stays valid) and skip the disk write.
+const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_PEOPLE_REFRESH_MS || '60000', 10);
 const SNAPSHOT_PATH = process.env.COMMULINGO_PEOPLE_SNAPSHOT
     || path.join(__dirname, 'people-snapshot.json');
 
 let memory = null;          // { data, source, at } — in-process copy served on the hot path
 let pendingRefresh = null;  // coalesced in-flight DB refresh
 let refreshTimer = null;
+let lastSnapshotHash = null; // sha1 of the last serialized snapshot, for change detection
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -259,10 +264,10 @@ function readSnapshotFile() {
     return null;
 }
 
-function writeSnapshotFile(data) {
+function writeSnapshotFile(serialized) {
     try {
         const tmp = SNAPSHOT_PATH + '.tmp';
-        fs.writeFileSync(tmp, JSON.stringify(data));
+        fs.writeFileSync(tmp, serialized);
         fs.renameSync(tmp, SNAPSHOT_PATH); // atomic swap so readers never see a partial file
     } catch (err) {
         console.error('[commulingo people] snapshot write failed:', err.message);
@@ -270,7 +275,10 @@ function writeSnapshotFile(data) {
 }
 
 // Rebuild from the DB, persist the snapshot, refresh the in-memory copy.
-// Coalesced so overlapping callers share one query.
+// Coalesced so overlapping callers share one query. When the rebuilt data is
+// byte-identical to the last snapshot, the previous in-memory object is kept
+// (preserving reference identity for linkify.js memoization) and the disk
+// write is skipped.
 function refreshFromDb() {
     if (pendingRefresh) return pendingRefresh;
     pendingRefresh = fetchRows()
@@ -281,8 +289,15 @@ function refreshFromDb() {
                 throw err;
             }
             const data = rowsToPeopleData(rows);
+            const serialized = JSON.stringify(data);
+            const hash = crypto.createHash('sha1').update(serialized).digest('hex');
+            if (memory && hash === lastSnapshotHash) {
+                memory = { data: memory.data, source: 'db', at: Date.now() };
+                return memory.data;
+            }
             memory = { data, source: 'db', at: Date.now() };
-            writeSnapshotFile(data);
+            lastSnapshotHash = hash;
+            writeSnapshotFile(serialized);
             return data;
         })
         .finally(() => {

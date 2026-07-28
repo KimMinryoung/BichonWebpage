@@ -8,4 +8,4 @@
 
 const { createEntryCache } = require('./redis-entry-cache');
 
-module.exports = createEntryCache({ prefix: 'post', indexTtl: 600, label: 'post-cache' });
+module.exports = createEntryCache({ prefix: 'post', indexTtl: 60, label: 'post-cache' });

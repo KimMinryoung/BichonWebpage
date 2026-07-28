@@ -9,4 +9,4 @@
 
 const { createEntryCache } = require('./redis-entry-cache');
 
-module.exports = createEntryCache({ prefix: 'diary', indexTtl: 300, label: 'diary-cache' });
+module.exports = createEntryCache({ prefix: 'diary', indexTtl: 60, label: 'diary-cache' });
