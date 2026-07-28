@@ -19,8 +19,6 @@
         resume: document.getElementById('commuResume')
     };
 
-    syncServerProgress().finally(render);
-
     function text(value) {
         if (!value) return '';
         if (typeof value === 'string') return value;
@@ -61,18 +59,22 @@
         return fetch('/commulingo/progress', { credentials: 'same-origin' })
             .then(function(res) { return res.ok ? res.json() : { authenticated: false }; })
             .then(function(payload) {
-                if (!payload.authenticated) return;
+                if (!payload.authenticated) return false;
+                var changed = false;
                 (payload.progress || []).forEach(function(item) {
-                    progress[item.lessonId] = mergeOne(progress[item.lessonId], {
+                    var merged = mergeOne(progress[item.lessonId], {
                         completed: item.completed,
                         score: item.score,
                         totalQuestions: item.totalQuestions,
                         updatedAt: item.updatedAt
                     });
+                    if (JSON.stringify(merged) !== JSON.stringify(progress[item.lessonId])) changed = true;
+                    progress[item.lessonId] = merged;
                 });
-                saveLocalProgress();
+                if (changed) saveLocalProgress();
+                return changed;
             })
-            .catch(function() {});
+            .catch(function() { return false; });
     }
 
     function bookStats(book) {
@@ -236,4 +238,11 @@
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
     }
+
+    // Paint immediately from the embedded book data and local progress;
+    // the server progress sync only triggers a repaint when it changes something.
+    render();
+    syncServerProgress().then(function(changed) {
+        if (changed) render();
+    });
 })();
