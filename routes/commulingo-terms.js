@@ -197,18 +197,78 @@ function sortTerms(terms, sort, lang) {
     });
 }
 
+function renderAppView(req, view, locals) {
+    return new Promise((resolve, reject) => {
+        req.app.render(view, locals, (err, html) => (err ? reject(err) : resolve(html)));
+    });
+}
+
+// Presented, sorted, grouped list data and the rendered per-group card
+// fragments are pure functions of (terms ref, lang, sort); both are memoized
+// against the terms-store reference, so they rebuild only when the glossary
+// actually changes. The listing ships as a light shell (toolbar, search,
+// chips, jump index, group headings + the first group's cards); the other
+// groups' cards are fetched from /commulingo/terms/cards as the reader
+// scrolls or searches.
+const termListMemo = new WeakMap(); // termsRaw -> Map(`${lang}:${sort}` -> { terms, groups, categories })
+const termCardsMemo = new WeakMap(); // termsRaw -> Map(`${lang}:${sort}:${groupId}` -> html)
+
+async function termListData(lang, sort) {
+    const raw = await loadCommuLingoTerms();
+    let byKey = termListMemo.get(raw);
+    if (!byKey) {
+        byKey = new Map();
+        termListMemo.set(raw, byKey);
+    }
+    const key = `${lang === 'en' ? 'en' : 'ko'}:${sort}`;
+    let data = byKey.get(key);
+    if (!data) {
+        const terms = sortTerms(raw.map(term => presentTerm(term, lang)), sort, lang);
+        data = {
+            raw,
+            terms,
+            groups: groupTerms(terms, sort, lang),
+            categories: termCategoriesWithCounts(terms, lang),
+        };
+        byKey.set(key, data);
+    }
+    return data;
+}
+
+async function termGroupCardsHtml(req, lang, sort, groupId) {
+    const data = await termListData(lang, sort);
+    const group = data.groups.find(item => item.id === groupId);
+    if (!group) return null;
+    let byKey = termCardsMemo.get(data.raw);
+    if (!byKey) {
+        byKey = new Map();
+        termCardsMemo.set(data.raw, byKey);
+    }
+    const key = `${lang === 'en' ? 'en' : 'ko'}:${sort}:${groupId}`;
+    let html = byKey.get(key);
+    if (!html) {
+        html = await renderAppView(req, 'partials/commulingo-term-cards', { terms: group.terms });
+        byKey.set(key, html);
+    }
+    return html;
+}
+
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const en = lang === 'en';
         const sort = req.query.sort === 'chrono' ? 'chrono' : 'name';
-        const all = (await loadCommuLingoTerms()).map(term => presentTerm(term, lang));
-        const terms = sortTerms(all, sort, lang);
+        const data = await termListData(lang, sort);
+        const firstGroup = data.groups[0];
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-terms', {
-            terms,
-            groups: groupTerms(terms, sort, lang),
-            categories: termCategoriesWithCounts(terms, lang),
+            termCount: data.terms.length,
+            groups: data.groups,
+            firstGroupId: firstGroup ? firstGroup.id : '',
+            firstGroupHtml: firstGroup
+                ? await termGroupCardsHtml(req, lang, sort, firstGroup.id)
+                : '',
+            categories: data.categories,
             sort,
             pageTitle: en ? 'Glossary — CommuLingo' : '용어 사전 — CommuLingo',
             pageDescription: en
@@ -220,6 +280,22 @@ router.get('/', async (req, res) => {
     } catch (err) {
         console.error('commulingo terms:', err);
         res.status(500).send('Failed to load glossary');
+    }
+});
+
+// Card fragment for one listing group. Registered before /:termId so 'cards'
+// is never taken for a term id.
+router.get('/cards', async (req, res) => {
+    try {
+        const sort = req.query.sort === 'chrono' ? 'chrono' : 'name';
+        const groupId = typeof req.query.group === 'string' ? req.query.group.trim() : '';
+        const html = await termGroupCardsHtml(req, res.locals.lang, sort, groupId);
+        if (html === null) return res.status(404).send('');
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        res.type('html').send(html);
+    } catch (err) {
+        console.error('commulingo term cards:', err);
+        res.status(500).send('');
     }
 });
 

@@ -9,7 +9,7 @@
         <%- include('../partials/commulingo-dict-nav', { active: 'terms' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Glossary' : '용어 사전' %></h1>
         <div class="commu-dict-toolbar">
-            <p class="commu-dict-count"><%= en ? terms.length + (terms.length === 1 ? ' term' : ' terms') : '총 ' + terms.length + '개의 용어' %></p>
+            <p class="commu-dict-count"><%= en ? termCount + (termCount === 1 ? ' term' : ' terms') : '총 ' + termCount + '개의 용어' %></p>
             <nav class="commu-dict-sort" aria-label="<%= en ? 'Sort order' : '정렬 순서' %>">
                 <a href="/commulingo/terms" class="<%= sort === 'name' ? 'is-active' : '' %>"
                     <% if (sort === 'name') { %>aria-current="true"<% } %>><%= en ? 'A–Z' : '가나다순' %></a>
@@ -40,26 +40,102 @@
             <% }) %>
         </nav>
         <% } %>
-        <section class="commu-event-grid" id="commu-term-list" aria-label="<%= en ? 'Glossary terms' : '용어 목록' %>">
+        <%
+        // Shell only: group headings render now, the first group's cards come
+        // inlined (memoized server-side), and the rest are fetched from
+        // /commulingo/terms/cards as they approach the viewport or when a
+        // search/filter needs every card. The <noscript> lists keep every term
+        // reachable for crawlers and script-less readers.
+        %>
+        <section class="commu-event-grid" id="commu-term-list" data-lazy data-sort="<%= sort %>"
+            aria-label="<%= en ? 'Glossary terms' : '용어 목록' %>">
             <% groups.forEach(function(group) { %>
-            <h2 class="commu-term-group-head" id="<%= group.id %>"><%= group.label %></h2>
-            <% group.terms.forEach(function(term) { %>
-            <a class="commu-event-card" href="/commulingo/terms/<%= term.id %>"
-                data-category="<%= term.category || '__none__' %>"
-                data-search="<%= [term.original, term.term, term.termOther, term.aliasSearchText, term.period, term.definition].filter(Boolean).join(' ') %>">
-                <div class="commu-event-meta">
-                    <% if (term.period) { %><span class="commu-event-period"><%= term.period %></span><% } %>
-                    <% if (term.categoryLabel) { %><span class="commu-event-category"><%= term.categoryLabel %></span><% } %>
-                </div>
-                <h3><%= term.term %></h3>
-                <% if (term.original) { %><span class="commu-event-original"><%= term.original %></span><% } %>
-                <p><%= term.definition %></p>
-            </a>
-            <% }) %>
+            <h2 class="commu-term-group-head" id="<%= group.id %>"
+                <% if (group.id !== firstGroupId) { %>data-pending<% } %>><%= group.label %></h2>
+            <% if (group.id === firstGroupId) { %>
+            <%- firstGroupHtml %>
+            <% } else { %>
+            <noscript>
+                <ul class="commu-people-noscript-list">
+                    <% group.terms.forEach(function(term) { %>
+                    <li><a href="/commulingo/terms/<%= term.id %>"><%= term.term %></a></li>
+                    <% }) %>
+                </ul>
+            </noscript>
+            <% } %>
             <% }) %>
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script>
+        // Lazy group loading for the glossary list. Loads a group's cards when
+        // its heading nears the viewport, when its index-bar link is clicked,
+        // or all at once when the shared dict search needs the full list
+        // (window.__commuDictLazyLoad, consumed by commulingo-dict-search.js).
+        (function() {
+            var list = document.getElementById('commu-term-list');
+            if (!list || !list.hasAttribute('data-lazy')) return;
+            var sort = list.getAttribute('data-sort') || 'name';
+            var pending = {};
+            var heads = Array.prototype.slice.call(
+                list.querySelectorAll('.commu-term-group-head[data-pending]'));
+
+            function loadGroup(head) {
+                if (!head || !head.hasAttribute('data-pending')) return Promise.resolve();
+                var id = head.id;
+                if (pending[id]) return pending[id];
+                pending[id] = fetch('/commulingo/terms/cards?sort=' + encodeURIComponent(sort)
+                        + '&group=' + encodeURIComponent(id), { credentials: 'same-origin' })
+                    .then(function(res) {
+                        if (!res.ok) throw new Error('HTTP ' + res.status);
+                        return res.text();
+                    })
+                    .then(function(html) {
+                        if (head.hasAttribute('data-pending')) {
+                            head.removeAttribute('data-pending');
+                            head.insertAdjacentHTML('afterend', html);
+                            list.dispatchEvent(new CustomEvent('commu-cards-changed'));
+                        }
+                    })
+                    .catch(function(err) {
+                        delete pending[id];
+                        throw err;
+                    });
+                return pending[id];
+            }
+
+            var io = 'IntersectionObserver' in window
+                ? new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (!entry.isIntersecting) return;
+                        io.unobserve(entry.target);
+                        loadGroup(entry.target).catch(function() {});
+                    });
+                }, { rootMargin: '300px 0px' })
+                : null;
+            if (io) heads.forEach(function(head) { io.observe(head); });
+            else heads.forEach(function(head) { loadGroup(head).catch(function() {}); });
+
+            window.__commuDictLazyLoad = function() {
+                return Promise.all(heads.map(function(head) { return loadGroup(head); }))
+                    .then(function() { if (io) io.disconnect(); });
+            };
+
+            // Index-bar jumps and #hash arrivals load their target right away.
+            Array.prototype.forEach.call(
+                document.querySelectorAll('.commu-dict-index a[href^="#"]'),
+                function(link) {
+                    link.addEventListener('click', function() {
+                        var head = document.getElementById(link.getAttribute('href').slice(1));
+                        if (head) loadGroup(head).catch(function() {});
+                    });
+                });
+            if (window.location.hash) {
+                var target = document.getElementById(window.location.hash.slice(1));
+                if (target && target.hasAttribute('data-pending')) loadGroup(target).catch(function() {});
+            }
+        })();
+    </script>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

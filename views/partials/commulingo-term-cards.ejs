@@ -1,0 +1,19 @@
+<%
+// One listing group's term cards, served by /commulingo/terms/cards and
+// inlined for the first group by the terms shell. Rendered once per glossary
+// refresh per (lang, sort, group) — see termGroupCardsHtml in
+// routes/commulingo-terms.js.
+%>
+<% terms.forEach(function(term) { %>
+<a class="commu-event-card" href="/commulingo/terms/<%= term.id %>"
+    data-category="<%= term.category || '__none__' %>"
+    data-search="<%= [term.original, term.term, term.termOther, term.aliasSearchText, term.period, term.definition].filter(Boolean).join(' ') %>">
+    <div class="commu-event-meta">
+        <% if (term.period) { %><span class="commu-event-period"><%= term.period %></span><% } %>
+        <% if (term.categoryLabel) { %><span class="commu-event-category"><%= term.categoryLabel %></span><% } %>
+    </div>
+    <h3><%= term.term %></h3>
+    <% if (term.original) { %><span class="commu-event-original"><%= term.original %></span><% } %>
+    <p><%= term.definition %></p>
+</a>
+<% }) %>

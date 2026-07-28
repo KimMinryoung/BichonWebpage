@@ -58,6 +58,31 @@
 
         var cards = Array.prototype.slice.call(list.querySelectorAll('[data-search]'));
         var highlighted = [];
+        // A list marked data-lazy loads its cards in groups (see the glossary
+        // shell). Filtering needs every card, so those paths wait on the
+        // page's loader; a list without the attribute resolves immediately.
+        var lazyPending = list.hasAttribute('data-lazy');
+        function rescanCards() {
+            cards = Array.prototype.slice.call(list.querySelectorAll('[data-search]'));
+        }
+        function ensureLoaded() {
+            if (!lazyPending || typeof window.__commuDictLazyLoad !== 'function') {
+                return Promise.resolve();
+            }
+            return window.__commuDictLazyLoad().then(function() {
+                lazyPending = false;
+                rescanCards();
+            });
+        }
+        // Groups also stream in while the reader just scrolls; keep the card
+        // list current and re-run any active filter over the newcomers.
+        list.addEventListener('commu-cards-changed', function() {
+            rescanCards();
+            if (input.value.trim() || category) apply();
+        });
+        // Engaging the search box prefetches the rest of the list, so the
+        // cards are usually in place before the first keystroke settles.
+        input.addEventListener('focus', function() { ensureLoaded(); }, { once: true });
         // Optional category chips over the same list (glossary only). Query and
         // category are one filter with two inputs, so they share this state and
         // one visibility pass; two independent scripts toggling .hidden would
@@ -125,8 +150,10 @@
 
         var frame = null;
         input.addEventListener('input', function() {
-            if (frame) cancelAnimationFrame(frame);
-            frame = requestAnimationFrame(apply);
+            ensureLoaded().then(function() {
+                if (frame) cancelAnimationFrame(frame);
+                frame = requestAnimationFrame(apply);
+            });
         });
         input.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && input.value) {
@@ -134,8 +161,10 @@
                 input.value = '';
                 apply();
             } else if (event.key === 'Enter') {
-                var first = cards.find(function(card) { return !card.hidden; });
-                if (first && input.value.trim()) window.location.href = first.href;
+                ensureLoaded().then(function() {
+                    var first = cards.find(function(card) { return !card.hidden; });
+                    if (first && input.value.trim()) window.location.href = first.href;
+                });
             }
         });
         clearButton.addEventListener('click', function() {
@@ -153,7 +182,7 @@
                     other.classList.toggle('is-active', active);
                     other.setAttribute('aria-pressed', active ? 'true' : 'false');
                 });
-                apply();
+                ensureLoaded().then(apply);
             });
         });
         if (input.value.trim()) apply();

@@ -3341,6 +3341,13 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 /* Index bar: initial consonants / letters when sorted by name, decades when
    sorted chronologically. */
+/* The sort toggle and the jump index are <nav> elements, which would inherit
+   the global `nav { position: sticky }` from style.css and trail the scroll,
+   covering the content below. They are in-flow controls, not chrome — keep
+   them static. */
+.commu-dict-sort,
+.commu-dict-index { position: static; }
+
 .commu-dict-index { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .4rem; }
 .commu-dict-index a {
     min-width: 2rem; padding: .2rem .4rem; border: 1px solid var(--border);
