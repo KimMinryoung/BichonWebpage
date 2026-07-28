@@ -2429,6 +2429,23 @@ button.commu-dc-option:hover { border-color: var(--link); }
     letter-spacing: 0.06em;
 }
 
+/* Lazy-loaded card grids: transient note while a group's cards download,
+   and the script-less fallback list of person links. */
+.commu-people-loading {
+    grid-column: 1 / -1;
+    margin: 6px 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.commu-people-noscript-list {
+    grid-column: 1 / -1;
+    margin: 6px 0;
+    padding-left: 18px;
+    columns: 2;
+    font-size: 0.92rem;
+}
+
 .commu-people-group-head h2 {
     margin: 2px 0 4px;
     font-size: 1.25rem;

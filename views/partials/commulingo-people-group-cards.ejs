@@ -1,0 +1,8 @@
+<%
+// One group's card grid, served by /commulingo/people/cards?group=<id> and
+// injected by the people-page shell when the group is opened. Rendered once
+// per data refresh per language (peopleGroupCardsHtml memo), not per request.
+%>
+<% people.forEach(function(person) { %>
+<%- include('./commulingo-person-card', { person: person, groupId: groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg }) %>
+<% }) %>

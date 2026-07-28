@@ -99,13 +99,115 @@
         </details>
         <% } %>
 
-        <%- groupsHtml %>
+        <%
+        // Group shells only — the card grids (~8MB of markup) load per group
+        // from /commulingo/people/cards?group=<id> when a group is opened or a
+        // search begins. data-people carries the member ids so #p-<id> deep
+        // links know which group to fetch; the <noscript> list keeps every
+        // person page reachable for crawlers and script-less readers.
+        var standaloneHeadPrinted = false;
+        %>
+        <% groupsMeta.forEach(function(group) { %>
+        <% if (!standaloneHeadPrinted && group.standalone) { standaloneHeadPrinted = true; %>
+        <h2 class="commu-people-standalone-head"><%= en ? 'Revolutionaries beyond the Soviet Union' : '소련 밖의 혁명가들' %></h2>
+        <% } %>
+        <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
+            <summary class="commu-people-group-head">
+                <span class="commu-people-range"><%= group.range %></span>
+                <h2><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= en ? '' : '명' %></span></h2>
+                <p><%= group.blurb %></p>
+            </summary>
+            <div class="commu-people-grid">
+                <noscript>
+                    <ul class="commu-people-noscript-list">
+                        <% group.links.forEach(function(link) { %>
+                        <li><a href="/commulingo/people/<%= link.id %>"><%= link.name %></a></li>
+                        <% }) %>
+                    </ul>
+                </noscript>
+            </div>
+        </details>
+        <% }) %>
     </main>
 
     <%- include('../partials/footer') %>
     <script>
-        // Highlight the card targeted by the URL hash (arriving from a book's name link).
+        // Lazy card loading: each group's grid is fetched once, when the group
+        // is first opened (or when a search needs every card).
         (function() {
+            var en = document.documentElement.lang === 'en';
+            var pending = {};
+            var groupEls = Array.prototype.slice.call(
+                document.querySelectorAll('details.commu-people-group[data-group-id]'));
+
+            function loadGroup(group) {
+                if (!group || group.hasAttribute('data-loaded')) return Promise.resolve();
+                var id = group.getAttribute('data-group-id');
+                if (pending[id]) return pending[id];
+                var grid = group.querySelector('.commu-people-grid');
+                var loading = document.createElement('p');
+                loading.className = 'commu-people-loading';
+                loading.textContent = en ? 'Loading…' : '불러오는 중…';
+                if (grid) grid.appendChild(loading);
+                pending[id] = fetch('/commulingo/people/cards?group=' + encodeURIComponent(id), { credentials: 'same-origin' })
+                    .then(function(res) {
+                        if (!res.ok) throw new Error('HTTP ' + res.status);
+                        return res.text();
+                    })
+                    .then(function(html) {
+                        loading.remove();
+                        if (grid && !group.hasAttribute('data-loaded')) {
+                            grid.insertAdjacentHTML('beforeend', html);
+                            group.setAttribute('data-loaded', '');
+                        }
+                    })
+                    .catch(function(err) {
+                        loading.textContent = en ? 'Failed to load — reopen to retry' : '불러오지 못했습니다 — 다시 열면 재시도합니다';
+                        setTimeout(function() { loading.remove(); }, 4000);
+                        delete pending[id];
+                        throw err;
+                    });
+                return pending[id];
+            }
+
+            groupEls.forEach(function(group) {
+                group.addEventListener('toggle', function() {
+                    if (group.open) loadGroup(group).catch(function() {});
+                });
+            });
+
+            window.__commuPeopleCards = {
+                loadGroup: loadGroup,
+                loadAll: function() {
+                    return Promise.all(groupEls.map(function(group) { return loadGroup(group); }));
+                },
+                groupFor: function(personId) {
+                    for (var i = 0; i < groupEls.length; i++) {
+                        var ids = ' ' + (groupEls[i].getAttribute('data-people') || '') + ' ';
+                        if (ids.indexOf(' ' + personId + ' ') !== -1) return groupEls[i];
+                    }
+                    return null;
+                }
+            };
+        })();
+    </script>
+    <script>
+        // Highlight the card targeted by the URL hash (arriving from a book's
+        // name link), fetching its group's cards first if needed.
+        (function() {
+            function focusCard(personId) {
+                var card = document.getElementById('p-' + personId);
+                if (!card) return;
+                var group = card.closest('details.commu-people-group');
+                if (group) group.open = true;
+                document.querySelectorAll('.commu-person-card.is-focused').forEach(function(el) {
+                    el.classList.remove('is-focused');
+                });
+                card.classList.add('is-focused');
+                window.requestAnimationFrame(function() {
+                    card.scrollIntoView({ block: 'start' });
+                });
+            }
             function focusHash() {
                 var hash = window.location.hash;
                 if (!hash) return;
@@ -122,17 +224,15 @@
                     return;
                 }
                 if (hash.indexOf('#p-') !== 0) return;
-                var card = document.getElementById(hash.slice(1));
-                if (!card) return;
-                var group = card.closest('details.commu-people-group');
-                if (group) group.open = true;
-                document.querySelectorAll('.commu-person-card.is-focused').forEach(function(el) {
-                    el.classList.remove('is-focused');
-                });
-                card.classList.add('is-focused');
-                window.requestAnimationFrame(function() {
-                    card.scrollIntoView({ block: 'start' });
-                });
+                var personId = hash.slice(3);
+                var group = window.__commuPeopleCards.groupFor(personId);
+                if (group && !group.hasAttribute('data-loaded')) {
+                    window.__commuPeopleCards.loadGroup(group)
+                        .then(function() { focusCard(personId); })
+                        .catch(function() {});
+                } else {
+                    focusCard(personId);
+                }
             }
             window.addEventListener('hashchange', focusHash);
             focusHash();
@@ -160,12 +260,27 @@
                     count: document.getElementById('commu-people-result-' + key + '-count')
                 };
             });
-            var cards = Array.prototype.slice.call(document.querySelectorAll('.commu-person-card[data-name]'));
             var groups = Array.prototype.slice.call(document.querySelectorAll('details.commu-people-group'));
             var chrome = Array.prototype.slice.call(document.querySelectorAll(
                 'details.commu-office-index, .commu-people-standalone-head'));
-            // Remember each card's home so search can restore browse order.
-            var origin = cards.map(function(card) { return { card: card, parent: card.parentNode }; });
+            // Cards load lazily; the haystack list and each card's home parent
+            // are captured once every group's grid has been fetched.
+            var cards = [];
+            var origin = [];
+            var cardsReady = null;
+            var emptyText = emptyMsg.textContent;
+            function ensureCards() {
+                if (!cardsReady) {
+                    cardsReady = window.__commuPeopleCards.loadAll().then(function() {
+                        cards = Array.prototype.slice.call(document.querySelectorAll('.commu-person-card[data-name]'));
+                        origin = cards.map(function(card) { return { card: card, parent: card.parentNode }; });
+                    });
+                }
+                return cardsReady;
+            }
+            // Start the download as soon as the reader engages the search box,
+            // so the cards are usually there before the first keystroke lands.
+            input.addEventListener('focus', function() { ensureCards(); }, { once: true });
             var highlighted = [];
 
             function countText(n) {
@@ -231,6 +346,7 @@
             function apply(query) {
                 var terms = query.split(/\s+/).filter(Boolean);
                 if (!terms.length) { reset(); return; }
+                emptyMsg.textContent = emptyText;
                 highlighted.forEach(clearHighlights);
                 highlighted = [];
                 homeAllCards();
@@ -270,7 +386,28 @@
             var raf = null;
             function onInput() {
                 if (raf) cancelAnimationFrame(raf);
-                raf = requestAnimationFrame(function() { apply(input.value.trim().toLowerCase()); });
+                raf = requestAnimationFrame(function() {
+                    var query = input.value.trim().toLowerCase();
+                    if (!query) { apply(query); return; }
+                    if (origin.length) {
+                        ensureCards().then(function() { apply(input.value.trim().toLowerCase()); });
+                        return;
+                    }
+                    // First search before the cards arrived: show a loading
+                    // note, then run the query once the grids are in.
+                    groups.forEach(function(group) { group.hidden = true; });
+                    chrome.forEach(function(el) { el.hidden = true; });
+                    buckets.forEach(function(bucket) { bucket.section.hidden = true; });
+                    emptyMsg.textContent = en ? 'Loading people…' : '인물 데이터를 불러오는 중…';
+                    emptyMsg.hidden = false;
+                    results.hidden = false;
+                    clearBtn.hidden = false;
+                    ensureCards().then(function() {
+                        apply(input.value.trim().toLowerCase());
+                    }).catch(function() {
+                        emptyMsg.textContent = en ? 'Failed to load people data' : '인물 데이터를 불러오지 못했습니다';
+                    });
+                });
             }
             input.addEventListener('input', onInput);
             input.addEventListener('keydown', function(event) {
@@ -289,7 +426,7 @@
                 input.focus();
             });
             // Restore filtering if the browser repopulates the field on back-nav.
-            if (input.value.trim()) apply(input.value.trim().toLowerCase());
+            if (input.value.trim()) onInput();
         })();
     </script>
     <%- include('../partials/commulingo-person-card-click-script') %>

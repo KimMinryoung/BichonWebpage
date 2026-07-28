@@ -90,35 +90,63 @@ function renderAppView(req, view, locals) {
     });
 }
 
-// The /people groups fragment is ~8MB of markup built from 1200 cards x 3
-// linkify passes (~200ms). It is a pure function of the standardized people
-// and the link indexes, both of which keep a stable reference until the data
-// actually changes — so render it once per refresh per language and serve the
-// cached string afterwards.
-const peopleGroupsHtmlMemo = new WeakMap(); // standardized -> { indexesRef, html }
+// /people is served as a light shell (search box, institution index, group
+// headers) — ~8MB of person-card markup no longer ships with the page. The
+// cards load per group on demand from /people/cards?group=<id>; each group
+// fragment is memoized per (standardized, link indexes), so it is rendered
+// once per data refresh per language, not per request.
+const peopleGroupCardsMemo = new WeakMap(); // standardized -> { indexesRef, byGroup: Map }
 
 // Linkified person-page bodies, keyed by the per-language link-index entry (a
 // new entry appears whenever any dictionary changes, dropping the old Map).
 const personBodyMemo = new WeakMap(); // indexes -> Map(personId -> { epithetHtml, momentHtml, bioHtml, sections })
 
-async function peopleGroupsHtml(req, standardized, lang) {
+async function peopleGroupCardsHtml(req, standardized, lang, group) {
     const indexes = await getLinkIndexes(lang);
-    const cached = peopleGroupsHtmlMemo.get(standardized);
-    if (cached && cached.indexesRef === indexes) return cached.html;
-    const html = await renderAppView(req, 'partials/commulingo-people-groups', {
-        groups: standardized.groups.map(group => ({
-            ...group,
+    let memo = peopleGroupCardsMemo.get(standardized);
+    if (!memo || memo.indexesRef !== indexes) {
+        memo = { indexesRef: indexes, byGroup: new Map() };
+        peopleGroupCardsMemo.set(standardized, memo);
+    }
+    let html = memo.byGroup.get(group.id);
+    if (!html) {
+        html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
             people: sortPeopleChronologically(group.people),
-        })),
-        en: lang === 'en',
-        roleIconSvg,
-        roleHubHref,
-        flagImg,
-        nationalityHubHref,
-        linkifyPersonText: createCardTextLinker(indexes),
-    });
-    peopleGroupsHtmlMemo.set(standardized, { indexesRef: indexes, html });
+            groupId: group.id,
+            en: lang === 'en',
+            roleIconSvg,
+            roleHubHref,
+            flagImg,
+            nationalityHubHref,
+            linkifyPersonText: createCardTextLinker(indexes),
+        });
+        memo.byGroup.set(group.id, html);
+    }
     return html;
+}
+
+// Standalone groups sit outside the Soviet/Russian era sequence and render at
+// the end of the people page under their own section heading.
+const STANDALONE_GROUP_IDS = ['international-revolutionary'];
+
+// Shell metadata for the people page: group headers, per-group person ids
+// (the client resolves #p-<id> deep links against them), and name links for
+// the <noscript>/crawler fallback.
+function orderedPeopleGroupsMeta(standardized) {
+    const groups = standardized.groups || [];
+    const ordered = groups.filter(group => !STANDALONE_GROUP_IDS.includes(group.id))
+        .concat(groups.filter(group => STANDALONE_GROUP_IDS.includes(group.id)));
+    return ordered.map(group => ({
+        id: group.id,
+        range: group.range,
+        title: group.title,
+        blurb: group.blurb,
+        standalone: STANDALONE_GROUP_IDS.includes(group.id),
+        count: group.people.length,
+        personIds: group.people.map(person => person.id).join(' '),
+        links: sortPeopleChronologically(group.people)
+            .map(person => ({ id: person.id, name: person.displayName || person.name })),
+    }));
 }
 
 function setPublicDataCache(req, res, version) {
@@ -236,7 +264,7 @@ router.get('/people', async (req, res) => {
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             roleCategories,
-            groupsHtml: await peopleGroupsHtml(req, standardized, lang),
+            groupsMeta: orderedPeopleGroupsMeta(standardized),
             peopleCount: standardized.people.length,
             roleIconSvg,
             roleHubHref,
@@ -250,6 +278,22 @@ router.get('/people', async (req, res) => {
     } catch (err) {
         console.error('commulingo people:', err);
         res.status(500).send('Failed to load people data');
+    }
+});
+
+// Card-grid fragment for one people group. Registered before /people/:personId
+// so 'cards' is never taken for a person id.
+router.get('/people/cards', async (req, res) => {
+    try {
+        const groupId = typeof req.query.group === 'string' ? req.query.group.trim() : '';
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const group = (standardized.groups || []).find(item => item.id === groupId);
+        if (!group) return res.status(404).send('');
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        res.type('html').send(await peopleGroupCardsHtml(req, standardized, lang, group));
+    } catch (err) {
+        console.error('commulingo people cards:', err);
+        res.status(500).send('');
     }
 });
 
