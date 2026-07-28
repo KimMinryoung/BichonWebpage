@@ -38,19 +38,42 @@
     <% }) %>
 </header>
 <main class="book">
+<% if (pagination) { %>
+<script>
+// Anchor arrivals on a paginated document land on whichever page was
+// requested; if the target section lives on another page, hop there before
+// the reader starts scrolling.
+(function () {
+    var map = <%- JSON.stringify(idToPage) %>;
+    var hash = window.location.hash.slice(1);
+    if (hash && map[hash] && map[hash] !== <%= pagination.current %>) {
+        window.location.replace('?p=' + map[hash] + '#' + hash);
+    }
+})();
+</script>
+<% } %>
 <%- bodyTopHtml %>
+<%
+// On a paginated document the TOC is the hub: entries link to the page that
+// holds their section (plus the anchor); on a single-scroll document they
+// stay plain fragment links.
+var tocHref = function(id) {
+    if (!pagination || !idToPage || !idToPage[id] || idToPage[id] === pagination.current) return '#' + id;
+    return '?p=' + idToPage[id] + '#' + id;
+};
+%>
 <% if (toc.length) { %>
 <nav class="doc-toc" aria-label="<%= en ? 'Table of contents' : '목차' %>">
 <details>
-<summary><%= en ? 'Table of contents' : '목차' %></summary>
+<summary><%= en ? 'Table of contents' : '목차' %><% if (pagination) { %> <span class="doc-toc-pos"><%= pagination.current %>/<%= pagination.total %></span><% } %></summary>
 <ol class="doc-toc-parts">
     <% toc.forEach(function(part) { %>
     <li>
-        <% if (part.id) { %><a class="doc-toc-part" href="#<%= part.id %>"><%= part.text %></a><% } %>
+        <% if (part.id) { %><a class="doc-toc-part" href="<%= tocHref(part.id) %>"><%= part.text %></a><% } %>
         <% if (part.chapters.length) { %>
         <ol class="doc-toc-chapters">
             <% part.chapters.forEach(function(chapter) { %>
-            <li><a href="#<%= chapter.id %>"><%= chapter.text %></a></li>
+            <li><a href="<%= tocHref(chapter.id) %>"><%= chapter.text %></a></li>
             <% }) %>
         </ol>
         <% } %>
@@ -61,6 +84,17 @@
 </nav>
 <% } %>
 <%- bodyRestHtml %>
+<% if (pagination) { %>
+<nav class="doc-pager" aria-label="<%= en ? 'Pages' : '페이지 이동' %>">
+    <% if (pagination.current > 1) { %>
+    <a class="doc-pager-prev" href="?p=<%= pagination.current - 1 %>">← <%= pagination.prevHeading || (en ? 'Previous' : '이전') %></a>
+    <% } else { %><span class="doc-pager-gap"></span><% } %>
+    <span class="doc-pager-pos"><%= pagination.current %> / <%= pagination.total %></span>
+    <% if (pagination.current < pagination.total) { %>
+    <a class="doc-pager-next" href="?p=<%= pagination.current + 1 %>"><%= pagination.nextHeading || (en ? 'Next' : '다음') %> →</a>
+    <% } else { %><span class="doc-pager-gap"></span><% } %>
+</nav>
+<% } %>
 <footer class="doc-colophon">
     <% if (doc.source) { %><p><%= en ? 'Source' : '원전' %>: <%= doc.source %></p><% } %>
     <p><a href="/commulingo/docs"><%= en ? 'CommuLingo Reference Library' : '공산링고 참고 문헌' %></a></p>

@@ -69,13 +69,68 @@ function listCommuLingoDocsFor(kind, id) {
     return loadManifest().filter(doc => (doc[kind] || []).some(ref => ref && ref.id === id));
 }
 
+// Documents longer than this are read page by page instead of as one scroll;
+// the split follows the TOC: a new page at every part (h1) heading, and
+// inside a part at a chapter (h2) boundary once the page passes the soft
+// target. Shorter documents keep the single-scroll reader unchanged.
+const PAGINATE_THRESHOLD_CHARS = 200000;
+const PAGE_TARGET_CHARS = 120000;
+
+function headingText(headingHtml) {
+    return headingHtml.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+// Returns { titleHtml, pages: [{ html, heading }], idToPage } for a long
+// document, or null when the document reads fine as a single page.
+function paginateBody(html) {
+    if (html.length <= PAGINATE_THRESHOLD_CHARS) return null;
+    const heads = [...html.matchAll(/<h([12])([^>]*)>([\s\S]*?)<\/h\1>/g)];
+    if (heads.length < 3) return null;
+
+    // The first h1 is the document title (see annotateHeadings); it renders
+    // on every page. Prose between it and the first section heading (서지
+    // 정보 and the like) belongs to page 1 only.
+    let titleHtml = '';
+    let intro = '';
+    let segHeads = heads;
+    if (Number(heads[0][1]) === 1) {
+        const titleEnd = heads[0].index + heads[0][0].length;
+        titleHtml = html.slice(0, titleEnd);
+        segHeads = heads.slice(1);
+        intro = html.slice(titleEnd, segHeads.length ? segHeads[0].index : html.length);
+    } else {
+        titleHtml = html.slice(0, heads[0].index);
+    }
+    if (!segHeads.length) return null;
+
+    const pages = [];
+    const idToPage = {};
+    let current = null;
+    segHeads.forEach((head, i) => {
+        const end = i + 1 < segHeads.length ? segHeads[i + 1].index : html.length;
+        const segment = html.slice(head.index, end);
+        const level = Number(head[1]);
+        const id = (head[2].match(/\bid="([^"]+)"/) || [])[1] || '';
+        if (!current || level === 1
+            || current.html.length + segment.length > PAGE_TARGET_CHARS) {
+            current = { html: '', heading: headingText(head[0]) };
+            pages.push(current);
+        }
+        current.html += segment;
+        if (id) idToPage[id] = pages.length; // 1-based page numbers
+    });
+    if (pages.length < 2) return null;
+    pages[0].html = intro + pages[0].html;
+    return { titleHtml, pages, idToPage };
+}
+
 function getCommuLingoDocContent(doc) {
     const filePath = path.join(DOCS_DIR, doc.file);
     const stat = fs.statSync(filePath);
     const cached = bodyCache.get(doc.file);
     if (cached && cached.mtimeMs === stat.mtimeMs) return cached;
     const { html, toc } = annotateHeadings(fs.readFileSync(filePath, 'utf8'), doc.tocExclude);
-    const entry = { mtimeMs: stat.mtimeMs, html, toc };
+    const entry = { mtimeMs: stat.mtimeMs, html, toc, paged: paginateBody(html) };
     bodyCache.set(doc.file, entry);
     return entry;
 }

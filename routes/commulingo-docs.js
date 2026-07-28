@@ -77,17 +77,46 @@ router.get('/:docId', (req, res) => {
             backHref: '/commulingo/docs', backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
         });
         const doc = presentDoc(raw, lang);
-        const { html, toc } = getCommuLingoDocContent(raw);
+        const { html, toc, paged } = getCommuLingoDocContent(raw);
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+
+        // Long documents read page by page along the TOC (docs-store decides);
+        // short ones keep the single-scroll reader.
+        if (paged) {
+            const total = paged.pages.length;
+            let current = Number.parseInt(req.query.p, 10);
+            if (!Number.isFinite(current) || current < 1) current = 1;
+            if (current > total) current = total;
+            const page = paged.pages[current - 1];
+            return res.render('public/commulingo-doc', {
+                doc,
+                bodyTopHtml: paged.titleHtml,
+                bodyRestHtml: page.html,
+                toc: nestToc(toc),
+                pagination: {
+                    current,
+                    total,
+                    prevHeading: current > 1 ? paged.pages[current - 2].heading : '',
+                    nextHeading: current < total ? paged.pages[current].heading : '',
+                },
+                idToPage: paged.idToPage,
+                docLang: raw.docLang || 'ko',
+                pageTitle: current > 1 ? `${doc.title} (${current}/${total})` : doc.title,
+                pageDescription: doc.description,
+            });
+        }
+
         // The TOC slots in right after the title h1, so split the body there.
         const cut = html.indexOf('</h1>');
         const bodyTopHtml = cut === -1 ? '' : html.slice(0, cut + '</h1>'.length);
         const bodyRestHtml = cut === -1 ? html : html.slice(cut + '</h1>'.length);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-doc', {
             doc,
             bodyTopHtml,
             bodyRestHtml,
             toc: nestToc(toc),
+            pagination: null,
+            idToPage: null,
             docLang: raw.docLang || 'ko',
             pageTitle: doc.title,
             pageDescription: doc.description,
