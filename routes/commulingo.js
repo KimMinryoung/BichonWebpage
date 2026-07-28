@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('../config/database');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
-const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('../data/commulingo/shards');
+const { loadCommuLingoCatalog, loadCommuLingoLesson, currentVersion } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue } = require('../data/commulingo/people-standard');
 const { loadCommuLingoPeople: loadCommuLingoPeopleData } = require('../data/commulingo/people-store');
 const { loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
@@ -82,6 +82,43 @@ async function loadStandardizedPeople(req, res, options = {}) {
 // a fresh set of linkers per request.
 async function cardTextLinker(res) {
     return createCardTextLinker(await getLinkIndexes(res.locals.lang));
+}
+
+function renderAppView(req, view, locals) {
+    return new Promise((resolve, reject) => {
+        req.app.render(view, locals, (err, html) => (err ? reject(err) : resolve(html)));
+    });
+}
+
+// The /people groups fragment is ~8MB of markup built from 1200 cards x 3
+// linkify passes (~200ms). It is a pure function of the standardized people
+// and the link indexes, both of which keep a stable reference until the data
+// actually changes — so render it once per refresh per language and serve the
+// cached string afterwards.
+const peopleGroupsHtmlMemo = new WeakMap(); // standardized -> { indexesRef, html }
+
+// Linkified person-page bodies, keyed by the per-language link-index entry (a
+// new entry appears whenever any dictionary changes, dropping the old Map).
+const personBodyMemo = new WeakMap(); // indexes -> Map(personId -> { epithetHtml, momentHtml, bioHtml, sections })
+
+async function peopleGroupsHtml(req, standardized, lang) {
+    const indexes = await getLinkIndexes(lang);
+    const cached = peopleGroupsHtmlMemo.get(standardized);
+    if (cached && cached.indexesRef === indexes) return cached.html;
+    const html = await renderAppView(req, 'partials/commulingo-people-groups', {
+        groups: standardized.groups.map(group => ({
+            ...group,
+            people: sortPeopleChronologically(group.people),
+        })),
+        en: lang === 'en',
+        roleIconSvg,
+        roleHubHref,
+        flagImg,
+        nationalityHubHref,
+        linkifyPersonText: createCardTextLinker(indexes),
+    });
+    peopleGroupsHtmlMemo.set(standardized, { indexesRef: indexes, html });
+    return html;
 }
 
 function setPublicDataCache(req, res, version) {
@@ -196,18 +233,13 @@ router.get('/people', async (req, res) => {
                 : category.label,
             peopleCount: standardized.people.filter(person => person.role && person.role.categoryId === category.id).length,
         })).filter(category => category.peopleCount > 0);
-        const orderedGroups = standardized.groups.map(group => ({
-            ...group,
-            people: sortPeopleChronologically(group.people),
-        }));
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             roleCategories,
-            groups: orderedGroups,
+            groupsHtml: await peopleGroupsHtml(req, standardized, lang),
             peopleCount: standardized.people.length,
             roleIconSvg,
             roleHubHref,
-            linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
             pageDescription: lang === 'en'
                 ? 'The people who stood at the forks of the two decision-simulation history books.'
@@ -359,27 +391,42 @@ router.get('/people/:personId', async (req, res) => {
             });
         }
         // Sections come from the snapshot (loaded.data); history events from their
-        // own cached store.
-        const rawSections = (loaded.data.sections || {})[personId] || [];
-        const sections = localizedPersonSections(rawSections, lang);
-        // One linker for the whole page — bio and every section share its
-        // seen-set, so a document, event, term, or colleague named throughout a
-        // career is a link at its first mention. The person's own name is
-        // excluded so the page never links to itself.
-        const link = createLinker(await getLinkIndexes(lang), {
-            surface: 'person',
-            exclude: { person: person.id },
-        });
-        // Reading order: epithet, moment, bio, then the sections. The moment is a
-        // scene with other people in it — 예조프가 류시코프의 전보를 스탈린에게 —
-        // and it printed as plain text here while the same sentence linked on the
-        // person's card in the list.
-        const epithetHtml = link.plain(person.epithet);
-        const momentHtml = link.plain(person.moment);
-        const bioHtml = link.plain(person.bio);
-        sections.forEach(section => {
-            section.bodyHtml = link.html(section.bodyHtml);
-        });
+        // own cached store. The linkified page body (epithet/moment/bio +
+        // sections, ~60-80ms for section-heavy people) is a pure function of
+        // the snapshot and the link indexes, so it is rendered once per data
+        // refresh per person and served from the memo afterwards.
+        const indexes = await getLinkIndexes(lang);
+        let personPages = personBodyMemo.get(indexes);
+        if (!personPages) {
+            personPages = new Map();
+            personBodyMemo.set(indexes, personPages);
+        }
+        let body = personPages.get(personId);
+        if (!body) {
+            const rawSections = (loaded.data.sections || {})[personId] || [];
+            const sections = localizedPersonSections(rawSections, lang);
+            // One linker for the whole page — bio and every section share its
+            // seen-set, so a document, event, term, or colleague named throughout a
+            // career is a link at its first mention. The person's own name is
+            // excluded so the page never links to itself.
+            const link = createLinker(indexes, {
+                surface: 'person',
+                exclude: { person: person.id },
+            });
+            // Reading order: epithet, moment, bio, then the sections. The moment is a
+            // scene with other people in it — 예조프가 류시코프의 전보를 스탈린에게 —
+            // and it printed as plain text here while the same sentence linked on the
+            // person's card in the list.
+            const epithetHtml = link.plain(person.epithet);
+            const momentHtml = link.plain(person.moment);
+            const bioHtml = link.plain(person.bio);
+            sections.forEach(section => {
+                section.bodyHtml = link.html(section.bodyHtml);
+            });
+            body = { epithetHtml, momentHtml, bioHtml, sections };
+            personPages.set(personId, body);
+        }
+        const { epithetHtml, momentHtml, bioHtml, sections } = body;
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
         }));
@@ -513,40 +560,29 @@ router.get('/book/:collectionId', async (req, res) => {
         const collection = (catalog.collections || []).find(item => item.id === collectionId);
         if (!collection) return res.redirect('/commulingo');
 
-        // The decision-history book renders its episodes in the browser, so the
-        // person index goes with the payload instead of a linker: the aliases
-        // below are the ones buildPersonLinkIndex kept, so the client applies the
-        // shared policy rather than a hand-synced copy of it.
-        let decisionLinks = { blocked: [], people: [] };
-        if (collection.format === 'decision-history') {
-            decisionLinks = clientPersonLinkPayload(await getLinkIndexes(res.locals.lang));
-        }
-
-        // Chapter summaries and learning focuses are the prose the book's own
-        // page shows before a lesson is ever opened, so they carry the same
-        // dictionary links the concept briefs do.
-        let linked = collection;
-        let dictionaryEntries = { people: [], terms: [], events: [], docs: [] };
+        // Linked chapters, dictionary chips, and the decision-link payload are
+        // pure functions of (collection, link indexes, lang); the chip list
+        // alone walks every lesson shard (~104 files, ~225ms measured for
+        // capital-vol3), so rebuild only when those references change and
+        // serve the memoized result otherwise. On a linkify failure the page
+        // renders plain and uncached, so the next request retries.
+        let pageData;
         try {
-            const linkers = await commuLingoLinkers();
-            linked = {
-                ...collection,
-                chapters: (collection.chapters || []).map(chapter => ({
-                    ...chapter,
-                    summaryHtml: linkLocalized(linkers, chapter.summary),
-                    focusHtml: linkLocalized(linkers, chapter.learningFocus),
-                })),
-            };
-            dictionaryEntries = await bookDictionaryEntries(collection, res.locals.lang);
+            pageData = await bookPageData(collection, res.locals.lang);
         } catch (err) {
             console.error('commulingo book linkify:', err);
+            pageData = {
+                linked: collection,
+                dictionaryEntries: { people: [], terms: [], events: [], docs: [] },
+                decisionLinks: { blocked: [], people: [] },
+            };
         }
 
         const bookTitle = localize(collection.title, res.locals.lang);
         res.render('public/commulingo-book', {
-            lessons: { version: catalog.version, collections: [linked] },
-            dictionaryEntries,
-            decisionLinks,
+            lessons: { version: catalog.version, collections: [pageData.linked] },
+            dictionaryEntries: pageData.dictionaryEntries,
+            decisionLinks: pageData.decisionLinks,
             bookFormat: collection.format || 'quiz',
             bookTitle,
             bookDescription: localize(collection.description, res.locals.lang),
@@ -561,10 +597,19 @@ router.get('/book/:collectionId', async (req, res) => {
     }
 });
 
+// The catalog is a ~300KB object; serialize it once per catalog reference
+// instead of on every request.
+const catalogJsonMemo = new WeakMap(); // catalog -> serialized body
+
 router.get('/catalog.json', (req, res) => {
     const catalog = loadCommuLingoCatalog();
     setPublicDataCache(req, res, catalog.version);
-    res.json(catalog);
+    let body = catalogJsonMemo.get(catalog);
+    if (!body) {
+        body = JSON.stringify(catalog);
+        catalogJsonMemo.set(catalog, body);
+    }
+    res.type('application/json').send(body);
 });
 
 // Lessons speak the same vocabulary as the three dictionaries — 마르크스,
@@ -583,6 +628,46 @@ router.get('/catalog.json', (req, res) => {
 // entry at its first mention and leaves the rest plain. Everything else about
 // the pass — which dictionaries, in what order, and the new tab a lesson's links
 // open in — is the `learning` surface in linkify.js.
+// Memoized per-book page data: the decision-history payload, the linked
+// chapter prose, and the dictionary chips. Keyed by the collection and
+// link-index references, which stay stable until the catalog or one of the
+// dictionaries actually changes.
+const bookPageMemo = new Map(); // `${collectionId}:${lang}` -> { collectionRef, indexesRef, ... }
+
+async function bookPageData(collection, langRaw) {
+    const lang = langRaw === 'en' ? 'en' : 'ko';
+    const indexes = await getLinkIndexes(lang);
+    const key = `${collection.id}:${lang}`;
+    const cached = bookPageMemo.get(key);
+    if (cached && cached.collectionRef === collection && cached.indexesRef === indexes) return cached;
+
+    // The decision-history book renders its episodes in the browser, so the
+    // person index goes with the payload instead of a linker: the aliases are
+    // the ones buildPersonLinkIndex kept, so the client applies the shared
+    // policy rather than a hand-synced copy of it.
+    const decisionLinks = collection.format === 'decision-history'
+        ? clientPersonLinkPayload(indexes)
+        : { blocked: [], people: [] };
+
+    // Chapter summaries and learning focuses are the prose the book's own
+    // page shows before a lesson is ever opened, so they carry the same
+    // dictionary links the concept briefs do.
+    const linkers = await commuLingoLinkers();
+    const linked = {
+        ...collection,
+        chapters: (collection.chapters || []).map(chapter => ({
+            ...chapter,
+            summaryHtml: linkLocalized(linkers, chapter.summary),
+            focusHtml: linkLocalized(linkers, chapter.learningFocus),
+        })),
+    };
+    const dictionaryEntries = await bookDictionaryEntries(collection, lang);
+
+    const entry = { collectionRef: collection, indexesRef: indexes, linked, dictionaryEntries, decisionLinks };
+    bookPageMemo.set(key, entry);
+    return entry;
+}
+
 async function commuLingoLinkers() {
     const byLang = {};
     for (const lang of ['ko', 'en']) {
@@ -608,9 +693,8 @@ function linkLocalized(linkers, value) {
 // Which dictionary entries a book actually talks about, read off what the
 // linker found rather than curated by hand — a chapter list of one-line
 // summaries shows almost none of them, so the book page would otherwise give no
-// sign that the entries exist. Runs over the collection's lesson shards once per
-// request; they are small local files and the page is rendered rarely enough
-// that this stays cheaper than storing a second index.
+// sign that the entries exist. Walks every lesson shard of the collection, so
+// it only runs from bookPageData's memo miss, not per request.
 //
 // A chip carries the entry's headword, not whichever alias the prose happened to
 // use: prose saying 맬서스 인구론 or 감소되지 않은 노동수익 lists 맬서스주의 and
@@ -693,16 +777,31 @@ async function linkifyLessonPayload(lesson) {
     return lesson;
 }
 
+// Linkified lesson payloads (~58ms each to build: shard parse + ko/en linkify
+// of every brief/map/explanation), memoized until the shards version or the
+// link indexes change. A linkify failure is served plain and left uncached so
+// the next request retries.
+const lessonPayloadMemo = new Map(); // lessonId -> { version, indexesRef, payload }
+
 router.get('/lesson/:lessonId', async (req, res) => {
     const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
-    const payload = loadCommuLingoLesson(lessonId);
-    if (!payload) return res.status(404).json({ error: 'lesson not found' });
-    try {
-        await linkifyLessonPayload(payload.lesson);
-    } catch (err) {
-        // Losing the links costs a hyperlink; losing the payload costs the
-        // quiz. Serve it plain.
-        console.error('commulingo lesson linkify:', err);
+    const version = currentVersion();
+    const indexes = await getLinkIndexes('ko'); // both langs invalidate together
+    const cached = lessonPayloadMemo.get(lessonId);
+    let payload;
+    if (cached && cached.version === version && cached.indexesRef === indexes) {
+        payload = cached.payload;
+    } else {
+        payload = loadCommuLingoLesson(lessonId);
+        if (!payload) return res.status(404).json({ error: 'lesson not found' });
+        try {
+            await linkifyLessonPayload(payload.lesson);
+            lessonPayloadMemo.set(lessonId, { version, indexesRef: indexes, payload });
+        } catch (err) {
+            // Losing the links costs a hyperlink; losing the payload costs the
+            // quiz. Serve it plain.
+            console.error('commulingo lesson linkify:', err);
+        }
     }
     // Deliberately not setPublicDataCache: the payload is no longer a pure
     // function of the course sources, so its year-long immutable branch would

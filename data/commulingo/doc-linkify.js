@@ -51,24 +51,6 @@ function buildDocLinkIndex(docs, options = {}) {
     return { pattern, byAlias, en };
 }
 
-// Index building walks every alias of every document, so memoize it against the
-// manifest array the store hands out. docs-store rebuilds that array only when
-// manifest.json's mtime changes, so the reference doubles as the cache key
-// (same approach as commulingo-terms.js and report-links.js). Lives here rather
-// than in each route because both the term and person pages need it.
-let indexMemo = { docsRef: null, byLang: {} };
-
-function docLinkIndexFor(docs, lang) {
-    if (indexMemo.docsRef !== docs) {
-        indexMemo = { docsRef: docs, byLang: {} };
-    }
-    if (!(lang in indexMemo.byLang)) {
-        indexMemo.byLang[lang] = buildDocLinkIndex(docs, { lang });
-    }
-    return indexMemo.byLang[lang];
-}
-
 module.exports = {
     buildDocLinkIndex,
-    docLinkIndexFor,
 };

@@ -254,8 +254,16 @@ function rowsToPeopleData(rows) {
 
 function readSnapshotFile() {
     try {
-        const data = JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
-        if (data && Array.isArray(data.people) && data.people.length) return data;
+        const raw = fs.readFileSync(SNAPSHOT_PATH, 'utf8');
+        const data = JSON.parse(raw);
+        if (data && Array.isArray(data.people) && data.people.length) {
+            // Seed the change detector: the file holds exactly what the last
+            // refresh serialized, so the first refresh after a cold start
+            // recognizes unchanged data instead of installing a new
+            // (identical) object and invalidating the linkify memos.
+            lastSnapshotHash = crypto.createHash('sha1').update(raw).digest('hex');
+            return data;
+        }
     } catch (err) {
         if (err.code !== 'ENOENT') {
             console.error('[commulingo people] snapshot read failed:', err.message);

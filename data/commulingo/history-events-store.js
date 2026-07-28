@@ -71,8 +71,14 @@ async function fetchEvents() {
 
 function readSnapshotFile() {
     try {
-        const data = JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
-        if (Array.isArray(data) && data.length) return data;
+        const raw = fs.readFileSync(SNAPSHOT_PATH, 'utf8');
+        const data = JSON.parse(raw);
+        if (Array.isArray(data) && data.length) {
+            // Seed the change detector so the first refresh after a cold start
+            // recognizes unchanged data (see people-store).
+            lastSnapshotHash = crypto.createHash('sha1').update(raw).digest('hex');
+            return data;
+        }
     } catch (err) {
         if (err.code !== 'ENOENT') {
             console.error('[commulingo events] snapshot read failed:', err.message);

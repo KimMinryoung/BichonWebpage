@@ -54,9 +54,7 @@ router.get('/', async (req, res) => {
         const diaries = rows.map(({ total_count, ...d }) => localizedDiary(d, lang));
 
         // Cache individual entries
-        for (const d of diaries) {
-            await cache.setEntry(d, lang);
-        }
+        await Promise.all(diaries.map(d => cache.setEntry(d, lang)));
 
         const pageData = { diaries, currentPage, totalPages, paginationBase: '/ai-diary?page=' };
 

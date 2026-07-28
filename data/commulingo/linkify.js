@@ -273,15 +273,32 @@ function createLinker(indexes, options = {}) {
 // Cards share one seen-set per person, so a name used in the epithet and again
 // in the bio below it links once. Returns the (text, personId) => html callback
 // the card partial calls.
+// Card prose links identically on every card surface (people list, office,
+// role, and nationality pages) and only changes when the dictionaries do, so
+// the rendered HTML is memoized per (indexes, personId, text) — built once
+// per data refresh instead of ~3600 regex passes per request.
+const cardTextMemo = new WeakMap(); // indexes -> Map('personId\0text' -> html)
+
 function createCardTextLinker(indexes) {
+    let rendered = cardTextMemo.get(indexes);
+    if (!rendered) {
+        rendered = new Map();
+        cardTextMemo.set(indexes, rendered);
+    }
     const byPerson = new Map();
     return function linkCardText(text, personId) {
-        let linker = byPerson.get(personId);
-        if (!linker) {
-            linker = createLinker(indexes, { surface: 'card', exclude: { person: personId } });
-            byPerson.set(personId, linker);
+        const key = personId + ' ' + (text || '');
+        let html = rendered.get(key);
+        if (html === undefined) {
+            let linker = byPerson.get(personId);
+            if (!linker) {
+                linker = createLinker(indexes, { surface: 'card', exclude: { person: personId } });
+                byPerson.set(personId, linker);
+            }
+            html = linker.plain(text);
+            rendered.set(key, html);
         }
-        return linker.plain(text);
+        return html;
     };
 }
 
@@ -291,9 +308,13 @@ function createCardTextLinker(indexes) {
 // buildPersonLinkIndex, so the client applies this policy rather than keeping a
 // hand-synced copy of it; `blocked` is the Korean compound list the client's
 // alternation still has to consume first.
+const clientPayloadMemo = new WeakMap(); // indexes -> payload
+
 function clientPersonLinkPayload(indexes) {
     const index = indexes && indexes.person;
     if (!index) return { blocked: [], people: [] };
+    const cached = clientPayloadMemo.get(indexes);
+    if (cached) return cached;
     const byId = new Map();
     Object.keys(index.byAlias).forEach(alias => {
         const entry = index.byAlias[alias];
@@ -309,7 +330,9 @@ function clientPersonLinkPayload(indexes) {
         }
         person.aliases.push(alias);
     });
-    return { blocked: index.en ? [] : BLOCKED_KO, people: [...byId.values()] };
+    const payload = { blocked: index.en ? [] : BLOCKED_KO, people: [...byId.values()] };
+    clientPayloadMemo.set(indexes, payload);
+    return payload;
 }
 
 // Scans plain text (raw markdown) and returns the ids of every mentioned entity,

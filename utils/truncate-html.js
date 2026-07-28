@@ -27,7 +27,9 @@ function truncateHtml(html, maxLen) {
             i++;
         }
     }
-    var truncated = textLen < html.replace(/<[^>]*>/g, '').length;
+    // Ellipsis only when visible text (not just trailing markup) was cut off;
+    // scanning the unconsumed tail is enough — no second full-string scan.
+    var truncated = i < html.length && html.slice(i).replace(/<[^>]*>/g, '').trim().length > 0;
     while (openTags.length) result += '</' + openTags.pop() + '>';
     if (truncated) result += '...';
     return result;

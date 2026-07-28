@@ -198,26 +198,36 @@ function buildCommuLingoShards() {
         lessonCount: lessons.length,
         generatedAt: new Date().toISOString(),
     });
-    freshnessCache = { sourceMtimeMs: sourceMtimeMs(files), version, fresh: true };
+    freshnessCache = { sourceMtimeMs: sourceMtimeMs(files), version, fresh: true, checkedAt: Date.now() };
     return { version, lessonCount: lessons.length, catalogPath: CATALOG_PATH, lessonsDir: LESSONS_DIR };
 }
 
+// How long a freshness verdict is trusted before the source files are
+// re-stat'ed. Callers hit this several times per request (catalog + link
+// indexes), so without the debounce every request pays a readdir + ~9 stats.
+const FRESHNESS_RECHECK_MS = 1000;
+
 function ensureCommuLingoShards() {
+    if (freshnessCache && freshnessCache.fresh
+        && Date.now() - (freshnessCache.checkedAt || 0) < FRESHNESS_RECHECK_MS) {
+        return { version: freshnessCache.version };
+    }
     const files = sourceFiles();
     const mtimeMs = sourceMtimeMs(files);
     if (freshnessCache && freshnessCache.fresh && freshnessCache.sourceMtimeMs === mtimeMs) {
+        freshnessCache.checkedAt = Date.now();
         return { version: freshnessCache.version };
     }
 
     const manifest = readManifest();
     if (manifest && generatedFilesExist()) {
         if (manifest.sourceMtimeMs === mtimeMs) {
-            freshnessCache = { sourceMtimeMs: mtimeMs, version: manifest.version, fresh: true };
+            freshnessCache = { sourceMtimeMs: mtimeMs, version: manifest.version, fresh: true, checkedAt: Date.now() };
             return { version: manifest.version };
         }
         const digest = sourceDigest(files);
         if (manifest.sourceDigest === digest) {
-            freshnessCache = { sourceMtimeMs: mtimeMs, version: manifest.version, fresh: true };
+            freshnessCache = { sourceMtimeMs: mtimeMs, version: manifest.version, fresh: true, checkedAt: Date.now() };
             return { version: manifest.version };
         }
     }

@@ -141,9 +141,7 @@ router.get('/posts', async (req, res) => {
         const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
         const posts = rows.map(({ total_count, ...post }) => localizedRecord(post, lang));
 
-        for (const p of posts) {
-            await cache.setEntry(p, lang);
-        }
+        await Promise.all(posts.map(p => cache.setEntry(p, lang)));
 
         const pageData = { posts, currentPage, totalPages, paginationBase: '/posts?page=', pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts' };
 

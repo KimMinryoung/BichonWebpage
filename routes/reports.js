@@ -117,35 +117,58 @@ async function getPrivateReport(slug) {
     return privateReportFromRow(rows[0], true);
 }
 
+// Rendered report bodies: markdown render + sanitize + linkify cost ~54ms per
+// request on a 30KB report and are a pure function of (document, link
+// indexes, known slugs), so the result is memoized until the document is
+// updated, the dictionaries refresh, or the published-slug set changes size.
+const researchRenderMemo = new Map(); // `${filename}:${lang}` -> { updatedAt, indexesRef, slugCount, body }
+const RESEARCH_RENDER_MEMO_MAX = 500;
+
 async function renderResearch(res, { filename, slug, pagePath, data, seriesNav = null }) {
     const markdown = researchMarkdown(data);
     const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
-    const descriptionSource = markdown || data.summary || data.excerpt || data.html_body || data.htmlBody || '';
-    const pageDescription = seo.excerpt(descriptionSource, 160);
+    const lang = res.locals.lang === 'en' ? 'en' : 'ko';
 
-    // Cross-link CommuLingo entities: first occurrence of each known person /
-    // history-event name becomes a dictionary link, and the found entities feed
-    // the related-entries panel under the body. Failure only costs the links.
-    let htmlBody = researchHtmlBody(
-        data, markdown, await publishedReportSlugs(res.locals.lang === 'en' ? 'en' : 'ko')
-    );
-    let relatedPeople = [];
-    let relatedEvents = [];
-    let relatedTopics = [];
-    let relatedTerms = [];
-    let relatedDocs = [];
-    try {
-        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        const linked = linkifyReportHtml(htmlBody, await getReportLinkContext(lang));
-        htmlBody = linked.html;
-        relatedPeople = linked.people;
-        relatedEvents = linked.events;
-        relatedTopics = linked.topics;
-        relatedTerms = linked.terms;
-        relatedDocs = linked.docs;
-    } catch (e) {
-        console.error('Error linking commulingo entities:', e);
+    const knownSlugs = await publishedReportSlugs(lang);
+    const indexes = await getReportLinkContext(lang).catch(() => null);
+    const memoKey = `${filename}:${lang}`;
+    const updatedAt = String(data.updated_at || data.published_at || '');
+    const slugCount = knownSlugs ? knownSlugs.size : -1;
+    let rendered = researchRenderMemo.get(memoKey);
+    if (!rendered || rendered.updatedAt !== updatedAt || rendered.indexesRef !== indexes
+        || rendered.slugCount !== slugCount) {
+        const descriptionSource = markdown || data.summary || data.excerpt || data.html_body || data.htmlBody || '';
+        // Cross-link CommuLingo entities: first occurrence of each known person /
+        // history-event name becomes a dictionary link, and the found entities feed
+        // the related-entries panel under the body. Failure only costs the links.
+        let htmlBody = researchHtmlBody(data, markdown, knownSlugs);
+        let linked = { people: [], events: [], topics: [], terms: [], docs: [] };
+        try {
+            if (indexes) {
+                linked = linkifyReportHtml(htmlBody, indexes);
+                htmlBody = linked.html;
+            }
+        } catch (e) {
+            console.error('Error linking commulingo entities:', e);
+        }
+        rendered = {
+            updatedAt,
+            indexesRef: indexes,
+            slugCount,
+            body: {
+                htmlBody,
+                pageDescription: seo.excerpt(descriptionSource, 160),
+                relatedPeople: linked.people,
+                relatedEvents: linked.events,
+                relatedTopics: linked.topics,
+                relatedTerms: linked.terms,
+                relatedDocs: linked.docs,
+            },
+        };
+        if (researchRenderMemo.size >= RESEARCH_RENDER_MEMO_MAX) researchRenderMemo.clear();
+        researchRenderMemo.set(memoKey, rendered);
     }
+    const { htmlBody, pageDescription, relatedPeople, relatedEvents, relatedTopics, relatedTerms, relatedDocs } = rendered.body;
 
     return res.render('public/research-view', {
         filename,
