@@ -225,9 +225,21 @@ function ensureCommuLingoShards() {
     return buildCommuLingoShards();
 }
 
+// The parsed catalog is cached by file mtime so repeat callers get the SAME
+// object back. Reference identity matters beyond speed: linkify.js memoizes
+// its link indexes (and the 1200-person normalization) against the catalog
+// reference, so returning a fresh parse per call silently rebuilt all of that
+// on every report/person/term request. A regenerated catalog file changes the
+// mtime, which invalidates this cache and those memos together.
+let catalogCache = null; // { mtimeMs, data }
+
 function loadCommuLingoCatalog() {
     ensureCommuLingoShards();
-    return readJson(CATALOG_PATH);
+    const mtimeMs = statMtimeMs(CATALOG_PATH);
+    if (!catalogCache || catalogCache.mtimeMs !== mtimeMs) {
+        catalogCache = { mtimeMs, data: readJson(CATALOG_PATH) };
+    }
+    return catalogCache.data;
 }
 
 function loadCommuLingoLesson(lessonId) {
