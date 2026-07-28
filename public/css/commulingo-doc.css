@@ -136,21 +136,29 @@
 
 /* Prev/next chapter navigation on paginated documents. */
 .doc-pager {
+  /* A <nav>, so it would inherit the global sticky rule from style.css and
+     pin to the top while scrolling past — keep it in flow. The border and
+     background it inherits from the same rule are kept as the box look. */
+  position: static;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
   margin-top: clamp(2rem, 5vw, 3rem);
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  padding: 0.7rem 0.9rem;
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
+/* Neighboring part/chapter headings can be long; keep each link to one line
+   and let the ellipsis absorb the rest, so the pager never wraps. */
 .doc-pager a {
   color: var(--link);
   text-decoration: none;
   max-width: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .doc-pager a:hover {
