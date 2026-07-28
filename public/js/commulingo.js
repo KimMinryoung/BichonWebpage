@@ -37,11 +37,6 @@
         nextLesson: document.getElementById('commuNextLessonBtn')
     };
 
-    syncServerProgress().finally(function() {
-        renderLessons();
-        handleDeepLink();
-    });
-
     els.back.addEventListener('click', function() {
         showLessons(scrollTargetForLesson(active && active.lesson || returnScrollLesson, false));
     });
@@ -231,28 +226,33 @@
     }
 
     function mergeProgress(items) {
+        var changed = false;
         (items || []).forEach(function(item) {
-            progress[item.lessonId] = mergeOne(progress[item.lessonId], {
+            var merged = mergeOne(progress[item.lessonId], {
                 completed: item.completed,
                 score: item.score,
                 totalQuestions: item.totalQuestions,
                 updatedAt: item.updatedAt
             });
+            if (JSON.stringify(merged) !== JSON.stringify(progress[item.lessonId])) changed = true;
+            progress[item.lessonId] = merged;
         });
-        saveLocalProgress();
+        if (changed) saveLocalProgress();
+        return changed;
     }
 
     function syncServerProgress() {
         return fetch('/commulingo/progress', { credentials: 'same-origin' })
             .then(function(res) { return res.ok ? res.json() : { authenticated: false }; })
             .then(function(payload) {
-                if (!payload.authenticated) return;
-                mergeProgress(payload.progress || []);
+                if (!payload.authenticated) return false;
+                var changed = mergeProgress(payload.progress || []);
                 Object.keys(progress).forEach(function(lessonId) {
                     postProgress(lessonId, progress[lessonId], true);
                 });
+                return changed;
             })
-            .catch(function() {});
+            .catch(function() { return false; });
     }
 
     function postProgress(lessonId, item, quiet) {
@@ -874,4 +874,12 @@
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
     }
+
+    // Paint immediately from the embedded lesson data and local progress;
+    // the server progress sync only triggers a repaint when it changes something.
+    renderLessons();
+    handleDeepLink();
+    syncServerProgress().then(function(changed) {
+        if (changed) renderLessons();
+    });
 })();
