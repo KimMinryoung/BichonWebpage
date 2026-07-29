@@ -482,6 +482,92 @@
     grid-column: 1 / -1;
 }
 
+.commu-flow,
+.commu-contrast {
+    grid-column: 1 / -1;
+    margin: 0 0 4px;
+}
+
+.commu-flow figcaption,
+.commu-contrast figcaption {
+    color: var(--link);
+    font-size: 0.94rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.commu-flow-track {
+    align-items: stretch;
+    display: flex;
+    gap: 4px;
+}
+
+.commu-flow-step {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    display: grid;
+    flex: 1 1 0;
+    gap: 6px;
+    line-height: 1.42;
+    min-width: 0;
+    padding: 12px;
+}
+
+.commu-flow-step strong {
+    color: var(--link);
+    font-size: 0.88rem;
+    line-height: 1.25;
+}
+
+.commu-flow-step small {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.42;
+}
+
+.commu-flow-arrow {
+    align-self: center;
+    color: var(--text-secondary);
+    flex: 0 0 auto;
+    font-size: 1rem;
+    padding: 0 2px;
+}
+
+.commu-flow-arrow::before {
+    content: '→';
+}
+
+.commu-contrast-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.commu-contrast-side {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    align-content: start;
+}
+
+.commu-contrast-side strong {
+    color: var(--link);
+    font-size: 0.88rem;
+    line-height: 1.3;
+}
+
+.commu-contrast-side ul {
+    color: var(--text-secondary);
+    display: grid;
+    font-size: 0.85rem;
+    gap: 6px;
+    line-height: 1.5;
+    margin: 0;
+    padding-left: 18px;
+}
+
 .commu-brief-section {
     border-top: 1px solid var(--border);
     display: grid;
@@ -936,6 +1022,23 @@
     }
 
     .commu-diagram {
+        grid-template-columns: 1fr;
+    }
+
+    .commu-flow-track {
+        flex-direction: column;
+    }
+
+    .commu-flow-arrow {
+        align-self: flex-start;
+        padding: 0 12px;
+    }
+
+    .commu-flow-arrow::before {
+        content: '↓';
+    }
+
+    .commu-contrast-grid {
         grid-template-columns: 1fr;
     }
 

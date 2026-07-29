@@ -189,6 +189,7 @@
                     focusHtml: text(loaded.focusHtml) || lesson.focusHtml,
                     conceptBrief: loaded.conceptBrief || lesson.conceptBrief,
                     conceptMap: loaded.conceptMap || lesson.conceptMap,
+                    diagram: loaded.diagram || lesson.diagram,
                     questions: loaded.questions || [],
                     questionCount: lessonQuestionCount(loaded)
                 });
@@ -543,11 +544,56 @@
         return html + '</section>';
     }
 
+    function lessonDiagram(lesson) {
+        var diagram = lesson.diagram;
+        if (!diagram || !diagram.kind) return null;
+        var data = diagram[lang === 'en' ? 'en' : 'ko'] || diagram.ko || diagram.en;
+        if (!data) return null;
+        return { kind: diagram.kind, data: data };
+    }
+
+    function renderFlowDiagram(data) {
+        var html = '<figure class="commu-flow">';
+        if (data.title) html += '<figcaption>' + escapeHtml(data.title) + '</figcaption>';
+        html += '<div class="commu-flow-track">' + (data.steps || []).map(function(step) {
+            var card = '<span class="commu-flow-step"><strong>' + escapeHtml(step.label) + '</strong>';
+            if (step.noteHtml) card += '<small>' + step.noteHtml + '</small>';
+            else if (step.note) card += '<small>' + escapeHtml(step.note) + '</small>';
+            return card + '</span>';
+        }).join('<span class="commu-flow-arrow" aria-hidden="true"></span>') + '</div>';
+        return html + '</figure>';
+    }
+
+    function renderContrastSide(side) {
+        if (!side) return '';
+        var rows = Array.isArray(side.rowsHtml) && side.rowsHtml.length
+            ? side.rowsHtml
+            : (Array.isArray(side.rows) ? side.rows.map(escapeHtml) : []);
+        return '<div class="commu-contrast-side"><strong>' + escapeHtml(side.heading) + '</strong><ul>'
+            + rows.map(function(row) { return '<li>' + row + '</li>'; }).join('')
+            + '</ul></div>';
+    }
+
+    function renderContrastDiagram(data) {
+        var html = '<figure class="commu-contrast">';
+        if (data.title) html += '<figcaption>' + escapeHtml(data.title) + '</figcaption>';
+        html += '<div class="commu-contrast-grid">' + renderContrastSide(data.left) + renderContrastSide(data.right) + '</div>';
+        return html + '</figure>';
+    }
+
     function renderDiagram(lesson) {
         if (!els.diagram) return;
+        var html = '';
+        var diagram = lessonDiagram(lesson);
+        if (diagram && diagram.kind === 'flow') html += renderFlowDiagram(diagram.data);
+        else if (diagram && diagram.kind === 'contrast') html += renderContrastDiagram(diagram.data);
         var sections = conceptBrief(lesson);
         if (sections.length) {
-            els.diagram.innerHTML = '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
+            els.diagram.innerHTML = html + '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
+            return;
+        }
+        if (html) {
+            els.diagram.innerHTML = html;
             return;
         }
         var nodes = conceptMap(lesson)[lang === 'en' ? 'en' : 'ko'];

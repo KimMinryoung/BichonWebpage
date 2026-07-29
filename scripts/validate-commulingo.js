@@ -154,6 +154,69 @@ function checkConceptMap(value, label) {
   });
 }
 
+// Optional typed chapter diagram: a flow of 3-6 steps or a two-column
+// contrast of 2-5 rows. Both languages must carry the same shape so the two
+// renderings stay the same diagram.
+function checkDiagram(value, label) {
+  if (typeof value === 'undefined') return;
+  if (!value || typeof value !== 'object') { fail(label + '.diagram must be an object'); return; }
+  if (value.kind !== 'flow' && value.kind !== 'contrast') {
+    fail(label + '.diagram.kind must be flow or contrast');
+    return;
+  }
+  ['ko', 'en'].forEach(function(locale) {
+    const data = value[locale];
+    const dLabel = label + '.diagram.' + locale;
+    if (!data || typeof data !== 'object') { fail(dLabel + ' is missing'); return; }
+    if (!String(data.title || '').trim()) fail(dLabel + '.title is empty');
+    checkText(data.title, dLabel + '.title');
+    if (value.kind === 'flow') {
+      const steps = data.steps;
+      if (!Array.isArray(steps) || steps.length < 3 || steps.length > 6) {
+        fail(dLabel + '.steps must have 3-6 steps');
+        return;
+      }
+      steps.forEach(function(step, index) {
+        if (!step || !String(step.label || '').trim()) fail(dLabel + '.steps[' + index + '].label is empty');
+        checkText(step && step.label, dLabel + '.steps[' + index + '].label');
+        if (step && step.note) checkText(step.note, dLabel + '.steps[' + index + '].note');
+      });
+      return;
+    }
+    ['left', 'right'].forEach(function(sideName) {
+      const side = data[sideName];
+      const sLabel = dLabel + '.' + sideName;
+      if (!side || typeof side !== 'object') { fail(sLabel + ' is missing'); return; }
+      if (!String(side.heading || '').trim()) fail(sLabel + '.heading is empty');
+      checkText(side.heading, sLabel + '.heading');
+      if (!Array.isArray(side.rows) || side.rows.length < 2 || side.rows.length > 5) {
+        fail(sLabel + '.rows must have 2-5 rows');
+        return;
+      }
+      side.rows.forEach(function(row, index) {
+        if (!String(row || '').trim()) fail(sLabel + '.rows[' + index + '] is empty');
+        checkText(row, sLabel + '.rows[' + index + ']');
+      });
+    });
+  });
+  if (value.ko && value.en) {
+    if (value.kind === 'flow') {
+      const koSteps = Array.isArray(value.ko.steps) ? value.ko.steps.length : 0;
+      const enSteps = Array.isArray(value.en.steps) ? value.en.steps.length : 0;
+      if (koSteps !== enSteps) fail(label + '.diagram step counts differ between ko and en');
+    } else {
+      ['left', 'right'].forEach(function(sideName) {
+        const koRows = value.ko[sideName] && Array.isArray(value.ko[sideName].rows) ? value.ko[sideName].rows.length : 0;
+        const enRows = value.en[sideName] && Array.isArray(value.en[sideName].rows) ? value.en[sideName].rows.length : 0;
+        if (koRows !== enRows) fail(label + '.diagram ' + sideName + ' row counts differ between ko and en');
+      });
+      const koLeft = value.ko.left && Array.isArray(value.ko.left.rows) ? value.ko.left.rows.length : 0;
+      const koRight = value.ko.right && Array.isArray(value.ko.right.rows) ? value.ko.right.rows.length : 0;
+      if (koLeft !== koRight) fail(label + '.diagram left/right row counts differ');
+    }
+  }
+}
+
 let totalQuestions = 0;
 let totalLessons = 0;
 
@@ -181,6 +244,7 @@ Object.keys(expected).forEach(function(collectionId) {
     allLocalizedText(chapter.summary, chapterLabel + '.summary');
     if (chapter.learningFocus) allLocalizedText(chapter.learningFocus, chapterLabel + '.learningFocus');
     checkConceptMap(chapter.conceptMap, chapterLabel);
+    checkDiagram(chapter.diagram, chapterLabel);
 
     const lessons = chapter.lessons || [];
     if (lessons.length !== 2) fail(chapterLabel + ' lesson count ' + lessons.length + ' != 2');

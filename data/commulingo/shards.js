@@ -27,7 +27,9 @@ function statMtimeMs(filePath) {
 }
 
 function sourceFiles() {
-    const files = [LESSONS_PATH];
+    // This module shapes the shard payloads, so its own content is part of the
+    // digest: a logic change must invalidate shards built by older code.
+    const files = [__filename, LESSONS_PATH];
     if (fs.existsSync(COURSES_DIR)) {
         for (const name of fs.readdirSync(COURSES_DIR).filter(name => name.endsWith('.js')).sort()) {
             files.push(path.join(COURSES_DIR, name));
@@ -107,6 +109,7 @@ function publicLessonPayload(collection, chapter, lesson) {
         focus: chapter.learningFocus,
         conceptBrief: chapter.conceptBrief,
         conceptMap: chapter.conceptMap,
+        diagram: chapter.diagram,
         questions: lesson.questions || [],
     };
 }

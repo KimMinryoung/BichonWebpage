@@ -779,6 +779,13 @@ async function bookDictionaryEntries(collection, lang) {
                 (section.items || []).forEach(collect);
             });
             ((lesson.conceptMap && lesson.conceptMap[lang]) || []).forEach(node => collect(node.text));
+            const diagram = lesson.diagram && lesson.diagram[lang];
+            if (diagram) {
+                (diagram.steps || []).forEach(step => collect(step.note));
+                [diagram.left, diagram.right].forEach(side => {
+                    if (side) (side.rows || []).forEach(collect);
+                });
+            }
             (lesson.questions || []).forEach(question => {
                 collect(question.explanation && question.explanation[lang]);
             });
@@ -812,6 +819,15 @@ async function linkifyLessonPayload(lesson) {
         ((lesson.conceptMap && lesson.conceptMap[lang]) || []).forEach(node => {
             if (node.text) node.textHtml = linkBrief(node.text);
         });
+        const diagram = lesson.diagram && lesson.diagram[lang];
+        if (diagram) {
+            (diagram.steps || []).forEach(step => {
+                if (step.note) step.noteHtml = linkBrief(step.note);
+            });
+            [diagram.left, diagram.right].forEach(side => {
+                if (side && Array.isArray(side.rows)) side.rowsHtml = side.rows.map(linkBrief);
+            });
+        }
         (lesson.questions || []).forEach(question => {
             const explanation = question.explanation && question.explanation[lang];
             if (!explanation) return;

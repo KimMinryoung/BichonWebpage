@@ -2,14 +2,17 @@ function t(ko, en) {
     return { ko, en };
 }
 
-function q(answer, koPrompt, enPrompt, koChoices, enChoices, koExplanation, enExplanation) {
-    function ordered(choices) {
+// koFeedback/enFeedback are optional per-choice feedback lines, authored in the
+// same order as the choices; ordered() reorders them alongside so the stored
+// arrays stay aligned with the stored choices (correct answer first).
+function q(answer, koPrompt, enPrompt, koChoices, enChoices, koExplanation, enExplanation, koFeedback, enFeedback) {
+    function ordered(items) {
         return [
-            choices[answer],
-            ...choices.filter((_, index) => index !== answer),
+            items[answer],
+            ...items.filter((_, index) => index !== answer),
         ];
     }
-    return {
+    const question = {
         type: 'multiple_choice',
         points: 0,
         prompt: t(koPrompt, enPrompt),
@@ -17,6 +20,10 @@ function q(answer, koPrompt, enPrompt, koChoices, enChoices, koExplanation, enEx
         answer: 0,
         explanation: t(koExplanation, enExplanation),
     };
+    if (koFeedback && enFeedback) {
+        question.choiceFeedback = { ko: ordered(koFeedback), en: ordered(enFeedback) };
+    }
+    return question;
 }
 
 function lesson(ch, level, titleKo, titleEn, questions) {
@@ -54,7 +61,14 @@ function brief(conceptKo, conceptEn, termKo, termEn, modernKo, modernEn, focusKo
     };
 }
 
-function chapter(ch, titleKo, titleEn, summaryKo, summaryEn, focusKo, focusEn, conceptKo, conceptEn, termKo, termEn, modernKo, modernEn, basic, advanced) {
+// A typed concept diagram rendered above the brief: kind 'flow' takes
+// { title, steps: [{ label, note }] }, kind 'contrast' takes
+// { title, left: { heading, rows }, right: { heading, rows } } per language.
+function diagram(kind, ko, en) {
+    return { kind, ko, en };
+}
+
+function chapter(ch, titleKo, titleEn, summaryKo, summaryEn, focusKo, focusEn, conceptKo, conceptEn, termKo, termEn, modernKo, modernEn, basic, advanced, extras) {
     return {
         id: `state-revolution-ch${String(ch).padStart(2, '0')}`,
         volumeNumber: 1,
@@ -69,6 +83,7 @@ function chapter(ch, titleKo, titleEn, summaryKo, summaryEn, focusKo, focusEn, c
             lesson(ch, 'basic', `${titleKo} 기본`, `${titleEn}: Basics`, basic),
             lesson(ch, 'advanced', `${titleKo} 심화`, `${titleEn}: Advanced`, advanced),
         ],
+        ...(extras || {}),
     };
 }
 
@@ -121,7 +136,19 @@ module.exports = {
                         'That classes have become capable of compromise, and an organ arose to record their settlements',
                     ],
                     '국가는 계급 대립이 객관적으로 화해될 수 없는 곳에서 생긴다. 행정 사무의 필요나 인간 본성으로 설명하면 국가가 특정 계급의 억압 도구라는 역사적 성격이 지워지고, 타협의 기관으로 보면 엥겔스의 명제가 정반대로 뒤집힌다.',
-                    'The state arises where class antagonisms objectively cannot be reconciled. Explaining it by administrative needs or human nature erases its historical character as an organ of class suppression, and reading it as an organ of compromise turns Engels’s thesis into its exact opposite.'),
+                    'The state arises where class antagonisms objectively cannot be reconciled. Explaining it by administrative needs or human nature erases its historical character as an organ of class suppression, and reading it as an organ of compromise turns Engels’s thesis into its exact opposite.',
+                    [
+                        '국가의 존재 자체가, 계급 화해가 객관적으로 불가능하다는 사실의 증거라는 것이 엥겔스의 명제다.',
+                        '인간 본성은 시대를 넘는 상수라서, 국가가 특정 역사 단계에서 생겨나고 또 사라질 수 있는 이유를 설명하지 못한다.',
+                        '공동 사무는 국가 이전의 씨족사회에도 있었다. 물어야 할 것은 사무가 아니라, 사회 위에 선 강제 기구가 왜 필요해졌는가다.',
+                        '엥겔스의 명제를 정반대로 뒤집은 독해다. 계급들이 스스로 타협할 수 있었다면 애초에 위에서 억누르는 권력이 필요 없었을 것이다.',
+                    ],
+                    [
+                        'Engels’s thesis is exactly this: the very existence of the state is proof that class reconciliation is objectively impossible.',
+                        'Human nature is a constant across epochs, so it cannot explain why the state arises at a particular historical stage and can disappear again.',
+                        'Common affairs existed in gentile society before the state. The question is not administration but why a coercive body above society became necessary.',
+                        'This reads Engels’s thesis into its exact opposite. If the classes could settle matters themselves, no power suppressing the conflict from above would ever have been needed.',
+                    ]),
                 q(0,
                     '씨족사회의 자발적 무장조직과 달리, 국가는 상비군과 경찰 같은 「특수한 무장집단」을 둔다. 왜 계급사회에서는 인민의 자발적 무장조직이 불가능해지는가?',
                     'Unlike the self-acting armed organization of the gens, the state keeps “special bodies of armed men” such as the standing army and police. Why does the self-acting armed people become impossible in class society?',
@@ -277,7 +304,52 @@ module.exports = {
                     ],
                     '1장은 엥겔스의 국가론을 복원해 분석의 좌표를 세운다. 코뮌의 제도는 3장의 몫이고, 즉시 폐지는 레닌이 비판하는 입장이다. 1장의 성과는 「무엇을 분쇄하고 무엇이 사멸하는가」라는 물음을 정확히 세운 데 있다.',
                     'Chapter 1 restores Engels’s theory of the state and sets the coordinates of the analysis. The Commune’s institutions belong to Chapter 3, and immediate abolition is the position Lenin criticizes. Its achievement is to pose precisely the question of what is smashed and what withers.'),
-            ]
+            ],
+            {
+                diagram: diagram('contrast',
+                    {
+                        title: '국가를 보는 두 관점',
+                        left: {
+                            heading: '통념: 계급 화해의 기관',
+                            rows: [
+                                '모든 계급 위에 선 중립적 심판',
+                                '질서는 모두의 이익을 지킨다',
+                                '다수가 차지하면 인민의 도구가 된다',
+                                '국가는 저절로 사멸해 간다',
+                            ],
+                        },
+                        right: {
+                            heading: '엥겔스와 레닌: 화해 불가능성의 산물',
+                            rows: [
+                                '지배계급의 억압 기구',
+                                '질서는 피억압 계급의 저항 수단을 빼앗는다',
+                                '기구 자체가 소수 지배용이라 분쇄가 필요하다',
+                                '사멸하는 것은 혁명 뒤의 반(半)국가뿐',
+                            ],
+                        },
+                    },
+                    {
+                        title: 'Two views of the state',
+                        left: {
+                            heading: 'Common view: an organ of class reconciliation',
+                            rows: [
+                                'A neutral referee above all classes',
+                                'Order serves the good of all',
+                                'Won by a majority, it becomes the people’s instrument',
+                                'The state withers away on its own',
+                            ],
+                        },
+                        right: {
+                            heading: 'Engels and Lenin: product of irreconcilability',
+                            rows: [
+                                'An organ of suppression for the ruling class',
+                                'Order strips the oppressed of their means of resistance',
+                                'The machine itself was built for minority rule and must be smashed',
+                                'Only the semi-state after the revolution withers away',
+                            ],
+                        },
+                    }),
+            }
         ),
         chapter(
             2,
