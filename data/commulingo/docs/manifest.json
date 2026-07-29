@@ -1,6 +1,229 @@
 {
   "docs": [
     {
+      "id": "marx-value-price-profit",
+      "file": "marx-value-price-profit.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "마르크스, 『임금, 가격, 이윤』 전문 해설",
+        "en": "Marx, Value, Price and Profit: A Guided Reading"
+      },
+      "description": {
+        "ko": "1865년 마르크스가 국제노동자협회 총평의회에서 임금 인상 무용론을 편 존 웨스턴에게 답한 연설의 전문 해설. 열네 개 절을 순서대로 따라가며 웨스턴의 두 전제를 해체하고, 가치와 노동력과 잉여가치의 이론을 세운 뒤, 임금 투쟁이 왜 필요하면서도 그것만으로는 부족한지를 「임금제도의 폐지」라는 결론까지 밟아 간다.",
+        "en": "A guided reading of the address Marx delivered to the General Council of the International in 1865, answering John Weston's claim that wage rises are futile. It follows all fourteen sections in order, taking Weston's two premises apart, building up the theory of value, labour-power and surplus value, and showing why wage struggle is both necessary and insufficient, down to the closing watchword: abolition of the wages system."
+      },
+      "kind": {
+        "ko": "전문 해설",
+        "en": "Guided reading"
+      },
+      "source": "Karl Marx, Value, Price and Profit (1865). 엘리너 마르크스 에이블링 엮음, 런던, 1898; MEW Bd. 16, S. 101–152",
+      "people": [
+        {
+          "id": "karl-marx",
+          "name": {
+            "ko": "카를 마르크스",
+            "en": "Karl Marx"
+          }
+        },
+        {
+          "id": "friedrich-engels",
+          "name": {
+            "ko": "프리드리히 엥겔스",
+            "en": "Friedrich Engels"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "id": "wages-fund-doctrine",
+          "name": {
+            "ko": "임금기금설",
+            "en": "Wages-fund doctrine"
+          }
+        },
+        {
+          "id": "iron-law-of-wages",
+          "name": {
+            "ko": "임금철칙",
+            "en": "Iron law of wages"
+          }
+        },
+        {
+          "id": "malthusianism",
+          "name": {
+            "ko": "맬서스주의",
+            "en": "Malthusianism"
+          }
+        }
+      ],
+      "events": [],
+      "addedAt": "2026-07-27",
+      "aliases": {
+        "ko": [
+          "임금, 가격, 이윤 전문 해설",
+          "『임금, 가격, 이윤』 전문 해설",
+          "『임금, 가격, 이윤』"
+        ],
+        "en": [
+          "guided reading of Value, Price and Profit",
+          "Value, Price and Profit"
+        ]
+      }
+    },
+    {
+      "id": "marx-gotha-critique",
+      "file": "marx-gotha-critique.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "마르크스, 『고타강령 비판』 전문 해설",
+        "en": "Marx, Critique of the Gotha Programme: A Guided Reading"
+      },
+      "description": {
+        "ko": "마르크스가 1875년 고타 통합강령 초안에 단 논평의 전문 해설. 강령 조항을 순서대로 인용하고 마르크스의 답을 옮긴 뒤 입문자를 위한 해설을 붙였다. 노동전수익권과 공제 목록, 공산주의의 두 단계, 임금철칙, 국가 보조 협동조합, 자유국가와 프롤레타리아 독재를 차례로 다룬다.",
+        "en": "A guided reading of the notes Marx wrote on the draft Gotha unity programme in 1875. Each clause is quoted in order, Marx's reply translated, and a beginner's commentary added, covering the undiminished proceeds of labour and the deductions, the two phases of communism, the iron law of wages, state-aided co-operatives, and the free state and the dictatorship of the proletariat."
+      },
+      "kind": {
+        "ko": "전문 해설",
+        "en": "Guided reading"
+      },
+      "source": "Karl Marx, Randglossen zum Programm der deutschen Arbeiterpartei (1875); MEW Bd. 19, S. 13–32; Marx & Engels Selected Works, Vol. 3 (Progress Publishers, 1970)",
+      "people": [
+        {
+          "id": "karl-marx",
+          "name": {
+            "ko": "카를 마르크스",
+            "en": "Karl Marx"
+          }
+        },
+        {
+          "id": "ferdinand-lassalle",
+          "name": {
+            "ko": "페르디난트 라살레",
+            "en": "Ferdinand Lassalle"
+          }
+        },
+        {
+          "id": "friedrich-engels",
+          "name": {
+            "ko": "프리드리히 엥겔스",
+            "en": "Friedrich Engels"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "id": "critique-of-the-gotha-programme",
+          "name": {
+            "ko": "고타강령 비판",
+            "en": "Critique of the Gotha Programme"
+          }
+        },
+        {
+          "id": "undiminished-proceeds-of-labour",
+          "name": {
+            "ko": "노동전수익권",
+            "en": "Undiminished proceeds of labour"
+          }
+        },
+        {
+          "id": "iron-law-of-wages",
+          "name": {
+            "ko": "임금철칙",
+            "en": "Iron law of wages"
+          }
+        },
+        {
+          "id": "lower-and-higher-phase-of-communism",
+          "name": {
+            "ko": "공산주의의 낮은 단계와 높은 단계",
+            "en": "Lower and higher phase of communism"
+          }
+        },
+        {
+          "id": "dictatorship-of-the-proletariat",
+          "name": {
+            "ko": "프롤레타리아 독재",
+            "en": "Dictatorship of the proletariat"
+          }
+        }
+      ],
+      "events": [],
+      "addedAt": "2026-07-27",
+      "aliases": {
+        "ko": [
+          "고타강령 비판 전문 해설",
+          "『고타강령 비판』 전문 해설"
+        ],
+        "en": [
+          "guided reading of the Critique of the Gotha Programme"
+        ]
+      }
+    },
+    {
+      "id": "lenin-tax-in-kind",
+      "file": "lenin-tax-in-kind.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "레닌, 『현물세』 한국어 번역",
+        "en": "Lenin, The Tax in Kind (Korean translation)"
+      },
+      "description": {
+        "ko": "1921년 4월 레닌이 신경제정책으로의 전환을 설명하기 위해 쓴 팸플릿의 한국어 번역 전문. 러시아 경제를 가부장적 농민경제부터 사회주의까지 다섯 형태로 나누고, 소상품생산이 지배적인 조건에서 국가자본주의는 사회주의와 견줄 것이 아니라 소생산자 요소와 견주어야 하며 그에 비하면 한 걸음 전진이라고 논증한다.",
+        "en": "The full Korean translation of the pamphlet Lenin wrote in April 1921 to explain the turn to the New Economic Policy. It divides the Russian economy into five forms, from patriarchal peasant farming to socialism, and argues that where small commodity production predominates state capitalism must be measured against the small-proprietor element rather than against socialism, and is a step forward by that measure."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "В. И. Ленин, «О продовольственном налоге» (1921). 영역 유리 스도브니코프. 『레닌 전집』 영어판 제1판, 프로그레스 출판사, 모스크바, 1965년, 제32권, 329–365쪽",
+      "people": [
+        {
+          "id": "lenin",
+          "name": {
+            "ko": "블라디미르 레닌",
+            "en": "Vladimir Lenin"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "id": "prodnalog",
+          "name": {
+            "ko": "현물세",
+            "en": "Prodnalog"
+          }
+        },
+        {
+          "id": "state-capitalism",
+          "name": {
+            "ko": "국가자본주의",
+            "en": "State Capitalism"
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "new-economic-policy",
+          "name": {
+            "ko": "신경제정책(네프)",
+            "en": "New Economic Policy"
+          }
+        }
+      ],
+      "addedAt": "2026-07-25",
+      "tocExclude": [
+        "."
+      ],
+      "aliases": {
+        "ko": [
+          "『현물세』"
+        ],
+        "en": [
+          "The Tax in Kind"
+        ]
+      }
+    },
+    {
       "id": "stalin-1936-constitution",
       "file": "stalin-1936-constitution.html",
       "docLang": "ko",
@@ -176,229 +399,6 @@
         ],
         "en": [
           "Yezhov: A Biography"
-        ]
-      }
-    },
-    {
-      "id": "lenin-tax-in-kind",
-      "file": "lenin-tax-in-kind.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "레닌, 『현물세』 한국어 번역",
-        "en": "Lenin, The Tax in Kind (Korean translation)"
-      },
-      "description": {
-        "ko": "1921년 4월 레닌이 신경제정책으로의 전환을 설명하기 위해 쓴 팸플릿의 한국어 번역 전문. 러시아 경제를 가부장적 농민경제부터 사회주의까지 다섯 형태로 나누고, 소상품생산이 지배적인 조건에서 국가자본주의는 사회주의와 견줄 것이 아니라 소생산자 요소와 견주어야 하며 그에 비하면 한 걸음 전진이라고 논증한다.",
-        "en": "The full Korean translation of the pamphlet Lenin wrote in April 1921 to explain the turn to the New Economic Policy. It divides the Russian economy into five forms, from patriarchal peasant farming to socialism, and argues that where small commodity production predominates state capitalism must be measured against the small-proprietor element rather than against socialism, and is a step forward by that measure."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "В. И. Ленин, «О продовольственном налоге» (1921). 영역 유리 스도브니코프. 『레닌 전집』 영어판 제1판, 프로그레스 출판사, 모스크바, 1965년, 제32권, 329–365쪽",
-      "people": [
-        {
-          "id": "lenin",
-          "name": {
-            "ko": "블라디미르 레닌",
-            "en": "Vladimir Lenin"
-          }
-        }
-      ],
-      "terms": [
-        {
-          "id": "prodnalog",
-          "name": {
-            "ko": "현물세",
-            "en": "Prodnalog"
-          }
-        },
-        {
-          "id": "state-capitalism",
-          "name": {
-            "ko": "국가자본주의",
-            "en": "State Capitalism"
-          }
-        }
-      ],
-      "events": [
-        {
-          "id": "new-economic-policy",
-          "name": {
-            "ko": "신경제정책(네프)",
-            "en": "New Economic Policy"
-          }
-        }
-      ],
-      "addedAt": "2026-07-25",
-      "tocExclude": [
-        "."
-      ],
-      "aliases": {
-        "ko": [
-          "『현물세』"
-        ],
-        "en": [
-          "The Tax in Kind"
-        ]
-      }
-    },
-    {
-      "id": "marx-gotha-critique",
-      "file": "marx-gotha-critique.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "마르크스, 『고타강령 비판』 전문 해설",
-        "en": "Marx, Critique of the Gotha Programme: A Guided Reading"
-      },
-      "description": {
-        "ko": "마르크스가 1875년 고타 통합강령 초안에 단 논평의 전문 해설. 강령 조항을 순서대로 인용하고 마르크스의 답을 옮긴 뒤 입문자를 위한 해설을 붙였다. 노동전수익권과 공제 목록, 공산주의의 두 단계, 임금철칙, 국가 보조 협동조합, 자유국가와 프롤레타리아 독재를 차례로 다룬다.",
-        "en": "A guided reading of the notes Marx wrote on the draft Gotha unity programme in 1875. Each clause is quoted in order, Marx's reply translated, and a beginner's commentary added, covering the undiminished proceeds of labour and the deductions, the two phases of communism, the iron law of wages, state-aided co-operatives, and the free state and the dictatorship of the proletariat."
-      },
-      "kind": {
-        "ko": "전문 해설",
-        "en": "Guided reading"
-      },
-      "source": "Karl Marx, Randglossen zum Programm der deutschen Arbeiterpartei (1875); MEW Bd. 19, S. 13–32; Marx & Engels Selected Works, Vol. 3 (Progress Publishers, 1970)",
-      "people": [
-        {
-          "id": "karl-marx",
-          "name": {
-            "ko": "카를 마르크스",
-            "en": "Karl Marx"
-          }
-        },
-        {
-          "id": "ferdinand-lassalle",
-          "name": {
-            "ko": "페르디난트 라살레",
-            "en": "Ferdinand Lassalle"
-          }
-        },
-        {
-          "id": "friedrich-engels",
-          "name": {
-            "ko": "프리드리히 엥겔스",
-            "en": "Friedrich Engels"
-          }
-        }
-      ],
-      "terms": [
-        {
-          "id": "critique-of-the-gotha-programme",
-          "name": {
-            "ko": "고타강령 비판",
-            "en": "Critique of the Gotha Programme"
-          }
-        },
-        {
-          "id": "undiminished-proceeds-of-labour",
-          "name": {
-            "ko": "노동전수익권",
-            "en": "Undiminished proceeds of labour"
-          }
-        },
-        {
-          "id": "iron-law-of-wages",
-          "name": {
-            "ko": "임금철칙",
-            "en": "Iron law of wages"
-          }
-        },
-        {
-          "id": "lower-and-higher-phase-of-communism",
-          "name": {
-            "ko": "공산주의의 낮은 단계와 높은 단계",
-            "en": "Lower and higher phase of communism"
-          }
-        },
-        {
-          "id": "dictatorship-of-the-proletariat",
-          "name": {
-            "ko": "프롤레타리아 독재",
-            "en": "Dictatorship of the proletariat"
-          }
-        }
-      ],
-      "events": [],
-      "addedAt": "2026-07-27",
-      "aliases": {
-        "ko": [
-          "고타강령 비판 전문 해설",
-          "『고타강령 비판』 전문 해설"
-        ],
-        "en": [
-          "guided reading of the Critique of the Gotha Programme"
-        ]
-      }
-    },
-    {
-      "id": "marx-value-price-profit",
-      "file": "marx-value-price-profit.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "마르크스, 『임금, 가격, 이윤』 전문 해설",
-        "en": "Marx, Value, Price and Profit: A Guided Reading"
-      },
-      "description": {
-        "ko": "1865년 마르크스가 국제노동자협회 총평의회에서 임금 인상 무용론을 편 존 웨스턴에게 답한 연설의 전문 해설. 열네 개 절을 순서대로 따라가며 웨스턴의 두 전제를 해체하고, 가치와 노동력과 잉여가치의 이론을 세운 뒤, 임금 투쟁이 왜 필요하면서도 그것만으로는 부족한지를 「임금제도의 폐지」라는 결론까지 밟아 간다.",
-        "en": "A guided reading of the address Marx delivered to the General Council of the International in 1865, answering John Weston's claim that wage rises are futile. It follows all fourteen sections in order, taking Weston's two premises apart, building up the theory of value, labour-power and surplus value, and showing why wage struggle is both necessary and insufficient, down to the closing watchword: abolition of the wages system."
-      },
-      "kind": {
-        "ko": "전문 해설",
-        "en": "Guided reading"
-      },
-      "source": "Karl Marx, Value, Price and Profit (1865). 엘리너 마르크스 에이블링 엮음, 런던, 1898; MEW Bd. 16, S. 101–152",
-      "people": [
-        {
-          "id": "karl-marx",
-          "name": {
-            "ko": "카를 마르크스",
-            "en": "Karl Marx"
-          }
-        },
-        {
-          "id": "friedrich-engels",
-          "name": {
-            "ko": "프리드리히 엥겔스",
-            "en": "Friedrich Engels"
-          }
-        }
-      ],
-      "terms": [
-        {
-          "id": "wages-fund-doctrine",
-          "name": {
-            "ko": "임금기금설",
-            "en": "Wages-fund doctrine"
-          }
-        },
-        {
-          "id": "iron-law-of-wages",
-          "name": {
-            "ko": "임금철칙",
-            "en": "Iron law of wages"
-          }
-        },
-        {
-          "id": "malthusianism",
-          "name": {
-            "ko": "맬서스주의",
-            "en": "Malthusianism"
-          }
-        }
-      ],
-      "events": [],
-      "addedAt": "2026-07-27",
-      "aliases": {
-        "ko": [
-          "임금, 가격, 이윤 전문 해설",
-          "『임금, 가격, 이윤』 전문 해설",
-          "『임금, 가격, 이윤』"
-        ],
-        "en": [
-          "guided reading of Value, Price and Profit",
-          "Value, Price and Profit"
         ]
       }
     }
