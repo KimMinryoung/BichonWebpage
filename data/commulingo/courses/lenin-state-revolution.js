@@ -361,12 +361,12 @@ module.exports = {
             'Follow how the bureaucratic-military machine was perfected through successive revolutions, and see why smashing the machine and the dictatorship of the proletariat come from the same analysis.',
             [
                 ['관료·군사 기구', '분업과 함께 자라난 관료제와 상비군은 정권이 바뀌어도 살아남으며, 이전의 모든 혁명은 이 기계를 부수는 대신 완성해 왔다.'],
-                ['분쇄', '마르크스의 결론은 완성된 국가기구를 손에 넣어 쓰는 것이 아니라 부수는 것이다. 『브뤼메르 18일』의 핵심 문장이 여기 있다.'],
+                ['분쇄', '마르크스의 결론은 완성된 국가기구를 손에 넣어 쓰는 것이 아니라 부수는 것이다. 루이 보나파르트의 쿠데타를 분석한 마르크스의 1852년 저작 『브뤼메르 18일』의 핵심 문장이 여기 있다.'],
                 ['프롤레타리아트 독재', '낡은 기구를 부순 자리에 들어서는 것은 무정부 상태가 아니라, 지배계급으로 조직된 프롤레타리아트의 과도기 국가다.'],
             ],
             [
                 ['Bureaucratic-military machine', 'Bureaucracy and the standing army grew with the division of labor and survive every change of government; all previous revolutions perfected this machine instead of breaking it.'],
-                ['Smashing', 'Marx’s conclusion: not to lay hold of the ready-made machine and wield it, but to break it. The key sentence of The Eighteenth Brumaire is here.'],
+                ['Smashing', 'Marx’s conclusion: not to lay hold of the ready-made machine and wield it, but to break it. The key sentence of The Eighteenth Brumaire, Marx’s 1852 study of Louis Bonaparte’s coup, is here.'],
                 ['Dictatorship of the proletariat', 'What replaces the broken machine is not anarchy but the transitional state of the proletariat organized as the ruling class.'],
             ],
             '「독재」는 여기서 한 개인의 자의적 통치가 아니라, 한 계급이 국가권력을 쥐고 다른 계급의 저항을 누르는 지배 형태를 가리키는 분석 용어다. 부르주아 민주공화국도 이 의미에서는 부르주아지의 독재다.',
@@ -424,7 +424,19 @@ module.exports = {
                         'The dictatorship of the proletariat is merely an honorific title earned after winning a majority.',
                     ],
                     '차이는 폭력 여부나 절차가 아니라 기구다. 기존 국가기구 위에서의 다수는 그 기구의 논리에 묶이지만, 독재는 어떤 기구로 지배하는가를 바꾸는 문제다. 그래서 마르크스는 「지배계급으로 조직된 프롤레타리아트」라고 썼다.',
-                    'The difference is the machine, not violence or procedure. A majority atop the old machine is bound by its logic; the dictatorship changes which machine rules. That is why Marx wrote of the proletariat organized as the ruling class.'),
+                    'The difference is the machine, not violence or procedure. A majority atop the old machine is bound by its logic; the dictatorship changes which machine rules. That is why Marx wrote of the proletariat organized as the ruling class.',
+                    [
+                        '차이의 핵심을 기구에서 찾았다. 어떤 기구로 지배하는가가 바뀌지 않으면, 다수파도 물려받은 기구의 논리에 묶인다.',
+                        '절차의 차이로 좁혀 읽은 것이다. 마르크스의 용법에서 독재는 선거의 유무가 아니라 어느 계급이 어떤 기구로 지배하는가의 문제다.',
+                        '폭력 여부는 정세의 문제이지 개념의 경계가 아니다. 평화적 이행조차 낡은 기구의 분쇄를 전제한다는 것이 이 장의 요점이다.',
+                        '독재를 수사로 읽으면 새 유형의 국가를 세운다는 실천적 내용이 사라진다. 레닌이 겨냥하는 속류화가 바로 이런 독해다.',
+                    ],
+                    [
+                        'The heart of the difference is the machine: unless which machine rules changes, even a majority stays bound by the logic of the inherited one.',
+                        'This narrows it to procedure. In Marx’s usage the dictatorship is not about the presence of elections but about which class rules through which machine.',
+                        'Violence is a matter of circumstances, not the boundary of the concept. Even a peaceful transition presupposes smashing the old machine, which is this chapter’s point.',
+                        'Read as rhetoric, the dictatorship loses its practical content, the founding of a new type of state. This is exactly the vulgarization Lenin targets.',
+                    ]),
                 q(0,
                     '한 좌파 정부가 선거로 집권했지만 군 지휘부, 고위 관료, 사법부는 그대로다. 주요 개혁은 번번이 「실무적 이유」로 좌초한다. 2장의 분석은 무엇을 먼저 보라고 하는가?',
                     'A left government wins office, but the military command, senior bureaucracy, and judiciary remain. Key reforms keep failing for “practical reasons.” What does this chapter say to look at first?',
@@ -544,9 +556,30 @@ module.exports = {
                         'Because the situations of 1852 and 1917 were identical in every respect.',
                         'Because surveying the history of theory is an academic duty independent of revolution.',
                     ],
-                    '복원은 골동품 취미가 아니라 논쟁 행위다. 카우츠키류의 해석이 분쇄를 빼고 마르크스를 가르쳐 온 상황에서, 원문 복원 자체가 임박한 혁명의 노선 투쟁이 된다. 이 논쟁은 6장에서 정면으로 다뤄진다.',
-                    'Restoration is polemic, not antiquarianism. Where Kautskyan interpretation had taught Marx minus the smashing thesis, restoring the original text is itself a line struggle for the imminent revolution - taken up frontally in Chapter 6.'),
-            ]
+                    '복원은 골동품 취미가 아니라 논쟁 행위다. 제2인터내셔널의 대표 이론가 카우츠키를 따르는 해석이 분쇄를 빼고 마르크스를 가르쳐 온 상황에서, 원문 복원 자체가 임박한 혁명의 노선 투쟁이 된다. 이 논쟁은 6장에서 정면으로 다뤄진다.',
+                    'Restoration is polemic, not antiquarianism. Where interpretation in the manner of Kautsky, the leading theorist of the Second International, had taught Marx minus the smashing thesis, restoring the original text is itself a line struggle for the imminent revolution - taken up frontally in Chapter 6.'),
+            ],
+            {
+                diagram: diagram('flow',
+                    {
+                        title: '1848~51년 결산의 논리',
+                        steps: [
+                            { label: '혁명이 거듭된다', note: '권력을 잡은 각 계급·분파는 기존 억압기구를 전리품처럼 물려받는다' },
+                            { label: '기구가 완성된다', note: '관료제와 상비군은 단절 없이 누적되어 정권 교체에도 살아남는다' },
+                            { label: '결론: 분쇄', note: '완성된 기계를 넘겨받아 쓰는 것이 아니라 부수는 것이 프롤레타리아 혁명의 임무다' },
+                            { label: '남는 물음', note: '부순 자리에 무엇을 세우는가. 1871년 파리코뮌이 답한다(3장)' },
+                        ],
+                    },
+                    {
+                        title: 'The logic of the balance sheet of 1848-51',
+                        steps: [
+                            { label: 'Revolutions recur', note: 'Each class or faction that takes power inherits the apparatus of suppression like spoils' },
+                            { label: 'The machine is perfected', note: 'Bureaucracy and the standing army accumulate without interruption, surviving every change of government' },
+                            { label: 'Conclusion: smash it', note: 'The task of proletarian revolution is not to take over the ready-made machine but to break it' },
+                            { label: 'The open question', note: 'What replaces it? The Paris Commune of 1871 answers (Chapter 3)' },
+                        ],
+                    }),
+            }
         ),
         chapter(
             3,
@@ -621,7 +654,19 @@ module.exports = {
                         'Because representation is rejected only for the transition and revived under communism.',
                     ],
                     '레닌은 «대의 기관 없는 민주주의는 생각할 수 없다»고 명시한다. 문제는 대표가 아니라, 말하는 곳과 책임지는 곳이 분리된 의회주의다. 코뮌은 그 분리를 없앤 대의 기관이다.',
-                    'Lenin states plainly that democracy without representative institutions is unthinkable. The problem is not representation but parliamentarism, where the place that talks is severed from the place that answers. The Commune is a representative body with that severance removed.'),
+                    'Lenin states plainly that democracy without representative institutions is unthinkable. The problem is not representation but parliamentarism, where the place that talks is severed from the place that answers. The Commune is a representative body with that severance removed.',
+                    [
+                        '폐지되는 것은 대의제가 아니라 토론과 집행의 분리라는 구분을 정확히 잡았다.',
+                        '코뮌은 보통선거로 대표를 뽑았다. 추첨은 코뮌의 제도가 아니다.',
+                        '방향이 반대다. 일하는 기관은 의회를 없애고 집행부만 남기는 것이 아니라, 선출된 대표체가 집행까지 맡는 것이다.',
+                        '레닌은 대의 기관 없는 민주주의는 생각할 수 없다고 명시한다. 부정되는 것은 대의제가 아니라 의회주의다.',
+                    ],
+                    [
+                        'Exactly the distinction: what is abolished is not representation but the separation of talking from executing.',
+                        'The Commune elected its representatives by universal suffrage; sortition was not among its institutions.',
+                        'The direction is reversed: a working body does not abolish the assembly and keep the executive, it makes the elected body itself do the executing.',
+                        'Lenin states plainly that democracy without representative institutions is unthinkable. What is rejected is parliamentarism, not representation.',
+                    ]),
                 q(0,
                     '어느 도시에서 고위 공직자의 보수와 연금이 평균 임금의 여러 배이고, 임기 중에는 어떤 잘못에도 소환되지 않는다. 코뮌의 원칙은 이 상태의 무엇을 문제 삼는가?',
                     'In a city, top officials earn several times the average wage with pensions, and cannot be recalled during their terms whatever they do. What do the Commune’s principles indict here?',
@@ -693,8 +738,8 @@ module.exports = {
                     '마르크스 자신이 코뮌의 경험으로 『선언』을 교정했다. 1852년에는 «분쇄하라»까지만 말할 수 있었고, 1871년의 파리가 «무엇으로 대체하는가»에 실물로 답했다. 이 연결이 책 전체의 뼈대다.',
                     'Marx himself corrected the Manifesto in light of the Commune. In 1852 he could only say “smash”; Paris in 1871 answered “replace with what” in the flesh. This connection is the backbone of the whole book.'),
                 q(0,
-                    '베른슈타인은 코뮌의 강령을 프루동식 연방주의와 닮았다고 읽는다. 레닌이 이 독해를 비판하는 근거는 무엇인가?',
-                    'Bernstein reads the Commune’s program as akin to Proudhonist federalism. On what ground does Lenin criticize this reading?',
+                    '독일 사민당의 수정주의자 베른슈타인은 코뮌의 강령을, 중앙집권 대신 소집단들의 자유로운 연합을 내세운 프루동식 연방주의와 닮았다고 읽는다. 레닌이 이 독해를 비판하는 근거는 무엇인가?',
+                    'Bernstein, the revisionist of German Social-Democracy, reads the Commune’s program as akin to the federalism of Proudhon, who set the free union of small groups against centralism. On what ground does Lenin criticize this reading?',
                     [
                         '코뮌이 부순 것은 중앙집권이 아니라 관료·군사 기구이며, 마르크스는 코뮌들의 자발적 결합에 의한 민족적 통일, 곧 중앙집권을 부정하지 않았다는 것',
                         '베른슈타인이 인용한 판본에 번역 오류가 있어, 그가 마르크스의 문장을 잘못 읽을 수밖에 없었다는 것',
@@ -743,7 +788,52 @@ module.exports = {
                     ],
                     '1872년 독일어판 서문에서 마르크스와 엥겔스는 코뮌의 경험을 근거로 이 한 가지 교정을 명시했다. 이론이 닫힌 교리가 아니라 혁명의 경험으로 갱신되는 분석임을 보여주는 대목이며, 레닌의 복원 작업 전체의 모범이다.',
                     'In the 1872 preface to the German edition, Marx and Engels made this one correction explicit on the strength of the Commune. It shows theory as analysis renewed by revolutionary experience rather than closed doctrine - the model for Lenin’s whole work of restoration.'),
-            ]
+            ],
+            {
+                diagram: diagram('contrast',
+                    {
+                        title: '말하는 의회와 일하는 기관',
+                        left: {
+                            heading: '부르주아 의회주의',
+                            rows: [
+                                '토론은 의회가, 집행은 책임지지 않는 관청이 맡는다',
+                                '공직은 특권적 보수와 출세의 사다리다',
+                                '임기 중에는 소환되지 않는다',
+                                '상비군이 사회 위에 선다',
+                            ],
+                        },
+                        right: {
+                            heading: '코뮌형 국가',
+                            rows: [
+                                '대표가 자기 결정을 직접 집행하고 책임진다',
+                                '모든 공직은 노동자 임금만 받는다',
+                                '언제든 소환된다',
+                                '무장한 인민이 그 자리를 대신한다',
+                            ],
+                        },
+                    },
+                    {
+                        title: 'The talking parliament and the working body',
+                        left: {
+                            heading: 'Bourgeois parliamentarism',
+                            rows: [
+                                'Parliament talks; unaccountable offices execute',
+                                'Office is a ladder of privileged pay and careers',
+                                'No recall during the term of office',
+                                'A standing army stands above society',
+                            ],
+                        },
+                        right: {
+                            heading: 'The Commune-type state',
+                            rows: [
+                                'Representatives execute and answer for their own decisions',
+                                'All offices are paid workmen’s wages',
+                                'Recallable at any time',
+                                'The armed people take its place',
+                            ],
+                        },
+                    }),
+            }
         ),
         chapter(
             4,
@@ -818,10 +908,22 @@ module.exports = {
                         'Organization: anarchism rejects the party, Marxism the trade union.',
                     ],
                     '차이는 빠르기가 아니라 구조다. 계급과 착취가 남아 있는 한 강제 기구의 필요도 남으므로, 즉시 폐지는 그 필요를 누가 채울 것인가라는 물음에 답하지 못한다. 사멸은 조건의 소멸을 따라온다.',
-                    'The difference is structural, not one of speed. While classes and exploitation remain, the need for an apparatus of coercion remains; immediate abolition cannot answer who fills that need. Withering follows the disappearance of its conditions.'),
+                    'The difference is structural, not one of speed. While classes and exploitation remain, the need for an apparatus of coercion remains; immediate abolition cannot answer who fills that need. Withering follows the disappearance of its conditions.',
+                    [
+                        '차이를 시간표가 아니라 경로의 구조에서 찾았다. 즉시 폐지와 조건 소멸 후의 사멸은 서로 다른 경로다.',
+                        '빠르기의 문제로 읽으면 두 입장이 같은 경로를 공유하는 것처럼 보인다. 그러나 폐지와 사멸은 같은 길의 두 속도가 아니라 다른 길이다.',
+                        '수단이 가르는 것이 아니다. 마르크스주의는 평화적 수단만 인정하지 않으며, 아나키즘 안에도 여러 수단론이 있다.',
+                        '조직론의 차이는 실재하지만 파생적이다. 국가 소멸의 경로에 대한 답이 갈라진 뒤에 따라 나오는 차이다.',
+                    ],
+                    [
+                        'The difference located in the structure of the path, not the timetable: immediate abolition and withering after the conditions vanish are different roads.',
+                        'Read as a matter of speed, the two positions seem to share one path. But abolition and withering are not two speeds on the same road; they are different roads.',
+                        'Means do not draw the line. Marxism does not accept only peaceful means, and anarchism contains several doctrines of means.',
+                        'Differences over organization are real but derivative: they follow after the answers about the path of the state’s disappearance have parted.',
+                    ]),
                 q(0,
-                    '에르푸르트 강령 초안을 비판하며 엥겔스는 독일 당이 민주공화국 요구를 빼놓은 것을 문제 삼았다. 합법성을 잃지 않으려는 이 «신중함»을 그는 무엇이라 진단했는가?',
-                    'Criticizing the Erfurt draft, Engels objected that the German party omitted the demand for a democratic republic. How did he diagnose this “prudence” aimed at preserving legality?',
+                    '독일 사회민주당이 1891년 채택할 강령인 에르푸르트 강령의 초안을 비판하며, 엥겔스는 당이 민주공화국 요구를 빼놓은 것을 문제 삼았다. 합법성을 잃지 않으려는 이 «신중함»을 그는 무엇이라 진단했는가?',
+                    'Criticizing the draft of the Erfurt Programme, the program German Social-Democracy would adopt in 1891, Engels objected that the party omitted the demand for a democratic republic. How did he diagnose this “prudence” aimed at preserving legality?',
                     [
                         '당장의 합법성을 위해 원칙적 요구를 침묵시키는 기회주의이며, 결정적 시기에 당을 무장해제한다고 진단했다.',
                         '검열 아래에서 불가피한 전술이므로 칭찬할 유연성이라고 진단했다.',
@@ -890,8 +992,8 @@ module.exports = {
                     '레닌이 보충 설명들을 모으는 이유가 이것이다. 시기와 쟁점이 달라도 판별 기준은 하나, 곧 낡은 기구를 부술 것인가 거기 적응할 것인가다. 이 기준의 복원이 6장 기회주의 비판의 발판이 된다.',
                     'This is why Lenin collects the supplements. Across different periods and disputes the criterion is one: smash the old machine or adapt to it. Restoring this criterion grounds the critique of opportunism in Chapter 6.'),
                 q(0,
-                    '고타 강령의 «자유국가» 요구에 대한 비판의 논리는 무엇인가?',
-                    'What is the logic of the critique of the Gotha Programme’s demand for a “free state”?',
+                    '1875년 독일 노동자 정당들이 통합하며 채택한 고타 강령은 «자유국가»를 요구했다. 이 요구에 대한 비판의 논리는 무엇인가?',
+                    'The Gotha Programme, adopted in 1875 when the German workers’ parties united, demanded a “free state.” What is the logic of the critique of this demand?',
                     [
                         '국가는 억압이 필요한 동안만 존재하므로, 자유와 국가를 한 단어에 묶는 것은 과도기의 분석을 감상적 구호로 대체하는 일이라는 것',
                         '자유라는 말은 철학적으로 엄밀하게 정의할 수 없으므로 강령에 쓸 수 없다는 것',
@@ -921,8 +1023,8 @@ module.exports = {
                         'Whether the fiscal deficit is sustainable - a question of accounting.',
                         'Whether it outperforms the private sector - a question of efficiency.',
                     ],
-                    '엥겔스가 비스마르크 국유화를 사회주의로 부르는 짓을 조롱했듯, 국가 소유 자체는 계급 성격을 말해 주지 않는다. 통제와 목적의 물음을 건너뛴 규모 숭배가 바로 국가 미신의 현대형이다.',
-                    'As Engels mocked calling Bismarck’s nationalizations socialism, state ownership by itself says nothing about class character. Worship of size that skips the questions of control and purpose is the modern form of state superstition.'),
+                    '엥겔스가 독일 제국 재상 비스마르크의 철도 국유화를 사회주의로 부르는 짓을 조롱했듯, 국가 소유 자체는 계급 성격을 말해 주지 않는다. 통제와 목적의 물음을 건너뛴 규모 숭배가 바로 국가 미신의 현대형이다.',
+                    'As Engels mocked calling socialism the railway nationalizations of Bismarck, chancellor of the German Empire, state ownership by itself says nothing about class character. Worship of size that skips the questions of control and purpose is the modern form of state superstition.'),
                 q(0,
                     '4장이 아나키즘 비판과 기회주의 비판을 한 장에 묶는 구성은 무엇을 보여주는가?',
                     'What does it show that this chapter binds the critique of anarchism and the critique of opportunism together?',
@@ -940,7 +1042,48 @@ module.exports = {
                     ],
                     '아나키즘과 기회주의는 정반대처럼 보이지만, 둘 다 «분쇄 후 과도기 국가»라는 마디를 건너뛴다. 한쪽은 그 마디가 필요 없다 하고 한쪽은 그 마디에서 멈춰 선다. 양면 논쟁의 구조가 책 전체의 방법이다.',
                     'Anarchism and opportunism look like opposites, yet both skip the link of “the transitional state after the smashing.” One says the link is unnecessary; the other halts at it forever. The two-front polemic is the method of the whole book.'),
-            ]
+            ],
+            {
+                diagram: diagram('contrast',
+                    {
+                        title: '같은 회피의 두 얼굴',
+                        left: {
+                            heading: '아나키즘: 국가를 너무 빨리 지운다',
+                            rows: [
+                                '국가의 즉시 폐지를 요구한다',
+                                '권위 일반을 원리로 배척한다',
+                                '억압의 필요가 남는 동안 그 필요를 누가 채우는지 답하지 못한다',
+                            ],
+                        },
+                        right: {
+                            heading: '기회주의: 국가를 영원히 남긴다',
+                            rows: [
+                                '«자유로운 인민국가»를 구호로 삼는다',
+                                '국가 기능의 확대를 곧 사회주의로 여긴다',
+                                '과도기 너머에서 국가가 사멸한다는 전망을 지운다',
+                            ],
+                        },
+                    },
+                    {
+                        title: 'Two faces of the same evasion',
+                        left: {
+                            heading: 'Anarchism: erases the state too soon',
+                            rows: [
+                                'Demands the immediate abolition of the state',
+                                'Rejects authority as such, on principle',
+                                'Cannot say who meets the need for suppression while that need remains',
+                            ],
+                        },
+                        right: {
+                            heading: 'Opportunism: keeps the state forever',
+                            rows: [
+                                'Makes the “free people’s state” its slogan',
+                                'Equates more state functions with socialism',
+                                'Erases the prospect that beyond the transition the state withers away',
+                            ],
+                        },
+                    }),
+            }
         ),
         chapter(
             5,
@@ -998,7 +1141,19 @@ module.exports = {
                         'Because the means of production still remain private property.',
                     ],
                     '낮은 단계에서 생산수단은 이미 공유다. 문제는 분배 원리에 남은 등가 교환의 흔적이다. 같은 노동, 같은 몫이라는 잣대는 가족·건강·능력의 차이를 보지 않으므로, 권리가 평등할수록 처지는 불평등해질 수 있다.',
-                    'In the lower phase the means of production are already common. What remains is the trace of equivalent exchange in the principle of distribution: equal labor, equal share ignores differences of family, health, and ability, so the more equal the right, the more unequal the condition can be.'),
+                    'In the lower phase the means of production are already common. What remains is the trace of equivalent exchange in the principle of distribution: equal labor, equal share ignores differences of family, health, and ability, so the more equal the right, the more unequal the condition can be.',
+                    [
+                        '형식의 평등이 사실의 불평등을 남긴다는 것, 이것이 마르크스가 권리의 「부르주아적 지평」이라 부른 내용이다.',
+                        '낮은 단계 분석의 초점은 화폐의 존속이 아니라 분배 원리에 남은 등가 교환의 형식이다. 부르주아지의 부활은 여기서의 논점이 아니다.',
+                        '마르크스는 노동량 측정이 가능하다고 전제한다. 문제는 측정의 기술이 아니라 「같은 잣대」라는 원리 자체다.',
+                        '낮은 단계에서 생산수단은 이미 공유다. 부르주아적인 것은 소유가 아니라 분배가 따르는 권리의 형식이다.',
+                    ],
+                    [
+                        'Formal equality leaving factual inequality: this is what Marx calls the bourgeois horizon of right.',
+                        'The focus of the lower-phase analysis is not the survival of money but the form of equivalent exchange left in the principle of distribution; a reborn bourgeoisie is not the point here.',
+                        'Marx assumes quantities of labor can be measured. The problem is not the technique of measurement but the principle of the equal standard itself.',
+                        'In the lower phase the means of production are already common. What is bourgeois is not ownership but the form of right that distribution follows.',
+                    ]),
                 q(0,
                     '낮은 단계와 높은 단계를 가르는 기준은 무엇인가?',
                     'What criterion divides the lower phase from the higher?',
@@ -1137,7 +1292,28 @@ module.exports = {
                     ],
                     '앞 장들이 «무엇을 부수고 무엇으로 대체하는가»에 답했다면, 5장은 «대체물은 언제, 왜 시들 수 있는가»에 답한다. 사멸이 선언이나 기대가 아니라 분석이 되는 지점이 여기다.',
                     'Where the earlier chapters answered what to smash and what to put in its place, Chapter 5 answers when and why the replacement can fade. Here withering becomes analysis rather than proclamation or hope.'),
-            ]
+            ],
+            {
+                diagram: diagram('flow',
+                    {
+                        title: '국가가 사멸에 이르는 경로',
+                        steps: [
+                            { label: '자본주의', note: '부르주아 국가. 혁명이 이 기구를 분쇄한다' },
+                            { label: '과도기', note: '프롤레타리아트 독재. 낡은 사회의 저항을 누르며 새 관계를 조직한다' },
+                            { label: '공산주의 낮은 단계', note: '생산수단은 공유, 분배는 노동에 따라. 부르주아적 권리를 지키는 반(半)국가가 남는다' },
+                            { label: '공산주의 높은 단계', note: '능력에 따라 일하고 필요에 따라 받는다. 국가는 완전히 사멸한다' },
+                        ],
+                    },
+                    {
+                        title: 'The path to the withering away of the state',
+                        steps: [
+                            { label: 'Capitalism', note: 'The bourgeois state. Revolution smashes this machine' },
+                            { label: 'Transition', note: 'The dictatorship of the proletariat: suppressing the old society’s resistance while organizing new relations' },
+                            { label: 'Lower phase of communism', note: 'Means of production common, distribution by labor. A semi-state remains to safeguard bourgeois right' },
+                            { label: 'Higher phase of communism', note: 'From each according to ability, to each according to needs. The state withers completely' },
+                        ],
+                    }),
+            }
         ),
         chapter(
             6,
@@ -1212,7 +1388,19 @@ module.exports = {
                         'Because Kautsky voted for the war credits.',
                     ],
                     '기회주의는 명단이 아니라 기준의 문제다. 수정주의 반박이라는 공적이 있어도, 혁명이 국가를 어떻게 할 것인가에서 물러서면 같은 진영이 된다. 말의 급진성과 결론의 온건함이 공존하는 것이 속류화의 형태다.',
-                    'Opportunism is a matter of criterion, not of lists. Whatever the merit of refuting revisionism, retreating on what the revolution does with the state puts one in the same camp. Radical words coexisting with tame conclusions is the very form of vulgarization.'),
+                    'Opportunism is a matter of criterion, not of lists. Whatever the merit of refuting revisionism, retreating on what the revolution does with the state puts one in the same camp. Radical words coexisting with tame conclusions is the very form of vulgarization.',
+                    [
+                        '기준을 정확히 잡았다. 분류하는 것은 단어의 정통성이 아니라 결정적 지점, 곧 국가기구에 대한 태도다.',
+                        '개인적 관계는 레닌의 분류 기준이 아니다. 기회주의는 개인의 변절이 아니라 노선의 문제로 다뤄진다.',
+                        '문체가 아니라 내용이 쟁점이다. 모호함 자체가 아니라 무엇에 대해 모호한가, 곧 국가기구 문제에서의 침묵이 표적이다.',
+                        '전쟁공채 찬성 표결은 1914년 독일 사민당 의원단의 일이다. 의원이 아니었던 카우츠키에 대한 레닌의 비판은 그보다 앞선 이론적 후퇴를 겨눈다.',
+                    ],
+                    [
+                        'Exactly the criterion: what classifies is not orthodoxy of words but the attitude at the decisive point, the state machine.',
+                        'Personal relations are not Lenin’s criterion. Opportunism is treated as a matter of line, not of individual betrayal.',
+                        'The issue is content, not style: not vagueness itself but what one is vague about, namely the silence on the state machine.',
+                        'The vote for war credits was the act of the German party’s parliamentary group in 1914; Kautsky held no seat. Lenin’s critique aims at the theoretical retreat that came earlier.',
+                    ]),
                 q(0,
                     '한 정당 지도자가 «우리는 혁명을 부정하지 않는다. 다만 국가기구 문제는 그때 가서 정할 일»이라고 말한다. 6장의 분석은 이 «신중함»을 어떻게 진단하는가?',
                     'A party leader says: “We do not deny revolution; the question of the state machine will be settled when the time comes.” How does this chapter diagnose such prudence?',
@@ -1250,8 +1438,8 @@ module.exports = {
             ],
             [
                 q(0,
-                    '카우츠키는 베른슈타인의 『전제』를 반박하는 책까지 썼다. 레닌이 그 반박 안에서 찾아내는 양보는 무엇인가?',
-                    'Kautsky even wrote a book refuting Bernstein’s Premises. What concession does Lenin find inside that refutation?',
+                    '카우츠키는 수정주의의 출발점이 된 베른슈타인의 『사회주의의 전제』를 반박하는 책까지 썼다. 레닌이 그 반박 안에서 찾아내는 양보는 무엇인가?',
+                    'Kautsky even wrote a book refuting Bernstein’s The Preconditions of Socialism, the founding text of revisionism. What concession does Lenin find inside that refutation?',
                     [
                         '혁명의 가능성은 변호하되, 프롤레타리아트가 기존 국가기구를 분쇄해야 한다는 마르크스의 결론은 베른슈타인과 함께 묻어 버린 것',
                         '집중 경향에 관한 베른슈타인의 통계 비판을 슬그머니 일부 수용한 것',
@@ -1284,8 +1472,8 @@ module.exports = {
                     '교육이나 성격으로 설명하면 같은 현상이 여러 나라에서 반복되는 이유를 놓친다. 운동이 기존 국가 안에 자리를 가질수록 그 자리가 발언을 규정한다는 것, 이것이 기회주의의 물질적 기초에 대한 분석이다.',
                     'Explanations by education or character miss why the same phenomenon recurs across countries. The more positions the movement holds inside the existing state, the more those positions govern its speech - that is the analysis of opportunism’s material basis.'),
                 q(0,
-                    '판네쿡과의 논쟁에서 카우츠키는 «우리의 정치투쟁 목표는 국가권력의 파괴가 아니라 국가기구 안에서의 세력 관계 이동»이라고 썼다. 레닌의 반박의 요점은 무엇인가?',
-                    'Against Pannekoek, Kautsky wrote that the aim of political struggle is “not the destruction of state power but the shifting of the balance of forces within the state.” What is the point of Lenin’s rebuttal?',
+                    '네덜란드의 좌파 마르크스주의자 판네쿡과의 논쟁에서 카우츠키는 «우리의 정치투쟁 목표는 국가권력의 파괴가 아니라 국가기구 안에서의 세력 관계 이동»이라고 썼다. 레닌의 반박의 요점은 무엇인가?',
+                    'Against the Dutch left Marxist Pannekoek, Kautsky wrote that the aim of political struggle is “not the destruction of state power but the shifting of the balance of forces within the state.” What is the point of Lenin’s rebuttal?',
                     [
                         '그 정식은 마르크스가 1852년 이래 세운 결론의 정면 철회이며, 프롤레타리아 혁명을 기존 기구 안의 자리다툼으로 축소한다는 것',
                         '판네쿡의 표현이 카우츠키보다 더 시적이고 호소력 있다는 문체상의 우열',
@@ -1334,7 +1522,48 @@ module.exports = {
                     ],
                     '미완의 마지막 장은 책의 성격을 요약하는 후일담이다. 1~6장의 복원 작업은 혁명 «에 관한» 학설사가 아니라 혁명 «을 위한» 무장이었고, 그래서 중단 자체가 이 책의 가장 정확한 마무리가 되었다.',
                     'The unwritten last chapter is the epilogue that sums up the book. The restoration in Chapters 1-6 was not a history of doctrine about revolution but an arming for it - so the interruption itself became the book’s most accurate ending.'),
-            ]
+            ],
+            {
+                diagram: diagram('contrast',
+                    {
+                        title: '속류화의 공식',
+                        left: {
+                            heading: '말로는',
+                            rows: [
+                                '혁명을 «인정»한다',
+                                '수정주의를 반박한다',
+                                '마르크스를 인용한다',
+                            ],
+                        },
+                        right: {
+                            heading: '결정적 지점에서는',
+                            rows: [
+                                '국가기구 분쇄에 침묵한다',
+                                '권력 장악을 기구 안의 자리바꿈으로 줄인다',
+                                '물려받은 기구의 관리자가 된다',
+                            ],
+                        },
+                    },
+                    {
+                        title: 'The formula of vulgarization',
+                        left: {
+                            heading: 'In words',
+                            rows: [
+                                '“Recognizes” the revolution',
+                                'Refutes revisionism',
+                                'Quotes Marx',
+                            ],
+                        },
+                        right: {
+                            heading: 'At the decisive point',
+                            rows: [
+                                'Stays silent on smashing the state machine',
+                                'Reduces the conquest of power to changing places inside the machine',
+                                'Becomes the manager of the inherited apparatus',
+                            ],
+                        },
+                    }),
+            }
         ),
     ],
 };
