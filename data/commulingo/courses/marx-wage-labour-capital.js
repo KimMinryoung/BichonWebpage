@@ -2,14 +2,17 @@ function t(ko, en) {
     return { ko, en };
 }
 
-function q(answer, koPrompt, enPrompt, koChoices, enChoices, koExplanation, enExplanation) {
-    function ordered(choices) {
+// koFeedback/enFeedback are optional per-choice feedback lines, authored in the
+// same order as the choices; ordered() reorders them alongside so the stored
+// arrays stay aligned with the stored choices (correct answer first).
+function q(answer, koPrompt, enPrompt, koChoices, enChoices, koExplanation, enExplanation, koFeedback, enFeedback) {
+    function ordered(items) {
         return [
-            choices[answer],
-            ...choices.filter((_, index) => index !== answer),
+            items[answer],
+            ...items.filter((_, index) => index !== answer),
         ];
     }
-    return {
+    const question = {
         type: 'multiple_choice',
         points: 0,
         prompt: t(koPrompt, enPrompt),
@@ -17,6 +20,10 @@ function q(answer, koPrompt, enPrompt, koChoices, enChoices, koExplanation, enEx
         answer: 0,
         explanation: t(koExplanation, enExplanation),
     };
+    if (koFeedback && enFeedback) {
+        question.choiceFeedback = { ko: ordered(koFeedback), en: ordered(enFeedback) };
+    }
+    return question;
 }
 
 function lesson(ch, level, titleKo, titleEn, questions) {
@@ -54,7 +61,14 @@ function brief(conceptKo, conceptEn, termKo, termEn, modernKo, modernEn, focusKo
     };
 }
 
-function chapter(ch, sourceFiles, titleKo, titleEn, summaryKo, summaryEn, focusKo, focusEn, conceptKo, conceptEn, termKo, termEn, modernKo, modernEn, basic, advanced) {
+// A typed concept diagram rendered above the brief: kind 'flow' takes
+// { title, steps: [{ label, note }] }, kind 'contrast' takes
+// { title, left: { heading, rows }, right: { heading, rows } } per language.
+function diagram(kind, ko, en) {
+    return { kind, ko, en };
+}
+
+function chapter(ch, sourceFiles, titleKo, titleEn, summaryKo, summaryEn, focusKo, focusEn, conceptKo, conceptEn, termKo, termEn, modernKo, modernEn, basic, advanced, extras) {
     const base = 'https://www.marxists.org/archive/marx/works/1847/wage-labour';
     return {
         id: `wage-labour-ch${String(ch).padStart(2, '0')}`,
@@ -70,6 +84,7 @@ function chapter(ch, sourceFiles, titleKo, titleEn, summaryKo, summaryEn, focusK
             lesson(ch, 'basic', `${titleKo} 기본`, `${titleEn}: Basics`, basic),
             lesson(ch, 'advanced', `${titleKo} 심화`, `${titleEn}: Advanced`, advanced),
         ],
+        ...(extras || {}),
     };
 }
 
@@ -175,7 +190,19 @@ module.exports = {
                         'No. Wages are simply a gift the capitalist bestows, unrelated to work.',
                     ],
                     '노동자가 만든 상품은 자본가의 것이 된다. 노동자가 임금으로 사는 것은 그 상품이 아니라, 자신을 살아 있게 해 줄 이미 존재하는 생활수단이다. 임금은 노동력의 값이지 생산물의 분배 몫이 아니다.',
-                    'The commodity the worker makes belongs to the capitalist. With his wages the worker buys not that commodity but already-existing means of subsistence to keep himself alive. The wage is the price of labour-power, not a share in the product.'),
+                    'The commodity the worker makes belongs to the capitalist. With his wages the worker buys not that commodity but already-existing means of subsistence to keep himself alive. The wage is the price of labour-power, not a share in the product.',
+                    [
+                        '임금으로 사는 것은 자기가 만든 상품이 아니라 이미 존재하는 생활수단이라는 구분이 핵심이다.',
+                        '나눈 비율이 문제가 아니다. 노동자가 만든 상품 자체가 처음부터 자본가의 소유이므로, 절반이든 얼마든 「몫」이라는 그림 자체가 성립하지 않는다.',
+                        '임금은 상품이 팔리기 전에, 판매의 성패와 무관하게 치러진다. 생산물의 판매 이익을 나눠 받는 것이 아니다.',
+                        '시혜가 아니라는 점은 맞지만 무관한 것도 아니다. 임금은 노동력이라는 상품에 대해 치르는 값이다.',
+                    ],
+                    [
+                        'The key distinction: what wages buy is not the commodity he made but already-existing means of subsistence.',
+                        'The ratio is not the issue. The commodity the worker makes belongs to the capitalist from the start, so the very picture of a “share”, half or otherwise, fails.',
+                        'Wages are paid before the commodity is sold and regardless of how the sale goes; they are not a cut of the product’s sales profit.',
+                        'Right that it is no charity, but not unrelated either: the wage is the price paid for the commodity labour-power.',
+                    ]),
                 q(0,
                     '같은 한 시간의 베짜기가 어떤 때는 임금노동이고 어떤 때는 아니다. 무엇이 그 차이를 만드는가?',
                     'The same hour of weaving is wage-labour in one case and not in another. What makes the difference?',
@@ -251,15 +278,15 @@ module.exports = {
                     'When comparing an hour of a silk-weaver and an hour of a cotton-weaver in terms of wages, what starting point does Chapter 1’s analysis emphasize?',
                     [
                         '임금은 노동의 물리적 종류가 아니라 노동력이라는 상품이 사고팔리는 사회적 관계에서 출발해 설명되어야 한다는 것',
-                        '더 비싼 원료를 다루는 노동이 언제나 더 높은 임금을 받는다는 것',
-                        '임금 차이는 전적으로 노동자 개인의 타고난 재능 차이로 환원된다는 것',
-                        '임금은 짜는 천의 시장 가격에 정확히 비례한다는 것',
+                        '비단이 더 비싼 원료이므로, 그것을 다루는 노동의 임금도 그만큼 높아야 한다는 것',
+                        '임금 차이는 두 노동자의 타고난 재능과 손재주의 차이로 설명된다는 것',
+                        '임금은 짜 낸 천이 시장에서 받는 가격을 따라 정해진다는 것',
                     ],
                     [
                         'That wages must be explained starting from the social relation in which labour-power is bought and sold, not from the physical kind of labour',
-                        'That labour handling more expensive raw material always commands higher wages',
-                        'That wage differences reduce entirely to the inborn talent of individual workers',
-                        'That wages are exactly proportional to the market price of the cloth woven',
+                        'That silk is the dearer raw material, so the labour handling it must be paid accordingly more',
+                        'That the wage difference is explained by the two workers’ inborn talent and dexterity',
+                        'That wages follow the price the woven cloth fetches on the market',
                     ],
                     '1장은 임금을 노동의 종류나 원료, 개인 재능이 아니라 노동력이 상품으로 거래되는 사회적 관계에서 출발해 본다. 이 출발점을 잡아야 다음 장들에서 가격과 임금의 결정을 일관되게 설명할 수 있다.',
                     'Chapter 1 approaches wages not from the kind of labour, the raw material, or individual talent, but from the social relation in which labour-power is traded as a commodity. Securing this starting point lets the following chapters explain the determination of price and wages consistently.'),
@@ -268,19 +295,60 @@ module.exports = {
                     'How does Chapter 1’s analysis overturn the common notion that “the capitalist feeds the worker by giving him a job”?',
                     [
                         '노동자는 자기 노동력을 팔아 그 값으로 생활수단을 사는 것이므로, 베푸는 시혜가 아니라 등가의 교환이며 오히려 자본가가 그 노동력에서 이득을 얻는다.',
-                        '자본가는 노동자에게 임금을 전혀 주지 않으므로 시혜라는 말 자체가 성립하지 않는다.',
-                        '노동자는 일자리를 거절할 자유가 충분하므로 먹여 살린다는 표현이 맞다.',
-                        '국가가 임금을 대신 지급하므로 자본가는 관련이 없다.',
+                        '자본가의 돈도 결국 상품을 사 주는 소비자에게서 나오므로, 노동자를 먹여 살리는 것은 자본가가 아니라 소비자다.',
+                        '노동자에게는 일자리를 거절하고 다른 곳을 고를 자유가 있으므로, 관계는 대등하고 먹여 살린다는 표현도 틀리지 않다.',
+                        '오늘날에는 국가의 복지가 생계를 떠받치므로, 먹여 살린다는 통념은 이미 낡아서 반박할 필요가 없다.',
                     ],
                     [
                         'The worker sells his labour-power and buys subsistence with its price, so this is not charity but an exchange of equivalents—and the capitalist in fact profits from that labour-power.',
-                        'The capitalist pays the worker no wage at all, so the word “charity” makes no sense.',
-                        'The worker is quite free to refuse the job, so “feeds him” is accurate.',
-                        'The state pays the wage instead, so the capitalist is irrelevant.',
+                        'The capitalist’s money ultimately comes from the consumers who buy the goods, so it is the consumer, not the capitalist, who feeds the worker.',
+                        'The worker is free to refuse a job and choose another, so the relation is one of equals and “feeds him” is not wrong.',
+                        'Nowadays state welfare props up subsistence, so the notion of “feeding” is obsolete and needs no refuting.',
                     ],
-                    '임금 관계는 시혜가 아니라 교환이다. 노동자는 노동력을 팔고 그 값으로 생활수단을 산다. 게다가 자본가는 그 노동력을 부려 임금보다 큰 가치를 얻으므로, 「먹여 살린다」는 그림은 관계를 거꾸로 뒤집은 것이다.',
-                    'The wage relation is an exchange, not charity. The worker sells labour-power and buys subsistence with its price. Moreover the capitalist works that labour-power to gain a value greater than the wage, so the picture of “feeding” the worker inverts the actual relation.'),
-            ]
+                    '임금 관계는 시혜가 아니라 교환이다. 노동자는 노동력을 팔고 그 값으로 생활수단을 산다. 게다가 자본가는 그 노동력을 부려 임금보다 큰 가치를 얻으므로, 「먹여 살린다」는 그림은 관계를 거꾸로 뒤집은 것이다. 돈의 출처를 소비자나 국가로 옮겨 보아도, 노동력을 사고파는 이 교환 관계 자체는 달라지지 않는다.',
+                    'The wage relation is an exchange, not charity. The worker sells labour-power and buys subsistence with its price. Moreover the capitalist works that labour-power to gain a value greater than the wage, so the picture of “feeding” the worker inverts the actual relation. Shifting the source of the money to consumers or the state changes nothing about this exchange in which labour-power is bought and sold.'),
+            ],
+            {
+                diagram: diagram('contrast',
+                    {
+                        title: '임금을 보는 두 관점',
+                        left: {
+                            heading: '통념',
+                            rows: [
+                                '노동자는 자기 노동을 판다',
+                                '임금은 생산물에 대한 노동자의 몫이다',
+                                '자본가가 일자리를 주어 노동자를 먹여 살린다',
+                            ],
+                        },
+                        right: {
+                            heading: '마르크스의 분석',
+                            rows: [
+                                '노동자는 노동력을 시간 단위로 되판다',
+                                '임금은 노동력이라는 상품의 값이다',
+                                '등가의 교환이며, 이득은 오히려 자본가에게 남는다',
+                            ],
+                        },
+                    },
+                    {
+                        title: 'Two views of the wage',
+                        left: {
+                            heading: 'Common view',
+                            rows: [
+                                'The worker sells his labour',
+                                'The wage is the worker’s share of the product',
+                                'The capitalist feeds the worker by giving him a job',
+                            ],
+                        },
+                        right: {
+                            heading: 'Marx’s analysis',
+                            rows: [
+                                'The worker resells his labour-power by the hour',
+                                'The wage is the price of the commodity labour-power',
+                                'An exchange of equivalents, with the gain accruing to the capitalist',
+                            ],
+                        },
+                    }),
+            }
         ),
         chapter(
             2,
@@ -345,32 +413,44 @@ module.exports = {
                     'What happens if a commodity’s price stays well above its cost of production for a long time?',
                     [
                         '높은 이윤을 노리고 자본이 그 부문으로 몰려들어 생산이 늘고, 공급 증가가 가격을 다시 끌어내린다.',
-                        '가격은 한번 오르면 결코 내려오지 않고 영원히 그 수준에 머문다.',
-                        '국가가 즉시 개입해 가격을 강제로 생산비에 묶는다.',
-                        '소비자들이 그 상품을 더 좋아하게 되어 가격이 계속 오른다.',
+                        '높은 가격이 새로운 표준으로 굳어져, 생산비 자체가 그 가격 수준으로 따라 올라간다.',
+                        '판매자들이 높은 가격을 지키려고 담합해, 시장가격이 그 수준에 계속 머문다.',
+                        '소비자들이 높은 가격에 익숙해져 수요가 유지되므로 가격이 내려올 이유가 없다.',
                     ],
                     [
                         'Lured by high profit, capital floods into that branch, output grows, and the rising supply drives the price back down.',
-                        'Once the price has risen it never falls again and stays there forever.',
-                        'The state immediately intervenes and pegs the price to cost of production by force.',
-                        'Consumers come to like the commodity more, so its price keeps rising.',
+                        'The high price hardens into a new standard, and cost of production itself climbs up to that level.',
+                        'Sellers collude to defend the high price, so the market price stays put at that level.',
+                        'Consumers grow used to the high price and demand holds, so the price has no reason to come down.',
                     ],
-                    '가격이 생산비보다 오래 높으면 그 부문의 높은 이윤이 자본을 끌어들인다. 새 자본이 들어와 생산을 늘리면 공급이 불어나 가격은 다시 생산비 쪽으로 내려온다. 자본의 이동이 가격을 중심선으로 되돌리는 메커니즘이다.',
-                    'If price stays above cost of production, the high profit in that branch attracts capital. New capital enters and expands output, supply swells, and the price sinks back toward cost of production. The movement of capital is the mechanism that returns price to the centre line.'),
+                    '가격이 생산비보다 오래 높으면 그 부문의 높은 이윤이 자본을 끌어들인다. 새 자본이 들어와 생산을 늘리면 공급이 불어나 가격은 다시 생산비 쪽으로 내려온다. 담합이나 소비자의 습관도 새 자본의 진입이라는 이 압력을 오래 막지는 못한다.',
+                    'If price stays above cost of production, the high profit in that branch attracts capital. New capital enters and expands output, supply swells, and the price sinks back toward cost of production. Neither collusion nor consumers’ habits can long hold off this pressure of entering capital.',
+                    [
+                        '자본의 이동이 가격을 중심선으로 되돌리는 메커니즘을 정확히 잡았다.',
+                        '인과가 거꾸로다. 생산비는 그 상품을 만드는 데 드는 노동으로 정해지지, 시장가격을 따라 올라가지 않는다.',
+                        '담합은 높은 이윤이 부르는 새 자본의 진입 앞에서 오래 버티지 못한다. 밖에서 더 싸게 파는 경쟁자가 담합을 무너뜨린다.',
+                        '수요가 유지되어도 문제는 공급 쪽에서 생긴다. 높은 이윤을 본 자본이 생산을 늘리는 순간 가격은 눌리기 시작한다.',
+                    ],
+                    [
+                        'Exactly the mechanism: the movement of capital returns price to the centre line.',
+                        'The causation is reversed: cost of production is set by the labour it takes to make the commodity, and does not climb after the market price.',
+                        'Collusion cannot long withstand the entry of new capital drawn by high profit; an outside competitor underselling breaks the ring.',
+                        'Even with demand holding, the trouble comes from the supply side: the moment capital that saw the high profit expands output, the price starts to be pressed down.',
+                    ]),
                 q(0,
                     '2장의 가격 법칙이 임금 분석에 중요한 까닭은 무엇인가?',
                     'Why does Chapter 2’s law of price matter for the analysis of wages?',
                     [
                         '노동력도 사고팔리는 상품이므로, 그 값인 임금에도 같은 생산비 법칙이 적용되기 때문이다.',
-                        '임금은 상품이 아니어서 가격 법칙의 예외임을 보여 주기 때문이다.',
-                        '임금은 오직 정부 정책으로만 정해진다는 것을 증명하기 때문이다.',
-                        '상품 가격이 오르면 임금은 반드시 같은 비율로 오른다는 것을 보장하기 때문이다.',
+                        '임금은 사람의 값이라 시장 법칙의 예외이며, 도덕과 관습이 따로 정한다는 것을 보여 주기 때문이다.',
+                        '임금은 노사의 협상력이 정하는 것이어서, 상품의 가격 법칙과는 별개임을 보여 주기 때문이다.',
+                        '임금이 모든 상품 가격의 원천이므로, 임금을 먼저 알아야 가격을 설명할 수 있기 때문이다.',
                     ],
                     [
                         'Because labour-power is also a bought-and-sold commodity, so the same cost-of-production law applies to its price, the wage.',
-                        'Because it shows that wages are an exception to the law of price, since wages are not a commodity.',
-                        'Because it proves that wages are set only by government policy.',
-                        'Because it guarantees that when commodity prices rise, wages must rise in the same proportion.',
+                        'Because it shows wages are the price of a person, exempt from market law and set separately by morals and custom.',
+                        'Because it shows wages are fixed by bargaining power between labour and management, apart from the law of commodity prices.',
+                        'Because wages are the source of all commodity prices, so prices can be explained only once wages are known.',
                     ],
                     '마르크스가 가격 일반의 법칙을 먼저 세우는 까닭은 노동력 또한 상품이기 때문이다. 노동력의 값인 임금도 수요·공급으로 출렁이되 그 진동의 중심은 노동력의 생산비다. 2장은 3장의 임금 분석을 위한 발판이다.',
                     'Marx establishes the law of price in general because labour-power too is a commodity. Wages, the price of labour-power, also fluctuate with supply and demand, but the centre of that oscillation is the cost of producing labour-power. Chapter 2 is the stepping-stone to the wage analysis of Chapter 3.'),
@@ -379,15 +459,15 @@ module.exports = {
                     'How does Chapter 2 refute the idea that “price is simply whatever people feel like charging”?',
                     [
                         '개별 판매자의 자의는 경쟁과 생산비라는 객관적 한계에 부딪혀, 가격이 일정한 중심으로 끌려간다는 점을 보여 줌으로써',
-                        '모든 가격이 국가의 명령으로만 정해진다는 점을 보여 줌으로써',
-                        '가격은 사실 전혀 변하지 않는 고정값임을 보여 줌으로써',
-                        '구매자에게는 가격을 거부할 힘이 전혀 없음을 보여 줌으로써',
+                        '가격에는 관습으로 굳어진 적정 수준이 있어, 상인들은 그 관행을 따를 뿐임을 보여 줌으로써',
+                        '가격은 판매자 개인이 아니라 상인들의 집단적 합의가 정한다는 점을 보여 줌으로써',
+                        '값을 너무 높이 매기면 정부의 단속과 과세가 따르므로 자의에 한계가 있음을 보여 줌으로써',
                     ],
                     [
                         'By showing that an individual seller’s whim runs up against the objective limits of competition and cost of production, pulling price toward a definite centre',
-                        'By showing that every price is set only by state decree',
-                        'By showing that price is in fact a fixed value that never changes',
-                        'By showing that buyers have no power at all to refuse a price',
+                        'By showing that prices have a customary fair level, which merchants merely follow by convention',
+                        'By showing that prices are set not by the individual seller but by the collective agreement of merchants',
+                        'By showing that naming too high a price invites state inspection and taxation, which limits whim',
                     ],
                     '판매자가 값을 마음대로 높이 부르면 경쟁자가 더 싸게 팔아 손님을 빼앗고, 너무 낮으면 손해를 본다. 이렇게 경쟁과 생산비가 자의를 깎아 내며 가격을 객관적 중심으로 끌어간다. 가격은 주관적 의지가 아니라 사회적 법칙의 결과다.',
                     'If a seller names too high a price, a competitor undersells and takes the customers; too low, and he runs a loss. Competition and cost of production thus pare away whim and draw price toward an objective centre. Price is the result of a social law, not subjective will.'),
@@ -432,15 +512,15 @@ module.exports = {
                     'What effect does the movement of capital between different branches of production have on prices?',
                     [
                         '이윤이 높은 부문으로 자본이 흘러가고 낮은 부문에서 빠져나오면서, 부문들의 가격을 각자의 생산비 쪽으로 끊임없이 되돌린다.',
-                        '자본의 이동은 가격과 무관하며 오직 환율에만 영향을 준다.',
-                        '자본은 한 부문에 들어가면 결코 다른 부문으로 옮겨 가지 않는다.',
-                        '자본의 이동은 모든 상품의 가격을 영원히 같게 만든다.',
+                        '자본이 이윤 높은 부문으로 몰릴수록 그 부문의 가격을 더욱 끌어올려, 부문 간 격차를 굳힌다.',
+                        '설비와 숙련이 부문마다 달라 자본은 사실상 옮겨 다니지 못하므로, 가격에 미치는 영향도 미미하다.',
+                        '자본의 이동은 이윤율을 고르게 할 뿐, 개별 상품의 가격 수준과는 별개의 문제다.',
                     ],
                     [
                         'Capital flows into high-profit branches and out of low-profit ones, continually returning each branch’s price toward its own cost of production.',
-                        'The movement of capital has nothing to do with price and affects only exchange rates.',
-                        'Once capital enters one branch it never moves to another.',
-                        'The movement of capital makes the prices of all commodities equal forever.',
+                        'The more capital crowds into a high-profit branch, the higher it drives that branch’s price, entrenching the gap between branches.',
+                        'Plant and skills differ so much by branch that capital can hardly move at all, so its effect on prices is slight.',
+                        'The movement of capital only evens out profit rates; the price level of individual commodities is a separate matter.',
                     ],
                     '자본은 더 높은 이윤을 찾아 부문 사이를 옮겨 다닌다. 이윤이 높은 곳에 몰려 공급을 늘리면 가격이 내려가고, 빠져나간 곳은 공급이 줄어 가격이 오른다. 이 끊임없는 이동이 각 부문의 가격을 생산비 둘레로 평준화한다.',
                     'Capital migrates between branches in search of higher profit. Where it crowds in, supply grows and price falls; where it withdraws, supply shrinks and price rises. This ceaseless movement levels each branch’s price around its cost of production.'),
@@ -449,15 +529,15 @@ module.exports = {
                     'How does the thesis that price oscillates “around” cost of production differ from the claim that price always “equals” cost of production?',
                     [
                         '실제 시장가격은 거의 늘 생산비보다 높거나 낮으며, 다만 그 편차들이 길게 보면 생산비를 중심으로 상쇄될 뿐이라는 점에서 다르다.',
-                        '두 명제는 완전히 같은 말이어서 차이가 없다.',
-                        '진동한다는 말은 가격이 생산비와 무관하게 움직인다는 뜻이다.',
-                        '같다는 말이 옳고, 진동한다는 말은 마르크스가 부정한 것이다.',
+                        '표현만 다를 뿐 결국 같은 내용이어서, 마르크스도 두 표현을 구별 없이 바꿔 쓴다.',
+                        '진동한다는 말은 가격의 움직임이 무작위여서 어떤 중심도 갖지 않는다는 뜻이다.',
+                        '경쟁이 편차를 빠르게 지워 버리므로, 어느 순간에 재어도 가격은 사실상 생산비와 같다.',
                     ],
                     [
                         'Actual market prices are almost always above or below cost of production; it is only that, over the long run, these deviations cancel out around cost of production.',
-                        'The two statements are identical, so there is no difference.',
-                        '“Oscillates” means price moves independently of cost of production.',
-                        'The “equals” version is correct and Marx rejected the “oscillates” version.',
+                        'The wording alone differs; the content is the same, and Marx himself uses the two interchangeably.',
+                        '“Oscillates” means the movement of price is random, with no centre at all.',
+                        'Competition erases deviations instantly, so at any moment of measurement the price is effectively equal to cost of production.',
                     ],
                     '어느 한 순간의 시장가격은 거의 늘 생산비와 어긋난다. 마르크스의 명제는 그 어긋남들이 시간 속에서 위아래로 상쇄되어 평균적으로 생산비를 중심으로 모인다는 것이다. 「중심으로 진동」은 정적인 등식이 아니라 동적인 평균의 법칙이다.',
                     'At any single moment market price almost always diverges from cost of production. Marx’s thesis is that these divergences cancel up and down over time and cluster, on average, around cost of production. “Oscillates around” is not a static equation but a dynamic law of averages.'),
@@ -478,7 +558,28 @@ module.exports = {
                     ],
                     '노동력을 상품으로 분석한다는 것은, 노동자의 삶 자체가 면이나 철처럼 수요·공급과 생산비의 비인격적 법칙에 종속된다는 뜻이다. 마르크스는 이 동일 취급을 통해, 인간의 생존을 상품 가격으로 환원하는 임금노동 사회의 냉혹한 논리를 드러낸다.',
                     'Analyzing labour-power as a commodity means the worker’s very life is subjected to the impersonal laws of supply, demand, and cost of production, just like cotton or iron. Through this identical treatment Marx exposes the harsh logic of a wage-labour society that reduces human survival to a commodity price.'),
-            ]
+            ],
+            {
+                diagram: diagram('flow',
+                    {
+                        title: '자본 이동이 가격을 중심선으로 되돌리는 순환',
+                        steps: [
+                            { label: '가격이 생산비보다 높다', note: '높은 이윤이 다른 부문의 자본을 끌어들인다' },
+                            { label: '공급이 늘어난다', note: '새 자본이 생산을 키워 가격이 내려간다' },
+                            { label: '가격이 생산비보다 낮다', note: '낮은 이윤이 자본을 밀어낸다' },
+                            { label: '공급이 줄어든다', note: '생산이 줄어 가격이 다시 오른다. 순환은 처음으로 돌아간다' },
+                        ],
+                    },
+                    {
+                        title: 'How the movement of capital returns price to the centre line',
+                        steps: [
+                            { label: 'Price above cost of production', note: 'High profit draws in capital from other branches' },
+                            { label: 'Supply grows', note: 'New capital expands output and the price falls' },
+                            { label: 'Price below cost of production', note: 'Low profit pushes capital out' },
+                            { label: 'Supply shrinks', note: 'Output falls and the price rises again; the cycle returns to the start' },
+                        ],
+                    }),
+            }
         ),
         chapter(
             3,
@@ -560,18 +661,30 @@ module.exports = {
                     'What does the qualification mean—that the cost of producing labour-power includes “the historically and socially formed standard of living of a given country and era”?',
                     [
                         '생존임금은 순수한 생물학적 최소치가 아니라, 사회가 노동자의 정상적 생활로 인정하는 수준에 따라 달라진다는 것',
-                        '임금은 어느 시대 어느 나라에서나 똑같은 고정된 금액이라는 것',
-                        '임금은 오직 개인의 칼로리 섭취량으로만 계산된다는 것',
-                        '역사가 발전해도 생활수준은 결코 변하지 않는다는 것',
+                        '노동력의 생산비는 의식주의 생리적 최소치로 계산되며, 그 이상은 생산비가 아니라 사치라는 것',
+                        '한 나라 안에서 형성된 생활수준은 관습이 되어, 그 뒤로는 사실상 변하지 않는다는 것',
+                        '생활수준이 높은 나라일수록 임금이 생산비에서 벗어나 자유롭게 정해진다는 것',
                     ],
                     [
                         'The subsistence wage is not a pure biological minimum but varies with the level a society recognizes as the worker’s normal living',
-                        'Wages are a fixed amount, the same in every era and country',
-                        'Wages are calculated only from an individual’s calorie intake',
-                        'Living standards never change even as history develops',
+                        'The cost of producing labour-power is computed from the physiological minimum of food, clothing, and shelter; anything beyond is luxury, not cost',
+                        'Once formed within a country, the standard of living becomes custom and thereafter hardly changes',
+                        'The higher a country’s standard of living, the more freely wages are set, detached from cost of production',
                     ],
                     '생존임금은 빵 한 조각의 절대량이 아니라, 그 사회가 「노동자가 사람답게 일하며 사는 데 필요하다」고 인정하는 생활수준을 반영한다. 그래서 노동력의 생산비에는 역사적·사회적 요소가 들어가며, 같은 생존임금이라도 시대와 나라에 따라 다르다.',
-                    'The subsistence wage is not an absolute quantity of bread but reflects the standard of living a society recognizes as necessary for a worker to live and work decently. So the cost of producing labour-power contains a historical and social element, and the same subsistence wage differs by era and country.'),
+                    'The subsistence wage is not an absolute quantity of bread but reflects the standard of living a society recognizes as necessary for a worker to live and work decently. So the cost of producing labour-power contains a historical and social element, and the same subsistence wage differs by era and country.',
+                    [
+                        '생존임금이 생물학이 아니라 사회적 인정 수준의 문제라는 단서를 정확히 잡았다.',
+                        '생리적 최소치는 하한의 하한일 뿐이다. 마르크스의 생산비에는 그 사회의 습속이 만든 필요, 곧 통신비·교육비 같은 시대의 필수품까지 들어간다.',
+                        '관습은 굳는 것이 아니라 싸움의 대상이다. 정상적 생활로 인정되는 수준 자체가 계급 역관계에 따라 오르내린다.',
+                        '방향이 반대다. 생활수준이 임금을 생산비에서 떼어 놓는 것이 아니라, 그 생활수준 자체가 생산비의 내용으로 들어간다.',
+                    ],
+                    [
+                        'Exactly the qualification: the subsistence wage is a matter of social recognition, not biology.',
+                        'The physiological minimum is only the floor of the floor. Marx’s cost of production includes the needs custom has created, the era’s necessities such as communication and schooling.',
+                        'Custom does not set; it is fought over. The level recognized as normal living itself rises and falls with the balance of class forces.',
+                        'The direction is reversed: the standard of living does not detach wages from cost of production; it enters into the content of that cost.',
+                    ]),
                 q(0,
                     '3장은 2장의 가격 법칙과 어떻게 이어지는가?',
                     'How does Chapter 3 connect to the law of price in Chapter 2?',
@@ -596,15 +709,15 @@ module.exports = {
                     'How does explaining wages by the cost of producing labour-power clash with the view that wages are “a fair return for the value the worker created”?',
                     [
                         '임금은 노동자가 만든 가치가 아니라 노동력을 유지하는 비용으로 정해지므로, 노동자가 만든 가치와 받는 임금 사이에 차액이 생긴다는 점을 드러낸다.',
-                        '임금이 노동자가 만든 가치와 언제나 정확히 일치함을 증명한다.',
-                        '노동자가 가치를 전혀 만들지 않음을 보여 준다.',
-                        '임금과 가치는 비교할 수 없는 개념이어서 충돌이 없음을 보여 준다.',
+                        '노동력의 생산비에는 노동자가 만드는 가치가 이미 반영되어 있으므로, 두 설명은 결국 같은 결론에 이른다고 본다.',
+                        '가치를 만드는 것은 노동이 아니라 자본가의 조직과 경영이므로, 애초에 비교할 대상이 없다고 본다.',
+                        '임금은 시장의 가격이고 가치는 이론의 개념이어서, 서로 다른 층위의 말이라 충돌이 없다고 본다.',
                     ],
                     [
                         'Wages are set by the cost of maintaining labour-power, not by the value the worker created, so a gap opens between the value he makes and the wage he receives.',
-                        'It proves that wages always exactly equal the value the worker created.',
-                        'It shows the worker creates no value at all.',
-                        'It shows wages and value are incomparable, so there is no clash.',
+                        'It holds that the cost of producing labour-power already reflects the value the worker creates, so the two accounts reach the same conclusion in the end.',
+                        'It holds that value is created not by labour but by the capitalist’s organization and management, so there is nothing to compare in the first place.',
+                        'It holds that the wage is a market price while value is a theoretical concept, terms on different levels that cannot clash.',
                     ],
                     '임금이 노동력의 생산비로 정해진다면, 노동자가 노동으로 만들어 내는 가치와 그가 받는 임금은 별개다. 노동력을 부려 만든 가치가 그 노동력을 유지하는 비용보다 크면, 그 차액이 자본가에게 남는다. 「정당한 대가」라는 외양 아래 이 차액이 숨어 있다.',
                     'If wages are set by the cost of producing labour-power, then the value the worker creates by labour and the wage he receives are two different things. When the value produced by working that labour-power exceeds the cost of maintaining it, the difference accrues to the capitalist. Beneath the appearance of a “fair return” this difference is concealed.'),
@@ -613,15 +726,15 @@ module.exports = {
                     'If machinery reduces the skill needed for a job, lowering the cost of producing that labour-power, what happens to that job’s wage, other things equal?',
                     [
                         '노동력의 생산비가 낮아진 만큼 임금의 중심선도 내려가, 임금이 떨어지는 경향이 생긴다.',
-                        '임금은 생산비와 무관하므로 전혀 변하지 않는다.',
-                        '숙련이 줄어도 임금은 반드시 오른다.',
-                        '임금은 기계 값에 정비례해 함께 오른다.',
+                        '숙련은 줄어도 기계를 다루는 책임이 커지므로, 임금은 오히려 오르는 경향이 생긴다.',
+                        '기계가 생산성을 높인 만큼, 임금도 그 생산성에 비례해 함께 오른다.',
+                        '임금은 이미 맺은 계약으로 정해져 있으므로, 기계 도입의 영향을 받지 않는다.',
                     ],
                     [
                         'As the cost of producing that labour-power falls, the centre of its wage falls too, creating a tendency for the wage to drop.',
-                        'Wages are unrelated to cost of production, so it does not change at all.',
-                        'Even as skill falls, the wage must rise.',
-                        'The wage rises in direct proportion to the price of the machine.',
+                        'Though skill falls, responsibility for the machine grows, so the wage tends to rise instead.',
+                        'As the machine raises productivity, the wage rises with it in proportion.',
+                        'Wages are fixed by existing contracts and so are untouched by the introduction of machinery.',
                     ],
                     '임금의 중심은 노동력의 생산비다. 기계가 숙련 요구를 줄여 그 노동력을 길러 내는 비용(훈련·교육)이 낮아지면, 임금의 중심선도 내려간다. 그래서 탈숙련은 임금 하락 압력으로 작용한다. 이 논리는 6장의 기계·경쟁 분석으로 이어진다.',
                     'The centre of wages is the cost of producing labour-power. When machinery cuts the skill required and lowers the cost of producing that labour-power (training, education), the centre of the wage falls too. So deskilling acts as downward pressure on wages—a logic that carries into the machinery-and-competition analysis of Chapter 6.'),
@@ -630,15 +743,15 @@ module.exports = {
                     'What does it mean that the subsistence wage acts at once as the “centre” and the “lower limit” of wages?',
                     [
                         '임금은 생존임금 위아래로 출렁이지만, 그 아래로 오래 머물면 노동력이 재생산되지 못하므로 생존임금이 진동의 바닥으로도 기능한다는 것',
-                        '임금이 생존임금 아래로는 단 한 순간도 내려갈 수 없다는 것',
-                        '생존임금이 임금의 상한이어서 그 위로는 결코 오를 수 없다는 것',
-                        '생존임금과 실제 임금이 늘 똑같다는 것',
+                        '생존임금은 물리적 하한이어서, 시장이 어떤 상태에 있어도 임금이 그 아래로 내려가는 일은 없다는 것',
+                        '중심이라는 말은 평균을 뜻하므로, 노동자의 절반가량은 늘 생존임금 아래에서 살게 된다는 것',
+                        '중심이자 하한이라는 것은 결국 임금이 생존임금 수준에 못 박혀 움직이지 않는다는 뜻이라는 것',
                     ],
                     [
                         'Wages swing above and below the subsistence wage, but if they stay below it for long, labour-power cannot be reproduced—so the subsistence wage also functions as the floor of the oscillation',
-                        'Wages can never, even for a moment, fall below the subsistence wage',
-                        'The subsistence wage is the ceiling, above which wages can never rise',
-                        'The subsistence wage and the actual wage are always identical',
+                        'The subsistence wage is a physical floor: whatever the state of the market, wages never dip below it',
+                        '“Centre” means an average, so roughly half of all workers must always live below the subsistence wage',
+                        'Being centre and floor at once means, in the end, that wages are nailed to the subsistence level and do not move',
                     ],
                     '생존임금은 진동의 중심선이면서, 동시에 그 아래로 오래 내려가면 노동력 자체가 유지될 수 없다는 의미에서 사실상의 바닥이다. 일시적으로는 더 내려갈 수 있어도, 지속되면 노동력의 재생산이 무너지므로 생존임금은 중심이자 하한으로 함께 작동한다.',
                     'The subsistence wage is the centre line of oscillation and, at the same time, a de facto floor, since wages staying below it for long would make labour-power itself unsustainable. Temporarily wages may dip lower, but if that persists the reproduction of labour-power collapses—so the subsistence wage works as both centre and lower limit.'),
@@ -647,15 +760,15 @@ module.exports = {
                     'What room does the “historical and social” element in the cost of producing labour-power leave for the struggle over wages?',
                     [
                         '노동자가 정상적 생활로 인정받는 수준 자체가 투쟁으로 높아지거나 낮아질 수 있어, 생존임금의 내용이 고정되지 않고 계급 역관계에 따라 달라진다.',
-                        '생존임금은 순수 생물학적 상수이므로 어떤 투쟁으로도 바뀌지 않는다.',
-                        '임금은 전적으로 자본가의 선의에 달려 있어 투쟁의 여지가 없다.',
-                        '역사적 요소는 임금을 오직 내리기만 할 뿐 올릴 수는 없다.',
+                        '생존임금은 생물학이 정한 상수여서, 투쟁은 그 위의 웃돈을 다툴 뿐 기준선 자체는 건드리지 못한다.',
+                        '생활수준은 세대에 걸쳐 굳어진 관습의 문제라, 당대의 투쟁으로는 그 내용을 바꿀 수 없다.',
+                        '역사적 요소란 각국의 문화 차이를 가리키는 말이어서, 계급 역관계가 끼어들 자리는 없다.',
                     ],
                     [
                         'The level recognized as a worker’s normal living can itself be raised or lowered by struggle, so the content of the subsistence wage is not fixed but shifts with the balance of class forces.',
-                        'The subsistence wage is a pure biological constant, unchanged by any struggle.',
-                        'Wages depend entirely on the capitalist’s goodwill, leaving no room for struggle.',
-                        'The historical element can only lower wages, never raise them.',
+                        'The subsistence wage is a constant fixed by biology; struggle contests only the premium above it, never the baseline itself.',
+                        'Standards of living are a matter of custom hardened over generations, beyond the reach of struggle in one’s own day.',
+                        'The historical element refers to cultural differences between countries, leaving no room for the balance of class forces.',
                     ],
                     '생존임금에 역사적·사회적 요소가 있다는 것은, 「노동자에게 정상적인 생활」로 인정되는 수준이 고정되어 있지 않다는 뜻이다. 그 수준은 노동자의 조직과 투쟁, 계급 간 역관계에 따라 오르내린다. 그래서 임금 투쟁은 생존임금의 내용 자체를 둘러싼 싸움이 된다.',
                     'The historical and social element in the subsistence wage means the level recognized as “normal living for a worker” is not fixed. That level rises and falls with workers’ organization and struggle and the balance of class forces. So the wage struggle becomes a fight over the very content of the subsistence wage.'),
@@ -664,19 +777,60 @@ module.exports = {
                     'Why does Chapter 3’s wage analysis stand only on the distinction between “labour-power” and “labour” from Chapter 1?',
                     [
                         '임금이 노동력의 생산비로 정해지면서도 그 노동력이 더 많은 가치를 낳을 수 있어야 잉여가 설명되는데, 이는 파는 것이 노동이 아니라 노동력일 때만 가능하기 때문이다.',
-                        '노동과 노동력이 같은 말이어서 어느 쪽으로 불러도 분석에 차이가 없기 때문이다.',
-                        '노동력이라는 말이 임금 계산을 더 간단하게 만들어 주기 때문이다.',
-                        '노동의 값과 노동력의 값이 늘 정확히 일치하기 때문이다.',
+                        '임금 분석에 필요한 것은 노동의 양뿐이므로, 무엇을 파는가라는 구별은 분석에 영향 없는 용어의 문제이기 때문이다.',
+                        '노동의 값은 직접 잴 수 없어서, 측정 가능한 노동력의 값을 그 근사치로 대신 쓰는 것이기 때문이다.',
+                        '노동력이라는 개념이 있어야 시간급·성과급 같은 임금 형태들을 하나의 틀로 계산할 수 있기 때문이다.',
                     ],
                     [
                         'Wages are set by the cost of producing labour-power, yet that labour-power must be able to yield more value—and that is possible only when what is sold is labour-power, not labour.',
-                        'Labour and labour-power are the same word, so it makes no analytic difference which is used.',
-                        'The term “labour-power” makes the wage calculation simpler.',
-                        'The value of labour and the value of labour-power always exactly coincide.',
+                        'All the wage analysis needs is the quantity of labour, so what is sold is a matter of terminology without analytic consequence.',
+                        'The value of labour cannot be measured directly, so the measurable value of labour-power is used as its approximation.',
+                        'The concept of labour-power is what lets wage forms like time-wages and piece-wages be computed in one framework.',
                     ],
                     '만약 노동자가 「노동」을 판다면 받은 임금과 만들어 낸 가치가 같아져 잉여가 설명되지 않는다. 노동자가 파는 것이 「노동력」이고, 그 노동력의 값(임금=생산비)과 그것이 부려져 낳는 가치가 다를 때 비로소 잉여가 생긴다. 3장의 임금 규정은 1장의 구별 위에서만 성립한다.',
                     'If the worker sold “labour,” the wage received and the value created would be equal and no surplus could be explained. Only when what he sells is “labour-power,” whose value (wage = cost of production) differs from the value it yields when worked, does a surplus arise. Chapter 3’s determination of wages stands only on Chapter 1’s distinction.'),
-            ]
+            ],
+            {
+                diagram: diagram('contrast',
+                    {
+                        title: '생존임금을 보는 두 관점',
+                        left: {
+                            heading: '생물학적 최소치로 보는 통념',
+                            rows: [
+                                '생존에 필요한 칼로리와 의식주만 계산한다',
+                                '시대와 나라가 달라도 같은 값이다',
+                                '투쟁으로 바뀌지 않는 상수다',
+                            ],
+                        },
+                        right: {
+                            heading: '마르크스: 역사적·사회적 수준',
+                            rows: [
+                                '사회가 정상적 생활로 인정하는 필요가 들어간다',
+                                '시대와 나라에 따라 내용이 달라진다',
+                                '계급 역관계와 투쟁에 따라 오르내린다',
+                            ],
+                        },
+                    },
+                    {
+                        title: 'Two views of the subsistence wage',
+                        left: {
+                            heading: 'Common view: a biological minimum',
+                            rows: [
+                                'Counts only survival calories, food, clothing, shelter',
+                                'The same figure in every era and country',
+                                'A constant that struggle cannot change',
+                            ],
+                        },
+                        right: {
+                            heading: 'Marx: a historical and social level',
+                            rows: [
+                                'Includes the needs society recognizes as normal living',
+                                'Its content differs by era and country',
+                                'Rises and falls with class forces and struggle',
+                            ],
+                        },
+                    }),
+            }
         ),
         chapter(
             4,
@@ -741,15 +895,15 @@ module.exports = {
                     'Why does Marx use the analogy “A Negro is a Negro; only under certain relations does he become a slave”?',
                     [
                         '노예가 사람의 자연적 속성이 아니라 사회적 관계의 산물이듯, 자본도 사물의 자연적 속성이 아니라 사회적 관계의 산물임을 보이려고',
-                        '노예제와 자본주의가 완전히 똑같은 제도임을 주장하려고',
-                        '피부색이 경제적 지위를 결정한다고 말하려고',
-                        '비유는 분석과 무관한 수사일 뿐이므로 무시해도 된다는 것을 보이려고',
+                        '임금노동이 노예제의 연장임을 보여, 두 제도가 본질에서 같은 것임을 주장하려고',
+                        '노예제가 자연적 차이에서 생겨났음을 인정해, 사회제도에도 자연의 근거가 있음을 말하려고',
+                        '건조한 경제 분석에 도덕적 분노를 불어넣어 독자의 공감을 끌어내려는 수사로 쓰려고',
                     ],
                     [
                         'To show that, just as being a slave is not a natural attribute of a person but the product of a social relation, capital is not a natural attribute of a thing but the product of a social relation',
-                        'To claim that slavery and capitalism are exactly the same institution',
-                        'To say that skin colour determines economic status',
-                        'To show that the analogy is mere rhetoric, unrelated to the analysis, and may be ignored',
+                        'To show wage-labour as an extension of slavery, claiming the two institutions are essentially the same',
+                        'To concede that slavery arose from natural differences, implying social institutions too have natural grounds',
+                        'To use it as rhetoric, injecting moral indignation into a dry economic analysis to win the reader’s sympathy',
                     ],
                     '누군가가 노예인 것은 그의 자연적 속성이 아니라 특정한 사회관계 때문이다. 마르크스는 이 비유로 자본 역시 사물의 자연적 속성이 아니라 사회관계의 산물임을 보인다. 관계가 바뀌면 노예가 노예이기를 그치듯, 자본도 영원하지 않다.',
                     'A person is a slave not by natural attribute but because of a definite social relation. With this analogy Marx shows that capital too is not a natural attribute of a thing but a product of social relations. As a change of relations makes the slave cease to be a slave, so capital is not eternal.'),
@@ -794,15 +948,15 @@ module.exports = {
                     'How does the definition of capital as “accumulated labour” clash with explanations that justify the capitalist’s profit by his thrift or risk-taking?',
                     [
                         '자본의 실체가 과거 노동의 축적이라면, 그 자본이 낳는 이윤의 원천도 결국 노동에서 찾아야 하며 절약·위험은 그 원천을 설명하지 못한다.',
-                        '절약과 위험 감수가 노동을 대신해 가치를 만들어 냄을 증명한다.',
-                        '자본가의 이윤은 노동과 무관함을 확증한다.',
-                        '축적된 노동이라는 말은 이윤 문제와 아무 상관이 없다.',
+                        '충돌하지 않는다. 절약이란 과거 노동의 산물을 모으는 행위이므로, 축적된 노동이라는 규정은 절약에 의한 정당화와 양립한다.',
+                        '위험 감수는 불확실성을 짊어진 데 대한 대가이므로, 노동과 별개의 독자적 가치 원천으로 인정해야 한다.',
+                        '축적된 노동은 자본이 어디서 왔는가의 문제이고, 이윤은 시장의 수요와 공급이 정하므로 서로 다른 층위의 문제다.',
                     ],
                     [
                         'If the substance of capital is accumulated past labour, then the source of the profit it yields must also be sought in labour—and thrift or risk cannot account for that source.',
-                        'It proves that thrift and risk-taking create value in place of labour.',
-                        'It confirms that the capitalist’s profit has nothing to do with labour.',
-                        'The phrase “accumulated labour” has no bearing on the question of profit.',
+                        'No clash: thrift means gathering the products of past labour, so the definition is compatible with justification by thrift.',
+                        'Risk-taking is payment for bearing uncertainty and must be recognized as an independent source of value apart from labour.',
+                        '“Accumulated labour” concerns where capital came from, while profit is set by market supply and demand, so they are questions on different levels.',
                     ],
                     '자본이 축적된 노동이라면, 그 자본이 굴러 낳는 이윤의 궁극적 원천도 노동이다. 절약이나 위험 감수는 이윤이 누구에게 귀속되는지를 둘러싼 이야기일 뿐, 새 가치가 어디서 생기는지는 설명하지 못한다. 가치를 만드는 것은 산 노동이다.',
                     'If capital is accumulated labour, the ultimate source of the profit it yields is also labour. Thrift or risk-taking are stories about to whom profit accrues; they do not explain where new value comes from. What creates value is living labour.'),
@@ -813,13 +967,13 @@ module.exports = {
                         '관계는 특정 조건 위에서만 성립하므로, 그 조건—생산수단과 노동자의 분리—이 바뀌면 자본 관계 자체가 해소될 수 있기 때문이다.',
                         '관계는 사물과 달리 절대 변하지 않으므로 자본주의가 영원함을 뜻하기 때문이다.',
                         '사회적 관계라는 말이 단지 자본이 여러 사람과 얽혀 있다는 뜻일 뿐이기 때문이다.',
-                        '관계는 오직 자본가들 사이에서만 성립하고 노동자는 무관하기 때문이다.',
+                        '자본 관계란 자본가들 사이의 경쟁 관계를 가리키므로, 노동자와의 관계는 부차적이기 때문이다.',
                     ],
                     [
                         'A relation holds only on definite conditions, so if those conditions—the separation of producers from the means of production—change, the capital-relation itself can be dissolved.',
                         'A relation, unlike a thing, never changes, so it means capitalism is eternal.',
                         '“Social relation” merely means capital is entangled with many people.',
-                        'The relation holds only among capitalists, with workers playing no part.',
+                        'The capital-relation refers to competition among capitalists, so the relation to workers is secondary.',
                     ],
                     '자본 관계는 노동자가 생산수단으로부터 분리되어 노동력을 팔아야만 사는 조건 위에서 성립한다. 이 조건이 역사적으로 만들어진 것이라면 역사적으로 해소될 수도 있다. 자본을 관계로 보는 순간, 자본주의는 영원한 질서가 아니라 특정 조건의 산물로 드러난다.',
                     'The capital-relation holds on the condition that workers, separated from the means of production, must sell labour-power to live. If that condition was historically produced, it can be historically dissolved. The moment capital is seen as a relation, capitalism appears not as an eternal order but as the product of definite conditions.'),
@@ -839,21 +993,33 @@ module.exports = {
                         'No. The machines remain capital and make profit by themselves.',
                     ],
                     '자본은 기계라는 사물이 아니라 그 기계가 임금노동을 부리는 관계다. 따라서 그 관계가 바뀌어도 생산수단 자체는 남는다. 달라지는 것은 생산수단의 물리적 존재가 아니라 그것의 사회적 성격, 곧 「자본」이라는 규정이다. 이 구별이 4장의 핵심이다.',
-                    'Capital is not the thing, the machine, but the relation in which that machine commands wage-labour. So even if the relation changes, the means of production remain. What changes is not the physical existence of the means of production but their social character—their determination as “capital.” This distinction is the core of Chapter 4.'),
+                    'Capital is not the thing, the machine, but the relation in which that machine commands wage-labour. So even if the relation changes, the means of production remain. What changes is not the physical existence of the means of production but their social character—their determination as “capital.” This distinction is the core of Chapter 4.',
+                    [
+                        '사물과 관계의 구분을 정확히 적용했다. 남는 것은 생산수단이고, 사라지는 것은 「자본」이라는 사회적 규정이다.',
+                        '기계는 쇠와 톱니로 된 물건이다. 사회적 관계가 바뀐다고 물건이 녹아 없어지지는 않는다.',
+                        '법적 소유가 이전되거나 폐지될 수는 있어도, 그것은 물건의 소멸이 아니라 사회적 규정의 변화다.',
+                        '기계 혼자서는 새 가치를 낳지 못한다. 이윤은 그 기계가 산 노동을 부리는 관계에서 나온다.',
+                    ],
+                    [
+                        'The thing/relation distinction applied exactly: what remains is the means of production; what disappears is the social determination “capital.”',
+                        'A machine is a thing of iron and gears. A change in social relations does not melt things away.',
+                        'Legal ownership may be transferred or abolished, but that is a change in social determination, not the perishing of the thing.',
+                        'A machine alone yields no new value. Profit comes from the relation in which it commands living labour.',
+                    ]),
                 q(0,
                     '자본과 임금노동이 「서로를 전제한다」는 명제는, 둘의 이해가 근본적으로 일치한다는 결론으로 이어지는가?',
                     'Does the thesis that capital and wage-labour “presuppose each other” lead to the conclusion that their interests fundamentally coincide?',
                     [
                         '아니다. 서로를 전제한다는 것은 둘이 한 관계로 묶였다는 뜻일 뿐, 그 관계 안에서 한쪽의 축적이 다른 쪽의 종속을 키운다는 점에서 이해는 적대한다.',
-                        '그렇다. 서로를 전제하므로 둘의 이해는 완전히 일치한다.',
-                        '그렇다. 한쪽이 잘되면 반드시 다른 쪽도 똑같이 잘된다.',
-                        '아니다. 서로를 전제한다는 말은 둘이 아무 관계도 없다는 뜻이다.',
+                        '그렇다. 자본이 커져야 고용과 임금도 늘어나므로, 서로를 전제하는 둘은 결국 운명 공동체다.',
+                        '그렇다. 한쪽 없이 다른 쪽이 성립하지 않는다면, 서로의 번영을 바라는 것이 각자에게 합리적이다.',
+                        '아니다. 서로를 전제한다는 것은 논리적 정의의 문제일 뿐, 현실의 이해관계와는 무관하다.',
                     ],
                     [
                         'No. Mutual presupposition means only that the two are bound in one relation; within it, the accumulation of one side deepens the subordination of the other, so their interests are antagonistic.',
-                        'Yes. Because they presuppose each other, their interests fully coincide.',
-                        'Yes. When one side prospers, the other necessarily prospers equally.',
-                        'No. Mutual presupposition means the two have no relation at all.',
+                        'Yes. Capital must grow for jobs and wages to grow, so the two that presuppose each other share one fate.',
+                        'Yes. If neither exists without the other, wishing for each other’s prosperity is rational for both.',
+                        'No. Mutual presupposition is a matter of logical definition, unrelated to real interests.',
                     ],
                     '서로를 전제한다는 것은 둘이 떼어 놓을 수 없는 한 관계의 두 극이라는 뜻이지, 사이가 좋다는 뜻이 아니다. 같은 관계 안에서 자본의 축적은 곧 임금노동의 종속을 재생산하고 키운다. 5·6장은 바로 이 「상호 전제 속의 적대」를 펼쳐 보인다.',
                     'Mutual presupposition means the two are inseparable poles of one relation, not that they are on good terms. Within that same relation, the accumulation of capital reproduces and deepens the subordination of wage-labour. Chapters 5 and 6 unfold precisely this “antagonism within mutual presupposition.”'),
@@ -862,19 +1028,60 @@ module.exports = {
                     'In light of Chapter 4’s definition, what is the problem with today’s usage that stretches “capital” to every resource, as in “human capital”?',
                     [
                         '자본을 산 노동을 지배하는 사회적 관계가 아니라 아무 자원에나 붙는 중립적 사물로 만들어, 자본주의의 특수한 계급관계를 시야에서 지워 버린다.',
-                        '자본 개념을 넓히면 노동자도 자본가가 되어 계급 차이가 실제로 사라진다.',
-                        '인적 자본이라는 말은 4장의 자본 규정과 완전히 일치한다.',
-                        '자본을 자원으로 보면 이윤의 원천이 더 분명해진다.',
+                        '문제없다. 능력과 학력도 수익을 낳는 자산이므로, 자본 개념의 확장은 현실을 더 정확히 담아낸다.',
+                        '어법의 문제일 뿐이다. 무엇을 자본이라 부르든 실제의 계급관계가 달라지지는 않으므로 비판할 실익이 없다.',
+                        '유일한 난점은 측정이다. 인적 자본은 수치화하기 어려워 분석 도구로 쓰기 불편하다는 것뿐이다.',
                     ],
                     [
                         'It turns capital from a social relation commanding living labour into a neutral thing attachable to any resource, erasing capitalism’s specific class relation from view.',
-                        'Broadening the concept makes workers into capitalists, so class differences really vanish.',
-                        '“Human capital” fully coincides with Chapter 4’s definition of capital.',
-                        'Seeing capital as a resource makes the source of profit clearer.',
+                        'No problem: abilities and schooling are assets that yield returns, so broadening the concept captures reality more accurately.',
+                        'A matter of wording only: whatever is called capital, the real class relation does not change, so criticism gains nothing.',
+                        'The only difficulty is measurement: human capital is hard to quantify and thus awkward as an analytic tool.',
                     ],
                     '4장의 자본은 산 노동을 부리는 사회적 관계다. 「인적 자본」처럼 모든 능력·자원을 자본이라 부르면, 자본은 누구나 가진 중립적 사물이 되고 자본가와 노동자를 가르는 계급관계는 어법 속으로 녹아 사라진다. 이는 자본의 사회적 성격을 사물로 되돌리는 물신화다.',
                     'Chapter 4’s capital is a social relation commanding living labour. Calling every ability and resource “capital,” as in “human capital,” turns capital into a neutral thing everyone holds, and the class relation dividing capitalist from worker dissolves into the wording. This is a fetishization that turns capital’s social character back into a thing.'),
-            ]
+            ],
+            {
+                diagram: diagram('contrast',
+                    {
+                        title: '자본을 보는 두 관점',
+                        left: {
+                            heading: '사물로 본 자본',
+                            rows: [
+                                '기계와 돈 그 자체가 자본이다',
+                                '언제나 있었고 앞으로도 있을 자연물이다',
+                                '이윤은 사물이 저절로 낳는다',
+                            ],
+                        },
+                        right: {
+                            heading: '관계로 본 자본',
+                            rows: [
+                                '임금노동을 부리는 관계 속에서만 자본이 된다',
+                                '특정한 역사적 조건의 산물이라 변할 수 있다',
+                                '새 가치는 산 노동이 만든다',
+                            ],
+                        },
+                    },
+                    {
+                        title: 'Two views of capital',
+                        left: {
+                            heading: 'Capital as a thing',
+                            rows: [
+                                'Machines and money are capital in themselves',
+                                'A natural object that always was and will be',
+                                'Profit springs from the thing by itself',
+                            ],
+                        },
+                        right: {
+                            heading: 'Capital as a relation',
+                            rows: [
+                                'A thing becomes capital only in a relation commanding wage-labour',
+                                'The product of definite historical conditions, hence changeable',
+                                'New value is created by living labour',
+                            ],
+                        },
+                    }),
+            }
         ),
         chapter(
             5,
@@ -939,32 +1146,44 @@ module.exports = {
                     'What is Chapter 5’s general law on the relation between wages and profit?',
                     [
                         '같은 생산물을 나누어 가지므로, 다른 조건이 같다면 임금이 오르면 이윤이 줄고 이윤이 오르면 임금이 준다.',
-                        '임금과 이윤은 늘 같은 비율로 함께 오르고 함께 내린다.',
-                        '임금이 오르면 이윤도 반드시 더 크게 오른다.',
-                        '임금과 이윤은 서로 아무런 관계가 없다.',
+                        '생산이 성장하는 한 임금과 이윤은 함께 오르므로, 문제는 분배가 아니라 성장이다.',
+                        '임금 상승은 소비를 늘려 매출을 키우므로, 이윤도 따라서 늘어난다.',
+                        '임금은 노동시장에서, 이윤은 상품시장에서 정해지므로 둘은 각자의 법칙을 따른다.',
                     ],
                     [
                         'They divide the same product, so other things equal, when wages rise profit falls, and when profit rises wages fall.',
-                        'Wages and profit always rise together and fall together in the same proportion.',
-                        'When wages rise, profit necessarily rises even more.',
-                        'Wages and profit have no relation to each other.',
+                        'As long as production grows, wages and profit rise together, so the issue is growth, not distribution.',
+                        'A wage rise expands consumption and sales, so profit increases along with it.',
+                        'Wages are set in the labour market and profit in the commodity market, so each follows its own law.',
                     ],
                     '한 생산물에서 노동자가 임금으로 가져가는 몫과 자본가가 이윤으로 가져가는 몫은 같은 덩어리를 나눈 것이다. 다른 조건이 같다면 한쪽 몫이 커지면 다른 쪽 몫은 줄 수밖에 없다. 이것이 임금과 이윤의 반비례라는 일반 법칙이다.',
-                    'In one product, the share the worker takes as wages and the share the capitalist takes as profit are divisions of the same lump. Other things equal, if one share grows the other must shrink. This is the general law of the inverse relation between wages and profit.'),
+                    'In one product, the share the worker takes as wages and the share the capitalist takes as profit are divisions of the same lump. Other things equal, if one share grows the other must shrink. This is the general law of the inverse relation between wages and profit.',
+                    [
+                        '같은 덩어리를 나누므로 반대로 움직인다는 일반 법칙이다. 「다른 조건이 같다면」이라는 단서까지 눈여겨보라.',
+                        '호황기에 둘 다 늘어날 수는 있지만 그것은 나눌 덩어리가 커진 경우다. 같은 덩어리 안에서 두 몫의 비율은 여전히 반대로 움직인다.',
+                        '임금 상승이 수요를 늘린다는 주장은 경기의 이야기다. 5장의 법칙은 새로 만든 가치를 나누는 몫의 관계이지, 매출 규모의 관계가 아니다.',
+                        '두 시장은 분리되어 있지 않다. 임금과 이윤은 같은 생산물의 새 가치를 나눈 두 조각이므로 무관할 수가 없다.',
+                    ],
+                    [
+                        'The general law: dividing the same lump, they move oppositely. Note also the qualifier “other things equal.”',
+                        'In a boom both can grow, but that is a case of the lump itself growing. Within the same lump the two shares still move oppositely.',
+                        'That wage rises boost demand is a story about the business cycle. Chapter 5’s law concerns the shares of newly created value, not the scale of sales.',
+                        'The two markets are not sealed off from each other. Wages and profit are two cuts of the same product’s new value, so they cannot be unrelated.',
+                    ]),
                 q(0,
                     '자본이 빠르게 성장할 때 노동자에게 나타나는 양면성은 무엇인가?',
                     'What is the two-sidedness for the worker when capital grows rapidly?',
                     [
                         '일자리와 임금이 늘어날 수 있지만, 동시에 노동의 자본에 대한 종속도 함께 깊어진다.',
-                        '노동자는 오직 이득만 보고 어떤 손실도 없다.',
-                        '노동자는 오직 손해만 보고 어떤 이득도 없다.',
-                        '자본의 성장은 노동자에게 아무런 영향도 주지 않는다.',
+                        '고용과 임금이 늘어나는 만큼 노동자의 협상력도 커져, 종속은 오히려 줄어든다.',
+                        '임금이 좋아지는 것은 착시일 뿐이고, 노동자의 절대적 생활수준은 계속 나빠진다.',
+                        '성장의 이득과 부담은 경기 순환에 따라 번갈아 오므로, 길게 보면 서로 상쇄된다.',
                     ],
                     [
                         'Jobs and wages may grow, but at the same time labour’s subordination to capital deepens as well.',
-                        'The worker gains only and suffers no loss.',
-                        'The worker loses only and gains nothing.',
-                        'The growth of capital has no effect on the worker at all.',
+                        'As jobs and wages grow, so does the worker’s bargaining power, so subordination actually lessens.',
+                        'Better wages are an illusion; the worker’s absolute standard of living keeps worsening.',
+                        'Growth’s gains and burdens alternate with the business cycle and cancel out over the long run.',
                     ],
                     '자본이 빠르게 자라면 노동 수요가 늘어 일자리와 임금이 좋아질 수 있다. 그러나 그 성장은 노동자가 마주하는 자본을 더 크고 강하게 만들어, 노동의 종속을 함께 키운다. 물질적 개선과 종속 심화가 한 과정의 두 면이다.',
                     'When capital grows fast, demand for labour rises and jobs and wages can improve. But that growth makes the capital the worker confronts larger and stronger, deepening labour’s subordination. Material improvement and intensified subordination are two sides of one process.'),
@@ -973,15 +1192,15 @@ module.exports = {
                     'To the claim “worker and capitalist are in the same boat, so their interests are the same,” what qualification does Chapter 5’s general law attach?',
                     [
                         '자본이 자랄 때 노동자도 약간 나아질 수 있지만, 같은 생산물을 나누는 한 임금과 이윤의 몫은 서로 반대로 움직인다는 적대가 깔려 있다는 것',
-                        '노동자와 자본가의 이해는 어떤 단서도 없이 완전히 일치한다는 것',
-                        '두 계급의 이해는 늘 정확히 반반으로 나뉜다는 것',
-                        '이해의 일치 여부는 분석할 수 없는 문제라는 것',
+                        '회사가 성장해야 임금도 오르는 것이 사실이므로, 호황기만큼은 두 계급의 이해가 실제로 일치한다는 것',
+                        '이해의 대립은 분배 협상의 순간에만 나타나는 것이라, 평상시의 협력 관계가 본질이라는 것',
+                        '한 배라는 비유 자체는 옳고, 문제는 선장과 선원의 몫을 정하는 절차의 공정성뿐이라는 것',
                     ],
                     [
                         'Capital’s growth may improve the worker a little, but as long as they divide the same product, the shares of wages and profit move in opposite directions—an antagonism underlies it',
-                        'The interests of worker and capitalist coincide completely, without any qualification',
-                        'The interests of the two classes always split exactly in half',
-                        'Whether interests coincide is a question that cannot be analyzed',
+                        'Since wages do rise only when the firm grows, in boom times at least the two classes’ interests really do coincide',
+                        'The clash of interests appears only at the moment of bargaining over distribution; everyday cooperation is the essence',
+                        'The boat metaphor itself is right; the only question is the fairness of the procedure that sets captain’s and crew’s shares',
                     ],
                     '자본이 자라는 국면에서는 노동자의 처지도 다소 나아질 수 있어, 이해가 같아 보이는 외양이 생긴다. 그러나 같은 생산물을 임금과 이윤이 나누는 한 둘의 몫은 반대로 움직인다. 「한 배」의 외양 아래 분배를 둘러싼 적대가 깔려 있다는 것이 5장의 단서다.',
                     'In a phase of growing capital the worker’s position may improve somewhat, giving the appearance of shared interests. But as long as wages and profit divide the same product, their shares move oppositely. Beneath the “same boat” appearance lies an antagonism over distribution—this is Chapter 5’s qualification.'),
@@ -992,15 +1211,15 @@ module.exports = {
                     'How does the analysis that the worker’s consumption is a moment in the “reproduction of capital” overturn the common view of consumption as a purely private matter?',
                     [
                         '노동자의 먹고 쉬는 일이 곧 다음 날 팔 노동력을 만들어 내는 과정이므로, 사적 소비조차 자본 관계를 재생산하는 사회적 고리로 드러난다는 것',
-                        '노동자의 소비는 자본과 아무 관계가 없는 순수한 사생활임이 확인된다는 것',
-                        '노동자가 소비를 줄이면 자본이 곧바로 사라진다는 것',
-                        '소비는 오직 자본가에게만 의미가 있고 노동자에게는 무의미하다는 것',
+                        '일터 밖의 시간은 계약 밖의 시간이므로, 소비는 자본 관계가 미치지 않는 자유의 영역임이 확인된다는 것',
+                        '소비가 수요를 만들어 생산을 이끈다는 뜻에서, 경제의 참된 주권자는 소비자임이 드러난다는 것',
+                        '소비의 사회적 의미는 어떤 상품을 고르는가라는 취향과 정체성의 문제에 있다는 것',
                     ],
                     [
                         'The worker’s eating and resting is itself the process of producing the labour-power he will sell the next day, so even private consumption appears as a social link reproducing the capital-relation',
-                        'It confirms that the worker’s consumption is purely private life, unrelated to capital',
-                        'If the worker reduces consumption, capital immediately disappears',
-                        'Consumption matters only to the capitalist and is meaningless to the worker',
+                        'Time outside the workplace is time outside the contract, confirming consumption as a sphere of freedom beyond the capital-relation',
+                        'Consumption creates demand and leads production, revealing the consumer as the true sovereign of the economy',
+                        'The social meaning of consumption lies in taste and identity, in which commodities one chooses',
                     ],
                     '노동자가 임금으로 먹고 쉬는 일은 단지 개인의 생활이 아니라, 자본가에게 다시 팔 노동력을 회복·재생산하는 과정이다. 그래서 가장 사적으로 보이는 소비조차 자본 관계를 이어 가는 사회적 계기가 된다. 사적인 것과 사회적인 것의 경계가 자본 아래서 흐려진다.',
                     'The worker eating and resting on his wage is not merely private life but the process of restoring and reproducing the labour-power he will resell to the capitalist. So even the most private-seeming consumption becomes a social moment continuing the capital-relation. Under capital, the line between the private and the social blurs.'),
@@ -1009,15 +1228,15 @@ module.exports = {
                     'What does the metaphor of a “golden chain” capture more precisely than a plain “chain”?',
                     [
                         '임금이 오르면 사슬이 더 길고 무거워질 수 있을 뿐, 노동이 자본에 묶여 있다는 사실 자체는 바뀌지 않는다는 것',
-                        '노동자의 사슬이 실제로 금으로 만들어져 값이 나간다는 것',
-                        '임금이 오르면 사슬이 완전히 풀려 노동자가 해방된다는 것',
-                        '자본가가 노동자에게 금을 선물한다는 것',
+                        '높은 임금이 노동자를 소유자로 만들어, 사슬이 차츰 자산으로 바뀌어 간다는 것',
+                        '임금이 충분히 오르면 종속도 그만큼 옅어져, 사슬이 사실상 풀린 것과 같아진다는 것',
+                        '풍요가 노동자를 길들인다는 것, 곧 문제는 물질이 아니라 의식의 타락이라는 것',
                     ],
                     [
                         'A higher wage may make the chain longer and heavier, but the fact that labour is bound to capital does not change',
-                        'The worker’s chain is really made of gold and worth money',
-                        'A higher wage unfastens the chain entirely and frees the worker',
-                        'The capitalist gives the worker a gift of gold',
+                        'High wages turn the worker into an owner, so the chain gradually becomes an asset',
+                        'If wages rise enough, subordination thins accordingly, and the chain is as good as unfastened',
+                        'Affluence tames the worker: the problem is not material but a corruption of consciousness',
                     ],
                     '「황금」은 임금이 좋아지는 상황을, 「사슬」은 그래도 노동이 자본에 묶여 있다는 사실을 가리킨다. 임금이 올라 사슬이 더 길고 화려해져도, 묶여 있다는 관계 자체는 그대로다. 이 비유는 임금 상승이 곧 해방은 아니라는 5장의 통찰을 압축한다.',
                     '“Golden” names a situation of better wages; “chain” names the fact that labour is still bound to capital. Even if the wage rises and the chain grows longer and more splendid, the relation of being bound remains. The metaphor compresses Chapter 5’s insight that a wage rise is not emancipation.'),
@@ -1026,15 +1245,15 @@ module.exports = {
                     'If wages and profit are inversely related, what is the limit of the objection that “a wage rise can simply be passed on into prices”?',
                     [
                         '한 자본가는 가격을 올릴 수 있어도, 모든 자본이 동시에 그럴 수는 없고 경쟁과 생산비가 가격을 끌어내리므로, 결국 임금 상승은 이윤 몫을 압박하게 된다는 것',
-                        '가격 전가는 언제나 완전해서 이윤은 전혀 줄지 않는다는 것',
-                        '임금을 올리면 가격이 무한히 오를 수 있다는 것',
-                        '가격은 임금과 아무 관계가 없으므로 반론이 무의미하다는 것',
+                        '임금도 생산비의 일부이므로, 임금 인상은 정의상 가격에 그대로 반영되어 이윤을 건드리지 않는다는 것',
+                        '전가가 물가를 올리면 실질임금이 도로 깎이므로, 임금 인상은 이윤이 아니라 노동자 자신에게 되돌아온다는 것',
+                        '전가의 성패는 각 기업의 시장 지배력에 달린 문제라, 일반 법칙으로 말할 수 없다는 것',
                     ],
                     [
                         'A single capitalist may raise his price, but not all capitals can do so at once; competition and cost of production pull prices back down, so a wage rise ends up pressing on the profit share',
-                        'Price pass-through is always complete, so profit never falls at all',
-                        'Raising wages lets prices rise without limit',
-                        'Prices have nothing to do with wages, so the objection is meaningless',
+                        'Wages are part of cost of production, so a wage rise passes into prices by definition and leaves profit untouched',
+                        'If pass-through raises prices, real wages are clawed back, so the wage rise returns upon the workers themselves, not profit',
+                        'Whether pass-through succeeds depends on each firm’s market power, so no general law can be stated',
                     ],
                     '개별 자본가는 임금 인상을 가격에 얹을 수 있다. 그러나 모든 자본이 동시에 그러면 2장의 법칙대로 경쟁과 생산비가 가격을 다시 끌어내린다. 따라서 사회 전체로 보면 임금 상승분이 가격으로 완전히 전가되지 못하고 이윤 몫을 잠식한다. 반비례 법칙은 개별이 아니라 총체의 수준에서 관철된다.',
                     'An individual capitalist can add a wage rise to his price. But if all capitals do so at once, competition and cost of production—by the law of Chapter 2—pull prices back down. So for society as a whole, the wage increase cannot be fully passed into prices and eats into the profit share. The inverse law asserts itself at the level of the totality, not the individual.'),
@@ -1043,15 +1262,15 @@ module.exports = {
                     'The analysis that rapid growth of capital brings the worker both “material improvement” and “deepened subordination” implies what evaluation of growth?',
                     [
                         '임금이 오르는 호황기조차 자본 관계 자체를 넘어서지 못하므로, 성장은 노동자의 처지를 개선하면서도 그를 자본에 더 깊이 묶는 양가적 과정이라는 것',
-                        '성장은 언제나 무조건 노동자에게 좋은 것이므로 비판할 수 없다는 것',
-                        '성장은 언제나 무조건 노동자에게 나쁜 것이므로 거부해야 한다는 것',
-                        '성장과 노동자의 처지는 분석적으로 연결될 수 없다는 것',
+                        '개선이 실재하는 이상 성장은 노동자의 편이며, 남는 과제는 그 과실을 더 고르게 나누는 것뿐이라는 것',
+                        '개선이 종속을 가리는 당의정인 이상, 노동자는 성장 자체에 반대하는 것이 일관된 태도라는 것',
+                        '성장의 평가는 결국 각자가 무엇을 중시하는가의 문제라, 분석이 아니라 가치관의 영역이라는 것',
                     ],
                     [
                         'Even a boom with rising wages does not transcend the capital-relation itself, so growth is an ambivalent process that improves the worker’s position while binding him more deeply to capital',
-                        'Growth is always unconditionally good for the worker and cannot be criticized',
-                        'Growth is always unconditionally bad for the worker and must be refused',
-                        'Growth and the worker’s position cannot be connected analytically',
+                        'Since the improvement is real, growth is on the worker’s side; the only remaining task is to share its fruits more evenly',
+                        'Since improvement is a sugar-coating that hides subordination, opposing growth itself is the consistent stance for workers',
+                        'How to judge growth comes down to what each person values, a matter of worldview rather than analysis',
                     ],
                     '마르크스의 분석은 성장을 단순히 찬양하지도 전면 부정하지도 않는다. 호황기의 임금 상승은 실제 개선이지만, 그것은 자본 관계 안에서의 개선이며 동시에 노동의 종속을 키운다. 성장은 노동자에게 양가적이다—이 양면을 함께 보아야 분배 너머 관계 자체를 묻게 된다.',
                     'Marx’s analysis neither simply praises growth nor wholly rejects it. The wage rise of a boom is a real improvement, but an improvement within the capital-relation that simultaneously deepens labour’s subordination. Growth is ambivalent for the worker—holding both sides together pushes the question beyond distribution to the relation itself.'),
@@ -1060,19 +1279,40 @@ module.exports = {
                     'Why does Chapter 5 not stop at the question of distributing wages and profit but move toward questioning the “relation”?',
                     [
                         '분배 몫을 다투는 한 적대는 같은 관계 안에 갇혀 되풀이되므로, 노동의 종속을 근본에서 묻으려면 임금노동–자본 관계 자체로 시선을 옮겨야 하기 때문이다.',
-                        '분배 문제는 중요하지 않아 무시해도 되기 때문이다.',
-                        '관계를 물으면 임금 인상이 불가능해지기 때문이다.',
-                        '분배만 공정해지면 자본 관계의 문제는 모두 사라지기 때문이다.',
+                        '분배 투쟁은 노동자를 눈앞의 몫에 붙들어 두는 함정이므로, 마르크스는 임금 투쟁 자체를 그만두라고 권하기 때문이다.',
+                        '분배의 비율을 공정하게 재조정하는 제도만 갖추면, 관계를 물을 필요 없이 적대가 해소되기 때문이다.',
+                        '관계의 문제는 철학의 영역이라, 경제학은 분배까지만 다루는 것이 방법상 옳기 때문이다.',
                     ],
                     [
                         'As long as the fight is over distributive shares, the antagonism stays trapped within the same relation and recurs, so questioning labour’s subordination at the root requires shifting to the wage-labour–capital relation itself',
-                        'The question of distribution is unimportant and may be ignored',
-                        'Questioning the relation makes wage increases impossible',
-                        'Once distribution is fair, all problems of the capital-relation vanish',
+                        'The distributive struggle is a trap holding workers to their immediate share, so Marx advises giving up the wage struggle altogether',
+                        'With institutions that readjust the ratio of distribution fairly, the antagonism dissolves without questioning the relation',
+                        'Questions of relation belong to philosophy; methodologically, economics rightly stops at distribution',
                     ],
                     '임금과 이윤의 몫을 더 유리하게 나누려는 싸움은 필요하지만, 그것만으로는 같은 자본 관계 안에 머문다. 다음 호황·불황마다 적대는 다시 살아난다. 그래서 마르크스는 분배의 비율을 넘어 임금노동과 자본이라는 관계 자체를 묻는 쪽으로 나아간다. 6장은 그 적대가 왜 화해 불가능한지를 펼친다.',
                     'The struggle to divide the shares of wages and profit more favourably is necessary, but by itself it stays within the same capital-relation. With each boom and slump the antagonism revives. So Marx moves beyond the ratio of distribution to question the wage-labour–capital relation itself. Chapter 6 unfolds why that antagonism is irreconcilable.'),
-            ]
+            ],
+            {
+                diagram: diagram('flow',
+                    {
+                        title: '노동자가 제 사슬을 벼리는 순환',
+                        steps: [
+                            { label: '노동자가 새 가치를 만든다', note: '노동력이 부려져 임금보다 큰 가치를 낳는다' },
+                            { label: '가치가 자본으로 쌓인다', note: '차액은 자본가에게 돌아가 자본을 불린다' },
+                            { label: '커진 자본이 더 강하게 부린다', note: '불어난 자본은 더 많은 노동을 더 단단히 지배한다' },
+                            { label: '노동자는 다시 노동력을 판다', note: '임금으로 회복한 노동력을 되팔며 순환이 반복된다' },
+                        ],
+                    },
+                    {
+                        title: 'The circuit in which the worker forges his own chain',
+                        steps: [
+                            { label: 'The worker creates new value', note: 'Labour-power, set to work, yields more value than the wage' },
+                            { label: 'Value piles up as capital', note: 'The difference accrues to the capitalist and swells his capital' },
+                            { label: 'Grown capital commands more strongly', note: 'The swollen capital dominates more labour more firmly' },
+                            { label: 'The worker sells labour-power again', note: 'He resells the labour-power restored by the wage, and the circuit repeats' },
+                        ],
+                    }),
+            }
         ),
         chapter(
             6,
@@ -1148,7 +1388,19 @@ module.exports = {
                         'Building palaces gives the worker jobs',
                     ],
                     '집 자체는 그대로여도 옆에 궁전이 서면 그 집은 초라해진다. 마찬가지로 노동자의 실질임금이 조금 올라도 자본가의 부가 훨씬 빠르게 커지면, 노동자의 상대적 몫과 사회적 지위는 떨어진다. 비유는 절대 수준이 아니라 관계 속의 격차를 보라고 말한다.',
-                    'The house itself is unchanged, but a palace beside it makes it look mean. Likewise, even if the worker’s real wage rises a little, if the capitalist’s wealth grows far faster, the worker’s relative share and social standing fall. The image tells us to look not at the absolute level but at the gap within the relation.'),
+                    'The house itself is unchanged, but a palace beside it makes it look mean. Likewise, even if the worker’s real wage rises a little, if the capitalist’s wealth grows far faster, the worker’s relative share and social standing fall. The image tells us to look not at the absolute level but at the gap within the relation.',
+                    [
+                        '절대 수준이 아니라 관계 속의 격차를 보라는 비유의 요점을 잡았다.',
+                        '비유를 개인 소비의 이야기로 읽은 것이다. 요점은 만족의 심리가 아니라 사회적 지위의 상대성이다.',
+                        '부동산 시장의 이야기가 아니다. 집은 노동자의 처지를, 궁전은 자본가의 부를 비유한다.',
+                        '고용 효과의 이야기가 아니다. 궁전이 서는 순간 옆집의 사회적 크기가 달라진다는 것이 요점이다.',
+                    ],
+                    [
+                        'Exactly the point of the image: look at the gap within the relation, not the absolute level.',
+                        'This reads the image as a story about personal consumption. The point is the relativity of social standing, not the psychology of satisfaction.',
+                        'Not a story about the housing market: the house stands for the worker’s condition, the palace for the capitalist’s wealth.',
+                        'Not a story about employment effects: the point is that the moment the palace rises, the social size of the house next door changes.',
+                    ]),
                 q(0,
                     '생산자본이 성장하면서 분업과 기계가 늘어나면 노동자들 사이에는 무슨 일이 벌어지는가?',
                     'As productive capital grows and the division of labour and machinery expand, what happens among the workers?',
@@ -1207,15 +1459,15 @@ module.exports = {
                     'Why is the introduction of machinery rational for the individual capitalist yet a pressure on the working class as a whole?',
                     [
                         '한 자본가는 기계로 비용을 줄여 경쟁에서 앞서지만, 모두가 그렇게 하면 노동 수요가 줄고 경쟁이 격화되어 임금이 눌리고 실업이 늘기 때문이다.',
-                        '기계는 언제나 새 일자리를 늘리기만 하므로 압박이 될 수 없기 때문이다.',
-                        '기계는 개별 자본가에게도 늘 손해이기 때문이다.',
-                        '기계 도입은 임금과 고용에 아무 영향이 없기 때문이다.',
+                        '기계가 없앤 일자리는 새로 생기는 산업의 일자리가 메우므로, 계급 전체로 보아도 결국은 이득이기 때문이다.',
+                        '기계의 이득은 남들이 따라오기 전까지의 일시적 우위일 뿐이어서, 개별 자본가에게도 남는 것이 없기 때문이다.',
+                        '기계는 노동의 수고를 덜어 줄 뿐이고, 고용의 총량은 기술이 아니라 경기가 정하기 때문이다.',
                     ],
                     [
                         'A single capitalist cuts costs with machinery and gets ahead in competition, but when all do so, demand for labour falls, competition sharpens, wages are pressed down, and unemployment grows.',
-                        'Machinery always only adds new jobs, so it cannot be a pressure.',
-                        'Machinery is always a loss even for the individual capitalist.',
-                        'Introducing machinery has no effect on wages or employment.',
+                        'The jobs machinery destroys are filled by jobs in newly arising industries, so even for the class as a whole it is a gain in the end.',
+                        'The machine’s advantage lasts only until others catch up, so even the individual capitalist is left with nothing.',
+                        'Machinery merely lightens the toil of labour; total employment is set by the business cycle, not by technology.',
                     ],
                     '개별 자본가에게 기계는 비용을 낮춰 경쟁에서 앞서게 하는 합리적 선택이다. 그러나 모든 자본가가 같은 길을 가면 산 노동의 수요가 줄고, 일자리를 둘러싼 경쟁이 격화되며, 일부는 잉여 인구로 밀려난다. 개별의 합리성이 모이면 계급 전체에는 압박이 되는 구성의 모순이다.',
                     'For the individual capitalist, machinery is a rational choice that lowers costs and gets him ahead. But when all capitalists take the same path, demand for living labour falls, competition for jobs sharpens, and some are pushed into a surplus population. Individual rationality, aggregated, becomes a pressure on the class as a whole—a fallacy-of-composition contradiction.'),
@@ -1224,15 +1476,15 @@ module.exports = {
                     'How does Chapter 6’s logic of “relative immiseration” differ from the claim that “workers grow absolutely hungrier over time”?',
                     [
                         '실질임금이 오르더라도 자본에 견준 노동의 몫과 지위가 떨어지는 것을 문제 삼으므로, 절대 생활수준의 하락을 반드시 전제하지 않는다.',
-                        '둘은 똑같은 주장이어서 구별되지 않는다.',
-                        '상대적 궁핍화는 실질임금이 반드시 0으로 떨어진다는 뜻이다.',
-                        '상대적 궁핍화는 노동자의 생활이 절대적으로도 늘 악화됨을 증명한다.',
+                        '상대적이라는 수식어가 붙었을 뿐, 노동자가 갈수록 가난해진다는 같은 주장의 다른 표현이다.',
+                        '상대적 궁핍화란 절대적 궁핍화가 장기에 걸쳐 서서히 관철되는 형태를 가리키는 말이다.',
+                        '자본에 견준 격차는 심리적 박탈감의 문제일 뿐이어서, 경제 분석이 다룰 대상이 아니다.',
                     ],
                     [
                         'It concerns the fall of labour’s share and standing relative to capital even when real wages rise, so it does not necessarily presuppose a decline in the absolute standard of living.',
-                        'The two are the same claim and cannot be distinguished.',
-                        'Relative immiseration means real wages necessarily fall to zero.',
-                        'Relative immiseration proves the worker’s life always worsens absolutely too.',
+                        'Only the qualifier “relative” is new; it is another wording of the same claim that workers grow ever poorer.',
+                        'Relative immiseration names the form in which absolute immiseration asserts itself slowly over the long run.',
+                        'The gap measured against capital is a matter of felt deprivation, not something economic analysis should treat.',
                     ],
                     '상대적 궁핍화는 노동자의 절대 생활수준이 반드시 떨어진다는 말이 아니다. 실질임금이 다소 올라도 자본에 견준 노동의 몫과 사회적 지위가 떨어지는 것을 문제 삼는다. 그래서 「풍요 속에서도 격차가 벌어진다」는 현대 불평등 현상과 정확히 맞물린다. 절대적 빈곤화 명제와는 분석 층위가 다르다.',
                     'Relative immiseration does not say the worker’s absolute standard of living must fall. It concerns the fall of labour’s share and social standing relative to capital even when real wages rise somewhat. This is exactly why it meshes with modern inequality—gaps widening amid affluence. It operates on a different analytic level from any absolute-pauperization thesis.'),
@@ -1241,15 +1493,15 @@ module.exports = {
                     'How does Chapter 6’s conclusion (antagonism of interests) grow out of Chapter 5’s general law (inverse relation of wages and profit)?',
                     [
                         '같은 생산물을 나눈다는 정태적 반비례에, 자본 성장이 분업·기계·경쟁으로 노동의 상대적 처지를 동태적으로 악화시킨다는 분석이 더해져 적대가 구조적임이 드러난다.',
-                        '6장은 5장을 부정하고 임금과 이윤이 함께 오른다고 결론짓는다.',
-                        '두 장은 서로 무관하며 결론은 우연히 같아졌을 뿐이다.',
-                        '5장의 법칙은 6장에서 폐기되고 새 법칙으로 대체된다.',
+                        '5장의 반비례는 정체기의 특수한 경우이고, 6장은 성장기에 그 법칙이 정지함을 보여 결론을 확장한다.',
+                        '5장은 경제의 법칙을, 6장은 정치적 결론을 다루므로, 둘은 논증의 연결 없이 나란히 놓인 것이다.',
+                        '6장의 상대적 임금 개념이 5장의 반비례 법칙을 흡수해 대체하므로, 이제 반비례는 따로 필요 없다.',
                     ],
                     [
                         'To the static inverse relation of dividing the same product is added the analysis that capital’s growth dynamically worsens labour’s relative position through the division of labour, machinery, and competition—revealing the antagonism as structural.',
-                        'Chapter 6 negates Chapter 5 and concludes that wages and profit rise together.',
-                        'The two chapters are unrelated and the conclusions merely happen to agree.',
-                        'Chapter 5’s law is discarded in Chapter 6 and replaced by a new one.',
+                        'Chapter 5’s inverse relation is a special case for stagnant times; Chapter 6 extends the conclusion by showing the law suspended in times of growth.',
+                        'Chapter 5 treats an economic law and Chapter 6 a political conclusion, so the two stand side by side without an argumentative link.',
+                        'Chapter 6’s concept of relative wages absorbs and replaces Chapter 5’s inverse law, which is no longer needed on its own.',
                     ],
                     '5장은 한 생산물을 나누는 한 임금과 이윤이 반대로 움직인다는 정태적 법칙을 세운다. 6장은 여기에 자본의 성장이라는 동태적 과정을 더한다. 성장이 분업·기계·경쟁을 통해 노동의 상대적 몫과 지위를 끊임없이 깎아 내므로, 적대는 일시적 마찰이 아니라 자본 관계에 구조적으로 새겨진 것이 된다.',
                     'Chapter 5 establishes the static law that, in dividing one product, wages and profit move oppositely. Chapter 6 adds the dynamic process of capital’s growth. Because growth, through the division of labour, machinery, and competition, ceaselessly pares away labour’s relative share and standing, the antagonism is not a passing friction but something structurally inscribed in the capital-relation.'),
@@ -1260,17 +1512,38 @@ module.exports = {
                         '노동력·가격·임금·자본·적대로 이어지는 핵심 논리를 짧은 분량 안에서 한 줄로 꿰어, 본격 저작의 골격을 미리 손에 쥐게 해 준다는 점에서 드러난다.',
                         '수학적 증명과 방대한 통계로 모든 것을 엄밀히 마무리한다는 점에서 드러난다.',
                         '결론을 일부러 모호하게 남겨 독자가 스스로 추측하게 한다는 점에서 드러난다.',
-                        '자본론의 내용과 전혀 다른 결론에 이른다는 점에서 드러난다.',
+                        '자본론이 뒤에 다듬게 될 결론을 앞질러 보여 준다는 점, 곧 초고로서의 가치에서 드러난다.',
                     ],
                     [
                         'It threads the core logic—labour-power, price, wages, capital, antagonism—into a single line within a short compass, putting the skeleton of the major work into the reader’s hands in advance.',
                         'It closes everything rigorously with mathematical proofs and vast statistics.',
                         'It deliberately leaves the conclusion vague so the reader must guess.',
-                        'It reaches a conclusion entirely different from that of Capital.',
+                        'It shows in advance the conclusions Capital would later refine—its value as a draft.',
                     ],
                     '이 책은 노동력의 판매(1장)에서 출발해 가격(2장)·임금(3장)·자본(4장)·관계(5장)를 거쳐 적대(6장)로 곧장 이어지는 한 줄의 논리를 짧게 보여 준다. 방대한 자본론의 골격을 미리 쥐여 주기 때문에, 마르크스 경제학에 처음 들어서는 독자에게 가장 좋은 입구가 된다. 6장의 결론은 그 한 줄의 도착점이다.',
                     'The book lays out, in brief, a single line of logic running straight from the sale of labour-power (Ch. 1) through price (Ch. 2), wages (Ch. 3), capital (Ch. 4), and the relation (Ch. 5) to antagonism (Ch. 6). By handing over the skeleton of the vast Capital in advance, it makes the best doorway for a reader first entering Marx’s economics. Chapter 6’s conclusion is the destination of that single line.'),
-            ]
+            ],
+            {
+                diagram: diagram('flow',
+                    {
+                        title: '자본의 성장이 노동을 누르는 경로',
+                        steps: [
+                            { label: '생산자본이 성장한다', note: '축적된 자본이 분업과 기계를 확대한다' },
+                            { label: '노동이 단순해진다', note: '잘게 쪼개진 일은 누구나 할 수 있는 일이 된다' },
+                            { label: '경쟁이 격화된다', note: '노동자들이 서로 경쟁하고 일부는 기계로 대체된다' },
+                            { label: '상대적 처지가 나빠진다', note: '임금이 눌리고, 오르더라도 자본보다 느리게 오른다' },
+                        ],
+                    },
+                    {
+                        title: 'How the growth of capital presses on labour',
+                        steps: [
+                            { label: 'Productive capital grows', note: 'Accumulated capital expands the division of labour and machinery' },
+                            { label: 'Labour is simplified', note: 'Finely divided work becomes work anyone can do' },
+                            { label: 'Competition sharpens', note: 'Workers compete with one another and some are replaced by machines' },
+                            { label: 'Relative position worsens', note: 'Wages are pressed down, and even when they rise, they rise more slowly than capital' },
+                        ],
+                    }),
+            }
         ),
     ],
 };
