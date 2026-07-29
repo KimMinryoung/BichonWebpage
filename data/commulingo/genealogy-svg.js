@@ -11,7 +11,9 @@ const MARGIN_LEFT = 48;     // year axis
 const MARGIN_RIGHT = 16;
 const COL_WIDTH = 166;      // five lanes fit the desktop container without scrolling
 const NODE_WIDTH = 148;
-const PX_PER_YEAR = 22;     // generous so dense decades need little nudging
+const PX_PER_YEAR = 22;     // generous so dense decades need little nudging;
+                            // a century-spanning chart can override per chart
+                            // with pxPerYear (clamped below)
 const NODE_GAP = 12;        // minimum vertical gap between same-lane nodes
 const LINE_HEIGHT = 16;
 const NODE_PAD_Y = 7;
@@ -67,7 +69,10 @@ function renderGenealogySvg(chart, lang) {
     const columns = chart.columns;
     const colIndex = new Map(columns.map((col, i) => [col.id, i]));
     const laneX = i => MARGIN_LEFT + i * COL_WIDTH + COL_WIDTH / 2;
-    const yearY = year => MARGIN_TOP + (year - chart.timeStart) * PX_PER_YEAR;
+    const pxPerYear = Number.isFinite(chart.pxPerYear)
+        ? Math.min(30, Math.max(6, chart.pxPerYear))
+        : PX_PER_YEAR;
+    const yearY = year => MARGIN_TOP + (year - chart.timeStart) * pxPerYear;
 
     // ── Place nodes, then push same-lane overlaps downward. ──
     const placed = new Map();

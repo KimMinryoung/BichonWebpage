@@ -1,0 +1,181 @@
+{
+  "id": "soviet-state-ideology",
+  "title": {
+    "ko": "소련 국가이념의 변천",
+    "en": "The Evolution of Soviet State Ideology"
+  },
+  "description": {
+    "ko": "1890년대 당 철학의 형성에서 1991년 연방 해체까지, 소련 국가이념이 정식화되고 개정되고 해체된 한 세기의 계보. 철학과 교리, 정치 노선, 헌법과 강령의 선언, 그리고 그에 맞선 대안들을 나란히 놓았다. 노드를 누르면 해당 사전 항목으로 이동한다.",
+    "en": "A century of Soviet state ideology, from the formation of the party's philosophy in the 1890s to the dissolution of 1991: doctrine, political line, constitutional declarations, and the alternatives raised against them. Click a node to open its dictionary entry."
+  },
+  "timeStart": 1890,
+  "timeEnd": 1993,
+  "pxPerYear": 10,
+  "columns": [
+    { "id": "philosophy", "label": { "ko": "철학·교리", "en": "Philosophy & doctrine" } },
+    { "id": "line", "label": { "ko": "정치 노선", "en": "Political line" } },
+    { "id": "challenge", "label": { "ko": "대안과 도전", "en": "Alternatives" } },
+    { "id": "charter", "label": { "ko": "헌법·강령", "en": "Constitutions & programmes" } }
+  ],
+  "nodes": [
+    {
+      "id": "party-philosophy",
+      "column": "philosophy",
+      "year": 1894,
+      "period": "1890년대–1909",
+      "label": { "ko": "당 철학의 형성 (플레하노프·레닌)", "en": "The party's philosophy formed (Plekhanov, Lenin)" },
+      "ref": { "type": "term", "id": "dialectical-materialism" },
+      "note": { "ko": "플레하노프가 '변증법적 유물론'을 명명하고, 레닌의 『유물론과 경험비판론』(1909)이 볼셰비키의 철학적 정통을 세웠다", "en": "Plekhanov coined 'dialectical materialism'; Lenin's Materialism and Empirio-criticism (1909) fixed Bolshevik philosophical orthodoxy" }
+    },
+    {
+      "id": "constitution-1918",
+      "column": "charter",
+      "year": 1918,
+      "period": "1918",
+      "label": { "ko": "1918년 헌법: 노동자 국가 선언", "en": "1918 Constitution: a workers' state declared" },
+      "note": { "ko": "「근로 피착취 인민의 권리 선언」을 서두에 둔 러시아 소비에트 공화국 헌법", "en": "The RSFSR constitution, opening with the Declaration of Rights of the Working and Exploited People" }
+    },
+    {
+      "id": "socialism-one-country",
+      "column": "line",
+      "year": 1924,
+      "period": "1924–1926",
+      "label": { "ko": "일국사회주의 노선", "en": "Socialism in one country" },
+      "ref": { "type": "term", "id": "socialism-in-one-country" }
+    },
+    {
+      "id": "permanent-revolution",
+      "column": "challenge",
+      "year": 1924,
+      "period": "1905 / 1924–",
+      "label": { "ko": "연속혁명론 (트로츠키)", "en": "Permanent revolution (Trotsky)" },
+      "ref": { "type": "term", "id": "permanent-revolution" }
+    },
+    {
+      "id": "great-break",
+      "column": "line",
+      "year": 1929,
+      "period": "1929–1933",
+      "label": { "ko": "대전환: 위로부터의 혁명", "en": "The Great Break: revolution from above" },
+      "ref": { "type": "term", "id": "great-break" }
+    },
+    {
+      "id": "constitution-1936",
+      "column": "charter",
+      "year": 1936,
+      "period": "1936",
+      "label": { "ko": "'승리한 사회주의' (1936년 헌법)", "en": "'Socialism victorious' (1936 Constitution)" },
+      "ref": { "type": "term", "id": "1936-soviet-constitution" }
+    },
+    {
+      "id": "diamat-canon",
+      "column": "philosophy",
+      "year": 1938,
+      "period": "1938",
+      "label": { "ko": "디아마트 정전화 (『소교정』)", "en": "Diamat codified (the Short Course)" },
+      "ref": { "type": "term", "id": "historical-materialism" },
+      "note": { "ko": "스탈린의 「변증법적 유물론과 사적 유물론」이 당 교육과 대학 과정의 표준 교재가 되었다", "en": "Stalin's 'Dialectical and Historical Materialism' became the standard text of party and university instruction" }
+    },
+    {
+      "id": "two-camps",
+      "column": "line",
+      "year": 1947,
+      "period": "1947–1950년대",
+      "label": { "ko": "두 진영론 (즈다노프)", "en": "The two-camps doctrine (Zhdanov)" },
+      "ref": { "type": "term", "id": "two-camps-doctrine" }
+    },
+    {
+      "id": "de-stalinization",
+      "column": "line",
+      "year": 1956,
+      "period": "1956",
+      "label": { "ko": "탈스탈린화 (제20차 당대회)", "en": "De-Stalinization (20th Congress)" },
+      "ref": { "type": "term", "id": "de-stalinization" },
+      "note": { "ko": "개인숭배를 비판하되 체제의 철학적 기초는 그대로 유지했다", "en": "Condemned the cult of personality while keeping the system's philosophical foundations intact" }
+    },
+    {
+      "id": "third-programme",
+      "column": "charter",
+      "year": 1961,
+      "period": "1961",
+      "label": { "ko": "제3차 당 강령: 전인민국가", "en": "Third Party Programme: the all-people's state" },
+      "ref": { "type": "term", "id": "all-peoples-state" },
+      "note": { "ko": "프롤레타리아 독재의 임무 완수를 선언하고 20년 안에 공산주의의 물질·기술적 기초를 놓겠다고 공약했다", "en": "Declared the dictatorship of the proletariat fulfilled and promised the material basis of communism within twenty years" }
+    },
+    {
+      "id": "prague-spring",
+      "column": "challenge",
+      "year": 1968,
+      "period": "1968",
+      "label": { "ko": "'인간의 얼굴을 한 사회주의'", "en": "'Socialism with a human face'" },
+      "ref": { "type": "event", "id": "prague-spring" }
+    },
+    {
+      "id": "developed-socialism",
+      "column": "line",
+      "year": 1971,
+      "period": "1970년대",
+      "label": { "ko": "발전된 사회주의론", "en": "Developed socialism" },
+      "note": { "ko": "공산주의의 조기 도래 공약을 접고, 현 단계를 장기간 지속될 '발전된 사회주의'로 규정한 브레즈네프 시기의 공식 이론", "en": "The Brezhnev-era doctrine that shelved the promise of imminent communism and named the present a long stage of 'developed socialism'" }
+    },
+    {
+      "id": "constitution-1977",
+      "column": "charter",
+      "year": 1977,
+      "period": "1977",
+      "label": { "ko": "1977년 헌법: 발전된 사회주의 명문화", "en": "1977 Constitution: developed socialism codified" },
+      "note": { "ko": "전인민국가와 발전된 사회주의를 헌법 서문에 새기고, 제6조로 당의 지도적 역할을 명문화했다", "en": "Wrote the all-people's state and developed socialism into the preamble, and the party's leading role into Article 6" }
+    },
+    {
+      "id": "perestroika",
+      "column": "line",
+      "year": 1985,
+      "period": "1985–1991",
+      "label": { "ko": "페레스트로이카·글라스노스트", "en": "Perestroika and glasnost" },
+      "ref": { "type": "term", "id": "perestroika" }
+    },
+    {
+      "id": "new-thinking",
+      "column": "philosophy",
+      "year": 1987,
+      "period": "1987–1991",
+      "label": { "ko": "신사고", "en": "New political thinking" },
+      "ref": { "type": "term", "id": "new-political-thinking" }
+    },
+    {
+      "id": "congress-deputies",
+      "column": "charter",
+      "year": 1988,
+      "period": "1988–1989",
+      "label": { "ko": "개헌과 인민대의원대회", "en": "The 1988 amendments and the Congress of People's Deputies" },
+      "ref": { "type": "term", "id": "congress-of-peoples-deputies" }
+    },
+    {
+      "id": "soviet-collapse",
+      "column": "charter",
+      "year": 1991,
+      "period": "1991",
+      "label": { "ko": "벨로베자 합의: 연방 해체", "en": "Belovezha Accords: the Union dissolved" },
+      "ref": { "type": "event", "id": "soviet-collapse" }
+    }
+  ],
+  "edges": [
+    { "from": "party-philosophy", "to": "socialism-one-country", "type": "influence" },
+    { "from": "party-philosophy", "to": "diamat-canon", "type": "succession" },
+    { "from": "constitution-1918", "to": "constitution-1936", "type": "succession" },
+    { "from": "socialism-one-country", "to": "permanent-revolution", "type": "opposition" },
+    { "from": "socialism-one-country", "to": "great-break", "type": "succession" },
+    { "from": "great-break", "to": "constitution-1936", "type": "succession", "label": { "ko": "건설 완료 선언", "en": "construction declared complete" } },
+    { "from": "constitution-1936", "to": "diamat-canon", "type": "succession", "label": { "ko": "체제 세계관의 정전화", "en": "the system's worldview codified" } },
+    { "from": "diamat-canon", "to": "two-camps", "type": "influence" },
+    { "from": "two-camps", "to": "de-stalinization", "type": "succession" },
+    { "from": "de-stalinization", "to": "third-programme", "type": "succession", "label": { "ko": "'20년 내 공산주의'", "en": "'communism in twenty years'" } },
+    { "from": "third-programme", "to": "developed-socialism", "type": "succession", "label": { "ko": "목표의 후퇴", "en": "the goal deferred" }, "labelT": 0.3 },
+    { "from": "developed-socialism", "to": "constitution-1977", "type": "succession" },
+    { "from": "constitution-1977", "to": "perestroika", "type": "succession", "label": { "ko": "'정체(자스토이)' 비판", "en": "against 'stagnation'" } },
+    { "from": "prague-spring", "to": "perestroika", "type": "influence", "label": { "ko": "개혁 사회주의의 선례", "en": "a precedent for reform socialism" } },
+    { "from": "perestroika", "to": "new-thinking", "type": "succession" },
+    { "from": "perestroika", "to": "congress-deputies", "type": "succession" },
+    { "from": "congress-deputies", "to": "soviet-collapse", "type": "end" }
+  ]
+}
