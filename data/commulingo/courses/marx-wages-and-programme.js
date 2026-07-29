@@ -1718,8 +1718,8 @@ module.exports = {
     bookTitle: t('임금 투쟁과 분배', 'Wage Struggle and Distribution'),
     badge: t('두 저작 함께 읽기', 'Two works, one book'),
     description: t(
-        '1865년 국제노동자협회 총평의회 강연과, 1875년 독일 노동자 정당의 통합강령에 마르크스가 단 논평을 한 권으로 읽는다. 앞의 글은 임금 인상이 왜 가능한지를 웨스턴에게 답하고, 뒤의 글은 분배를 앞세운 사회주의가 왜 막다른 길인지를 라살레파에게 답한다. 두 글은 같은 결론에 이른다. 문제는 임금제도 그 자체라는 것이다.',
-        'The 1865 address to the General Council of the International and the 1875 marginal notes on the unity programme, read as one book. The first answers Weston on why a rise in wages is possible; the second answers the Lassalleans on why a socialism built on distribution is a dead end. Both end in the same place: the wages system itself is the object.'
+        '임금 인상은 왜 가능한지, 분배를 앞세운 사회주의는 왜 막다른 길인지 답하는 두 글을 한 권으로 읽는다. 결론은 하나, 문제는 임금제도 그 자체다.',
+        'Two texts read as one book: why a rise in wages is possible, and why a socialism built on distribution is a dead end. One conclusion: the wages system itself is the object.'
     ),
     chapters,
 };

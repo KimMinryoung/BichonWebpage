@@ -73,8 +73,8 @@ module.exports = {
     badge: t('인터랙티브 개념지도', 'Interactive concept map'),
     sourceUrl: 'https://www.marxists.org/archive/marx/works/1884/origin-family/',
     description: t(
-        '가족·사유재산·국가가 따로 떨어진 것이 아니라 생산양식의 변화가 엮어 낸 하나의 사슬임을 보여 주는 책입니다. 퀴즈 대신, 사슬의 고리를 하나씩 눌러 「쉬운 설명 → 엥겔스의 주장 → 현대적 비판」 세 단계로 따라가며 익힙니다.',
-        'A book showing that the family, private property and the state are not separate things but one chain forged by changes in the mode of production. Instead of a quiz, open each link of the chain and follow three stages: plain explanation → Engels’s argument → modern critique.'
+        '가족·사유재산·국가가 따로 떨어진 것이 아니라 생산양식의 변화가 엮어 낸 하나의 사슬임을 보여 주는 책입니다.',
+        'A book showing that the family, private property and the state are not separate things but one chain forged by changes in the mode of production.'
     ),
     chapters: [],
     conceptGraph: {
