@@ -1,0 +1,511 @@
+{
+  "id": "internationals",
+  "title": {
+    "ko": "국제 사회주의 운동의 계보: 인터내셔널 분열사",
+    "en": "The Internationals: a Genealogy of the Socialist Movement"
+  },
+  "description": {
+    "ko": "1864년 제1인터내셔널에서 20세기 후반까지, 국제 사회주의 운동이 다섯 갈래(아나키즘, 사회민주주의, 본류, 공산주의, 반대파 공산주의)로 갈라져 온 분열과 재결집의 계보. 노드를 누르면 해당 사전 항목으로 이동한다.",
+    "en": "From the First International of 1864 to the late twentieth century: the splits and regroupings of international socialism across five currents, anarchist, social democratic, the common trunk, communist, and dissident communist. Click a node to open its dictionary entry."
+  },
+  "timeStart": 1860,
+  "timeEnd": 1990,
+  "pxPerYear": 9,
+  "columns": [
+    {
+      "id": "anarchist",
+      "label": {
+        "ko": "아나키즘 계열",
+        "en": "Anarchist line"
+      }
+    },
+    {
+      "id": "socdem",
+      "label": {
+        "ko": "사회민주주의 계열",
+        "en": "Social democratic line"
+      }
+    },
+    {
+      "id": "trunk",
+      "label": {
+        "ko": "본류: 제1·2인터내셔널",
+        "en": "The common trunk"
+      }
+    },
+    {
+      "id": "communist",
+      "label": {
+        "ko": "공산주의 계열",
+        "en": "Communist line"
+      }
+    },
+    {
+      "id": "dissident",
+      "label": {
+        "ko": "반대파 공산주의",
+        "en": "Dissident communism"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "iwa",
+      "column": "trunk",
+      "year": 1864,
+      "period": "1864–1876",
+      "label": {
+        "ko": "제1인터내셔널 (마르크스)",
+        "en": "First International (Marx)"
+      },
+      "ref": {
+        "type": "person",
+        "id": "karl-marx"
+      },
+      "note": {
+        "ko": "국제노동자협회. 1872년 헤이그 대회에서 마르크스파와 바쿠닌파가 갈라섰고 1876년 해산했다",
+        "en": "The International Working Men's Association; split between Marxists and Bakuninists at the Hague Congress of 1872, dissolved 1876"
+      }
+    },
+    {
+      "id": "bakuninists",
+      "column": "anarchist",
+      "year": 1872,
+      "period": "1872–1877",
+      "label": {
+        "ko": "반권위주의 인터내셔널 (바쿠닌)",
+        "en": "Anti-authoritarian International (Bakunin)"
+      },
+      "ref": {
+        "type": "person",
+        "id": "mikhail-bakunin"
+      }
+    },
+    {
+      "id": "second-intl",
+      "column": "trunk",
+      "year": 1889,
+      "period": "1889–1916",
+      "label": {
+        "ko": "제2인터내셔널 (카우츠키)",
+        "en": "Second International (Kautsky)"
+      },
+      "ref": {
+        "type": "person",
+        "id": "karl-kautsky"
+      },
+      "note": {
+        "ko": "1914년 주요 정당들이 자국의 전쟁공채에 찬성하면서 사실상 붕괴했다",
+        "en": "Effectively collapsed in 1914 when its main parties voted for their governments' war credits"
+      }
+    },
+    {
+      "id": "revisionism",
+      "column": "socdem",
+      "year": 1899,
+      "period": "1896–1903",
+      "label": {
+        "ko": "수정주의 논쟁 (베른슈타인)",
+        "en": "The revisionism debate (Bernstein)"
+      },
+      "ref": {
+        "type": "person",
+        "id": "eduard-bernstein"
+      }
+    },
+    {
+      "id": "mass-strike-debate",
+      "column": "socdem",
+      "year": 1906,
+      "period": "1905–1910",
+      "label": {
+        "ko": "대중파업 논쟁 (룩셈부르크)",
+        "en": "The mass strike debate (Luxemburg)"
+      },
+      "ref": {
+        "type": "term",
+        "id": "mass-strike"
+      }
+    },
+    {
+      "id": "zimmerwald",
+      "column": "trunk",
+      "year": 1915,
+      "period": "1915–1917",
+      "label": {
+        "ko": "치머발트 운동",
+        "en": "The Zimmerwald movement"
+      },
+      "note": {
+        "ko": "전쟁에 반대한 국제주의자들의 회합. 레닌의 치머발트 좌파가 제3인터내셔널의 맹아가 되었다",
+        "en": "The wartime gathering of anti-war internationalists; Lenin's Zimmerwald Left was the seed of the Third International"
+      }
+    },
+    {
+      "id": "comintern",
+      "column": "communist",
+      "year": 1919,
+      "period": "1919–1943",
+      "label": {
+        "ko": "코민테른 (제3인터내셔널)",
+        "en": "Comintern (Third International)"
+      },
+      "ref": {
+        "type": "person",
+        "id": "lenin"
+      },
+      "note": {
+        "ko": "21개조 가입 조건으로 각국 당을 재편했고, 1943년 스탈린이 해산했다",
+        "en": "Reshaped its member parties through the Twenty-one Conditions; dissolved by Stalin in 1943"
+      }
+    },
+    {
+      "id": "council-communism",
+      "column": "dissident",
+      "year": 1920,
+      "period": "1918–1930년대",
+      "label": {
+        "ko": "평의회공산주의",
+        "en": "Council communism"
+      },
+      "ref": {
+        "type": "term",
+        "id": "council-communism"
+      },
+      "note": {
+        "ko": "코민테른 초기에 의회·노조 전술을 거부하다 배제된 좌익. 레닌의 『'좌익' 소아병』이 겨눈 상대다",
+        "en": "The left excluded from the early Comintern for rejecting parliamentary and trade-union tactics; the target of Lenin's 'Left-Wing' Communism"
+      }
+    },
+    {
+      "id": "two-half",
+      "column": "socdem",
+      "year": 1921,
+      "period": "1921–1923",
+      "label": {
+        "ko": "빈 국제연합 (2½ 인터내셔널)",
+        "en": "Vienna Union (the Two-and-a-half International)"
+      },
+      "note": {
+        "ko": "재건된 제2인터내셔널과 코민테른 사이에서 통합을 시도한 중간파 정당들의 연합",
+        "en": "The centrist parties that tried to bridge the revived Second International and the Comintern"
+      }
+    },
+    {
+      "id": "syndicalist-iwa",
+      "column": "anarchist",
+      "year": 1922,
+      "period": "1922–",
+      "label": {
+        "ko": "아나르코생디칼리슴 IWA",
+        "en": "Anarcho-syndicalist IWA"
+      },
+      "note": {
+        "ko": "베를린에서 재건된 국제노동자협회. 스페인 CNT가 최대 조직이었다",
+        "en": "The International Workers' Association refounded in Berlin; the Spanish CNT was its largest section"
+      }
+    },
+    {
+      "id": "lsi",
+      "column": "socdem",
+      "year": 1923,
+      "period": "1923–1940",
+      "label": {
+        "ko": "노동사회주의 인터내셔널 (LSI)",
+        "en": "Labour and Socialist International"
+      }
+    },
+    {
+      "id": "left-opposition-intl",
+      "column": "dissident",
+      "year": 1930,
+      "period": "1930–1938",
+      "label": {
+        "ko": "국제좌익반대파",
+        "en": "International Left Opposition"
+      },
+      "ref": {
+        "type": "term",
+        "id": "permanent-revolution"
+      }
+    },
+    {
+      "id": "fourth-intl",
+      "column": "dissident",
+      "year": 1938,
+      "period": "1938–",
+      "label": {
+        "ko": "제4인터내셔널",
+        "en": "Fourth International"
+      },
+      "ref": {
+        "type": "person",
+        "id": "trotsky"
+      }
+    },
+    {
+      "id": "cominform",
+      "column": "communist",
+      "year": 1947,
+      "period": "1947–1956",
+      "label": {
+        "ko": "코민포름",
+        "en": "Cominform"
+      },
+      "ref": {
+        "type": "term",
+        "id": "cominform"
+      }
+    },
+    {
+      "id": "tito-split",
+      "column": "dissident",
+      "year": 1948,
+      "period": "1948",
+      "label": {
+        "ko": "티토의 독자 노선",
+        "en": "Tito's separate road"
+      },
+      "ref": {
+        "type": "person",
+        "id": "josip-broz-tito"
+      },
+      "note": {
+        "ko": "1948년 코민포름에서 제명된 뒤 자주관리 사회주의와 비동맹 노선으로 나아갔다",
+        "en": "Expelled from the Cominform in 1948; went on to self-management socialism and non-alignment"
+      }
+    },
+    {
+      "id": "socialist-intl",
+      "column": "socdem",
+      "year": 1951,
+      "period": "1951–",
+      "label": {
+        "ko": "사회주의 인터내셔널 (SI)",
+        "en": "Socialist International"
+      },
+      "note": {
+        "ko": "프랑크푸르트 선언으로 재건된 사회민주주의 정당들의 국제 조직",
+        "en": "The postwar international of social democratic parties, refounded with the Frankfurt Declaration"
+      }
+    },
+    {
+      "id": "fi-splits",
+      "column": "dissident",
+      "year": 1953,
+      "period": "1953 / 1963",
+      "label": {
+        "ko": "제4인터의 분열과 재통합",
+        "en": "The Fourth International splits and reunifies"
+      },
+      "note": {
+        "ko": "1953년 국제위원회(ICFI)가 분립했고, 1963년 다수가 통합서기국(USFI)으로 재결합했다",
+        "en": "The International Committee split away in 1953; most sections reunified as the United Secretariat in 1963"
+      }
+    },
+    {
+      "id": "sino-soviet",
+      "column": "communist",
+      "year": 1960,
+      "period": "1956–1964",
+      "label": {
+        "ko": "중소 분쟁: 진영의 분열",
+        "en": "The Sino-Soviet split"
+      },
+      "ref": {
+        "type": "term",
+        "id": "socialist-camp"
+      },
+      "note": {
+        "ko": "탈스탈린화와 평화공존 노선을 둘러싸고 소련공산당과 중국공산당이 결별했다",
+        "en": "The Soviet and Chinese parties broke over de-Stalinization and peaceful coexistence"
+      }
+    },
+    {
+      "id": "maoist",
+      "column": "dissident",
+      "year": 1966,
+      "period": "1960년대–",
+      "label": {
+        "ko": "마오주의 국제 운동",
+        "en": "The international Maoist movement"
+      },
+      "ref": {
+        "type": "person",
+        "id": "mao-zedong"
+      }
+    },
+    {
+      "id": "eurocommunism",
+      "column": "communist",
+      "year": 1975,
+      "period": "1970년대–1980년대",
+      "label": {
+        "ko": "유러코뮤니즘",
+        "en": "Eurocommunism"
+      },
+      "ref": {
+        "type": "term",
+        "id": "eurocommunism"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "iwa",
+      "to": "bakuninists",
+      "type": "split",
+      "label": {
+        "ko": "1872 헤이그 대회",
+        "en": "Hague Congress, 1872"
+      }
+    },
+    {
+      "from": "iwa",
+      "to": "second-intl",
+      "type": "succession",
+      "label": {
+        "ko": "1876 해산, 1889 재건",
+        "en": "dissolved 1876, refounded 1889"
+      }
+    },
+    {
+      "from": "bakuninists",
+      "to": "syndicalist-iwa",
+      "type": "influence",
+      "label": {
+        "ko": "생디칼리슴으로",
+        "en": "into syndicalism"
+      }
+    },
+    {
+      "from": "second-intl",
+      "to": "revisionism",
+      "type": "split"
+    },
+    {
+      "from": "revisionism",
+      "to": "mass-strike-debate",
+      "type": "opposition"
+    },
+    {
+      "from": "second-intl",
+      "to": "zimmerwald",
+      "type": "split",
+      "label": {
+        "ko": "1914 붕괴, 반전파 결집",
+        "en": "1914 collapse; the anti-war left regroups"
+      },
+      "labelT": 0.85
+    },
+    {
+      "from": "second-intl",
+      "to": "two-half",
+      "type": "split",
+      "label": {
+        "ko": "중간파",
+        "en": "the centrists"
+      },
+      "labelT": 0.4
+    },
+    {
+      "from": "second-intl",
+      "to": "lsi",
+      "type": "succession"
+    },
+    {
+      "from": "two-half",
+      "to": "lsi",
+      "type": "merge",
+      "label": {
+        "ko": "1923 함부르크 합동",
+        "en": "Hamburg merger, 1923"
+      }
+    },
+    {
+      "from": "lsi",
+      "to": "socialist-intl",
+      "type": "succession",
+      "label": {
+        "ko": "1951 프랑크푸르트",
+        "en": "Frankfurt, 1951"
+      }
+    },
+    {
+      "from": "zimmerwald",
+      "to": "comintern",
+      "type": "succession",
+      "label": {
+        "ko": "치머발트 좌파",
+        "en": "the Zimmerwald Left"
+      }
+    },
+    {
+      "from": "comintern",
+      "to": "lsi",
+      "type": "opposition"
+    },
+    {
+      "from": "comintern",
+      "to": "council-communism",
+      "type": "split"
+    },
+    {
+      "from": "comintern",
+      "to": "left-opposition-intl",
+      "type": "split",
+      "label": {
+        "ko": "트로츠키파 제명",
+        "en": "Trotskyists expelled"
+      }
+    },
+    {
+      "from": "left-opposition-intl",
+      "to": "fourth-intl",
+      "type": "succession"
+    },
+    {
+      "from": "comintern",
+      "to": "cominform",
+      "type": "succession",
+      "label": {
+        "ko": "1943 해산 뒤 재결집",
+        "en": "regrouped after the 1943 dissolution"
+      },
+      "labelT": 0.5
+    },
+    {
+      "from": "cominform",
+      "to": "tito-split",
+      "type": "split"
+    },
+    {
+      "from": "cominform",
+      "to": "sino-soviet",
+      "type": "succession"
+    },
+    {
+      "from": "sino-soviet",
+      "to": "maoist",
+      "type": "split",
+      "label": {
+        "ko": "친중 정당들의 분립",
+        "en": "pro-Chinese parties secede"
+      }
+    },
+    {
+      "from": "sino-soviet",
+      "to": "eurocommunism",
+      "type": "influence",
+      "label": {
+        "ko": "소련 지도권 약화",
+        "en": "Soviet authority weakened"
+      }
+    },
+    {
+      "from": "fourth-intl",
+      "to": "fi-splits",
+      "type": "succession"
+    }
+  ]
+}
