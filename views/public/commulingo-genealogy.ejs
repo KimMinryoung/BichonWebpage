@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-genealogy-page" data-lang="<%= lang %>">
+        <a class="commu-back-link" href="/commulingo/genealogy">← <%= en ? 'Genealogy Charts' : '계보도' %></a>
+        <header class="box commulingo-hero">
+            <div><h1><%= chart.title %></h1><p><%= chart.description %></p></div>
+        </header>
+        <figure class="box gen-figure">
+            <div class="gen-scroll" tabindex="0" role="group" aria-label="<%= chart.title %>">
+                <%- svg %>
+            </div>
+            <figcaption class="gen-legend">
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-flow" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'succession · split · merger' : '계승 · 분화 · 합류' %></span>
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-influence" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'influence' : '영향' %></span>
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-opposition" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'antagonism' : '대립' %></span>
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-end" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'suppression' : '소멸' %></span>
+                <span class="gen-legend-note"><%= en ? 'Framed nodes open a dictionary entry.' : '테두리가 밝은 노드는 사전 항목으로 연결됩니다.' %></span>
+            </figcaption>
+        </figure>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

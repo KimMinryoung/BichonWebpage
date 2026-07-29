@@ -3414,3 +3414,47 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     opacity: .75;
 }
 .commu-book-dictionary h3:first-of-type { margin-top: .75rem; }
+
+/* ── Genealogy charts (/commulingo/genealogy) ─────────────────────────────
+   The SVG is drawn server-side (data/commulingo/genealogy-svg.js) with class
+   hooks only, so every color resolves here and follows the theme. The chart
+   is wider than a phone: it scrolls horizontally inside .gen-scroll while the
+   page itself never does. */
+.gen-figure { padding: .75rem; margin: 0; }
+.gen-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.gen-svg { display: block; font-family: inherit; }
+
+.gen-col-header { fill: var(--text-secondary); font-size: 14px; font-weight: 600; }
+.gen-year { fill: var(--text-muted); font-size: 11px; }
+.gen-gridline { stroke: color-mix(in srgb, var(--border) 18%, transparent); stroke-width: 1; }
+.gen-lane-sep { stroke: color-mix(in srgb, var(--border) 10%, transparent); stroke-width: 1; }
+
+.gen-node rect { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 45%, transparent); stroke-width: 1; }
+.gen-node-linked rect { stroke: var(--link); stroke-width: 1.2; }
+a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: var(--link-hover); fill: var(--bg-surface); }
+.gen-node-label { fill: var(--text-primary); font-size: 12.5px; font-weight: 600; }
+.gen-node-linked .gen-node-label { fill: var(--link); }
+a:hover .gen-node-linked .gen-node-label { fill: var(--link-hover); }
+.gen-node-period { fill: var(--text-muted); font-size: 10.5px; }
+
+.gen-edge { fill: none; stroke-width: 1.5; }
+.gen-edge-flow { stroke: color-mix(in srgb, var(--text-secondary) 75%, transparent); }
+.gen-edge-influence { stroke: color-mix(in srgb, var(--text-muted) 80%, transparent); stroke-dasharray: 6 4; }
+.gen-edge-opposition { stroke: color-mix(in srgb, var(--accent-red) 80%, transparent); stroke-dasharray: 2 4; stroke-linecap: round; }
+.gen-edge-end { stroke: color-mix(in srgb, var(--accent-red) 55%, var(--clr-muted)); stroke-dasharray: 2 4; stroke-linecap: round; }
+.gen-marker-flow path { fill: color-mix(in srgb, var(--text-secondary) 75%, transparent); }
+.gen-marker-influence path { fill: color-mix(in srgb, var(--text-muted) 80%, transparent); }
+.gen-marker-end path { fill: color-mix(in srgb, var(--accent-red) 55%, var(--clr-muted)); }
+.gen-edge-label {
+    fill: var(--text-muted);
+    font-size: 10.5px;
+    paint-order: stroke;
+    stroke: var(--bg-surface);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+}
+
+.gen-legend { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; align-items: center; margin-top: .6rem; font-size: .82rem; color: var(--text-muted); }
+.gen-legend-item { display: inline-flex; align-items: center; gap: .4rem; }
+.gen-legend-item svg { flex: none; }
+.gen-legend-note { flex-basis: 100%; }

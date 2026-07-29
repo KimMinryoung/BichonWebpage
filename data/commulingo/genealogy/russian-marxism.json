@@ -1,0 +1,245 @@
+{
+  "id": "russian-marxism",
+  "title": {
+    "ko": "러시아 마르크스주의 분파 계보",
+    "en": "Currents of Russian Marxism"
+  },
+  "description": {
+    "ko": "플레하노프의 노동해방단(1883)에서 제4인터내셔널(1938)까지, 러시아 마르크스주의가 갈라지고 합쳐진 60년의 계보. 노드를 누르면 해당 용어·인물·사건 사전 항목으로 이동한다.",
+    "en": "Sixty years of splits and mergers in Russian Marxism, from Plekhanov's Emancipation of Labour group (1883) to the Fourth International (1938). Click a node to open its dictionary entry."
+  },
+  "timeStart": 1870,
+  "timeEnd": 1942,
+  "columns": [
+    { "id": "margins", "label": { "ko": "주변 흐름", "en": "Margins" } },
+    { "id": "mensheviks", "label": { "ko": "멘셰비키 계열", "en": "Menshevik line" } },
+    { "id": "mainline", "label": { "ko": "당 주류", "en": "Party mainline" } },
+    { "id": "opposition", "label": { "ko": "당내 반대파", "en": "Inner-party oppositions" } },
+    { "id": "trotskyist", "label": { "ko": "트로츠키 계열·국제", "en": "Trotskyist line, abroad" } }
+  ],
+  "nodes": [
+    {
+      "id": "narodniks",
+      "column": "margins",
+      "year": 1874,
+      "period": "1860년대~1880년대",
+      "label": { "ko": "나로드니키 (인민주의)", "en": "Narodniks (Populism)" },
+      "note": { "ko": "농민공동체에 기초한 사회주의를 추구. 러시아 마르크스주의가 처음 맞선 상대이자 그 출신 모체", "en": "Sought a socialism based on the peasant commune; the first opponent of Russian Marxism and the milieu it came out of" }
+    },
+    {
+      "id": "emancipation-labour",
+      "column": "mainline",
+      "year": 1883,
+      "period": "1883–1903",
+      "label": { "ko": "노동해방단 (플레하노프)", "en": "Emancipation of Labour (Plekhanov)" },
+      "ref": { "type": "person", "id": "plekhanov" }
+    },
+    {
+      "id": "legal-marxism",
+      "column": "margins",
+      "year": 1894,
+      "period": "1894–1901",
+      "label": { "ko": "합법적 마르크스주의", "en": "Legal Marxism" },
+      "ref": { "type": "term", "id": "legal-marxism" }
+    },
+    {
+      "id": "economism",
+      "column": "margins",
+      "year": 1899,
+      "period": "1899–1903",
+      "label": { "ko": "경제주의", "en": "Economism" },
+      "note": { "ko": "정치투쟁을 뒤로 미루고 경제투쟁에 집중하자는 조류. 『이스크라』의 주된 논적", "en": "Held that economic struggle should come before political struggle; Iskra's main polemical target" }
+    },
+    {
+      "id": "rsdlp",
+      "column": "mainline",
+      "year": 1898,
+      "period": "1898",
+      "label": { "ko": "러시아사회민주노동당 창당", "en": "RSDLP founded" }
+    },
+    {
+      "id": "iskra",
+      "column": "mainline",
+      "year": 1900,
+      "period": "1900–1903",
+      "label": { "ko": "『이스크라』", "en": "Iskra" },
+      "ref": { "type": "term", "id": "iskra" }
+    },
+    {
+      "id": "bolsheviks",
+      "column": "mainline",
+      "year": 1903,
+      "period": "1903–",
+      "label": { "ko": "볼셰비키 (레닌)", "en": "Bolsheviks (Lenin)" },
+      "ref": { "type": "person", "id": "lenin" }
+    },
+    {
+      "id": "mensheviks",
+      "column": "mensheviks",
+      "year": 1903,
+      "endYear": 1921,
+      "period": "1903–1921",
+      "label": { "ko": "멘셰비키 (마르토프)", "en": "Mensheviks (Martov)" },
+      "ref": { "type": "person", "id": "martov" },
+      "note": { "ko": "내전기 탄압과 1921년 이후 사실상 불법화로 국내 조직 소멸, 지도부는 망명", "en": "Suppressed during the civil war and effectively outlawed after 1921; the leadership emigrated" }
+    },
+    {
+      "id": "liquidationism",
+      "column": "mensheviks",
+      "year": 1907,
+      "period": "1907–1912",
+      "label": { "ko": "청산주의", "en": "Liquidationism" },
+      "ref": { "type": "term", "id": "liquidationism" }
+    },
+    {
+      "id": "vpered",
+      "column": "opposition",
+      "year": 1909,
+      "period": "1909–1913",
+      "label": { "ko": "전진파 (보그다노프)", "en": "Vpered group (Bogdanov)" },
+      "ref": { "type": "person", "id": "alexander-bogdanov" }
+    },
+    {
+      "id": "mezhraiontsy",
+      "column": "trotskyist",
+      "year": 1913,
+      "period": "1913–1917",
+      "label": { "ko": "메즈라이온파 (트로츠키)", "en": "Mezhraiontsy (Trotsky)" },
+      "ref": { "type": "person", "id": "trotsky" }
+    },
+    {
+      "id": "menshevik-split-1914",
+      "column": "mensheviks",
+      "year": 1914,
+      "period": "1914",
+      "label": { "ko": "방위파 / 국제주의파", "en": "Defencists / Internationalists" },
+      "note": { "ko": "제1차 세계대전 참전 지지 여부를 놓고 멘셰비키가 갈라졌다", "en": "The Mensheviks divided over support for the war" }
+    },
+    {
+      "id": "october",
+      "column": "mainline",
+      "year": 1917,
+      "period": "1917–1918",
+      "label": { "ko": "10월 혁명, 러시아공산당(볼)", "en": "October Revolution; RCP(b)" },
+      "ref": { "type": "event", "id": "october-revolution" }
+    },
+    {
+      "id": "left-communists",
+      "column": "opposition",
+      "year": 1918,
+      "period": "1918",
+      "label": { "ko": "좌익공산주의자", "en": "Left Communists" },
+      "ref": { "type": "term", "id": "left-communists" },
+      "note": { "ko": "브레스트 강화에 반대해 결성, 그해 안에 해소", "en": "Formed against the Brest peace; dissolved within the year" }
+    },
+    {
+      "id": "workers-opposition",
+      "column": "opposition",
+      "year": 1920,
+      "period": "1920–1921",
+      "label": { "ko": "노동자반대파", "en": "Workers' Opposition" },
+      "note": { "ko": "노동조합의 생산 관리를 요구. 1921년 제10차 당대회의 분파 금지 결의로 해산", "en": "Demanded trade-union management of production; disbanded by the 10th Congress ban on factions (1921)" }
+    },
+    {
+      "id": "left-opposition",
+      "column": "opposition",
+      "year": 1923,
+      "period": "1923–1927",
+      "label": { "ko": "좌익반대파", "en": "Left Opposition" },
+      "ref": { "type": "term", "id": "left-opposition" }
+    },
+    {
+      "id": "stalin-line",
+      "column": "mainline",
+      "year": 1924,
+      "period": "1924–",
+      "label": { "ko": "일국사회주의 노선 (스탈린 다수파)", "en": "Socialism in one country (Stalin majority)" },
+      "ref": { "type": "term", "id": "socialism-in-one-country" }
+    },
+    {
+      "id": "new-opposition",
+      "column": "opposition",
+      "year": 1925,
+      "period": "1925–1926",
+      "label": { "ko": "신반대파 (레닌그라드파)", "en": "New Opposition (Leningrad)" },
+      "ref": { "type": "person", "id": "zinoviev" }
+    },
+    {
+      "id": "united-opposition",
+      "column": "opposition",
+      "year": 1926,
+      "period": "1926–1927",
+      "label": { "ko": "통합반대파", "en": "United Opposition" },
+      "note": { "ko": "좌익반대파와 신반대파의 연합. 1927년 15차 당대회를 앞두고 제명·추방", "en": "Alliance of the Left and New Oppositions; expelled and exiled before the 15th Congress (1927)" }
+    },
+    {
+      "id": "right-opposition",
+      "column": "opposition",
+      "year": 1928,
+      "period": "1928–1930",
+      "label": { "ko": "우익반대파 (부하린)", "en": "Right Opposition (Bukharin)" },
+      "ref": { "type": "term", "id": "right-opposition" }
+    },
+    {
+      "id": "intl-left-opp",
+      "column": "trotskyist",
+      "year": 1930,
+      "period": "1930–1938",
+      "label": { "ko": "국제좌익반대파", "en": "International Left Opposition" },
+      "ref": { "type": "term", "id": "permanent-revolution" }
+    },
+    {
+      "id": "socialism-victorious",
+      "column": "mainline",
+      "year": 1936,
+      "period": "1936",
+      "label": { "ko": "'승리한 사회주의' (1936년 헌법)", "en": "'Socialism victorious' (1936 Constitution)" },
+      "ref": { "type": "term", "id": "1936-soviet-constitution" }
+    },
+    {
+      "id": "great-purge",
+      "column": "opposition",
+      "year": 1936,
+      "endYear": 1938,
+      "period": "1936–1938",
+      "label": { "ko": "대숙청: 옛 반대파의 소멸", "en": "Great Purge: the oppositions destroyed" },
+      "ref": { "type": "event", "id": "great-terror" }
+    },
+    {
+      "id": "fourth-intl",
+      "column": "trotskyist",
+      "year": 1938,
+      "period": "1938",
+      "label": { "ko": "제4인터내셔널", "en": "Fourth International" },
+      "ref": { "type": "person", "id": "trotsky" }
+    }
+  ],
+  "edges": [
+    { "from": "narodniks", "to": "emancipation-labour", "type": "influence", "label": { "ko": "플레하노프의 전향", "en": "Plekhanov's conversion" } },
+    { "from": "emancipation-labour", "to": "rsdlp", "type": "succession" },
+    { "from": "legal-marxism", "to": "rsdlp", "type": "influence", "label": { "ko": "일부 초기 합류", "en": "some early adherents" } },
+    { "from": "economism", "to": "iskra", "type": "opposition" },
+    { "from": "rsdlp", "to": "iskra", "type": "succession" },
+    { "from": "iskra", "to": "bolsheviks", "type": "split" },
+    { "from": "iskra", "to": "mensheviks", "type": "split" },
+    { "from": "mensheviks", "to": "liquidationism", "type": "split" },
+    { "from": "mensheviks", "to": "menshevik-split-1914", "type": "split", "label": { "ko": "전쟁 문제", "en": "the war question" } },
+    { "from": "bolsheviks", "to": "vpered", "type": "split", "label": { "ko": "1909 제명", "en": "expelled 1909" } },
+    { "from": "vpered", "to": "october", "type": "merge", "label": { "ko": "1917 일부 복귀", "en": "some rejoined, 1917" } },
+    { "from": "mezhraiontsy", "to": "october", "type": "merge", "label": { "ko": "1917년 7월 합류", "en": "joined July 1917" } },
+    { "from": "bolsheviks", "to": "october", "type": "succession" },
+    { "from": "october", "to": "left-communists", "type": "split" },
+    { "from": "october", "to": "workers-opposition", "type": "split" },
+    { "from": "october", "to": "left-opposition", "type": "split", "label": { "ko": "1923 논쟁", "en": "the 1923 debate" } },
+    { "from": "october", "to": "stalin-line", "type": "succession" },
+    { "from": "stalin-line", "to": "new-opposition", "type": "split" },
+    { "from": "left-opposition", "to": "united-opposition", "type": "merge" },
+    { "from": "new-opposition", "to": "united-opposition", "type": "merge" },
+    { "from": "united-opposition", "to": "intl-left-opp", "type": "succession", "label": { "ko": "제명·추방 후 국외 재결집", "en": "regrouped abroad after expulsion" } },
+    { "from": "stalin-line", "to": "right-opposition", "type": "split", "label": { "ko": "집단화 논쟁", "en": "the collectivization dispute" } },
+    { "from": "stalin-line", "to": "socialism-victorious", "type": "succession" },
+    { "from": "right-opposition", "to": "great-purge", "type": "end", "label": { "ko": "굴복 후 재판·처형", "en": "trials and execution after capitulation" } },
+    { "from": "united-opposition", "to": "great-purge", "type": "end" },
+    { "from": "intl-left-opp", "to": "fourth-intl", "type": "succession" }
+  ]
+}
