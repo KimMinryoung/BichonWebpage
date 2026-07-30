@@ -67,6 +67,26 @@ const BLOCKED_KO = [
 // Every 푸시킨 in this corpus is the poet, not Georgy Pushkin the diplomat;
 // every 시테른 is Lina Stern or Lev Shternberg, not Grigory Shtern; and every
 // 톨스토이 is Leo, not Alexei. Each of the three keeps their full name.
+// Real-name forms a simplified display name leaves out. The canonical-word test
+// in buildPersonLinkIndex exists to refuse the party pseudonyms people carry in
+// their alias rows — 랴린, 키이, 야포네츠, 표트르 — which are ordinary words and
+// would be dangerous to link on sight. That test also refuses a birth surname
+// once the display name stops carrying it, which is not what you want: 오신스키
+// is the pen name the dictionary shows, and prose that calls him 오볼렌스키 means
+// the same person. Listing a form here trusts it; a single-word form still has
+// to belong to nobody else's name.
+const TRUSTED_NAME_FORMS = {
+    osinsky: {
+        ko: ['오볼렌스키', '발레리안 오볼렌스키'],
+        en: ['Obolensky', 'Valerian Obolensky'],
+    },
+};
+
+function trustedFormsFor(personId, lang) {
+    const entry = TRUSTED_NAME_FORMS[personId];
+    return (entry && entry[lang]) || [];
+}
+
 const NEVER_LINK_ALIAS_KO = [
     '카스트로', '보스', '미신', '레비',
     '스트롱', '리드', '포스터', '퍼스트', '피크', '더트', '보시', '팔린',
@@ -179,12 +199,19 @@ function buildPersonLinkIndex(people, options = {}) {
             if (!en && NEVER_LINK_ALIAS_KO.includes(alias)) return;
             if (en && NEVER_LINK_ALIAS_EN.includes(alias.toLowerCase())) return;
             const words = alias.toLowerCase().split(/\s+/).filter(Boolean);
-            // Only link aliases made of this person's own canonical-name words…
-            if (!words.every(word => canonicalWords.has(word))) return;
-            // …and never link a single word shared by two or more people.
+            const trusted = trustedFormsFor(person.id, lang).includes(alias);
+            // Only link aliases made of this person's own canonical-name words,
+            // unless the alias is a declared real-name form (see
+            // TRUSTED_NAME_FORMS) that the display name no longer carries.
+            if (!trusted && !words.every(word => canonicalWords.has(word))) return;
+            // …and never link a single word shared by two or more people. A
+            // trusted form's word is in nobody's canonical name, so for it the
+            // question is only whether the word turns out to be somebody else's.
             if (words.length === 1) {
                 const owners = wordOwners[words[0]];
-                if (!owners || owners.size > 1) return;
+                if (trusted) {
+                    if (owners && (owners.size > 1 || !owners.has(person.id))) return;
+                } else if (!owners || owners.size > 1) return;
             }
             if (byAlias[alias]) return;
             byAlias[alias] = person;
