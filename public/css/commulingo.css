@@ -3291,8 +3291,40 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-head h1 { margin: .25rem 0; }
 .commu-event-question { font-weight: 700; font-size: 1.08rem; }
 /* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
-.commu-term-parent { margin: .3rem 0 0; font-size: .92rem; color: var(--text-muted); font-weight: 700; letter-spacing: .02em; }
-.commu-term-parent a { color: var(--accent, #b84f4f); }
+/* '상위 항목 · 대숙청' on a nested glossary entry. A reader who lands on
+   예조프시나 or 모스크바 재판 has to see which entry it sits under before the
+   definition means much, so it gets a box of its own rather than a line of
+   small print: label and parent name both inside it, the whole box clickable.
+   The colour is carried by the border and a tinted panel, not by the text — the
+   accent green this used to set on the type fails contrast as a text colour on
+   the dark canvas (4.0 at #214d2e), while the name at --text-primary reads at
+   full strength and the 3px edge is what marks it out. */
+.commu-term-parent { margin: .55rem 0 0; }
+.commu-term-parent a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: .5rem;
+    padding: .35rem .75rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: color-mix(in srgb, var(--link) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--link) 45%, var(--border));
+    border-left: 3px solid var(--link);
+    border-radius: 3px;
+    font-size: .92rem;
+    letter-spacing: .02em;
+}
+.commu-term-parent a:hover {
+    background: color-mix(in srgb, var(--link) 22%, transparent);
+    border-color: var(--link);
+}
+.commu-term-parent-label {
+    color: var(--text-muted);
+    font-size: .84rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.commu-term-parent strong { font-weight: 700; }
 /* Tabs between the two halves of one subject (glossary entry / history entry).
    Built on the dictionary switcher: same gesture, one level down. */
 .commu-pair-tabs { margin: 1rem 0 0; }

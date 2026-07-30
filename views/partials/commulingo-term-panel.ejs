@@ -8,8 +8,11 @@
             <h1><%= p.term.term %></h1>
             <% if (p.term.termOther) { %><p class="commu-event-question"><%= p.term.termOther %></p><% } %>
             <% if (p.term.parent) { %>
-            <p class="commu-term-parent"><%= en ? 'Part of' : '상위 항목' %> ·
-                <a href="/commulingo/terms/<%= encodeURIComponent(p.term.parent.id) %>"><%= p.term.parent.term %></a>
+            <p class="commu-term-parent">
+                <a href="/commulingo/terms/<%= encodeURIComponent(p.term.parent.id) %>">
+                    <span class="commu-term-parent-label"><%= en ? 'Part of' : '상위 항목' %></span>
+                    <strong><%= p.term.parent.term %></strong>
+                </a>
             </p>
             <% } %>
             <p><%- p.definitionHtml %></p>
