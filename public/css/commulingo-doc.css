@@ -95,6 +95,26 @@
   color: var(--text-secondary);
 }
 
+/* Prose links in the document body — signatory names, cross-referenced works.
+   Same vocabulary as the dictionaries (commulingo.css .commu-doc-link): the
+   text keeps the body colour and a dotted rule carries the affordance. Recolour
+   was worse than nothing here. --link on the dark canvas is #5d7a5a, 4.30
+   against the canvas where body text is 18.36, so a linked name in a list of
+   plain ones read as the *dimmer* item instead of the actionable one.
+   The footnote markers below opt out: they are superscript digits already set
+   apart by position, and an underline under a [7] reads as a stray mark. */
+.book article a:not(.note-ref),
+.book .notes-list a:not(.back-link) {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px dotted var(--link, #5d7a5a);
+}
+
+.book article a:not(.note-ref):hover,
+.book .notes-list a:not(.back-link):hover {
+  border-bottom-style: solid;
+}
+
 /* Footnote references in the running text. */
 .note-ref {
   font-size: 0.72em;

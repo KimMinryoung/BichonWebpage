@@ -465,8 +465,8 @@
         {
           "id": "yuri-pyatakov",
           "name": {
-            "ko": "유리 퍄타코프",
-            "en": "Yuri Pyatakov"
+            "ko": "게오르기 퍄타코프",
+            "en": "Georgy Pyatakov"
           }
         },
         {
@@ -530,6 +530,20 @@
           "name": {
             "ko": "보리스 엘친",
             "en": "Boris Eltsin"
+          }
+        },
+        {
+          "id": "alexander-voronsky",
+          "name": {
+            "ko": "알렉산드르 보론스키",
+            "en": "Alexander Voronsky"
+          }
+        },
+        {
+          "id": "evgenia-bosch",
+          "name": {
+            "ko": "예브게니야 보시",
+            "en": "Evgenia Bosch"
           }
         }
       ],

@@ -41,6 +41,10 @@ const LEGACY_OFFICE_IDS = {
 
 const LEGACY_PERSON_IDS = {
     'stepan-shahumyan': 'stepan-shaumyan',
+    // Duplicate records merged into their canonical entry. Both halves were
+    // linked from term and event pages, so the dropped id keeps redirecting.
+    'valerian-obolensky': 'osinsky',
+    'georgy-piatakov': 'yuri-pyatakov',
 };
 
 const LEGACY_ROLE_CATEGORY_IDS = {
