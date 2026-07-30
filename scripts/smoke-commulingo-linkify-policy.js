@@ -12,6 +12,15 @@ const { buildEventLinkIndex } = require('../data/commulingo/event-linkify');
 const { buildDocLinkIndex } = require('../data/commulingo/doc-linkify');
 const { buildTopicLinkIndex } = require('../data/commulingo/topic-linkify');
 const { KIND_ORDER, SURFACES, createLinker, createCardTextLinker } = require('../data/commulingo/linkify');
+const { installLinkBlocklist } = require('../data/commulingo/link-blocklist');
+
+// The blocklist is a table now (commulingo_link_blocklist); install the three
+// phrases these assertions turn on so the file stays database-free.
+installLinkBlocklist([
+    { lang: 'ko', phrase: '레닌그라드' },
+    { lang: 'ko', phrase: '비테프스크' },
+    { lang: 'en', phrase: 'Leonid Pasternak' },
+]);
 
 const people = [{
     id: 'stalin',

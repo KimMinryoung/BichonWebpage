@@ -34,7 +34,6 @@
 
 const {
     WORD_CHAR,
-    BLOCKED_KO,
     escapeHtml,
     mapLinkableText,
     buildPersonLinkIndex,
@@ -49,6 +48,7 @@ const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { listCommuLingoDocs } = require('./docs-store');
 const { loadCommuLingoCatalog } = require('./shards');
 const { normalizeCommuLingoPeople } = require('./people-standard');
+const { loadLinkBlocklist, blocklistRef, blockedPhrases } = require('./link-blocklist');
 
 // Most specific first. The two headwords both dictionaries carry (대숙청,
 // 신경제정책) are same-subject pairs whose pages each show the other half, so
@@ -158,11 +158,15 @@ function openEntityLinksInNewTab(html) {
 // dictionary routes, the report linker, this module's index builder — shares one
 // copy and rebuilds at most once per refresh. A fresh snapshot (?fresh=1) is a
 // new reference and invalidates the memo by itself.
-let stdMemo = { dataRef: null, catalogRef: null, byLang: {} };
+let stdMemo = { dataRef: null, catalogRef: null, blocklistRef: null, byLang: {} };
 
 function standardizedFor(data, catalog, lang) {
-    if (stdMemo.dataRef !== data || stdMemo.catalogRef !== catalog) {
-        stdMemo = { dataRef: data, catalogRef: catalog, byLang: {} };
+    // personIndex is built from the blocklist, so a changed blocklist is a
+    // changed index — the same reason the data and catalog references are here.
+    const blocklist = blocklistRef();
+    if (stdMemo.dataRef !== data || stdMemo.catalogRef !== catalog
+        || stdMemo.blocklistRef !== blocklist) {
+        stdMemo = { dataRef: data, catalogRef: catalog, blocklistRef: blocklist, byLang: {} };
     }
     let entry = stdMemo.byLang[lang];
     if (!entry) {
@@ -179,24 +183,26 @@ function standardizedFor(data, catalog, lang) {
 
 // One index set per language, memoized against the five source references.
 let indexMemo = {
-    peopleRef: null, catalogRef: null, termsRef: null, eventsRef: null, docsRef: null, byLang: {},
+    peopleRef: null, catalogRef: null, termsRef: null, eventsRef: null, docsRef: null,
+    blocklistRef: null, byLang: {},
 };
 
 async function getLinkIndexes(lang) {
     const safeLang = lang === 'en' ? 'en' : 'ko';
     const catalog = loadCommuLingoCatalog();
     const docs = listCommuLingoDocs();
-    const [loaded, terms, events] = await Promise.all([
+    const [loaded, terms, events, blocklist] = await Promise.all([
         loadCommuLingoPeople(),
         loadCommuLingoTerms(),
         loadCommuLingoHistoryEvents(),
+        loadLinkBlocklist(),
     ]);
     if (indexMemo.peopleRef !== loaded.data || indexMemo.catalogRef !== catalog
         || indexMemo.termsRef !== terms || indexMemo.eventsRef !== events
-        || indexMemo.docsRef !== docs) {
+        || indexMemo.docsRef !== docs || indexMemo.blocklistRef !== blocklist) {
         indexMemo = {
             peopleRef: loaded.data, catalogRef: catalog, termsRef: terms,
-            eventsRef: events, docsRef: docs, byLang: {},
+            eventsRef: events, docsRef: docs, blocklistRef: blocklist, byLang: {},
         };
     }
     let entry = indexMemo.byLang[safeLang];
@@ -336,7 +342,7 @@ function clientPersonLinkPayload(indexes) {
         }
         person.aliases.push(alias);
     });
-    const payload = { blocked: index.en ? [] : BLOCKED_KO, people: [...byId.values()] };
+    const payload = { blocked: index.en ? [] : blockedPhrases('ko'), people: [...byId.values()] };
     clientPayloadMemo.set(indexes, payload);
     return payload;
 }
