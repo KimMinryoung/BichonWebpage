@@ -3084,9 +3084,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     padding-left: 12px;
 }
 
-.commu-person-markdown a {
-    color: var(--link);
-}
+/* No blanket colour for links in section prose. `.commu-person-markdown a` is a
+   descendant selector, so it outranked .commu-term-link and its siblings and
+   recoloured the very links those rules deliberately leave at the body colour —
+   a section body full of dictionary links read as a wall of #5d7a5a. Entry links
+   are governed by their own classes further down, and the hand-written ones by
+   the a:not([class]) rule beside them. */
 
 .commu-person-markdown code {
     background: var(--bg-surface);
