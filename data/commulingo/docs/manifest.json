@@ -496,6 +496,41 @@
             "ko": "바르바라 야코블레바",
             "en": "Varvara Yakovleva"
           }
+        },
+        {
+          "id": "ivan-smirnov",
+          "name": {
+            "ko": "이반 스미르노프",
+            "en": "Ivan Smirnov"
+          }
+        },
+        {
+          "id": "vladimir-smirnov",
+          "name": {
+            "ko": "블라디미르 스미르노프",
+            "en": "Vladimir Smirnov"
+          }
+        },
+        {
+          "id": "vladislav-kosior",
+          "name": {
+            "ko": "블라디슬라프 코시오르",
+            "en": "Vladislav Kosior"
+          }
+        },
+        {
+          "id": "pyotr-koganovich",
+          "name": {
+            "ko": "표트르 코가노비치",
+            "en": "Pyotr Koganovich"
+          }
+        },
+        {
+          "id": "boris-eltsin",
+          "name": {
+            "ko": "보리스 엘친",
+            "en": "Boris Eltsin"
+          }
         }
       ],
       "terms": [
