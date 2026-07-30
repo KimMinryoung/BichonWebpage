@@ -401,6 +401,153 @@
           "Yezhov: A Biography"
         ]
       }
+    },
+    {
+      "id": "declaration-of-46",
+      "file": "declaration-of-46.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "46인 선언 한국어 번역",
+        "en": "The Declaration of the 46 (Korean translation)"
+      },
+      "description": {
+        "ko": "1923년 10월 15일 46명의 당 간부가 러시아공산당 중앙위원회 정치국에 비밀로 제출한 성명의 한국어 완역. 계획 없는 지도가 낳은 경제·재정 위기를 진단한 뒤, 제10차 당대회 이후의 '분파 독재' 체제가 당을 서기 위계와 평신도로 갈라놓았다고 비판하고, 다수파와 견해가 다른 동지들을 포함한 협의회 소집을 요구한다. 서명자 12명이 붙인 유보 의견도 함께 옮겼다.",
+        "en": "Complete Korean translation of the statement submitted in secret to the Politburo of the RCP(b) Central Committee by forty-six party officials on 15 October 1923. It diagnoses the economic and financial crisis produced by unplanned leadership, argues that the regime of \"factional dictatorship\" formed after the Tenth Congress has split the party into a secretarial hierarchy and a laity, and demands a conference including comrades who differ with the majority. The reservations added by twelve signatories are translated with it."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "«Заявление 46-ти» в Политбюро ЦК РКП(б) о внутрипартийном положении, 15 октября 1923 г. 수록본: Коммунистическая оппозиция в СССР, 1923–1927, том 1, ред.-сост. Ю. Фельштинский (Терра, 1990), с. 83–88",
+      "people": [
+        {
+          "id": "preobrazhensky",
+          "name": {
+            "ko": "예브게니 프레오브라젠스키",
+            "en": "Yevgeni Preobrazhensky"
+          }
+        },
+        {
+          "id": "leonid-serebryakov",
+          "name": {
+            "ko": "레오니트 세레브랴코프",
+            "en": "Leonid Serebryakov"
+          }
+        },
+        {
+          "id": "antonov-ovseenko",
+          "name": {
+            "ko": "블라디미르 안토노프-옵세옌코",
+            "en": "Vladimir Antonov-Ovseenko"
+          }
+        },
+        {
+          "id": "timofei-sapronov",
+          "name": {
+            "ko": "티모페이 사프로노프",
+            "en": "Timofei Sapronov"
+          }
+        },
+        {
+          "id": "osinsky",
+          "name": {
+            "ko": "니콜라이 오신스키",
+            "en": "Nikolai Osinsky"
+          }
+        },
+        {
+          "id": "nikolai-muralov",
+          "name": {
+            "ko": "니콜라이 무랄로프",
+            "en": "Nikolai Muralov"
+          }
+        },
+        {
+          "id": "yuri-pyatakov",
+          "name": {
+            "ko": "유리 퍄타코프",
+            "en": "Yuri Pyatakov"
+          }
+        },
+        {
+          "id": "alexander-beloborodov",
+          "name": {
+            "ko": "알렉산드르 벨로보로도프",
+            "en": "Alexander Beloborodov"
+          }
+        },
+        {
+          "id": "andrei-bubnov",
+          "name": {
+            "ko": "안드레이 부브노프",
+            "en": "Andrei Bubnov"
+          }
+        },
+        {
+          "id": "arkady-rozengolts",
+          "name": {
+            "ko": "아르카디 로젠골츠",
+            "en": "Arkady Rozengolts"
+          }
+        },
+        {
+          "id": "varvara-yakovleva",
+          "name": {
+            "ko": "바르바라 야코블레바",
+            "en": "Varvara Yakovleva"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "id": "declaration-of-46",
+          "name": {
+            "ko": "46인 선언",
+            "en": "Declaration of 46"
+          }
+        },
+        {
+          "id": "left-opposition",
+          "name": {
+            "ko": "좌익반대파",
+            "en": "Left Opposition"
+          }
+        },
+        {
+          "id": "democratic-centralism",
+          "name": {
+            "ko": "민주집중제",
+            "en": "Democratic Centralism"
+          }
+        },
+        {
+          "id": "price-scissors",
+          "name": {
+            "ko": "가위차",
+            "en": "Price Scissors"
+          }
+        },
+        {
+          "id": "chervonets",
+          "name": {
+            "ko": "체르보네츠",
+            "en": "Chervonets"
+          }
+        }
+      ],
+      "events": [],
+      "addedAt": "2026-07-30",
+      "aliases": {
+        "ko": [
+          "46인 선언 전문",
+          "「46인 선언」",
+          "46인 선언 한국어 번역"
+        ],
+        "en": [
+          "full text of the Declaration of the 46",
+          "Declaration of the 46 (full text)"
+        ]
+      }
     }
   ]
 }
