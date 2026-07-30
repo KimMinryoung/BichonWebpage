@@ -47,6 +47,7 @@ async function fetchRows() {
         personRoles,
         roleCategories,
         sections,
+        redirects,
     ] = await Promise.all([
         db.query(
             `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
@@ -108,6 +109,11 @@ async function fetchRows() {
              FROM commulingo_person_sections
              ORDER BY person_id, sort_order, id`
         ),
+        db.query(
+            `SELECT entity_type, from_id, to_id
+             FROM commulingo_id_redirects
+             ORDER BY entity_type, from_id`
+        ),
     ]);
 
     return {
@@ -122,7 +128,40 @@ async function fetchRows() {
         personRoles: personRoles.rows,
         roleCategories: roleCategories.rows,
         sections: sections.rows,
+        redirects: redirects.rows,
     };
+}
+
+// Retired ids -> the id serving them now, as { entity_type: { from: to } }.
+// Chains are flattened here (A merged into B, B later merged into C, so A must
+// land on C in one hop) and a cycle just drops the entry rather than looping a
+// request forever.
+function rowsToRedirects(rows) {
+    const direct = {};
+    (rows || []).forEach(row => {
+        if (!row.entity_type || !row.from_id || !row.to_id) return;
+        if (!direct[row.entity_type]) direct[row.entity_type] = {};
+        direct[row.entity_type][row.from_id] = row.to_id;
+    });
+
+    const resolved = {};
+    Object.entries(direct).forEach(([type, map]) => {
+        resolved[type] = {};
+        Object.keys(map).forEach(from => {
+            const seen = new Set([from]);
+            let to = map[from];
+            while (map[to] && !seen.has(to)) {
+                seen.add(to);
+                to = map[to];
+            }
+            if (map[to] && seen.has(map[to])) {
+                console.error(`[commulingo redirects] cycle at ${type}:${from}, entry dropped`);
+                return;
+            }
+            resolved[type][from] = to;
+        });
+    });
+    return resolved;
 }
 
 function rowsToPeopleData(rows) {
@@ -249,6 +288,7 @@ function rowsToPeopleData(rows) {
         roleCategories,
         sectionCounts,
         sections: sectionsByPerson,
+        redirects: rowsToRedirects(rows.redirects),
     };
 }
 
@@ -397,10 +437,20 @@ async function loadCommuLingoPersonSections(personId) {
     }));
 }
 
+// Where a retired id should send the request, or '' if it is simply unknown.
+// Takes the loaded data object so callers read the same snapshot they rendered
+// from — and tolerates a snapshot file written before redirects existed.
+function redirectTarget(data, entityType, id) {
+    if (!data || !id) return '';
+    const map = (data.redirects || {})[entityType];
+    return (map && map[id]) || '';
+}
+
 module.exports = {
     loadCommuLingoPeople,
     snapshotCommuLingoPeople,
     loadCommuLingoPersonSections,
     clearCommuLingoPeopleCache,
+    redirectTarget,
     SNAPSHOT_PATH,
 };

@@ -4,7 +4,10 @@ const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson, currentVersion } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue } = require('../data/commulingo/people-standard');
-const { loadCommuLingoPeople: loadCommuLingoPeopleData } = require('../data/commulingo/people-store');
+const {
+    loadCommuLingoPeople: loadCommuLingoPeopleData,
+    redirectTarget,
+} = require('../data/commulingo/people-store');
 const { loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
 const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const {
@@ -32,36 +35,10 @@ async function relatedReportsForTopic(kind, id, lang) {
 
 const router = express.Router();
 
-const LEGACY_OFFICE_IDS = {
-    'heavy-industry-mic': 'heavy-military-industry',
-    security: 'state-security',
-    government: 'head-of-government',
-    planning: 'central-planning',
-};
-
-const LEGACY_PERSON_IDS = {
-    'stepan-shahumyan': 'stepan-shaumyan',
-    // Duplicate records merged into their canonical entry. Both halves were
-    // linked from term and event pages, so the dropped id keeps redirecting.
-    'valerian-obolensky': 'osinsky',
-    'georgy-piatakov': 'yuri-pyatakov',
-    // 2026-07-30: six people held two cards each — the same person entered
-    // twice under a second transliteration (or, for Zverev, under a
-    // disambiguation suffix he did not need). Merged into the left-hand id.
-    'hryhoriy-hrynko': 'grigory-grinko',
-    'alexander-tsiurupa': 'alexander-tsyurupa',
-    'zverev-defense-industry': 'sergei-zverev',
-    'efim-slavskii': 'slavsky',
-    'otto-shmidt': 'otto-schmidt',
-    'jakub-hanecki': 'yakov-ganetsky',
-};
-
-const LEGACY_ROLE_CATEGORY_IDS = {
-    writer: 'writer-artist',
-    'old-regime': 'imperial-white',
-    'intl-revolutionary': 'non-soviet-revolutionary',
-    'bloc-reformer': 'socialist-bloc-reform-leader',
-};
+// Retired ids (duplicate cards merged away, ids renamed) live in
+// commulingo_id_redirects and ride the people-store snapshot, because a merge is
+// a DB operation and should not need a deploy to keep the old URL alive. The
+// lookup happens on the not-found path only: a live id never pays for it.
 
 // Expose the flag and role-icon renderers to every CommuLingo template (and
 // their partials — the dictionary switcher nav needs roleIconSvg everywhere).
@@ -314,12 +291,11 @@ router.get('/people/cards', async (req, res) => {
 router.get('/offices/:officeId', async (req, res) => {
     try {
         const officeId = typeof req.params.officeId === 'string' ? req.params.officeId.trim() : '';
-        if (LEGACY_OFFICE_IDS[officeId]) {
-            return res.redirect(301, `/commulingo/offices/${LEGACY_OFFICE_IDS[officeId]}`);
-        }
-        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const { lang, loaded, standardized } = await loadStandardizedPeople(req, res);
         const office = standardized.offices.find(item => item.id === officeId);
         if (!office) {
+            const renamed = redirectTarget(loaded.data, 'office', officeId);
+            if (renamed) return res.redirect(301, `/commulingo/offices/${renamed}`);
             return errorPage.notFound(res, {
                 message: lang === 'en' ? 'Office not found.' : '기관을 찾을 수 없습니다.',
                 backHref: '/commulingo/people',
@@ -354,12 +330,11 @@ router.get('/offices/:officeId', async (req, res) => {
 router.get('/roles/:categoryId', async (req, res) => {
     try {
         const categoryId = typeof req.params.categoryId === 'string' ? req.params.categoryId.trim() : '';
-        if (LEGACY_ROLE_CATEGORY_IDS[categoryId]) {
-            return res.redirect(301, `/commulingo/roles/${LEGACY_ROLE_CATEGORY_IDS[categoryId]}`);
-        }
-        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const { lang, loaded, standardized } = await loadStandardizedPeople(req, res);
         const category = standardized.roleCategories[categoryId];
         if (!category) {
+            const renamed = redirectTarget(loaded.data, 'role-category', categoryId);
+            if (renamed) return res.redirect(301, `/commulingo/roles/${renamed}`);
             return errorPage.notFound(res, {
                 message: lang === 'en' ? 'Role category not found.' : '역할 범주를 찾을 수 없습니다.',
                 backHref: '/commulingo/people',
@@ -436,12 +411,11 @@ router.get('/people/national-origin/:code', (req, res) => renderNationalityPeopl
 router.get('/people/:personId', async (req, res) => {
     try {
         const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
-        if (LEGACY_PERSON_IDS[personId]) {
-            return res.redirect(301, `/commulingo/people/${LEGACY_PERSON_IDS[personId]}`);
-        }
         const { lang, loaded, standardized } = await loadStandardizedPeople(req, res);
         const person = standardized.peopleById[personId];
         if (!person) {
+            const merged = redirectTarget(loaded.data, 'person', personId);
+            if (merged) return res.redirect(301, `/commulingo/people/${merged}`);
             return errorPage.notFound(res, {
                 message: lang === 'en' ? 'Person not found.' : '인물을 찾을 수 없습니다.',
                 backHref: '/commulingo/people',
@@ -566,12 +540,13 @@ router.get('/api/people', async (req, res) => {
 router.get('/api/people/:personId', async (req, res) => {
     try {
         const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
-        if (LEGACY_PERSON_IDS[personId]) {
-            return res.redirect(301, `/commulingo/api/people/${LEGACY_PERSON_IDS[personId]}`);
-        }
         const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
         const person = standardized.peopleById[personId];
-        if (!person) return res.status(404).json({ error: 'person not found' });
+        if (!person) {
+            const merged = redirectTarget(loaded.data, 'person', personId);
+            if (merged) return res.redirect(301, `/commulingo/api/people/${merged}`);
+            return res.status(404).json({ error: 'person not found' });
+        }
         const sections = localizedPersonSections((loaded.data.sections || {})[personId] || [], standardized.lang);
         setShortPeopleApiCache(res);
         res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, person, sections });
