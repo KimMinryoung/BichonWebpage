@@ -3509,6 +3509,24 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 .commu-topic-link:hover { border-bottom-style: solid; }
 
+/* Hand-written links inside dictionary prose — the person bio, the glossary
+   definition, and the section bodies of both dictionaries, which is where a
+   markdown body points at a reference-library text. These are the anchors
+   linkify.js did not generate, so they were still falling through to the global
+   `a` colour and reading dimmer than the sentence around them; :not([class])
+   keeps the four entry rules above in charge of their own links. */
+.commu-person-bio a:not([class]),
+.commu-person-markdown a:not([class]),
+.commu-event-head > p a:not([class]),
+.commu-event-timeline-list a:not([class]) {
+    color: inherit; text-decoration: none;
+    border-bottom: 2px dotted var(--link, #5d7a5a);
+}
+.commu-person-bio a:not([class]):hover,
+.commu-person-markdown a:not([class]):hover,
+.commu-event-head > p a:not([class]):hover,
+.commu-event-timeline-list a:not([class]):hover { border-bottom-style: solid; }
+
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 999px; color: inherit; text-decoration: none; font-size: .95rem; }
 .commu-term-chip:hover { border-color: var(--link, #b84f4f); }

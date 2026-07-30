@@ -40,6 +40,11 @@ const BLOCKED_KO = [
     '레오니트 파스테르나크', '세르게이 불가코프', '빌리 피셔',
     '안드레이 카피차', '세르게이 플라토노프', '예브게니 리프시츠', '일리야 리프시츠',
     '드미트리 수하노프', '이반 보로딘', '알렉산드르 넵스키', '알렉산드르 말리놉스키', '니콜라이 소콜로프',
+    // Signature lines in reference-library documents give an initial and a
+    // surname, which is not enough to identify anyone. The 1923 signatory
+    // A. 베네딕토프 is not the agriculture minister Ivan Benediktov, who was
+    // born in 1902 — bare 베네딕토프 still links to him everywhere else.
+    'A. 베네딕토프',
     '이반 플료로프', '아타만 칼미코프', '보리스 슬루츠키', '알렉산드르 야쿠봅스키',
     '바실리 자이체프', '세르게이 이그나티예프', '바딤 트라페즈니코프', '이반 모로조프',
     '니콜라이 모로조프', '니콜라이 볼스키', '빅토르 사프로노프', '뱌체슬라프 티호노프',

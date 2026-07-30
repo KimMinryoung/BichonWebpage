@@ -1,8 +1,36 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
 const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
+const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 
 const router = express.Router();
+
+// Dictionary links inside a document body, memoized. A full text is far too big
+// to run the passes over per request (the Yezhov biography is 1.4MB), so the
+// result is cached against the content object the store hands back — a new
+// object exactly when the fragment's mtime changes — and then against the link
+// index set, which is itself a fresh reference on every dictionary refresh.
+// Paginated documents cache per page, so only what is actually read is linked.
+const linkedMemo = new WeakMap(); // content entry -> { indexes, byKey: Map }
+
+async function linkDocHtml(content, docId, lang, key, html) {
+    if (!html) return html;
+    const indexes = await getLinkIndexes(lang);
+    let entry = linkedMemo.get(content);
+    if (!entry || entry.indexes !== indexes) {
+        entry = { indexes, byKey: new Map() };
+        linkedMemo.set(content, entry);
+    }
+    const memoKey = lang + '\0' + key;
+    let out = entry.byKey.get(memoKey);
+    if (out === undefined) {
+        // One linker per rendered unit: the first mention of an entry links and
+        // later ones stay plain. A document never links to itself.
+        out = createLinker(indexes, { surface: 'doc', exclude: { doc: docId } }).html(html);
+        entry.byKey.set(memoKey, out);
+    }
+    return out;
+}
 
 function localize(value, lang) {
     if (!value) return '';
@@ -62,7 +90,7 @@ router.get('/', (req, res) => {
     }
 });
 
-router.get('/:docId', (req, res) => {
+router.get('/:docId', async (req, res) => {
     try {
         const lang = res.locals.lang;
         let docId = typeof req.params.docId === 'string' ? req.params.docId.trim() : '';
@@ -88,10 +116,14 @@ router.get('/:docId', (req, res) => {
             if (!Number.isFinite(current) || current < 1) current = 1;
             if (current > total) current = total;
             const page = paged.pages[current - 1];
+            // The title block is left alone: a document should not carry a
+            // glossary link inside its own heading.
             return res.render('public/commulingo-doc', {
                 doc,
                 bodyTopHtml: paged.titleHtml,
-                bodyRestHtml: page.html,
+                bodyRestHtml: await linkDocHtml(
+                    getCommuLingoDocContent(raw), docId, lang, 'p' + current, page.html,
+                ),
                 toc: nestToc(toc),
                 pagination: {
                     current,
@@ -113,7 +145,9 @@ router.get('/:docId', (req, res) => {
         res.render('public/commulingo-doc', {
             doc,
             bodyTopHtml,
-            bodyRestHtml,
+            bodyRestHtml: await linkDocHtml(
+                getCommuLingoDocContent(raw), docId, lang, 'body', bodyRestHtml,
+            ),
             toc: nestToc(toc),
             pagination: null,
             idToPage: null,

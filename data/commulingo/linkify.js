@@ -129,6 +129,12 @@ const SURFACES = {
     event: { kinds: KIND_ORDER },
     learning: { kinds: KIND_ORDER, newTab: true },
     report: { kinds: KIND_ORDER, anchors: true },
+    // Reference-library full texts. A reader meeting 체르보네츠 or 가위차 inside a
+    // 1923 document needs the glossary exactly there, the same as on any other
+    // prose surface — the topbar's curated list only covers what the manifest
+    // declares. Signatory names the fragment links by hand are already inside
+    // anchors, which every pass skips.
+    doc: { kinds: KIND_ORDER },
     card: { kinds: ['person'] },
 };
 
