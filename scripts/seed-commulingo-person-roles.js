@@ -31,6 +31,13 @@ async function seedCommuLingoPersonRoles(client) {
         officeIconsUpdated += result.rowCount;
     }
 
+    // SEED ONLY — commulingo_role_categories is the source of truth and is
+    // edited with UPDATE/INSERT (no deploy). This list exists to populate a
+    // fresh database; the ON CONFLICT DO NOTHING below means editing a label
+    // here does nothing to a live one. Retired categories must be removed from
+    // this list or a re-seed brings them back — that is why
+    // 'russian-republic-leader' is gone. Drift is caught by
+    // scripts/check-commulingo-code-db-drift.js.
     const roleCategories = [
         ['imperial-white', 1, 'crown', '제정·백색진영', 'Imperial establishment and White movement'],
         ['writer-artist', 2, 'feather', '작가·예술가', 'Writers and artists'],

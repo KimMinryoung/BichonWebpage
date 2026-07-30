@@ -9,6 +9,15 @@
 // then documented national/ethnic background: e.g. Stalin → 🇸🇺 Soviet Union,
 // then Georgia. The second flag must never be inferred from birthplace alone.
 //
+// This registry is still code, and knowingly so: the flag itself is an SVG file
+// under public/, which is baked into the image, so a new nation needs a deploy
+// no matter where the code list lives. Everything else about a person's
+// nationality — which code they carry, the label shown — is DB. The leninbot
+// repo keeps the same code list for the curator's schema
+// (runtime_tools/commulingo_people.py `_NATIONALITY_CODES`), so adding a nation
+// means both repos plus the asset. The drift check verifies that every code in
+// use by a person actually has a flag here.
+//
 // To add a nation: drop public/flags/<code>.svg in place and add the code to
 // FLAG_NAMES below; the curator may then set citizenship_code / origin_code to
 // that key. Codes not listed here render nothing (no broken image).

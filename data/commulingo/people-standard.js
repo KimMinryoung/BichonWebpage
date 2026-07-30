@@ -12,6 +12,10 @@ function normalizeFlag(raw, lang) {
     return { code, label };
 }
 
+// The order role sections take on the person list, by institutional weight.
+// Deliberately NOT commulingo_offices.sort_order, which orders the office index
+// chronologically — the two answer different questions, and
+// scripts/check-commulingo-code-db-drift.js checks membership, not order.
 const OFFICE_DISPLAY_ORDER = [
     'party-leadership',
     'party-secretariat-cadres',
@@ -31,6 +35,12 @@ const OFFICE_DISPLAY_ORDER = [
     'comintern',
 ];
 
+// FALLBACK ONLY — the office title a card shows comes from commulingo_offices
+// (see the `officeTitles[officeId] ||` below); this copy is read only when the
+// database is unreachable. Renaming an office means UPDATE commulingo_offices,
+// which needs no deploy; editing the line here changes nothing on a healthy
+// site and makes the two disagree during an outage. The drift check fails if
+// they stop matching.
 const ROLE_OFFICE_TITLES = {
     'party-leadership': { ko: '당 최고 지도자', en: 'Party leadership' },
     'party-secretariat-cadres': { ko: '당 서기국 · 조직인사', en: 'Party Secretariat and cadres' },
@@ -54,6 +64,9 @@ const ROLE_OFFICE_TITLES = {
 // (edited via the admin API or the leninbot agent). OFFICE_ICON seeds
 // commulingo_offices.icon and is the last-resort icon fallback; on DB
 // outage the file-fallback path renders default icons (crown/circle-help).
+// Changing which icon an office uses is an UPDATE on commulingo_offices.icon,
+// not an edit here — only a NEW glyph needs code (role-icons.js holds the SVG
+// paths, which are the one genuinely code-shaped thing in this area).
 const OFFICE_ICON = {
     'state-security': 'eye',
     defence: 'star',
