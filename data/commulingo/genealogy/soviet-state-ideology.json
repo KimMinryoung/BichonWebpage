@@ -33,6 +33,7 @@
       "year": 1918,
       "period": "1918",
       "label": { "ko": "1918년 헌법: 노동자 국가 선언", "en": "1918 Constitution: a workers' state declared" },
+      "ref": { "type": "term", "id": "1918-rsfsr-constitution" },
       "note": { "ko": "「근로 피착취 인민의 권리 선언」을 서두에 둔 러시아 소비에트 공화국 헌법", "en": "The RSFSR constitution, opening with the Declaration of Rights of the Working and Exploited People" }
     },
     {
@@ -116,6 +117,7 @@
       "year": 1971,
       "period": "1970년대",
       "label": { "ko": "발전된 사회주의론", "en": "Developed socialism" },
+      "ref": { "type": "term", "id": "developed-socialism" },
       "note": { "ko": "공산주의의 조기 도래 공약을 접고, 현 단계를 장기간 지속될 '발전된 사회주의'로 규정한 브레즈네프 시기의 공식 이론", "en": "The Brezhnev-era doctrine that shelved the promise of imminent communism and named the present a long stage of 'developed socialism'" }
     },
     {
@@ -124,6 +126,7 @@
       "year": 1977,
       "period": "1977",
       "label": { "ko": "1977년 헌법: 발전된 사회주의 명문화", "en": "1977 Constitution: developed socialism codified" },
+      "ref": { "type": "term", "id": "1977-soviet-constitution" },
       "note": { "ko": "전인민국가와 발전된 사회주의를 헌법 서문에 새기고, 제6조로 당의 지도적 역할을 명문화했다", "en": "Wrote the all-people's state and developed socialism into the preamble, and the party's leading role into Article 6" }
     },
     {

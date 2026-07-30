@@ -24,6 +24,7 @@
       "year": 1874,
       "period": "1860년대~1880년대",
       "label": { "ko": "나로드니키 (인민주의)", "en": "Narodniks (Populism)" },
+      "ref": { "type": "term", "id": "narodniks" },
       "note": { "ko": "농민공동체에 기초한 사회주의를 추구. 러시아 마르크스주의가 처음 맞선 상대이자 그 출신 모체", "en": "Sought a socialism based on the peasant commune; the first opponent of Russian Marxism and the milieu it came out of" }
     },
     {
@@ -48,6 +49,7 @@
       "year": 1899,
       "period": "1899–1903",
       "label": { "ko": "경제주의", "en": "Economism" },
+      "ref": { "type": "term", "id": "economism" },
       "note": { "ko": "정치투쟁을 뒤로 미루고 경제투쟁에 집중하자는 조류. 『이스크라』의 주된 논적", "en": "Held that economic struggle should come before political struggle; Iskra's main polemical target" }
     },
     {
@@ -55,7 +57,8 @@
       "column": "mainline",
       "year": 1898,
       "period": "1898",
-      "label": { "ko": "러시아사회민주노동당 창당", "en": "RSDLP founded" }
+      "label": { "ko": "러시아사회민주노동당 창당", "en": "RSDLP founded" },
+      "ref": { "type": "term", "id": "rsdlp" }
     },
     {
       "id": "iskra",
@@ -113,6 +116,7 @@
       "year": 1914,
       "period": "1914",
       "label": { "ko": "방위파 / 국제주의파", "en": "Defencists / Internationalists" },
+      "ref": { "type": "term", "id": "menshevik-defencists-internationalists" },
       "note": { "ko": "제1차 세계대전 참전 지지 여부를 놓고 멘셰비키가 갈라졌다", "en": "The Mensheviks divided over support for the war" }
     },
     {
@@ -138,6 +142,7 @@
       "year": 1920,
       "period": "1920–1921",
       "label": { "ko": "노동자반대파", "en": "Workers' Opposition" },
+      "ref": { "type": "term", "id": "workers-opposition" },
       "note": { "ko": "노동조합의 생산 관리를 요구. 1921년 제10차 당대회의 분파 금지 결의로 해산", "en": "Demanded trade-union management of production; disbanded by the 10th Congress ban on factions (1921)" }
     },
     {
@@ -170,6 +175,7 @@
       "year": 1926,
       "period": "1926–1927",
       "label": { "ko": "통합반대파", "en": "United Opposition" },
+      "ref": { "type": "term", "id": "united-opposition" },
       "note": { "ko": "좌익반대파와 신반대파의 연합. 1927년 15차 당대회를 앞두고 제명·추방", "en": "Alliance of the Left and New Oppositions; expelled and exiled before the 15th Congress (1927)" }
     },
     {

@@ -136,6 +136,10 @@
         "ko": "치머발트 운동",
         "en": "The Zimmerwald movement"
       },
+      "ref": {
+        "type": "term",
+        "id": "zimmerwald-movement"
+      },
       "note": {
         "ko": "전쟁에 반대한 국제주의자들의 회합. 레닌의 치머발트 좌파가 제3인터내셔널의 맹아가 되었다",
         "en": "The wartime gathering of anti-war internationalists; Lenin's Zimmerwald Left was the seed of the Third International"
@@ -186,6 +190,10 @@
         "ko": "빈 국제연합 (2½ 인터내셔널)",
         "en": "Vienna Union (the Two-and-a-half International)"
       },
+      "ref": {
+        "type": "term",
+        "id": "vienna-union"
+      },
       "note": {
         "ko": "재건된 제2인터내셔널과 코민테른 사이에서 통합을 시도한 중간파 정당들의 연합",
         "en": "The centrist parties that tried to bridge the revived Second International and the Comintern"
@@ -200,6 +208,10 @@
         "ko": "아나르코생디칼리슴 IWA",
         "en": "Anarcho-syndicalist IWA"
       },
+      "ref": {
+        "type": "term",
+        "id": "anarcho-syndicalist-iwa"
+      },
       "note": {
         "ko": "베를린에서 재건된 국제노동자협회. 스페인 CNT가 최대 조직이었다",
         "en": "The International Workers' Association refounded in Berlin; the Spanish CNT was its largest section"
@@ -213,6 +225,10 @@
       "label": {
         "ko": "노동사회주의 인터내셔널 (LSI)",
         "en": "Labour and Socialist International"
+      },
+      "ref": {
+        "type": "term",
+        "id": "labour-and-socialist-international"
       }
     },
     {
@@ -284,6 +300,10 @@
         "ko": "사회주의 인터내셔널 (SI)",
         "en": "Socialist International"
       },
+      "ref": {
+        "type": "term",
+        "id": "socialist-international"
+      },
       "note": {
         "ko": "프랑크푸르트 선언으로 재건된 사회민주주의 정당들의 국제 조직",
         "en": "The postwar international of social democratic parties, refounded with the Frankfurt Declaration"
@@ -297,6 +317,10 @@
       "label": {
         "ko": "제4인터의 분열과 재통합",
         "en": "The Fourth International splits and reunifies"
+      },
+      "ref": {
+        "type": "term",
+        "id": "fourth-international-splits"
       },
       "note": {
         "ko": "1953년 국제위원회(ICFI)가 분립했고, 1963년 다수가 통합서기국(USFI)으로 재결합했다",
