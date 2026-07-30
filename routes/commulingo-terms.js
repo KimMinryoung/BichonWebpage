@@ -5,6 +5,8 @@ const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { getReportsForTerm } = require('../services/report-mentions');
 const {
+    loadTermCategories,
+    termCategoriesRef,
     termCategoriesWithCounts,
     termCategoryLabel,
 } = require('../data/commulingo/term-categories');
@@ -215,6 +217,7 @@ const termCardsMemo = new WeakMap(); // termsRaw -> Map(`${lang}:${sort}:${group
 
 async function termListData(lang, sort) {
     const raw = await loadCommuLingoTerms();
+    await loadTermCategories();
     let byKey = termListMemo.get(raw);
     if (!byKey) {
         byKey = new Map();
@@ -222,6 +225,11 @@ async function termListData(lang, sort) {
     }
     const key = `${lang === 'en' ? 'en' : 'ko'}:${sort}`;
     let data = byKey.get(key);
+    // The memo is keyed on the terms object, but the category labels rendered
+    // into it come from their own registry: a relabelled category must not wait
+    // for the next terms refresh to appear.
+    const categoriesRef = termCategoriesRef();
+    if (data && data.categoriesRef !== categoriesRef) data = undefined;
     if (!data) {
         const terms = sortTerms(raw.map(term => presentTerm(term, lang)), sort, lang);
         data = {
@@ -229,6 +237,7 @@ async function termListData(lang, sort) {
             terms,
             groups: groupTerms(terms, sort, lang),
             categories: termCategoriesWithCounts(terms, lang),
+            categoriesRef,
         };
         byKey.set(key, data);
     }
@@ -239,10 +248,13 @@ async function termGroupCardsHtml(req, lang, sort, groupId) {
     const data = await termListData(lang, sort);
     const group = data.groups.find(item => item.id === groupId);
     if (!group) return null;
-    let byKey = termCardsMemo.get(data.raw);
+    // Keyed on the list data rather than the raw terms: the rendered cards
+    // carry category labels, and termListData builds a fresh object whenever
+    // either the terms or the category registry changes.
+    let byKey = termCardsMemo.get(data);
     if (!byKey) {
         byKey = new Map();
-        termCardsMemo.set(data.raw, byKey);
+        termCardsMemo.set(data, byKey);
     }
     const key = `${lang === 'en' ? 'en' : 'ko'}:${sort}:${groupId}`;
     let html = byKey.get(key);
@@ -304,6 +316,7 @@ router.get('/cards', async (req, res) => {
 // subject. Returns null when the id is unknown.
 async function buildTermPanel(termId, lang) {
     const allTerms = await loadCommuLingoTerms();
+    await loadTermCategories();
     const raw = allTerms.find(item => item.id === termId);
     if (!raw) return null;
     const term = presentTerm(raw, lang);
