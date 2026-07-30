@@ -45,6 +45,15 @@ const LEGACY_PERSON_IDS = {
     // linked from term and event pages, so the dropped id keeps redirecting.
     'valerian-obolensky': 'osinsky',
     'georgy-piatakov': 'yuri-pyatakov',
+    // 2026-07-30: six people held two cards each — the same person entered
+    // twice under a second transliteration (or, for Zverev, under a
+    // disambiguation suffix he did not need). Merged into the left-hand id.
+    'hryhoriy-hrynko': 'grigory-grinko',
+    'alexander-tsiurupa': 'alexander-tsyurupa',
+    'zverev-defense-industry': 'sergei-zverev',
+    'efim-slavskii': 'slavsky',
+    'otto-shmidt': 'otto-schmidt',
+    'jakub-hanecki': 'yakov-ganetsky',
 };
 
 const LEGACY_ROLE_CATEGORY_IDS = {
