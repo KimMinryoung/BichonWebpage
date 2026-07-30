@@ -13,7 +13,7 @@
 // out of 'Leningrad' — but not out of 'Leonid Pasternak', so it has a blocked
 // list of its own for the names one surname sits inside.
 
-const { blockedPhrases } = require('./link-blocklist');
+const { blockedPhrases, neverLinkAliases } = require('./link-blocklist');
 
 const WORD_CHAR = /[0-9A-Za-z가-힣]/;
 
@@ -65,17 +65,11 @@ function trustedFormsFor(personId, lang) {
     return (entry && entry[lang]) || [];
 }
 
-const NEVER_LINK_ALIAS_KO = [
-    '카스트로', '보스', '미신', '레비',
-    '스트롱', '리드', '포스터', '퍼스트', '피크', '더트', '보시', '팔린',
-    '데이비스', '존스', '보그스',
-    '푸시킨', '시테른', '톨스토이',
-];
-// English keeps \b on both sides and matches case-sensitively, so only the
-// homographs that survive both need listing: 'First' opens sentences and titles
-// 465 times in this corpus (First Secretary, First Five-Year Plan), and the
-// shared surnames are the same two people as above.
-const NEVER_LINK_ALIAS_EN = ['levi', 'first', 'davis', 'jones', 'boggs', 'pushkin', 'tolstoy'];
+// One-word aliases that must never be indexed: the string belongs to someone or
+// something else far more often than to the entry. 리보프 is the city of Lviv,
+// 톨스토이 the novelist, 퍼스트 the ordinary word. Rows of kind='alias' in
+// commulingo_link_blocklist — unlike the phrase rows, nothing can be consumed
+// ahead of these, because the collision is the whole string.
 
 
 
@@ -159,8 +153,8 @@ function buildPersonLinkIndex(people, options = {}) {
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
-            if (!en && NEVER_LINK_ALIAS_KO.includes(alias)) return;
-            if (en && NEVER_LINK_ALIAS_EN.includes(alias.toLowerCase())) return;
+            if (!en && neverLinkAliases('ko').includes(alias)) return;
+            if (en && neverLinkAliases('en').includes(alias.toLowerCase())) return;
             const words = alias.toLowerCase().split(/\s+/).filter(Boolean);
             const trusted = trustedFormsFor(person.id, lang).includes(alias);
             // Only link aliases made of this person's own canonical-name words,
@@ -220,8 +214,6 @@ function mapLinkableText(html, mapText) {
 }
 
 module.exports = {
-    NEVER_LINK_ALIAS_KO,
-    NEVER_LINK_ALIAS_EN,
     WORD_CHAR,
     escapeHtml,
     escapeRegExp,

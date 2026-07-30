@@ -2,6 +2,13 @@
 const assert = require('assert');
 const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
 const { createLinker, findEntityMentions } = require('../data/commulingo/linkify');
+const { installLinkBlocklist } = require('../data/commulingo/link-blocklist');
+
+// '레비' is a never-link alias (commulingo_link_blocklist, kind='alias'), which
+// is what the first assertion below turns on. Installed directly so this file
+// keeps running with no database.
+installLinkBlocklist([{ kind: 'alias', lang: 'ko', phrase: '레비' },
+                      { kind: 'alias', lang: 'en', phrase: 'levi' }]);
 
 // The alias rules below are about the index alone, so one bare person surface
 // is enough; the policy the surfaces share is covered by

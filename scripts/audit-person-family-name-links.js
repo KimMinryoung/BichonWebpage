@@ -9,7 +9,7 @@
 
 require('dotenv').config();
 const { getLinkIndexes } = require('../data/commulingo/linkify');
-const { NEVER_LINK_ALIAS_KO, NEVER_LINK_ALIAS_EN } = require('../data/commulingo/people-linkify');
+const { loadLinkBlocklist, neverLinkAliases } = require('../data/commulingo/link-blocklist');
 
 const lang = process.argv[2] === 'en' ? 'en' : 'ko';
 
@@ -20,6 +20,8 @@ function familyNameOf(person) {
 
 (async () => {
     const { person: index, standardized } = await getLinkIndexes(lang);
+    await loadLinkBlocklist(); // getLinkIndexes loads it too; explicit so the REFUSED reasons never silently blank
+
     const people = standardized.people;
 
     // How many people each name word belongs to — the ambiguity test the index
@@ -56,7 +58,7 @@ function familyNameOf(person) {
     derived.forEach(row => console.log(`  ${row.family}\t← ${row.display}  [${row.id}]`));
 
     console.log('\n── REFUSED ──');
-    const neverLink = lang === 'en' ? NEVER_LINK_ALIAS_EN : NEVER_LINK_ALIAS_KO;
+    const neverLink = neverLinkAliases(lang === 'en' ? 'en' : 'ko');
     refused.forEach(row => {
         const why = neverLink.includes(lang === 'en' ? row.family.toLowerCase() : row.family)
             ? 'never-link (ordinary word)'

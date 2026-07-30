@@ -17,14 +17,19 @@ const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_LINK_BLOCKLIST_CACHE_M
 const SNAPSHOT_PATH = process.env.COMMULINGO_LINK_BLOCKLIST_SNAPSHOT
     || path.join(__dirname, 'link-blocklist-snapshot.json');
 
-let memory = null;         // { ko: [...], en: [...] } — also the identity callers memoize against
+// { phrase: { ko, en }, alias: { ko, en } } — also the identity callers memoize
+// against. `phrase` strings are consumed ahead of the alias inside them;
+// `alias` strings are dropped from the index entirely, which is the only thing
+// that works when the collision is exact (리보프 the city vs Prince Lvov).
+let memory = null;
 let pendingRefresh = null;
 let refreshTimer = null;
 
 function install(rows) {
-    const next = { ko: [], en: [] };
+    const next = { phrase: { ko: [], en: [] }, alias: { ko: [], en: [] } };
     rows.forEach(row => {
-        if (next[row.lang] && row.phrase) next[row.lang].push(row.phrase);
+        const kind = next[row.kind || 'phrase'];
+        if (kind && kind[row.lang] && row.phrase) kind[row.lang].push(row.phrase);
     });
     memory = next;
     return memory;
@@ -33,7 +38,10 @@ function install(rows) {
 function readSnapshotFile() {
     try {
         const rows = JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
-        if (Array.isArray(rows) && rows.length) return rows;
+        // A file written before `kind` existed would install every never-link
+        // alias as a phrase, which silently re-links 리보프 and 톨스토이. Treat
+        // it as absent and go to the DB instead.
+        if (Array.isArray(rows) && rows.length && rows.every(row => row && row.kind)) return rows;
     } catch (err) {
         if (err.code !== 'ENOENT') {
             console.error('[commulingo link blocklist] snapshot read failed:', err.message);
@@ -55,7 +63,7 @@ function writeSnapshotFile(rows) {
 function refreshFromDb() {
     if (pendingRefresh) return pendingRefresh;
     pendingRefresh = db.query(
-        `SELECT lang, phrase FROM commulingo_link_blocklist ORDER BY lang, phrase`
+        `SELECT kind, lang, phrase FROM commulingo_link_blocklist ORDER BY kind, lang, phrase`
     )
         .then(result => {
             // An empty result would quietly re-enable every false positive the
@@ -105,7 +113,14 @@ function blocklistRef() {
 
 function blockedPhrases(lang) {
     if (!memory) return [];
-    return lang === 'en' ? memory.en : memory.ko;
+    return memory.phrase[lang === 'en' ? 'en' : 'ko'];
+}
+
+// One-word aliases that must never be indexed at all. English is matched
+// case-insensitively, as the array it replaces was.
+function neverLinkAliases(lang) {
+    if (!memory) return [];
+    return memory.alias[lang === 'en' ? 'en' : 'ko'];
 }
 
 // Test seam: install a list directly, so the linkify smoke tests keep running
@@ -119,5 +134,6 @@ module.exports = {
     installLinkBlocklist,
     blocklistRef,
     blockedPhrases,
+    neverLinkAliases,
     SNAPSHOT_PATH,
 };
