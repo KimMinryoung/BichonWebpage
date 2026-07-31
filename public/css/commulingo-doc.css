@@ -470,3 +470,32 @@ body.nav-collapsed .doc-nav-group {
 .book h3 {
   scroll-margin-top: 3rem;
 }
+
+/* 펼친 메뉴는 컨트롤 바에 매달린 오버레이다. 흐름에 넣으면 아래 문단 전체가
+   다시 레이아웃되고(목차에서 이미 겪은 문제), 무엇보다 문서 맨 위에 두면
+   스크롤을 내린 상태에서 펼쳐봐야 화면 밖이라 버튼이 따라오는 의미가 없다.
+   .doc-toc는 position:sticky라 그 자체가 절대 위치의 기준이 된다. */
+.doc-nav-group {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 61;
+  max-height: calc(100dvh - 6rem);
+  overflow-y: auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+/* 파셜 안의 <nav>들은 전역 규칙으로 sticky다. 오버레이 안에서 다시 붙으면
+   스크롤할 때 자기들끼리 어긋나므로 흐름으로 되돌린다. */
+.doc-nav-group nav,
+.doc-nav-group .home-toolbar {
+  position: static;
+}
+
+@media print {
+  .doc-nav-group {
+    display: none;
+  }
+}

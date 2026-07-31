@@ -39,9 +39,6 @@
     <a href="/commulingo/events/<%= event.id %>" target="_blank" rel="noopener"><%= event.name %> →</a>
     <% }) %>
 </header>
-<div class="doc-nav-group" id="docNavGroup">
-    <%- include('../partials/nav') %>
-</div>
 <main class="book">
 <% if (pagination) { %>
 <script>
@@ -100,6 +97,12 @@ var tocHref = function(id) {
 </ol>
 </details>
 <% } %>
+<%# 메뉴 내용물도 바 안에 둔다. 문서 맨 위 흐름에 두면 스크롤을 내린 상태에서
+    버튼을 눌러도 펼쳐진 메뉴가 화면 밖이라, 버튼만 따라오는 의미가 없었다.
+    목차와 같은 오버레이 방식이라 펼쳐도 본문 레이아웃이 밀리지 않는다. %>
+<div class="doc-nav-group" id="docNavGroup">
+    <%- include('../partials/nav') %>
+</div>
 </nav>
 <%- bodyRestHtml %>
 <% if (pagination) { %>
@@ -150,5 +153,9 @@ var tocHref = function(id) {
     });
 })();
 </script>
+<%# 테마 토글(#themeToggle) 핸들러는 common.js에 있다. 이 리더는 partials/head를
+    쓰지 않고 자체 head를 갖는 탓에 스크립트를 하나도 싣지 않아, nav 파셜이
+    가져오는 nav.js(언어 드롭다운)만 동작하고 테마 전환은 죽어 있었다. %>
+<script src="/js/common.js?v=<%= assetVersion %>"></script>
 </body>
 </html>
