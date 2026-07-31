@@ -23,20 +23,50 @@
 <link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/commulingo-doc.css?v=<%= assetVersion %>">
 </head>
-<body>
+<body class="nav-collapsed">
 <% var en = lang === 'en'; %>
 <header class="doc-topbar">
+    <%# 참고 문헌은 긴 호흡의 읽기라 상단 메뉴가 늘 자리를 차지하면 방해가 된다.
+        채팅 페이지의 접이식 메뉴와 같은 관례(클래스·aria·☰/✕)를 쓰되, 그쪽이
+        모바일에서만 접는 것과 달리 여기서는 화면 크기와 무관하게 접어 둔다. %>
+    <button
+        type="button"
+        class="doc-nav-toggle"
+        id="docNavToggle"
+        aria-expanded="false"
+        aria-controls="docNavGroup"
+        aria-label="<%= strings.siteName %>"
+    >
+        <span class="doc-nav-toggle-icon" aria-hidden="true"></span>
+    </button>
     <a href="/commulingo/docs">← <%= en ? 'Reference Library' : '참고 문헌' %></a>
+    <%# 인물·용어·사건은 새 탭으로 — 긴 문서를 읽던 자리를 잃지 않도록. 위의 목록
+        복귀 링크와 아래 목차·페이저는 읽기 흐름 안의 이동이라 같은 탭을 유지한다. %>
     <% doc.people.forEach(function(person) { %>
-    <a href="/commulingo/people/<%= person.id %>"><%= person.name %> →</a>
+    <a href="/commulingo/people/<%= person.id %>" target="_blank" rel="noopener"><%= person.name %> →</a>
     <% }) %>
     <% doc.terms.forEach(function(term) { %>
-    <a href="/commulingo/terms/<%= term.id %>"><%= term.name %> →</a>
+    <a href="/commulingo/terms/<%= term.id %>" target="_blank" rel="noopener"><%= term.name %> →</a>
     <% }) %>
     <% doc.events.forEach(function(event) { %>
-    <a href="/commulingo/events/<%= event.id %>"><%= event.name %> →</a>
+    <a href="/commulingo/events/<%= event.id %>" target="_blank" rel="noopener"><%= event.name %> →</a>
     <% }) %>
 </header>
+<div class="doc-nav-group" id="docNavGroup">
+    <%- include('../partials/nav') %>
+</div>
+<script>
+// 접이식 상단 메뉴. 상태 클래스는 body에 둔다 — 래퍼를 새로 씌우면 .book의
+// 폭·여백 계산이 흔들린다.
+(function () {
+    var toggle = document.getElementById('docNavToggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', function () {
+        var collapsed = document.body.classList.toggle('nav-collapsed');
+        toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    });
+})();
+</script>
 <main class="book">
 <% if (pagination) { %>
 <script>

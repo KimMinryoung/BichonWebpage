@@ -339,3 +339,75 @@
     break-inside: avoid;
   }
 }
+
+/* 접이식 상단 메뉴 — 채팅 페이지의 ☰ 토글과 같은 관례를 쓰되, 그쪽이 모바일에서만
+   접는 것과 달리 참고 문헌은 모든 폭에서 접어 둔다. 긴 문서를 읽는 화면에서
+   전역 메뉴가 늘 세로 공간을 먹지 않도록. */
+.doc-nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 28px;
+  padding: 0;
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.doc-nav-toggle-icon::before {
+  content: "\2630"; /* ☰ */
+  font-size: 1rem;
+  line-height: 1;
+}
+
+body:not(.nav-collapsed) .doc-nav-toggle-icon::before {
+  content: "\2715"; /* ✕ */
+}
+
+body.nav-collapsed .doc-nav-group {
+  display: none;
+}
+
+@media print {
+  .doc-nav-toggle,
+  .doc-nav-group {
+    display: none;
+  }
+}
+
+/* 상단바 링크를 알약 버튼으로. 기존에는 --text-muted로 칠해져 배경과 붙어 보였다.
+   배경은 --btn-primary(두 테마 모두 녹색 accent), 글자는 크림색이라 라이트·다크
+   양쪽에서 대비가 확보된다. 글자 크기는 건드리지 않고 대비만으로 가독성을 올린다. */
+.doc-topbar {
+  align-items: center;
+}
+
+.doc-topbar a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.62rem;
+  border: 1px solid var(--btn-primary);
+  background: var(--btn-primary);
+  color: var(--clr-cream);
+  text-decoration: none;
+  line-height: 1.35;
+}
+
+.doc-topbar a:hover,
+.doc-topbar a:focus-visible {
+  background: var(--btn-primary-hover);
+  color: var(--clr-cream-light);
+  text-decoration: none;
+}
+
+@media print {
+  .doc-topbar a {
+    padding: 0;
+    border: none;
+    background: none;
+    color: inherit;
+  }
+}

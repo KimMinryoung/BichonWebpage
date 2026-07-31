@@ -13,6 +13,21 @@ const router = express.Router();
 // Paginated documents cache per page, so only what is actually read is linked.
 const linkedMemo = new WeakMap(); // content entry -> { indexes, byKey: Map }
 
+// Dictionary links inside a reference document open in a new tab. These are
+// long-form reads — following a name mid-paragraph should not cost the reader
+// their place and scroll position in a 60,000-character document. Only entity
+// links are rewritten: the table of contents, the pager and the back link are
+// navigation within the read and stay in the tab. The attribute order varies
+// (the linker emits class before href, the topbar emits href alone), so this
+// matches the whole opening tag rather than a fixed prefix.
+const ENTITY_LINK_RE =
+    /<a\b([^>]*\bhref="\/commulingo\/(?:people|terms|events|docs)\/[^"]*"[^>]*)>/g;
+
+function openEntityLinksInNewTab(html) {
+    return html.replace(ENTITY_LINK_RE, (match, attrs) =>
+        /\btarget=/.test(attrs) ? match : `<a${attrs} target="_blank" rel="noopener">`);
+}
+
 async function linkDocHtml(content, docId, lang, key, html) {
     if (!html) return html;
     const indexes = await getLinkIndexes(lang);
@@ -26,7 +41,8 @@ async function linkDocHtml(content, docId, lang, key, html) {
     if (out === undefined) {
         // One linker per rendered unit: the first mention of an entry links and
         // later ones stay plain. A document never links to itself.
-        out = createLinker(indexes, { surface: 'doc', exclude: { doc: docId } }).html(html);
+        out = openEntityLinksInNewTab(
+            createLinker(indexes, { surface: 'doc', exclude: { doc: docId } }).html(html));
         entry.byKey.set(memoKey, out);
     }
     return out;
@@ -132,6 +148,7 @@ router.get('/:docId', async (req, res) => {
                     nextHeading: current < total ? paged.pages[current].heading : '',
                 },
                 idToPage: paged.idToPage,
+                pagePath: '/commulingo/docs',
                 docLang: raw.docLang || 'ko',
                 pageTitle: current > 1 ? `${doc.title} (${current}/${total})` : doc.title,
                 pageDescription: doc.description,
@@ -151,6 +168,7 @@ router.get('/:docId', async (req, res) => {
             toc: nestToc(toc),
             pagination: null,
             idToPage: null,
+            pagePath: '/commulingo/docs',
             docLang: raw.docLang || 'ko',
             pageTitle: doc.title,
             pageDescription: doc.description,
