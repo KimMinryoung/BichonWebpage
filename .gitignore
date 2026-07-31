@@ -51,3 +51,8 @@ data/commulingo/term-categories-snapshot.json.tmp
 # CommuLingo link blocklist snapshot (same pattern)
 data/commulingo/link-blocklist-snapshot.json
 data/commulingo/link-blocklist-snapshot.json.tmp
+
+# 번역 원본 아카이브 (저장한 웹페이지 전문). 저작권이 살아 있는 도서가 대부분이라
+# 리포에 넣지 않는다. leninbot 쪽 번역 스펙이 절대 경로로 참조하고 sha256으로
+# 고정하므로, 파일은 디스크에만 있으면 된다.
+docs/*.html
