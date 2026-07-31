@@ -26,19 +26,6 @@
 <body class="nav-collapsed">
 <% var en = lang === 'en'; %>
 <header class="doc-topbar">
-    <%# 참고 문헌은 긴 호흡의 읽기라 상단 메뉴가 늘 자리를 차지하면 방해가 된다.
-        채팅 페이지의 접이식 메뉴와 같은 관례(클래스·aria·☰/✕)를 쓰되, 그쪽이
-        모바일에서만 접는 것과 달리 여기서는 화면 크기와 무관하게 접어 둔다. %>
-    <button
-        type="button"
-        class="doc-nav-toggle"
-        id="docNavToggle"
-        aria-expanded="false"
-        aria-controls="docNavGroup"
-        aria-label="<%= strings.siteName %>"
-    >
-        <span class="doc-nav-toggle-icon" aria-hidden="true"></span>
-    </button>
     <a href="/commulingo/docs">← <%= en ? 'Reference Library' : '참고 문헌' %></a>
     <%# 인물·용어·사건은 새 탭으로 — 긴 문서를 읽던 자리를 잃지 않도록. 위의 목록
         복귀 링크와 아래 목차·페이저는 읽기 흐름 안의 이동이라 같은 탭을 유지한다. %>
@@ -92,8 +79,21 @@ var tocHref = function(id) {
     return '?p=' + idToPage[id] + '#' + id;
 };
 %>
+<%# 스크롤을 따라오는 컨트롤 바. 목차만 따라오고 메뉴 버튼은 맨 위에 남아
+    있으면, 문서 중간에서 메뉴를 열려고 꼭대기까지 올라가야 한다. 둘을 한 줄에
+    묶어 왼쪽 메뉴 / 오른쪽 목차로 둔다. 목차가 없는 문서에서도 바는 남는다. %>
+<nav class="doc-toc" aria-label="<%= en ? 'Document controls' : '문서 도구' %>">
+<button
+    type="button"
+    class="doc-nav-toggle"
+    id="docNavToggle"
+    aria-expanded="false"
+    aria-controls="docNavGroup"
+    aria-label="<%= strings.siteName %>"
+>
+    <span class="doc-nav-toggle-icon" aria-hidden="true"></span>
+</button>
 <% if (toc.length) { %>
-<nav class="doc-toc" aria-label="<%= en ? 'Table of contents' : '목차' %>">
 <details>
 <summary><%= en ? 'Table of contents' : '목차' %><% if (pagination) { %> <span class="doc-toc-pos"><%= pagination.current %>/<%= pagination.total %></span><% } %></summary>
 <ol class="doc-toc-parts">
@@ -111,8 +111,8 @@ var tocHref = function(id) {
     <% }) %>
 </ol>
 </details>
-</nav>
 <% } %>
+</nav>
 <%- bodyRestHtml %>
 <% if (pagination) { %>
 <nav class="doc-pager" aria-label="<%= en ? 'Pages' : '페이지 이동' %>">

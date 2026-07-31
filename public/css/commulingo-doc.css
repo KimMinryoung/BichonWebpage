@@ -239,8 +239,42 @@
    the reader had just jumped to. The list is capped to the viewport and scrolls
    inside itself, so an open contents panel can never blank the page even if the
    script below fails to run. */
+/* 스크롤을 따라오는 컨트롤 바: 왼쪽 메뉴 토글, 오른쪽 목차. <nav>라서
+   style.css의 sticky 규칙(top:0, z-index:50)을 그대로 물려받는다. 목차만
+   따라오고 메뉴 버튼은 문서 맨 위에 남아 있던 것이 문제였다. */
 .doc-toc {
   margin: 1.4rem 0 2rem;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* 목차 상자가 남는 폭을 모두 차지해, 접힌 상태에서도 어디를 눌러야 하는지가
+   분명하다. 라벨은 오른쪽 끝에 붙인다. */
+/* 테두리는 바깥 바가 하나만 갖는다. 안쪽 상자가 각자 테두리를 두르면 컨트롤
+   두 개가 따로 노는 것처럼 보이고, 가운데 빈 공간이 틈으로 읽힌다. */
+.doc-toc details {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  background: none;
+}
+
+.doc-toc summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.doc-toc .doc-nav-toggle {
+  flex: 0 0 auto;
+  height: auto;
+  width: auto;
+  padding: 0 0.75rem;
+  border: none;
+  border-right: 1px solid var(--border);
+  background: none;
 }
 
 .doc-toc details {
