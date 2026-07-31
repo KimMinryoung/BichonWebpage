@@ -674,6 +674,76 @@
         ]
       },
       "addedAt": "2026-07-31"
+    },
+    {
+      "id": "nkvd-order-00485",
+      "file": "nkvd-order-00485.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "NKVD 작전명령 제00485호 (폴란드 작전) 한국어 번역",
+        "en": "NKVD Operational Order No. 00485 (Polish Operation), Korean translation"
+      },
+      "description": {
+        "ko": "1937년 8월 11일 예조프가 서명한 작전명령 제00485호의 한국어 전문. 이른바 「민족 작전」 가운데 폴란드 작전을 개시한 명령으로, 체포 대상 범주와 수사 절차, 제1·제2범주 분류와 형 집행 방식을 조항 단위로 규정한다. 함께 배포된 「폴란드 군사조직」 비밀서한과 짝을 이룬다.",
+        "en": "Full Korean translation of NKVD Operational Order No. 00485, signed by Yezhov on 11 August 1937, which launched the Polish operation among the so-called national operations. It sets out the categories for arrest, the investigative procedure, the first/second category classification and the manner of execution. It pairs with the secret letter on the Polish Military Organization circulated alongside it."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Оперативный приказ НКВД СССР № 00485 от 11 августа 1937 г. 수록본: Фонд Александра Н. Яковлева (документ № 166 в книге «Лубянка: Сталин и Главное управление госбезопасности НКВД»); 전사(轉寫): ru.wikisource.org",
+      "people": [
+        {
+          "id": "yezhov",
+          "name": {
+            "ko": "니콜라이 예조프",
+            "en": "Nikolai Yezhov"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "id": "national-operations-nkvd",
+          "name": {
+            "ko": "민족 작전",
+            "en": "National Operations of the NKVD"
+          }
+        },
+        {
+          "id": "nkvd-first-category",
+          "name": {
+            "ko": "제1범주 / 제2범주",
+            "en": "First / Second Category"
+          }
+        },
+        {
+          "id": "yezhovshchina",
+          "name": {
+            "ko": "예조프시나",
+            "en": "Yezhovshchina"
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "great-terror",
+          "name": {
+            "ko": "대테러",
+            "en": "The Great Terror"
+          }
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "「NKVD 작전명령 제00485호」",
+          "작전명령 제00485호"
+        ],
+        "en": [
+          "NKVD Operational Order No. 00485",
+          "Order No. 00485"
+        ]
+      },
+      "addedAt": "2026-07-31"
     }
   ]
 }
