@@ -525,3 +525,33 @@ body.nav-collapsed .doc-nav-group {
 .doc-toc {
   margin-inline: calc(-1 * clamp(12px, 2.5vw, 20px));
 }
+
+/* 엮은이 주 — 사료 본문과 눈으로 구분되어야 한다. 참고 문헌 페이지에서 해제를
+   본문과 같은 모양으로 흘리면 독자가 명령서가 한 말과 이 사이트가 한 말을
+   구분할 수 없다. 서식 문제가 아니라 정확성 문제라 색만 흐리게 하지 않고
+   세로선과 라벨로 경계를 준다. */
+.book .doc-editorial {
+  margin: 1.2rem 0 1.6rem;
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-left: 3px solid var(--btn-primary);
+  background: var(--bg-inset);
+  font-size: 0.92em;
+  color: var(--text-secondary);
+}
+
+.book .doc-editorial p {
+  margin: 0 0 0.5em;
+  text-align: start;
+}
+
+.book .doc-editorial p:last-child {
+  margin-bottom: 0;
+}
+
+.book .doc-editorial-label {
+  font-size: 0.82em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  text-transform: none;
+}

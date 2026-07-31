@@ -682,14 +682,14 @@
         "en": "NKVD Operational Orders (Korean translation)"
       },
       "description": {
-        "ko": "1937년 대숙청을 집행한 내무인민위원부(NKVD) 작전명령 다섯 건을 번호순으로 모은 전문 번역. 제00439호(독일)·제00485호(폴란드)·제00593호(하얼빈 귀환자)는 국적과 출신을 표적으로 삼은 이른바 「민족 작전」을, 제00447호는 공화국·주별 처형·수감 배정을 동반한 대량 작전을, 제00486호는 유죄 판결자의 아내와 자녀 처리를 규정한다. 배정표의 수치는 원본 그대로다.",
-        "en": "Full Korean translation of five NKVD operational orders of 1937, in number order. Nos. 00439 (German), 00485 (Polish) and 00593 (Harbin returnees) opened the so-called national operations, targeting people by nationality and origin; No. 00447 launched the mass operation with per-republic execution and camp quotas; No. 00486 governed the wives and children of the convicted. The quota figures are carried over from the source unchanged."
+        "ko": "1937~1938년 대숙청을 집행한 내무인민위원부(NKVD) 작전명령 여섯 건을 번호순으로 모은 전문 번역. 제00439호(독일)·제00485호(폴란드)·제00593호(하얼빈 귀환자)는 국적과 출신을 표적으로 삼은 「민족 작전」을, 제00447호는 공화국·주별 처형·수감 배정을 동반한 대량 작전을, 제00486호는 유죄 판결자의 아내와 자녀 처리를, 제00606호는 그 사건들을 심사할 특별 트로이카 설치를 규정한다. 배정표의 수치는 원본 그대로다.",
+        "en": "Full Korean translation of six NKVD operational orders of 1937-38, in number order. Nos. 00439 (German), 00485 (Polish) and 00593 (Harbin returnees) opened the national operations; No. 00447 launched the mass operation with per-republic execution and camp quotas; No. 00486 governed the wives and children of the convicted; No. 00606 set up the special troikas that judged the resulting cases. The quota figures are carried over from the source unchanged."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "Оперативные приказы НКВД СССР № 00439 (25.07.1937), № 00447 (30.07.1937), № 00485 (11.08.1937), № 00486 (15.08.1937), № 00593 (20.09.1937). 전사(轉寫): ru.wikisource.org (00439·00593 — memorial.krsk.ru·memory.irk.ru, 00447 — memo.ru, 00485 — Фонд А. Н. Яковлева); 00486 — Архів Управління МВС України Харківської області, Колекція документів",
+      "source": "Оперативные приказы НКВД СССР № 00439 (25.07.1937), № 00447 (30.07.1937), № 00485 (11.08.1937), № 00486 (15.08.1937), № 00593 (20.09.1937), № 00606 (17.09.1938). 전사(轉寫): ru.wikisource.org (00439·00447·00485·00593), stalinism.ru (00606); 00486 — Архів Управління МВС України Харківської області",
       "people": [
         {
           "id": "yezhov",
@@ -751,14 +751,16 @@
           "「NKVD 작전명령 제00447호」",
           "「NKVD 작전명령 제00485호」",
           "「NKVD 작전명령 제00486호」",
-          "「NKVD 작전명령 제00593호」"
+          "「NKVD 작전명령 제00593호」",
+          "「NKVD 작전명령 제00606호」"
         ],
         "en": [
           "NKVD Operational Order No. 00439",
           "NKVD Operational Order No. 00447",
           "NKVD Operational Order No. 00485",
           "NKVD Operational Order No. 00486",
-          "NKVD Operational Order No. 00593"
+          "NKVD Operational Order No. 00593",
+          "NKVD Operational Order No. 00606"
         ]
       },
       "addedAt": "2026-07-31"
