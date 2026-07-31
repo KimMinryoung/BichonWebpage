@@ -499,3 +499,29 @@ body.nav-collapsed .doc-nav-group {
     display: none;
   }
 }
+
+/* 목차용 링크 규칙은 목차 목록에만 건다. 메뉴 파셜이 이 바 안으로 들어오면서
+   로고·nav 링크까지 걸려, style.css가 text-decoration:none으로 막아둔 로고에
+   hover 밑줄이 붙었다(특정도가 같고 이 파일이 뒤에 실려 이긴다). */
+.doc-toc .doc-nav-group a:hover {
+  text-decoration: none;
+}
+
+.doc-toc .doc-nav-group a {
+  color: inherit;
+}
+
+/* 목차는 DOM상 <article> 안에 들어간다(제목 h1 뒤에 끼워지므로). 그래서 본문
+   링크용 hover 규칙이 목차에도 걸리는데, border-width를 주지 않아도
+   border-style만으로 기본값 medium(3px) 선이 그어져 text-decoration 밑줄과
+   겹쳐 두 줄로 보였다. 목차·메뉴는 본문 링크가 아니므로 제외한다. */
+.book article .doc-toc a:hover {
+  border-bottom-style: none;
+}
+
+/* 컨트롤 바는 본문 칼럼의 좌우 여백을 상쇄해 컨테이너 폭을 꽉 채운다. 바가
+   .book 안에 있어 산문용 padding을 그대로 물려받고 있었을 뿐, 좁게 둘 이유는
+   없었다. 모바일에서는 이 여백이 그대로 화면 양옆의 빈 공간이 된다. */
+.doc-toc {
+  margin-inline: calc(-1 * clamp(12px, 2.5vw, 20px));
+}
