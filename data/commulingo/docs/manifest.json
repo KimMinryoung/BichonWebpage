@@ -597,6 +597,83 @@
           "Declaration of the 46 (full text)"
         ]
       }
+    },
+    {
+      "id": "nkvd-1937-documents",
+      "file": "nkvd-1937-documents.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "1937년 소련 공문서 3건 한국어 번역",
+        "en": "Three Soviet Official Documents of 1937 (Korean translation)"
+      },
+      "description": {
+        "ko": "대숙청 시기 소련 당·국가 기관이 생산한 공식 문서 세 건의 한국어 전문 번역. 1937년 2~3월 당 중앙위원회 총회에서 예조프가 한 보고 속기록, 폴란드 작전의 근거가 된 「폴란드 군사조직」 관련 NKVD 비밀서한, 그리고 유죄 판결자의 아내와 자녀 처리 절차를 규정한 작전명령 제00486호를 담았다.",
+        "en": "Full Korean translation of three official documents produced by Soviet party and state organs during the Great Terror: the stenographic record of Yezhov's report to the February-March 1937 Central Committee plenum, the NKVD secret letter on the “Polish Military Organization” that underpinned the Polish operation, and Operational Order No. 00486 setting out the procedure for the wives and children of the convicted."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Архів Управління МВС України Харківської області. Колекція документів. 수록본: Полянский А. И. Ежов. История «железного» сталинского наркома. — М.: Вече, АРИА-АиФ, 2001. — (Особый архив)",
+      "people": [
+        {
+          "id": "yezhov",
+          "name": {
+            "ko": "니콜라이 예조프",
+            "en": "Nikolai Yezhov"
+          }
+        }
+      ],
+      "terms": [
+        {
+          "id": "yezhovshchina",
+          "name": {
+            "ko": "예조프시나",
+            "en": "Yezhovshchina"
+          }
+        },
+        {
+          "id": "national-operations-nkvd",
+          "name": {
+            "ko": "민족 작전",
+            "en": "National Operations of the NKVD"
+          }
+        },
+        {
+          "id": "nkvd-first-category",
+          "name": {
+            "ko": "제1범주 / 제2범주",
+            "en": "First / Second Category"
+          }
+        },
+        {
+          "id": "nkvd-order-00447",
+          "name": {
+            "ko": "NKVD 작전명령 제00447호",
+            "en": "NKVD Order No. 00447"
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "great-terror",
+          "name": {
+            "ko": "대테러",
+            "en": "The Great Terror"
+          }
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "「NKVD 작전명령 제00486호」",
+          "「폴란드 군사조직(ПОВ)」에 관한 NKVD 비밀서한"
+        ],
+        "en": [
+          "NKVD Operational Order No. 00486",
+          "NKVD secret letter on the Polish Military Organization"
+        ]
+      },
+      "addedAt": "2026-07-31"
     }
   ]
 }
