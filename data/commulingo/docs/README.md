@@ -31,7 +31,7 @@ curl -sS -X POST -H 'Content-Type: text/html' --data-binary @문서.html \
 curl -sS -X PATCH -H 'Content-Type: application/json' "$ADMIN/docs/my-doc" -d '{
   "title": {"en": "..."}, "description": {"ko": "...", "en": "..."},
   "source": "원전 서지",
-  "people": [{"id": "yezhov", "name": {"ko": "니콜라이 예조프", "en": "Nikolai Yezhov"}}]
+  "people": ["yezhov"]
 }'
 
 curl -sS "$ADMIN/docs"              # 목록
@@ -66,11 +66,15 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
    - `title` / `description` / `kind` — `{ko, en}` 객체. `kind`는 목록 카드의
      분류 라벨 (예: 번역 전문, 사료, 회고록)
    - `source` — 원전 서지 정보 (문자열, 리더 콜로폰에 표시)
-   - `people` / `terms` / `events` — 관련 인물·용어·역사 사건
-     `[{id, name: {ko, en}}]`. `id`는 각각 `/commulingo/people/<id>`,
+   - `people` / `terms` / `events` — 관련 인물·용어·역사 사건의 **id 배열**
+     (`["yezhov"]`). id는 각각 `/commulingo/people/<id>`,
      `/commulingo/terms/<id>`, `/commulingo/events/<id>` 슬러그.
      리더 상단바에 링크되고, **역방향으로** 해당 용어·사건 상세 페이지에
      "참고 문헌" 섹션이 자동으로 나타난다.
+     **표시될 이름은 여기 적지 않는다.** 상단바 라벨은 요청 시점에 사전에서
+     읽어 온다 (`docs-refs.js`) — 사전이 표제어를 바꾸면 문헌 쪽도 같이 바뀐다.
+     구형 `[{id, name}]` 형태도 읽히지만 `name`은 버려지고, id를 사전에서 찾지
+     못하면 그 링크는 상단바에서 빠지고 경고가 로그에 남는다.
    - `aliases` — `{ko: [], en: []}`. 본문 산문에서 이 문헌을 부르는 표현.
      용어 별칭과 같은 방식으로 자동 링크된다 (`doc-linkify.js`). 용어 페이지의
      정의·본문과 인물 페이지의 소개·섹션에서 **처음 나오는 한 번만** 링크가

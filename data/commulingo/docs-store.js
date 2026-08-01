@@ -63,10 +63,20 @@ function getCommuLingoDoc(docId) {
     return loadManifest().find(doc => doc.id === docId) || null;
 }
 
+// A manifest entry's people/terms/events arrays hold dictionary ids and nothing
+// else: what those entries are called is the dictionaries' business, resolved at
+// render time by docs-refs.js. The older shape ({ id, name: {ko, en} }) carried a
+// copy of the headword that drifted from it, and is still read here so a manifest
+// written before the change keeps working.
+function docRefId(ref) {
+    if (typeof ref === 'string') return ref.trim();
+    return ref && typeof ref.id === 'string' ? ref.id.trim() : '';
+}
+
 // Docs associated with a person/term/event via the manifest's people/terms/
 // events arrays — powers the "참고 문헌" sections on those detail pages.
 function listCommuLingoDocsFor(kind, id) {
-    return loadManifest().filter(doc => (doc[kind] || []).some(ref => ref && ref.id === id));
+    return loadManifest().filter(doc => (doc[kind] || []).some(ref => docRefId(ref) === id));
 }
 
 // Documents longer than this are read page by page instead of as one scroll;
@@ -135,4 +145,6 @@ function getCommuLingoDocContent(doc) {
     return entry;
 }
 
-module.exports = { listCommuLingoDocs, getCommuLingoDoc, listCommuLingoDocsFor, getCommuLingoDocContent };
+module.exports = {
+    listCommuLingoDocs, getCommuLingoDoc, listCommuLingoDocsFor, getCommuLingoDocContent, docRefId,
+};

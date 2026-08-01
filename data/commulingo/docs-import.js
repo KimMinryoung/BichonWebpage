@@ -5,6 +5,8 @@ const path = require('path');
 // scripts/import-commulingo-doc.js (CLI) and the admin API, so both produce
 // identical fragments and manifest entries. Read-side serving lives in
 // docs-store.js; format rules in data/commulingo/docs/README.md.
+const { docRefId } = require('./docs-store');
+
 const DOCS_DIR = path.join(__dirname, 'docs');
 const MANIFEST_PATH = path.join(DOCS_DIR, 'manifest.json');
 
@@ -94,13 +96,18 @@ function langPair(value, fallback) {
     };
 }
 
+// People, terms and events are stored as bare dictionary ids. A name sent along
+// with one ({ id, name }) is accepted and dropped: the dictionaries own their
+// headwords and the reader gets them from there (docs-refs.js), so a copy kept
+// here could only ever go stale.
 function normalizeRefs(refs, label) {
     if (!Array.isArray(refs)) return [];
     return refs.map(ref => {
-        if (!ref || typeof ref.id !== 'string' || !/^[a-z0-9-]+$/.test(ref.id)) {
+        const id = docRefId(ref);
+        if (!id || !/^[a-z0-9-]+$/.test(id)) {
             throw badRequest(`${label} entries need an id of lowercase letters, digits, hyphens`);
         }
-        return { id: ref.id, name: langPair(ref.name) };
+        return id;
     });
 }
 

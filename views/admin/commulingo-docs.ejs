@@ -88,9 +88,20 @@
 
         var docs = [];
         var options = { people: [], terms: [], events: [] };
-        var optionLabel = {};   // kind -> label -> option
+        var optionLabel = {};   // kind -> datalist label -> option
+        var optionById = {};    // kind -> id -> option (the dictionary's own headword)
         var editing = null;     // current doc object being edited
+        // A document links dictionary entries by id and nothing else; every name
+        // on this screen is the dictionary's, read from the link options.
         var links = { people: [], terms: [], events: [] };
+
+        // Manifest entries written before ids-only still carry { id, name }.
+        var refId = function (ref) { return typeof ref === 'string' ? ref : (ref && ref.id) || ''; };
+        var refLabel = function (kind, id) {
+            var opt = (optionById[kind] || {})[id];
+            if (!opt) return id;
+            return (EN ? opt.name.en || opt.name.ko : opt.name.ko || opt.name.en) || id;
+        };
 
         var $ = function (id) { return document.getElementById(id); };
         var esc = function (s) {
@@ -124,7 +135,7 @@
             var parts = [];
             ['people', 'terms', 'events'].forEach(function (kind) {
                 (doc[kind] || []).forEach(function (ref) {
-                    parts.push((ref.name && (EN ? ref.name.en : ref.name.ko)) || ref.id);
+                    parts.push(refLabel(kind, refId(ref)));
                 });
             });
             return parts.length ? parts.join(' · ') : t('연결 없음', 'no links');
@@ -170,21 +181,26 @@
                 ['people', 'terms', 'events'].forEach(function (kind) {
                     options[kind] = body[kind] || [];
                     optionLabel[kind] = {};
+                    optionById[kind] = {};
                     var list = document.getElementById('options-' + kind);
                     list.innerHTML = options[kind].map(function (opt) {
                         var label = (opt.name.ko || opt.name.en) + (opt.name.en && opt.name.ko !== opt.name.en ? ' / ' + opt.name.en : '') + ' [' + opt.id + ']';
                         optionLabel[kind][label] = opt;
+                        optionById[kind][opt.id] = opt;
                         return '<option value="' + esc(label) + '"></option>';
                     }).join('');
                 });
+                // The list and any open chips were drawn from ids alone if this
+                // arrived second; redraw now that the names are here.
+                renderDocs();
+                ['people', 'terms', 'events'].forEach(renderChips);
             }).catch(function (err) { status($('docsStatus'), t('링크 옵션 로드 실패: ', 'Failed to load link options: ') + err.message, true); });
         }
 
         function renderChips(kind) {
             var host = document.querySelector('[data-chips="' + kind + '"]');
-            host.innerHTML = links[kind].map(function (ref, i) {
-                var name = (EN ? ref.name.en || ref.name.ko : ref.name.ko || ref.name.en) || ref.id;
-                return '<span class="cdocs-chip">' + esc(name) + ' <small>' + esc(ref.id) + '</small>'
+            host.innerHTML = links[kind].map(function (id, i) {
+                return '<span class="cdocs-chip">' + esc(refLabel(kind, id)) + ' <small>' + esc(id) + '</small>'
                     + '<button type="button" data-unlink="' + kind + ':' + i + '" aria-label="remove">✕</button></span>';
             }).join('');
         }
@@ -194,8 +210,8 @@
             input.addEventListener('change', function () {
                 var opt = optionLabel[kind][input.value];
                 if (!opt) return;
-                if (!links[kind].some(function (ref) { return ref.id === opt.id; })) {
-                    links[kind].push({ id: opt.id, name: { ko: opt.name.ko || '', en: opt.name.en || '' } });
+                if (links[kind].indexOf(opt.id) === -1) {
+                    links[kind].push(opt.id);
                     renderChips(kind);
                 }
                 input.value = '';
@@ -227,9 +243,7 @@
             form.docLang.value = doc.docLang || 'ko';
             form.tocExclude.value = (doc.tocExclude || []).join('\n');
             ['people', 'terms', 'events'].forEach(function (kind) {
-                links[kind] = (doc[kind] || []).map(function (ref) {
-                    return { id: ref.id, name: { ko: (ref.name && ref.name.ko) || '', en: (ref.name && ref.name.en) || '' } };
-                });
+                links[kind] = (doc[kind] || []).map(refId).filter(Boolean);
                 renderChips(kind);
             });
             status($('editorStatus'), '');

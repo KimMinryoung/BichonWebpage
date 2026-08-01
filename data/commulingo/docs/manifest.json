@@ -18,43 +18,13 @@
       },
       "source": "Karl Marx, Value, Price and Profit (1865). 엘리너 마르크스 에이블링 엮음, 런던, 1898; MEW Bd. 16, S. 101–152",
       "people": [
-        {
-          "id": "karl-marx",
-          "name": {
-            "ko": "카를 마르크스",
-            "en": "Karl Marx"
-          }
-        },
-        {
-          "id": "friedrich-engels",
-          "name": {
-            "ko": "프리드리히 엥겔스",
-            "en": "Friedrich Engels"
-          }
-        }
+        "karl-marx",
+        "friedrich-engels"
       ],
       "terms": [
-        {
-          "id": "wages-fund-doctrine",
-          "name": {
-            "ko": "임금기금설",
-            "en": "Wages-Fund Doctrine"
-          }
-        },
-        {
-          "id": "iron-law-of-wages",
-          "name": {
-            "ko": "임금철칙",
-            "en": "Iron Law of Wages"
-          }
-        },
-        {
-          "id": "malthusianism",
-          "name": {
-            "ko": "맬서스주의",
-            "en": "Malthusianism"
-          }
-        }
+        "wages-fund-doctrine",
+        "iron-law-of-wages",
+        "malthusianism"
       ],
       "events": [],
       "addedAt": "2026-07-27",
@@ -88,64 +58,16 @@
       },
       "source": "Karl Marx, Randglossen zum Programm der deutschen Arbeiterpartei (1875); MEW Bd. 19, S. 13–32; Marx & Engels Selected Works, Vol. 3 (Progress Publishers, 1970)",
       "people": [
-        {
-          "id": "karl-marx",
-          "name": {
-            "ko": "카를 마르크스",
-            "en": "Karl Marx"
-          }
-        },
-        {
-          "id": "ferdinand-lassalle",
-          "name": {
-            "ko": "페르디난트 라살레",
-            "en": "Ferdinand Lassalle"
-          }
-        },
-        {
-          "id": "friedrich-engels",
-          "name": {
-            "ko": "프리드리히 엥겔스",
-            "en": "Friedrich Engels"
-          }
-        }
+        "karl-marx",
+        "ferdinand-lassalle",
+        "friedrich-engels"
       ],
       "terms": [
-        {
-          "id": "critique-of-the-gotha-programme",
-          "name": {
-            "ko": "고타강령 비판",
-            "en": "Critique of the Gotha Programme"
-          }
-        },
-        {
-          "id": "undiminished-proceeds-of-labour",
-          "name": {
-            "ko": "노동전수익권",
-            "en": "Undiminished Proceeds of Labour"
-          }
-        },
-        {
-          "id": "iron-law-of-wages",
-          "name": {
-            "ko": "임금철칙",
-            "en": "Iron Law of Wages"
-          }
-        },
-        {
-          "id": "lower-and-higher-phase-of-communism",
-          "name": {
-            "ko": "공산주의의 낮은 단계와 높은 단계",
-            "en": "Lower and Higher Phase of Communism"
-          }
-        },
-        {
-          "id": "dictatorship-of-the-proletariat",
-          "name": {
-            "ko": "프롤레타리아 독재",
-            "en": "Dictatorship of the Proletariat"
-          }
-        }
+        "critique-of-the-gotha-programme",
+        "undiminished-proceeds-of-labour",
+        "iron-law-of-wages",
+        "lower-and-higher-phase-of-communism",
+        "dictatorship-of-the-proletariat"
       ],
       "events": [],
       "addedAt": "2026-07-27",
@@ -177,38 +99,14 @@
       },
       "source": "В. И. Ленин, «О продовольственном налоге» (1921). 영역 유리 스도브니코프. 『레닌 전집』 영어판 제1판, 프로그레스 출판사, 모스크바, 1965년, 제32권, 329–365쪽",
       "people": [
-        {
-          "id": "lenin",
-          "name": {
-            "ko": "블라디미르 레닌",
-            "en": "Vladimir Lenin"
-          }
-        }
+        "lenin"
       ],
       "terms": [
-        {
-          "id": "prodnalog",
-          "name": {
-            "ko": "현물세",
-            "en": "Prodnalog"
-          }
-        },
-        {
-          "id": "state-capitalism",
-          "name": {
-            "ko": "국가자본주의",
-            "en": "State Capitalism"
-          }
-        }
+        "prodnalog",
+        "state-capitalism"
       ],
       "events": [
-        {
-          "id": "new-economic-policy",
-          "name": {
-            "ko": "신경제정책(네프)",
-            "en": "The New Economic Policy (NEP)"
-          }
-        }
+        "new-economic-policy"
       ],
       "addedAt": "2026-07-25",
       "tocExclude": [
@@ -241,22 +139,10 @@
       },
       "source": "Конституция СССР 1936 года. 영어판: Constitution (Fundamental Law) of the U.S.S.R., J. V. Stalin, Works, Vol. 14 (Red Star Press, London, 1978), marxists.org 수록본",
       "people": [
-        {
-          "id": "stalin",
-          "name": {
-            "ko": "이오시프 스탈린",
-            "en": "Joseph Stalin"
-          }
-        }
+        "stalin"
       ],
       "terms": [
-        {
-          "id": "1936-soviet-constitution",
-          "name": {
-            "ko": "1936년 소련 헌법",
-            "en": "1936 Soviet Constitution"
-          }
-        }
+        "1936-soviet-constitution"
       ],
       "events": [],
       "addedAt": "2026-07-29",
@@ -288,50 +174,14 @@
       },
       "source": "И. В. Сталин, «О диалектическом и историческом материализме» (1938). 영어판: J. V. Stalin, Dialectical and Historical Materialism, History of the CPSU(B): Short Course, ch. 4, sec. 2; marxists.org 수록본",
       "people": [
-        {
-          "id": "stalin",
-          "name": {
-            "ko": "이오시프 스탈린",
-            "en": "Joseph Stalin"
-          }
-        },
-        {
-          "id": "karl-marx",
-          "name": {
-            "ko": "카를 마르크스",
-            "en": "Karl Marx"
-          }
-        },
-        {
-          "id": "friedrich-engels",
-          "name": {
-            "ko": "프리드리히 엥겔스",
-            "en": "Friedrich Engels"
-          }
-        },
-        {
-          "id": "lenin",
-          "name": {
-            "ko": "블라디미르 레닌",
-            "en": "Vladimir Lenin"
-          }
-        }
+        "stalin",
+        "karl-marx",
+        "friedrich-engels",
+        "lenin"
       ],
       "terms": [
-        {
-          "id": "dialectical-materialism",
-          "name": {
-            "ko": "변증법적 유물론",
-            "en": "Dialectical Materialism"
-          }
-        },
-        {
-          "id": "historical-materialism",
-          "name": {
-            "ko": "사적 유물론",
-            "en": "Historical Materialism"
-          }
-        }
+        "dialectical-materialism",
+        "historical-materialism"
       ],
       "events": [],
       "addedAt": "2026-07-29",
@@ -366,31 +216,13 @@
         "^제\\d+장\\s"
       ],
       "people": [
-        {
-          "id": "yezhov",
-          "name": {
-            "ko": "니콜라이 예조프",
-            "en": "Nikolai Yezhov"
-          }
-        }
+        "yezhov"
       ],
       "terms": [
-        {
-          "id": "yezhovshchina",
-          "name": {
-            "ko": "예조프시나",
-            "en": "Yezhovshchina"
-          }
-        }
+        "yezhovshchina"
       ],
       "events": [
-        {
-          "id": "great-terror",
-          "name": {
-            "ko": "대숙청",
-            "en": "The Great Purge"
-          }
-        }
+        "great-terror"
       ],
       "addedAt": "2026-07-23",
       "aliases": {
@@ -420,169 +252,31 @@
       },
       "source": "«Заявление 46-ти» в Политбюро ЦК РКП(б) о внутрипартийном положении, 15 октября 1923 г. 수록본: Коммунистическая оппозиция в СССР, 1923–1927, том 1, ред.-сост. Ю. Фельштинский (Терра, 1990), с. 83–88",
       "people": [
-        {
-          "id": "preobrazhensky",
-          "name": {
-            "ko": "예브게니 프레오브라젠스키",
-            "en": "Yevgeni Preobrazhensky"
-          }
-        },
-        {
-          "id": "leonid-serebryakov",
-          "name": {
-            "ko": "레오니트 세레브랴코프",
-            "en": "Leonid Serebryakov"
-          }
-        },
-        {
-          "id": "antonov-ovseenko",
-          "name": {
-            "ko": "블라디미르 안토노프-옵세옌코",
-            "en": "Vladimir Antonov-Ovseenko"
-          }
-        },
-        {
-          "id": "timofei-sapronov",
-          "name": {
-            "ko": "티모페이 사프로노프",
-            "en": "Timofei Sapronov"
-          }
-        },
-        {
-          "id": "osinsky",
-          "name": {
-            "ko": "니콜라이 오신스키",
-            "en": "Nikolai Osinsky"
-          }
-        },
-        {
-          "id": "nikolai-muralov",
-          "name": {
-            "ko": "니콜라이 무랄로프",
-            "en": "Nikolai Muralov"
-          }
-        },
-        {
-          "id": "yuri-pyatakov",
-          "name": {
-            "ko": "게오르기 퍄타코프",
-            "en": "Georgy Pyatakov"
-          }
-        },
-        {
-          "id": "alexander-beloborodov",
-          "name": {
-            "ko": "알렉산드르 벨로보로도프",
-            "en": "Alexander Beloborodov"
-          }
-        },
-        {
-          "id": "andrei-bubnov",
-          "name": {
-            "ko": "안드레이 부브노프",
-            "en": "Andrei Bubnov"
-          }
-        },
-        {
-          "id": "arkady-rozengolts",
-          "name": {
-            "ko": "아르카디 로젠골츠",
-            "en": "Arkady Rozengolts"
-          }
-        },
-        {
-          "id": "varvara-yakovleva",
-          "name": {
-            "ko": "바르바라 야코블레바",
-            "en": "Varvara Yakovleva"
-          }
-        },
-        {
-          "id": "ivan-smirnov",
-          "name": {
-            "ko": "이반 스미르노프",
-            "en": "Ivan Smirnov"
-          }
-        },
-        {
-          "id": "vladimir-smirnov",
-          "name": {
-            "ko": "블라디미르 스미르노프",
-            "en": "Vladimir Smirnov"
-          }
-        },
-        {
-          "id": "vladislav-kosior",
-          "name": {
-            "ko": "블라디슬라프 코시오르",
-            "en": "Vladislav Kosior"
-          }
-        },
-        {
-          "id": "pyotr-koganovich",
-          "name": {
-            "ko": "표트르 코가노비치",
-            "en": "Pyotr Koganovich"
-          }
-        },
-        {
-          "id": "boris-eltsin",
-          "name": {
-            "ko": "보리스 엘친",
-            "en": "Boris Eltsin"
-          }
-        },
-        {
-          "id": "alexander-voronsky",
-          "name": {
-            "ko": "알렉산드르 보론스키",
-            "en": "Alexander Voronsky"
-          }
-        },
-        {
-          "id": "evgenia-bosch",
-          "name": {
-            "ko": "예브게니야 보시",
-            "en": "Evgenia Bosch"
-          }
-        }
+        "preobrazhensky",
+        "leonid-serebryakov",
+        "antonov-ovseenko",
+        "timofei-sapronov",
+        "osinsky",
+        "nikolai-muralov",
+        "yuri-pyatakov",
+        "alexander-beloborodov",
+        "andrei-bubnov",
+        "arkady-rozengolts",
+        "varvara-yakovleva",
+        "ivan-smirnov",
+        "vladimir-smirnov",
+        "vladislav-kosior",
+        "pyotr-koganovich",
+        "boris-eltsin",
+        "alexander-voronsky",
+        "evgenia-bosch"
       ],
       "terms": [
-        {
-          "id": "declaration-of-46",
-          "name": {
-            "ko": "46인 선언",
-            "en": "Declaration of 46"
-          }
-        },
-        {
-          "id": "left-opposition",
-          "name": {
-            "ko": "좌익반대파",
-            "en": "Left Opposition"
-          }
-        },
-        {
-          "id": "democratic-centralism",
-          "name": {
-            "ko": "민주집중제",
-            "en": "Democratic Centralism"
-          }
-        },
-        {
-          "id": "price-scissors",
-          "name": {
-            "ko": "가위차",
-            "en": "Price Scissors"
-          }
-        },
-        {
-          "id": "chervonets",
-          "name": {
-            "ko": "체르보네츠",
-            "en": "Chervonets"
-          }
-        }
+        "declaration-of-46",
+        "left-opposition",
+        "democratic-centralism",
+        "price-scissors",
+        "chervonets"
       ],
       "events": [],
       "addedAt": "2026-07-30",
@@ -616,52 +310,16 @@
       },
       "source": "Архів Управління МВС України Харківської області. Колекція документів. 수록본: Полянский А. И. Ежов. История «железного» сталинского наркома. — М.: Вече, АРИА-АиФ, 2001. — (Особый архив)",
       "people": [
-        {
-          "id": "yezhov",
-          "name": {
-            "ko": "니콜라이 예조프",
-            "en": "Nikolai Yezhov"
-          }
-        }
+        "yezhov"
       ],
       "terms": [
-        {
-          "id": "yezhovshchina",
-          "name": {
-            "ko": "예조프시나",
-            "en": "Yezhovshchina"
-          }
-        },
-        {
-          "id": "national-operations-nkvd",
-          "name": {
-            "ko": "민족 작전",
-            "en": "National Operations of the NKVD"
-          }
-        },
-        {
-          "id": "nkvd-first-category",
-          "name": {
-            "ko": "제1범주 / 제2범주",
-            "en": "First Category / Second Category (NKVD)"
-          }
-        },
-        {
-          "id": "nkvd-order-00447",
-          "name": {
-            "ko": "NKVD 작전명령 제00447호",
-            "en": "NKVD Order No. 00447"
-          }
-        }
+        "yezhovshchina",
+        "national-operations-nkvd",
+        "nkvd-first-category",
+        "nkvd-order-00447"
       ],
       "events": [
-        {
-          "id": "great-terror",
-          "name": {
-            "ko": "대숙청",
-            "en": "The Great Purge"
-          }
-        }
+        "great-terror"
       ],
       "aliases": {
         "ko": [
@@ -692,59 +350,17 @@
       },
       "source": "Оперативные приказы НКВД СССР № 00439 (25.07.1937), № 00447 (30.07.1937), № 00485 (11.08.1937), № 00486 (15.08.1937), № 00593 (20.09.1937), № 00606 (17.09.1938). 전사(轉寫): ru.wikisource.org (00439·00447·00485·00593), stalinism.ru (00606); 00486 — Архів Управління МВС України Харківської області",
       "people": [
-        {
-          "id": "yezhov",
-          "name": {
-            "ko": "니콜라이 예조프",
-            "en": "Nikolai Yezhov"
-          }
-        }
+        "yezhov"
       ],
       "terms": [
-        {
-          "id": "nkvd-order-00447",
-          "name": {
-            "ko": "NKVD 작전명령 제00447호",
-            "en": "NKVD Order No. 00447"
-          }
-        },
-        {
-          "id": "national-operations-nkvd",
-          "name": {
-            "ko": "민족 작전",
-            "en": "National Operations of the NKVD"
-          }
-        },
-        {
-          "id": "nkvd-first-category",
-          "name": {
-            "ko": "제1범주 / 제2범주",
-            "en": "First Category / Second Category (NKVD)"
-          }
-        },
-        {
-          "id": "troika",
-          "name": {
-            "ko": "트로이카",
-            "en": "Troika"
-          }
-        },
-        {
-          "id": "yezhovshchina",
-          "name": {
-            "ko": "예조프시나",
-            "en": "Yezhovshchina"
-          }
-        }
+        "nkvd-order-00447",
+        "national-operations-nkvd",
+        "nkvd-first-category",
+        "troika",
+        "yezhovshchina"
       ],
       "events": [
-        {
-          "id": "great-terror",
-          "name": {
-            "ko": "대숙청",
-            "en": "The Great Purge"
-          }
-        }
+        "great-terror"
       ],
       "aliases": {
         "ko": [

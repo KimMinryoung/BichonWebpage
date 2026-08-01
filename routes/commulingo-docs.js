@@ -2,6 +2,7 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
+const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 
 const router = express.Router();
 
@@ -74,22 +75,24 @@ function nestToc(flat) {
     return parts;
 }
 
-function presentDoc(raw, lang) {
+// The manifest owns what belongs to the document (title, source, aliases) and
+// the dictionaries own their own headwords, so the topbar labels come from
+// resolveDocRefs rather than from anything written here.
+function presentDoc(raw, lang, resolveDocRefs) {
     return {
         ...raw,
         title: localize(raw.title, lang),
         description: localize(raw.description, lang),
         kind: localize(raw.kind, lang),
-        people: (raw.people || []).map(person => ({ ...person, name: localize(person.name, lang) })),
-        terms: (raw.terms || []).map(term => ({ ...term, name: localize(term.name, lang) })),
-        events: (raw.events || []).map(event => ({ ...event, name: localize(event.name, lang) })),
+        ...resolveDocRefs(raw),
     };
 }
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
-        const docs = listCommuLingoDocs().map(doc => presentDoc(doc, lang));
+        const resolveDocRefs = await createDocRefResolver(lang);
+        const docs = listCommuLingoDocs().map(doc => presentDoc(doc, lang, resolveDocRefs));
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-docs', {
             docs,
@@ -120,7 +123,7 @@ router.get('/:docId', async (req, res) => {
             message: lang === 'en' ? 'Document not found.' : '문서를 찾을 수 없습니다.',
             backHref: '/commulingo/docs', backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
         });
-        const doc = presentDoc(raw, lang);
+        const doc = presentDoc(raw, lang, await createDocRefResolver(lang));
         const { html, toc, paged } = getCommuLingoDocContent(raw);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
 
