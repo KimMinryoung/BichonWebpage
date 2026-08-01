@@ -101,7 +101,6 @@ router.get('/', async (req, res) => {
                 ? 'Full-text reference documents behind the CommuLingo dictionaries.'
                 : '공산링고 사전들의 바탕이 되는 참고 문헌 전문 서고.',
             pagePath: '/commulingo/docs',
-            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
         });
     } catch (err) {
         console.error('commulingo docs index:', err);

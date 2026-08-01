@@ -21,17 +21,18 @@
 </script>
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">
+<link rel="stylesheet" href="/css/commulingo-crumb.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/commulingo-doc.css?v=<%= assetVersion %>">
 </head>
-<body class="nav-collapsed">
+<%# 이 리더는 자체 <head>를 갖지만 몸통은 나머지 공산링고와 같은 차림이다:
+    맨 위에 사이트 툴바와 주 메뉴, 그 아래 공통 크럼 바. 예전에는 둘 다 없이
+    컨트롤 바 안의 ☰ 버튼이 메뉴를 오버레이로 열었는데, 로고·테마·언어·주
+    메뉴가 다른 모든 페이지와 같은 자리에 있으면 그 버튼은 필요가 없다. %>
+<%# 건너뛰기 링크는 끈다: 그 스타일은 ui.css에 있고 이 리더는 그 파일을 싣지
+    않아, 켜 두면 숨지 않고 화면 왼쪽 위에 그대로 찍힌다. %>
+<body class="commulingo-page">
+<%- include('../partials/nav', { showSkipLink: false }) %>
 <% var en = lang === 'en'; %>
-<header class="doc-topbar" aria-label="<%= en ? 'Breadcrumb' : '현재 위치' %>">
-    <ol class="doc-crumb">
-        <li><a href="/commulingo"><%= en ? 'CommuLingo' : '공산링고' %></a></li>
-        <li><span class="doc-crumb-sep" aria-hidden="true">›</span><a href="/commulingo/docs"><%= en ? 'Reference Library' : '참고 문헌' %></a></li>
-        <li><span class="doc-crumb-sep" aria-hidden="true">›</span><span class="doc-crumb-current" aria-current="page"><%= doc.title %></span></li>
-    </ol>
-</header>
 <main class="book">
 <% if (pagination) { %>
 <script>
@@ -47,6 +48,46 @@
 })();
 </script>
 <% } %>
+<%
+// On a paginated document the TOC is the hub: entries link to the page that
+// holds their section (plus the anchor); on a single-scroll document they
+// stay plain fragment links.
+var tocHref = function(id) {
+    if (!pagination || !idToPage || !idToPage[id] || idToPage[id] === pagination.current) return '#' + id;
+    return '?p=' + idToPage[id] + '#' + id;
+};
+%>
+<%# 스크롤을 따라오는 컨트롤 바. 왼쪽은 나머지 공산링고와 똑같은 크럼 파셜이고
+    오른쪽 한 칸이 목차다. 크럼은 이 페이지에서도 사전 상세 페이지와 같은 자리,
+    같은 모양으로 따라온다. 목차가 없는 문서에서도 바는 크럼만으로 남는다. %>
+<div class="doc-toc">
+<%- include('../partials/commulingo-crumb', {
+    trail: [
+        { label: en ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
+        { label: doc.title },
+    ] }) %>
+<% if (toc.length) { %>
+<nav class="doc-toc-nav" aria-label="<%= en ? 'Table of contents' : '목차' %>">
+<details>
+<summary><%= en ? 'Contents' : '목차' %><% if (pagination) { %> <span class="doc-toc-pos"><%= pagination.current %>/<%= pagination.total %></span><% } %></summary>
+<ol class="doc-toc-parts">
+    <% toc.forEach(function(part) { %>
+    <li>
+        <% if (part.id) { %><a class="doc-toc-part" href="<%= tocHref(part.id) %>"><%= part.text %></a><% } %>
+        <% if (part.chapters.length) { %>
+        <ol class="doc-toc-chapters">
+            <% part.chapters.forEach(function(chapter) { %>
+            <li><a href="<%= tocHref(chapter.id) %>"><%= chapter.text %></a></li>
+            <% }) %>
+        </ol>
+        <% } %>
+    </li>
+    <% }) %>
+</ol>
+</details>
+</nav>
+<% } %>
+</div>
 <%- bodyTopHtml %>
 <%# 이 문헌이 어느 사전 항목에 속하는지 알리는 한 줄. 제목 바로 아래 산문으로
     두는 편이 상단 칩 줄보다 조용하다 — 읽으러 온 사람의 첫 화면은 제목과 본문
@@ -67,55 +108,6 @@ var refGroups = [
     <% }) %>
 </p>
 <% } %>
-<%
-// On a paginated document the TOC is the hub: entries link to the page that
-// holds their section (plus the anchor); on a single-scroll document they
-// stay plain fragment links.
-var tocHref = function(id) {
-    if (!pagination || !idToPage || !idToPage[id] || idToPage[id] === pagination.current) return '#' + id;
-    return '?p=' + idToPage[id] + '#' + id;
-};
-%>
-<%# 스크롤을 따라오는 컨트롤 바. 목차만 따라오고 메뉴 버튼은 맨 위에 남아
-    있으면, 문서 중간에서 메뉴를 열려고 꼭대기까지 올라가야 한다. 둘을 한 줄에
-    묶어 왼쪽 메뉴 / 오른쪽 목차로 둔다. 목차가 없는 문서에서도 바는 남는다. %>
-<nav class="doc-toc" aria-label="<%= en ? 'Document controls' : '문서 도구' %>">
-<button
-    type="button"
-    class="doc-nav-toggle"
-    id="docNavToggle"
-    aria-expanded="false"
-    aria-controls="docNavGroup"
-    aria-label="<%= strings.siteName %>"
->
-    <span class="doc-nav-toggle-icon" aria-hidden="true"></span>
-</button>
-<% if (toc.length) { %>
-<details>
-<summary><%= en ? 'Table of contents' : '목차' %><% if (pagination) { %> <span class="doc-toc-pos"><%= pagination.current %>/<%= pagination.total %></span><% } %></summary>
-<ol class="doc-toc-parts">
-    <% toc.forEach(function(part) { %>
-    <li>
-        <% if (part.id) { %><a class="doc-toc-part" href="<%= tocHref(part.id) %>"><%= part.text %></a><% } %>
-        <% if (part.chapters.length) { %>
-        <ol class="doc-toc-chapters">
-            <% part.chapters.forEach(function(chapter) { %>
-            <li><a href="<%= tocHref(chapter.id) %>"><%= chapter.text %></a></li>
-            <% }) %>
-        </ol>
-        <% } %>
-    </li>
-    <% }) %>
-</ol>
-</details>
-<% } %>
-<%# 메뉴 내용물도 바 안에 둔다. 문서 맨 위 흐름에 두면 스크롤을 내린 상태에서
-    버튼을 눌러도 펼쳐진 메뉴가 화면 밖이라, 버튼만 따라오는 의미가 없었다.
-    목차와 같은 오버레이 방식이라 펼쳐도 본문 레이아웃이 밀리지 않는다. %>
-<div class="doc-nav-group" id="docNavGroup">
-    <%- include('../partials/nav', { showSkipLink: false }) %>
-</div>
-</nav>
 <%- bodyRestHtml %>
 <% if (pagination) { %>
 <nav class="doc-pager" aria-label="<%= en ? 'Pages' : '페이지 이동' %>">
@@ -135,11 +127,11 @@ var tocHref = function(id) {
 </main>
 <% if (toc.length) { %>
 <script>
-// Collapse the contents panel when a reader picks an entry. It is a sticky
-// <nav>, so leaving it open pins a full-height panel over the section just
-// jumped to. Closing it here, synchronously in the click, shrinks the layout
-// before the browser resolves the fragment, so the heading lands where the
-// reader expects it.
+// Collapse the contents panel when a reader picks an entry. The bar it hangs
+// from is sticky, so leaving it open pins a full-height panel over the section
+// just jumped to. Closing it here, synchronously in the click, shrinks the
+// layout before the browser resolves the fragment, so the heading lands where
+// the reader expects it.
 (function () {
     var details = document.querySelector('.doc-toc details');
     if (!details) return;
@@ -150,21 +142,6 @@ var tocHref = function(id) {
 })();
 </script>
 <% } %>
-<script>
-// 접이식 상단 메뉴. 상태 클래스는 body에 둔다 — 래퍼를 새로 씌우면 .book의
-// 폭·여백 계산이 흔들린다.
-// 이 스크립트는 문서 끝에 있어야 한다. 버튼이 sticky 컨트롤 바(본문 뒤) 안에
-// 있으므로, 앞쪽에서 실행하면 getElementById가 null을 받고 조용히 빠져나가
-// 클릭이 먹지 않는다.
-(function () {
-    var toggle = document.getElementById('docNavToggle');
-    if (!toggle) return;
-    toggle.addEventListener('click', function () {
-        var collapsed = document.body.classList.toggle('nav-collapsed');
-        toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-    });
-})();
-</script>
 <%# 테마 토글(#themeToggle) 핸들러는 common.js에 있다. 이 리더는 partials/head를
     쓰지 않고 자체 head를 갖는 탓에 스크립트를 하나도 싣지 않아, nav 파셜이
     가져오는 nav.js(언어 드롭다운)만 동작하고 테마 전환은 죽어 있었다. %>

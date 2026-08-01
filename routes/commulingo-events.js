@@ -188,7 +188,6 @@ router.get('/', async (req, res) => {
             pageTitle: lang === 'en' ? 'Historical Events — CommuLingo' : '역사 사건 — CommuLingo',
             pageDescription: lang === 'en' ? 'Events, institutions, and people in connected Soviet and revolutionary history.' : '혁명과 소련사의 사건·기관·인물을 연결해 읽는 페이지.',
             pagePath: '/commulingo/events',
-            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
         });
     } catch (err) {
         console.error('commulingo events:', err);
@@ -220,7 +219,6 @@ router.get('/:eventId', async (req, res) => {
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,
-            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
         });
     } catch (err) {
         console.error('commulingo event detail:', err);

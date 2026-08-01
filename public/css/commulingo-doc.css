@@ -159,80 +159,9 @@
   margin-left: 0.25em;
 }
 
-/* Reader chrome: standard header/footer added by the commulingo-doc template.
-   This page carries no site nav, so the crumb is its only way out — it gets the
-   same trail as the rest of CommuLingo, kept quieter (no filled bar) because
-   the reader deliberately has no chrome above the text. */
-.doc-topbar {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 1rem clamp(12px, 2.5vw, 20px) 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1.1rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.doc-crumb {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  margin: 0;
-  padding: 0.45rem 0;
-  border-bottom: 1px solid var(--border);
-  list-style: none;
-  width: 100%;
-}
-
-.doc-crumb li {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-}
-
-.doc-crumb a {
-  padding: 0.15rem 0.4rem;
-  color: var(--text-secondary);
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.doc-crumb a:hover {
-  color: var(--link);
-}
-
-.doc-crumb-sep {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-
-/* The document's own title closes the trail, and it is the segment long enough
-   to need truncating. */
-.doc-crumb-current {
-  min-width: 0;
-  padding: 0.15rem 0.4rem;
-  overflow: hidden;
-  color: var(--text-primary);
-  font-weight: 700;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* The library link and the title stay; the section root drops out to leave the
-   title room to breathe. */
-@media (max-width: 560px) {
-  .doc-crumb li:first-child,
-  .doc-crumb li:nth-child(2) .doc-crumb-sep {
-    display: none;
-  }
-
-  .doc-crumb li:nth-child(2) a {
-    padding-left: 0;
-  }
-}
-
+/* Reader chrome: the footer added by the commulingo-doc template. The header
+   is now the shared crumb bar (commulingo-crumb.css), the same one the
+   dictionaries use, sitting inside the sticky control bar below. */
 /* Prev/next chapter navigation on paginated documents. */
 .doc-pager {
   /* A <nav>, so it would inherit the global sticky rule from style.css and
@@ -301,24 +230,39 @@
    the reader had just jumped to. The list is capped to the viewport and scrolls
    inside itself, so an open contents panel can never blank the page even if the
    script below fails to run. */
-/* 스크롤을 따라오는 컨트롤 바: 왼쪽 메뉴 토글, 오른쪽 목차. <nav>라서
-   style.css의 sticky 규칙(top:0, z-index:50)을 그대로 물려받는다. 목차만
-   따라오고 메뉴 버튼은 문서 맨 위에 남아 있던 것이 문제였다. */
+/* 스크롤을 따라오는 컨트롤 바: 왼쪽은 나머지 공산링고와 같은 크럼 파셜, 오른쪽
+   한 칸이 목차다. 예전에는 왼쪽이 메뉴 오버레이를 여는 ☰ 버튼이었는데, 이제
+   로고·테마·언어·주 메뉴가 다른 페이지와 같은 자리(문서 맨 위)에 있다.
+   sticky·테두리·배경은 <nav>였을 때 전역 규칙에서 오던 것을 이 래퍼가 직접
+   갖는다. 안의 크럼은 정지시키고 자기 테두리를 벗는다 — 상자는 바깥 바 하나. */
 .doc-toc {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   margin: 1.4rem 0 2rem;
   display: flex;
   align-items: stretch;
   gap: 0;
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
 }
 
-/* 목차 상자가 남는 폭을 모두 차지해, 접힌 상태에서도 어디를 눌러야 하는지가
-   분명하다. 라벨은 오른쪽 끝에 붙인다. */
-/* 테두리는 바깥 바가 하나만 갖는다. 안쪽 상자가 각자 테두리를 두르면 컨트롤
-   두 개가 따로 노는 것처럼 보이고, 가운데 빈 공간이 틈으로 읽힌다. */
-.doc-toc details {
+/* 크럼이 남는 폭을 모두 차지하고 목차는 라벨만큼만 차지한다. */
+.doc-toc .commu-crumb {
+  position: static;
   flex: 1 1 auto;
   min-width: 0;
-  border: none;
+  margin-top: 0;
+  border: 0;
+  background: none;
+}
+
+.doc-toc-nav {
+  position: static;
+  display: flex;
+  flex: 0 0 auto;
+  min-width: 0;
+  border: 0;
   background: none;
 }
 
@@ -327,33 +271,18 @@
   align-items: center;
   justify-content: flex-end;
   gap: 0.4rem;
-}
-
-.doc-toc .doc-nav-toggle {
-  flex: 0 0 auto;
-  height: auto;
-  width: auto;
-  padding: 0 0.75rem;
-  border: none;
-  border-right: 1px solid var(--border);
-  background: none;
-}
-
-.doc-toc details {
-  border: 1px solid var(--border);
-  background: var(--bg-surface);
-  padding: 0.8rem 1rem;
+  white-space: nowrap;
+  /* 크럼과 목차 사이의 단 하나의 칸막이. */
+  border-left: 1px solid var(--border);
 }
 
 /* The open list overlays the page instead of expanding in flow. In flow it made
    the document 1304px taller, which moved all 9,180 paragraphs below it: a
    no-op frame on this page costs 15.8ms and a full style recalc 16.3ms, but the
    toggle cost 46.5ms, and the difference is that shift being laid out and
-   repainted. Out of flow the toggle changes no geometry outside this box. */
-.doc-toc details {
-  position: relative;
-}
-
+   repainted. Out of flow the toggle changes no geometry outside this box.
+   The panel anchors to the sticky bar, not to the summary box it hangs from, so
+   it spans the whole column instead of the width of the word 목차. */
 .doc-toc details[open] > .doc-toc-parts {
   position: absolute;
   left: 0;
@@ -413,7 +342,6 @@
 }
 
 @media print {
-  .doc-topbar,
   .doc-colophon,
   .doc-toc {
     display: none;
@@ -434,63 +362,6 @@
   .notes-list li {
     break-inside: avoid;
   }
-}
-
-/* 접이식 상단 메뉴 — 채팅 페이지의 ☰ 토글과 같은 관례를 쓰되, 그쪽이 모바일에서만
-   접는 것과 달리 참고 문헌은 모든 폭에서 접어 둔다. 긴 문서를 읽는 화면에서
-   전역 메뉴가 늘 세로 공간을 먹지 않도록. */
-.doc-nav-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  width: 34px;
-  height: 28px;
-  padding: 0;
-  background: var(--bg-inset);
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  cursor: pointer;
-}
-
-.doc-nav-toggle-icon::before {
-  content: "\2630"; /* ☰ */
-  font-size: 1rem;
-  line-height: 1;
-}
-
-body:not(.nav-collapsed) .doc-nav-toggle-icon::before {
-  content: "\2715"; /* ✕ */
-}
-
-body.nav-collapsed .doc-nav-group {
-  display: none;
-}
-
-@media print {
-  .doc-nav-toggle,
-  .doc-nav-group {
-    display: none;
-  }
-}
-
-/* 상단바에는 목록으로 돌아가는 링크 하나만 있다. 인물·용어·사건까지 여기에
-   알약 버튼으로 늘어놓던 때는 여덟 개가 데스크톱 두 줄, 모바일 일곱 줄을
-   차지해서 문헌을 열면 제목보다 링크 더미가 먼저 보였다. 그 목록은 제목 아래
-   .doc-refs 한 줄로 내려갔고, 남은 링크 하나는 버튼일 이유가 없다. */
-.doc-topbar {
-  align-items: center;
-}
-
-.doc-topbar a {
-  color: var(--text-muted);
-  text-decoration: none;
-}
-
-.doc-topbar a:hover,
-.doc-topbar a:focus-visible {
-  color: var(--link);
-  text-decoration: underline;
 }
 
 /* 제목 바로 아래 한 줄: 이 문헌이 어느 사전 항목에 속하는지. 본문보다 작고
@@ -540,8 +411,9 @@ body.nav-collapsed .doc-nav-group {
    목차 라벨이 상자 안에서 뜨고 위아래로 죽은 공간이 남는다. summary가 상자
    높이를 꽉 채우면 그 공간이 클릭 영역이 되고, 세로 여백을 0.8rem에서
    0.4rem으로 줄여 바 높이를 절반으로 낮춘다. 테두리·배경은 바깥 바 하나만
-   갖는다(위 규칙보다 뒤에 와야 이깁니다). */
+   갖는다. */
 .doc-toc details {
+  flex: 0 0 auto;
   border: none;
   background: none;
   padding: 0;
@@ -559,54 +431,6 @@ body.nav-collapsed .doc-nav-group {
 .book h2,
 .book h3 {
   scroll-margin-top: 3rem;
-}
-
-/* 펼친 메뉴는 컨트롤 바에 매달린 오버레이다. 흐름에 넣으면 아래 문단 전체가
-   다시 레이아웃되고(목차에서 이미 겪은 문제), 무엇보다 문서 맨 위에 두면
-   스크롤을 내린 상태에서 펼쳐봐야 화면 밖이라 버튼이 따라오는 의미가 없다.
-   .doc-toc는 position:sticky라 그 자체가 절대 위치의 기준이 된다. */
-.doc-nav-group {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 61;
-  max-height: calc(100dvh - 6rem);
-  overflow-y: auto;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-}
-
-/* 파셜 안의 <nav>들은 전역 규칙으로 sticky다. 오버레이 안에서 다시 붙으면
-   스크롤할 때 자기들끼리 어긋나므로 흐름으로 되돌린다. */
-.doc-nav-group nav,
-.doc-nav-group .home-toolbar {
-  position: static;
-}
-
-@media print {
-  .doc-nav-group {
-    display: none;
-  }
-}
-
-/* 목차용 링크 규칙은 목차 목록에만 건다. 메뉴 파셜이 이 바 안으로 들어오면서
-   로고·nav 링크까지 걸려, style.css가 text-decoration:none으로 막아둔 로고에
-   hover 밑줄이 붙었다(특정도가 같고 이 파일이 뒤에 실려 이긴다). */
-.doc-toc .doc-nav-group a:hover {
-  text-decoration: none;
-}
-
-.doc-toc .doc-nav-group a {
-  color: inherit;
-}
-
-/* 목차는 DOM상 <article> 안에 들어간다(제목 h1 뒤에 끼워지므로). 그래서 본문
-   링크용 hover 규칙이 목차에도 걸리는데, border-width를 주지 않아도
-   border-style만으로 기본값 medium(3px) 선이 그어져 text-decoration 밑줄과
-   겹쳐 두 줄로 보였다. 목차·메뉴는 본문 링크가 아니므로 제외한다. */
-.book article .doc-toc a:hover {
-  border-bottom-style: none;
 }
 
 /* 컨트롤 바는 본문 칼럼의 좌우 여백을 상쇄해 컨테이너 폭을 꽉 채운다. 바가

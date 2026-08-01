@@ -287,7 +287,6 @@ router.get('/', async (req, res) => {
                 ? 'The concepts of Soviet and revolutionary history, connected to the people, events, and reports that use them.'
                 : '혁명과 소련사의 개념들을 인물·사건·보고서와 연결해 읽는 용어 사전.',
             pagePath: '/commulingo/terms',
-            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
         });
     } catch (err) {
         console.error('commulingo terms:', err);
@@ -373,7 +372,6 @@ router.get('/:termId', async (req, res) => {
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,
             pagePath: `/commulingo/terms/${term.id}`,
-            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
         });
     } catch (err) {
         console.error('commulingo term detail:', err);

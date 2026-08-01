@@ -28,7 +28,6 @@ router.get('/', (req, res) => {
                 ? 'Diagrams of how currents, doctrines and factions split and merged.'
                 : '사상과 이론, 분파가 갈라지고 합쳐진 흐름을 도표로 보는 계보도.',
             pagePath: '/commulingo/genealogy',
-            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
         });
     } catch (err) {
         console.error('commulingo genealogy index:', err);
@@ -57,7 +56,6 @@ router.get('/:chartId', (req, res) => {
             pageTitle: `${localize(chart.title, lang)} — CommuLingo`,
             pageDescription: localize(chart.description, lang),
             pagePath: `/commulingo/genealogy/${chart.id}`,
-            extraCss: `/css/commulingo.css?v=${res.locals.assetVersion}`,
         });
     } catch (err) {
         console.error('commulingo genealogy detail:', err);
