@@ -57,6 +57,12 @@
   --control-height: 2.75rem;
   --control-height-sm: 2rem;
 
+  /* One height for the stacked bars at the top of a page — the logo toolbar and
+     the site menu — so the stack reads as one block instead of three sizes.
+     Touch raises it to a 44px target; the sticky CommuLingo crumb keeps its own
+     lower 34px, since it follows the reader down the whole page. */
+  --bar-height: 36px;
+
   --content-default: 50rem;
   --content-wide: 61.25rem;
   --content-home: 60rem;
@@ -65,6 +71,12 @@
   --duration-fast: 120ms;
   --duration-normal: 200ms;
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (pointer: coarse) {
+  :root {
+    --bar-height: 44px;
+  }
 }
 
 :root,

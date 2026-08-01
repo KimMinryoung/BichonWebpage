@@ -126,6 +126,18 @@ nav {
     z-index: 50;
 }
 
+/* The site menu (and the admin bar under it) takes the same band height as the
+   logo toolbar above it — --bar-height, borders included — so the rows stack as
+   one block. Matched by structure, not by position: the chat page nests the
+   menu in a wrapper, while the CommuLingo crumb and the document pager are
+   <nav> without a .nav-content and keep their own heights. The links stretch to
+   fill the bar, so their padding is only a floor — keep it under the bar height
+   or it, not the token, decides how tall the menu is. */
+nav:has(> .nav-content) {
+    box-sizing: border-box;
+    min-height: var(--bar-height);
+}
+
 nav:has(+ .admin-bar) {
     margin-bottom: 0;
 }
@@ -138,6 +150,9 @@ nav .nav-content {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    /* Fill the bar inside its border, so the links' hover fill and the active
+       tab's underline reach the bar's own edges instead of stopping short. */
+    min-height: calc(var(--bar-height) - 2 * var(--border-width));
     max-width: 800px;
     margin: 0 auto;
 }
@@ -184,7 +199,7 @@ nav .nav-links .lang-btn,
 nav .nav-links .nav-logout-btn {
     color: var(--text-primary);
     gap: 6px;
-    padding: 10px 6px;
+    padding: 4px 6px;
     border: none;
     border-radius: 0;
     border-right: none;
@@ -343,8 +358,12 @@ header h1 {
 
 /* Section tabs — switcher for the four writing sections merged under the
    글 menu. Mirrors the CommuLingo dictionary switcher (.commu-dict-nav). */
+/* Hangs directly off the menu above it, so it takes the same band height
+   (--bar-height, borders included) — the tabs stretch to fill it. */
 .section-tabs {
     display: flex;
+    box-sizing: border-box;
+    min-height: var(--bar-height);
     border: 1px solid var(--border);
     border-top: none;
     background: var(--bg-surface);
@@ -356,9 +375,8 @@ header h1 {
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    min-height: 44px;
     box-sizing: border-box;
-    padding: 0.65rem 0.3rem;
+    padding: 0.25rem 0.3rem;
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 700;
@@ -391,7 +409,7 @@ header h1 {
 @media (max-width: 560px) {
     .section-tab {
         gap: 0.25rem;
-        padding: 0.6rem 0.2rem;
+        padding: 0.25rem 0.2rem;
     }
 
     .section-tab-icon {
@@ -568,7 +586,7 @@ header h1 {
 .toolbar-logo {
     display: inline-flex;
     align-items: center;
-    min-height: 36px;
+    min-height: var(--bar-height);
     font-family: 'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
@@ -608,7 +626,7 @@ header h1 {
     gap: 7px;
     /* Shorter than the bar itself: this is the one control with a border, and
        at the bar's full height its frame sits flush on the viewport edge. */
-    min-height: 30px;
+    min-height: calc(var(--bar-height) - 6px);
     box-sizing: border-box;
     padding: 4px 14px;
     background-color: var(--btn-bg);
@@ -663,7 +681,7 @@ header h1 {
     color: var(--text-secondary);
     cursor: pointer;
     font-size: 0.9rem;
-    min-height: 36px;
+    min-height: var(--bar-height);
     box-sizing: border-box;
     padding: 4px 8px;
     font-family: inherit;
@@ -692,27 +710,11 @@ header h1 {
     position: relative;
 }
 
+/* Height comes from --bar-height (palette.css), which touch raises to a 44px
+   target; with a mouse the bar stops eating 52px of every page for a logo and
+   three small buttons. */
 .home-toolbar .theme-toggle {
-    min-width: 36px;
-}
-
-/* Touch targets stay 44px where the finger is the pointer; with a mouse the
-   36px controls are hit just as easily and the bar stops eating 52px of every
-   page for a logo and three small buttons. */
-@media (pointer: coarse) {
-    .home-toolbar .toolbar-logo,
-    .home-toolbar .theme-toggle,
-    .home-toolbar .lang-btn {
-        min-height: 44px;
-    }
-
-    .home-toolbar .toolbar-account-btn {
-        min-height: 38px;
-    }
-
-    .home-toolbar .theme-toggle {
-        min-width: 44px;
-    }
+    min-width: var(--bar-height);
 }
 
 @media (max-width: 768px) {
@@ -1973,7 +1975,9 @@ footer .footer-tagline {
     nav .nav-links .theme-toggle,
     nav .nav-links .lang-btn,
     nav .nav-links .nav-logout-btn {
-        padding: 12px 10px;
+        /* A floor, not the height: the links stretch to the bar, and 12px here
+           pushed the menu past --bar-height and out of step with the toolbar. */
+        padding: 4px 10px;
         font-size: 0.82rem;
     }
 
