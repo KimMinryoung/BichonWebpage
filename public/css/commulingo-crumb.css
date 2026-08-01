@@ -46,8 +46,12 @@ body.commulingo-page > .admin-bar {
     gap: 2px 12px;
     justify-content: space-between;
     margin-top: 14px;
-    min-height: 44px;
-    padding: 3px 10px;
+    /* The bar follows the reader down the whole page, so its height is a
+       standing cost on every screen. 34px is as low as it goes while the
+       segments stay a comfortable tap: they fill the bar's full height, so the
+       target is the row, not the glyph. */
+    min-height: 34px;
+    padding: 0 10px;
     position: sticky;
     top: 0;
     z-index: 50;
@@ -79,12 +83,13 @@ body.commulingo-page > .admin-bar {
 
 .commu-crumb-link {
     align-items: center;
+    align-self: stretch;
     color: var(--text-secondary);
     display: flex;
     font-size: 0.86rem;
     font-weight: 700;
     gap: 5px;
-    padding: 9px 6px;
+    padding: 0 6px;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -113,9 +118,10 @@ body.commulingo-page > .admin-bar {
     color: var(--text-primary);
     font-size: 0.86rem;
     font-weight: 700;
+    line-height: 32px;
     min-width: 0;
     overflow: hidden;
-    padding: 9px 6px;
+    padding: 0 6px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -142,10 +148,11 @@ body.commulingo-page > .admin-bar {
 
 .commu-crumb-jump-link {
     align-items: center;
+    align-self: stretch;
     border: 1px solid transparent;
+    border-block: 0;
     color: var(--text-muted);
     display: flex;
-    height: 34px;
     justify-content: center;
     transition: background-color 0.15s ease;
     width: 34px;
@@ -175,7 +182,7 @@ body.commulingo-page > .admin-bar {
 @media (max-width: 560px) {
     .commu-crumb {
         gap: 2px 8px;
-        padding: 3px 8px;
+        padding: 0 8px;
     }
 
     .commu-crumb-home span {
@@ -189,7 +196,7 @@ body.commulingo-page > .admin-bar {
     /* A long book title pushes the jumps onto a second line; keep that line
        short so the bar stays cheaper than the hero CTAs it replaced. */
     .commu-crumb-jump-link {
-        height: 30px;
+        min-height: 30px;
         width: 30px;
     }
 }
