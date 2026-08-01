@@ -38,14 +38,14 @@
           "id": "wages-fund-doctrine",
           "name": {
             "ko": "임금기금설",
-            "en": "Wages-fund doctrine"
+            "en": "Wages-Fund Doctrine"
           }
         },
         {
           "id": "iron-law-of-wages",
           "name": {
             "ko": "임금철칙",
-            "en": "Iron law of wages"
+            "en": "Iron Law of Wages"
           }
         },
         {
@@ -122,28 +122,28 @@
           "id": "undiminished-proceeds-of-labour",
           "name": {
             "ko": "노동전수익권",
-            "en": "Undiminished proceeds of labour"
+            "en": "Undiminished Proceeds of Labour"
           }
         },
         {
           "id": "iron-law-of-wages",
           "name": {
             "ko": "임금철칙",
-            "en": "Iron law of wages"
+            "en": "Iron Law of Wages"
           }
         },
         {
           "id": "lower-and-higher-phase-of-communism",
           "name": {
             "ko": "공산주의의 낮은 단계와 높은 단계",
-            "en": "Lower and higher phase of communism"
+            "en": "Lower and Higher Phase of Communism"
           }
         },
         {
           "id": "dictatorship-of-the-proletariat",
           "name": {
             "ko": "프롤레타리아 독재",
-            "en": "Dictatorship of the proletariat"
+            "en": "Dictatorship of the Proletariat"
           }
         }
       ],
@@ -206,7 +206,7 @@
           "id": "new-economic-policy",
           "name": {
             "ko": "신경제정책(네프)",
-            "en": "New Economic Policy"
+            "en": "The New Economic Policy (NEP)"
           }
         }
       ],
@@ -387,8 +387,8 @@
         {
           "id": "great-terror",
           "name": {
-            "ko": "대테러",
-            "en": "The Great Terror"
+            "ko": "대숙청",
+            "en": "The Great Purge"
           }
         }
       ],
@@ -643,7 +643,7 @@
           "id": "nkvd-first-category",
           "name": {
             "ko": "제1범주 / 제2범주",
-            "en": "First / Second Category"
+            "en": "First Category / Second Category (NKVD)"
           }
         },
         {
@@ -658,8 +658,8 @@
         {
           "id": "great-terror",
           "name": {
-            "ko": "대테러",
-            "en": "The Great Terror"
+            "ko": "대숙청",
+            "en": "The Great Purge"
           }
         }
       ],
@@ -719,7 +719,7 @@
           "id": "nkvd-first-category",
           "name": {
             "ko": "제1범주 / 제2범주",
-            "en": "First / Second Category"
+            "en": "First Category / Second Category (NKVD)"
           }
         },
         {
@@ -741,8 +741,8 @@
         {
           "id": "great-terror",
           "name": {
-            "ko": "대테러",
-            "en": "The Great Terror"
+            "ko": "대숙청",
+            "en": "The Great Purge"
           }
         }
       ],
