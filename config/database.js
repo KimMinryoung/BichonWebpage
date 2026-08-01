@@ -33,7 +33,9 @@ pool.on('connect', (client) => {
     ).catch((err) => {
         console.error('[DB Connection Error] Failed to set application_name:', err.message);
     });
-    console.debug('[DB Connection] Successfully connected to database');
+    if (process.env.DB_LOG_CONNECTIONS === 'true') {
+        console.debug('[DB Connection] Opened a new pool connection');
+    }
 });
 
 // DB 연결 실패 여부를 확인하는 헬퍼 함수
@@ -52,7 +54,11 @@ function isConnectionError(error) {
 }
 
 // Pre-warm the connection pool at startup
-pool.query('SELECT 1').catch(() => {});
+pool.query('SELECT 1')
+    .then(() => console.info('[DB] Connection pool ready'))
+    .catch((err) => {
+        console.error('[DB Connection Error] Initial connection failed:', err.message);
+    });
 
 module.exports = pool;
 module.exports.isConnectionError = isConnectionError;
