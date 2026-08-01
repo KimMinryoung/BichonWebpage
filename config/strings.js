@@ -229,7 +229,7 @@ const ko = {
 
     commuLingo: {
         title: '공산링고',
-        description: '혁명 이론과 혁명 역사를 익히는 학습장입니다. 퀴즈로 배우고, 사전으로 찾아보세요.',
+        description: '혁명 이론과 혁명 역사를 익히는 학습장입니다.',
         dictSectionTitle: '사전 · 자료실',
         dictSectionHint: '낯선 인물, 사건, 용어가 나오면 여기서 찾아보세요.',
         quizLabel: '퀴즈 학습',
@@ -505,7 +505,7 @@ const en = {
 
     commuLingo: {
         title: 'commulingo',
-        description: 'A learning space for revolutionary theory and history. Learn through quizzes, look things up in the dictionaries.',
+        description: 'A learning space for revolutionary theory and history.',
         dictSectionTitle: 'Dictionaries & Library',
         dictSectionHint: 'Unfamiliar people, events, or terms? Look them up here.',
         quizLabel: 'Quizzes',

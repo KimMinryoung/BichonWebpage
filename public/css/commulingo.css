@@ -1032,17 +1032,28 @@
 }
 
 @media (max-width: 700px) {
-    .commulingo-hero,
     .commu-quiz-top {
         align-items: stretch;
         flex-direction: column;
     }
 
+    .commulingo-hero {
+        align-items: center;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .commulingo-hero > div:first-child {
+        min-width: 0;
+    }
+
     .commulingo-total {
-        width: 100%;
+        background: transparent;
+        border: 0;
         height: auto;
-        min-height: 54px;
-        padding: 6px 0;
+        min-height: 0;
+        padding: 0;
+        width: auto;
     }
 
     .commu-volume-title {
