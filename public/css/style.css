@@ -929,12 +929,9 @@ a.home-card:hover::after {
 }
 
 /* Highlighted interactive cards (chat, CommuLingo) — restrained brand-red accent.
-   No fill: a left bar + red title using --accent-red (the logo/tagline red) draws
-   the eye while keeping red usage minimal, mirroring .home-section-header. */
-.home-card-highlight {
-    border-left: 3px solid var(--accent-red);
-}
-
+   No fill and no left bar: the red title alone (--accent-red, the logo/tagline
+   red) draws the eye, and every card keeps the same cream frame so the column
+   reads as one stack rather than two kinds of box. */
 .home-card-highlight h2 {
     color: var(--accent-red);
 }
