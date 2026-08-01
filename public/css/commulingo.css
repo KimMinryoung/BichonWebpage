@@ -3276,8 +3276,8 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-dict-nav { display: flex; position: static; z-index: auto; border: 1px solid var(--border); background: var(--bg-surface); }
 /* Labels must never wrap: nowrap plus a viewport-scaled font absorbs the
    in-between widths, and below 560px the data-short labels take over. */
-.commu-dict-tab { flex: 1; display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .7rem .4rem; color: var(--text-primary); text-decoration: none; font-weight: 700; font-size: clamp(0.82rem, 1.9vw, 1rem); border-left: 1px solid var(--border); transition: background-color .15s ease; }
-.commu-dict-tab span { white-space: nowrap; }
+.commu-dict-tab { flex: 1; min-width: 0; min-height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .7rem .4rem; color: var(--text-primary); text-decoration: none; font-weight: 700; font-size: clamp(0.82rem, 1.9vw, 1rem); border-left: 1px solid var(--border); transition: background-color .15s ease; overflow: hidden; }
+.commu-dict-tab span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .commu-dict-tab:first-child { border-left: 0; }
 .commu-dict-tab .commu-role-icon { width: 17px; height: 17px; flex: 0 0 auto; color: inherit; }
 .commu-dict-tab:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
