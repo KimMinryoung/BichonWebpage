@@ -33,9 +33,9 @@ body.commulingo-page > .admin-bar {
    Every CommuLingo page opens with this row. It used to be a bare "← 공산링고"
    text link sitting alone in the left corner of a line it did not fill; the
    same line now carries the path back to the section root plus a slot on the
-   right — an entry count on the indexes, jumps to the other dictionaries on a
-   detail page. On the dictionary pages it shares an edge with the switcher
-   tabs directly below it, so the two rows read as one block. */
+   right — jumps to the other dictionaries on both index and detail pages. A
+   contextual tab row can still attach directly below it, so the two rows read
+   as one block. */
 .commu-crumb {
     align-items: center;
     background: var(--bg-surface);
@@ -140,6 +140,7 @@ body.commulingo-page > .admin-bar {
 
 .commu-crumb-slot {
     align-items: center;
+    align-self: stretch;
     display: flex;
     flex: 0 0 auto;
     gap: 10px;
@@ -149,6 +150,7 @@ body.commulingo-page > .admin-bar {
    way back to its own dictionary and nothing else, so reaching a different one
    cost two clicks; from here it costs one. */
 .commu-crumb-jump {
+    align-self: stretch;
     display: flex;
 }
 

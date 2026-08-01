@@ -7,8 +7,7 @@
     <main class="container commulingo-shell commu-events-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: en ? 'Historical events' : '역사 사건' }],
-            attached: true }) %>
-        <%- include('../partials/commulingo-dict-nav', { active: 'events' }) %>
+            dictJump: 'events' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Historical Events' : '역사 사건' %></h1>
         <p class="commu-dict-count"><%= en ? events.length + (events.length === 1 ? ' event' : ' events') : '총 ' + events.length + '개의 사건' %></p>
         <%- include('../partials/commulingo-dict-search', {

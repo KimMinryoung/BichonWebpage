@@ -7,8 +7,7 @@
     <main class="container commulingo-shell commu-docs-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: en ? 'References' : '참고 문헌' }],
-            attached: true }) %>
-        <%- include('../partials/commulingo-dict-nav', { active: 'docs' }) %>
+            dictJump: 'docs' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Reference Library' : '참고 문헌' %></h1>
         <section class="commu-event-grid" aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
             <% docs.forEach(function(doc) { %>

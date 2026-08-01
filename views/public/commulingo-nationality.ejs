@@ -13,8 +13,7 @@
                 { label: en ? 'People' : '인물 사전', href: '/commulingo/people' },
                 { label: filter.label },
             ],
-            attached: true }) %>
-        <%- include('../partials/commulingo-dict-nav', { active: 'people' }) %>
+            dictJump: 'people' }) %>
 
         <header class="commu-hub-head commu-nationality-hub-head">
             <span class="commu-nationality-hub-flag" aria-hidden="true"><%- flagImg(filter.code, filter.label) %></span>

@@ -12,8 +12,7 @@
     <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: en ? 'People' : '인물 사전' }],
-            attached: true }) %>
-        <%- include('../partials/commulingo-dict-nav', { active: 'people' }) %>
+            dictJump: 'people' }) %>
 
         <h1 class="commu-sr-only"><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>
 
