@@ -15,7 +15,8 @@
             trail: [{ label: bookTitle }],
             meta: !bookChapters ? '' : (lang === 'en'
                 ? bookChapters + (bookChapters === 1 ? ' chapter' : ' chapters')
-                : bookChapters + '개 장') }) %>
+                : bookChapters + '개 장'),
+            dictJump: true }) %>
 
         <% if (isDecision) { %>
         <% var timeline = lessons.collections[0].decisionTimeline; %>
@@ -26,10 +27,6 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
-                <div class="commu-book-reference-links">
-                    <a class="commu-people-cta is-events" href="/commulingo/events"><%= lang === 'en' ? 'Historical events' : '역사 사건' %> →</a>
-                    <a class="commu-people-cta" href="/commulingo/people"><%= lang === 'en' ? 'People of this era' : '인물 사전' %> →</a>
-                </div>
             </div>
         </header>
 

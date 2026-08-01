@@ -991,7 +991,10 @@
         display: none;
     }
 
+    /* A long book title pushes the jumps onto a second line; keep that line
+       short so the bar stays cheaper than the hero CTAs it replaced. */
     .commu-crumb-jump-link {
+        height: 30px;
         width: 30px;
     }
 }
@@ -2109,34 +2112,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 /* ── People index (인물 사전) ─────────────────────────────── */
-
-.commu-people-cta {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    text-decoration: none;
-    padding: 8px 13px;
-    border-radius: 0;
-}
-
-.commu-people-cta:hover {
-    background: var(--bg-surface-hover);
-    border-color: var(--accent-red);
-    color: var(--text-primary);
-}
-
-.commu-book-reference-links,
-.commu-group-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-/* The events/glossary variants share the flat base style; no gradient. */
 
 /* person-name links inside decision book prose */
 .commu-person-link {
