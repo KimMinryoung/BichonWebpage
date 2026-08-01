@@ -95,8 +95,11 @@
   color: var(--text-secondary);
 }
 
-/* Dictionary links in the document body — the classes linkify.js emits, plus
-   the signatory names the fragment links by hand. The vocabulary is the one the
+/* Dictionary links in the document body. These are the classes linkify.js
+   emits; a fragment that links a name by hand writes no class, so the route
+   (routes/commulingo-docs.js) stamps the same class on those before render —
+   this file must never be the only thing that knows about a link kind.
+   The vocabulary is the one the
    dictionaries already use (commulingo.css, which this page does not load): the
    text keeps the body colour and the rule underneath carries the affordance,
    dashed for an entry (person, glossary, event, classification) and dotted for
@@ -120,8 +123,11 @@
   border-bottom: 2px dashed var(--link, #5d7a5a);
 }
 
+/* Another full text, or the learning course that covers the same material. */
 .book article .commu-doc-link,
-.book .notes-list .commu-doc-link {
+.book article .commu-book-link,
+.book .notes-list .commu-doc-link,
+.book .notes-list .commu-book-link {
   color: inherit;
   text-decoration: none;
   border-bottom: 2px dotted var(--link, #5d7a5a);

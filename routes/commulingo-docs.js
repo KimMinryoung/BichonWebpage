@@ -29,6 +29,30 @@ function openEntityLinksInNewTab(html) {
         /\btarget=/.test(attrs) ? match : `<a${attrs} target="_blank" rel="noopener">`);
 }
 
+// The reader's link vocabulary (commulingo-doc.css) keys on the classes
+// linkify.js emits, so an entity link the fragment writes by hand carried no
+// class, missed the rule and fell through to the global green `a` colour —
+// unreadable on the dark canvas, and a second link look inside one document.
+// Stamp the kind's class on any classless entity link so a name linked by hand
+// and the same name linked automatically are indistinguishable. Anything that
+// already carries a class (the linker's own output, the footnote markers, the
+// back links) is left alone.
+const ENTITY_KIND_CLASS = {
+    people: 'commu-person-link',
+    terms: 'commu-term-link',
+    events: 'commu-event-link',
+    docs: 'commu-doc-link',
+    book: 'commu-book-link',
+};
+
+const BARE_ENTITY_LINK_RE =
+    /<a\b((?![^>]*\bclass=)[^>]*\bhref="\/commulingo\/(people|terms|events|docs|book)\/[^"]*"[^>]*)>/g;
+
+function classifyEntityLinks(html) {
+    return html.replace(BARE_ENTITY_LINK_RE, (match, attrs, kind) =>
+        `<a class="${ENTITY_KIND_CLASS[kind]}"${attrs}>`);
+}
+
 async function linkDocHtml(content, docId, lang, key, html) {
     if (!html) return html;
     const indexes = await getLinkIndexes(lang);
@@ -42,8 +66,8 @@ async function linkDocHtml(content, docId, lang, key, html) {
     if (out === undefined) {
         // One linker per rendered unit: the first mention of an entry links and
         // later ones stay plain. A document never links to itself.
-        out = openEntityLinksInNewTab(
-            createLinker(indexes, { surface: 'doc', exclude: { doc: docId } }).html(html));
+        out = classifyEntityLinks(openEntityLinksInNewTab(
+            createLinker(indexes, { surface: 'doc', exclude: { doc: docId } }).html(html)));
         entry.byKey.set(memoKey, out);
     }
     return out;
