@@ -2,14 +2,17 @@
 /* Switcher between the four writing sections merged under the 글 menu.
    `active` marks the page currently open: 'reports' | 'hub' | 'diary' | 'posts'. */
 var libraryTabs = [
-    { key: 'reports', href: '/reports', label: strings.nav.reportsShort },
-    { key: 'hub', href: '/hub', label: strings.nav.hub },
-    { key: 'diary', href: '/ai-diary', label: strings.nav.diaryShort },
-    { key: 'posts', href: '/posts', label: strings.nav.bichonPosts },
+    { key: 'reports', href: '/reports', label: strings.nav.reportsShort, icon: 'reports' },
+    { key: 'hub', href: '/hub', label: strings.nav.hub, icon: 'hub' },
+    { key: 'diary', href: '/ai-diary', label: strings.nav.diaryShort, icon: 'diary' },
+    { key: 'posts', href: '/posts', label: strings.nav.bichonPosts, icon: 'posts' },
 ];
 %>
 <nav class="section-tabs" aria-label="<%= strings.nav.library %>">
     <% libraryTabs.forEach(function(tab) { %>
-    <a class="section-tab<%= active === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (active === tab.key) { %> aria-current="page"<% } %>><%= tab.label %></a>
+    <a class="section-tab<%= active === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (active === tab.key) { %> aria-current="page"<% } %>>
+        <%- include('menu-icon', { icon: tab.icon, iconClass: 'section-tab-icon' }) %>
+        <%= tab.label %>
+    </a>
     <% }) %>
 </nav>

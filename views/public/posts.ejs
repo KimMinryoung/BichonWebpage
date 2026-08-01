@@ -8,9 +8,6 @@
 
     <div class="container">
         <%- include('../partials/library-tabs', { active: 'posts' }) %>
-        <header class="box compact-header">
-            <h1><%= strings.nav.bichonPosts %></h1>
-        </header>
 
         <% if (posts && posts.length > 0) { %>
             <ul class="post-list">

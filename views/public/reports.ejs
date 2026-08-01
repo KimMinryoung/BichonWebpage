@@ -8,9 +8,6 @@
 
     <div class="container">
         <%- include('../partials/library-tabs', { active: 'reports' }) %>
-        <header class="box compact-header">
-            <h1><%= strings.nav.reports %></h1>
-        </header>
 
         <% if (typeof showTasks !== 'undefined' && showTasks) { %>
         <div class="report-tabs">

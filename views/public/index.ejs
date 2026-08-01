@@ -46,6 +46,39 @@
             </div>
         </div>
 
+        <!-- Recent CommuLingo updates -->
+        <% if (recentCommuLingo && recentCommuLingo.length > 0) { %>
+            <section class="home-section" aria-labelledby="recent-commulingo-title">
+                <div class="home-section-header">
+                    <h2 id="recent-commulingo-title"><%= strings.home.recentCommuLingo %></h2>
+                    <a href="/commulingo" class="btn btn-small"><%= strings.home.viewAll %></a>
+                </div>
+                <ul class="post-list">
+                    <% recentCommuLingo.forEach(item => { %>
+                        <li class="post-item">
+                            <h2><a href="<%= item.href %>"><%= item.title %></a></h2>
+                            <div class="post-meta">
+                                <span class="commu-update-kind"><%= item.typeLabel %></span>
+                                <span aria-hidden="true"> · </span>
+                                <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= strings.home.commuLingoUpdatedAt %>"></time>
+                            </div>
+                            <div class="commu-update-preview">
+                                <% if (item.summary) { %>
+                                    <p class="post-excerpt"><%- truncateHtml(sanitize(item.summary), 200) %></p>
+                                <% } %>
+                                <% if (item.type === 'person' && item.moment) { %>
+                                    <p class="post-excerpt commu-update-moment"><%- truncateHtml(sanitize(item.moment), 200) %></p>
+                                <% } %>
+                                <% if (item.type === 'person' && item.bio) { %>
+                                    <p class="post-excerpt"><%- truncateHtml(sanitize(item.bio), 300) %></p>
+                                <% } %>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+        <% } %>
+
         <!-- Recent Research -->
         <% if (recentResearch && recentResearch.length > 0) { %>
             <section class="home-section">

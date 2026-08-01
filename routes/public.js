@@ -14,6 +14,7 @@ const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
 const { sanitizePost } = require('../utils/sanitize');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
+const { loadRecentCommuLingoItems } = require('../services/commulingo-updates');
 
 const POSTS_PER_PAGE = 20;
 
@@ -67,8 +68,9 @@ async function loadRecentReportItems(lang) {
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        // Fetch recent posts, diaries, research, and hub curations in parallel
-        const [postsResult, diariesResult, researchResult, hubResult] = await Promise.allSettled([
+        // Fetch writing and CommuLingo previews in parallel. Each source can
+        // fail independently without blanking the rest of the homepage.
+        const [postsResult, diariesResult, researchResult, hubResult, commuLingoResult] = await Promise.allSettled([
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             (async () => {
@@ -76,25 +78,29 @@ router.get('/', async (req, res) => {
             })(),
             (async () => {
                 return hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0, lang });
-            })()
+            })(),
+            loadRecentCommuLingoItems(lang, RECENT_LIMIT),
         ]);
 
         const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(row => localizedRecord(row, lang)) : [];
         const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows.map(row => localizedRecord(row, lang)) : [];
         const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
         const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
+        const recentCommuLingo = commuLingoResult.status === 'fulfilled' ? commuLingoResult.value : [];
 
         const indexItems = [
             ...recentPosts.map(post => ({ title: post.title, href: `/post/${post.id}` })),
             ...recentResearch.map(item => ({ title: item.title, href: item.href })),
             ...recentHub.map(item => ({ title: item.title, href: `/hub/${item.slug}` })),
             ...recentDiaries.map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` })),
+            ...recentCommuLingo.map(item => ({ title: item.title, href: item.href })),
         ];
         res.render('public/index', {
             recentPosts,
             recentDiaries,
             recentResearch,
             recentHub,
+            recentCommuLingo,
             pageTitle: '사이버-레닌과 비숑의 블로그',
             pageDescription: res.locals.strings.homeDescription,
             pagePath: '/',
@@ -107,6 +113,7 @@ router.get('/', async (req, res) => {
             recentDiaries: [],
             recentResearch: [],
             recentHub: [],
+            recentCommuLingo: [],
             pageTitle: '사이버-레닌과 비숑의 블로그',
             pageDescription: res.locals.strings.homeDescription,
             pagePath: '/',

@@ -355,6 +355,7 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.4rem;
     padding: 0.65rem 0.3rem;
     color: var(--text-primary);
     text-decoration: none;
@@ -364,6 +365,12 @@ header h1 {
     white-space: nowrap;
     border-left: 1px solid var(--border);
     transition: background-color 0.15s;
+}
+
+.section-tab-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex: 0 0 auto;
 }
 
 .section-tab:first-child {
@@ -381,7 +388,13 @@ header h1 {
 
 @media (max-width: 560px) {
     .section-tab {
+        gap: 0.25rem;
         padding: 0.6rem 0.2rem;
+    }
+
+    .section-tab-icon {
+        width: 0.9rem;
+        height: 0.9rem;
     }
 }
 
@@ -1015,6 +1028,27 @@ a.home-card:hover::after {
     color: var(--text-muted);
     font-size: 0.78rem;
     margin-bottom: 10px;
+}
+
+.commu-update-kind {
+    color: var(--link);
+    font-weight: 700;
+}
+
+.commu-update-preview {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.commu-update-preview .post-excerpt {
+    margin: 0;
+}
+
+.commu-update-moment {
+    border-left: 2px solid color-mix(in srgb, var(--link) 72%, var(--border));
+    color: var(--text-secondary);
+    font-style: italic;
+    padding-left: 0.6rem;
 }
 
 .post-excerpt {

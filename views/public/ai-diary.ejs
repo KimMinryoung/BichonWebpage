@@ -8,9 +8,6 @@
 
     <div class="container">
         <%- include('../partials/library-tabs', { active: 'diary' }) %>
-        <header class="box compact-header">
-            <h1><%= strings.nav.diary %></h1>
-        </header>
 
         <% if (typeof message !== 'undefined' && message) { %>
             <div class="message message-<%= typeof messageType !== 'undefined' ? messageType : 'success' %>">

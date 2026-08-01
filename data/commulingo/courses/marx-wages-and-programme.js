@@ -20,6 +20,9 @@
 // Chapter ids must stay stable: lesson ids are derived from them and progress
 // is stored per lesson id.
 
+const { getCourseMetadata } = require('../course-metadata');
+const courseMetadata = getCourseMetadata('marx-wages-and-programme');
+
 function t(ko, en) {
     return { ko, en };
 }
@@ -1711,15 +1714,6 @@ chapter({
 ];
 
 module.exports = {
-    id: 'marx-wages-and-programme',
-    volumeNumber: 0,
-    title: t('마르크스: 임금, 가격, 이윤 · 고타강령 비판',
-             'Marx: Value, Price and Profit · Critique of the Gotha Programme'),
-    bookTitle: t('임금 투쟁과 분배', 'Wage Struggle and Distribution'),
-    badge: t('두 저작 함께 읽기', 'Two works, one book'),
-    description: t(
-        '임금 인상은 왜 가능한지, 분배를 앞세운 사회주의는 왜 막다른 길인지 답하는 두 글을 한 권으로 읽는다. 결론은 하나, 문제는 임금제도 그 자체다.',
-        'Two texts read as one book: why a rise in wages is possible, and why a socialism built on distribution is a dead end. One conclusion: the wages system itself is the object.'
-    ),
+    ...courseMetadata,
     chapters,
 };
