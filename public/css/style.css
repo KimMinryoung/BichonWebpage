@@ -552,6 +552,9 @@ header h1 {
     display: none;
 }
 
+/* Bar height is set by the controls inside it, not by this padding — see the
+   min-height block below. Zero vertical padding here so the bar is exactly as
+   tall as its tallest control. */
 .home-toolbar {
     display: flex;
     justify-content: space-between;
@@ -559,13 +562,13 @@ header h1 {
     gap: 0;
     max-width: 960px;
     margin: 0 auto;
-    padding: 4px 20px;
+    padding: 0 20px;
 }
 
 .toolbar-logo {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
+    min-height: 36px;
     font-family: 'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
@@ -603,9 +606,11 @@ header h1 {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    min-height: 44px;
+    /* Shorter than the bar itself: this is the one control with a border, and
+       at the bar's full height its frame sits flush on the viewport edge. */
+    min-height: 30px;
     box-sizing: border-box;
-    padding: 5px 14px;
+    padding: 4px 14px;
     background-color: var(--btn-bg);
     border: 1px solid var(--border);
     border-radius: 0;
@@ -658,7 +663,7 @@ header h1 {
     color: var(--text-secondary);
     cursor: pointer;
     font-size: 0.9rem;
-    min-height: 44px;
+    min-height: 36px;
     box-sizing: border-box;
     padding: 4px 8px;
     font-family: inherit;
@@ -688,12 +693,31 @@ header h1 {
 }
 
 .home-toolbar .theme-toggle {
-    min-width: 44px;
+    min-width: 36px;
+}
+
+/* Touch targets stay 44px where the finger is the pointer; with a mouse the
+   36px controls are hit just as easily and the bar stops eating 52px of every
+   page for a logo and three small buttons. */
+@media (pointer: coarse) {
+    .home-toolbar .toolbar-logo,
+    .home-toolbar .theme-toggle,
+    .home-toolbar .lang-btn {
+        min-height: 44px;
+    }
+
+    .home-toolbar .toolbar-account-btn {
+        min-height: 38px;
+    }
+
+    .home-toolbar .theme-toggle {
+        min-width: 44px;
+    }
 }
 
 @media (max-width: 768px) {
     .home-toolbar {
-        padding: 4px 8px;
+        padding: 0 8px;
     }
 }
 
