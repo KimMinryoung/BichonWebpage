@@ -1,0 +1,14 @@
+---
+name: commulingo-data-ops
+description: How to change CommuLingo content without a deploy — lesson/course data files, reference documents under data/commulingo/docs/, retiring an id via commulingo_id_redirects, and the DB registry tables (role/term categories, link blocklist). Use when editing CommuLingo lessons, courses, docs, people, terms, or categories.
+---
+
+# CommuLingo data-only updates
+
+The production container mounts host data (`-v /home/grass/frontend/data:/app/data`), so everything below is visible to the running app without rebuilding the image. **Never edit CommuLingo content values in code** — see the rule kept in `CLAUDE.md`, which stays in force here.
+
+- For CommuLingo content-only edits in `data/commulingo/lessons.json` or `data/commulingo/courses/*.js`, do not run `scripts/deploy` just to rebuild/restart the frontend. Commit/push the data change, then verify the live API/page.
+- `routes/commulingo.js` loads CommuLingo through `data/commulingo/index.js` and caches the bundle by the maximum mtime across `lessons.json` and `courses/*.js`, so changed host data is picked up on the next request after mtime changes. Verify with `curl -s http://127.0.0.1:3000/commulingo/lesson/<lesson-id>`.
+- CommuLingo reference documents (참고 문헌 전문) live in `data/commulingo/docs/` — `manifest.json` registry plus one HTML body fragment per doc; see `data/commulingo/docs/README.md` for the authoring rules. Adding/editing a document is data-only (mtime-cached): commit/push, then verify `/commulingo/docs/<id>`. The reader chrome lives in `views/public/commulingo-doc.ejs` + `public/css/commulingo-doc.css` (code — needs deploy).
+- Merging a duplicate CommuLingo person (or renaming an office / role-category id) is DB-only: merge the rows, then `INSERT INTO commulingo_id_redirects (entity_type, from_id, to_id, note)` in the same transaction. The retired id starts 301ing to its target within one people-store refresh (~60s) — no commit, no rebuild. Chains (A→B→C) collapse to one hop at load time; a cycle drops the entry and logs it.
+- The CommuLingo registries that used to be arrays in code are tables, all read the way the dictionaries are (memory → on-disk snapshot → DB, 60s refresh) and all editable with one statement and no deploy: `commulingo_role_categories` (인물 역할 범주), `commulingo_term_categories` (용어 범주 — migration 115), `commulingo_link_blocklist` (자동링크 예외 — migration 116/117; `kind='phrase'`는 별칭을 품은 문자열, `kind='alias'`는 성 한 단어를 아예 인덱싱하지 않음), `commulingo_id_redirects` (폐기 id). `commulingo_term_categories` also feeds the curator's tool schema in the leninbot repo, so a category added here is immediately writable by the agent.
