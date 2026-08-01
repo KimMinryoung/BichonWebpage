@@ -27,17 +27,6 @@
 <% var en = lang === 'en'; %>
 <header class="doc-topbar">
     <a href="/commulingo/docs">← <%= en ? 'Reference Library' : '참고 문헌' %></a>
-    <%# 인물·용어·사건은 새 탭으로 — 긴 문서를 읽던 자리를 잃지 않도록. 위의 목록
-        복귀 링크와 아래 목차·페이저는 읽기 흐름 안의 이동이라 같은 탭을 유지한다. %>
-    <% doc.people.forEach(function(person) { %>
-    <a href="/commulingo/people/<%= person.id %>" target="_blank" rel="noopener"><%= person.name %> →</a>
-    <% }) %>
-    <% doc.terms.forEach(function(term) { %>
-    <a href="/commulingo/terms/<%= term.id %>" target="_blank" rel="noopener"><%= term.name %> →</a>
-    <% }) %>
-    <% doc.events.forEach(function(event) { %>
-    <a href="/commulingo/events/<%= event.id %>" target="_blank" rel="noopener"><%= event.name %> →</a>
-    <% }) %>
 </header>
 <main class="book">
 <% if (pagination) { %>
@@ -55,6 +44,25 @@
 </script>
 <% } %>
 <%- bodyTopHtml %>
+<%# 이 문헌이 어느 사전 항목에 속하는지 알리는 한 줄. 제목 바로 아래 산문으로
+    두는 편이 상단 칩 줄보다 조용하다 — 읽으러 온 사람의 첫 화면은 제목과 본문
+    이어야 하고, 이 줄은 필요할 때만 눈에 들어오면 된다. 링크는 새 탭으로 —
+    긴 문서를 읽던 자리를 잃지 않도록. 아래 목차·페이저는 읽기 흐름 안의
+    이동이라 같은 탭을 유지한다. %>
+<%
+var refGroups = [
+    { label: en ? 'People' : '인물', path: 'people', items: doc.people || [] },
+    { label: en ? 'Terms' : '용어', path: 'terms', items: doc.terms || [] },
+    { label: en ? 'Events' : '사건', path: 'events', items: doc.events || [] },
+].filter(function(group) { return group.items.length; });
+%>
+<% if (refGroups.length) { %>
+<p class="doc-refs">
+    <% refGroups.forEach(function(group) { %>
+    <span class="doc-refs-group"><span class="doc-refs-label"><%= group.label %></span><% group.items.forEach(function(item, i) { %><a href="/commulingo/<%= group.path %>/<%= item.id %>" target="_blank" rel="noopener"><%= item.name %></a><%= i < group.items.length - 1 ? ', ' : '' %><% }) %></span>
+    <% }) %>
+</p>
+<% } %>
 <%
 // On a paginated document the TOC is the hub: entries link to the page that
 // holds their section (plus the anchor); on a single-scroll document they

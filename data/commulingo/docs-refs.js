@@ -40,8 +40,12 @@ async function createDocRefResolver(lang) {
     const labels = { people: new Map(), terms: new Map(), events: new Map() };
     (terms || []).forEach(term => labels.terms.set(term.id, localize(term.term, lang)));
     (events || []).forEach(event => labels.events.set(event.id, localize(event.title, lang)));
+    // The short form (니콜라이 예조프), not the display name the person page
+    // titles itself with (니콜라이 이바노비치 예조프): this is a one-line list of
+    // where a document belongs, and a patronymic per entry buys nothing.
     (standardized.people || []).forEach(person => {
-        labels.people.set(person.id, person.displayName || localize(person.name, lang));
+        const names = person.names || {};
+        labels.people.set(person.id, names.short || person.displayName || localize(person.name, lang));
     });
 
     return function resolveDocRefs(doc) {
