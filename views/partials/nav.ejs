@@ -1,4 +1,7 @@
+<% var _showSkipLink = typeof showSkipLink === 'undefined' || showSkipLink; %>
+<% if (_showSkipLink) { %>
 <a class="skip-link" href="#main-content"><%= lang === 'en' ? 'Skip to content' : '본문으로 건너뛰기' %></a>
+<% } %>
 <div class="home-toolbar">
     <a href="/" class="toolbar-logo"><%= strings.siteName %></a>
     <div class="toolbar-center">
@@ -89,5 +92,7 @@ const _navItems = [
     </div>
 </nav>
 <% } %>
+<% if (_showSkipLink) { %>
 <span class="skip-target" id="main-content" tabindex="-1"></span>
+<% } %>
 <script src="/js/nav.js?v=<%= assetVersion %>"></script>

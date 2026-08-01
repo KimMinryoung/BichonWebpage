@@ -101,7 +101,7 @@ var tocHref = function(id) {
     버튼을 눌러도 펼쳐진 메뉴가 화면 밖이라, 버튼만 따라오는 의미가 없었다.
     목차와 같은 오버레이 방식이라 펼쳐도 본문 레이아웃이 밀리지 않는다. %>
 <div class="doc-nav-group" id="docNavGroup">
-    <%- include('../partials/nav') %>
+    <%- include('../partials/nav', { showSkipLink: false }) %>
 </div>
 </nav>
 <%- bodyRestHtml %>
