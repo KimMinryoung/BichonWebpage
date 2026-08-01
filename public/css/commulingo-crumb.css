@@ -42,8 +42,12 @@ body.commulingo-page > .admin-bar {
     border: 1px solid var(--border);
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2px 12px;
+    /* Never two lines. The bar is pinned to the top of the viewport for the
+       whole page, so a wrapped one covers twice as much of every screen for as
+       long as the reader keeps scrolling. When the path does not fit, the
+       current page's label gives way and truncates. */
+    flex-wrap: nowrap;
+    gap: 0 12px;
     justify-content: space-between;
     margin-top: 14px;
     /* The bar follows the reader down the whole page, so its height is a
@@ -75,10 +79,18 @@ body.commulingo-page > .admin-bar {
     padding: 0;
 }
 
+/* Every segment keeps its full width except the last, which is always the
+   current page: it takes what is left and truncates. Shrinking the ones before
+   it would only clip labels that carry no ellipsis of their own. */
 .commu-crumb-item {
     align-items: center;
     display: flex;
+    flex: 0 0 auto;
     min-width: 0;
+}
+
+.commu-crumb-item:last-child {
+    flex: 1 1 auto;
 }
 
 .commu-crumb-link {
@@ -193,10 +205,9 @@ body.commulingo-page > .admin-bar {
         display: none;
     }
 
-    /* A long book title pushes the jumps onto a second line; keep that line
-       short so the bar stays cheaper than the hero CTAs it replaced. */
+    /* Five jumps plus a path on a 390px screen: narrower cells leave the path
+       enough room that it truncates late rather than immediately. */
     .commu-crumb-jump-link {
-        min-height: 30px;
         width: 30px;
     }
 }

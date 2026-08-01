@@ -249,12 +249,10 @@
   background: var(--bg-surface);
 }
 
-/* 크럼이 남는 폭을 모두 차지하고 목차는 라벨만큼만 차지한다. 줄바꿈은 막는다 —
-   폭이 모자라면 두 줄로 늘어나는 대신 제목이 잘려야 한다. */
+/* 크럼이 남는 폭을 모두 차지하고 목차는 라벨만큼만 차지한다. */
 .doc-toc .commu-crumb {
   position: static;
   flex: 1 1 auto;
-  flex-wrap: nowrap;
   min-width: 0;
   margin-top: 0;
   border: 0;
@@ -266,14 +264,8 @@
    화면 밖으로 나가고, 그때 '지금 무엇을 읽는 중인가'를 말해 주는 건 이 마디뿐
    이다. 그래서 여기서만 남기고, 대신 남는 폭만큼만 쓰고 잘라 낸다. */
 @media (max-width: 560px) {
-  .doc-toc .commu-crumb-item:nth-child(2) {
-    flex: 0 0 auto;
-  }
-
   .doc-toc .commu-crumb-item:nth-child(3) {
     display: flex;
-    flex: 1 1 auto;
-    min-width: 0;
   }
 }
 
