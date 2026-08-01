@@ -8,7 +8,12 @@
 
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo/people">← <%= en ? 'People' : '인물 사전' %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: en ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { label: office.title },
+            ],
+            dictJump: 'people' }) %>
 
         <header class="commu-hub-head commu-role-hub-head">
             <span class="commu-person-medal" aria-hidden="true"><%- roleIconSvg(office.icon) %></span>

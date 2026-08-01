@@ -159,7 +159,10 @@
   margin-left: 0.25em;
 }
 
-/* Reader chrome: standard header/footer added by the commulingo-doc template. */
+/* Reader chrome: standard header/footer added by the commulingo-doc template.
+   This page carries no site nav, so the crumb is its only way out — it gets the
+   same trail as the rest of CommuLingo, kept quieter (no filled bar) because
+   the reader deliberately has no chrome above the text. */
 .doc-topbar {
   max-width: 980px;
   margin: 0 auto;
@@ -169,6 +172,65 @@
   gap: 0.35rem 1.1rem;
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+.doc-crumb {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin: 0;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+  width: 100%;
+}
+
+.doc-crumb li {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.doc-crumb a {
+  padding: 0.15rem 0.4rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.doc-crumb a:hover {
+  color: var(--link);
+}
+
+.doc-crumb-sep {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* The document's own title closes the trail, and it is the segment long enough
+   to need truncating. */
+.doc-crumb-current {
+  min-width: 0;
+  padding: 0.15rem 0.4rem;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The library link and the title stay; the section root drops out to leave the
+   title room to breathe. */
+@media (max-width: 560px) {
+  .doc-crumb li:first-child,
+  .doc-crumb li:nth-child(2) .doc-crumb-sep {
+    display: none;
+  }
+
+  .doc-crumb li:nth-child(2) a {
+    padding-left: 0;
+  }
 }
 
 /* Prev/next chapter navigation on paginated documents. */

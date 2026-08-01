@@ -1,0 +1,50 @@
+<%
+/* The context bar that opens every CommuLingo page below the site nav. It
+   replaces the bare "← 공산링고" link that used to sit alone on a line: the same
+   row now carries the whole path back to the section root on the left and a
+   page-specific slot on the right, so the line earns its height.
+
+   Params:
+     trail    — [{ label, href?, pair? }]; the last entry is the current page and
+                renders as text rather than a link. `pair: true` marks a segment
+                the term/event switcher rewrites client side.
+     meta     — optional short text for the right-hand slot (an entry count).
+     dictJump — dictionary key to mark active, or true for none; renders the
+                icon-only jumps to the five dictionaries in the right slot.
+     attached — true when a .commu-dict-nav follows immediately, so the two rows
+                share one edge and read as a single block. */
+var crumbEn = lang === 'en';
+var crumbTrail = (typeof trail !== 'undefined' && trail) || [];
+var crumbMeta = (typeof meta !== 'undefined' && meta) || '';
+var crumbJump = typeof dictJump !== 'undefined' ? dictJump : false;
+var crumbAttached = typeof attached !== 'undefined' && attached;
+%>
+<nav class="commu-crumb<%= crumbAttached ? ' is-attached' : '' %>" aria-label="<%= crumbEn ? 'Breadcrumb' : '현재 위치' %>">
+    <ol class="commu-crumb-trail">
+        <li class="commu-crumb-item">
+            <a class="commu-crumb-link commu-crumb-home" href="/commulingo"><%- roleIconSvg('house') %><span><%= crumbEn ? 'CommuLingo' : '공산링고' %></span></a>
+        </li>
+        <% crumbTrail.forEach(function(step) { %>
+        <li class="commu-crumb-item">
+            <span class="commu-crumb-sep" aria-hidden="true">›</span>
+            <% if (step.href) { %>
+            <a class="commu-crumb-link" href="<%= step.href %>"<%- step.pair ? ' data-pair-crumb' : '' %>><%= step.label %></a>
+            <% } else { %>
+            <span class="commu-crumb-current" aria-current="page"<%- step.pair ? ' data-pair-crumb-leaf' : '' %>><%= step.label %></span>
+            <% } %>
+        </li>
+        <% }) %>
+    </ol>
+    <% if (crumbMeta || crumbJump) { %>
+    <div class="commu-crumb-slot">
+        <% if (crumbMeta) { %><span class="commu-crumb-meta"><%= crumbMeta %></span><% } %>
+        <% if (crumbJump) { %>
+        <span class="commu-crumb-jump">
+            <% dictTabs(crumbEn).forEach(function(tab) { %>
+            <a class="commu-crumb-jump-link<%= crumbJump === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>" title="<%= tab.label %>" aria-label="<%= tab.label %>"<% if (crumbJump === tab.key) { %> aria-current="page"<% } %>><%- roleIconSvg(tab.icon) %></a>
+            <% }) %>
+        </span>
+        <% } %>
+    </div>
+    <% } %>
+</nav>

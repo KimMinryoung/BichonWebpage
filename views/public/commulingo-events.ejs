@@ -5,10 +5,12 @@
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-events-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: en ? 'Historical events' : '역사 사건' }],
+            meta: en ? events.length + (events.length === 1 ? ' event' : ' events') : events.length + '개',
+            attached: true }) %>
         <%- include('../partials/commulingo-dict-nav', { active: 'events' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Historical Events' : '역사 사건' %></h1>
-        <p class="commu-dict-count"><%= en ? events.length + (events.length === 1 ? ' event' : ' events') : '총 ' + events.length + '개의 사건' %></p>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-event-list',
             placeholder: en ? 'Search by period, event, or description…' : '시기 · 사건명 · 설명으로 검색…',

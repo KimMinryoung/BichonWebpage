@@ -11,17 +11,20 @@
 var pairTabs = [
     { key: 'term', href: '/commulingo/terms/' + encodeURIComponent(pairTermId),
       label: en ? 'Glossary' : '용어 사전', sub: en ? 'Concept' : '개념',
-      backHref: '/commulingo/terms' },
+      backHref: '/commulingo/terms', crumb: en ? 'Glossary' : '용어 사전',
+      leaf: pairTermLabel },
     { key: 'event', href: '/commulingo/events/' + encodeURIComponent(pairEventId),
       label: en ? 'Historical event' : '역사 사건', sub: en ? 'Narrative' : '사건 서사',
-      backHref: '/commulingo/events' },
+      // The tab names one entry, the crumb names the shelf it came from.
+      backHref: '/commulingo/events', crumb: en ? 'Historical events' : '역사 사건',
+      leaf: pairEventLabel },
 ];
 %>
 <nav class="commu-dict-nav commu-pair-tabs" aria-label="<%= en ? 'Two entries on this subject' : '같은 주제의 두 항목' %>" data-active="<%= activePanel %>">
     <% pairTabs.forEach(function(tab) { %>
     <a class="commu-dict-tab commu-pair-tab<%= activePanel === tab.key ? ' is-active' : '' %>"
        href="<%= tab.href %>" data-panel="<%= tab.key %>"
-       data-back-href="<%= tab.backHref %>" data-back-label="<%= tab.label %>"<% if (activePanel === tab.key) { %> aria-current="page"<% } %>>
+       data-back-href="<%= tab.backHref %>" data-back-label="<%= tab.label %>" data-back-crumb="<%= tab.crumb %>" data-back-leaf="<%= tab.leaf %>"<% if (activePanel === tab.key) { %> aria-current="page"<% } %>>
         <span><%= tab.sub %><small><%= tab.label %></small></span>
     </a>
     <% }) %>

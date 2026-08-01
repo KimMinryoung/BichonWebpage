@@ -5,7 +5,10 @@
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-genealogy-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: en ? 'Genealogy' : '계보도' }],
+            meta: en ? charts.length + (charts.length === 1 ? ' chart' : ' charts') : charts.length + '개',
+            attached: true }) %>
         <%- include('../partials/commulingo-dict-nav', { active: 'genealogy' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Genealogy Charts' : '계보도' %></h1>
         <section class="commu-event-grid" aria-label="<%= en ? 'Genealogy charts' : '계보도 목록' %>">

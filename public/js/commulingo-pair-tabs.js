@@ -15,18 +15,33 @@
     if (tabs.length < 2 || panels.length < 2) return;
 
     var backLinks = Array.prototype.slice.call(document.querySelectorAll('[data-pair-back]'));
+    var crumbLinks = Array.prototype.slice.call(document.querySelectorAll('[data-pair-crumb]'));
+    var crumbLeaves = Array.prototype.slice.call(document.querySelectorAll('[data-pair-crumb-leaf]'));
 
-    // The back link belongs to whichever half is open, not to the URL the
+    // The way back belongs to whichever half is open, not to the URL the
     // reader happened to arrive on: reading the glossary panel and being
-    // offered '← 역사 사건' points at the wrong shelf.
+    // offered '← 역사 사건' points at the wrong shelf. The crumb bar names the
+    // same two things one level apart — the dictionary and the entry — so both
+    // of its segments follow the open panel too.
     function updateBackLinks(tab) {
         var href = tab.getAttribute('data-back-href');
         var label = tab.getAttribute('data-back-label');
-        if (!href || !label) return;
-        backLinks.forEach(function (link) {
-            link.setAttribute('href', href);
-            link.textContent = '← ' + label;
-        });
+        var leaf = tab.getAttribute('data-back-leaf');
+        if (href && label) {
+            backLinks.forEach(function (link) {
+                link.setAttribute('href', href);
+                link.textContent = '← ' + label;
+            });
+            crumbLinks.forEach(function (link) {
+                link.setAttribute('href', href);
+                link.textContent = tab.getAttribute('data-back-crumb') || label;
+            });
+        }
+        if (leaf) {
+            crumbLeaves.forEach(function (node) {
+                node.textContent = leaf;
+            });
+        }
     }
 
     function show(key, href, push) {

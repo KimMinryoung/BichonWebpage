@@ -25,8 +25,12 @@
 </head>
 <body class="nav-collapsed">
 <% var en = lang === 'en'; %>
-<header class="doc-topbar">
-    <a href="/commulingo/docs">← <%= en ? 'Reference Library' : '참고 문헌' %></a>
+<header class="doc-topbar" aria-label="<%= en ? 'Breadcrumb' : '현재 위치' %>">
+    <ol class="doc-crumb">
+        <li><a href="/commulingo"><%= en ? 'CommuLingo' : '공산링고' %></a></li>
+        <li><span class="doc-crumb-sep" aria-hidden="true">›</span><a href="/commulingo/docs"><%= en ? 'Reference Library' : '참고 문헌' %></a></li>
+        <li><span class="doc-crumb-sep" aria-hidden="true">›</span><span class="doc-crumb-current" aria-current="page"><%= doc.title %></span></li>
+    </ol>
 </header>
 <main class="book">
 <% if (pagination) { %>

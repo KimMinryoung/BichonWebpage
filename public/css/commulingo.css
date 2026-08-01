@@ -824,6 +824,8 @@
     }
 }
 
+/* Closes a detail page at its foot ("← 카드로 돌아가기"). The same link at the
+   top of the page was replaced by the crumb bar below. */
 .commu-back-link {
     align-self: flex-start;
     color: var(--text-secondary);
@@ -835,6 +837,163 @@
 
 .commu-back-link:hover {
     color: var(--link);
+}
+
+/* ── Context bar ──────────────────────────────────────────────────────────
+   Every CommuLingo page opens with this row. It used to be a bare "← 공산링고"
+   text link sitting alone in the left corner of a line it did not fill; the
+   same line now carries the path back to the section root plus a slot on the
+   right — an entry count on the indexes, jumps to the other dictionaries on a
+   detail page. On the dictionary pages it shares an edge with the switcher
+   tabs directly below it, so the two rows read as one block. */
+.commu-crumb {
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 12px;
+    justify-content: space-between;
+    margin-top: 14px;
+    min-height: 44px;
+    padding: 3px 10px;
+}
+
+/* -8px cancels the shell's column gap so the shared edge is a single rule. */
+.commu-crumb.is-attached {
+    border-bottom: 0;
+    margin-bottom: -8px;
+}
+
+.commu-crumb-trail {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    list-style: none;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+}
+
+.commu-crumb-item {
+    align-items: center;
+    display: flex;
+    min-width: 0;
+}
+
+.commu-crumb-link {
+    align-items: center;
+    color: var(--text-secondary);
+    display: flex;
+    font-size: 0.86rem;
+    font-weight: 700;
+    gap: 5px;
+    padding: 9px 6px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.commu-crumb-link:hover {
+    color: var(--link);
+}
+
+.commu-crumb-home .commu-role-icon {
+    color: inherit;
+    flex: 0 0 auto;
+    height: 15px;
+    width: 15px;
+}
+
+.commu-crumb-sep {
+    color: var(--text-muted);
+    flex: 0 0 auto;
+    font-size: 0.8rem;
+}
+
+/* The current page closes the trail as text, not a link. It is the one segment
+   that can run arbitrarily long (a person's full name), so it is the one
+   allowed to truncate. */
+.commu-crumb-current {
+    color: var(--text-primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+    min-width: 0;
+    overflow: hidden;
+    padding: 9px 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.commu-crumb-slot {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+}
+
+.commu-crumb-meta {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+/* Icon-only jumps to the other dictionaries. A detail page used to offer the
+   way back to its own dictionary and nothing else, so reaching a different one
+   cost two clicks; from here it costs one. */
+.commu-crumb-jump {
+    display: flex;
+}
+
+.commu-crumb-jump-link {
+    align-items: center;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    display: flex;
+    height: 34px;
+    justify-content: center;
+    transition: background-color 0.15s ease;
+    width: 34px;
+}
+
+.commu-crumb-jump-link .commu-role-icon {
+    height: 16px;
+    width: 16px;
+}
+
+.commu-crumb-jump-link:hover {
+    background: var(--bg-surface-hover);
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+.commu-crumb-jump-link.is-active {
+    background: color-mix(in srgb, var(--accent-red) 26%, var(--bg-canvas));
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+/* Narrow phones: the home segment keeps its icon and drops its label, and a
+   three-deep trail drops the current page — the page's own heading names it
+   one line further down. Two-deep trails (a book, a chart) keep their leaf,
+   which would otherwise leave the bar saying nothing but "⌂". */
+@media (max-width: 560px) {
+    .commu-crumb {
+        gap: 2px 8px;
+        padding: 3px 8px;
+    }
+
+    .commu-crumb-home span {
+        display: none;
+    }
+
+    .commu-crumb-item:nth-child(3) {
+        display: none;
+    }
+
+    .commu-crumb-jump-link {
+        width: 30px;
+    }
 }
 
 .commulingo-resume {

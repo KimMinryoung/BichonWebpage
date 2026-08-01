@@ -10,7 +10,12 @@
     <% var isGraph = (typeof bookFormat !== 'undefined' && bookFormat === 'concept-graph'); %>
     <% var isDecision = (typeof bookFormat !== 'undefined' && bookFormat === 'decision-history'); %>
     <main class="container commulingo-shell" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo">← <%= strings.commuLingo.backToBooks %></a>
+        <% var bookChapters = (lessons.collections[0].chapters || []).length; %>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: bookTitle }],
+            meta: !bookChapters ? '' : (lang === 'en'
+                ? bookChapters + (bookChapters === 1 ? ' chapter' : ' chapters')
+                : bookChapters + '개 장') }) %>
 
         <% if (isDecision) { %>
         <% var timeline = lessons.collections[0].decisionTimeline; %>

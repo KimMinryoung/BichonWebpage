@@ -10,7 +10,10 @@
     var en = lang === 'en';
     %>
     <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo">← <%= strings.commuLingo.backToBooks %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: en ? 'People' : '인물 사전' }],
+            meta: en ? peopleCount + (peopleCount === 1 ? ' person' : ' people') : peopleCount + '명',
+            attached: true }) %>
         <%- include('../partials/commulingo-dict-nav', { active: 'people' }) %>
 
         <h1 class="commu-sr-only"><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>

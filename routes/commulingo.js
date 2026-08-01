@@ -18,6 +18,7 @@ const {
     clientPersonLinkPayload,
 } = require('../data/commulingo/linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
+const { dictTabs } = require('../data/commulingo/dict-tabs');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
@@ -41,11 +42,13 @@ const router = express.Router();
 // lookup happens on the not-found path only: a live id never pays for it.
 
 // Expose the flag and role-icon renderers to every CommuLingo template (and
-// their partials — the dictionary switcher nav needs roleIconSvg everywhere).
+// their partials — the dictionary switcher nav and the crumb bar need
+// roleIconSvg and dictTabs everywhere).
 router.use((req, res, next) => {
     res.locals.flagImg = flagImg;
     res.locals.nationalityHubHref = nationalityHubHref;
     res.locals.roleIconSvg = roleIconSvg;
+    res.locals.dictTabs = dictTabs;
     next();
 });
 

@@ -6,11 +6,18 @@
     <% var en = lang === 'en'; %>
     <% var paired = typeof termPanel !== 'undefined' && termPanel; %>
     <main class="container commulingo-shell commu-event-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" data-pair-back href="/commulingo/events">← <%= en ? 'Historical events' : '역사 사건' %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: en ? 'Historical events' : '역사 사건', href: '/commulingo/events', pair: paired },
+                { label: event.title, pair: paired },
+            ],
+            attached: paired,
+            dictJump: paired ? false : 'events' }) %>
         <% if (paired) { %>
         <%- include('../partials/commulingo-pair-tabs', {
                 en: en, activePanel: 'event',
-                pairTermId: termPanel.term.id, pairEventId: event.id }) %>
+                pairTermId: termPanel.term.id, pairEventId: event.id,
+                pairTermLabel: termPanel.term.term, pairEventLabel: event.title }) %>
         <div class="commu-pair-panel" data-panel="term" hidden>
             <%- include('../partials/commulingo-term-panel', { en: en, p: termPanel }) %>
         </div>

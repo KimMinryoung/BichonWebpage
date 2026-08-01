@@ -5,7 +5,12 @@
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-genealogy-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo/genealogy">← <%= en ? 'Genealogy Charts' : '계보도' %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: en ? 'Genealogy' : '계보도', href: '/commulingo/genealogy' },
+                { label: chart.title },
+            ],
+            dictJump: 'genealogy' }) %>
         <header class="box commulingo-hero">
             <div><h1><%= chart.title %></h1><p><%= chart.description %></p></div>
         </header>

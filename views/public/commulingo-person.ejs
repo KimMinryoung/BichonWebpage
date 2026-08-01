@@ -17,7 +17,12 @@
     %>
 
     <main class="container commulingo-shell commu-person-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo/people#p-<%= person.id %>">← <%= en ? 'People' : '인물 사전' %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: en ? 'People' : '인물 사전', href: '/commulingo/people#p-' + person.id },
+                { label: person.name },
+            ],
+            dictJump: 'people' }) %>
 
         <header class="commu-person-detail-head is-<%= person.groupId %>">
             <div class="commu-person-detail-top">

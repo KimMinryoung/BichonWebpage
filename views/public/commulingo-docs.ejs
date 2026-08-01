@@ -5,7 +5,10 @@
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-docs-page" data-lang="<%= lang %>">
-        <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: en ? 'References' : '참고 문헌' }],
+            meta: en ? docs.length + (docs.length === 1 ? ' document' : ' documents') : docs.length + '편',
+            attached: true }) %>
         <%- include('../partials/commulingo-dict-nav', { active: 'docs' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Reference Library' : '참고 문헌' %></h1>
         <section class="commu-event-grid" aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
