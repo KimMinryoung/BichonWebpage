@@ -7,7 +7,6 @@
     <main class="container commulingo-shell commu-genealogy-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: en ? 'Genealogy' : '계보도' }],
-            meta: en ? charts.length + (charts.length === 1 ? ' chart' : ' charts') : charts.length + '개',
             attached: true }) %>
         <%- include('../partials/commulingo-dict-nav', { active: 'genealogy' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Genealogy Charts' : '계보도' %></h1>

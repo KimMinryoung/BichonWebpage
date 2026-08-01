@@ -8,14 +8,16 @@
      trail    — [{ label, href?, pair? }]; the last entry is the current page and
                 renders as text rather than a link. `pair: true` marks a segment
                 the term/event switcher rewrites client side.
-     meta     — optional short text for the right-hand slot (an entry count).
      dictJump — dictionary key to mark active, or true for none; renders the
                 icon-only jumps to the five dictionaries in the right slot.
      attached — true when a .commu-dict-nav follows immediately, so the two rows
-                share one edge and read as a single block. */
+                share one edge and read as a single block.
+
+   The right slot carries navigation only. An entry count lived here for a
+   while and did not belong: a path bar says where you are, not how much is in
+   the room, and on a narrow screen it was eating the width the path needed. */
 var crumbEn = lang === 'en';
 var crumbTrail = (typeof trail !== 'undefined' && trail) || [];
-var crumbMeta = (typeof meta !== 'undefined' && meta) || '';
 var crumbJump = typeof dictJump !== 'undefined' ? dictJump : false;
 var crumbAttached = typeof attached !== 'undefined' && attached;
 %>
@@ -35,9 +37,8 @@ var crumbAttached = typeof attached !== 'undefined' && attached;
         </li>
         <% }) %>
     </ol>
-    <% if (crumbMeta || crumbJump) { %>
+    <% if (crumbJump) { %>
     <div class="commu-crumb-slot">
-        <% if (crumbMeta) { %><span class="commu-crumb-meta"><%= crumbMeta %></span><% } %>
         <% if (crumbJump) { %>
         <span class="commu-crumb-jump">
             <% dictTabs(crumbEn).forEach(function(tab) { %>

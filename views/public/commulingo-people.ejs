@@ -12,7 +12,6 @@
     <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: en ? 'People' : '인물 사전' }],
-            meta: en ? peopleCount + (peopleCount === 1 ? ' person' : ' people') : peopleCount + '명',
             attached: true }) %>
         <%- include('../partials/commulingo-dict-nav', { active: 'people' }) %>
 
