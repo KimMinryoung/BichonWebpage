@@ -15,12 +15,12 @@
 
         <div class="box">
             <p><%= strings.admin.passkeysHint %></p>
-            <div id="passkey-list" style="margin-top: 15px;"></div>
+            <div id="passkey-list" class="ui-section-gap"></div>
         </div>
 
         <div class="box">
             <h2><%= strings.admin.addPasskey %></h2>
-            <div id="add-message" class="message" style="display:none;"></div>
+            <div id="add-message" class="message" role="status" aria-live="polite"></div>
             <div class="form-group">
                 <label for="add-device"><%= strings.login.deviceName %></label>
                 <input type="text" id="add-device" placeholder="<%= strings.login.deviceNamePlaceholder %>">

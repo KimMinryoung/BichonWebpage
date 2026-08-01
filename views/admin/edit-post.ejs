@@ -35,9 +35,9 @@
                 </div>
 
                 <!-- 링크 삽입 모달 -->
-                <div id="linkOverlay" class="link-overlay" style="display:none;">
-                    <div class="link-modal">
-                        <h3><%= strings.admin.insertLink %></h3>
+                <div id="linkOverlay" class="link-overlay" aria-hidden="true">
+                    <div class="link-modal" role="dialog" aria-modal="true" aria-labelledby="linkModalTitle">
+                        <h3 id="linkModalTitle"><%= strings.admin.insertLink %></h3>
                         <div class="form-group">
                             <label for="linkUrl"><%= strings.admin.linkUrl %></label>
                             <input type="text" id="linkUrl" placeholder="https://">
@@ -50,13 +50,13 @@
                             <label for="linkText"><%= strings.admin.linkText %></label>
                             <input type="text" id="linkText">
                         </div>
-                        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                        <div class="ui-actions ui-actions-end">
                             <button type="button" id="linkInsertBtn" class="btn btn-primary"><%= strings.admin.linkInsert %></button>
                             <button type="button" id="linkCancelBtn" class="btn"><%= strings.admin.linkCancel %></button>
                         </div>
                     </div>
                 </div>
-                <div style="display: flex; gap: 10px;">
+                <div class="ui-actions">
                     <button type="submit" class="btn btn-primary"><%= isEdit ? strings.admin.update : strings.admin.create %></button>
                     <a href="/admin/posts" class="btn"><%= strings.admin.cancel %></a>
                 </div>

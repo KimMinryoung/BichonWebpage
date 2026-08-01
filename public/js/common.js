@@ -1,12 +1,13 @@
-// Date formatting for .local-date and .local-date-short elements
+// Date formatting follows the page language instead of always forcing Korean.
+var documentLocale = document.documentElement.lang === 'en' ? 'en-US' : 'ko-KR';
 document.querySelectorAll('.local-date').forEach(function(el) {
     var d = new Date(el.getAttribute('datetime'));
     var suffix = el.getAttribute('data-suffix') || '';
-    el.textContent = d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) + suffix;
+    el.textContent = d.toLocaleDateString(documentLocale, { year: 'numeric', month: 'long', day: 'numeric' }) + suffix;
 });
 document.querySelectorAll('.local-date-short').forEach(function(el) {
     var d = new Date(el.getAttribute('datetime'));
-    el.textContent = d.toLocaleDateString('ko-KR');
+    el.textContent = d.toLocaleDateString(documentLocale);
 });
 
 // Confirm dialog via data-confirm attribute on forms
@@ -22,6 +23,8 @@ document.addEventListener('submit', function(e) {
     var btn = document.getElementById('themeToggle');
     if (!btn) return;
     var html = document.documentElement;
+    var icon = btn.querySelector('.theme-toggle-icon') || btn;
+    var isEnglish = html.lang === 'en';
 
     function getTheme() {
         return html.getAttribute('data-theme') || 'dark';
@@ -29,15 +32,19 @@ document.addEventListener('submit', function(e) {
 
     function setIcon() {
         var theme = getTheme();
-        btn.textContent = theme === 'light' ? '\u263C' : '\u263E';
-        btn.title = theme === 'light' ? 'Dark mode' : 'Light mode';
+        var isLight = theme === 'light';
+        icon.textContent = isLight ? '\u263C' : '\u263E';
+        btn.setAttribute('aria-pressed', String(isLight));
+        btn.setAttribute('aria-label', isLight
+            ? (isEnglish ? 'Switch to dark mode' : '다크 모드로 전환')
+            : (isEnglish ? 'Switch to light mode' : '라이트 모드로 전환'));
     }
     setIcon();
 
     btn.addEventListener('click', function() {
         var next = getTheme() === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
         setIcon();
     });
 })();

@@ -15,7 +15,7 @@
 
         <div class="box">
             <h2><%= strings.userAuth.accountLogoutSection %></h2>
-            <form action="/auth/logout" method="POST" style="margin-top:10px;">
+            <form action="/auth/logout" method="POST" class="ui-section-gap">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <button type="submit" class="btn"><%= strings.userAuth.logout %></button>
             </form>
@@ -23,15 +23,15 @@
 
         <div class="box">
             <h2><%= strings.userAuth.passwordSection %></h2>
-            <p style="margin:6px 0 10px;color:var(--clr-text-soft,#888);">
+            <p class="ui-muted ui-section-gap">
                 <%= strings.userAuth.passwordLoginHint %>
             </p>
-            <p style="margin:0 0 14px;">
+            <p>
                 <strong><%= strings.userAuth.loginUsernameLabel %>:</strong>
                 <code><%= currentUser.username %></code>
             </p>
-            <div id="password-message" class="message" style="display:none;"></div>
-            <form id="password-form" style="margin-top:10px;">
+            <div id="password-message" class="message" role="status" aria-live="polite"></div>
+            <form id="password-form" class="ui-section-gap">
                 <div class="form-group" id="current-password-group" hidden>
                     <label for="current-password"><%= strings.userAuth.currentPassword %></label>
                     <input type="password" id="current-password" autocomplete="current-password">
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="new-password"><%= strings.userAuth.newPassword %></label>
                     <input type="password" id="new-password" autocomplete="new-password" minlength="1" maxlength="128" required>
-                    <small style="display:block;margin-top:4px;color:var(--clr-text-soft,#888);">
+                    <small class="form-hint">
                         <%= strings.userAuth.passwordHint %>
                     </small>
                 </div>
@@ -52,12 +52,12 @@
         <div class="box">
             <h2><%= strings.admin.passkeys %></h2>
             <p><%= strings.admin.passkeysHint %></p>
-            <div id="passkey-list" style="margin-top: 15px;"></div>
+            <div id="passkey-list" class="ui-section-gap"></div>
         </div>
 
         <div class="box">
             <h2><%= strings.admin.addPasskey %></h2>
-            <div id="add-message" class="message" style="display:none;"></div>
+            <div id="add-message" class="message" role="status" aria-live="polite"></div>
             <div class="form-group">
                 <label for="add-device"><%= strings.login.deviceName %></label>
                 <input type="text" id="add-device" placeholder="<%= strings.login.deviceNamePlaceholder %>">

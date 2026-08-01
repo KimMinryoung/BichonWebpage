@@ -12,7 +12,7 @@
         <div class="login-box">
             <h1><%= strings.userAuth.loginTitle %></h1>
 
-            <div id="auth-message" class="message" style="display:none;"></div>
+            <div id="auth-message" class="message" role="status" aria-live="polite"></div>
 
             <form id="password-login-form">
                 <div class="form-group">
@@ -25,18 +25,18 @@
                     <input type="password" id="password" name="password" autocomplete="current-password" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary" id="password-signin-btn" style="width:100%;">
+                <button type="submit" class="btn btn-primary ui-full-width" id="password-signin-btn">
                     <%= strings.userAuth.passwordSignIn %>
                 </button>
             </form>
 
             <div class="auth-divider"></div>
 
-            <button type="button" class="btn" id="signin-btn" style="width:100%;">
+            <button type="button" class="btn ui-full-width" id="signin-btn">
                 <%= strings.userAuth.passkeySignIn %>
             </button>
 
-            <p style="margin-top:20px; text-align:center;">
+            <p class="ui-auth-switch">
                 <%= strings.userAuth.noAccount %>
                 <a href="/auth/signup"><%= strings.userAuth.signUpLink %></a>
             </p>

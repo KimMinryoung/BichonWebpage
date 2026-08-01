@@ -458,6 +458,9 @@ app.use((req, res, next) => {
     res.locals.absoluteUrl = seo.absoluteUrl;
     res.locals.jsonLdScript = seo.jsonLdScript;
     res.locals.assetVersion = ASSET_VERSION;
+    // Every view gets a useful styling/navigation scope by default. Routes
+    // can still override this when the canonical path differs from req.path.
+    res.locals.pagePath = req.path;
     res.locals.sanitize = sanitizeBasic;
     res.locals.sanitizePost = sanitizePost;
     res.locals.truncateHtml = truncateHtml;

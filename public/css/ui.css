@@ -1,0 +1,331 @@
+/* ==============================================
+   Shared UI layer
+   Foundations, components and small composition
+   helpers used across public and admin templates.
+
+   Page/domain styles remain in their own files. New UI should be assembled
+   from this layer first and only add page CSS for genuinely unique behavior.
+   ============================================== */
+
+/* ===== Document foundations ===== */
+html {
+    accent-color: var(--accent);
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: var(--leading-normal);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+::selection {
+    color: #fff;
+    background: var(--accent-red);
+}
+
+.skip-link {
+    position: fixed;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 2000;
+    padding: var(--space-2) var(--space-3);
+    color: #fff;
+    background: var(--accent-red);
+    border-radius: var(--radius-sm);
+    transform: translateY(calc(-100% - var(--space-4)));
+    transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.skip-link:focus {
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(0);
+}
+
+.skip-target {
+    display: block;
+    scroll-margin-top: calc(var(--control-height) * 2 + var(--space-4));
+}
+
+/* ===== Layout primitives ===== */
+.container {
+    max-width: var(--content-default);
+    padding-inline: var(--gutter);
+}
+
+.home-page .container {
+    max-width: var(--content-home);
+}
+
+.container:has(> .post-content) {
+    max-width: var(--content-wide);
+}
+
+.ui-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap, var(--space-4));
+}
+
+.ui-cluster,
+.ui-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--cluster-gap, var(--space-2));
+}
+
+.ui-actions-end {
+    justify-content: flex-end;
+}
+
+.ui-split {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+}
+
+.ui-split-main {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.ui-section-gap {
+    margin-top: var(--space-4);
+}
+
+.ui-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+}
+
+.box:has(> .posts-table) {
+    overflow-x: auto;
+}
+
+/* ===== State and text helpers ===== */
+.is-hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.ui-muted,
+.form-hint {
+    color: var(--text-muted);
+}
+
+.form-hint {
+    display: block;
+    margin-top: var(--space-1);
+    font-size: var(--text-sm);
+    line-height: 1.45;
+}
+
+.ui-auth-switch {
+    margin-top: var(--space-5);
+    text-align: center;
+}
+
+.ui-full-width {
+    width: 100%;
+}
+
+.ui-inline-form {
+    display: inline-flex;
+    margin: 0;
+}
+
+.post-nav-left .ui-inline-form {
+    margin-left: var(--space-2);
+}
+
+/* ===== Shared surfaces ===== */
+.box,
+.post-content,
+.login-box,
+.stat-box,
+.link-modal {
+    border-radius: var(--radius-md);
+}
+
+.box,
+.post-content,
+.login-box {
+    box-shadow: var(--shadow);
+}
+
+/* ===== Controls ===== */
+.btn {
+    min-height: var(--control-height);
+    padding-inline: var(--space-4);
+    border-radius: var(--radius-sm);
+    transition:
+        color var(--duration-fast) var(--ease-standard),
+        background-color var(--duration-fast) var(--ease-standard),
+        border-color var(--duration-fast) var(--ease-standard),
+        transform var(--duration-fast) var(--ease-standard);
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn-small {
+    min-height: var(--control-height-sm);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border-radius: var(--radius-sm);
+    transition:
+        border-color var(--duration-fast) var(--ease-standard),
+        box-shadow var(--duration-fast) var(--ease-standard),
+        background-color var(--duration-fast) var(--ease-standard);
+}
+
+.form-group input:not([type='checkbox']):not([type='radio']),
+.form-group select {
+    min-height: var(--control-height);
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* ===== Feedback ===== */
+.message {
+    border-radius: var(--radius-sm);
+}
+
+.message:empty {
+    display: none;
+}
+
+.message-info {
+    color: var(--info-text);
+    background-color: var(--info-bg);
+    border-color: var(--info-border);
+}
+
+/* ===== Tables ===== */
+.posts-table-wide {
+    margin-top: var(--space-4);
+}
+
+.posts-table .col-id {
+    width: 10%;
+}
+
+.posts-table .col-title {
+    width: 50%;
+}
+
+.posts-table .col-date,
+.posts-table .col-actions {
+    width: 20%;
+}
+
+/* ===== Modal behavior ===== */
+.link-overlay[aria-hidden='false'] {
+    display: flex;
+}
+
+/* ===== Navigation details ===== */
+.theme-toggle,
+.lang-btn {
+    min-width: var(--control-height);
+    min-height: var(--control-height);
+}
+
+.theme-toggle-icon {
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.lang-menu {
+    border-radius: var(--radius-sm);
+}
+
+/* ===== Responsive and user preferences ===== */
+@media (max-width: 768px) {
+    .container {
+        padding-inline: 0;
+    }
+
+    .ui-split {
+        gap: var(--space-3);
+    }
+
+    .login-container {
+        margin: var(--space-8) var(--gutter);
+    }
+
+    .login-box {
+        padding: var(--space-6);
+    }
+
+    .ui-table-scroll {
+        border-inline: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (forced-colors: active) {
+    .btn,
+    .message,
+    .box,
+    .post-content {
+        border-color: CanvasText;
+    }
+}

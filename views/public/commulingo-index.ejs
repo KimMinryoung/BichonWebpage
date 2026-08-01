@@ -23,30 +23,12 @@
 
         <a class="commulingo-resume is-hidden" id="commuResume" href="#"></a>
 
-        <%
-        // One tile per dictionary/library section, mirroring the five-tab
-        // switcher inside the dictionary pages.
-        var dictTiles = [
-            { href: '/commulingo/people', icon: 'user', label: strings.commuLingo.dictPeople, short: strings.commuLingo.dictPeopleShort },
-            { href: '/commulingo/events', icon: 'flag', label: strings.commuLingo.dictEvents, short: strings.commuLingo.dictEventsShort },
-            { href: '/commulingo/terms', icon: 'book-open', label: strings.commuLingo.dictTerms, short: strings.commuLingo.dictTermsShort },
-            { href: '/commulingo/genealogy', icon: 'git-branch', label: strings.commuLingo.dictGenealogy, short: strings.commuLingo.dictGenealogyShort },
-            { href: '/commulingo/docs', icon: 'landmark', label: strings.commuLingo.dictDocs, short: strings.commuLingo.dictDocsShort },
-        ];
-        %>
         <section class="commu-dict-section" aria-label="<%= strings.commuLingo.dictSectionTitle %>">
             <div class="commu-dict-section-head">
                 <h2><%= strings.commuLingo.dictSectionTitle %></h2>
                 <p><%= strings.commuLingo.dictSectionHint %></p>
             </div>
-            <div class="commu-dict-tiles">
-                <% dictTiles.forEach(function(tile) { %>
-                <a class="commu-dict-tile" href="<%= tile.href %>">
-                    <%- roleIconSvg(tile.icon) %>
-                    <span class="commu-dict-tile-label" data-short="<%= tile.short %>"><%= tile.label %></span>
-                </a>
-                <% }) %>
-            </div>
+            <%- include('../partials/commulingo-dict-nav', { active: null }) %>
         </section>
 
         <section class="commulingo-books-head" aria-hidden="true">

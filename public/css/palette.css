@@ -16,6 +16,55 @@
   --clr-red: #cf222e;
   --clr-red-deep: #2d1115;
   --clr-accent: #214d2e;
+
+  /*
+   * Design foundations
+   * ------------------
+   * Keep non-colour decisions here as well so a visual refresh can be made
+   * without hunting through page-level stylesheets. Component styles should
+   * consume these semantic tokens instead of introducing one-off values.
+   */
+  --font-sans: 'IBM Plex Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Pretendard', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.35rem;
+  --text-2xl: clamp(1.55rem, 4vw, 2rem);
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.82;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Cyber-Lenin uses a deliberately square visual language. Keep component
+     APIs token-based, but make every global corner treatment sharp. */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --border-width: 1px;
+  --control-height: 2.75rem;
+  --control-height-sm: 2rem;
+
+  --content-default: 50rem;
+  --content-wide: 61.25rem;
+  --content-home: 60rem;
+  --gutter: clamp(0.75rem, 3vw, 1.25rem);
+
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
 :root,
@@ -50,6 +99,9 @@
   --success-bg: color-mix(in srgb, var(--clr-accent) 28%, var(--clr-black));
   --success-border: var(--clr-accent);
   --success-text: var(--clr-cream);
+  --info-bg: color-mix(in srgb, #2f81f7 18%, var(--clr-black));
+  --info-border: #58a6ff;
+  --info-text: var(--clr-cream);
   --error-bg: var(--clr-red-deep);
   --error-border: var(--clr-red);
   --error-text: var(--clr-cream);
@@ -87,6 +139,9 @@
   --success-bg: color-mix(in srgb, var(--clr-accent) 14%, var(--clr-cream-light));
   --success-border: var(--clr-accent);
   --success-text: var(--clr-ink);
+  --info-bg: color-mix(in srgb, #0969da 10%, var(--clr-cream-light));
+  --info-border: #0969da;
+  --info-text: var(--clr-ink);
   --error-bg: color-mix(in srgb, var(--clr-red) 12%, var(--clr-cream-light));
   --error-border: var(--clr-red);
   --error-text: var(--clr-red);

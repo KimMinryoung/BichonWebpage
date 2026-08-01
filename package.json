@@ -7,6 +7,8 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "dev:preview": "scripts/dev-preview",
+    "ui:audit": "node scripts/audit-overflow.js",
+    "ui:check": "node scripts/check-ui.js",
     "cf:purge": "node scripts/cloudflare-purge.js",
     "cf:purge:commulingo": "node scripts/purge-commulingo.js",
     "sprite:generate": "node tools/sprite-pipeline.js generate",

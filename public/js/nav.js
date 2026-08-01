@@ -1,12 +1,25 @@
 (function() {
     var btn = document.getElementById('langBtn');
     var menu = document.getElementById('langMenu');
+    if (!btn || !menu) return;
+
+    function setOpen(open) {
+        menu.classList.toggle('show', open);
+        btn.setAttribute('aria-expanded', String(open));
+    }
+
     btn.addEventListener('click', function(e) {
         e.stopPropagation();
-        menu.classList.toggle('show');
+        setOpen(!menu.classList.contains('show'));
     });
     document.addEventListener('click', function() {
-        menu.classList.remove('show');
+        setOpen(false);
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && menu.classList.contains('show')) {
+            setOpen(false);
+            btn.focus();
+        }
     });
     menu.addEventListener('click', function(e) {
         if (e.target.dataset.lang) {

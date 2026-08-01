@@ -24,10 +24,10 @@
                 <table class="posts-table">
                     <thead>
                         <tr>
-                            <th style="width: 10%;"><%= strings.admin.postId %></th>
-                            <th style="width: 50%;"><%= strings.admin.postTitle %></th>
-                            <th style="width: 20%;"><%= strings.admin.postCreated %></th>
-                            <th style="width: 20%;"><%= strings.admin.postActions %></th>
+                            <th class="col-id"><%= strings.admin.postId %></th>
+                            <th class="col-title"><%= strings.admin.postTitle %></th>
+                            <th class="col-date"><%= strings.admin.postCreated %></th>
+                            <th class="col-actions"><%= strings.admin.postActions %></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,7 +41,7 @@
                                         <a href="/admin/posts/edit/<%= post.id %>" class="btn btn-small">
                                             <%= strings.admin.edit %>
                                         </a>
-                                        <form action="/admin/posts/delete/<%= post.id %>" method="POST" style="margin: 0;" data-confirm="<%= strings.admin.deleteConfirm %>">
+                                        <form action="/admin/posts/delete/<%= post.id %>" method="POST" class="ui-inline-form" data-confirm="<%= strings.admin.deleteConfirm %>">
                                             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                             <button type="submit" class="btn btn-small btn-danger">
                                                 <%= strings.admin.delete %>

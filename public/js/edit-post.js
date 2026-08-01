@@ -1,6 +1,6 @@
 (function() {
     // Prevent double form submission
-    var form = document.querySelector('form');
+    var form = document.querySelector('.box form[action^="/admin/posts/"]');
     form.addEventListener('submit', function(e) {
         var btn = form.querySelector('button[type="submit"]');
         if (btn.disabled) { e.preventDefault(); return; }
@@ -12,6 +12,7 @@
     var urlInput = document.getElementById('linkUrl');
     var titleInput = document.getElementById('linkTitle');
     var textInput = document.getElementById('linkText');
+    var openButton = document.getElementById('insertLinkBtn');
     var selStart, selEnd;
 
     // Prevent Enter in modal inputs from submitting the main form
@@ -25,14 +26,14 @@
         });
     });
 
-    document.getElementById('insertLinkBtn').addEventListener('click', function() {
+    openButton.addEventListener('click', function() {
         selStart = content.selectionStart;
         selEnd = content.selectionEnd;
         var selected = content.value.substring(selStart, selEnd);
         urlInput.value = '';
         titleInput.value = '';
         textInput.value = selected || '';
-        overlay.style.display = 'flex';
+        overlay.setAttribute('aria-hidden', 'false');
         urlInput.focus();
     });
 
@@ -52,9 +53,20 @@
         var cursorPos = selStart + tag.length;
         content.setSelectionRange(cursorPos, cursorPos);
         content.focus();
-        overlay.style.display = 'none';
+        closeModal(false);
     });
 
-    function closeModal() { overlay.style.display = 'none'; }
+    function closeModal(restoreFocus) {
+        overlay.setAttribute('aria-hidden', 'true');
+        if (restoreFocus !== false) openButton.focus();
+    }
     document.getElementById('linkCancelBtn').addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.getAttribute('aria-hidden') === 'false') {
+            closeModal();
+        }
+    });
 })();

@@ -7,6 +7,13 @@
 <% const _url = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : siteOrigin + _path; %>
 <% const _robots = (typeof robotsMeta !== 'undefined' && robotsMeta) ? robotsMeta : 'index, follow'; %>
 <% const _ogType = (typeof ogType !== 'undefined' && ogType) ? ogType : 'website'; %>
+<% const _section = _isHome ? 'home'
+    : (_path.indexOf('/commulingo') === 0 ? 'commulingo'
+    : (_path.indexOf('/chat') === 0 ? 'chat'
+    : (/^\/(reports|hub|ai-diary|posts|post|novels|p)(\/|\?|$)/.test(_path) ? 'library'
+    : (_path.indexOf('/auth') === 0 ? 'account'
+    : (_path.indexOf('/admin') === 0 ? 'admin'
+    : (_path.indexOf('/nonogram') === 0 ? 'game' : 'general')))))); %>
 <title><%= _title %></title>
 <meta name="description" content="<%= _desc %>">
 <link rel="canonical" href="<%= _url %>">
@@ -39,10 +46,13 @@
     } catch (e) {}
     if (t !== 'light' && t !== 'dark') t = 'dark';
     document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.setAttribute('data-section', <%- JSON.stringify(_section) %>);
 })();
 </script>
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">
-<% if (typeof extraCss !== 'undefined' && extraCss) { %>
-<link rel="stylesheet" href="<%= extraCss %>">
-<% } %>
+<link rel="stylesheet" href="/css/ui.css?v=<%= assetVersion %>">
+<% const _extraCss = (typeof extraCss === 'undefined' || !extraCss) ? [] : (Array.isArray(extraCss) ? extraCss : [extraCss]); %>
+<% _extraCss.forEach(function(stylesheet) { %>
+<link rel="stylesheet" href="<%= stylesheet %>">
+<% }); %>

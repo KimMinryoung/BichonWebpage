@@ -22,8 +22,8 @@
             <ul class="post-list">
                 <% diaries.forEach(diary => { %>
                     <li class="post-item">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                            <div style="flex: 1;">
+                        <div class="ui-split">
+                            <div class="ui-split-main">
                                 <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
                                 <div class="post-meta">
                                     <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
@@ -33,7 +33,7 @@
                                 </p>
                             </div>
                             <% if (isAuthenticated) { %>
-                                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" style="margin-left: 15px;" data-confirm="<%= strings.public.deleteDiaryConfirm %>">
+                                <form action="/ai-diary/<%= diary.id %>/delete" method="POST" class="ui-inline-form" data-confirm="<%= strings.public.deleteDiaryConfirm %>">
                                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                                     <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
                                 </form>

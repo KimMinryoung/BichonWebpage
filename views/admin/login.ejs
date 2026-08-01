@@ -19,9 +19,9 @@
         <div class="login-box">
             <h1><%= strings.login.title %></h1>
 
-            <div id="passkey-message" class="message" style="display:none;"></div>
+            <div id="passkey-message" class="message" role="status" aria-live="polite"></div>
 
-            <div id="bootstrap-fields" style="display:none;">
+            <div id="bootstrap-fields" hidden>
                 <p class="message message-info"><%= strings.login.bootstrapHint %></p>
                 <div class="form-group">
                     <label for="bootstrap-username"><%= strings.login.username %></label>
@@ -31,13 +31,13 @@
                     <label for="bootstrap-device"><%= strings.login.deviceName %></label>
                     <input type="text" id="bootstrap-device" name="deviceName" placeholder="<%= strings.login.deviceNamePlaceholder %>">
                 </div>
-                <button type="button" class="btn btn-primary" id="register-btn" style="width: 100%;">
+                <button type="button" class="btn btn-primary ui-full-width" id="register-btn">
                     <%= strings.login.registerSubmit %>
                 </button>
             </div>
 
             <div id="signin-block">
-                <button type="button" class="btn btn-primary" id="signin-btn" style="width: 100%;">
+                <button type="button" class="btn btn-primary ui-full-width" id="signin-btn">
                     <%= strings.login.passkeySubmit %>
                 </button>
             </div>
@@ -90,8 +90,8 @@
             try {
                 const status = await fetch('/admin/webauthn/status').then(r => r.json());
                 if (status.bootstrap) {
-                    bootstrapBlock.style.display = 'block';
-                    signinBlock.style.display = 'none';
+                    bootstrapBlock.hidden = false;
+                    signinBlock.hidden = true;
                 }
             } catch (e) { /* network failure — show sign-in anyway */ }
         }
