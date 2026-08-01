@@ -20,34 +20,30 @@
 
         <!-- Menu Cards -->
         <div class="home-cards">
-            <a href="/chat" class="home-card home-card-primary home-card-highlight">
-                <h2><%= strings.nav.chat %></h2>
+            <a href="/chat" class="home-card home-card-full home-card-highlight">
+                <h2><%- include('../partials/menu-icon', { icon: 'chat', iconClass: 'home-card-icon' }) %><%= strings.nav.chat %></h2>
                 <p><%= strings.home.chatDesc %></p>
             </a>
-            <a href="/reports" class="home-card">
-                <h2><%= strings.nav.reports %></h2>
-                <p><%= strings.home.reportsDesc %></p>
-            </a>
-            <a href="/hub" class="home-card">
-                <h2><%= strings.nav.hub %></h2>
-                <p><%= strings.home.hubDesc %></p>
-            </a>
-            <a href="/ai-diary" class="home-card">
-                <h2><%= strings.nav.diary %></h2>
-                <p><%= strings.home.diaryDesc %></p>
-            </a>
-            <a href="/commulingo" class="home-card home-card-highlight">
-                <h2><%= strings.nav.commuLingo %></h2>
+            <div class="home-card home-card-full home-card-highlight home-card-group">
+                <h2><a href="/commulingo"><%- include('../partials/menu-icon', { icon: 'commulingo', iconClass: 'home-card-icon' }) %><%= strings.nav.commuLingo %></a></h2>
                 <p><%= strings.home.commuLingoDesc %></p>
-            </a>
-            <a href="/nonogram/" class="home-card">
-                <h2><%= strings.nav.game %></h2>
-                <p><%= strings.home.gameDesc %></p>
-            </a>
-            <a href="/posts" class="home-card">
-                <h2><%= strings.nav.bichonPosts %></h2>
-                <p><%= strings.home.postsDesc %></p>
-            </a>
+                <div class="home-card-links">
+                    <a href="/commulingo"><%- include('../partials/menu-icon', { icon: 'quiz', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.quizShort %>"><%= strings.commuLingo.quizLabel %></span></a>
+                    <a href="/commulingo/people"><%- include('../partials/menu-icon', { icon: 'people', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictPeopleShort %>"><%= strings.commuLingo.dictPeople %></span></a>
+                    <a href="/commulingo/events"><%- include('../partials/menu-icon', { icon: 'events', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictEventsShort %>"><%= strings.commuLingo.dictEvents %></span></a>
+                    <a href="/commulingo/terms"><%- include('../partials/menu-icon', { icon: 'terms', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictTermsShort %>"><%= strings.commuLingo.dictTerms %></span></a>
+                </div>
+            </div>
+            <div class="home-card home-card-full home-card-group">
+                <h2><a href="/reports"><%- include('../partials/menu-icon', { icon: 'library', iconClass: 'home-card-icon' }) %><%= strings.nav.library %></a></h2>
+                <p><%= strings.home.libraryDesc %></p>
+                <div class="home-card-links">
+                    <a href="/reports"><%- include('../partials/menu-icon', { icon: 'reports', iconClass: 'home-card-link-icon' }) %><span><%= strings.nav.reportsShort %></span></a>
+                    <a href="/hub"><%- include('../partials/menu-icon', { icon: 'hub', iconClass: 'home-card-link-icon' }) %><span><%= strings.nav.hub %></span></a>
+                    <a href="/ai-diary"><%- include('../partials/menu-icon', { icon: 'diary', iconClass: 'home-card-link-icon' }) %><span><%= strings.nav.diaryShort %></span></a>
+                    <a href="/posts"><%- include('../partials/menu-icon', { icon: 'posts', iconClass: 'home-card-link-icon' }) %><span><%= strings.nav.bichonPosts %></span></a>
+                </div>
+            </div>
         </div>
 
         <!-- Recent Research -->

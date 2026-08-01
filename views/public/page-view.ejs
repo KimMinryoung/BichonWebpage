@@ -9,6 +9,7 @@
     <%- include('../partials/nav') %>
 
     <div class="container">
+        <%- include('../partials/library-tabs', { active: 'reports' }) %>
         <article class="post-content">
             <h1><%= pageTitle %></h1>
             <% if (summary) { %>

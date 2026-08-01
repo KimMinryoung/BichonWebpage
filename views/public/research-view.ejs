@@ -9,6 +9,7 @@
     <%- include('../partials/nav') %>
 
     <div class="container">
+        <%- include('../partials/library-tabs', { active: 'reports' }) %>
         <article class="post-content">
             <% if (typeof isPrivate !== 'undefined' && isPrivate) { %>
                 <div class="report-task-label"><%= lang === 'ko' ? '비공개 보고서' : 'Private report' %></div>

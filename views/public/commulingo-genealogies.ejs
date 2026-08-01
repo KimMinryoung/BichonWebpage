@@ -7,9 +7,7 @@
     <main class="container commulingo-shell commu-genealogy-page" data-lang="<%= lang %>">
         <a class="commu-back-link" href="/commulingo">← <%= en ? 'CommuLingo' : '공산링고' %></a>
         <%- include('../partials/commulingo-dict-nav', { active: 'genealogy' }) %>
-        <header class="box commulingo-hero">
-            <div><h1><%= en ? 'Genealogy Charts' : '계보도' %></h1><p><%= en ? 'Diagrams of how currents, doctrines and factions split and merged. Nodes link into the dictionaries.' : '사상과 이론, 분파가 갈라지고 합쳐진 흐름을 도표로 봅니다. 노드는 사전 항목으로 연결됩니다.' %></p></div>
-        </header>
+        <h1 class="commu-sr-only"><%= en ? 'Genealogy Charts' : '계보도' %></h1>
         <section class="commu-event-grid" aria-label="<%= en ? 'Genealogy charts' : '계보도 목록' %>">
             <% charts.forEach(function(chart) { %>
             <a class="commu-event-card" href="/commulingo/genealogy/<%= chart.id %>">

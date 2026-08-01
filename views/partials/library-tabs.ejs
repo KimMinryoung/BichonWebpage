@@ -1,0 +1,15 @@
+<%
+/* Switcher between the four writing sections merged under the 글 menu.
+   `active` marks the page currently open: 'reports' | 'hub' | 'diary' | 'posts'. */
+var libraryTabs = [
+    { key: 'reports', href: '/reports', label: strings.nav.reportsShort },
+    { key: 'hub', href: '/hub', label: strings.nav.hub },
+    { key: 'diary', href: '/ai-diary', label: strings.nav.diaryShort },
+    { key: 'posts', href: '/posts', label: strings.nav.bichonPosts },
+];
+%>
+<nav class="section-tabs" aria-label="<%= strings.nav.library %>">
+    <% libraryTabs.forEach(function(tab) { %>
+    <a class="section-tab<%= active === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (active === tab.key) { %> aria-current="page"<% } %>><%= tab.label %></a>
+    <% }) %>
+</nav>

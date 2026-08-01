@@ -40,26 +40,32 @@
     </div>
 </div>
 <%
-// Mark the nav link matching the current page (exact match or section prefix).
+// Mark the nav link matching the current page. Each top-level menu owns a
+// set of path prefixes (e.g. 글 covers reports/hub/diary/posts and their
+// detail pages), so section pages keep their parent menu highlighted.
 const _navPath = ((typeof pagePath !== 'undefined' && pagePath) ? pagePath : '').split('?')[0];
-const _navCur = (href) => {
-    const base = href.replace(/\/$/, '');
-    const hit = _navPath === href || _navPath === base
-        || (base && _navPath.indexOf(base + '/') === 0)
-        || (base === '/posts' && _navPath.indexOf('/post/') === 0);
+const _navCur = (prefixes) => {
+    const hit = prefixes.some((href) => {
+        const base = href.replace(/\/$/, '');
+        return _navPath === href || _navPath === base
+            || (base && _navPath.indexOf(base + '/') === 0);
+    });
     return hit ? ' aria-current="page"' : '';
 };
+const _libraryPaths = ['/reports', '/hub', '/ai-diary', '/posts', '/post', '/novels', '/p'];
+// The game stays out of the primary nav on purpose — it lives as a footer icon.
+const _navItems = [
+    { key: 'chat', href: '/chat', label: strings.nav.chat, cur: _navCur(['/chat']) },
+    { key: 'commulingo', href: '/commulingo', label: strings.nav.commuLingo, cur: _navCur(['/commulingo']) },
+    { key: 'library', href: '/reports', label: strings.nav.library, cur: _navCur(_libraryPaths) },
+];
 %>
 <nav>
     <div class="nav-content">
         <div class="nav-links">
-            <a href="/chat"<%- _navCur('/chat') %>><%= strings.nav.chat %></a>
-            <a href="/reports"<%- _navCur('/reports') %>><span class="nav-responsive-label" data-short="<%= strings.nav.reportsShort %>"><%= strings.nav.reports %></span></a>
-            <a href="/hub"<%- _navCur('/hub') %>><%= strings.nav.hub %></a>
-            <a href="/ai-diary"<%- _navCur('/ai-diary') %>><span class="nav-responsive-label" data-short="<%= strings.nav.diaryShort %>"><%= strings.nav.diary %></span></a>
-            <a href="/commulingo"<%- _navCur('/commulingo') %>><%= strings.nav.commuLingo %></a>
-            <a href="/nonogram/"<%- _navCur('/nonogram/') %>><%= strings.nav.game %></a>
-            <a href="/posts"<%- _navCur('/posts') %>><%= strings.nav.bichonPosts %></a>
+            <% _navItems.forEach(item => { %>
+            <a href="<%= item.href %>"<%- item.cur %>><%- include('menu-icon', { icon: item.key }) %><%= item.label %></a>
+            <% }) %>
         </div>
     </div>
 </nav>

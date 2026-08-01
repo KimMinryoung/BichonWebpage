@@ -1,17 +1,19 @@
 <%
-/* Unified switcher between the dictionaries and the genealogy charts.
-   `active` marks the page currently open: 'people' | 'events' | 'terms' |
-   'genealogy'. roleIconSvg comes from the commulingo router middleware. */
+/* Unified switcher between the dictionaries, the genealogy charts and the
+   reference library. `active` marks the page currently open: 'people' |
+   'events' | 'terms' | 'genealogy' | 'docs'. roleIconSvg comes from the
+   commulingo router middleware. */
 var dictNavEn = lang === 'en';
 var dictTabs = [
-    { key: 'people', href: '/commulingo/people', icon: 'user', label: dictNavEn ? 'People' : '인물 사전' },
-    { key: 'events', href: '/commulingo/events', icon: 'flag', label: dictNavEn ? 'Historical events' : '역사 사건' },
-    { key: 'terms', href: '/commulingo/terms', icon: 'book-open', label: dictNavEn ? 'Glossary' : '용어 사전' },
-    { key: 'genealogy', href: '/commulingo/genealogy', icon: 'git-branch', label: dictNavEn ? 'Genealogy' : '계보도' },
+    { key: 'people', href: '/commulingo/people', icon: 'user', label: dictNavEn ? 'People' : '인물 사전', short: dictNavEn ? 'People' : '인물' },
+    { key: 'events', href: '/commulingo/events', icon: 'flag', label: dictNavEn ? 'Historical events' : '역사 사건', short: dictNavEn ? 'Events' : '사건' },
+    { key: 'terms', href: '/commulingo/terms', icon: 'book-open', label: dictNavEn ? 'Glossary' : '용어 사전', short: dictNavEn ? 'Terms' : '용어' },
+    { key: 'genealogy', href: '/commulingo/genealogy', icon: 'git-branch', label: dictNavEn ? 'Genealogy' : '계보도', short: dictNavEn ? 'Charts' : '계보' },
+    { key: 'docs', href: '/commulingo/docs', icon: 'landmark', label: dictNavEn ? 'References' : '참고 문헌', short: dictNavEn ? 'Refs' : '문헌' },
 ];
 %>
 <nav class="commu-dict-nav" aria-label="<%= dictNavEn ? 'Dictionaries' : '사전' %>">
     <% dictTabs.forEach(function(tab) { %>
-    <a class="commu-dict-tab<%= active === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (active === tab.key) { %> aria-current="page"<% } %>><%- roleIconSvg(tab.icon) %><span><%= tab.label %></span></a>
+    <a class="commu-dict-tab<%= active === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (active === tab.key) { %> aria-current="page"<% } %>><%- roleIconSvg(tab.icon) %><span data-short="<%= tab.short %>"><%= tab.label %></span></a>
     <% }) %>
 </nav>

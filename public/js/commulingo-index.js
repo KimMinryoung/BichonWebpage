@@ -94,7 +94,7 @@
     }
 
     var bookGroups = [
-        { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); }, historyLinks: true },
+        { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); } },
         { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id) || /^marx-/.test(b.id); } },
         { label: function() { return strings.authorEngels || '프리드리히 엥겔스'; }, match: function(b) { return /^engels/.test(b.id); } },
         { label: function() { return strings.authorLenin || '블라디미르 레닌'; }, match: function(b) { return /^lenin/.test(b.id); } }
@@ -106,7 +106,7 @@
         bookGroups.forEach(function(def) {
             var items = books.filter(def.match);
             items.forEach(function(book) { assigned[book.id] = true; });
-            if (items.length) groups.push({ label: def.label(), books: items, historyLinks: def.historyLinks });
+            if (items.length) groups.push({ label: def.label(), books: items });
         });
         var rest = books.filter(function(book) { return !assigned[book.id]; });
         if (rest.length) groups.push({ label: strings.authorOther || (lang === 'en' ? 'Other' : '그 외'), books: rest });
@@ -132,15 +132,6 @@
             heading.className = 'commu-book-group-title';
             heading.textContent = group.label;
             head.appendChild(heading);
-            if (group.historyLinks) {
-                // The unified dictionary switcher is server-rendered once into
-                // #commuDictNavTpl (partials/commulingo-dict-nav.ejs) and
-                // cloned here, so the three-tab nav has a single source.
-                var navTpl = document.getElementById('commuDictNavTpl');
-                if (navTpl && navTpl.content) {
-                    head.appendChild(navTpl.content.cloneNode(true));
-                }
-            }
             var grid = document.createElement('div');
             grid.className = 'commulingo-books';
             group.books.forEach(function(book) { grid.appendChild(createBookCard(book)); });

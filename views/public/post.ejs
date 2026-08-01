@@ -8,6 +8,7 @@
     <%- include('../partials/nav') %>
 
     <div class="container">
+        <%- include('../partials/library-tabs', { active: 'posts' }) %>
         <article class="post-content">
             <h1><%= post.title %></h1>
             <div class="post-meta">
