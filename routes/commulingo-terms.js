@@ -11,6 +11,23 @@ const {
     termCategoryLabel,
 } = require('../data/commulingo/term-categories');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
+const { listGenealogyChartsFor } = require('../data/commulingo/genealogy-store');
+
+// Genealogy charts that place this entry as one of their nodes. Like the
+// reference documents below, a failure here costs the section and not the page.
+function relatedGenealogiesFor(type, id, lang) {
+    try {
+        return listGenealogyChartsFor(type, id).map(chart => ({
+            id: chart.id,
+            title: localize(chart.title, lang),
+            period: chart.period,
+            nodeLabel: localize(chart.nodeLabel, lang),
+        }));
+    } catch (e) {
+        console.error(`commulingo ${type} genealogies:`, e);
+        return [];
+    }
+}
 
 // Reference documents (참고 문헌) linked to this term/event via the docs
 // manifest. Failure only costs the section, never the page.
@@ -345,6 +362,7 @@ async function buildTermPanel(termId, lang) {
         sources: presentSources(term.sources, lang, relatedReports),
         relatedReports,
         relatedDocs: relatedDocsFor('terms', termId, lang),
+        genealogies: relatedGenealogiesFor('term', termId, lang),
     };
 }
 

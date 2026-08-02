@@ -63,6 +63,16 @@
             </ul>
         </section>
         <% } %>
+        <% if (p.genealogies && p.genealogies.length) { %>
+        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="term-genealogies">
+            <h2 id="term-genealogies"><%= en ? 'Genealogy charts' : '계보도' %></h2>
+            <ul class="commu-related-report-list commu-related-genealogy-list">
+                <% p.genealogies.forEach(function(chart) { %>
+                <li><a href="/commulingo/genealogy/<%= encodeURIComponent(chart.id) %>"><span><%= chart.period %></span><strong><%= chart.title %></strong><% if (chart.nodeLabel && chart.nodeLabel !== p.term.term) { %><em><%= chart.nodeLabel %></em><% } %></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
         <% if (p.relatedDocs && p.relatedDocs.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
             <h2 id="related-docs"><%= en ? 'Reference documents' : '참고 문헌' %></h2>

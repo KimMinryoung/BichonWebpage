@@ -3447,6 +3447,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    category word (번역 전문), not a date — body typeface, not the mono date font. */
 .commu-related-doc-list span { font-family: inherit; font-weight: 600; }
 
+/* Genealogy links keep the mono year range, and carry the node's own label
+   under the chart title when the chart calls the entry something other than
+   its headword ('러시아 인민을 위한 축배' for 맏형 러시아 인민론). */
+.commu-related-genealogy-list em { grid-column: 2; color: var(--text-muted); font-style: normal; font-size: .92rem; }
+@media (max-width: 560px) { .commu-related-genealogy-list em { grid-column: 1; } }
+
 /* Glossary term pages (/commulingo/terms) */
 /* Dictionary lists run to 85+ cards, so definitions are clamped to a 3-line
    preview and cards keep their own height instead of stretching to the tallest

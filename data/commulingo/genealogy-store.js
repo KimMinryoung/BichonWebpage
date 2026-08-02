@@ -59,4 +59,27 @@ function getGenealogyChart(id) {
     return loadCharts().find(chart => chart.id === id) || null;
 }
 
-module.exports = { listGenealogyCharts, getGenealogyChart };
+// The charts that carry a given dictionary entry as one of their nodes, so an
+// entry page can point back at the diagram it sits in. `type` is the node ref
+// type ('term' | 'person' | 'event'). A chart names a node for its place in the
+// story ('러시아 인민을 위한 축배'), which is not always the headword the entry
+// is filed under, so the node's label comes back as well. Several nodes can
+// share one entry, and then no single label describes where it sits: the label
+// is returned only when exactly one node matches.
+function listGenealogyChartsFor(type, id) {
+    if (!type || !id) return [];
+    const wanted = String(id);
+    const matches = node => node && node.ref && node.ref.type === type && String(node.ref.id) === wanted;
+    return loadCharts()
+        .map(chart => ({ chart, nodes: chart.nodes.filter(matches) }))
+        .filter(entry => entry.nodes.length)
+        .map(({ chart, nodes }) => ({
+            id: chart.id,
+            title: chart.title,
+            period: `${chart.timeStart}–${chart.timeEnd}`,
+            nodeLabel: nodes.length === 1 ? (nodes[0].label || '') : '',
+            nodeCount: nodes.length,
+        }));
+}
+
+module.exports = { listGenealogyCharts, getGenealogyChart, listGenealogyChartsFor };
