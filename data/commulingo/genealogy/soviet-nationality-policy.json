@@ -509,6 +509,20 @@
       }
     },
     {
+      "id": "language-debate",
+      "column": "language",
+      "year": 1978,
+      "period": "1978–1983",
+      "label": {
+        "ko": "민족어 교육 논쟁",
+        "en": "The debate over national-language schooling"
+      },
+      "note": {
+        "ko": "1979년 타슈켄트 회의가 유치원부터의 러시아어 확대를 권고하고 1983년 결정이 러시아어 교사 가산 수당과 분반을 도입한 한편, 1978년 트빌리시 시위는 조지아어의 국가어 지위를 지켜냈다",
+        "en": "The 1979 Tashkent conference urged Russian from kindergarten and a 1983 decree added pay supplements and split classes for Russian teaching, while the Tbilisi demonstrations of 1978 preserved Georgian as a state language"
+      }
+    },
+    {
       "id": "constitution-1977",
       "column": "territory",
       "year": 1977,
@@ -711,11 +725,6 @@
       "type": "succession"
     },
     {
-      "from": "lingua-franca",
-      "to": "language-laws",
-      "type": "opposition"
-    },
-    {
       "from": "constitution-1977",
       "to": "nationalities-crisis",
       "type": "succession"
@@ -729,6 +738,21 @@
       "from": "korenizatsiya",
       "to": "language-laws",
       "type": "influence"
+    },
+    {
+      "from": "lingua-franca",
+      "to": "language-debate",
+      "type": "succession"
+    },
+    {
+      "from": "constitution-1977",
+      "to": "language-debate",
+      "type": "influence"
+    },
+    {
+      "from": "language-debate",
+      "to": "language-laws",
+      "type": "opposition"
     }
   ]
 }
