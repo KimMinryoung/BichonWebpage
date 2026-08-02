@@ -531,6 +531,24 @@
       }
     },
     {
+      "id": "shelest-removal",
+      "column": "repression",
+      "year": 1972,
+      "period": "1972–1973",
+      "label": {
+        "ko": "셸레스트 해임",
+        "en": "The removal of Shelest"
+      },
+      "ref": {
+        "type": "term",
+        "id": "bourgeois-nationalism"
+      },
+      "note": {
+        "ko": "1972년 1월 우크라이나 지식인이 대거 검거되고 5월 제1서기 셸레스트가 물러났다. 그의 『우크라이나 우리의 소비에트』(1970)가 민족의 과거를 미화했다는 비판이 뒤따랐다",
+        "en": "Ukrainian intellectuals were arrested en masse in January 1972 and the first secretary, Shelest, was removed in May; criticism followed that his Our Soviet Ukraine (1970) had idealised the national past"
+      }
+    },
+    {
       "id": "lingua-franca",
       "column": "language",
       "year": 1961,
@@ -801,6 +819,16 @@
       "from": "language-debate",
       "to": "language-laws",
       "type": "opposition"
+    },
+    {
+      "from": "bourgeois-nationalism",
+      "to": "shelest-removal",
+      "type": "succession"
+    },
+    {
+      "from": "soviet-people",
+      "to": "shelest-removal",
+      "type": "influence"
     }
   ]
 }
