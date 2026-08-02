@@ -1,5 +1,6 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
+const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
@@ -172,6 +173,7 @@ async function buildEventPanel(eventId, lang) {
         event,
         relatedTerms: await relatedTermsForEvent(eventId, lang),
         relatedDocs: relatedDocsForEvent(eventId, lang),
+        genealogies: genealogyLinksFor('event', eventId, lang),
         relatedReports,
         prevEvent: neighbor(-1),
         nextEvent: neighbor(1),

@@ -1,0 +1,16 @@
+<%
+/* The "계보도" section of a dictionary entry: the charts that carry this entry
+   as one of their nodes. Shared by the term and event panels.
+   Locals: charts (from genealogyLinksFor), headword (the entry's own name, so a
+   node label identical to it is not repeated), en. */
+%>
+<% if (charts && charts.length) { %>
+        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="term-genealogies">
+            <h2 id="term-genealogies"><%= en ? 'Genealogy charts' : '계보도' %></h2>
+            <ul class="commu-related-report-list commu-related-genealogy-list">
+                <% charts.forEach(function(chart) { %>
+                <li><a href="/commulingo/genealogy/<%= encodeURIComponent(chart.id) %>"><span><%= chart.period %></span><strong><%= chart.title %></strong><% if (chart.nodeLabel && chart.nodeLabel !== headword) { %><em><%= chart.nodeLabel %></em><% } %></a></li>
+                <% }) %>
+            </ul>
+        </section>
+<% } %>
