@@ -3610,19 +3610,28 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    page itself never does. */
 .gen-figure { padding: .75rem; margin: 0; }
 .gen-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.gen-svg { display: block; font-family: inherit; }
+/* The `img, …, svg { max-width: 100% }` reset in ui.css caps the chart at the
+   container width, which cancels that scroll: on a phone the drawing shrank to
+   half size (12.5px labels became 6.7px) and, because the svg keeps the height
+   its markup asks for, the box stayed 1409px tall and padded the scaled chart
+   with dead space above and below. The chart keeps its natural width instead. */
+.gen-svg { display: block; font-family: inherit; max-width: none; }
 
 .gen-col-header { fill: var(--text-secondary); font-size: 14px; font-weight: 600; }
 .gen-year { fill: var(--text-muted); font-size: 11px; }
 .gen-gridline { stroke: color-mix(in srgb, var(--border) 18%, transparent); stroke-width: 1; }
 .gen-lane-sep { stroke: color-mix(in srgb, var(--border) 10%, transparent); stroke-width: 1; }
 
-.gen-node rect { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 45%, transparent); stroke-width: 1; }
-.gen-node-linked rect { stroke: var(--link); stroke-width: 1.2; }
-a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: var(--link-hover); fill: var(--bg-surface); }
+/* Most nodes open a dictionary entry, so a linked node is the plain case and
+   the exception carries the mark: an entry that does not exist yet gets a
+   dashed border and a dimmer label. Colouring the linked ones with --link had
+   this backwards, and on the dark theme that green read dimmer than the plain
+   label, so the nodes that were clickable looked like the disabled ones. */
+.gen-node rect { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
 .gen-node-label { fill: var(--text-primary); font-size: 12.5px; font-weight: 600; }
-.gen-node-linked .gen-node-label { fill: var(--link); }
-a:hover .gen-node-linked .gen-node-label { fill: var(--link-hover); }
+.gen-node:not(.gen-node-linked) rect { stroke: color-mix(in srgb, var(--border) 32%, transparent); stroke-dasharray: 4 3; }
+.gen-node:not(.gen-node-linked) .gen-node-label { fill: var(--text-muted); font-weight: 500; }
+a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: var(--border-emphasis); stroke-width: 1.4; fill: var(--bg-surface); }
 .gen-node-period { fill: var(--text-muted); font-size: 10.5px; }
 
 .gen-edge { fill: none; stroke-width: 1.5; }
@@ -3645,4 +3654,4 @@ a:hover .gen-node-linked .gen-node-label { fill: var(--link-hover); }
 .gen-legend { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; align-items: center; margin-top: .6rem; font-size: .82rem; color: var(--text-muted); }
 .gen-legend-item { display: inline-flex; align-items: center; gap: .4rem; }
 .gen-legend-item svg { flex: none; }
-.gen-legend-note { flex-basis: 100%; }
+.gen-legend-swatch { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 32%, transparent); stroke-dasharray: 4 3; }
