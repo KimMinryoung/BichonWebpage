@@ -7,8 +7,8 @@
 
 const MARGIN_TOP = 84;      // column headers + breathing room
 const MARGIN_BOTTOM = 36;
-const MARGIN_LEFT = 48;     // year axis
-const MARGIN_RIGHT = 16;
+const MARGIN_LEFT = 36;     // year axis: a four-digit year at 11px measures 28
+const MARGIN_RIGHT = 8;
 const COL_WIDTH = 166;      // five lanes fit the desktop container without scrolling
 const NODE_WIDTH = 148;
 const PX_PER_YEAR = 22;     // generous so dense decades need little nudging;
@@ -116,7 +116,7 @@ function renderGenealogySvg(chart, lang) {
     for (let year = firstTick; year <= chart.timeEnd; year += 10) {
         const y = yearY(year);
         parts.push(`<line class="gen-gridline" x1="${MARGIN_LEFT}" y1="${y}" x2="${width - MARGIN_RIGHT}" y2="${y}"/>`);
-        parts.push(`<text class="gen-year" x="${MARGIN_LEFT - 8}" y="${y + 4}" text-anchor="end">${year}</text>`);
+        parts.push(`<text class="gen-year" x="${MARGIN_LEFT - 6}" y="${y + 4}" text-anchor="end">${year}</text>`);
     }
 
     // ── Column headers and faint lane separators. ──

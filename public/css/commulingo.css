@@ -3609,6 +3609,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    is wider than a phone: it scrolls horizontally inside .gen-scroll while the
    page itself never does. */
 .gen-figure { padding: .75rem; margin: 0; }
+/* On a phone the chart is scaled to whatever width the box leaves it, so the
+   padding is coming straight out of the drawing's legibility. */
+@media (max-width: 560px) { .gen-figure { padding: .3rem; } }
 .gen-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 /* The chart is wider than a phone, and the whole point of it is reading the
    four lanes against each other, so it scales down to fit rather than being
