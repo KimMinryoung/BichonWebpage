@@ -55,8 +55,8 @@
       "year": 1864,
       "period": "1864–1876",
       "label": {
-        "ko": "제1인터내셔널 (마르크스)",
-        "en": "First International (Marx)"
+        "ko": "제1인터내셔널",
+        "en": "First International"
       },
       "ref": {
         "type": "term",
@@ -73,8 +73,8 @@
       "year": 1872,
       "period": "1872–1877",
       "label": {
-        "ko": "반권위주의 인터내셔널 (바쿠닌)",
-        "en": "Anti-authoritarian International (Bakunin)"
+        "ko": "반권위주의 인터내셔널",
+        "en": "Anti-authoritarian International"
       },
       "ref": {
         "type": "term",
@@ -87,8 +87,8 @@
       "year": 1889,
       "period": "1889–1916",
       "label": {
-        "ko": "제2인터내셔널 (카우츠키)",
-        "en": "Second International (Kautsky)"
+        "ko": "제2인터내셔널",
+        "en": "Second International"
       },
       "ref": {
         "type": "term",
@@ -105,8 +105,8 @@
       "year": 1899,
       "period": "1896–1903",
       "label": {
-        "ko": "수정주의 논쟁 (베른슈타인)",
-        "en": "The revisionism debate (Bernstein)"
+        "ko": "수정주의 논쟁",
+        "en": "The revisionism debate"
       },
       "ref": {
         "type": "term",
