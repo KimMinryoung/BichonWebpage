@@ -3610,12 +3610,13 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    page itself never does. */
 .gen-figure { padding: .75rem; margin: 0; }
 .gen-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-/* The `img, …, svg { max-width: 100% }` reset in ui.css caps the chart at the
-   container width, which cancels that scroll: on a phone the drawing shrank to
-   half size (12.5px labels became 6.7px) and, because the svg keeps the height
-   its markup asks for, the box stayed 1409px tall and padded the scaled chart
-   with dead space above and below. The chart keeps its natural width instead. */
-.gen-svg { display: block; font-family: inherit; max-width: none; }
+/* The chart is wider than a phone, and the whole point of it is reading the
+   four lanes against each other, so it scales down to fit rather than being
+   scrolled a lane at a time. The `max-width: 100%` reset in ui.css already does
+   that; `height: auto` is what it was missing. Without it the svg kept the
+   height its markup asks for while the width shrank, so the scaled drawing sat
+   centred in a 1409px box with dead space above and below. */
+.gen-svg { display: block; font-family: inherit; height: auto; }
 
 .gen-col-header { fill: var(--text-secondary); font-size: 14px; font-weight: 600; }
 .gen-year { fill: var(--text-muted); font-size: 11px; }
