@@ -849,10 +849,23 @@ a.home-card:hover::after {
     line-height: 1.5;
 }
 
-/* Group cards hold a title link plus quick links into their sub-sections,
-   so the card itself is not clickable and needs no arrow gutter on the right. */
+/* Group cards hold a title link plus quick links into their sub-sections, so
+   they cannot be one anchor the way the plain cards are. The title link is
+   stretched over the whole card instead, which makes the rectangle clickable
+   like the chat card; the quick-link row is raised above it and keeps its own
+   targets. No arrow gutter on the right: the arrow sits after the title. */
 .home-card.home-card-group {
     padding: 14px 0 0;
+}
+
+.home-card-group h2 a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.home-card-group .home-card-links {
+    position: relative;
 }
 
 .home-card-group > h2,
