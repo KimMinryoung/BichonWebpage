@@ -11,7 +11,7 @@ const {
     termCategoryLabel,
 } = require('../data/commulingo/term-categories');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
-const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
+const { genealogyLinksForEntry } = require('../data/commulingo/genealogy-links');
 // Retired glossary ids ride the same commulingo_id_redirects table the person
 // pages read, so merging two entries stays a DB-only edit. The people snapshot
 // is where those rows are loaded (it fetches every entity_type, not just its
@@ -357,14 +357,17 @@ async function buildTermPanel(termId, lang) {
     } catch (e) {
         console.error('commulingo term related reports:', e);
     }
+    // The documents come first: the 계보도 section reaches charts through them
+    // as well as through the entry's own nodes.
+    const relatedDocs = relatedDocsFor('terms', termId, lang);
     return {
         term,
         definitionHtml,
         bodyHtml,
         sources: presentSources(term.sources, lang, relatedReports),
         relatedReports,
-        relatedDocs: relatedDocsFor('terms', termId, lang),
-        genealogies: genealogyLinksFor('term', termId, lang),
+        relatedDocs,
+        genealogies: genealogyLinksForEntry('term', termId, relatedDocs, lang),
     };
 }
 
