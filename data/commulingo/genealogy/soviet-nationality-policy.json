@@ -72,6 +72,10 @@
       "note": {
         "ko": "평등, 분리에 이르는 자결, 민족적 특권 폐지를 국가 정책으로 선포",
         "en": "Equality, self-determination up to separation and the abolition of national privileges, proclaimed as state policy"
+      },
+      "ref": {
+        "type": "term",
+        "id": "declaration-of-rights-of-peoples"
       }
     },
     {
@@ -204,6 +208,10 @@
       "note": {
         "ko": "문자가 없던 언어에 문자를 만들고 아랍 문자권을 라틴 문자로 옮겼다",
         "en": "Alphabets were devised for unwritten languages and Arabic-script languages moved to Latin"
+      },
+      "ref": {
+        "type": "term",
+        "id": "latinization"
       }
     },
     {
@@ -254,6 +262,10 @@
       "note": {
         "ko": "곡물 징발을 다룬 같은 결정이 쿠반의 우크라이나화를 폐지하고 공화국 안의 정책도 축소했다",
         "en": "The same decisions that dealt with grain seizures abolished Ukrainization in the Kuban and curtailed it inside the republic"
+      },
+      "ref": {
+        "type": "term",
+        "id": "ukrainizatsiya"
       }
     },
     {
@@ -268,6 +280,10 @@
       "note": {
         "ko": "우크라이나 문화계와 당 간부가 대상이 되었고 흐빌료비와 스크립니크가 자살했다",
         "en": "Aimed at Ukrainian cultural life and party cadres; Khvylovy and Skrypnyk killed themselves"
+      },
+      "ref": {
+        "type": "term",
+        "id": "bourgeois-nationalism"
       }
     },
     {
@@ -336,6 +352,10 @@
       "note": {
         "ko": "민족 학교의 러시아어 교육이 의무화되고 라틴 문자 언어들이 키릴로 다시 바뀌었다",
         "en": "Russian became a required subject in national schools and Latin-script languages were converted to Cyrillic"
+      },
+      "ref": {
+        "type": "term",
+        "id": "compulsory-russian"
       }
     },
     {
@@ -386,6 +406,10 @@
       "note": {
         "ko": "볼가 독일인, 카라차이, 칼미크, 체첸·잉구시, 발카르, 크림 타타르, 메스헤티야 튀르크",
         "en": "Volga Germans, Karachays, Kalmyks, Chechens and Ingush, Balkars, Crimean Tatars, Meskhetian Turks"
+      },
+      "ref": {
+        "type": "term",
+        "id": "deportation-of-nationalities"
       }
     },
     {
@@ -400,6 +424,10 @@
       "note": {
         "ko": "이주된 민족의 자치 단위가 해체되고 지명까지 지도에서 지워졌다",
         "en": "The autonomies of the deported nations were dissolved and even their place names erased from the map"
+      },
+      "ref": {
+        "type": "term",
+        "id": "deportation-of-nationalities"
       }
     },
     {
@@ -414,6 +442,10 @@
       "note": {
         "ko": "스탈린이 러시아 인민을 소련의 모든 민족 가운데 가장 뛰어난 민족으로 불렀다",
         "en": "Stalin called the Russians the most outstanding of all the nations of the USSR"
+      },
+      "ref": {
+        "type": "term",
+        "id": "elder-brother-doctrine"
       }
     },
     {
@@ -474,6 +506,10 @@
       "note": {
         "ko": "체첸·잉구시·카라차이·발카르·칼미크는 돌아갔으나 크림 타타르와 메스헤티야 튀르크, 볼가 독일인은 제외되었다",
         "en": "Chechens, Ingush, Karachays, Balkars and Kalmyks returned; Crimean Tatars, Meskhetian Turks and Volga Germans did not"
+      },
+      "ref": {
+        "type": "term",
+        "id": "rehabilitation-of-deported-peoples"
       }
     },
     {
@@ -506,6 +542,10 @@
       "note": {
         "ko": "공화국 언어의 법적 지위는 유지되었으나 진학과 승진에서 러시아어의 실질 가치가 커졌다",
         "en": "Republican languages kept their legal status while the practical value of Russian kept rising"
+      },
+      "ref": {
+        "type": "term",
+        "id": "compulsory-russian"
       }
     },
     {
@@ -520,6 +560,10 @@
       "note": {
         "ko": "1979년 타슈켄트 회의가 유치원부터의 러시아어 확대를 권고하고 1983년 결정이 러시아어 교사 가산 수당과 분반을 도입한 한편, 1978년 트빌리시 시위는 조지아어의 국가어 지위를 지켜냈다",
         "en": "The 1979 Tashkent conference urged Russian from kindergarten and a 1983 decree added pay supplements and split classes for Russian teaching, while the Tbilisi demonstrations of 1978 preserved Georgian as a state language"
+      },
+      "ref": {
+        "type": "term",
+        "id": "compulsory-russian"
       }
     },
     {
@@ -552,6 +596,10 @@
       "note": {
         "ko": "공화국들이 자기 언어를 국가어로 정하면서 연방 언어 질서가 무너졌다",
         "en": "Republics made their own languages official, breaking the union's language order"
+      },
+      "ref": {
+        "type": "term",
+        "id": "republican-language-laws"
       }
     },
     {

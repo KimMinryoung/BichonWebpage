@@ -50,6 +50,8 @@ router.get('/:chartId', (req, res) => {
                 id: chart.id,
                 title: localize(chart.title, lang),
                 description: localize(chart.description, lang),
+                // The legend explains the dashed node only when the chart has one.
+                hasUnlinkedNodes: chart.nodes.some(node => !node || !node.ref || !node.ref.id),
             },
             svg: rendered.svg,
             svgWidth: rendered.width,
