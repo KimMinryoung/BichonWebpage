@@ -33,7 +33,7 @@
       "year": 1883,
       "period": "1883–1903",
       "label": { "ko": "노동해방단 (플레하노프)", "en": "Emancipation of Labour (Plekhanov)" },
-      "ref": { "type": "person", "id": "plekhanov" }
+      "ref": { "type": "term", "id": "emancipation-of-labour" }
     },
     {
       "id": "legal-marxism",
@@ -74,7 +74,7 @@
       "year": 1903,
       "period": "1903–",
       "label": { "ko": "볼셰비키 (레닌)", "en": "Bolsheviks (Lenin)" },
-      "ref": { "type": "person", "id": "lenin" }
+      "ref": { "type": "term", "id": "bolshevik" }
     },
     {
       "id": "mensheviks",
@@ -83,7 +83,7 @@
       "endYear": 1921,
       "period": "1903–1921",
       "label": { "ko": "멘셰비키 (마르토프)", "en": "Mensheviks (Martov)" },
-      "ref": { "type": "person", "id": "martov" },
+      "ref": { "type": "term", "id": "menshevik" },
       "note": { "ko": "내전기 탄압과 1921년 이후 사실상 불법화로 국내 조직 소멸, 지도부는 망명", "en": "Suppressed during the civil war and effectively outlawed after 1921; the leadership emigrated" }
     },
     {
@@ -100,7 +100,7 @@
       "year": 1909,
       "period": "1909–1913",
       "label": { "ko": "전진파 (보그다노프)", "en": "Vpered group (Bogdanov)" },
-      "ref": { "type": "person", "id": "alexander-bogdanov" }
+      "ref": { "type": "term", "id": "vpered" }
     },
     {
       "id": "mezhraiontsy",
@@ -108,7 +108,7 @@
       "year": 1913,
       "period": "1913–1917",
       "label": { "ko": "메즈라이온파 (트로츠키)", "en": "Mezhraiontsy (Trotsky)" },
-      "ref": { "type": "person", "id": "trotsky" }
+      "ref": { "type": "term", "id": "mezhraiontsy" }
     },
     {
       "id": "menshevik-split-1914",
@@ -167,7 +167,7 @@
       "year": 1925,
       "period": "1925–1926",
       "label": { "ko": "신반대파 (레닌그라드파)", "en": "New Opposition (Leningrad)" },
-      "ref": { "type": "person", "id": "zinoviev" }
+      "ref": { "type": "term", "id": "new-opposition" }
     },
     {
       "id": "united-opposition",
@@ -217,7 +217,7 @@
       "year": 1938,
       "period": "1938",
       "label": { "ko": "제4인터내셔널", "en": "Fourth International" },
-      "ref": { "type": "person", "id": "trotsky" }
+      "ref": { "type": "term", "id": "fourth-international" }
     }
   ],
   "edges": [

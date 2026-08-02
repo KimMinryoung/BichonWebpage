@@ -18,6 +18,7 @@ const {
     clientPersonLinkPayload,
 } = require('../data/commulingo/linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
+const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { dictTabs } = require('../data/commulingo/dict-tabs');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
@@ -494,6 +495,7 @@ router.get('/people/:personId', async (req, res) => {
             bioHtml,
             sections,
             historyEvents,
+            genealogies: genealogyLinksFor('person', personId, lang),
             relatedReports,
             relatedDocs,
             roleIconSvg,

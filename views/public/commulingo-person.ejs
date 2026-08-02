@@ -81,6 +81,8 @@
         </section>
         <% }) %>
 
+        <%- include('../partials/commulingo-genealogy-links', { en: en, charts: typeof genealogies !== 'undefined' ? genealogies : [], headword: person.displayName || person.name }) %>
+
         <% if (typeof relatedDocs !== 'undefined' && relatedDocs && relatedDocs.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
             <h2 id="related-docs"><%= en ? 'Reference documents' : '참고 문헌' %></h2>

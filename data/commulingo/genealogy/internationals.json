@@ -59,8 +59,8 @@
         "en": "First International (Marx)"
       },
       "ref": {
-        "type": "person",
-        "id": "karl-marx"
+        "type": "term",
+        "id": "first-international"
       },
       "note": {
         "ko": "국제노동자협회. 1872년 헤이그 대회에서 마르크스파와 바쿠닌파가 갈라섰고 1876년 해산했다",
@@ -77,8 +77,8 @@
         "en": "Anti-authoritarian International (Bakunin)"
       },
       "ref": {
-        "type": "person",
-        "id": "mikhail-bakunin"
+        "type": "term",
+        "id": "anti-authoritarian-international"
       }
     },
     {
@@ -91,8 +91,8 @@
         "en": "Second International (Kautsky)"
       },
       "ref": {
-        "type": "person",
-        "id": "karl-kautsky"
+        "type": "term",
+        "id": "second-international"
       },
       "note": {
         "ko": "1914년 주요 정당들이 자국의 전쟁공채에 찬성하면서 사실상 붕괴했다",
@@ -109,8 +109,8 @@
         "en": "The revisionism debate (Bernstein)"
       },
       "ref": {
-        "type": "person",
-        "id": "eduard-bernstein"
+        "type": "term",
+        "id": "revisionism"
       }
     },
     {
@@ -155,8 +155,8 @@
         "en": "Comintern (Third International)"
       },
       "ref": {
-        "type": "person",
-        "id": "lenin"
+        "type": "term",
+        "id": "comintern"
       },
       "note": {
         "ko": "21개조 가입 조건으로 각국 당을 재편했고, 1943년 스탈린이 해산했다",
@@ -255,8 +255,8 @@
         "en": "Fourth International"
       },
       "ref": {
-        "type": "person",
-        "id": "trotsky"
+        "type": "term",
+        "id": "fourth-international"
       }
     },
     {
@@ -283,8 +283,8 @@
         "en": "Tito's separate road"
       },
       "ref": {
-        "type": "person",
-        "id": "josip-broz-tito"
+        "type": "event",
+        "id": "tito-stalin-split"
       },
       "note": {
         "ko": "1948년 코민포름에서 제명된 뒤 자주관리 사회주의와 비동맹 노선으로 나아갔다",
@@ -355,8 +355,8 @@
         "en": "The international Maoist movement"
       },
       "ref": {
-        "type": "person",
-        "id": "mao-zedong"
+        "type": "term",
+        "id": "maoism"
       }
     },
     {

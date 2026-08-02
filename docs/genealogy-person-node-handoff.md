@@ -2,6 +2,21 @@
 
 Written 2026-08-02. Hand-off for the next session.
 
+> **COMPLETED 2026-08-02.** All fifteen person refs are repointed; no chart node
+> refs a person any more. Eleven new term entries were written
+> (`first-international`, `anti-authoritarian-international`,
+> `second-international`, `comintern`, `fourth-international`, `menshevik`,
+> `vpered`, `mezhraiontsy`, `new-opposition`, `revisionism`, `maoism`) plus one
+> history event (`tito-stalin-split`, modelled on `sino-soviet-split`). The
+> `fourth-intl` nodes point at the new plain `fourth-international` entry, not
+> `fourth-international-splits`. Person pages now render the shared genealogy
+> partial (`routes/commulingo.js`, `views/public/commulingo-person.ejs`).
+> Alias cleanup done during the link audit: bare 수정주의/revisionism moved off
+> `reformism` to the new entry; over-broad bare aliases deleted per the 격리
+> precedent (개조 from `perekovka`; 정상화/normalization/normalisation from
+> `normalization-czechoslovakia`). Node labels still carry the personal names
+> (「볼셰비키 (레닌)」); dropping them is a pending content decision.
+
 ## The problem
 
 Genealogy charts (`/commulingo/genealogy`) attach each node to a dictionary
