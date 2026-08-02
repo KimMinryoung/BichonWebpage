@@ -40,6 +40,23 @@ const EXTRA_TERMS = {
     'anti-party-group': { ko: ['반당그룹', '반당 그룹 사건'] },
     'soviet-space-program': { ko: ['스푸트니크'], en: ['Sputnik'] },
     'kosygin-reform': { en: ['Kosygin reform'] },
+    // 원자탄/수소폭탄 like 겨울전쟁's 계속전쟁 is deliberately absent: the bare
+    // words are ordinary nouns that appear in prose about other countries too.
+    'soviet-atomic-project': {
+        ko: ['소련 원자폭탄 개발', '소련 핵개발', '원자력 사업'],
+        en: ['Soviet atomic project', 'Soviet nuclear programme', 'Soviet nuclear program'],
+    },
+    'korean-war': { ko: ['한국 전쟁', '6·25 전쟁'], en: ['Korean War'] },
+    // '제20차 당대회' and '비밀연설' are each used alone far more often than the
+    // full title, so both carry.
+    'twentieth-party-congress': {
+        ko: ['제20차 당대회', '20차 당대회', '비밀연설', '개인숭배와 그 결과에 대하여'],
+        en: ['Twentieth Party Congress', '20th Party Congress', 'Secret Speech'],
+    },
+    'sino-soviet-split': {
+        ko: ['중소 분열', '중소 갈등', '중소 논쟁'],
+        en: ['Sino-Soviet split', 'Sino-Soviet dispute', 'Sino-Soviet rift'],
+    },
     'afghanistan-war': { ko: ['아프가니스탄 전쟁', '아프간 전쟁'], en: ['Soviet-Afghan War', 'Afghan War'] },
     'perestroika': { ko: ['페레스트로이카', '글라스노스트'], en: ['Perestroika', 'Glasnost'] },
     'chernobyl': { ko: ['체르노빌'], en: ['Chernobyl'] },
