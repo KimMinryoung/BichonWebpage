@@ -1,0 +1,734 @@
+{
+  "id": "soviet-nationality-policy",
+  "title": {
+    "ko": "소련 민족 정책의 변천",
+    "en": "The Course of Soviet Nationality Policy"
+  },
+  "description": {
+    "ko": "1914년 민족자결권 정식화에서 1991년 연방 해체까지, 소련이 민족 문제를 다룬 방식이 뒤집히고 다시 뒤집힌 흐름의 계보. 영토와 제도, 언어와 간부, 공식 담론, 그리고 탄압을 네 레인에 나란히 놓아 같은 해에 무엇이 함께 일어났는지를 보이도록 했다. 노드를 누르면 해당 사전 항목으로 이동한다.",
+    "en": "From the formulation of national self-determination in 1914 to the dissolution of the union in 1991: how the Soviet way of handling the national question was reversed and reversed again. Territory and institutions, language and cadres, official doctrine and repression run as four parallel lanes, so that what happened together in the same year can be read across. Click a node to open its dictionary entry."
+  },
+  "timeStart": 1914,
+  "timeEnd": 1993,
+  "pxPerYear": 16,
+  "columns": [
+    {
+      "id": "territory",
+      "label": {
+        "ko": "영토·제도",
+        "en": "Territory & institutions"
+      }
+    },
+    {
+      "id": "language",
+      "label": {
+        "ko": "언어·간부",
+        "en": "Language & cadres"
+      }
+    },
+    {
+      "id": "doctrine",
+      "label": {
+        "ko": "공식 담론",
+        "en": "Official doctrine"
+      }
+    },
+    {
+      "id": "repression",
+      "label": {
+        "ko": "탄압",
+        "en": "Repression"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "self-determination",
+      "column": "doctrine",
+      "year": 1914,
+      "period": "1896–1917",
+      "label": {
+        "ko": "민족자결권",
+        "en": "The right of nations to self-determination"
+      },
+      "ref": {
+        "type": "term",
+        "id": "self-determination-of-nations"
+      },
+      "note": {
+        "ko": "레닌이 분리의 자유로 정의하고 볼셰비키 강령의 핵심으로 삼았다",
+        "en": "Lenin defined it as the freedom to separate and made it central to the Bolshevik programme"
+      }
+    },
+    {
+      "id": "declaration-1917",
+      "column": "territory",
+      "year": 1917,
+      "period": "1917.11",
+      "label": {
+        "ko": "「러시아 여러 인민의 권리 선언」",
+        "en": "Declaration of the Rights of the Peoples of Russia"
+      },
+      "note": {
+        "ko": "평등, 분리에 이르는 자결, 민족적 특권 폐지를 국가 정책으로 선포",
+        "en": "Equality, self-determination up to separation and the abolition of national privileges, proclaimed as state policy"
+      }
+    },
+    {
+      "id": "autonomization",
+      "column": "territory",
+      "year": 1922,
+      "period": "1922",
+      "label": {
+        "ko": "자치화 논쟁",
+        "en": "The autonomization dispute"
+      },
+      "ref": {
+        "type": "term",
+        "id": "autonomization"
+      },
+      "note": {
+        "ko": "공화국을 러시아에 편입하려는 스탈린 안을 레닌이 반대해 대등한 연방으로 정리되었다",
+        "en": "Lenin blocked Stalin's plan to absorb the republics into Russia, settling on a union of formal equals"
+      }
+    },
+    {
+      "id": "ussr-formation",
+      "column": "territory",
+      "year": 1922,
+      "period": "1922.12",
+      "label": {
+        "ko": "소련 결성과 탈퇴권 조항",
+        "en": "The USSR founded, with the right of secession"
+      },
+      "ref": {
+        "type": "event",
+        "id": "ussr-formation"
+      }
+    },
+    {
+      "id": "chauvinism-main-danger",
+      "column": "doctrine",
+      "year": 1923,
+      "period": "1923",
+      "label": {
+        "ko": "대러시아 국수주의를 주된 위험으로",
+        "en": "Great Russian chauvinism named the main danger"
+      },
+      "ref": {
+        "type": "term",
+        "id": "great-russian-chauvinism"
+      },
+      "note": {
+        "ko": "제12차 당대회의 규정이 뒤이은 우대 정책의 근거가 되었다",
+        "en": "The Twelfth Congress ruling that grounded the affirmative-action policies that followed"
+      }
+    },
+    {
+      "id": "korenizatsiya",
+      "column": "language",
+      "year": 1923,
+      "period": "1923–1933",
+      "label": {
+        "ko": "코레니자치야",
+        "en": "Korenizatsiya"
+      },
+      "ref": {
+        "type": "term",
+        "id": "korenizatsiya"
+      },
+      "note": {
+        "ko": "행정과 교육의 현지어 전환, 민족 간부 충원, 민족 구역 설치",
+        "en": "Administration and schooling switched to local languages, native cadres recruited, national districts created"
+      }
+    },
+    {
+      "id": "ukrainizatsiya",
+      "column": "language",
+      "year": 1923,
+      "period": "1923–1933",
+      "label": {
+        "ko": "우크라이나화",
+        "en": "Ukrainizatsiya"
+      },
+      "ref": {
+        "type": "term",
+        "id": "ukrainizatsiya"
+      },
+      "note": {
+        "ko": "가장 크게 진행된 지역판으로, 학교와 출판의 대다수가 우크라이나어로 옮겨졌다",
+        "en": "The largest regional case: most schooling and publishing moved into Ukrainian"
+      }
+    },
+    {
+      "id": "delimitation",
+      "column": "territory",
+      "year": 1924,
+      "period": "1924–1936",
+      "label": {
+        "ko": "중앙아시아 민족 획정",
+        "en": "National delimitation in Central Asia"
+      },
+      "ref": {
+        "type": "term",
+        "id": "national-delimitation"
+      },
+      "note": {
+        "ko": "투르키스탄을 민족별 공화국으로 나눠 오늘의 국경선을 만들었다",
+        "en": "Turkestan was divided into national republics, drawing today's borders"
+      }
+    },
+    {
+      "id": "national-form",
+      "column": "doctrine",
+      "year": 1925,
+      "period": "1925–1930",
+      "label": {
+        "ko": "형식은 민족적, 내용은 사회주의적",
+        "en": "National in form, socialist in content"
+      },
+      "ref": {
+        "type": "term",
+        "id": "national-in-form-socialist-in-content"
+      }
+    },
+    {
+      "id": "latinization",
+      "column": "language",
+      "year": 1926,
+      "period": "1926–1932",
+      "label": {
+        "ko": "라틴 문자화",
+        "en": "Latinization of alphabets"
+      },
+      "note": {
+        "ko": "문자가 없던 언어에 문자를 만들고 아랍 문자권을 라틴 문자로 옮겼다",
+        "en": "Alphabets were devised for unwritten languages and Arabic-script languages moved to Latin"
+      }
+    },
+    {
+      "id": "little-october",
+      "column": "repression",
+      "year": 1925,
+      "period": "1925–1933",
+      "label": {
+        "ko": "소(小) 10월",
+        "en": "The Little October"
+      },
+      "ref": {
+        "type": "term",
+        "id": "little-october"
+      },
+      "note": {
+        "ko": "카자흐에서 토착 엘리트 제거와 강제 정주가 대기근으로 이어졌다",
+        "en": "In Kazakhstan the removal of native elites and forced sedentarisation ended in famine"
+      }
+    },
+    {
+      "id": "jadid-liquidation",
+      "column": "repression",
+      "year": 1929,
+      "period": "1929–1938",
+      "label": {
+        "ko": "자디드 운동 해체",
+        "en": "The Jadid movement liquidated"
+      },
+      "ref": {
+        "type": "term",
+        "id": "jadidism"
+      },
+      "note": {
+        "ko": "초기에 소비에트 정권과 협력했던 무슬림 개혁 지식인들이 민족주의 혐의로 제거되었다",
+        "en": "Muslim reformist intellectuals who had first worked with Soviet power were removed as nationalists"
+      }
+    },
+    {
+      "id": "ukrainization-halt",
+      "column": "language",
+      "year": 1932,
+      "period": "1932.12",
+      "label": {
+        "ko": "우크라이나화 중단 결정",
+        "en": "Ukrainization halted"
+      },
+      "note": {
+        "ko": "곡물 징발을 다룬 같은 결정이 쿠반의 우크라이나화를 폐지하고 공화국 안의 정책도 축소했다",
+        "en": "The same decisions that dealt with grain seizures abolished Ukrainization in the Kuban and curtailed it inside the republic"
+      }
+    },
+    {
+      "id": "bourgeois-nationalism",
+      "column": "repression",
+      "year": 1933,
+      "period": "1933–1934",
+      "label": {
+        "ko": "「부르주아 민족주의」 숙청",
+        "en": "The purge of 'bourgeois nationalism'"
+      },
+      "note": {
+        "ko": "우크라이나 문화계와 당 간부가 대상이 되었고 흐빌료비와 스크립니크가 자살했다",
+        "en": "Aimed at Ukrainian cultural life and party cadres; Khvylovy and Skrypnyk killed themselves"
+      }
+    },
+    {
+      "id": "soviet-patriotism",
+      "column": "doctrine",
+      "year": 1934,
+      "period": "1934–1991",
+      "label": {
+        "ko": "소비에트 애국주의",
+        "en": "Soviet patriotism"
+      },
+      "ref": {
+        "type": "term",
+        "id": "soviet-patriotism"
+      },
+      "note": {
+        "ko": "러시아 제국의 군사적 과거와 역사 인물이 조국의 방어자로 복권되었다",
+        "en": "The imperial military past and its figures were rehabilitated as defenders of the fatherland"
+      }
+    },
+    {
+      "id": "constitution-1936",
+      "column": "territory",
+      "year": 1936,
+      "period": "1936",
+      "label": {
+        "ko": "1936년 헌법: 공화국 재편",
+        "en": "1936 Constitution: the republics recast"
+      },
+      "ref": {
+        "type": "term",
+        "id": "1936-soviet-constitution"
+      },
+      "note": {
+        "ko": "연방 구성 공화국이 11개로 재편되고 탈퇴권 조항이 유지되었다",
+        "en": "The union was recast as eleven republics, and the secession clause was kept"
+      }
+    },
+    {
+      "id": "elder-brother",
+      "column": "doctrine",
+      "year": 1936,
+      "period": "1936–1980년대",
+      "label": {
+        "ko": "맏형 러시아 인민론",
+        "en": "The elder brother doctrine"
+      },
+      "ref": {
+        "type": "term",
+        "id": "elder-brother-doctrine"
+      },
+      "note": {
+        "ko": "평등을 유지한 채 위계를 도입한 가족 비유",
+        "en": "A family metaphor that introduced hierarchy while professing equality"
+      }
+    },
+    {
+      "id": "russian-compulsory",
+      "column": "language",
+      "year": 1938,
+      "period": "1938–1940",
+      "label": {
+        "ko": "러시아어 필수화와 키릴 전환",
+        "en": "Russian made compulsory, scripts turned Cyrillic"
+      },
+      "note": {
+        "ko": "민족 학교의 러시아어 교육이 의무화되고 라틴 문자 언어들이 키릴로 다시 바뀌었다",
+        "en": "Russian became a required subject in national schools and Latin-script languages were converted to Cyrillic"
+      }
+    },
+    {
+      "id": "national-operations",
+      "column": "repression",
+      "year": 1937,
+      "period": "1937–1938",
+      "label": {
+        "ko": "민족 작전",
+        "en": "The national operations"
+      },
+      "ref": {
+        "type": "term",
+        "id": "national-operations-nkvd"
+      },
+      "note": {
+        "ko": "국경 너머와 연고를 가진 디아스포라 민족을 겨냥해 24만여 명이 총살되었다",
+        "en": "Aimed at diaspora nationalities with cross-border ties; some 247,000 people were shot"
+      }
+    },
+    {
+      "id": "korean-deportation",
+      "column": "repression",
+      "year": 1937,
+      "period": "1937",
+      "label": {
+        "ko": "고려인 강제이주",
+        "en": "The deportation of the Koreans"
+      },
+      "ref": {
+        "type": "term",
+        "id": "deportation-of-nationalities"
+      },
+      "note": {
+        "ko": "재판 없이 민족 전체를 옮긴 첫 전면 사례로, 17만여 명이 중앙아시아로 이송되었다",
+        "en": "The first total case: over 170,000 people moved to Central Asia without any trial"
+      }
+    },
+    {
+      "id": "wartime-deportations",
+      "column": "repression",
+      "year": 1943,
+      "period": "1941–1944",
+      "label": {
+        "ko": "전시 민족 강제이주",
+        "en": "The wartime deportations"
+      },
+      "note": {
+        "ko": "볼가 독일인, 카라차이, 칼미크, 체첸·잉구시, 발카르, 크림 타타르, 메스헤티야 튀르크",
+        "en": "Volga Germans, Karachays, Kalmyks, Chechens and Ingush, Balkars, Crimean Tatars, Meskhetian Turks"
+      }
+    },
+    {
+      "id": "autonomies-abolished",
+      "column": "territory",
+      "year": 1944,
+      "period": "1943–1944",
+      "label": {
+        "ko": "자치공화국 폐지",
+        "en": "Autonomous republics abolished"
+      },
+      "note": {
+        "ko": "이주된 민족의 자치 단위가 해체되고 지명까지 지도에서 지워졌다",
+        "en": "The autonomies of the deported nations were dissolved and even their place names erased from the map"
+      }
+    },
+    {
+      "id": "stalin-toast",
+      "column": "doctrine",
+      "year": 1945,
+      "period": "1945.05",
+      "label": {
+        "ko": "러시아 인민을 위한 축배",
+        "en": "The toast to the Russian people"
+      },
+      "note": {
+        "ko": "스탈린이 러시아 인민을 소련의 모든 민족 가운데 가장 뛰어난 민족으로 불렀다",
+        "en": "Stalin called the Russians the most outstanding of all the nations of the USSR"
+      }
+    },
+    {
+      "id": "jafc-dissolved",
+      "column": "repression",
+      "year": 1948,
+      "period": "1948–1952",
+      "label": {
+        "ko": "유대인 반파시스트 위원회 해체",
+        "en": "The Jewish Anti-Fascist Committee dissolved"
+      },
+      "ref": {
+        "type": "term",
+        "id": "jewish-anti-fascist-committee"
+      }
+    },
+    {
+      "id": "anti-cosmopolitan",
+      "column": "doctrine",
+      "year": 1949,
+      "period": "1946–1953",
+      "label": {
+        "ko": "뿌리 없는 세계주의 비판",
+        "en": "The campaign against rootless cosmopolitanism"
+      },
+      "ref": {
+        "type": "term",
+        "id": "rootless-cosmopolitanism"
+      }
+    },
+    {
+      "id": "doctors-plot",
+      "column": "repression",
+      "year": 1953,
+      "period": "1952–1953",
+      "label": {
+        "ko": "의사들의 음모",
+        "en": "The Doctors' Plot"
+      },
+      "ref": {
+        "type": "event",
+        "id": "doctors-plot"
+      },
+      "note": {
+        "ko": "스탈린 사망 한 달 뒤 조작으로 공표되고 사건이 종결되었다",
+        "en": "Declared a fabrication and closed a month after Stalin's death"
+      }
+    },
+    {
+      "id": "rehabilitation-1957",
+      "column": "territory",
+      "year": 1957,
+      "period": "1956–1957",
+      "label": {
+        "ko": "자치공화국 복원과 부분 귀환",
+        "en": "Autonomies restored, some returns allowed"
+      },
+      "note": {
+        "ko": "체첸·잉구시·카라차이·발카르·칼미크는 돌아갔으나 크림 타타르와 메스헤티야 튀르크, 볼가 독일인은 제외되었다",
+        "en": "Chechens, Ingush, Karachays, Balkars and Kalmyks returned; Crimean Tatars, Meskhetian Turks and Volga Germans did not"
+      }
+    },
+    {
+      "id": "soviet-people",
+      "column": "doctrine",
+      "year": 1961,
+      "period": "1961–1991",
+      "label": {
+        "ko": "소비에트 인민",
+        "en": "The Soviet people"
+      },
+      "ref": {
+        "type": "term",
+        "id": "soviet-people"
+      },
+      "note": {
+        "ko": "민족들이 융합해 새로운 역사적 공동체를 이루었다는 규정",
+        "en": "The claim that the nations had fused into a new historical community"
+      }
+    },
+    {
+      "id": "lingua-franca",
+      "column": "language",
+      "year": 1961,
+      "period": "1961–1980년대",
+      "label": {
+        "ko": "러시아어, 민족 간 교류의 언어",
+        "en": "Russian as the language of inter-ethnic communication"
+      },
+      "note": {
+        "ko": "공화국 언어의 법적 지위는 유지되었으나 진학과 승진에서 러시아어의 실질 가치가 커졌다",
+        "en": "Republican languages kept their legal status while the practical value of Russian kept rising"
+      }
+    },
+    {
+      "id": "constitution-1977",
+      "column": "territory",
+      "year": 1977,
+      "period": "1977",
+      "label": {
+        "ko": "1977년 헌법",
+        "en": "The 1977 Constitution"
+      },
+      "ref": {
+        "type": "term",
+        "id": "1977-soviet-constitution"
+      },
+      "note": {
+        "ko": "전문에 소비에트 인민을 명시하면서도 연방제와 탈퇴권은 그대로 두었다",
+        "en": "Named the Soviet people in its preamble while leaving federalism and secession in place"
+      }
+    },
+    {
+      "id": "language-laws",
+      "column": "language",
+      "year": 1989,
+      "period": "1988–1990",
+      "label": {
+        "ko": "공화국 언어법",
+        "en": "The republican language laws"
+      },
+      "note": {
+        "ko": "공화국들이 자기 언어를 국가어로 정하면서 연방 언어 질서가 무너졌다",
+        "en": "Republics made their own languages official, breaking the union's language order"
+      }
+    },
+    {
+      "id": "nationalities-crisis",
+      "column": "territory",
+      "year": 1991,
+      "period": "1988–1991",
+      "label": {
+        "ko": "주권 선언과 연방 해체",
+        "en": "Sovereignty declared, the union dissolved"
+      },
+      "ref": {
+        "type": "event",
+        "id": "nationalities-crisis"
+      },
+      "note": {
+        "ko": "공화국들이 근거로 든 것은 소련 헌법 자신의 탈퇴권 조항이었다",
+        "en": "The ground the republics cited was the secession clause of the Soviet constitution itself"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "self-determination",
+      "to": "declaration-1917",
+      "type": "succession"
+    },
+    {
+      "from": "declaration-1917",
+      "to": "autonomization",
+      "type": "succession"
+    },
+    {
+      "from": "autonomization",
+      "to": "ussr-formation",
+      "type": "succession"
+    },
+    {
+      "from": "self-determination",
+      "to": "chauvinism-main-danger",
+      "type": "influence"
+    },
+    {
+      "from": "chauvinism-main-danger",
+      "to": "korenizatsiya",
+      "type": "succession"
+    },
+    {
+      "from": "korenizatsiya",
+      "to": "ukrainizatsiya",
+      "type": "split"
+    },
+    {
+      "from": "korenizatsiya",
+      "to": "national-form",
+      "type": "influence"
+    },
+    {
+      "from": "korenizatsiya",
+      "to": "latinization",
+      "type": "succession"
+    },
+    {
+      "from": "korenizatsiya",
+      "to": "little-october",
+      "type": "influence"
+    },
+    {
+      "from": "ussr-formation",
+      "to": "delimitation",
+      "type": "succession"
+    },
+    {
+      "from": "little-october",
+      "to": "jadid-liquidation",
+      "type": "succession"
+    },
+    {
+      "from": "ukrainizatsiya",
+      "to": "ukrainization-halt",
+      "type": "end"
+    },
+    {
+      "from": "ukrainization-halt",
+      "to": "bourgeois-nationalism",
+      "type": "succession"
+    },
+    {
+      "from": "bourgeois-nationalism",
+      "to": "national-operations",
+      "type": "succession"
+    },
+    {
+      "from": "national-form",
+      "to": "soviet-patriotism",
+      "type": "influence"
+    },
+    {
+      "from": "delimitation",
+      "to": "constitution-1936",
+      "type": "succession"
+    },
+    {
+      "from": "soviet-patriotism",
+      "to": "elder-brother",
+      "type": "succession"
+    },
+    {
+      "from": "elder-brother",
+      "to": "russian-compulsory",
+      "type": "influence"
+    },
+    {
+      "from": "latinization",
+      "to": "russian-compulsory",
+      "type": "end"
+    },
+    {
+      "from": "national-operations",
+      "to": "korean-deportation",
+      "type": "influence"
+    },
+    {
+      "from": "korean-deportation",
+      "to": "wartime-deportations",
+      "type": "succession"
+    },
+    {
+      "from": "wartime-deportations",
+      "to": "autonomies-abolished",
+      "type": "succession"
+    },
+    {
+      "from": "elder-brother",
+      "to": "stalin-toast",
+      "type": "succession"
+    },
+    {
+      "from": "stalin-toast",
+      "to": "anti-cosmopolitan",
+      "type": "influence"
+    },
+    {
+      "from": "anti-cosmopolitan",
+      "to": "jafc-dissolved",
+      "type": "influence"
+    },
+    {
+      "from": "jafc-dissolved",
+      "to": "doctors-plot",
+      "type": "succession"
+    },
+    {
+      "from": "autonomies-abolished",
+      "to": "rehabilitation-1957",
+      "type": "succession"
+    },
+    {
+      "from": "stalin-toast",
+      "to": "soviet-people",
+      "type": "succession"
+    },
+    {
+      "from": "soviet-people",
+      "to": "lingua-franca",
+      "type": "succession"
+    },
+    {
+      "from": "soviet-people",
+      "to": "constitution-1977",
+      "type": "succession"
+    },
+    {
+      "from": "lingua-franca",
+      "to": "language-laws",
+      "type": "opposition"
+    },
+    {
+      "from": "constitution-1977",
+      "to": "nationalities-crisis",
+      "type": "succession"
+    },
+    {
+      "from": "language-laws",
+      "to": "nationalities-crisis",
+      "type": "influence"
+    },
+    {
+      "from": "korenizatsiya",
+      "to": "language-laws",
+      "type": "influence"
+    }
+  ]
+}
