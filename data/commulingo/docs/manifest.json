@@ -386,6 +386,77 @@
         ]
       },
       "addedAt": "2026-07-31"
+    },
+    {
+      "id": "1918-rsfsr-constitution",
+      "file": "1918-rsfsr-constitution.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "1918년 러시아 소비에트 헌법 한국어 번역",
+        "en": "The 1918 Constitution of the RSFSR (Korean translation)"
+      },
+      "description": {
+        "ko": "1918년 7월 10일 제5차 전러시아 소비에트 대회가 채택한 러시아 소비에트 연방 사회주의 공화국 헌법의 전문 한국어 번역. 「근로 피착취 인민의 권리 선언」을 제1부로 삼고, 전러시아 소비에트 대회와 전러시아 중앙집행위원회·인민위원회의를 축으로 한 소비에트 권력의 구성, 노동 계급에 유리한 차등 선거권과 착취자의 선거권 박탈, 예산법, 국장과 국기를 6부 90개 조문으로 규정한다. 번역 저본은 채택 당시의 러시아어 원문이다.",
+        "en": "Complete Korean translation of the Constitution of the Russian Socialist Federative Soviet Republic adopted by the Fifth All-Russian Congress of Soviets on July 10, 1918. Opening with the Declaration of Rights of the Working and Exploited People, its six parts and 90 articles set out the construction of Soviet power around the All-Russian Congress of Soviets, the Central Executive Committee and the Council of People's Commissars, an electoral system weighted toward the working class with the disenfranchisement of exploiters, budgetary law, and the state emblem and flag. Translated from the Russian text as adopted."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Конституция (Основной Закон) РСФСР, принята V Всероссийским съездом Советов 10 июля 1918 г. 수록본: Декреты Советской власти, т. II (М., 1959), с. 550–564; ru.wikisource.org 전사",
+      "people": [
+        "lenin",
+        "sverdlov"
+      ],
+      "terms": [
+        "1918-rsfsr-constitution"
+      ],
+      "events": [],
+      "addedAt": "2026-08-02",
+      "aliases": {
+        "ko": [
+          "1918년 러시아 소비에트 헌법 전문",
+          "1918년 헌법 전문"
+        ],
+        "en": [
+          "full text of the 1918 RSFSR Constitution"
+        ]
+      }
+    },
+    {
+      "id": "1977-soviet-constitution",
+      "file": "1977-soviet-constitution.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "1977년 소련 헌법 한국어 번역",
+        "en": "The 1977 Constitution of the USSR (Korean translation)"
+      },
+      "description": {
+        "ko": "1977년 10월 7일 소련 최고소비에트 비상회기가 채택한 소련 헌법(통칭 '브레즈네프 헌법')의 전문 한국어 번역. '발전된 사회주의 사회'를 선언하는 전문과 9부 21장 174개 조문으로 사회 제도, 공민의 권리와 의무, 민족·국가 구조, 인민대의원 소비에트, 최고 국가기관, 사법·검찰, 국가 상징을 규정하며, 제6조는 소련공산당을 사회의 지도적·향도적 힘으로 명문화한다. 번역 저본은 1977년 채택 당시의 러시아어 원문이다.",
+        "en": "Complete Korean translation of the Soviet Constitution adopted at an extraordinary session of the USSR Supreme Soviet on October 7, 1977 (the \"Brezhnev Constitution\"). A preamble proclaiming developed socialist society is followed by 174 articles in nine parts and 21 chapters covering the social system, citizens' rights and duties, the national-state structure, the Soviets of People's Deputies, the highest organs of state, justice and the procuracy, and state symbols; Article 6 enshrines the CPSU as the leading and guiding force of society. Translated from the Russian text as adopted in 1977."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Конституция (Основной Закон) СССР, принята на внеочередной седьмой сессии Верховного Совета СССР девятого созыва 7 октября 1977 г. «Ведомости Верховного Совета СССР», 1977, № 41, ст. 617; ru.wikisource.org 전사",
+      "people": [
+        "brezhnev"
+      ],
+      "terms": [
+        "1977-soviet-constitution"
+      ],
+      "events": [],
+      "addedAt": "2026-08-02",
+      "aliases": {
+        "ko": [
+          "1977년 소련 헌법 전문",
+          "브레즈네프 헌법 전문"
+        ],
+        "en": [
+          "full text of the 1977 Soviet Constitution"
+        ]
+      }
     }
   ]
 }
