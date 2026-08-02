@@ -13,7 +13,7 @@ function pick(value, lang) {
     return value[lang] || value.ko || value.en || '';
 }
 
-// `type` is the node ref type: 'term' | 'person' | 'event'.
+// `type` is the node ref type: 'term' | 'person' | 'event' | 'doc'.
 function genealogyLinksFor(type, id, lang) {
     try {
         return listGenealogyChartsFor(type, id).map(chart => ({

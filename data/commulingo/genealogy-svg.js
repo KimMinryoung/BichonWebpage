@@ -52,7 +52,12 @@ function wrapLabel(text) {
 
 function refHref(ref) {
     if (!ref || !ref.type || !ref.id) return null;
-    const base = { term: '/commulingo/terms/', person: '/commulingo/people/', event: '/commulingo/events/' }[ref.type];
+    const base = {
+        term: '/commulingo/terms/',
+        person: '/commulingo/people/',
+        event: '/commulingo/events/',
+        doc: '/commulingo/docs/',
+    }[ref.type];
     return base ? base + encodeURIComponent(ref.id) : null;
 }
 

@@ -314,8 +314,8 @@
         "en": "1936 Constitution: the republics recast"
       },
       "ref": {
-        "type": "term",
-        "id": "1936-soviet-constitution"
+        "type": "doc",
+        "id": "stalin-1936-constitution"
       },
       "note": {
         "ko": "연방 구성 공화국이 11개로 재편되고 탈퇴권 조항이 유지되었다",
@@ -594,7 +594,7 @@
         "en": "The 1977 Constitution"
       },
       "ref": {
-        "type": "term",
+        "type": "doc",
         "id": "1977-soviet-constitution"
       },
       "note": {

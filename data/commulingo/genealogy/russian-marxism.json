@@ -200,7 +200,7 @@
       "year": 1936,
       "period": "1936",
       "label": { "ko": "'승리한 사회주의' (1936년 헌법)", "en": "'Socialism victorious' (1936 Constitution)" },
-      "ref": { "type": "term", "id": "1936-soviet-constitution" }
+      "ref": { "type": "doc", "id": "stalin-1936-constitution" }
     },
     {
       "id": "great-purge",

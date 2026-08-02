@@ -99,6 +99,8 @@ var refGroups = [
     { label: en ? 'People' : '인물', path: 'people', items: doc.people || [] },
     { label: en ? 'Terms' : '용어', path: 'terms', items: doc.terms || [] },
     { label: en ? 'Events' : '사건', path: 'events', items: doc.events || [] },
+    { label: en ? 'Genealogy' : '계보도', path: 'genealogy',
+      items: (doc.genealogies || []).map(function(chart) { return { id: chart.id, name: chart.title }; }) },
 ].filter(function(group) { return group.items.length; });
 %>
 <% if (refGroups.length) { %>

@@ -142,17 +142,27 @@
         "stalin"
       ],
       "terms": [
-        "1936-soviet-constitution"
+        "soviet-constitution"
       ],
       "events": [],
       "addedAt": "2026-07-29",
       "aliases": {
         "ko": [
           "1936년 소련 헌법 전문",
-          "스탈린 헌법 전문"
+          "스탈린 헌법 전문",
+          "1936년 헌법",
+          "스탈린 헌법",
+          "1936년 소련 헌법",
+          "1936년 소비에트 헌법",
+          "승리한 사회주의의 헌법"
         ],
         "en": [
-          "full text of the 1936 Soviet Constitution"
+          "full text of the 1936 Soviet Constitution",
+          "1936 Constitution",
+          "Stalin Constitution",
+          "Stalin's Constitution",
+          "USSR Constitution of 1936",
+          "Constitution of Victorious Socialism"
         ]
       }
     },
@@ -409,17 +419,22 @@
         "sverdlov"
       ],
       "terms": [
-        "1918-rsfsr-constitution"
+        "soviet-constitution"
       ],
       "events": [],
       "addedAt": "2026-08-02",
       "aliases": {
         "ko": [
           "1918년 러시아 소비에트 헌법 전문",
-          "1918년 헌법 전문"
+          "1918년 헌법 전문",
+          "1918년 헌법",
+          "1918년 러시아 소비에트 헌법",
+          "1918년 러시아 헌법"
         ],
         "en": [
-          "full text of the 1918 RSFSR Constitution"
+          "full text of the 1918 RSFSR Constitution",
+          "1918 Constitution",
+          "1918 RSFSR Constitution"
         ]
       }
     },
@@ -444,17 +459,23 @@
         "brezhnev"
       ],
       "terms": [
-        "1977-soviet-constitution"
+        "soviet-constitution"
       ],
       "events": [],
       "addedAt": "2026-08-02",
       "aliases": {
         "ko": [
           "1977년 소련 헌법 전문",
-          "브레즈네프 헌법 전문"
+          "브레즈네프 헌법 전문",
+          "1977년 헌법",
+          "브레즈네프 헌법",
+          "1977년 소련 헌법"
         ],
         "en": [
-          "full text of the 1977 Soviet Constitution"
+          "full text of the 1977 Soviet Constitution",
+          "1977 Constitution",
+          "1977 Soviet Constitution",
+          "Brezhnev Constitution"
         ]
       }
     }

@@ -61,7 +61,7 @@ function getGenealogyChart(id) {
 
 // The charts that carry a given dictionary entry as one of their nodes, so an
 // entry page can point back at the diagram it sits in. `type` is the node ref
-// type ('term' | 'person' | 'event'). A chart names a node for its place in the
+// type ('term' | 'person' | 'event' | 'doc'). A chart names a node for its place in the
 // story ('러시아 인민을 위한 축배'), which is not always the headword the entry
 // is filed under, so the node's label comes back as well. Several nodes can
 // share one entry, and then no single label describes where it sits: the label

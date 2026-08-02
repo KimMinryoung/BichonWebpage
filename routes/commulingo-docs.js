@@ -3,6 +3,7 @@ const errorPage = require('../utils/error-page');
 const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
+const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 
 const router = express.Router();
 
@@ -147,6 +148,10 @@ router.get('/:docId', async (req, res) => {
             backHref: '/commulingo/docs', backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
         });
         const doc = presentDoc(raw, lang, await createDocRefResolver(lang));
+        // The charts that carry this document as a node, so the reader can walk
+        // back out to where the text sits in the story. The forward direction
+        // (a chart node pointing at a document) is a `doc` ref in the chart JSON.
+        doc.genealogies = genealogyLinksFor('doc', docId, lang);
         const { html, toc, paged } = getCommuLingoDocContent(raw);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
 

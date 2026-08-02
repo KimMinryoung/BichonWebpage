@@ -12,6 +12,24 @@ const {
 } = require('../data/commulingo/term-categories');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
+// Retired glossary ids ride the same commulingo_id_redirects table the person
+// pages read, so merging two entries stays a DB-only edit. The people snapshot
+// is where those rows are loaded (it fetches every entity_type, not just its
+// own), which is why the lookup comes from that store rather than terms-store.
+const { loadCommuLingoPeople, redirectTarget } = require('../data/commulingo/people-store');
+
+// The entry now serving a retired glossary id, or '' if the id is simply
+// unknown. A redirect lookup must never turn a 404 into a 500, so a failure to
+// reach the store falls through to the not-found page.
+async function mergedTermId(termId) {
+    try {
+        const loaded = await loadCommuLingoPeople();
+        return redirectTarget(loaded.data, 'term', termId);
+    } catch (err) {
+        console.error('commulingo term redirect lookup:', err.message);
+        return '';
+    }
+}
 
 // Reference documents (참고 문헌) linked to this term/event via the docs
 // manifest. Failure only costs the section, never the page.
@@ -355,10 +373,14 @@ router.get('/:termId', async (req, res) => {
         const lang = res.locals.lang;
         const termId = typeof req.params.termId === 'string' ? req.params.termId.trim() : '';
         const panel = await buildTermPanel(termId, lang);
-        if (!panel) return errorPage.notFound(res, {
-            message: lang === 'en' ? 'Term not found.' : '용어를 찾을 수 없습니다.',
-            backHref: '/commulingo/terms', backLabel: lang === 'en' ? 'Glossary' : '용어 사전',
-        });
+        if (!panel) {
+            const merged = await mergedTermId(termId);
+            if (merged) return res.redirect(301, `/commulingo/terms/${encodeURIComponent(merged)}`);
+            return errorPage.notFound(res, {
+                message: lang === 'en' ? 'Term not found.' : '용어를 찾을 수 없습니다.',
+                backHref: '/commulingo/terms', backLabel: lang === 'en' ? 'Glossary' : '용어 사전',
+            });
+        }
         const term = panel.term;
         // The narrative half, when the two entries are the same subject. Lazy
         // require: the two routes reach into each other.
