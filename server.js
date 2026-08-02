@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const csrfProtection = require('./middleware/csrf');
 const seo = require('./utils/seo');
+const { iconPaths } = require('./data/icons');
 const crypto = require('crypto');
 const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
 const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
@@ -458,6 +459,9 @@ app.use((req, res, next) => {
     res.locals.absoluteUrl = seo.absoluteUrl;
     res.locals.jsonLdScript = seo.jsonLdScript;
     res.locals.assetVersion = ASSET_VERSION;
+    // The one glyph table (data/icons.js). Views cannot require, so the lookup
+    // is handed to them here rather than each partial keeping its own copy.
+    res.locals.iconPaths = iconPaths;
     // Every view gets a useful styling/navigation scope by default. Routes
     // can still override this when the canonical path differs from req.path.
     res.locals.pagePath = req.path;
