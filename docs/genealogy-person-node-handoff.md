@@ -14,8 +14,11 @@ Written 2026-08-02. Hand-off for the next session.
 > Alias cleanup done during the link audit: bare 수정주의/revisionism moved off
 > `reformism` to the new entry; over-broad bare aliases deleted per the 격리
 > precedent (개조 from `perekovka`; 정상화/normalization/normalisation from
-> `normalization-czechoslovakia`). Node labels still carry the personal names
-> (「볼셰비키 (레닌)」); dropping them is a pending content decision.
+> `normalization-czechoslovakia`). The personal-name parentheses were dropped
+> from the nine repointed labels with owner approval later the same day
+> (「볼셰비키 (레닌)」 → 「볼셰비키」); parentheticals that are not personal
+> names (레닌그라드파, 제3인터내셔널) and nodes that always ref'd a term
+> (부하린, 룩셈부르크, 스탈린 다수파) keep theirs.
 
 ## The problem
 
