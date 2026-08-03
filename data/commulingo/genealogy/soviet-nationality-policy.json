@@ -637,6 +637,42 @@
         "ko": "공화국들이 근거로 든 것은 소련 헌법 자신의 탈퇴권 조항이었다",
         "en": "The ground the republics cited was the secession clause of the Soviet constitution itself"
       }
+    },
+    {
+      "id": "baltic-independence",
+      "column": "territory",
+      "year": 1988,
+      "period": "1987–1991",
+      "label": {
+        "ko": "발트 독립운동: 병합 무효의 법리",
+        "en": "The Baltic movement: the annexation declared void"
+      },
+      "ref": {
+        "type": "event",
+        "id": "baltic-independence"
+      },
+      "note": {
+        "ko": "비밀의정서가 무효로 선언되자 발트의 이탈은 '분리'가 아니라 '회복'이 되었고, 다른 공화국들의 선례가 되었다",
+        "en": "Once the secret protocols were declared void, Baltic departure became restoration rather than secession, and a precedent for the other republics"
+      }
+    },
+    {
+      "id": "new-union-treaty",
+      "column": "doctrine",
+      "year": 1991,
+      "period": "1991",
+      "label": {
+        "ko": "신연방조약 구상: 주권국가들의 연방",
+        "en": "The new union treaty: a union of sovereign states"
+      },
+      "ref": {
+        "type": "event",
+        "id": "novo-ogaryovo-process"
+      },
+      "note": {
+        "ko": "민족정책의 마지막 교리 전환: 위로부터 부여된 연방을 아래로부터의 계약으로 다시 세우려 했다",
+        "en": "The last doctrinal turn of nationality policy: to refound a union granted from above as a contract from below"
+      }
     }
   ],
   "edges": [
