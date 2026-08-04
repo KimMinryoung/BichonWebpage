@@ -41,7 +41,8 @@
       "column": "turning-points",
       "year": 1918,
       "period": "1918.03",
-      "label": { "ko": "브레스트-리톱스크 조약", "en": "The Treaty of Brest-Litovsk" },
+      "label": { "ko": "브레스트-리토프스크 조약", "en": "The Treaty of Brest-Litovsk" },
+      "ref": { "type": "term", "id": "brest-litovsk-treaty" },
       "note": { "ko": "혁명 국가가 생존을 위해 맺은 첫 강화. 세계혁명 대기론에 대한 현실의 첫 수정이었다", "en": "The revolutionary state's first peace, signed to survive: reality's first amendment to waiting for world revolution" }
     },
     {
@@ -77,6 +78,7 @@
       "year": 1922,
       "period": "1922.04",
       "label": { "ko": "라팔로 조약: 왕따들의 악수", "en": "Rapallo: the outcasts shake hands" },
+      "ref": { "type": "term", "id": "rapallo-treaty" },
       "note": { "ko": "베르사유 질서에서 배제된 두 나라, 소비에트 러시아와 독일의 수교. 고립 탈출의 첫 돌파구였다", "en": "The two outcasts of Versailles, Soviet Russia and Germany, establish relations: the first breach in isolation" }
     },
     {
@@ -103,6 +105,7 @@
       "year": 1934,
       "period": "1933–1939",
       "label": { "ko": "집단안보 노선", "en": "The collective security line" },
+      "ref": { "type": "term", "id": "collective-security" },
       "note": { "ko": "나치 독일의 위협 앞에서 서방 민주국가들과의 동맹으로 침략을 봉쇄한다는 노선. 뮌헨 협정이 그 신뢰를 무너뜨렸다", "en": "Against Nazi Germany, containment through alliance with the Western democracies; Munich destroyed its credibility" }
     },
     {
@@ -245,6 +248,7 @@
       "year": 1975,
       "period": "1975.08",
       "label": { "ko": "헬싱키 최종의정서: 데탕트의 정점", "en": "The Helsinki Final Act: detente's summit" },
+      "ref": { "type": "term", "id": "helsinki-final-act" },
       "note": { "ko": "전후 국경의 인정을 얻는 대가로 인권 조항을 받아들였다. 그 「제3바구니」가 동유럽 반체제 운동의 지렛대가 된다", "en": "Postwar borders recognised at the price of human rights clauses; that third basket became the lever of East European dissent" }
     },
     {
