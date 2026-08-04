@@ -1,485 +1,529 @@
 {
-  "docs": [
-    {
-      "id": "marx-value-price-profit",
-      "file": "marx-value-price-profit.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "마르크스, 『임금, 가격, 이윤』 전문 해설",
-        "en": "Marx, Value, Price and Profit: A Guided Reading"
-      },
-      "description": {
-        "ko": "1865년 마르크스가 국제노동자협회 총평의회에서 임금 인상 무용론을 편 존 웨스턴에게 답한 연설의 전문 해설. 열네 개 절을 순서대로 따라가며 웨스턴의 두 전제를 해체하고, 가치와 노동력과 잉여가치의 이론을 세운 뒤, 임금 투쟁이 왜 필요하면서도 그것만으로는 부족한지를 「임금제도의 폐지」라는 결론까지 밟아 간다.",
-        "en": "A guided reading of the address Marx delivered to the General Council of the International in 1865, answering John Weston's claim that wage rises are futile. It follows all fourteen sections in order, taking Weston's two premises apart, building up the theory of value, labour-power and surplus value, and showing why wage struggle is both necessary and insufficient, down to the closing watchword: abolition of the wages system."
-      },
-      "kind": {
-        "ko": "전문 해설",
-        "en": "Guided reading"
-      },
-      "source": "Karl Marx, Value, Price and Profit (1865). 엘리너 마르크스 에이블링 엮음, 런던, 1898; MEW Bd. 16, S. 101–152",
-      "people": [
-        "karl-marx",
-        "friedrich-engels"
-      ],
-      "terms": [
-        "wages-fund-doctrine",
-        "iron-law-of-wages",
-        "malthusianism"
-      ],
-      "events": [],
-      "addedAt": "2026-07-27",
-      "aliases": {
-        "ko": [
-          "임금, 가격, 이윤 전문 해설",
-          "『임금, 가격, 이윤』 전문 해설",
-          "『임금, 가격, 이윤』"
-        ],
-        "en": [
-          "guided reading of Value, Price and Profit",
-          "Value, Price and Profit"
-        ]
-      }
-    },
-    {
-      "id": "marx-gotha-critique",
-      "file": "marx-gotha-critique.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "마르크스, 『고타강령 비판』 전문 해설",
-        "en": "Marx, Critique of the Gotha Programme: A Guided Reading"
-      },
-      "description": {
-        "ko": "마르크스가 1875년 고타 통합강령 초안에 단 논평의 전문 해설. 강령 조항을 순서대로 인용하고 마르크스의 답을 옮긴 뒤 입문자를 위한 해설을 붙였다. 노동전수익권과 공제 목록, 공산주의의 두 단계, 임금철칙, 국가 보조 협동조합, 자유국가와 프롤레타리아 독재를 차례로 다룬다.",
-        "en": "A guided reading of the notes Marx wrote on the draft Gotha unity programme in 1875. Each clause is quoted in order, Marx's reply translated, and a beginner's commentary added, covering the undiminished proceeds of labour and the deductions, the two phases of communism, the iron law of wages, state-aided co-operatives, and the free state and the dictatorship of the proletariat."
-      },
-      "kind": {
-        "ko": "전문 해설",
-        "en": "Guided reading"
-      },
-      "source": "Karl Marx, Randglossen zum Programm der deutschen Arbeiterpartei (1875); MEW Bd. 19, S. 13–32; Marx & Engels Selected Works, Vol. 3 (Progress Publishers, 1970)",
-      "people": [
-        "karl-marx",
-        "ferdinand-lassalle",
-        "friedrich-engels"
-      ],
-      "terms": [
-        "critique-of-the-gotha-programme",
-        "undiminished-proceeds-of-labour",
-        "iron-law-of-wages",
-        "lower-and-higher-phase-of-communism",
-        "dictatorship-of-the-proletariat"
-      ],
-      "events": [],
-      "addedAt": "2026-07-27",
-      "aliases": {
-        "ko": [
-          "고타강령 비판 전문 해설",
-          "『고타강령 비판』 전문 해설"
-        ],
-        "en": [
-          "guided reading of the Critique of the Gotha Programme"
-        ]
-      }
-    },
-    {
-      "id": "1918-rsfsr-constitution",
-      "file": "1918-rsfsr-constitution.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "1918년 러시아 소비에트 헌법 한국어 번역",
-        "en": "The 1918 Constitution of the RSFSR (Korean translation)"
-      },
-      "description": {
-        "ko": "1918년 7월 10일 제5차 전러시아 소비에트 대회가 채택한 러시아 소비에트 연방 사회주의 공화국 헌법의 전문 한국어 번역. 「근로 피착취 인민의 권리 선언」을 제1부로 삼고, 전러시아 소비에트 대회와 전러시아 중앙집행위원회·인민위원회의를 축으로 한 소비에트 권력의 구성, 노동 계급에 유리한 차등 선거권과 착취자의 선거권 박탈, 예산법, 국장과 국기를 6부 90개 조문으로 규정한다. 번역 저본은 채택 당시의 러시아어 원문이다.",
-        "en": "Complete Korean translation of the Constitution of the Russian Socialist Federative Soviet Republic adopted by the Fifth All-Russian Congress of Soviets on July 10, 1918. Opening with the Declaration of Rights of the Working and Exploited People, its six parts and 90 articles set out the construction of Soviet power around the All-Russian Congress of Soviets, the Central Executive Committee and the Council of People's Commissars, an electoral system weighted toward the working class with the disenfranchisement of exploiters, budgetary law, and the state emblem and flag. Translated from the Russian text as adopted."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Конституция (Основной Закон) РСФСР, принята V Всероссийским съездом Советов 10 июля 1918 г. 수록본: Декреты Советской власти, т. II (М., 1959), с. 550–564; ru.wikisource.org 전사",
-      "people": [
-        "lenin",
-        "sverdlov"
-      ],
-      "terms": [
-        "soviet-constitution"
-      ],
-      "events": [],
-      "addedAt": "2026-08-02",
-      "aliases": {
-        "ko": [
-          "1918년 러시아 소비에트 헌법 전문",
-          "1918년 헌법 전문",
-          "1918년 헌법",
-          "1918년 러시아 소비에트 헌법",
-          "1918년 러시아 헌법"
-        ],
-        "en": [
-          "full text of the 1918 RSFSR Constitution",
-          "1918 Constitution",
-          "1918 RSFSR Constitution"
-        ]
-      }
-    },
-    {
-      "id": "lenin-tax-in-kind",
-      "file": "lenin-tax-in-kind.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "레닌, 『현물세』 한국어 번역",
-        "en": "Lenin, The Tax in Kind (Korean translation)"
-      },
-      "description": {
-        "ko": "1921년 4월 레닌이 신경제정책으로의 전환을 설명하기 위해 쓴 팸플릿의 한국어 번역 전문. 러시아 경제를 가부장적 농민경제부터 사회주의까지 다섯 형태로 나누고, 소상품생산이 지배적인 조건에서 국가자본주의는 사회주의와 견줄 것이 아니라 소생산자 요소와 견주어야 하며 그에 비하면 한 걸음 전진이라고 논증한다.",
-        "en": "The full Korean translation of the pamphlet Lenin wrote in April 1921 to explain the turn to the New Economic Policy. It divides the Russian economy into five forms, from patriarchal peasant farming to socialism, and argues that where small commodity production predominates state capitalism must be measured against the small-proprietor element rather than against socialism, and is a step forward by that measure."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "В. И. Ленин, «О продовольственном налоге» (1921). 영역 유리 스도브니코프. 『레닌 전집』 영어판 제1판, 프로그레스 출판사, 모스크바, 1965년, 제32권, 329–365쪽",
-      "people": [
-        "lenin"
-      ],
-      "terms": [
-        "prodnalog",
-        "state-capitalism"
-      ],
-      "events": [
-        "new-economic-policy"
-      ],
-      "addedAt": "2026-07-25",
-      "tocExclude": [
-        "."
-      ],
-      "aliases": {
-        "ko": [
-          "『현물세』"
-        ],
-        "en": [
-          "The Tax in Kind"
-        ]
-      }
-    },
-    {
-      "id": "declaration-of-46",
-      "file": "declaration-of-46.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "46인 선언 한국어 번역",
-        "en": "The Declaration of the 46 (Korean translation)"
-      },
-      "description": {
-        "ko": "1923년 10월 15일 46명의 당 간부가 러시아공산당 중앙위원회 정치국에 비밀로 제출한 성명의 한국어 완역. 계획 없는 지도가 낳은 경제·재정 위기를 진단한 뒤, 제10차 당대회 이후의 '분파 독재' 체제가 당을 서기 위계와 평신도로 갈라놓았다고 비판하고, 다수파와 견해가 다른 동지들을 포함한 협의회 소집을 요구한다. 서명자 12명이 붙인 유보 의견도 함께 옮겼다.",
-        "en": "Complete Korean translation of the statement submitted in secret to the Politburo of the RCP(b) Central Committee by forty-six party officials on 15 October 1923. It diagnoses the economic and financial crisis produced by unplanned leadership, argues that the regime of \"factional dictatorship\" formed after the Tenth Congress has split the party into a secretarial hierarchy and a laity, and demands a conference including comrades who differ with the majority. The reservations added by twelve signatories are translated with it."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "«Заявление 46-ти» в Политбюро ЦК РКП(б) о внутрипартийном положении, 15 октября 1923 г. 수록본: Коммунистическая оппозиция в СССР, 1923–1927, том 1, ред.-сост. Ю. Фельштинский (Терра, 1990), с. 83–88",
-      "people": [
-        "preobrazhensky",
-        "leonid-serebryakov",
-        "antonov-ovseenko",
-        "timofei-sapronov",
-        "osinsky",
-        "nikolai-muralov",
-        "yuri-pyatakov",
-        "alexander-beloborodov",
-        "andrei-bubnov",
-        "arkady-rozengolts",
-        "varvara-yakovleva",
-        "ivan-smirnov",
-        "vladimir-smirnov",
-        "vladislav-kosior",
-        "pyotr-koganovich",
-        "boris-eltsin",
-        "alexander-voronsky",
-        "evgenia-bosch"
-      ],
-      "terms": [
-        "declaration-of-46",
-        "left-opposition",
-        "democratic-centralism",
-        "price-scissors",
-        "chervonets"
-      ],
-      "events": [],
-      "addedAt": "2026-07-30",
-      "aliases": {
-        "ko": [
-          "46인 선언 전문",
-          "「46인 선언」",
-          "46인 선언 한국어 번역"
-        ],
-        "en": [
-          "full text of the Declaration of the 46",
-          "Declaration of the 46 (full text)"
-        ]
-      }
-    },
-    {
-      "id": "stalin-1936-constitution",
-      "file": "stalin-1936-constitution.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "1936년 소련 헌법 한국어 번역",
-        "en": "The 1936 Constitution of the USSR (Korean translation)"
-      },
-      "description": {
-        "ko": "1936년 12월 5일 제8차 비상 전연방 소비에트 대회에서 채택된 소련 헌법(통칭 '스탈린 헌법')의 전문 한국어 번역. 13개 장 146개 조문으로 사회 구조, 국가기관, 공민의 권리와 의무, 선거 제도를 규정한다. 번역 저본은 최고소비에트 제1~8차 회기의 수정 사항이 반영된 영어판(스탈린 저작집 제14권)이다.",
-        "en": "Complete Korean translation of the 1936 Soviet Constitution (the \"Stalin Constitution\"), adopted by the Extraordinary 8th Congress of Soviets on December 5, 1936. Its 13 chapters and 146 articles define the social and state structure, organs of power, citizens' rights and duties, and the electoral system. Translated from the English text incorporating amendments through the 8th session of the Supreme Soviet (Stalin, Works, Vol. 14)."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Конституция СССР 1936 года. 영어판: Constitution (Fundamental Law) of the U.S.S.R., J. V. Stalin, Works, Vol. 14 (Red Star Press, London, 1978), marxists.org 수록본",
-      "people": [
-        "stalin"
-      ],
-      "terms": [
-        "soviet-constitution"
-      ],
-      "events": [],
-      "addedAt": "2026-07-29",
-      "aliases": {
-        "ko": [
-          "1936년 소련 헌법 전문",
-          "스탈린 헌법 전문",
-          "1936년 헌법",
-          "스탈린 헌법",
-          "1936년 소련 헌법",
-          "1936년 소비에트 헌법",
-          "승리한 사회주의의 헌법"
-        ],
-        "en": [
-          "full text of the 1936 Soviet Constitution",
-          "1936 Constitution",
-          "Stalin Constitution",
-          "Stalin's Constitution",
-          "USSR Constitution of 1936",
-          "Constitution of Victorious Socialism"
-        ]
-      }
-    },
-    {
-      "id": "nkvd-1937-documents",
-      "file": "nkvd-1937-documents.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "1937년 소련 당·국가 문서 2건 한국어 번역",
-        "en": "Two Soviet Party and State Documents of 1937 (Korean translation)"
-      },
-      "description": {
-        "ko": "대숙청 시기 소련 당·국가 기관의 공식 문서 두 건의 한국어 전문 번역. 1937년 2~3월 당 중앙위원회 총회에서 예조프가 한 보고 속기록과, 폴란드 작전의 근거가 된 「폴란드 군사조직」 관련 NKVD 비밀서한을 담았다. 함께 배포된 작전명령들은 별도 문서에 번호순으로 수록되어 있다.",
-        "en": "Full Korean translation of two official documents produced by Soviet party and state organs during the Great Terror: the stenographic record of Yezhov's report to the February-March 1937 Central Committee plenum, and the NKVD secret letter on the “Polish Military Organization” that underpinned the Polish operation. The operational orders circulated alongside it are collected in a separate document."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Архів Управління МВС України Харківської області. Колекція документів. 수록본: Полянский А. И. Ежов. История «железного» сталинского наркома. — М.: Вече, АРИА-АиФ, 2001. — (Особый архив)",
-      "people": [
-        "yezhov"
-      ],
-      "terms": [
-        "yezhovshchina",
-        "national-operations-nkvd",
-        "nkvd-first-category",
-        "nkvd-order-00447"
-      ],
-      "events": [
-        "great-terror"
-      ],
-      "aliases": {
-        "ko": [
-          "「폴란드 군사조직(ПОВ)」에 관한 NKVD 비밀서한",
-          "「폴란드 군사조직」 비밀서한"
-        ],
-        "en": [
-          "NKVD secret letter on the Polish Military Organization"
-        ]
-      },
-      "addedAt": "2026-07-31"
-    },
-    {
-      "id": "nkvd-operational-orders",
-      "file": "nkvd-operational-orders.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "NKVD 작전명령 한국어 번역",
-        "en": "NKVD Operational Orders (Korean translation)"
-      },
-      "description": {
-        "ko": "1937~1938년 대숙청을 집행한 내무인민위원부(NKVD) 작전 지시 여덟 건을 발신일순으로 모은 전문 번역. 제00439호(독일)·제00485호(폴란드)·제00593호(하얼빈 귀환자)·제49990호(라트비아)·제50215호(그리스)는 국적과 출신을 표적으로 삼은 「민족 작전」을, 제00447호는 공화국·주별 처형·수감 배정을 동반한 대량 작전을, 제00486호는 유죄 판결자의 아내와 자녀 처리를, 제00606호는 그 사건들을 심사할 특별 트로이카 설치를 규정한다. 배정표의 수치는 원본 그대로다.",
-        "en": "Full Korean translation of eight NKVD operational orders and directives of 1937-38, in order of issue. Nos. 00439 (German), 00485 (Polish), 00593 (Harbin returnees), 49990 (Latvian) and 50215 (Greek) opened the national operations; No. 00447 launched the mass operation with per-republic execution and camp quotas; No. 00486 governed the wives and children of the convicted; No. 00606 set up the special troikas that judged the resulting cases. The quota figures are carried over from the source unchanged."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Оперативные приказы и директивы НКВД СССР № 00439 (25.07.1937), № 00447 (30.07.1937), № 00485 (11.08.1937), № 00486 (15.08.1937), № 00593 (20.09.1937), № 49990 (30.11.1937), № 50215 (11.12.1937), № 00606 (17.09.1938). 전사(轉寫): ru.wikisource.org (00439·00447·00485·00593), stalinism.ru (00606); 00486 — Архів Управління МВС України Харківської області; 49990 — РГАНИ. Ф. 6. Оп. 13. Д. 4. Л. 1–2; 50215 — ЦХСД. Комиссия Шверника. Д. 4. Л. 4–6, публ.: В. М. Нікольський, «Як починалася „грецька операція“» // Історичні і політологічні дослідження. 2008. № 1/2",
-      "people": [
-        "yezhov"
-      ],
-      "terms": [
-        "nkvd-order-00447",
-        "national-operations-nkvd",
-        "nkvd-first-category",
-        "troika",
-        "yezhovshchina"
-      ],
-      "events": [
-        "great-terror"
-      ],
-      "aliases": {
-        "ko": [
-          "「NKVD 작전명령 제00439호」",
-          "「NKVD 작전명령 제00447호」",
-          "「NKVD 작전명령 제00485호」",
-          "「NKVD 작전명령 제00486호」",
-          "「NKVD 작전명령 제00593호」",
-          "「NKVD 작전명령 제00606호」",
-          "「NKVD 지령 제49990호」",
-          "「NKVD 지령 제50215호」",
-          "NKVD 작전명령들"
-        ],
-        "en": [
-          "NKVD Operational Order No. 00439",
-          "NKVD Operational Order No. 00447",
-          "NKVD Operational Order No. 00485",
-          "NKVD Operational Order No. 00486",
-          "NKVD Operational Order No. 00593",
-          "NKVD Operational Order No. 00606",
-          "NKVD Directive No. 49990",
-          "NKVD Directive No. 50215"
-        ]
-      },
-      "addedAt": "2026-07-31"
-    },
-    {
-      "id": "stalin-dialectical-historical-materialism",
-      "file": "stalin-dialectical-historical-materialism.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "스탈린, 「변증법적 유물론과 사적 유물론」 한국어 번역",
-        "en": "Stalin, Dialectical and Historical Materialism (Korean translation)"
-      },
-      "description": {
-        "ko": "스탈린이 1938년 9월 『전연방공산당(볼셰비키) 역사 소교정』 제4장 2절로 발표한 이론 논문의 한국어 완역. 마르크스주의 변증법적 방법의 네 가지 특징과 철학적 유물론의 세 가지 특징을 서술한 뒤, 생산양식과 생산력·생산관계를 축으로 사적 유물론을 체계화한다. 이후 소련과 각국 공산당의 표준 철학 교재가 된 문헌이다.",
-        "en": "Complete Korean translation of Stalin's September 1938 essay, published as Chapter 4, Section 2 of the Short Course history of the CPSU(B). It sets out four features of the Marxist dialectical method and three of philosophical materialism, then systematizes historical materialism around the mode of production. The text became the standard philosophical primer of the Soviet era."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "И. В. Сталин, «О диалектическом и историческом материализме» (1938). 영어판: J. V. Stalin, Dialectical and Historical Materialism, History of the CPSU(B): Short Course, ch. 4, sec. 2; marxists.org 수록본",
-      "people": [
-        "stalin",
-        "karl-marx",
-        "friedrich-engels",
-        "lenin"
-      ],
-      "terms": [
-        "dialectical-materialism",
-        "historical-materialism"
-      ],
-      "events": [],
-      "addedAt": "2026-07-29",
-      "aliases": {
-        "ko": [
-          "「변증법적 유물론과 사적 유물론」",
-          "『변증법적 유물론과 사적 유물론』"
-        ],
-        "en": [
-          "Dialectical and Historical Materialism"
-        ]
-      }
-    },
-    {
-      "id": "1977-soviet-constitution",
-      "file": "1977-soviet-constitution.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "1977년 소련 헌법 한국어 번역",
-        "en": "The 1977 Constitution of the USSR (Korean translation)"
-      },
-      "description": {
-        "ko": "1977년 10월 7일 소련 최고소비에트 비상회기가 채택한 소련 헌법(통칭 '브레즈네프 헌법')의 전문 한국어 번역. '발전된 사회주의 사회'를 선언하는 전문과 9부 21장 174개 조문으로 사회 제도, 공민의 권리와 의무, 민족·국가 구조, 인민대의원 소비에트, 최고 국가기관, 사법·검찰, 국가 상징을 규정하며, 제6조는 소련공산당을 사회의 지도적·향도적 힘으로 명문화한다. 번역 저본은 1977년 채택 당시의 러시아어 원문이다.",
-        "en": "Complete Korean translation of the Soviet Constitution adopted at an extraordinary session of the USSR Supreme Soviet on October 7, 1977 (the \"Brezhnev Constitution\"). A preamble proclaiming developed socialist society is followed by 174 articles in nine parts and 21 chapters covering the social system, citizens' rights and duties, the national-state structure, the Soviets of People's Deputies, the highest organs of state, justice and the procuracy, and state symbols; Article 6 enshrines the CPSU as the leading and guiding force of society. Translated from the Russian text as adopted in 1977."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Конституция (Основной Закон) СССР, принята на внеочередной седьмой сессии Верховного Совета СССР девятого созыва 7 октября 1977 г. «Ведомости Верховного Совета СССР», 1977, № 41, ст. 617; ru.wikisource.org 전사",
-      "people": [
-        "brezhnev"
-      ],
-      "terms": [
-        "soviet-constitution",
-        "developed-socialism",
-        "all-peoples-state"
-      ],
-      "events": [],
-      "addedAt": "2026-08-02",
-      "aliases": {
-        "ko": [
-          "1977년 소련 헌법 전문",
-          "브레즈네프 헌법 전문",
-          "1977년 헌법",
-          "브레즈네프 헌법",
-          "1977년 소련 헌법"
-        ],
-        "en": [
-          "full text of the 1977 Soviet Constitution",
-          "1977 Constitution",
-          "1977 Soviet Constitution",
-          "Brezhnev Constitution"
-        ]
-      }
-    },
-    {
-      "id": "yezhov-pavlyukov",
-      "file": "yezhov-pavlyukov.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "알렉세이 파블류코프, 『예조프: 전기』 한국어 번역",
-        "en": "Aleksei Pavlyukov, Yezhov: A Biography (Korean translation)"
-      },
-      "description": {
-        "ko": "알렉세이 파블류코프의 평전 『예조프: 전기』(2007)의 한국어 번역 전문. 4부 구성으로 예조프의 유년기와 제정군 복무부터 당 인사기구에서의 부상, NKVD 수장 시기, 실각과 처형까지를 다룬다.",
-        "en": "The full Korean translation of Aleksei Pavlyukov's biography Yezhov (2007), covering Yezhov's childhood and imperial army service, his rise in the party's personnel apparatus, his years as NKVD chief, and his fall and execution."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Алексей Павлюков, Ежов. Биография (Москва: Захаров, 2007)",
-      "tocExclude": [
-        "^제\\d+장\\s"
-      ],
-      "people": [
-        "yezhov"
-      ],
-      "terms": [
-        "yezhovshchina"
-      ],
-      "events": [
-        "great-terror"
-      ],
-      "addedAt": "2026-07-23",
-      "aliases": {
-        "ko": [
-          "『예조프: 전기』"
-        ],
-        "en": [
-          "Yezhov: A Biography"
-        ]
-      }
-    }
-  ]
+ "docs": [
+  {
+   "id": "marx-value-price-profit",
+   "file": "marx-value-price-profit.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "마르크스, 『임금, 가격, 이윤』 전문 해설",
+    "en": "Marx, Value, Price and Profit: A Guided Reading"
+   },
+   "description": {
+    "ko": "1865년 마르크스가 국제노동자협회 총평의회에서 임금 인상 무용론을 편 존 웨스턴에게 답한 연설의 전문 해설. 열네 개 절을 순서대로 따라가며 웨스턴의 두 전제를 해체하고, 가치와 노동력과 잉여가치의 이론을 세운 뒤, 임금 투쟁이 왜 필요하면서도 그것만으로는 부족한지를 「임금제도의 폐지」라는 결론까지 밟아 간다.",
+    "en": "A guided reading of the address Marx delivered to the General Council of the International in 1865, answering John Weston's claim that wage rises are futile. It follows all fourteen sections in order, taking Weston's two premises apart, building up the theory of value, labour-power and surplus value, and showing why wage struggle is both necessary and insufficient, down to the closing watchword: abolition of the wages system."
+   },
+   "kind": {
+    "ko": "전문 해설",
+    "en": "Guided reading"
+   },
+   "source": "Karl Marx, Value, Price and Profit (1865). 엘리너 마르크스 에이블링 엮음, 런던, 1898; MEW Bd. 16, S. 101–152",
+   "people": [
+    "karl-marx",
+    "friedrich-engels"
+   ],
+   "terms": [
+    "wages-fund-doctrine",
+    "iron-law-of-wages",
+    "malthusianism"
+   ],
+   "events": [],
+   "addedAt": "2026-07-27",
+   "aliases": {
+    "ko": [
+     "임금, 가격, 이윤 전문 해설",
+     "『임금, 가격, 이윤』 전문 해설",
+     "『임금, 가격, 이윤』"
+    ],
+    "en": [
+     "guided reading of Value, Price and Profit",
+     "Value, Price and Profit"
+    ]
+   }
+  },
+  {
+   "id": "marx-gotha-critique",
+   "file": "marx-gotha-critique.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "마르크스, 『고타강령 비판』 전문 해설",
+    "en": "Marx, Critique of the Gotha Programme: A Guided Reading"
+   },
+   "description": {
+    "ko": "마르크스가 1875년 고타 통합강령 초안에 단 논평의 전문 해설. 강령 조항을 순서대로 인용하고 마르크스의 답을 옮긴 뒤 입문자를 위한 해설을 붙였다. 노동전수익권과 공제 목록, 공산주의의 두 단계, 임금철칙, 국가 보조 협동조합, 자유국가와 프롤레타리아 독재를 차례로 다룬다.",
+    "en": "A guided reading of the notes Marx wrote on the draft Gotha unity programme in 1875. Each clause is quoted in order, Marx's reply translated, and a beginner's commentary added, covering the undiminished proceeds of labour and the deductions, the two phases of communism, the iron law of wages, state-aided co-operatives, and the free state and the dictatorship of the proletariat."
+   },
+   "kind": {
+    "ko": "전문 해설",
+    "en": "Guided reading"
+   },
+   "source": "Karl Marx, Randglossen zum Programm der deutschen Arbeiterpartei (1875); MEW Bd. 19, S. 13–32; Marx & Engels Selected Works, Vol. 3 (Progress Publishers, 1970)",
+   "people": [
+    "karl-marx",
+    "ferdinand-lassalle",
+    "friedrich-engels"
+   ],
+   "terms": [
+    "critique-of-the-gotha-programme",
+    "undiminished-proceeds-of-labour",
+    "iron-law-of-wages",
+    "lower-and-higher-phase-of-communism",
+    "dictatorship-of-the-proletariat"
+   ],
+   "events": [],
+   "addedAt": "2026-07-27",
+   "aliases": {
+    "ko": [
+     "고타강령 비판 전문 해설",
+     "『고타강령 비판』 전문 해설"
+    ],
+    "en": [
+     "guided reading of the Critique of the Gotha Programme"
+    ]
+   }
+  },
+  {
+   "id": "1918-rsfsr-constitution",
+   "file": "1918-rsfsr-constitution.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "1918년 러시아 소비에트 헌법 한국어 번역",
+    "en": "The 1918 Constitution of the RSFSR (Korean translation)"
+   },
+   "description": {
+    "ko": "1918년 7월 10일 제5차 전러시아 소비에트 대회가 채택한 러시아 소비에트 연방 사회주의 공화국 헌법의 전문 한국어 번역. 「근로 피착취 인민의 권리 선언」을 제1부로 삼고, 전러시아 소비에트 대회와 전러시아 중앙집행위원회·인민위원회의를 축으로 한 소비에트 권력의 구성, 노동 계급에 유리한 차등 선거권과 착취자의 선거권 박탈, 예산법, 국장과 국기를 6부 90개 조문으로 규정한다. 번역 저본은 채택 당시의 러시아어 원문이다.",
+    "en": "Complete Korean translation of the Constitution of the Russian Socialist Federative Soviet Republic adopted by the Fifth All-Russian Congress of Soviets on July 10, 1918. Opening with the Declaration of Rights of the Working and Exploited People, its six parts and 90 articles set out the construction of Soviet power around the All-Russian Congress of Soviets, the Central Executive Committee and the Council of People's Commissars, an electoral system weighted toward the working class with the disenfranchisement of exploiters, budgetary law, and the state emblem and flag. Translated from the Russian text as adopted."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "Конституция (Основной Закон) РСФСР, принята V Всероссийским съездом Советов 10 июля 1918 г. 수록본: Декреты Советской власти, т. II (М., 1959), с. 550–564; ru.wikisource.org 전사",
+   "people": [
+    "lenin",
+    "sverdlov"
+   ],
+   "terms": [
+    "soviet-constitution"
+   ],
+   "events": [],
+   "addedAt": "2026-08-02",
+   "aliases": {
+    "ko": [
+     "1918년 러시아 소비에트 헌법 전문",
+     "1918년 헌법 전문",
+     "1918년 헌법",
+     "1918년 러시아 소비에트 헌법",
+     "1918년 러시아 헌법"
+    ],
+    "en": [
+     "full text of the 1918 RSFSR Constitution",
+     "1918 Constitution",
+     "1918 RSFSR Constitution"
+    ]
+   }
+  },
+  {
+   "id": "lenin-tax-in-kind",
+   "file": "lenin-tax-in-kind.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "레닌, 『현물세』 한국어 번역",
+    "en": "Lenin, The Tax in Kind (Korean translation)"
+   },
+   "description": {
+    "ko": "1921년 4월 레닌이 신경제정책으로의 전환을 설명하기 위해 쓴 팸플릿의 한국어 번역 전문. 러시아 경제를 가부장적 농민경제부터 사회주의까지 다섯 형태로 나누고, 소상품생산이 지배적인 조건에서 국가자본주의는 사회주의와 견줄 것이 아니라 소생산자 요소와 견주어야 하며 그에 비하면 한 걸음 전진이라고 논증한다.",
+    "en": "The full Korean translation of the pamphlet Lenin wrote in April 1921 to explain the turn to the New Economic Policy. It divides the Russian economy into five forms, from patriarchal peasant farming to socialism, and argues that where small commodity production predominates state capitalism must be measured against the small-proprietor element rather than against socialism, and is a step forward by that measure."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "В. И. Ленин, «О продовольственном налоге» (1921). 영역 유리 스도브니코프. 『레닌 전집』 영어판 제1판, 프로그레스 출판사, 모스크바, 1965년, 제32권, 329–365쪽",
+   "people": [
+    "lenin"
+   ],
+   "terms": [
+    "prodnalog",
+    "state-capitalism"
+   ],
+   "events": [
+    "new-economic-policy"
+   ],
+   "addedAt": "2026-07-25",
+   "tocExclude": [
+    "."
+   ],
+   "aliases": {
+    "ko": [
+     "『현물세』"
+    ],
+    "en": [
+     "The Tax in Kind"
+    ]
+   }
+  },
+  {
+   "id": "declaration-of-46",
+   "file": "declaration-of-46.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "46인 선언 한국어 번역",
+    "en": "The Declaration of the 46 (Korean translation)"
+   },
+   "description": {
+    "ko": "1923년 10월 15일 46명의 당 간부가 러시아공산당 중앙위원회 정치국에 비밀로 제출한 성명의 한국어 완역. 계획 없는 지도가 낳은 경제·재정 위기를 진단한 뒤, 제10차 당대회 이후의 '분파 독재' 체제가 당을 서기 위계와 평신도로 갈라놓았다고 비판하고, 다수파와 견해가 다른 동지들을 포함한 협의회 소집을 요구한다. 서명자 12명이 붙인 유보 의견도 함께 옮겼다.",
+    "en": "Complete Korean translation of the statement submitted in secret to the Politburo of the RCP(b) Central Committee by forty-six party officials on 15 October 1923. It diagnoses the economic and financial crisis produced by unplanned leadership, argues that the regime of \"factional dictatorship\" formed after the Tenth Congress has split the party into a secretarial hierarchy and a laity, and demands a conference including comrades who differ with the majority. The reservations added by twelve signatories are translated with it."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "«Заявление 46-ти» в Политбюро ЦК РКП(б) о внутрипартийном положении, 15 октября 1923 г. 수록본: Коммунистическая оппозиция в СССР, 1923–1927, том 1, ред.-сост. Ю. Фельштинский (Терра, 1990), с. 83–88",
+   "people": [
+    "preobrazhensky",
+    "leonid-serebryakov",
+    "antonov-ovseenko",
+    "timofei-sapronov",
+    "osinsky",
+    "nikolai-muralov",
+    "yuri-pyatakov",
+    "alexander-beloborodov",
+    "andrei-bubnov",
+    "arkady-rozengolts",
+    "varvara-yakovleva",
+    "ivan-smirnov",
+    "vladimir-smirnov",
+    "vladislav-kosior",
+    "pyotr-koganovich",
+    "boris-eltsin",
+    "alexander-voronsky",
+    "evgenia-bosch"
+   ],
+   "terms": [
+    "declaration-of-46",
+    "left-opposition",
+    "democratic-centralism",
+    "price-scissors",
+    "chervonets"
+   ],
+   "events": [],
+   "addedAt": "2026-07-30",
+   "aliases": {
+    "ko": [
+     "46인 선언 전문",
+     "「46인 선언」",
+     "46인 선언 한국어 번역"
+    ],
+    "en": [
+     "full text of the Declaration of the 46",
+     "Declaration of the 46 (full text)"
+    ]
+   }
+  },
+  {
+   "id": "stalin-1936-constitution",
+   "file": "stalin-1936-constitution.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "1936년 소련 헌법 한국어 번역",
+    "en": "The 1936 Constitution of the USSR (Korean translation)"
+   },
+   "description": {
+    "ko": "1936년 12월 5일 제8차 비상 전연방 소비에트 대회에서 채택된 소련 헌법(통칭 '스탈린 헌법')의 전문 한국어 번역. 13개 장 146개 조문으로 사회 구조, 국가기관, 공민의 권리와 의무, 선거 제도를 규정한다. 번역 저본은 최고소비에트 제1~8차 회기의 수정 사항이 반영된 영어판(스탈린 저작집 제14권)이다.",
+    "en": "Complete Korean translation of the 1936 Soviet Constitution (the \"Stalin Constitution\"), adopted by the Extraordinary 8th Congress of Soviets on December 5, 1936. Its 13 chapters and 146 articles define the social and state structure, organs of power, citizens' rights and duties, and the electoral system. Translated from the English text incorporating amendments through the 8th session of the Supreme Soviet (Stalin, Works, Vol. 14)."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "Конституция СССР 1936 года. 영어판: Constitution (Fundamental Law) of the U.S.S.R., J. V. Stalin, Works, Vol. 14 (Red Star Press, London, 1978), marxists.org 수록본",
+   "people": [
+    "stalin"
+   ],
+   "terms": [
+    "soviet-constitution"
+   ],
+   "events": [],
+   "addedAt": "2026-07-29",
+   "aliases": {
+    "ko": [
+     "1936년 소련 헌법 전문",
+     "스탈린 헌법 전문",
+     "1936년 헌법",
+     "스탈린 헌법",
+     "1936년 소련 헌법",
+     "1936년 소비에트 헌법",
+     "승리한 사회주의의 헌법"
+    ],
+    "en": [
+     "full text of the 1936 Soviet Constitution",
+     "1936 Constitution",
+     "Stalin Constitution",
+     "Stalin's Constitution",
+     "USSR Constitution of 1936",
+     "Constitution of Victorious Socialism"
+    ]
+   }
+  },
+  {
+   "id": "nkvd-1937-documents",
+   "file": "nkvd-1937-documents.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "1937년 소련 당·국가 문서 2건 한국어 번역",
+    "en": "Two Soviet Party and State Documents of 1937 (Korean translation)"
+   },
+   "description": {
+    "ko": "대숙청 시기 소련 당·국가 기관의 공식 문서 두 건의 한국어 전문 번역. 1937년 2~3월 당 중앙위원회 총회에서 예조프가 한 보고 속기록과, 폴란드 작전의 근거가 된 「폴란드 군사조직」 관련 NKVD 비밀서한을 담았다. 함께 배포된 작전명령들은 별도 문서에 번호순으로 수록되어 있다.",
+    "en": "Full Korean translation of two official documents produced by Soviet party and state organs during the Great Terror: the stenographic record of Yezhov's report to the February-March 1937 Central Committee plenum, and the NKVD secret letter on the “Polish Military Organization” that underpinned the Polish operation. The operational orders circulated alongside it are collected in a separate document."
+   },
+   "kind": {
+    "ko": "사료 번역",
+    "en": "Primary source"
+   },
+   "source": "Архів Управління МВС України Харківської області. Колекція документів. 수록본: Полянский А. И. Ежов. История «железного» сталинского наркома. — М.: Вече, АРИА-АиФ, 2001. — (Особый архив)",
+   "people": [
+    "yezhov"
+   ],
+   "terms": [
+    "yezhovshchina",
+    "national-operations-nkvd",
+    "nkvd-first-category",
+    "nkvd-order-00447"
+   ],
+   "events": [
+    "great-terror"
+   ],
+   "aliases": {
+    "ko": [
+     "「폴란드 군사조직(ПОВ)」에 관한 NKVD 비밀서한",
+     "「폴란드 군사조직」 비밀서한"
+    ],
+    "en": [
+     "NKVD secret letter on the Polish Military Organization"
+    ]
+   },
+   "addedAt": "2026-07-31"
+  },
+  {
+   "id": "nkvd-operational-orders",
+   "file": "nkvd-operational-orders.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "NKVD 작전명령 한국어 번역",
+    "en": "NKVD Operational Orders (Korean translation)"
+   },
+   "description": {
+    "ko": "1937~1938년 대숙청을 집행한 내무인민위원부(NKVD) 작전 지시 여덟 건을 발신일순으로 모은 전문 번역. 제00439호(독일)·제00485호(폴란드)·제00593호(하얼빈 귀환자)·제49990호(라트비아)·제50215호(그리스)는 국적과 출신을 표적으로 삼은 「민족 작전」을, 제00447호는 공화국·주별 처형·수감 배정을 동반한 대량 작전을, 제00486호는 유죄 판결자의 아내와 자녀 처리를, 제00606호는 그 사건들을 심사할 특별 트로이카 설치를 규정한다. 배정표의 수치는 원본 그대로다.",
+    "en": "Full Korean translation of eight NKVD operational orders and directives of 1937-38, in order of issue. Nos. 00439 (German), 00485 (Polish), 00593 (Harbin returnees), 49990 (Latvian) and 50215 (Greek) opened the national operations; No. 00447 launched the mass operation with per-republic execution and camp quotas; No. 00486 governed the wives and children of the convicted; No. 00606 set up the special troikas that judged the resulting cases. The quota figures are carried over from the source unchanged."
+   },
+   "kind": {
+    "ko": "사료 번역",
+    "en": "Primary source"
+   },
+   "source": "Оперативные приказы и директивы НКВД СССР № 00439 (25.07.1937), № 00447 (30.07.1937), № 00485 (11.08.1937), № 00486 (15.08.1937), № 00593 (20.09.1937), № 49990 (30.11.1937), № 50215 (11.12.1937), № 00606 (17.09.1938). 전사(轉寫): ru.wikisource.org (00439·00447·00485·00593), stalinism.ru (00606); 00486 — Архів Управління МВС України Харківської області; 49990 — РГАНИ. Ф. 6. Оп. 13. Д. 4. Л. 1–2; 50215 — ЦХСД. Комиссия Шверника. Д. 4. Л. 4–6, публ.: В. М. Нікольський, «Як починалася „грецька операція“» // Історичні і політологічні дослідження. 2008. № 1/2",
+   "people": [
+    "yezhov"
+   ],
+   "terms": [
+    "nkvd-order-00447",
+    "national-operations-nkvd",
+    "nkvd-first-category",
+    "troika",
+    "yezhovshchina"
+   ],
+   "events": [
+    "great-terror"
+   ],
+   "aliases": {
+    "ko": [
+     "「NKVD 작전명령 제00439호」",
+     "「NKVD 작전명령 제00447호」",
+     "「NKVD 작전명령 제00485호」",
+     "「NKVD 작전명령 제00486호」",
+     "「NKVD 작전명령 제00593호」",
+     "「NKVD 작전명령 제00606호」",
+     "「NKVD 지령 제49990호」",
+     "「NKVD 지령 제50215호」",
+     "NKVD 작전명령들"
+    ],
+    "en": [
+     "NKVD Operational Order No. 00439",
+     "NKVD Operational Order No. 00447",
+     "NKVD Operational Order No. 00485",
+     "NKVD Operational Order No. 00486",
+     "NKVD Operational Order No. 00593",
+     "NKVD Operational Order No. 00606",
+     "NKVD Directive No. 49990",
+     "NKVD Directive No. 50215"
+    ]
+   },
+   "addedAt": "2026-07-31"
+  },
+  {
+   "id": "stalin-dialectical-historical-materialism",
+   "file": "stalin-dialectical-historical-materialism.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "스탈린, 「변증법적 유물론과 사적 유물론」 한국어 번역",
+    "en": "Stalin, Dialectical and Historical Materialism (Korean translation)"
+   },
+   "description": {
+    "ko": "스탈린이 1938년 9월 『전연방공산당(볼셰비키) 역사 소교정』 제4장 2절로 발표한 이론 논문의 한국어 완역. 마르크스주의 변증법적 방법의 네 가지 특징과 철학적 유물론의 세 가지 특징을 서술한 뒤, 생산양식과 생산력·생산관계를 축으로 사적 유물론을 체계화한다. 이후 소련과 각국 공산당의 표준 철학 교재가 된 문헌이다.",
+    "en": "Complete Korean translation of Stalin's September 1938 essay, published as Chapter 4, Section 2 of the Short Course history of the CPSU(B). It sets out four features of the Marxist dialectical method and three of philosophical materialism, then systematizes historical materialism around the mode of production. The text became the standard philosophical primer of the Soviet era."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "И. В. Сталин, «О диалектическом и историческом материализме» (1938). 영어판: J. V. Stalin, Dialectical and Historical Materialism, History of the CPSU(B): Short Course, ch. 4, sec. 2; marxists.org 수록본",
+   "people": [
+    "stalin",
+    "karl-marx",
+    "friedrich-engels",
+    "lenin"
+   ],
+   "terms": [
+    "dialectical-materialism",
+    "historical-materialism"
+   ],
+   "events": [],
+   "addedAt": "2026-07-29",
+   "aliases": {
+    "ko": [
+     "「변증법적 유물론과 사적 유물론」",
+     "『변증법적 유물론과 사적 유물론』"
+    ],
+    "en": [
+     "Dialectical and Historical Materialism"
+    ]
+   }
+  },
+  {
+   "id": "1977-soviet-constitution",
+   "file": "1977-soviet-constitution.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "1977년 소련 헌법 한국어 번역",
+    "en": "The 1977 Constitution of the USSR (Korean translation)"
+   },
+   "description": {
+    "ko": "1977년 10월 7일 소련 최고소비에트 비상회기가 채택한 소련 헌법(통칭 '브레즈네프 헌법')의 전문 한국어 번역. '발전된 사회주의 사회'를 선언하는 전문과 9부 21장 174개 조문으로 사회 제도, 공민의 권리와 의무, 민족·국가 구조, 인민대의원 소비에트, 최고 국가기관, 사법·검찰, 국가 상징을 규정하며, 제6조는 소련공산당을 사회의 지도적·향도적 힘으로 명문화한다. 번역 저본은 1977년 채택 당시의 러시아어 원문이다.",
+    "en": "Complete Korean translation of the Soviet Constitution adopted at an extraordinary session of the USSR Supreme Soviet on October 7, 1977 (the \"Brezhnev Constitution\"). A preamble proclaiming developed socialist society is followed by 174 articles in nine parts and 21 chapters covering the social system, citizens' rights and duties, the national-state structure, the Soviets of People's Deputies, the highest organs of state, justice and the procuracy, and state symbols; Article 6 enshrines the CPSU as the leading and guiding force of society. Translated from the Russian text as adopted in 1977."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "Конституция (Основной Закон) СССР, принята на внеочередной седьмой сессии Верховного Совета СССР девятого созыва 7 октября 1977 г. «Ведомости Верховного Совета СССР», 1977, № 41, ст. 617; ru.wikisource.org 전사",
+   "people": [
+    "brezhnev"
+   ],
+   "terms": [
+    "soviet-constitution",
+    "developed-socialism",
+    "all-peoples-state"
+   ],
+   "events": [],
+   "addedAt": "2026-08-02",
+   "aliases": {
+    "ko": [
+     "1977년 소련 헌법 전문",
+     "브레즈네프 헌법 전문",
+     "1977년 헌법",
+     "브레즈네프 헌법",
+     "1977년 소련 헌법"
+    ],
+    "en": [
+     "full text of the 1977 Soviet Constitution",
+     "1977 Constitution",
+     "1977 Soviet Constitution",
+     "Brezhnev Constitution"
+    ]
+   }
+  },
+  {
+   "id": "gorbachev-un-speech-1988",
+   "file": "gorbachev-un-speech-1988.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "고르바초프, 1988년 유엔 총회 연설 한국어 번역",
+    "en": "Gorbachev's Address to the UN General Assembly (1988): Korean Translation"
+   },
+   "description": {
+    "ko": "1988년 12월 7일 고르바초프가 유엔 총회에서 한 연설의 전문 번역. 전인류적 가치의 우선, 선택의 자유, 탈이데올로기화 등 신사고의 원칙을 집대성하고, 병력 50만 일방 감축과 동유럽 주둔군 축소를 선언해 냉전 종식의 이정표가 된 문서다. 유엔 공식 속기록(A/43/PV.72)의 영어본을 저본으로 옮겼다.",
+    "en": "A full translation of Gorbachev's address to the UN General Assembly on 7 December 1988: the summa of the New Thinking, from the primacy of universal human values to freedom of choice and de-ideologization, and the announcement of a unilateral cut of 500,000 troops that became a milestone of the Cold War's end. Translated from the English of the UN provisional verbatim record (A/43/PV.72)."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "Address by Mikhail Gorbachev, General Secretary of the CPSU Central Committee, at the 43rd session of the UN General Assembly, New York, 7 December 1988. UN provisional verbatim record A/43/PV.72 영어본을 저본으로 하고 당시 소련 관영 통신 배포 영역본을 대조",
+   "people": [
+    "gorbachev"
+   ],
+   "terms": [
+    "new-political-thinking",
+    "perestroika",
+    "glasnost"
+   ],
+   "events": [
+    "new-thinking-diplomacy",
+    "afghanistan-war"
+   ],
+   "aliases": {
+    "ko": [
+     "1988년 유엔 총회 연설",
+     "1988년 12월 유엔 연설",
+     "1988년 유엔 연설",
+     "고르바초프의 유엔 연설"
+    ],
+    "en": [
+     "1988 UN address",
+     "December 1988 UN address",
+     "Gorbachev's UN address"
+    ]
+   },
+   "addedAt": "2026-08-04"
+  },
+  {
+   "id": "yezhov-pavlyukov",
+   "file": "yezhov-pavlyukov.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "알렉세이 파블류코프, 『예조프: 전기』 한국어 번역",
+    "en": "Aleksei Pavlyukov, Yezhov: A Biography (Korean translation)"
+   },
+   "description": {
+    "ko": "알렉세이 파블류코프의 평전 『예조프: 전기』(2007)의 한국어 번역 전문. 4부 구성으로 예조프의 유년기와 제정군 복무부터 당 인사기구에서의 부상, NKVD 수장 시기, 실각과 처형까지를 다룬다.",
+    "en": "The full Korean translation of Aleksei Pavlyukov's biography Yezhov (2007), covering Yezhov's childhood and imperial army service, his rise in the party's personnel apparatus, his years as NKVD chief, and his fall and execution."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "Алексей Павлюков, Ежов. Биография (Москва: Захаров, 2007)",
+   "tocExclude": [
+    "^제\\d+장\\s"
+   ],
+   "people": [
+    "yezhov"
+   ],
+   "terms": [
+    "yezhovshchina"
+   ],
+   "events": [
+    "great-terror"
+   ],
+   "addedAt": "2026-07-23",
+   "aliases": {
+    "ko": [
+     "『예조프: 전기』"
+    ],
+    "en": [
+     "Yezhov: A Biography"
+    ]
+   }
+  }
+ ]
 }
