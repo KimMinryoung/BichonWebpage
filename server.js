@@ -177,15 +177,26 @@ app.use('/api/proxy', (req, res, next) => {
     return chatProxyLimiter(req, res, next);
 });
 
+// Fingerprints change only when a passkey is added/removed, so a short
+// session-side cache keeps the DB query off every streamed chat request.
+const FINGERPRINT_CACHE_MS = Number(process.env.FINGERPRINT_CACHE_MS || 60 * 1000);
+
 app.use('/api/proxy', async (req, res, next) => {
     if (req.session && req.session.user && req.session.user.id) {
-        req.chatAccountUserId = req.session.user.id;
-        try {
-            const { fingerprintsForUser } = require('./services/webauthn');
-            req.userFingerprints = await fingerprintsForUser(req.session.user.id);
-        } catch (err) {
-            console.error('fingerprint preload:', err.message);
-            req.userFingerprints = [];
+        const userId = req.session.user.id;
+        req.chatAccountUserId = userId;
+        const cached = req.session.fingerprintCache;
+        if (cached && cached.userId === userId && Date.now() - cached.at < FINGERPRINT_CACHE_MS) {
+            req.userFingerprints = cached.values;
+        } else {
+            try {
+                const { fingerprintsForUser } = require('./services/webauthn');
+                req.userFingerprints = await fingerprintsForUser(userId);
+                req.session.fingerprintCache = { userId, at: Date.now(), values: req.userFingerprints };
+            } catch (err) {
+                console.error('fingerprint preload:', err.message);
+                req.userFingerprints = [];
+            }
         }
     }
     next();
@@ -365,6 +376,9 @@ app.use('/api/proxy', createProxyMiddleware({
                         console.warn('[chat-proxy] downstream closed before stream completion', {
                             elapsedMs: Date.now() - startedAt,
                         });
+                        if (!proxyReq.destroyed) {
+                            proxyReq.destroy(new Error('chat client connection closed'));
+                        }
                     }
                 });
             }
