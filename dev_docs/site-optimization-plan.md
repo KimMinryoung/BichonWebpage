@@ -15,8 +15,10 @@
 > - 2026-08-04: **Phase 3 완료·배포** (커밋 8cd3aae). termPanelMemo/eventPanelMemo (personBodyMemo 패턴 + 스냅숏 ref 검사, 미지 id 미캐시), 사건 페이지 용어 풀스캔 2곳 스냅숏별 캐시, peopleShellMemo. 검증: prod/dev 14개 페이지 byte-diff 동일, 배포 후 프로드 페이지도 배포 전과 동일.
 > - 2026-08-04: **Phase 4 완료·배포** (커밋 85fbf61). GIT_SHA 캐시버스팅 검증: 재시작 후 ?v=85fbf616b5f1 유지. 국기 SVGO p0 (640→176KB, 비교 페이지로 사용자 승인). 삭제 ~1.9천 줄. **탐사 보고 정정 2건**: layouts/main.ejs는 error-page.js가 사용(유지), /reports/private 심은 실링크 존재(유지). puzzles root-소유 백업 1.35MB는 sudo 필요해서 미처리 — 사용자가 직접: `sudo rm -rf public/puzzles/.minchong-15.owner-nobody-backup`
 > - 2026-08-04: **Phase 5 완료·배포** (커밋 ef4631d, 사용자 dev-preview 승인 후). Pretendard v1.3.9 dynamic-subset(92 슬라이스) + Plex woff2 + display:swap, 매 페이지 폰트 preload 제거. 측정: 한글 용어 페이지 폰트 전송 2.77MB→624KB. 라이브에서 슬라이스 immutable + CF HIT 확인. 참고: Pretendard 업그레이드 시 dist/web/variable 슬라이스 92개 + CSS 재-vendor 필요 (family명 'Pretendard'로 sed, 경로 /fonts/pretendard/woff2-dynamic-subset/).
-> - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ✅  Phase 4: ✅  Phase 5: ✅  Phase 6: ☐  Phase 7: ☐
-> - **다음**: Phase 6 — 노노그램 인라인 CSS/JS 추출, /js/webauthn.js 공용화(admin-passkeys 스킬로 tailnet 오리진 테스트 필수, 실패 시 어드민 로그인 벽돌 위험 — 복구 절차 먼저 읽을 것), 스크립트 defer 소배치.
+> - 2026-08-04: **Phase 6 완료·배포** (커밋 dddafb9 + e16bbb9). 노노그램 35KB 인라인 → 정적 파일(HTML 1219줄→74줄), nav.js defer(39페이지 파서 차단 해제), report-view/chat/page-view의 CDN 스크립트 defer 체인(+page-view 인라인은 DOMContentLoaded로). 헤드리스로 마크다운 렌더·새니타이즈·채팅 UI·노노그램 보드 검증.
+> - **B5(WebAuthn 공용 JS)는 의도적 보류**: 실제 공유 가능 코어는 jsonFetch·취소판정 ~30줄(감사의 21KB 추정은 페이지별 로직+EJS 주입 문자열 포함). no-store 인증 페이지 몇 KB 이득 대비 어드민 잠금 리스크 큼. 재검토 시 사용자 실기기 패스키 테스트 동반 필수 (복구: scripts/reset-passkeys.js).
+> - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ✅  Phase 4: ✅  Phase 5: ✅  Phase 6: ✅  Phase 7: ☐
+> - **다음**: Phase 7 리팩토링, C5→C4→C2→C8→C3→C7→C1(+A4) 순. 전부 출력 diff 가드, 게이트 없음.
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
 
