@@ -20,7 +20,16 @@
 > - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ✅  Phase 4: ✅  Phase 5: ✅  Phase 6: ✅  Phase 7: ☐
 > - 2026-08-04: **Phase 7 진행 중** — C5(localize 9중복+renderAppView+관련문헌 매핑 통합, 14페이지 byte-diff 동일), C4(admin API 19핸들러 → h() 래퍼, 응답 형태 검증), C2(redis-json 공용화, report-cache 122→56줄), C3(entry-routes 팩토리, posts·ai-diary ~250줄 통합, C8의 catch 중복도 해소) 완료·배포 (커밋 288fb4a…3e06de7).
 > - 2026-08-04: **보너스 버그 수정**: C3 byte-diff가 잡아낸 EJS 전역 누출 — 13개 뷰의 `<% pageTitle = ... %>` bare 대입이 with() 스코프를 새어 Node 전역이 되고 404 등 이후 요청에 누출 (프로드 404가 노노그램 설명을 표시). include 인자 전달로 수리, 프로드에서 누출 소멸 확인.
-> - **Phase 7 남은 것**: C8 잔여(hub.js·reports.js catch 블록 — 소규모), C7(upstream URL 통일 조사 → config/services.js, admin.js 프록시 6중복), C1(스냅숏 스토어 팩토리, 스토어당 1커밋 + drift-check + A4는 스키마 확인 후).
+> - 2026-08-04: **Phase 7 완결 — 전체 계획 완료.** C8(hub/reports 헬퍼, 8페이지 diff 동일), C7(config/services.js + proxyLeninbot 통합, admin 302/404 클로킹 정상), C1(snapshot-store.js 팩토리 — 레지스트리 2종 + 사전형 3종 이관, 12페이지 diff 동일 + 스냅숏 md5 불변 + drift-check 통과). A4는 탈락 확정(aliases/scenes/redirects에 updated_at 없음 + DELETE+INSERT 편집이라 count 시그니처가 실변경 놓침).
+>
+> ## 최종 결과 (베이스라인 대비, 2026-08-04)
+> - 용어 페이지 warm 10~14ms → **4~8ms**, 인물 페이지 12~20ms → **5~13ms**, sitemap 17~30ms → **4ms**
+> - `commulingo_people` seq_scan 요청당 증가 → **정지** (분당 리프레시만), `people_revisions` 183k에서 **동결**
+> - 폰트: 페이지당 2.77MB → **624KB** (이후 페이지는 캐시), asset 캐시버스팅 재시작-안정화
+> - 죽은 코드/자산 ~2.3천 줄+2.6MB 제거, 중복 스캐폴드 ~1천 줄 통합 (localize 9벌, 스토어 5벌, 라우트 2벌, 핸들러 19벌…)
+> - 발견·수정한 기존 버그: EJS bare 대입 전역 누출(13뷰), maintainer 풀스캔 인덱스(마이그레이션 121), 미사용 의존성/파일
+> - 전 페이지 스윕 16라우트 200, drift-check OK, 에러 로그 없음. 총 15회 배포.
+> - 미처리 1건: `sudo rm -rf public/puzzles/.minchong-15.owner-nobody-backup` (root 소유 1.35MB 중복 — 사용자 직접)
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
 
