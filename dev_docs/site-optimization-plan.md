@@ -13,8 +13,9 @@
 > - ⚠ 확인 대기 1건: 배포 직후 pg 연결 40개(프로드+dev-preview 풀이 idle 300s 동안 유지, max_connections 100이라 여유). 5분 뒤 min 2 근처로 드레인되는지 다음 틱에서 재확인 — 안 되면 DB_IDLE_TIMEOUT_MS 120s로 축소 검토.
 > - 2026-08-04: 풀 드레인 확인 — 24개(전부 idle)로 안정. 프로드 스토어의 분당 리프레시 워킹셋이라 설계 의도대로, max_connections 100 대비 여유. 대기 항목 해소.
 > - 2026-08-04: **Phase 3 완료·배포** (커밋 8cd3aae). termPanelMemo/eventPanelMemo (personBodyMemo 패턴 + 스냅숏 ref 검사, 미지 id 미캐시), 사건 페이지 용어 풀스캔 2곳 스냅숏별 캐시, peopleShellMemo. 검증: prod/dev 14개 페이지 byte-diff 동일, 배포 후 프로드 페이지도 배포 전과 동일.
-> - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ✅  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
-> - **다음**: Phase 4 — B2(GIT_SHA 캐시버스팅)는 게이트 없음, B3(국기 SVGO)는 **사용자 시각 승인 필요** — dev-preview에 준비해 두고 승인 대기. B6+C6 삭제는 게이트 없음.
+> - 2026-08-04: **Phase 4 완료·배포** (커밋 85fbf61). GIT_SHA 캐시버스팅 검증: 재시작 후 ?v=85fbf616b5f1 유지. 국기 SVGO p0 (640→176KB, 비교 페이지로 사용자 승인). 삭제 ~1.9천 줄. **탐사 보고 정정 2건**: layouts/main.ejs는 error-page.js가 사용(유지), /reports/private 심은 실링크 존재(유지). puzzles root-소유 백업 1.35MB는 sudo 필요해서 미처리 — 사용자가 직접: `sudo rm -rf public/puzzles/.minchong-15.owner-nobody-backup`
+> - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ✅  Phase 4: ✅  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
+> - **다음**: Phase 5 폰트 — Pretendard dynamic-subset 도입 + Plex woff2 변환 + display:swap(승인됨). 완성 후 dev-preview에서 **한글 렌더링 사용자 확인** 필요.
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
 
