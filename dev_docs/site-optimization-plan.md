@@ -18,7 +18,9 @@
 > - 2026-08-04: **Phase 6 완료·배포** (커밋 dddafb9 + e16bbb9). 노노그램 35KB 인라인 → 정적 파일(HTML 1219줄→74줄), nav.js defer(39페이지 파서 차단 해제), report-view/chat/page-view의 CDN 스크립트 defer 체인(+page-view 인라인은 DOMContentLoaded로). 헤드리스로 마크다운 렌더·새니타이즈·채팅 UI·노노그램 보드 검증.
 > - **B5(WebAuthn 공용 JS)는 의도적 보류**: 실제 공유 가능 코어는 jsonFetch·취소판정 ~30줄(감사의 21KB 추정은 페이지별 로직+EJS 주입 문자열 포함). no-store 인증 페이지 몇 KB 이득 대비 어드민 잠금 리스크 큼. 재검토 시 사용자 실기기 패스키 테스트 동반 필수 (복구: scripts/reset-passkeys.js).
 > - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ✅  Phase 4: ✅  Phase 5: ✅  Phase 6: ✅  Phase 7: ☐
-> - **다음**: Phase 7 리팩토링, C5→C4→C2→C8→C3→C7→C1(+A4) 순. 전부 출력 diff 가드, 게이트 없음.
+> - 2026-08-04: **Phase 7 진행 중** — C5(localize 9중복+renderAppView+관련문헌 매핑 통합, 14페이지 byte-diff 동일), C4(admin API 19핸들러 → h() 래퍼, 응답 형태 검증), C2(redis-json 공용화, report-cache 122→56줄), C3(entry-routes 팩토리, posts·ai-diary ~250줄 통합, C8의 catch 중복도 해소) 완료·배포 (커밋 288fb4a…3e06de7).
+> - 2026-08-04: **보너스 버그 수정**: C3 byte-diff가 잡아낸 EJS 전역 누출 — 13개 뷰의 `<% pageTitle = ... %>` bare 대입이 with() 스코프를 새어 Node 전역이 되고 404 등 이후 요청에 누출 (프로드 404가 노노그램 설명을 표시). include 인자 전달로 수리, 프로드에서 누출 소멸 확인.
+> - **Phase 7 남은 것**: C8 잔여(hub.js·reports.js catch 블록 — 소규모), C7(upstream URL 통일 조사 → config/services.js, admin.js 프록시 6중복), C1(스냅숏 스토어 팩토리, 스토어당 1커밋 + drift-check + A4는 스키마 확인 후).
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
 
