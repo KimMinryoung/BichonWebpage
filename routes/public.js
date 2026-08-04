@@ -15,23 +15,12 @@ const errorPage = require('../utils/error-page');
 const { sanitizePost } = require('../utils/sanitize');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 const { loadRecentCommuLingoItems } = require('../services/commulingo-updates');
+const { createEntryRoutes, localizedEntry: localizedRecord } = require('./entry-routes');
 
 const POSTS_PER_PAGE = 20;
 
 const RECENT_LIMIT = 4;
 
-function localizedRecord(row, lang) {
-    if (!row || lang !== 'en') return row;
-    const titleEn = row.title_en && row.title_en.trim();
-    const contentEn = row.content_en && row.content_en.trim();
-    return {
-        ...row,
-        title: titleEn || row.title,
-        content: contentEn || row.content,
-        language: titleEn || contentEn ? 'en' : 'ko',
-        has_translation: Boolean(titleEn || contentEn),
-    };
-}
 
 async function loadRecentReportItems(lang) {
     const [researchResult, pagesResult] = await Promise.allSettled([
@@ -119,57 +108,26 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Posts list with pagination
-router.get('/posts', async (req, res) => {
-    try {
-        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        const currentPage = parseInt(req.query.page, 10) || 1;
-
-        const cached = await cache.getIndexPage(currentPage, lang);
-        if (cached) {
-            return res.render('public/posts', {
-                ...cached,
-                pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts',
-                pageTitle: res.locals.strings.nav.bichonPosts,
-                pageDescription: res.locals.strings.home.postsDesc,
-                jsonLd: seo.itemListJsonLd((cached.posts || []).map(post => ({ title: post.title, href: `/post/${post.id}` }))),
-            });
-        }
-
-        const offset = (currentPage - 1) * POSTS_PER_PAGE;
-        const { rows } = await db.query(
-            'SELECT id, title, content, title_en, content_en, created_at, COUNT(*) OVER() AS total_count FROM posts ORDER BY created_at DESC LIMIT $1 OFFSET $2',
-            [POSTS_PER_PAGE, offset]
-        );
-
-        const totalPosts = rows.length > 0 ? parseInt(rows[0].total_count) : 0;
-        const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
-        const posts = rows.map(({ total_count, ...post }) => localizedRecord(post, lang));
-
-        await Promise.all(posts.map(p => cache.setEntry(p, lang)));
-
-        const pageData = { posts, currentPage, totalPages, paginationBase: '/posts?page=', pagePath: currentPage > 1 ? `/posts?page=${currentPage}` : '/posts' };
-
-        await cache.setIndexPage(currentPage, pageData, lang);
-
-        res.render('public/posts', {
-            ...pageData,
-            pageTitle: res.locals.strings.nav.bichonPosts,
-            pageDescription: res.locals.strings.home.postsDesc,
-            jsonLd: seo.itemListJsonLd(posts.map(post => ({ title: post.title, href: `/post/${post.id}` }))),
-        });
-    } catch (error) {
-        console.error('Error fetching posts:', error);
-        res.render('public/posts', {
-            posts: [],
-            currentPage: 1,
-            totalPages: 0,
-            pageTitle: res.locals.strings.nav.bichonPosts,
-            pageDescription: res.locals.strings.home.postsDesc,
-            pagePath: '/posts',
-        });
-    }
+// Posts list + detail, built from the shared entry-routes factory (the
+// ai-diary router is the same pipeline with different names).
+const postRoutes = createEntryRoutes({
+    table: 'posts',
+    cache,
+    perPage: POSTS_PER_PAGE,
+    listView: 'public/posts',
+    listKey: 'posts',
+    listBasePath: '/posts',
+    detailView: 'public/post',
+    detailKey: 'post',
+    detailPathPrefix: '/post/',
+    listTitle: res => res.locals.strings.nav.bichonPosts,
+    listDescription: res => res.locals.strings.home.postsDesc,
+    sanitize: sanitizePost,
+    authorName: 'Bichon',
+    logLabel: 'posts',
 });
+
+router.get('/posts', postRoutes.list);
 
 // Chat page
 router.get('/chat', (req, res) => {
@@ -181,72 +139,7 @@ router.get('/chat', (req, res) => {
     });
 });
 
-// Single post view
-router.get('/post/:id', async (req, res) => {
-    try {
-        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        const id = parseInt(req.params.id);
-
-        // Check entry cache
-        let post = await cache.getEntry(id, lang);
-        if (!post) {
-            const { rows: posts } = await db.query(
-                'SELECT * FROM posts WHERE id = $1', [id]
-            );
-
-            if (posts.length === 0) {
-                return errorPage.notFound(res);
-            }
-
-            post = localizedRecord(posts[0], lang);
-            await cache.setEntry(post, lang);
-        }
-
-        // prev/next navigation from cached sorted ID list
-        let nav = await cache.getNav();
-        if (!nav) {
-            const { rows } = await db.query('SELECT id FROM posts ORDER BY created_at DESC');
-            nav = rows.map(r => r.id);
-            await cache.setNav(nav);
-        }
-        const idx = nav.indexOf(id);
-        const prevId = idx >= 0 && idx < nav.length - 1 ? nav[idx + 1] : null;
-        const nextId = idx > 0 ? nav[idx - 1] : null;
-
-        // CommuLingo entity links (inline only — posts stay out of the
-        // reverse report-mentions index). Failure only costs the links.
-        let contentHtml = sanitizePost(post.content || '').replace(/\n/g, '<br>');
-        try {
-            contentHtml = linkifyReportHtml(contentHtml, await getReportLinkContext(lang)).html;
-        } catch (e) {
-            console.error('post entity links:', e);
-        }
-
-        const plainText = seo.excerpt(post.content, 160);
-        res.render('public/post', {
-            post,
-            contentHtml,
-            prevId,
-            nextId,
-            pageTitle: post.title,
-            pageDescription: plainText,
-            pagePath: `/post/${post.id}`,
-            ogType: 'article',
-            jsonLd: seo.pageJsonLd({
-                type: 'BlogPosting',
-                title: post.title,
-                description: plainText,
-                path: `/post/${post.id}`,
-                datePublished: post.created_at,
-                dateModified: post.updated_at || post.created_at,
-                authorName: 'Bichon',
-            }),
-        });
-    } catch (error) {
-        console.error('Error fetching post:', error);
-        errorPage.serverError(res);
-    }
-});
+router.get('/post/:id', postRoutes.detail);
 
 // Public novel pages, backed by the writer API. Reachable only by direct URL:
 // intentionally absent from nav, sitemap, and feeds, and served with noindex —
