@@ -2,8 +2,9 @@
 
 > **Progress log** (update after each phase; next session starts here)
 > - 2026-08-04: Plan approved by user. Decisions: deep refactors included (gradual), `font-display: swap` approved, pg_stat_statements skipped (no pg restart).
-> - 2026-08-04: Phase 0 baseline recorded (see below). **Next: Phase 1.**
-> - Phase 0: ✅  Phase 1: ☐  Phase 2: ☐  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
+> - 2026-08-04: Phase 0 baseline recorded (see below). **Next: Phase 1 나머지.**
+> - 2026-08-04: Phase 1 부분 완료 — A1 (recentDictionaryItems 60s memo, `services/commulingo-updates.js`) + B8 (`/flags/` in isStaticAssetPath, `server.js`) 커밋됨, dev-preview 검증 완료 (홈 200 + recent 섹션 렌더, flags 200 svg). **아직 배포 안 함.** 남은 것: A9 (passkey 세션 캐시 + chat proxy destroy + chat.js AbortController), A6-lite (sitemap/rss/atom Redis 캐시), A7-safe (listPagesLite), 그리고 신규 발견 `commulingo_people_revisions` 183k seq_scan 조사. 전부 끝나면 deploy #1.
+> - Phase 0: ✅  Phase 1: ◐  Phase 2: ☐  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
 

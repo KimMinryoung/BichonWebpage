@@ -101,13 +101,31 @@ async function recentDictionaryItems(lang, limit) {
     return rows.map(row => dictionaryItem(row, lang)).slice(0, limit);
 }
 
+// The UNION ALL scan below reads every dictionary row; without this memo it ran
+// on every homepage request (44k+ seq scans of commulingo_people observed).
+const DICTIONARY_MEMO_MS = Number(process.env.COMMULINGO_UPDATES_CACHE_MS || 60 * 1000);
+const dictionaryMemo = new Map();
+
+function recentDictionaryItemsCached(lang, limit) {
+    const key = `${lang}:${limit}`;
+    const cached = dictionaryMemo.get(key);
+    if (cached && Date.now() - cached.at < DICTIONARY_MEMO_MS) return cached.promise;
+    const promise = recentDictionaryItems(lang, limit);
+    dictionaryMemo.set(key, { at: Date.now(), promise });
+    promise.catch(() => {
+        const current = dictionaryMemo.get(key);
+        if (current && current.promise === promise) dictionaryMemo.delete(key);
+    });
+    return promise;
+}
+
 async function loadRecentCommuLingoItems(lang = 'ko', limit = 5) {
     const safeLang = lang === 'en' ? 'en' : 'ko';
     const courseLimit = Math.min(1, limit);
     const dictionaryLimit = Math.min(2, Math.max(0, limit - courseLimit));
     const docsLimit = Math.max(0, limit - courseLimit - dictionaryLimit);
     const [dictionaryResult, docsResult, courseResult] = await Promise.allSettled([
-        recentDictionaryItems(safeLang, dictionaryLimit),
+        recentDictionaryItemsCached(safeLang, dictionaryLimit),
         Promise.resolve().then(() => recentDocs(safeLang, docsLimit)),
         Promise.resolve().then(() => recentCourse(safeLang)),
     ]);
