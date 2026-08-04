@@ -3,8 +3,10 @@
 <head>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/report.css?v=<%= assetVersion %>">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <%# defer chain: marked → dompurify → report-view.js run in document order
+        after parse, so the guard in report-view.js always sees both libs. %>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" defer></script>
 </head>
 <body>
     <%- include('../partials/nav') %>
@@ -43,6 +45,6 @@
     </div>
 
     <%- include('../partials/footer') %>
-    <script src="/js/report-view.js?v=<%= assetVersion %>"></script>
+    <script src="/js/report-view.js?v=<%= assetVersion %>" defer></script>
 </body>
 </html>
