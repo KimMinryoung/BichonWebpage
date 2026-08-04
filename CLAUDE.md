@@ -42,7 +42,7 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 - If recent posts/reports/hub/diary suddenly render as empty, check `docker logs leninbot-frontend` for connection errors to `:5432`, confirm `leninbot-pg` is healthy (`docker ps`), and confirm both containers share `leninbot_default` (`docker network connect leninbot_default leninbot-frontend` if missing). Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content again.
 
 ### CSS / Mobile
-- CSS cache busting is active: `?v=<%= Date.now() %>` in head.ejs
+- CSS cache busting is active: `?v=<%= assetVersion %>` in head.ejs — `ASSET_VERSION` env → `GIT_SHA` (baked in by `scripts/deploy` at image build) → boot-time `Date.now()` fallback. Asset URLs therefore stay stable across restarts of the same revision.
 - Use `dvh` units instead of `vh` for mobile viewport height
 - Test mobile via Tailscale: production container binds to `127.0.0.1:3000` (not LAN-reachable), so use `cyber-lenin.com` (live) or run `scripts/dev-preview start` for a bind-mounted preview on `<tailscale-ip>:3001`.
 - The dev preview container is `leninbot-frontend-dev`; use `scripts/dev-preview stop|restart|status|logs`. It sets `DEV_MODE=1`, disables view/static asset caching, and publishes only to the Tailscale interface.

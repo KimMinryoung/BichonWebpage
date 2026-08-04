@@ -4,7 +4,6 @@ const fs = require('fs');
 const router = express.Router();
 const db = require('../config/database');
 const redis = require('../config/redis');
-const paginationHelper = require('../config/paginationHelper');
 const cache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');

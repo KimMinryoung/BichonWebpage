@@ -100,6 +100,7 @@ fi
 log "Building Docker image..."
 docker build \
     --label "$REVISION_LABEL=$LOCAL" \
+    --build-arg "GIT_SHA=${LOCAL:0:12}" \
     -t "$IMAGE_NAME" .
 
 # 3. Recreate container
