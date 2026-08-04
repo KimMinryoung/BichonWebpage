@@ -5,6 +5,8 @@
 > - 2026-08-04: Phase 0 baseline recorded (see below). **Next: Phase 1 나머지.**
 > - 2026-08-04: Phase 1 부분 완료 — A1 (recentDictionaryItems 60s memo, `services/commulingo-updates.js`) + B8 (`/flags/` in isStaticAssetPath, `server.js`) 커밋됨, dev-preview 검증 완료 (홈 200 + recent 섹션 렌더, flags 200 svg). **아직 배포 안 함.** 남은 것: A9 (passkey 세션 캐시 + chat proxy destroy + chat.js AbortController), A6-lite (sitemap/rss/atom Redis 캐시), A7-safe (listPagesLite), 그리고 신규 발견 `commulingo_people_revisions` 183k seq_scan 조사. 전부 끝나면 deploy #1.
 > - 2026-08-04: A9 서버 측 완료 — chat 프록시 res close 시 `proxyReq.destroy()` (writer 브랜치와 대칭), passkey fingerprint 60초 세션 캐시 (`server.js`). dev-preview 스모크 통과 (home/chat/flags 200). **A9 클라이언트 측(chat.js AbortController + reader.cancel, `public/js/chat.js:820-827`)은 미착수** — stop/regenerate 수동 테스트 필요해서 다음 세션으로. 커밋됨, 미배포. deploy #1 전 검증 항목: 채팅 스트리밍 + 중간 탭 닫기, sitemap 동일 출력, 홈 HTML 동일.
+> - 2026-08-04: A6-lite 완료 — sitemap/rss/atom XML을 Redis 600초 캐시(`cachedXml`, `routes/public.js`; 피드는 lang별 키, sitemap은 단일 키 — 출력에 lang 의존 없음 확인). dev-preview 검증: sitemap 160ms→2.8ms, 출력 byte-identical, rss/atom 200 + 올바른 content-type. 커밋됨, 미배포.
+> - **Phase 1 남은 것**: A7-safe (`listPagesLite`), A9 클라이언트 측 (chat.js AbortController), `commulingo_people_revisions` 183k seq_scan 조사 → 끝나면 deploy #1 (검증: 채팅 스트리밍+탭닫기, 홈 HTML 동일, seq_scan 증가 중단 확인)
 > - Phase 0: ✅  Phase 1: ◐  Phase 2: ☐  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)

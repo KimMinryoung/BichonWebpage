@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const router = express.Router();
 const db = require('../config/database');
+const redis = require('../config/redis');
 const paginationHelper = require('../config/paginationHelper');
 const cache = require('../config/post-cache');
 const diaryCache = require('../config/diary-cache');
@@ -394,9 +395,40 @@ async function getFeedItems(limit = 40) {
         .slice(0, limit);
 }
 
+// sitemap/rss/atom are pure functions of published content; crawlers hit them
+// often and each build runs several unbounded queries, so cache the XML string.
+const XML_CACHE_TTL_SECONDS = Number(process.env.FEED_CACHE_TTL_SECONDS || 600);
+
+async function cachedXml(key, build) {
+    try {
+        if (redis.isReady) {
+            const hit = await redis.get(key);
+            if (hit) return hit;
+        }
+    } catch (err) {
+        console.warn('[xml-cache] read failed:', err.message);
+    }
+    const xml = await build();
+    try {
+        if (redis.isReady && xml) await redis.set(key, xml, { EX: XML_CACHE_TTL_SECONDS });
+    } catch (err) {
+        console.warn('[xml-cache] write failed:', err.message);
+    }
+    return xml;
+}
+
 // sitemap.xml
 router.get('/sitemap.xml', async (req, res) => {
     try {
+        const xml = await cachedXml('xmlcache:sitemap', () => buildSitemapXml());
+        res.type('application/xml').send(xml);
+    } catch (error) {
+        console.error('Sitemap error:', error);
+        res.status(500).send('');
+    }
+});
+
+async function buildSitemapXml() {
         const [postsResult, diariesResult, researchResult, pagesResult, hubResult] = await Promise.allSettled([
             db.query('SELECT id, created_at, updated_at FROM posts ORDER BY created_at DESC'),
             db.query('SELECT id, created_at, updated_at FROM ai_diary ORDER BY created_at DESC'),
@@ -431,12 +463,8 @@ router.get('/sitemap.xml', async (req, res) => {
         for (const p of pagesList) xml += url(`/p/${encodeURIComponent(p.slug)}`, p.updated_at || null, '0.6');
         for (const item of hubItems) xml += url(`/hub/${encodeURIComponent(item.slug)}`, item.published_at || null, '0.6');
         xml += '</urlset>';
-        res.type('application/xml').send(xml);
-    } catch (error) {
-        console.error('Sitemap error:', error);
-        res.status(500).send('');
-    }
-});
+        return xml;
+}
 
 router.get('/llms.txt', (req, res) => {
     res.type('text/plain; charset=utf-8').send(
@@ -510,6 +538,15 @@ router.get('/hub.md', async (req, res) => {
 
 router.get('/atom.xml', async (req, res) => {
     try {
+        const xml = await cachedXml(`xmlcache:atom:${res.locals.lang}`, () => buildAtomXml(res.locals.strings.siteDescription));
+        res.type('application/atom+xml').send(xml);
+    } catch (error) {
+        console.error('Atom feed error:', error);
+        res.status(500).send('');
+    }
+});
+
+async function buildAtomXml(siteDescription) {
         const items = await getFeedItems();
         const updated = items.length > 0 ? new Date(items[0].date || Date.now()).toISOString() : new Date().toISOString();
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -519,7 +556,7 @@ router.get('/atom.xml', async (req, res) => {
         xml += `  <link href="${seo.escapeXml(seo.absoluteUrl('/atom.xml'))}" rel="self"/>\n`;
         xml += `  <id>${seo.escapeXml(seo.absoluteUrl('/'))}</id>\n`;
         xml += `  <updated>${updated}</updated>\n`;
-        xml += `  <subtitle>${seo.escapeXml(res.locals.strings.siteDescription)}</subtitle>\n`;
+        xml += `  <subtitle>${seo.escapeXml(siteDescription)}</subtitle>\n`;
         for (const item of items) {
             const url = seo.absoluteUrl(item.href);
             const date = item.date ? new Date(item.date).toISOString() : updated;
@@ -533,15 +570,20 @@ router.get('/atom.xml', async (req, res) => {
             xml += '  </entry>\n';
         }
         xml += '</feed>';
-        res.type('application/atom+xml').send(xml);
+        return xml;
+}
+
+router.get('/rss.xml', async (req, res) => {
+    try {
+        const xml = await cachedXml(`xmlcache:rss:${res.locals.lang}`, () => buildRssXml(res.locals.strings.siteDescription));
+        res.type('application/rss+xml').send(xml);
     } catch (error) {
-        console.error('Atom feed error:', error);
+        console.error('RSS feed error:', error);
         res.status(500).send('');
     }
 });
 
-router.get('/rss.xml', async (req, res) => {
-    try {
+async function buildRssXml(siteDescription) {
         const items = await getFeedItems();
         const updated = items.length > 0 ? new Date(items[0].date || Date.now()) : new Date();
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -550,7 +592,7 @@ router.get('/rss.xml', async (req, res) => {
         xml += '    <title>Cyber-Lenin</title>\n';
         xml += `    <link>${seo.escapeXml(seo.absoluteUrl('/'))}</link>\n`;
         xml += `    <atom:link href="${seo.escapeXml(seo.absoluteUrl('/rss.xml'))}" rel="self" type="application/rss+xml"/>\n`;
-        xml += `    <description>${seo.escapeXml(res.locals.strings.siteDescription)}</description>\n`;
+        xml += `    <description>${seo.escapeXml(siteDescription)}</description>\n`;
         xml += `    <lastBuildDate>${updated.toUTCString()}</lastBuildDate>\n`;
         xml += '    <language>ko</language>\n';
         for (const item of items) {
@@ -567,12 +609,8 @@ router.get('/rss.xml', async (req, res) => {
         }
         xml += '  </channel>\n';
         xml += '</rss>';
-        res.type('application/rss+xml').send(xml);
-    } catch (error) {
-        console.error('RSS feed error:', error);
-        res.status(500).send('');
-    }
-});
+        return xml;
+}
 
 // Standalone HTML embeds used inside post iframes (served with relaxed CSP)
 router.get('/posts-embed/:filename', (req, res) => {
