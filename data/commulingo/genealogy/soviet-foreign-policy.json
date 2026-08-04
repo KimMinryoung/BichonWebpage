@@ -150,7 +150,7 @@
       "year": 1945,
       "period": "1945",
       "label": { "ko": "얄타와 포츠담: 초강대국의 탄생", "en": "Yalta and Potsdam: a superpower is born" },
-      "ref": { "type": "event", "id": "great-patriotic-war" },
+      "ref": { "type": "event", "id": "yalta-potsdam" },
       "note": { "ko": "전승국 소련은 유럽의 절반에 대한 영향권과 안보리 상임이사국 지위를 얻었다. 이후 반세기 소련 외교의 자산이자 부담", "en": "Victory brought half of Europe as a sphere and a permanent Security Council seat: the asset and burden of the next half-century" }
     },
     {
