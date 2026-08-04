@@ -9,7 +9,9 @@
 > - 2026-08-04: **deploy #1 실행 완료** (커밋 1c673e0, 사용자 지시로 부분 상태에서 조기 배포). 프로덕션 검증: 홈 10회 히트에 `commulingo_people` seq_scan delta=0 (A1 작동), 전 페이지 200, sitemap 2.4ms 캐시 적중, flags 정상, 로그 에러 없음, cyber-lenin.com 200 + recent 섹션 렌더.
 > - 2026-08-04: **Phase 1 완료.** (1) `people_revisions` 183k seq_scan 원인 규명 — leninbot maintainer의 인물별 상관 서브쿼리(`entity_id LIKE p.id||'/%'` + `changed_by LIKE`)가 기존 인덱스를 못 타서 폴마다 ~1,284회 풀스캔. `entity_id text_pattern_ops` 인덱스 추가(마이그레이션 121, 프로덕션 적용·EXPLAIN 검증 2.3ms→0.4ms). (2) A7: `listPages`에서 TOAST된 html_body 컬럼 제거, has_en_body SQL 플래그로 대체 — 전 14페이지 구/신 플래그 동등성 확인, dev-preview에서 /reports·/p/* 200. (3) A9 클라이언트 측은 **불필요 판정**: 스트리밍 중 `busy` 가드가 새 대화/재전송을 차단하고, 탭 닫기는 브라우저가 fetch를 자동 중단 → 배포된 서버 측 `proxyReq.destroy()`가 업스트림 정리. AbortController를 넣어도 실행 경로가 없음.
 > - 남은 실사용 확인 1건: 채팅 스트리밍 + 중간 탭 닫기 (서버 측 destroy 검증). 사용자 채팅 사용 시 자연 확인됨.
-> - Phase 0: ✅  Phase 1: ◐  Phase 2: ☐  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
+> - 2026-08-04: **Phase 2 완료·배포** (커밋 2b49d2f). report-mentions 빌드를 문서 단위 setImmediate 양보로 변경 — 리빌드 중 최악 지연 3.2s→0.43s (dev-preview 부하 측정). 스토어 5곳 타이머 지터, 풀 min 2 + idle 300s, genealogy/docs/catalog 500ms stat 디바운스 (계보도 touch 후 리로드 정상 확인). 배포 후 전 페이지 200.
+> - ⚠ 확인 대기 1건: 배포 직후 pg 연결 40개(프로드+dev-preview 풀이 idle 300s 동안 유지, max_connections 100이라 여유). 5분 뒤 min 2 근처로 드레인되는지 다음 틱에서 재확인 — 안 되면 DB_IDLE_TIMEOUT_MS 120s로 축소 검토.
+> - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
 
