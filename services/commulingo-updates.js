@@ -1,6 +1,7 @@
 const db = require('../config/database');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
+const { localize } = require('../data/commulingo/localize');
 
 const TYPE_LABELS = {
     ko: { person: '인물', event: '사건', term: '용어', doc: '참고 문헌', course: '학습 콘텐츠' },
@@ -14,12 +15,6 @@ const TYPE_PATHS = {
     doc: '/commulingo/docs/',
     course: '/commulingo/book/',
 };
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
-}
 
 function dictionaryItem(row, lang) {
     const localized = (ko, en) => lang === 'en' ? (en || ko) : (ko || en);

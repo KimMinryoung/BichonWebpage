@@ -4,6 +4,7 @@ const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent } = requir
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
+const { localize } = require('../data/commulingo/localize');
 
 const router = express.Router();
 
@@ -72,12 +73,6 @@ async function linkDocHtml(content, docId, lang, key, html) {
         entry.byKey.set(memoKey, out);
     }
     return out;
-}
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
 }
 
 // Group the flat heading list into parts (h1) with their chapters (h2).

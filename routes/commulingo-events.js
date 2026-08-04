@@ -2,27 +2,13 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
-const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { relatedDocsFor } = require('../data/commulingo/docs-refs');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { getReportsForEvent } = require('../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
+const { localize } = require('../data/commulingo/localize');
 
 const router = express.Router();
-
-// Reference documents (참고 문헌) linked to this event via the docs manifest.
-// Failure only costs the section, never the page.
-function relatedDocsForEvent(eventId, lang) {
-    try {
-        return listCommuLingoDocsFor('events', eventId).map(doc => ({
-            id: doc.id,
-            title: localize(doc.title, lang),
-            kind: localize(doc.kind, lang),
-        }));
-    } catch (e) {
-        console.error('commulingo event related docs:', e);
-        return [];
-    }
-}
 
 // Both scans below walk every glossary term; they are pure functions of the
 // terms snapshot, so cache per snapshot instead of re-scanning per request.
@@ -84,12 +70,6 @@ async function relatedTermsForEvent(eventId, lang) {
         console.error('commulingo event related terms:', e);
         return [];
     }
-}
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
 }
 
 // Related people are grouped by manner of involvement instead of one arbitrary
@@ -212,7 +192,7 @@ async function buildEventPanel(eventId, lang) {
     return {
         event: pure.event,
         relatedTerms: await relatedTermsForEvent(eventId, lang),
-        relatedDocs: relatedDocsForEvent(eventId, lang),
+        relatedDocs: relatedDocsFor('events', eventId, lang),
         genealogies: genealogyLinksFor('event', eventId, lang),
         relatedReports,
         prevEvent: pure.prevEvent,

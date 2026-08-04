@@ -2,14 +2,9 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { listGenealogyCharts, getGenealogyChart } = require('../data/commulingo/genealogy-store');
 const { renderGenealogySvg } = require('../data/commulingo/genealogy-svg');
+const { localize } = require('../data/commulingo/localize');
 
 const router = express.Router();
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
-}
 
 router.get('/', (req, res) => {
     try {

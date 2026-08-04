@@ -2,7 +2,8 @@ const express = require('express');
 const errorPage = require('../utils/error-page');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
-const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { relatedDocsFor } = require('../data/commulingo/docs-refs');
+const { renderAppView } = require('../utils/render-app-view');
 const { getReportsForTerm } = require('../services/report-mentions');
 const {
     loadTermCategories,
@@ -17,6 +18,7 @@ const { genealogyLinksForEntry } = require('../data/commulingo/genealogy-links')
 // is where those rows are loaded (it fetches every entity_type, not just its
 // own), which is why the lookup comes from that store rather than terms-store.
 const { loadCommuLingoPeople, redirectTarget } = require('../data/commulingo/people-store');
+const { localize } = require('../data/commulingo/localize');
 
 // The entry now serving a retired glossary id, or '' if the id is simply
 // unknown. A redirect lookup must never turn a 404 into a 500, so a failure to
@@ -31,28 +33,7 @@ async function mergedTermId(termId) {
     }
 }
 
-// Reference documents (참고 문헌) linked to this term/event via the docs
-// manifest. Failure only costs the section, never the page.
-function relatedDocsFor(kind, id, lang) {
-    try {
-        return listCommuLingoDocsFor(kind, id).map(doc => ({
-            id: doc.id,
-            title: localize(doc.title, lang),
-            kind: localize(doc.kind, lang),
-        }));
-    } catch (e) {
-        console.error(`commulingo ${kind} related docs:`, e);
-        return [];
-    }
-}
-
 const router = express.Router();
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
-}
 
 function presentTerm(raw, lang) {
     return {
@@ -215,12 +196,6 @@ function sortTerms(terms, sort, lang) {
         const bYear = Number.isInteger(b.startYear) ? b.startYear : Infinity;
         if (aYear !== bYear) return aYear - bYear;
         return byName(a, b);
-    });
-}
-
-function renderAppView(req, view, locals) {
-    return new Promise((resolve, reject) => {
-        req.app.render(view, locals, (err, html) => (err ? reject(err) : resolve(html)));
     });
 }
 

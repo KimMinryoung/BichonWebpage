@@ -1,4 +1,5 @@
 const { hasFlag, flagLabel } = require('./flag-icons');
+const { localize } = require('./localize');
 
 const SCHEMA_VERSION = 'commulingo.people.v1';
 
@@ -85,12 +86,6 @@ const OFFICE_ICON = {
     'economic-management': 'coins',
     comintern: 'globe',
 };
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
-}
 
 function composePersonName(name, patronymic) {
     if (!name || !patronymic) return name || '';

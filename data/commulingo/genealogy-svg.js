@@ -1,4 +1,5 @@
 // Server-side SVG renderer for genealogy charts (genealogy-store.js). Layout
+const { localize } = require('./localize');
 // is a lane-by-time grid: each column of the chart is a vertical lane, the
 // vertical axis is calendar time. Nodes land at (their lane, their year) and
 // a collision pass nudges same-lane neighbours apart, so curated years stay
@@ -24,12 +25,6 @@ function esc(value) {
     return String(value == null ? '' : value)
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
-}
-
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
 }
 
 // Greedy wrap on spaces; a single overlong word stays on its own line.

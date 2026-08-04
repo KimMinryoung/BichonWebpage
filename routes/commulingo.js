@@ -9,7 +9,8 @@ const {
     redirectTarget,
 } = require('../data/commulingo/people-store');
 const { loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
-const { listCommuLingoDocsFor } = require('../data/commulingo/docs-store');
+const { relatedDocsFor } = require('../data/commulingo/docs-refs');
+const { renderAppView } = require('../utils/render-app-view');
 const {
     standardizedFor,
     getLinkIndexes,
@@ -83,12 +84,6 @@ async function loadStandardizedPeople(req, res, options = {}) {
 // a fresh set of linkers per request.
 async function cardTextLinker(res) {
     return createCardTextLinker(await getLinkIndexes(res.locals.lang));
-}
-
-function renderAppView(req, view, locals) {
-    return new Promise((resolve, reject) => {
-        req.app.render(view, locals, (err, html) => (err ? reject(err) : resolve(html)));
-    });
 }
 
 // /people is served as a light shell (search box, institution index, group
@@ -493,16 +488,7 @@ router.get('/people/:personId', async (req, res) => {
         }
         // Reference documents (참고 문헌) linked to this person via the docs
         // manifest. Failure only costs the section, never the page.
-        let relatedDocs = [];
-        try {
-            relatedDocs = listCommuLingoDocsFor('people', personId).map(doc => ({
-                id: doc.id,
-                title: localize(doc.title, lang),
-                kind: localize(doc.kind, lang),
-            }));
-        } catch (e) {
-            console.error('commulingo person related docs:', e);
-        }
+        const relatedDocs = relatedDocsFor('people', personId, lang);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-person', {
             person,

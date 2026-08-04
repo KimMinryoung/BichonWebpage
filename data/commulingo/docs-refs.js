@@ -15,14 +15,25 @@ const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { loadCommuLingoPeople, redirectTarget } = require('./people-store');
 const { loadCommuLingoCatalog } = require('./shards');
 const { standardizedFor } = require('./linkify');
-const { docRefId } = require('./docs-store');
+const { docRefId, listCommuLingoDocsFor } = require('./docs-store');
+const { localize } = require('./localize');
 
 const KINDS = ['people', 'terms', 'events'];
 
-function localize(value, lang) {
-    if (!value) return '';
-    if (typeof value === 'string') return value;
-    return value[lang] || value.ko || value.en || '';
+// Reference documents (참고 문헌) linked to one entry via the docs manifest,
+// in the shape the entry pages render. Failure only costs the section, never
+// the page. Was previously copied into the person, term, and event routes.
+function relatedDocsFor(kind, id, lang) {
+    try {
+        return listCommuLingoDocsFor(kind, id).map(doc => ({
+            id: doc.id,
+            title: localize(doc.title, lang),
+            kind: localize(doc.kind, lang),
+        }));
+    } catch (e) {
+        console.error(`commulingo ${kind} related docs:`, e);
+        return [];
+    }
 }
 
 // One resolver per request, shared by every document it presents: the label maps
@@ -71,4 +82,4 @@ async function createDocRefResolver(lang) {
     };
 }
 
-module.exports = { createDocRefResolver };
+module.exports = { createDocRefResolver, relatedDocsFor };
