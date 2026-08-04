@@ -1,7 +1,6 @@
 const db = require('../../config/database');
-const fs = require('fs');
 const path = require('path');
-const crypto = require('crypto');
+const { createDictionarySnapshotStore } = require('./snapshot-store');
 
 // The people dictionary is served from a pre-normalized in-memory copy (no
 // per-request DB round-trip or re-normalization). The DB is only touched to
@@ -11,14 +10,6 @@ const crypto = require('crypto');
 // local leninbot-pg container is down or restarting. Refreshes that fetch
 // identical data keep the previous object (so downstream memoization in
 // linkify.js stays valid) and skip the disk write.
-const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_PEOPLE_REFRESH_MS || '60000', 10);
-const SNAPSHOT_PATH = process.env.COMMULINGO_PEOPLE_SNAPSHOT
-    || path.join(__dirname, 'people-snapshot.json');
-
-let memory = null;          // { data, source, at } — in-process copy served on the hot path
-let pendingRefresh = null;  // coalesced in-flight DB refresh
-let refreshTimer = null;
-let lastSnapshotHash = null; // sha1 of the last serialized snapshot, for change detection
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -292,137 +283,36 @@ function rowsToPeopleData(rows) {
     };
 }
 
-function readSnapshotFile() {
-    try {
-        const raw = fs.readFileSync(SNAPSHOT_PATH, 'utf8');
-        const data = JSON.parse(raw);
-        if (data && Array.isArray(data.people) && data.people.length) {
-            // Seed the change detector: the file holds exactly what the last
-            // refresh serialized, so the first refresh after a cold start
-            // recognizes unchanged data instead of installing a new
-            // (identical) object and invalidating the linkify memos.
-            lastSnapshotHash = crypto.createHash('sha1').update(raw).digest('hex');
-            return data;
-        }
-    } catch (err) {
-        if (err.code !== 'ENOENT') {
-            console.error('[commulingo people] snapshot read failed:', err.message);
-        }
-    }
-    return null;
-}
-
-function writeSnapshotFile(serialized) {
-    try {
-        const tmp = SNAPSHOT_PATH + '.tmp';
-        fs.writeFileSync(tmp, serialized);
-        fs.renameSync(tmp, SNAPSHOT_PATH); // atomic swap so readers never see a partial file
-    } catch (err) {
-        console.error('[commulingo people] snapshot write failed:', err.message);
-    }
-}
-
-// Rebuild from the DB, persist the snapshot, refresh the in-memory copy.
-// Coalesced so overlapping callers share one query. When the rebuilt data is
-// byte-identical to the last snapshot, the previous in-memory object is kept
-// (preserving reference identity for linkify.js memoization) and the disk
-// write is skipped.
-function refreshFromDb() {
-    if (pendingRefresh) return pendingRefresh;
-    pendingRefresh = fetchRows()
-        .then(rows => {
-            if (!rows.people.length) {
-                const err = new Error('commulingo_people has no rows');
-                err.code = 'COMMULINGO_PEOPLE_EMPTY';
-                throw err;
-            }
-            const data = rowsToPeopleData(rows);
-            const serialized = JSON.stringify(data);
-            const hash = crypto.createHash('sha1').update(serialized).digest('hex');
-            if (memory && hash === lastSnapshotHash) {
-                memory = { data: memory.data, source: 'db', at: Date.now() };
-                return memory.data;
-            }
-            memory = { data, source: 'db', at: Date.now() };
-            lastSnapshotHash = hash;
-            writeSnapshotFile(serialized);
-            return data;
-        })
-        .finally(() => {
-            pendingRefresh = null;
-        });
-    return pendingRefresh;
-}
-
-function ensureRefreshTimer() {
-    if (refreshTimer) return;
-    // Random initial offset: the five snapshot stores default to the same
-    // REFRESH_MS and would otherwise fire 21 queries into the pool on the
-    // same tick every cycle.
-    refreshTimer = setTimeout(() => {
-        refreshFromDb().catch(err =>
-            console.error('[commulingo people] scheduled refresh failed:', err.message));
-        refreshTimer = setInterval(() => {
-            refreshFromDb().catch(err =>
-                console.error('[commulingo people] scheduled refresh failed:', err.message));
-        }, REFRESH_MS);
-        if (refreshTimer.unref) refreshTimer.unref();
-    }, Math.floor(Math.random() * REFRESH_MS));
-    if (refreshTimer.unref) refreshTimer.unref(); // don't keep the process alive
-}
+const store = createDictionarySnapshotStore({
+    label: 'commulingo people',
+    refreshMs: Number.parseInt(process.env.COMMULINGO_PEOPLE_REFRESH_MS || '60000', 10),
+    snapshotPath: process.env.COMMULINGO_PEOPLE_SNAPSHOT
+        || path.join(__dirname, 'people-snapshot.json'),
+    fetchData: async () => rowsToPeopleData(await fetchRows()),
+    isEmpty: data => !data.people.length,
+    emptyErrorMessage: 'commulingo_people has no rows',
+    emptyErrorCode: 'COMMULINGO_PEOPLE_EMPTY',
+    validateSnapshot: data => Boolean(data) && Array.isArray(data.people) && data.people.length > 0,
+    emptyFallback: { groups: [], people: [] },
+});
 
 // Primary loader. Serves the local snapshot (memory → disk); the DB is hit only
 // when no snapshot exists yet, or explicitly via options.fresh. Returns
 // { data, source } where source is 'db' | 'snapshot' | 'empty'.
-async function loadCommuLingoPeople(options = {}) {
-    ensureRefreshTimer();
-
-    if (options.fresh) {
-        try {
-            return { data: await refreshFromDb(), source: 'db' };
-        } catch (err) {
-            if (memory) return { data: memory.data, source: memory.source };
-            const snap = readSnapshotFile();
-            if (snap) return { data: snap, source: 'snapshot' };
-            throw err;
-        }
-    }
-
-    // Hot path: serve the in-memory copy. If it is older than REFRESH_MS, kick a
-    // background refresh but still return the current data immediately.
-    if (memory) {
-        if (Date.now() - memory.at >= REFRESH_MS) refreshFromDb().catch(() => {});
-        return { data: memory.data, source: memory.source };
-    }
-
-    // Cold start: load the on-disk snapshot (fast), then refresh in the
-    // background. at:0 marks it stale so the next call triggers that refresh too.
-    const snap = readSnapshotFile();
-    if (snap) {
-        memory = { data: snap, source: 'snapshot', at: 0 };
-        refreshFromDb().catch(() => {});
-        return { data: snap, source: 'snapshot' };
-    }
-
-    // No snapshot yet: build it from the DB this once (the only hot-path DB hit).
-    try {
-        return { data: await refreshFromDb(), source: 'db' };
-    } catch (err) {
-        console.error('[commulingo people] no snapshot and DB load failed:', err.message);
-        return { data: { groups: [], people: [] }, source: 'empty' };
-    }
+function loadCommuLingoPeople(options = {}) {
+    return store.load(options);
 }
 
 // Rebuild the snapshot from the DB now (used by scripts/deploy and by the admin
 // store after an edit so operator changes surface without waiting for the timer).
 async function snapshotCommuLingoPeople() {
-    const data = await refreshFromDb();
-    return { path: SNAPSHOT_PATH, people: data.people.length };
+    const data = await store.refresh();
+    return { path: store.snapshotPath, people: data.people.length };
 }
 
 function clearCommuLingoPeopleCache() {
     // Frontend admin edits call this; rebuild promptly so the change shows.
-    refreshFromDb().catch(err =>
+    store.refresh().catch(err =>
         console.error('[commulingo people] refresh after edit failed:', err.message));
 }
 
@@ -460,5 +350,5 @@ module.exports = {
     loadCommuLingoPersonSections,
     clearCommuLingoPeopleCache,
     redirectTarget,
-    SNAPSHOT_PATH,
+    SNAPSHOT_PATH: store.snapshotPath,
 };
