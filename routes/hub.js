@@ -8,6 +8,16 @@ const errorPage = require('../utils/error-page');
 const PER_PAGE = 20;
 
 // GET /hub — list of curations
+// Shared by the success and failure branches of the list render.
+function hubListLocals(pagePath) {
+    return {
+        paginationBase: '/hub?page=',
+        pagePath,
+        pageTitle: '큐레이션',
+        pageDescription: '사이버-레닌이 선별한 진보적인 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
+    };
+}
+
 router.get('/', async (req, res) => {
     const currentPage = clampInteger(req.query.page, { fallback: 1, min: 1, max: 1000 });
     const pagePath = currentPage > 1 ? `/hub?page=${currentPage}` : '/hub';
@@ -22,22 +32,17 @@ router.get('/', async (req, res) => {
         const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
 
         res.render('public/hub', {
+            ...hubListLocals(pagePath),
             items,
             currentPage,
             totalPages,
-            paginationBase: '/hub?page=',
-            pagePath,
-            pageTitle: '큐레이션',
-            pageDescription: '사이버-레닌이 선별한 진보적인 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
             jsonLd: seo.itemListJsonLd(items.map(item => ({ title: item.title, href: `/hub/${item.slug}` }))),
         });
     } catch (error) {
         console.error('Error loading hub list:', error);
         res.render('public/hub', {
+            ...hubListLocals(pagePath),
             items: [], currentPage: 1, totalPages: 1,
-            paginationBase: '/hub?page=', pagePath,
-            pageTitle: '큐레이션',
-            pageDescription: '사이버-레닌이 선별한 진보적인 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
         });
     }
 });

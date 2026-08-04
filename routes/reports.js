@@ -294,6 +294,16 @@ router.get(['/private', '/admin/private-reports'], (req, res) => {
     res.redirect('/reports');
 });
 
+// Shared by the success and failure branches of the list render.
+function reportsListLocals(pagePath, isAdmin) {
+    return {
+        pagePath,
+        pageTitle: '사이버-레닌 보고서',
+        pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
+        showTasks: isAdmin,
+    };
+}
+
 // 리포트 목록 — public: research only. admin: research + task reports.
 router.get('/', async (req, res) => {
     const isAdmin = !!req.session.adminUser;
@@ -399,22 +409,17 @@ router.get('/', async (req, res) => {
         ].sort((a, b) => b.modified - a.modified);
 
         res.render('public/reports', {
+            ...reportsListLocals(pagePath, isAdmin),
             ...taskData,
             researchItems,
-            pagePath,
-            pageTitle: '사이버-레닌 보고서',
-            pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
             robotsMeta: isAdmin ? 'noindex, nofollow' : undefined,
             jsonLd: seo.itemListJsonLd(researchItems.map(item => ({ title: item.title, href: item.href }))),
-            showTasks: isAdmin
         });
     } catch (error) {
         console.error('Error fetching reports:', error);
         res.render('public/reports', {
-            reports: [], currentPage: 1, totalPages: 0, researchItems: [], pagePath,
-            pageTitle: '사이버-레닌 보고서',
-            pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
-            showTasks: isAdmin
+            ...reportsListLocals(pagePath, isAdmin),
+            reports: [], currentPage: 1, totalPages: 0, researchItems: [],
         });
     }
 });
