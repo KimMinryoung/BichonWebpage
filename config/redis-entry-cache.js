@@ -7,26 +7,15 @@
  */
 
 const redis = require('./redis');
+const { getJson, setJson: setJsonShared } = require('./redis-json');
 
 function langSuffix(lang) {
     return lang === 'en' ? ':en' : ':ko';
 }
 
 function createEntryCache({ prefix, indexTtl, label }) {
-    async function getJson(key) {
-        try {
-            if (!redis.isReady) return null;
-            const data = await redis.get(key);
-            return data ? JSON.parse(data) : null;
-        } catch { return null; }
-    }
-
-    async function setJson(key, value, ttl, what) {
-        try {
-            if (!redis.isReady) return;
-            const options = ttl ? { EX: ttl } : {};
-            await redis.set(key, JSON.stringify(value), options);
-        } catch (e) { console.error(`[${label}] ${what} write error:`, e.message); }
+    function setJson(key, value, ttl, what) {
+        return setJsonShared(key, value, ttl, `${label} ${what}`);
     }
 
     async function invalidateIndex() {
