@@ -1,7 +1,9 @@
 const db = require('./database');
 
 function hasEnglish(row) {
-    return Boolean(row && row.html_body_en && row.html_body_en.trim());
+    if (!row) return false;
+    if (typeof row.has_en_body === 'boolean') return row.has_en_body;
+    return Boolean(row.html_body_en && row.html_body_en.trim());
 }
 
 function localize(row, lang = 'ko', includeBody = true) {
@@ -25,9 +27,12 @@ function localize(row, lang = 'ko', includeBody = true) {
 }
 
 async function listPages(lang = 'ko') {
+    // List consumers never render bodies (localize includeBody=false), so keep
+    // the TOASTed html columns out of the query and derive the flag in SQL.
     const { rows } = await db.query(
-        `SELECT slug, title, summary, html_body, title_en, summary_en, html_body_en,
-                created_at, updated_at
+        `SELECT slug, title, summary, title_en, summary_en,
+                created_at, updated_at,
+                btrim(COALESCE(html_body_en, '')) <> '' AS has_en_body
            FROM static_pages
           ORDER BY updated_at DESC, slug ASC`
     );

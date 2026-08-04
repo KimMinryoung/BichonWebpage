@@ -7,7 +7,8 @@
 > - 2026-08-04: A9 서버 측 완료 — chat 프록시 res close 시 `proxyReq.destroy()` (writer 브랜치와 대칭), passkey fingerprint 60초 세션 캐시 (`server.js`). dev-preview 스모크 통과 (home/chat/flags 200). **A9 클라이언트 측(chat.js AbortController + reader.cancel, `public/js/chat.js:820-827`)은 미착수** — stop/regenerate 수동 테스트 필요해서 다음 세션으로. 커밋됨, 미배포. deploy #1 전 검증 항목: 채팅 스트리밍 + 중간 탭 닫기, sitemap 동일 출력, 홈 HTML 동일.
 > - 2026-08-04: A6-lite 완료 — sitemap/rss/atom XML을 Redis 600초 캐시(`cachedXml`, `routes/public.js`; 피드는 lang별 키, sitemap은 단일 키 — 출력에 lang 의존 없음 확인). dev-preview 검증: sitemap 160ms→2.8ms, 출력 byte-identical, rss/atom 200 + 올바른 content-type. 커밋됨, 미배포.
 > - 2026-08-04: **deploy #1 실행 완료** (커밋 1c673e0, 사용자 지시로 부분 상태에서 조기 배포). 프로덕션 검증: 홈 10회 히트에 `commulingo_people` seq_scan delta=0 (A1 작동), 전 페이지 200, sitemap 2.4ms 캐시 적중, flags 정상, 로그 에러 없음, cyber-lenin.com 200 + recent 섹션 렌더.
-> - **Phase 1 남은 것**: A7-safe (`listPagesLite`), A9 클라이언트 측 (chat.js AbortController — stop/regenerate 수동 테스트 필요), `commulingo_people_revisions` 183k seq_scan 조사. 끝나면 작은 deploy로 마감. 채팅 스트리밍+탭닫기 실사용 확인도 아직 안 함 (A9 서버 측 배포됨).
+> - 2026-08-04: **Phase 1 완료.** (1) `people_revisions` 183k seq_scan 원인 규명 — leninbot maintainer의 인물별 상관 서브쿼리(`entity_id LIKE p.id||'/%'` + `changed_by LIKE`)가 기존 인덱스를 못 타서 폴마다 ~1,284회 풀스캔. `entity_id text_pattern_ops` 인덱스 추가(마이그레이션 121, 프로덕션 적용·EXPLAIN 검증 2.3ms→0.4ms). (2) A7: `listPages`에서 TOAST된 html_body 컬럼 제거, has_en_body SQL 플래그로 대체 — 전 14페이지 구/신 플래그 동등성 확인, dev-preview에서 /reports·/p/* 200. (3) A9 클라이언트 측은 **불필요 판정**: 스트리밍 중 `busy` 가드가 새 대화/재전송을 차단하고, 탭 닫기는 브라우저가 fetch를 자동 중단 → 배포된 서버 측 `proxyReq.destroy()`가 업스트림 정리. AbortController를 넣어도 실행 경로가 없음.
+> - 남은 실사용 확인 1건: 채팅 스트리밍 + 중간 탭 닫기 (서버 측 destroy 검증). 사용자 채팅 사용 시 자연 확인됨.
 > - Phase 0: ✅  Phase 1: ◐  Phase 2: ☐  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
