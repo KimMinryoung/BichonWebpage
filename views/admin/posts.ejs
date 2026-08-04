@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <% pageTitle = strings.admin.managePosts %>
-    <%- include('../partials/head') %>
+    <%- include('../partials/head', { pageTitle: strings.admin.managePosts }) %>
 </head>
 <body>
     <%- include('../partials/nav') %>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <% pageTitle = isEdit ? strings.admin.editPost : strings.admin.newPost %>
-    <%- include('../partials/head') %>
+    <%- include('../partials/head', { pageTitle: isEdit ? strings.admin.editPost : strings.admin.newPost }) %>
 </head>
 <body>
     <%- include('../partials/nav') %>

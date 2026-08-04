@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-  <% pageTitle = strings.nav.game + ' - 노노그램' %>
-  <% pageDescription = '모바일에서도 풀 수 있는 Cyber-Lenin 노노그램 미니게임' %>
-  <% pagePath = '/nonogram/' %>
-  <%- include('../partials/head') %>
+  <%- include('../partials/head', { pageTitle: strings.nav.game + ' - 노노그램', pageDescription: '모바일에서도 풀 수 있는 Cyber-Lenin 노노그램 미니게임', pagePath: '/nonogram/' }) %>
   <link rel="stylesheet" href="/css/nonogram.css?v=<%= assetVersion %>">
 </head>
 <body class="nonogram-page">

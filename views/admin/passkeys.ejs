@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <% pageTitle = strings.admin.passkeys %>
-    <%- include('../partials/head') %>
+    <%- include('../partials/head', { pageTitle: strings.admin.passkeys }) %>
     <meta name="csrf-token" content="<%= csrfToken %>">
 </head>
 <body>

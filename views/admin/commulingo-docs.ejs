@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <% pageTitle = strings.admin.commulingoDocs %>
-    <%- include('../partials/head') %>
+    <%- include('../partials/head', { pageTitle: strings.admin.commulingoDocs }) %>
     <link rel="stylesheet" href="/css/admin-commulingo-docs.css?v=<%= assetVersion %>">
 </head>
 <body>
