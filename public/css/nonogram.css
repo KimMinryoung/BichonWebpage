@@ -1,0 +1,544 @@
+    :root {
+      --nonogram-panel: #11151b;
+      --nonogram-panel-2: #171d25;
+      --nonogram-line: #313946;
+      --nonogram-muted: #98a4b5;
+      --nonogram-text: #eef3f8;
+      --red: #d03b40;
+      --yellow: #f1bf4b;
+      --blue: #3a78d5;
+      --green: #4fb879;
+      --cell-empty: #fbfbf7;
+      --cell-empty-hover: #ffffff;
+      --cell: clamp(28px, 7vw, 48px);
+      --hint-w: clamp(72px, 18vw, 112px);
+      --hint-h: clamp(76px, 16vw, 116px);
+      --grid-cell: var(--cell);
+      --grid-hint-w: var(--hint-w);
+      --grid-hint-h: var(--hint-h);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--bg-canvas);
+      color: var(--text-primary);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 44px;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 52px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .status {
+      min-width: 0;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(17, 21, 27, 0.86);
+      color: var(--yellow);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .topbar-controls {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .puzzle-strip {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      position: static;
+      top: auto;
+      z-index: auto;
+      border: 0;
+      background: transparent;
+    }
+
+    .puzzle-strip[hidden] {
+      display: none;
+    }
+
+    .puzzle-strip-label {
+      flex: 0 0 auto;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .puzzle-strip-items {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .puzzle-tab {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 0 12px;
+      border-color: var(--border);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .puzzle-tab.active {
+      border-color: rgba(241, 191, 75, 0.8);
+      background: rgba(241, 191, 75, 0.18);
+      color: var(--yellow);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .play-area, .side {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: var(--nonogram-panel);
+      color: var(--nonogram-text);
+    }
+
+    .play-area {
+      padding: clamp(8px, 1.4vw, 14px);
+      overflow: visible;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      position: relative;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-actions {
+      flex: 0 1 390px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      min-width: 0;
+    }
+
+    .toolbar strong { color: var(--yellow); }
+
+    .toolbar-title {
+      flex: 1 1 220px;
+      min-width: 0;
+      line-height: 1.45;
+    }
+
+    .puzzle-picker {
+      flex: 1 1 auto;
+      max-width: 100%;
+      min-width: 0;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 8px 0 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .puzzle-picker[hidden] { display: none; }
+
+    .puzzle-picker select {
+      min-width: 160px;
+      max-width: 220px;
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text-primary);
+      font: inherit;
+      font-weight: 900;
+      min-height: 30px;
+      padding: 0 8px;
+    }
+
+    .puzzle-picker option {
+      background: var(--bg-surface);
+      color: var(--text-primary);
+    }
+
+    .input-guide {
+      margin: -4px 0 12px;
+      color: var(--nonogram-muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .touch-guide {
+      display: none;
+    }
+
+    .nonogram-page main button {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #1b222c;
+      color: var(--nonogram-text);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .nonogram-page main button:hover { border-color: var(--yellow); }
+    .nonogram-page main button:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+
+    .share-btn {
+      min-height: 40px;
+      padding: 0 14px;
+    }
+
+    .reset-btn {
+      flex: 0 0 auto;
+      min-width: 58px;
+      min-height: 40px;
+      padding: 0 12px;
+      color: var(--nonogram-muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .puzzle-wrap {
+      display: grid;
+      place-items: start center;
+      min-height: 0;
+      position: relative;
+      width: 100%;
+      flex: 0 0 auto;
+    }
+
+    .nonogram-grid {
+      display: grid;
+      gap: 0;
+      transition: opacity 420ms ease, transform 420ms ease, filter 420ms ease;
+    }
+
+    .is-solved .nonogram-grid {
+      opacity: 0.18;
+      transform: scale(0.985);
+      filter: blur(1px);
+      pointer-events: none;
+    }
+
+    .corner, .hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--nonogram-line);
+      background: #0e1218;
+      color: var(--nonogram-muted);
+      font-weight: 800;
+      line-height: 1.1;
+      transition: opacity 360ms ease, background 140ms ease, color 140ms ease;
+    }
+
+    .is-solved .corner, .is-solved .hint { opacity: 0; }
+
+    .col-hint {
+      width: var(--grid-cell);
+      height: var(--grid-hint-h);
+      padding: 7px 2px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 14px;
+      gap: 1px;
+    }
+
+    .row-hint {
+      width: var(--grid-hint-w);
+      height: var(--grid-cell);
+      padding: 0 10px;
+      justify-content: flex-end;
+      gap: 7px;
+      font-size: 15px;
+    }
+
+    .hint span {
+      flex: 0 0 auto;
+    }
+
+    .corner {
+      width: var(--grid-hint-w);
+      height: var(--grid-hint-h);
+    }
+
+    .hint.active {
+      background: rgba(241, 191, 75, 0.16);
+      color: var(--yellow);
+    }
+
+    .hint.satisfied {
+      border-color: rgba(79, 184, 121, 0.7);
+      background: rgba(79, 184, 121, 0.14);
+      color: #b9f1cd;
+    }
+
+    .nonogram-page main .cell {
+      appearance: none;
+      -webkit-appearance: none;
+      width: var(--grid-cell);
+      height: var(--grid-cell);
+      border: 1px solid var(--nonogram-line);
+      background: var(--cell-empty);
+      color: #101318;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      position: relative;
+      transition: background 110ms ease, border-color 110ms ease, box-shadow 110ms ease;
+      touch-action: manipulation;
+    }
+
+    .nonogram-page main .cell.row-hover, .nonogram-page main .cell.col-hover {
+      background: var(--cell-empty-hover);
+      border-color: #6a7280;
+    }
+
+    .nonogram-page main .cell.filled {
+      background: #11141a;
+      box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.65);
+    }
+
+    .nonogram-page main .cell.marked {
+      background: var(--cell-empty);
+    }
+
+    .nonogram-page main .cell.marked.row-hover, .nonogram-page main .cell.marked.col-hover {
+      background: var(--cell-empty-hover);
+    }
+
+    .cell.marked::before, .cell.marked::after {
+      content: "";
+      position: absolute;
+      width: 72%;
+      height: 3px;
+      border-radius: 1px;
+      background: var(--red);
+    }
+
+    .cell.marked::before { transform: rotate(45deg); }
+    .cell.marked::after { transform: rotate(-45deg); }
+
+    .solution-panel {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 520ms ease 220ms, transform 520ms ease 220ms;
+    }
+
+    .is-solved .solution-panel {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .solution-card {
+      width: min(460px, 92%);
+      border: 1px solid rgba(241, 191, 75, 0.55);
+      background: rgba(8, 9, 11, 0.94);
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+    }
+
+    .solution-card img {
+      width: min(320px, 100%);
+      image-rendering: pixelated;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #fff;
+    }
+
+    .solution-card h2 {
+      margin: 14px 0 6px;
+      font-size: 24px;
+    }
+
+    .side {
+      padding: 18px;
+      position: sticky;
+      top: 14px;
+    }
+
+    .side h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .side p {
+      margin: 0 0 14px;
+      color: var(--nonogram-muted);
+      line-height: 1.6;
+    }
+
+    .source-note {
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--nonogram-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .source-note a {
+      color: var(--yellow);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .questions {
+      opacity: 0.42;
+      pointer-events: none;
+      transition: opacity 260ms ease;
+    }
+
+    .questions.unlocked {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .question {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .question:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .question p {
+      margin-bottom: 10px;
+      color: var(--nonogram-text);
+      font-weight: 800;
+    }
+
+    .answers {
+      display: grid;
+      gap: 8px;
+    }
+
+    .answer {
+      width: 100%;
+      min-height: 40px;
+      padding: 9px 10px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .answer.correct {
+      border-color: rgba(79, 184, 121, 0.9);
+      background: rgba(79, 184, 121, 0.18);
+      color: #b9f1cd;
+    }
+
+    .answer.wrong {
+      border-color: rgba(208, 59, 64, 0.9);
+      background: rgba(208, 59, 64, 0.18);
+      color: #ffd2d4;
+    }
+
+    .complete {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(79, 184, 121, 0.7);
+      background: rgba(79, 184, 121, 0.12);
+    }
+
+    .complete.show { display: block; }
+    .complete h2 { color: #b9f1cd; }
+
+    @media (max-width: 920px) {
+      main { width: min(100% - 16px, 760px); padding-top: 18px; }
+      .topbar-controls { width: 100%; flex-direction: column; align-items: stretch; }
+      .status { text-align: left; }
+      .layout { grid-template-columns: 1fr; }
+      .side { position: static; }
+    }
+
+    @media (max-width: 560px) {
+      :root {
+        --cell: min(8vw, 34px);
+        --hint-w: 52px;
+        --hint-h: 72px;
+      }
+      .toolbar { align-items: stretch; flex-direction: column; }
+      .toolbar-title { flex: 0 1 auto; }
+      .toolbar-actions { flex: 0 1 auto; justify-content: stretch; width: 100%; }
+      .puzzle-picker { width: auto; }
+      .puzzle-picker select { min-width: 0; flex: 1; }
+      .reset-btn { min-width: 30px; min-height: 26px; padding: 0 7px; }
+      .row-hint { font-size: 13px; gap: 4px; padding: 0 6px; }
+      .col-hint { font-size: 12px; padding-top: 5px; padding-bottom: 5px; }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .touch-guide {
+        display: block;
+      }
+
+      .mouse-guide {
+        display: none;
+      }
+    }
