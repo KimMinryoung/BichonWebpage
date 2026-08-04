@@ -150,6 +150,28 @@ function orderedPeopleGroupsMeta(standardized) {
     }));
 }
 
+// Shell of the people page (role-category chips + group headers): a pure
+// function of the standardized snapshot, rendered once per refresh per
+// language beside the memoized card fragments, instead of re-scanning
+// categories × people (~20k iterations) per request.
+const peopleShellMemo = new WeakMap(); // standardized -> { roleCategories, groupsMeta }
+
+function peopleShellFor(standardized, lang) {
+    let shell = peopleShellMemo.get(standardized);
+    if (!shell) {
+        const roleCategories = Object.values(standardized.roleCategories || {}).map(category => ({
+            ...category,
+            label: category.id === 'non-soviet-revolutionary'
+                ? (lang === 'en' ? 'Revolutionaries beyond the Soviet Union' : '소련 밖의 혁명가들')
+                : category.label,
+            peopleCount: standardized.people.filter(person => person.role && person.role.categoryId === category.id).length,
+        })).filter(category => category.peopleCount > 0);
+        shell = { roleCategories, groupsMeta: orderedPeopleGroupsMeta(standardized) };
+        peopleShellMemo.set(standardized, shell);
+    }
+    return shell;
+}
+
 function setPublicDataCache(req, res, version) {
     if (req.query && req.query.v === version) {
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
@@ -254,17 +276,11 @@ router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(req, res);
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
-        const roleCategories = Object.values(standardized.roleCategories || {}).map(category => ({
-            ...category,
-            label: category.id === 'non-soviet-revolutionary'
-                ? (lang === 'en' ? 'Revolutionaries beyond the Soviet Union' : '소련 밖의 혁명가들')
-                : category.label,
-            peopleCount: standardized.people.filter(person => person.role && person.role.categoryId === category.id).length,
-        })).filter(category => category.peopleCount > 0);
+        const { roleCategories, groupsMeta } = peopleShellFor(standardized, lang);
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             roleCategories,
-            groupsMeta: orderedPeopleGroupsMeta(standardized),
+            groupsMeta,
             peopleCount: standardized.people.length,
             roleIconSvg,
             roleHubHref,

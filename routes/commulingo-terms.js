@@ -329,26 +329,47 @@ router.get('/cards', async (req, res) => {
     }
 });
 
+// Pure half of the term panel (presented term + linkified definition/body):
+// a function of the terms snapshot, the category registry, and the link
+// indexes, so it renders once per data refresh per language — mirroring
+// personBodyMemo in commulingo.js. relatedReports/relatedDocs/genealogies
+// refresh on their own cadences and stay per-request.
+const termPanelMemo = new WeakMap(); // indexes -> { termsRef, categoriesRef, byId: Map }
+
 // Everything the glossary half of a page needs. Exported so the events route
 // can render this panel beside its own when the two entries are the same
 // subject. Returns null when the id is unknown.
 async function buildTermPanel(termId, lang) {
     const allTerms = await loadCommuLingoTerms();
     await loadTermCategories();
-    const raw = allTerms.find(item => item.id === termId);
-    if (!raw) return null;
-    const term = presentTerm(raw, lang);
-    // One linker across definition and body: the first mention of an entry
-    // links, later ones stay plain. The entry itself is excluded, and so is the
-    // history event that is the same subject — the event panel is the other half
-    // of this page, so linking its title would point at the tab the reader is
-    // already on.
-    const link = createLinker(await getLinkIndexes(lang), {
-        surface: 'term',
-        exclude: { term: term.id, event: term.sameSubjectEvent ? term.sameSubjectEvent.id : '' },
-    });
-    const definitionHtml = link.plain(term.definition);
-    const bodyHtml = term.body ? link.html(renderMarkdown(term.body)) : '';
+    const indexes = await getLinkIndexes(lang);
+    let memo = termPanelMemo.get(indexes);
+    if (!memo || memo.termsRef !== allTerms || memo.categoriesRef !== termCategoriesRef()) {
+        memo = { termsRef: allTerms, categoriesRef: termCategoriesRef(), byId: new Map() };
+        termPanelMemo.set(indexes, memo);
+    }
+    let pure = memo.byId.get(termId);
+    if (!pure) {
+        const raw = allTerms.find(item => item.id === termId);
+        if (!raw) return null; // unknown ids stay uncached — crawler noise must not grow the map
+        const term = presentTerm(raw, lang);
+        // One linker across definition and body: the first mention of an entry
+        // links, later ones stay plain. The entry itself is excluded, and so is the
+        // history event that is the same subject — the event panel is the other half
+        // of this page, so linking its title would point at the tab the reader is
+        // already on.
+        const link = createLinker(indexes, {
+            surface: 'term',
+            exclude: { term: term.id, event: term.sameSubjectEvent ? term.sameSubjectEvent.id : '' },
+        });
+        pure = {
+            term,
+            definitionHtml: link.plain(term.definition),
+            bodyHtml: term.body ? link.html(renderMarkdown(term.body)) : '',
+        };
+        memo.byId.set(termId, pure);
+    }
+    const { term, definitionHtml, bodyHtml } = pure;
     // Public research reports that mention this term. Failure only costs the
     // section, never the page.
     let relatedReports = [];

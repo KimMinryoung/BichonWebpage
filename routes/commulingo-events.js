@@ -24,15 +24,35 @@ function relatedDocsForEvent(eventId, lang) {
     }
 }
 
+// Both scans below walk every glossary term; they are pure functions of the
+// terms snapshot, so cache per snapshot instead of re-scanning per request.
+// Keys stay bounded: callers only reach here with ids of events that exist.
+const termScanMemo = new WeakMap(); // terms -> { pairedByEvent: Map|null, relatedByKey: Map }
+
+async function eventTermScans() {
+    const terms = await loadCommuLingoTerms();
+    let memo = termScanMemo.get(terms);
+    if (!memo) {
+        memo = { pairedByEvent: null, relatedByKey: new Map() };
+        termScanMemo.set(terms, memo);
+    }
+    return { terms, memo };
+}
+
 // Glossary entries that name this event. The term page has always listed its
 // events; the event page listed nothing back, so a reader on 대숙청 had no way
 // through to 예조프시나 or 모스크바 재판. Children are folded under their
 // parent so one campaign does not spread across six sibling chips.
 async function pairedTermIdFor(eventId) {
     try {
-        const terms = await loadCommuLingoTerms();
-        const term = terms.find(item => item.sameSubjectEvent && item.sameSubjectEvent.id === eventId);
-        return term ? term.id : null;
+        const { terms, memo } = await eventTermScans();
+        if (!memo.pairedByEvent) {
+            memo.pairedByEvent = new Map();
+            terms.forEach(term => {
+                if (term.sameSubjectEvent) memo.pairedByEvent.set(term.sameSubjectEvent.id, term.id);
+            });
+        }
+        return memo.pairedByEvent.get(eventId) || null;
     } catch (e) {
         console.error('commulingo event paired term:', e);
         return null;
@@ -41,10 +61,12 @@ async function pairedTermIdFor(eventId) {
 
 async function relatedTermsForEvent(eventId, lang) {
     try {
-        const terms = await loadCommuLingoTerms();
+        const { terms, memo } = await eventTermScans();
+        const key = eventId + ':' + lang;
+        if (memo.relatedByKey.has(key)) return memo.relatedByKey.get(key);
         const linked = terms.filter(term => (term.events || []).some(event => event.id === eventId));
         const linkedIds = new Set(linked.map(term => term.id));
-        return linked
+        const related = linked
             // The paired term is a whole panel of its own on this page, and
             // its nested entries ride along inside it.
             .filter(term => !(term.sameSubjectEvent && term.sameSubjectEvent.id === eventId))
@@ -56,6 +78,8 @@ async function relatedTermsForEvent(eventId, lang) {
                     .filter(child => linkedIds.has(child.id))
                     .map(child => ({ id: child.id, term: localize(child.term, lang) })),
             }));
+        memo.relatedByKey.set(key, related);
+        return related;
     } catch (e) {
         console.error('commulingo event related terms:', e);
         return [];
@@ -124,19 +148,13 @@ function presentEvent(raw, lang) {
     };
 }
 
-// Dictionary links inside the event's own prose, on the shared policy
-// (linkify.js). One linker for the whole page, so a term named in the summary
-// and again in four timeline entries is a link once, at its first mention. The
-// event itself is excluded, and so is the glossary entry that is the same
-// subject: that entry's panel is the other half of this page, so linking its
-// name would point the reader at the tab they are already on.
-async function makeEventLinkifier(lang, eventId, excludeTermId) {
-    const link = createLinker(await getLinkIndexes(lang), {
-        surface: 'event',
-        exclude: { event: eventId, term: excludeTermId || '' },
-    });
-    return text => link.plain(text);
-}
+// Pure half of the event panel (presented event with linkified prose +
+// prev/next neighbors): a function of the events snapshot, the terms snapshot
+// (same-subject exclusion) and the link indexes, so it renders once per data
+// refresh per language — mirroring personBodyMemo in commulingo.js. Related
+// terms/docs/genealogies/reports refresh on their own cadences and stay
+// per-request.
+const eventPanelMemo = new WeakMap(); // indexes -> { eventsRef, termsRef, byId: Map }
 
 // Everything the event half of a page needs. Exported so the glossary route can
 // render this panel beside its own when the two entries are the same subject:
@@ -144,39 +162,61 @@ async function makeEventLinkifier(lang, eventId, excludeTermId) {
 // and nothing has to be copied from one record into the other.
 async function buildEventPanel(eventId, lang) {
     const events = await loadCommuLingoHistoryEvents();
-    const index = events.findIndex(event => event.id === eventId);
-    if (index === -1) return null;
+    const terms = await loadCommuLingoTerms();
+    const indexes = await getLinkIndexes(lang);
+    let memo = eventPanelMemo.get(indexes);
+    if (!memo || memo.eventsRef !== events || memo.termsRef !== terms) {
+        memo = { eventsRef: events, termsRef: terms, byId: new Map() };
+        eventPanelMemo.set(indexes, memo);
+    }
+    let pure = memo.byId.get(eventId);
+    if (!pure) {
+        const index = events.findIndex(event => event.id === eventId);
+        if (index === -1) return null; // unknown ids stay uncached — crawler noise must not grow the map
+        const paired = terms.find(item => item.sameSubjectEvent && item.sameSubjectEvent.id === eventId);
+        // Dictionary links inside the event's own prose, on the shared policy
+        // (linkify.js). One linker for the whole page, so a term named in the
+        // summary and again in four timeline entries is a link once, at its
+        // first mention. The event itself is excluded, and so is the glossary
+        // entry that is the same subject: that entry's panel is the other half
+        // of this page, so linking its name would point the reader at the tab
+        // they are already on.
+        const linker = createLinker(indexes, {
+            surface: 'event',
+            exclude: { event: eventId, term: paired ? paired.id : '' },
+        });
+        const link = text => linker.plain(text);
+        const event = presentEvent(events[index], lang);
+        // Reading order, so the first mention that links is the first one a reader
+        // reaches: question, summary, timeline, consequences.
+        // These four carry the rendered prose the panel prints with <%- %>. The
+        // panel has no escaped fallback on purpose: a caller that forgets them
+        // should show 'undefined', not print the raw text unescaped.
+        event.questionHtml = link(event.question);
+        event.summaryHtml = link(event.summary);
+        event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
+        event.outcomeHtml = link(event.outcome);
+        const neighbor = offset => {
+            const item = events[index + offset];
+            return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
+        };
+        pure = { event, prevEvent: neighbor(-1), nextEvent: neighbor(1) };
+        memo.byId.set(eventId, pure);
+    }
     let relatedReports = [];
     try {
         relatedReports = await getReportsForEvent(eventId, lang);
     } catch (e) {
         console.error('commulingo event related reports:', e);
     }
-    const neighbor = offset => {
-        const item = events[index + offset];
-        return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
-    };
-    const terms = await loadCommuLingoTerms();
-    const paired = terms.find(item => item.sameSubjectEvent && item.sameSubjectEvent.id === eventId);
-    const link = await makeEventLinkifier(lang, eventId, paired ? paired.id : null);
-    const event = presentEvent(events[index], lang);
-    // Reading order, so the first mention that links is the first one a reader
-    // reaches: question, summary, timeline, consequences.
-    // These four carry the rendered prose the panel prints with <%- %>. The
-    // panel has no escaped fallback on purpose: a caller that forgets them
-    // should show 'undefined', not print the raw text unescaped.
-    event.questionHtml = link(event.question);
-    event.summaryHtml = link(event.summary);
-    event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
-    event.outcomeHtml = link(event.outcome);
     return {
-        event,
+        event: pure.event,
         relatedTerms: await relatedTermsForEvent(eventId, lang),
         relatedDocs: relatedDocsForEvent(eventId, lang),
         genealogies: genealogyLinksFor('event', eventId, lang),
         relatedReports,
-        prevEvent: neighbor(-1),
-        nextEvent: neighbor(1),
+        prevEvent: pure.prevEvent,
+        nextEvent: pure.nextEvent,
     };
 }
 
