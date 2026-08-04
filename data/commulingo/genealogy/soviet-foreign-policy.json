@@ -1,0 +1,315 @@
+{
+  "id": "soviet-foreign-policy",
+  "title": {
+    "ko": "소련 외교 노선의 계보",
+    "en": "The Genealogy of Soviet Foreign Policy"
+  },
+  "description": {
+    "ko": "「선언 몇 장 발표하고 가게를 닫겠다」던 1917년의 세계혁명 외교에서 1989년의 시나트라 독트린까지, 소련 외교가 걸어온 한 세기의 계보. 외교 수장의 계보, 공식 노선과 교리의 변천, 혁명과 진영의 정치, 그리고 조약과 위기의 전환점을 네 줄로 나란히 놓았다. 노드를 누르면 해당 인물·용어·사건·문헌으로 이동한다.",
+    "en": "From the world-revolution diplomacy of 1917, when the commissar promised to issue a few proclamations and shut up shop, to the Sinatra Doctrine of 1989: a century of Soviet foreign policy in four parallel lines - the succession of foreign ministers, the official lines and doctrines, the politics of revolution and bloc, and the turning points of treaties and crises. Click a node to open the person, term, event or document."
+  },
+  "timeStart": 1917,
+  "timeEnd": 1991,
+  "pxPerYear": 10,
+  "columns": [
+    { "id": "commissars", "label": { "ko": "외교 수장", "en": "Foreign ministers" } },
+    { "id": "line", "label": { "ko": "노선과 교리", "en": "Lines & doctrines" } },
+    { "id": "world", "label": { "ko": "혁명과 진영", "en": "Revolution & bloc" } },
+    { "id": "turning-points", "label": { "ko": "전환점", "en": "Turning points" } }
+  ],
+  "nodes": [
+    {
+      "id": "trotsky-nkid",
+      "column": "commissars",
+      "year": 1917,
+      "period": "1917–1918",
+      "label": { "ko": "트로츠키, 외교의 종말을 선언한 외교인민위원", "en": "Trotsky: the commissar who declared diplomacy over" },
+      "ref": { "type": "person", "id": "trotsky" },
+      "note": { "ko": "「인민들에게 혁명적 선언 몇 장을 발표하고 가게를 닫겠다」. 세계혁명이 임박했다면 외교는 임시 업무일 뿐이었다", "en": "I shall issue a few revolutionary proclamations to the peoples and then shut up shop: if world revolution was imminent, diplomacy was a stopgap" }
+    },
+    {
+      "id": "world-revolution",
+      "column": "line",
+      "year": 1917,
+      "period": "1917–1921",
+      "label": { "ko": "세계혁명의 외교", "en": "The diplomacy of world revolution" },
+      "ref": { "type": "event", "id": "october-revolution" },
+      "note": { "ko": "비밀조약 폐기와 공개, 무배상·무병합 강화 호소. 국가 간 외교가 아니라 인민을 향한 호소가 본령이었다", "en": "Secret treaties published and renounced, peace without annexations or indemnities: the true addressee was peoples, not states" }
+    },
+    {
+      "id": "brest-litovsk",
+      "column": "turning-points",
+      "year": 1918,
+      "period": "1918.03",
+      "label": { "ko": "브레스트-리톱스크 조약", "en": "The Treaty of Brest-Litovsk" },
+      "note": { "ko": "혁명 국가가 생존을 위해 맺은 첫 강화. 세계혁명 대기론에 대한 현실의 첫 수정이었다", "en": "The revolutionary state's first peace, signed to survive: reality's first amendment to waiting for world revolution" }
+    },
+    {
+      "id": "chicherin",
+      "column": "commissars",
+      "year": 1918,
+      "period": "1918–1930",
+      "label": { "ko": "치체린, 라팔로의 설계자", "en": "Chicherin: architect of Rapallo" },
+      "ref": { "type": "person", "id": "chicherin" },
+      "note": { "ko": "귀족 출신의 박식가. 혁명 국가를 국제 체계 안에 되돌려 놓는 실무 외교의 기초를 놓았다", "en": "An erudite of noble birth who laid the groundwork of working diplomacy, returning the revolutionary state to the international system" }
+    },
+    {
+      "id": "comintern-founded",
+      "column": "world",
+      "year": 1919,
+      "period": "1919",
+      "label": { "ko": "코민테른 창설: 두 개의 외교", "en": "The Comintern founded: two diplomacies" },
+      "ref": { "type": "term", "id": "comintern" },
+      "note": { "ko": "외교인민위원부가 국가와 교섭하는 동안 코민테른은 그 국가의 전복을 지원했다. 소련 외교의 이중 구조가 여기서 시작된다", "en": "While the commissariat negotiated with states, the Comintern backed their overthrow: the dual structure of Soviet foreign policy begins here" }
+    },
+    {
+      "id": "coexistence-lenin",
+      "column": "line",
+      "year": 1921,
+      "period": "1921–",
+      "label": { "ko": "공존의 맹아: 「숨 돌릴 틈」의 외교", "en": "Coexistence in embryo: the diplomacy of the breathing space" },
+      "ref": { "type": "term", "id": "peaceful-coexistence" },
+      "note": { "ko": "혁명이 늦어지자 통상조약과 이권 양여로 자본주의 세계와의 공존이 실무가 되었다. 훗날 평화공존론의 전거가 되는 국면", "en": "As revolution was delayed, trade treaties and concessions made coexistence with the capitalist world a working practice, later cited as precedent for peaceful coexistence" }
+    },
+    {
+      "id": "rapallo",
+      "column": "turning-points",
+      "year": 1922,
+      "period": "1922.04",
+      "label": { "ko": "라팔로 조약: 왕따들의 악수", "en": "Rapallo: the outcasts shake hands" },
+      "note": { "ko": "베르사유 질서에서 배제된 두 나라, 소비에트 러시아와 독일의 수교. 고립 탈출의 첫 돌파구였다", "en": "The two outcasts of Versailles, Soviet Russia and Germany, establish relations: the first breach in isolation" }
+    },
+    {
+      "id": "socialism-one-country",
+      "column": "line",
+      "year": 1925,
+      "period": "1924–",
+      "label": { "ko": "일국사회주의와 국가 이익의 외교", "en": "Socialism in one country: the diplomacy of state interest" },
+      "ref": { "type": "term", "id": "socialism-in-one-country" },
+      "note": { "ko": "혁명의 확산보다 소비에트 국가의 보전이 우선이 되면서, 외교는 혁명의 보조 수단에서 국가 정책의 중심으로 이동했다", "en": "With the Soviet state's preservation put before revolution's spread, diplomacy moved from revolution's auxiliary to the centre of state policy" }
+    },
+    {
+      "id": "litvinov",
+      "column": "commissars",
+      "year": 1930,
+      "period": "1930–1939",
+      "label": { "ko": "리트비노프, 집단안보의 얼굴", "en": "Litvinov: the face of collective security" },
+      "ref": { "type": "person", "id": "litvinov" },
+      "note": { "ko": "「평화는 불가분하다」. 국제연맹 가입(1934)과 반파시즘 연대 외교를 이끌었고, 서방에서 가장 신뢰받는 소련인이었다", "en": "Peace is indivisible: he led entry into the League (1934) and anti-fascist alignment, the Soviet most trusted in the West" }
+    },
+    {
+      "id": "collective-security",
+      "column": "line",
+      "year": 1934,
+      "period": "1933–1939",
+      "label": { "ko": "집단안보 노선", "en": "The collective security line" },
+      "note": { "ko": "나치 독일의 위협 앞에서 서방 민주국가들과의 동맹으로 침략을 봉쇄한다는 노선. 뮌헨 협정이 그 신뢰를 무너뜨렸다", "en": "Against Nazi Germany, containment through alliance with the Western democracies; Munich destroyed its credibility" }
+    },
+    {
+      "id": "popular-front-turn",
+      "column": "world",
+      "year": 1935,
+      "period": "1935",
+      "label": { "ko": "코민테른 제7차 대회: 인민전선 전술", "en": "The Comintern's 7th Congress: the popular front" },
+      "ref": { "type": "term", "id": "comintern" },
+      "note": { "ko": "사회민주주의를 「사회파시즘」이라 부르던 노선을 버리고 반파시즘 연합으로 선회. 진영 정치가 국가 외교에 종속되는 신호였다", "en": "Abandoning the social-fascism line for anti-fascist alliance: a sign of bloc politics subordinated to state diplomacy" }
+    },
+    {
+      "id": "molotov",
+      "column": "commissars",
+      "year": 1939,
+      "period": "1939–1949 · 1953–1956",
+      "label": { "ko": "몰로토프, 강철의 「니에트」", "en": "Molotov: the iron nyet" },
+      "ref": { "type": "person", "id": "molotov" },
+      "note": { "ko": "리트비노프 해임과 함께 등장해 독소불가침조약에 서명했다. 전시와 냉전 초의 소련 외교를 대표하는 이름", "en": "Installed with Litvinov's dismissal, he signed the pact with Germany; the name of Soviet diplomacy in war and early Cold War" }
+    },
+    {
+      "id": "pact-1939",
+      "column": "turning-points",
+      "year": 1939,
+      "period": "1939.08",
+      "label": { "ko": "독소불가침조약과 비밀의정서", "en": "The Nazi-Soviet pact and its secret protocols" },
+      "note": { "ko": "집단안보의 파산 위에서 맺어진 거래. 동유럽 세력권을 가른 비밀의정서는 반세기 뒤 발트 독립운동의 법적 근거가 된다", "en": "A bargain built on collective security's bankruptcy; its secret partition of Eastern Europe became, half a century on, the Baltic movements' legal case" }
+    },
+    {
+      "id": "comintern-dissolved",
+      "column": "world",
+      "year": 1943,
+      "period": "1943",
+      "label": { "ko": "코민테른 해산", "en": "The Comintern dissolved" },
+      "ref": { "type": "term", "id": "comintern" },
+      "note": { "ko": "연합국과의 동맹을 위해 세계혁명의 사령부를 스스로 닫았다. 국가 외교의 완전한 우위를 보여 준 장면", "en": "The headquarters of world revolution closed by its own hand for the Allied alliance: state diplomacy's complete primacy on display" }
+    },
+    {
+      "id": "yalta-potsdam",
+      "column": "turning-points",
+      "year": 1945,
+      "period": "1945",
+      "label": { "ko": "얄타와 포츠담: 초강대국의 탄생", "en": "Yalta and Potsdam: a superpower is born" },
+      "ref": { "type": "event", "id": "great-patriotic-war" },
+      "note": { "ko": "전승국 소련은 유럽의 절반에 대한 영향권과 안보리 상임이사국 지위를 얻었다. 이후 반세기 소련 외교의 자산이자 부담", "en": "Victory brought half of Europe as a sphere and a permanent Security Council seat: the asset and burden of the next half-century" }
+    },
+    {
+      "id": "two-camps",
+      "column": "line",
+      "year": 1947,
+      "period": "1947–1953",
+      "label": { "ko": "두 진영론 (즈다노프)", "en": "The two-camps doctrine (Zhdanov)" },
+      "ref": { "type": "term", "id": "two-camps-doctrine" },
+      "note": { "ko": "세계는 제국주의 진영과 반제국주의 진영으로 갈라져 있다는 냉전 초기의 공식 세계상", "en": "The early Cold War's official world-picture: an imperialist camp against an anti-imperialist camp" }
+    },
+    {
+      "id": "cominform-node",
+      "column": "world",
+      "year": 1947,
+      "period": "1947–1956",
+      "label": { "ko": "코민포름: 진영의 결속", "en": "The Cominform: disciplining the bloc" },
+      "ref": { "type": "term", "id": "cominform" },
+      "note": { "ko": "마셜 플랜에 맞선 진영 결속 기구. 첫 공식 행동의 하나가 티토 파문이었다", "en": "The bloc's answer to the Marshall Plan; among its first official acts was the excommunication of Tito" }
+    },
+    {
+      "id": "tito-split",
+      "column": "world",
+      "year": 1948,
+      "period": "1948",
+      "label": { "ko": "티토-스탈린 결별: 진영의 첫 균열", "en": "The Tito-Stalin split: the bloc's first crack" },
+      "ref": { "type": "event", "id": "tito-stalin-split" },
+      "note": { "ko": "사회주의 국가가 모스크바의 지도를 거부하고도 살아남을 수 있음을 처음 보여 주었다", "en": "The first proof that a socialist state could refuse Moscow's leadership and survive" }
+    },
+    {
+      "id": "vyshinsky",
+      "column": "commissars",
+      "year": 1949,
+      "period": "1949–1953",
+      "label": { "ko": "비신스키, 검사 출신의 외무장관", "en": "Vyshinsky: the prosecutor as foreign minister" },
+      "ref": { "type": "person", "id": "vyshinsky" },
+      "note": { "ko": "대숙청 재판의 검사가 유엔 연단의 냉전 수사학을 맡았다. 외교가 법정 논고를 닮아 간 시기", "en": "The prosecutor of the purge trials took over the UN rostrum's Cold War rhetoric: diplomacy in the image of the courtroom summation" }
+    },
+    {
+      "id": "warsaw-pact-node",
+      "column": "world",
+      "year": 1955,
+      "period": "1955",
+      "label": { "ko": "바르샤바조약기구", "en": "The Warsaw Pact" },
+      "ref": { "type": "term", "id": "warsaw-pact" },
+      "note": { "ko": "서독의 나토 가입에 맞선 군사동맹. 진영의 결속 기구이자, 헝가리와 체코슬로바키아에서는 진영 단속의 도구가 되었다", "en": "A military alliance answering West Germany's NATO entry; the bloc's bond, and in Hungary and Czechoslovakia its instrument of discipline" }
+    },
+    {
+      "id": "coexistence-khrushchev",
+      "column": "line",
+      "year": 1956,
+      "period": "1956–1985",
+      "label": { "ko": "평화공존론: 전쟁은 숙명이 아니다", "en": "Peaceful coexistence: war is not fatally inevitable" },
+      "ref": { "type": "term", "id": "peaceful-coexistence" },
+      "note": { "ko": "제20차 당대회가 전쟁 불가피론을 공식 폐기했다. 다만 공존은 「계급투쟁의 한 형태」라는 단서를 계속 달고 있었다", "en": "The 20th Congress discarded the thesis of inevitable war, though coexistence kept its rider: a form of class struggle" }
+    },
+    {
+      "id": "gromyko-era",
+      "column": "commissars",
+      "year": 1957,
+      "period": "1957–1985",
+      "label": { "ko": "그로미코, 미스터 니에트의 28년", "en": "Gromyko: twenty-eight years of Mr Nyet" },
+      "ref": { "type": "person", "id": "gromyko" },
+      "note": { "ko": "위기 관리와 군비통제 교섭의 프로. 그의 재임 자체가 소련 외교의 연속성이었다", "en": "The professional of crisis management and arms control; his tenure was Soviet diplomacy's continuity itself" }
+    },
+    {
+      "id": "sino-soviet",
+      "column": "world",
+      "year": 1960,
+      "period": "1956–1969",
+      "label": { "ko": "중소분열: 진영이 둘로 갈라지다", "en": "The Sino-Soviet split: the bloc breaks in two" },
+      "ref": { "type": "event", "id": "sino-soviet-split" },
+      "note": { "ko": "평화공존 노선을 「수정주의」로 규탄한 중국과의 결별로, 세계 공산주의 운동의 단일 중심이 사라졌다", "en": "The break with a China that damned coexistence as revisionism ended the single centre of world communism" }
+    },
+    {
+      "id": "cuban-crisis",
+      "column": "turning-points",
+      "year": 1962,
+      "period": "1962.10",
+      "label": { "ko": "쿠바 미사일 위기", "en": "The Cuban missile crisis" },
+      "ref": { "type": "event", "id": "cuban-missile-crisis" },
+      "note": { "ko": "핵전쟁의 문턱을 밟은 13일. 이후 핫라인과 군비통제 교섭, 데탕트로 가는 길이 열렸다", "en": "Thirteen days at the nuclear threshold, opening the road to the hotline, arms control and detente" }
+    },
+    {
+      "id": "brezhnev-doctrine-node",
+      "column": "line",
+      "year": 1968,
+      "period": "1968–1989",
+      "label": { "ko": "브레즈네프 독트린: 제한주권론", "en": "The Brezhnev Doctrine: limited sovereignty" },
+      "ref": { "type": "term", "id": "brezhnev-doctrine" },
+      "note": { "ko": "프라하의 봄 진압을 정당화한 공식 논리. 사회주의 진영 전체의 이익이 개별국의 주권에 우선한다는 교리였다", "en": "The official logic that justified crushing the Prague Spring: the camp's interest stands above any member's sovereignty" }
+    },
+    {
+      "id": "helsinki-1975",
+      "column": "turning-points",
+      "year": 1975,
+      "period": "1975.08",
+      "label": { "ko": "헬싱키 최종의정서: 데탕트의 정점", "en": "The Helsinki Final Act: detente's summit" },
+      "note": { "ko": "전후 국경의 인정을 얻는 대가로 인권 조항을 받아들였다. 그 「제3바구니」가 동유럽 반체제 운동의 지렛대가 된다", "en": "Postwar borders recognised at the price of human rights clauses; that third basket became the lever of East European dissent" }
+    },
+    {
+      "id": "afghanistan-invasion",
+      "column": "turning-points",
+      "year": 1979,
+      "period": "1979.12",
+      "label": { "ko": "아프가니스탄 침공: 데탕트의 파산", "en": "The invasion of Afghanistan: detente's bankruptcy" },
+      "ref": { "type": "event", "id": "afghanistan-war" },
+      "note": { "ko": "브레즈네프 독트린의 진영 밖 적용이 부른 10년의 소모전. 「제2의 냉전」과 국제적 고립이 뒤따랐다", "en": "The doctrine applied beyond the bloc bought a ten-year war of attrition, a second Cold War and isolation" }
+    },
+    {
+      "id": "shevardnadze-era",
+      "column": "commissars",
+      "year": 1985,
+      "period": "1985–1990",
+      "label": { "ko": "셰바르드나제, 후퇴를 관리한 외무장관", "en": "Shevardnadze: the minister who managed the retreat" },
+      "ref": { "type": "person", "id": "shevardnadze" },
+      "note": { "ko": "외교 경험이 전무한 그루지야 당 지도자의 발탁 자체가 노선 전환의 선언이었다", "en": "The appointment of a Georgian party boss with no diplomatic experience was itself the declaration of a new line" }
+    },
+    {
+      "id": "new-thinking-node",
+      "column": "line",
+      "year": 1986,
+      "period": "1985–1991",
+      "label": { "ko": "신사고: 계급투쟁에서 전인류적 가치로", "en": "The New Thinking: from class struggle to universal values" },
+      "ref": { "type": "term", "id": "new-political-thinking" },
+      "note": { "ko": "핵시대에는 인류의 생존이 어떤 계급의 이익보다 앞선다는 선언. 평화공존에 붙어 있던 계급투쟁의 단서를 지웠다", "en": "In the nuclear age human survival outranks any class interest: the class-struggle rider on coexistence erased" }
+    },
+    {
+      "id": "un-speech-1988",
+      "column": "turning-points",
+      "year": 1988,
+      "period": "1988.12",
+      "label": { "ko": "유엔 연설: 일방 감군 50만", "en": "The UN address: 500,000 troops cut" },
+      "ref": { "type": "doc", "id": "gorbachev-un-speech-1988" },
+      "note": { "ko": "선택의 자유를 「예외 없는 보편 원칙」으로 선언한 신사고의 집대성. 전문 번역으로 읽을 수 있다", "en": "The summa of the New Thinking, declaring freedom of choice a principle without exceptions; read the full translation" }
+    },
+    {
+      "id": "cold-war-end",
+      "column": "turning-points",
+      "year": 1989,
+      "period": "1987–1989",
+      "label": { "ko": "INF에서 몰타까지: 냉전의 종식", "en": "From the INF Treaty to Malta: the Cold War ends" },
+      "ref": { "type": "event", "id": "new-thinking-diplomacy" },
+      "note": { "ko": "사상 첫 핵무기 감축, 아프가니스탄 철군, 그리고 몰타에서의 냉전 종식 확인", "en": "The first real nuclear cuts, the Afghan withdrawal, and the Cold War's end confirmed at Malta" }
+    },
+    {
+      "id": "sinatra-doctrine-node",
+      "column": "line",
+      "year": 1989,
+      "period": "1989",
+      "label": { "ko": "시나트라 독트린: 각자의 길", "en": "The Sinatra Doctrine: my way" },
+      "ref": { "type": "event", "id": "revolutions-1989" },
+      "note": { "ko": "외무부 대변인 게라시모프의 농담에서 나온 이름. 동유럽 각국이 「마이 웨이」를 가게 두겠다는, 브레즈네프 독트린의 공식 폐기 선언이었다", "en": "Named from spokesman Gerasimov's joke: Eastern Europe would do it my way - the Brezhnev Doctrine's official burial" }
+    },
+    {
+      "id": "revolutions-1989-node",
+      "column": "world",
+      "year": 1989,
+      "period": "1989",
+      "label": { "ko": "동유럽 혁명: 진영의 소멸", "en": "The revolutions of 1989: the bloc dissolves" },
+      "ref": { "type": "event", "id": "revolutions-1989" },
+      "note": { "ko": "소련군은 병영에 머물렀고, 진영은 몇 달 만에 사라졌다. 바르샤바조약기구는 1991년 공식 해산된다", "en": "The Soviet army stayed in barracks and the bloc vanished in months; the Warsaw Pact formally dissolved in 1991" }
+    }
+  ],
+  "edges": []
+}
