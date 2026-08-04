@@ -1,8 +1,30 @@
 # Site-wide Optimization & Refactoring Pass
 
 > **Progress log** (update after each phase; next session starts here)
-> - 2026-08-04: Plan approved by user. Decisions: deep refactors included (gradual), `font-display: swap` approved, pg_stat_statements skipped (no pg restart). No implementation started yet — begin with Phase 0 baseline.
-> - Phase 0: ☐  Phase 1: ☐  Phase 2: ☐  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
+> - 2026-08-04: Plan approved by user. Decisions: deep refactors included (gradual), `font-display: swap` approved, pg_stat_statements skipped (no pg restart).
+> - 2026-08-04: Phase 0 baseline recorded (see below). **Next: Phase 1.**
+> - Phase 0: ✅  Phase 1: ☐  Phase 2: ☐  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
+
+## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
+
+Latency, 10× `curl -w '%{time_total}'` (first hit then warm):
+- `/` — 0.061 cold, ~0.010-0.013 warm
+- `/commulingo/people` — ~0.012-0.020
+- `/commulingo/terms/nep` — ~0.010-0.014 (the 3.2 s report-mentions stall is intermittent, not caught in this sample)
+- `/sitemap.xml` — 0.073 cold, ~0.017-0.030 warm
+
+`pg_stat_user_tables` seq_scan (top; compare deltas after Phase 1-2):
+```
+commulingo_people_revisions  seq_scan=183085  seq_tup_read=939098921   <-- NOT in audit findings! investigate
+commulingo_people            seq_scan=44269   seq_tup_read=54379910    (A1 homepage UNION)
+commulingo_history_events    seq_scan=27387
+commulingo_terms             seq_scan=16821
+(remaining commulingo_* tables cluster at ~13.8-16.7k = the 60s snapshot refresh)
+research_documents           seq_scan=3148    (A2 report-mentions full pulls)
+```
+Containers at rest: frontend CPU 0.00% / 471 MiB; pg CPU 0.01% / 675 MiB.
+
+**New finding for Phase 1**: `commulingo_people_revisions` at 183k seq scans / 939M tuples read dwarfs everything — find what queries it (likely people-admin-store or the people refresh) and whether it needs an index or narrower query.
 
 ## Context
 
