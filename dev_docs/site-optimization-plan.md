@@ -11,7 +11,10 @@
 > - 남은 실사용 확인 1건: 채팅 스트리밍 + 중간 탭 닫기 (서버 측 destroy 검증). 사용자 채팅 사용 시 자연 확인됨.
 > - 2026-08-04: **Phase 2 완료·배포** (커밋 2b49d2f). report-mentions 빌드를 문서 단위 setImmediate 양보로 변경 — 리빌드 중 최악 지연 3.2s→0.43s (dev-preview 부하 측정). 스토어 5곳 타이머 지터, 풀 min 2 + idle 300s, genealogy/docs/catalog 500ms stat 디바운스 (계보도 touch 후 리로드 정상 확인). 배포 후 전 페이지 200.
 > - ⚠ 확인 대기 1건: 배포 직후 pg 연결 40개(프로드+dev-preview 풀이 idle 300s 동안 유지, max_connections 100이라 여유). 5분 뒤 min 2 근처로 드레인되는지 다음 틱에서 재확인 — 안 되면 DB_IDLE_TIMEOUT_MS 120s로 축소 검토.
-> - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ☐  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
+> - 2026-08-04: 풀 드레인 확인 — 24개(전부 idle)로 안정. 프로드 스토어의 분당 리프레시 워킹셋이라 설계 의도대로, max_connections 100 대비 여유. 대기 항목 해소.
+> - 2026-08-04: **Phase 3 완료·배포** (커밋 8cd3aae). termPanelMemo/eventPanelMemo (personBodyMemo 패턴 + 스냅숏 ref 검사, 미지 id 미캐시), 사건 페이지 용어 풀스캔 2곳 스냅숏별 캐시, peopleShellMemo. 검증: prod/dev 14개 페이지 byte-diff 동일, 배포 후 프로드 페이지도 배포 전과 동일.
+> - Phase 0: ✅  Phase 1: ✅  Phase 2: ✅  Phase 3: ✅  Phase 4: ☐  Phase 5: ☐  Phase 6: ☐  Phase 7: ☐
+> - **다음**: Phase 4 — B2(GIT_SHA 캐시버스팅)는 게이트 없음, B3(국기 SVGO)는 **사용자 시각 승인 필요** — dev-preview에 준비해 두고 승인 대기. B6+C6 삭제는 게이트 없음.
 
 ## Phase 0 baseline (2026-08-04 ~02:00 UTC, prod localhost:3000)
 
