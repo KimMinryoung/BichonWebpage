@@ -48,7 +48,13 @@ async function buildIndex() {
         if (!map.has(id)) map.set(id, []);
         map.get(id).push(doc);
     };
-    rows.forEach(row => {
+    // Scanning all reports in one go blocked the event loop for ~3s (measured:
+    // 172 docs × ~18ms of regex passes). Yield between docs so in-flight
+    // requests interleave; the build is coalesced and served stale-while-
+    // refreshing, so the longer wall-clock completion is invisible.
+    for (let i = 0; i < rows.length; i++) {
+        if (i > 0) await new Promise(resolve => setImmediate(resolve));
+        const row = rows[i];
         const doc = docEntry(row);
         const ko = findEntityMentions(row.markdown, ctxKo);
         const en = findEntityMentions(row.markdown_en, ctxEn);
@@ -56,7 +62,7 @@ async function buildIndex() {
         new Set([...ko.eventIds, ...en.eventIds]).forEach(id => add(byEvent, id, doc));
         new Set([...ko.topicIds, ...en.topicIds]).forEach(id => add(byTopic, id, doc));
         new Set([...ko.termIds, ...en.termIds]).forEach(id => add(byTerm, id, doc));
-    });
+    }
     return { byPerson, byEvent, byTopic, byTerm, at: Date.now() };
 }
 

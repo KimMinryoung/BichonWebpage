@@ -356,10 +356,18 @@ function refreshFromDb() {
 
 function ensureRefreshTimer() {
     if (refreshTimer) return;
-    refreshTimer = setInterval(() => {
+    // Random initial offset: the five snapshot stores default to the same
+    // REFRESH_MS and would otherwise fire 21 queries into the pool on the
+    // same tick every cycle.
+    refreshTimer = setTimeout(() => {
         refreshFromDb().catch(err =>
             console.error('[commulingo people] scheduled refresh failed:', err.message));
-    }, REFRESH_MS);
+        refreshTimer = setInterval(() => {
+            refreshFromDb().catch(err =>
+                console.error('[commulingo people] scheduled refresh failed:', err.message));
+        }, REFRESH_MS);
+        if (refreshTimer.unref) refreshTimer.unref();
+    }, Math.floor(Math.random() * REFRESH_MS));
     if (refreshTimer.unref) refreshTimer.unref(); // don't keep the process alive
 }
 

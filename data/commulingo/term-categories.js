@@ -81,10 +81,17 @@ function refreshFromDb() {
 
 function ensureRefreshTimer() {
     if (refreshTimer) return;
-    refreshTimer = setInterval(() => {
+    // Random initial offset — see people-store.js: de-synchronizes the five
+    // snapshot stores' refresh bursts.
+    refreshTimer = setTimeout(() => {
         refreshFromDb().catch(err =>
             console.error('[commulingo term categories] scheduled refresh failed:', err.message));
-    }, REFRESH_MS);
+        refreshTimer = setInterval(() => {
+            refreshFromDb().catch(err =>
+                console.error('[commulingo term categories] scheduled refresh failed:', err.message));
+        }, REFRESH_MS);
+        if (refreshTimer.unref) refreshTimer.unref();
+    }, Math.floor(Math.random() * REFRESH_MS));
     if (refreshTimer.unref) refreshTimer.unref(); // don't keep the process alive
 }
 

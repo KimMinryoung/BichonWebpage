@@ -41,8 +41,15 @@ function annotateHeadings(rawHtml, excludePatterns) {
     return { html, toc };
 }
 
+const MANIFEST_FRESHNESS_MS = 500;
+let manifestCheckedAt = 0;
+
 function loadManifest() {
+    // getLinkIndexes hits this several times per request; debounce the stat
+    // while keeping the mtime live-reload for data/ edits.
+    if (Date.now() - manifestCheckedAt < MANIFEST_FRESHNESS_MS) return manifestCache.docs;
     const stat = fs.statSync(MANIFEST_PATH);
+    manifestCheckedAt = Date.now();
     if (stat.mtimeMs !== manifestCache.mtimeMs) {
         const parsed = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
         const docs = (Array.isArray(parsed.docs) ? parsed.docs : []).filter(doc => {

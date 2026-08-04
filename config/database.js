@@ -13,6 +13,11 @@ const pool = new Pool({
     database: process.env.DB_NAME || 'bichon_website',
     application_name: process.env.DB_APPLICATION_NAME || 'leninbot-frontend',
     max: intFromEnv('DB_POOL_MAX', 15),
+    // Keep a couple of connections warm between the snapshot stores' refresh
+    // bursts — the pg default 10s idle reap emptied the pool every cycle and
+    // each refresh paid ~20 fresh TCP+auth handshakes.
+    min: intFromEnv('DB_POOL_MIN', 2),
+    idleTimeoutMillis: intFromEnv('DB_IDLE_TIMEOUT_MS', 300000),
     // The DB is the local leninbot-pg container on the same Docker network;
     // fail fast instead of letting requests hang when it is down.
     connectionTimeoutMillis: intFromEnv('DB_CONNECT_TIMEOUT_MS', 3000),

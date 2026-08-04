@@ -11,6 +11,13 @@ const CHARTS_DIR = path.join(__dirname, 'genealogy');
 
 const chartCache = new Map(); // file -> { mtimeMs, chart }
 
+// A term page calls loadCharts() once per reference doc on top of its own
+// call, each a readdir + stat per chart file. Freshness window matching the
+// shards.js debounce keeps the mtime live-reload while collapsing the
+// per-request walks. Callers only map over the result, never mutate it.
+const FRESHNESS_MS = 500;
+let lastLoad = { at: 0, charts: [] };
+
 function validChart(chart) {
     return chart && typeof chart.id === 'string'
         && Array.isArray(chart.columns) && chart.columns.length
@@ -21,6 +28,7 @@ function validChart(chart) {
 }
 
 function loadCharts() {
+    if (Date.now() - lastLoad.at < FRESHNESS_MS) return lastLoad.charts;
     let files = [];
     try {
         files = fs.readdirSync(CHARTS_DIR).filter(file => file.endsWith('.json'));
@@ -48,6 +56,7 @@ function loadCharts() {
             chartCache.delete(file);
         }
     }
+    lastLoad = { at: Date.now(), charts };
     return charts;
 }
 

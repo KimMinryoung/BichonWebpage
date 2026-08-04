@@ -245,10 +245,14 @@ function ensureCommuLingoShards() {
 // on every report/person/term request. A regenerated catalog file changes the
 // mtime, which invalidates this cache and those memos together.
 let catalogCache = null; // { mtimeMs, data }
+const CATALOG_FRESHNESS_MS = 500;
+let catalogCheckedAt = 0;
 
 function loadCommuLingoCatalog() {
+    if (catalogCache && Date.now() - catalogCheckedAt < CATALOG_FRESHNESS_MS) return catalogCache.data;
     ensureCommuLingoShards();
     const mtimeMs = statMtimeMs(CATALOG_PATH);
+    catalogCheckedAt = Date.now();
     if (!catalogCache || catalogCache.mtimeMs !== mtimeMs) {
         catalogCache = { mtimeMs, data: readJson(CATALOG_PATH) };
     }
