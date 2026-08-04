@@ -32,10 +32,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<%= _title %>">
 <meta name="twitter:description" content="<%= _desc %>">
-<link rel="preload" href="/fonts/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/ibm-plex/ibm-plex-sans-400.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/fonts/ibm-plex/ibm-plex-sans-600.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/fonts/ibm-plex/ibm-plex-sans-condensed-700.ttf" as="font" type="font/ttf" crossorigin>
+<%# Font preloads removed on purpose: Pretendard is unicode-range sliced (the
+    browser only knows which slices a page needs after CSS+text are seen) and
+    font-display: swap paints text immediately in the fallback. %>
 <% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
 <script type="application/ld+json"><%- jsonLdScript(jsonLd) %></script>
 <% } %>
@@ -50,6 +49,7 @@
     document.documentElement.setAttribute('data-section', <%- JSON.stringify(_section) %>);
 })();
 </script>
+<link rel="stylesheet" href="/css/pretendard-subset.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/ui.css?v=<%= assetVersion %>">
