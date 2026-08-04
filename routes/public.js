@@ -144,7 +144,7 @@ router.get('/post/:id', postRoutes.detail);
 // Public novel pages, backed by the writer API. Reachable only by direct URL:
 // intentionally absent from nav, sitemap, and feeds, and served with noindex —
 // the only discovery path is the owner sharing the link.
-const WRITER_API_URL = process.env.WRITER_API_URL || 'http://172.17.0.1:8001';
+const { WRITER_API_URL } = require('../config/services');
 
 function novelEscapeHtml(text) {
     return text

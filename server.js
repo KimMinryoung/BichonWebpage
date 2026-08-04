@@ -25,10 +25,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
-const WRITER_API_URL = process.env.WRITER_API_URL || 'http://172.17.0.1:8001';
-const EMAIL_API_URL = process.env.EMAIL_API_URL || 'http://172.17.0.1:8002';
-const A2A_API_URL = process.env.A2A_API_URL || 'http://172.17.0.1:8003';
+const { CHAT_API_URL, WRITER_API_URL, EMAIL_API_URL, A2A_API_URL } = require('./config/services');
 const ASSET_VERSION = process.env.ASSET_VERSION || process.env.GIT_SHA || String(Date.now());
 const DEV_MODE = process.env.DEV_MODE === '1' || process.env.NODE_ENV !== 'production';
 

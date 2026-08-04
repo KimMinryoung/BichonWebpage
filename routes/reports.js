@@ -16,8 +16,7 @@ const { sanitizeRich } = require('../utils/sanitize');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 const errorPage = require('../utils/error-page');
 
-const CHAT_API_URL = process.env.CHAT_API_URL || 'http://host.docker.internal:8000';
-const ADMIN_KEY = process.env.LENINBOT_ADMIN_KEY || '';
+const { CHAT_API_URL, LENINBOT_ADMIN_KEY: ADMIN_KEY } = require('../config/services');
 const REPORTS_PER_PAGE = 20;
 
 function researchMarkdown(data) {
