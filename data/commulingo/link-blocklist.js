@@ -6,119 +6,54 @@
 // can collide with a name already in the dictionary — the list grows with the
 // content, which is why it belongs with the content instead of in code.
 //
-// Served like the other registries: an in-memory copy on the hot path, a
-// background refresh, and an on-disk snapshot so a leninbot-pg restart cannot
-// suddenly start linking 레닌그라드 to Lenin.
+// Serving (memory → disk snapshot → DB, background refresh) comes from the
+// shared snapshot-store scaffold, so a leninbot-pg restart cannot suddenly
+// start linking 레닌그라드 to Lenin.
 const db = require('../../config/database');
-const fs = require('fs');
 const path = require('path');
-
-const REFRESH_MS = Number.parseInt(process.env.COMMULINGO_LINK_BLOCKLIST_CACHE_MS || '60000', 10);
-const SNAPSHOT_PATH = process.env.COMMULINGO_LINK_BLOCKLIST_SNAPSHOT
-    || path.join(__dirname, 'link-blocklist-snapshot.json');
+const { createRegistrySnapshotStore } = require('./snapshot-store');
 
 // { phrase: { ko, en }, alias: { ko, en } } — also the identity callers memoize
 // against. `phrase` strings are consumed ahead of the alias inside them;
 // `alias` strings are dropped from the index entirely, which is the only thing
 // that works when the collision is exact (리보프 the city vs Prince Lvov).
-let memory = null;
-let pendingRefresh = null;
-let refreshTimer = null;
-
 function install(rows) {
     const next = { phrase: { ko: [], en: [] }, alias: { ko: [], en: [] } };
     rows.forEach(row => {
         const kind = next[row.kind || 'phrase'];
         if (kind && kind[row.lang] && row.phrase) kind[row.lang].push(row.phrase);
     });
-    memory = next;
-    return memory;
+    return next;
 }
 
-function readSnapshotFile() {
-    try {
-        const rows = JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'));
-        // A file written before `kind` existed would install every never-link
-        // alias as a phrase, which silently re-links 리보프 and 톨스토이. Treat
-        // it as absent and go to the DB instead.
-        if (Array.isArray(rows) && rows.length && rows.every(row => row && row.kind)) return rows;
-    } catch (err) {
-        if (err.code !== 'ENOENT') {
-            console.error('[commulingo link blocklist] snapshot read failed:', err.message);
-        }
-    }
-    return null;
-}
-
-function writeSnapshotFile(rows) {
-    try {
-        const tmp = SNAPSHOT_PATH + '.tmp';
-        fs.writeFileSync(tmp, JSON.stringify(rows));
-        fs.renameSync(tmp, SNAPSHOT_PATH); // atomic swap so readers never see a partial file
-    } catch (err) {
-        console.error('[commulingo link blocklist] snapshot write failed:', err.message);
-    }
-}
-
-function refreshFromDb() {
-    if (pendingRefresh) return pendingRefresh;
-    pendingRefresh = db.query(
+const store = createRegistrySnapshotStore({
+    label: 'commulingo link blocklist',
+    refreshMs: Number.parseInt(process.env.COMMULINGO_LINK_BLOCKLIST_CACHE_MS || '60000', 10),
+    snapshotPath: process.env.COMMULINGO_LINK_BLOCKLIST_SNAPSHOT
+        || path.join(__dirname, 'link-blocklist-snapshot.json'),
+    fetchRows: async () => (await db.query(
         `SELECT kind, lang, phrase FROM commulingo_link_blocklist ORDER BY kind, lang, phrase`
-    )
-        .then(result => {
-            // An empty result would quietly re-enable every false positive the
-            // list exists to stop; keep the copy we have.
-            if (!result.rows.length) return memory || install([]);
-            writeSnapshotFile(result.rows);
-            return install(result.rows);
-        })
-        .finally(() => { pendingRefresh = null; });
-    return pendingRefresh;
-}
-
-function ensureRefreshTimer() {
-    if (refreshTimer) return;
-    // Random initial offset — see people-store.js: de-synchronizes the five
-    // snapshot stores' refresh bursts.
-    refreshTimer = setTimeout(() => {
-        refreshFromDb().catch(err =>
-            console.error('[commulingo link blocklist] scheduled refresh failed:', err.message));
-        refreshTimer = setInterval(() => {
-            refreshFromDb().catch(err =>
-                console.error('[commulingo link blocklist] scheduled refresh failed:', err.message));
-        }, REFRESH_MS);
-        if (refreshTimer.unref) refreshTimer.unref();
-    }, Math.floor(Math.random() * REFRESH_MS));
-    if (refreshTimer.unref) refreshTimer.unref(); // don't keep the process alive
-}
+    )).rows,
+    install,
+    // A file written before `kind` existed would install every never-link
+    // alias as a phrase, which silently re-links 리보프 and 톨스토이. Treat
+    // it as absent and go to the DB instead.
+    validateSnapshot: rows => Array.isArray(rows) && rows.length > 0 && rows.every(row => row && row.kind),
+});
 
 // Await before building any link index. Memory → disk snapshot → DB.
-async function loadLinkBlocklist() {
-    ensureRefreshTimer();
-    if (memory) return memory;
-    const snapshot = readSnapshotFile();
-    if (snapshot) {
-        install(snapshot);
-        refreshFromDb().catch(err =>
-            console.error('[commulingo link blocklist] refresh failed:', err.message));
-        return memory;
-    }
-    try {
-        await refreshFromDb();
-    } catch (err) {
-        console.error('[commulingo link blocklist] load failed:', err.message);
-        install([]);
-    }
-    return memory;
+function loadLinkBlocklist() {
+    return store.load();
 }
 
 // Identity of the loaded list, for callers memoizing built indexes: when this
 // object changes, an index built from it is stale.
 function blocklistRef() {
-    return memory;
+    return store.getMemory();
 }
 
 function blockedPhrases(lang) {
+    const memory = store.getMemory();
     if (!memory) return [];
     return memory.phrase[lang === 'en' ? 'en' : 'ko'];
 }
@@ -126,6 +61,7 @@ function blockedPhrases(lang) {
 // One-word aliases that must never be indexed at all. English is matched
 // case-insensitively, as the array it replaces was.
 function neverLinkAliases(lang) {
+    const memory = store.getMemory();
     if (!memory) return [];
     return memory.alias[lang === 'en' ? 'en' : 'ko'];
 }
@@ -133,7 +69,7 @@ function neverLinkAliases(lang) {
 // Test seam: install a list directly, so the linkify smoke tests keep running
 // on synthetic indexes with no database and no snapshot.
 function installLinkBlocklist(rows) {
-    return install(rows || []);
+    return store.setMemory(install(rows || []));
 }
 
 module.exports = {
@@ -142,5 +78,5 @@ module.exports = {
     blocklistRef,
     blockedPhrases,
     neverLinkAliases,
-    SNAPSHOT_PATH,
+    SNAPSHOT_PATH: store.snapshotPath,
 };
