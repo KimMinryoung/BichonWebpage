@@ -104,6 +104,31 @@ const NATION_SCRIPTS = {
     india: ['devanagari', 'bengali', 'latin'],
 };
 
+// Nations whose people write the family name first, and how the two parts
+// join per language. Korean text fuses Korean/Chinese/Vietnamese names
+// (김무정, 펑더화이, 호찌민) and keeps the space for Japanese (도쿠다 규이치);
+// English follows each nation's own romanization — family first for
+// Korean/Chinese/Vietnamese (Kim Mu-chong, Peng Dehuai, Le Duan), given first
+// for Japanese (Sen Katayama). Nations absent here use Western "given family".
+// Ported to leninbot runtime_tools/commulingo_people.py — keep the two in sync.
+const FAMILY_FIRST = {
+    korea: { ko: '', en: ' ' },
+    'north-korea': { ko: '', en: ' ' },
+    'south-korea': { ko: '', en: ' ' },
+    china: { ko: '', en: ' ' },
+    vietnam: { ko: '', en: ' ' },
+    japan: { ko: ' ', en: null },
+};
+
+// The joiner between family and given when `code` writes the family name
+// first in `lang`; null means Western given-first order.
+function familyFirstJoiner(code, lang) {
+    const key = typeof code === 'string' ? code.trim() : '';
+    const rule = Object.prototype.hasOwnProperty.call(FAMILY_FIRST, key) ? FAMILY_FIRST[key] : null;
+    if (!rule) return null;
+    return rule[lang] !== undefined ? rule[lang] : null;
+}
+
 // Regnal numbers are Latin letters in every script: Николай II is a Cyrillic
 // name, not a mixed-script one. Drop those tokens before sniffing.
 const ROMAN_NUMERAL = /(^|\s)[IVXLCDM]+(?=$|\s)/g;
@@ -161,6 +186,8 @@ function checkNativeScript(text, { citizenship, origin, field = 'cyrillic' } = {
 
 module.exports = {
     NATION_SCRIPTS,
+    FAMILY_FIRST,
+    familyFirstJoiner,
     detectScripts,
     scriptsFor,
     checkNativeScript,

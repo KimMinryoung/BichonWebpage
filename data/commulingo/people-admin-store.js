@@ -1,7 +1,7 @@
 const db = require('../../config/database');
 const { OFFICE_ICON, parsePeriod, normalizeFateLabel } = require('./people-standard');
 const { clearCommuLingoPeopleCache } = require('./people-store');
-const { checkNativeScript } = require('./native-script');
+const { checkNativeScript, familyFirstJoiner } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { canonicalNationalityLabel } = require('./nationality-filter');
 const { normalizeSovietKoreanText } = require('./korean-terminology');
@@ -229,25 +229,39 @@ function collapseSpaces(value) {
     return (value || '').trim().replace(/\s+/g, ' ');
 }
 
-function splitFullName(full) {
+function splitFullName(full, lang, citizenshipCode) {
     const name = collapseSpaces(full);
     if (!name) return { given: '', family: '' };
-    const idx = name.lastIndexOf(' ');
     // Single-token names (East Asian fused names, mononyms) live in family.
-    if (idx === -1) return { given: '', family: name };
+    if (!name.includes(' ')) return { given: '', family: name };
+    // Family-first nationalities lead with the family name (Kim Mu-chong,
+    // 도쿠다 규이치); everyone else ends with it.
+    if (familyFirstJoiner(citizenshipCode, lang) !== null) {
+        const idx = name.indexOf(' ');
+        return { given: name.slice(idx + 1), family: name.slice(0, idx) };
+    }
+    const idx = name.lastIndexOf(' ');
     return { given: name.slice(0, idx), family: name.slice(idx + 1) };
 }
 
+// The derived full name honors the nationality's name order: 김+무정 → 김무정,
+// Peng+Dehuai → Peng Dehuai, everyone else given-first with a space.
+function composeFullName(given, family, lang, citizenshipCode) {
+    const joiner = familyFirstJoiner(citizenshipCode, lang);
+    if (joiner !== null && given && family) return `${family}${joiner}${given}`;
+    return [given, family].filter(Boolean).join(' ');
+}
+
 // Name parts for one language from a payload: structured givenName/familyName
-// win; the legacy full `name` is split (family = last token, given = the rest).
-function resolveNameParts(payload, lang) {
+// win; the legacy full `name` is split per the nationality's name order.
+function resolveNameParts(payload, lang, citizenshipCode) {
     const given = collapseSpaces(localized(payload.givenName, lang));
     const family = collapseSpaces(localized(payload.familyName, lang));
     if (given || family) {
-        return { given, family, full: [given, family].filter(Boolean).join(' ') };
+        return { given, family, full: composeFullName(given, family, lang, citizenshipCode) };
     }
     const full = collapseSpaces(localized(payload.name, lang));
-    return { ...splitFullName(full), full };
+    return { ...splitFullName(full, lang, citizenshipCode), full };
 }
 
 // The patronymic lives only in commulingo_person_patronymics; a name that
@@ -523,8 +537,8 @@ async function createPersonAdmin(rawPayload, options = {}) {
         const patronymicState = requirePatronymicState(payload, {}, payload.cyrillic || '');
         assertNativeScript(payload, { citizenship: citizenship.code, origin: origin.code });
         const groupId = requireId(payload.groupId || payload.group, 'group id');
-        const partsKo = resolveNameParts(payload, 'ko');
-        const partsEn = resolveNameParts(payload, 'en');
+        const partsKo = resolveNameParts(payload, 'ko', citizenship.code);
+        const partsEn = resolveNameParts(payload, 'en', citizenship.code);
         if (!partsKo.full || !partsEn.full) {
             throw badRequest('name.ko and name.en (or givenName/familyName per language) are required');
         }
@@ -661,10 +675,10 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
                     ? collapseSpaces(localized(payload.givenName, lang)) : stored.given;
                 const family = payload.familyName !== undefined
                     ? collapseSpaces(localized(payload.familyName, lang)) : stored.family;
-                return { given, family, full: [given, family].filter(Boolean).join(' ') };
+                return { given, family, full: composeFullName(given, family, lang, citizenship.code) };
             }
             const full = collapseSpaces(localized(payload.name, lang));
-            return { ...splitFullName(full), full };
+            return { ...splitFullName(full, lang, citizenship.code), full };
         };
         let newPartsKo = null;
         let newPartsEn = null;

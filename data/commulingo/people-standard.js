@@ -1,4 +1,5 @@
 const { hasFlag, flagLabel } = require('./flag-icons');
+const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
 
 const SCHEMA_VERSION = 'commulingo.people.v1';
@@ -100,8 +101,13 @@ function composePersonName(name, patronymic) {
 // Preferred composition when structured name parts exist (given/family columns,
 // migration 060): the patronymic sits between given and family names, which
 // also places it correctly after multi-word given names where the legacy
-// insert-after-first-token compose cannot.
-function composeFromParts(given, patronymic, family) {
+// insert-after-first-token compose cannot. Family-first nationalities
+// (korea/china/vietnam/japan — see native-script.js) lead with the family name
+// instead: 김+무정 → 김무정, Peng+Dehuai → Peng Dehuai; those names never
+// carry a patronymic, so a present patronymic keeps the Western shape.
+function composeFromParts(given, patronymic, family, lang, citizenshipCode) {
+    const joiner = familyFirstJoiner(citizenshipCode, lang);
+    if (joiner !== null && given && family && !patronymic) return `${family}${joiner}${given}`;
     return [given, patronymic, family].filter(Boolean).join(' ');
 }
 
@@ -237,7 +243,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         const given = (raw.givenName && raw.givenName[l]) || '';
         const family = (raw.familyName && raw.familyName[l]) || '';
         const pat = localize((data.patronymics || {})[raw.id], l);
-        if (given || family) return composeFromParts(given, pat, family);
+        const citizenshipCode = (raw.citizenship && raw.citizenship.code) || '';
+        if (given || family) return composeFromParts(given, pat, family, l, citizenshipCode);
         return composePersonName(localize(raw.name, l), pat);
     };
     const career = ((data.careers || {})[raw.id] || []).map(entry => ({
