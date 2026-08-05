@@ -165,6 +165,50 @@
    }
   },
   {
+   "id": "lenin-self-determination",
+   "file": "lenin-self-determination.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "레닌, 「민족자결권에 대하여」 한국어 번역",
+    "en": "Lenin, The Right of Nations to Self-Determination (Korean translation)"
+   },
+   "description": {
+    "ko": "레닌이 1914년에 쓴 민족자결권 옹호 논문의 한국어 번역 전문. 로자 룩셈부르크의 강령 제9항 비판에 답하여 자결권을 분리와 독립된 민족국가 형성의 권리로 정의하고, 노르웨이의 분리, 1896년 런던 대회 결정, 마르크스의 아일랜드론, 1903년 당대회 논쟁을 검토하며 청산파와 카데트의 민족적 자유주의를 비판한다. 러시아어 원문에서 번역했고 원문 각주 15개를 함께 실었다.",
+    "en": "A complete Korean translation of Lenin's 1914 defence of the right of nations to self-determination. Answering Rosa Luxemburg's critique of clause 9 of the programme, it defines self-determination as the right to secede and form an independent national state, examining Norway's secession, the London Congress resolution of 1896, Marx on Ireland and the programme debate of 1903, against the national-liberalism of the Cadets and the Liquidators. Translated from the Russian original with the fifteen original footnotes."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "В. И. Ленин, «О праве наций на самоопределение» (1914). Полное собрание сочинений, 5-е изд., т. 25, с. 255–320; 러시아어 위키문헌 전자판 저본, https://ru.wikisource.org/wiki/О_праве_наций_на_самоопределение_(Ленин)",
+   "people": [
+    "lenin",
+    "luxemburg",
+    "karl-marx",
+    "friedrich-engels",
+    "karl-kautsky",
+    "plekhanov",
+    "martov",
+    "trotsky"
+   ],
+   "terms": [
+    "self-determination-of-nations",
+    "liquidationism"
+   ],
+   "events": [],
+   "addedAt": "2026-08-05",
+   "aliases": {
+    "ko": [
+     "「민족자결권에 대하여」",
+     "『민족자결권에 대하여』",
+     "민족자결권에 대하여"
+    ],
+    "en": [
+     "The Right of Nations to Self-Determination"
+    ]
+   }
+  },
+  {
    "id": "1918-rsfsr-constitution",
    "file": "1918-rsfsr-constitution.html",
    "docLang": "ko",
