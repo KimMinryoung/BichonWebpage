@@ -124,6 +124,47 @@
    }
   },
   {
+   "id": "stalin-marxism-national-question",
+   "file": "stalin-marxism-national-question.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "스탈린, 「마르크스주의와 민족문제」 한국어 번역",
+    "en": "Stalin, Marxism and the National Question (Korean translation)"
+   },
+   "description": {
+    "ko": "스탈린이 1913년 초 빈에서 쓴 민족 이론 논문의 한국어 번역 전문. 언어·영토·경제생활·심리 구조의 공통성이라는 네 표지로 민족을 정의하고, 오스트리아 마르크스주의의 문화적 민족 자치론과 분트·캅카스 청산파를 비판하며, 민족자결권과 지역 자치, 소수자 평등권, 국제주의적 단일 조직을 대안으로 제시한다. 러시아어 원문에서 번역했고 전집 영역판의 편집자 주 40개를 함께 실었다.",
+    "en": "A complete Korean translation of the essay Stalin wrote in Vienna in early 1913. It defines the nation by four common features (language, territory, economic life, psychological make-up), criticizes Austro-Marxist cultural-national autonomy and its Bundist and Caucasian followers, and advances self-determination, regional autonomy, minority equality and a single internationalist workers' organization. Translated from the Russian original, with the forty editorial notes of the Moscow English edition."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "И. В. Сталин, «Марксизм и национальный вопрос» (1913). 『스탈린 전집』 제2권, 모스크바, 1946년, 290~367쪽 (러시아어 원문 저본); 편집자 주는 J. V. Stalin, Works, Vol. 2, Foreign Languages Publishing House, Moscow, 1953",
+   "people": [
+    "stalin",
+    "karl-marx",
+    "karl-kautsky",
+    "plekhanov",
+    "martov"
+   ],
+   "terms": [
+    "self-determination-of-nations",
+    "liquidationism"
+   ],
+   "events": [],
+   "addedAt": "2026-08-05",
+   "aliases": {
+    "ko": [
+     "「마르크스주의와 민족문제」",
+     "『마르크스주의와 민족문제』",
+     "마르크스주의와 민족문제"
+    ],
+    "en": [
+     "Marxism and the National Question"
+    ]
+   }
+  },
+  {
    "id": "1918-rsfsr-constitution",
    "file": "1918-rsfsr-constitution.html",
    "docLang": "ko",
