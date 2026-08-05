@@ -10,7 +10,9 @@ const {
 } = require('./people-linkify');
 
 // Korean compounds that contain a term alias but must never link.
-const BLOCKED_TERM_KO = ['집단농장화'];
+// 전세계 contains 전세 (jeonse) and fired in the Communist Manifesto's
+// '전세계의 프롤레타리아여' — the compound never means the housing lease.
+const BLOCKED_TERM_KO = ['집단농장화', '전세계'];
 
 // Aliases that are also ordinary Korean words — the term counterpart of
 // NEVER_LINK_ALIAS_KO in people-linkify. They surfaced when lesson prose
