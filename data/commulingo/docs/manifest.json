@@ -1,6 +1,47 @@
 {
  "docs": [
   {
+   "id": "marx-engels-communist-manifesto",
+   "file": "marx-engels-communist-manifesto.html",
+   "docLang": "ko",
+   "title": {
+    "ko": "마르크스·엥겔스, 『공산당 선언』 한국어 번역",
+    "en": "Marx & Engels, The Communist Manifesto (Korean translation)"
+   },
+   "description": {
+    "ko": "마르크스와 엥겔스가 공산주의자 동맹의 강령으로 집필하여 1848년 2월 런던에서 발표한 문헌의 한국어 번역 전문. 본문 네 장과 1848년 서문, 엥겔스 생전의 독일어판 서문 세 편(1872·1883·1890년)을 함께 실었고, 저본의 저자·편집자·역자 주석을 그대로 옮겼다. 번역은 위키문헌의 퍼블릭 도메인 한국어 전역본이다.",
+    "en": "A complete Korean translation of the programme Marx and Engels wrote for the Communist League, published in London in February 1848. Includes the four chapters, the 1848 preamble, and the three German prefaces of Engels's lifetime (1872, 1883, 1890), with the author's, editor's and translator's notes of the source edition. The translation is the public-domain Korean version from Wikisource."
+   },
+   "kind": {
+    "ko": "번역 전문",
+    "en": "Full translation"
+   },
+   "source": "Karl Marx & Friedrich Engels, Manifest der Kommunistischen Partei (London, 1848). 한국어 번역: 위키문헌 「번역:공산당 선언」, https://ko.wikisource.org/wiki/번역:공산당_선언 (원문·번역 모두 퍼블릭 도메인, 2026-08-05 전재)",
+   "people": [
+    "karl-marx",
+    "friedrich-engels"
+   ],
+   "terms": [
+    "scientific-socialism",
+    "utopian-socialism",
+    "dictatorship-of-the-proletariat",
+    "historical-materialism"
+   ],
+   "events": [],
+   "addedAt": "2026-08-05",
+   "aliases": {
+    "ko": [
+     "『공산당 선언』",
+     "공산당 선언",
+     "『공산주의자 선언』"
+    ],
+    "en": [
+     "The Communist Manifesto",
+     "Communist Manifesto"
+    ]
+   }
+  },
+  {
    "id": "marx-value-price-profit",
    "file": "marx-value-price-profit.html",
    "docLang": "ko",
