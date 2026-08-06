@@ -496,6 +496,15 @@
   margin-inline: calc(-1 * clamp(12px, 2.5vw, 20px));
 }
 
+/* 제목 아래 한 줄로 붙는 저자·부제. 문헌의 신원이지 본문도 해제도 아니므로
+   본문보다 한 단계 낮은 색으로 두고 양쪽 맞춤에서 빼 둔다. */
+.book .doc-byline {
+  margin: 0.2em 0 0;
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  text-align: start;
+}
+
 /* 엮은이 주 — 사료 본문과 눈으로 구분되어야 한다. 참고 문헌 페이지에서 해제를
    본문과 같은 모양으로 흘리면 독자가 명령서가 한 말과 이 사이트가 한 말을
    구분할 수 없다. 서식 문제가 아니라 정확성 문제라 색만 흐리게 하지 않고
@@ -515,6 +524,25 @@
 }
 
 .book .doc-editorial p:last-child {
+  margin-bottom: 0;
+}
+
+/* 서지 항목(집필·최초 발표·저본)은 해제 문단 아래에 목록으로 붙는다. 본문의
+   양쪽 맞춤을 물려받으면 'ru.wikisource.org' 같은 끊기지 않는 문자열 하나가
+   한 줄을 통째로 벌려 놓으므로 목록 항목은 왼쪽 맞춤으로 되돌린다. */
+.book .doc-editorial ul {
+  margin: 0.6em 0 0;
+  padding-left: 1.15em;
+  list-style: disc;
+}
+
+.book .doc-editorial li {
+  margin: 0 0 0.35em;
+  text-align: start;
+  word-break: break-word;
+}
+
+.book .doc-editorial li:last-child {
   margin-bottom: 0;
 }
 
