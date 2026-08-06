@@ -775,7 +775,9 @@
         "ordzhonikidze",
         "postyshev",
         "rudzutak",
-        "kosior"
+        "kosior",
+        "robert-eikhe",
+        "mikhail-kedrov"
       ],
       "terms": [
         "cult-of-personality",
@@ -784,7 +786,11 @@
         "great-purge",
         "rehabilitation-of-deported-peoples"
       ],
-      "events": [],
+      "events": [
+        "doctors-plot",
+        "leningrad-affair",
+        "great-terror"
+      ],
       "addedAt": "2026-08-06",
       "aliases": {
         "ko": [
