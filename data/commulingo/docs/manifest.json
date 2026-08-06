@@ -252,6 +252,52 @@
       }
     },
     {
+      "id": "lenin-april-theses",
+      "file": "lenin-april-theses.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "레닌, 「4월 테제」 한국어 번역",
+        "en": "Lenin, The April Theses (Korean translation)"
+      },
+      "description": {
+        "ko": "레닌이 1917년 4월 망명에서 돌아온 이튿날 발표하고 사흘 뒤 『프라우다』에 실은 열 개 항의 테제 전문 번역. 임시정부를 조금도 지지하지 않을 것, 부르주아지에게 권력을 넘긴 혁명의 제1단계에서 프롤레타리아트와 빈농의 손으로 넘기는 제2단계로 이행할 것, 의회제 공화국이 아닌 소비에트 공화국을 세우고 경찰·상비군·관료를 없앨 것, 지주 토지 몰수와 토지 국유화, 은행의 단일 국립은행 통합, 사회주의의 '도입'이 아니라 생산과 분배에 대한 소비에트의 통제, 당명을 공산당으로 바꾸고 새 인터내셔널을 세울 것을 제기한다. 테제 뒤에 레닌이 플레하노프 등 논적에게 답한 글이 붙어 있다.",
+        "en": "A complete translation of the ten theses Lenin read the day after returning from exile in April 1917 and published in Pravda three days later: no support whatever for the Provisional Government; passage from the first stage of the revolution, which gave power to the bourgeoisie, to the second, which must place it in the hands of the proletariat and poorest peasants; a republic of Soviets rather than a parliamentary republic, with the police, standing army and bureaucracy abolished; confiscation of landed estates and nationalisation of the land; the merger of all banks into one national bank; not the 'introduction' of socialism but soviet control of production and distribution; a change of the party's name to Communist and a new International. Lenin's reply to Plekhanov and other opponents follows the theses."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "В. И. Ленин, «О задачах пролетариата в данной революции» // Правда. 1917. № 26. 7 (19) апреля. 수록본: Полное собрание сочинений, 5-е изд., т. 31, с. 113–118; 러시아어 위키문헌 전자판",
+      "people": [
+        "lenin",
+        "plekhanov",
+        "irakli-tsereteli",
+        "nikolai-chkheidze",
+        "karl-kautsky",
+        "luxemburg"
+      ],
+      "terms": [
+        "soviet",
+        "dual-power",
+        "russian-provisional-government",
+        "bolshevik"
+      ],
+      "events": [],
+      "addedAt": "2026-08-06",
+      "aliases": {
+        "ko": [
+          "4월 테제",
+          "「4월 테제」",
+          "사월 테제",
+          "당면한 혁명에서 프롤레타리아트의 임무에 대하여"
+        ],
+        "en": [
+          "April Theses",
+          "The April Theses"
+        ]
+      }
+    },
+    {
       "id": "1918-rsfsr-constitution",
       "file": "1918-rsfsr-constitution.html",
       "docLang": "ko",
@@ -655,6 +701,46 @@
         ],
         "en": [
           "Dialectical and Historical Materialism"
+        ]
+      }
+    },
+    {
+      "id": "molotov-ribbentrop-1939",
+      "file": "molotov-ribbentrop-1939.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "독소 불가침조약과 비밀 추가의정서 한국어 번역",
+        "en": "The Molotov–Ribbentrop Pact and its Secret Protocol (Korean translation)"
+      },
+      "description": {
+        "ko": "1939년 8월 23일 모스크바에서 몰로토프와 리벤트로프가 서명한 독소 불가침조약과, 같은 날 함께 서명된 비밀 추가의정서의 전문 번역. 조약은 이튿날 공개되어 양국 의회의 비준을 받았고, 의정서는 발트 지역과 폴란드, 베사라비아를 두 나라의 이익권으로 갈랐다. 소련은 의정서의 존재를 오랫동안 부인하다 1989년에야 인정하고 서명 시점부터 무효임을 선언했으며, 원문 사본은 1990년에 공개되었다.",
+        "en": "A complete translation of the non-aggression treaty signed in Moscow by Molotov and Ribbentrop on 23 August 1939 together with the secret additional protocol signed the same day. The treaty was published the next day and ratified by both parliaments; the protocol divided the Baltic region, Poland and Bessarabia into the two states' spheres of interest. The USSR denied the protocol's existence until 1989, when it acknowledged it and declared it void from the moment of signature; the surviving copy was published in 1990."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Договор о ненападении между Германией и СССР, 23 августа 1939 г. // Известия. 1939. 24 августа; Секретный дополнительный протокол — АВП СССР, ф. 06, оп. 1, п. 8, д. 77, л. 1–2. 두 문서 모두 자료집 『Год кризиса. 1938—1939』(М., 1990) 재수록본, 러시아어 위키문헌 전자판",
+      "people": [
+        "molotov",
+        "stalin"
+      ],
+      "terms": [
+        "molotov-ribbentrop-pact"
+      ],
+      "events": [],
+      "addedAt": "2026-08-06",
+      "aliases": {
+        "ko": [
+          "독소 불가침조약",
+          "몰로토프-리벤트로프 조약",
+          "비밀 추가의정서",
+          "독소불가침조약"
+        ],
+        "en": [
+          "Molotov–Ribbentrop Pact",
+          "German–Soviet Non-Aggression Pact",
+          "Secret Additional Protocol"
         ]
       }
     },
