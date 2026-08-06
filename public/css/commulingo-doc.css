@@ -95,6 +95,42 @@
   color: var(--text-secondary);
 }
 
+/* Statistical tables in archival texts keep their columns intact and scroll
+   horizontally on narrow screens. */
+.book .table-scroll {
+  margin: 1em 0;
+}
+
+.book .source-table {
+  width: 100%;
+  min-width: max-content;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  line-height: 1.5;
+  overflow-wrap: normal;
+}
+
+.book .source-table caption {
+  padding: 0 0 0.45em;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: start;
+}
+
+.book .source-table th,
+.book .source-table td {
+  border: 1px solid var(--border);
+  padding: 0.4em 0.6em;
+  text-align: start;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.book .source-table th {
+  background: var(--surface-raised, rgba(127, 127, 127, 0.08));
+  font-weight: 600;
+}
+
 /* Dictionary links in the document body. These are the classes linkify.js
    emits; a fragment that links a name by hand writes no class, so the route
    (routes/commulingo-docs.js) stamps the same class on those before render —
