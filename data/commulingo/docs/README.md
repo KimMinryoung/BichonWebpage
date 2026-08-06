@@ -53,6 +53,37 @@ store가 mtime으로 캐시를 무효화하므로 **문서 추가/수정은 배�
 문서 안에서 절마다 엮은이가 덧붙이는 말(사료 모음에서 개별 문서 앞에 붙이는
 설명 따위)도 같은 `aside.doc-editorial`을 쓰되, 서지 목록 없이 문단만 넣는다.
 
+## 주석 양식 (필수)
+
+문서 13건이 주석을 달고 있고 모두 같은 양식을 쓴다. 본문의 번호는 주석 항목으로
+가는 링크이고, 항목에는 부른 자리로 돌아오는 화살표가 달린다.
+
+```html
+… 상비군을 없앤다<a class="note-ref" id="ref-3" href="#note-3">[3]</a>. …
+
+<section class="notes" aria-labelledby="notes-heading">
+<h2 id="notes-heading">주석</h2>
+<ol class="notes-list">
+<li id="note-3"><span class="note-text">주석 본문.</span>
+  <a class="back-link" href="#ref-3" aria-label="본문으로 돌아가기">↩</a></li>
+</ol>
+</section>
+```
+
+- **`class="notes-list"`를 빠뜨리지 말 것.** 주석 목록의 크기·색·간격이 전부 이
+  클래스에 걸려 있어서, 없으면 주석이 본문과 같은 크기로 쏟아진다.
+- 번호는 저본이 매긴 것을 그대로 쓴다. 순서대로 다시 매기면 저본이 한 항목을
+  건너뛴 곳부터 뒤가 통째로 어긋난다.
+- 본문이 부르지 않는 항목(저본이 표제나 발표 경위에 단 주)에는 화살표를 달지
+  않는다. 돌아갈 자리가 없는 링크가 된다.
+- 같은 주석을 본문에서 두 번 부를 때는 두 번째 참조의 id만 다르게 준다
+  (`ref-445-2` → `href="#note-445"`). 돌아오는 화살표는 첫 참조를 가리킨다.
+- 장마다 주석 묶음이 따로 있는 문서(『공산당 선언』, 룩셈부르크)는 묶음마다
+  `<section class="notes" aria-label="주석">`으로 감싸고 제목은 `<h3>`을 쓴다.
+  `notes-heading` id는 한 문서에 하나뿐이어야 하므로 그때는 `aria-label`을 쓴다.
+- 번역 파이프라인은 스펙에서 주석 문서에 `"notes": true`를 주면 이 양식을
+  자동으로 낸다. 본문 문서의 `[N]`도 그때 함께 링크된다.
+
 ## 문서 추가 절차
 
 가장 쉬운 방법은 admin API다. 임의의 .html을 fragment로 변환(헤드/스타일/
@@ -121,8 +152,8 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
    - `<html>`/`<head>`/`<body>`/`<main>`/`<style>` 없이 **본문 마크업만**.
      레이아웃(`<main class="book">` 래퍼, 상단바, 콜로폰)과 타이포그래피는
      템플릿과 `public/css/commulingo-doc.css`가 공통 제공한다. 인라인 스타일 금지.
-   - 각주 마크업: 본문에 `<a class="note-ref" id="ref-N" href="#note-N">[N]</a>`,
-     주석 목록에 `<li id="note-N">…<a class="back-link" href="#ref-N">↩</a></li>`.
+   - 각주는 아래 **주석 양식**을 따른다. 번호만 적고 링크를 걸지 않으면
+     독자가 문서 끝까지 스크롤해 번호를 눈으로 찾아야 한다.
    - 목차는 자동 생성된다: store가 h1(부)/h2(장)를 수집해 제목 바로 아래
      접이식 목차를 만든다. 첫 h1은 문서 제목으로 간주해 목차에서 제외.
      id 없는 제목에는 `sec-N`이 자동 부여되고, 이미 id가 있으면 그대로 쓴다.
