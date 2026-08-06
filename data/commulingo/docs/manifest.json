@@ -293,6 +293,49 @@
       }
     },
     {
+      "id": "comintern-21-conditions",
+      "file": "comintern-21-conditions.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "코민테른 가입 21개 조건 한국어 번역",
+        "en": "The Twenty-one Conditions of Admission to the Comintern (Korean translation)"
+      },
+      "description": {
+        "ko": "1920년 공산주의 인터내셔널 제2차 대회가 각국 정당의 가입 조건으로 정한 21개 조항의 전문 한국어 번역. 신문과 출판물의 당 통제, 개량주의자와 중앙파의 축출, 합법 조직과 나란히 두는 비합법 기구, 군대와 농촌에서의 선전, 식민지에서 자국 제국주의와의 단절, 의회 분파의 당 종속, 민주집중제, 당명을 공산당으로 바꿀 것을 요구하고, 조건을 원칙적으로 거부하는 당원은 제명하도록 정했다. 각국 사회당이 이 조건을 두고 갈라지면서 제2인터내셔널과 제3인터내셔널의 경계가 되었다.",
+        "en": "A complete Korean translation of the twenty-one conditions of admission set by the Second Congress of the Communist International in 1920. They require party control of the press, the removal of reformists and centrists, an illegal apparatus alongside the legal one, agitation in the army and countryside, a break with one's own imperialism in the colonies, subordination of parliamentary fractions, democratic centralism, and a change of name to Communist Party, with expulsion for members who reject them in principle. The splits they forced in the socialist parties drew the line between the Second and Third Internationals."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Условия приёма в Коммунистический Интернационал, II конгресс Коммунистического Интернационала (1920). 러시아어 위키문헌 수록본",
+      "people": [
+        "lenin"
+      ],
+      "terms": [
+        "comintern",
+        "second-international",
+        "reformism",
+        "democratic-centralism",
+        "liquidationism"
+      ],
+      "events": [],
+      "addedAt": "2026-08-06",
+      "aliases": {
+        "ko": [
+          "코민테른 가입 21개 조건",
+          "21개 조건",
+          "코민테른 가입 조건",
+          "가입 21개 조건"
+        ],
+        "en": [
+          "Twenty-one Conditions",
+          "21 Conditions",
+          "conditions of admission to the Comintern"
+        ]
+      }
+    },
+    {
       "id": "lenin-tax-in-kind",
       "file": "lenin-tax-in-kind.html",
       "docLang": "ko",
