@@ -42,6 +42,40 @@
     src: url('/fonts/ibm-plex/ibm-plex-sans-condensed-700.woff2') format('woff2');
 }
 
+/* 한글이 뜰 때까지 쓰이는 대체 글꼴의 자폭을 프리텐다드에 맞춘다.
+   프리텐다드의 한글 자폭은 0.86em인데 시스템 한글 글꼴은 예외 없이 1.0em이다
+   (안드로이드 Noto Sans CJK KR, iOS Apple SD Gothic Neo, 윈도 맑은 고딕 모두
+   전각). 그래서 슬라이스가 도착하기 전 한글 문단은 16% 넓게 짜이고, 줄당 글자
+   수가 달라 줄 수가 늘었다가 글꼴이 오면 도로 줄어든다. 본문이 위아래로
+   꿈틀거리는 것은 이 줄 수 변화지 글자 모양 변화가 아니다.
+   size-adjust로 대체 글꼴을 86%로 줄여 두면 같은 자리에서 같은 줄 수로 짜이고,
+   글꼴이 바뀌어도 글자가 움직이지 않는다.
+   라틴·키릴에는 걸지 않는다 — 측정해 보면 프리텐다드와 IBM Plex와 시스템
+   산세리프가 서로 2% 안에 들어 보정할 것이 없고, 여기에 86%를 걸면 오히려
+   로마자만 작아졌다 커지는 새 흔들림이 생긴다. 그래서 unicode-range를 한글
+   자모·음절로 한정한다. */
+@font-face {
+    font-family: 'Pretendard Fallback';
+    font-style: normal;
+    font-weight: 45 920;
+    /* 기기별 시스템 한글 글꼴 이름을 넓게 적는다. 하나도 잡히지 않으면 이 면은
+       그냥 건너뛰어지고 예전과 같은 상태가 될 뿐이라, 이름을 더 얹는 것은
+       손해가 없다. iOS·macOS → Apple SD Gothic Neo, 안드로이드 → Noto Sans
+       CJK KR, 윈도 → 맑은 고딕. 리눅스 데스크톱은 배포판에 따라 못 잡을 수
+       있는데, 그때도 나빠지지는 않는다. */
+    src: local('Apple SD Gothic Neo'), local('AppleSDGothicNeo-Regular'),
+         local('Noto Sans CJK KR'), local('NotoSansCJKkr-Regular'),
+         local('Noto Sans KR'), local('NotoSansKR-Regular'),
+         local('Source Han Sans KR'), local('Source Han Sans K'),
+         local('Malgun Gothic'), local('맑은 고딕'),
+         local('NanumGothic'), local('나눔고딕');
+    size-adjust: 86%;
+    ascent-override: 110%;
+    descent-override: 28%;
+    line-gap-override: 0%;
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -52,7 +86,7 @@
 body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
-    font-family: 'IBM Plex Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: 'IBM Plex Sans', 'Pretendard', 'Pretendard Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
     min-height: 100dvh;
@@ -155,7 +189,7 @@ nav .nav-content {
 nav .logo {
     font-size: 1.4rem;
     font-weight: 700;
-    font-family: 'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: 'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Pretendard', 'Pretendard Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     letter-spacing: 0;
     color: var(--text-primary);
     display: flex;
@@ -582,7 +616,7 @@ header h1 {
     display: inline-flex;
     align-items: center;
     min-height: var(--bar-height);
-    font-family: 'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-family: 'IBM Plex Sans Condensed', 'IBM Plex Sans', 'Pretendard', 'Pretendard Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 0;
