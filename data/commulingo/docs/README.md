@@ -14,6 +14,45 @@
 store가 mtime으로 캐시를 무효화하므로 **문서 추가/수정은 배포 없이** 커밋·푸시만
 하면 다음 요청부터 반영된다. (라우트/뷰/CSS 변경은 `scripts/deploy` 필요.)
 
+## 서두 틀 (필수)
+
+문서 16건이 모두 같은 서두를 쓴다. **새 문서도 반드시 이 배치로 시작한다.**
+저자의 글이 어디서 시작하는지 독자가 알아볼 수 있어야 하고, 그 표시가 문서마다
+다르면 표시가 없는 것과 같다.
+
+```html
+<article>
+<h1>문헌 제목</h1>
+<p class="doc-byline"><strong>저자</strong>, 원제나 부제</p>
+<aside class="doc-editorial">
+<p class="doc-editorial-label">엮은이 주</p>
+<p>이 문헌이 무엇이고 무엇을 다루는지 한두 문단.</p>
+<ul>
+<li>집필: …</li>
+<li>최초 발표: …</li>
+<li>번역 저본: …</li>
+<li>옮긴이 일러두기(주석 체계, 생략한 부분, 표기 원칙 따위)</li>
+</ul>
+</aside>
+… 여기서부터 문헌 본문 …
+```
+
+- `p.doc-byline` — 저자 또는 기관. 저자가 없는 사료 모음은 발신 주체와 연도를
+  적는다("소련 내무인민위원부(NKVD), 작전 지시 여덟 건, 1937~1938년").
+  `<strong>`은 저자 부분에만 두고 원제·부제는 쉼표 뒤에 잇는다.
+  h1이 이미 저자를 담고 있어도 생략하지 않는다.
+- `aside.doc-editorial` — 해제 문단이 먼저, 서지 목록이 뒤. 목록 항목은
+  문서에 따라 채택·낭독·발신처럼 바뀌지만 **번역 저본은 언제나 넣는다.**
+- 해제와 서지는 엮은이가 쓴 글이지 사료가 아니다. 이 상자 밖으로 나가면
+  독자가 명령서가 한 말과 이 사이트가 한 말을 구분할 수 없다.
+- 상자 아래 `<hr>`을 두지 않는다. 상자 자체가 경계다.
+- 부제를 `h2`로 쓰지 않는다. 목차 첫 줄에 부제가 끼어든다. byline으로 내린다.
+- 스타일은 `public/css/commulingo-doc.css`의 `.doc-byline`,
+  `.doc-editorial`, `.doc-editorial ul`이 준다. 클래스 이름을 바꾸지 말 것.
+
+문서 안에서 절마다 엮은이가 덧붙이는 말(사료 모음에서 개별 문서 앞에 붙이는
+설명 따위)도 같은 `aside.doc-editorial`을 쓰되, 서지 목록 없이 문단만 넣는다.
+
 ## 문서 추가 절차
 
 가장 쉬운 방법은 admin API다. 임의의 .html을 fragment로 변환(헤드/스타일/
@@ -38,6 +77,27 @@ curl -sS "$ADMIN/docs"              # 목록
 curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 ```
 
+러시아어 사료를 DeepSeek로 옮겨 이 디렉터리에 바로 쓰는 경로가 따로 있다
+(leninbot 저장소의 `runtime_tools/archival_translation`). 스펙 하나가 어느
+출처의 어느 블록 범위를 옮길지 고정하고, 조립기가 fragment를 만들어 스펙의
+`output` 경로에 **덮어쓴다** — `data/commulingo/docs/`가 그 경로다. 따라서
+이 파이프라인이 만든 문서는 손으로 고쳐도 다음 실행 때 되돌아간다. 서두를
+바꿀 일이 생기면 파일이 아니라 스펙을 고쳐야 한다:
+
+```jsonc
+// leninbot/config/archival_translation/<spec-id>.json
+"byline":       "소련 내무인민위원부(NKVD)",           // <strong>로 감싸짐
+"bylineNote":   "작전 지시 여덟 건, 1937~1938년",      // 쉼표 뒤에 이어 붙음
+"headnote":     ["해제 첫 문단", "둘째 문단"],          // aside 안 <p>들
+"bibliography": ["발신: …", "번역 저본: …"]             // aside 안 <ul><li>들
+```
+
+조립기(`core.assemble`)가 위 서두 틀을 그대로 낸다. 세 필드는 평문이라
+링크나 `<em>`은 들어가지 않는다. 마크업이 필요한 서지 항목이 있으면 그
+문서는 파이프라인 밖에서 관리해야 한다. 스펙을 고친 뒤
+`venv/bin/python scripts/smoke_archival_translation.py --spec <id>`로 조립
+결과를 확인할 수 있다(API 호출 없이 도는 오프라인 검사다).
+
 응답의 `toc` 미리보기에 잡티 제목이 보이면 `tocExclude` 정규식을 PATCH로
 추가한다. API가 쓴 파일은 호스트 `data/commulingo/docs/` 워킹트리에 그대로
 남으므로 확인 후 커밋/푸시할 것. 같은 일을 하는 CLI도 있다
@@ -46,6 +106,8 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 같은 형식이어야 한다).
 
 1. 본문 fragment를 `<id>.html`로 저장한다.
+   - 서두는 위의 **서두 틀**을 그대로 쓴다 (제목 → byline → 엮은이 주 상자).
+     자동 변환·번역 출력도 마찬가지다.
    - `<article>…</article>`로 시작하고, 각주가 있으면
      `<section class="notes" aria-labelledby="notes-heading">…</section>`이 뒤따른다.
    - `<html>`/`<head>`/`<body>`/`<main>`/`<style>` 없이 **본문 마크업만**.
