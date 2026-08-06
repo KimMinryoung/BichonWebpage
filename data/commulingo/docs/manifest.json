@@ -745,6 +745,63 @@
       }
     },
     {
+      "id": "khrushchev-secret-speech-1956",
+      "file": "khrushchev-secret-speech-1956.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "흐루쇼프 비밀보고 「개인숭배와 그 결과에 대하여」 한국어 번역",
+        "en": "Khrushchev's Secret Speech, On the Cult of Personality and Its Consequences (Korean translation)"
+      },
+      "description": {
+        "ko": "1956년 2월 25일 소련공산당 제20차 대회 비공개 회의에서 흐루쇼프가 한 보고의 전문 한국어 번역. 레닌이 「대회에 보내는 편지」에서 스탈린의 경질을 제안한 대목에서 시작해 키로프 살해 이후의 대량 탄압, 1937~38년 중앙위원 다수의 처형, 고문으로 받아낸 자백, 전쟁 초기의 오판, 민족 강제이주, 유고슬라비아와의 단절, 「레닌그라드 사건」과 「의사들의 사건」, 개인숭배의 형성을 차례로 다룬다. 예이헤·루주타크·케드로프가 감옥에서 보낸 편지를 그 자리에서 읽은 대목이 보고의 중심이다. 1989년 『소련공산당 중앙위원회 통보』 게재본을 저본으로 삼았고, 그 편집부 주석 66개를 별도 절로 함께 옮겼다.",
+        "en": "A complete Korean translation of the report Khrushchev delivered to the closed session of the Twentieth Congress of the CPSU on 25 February 1956. Beginning with Lenin's proposal in his Letter to the Congress to remove Stalin, it moves through the mass repression that followed Kirov's murder, the execution of most of the Central Committee elected in 1934, confessions obtained by torture, the misjudgements of the first months of the war, the deportation of whole nationalities, the break with Yugoslavia, the Leningrad Affair and the Doctors' Plot, and the making of the cult itself. At its centre are the prison letters of Eikhe, Rudzutak and Kedrov, read out from the rostrum. Translated from the 1989 publication in the CPSU Central Committee Bulletin, with that edition's sixty-six editorial notes rendered as a separate section."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Н. С. Хрущев, «О культе личности и его последствиях». Доклад XX съезду КПСС на закрытом заседании 25 февраля 1956 г. 수록본: «Известия ЦК КПСС», 1989, № 3; 러시아어 전자판 lib.ru(즈베니고로트 전자도서관 OCR)",
+      "people": [
+        "khrushchev",
+        "stalin",
+        "beria",
+        "yezhov",
+        "kirov",
+        "molotov",
+        "malenkov",
+        "bulganin",
+        "mikoyan",
+        "zhukov",
+        "ordzhonikidze",
+        "postyshev",
+        "rudzutak",
+        "kosior"
+      ],
+      "terms": [
+        "cult-of-personality",
+        "de-stalinization",
+        "the-thaw",
+        "great-purge",
+        "rehabilitation-of-deported-peoples"
+      ],
+      "events": [],
+      "addedAt": "2026-08-06",
+      "aliases": {
+        "ko": [
+          "흐루쇼프 비밀보고",
+          "비밀보고",
+          "「개인숭배와 그 결과에 대하여」",
+          "개인숭배와 그 결과에 대하여",
+          "제20차 당대회 비밀보고"
+        ],
+        "en": [
+          "Secret Speech",
+          "Khrushchev's Secret Speech",
+          "On the Cult of Personality and Its Consequences"
+        ]
+      }
+    },
+    {
       "id": "1977-soviet-constitution",
       "file": "1977-soviet-constitution.html",
       "docLang": "ko",
