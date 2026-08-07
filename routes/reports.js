@@ -407,12 +407,19 @@ router.get('/', async (req, res) => {
             })),
         ].sort((a, b) => b.modified - a.modified);
 
+        // The research feed pages on the same ?page= the task panel uses, so
+        // one query param drives both tabs.
+        const researchTotalPages = Math.max(1, Math.ceil(researchItems.length / REPORTS_PER_PAGE));
+        const pagedResearchItems = researchItems.slice(offset, offset + REPORTS_PER_PAGE);
+
         res.render('public/reports', {
             ...reportsListLocals(pagePath, isAdmin),
             ...taskData,
-            researchItems,
+            researchItems: pagedResearchItems,
+            researchCurrentPage: currentPage,
+            researchTotalPages,
             robotsMeta: isAdmin ? 'noindex, nofollow' : undefined,
-            jsonLd: seo.itemListJsonLd(researchItems.map(item => ({ title: item.title, href: item.href }))),
+            jsonLd: seo.itemListJsonLd(pagedResearchItems.map(item => ({ title: item.title, href: item.href }))),
         });
     } catch (error) {
         console.error('Error fetching reports:', error);

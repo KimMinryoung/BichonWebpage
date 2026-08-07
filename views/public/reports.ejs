@@ -43,6 +43,14 @@
                         </li>
                     <% }) %>
                 </ul>
+
+                <% if (typeof researchTotalPages !== 'undefined' && researchTotalPages > 1) { %>
+                    <%- include('../partials/pagination', {
+                        currentPage: researchCurrentPage,
+                        totalPages: researchTotalPages,
+                        baseUrl: '/reports?page='
+                    }) %>
+                <% } %>
             <% } else { %>
                 <div class="box">
                     <p><%= lang === 'ko' ? '아직 리서치가 없습니다.' : 'No research reports yet.' %></p>
