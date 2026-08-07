@@ -1,0 +1,11 @@
+<%
+// One person's career timeline, served by /commulingo/people/career?id=<id>
+// and appended into the card's <details> when the reader opens it. Kept out of
+// the card itself because it is closed by default — see the note in
+// commulingo-person-card.
+%>
+<ul class="commu-person-career">
+    <% career.forEach(function(item) { %>
+    <li><span class="commu-career-year"><%= item.y %></span><span class="commu-career-role"><%= item.r %></span></li>
+    <% }) %>
+</ul>

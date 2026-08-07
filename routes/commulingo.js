@@ -307,6 +307,39 @@ router.get('/people/cards', async (req, res) => {
     }
 });
 
+// One person's career timeline, fetched when the reader opens the <details> on
+// a card. Registered before /people/:personId so 'career' is never taken for a
+// person id. The fragment is plain text with no linkifying, so it is memoized
+// per person against the snapshot alone.
+const personCareerMemo = new WeakMap(); // standardized -> Map(personId -> html)
+
+router.get('/people/career', async (req, res) => {
+    try {
+        const personId = typeof req.query.id === 'string' ? req.query.id.trim() : '';
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const person = standardized.peopleById[personId];
+        if (!person || !(person.career || []).length) return res.status(404).send('');
+        let byId = personCareerMemo.get(standardized);
+        if (!byId) {
+            byId = new Map();
+            personCareerMemo.set(standardized, byId);
+        }
+        // Keyed by language too: the career entries are localized upstream, so
+        // the same person renders different text per language.
+        const key = `${lang === 'en' ? 'en' : 'ko'}:${personId}`;
+        let html = byId.get(key);
+        if (!html) {
+            html = await renderAppView(req, 'partials/commulingo-person-career', { career: person.career });
+            byId.set(key, html);
+        }
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        res.type('html').send(html);
+    } catch (err) {
+        console.error('commulingo person career:', err);
+        res.status(500).send('');
+    }
+});
+
 router.get('/offices/:officeId', async (req, res) => {
     try {
         const officeId = typeof req.params.officeId === 'string' ? req.params.officeId.trim() : '';
