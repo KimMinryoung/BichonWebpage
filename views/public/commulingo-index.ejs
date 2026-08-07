@@ -10,31 +10,24 @@
     <main class="container commulingo-shell" data-lang="<%= lang %>">
         <script id="commulingo-books" type="application/json"><%- JSON.stringify(books).replace(/</g, '\\u003c') %></script>
 
-        <header class="box commulingo-hero">
-            <div>
-                <h1><%= strings.commuLingo.title %></h1>
-                <p><%= strings.commuLingo.description %></p>
+        <header class="box commulingo-hero commulingo-hero--home">
+            <div class="commulingo-hero-main">
+                <div>
+                    <h1><%= strings.commuLingo.title %></h1>
+                    <p><%= strings.commuLingo.description %></p>
+                </div>
+                <div class="commulingo-total">
+                    <span id="commuProgressText">0%</span>
+                    <small><%= strings.commuLingo.progress %></small>
+                </div>
             </div>
-            <div class="commulingo-total">
-                <span id="commuProgressText">0%</span>
-                <small><%= strings.commuLingo.progress %></small>
+            <div class="commulingo-hero-dict">
+                <span class="commulingo-hero-dict-label"><%= strings.commuLingo.dictSectionTitle %></span>
+                <%- include('../partials/commulingo-dict-nav', { active: null }) %>
             </div>
         </header>
 
         <a class="commulingo-resume is-hidden" id="commuResume" href="#"></a>
-
-        <section class="commu-dict-section" aria-label="<%= strings.commuLingo.dictSectionTitle %>">
-            <div class="commu-dict-section-head">
-                <h2><%= strings.commuLingo.dictSectionTitle %></h2>
-                <p><%= strings.commuLingo.dictSectionHint %></p>
-            </div>
-            <%- include('../partials/commulingo-dict-nav', { active: null }) %>
-        </section>
-
-        <section class="commulingo-books-head" aria-hidden="true">
-            <h2><%= strings.commuLingo.chooseBook %></h2>
-            <p><%= strings.commuLingo.chooseBookHint %></p>
-        </section>
 
         <section class="commulingo-book-groups" id="commuBookList" aria-label="<%= strings.commuLingo.chooseBook %>"></section>
     </main>

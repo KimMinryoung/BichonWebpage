@@ -106,11 +106,21 @@
         // search begins. data-people carries the member ids so #p-<id> deep
         // links know which group to fetch; the <noscript> list keeps every
         // person page reachable for crawlers and script-less readers.
-        var standaloneHeadPrinted = false;
+        // The groups sit on two boxed shelves: the Soviet-era timeline, then
+        // the standalone groups, which orderedPeopleGroupsMeta always puts
+        // last — so the first shelf closes where the second opens.
+        var sovietShelfOpened = false;
+        var standaloneShelfOpened = false;
         %>
         <% groupsMeta.forEach(function(group) { %>
-        <% if (!standaloneHeadPrinted && group.standalone) { standaloneHeadPrinted = true; %>
-        <h2 class="commu-people-standalone-head"><%= en ? 'Revolutionaries beyond the Soviet Union' : '소련 밖의 혁명가들' %></h2>
+        <% if (!sovietShelfOpened && !group.standalone) { sovietShelfOpened = true; %>
+        <section class="commu-people-shelf" aria-labelledby="commu-people-soviet-title">
+        <h2 class="commu-people-shelf-head" id="commu-people-soviet-title"><%= en ? 'People of the Soviet Union' : '소련 내 인물들' %></h2>
+        <% } %>
+        <% if (!standaloneShelfOpened && group.standalone) { standaloneShelfOpened = true; %>
+        <% if (sovietShelfOpened) { %></section><% } %>
+        <section class="commu-people-shelf" aria-labelledby="commu-people-standalone-title">
+        <h2 class="commu-people-shelf-head" id="commu-people-standalone-title"><%= en ? 'People beyond the Soviet Union' : '소련 밖 인물들' %></h2>
         <% } %>
         <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
             <summary class="commu-people-group-head">
@@ -129,6 +139,7 @@
             </div>
         </details>
         <% }) %>
+        <% if (sovietShelfOpened || standaloneShelfOpened) { %></section><% } %>
     </main>
 
     <%- include('../partials/footer') %>
@@ -434,7 +445,7 @@
             });
             var groups = Array.prototype.slice.call(document.querySelectorAll('details.commu-people-group'));
             var chrome = Array.prototype.slice.call(document.querySelectorAll(
-                'details.commu-office-index, .commu-people-standalone-head'));
+                'details.commu-office-index, .commu-people-shelf'));
             // Cards load lazily. allCards() hands back every card of every
             // loaded group, including the ones still detached behind a chunk
             // sentinel — matching only reads their attributes, so an unrevealed

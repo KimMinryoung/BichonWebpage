@@ -32,6 +32,39 @@
     border-left: 4px solid var(--accent);
 }
 
+/* On the CommuLingo landing the hero is the whole masthead: name and total
+   progress on top, the dictionary jumps as its bottom row. One framed block
+   says what this place is, how far you are, and where to look things up —
+   the shelves below then speak for themselves. */
+.commulingo-hero--home {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+}
+
+.commulingo-hero-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.commulingo-hero-dict {
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+}
+
+.commulingo-hero-dict-label {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
 .commulingo-kicker {
     color: var(--link);
     font-size: 0.82rem;
@@ -824,21 +857,6 @@
     }
 }
 
-/* Closes a detail page at its foot ("← 카드로 돌아가기"). The same link at the
-   top of the page was replaced by the crumb bar below. */
-.commu-back-link {
-    align-self: flex-start;
-    color: var(--text-secondary);
-    font-size: 0.88rem;
-    font-weight: 700;
-    margin-top: 14px;
-    text-decoration: none;
-}
-
-.commu-back-link:hover {
-    color: var(--link);
-}
-
 /* The context bar that opens every page lives in commulingo-crumb.css — the
    document reader needs it without the rest of this file. */
 
@@ -869,47 +887,6 @@
 .commu-resume-target {
     color: var(--text-secondary);
     font-size: 0.92rem;
-}
-
-.commulingo-books-head h2 {
-    color: var(--text-primary);
-    font-size: 1.15rem;
-    margin: 0 0 4px;
-}
-
-.commulingo-books-head p {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    margin: 0;
-}
-
-/* Dictionary quick-access section on the CommuLingo index. The three core
-   dictionaries get tiles; genealogy and the reference library sit as small
-   aside links (they are one tab away inside every dictionary page). */
-.commu-dict-section {
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    padding: 14px;
-}
-
-.commu-dict-section-head {
-    margin-bottom: 12px;
-}
-
-.commu-dict-section-head h2 {
-    border-left: 4px solid var(--accent);
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin: 0 0 4px;
-    padding: 2px 0 2px 10px;
-}
-
-.commu-dict-section-head p {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    margin: 0;
-    padding-left: 14px;
 }
 
 .commulingo-book-groups {
@@ -1043,7 +1020,13 @@
         gap: 12px;
     }
 
-    .commulingo-hero > div:first-child {
+    .commulingo-hero--home {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .commulingo-hero > div:first-child,
+    .commulingo-hero-main > div:first-child {
         min-width: 0;
     }
 
@@ -2129,8 +2112,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin-top: 12px;
 }
 
+/* Same 17px rhythm as the shelves below it (9px + the shell's 8px gap). */
 .commu-office-index {
-    margin-top: 14px;
+    margin-top: 9px;
 }
 
 .commu-office-index-head {
@@ -2536,14 +2520,40 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-people-group.is-thaw .commu-people-group-head { border-left-color: #4d8fc4; }
 .commu-people-group.is-perestroika .commu-people-group-head { border-left-color: #4aa578; }
 
-.commu-people-standalone-head {
-    border-top: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    margin: 15px 0 6px;
-    padding-top: 20px;
+/* The person groups sit on two boxed shelves — the Soviet timeline and the
+   people beyond it — in the same grammar as the index's book shelves: a card
+   that frames its accent-barred title and the group cards inside. The 9px
+   top margin plus the shell's 8px flex gap makes the same 17px rhythm the
+   group cards keep inside a shelf. */
+.commu-people-shelf {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    margin-top: 9px;
+    padding: 14px;
+}
+
+.commu-people-shelf-head {
+    border-left: 4px solid var(--accent);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0;
+    padding: 2px 0 2px 10px;
+}
+
+/* Below 768px the .container gutters are gone and the group cards run edge
+   to edge; the shelves drop their side walls into full-bleed bands so the
+   cards inside keep the same full screen width. */
+@media (max-width: 768px) {
+    .commu-people-shelf {
+        border-left: 0;
+        border-right: 0;
+        padding: 14px 0;
+    }
+
+    .commu-people-shelf-head {
+        margin: 0 14px;
+    }
 }
 
 .commu-people-range {
@@ -3150,9 +3160,30 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     vertical-align: top;
 }
 
+/* Closes a detail page at its foot. The whole bar is the link — full width
+   like the blog's post-nav bar, clickable like a button. Cream text, not the
+   green link color: at this size the green recedes too far on dark. The
+   shell's own 8px gap is all the room it keeps above. */
 .commu-person-detail-back {
-    display: inline-block;
-    margin-top: 26px;
+    background: var(--btn-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.15s;
+}
+
+.commu-person-detail-back:hover {
+    background: var(--btn-hover);
+}
+
+/* The bar is the last thing on a detail page; the site-wide 32px before the
+   footer reads as dead air after it, so CommuLingo pages close up tight. */
+.commulingo-page footer {
+    margin-top: 8px;
 }
 
 .commu-person-hub-page {

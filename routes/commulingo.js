@@ -122,8 +122,9 @@ async function peopleGroupCardsHtml(req, standardized, lang, group) {
 }
 
 // Standalone groups sit outside the Soviet/Russian era sequence and render at
-// the end of the people page under their own section heading.
-const STANDALONE_GROUP_IDS = ['international-revolutionary'];
+// the end of the people page inside one boxed "소련 밖 인물들" section, in
+// this order.
+const STANDALONE_GROUP_IDS = ['international-revolutionary', 'international-counterrevolutionary'];
 
 // Shell metadata for the people page: group headers, per-group person ids
 // (the client resolves #p-<id> deep links against them), and name links for
@@ -131,7 +132,9 @@ const STANDALONE_GROUP_IDS = ['international-revolutionary'];
 function orderedPeopleGroupsMeta(standardized) {
     const groups = standardized.groups || [];
     const ordered = groups.filter(group => !STANDALONE_GROUP_IDS.includes(group.id))
-        .concat(groups.filter(group => STANDALONE_GROUP_IDS.includes(group.id)));
+        .concat(STANDALONE_GROUP_IDS
+            .map(id => groups.find(group => group.id === id))
+            .filter(Boolean));
     return ordered.map(group => ({
         id: group.id,
         range: group.range,
