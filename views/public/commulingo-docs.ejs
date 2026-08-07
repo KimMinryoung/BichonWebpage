@@ -9,7 +9,6 @@
             trail: [{ label: en ? 'References' : '참고 문헌' }],
             dictJump: 'docs' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Reference Library' : '참고 문헌' %></h1>
-        <p class="commu-dict-count"><%= en ? docs.length + (docs.length === 1 ? ' document' : ' documents') : '총 ' + docs.length + '개의 문헌' %></p>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-doc-list',
             placeholder: en ? 'Search by title, kind, or description…' : '제목 · 분류 · 설명으로 검색…',

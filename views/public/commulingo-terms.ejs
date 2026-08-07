@@ -10,7 +10,6 @@
             dictJump: 'terms' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Glossary' : '용어 사전' %></h1>
         <div class="commu-dict-toolbar">
-            <p class="commu-dict-count"><%= en ? termCount + (termCount === 1 ? ' term' : ' terms') : '총 ' + termCount + '개의 용어' %></p>
             <nav class="commu-dict-sort" aria-label="<%= en ? 'Sort order' : '정렬 순서' %>">
                 <a href="/commulingo/terms" class="<%= sort === 'name' ? 'is-active' : '' %>"
                     <% if (sort === 'name') { %>aria-current="true"<% } %>><%= en ? 'A–Z' : '가나다순' %></a>
