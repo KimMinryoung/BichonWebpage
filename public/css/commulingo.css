@@ -2603,16 +2603,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
     flex-direction: column;
     gap: 10px;
     transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
-    /* A single group runs to 368 cards and ~19,000 nodes, so laying every card
-       out on open is what makes the group feel slow rather than the download.
-       Skipping the off-screen ones cuts that roughly threefold. The `auto`
-       keyword makes the placeholder height the card's own last-rendered
-       height, so scroll position stays put once a card has been seen; the
-       420px is only the first guess for a card nobody has scrolled past.
-       Block axis only: the shorthand with one length would also pin the card's
-       width to 420px, which overflows the grid column on a phone. */
-    content-visibility: auto;
-    contain-intrinsic-block-size: auto 420px;
 }
 
 .commu-person-card::after {
@@ -3471,14 +3461,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    highlighted match could sit in the hidden overflow. */
 .commu-terms-page .commu-event-grid,
 .commu-events-page .commu-event-grid { align-items: start; }
-/* Same reason as .commu-person-card: these two lists are long enough that
-   laying out the off-screen cards is wasted work. Scoped to the two list pages
-   so the short related-entry grids on detail pages keep plain rendering. */
-.commu-terms-page .commu-event-card,
-.commu-events-page .commu-event-card {
-    content-visibility: auto;
-    contain-intrinsic-block-size: auto 230px;
-}
 .commu-terms-page .commu-event-card p,
 .commu-events-page .commu-event-card p {
     display: -webkit-box;
