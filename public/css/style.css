@@ -915,8 +915,14 @@ a.home-card:hover::after {
     color: var(--text-muted);
 }
 
+/* Hover feedback matches the plain anchor cards: the stretched title link is
+   what receives :hover, so lift it back onto the card box with :has(). */
 .home-card-group h2 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+.home-card-group:has(> h2 a:is(:hover, :active)) {
+    background-color: var(--bg-surface-hover);
 }
 
 .home-card-highlight.home-card-group h2 a::after {
