@@ -2562,6 +2562,17 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 0.9rem;
 }
 
+/* Foot of a chunked list. It has to be a real box for IntersectionObserver to
+   report it, but it must not read as a cell: spanning every column keeps it
+   from opening a gap in the grid, and 1px keeps it invisible. It is removed
+   once the last chunk is in. */
+.commu-chunk-sentinel {
+    grid-column: 1 / -1;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+}
+
 .commu-people-noscript-list {
     grid-column: 1 / -1;
     margin: 6px 0;

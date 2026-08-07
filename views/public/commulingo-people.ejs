@@ -133,8 +133,141 @@
 
     <%- include('../partials/footer') %>
     <script>
+        // Chunked reveal, shared by the group grids and the search results.
+        //
+        // A person card costs about 5.3ms of style, layout and paint, and that
+        // is essentially the whole cost of both slow paths: a CPU profile of one
+        // keystroke spent 15,460ms of 15,833ms inside the engine and under
+        // 400ms in script. Rendering 368 cards to open a group, or 883 to show
+        // what 'ㄹ' matches, is therefore seconds of work for a screenful the
+        // reader can actually see. So cards are appended a chunk at a time, with
+        // the rest held off-DOM, and a sentinel below the last one pulls in the
+        // next chunk as it comes into view.
+        //
+        // Note this is not content-visibility: the cards below simply do not
+        // exist yet, so nothing is holding a guessed height and nothing snaps
+        // when they arrive. The page only grows downwards, past what the reader
+        // is looking at.
+        window.__commuChunk = (function() {
+            var CHUNK = 40;
+            // 600px of runway, so the next chunk is usually in place before the
+            // reader reaches the end of the current one.
+            var MARGIN_PX = 600;
+            var MARGIN = MARGIN_PX + 'px 0px';
+
+            // A sentinel the reader flings straight past never re-enters the
+            // viewport, and IntersectionObserver only reports entering — so the
+            // list under it would be stranded. The result view stacks three
+            // grids, so this is reachable in ordinary use: jumping to the foot
+            // of the page skips the first two sentinels entirely. After a scroll
+            // settles, top up anything now above the fold.
+            var live = [];
+            var settle = null;
+            function pump() {
+                for (var i = live.length - 1; i >= 0; i--) {
+                    var handle = live[i];
+                    if (handle.exhausted()) { live.splice(i, 1); continue; }
+                    if (handle.sentinelTop() < window.innerHeight + MARGIN_PX) handle.append();
+                }
+            }
+            function onScroll() {
+                if (settle) clearTimeout(settle);
+                settle = setTimeout(pump, 150);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll, { passive: true });
+
+            // Appends `items` into `target` a chunk at a time, `onAppend` firing
+            // with each slice so a caller can highlight what just landed. The
+            // items not yet appended stay detached: they keep their attributes,
+            // so search can still read them without their costing a single
+            // frame of layout.
+            function reveal(target, items, onAppend) {
+                var next = 0;
+                var sentinel = document.createElement('div');
+                sentinel.className = 'commu-chunk-sentinel';
+                sentinel.setAttribute('aria-hidden', 'true');
+                var observer = null;
+
+                function append() {
+                    if (next >= items.length) return void retire();
+                    var slice = items.slice(next, next + CHUNK);
+                    next += slice.length;
+                    var frag = document.createDocumentFragment();
+                    slice.forEach(function(node) { frag.appendChild(node); });
+                    target.insertBefore(frag, sentinel);
+                    if (onAppend) onAppend(slice);
+                    if (next >= items.length) retire();
+                }
+
+                // Everything is shown; the sentinel has no more work to do.
+                function retire() {
+                    if (observer) { observer.disconnect(); observer = null; }
+                    if (sentinel.parentNode) sentinel.parentNode.removeChild(sentinel);
+                    var at = live.indexOf(handle);
+                    if (at !== -1) live.splice(at, 1);
+                }
+
+                function watch() {
+                    if (next >= items.length) return;
+                    if ('IntersectionObserver' in window) {
+                        observer = new IntersectionObserver(function(entries) {
+                            if (entries.some(function(e) { return e.isIntersecting; })) append();
+                        }, { rootMargin: MARGIN });
+                        observer.observe(sentinel);
+                    } else {
+                        // No observer: show everything rather than strand cards
+                        // the reader has no way to reach.
+                        while (next < items.length) append();
+                    }
+                }
+
+                var handle = {
+                    items: items,
+                    append: append,
+                    exhausted: function() { return next >= items.length; },
+                    sentinelTop: function() {
+                        // A sentinel inside a closed <details> or a hidden group
+                        // has no box, and its rect reads as 0 — which the scroll
+                        // top-up would take for "above the fold" and drain the
+                        // whole list into a grid nobody is looking at. Anything
+                        // without layout is simply not due yet.
+                        if (!sentinel.parentNode || sentinel.offsetParent === null) return Infinity;
+                        return sentinel.getBoundingClientRect().top;
+                    },
+                    // Detaches the whole list, for a target being rebuilt.
+                    clear: function() {
+                        retire();
+                        items.forEach(function(node) {
+                            if (node.parentNode) node.parentNode.removeChild(node);
+                        });
+                        next = 0;
+                    },
+                    // Appends chunks until `node` is on the page. Used by
+                    // #p-<id> deep links, which may point past the first chunk.
+                    revealNode: function(node) {
+                        var index = items.indexOf(node);
+                        if (index < 0) return false;
+                        while (next <= index) append();
+                        return true;
+                    }
+                };
+
+                target.appendChild(sentinel);
+                live.push(handle);
+                append();
+                watch();
+                return handle;
+            }
+
+            return { reveal: reveal, CHUNK: CHUNK };
+        })();
+    </script>
+    <script>
         // Lazy card loading: each group's grid is fetched once, when the group
-        // is first opened (or when a search needs every card).
+        // is first opened (or when a search needs every card). The markup is
+        // parsed into a detached template and the cards are then revealed in
+        // chunks — parsing is cheap, rendering is what costs.
         (function() {
             var en = document.documentElement.lang === 'en';
             var pending = {};
@@ -158,7 +291,10 @@
                     .then(function(html) {
                         loading.remove();
                         if (grid && !group.hasAttribute('data-loaded')) {
-                            grid.insertAdjacentHTML('beforeend', html);
+                            var holder = document.createElement('template');
+                            holder.innerHTML = html;
+                            var cards = Array.prototype.slice.call(holder.content.children);
+                            group.__chunk = window.__commuChunk.reveal(grid, cards);
                             group.setAttribute('data-loaded', '');
                         }
                     })
@@ -188,6 +324,37 @@
                         if (ids.indexOf(' ' + personId + ' ') !== -1) return groupEls[i];
                     }
                     return null;
+                },
+                // Every card of every loaded group, revealed or not. Search
+                // matches against these attributes without rendering anything.
+                allCards: function() {
+                    var out = [];
+                    groupEls.forEach(function(group) {
+                        if (group.__chunk) out.push.apply(out, group.__chunk.items);
+                    });
+                    return out;
+                },
+                // Puts each group's grid back the way browsing left it, after a
+                // search has pulled matches out into the result grids.
+                restoreGroups: function() {
+                    groupEls.forEach(function(group) {
+                        if (!group.__chunk) return;
+                        var grid = group.querySelector('.commu-people-grid');
+                        var cards = group.__chunk.items;
+                        group.__chunk.clear();
+                        group.__chunk = window.__commuChunk.reveal(grid, cards);
+                    });
+                },
+                // Brings one person's card onto the page, for #p-<id> arrivals
+                // that point past the first chunk.
+                revealPerson: function(group, personId) {
+                    if (!group || !group.__chunk) return;
+                    for (var i = 0; i < group.__chunk.items.length; i++) {
+                        if (group.__chunk.items[i].id === 'p-' + personId) {
+                            group.__chunk.revealNode(group.__chunk.items[i]);
+                            return;
+                        }
+                    }
                 }
             };
         })();
@@ -227,12 +394,16 @@
                 if (hash.indexOf('#p-') !== 0) return;
                 var personId = hash.slice(3);
                 var group = window.__commuPeopleCards.groupFor(personId);
-                if (group && !group.hasAttribute('data-loaded')) {
-                    window.__commuPeopleCards.loadGroup(group)
-                        .then(function() { focusCard(personId); })
-                        .catch(function() {});
-                } else {
+                // The card may sit past the first revealed chunk, so ask for it
+                // by name rather than assuming a loaded group has it on screen.
+                var show = function() {
+                    window.__commuPeopleCards.revealPerson(group, personId);
                     focusCard(personId);
+                };
+                if (group && !group.hasAttribute('data-loaded')) {
+                    window.__commuPeopleCards.loadGroup(group).then(show).catch(function() {});
+                } else {
+                    show();
                 }
             }
             window.addEventListener('hashchange', focusHash);
@@ -264,17 +435,17 @@
             var groups = Array.prototype.slice.call(document.querySelectorAll('details.commu-people-group'));
             var chrome = Array.prototype.slice.call(document.querySelectorAll(
                 'details.commu-office-index, .commu-people-standalone-head'));
-            // Cards load lazily; the haystack list and each card's home parent
-            // are captured once every group's grid has been fetched.
+            // Cards load lazily. allCards() hands back every card of every
+            // loaded group, including the ones still detached behind a chunk
+            // sentinel — matching only reads their attributes, so an unrevealed
+            // card is searchable without costing a frame of layout.
             var cards = [];
-            var origin = [];
             var cardsReady = null;
             var emptyText = emptyMsg.textContent;
             function ensureCards() {
                 if (!cardsReady) {
                     cardsReady = window.__commuPeopleCards.loadAll().then(function() {
-                        cards = Array.prototype.slice.call(document.querySelectorAll('.commu-person-card[data-name]'));
-                        origin = cards.map(function(card) { return { card: card, parent: card.parentNode }; });
+                        cards = window.__commuPeopleCards.allCards();
                     });
                 }
                 return cardsReady;
@@ -291,8 +462,12 @@
             function escapeRegExp(value) {
                 return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             }
-            function homeAllCards() {
-                origin.forEach(function(o) { o.parent.appendChild(o.card); });
+            // Reveal handles for the three result grids, so a new query can tear
+            // down the previous one's sentinels before building its own.
+            var shown = [];
+            function clearResults() {
+                shown.forEach(function(handle) { handle.clear(); });
+                shown = [];
             }
             function clearHighlights(card) {
                 var marks = card.querySelectorAll('mark.commu-search-hl');
@@ -337,7 +512,8 @@
             function reset() {
                 highlighted.forEach(clearHighlights);
                 highlighted = [];
-                homeAllCards();
+                clearResults();
+                window.__commuPeopleCards.restoreGroups();
                 results.hidden = true;
                 groups.forEach(function(group) { group.hidden = false; group.open = false; });
                 chrome.forEach(function(el) { el.hidden = false; });
@@ -350,7 +526,9 @@
                 emptyMsg.textContent = emptyText;
                 highlighted.forEach(clearHighlights);
                 highlighted = [];
-                homeAllCards();
+                // Detach the previous query's results rather than walking all
+                // 1341 cards home: only what is on screen has to be undone.
+                clearResults();
                 clearBtn.hidden = false;
                 groups.forEach(function(group) { group.hidden = true; });
                 chrome.forEach(function(el) { el.hidden = true; });
@@ -371,14 +549,18 @@
                 var total = 0;
                 buckets.forEach(function(bucket) {
                     var list = hits[bucket.key];
-                    list.forEach(function(card) {
-                        bucket.grid.appendChild(card);
-                        highlight(card, re);
-                        highlighted.push(card);
-                    });
                     bucket.section.hidden = list.length === 0;
+                    // The count stays the full match count — the reader is told
+                    // how many there are, and scrolling brings them in.
                     bucket.count.textContent = countText(list.length);
                     total += list.length;
+                    if (!list.length) return;
+                    shown.push(window.__commuChunk.reveal(bucket.grid, list, function(slice) {
+                        slice.forEach(function(card) {
+                            highlight(card, re);
+                            highlighted.push(card);
+                        });
+                    }));
                 });
                 emptyMsg.hidden = total > 0;
                 results.hidden = false;
@@ -390,7 +572,7 @@
                 raf = requestAnimationFrame(function() {
                     var query = input.value.trim().toLowerCase();
                     if (!query) { apply(query); return; }
-                    if (origin.length) {
+                    if (cards.length) {
                         ensureCards().then(function() { apply(input.value.trim().toLowerCase()); });
                         return;
                     }
