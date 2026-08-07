@@ -98,12 +98,28 @@ function nestToc(flat) {
 // The manifest owns what belongs to the document (title, source, aliases) and
 // the dictionaries own their own headwords, so the topbar labels come from
 // resolveDocRefs rather than from anything written here.
+// Haystack for the list search, mirroring the glossary's: the reader looks a
+// document up by whichever title they know it under, so both languages' titles
+// and the manifest's aliases go in alongside what the card shows.
+function docSearchText(raw, lang) {
+    const aliases = raw.aliases || {};
+    return [
+        localize(raw.title, lang),
+        localize(raw.title, lang === 'en' ? 'ko' : 'en'),
+        localize(raw.kind, lang),
+        localize(raw.description, lang),
+        ...(aliases.ko || []),
+        ...(aliases.en || []),
+    ].filter(Boolean).join(' ');
+}
+
 function presentDoc(raw, lang, resolveDocRefs) {
     return {
         ...raw,
         title: localize(raw.title, lang),
         description: localize(raw.description, lang),
         kind: localize(raw.kind, lang),
+        searchText: docSearchText(raw, lang),
         ...resolveDocRefs(raw),
     };
 }

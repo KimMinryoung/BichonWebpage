@@ -293,7 +293,18 @@
                 ensureLoaded().then(apply);
             });
         });
-        if (input.value.trim()) apply();
+        if (input.value.trim()) {
+            apply();
+        } else if (!lazyPending) {
+            // A list that ships whole — historical events, the reference library
+            // — renders every card the moment the page loads. That is nothing at
+            // 39 events and seconds at 400, and these lists only grow, so the
+            // browsing view starts chunked here too. Below one chunk this
+            // reveals everything at once and changes nothing, which is why it is
+            // safe to leave on for the small lists as they are today.
+            var initial = browseItems();
+            if (initial.length > CHUNK) showChunked(initial, initial, null);
+        }
     }
 
     Array.prototype.forEach.call(document.querySelectorAll('[data-commu-dict-search]'), initialize);

@@ -9,9 +9,20 @@
             trail: [{ label: en ? 'References' : '참고 문헌' }],
             dictJump: 'docs' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Reference Library' : '참고 문헌' %></h1>
-        <section class="commu-event-grid" aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
+        <p class="commu-dict-count"><%= en ? docs.length + (docs.length === 1 ? ' document' : ' documents') : '총 ' + docs.length + '개의 문헌' %></p>
+        <%- include('../partials/commulingo-dict-search', {
+            target: '#commu-doc-list',
+            placeholder: en ? 'Search by title, kind, or description…' : '제목 · 분류 · 설명으로 검색…',
+            ariaLabel: en ? 'Search reference documents' : '참고 문헌 검색',
+            clearLabel: en ? 'Clear search' : '검색 지우기',
+            resultOne: en ? 'document found' : '개의 문헌',
+            resultMany: en ? 'documents found' : '개의 문헌',
+            emptyLabel: en ? 'No reference documents found' : '검색 결과가 없습니다'
+        }) %>
+        <section class="commu-event-grid" id="commu-doc-list" aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
             <% docs.forEach(function(doc) { %>
-            <a class="commu-event-card" href="/commulingo/docs/<%= doc.id %>">
+            <a class="commu-event-card" href="/commulingo/docs/<%= doc.id %>"
+                data-search="<%= doc.searchText %>">
                 <span class="commu-event-period"><%= doc.kind %></span>
                 <h2><%= doc.title %></h2>
                 <p><%= doc.description %></p>
@@ -21,5 +32,6 @@
         </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
 </body>
 </html>
