@@ -52,6 +52,7 @@
         var input = root.querySelector('[data-commu-dict-search-input]');
         var clearButton = root.querySelector('[data-commu-dict-search-clear]');
         var status = root.querySelector('[data-commu-dict-search-status]');
+        var count = root.querySelector('[data-commu-dict-search-count]');
         var target = root.getAttribute('data-target');
         var list = document.querySelector(target);
         if (!input || !clearButton || !status || !list) return;
@@ -214,6 +215,7 @@
                 clearButton.hidden = true;
                 status.hidden = true;
                 status.textContent = '';
+                if (count) { count.hidden = true; count.textContent = ''; }
                 return;
             }
 
@@ -254,6 +256,10 @@
             }
             status.classList.toggle('is-empty', visible === 0);
             status.hidden = false;
+            if (count) {
+                count.textContent = visible ? status.textContent : '';
+                count.hidden = !visible;
+            }
         }
 
         var frame = null;
