@@ -1983,9 +1983,20 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-people-search-icon {
     position: absolute;
     left: 0.85rem;
-    font-size: 1.2rem;
     color: var(--text-muted);
     pointer-events: none;
+    transition: color 0.15s ease;
+}
+
+.commu-people-search-icon .commu-role-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* The magnifier answers the caret: focus anywhere in the field and it takes
+   the link color with the border. */
+.commu-people-search:focus-within .commu-people-search-icon {
+    color: var(--link);
 }
 
 .commu-people-search-input {
@@ -1994,11 +2005,15 @@ button.commu-dc-option:hover { border-color: var(--link); }
     padding: 0.72rem 2.4rem 0.72rem 2.5rem;
     font: inherit;
     color: var(--text-primary);
-    background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
+    background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 0;
     outline: none;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.commu-people-search-input:hover {
+    border-color: color-mix(in srgb, var(--text-muted) 55%, var(--border));
 }
 
 .commu-people-search-input:focus {
@@ -2017,13 +2032,16 @@ button.commu-dc-option:hover { border-color: var(--link); }
     width: 1.9rem;
     height: 1.9rem;
     padding: 0;
-    font-size: 1.35rem;
-    line-height: 1;
     color: var(--text-muted);
     background: none;
     border: none;
     border-radius: 0;
     cursor: pointer;
+}
+
+.commu-people-search-clear .commu-role-icon {
+    width: 15px;
+    height: 15px;
 }
 
 .commu-people-search-clear:hover {

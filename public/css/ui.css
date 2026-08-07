@@ -37,8 +37,8 @@ svg {
 }
 
 ::selection {
-    color: #fff;
-    background: var(--accent-red);
+    color: var(--clr-cream);
+    background: var(--clr-accent);
 }
 
 .skip-link {

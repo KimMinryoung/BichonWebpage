@@ -54,6 +54,10 @@ const ICON_PATHS = {
     // Opens the crumb bar on every CommuLingo page, standing for the section root.
     house: '<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
 
+    // UI chrome glyphs: the dictionary search field and its clear button.
+    search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+    x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+
     // Menu-only glyphs: no CommuLingo role uses these.
     chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
     commulingo: '<path fill="currentColor" stroke="none" d="M12 1.2l.75 1.9 2.05.12-1.6 1.3.53 2L12 5.4l-1.73 1.12.53-2-1.6-1.3 2.05-.12Z"/><path d="M12 10.3C10.5 8.9 8.2 8.1 5.4 7.9 4.6 7.85 4 8.5 4 9.3v9c0 .8.6 1.4 1.4 1.5 2.6.2 4.8 1 6.6 2.4 1.8-1.4 4-2.2 6.6-2.4.8-.1 1.4-.7 1.4-1.5v-9c0-.8-.6-1.45-1.4-1.4-2.8.2-5.1 1-6.6 2.4Z"/><path d="M12 10.3V22"/>',

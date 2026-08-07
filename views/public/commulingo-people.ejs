@@ -17,12 +17,12 @@
         <h1 class="commu-sr-only"><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>
 
         <div class="commu-people-search">
-            <span class="commu-people-search-icon" aria-hidden="true">⌕</span>
+            <span class="commu-people-search-icon" aria-hidden="true"><%- roleIconSvg('search') %></span>
             <input type="search" id="commu-people-search-input" class="commu-people-search-input"
                 placeholder="<%= en ? 'Search by name, alias, role, or bio…' : '이름 · 별칭 · 역할 · 설명으로 검색…' %>"
                 autocomplete="off" spellcheck="false"
                 aria-label="<%= en ? 'Search people' : '인물 검색' %>">
-            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= en ? 'Clear search' : '검색 지우기' %>" hidden>×</button>
+            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= en ? 'Clear search' : '검색 지우기' %>" hidden><%- roleIconSvg('x') %></button>
         </div>
 
         <div class="commu-people-results" id="commu-people-results" hidden>
