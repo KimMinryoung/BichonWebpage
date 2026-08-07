@@ -9,38 +9,5 @@
             if (selection && selection.toString()) return;
             window.location.href = card.getAttribute('data-person-href');
         });
-
-        // Career timelines are not rendered into the cards (see the note in
-        // commulingo-person-card); each one loads the first time its <details>
-        // is opened. `toggle` does not bubble, so this listens in the capture
-        // phase — that also covers cards injected later by the people page's
-        // group loader, which a direct listener per card would miss.
-        var en = document.documentElement.lang.indexOf('en') === 0;
-        document.addEventListener('toggle', function(event) {
-            var details = event.target;
-            if (!details.matches || !details.matches('details.commu-person-more[data-career]')) return;
-            if (!details.open || details.hasAttribute('data-career-loaded')) return;
-            details.setAttribute('data-career-loaded', '');
-            var note = document.createElement('p');
-            note.className = 'commu-people-loading';
-            note.textContent = en ? 'Loading…' : '불러오는 중…';
-            details.appendChild(note);
-            fetch('/commulingo/people/career?id=' + encodeURIComponent(details.getAttribute('data-career')),
-                { credentials: 'same-origin' })
-                .then(function(res) {
-                    if (!res.ok) throw new Error('HTTP ' + res.status);
-                    return res.text();
-                })
-                .then(function(html) {
-                    note.remove();
-                    details.insertAdjacentHTML('beforeend', html);
-                })
-                .catch(function() {
-                    note.textContent = en ? 'Failed to load — reopen to retry' : '불러오지 못했습니다 — 다시 열면 재시도합니다';
-                    // Drop the guard so reopening tries again.
-                    details.removeAttribute('data-career-loaded');
-                    setTimeout(function() { note.remove(); }, 4000);
-                });
-        }, true);
     })();
 </script>

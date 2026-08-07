@@ -64,16 +64,14 @@ var descSearch = [
     <p class="commu-person-moment"><%- linkifyPersonText(person.moment, person.id) %></p>
     <% } %>
     <p class="commu-person-bio"><%- linkifyPersonText(person.bio, person.id) %></p>
-    <%
-    // The timeline is closed by default and most readers never open one, yet
-    // rendering it here cost 26% of a group's bytes and about 9,000 of its
-    // 19,000 nodes — the largest single share of the layout work that made
-    // opening a group slow. The list is fetched from /people/career?id= when
-    // the reader actually opens it (see commulingo-person-card-click-script).
-    %>
     <% if (person.career.length) { %>
-    <details class="commu-person-more" data-career="<%= person.id %>">
+    <details class="commu-person-more">
         <summary><%= en ? 'Career timeline' : '상세 이력 보기' %></summary>
+        <ul class="commu-person-career">
+            <% person.career.forEach(function(item) { %>
+            <li><span class="commu-career-year"><%= item.y %></span><span class="commu-career-role"><%= item.r %></span></li>
+            <% }) %>
+        </ul>
     </details>
     <% } %>
     <% if (person.scenes.length) { %>
