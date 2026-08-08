@@ -938,18 +938,18 @@
       "file": "spain-1936-two-lines.html",
       "docLang": "ko",
       "title": {
-        "ko": "스페인 내전을 둘러싼 두 노선 — 1936~1937년 문헌 3건",
-        "en": "Two lines on the Spanish Civil War: three documents, 1936-1937"
+        "ko": "스페인 내전을 둘러싼 두 노선 — 1936~1937년 문헌 6건",
+        "en": "Two lines on the Spanish Civil War: six documents, 1936-1937"
       },
       "description": {
-        "ko": "스페인 내전에서 「전쟁이 먼저인가 혁명이 먼저인가」를 두고 갈라선 두 노선을 당대 문헌으로 읽는다. 1936년 10월 스탈린이 스페인공산당에 보낸 전문과, 그 노선을 정면으로 공격한 트로츠키의 1937년 글 두 편(「안드레스 닌 살해」, 「스페인의 교훈: 마지막 경고」)의 한국어 번역 전문.",
-        "en": "The split inside the Republic over whether the war or the revolution came first, read in documents of the time: Stalin's October 1936 telegram to the Spanish Communist Party, and two 1937 pieces by Trotsky attacking that line, on the killing of Andres Nin and on the lesson of Spain."
+        "ko": "스페인 내전에서 「전쟁이 먼저인가 혁명이 먼저인가」를 두고 갈라선 두 노선을 당대 문헌으로 읽는다. 1936년 10월 16일 스탈린과 스페인공산당이 주고받은 전보 두 건, 서기장 호세 디아스가 제5연대를 해산하며 정규군을 주장한 연설과 「전쟁에서 이기려면 무엇을 할 것인가」 강연, 그리고 그 노선을 정면으로 공격한 트로츠키의 1937년 글 두 편의 한국어 번역 전문.",
+        "en": "The split inside the Republic over whether the war or the revolution came first, read in documents of the time: the telegrams Stalin and the Spanish Communist Party exchanged on 16 October 1936, two speeches in which the party's general secretary Jose Diaz argued for a regular army and set out what winning the war required, and two 1937 pieces by Trotsky attacking that line."
       },
       "kind": {
         "ko": "번역 전문",
         "en": "Full translation"
       },
-      "source": "И. В. Сталин, Правда, 16 октября 1936 г.; Л. Троцкий, Бюллетень оппозиции, № 58-59 и № 62-63, 1937 г.",
+      "source": "И. В. Сталин, Правда, 16 октября 1936 г.; José Díaz, Tres años de lucha (París 1970); Л. Троцкий, Бюллетень оппозиции, № 58-59 и № 62-63, 1937 г.",
       "people": [
         "stalin",
         "trotsky",
@@ -969,10 +969,13 @@
       "aliases": {
         "ko": [
           "「스페인의 교훈: 마지막 경고」",
-          "「스페인의 교훈 — 마지막 경고」"
+          "「스페인의 교훈 — 마지막 경고」",
+          "「전쟁에서 이기려면 무엇을 할 것인가」",
+          "『3년의 투쟁』"
         ],
         "en": [
-          "The Lesson of Spain: The Last Warning"
+          "The Lesson of Spain: The Last Warning",
+          "Tres anos de lucha"
         ]
       }
     }
