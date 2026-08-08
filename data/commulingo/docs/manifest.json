@@ -726,7 +726,8 @@
         "stalin"
       ],
       "terms": [
-        "molotov-ribbentrop-pact"
+        "molotov-ribbentrop-pact",
+        "secret-protocol-molotov-ribbentrop"
       ],
       "events": [],
       "addedAt": "2026-08-06",
@@ -968,12 +969,15 @@
       "addedAt": "2026-08-08",
       "aliases": {
         "ko": [
+          "「스페인 내전을 둘러싼 두 노선」",
           "「스페인의 교훈: 마지막 경고」",
           "「스페인의 교훈 — 마지막 경고」",
           "「전쟁에서 이기려면 무엇을 할 것인가」",
           "『3년의 투쟁』"
         ],
         "en": [
+          "Two lines on the Spanish Civil War",
+          "What is to be done to win the war",
           "The Lesson of Spain: The Last Warning",
           "Tres anos de lucha"
         ]
