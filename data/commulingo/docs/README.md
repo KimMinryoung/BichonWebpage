@@ -108,7 +108,7 @@ curl -sS "$ADMIN/docs"              # 목록
 curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 ```
 
-러시아어 사료를 DeepSeek로 옮겨 이 디렉터리에 바로 쓰는 경로가 따로 있다
+외국어 사료를 DeepSeek로 옮겨 이 디렉터리에 바로 쓰는 경로가 따로 있다
 (leninbot 저장소의 `runtime_tools/archival_translation`). 스펙 하나가 어느
 출처의 어느 블록 범위를 옮길지 고정하고, 조립기가 fragment를 만들어 스펙의
 `output` 경로에 **덮어쓴다** — `data/commulingo/docs/`가 그 경로다. 따라서
@@ -130,6 +130,14 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 되므로 이 잠금에 걸리지 않는다. `nkvd-operational-orders`가 그렇게 잠겨 있다
 (라트비아·그리스 지령 2건이 스펙 밖에서 들어갔고, 두 지령은 전문을 실은 공개
 페이지가 없어 스펙으로 재현할 수 없다).
+
+저본이 러시아어가 아니면 스펙에 `"sourceLang"`을 준다(`ru` 기본, `zh`). 이 값이
+번역 프롬프트와 검증기를 함께 고른다 — 미번역 잔존을 어느 문자로 찾을지, 번역문이
+원문보다 짧아야 하는지 길어야 하는지(러시아어는 줄고 중국어는 늘어난다), 용어집
+표면형에 어절 경계를 걸 수 있는지가 언어마다 다르다. 중국어 저본은 인명 표기를
+따로 손봐야 한다: 赫鲁晓夫를 그냥 두면 「허루샤오푸」가 나오므로 러시아어·유럽
+인명은 스펙의 `glossary.extra`에 원어 발음으로 박아 둔다
+(`nine-commentaries.json`이 본보기다).
 
 조립기(`core.assemble`)가 위 서두 틀을 그대로 낸다. 세 필드는 평문이라
 링크나 `<em>`은 들어가지 않는다. 마크업이 필요한 서지 항목이 있으면 그

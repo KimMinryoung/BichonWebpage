@@ -809,6 +809,54 @@
       }
     },
     {
+      "id": "nine-commentaries",
+      "file": "nine-commentaries.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "「9평」 소련공산당 중앙위원회 공개서한을 평함 한국어 번역",
+        "en": "The Nine Commentaries on the Open Letter of the CPSU Central Committee"
+      },
+      "description": {
+        "ko": "중국공산당이 1963년 9월부터 1964년 7월까지 《인민일보》·《홍기》 편집부 명의로 발표한 아홉 편의 논평. 스탈린 평가와 평화공존에서 시작해 소련 사회 자체의 계급적 성격에 이르기까지, 중소 논쟁의 쟁점이 모두 여기에 있다.",
+        "en": "The nine commentaries the Chinese party published between September 1963 and July 1964, answering the Soviet open letter: from the assessment of Stalin and peaceful coexistence to the class character of Soviet society itself."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "《人民日报》·《红旗》 1963–1964; 『关于国际共产主义运动总路线的论战』(人民出版社, 1965). 번역 저본: 중국어 위키문헌(zh.wikisource.org)",
+      "people": [
+        "mao-zedong",
+        "khrushchev",
+        "stalin",
+        "deng-xiaoping"
+      ],
+      "terms": [
+        "nine-commentaries",
+        "revisionism",
+        "peaceful-coexistence",
+        "cult-of-personality",
+        "titoism",
+        "de-stalinization"
+      ],
+      "events": [
+        "sino-soviet-split",
+        "twentieth-party-congress"
+      ],
+      "aliases": {
+        "ko": [
+          "「9평」",
+          "9평(九評)",
+          "「구평」"
+        ],
+        "en": [
+          "Nine Commentaries",
+          "the Nine Commentaries"
+        ]
+      },
+      "addedAt": "2026-08-08"
+    },
+    {
       "id": "1977-soviet-constitution",
       "file": "1977-soviet-constitution.html",
       "docLang": "ko",
