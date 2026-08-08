@@ -32,9 +32,15 @@ const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '�
 // already given them. Excluded strings stay reachable from the glossary index,
 // from related-term chips, and from their own longer aliases (노동자대표
 // 소비에트, 소비에트 대회), which are specific enough to be worth a link.
-// Keyed by language: the English headword has the same problem but is not
-// excluded yet.
-const NEVER_LINK_TERM_HEADWORD = { ko: ['소비에트'], en: [] };
+// The English side is the same word with the same problem, and worse: most of
+// its appearances are the adjective in "the Soviet Union", "Soviet advisers".
+// Both languages are kept in step so a reader does not meet a link in one and
+// plain text in the other. Matching is case-sensitive, so each casing that the
+// alias table registers has to be named.
+const NEVER_LINK_TERM_HEADWORD = {
+    ko: ['소비에트'],
+    en: ['Soviet', 'soviet', 'soviets', 'Soviets'],
+};
 
 // A word can name a thing that has its own main entry while a second entry
 // exists about the word itself. '예조프시나' is the euphemism the post-Stalin
