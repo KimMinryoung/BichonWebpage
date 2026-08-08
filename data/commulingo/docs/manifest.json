@@ -932,6 +932,49 @@
           "Yezhov: A Biography"
         ]
       }
+    },
+    {
+      "id": "spain-1936-two-lines",
+      "file": "spain-1936-two-lines.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "스페인 내전을 둘러싼 두 노선 — 1936~1937년 문헌 3건",
+        "en": "Two lines on the Spanish Civil War: three documents, 1936-1937"
+      },
+      "description": {
+        "ko": "스페인 내전에서 「전쟁이 먼저인가 혁명이 먼저인가」를 두고 갈라선 두 노선을 당대 문헌으로 읽는다. 1936년 10월 스탈린이 스페인공산당에 보낸 전문과, 그 노선을 정면으로 공격한 트로츠키의 1937년 글 두 편(「안드레스 닌 살해」, 「스페인의 교훈: 마지막 경고」)의 한국어 번역 전문.",
+        "en": "The split inside the Republic over whether the war or the revolution came first, read in documents of the time: Stalin's October 1936 telegram to the Spanish Communist Party, and two 1937 pieces by Trotsky attacking that line, on the killing of Andres Nin and on the lesson of Spain."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, Правда, 16 октября 1936 г.; Л. Троцкий, Бюллетень оппозиции, № 58-59 и № 62-63, 1937 г.",
+      "people": [
+        "stalin",
+        "trotsky",
+        "andres-nin",
+        "jose-diaz",
+        "largo-caballero",
+        "juan-negrin"
+      ],
+      "terms": [
+        "popular-fronts-ussr",
+        "comintern"
+      ],
+      "events": [
+        "spanish-civil-war"
+      ],
+      "addedAt": "2026-08-08",
+      "aliases": {
+        "ko": [
+          "「스페인의 교훈: 마지막 경고」",
+          "「스페인의 교훈 — 마지막 경고」"
+        ],
+        "en": [
+          "The Lesson of Spain: The Last Warning"
+        ]
+      }
     }
   ]
 }
