@@ -20,7 +20,8 @@ async function fetchEvents() {
     const [events, people] = await Promise.all([
         db.query(
             `SELECT id, period_label, title_ko, title_en, question_ko, question_en,
-                    summary_ko, summary_en, outcome_ko, outcome_en, timeline, sources
+                    summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
+                    timeline, sources
              FROM commulingo_history_events
              ORDER BY sort_order, id`
         ),
@@ -51,6 +52,8 @@ async function fetchEvents() {
         title: t(row.title_ko, row.title_en),
         question: t(row.question_ko, row.question_en),
         summary: t(row.summary_ko, row.summary_en),
+        // Markdown, like a glossary term's body. Empty on most events.
+        body: t(row.body_ko, row.body_en),
         outcome: t(row.outcome_ko, row.outcome_en),
         timeline: Array.isArray(row.timeline) ? row.timeline : [],
         sources: Array.isArray(row.sources) ? row.sources : [],

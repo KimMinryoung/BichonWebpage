@@ -13,6 +13,12 @@
             <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
             <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
+        <% if (p.event.bodyHtml) { %>
+        <section class="commu-person-detail-section commu-event-body" aria-labelledby="event-body">
+            <h2 id="event-body"><%= en ? 'In depth' : '상세' %></h2>
+            <div class="commu-person-markdown"><%- p.event.bodyHtml %></div>
+        </section>
+        <% } %>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
         <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
             <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %> <span class="commu-event-people-count"><%= p.event.people.length %><%= en ? '' : '명' %></span></h2>

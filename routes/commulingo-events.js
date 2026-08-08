@@ -7,6 +7,7 @@ const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { getReportsForEvent } = require('../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { localize } = require('../data/commulingo/localize');
+const { renderMarkdown } = require('../utils/markdown');
 
 const router = express.Router();
 
@@ -119,6 +120,7 @@ function presentEvent(raw, lang) {
         title: localize(raw.title, lang),
         question: localize(raw.question, lang),
         summary: localize(raw.summary, lang),
+        body: localize(raw.body, lang),
         outcome: localize(raw.outcome, lang),
         timeline: (raw.timeline || []).map(item => ({
             date: item.date || '', title: localize(item.title, lang), body: localize(item.body, lang),
@@ -168,13 +170,16 @@ async function buildEventPanel(eventId, lang) {
         const link = text => linker.plain(text);
         const event = presentEvent(events[index], lang);
         // Reading order, so the first mention that links is the first one a reader
-        // reaches: question, summary, timeline, consequences.
-        // These four carry the rendered prose the panel prints with <%- %>. The
+        // reaches: question, summary, timeline, body, consequences.
+        // These carry the rendered prose the panel prints with <%- %>. The
         // panel has no escaped fallback on purpose: a caller that forgets them
         // should show 'undefined', not print the raw text unescaped.
         event.questionHtml = link(event.question);
         event.summaryHtml = link(event.summary);
         event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
+        // Markdown in, linked HTML out — the glossary body path (commulingo-terms.js).
+        // Most events have none, and then the panel skips the section entirely.
+        event.bodyHtml = event.body ? linker.html(renderMarkdown(event.body)) : '';
         event.outcomeHtml = link(event.outcome);
         const neighbor = offset => {
             const item = events[index + offset];
