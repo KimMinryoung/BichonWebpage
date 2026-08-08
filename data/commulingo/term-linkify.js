@@ -23,6 +23,19 @@ const BLOCKED_TERM_KO = ['집단농장화', '전세계'];
 // the headword itself.
 const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '씨밤'];
 
+// Strings refused even when they are the term's own headword. The list above
+// spares the headword deliberately — an entry has to stay reachable by its own
+// name. This one is for the opposite case: a headword so basic that linking it
+// is noise rather than help. 소비에트 names the state, the council, and half
+// the adjectives in this corpus; a page of running prose uses it fifty times
+// and the one link it earns tells the reader nothing the context has not
+// already given them. Excluded strings stay reachable from the glossary index,
+// from related-term chips, and from their own longer aliases (노동자대표
+// 소비에트, 소비에트 대회), which are specific enough to be worth a link.
+// Keyed by language: the English headword has the same problem but is not
+// excluded yet.
+const NEVER_LINK_TERM_HEADWORD = { ko: ['소비에트'], en: [] };
+
 // A word can name a thing that has its own main entry while a second entry
 // exists about the word itself. '예조프시나' is the euphemism the post-Stalin
 // USSR used for the 1937–38 campaign: the campaign is 대숙청, and the
@@ -60,10 +73,12 @@ function buildTermLinkIndex(terms, options = {}) {
             href: '/commulingo/terms/' + encodeURIComponent(term.id),
         };
         byId[term.id] = entry;
+        const neverHeadword = NEVER_LINK_TERM_HEADWORD[en ? 'en' : 'ko'] || [];
         const candidates = [label].concat((term.aliases && term.aliases[lang]) || []);
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2 || byAlias[alias]) return;
+            if (neverHeadword.includes(alias)) return;
             if (!en && alias !== label && NEVER_LINK_TERM_ALIAS_KO.includes(alias)) return;
             byAlias[alias] = entry;
             tokens.push(alias);
