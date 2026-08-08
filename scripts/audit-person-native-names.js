@@ -26,8 +26,19 @@ const { checkNativeScript } = require('../data/commulingo/native-script');
         );
 
         const problems = [];
+        const missing = [];
         for (const row of rows) {
             const context = { citizenship: row.citizenship_code, origin: row.origin_code };
+            // checkNativeScript passes an empty value — there is no script to be
+            // wrong about — so an omitted native name used to slip through every
+            // guard and render as a blank line under the display name. Thirty-one
+            // people sat like that, all of them Latin-script, because a curator
+            // who saw the column called `cyrillic` read it as "not applicable"
+            // rather than "the name in this person's own script".
+            if (!String(row.cyrillic || '').trim()) {
+                missing.push({ id: row.id, name: row.name_en || row.name_ko,
+                    code: [row.citizenship_code, row.origin_code].filter(Boolean).join(' + ') });
+            }
             for (const [field, value] of [
                 ['cyrillic', row.cyrillic],
                 ['cyrillicPatronymic', row.cyrillic_patronymic],
@@ -37,10 +48,18 @@ const { checkNativeScript } = require('../data/commulingo/native-script');
             }
         }
 
-        if (!problems.length) {
-            console.log(`OK — ${rows.length} people checked, every native name matches its nationality's script.`);
+        if (missing.length) {
+            console.log(`${missing.length} person(s) with no native name at all:\n`);
+            for (const row of missing) console.log(`  ${row.id} (${row.name}) — nationality '${row.code}'`);
+            console.log('\nSet cyrillic to the person\'s name in their own orthography. For a Latin-script'
+                + ' nationality that is usually name_en verbatim, diacritics included.\n');
+        }
+
+        if (!problems.length && !missing.length) {
+            console.log(`OK — ${rows.length} people checked, every native name is present and matches its nationality's script.`);
             process.exit(0);
         }
+        if (!problems.length) process.exit(1);
 
         console.log(`${problems.length} native-name script mismatch(es):\n`);
         for (const problem of problems) {
