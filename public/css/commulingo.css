@@ -3336,7 +3336,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* Historical event pages */
 /* Dictionary switcher (people / events / terms), shared by the three list
    pages via partials/commulingo-dict-nav.ejs. The open page's tab is painted. */
-.commu-dict-nav { display: flex; position: static; z-index: auto; border: 1px solid var(--border); background: var(--bg-surface); }
+.commu-dict-nav { display: flex; border: 1px solid var(--border); background: var(--bg-surface); }
 /* Labels must never wrap: nowrap plus a viewport-scaled font absorbs the
    in-between widths, and below 560px the data-short labels take over. */
 .commu-dict-tab { flex: 1; min-width: 0; min-height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .7rem .4rem; color: var(--text-primary); text-decoration: none; font-weight: 700; font-size: clamp(0.82rem, 1.9vw, 1rem); border-left: 1px solid var(--border); transition: background-color .15s ease; overflow: hidden; }
@@ -3461,7 +3461,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-toc {
     background: var(--bg-surface);
     border: 1px solid var(--border, #555);
-    border-radius: 8px;
+    border-radius: 0;
     padding: .9rem 1.1rem;
     margin: 1.4rem 0 0;
 }
@@ -3640,13 +3640,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 /* Index bar: initial consonants / letters when sorted by name, decades when
    sorted chronologically. */
-/* The sort toggle and the jump index are <nav> elements, which would inherit
-   the global `nav { position: sticky }` from style.css and trail the scroll,
-   covering the content below. They are in-flow controls, not chrome — keep
-   them static. */
-.commu-dict-sort,
-.commu-dict-index { position: static; }
-
 .commu-dict-index { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .4rem; }
 .commu-dict-index a {
     min-width: 2rem; padding: .2rem .4rem; border: 1px solid var(--border);

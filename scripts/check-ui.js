@@ -34,6 +34,17 @@ for (const stylesheet of ['palette.css', 'style.css', 'ui.css']) {
     }
 }
 
+const sharedStyle = fs.readFileSync(path.join(root, 'public', 'css', 'style.css'), 'utf8');
+const globalNavRule = sharedStyle.match(/(?:^|\n)nav\s*\{([^}]*)\}/);
+if (globalNavRule && /position\s*:\s*sticky/.test(globalNavRule[1])) {
+    errors.push('public/css/style.css: keep sticky positioning scoped to application chrome, not every <nav>');
+}
+
+const sharedNav = fs.readFileSync(path.join(viewsRoot, 'partials', 'nav.ejs'), 'utf8');
+if (!/<nav\s+class="site-nav"/.test(sharedNav)) {
+    errors.push('views/partials/nav.ejs: primary navigation must use the site-nav chrome class');
+}
+
 const standaloneStyleViews = new Set([
     'views/admin/private-reports.ejs',
     'views/public/nonogram.ejs',

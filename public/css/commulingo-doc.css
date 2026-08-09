@@ -213,10 +213,6 @@
    dictionaries use, sitting inside the sticky control bar below. */
 /* Prev/next chapter navigation on paginated documents. */
 .doc-pager {
-  /* A <nav>, so it would inherit the global sticky rule from style.css and
-     pin to the top while scrolling past — keep it in flow. The border and
-     background it inherits from the same rule are kept as the box look. */
-  position: static;
   display: flex;
   /* Centred, not baseline: the prev/next links are two lines each and the
      position label is one, so aligning on the first baseline pinned "2 / 10"

@@ -4,13 +4,10 @@
    reading typography in commulingo-doc.css). One partial, one stylesheet, so
    the bar cannot drift between them. */
 
-/* The site menu and the crumb are both <nav>, so both inherit the sticky rule
-   in style.css and land on top:0 — the crumb, later in the DOM, silently
-   covered the primary menu on every CommuLingo page. Exactly one of them
-   follows the reader, and here it is the crumb: it carries the way back out of
-   an entry and the jumps between dictionaries, which the site menu does not.
-   The menu returns to the flow and stays reachable at the top of the page. */
-body.commulingo-page > nav,
+/* The shared site menu normally follows the viewport. On CommuLingo pages it
+   returns to the flow and the context crumb follows instead: the crumb carries
+   the way back out of an entry and the jumps between dictionaries. */
+body.commulingo-page > .site-nav,
 body.commulingo-page > .admin-bar {
     position: static;
 }

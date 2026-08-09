@@ -150,6 +150,12 @@ nav {
     background-color: var(--nav-bg);
     border: 1px solid var(--border);
     padding: 0;
+}
+
+/* Only application chrome follows the viewport. Semantic navigation inside
+   page content (contents, filters, pagers, prev/next links) stays in flow. */
+.site-nav,
+.admin-bar {
     position: sticky;
     top: 0;
     z-index: 50;
