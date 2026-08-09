@@ -218,7 +218,10 @@
      background it inherits from the same rule are kept as the box look. */
   position: static;
   display: flex;
-  align-items: baseline;
+  /* Centred, not baseline: the prev/next links are two lines each and the
+     position label is one, so aligning on the first baseline pinned "2 / 10"
+     to the top of the box beside them. */
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin-top: clamp(2rem, 5vw, 3rem);
@@ -238,6 +241,14 @@
   text-decoration: none;
   max-width: 40%;
   min-width: 0;
+  /* The reader's shared rule (`.book article a:hover { border-bottom-style:
+     solid }`) is written for the dictionary links, which all declare a 2px
+     border already. A link that declares none gets `medium` when that style
+     switches on, and medium is 3px — which is what grew this box under the
+     pointer and shrank it again on the way out. Pinning the width to 0 leaves
+     the shared rule with nothing to turn on; the hover cue is the heading's
+     own border below. */
+  border-bottom: 0 solid transparent;
 }
 
 .doc-pager-dir {
@@ -250,6 +261,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* Declared, and merely colourless, so hover only repaints it. */
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.12s ease;
 }
 
 .doc-pager a:hover {
@@ -257,7 +271,7 @@
 }
 
 .doc-pager a:hover .doc-pager-heading {
-  text-decoration: underline;
+  border-bottom-color: currentColor;
 }
 
 .doc-pager-next {
