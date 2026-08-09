@@ -18,6 +18,7 @@
 // - corn: Pictogrammers Material Design Icons (Apache-2.0):
 // https://github.com/Templarian/MaterialDesign/blob/master/svg/corn.svg
 // - swords: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/swords.svg
+// - scroll-text: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/scroll-text.svg
 // Everything else is Lucide (MIT) except two custom drawings: `commulingo`,
 // a "political school" emblem (open book + filled star), and `posts`, Bichon
 // herself, a bob-haired figure matching the site portrait.
@@ -27,11 +28,11 @@ const ICON_PATHS = {
     shield: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/>',
     star: '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3L5.8 21 7 14.2 2 9.3l6.9-1L12 2Z"/>',
     handshake: '<path d="m11 17 2 2a3 3 0 0 0 4.2 0l3.8-3.8a3 3 0 0 0 0-4.2l-4-4a3 3 0 0 0-4.2 0L12 8"/><path d="m13 7-2-2a3 3 0 0 0-4.2 0L3 8.8a3 3 0 0 0 0 4.2l4 4a3 3 0 0 0 4.2 0l.8-.8"/><path d="m8 12 2 2 4-4"/>',
-    // A table with a seat on either side: the 외국 정치가 role, which is about
-    // sitting across from the Soviet side. Drawn rather than borrowed because
-    // handshake was already the 외무인민위원부 office glyph, and two medals with
-    // the same drawing read as the same thing.
-    'table-talks': '<path d="M2 13h20"/><path d="M5 13v6M19 13v6"/><path d="M7 13V9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/><path d="M13 13V9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/>',
+    // A treaty scroll for 외국 정치가. handshake was unavailable (it is the
+    // 외무인민위원부 office glyph) and the hand-drawn negotiating table read as
+    // a bench at 20px. Lucide's own `podium` is a winner's rostrum, `earth`
+    // collides with globe/Comintern, and `gavel` says courtroom.
+    'scroll-text': '<path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/>',
     // Crossed swords for 반혁명 세력. A shield says defence; what these people
     // have in common is having taken up arms to put a revolution back. Taken
     // from Lucide rather than drawn here: the hand-drawn pair read as an X with

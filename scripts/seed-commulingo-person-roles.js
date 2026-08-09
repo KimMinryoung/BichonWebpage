@@ -56,7 +56,7 @@ async function seedCommuLingoPersonRoles(client) {
         ['counterrevolution', 6, 'swords', '반혁명 세력', 'Counter-revolutionary forces'],
         ['left-opposition', 7, 'git-branch', '좌익 반대파', 'Left Opposition'],
         ['socialist-bloc-leader', 8, 'orbit', '사회주의권 지도자', 'Socialist-bloc leader'],
-        ['foreign-statesman', 9, 'table-talks', '외국 정치가', 'Foreign statesman'],
+        ['foreign-statesman', 9, 'scroll-text', '외국 정치가', 'Foreign statesman'],
     ];
     let roleCategoriesInserted = 0;
     for (const category of roleCategories) {
