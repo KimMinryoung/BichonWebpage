@@ -3481,6 +3481,16 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
 .commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; }
 .commu-event-timeline-list p { margin: .25rem 0 0; line-height: 1.6; }
+
+/* 결과 and the timeline entries are read as continuous prose in the same column
+   as the body, so they take the body's measure. Neither had one: the outcome
+   paragraph fell through to the page default and a timeline entry sat at 1.6,
+   both visibly tighter than the 1.78 of the body they sit next to. */
+.commu-event-outcome p,
+.commu-event-timeline-list p {
+    font-size: 1rem;
+    line-height: 1.78;
+}
 .commu-event-people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .8rem; }
 .commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--accent, #b84f4f); font-style: normal; font-weight: 700; font-size: .9rem; }
 .commu-event-people-grid strong, .commu-event-people-grid small { display: block; margin-top: .2rem; }
