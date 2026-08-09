@@ -1030,6 +1030,50 @@
           "Tres anos de lucha"
         ]
       }
+    },
+    {
+      "id": "stalin-1928-grain-siberia",
+      "file": "stalin-1928-grain-siberia.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "스탈린, 「곡물 조달과 농업 발전의 전망에 대하여」 한국어 번역",
+        "en": "Stalin, 'Grain Procurements and the Prospects for Agricultural Development' in Korean"
+      },
+      "description": {
+        "ko": "1928년 1월 곡물 조달 위기 때 스탈린이 시베리아로 내려가 지방 간부들 앞에서 한 발언이다. 곡물을 쥐고 값이 오르기를 기다리는 쿨라크에게 형법 제107조를 걸라고 지시하고, 그 일을 못 하겠다는 검사와 판사는 갈아치우라고 요구한다. 뒷부분에서는 개인 소농 경영으로는 더 나아갈 수 없다며 집단농장과 국영농장으로의 전환을 당면 과제로 내건다. 네프의 시장 논리로 곡물을 사들이던 방식이 행정적 강제로 넘어가는 지점이 한 문서 안에 들어 있다.",
+        "en": "Stalin's remarks to local officials during his January 1928 tour of Siberia at the height of the grain procurement crisis. He orders Article 107 of the criminal code used against kulaks holding grain back for a better price, demands that prosecutors and judges unwilling to do so be replaced, and then argues that small individual peasant farming cannot carry the country, setting collective and state farms as the immediate task. The turn from buying grain on NEP's market terms to taking it by administrative force is visible inside a single document."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, О хлебозаготовках и перспективах развития сельского хозяйства, Сочинения, т. 11",
+      "people": [
+        "stalin",
+        "lenin"
+      ],
+      "terms": [
+        "kulak",
+        "collectivization",
+        "nep",
+        "ural-siberian-method",
+        "control-figures"
+      ],
+      "events": [
+        "five-year-plans",
+        "new-economic-policy"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「곡물 조달과 농업 발전의 전망에 대하여」",
+          "1928년 1월 시베리아 연설",
+          "스탈린의 시베리아 연설"
+        ],
+        "en": [
+          "Grain Procurements and the Prospects for the Development of Agriculture"
+        ]
+      }
     }
   ]
 }
