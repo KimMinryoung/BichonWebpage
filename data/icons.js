@@ -17,6 +17,7 @@
 // - house: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/house.svg
 // - corn: Pictogrammers Material Design Icons (Apache-2.0):
 // https://github.com/Templarian/MaterialDesign/blob/master/svg/corn.svg
+// - swords: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/swords.svg
 // Everything else is Lucide (MIT) except two custom drawings: `commulingo`,
 // a "political school" emblem (open book + filled star), and `posts`, Bichon
 // herself, a bob-haired figure matching the site portrait.
@@ -31,9 +32,11 @@ const ICON_PATHS = {
     // handshake was already the 외무인민위원부 office glyph, and two medals with
     // the same drawing read as the same thing.
     'table-talks': '<path d="M2 13h20"/><path d="M5 13v6M19 13v6"/><path d="M7 13V9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/><path d="M13 13V9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/>',
-    // Crossed sabres for 반혁명 세력. A shield says defence; what these people
-    // have in common is having taken up arms to put a revolution back.
-    sabers: '<path d="M3.5 3.5 14 14"/><path d="m14 14 2.5 2.5a2 2 0 1 1-2.8 2.8L11 16.8"/><path d="M20.5 3.5 10 14"/><path d="m10 14-2.5 2.5a2 2 0 1 0 2.8 2.8L13 16.8"/>',
+    // Crossed swords for 반혁명 세력. A shield says defence; what these people
+    // have in common is having taken up arms to put a revolution back. Taken
+    // from Lucide rather than drawn here: the hand-drawn pair read as an X with
+    // two loops at 20px, which is the size the medal is actually shown at.
+    swords: '<polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/>',
     megaphone: '<path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
     paintbrush: '<path d="m14 4 6 6"/><path d="m13 5-5.5 5.5 6 6L19 11"/><path d="M7.5 10.5 4 14c-1.7 1.7-2 4.7-2 8 3.3 0 6.3-.3 8-2l3.5-3.5"/><path d="M4.5 15.5c1.5.2 3.8 1.5 4 4"/>',
     factory: '<path d="M2 20h20"/><path d="M4 20V10l5 3V8l5 3V6l6 4v10"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/>',
