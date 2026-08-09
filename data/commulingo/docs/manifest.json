@@ -1121,6 +1121,49 @@
           "Notes of an Economist"
         ]
       }
+    },
+    {
+      "id": "yalta-1945-declaration-liberated-europe",
+      "file": "yalta-1945-declaration-liberated-europe.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "「해방된 유럽에 관한 선언」 한국어 번역",
+        "en": "Declaration on Liberated Europe (Yalta, 1945) in Korean"
+      },
+      "description": {
+        "ko": "1945년 2월 11일 크림(얄타) 회담 코뮈니케의 두 절이다. 앞의 선언은 해방된 유럽 각국이 자기가 살아갈 정부 형태를 선택할 권리를 가진다고 밝히고, 폭넓은 기반 위의 임시 정부와 가능한 한 이른 자유로운 선거를 약속한다. 뒤의 절은 전쟁에서 만들어진 세 나라의 단결을 평화기에도 이어 가겠다는 다짐이다. 얄타가 동유럽을 넘겼는가를 두고 오늘까지 이어지는 논쟁이 갈리는 바로 그 문장들이다.",
+        "en": "Two sections of the Crimean (Yalta) conference communiqué of 11 February 1945. The declaration states the right of liberated European peoples to choose the form of government under which they will live, and promises broadly based interim governments and free elections at the earliest possible date; the section after it pledges to carry the wartime unity of the three powers into peacetime. These are the sentences the long argument over whether Yalta handed away Eastern Europe turns on."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Коммюнике Крымской конференции, 11 февраля 1945 г.",
+      "people": [
+        "stalin",
+        "franklin-d-roosevelt",
+        "winston-churchill",
+        "molotov"
+      ],
+      "terms": [
+        "yalta-system",
+        "peoples-democracy"
+      ],
+      "events": [
+        "yalta-potsdam",
+        "marshall-plan"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「해방된 유럽에 관한 선언」",
+          "해방된 유럽에 관한 선언",
+          "크림 회담 코뮈니케"
+        ],
+        "en": [
+          "Declaration on Liberated Europe"
+        ]
+      }
     }
   ]
 }
