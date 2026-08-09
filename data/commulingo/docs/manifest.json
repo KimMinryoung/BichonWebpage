@@ -1164,6 +1164,93 @@
           "Declaration on Liberated Europe"
         ]
       }
+    },
+    {
+      "id": "amnesty-1953",
+      "file": "amnesty-1953.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "1953년 3월 27일 사면령 한국어 번역",
+        "en": "The USSR amnesty decree of 27 March 1953 in Korean"
+      },
+      "description": {
+        "ko": "스탈린이 죽은 지 3주 만에 나온 첫 사면령이다. 5년 이하 형을 받은 사람과 직무·경제·군 관련 범죄로 복역 중인 사람, 어린 자녀를 둔 여성과 미성년자와 고령자를 형기와 무관하게 풀어 주고 5년을 넘는 형은 절반으로 줄여, 100만 명이 넘는 수감자가 수용소를 나왔다. 그러나 제7조는 반혁명 범죄로 5년을 넘는 형을 받은 사람을 명시적으로 제외한다. 정치범은 남고 형사범이 나갔다는 뜻이고, 그해 여름 노릴스크와 보르쿠타의 파업은 그렇게 바뀐 수용소에서 일어났다.",
+        "en": "The first amnesty after Stalin's death, three weeks later. It released prisoners serving up to five years, those convicted of official, economic and military offences regardless of term, women with small children, minors and the elderly, and halved sentences over five years; more than a million people left the camps. Article 7 explicitly excludes those serving more than five years for counter-revolutionary crimes: the criminal prisoners left and the political ones stayed, and the Norilsk and Vorkuta strikes that summer happened in the camps that remained."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Указ Президиума Верховного Совета СССР «Об амнистии», 27 марта 1953 г.",
+      "people": [
+        "voroshilov",
+        "beria",
+        "khrushchev",
+        "stalin"
+      ],
+      "terms": [
+        "gulag",
+        "the-thaw"
+      ],
+      "events": [
+        "twentieth-party-congress",
+        "beria-purge"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "1953년 사면령",
+          "「사면에 관하여」",
+          "3월 사면"
+        ],
+        "en": [
+          "the 1953 amnesty decree",
+          "On Amnesty"
+        ]
+      }
+    },
+    {
+      "id": "rsfsr-ukraine-treaty-1920",
+      "file": "rsfsr-ukraine-treaty-1920.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "러시아·우크라이나 동맹 노농조약(1920) 한국어 번역",
+        "en": "The RSFSR-Ukrainian SSR union treaty of 1920 in Korean"
+      },
+      "description": {
+        "ko": "소련이 세워지기 두 해 전, 러시아 공화국과 우크라이나 공화국이 서로를 독립 주권국으로 인정하면서 군사·최고국민경제회의·대외무역·재무·노동·교통·우편전신 일곱 개 인민위원부를 통합한 조약이다. 통합 기구는 러시아 공화국 인민위원회의 안에 두고 우크라이나는 전러시아 소비에트 대회를 통해 참여한다. 두 나라가 대등하다는 선언과 공동 기구가 한쪽 수도에 놓인다는 사실이 한 문서에 같이 있어, 1922년 소련 결성 때의 「자치화」 논쟁이 무엇을 두고 벌어졌는지를 보여 준다. 레닌·치체린·라콥스키가 서명했다.",
+        "en": "Signed two years before the USSR existed, this treaty has the Russian and Ukrainian republics recognise each other's independence and sovereignty while merging seven people's commissariats: military affairs, the Supreme Economic Council, foreign trade, finance, labour, transport and posts and telegraphs. The merged bodies sit inside the Russian republic's Council of People's Commissars, and Ukraine takes part through the All-Russian Congress of Soviets. The declaration of equality and the fact that the joint organs stand in one capital are in the same document, which is what the 1922 'autonomisation' argument was about. Signed by Lenin, Chicherin and Rakovsky."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Союзный рабоче-крестьянский договор между РСФСР и УССР, 28 декабря 1920 г.",
+      "people": [
+        "lenin",
+        "chicherin",
+        "christian-rakovsky",
+        "stalin"
+      ],
+      "terms": [
+        "autonomization",
+        "korenizatsiya"
+      ],
+      "events": [
+        "ussr-formation",
+        "civil-war"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "동맹 노농조약",
+          "러시아·우크라이나 동맹 노농조약",
+          "1920년 동맹 조약"
+        ],
+        "en": [
+          "the RSFSR-Ukrainian union treaty"
+        ]
+      }
     }
   ]
 }
