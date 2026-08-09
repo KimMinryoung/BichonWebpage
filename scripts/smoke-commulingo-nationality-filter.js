@@ -23,9 +23,13 @@ assert.strictEqual(
 assert.strictEqual(nationalityHubHref('birthplace', 'russia'), '');
 assert.strictEqual(nationalityHubHref('citizenship', 'not-a-flag'), '');
 assert.strictEqual(flagLabel('north-korea', 'ko'), '조선민주주의인민공화국');
-assert.strictEqual(flagLabel('georgia', 'ko'), '조지아');
+// 조지아 is the US state. The country and the people are 그루지야 here, on the
+// flag label and on both nationality kinds, and a row carrying the other
+// spelling is corrected rather than shown.
+assert.strictEqual(flagLabel('georgia', 'ko'), '그루지야');
+assert.strictEqual(flagLabel('georgia', 'en'), 'Georgia');
 assert.strictEqual(canonicalNationalityLabel('nationalOrigin', 'georgia', '조지아', 'ko'), '그루지야');
-assert.strictEqual(canonicalNationalityLabel('citizenship', 'georgia', '조지아', 'ko'), '조지아');
+assert.strictEqual(canonicalNationalityLabel('citizenship', 'georgia', '조지아', 'ko'), '그루지야');
 assert.match(
     flagImg('poland', '폴란드', '민족·국가적 배경', '/commulingo/people/national-origin/poland'),
     /<a class="commu-flag-link" href="\/commulingo\/people\/national-origin\/poland"/
@@ -42,6 +46,6 @@ assert.deepStrictEqual(origin.people.map(person => person.id), ['radek']);
 const georgianOrigin = buildNationalityFilter([], 'nationalOrigin', 'georgia', 'ko');
 const georgianCitizenship = buildNationalityFilter([], 'citizenship', 'georgia', 'ko');
 assert.strictEqual(georgianOrigin.label, '그루지야');
-assert.strictEqual(georgianCitizenship.label, '조지아');
+assert.strictEqual(georgianCitizenship.label, '그루지야');
 
 console.log('OK — CommuLingo nationality filter smoke passed.');
