@@ -91,8 +91,15 @@
   --text-primary: var(--clr-white);
   --text-secondary: var(--clr-cream);
   --text-muted: var(--clr-muted);
-  --link: color-mix(in srgb, var(--btn-primary) 72%, var(--clr-cream));
-  --link-hover: color-mix(in srgb, var(--btn-primary-hover) 58%, var(--clr-white));
+  /* Dark-theme link colour. At 72% accent this resolved to rgb(93,122,90) and
+     scored 4.09:1 on the page — under AA, and dimmer than the muted grey
+     (9.73:1) sitting right beside it, so on a paginated document the prev/next
+     links read as less important than the "3 / 12" label they stand next to.
+     48% clears AAA at 7.01:1 while still reading green; hover stays a step
+     brighter, as it was. The light theme keeps the flat accent: dark green on
+     cream is already 8:1 the other way round. */
+  --link: color-mix(in srgb, var(--btn-primary) 48%, var(--clr-cream));
+  --link-hover: color-mix(in srgb, var(--btn-primary-hover) 34%, var(--clr-white));
   --accent: var(--clr-accent);
   --accent-green: var(--clr-accent);
   --accent-red: var(--clr-red);

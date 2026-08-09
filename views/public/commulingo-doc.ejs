@@ -111,12 +111,23 @@ var refGroups = [
 <%- bodyRestHtml %>
 <% if (pagination) { %>
 <nav class="doc-pager" aria-label="<%= en ? 'Pages' : '페이지 이동' %>">
+    <%
+    /* The direction word is always printed, not only as a fallback. With a
+       chapter heading available the link used to read as just that heading
+       with an arrow, so nothing on it said it moved the reader a page. */
+    %>
     <% if (pagination.current > 1) { %>
-    <a class="doc-pager-prev" href="?p=<%= pagination.current - 1 %>">← <%= pagination.prevHeading || (en ? 'Previous' : '이전') %></a>
+    <a class="doc-pager-prev" href="?p=<%= pagination.current - 1 %>">
+        <span class="doc-pager-dir">← <%= en ? 'Previous' : '이전' %></span>
+        <% if (pagination.prevHeading) { %><span class="doc-pager-heading"><%= pagination.prevHeading %></span><% } %>
+    </a>
     <% } else { %><span class="doc-pager-gap"></span><% } %>
     <span class="doc-pager-pos"><%= pagination.current %> / <%= pagination.total %></span>
     <% if (pagination.current < pagination.total) { %>
-    <a class="doc-pager-next" href="?p=<%= pagination.current + 1 %>"><%= pagination.nextHeading || (en ? 'Next' : '다음') %> →</a>
+    <a class="doc-pager-next" href="?p=<%= pagination.current + 1 %>">
+        <span class="doc-pager-dir"><%= en ? 'Next' : '다음' %> →</span>
+        <% if (pagination.nextHeading) { %><span class="doc-pager-heading"><%= pagination.nextHeading %></span><% } %>
+    </a>
     <% } else { %><span class="doc-pager-gap"></span><% } %>
 </nav>
 <% } %>

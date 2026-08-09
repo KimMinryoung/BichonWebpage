@@ -227,18 +227,36 @@
   line-height: 1.6;
 }
 
-/* Neighboring part/chapter headings can be long; keep each link to one line
-   and let the ellipsis absorb the rest, so the pager never wraps. */
+/* Two lines: the direction word, then the chapter it leads to. The heading is
+   the long part, so it is the one that gets the ellipsis; the direction always
+   shows in full because it is what tells the reader this is a page control. */
 .doc-pager a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   color: var(--link);
   text-decoration: none;
   max-width: 40%;
+  min-width: 0;
+}
+
+.doc-pager-dir {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.doc-pager-heading {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .doc-pager a:hover {
+  color: var(--link-hover);
+}
+
+.doc-pager a:hover .doc-pager-heading {
   text-decoration: underline;
 }
 
