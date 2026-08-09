@@ -26,6 +26,14 @@ const ICON_PATHS = {
     shield: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/>',
     star: '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3L5.8 21 7 14.2 2 9.3l6.9-1L12 2Z"/>',
     handshake: '<path d="m11 17 2 2a3 3 0 0 0 4.2 0l3.8-3.8a3 3 0 0 0 0-4.2l-4-4a3 3 0 0 0-4.2 0L12 8"/><path d="m13 7-2-2a3 3 0 0 0-4.2 0L3 8.8a3 3 0 0 0 0 4.2l4 4a3 3 0 0 0 4.2 0l.8-.8"/><path d="m8 12 2 2 4-4"/>',
+    // A table with a seat on either side: the 외국 정치가 role, which is about
+    // sitting across from the Soviet side. Drawn rather than borrowed because
+    // handshake was already the 외무인민위원부 office glyph, and two medals with
+    // the same drawing read as the same thing.
+    'table-talks': '<path d="M2 13h20"/><path d="M5 13v6M19 13v6"/><path d="M7 13V9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/><path d="M13 13V9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/>',
+    // Crossed sabres for 반혁명 세력. A shield says defence; what these people
+    // have in common is having taken up arms to put a revolution back.
+    sabers: '<path d="M3.5 3.5 14 14"/><path d="m14 14 2.5 2.5a2 2 0 1 1-2.8 2.8L11 16.8"/><path d="M20.5 3.5 10 14"/><path d="m10 14-2.5 2.5a2 2 0 1 0 2.8 2.8L13 16.8"/>',
     megaphone: '<path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
     paintbrush: '<path d="m14 4 6 6"/><path d="m13 5-5.5 5.5 6 6L19 11"/><path d="M7.5 10.5 4 14c-1.7 1.7-2 4.7-2 8 3.3 0 6.3-.3 8-2l3.5-3.5"/><path d="M4.5 15.5c1.5.2 3.8 1.5 4 4"/>',
     factory: '<path d="M2 20h20"/><path d="M4 20V10l5 3V8l5 3V6l6 4v10"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/>',
