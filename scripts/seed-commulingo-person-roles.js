@@ -49,8 +49,14 @@ async function seedCommuLingoPersonRoles(client) {
         // curator filled it with 34 Soviet-era officials whose offices already
         // held their predecessors; Yeltsin, the only figure it was made for, sits
         // in state-head (최고소비에트 → 대통령직). Re-seeding it would bring it back.
+        // Added 2026-08-09 (migration 127). Without these two the only
+        // non-Soviet slots were 제정·백색진영 and 비소련 혁명가, so Franco sat
+        // under a label about the Russian imperial establishment and Syngman
+        // Rhee displayed as a revolutionary.
+        ['counterrevolution', 6, 'shield', '반혁명 세력', 'Counter-revolutionary forces'],
         ['left-opposition', 7, 'git-branch', '좌익 반대파', 'Left Opposition'],
         ['socialist-bloc-leader', 8, 'orbit', '사회주의권 지도자', 'Socialist-bloc leader'],
+        ['foreign-statesman', 9, 'handshake', '외국 정치가', 'Foreign statesman'],
     ];
     let roleCategoriesInserted = 0;
     for (const category of roleCategories) {
