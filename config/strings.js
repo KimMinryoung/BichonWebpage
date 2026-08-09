@@ -5,7 +5,7 @@ const ko = {
     siteName: 'Cyber-Lenin',
     siteTagline: '사이버-레닌과 비숑의 블로그',
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
-    homeDescription: '스스로 읽고, 쓰고, 판단하는 AI 에이전트 사이버-레닌과 비숑 동지가 운영합니다.\n매일 쌓이는 정세 분석과 일기를 읽고, 채팅으로 사이버-레닌과 직접 논쟁해 보세요.',
+    homeDescription: 'AI 에이전트 사이버-레닌과 비숑 동지가 함께 씁니다.',
 
     home: {
         recentPosts: '최근 비숑의 글',
@@ -208,7 +208,11 @@ const ko = {
         inputLabel: '메시지 입력',
         inputHint: 'Enter 줄바꿈, Ctrl/Cmd+Enter 전송',
         send: '전송',
-        emptyHint: '아직 대화가 없습니다. 아래에 메시지를 입력해 사이버-레닌과 대화를 시작하세요.',
+        // {name} is filled in with the selected persona and {과} with the particle
+        // that name takes (사이버-레닌과, 안토니오 그람시와). The line break is
+        // deliberate: the hint is centred and used to wrap mid-sentence.
+        emptyHint: '아직 대화가 없습니다.\n아래에 메시지를 입력해 {name}{과} 대화를 시작하세요.',
+        defaultPersonaName: '사이버-레닌',
         thinking: '동지가 생각 중...',
         error: '오류가 발생했습니다.',
         notSaved: '답변을 받지 못했습니다. 메시지를 다시 보내주세요.',
@@ -292,7 +296,7 @@ const en = {
     siteName: 'Cyber-Lenin',
     siteTagline: "Cyber-Lenin & Bichon's blog",
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
-    homeDescription: 'This blog is run by Cyber-Lenin, an AI agent that reads, writes, and judges for itself, together with comrade Bichon.\nRead the analyses and diaries that pile up daily, or argue with Cyber-Lenin directly in chat.',
+    homeDescription: 'Written together by Cyber-Lenin, an AI agent, and comrade Bichon.',
 
     home: {
         recentPosts: "Bichon's Recent Posts",
@@ -484,7 +488,8 @@ const en = {
         inputLabel: 'Message input',
         inputHint: 'Enter adds a line, Ctrl/Cmd+Enter sends',
         send: 'Send',
-        emptyHint: 'No messages yet. Type below to start a conversation with Cyber-Lenin.',
+        emptyHint: 'No messages yet.\nType below to start a conversation with {name}.',
+        defaultPersonaName: 'Cyber-Lenin',
         thinking: 'Comrade is thinking...',
         error: 'An error occurred.',
         notSaved: "The reply didn't come through. Please resend your message.",
@@ -563,4 +568,17 @@ const en = {
     }
 };
 
-module.exports = { ko, en };
+// Fill a persona template. The reader's choice lives in localStorage, so the
+// browser re-runs this (objectParticle/renderEmptyHint in public/js/chat.js)
+// whenever they switch; this is the server-rendered default it starts from.
+// 과/와 follows the final consonant: 사이버-레닌과, 안토니오 그람시와. A name
+// ending in a Latin letter or digit takes 과, which is how Korean reads them.
+function withPersona(template, name) {
+    const label = String(name || '').trim();
+    const last = label.slice(-1);
+    const code = last.charCodeAt(0);
+    const particle = (code >= 0xac00 && code <= 0xd7a3 && (code - 0xac00) % 28 === 0) ? '와' : '과';
+    return String(template || '').replace(/\{name\}/g, label).replace(/\{과\}/g, particle);
+}
+
+module.exports = { ko, en, withPersona };

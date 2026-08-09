@@ -1656,6 +1656,12 @@ footer .footer-tagline {
 
 .chat-box:empty::before {
     content: attr(data-empty-hint);
+    /* The hint carries its own line break after the first sentence. Centred
+       text left to wrap on its own broke mid-clause, which read as a mistake.
+       keep-all stops the second line breaking inside a word (시작하/세요):
+       Korean has no spaces inside 어절, so the default rule breaks anywhere. */
+    white-space: pre-line;
+    word-break: keep-all;
     display: block;
     max-width: 36ch;
     text-align: center;

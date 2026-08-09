@@ -89,7 +89,7 @@ router.get('/', async (req, res) => {
             recentHub,
             recentCommuLingo,
             pageTitle: '사이버-레닌과 비숑의 블로그',
-            pageDescription: res.locals.strings.homeDescription,
+            pageDescription: res.locals.strings.siteDescription,
             pagePath: '/',
             jsonLd: seo.itemListJsonLd(indexItems),
         });
@@ -102,7 +102,7 @@ router.get('/', async (req, res) => {
             recentHub: [],
             recentCommuLingo: [],
             pageTitle: '사이버-레닌과 비숑의 블로그',
-            pageDescription: res.locals.strings.homeDescription,
+            pageDescription: res.locals.strings.siteDescription,
             pagePath: '/',
         });
     }
@@ -384,7 +384,7 @@ router.get('/index.md', async (req, res) => {
         { title: '큐레이션', href: '/hub' },
         { title: '비숑글', href: '/posts' },
     ];
-    res.type('text/markdown; charset=utf-8').send(markdownIndex('Cyber-Lenin', res.locals.strings.homeDescription, items));
+    res.type('text/markdown; charset=utf-8').send(markdownIndex('Cyber-Lenin', res.locals.strings.siteDescription, items));
 });
 
 router.get('/posts.md', async (req, res) => {

@@ -47,7 +47,9 @@
         </div>
 
         <div class="container">
-            <div class="chat-box" id="chatBox" data-empty-hint="<%= strings.chat.emptyHint %>"></div>
+            <div class="chat-box" id="chatBox"
+                 data-empty-hint="<%= withPersona(strings.chat.emptyHint, strings.chat.defaultPersonaName) %>"
+                 data-empty-hint-template="<%= strings.chat.emptyHint %>"></div>
 
             <div class="chat-feedback-bar collapsed" id="chatFeedbackBar" hidden>
                 <button

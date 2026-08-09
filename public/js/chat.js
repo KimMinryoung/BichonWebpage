@@ -103,6 +103,36 @@
         '비숑': 'Bichon'
     };
 
+    // The empty-state hint names whoever the reader picked, so it has to be
+    // rendered here rather than baked into the template: the choice lives in
+    // localStorage and the server never sees it.
+    var personaCatalog = {};
+
+    // 과/와 follows the final consonant of the name: 레닌 ends in ㄴ so it is
+    // 사이버-레닌과, while 시 and 프 end in a vowel, giving 안토니오 그람시와 and
+    // 니콜라이 예조프와. A name ending in a Latin letter or digit takes 과, which
+    // is how Korean reads them. Mirrors withPersona in config/strings.js.
+    function objectParticle(name) {
+        var last = String(name || '').trim().slice(-1);
+        var code = last.charCodeAt(0);
+        if (code >= 0xac00 && code <= 0xd7a3) {
+            return ((code - 0xac00) % 28) === 0 ? '와' : '과';
+        }
+        return '과';
+    }
+
+    function renderEmptyHint() {
+        if (!chatBox) return;
+        var template = chatBox.getAttribute('data-empty-hint-template');
+        if (!template) return;
+        var name = personaLabel(personaCatalog[selectedPersona]) || personaLabel(personaCatalog[DEFAULT_PERSONA]);
+        if (!name) return;
+        chatBox.setAttribute(
+            'data-empty-hint',
+            template.replace(/\{name\}/g, name).replace(/\{과\}/g, objectParticle(name))
+        );
+    }
+
     function personaLabel(persona) {
         var id = persona && persona.id;
         if (pageLang.indexOf('en') === 0 && id && PERSONA_LABELS_EN[id]) {
@@ -124,6 +154,10 @@
             if (!res.ok) return;
             var data = await res.json();
             var personas = (data && data.personas) || [];
+            personas.forEach(function (p) { personaCatalog[p.id] = p; });
+            // The hint names the chosen persona whether or not the selector is
+            // shown, so this runs before the single-persona early return.
+            renderEmptyHint();
             if (personas.length < 2) return; // 선택지가 하나면 숨김 유지
             var ids = personas.map(function (p) { return p.id; });
             // 저장된 선택이 더 이상 유효하지 않으면 서버 기본값으로 보정
@@ -147,6 +181,7 @@
                 if (personaSelector.value === selectedPersona) return;
                 selectedPersona = personaSelector.value;
                 localStorage.setItem('cl_persona', selectedPersona);
+                renderEmptyHint();
                 // 페르소나별 히스토리는 분리되므로 새 세션으로 시작한다.
                 startNewSession();
             });

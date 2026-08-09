@@ -495,6 +495,7 @@ app.use((req, res, next) => {
         res.locals.lang = resolveLanguage(req, res);
     }
     res.locals.strings = allStrings[res.locals.lang];
+    res.locals.withPersona = allStrings.withPersona;
     next();
 });
 
