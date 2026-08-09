@@ -124,7 +124,11 @@ async function peopleGroupCardsHtml(req, standardized, lang, group) {
 // Standalone groups sit outside the Soviet/Russian era sequence and render at
 // the end of the people page inside one boxed "소련 밖 인물들" section, in
 // this order.
-const STANDALONE_GROUP_IDS = ['international-revolutionary', 'international-counterrevolutionary'];
+const STANDALONE_GROUP_IDS = [
+    'international-revolutionary',
+    'foreign-statesmen',
+    'international-counterrevolutionary',
+];
 
 // Shell metadata for the people page: group headers, per-group person ids
 // (the client resolves #p-<id> deep links against them), and name links for
