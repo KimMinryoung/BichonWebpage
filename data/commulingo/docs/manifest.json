@@ -4,6 +4,7 @@
       "id": "marx-engels-communist-manifesto",
       "file": "marx-engels-communist-manifesto.html",
       "docLang": "ko",
+      "date": "1848-02",
       "title": {
         "ko": "마르크스·엥겔스, 『공산당 선언』 한국어 번역",
         "en": "Marx & Engels, The Communist Manifesto (Korean translation)"
@@ -46,6 +47,7 @@
       "id": "marx-value-price-profit",
       "file": "marx-value-price-profit.html",
       "docLang": "ko",
+      "date": "1865-06",
       "title": {
         "ko": "마르크스, 『임금, 가격, 이윤』 전문 해설",
         "en": "Marx, Value, Price and Profit: A Guided Reading"
@@ -86,6 +88,7 @@
       "id": "marx-gotha-critique",
       "file": "marx-gotha-critique.html",
       "docLang": "ko",
+      "date": "1875-05",
       "title": {
         "ko": "마르크스, 『고타강령 비판』 전문 해설",
         "en": "Marx, Critique of the Gotha Programme: A Guided Reading"
@@ -127,6 +130,7 @@
       "id": "luxemburg-national-question-autonomy",
       "file": "luxemburg-national-question-autonomy.html",
       "docLang": "ko",
+      "date": "1908",
       "title": {
         "ko": "로자 룩셈부르크, 「민족문제와 자치」 한국어 번역",
         "en": "Rosa Luxemburg, The National Question and Autonomy (Korean translation)"
@@ -168,6 +172,7 @@
       "id": "stalin-marxism-national-question",
       "file": "stalin-marxism-national-question.html",
       "docLang": "ko",
+      "date": "1913-01",
       "title": {
         "ko": "스탈린, 「마르크스주의와 민족문제」 한국어 번역",
         "en": "Stalin, Marxism and the National Question (Korean translation)"
@@ -210,6 +215,7 @@
       "id": "lenin-self-determination",
       "file": "lenin-self-determination.html",
       "docLang": "ko",
+      "date": "1914-02",
       "title": {
         "ko": "레닌, 「민족자결권에 대하여」 한국어 번역",
         "en": "Lenin, The Right of Nations to Self-Determination (Korean translation)"
@@ -255,6 +261,7 @@
       "id": "lenin-april-theses",
       "file": "lenin-april-theses.html",
       "docLang": "ko",
+      "date": "1917-04-07",
       "title": {
         "ko": "레닌, 「4월 테제」 한국어 번역",
         "en": "Lenin, The April Theses (Korean translation)"
@@ -301,6 +308,7 @@
       "id": "1918-rsfsr-constitution",
       "file": "1918-rsfsr-constitution.html",
       "docLang": "ko",
+      "date": "1918-07-10",
       "title": {
         "ko": "1918년 러시아 소비에트 헌법 한국어 번역",
         "en": "The 1918 Constitution of the RSFSR (Korean translation)"
@@ -342,6 +350,7 @@
       "id": "comintern-21-conditions",
       "file": "comintern-21-conditions.html",
       "docLang": "ko",
+      "date": "1920-08-06",
       "title": {
         "ko": "코민테른 가입 21개 조건 한국어 번역",
         "en": "The Twenty-one Conditions of Admission to the Comintern (Korean translation)"
@@ -382,9 +391,54 @@
       }
     },
     {
+      "id": "rsfsr-ukraine-treaty-1920",
+      "file": "rsfsr-ukraine-treaty-1920.html",
+      "docLang": "ko",
+      "date": "1920-12-28",
+      "title": {
+        "ko": "러시아·우크라이나 동맹 노농조약(1920) 한국어 번역",
+        "en": "The RSFSR-Ukrainian SSR union treaty of 1920 in Korean"
+      },
+      "description": {
+        "ko": "소련이 세워지기 두 해 전, 러시아 공화국과 우크라이나 공화국이 서로를 독립 주권국으로 인정하면서 군사·최고국민경제회의·대외무역·재무·노동·교통·우편전신 일곱 개 인민위원부를 통합한 조약이다. 통합 기구는 러시아 공화국 인민위원회의 안에 두고 우크라이나는 전러시아 소비에트 대회를 통해 참여한다. 두 나라가 대등하다는 선언과 공동 기구가 한쪽 수도에 놓인다는 사실이 한 문서에 같이 있어, 1922년 소련 결성 때의 「자치화」 논쟁이 무엇을 두고 벌어졌는지를 보여 준다. 레닌·치체린·라콥스키가 서명했다.",
+        "en": "Signed two years before the USSR existed, this treaty has the Russian and Ukrainian republics recognise each other's independence and sovereignty while merging seven people's commissariats: military affairs, the Supreme Economic Council, foreign trade, finance, labour, transport and posts and telegraphs. The merged bodies sit inside the Russian republic's Council of People's Commissars, and Ukraine takes part through the All-Russian Congress of Soviets. The declaration of equality and the fact that the joint organs stand in one capital are in the same document, which is what the 1922 'autonomisation' argument was about. Signed by Lenin, Chicherin and Rakovsky."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Союзный рабоче-крестьянский договор между РСФСР и УССР, 28 декабря 1920 г.",
+      "people": [
+        "lenin",
+        "chicherin",
+        "christian-rakovsky",
+        "stalin"
+      ],
+      "terms": [
+        "autonomization",
+        "korenizatsiya"
+      ],
+      "events": [
+        "ussr-formation",
+        "civil-war"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "동맹 노농조약",
+          "러시아·우크라이나 동맹 노농조약",
+          "1920년 동맹 조약"
+        ],
+        "en": [
+          "the RSFSR-Ukrainian union treaty"
+        ]
+      }
+    },
+    {
       "id": "lenin-tax-in-kind",
       "file": "lenin-tax-in-kind.html",
       "docLang": "ko",
+      "date": "1921-04",
       "title": {
         "ko": "레닌, 『현물세』 한국어 번역",
         "en": "Lenin, The Tax in Kind (Korean translation)"
@@ -425,6 +479,7 @@
       "id": "declaration-of-46",
       "file": "declaration-of-46.html",
       "docLang": "ko",
+      "date": "1923-10-15",
       "title": {
         "ko": "46인 선언 한국어 번역",
         "en": "The Declaration of the 46 (Korean translation)"
@@ -483,6 +538,7 @@
       "id": "1924-soviet-constitution",
       "file": "1924-soviet-constitution.html",
       "docLang": "ko",
+      "date": "1924-01-31",
       "title": {
         "ko": "1924년 소련 헌법 한국어 번역",
         "en": "The 1924 Constitution of the USSR (Korean translation)"
@@ -526,9 +582,153 @@
       }
     },
     {
+      "id": "stalin-1928-grain-siberia",
+      "file": "stalin-1928-grain-siberia.html",
+      "docLang": "ko",
+      "date": "1928-01",
+      "title": {
+        "ko": "스탈린, 「곡물 조달과 농업 발전의 전망에 대하여」 한국어 번역",
+        "en": "Stalin, 'Grain Procurements and the Prospects for Agricultural Development' in Korean"
+      },
+      "description": {
+        "ko": "1928년 1월 곡물 조달 위기 때 스탈린이 시베리아로 내려가 지방 간부들 앞에서 한 발언이다. 곡물을 쥐고 값이 오르기를 기다리는 쿨라크에게 형법 제107조를 걸라고 지시하고, 그 일을 못 하겠다는 검사와 판사는 갈아치우라고 요구한다. 뒷부분에서는 개인 소농 경영으로는 더 나아갈 수 없다며 집단농장과 국영농장으로의 전환을 당면 과제로 내건다. 네프의 시장 논리로 곡물을 사들이던 방식이 행정적 강제로 넘어가는 지점이 한 문서 안에 들어 있다.",
+        "en": "Stalin's remarks to local officials during his January 1928 tour of Siberia at the height of the grain procurement crisis. He orders Article 107 of the criminal code used against kulaks holding grain back for a better price, demands that prosecutors and judges unwilling to do so be replaced, and then argues that small individual peasant farming cannot carry the country, setting collective and state farms as the immediate task. The turn from buying grain on NEP's market terms to taking it by administrative force is visible inside a single document."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, О хлебозаготовках и перспективах развития сельского хозяйства, Сочинения, т. 11",
+      "people": [
+        "stalin",
+        "lenin"
+      ],
+      "terms": [
+        "kulak",
+        "collectivization",
+        "nep",
+        "ural-siberian-method",
+        "control-figures"
+      ],
+      "events": [
+        "five-year-plans",
+        "new-economic-policy"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「곡물 조달과 농업 발전의 전망에 대하여」",
+          "1928년 1월 시베리아 연설",
+          "스탈린의 시베리아 연설"
+        ],
+        "en": [
+          "Grain Procurements and the Prospects for the Development of Agriculture"
+        ]
+      }
+    },
+    {
+      "id": "bukharin-1928-notes-of-an-economist",
+      "file": "bukharin-1928-notes-of-an-economist.html",
+      "docLang": "ko",
+      "date": "1928-09-30",
+      "title": {
+        "ko": "부하린, 「한 경제학자의 노트」 한국어 번역",
+        "en": "Bukharin, 'Notes of an Economist' in Korean"
+      },
+      "description": {
+        "ko": "1928년 9월 30일 『프라우다』에 실린 우익반대파의 정면 반론이다. 부하린은 스탈린의 이름을 한 번도 적지 않은 채, 공업의 자본 투자 증가율과 건축자재 수급 균형과 금속 배분표를 하나씩 짚으며 계획이 스스로 세운 통제숫자와 어긋나 있음을 논증한다. 원료와 자재가 따라오지 못하는 속도를 밀어붙이면 공업 자신이 멈춘다는 것, 곡물 위기의 원인도 쿨라크의 저항이 아니라 공업과 농업 사이의 균형이 깨진 데 있다는 것이 논지다. 통계표 5개를 포함한 전문.",
+        "en": "The Right Opposition's direct answer, printed in Pravda on 30 September 1928. Without once naming Stalin, Bukharin works through the growth rates of industrial capital investment, the building-materials balance and the metals allocation tables to show that the plan contradicts its own control figures, that a tempo its raw materials cannot follow will stall industry itself, and that the grain crisis came from a broken balance between industry and agriculture rather than from kulak resistance. Complete text with its five statistical tables."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Н. И. Бухарин, Заметки экономиста (К началу нового хозяйственного года), Правда, 30 сентября 1928 г., с. 2-3",
+      "people": [
+        "bukharin",
+        "stalin",
+        "trotsky",
+        "preobrazhensky",
+        "krzhizhanovsky"
+      ],
+      "terms": [
+        "right-opposition",
+        "nep",
+        "control-figures",
+        "kulak",
+        "primitive-socialist-accumulation",
+        "collectivization"
+      ],
+      "events": [
+        "five-year-plans",
+        "new-economic-policy"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「한 경제학자의 노트」",
+          "한 경제학자의 노트"
+        ],
+        "en": [
+          "Notes of an Economist"
+        ]
+      }
+    },
+    {
+      "id": "spain-1936-two-lines",
+      "file": "spain-1936-two-lines.html",
+      "docLang": "ko",
+      "date": "1936-10-16",
+      "title": {
+        "ko": "스페인 내전을 둘러싼 두 노선 — 1936~1937년 문헌 6건",
+        "en": "Two lines on the Spanish Civil War: six documents, 1936-1937"
+      },
+      "description": {
+        "ko": "스페인 내전에서 「전쟁이 먼저인가 혁명이 먼저인가」를 두고 갈라선 두 노선을 당대 문헌으로 읽는다. 1936년 10월 16일 스탈린과 스페인공산당이 주고받은 전보 두 건, 서기장 호세 디아스가 제5연대를 해산하며 정규군을 주장한 연설과 「전쟁에서 이기려면 무엇을 할 것인가」 강연, 그리고 그 노선을 정면으로 공격한 트로츠키의 1937년 글 두 편의 한국어 번역 전문.",
+        "en": "The split inside the Republic over whether the war or the revolution came first, read in documents of the time: the telegrams Stalin and the Spanish Communist Party exchanged on 16 October 1936, two speeches in which the party's general secretary Jose Diaz argued for a regular army and set out what winning the war required, and two 1937 pieces by Trotsky attacking that line."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, Правда, 16 октября 1936 г.; José Díaz, Tres años de lucha (París 1970); Л. Троцкий, Бюллетень оппозиции, № 58-59 и № 62-63, 1937 г.",
+      "people": [
+        "stalin",
+        "trotsky",
+        "andres-nin",
+        "jose-diaz",
+        "largo-caballero",
+        "juan-negrin"
+      ],
+      "terms": [
+        "popular-fronts-ussr",
+        "comintern"
+      ],
+      "events": [
+        "spanish-civil-war"
+      ],
+      "addedAt": "2026-08-08",
+      "aliases": {
+        "ko": [
+          "「스페인 내전을 둘러싼 두 노선」",
+          "「스페인의 교훈: 마지막 경고」",
+          "「스페인의 교훈 — 마지막 경고」",
+          "「전쟁에서 이기려면 무엇을 할 것인가」",
+          "『3년의 투쟁』"
+        ],
+        "en": [
+          "Two lines on the Spanish Civil War",
+          "What is to be done to win the war",
+          "The Lesson of Spain: The Last Warning",
+          "Tres anos de lucha"
+        ]
+      }
+    },
+    {
       "id": "stalin-1936-constitution",
       "file": "stalin-1936-constitution.html",
       "docLang": "ko",
+      "date": "1936-12-05",
       "title": {
         "ko": "1936년 소련 헌법 한국어 번역",
         "en": "The 1936 Constitution of the USSR (Korean translation)"
@@ -574,6 +774,7 @@
       "id": "nkvd-1937-documents",
       "file": "nkvd-1937-documents.html",
       "docLang": "ko",
+      "date": "1937-06",
       "title": {
         "ko": "1937년 소련 당·국가 문서 2건 한국어 번역",
         "en": "Two Soviet Party and State Documents of 1937 (Korean translation)"
@@ -614,6 +815,7 @@
       "id": "nkvd-operational-orders",
       "file": "nkvd-operational-orders.html",
       "docLang": "ko",
+      "date": "1937-07-30",
       "title": {
         "ko": "NKVD 작전명령 한국어 번역",
         "en": "NKVD Operational Orders (Korean translation)"
@@ -669,6 +871,7 @@
       "id": "stalin-dialectical-historical-materialism",
       "file": "stalin-dialectical-historical-materialism.html",
       "docLang": "ko",
+      "date": "1938-09",
       "title": {
         "ko": "스탈린, 「변증법적 유물론과 사적 유물론」 한국어 번역",
         "en": "Stalin, Dialectical and Historical Materialism (Korean translation)"
@@ -708,6 +911,7 @@
       "id": "molotov-ribbentrop-1939",
       "file": "molotov-ribbentrop-1939.html",
       "docLang": "ko",
+      "date": "1939-08-23",
       "title": {
         "ko": "독소 불가침조약과 비밀 추가의정서 한국어 번역",
         "en": "The Molotov–Ribbentrop Pact and its Secret Protocol (Korean translation)"
@@ -746,9 +950,99 @@
       }
     },
     {
+      "id": "yalta-1945-declaration-liberated-europe",
+      "file": "yalta-1945-declaration-liberated-europe.html",
+      "docLang": "ko",
+      "date": "1945-02-11",
+      "title": {
+        "ko": "「해방된 유럽에 관한 선언」 한국어 번역",
+        "en": "Declaration on Liberated Europe (Yalta, 1945) in Korean"
+      },
+      "description": {
+        "ko": "1945년 2월 11일 크림(얄타) 회담 코뮈니케의 두 절이다. 앞의 선언은 해방된 유럽 각국이 자기가 살아갈 정부 형태를 선택할 권리를 가진다고 밝히고, 폭넓은 기반 위의 임시 정부와 가능한 한 이른 자유로운 선거를 약속한다. 뒤의 절은 전쟁에서 만들어진 세 나라의 단결을 평화기에도 이어 가겠다는 다짐이다. 얄타가 동유럽을 넘겼는가를 두고 오늘까지 이어지는 논쟁이 갈리는 바로 그 문장들이다.",
+        "en": "Two sections of the Crimean (Yalta) conference communiqué of 11 February 1945. The declaration states the right of liberated European peoples to choose the form of government under which they will live, and promises broadly based interim governments and free elections at the earliest possible date; the section after it pledges to carry the wartime unity of the three powers into peacetime. These are the sentences the long argument over whether Yalta handed away Eastern Europe turns on."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Коммюнике Крымской конференции, 11 февраля 1945 г.",
+      "people": [
+        "stalin",
+        "franklin-d-roosevelt",
+        "winston-churchill",
+        "molotov"
+      ],
+      "terms": [
+        "yalta-system",
+        "peoples-democracy"
+      ],
+      "events": [
+        "yalta-potsdam",
+        "marshall-plan"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「해방된 유럽에 관한 선언」",
+          "해방된 유럽에 관한 선언",
+          "크림 회담 코뮈니케"
+        ],
+        "en": [
+          "Declaration on Liberated Europe"
+        ]
+      }
+    },
+    {
+      "id": "amnesty-1953",
+      "file": "amnesty-1953.html",
+      "docLang": "ko",
+      "date": "1953-03-27",
+      "title": {
+        "ko": "1953년 3월 27일 사면령 한국어 번역",
+        "en": "The USSR amnesty decree of 27 March 1953 in Korean"
+      },
+      "description": {
+        "ko": "스탈린이 죽은 지 3주 만에 나온 첫 사면령이다. 5년 이하 형을 받은 사람과 직무·경제·군 관련 범죄로 복역 중인 사람, 어린 자녀를 둔 여성과 미성년자와 고령자를 형기와 무관하게 풀어 주고 5년을 넘는 형은 절반으로 줄여, 100만 명이 넘는 수감자가 수용소를 나왔다. 그러나 제7조는 반혁명 범죄로 5년을 넘는 형을 받은 사람을 명시적으로 제외한다. 정치범은 남고 형사범이 나갔다는 뜻이고, 그해 여름 노릴스크와 보르쿠타의 파업은 그렇게 바뀐 수용소에서 일어났다.",
+        "en": "The first amnesty after Stalin's death, three weeks later. It released prisoners serving up to five years, those convicted of official, economic and military offences regardless of term, women with small children, minors and the elderly, and halved sentences over five years; more than a million people left the camps. Article 7 explicitly excludes those serving more than five years for counter-revolutionary crimes: the criminal prisoners left and the political ones stayed, and the Norilsk and Vorkuta strikes that summer happened in the camps that remained."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Указ Президиума Верховного Совета СССР «Об амнистии», 27 марта 1953 г.",
+      "people": [
+        "voroshilov",
+        "beria",
+        "khrushchev",
+        "stalin"
+      ],
+      "terms": [
+        "gulag",
+        "the-thaw"
+      ],
+      "events": [
+        "twentieth-party-congress",
+        "beria-purge"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "1953년 사면령",
+          "「사면에 관하여」",
+          "3월 사면"
+        ],
+        "en": [
+          "the 1953 amnesty decree",
+          "On Amnesty"
+        ]
+      }
+    },
+    {
       "id": "khrushchev-secret-speech-1956",
       "file": "khrushchev-secret-speech-1956.html",
       "docLang": "ko",
+      "date": "1956-02-25",
       "title": {
         "ko": "흐루쇼프 비밀보고 「개인숭배와 그 결과에 대하여」 한국어 번역",
         "en": "Khrushchev's Secret Speech, On the Cult of Personality and Its Consequences (Korean translation)"
@@ -812,6 +1106,7 @@
       "id": "nine-commentaries",
       "file": "nine-commentaries.html",
       "docLang": "ko",
+      "date": "1963-09",
       "title": {
         "ko": "「9평」 소련공산당 중앙위원회 공개서한을 평함 한국어 번역",
         "en": "The Nine Commentaries on the Open Letter of the CPSU Central Committee"
@@ -860,6 +1155,7 @@
       "id": "1977-soviet-constitution",
       "file": "1977-soviet-constitution.html",
       "docLang": "ko",
+      "date": "1977-10-07",
       "title": {
         "ko": "1977년 소련 헌법 한국어 번역",
         "en": "The 1977 Constitution of the USSR (Korean translation)"
@@ -903,6 +1199,7 @@
       "id": "gorbachev-un-speech-1988",
       "file": "gorbachev-un-speech-1988.html",
       "docLang": "ko",
+      "date": "1988-12-07",
       "title": {
         "ko": "고르바초프, 1988년 유엔 총회 연설 한국어 번역",
         "en": "Gorbachev's Address to the UN General Assembly (1988): Korean Translation"
@@ -947,6 +1244,7 @@
       "id": "yezhov-pavlyukov",
       "file": "yezhov-pavlyukov.html",
       "docLang": "ko",
+      "date": "2007",
       "title": {
         "ko": "알렉세이 파블류코프, 『예조프: 전기』 한국어 번역",
         "en": "Aleksei Pavlyukov, Yezhov: A Biography (Korean translation)"
@@ -979,276 +1277,6 @@
         ],
         "en": [
           "Yezhov: A Biography"
-        ]
-      }
-    },
-    {
-      "id": "spain-1936-two-lines",
-      "file": "spain-1936-two-lines.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "스페인 내전을 둘러싼 두 노선 — 1936~1937년 문헌 6건",
-        "en": "Two lines on the Spanish Civil War: six documents, 1936-1937"
-      },
-      "description": {
-        "ko": "스페인 내전에서 「전쟁이 먼저인가 혁명이 먼저인가」를 두고 갈라선 두 노선을 당대 문헌으로 읽는다. 1936년 10월 16일 스탈린과 스페인공산당이 주고받은 전보 두 건, 서기장 호세 디아스가 제5연대를 해산하며 정규군을 주장한 연설과 「전쟁에서 이기려면 무엇을 할 것인가」 강연, 그리고 그 노선을 정면으로 공격한 트로츠키의 1937년 글 두 편의 한국어 번역 전문.",
-        "en": "The split inside the Republic over whether the war or the revolution came first, read in documents of the time: the telegrams Stalin and the Spanish Communist Party exchanged on 16 October 1936, two speeches in which the party's general secretary Jose Diaz argued for a regular army and set out what winning the war required, and two 1937 pieces by Trotsky attacking that line."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "И. В. Сталин, Правда, 16 октября 1936 г.; José Díaz, Tres años de lucha (París 1970); Л. Троцкий, Бюллетень оппозиции, № 58-59 и № 62-63, 1937 г.",
-      "people": [
-        "stalin",
-        "trotsky",
-        "andres-nin",
-        "jose-diaz",
-        "largo-caballero",
-        "juan-negrin"
-      ],
-      "terms": [
-        "popular-fronts-ussr",
-        "comintern"
-      ],
-      "events": [
-        "spanish-civil-war"
-      ],
-      "addedAt": "2026-08-08",
-      "aliases": {
-        "ko": [
-          "「스페인 내전을 둘러싼 두 노선」",
-          "「스페인의 교훈: 마지막 경고」",
-          "「스페인의 교훈 — 마지막 경고」",
-          "「전쟁에서 이기려면 무엇을 할 것인가」",
-          "『3년의 투쟁』"
-        ],
-        "en": [
-          "Two lines on the Spanish Civil War",
-          "What is to be done to win the war",
-          "The Lesson of Spain: The Last Warning",
-          "Tres anos de lucha"
-        ]
-      }
-    },
-    {
-      "id": "stalin-1928-grain-siberia",
-      "file": "stalin-1928-grain-siberia.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "스탈린, 「곡물 조달과 농업 발전의 전망에 대하여」 한국어 번역",
-        "en": "Stalin, 'Grain Procurements and the Prospects for Agricultural Development' in Korean"
-      },
-      "description": {
-        "ko": "1928년 1월 곡물 조달 위기 때 스탈린이 시베리아로 내려가 지방 간부들 앞에서 한 발언이다. 곡물을 쥐고 값이 오르기를 기다리는 쿨라크에게 형법 제107조를 걸라고 지시하고, 그 일을 못 하겠다는 검사와 판사는 갈아치우라고 요구한다. 뒷부분에서는 개인 소농 경영으로는 더 나아갈 수 없다며 집단농장과 국영농장으로의 전환을 당면 과제로 내건다. 네프의 시장 논리로 곡물을 사들이던 방식이 행정적 강제로 넘어가는 지점이 한 문서 안에 들어 있다.",
-        "en": "Stalin's remarks to local officials during his January 1928 tour of Siberia at the height of the grain procurement crisis. He orders Article 107 of the criminal code used against kulaks holding grain back for a better price, demands that prosecutors and judges unwilling to do so be replaced, and then argues that small individual peasant farming cannot carry the country, setting collective and state farms as the immediate task. The turn from buying grain on NEP's market terms to taking it by administrative force is visible inside a single document."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "И. В. Сталин, О хлебозаготовках и перспективах развития сельского хозяйства, Сочинения, т. 11",
-      "people": [
-        "stalin",
-        "lenin"
-      ],
-      "terms": [
-        "kulak",
-        "collectivization",
-        "nep",
-        "ural-siberian-method",
-        "control-figures"
-      ],
-      "events": [
-        "five-year-plans",
-        "new-economic-policy"
-      ],
-      "addedAt": "2026-08-09",
-      "aliases": {
-        "ko": [
-          "「곡물 조달과 농업 발전의 전망에 대하여」",
-          "1928년 1월 시베리아 연설",
-          "스탈린의 시베리아 연설"
-        ],
-        "en": [
-          "Grain Procurements and the Prospects for the Development of Agriculture"
-        ]
-      }
-    },
-    {
-      "id": "bukharin-1928-notes-of-an-economist",
-      "file": "bukharin-1928-notes-of-an-economist.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "부하린, 「한 경제학자의 노트」 한국어 번역",
-        "en": "Bukharin, 'Notes of an Economist' in Korean"
-      },
-      "description": {
-        "ko": "1928년 9월 30일 『프라우다』에 실린 우익반대파의 정면 반론이다. 부하린은 스탈린의 이름을 한 번도 적지 않은 채, 공업의 자본 투자 증가율과 건축자재 수급 균형과 금속 배분표를 하나씩 짚으며 계획이 스스로 세운 통제숫자와 어긋나 있음을 논증한다. 원료와 자재가 따라오지 못하는 속도를 밀어붙이면 공업 자신이 멈춘다는 것, 곡물 위기의 원인도 쿨라크의 저항이 아니라 공업과 농업 사이의 균형이 깨진 데 있다는 것이 논지다. 통계표 5개를 포함한 전문.",
-        "en": "The Right Opposition's direct answer, printed in Pravda on 30 September 1928. Without once naming Stalin, Bukharin works through the growth rates of industrial capital investment, the building-materials balance and the metals allocation tables to show that the plan contradicts its own control figures, that a tempo its raw materials cannot follow will stall industry itself, and that the grain crisis came from a broken balance between industry and agriculture rather than from kulak resistance. Complete text with its five statistical tables."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Н. И. Бухарин, Заметки экономиста (К началу нового хозяйственного года), Правда, 30 сентября 1928 г., с. 2-3",
-      "people": [
-        "bukharin",
-        "stalin",
-        "trotsky",
-        "preobrazhensky",
-        "krzhizhanovsky"
-      ],
-      "terms": [
-        "right-opposition",
-        "nep",
-        "control-figures",
-        "kulak",
-        "primitive-socialist-accumulation",
-        "collectivization"
-      ],
-      "events": [
-        "five-year-plans",
-        "new-economic-policy"
-      ],
-      "addedAt": "2026-08-09",
-      "aliases": {
-        "ko": [
-          "「한 경제학자의 노트」",
-          "한 경제학자의 노트"
-        ],
-        "en": [
-          "Notes of an Economist"
-        ]
-      }
-    },
-    {
-      "id": "yalta-1945-declaration-liberated-europe",
-      "file": "yalta-1945-declaration-liberated-europe.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "「해방된 유럽에 관한 선언」 한국어 번역",
-        "en": "Declaration on Liberated Europe (Yalta, 1945) in Korean"
-      },
-      "description": {
-        "ko": "1945년 2월 11일 크림(얄타) 회담 코뮈니케의 두 절이다. 앞의 선언은 해방된 유럽 각국이 자기가 살아갈 정부 형태를 선택할 권리를 가진다고 밝히고, 폭넓은 기반 위의 임시 정부와 가능한 한 이른 자유로운 선거를 약속한다. 뒤의 절은 전쟁에서 만들어진 세 나라의 단결을 평화기에도 이어 가겠다는 다짐이다. 얄타가 동유럽을 넘겼는가를 두고 오늘까지 이어지는 논쟁이 갈리는 바로 그 문장들이다.",
-        "en": "Two sections of the Crimean (Yalta) conference communiqué of 11 February 1945. The declaration states the right of liberated European peoples to choose the form of government under which they will live, and promises broadly based interim governments and free elections at the earliest possible date; the section after it pledges to carry the wartime unity of the three powers into peacetime. These are the sentences the long argument over whether Yalta handed away Eastern Europe turns on."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Коммюнике Крымской конференции, 11 февраля 1945 г.",
-      "people": [
-        "stalin",
-        "franklin-d-roosevelt",
-        "winston-churchill",
-        "molotov"
-      ],
-      "terms": [
-        "yalta-system",
-        "peoples-democracy"
-      ],
-      "events": [
-        "yalta-potsdam",
-        "marshall-plan"
-      ],
-      "addedAt": "2026-08-09",
-      "aliases": {
-        "ko": [
-          "「해방된 유럽에 관한 선언」",
-          "해방된 유럽에 관한 선언",
-          "크림 회담 코뮈니케"
-        ],
-        "en": [
-          "Declaration on Liberated Europe"
-        ]
-      }
-    },
-    {
-      "id": "amnesty-1953",
-      "file": "amnesty-1953.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "1953년 3월 27일 사면령 한국어 번역",
-        "en": "The USSR amnesty decree of 27 March 1953 in Korean"
-      },
-      "description": {
-        "ko": "스탈린이 죽은 지 3주 만에 나온 첫 사면령이다. 5년 이하 형을 받은 사람과 직무·경제·군 관련 범죄로 복역 중인 사람, 어린 자녀를 둔 여성과 미성년자와 고령자를 형기와 무관하게 풀어 주고 5년을 넘는 형은 절반으로 줄여, 100만 명이 넘는 수감자가 수용소를 나왔다. 그러나 제7조는 반혁명 범죄로 5년을 넘는 형을 받은 사람을 명시적으로 제외한다. 정치범은 남고 형사범이 나갔다는 뜻이고, 그해 여름 노릴스크와 보르쿠타의 파업은 그렇게 바뀐 수용소에서 일어났다.",
-        "en": "The first amnesty after Stalin's death, three weeks later. It released prisoners serving up to five years, those convicted of official, economic and military offences regardless of term, women with small children, minors and the elderly, and halved sentences over five years; more than a million people left the camps. Article 7 explicitly excludes those serving more than five years for counter-revolutionary crimes: the criminal prisoners left and the political ones stayed, and the Norilsk and Vorkuta strikes that summer happened in the camps that remained."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Указ Президиума Верховного Совета СССР «Об амнистии», 27 марта 1953 г.",
-      "people": [
-        "voroshilov",
-        "beria",
-        "khrushchev",
-        "stalin"
-      ],
-      "terms": [
-        "gulag",
-        "the-thaw"
-      ],
-      "events": [
-        "twentieth-party-congress",
-        "beria-purge"
-      ],
-      "addedAt": "2026-08-09",
-      "aliases": {
-        "ko": [
-          "1953년 사면령",
-          "「사면에 관하여」",
-          "3월 사면"
-        ],
-        "en": [
-          "the 1953 amnesty decree",
-          "On Amnesty"
-        ]
-      }
-    },
-    {
-      "id": "rsfsr-ukraine-treaty-1920",
-      "file": "rsfsr-ukraine-treaty-1920.html",
-      "docLang": "ko",
-      "title": {
-        "ko": "러시아·우크라이나 동맹 노농조약(1920) 한국어 번역",
-        "en": "The RSFSR-Ukrainian SSR union treaty of 1920 in Korean"
-      },
-      "description": {
-        "ko": "소련이 세워지기 두 해 전, 러시아 공화국과 우크라이나 공화국이 서로를 독립 주권국으로 인정하면서 군사·최고국민경제회의·대외무역·재무·노동·교통·우편전신 일곱 개 인민위원부를 통합한 조약이다. 통합 기구는 러시아 공화국 인민위원회의 안에 두고 우크라이나는 전러시아 소비에트 대회를 통해 참여한다. 두 나라가 대등하다는 선언과 공동 기구가 한쪽 수도에 놓인다는 사실이 한 문서에 같이 있어, 1922년 소련 결성 때의 「자치화」 논쟁이 무엇을 두고 벌어졌는지를 보여 준다. 레닌·치체린·라콥스키가 서명했다.",
-        "en": "Signed two years before the USSR existed, this treaty has the Russian and Ukrainian republics recognise each other's independence and sovereignty while merging seven people's commissariats: military affairs, the Supreme Economic Council, foreign trade, finance, labour, transport and posts and telegraphs. The merged bodies sit inside the Russian republic's Council of People's Commissars, and Ukraine takes part through the All-Russian Congress of Soviets. The declaration of equality and the fact that the joint organs stand in one capital are in the same document, which is what the 1922 'autonomisation' argument was about. Signed by Lenin, Chicherin and Rakovsky."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Союзный рабоче-крестьянский договор между РСФСР и УССР, 28 декабря 1920 г.",
-      "people": [
-        "lenin",
-        "chicherin",
-        "christian-rakovsky",
-        "stalin"
-      ],
-      "terms": [
-        "autonomization",
-        "korenizatsiya"
-      ],
-      "events": [
-        "ussr-formation",
-        "civil-war"
-      ],
-      "addedAt": "2026-08-09",
-      "aliases": {
-        "ko": [
-          "동맹 노농조약",
-          "러시아·우크라이나 동맹 노농조약",
-          "1920년 동맹 조약"
-        ],
-        "en": [
-          "the RSFSR-Ukrainian union treaty"
         ]
       }
     }

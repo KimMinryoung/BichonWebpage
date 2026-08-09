@@ -44,6 +44,44 @@ function annotateHeadings(rawHtml, excludePatterns) {
 const MANIFEST_FRESHNESS_MS = 500;
 let manifestCheckedAt = 0;
 
+// Reading order is the date the original was written, and it is computed from
+// each entry's `date` rather than from where the entry sits in the array. The
+// array-position convention that came before this was documented and still got
+// broken twice — a document appended at the end reads as "newest last" and
+// nothing complains, because nothing was checking. Sorting here fixes the list
+// page and the 「참고 문헌」 sections on entry pages at the same time, since both
+// read this one function.
+//
+// `date` is 'YYYY', 'YYYY-MM' or 'YYYY-MM-DD'; a collection takes its earliest
+// document, and a secondary work its year of writing. An unknown month or day
+// sorts before a known one in the same year, which is what a bare year means.
+function dateKey(doc) {
+    const raw = typeof doc.date === 'string' ? doc.date.trim() : '';
+    const match = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(raw);
+    if (!match) return null;
+    return `${match[1]}-${match[2] || '00'}-${match[3] || '00'}`;
+}
+
+function sortByOriginalDate(docs) {
+    const undated = docs.filter(doc => !dateKey(doc));
+    if (undated.length) {
+        // Loud, because a dateless entry silently drifts to the end of every
+        // list it appears in — the exact failure this sort replaced.
+        console.error(
+            'commulingo docs: entries without a usable `date`, left at the end:',
+            undated.map(doc => doc.id).join(', ')
+        );
+    }
+    return [...docs].sort((a, b) => {
+        const ka = dateKey(a);
+        const kb = dateKey(b);
+        if (!ka && !kb) return 0;
+        if (!ka) return 1;
+        if (!kb) return -1;
+        return ka === kb ? a.id.localeCompare(b.id) : ka.localeCompare(kb);
+    });
+}
+
 function loadManifest() {
     // getLinkIndexes hits this several times per request; debounce the stat
     // while keeping the mtime live-reload for data/ edits.
@@ -57,7 +95,7 @@ function loadManifest() {
             // Fragment files must stay inside docs/ — reject path segments.
             return !doc.file.includes('/') && !doc.file.includes('\\') && doc.file.endsWith('.html');
         });
-        manifestCache = { mtimeMs: stat.mtimeMs, docs };
+        manifestCache = { mtimeMs: stat.mtimeMs, docs: sortByOriginalDate(docs) };
     }
     return manifestCache.docs;
 }
