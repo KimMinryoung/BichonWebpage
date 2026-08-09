@@ -1074,6 +1074,53 @@
           "Grain Procurements and the Prospects for the Development of Agriculture"
         ]
       }
+    },
+    {
+      "id": "bukharin-1928-notes-of-an-economist",
+      "file": "bukharin-1928-notes-of-an-economist.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "부하린, 「한 경제학자의 노트」 한국어 번역",
+        "en": "Bukharin, 'Notes of an Economist' in Korean"
+      },
+      "description": {
+        "ko": "1928년 9월 30일 『프라우다』에 실린 우익반대파의 정면 반론이다. 부하린은 스탈린의 이름을 한 번도 적지 않은 채, 공업의 자본 투자 증가율과 건축자재 수급 균형과 금속 배분표를 하나씩 짚으며 계획이 스스로 세운 통제숫자와 어긋나 있음을 논증한다. 원료와 자재가 따라오지 못하는 속도를 밀어붙이면 공업 자신이 멈춘다는 것, 곡물 위기의 원인도 쿨라크의 저항이 아니라 공업과 농업 사이의 균형이 깨진 데 있다는 것이 논지다. 통계표 5개를 포함한 전문.",
+        "en": "The Right Opposition's direct answer, printed in Pravda on 30 September 1928. Without once naming Stalin, Bukharin works through the growth rates of industrial capital investment, the building-materials balance and the metals allocation tables to show that the plan contradicts its own control figures, that a tempo its raw materials cannot follow will stall industry itself, and that the grain crisis came from a broken balance between industry and agriculture rather than from kulak resistance. Complete text with its five statistical tables."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Н. И. Бухарин, Заметки экономиста (К началу нового хозяйственного года), Правда, 30 сентября 1928 г., с. 2-3",
+      "people": [
+        "bukharin",
+        "stalin",
+        "trotsky",
+        "preobrazhensky",
+        "krzhizhanovsky"
+      ],
+      "terms": [
+        "right-opposition",
+        "nep",
+        "control-figures",
+        "kulak",
+        "primitive-socialist-accumulation",
+        "collectivization"
+      ],
+      "events": [
+        "five-year-plans",
+        "new-economic-policy"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「한 경제학자의 노트」",
+          "한 경제학자의 노트"
+        ],
+        "en": [
+          "Notes of an Economist"
+        ]
+      }
     }
   ]
 }
