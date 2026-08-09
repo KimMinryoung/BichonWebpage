@@ -1279,6 +1279,99 @@
           "Yezhov: A Biography"
         ]
       }
+    },
+    {
+      "id": "lenin-1922-autonomisation",
+      "file": "lenin-1922-autonomisation.html",
+      "docLang": "ko",
+      "date": "1922-12-30",
+      "title": {
+        "ko": "레닌, 「민족 문제 또는 자치화에 대하여」 한국어 번역",
+        "en": "Lenin, 'On the Question of Nationalities or Autonomisation' in Korean"
+      },
+      "description": {
+        "ko": "소련이 결성되던 주에 레닌이 병상에서 구술한 각서다. 여러 소비에트 공화국을 러시아 공화국 안의 자치 단위로 넣으려던 「자치화」 안을 「행정가적 도취와 조급함」이라 부르고, 억압 민족에 속한 사람의 국제주의는 형식적 평등에 그쳐서는 안 된다고 논한다. 그루지야에서 오르조니키제가 폭력을 쓴 사건을 두고 본보기 처벌과 제르진스키 조사의 재검토를 요구하며, 연방은 유지하되 군사와 외교만 남기고 나머지 인민위원부는 각 공화국에 돌려주자고 제안한다.",
+        "en": "The note Lenin dictated from his sickbed in the week the USSR was founded. He calls the 'autonomisation' plan, which would have folded the Soviet republics into the Russian one as autonomous units, a case of administrative haste, and argues that internationalism from a member of an oppressor nation cannot stop at formal equality. He asks for Ordzhonikidze to be punished as an example over the violence in Georgia and for Dzerzhinsky's inquiry to be reopened, and proposes keeping the union for defence and foreign affairs while returning the other commissariats to the republics."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "В. И. Ленин, К вопросу о национальностях или об «автономизации», 30–31 декабря 1922 г.",
+      "people": [
+        "lenin",
+        "stalin",
+        "dzerzhinsky",
+        "ordzhonikidze",
+        "zinoviev"
+      ],
+      "terms": [
+        "autonomization",
+        "korenizatsiya"
+      ],
+      "events": [
+        "ussr-formation",
+        "nationalities-crisis"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「민족 문제 또는 자치화에 대하여」",
+          "자치화에 대하여",
+          "자치화 각서"
+        ],
+        "en": [
+          "On the Question of Nationalities or Autonomisation"
+        ]
+      }
+    },
+    {
+      "id": "stalin-1929-great-break",
+      "file": "stalin-1929-great-break.html",
+      "docLang": "ko",
+      "date": "1929-11-07",
+      "title": {
+        "ko": "스탈린, 「대전환의 해」 한국어 번역",
+        "en": "Stalin, 'A Year of Great Change' in Korean"
+      },
+      "description": {
+        "ko": "1929년 10월 혁명 12주년에 맞춰 『프라우다』에 실린 글로, 1928년의 논쟁이 어떻게 끝났는지를 승자 자신의 말로 보여 준다. 노동생산성·공업 건설·농업 건설 세 항목으로 성과를 정리하는데, 핵심은 셋째다. 개별 빈농이 아니라 중농이 마을째 집단농장으로 들어왔다는 주장이 두 달 뒤 전면적 집단화로 이어진다. 부하린이 경고한 속도 문제는 반박이 아니라 성과로 답해지고, 「부르주아 자유주의의 낡은 쓰레기」가 무너졌다고 선언된다.",
+        "en": "Printed in Pravda for the twelfth anniversary of the October Revolution, this is how the 1928 argument ended, in the winner's own words. Stalin tallies the year under labour productivity, industrial construction and agriculture; the third is the point. His claim that the middle peasant, not just the poor one, had come into the collective farms village by village becomes wholesale collectivisation two months later. The question of tempo Bukharin had raised is answered with results rather than argument."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, Год великого перелома: К ХII годовщине Октября, Правда № 259, 7 ноября 1929 г.",
+      "people": [
+        "stalin",
+        "lenin",
+        "bukharin"
+      ],
+      "terms": [
+        "great-break",
+        "collectivization",
+        "kulak",
+        "dekulakization",
+        "smychka",
+        "control-figures",
+        "nep"
+      ],
+      "events": [
+        "five-year-plans",
+        "new-economic-policy"
+      ],
+      "addedAt": "2026-08-09",
+      "aliases": {
+        "ko": [
+          "「대전환의 해」",
+          "대전환의 해"
+        ],
+        "en": [
+          "A Year of Great Change",
+          "The Year of the Great Turn"
+        ]
+      }
     }
   ]
 }
