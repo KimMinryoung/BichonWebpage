@@ -57,6 +57,11 @@ async function seedCommuLingoPersonRoles(client) {
         ['left-opposition', 7, 'git-branch', '좌익 반대파', 'Left Opposition'],
         ['socialist-bloc-leader', 8, 'orbit', '사회주의권 지도자', 'Socialist-bloc leader'],
         ['foreign-statesman', 9, 'scroll-text', '외국 정치가', 'Foreign statesman'],
+        // Added 2026-08-09 (migration 129). 이론가 is the movement's own
+        // theorists; this is for the academics who study the movement, whom the
+        // event lane's historiography sections name and who otherwise had to be
+        // filed as revolutionaries or counter-revolutionaries.
+        ['scholar', 10, 'library', '연구자', 'Scholar'],
     ];
     let roleCategoriesInserted = 0;
     for (const category of roleCategories) {
