@@ -3438,6 +3438,45 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-pair-tab span { display: flex; flex-direction: column; align-items: center; line-height: 1.25; }
 .commu-pair-tab small { font-weight: 400; font-size: .74rem; opacity: .7; letter-spacing: .02em; }
 .commu-pair-panel[hidden] { display: none; }
+/* An event body is the longest article on the site. Its `## ` parts are the
+   page's own sections, carrying the same weight as the fixed ones around them
+   (연표, 결과), so they are not styled by the shared 1.05rem markdown-heading
+   rule, which is sized for the occasional heading inside a person section. */
+.commu-event-body .commu-person-markdown { font-size: 1rem; }
+.commu-event-body .commu-person-markdown h2 {
+    font-size: 1.22rem;
+    margin: 2em 0 .7em;
+    padding-top: .9em;
+    border-top: 1px solid var(--border, #555);
+    scroll-margin-top: 1rem;
+}
+.commu-event-body .commu-person-markdown > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+/* Contents, rendered from three body sections up — the point where a reader
+   starts wanting to skip rather than scroll. */
+.commu-event-toc {
+    background: var(--bg-surface);
+    border: 1px solid var(--border, #555);
+    border-radius: 8px;
+    padding: .9rem 1.1rem;
+    margin: 1.4rem 0 0;
+}
+.commu-event-toc-head {
+    font-size: .82rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 .5rem;
+}
+.commu-event-toc ol { margin: 0; padding-left: 1.3rem; }
+.commu-event-toc li { margin: .3rem 0; line-height: 1.5; }
+.commu-event-toc a { color: var(--link); text-decoration: none; }
+.commu-event-toc a:hover { text-decoration: underline; }
+
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
 .commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; }

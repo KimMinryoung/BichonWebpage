@@ -178,8 +178,22 @@ async function buildEventPanel(eventId, lang) {
         event.summaryHtml = link(event.summary);
         event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
         // Markdown in, linked HTML out — the glossary body path (commulingo-terms.js).
-        // Most events have none, and then the panel skips the section entirely.
+        // Events written before the curator lane have none, and then the panel
+        // skips the section entirely.
         event.bodyHtml = event.body ? linker.html(renderMarkdown(event.body)) : '';
+        // Anchor every `## ` part of the body and collect the contents list from
+        // the same pass, so the two can never disagree about what is on the page.
+        event.bodySections = [];
+        if (event.bodyHtml) {
+            event.bodyHtml = event.bodyHtml.replace(/<h2>([\s\S]*?)<\/h2>/g, (match, inner) => {
+                const id = `body-${event.bodySections.length + 1}`;
+                // The heading may already hold dictionary links from linkify;
+                // the contents entry takes the text and leaves the markup behind,
+                // because a link inside a link does not nest.
+                event.bodySections.push({ id, label: inner.replace(/<[^>]+>/g, '').trim() });
+                return `<h2 id="${id}">${inner}</h2>`;
+            });
+        }
         event.outcomeHtml = link(event.outcome);
         const neighbor = offset => {
             const item = events[index + offset];

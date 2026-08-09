@@ -9,17 +9,38 @@
             <p class="commu-event-question"><%- p.event.questionHtml %></p>
             <p><%- p.event.summaryHtml %></p>
         </header>
+<%
+/* Reading order depends on whether the event has a body yet. With one, the
+   article leads and the timeline becomes the reference table it is; without
+   one, the timeline IS the page and has to stay at the top. */
+var sections = p.event.bodySections || [];
+%>
+        <% if (sections.length >= 3) { %>
+        <nav class="commu-event-toc" aria-label="<%= en ? 'Contents' : '차례' %>">
+            <h2 class="commu-event-toc-head"><%= en ? 'Contents' : '차례' %></h2>
+            <ol>
+                <% sections.forEach(function(section) { %>
+                <li><a href="#<%= section.id %>"><%= section.label %></a></li>
+                <% }) %>
+                <li><a href="#event-outcome"><%= en ? 'Consequences' : '결과' %></a></li>
+                <li><a href="#event-timeline"><%= en ? 'Timeline' : '연표' %></a></li>
+                <li><a href="#event-people"><%= en ? 'Related people' : '관련 인물' %></a></li>
+            </ol>
+        </nav>
+        <% } %>
+        <% if (p.event.bodyHtml) { %>
+        <section class="commu-person-detail-section commu-event-body" aria-label="<%= en ? 'In depth' : '상세' %>">
+            <div class="commu-person-markdown"><%- p.event.bodyHtml %></div>
+        </section>
+        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
+        <% } %>
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
             <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
             <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
-        <% if (p.event.bodyHtml) { %>
-        <section class="commu-person-detail-section commu-event-body" aria-labelledby="event-body">
-            <h2 id="event-body"><%= en ? 'In depth' : '상세' %></h2>
-            <div class="commu-person-markdown"><%- p.event.bodyHtml %></div>
-        </section>
-        <% } %>
+        <% if (!p.event.bodyHtml) { %>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
+        <% } %>
         <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
             <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %> <span class="commu-event-people-count"><%= p.event.people.length %><%= en ? '' : '명' %></span></h2>
             <% p.event.peopleGroups.forEach(function(group) { %>
