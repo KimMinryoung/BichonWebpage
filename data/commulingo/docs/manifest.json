@@ -935,7 +935,9 @@
         "molotov-ribbentrop-pact",
         "secret-protocol-molotov-ribbentrop"
       ],
-      "events": [],
+      "events": [
+        "nazi-soviet-pact"
+      ],
       "addedAt": "2026-08-06",
       "aliases": {
         "ko": [
