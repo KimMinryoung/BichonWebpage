@@ -776,18 +776,18 @@
       "docLang": "ko",
       "date": "1937-06",
       "title": {
-        "ko": "1937년 소련 당·국가 문서 2건",
-        "en": "Two Soviet Party and State Documents of 1937"
+        "ko": "1937년 예조프 문서 3건",
+        "en": "Three Yezhov Documents of 1937"
       },
       "description": {
-        "ko": "대숙청 시기 소련 당·국가 기관의 공식 문서 두 건의 한국어 전문 번역. 1937년 2~3월 당 중앙위원회 총회에서 예조프가 한 보고 속기록과, 폴란드 작전의 근거가 된 「폴란드 군사조직」 관련 NKVD 비밀서한을 담았다. 함께 배포된 작전명령들은 별도 문서에 번호순으로 수록되어 있다.",
-        "en": "Full Korean translation of two official documents produced by Soviet party and state organs during the Great Terror: the stenographic record of Yezhov's report to the February-March 1937 Central Committee plenum, and the NKVD secret letter on the “Polish Military Organization” that underpinned the Polish operation. The operational orders circulated alongside it are collected in a separate document."
+        "ko": "대숙청 시기 예조프의 이름으로 나온 문서 세 건의 한국어 번역. 1937년 2~3월 당 중앙위원회 총회에서 예조프가 한 보고 속기록, 폴란드 작전의 근거가 된 「폴란드 군사조직」 관련 NKVD 비밀서한, 그리고 교회인과 종파주의자 검거를 집계해 스탈린에게 올린 특별보고 발췌를 담았다. 함께 배포된 작전명령들은 별도 문서에 번호순으로 수록되어 있다.",
+        "en": "Korean translation of three documents issued under Yezhov's name during the Great Terror: the stenographic record of his report to the February-March 1937 Central Committee plenum, the NKVD secret letter on the “Polish Military Organization” that underpinned the Polish operation, and an excerpt from his special report to Stalin tallying the arrests of churchmen and sectarians. The operational orders circulated alongside it are collected in a separate document."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "Архів Управління МВС України Харківської області. Колекція документів. 수록본: Полянский А. И. Ежов. История «железного» сталинского наркома. — М.: Вече, АРИА-АиФ, 2001. — (Особый архив)",
+      "source": "Архів Управління МВС України Харківської області. Колекція документів. 수록본: Полянский А. И. Ежов. История «железного» сталинского наркома. — М.: Вече, АРИА-АиФ, 2001. — (Особый архив); 특별보고: ЦА ФСБ Ф.3. Оп.4. Д.244. Л.64–78",
       "people": [
         "yezhov"
       ],
@@ -803,10 +803,12 @@
       "aliases": {
         "ko": [
           "「폴란드 군사조직(ПОВ)」에 관한 NKVD 비밀서한",
-          "「폴란드 군사조직」 비밀서한"
+          "「폴란드 군사조직」 비밀서한",
+          "「교회인과 종파주의자에 관한 특별보고」"
         ],
         "en": [
-          "NKVD secret letter on the Polish Military Organization"
+          "NKVD secret letter on the Polish Military Organization",
+          "special report on churchmen and sectarians"
         ]
       },
       "addedAt": "2026-07-31"
