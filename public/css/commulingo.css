@@ -3397,6 +3397,11 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-head > p:last-child { margin-bottom: 0; }
 .commu-event-head h1 { margin: .25rem 0; }
 .commu-event-question { font-weight: 700; font-size: 1.08rem; }
+/* The head paragraphs are the 개요, read as prose rather than card text, so
+   they take the long-form scale below instead of the 1.65 card leading. The
+   question line keeps its headline size. */
+.commu-event-head > p { font-size: .96rem; line-height: 1.85; }
+.commu-event-head > p.commu-event-question { font-size: 1.05rem; line-height: 1.6; }
 /* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
 /* '상위 항목 · 대숙청' on a nested glossary entry. A reader who lands on
    예조프시나 or 모스크바 재판 has to see which entry it sits under before the
@@ -3442,7 +3447,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    page's own sections, carrying the same weight as the fixed ones around them
    (연표, 결과), so they are not styled by the shared 1.05rem markdown-heading
    rule, which is sized for the occasional heading inside a person section. */
-.commu-event-body .commu-person-markdown { font-size: 1rem; }
+/* Long-form scale mirrors the reference reader (.book: 1.88 leading), one step
+   under the UI text around it. */
+.commu-event-body .commu-person-markdown { font-size: .96rem; line-height: 1.88; }
 .commu-event-body .commu-person-markdown h2 {
     font-size: 1.22rem;
     margin: 2em 0 .7em;
@@ -3483,13 +3490,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-timeline-list p { margin: .25rem 0 0; line-height: 1.6; }
 
 /* 결과 and the timeline entries are read as continuous prose in the same column
-   as the body, so they take the body's measure. Neither had one: the outcome
-   paragraph fell through to the page default and a timeline entry sat at 1.6,
-   both visibly tighter than the 1.78 of the body they sit next to. */
+   as the body, so they take the body's measure (.96rem/1.88 above); without it
+   the outcome fell to the page default and a timeline entry sat at 1.6. */
 .commu-event-outcome p,
 .commu-event-timeline-list p {
-    font-size: 1rem;
-    line-height: 1.78;
+    font-size: .96rem;
+    line-height: 1.88;
 }
 .commu-event-people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .8rem; }
 .commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--accent, #b84f4f); font-style: normal; font-weight: 700; font-size: .9rem; }
@@ -3504,6 +3510,15 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-event-links strong { font-size: 1.05rem; }
 .commu-person-event-links em, .commu-person-event-links small { grid-column: 2; }
 @media (max-width: 560px) { .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
+
+/* Below 768px the shared .container drops its gutters (style.css). The event,
+   term and person detail pages are continuous prose, so they keep the
+   reference reader's gutters (.book's clamp) instead of running edge to edge.
+   (.commu-term-page rides on .commu-event-page.) */
+@media (max-width: 768px) {
+    .commu-event-page,
+    .commu-person-page { padding-inline: clamp(12px, 2.5vw, 20px); }
+}
 
 .commu-event-people-grid > a.is-executor, .commu-person-event-links li.is-executor a { border-color: #8c7734; background: color-mix(in srgb, #8c7734 14%, transparent); }
 .commu-event-people-grid > a.is-executor .commu-event-person-relation, .commu-person-event-links li.is-executor span, .commu-person-event-links li.is-executor em { color: #d4bb61; }
