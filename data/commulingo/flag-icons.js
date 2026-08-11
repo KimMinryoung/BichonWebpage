@@ -90,6 +90,7 @@ const FLAG_NAMES = {
     czechoslovakia: { ko: '체코슬로바키아', en: 'Czechoslovakia' },
     korea: { ko: '조선', en: 'Korea' },
     martinique: { ko: '마르티니크', en: 'Martinique' },
+    israel: { ko: '이스라엘', en: 'Israel' },
 };
 
 function hasFlag(code) {
