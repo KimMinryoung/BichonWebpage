@@ -1377,6 +1377,64 @@
           "The Year of the Great Turn"
         ]
       }
+    },
+    {
+      "id": "dimitrov-7th-congress-1935",
+      "date": "1935-08-02",
+      "file": "dimitrov-7th-congress-1935.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "디미트로프 제7차 대회 보고 「파시즘의 공세와 공산주의 인터내셔널의 임무」",
+        "en": "Dimitrov's Report to the Seventh Comintern Congress: The Fascist Offensive and the Tasks of the Communist International"
+      },
+      "description": {
+        "ko": "1935년 8월 코민테른 제7차 세계대회의 기본 보고와 폐회사 전문. 파시즘의 「디미트로프 정의」와 통일전선·인민전선으로의 노선 전환을 담았다.",
+        "en": "Full text of the keynote report and closing speech of the Seventh Comintern Congress, August 1935: the Dimitrov definition of fascism and the turn to the united and popular fronts."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Г. Димитров, Наступление фашизма и задачи Коммунистического Интернационала в борьбе за единство рабочего класса против фашизма: доклад и заключительное слово. Партиздат ЦК ВКП(б), 1935. 러시아어 위키문헌 전사본에서 옮김",
+      "people": [
+        "dimitrov",
+        "stalin",
+        "lenin",
+        "thalmann",
+        "kuusinen",
+        "manuilsky",
+        "maurice-thorez",
+        "largo-caballero",
+        "karl-kautsky",
+        "gramsci",
+        "matyas-rakosi"
+      ],
+      "terms": [
+        "comintern",
+        "popular-front",
+        "social-fascism",
+        "second-international",
+        "dictatorship-of-the-proletariat",
+        "bolshevization"
+      ],
+      "events": [
+        "french-popular-front",
+        "spanish-civil-war"
+      ],
+      "aliases": {
+        "ko": [
+          "「파시즘의 공세와 공산주의 인터내셔널의 임무」",
+          "파시즘의 공세와 공산주의 인터내셔널의 임무",
+          "디미트로프 제7차 대회 보고",
+          "디미트로프 보고"
+        ],
+        "en": [
+          "The Fascist Offensive and the Tasks of the Communist International",
+          "Dimitrov's report to the Seventh Congress",
+          "Dimitrov report"
+        ]
+      },
+      "addedAt": "2026-08-11"
     }
   ]
 }
