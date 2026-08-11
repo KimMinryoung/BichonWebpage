@@ -128,7 +128,9 @@ function listCommuLingoDocsFor(kind, id) {
 // the split follows the TOC: a new page at every part (h1) heading, and
 // inside a part at a chapter (h2) boundary once the page passes the soft
 // target. Shorter documents keep the single-scroll reader unchanged.
-const PAGINATE_THRESHOLD_CHARS = 200000;
+// 100k still keeps every constitution and pamphlet on one scroll; what it
+// moves to pages is the book-length stenograms (디미트로프 보고, 룩셈부르크).
+const PAGINATE_THRESHOLD_CHARS = 100000;
 const PAGE_TARGET_CHARS = 120000;
 
 function headingText(headingHtml) {
@@ -176,6 +178,19 @@ function paginateBody(html) {
     });
     if (pages.length < 2) return null;
     pages[0].html = intro + pages[0].html;
+    // Point cross-page fragment links at the page holding their target: a
+    // note ref [3] on page 1 must reach the notes section on the last page,
+    // and the note's ↩ must come back. idToPage stays headings-only (it is
+    // serialized into the reader for anchor arrivals); this map covers every
+    // id, notes included.
+    const anchorPage = {};
+    pages.forEach((page, i) => {
+        for (const m of page.html.matchAll(/\bid="([^"]+)"/g)) anchorPage[m[1]] = i + 1;
+    });
+    pages.forEach((page, i) => {
+        page.html = page.html.replace(/href="#([^"]+)"/g, (full, id) =>
+            anchorPage[id] && anchorPage[id] !== i + 1 ? `href="?p=${anchorPage[id]}#${id}"` : full);
+    });
     return { titleHtml, pages, idToPage };
 }
 
