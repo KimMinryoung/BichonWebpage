@@ -11,6 +11,12 @@ const { createDictionarySnapshotStore } = require('./snapshot-store');
 // container — it was built when a cache miss paid a ~2.5s Supabase round trip.
 // Local queries cost ~1ms, but keeping the hot path DB-free is still the
 // simplest way to make person pages immune to DB restarts.)
+//
+// A row with no summary is a hand-seeded skeleton the events lane has not
+// written yet (its workflow: a human inserts id/title/period, the lane's
+// skeleton pass fills the card). It is a draft, not a page — the WHERE below
+// keeps it out of the index, the detail route and person pages until the card
+// exists.
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -23,6 +29,7 @@ async function fetchEvents() {
                     summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
                     timeline, sources
              FROM commulingo_history_events
+             WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY sort_order, id`
         ),
         db.query(
