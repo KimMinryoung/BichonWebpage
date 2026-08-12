@@ -1435,6 +1435,103 @@
         ]
       },
       "addedAt": "2026-08-11"
+    },
+    {
+      "id": "naumov-zagovor-ezhova",
+      "file": "naumov-zagovor-ezhova.html",
+      "docLang": "ko",
+      "date": "2009",
+      "title": {
+        "ko": "나우모프, 『「피의 난쟁이」 대 인민의 수령: 예조프의 음모』",
+        "en": "Naumov, The \"Bloody Dwarf\" against the Leader of the Peoples: The Yezhov Conspiracy"
+      },
+      "description": {
+        "ko": "대숙청 연구자 레오니드 나우모프의 2009년 연구서 전문 번역. 1937~1938년 대테러의 지역별 편차를 통계로 재구성하고, 예조프 시기 내무인민위원부(NKVD)에 대한 당의 통제 문제와 예브도키모프의 「북캅카스파」 체키스트 집단을 추적한다. 부록으로 예브도키모프·야고다의 서한, 숄로호프의 편지, 프리놉스키의 1939년 진술서 등 문서·회고록을 함께 싣는다.",
+        "en": "A complete Korean translation of Leonid Naumov's 2009 study. It reconstructs the regional variation of the Great Terror of 1937-1938 from the operational statistics, examines the party's control over Yezhov's NKVD, and traces Yevdokimov's \"North Caucasus\" Chekist network. Appendices include letters of Yevdokimov and Yagoda, Sholokhov's letter to Stalin, and Frinovsky's 1939 statement to Beria."
+      },
+      "kind": {
+        "ko": "연구서 번역",
+        "en": "Translated monograph"
+      },
+      "source": "Леонид Наумов, «Кровавый карлик» против Вождя народов. Заговор Ежова (М.: Эксмо, Яуза, 2009, ISBN 978-5-699-29976-8). 번역 저본: loveread.ec 전자 텍스트 (id 75177, 2026-08-12 수집), DeepSeek V4 기계 번역",
+      "people": [
+        "yezhov",
+        "evdokimov",
+        "frinovsky",
+        "stalin",
+        "yagoda",
+        "beria",
+        "lyushkov"
+      ],
+      "terms": [
+        "great-purge",
+        "chekism",
+        "nkvd-order-00447",
+        "national-operations-nkvd",
+        "dekulakization"
+      ],
+      "events": [
+        "great-terror"
+      ],
+      "addedAt": "2026-08-12",
+      "aliases": {
+        "ko": [
+          "『예조프의 음모』"
+        ],
+        "en": [
+          "The Yezhov Conspiracy"
+        ]
+      }
+    },
+    {
+      "id": "naumov-stalin-i-nkvd",
+      "file": "naumov-stalin-i-nkvd.html",
+      "docLang": "ko",
+      "date": "2013",
+      "title": {
+        "ko": "나우모프, 『스탈린과 NKVD』",
+        "en": "Naumov, Stalin and the NKVD"
+      },
+      "description": {
+        "ko": "레오니드 나우모프의 2013년 연구서 전문 번역. 「명예 체키스트」 집단의 형성부터 대테러, 1938년의 숙청 중단과 베리야의 등장, 전후 보안 기관 개편과 1953년의 결말까지 당과 국가보안기관의 관계사를 관통한다. 「예조프의 한도」와 「앨범 절차」 같은 집행 기제, 류시코프 망명, 「의사들의 음모」 사건과 베리야 숙청을 문서 기반으로 재구성한다.",
+        "en": "A complete Korean translation of Leonid Naumov's 2013 study of the relationship between the party and the security organs across the Stalin era: the formation of the \"honorary Chekist\" cohort, the Great Terror, the halt of 1938 and Beria's rise, the postwar reorganizations, and the denouement of 1953, including the Doctors' Plot and the fall of Beria."
+      },
+      "kind": {
+        "ko": "연구서 번역",
+        "en": "Translated monograph"
+      },
+      "source": "Леонид Наумов, Сталин и НКВД (М.: Алгоритм, 2013, ISBN 978-5-4438-0463-7). 번역 저본: loveread.ec 전자 텍스트 (id 68720, 2026-08-12 수집), DeepSeek V4 기계 번역",
+      "people": [
+        "stalin",
+        "yezhov",
+        "beria",
+        "yagoda",
+        "frinovsky",
+        "evdokimov",
+        "abakumov",
+        "merkulov",
+        "khrushchev",
+        "lyushkov"
+      ],
+      "terms": [
+        "chekism",
+        "great-purge",
+        "gulag"
+      ],
+      "events": [
+        "great-terror",
+        "beria-purge",
+        "doctors-plot"
+      ],
+      "addedAt": "2026-08-12",
+      "aliases": {
+        "ko": [
+          "『스탈린과 NKVD』"
+        ],
+        "en": [
+          "Stalin and the NKVD"
+        ]
+      }
     }
   ]
 }
