@@ -37,8 +37,14 @@ const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '�
 // Both languages are kept in step so a reader does not meet a link in one and
 // plain text in the other. Matching is case-sensitive, so each casing that the
 // alias table registers has to be named.
+//
+// 소개 is here for the other reason: homonymy the reader cannot disambiguate.
+// It is the 1941 industrial evacuation, but in running prose it almost always
+// means "introduction" (인물 소개, 소개하다), and NEVER_LINK_TERM_ALIAS_KO above
+// cannot catch it because 소개 is the entry's own headword. The English side
+// (Evacuation …) has no such twin and keeps its links.
 const NEVER_LINK_TERM_HEADWORD = {
-    ko: ['소비에트'],
+    ko: ['소비에트', '소개'],
     en: ['Soviet', 'soviet', 'soviets', 'Soviets'],
 };
 
