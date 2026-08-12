@@ -15,6 +15,12 @@ const errorPage = require('../utils/error-page');
 const { sanitizePost } = require('../utils/sanitize');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 const { loadRecentCommuLingoItems } = require('../services/commulingo-updates');
+const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
+const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
+const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
+const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
+const { listGenealogyCharts } = require('../data/commulingo/genealogy-store');
+const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { createEntryRoutes, localizedEntry: localizedRecord } = require('./entry-routes');
 
 const POSTS_PER_PAGE = 20;
@@ -321,18 +327,31 @@ router.get('/sitemap.xml', async (req, res) => {
 });
 
 async function buildSitemapXml() {
-        const [postsResult, diariesResult, researchResult, pagesResult, hubResult] = await Promise.allSettled([
+        const [postsResult, diariesResult, researchResult, pagesResult, hubResult,
+            peopleResult, termsResult, eventsResult] = await Promise.allSettled([
             db.query('SELECT id, created_at, updated_at FROM posts ORDER BY created_at DESC'),
             db.query('SELECT id, created_at, updated_at FROM ai_diary ORDER BY created_at DESC'),
             getResearchFiles('ko'),
             getPagesList(),
             getHubItems(200, 'ko'),
+            loadCommuLingoPeople(),
+            loadCommuLingoTerms(),
+            loadCommuLingoHistoryEvents(),
         ]);
         const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
         const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
         const researchFiles = researchResult.status === 'fulfilled' ? researchResult.value : [];
         const pagesList = pagesResult.status === 'fulfilled' ? pagesResult.value : [];
         const hubItems = hubResult.status === 'fulfilled' ? hubResult.value : [];
+        const commuPeople = peopleResult.status === 'fulfilled' ? ((peopleResult.value.data || {}).people || []) : [];
+        const commuTerms = termsResult.status === 'fulfilled' ? termsResult.value : [];
+        // The events loader already drops hand-seeded skeleton rows (no summary),
+        // so every id here is a page the public routes actually serve.
+        const commuEvents = eventsResult.status === 'fulfilled' ? eventsResult.value : [];
+        const safeList = fn => { try { return fn() || []; } catch (err) { console.warn('[sitemap]', err.message); return []; } };
+        const commuDocs = safeList(listCommuLingoDocs);
+        const commuCharts = safeList(listGenealogyCharts);
+        const commuBooks = safeList(() => (loadCommuLingoCatalog() || {}).collections);
         const dateTag = value => value ? `<lastmod>${new Date(value).toISOString().split('T')[0]}</lastmod>` : '';
         const url = (path, lastmod, priority = '0.7', changefreq = '') => {
             const freq = changefreq ? `<changefreq>${changefreq}</changefreq>` : '';
@@ -354,6 +373,18 @@ async function buildSitemapXml() {
         }
         for (const p of pagesList) xml += url(`/p/${encodeURIComponent(p.slug)}`, p.updated_at || null, '0.6');
         for (const item of hubItems) xml += url(`/hub/${encodeURIComponent(item.slug)}`, item.published_at || null, '0.6');
+        xml += url('/commulingo', null, '0.8', 'daily');
+        xml += url('/commulingo/people', null, '0.7', 'daily');
+        xml += url('/commulingo/terms', null, '0.7', 'daily');
+        xml += url('/commulingo/events', null, '0.7', 'weekly');
+        xml += url('/commulingo/docs', null, '0.7', 'weekly');
+        xml += url('/commulingo/genealogy', null, '0.6', 'monthly');
+        for (const person of commuPeople) xml += url(`/commulingo/people/${encodeURIComponent(person.id)}`, null, '0.6');
+        for (const term of commuTerms) xml += url(`/commulingo/terms/${encodeURIComponent(term.id)}`, null, '0.6');
+        for (const event of commuEvents) xml += url(`/commulingo/events/${encodeURIComponent(event.id)}`, null, '0.6');
+        for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.addedAt || null, '0.6');
+        for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, null, '0.5');
+        for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, null, '0.6');
         xml += '</urlset>';
         return xml;
 }
@@ -368,6 +399,12 @@ router.get('/llms.txt', (req, res) => {
         '- Cyber-Lenin research reports: https://cyber-lenin.com/reports.md\n' +
         '- Cyber-Lenin diaries: https://cyber-lenin.com/ai-diary.md\n' +
         '- Curations: https://cyber-lenin.com/hub.md\n\n' +
+        'CommuLingo (Korean/English dictionary of Soviet and revolutionary history):\n' +
+        '- People: https://cyber-lenin.com/commulingo/people\n' +
+        '- Glossary: https://cyber-lenin.com/commulingo/terms\n' +
+        '- Historical events: https://cyber-lenin.com/commulingo/events\n' +
+        '- Reference documents: https://cyber-lenin.com/commulingo/docs\n' +
+        '- Genealogy charts: https://cyber-lenin.com/commulingo/genealogy\n\n' +
         'Feeds:\n' +
         '- RSS: https://cyber-lenin.com/rss.xml\n' +
         '- Atom: https://cyber-lenin.com/atom.xml\n\n' +
