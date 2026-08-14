@@ -169,14 +169,19 @@ async function buildEventPanel(eventId, lang) {
         });
         const link = text => linker.plain(text);
         const event = presentEvent(events[index], lang);
-        // Reading order, so the first mention that links is the first one a reader
-        // reaches: question, summary, timeline, body, consequences.
+        // Reading order, so the first mention that links is the first one a
+        // reader reaches. The panel lays the page out two ways, and this must
+        // follow it: with a body, article then consequences then timeline;
+        // without one, the timeline leads and consequences close.
         // These carry the rendered prose the panel prints with <%- %>. The
         // panel has no escaped fallback on purpose: a caller that forgets them
         // should show 'undefined', not print the raw text unescaped.
         event.questionHtml = link(event.question);
         event.summaryHtml = link(event.summary);
-        event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
+        const linkTimeline = () => {
+            event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
+        };
+        if (!event.body) linkTimeline();
         // Markdown in, linked HTML out — the glossary body path (commulingo-terms.js).
         // Events written before the curator lane have none, and then the panel
         // skips the section entirely.
@@ -195,6 +200,7 @@ async function buildEventPanel(eventId, lang) {
             });
         }
         event.outcomeHtml = link(event.outcome);
+        if (event.body) linkTimeline();
         const neighbor = offset => {
             const item = events[index + offset];
             return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
