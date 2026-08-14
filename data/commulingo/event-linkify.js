@@ -35,7 +35,7 @@ const EXTRA_TERMS = {
     // The date is how every account names this night, in both languages; the
     // stored title ('1934년 2월 6일 위기') is almost never the form in prose.
     'february-1934-crisis': {
-        ko: ['1934년 2월 6일', '2월 6일 폭동'],
+        ko: ['1934년 2월 6일', '2월 6일 폭동', '1934년 프랑스 폭동'],
         en: ['6 February 1934', 'crisis of 6 February 1934'],
     },
     'great-patriotic-war': { ko: ['독소전쟁', '독소 전쟁'] },
