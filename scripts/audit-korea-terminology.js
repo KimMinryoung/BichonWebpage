@@ -22,9 +22,6 @@ const {
 // Each names the field and the exact phrase, so an edit to the sentence puts it
 // back in front of a human instead of staying silently exempt.
 const KNOWN_OK = [
-    // A quotation from Andrei Lankov, where 'Korean history' is the whole sweep
-    // of it, not the 1945 moment the sentence happens to date.
-    { ref: 'person:terentii-shtykov.moment', phrase: '한국 역사에 큰 영향' },
     // Modern naming practice, in a sentence that also dates Liebknecht's 1896.
     { ref: 'term:state-socialism.definition', phrase: '한국에서는 나치의' },
 ];
