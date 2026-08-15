@@ -1562,8 +1562,8 @@
         "en": "Interrogations of Nikolai Yezhov (1939-1940)"
       },
       "description": {
-        "ko": "1939년 4월부터 1940년 2월까지 이어진 예조프 수사의 신문 조서·자백서·대질신문 기록 가운데 공간된 텍스트 전부를 그로버 퍼가 모은 편집본의 한국어 번역. 러시아어 원문에서 옮겼고, 퍼의 해설과 파블류코프 전기의 요약 인용, 1998년 복권 심사 결정까지 함께 실었다. 분량이 긴 4월 26일·8월 4일 신문 조서와 재판 최후 진술은 별도 문서로 실어 제자리에서 링크했다.",
-        "en": "Korean translation of Grover Furr's compilation of every published text from the Yezhov investigation, April 1939 to February 1940: interrogation records, confessions and confrontations, with Furr's editorial notes, Pavlyukov's summaries, and the 1998 rehabilitation review. The long April 26 and August 4 protocols and the last words at trial are linked as separate documents."
+        "ko": "1939년 4월부터 1940년 2월까지 이어진 예조프 수사의 신문 조서·자백서·대질신문 기록 가운데 공간된 텍스트 전부를 그로버 퍼가 모은 편집본의 한국어 번역. 러시아어 원문에서 옮겼고, 퍼의 해설과 파블류코프 전기의 요약 인용, 4월 26일·8월 4일 신문 조서 전문, 판본 주석이 달린 재판 최후 진술, 1998년 복권 심사 결정까지 한 문서에 실었다. 프리놉스키 진술서는 별도 문서다.",
+        "en": "Korean translation of Grover Furr's compilation of every published text from the Yezhov investigation, April 1939 to February 1940: interrogation records, confessions and confrontations, with Furr's editorial notes, Pavlyukov's summaries, the full April 26 and August 4 protocols, the last words at trial with textual apparatus, and the 1998 rehabilitation review, all in one document. Frinovsky's statement is a separate document."
       },
       "kind": {
         "ko": "사료 번역",
@@ -1588,24 +1588,30 @@
         "boris-rodos",
         "mikhail-kedrov",
         "isaak-shapiro",
-        "aleksei-polyansky"
+        "aleksei-polyansky",
+        "mikhail-koltsov"
       ],
       "terms": [
         "yezhovshchina",
         "great-purge",
         "nkvd-order-00447",
         "national-operations-nkvd",
-        "gulag"
+        "gulag",
+        "nkvd-first-category"
       ],
       "events": [
         "great-terror"
       ],
       "aliases": {
         "ko": [
-          "예조프 신문 기록"
+          "예조프 신문 기록",
+          "예조프의 4월 26일 신문 조서",
+          "예조프의 8월 4일 신문 조서",
+          "예조프의 최후 진술"
         ],
         "en": [
-          "Ezhov interrogations compilation"
+          "Ezhov interrogations compilation",
+          "Yezhov's last words"
         ]
       },
       "addedAt": "2026-08-15"
@@ -1652,140 +1658,6 @@
         ],
         "en": [
           "Frinovsky statement"
-        ]
-      },
-      "addedAt": "2026-08-15"
-    },
-    {
-      "id": "ezhov-interrogation-1939-04-26",
-      "file": "ezhov-interrogation-1939-04-26.html",
-      "docLang": "ko",
-      "date": "1939-04-26",
-      "title": {
-        "ko": "예조프 신문 조서 (1939년 4월 26일)",
-        "en": "Interrogation of Yezhov, April 26, 1939"
-      },
-      "description": {
-        "ko": "체포 16일 뒤에 작성된 예조프의 첫 공간 신문 조서 전문. 베리야가 스탈린에게 보낸 전달 보고와 스탈린의 여백 메모(저본 편집자 주)를 함께 실었다. 폴란드·독일 정보기관과의 「첩보 연계」 자백이 중심이다.",
-        "en": "Full text of the first published interrogation protocol of Yezhov, written 16 days after his arrest, with Beria's covering report to Stalin and Stalin's marginal notes. Centers on the confessed \"espionage ties\" with Polish and German intelligence."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Лубянка. Сталин и НКВД – НКГБ – ГУКР «Смерш». 1939 – март 1946 (М.: Материк, 2006), № 37, сс. 52–72. 번역 저본: 그로버 퍼 게재 러시아어 전문, DeepSeek V4 기계 번역 뒤 손질",
-      "people": [
-        "yezhov",
-        "beria",
-        "stalin",
-        "zhukovsky",
-        "lyushkov",
-        "uspensky",
-        "bogdan-kobulov",
-        "mikhail-koltsov"
-      ],
-      "terms": [
-        "yezhovshchina",
-        "great-purge"
-      ],
-      "events": [
-        "great-terror"
-      ],
-      "aliases": {
-        "ko": [
-          "예조프의 4월 26일 신문 조서"
-        ],
-        "en": []
-      },
-      "addedAt": "2026-08-15"
-    },
-    {
-      "id": "ezhov-interrogation-1939-08-04",
-      "file": "ezhov-interrogation-1939-08-04.html",
-      "docLang": "ko",
-      "date": "1939-08-04",
-      "title": {
-        "ko": "예조프 신문 조서 (1939년 8월 4일)",
-        "en": "Interrogation of Yezhov, August 4, 1939"
-      },
-      "description": {
-        "ko": "1937~1938년 대규모 작전(쿨라크 작전·민족 작전)에 관한 예조프의 자백 신문 발췌. 「할당량」 연장 요청, 앨범 방식 심리의 마비와 특별 트로이카 도입, 수사 기록 위조와 구타의 만연에 관한 구체적 진술이 담겨 있어 대숙청 연구에서 널리 인용된다.",
-        "en": "Excerpt from Yezhov's confession interrogation on the mass operations of 1937-1938: extensions of the quotas, the breakdown of the album procedure and the special troikas, falsified records and routine beatings. Widely cited in Great Terror scholarship."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Петров Н., Янсен М. «Сталинский питомец» – Николай Ежов (М.: РОССПЭН, 2008), сс. 367–379. 번역 저본: istmat.org 게재 러시아어 전문, DeepSeek V4 기계 번역 뒤 손질",
-      "people": [
-        "yezhov",
-        "frinovsky",
-        "stalin",
-        "uspensky",
-        "anatoly-esaulov"
-      ],
-      "terms": [
-        "yezhovshchina",
-        "great-purge",
-        "nkvd-order-00447",
-        "national-operations-nkvd",
-        "nkvd-first-category",
-        "gulag"
-      ],
-      "events": [
-        "great-terror"
-      ],
-      "aliases": {
-        "ko": [
-          "예조프의 8월 4일 신문 조서"
-        ],
-        "en": []
-      },
-      "addedAt": "2026-08-15"
-    },
-    {
-      "id": "ezhov-last-words-1940",
-      "file": "ezhov-last-words-1940.html",
-      "docLang": "ko",
-      "date": "1940-02-03",
-      "title": {
-        "ko": "예조프 최후 진술 (1940년 2월 3일)",
-        "en": "Yezhov's Last Words at Trial (February 3, 1940)"
-      },
-      "description": {
-        "ko": "최고재판소 군사법정 비공개 재판에서 예조프가 판결 선고 전에 한 최후 진술. 예비 수사 자백 전부를 번복하고 자백이 구타로 얻어졌다고 진술한다. 공간된 세 판본을 대조한 그로버 퍼의 판본 주석을 본문 사이에 함께 실었다.",
-        "en": "Yezhov's final statement to the Military Collegium before sentencing, retracting all his pre-trial confessions as beaten out of him. Includes Grover Furr's textual notes collating the three published versions."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Московские новости 1994.1.30~2.6; Полянский А. Ежов (М.: Вече, 2001), сс. 298–305; Брюханов·Шошков (СПб., 1998), сс. 146–152. 번역 저본: 폴랸스키 수록본, 판본 주석은 Grover Furr 교정본(2010). DeepSeek V4 기계 번역 뒤 손질",
-      "people": [
-        "yezhov",
-        "beria",
-        "stalin",
-        "frinovsky",
-        "evdokimov",
-        "yagoda",
-        "kosior",
-        "isaak-shapiro",
-        "boris-rodos",
-        "aleksei-polyansky"
-      ],
-      "terms": [
-        "yezhovshchina",
-        "great-purge"
-      ],
-      "events": [
-        "great-terror"
-      ],
-      "aliases": {
-        "ko": [
-          "예조프의 최후 진술"
-        ],
-        "en": [
-          "Yezhov's last words"
         ]
       },
       "addedAt": "2026-08-15"
