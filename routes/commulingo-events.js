@@ -1,5 +1,6 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
+const seo = require('../utils/seo');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { relatedDocsFor } = require('../data/commulingo/docs-refs');
@@ -266,6 +267,12 @@ router.get('/:eventId', async (req, res) => {
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,
+            jsonLd: seo.breadcrumbJsonLd([
+                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
+                { name: 'CommuLingo', href: '/commulingo' },
+                { name: lang === 'en' ? 'Historical Events' : '역사 사건', href: '/commulingo/events' },
+                { name: event.title, href: `/commulingo/events/${event.id}` },
+            ], res.locals.urlLanguage),
         });
     } catch (err) {
         console.error('commulingo event detail:', err);

@@ -189,17 +189,24 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
         hasEnglishVersion,
         robotsMeta: data.private ? 'noindex, nofollow' : undefined,
         ogType: 'article',
-        jsonLd: seo.pageJsonLd({
-            type: 'Article',
-            title,
-            description: pageDescription,
-            path: pagePath,
-            datePublished: data.published_at || null,
-            dateModified: data.updated_at || data.published_at || null,
-            authorName: 'Cyber-Lenin',
-            authorUrl: seo.absoluteUrl('/'),
-            lang: contentUrlLanguage,
-        }),
+        jsonLd: seo.graphJsonLd(
+            seo.pageJsonLd({
+                type: 'Article',
+                title,
+                description: pageDescription,
+                path: pagePath,
+                datePublished: data.published_at || null,
+                dateModified: data.updated_at || data.published_at || null,
+                authorName: 'Cyber-Lenin',
+                authorUrl: seo.absoluteUrl('/'),
+                lang: contentUrlLanguage,
+            }),
+            seo.breadcrumbJsonLd([
+                { name: contentUrlLanguage === 'en' ? 'Home' : '홈', href: '/' },
+                { name: contentUrlLanguage === 'en' ? 'Reports' : '보고서', href: '/reports' },
+                { name: title, href: pagePath },
+            ], contentUrlLanguage),
+        ),
     });
 }
 

@@ -49,6 +49,59 @@ function jsonLdScript(data) {
     return JSON.stringify(data).replace(/</g, '\\u003c');
 }
 
+function graphJsonLd(...nodes) {
+    const graph = nodes.flat().filter(Boolean).map((node) => {
+        const { '@context': _context, ...data } = node;
+        return data;
+    });
+    return {
+        '@context': 'https://schema.org',
+        '@graph': graph,
+    };
+}
+
+function organizationJsonLd() {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': `${SITE_ORIGIN}/#organization`,
+        name: 'Cyber-Lenin',
+        url: SITE_ORIGIN,
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://assets.cyber-lenin.com/apple-touch-icon.png',
+        },
+    };
+}
+
+function websiteJsonLd({ description, lang = 'ko' } = {}) {
+    const url = absoluteUrl(languagePath('/', lang));
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': `${url}#website`,
+        url,
+        name: 'Cyber-Lenin',
+        ...(description ? { description } : {}),
+        inLanguage: lang,
+        publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+    };
+}
+
+function breadcrumbJsonLd(items = [], lang = 'ko') {
+    const crumbs = items.filter(item => item && (item.name || item.title) && (item.href || item.url));
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: crumbs.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name || item.title,
+            item: absoluteUrl(languagePath(item.href || item.url, lang)),
+        })),
+    };
+}
+
 function pageJsonLd({
     type = 'WebPage',
     title,
@@ -70,6 +123,7 @@ function pageJsonLd({
         description,
         url,
         mainEntityOfPage: url,
+        inLanguage: lang,
         author: {
             '@type': 'Person',
             name: authorName,
@@ -77,6 +131,7 @@ function pageJsonLd({
         },
         publisher: {
             '@type': 'Organization',
+            '@id': `${SITE_ORIGIN}/#organization`,
             name: 'Cyber-Lenin',
             url: SITE_ORIGIN,
             logo: {
@@ -157,6 +212,10 @@ module.exports = {
     plainText,
     excerpt,
     jsonLdScript,
+    graphJsonLd,
+    organizationJsonLd,
+    websiteJsonLd,
+    breadcrumbJsonLd,
     pageJsonLd,
     setMarkdownSeoHeaders,
     itemListJsonLd,

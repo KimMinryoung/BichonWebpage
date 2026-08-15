@@ -37,8 +37,9 @@
 - [x] JSON-LD publisher에 로고를 넣고 선택적으로 저자 URL과 대표 이미지를 받을 수 있게 한다.
 - [x] research 영구 캐시 키를 `v4`로 올려 발행일·수정일 필드가 없는 기존 캐시를 자동 폐기한다.
 - [ ] 글마다 실제 내용을 대표하는 1:1, 4:3, 16:9 이미지를 제공하고 Article JSON-LD 및 OG에 연결한다.
-- [ ] 홈 JSON-LD를 `WebSite` + `Organization` + 현재 `ItemList`의 `@graph`로 구성한다.
-- [ ] 상세 문서에 `BreadcrumbList`를 추가한다.
+- [x] 홈 JSON-LD를 `WebSite` + `Organization` + 현재 `ItemList`의 `@graph`로 구성한다.
+- [x] 글·보고서·큐레이션·정적 페이지와 CommuLingo 상세 문서에 `BreadcrumbList`를 추가한다.
+- [x] 전용 head를 쓰는 CommuLingo 참고 문헌 리더에도 canonical, hreflang, robots, Open Graph, JSON-LD를 적용한다.
 
 ## P1 — 고정 다국어 URL 전환
 
@@ -80,6 +81,11 @@
 - [x] 기존 무접두 URL이 쿠키 없는 요청에서 계속 한국어 200을 제공하는지 확인
 - [x] sitemap URL 6,626개가 모두 고유하며 번역 없는 영어 URL을 제외하는지 확인
 - [x] `/en/rss.xml`, `/en/atom.xml`, `/en/*.md`가 영어 self/canonical URL을 제공하는지 확인
+- [x] dev preview 홈 JSON-LD가 `Organization` + `WebSite` + `ItemList` graph를 출력하는지 확인
+- [x] 한국어·영어 보고서와 각 CommuLingo 상세 유형이 자기 언어 URL의 `BreadcrumbList`를 출력하는지 확인
+- [x] CommuLingo 참고 문헌 상세 canonical이 목록이 아닌 자기 상세 URL을 가리키는지 확인
+- [x] 구조화 데이터 변경 전후 sitemap XML이 byte-identical인지 확인
+- [x] Search Console에서 동일한 `sitemap.xml`을 다시 제출함 (2026-08-15, 처리 결과 대기)
 - [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, `5b49469`; 2026-08-15)
 - [x] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
 - [ ] 배포 후 Search Console에서 sitemap 읽기 및 대표 URL 검사를 실행

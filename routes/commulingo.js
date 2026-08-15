@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('../config/database');
 const errorPage = require('../utils/error-page');
+const seo = require('../utils/seo');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson, currentVersion } = require('../data/commulingo/shards');
 const { localize: localizeCommuLingoValue } = require('../data/commulingo/people-standard');
@@ -203,6 +204,14 @@ function localize(value, lang) {
     return localizeCommuLingoValue(value, lang);
 }
 
+function commuLingoBreadcrumb(lang, items) {
+    return seo.breadcrumbJsonLd([
+        { name: lang === 'en' ? 'Home' : '홈', href: '/' },
+        { name: 'CommuLingo', href: '/commulingo' },
+        ...items,
+    ], lang);
+}
+
 // Chronological order for a person list: by birth year, then death year, then
 // name. People without a parsed birth year sort to the end. Returns a new array.
 function sortPeopleChronologically(people) {
@@ -341,6 +350,10 @@ router.get('/offices/:officeId', async (req, res) => {
             pageTitle: lang === 'en' ? `${office.title} — People` : `${office.title} — 인물 사전`,
             pageDescription: office.blurb,
             pagePath: `/commulingo/offices/${office.id}`,
+            jsonLd: commuLingoBreadcrumb(lang, [
+                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { name: office.title, href: `/commulingo/offices/${office.id}` },
+            ]),
         });
     } catch (err) {
         console.error('commulingo office page:', err);
@@ -381,6 +394,10 @@ router.get('/roles/:categoryId', async (req, res) => {
                 ? `People in the ${category.label} role category.`
                 : `${category.label} 역할 범주의 인물들.`,
             pagePath: `/commulingo/roles/${category.id}`,
+            jsonLd: commuLingoBreadcrumb(lang, [
+                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { name: category.label, href: `/commulingo/roles/${category.id}` },
+            ]),
         });
     } catch (err) {
         console.error('commulingo role page:', err);
@@ -417,6 +434,10 @@ async function renderNationalityPeople(req, res, kind) {
                 ? `People whose ${filter.kindLabel.toLowerCase()} is ${filter.label}.`
                 : `${filter.kindLabel}이(가) ${filter.label}인 인물들.`,
             pagePath: filter.href,
+            jsonLd: commuLingoBreadcrumb(lang, [
+                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { name: filter.label, href: filter.href },
+            ]),
         });
     } catch (err) {
         console.error(`commulingo ${kind} page:`, err);
@@ -512,6 +533,10 @@ router.get('/people/:personId', async (req, res) => {
             pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,
             pageDescription: person.bio || person.epithet,
             pagePath: `/commulingo/people/${person.id}`,
+            jsonLd: commuLingoBreadcrumb(lang, [
+                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { name: person.displayName, href: `/commulingo/people/${person.id}` },
+            ]),
         });
     } catch (err) {
         console.error('commulingo person detail:', err);
@@ -636,6 +661,9 @@ router.get('/book/:collectionId', async (req, res) => {
             pageTitle: bookTitle,
             pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
             pagePath: `/commulingo/book/${collection.id}`,
+            jsonLd: commuLingoBreadcrumb(res.locals.lang, [
+                { name: bookTitle, href: `/commulingo/book/${collection.id}` },
+            ]),
         });
     } catch (err) {
         console.error('commulingo book:', err);

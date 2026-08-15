@@ -30,15 +30,22 @@ router.get('/:slug', async (req, res) => {
             pagePath,
             hasEnglishVersion: data.has_translation,
             ogType: 'article',
-            jsonLd: seo.pageJsonLd({
-                type: 'Article',
-                title: data.title,
-                description: data.summary || seo.excerpt(data.html_body || '', 160),
-                path: pagePath,
-                dateModified: data.updated_at || null,
-                authorName: 'Cyber-Lenin',
-                lang: res.locals.urlLanguage === 'en' && data.has_translation ? 'en' : 'ko',
-            }),
+            jsonLd: seo.graphJsonLd(
+                seo.pageJsonLd({
+                    type: 'Article',
+                    title: data.title,
+                    description: data.summary || seo.excerpt(data.html_body || '', 160),
+                    path: pagePath,
+                    dateModified: data.updated_at || null,
+                    authorName: 'Cyber-Lenin',
+                    lang: res.locals.urlLanguage === 'en' && data.has_translation ? 'en' : 'ko',
+                }),
+                seo.breadcrumbJsonLd([
+                    { name: lang === 'en' ? 'Home' : '홈', href: '/' },
+                    { name: lang === 'en' ? 'Reports' : '보고서', href: '/reports' },
+                    { name: data.title, href: pagePath },
+                ], res.locals.urlLanguage === 'en' && data.has_translation ? 'en' : 'ko'),
+            ),
         });
     } catch (error) {
         console.error('Error fetching static page:', error);

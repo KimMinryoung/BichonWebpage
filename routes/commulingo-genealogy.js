@@ -1,5 +1,6 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
+const seo = require('../utils/seo');
 const { listGenealogyCharts, getGenealogyChart } = require('../data/commulingo/genealogy-store');
 const { renderGenealogySvg } = require('../data/commulingo/genealogy-svg');
 const { localize } = require('../data/commulingo/localize');
@@ -53,6 +54,12 @@ router.get('/:chartId', (req, res) => {
             pageTitle: `${localize(chart.title, lang)} — CommuLingo`,
             pageDescription: localize(chart.description, lang),
             pagePath: `/commulingo/genealogy/${chart.id}`,
+            jsonLd: seo.breadcrumbJsonLd([
+                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
+                { name: 'CommuLingo', href: '/commulingo' },
+                { name: lang === 'en' ? 'Genealogy Charts' : '계보도', href: '/commulingo/genealogy' },
+                { name: localize(chart.title, lang), href: `/commulingo/genealogy/${chart.id}` },
+            ], res.locals.urlLanguage),
         });
     } catch (err) {
         console.error('commulingo genealogy detail:', err);

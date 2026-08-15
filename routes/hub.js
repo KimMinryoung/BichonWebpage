@@ -68,15 +68,22 @@ router.get('/:slug', async (req, res) => {
             pagePath,
             hasEnglishVersion: item.has_translation,
             ogType: 'article',
-            jsonLd: seo.pageJsonLd({
-                type: 'Article',
-                title: item.title,
-                description: pageDescription,
-                path: pagePath,
-                datePublished: item.published_at,
-                authorName: 'Cyber-Lenin',
-                lang: res.locals.urlLanguage === 'en' && item.has_translation ? 'en' : 'ko',
-            }),
+            jsonLd: seo.graphJsonLd(
+                seo.pageJsonLd({
+                    type: 'Article',
+                    title: item.title,
+                    description: pageDescription,
+                    path: pagePath,
+                    datePublished: item.published_at,
+                    authorName: 'Cyber-Lenin',
+                    lang: res.locals.urlLanguage === 'en' && item.has_translation ? 'en' : 'ko',
+                }),
+                seo.breadcrumbJsonLd([
+                    { name: lang === 'en' ? 'Home' : '홈', href: '/' },
+                    { name: lang === 'en' ? 'Curations' : '큐레이션', href: '/hub' },
+                    { name: item.title, href: pagePath },
+                ], res.locals.urlLanguage === 'en' && item.has_translation ? 'en' : 'ko'),
+            ),
         });
     } catch (error) {
         console.error('Error fetching hub entry:', error);

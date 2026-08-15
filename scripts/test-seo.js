@@ -74,7 +74,26 @@ async function main() {
     assert.strictEqual(article.dateModified, '2026-08-15T04:05:06.000Z');
     assert.strictEqual(article.author.url, 'https://cyber-lenin.com/');
     assert.ok(article.publisher.logo.url.endsWith('/apple-touch-icon.png'));
+    assert.strictEqual(article.publisher['@id'], 'https://cyber-lenin.com/#organization');
+    assert.strictEqual(article.inLanguage, 'en');
     assert.strictEqual(article.url, 'https://cyber-lenin.com/en/reports/research/test');
+
+    const organization = seo.organizationJsonLd();
+    const website = seo.websiteJsonLd({ description: '설명', lang: 'en' });
+    const breadcrumb = seo.breadcrumbJsonLd([
+        { name: 'Home', href: '/' },
+        { name: 'Reports', href: '/reports' },
+        { name: 'Test', href: '/reports/research/test' },
+    ], 'en');
+    const graph = seo.graphJsonLd(organization, website, article, breadcrumb);
+    assert.strictEqual(organization['@id'], 'https://cyber-lenin.com/#organization');
+    assert.strictEqual(website.url, 'https://cyber-lenin.com/en/');
+    assert.strictEqual(website.publisher['@id'], organization['@id']);
+    assert.strictEqual(breadcrumb.itemListElement[2].item, 'https://cyber-lenin.com/en/reports/research/test');
+    assert.deepStrictEqual(graph['@graph'].map(node => node['@type']), [
+        'Organization', 'WebSite', 'Article', 'BreadcrumbList',
+    ]);
+    assert.ok(graph['@graph'].every(node => !node['@context']));
 
     console.log('seo smoke ok');
 }

@@ -97,7 +97,14 @@ router.get('/', async (req, res) => {
             pageTitle: '사이버-레닌과 비숑의 블로그',
             pageDescription: res.locals.strings.siteDescription,
             pagePath: '/',
-            jsonLd: seo.itemListJsonLd(indexItems, res.locals.urlLanguage),
+            jsonLd: seo.graphJsonLd(
+                seo.organizationJsonLd(),
+                seo.websiteJsonLd({
+                    description: res.locals.strings.siteDescription,
+                    lang: res.locals.urlLanguage,
+                }),
+                seo.itemListJsonLd(indexItems, res.locals.urlLanguage),
+            ),
         });
     } catch (error) {
         console.error('Error fetching homepage data:', error);

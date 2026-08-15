@@ -1,5 +1,6 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
+const seo = require('../utils/seo');
 const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
@@ -159,6 +160,13 @@ router.get('/:docId', async (req, res) => {
             backHref: '/commulingo/docs', backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
         });
         const doc = presentDoc(raw, lang, await createDocRefResolver(lang));
+        const pagePath = `/commulingo/docs/${docId}`;
+        const jsonLd = seo.breadcrumbJsonLd([
+            { name: lang === 'en' ? 'Home' : '홈', href: '/' },
+            { name: 'CommuLingo', href: '/commulingo' },
+            { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
+            { name: doc.title, href: pagePath },
+        ], res.locals.urlLanguage);
         // The charts that carry this document as a node, so the reader can walk
         // back out to where the text sits in the story. The forward direction
         // (a chart node pointing at a document) is a `doc` ref in the chart JSON.
@@ -190,10 +198,11 @@ router.get('/:docId', async (req, res) => {
                     nextHeading: current < total ? paged.pages[current].heading : '',
                 },
                 idToPage: paged.idToPage,
-                pagePath: '/commulingo/docs',
+                pagePath,
                 docLang: raw.docLang || 'ko',
                 pageTitle: current > 1 ? `${doc.title} (${current}/${total})` : doc.title,
                 pageDescription: doc.description,
+                jsonLd,
             });
         }
 
@@ -210,10 +219,11 @@ router.get('/:docId', async (req, res) => {
             toc: nestToc(toc),
             pagination: null,
             idToPage: null,
-            pagePath: '/commulingo/docs',
+            pagePath,
             docLang: raw.docLang || 'ko',
             pageTitle: doc.title,
             pageDescription: doc.description,
+            jsonLd,
         });
     } catch (err) {
         console.error('commulingo doc detail:', err);

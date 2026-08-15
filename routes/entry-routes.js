@@ -122,16 +122,23 @@ function createEntryRoutes({
                 pagePath: path,
                 hasEnglishVersion,
                 ogType: 'article',
-                jsonLd: seo.pageJsonLd({
-                    type: 'BlogPosting',
-                    title: entry.title,
-                    description: plainText,
-                    path,
-                    datePublished: entry.created_at,
-                    dateModified: entry.updated_at || entry.created_at,
-                    authorName,
-                    lang: contentUrlLanguage,
-                }),
+                jsonLd: seo.graphJsonLd(
+                    seo.pageJsonLd({
+                        type: 'BlogPosting',
+                        title: entry.title,
+                        description: plainText,
+                        path,
+                        datePublished: entry.created_at,
+                        dateModified: entry.updated_at || entry.created_at,
+                        authorName,
+                        lang: contentUrlLanguage,
+                    }),
+                    seo.breadcrumbJsonLd([
+                        { name: contentUrlLanguage === 'en' ? 'Home' : '홈', href: '/' },
+                        { name: listTitle(res), href: listBasePath },
+                        { name: entry.title, href: path },
+                    ], contentUrlLanguage),
+                ),
             });
         } catch (error) {
             console.error(`Error fetching ${logLabel}:`, error);

@@ -1,5 +1,6 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
+const seo = require('../utils/seo');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { relatedDocsFor } = require('../data/commulingo/docs-refs');
@@ -395,6 +396,12 @@ router.get('/:termId', async (req, res) => {
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,
             pagePath: `/commulingo/terms/${term.id}`,
+            jsonLd: seo.breadcrumbJsonLd([
+                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
+                { name: 'CommuLingo', href: '/commulingo' },
+                { name: lang === 'en' ? 'Glossary' : '용어 사전', href: '/commulingo/terms' },
+                { name: term.term, href: `/commulingo/terms/${term.id}` },
+            ], res.locals.urlLanguage),
         });
     } catch (err) {
         console.error('commulingo term detail:', err);
