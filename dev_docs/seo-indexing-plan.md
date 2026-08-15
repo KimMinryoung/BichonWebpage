@@ -93,9 +93,10 @@
 - [x] dev preview sitemap이 URL 증감 없이 6,626개를 유지하고 6,622개에 유효한 `<lastmod>`를 제공하는지 확인
 - [x] `<lastmod>` 미래 날짜·형식 오류·한국어/영어 쌍 불일치가 모두 0건인지 확인
 - [x] sitemap 콜드 생성 약 0.77초, Redis 캐시 응답 약 0.03초 및 캐시 전후 byte-identical 확인
-- [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, `5b49469`, `56c1f83`; 2026-08-15)
+- [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, `5b49469`, `56c1f83`, `e835e4d`; 2026-08-15)
 - [x] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
 - [x] 구조화 데이터 배포 후 운영 한국어·영어 보고서/참고 문헌 canonical·hreflang·breadcrumb와 영어 내부 링크를 재검증 (`56c1f83`; 2026-08-15)
+- [x] 운영 sitemap이 6,626개 URL을 유지하면서 6,622개에 `<lastmod>`를 제공하고 dev preview 검증본과 SHA-256이 일치하는지 확인 (`e835e4d`; 2026-08-15)
 - [ ] Search Console URL 검사에서 대표 한국어·영어 문서의 Google 선택 canonical을 확인
 
 ## 참고
