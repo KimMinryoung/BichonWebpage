@@ -24,7 +24,7 @@ async function fetchTerms() {
             `SELECT id, term_ko, term_en, original, period_label,
                     period_ko, period_en, start_year, end_year, category,
                     definition_ko, definition_en, body_ko, body_en, sources,
-                    parent_id
+                    parent_id, updated_at
              FROM commulingo_terms
              ORDER BY sort_order, id`
         ),
@@ -147,6 +147,7 @@ async function fetchTerms() {
         events: eventsByTerm[row.id] || [],
         sameSubjectEvent: sameSubjectByTerm[row.id] || null,
         related: relatedByTerm[row.id] || [],
+        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null,
         parent: (row.parent_id && termLabels[row.parent_id] && row.parent_id !== row.id)
             ? termLabels[row.parent_id]
             : null,

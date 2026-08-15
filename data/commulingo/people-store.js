@@ -25,6 +25,15 @@ function addListItem(map, personId, value) {
     map[personId].push(value);
 }
 
+function latestTimestamp(...values) {
+    let latest = 0;
+    values.flat().forEach(value => {
+        const time = value ? new Date(value).getTime() : NaN;
+        if (Number.isFinite(time) && time > latest) latest = time;
+    });
+    return latest ? new Date(latest).toISOString() : null;
+}
+
 async function fetchRows() {
     const [
         groups,
@@ -41,7 +50,7 @@ async function fetchRows() {
         redirects,
     ] = await Promise.all([
         db.query(
-            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en
+            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, updated_at
              FROM commulingo_people_groups
              ORDER BY sort_order, id`
         ),
@@ -51,12 +60,12 @@ async function fetchRows() {
                     epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                     fate_kind, fate_label_ko, fate_label_en,
                     citizenship_code, citizenship_label_ko, citizenship_label_en,
-                    origin_code, origin_label_ko, origin_label_en
+                    origin_code, origin_label_ko, origin_label_en, updated_at
              FROM commulingo_people
              ORDER BY sort_order, id`
         ),
         db.query(
-            `SELECT person_id, patronymic_ko, patronymic_en, cyrillic_patronymic
+            `SELECT person_id, patronymic_ko, patronymic_en, cyrillic_patronymic, updated_at
              FROM commulingo_person_patronymics`
         ),
         db.query(
@@ -70,33 +79,33 @@ async function fetchRows() {
              ORDER BY person_id, sort_order, collection_id, episode_id`
         ),
         db.query(
-            `SELECT person_id, period_label, role_ko, role_en
+            `SELECT person_id, period_label, role_ko, role_en, updated_at
              FROM commulingo_person_career_entries
              ORDER BY person_id, sort_order, id`
         ),
         db.query(
-            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage
+            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, updated_at
              FROM commulingo_offices
              ORDER BY sort_order, id`
         ),
         db.query(
             `SELECT office_id, period_label, body_ko, body_en, person_id,
-                    name_ko, name_en, note_ko, note_en
+                    name_ko, name_en, note_ko, note_en, updated_at
              FROM commulingo_office_rows
              ORDER BY office_id, sort_order, id`
         ),
         db.query(
-            `SELECT person_id, icon, office_id, category_id, label_ko, label_en
+            `SELECT person_id, icon, office_id, category_id, label_ko, label_en, updated_at
              FROM commulingo_person_roles
              ORDER BY person_id`
         ),
         db.query(
-            `SELECT id, icon, label_ko, label_en
+            `SELECT id, icon, label_ko, label_en, updated_at
              FROM commulingo_role_categories
              ORDER BY sort_order, id`
         ),
         db.query(
-            `SELECT person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources
+            `SELECT person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at
              FROM commulingo_person_sections
              ORDER BY person_id, sort_order, id`
         ),
@@ -156,6 +165,13 @@ function rowsToRedirects(rows) {
 }
 
 function rowsToPeopleData(rows) {
+    const personUpdatedAt = {};
+    const markPersonUpdated = (personId, value) => {
+        if (!personId || !value) return;
+        personUpdatedAt[personId] = latestTimestamp(personUpdatedAt[personId], value);
+    };
+    rows.people.forEach(row => markPersonUpdated(row.id, row.updated_at));
+
     const aliasesByPerson = {};
     rows.aliases.forEach(row => addLocalizedList(aliasesByPerson, row.person_id, row.lang, row.alias));
 
@@ -166,6 +182,7 @@ function rowsToPeopleData(rows) {
 
     const careers = {};
     rows.careers.forEach(row => {
+        markPersonUpdated(row.person_id, row.updated_at);
         addListItem(careers, row.person_id, {
             y: row.period_label || '',
             r: t(row.role_ko, row.role_en),
@@ -175,6 +192,7 @@ function rowsToPeopleData(rows) {
     const patronymics = {};
     const cyrillicPatronymics = {};
     rows.patronymics.forEach(row => {
+        markPersonUpdated(row.person_id, row.updated_at);
         if (row.patronymic_ko || row.patronymic_en) {
             patronymics[row.person_id] = t(row.patronymic_ko, row.patronymic_en);
         }
@@ -191,11 +209,19 @@ function rowsToPeopleData(rows) {
             personId: row.person_id || '',
             name: t(row.name_ko, row.name_en),
             note: t(row.note_ko, row.note_en),
+            updatedAt: latestTimestamp(row.updated_at),
         });
     });
 
     const personRoles = {};
+    const officeUpdatedAt = Object.fromEntries(rows.offices.map(row => [row.id, row.updated_at]));
+    const roleCategoryUpdatedAt = Object.fromEntries(rows.roleCategories.map(row => [row.id, row.updated_at]));
     rows.personRoles.forEach(row => {
+        markPersonUpdated(row.person_id, latestTimestamp(
+            row.updated_at,
+            officeUpdatedAt[row.office_id],
+            roleCategoryUpdatedAt[row.category_id],
+        ));
         const label = t(row.label_ko, row.label_en);
         personRoles[row.person_id] = {
             icon: row.icon || '',
@@ -219,6 +245,7 @@ function rowsToPeopleData(rows) {
     const sectionsByPerson = {};
     const sectionCounts = {};
     rows.sections.forEach(row => {
+        markPersonUpdated(row.person_id, row.updated_at);
         addListItem(sectionsByPerson, row.person_id, {
             slug: row.slug || '',
             sortOrder: row.sort_order || 0,
@@ -235,6 +262,7 @@ function rowsToPeopleData(rows) {
             range: row.range_label || '',
             title: t(row.title_ko, row.title_en),
             blurb: t(row.blurb_ko, row.blurb_en),
+            updatedAt: latestTimestamp(row.updated_at),
         })),
         offices: rows.offices.map(row => ({
             id: row.id,
@@ -244,6 +272,10 @@ function rowsToPeopleData(rows) {
             icon: row.icon || '',
             lineage: Array.isArray(row.lineage) ? row.lineage : [],
             rows: officeRowsByOffice[row.id] || [],
+            updatedAt: latestTimestamp(
+                row.updated_at,
+                ...(officeRowsByOffice[row.id] || []).map(item => item.updatedAt),
+            ),
         })),
         people: rows.people.map(row => ({
             id: row.id,
@@ -271,6 +303,7 @@ function rowsToPeopleData(rows) {
             },
             aliases: aliasesByPerson[row.id] || { ko: [], en: [] },
             scenes: scenesByPerson[row.id] || [],
+            updatedAt: personUpdatedAt[row.id] || latestTimestamp(row.updated_at),
         })),
         careers,
         patronymics,

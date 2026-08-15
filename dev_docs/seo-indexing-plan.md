@@ -9,11 +9,11 @@
 ## 운영 기준선
 
 - `robots.txt`, `sitemap.xml`: HTTP 200
-- sitemap: 고유 URL 3,319개, 약 368 KB
-  - CommuLingo 2,678
-  - AI diary 429
-  - research/reports 174
-  - 기타 38
+- sitemap: 고유 URL 6,626개, 약 2.9 MB
+  - CommuLingo 5,356
+  - AI diary 855
+  - research/reports 346
+  - static pages 17, hub 40, core 12
 - Google Search Console 도메인 인증 TXT 존재
 - Bing `BingSiteAuth.xml` 존재
 - canonical, description, robots, Open Graph, RSS/Atom discovery link 적용됨
@@ -64,7 +64,10 @@
 - [ ] `sitemap.xml`을 sitemap index로 바꾸고 `core`, `reports`, `commulingo`, `diary`, `hub/pages`로 분리한다.
 - [ ] 각 sitemap에는 canonical이면서 200이고 `index,follow`인 URL만 포함한다.
 - [ ] CommuLingo 2,678개 URL에서 본문이 짧거나 관계 정보만 있는 thin page를 별도 표본 검사한다.
-- [ ] 실제 수정 시각을 알 수 있는 CommuLingo 문서에 정확한 `<lastmod>`를 추가한다.
+- [x] 실제 수정 시각을 알 수 있는 CommuLingo 문서에 정확한 `<lastmod>`를 추가한다.
+  - 인물은 본문·경력·부칭·직책·소속 기관·역할 범주·상세 섹션의 `updated_at` 중 최신값을 사용한다.
+  - 용어·사건은 DB `updated_at`, 참고 문헌·계보도·책은 각 원본 파일 mtime을 사용한다.
+  - 목록과 홈은 하위 공개 콘텐츠의 최신 수정 시각을 사용한다.
 - [ ] `priority`와 `changefreq`에 의존하지 않고 내부 링크와 정확한 `lastmod`를 관리한다.
 - [ ] 저자 소개, 편집 원칙, 출처 사용법, 수정 이력 페이지를 공개하고 콘텐츠에서 연결한다.
 
@@ -85,11 +88,15 @@
 - [x] 한국어·영어 보고서와 각 CommuLingo 상세 유형이 자기 언어 URL의 `BreadcrumbList`를 출력하는지 확인
 - [x] CommuLingo 참고 문헌 상세 canonical이 목록이 아닌 자기 상세 URL을 가리키는지 확인
 - [x] 구조화 데이터 변경 전후 sitemap XML이 byte-identical인지 확인
-- [x] Search Console에서 동일한 `sitemap.xml`을 다시 제출함 (2026-08-15, 처리 결과 대기)
+- [x] Search Console에서 동일한 `sitemap.xml`을 다시 제출함 (2026-08-15)
+- [x] Search Console이 sitemap을 `Success`, 발견 URL 6,626개로 다시 읽음 (2026-08-15)
+- [x] dev preview sitemap이 URL 증감 없이 6,626개를 유지하고 6,622개에 유효한 `<lastmod>`를 제공하는지 확인
+- [x] `<lastmod>` 미래 날짜·형식 오류·한국어/영어 쌍 불일치가 모두 0건인지 확인
+- [x] sitemap 콜드 생성 약 0.77초, Redis 캐시 응답 약 0.03초 및 캐시 전후 byte-identical 확인
 - [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, `5b49469`, `56c1f83`; 2026-08-15)
 - [x] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
 - [x] 구조화 데이터 배포 후 운영 한국어·영어 보고서/참고 문헌 canonical·hreflang·breadcrumb와 영어 내부 링크를 재검증 (`56c1f83`; 2026-08-15)
-- [ ] 배포 후 Search Console에서 sitemap 읽기 및 대표 URL 검사를 실행
+- [ ] Search Console URL 검사에서 대표 한국어·영어 문서의 Google 선택 canonical을 확인
 
 ## 참고
 

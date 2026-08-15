@@ -20,7 +20,7 @@ const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { listGenealogyCharts } = require('../data/commulingo/genealogy-store');
-const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
+const { loadCommuLingoCatalog, commuLingoBookModifiedTimes } = require('../data/commulingo/shards');
 const { createEntryRoutes, localizedEntry: localizedRecord } = require('./entry-routes');
 
 const POSTS_PER_PAGE = 20;
@@ -335,7 +335,7 @@ async function cachedXml(key, build) {
 // sitemap.xml
 router.get('/sitemap.xml', async (req, res) => {
     try {
-        const xml = await cachedXml('xmlcache:sitemap:v2', () => buildSitemapXml());
+        const xml = await cachedXml('xmlcache:sitemap:v3', () => buildSitemapXml());
         res.type('application/xml').send(xml);
     } catch (error) {
         console.error('Sitemap error:', error);
@@ -355,9 +355,9 @@ async function buildSitemapXml() {
             getResearchFiles('ko'),
             getPagesList(),
             getHubItems(200, 'ko'),
-            loadCommuLingoPeople(),
-            loadCommuLingoTerms(),
-            loadCommuLingoHistoryEvents(),
+            loadCommuLingoPeople({ fresh: true }),
+            loadCommuLingoTerms({ fresh: true }),
+            loadCommuLingoHistoryEvents({ fresh: true }),
         ]);
         const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
         const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
@@ -372,8 +372,24 @@ async function buildSitemapXml() {
         const safeList = fn => { try { return fn() || []; } catch (err) { console.warn('[sitemap]', err.message); return []; } };
         const commuDocs = safeList(listCommuLingoDocs);
         const commuCharts = safeList(listGenealogyCharts);
-        const commuBooks = safeList(() => (loadCommuLingoCatalog() || {}).collections);
-        const dateTag = value => value ? `<lastmod>${new Date(value).toISOString().split('T')[0]}</lastmod>` : '';
+        const bookModifiedTimes = (() => {
+            try { return commuLingoBookModifiedTimes(); } catch (err) { console.warn('[sitemap]', err.message); return {}; }
+        })();
+        const commuBooks = safeList(() => (loadCommuLingoCatalog() || {}).collections)
+            .map(book => ({ ...book, modifiedAt: bookModifiedTimes[book.id] || null }));
+        const latestDate = (...values) => {
+            let latest = 0;
+            values.flat(Infinity).forEach(value => {
+                const time = value ? new Date(value).getTime() : NaN;
+                if (Number.isFinite(time) && time > latest) latest = time;
+            });
+            return latest ? new Date(latest).toISOString() : null;
+        };
+        const latestFrom = (items, select) => latestDate((items || []).map(select));
+        const dateTag = value => {
+            const date = latestDate(value);
+            return date ? `<lastmod>${date.split('T')[0]}</lastmod>` : '';
+        };
         const url = (path, lastmod, priority = '0.7', changefreq = '', hasEnglish = true) => {
             const freq = changefreq ? `<changefreq>${changefreq}</changefreq>` : '';
             const koUrl = seo.escapeXml(seo.absoluteUrl(seo.languagePath(path, 'ko')));
@@ -388,11 +404,29 @@ async function buildSitemapXml() {
         };
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
         xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
-        xml += url('/', null, '1.0', 'daily');
-        xml += url('/posts', null, '0.8', 'daily');
-        xml += url('/reports', null, '0.8', 'daily');
-        xml += url('/ai-diary', null, '0.7', 'daily');
-        xml += url('/hub', null, '0.7', 'daily');
+        const postsLastmod = latestFrom(posts, item => item.updated_at || item.created_at);
+        const diariesLastmod = latestFrom(diaries, item => item.updated_at || item.created_at);
+        const researchLastmod = latestFrom(researchFiles, item => item.modified_at ? item.modified_at * 1000 : null);
+        const pagesLastmod = latestFrom(pagesList, item => item.updated_at);
+        const hubLastmod = latestFrom(hubItems, item => item.published_at);
+        const peopleLastmod = latestFrom(commuPeople, item => item.updatedAt);
+        const termsLastmod = latestFrom(commuTerms, item => item.updatedAt);
+        const eventsLastmod = latestFrom(commuEvents, item => item.updatedAt);
+        const docsLastmod = latestFrom(commuDocs, item => item.modifiedAt || item.addedAt);
+        const chartsLastmod = latestFrom(commuCharts, item => item.modifiedAt);
+        const booksLastmod = latestFrom(commuBooks, item => item.modifiedAt);
+        const commuLingoLastmod = latestDate(
+            peopleLastmod, termsLastmod, eventsLastmod,
+            docsLastmod, chartsLastmod, booksLastmod,
+        );
+        xml += url('/', latestDate(
+            postsLastmod, diariesLastmod, researchLastmod,
+            pagesLastmod, hubLastmod, commuLingoLastmod,
+        ), '1.0', 'daily');
+        xml += url('/posts', postsLastmod, '0.8', 'daily');
+        xml += url('/reports', latestDate(researchLastmod, pagesLastmod), '0.8', 'daily');
+        xml += url('/ai-diary', diariesLastmod, '0.7', 'daily');
+        xml += url('/hub', hubLastmod, '0.7', 'daily');
         xml += url('/chat', null, '0.5', 'monthly');
         for (const post of posts) xml += url(`/post/${post.id}`, post.updated_at || post.created_at, '0.8', '', post.has_translation);
         for (const diary of diaries) xml += url(`/ai-diary/${diary.id}`, diary.updated_at || diary.created_at, '0.6', '', diary.has_translation);
@@ -402,18 +436,18 @@ async function buildSitemapXml() {
         }
         for (const p of pagesList) xml += url(`/p/${encodeURIComponent(p.slug)}`, p.updated_at || null, '0.6', '', p.has_translation);
         for (const item of hubItems) xml += url(`/hub/${encodeURIComponent(item.slug)}`, item.published_at || null, '0.6', '', item.has_translation);
-        xml += url('/commulingo', null, '0.8', 'daily');
-        xml += url('/commulingo/people', null, '0.7', 'daily');
-        xml += url('/commulingo/terms', null, '0.7', 'daily');
-        xml += url('/commulingo/events', null, '0.7', 'weekly');
-        xml += url('/commulingo/docs', null, '0.7', 'weekly');
-        xml += url('/commulingo/genealogy', null, '0.6', 'monthly');
-        for (const person of commuPeople) xml += url(`/commulingo/people/${encodeURIComponent(person.id)}`, null, '0.6');
-        for (const term of commuTerms) xml += url(`/commulingo/terms/${encodeURIComponent(term.id)}`, null, '0.6');
-        for (const event of commuEvents) xml += url(`/commulingo/events/${encodeURIComponent(event.id)}`, null, '0.6');
-        for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.addedAt || null, '0.6');
-        for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, null, '0.5');
-        for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, null, '0.6');
+        xml += url('/commulingo', commuLingoLastmod, '0.8', 'daily');
+        xml += url('/commulingo/people', peopleLastmod, '0.7', 'daily');
+        xml += url('/commulingo/terms', termsLastmod, '0.7', 'daily');
+        xml += url('/commulingo/events', eventsLastmod, '0.7', 'weekly');
+        xml += url('/commulingo/docs', docsLastmod, '0.7', 'weekly');
+        xml += url('/commulingo/genealogy', chartsLastmod, '0.6', 'monthly');
+        for (const person of commuPeople) xml += url(`/commulingo/people/${encodeURIComponent(person.id)}`, person.updatedAt, '0.6');
+        for (const term of commuTerms) xml += url(`/commulingo/terms/${encodeURIComponent(term.id)}`, term.updatedAt, '0.6');
+        for (const event of commuEvents) xml += url(`/commulingo/events/${encodeURIComponent(event.id)}`, event.updatedAt, '0.6');
+        for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.modifiedAt || doc.addedAt, '0.6');
+        for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, chart.modifiedAt, '0.5');
+        for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, book.modifiedAt, '0.6');
         xml += '</urlset>';
         return xml;
 }

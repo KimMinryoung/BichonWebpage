@@ -27,7 +27,7 @@ async function fetchEvents() {
         db.query(
             `SELECT id, period_label, title_ko, title_en, question_ko, question_en,
                     summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
-                    timeline, sources
+                    timeline, sources, updated_at
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY sort_order, id`
@@ -65,6 +65,7 @@ async function fetchEvents() {
         timeline: Array.isArray(row.timeline) ? row.timeline : [],
         sources: Array.isArray(row.sources) ? row.sources : [],
         people: peopleByEvent[row.id] || [],
+        updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null,
     }));
 }
 

@@ -47,7 +47,10 @@ function loadCharts() {
                 continue;
             }
             const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-            const chart = validChart(parsed) ? parsed : null;
+            const chart = validChart(parsed) ? {
+                ...parsed,
+                modifiedAt: new Date(stat.mtimeMs).toISOString(),
+            } : null;
             if (!chart) console.error(`[commulingo genealogy] ${file}: missing required fields, skipped`);
             chartCache.set(file, { mtimeMs: stat.mtimeMs, chart });
             if (chart) charts.push(chart);

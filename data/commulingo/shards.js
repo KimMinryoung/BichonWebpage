@@ -53,6 +53,25 @@ function sourceDigest(files = sourceFiles()) {
     return hash.digest('hex').slice(0, 16);
 }
 
+function collectionModifiedAtMap() {
+    const modifiedAt = {};
+    const baseMtime = new Date(statMtimeMs(LESSONS_PATH)).toISOString();
+    const base = readJson(LESSONS_PATH);
+    (base.collections || []).forEach(collection => {
+        if (collection && collection.id) modifiedAt[collection.id] = baseMtime;
+    });
+    if (fs.existsSync(COURSES_DIR)) {
+        for (const name of fs.readdirSync(COURSES_DIR).filter(item => item.endsWith('.js')).sort()) {
+            const filePath = path.join(COURSES_DIR, name);
+            const collection = require(filePath);
+            if (collection && collection.id) {
+                modifiedAt[collection.id] = new Date(statMtimeMs(filePath)).toISOString();
+            }
+        }
+    }
+    return modifiedAt;
+}
+
 function currentVersion() {
     return ensureCommuLingoShards().version;
 }
@@ -272,4 +291,5 @@ module.exports = {
     ensureCommuLingoShards,
     loadCommuLingoCatalog,
     loadCommuLingoLesson,
+    commuLingoBookModifiedTimes: collectionModifiedAtMap,
 };

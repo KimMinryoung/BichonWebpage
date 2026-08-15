@@ -82,6 +82,20 @@ function sortByOriginalDate(docs) {
     });
 }
 
+function documentModifiedAt(doc) {
+    const values = [doc.updatedAt, doc.addedAt];
+    try {
+        values.push(fs.statSync(path.join(DOCS_DIR, doc.file)).mtimeMs);
+    } catch (err) {
+        if (err.code !== 'ENOENT') console.error(`[commulingo docs] stat ${doc.file}:`, err.message);
+    }
+    const latest = values.reduce((max, value) => {
+        const time = value ? new Date(value).getTime() : NaN;
+        return Number.isFinite(time) && time > max ? time : max;
+    }, 0);
+    return latest ? new Date(latest).toISOString() : null;
+}
+
 function loadManifest() {
     // getLinkIndexes hits this several times per request; debounce the stat
     // while keeping the mtime live-reload for data/ edits.
@@ -95,7 +109,13 @@ function loadManifest() {
             // Fragment files must stay inside docs/ — reject path segments.
             return !doc.file.includes('/') && !doc.file.includes('\\') && doc.file.endsWith('.html');
         });
-        manifestCache = { mtimeMs: stat.mtimeMs, docs: sortByOriginalDate(docs) };
+        manifestCache = {
+            mtimeMs: stat.mtimeMs,
+            docs: sortByOriginalDate(docs.map(doc => ({
+                ...doc,
+                modifiedAt: documentModifiedAt(doc),
+            }))),
+        };
     }
     return manifestCache.docs;
 }
