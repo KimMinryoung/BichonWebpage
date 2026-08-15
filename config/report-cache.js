@@ -28,9 +28,9 @@ module.exports = {
     setReport: report => setJson(`report:${report.id}`, report, null, 'report-cache'),
 
     // ── Research cache (permanent) ──
-    getResearch: (filename, lang = 'ko') => getJson(`research:v3:${safeName(filename)}:${safeLang(lang)}`),
+    getResearch: (filename, lang = 'ko') => getJson(`research:v4:${safeName(filename)}:${safeLang(lang)}`),
     setResearch: (filename, data, lang = 'ko') =>
-        setJson(`research:v3:${safeName(filename)}:${safeLang(lang)}`, data, null, 'report-cache research'),
+        setJson(`research:v4:${safeName(filename)}:${safeLang(lang)}`, data, null, 'report-cache research'),
 
     // ── List caches (TTL-based) ──
     getList: page => getJson(`report:list:${page}`),

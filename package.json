@@ -7,6 +7,7 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "dev:preview": "scripts/dev-preview",
+    "test:seo": "node scripts/test-seo.js",
     "ui:audit": "node scripts/audit-overflow.js",
     "ui:check": "node scripts/check-ui.js",
     "cf:purge": "node scripts/cloudflare-purge.js",

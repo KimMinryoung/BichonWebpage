@@ -15,7 +15,7 @@ const { iconPaths } = require('./data/icons');
 const crypto = require('crypto');
 const { chatProxyLimiter, webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
 const { sanitizeBasic, sanitizePost } = require('./utils/sanitize');
-const { normalizeLanguage, resolveLanguage, languageCookieOptions } = require('./utils/language');
+const { normalizeLanguage, resolveLanguage, resolvePublicLanguage, languageCookieOptions } = require('./utils/language');
 const { truncateHtml } = require('./utils/truncate-html');
 const errorPage = require('./utils/error-page');
 const { requireAdminIp } = require('./middleware/auth');
@@ -58,7 +58,9 @@ function isPublicHtmlPath(reqPath) {
         || /^\/hub\/[^/]+$/.test(reqPath)
         || reqPath === '/ai-diary'
         || /^\/ai-diary\/\d+$/.test(reqPath)
+        || reqPath === '/chat'
         || reqPath === '/commulingo'
+        || (reqPath.startsWith('/commulingo/') && !reqPath.startsWith('/commulingo/admin'))
         || /^\/p\/[^/]+$/.test(reqPath);
 }
 
@@ -487,7 +489,7 @@ app.use((req, res, next) => {
         res.locals.currentUser = null;
         res.locals.lang = (isCacheablePublicTextPath(req.path) || isPublicCommuLingoDataPath(req.path))
             ? (normalizeLanguage(req.cookies.lang) || 'ko')
-            : (normalizeLanguage(req.cookies.lang) || resolveLanguage(req, res));
+            : resolvePublicLanguage(req);
     } else {
         res.locals.isAuthenticated = req.session.isAuthenticated || false;
         res.locals.adminUser = req.session.adminUser || null;

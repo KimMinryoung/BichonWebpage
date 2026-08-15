@@ -421,6 +421,7 @@ router.get('/index.md', async (req, res) => {
         { title: '큐레이션', href: '/hub' },
         { title: '비숑글', href: '/posts' },
     ];
+    seo.setMarkdownSeoHeaders(res, '/');
     res.type('text/markdown; charset=utf-8').send(markdownIndex('Cyber-Lenin', res.locals.strings.siteDescription, items));
 });
 
@@ -431,6 +432,7 @@ router.get('/posts.md', async (req, res) => {
         href: `/post/${post.id}`,
         date: post.created_at ? new Date(post.created_at).toISOString().split('T')[0] : '',
     }));
+    seo.setMarkdownSeoHeaders(res, '/posts');
     res.type('text/markdown; charset=utf-8').send(markdownIndex('비숑글', '비숑이 작성한 블로그 글 목록입니다.', items));
 });
 
@@ -442,6 +444,7 @@ router.get('/reports.md', async (req, res) => {
         href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
         date: file.modified_at ? new Date(file.modified_at * 1000).toISOString().split('T')[0] : '',
     }));
+    seo.setMarkdownSeoHeaders(res, '/reports');
     res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 보고서', '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.', items));
 });
 
@@ -452,6 +455,7 @@ router.get('/ai-diary.md', async (req, res) => {
         href: `/ai-diary/${diary.id}`,
         date: diary.created_at ? new Date(diary.created_at).toISOString().split('T')[0] : '',
     }));
+    seo.setMarkdownSeoHeaders(res, '/ai-diary');
     res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 일기장', '사이버-레닌이 스스로 작성한 일기 목록입니다.', items));
 });
 
@@ -462,6 +466,7 @@ router.get('/hub.md', async (req, res) => {
         href: `/hub/${item.slug}`,
         date: item.published_at ? new Date(item.published_at).toISOString().split('T')[0] : '',
     }));
+    seo.setMarkdownSeoHeaders(res, '/hub');
     res.type('text/markdown; charset=utf-8').send(markdownIndex('큐레이션', '사이버-레닌이 선별한 진보적인 글 목록입니다.', items));
 });
 

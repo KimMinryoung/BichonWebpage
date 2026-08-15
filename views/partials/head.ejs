@@ -2,7 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <% const _path = (typeof pagePath !== 'undefined' && pagePath) ? pagePath : '/'; %>
 <% const _isHome = _path === '/'; %>
-<% const _title = (!_isHome && typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' | ' + strings.siteName : strings.siteName; %>
+<% const _title = _isHome
+    ? (strings.siteSeoTitle || strings.siteName)
+    : ((typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' | ' + strings.siteName : strings.siteName); %>
 <% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
 <% const _url = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : siteOrigin + _path; %>
 <% const _robots = (typeof robotsMeta !== 'undefined' && robotsMeta) ? robotsMeta : 'index, follow'; %>

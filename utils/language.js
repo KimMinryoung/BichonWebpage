@@ -62,9 +62,19 @@ function resolveLanguage(req, res) {
     return inferredLang;
 }
 
+// Public, indexable HTML has one stable default representation. Varying the
+// body by crawler geography or Accept-Language makes the same canonical URL
+// alternate between Korean and English, so a fresh request defaults to the
+// site's primary language. People who explicitly choose a language keep using
+// the existing cookie-based preference.
+function resolvePublicLanguage(req) {
+    return normalizeLanguage(req.cookies && req.cookies.lang) || 'ko';
+}
+
 module.exports = {
     normalizeLanguage,
     inferLanguage,
     resolveLanguage,
+    resolvePublicLanguage,
     languageCookieOptions,
 };

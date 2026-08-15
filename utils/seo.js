@@ -34,7 +34,17 @@ function jsonLdScript(data) {
     return JSON.stringify(data).replace(/</g, '\\u003c');
 }
 
-function pageJsonLd({ type = 'WebPage', title, description, path = '/', datePublished, dateModified, authorName = 'Cyber-Lenin' }) {
+function pageJsonLd({
+    type = 'WebPage',
+    title,
+    description,
+    path = '/',
+    datePublished,
+    dateModified,
+    authorName = 'Cyber-Lenin',
+    authorUrl,
+    image,
+}) {
     const url = absoluteUrl(path);
     const data = {
         '@context': 'https://schema.org',
@@ -44,16 +54,30 @@ function pageJsonLd({ type = 'WebPage', title, description, path = '/', datePubl
         description,
         url,
         mainEntityOfPage: url,
-        author: { '@type': 'Person', name: authorName },
+        author: {
+            '@type': 'Person',
+            name: authorName,
+            ...(authorUrl ? { url: authorUrl } : {}),
+        },
         publisher: {
             '@type': 'Organization',
             name: 'Cyber-Lenin',
             url: SITE_ORIGIN,
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://assets.cyber-lenin.com/apple-touch-icon.png',
+            },
         },
     };
     if (datePublished) data.datePublished = new Date(datePublished).toISOString();
     if (dateModified) data.dateModified = new Date(dateModified).toISOString();
+    if (image) data.image = Array.isArray(image) ? image : [image];
     return data;
+}
+
+function setMarkdownSeoHeaders(res, canonicalPath, { follow = true } = {}) {
+    res.setHeader('X-Robots-Tag', `noindex, ${follow ? 'follow' : 'nofollow'}`);
+    res.setHeader('Link', `<${absoluteUrl(canonicalPath)}>; rel="canonical"`);
 }
 
 function itemListJsonLd(items = []) {
@@ -97,6 +121,7 @@ module.exports = {
     excerpt,
     jsonLdScript,
     pageJsonLd,
+    setMarkdownSeoHeaders,
     itemListJsonLd,
     escapeXml,
     canonicalHostRedirect,

@@ -191,7 +191,10 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
             title,
             description: pageDescription,
             path: pagePath,
+            datePublished: data.published_at || null,
+            dateModified: data.updated_at || data.published_at || null,
             authorName: 'Cyber-Lenin',
+            authorUrl: seo.absoluteUrl('/'),
         }),
     });
 }
@@ -448,6 +451,7 @@ router.get('/private/:slug', async (req, res) => {
 
         const markdown = researchMarkdown(data);
         if (wantsMarkdown) {
+            seo.setMarkdownSeoHeaders(res, pagePath, { follow: false });
             res.setHeader('Content-Disposition', `inline; filename="${slug}.md"`);
             return res.type('text/markdown; charset=utf-8').send(markdown);
         }
@@ -482,6 +486,7 @@ router.get('/research/:filename', async (req, res) => {
                 if (!cachedMarkdown) {
                     return errorPage.notFound(res, { message: '마크다운 원문을 찾을 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
                 }
+                seo.setMarkdownSeoHeaders(res, pagePath);
                 res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
                 return res.type('text/markdown; charset=utf-8').send(cachedMarkdown);
             }
@@ -504,6 +509,7 @@ router.get('/research/:filename', async (req, res) => {
 
         const markdown = researchMarkdown(data);
         if (wantsMarkdown) {
+            seo.setMarkdownSeoHeaders(res, pagePath);
             res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
             return res.type('text/markdown; charset=utf-8').send(markdown);
         }
@@ -516,6 +522,10 @@ router.get('/research/:filename', async (req, res) => {
             series_slug: data.series_slug || '',
             series_title: data.series_title || '',
             series_order: data.series_order || null,
+            published_at: data.published_at || null,
+            updated_at: data.updated_at || null,
+            language: data.language || lang,
+            has_translation: Boolean(data.has_translation),
         }, lang);
         seriesNav = await researchSeriesNavFor({ filename, slug, title, ...data }, lang);
 

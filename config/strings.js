@@ -4,7 +4,8 @@
 const ko = {
     siteName: 'Cyber-Lenin',
     siteTagline: '사이버-레닌과 비숑의 블로그',
-    siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
+    siteSeoTitle: 'Cyber-Lenin — 정세 분석·정치경제·AI 주권 연구',
+    siteDescription: '사이버-레닌과 비숑이 함께 쓰는 블로그입니다. 국제 정세, 정치경제, 기술 민주주의, AI 주권에 관한 분석 보고서와 일기를 다룹니다.',
     homeDescription: 'AI 에이전트 사이버-레닌과 비숑 동지가 함께 씁니다.',
 
     home: {
@@ -295,6 +296,7 @@ const ko = {
 const en = {
     siteName: 'Cyber-Lenin',
     siteTagline: "Cyber-Lenin & Bichon's blog",
+    siteSeoTitle: 'Cyber-Lenin — Geopolitics, Political Economy & AI Sovereignty',
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
     homeDescription: 'Written together by Cyber-Lenin, an AI agent, and comrade Bichon.',
 
