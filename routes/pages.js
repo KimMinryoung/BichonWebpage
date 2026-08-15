@@ -28,6 +28,7 @@ router.get('/:slug', async (req, res) => {
             htmlBody: data.html_body || '',
             updatedAt: data.updated_at || null,
             pagePath,
+            hasEnglishVersion: data.has_translation,
             ogType: 'article',
             jsonLd: seo.pageJsonLd({
                 type: 'Article',
@@ -36,6 +37,7 @@ router.get('/:slug', async (req, res) => {
                 path: pagePath,
                 dateModified: data.updated_at || null,
                 authorName: 'Cyber-Lenin',
+                lang: res.locals.urlLanguage === 'en' && data.has_translation ? 'en' : 'ko',
             }),
         });
     } catch (error) {

@@ -168,6 +168,8 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
         researchRenderMemo.set(memoKey, rendered);
     }
     const { htmlBody, pageDescription, relatedPeople, relatedEvents, relatedTopics, relatedTerms, relatedDocs } = rendered.body;
+    const hasEnglishVersion = Boolean(data.has_translation || (data.available_languages || []).includes('en'));
+    const contentUrlLanguage = res.locals.urlLanguage === 'en' && hasEnglishVersion ? 'en' : 'ko';
 
     return res.render('public/research-view', {
         filename,
@@ -184,6 +186,7 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
         pageTitle: title,
         pageDescription,
         pagePath,
+        hasEnglishVersion,
         robotsMeta: data.private ? 'noindex, nofollow' : undefined,
         ogType: 'article',
         jsonLd: seo.pageJsonLd({
@@ -195,6 +198,7 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
             dateModified: data.updated_at || data.published_at || null,
             authorName: 'Cyber-Lenin',
             authorUrl: seo.absoluteUrl('/'),
+            lang: contentUrlLanguage,
         }),
     });
 }
@@ -422,7 +426,9 @@ router.get('/', async (req, res) => {
             researchCurrentPage: currentPage,
             researchTotalPages,
             robotsMeta: isAdmin ? 'noindex, nofollow' : undefined,
-            jsonLd: seo.itemListJsonLd(pagedResearchItems.map(item => ({ title: item.title, href: item.href }))),
+            jsonLd: seo.itemListJsonLd(
+                pagedResearchItems.map(item => ({ title: item.title, href: item.href })),
+                res.locals.urlLanguage),
         });
     } catch (error) {
         console.error('Error fetching reports:', error);
@@ -486,7 +492,9 @@ router.get('/research/:filename', async (req, res) => {
                 if (!cachedMarkdown) {
                     return errorPage.notFound(res, { message: '마크다운 원문을 찾을 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
                 }
-                seo.setMarkdownSeoHeaders(res, pagePath);
+                seo.setMarkdownSeoHeaders(res, pagePath, {
+                    lang: cached.has_translation && res.locals.urlLanguage === 'en' ? 'en' : 'ko',
+                });
                 res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
                 return res.type('text/markdown; charset=utf-8').send(cachedMarkdown);
             }
@@ -509,7 +517,9 @@ router.get('/research/:filename', async (req, res) => {
 
         const markdown = researchMarkdown(data);
         if (wantsMarkdown) {
-            seo.setMarkdownSeoHeaders(res, pagePath);
+            seo.setMarkdownSeoHeaders(res, pagePath, {
+                lang: data.has_translation && res.locals.urlLanguage === 'en' ? 'en' : 'ko',
+            });
             res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
             return res.type('text/markdown; charset=utf-8').send(markdown);
         }

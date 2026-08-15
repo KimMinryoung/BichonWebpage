@@ -39,8 +39,8 @@
                 <%= lang === 'en' ? 'English' : 'Korean' %>
             </button>
             <div class="lang-menu" id="langMenu" aria-label="<%= lang === 'en' ? 'Language' : '언어' %>">
-                <a href="#" data-lang="ko" class="<%= lang === 'ko' ? 'active' : '' %>">Korean</a>
-                <a href="#" data-lang="en" class="<%= lang === 'en' ? 'active' : '' %>">English</a>
+                <a href="<%= siteOrigin + languageSwitchUrl((typeof pagePath !== 'undefined' && pagePath) ? pagePath : '/', 'ko') %>" data-lang="ko" class="<%= lang === 'ko' ? 'active' : '' %>">Korean</a>
+                <a href="<%= siteOrigin + languageSwitchUrl((typeof pagePath !== 'undefined' && pagePath) ? pagePath : '/', 'en') %>" data-lang="en" class="<%= lang === 'en' ? 'active' : '' %>">English</a>
             </div>
         </div>
     </div>

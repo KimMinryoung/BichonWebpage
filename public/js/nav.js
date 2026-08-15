@@ -21,15 +21,6 @@
             btn.focus();
         }
     });
-    menu.addEventListener('click', function(e) {
-        if (e.target.dataset.lang) {
-            e.preventDefault();
-            var url = new URL(location.href);
-            url.searchParams.set('lang', e.target.dataset.lang);
-            location.assign(url.toString());
-        }
-    });
-
     // When the nav overflows (narrow screens), keep the current page's link in view
     var links = document.querySelector('nav .nav-links');
     var current = links && links.querySelector('a[aria-current="page"]');

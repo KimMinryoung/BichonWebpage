@@ -71,6 +71,14 @@ function isPublicCommuLingoDataPath(reqPath) {
         || (reqPath.startsWith(lessonPrefix) && !reqPath.slice(lessonPrefix.length).includes('/'));
 }
 
+function isLanguageSpecificPublicPath(reqPath) {
+    return isPublicHtmlPath(reqPath)
+        || reqPath === '/rss.xml'
+        || reqPath === '/atom.xml'
+        || /^\/(?:index|posts|reports|ai-diary|hub)\.md$/.test(reqPath)
+        || /^\/reports\/research\/[^/]+\.md$/.test(reqPath);
+}
+
 function hasSessionCookie(req) {
     return Boolean(req.cookies && req.cookies['connect.sid']);
 }
@@ -123,6 +131,24 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(seo.canonicalHostRedirect);
 
+// English public pages have stable /en/... URLs while the existing unprefixed
+// URLs remain the Korean canonicals. Strip the prefix only for public,
+// language-specific content so admin/auth/API routes can never be aliased.
+app.use((req, res, next) => {
+    if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+    const url = new URL(req.url, 'http://localhost');
+    if (url.pathname === '/en') {
+        return res.redirect(301, `/en/${url.search}`);
+    }
+    if (!url.pathname.startsWith('/en/')) return next();
+
+    const strippedPath = url.pathname.slice(3) || '/';
+    if (!isLanguageSpecificPublicPath(strippedPath)) return next();
+    req.urlLanguage = 'en';
+    req.url = strippedPath + url.search;
+    next();
+});
+
 // View engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -142,7 +168,21 @@ app.use((req, res, next) => {
     const query = url.searchParams.toString();
     res.cookie('lang', requestedLang, languageCookieOptions(req));
     setNoStore(res);
-    res.redirect(303, req.path + (query ? `?${query}` : ''));
+    res.redirect(303, seo.languagePath(req.path, requestedLang) + (query ? `?${query}` : ''));
+});
+app.use((req, res, next) => {
+    if (req.urlLanguage === 'en') {
+        req.cookies.lang = 'en';
+        res.cookie('lang', 'en', languageCookieOptions(req));
+        return next();
+    }
+    if ((req.method !== 'GET' && req.method !== 'HEAD')
+        || normalizeLanguage(req.cookies.lang) !== 'en'
+        || !isLanguageSpecificPublicPath(req.path)) return next();
+
+    const url = new URL(req.originalUrl, 'http://localhost');
+    setNoStore(res);
+    return res.redirect(302, seo.languagePath(req.path + url.search, 'en'));
 });
 const sessionMiddleware = session({
     store: new RedisStore({ client: redisClient, prefix: 'sess:' }),
@@ -471,6 +511,8 @@ app.use((req, res, next) => {
 
     res.locals.siteOrigin = seo.SITE_ORIGIN;
     res.locals.absoluteUrl = seo.absoluteUrl;
+    res.locals.languageUrl = (pathname, lang) => seo.languagePath(pathname, lang);
+    res.locals.languageSwitchUrl = (pathname, lang) => seo.languageSwitchPath(pathname, lang);
     res.locals.jsonLdScript = seo.jsonLdScript;
     res.locals.assetVersion = ASSET_VERSION;
     // The one glyph table (data/icons.js). Views cannot require, so the lookup
@@ -482,8 +524,14 @@ app.use((req, res, next) => {
     res.locals.sanitize = sanitizeBasic;
     res.locals.sanitizePost = sanitizePost;
     res.locals.truncateHtml = truncateHtml;
+    res.locals.urlLanguage = req.urlLanguage === 'en' ? 'en' : 'ko';
 
-    if (isSessionFreeRequest(req)) {
+    if (req.urlLanguage === 'en') {
+        res.locals.isAuthenticated = req.session.isAuthenticated || false;
+        res.locals.adminUser = req.session.adminUser || null;
+        res.locals.currentUser = req.session.user || null;
+        res.locals.lang = 'en';
+    } else if (isSessionFreeRequest(req)) {
         res.locals.isAuthenticated = false;
         res.locals.adminUser = null;
         res.locals.currentUser = null;
@@ -498,6 +546,15 @@ app.use((req, res, next) => {
     }
     res.locals.strings = allStrings[res.locals.lang];
     res.locals.withPersona = allStrings.withPersona;
+
+    if (req.urlLanguage === 'en') {
+        const send = res.send.bind(res);
+        res.send = body => {
+            const looksLikeHtml = typeof body === 'string'
+                && /^(?:\s*<!doctype html>|\s*<html\b)/i.test(body);
+            return send(looksLikeHtml ? seo.localizeHtmlLinks(body, 'en') : body);
+        };
+    }
     next();
 });
 

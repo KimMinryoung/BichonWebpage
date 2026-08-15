@@ -6,6 +6,21 @@ function absoluteUrl(pathname = '/') {
     return `${SITE_ORIGIN}${path}`;
 }
 
+function languagePath(pathname = '/', lang = 'ko') {
+    const path = canonicalPath(pathname);
+    if (lang !== 'en') return path;
+    if (path === '/') return '/en/';
+    if (path === '/en' || path.startsWith('/en/')) return path;
+    return `/en${path}`;
+}
+
+function languageSwitchPath(pathname = '/', lang = 'ko') {
+    const localized = languagePath(pathname, lang);
+    const url = new URL(localized, 'http://localhost');
+    url.searchParams.set('lang', lang === 'en' ? 'en' : 'ko');
+    return url.pathname + url.search;
+}
+
 function canonicalPath(pathname = '/') {
     if (!pathname || pathname === '/') return '/';
     const [base, query] = String(pathname).split('?');
@@ -44,8 +59,9 @@ function pageJsonLd({
     authorName = 'Cyber-Lenin',
     authorUrl,
     image,
+    lang = 'ko',
 }) {
-    const url = absoluteUrl(path);
+    const url = absoluteUrl(languagePath(path, lang));
     const data = {
         '@context': 'https://schema.org',
         '@type': type,
@@ -75,12 +91,12 @@ function pageJsonLd({
     return data;
 }
 
-function setMarkdownSeoHeaders(res, canonicalPath, { follow = true } = {}) {
+function setMarkdownSeoHeaders(res, canonicalPath, { follow = true, lang = 'ko' } = {}) {
     res.setHeader('X-Robots-Tag', `noindex, ${follow ? 'follow' : 'nofollow'}`);
-    res.setHeader('Link', `<${absoluteUrl(canonicalPath)}>; rel="canonical"`);
+    res.setHeader('Link', `<${absoluteUrl(languagePath(canonicalPath, lang))}>; rel="canonical"`);
 }
 
-function itemListJsonLd(items = []) {
+function itemListJsonLd(items = [], lang = 'ko') {
     return {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
@@ -88,9 +104,28 @@ function itemListJsonLd(items = []) {
             '@type': 'ListItem',
             position: index + 1,
             name: item.title || item.name,
-            url: absoluteUrl(item.href || item.url || '/'),
+            url: absoluteUrl(languagePath(item.href || item.url || '/', lang)),
         })).filter(item => item.name && item.url),
     };
+}
+
+const ENGLISH_LINK_EXCLUSIONS = [
+    '/en', '/css', '/js', '/fonts', '/img', '/flags', '/puzzles',
+    '/api', '/auth', '/admin', '/nonogram', '/favicon.ico',
+    '/apple-touch-icon.png', '/apple-touch-icon-precomposed.png',
+];
+
+function shouldLocalizeHtmlHref(href) {
+    if (!href || !href.startsWith('/') || href.startsWith('//')) return false;
+    return !ENGLISH_LINK_EXCLUSIONS.some(prefix => href === prefix || href.startsWith(`${prefix}/`) || href.startsWith(`${prefix}?`));
+}
+
+function localizeHtmlLinks(html, lang = 'ko') {
+    if (lang !== 'en' || typeof html !== 'string') return html;
+    return html.replace(/\bhref=(["'])(\/[^"'<>]*)\1/gi, (match, quote, href) => {
+        if (!shouldLocalizeHtmlHref(href)) return match;
+        return `href=${quote}${languagePath(href, 'en')}${quote}`;
+    });
 }
 
 function escapeXml(value = '') {
@@ -116,6 +151,8 @@ module.exports = {
     SITE_ORIGIN,
     SITE_HOST,
     absoluteUrl,
+    languagePath,
+    languageSwitchPath,
     canonicalPath,
     plainText,
     excerpt,
@@ -123,6 +160,7 @@ module.exports = {
     pageJsonLd,
     setMarkdownSeoHeaders,
     itemListJsonLd,
+    localizeHtmlLinks,
     escapeXml,
     canonicalHostRedirect,
 };

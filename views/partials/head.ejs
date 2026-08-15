@@ -6,8 +6,16 @@
     ? (strings.siteSeoTitle || strings.siteName)
     : ((typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' | ' + strings.siteName : strings.siteName); %>
 <% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
-<% const _url = (typeof canonicalUrl !== 'undefined' && canonicalUrl) ? canonicalUrl : siteOrigin + _path; %>
-<% const _robots = (typeof robotsMeta !== 'undefined' && robotsMeta) ? robotsMeta : 'index, follow'; %>
+<% const _urlLang = (typeof urlLanguage !== 'undefined' && urlLanguage === 'en') ? 'en' : 'ko'; %>
+<% const _hasEnglish = typeof hasEnglishVersion === 'undefined' ? true : Boolean(hasEnglishVersion); %>
+<% const _canonicalLang = _urlLang === 'en' && _hasEnglish ? 'en' : 'ko'; %>
+<% const _koUrl = siteOrigin + languageUrl(_path, 'ko'); %>
+<% const _enUrl = siteOrigin + languageUrl(_path, 'en'); %>
+<% const _url = (typeof canonicalUrl !== 'undefined' && canonicalUrl)
+    ? canonicalUrl
+    : (_canonicalLang === 'en' ? _enUrl : _koUrl); %>
+<% const _baseRobots = (typeof robotsMeta !== 'undefined' && robotsMeta) ? robotsMeta : 'index, follow'; %>
+<% const _robots = _urlLang === 'en' && !_hasEnglish ? 'noindex, follow' : _baseRobots; %>
 <% const _ogType = (typeof ogType !== 'undefined' && ogType) ? ogType : 'website'; %>
 <% const _section = _isHome ? 'home'
     : (_path.indexOf('/commulingo') === 0 ? 'commulingo'
@@ -20,11 +28,16 @@
 <meta name="description" content="<%= _desc %>">
 <link rel="canonical" href="<%= _url %>">
 <meta name="robots" content="<%= _robots %>">
+<% if (_hasEnglish && _robots.indexOf('index') === 0) { %>
+<link rel="alternate" hreflang="ko" href="<%= _koUrl %>">
+<link rel="alternate" hreflang="en" href="<%= _enUrl %>">
+<link rel="alternate" hreflang="x-default" href="<%= _koUrl %>">
+<% } %>
 <link rel="preconnect" href="https://assets.cyber-lenin.com">
 <link rel="icon" href="https://assets.cyber-lenin.com/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="https://assets.cyber-lenin.com/apple-touch-icon.png">
-<link rel="alternate" type="application/rss+xml" title="Cyber-Lenin RSS Feed" href="/rss.xml">
-<link rel="alternate" type="application/atom+xml" title="Cyber-Lenin Atom Feed" href="/atom.xml">
+<link rel="alternate" type="application/rss+xml" title="Cyber-Lenin RSS Feed" href="<%= languageUrl('/rss.xml', _urlLang) %>">
+<link rel="alternate" type="application/atom+xml" title="Cyber-Lenin Atom Feed" href="<%= languageUrl('/atom.xml', _urlLang) %>">
 <meta property="og:type" content="<%= _ogType %>">
 <meta property="og:title" content="<%= _title %>">
 <meta property="og:description" content="<%= _desc %>">

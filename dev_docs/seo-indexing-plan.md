@@ -42,15 +42,21 @@
 
 ## P1 — 고정 다국어 URL 전환
 
-- [ ] 한국어 URL 정책을 확정한다: 기존 무접두 URL을 한국어 canonical로 유지하는 안을 우선 검토한다.
-- [ ] 영어판을 `/en/...` 고정 URL로 제공한다.
-- [ ] 한국어/영어 문서 쌍에 상호 `hreflang="ko"`, `hreflang="en"`, `x-default`를 추가한다.
-- [ ] 영어판 내부 링크가 모두 `/en/...`을 유지하도록 공통 URL helper를 적용한다.
-- [ ] sitemap에 번역이 실제 존재하는 문서만 영어 URL과 hreflang 쌍으로 싣는다.
-- [ ] 기존 `?lang=en` 요청은 대응하는 `/en/...`으로 301 이전하고, 언어 선택 쿠키는 사용자 편의 기능으로만 남긴다.
+- [x] 기존 무접두 URL을 한국어 canonical로 유지한다.
+- [x] 영어판을 `/en/...` 고정 URL로 제공한다.
+- [x] 한국어/영어 문서 쌍에 상호 `hreflang="ko"`, `hreflang="en"`, `x-default`를 추가한다.
+- [x] 영어판의 공개 내부 링크가 모두 `/en/...`을 유지하도록 HTML 링크 현지화와 공통 URL helper를 적용한다.
+- [x] sitemap에 번역이 실제 존재하는 문서만 영어 URL과 hreflang 쌍으로 싣는다.
+- [x] 기존 `?lang=en` 요청은 대응하는 `/en/...`으로 303 전환하고, 영어 쿠키로 무접두 URL에 접근하면 `/en/...`으로 302 전환한다.
+- [x] 영어 고정 URL 방문 시 언어 쿠키도 영어로 맞춰 인증·관리 경로처럼 접두사를 쓰지 않는 페이지에서도 언어 선택을 유지한다.
 - [ ] Search Console에서 canonical 선택과 국가/언어별 노출 변화를 확인한다.
 
-> 고정 URL 전환은 라우터 마운트, 내부 링크, 페이지네이션, 로그인/채팅 경로를 함께 바꾸는 마이그레이션이다. 이번 P0 수정에서는 기존 공개 URL을 유지하면서 Googlebot이 한국어 대표본을 받도록 먼저 안정화했다.
+고정 URL 예시:
+
+- 한국어: `https://cyber-lenin.com/reports/research/labor-history-01`
+- 영어: `https://cyber-lenin.com/en/reports/research/labor-history-01`
+
+번역이 없는 문서의 `/en/...` 접근은 사용자 언어 UI를 유지하지만 `noindex`와 한국어 canonical을 내보내며, 영어 sitemap에서는 제외한다.
 
 ## P2 — sitemap 관측성과 콘텐츠 품질
 
@@ -69,6 +75,11 @@
 - [x] `lang=en` 쿠키가 있는 같은 URL이 영어판을 유지하는지 확인
 - [x] Markdown URL이 `200 text/markdown`, `X-Robots-Tag: noindex, follow`, HTML canonical `Link`를 반환하는지 확인
 - [x] research JSON-LD에 올바른 발행일·수정일이 있는지 확인
+- [x] 한국어·영어 고정 URL이 각각 200이며 서로 reciprocal hreflang을 제공하는지 확인
+- [x] 영어 홈·목록·상세 페이지의 공개 내부 링크가 `/en/...`을 유지하는지 확인
+- [x] 기존 무접두 URL이 쿠키 없는 요청에서 계속 한국어 200을 제공하는지 확인
+- [x] sitemap URL 6,626개가 모두 고유하며 번역 없는 영어 URL을 제외하는지 확인
+- [x] `/en/rss.xml`, `/en/atom.xml`, `/en/*.md`가 영어 self/canonical URL을 제공하는지 확인
 - [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, 2026-08-15)
 - [x] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
 - [ ] 배포 후 Search Console에서 sitemap 읽기 및 대표 URL 검사를 실행

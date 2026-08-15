@@ -23,6 +23,9 @@ function fillLayoutLocals(res) {
     if (!locals.lang) locals.lang = FALLBACK_LANG;
     if (!locals.strings) locals.strings = allStrings[locals.lang] || allStrings[FALLBACK_LANG];
     if (!locals.siteOrigin) locals.siteOrigin = seo.SITE_ORIGIN;
+    if (!locals.languageUrl) locals.languageUrl = seo.languagePath;
+    if (!locals.languageSwitchUrl) locals.languageSwitchUrl = seo.languageSwitchPath;
+    if (!locals.urlLanguage) locals.urlLanguage = FALLBACK_LANG;
     if (!locals.jsonLdScript) locals.jsonLdScript = seo.jsonLdScript;
     if (!locals.iconPaths) locals.iconPaths = iconPaths;
     if (locals.assetVersion === undefined) locals.assetVersion = '';

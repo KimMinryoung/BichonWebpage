@@ -36,7 +36,9 @@ router.get('/', async (req, res) => {
             items,
             currentPage,
             totalPages,
-            jsonLd: seo.itemListJsonLd(items.map(item => ({ title: item.title, href: `/hub/${item.slug}` }))),
+            jsonLd: seo.itemListJsonLd(
+                items.map(item => ({ title: item.title, href: `/hub/${item.slug}` })),
+                res.locals.urlLanguage),
         });
     } catch (error) {
         console.error('Error loading hub list:', error);
@@ -64,6 +66,7 @@ router.get('/:slug', async (req, res) => {
             pageTitle: item.title,
             pageDescription,
             pagePath,
+            hasEnglishVersion: item.has_translation,
             ogType: 'article',
             jsonLd: seo.pageJsonLd({
                 type: 'Article',
@@ -72,6 +75,7 @@ router.get('/:slug', async (req, res) => {
                 path: pagePath,
                 datePublished: item.published_at,
                 authorName: 'Cyber-Lenin',
+                lang: res.locals.urlLanguage === 'en' && item.has_translation ? 'en' : 'ko',
             }),
         });
     } catch (error) {

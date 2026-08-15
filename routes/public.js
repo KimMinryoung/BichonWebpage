@@ -97,7 +97,7 @@ router.get('/', async (req, res) => {
             pageTitle: '사이버-레닌과 비숑의 블로그',
             pageDescription: res.locals.strings.siteDescription,
             pagePath: '/',
-            jsonLd: seo.itemListJsonLd(indexItems),
+            jsonLd: seo.itemListJsonLd(indexItems, res.locals.urlLanguage),
         });
     } catch (error) {
         console.error('Error fetching homepage data:', error);
@@ -251,33 +251,42 @@ function markdownIndex(title, description, items) {
     return lines.join('\n') + '\n';
 }
 
-async function getFeedItems(limit = 40) {
+async function getFeedItems(limit = 40, lang = 'ko') {
     const [postsResult, diariesResult, researchResult, hubResult] = await Promise.allSettled([
-        db.query('SELECT id, title, content, created_at, updated_at FROM posts ORDER BY created_at DESC LIMIT 30'),
-        db.query('SELECT id, title, content, created_at, updated_at FROM ai_diary ORDER BY created_at DESC LIMIT 30'),
-        getResearchFiles('ko'),
-        getHubItems(30, 'ko'),
+        db.query('SELECT id, title, content, title_en, content_en, created_at, updated_at FROM posts ORDER BY created_at DESC LIMIT 30'),
+        db.query('SELECT id, title, content, title_en, content_en, created_at, updated_at FROM ai_diary ORDER BY created_at DESC LIMIT 30'),
+        getResearchFiles(lang),
+        getHubItems(30, lang),
     ]);
-    const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(post => ({
-        title: post.title,
-        href: `/post/${post.id}`,
-        date: post.updated_at || post.created_at,
-        summary: seo.excerpt(post.content || '', 500),
-        category: 'Bichon posts',
-    })) : [];
-    const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows.map(diary => ({
-        title: diary.title,
-        href: `/ai-diary/${diary.id}`,
-        date: diary.updated_at || diary.created_at,
-        summary: seo.excerpt(diary.content || '', 500),
-        category: 'Cyber-Lenin diaries',
-    })) : [];
+    const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(row => {
+        const post = localizedRecord(row, lang);
+        return {
+            title: post.title,
+            href: `/post/${post.id}`,
+            date: post.updated_at || post.created_at,
+            summary: seo.excerpt(post.content || '', 500),
+            category: 'Bichon posts',
+            language: post.language || 'ko',
+        };
+    }) : [];
+    const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows.map(row => {
+        const diary = localizedRecord(row, lang);
+        return {
+            title: diary.title,
+            href: `/ai-diary/${diary.id}`,
+            date: diary.updated_at || diary.created_at,
+            summary: seo.excerpt(diary.content || '', 500),
+            category: 'Cyber-Lenin diaries',
+            language: diary.language || 'ko',
+        };
+    }) : [];
     const research = researchResult.status === 'fulfilled' ? researchResult.value.map(file => ({
         title: file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' '),
         href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
         date: file.modified_at ? new Date(file.modified_at * 1000).toISOString() : null,
         summary: file.excerpt || '',
         category: 'Cyber-Lenin research',
+        language: file.language || 'ko',
     })) : [];
     const hub = hubResult.status === 'fulfilled' ? hubResult.value.map(item => ({
         title: item.title,
@@ -285,6 +294,7 @@ async function getFeedItems(limit = 40) {
         date: item.published_at || null,
         summary: seo.excerpt(`${item.selection_rationale || ''} ${item.context || ''}`, 500),
         category: 'Curations',
+        language: item.language || 'ko',
     })) : [];
 
     return [...posts, ...diaries, ...research, ...hub]
@@ -318,7 +328,7 @@ async function cachedXml(key, build) {
 // sitemap.xml
 router.get('/sitemap.xml', async (req, res) => {
     try {
-        const xml = await cachedXml('xmlcache:sitemap', () => buildSitemapXml());
+        const xml = await cachedXml('xmlcache:sitemap:v2', () => buildSitemapXml());
         res.type('application/xml').send(xml);
     } catch (error) {
         console.error('Sitemap error:', error);
@@ -329,8 +339,12 @@ router.get('/sitemap.xml', async (req, res) => {
 async function buildSitemapXml() {
         const [postsResult, diariesResult, researchResult, pagesResult, hubResult,
             peopleResult, termsResult, eventsResult] = await Promise.allSettled([
-            db.query('SELECT id, created_at, updated_at FROM posts ORDER BY created_at DESC'),
-            db.query('SELECT id, created_at, updated_at FROM ai_diary ORDER BY created_at DESC'),
+            db.query(`SELECT id, created_at, updated_at,
+                             (COALESCE(BTRIM(title_en), '') <> '' OR COALESCE(BTRIM(content_en), '') <> '') AS has_translation
+                        FROM posts ORDER BY created_at DESC`),
+            db.query(`SELECT id, created_at, updated_at,
+                             (COALESCE(BTRIM(title_en), '') <> '' OR COALESCE(BTRIM(content_en), '') <> '') AS has_translation
+                        FROM ai_diary ORDER BY created_at DESC`),
             getResearchFiles('ko'),
             getPagesList(),
             getHubItems(200, 'ko'),
@@ -353,26 +367,34 @@ async function buildSitemapXml() {
         const commuCharts = safeList(listGenealogyCharts);
         const commuBooks = safeList(() => (loadCommuLingoCatalog() || {}).collections);
         const dateTag = value => value ? `<lastmod>${new Date(value).toISOString().split('T')[0]}</lastmod>` : '';
-        const url = (path, lastmod, priority = '0.7', changefreq = '') => {
+        const url = (path, lastmod, priority = '0.7', changefreq = '', hasEnglish = true) => {
             const freq = changefreq ? `<changefreq>${changefreq}</changefreq>` : '';
-            return `  <url><loc>${seo.escapeXml(seo.absoluteUrl(path))}</loc>${dateTag(lastmod)}${freq}<priority>${priority}</priority></url>\n`;
+            const koUrl = seo.escapeXml(seo.absoluteUrl(seo.languagePath(path, 'ko')));
+            const enUrl = seo.escapeXml(seo.absoluteUrl(seo.languagePath(path, 'en')));
+            const alternates = hasEnglish
+                ? `<xhtml:link rel="alternate" hreflang="ko" href="${koUrl}"/>`
+                    + `<xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>`
+                    + `<xhtml:link rel="alternate" hreflang="x-default" href="${koUrl}"/>`
+                : '';
+            const entry = loc => `  <url><loc>${loc}</loc>${alternates}${dateTag(lastmod)}${freq}<priority>${priority}</priority></url>\n`;
+            return entry(koUrl) + (hasEnglish ? entry(enUrl) : '');
         };
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-        xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+        xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
         xml += url('/', null, '1.0', 'daily');
         xml += url('/posts', null, '0.8', 'daily');
         xml += url('/reports', null, '0.8', 'daily');
         xml += url('/ai-diary', null, '0.7', 'daily');
         xml += url('/hub', null, '0.7', 'daily');
         xml += url('/chat', null, '0.5', 'monthly');
-        for (const post of posts) xml += url(`/post/${post.id}`, post.updated_at || post.created_at, '0.8');
-        for (const diary of diaries) xml += url(`/ai-diary/${diary.id}`, diary.updated_at || diary.created_at, '0.6');
+        for (const post of posts) xml += url(`/post/${post.id}`, post.updated_at || post.created_at, '0.8', '', post.has_translation);
+        for (const diary of diaries) xml += url(`/ai-diary/${diary.id}`, diary.updated_at || diary.created_at, '0.6', '', diary.has_translation);
         for (const f of researchFiles) {
             const slug = f.filename.replace(/\.md$/, '');
-            xml += url(`/reports/research/${encodeURIComponent(slug)}`, f.modified_at ? f.modified_at * 1000 : null, '0.8');
+            xml += url(`/reports/research/${encodeURIComponent(slug)}`, f.modified_at ? f.modified_at * 1000 : null, '0.8', '', f.has_translation);
         }
-        for (const p of pagesList) xml += url(`/p/${encodeURIComponent(p.slug)}`, p.updated_at || null, '0.6');
-        for (const item of hubItems) xml += url(`/hub/${encodeURIComponent(item.slug)}`, item.published_at || null, '0.6');
+        for (const p of pagesList) xml += url(`/p/${encodeURIComponent(p.slug)}`, p.updated_at || null, '0.6', '', p.has_translation);
+        for (const item of hubItems) xml += url(`/hub/${encodeURIComponent(item.slug)}`, item.published_at || null, '0.6', '', item.has_translation);
         xml += url('/commulingo', null, '0.8', 'daily');
         xml += url('/commulingo/people', null, '0.7', 'daily');
         xml += url('/commulingo/terms', null, '0.7', 'daily');
@@ -421,7 +443,7 @@ router.get('/index.md', async (req, res) => {
         { title: '큐레이션', href: '/hub' },
         { title: '비숑글', href: '/posts' },
     ];
-    seo.setMarkdownSeoHeaders(res, '/');
+    seo.setMarkdownSeoHeaders(res, '/', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('Cyber-Lenin', res.locals.strings.siteDescription, items));
 });
 
@@ -432,7 +454,7 @@ router.get('/posts.md', async (req, res) => {
         href: `/post/${post.id}`,
         date: post.created_at ? new Date(post.created_at).toISOString().split('T')[0] : '',
     }));
-    seo.setMarkdownSeoHeaders(res, '/posts');
+    seo.setMarkdownSeoHeaders(res, '/posts', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('비숑글', '비숑이 작성한 블로그 글 목록입니다.', items));
 });
 
@@ -444,7 +466,7 @@ router.get('/reports.md', async (req, res) => {
         href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
         date: file.modified_at ? new Date(file.modified_at * 1000).toISOString().split('T')[0] : '',
     }));
-    seo.setMarkdownSeoHeaders(res, '/reports');
+    seo.setMarkdownSeoHeaders(res, '/reports', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 보고서', '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.', items));
 });
 
@@ -455,7 +477,7 @@ router.get('/ai-diary.md', async (req, res) => {
         href: `/ai-diary/${diary.id}`,
         date: diary.created_at ? new Date(diary.created_at).toISOString().split('T')[0] : '',
     }));
-    seo.setMarkdownSeoHeaders(res, '/ai-diary');
+    seo.setMarkdownSeoHeaders(res, '/ai-diary', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 일기장', '사이버-레닌이 스스로 작성한 일기 목록입니다.', items));
 });
 
@@ -466,13 +488,13 @@ router.get('/hub.md', async (req, res) => {
         href: `/hub/${item.slug}`,
         date: item.published_at ? new Date(item.published_at).toISOString().split('T')[0] : '',
     }));
-    seo.setMarkdownSeoHeaders(res, '/hub');
+    seo.setMarkdownSeoHeaders(res, '/hub', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('큐레이션', '사이버-레닌이 선별한 진보적인 글 목록입니다.', items));
 });
 
 router.get('/atom.xml', async (req, res) => {
     try {
-        const xml = await cachedXml(`xmlcache:atom:${res.locals.lang}`, () => buildAtomXml(res.locals.strings.siteDescription));
+        const xml = await cachedXml(`xmlcache:atom:v2:${res.locals.lang}`, () => buildAtomXml(res.locals.strings.siteDescription, res.locals.lang));
         res.type('application/atom+xml').send(xml);
     } catch (error) {
         console.error('Atom feed error:', error);
@@ -480,19 +502,19 @@ router.get('/atom.xml', async (req, res) => {
     }
 });
 
-async function buildAtomXml(siteDescription) {
-        const items = await getFeedItems();
+async function buildAtomXml(siteDescription, lang = 'ko') {
+        const items = await getFeedItems(40, lang);
         const updated = items.length > 0 ? new Date(items[0].date || Date.now()).toISOString() : new Date().toISOString();
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
         xml += '<feed xmlns="http://www.w3.org/2005/Atom">\n';
         xml += '  <title>Cyber-Lenin</title>\n';
-        xml += `  <link href="${seo.escapeXml(seo.absoluteUrl('/'))}" rel="alternate"/>\n`;
-        xml += `  <link href="${seo.escapeXml(seo.absoluteUrl('/atom.xml'))}" rel="self"/>\n`;
-        xml += `  <id>${seo.escapeXml(seo.absoluteUrl('/'))}</id>\n`;
+        xml += `  <link href="${seo.escapeXml(seo.absoluteUrl(seo.languagePath('/', lang)))}" rel="alternate"/>\n`;
+        xml += `  <link href="${seo.escapeXml(seo.absoluteUrl(seo.languagePath('/atom.xml', lang)))}" rel="self"/>\n`;
+        xml += `  <id>${seo.escapeXml(seo.absoluteUrl(seo.languagePath('/', lang)))}</id>\n`;
         xml += `  <updated>${updated}</updated>\n`;
         xml += `  <subtitle>${seo.escapeXml(siteDescription)}</subtitle>\n`;
         for (const item of items) {
-            const url = seo.absoluteUrl(item.href);
+            const url = seo.absoluteUrl(seo.languagePath(item.href, item.language));
             const date = item.date ? new Date(item.date).toISOString() : updated;
             xml += '  <entry>\n';
             xml += `    <title>${seo.escapeXml(item.title)}</title>\n`;
@@ -509,7 +531,7 @@ async function buildAtomXml(siteDescription) {
 
 router.get('/rss.xml', async (req, res) => {
     try {
-        const xml = await cachedXml(`xmlcache:rss:${res.locals.lang}`, () => buildRssXml(res.locals.strings.siteDescription));
+        const xml = await cachedXml(`xmlcache:rss:v2:${res.locals.lang}`, () => buildRssXml(res.locals.strings.siteDescription, res.locals.lang));
         res.type('application/rss+xml').send(xml);
     } catch (error) {
         console.error('RSS feed error:', error);
@@ -517,20 +539,20 @@ router.get('/rss.xml', async (req, res) => {
     }
 });
 
-async function buildRssXml(siteDescription) {
-        const items = await getFeedItems();
+async function buildRssXml(siteDescription, lang = 'ko') {
+        const items = await getFeedItems(40, lang);
         const updated = items.length > 0 ? new Date(items[0].date || Date.now()) : new Date();
         let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
         xml += '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n';
         xml += '  <channel>\n';
         xml += '    <title>Cyber-Lenin</title>\n';
-        xml += `    <link>${seo.escapeXml(seo.absoluteUrl('/'))}</link>\n`;
-        xml += `    <atom:link href="${seo.escapeXml(seo.absoluteUrl('/rss.xml'))}" rel="self" type="application/rss+xml"/>\n`;
+        xml += `    <link>${seo.escapeXml(seo.absoluteUrl(seo.languagePath('/', lang)))}</link>\n`;
+        xml += `    <atom:link href="${seo.escapeXml(seo.absoluteUrl(seo.languagePath('/rss.xml', lang)))}" rel="self" type="application/rss+xml"/>\n`;
         xml += `    <description>${seo.escapeXml(siteDescription)}</description>\n`;
         xml += `    <lastBuildDate>${updated.toUTCString()}</lastBuildDate>\n`;
-        xml += '    <language>ko</language>\n';
+        xml += `    <language>${lang === 'en' ? 'en' : 'ko'}</language>\n`;
         for (const item of items) {
-            const url = seo.absoluteUrl(item.href);
+            const url = seo.absoluteUrl(seo.languagePath(item.href, item.language));
             const date = item.date ? new Date(item.date) : updated;
             xml += '    <item>\n';
             xml += `      <title>${seo.escapeXml(item.title)}</title>\n`;

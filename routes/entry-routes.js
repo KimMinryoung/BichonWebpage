@@ -49,7 +49,8 @@ function createEntryRoutes({
             pageDescription: listDescription(res),
         };
         const itemList = entries => seo.itemListJsonLd(
-            (entries || []).map(entry => ({ title: entry.title, href: `${detailPathPrefix}${entry.id}` })));
+            (entries || []).map(entry => ({ title: entry.title, href: `${detailPathPrefix}${entry.id}` })),
+            res.locals.urlLanguage);
         try {
             const cached = await cache.getIndexPage(currentPage, lang);
             if (cached) {
@@ -112,11 +113,14 @@ function createEntryRoutes({
 
             const plainText = seo.excerpt(entry.content || '', 160);
             const path = `${detailPathPrefix}${entry.id}`;
+            const hasEnglishVersion = Boolean(entry.has_translation || entry.title_en || entry.content_en);
+            const contentUrlLanguage = res.locals.urlLanguage === 'en' && hasEnglishVersion ? 'en' : 'ko';
             res.render(detailView, {
                 [detailKey]: entry, contentHtml, prevId, nextId,
                 pageTitle: entry.title,
                 pageDescription: plainText,
                 pagePath: path,
+                hasEnglishVersion,
                 ogType: 'article',
                 jsonLd: seo.pageJsonLd({
                     type: 'BlogPosting',
@@ -126,6 +130,7 @@ function createEntryRoutes({
                     datePublished: entry.created_at,
                     dateModified: entry.updated_at || entry.created_at,
                     authorName,
+                    lang: contentUrlLanguage,
                 }),
             });
         } catch (error) {
