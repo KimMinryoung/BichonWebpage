@@ -69,8 +69,8 @@
 - [x] `lang=en` 쿠키가 있는 같은 URL이 영어판을 유지하는지 확인
 - [x] Markdown URL이 `200 text/markdown`, `X-Robots-Tag: noindex, follow`, HTML canonical `Link`를 반환하는지 확인
 - [x] research JSON-LD에 올바른 발행일·수정일이 있는지 확인
-- [ ] 배포 후 `scripts/deploy --restart`만 사용해 재시작
-- [ ] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
+- [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, 2026-08-15)
+- [x] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
 - [ ] 배포 후 Search Console에서 sitemap 읽기 및 대표 URL 검사를 실행
 
 ## 참고
