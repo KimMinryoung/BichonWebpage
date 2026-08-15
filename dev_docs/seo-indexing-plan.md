@@ -86,8 +86,9 @@
 - [x] CommuLingo 참고 문헌 상세 canonical이 목록이 아닌 자기 상세 URL을 가리키는지 확인
 - [x] 구조화 데이터 변경 전후 sitemap XML이 byte-identical인지 확인
 - [x] Search Console에서 동일한 `sitemap.xml`을 다시 제출함 (2026-08-15, 처리 결과 대기)
-- [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, `5b49469`; 2026-08-15)
+- [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, `5b49469`, `56c1f83`; 2026-08-15)
 - [x] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
+- [x] 구조화 데이터 배포 후 운영 한국어·영어 보고서/참고 문헌 canonical·hreflang·breadcrumb와 영어 내부 링크를 재검증 (`56c1f83`; 2026-08-15)
 - [ ] 배포 후 Search Console에서 sitemap 읽기 및 대표 URL 검사를 실행
 
 ## 참고
