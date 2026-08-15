@@ -57,3 +57,6 @@ data/commulingo/link-blocklist-snapshot.json.tmp
 # 리포에 넣지 않는다. leninbot 쪽 번역 스펙이 절대 경로로 참조하고 sha256으로
 # 고정하므로, 파일은 디스크에만 있으면 된다.
 docs/*.html
+
+# Bulk-translation glossary dump (regenerated from the DB by extract_glossary.py)
+scripts/bulk-translate/glossary-db.json
