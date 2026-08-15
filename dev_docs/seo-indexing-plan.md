@@ -80,7 +80,7 @@
 - [x] 기존 무접두 URL이 쿠키 없는 요청에서 계속 한국어 200을 제공하는지 확인
 - [x] sitemap URL 6,626개가 모두 고유하며 번역 없는 영어 URL을 제외하는지 확인
 - [x] `/en/rss.xml`, `/en/atom.xml`, `/en/*.md`가 영어 self/canonical URL을 제공하는지 확인
-- [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, 2026-08-15)
+- [x] 배포 후 `scripts/deploy --restart`만 사용해 재시작 (`2b0188a`, `5b49469`; 2026-08-15)
 - [x] 배포 후 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary` 콘텐츠와 DB 연결 정상 여부 확인
 - [ ] 배포 후 Search Console에서 sitemap 읽기 및 대표 URL 검사를 실행
 
