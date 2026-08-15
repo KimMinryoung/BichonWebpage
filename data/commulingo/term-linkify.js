@@ -21,7 +21,7 @@ const BLOCKED_TERM_KO = ['집단농장화', '전세계'];
 // evacuation. Each entry stays reachable by its headword and its longer
 // aliases; only the bare ambiguous string is refused, and only when it is not
 // the headword itself.
-const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '씨밤'];
+const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '씨밤', '소련 인민'];
 
 // Strings refused even when they are the term's own headword. The list above
 // spares the headword deliberately — an entry has to stay reachable by its own
