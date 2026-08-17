@@ -2525,6 +2525,45 @@
           "Sino-Soviet Treaty of Friendship and Alliance"
         ]
       }
+    },
+    {
+      "id": "cominform-resolution-1948",
+      "file": "cominform-resolution-1948.html",
+      "docLang": "ko",
+      "date": "1948-06-28",
+      "title": {
+        "ko": "코민포름 결의 「유고슬라비아 공산당의 상황에 관하여」",
+        "en": "The Cominform Resolution on the Situation in the CPY"
+      },
+      "description": {
+        "ko": "티토-스탈린 결별을 공식화한 1948년 6월 28일 결의의 전문. 여덟 개 항의 고발과, 유고슬라비아 당내 「건전한 세력」에게 지도부 교체를 호소하는 맺음말까지.",
+        "en": "The full text of the resolution of 28 June 1948 that formalized the Tito-Stalin split: eight articles of indictment and a closing appeal to the 'healthy forces' of the Yugoslav party to replace their leaders."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "『프라브다』 1948년 6월 29일자 게재본의 전자판(스탈린 저작집 제18권 수록 전사본)",
+      "people": [
+        "stalin"
+      ],
+      "terms": [],
+      "events": [
+        "tito-stalin-split",
+        "yugoslav-partisans"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "코민포름 결의",
+          "코민포름 결의문",
+          "유고슬라비아 공산당의 상황에 관하여"
+        ],
+        "en": [
+          "Cominform resolution",
+          "Resolution on the situation in the Communist Party of Yugoslavia"
+        ]
+      }
     }
   ]
 }
