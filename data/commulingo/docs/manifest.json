@@ -2170,6 +2170,90 @@
           "Japanese Instrument of Surrender"
         ]
       }
+    },
+    {
+      "id": "october-decrees-1917",
+      "file": "october-decrees-1917.html",
+      "docLang": "ko",
+      "date": "1917-11-11",
+      "title": {
+        "ko": "10월 혁명의 첫 법령들",
+        "en": "The First Decrees of the October Revolution"
+      },
+      "description": {
+        "ko": "집권 두 달 사이의 법령 다섯 건 모음. 전신으로 시행된 8시간 노동제, 상업 비밀을 폐지한 노동자 통제 규정, 체카를 만든 인민위원회의 회의록 발췌, 그리고 가족을 교회에서 국가로 옮긴 혼인·이혼 법령.",
+        "en": "Five acts from the regime's first two months: the eight-hour day enacted by telegraph, the workers' control statute that abolished commercial secrecy, the Sovnarkom protocol that created the Cheka, and the marriage and divorce decrees that moved the family from church to state."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Декреты Советской власти. Т. I (М., 1957) — 모스크바대 역사학부 전자도서관·러시아어 위키문헌 전자판; ВЧК 회의록은 РГАСПИ Ф.19, Оп.1, Д.21 전사본(이스트마트 전자판)",
+      "people": [
+        "lenin",
+        "trotsky"
+      ],
+      "terms": [
+        "cheka",
+        "workers-control"
+      ],
+      "events": [
+        "october-revolution"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "8시간 노동제에 관한 법령",
+          "노동자 통제에 관한 법령",
+          "체카 설립 법령",
+          "시민혼 법령"
+        ],
+        "en": [
+          "Decree on the Eight-Hour Day",
+          "Statute on Workers' Control",
+          "founding of the Cheka"
+        ]
+      }
+    },
+    {
+      "id": "constituent-assembly-1918",
+      "file": "constituent-assembly-1918.html",
+      "docLang": "ko",
+      "date": "1918-01-19",
+      "title": {
+        "ko": "제헌의회 국면의 문서 세 건",
+        "en": "Three Documents of the Constituent Assembly Crisis"
+      },
+      "description": {
+        "ko": "레닌의 「제헌의회에 관한 테제」, 제3차 소비에트 대회가 채택한 「근로·피착취 인민의 권리 선언」, 그리고 해산 법령. 계급 기관이 전국민 기관보다 우월하다는 주장이 이론에서 강령으로, 강령에서 기정사실로 바뀌는 한 달을 담았다.",
+        "en": "Lenin's Theses on the Constituent Assembly, the Declaration of the Rights of the Working and Exploited People as adopted by the Third Congress of Soviets, and the dissolution decree: one month in which the claim of class organs over national ones passed from theory to programme to accomplished fact."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "레닌 전집 제5판 제35권(러시아어 위키문헌 전자판); Декреты Советской власти. Т. I (М., 1957) — 모스크바대 역사학부 전자도서관 전자판",
+      "people": [
+        "lenin"
+      ],
+      "terms": [
+        "constituent-assembly"
+      ],
+      "events": [
+        "october-revolution"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "제헌의회에 관한 테제",
+          "근로·피착취 인민의 권리 선언",
+          "제헌의회 해산 법령"
+        ],
+        "en": [
+          "Theses on the Constituent Assembly",
+          "Declaration of Rights of the Working and Exploited People"
+        ]
+      }
     }
   ]
 }
