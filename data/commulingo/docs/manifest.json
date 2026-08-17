@@ -2295,6 +2295,83 @@
           "On Party Unity"
         ]
       }
+    },
+    {
+      "id": "food-dictatorship-decree-1918",
+      "file": "food-dictatorship-decree-1918.html",
+      "docLang": "ko",
+      "date": "1918-05-13",
+      "title": {
+        "ko": "식량인민위원 비상전권에 관한 법령",
+        "en": "Decree on the Emergency Powers of the People's Commissar for Food"
+      },
+      "description": {
+        "ko": "「식량독재」를 세운 1918년 5월 13일 법령의 전문. 곡물 잉여의 신고 의무, 「인민의 적」 조항과 밀고 보상, 그리고 무력 사용권을 포함한 식량인민위원의 아홉 가지 비상전권.",
+        "en": "The decree of 13 May 1918 that established the food dictatorship: compulsory declaration of grain surpluses, the enemy-of-the-people clause with informer rewards, and the Food Commissar's nine emergency powers including the use of armed force."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Декреты Советской власти. Т. II (М., 1959) — 모스크바대 역사학부 전자도서관 전자판",
+      "people": [
+        "lenin"
+      ],
+      "terms": [],
+      "events": [
+        "volga-famine",
+        "civil-war"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "식량독재 법령",
+          "식량조달에 관한 법령"
+        ],
+        "en": [
+          "food dictatorship decree"
+        ]
+      }
+    },
+    {
+      "id": "shuya-letter-1922",
+      "file": "shuya-letter-1922.html",
+      "docLang": "ko",
+      "date": "1922-03-19",
+      "title": {
+        "ko": "교회 귀중품 몰수 법령과 레닌의 슈야 편지",
+        "en": "The Church Valuables Decree and Lenin's Shuya Letter"
+      },
+      "description": {
+        "ko": "기근 구호를 명분으로 교회 귀중품의 몰수를 명령한 1922년 2월 23일 공개 법령과, 슈야 유혈 사태 직후 레닌이 정치국에 돌린 완전 비밀 서한. 하나가 작전의 공개면이라면 다른 하나는 그 이면으로, 서한은 1990년에야 공개되었다.",
+        "en": "The public decree of 23 February 1922 ordering the confiscation of church valuables for famine relief, and the top-secret letter Lenin circulated to the Politburo after the bloodshed at Shuya: the public face of the operation and its inside, first published only in 1990."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "법령: 러시아어 위키문헌 전사본(『이즈베스티야』 1922.2.26 공표본); 서한: 『Известия ЦК КПСС』 1990년 제4호 공개본의 러시아어 위키문헌 전자판",
+      "people": [
+        "lenin",
+        "trotsky",
+        "molotov"
+      ],
+      "terms": [],
+      "events": [
+        "volga-famine"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "슈야 편지",
+          "교회 귀중품 몰수 법령",
+          "몰로토프 앞 서한(1922)"
+        ],
+        "en": [
+          "Shuya letter",
+          "letter to Molotov of 19 March 1922"
+        ]
+      }
     }
   ]
 }
