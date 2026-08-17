@@ -69,6 +69,7 @@ const NATION_SCRIPTS = {
     spain: LATIN,
     portugal: LATIN,
     netherlands: LATIN,
+    belgium: LATIN,
     uk: LATIN,
     usa: LATIN,
     turkey: LATIN,

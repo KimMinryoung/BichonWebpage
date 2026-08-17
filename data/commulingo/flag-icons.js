@@ -47,6 +47,7 @@ const FLAG_NAMES = {
     usa: { ko: '미국', en: 'United States' },
     china: { ko: '중국', en: 'China' },
     netherlands: { ko: '네덜란드', en: 'Netherlands' },
+    belgium: { ko: '벨기에', en: 'Belgium' },
     bulgaria: { ko: '불가리아', en: 'Bulgaria' },
     cuba: { ko: '쿠바', en: 'Cuba' },
     spain: { ko: '스페인', en: 'Spain' },
