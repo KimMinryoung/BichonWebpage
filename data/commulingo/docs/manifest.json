@@ -2254,6 +2254,47 @@
           "Declaration of Rights of the Working and Exploited People"
         ]
       }
+    },
+    {
+      "id": "kronstadt-documents-1921",
+      "file": "kronstadt-documents-1921.html",
+      "docLang": "ko",
+      "date": "1921-03-01",
+      "title": {
+        "ko": "크론시타트 1921년의 두 문서",
+        "en": "Two Documents of Kronstadt 1921"
+      },
+      "description": {
+        "ko": "봉기의 강령과 당의 응답. 페트로파블롭스크호·세바스토폴호 승조원 총회의 15개 항 결의와, 크론시타트를 명분의 한가운데 놓고 당내 분파의 해산을 명령한 제10차 당대회 결의 「당의 통일에 관하여」(비공개 제7항 포함)를 마주 놓았다.",
+        "en": "The rising's programme and the party's answer: the fifteen-point resolution of the Petropavlovsk and Sevastopol crews, and the Tenth Congress resolution On Party Unity, secret point 7 included, which made Kronstadt the case for banning factions."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "결의: 『임시혁명위원회 이즈베스티야』 제1호(1921.3.3), 흐로노스 전자도서관 전사본; 「당의 통일에 관하여」: РГАСПИ Ф.45, Оп.1, Д.23 전사본",
+      "people": [
+        "lenin",
+        "trotsky"
+      ],
+      "terms": [
+        "cheka"
+      ],
+      "events": [
+        "kronstadt-1921"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "페트로파블롭스크 결의",
+          "당의 통일에 관하여",
+          "크론시타트 결의"
+        ],
+        "en": [
+          "Petropavlovsk resolution",
+          "On Party Unity"
+        ]
+      }
     }
   ]
 }
