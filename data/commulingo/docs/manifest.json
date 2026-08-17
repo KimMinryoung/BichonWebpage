@@ -1663,6 +1663,513 @@
         ]
       },
       "addedAt": "2026-08-15"
+    },
+    {
+      "id": "daladier-declaration-1939",
+      "file": "daladier-declaration-1939.html",
+      "docLang": "ko",
+      "date": "1939-09-02",
+      "title": {
+        "ko": "달라디에의 1939년 9월 2일 의회 선언",
+        "en": "Daladier's Declaration to Parliament, 2 September 1939"
+      },
+      "description": {
+        "ko": "독일의 폴란드 침공 이튿날 프랑스 하원에서 총리 달라디에가 읽은 참전 정당화 선언의 한국어 전역. 8월 31일 교섭 결렬의 경위, 히틀러의 약속 파기 목록, 대폴란드 동맹 의무, 「명예는 안전의 담보」라는 결론까지, 의사록의 박수 표기와 함께 옮겼다.",
+        "en": "Full Korean translation of the declaration read by Premier Daladier to the Chamber of Deputies the day after Germany invaded Poland, justifying French entry into the war, with the parliamentary applause markings of the Journal officiel."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Le Livre jaune français, No. 356. 영역본: The French Yellow Book (1940), 예일대 로스쿨 애벌론 프로젝트 전자판",
+      "people": [
+        "edouard-daladier"
+      ],
+      "terms": [],
+      "events": [
+        "fall-of-france"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "프랑스 황서 제356호",
+          "달라디에 선언",
+          "달라디에의 의회 선언"
+        ],
+        "en": [
+          "French Yellow Book No. 356",
+          "Daladier declaration"
+        ]
+      }
+    },
+    {
+      "id": "vichy-constitutional-law-1940",
+      "file": "vichy-constitutional-law-1940.html",
+      "docLang": "ko",
+      "date": "1940-07-10",
+      "title": {
+        "ko": "1940년 7월 10일 헌법법률",
+        "en": "Constitutional Law of 10 July 1940"
+      },
+      "description": {
+        "ko": "국민의회가 569 대 80으로 페탱에게 새 헌법 제정의 전권을 넘겨 제3공화국을 끝낸 단일 조항 법률의 전문. 1944년 8월 9일 명령이 처음부터 무효라고 선언한 바로 그 문서다.",
+        "en": "The single-article law by which the National Assembly, 569 to 80, handed Pétain full constituent powers and ended the Third Republic; declared void ab initio by the ordinance of 9 August 1944."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Journal officiel de la République française, 1940-07-11. 프랑스 위키문헌 전사본",
+      "people": [
+        "philippe-petain",
+        "albert-lebrun",
+        "pierre-laval"
+      ],
+      "terms": [
+        "vichy-legal-continuity-debate"
+      ],
+      "events": [
+        "fall-of-france"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "1940년 7월 10일 헌법법률",
+          "비시 헌법법률"
+        ],
+        "en": [
+          "Constitutional Law of 10 July 1940"
+        ]
+      }
+    },
+    {
+      "id": "statut-des-juifs-1940",
+      "file": "statut-des-juifs-1940.html",
+      "docLang": "ko",
+      "date": "1940-10-03",
+      "title": {
+        "ko": "1940년 10월 3일 유대인 지위에 관한 법률",
+        "en": "Law of 3 October 1940 on the Status of Jews"
+      },
+      "description": {
+        "ko": "비시가 독일의 요구 없이 스스로 제정한 첫 반유대 법령의 전문. 「인종」과 조부모 수에 의한 유대인 정의, 공직·군·사법·언론·영화에서의 배제, 서명자 명단까지 옮겼다.",
+        "en": "Full text of Vichy's first antisemitic statute, enacted without German demand: the racial definition by grandparents, the exclusions from public office, the army, the judiciary, the press and cinema, and the list of signatories."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Journal officiel, Lois et décrets, 1940-10-18. 프랑스 위키문헌 전사본",
+      "people": [
+        "philippe-petain",
+        "pierre-laval",
+        "charles-huntziger"
+      ],
+      "terms": [
+        "statut-des-juifs"
+      ],
+      "events": [
+        "fall-of-france"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "유대인 법령 원문",
+          "유대인 지위법"
+        ],
+        "en": [
+          "Statut des Juifs",
+          "Jewish Statute of 1940"
+        ]
+      }
+    },
+    {
+      "id": "barbarossa-directive-21",
+      "file": "barbarossa-directive-21.html",
+      "docLang": "ko",
+      "date": "1940-12-18",
+      "title": {
+        "ko": "지령 제21호 「바르바로사 계획」",
+        "en": "Directive No. 21: Case Barbarossa"
+      },
+      "description": {
+        "ko": "「영국과의 전쟁이 끝나기 전이라도 신속한 전역으로 소비에트 러시아를 분쇄할 준비를 갖추라」는 1940년 12월 18일의 극비 지령 전문. 뉘른베르크 재판에 제출된 영역본을 저본으로 옮겼다.",
+        "en": "Full text of the top-secret directive of 18 December 1940 ordering the Wehrmacht to prepare to crush the Soviet Union even before the war with England was over, translated from the Nuremberg trial version."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "OKW 지령 제21호(1940-12-18), 뉘른베르크 재판 문서 446-PS의 미국 정부 영역본, 영어 위키문헌 전자판",
+      "people": [],
+      "terms": [
+        "lebensraum"
+      ],
+      "events": [
+        "second-front-normandy",
+        "great-patriotic-war",
+        "nazi-soviet-pact"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "지령 제21호",
+          "바르바로사 계획",
+          "바르바로사 지령"
+        ],
+        "en": [
+          "Directive No. 21",
+          "Fuehrer Directive 21",
+          "Case Barbarossa"
+        ]
+      }
+    },
+    {
+      "id": "tripartite-pact-1940",
+      "file": "tripartite-pact-1940.html",
+      "docLang": "ko",
+      "date": "1940-09-27",
+      "title": {
+        "ko": "삼국동맹 조약",
+        "en": "The Tripartite Pact"
+      },
+      "description": {
+        "ko": "독일·이탈리아·일본이 유럽과 「대동아」의 신질서 지도권을 서로 승인하고 제3국의 공격 시 상호 원조를 약속한 1940년 9월 27일 베를린 조약의 전문.",
+        "en": "Full text of the Berlin pact of 27 September 1940 by which Germany, Italy and Japan recognized each other's 'new orders' and promised mutual assistance against attack by a power not yet in the war."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Three-Power Pact, 1940-09-27. 미 국무부 간행 영역본, 예일대 로스쿨 애벌론 프로젝트 전자판",
+      "people": [],
+      "terms": [],
+      "events": [
+        "pacific-war"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "삼국동맹 조약",
+          "삼국 조약",
+          "베를린 조약(1940)"
+        ],
+        "en": [
+          "Tripartite Pact",
+          "Three-Power Pact"
+        ]
+      }
+    },
+    {
+      "id": "hull-note-1941",
+      "file": "hull-note-1941.html",
+      "docLang": "ko",
+      "date": "1941-11-26",
+      "title": {
+        "ko": "헐 노트",
+        "en": "The Hull Note"
+      },
+      "description": {
+        "ko": "진주만 열하루 전 미국이 일본에 건넨 「미일 간 합의 기초안 개요」의 전문. 구두 성명과, 중국·인도차이나 전면 철수를 요구한 열 개 항의 조치안을 함께 옮겼다.",
+        "en": "Full text of the 'Outline of Proposed Basis for Agreement' handed to Japan eleven days before Pearl Harbor: the oral statement and the ten-point plan demanding full withdrawal from China and Indochina."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Outline of Proposed Basis for Agreement Between the United States and Japan, 1941-11-26. 영어 위키문헌 전사본",
+      "people": [
+        "cordell-hull"
+      ],
+      "terms": [],
+      "events": [
+        "pacific-war"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "헐 노트",
+          "미일 간 합의 기초안 개요"
+        ],
+        "en": [
+          "Hull note"
+        ]
+      }
+    },
+    {
+      "id": "molotov-washington-1942",
+      "file": "molotov-washington-1942.html",
+      "docLang": "ko",
+      "date": "1942-05-30",
+      "title": {
+        "ko": "몰로토프의 워싱턴 회담 기록 두 건",
+        "en": "Two White House Memoranda of the Molotov Conversations"
+      },
+      "description": {
+        "ko": "1942년 5월 30일과 6월 1일 백악관 회의의 크로스 통역 기록. 「독일군 40개 사단을 돌려세울 수 있는가」라는 몰로토프의 단도직입의 질문과, 「올해 제2전선의 형성을 기대한다」는 루스벨트의 답, 그리고 그 약속을 배와 톤수로 되짚는 6월 1일의 흥정까지.",
+        "en": "Samuel Cross's memoranda of the White House conferences of 30 May and 1 June 1942: Molotov's blunt question about drawing off forty German divisions, Roosevelt's authorization to expect a second front that year, and the shipping bargain behind the promise."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Foreign Relations of the United States, 1942, vol. III, documents 471–472. 미 국무부 역사국 전자판",
+      "people": [
+        "molotov",
+        "franklin-d-roosevelt",
+        "george-c-marshall"
+      ],
+      "terms": [],
+      "events": [
+        "second-front-normandy"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "1942년 5월 30일 백악관 회의 기록",
+          "몰로토프 워싱턴 회담 기록"
+        ],
+        "en": [
+          "White House conference memoranda, May–June 1942"
+        ]
+      }
+    },
+    {
+      "id": "tehran-military-conclusions-1943",
+      "file": "tehran-military-conclusions-1943.html",
+      "docLang": "ko",
+      "date": "1943-12-01",
+      "title": {
+        "ko": "테헤란 회담 군사 결론",
+        "en": "Military Conclusions of the Tehran Conference"
+      },
+      "description": {
+        "ko": "루스벨트·스탈린·처칠이 서명한 다섯 항의 합의 전문. 1944년 5월의 오버로드와 남프랑스 상륙, 소련의 동시 공세, 공동 기만계획, 유고슬라비아 파르티잔 지원을 정했다.",
+        "en": "The five-point agreement signed by Roosevelt, Stalin and Churchill: Overlord in May 1944 with a southern France landing, a simultaneous Soviet offensive, a concerted deception plan, and support for the Yugoslav Partisans."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "A Decade of American Foreign Policy: Basic Documents, 1941–49 (Washington, 1950). 예일대 로스쿨 애벌론 프로젝트 전자판",
+      "people": [
+        "franklin-d-roosevelt",
+        "stalin",
+        "winston-churchill"
+      ],
+      "terms": [],
+      "events": [
+        "second-front-normandy",
+        "yugoslav-partisans"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "테헤란 회담 군사 결론",
+          "테헤란 군사 결론"
+        ],
+        "en": [
+          "Tehran military conclusions"
+        ]
+      }
+    },
+    {
+      "id": "cnr-programme-1944",
+      "file": "cnr-programme-1944.html",
+      "docLang": "ko",
+      "date": "1944-03-15",
+      "title": {
+        "ko": "『행복한 날들』 — 레지스탕스 행동 강령",
+        "en": "Les Jours Heureux: the CNR Programme"
+      },
+      "description": {
+        "ko": "국민저항위원회가 1944년 3월 15일 만장일치로 채택한 공동 강령의 전문. 점령자에 맞선 즉각 행동 계획과, 국유화·사회보장·노동권을 담은 해방 후 조치들을 함께 옮겼다.",
+        "en": "Full text of the common programme adopted unanimously by the National Council of the Resistance on 15 March 1944: the plan of immediate action against the occupier and the post-liberation measures of nationalization, social security and labour rights."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Les Jours Heureux, par le C.N.R. (Libération zone sud, 1944). 프랑스 위키문헌 전사본",
+      "people": [
+        "charles-de-gaulle"
+      ],
+      "terms": [
+        "national-resistance-council-cnr",
+        "service-du-travail-obligatoire-sto",
+        "free-france"
+      ],
+      "events": [
+        "french-resistance"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "행복한 날들",
+          "CNR 강령",
+          "레지스탕스 행동 강령"
+        ],
+        "en": [
+          "Les Jours Heureux",
+          "CNR programme",
+          "programme of the National Council of the Resistance"
+        ]
+      }
+    },
+    {
+      "id": "eisenhower-d-day-documents-1944",
+      "file": "eisenhower-d-day-documents-1944.html",
+      "docLang": "ko",
+      "date": "1944-06-06",
+      "title": {
+        "ko": "아이젠하워의 디데이 문서 두 건",
+        "en": "Eisenhower's Two D-Day Documents"
+      },
+      "description": {
+        "ko": "6월 6일 전 장병에게 배포된 일일명령과, 상륙 실패에 대비해 6월 5일 미리 적어 둔 예순여섯 단어의 성명 초안. 승리의 수사와 「잘못은 오로지 나 한 사람의 것」이라는 책임의 문장을 나란히 실었다.",
+        "en": "The Order of the Day distributed to the invasion force on 6 June, and the sixty-six-word in-case-of-failure note drafted on 5 June, placing the rhetoric of victory beside the sentence that takes sole blame."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "일일명령: 미국 국립문서보관소(NARA) 마일스톤 문서 전사본. 실패 성명 초안: 아이젠하워 대통령도서관 전사본",
+      "people": [
+        "dwight-d-eisenhower"
+      ],
+      "terms": [
+        "mulberry-harbours"
+      ],
+      "events": [
+        "second-front-normandy"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "일일명령",
+          "아이젠하워의 일일명령",
+          "실패 성명 초안"
+        ],
+        "en": [
+          "Order of the Day",
+          "In case of failure message"
+        ]
+      }
+    },
+    {
+      "id": "restoration-of-republican-legality-1944",
+      "file": "restoration-of-republican-legality-1944.html",
+      "docLang": "ko",
+      "date": "1944-08-09",
+      "title": {
+        "ko": "1944년 8월 9일 공화국 합법성 회복에 관한 명령",
+        "en": "Ordinance of 9 August 1944 on the Restoration of Republican Legality"
+      },
+      "description": {
+        "ko": "「공화국은 법적으로 존재하기를 그친 적이 없다」로 시작해 비시의 헌법적 행위 전부를 무효로 선언한 해방 프랑스의 기초 문서 전문. 무효의 원칙과 행정의 연속성을 가르는 열한 개 조항을 옮겼다.",
+        "en": "The founding text of liberated France: 'in law, the Republic has never ceased to exist.' All eleven articles, voiding Vichy's constitutional acts while managing administrative continuity."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Ordonnance du 9 août 1944, Journal officiel 1944-08-10. 레지프랑스(Légifrance) 전자 원문",
+      "people": [
+        "charles-de-gaulle"
+      ],
+      "terms": [
+        "vichy-legal-continuity-debate"
+      ],
+      "events": [
+        "fall-of-france",
+        "french-resistance"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "1944년 8월 9일 명령",
+          "공화국 합법성 회복에 관한 명령"
+        ],
+        "en": [
+          "Ordinance of 9 August 1944"
+        ]
+      }
+    },
+    {
+      "id": "potsdam-declaration-1945",
+      "file": "potsdam-declaration-1945.html",
+      "docLang": "ko",
+      "date": "1945-07-26",
+      "title": {
+        "ko": "포츠담 선언",
+        "en": "The Potsdam Declaration"
+      },
+      "description": {
+        "ko": "일본의 항복 조건을 정한 13개 항의 선언 전문. 군국주의 세력의 제거, 점령, 주권의 본토 제한, 전범 처벌, 민주주의의 부활, 그리고 무조건 항복 요구까지.",
+        "en": "The thirteen-paragraph proclamation defining the terms for Japan's surrender: removal of the militarists, occupation, limitation of sovereignty, punishment of war criminals, revival of democracy, and the demand for unconditional surrender."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Proclamation Defining Terms for Japanese Surrender, 1945-07-26. 영어 위키문헌 전사본",
+      "people": [
+        "winston-churchill"
+      ],
+      "terms": [],
+      "events": [
+        "pacific-war",
+        "manchurian-operation"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "포츠담 선언"
+        ],
+        "en": [
+          "Potsdam Declaration"
+        ]
+      }
+    },
+    {
+      "id": "japanese-instrument-of-surrender-1945",
+      "file": "japanese-instrument-of-surrender-1945.html",
+      "docLang": "ko",
+      "date": "1945-09-02",
+      "title": {
+        "ko": "일본 항복 문서",
+        "en": "The Japanese Instrument of Surrender"
+      },
+      "description": {
+        "ko": "1945년 9월 2일 도쿄만 미주리호 함상에서 서명된 항복 문서의 전문. 전 일본군의 무조건 항복과, 천황과 일본 정부의 통치 권한을 연합국 최고사령관에게 종속시킨 마지막 조항, 그리고 열두 서명자를 옮겼다.",
+        "en": "Full text of the instrument signed aboard the Missouri in Tokyo Bay on 2 September 1945: the unconditional surrender of all Japanese forces, the subordination of the Emperor's and the government's authority to the Supreme Commander, and the twelve signatories."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Instrument of Surrender, 1945-09-02. 영어 위키문헌 전사본(미국 국립문서보관소 소장 원본)",
+      "people": [
+        "mamoru-shigemitsu",
+        "yoshijiro-umezu",
+        "douglas-macarthur",
+        "hirohito"
+      ],
+      "terms": [],
+      "events": [
+        "pacific-war"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "일본 항복 문서",
+          "항복 문서(1945)"
+        ],
+        "en": [
+          "Instrument of Surrender",
+          "Japanese Instrument of Surrender"
+        ]
+      }
     }
   ]
 }
