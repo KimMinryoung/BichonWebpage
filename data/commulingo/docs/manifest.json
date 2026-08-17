@@ -2564,6 +2564,82 @@
           "Resolution on the situation in the Communist Party of Yugoslavia"
         ]
       }
+    },
+    {
+      "id": "collectivization-tempo-1930",
+      "file": "collectivization-tempo-1930.html",
+      "docLang": "ko",
+      "date": "1930-01-05",
+      "title": {
+        "ko": "집단화의 속도와 국가 지원 대책에 관한 결정",
+        "en": "On the Tempo of Collectivization and State Assistance to Collective-Farm Construction"
+      },
+      "description": {
+        "ko": "전면 집단화의 시간표를 정하고 「계급으로서의 쿨라크의 청산」으로의 이행을 공식화한 1930년 1월 5일 중앙위원회 결정의 전문.",
+        "en": "The Central Committee decision of 5 January 1930 that set the timetable of wholesale collectivization and formalized the passage to the liquidation of the kulaks as a class."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "『소련 농촌의 비극』 문서집 제2권(М., 2000) 수록본의 이스트마트 전자판",
+      "people": [
+        "stalin"
+      ],
+      "terms": [],
+      "events": [
+        "five-year-plans",
+        "holodomor"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "집단화 속도 결정",
+          "1930년 1월 5일 결정"
+        ],
+        "en": [
+          "decree on the tempo of collectivization"
+        ]
+      }
+    },
+    {
+      "id": "nkvd-arrests-resolution-1938",
+      "file": "nkvd-arrests-resolution-1938.html",
+      "docLang": "ko",
+      "date": "1938-11-17",
+      "title": {
+        "ko": "체포, 검찰 감독, 수사 수행에 관한 결정",
+        "en": "On Arrests, Procuratorial Supervision and the Conduct of Investigations"
+      },
+      "description": {
+        "ko": "대숙청의 대량 작전을 종결시킨 1938년 11월 17일 비밀 결정의 전문. 대량 체포·이송 금지와 트로이카 폐지를 명령하면서, 실패의 책임을 「기관에 기어든 인민의 적들」에게 돌린다.",
+        "en": "The secret resolution of 17 November 1938 that ended the mass operations of the Great Terror, banning mass arrests and abolishing the troikas while blaming the excesses on enemies who had crept into the NKVD itself."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "러시아어 위키문헌 전사본",
+      "people": [
+        "stalin",
+        "molotov",
+        "yezhov",
+        "vyshinsky"
+      ],
+      "terms": [],
+      "events": [
+        "great-terror"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "1938년 11월 17일 결의",
+          "체포·검찰 감독·수사에 관한 결의"
+        ],
+        "en": [
+          "resolution of 17 November 1938"
+        ]
+      }
     }
   ]
 }
