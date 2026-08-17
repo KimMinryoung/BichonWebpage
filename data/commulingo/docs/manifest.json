@@ -2372,6 +2372,46 @@
           "letter to Molotov of 19 March 1922"
         ]
       }
+    },
+    {
+      "id": "holodomor-decrees-1932",
+      "file": "holodomor-decrees-1932.html",
+      "docLang": "ko",
+      "date": "1932-12-14",
+      "title": {
+        "ko": "1932년 곡물 공출의 두 법령",
+        "en": "Two Decrees of the 1932 Grain Procurements"
+      },
+      "description": {
+        "ko": "「이삭 세 줌의 법」으로 불린 8월 7일 공공재산 보호 결정과, 공출 완수 기한·최고형·폴탑스카야 스타니차 주민 이송·북캅카스 우크라이나화 중단을 한 문서에 담은 12월 14일 비밀 결정. 홀로도모르 논쟁의 핵심 사료 두 건.",
+        "en": "The 'law of three ears of grain' of 7 August 1932 and the secret decision of 14 December that combined procurement deadlines and capital punishment with the deportation of a Cossack stanitsa and the reversal of Ukrainization in the North Caucasus: two core sources of the Holodomor debate."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "8월 7일 결정: 『이즈베스티야』 1932.8.8 공표본의 러시아어 위키문헌 전사본; 12월 14일 결정: РГАСПИ Ф.17, Оп.3, Д.2025 원본 계열의 러시아어 위키문헌 전사본",
+      "people": [
+        "stalin",
+        "molotov"
+      ],
+      "terms": [],
+      "events": [
+        "holodomor",
+        "five-year-plans"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "8월 7일 법",
+          "이삭 세 줌의 법",
+          "12월 14일 곡물 공출 결정"
+        ],
+        "en": [
+          "Law of Spikelets",
+          "decree of 7 August 1932"
+        ]
+      }
     }
   ]
 }
