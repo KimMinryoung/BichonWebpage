@@ -2640,6 +2640,43 @@
           "resolution of 17 November 1938"
         ]
       }
+    },
+    {
+      "id": "popular-front-programme-1936",
+      "file": "popular-front-programme-1936.html",
+      "docLang": "ko",
+      "date": "1936-01-11",
+      "title": {
+        "ko": "인민연합 강령",
+        "en": "The Programme of the Rassemblement Populaire"
+      },
+      "description": {
+        "ko": "「빵, 평화, 자유」의 선거를 낳은 1936년 1월 프랑스 인민전선 공동 강령의 전문. 파시스트 동맹 해산, 언론 개혁, 집단안보와 군수산업 국유화, 노동주 단축, 곡물청, 「프랑스은행을 프랑스의 은행으로」까지.",
+        "en": "The full January 1936 common programme of the French Popular Front that produced the 'bread, peace, liberty' election: dissolution of the fascist leagues, press reform, collective security and nationalization of war industries, the shorter week, the Wheat Office, and making the Bank of France the bank of France."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "『르 포퓔레르』 1936년 1월 11일자 게재본의 전자 전사본(갈리카 원지면 대조)",
+      "people": [],
+      "terms": [],
+      "events": [
+        "french-popular-front",
+        "february-1934-crisis"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "인민전선 강령",
+          "빵, 평화, 자유",
+          "인민연합의 요구"
+        ],
+        "en": [
+          "Popular Front programme",
+          "programme of the Rassemblement populaire"
+        ]
+      }
     }
   ]
 }
