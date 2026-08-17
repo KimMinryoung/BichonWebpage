@@ -2412,6 +2412,119 @@
           "decree of 7 August 1932"
         ]
       }
+    },
+    {
+      "id": "soviet-japan-neutrality-1941",
+      "file": "soviet-japan-neutrality-1941.html",
+      "docLang": "ko",
+      "date": "1941-04-13",
+      "title": {
+        "ko": "소일 중립조약과 1945년 대일 선전 성명",
+        "en": "The Soviet-Japanese Neutrality Pact and the 1945 Declaration of War"
+      },
+      "description": {
+        "ko": "1941년 4월의 중립조약 전문과, 얄타의 약속대로 독일 항복 3개월 뒤 몰로토프가 일본 대사에게 건넨 1945년 8월 8일 선전 성명. 조약과 그 종말을 한 문서에 담았다.",
+        "en": "The neutrality pact of April 1941 in full, and the statement Molotov handed the Japanese ambassador on 8 August 1945 declaring war from the next day: the treaty and its end in one document."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "러시아어 위키문헌 전사본 2건",
+      "people": [
+        "molotov"
+      ],
+      "terms": [],
+      "events": [
+        "soviet-japanese-border-wars",
+        "yalta-potsdam",
+        "manchurian-operation",
+        "pacific-war"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "소일 중립조약",
+          "소련-일본 중립조약",
+          "대일 선전포고문"
+        ],
+        "en": [
+          "Soviet-Japanese Neutrality Pact",
+          "Soviet declaration of war on Japan"
+        ]
+      }
+    },
+    {
+      "id": "warsaw-treaty-1955",
+      "file": "warsaw-treaty-1955.html",
+      "docLang": "ko",
+      "date": "1955-05-14",
+      "title": {
+        "ko": "바르샤바 조약",
+        "en": "The Warsaw Treaty"
+      },
+      "description": {
+        "ko": "여덟 나라의 우호·협력·상호원조 조약 전문. 나토 제5조를 본뜬 제4조의 상호원조, 통합사령부와 정치협상위원회, 그리고 전유럽 집단안보조약이 서면 효력을 잃는다는 제11조까지.",
+        "en": "The full text of the eight-nation treaty of friendship, cooperation and mutual assistance: the Article 4 mutual-assistance clause mirroring NATO's Article 5, the Joint Command and Political Consultative Committee, and Article 11's promise to dissolve into an all-European security treaty."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "러시아어 위키문헌 전사본(러시아어 정본)",
+      "people": [],
+      "terms": [],
+      "events": [
+        "warsaw-pact"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "우호협력상호원조조약",
+          "바르샤바 조약 전문"
+        ],
+        "en": [
+          "Warsaw Pact treaty",
+          "Treaty of Friendship, Cooperation and Mutual Assistance"
+        ]
+      }
+    },
+    {
+      "id": "sino-soviet-treaty-1945",
+      "file": "sino-soviet-treaty-1945.html",
+      "docLang": "ko",
+      "date": "1945-08-14",
+      "title": {
+        "ko": "중소우호동맹조약",
+        "en": "The Sino-Soviet Treaty of Friendship and Alliance"
+      },
+      "description": {
+        "ko": "일본 항복 발표 전날 소련과 중화민국이 모스크바에서 서명한 우호·동맹 조약의 전문. 얄타의 극동 조건을 중국이 수용하는 틀이었고, 1950년 중화인민공화국과의 새 조약이 대체했다.",
+        "en": "The treaty of friendship and alliance signed in Moscow the day before Japan's surrender announcement, the frame in which China accepted the Yalta Far Eastern terms; superseded by the 1950 treaty with the People's Republic."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "러시아어 위키문헌 전사본(러시아어 정본)",
+      "people": [
+        "molotov"
+      ],
+      "terms": [],
+      "events": [
+        "manchurian-operation",
+        "yalta-potsdam"
+      ],
+      "addedAt": "2026-08-17",
+      "aliases": {
+        "ko": [
+          "중소우호동맹조약",
+          "소중 우호동맹조약"
+        ],
+        "en": [
+          "Sino-Soviet Treaty of Friendship and Alliance"
+        ]
+      }
     }
   ]
 }
