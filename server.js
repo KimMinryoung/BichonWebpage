@@ -66,9 +66,11 @@ function isPublicHtmlPath(reqPath) {
 
 function isPublicCommuLingoDataPath(reqPath) {
     const lessonPrefix = '/commulingo/lesson/';
+    const drillDeckPrefix = '/commulingo/drill/deck/';
     return reqPath === '/commulingo/catalog.json'
         || reqPath.startsWith('/commulingo/api/')
-        || (reqPath.startsWith(lessonPrefix) && !reqPath.slice(lessonPrefix.length).includes('/'));
+        || (reqPath.startsWith(lessonPrefix) && !reqPath.slice(lessonPrefix.length).includes('/'))
+        || (reqPath.startsWith(drillDeckPrefix) && !reqPath.slice(drillDeckPrefix.length).includes('/'));
 }
 
 function isLanguageSpecificPublicPath(reqPath) {

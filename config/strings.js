@@ -282,7 +282,21 @@ const ko = {
         authorOther: '그 외',
         conceptMapLabel: '인터랙티브 개념지도',
         exploreMode: '클릭하며 탐색',
-        graphHint: '아래 사슬의 고리를 하나씩 눌러 「쉬운 설명 → 엥겔스의 주장 → 현대적 비판」 순으로 펼쳐 보세요.'
+        graphHint: '아래 사슬의 고리를 하나씩 눌러 「쉬운 설명 → 엥겔스의 주장 → 현대적 비판」 순으로 펼쳐 보세요.',
+        drill: '훈련장',
+        drillDesc: '용어·인물·사건 사전에서 만든 무작위 퀴즈와 연표 게임. 라운드마다 다른 문제가 나옵니다.',
+        drillOpen: '훈련 시작',
+        drillBest: '최고 기록',
+        drillRoundsDone: '라운드 수행',
+        drillNextRound: '다음 라운드',
+        drillBackToDecks: '훈련 목록',
+        drillRoundDone: '라운드 완료',
+        drillCheckOrder: '순서 확인',
+        drillMoveUp: '위로',
+        drillMoveDown: '아래로',
+        drillLookup: '사전에서 보기',
+        drillOrderHint: '위·아래 단추로 순서를 바꾼 뒤 확인을 누르세요. 이른 것이 위입니다.',
+        drillLoadFail: '문제를 불러오지 못했습니다. 잠시 뒤 다시 시도해 주세요.'
     },
 
     // 에러 페이지
@@ -560,7 +574,21 @@ const en = {
         authorOther: 'Other',
         conceptMapLabel: 'Interactive concept map',
         exploreMode: 'Tap to explore',
-        graphHint: 'Open each link of the chain below in turn: plain explanation → Engels’s argument → modern critique.'
+        graphHint: 'Open each link of the chain below in turn: plain explanation → Engels’s argument → modern critique.',
+        drill: 'Training ground',
+        drillDesc: 'Random quizzes and timeline games built from the term, people, and event dictionaries. Every round draws different questions.',
+        drillOpen: 'Start training',
+        drillBest: 'Best score',
+        drillRoundsDone: 'rounds played',
+        drillNextRound: 'Next round',
+        drillBackToDecks: 'Deck list',
+        drillRoundDone: 'Round complete',
+        drillCheckOrder: 'Check order',
+        drillMoveUp: 'Move up',
+        drillMoveDown: 'Move down',
+        drillLookup: 'Open dictionary entry',
+        drillOrderHint: 'Reorder with the up and down buttons, then check. Earliest goes on top.',
+        drillLoadFail: 'Could not load the questions. Please try again shortly.'
     },
 
     error: {

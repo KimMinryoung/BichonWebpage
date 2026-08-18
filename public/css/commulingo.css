@@ -3805,3 +3805,190 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .gen-legend-item { display: inline-flex; align-items: center; gap: .4rem; }
 .gen-legend-item svg { flex: none; }
 .gen-legend-swatch { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 32%, transparent); stroke-dasharray: 4 3; }
+
+/* ---------------------------------------------------------------- 훈련장
+   /commulingo/drill — 사전에서 만든 무작위 퀴즈·연표 게임. 퀴즈 화면은
+   .commu-quiz / .commu-choice / .commu-feedback를 그대로 쓰고, 여기는
+   훈련장 고유 부품(덱 카드, 인용 상자, 순서 맞추기 목록)만 정의한다. */
+
+.commu-drill-promo {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.commu-drill-promo h2 {
+    font-size: 1.08rem;
+    margin: 0 0 6px;
+}
+
+.commu-drill-promo p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.commu-drill-group {
+    margin-bottom: 26px;
+}
+
+.commu-drill-group-title {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+}
+
+.commu-drill-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.commu-drill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px;
+    text-decoration: none;
+    transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.commu-drill-card:hover {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+}
+
+.commu-drill-card-desc {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.commu-drill-card-meta {
+    color: var(--text-muted);
+    display: flex;
+    font-size: 0.82rem;
+    gap: 8px;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.commu-drill-quote {
+    background: var(--bg-surface);
+    border-left: 4px solid var(--accent);
+    color: var(--text-secondary);
+    display: grid;
+    gap: 6px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    padding: 12px 14px;
+}
+
+.commu-drill-quote strong {
+    color: var(--text-primary);
+}
+
+.commu-drill-lookup {
+    border: 1px solid var(--border);
+    color: var(--link);
+    font-size: 0.86rem;
+    justify-self: start;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+
+.commu-drill-lookup:hover {
+    border-color: var(--link);
+}
+
+.commu-drill-order-hint {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin: 0 0 12px;
+}
+
+.commu-drill-order {
+    counter-reset: drill-order;
+    display: grid;
+    gap: 8px;
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+}
+
+.commu-drill-order-item {
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    counter-increment: drill-order;
+    display: flex;
+    gap: 10px;
+    padding: 10px 12px;
+}
+
+.commu-drill-order-item::before {
+    color: var(--text-muted);
+    content: counter(drill-order);
+    font-weight: 700;
+    min-width: 1.2em;
+    text-align: center;
+}
+
+.commu-drill-order-label {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.commu-drill-order-reveal {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+.commu-drill-order-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.commu-drill-order-move {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    cursor: pointer;
+    font: inherit;
+    min-height: 40px;
+    min-width: 40px;
+    padding: 6px 10px;
+}
+
+.commu-drill-order-move:hover:not(:disabled) {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+}
+
+.commu-drill-order-move:disabled {
+    cursor: default;
+    opacity: 0.35;
+}
+
+.commu-drill-order-item.is-correct {
+    background: color-mix(in srgb, var(--accent-green) 22%, var(--bg-surface));
+    border-color: color-mix(in srgb, var(--accent-green) 55%, var(--border));
+}
+
+.commu-drill-order-item.is-wrong {
+    background: color-mix(in srgb, var(--accent-red) 16%, var(--bg-surface));
+    border-color: var(--accent-red);
+}
+
+@media (max-width: 640px) {
+    .commu-drill-grid {
+        grid-template-columns: 1fr;
+    }
+}

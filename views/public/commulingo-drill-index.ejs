@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <main class="container commulingo-shell" data-lang="<%= lang %>">
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: strings.commuLingo.drill }],
+            dictJump: true }) %>
+
+        <header class="box commulingo-hero commulingo-hero--graph">
+            <div>
+                <h1><%= strings.commuLingo.drill %></h1>
+                <p><%= strings.commuLingo.drillDesc %></p>
+            </div>
+        </header>
+
+        <div id="commuDrillDeckList">
+        <% groups.forEach(function(group) { %>
+        <section class="commu-drill-group" aria-label="<%= group.label %>">
+            <h2 class="commu-drill-group-title"><%= group.label %></h2>
+            <div class="commu-drill-grid">
+                <% group.decks.forEach(function(deck) { %>
+                <a class="commu-drill-card" href="/commulingo/drill/<%= encodeURIComponent(deck.id) %>">
+                    <strong class="commu-drill-card-title"><%= deck.title %></strong>
+                    <% if (deck.cardNote) { %><span class="commu-drill-card-desc"><%= deck.cardNote %></span><% } %>
+                    <span class="commu-drill-card-meta">
+                        <span><%= deck.count %> <%= deck.countUnit %></span>
+                        <span data-drill-best="<%= deck.id %>"></span>
+                    </span>
+                </a>
+                <% }) %>
+            </div>
+        </section>
+        <% }) %>
+        </div>
+
+        <a class="commu-person-detail-back" href="/commulingo">← <%= lang === 'en' ? 'CommuLingo' : '공산링고' %></a>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script>
+        window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
+    </script>
+    <script src="/js/commulingo-drill.js?v=<%= assetVersion %>"></script>
+</body>
+</html>

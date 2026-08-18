@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <main class="container commulingo-shell" data-lang="<%= lang %>">
+        <script id="commulingo-drill-meta" type="application/json"><%- JSON.stringify(deckMeta).replace(/</g, '\\u003c') %></script>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: strings.commuLingo.drill, href: '/commulingo/drill' },
+                { label: deckTitle }
+            ],
+            dictJump: true }) %>
+
+        <header class="box commulingo-hero commulingo-hero--graph">
+            <div>
+                <h1><%= deckTitle %></h1>
+                <p><%= deckDescription %></p>
+            </div>
+        </header>
+
+        <% if (deckMeta.kind === 'timeline') { %>
+        <section class="commu-quiz" id="drillStage" aria-live="polite">
+            <div class="commu-quiz-top">
+                <a class="btn btn-secondary" href="/commulingo/drill"><%= strings.commuLingo.drillBackToDecks %></a>
+                <div class="commu-quiz-meter">
+                    <span id="drillCount"></span>
+                    <div class="commu-meter-track"><div id="drillMeterFill"></div></div>
+                </div>
+            </div>
+            <article class="commu-question">
+                <p class="commu-lesson-title" id="drillHeading"></p>
+                <p class="commu-drill-order-hint"><%= strings.commuLingo.drillOrderHint %></p>
+                <ol class="commu-drill-order" id="drillOrderList"></ol>
+                <div class="commu-feedback is-hidden" id="drillFeedback"></div>
+                <div class="commu-quiz-actions">
+                    <button type="button" class="btn btn-primary" id="drillNextBtn"><%= strings.commuLingo.drillCheckOrder %></button>
+                </div>
+            </article>
+        </section>
+        <% } else { %>
+        <section class="commu-quiz" id="drillStage" aria-live="polite">
+            <div class="commu-quiz-top">
+                <a class="btn btn-secondary" href="/commulingo/drill"><%= strings.commuLingo.drillBackToDecks %></a>
+                <div class="commu-quiz-meter">
+                    <span id="drillCount"></span>
+                    <div class="commu-meter-track"><div id="drillMeterFill"></div></div>
+                </div>
+            </div>
+            <article class="commu-question">
+                <h2 id="drillPrompt"></h2>
+                <blockquote class="commu-drill-quote is-hidden" id="drillQuote"></blockquote>
+                <div class="commu-choices" id="drillChoices"></div>
+                <div class="commu-feedback is-hidden" id="drillFeedback"></div>
+                <div class="commu-quiz-actions">
+                    <button type="button" class="btn btn-primary" id="drillNextBtn" disabled><%= strings.commuLingo.next %></button>
+                </div>
+            </article>
+        </section>
+        <% } %>
+
+        <a class="commu-person-detail-back" href="/commulingo/drill">← <%= strings.commuLingo.drill %></a>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script>
+        window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
+    </script>
+    <script src="/js/commulingo-drill.js?v=<%= assetVersion %>"></script>
+</body>
+</html>
