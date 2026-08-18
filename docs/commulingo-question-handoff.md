@@ -444,3 +444,43 @@ For local UI smoke testing, run a temporary server on an unused port and check:
 The audit is heuristic. By default it reports advisory hits and only fails on clear fatal content-shape problems, such as embedded Correct/Incorrect markers or malformed choice feedback. Treat advisory hits as review prompts, not automatic failures; `scripts/validate-commulingo.js` is the blocking structural gate. Use `node scripts/audit-commulingo-quality.js --strict` only when intentionally gating on every heuristic hit.
 
 A separate generation script can then rewrite only flagged chapters, rather than regenerating the whole dataset.
+
+## Training Ground (드릴), August 18 2026
+
+`/commulingo/drill` — 사전 데이터에서 자동 생성되는 무작위 문제 은행. 손으로 쓰는
+레슨 문항과 달리, 용어·인물·사건 사전이 자라면 문제도 함께 자란다.
+
+### 구조
+
+- 생성기: `data/commulingo/drills.js` — 용어·인물·사건 스토어를 읽어 덱을 만들고
+  스토어 참조에 메모이즈한다. 생성 파일 없음. 오답 추출은 문항 id 시드 고정
+  PRNG라서 데이터가 같으면 덱과 version 해시도 같다 (?v= 불변 캐싱의 근거).
+- 라우트: `routes/commulingo-drills.js` — 허브(`/drill`), 플레이어(`/drill/:deckId`),
+  덱 JSON(`/drill/deck/:deckId`, 이중 언어 통짜, server.js의 세션 없는 공개 데이터
+  경로에 등록).
+- 뷰: `views/public/commulingo-drill-index.ejs`, `commulingo-drill.ejs`.
+- 클라이언트: `public/js/commulingo-drill.js` — 허브 기록 표시 + 퀴즈/연표 플레이어
+  겸용. 라운드 표본과 보기 섞기는 클라이언트 몫. 기록은 localStorage
+  `commulingo-drill-v1`만 쓰고 서버 진도 동기화는 없다 (레슨 진도와 달리
+  라운드가 무작위 표본이라 점수가 비교 가능하지 않다).
+
+### 덱 종류와 품질 규칙
+
+- 용어 10덱 (갈래별): 정의→용어. 정의문에 표제어나 괄호 약칭이 노출되면 제외.
+  오답은 같은 갈래·가까운 시기에서, 상위/하위/관련 용어와 표제어가 포함 관계인
+  용어는 제외 (정답과 다투는 보기 금지).
+- 인물 9덱 (무리별): 표어(epithet) 또는 결정적 순간 인용→인물. 인용에 본인 이름
+  조각(성·이름·전체·키릴)이 있으면 인용 문제 제외. 오답은 같은 무리·가까운 생년,
+  인용에 이름이 등장하는 인물은 오답으로도 금지.
+- 사건 2덱: 장면(연표 항목)→사건, 활동 기록(note)→인물. 시기가 겹치는 사건은
+  오답으로 쓰지 않는다 — 한 장면이 두 사건 어느 쪽에도 속한다고 우길 수 있는
+  보기를 만들지 않기 위해서다.
+- 연표 게임 2덱: 사건 5개 배열(시작 연도 중복 없는 표본), 한 사건 내 장면 5개
+  배열(원본 배열 순서가 정답 키). 채점 후 시기/날짜 공개.
+- 덱당 문항 상한 240 (시드 고정 표본). 프롬프트·보기는 레슨과 같은 이유로
+  링크하지 않고, 해설의 사전 링크는 href 필드로만 전달한다.
+
+### 진입점
+
+공산링고 홈(`commulingo-index.ejs`)의 「훈련장」 카드. 사전 탭(dictTabs)에는 넣지
+않았다.
