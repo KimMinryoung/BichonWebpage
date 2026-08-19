@@ -17,6 +17,8 @@
 // - house: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/house.svg
 // - corn: Pictogrammers Material Design Icons (Apache-2.0):
 // https://github.com/Templarian/MaterialDesign/blob/master/svg/corn.svg
+// - hammer-sickle: Pictogrammers Material Design Icons (Apache-2.0):
+// https://github.com/Templarian/MaterialDesign/blob/master/svg/hammer-sickle.svg
 // - swords: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/swords.svg
 // - scroll-text: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/scroll-text.svg
 // Everything else is Lucide (MIT) except two custom drawings: `commulingo`,
@@ -27,6 +29,7 @@ const ICON_PATHS = {
     eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
     shield: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/>',
     star: '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3L5.8 21 7 14.2 2 9.3l6.9-1L12 2Z"/>',
+    'hammer-sickle': '<path fill="currentColor" stroke="none" d="M22 20.59L20.59 22L17.45 18.86C16.89 19.23 16.3 19.56 15.66 19.78C14 20.36 12.2 20.4 10.53 19.88C9.5 19.58 8.56 19.05 7.75 18.37L4.56 21.56C4 22.15 3.03 22.15 2.44 21.56C1.86 21 1.86 20 2.44 19.44L5.82 16.06L8.47 15.54C9.19 16.45 10.19 17.13 11.28 17.5C12.44 17.85 13.72 17.84 14.87 17.46C15.16 17.37 15.44 17.26 15.7 17.12L7.6 9L5.83 10.78L3 7.95L7.95 3L12.19 4.41L9 7.6L17.31 15.89C17.5 15.71 17.65 15.53 17.8 15.33C19.3 13.36 19.42 10.42 18.09 8C16.78 5.57 14.5 3.55 12 2C13.41 2.5 14.76 3.17 16 4.04C17.24 4.91 18.43 5.93 19.33 7.25C20.23 8.54 20.87 10.12 21 11.79C21.1 13.47 20.66 15.23 19.7 16.65C19.5 17 19.24 17.28 19 17.56L22 20.59Z"/>',
     handshake: '<path d="m11 17 2 2a3 3 0 0 0 4.2 0l3.8-3.8a3 3 0 0 0 0-4.2l-4-4a3 3 0 0 0-4.2 0L12 8"/><path d="m13 7-2-2a3 3 0 0 0-4.2 0L3 8.8a3 3 0 0 0 0 4.2l4 4a3 3 0 0 0 4.2 0l.8-.8"/><path d="m8 12 2 2 4-4"/>',
     // A treaty scroll for 외국 정치가. handshake was unavailable (it is the
     // 외무인민위원부 office glyph) and the hand-drawn negotiating table read as

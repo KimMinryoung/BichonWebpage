@@ -3992,3 +3992,178 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
         grid-template-columns: 1fr;
     }
 }
+
+/* ── Politburo membership page (/commulingo/politburo) ──────────────────
+   Era sections and per-congress tables over the people dictionary. Tables
+   scroll inside their own wrapper so the page body never scrolls sideways. */
+.commu-politburo-head {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+}
+
+.commu-politburo-head h1 {
+    font-size: 1.35rem;
+    margin: 0;
+}
+
+.commu-politburo-range {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin: 2px 0 10px;
+}
+
+.commu-politburo-intro,
+.commu-politburo-era-intro {
+    color: var(--text-primary);
+    line-height: 1.65;
+    margin: 0;
+    word-break: normal;
+}
+
+.commu-politburo-era,
+.commu-politburo-congresses {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+}
+
+/* Era sections fold like the congress blocks; the card keeps its frame and
+   the summary row takes over the padding. */
+.commu-politburo-era {
+    padding: 0;
+}
+
+.commu-politburo-era > summary {
+    cursor: pointer;
+    padding: 14px 20px;
+}
+
+.commu-politburo-era > summary:hover {
+    background: var(--btn-hover);
+}
+
+.commu-politburo-era > summary h2 {
+    display: inline;
+}
+
+.commu-politburo-era .commu-politburo-era-intro {
+    padding: 2px 20px 0;
+}
+
+.commu-politburo-era .commu-politburo-scroll {
+    margin: 12px 20px 16px;
+}
+
+.commu-politburo-era h2,
+.commu-politburo-congresses h2 {
+    font-size: 1.1rem;
+    margin: 0 0 8px;
+}
+
+.commu-politburo-period {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-left: 6px;
+}
+
+.commu-politburo-scroll {
+    margin-top: 12px;
+    overflow-x: auto;
+}
+
+.commu-politburo-table {
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    width: 100%;
+}
+
+.commu-politburo-table th,
+.commu-politburo-table td {
+    border: 1px solid var(--border);
+    padding: 6px 9px;
+    text-align: left;
+    vertical-align: top;
+    word-break: normal;
+}
+
+/* Only the name column stays on one line; tenure and notes wrap, so the
+   table fits the shell width and the scroll wrapper is a fallback, not the
+   normal reading mode. Spans are separated by ' · ', which gives the wrap
+   its break points between stints rather than inside a date. */
+.commu-politburo-table td:first-child {
+    white-space: nowrap;
+}
+
+.commu-politburo-table td:last-child {
+    min-width: 10em;
+}
+
+/* One stint ("정위원 1919.03–1924.01") never breaks internally; the tenure
+   cell wraps only at the ' · ' between stints, so a wrapped line always
+   starts at a readable unit. */
+.commu-politburo-stint {
+    white-space: nowrap;
+}
+
+.commu-politburo-table th {
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.commu-politburo-unlinked {
+    color: var(--text-muted);
+}
+
+.commu-politburo-congress {
+    border: 1px solid var(--border);
+    margin-top: 10px;
+}
+
+.commu-politburo-congress summary {
+    align-items: baseline;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding: 10px 12px;
+}
+
+.commu-politburo-congress summary:hover {
+    background: var(--btn-hover);
+}
+
+.commu-politburo-congress-title {
+    font-weight: 700;
+}
+
+.commu-politburo-congress-meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.commu-politburo-congress-note {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 12px 4px;
+}
+
+.commu-politburo-congress h3 {
+    font-size: 0.95rem;
+    margin: 10px 12px 0;
+}
+
+.commu-politburo-congress .commu-politburo-scroll {
+    margin: 8px 12px 12px;
+}
+
+.commu-politburo-sources {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+}

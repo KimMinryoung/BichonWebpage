@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-politburo-page" data-lang="<%= lang %>">
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: en ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { label: en ? 'The Soviet Politburo' : '소련 정치국' }
+            ],
+            dictJump: 'people' }) %>
+        <header class="commu-politburo-head">
+            <h1><%= en ? 'The Soviet Politburo' : '소련 정치국' %></h1>
+            <p class="commu-politburo-range">1917–1991</p>
+            <p class="commu-politburo-intro"><%= intro %></p>
+        </header>
+
+        <% eras.forEach(function(era) { %>
+        <details class="commu-politburo-era" id="<%= era.id %>">
+            <summary>
+                <h2 id="era-<%= era.id %>"><%= era.title %> <span class="commu-politburo-period"><%= era.period %></span></h2>
+            </summary>
+            <p class="commu-politburo-era-intro"><%= era.intro %></p>
+            <div class="commu-politburo-scroll">
+                <table class="commu-politburo-table">
+                    <thead>
+                        <tr>
+                            <th scope="col"><%= en ? 'Person' : '인물' %></th>
+                            <th scope="col"><%= en ? 'Tenure' : '재임' %></th>
+                            <th scope="col"><%= en ? 'Notes' : '비고' %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% era.rows.forEach(function(row) { %>
+                        <tr>
+                            <td><% if (row.href) { %><a href="<%= row.href %>"><%= row.name %></a><% } else { %><span class="commu-politburo-unlinked"><%= row.name %></span><% } %></td>
+                            <td><% row.tenureParts.forEach(function(part, i) { %><% if (i) { %> · <% } %><span class="commu-politburo-stint"><%= part %></span><% }) %></td>
+                            <td><%= row.note %></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+        <% }) %>
+
+        <section class="commu-politburo-congresses" aria-labelledby="politburo-congresses-title">
+            <h2 id="politburo-congresses-title"><%= en ? 'Composition by party congress' : '당대회 기수별 구성' %></h2>
+            <p class="commu-politburo-era-intro"><%= en
+                ? 'Each block’s table lists everyone who passed through that term, mid-term by-elections, promotions and removals included. The member counts in the heading are the body’s actual size as elected at the congress, not the table’s row count. The 21st (extraordinary) Congress of 1959 elected no new Presidium.'
+                : '각 항목의 표는 보선·승격·해임 등 임기 중 변동까지 포함해 그 기수를 거쳐 간 전원을 싣는다. 머리글의 인원수는 표의 행 수가 아니라 당대회에서 선출된 시점의 실제 정원이다. 1959년의 제21차(비상) 당대회는 새 간부회를 선출하지 않았다.' %></p>
+            <% congresses.forEach(function(congress) { %>
+            <details class="commu-politburo-congress" id="congress-<%= congress.n %>">
+                <summary>
+                    <span class="commu-politburo-congress-title"><%= congress.title %></span>
+                    <span class="commu-politburo-congress-meta"><%= congress.date %> · <%= en ? 'Full' : '정위원' %> <%= congress.electedFull %><% if (congress.electedCandidates) { %> · <%= en ? 'Candidates' : '후보' %> <%= congress.electedCandidates %><% } %></span>
+                </summary>
+                <% if (congress.note) { %><p class="commu-politburo-congress-note"><%= congress.note %></p><% } %>
+                <% ['full', 'candidates'].forEach(function(bucket) { %>
+                <% var members = congress[bucket]; if (!members.length) return; %>
+                <h3><%= bucket === 'full' ? (en ? 'Full members' : '정위원') : (en ? 'Candidate members' : '후보위원') %></h3>
+                <div class="commu-politburo-scroll">
+                    <table class="commu-politburo-table">
+                        <thead>
+                            <tr>
+                                <th scope="col"><%= en ? 'Person' : '인물' %></th>
+                                <th scope="col"><%= en ? 'Entry' : '진입' %></th>
+                                <th scope="col"><%= en ? 'Change' : '변동' %></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% members.forEach(function(row) { %>
+                            <tr>
+                                <td><% if (row.href) { %><a href="<%= row.href %>"><%= row.name %></a><% } else { %><span class="commu-politburo-unlinked"><%= row.name %></span><% } %></td>
+                                <td><%= row.in %></td>
+                                <td><%= row.out %></td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <% }) %>
+            </details>
+            <% }) %>
+        </section>
+
+        <p class="commu-politburo-sources"><%= sources %></p>
+        <a class="commu-person-detail-back" href="/commulingo/people">&larr; <%= en ? 'People dictionary' : '인물 사전' %></a>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -59,6 +59,14 @@
                 <h2><%= en ? 'People Categories and Soviet Institution Timelines' : '인물 분류와 소련 기관별 지도부' %></h2>
             </summary>
             <div class="commu-office-grid">
+                <a class="commu-office-card commu-role-category-link" href="/commulingo/politburo">
+                    <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
+                    <span class="commu-role-category-copy">
+                        <h3><%= en ? 'The Soviet Politburo' : '소련 정치국' %></h3>
+                        <p><%= en ? 'Membership 1917–1991, by era and congress' : '1917–1991 구성원, 시기별·기수별' %></p>
+                    </span>
+                    <span class="commu-role-category-arrow" aria-hidden="true">→</span>
+                </a>
                 <% roleCategoriesList.forEach(function(category) { %>
                 <a class="commu-office-card commu-role-category-link" href="/commulingo/roles/<%= category.id %>">
                     <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(category.icon) %></span>
