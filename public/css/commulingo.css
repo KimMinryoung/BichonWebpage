@@ -4022,6 +4022,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     word-break: normal;
 }
 
+/* The era blurbs are context, not the content; the tables are. */
+.commu-politburo-era-intro {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
 .commu-politburo-era,
 .commu-politburo-congresses {
     background: var(--card-bg);
@@ -4101,10 +4108,10 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     min-width: 10em;
 }
 
-/* One stint ("정위원 1919.03–1924.01") never breaks internally; the tenure
-   cell wraps only at the ' · ' between stints, so a wrapped line always
-   starts at a readable unit. */
+/* One stint ("정위원 1919.03–1924.01") per line: a multi-stint career reads
+   as a small list rather than a run-on line, and a date never breaks. */
 .commu-politburo-stint {
+    display: block;
     white-space: nowrap;
 }
 

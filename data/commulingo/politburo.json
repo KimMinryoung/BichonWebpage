@@ -1,7 +1,7 @@
 {
  "intro": {
-  "ko": "정치국(Политбюро)은 당대회가 뽑은 중앙위원회가 다시 그 안에서 뽑은 소수 기구로, 소련에서 실질적 최고 권력이 머문 자리였다. 표결권을 가진 정위원과 표결권 없는 후보위원으로 나뉘었고, 1952~1966년에는 「중앙위원회 간부회(프레지디움)」라는 이름을 썼다. 이 페이지는 1917년의 첫 정치국부터 1991년 해체까지의 구성원을 시기별·당대회 기수별로 정리한다. 이름을 누르면 인물 사전으로 이동한다.",
-  "en": "The Politburo was the small body the Central Committee elected from its own ranks, and the place where supreme power in the Soviet Union actually sat. It divided into voting full members and non-voting candidate members, and from 1952 to 1966 bore the name Presidium of the Central Committee. This page lays out its membership from the first Politburo of 1917 to the dissolution of 1991, by era and by party congress. Names link to the people dictionary."
+  "ko": "정치국(Политбюро)은 당대회가 뽑은 중앙위원회가 다시 그 안에서 뽑은 소수 기구로, 소련에서 실질적 최고 권력이 머문 자리였다. 표결권을 가진 정위원과 표결권 없는 후보위원으로 나뉘었고, 1952~1966년에는 「중앙위원회 간부회(프레지디움)」라는 이름을 썼다.",
+  "en": "The Politburo was the small body the Central Committee elected from its own ranks, and the place where supreme power in the Soviet Union actually sat. It divided into voting full members and non-voting candidate members, and from 1952 to 1966 bore the name Presidium of the Central Committee."
  },
  "sources": {
   "ko": "명단과 날짜는 각 당대회 기수별 구성 목록(Известия ЦК КПСС·knowbysight.info 계열 자료 기반)을 따르되, 쿠이비셰프의 진입(1927.12), 트로츠키·카메네프의 해임(1926.10), 셸레핀·셸레스트의 진입(1964.11), 1953년 3월의 간부회 축소 등은 러시아어 문헌과 대조해 바로잡았다.",
@@ -2629,8 +2629,8 @@
    },
    "period": "1917.10",
    "intro": {
-    "ko": "정치국이라는 이름은 10월 무장봉기 준비 속에서 처음 등장했다. 1917년 10월 23일(구력 10일) 중앙위원회는 봉기의 정치적 지도를 위해 7인의 정치국을 두기로 했으나, 이 기구는 상설화되지 못했고 실제로 한 번도 따로 소집되지 않았다. 봉기는 중앙위원회와 페트로그라드 소비에트 군사혁명위원회가 직접 이끌었다.",
-    "en": "The name Politburo first appeared amid preparations for the October uprising. On 23 (10) October 1917 the Central Committee resolved to form a seven-man Politburo to give the rising political direction, but the body never became permanent and never actually met separately. The uprising was led by the Central Committee itself and the Military Revolutionary Committee of the Petrograd Soviet."
+    "ko": "1917년 10월 23일(구력 10일) 중앙위원회가 무장봉기의 정치적 지도를 위해 7인의 정치국을 두기로 하면서 이 이름이 처음 등장했다. 상설 기구가 되지 못했고 실제로 소집되지도 않았다.",
+    "en": "The name first appeared on 23 (10) October 1917, when the Central Committee formed a seven-man Politburo to direct the armed uprising. It never became a standing body and never actually met."
    },
    "list": [
     "lenin",
@@ -2650,8 +2650,8 @@
    },
    "period": "1919–1924",
    "intro": {
-    "ko": "1919년 3월 제8차 당대회가 상설 정치국을 만들었다. 정위원 5인과 표결권 없는 후보위원으로 출발한 이 기구는 내전 속에서 당과 국가의 실질적 최고 의사결정 기관이 되었다. 레닌 생전의 정치국은 표결보다 토론으로 움직였고, 구성도 비교적 안정적이었다. 1922년 스탈린이 서기장이 되면서 서기국과 정치국을 잇는 자리가 생겼고, 레닌의 와병과 함께 그 무게가 드러나기 시작했다.",
-    "en": "The 8th Congress of March 1919 created the standing Politburo: five full members plus non-voting candidates. Through the civil war it became the real supreme decision-making body of party and state. In Lenin’s lifetime it worked by argument more than by vote, and its composition stayed fairly stable. Stalin’s appointment as General Secretary in 1922 created the hinge between the Secretariat and the Politburo, and as Lenin fell ill its weight began to tell."
+    "ko": "1919년 3월 제8차 당대회가 정위원 5인과 표결권 없는 후보위원으로 상설 정치국을 만들었고, 내전 속에서 이 기구는 당과 국가의 실질적 최고 의사결정 기관이 되었다.",
+    "en": "The 8th Congress of March 1919 created the standing Politburo of five full members plus non-voting candidates, and through the civil war it became the real supreme decision-making body of party and state."
    },
    "list": [
     "lenin",
@@ -2677,8 +2677,8 @@
    },
    "period": "1924–1934",
    "intro": {
-    "ko": "레닌 사후 10년 동안 정치국은 승계 투쟁의 전장이었다. 트로츠키, 지노비예프·카메네프의 통합반대파, 부하린·리코프·톰스키의 우파가 차례로 패배해 밀려났고, 그 빈자리는 스탈린이 서기국을 통해 키운 인물들로 채워졌다. 1930년의 제16차 당대회에 이르면 정치국에 스탈린의 다수파에 맞설 세력은 남지 않았다.",
-    "en": "For the decade after Lenin’s death the Politburo was the battlefield of the succession. Trotsky, the United Opposition of Zinoviev and Kamenev, and then the Right of Bukharin, Rykov and Tomsky were defeated and pushed out in turn, their places filled by people Stalin had raised through the Secretariat. By the 16th Congress of 1930 no force remained in the Politburo to stand against his majority."
+    "ko": "레닌 사후 10년 동안 정치국은 승계 투쟁의 전장이었다. 트로츠키, 지노비예프·카메네프, 부하린·리코프·톰스키가 차례로 밀려났고, 빈자리는 스탈린이 서기국을 통해 키운 인물들로 채워졌다.",
+    "en": "For the decade after Lenin's death the Politburo was the battlefield of the succession. Trotsky, Zinoviev and Kamenev, then Bukharin, Rykov and Tomsky were pushed out in turn, their places filled by people Stalin had raised through the Secretariat."
    },
    "list": [
     "dzerzhinsky",
@@ -2706,8 +2706,8 @@
    },
    "period": "1934–1941",
    "intro": {
-    "ko": "대숙청은 정치국 자체도 비껴가지 않았다. 이 시기 정치국에 있던 인물 가운데 추바리·코시오르·포스티셰프·루주타크·에이헤가 처형되었고, 오르조니키제는 자살했으며, 앞선 시기에 밀려난 부하린·리코프·카메네프·지노비예프도 이때 살해되었다. 살아남은 자리는 예조프의 몰락 이후 베리야, 즈다노프, 흐루쇼프, 말렌코프 등 스탈린 말년을 채울 세대가 이어받았다.",
-    "en": "The Terror did not spare the Politburo itself. Of its members in these years Chubar, Kosior, Postyshev, Rudzutak and Eikhe were shot and Ordzhonikidze killed himself, while Bukharin, Rykov, Kamenev and Zinoviev, pushed out earlier, were murdered now. The places of the dead passed, after Yezhov’s own fall, to the generation that would fill Stalin’s last years: Beria, Zhdanov, Khrushchev, Malenkov."
+    "ko": "대숙청은 정치국 자체도 비껴가지 않아, 이 시기 위원 여럿이 처형되거나 자살로 내몰렸다. 그 자리는 베리야, 즈다노프, 흐루쇼프, 말렌코프 등 스탈린 말년을 채울 세대가 이어받았다.",
+    "en": "The Terror did not spare the Politburo itself: several of its members in these years were shot or driven to suicide. Their places passed to the generation of Stalin's last years, Beria, Zhdanov, Khrushchev and Malenkov."
    },
    "list": [
     "postyshev",
@@ -2730,8 +2730,8 @@
    },
    "period": "1941–1953",
    "intro": {
-    "ko": "전쟁기 실권은 정치국이 아니라 국가방위위원회(GKO)에 있었고, 전후의 정치국은 스탈린의 측근 정치 속에서 형식화되었다. 1949년의 레닌그라드 사건은 보즈네센스키를 처형대로 보냈다. 1952년 제19차 당대회는 정치국을 「중앙위원회 간부회」로 개칭하며 정위원 25명·후보 11명으로 확대했는데, 고참들을 신인 속에 묻으려는 스탈린의 포석으로 읽힌다. 스탈린이 죽자 사흘 만에 간부회는 다시 소수로 줄었다.",
-    "en": "In wartime real power sat not in the Politburo but in the State Defence Committee, and after the war the body was hollowed out by Stalin’s inner-circle politics; the Leningrad Affair of 1949 sent Voznesensky to the execution cellar. The 19th Congress of 1952 renamed it the Presidium and enlarged it to 25 full and 11 candidate members, widely read as Stalin’s move to bury the old guard among newcomers. Within days of his death it was cut back to a small body."
+    "ko": "전쟁기 실권은 국가방위위원회에 있었고, 전후 정치국은 스탈린의 측근 정치 속에서 형식화되었다. 1952년 제19차 당대회는 정치국을 「중앙위원회 간부회」로 개칭·확대했으나 스탈린 사후 곧 소수로 되돌아갔다.",
+    "en": "In wartime real power sat in the State Defence Committee, and after the war the Politburo was hollowed out by Stalin's inner-circle politics. The 19th Congress of 1952 renamed it the Presidium and enlarged it, but within days of Stalin's death it was cut back to a small body."
    },
    "list": [
     "bulganin",
@@ -2770,8 +2770,8 @@
    },
    "period": "1953–1964",
    "intro": {
-    "ko": "스탈린 사후의 집단지도는 베리야 체포(1953)와 「반당 그룹」 사건(1957)을 거치며 흐루쇼프의 우위로 정리되었다. 1957년 6월 간부회 다수가 흐루쇼프 해임을 시도했으나 중앙위원회 총회가 이를 뒤집었고, 몰로토프·말렌코프·카가노비치가 한꺼번에 축출되었다. 이 사건은 패배한 지도자를 더 이상 죽이지 않는다는 새 규칙도 함께 남겼다. 1964년 10월, 이번에는 절차를 갖춘 간부회가 흐루쇼프 자신을 해임했다.",
-    "en": "The collective leadership after Stalin resolved into Khrushchev’s primacy through Beria’s arrest in 1953 and the Anti-Party Group affair of 1957, when a Presidium majority tried to remove him and a Central Committee plenum overturned them, expelling Molotov, Malenkov and Kaganovich at a stroke. That affair also set a new rule: defeated leaders were no longer killed. In October 1964 a better-prepared Presidium removed Khrushchev himself."
+    "ko": "스탈린 사후의 집단지도는 베리야 체포(1953)와 「반당 그룹」 사건(1957)을 거치며 흐루쇼프의 우위로 정리되었다. 1964년 10월에는 절차를 갖춘 간부회가 흐루쇼프 자신을 해임했다.",
+    "en": "The collective leadership after Stalin resolved into Khrushchev's primacy through Beria's arrest in 1953 and the Anti-Party Group affair of 1957. In October 1964 a better-prepared Presidium removed Khrushchev himself."
    },
    "list": [
     "kirichenko",
@@ -2806,8 +2806,8 @@
    },
    "period": "1964–1982",
    "intro": {
-    "ko": "브레즈네프 시기의 정치국은 소련 역사상 가장 안정적이었다. 「간부의 안정」 노선 아래 위원들은 실각 대신 노환으로 물러났고, 평균 연령은 꾸준히 올라 1980년경 70세에 이르렀다. 경쟁자였던 셸레핀과 포드고르니는 조용히 밀려났으며, 수슬로프가 이념을, 그로미코·우스티노프·안드로포프가 외교·국방·보안을 나누어 맡는 과두 체제가 굳어졌다.",
-    "en": "The Brezhnev Politburo was the most stable in Soviet history. Under the policy of stability of cadres its members left by old age rather than by purge, and the average age climbed steadily, reaching seventy around 1980. The rivals Shelepin and Podgorny were eased out quietly, and an oligarchy set in: Suslov holding ideology, Gromyko, Ustinov and Andropov dividing diplomacy, defence and security."
+    "ko": "「간부의 안정」 노선 아래 소련 역사상 가장 안정적인 정치국이 되었고, 위원들은 실각 대신 노환으로 물러났다. 평균 연령은 꾸준히 올라 1980년경 70세에 이르렀다.",
+    "en": "Under the policy of stability of cadres this was the most stable Politburo in Soviet history, its members leaving by old age rather than by purge. The average age climbed steadily, reaching seventy around 1980."
    },
    "list": [
     "shelepin",
@@ -2840,8 +2840,8 @@
    },
    "period": "1982–1991",
    "intro": {
-    "ko": "브레즈네프·안드로포프·체르넨코가 잇따라 재임 중 사망한 뒤, 1985년 3월 고르바초프가 서기장이 되었다. 그는 몇 해 만에 정치국을 거의 전부 교체했지만, 페레스트로이카가 깊어질수록 권력의 중심은 정치국에서 대통령제와 소비에트 기구로 옮겨 갔다. 1988년 9월과 1989년 9월의 대개편으로 고참들이 한꺼번에 퇴장했고, 정치국은 당의 최고 기관이면서도 더 이상 나라의 최고 기관이 아니게 되었다.",
-    "en": "After Brezhnev, Andropov and Chernenko died in office in quick succession, Gorbachev became General Secretary in March 1985 and within a few years had replaced almost the whole Politburo. Yet as perestroika deepened, power drained from the Politburo toward the presidency and the soviets. The sweeping reshuffles of September 1988 and September 1989 retired the old guard en masse, and the Politburo, still the party’s highest organ, ceased to be the country’s."
+    "ko": "브레즈네프·안드로포프·체르넨코가 잇따라 재임 중 사망한 뒤, 고르바초프는 몇 해 만에 정치국을 거의 전부 교체했다. 그러나 페레스트로이카가 깊어질수록 실권은 정치국에서 대통령제와 소비에트 기구로 옮겨 갔다.",
+    "en": "After Brezhnev, Andropov and Chernenko died in office in quick succession, Gorbachev replaced almost the whole Politburo within a few years. Yet as perestroika deepened, power drained from the Politburo toward the presidency and the soviets."
    },
    "list": [
     "vitaly-vorotnikov",
@@ -2877,8 +2877,8 @@
    },
    "period": "1990.07–1991.08",
    "intro": {
-    "ko": "1990년 7월 제28차 당대회는 정치국을 전혀 다른 기구로 바꾸었다. 공화국 당 제1서기 전원이 당연직처럼 포함되어 인원은 24명으로 늘었고, 후보위원 제도는 폐지되었으며, 고르바초프를 빼면 국가 요직을 겸한 위원이 없었다. 지리적으로 흩어진 이 정치국은 주례 회의조차 유지하지 못했고, 실권은 이미 대통령 기구로 넘어가 있었다. 1991년 8월 쿠데타 실패 후 고르바초프는 서기장을 사임했고, 11월 러시아에서 당 활동이 금지되면서 정치국의 역사는 끝났다.",
-    "en": "In July 1990 the 28th Congress turned the Politburo into a different body altogether. Every republic first secretary was included almost ex officio, swelling it to 24 members; the candidate category was abolished; and apart from Gorbachev no member held a top state post. Geographically scattered, it could not even keep up weekly meetings, and real power had already passed to the presidential apparatus. After the failed August 1991 coup Gorbachev resigned as General Secretary, and the party’s ban that November ended the Politburo’s history."
+    "ko": "1990년 7월 제28차 당대회는 공화국 당 제1서기 전원을 포함하는 확대 개편으로 정치국의 성격을 바꾸었고, 후보위원 제도를 폐지했다. 1991년 8월 쿠데타 실패 후 고르바초프가 서기장을 사임했고, 11월 당 활동 금지로 정치국의 역사가 끝났다.",
+    "en": "In July 1990 the 28th Congress remade the Politburo to include every republic first secretary and abolished the candidate category. After the failed August 1991 coup Gorbachev resigned as General Secretary, and the party's ban that November ended the Politburo's history."
    },
    "list": [
     "ivashko",
@@ -2991,8 +2991,8 @@
     "candidates": []
    },
    "note": {
-    "ko": "정치국이 상설화되기 전, 중앙위원회의 일상 업무는 소수 뷰로가 맡았다. 스베르들로프는 1919년 3월 재임 중 사망했다.",
-    "en": "Before the Politburo became a standing body, day-to-day work of the Central Committee fell to a small Bureau. Sverdlov died in office in March 1919."
+    "ko": "뷰로(бюро)는 소수의 상임 집행 기구를 가리키는 러시아어로, 정치국(политбюро)의 「국」이 바로 이 말이다. 정치국이 상설화되기 전에는 이 중앙위원회 뷰로가 당의 일상 업무를 맡았다.",
+    "en": "A bureau (бюро) is a small standing executive body; the \"-buro\" in Politburo is this same word. Before the Politburo became a standing organ, this Central Committee Bureau handled the party's day-to-day work."
    }
   },
   {

@@ -36,7 +36,7 @@
                         <% era.rows.forEach(function(row) { %>
                         <tr>
                             <td><% if (row.href) { %><a href="<%= row.href %>"><%= row.name %></a><% } else { %><span class="commu-politburo-unlinked"><%= row.name %></span><% } %></td>
-                            <td><% row.tenureParts.forEach(function(part, i) { %><% if (i) { %> · <% } %><span class="commu-politburo-stint"><%= part %></span><% }) %></td>
+                            <td><% row.tenureParts.forEach(function(part) { %><span class="commu-politburo-stint"><%= part %></span><% }) %></td>
                             <td><%= row.note %></td>
                         </tr>
                         <% }) %>
