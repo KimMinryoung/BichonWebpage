@@ -4174,3 +4174,31 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     line-height: 1.6;
     margin: 0;
 }
+
+/* ── Politburo box on the person page ────────────────────────────────────
+   Sits between the career timeline and the related events: the stints in
+   the same quiet list voice as the career rows, one line per stint. */
+.commu-person-politburo-stints {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 10px 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.commu-person-politburo-stints li {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.commu-person-politburo-note {
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+    margin: 8px 0 0;
+}
+

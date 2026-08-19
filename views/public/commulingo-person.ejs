@@ -67,6 +67,16 @@
         </section>
         <% } %>
 
+        <% if (typeof politburo !== 'undefined' && politburo) { %>
+        <section class="commu-person-detail-section commu-person-politburo" aria-labelledby="politburo">
+            <h2 id="politburo"><a class="commu-topic-link" href="/commulingo/politburo"><%= en ? 'The Soviet Politburo' : '소련 정치국' %></a></h2>
+            <ul class="commu-person-politburo-stints">
+                <% politburo.parts.forEach(function(part) { %><li><%= part %></li><% }) %>
+            </ul>
+            <% if (politburo.note) { %><p class="commu-person-politburo-note"><%= politburo.note %></p><% } %>
+        </section>
+        <% } %>
+
         <% if (historyEvents && historyEvents.length) { %>
         <section class="commu-person-detail-section commu-person-history-events" aria-labelledby="history-events">
             <h2 id="history-events"><%= en ? "Related historical events" : "관련 역사 사건" %></h2>

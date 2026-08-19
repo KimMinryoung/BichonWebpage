@@ -1,29 +1,13 @@
 const express = require('express');
 const db = require('../config/database');
-const { loadPolitburo } = require('../data/commulingo/politburo-store');
+const { loadPolitburo, spanParts, endText } = require('../data/commulingo/politburo-store');
 const { localize } = require('../data/commulingo/localize');
 
 const router = express.Router();
 
 // ── Label tables ─────────────────────────────────────────────────────────
-// The dataset stores structured events, not prose, so both languages render
-// from one source and a wording change is a code change here, not a data pass.
-const SPAN_KINDS = {
-    full: { ko: '정위원', en: 'Full member' },
-    cand: { ko: '후보위원', en: 'Candidate' },
-    orig: { ko: '1917.10 봉기 정치국', en: 'October 1917 Politburo' },
-};
-const END_KINDS = {
-    died: { ko: '재임 중 사망', en: 'died in office' },
-    assassinated: { ko: '암살', en: 'assassinated' },
-    suicide: { ko: '자살', en: 'died by suicide' },
-    arrested: { ko: '체포', en: 'arrested' },
-    removed: { ko: '해임', en: 'removed' },
-    retired: { ko: '퇴임', en: 'retired' },
-    not: { ko: '미재선', en: 'not re-elected' },
-    resigned: { ko: '서기장 사임', en: 'resigned as General Secretary' },
-    banned: { ko: '1991.11 당 활동 금지까지 재임', en: 'served until the party ban of 1991.11' },
-};
+// Span/end labels live in politburo-store (the person-page box shares them);
+// what stays here is congress-table-only vocabulary.
 const IN_KINDS = {
     new: { ko: '선출', en: 'elected' },
     re: { ko: '유임', en: 're-elected' },
@@ -49,16 +33,6 @@ const OUT_KINDS = {
 function dated(labels, event, lang) {
     const label = localize(labels[event.t] || labels.removed, lang);
     return event.d ? `${event.d} ${label}` : label;
-}
-
-// One string per stint; the view keeps each unbreakable and lets the line
-// wrap only between stints, at the ' · ' separators.
-function spanParts(spans, lang) {
-    return spans.map(span => {
-        const kind = localize(SPAN_KINDS[span.k] || SPAN_KINDS.full, lang);
-        if (!span.f) return kind;
-        return `${kind} ${span.f}–${span.t || ''}`;
-    });
 }
 
 // One DB round trip for every name on the page; the id set only changes when
@@ -102,7 +76,7 @@ router.get('/', async (req, res) => {
             rows: era.list.map(key => {
                 const member = data.members[key];
                 const noteParts = [];
-                if (member.end) noteParts.push(dated(END_KINDS, member.end, lang));
+                if (member.end) noteParts.push(endText(member.end, lang));
                 if (member.note) noteParts.push(localize(member.note, lang));
                 return {
                     ...personCell(key, member, names, lang),

@@ -21,6 +21,7 @@ const {
 } = require('../data/commulingo/linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
+const { politburoCareerFor } = require('../data/commulingo/politburo-store');
 const { dictTabs } = require('../data/commulingo/dict-tabs');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
@@ -508,6 +509,15 @@ router.get('/people/:personId', async (req, res) => {
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
         }));
+        // Politburo career, when the person sat on the body (politburo.json is
+        // keyed by dictionary person id). Renders as one box between the career
+        // timeline and the related events.
+        let politburo = null;
+        try {
+            politburo = politburoCareerFor(personId, lang);
+        } catch (e) {
+            console.error('commulingo person politburo box:', e);
+        }
         // Public research reports that mention this person. Failure only costs
         // the section, never the page.
         let relatedReports = [];
@@ -527,6 +537,7 @@ router.get('/people/:personId', async (req, res) => {
             bioHtml,
             sections,
             historyEvents,
+            politburo,
             genealogies: genealogyLinksFor('person', personId, lang),
             relatedReports,
             relatedDocs,
