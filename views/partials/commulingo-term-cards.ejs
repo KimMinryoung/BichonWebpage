@@ -7,7 +7,8 @@
 <% terms.forEach(function(term) { %>
 <a class="commu-event-card" href="/commulingo/terms/<%= term.id %>"
     data-category="<%= term.category || '__none__' %>"
-    data-search="<%= [term.original, term.term, term.termOther, term.aliasSearchText, term.period, term.definition].filter(Boolean).join(' ') %>">
+    data-search="<%= [term.original, term.term, term.termOther, term.aliasSearchText, term.period, term.definition].filter(Boolean).join(' ') %>"
+    data-search-title="<%= [term.original, term.term, term.termOther, term.aliasSearchText].filter(Boolean).join(' ') %>">
     <div class="commu-event-meta">
         <% if (term.period) { %><span class="commu-event-period"><%= term.period %></span><% } %>
         <% if (term.categoryLabel) { %><span class="commu-event-category"><%= term.categoryLabel %></span><% } %>

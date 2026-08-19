@@ -21,7 +21,8 @@
         <section class="commu-event-grid" id="commu-event-list" aria-label="<%= en ? 'Historical events' : '역사 사건 목록' %>">
             <% events.forEach(function(event) { %>
             <a class="commu-event-card" href="/commulingo/events/<%= event.id %>"
-                data-search="<%= [event.period, event.title, event.summary].filter(Boolean).join(' ') %>">
+                data-search="<%= [event.period, event.title, event.summary].filter(Boolean).join(' ') %>"
+                data-search-title="<%= event.title %>">
                 <div class="commu-event-meta">
                     <span class="commu-event-period"><%= event.period %></span>
                 </div>

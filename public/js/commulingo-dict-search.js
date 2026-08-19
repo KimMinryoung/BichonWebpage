@@ -98,6 +98,27 @@
         var chips = chipRoot ? Array.prototype.slice.call(chipRoot.querySelectorAll('[data-category]')) : [];
         var category = '';
 
+        // ── Title-first ranking ───────────────────────────────────────────
+        // A reader who types a document's title expects that document on top,
+        // not whichever card mentions the words first in its description. Cards
+        // carry a second haystack, data-search-title (the headword, both
+        // languages' titles, aliases), and results sort into three tiers:
+        // every term in the title, some terms in the title, terms only in the
+        // rest. The lists are CSS grids, so the tiers are applied as `order`
+        // values instead of moving nodes — hidden cards have no boxes, and the
+        // reveal cost stays what it was.
+        function titleTier(card, terms) {
+            var titleHay = (card.getAttribute('data-search-title') || '').toLocaleLowerCase();
+            if (!titleHay) return 2;
+            var hits = 0;
+            for (var i = 0; i < terms.length; i++) {
+                if (titleHay.indexOf(terms[i]) !== -1) hits++;
+            }
+            return hits === terms.length ? 0 : (hits ? 1 : 2);
+        }
+        var reordered = [];  // cards whose style.order is currently set
+        var firstMatch = null; // top-ranked match, for Enter-to-open
+
         // ── Chunked reveal ────────────────────────────────────────────────
         // Showing a card costs style, layout and paint, and that is the whole
         // cost of filtering this list: 209 matches take 503ms and clearing back
@@ -112,6 +133,9 @@
         var sentinel = document.createElement('div');
         sentinel.className = 'commu-chunk-sentinel';
         sentinel.setAttribute('aria-hidden', 'true');
+        // Ranked cards get order 0–2; the sentinel must trail every shown card
+        // for the near-viewport check to mean "the reader is near the end".
+        sentinel.style.order = '99';
         var observer = null;
         var settle = null;
 
@@ -196,6 +220,9 @@
 
             highlighted.forEach(clearHighlights);
             highlighted = [];
+            reordered.forEach(function(card) { card.style.order = ''; });
+            reordered = [];
+            firstMatch = null;
 
             if (!searching && !categorized) {
                 list.classList.remove('is-filtering');
@@ -234,6 +261,18 @@
                 }
                 return matches;
             });
+            if (searching) {
+                matched.forEach(function(card) { card.__tier = titleTier(card, terms); });
+                // Stable sort: within a tier the browsing order stands.
+                matched.sort(function(a, b) { return a.__tier - b.__tier; });
+                matched.forEach(function(card) {
+                    if (card.__tier) {
+                        card.style.order = String(card.__tier);
+                        reordered.push(card);
+                    }
+                });
+                firstMatch = matched[0] || null;
+            }
             var visible = matched.length;
 
             // Highlighting is handed to the reveal, so a card that arrives with
@@ -276,8 +315,12 @@
                 apply();
             } else if (event.key === 'Enter') {
                 ensureLoaded().then(function() {
-                    var first = cards.find(function(card) { return !card.hidden; });
-                    if (first && input.value.trim()) window.location.href = first.href;
+                    if (!input.value.trim()) return;
+                    // The last keystroke's pass may still be queued behind rAF;
+                    // settle it so Enter opens what the ranking would show first.
+                    if (frame) { cancelAnimationFrame(frame); frame = null; }
+                    apply();
+                    if (firstMatch) window.location.href = firstMatch.href;
                 });
             }
         });

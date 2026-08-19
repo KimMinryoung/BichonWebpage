@@ -21,7 +21,8 @@
         <section class="commu-event-grid" id="commu-doc-list" aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
             <% docs.forEach(function(doc) { %>
             <a class="commu-event-card" href="/commulingo/docs/<%= doc.id %>"
-                data-search="<%= doc.searchText %>">
+                data-search="<%= doc.searchText %>"
+                data-search-title="<%= doc.searchTitleText %>">
                 <span class="commu-event-period"><%= doc.kind %></span>
                 <h2><%= doc.title %></h2>
                 <p><%= doc.description %></p>
