@@ -532,10 +532,6 @@
    }
   },
   "karl-bauman": {
-   "name": {
-    "ko": "카를 바우만",
-    "en": "Karl Bauman"
-   },
    "spans": [
     {
      "k": "cand",
@@ -2216,11 +2212,7 @@
     "t": "banned"
    }
   },
-  "dzasokhov": {
-   "name": {
-    "ko": "알렉산드르 자소호프",
-    "en": "Alexander Dzasokhov"
-   },
+  "alexander-dzasokhov": {
    "spans": [
     {
      "k": "full",
@@ -2244,11 +2236,7 @@
     "t": "banned"
    }
   },
-  "gumbaridze": {
-   "name": {
-    "ko": "기비 굼바리제",
-    "en": "Givi Gumbaridze"
-   },
+  "givi-gumbaridze": {
    "spans": [
     {
      "k": "full",
@@ -2285,11 +2273,7 @@
     "t": "banned"
    }
   },
-  "luchinsky": {
-   "name": {
-    "ko": "표트르 루친스키",
-    "en": "Pyotr Luchinsky"
-   },
+  "pyotr-luchinsky": {
    "spans": [
     {
      "k": "full",
@@ -2301,11 +2285,7 @@
     "t": "banned"
    }
   },
-  "mahkamov": {
-   "name": {
-    "ko": "카호르 마흐카모프",
-    "en": "Qahhor Mahkamov"
-   },
+  "qahhor-mahkamov": {
    "spans": [
     {
      "k": "full",
@@ -2334,11 +2314,7 @@
     "d": "1991.04"
    }
   },
-  "movsisyan": {
-   "name": {
-    "ko": "블라디미르 몹시샨",
-    "en": "Vladimir Movsisyan"
-   },
+  "vladimir-movsisyan": {
    "spans": [
     {
      "k": "full",
@@ -2400,10 +2376,6 @@
    }
   },
   "yuri-prokofyev": {
-   "name": {
-    "ko": "유리 프로코피예프",
-    "en": "Yuri Prokofyev"
-   },
    "spans": [
     {
      "k": "full",
@@ -2415,11 +2387,7 @@
     "t": "banned"
    }
   },
-  "rubiks": {
-   "name": {
-    "ko": "알프레드스 루빅스",
-    "en": "Alfrēds Rubiks"
-   },
+  "alfreds-rubiks": {
    "spans": [
     {
      "k": "full",
@@ -2459,11 +2427,7 @@
     "en": "Joined the August 1991 coup"
    }
   },
-  "sillari": {
-   "name": {
-    "ko": "엔아르노 실라리",
-    "en": "Enn-Arno Sillari"
-   },
+  "enn-arno-sillari": {
    "spans": [
     {
      "k": "full",
@@ -2477,10 +2441,6 @@
    }
   },
   "yefrem-sokolov": {
-   "name": {
-    "ko": "예프렘 소콜로프",
-    "en": "Yefrem Sokolov"
-   },
    "spans": [
     {
      "k": "full",
@@ -2522,11 +2482,7 @@
     "en": "Left to become Soviet vice-president; figurehead of the August 1991 coup"
    }
   },
-  "malofeyev": {
-   "name": {
-    "ko": "아나톨리 말로페예프",
-    "en": "Anatoly Malofeyev"
-   },
+  "anatoly-malofeyev": {
    "spans": [
     {
      "k": "full",
@@ -2538,11 +2494,7 @@
     "t": "banned"
    }
   },
-  "pogosyan": {
-   "name": {
-    "ko": "스테판 포고샨",
-    "en": "Stepan Pogosyan"
-   },
+  "stepan-pogosyan": {
    "spans": [
     {
      "k": "full",
@@ -2555,11 +2507,7 @@
     "d": "1991.07"
    }
   },
-  "annus": {
-   "name": {
-    "ko": "렘비트 아누스",
-    "en": "Lembit Annus"
-   },
+  "lembit-annus": {
    "spans": [
     {
      "k": "full",
@@ -2571,11 +2519,7 @@
     "t": "banned"
    }
   },
-  "amanbayev": {
-   "name": {
-    "ko": "줌갈베크 아만바예프",
-    "en": "Dzhumgalbek Amanbayev"
-   },
+  "dzhumgalbek-amanbayev": {
    "spans": [
     {
      "k": "full",
@@ -2587,11 +2531,7 @@
     "t": "banned"
    }
   },
-  "eremei": {
-   "name": {
-    "ko": "그리고레 예레메이",
-    "en": "Grigore Eremei"
-   },
+  "grigore-eremei": {
    "spans": [
     {
      "k": "full",
@@ -2603,11 +2543,7 @@
     "t": "banned"
    }
   },
-  "surkov": {
-   "name": {
-    "ko": "미하일 수르코프",
-    "en": "Mikhail Surkov"
-   },
+  "mikhail-surkov": {
    "spans": [
     {
      "k": "full",
@@ -2883,33 +2819,33 @@
    "list": [
     "ivashko",
     "mykolas-burokevi-ius",
-    "dzasokhov",
+    "alexander-dzasokhov",
     "ivan-frolov",
-    "gumbaridze",
+    "givi-gumbaridze",
     "stanislav-gurenko",
     "islam-karimov",
-    "luchinsky",
-    "mahkamov",
+    "pyotr-luchinsky",
+    "qahhor-mahkamov",
     "masaliyev",
-    "movsisyan",
+    "vladimir-movsisyan",
     "ayaz-mutalibov",
     "nazarbayev",
     "saparmurat-niyazov",
     "ivan-polozkov",
     "yuri-prokofyev",
-    "rubiks",
+    "alfreds-rubiks",
     "galina-semyonova",
     "oleg-shenin",
-    "sillari",
+    "enn-arno-sillari",
     "yefrem-sokolov",
     "yegor-stroev",
     "gennady-yanayev",
-    "malofeyev",
-    "pogosyan",
-    "annus",
-    "amanbayev",
-    "eremei",
-    "surkov"
+    "anatoly-malofeyev",
+    "stepan-pogosyan",
+    "lembit-annus",
+    "dzhumgalbek-amanbayev",
+    "grigore-eremei",
+    "mikhail-surkov"
    ]
   }
  ],
@@ -3531,10 +3467,7 @@
       "p": "andrei-andreyev"
      },
      {
-      "name": {
-       "ko": "카를 바우만",
-       "en": "Karl Bauman"
-      },
+      "p": "karl-bauman",
       "in": {
        "t": "by",
        "d": "1929.04"
@@ -5917,10 +5850,7 @@
    "members": {
     "full": [
      {
-      "name": {
-       "ko": "줌갈베크 아만바예프",
-       "en": "Dzhumgalbek Amanbayev"
-      },
+      "p": "dzhumgalbek-amanbayev",
       "in": {
        "t": "by",
        "d": "1991.04"
@@ -5930,10 +5860,7 @@
       }
      },
      {
-      "name": {
-       "ko": "렘비트 아누스",
-       "en": "Lembit Annus"
-      },
+      "p": "lembit-annus",
       "in": {
        "t": "by",
        "d": "1991.01"
@@ -5952,10 +5879,7 @@
       }
      },
      {
-      "name": {
-       "ko": "알렉산드르 자소호프",
-       "en": "Alexander Dzasokhov"
-      },
+      "p": "alexander-dzasokhov",
       "in": {
        "t": "new"
       },
@@ -5964,10 +5888,7 @@
       }
      },
      {
-      "name": {
-       "ko": "그리고레 예레메이",
-       "en": "Grigore Eremei"
-      },
+      "p": "grigore-eremei",
       "in": {
        "t": "by",
        "d": "1991.04"
@@ -5993,10 +5914,7 @@
       }
      },
      {
-      "name": {
-       "ko": "기비 굼바리제",
-       "en": "Givi Gumbaridze"
-      },
+      "p": "givi-gumbaridze",
       "in": {
        "t": "new"
       },
@@ -6033,10 +5951,7 @@
       }
      },
      {
-      "name": {
-       "ko": "표트르 루친스키",
-       "en": "Pyotr Luchinsky"
-      },
+      "p": "pyotr-luchinsky",
       "in": {
        "t": "new"
       },
@@ -6045,10 +5960,7 @@
       }
      },
      {
-      "name": {
-       "ko": "카호르 마흐카모프",
-       "en": "Qahhor Mahkamov"
-      },
+      "p": "qahhor-mahkamov",
       "in": {
        "t": "new"
       },
@@ -6057,10 +5969,7 @@
       }
      },
      {
-      "name": {
-       "ko": "아나톨리 말로페예프",
-       "en": "Anatoly Malofeyev"
-      },
+      "p": "anatoly-malofeyev",
       "in": {
        "t": "by",
        "d": "1990.12"
@@ -6083,10 +5992,7 @@
       }
      },
      {
-      "name": {
-       "ko": "블라디미르 몹시샨",
-       "en": "Vladimir Movsisyan"
-      },
+      "p": "vladimir-movsisyan",
       "in": {
        "t": "new"
       },
@@ -6123,10 +6029,7 @@
       }
      },
      {
-      "name": {
-       "ko": "스테판 포고샨",
-       "en": "Stepan Pogosyan"
-      },
+      "p": "stepan-pogosyan",
       "in": {
        "t": "by",
        "d": "1990.12"
@@ -6146,10 +6049,7 @@
       }
      },
      {
-      "name": {
-       "ko": "유리 프로코피예프",
-       "en": "Yuri Prokofyev"
-      },
+      "p": "yuri-prokofyev",
       "in": {
        "t": "new"
       },
@@ -6158,10 +6058,7 @@
       }
      },
      {
-      "name": {
-       "ko": "알프레드스 루빅스",
-       "en": "Alfrēds Rubiks"
-      },
+      "p": "alfreds-rubiks",
       "in": {
        "t": "new"
       },
@@ -6188,10 +6085,7 @@
       }
      },
      {
-      "name": {
-       "ko": "엔아르노 실라리",
-       "en": "Enn-Arno Sillari"
-      },
+      "p": "enn-arno-sillari",
       "in": {
        "t": "new"
       },
@@ -6201,10 +6095,7 @@
       }
      },
      {
-      "name": {
-       "ko": "예프렘 소콜로프",
-       "en": "Yefrem Sokolov"
-      },
+      "p": "yefrem-sokolov",
       "in": {
        "t": "new"
       },
@@ -6223,10 +6114,7 @@
       }
      },
      {
-      "name": {
-       "ko": "미하일 수르코프",
-       "en": "Mikhail Surkov"
-      },
+      "p": "mikhail-surkov",
       "in": {
        "t": "by",
        "d": "1991.04"
