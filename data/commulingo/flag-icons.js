@@ -63,6 +63,7 @@ const FLAG_NAMES = {
     japan: { ko: '일본', en: 'Japan' },
     india: { ko: '인도', en: 'India' },
     turkey: { ko: '튀르키예', en: 'Turkey' },
+    greece: { ko: '그리스', en: 'Greece' },
     argentina: { ko: '아르헨티나', en: 'Argentina' },
     chile: { ko: '칠레', en: 'Chile' },
     'north-korea': { ko: '조선민주주의인민공화국', en: "Democratic People's Republic of Korea" },

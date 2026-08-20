@@ -104,6 +104,7 @@ const NATION_SCRIPTS = {
     korea: ['hangul', 'han'],
     india: ['devanagari', 'bengali', 'latin'],
     israel: ['hebrew'],
+    greece: ['greek'],
 };
 
 // Nations whose people write the family name first, and how the two parts
