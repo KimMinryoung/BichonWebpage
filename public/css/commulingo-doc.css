@@ -593,20 +593,22 @@
    altered name in <a class="fic-name" data-real="실명" href="/commulingo/people/…">
    (scripts/wrap-fic-names.js); tapping opens a small popover naming the
    historical figure — the JS lives in commulingo-doc.ejs. Being anchors, the
-   marks are also skipped by the dictionary auto-linker. Kept visually apart
-   from the entity-link vocabulary above: text-coloured with a faint dotted
-   underline, so a page carrying hundreds of marks still reads as prose. */
+   marks are also skipped by the dictionary auto-linker. Undecorated at rest —
+   a page carries hundreds of marks and underlining them all made the prose
+   hard to read (owner call, 2026-08-21) — so the popover itself is the
+   affordance: it opens on hover as well as on tap, and only the hovered name
+   shows a faint dotted underline while its popover is up. */
 .book a.fic-name {
   color: inherit;
-  text-decoration: underline dotted;
-  text-decoration-color: var(--text-muted);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-decoration: none;
   cursor: pointer;
 }
 
 .book a.fic-name:hover {
-  text-decoration-color: var(--link, #5d7a5a);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--text-muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .fic-name-pop {

@@ -179,23 +179,32 @@ var refGroups = [
 </script>
 <% } %>
 <script>
-// 소설 번역 문헌의 변형 인물명(a.fic-name, data-real="실명") 탭 팝오버.
-// 이름 자체의 이동은 막고, 팝오버가 실존 인물을 밝히며 인물 카드 링크(새 탭)를
-// 대신 낸다. 같은 이름을 다시 누르거나, 바깥을 누르거나, Esc면 닫힌다.
-// fic-name이 없는 문서에서는 위임 리스너 하나만 남는 공짜 코드다.
+// 소설 번역 문헌의 변형 인물명(a.fic-name, data-real="실명") 팝오버.
+// 이름은 평문 그대로 두고(밑줄 없음 — 표시 수백 개가 다 밑줄이면 본문이
+// 읽기 어렵다), 마우스를 올리면 실존 인물 팝오버가 바로 뜨고 벗어나면 잠시
+// 뒤 닫힌다. 팝오버로 마우스를 옮기면 유지되어 안의 카드 링크(새 탭)를 누를
+// 수 있다. 탭(클릭)은 팝오버를 고정한다 — 호버가 없는 터치 화면의 경로이고,
+// 다시 누르거나 바깥을 누르거나 Esc면 닫힌다. 이름 자체의 이동은 막는다.
+// fic-name이 없는 문서에서는 위임 리스너만 남는 공짜 코드다.
 (function () {
     var open = null;
-    function close() { if (open) { open.remove(); open = null; } }
-    document.addEventListener('click', function (event) {
-        var name = event.target.closest('a.fic-name');
-        if (!name) {
-            if (open && !event.target.closest('.fic-name-pop')) close();
-            return;
-        }
-        event.preventDefault();
-        var again = open && open._for === name;
+    var pinned = false;
+    var closeTimer = null;
+    function cancelClose() {
+        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+    }
+    function close() {
+        cancelClose();
+        if (open) { open.remove(); open = null; pinned = false; }
+    }
+    function scheduleClose() {
+        if (pinned) return;
+        cancelClose();
+        closeTimer = setTimeout(close, 200);
+    }
+    function show(name) {
+        if (open && open._for === name) return;
         close();
-        if (again) return;
         var pop = document.createElement('div');
         pop.className = 'fic-name-pop';
         var label = document.createElement('span');
@@ -214,6 +223,8 @@ var refGroups = [
         } else {
             pop.appendChild(document.createTextNode(real));
         }
+        pop.addEventListener('mouseenter', cancelClose);
+        pop.addEventListener('mouseleave', scheduleClose);
         pop._for = name;
         document.body.appendChild(pop);
         var rect = name.getBoundingClientRect();
@@ -223,6 +234,30 @@ var refGroups = [
         pop.style.top = (rect.bottom + window.scrollY + 6) + 'px';
         pop.style.left = left + 'px';
         open = pop;
+    }
+    document.addEventListener('mouseover', function (event) {
+        var name = event.target.closest('a.fic-name');
+        if (!name) return;
+        cancelClose();
+        show(name);
+    });
+    document.addEventListener('mouseout', function (event) {
+        var name = event.target.closest('a.fic-name');
+        if (name && open && open._for === name) scheduleClose();
+    });
+    document.addEventListener('click', function (event) {
+        var name = event.target.closest('a.fic-name');
+        if (!name) {
+            if (open && !event.target.closest('.fic-name-pop')) close();
+            return;
+        }
+        event.preventDefault();
+        if (open && open._for === name) {
+            if (pinned) { close(); } else { pinned = true; }
+            return;
+        }
+        show(name);
+        pinned = true;
     });
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') close();
