@@ -588,3 +588,47 @@
   color: var(--text-muted);
   text-transform: none;
 }
+
+/* Fictionalized character names (소설 번역 문헌). The fragment wraps each
+   altered name in <a class="fic-name" data-real="실명" href="/commulingo/people/…">
+   (scripts/wrap-fic-names.js); tapping opens a small popover naming the
+   historical figure — the JS lives in commulingo-doc.ejs. Being anchors, the
+   marks are also skipped by the dictionary auto-linker. Kept visually apart
+   from the entity-link vocabulary above: text-coloured with a faint dotted
+   underline, so a page carrying hundreds of marks still reads as prose. */
+.book a.fic-name {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--text-muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.book a.fic-name:hover {
+  text-decoration-color: var(--link, #5d7a5a);
+}
+
+.fic-name-pop {
+  position: absolute;
+  z-index: 60;
+  max-width: min(300px, calc(100vw - 24px));
+  padding: 8px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.fic-name-pop .fic-name-pop-label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.fic-name-pop a {
+  color: var(--link);
+}

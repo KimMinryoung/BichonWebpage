@@ -178,6 +178,57 @@ var refGroups = [
 })();
 </script>
 <% } %>
+<script>
+// 소설 번역 문헌의 변형 인물명(a.fic-name, data-real="실명") 탭 팝오버.
+// 이름 자체의 이동은 막고, 팝오버가 실존 인물을 밝히며 인물 카드 링크(새 탭)를
+// 대신 낸다. 같은 이름을 다시 누르거나, 바깥을 누르거나, Esc면 닫힌다.
+// fic-name이 없는 문서에서는 위임 리스너 하나만 남는 공짜 코드다.
+(function () {
+    var open = null;
+    function close() { if (open) { open.remove(); open = null; } }
+    document.addEventListener('click', function (event) {
+        var name = event.target.closest('a.fic-name');
+        if (!name) {
+            if (open && !event.target.closest('.fic-name-pop')) close();
+            return;
+        }
+        event.preventDefault();
+        var again = open && open._for === name;
+        close();
+        if (again) return;
+        var pop = document.createElement('div');
+        pop.className = 'fic-name-pop';
+        var label = document.createElement('span');
+        label.className = 'fic-name-pop-label';
+        label.textContent = <%- JSON.stringify(en ? 'Historical figure' : '실존 인물') %>;
+        pop.appendChild(label);
+        var real = name.getAttribute('data-real') || '';
+        var href = name.getAttribute('href');
+        if (href) {
+            var link = document.createElement('a');
+            link.href = href;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.textContent = real + ' →';
+            pop.appendChild(link);
+        } else {
+            pop.appendChild(document.createTextNode(real));
+        }
+        pop._for = name;
+        document.body.appendChild(pop);
+        var rect = name.getBoundingClientRect();
+        var left = rect.left + window.scrollX;
+        var maxLeft = window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12;
+        if (left > maxLeft) left = Math.max(window.scrollX + 12, maxLeft);
+        pop.style.top = (rect.bottom + window.scrollY + 6) + 'px';
+        pop.style.left = left + 'px';
+        open = pop;
+    });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') close();
+    });
+})();
+</script>
 <%# 테마 토글(#themeToggle) 핸들러는 common.js에 있다. 이 리더는 partials/head를
     쓰지 않고 자체 head를 갖는 탓에 스크립트를 하나도 싣지 않아, nav 파셜이
     가져오는 nav.js(언어 드롭다운)만 동작하고 테마 전환은 죽어 있었다. %>
