@@ -618,7 +618,6 @@
   padding: 8px 12px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   font-size: 0.85rem;
   line-height: 1.5;
@@ -653,27 +652,37 @@
 }
 
 /* Reader-facing usage notice (읽는 법) at the head of a translated novel:
-   the fic-name marks carry no visual decoration, so this box is where the
-   reader learns the names respond at all. Unlike the editorial asides (left
-   rule, inset background) it is a full-border card, so it reads as part of
-   the reader's chrome rather than part of the text. */
+   the fic-name marks carry no visual decoration, so this box is the one place
+   the reader learns the names respond at all — it must not be missable.
+   Accent-green fill with cream text (owner call, 2026-08-21): --accent is the
+   same #214d2e in both themes, and cream keeps ~8:1 on it, so the box is the
+   loudest thing on the page without leaving the palette. Square corners —
+   angular boxes are the site standard. */
 .book .doc-notice {
   margin: 1.4rem 0;
   padding: 0.8rem 1.1rem;
   border: 1px solid var(--border-emphasis);
-  border-radius: 10px;
-  background: var(--bg-surface);
-  font-size: 0.92em;
+  background: var(--accent);
+  color: var(--clr-cream);
+  font-size: 0.95em;
 }
 
 .book .doc-notice p {
-  margin: 0.2em 0;
+  margin: 0.25em 0;
   text-align: start;
 }
 
 .book .doc-notice .doc-notice-label {
   font-weight: 600;
-  color: var(--text-muted);
   font-size: 0.85em;
   letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+/* The one link in the box stays cream like the text around it; the underline
+   alone marks it, because a green link colour would vanish on the green fill. */
+.book .doc-notice a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
