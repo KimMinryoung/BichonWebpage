@@ -12,7 +12,7 @@ const {
 // Korean compounds that contain a term alias but must never link.
 // 전세계 contains 전세 (jeonse) and fired in the Communist Manifesto's
 // '전세계의 프롤레타리아여' — the compound never means the housing lease.
-const BLOCKED_TERM_KO = ['집단농장화', '전세계'];
+const BLOCKED_TERM_KO = ['집단농장화', '전세계', '모티프'];
 
 // Aliases that are also ordinary Korean words — the term counterpart of
 // NEVER_LINK_ALIAS_KO in people-linkify. They surfaced when lesson prose
@@ -24,7 +24,10 @@ const BLOCKED_TERM_KO = ['집단농장화', '전세계'];
 // 'UN' is two Latin letters the Korean pass matches without a word boundary,
 // so it fires inside UNKVD, UNRRA and any other acronym that happens to start
 // with those letters. The entry stays reachable as 유엔.
-const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '씨밤', '소련 인민', 'UN'];
+// 코르·레프: 두 글자 음차 별칭이라 오연결이 잦다 — 코르 드 발레의 「코르」가
+// 폴란드 KOR로, 인명 레프(레프 카메네프)가 좌익예술전선(LEF)으로 걸린다.
+// 항목은 표제어(좌익예술전선, 노동자방어위원회(KOR))로 계속 닿는다.
+const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '씨밤', '소련 인민', 'UN', '코르', '레프'];
 
 // Strings refused even when they are the term's own headword. The list above
 // spares the headword deliberately — an entry has to stay reachable by its own

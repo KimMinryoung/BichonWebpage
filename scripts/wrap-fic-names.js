@@ -14,8 +14,10 @@
 // text; without JS the href degrades to a plain person-card link. The reader's
 // popover JS lives in views/public/commulingo-doc.ejs (.fic-name handler).
 //
-// Everything from a `<h2 id="appendix"` heading on is left untouched — the
-// editor's mapping table there links real names by hand.
+// The whole fragment is wrapped, appendix included: the mapping table's
+// 작중 이름 cells are plain fic surfaces, and left bare they were mis-linked
+// by the person pass (울리야노바 → 마리야 울리야노바, 카메네바 → 올가
+// 카메네바). The real-name column links by hand inside <a> and is skipped.
 //
 // Longest surface wins at a given position, and a match glued to a preceding
 // word character is refused (리코바 must not surrender its …코바), mirroring
@@ -48,12 +50,9 @@ function main() {
     const pattern = new RegExp('(' + alternation + ')', 'g');
 
     const html = fs.readFileSync(inPath, 'utf8');
-    const cut = html.search(/<h2 id="appendix"/);
-    const head = cut === -1 ? html : html.slice(0, cut);
-    const tail = cut === -1 ? '' : html.slice(cut);
 
     let count = 0;
-    const wrapped = mapLinkableText(head, text =>
+    const wrapped = mapLinkableText(html, text =>
         text.replace(pattern, (match, _m, offset, source) => {
             const prev = offset > 0 ? source.charAt(offset - 1) : '';
             if (WORD_CHAR.test(prev)) return match;
@@ -62,7 +61,7 @@ function main() {
             const href = entry.person ? ` href="/commulingo/people/${entry.person}"` : '';
             return `<a class="fic-name" data-real="${entry.real}"${href}>${match}</a>`;
         }));
-    fs.writeFileSync(outPath, wrapped + tail);
+    fs.writeFileSync(outPath, wrapped);
     console.log(`${path.basename(outPath)}: wrapped ${count} name occurrences`);
 }
 

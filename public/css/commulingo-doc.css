@@ -634,3 +634,20 @@
 .fic-name-pop a {
   color: var(--link);
 }
+
+/* Chapter epigraphs in translated fiction (『매한가지』): the excerpts the
+   author set at each chapter head, e.g. from the Alice books. The generic
+   blockquote rule above already gives the left rule and secondary colour;
+   this adds the slant and drops justification, which looks wrong on short
+   quoted lines. Pretendard ships no italic face, so the inner <em> alone
+   reads upright in Korean; an explicit oblique angle asks the browser to
+   synthesize the slant (italic falls back where the angle form is
+   unsupported). */
+.book .doc-epigraph {
+  font-style: italic;
+  font-style: oblique 8deg;
+}
+
+.book .doc-epigraph p {
+  text-align: start;
+}
