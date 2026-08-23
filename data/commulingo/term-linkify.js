@@ -47,9 +47,13 @@ const BLOCKED_TERM_KO = [
 // 매파적(정치·군사 강경파가 통화 매파로), 아라(아라곤·아라키의 머리가 ARA로),
 // MO(UN과 같은 꼴 — MOPR·MOOP 머리에서 발화). 각 항목은 표제어와 긴
 // 별칭(볼가 에어록, 우스코레니예, 인민해방위원회, 통화 매파)으로 계속 닿는다.
+// 네프: 신경제정책(네프)의 두 글자 준말이지만 네프테신디카트·네프스키처럼
+// 무관한 음차의 머리이기도 하다. 사건 쪽(event-linkify의 NEVER_LINK_EVENT_KO)과
+// 같은 이유·같은 날 막았다. 항목은 신경제정책·NEP로 계속 닿는다.
 const NEVER_LINK_TERM_ALIAS_KO = [
     '주체', '소개', '호구', '씨밤', '소련 인민', 'UN', '코르', '레프',
     '정치국', '볼가', '인민위원회', '가속화', '매파적', '아라', 'MO',
+    '네프',
 ];
 
 // Strings refused even when they are the term's own headword. The list above

@@ -14,6 +14,14 @@ const {
 // counter-terrorism; consume its compounds first so they pass through.
 const BLOCKED_EVENT_KO = ['대테러리즘', '대테러전', '대테러 작전', '대테러 정책', '대테러 활동'];
 
+// Title-variant strings that must not go into the Korean index. '네프' is the
+// paren short form of '신경제정책(네프)', but it is also the head of unrelated
+// transliterations — 네프테신디카트 (the oil syndicate), 네프스키 — and Korean
+// matching cannot refuse a glued tail (particles hang there legitimately), so
+// the two-glyph form mislinked oil agencies to the NEP. The entry keeps
+// linking from 신경제정책, 신경제정책(네프), and NEP (2026-08-23).
+const NEVER_LINK_EVENT_KO = ['네프'];
+
 // Extra match terms per event beyond the stored titles: common alternate names
 // a report would actually use. Keys are commulingo_history_events ids; events
 // without an entry still match on their ko/en titles.
@@ -21,6 +29,9 @@ const EXTRA_TERMS = {
     'revolution-1905': { en: ['1905 Revolution'] },
     'october-revolution': { ko: ['10월혁명', '볼셰비키 혁명'], en: ['Bolshevik Revolution'] },
     'civil-war': { ko: ['러시아 내전'], en: ['Russian Civil War'] },
+    // Korean prose writes the Latin abbreviation too; the hangul short form
+    // 네프 is refused above (NEVER_LINK_EVENT_KO), so NEP carries instead.
+    'new-economic-policy': { ko: ['NEP'] },
     'ussr-formation': { ko: ['소련 결성'], en: ['Formation of the Soviet Union'] },
     'five-year-plans': { ko: ['5개년 계획', '5개년계획'], en: ['Five-Year Plan', 'Five-Year Plans'] },
     // Title is now 대숙청 / The Great Purge, matching the glossary entry.
@@ -109,6 +120,7 @@ function buildEventLinkIndex(events, options = {}) {
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
+            if (!en && NEVER_LINK_EVENT_KO.includes(alias)) return;
             if (byAlias[alias]) return;
             byAlias[alias] = entry;
             tokens.push(alias);
