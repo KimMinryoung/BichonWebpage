@@ -9,6 +9,9 @@
             <p class="commu-event-question"><%- p.event.questionHtml %></p>
             <p><%- p.event.summaryHtml %></p>
         </header>
+        <% if (p.event.mapSvg) { %>
+        <figure class="commu-event-map"><%- p.event.mapSvg %></figure>
+        <% } %>
 <%
 /* Reading order depends on whether the event has a body yet. With one, the
    article leads and the timeline becomes the reference table it is; without

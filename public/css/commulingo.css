@@ -3454,6 +3454,34 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    question line keeps its headline size. */
 .commu-event-head > p { font-size: .96rem; line-height: 1.85; }
 .commu-event-head > p.commu-event-question { font-size: 1.05rem; line-height: 1.6; }
+/* ── Event location map (event-map-svg.js) ──
+   Coastline-only SVG under the event head. Land/sea both derive from the
+   theme tokens: mixing a little of --border into the surface makes land
+   lighter than sea on the dark theme and darker on the light one, so a single
+   rule reads correctly in both. Markers are the poster red; labels get a
+   surface-colored halo so they stay legible over coastline detail. */
+.commu-event-map { margin: 1.1rem 0 0; }
+.commu-event-map .emap-svg { display: block; width: 100%; height: auto; font-family: inherit; }
+.emap-sea { fill: var(--bg-surface); }
+.emap-land { fill: color-mix(in srgb, var(--border) 13%, var(--bg-surface)); stroke: color-mix(in srgb, var(--border) 40%, transparent); stroke-width: .6; }
+.emap-grid { stroke: color-mix(in srgb, var(--border) 8%, transparent); stroke-width: 1; }
+.emap-border { fill: none; stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
+.emap-marker { fill: var(--text-primary); stroke: var(--bg-surface); stroke-width: 1.4; }
+.emap-marker.is-main { fill: var(--clr-red); }
+.emap-label { fill: var(--text-primary); font-size: 12px; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
+.emap-label.is-main { font-size: 12.5px; font-weight: 700; }
+.emap-inset-sea { fill: color-mix(in srgb, var(--bg-surface) 88%, var(--border)); opacity: .92; }
+.emap-inset-land { fill: color-mix(in srgb, var(--border) 34%, var(--bg-surface)); }
+.emap-inset-frame { fill: color-mix(in srgb, var(--clr-red) 30%, transparent); stroke: var(--clr-red); stroke-width: 1; }
+.emap-inset-border { fill: none; stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
+/* The SVG scales with the container, so on a phone the 12px labels land near
+   6px on glass. Larger in-SVG sizes compensate; markers get the same bump. */
+@media (max-width: 700px) {
+    .emap-label { font-size: 17px; }
+    .emap-label.is-main { font-size: 18px; }
+    .emap-marker { r: 6px; }
+    .emap-marker.is-main { r: 8px; }
+}
 /* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
 /* '상위 항목 · 대숙청' on a nested glossary entry. A reader who lands on
    예조프시나 or 모스크바 재판 has to see which entry it sits under before the
