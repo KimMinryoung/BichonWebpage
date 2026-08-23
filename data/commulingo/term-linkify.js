@@ -16,10 +16,15 @@ const {
 // preceding-char guard); 근위축증·근위발달영역·젊은 근위대 carry 근위 without
 // meaning the Guards designation; 오카야마 and 오카시오-코르테스 carry the 오카
 // missile's two syllables in names (2026-08-23 link-fire audit).
+// 만주파 트로이카(최용건 카드)와 '트로이카'로 불리는(비고츠키의 연구 3인조)은
+// NKVD 처형 기구도 3두체제도 아닌 은유라 어느 항목에도 걸리면 안 된다.
+// 정치적 3두체제 문맥은 본문을 3두체제(트로이카) 꼴로 고쳐 ruling-troika에
+// 걸리게 했고, 여기 남는 것은 링크 없이 지나갈 은유뿐이다.
 const BLOCKED_TERM_KO = [
     '집단농장화', '전세계', '모티프',
     '58-6조', '근위축증', '근위발달영역', '젊은 근위대',
     '오카야마', '오카시오-코르테스',
+    '만주파 트로이카', "'트로이카'로 불리는",
 ];
 
 // Aliases that are also ordinary Korean words — the term counterpart of
