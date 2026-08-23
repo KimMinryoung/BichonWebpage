@@ -7,7 +7,7 @@ const { relatedDocsFor } = require('../data/commulingo/docs-refs');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { getReportsForEvent } = require('../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
-const { renderEventMapSvg, renderEventTimelineMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
+const { renderEventMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
 const { localize } = require('../data/commulingo/localize');
 const { renderMarkdown } = require('../utils/markdown');
 
@@ -208,12 +208,13 @@ async function buildEventPanel(eventId, lang) {
         }
         event.outcomeHtml = link(event.outcome);
         if (event.body) linkTimeline();
-        // Location map (events with no markers get none). Rendered here so it
-        // rides the same per-snapshot memo as the prose.
-        const map = renderEventMapSvg(events[index].locations, lang, event.title);
+        // The one map of the page, at the head of the 연표와 지도 section:
+        // location markers, and the numbered campaign when the timeline
+        // carries geometry. Rendered here so it rides the same per-snapshot
+        // memo as the prose. hasCampaign gates the highlight script.
+        const map = renderEventMapSvg(events[index].locations, lang, event.title, events[index].timeline);
         event.mapSvg = map ? map.svg : '';
-        const timelineMap = renderEventTimelineMapSvg(events[index].timeline, lang, event.title, events[index].locations);
-        event.timelineMapSvg = timelineMap ? timelineMap.svg : '';
+        event.hasCampaign = Boolean(event.mapSvg) && geoNums.size > 0;
         const neighbor = offset => {
             const item = events[index + offset];
             return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;

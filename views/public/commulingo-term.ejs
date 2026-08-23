@@ -34,7 +34,7 @@
         <a class="commu-person-detail-back" data-pair-back href="/commulingo/terms">← <%= en ? 'Glossary' : '용어 사전' %></a>
     </main>
     <% if (paired) { %><script src="/js/commulingo-pair-tabs.js?v=<%= assetVersion %>" defer></script><% } %>
-    <% if (paired && eventPanel.event.timelineMapSvg) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>
+    <% if (paired && eventPanel.event.hasCampaign) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>
     <%- include('../partials/footer') %>
 </body>
 </html>

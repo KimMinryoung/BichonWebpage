@@ -305,6 +305,14 @@ function timelineGeos(timeline) {
 
 const ARROW_VARIANTS = { red: 'red', axis: 'axis' };
 
+// Both maps of a page may draw arrows; the ids collide harmlessly because the
+// definitions are identical (url(#…) resolves to the document's first).
+const ARROWHEAD_DEFS = '<defs>'
+    + '<marker id="emap-head-red" class="emap-head-red" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
+    + '<marker id="emap-head-axis" class="emap-head-axis" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
+    + '<marker id="emap-head-neutral" class="emap-head-neutral" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
+    + '</defs>';
+
 // Gentle bow for a two-point arrow so it reads as movement, not a border.
 function arrowPath(pts) {
     if (pts.length === 2) {
@@ -327,82 +335,11 @@ function arrowPath(pts) {
     return d;
 }
 
-// The campaign map for a timeline: every geo-carrying entry drawn and
-// numbered. Null when no entry has geo — most political events, and that is
-// the intended shape, not a gap. No world inset here: the orientation map at
-// the top of the page already places the region.
-function renderEventTimelineMapSvg(timeline, lang, title, locations) {
-    const geos = timelineGeos(timeline);
-    if (!geos.length) return null;
-
-    const fitPoints = geos.flatMap(({ geo }) => geo.kind === 'point'
-        ? [{ lat: geo.lat, lng: geo.lng }]
-        : geo.points.map(p => ({ lat: p[0], lng: p[1] })));
-    const frame = fitFrame(fitPoints);
-    const project = (lng, lat) => [
-        (lng - frame.x0) / frame.lonSpan * frame.width,
-        (frame.y1 - lat) / frame.latSpan * frame.height,
-    ];
-    const projectPt = p => {
-        const lng = frame.lonShifted && p[1] < 0 ? p[1] + 360 : p[1];
-        return project(lng, p[0]);
-    };
-
+// The numbered geometry itself — arrows, point markers, ①②… badges and the
+// highlight-only place names, layered onto the event map when the timeline
+// carries geometry. avoid: label boxes the badges must slide clear of.
+function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
     const parts = [];
-    const label = lang === 'en'
-        ? `Campaign map: ${title || 'timeline'}`
-        : `전황 지도: ${title || '연표'}`;
-    parts.push(`<svg xmlns="http://www.w3.org/2000/svg" class="emap-svg emap-timeline-svg" viewBox="0 0 ${frame.width} ${frame.height}" role="img" aria-label="${esc(label)}">`);
-    parts.push('<defs>'
-        + '<marker id="emap-head-red" class="emap-head-red" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
-        + '<marker id="emap-head-axis" class="emap-head-axis" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
-        + '<marker id="emap-head-neutral" class="emap-head-neutral" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
-        + '</defs>');
-    parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"/>`);
-    const level = frame.lonSpan > LOW_RES_LON_SPAN ? 'low' : 'high';
-    parts.push(`<path class="emap-land" fill-rule="evenodd" d="${landPath(level, frame, project)}"/>`);
-    parts.push(waterLayers(level, frame, project));
-    const step = graticuleStep(frame.lonSpan);
-    for (let lon = Math.ceil(frame.x0 / step) * step; lon <= frame.x1; lon += step) {
-        const [x] = project(lon, 0);
-        parts.push(`<line class="emap-grid" x1="${x.toFixed(1)}" y1="0" x2="${x.toFixed(1)}" y2="${frame.height}"/>`);
-    }
-    for (let lat = Math.ceil(frame.y0 / step) * step; lat <= frame.y1; lat += step) {
-        const [, y] = project(0, lat);
-        parts.push(`<line class="emap-grid" x1="0" y1="${y.toFixed(1)}" x2="${frame.width}" y2="${y.toFixed(1)}"/>`);
-    }
-
-    // Reference cities under the geometry: the event's own location markers,
-    // re-drawn small and muted so the campaign has named anchors. The frame is
-    // fitted to the campaign, not to these — ones outside just stay off-map.
-    // Their label boxes are kept so number badges dodge them below.
-    const avoid = [];
-    for (const loc of Array.isArray(locations) ? locations : []) {
-        if (!loc || !Number.isFinite(loc.lat) || !Number.isFinite(loc.lng)) continue;
-        const lng = frame.lonShifted && loc.lng < 0 ? loc.lng + 360 : loc.lng;
-        if (lng < frame.x0 + 1 || lng > frame.x1 - 1) continue;
-        if (loc.lat < frame.y0 + 0.5 || loc.lat > frame.y1 - 0.5) continue;
-        const [x, y] = project(lng, loc.lat);
-        const text = localize(loc.label, lang);
-        if (loc.kind === 'geo') {
-            // Physical geography (a river, a strait): a name floating on the
-            // map at its coordinate, no marker dot — terrain, not a place.
-            if (!text) continue;
-            parts.push(`<text class="emap-label is-geo" x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${esc(text)}</text>`);
-            const w = text.length * 11.5;
-            avoid.push({ x0: x - w / 2, x1: x + w / 2, y0: y - 11, y1: y + 4 });
-            continue;
-        }
-        parts.push(`<circle class="emap-ref" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`);
-        if (text) {
-            const flip = x > frame.width * 0.8;
-            const lx = flip ? x - 7 : x + 7;
-            parts.push(`<text class="emap-label is-ref" x="${lx.toFixed(1)}" y="${(y + 12).toFixed(1)}" text-anchor="${flip ? 'end' : 'start'}">${esc(text)}</text>`);
-            const w = text.length * 11.5;
-            avoid.push({ x0: flip ? lx - w : lx, x1: flip ? lx : lx + w, y0: y + 2, y1: y + 15 });
-        }
-    }
-
     // Geometry first, then all badges on top. Badge anchors: the point itself,
     // or the arrow's midpoint; a collision pass pushes overlapping badges down.
     const badges = [];
@@ -464,32 +401,40 @@ function renderEventTimelineMapSvg(timeline, lang, title, locations) {
             parts.push(`<text class="emap-geo-label" data-geo-num="${badge.num}" x="${nx.toFixed(1)}" y="${(y + 24).toFixed(1)}" text-anchor="middle">${esc(badge.name)}</text>`);
         }
     }
-
-    parts.push(`<rect class="emap-border" x="0.5" y="0.5" width="${frame.width - 1}" height="${frame.height - 1}"/>`);
-    parts.push('</svg>');
-    return { svg: parts.join('\n'), width: frame.width, height: frame.height };
+    return parts;
 }
 
 // locations: [{ lat, lng, label: {ko,en}, kind? }] from the event row; kind
 // 'main' gets the emphasized marker, kind 'geo' is a floating physical-
 // geography name (river, strait — no dot, and no vote in the frame fit),
-// anything else the standard marker.
-function renderEventMapSvg(locations, lang, title) {
+// anything else the standard marker. When the timeline carries geometry, the
+// whole numbered campaign is drawn here too, so the map at the top of the
+// page shows the full picture at rest; the frame widens to fit it.
+function renderEventMapSvg(locations, lang, title, timeline) {
     const entries = (Array.isArray(locations) ? locations : []).filter(loc =>
         loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
         && Math.abs(loc.lat) <= 85 && Math.abs(loc.lng) <= 180);
     const markers = entries.filter(loc => loc.kind !== 'geo');
     if (!markers.length) return null;
+    const geos = timelineGeos(timeline);
+    const geoFit = geos.flatMap(({ geo }) => geo.kind === 'point'
+        ? [{ lat: geo.lat, lng: geo.lng }]
+        : geo.points.map(p => ({ lat: p[0], lng: p[1] })));
 
-    const frame = fitFrame(markers);
+    const frame = fitFrame(markers.concat(geoFit));
     const project = (lng, lat) => [
         (lng - frame.x0) / frame.lonSpan * frame.width,
         (frame.y1 - lat) / frame.latSpan * frame.height,
     ];
+    const projectPt = p => {
+        const lng = frame.lonShifted && p[1] < 0 ? p[1] + 360 : p[1];
+        return project(lng, p[0]);
+    };
 
     const parts = [];
     const label = lang === 'en' ? `Map: ${title || 'event locations'}` : `지도: ${title || '사건 위치'}`;
     parts.push(`<svg xmlns="http://www.w3.org/2000/svg" class="emap-svg" viewBox="0 0 ${frame.width} ${frame.height}" role="img" aria-label="${esc(label)}">`);
+    if (geos.length) parts.push(ARROWHEAD_DEFS);
     parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"/>`);
 
     const level = frame.lonSpan > LOW_RES_LON_SPAN ? 'low' : 'high';
@@ -509,7 +454,9 @@ function renderEventMapSvg(locations, lang, title) {
 
     if (frame.lonSpan < 200) parts.push(renderInset(frame));
 
-    // Physical-geography names under the markers.
+    // Physical-geography names under the markers. Their boxes, and the marker
+    // labels' below, feed the badge collision pass when geometry is drawn.
+    const avoid = [];
     for (const loc of entries) {
         if (loc.kind !== 'geo') continue;
         const lng = frame.lonShifted && loc.lng < 0 ? loc.lng + 360 : loc.lng;
@@ -519,6 +466,8 @@ function renderEventMapSvg(locations, lang, title) {
         if (!text) continue;
         const [x, y] = project(lng, loc.lat);
         parts.push(`<text class="emap-label is-geo" x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${esc(text)}</text>`);
+        const w = text.length * 11.5;
+        avoid.push({ x0: x - w / 2, x1: x + w / 2, y0: y - 11, y1: y + 4 });
     }
 
     // Markers, then labels nudged apart: sorted by y, a label landing within a
@@ -545,11 +494,15 @@ function renderEventMapSvg(locations, lang, title) {
         lastLabel[side] = ly;
         const lx = flip ? p.x - 9 : p.x + 9;
         parts.push(`<text class="emap-label${p.main ? ' is-main' : ''}" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${flip ? 'end' : 'start'}">${esc(text)}</text>`);
+        const w = text.length * 12;
+        avoid.push({ x0: flip ? lx - w : lx, x1: flip ? lx : lx + w, y0: ly - 12, y1: ly + 4 });
     }
+
+    if (geos.length) parts.push(...renderGeometryLayer(geos, lang, frame, projectPt, avoid));
 
     parts.push(`<rect class="emap-border" x="0.5" y="0.5" width="${frame.width - 1}" height="${frame.height - 1}"/>`);
     parts.push('</svg>');
     return { svg: parts.join('\n'), width: frame.width, height: frame.height };
 }
 
-module.exports = { renderEventMapSvg, renderEventTimelineMapSvg, timelineGeos };
+module.exports = { renderEventMapSvg, timelineGeos };

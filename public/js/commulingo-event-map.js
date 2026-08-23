@@ -9,15 +9,20 @@
 // row, or empty map unpins. Tapping a map badge pins and scrolls to its row.
 (function () {
     'use strict';
-    var svg = document.querySelector('.commu-event-timeline-map .emap-svg');
-    if (!svg) return;
+    // Both maps of the page carry the numbered geometry — the orientation map
+    // at the top and the campaign map in the timeline section — and they
+    // highlight together.
+    var svgs = Array.prototype.slice.call(
+        document.querySelectorAll('.commu-event-map .emap-svg'));
     var rows = Array.prototype.slice.call(
         document.querySelectorAll('.commu-event-timeline-list > li[data-geo-num]'));
-    if (!rows.length) return;
+    if (!svgs.length || !rows.length) return;
 
     function shapes(num) {
-        return Array.prototype.slice.call(
-            svg.querySelectorAll('[data-geo-num="' + num + '"]'));
+        return svgs.reduce(function (all, svg) {
+            return all.concat(Array.prototype.slice.call(
+                svg.querySelectorAll('[data-geo-num="' + num + '"]')));
+        }, []);
     }
     var shown = null;   // number currently lit
     var pinned = null;  // number held through mouseleave/scroll, or null
@@ -37,7 +42,7 @@
             rows.forEach(function (row) { row.classList.remove('is-map-active'); });
         }
         shown = num;
-        svg.classList.toggle('has-active', num !== null);
+        svgs.forEach(function (svg) { svg.classList.toggle('has-active', num !== null); });
         if (num === null) return;
         shapes(num).forEach(function (el) { el.classList.add('is-active'); });
         rows.forEach(function (row) {
@@ -61,21 +66,23 @@
         });
     });
 
-    svg.addEventListener('click', function (event) {
-        var group = event.target.closest('[data-geo-num]');
-        if (!group) {
-            pinned = null;
+    svgs.forEach(function (svg) {
+        svg.addEventListener('click', function (event) {
+            var group = event.target.closest('[data-geo-num]');
+            if (!group) {
+                pinned = null;
+                markPinned();
+                show(null);
+                return;
+            }
+            var num = parseInt(group.getAttribute('data-geo-num'), 10);
+            pinned = num;
             markPinned();
-            show(null);
-            return;
-        }
-        var num = parseInt(group.getAttribute('data-geo-num'), 10);
-        pinned = num;
-        markPinned();
-        show(num);
-        var row = rows.filter(function (r) {
-            return r.getAttribute('data-geo-num') === String(num);
-        })[0];
-        if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            show(num);
+            var row = rows.filter(function (r) {
+                return r.getAttribute('data-geo-num') === String(num);
+            })[0];
+            if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
     });
 })();

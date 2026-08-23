@@ -9,9 +9,6 @@
             <p class="commu-event-question"><%- p.event.questionHtml %></p>
             <p><%- p.event.summaryHtml %></p>
         </header>
-        <% if (p.event.mapSvg) { %>
-        <figure class="commu-event-map"><%- p.event.mapSvg %></figure>
-        <% } %>
 <%
 /* Reading order depends on whether the event has a body yet. With one, the
    article leads and the timeline becomes the reference table it is; without
@@ -26,7 +23,7 @@ var sections = p.event.bodySections || [];
                 <li><a href="#<%= section.id %>"><%= section.label %></a></li>
                 <% }) %>
                 <li><a href="#event-outcome"><%= en ? 'Consequences' : '결과' %></a></li>
-                <li><a href="#event-timeline"><%= en ? 'Timeline' : '연표' %></a></li>
+                <li><a href="#event-timeline"><%= p.event.mapSvg ? (en ? 'Timeline & Map' : '연표와 지도') : (en ? 'Timeline' : '연표') %></a></li>
                 <li><a href="#event-people"><%= en ? 'Related people' : '관련 인물' %></a></li>
             </ol>
         </nav>
@@ -38,9 +35,9 @@ var sections = p.event.bodySections || [];
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
         <% } %>
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
-            <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
-            <% if (p.event.timelineMapSvg) { %>
-            <figure class="commu-event-map commu-event-timeline-map"><%- p.event.timelineMapSvg %></figure>
+            <h2 id="event-timeline"><%= p.event.mapSvg ? (en ? 'Timeline & Map' : '연표와 지도') : (en ? 'Timeline' : '연표') %></h2>
+            <% if (p.event.mapSvg) { %>
+            <figure class="commu-event-map commu-event-timeline-map"><%- p.event.mapSvg %></figure>
             <% } %>
             <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li<% if (item.geoNum) { %> data-geo-num="<%= item.geoNum %>"<% } %>><span><% if (item.geoNum) { %><i class="commu-tl-geo-badge"><%= item.geoNum %></i><% } %><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
