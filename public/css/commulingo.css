@@ -3592,6 +3592,21 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* Neutral, provisional look: auto-linked but role not yet classified (see routes/commulingo-events.js). */
 .commu-event-people-grid > a.is-unclassified, .commu-person-event-links li.is-unclassified a { border-color: #5f6b78; border-style: dashed; background: color-mix(in srgb, #5f6b78 10%, transparent); }
 .commu-event-people-grid > a.is-unclassified .commu-event-person-relation, .commu-person-event-links li.is-unclassified span, .commu-person-event-links li.is-unclassified em { color: #93a1b0; }
+
+/* Hover on a relation-tinted event row. The tint rules above outrank the
+   generic .commu-person-event-links a:hover for background, but not for the
+   cream text it sets — which on the light theme left cream words on a pale
+   tint. So each kind gets its own hover fill: the row's relation hue pressed
+   70% toward ink, dark enough in both themes for the cream title and the
+   kind's bright label tone to clear contrast, while the border keeps the
+   full hue. */
+.commu-person-event-links li.is-executor a:hover { background: color-mix(in srgb, #8c7734 70%, var(--clr-black, #010409)); border-color: #8c7734; }
+.commu-person-event-links li.is-target a:hover { background: color-mix(in srgb, #a74a42 70%, var(--clr-black, #010409)); border-color: #a74a42; }
+.commu-person-event-links li.is-leader a:hover { background: color-mix(in srgb, #b8564f 70%, var(--clr-black, #010409)); border-color: #b8564f; }
+.commu-person-event-links li.is-participant a:hover { background: color-mix(in srgb, #4d6f9c 70%, var(--clr-black, #010409)); border-color: #4d6f9c; }
+.commu-person-event-links li.is-opponent a:hover { background: color-mix(in srgb, #6f6f6f 70%, var(--clr-black, #010409)); border-color: #6f6f6f; }
+.commu-person-event-links li.is-witness a:hover { background: color-mix(in srgb, #7a6699 70%, var(--clr-black, #010409)); border-color: #7a6699; }
+.commu-person-event-links li.is-unclassified a:hover { background: color-mix(in srgb, #5f6b78 70%, var(--clr-black, #010409)); border-color: #5f6b78; }
 /* Related-people groups by involvement kind */
 .commu-event-people-group { margin-top: 1.5rem; }
 .commu-event-people-group:first-of-type { margin-top: .4rem; }
