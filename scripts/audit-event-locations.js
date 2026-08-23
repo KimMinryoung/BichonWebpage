@@ -9,6 +9,10 @@
 //   2. events with markers but no 'main' one, or more than one 'main'
 //   3. published events (summary present) with no markers at all
 //   4. duplicate coordinates inside one event (two markers < 0.05° apart)
+//   5. malformed timeline geo (see event-map-svg.js: kind point needs
+//      lat/lng in range, kind arrow needs ≥2 [lat,lng] waypoints in range,
+//      variant must be red/axis or absent) — a geo field that fails these is
+//      silently unnumbered on the page, so it must not pass review silently
 //
 // Exits 1 when anything is flagged, 0 when clean.
 //
@@ -19,12 +23,39 @@ const db = require('../config/database');
 (async () => {
     try {
         const { rows } = await db.query(
-            `SELECT id, COALESCE(summary_ko, '') <> '' AS published, locations
+            `SELECT id, COALESCE(summary_ko, '') <> '' AS published, locations, timeline
                FROM commulingo_history_events
               ORDER BY sort_order, id`
         );
+        const okCoord = (lat, lng) => Number.isFinite(lat) && Number.isFinite(lng)
+            && Math.abs(lat) <= 85 && Math.abs(lng) <= 180;
         const problems = [];
         for (const row of rows) {
+            (Array.isArray(row.timeline) ? row.timeline : []).forEach((item, i) => {
+                const geo = item && item.geo;
+                if (geo === undefined) return;
+                const at = `${row.id} timeline[${i}].geo`;
+                if (!geo || typeof geo !== 'object') {
+                    problems.push(`${at}: not an object`);
+                    return;
+                }
+                if (geo.kind === 'point') {
+                    if (!okCoord(geo.lat, geo.lng)) problems.push(`${at}: point lat/lng missing or out of range`);
+                } else if (geo.kind === 'arrow') {
+                    if (!Array.isArray(geo.points) || geo.points.length < 2
+                        || !geo.points.every(p => Array.isArray(p) && okCoord(p[0], p[1]))) {
+                        problems.push(`${at}: arrow needs >= 2 [lat,lng] waypoints in range`);
+                    }
+                    if (geo.variant !== undefined && geo.variant !== 'red' && geo.variant !== 'axis') {
+                        problems.push(`${at}: unknown variant '${geo.variant}' (red/axis or omit)`);
+                    }
+                } else {
+                    problems.push(`${at}: kind must be 'point' or 'arrow'`);
+                }
+                if (geo.label !== undefined && !(geo.label && geo.label.ko && geo.label.en)) {
+                    problems.push(`${at}: label needs both ko and en when present`);
+                }
+            });
             const locs = Array.isArray(row.locations) ? row.locations : [];
             if (!locs.length) {
                 if (row.published) problems.push(`${row.id}: published event has no map markers`);

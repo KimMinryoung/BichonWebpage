@@ -7,7 +7,7 @@ const { relatedDocsFor } = require('../data/commulingo/docs-refs');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { getReportsForEvent } = require('../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
-const { renderEventMapSvg } = require('../data/commulingo/event-map-svg');
+const { renderEventMapSvg, renderEventTimelineMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
 const { localize } = require('../data/commulingo/localize');
 const { renderMarkdown } = require('../utils/markdown');
 
@@ -171,6 +171,11 @@ async function buildEventPanel(eventId, lang) {
         });
         const link = text => linker.plain(text);
         const event = presentEvent(events[index], lang);
+        // Campaign-map numbering: the row keeps the same ①②… number its
+        // geometry wears on the map (timelineGeos is the one numbering pass).
+        const geoNums = new Map(timelineGeos(events[index].timeline).map(g => [g.index, g.num]));
+        event.timeline = event.timeline.map((item, i) =>
+            geoNums.has(i) ? { ...item, geoNum: geoNums.get(i) } : item);
         // Reading order, so the first mention that links is the first one a
         // reader reaches. The panel lays the page out two ways, and this must
         // follow it: with a body, article then consequences then timeline;
@@ -207,6 +212,8 @@ async function buildEventPanel(eventId, lang) {
         // rides the same per-snapshot memo as the prose.
         const map = renderEventMapSvg(events[index].locations, lang, event.title);
         event.mapSvg = map ? map.svg : '';
+        const timelineMap = renderEventTimelineMapSvg(events[index].timeline, lang, event.title, events[index].locations);
+        event.timelineMapSvg = timelineMap ? timelineMap.svg : '';
         const neighbor = offset => {
             const item = events[index + offset];
             return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;

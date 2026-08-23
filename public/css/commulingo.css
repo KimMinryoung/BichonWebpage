@@ -3466,6 +3466,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .emap-land { fill: color-mix(in srgb, var(--border) 13%, var(--bg-surface)); stroke: color-mix(in srgb, var(--border) 40%, transparent); stroke-width: .6; }
 .emap-grid { stroke: color-mix(in srgb, var(--border) 8%, transparent); stroke-width: 1; }
 .emap-border { fill: none; stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
+.emap-lake { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 30%, transparent); stroke-width: .5; }
+.emap-river { fill: none; stroke: var(--bg-surface); stroke-width: 1.1; stroke-linecap: round; }
+.emap-ref { fill: color-mix(in srgb, var(--text-primary) 65%, transparent); }
+.emap-label.is-ref { fill: var(--text-muted); font-size: 11px; }
+/* Physical geography (돈강, 볼가강): a floating italic name, no marker. */
+.emap-label.is-geo { fill: var(--text-muted); font-size: 11px; font-style: italic; letter-spacing: .08em; }
 .emap-marker { fill: var(--text-primary); stroke: var(--bg-surface); stroke-width: 1.4; }
 .emap-marker.is-main { fill: var(--clr-red); }
 .emap-label { fill: var(--text-primary); font-size: 12px; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
@@ -3474,13 +3480,64 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .emap-inset-land { fill: color-mix(in srgb, var(--border) 34%, var(--bg-surface)); }
 .emap-inset-frame { fill: color-mix(in srgb, var(--clr-red) 30%, transparent); stroke: var(--clr-red); stroke-width: 1; }
 .emap-inset-border { fill: none; stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
+/* ── Campaign map: timeline geometries ──
+   Arrows are movement (variant = side: red army vs axis), points are static
+   beats; the ①②… badges repeat the numbers stamped on the timeline rows.
+   Highlighting (commulingo-event-map.js) dims everything but the hovered
+   number's geometry — pure class toggles, no layout work. */
+.commu-event-timeline-map { margin: 0 0 1.1rem; }
+.emap-arrow { fill: none; stroke-width: 2.6; stroke-linecap: round; }
+.emap-arrow.is-red { stroke: var(--clr-red); }
+.emap-arrow.is-axis { stroke: var(--text-muted); stroke-dasharray: 7 4; }
+.emap-arrow.is-neutral { stroke: var(--text-primary); }
+.emap-head-red path { fill: var(--clr-red); }
+.emap-head-axis path { fill: var(--text-muted); }
+.emap-head-neutral path { fill: var(--text-primary); }
+.emap-badge circle { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 65%, transparent); stroke-width: 1; }
+.emap-badge text { fill: var(--text-primary); font-size: 11.5px; font-weight: 700; }
+/* A beat's place name (geo.label): hidden at rest, revealed under the badge
+   while its number is highlighted — the rest of the map is dimmed then, so it
+   never has to fight for space. */
+.emap-geo-label { display: none; fill: var(--text-primary); font-size: 12.5px; font-weight: 600; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
+.emap-geo-label.is-active { display: block; }
+.emap-svg.has-active [data-geo-num] { opacity: .28; transition: opacity .12s ease; }
+.emap-svg.has-active [data-geo-num].is-active { opacity: 1; }
+.emap-geo.is-active .emap-arrow { stroke-width: 3.8; }
+.emap-badge.is-active circle { fill: var(--clr-red); stroke: var(--clr-red); }
+.emap-badge.is-active text { fill: var(--clr-cream); }
+/* The row's twin of the map badge; the pair lights together. */
+.commu-tl-geo-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 1.3rem; height: 1.3rem; margin-right: .45rem; padding: 0 .2rem;
+    border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+    font-style: normal; font-size: .72rem; line-height: 1;
+    color: var(--text-primary);
+}
+.commu-event-timeline-list li[data-geo-num] { cursor: default; }
+.commu-event-timeline-list li[data-geo-num]:hover,
+.commu-event-timeline-list li.is-map-active { background: color-mix(in srgb, var(--border) 6%, transparent); }
+.commu-event-timeline-list li[data-geo-num]:hover .commu-tl-geo-badge,
+.commu-event-timeline-list li.is-map-active .commu-tl-geo-badge {
+    background: var(--accent); border-color: var(--accent); color: var(--clr-cream);
+}
+/* Clicked-to-pin: held through mouseleave and scrolling, so it wears the map
+   badge's red instead of the hover green. */
+.commu-event-timeline-list li.is-map-pinned .commu-tl-geo-badge {
+    background: var(--clr-red); border-color: var(--clr-red); color: var(--clr-cream);
+}
 /* The SVG scales with the container, so on a phone the 12px labels land near
    6px on glass. Larger in-SVG sizes compensate; markers get the same bump. */
 @media (max-width: 700px) {
     .emap-label { font-size: 17px; }
     .emap-label.is-main { font-size: 18px; }
+    .emap-label.is-ref { font-size: 14px; }
+    .emap-label.is-geo { font-size: 14px; }
+    .emap-geo-label { font-size: 17px; }
     .emap-marker { r: 6px; }
     .emap-marker.is-main { r: 8px; }
+    .emap-arrow { stroke-width: 3.2; }
+    .emap-badge circle { r: 12px; }
+    .emap-badge text { font-size: 15px; }
 }
 /* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
 /* '상위 항목 · 대숙청' on a nested glossary entry. A reader who lands on

@@ -39,7 +39,10 @@ var sections = p.event.bodySections || [];
         <% } %>
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
             <h2 id="event-timeline"><%= en ? 'Timeline' : '연표' %></h2>
-            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li><span><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
+            <% if (p.event.timelineMapSvg) { %>
+            <figure class="commu-event-map commu-event-timeline-map"><%- p.event.timelineMapSvg %></figure>
+            <% } %>
+            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li<% if (item.geoNum) { %> data-geo-num="<%= item.geoNum %>"<% } %>><span><% if (item.geoNum) { %><i class="commu-tl-geo-badge"><%= item.geoNum %></i><% } %><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
         <% if (!p.event.bodyHtml) { %>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
