@@ -12,7 +12,15 @@ const {
 // Korean compounds that contain a term alias but must never link.
 // 전세계 contains 전세 (jeonse) and fired in the Communist Manifesto's
 // '전세계의 프롤레타리아여' — the compound never means the housing lease.
-const BLOCKED_TERM_KO = ['집단농장화', '전세계', '모티프'];
+// 58-6조 is an article-58 subsection, not 헌법 6조 (the hyphen passes the
+// preceding-char guard); 근위축증·근위발달영역·젊은 근위대 carry 근위 without
+// meaning the Guards designation; 오카야마 and 오카시오-코르테스 carry the 오카
+// missile's two syllables in names (2026-08-23 link-fire audit).
+const BLOCKED_TERM_KO = [
+    '집단농장화', '전세계', '모티프',
+    '58-6조', '근위축증', '근위발달영역', '젊은 근위대',
+    '오카야마', '오카시오-코르테스',
+];
 
 // Aliases that are also ordinary Korean words — the term counterpart of
 // NEVER_LINK_ALIAS_KO in people-linkify. They surfaced when lesson prose
@@ -27,7 +35,17 @@ const BLOCKED_TERM_KO = ['집단농장화', '전세계', '모티프'];
 // 코르·레프: 두 글자 음차 별칭이라 오연결이 잦다 — 코르 드 발레의 「코르」가
 // 폴란드 KOR로, 인명 레프(레프 카메네프)가 좌익예술전선(LEF)으로 걸린다.
 // 항목은 표제어(좌익예술전선, 노동자방어위원회(KOR))로 계속 닿는다.
-const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '씨밤', '소련 인민', 'UN', '코르', '레프'];
+// 2026-08-23 전수 집계에서 추가된 것들: 정치국(1,084회 발화가 거의 다
+// 제도로서의 정치국인데 1917년 10월 임시 지도부 항목으로 갔다), 볼가(강·
+// 자동차 공장 165회가 보스호트 에어록으로), 인민위원회(소브나르콤·북조선
+// 인민위원회가 유고 인민해방위원회로), 가속화(일반 동명사가 우스코레니예로),
+// 매파적(정치·군사 강경파가 통화 매파로), 아라(아라곤·아라키의 머리가 ARA로),
+// MO(UN과 같은 꼴 — MOPR·MOOP 머리에서 발화). 각 항목은 표제어와 긴
+// 별칭(볼가 에어록, 우스코레니예, 인민해방위원회, 통화 매파)으로 계속 닿는다.
+const NEVER_LINK_TERM_ALIAS_KO = [
+    '주체', '소개', '호구', '씨밤', '소련 인민', 'UN', '코르', '레프',
+    '정치국', '볼가', '인민위원회', '가속화', '매파적', '아라', 'MO',
+];
 
 // Strings refused even when they are the term's own headword. The list above
 // spares the headword deliberately — an entry has to stay reachable by its own
@@ -49,9 +67,28 @@ const NEVER_LINK_TERM_ALIAS_KO = ['주체', '소개', '정상화', '호구', '�
 // means "introduction" (인물 소개, 소개하다), and NEVER_LINK_TERM_ALIAS_KO above
 // cannot catch it because 소개 is the entry's own headword. The English side
 // (Evacuation …) has no such twin and keeps its links.
+//
+// The same homonymy claimed three more headwords in the 2026-08-23 link-fire
+// audit: 전세 is almost always 戰勢 in this corpus (전세를 역전, 전세가 기울다),
+// not the housing lease; 개조 is the ordinary word for remodelling far more
+// often than the Gulag's perekovka; 정상화 is 국교 정상화 and 관계 정상화, not
+// the Husák regime; 매파 is the political/military hawk in every biography,
+// not the central-bank kind. Each stays reachable from the glossary index and
+// its longer aliases (전세제도, 페레코프카, 후사크 정상화, 통화 매파).
+//
+// The check runs on every candidate string, so the en side also carries alias
+// strings whose plain-English reading swamps the term: Politburo / Political
+// Bureau (603 + 7 fires, nearly all the standing institution or another
+// party's bureau, target was the October 1917 seven), Volga (the river and
+// the car plant, 126 fires), acceleration (the ordinary noun), hawk/hawkish
+// (the war hawk). Capitalized 'Acceleration' stays: it only fires as the
+// uskoreniye slogan.
 const NEVER_LINK_TERM_HEADWORD = {
-    ko: ['소비에트', '소개'],
-    en: ['Soviet', 'soviet', 'soviets', 'Soviets'],
+    ko: ['소비에트', '소개', '전세', '개조', '정상화', '매파'],
+    en: [
+        'Soviet', 'soviet', 'soviets', 'Soviets',
+        'Politburo', 'Political Bureau', 'Volga', 'acceleration', 'hawk', 'hawkish',
+    ],
 };
 
 // A word can name a thing that has its own main entry while a second entry
