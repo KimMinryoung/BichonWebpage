@@ -2613,6 +2613,58 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 0.9rem;
 }
 
+/* Card-shaped placeholders while a group's grid downloads. display: contents
+   dissolves the wrapper so each skeleton sits in the grid like the card it
+   stands in for; the bars pulse gently and hold still under reduced motion. */
+.commu-people-skeleton {
+    display: contents;
+}
+
+.commu-person-skel {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.commu-person-skel span {
+    display: block;
+    height: 11px;
+    background: color-mix(in srgb, var(--text-muted) 20%, transparent);
+    animation: commu-skel-pulse 1.4s ease-in-out infinite;
+}
+
+.commu-person-skel .is-name {
+    height: 15px;
+    width: 42%;
+    margin-bottom: 2px;
+}
+
+.commu-person-skel .is-line { width: 94%; }
+.commu-person-skel .is-line-mid { width: 82%; }
+.commu-person-skel .is-line-short { width: 58%; }
+
+.commu-person-skel:nth-child(2) span { animation-delay: 0.15s; }
+.commu-person-skel:nth-child(3) span { animation-delay: 0.3s; }
+.commu-person-skel:nth-child(4) span { animation-delay: 0.45s; }
+
+@keyframes commu-skel-pulse {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .commu-person-skel span { animation: none; opacity: 0.6; }
+}
+
+/* The same skeleton, laid in the results panel while the first search waits
+   for the card download. */
+.commu-people-search-skel {
+    margin: 10px 0;
+}
+
 /* Foot of a chunked list. It has to be a real box for IntersectionObserver to
    report it, but it must not read as a cell: spanning every column keeps it
    from opening a gap in the grid, and 1px keeps it invisible. It is removed

@@ -293,22 +293,49 @@
             var groupEls = Array.prototype.slice.call(
                 document.querySelectorAll('details.commu-people-group[data-group-id]'));
 
+            // Card-shaped placeholders while a group's grid downloads: the open
+            // group keeps the shape it is about to have, instead of dropping a
+            // bare line of text into an empty grid. aria-hidden, with a visually
+            // hidden status line carrying the same news to screen readers.
+            function makeSkeleton() {
+                var wrap = document.createElement('div');
+                wrap.className = 'commu-people-skeleton';
+                wrap.setAttribute('aria-hidden', 'true');
+                for (var i = 0; i < 4; i++) {
+                    var card = document.createElement('div');
+                    card.className = 'commu-person-skel';
+                    ['is-name', 'is-line', 'is-line-mid', 'is-line-short'].forEach(function(kind) {
+                        var bar = document.createElement('span');
+                        bar.className = kind;
+                        card.appendChild(bar);
+                    });
+                    wrap.appendChild(card);
+                }
+                return wrap;
+            }
+
             function loadGroup(group) {
                 if (!group || group.hasAttribute('data-loaded')) return Promise.resolve();
                 var id = group.getAttribute('data-group-id');
                 if (pending[id]) return pending[id];
                 var grid = group.querySelector('.commu-people-grid');
-                var loading = document.createElement('p');
-                loading.className = 'commu-people-loading';
-                loading.textContent = en ? 'Loading…' : '불러오는 중…';
-                if (grid) grid.appendChild(loading);
+                var skeleton = makeSkeleton();
+                var status = document.createElement('p');
+                status.className = 'commu-sr-only';
+                status.setAttribute('role', 'status');
+                status.textContent = en ? 'Loading…' : '불러오는 중…';
+                if (grid) {
+                    grid.appendChild(skeleton);
+                    grid.appendChild(status);
+                }
                 pending[id] = fetch('/commulingo/people/cards?group=' + encodeURIComponent(id), { credentials: 'same-origin' })
                     .then(function(res) {
                         if (!res.ok) throw new Error('HTTP ' + res.status);
                         return res.text();
                     })
                     .then(function(html) {
-                        loading.remove();
+                        skeleton.remove();
+                        status.remove();
                         if (grid && !group.hasAttribute('data-loaded')) {
                             var holder = document.createElement('template');
                             holder.innerHTML = html;
@@ -318,8 +345,14 @@
                         }
                     })
                     .catch(function(err) {
-                        loading.textContent = en ? 'Failed to load — reopen to retry' : '불러오지 못했습니다 — 다시 열면 재시도합니다';
-                        setTimeout(function() { loading.remove(); }, 4000);
+                        skeleton.remove();
+                        status.remove();
+                        var failed = document.createElement('p');
+                        failed.className = 'commu-people-loading';
+                        failed.setAttribute('role', 'status');
+                        failed.textContent = en ? 'Failed to load — reopen to retry' : '불러오지 못했습니다 — 다시 열면 재시도합니다';
+                        if (grid) grid.appendChild(failed);
+                        setTimeout(function() { failed.remove(); }, 4000);
                         delete pending[id];
                         throw err;
                     });
@@ -334,6 +367,7 @@
 
             window.__commuPeopleCards = {
                 loadGroup: loadGroup,
+                skeleton: makeSkeleton,
                 loadAll: function() {
                     return Promise.all(groupEls.map(function(group) { return loadGroup(group); }));
                 },
@@ -481,6 +515,29 @@
             function escapeRegExp(value) {
                 return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             }
+            // Skeleton shown in the results panel while the first search waits
+            // for the card download. It exists only during that wait: apply()
+            // and reset() both tear it down first, so a finished search shows
+            // results or the empty message and never a leftover placeholder.
+            var searchSkel = null;
+            function showSearchSkeleton() {
+                if (searchSkel) return;
+                searchSkel = document.createElement('div');
+                searchSkel.className = 'commu-people-grid commu-people-search-skel';
+                searchSkel.appendChild(window.__commuPeopleCards.skeleton());
+                var status = document.createElement('p');
+                status.className = 'commu-sr-only';
+                status.setAttribute('role', 'status');
+                status.textContent = en ? 'Loading people…' : '인물 데이터를 불러오는 중…';
+                searchSkel.appendChild(status);
+                results.insertBefore(searchSkel, emptyMsg);
+            }
+            function hideSearchSkeleton() {
+                if (searchSkel) {
+                    searchSkel.remove();
+                    searchSkel = null;
+                }
+            }
             // Reveal handles for the three result grids, so a new query can tear
             // down the previous one's sentinels before building its own.
             var shown = [];
@@ -529,6 +586,7 @@
             }
 
             function reset() {
+                hideSearchSkeleton();
                 highlighted.forEach(clearHighlights);
                 highlighted = [];
                 clearResults();
@@ -542,6 +600,7 @@
             function apply(query) {
                 var terms = query.split(/\s+/).filter(Boolean);
                 if (!terms.length) { reset(); return; }
+                hideSearchSkeleton();
                 emptyMsg.textContent = emptyText;
                 highlighted.forEach(clearHighlights);
                 highlighted = [];
@@ -595,19 +654,23 @@
                         ensureCards().then(function() { apply(input.value.trim().toLowerCase()); });
                         return;
                     }
-                    // First search before the cards arrived: show a loading
-                    // note, then run the query once the grids are in.
+                    // First search before the cards arrived: lay skeleton cards
+                    // in the results panel, then run the query once the grids
+                    // are in — apply() clears the skeleton before it renders,
+                    // so a query with no matches shows only the empty message.
                     groups.forEach(function(group) { group.hidden = true; });
                     chrome.forEach(function(el) { el.hidden = true; });
                     buckets.forEach(function(bucket) { bucket.section.hidden = true; });
-                    emptyMsg.textContent = en ? 'Loading people…' : '인물 데이터를 불러오는 중…';
-                    emptyMsg.hidden = false;
+                    emptyMsg.hidden = true;
+                    showSearchSkeleton();
                     results.hidden = false;
                     clearBtn.hidden = false;
                     ensureCards().then(function() {
                         apply(input.value.trim().toLowerCase());
                     }).catch(function() {
+                        hideSearchSkeleton();
                         emptyMsg.textContent = en ? 'Failed to load people data' : '인물 데이터를 불러오지 못했습니다';
+                        emptyMsg.hidden = false;
                     });
                 });
             }
