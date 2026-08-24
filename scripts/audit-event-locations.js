@@ -11,8 +11,10 @@
 //   4. duplicate coordinates inside one event (two markers < 0.05° apart)
 //   5. malformed timeline geo (see event-map-svg.js: kind point needs
 //      lat/lng in range, kind arrow needs ≥2 [lat,lng] waypoints in range,
-//      variant must be red/axis or absent) — a geo field that fails these is
-//      silently unnumbered on the page, so it must not pass review silently
+//      variant must be red/axis or absent, actor — the force a movement arrow
+//      belongs to, fed to the map legend — needs ko+en and is arrow-only) —
+//      a geo field that fails these is silently unnumbered on the page, so it
+//      must not pass review silently
 //
 // Exits 1 when anything is flagged, 0 when clean.
 //
@@ -41,6 +43,7 @@ const db = require('../config/database');
                 }
                 if (geo.kind === 'point') {
                     if (!okCoord(geo.lat, geo.lng)) problems.push(`${at}: point lat/lng missing or out of range`);
+                    if (geo.actor !== undefined) problems.push(`${at}: actor belongs on arrows only`);
                 } else if (geo.kind === 'arrow') {
                     if (!Array.isArray(geo.points) || geo.points.length < 2
                         || !geo.points.every(p => Array.isArray(p) && okCoord(p[0], p[1]))) {
@@ -48,6 +51,9 @@ const db = require('../config/database');
                     }
                     if (geo.variant !== undefined && geo.variant !== 'red' && geo.variant !== 'axis') {
                         problems.push(`${at}: unknown variant '${geo.variant}' (red/axis or omit)`);
+                    }
+                    if (geo.actor !== undefined && !(geo.actor && geo.actor.ko && geo.actor.en)) {
+                        problems.push(`${at}: actor needs both ko and en when present`);
                     }
                 } else {
                     problems.push(`${at}: kind must be 'point' or 'arrow'`);

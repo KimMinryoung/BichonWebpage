@@ -3500,6 +3500,19 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    never has to fight for space. */
 .emap-geo-label { display: none; fill: var(--text-primary); font-size: 12.5px; font-weight: 600; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .emap-geo-label.is-active { display: block; }
+/* Actor legend (bottom-left): who each arrow style is — stroke samples reuse
+   the .emap-arrow classes, so legend and map can never disagree. The box is
+   translucent surface, like the inset, so coastline under it stays hinted. */
+.emap-legend-box { fill: color-mix(in srgb, var(--bg-surface) 90%, transparent); stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
+.emap-legend text { fill: var(--text-primary); font-size: 11.5px; }
+/* Per-row arrow numbers: same-side forces share a stroke style, so the ①②…
+   numbers are what actually tell 남부 집단군 from 제6군. They carry
+   data-geo-num and behave like the map badges (click = pin + scroll). */
+.emap-legend-num { cursor: pointer; }
+.emap-legend-num circle { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 65%, transparent); stroke-width: 1; }
+.emap-legend-num text { fill: var(--text-primary); font-size: 10px; font-weight: 700; }
+.emap-legend-num.is-active circle { fill: var(--clr-red); stroke: var(--clr-red); }
+.emap-legend-num.is-active text { fill: var(--clr-cream); }
 .emap-svg.has-active [data-geo-num] { opacity: .28; transition: opacity .12s ease; }
 .emap-svg.has-active [data-geo-num].is-active { opacity: 1; }
 .emap-geo.is-active .emap-arrow { stroke-width: 3.8; }
@@ -3538,6 +3551,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     .emap-arrow { stroke-width: 3.2; }
     .emap-badge circle { r: 12px; }
     .emap-badge text { font-size: 15px; }
+    .emap-legend text { font-size: 14px; }
+    .emap-legend-num circle { r: 9px; }
+    .emap-legend-num text { font-size: 12px; }
 }
 /* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
 /* '상위 항목 · 대숙청' on a nested glossary entry. A reader who lands on

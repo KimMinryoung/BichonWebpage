@@ -266,11 +266,17 @@ function renderInset(frame) {
 // Timeline entries may carry an optional geo field (inline, so reordering the
 // timeline can never orphan it):
 //   { "kind": "point", "lat": 48.71, "lng": 44.51 }
-//   { "kind": "arrow", "points": [[49.6,42.7],[48.7,43.5]], "variant": "red" }
+//   { "kind": "arrow", "points": [[49.6,42.7],[48.7,43.5]], "variant": "red",
+//     "actor": { "ko": "붉은 군대", "en": "Red Army" } }
 // point = a static event (uprising, conference, surrender) → marker;
 // arrow = movement (advance, retreat, evacuation) → curved polyline with an
 // arrowhead. variant picks the side: 'red' (Red Army and allies) or 'axis'
-// (their opponents); anything else falls back to the neutral stroke. Entries
+// (their opponents); anything else falls back to the neutral stroke. actor
+// names the force doing the moving (독일 제6군, 조선인민군) — arrows only.
+// The distinct actors become an always-visible legend in the map's bottom-
+// left corner (stroke sample + name), and the actor is prefixed to the
+// highlight-only place label, so a reader can tell WHOSE advance an arrow
+// is without decoding the color convention. Entries
 // with geo are numbered ①②…-style in timeline order, and the same number
 // appears on the map badge and on the timeline row — the pairing works with
 // no JS; commulingo-event-map.js only adds hover/tap highlighting on top.
@@ -343,14 +349,16 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
     // Geometry first, then all badges on top. Badge anchors: the point itself,
     // or the arrow's midpoint; a collision pass pushes overlapping badges down.
     const badges = [];
+    const legendRows = [];
+    const legendSeen = new Map();
     for (const { num, geo } of geos) {
-        const name = localize(geo.label, lang);
+        const place = localize(geo.label, lang);
         if (geo.kind === 'point') {
             const [x, y] = projectPt([geo.lat, geo.lng]);
             parts.push(`<g class="emap-geo" data-geo-num="${num}">`
                 + `<circle class="emap-marker" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5"/>`
                 + '</g>');
-            badges.push({ num, name, x: x + 11, y: y - 11 });
+            badges.push({ num, name: place, x: x + 11, y: y - 11 });
         } else {
             const pts = geo.points.map(projectPt);
             const variant = ARROW_VARIANTS[geo.variant] || 'neutral';
@@ -360,9 +368,28 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
             const mid = pts.length === 2
                 ? [(pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2]
                 : pts[Math.floor(pts.length / 2)];
+            // The highlight label names the mover first: 「독일 제6군 · 칼라치」.
+            const actor = localize(geo.actor, lang);
+            const name = actor && place ? `${actor} · ${place}` : (actor || place);
             badges.push({ num, name, x: mid[0] + 12, y: mid[1] - 6 });
+            if (actor) {
+                const key = `${variant}|${actor}`;
+                let row = legendSeen.get(key);
+                if (!row) {
+                    row = { variant, actor, nums: [] };
+                    legendSeen.set(key, row);
+                    legendRows.push(row);
+                }
+                row.nums.push(num);
+            }
         }
     }
+    // Actor legend, bottom-left (the inset owns the top-right): one row per
+    // distinct force, its stroke sample drawn with the same classes as the
+    // arrows so the mapping is literal. Sized for the enlarged mobile font;
+    // the box joins the badge avoid-list so numbers never land under it.
+    const legend = renderLegend(legendRows, frame);
+    if (legend) avoid.push(legend.rect);
     // Each badge slides down until it clears both the city labels and every
     // badge already placed — iterated, because a push out of one collision can
     // land in another.
@@ -401,7 +428,52 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
             parts.push(`<text class="emap-geo-label" data-geo-num="${badge.num}" x="${nx.toFixed(1)}" y="${(y + 24).toFixed(1)}" text-anchor="middle">${esc(badge.name)}</text>`);
         }
     }
+    if (legend) parts.push(legend.svg);
     return parts;
+}
+
+// The actor legend box. Text width is estimated at the 14px mobile font size
+// (full-width for CJK, roughly half for Latin), the larger of the two scales
+// this SVG renders at, so the desktop box just carries a little extra air.
+//
+// Two forces on the same side share a stroke style (the side convention is
+// the point of the variants), so the name alone cannot say which dashed
+// arrow is whose: each row also carries its arrows' ①②… numbers, the same
+// numbers the map badges wear. The mini-badges carry data-geo-num, so the
+// page script gives them the full badge behavior for free — clicking one
+// pins its arrow and scrolls to its timeline row.
+function renderLegend(rows, frame) {
+    if (!rows.length) return null;
+    const textWidth = text => Array.from(text)
+        .reduce((w, ch) => w + (ch.charCodeAt(0) > 0x2e80 ? 14 : 7.5), 0);
+    const PAD = 9;
+    const ROW_H = 19;
+    const SAMPLE_W = 24;
+    const NUM_STEP = 19;
+    const boxW = Math.ceil(PAD + SAMPLE_W + 8
+        + Math.max(...rows.map(r => textWidth(r.actor) + 7 + r.nums.length * NUM_STEP))
+        + PAD);
+    const boxH = PAD * 2 + ROW_H * rows.length - 6;
+    const bx = 8;
+    const by = frame.height - 8 - boxH;
+    const parts = [`<g class="emap-legend"><rect class="emap-legend-box" x="${bx}" y="${by}" width="${boxW}" height="${boxH}"/>`];
+    rows.forEach((row, i) => {
+        const cy = by + PAD + ROW_H * i + 5;
+        const tx = bx + PAD + SAMPLE_W + 8;
+        parts.push(`<line class="emap-arrow is-${row.variant}" x1="${bx + PAD}" y1="${cy}" x2="${bx + PAD + SAMPLE_W}" y2="${cy}" marker-end="url(#emap-head-${row.variant})"/>`);
+        parts.push(`<text x="${tx}" y="${cy + 4}">${esc(row.actor)}</text>`);
+        // Numbers right-aligned as a column: every row's last badge hugs the
+        // box's right padding, so the ragged name lengths stay on the left.
+        row.nums.forEach((num, j) => {
+            const cx = bx + boxW - PAD - 7.5 - NUM_STEP * (row.nums.length - 1 - j);
+            parts.push(`<g class="emap-legend-num" data-geo-num="${num}">`
+                + `<circle cx="${cx.toFixed(1)}" cy="${cy}" r="7.5"/>`
+                + `<text x="${cx.toFixed(1)}" y="${cy + 3.5}" text-anchor="middle">${num}</text>`
+                + '</g>');
+        });
+    });
+    parts.push('</g>');
+    return { svg: parts.join(''), rect: { x0: bx, x1: bx + boxW, y0: by, y1: by + boxH } };
 }
 
 // locations: [{ lat, lng, label: {ko,en}, kind? }] from the event row; kind
