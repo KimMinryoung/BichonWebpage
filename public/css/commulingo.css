@@ -874,9 +874,17 @@
     transition: background-color 0.15s;
 }
 
+/* Accent ground + cream text, same as the dictionary cards. The label is
+   accent-colored at rest so it must flip to cream or it sinks into the
+   ground; the target line takes the 72% cream mix used elsewhere. */
 .commulingo-resume:hover {
-    background: var(--bg-surface-hover);
+    background: var(--accent, #214d2e);
+    border-color: var(--accent, #214d2e);
+    color: var(--clr-cream, #f8edca);
+    text-decoration: none;
 }
+.commulingo-resume:hover .commu-resume-label { color: var(--clr-cream, #f8edca); }
+.commulingo-resume:hover .commu-resume-target { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 
 .commu-resume-label {
     color: var(--accent);
@@ -930,10 +938,19 @@
     transition: background-color 0.15s, border-color 0.15s;
 }
 
+/* Accent ground + cream text. Interior accent-colored pieces (badge,
+   progress fill) flip to cream so they stay visible on the accent ground. */
 .commu-book-card:hover {
-    background: var(--bg-surface-hover);
-    border-left-color: var(--accent);
+    background: var(--accent, #214d2e);
+    border-color: var(--accent, #214d2e);
+    color: var(--clr-cream, #f8edca);
+    text-decoration: none;
 }
+.commu-book-card:hover .commu-book-badge { background: var(--clr-cream, #f8edca); color: var(--accent, #214d2e); }
+.commu-book-card:hover .commu-book-desc,
+.commu-book-card:hover .commu-book-meta,
+.commu-book-card:hover .commu-book-progress-label { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
+.commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream, #f8edca); }
 
 .commu-book-badge {
     align-self: flex-start;
@@ -3399,7 +3416,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-dict-tab span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .commu-dict-tab:first-child { border-left: 0; }
 .commu-dict-tab .commu-role-icon { width: 17px; height: 17px; flex: 0 0 auto; color: inherit; }
-.commu-dict-tab:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
+.commu-dict-tab:hover { background: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 .commu-dict-tab.is-active { background: color-mix(in srgb, var(--accent-red) 26%, var(--bg-canvas)); color: var(--text-primary); }
 .commu-dict-tab.is-active .commu-role-icon { color: inherit; }
 /* Narrow phones: swap each label for its data-short form (keeping the
