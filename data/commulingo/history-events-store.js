@@ -27,7 +27,7 @@ async function fetchEvents() {
         db.query(
             `SELECT id, period_label, title_ko, title_en, question_ko, question_en,
                     summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
-                    timeline, sources, locations, updated_at
+                    timeline, sources, locations, no_auto_link, updated_at
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY sort_order, id`
@@ -66,6 +66,10 @@ async function fetchEvents() {
         sources: Array.isArray(row.sources) ? row.sources : [],
         // Map markers (migration 144); snapshots written before it lack the key.
         locations: Array.isArray(row.locations) ? row.locations : [],
+        // Strings this event's prose refuses to auto-link (migration 154) —
+        // words whose dictionary sense is right elsewhere but wrong here
+        // (임시정부 on a French event is the GPRF, not the Russian one).
+        noAutoLink: Array.isArray(row.no_auto_link) ? row.no_auto_link : [],
         people: peopleByEvent[row.id] || [],
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null,
     }));

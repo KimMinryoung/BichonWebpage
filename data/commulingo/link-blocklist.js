@@ -13,12 +13,18 @@ const db = require('../../config/database');
 const path = require('path');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 
-// { phrase: { ko, en }, alias: { ko, en } } — also the identity callers memoize
-// against. `phrase` strings are consumed ahead of the alias inside them;
-// `alias` strings are dropped from the index entirely, which is the only thing
-// that works when the collision is exact (리보프 the city vs Prince Lvov).
+// One bucket per kind and lang — also the identity callers memoize against.
+// `phrase`/`alias` act on the person pass, the `term-*` kinds on the term pass
+// (migration 154 moved term-linkify's three arrays here): `*-phrase` strings
+// are consumed ahead of the alias inside them; `term-alias` strings are
+// dropped from the index unless they are the entry's own headword, which is
+// the only thing that works when the collision is exact (전세 戰勢 vs jeonse);
+// `term-headword` strings are dropped even as the headword.
+const KINDS = ['phrase', 'alias', 'term-phrase', 'term-alias', 'term-headword'];
+
 function install(rows) {
-    const next = { phrase: { ko: [], en: [] }, alias: { ko: [], en: [] } };
+    const next = {};
+    KINDS.forEach(kind => { next[kind] = { ko: [], en: [] }; });
     rows.forEach(row => {
         const kind = next[row.kind || 'phrase'];
         if (kind && kind[row.lang] && row.phrase) kind[row.lang].push(row.phrase);
@@ -36,9 +42,12 @@ const store = createRegistrySnapshotStore({
     )).rows,
     install,
     // A file written before `kind` existed would install every never-link
-    // alias as a phrase, which silently re-links 리보프 and 톨스토이. Treat
-    // it as absent and go to the DB instead.
-    validateSnapshot: rows => Array.isArray(rows) && rows.length > 0 && rows.every(row => row && row.kind),
+    // alias as a phrase, which silently re-links 리보프 and 톨스토이; one from
+    // before the term kinds (migration 154) would silently re-link 전세계 and
+    // 휴전협정 during a DB outage. Treat either as absent and go to the DB.
+    validateSnapshot: rows => Array.isArray(rows) && rows.length > 0
+        && rows.every(row => row && row.kind)
+        && rows.some(row => String(row.kind).startsWith('term-')),
 });
 
 // Await before building any link index. Memory → disk snapshot → DB.
@@ -66,6 +75,15 @@ function neverLinkAliases(lang) {
     return memory.alias[lang === 'en' ? 'en' : 'ko'];
 }
 
+// The term pass's three lists. Unlike the person aliases, English strings here
+// match case-sensitively (blocking 'acceleration' must not block the
+// uskoreniye slogan's 'Acceleration'), so callers compare exactly.
+function termBlocklist(kind, lang) {
+    const memory = store.getMemory();
+    if (!memory || !memory[kind]) return [];
+    return memory[kind][lang === 'en' ? 'en' : 'ko'];
+}
+
 // Test seam: install a list directly, so the linkify smoke tests keep running
 // on synthetic indexes with no database and no snapshot.
 function installLinkBlocklist(rows) {
@@ -78,5 +96,6 @@ module.exports = {
     blocklistRef,
     blockedPhrases,
     neverLinkAliases,
+    termBlocklist,
     SNAPSHOT_PATH: store.snapshotPath,
 };

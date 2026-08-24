@@ -56,7 +56,7 @@ function classifyEntityLinks(html) {
         `<a class="${ENTITY_KIND_CLASS[kind]}"${attrs}>`);
 }
 
-async function linkDocHtml(content, docId, lang, key, html) {
+async function linkDocHtml(content, raw, lang, key, html) {
     if (!html) return html;
     const indexes = await getLinkIndexes(lang);
     let entry = linkedMemo.get(content);
@@ -68,9 +68,18 @@ async function linkDocHtml(content, docId, lang, key, html) {
     let out = entry.byKey.get(memoKey);
     if (out === undefined) {
         // One linker per rendered unit: the first mention of an entry links and
-        // later ones stay plain. A document never links to itself.
+        // later ones stay plain. A document never links to itself, and skips
+        // the strings its manifest entry declares in `noAutoLink` — words whose
+        // dictionary sense is right elsewhere but wrong in this document's
+        // context (임시정부 in a French text is not the Russian one). Editing
+        // noAutoLink is data-only: the manifest mtime refreshes the doc list,
+        // which refreshes the link indexes, which invalidates this memo.
         out = classifyEntityLinks(openEntityLinksInNewTab(
-            createLinker(indexes, { surface: 'doc', exclude: { doc: docId } }).html(html)));
+            createLinker(indexes, {
+                surface: 'doc',
+                exclude: { doc: raw.id },
+                blockStrings: raw.noAutoLink,
+            }).html(html)));
         entry.byKey.set(memoKey, out);
     }
     return out;
@@ -197,7 +206,7 @@ router.get('/:docId', async (req, res) => {
                 doc,
                 bodyTopHtml: paged.titleHtml,
                 bodyRestHtml: await linkDocHtml(
-                    getCommuLingoDocContent(raw), docId, lang, 'p' + current, page.html,
+                    getCommuLingoDocContent(raw), raw, lang, 'p' + current, page.html,
                 ),
                 toc: nestToc(toc),
                 pagination: {
@@ -223,7 +232,7 @@ router.get('/:docId', async (req, res) => {
             doc,
             bodyTopHtml,
             bodyRestHtml: await linkDocHtml(
-                getCommuLingoDocContent(raw), docId, lang, 'body', bodyRestHtml,
+                getCommuLingoDocContent(raw), raw, lang, 'body', bodyRestHtml,
             ),
             toc: nestToc(toc),
             pagination: null,

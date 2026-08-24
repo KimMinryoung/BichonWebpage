@@ -168,6 +168,7 @@ async function buildEventPanel(eventId, lang) {
         const linker = createLinker(indexes, {
             surface: 'event',
             exclude: { event: eventId, term: paired ? paired.id : '' },
+            blockStrings: events[index].noAutoLink,
         });
         const link = text => linker.plain(text);
         const event = presentEvent(events[index], lang);

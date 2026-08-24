@@ -14,12 +14,16 @@ const { buildTopicLinkIndex } = require('../data/commulingo/topic-linkify');
 const { KIND_ORDER, SURFACES, createLinker, createCardTextLinker } = require('../data/commulingo/linkify');
 const { installLinkBlocklist } = require('../data/commulingo/link-blocklist');
 
-// The blocklist is a table now (commulingo_link_blocklist); install the three
-// phrases these assertions turn on so the file stays database-free.
+// The blocklist is a table now (commulingo_link_blocklist); install the rows
+// these assertions turn on so the file stays database-free. The term-* kinds
+// are the term pass's exceptions (migration 154).
 installLinkBlocklist([
     { lang: 'ko', phrase: '레닌그라드' },
     { lang: 'ko', phrase: '비테프스크' },
     { lang: 'en', phrase: 'Leonid Pasternak' },
+    { kind: 'term-phrase', lang: 'ko', phrase: '집단농장화' },
+    { kind: 'term-alias', lang: 'ko', phrase: '휴전협정' },
+    { kind: 'term-headword', lang: 'ko', phrase: '전세' },
 ]);
 
 const people = [{
@@ -71,6 +75,12 @@ const people = [{
 const terms = [
     { id: 'great-purge', term: { ko: '대숙청', en: 'The Great Purge' }, original: 'Большой террор', aliases: { ko: [], en: [] } },
     { id: 'kolkhoz', term: { ko: '콜호스', en: 'Kolkhoz' }, aliases: { ko: ['집단농장'], en: [] } },
+    // A specific entry claiming a common word as an alias (term-alias row) —
+    // the headword keeps linking, the ambiguous alias does not.
+    { id: 'korean-armistice', term: { ko: '정전협정', en: 'Korean Armistice' }, aliases: { ko: ['휴전협정'], en: [] } },
+    // A headword too homonymous to link bare (term-headword row) — only the
+    // longer alias reaches it.
+    { id: 'jeonse', term: { ko: '전세', en: 'Jeonse' }, aliases: { ko: ['전세제도'], en: [] } },
 ];
 
 const events = [
@@ -186,6 +196,32 @@ assert.doesNotMatch(
 
 // Escaping: prose in, escaped prose out, links and all.
 assert.match(linker('person').plain('<b>겨울전쟁</b>'), /&lt;b&gt;/);
+
+// ── The term pass's blocklist kinds (commulingo_link_blocklist, 154) ──
+
+// term-phrase: a compound containing an alias is consumed whole; the bare
+// alias still links.
+assert.doesNotMatch(linker('person').plain('집단농장화가 진행되었다.'), /commu-term-link/);
+assert.match(linker('person').plain('집단농장을 세웠다.'), /\/commulingo\/terms\/kolkhoz/);
+
+// term-alias: the ambiguous alias is dropped from the index, the entry's own
+// headword keeps linking.
+assert.doesNotMatch(linker('person').plain('휴전협정이 체결되었다.'), /commu-term-link/);
+assert.match(linker('person').plain('정전협정이 체결되었다.'), /\/commulingo\/terms\/korean-armistice/);
+
+// term-headword: dropped even as the headword; only a longer alias reaches it.
+assert.doesNotMatch(linker('person').plain('전세가 기울었다.'), /commu-term-link/);
+assert.match(linker('person').plain('전세제도가 확산되었다.'), /\/commulingo\/terms\/jeonse/);
+
+// blockStrings: the per-reading-unit escape hatch (docs/manifest.json
+// noAutoLink). The named string stays plain on this linker only; other
+// strings and other linkers are untouched.
+const gated = createLinker(ko, { surface: 'doc', blockStrings: ['겨울전쟁'] });
+const gatedHtml = gated.plain('겨울전쟁 중에 스탈린은 콜호스를 말했다.');
+assert.doesNotMatch(gatedHtml, /commu-event-link/);
+assert.match(gatedHtml, /commu-person-link/);
+assert.match(gatedHtml, /commu-term-link/);
+assert.match(createLinker(ko, { surface: 'doc' }).plain('겨울전쟁 중에.'), /commu-event-link/);
 
 // ── The four ways a surface may differ ─────────────────────────────────
 

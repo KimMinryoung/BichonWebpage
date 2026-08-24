@@ -1976,6 +1976,7 @@
     {
       "id": "cnr-programme-1944",
       "file": "cnr-programme-1944.html",
+      "noAutoLink": ["임시정부", "전원회의", "인민민주당"],
       "docLang": "ko",
       "date": "1944-03-15",
       "title": {

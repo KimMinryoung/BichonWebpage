@@ -225,10 +225,20 @@ async function getLinkIndexes(lang) {
 // ({ person: 'stalin', term: 'nep', event: 'new-economic-policy' }): the entry
 // the page is already showing, and the same-subject twin it is showing beside
 // it.
+//
+// `blockStrings` is an array of exact strings this reading unit refuses to
+// auto-link in any pass — the per-page escape hatch for words that are right
+// almost everywhere but wrong here. 임시정부 fires 199 times in this corpus and
+// is the Russian Provisional Government in essentially all of them, so it stays
+// in the index; the one French document where it means the GPRF declares
+// `noAutoLink: ["임시정부"]` in docs/manifest.json instead of the corpus losing
+// the alias. (Strings that are wrong almost everywhere belong in
+// commulingo_link_blocklist, not here.)
 function createLinker(indexes, options = {}) {
     const surface = SURFACES[options.surface];
     if (!surface) throw new Error('linkify: unknown surface ' + options.surface);
     const exclude = options.exclude || {};
+    const blockStrings = new Set(options.blockStrings || []);
     const seen = new Set();
     const found = { docs: [], events: [], terms: [], topics: [], people: [] };
     const passes = surface.kinds
@@ -245,6 +255,7 @@ function createLinker(indexes, options = {}) {
             }
             const entry = index.byAlias[match];
             if (!entry) return match;
+            if (blockStrings.has(match)) return match;
             if (exclude[kind] && exclude[kind] === entry.id) return match;
             const key = kind + ':' + (kind === 'topic' ? entry.kind + ':' : '') + entry.id;
             if (seen.has(key)) return match;
