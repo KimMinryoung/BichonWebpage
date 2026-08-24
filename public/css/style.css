@@ -1262,8 +1262,11 @@ form {
     transition: background-color 0.15s, border-color 0.15s;
 }
 
+/* Buttons react by ground brightness only: pin the text color so the global
+   a:hover link color can't tint <a class="btn"> labels. */
 .btn:hover {
     background-color: var(--btn-hover);
+    color: var(--text-primary);
     text-decoration: none;
 }
 
@@ -1275,6 +1278,7 @@ form {
 
 .btn-primary:hover {
     background-color: var(--btn-primary-hover);
+    color: #fff;
 }
 
 .btn:disabled {

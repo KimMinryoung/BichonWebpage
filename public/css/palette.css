@@ -106,7 +106,9 @@
   --btn-bg: var(--clr-dark-raised);
   --btn-hover: var(--clr-dark);
   --btn-primary: var(--clr-accent);
-  --btn-primary-hover: var(--clr-accent);
+  /* One luminance step up, not a hue change: flat square buttons react by
+     ground brightness (the site-wide hover language), never by lifting. */
+  --btn-primary-hover: color-mix(in srgb, var(--clr-accent) 85%, var(--clr-cream));
   --btn-danger: var(--clr-red);
   --btn-danger-hover: var(--clr-red);
   --nav-bg: var(--clr-ink);
@@ -146,7 +148,7 @@
   --btn-bg: color-mix(in srgb, var(--clr-ink) 10%, var(--clr-cream-light));
   --btn-hover: color-mix(in srgb, var(--clr-ink) 16%, var(--clr-cream-light));
   --btn-primary: var(--clr-accent);
-  --btn-primary-hover: var(--clr-accent);
+  --btn-primary-hover: color-mix(in srgb, var(--clr-accent) 85%, var(--clr-cream));
   --btn-danger: var(--clr-red);
   --btn-danger-hover: var(--clr-red);
   --nav-bg: var(--clr-cream-light);

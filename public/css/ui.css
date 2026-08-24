@@ -193,16 +193,7 @@ svg {
     transition:
         color var(--duration-fast) var(--ease-standard),
         background-color var(--duration-fast) var(--ease-standard),
-        border-color var(--duration-fast) var(--ease-standard),
-        transform var(--duration-fast) var(--ease-standard);
-}
-
-.btn:hover:not(:disabled) {
-    transform: translateY(-1px);
-}
-
-.btn:active:not(:disabled) {
-    transform: translateY(0);
+        border-color var(--duration-fast) var(--ease-standard);
 }
 
 .btn-small {
