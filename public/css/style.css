@@ -1107,7 +1107,52 @@ a.home-card:hover::after {
     border-bottom: none;
     padding: 20px 24px;
     border-radius: 0;
-    transition: border-color 0.15s;
+    transition: border-color 0.15s, background-color 0.15s;
+    /* Anchors the stretched title link that makes the whole item clickable. */
+    position: relative;
+}
+
+/* Whole-item click target: the title link stretches over the item rectangle.
+   Links inside the excerpt sit a layer above so they stay clickable. */
+.post-item h2 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.post-item .post-excerpt a {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover recolors the whole click area: accent ground, cream text, the same
+   treatment as the dictionary cards. Borders stay put — the stacked list
+   shares collapsed borders, so a recolored edge would leave a half-green
+   seam between items. */
+.post-item:hover {
+    background-color: var(--accent);
+}
+
+.post-item:hover .post-excerpt {
+    color: var(--clr-cream);
+}
+
+.post-item:hover .post-meta {
+    color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent));
+}
+
+.post-item:hover .commu-update-kind {
+    color: var(--clr-cream);
+}
+
+.post-item:hover .commu-update-moment {
+    color: color-mix(in srgb, var(--clr-cream) 82%, var(--accent));
+    border-left-color: color-mix(in srgb, var(--clr-cream) 60%, var(--accent));
+}
+
+.post-item:hover .post-excerpt a {
+    color: var(--clr-cream);
+    text-decoration: underline;
 }
 
 .post-item + .post-item {
@@ -1129,8 +1174,9 @@ a.home-card:hover::after {
     color: var(--text-primary);
 }
 
-.post-item h2 a:hover {
-    color: var(--link);
+.post-item h2 a:hover,
+.post-item:hover h2 a {
+    color: var(--clr-cream);
     text-decoration: none;
 }
 
