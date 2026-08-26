@@ -1170,11 +1170,16 @@ a.home-card:hover::after {
     line-height: 1.4;
 }
 
+/* The title anchor doubles as the whole-item click target, so it must never
+   react on its own: no mobile tap highlight over the title text, and the text
+   color fades on the same clock as the item background so the title and the
+   item read as one surface. */
 .post-item h2 a {
     color: var(--text-primary);
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.15s;
 }
 
-.post-item h2 a:hover,
 .post-item:hover h2 a {
     color: var(--clr-cream);
     text-decoration: none;
