@@ -1009,7 +1009,7 @@
         "en": "The Kremlin Conversation on Ivan the Terrible (1947)"
       },
       "description": {
-        "ko": "1946년 9월 당 중앙위원회 결정으로 《이반 뇌제》 2편이 개봉 금지된 뒤, 에이젠슈테인과 주연 체르카소프가 스탈린에게 보낸 편지에 대한 답으로 1947년 2월 26일 밤 크렘린에서 이루어진 대담의 기록이다. 스탈린·몰로토프·즈다노프가 오프리치니나와 이반 뇌제의 역사적 평가, 역사 영화의 양식론, 《봄》과 《글린카》 등 당대 소련 영화를 이야기하고, 끝에 영화를 고쳐 완성할 가능성을 열어 준다. 두 예술가의 구술을 B.N. 아가포프가 받아 적은 기록으로, 개작은 에이젠슈테인의 죽음으로 실현되지 못했다.",
+        "ko": "1946년 9월 당 중앙위원회 결정으로 《이반 뇌제》 2편이 개봉 금지된 뒤, 예이젠시테인과 주연 체르카소프가 스탈린에게 보낸 편지에 대한 답으로 1947년 2월 26일 밤 크렘린에서 이루어진 대담의 기록이다. 스탈린·몰로토프·즈다노프가 오프리치니나와 이반 뇌제의 역사적 평가, 역사 영화의 양식론, 《봄》과 《글린카》 등 당대 소련 영화를 이야기하고, 끝에 영화를 고쳐 완성할 가능성을 열어 준다. 두 예술가의 구술을 B.N. 아가포프가 받아 적은 기록으로, 개작은 예이젠시테인의 죽음으로 실현되지 못했다.",
         "en": "The record of the late-night Kremlin meeting of 26 February 1947, granted in answer to the letter Eisenstein and his lead actor Cherkasov sent Stalin after the September 1946 Central Committee resolution banned Part Two of Ivan the Terrible. Stalin, Molotov and Zhdanov discuss the historical assessment of Ivan and the oprichnina, the style of historical film, and the Soviet cinema of the day, and end by allowing the film to be reworked. Taken down by B. N. Agapov from the two artists' dictation; the reworking was never realised, as Eisenstein died in February 1948."
       },
       "kind": {
@@ -1028,7 +1028,8 @@
       ],
       "terms": [
         "zhdanovshchina",
-        "socialist-realism"
+        "socialist-realism",
+        "oprichnina"
       ],
       "events": [],
       "addedAt": "2026-08-26",
@@ -1039,7 +1040,7 @@
         "ko": [
           "《이반 뇌제》에 관한 크렘린 대담",
           "《이반 뇌제》 크렘린 대담",
-          "에이젠슈테인·체르카소프와의 대담"
+          "예이젠시테인·체르카소프와의 대담"
         ],
         "en": [
           "Kremlin conversation on Ivan the Terrible",
