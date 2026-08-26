@@ -1000,6 +1000,50 @@
       }
     },
     {
+      "id": "zhdanov-1934-writers-congress",
+      "file": "zhdanov-1934-writers-congress.html",
+      "docLang": "ko",
+      "date": "1934-08-17",
+      "title": {
+        "ko": "즈다노프, 「소비에트 문학은 가장 사상적이고 가장 전진적인 문학이다」",
+        "en": "Zhdanov, Soviet Literature: The Richest in Ideas, the Most Advanced Literature"
+      },
+      "description": {
+        "ko": "1934년 8월 17일 제1차 전연방 소비에트 작가대회 개막일에 즈다노프가 당 중앙위원회와 인민위원회의의 이름으로 한 연설의 전문 번역. 사회주의 리얼리즘의 공식 정의(현실을 그 혁명적 발전 속에서 진실하게 그리되 근로자의 사상적 개조·교육과 결합할 것), 스탈린의 「인간 영혼의 기사」 호칭에 대한 해설, 혁명적 낭만주의론이 모두 이 연설에서 정식화되었고, 대회는 이를 작가동맹 규약에 새겼다. 십여 년 뒤 즈다놉시나 문화 단속의 이론적 잣대가 된 미학 강령이다. 영문판(1935)을 저본으로 한 중역이며 핵심 정식화는 러시아어 원문과 대조했다.",
+        "en": "A complete translation of the speech Zhdanov delivered in the name of the Central Committee and Sovnarkom on the opening day of the First All-Union Congress of Soviet Writers, 17 August 1934. The official definition of socialist realism (truthful depiction of reality in its revolutionary development, combined with the ideological remolding and education of the toilers), the exegesis of Stalin's phrase 'engineers of human souls', and the doctrine of revolutionary romanticism were all formulated here, and the congress wrote the method into the Writers' Union charter. A decade later this aesthetic program became the theoretical yardstick of the Zhdanovshchina. Translated from the 1935 English edition, with the key formulations checked against the Russian original."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "А. А. Жданов, «Советская литература — самая идейная, самая передовая литература в мире», Первый всесоюзный съезд советских писателей, 17 августа 1934 г. // Правда, 20 августа 1934. 번역 저본: Soviet Writers' Congress 1934 (Lawrence & Wishart, 1977; 원판 Problems of Soviet Literature, 1935), marxists.org 전자판 — 영문 중역",
+      "people": [
+        "zhdanov",
+        "stalin",
+        "gorky",
+        "lenin",
+        "karl-marx",
+        "friedrich-engels"
+      ],
+      "terms": [
+        "socialist-realism",
+        "zhdanovshchina"
+      ],
+      "events": [],
+      "addedAt": "2026-08-26",
+      "aliases": {
+        "ko": [
+          "「소비에트 문학은 가장 사상적이고 가장 전진적인 문학이다」",
+          "즈다노프의 작가대회 연설",
+          "1934년 작가대회 연설"
+        ],
+        "en": [
+          "Soviet Literature: The Richest in Ideas, the Most Advanced Literature",
+          "Zhdanov's speech to the Writers' Congress"
+        ]
+      }
+    },
+    {
       "id": "zhdanovshchina-resolutions",
       "file": "zhdanovshchina-resolutions.html",
       "docLang": "ko",
