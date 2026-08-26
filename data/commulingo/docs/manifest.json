@@ -1000,6 +1000,64 @@
       }
     },
     {
+      "id": "zhdanovshchina-resolutions",
+      "file": "zhdanovshchina-resolutions.html",
+      "docLang": "ko",
+      "date": "1946-08-14",
+      "title": {
+        "ko": "당 중앙위원회 문화 결정 3건(1946~1948)",
+        "en": "Three Central Committee Resolutions on Culture, 1946-1948"
+      },
+      "description": {
+        "ko": "즈다놉시나의 뼈대를 이룬 당 중앙위원회 결정 세 건의 전문 번역. 잡지 《즈베즈다》와 《레닌그라드》에 관한 결정(1946-08-14)은 조셴코와 아흐마토바를 지목하고 잡지 하나를 폐간했고, 영화 《위대한 삶》에 관한 결정(1946-09-04)은 2부를 금지하며 《이반 뇌제》 2편을 함께 단죄했으며, 오페라 《위대한 우정》에 관한 결정(1948-02-10)은 쇼스타코비치·프로코피예프·하차투랸을 형식주의로 지목했다. 오페라 결정은 1958년에, 잡지 결정은 1988년에 당 스스로 오류로 시정·취소했다.",
+        "en": "Complete translations of the three Central Committee resolutions that formed the backbone of the Zhdanovshchina. The resolution on the journals Zvezda and Leningrad (14 Aug 1946) singled out Zoshchenko and Akhmatova and closed one journal; the resolution on the film A Great Life (4 Sep 1946) banned its second part and condemned Part Two of Ivan the Terrible with it; the resolution on the opera The Great Friendship (10 Feb 1948) named Shostakovich, Prokofiev and Khachaturian as formalists. The party itself corrected the opera resolution in 1958 and rescinded the journals resolution in 1988."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Постановления ЦК ВКП(б) «О журналах „Звезда“ и „Ленинград“» (14.08.1946), «О кинофильме „Большая жизнь“» (04.09.1946), «Об опере „Великая дружба“ В. Мурадели» (10.02.1948). 수록본: Власть и художественная интеллигенция. Документы ЦК РКП(б) — ВКП(б), ВЧК — ОГПУ — НКВД о культурной политике. 1917–1953 (М.: Демократия, 1999); ru.wikisource.org·hist.msu.ru 전자판",
+      "people": [
+        "zhdanov",
+        "mikhail-zoshchenko",
+        "akhmatova",
+        "sergei-eisenstein",
+        "dmitri-shostakovich",
+        "sergei-prokofiev",
+        "aram-khachaturian",
+        "georgy-alexandrov",
+        "pyotr-popkov",
+        "yakov-kapustin"
+      ],
+      "terms": [
+        "zhdanovshchina",
+        "anti-formalism-campaign",
+        "socialist-realism"
+      ],
+      "events": [],
+      "addedAt": "2026-08-26",
+      "noAutoLink": [
+        "티호노프",
+        "볼샤코프",
+        "므디바니"
+      ],
+      "aliases": {
+        "ko": [
+          "잡지 《즈베즈다》와 《레닌그라드》에 관하여",
+          "《즈베즈다》와 《레닌그라드》에 관한 결정",
+          "영화 《위대한 삶》에 관한 결정",
+          "영화 《위대한 삶》에 관하여",
+          "오페라 《위대한 우정》에 관한 결정",
+          "즈다놉시나 결정 세 건"
+        ],
+        "en": [
+          "On the Journals Zvezda and Leningrad",
+          "On the Film A Great Life",
+          "On the Opera The Great Friendship"
+        ]
+      }
+    },
+    {
       "id": "stalin-eisenstein-1947",
       "file": "stalin-eisenstein-1947.html",
       "docLang": "ko",
