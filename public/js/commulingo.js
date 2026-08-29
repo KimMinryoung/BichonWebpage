@@ -697,7 +697,7 @@
     function showNextLesson(lesson) {
         if (!els.nextLesson || !lesson) return;
         els.nextLesson.commuNextLesson = lesson;
-        els.nextLesson.textContent = (strings.nextLesson || (lang === 'en' ? 'Next lesson' : '다음 레슨')) + ' · ' + chapterTitle(lesson) + ' (' + lessonLevel(lesson) + ')';
+        els.nextLesson.textContent = (strings.nextLesson || (lang === 'en' ? 'Next lesson' : '다음 학습')) + ' · ' + chapterTitle(lesson) + ' (' + lessonLevel(lesson) + ')';
         els.nextLesson.classList.remove('is-hidden');
     }
 
