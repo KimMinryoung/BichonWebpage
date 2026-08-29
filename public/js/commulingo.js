@@ -850,7 +850,7 @@
             '<span class="commu-source-label">' + escapeHtml(lang === 'en' ? 'From the text' : '원전에서') + '</span>' +
             '<p>' + pieces + '</p>' +
             (source.href && label
-                ? '<a class="commu-source-link" href="' + escapeHtml(source.href) + '">' + escapeHtml(label) + (lang === 'en' ? ' →' : ' 전문 읽기 →') + '</a>'
+                ? '<a class="commu-source-link" href="' + escapeHtml(source.href) + '" target="_blank" rel="noopener">' + escapeHtml(label) + (lang === 'en' ? ' →' : ' 전문 읽기 →') + '</a>'
                 : '') +
             '</blockquote>';
     }
