@@ -93,18 +93,18 @@
       "docLang": "ko",
       "date": "1875-05",
       "title": {
-        "ko": "마르크스, 『고타강령 비판』 전문 해설",
-        "en": "Marx, Critique of the Gotha Programme: A Guided Reading"
+        "ko": "마르크스, 『고타강령 비판』",
+        "en": "Marx, Critique of the Gotha Programme"
       },
       "description": {
-        "ko": "마르크스가 1875년 고타 통합강령 초안에 단 논평의 전문 해설. 강령 조항을 순서대로 인용하고 마르크스의 답을 옮긴 뒤 입문자를 위한 해설을 붙였다. 노동전수익권과 공제 목록, 공산주의의 두 단계, 임금철칙, 국가 보조 협동조합, 자유국가와 프롤레타리아 독재를 차례로 다룬다.",
-        "en": "A guided reading of the notes Marx wrote on the draft Gotha unity programme in 1875. Each clause is quoted in order, Marx's reply translated, and a beginner's commentary added, covering the undiminished proceeds of labour and the deductions, the two phases of communism, the iron law of wages, state-aided co-operatives, and the free state and the dictatorship of the proletariat."
+        "ko": "마르크스가 1875년 고타 통합강령 초안에 조항마다 단 논평의 전문. 엥겔스의 1891년 서문과 브라케에게 보낸 편지를 함께 실었다. 노동전수익권과 공제 목록, 공산주의의 두 단계, 임금철칙, 국가 보조 협동조합, 자유국가와 프롤레타리아 독재를 차례로 다루며, 조항 논평마다 접힌 해설을 붙였다.",
+        "en": "The full text of Marx's marginal notes on the draft Gotha unity programme of 1875, with Engels's 1891 foreword and Marx's covering letter to Bracke. It covers the undiminished proceeds of labour and the deductions, the two phases of communism, the iron law of wages, state-aided co-operatives, and the free state and the dictatorship of the proletariat. Each clause carries a collapsed editorial commentary."
       },
       "kind": {
-        "ko": "전문 해설",
-        "en": "Guided reading"
+        "ko": "번역 전문",
+        "en": "Full translation"
       },
-      "source": "Karl Marx, Randglossen zum Programm der deutschen Arbeiterpartei (1875); MEW Bd. 19, S. 13–32; Marx & Engels Selected Works, Vol. 3 (Progress Publishers, 1970)",
+      "source": "Karl Marx, Randglossen zum Programm der deutschen Arbeiterpartei (1875); Marx/Engels Internet Archive 전자본(Marx & Engels Selected Works, Vol. 3, Progress Publishers, 1970 계열); MEW Bd. 19, S. 13–32",
       "people": [
         "karl-marx",
         "ferdinand-lassalle",
@@ -121,10 +121,15 @@
       "addedAt": "2026-07-27",
       "aliases": {
         "ko": [
+          "고타강령 비판",
+          "『고타강령 비판』",
+          "고타 강령 비판",
           "고타강령 비판 전문 해설",
           "『고타강령 비판』 전문 해설"
         ],
         "en": [
+          "Critique of the Gotha Programme",
+          "Critique of the Gotha Program",
           "guided reading of the Critique of the Gotha Programme"
         ]
       }
