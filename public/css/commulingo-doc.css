@@ -686,3 +686,71 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* 절마다 붙는 엮은이 해설(『임금, 가격, 이윤』 2026-08-29~). 원전과 한 흐름으로
+   보이면 독자가 마르크스의 말과 이 사이트의 말을 구분할 수 없고, 권위 없는
+   해설이 원전을 밀어내 읽을 마음을 꺾는다(소유자 판단). 그래서 기본은 접혀
+   제목 줄만 남기고, 펼친 본문은 doc-editorial과 같은 세로선·바탕을 써서
+   같은 목소리(엮은이)임을 보인다. 절 단위 콘텐츠라 흐름 안에서 펼쳐도 되고,
+   오버레이가 필요한 건 긴 본문 위의 목차뿐이다. */
+.book details.doc-commentary {
+  margin: 1.2rem 0 1.8rem;
+  border-left: 3px solid var(--btn-primary);
+  background: var(--bg-inset);
+  font-size: 0.92em;
+  color: var(--text-secondary);
+}
+
+.book .doc-commentary > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.55rem 1rem;
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  text-align: start;
+  user-select: none;
+}
+
+.book .doc-commentary > summary::-webkit-details-marker {
+  display: none;
+}
+
+.book .doc-commentary > summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.1em;
+  font-weight: 700;
+}
+
+.book .doc-commentary[open] > summary::before {
+  content: "−";
+}
+
+.book .doc-commentary[open] > summary {
+  color: var(--text-secondary);
+}
+
+.book .doc-commentary-body {
+  padding: 0 1rem 0.85rem;
+}
+
+.book .doc-commentary-body p {
+  margin: 0 0 0.6em;
+  text-align: start;
+}
+
+.book .doc-commentary-body p:last-child {
+  margin-bottom: 0;
+}
+
+.book .doc-commentary-body h3 {
+  margin: 0.9em 0 0.4em;
+  font-size: 1em;
+  color: var(--text-secondary);
+}
+
+.book .doc-commentary-body h3:first-child {
+  margin-top: 0.2em;
+}

@@ -49,18 +49,18 @@
       "docLang": "ko",
       "date": "1865-06",
       "title": {
-        "ko": "마르크스, 『임금, 가격, 이윤』 전문 해설",
-        "en": "Marx, Value, Price and Profit: A Guided Reading"
+        "ko": "마르크스, 『임금, 가격, 이윤』",
+        "en": "Marx, Value, Price and Profit"
       },
       "description": {
-        "ko": "1865년 마르크스가 국제노동자협회 총평의회에서 임금 인상 무용론을 편 존 웨스턴에게 답한 연설의 전문 해설. 열네 개 절을 순서대로 따라가며 웨스턴의 두 전제를 해체하고, 가치와 노동력과 잉여가치의 이론을 세운 뒤, 임금 투쟁이 왜 필요하면서도 그것만으로는 부족한지를 「임금제도의 폐지」라는 결론까지 밟아 간다.",
-        "en": "A guided reading of the address Marx delivered to the General Council of the International in 1865, answering John Weston's claim that wage rises are futile. It follows all fourteen sections in order, taking Weston's two premises apart, building up the theory of value, labour-power and surplus value, and showing why wage struggle is both necessary and insufficient, down to the closing watchword: abolition of the wages system."
+        "ko": "1865년 마르크스가 국제노동자협회 총평의회에서 임금 인상 무용론을 편 존 웨스턴에게 답한 연설의 전문. 웨스턴의 두 전제를 해체하고, 가치와 노동력과 잉여가치의 이론을 세운 뒤, 임금 투쟁이 왜 필요하면서도 그것만으로는 부족한지를 「임금제도의 폐지」라는 결론까지 밟아 간다. 절마다 접힌 해설을 붙였다.",
+        "en": "The full text of the address Marx delivered to the General Council of the International in 1865, answering John Weston's claim that wage rises are futile. It takes Weston's two premises apart, builds up the theory of value, labour-power and surplus value, and shows why wage struggle is both necessary and insufficient, down to the closing watchword: abolition of the wages system. Each section carries a collapsed editorial commentary."
       },
       "kind": {
-        "ko": "전문 해설",
-        "en": "Guided reading"
+        "ko": "번역 전문",
+        "en": "Full translation"
       },
-      "source": "Karl Marx, Value, Price and Profit (1865). 엘리너 마르크스 에이블링 엮음, 런던, 1898; MEW Bd. 16, S. 101–152",
+      "source": "Karl Marx, Value, Price and Profit (1865). 엘리너 마르크스 에이블링 엮음, 런던, 1898; Marx/Engels Internet Archive 전자본; MEW Bd. 16, S. 101–152",
       "people": [
         "karl-marx",
         "friedrich-engels"
@@ -74,13 +74,16 @@
       "addedAt": "2026-07-27",
       "aliases": {
         "ko": [
+          "임금, 가격, 이윤",
+          "『임금, 가격, 이윤』",
           "임금, 가격, 이윤 전문 해설",
           "『임금, 가격, 이윤』 전문 해설",
-          "『임금, 가격, 이윤』"
+          "가치, 가격, 이윤"
         ],
         "en": [
-          "guided reading of Value, Price and Profit",
-          "Value, Price and Profit"
+          "Value, Price and Profit",
+          "Wages, Price and Profit",
+          "guided reading of Value, Price and Profit"
         ]
       }
     },
@@ -2128,7 +2131,11 @@
     {
       "id": "cnr-programme-1944",
       "file": "cnr-programme-1944.html",
-      "noAutoLink": ["임시정부", "전원회의", "인민민주당"],
+      "noAutoLink": [
+        "임시정부",
+        "전원회의",
+        "인민민주당"
+      ],
       "docLang": "ko",
       "date": "1944-03-15",
       "title": {
