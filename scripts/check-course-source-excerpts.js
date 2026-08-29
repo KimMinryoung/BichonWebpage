@@ -10,7 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const COURSES = ['marx-wages-and-programme'];
+const COURSES = ['marx-wages-and-programme', 'marx-wage-labour-capital'];
 const DOCS_DIR = path.join(__dirname, '..', 'data', 'commulingo', 'docs');
 
 function normalize(text) {
