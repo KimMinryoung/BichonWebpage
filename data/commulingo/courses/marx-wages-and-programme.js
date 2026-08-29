@@ -52,14 +52,25 @@ function q(answer, koPrompt, enPrompt, koChoices, enChoices, koExplanation, enEx
 }
 
 function lesson(ch, level, titleKo, titleEn, questions) {
+    const id = `wages-programme-ch${String(ch).padStart(2, '0')}-${level}`;
+    const sources = SOURCES[id] || [];
+    // A count mismatch is a data slip, not a reason to take the whole
+    // CommuLingo catalog down (this file is host-mounted and read live by the
+    // running site; a throw here blanked people and term pages for a few
+    // minutes on 2026-08-29). Warn and serve the questions without excerpts;
+    // scripts/check-course-source-excerpts.js reports the slip.
+    if (sources.length !== questions.length) {
+        console.warn(`[commulingo] ${id}: ${questions.length} questions but ${sources.length} source excerpts`);
+    }
     return {
-        id: `wages-programme-ch${String(ch).padStart(2, '0')}-${level}`,
+        id,
         level,
         title: t(titleKo, titleEn),
         questions: questions.map((item, index) => ({
             ...item,
             id: `q${index + 1}`,
             points: level === 'advanced' ? 3 : 2,
+            source: sources[index],
         })),
     };
 }
@@ -119,13 +130,341 @@ function chapter(spec) {
     };
 }
 
-const VPP = 'https://www.marxists.org/archive/marx/works/1865/value-price-profit';
-const GOTHA = 'https://www.marxists.org/archive/marx/works/1875/gotha';
+const VPP = '/commulingo/docs/marx-value-price-profit';
+const GOTHA = '/commulingo/docs/marx-gotha-critique';
 
 const PART1_KO = '제1편 임금, 가격, 이윤 (1865)';
 const PART1_EN = 'Part 1: Value, Price and Profit (1865)';
 const PART2_KO = '제2편 고타강령 비판 (1875)';
 const PART2_EN = 'Part 2: Critique of the Gotha Programme (1875)';
+
+
+// Original-text excerpts (2026-08-29). After a question is answered the quiz
+// shows, under the feedback, a short passage of the text the question was
+// drawn from, with a link into that section of the full translation on the
+// site. A quiz item on its own is a fragment; the passage restores the
+// argument it was cut from. The Korean is verbatim from the site's full
+// translation, the English verbatim from Marx's own English (1865) or the
+// standard English edition (1875), so the box carries the author's words only,
+// never the editor's. scripts/check-course-source-excerpts.js verifies both
+// against the documents. Keyed by lesson id; entries follow question order.
+const VPP_SECTIONS = {
+    0: ['머리말', 'Preliminary'],
+    1: ['제1절 생산과 임금', 'I. Production and Wages'],
+    2: ['제2절 생산, 임금, 이윤', 'II. Production, Wages, Profits'],
+    3: ['제3절 임금과 통화', 'III. Wages and Currency'],
+    4: ['제4절 수요와 공급', 'IV. Supply and Demand'],
+    5: ['제5절 임금과 가격', 'V. Wages and Prices'],
+    6: ['제6절 가치와 노동', 'VI. Value and Labour'],
+    7: ['제7절 노동력', 'VII. Labour Power'],
+    8: ['제8절 잉여가치의 생산', 'VIII. Production of Surplus Value'],
+    9: ['제9절 노동의 가치', 'IX. Value of Labour'],
+    10: ['제10절 이윤은 상품을 그 가치대로 팔아서 생긴다', 'X. Profit is Made by Selling a Commodity at its Value'],
+    11: ['제11절 잉여가치가 나뉘는 여러 부분', 'XI. The Different Parts into which Surplus Value is Decomposed'],
+    12: ['제12절 이윤, 임금, 가격의 일반적 관계', 'XII. General Relation of Profits, Wages, and Prices'],
+    13: ['제13절 임금 인상을 시도하거나 인하에 저항하는 주요 사례', 'XIII. Main Cases of Attempts at Raising Wages or Resisting their Fall'],
+    14: ['제14절 자본과 노동의 투쟁과 그 결과', 'XIV. The Struggle Between Capital and Labour and its Results'],
+};
+const GOTHA_PARTS = {
+    foreword: ['엥겔스의 서문(1891)', "Engels's Foreword (1891)"],
+    bracke: ['브라케에게 보내는 편지', 'Letter to Bracke'],
+    'part-1': ['제1부', 'Part I'],
+    'part-2': ['제2부', 'Part II'],
+    'part-3': ['제3부', 'Part III'],
+    'part-4': ['제4부', 'Part IV'],
+    appendix: ['부록', 'Appendix'],
+};
+// A passage may skip sentences with ' … ' (the checker verifies each piece).
+function vpp(section, ko, en) {
+    const [labelKo, labelEn] = VPP_SECTIONS[section];
+    return {
+        href: `${VPP}#${section === 0 ? 'preliminary' : `section-${section}`}`,
+        label: t(`『임금, 가격, 이윤』 ${labelKo}`, `Value, Price and Profit, ${labelEn}`),
+        quote: t(ko, en),
+    };
+}
+function gotha(part, ko, en) {
+    const [labelKo, labelEn] = GOTHA_PARTS[part];
+    return {
+        href: `${GOTHA}#${part}`,
+        label: t(`『고타강령 비판』 ${labelKo}`, `Critique of the Gotha Programme, ${labelEn}`),
+        quote: t(ko, en),
+    };
+}
+const SOURCES = {
+    'wages-programme-ch01-basic': [
+        vpp(1,
+            `웨스턴 시민의 논증은 사실 두 개의 전제에 기대고 있었다. 첫째, 한 나라의 생산 총량은 고정된 것, 수학자들의 말로 하면 불변의 양 또는 크기라는 것. 둘째, 실질임금의 총액, 곧 그 임금으로 살 수 있는 상품의 양으로 잰 임금의 총액이 고정된 액수, 불변의 크기라는 것.`,
+            `Citizen Weston's argument rested, in fact, upon two premises: firstly, the amount of national production is a fixed thing, a constant quantity or magnitude, as the mathematicians would say; secondly, that the amount of real wages, that is to say, of wages as measured by the quantity of the commodities they can buy, is a fixed amount, a constant magnitude.`),
+        vpp(1,
+            `한 나라의 생산의 양 또는 크기는 끊임없이 변한다. 그것은 불변의 크기가 아니라 가변적인 크기이며, 인구 변동을 제쳐 두더라도 자본의 축적과 노동생산력이 끊임없이 변하기 때문에 그럴 수밖에 없다. … 그러나 임금 인상 이전에 국민 생산이 고정된 것이 아니라 가변적인 것이었다면, 임금 인상 뒤에도 그것은 고정된 것이 아니라 가변적인 것으로 남는다.`,
+            `The amount or magnitude of national production changes continuously. It is not a constant but a variable magnitude, and apart from changes in population it must be so, because of the continuous change in the accumulation of capital and the productive powers of labour. … But if before the rise of wages the national production was variable, and not fixed, it will continue to be variable and not fixed after the rise of wages.`),
+        vpp(2,
+            `웨스턴 시민 쪽에서는, 노동자들이 떠먹는 그 그릇이 국민 노동의 총생산물로 채워져 있다는 것, 그리고 그들이 거기서 더 떠내지 못하게 막는 것은 그릇이 좁아서도 아니고 담긴 것이 적어서도 아니며 오직 그들의 숟가락이 작기 때문이라는 것을 잊고 있다.`,
+            `Citizen Weston, on his part, has forgotten that the bowl from which the workmen eat is filled with the whole produce of national labour, and that what prevents them fetching more out of it is neither the narrowness of the bowl nor the scantiness of its contents, but only the smallness of their spoons.`),
+        vpp(2,
+            `임금 총액의 한도가 자본가의 의지와도 노동자의 의지와도 무관한 경제 법칙으로 정해진다면, 웨스턴 시민이 먼저 할 일은 그 법칙을 진술하고 증명하는 것이었다. 그러고 나서 그는 더 나아가, 어느 순간에나 실제로 지불되는 임금의 총액이 언제나 그 필연적인 임금 총액과 정확히 일치하며 결코 거기서 벗어나지 않는다는 것도 증명했어야 한다.`,
+            `If the limit of the amount of wages is settled by an economical law, independent alike of the will of the capitalist and the will of the working man, the first thing Citizen Weston had to do was to state that law and prove it. He ought then, moreover, to have proved that the amount of wages actually paid at every given moment always corresponds exactly to the necessary amount of wages, and never deviates from it.`),
+        vpp(2,
+            `반대로 임금 총액의 주어진 한도가 자본가의 단순한 의지, 곧 그의 탐욕의 한계에 근거한 것이라면 그것은 자의적인 한도다. 거기에는 필연적인 것이 하나도 없다. 그것은 자본가의 의지에 의해 바뀔 수 있고, 따라서 그의 의지에 맞서서도 바뀔 수 있다.`,
+            `If, on the other hand, the given limit of the amount of wages is founded on the mere will of the capitalist, or the limits of his avarice, it is an arbitrary limit. There is nothing necessary in it. It may be changed by the will of the capitalist, and may, therefore, be changed against his will.`),
+    ],
+    'wages-programme-ch01-advanced': [
+        vpp(2,
+            `자, 필수품을 생산하지 않는 자본가들의 처지는 어떻게 되겠는가? 일반적 임금 인상에 따른 이윤율의 하락을 그들은 자기 상품의 가격 인상으로 보전할 수 없을 것이다. 그 상품들에 대한 수요가 늘지 않았을 것이기 때문이다. … 그러므로 이 산업 부문들에서 이윤율은 일반적 임금률 인상에 단순 비례해서가 아니라, 임금의 일반적 인상, 필수품 가격의 상승, 사치품 가격의 하락이 겹친 비율로 떨어질 것이다.`,
+            `Well, what would be the position of those capitalists who do not produce necessaries? For the fall in the rate of profit, consequent upon the general rise of wages, they could not compensate themselves by a rise in the price of their commodities, because the demand for those commodities would not have increased. … In these branches of industry, therefore, the rate of profit would fall, not only in simple proportion to the general rise in the rate of wages, but in the compound ratio of the general rise of wages, the rise in the prices of necessaries, and the fall in the prices of luxuries.`),
+        vpp(2,
+            `그것은 내게 메네니우스 아그리파가 쓴 비유를 얼마간 떠올리게 했다. 로마의 평민들이 로마의 귀족들에 맞서 파업했을 때, 귀족 아그리파는 그들에게 귀족의 배가 국가라는 몸의 평민 지체들을 먹여 살린다고 말했다. 아그리파는 한 사람의 배를 채우는 것으로 다른 사람의 지체를 먹인다는 것을 끝내 보여 주지 못했다.`,
+            `It reminded me somewhat of the simile employed by Menenius Agrippa. When the Roman plebeians struck against the Roman patricians, the patrician Agrippa told them that the patrician belly fed the plebeian members of the body politic. Agrippa failed to show that you feed the members of one man by filling the belly of another.`),
+        vpp(1,
+            `그러나 국민 생산의 양이 가변적이 아니라 불변이라고 가정해 보자. 그래도 우리의 친구 웨스턴이 논리적 결론이라고 여기는 것은 여전히 근거 없는 주장에 머문다. … 생산의 총량이 고정되어 있다는 것은 임금의 총량이 고정되어 있다는 것을 조금도 증명하지 못한다. 그렇다면 우리의 친구 웨스턴은 이 고정성을 어떻게 증명하는가? 그렇다고 주장함으로써.`,
+            `But suppose the amount of national production to be constant instead of variable. Even then, what our friend Weston considers a logical conclusion would still remain a gratuitous assertion. … The fixed amount of production would by no means prove the fixed amount of wages. How then does our friend Weston prove this fixity? By asserting it.`),
+        vpp(0,
+            `지금 대륙에는 파업이 그야말로 전염병처럼 번지고 있고, 임금을 올리라는 요구가 곳곳에서 터져 나오고 있다. 이 문제는 우리 대회에서도 제기될 것이다. 국제노동자협회의 지도부인 여러분은 이 가장 중대한 문제에 대해 확고한 신념을 가지고 있어야 한다. … 또 하나 미리 말해 둘 것은 웨스턴 시민에 관해서다. 그는 노동자계급 사이에서 가장 인기 없으리라는 것을 스스로 아는 의견을, 자기가 생각하기에 노동자계급의 이익을 위해, 여러분에게 제안했을 뿐 아니라 공개적으로 옹호했다. 그런 도덕적 용기는 우리 모두가 높이 평가해야 마땅하다.`,
+            `There reigns now on the Continent a real epidemic of strikes, and a general clamour for a rise of wages. The question will turn up at our Congress. You, as the head of the International Association, ought to have settled convictions upon this paramount question. … Another preliminary remark I have to make in regard to Citizen Weston. He has not only proposed to you, but has publicly defended, in the interest of the working class, as he thinks, opinions he knows to be most unpopular with the working class. Such an exhibition of moral courage all of us must highly honour.`),
+        vpp(1,
+            `자본가의 의지는 물론 될 수 있는 대로 많이 가지려는 것이다. 우리가 할 일은 그의 의지를 이야기하는 것이 아니라, 그의 힘과, 그 힘의 한계와, 그 한계의 성격을 묻는 것이다.`,
+            `The will of the capitalist is certainly to take as much as possible. What we have to do is not to talk about his will, but to enquire into his power, the limits of that power, and the character of those limits.`),
+    ],
+    'wages-programme-ch02-basic': [
+        vpp(6,
+            `게다가 밀 1쿼터가 일정한 비율로 쇠와 교환된다고, 또는 밀 1쿼터의 가치가 일정한 양의 쇠로 표현된다고 말할 때, 나는 밀의 가치와 그에 상당하는 쇠가 밀도 쇠도 아닌 어떤 제3의 것과 같다고 말하는 것이다. 두 가지가 같은 크기를 서로 다른 두 모양으로 표현한다고 전제하기 때문이다. 따라서 밀이든 쇠든 그 어느 쪽도 상대와 무관하게 그 공통의 척도인 이 제3의 것으로 환원될 수 있어야 한다.`,
+            `Besides, if I say a quarter of wheat exchanges with iron in a certain proportion, or the value of a quarter of wheat is expressed in a certain amount of iron, I say that the value of wheat and its equivalent in iron are equal to some third thing, which is neither wheat nor iron, because I suppose them to express the same magnitude in two different shapes. Either of them, the wheat or the iron, must, therefore, independently of the other, be reducible to this third thing which is their common measure.`),
+        vpp(6,
+            `이 점을 밝히기 위해 아주 단순한 기하학의 예를 들겠다. 온갖 가능한 모양과 크기의 삼각형들의 넓이를 비교하거나, 삼각형을 사각형이나 다른 어떤 직선 도형과 비교할 때 우리는 어떻게 하는가? 우리는 어떤 삼각형이든 그 넓이를 눈에 보이는 모양과는 전혀 다른 표현으로 환원한다. … 상품의 가치에도 같은 방식이 적용되어야 한다. 우리는 그것들 모두를 모두에게 공통된 하나의 표현으로 환원할 수 있어야 하고, 그 뒤에는 그 동일한 척도를 얼마의 비율로 담고 있느냐로만 구별해야 한다.`,
+            `To elucidate this point I shall recur to a very simple geometrical illustration. In comparing the areas of triangles of all possible forms and magnitudes, or comparing triangles with rectangles, or any other rectilinear figure, how do we proceed? We reduce the area of any triangle whatever to an expression quite different from its visible form. … The same mode of procedure must obtain with the values of commodities. We must be able to reduce all of them to an expression common to all, and distinguishing them only by the proportions in which they contain that identical measure.`),
+        vpp(6,
+            `상품의 교환가치는 그 물건들의 사회적 기능일 뿐이고 그 자연적 성질과는 아무 상관이 없으므로, 우리는 먼저 이렇게 물어야 한다. 모든 상품의 공통된 사회적 실체는 무엇인가? 그것은 노동이다. 상품을 생산하려면 일정한 양의 노동이 거기에 들어가야, 곧 거기서 가공되어야 한다. 그리고 나는 그냥 노동이 아니라 사회적 노동이라고 말한다.`,
+            `As the exchangeable values of commodities are only social functions of those things, and have nothing at all to do with the natural qualities, we must first ask: What is the common social substance of all commodities? It is labour. To produce a commodity a certain amount of labour must be bestowed upon it, or worked up in it. And I say not only labour, but social labour.`),
+        vpp(6,
+            `자기가 직접 쓰려고, 스스로 소비하려고 물건을 만드는 사람은 생산물을 만드는 것이지 상품을 만드는 것이 아니다. 자급하는 생산자로서 그는 사회와 아무 상관이 없다. 그러나 상품을 생산하려면 어떤 사회적 욕구를 채우는 물건을 생산해야 할 뿐 아니라, 그의 노동 자체가 사회가 지출하는 노동의 총합의 한 부분을 이루어야 한다. 그것은 사회 안의 분업에 종속되어야 한다.`,
+            `A man who produces an article for his own immediate use, to consume it himself, creates a product, but not a commodity. As a self-sustaining producer he has nothing to do with society. But to produce a commodity, a man must not only produce an article satisfying some social want, but his labour itself must form part and parcel of the total sum of labour expended by society. It must be subordinate to the division of labour within society.`),
+        vpp(6,
+            `그러면 노동의 양은 어떻게 재는가? 노동이 지속되는 시간으로, 곧 노동을 시간과 날 따위로 재서 잰다. 물론 이 척도를 적용하려면 온갖 종류의 노동이 그 단위인 평균 노동 또는 단순 노동으로 환원되어야 한다. 그러므로 우리는 이런 결론에 이른다. 상품이 가치를 갖는 것은 그것이 사회적 노동의 결정체이기 때문이다. 그 가치의 크기, 곧 그 상대적 가치는 그 안에 담긴 그 사회적 실체의 많고 적음에, 다시 말해 그 생산에 필요한 노동의 상대적 양에 달려 있다.`,
+            `But how does one measure quantities of labour? By the time the labour lasts, in measuring the labour by the hour, the day, etc. Of course, to apply this measure, all sorts of labour are reduced to average or simple labour as their unit. We arrive, therefore, at this conclusion. A commodity has a value, because it is a crystallization of social labour. The greatness of its value, or its relative value, depends upon the greater or less amount of that social substance contained in it; that is to say, on the relative mass of labour necessary for its production.`),
+    ],
+    'wages-programme-ch02-advanced': [
+        vpp(12,
+            `이렇게 되는 것은 실 1파운드의 가격이 그 안에 가공된 노동의 총량으로 규제되지 그 총량이 지불된 노동과 지불되지 않은 노동으로 나뉘는 비율로 규제되지 않기 때문이다. 그러므로 앞에서 말한 사실, 곧 비싼 노동이 싼 상품을 생산하고 싼 노동이 비싼 상품을 생산할 수 있다는 사실은 그 역설적 겉모습을 잃는다.`,
+            `This would be so because the price of the pound of yarn is regulated by the total amount of labour worked up in it, and not by the proportional division of that total amount into paid and unpaid labour. The fact I have mentioned before that high-price labour may produce cheap, and low-priced labour may produce dear commodities, loses, therefore, its paradoxical appearance.`),
+        vpp(6,
+            `이 점에서 상품들은 오직 더 많거나 적은 양의 노동을 나타낸다는 것으로만 다를 수 있다. 예를 들어 비단 손수건에는 벽돌보다 더 많은 양의 노동이 가공되어 있을 수 있다. 그러면 노동의 양은 어떻게 재는가? 노동이 지속되는 시간으로, 곧 노동을 시간과 날 따위로 재서 잰다. 물론 이 척도를 적용하려면 온갖 종류의 노동이 그 단위인 평균 노동 또는 단순 노동으로 환원되어야 한다.`,
+            `In this respect they can differ only by representing greater or smaller quantities of labour, as, for example, a greater amount of labour may be worked up in a silken handkerchief than in a brick. But how does one measure quantities of labour? By the time the labour lasts, in measuring the labour by the hour, the day, etc. Of course, to apply this measure, all sorts of labour are reduced to average or simple labour as their unit.`),
+        vpp(4,
+            `수요와 공급은 시장가격의 일시적 변동 말고는 아무것도 규제하지 않는다. 그것은 어떤 상품의 시장가격이 왜 그 가치보다 오르거나 내리는지는 설명해 주지만, 그 가치 자체는 결코 설명하지 못한다. … 수요와 공급이 서로 균형을 이루어 작용하기를 그치는 순간, 상품의 시장가격은 그 실제 가치, 곧 그 시장가격이 그 주위에서 진동하는 표준가격과 일치한다.`,
+            `Supply and demand regulate nothing but the temporary fluctuations of market prices. They will explain to you why the market price of a commodity rises above or sinks below its value, but they can never account for the value itself. … At the moment when supply and demand equilibrate each other, and therefore cease to act, the market price of a commodity coincides with its real value, with the standard price round which its market prices oscillate.`),
+        vpp(6,
+            `상품의 가치가 그 생산에 들어간 노동의 양으로 규정된다면, 사람이 게으를수록 또는 서투를수록 상품을 완성하는 데 더 많은 노동시간이 필요하므로 그의 상품은 더 가치가 커지는 것처럼 보일 수 있다. 그러나 이것은 한심한 착각일 것이다. … 상품의 가치가 그 안에 가공되거나 결정화된 노동의 양으로 규정된다고 말할 때, 우리는 주어진 사회 상태에서, 일정한 사회적 평균 생산 조건 아래서, 주어진 사회적 평균 강도와 평균 숙련의 노동으로 그것을 생산하는 데 필요한 노동의 양을 뜻한다.`,
+            `It might seem that if the value of a commodity is determined by the quantity of labour bestowed upon its production, the lazier a man, or the clumsier a man, the more valuable his commodity, because the greater the time of labour required for finishing the commodity. This, however, would be a sad mistake. … In saying that the value of a commodity is determined by the quantity of labour worked up or crystallized in it, we mean the quantity of labour necessary for its production in a given state of society, under certain social average conditions of production, with a given social average intensity, and average skill of the labour employed.`),
+        vpp(5,
+            `「임금이 상품의 가격을 규정한다」는 도그마를 가장 추상적인 용어로 표현하면 「가치는 가치에 의해 규정된다」가 되고, 이 동어반복은 사실 우리가 가치에 대해 아무것도 모른다는 뜻이다. 이 전제를 받아들이면 정치경제학의 일반 법칙에 관한 모든 추론은 순전한 헛소리로 바뀐다.`,
+            `The dogma that “wages determine the price of commodities,” expressed in its most abstract terms, comes to this, that “value is determined by value,” and this tautology means that, in fact, we know nothing at all about value. Accepting this premise, all reasoning about the general laws of political economy turns into mere twaddle.`),
+    ],
+    'wages-programme-ch03-basic': [
+        vpp(7,
+            `노동자가 파는 것은 직접적으로는 그의 노동이 아니라 그의 노동력이며, 그는 그것의 일시적 처분권을 자본가에게 넘긴다.`,
+            `What the working man sells is not directly his labour, but his labouring power, the temporary disposal of which he makes over to the capitalist.`),
+        vpp(7,
+            `이것은 얼마나 확실한 사실인가 하면, 영국의 법에서는 어떤지 모르겠으나 대륙의 몇몇 법에서는 확실히 사람이 자기 노동력을 팔 수 있는 최대 기간이 정해져 있다. 어떤 기간이든 무한정 그렇게 하도록 허용된다면 노예제가 곧바로 되살아날 것이다. 예를 들어 그런 판매가 그의 평생에 걸친다면 그것은 그를 곧바로 고용주의 종신 노예로 만들 것이다.`,
+            `This is so much the case that I do not know whether by the English Laws, but certainly by some Continental Laws, the maximum time is fixed for which a man is allowed to sell his labouring power. If allowed to do so for any indefinite period whatever, slavery would be immediately restored. Such a sale, if it comprised his lifetime, for example, would make him at once the lifelong slave of his employer.`),
+        vpp(7,
+            `다른 모든 상품의 가치와 마찬가지로 그 가치는 그것을 생산하는 데 필요한 노동의 양으로 규정된다. 사람의 노동력은 오직 그의 살아 있는 개체 속에만 존재한다. 사람이 자라고 생명을 유지하려면 일정한 양의 필수품을 소비해야 한다. … 지금까지 말한 것으로부터, 노동력의 가치는 노동력을 생산하고 발전시키고 유지하고 이어 가는 데 필요한 필수품의 가치에 의해 규정된다는 것을 알 수 있을 것이다.`,
+            `Like that of every other commodity, its value is determined by the quantity of labour necessary to produce it. The labouring power of a man exists only in his living individuality. A certain mass of necessaries must be consumed by a man to grow up and maintain his life. … After what has been said, it will be seen that the value of labouring power is determined by the value of the necessaries required to produce, develop, maintain, and perpetuate the labouring power.`),
+        vpp(8,
+            `그러므로 그는 방적공을 이를테면 하루 열두 시간 일하게 할 것이다. 자기 임금, 곧 자기 노동력의 가치를 메우는 데 필요한 여섯 시간을 넘어서 방적공은 또 다른 여섯 시간을 일해야 할 것이다. 나는 이것을 잉여노동의 시간이라 부르겠고, 이 잉여노동은 잉여가치와 잉여생산물로 실현될 것이다.`,
+            `He will, therefore, make him work say, daily, twelve hours. Over and above the six hours required to replace his wages, or the value of his labouring power, he will, therefore, have to work six other hours, which I shall call hours of surplus labour, which surplus labour will realize itself in a surplus value and a surplus produce.`),
+        vpp(10,
+            `상품에 담긴 노동의 일부는 지불된 노동이고 일부는 지불되지 않은 노동이다. 그러므로 상품을 그 가치대로, 곧 거기에 들어간 노동의 총량의 결정체로서 팖으로써 자본가는 필연적으로 이윤을 남기고 팔 수밖에 없다. 그는 자기에게 등가를 치르게 한 것만이 아니라, 자기 노동자에게는 노동이 들었지만 자기에게는 아무것도 들지 않은 것까지 판다. … 정상적이고 평균적인 이윤은 상품을 그 실제 가치 이상으로가 아니라 실제 가치대로 팔아서 생긴다.`,
+            `Part of the labour contained in the commodity is paid labour; part is unpaid labour. By selling, therefore, the commodity at its value, that is, as the crystallization of the total quantity of labour bestowed upon it, the capitalist must necessarily sell it at a profit. He sells not only what has cost him an equivalent, but he sells also what has cost him nothing, although it has cost his workman labour. … normal and average profits are made by selling commodities not above, but at their real values.`),
+    ],
+    'wages-programme-ch03-advanced': [
+        vpp(9,
+            `그러나 사실은, 어떤 사람이 일주일에 사흘은 자기 밭에서 자기 자신을 위해 일하고 사흘은 영주의 영지에서 공짜로 일하든, 공장이나 작업장에서 하루 여섯 시간은 자기 자신을 위해, 여섯 시간은 고용주를 위해 일하든, 결과는 같다. 다만 뒤의 경우에는 노동의 지불된 부분과 지불되지 않은 부분이 서로 떼어 놓을 수 없게 뒤섞여 있고, 거래 전체의 성격이 계약의 개입과 주말에 받는 급여에 의해 완전히 가려져 있을 뿐이다.`,
+            `In point of fact, however, whether a man works three days of the week for himself on his own field and three days for nothing on the estate of his lord, or whether he works in the factory or the workshop six hours daily for himself and six for his employer, comes to the same, although in the latter case the paid and unpaid portions of labour are inseparably mixed up with each other, and the nature of the whole transaction is completely masked by the intervention of a contract and the pay received at the end of the week.`),
+        vpp(7,
+            `그러므로 임금의 평등을 요구하는 외침은 오해 위에 서 있으며, 결코 이루어질 수 없는 헛된 소망이다. 그것은 전제는 받아들이면서 결론은 피하려 드는 저 거짓되고 얄팍한 급진주의의 소산이다. … 임금제도의 토대 위에서 평등한, 아니 공평한 보수를 요구하는 것은 노예제의 토대 위에서 자유를 요구하는 것과 같다.`,
+            `The cry for an equality of wages rests, therefore, upon a mistake, is an inane wish never to be fulfilled. It is an offspring of that false and superficial radicalism that accepts premises and tries to evade conclusions. … To clamour for equal or even equitable retribution on the basis of the wages system is the same as to clamour for freedom on the basis of the slavery system.`),
+        vpp(11,
+            `지대, 이자, 산업이윤은 상품의 잉여가치, 곧 그 안에 담긴 지불되지 않은 노동의 서로 다른 부분들에 붙은 서로 다른 이름일 뿐이며, 그것들은 똑같이 이 원천에서, 오직 이 원천에서만 나온다. 그것들은 토지 그 자체나 자본 그 자체에서 나오는 것이 아니다. 토지와 자본은 그 소유자들로 하여금 고용 자본가가 노동자에게서 뽑아낸 잉여가치에서 각자의 몫을 받아 내게 해 줄 뿐이다.`,
+            `Rent, interest, and industrial profit are only different names for different parts of the surplus value of the commodity, or the unpaid labour enclosed in it, and they are equally derived from this source and from this source alone. They are not derived from land as such or from capital as such, but land and capital enable their owners to get their respective shares out of the surplus value extracted by the employing capitalist from the labourer.`),
+        vpp(7,
+            `우리는 상품에 결정화된 필요 노동의 양이 그 가치를 이룬다는 것을 보았다. 이제 이 가치 개념을 적용하면, 이를테면 열 시간 노동일의 가치를 어떻게 정의할 수 있겠는가? 그 하루에는 얼마나 많은 노동이 담겨 있는가? 열 시간의 노동이다. 열 시간 노동일의 가치가 열 시간의 노동, 곧 그 안에 담긴 노동의 양과 같다고 말하는 것은 동어반복이고, 게다가 무의미한 표현일 것이다.`,
+            `We have seen that the amount of necessary labour crystallized in a commodity constitutes its value. Now, applying this notion of value, how could we define, say, the value of a ten hours working day? How much labour is contained in that day? Ten hours' labour. To say that the value of a ten hours working day is equal to ten hours' labour, or the quantity of labour contained in it, would be a tautological and, moreover, a nonsensical expression.`),
+        vpp(7,
+            `이 물음을 탐구하는 것은 경제학자들이 「선행적 축적」 또는 「본원적 축적」이라 부르지만 마땅히 본원적 수탈이라 불러야 할 것을 탐구하는 일이 될 것이다. 우리는 이 이른바 본원적 축적이란 노동하는 인간과 그의 노동수단 사이에 있던 본래의 결합을 해체하는 결과를 낳은 일련의 역사적 과정에 지나지 않음을 알게 될 것이다.`,
+            `The inquiry into this question would be an inquiry into what the economists call “previous or original accumulation,” but which ought to be called original expropriation. We should find that this so-called original accumulation means nothing but a series of historical processes, resulting in a decomposition of the original union existing between the labouring Man and his Instruments of Labour.`),
+    ],
+    'wages-programme-ch04-basic': [
+        vpp(12,
+            `그 노동자가 하루 열두 시간 일하고, 열두 시간의 평균 노동이 6실링에 해당하는 양의 금으로 결정화된다면, 이 6실링의 추가 가치가 그의 노동이 창조한 유일한 가치다. 그의 노동시간으로 규정되는 이 주어진 가치가 그와 자본가 둘 다 각자의 몫 또는 배당을 끌어내야 할 유일한 기금이고, 임금과 이윤으로 나뉠 유일한 가치다.`,
+            `If that working man works twelve hours daily, if twelve hours of average labour crystallize themselves in an amount of gold equal to six shillings, this additional value of six shillings is the only value his labour will have created. This given value, determined by the time of his labour, is the only fund from which both he and the capitalist have to draw their respective shares or dividends, the only value to be divided into wages and profits.`),
+        vpp(12,
+            `임금이 변하면 이윤은 반대 방향으로 변할 것이다. 임금이 떨어지면 이윤이 오르고, 임금이 오르면 이윤이 떨어질 것이다. … 그러나 이 모든 변동은 상품의 가치에 영향을 주지 않을 것이다. 그러므로 일반적 임금 인상은 일반 이윤율의 하락을 낳지만 가치에는 영향을 주지 않을 것이다.`,
+            `If the wages change, profits will change in an opposite direction. If wages fall, profits will rise; and if wages rise, profits will fall. … but all these variations will not affect the value of the commodity. A general rise of wages would, therefore, result in a fall of the general rate of profit, but not affect values.`),
+        vpp(13,
+            `그러나 임금 인상을 고집함으로써 노동자는, 자기 상품의 비용이 늘었을 때 그 늘어난 가치를 지불받으려 하는 다른 모든 상품 판매자와 마찬가지로, 다만 자기 노동의 늘어난 가치를 받기를 고집하는 것일 뿐이다. 임금이 오르지 않거나 필수품의 늘어난 가치를 보상할 만큼 충분히 오르지 않는다면, 노동의 가격은 노동의 가치 아래로 떨어질 것이고 노동자의 생활수준은 나빠질 것이다.`,
+            `But in insisting upon a rise of wages, the labourer would only insist upon getting the increased value of his labour, like every other seller of a commodity, who, the costs of his commodities having increased, tries to get its increased value paid. If wages did not rise, or not sufficiently rise, to compensate for the increased values of necessaries, the price of labour would sink below the value of labour, and the labourer's standard of life would deteriorate.`),
+        vpp(13,
+            `노동일을 예전의 합리적 크기로 줄이려는 시도에서, 또는 표준 노동일의 법적 확정을 관철할 수 없는 곳에서 임금 인상으로, 그것도 강요된 잉여시간에 비례해서만이 아니라 그보다 더 큰 비율의 인상으로 과잉노동을 억제하려는 시도에서, 노동자들은 자기 자신과 자기 종족에 대한 의무를 다하는 것일 뿐이다. 그들은 다만 자본의 폭압적 침탈에 한계를 두는 것일 뿐이다. 시간은 인간이 발전할 공간이다.`,
+            `In their attempts at reducing the working day to its former rational dimensions, or, where they cannot enforce a legal fixation of a normal working day, at checking overwork by a rise of wages, a rise not only in proportion to the surplus time exacted, but in a greater proportion, working men fulfill only a duty to themselves and their race. They only set limits to the tyrannical usurpations of capital. Time is the room of human development.`),
+        vpp(13,
+            `내가 고찰한 모든 경우에, 그리고 그것은 백 가운데 아흔아홉을 이루는데, 여러분은 임금 인상을 위한 투쟁이 오직 선행하는 변화의 뒤를 따라 일어나며 … 한마디로 자본의 선행 작용에 대한 노동의 반작용이라는 것을 보았다.`,
+            `In all the cases I have considered, and they form ninety-nine out of a hundred, you have seen that a struggle for a rise of wages follows only in the track of previous changes … in one word, as reactions of labour against the previous action of capital.`),
+    ],
+    'wages-programme-ch04-advanced': [
+        vpp(13,
+            `노동자의 절대적 생활수준은 그대로였겠지만, 그의 상대적 임금, 그리고 그와 함께 자본가에 견준 그의 상대적인 사회적 지위는 낮아졌을 것이다. 노동자가 이 상대적 임금의 저하에 저항한다면, 그는 다만 자기 자신의 노동의 늘어난 생산력에서 얼마간의 몫을 얻고 사회의 사다리에서 예전의 상대적 위치를 지키려 하는 것일 뿐이다.`,
+            `Although the labourer's absolute standard of life would have remained the same, his relative wages, and therewith his relative social position, as compared with that of the capitalist, would have been lowered. If the working man should resist that reduction of relative wages, he would only try to get some share in the increased productive powers of his own labour, and to maintain his former relative position in the social scale.`),
+        vpp(13,
+            `공장법의 적용을 받는 모든 산업 부문에 지금 존재하는 것과 같이 노동일의 한계가 주어져 있더라도, 예전의 표준적인 노동의 가치를 유지하기 위해서만이라도 임금 인상이 필요해질 수 있다. 노동의 강도를 높임으로써 사람은 예전에 두 시간에 쓰던 만큼의 생명력을 한 시간에 쓰게 될 수 있다.`,
+            `Even with given limits of the working day, such as they now exist in all branches of industry subjected to the factory laws, a rise of wages may become necessary, if only to keep up the old standard value of labour. By increasing the intensity of labour, a man may be made to expend as much vital force in one hour as he formerly did in two.`),
+        vpp(13,
+            `초과이윤이 생기는 번영의 국면 동안 임금 인상을 위해 싸우지 않는다면, 그는 한 산업순환의 평균을 잡을 때 자기의 평균임금, 곧 자기 노동의 가치조차 받지 못할 것이다. 그의 임금이 순환의 불리한 국면에 필연적으로 영향을 받으면서도 순환의 번영 국면 동안의 보상에서 스스로를 배제해야 한다고 요구하는 것은 어리석음의 극치다.`,
+            `If, during the phases of prosperity, when extra profits are made, he did not battle for a rise of wages, he would, taking the average of one industrial cycle, not even receive his average wages, or the value of his labour. It is the utmost height of folly to demand, that while his wages are necessarily affected by the adverse phases of the cycle, he should exclude himself from compensation during the prosperous phases of the cycle.`),
+        vpp(13,
+            `예를 들어 여러분의 중간계급 통계가들은 랭커셔 공장 가족의 평균임금이 올랐다고 말할 것이다. 그들은 가장인 남자의 노동 대신 이제 그의 아내와 아마도 서너 명의 아이가 자본의 저거너트 수레바퀴 아래 던져졌다는 것, 그리고 임금 총액의 인상이 그 가족에게서 뽑아낸 잉여노동의 총량에 상응하지 않는다는 것을 잊고 있다.`,
+            `Your middle-class statisticians will tell you, for instance, that the average wages of factory families in Lancashire has risen. They forget that instead of the labour of the man, the head of the family, his wife and perhaps three or four children are now thrown under the Juggernaut wheels of capital, and that the rise of the aggregate wages does not correspond to the aggregate surplus labour extracted from the family.`),
+        vpp(14,
+            `그들은 현재의 제도가 그들에게 온갖 비참을 강요하면서도 동시에 사회의 경제적 재건에 필요한 물질적 조건과 사회적 형태를 낳고 있다는 것을 이해해야 한다. 「공정한 노동일에 공정한 임금을!」이라는 보수적 표어 대신 그들은 자기 깃발에 혁명적 구호를 새겨야 한다. 「임금제도의 폐지!」`,
+            `They ought to understand that, with all the miseries it imposes upon them, the present system simultaneously engenders the material conditions and the social forms necessary for an economical reconstruction of society. Instead of the conservative motto: “A fair day's wage for a fair day's work!” they ought to inscribe on their banner the revolutionary watchword: “Abolition of the wages system!”`),
+    ],
+    'wages-programme-ch05-basic': [
+        gotha('part-1',
+            `노동은 모든 부의 원천이 아니다. 자연도 노동과 꼭 같이 사용가치의 원천이며(물질적 부는 바로 그런 사용가치로 이루어져 있다!), 노동 자체는 하나의 자연력인 인간 노동력의 발현일 뿐이다.`,
+            `Labor is not the source of all wealth. Nature is just as much the source of use values (and it is surely of such that material wealth consists!) as labor, which itself is only the manifestation of a force of nature, human labor power.`),
+        gotha('part-1',
+            `여기서 이제 다음을 공제해야 한다. 첫째, 소모된 생산수단을 대체할 부분. 둘째, 생산 확대를 위한 추가 부분. 셋째, 사고와 자연재해에 따른 교란 따위에 대비한 예비 기금 또는 보험 기금. 「감소되지 않은」 노동수익에서의 이 공제는 경제적 필연이며, 그 크기는 쓸 수 있는 수단과 힘에 따라, 그리고 부분적으로는 확률 계산에 따라 정해져야 하지만, 공정함으로는 결코 계산할 수 없다.`,
+            `From this must now be deducted: First, cover for replacement of the means of production used up. Second, additional portion for expansion of production. Third, reserve or insurance funds to provide against accidents, dislocations caused by natural calamities, etc. These deductions from the "undiminished" proceeds of labor are an economic necessity, and their magnitude is to be determined according to available means and forces, and partly by computation of probabilities, but they are in no way calculable by equity.`),
+        gotha('part-1',
+            `이것이 개인들 사이에 분배되기 전에 여기서 다시 공제해야 할 것이 있다. 첫째, 생산에 속하지 않는 일반 관리 비용. … 둘째, 학교, 보건 시설 등 공동의 수요를 충족하는 데 쓰이는 부분. … 셋째, 노동 능력이 없는 사람들 등을 위한 기금, 한마디로 오늘날 이른바 공적 빈민 구제에 속하는 것을 위한 기금.`,
+            `Before this is divided among the individuals, there has to be deducted again, from it: First, the general costs of administration not belonging to production. … Second, that which is intended for the common satisfaction of needs, such as schools, health services, etc. … Third, funds for those unable to work, etc., in short, for what is included under so-called official poor relief today.`),
+        gotha('part-1',
+            `「감소되지 않은」 노동수익은 어느새 「감소된」 수익으로 바뀌었다. 다만 생산자가 사적 개인의 자격으로 빼앗긴 것은 사회 구성원의 자격으로 직접 또는 간접으로 그에게 이롭게 돌아온다. 「감소되지 않은」 노동수익이라는 문구가 사라졌듯이, 이제 「노동수익」이라는 문구도 아예 사라진다.`,
+            `The "undiminished" proceeds of labor have already unnoticeably become converted into the "diminished" proceeds, although what the producer is deprived of in his capacity as a private individual benefits him directly or indirectly in his capacity as a member of society. Just as the phrase of the "undiminished" proceeds of labor has disappeared, so now does the phrase of the "proceeds of labor" disappear altogether.`),
+        gotha('part-1',
+            `지금까지의 분석을 제쳐 두더라도, 이른바 분배를 두고 법석을 떨며 거기에 주된 강조를 두는 것은 대체로 잘못이었다. 소비수단의 어떤 분배든 생산조건 자체의 분배에서 나오는 결과일 뿐이다. 그런데 후자의 분배는 생산양식 자체의 성격이다.`,
+            `Quite apart from the analysis so far given, it was in general a mistake to make a fuss about so-called distribution and put the principal stress on it. Any distribution whatever of the means of consumption is only a consequence of the distribution of the conditions of production themselves. The latter distribution, however, is a feature of the mode of production itself.`),
+    ],
+    'wages-programme-ch05-advanced': [
+        gotha('part-1',
+            `「사회의 모든 구성원에게」? 노동하지 않는 구성원에게도? 그러면 「감소되지 않은」 노동수익에서 무엇이 남는가? 노동하는 구성원에게만? 그러면 사회의 모든 구성원의 「평등한 권리」에서 무엇이 남는가?`,
+            `"To all members of society"? To those who do not work as well? What remains then of the "undiminished" proceeds of labor? Only to those members of society who work? What remains then of the "equal right" of all members of society?`),
+        gotha('part-1',
+            `생산수단의 공동소유에 근거한 협동조합적 사회 안에서 생산자들은 자기 생산물을 교환하지 않는다. 생산물에 쓰인 노동이 여기서 그 생산물의 가치로, 그것이 지닌 물적 성질로 나타나는 일도 마찬가지로 없다. 이제는 자본주의 사회와 달리 개인의 노동이 우회로를 거쳐서가 아니라 직접 총노동의 구성 부분으로 존재하기 때문이다. 오늘날에도 그 애매함 때문에 못마땅한 「노동수익」이라는 문구는 이렇게 모든 뜻을 잃는다.`,
+            `Within the co-operative society based on common ownership of the means of production, the producers do not exchange their products; just as little does the labor employed on the products appear here as the value of these products, as a material quality possessed by them, since now, in contrast to capitalist society, individual labor no longer exists in an indirect fashion but directly as a component part of total labor. The phrase "proceeds of labor", objectionable also today on account of its ambiguity, thus loses all meaning.`),
+        gotha('part-1',
+            `예를 들어 자본주의적 생산양식은 물질적 생산조건이 자본 소유와 토지 소유의 형태로 비노동자의 손에 있고, 대중은 인적 생산조건인 노동력만을 소유한다는 데 근거한다. 생산의 요소들이 이렇게 분배되어 있으면 오늘날의 소비수단 분배는 저절로 따라 나온다. 물질적 생산조건이 노동자 자신들의 협동조합적 소유라면 오늘과는 다른 소비수단의 분배가 마찬가지로 저절로 따라 나온다.`,
+            `The capitalist mode of production, for example, rests on the fact that the material conditions of production are in the hands of nonworkers in the form of property in capital and land, while the masses are only owners of the personal condition of production, of labor power. If the elements of production are so distributed, then the present-day distribution of the means of consumption results automatically. If the material conditions of production are the co-operative property of the workers themselves, then there likewise results a distribution of the means of consumption different from the present one.`),
+        gotha('part-1',
+            `속류 사회주의는 (그리고 그것을 이어받아 민주주의자들의 한 부분은) 부르주아 경제학자들로부터 분배를 생산양식과 독립된 것으로 고찰하고 다루는 법을, 그리하여 사회주의를 주로 분배를 중심으로 도는 것으로 그리는 법을 물려받았다. 진정한 관계가 오래전에 밝혀졌는데, 왜 다시 뒤로 돌아가는가?`,
+            `Vulgar socialism (and from it in turn a section of the democrats) has taken over from the bourgeois economists the consideration and treatment of distribution as independent of the mode of production and hence the presentation of socialism as turning principally on distribution. After the real relation has long been made clear, why retrogress again?`),
+        gotha('part-1',
+            `이제 이 문장을 그 서 있는 대로, 아니 그보다 절뚝거리는 대로 놓아두자. 결론으로 무엇을 기대할 수 있었겠는가? 분명히 이것이다. 「노동은 모든 부의 원천이므로, 사회의 누구도 노동의 생산물로서가 아니면 부를 자기 것으로 삼을 수 없다. 그러므로 스스로 노동하지 않는 사람은 남의 노동으로 살아가며, 자기 문화도 남의 노동을 대가로 얻는다.」`,
+            `Let us now leave the sentence as it stands, or rather limps. What could one have expected in conclusion? Obviously this: "Since labor is the source of all wealth, no one in society can appropriate wealth except as the product of labor. Therefore, if he himself does not work, he lives by the labor of others and also acquires his culture at the expense of the labor of others."`),
+    ],
+    'wages-programme-ch06-basic': [
+        gotha('part-1',
+            `그에 따라 개별 생산자는 공제가 이루어진 뒤, 자기가 사회에 준 것을 정확히 되돌려 받는다. 그가 사회에 준 것은 자기 개인의 노동량이다. … 그는 (공동 기금을 위한 노동을 공제한 뒤) 이러이러한 양의 노동을 제공했다는 증서를 사회에서 받고, 이 증서로 사회의 소비수단 재고에서 같은 양의 노동이 든 만큼을 꺼내 간다. 그가 한 형태로 사회에 준 것과 같은 양의 노동을 그는 다른 형태로 되돌려 받는다.`,
+            `Accordingly, the individual producer receives back from society – after the deductions have been made – exactly what he gives to it. What he has given to it is his individual quantum of labor. … He receives a certificate from society that he has furnished such-and-such an amount of labor (after deducting his labor for the common funds); and with this certificate, he draws from the social stock of means of consumption as much as the same amount of labor cost. The same amount of labor which he has given to society in one form, he receives back in another.`),
+        gotha('part-1',
+            `여기서는 분명 상품 교환이 등가 교환인 한에서 그것을 규제하는 것과 같은 원리가 지배한다. … 그러므로 여기서 평등한 권리는 여전히 원칙상 부르주아적 권리다. 다만 원칙과 실제가 더 이상 서로 어긋나지 않는다는 점이 다른데, 상품 교환에서 등가물의 교환은 평균적으로만 존재하고 개별 경우에는 존재하지 않는다.`,
+            `Here, obviously, the same principle prevails as that which regulates the exchange of commodities, as far as this is exchange of equal values. … Hence, equal right here is still in principle – bourgeois right, although principle and practice are no longer at loggerheads, while the exchange of equivalents in commodity exchange exists only on the average and not in the individual case.`),
+        gotha('part-1',
+            `이 평등한 권리는 불평등한 노동에 대한 불평등한 권리다. 그것은 계급 차이를 인정하지 않는다. 누구나 남과 똑같이 노동자일 뿐이기 때문이다. 그러나 그것은 개인의 불평등한 재능을, 따라서 불평등한 생산 능력을 자연적 특권으로 암묵적으로 인정한다. … 더 나아가, 어떤 노동자는 결혼했고 다른 노동자는 하지 않았으며, 어떤 이는 다른 이보다 아이가 많다, 등등. 그러므로 같은 노동을 하고 따라서 사회적 소비 기금에서 같은 몫을 받아도, 실제로는 한 사람이 다른 사람보다 더 받고 한 사람이 다른 사람보다 더 부유해지는 등의 일이 생긴다.`,
+            `This equal right is an unequal right for unequal labor. It recognizes no class differences, because everyone is only a worker like everyone else; but it tacitly recognizes unequal individual endowment, and thus productive capacity, as a natural privilege. … Further, one worker is married, another is not; one has more children than another, and so on and so forth. Thus, with an equal performance of labor, and hence an equal in the social consumption fund, one will in fact receive more than another, one will be richer than another, and so on.`),
+        gotha('part-1',
+            `그러나 이 폐단은 오랜 진통 끝에 자본주의 사회에서 이제 막 나온 공산주의 사회의 첫째 단계에서는 피할 수 없다. 권리는 결코 사회의 경제적 구조와, 그것이 조건 짓는 사회의 문화 발전보다 높을 수 없다.`,
+            `But these defects are inevitable in the first phase of communist society as it is when it has just emerged after prolonged birth pangs from capitalist society. Right can never be higher than the economic structure of society and its cultural development conditioned thereby.`),
+        gotha('part-1',
+            `공산주의 사회의 높은 단계에서, 곧 분업에 대한 개인의 예속적 종속이 사라지고 그와 함께 정신노동과 육체노동의 대립도 사라진 뒤에, 노동이 생계의 수단일 뿐 아니라 그 자체가 삶의 첫째 욕구가 된 뒤에, 개인들의 전면적 발전과 더불어 생산력도 성장하고 협동적 부의 모든 샘이 더욱 넘치게 흐르게 된 뒤에, 그때에야 비로소 부르주아적 권리의 좁은 지평을 완전히 넘어설 수 있으며, 사회는 자기 깃발에 이렇게 쓸 수 있다. 각자는 능력에 따라, 각자에게는 필요에 따라!`,
+            `In a higher phase of communist society, after the enslaving subordination of the individual to the division of labor, and therewith also the antithesis between mental and physical labor, has vanished; after labor has become not only a means of life but life's prime want; after the productive forces have also increased with the all-around development of the individual, and all the springs of co-operative wealth flow more abundantly – only then can the narrow horizon of bourgeois right be crossed in its entirety and society inscribe on its banners: From each according to his ability, to each according to his needs!`),
+    ],
+    'wages-programme-ch06-advanced': [
+        gotha('part-1',
+            `그러나 이 폐단은 오랜 진통 끝에 자본주의 사회에서 이제 막 나온 공산주의 사회의 첫째 단계에서는 피할 수 없다. … 공산주의 사회의 높은 단계에서, 곧 분업에 대한 개인의 예속적 종속이 사라지고 그와 함께 정신노동과 육체노동의 대립도 사라진 뒤에, … 그때에야 비로소 부르주아적 권리의 좁은 지평을 완전히 넘어설 수 있으며, 사회는 자기 깃발에 이렇게 쓸 수 있다. 각자는 능력에 따라, 각자에게는 필요에 따라!`,
+            `But these defects are inevitable in the first phase of communist society as it is when it has just emerged after prolonged birth pangs from capitalist society. … In a higher phase of communist society, after the enslaving subordination of the individual to the division of labor, and therewith also the antithesis between mental and physical labor, has vanished; … only then can the narrow horizon of bourgeois right be crossed in its entirety and society inscribe on its banners: From each according to his ability, to each according to his needs!`),
+        gotha('part-1',
+            `그러므로 여기서 평등한 권리는 여전히 원칙상 부르주아적 권리다. 다만 원칙과 실제가 더 이상 서로 어긋나지 않는다는 점이 다른데, 상품 교환에서 등가물의 교환은 평균적으로만 존재하고 개별 경우에는 존재하지 않는다. 이런 진보에도 불구하고 이 평등한 권리에는 여전히 부르주아적 한계가 붙어 있다.`,
+            `Hence, equal right here is still in principle – bourgeois right, although principle and practice are no longer at loggerheads, while the exchange of equivalents in commodity exchange exists only on the average and not in the individual case. In spite of this advance, this equal right is still constantly stigmatized by a bourgeois limitation.`),
+        gotha('part-1',
+            `생산자의 권리는 그가 제공하는 노동에 비례한다. 평등은 같은 잣대, 곧 노동으로 잰다는 데 있다. 그러나 어떤 사람은 다른 사람보다 육체적으로나 정신적으로 뛰어나서 같은 시간에 더 많은 노동을 제공하거나 더 오래 노동할 수 있다. 그리고 노동이 척도로 쓰이려면 그 지속시간이나 강도로 규정되어야 하며, 그렇지 않으면 그것은 측정의 잣대이기를 그친다.`,
+            `The right of the producers is proportional to the labor they supply; the equality consists in the fact that measurement is made with an equal standard, labor. But one man is superior to another physically, or mentally, and supplies more labor in the same time, or can labor for a longer time; and labor, to serve as a measure, must be defined by its duration or intensity, otherwise it ceases to be a standard of measurement.`),
+        gotha('part-1',
+            `우리가 여기서 다루는 것은 그 자신의 기초 위에서 발전한 공산주의 사회가 아니라, 반대로 자본주의 사회에서 이제 막 나온 공산주의 사회다. 따라서 이 사회는 모든 면에서, 경제적으로나 도덕적으로나 정신적으로나, 자기가 그 태내에서 나온 낡은 사회의 모반을 아직 지니고 있다.`,
+            `What we have to deal with here is a communist society, not as it has developed on its own foundations, but, on the contrary, just as it emerges from capitalist society; which is thus in every respect, economically, morally, and intellectually, still stamped with the birthmarks of the old society from whose womb it emerges.`),
+        gotha('part-1',
+            `내가 한편으로 「감소되지 않은」 노동수익을, 다른 한편으로 「평등한 권리」와 「공정한 분배」를 이렇게 길게 다룬 것은, 한편으로 어떤 시기에는 얼마간 뜻이 있었으나 이제는 낡아빠진 말의 쓰레기가 된 관념들을 다시 도그마로 우리 당에 강요하려 하고, 다른 한편으로 당에 심어 넣느라 그토록 애를 먹었지만 이제는 당에 뿌리내린 현실주의적 견해를 민주주의자들과 프랑스 사회주의자들 사이에 그토록 흔한 권리 따위에 관한 이데올로기적 헛소리로 다시 왜곡하려 하는 것이 얼마나 큰 범죄인지를 보이기 위해서였다.`,
+            `I have dealt more at length with the "undiminished" proceeds of labor, on the one hand, and with "equal right" and "fair distribution", on the other, in order to show what a crime it is to attempt, on the one hand, to force on our Party again, as dogmas, ideas which in a certain period had some meaning but have now become obsolete verbal rubbish, while again perverting, on the other, the realistic outlook, which it cost so much effort to instill into the Party but which has now taken root in it, by means of ideological nonsense about right and other trash so common among the democrats and French socialists.`),
+    ],
+    'wages-programme-ch07-basic': [
+        gotha('part-2',
+            `「임금철칙」에서 라살레의 것이라고는 괴테의 「위대하고 영원한 철의 법칙」에서 빌려 온 「철의」라는 낱말뿐이라는 것은 잘 알려져 있다. 「철의」라는 낱말은 진정한 신자들이 서로를 알아보는 표지다.`,
+            `It is well known that nothing of the "iron law of wages" is Lassalle's except the word "iron" borrowed from Goethe's "great, eternal iron laws". … The word "iron" is a label by which the true believers recognize one another.`),
+        gotha('part-2',
+            `그러면 그 논거는 무엇인가? 라살레가 죽은 직후 랑게가 이미 보였듯이, 그것은 (랑게 자신이 설교한) 맬서스의 인구론이다. 그러나 이 이론이 옳다면, 나는 임금노동을 백 번 폐지해도 이 법칙을 다시 폐지할 수 없다. 그러면 이 법칙은 임금노동 제도만이 아니라 모든 사회 제도를 지배하기 때문이다. 바로 이것에 근거하여 경제학자들은 50년도 넘게, 사회주의는 자연에 근거를 둔 빈곤을 없앨 수 없고 다만 그것을 일반화하여 사회의 표면 전체에 동시에 고루 나누어 줄 수 있을 뿐이라고 증명해 왔다!`,
+            `And what is that? As Lange already showed, shortly after Lassalle's death, it is the Malthusian theory of population (preached by Lange himself). But if this theory is correct, then again I cannot abolish the law even if I abolish wage labor a hundred times over, because the law then governs not only the system of wage labor but every social system. Basing themselves directly on this, the economists have been proving for 50 years and more that socialism cannot abolish poverty, which has its basis in nature, but can only make it general, distribute it simultaneously over the whole surface of society!`),
+        gotha('part-2',
+            `라살레가 죽은 뒤 우리 당에는 임금이 그 겉모습처럼 노동의 가치 또는 가격이 아니라 노동력의 가치 또는 가격의 가면을 쓴 형태일 뿐이라는 과학적 인식이 자리 잡았다. 이로써 종래의 부르주아적 임금관 전체가 그에 대해 지금까지 가해진 모든 비판과 함께 단번에 영원히 폐기되었다.`,
+            `Since Lassalle's death, there has asserted itself in our party the scientific understanding that wages are not what they appear to be … but only a masked form for the value, or price, of labor power. Thereby, the whole bourgeois conception of wages hitherto, as well as all the criticism hitherto directed against this conception, was thrown overboard once and for all.`),
+        gotha('part-3',
+            `「사회주의적 총노동 조직」은 사회의 혁명적 전화 과정에서 생겨나는 대신, 국가가 생산협동조합에 주는 「국가 보조」에서, 그리고 노동자가 아니라 국가가 「일으키는」 협동조합에서 「생겨난다」. 국가 융자로 새 철도를 놓듯 새 사회를 지을 수 있다는 것은 라살레의 상상력에나 어울리는 일이다!`,
+            `Instead of arising from the revolutionary process of transformation of society, the "socialist organization of the total labor" "arises" from the "state aid" that the state gives to the producers' co-operative societies and which the state, not the workers, "calls into being". It is worthy of Lassalle's imagination that with state loans one can build a new society just as well as a new railway!`),
+        gotha('part-3',
+            `노동자들이 사회적 규모로, 우선은 자기 나라의 국민적 규모로 협동조합적 생산의 조건을 세우려 한다는 것은 그들이 오늘의 생산조건을 변혁하기 위해 일한다는 뜻일 뿐이며, 국가 보조로 협동조합을 세우는 것과는 아무 공통점도 없다. 그러나 오늘의 협동조합들에 관해 말하면, 그것들은 정부의 피후견물도 부르주아의 피후견물도 아닌 노동자 자신의 독립적 창조물인 한에서만 가치가 있다.`,
+            `That the workers desire to establish the conditions for co-operative production on a social scale, and first of all on a national scale, in their own country, only means that they are working to revolutionize the present conditions of production, and it has nothing in common with the foundation of co-operative societies with state aid. But as far as the present co-operative societies are concerned, they are of value only insofar as they are the independent creations of the workers and not protégés either of the governments or of the bourgeois.`),
+    ],
+    'wages-programme-ch07-advanced': [
+        gotha('part-2',
+            `그러니 앞으로 독일 노동자당은 라살레의 「임금철칙」을 믿어야 한다는 것이다! 이것이 없어지지 않도록, 「임금철칙과 함께」 「임금제도의 폐지」(임금노동 제도라고 해야 할 것이다)를 말하는 헛소리가 저질러진다. 내가 임금노동을 폐지하면 당연히 그 법칙들도 폐지하는 것이다. 그것이 「철」이든 스펀지든. 그러나 라살레의 임금노동 공격은 거의 오로지 이 이른바 법칙을 축으로 돈다. 그러므로 라살레 종파가 이겼다는 것을 증명하기 위해서는 「임금제도」가 「임금철칙과 함께」 폐지되어야 하며, 그것 없이 폐지되어서는 안 되는 것이다.`,
+            `So, in future, the German Workers' party has got to believe in Lassalle's "iron law of wages"! That this may not be lost, the nonsense is perpetrated of speaking of the "abolition of the wage system" (it should read: system of wage labor), "together with the iron law of wages". If I abolish wage labor, then naturally I abolish its laws also, whether they are of "iron" or sponge. But Lassalle's attack on wage labor turns almost solely on this so-called law. In order, therefore, to prove that Lassalle's sect has conquered, the "wage system" must be abolished "together with the iron law of wages" and not without it.`),
+        gotha('part-2',
+            `이것은 마치 마침내 노예제의 비밀을 꿰뚫어 보고 반란을 일으킨 노예들 가운데, 아직 낡은 관념에 사로잡힌 한 노예가 반란의 강령에 이렇게 써넣는 것과 같다. 노예제는 폐지되어야 한다, 노예제 아래서 노예의 급식은 일정한 낮은 최대치를 넘을 수 없기 때문이다!`,
+            `It is as if, among slaves who have at last got behind the secret of slavery and broken out in rebellion, a slave still in thrall to obsolete notions were to inscribe on the program of the rebellion: Slavery must be abolished because the feeding of slaves in the system of slavery cannot exceed a certain low maximum!`),
+        gotha('part-3',
+            `남은 부끄러움 때문에 「국가 보조」는 「노동인민의」 민주적 통제 아래 놓였다. 첫째, 독일에서 「노동인민」의 다수는 프롤레타리아가 아니라 농민이다. 둘째, 「민주적」은 독일어로 「인민지배적(volksherrschaftlich)」이다. 그런데 「노동인민의 인민지배적 통제」란 무슨 뜻인가? 게다가 국가에 이런 요구를 함으로써 자기가 통치하고 있지도 않고 통치할 준비도 되어 있지 않다는 것을 스스로 온전히 표명하는 노동인민의 경우에!`,
+            `From the remnants of a sense of shame, "state aid" has been put … under the democratic control of the "toiling people". In the first place, the majority of the "toiling people" in Germany consists of peasants, not proletarians. Second, "democratic" means in German "Volksherrschaftlich" [by the rule of the people]. But what does "control by the rule of the people of the toiling people" mean? And particularly in the case of a toiling people which, through these demands that it puts to the state, expresses its full consciousness that it neither rules nor is ripe for ruling!`),
+        gotha('part-4',
+            `그러나 강령 전체는 그 민주주의적 울림에도 불구하고 라살레 종파의 국가에 대한 신민적 신앙, 또는 그보다 나을 것 없는 민주주의적 기적 신앙에 속속들이 물들어 있다. 아니 그보다는, 둘 다 사회주의에서 똑같이 멀리 떨어진 이 두 종류의 기적 신앙 사이의 타협이다.`,
+            `But the whole program, for all its democratic clang, is tainted through and through by the Lassallean sect's servile belief in the state, or, what is no better, by a democratic belief in miracles; or rather it is a compromise between these two kinds of belief in miracles, both equally remote from socialism.`),
+        gotha('foreword',
+            `할레 당 대회가 고타강령의 토론을 당의 의사일정에 올렸으므로, 이 토론과 관련해 중요한, 아마도 가장 중요한 이 문서를 더 이상 공개하지 않고 묻어 둔다면 나는 은폐의 죄를 짓는 것이라고 생각한다. … 특정한 라살레파는 이제 외국에 고립된 폐허로만 존재하며, 할레에서 고타강령은 그것을 만든 사람들에게서조차 전혀 불충분한 것으로 폐기되었다.`,
+            `Since the Halle Party Congress has put the discussion of the Gotha Programme on the agenda of the Party, I think I would be guilty of suppression if I any longer withheld from publicity this important … document relevant to this discussion. … Specific Lassalleans now exist only abroad as isolated ruins, and in Halle the Gotha Programme was given up even by its creators as altogether inadequate.`),
+    ],
+    'wages-programme-ch08-basic': [
+        gotha('part-4',
+            `자유로운 국가, 그것은 무엇인가? 신민적 근성을 벗어 버린 노동자들에게 국가를 자유롭게 만드는 것은 결코 목표가 아니다. 독일 제국에서 「국가」는 러시아에서와 거의 마찬가지로 「자유롭다」. 자유는 국가를 사회 위에 올라앉은 기관에서 사회에 완전히 종속된 기관으로 바꾸는 데 있다.`,
+            `It is by no means the aim of the workers, who have got rid of the narrow mentality of humble subjects, to set the state free. In the German Empire, the "state" is almost as "free" as in Russia. Freedom consists in converting the state from an organ superimposed upon society into one completely subordinate to it`),
+        gotha('part-4',
+            `독일 노동자당은, 적어도 이 강령을 채택한다면, 자기의 사회주의 사상이 피부 한 겹 깊이도 못 된다는 것을 보여 준다. 현존 사회를(그리고 이것은 어떤 미래 사회에도 해당하는데) 현존 국가의(미래 사회의 경우에는 미래 국가의) 토대로 다루는 대신, 국가를 고유한 정신적·윤리적·자유적 토대를 가진 독립된 실체처럼 다루기 때문이다.`,
+            `The German Workers' party — at least if it adopts the program — shows that its socialist ideas are not even skin-deep; in that, instead of treating existing society (and this holds good for any future one) as the basis of the existing state (or of the future state in the case of future society), it treats the state rather as an independent entity that possesses its own intellectual, ethical, and libertarian bases.`),
+        gotha('part-4',
+            `「오늘날의 사회」는 자본주의 사회다. 그것은 모든 문명국에 존재하며, 중세의 혼합물에서 얼마쯤 벗어나 있고, 각 나라의 특수한 역사적 발전에 따라 얼마쯤 변형되어 있으며, 얼마쯤 발전해 있다. 반면 「오늘날의 국가」는 나라의 국경과 함께 바뀐다. 그것은 프로이센-독일 제국에서와 스위스에서가 다르고, 영국에서와 미국에서가 다르다. 그러므로 「오늘날의 국가」는 허구다.`,
+            `"Present-day society" is capitalist society, which exists in all civilized countries, more or less free from medieval admixture, more or less modified by the particular historical development of each country, more or less developed. On the other hand, the "present-day state" changes with a country's frontier. It is different in the Prusso-German Empire from what it is in Switzerland, and different in England from what it is in the United States. The "present-day state" is therefore a fiction.`),
+        gotha('part-4',
+            `자본주의 사회와 공산주의 사회 사이에는 전자에서 후자로의 혁명적 전화의 시기가 놓여 있다. 여기에는 정치적 이행기도 대응하는데, 이 시기의 국가는 프롤레타리아트의 혁명적 독재 말고는 다른 어떤 것일 수도 없다.`,
+            `Between capitalist and communist society there lies the period of the revolutionary transformation of the one into the other. Corresponding to this is also a political transition period in which the state can be nothing but the revolutionary dictatorship of the proletariat.`),
+        gotha('part-4',
+            `그러면 이런 물음이 생긴다. 공산주의 사회에서 국가는 어떤 변화를 겪는가? 다시 말해 거기서는 오늘의 국가 기능과 비슷한 어떤 사회적 기능이 남아 있는가? … 여기에는 정치적 이행기도 대응하는데, 이 시기의 국가는 프롤레타리아트의 혁명적 독재 말고는 다른 어떤 것일 수도 없다. 그런데 강령은 이것도, 공산주의 사회의 미래 국가도 다루지 않는다.`,
+            `The question then arises: What transformation will the state undergo in communist society? In other words, what social functions will remain in existence there that are analogous to present state functions? … Corresponding to this is also a political transition period in which the state can be nothing but the revolutionary dictatorship of the proletariat. Now the program does not deal with this nor with the future state of communist society.`),
+    ],
+    'wages-programme-ch08-advanced': [
+        gotha('part-4',
+            `이 물음에는 과학적으로만 답할 수 있으며, 인민이라는 낱말을 국가라는 낱말과 천 번 결합해도 문제에 벼룩 한 뜀만큼도 더 다가가지 못한다.`,
+            `This question can only be answered scientifically, and one does not get a flea-hop nearer to the problem by a thousand-fold combination of the word 'people' with the word 'state'.`),
+        gotha('part-4',
+            `루이 필리프 치하와 루이 나폴레옹 치하의 프랑스 노동자 강령들이 그랬듯이 민주공화국을 요구할 용기가 없으니(그리고 사정이 신중을 요구하므로 현명하게도 그렇게 하지 않았으니), 「정직하지도」 점잖지도 않은 속임수, 곧 의회 형식으로 장식되고 봉건적 혼합물과 섞이고 이미 부르주아지의 영향을 받았으며 관료적으로 짜맞춰진 경찰 감시 군사 전제국가에 지나지 않는 국가에 대고 민주공화국에서만 뜻을 갖는 것들을 요구하는 속임수에 기대어서도 안 되었고, 게다가 그런 것들을 「합법적 수단으로」 이 국가에 강요할 수 있다고 상상한다고 이 국가에 장담해서도 안 되었다.`,
+            `one should not have resorted, either, to the subterfuge, neither "honest" nor decent, of demanding things which have meaning only in a democratic republic from a state which is nothing but a police-guarded military despotism, embellished with parliamentary forms, alloyed with a feudal admixture, already influenced by the bourgeoisie, and bureaucratically carpentered, and then to assure this state into the bargain that one imagines one will be able to force such things upon it "by legal means".`),
+        gotha('part-4',
+            `「국가에 의한 인민교육」은 전적으로 못마땅하다. 초등학교의 재원, 교원의 자격, 교과목 등을 일반 법률로 정하고, 미국에서 하듯이 국가 감독관이 이 법규의 이행을 감독하는 것과, 국가를 인민의 교육자로 임명하는 것은 전혀 다른 일이다! 오히려 정부와 교회를 다 같이 학교에 대한 일체의 영향에서 배제해야 한다.`,
+            `"Elementary education by the state" is altogether objectionable. Defining by a general law the expenditures on the elementary schools, the qualifications of the teaching staff, the branches of instruction, etc., and, as is done in the United States, supervising the fulfillment of these legal specifications by state inspectors, is a very different thing from appointing the state as the educator of the people! Government and church should rather be equally excluded from any influence on the school.`),
+        gotha('part-4',
+            `자본주의 사회와 공산주의 사회 사이에는 전자에서 후자로의 혁명적 전화의 시기가 놓여 있다. 여기에는 정치적 이행기도 대응하는데, 이 시기의 국가는 프롤레타리아트의 혁명적 독재 말고는 다른 어떤 것일 수도 없다. 그런데 강령은 이것도, 공산주의 사회의 미래 국가도 다루지 않는다.`,
+            `Between capitalist and communist society there lies the period of the revolutionary transformation of the one into the other. Corresponding to this is also a political transition period in which the state can be nothing but the revolutionary dictatorship of the proletariat. Now the program does not deal with this nor with the future state of communist society.`),
+        gotha('part-2',
+            `임금노동자는 자본가를 위해(따라서 자본가와 함께 잉여가치를 소비하는 자들을 위해서도) 일정한 시간을 무상으로 일하는 한에서만 자기 생존을 위해 일하는 것, 곧 사는 것을 허락받는다는 것, … 따라서 임금노동 제도는 노예제, 그것도 노동의 사회적 생산력이 발전하는 것에 비례하여, 노동자가 더 나은 보수를 받든 더 나쁜 보수를 받든, 더 가혹해지는 노예제라는 것이 분명해졌다.`,
+            `It was made clear that the wage worker has permission to work for his own subsistence—that is, to live, only insofar as he works for a certain time gratis for the capitalist (and hence also for the latter's co-consumers of surplus value); … that, consequently, the system of wage labor is a system of slavery, and indeed of a slavery which becomes more severe in proportion as the social productive forces of labor develop, whether the worker receives better or worse payment.`),
+    ],
+};
 
 const chapters = [
 
@@ -133,7 +472,7 @@ const chapters = [
 
 chapter({
     ch: 1, part: 1, partKo: PART1_KO, partEn: PART1_EN,
-    sourceUrl: `${VPP}/ch01.htm`,
+    sourceUrl: `${VPP}#section-1`,
     titleKo: '고정된 그릇이라는 전제', titleEn: 'The Premise of a Fixed Bowl',
     summaryKo: '임금 인상은 무익하다는 웨스턴의 주장을 두 개의 전제로 분해하고, 그 전제가 왜 성립하지 않는지 살핀다.',
     summaryEn: "Takes Citizen Weston's claim that wage rises are futile apart into two premises, and shows why neither stands.",
@@ -322,7 +661,7 @@ chapter({
 
 chapter({
     ch: 2, part: 1, partKo: PART1_KO, partEn: PART1_EN,
-    sourceUrl: `${VPP}/ch02.htm`,
+    sourceUrl: `${VPP}#section-6`,
     titleKo: '가치는 노동시간이 정한다', titleEn: 'Value Is Settled by Labour-Time',
     summaryKo: '상품들이 교환되는 비율 뒤에 공통의 제3의 것이 있어야 함을 보이고, 그것이 사회적 노동임을 밝힌다.',
     summaryEn: 'Shows that a third thing common to all commodities must lie behind their exchange ratios, and identifies it as social labour.',
@@ -505,7 +844,7 @@ chapter({
 
 chapter({
     ch: 3, part: 1, partKo: PART1_KO, partEn: PART1_EN,
-    sourceUrl: `${VPP}/ch02.htm`,
+    sourceUrl: `${VPP}#section-7`,
     titleKo: '노동력과 잉여가치', titleEn: 'Labour-Power and Surplus Value',
     summaryKo: '노동자가 파는 것은 노동이 아니라 노동력이며, 이윤은 상품을 가치대로 팔아서 생긴다는 것을 밝힌다.',
     summaryEn: 'Establishes that the worker sells not labour but labour-power, and that profit arises from selling commodities at their value.',
@@ -696,7 +1035,7 @@ chapter({
 
 chapter({
     ch: 4, part: 1, partKo: PART1_KO, partEn: PART1_EN,
-    sourceUrl: `${VPP}/ch03.htm`,
+    sourceUrl: `${VPP}#section-12`,
     titleKo: '임금 투쟁의 자리와 한계', titleEn: 'The Place and the Limits of Wage Struggle',
     summaryKo: '임금과 이윤이 같은 값을 나눈다는 것을 보인 뒤, 임금 투쟁이 필요한 다섯 경우와 그 한계를 정리한다.',
     summaryEn: 'Shows that wages and profits divide one and the same value, then sets out the cases in which wage struggle is necessary and where its limits lie.',
@@ -907,7 +1246,7 @@ chapter({
 
 chapter({
     ch: 5, part: 2, partKo: PART2_KO, partEn: PART2_EN,
-    sourceUrl: `${GOTHA}/ch01.htm`,
+    sourceUrl: `${GOTHA}#part-1`,
     titleKo: '감소되지 않은 노동수익', titleEn: 'The Undiminished Proceeds of Labour',
     summaryKo: '고타강령 첫 조항의 라살레주의 구호를 공제 목록으로 해체하고, 분배를 앞세운 사회주의를 비판한다.',
     summaryEn: 'Dismantles the Lassallean slogan of the programme\'s first clause with a list of deductions, and criticises a socialism built on distribution.',
@@ -1100,7 +1439,7 @@ chapter({
 
 chapter({
     ch: 6, part: 2, partKo: PART2_KO, partEn: PART2_EN,
-    sourceUrl: `${GOTHA}/ch01.htm`,
+    sourceUrl: `${GOTHA}#part-1`,
     titleKo: '두 단계와 부르주아적 권리', titleEn: 'Two Phases and Bourgeois Right',
     summaryKo: '자본주의에서 갓 나온 사회의 분배 원리와 그 한계를 밝히고, 높은 단계의 조건을 제시한다.',
     summaryEn: 'Sets out the principle of distribution in a society just emerged from capitalism, its limits, and the conditions of the higher phase.',
@@ -1313,7 +1652,7 @@ chapter({
 
 chapter({
     ch: 7, part: 2, partKo: PART2_KO, partEn: PART2_EN,
-    sourceUrl: `${GOTHA}/ch02.htm`,
+    sourceUrl: `${GOTHA}#part-2`,
     titleKo: '임금철칙과 국가 보조 협동조합', titleEn: 'The Iron Law and State-Aided Co-operatives',
     summaryKo: '강령에 남은 라살레의 두 유산, 곧 임금철칙과 국가 보조 협동조합 요구를 해체한다.',
     summaryEn: 'Dismantles the two Lassallean legacies left in the programme: the iron law of wages and the demand for state-aided co-operatives.',
@@ -1522,7 +1861,7 @@ chapter({
 
 chapter({
     ch: 8, part: 2, partKo: PART2_KO, partEn: PART2_EN,
-    sourceUrl: `${GOTHA}/ch04.htm`,
+    sourceUrl: `${GOTHA}#part-4`,
     titleKo: '자유국가와 프롤레타리아 독재', titleEn: 'The Free State and the Dictatorship of the Proletariat',
     summaryKo: '「자유로운 국가」라는 목표를 해체하고, 그 자리에 혁명적 이행기의 국가에 관한 문장을 놓는다.',
     summaryEn: 'Takes apart the goal of a "free state" and puts in its place the sentence on the state of the revolutionary transition period.',

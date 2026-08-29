@@ -831,7 +831,28 @@
         if (correct && active && active.streak >= 3) {
             parts.push('<span class="commu-streak-badge">' + escapeHtml(streakLabel(active.streak)) + '</span>');
         }
+        var source = sourceHtml(question);
+        if (source) parts.push(source);
         return parts.join('');
+    }
+
+    // The passage of the original text the question was drawn from, shown
+    // under the feedback so the fragment the quiz cut out is put back into
+    // the argument. Only courses whose text is on the site carry `source`.
+    function sourceHtml(question) {
+        var source = question && question.source;
+        if (!source || !source.quote) return '';
+        var quote = text(source.quote);
+        if (!quote) return '';
+        var pieces = quote.split(' … ').map(escapeHtml).join(' <span class="commu-source-gap">…</span> ');
+        var label = text(source.label);
+        return '<blockquote class="commu-source">' +
+            '<span class="commu-source-label">' + escapeHtml(lang === 'en' ? 'From the text' : '원전에서') + '</span>' +
+            '<p>' + pieces + '</p>' +
+            (source.href && label
+                ? '<a class="commu-source-link" href="' + escapeHtml(source.href) + '">' + escapeHtml(label) + (lang === 'en' ? ' →' : ' 전문 읽기 →') + '</a>'
+                : '') +
+            '</blockquote>';
     }
 
     function choiceFeedback(question, index) {

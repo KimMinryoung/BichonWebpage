@@ -719,6 +719,44 @@
     font-weight: 700;
 }
 
+/* 답한 뒤 피드백 아래에 붙는 원전 발췌. 토막난 문항을 원래 논증으로 되돌려
+   주는 상자라, 엮은이 말(피드백·해설)과 구분되게 원전 문헌의 엮은이 주 상자와
+   같은 세로선·바탕을 쓰되 글씨는 본문색으로 둔다(저자의 말이므로). */
+.commu-source {
+    margin: 4px 0 0;
+    padding: 8px 12px 10px;
+    border-left: 3px solid var(--btn-primary);
+    background: var(--bg-inset);
+    color: var(--text-primary);
+    display: grid;
+    gap: 6px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.commu-source-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.commu-source p {
+    margin: 0;
+    text-align: start;
+    word-break: normal;
+}
+
+.commu-source-gap {
+    color: var(--text-muted);
+}
+
+.commu-source-link {
+    justify-self: start;
+    color: var(--link);
+    font-size: 0.85rem;
+}
+
 .commu-choice-feedback {
     background: color-mix(in srgb, var(--accent) 8%, var(--bg-surface));
     border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
