@@ -2941,6 +2941,59 @@
         ]
       },
       "addedAt": "2026-08-21"
+    },
+    {
+      "id": "stalin-1925-xiv-congress",
+      "file": "stalin-1925-xiv-congress.html",
+      "docLang": "ko",
+      "date": "1925-12-18",
+      "title": {
+        "ko": "스탈린, 제14차 당대회 중앙위원회 정치보고와 결론연설",
+        "en": "Stalin, Political Report of the Central Committee to the 14th Party Congress, with the Reply to the Discussion"
+      },
+      "description": {
+        "ko": "레닌 사후 지도부가 처음으로 대회장에서 공개적으로 갈라진 1925년 12월 제14차 당대회의 두 문서다. 스탈린이 중앙위원회를 대표해 한 정치보고는 국제 정세(자본주의의 「일시적 안정」, 로카르노, 도스 플랜), 국내 정세(공업화, 농촌의 계층 분화, 네프 아래의 국가자본주의 논쟁), 당의 상태 세 부분으로 짜여 있고, 닷새 뒤의 결론연설은 지노비예프·카메네프·소콜니코프의 「신반대파」를 이름을 불러 하나씩 반박한다. 일국사회주의와 농민 정책을 둘러싼 논쟁이 어디서 출발했는지를 보여 주는 문서다.",
+        "en": "Two documents from the 14th Party Congress of December 1925, the first at which the post-Lenin leadership split openly on the congress floor. Stalin's political report for the Central Committee covers the international situation (the 'temporary stabilisation' of capitalism, Locarno, the Dawes Plan), the domestic situation (industrialisation, stratification in the countryside, the argument over state capitalism under NEP) and the state of the party; his reply five days later answers Zinoviev, Kamenev and Sokolnikov of the 'New Opposition' by name. The starting point of the fight over socialism in one country and peasant policy."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, Политический отчет Центрального Комитета XIV съезду ВКП(б) 18 декабря 1925 г.; Заключительное слово по политическому отчету ЦК 23 декабря 1925 г., Сочинения, т. 7",
+      "people": [
+        "stalin",
+        "lenin",
+        "zinoviev",
+        "kamenev",
+        "sokolnikov",
+        "bukharin",
+        "trotsky"
+      ],
+      "terms": [
+        "socialism-in-one-country",
+        "new-opposition",
+        "united-opposition",
+        "nep",
+        "kulak",
+        "smychka",
+        "state-capitalism",
+        "two-camps-doctrine",
+        "comintern"
+      ],
+      "events": [
+        "new-economic-policy"
+      ],
+      "addedAt": "2026-08-30",
+      "aliases": {
+        "ko": [
+          "제14차 당대회 정치보고",
+          "제14차 당대회 중앙위원회 정치보고",
+          "「중앙위원회 정치보고」(1925)"
+        ],
+        "en": [
+          "Political Report of the Central Committee to the Fourteenth Congress"
+        ]
+      }
     }
   ]
 }
