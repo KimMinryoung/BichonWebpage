@@ -2579,42 +2579,56 @@
       }
     },
     {
-      "id": "holodomor-decrees-1932",
-      "file": "holodomor-decrees-1932.html",
+      "id": "holodomor-documents-1932-1933",
+      "file": "holodomor-documents-1932-1933.html",
       "docLang": "ko",
-      "date": "1932-12-14",
+      "date": "1932-06-10",
       "title": {
-        "ko": "1932년 곡물 공출의 두 법령",
-        "en": "Two Decrees of the 1932 Grain Procurements"
+        "ko": "홀로도모르 문서집 — 두 편지, 두 법령, 한 결정 (1932~1933)",
+        "en": "Holodomor Documents: two letters, two decrees, one decision (1932–1933)"
       },
       "description": {
-        "ko": "「이삭 세 줌의 법」으로 불린 8월 7일 공공재산 보호 결정과, 공출 완수 기한·최고형·폴탑스카야 스타니차 주민 이송·북캅카스 우크라이나화 중단을 한 문서에 담은 12월 14일 비밀 결정. 홀로도모르 논쟁의 핵심 사료 두 건.",
-        "en": "The 'law of three ears of grain' of 7 August 1932 and the secret decision of 14 December that combined procurement deadlines and capital punishment with the deportation of a Cossack stanitsa and the reversal of Ukrainization in the North Caucasus: two core sources of the Holodomor debate."
+        "ko": "1932년 6월 추바리와 페트롭스키가 스탈린·몰로토프에게 우크라이나 농촌의 굶주림을 알린 두 편지, 8월 7일 「이삭 세 줌의 법」과 12월 14일 곡물 공출 비밀 결정, 그리고 숨긴 곡물을 내놓지 않는 자에게 그 법을 적용하라고 한 1933년 1월 1일 정치국 결정. 경고에서 결정까지, 홀로도모르로 가는 다섯 문서를 시간순으로 묶었다.",
+        "en": "The two letters of June 1932 in which Chubar and Petrovsky told Stalin and Molotov of hunger in the Ukrainian countryside; the 'law of three ears of grain' of 7 August and the secret procurement decision of 14 December; and the Politburo decision of 1 January 1933 applying that law to anyone still hiding grain. Five documents, from warning to decision, on the road to the Holodomor, in chronological order."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "8월 7일 결정: 『이즈베스티야』 1932.8.8 공표본의 러시아어 위키문헌 전사본; 12월 14일 결정: РГАСПИ Ф.17, Оп.3, Д.2025 원본 계열의 러시아어 위키문헌 전사본",
+      "source": "Письма В. Я. Чубаря и Г. И. Петровского, 10 июня 1932 г. (РГАСПИ ф. 82, оп. 2, д. 139); 8월 7일 결정: 『이즈베스티야』 1932.8.8 공표본의 러시아어 위키문헌 전사본; 12월 14일 결정: РГАСПИ Ф.17, Оп.3, Д.2025 원본 계열의 러시아어 위키문헌 전사본; Постановление Политбюро ЦК ВКП(б) «О хлебозаготовках на Украине», 1 января 1933 г. (протокол № 128, п. 48/28)",
       "people": [
         "stalin",
-        "molotov"
+        "molotov",
+        "kaganovich",
+        "kosior",
+        "postyshev",
+        "yagoda",
+        "gamarnik"
       ],
       "terms": [],
       "events": [
         "holodomor",
         "five-year-plans"
       ],
-      "addedAt": "2026-08-17",
+      "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
           "8월 7일 법",
           "이삭 세 줌의 법",
-          "12월 14일 곡물 공출 결정"
+          "12월 14일 곡물 공출 결정",
+          "추바리 편지 (1932)",
+          "페트롭스키 편지 (1932)",
+          "1933년 1월 1일 전보",
+          "숨긴 곡물 전보",
+          "홀로도모르 문서집"
         ],
         "en": [
           "Law of Spikelets",
-          "decree of 7 August 1932"
+          "decree of 7 August 1932",
+          "Chubar letter of 10 June 1932",
+          "Petrovsky letter of 10 June 1932",
+          "telegram of 1 January 1933",
+          "hidden grain decision"
         ]
       }
     },
@@ -3550,87 +3564,6 @@
         ],
         "en": [
           "Stalin's telegram to Gottwald (1948)"
-        ]
-      }
-    },
-    {
-      "id": "politburo-hidden-grain-1933",
-      "file": "politburo-hidden-grain-1933.html",
-      "docLang": "ko",
-      "date": "1933-01-01",
-      "title": {
-        "ko": "숨긴 곡물과 훔친 곡물에 관한 정치국 결정 (1933년 1월 1일)",
-        "en": "The Politburo decision on hidden and stolen grain (1 January 1933)"
-      },
-      "description": {
-        "ko": "1933년 새해 첫날 스탈린이 우크라이나 당과 정부에 보낸 지시다. 훔치거나 숨긴 곡물을 자진해 내놓는 자는 탄압하지 않되, 계속 숨기는 자에게는 1932년 8월 7일 「이삭 다섯 개 법」의 가장 엄한 처벌을 적용하라고 마을마다 알리게 했다. 굶주림이 은닉 때문이라는 전제 위에서 1월 내내 집집마다 수색이 이어졌고, 홀로도모르를 심화시킨 결정의 계열에 놓이는 문서다.",
-        "en": "Stalin's instruction to the Ukrainian party and government on New Year's Day 1933: every village was to be told that those who voluntarily surrendered stolen or hidden grain would not be repressed, while those who kept hiding it would face the harshest penalties of the law of 7 August 1932. Built on the premise that hunger was caused by concealment, it set off a month of house-to-house searches and belongs to the series of decisions that deepened the Holodomor."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Постановление Политбюро ЦК ВКП(б) «О хлебозаготовках на Украине», 1 января 1933 г. (протокол № 128, п. 48/28)",
-      "people": [
-        "stalin",
-        "kaganovich",
-        "molotov",
-        "kosior",
-        "postyshev"
-      ],
-      "terms": [],
-      "events": [
-        "holodomor"
-      ],
-      "addedAt": "2026-08-31",
-      "aliases": {
-        "ko": [
-          "1933년 1월 1일 전보",
-          "숨긴 곡물 전보"
-        ],
-        "en": [
-          "telegram of 1 January 1933",
-          "hidden grain decision"
-        ]
-      }
-    },
-    {
-      "id": "chubar-petrovsky-letters-1932",
-      "file": "chubar-petrovsky-letters-1932.html",
-      "docLang": "ko",
-      "date": "1932-06-10",
-      "title": {
-        "ko": "추바리와 페트롭스키가 스탈린·몰로토프에게 — 우크라이나 농촌의 기근에 관한 두 편지 (1932)",
-        "en": "Chubar and Petrovsky to Stalin and Molotov: two letters on famine in the Ukrainian countryside (1932)"
-      },
-      "description": {
-        "ko": "1932년 6월 10일 우크라이나 소비에트 정부의 두 수장이 각자 모스크바에 보낸 편지다. 추바리는 100개가 넘는 지구의 식량 부족과 씨앗까지 걷어간 조달의 결과를 숫자로 적고, 페트롭스키는 마을을 직접 돌아본 뒤 굶주린 농민의 이동과 파종용 메밀 요청을 쓴다. 스탈린은 두 편지를 「타락」과 「불쾌한 인상」으로 받아넘겼고 조달 계획은 그대로 확인되었다. 홀로도모르가 어떤 정보 위에서 진행되었는지 보여 준다.",
-        "en": "On 10 June 1932 the two heads of the Ukrainian Soviet government each wrote to Moscow. Chubar set out in figures the food shortage in over a hundred districts and the effect of procurements that had taken even the seed; Petrovsky, back from touring the villages, described peasants scattering in search of food and begged for buckwheat seed. Stalin dismissed the letters as 'rot' and 'an unpleasant impression', and the procurement plan stood — evidence of what Moscow knew as the Holodomor unfolded."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Письма В. Я. Чубаря и Г. И. Петровского И. В. Сталину и В. М. Молотову, 10 июня 1932 г.",
-      "people": [
-        "stalin",
-        "molotov",
-        "kaganovich",
-        "kosior"
-      ],
-      "terms": [],
-      "events": [
-        "holodomor"
-      ],
-      "addedAt": "2026-08-31",
-      "aliases": {
-        "ko": [
-          "추바리 편지 (1932)",
-          "페트롭스키 편지 (1932)"
-        ],
-        "en": [
-          "Chubar letter of 10 June 1932",
-          "Petrovsky letter of 10 June 1932"
         ]
       }
     },
