@@ -3567,6 +3567,59 @@
           "Basic Directions for the transition to a market economy"
         ]
       }
+    },
+    {
+      "id": "pospelov-commission-report-1956",
+      "file": "pospelov-commission-report-1956.html",
+      "docLang": "ko",
+      "date": "1956-02-09",
+      "title": {
+        "ko": "포스펠로프 위원회 보고서 (1956)",
+        "en": "The Pospelov Commission Report (1956)"
+      },
+      "description": {
+        "ko": "흐루쇼프 비밀보고 보름 전 간부회에 제출된 70쪽의 조사 보고. 1935~1940년 반소 활동 혐의 체포 1,920,635명·총살 688,503명이라는 첫 집계, 「쿨라크 작전」의 할당과 「민족 작전」의 국적별 통계, 앨범 절차와 트로이카의 재판 외 처형, 고문을 허가한 1939년 스탈린의 전보, 그리고 포스티셰프·코시오르·에이헤·루주타크·추바리 등 제17차 당대회 중앙위원 사건을 심문 기록과 편지로 하나씩 연다. 비밀보고가 통계와 사례를 거의 그대로 가져다 쓴 원자료.",
+        "en": "The seventy-page investigation submitted to the Presidium a fortnight before Khrushchev's secret speech: the first tally of 1,920,635 arrests and 688,503 executions for 'anti-Soviet activity' in 1935–1940, the quotas of the 'kulak operation' and the nationality statistics of the 'national operations', the extrajudicial 'album' procedure and the troikas, Stalin's 1939 telegram sanctioning torture, and the cases of Postyshev, Kosior, Eikhe, Rudzutak, Chubar and other Central Committee members of the Seventeenth Congress, opened one by one through interrogation records and letters. The raw material the secret speech drew on almost verbatim."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Доклад комиссии ЦК КПСС Президиуму ЦК КПСС по установлению причин массовых репрессий против членов и кандидатов в члены ЦК ВКП(б), избранных на XVII съезде партии, 9 февраля 1956 г. (АП РФ ф. 3, оп. 24, д. 489) // Реабилитация: как это было. Т. 1. М., 2000",
+      "people": [
+        "khrushchev",
+        "stalin",
+        "yezhov",
+        "beria",
+        "postyshev",
+        "kosior",
+        "rudzutak",
+        "vyshinsky",
+        "malenkov",
+        "molotov",
+        "kaganovich"
+      ],
+      "terms": [
+        "great-purge",
+        "troika",
+        "nkvd-order-00447"
+      ],
+      "events": [
+        "twentieth-party-congress",
+        "great-purge"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "포스펠로프 보고서",
+          "포스펠로프 위원회 보고",
+          "포스펠로프 위원회"
+        ],
+        "en": [
+          "Pospelov report",
+          "Pospelov commission"
+        ]
+      }
     }
   ]
 }
