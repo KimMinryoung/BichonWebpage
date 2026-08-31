@@ -3278,6 +3278,52 @@
           "Riga Peace Treaty"
         ]
       }
+    },
+    {
+      "id": "bukharin-1926-character-of-our-revolution",
+      "file": "bukharin-1926-character-of-our-revolution.html",
+      "docLang": "ko",
+      "date": "1926",
+      "title": {
+        "ko": "부하린, 「우리 혁명의 성격과 소련에서 사회주의 건설의 승리 가능성에 대하여」 (1926)",
+        "en": "Bukharin, 'On the Character of Our Revolution and the Possibility of Victorious Socialist Construction in the USSR' (1926)"
+      },
+      "description": {
+        "ko": "신반대파가 패배한 뒤 부하린이 일국 사회주의 건설의 가능성을 원리의 수준에서 뒷받침한 소책자. 러시아 혁명의 성격, 세계 자본주의의 「성숙」, 국가자본주의론, 복구기에서 재건기로의 이행, 사회주의적 축적의 원천을 다루며, 마슬로프·수하노프·보그다노프·카우츠키·트로츠키를 「러시아는 사회주의에 미성숙하다」는 한 명제의 변주로 묶어 멘셰비즘의 계보에 놓는다. 1925년 협의회 정식(스탈린)의 이론판이자 1928년 「한 경제학자의 노트」의 출발점.",
+        "en": "Bukharin's pamphlet, written after the defeat of the New Opposition, giving the possibility of building socialism in one country its theoretical grounding: the character of the Russian revolution, the 'maturity' of world capitalism, the theory of state capitalism, the passage from restoration to reconstruction, and the sources of socialist accumulation. Maslov, Sukhanov, Bogdanov, Kautsky and Trotsky are placed in a single Menshevik lineage as variations on 'Russia is not ripe for socialism'. The theoretical counterpart of Stalin's 1925 formula and the starting point of the 1928 'Notes of an Economist'."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Н. И. Бухарин, О характере нашей революции и о возможности победоносного социалистического строительства в СССР. Л., 1926",
+      "people": [
+        "bukharin",
+        "stalin",
+        "trotsky",
+        "zinoviev",
+        "kamenev",
+        "lenin"
+      ],
+      "terms": [
+        "socialism-in-one-country",
+        "state-capitalism"
+      ],
+      "events": [
+        "succession-struggle"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「우리 혁명의 성격과 소련에서 사회주의 건설의 승리 가능성에 대하여」",
+          "우리 혁명의 성격에 대하여",
+          "부하린의 1926년 소책자"
+        ],
+        "en": [
+          "On the Character of Our Revolution",
+          "Bukharin's 1926 pamphlet on socialism in one country"
+        ]
+      }
     }
   ]
 }
