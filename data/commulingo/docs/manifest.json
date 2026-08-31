@@ -3620,6 +3620,52 @@
           "Pospelov commission"
         ]
       }
+    },
+    {
+      "id": "gorbachev-1987-january-plenum-report",
+      "file": "gorbachev-1987-january-plenum-report.html",
+      "docLang": "ko",
+      "date": "1987-01-27",
+      "title": {
+        "ko": "고르바초프, 「페레스트로이카와 당의 간부 정책에 관하여」 (1987)",
+        "en": "Gorbachev, 'On Perestroika and the Party's Cadre Policy' (1987)"
+      },
+      "description": {
+        "ko": "페레스트로이카가 경제의 「가속화」에서 정치의 「민주화」로 방향을 튼 1987년 1월 전원회의 보고. 침체의 원인을 「제동 메커니즘」과 간부층의 보수주의에서 찾고, 당과 소비에트 선거에 복수 후보와 비밀투표를, 기업장 선출과 글라스노스트를 제안했다. 「우리에게는 공기처럼 민주주의가 필요하다」. 당 지도부의 저항을 당원 대중과 인민에 호소해 넘으려는 논법이 처음 공식화된 문서로, 제19차 당협의회와 1989년 인민대표대회 선거로 이어졌다.",
+        "en": "The January 1987 plenum report in which perestroika turned from economic 'acceleration' to political 'democratisation'. Locating the causes of stagnation in the 'braking mechanism' and the conservatism of the cadres, Gorbachev proposed multi-candidate secret-ballot elections in the party and the soviets, elected enterprise directors, and glasnost: 'we need democracy like air'. The first official formulation of the method of appealing over the heads of a resistant leadership to the party rank and file and the people, which led to the Nineteenth Party Conference and the 1989 elections."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "М. С. Горбачёв, О перестройке и кадровой политике партии: Доклад на Пленуме ЦК КПСС 27 января 1987 г. // Материалы Пленума ЦК КПСС 27–28 января 1987 года. М., 1987",
+      "people": [
+        "gorbachev",
+        "ligachev",
+        "yakovlev",
+        "yeltsin",
+        "lenin"
+      ],
+      "terms": [
+        "perestroika",
+        "glasnost"
+      ],
+      "events": [
+        "perestroika",
+        "nineteenth-party-conference"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「페레스트로이카와 당의 간부 정책에 관하여」",
+          "1987년 1월 전원회의 보고",
+          "고르바초프의 1월 전원회의 보고"
+        ],
+        "en": [
+          "On Perestroika and the Party's Cadre Policy",
+          "January 1987 plenum report"
+        ]
+      }
     }
   ]
 }
