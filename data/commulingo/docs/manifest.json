@@ -1455,8 +1455,8 @@
         "en": "Two Détente Agreements: the SALT I Interim Agreement (1972) and the Agreement on the Prevention of Nuclear War (1973)"
       },
       "description": {
-        "ko": "ICBM·SLBM 발사대 수를 동결하고 검증을 정찰위성에 맡긴 1972년 5월 모스크바의 SALT I 잠정협정과, 소련의 「상호 핵 불사용」 초안이 1년의 교섭 끝에 「핵전쟁 위험 시 긴급 협의」 의무로 바뀐 1973년 6월 워싱턴의 핵전쟁 방지 협정. 미소 데탕트의 뼈대가 된 두 문서.",
-        "en": "The SALT I Interim Agreement signed in Moscow in May 1972, which froze ICBM and SLBM launcher numbers and left verification to 'national technical means', and the Agreement on the Prevention of Nuclear War signed in Washington in June 1973, in which a Soviet draft pledge of mutual nuclear non-use became, after a year of negotiation, an obligation to consult urgently whenever nuclear war threatened. The two documents at the core of Soviet–American détente."
+        "ko": "ICBM·SLBM 발사대 수를 동결하고 검증을 정찰위성에 맡긴 1972년 5월 모스크바의 SALT I 잠정협정과, 소련의 「상호 핵 불사용」 초안이 1년의 교섭 끝에 「핵전쟁 위험 시 긴급 협의」 의무로 바뀐 1973년 6월 워싱턴의 핵전쟁 방지 협정. 미소 데탕트의 뼈대가 된 두 문서. 끝에는 1980년 1월 3일 카터 대통령이 소련의 아프가니스탄 침공을 이유로 SALT II 조약의 상원 비준 심의 연기를 요청한 버드 상원의원 앞 서한을 덧붙였다. 데탕트의 조약이 어떻게 끝났는지를 보여 주는 짧은 문서다.",
+        "en": "The SALT I Interim Agreement signed in Moscow in May 1972, which froze ICBM and SLBM launcher numbers and left verification to 'national technical means', and the Agreement on the Prevention of Nuclear War signed in Washington in June 1973, in which a Soviet draft pledge of mutual nuclear non-use became, after a year of negotiation, an obligation to consult urgently whenever nuclear war threatened. The two documents at the core of Soviet–American détente. Appended at the end is President Carter's letter of 3 January 1980 to Senator Byrd asking that Senate consideration of the SALT II Treaty be delayed in light of the Soviet invasion of Afghanistan: a short document on how the détente treaties ended."
       },
       "kind": {
         "ko": "번역 전문",
@@ -1465,7 +1465,8 @@
       "source": "Временное соглашение между СССР и США о некоторых мерах в области ограничения стратегических наступательных вооружений, 26 мая 1972 г.; Соглашение между СССР и США о предотвращении ядерной войны, 22 июня 1973 г.",
       "people": [
         "brezhnev",
-        "gromyko"
+        "gromyko",
+        "jimmy-carter"
       ],
       "terms": [],
       "events": [
@@ -1477,12 +1478,16 @@
           "SALT I 잠정협정",
           "SALT I",
           "핵전쟁 방지 협정",
-          "제1차 전략무기제한협정"
+          "제1차 전략무기제한협정",
+          "카터-버드 서한 (1980)",
+          "SALT II 비준 연기 요청"
         ],
         "en": [
           "SALT I Interim Agreement",
           "Agreement on the Prevention of Nuclear War",
-          "SALT I"
+          "SALT I",
+          "Carter letter to Senator Byrd 1980",
+          "SALT II ratification delay request"
         ]
       }
     },
@@ -3664,6 +3669,333 @@
         "en": [
           "On Perestroika and the Party's Cadre Policy",
           "January 1987 plenum report"
+        ]
+      }
+    },
+    {
+      "id": "cia-poznan-bulletins-1956",
+      "file": "cia-poznan-bulletins-1956.html",
+      "docLang": "ko",
+      "date": "1956-06-29",
+      "title": {
+        "ko": "CIA 일일 정보 보고의 포즈난 봉기 (1956)",
+        "en": "The Poznań Rising in the CIA Current Intelligence Bulletin (1956)"
+      },
+      "description": {
+        "ko": "1956년 6월 28일 포즈난 노동자 봉기 이튿날과 그 다음 날 CIA가 대통령과 각료에게 올린 《Current Intelligence Bulletin》의 포즈난 항목. 첫날은 임금·식량 항의가 소련 국기를 끌어내리는 정치 시위로 번진 경위와 전차 투입을 보고하고, 둘째 날은 사망 38명·부상 270명이라는 정권 발표를 1953년 동독 봉기와 견주며 봉기가 「자유화의 속도」를 늦출 것이라고 판단한다.",
+        "en": "The Poznań items of the CIA Current Intelligence Bulletin of 29 and 30 June 1956, the day after the workers' rising and the day after that. The first reports how a protest over wages and food turned into a political demonstration that tore down Soviet flags, and the use of tanks; the second sets the regime's admission of 38 dead and 270 wounded beside the East German rising of 1953 and judges that the riots will slow the 'liberalization' program."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Central Intelligence Agency, Current Intelligence Bulletin, 29 June 1956, item 1 'Riots in Poland'; 30 June 1956, item 1 'The Poznan Riots' (CIA-RDP, approved for release 2019/10/21, C03015170–C03015171)",
+      "people": [
+        "edward-ochab",
+        "jozef-cyrankiewicz"
+      ],
+      "terms": [
+        "poznan-june-historiography"
+      ],
+      "events": [
+        "poznan-1956"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "CIA 포즈난 보고 (1956)",
+          "Current Intelligence Bulletin 포즈난"
+        ],
+        "en": [
+          "CIA bulletin on Poznan riots",
+          "Riots in Poland (CIA, 1956)"
+        ]
+      }
+    },
+    {
+      "id": "cia-ore-29-48-1948",
+      "file": "cia-ore-29-48-1948.html",
+      "docLang": "ko",
+      "date": "1948-04-28",
+      "title": {
+        "ko": "CIA ORE 29-48 「독일에서 소련이 취할 수 있는 향후 행동 계획」 (1948)",
+        "en": "CIA ORE 29-48, 'Possible Program of Future Soviet Moves in Germany' (1948)"
+      },
+      "description": {
+        "ko": "베를린 봉쇄 두 달 전인 1948년 4월 28일 CIA 보고평가국이 낸 판단. 3월의 연합국 관리이사회 이탈과 베를린 교통 방해를 「이미 시작된 프로그램」의 첫 단계로 읽고, 인민회의를 통한 동독 정부 수립, 관리이사회 폐기, 서방의 베를린 철수 강요, 소련군의 「보호」 아래 독일군 창설, 서독의 「재통합」 압박이라는 단계론을 내놓으면서, 각 단계가 「군사력 없이도」 실행될 수 있다고 본다.",
+        "en": "The CIA Office of Reports and Estimates' assessment of 28 April 1948, two months before the Berlin blockade. It reads the March walkout from the Allied Control Council and the interference with Berlin traffic as the first steps of a program already under way: a Soviet-zone government through the People's Congress, the abolition of the Control Council, the Western Powers forced out of Berlin, a German army under Soviet 'protection', and pressure on Western Germany to 'rejoin the Reich', each step feasible, in its judgment, without military force."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Central Intelligence Agency, Office of Reports and Estimates, ORE 29-48, Possible Program of Future Soviet Moves in Germany, 28 April 1948 (CIA Historical Review Program, release in full)",
+      "people": [
+        "vasily-sokolovsky",
+        "lucius-d-clay"
+      ],
+      "terms": [
+        "berlin-airlift",
+        "cold-war-historiography-of-the-berlin-blockade"
+      ],
+      "events": [
+        "berlin-blockade"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "ORE 29-48",
+          "CIA 독일 소련 행동 평가 (1948)"
+        ],
+        "en": [
+          "ORE 29-48",
+          "Possible Program of Future Soviet Moves in Germany"
+        ]
+      }
+    },
+    {
+      "id": "kohler-telegram-1964-10-18",
+      "file": "kohler-telegram-1964-10-18.html",
+      "docLang": "ko",
+      "date": "1964-10-18",
+      "title": {
+        "ko": "콜러 대사의 전문 제1183호, 흐루쇼프 실각에 관하여 (1964)",
+        "en": "Ambassador Kohler's Telegram 1183 on the Fall of Khrushchev (1964)"
+      },
+      "description": {
+        "ko": "흐루쇼프가 물러난 지 나흘 뒤 모스크바의 미국 대사 포이 콜러가 국무부에 보낸 분석 전문. 흐루쇼프 자신이 세운 「중앙위원회가 권력의 관리자」라는 원칙이 그를 끌어내리는 데 쓰였다는 역설, 소수의 정치국원이 음모를 꾸밀 수 있는 지도 체제, 브레즈네프가 같은 함정에 놓였다는 전망을 다섯 항목으로 정리한다.",
+        "en": "The analytical telegram Ambassador Foy Kohler sent from Moscow four days after Khrushchev's removal: the irony that the principle Khrushchev himself established, the Central Committee as custodian of power, was used to remove him; a leadership arrangement that invites conspiracy by a few Presidium members; and the prospect that Brezhnev now faces the same pitfalls, in five points."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Telegram From the Embassy in the Soviet Union to the Department of State, Moscow, October 18, 1964, 6 p.m. (No. 1183) // Foreign Relations of the United States, 1964–1968, vol. XIV, Soviet Union, doc. 60",
+      "people": [
+        "khrushchev",
+        "brezhnev",
+        "kosygin"
+      ],
+      "terms": [],
+      "events": [
+        "anti-party-group"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "콜러 전문 (1964)",
+          "모스크바 대사관 전문 1183호"
+        ],
+        "en": [
+          "Kohler telegram 1183",
+          "Embtel 1183 Moscow 1964"
+        ]
+      }
+    },
+    {
+      "id": "varkiza-agreement-1945",
+      "file": "varkiza-agreement-1945.html",
+      "docLang": "ko",
+      "date": "1945-02-12",
+      "title": {
+        "ko": "바르키자 협정 (1945)",
+        "en": "The Varkiza Agreement (1945)"
+      },
+      "description": {
+        "ko": "1944년 12월 아테네 시가전(데켐브리아나)을 끝낸 그리스 정부와 민족해방전선(EAM)의 협정. 자유의 회복, 계엄 해제, 정치범 사면, 인질 석방, 국민군 창설, ELAS 무장 해제, 공직·치안 기관 숙정, 국민투표와 선거의 아홉 조로 이루어지며, 제3조 사면의 범위와 제6조 무장 해제가 이후 그리스 내전의 화약이 되었다. 미 국무부의 영역을 옮겼다.",
+        "en": "The agreement between the Greek government and EAM that ended the December 1944 fighting in Athens (the Dekemvriana): nine articles on liberties, the raising of martial law, amnesty, hostages, the national army, the demobilisation of ELAS, the purge of the civil service and security services, and a plebiscite and elections. The scope of the amnesty in Article III and the disarmament in Article VI became the tinder of the Greek civil war. Translated from the State Department's English version."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Agreement Between the Greek Government and EAM, Athens, February 12, 1945 (translation) // Foreign Relations of the United States, 1945, vol. VIII, doc. 63 (868.00/3–645)",
+      "people": [
+        "georgios-siantos",
+        "ronald-scobie"
+      ],
+      "terms": [],
+      "events": [
+        "greek-resistance"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "바르키자 협정",
+          "그리스 정부-EAM 협정 (1945)"
+        ],
+        "en": [
+          "Varkiza Agreement",
+          "Treaty of Varkiza"
+        ]
+      }
+    },
+    {
+      "id": "fuehrer-directives-16-17-1940",
+      "file": "fuehrer-directives-16-17-1940.html",
+      "docLang": "ko",
+      "date": "1940-07-16",
+      "title": {
+        "ko": "총통 지령 제16호·제17호 (1940)",
+        "en": "Führer Directives Nos. 16 and 17 (1940)"
+      },
+      "description": {
+        "ko": "프랑스 항복 한 달 뒤 히틀러가 내린 두 지령. 제16호(7월 16일)는 「바다사자」라는 암호명 아래 램즈게이트에서 와이트섬 서쪽까지 넓은 정면의 영국 상륙을 준비하라 명하며 영국 공군의 제압을 전제로 삼고, 제17호(8월 1일)는 그 전제를 실행에 옮겨 8월 5일부터 항공전과 해상 봉쇄의 강화를 명하되 「보복 테러 공습」은 총통이 유보한다고 적는다. 영국 본토 항공전의 명령 문서다.",
+        "en": "Hitler's two directives a month after the fall of France. No. 16 (16 July) orders the preparation of a landing in England on a broad front from Ramsgate to west of the Isle of Wight under the code name 'Sea Lion', with the defeat of the RAF as its precondition; No. 17 (1 August) puts that precondition into effect, ordering the intensified air and sea war from 5 August while reserving 'terror attacks as reprisals' to the Führer. The order papers of the Battle of Britain."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Weisung Nr. 16 über die Vorbereitungen einer Landungsoperation gegen England, 16.7.1940 (OKW/WFA/L Nr. 33 160/40 g.Kdos. Chefs.); Weisung Nr. 17 für die Führung des Luft- und Seekrieges gegen England, 1.8.1940 (OKW/WFA/L Nr. 33 210/40) // W. Hubatsch (Hg.), Hitlers Weisungen für die Kriegführung 1939–1945",
+      "people": [
+        "adolf-hitler",
+        "franz-halder"
+      ],
+      "terms": [],
+      "events": [
+        "battle-of-britain"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "바다사자 작전 지령",
+          "총통 지령 16호",
+          "지령 제17호 (1940)"
+        ],
+        "en": [
+          "Directive No. 16 Sea Lion",
+          "Directive No. 17",
+          "Weisung Nr. 16"
+        ]
+      }
+    },
+    {
+      "id": "fuehrer-directive-41-1942",
+      "file": "fuehrer-directive-41-1942.html",
+      "docLang": "ko",
+      "date": "1942-04-05",
+      "title": {
+        "ko": "총통 지령 제41호 (1942)",
+        "en": "Führer Directive No. 41 (1942)"
+      },
+      "description": {
+        "ko": "1942년 하계 공세의 명령서. 겨울 전투가 끝나는 대로 「소련에 남은 살아 있는 전력을 최종적으로 섬멸하고」 가장 중요한 군수 원천을 빼앗기 위해 남부 전선에 병력을 집중해 돈강 서쪽의 적을 포위 섬멸하고 캅카스 유전으로 나아가되, 스탈린그라드에는 「도달하거나 적어도 중포의 사정거리에 두라」고 명한다. 이 지령의 실행이 스탈린그라드로 이어진다.",
+        "en": "The order paper of the 1942 summer offensive. As soon as the winter battle ends, all available forces are to be concentrated in the southern sector to 'destroy definitively the living strength remaining to the Soviets', encircle and annihilate the enemy west of the Don and advance to the Caucasus oilfields, while Stalingrad is to be reached 'or at least brought under the fire of heavy artillery'. Its execution led to Stalingrad."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Weisung Nr. 41 für die Kriegführung, Führerhauptquartier, 5.4.1942 (OKW/WFSt Nr. 55616/42 g.K. Chefs.) // W. Hubatsch (Hg.), Hitlers Weisungen für die Kriegführung 1939–1945",
+      "people": [
+        "adolf-hitler"
+      ],
+      "terms": [
+        "case-blue-fall-blau"
+      ],
+      "events": [
+        "stalingrad"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "지령 제41호",
+          "청색 작전 지령",
+          "1942년 하계 공세 지령"
+        ],
+        "en": [
+          "Directive No. 41",
+          "Weisung Nr. 41",
+          "Case Blue directive"
+        ]
+      }
+    },
+    {
+      "id": "ddr-travel-regulation-1989-11-09",
+      "file": "ddr-travel-regulation-1989-11-09.html",
+      "docLang": "ko",
+      "date": "1989-11-09",
+      "title": {
+        "ko": "여행·영구 출국 임시 전환 규정, 「샤보프스키의 쪽지」 (1989)",
+        "en": "The Interim Travel Regulation of 9 November 1989, 'Schabowski's Note'"
+      },
+      "description": {
+        "ko": "1989년 11월 9일 DDR 각료회의가 회람한 여행·영구 출국의 임시 규정과 첨부 보도문. 사유 없이 사적 해외여행을 신청할 수 있고 비자는 「지체 없이」 발급되며 영구 출국은 모든 국경 통과소에서 가능하다는 이 문서를, 샤보프스키가 저녁 기자회견에서 「즉시, 지체 없이」라고 읽은 것이 그날 밤 장벽의 개방이 되었다. 문서 자체는 이튿날 발효 예정이었다.",
+        "en": "The interim regulation on travel and permanent emigration circulated by the GDR Council of Ministers on 9 November 1989, with the attached press release: private travel abroad may be applied for without stating reasons, visas are to be issued 'without delay', and permanent emigration is possible at all border crossings. Read out by Schabowski at the evening press conference as 'immediately, without delay', it opened the Wall that night; the document itself was to take effect the next day."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Zeitweilige Übergangsregelung für Reisen und ständige Ausreise aus der DDR, Ministerrat der DDR, 9. November 1989 (VVS b2-937/89), mit Pressemitteilung // Chronik der Mauer (Bundesstiftung Aufarbeitung / Deutschlandradio / ZZF)",
+      "people": [
+        "gunter-schabowski",
+        "egon-krenz"
+      ],
+      "terms": [
+        "historiography-of-the-berlin-wall"
+      ],
+      "events": [
+        "revolutions-1989",
+        "berlin-wall"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "샤보프스키의 쪽지",
+          "1989년 11월 9일 여행 규정",
+          "DDR 여행법 1989"
+        ],
+        "en": [
+          "Schabowski's note",
+          "GDR travel regulation of 9 November 1989",
+          "Reiseregelung 1989"
+        ]
+      }
+    },
+    {
+      "id": "gran-consiglio-documents-1928-1943",
+      "file": "gran-consiglio-documents-1928-1943.html",
+      "docLang": "ko",
+      "date": "1928-12-09",
+      "title": {
+        "ko": "파시즘 대평의회 문서 세 건 (1928~1943)",
+        "en": "Three Documents of the Fascist Grand Council (1928–1943)"
+      },
+      "description": {
+        "ko": "파시즘 대평의회를 「체제의 모든 활동을 조정·통합하는 최고 기관」으로 국가기관화한 1928년 12월 9일 법률, 1943년 7월 24~25일 밤 그 대평의회가 19대 8로 가결해 무솔리니 실각의 방아쇠가 된 그란디 결의안, 그리고 9월 8일 저녁 바돌리오가 라디오로 읽은 휴전 포고. 파시즘 체제가 스스로 세운 기관에 의해 무너지는 과정의 세 문서다.",
+        "en": "The law of 9 December 1928 that made the Fascist Grand Council a state organ, 'the supreme body coordinating and integrating all activities of the regime'; the Grandi resolution the Council carried 19 to 8 on the night of 24–25 July 1943, the trigger of Mussolini's fall; and the armistice proclamation Badoglio read over the radio on the evening of 8 September. Three documents of a regime undone by the institution it had built."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Legge 9 dicembre 1928, n. 2693, Ordinamento e attribuzioni del Gran Consiglio del Fascismo (G.U. 11 dicembre 1928, n. 287); Ordine del giorno Grandi, Gran Consiglio del Fascismo, 24–25 luglio 1943; Proclama del maresciallo Badoglio, 8 settembre 1943",
+      "people": [
+        "benito-mussolini",
+        "dino-grandi",
+        "pietro-badoglio"
+      ],
+      "terms": [
+        "fascist-grand-council"
+      ],
+      "events": [
+        "italian-campaign"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "그란디 결의안",
+          "대평의회법 (1928)",
+          "바돌리오 포고 (1943년 9월 8일)",
+          "파시즘 대평의회"
+        ],
+        "en": [
+          "Grandi resolution",
+          "Ordine del giorno Grandi",
+          "Law on the Grand Council 1928",
+          "Badoglio proclamation"
         ]
       }
     }
