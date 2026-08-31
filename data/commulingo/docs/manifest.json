@@ -3118,20 +3118,22 @@
       "docLang": "ko",
       "date": "1990-04-03",
       "title": {
-        "ko": "연방공화국의 소련 탈퇴 절차에 관한 법률 (1990)",
-        "en": "The USSR law on the procedure for secession of a union republic (1990)"
+        "ko": "연방의 마지막 해 — 탈퇴 절차법(1990)과 주권국가연방 조약 초안(1991)",
+        "en": "The Union's Last Year: the Secession Procedure Law (1990) and the Draft Union of Sovereign States Treaty (1991)"
       },
       "description": {
-        "ko": "리투아니아 독립 선언 3주 뒤 소련 최고소비에트가 채택한 법률 제1409-I호. 헌법 제72조의 탈퇴권에 처음으로 절차를 붙여 국민투표 3분의 2 찬성, 최장 5년의 이행기, 재투표, 연방과의 정산, 인민대표대회의 최종 확인을 요구했고, 자치공화국에는 잔류 여부를 따로 정할 권리를 주었다. 발트 3국이 「탈퇴 금지법」이라 부른 문서로, 어느 공화국도 이 절차를 밟지 않은 채 연방은 해체되었다.",
-        "en": "Law No. 1409-I, adopted by the USSR Supreme Soviet three weeks after Lithuania's declaration of independence. It gave the constitutional right of secession (Article 72) a procedure for the first time: a two-thirds referendum majority, a transition period of up to five years, a repeat referendum, a settlement of accounts with the Union, and final confirmation by the Congress of People's Deputies, with autonomous republics free to decide separately. The Baltic states called it the 'law on non-secession'; no republic ever used it before the Union dissolved."
+        "ko": "발트 3국이 「탈퇴 금지법」이라 부른 1990년 4월의 탈퇴 절차법(국민투표 3분의 2, 최장 5년 이행기, 인민대표대회 확인)과, 연방을 「주권 공화국들의 자발적 결합」으로 다시 세우려다 서명 전날 쿠데타로 무산된 1991년 8월의 주권국가연방 조약 초안. 법으로 탈퇴를 막으려던 길과 조약으로 남을 이유를 만들려던 길, 소련이 끝내 쓰지 못한 두 문서.",
+        "en": "The secession procedure law of April 1990 that the Baltic states called the 'law on non-secession' (a two-thirds referendum, a transition of up to five years, confirmation by the Congress), and the draft treaty of a Union of Sovereign States of August 1991 that tried to refound the Union as a 'voluntary association of sovereign republics' and was wrecked by the coup the day before signing. Two documents the USSR never got to use: one to make leaving hard, one to give a reason to stay."
       },
       "kind": {
         "ko": "번역 전문",
         "en": "Full translation"
       },
-      "source": "Закон СССР от 3 апреля 1990 г. № 1409-I «О порядке решения вопросов, связанных с выходом союзной республики из СССР» // Ведомости СНД и ВС СССР. 1990. № 15. Ст. 252",
+      "source": "Закон СССР от 3 апреля 1990 г. № 1409-I «О порядке решения вопросов, связанных с выходом союзной республики из СССР» // Ведомости СНД и ВС СССР. 1990. № 15. Ст. 252; Договор о Союзе Суверенных Государств (проект), опубл. 15 августа 1991 г.",
       "people": [
-        "gorbachev"
+        "gorbachev",
+        "yeltsin",
+        "nazarbayev"
       ],
       "terms": [
         "right-of-secession",
@@ -3148,12 +3150,19 @@
           "탈퇴 절차법",
           "「탈퇴 금지법」",
           "법률 제1409-I호",
-          "1990년 탈퇴법"
+          "1990년 탈퇴법",
+          "신연방조약",
+          "주권국가연방 조약",
+          "노보오가료보 조약",
+          "연방조약 초안 (1991)"
         ],
         "en": [
           "Law on Secession (1990)",
           "Law No. 1409-I",
-          "law on the procedure for secession"
+          "law on the procedure for secession",
+          "Union of Sovereign States treaty",
+          "Novo-Ogaryovo treaty",
+          "new Union Treaty (1991)"
         ]
       }
     },
@@ -3471,6 +3480,91 @@
           "Malin notes",
           "Mikoyan telegram of 14 July 1956",
           "Presidium records on Hungary 1956"
+        ]
+      }
+    },
+    {
+      "id": "politburo-1988-02-29-sumgait",
+      "file": "politburo-1988-02-29-sumgait.html",
+      "docLang": "ko",
+      "date": "1988-02-29",
+      "title": {
+        "ko": "정치국 회의 작업 기록 — 숨가이트 사흘째 (1988년 2월 29일)",
+        "en": "Politburo working record — the third day of Sumgait (29 February 1988)"
+      },
+      "description": {
+        "ko": "숨가이트 학살 사흘째의 정치국 회의를 그대로 받아 적은 작업 기록. 고르바초프가 호소문의 효과를 묻고, KGB와 내무부가 사상자와 도시 상황을 보고하며, 야조프가 요청한 야간 통행금지가 「정치국원들: 동의한다」로 결정된다. 사건 사흘째에야 사상자 규모를 듣는 정보의 지연, 카라바흐 편지를 「읽지 않았다」는 지도부, 「극단주의자」로 규정하면서 민족 정책 재검토를 말하는 고르바초프. 페레스트로이카가 민족 문제와 부딪친 첫 대형 위기의 내부 기록.",
+        "en": "The verbatim working record of the Politburo on the third day of the Sumgait pogrom: Gorbachev asks whether the appeal has worked, the KGB and the interior ministry report casualties and the state of the city, and Yazov's request for a curfew is settled by 'Members of the Politburo: agreed'. The lag of information (casualty figures only on day three), leaders who had 'not read' the Karabakh letters, Gorbachev calling the killers 'extremists' while urging a rethink of nationality policy — the inside record of perestroika's first great nationalities crisis."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Заседание Политбюро ЦК КПСС 29 февраля 1988 г. (Рабочая запись) // Родина. 1994. № 4. С. 82–90 (ЦХСД)",
+      "people": [
+        "gorbachev",
+        "gromyko",
+        "ligachev",
+        "yazov",
+        "chebrikov",
+        "yakovlev",
+        "ryzhkov"
+      ],
+      "terms": [],
+      "events": [
+        "nationalities-crisis",
+        "perestroika"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "1988년 2월 29일 정치국 회의록",
+          "숨가이트 정치국 회의"
+        ],
+        "en": [
+          "Politburo session of 29 February 1988",
+          "Sumgait Politburo record"
+        ]
+      }
+    },
+    {
+      "id": "basic-directions-market-transition-1990",
+      "file": "basic-directions-market-transition-1990.html",
+      "docLang": "ko",
+      "date": "1990-10-19",
+      "title": {
+        "ko": "「국민경제 안정화와 시장경제 이행의 기본 방향」 (1990)",
+        "en": "'Basic Directions for the Stabilisation of the National Economy and the Transition to a Market Economy' (1990)"
+      },
+      "description": {
+        "ko": "500일 계획과 정부안이 맞선 끝에 고르바초프가 절충해 내고 최고소비에트가 1990년 10월 19일 승인한 문서. 비상 조치→재정 긴축→시장 형성→안정화 완료의 네 단계, 소유 형태의 다양화, 가격 자유화의 순서, 재정 적자 축소, 사회 보장, 대외경제 개방, 구조 조정을 다룬다. 500일 계획의 급진 일정과 공화국 주도 원칙은 빠지고 연방 중앙의 조정 권한이 남았다. 소련 경제 개혁 논쟁의 마지막 공식 문서.",
+        "en": "The compromise Gorbachev drew between the 500-Day Plan and the government programme, approved by the Supreme Soviet on 19 October 1990: four stages (emergency measures, financial austerity, market formation, completed stabilisation), diversified ownership, the sequence of price liberalisation, deficit reduction, social protection, opening to foreign trade, structural reform. The radical timetable and republic-led principle of the 500 days were dropped; the Union centre's coordinating powers stayed. The last official document of the Soviet economic-reform debate."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Основные направления стабилизации народного хозяйства и перехода к рыночной экономике, одобрены ВС СССР 19 октября 1990 г. (постановление № 1733-I)",
+      "people": [
+        "gorbachev",
+        "ryzhkov",
+        "pavlov"
+      ],
+      "terms": [],
+      "events": [
+        "economic-reform-debate",
+        "perestroika"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「기본 방향」(1990)",
+          "시장경제 이행 기본 방향",
+          "1990년 10월 19일 기본 방향"
+        ],
+        "en": [
+          "Basic Directions (1990)",
+          "Basic Directions for the transition to a market economy"
         ]
       }
     }
