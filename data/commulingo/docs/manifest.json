@@ -3368,6 +3368,60 @@
           "Foundations of Leninism"
         ]
       }
+    },
+    {
+      "id": "united-opposition-documents-1926-1927",
+      "file": "united-opposition-documents-1926-1927.html",
+      "docLang": "ko",
+      "date": "1926-07",
+      "title": {
+        "ko": "합동 반대파의 두 문서 — 「13인 선언」(1926)과 「볼셰비키-레닌주의자(반대파) 강령」(1927)",
+        "en": "Two Documents of the United Opposition: the 'Declaration of the Thirteen' (1926) and the 'Platform of the Bolshevik-Leninists (Opposition)' (1927)"
+      },
+      "description": {
+        "ko": "트로츠키·지노비예프·카메네프·크룹스카야 등 열세 명이 1926년 7월 합동 전원회의에 낸 선언(당 관료주의를 분파성의 원천으로 규정하고 임금·공업화·농촌·코민테른에 관한 입장을 열두 절로 요약)과 지노비예프 제명 제안에 대한 추가 성명, 그리고 1927년 9월 제15차 당대회 앞에 제출된 열두 장의 강령 초안(노동자의 처지, 쿨라크의 성장, 공업화 속도, 소비에트의 관료화, 당 체제, 전쟁 위험, 중국 혁명의 패배). 배포가 금지된 이 강령이 반대파 제명의 근거가 되었다.",
+        "en": "The declaration that Trotsky, Zinoviev, Kamenev, Krupskaya and nine others submitted to the joint plenum of July 1926 — defining party bureaucratism as the source of factionalism and summarising the Opposition's positions on wages, industrialisation, the countryside and the Comintern in twelve sections — with the supplementary statement against Zinoviev's removal from the Politburo; and the twelve-chapter draft Platform submitted before the Fifteenth Congress in September 1927 (the condition of the workers, the growth of the kulak, the pace of industrialisation, the bureaucratisation of the soviets, the party regime, the danger of war, the defeat of the Chinese revolution). The banned Platform became the ground for expelling the Opposition."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Заявление 13-ти, июль 1926 г. (РГАСПИ ф. 82, оп. 2, д. 185); Проект платформы большевиков-ленинцев (оппозиции) к XV съезду ВКП(б), сентябрь 1927 г. // Архив Троцкого. Коммунистическая оппозиция в СССР 1923–1927. Т. 2, 4. М., 1990",
+      "people": [
+        "trotsky",
+        "zinoviev",
+        "kamenev",
+        "christian-rakovsky",
+        "stalin",
+        "bukharin",
+        "rykov",
+        "smilga"
+      ],
+      "terms": [
+        "united-opposition",
+        "left-opposition",
+        "socialism-in-one-country"
+      ],
+      "events": [
+        "succession-struggle"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「13인 선언」",
+          "13인 선언",
+          "1927년 반대파 강령",
+          "「반대파 강령」",
+          "볼셰비키-레닌주의자 강령",
+          "합동 반대파 강령"
+        ],
+        "en": [
+          "Declaration of the Thirteen",
+          "Platform of the Opposition",
+          "Platform of the Bolshevik-Leninists",
+          "1927 Platform"
+        ]
+      }
     }
   ]
 }
