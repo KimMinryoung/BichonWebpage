@@ -1446,6 +1446,47 @@
       "addedAt": "2026-08-08"
     },
     {
+      "id": "detente-agreements-1972-1973",
+      "file": "detente-agreements-1972-1973.html",
+      "docLang": "ko",
+      "date": "1972-05-26",
+      "title": {
+        "ko": "데탕트의 두 협정 — SALT I 잠정협정(1972)과 핵전쟁 방지 협정(1973)",
+        "en": "Two Détente Agreements: the SALT I Interim Agreement (1972) and the Agreement on the Prevention of Nuclear War (1973)"
+      },
+      "description": {
+        "ko": "ICBM·SLBM 발사대 수를 동결하고 검증을 정찰위성에 맡긴 1972년 5월 모스크바의 SALT I 잠정협정과, 소련의 「상호 핵 불사용」 초안이 1년의 교섭 끝에 「핵전쟁 위험 시 긴급 협의」 의무로 바뀐 1973년 6월 워싱턴의 핵전쟁 방지 협정. 미소 데탕트의 뼈대가 된 두 문서.",
+        "en": "The SALT I Interim Agreement signed in Moscow in May 1972, which froze ICBM and SLBM launcher numbers and left verification to 'national technical means', and the Agreement on the Prevention of Nuclear War signed in Washington in June 1973, in which a Soviet draft pledge of mutual nuclear non-use became, after a year of negotiation, an obligation to consult urgently whenever nuclear war threatened. The two documents at the core of Soviet–American détente."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Временное соглашение между СССР и США о некоторых мерах в области ограничения стратегических наступательных вооружений, 26 мая 1972 г.; Соглашение между СССР и США о предотвращении ядерной войны, 22 июня 1973 г.",
+      "people": [
+        "brezhnev",
+        "gromyko"
+      ],
+      "terms": [],
+      "events": [
+        "detente-salt"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "SALT I 잠정협정",
+          "SALT I",
+          "핵전쟁 방지 협정",
+          "제1차 전략무기제한협정"
+        ],
+        "en": [
+          "SALT I Interim Agreement",
+          "Agreement on the Prevention of Nuclear War",
+          "SALT I"
+        ]
+      }
+    },
+    {
       "id": "1977-soviet-constitution",
       "file": "1977-soviet-constitution.html",
       "docLang": "ko",
@@ -3150,6 +3191,91 @@
         ],
         "en": [
           "death penalty decree of 12 July 1917"
+        ]
+      }
+    },
+    {
+      "id": "stalin-1925-xiv-conference-results",
+      "file": "stalin-1925-xiv-conference-results.html",
+      "docLang": "ko",
+      "date": "1925-05-09",
+      "title": {
+        "ko": "스탈린, 「제14차 협의회 사업 결과에 대하여」 (1925)",
+        "en": "Stalin, 'The Results of the Work of the Fourteenth Conference of the RCP(B)' (1925)"
+      },
+      "description": {
+        "ko": "제14차 당협의회가 「일국 사회주의」를 처음 당의 결의로 채택한 직후 스탈린이 모스크바 당 활동가들에게 한 보고. 「두 개의 안정화」, 자본주의 나라와 식민지 공산당의 과제, 농촌 정책, 금속공업을 다루되 핵심은 넷째 절이다. 사회주의의 「완전한 승리」(한 나라의 힘으로 가능)와 「최종 승리」(여러 나라의 혁명이 필요)를 가른 이 정식이 이후 소련 이데올로기의 기본 명제가 되었다.",
+        "en": "Stalin's report to Moscow party activists just after the Fourteenth Party Conference had for the first time adopted 'socialism in one country' as a resolution. It covers the 'two stabilisations', the tasks of communist parties in capitalist and colonial countries, rural policy and the metal industry, but its core is the fourth section, which separates the 'complete victory' of socialism (possible by one country's own forces) from its 'final victory' (requiring revolution in several countries) — the formula that became the basic proposition of Soviet ideology."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, К итогам работ XIV конференции РКП(б): Доклад активу московской организации РКП(б) 9 мая 1925 г. // Сочинения. Т. 7. М., 1952. С. 90–132",
+      "people": [
+        "stalin",
+        "trotsky",
+        "zinoviev",
+        "kamenev",
+        "bukharin"
+      ],
+      "terms": [
+        "socialism-in-one-country"
+      ],
+      "events": [
+        "succession-struggle"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「제14차 협의회 사업 결과에 대하여」",
+          "제14차 협의회 결과에 대하여",
+          "1925년 5월 9일 보고"
+        ],
+        "en": [
+          "The Results of the Work of the Fourteenth Conference",
+          "Stalin's report of 9 May 1925"
+        ]
+      }
+    },
+    {
+      "id": "riga-peace-treaty-1921",
+      "file": "riga-peace-treaty-1921.html",
+      "docLang": "ko",
+      "date": "1921-03-18",
+      "title": {
+        "ko": "리가 평화조약 — 러시아·우크라이나와 폴란드 사이의 평화조약 (1921)",
+        "en": "The Peace of Riga: the treaty between Russia and Ukraine and Poland (1921)"
+      },
+      "description": {
+        "ko": "1919~1920년 소련–폴란드 전쟁을 끝낸 스물여섯 개 조의 평화조약과 국경 세부를 정한 제2조 추가 의정서. 국경(서벨라루스·서우크라이나는 폴란드에), 내정 불간섭, 국적 선택, 소수민족의 권리, 배상 포기와 금 3천만 루블, 문화재·문서고 반환, 철도 차량 반환을 정했다. 1939년 9월까지 유지된 국경이며, 제5조·제7조·제11조는 이후 20년의 분쟁거리로 남았다.",
+        "en": "The twenty-six-article treaty that ended the Polish–Soviet war of 1919–1920, with the additional protocol to Article II fixing the frontier in detail. It settled the border (Western Belarus and Western Ukraine to Poland), non-interference, the option of nationality, minority rights, the waiver of reparations against 30 million gold roubles, the return of cultural property and archives, and of railway rolling stock. The frontier held until September 1939; Articles V, VII and XI remained matters of dispute for twenty years."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Мирный договор между Россией и Украиной с одной стороны и Польшей — с другой, Рига, 18 марта 1921 г. // Собрание узаконений. 1921. № 219",
+      "people": [
+        "lenin",
+        "chicherin",
+        "christian-rakovsky"
+      ],
+      "terms": [],
+      "events": [
+        "soviet-polish-war"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "리가 조약",
+          "리가 평화조약",
+          "1921년 리가 조약"
+        ],
+        "en": [
+          "Peace of Riga",
+          "Treaty of Riga",
+          "Riga Peace Treaty"
         ]
       }
     }
