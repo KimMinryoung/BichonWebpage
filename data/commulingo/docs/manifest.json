@@ -439,28 +439,31 @@
       }
     },
     {
-      "id": "rsfsr-ukraine-treaty-1920",
-      "file": "rsfsr-ukraine-treaty-1920.html",
+      "id": "ussr-formation-documents-1920-1922",
+      "file": "ussr-formation-documents-1920-1922.html",
       "docLang": "ko",
       "date": "1920-12-28",
       "title": {
-        "ko": "러시아·우크라이나 동맹 노농조약(1920)",
-        "en": "The RSFSR-Ukrainian SSR union treaty of 1920"
+        "ko": "소련 연방 형성의 두 문서 — 러시아·우크라이나 동맹 노농조약(1920)과 레닌의 「자치화에 대하여」(1922)",
+        "en": "Two Documents of the Formation of the USSR: the RSFSR–Ukrainian union treaty (1920) and Lenin's 'On Autonomisation' (1922)"
       },
       "description": {
-        "ko": "소련이 세워지기 두 해 전, 러시아 공화국과 우크라이나 공화국이 서로를 독립 주권국으로 인정하면서 군사·최고국민경제회의·대외무역·재무·노동·교통·우편전신 일곱 개 인민위원부를 통합한 조약이다. 통합 기구는 러시아 공화국 인민위원회의 안에 두고 우크라이나는 전러시아 소비에트 대회를 통해 참여한다. 두 나라가 대등하다는 선언과 공동 기구가 한쪽 수도에 놓인다는 사실이 한 문서에 같이 있어, 1922년 소련 결성 때의 「자치화」 논쟁이 무엇을 두고 벌어졌는지를 보여 준다. 레닌·치체린·라콥스키가 서명했다.",
-        "en": "Signed two years before the USSR existed, this treaty has the Russian and Ukrainian republics recognise each other's independence and sovereignty while merging seven people's commissariats: military affairs, the Supreme Economic Council, foreign trade, finance, labour, transport and posts and telegraphs. The merged bodies sit inside the Russian republic's Council of People's Commissars, and Ukraine takes part through the All-Russian Congress of Soviets. The declaration of equality and the fact that the joint organs stand in one capital are in the same document, which is what the 1922 'autonomisation' argument was about. Signed by Lenin, Chicherin and Rakovsky."
+        "ko": "서로를 독립국으로 인정하면서 일곱 개 인민위원부를 통합한 1920년 12월 러시아·우크라이나 동맹 노농조약과, 두 해 뒤 소련 결성 주간에 레닌이 병상에서 스탈린의 「자치화」안을 「행정가적 도취」라 부르며 군사·외교만 남긴 연방을 제안한 「민족 문제 또는 자치화에 대하여」. 연방의 설계를 둘러싼 논쟁의 두 문서.",
+        "en": "The union treaty of December 1920 in which Russia and Ukraine recognised each other as independent states while merging seven commissariats, and Lenin's dictation of December 1922, in the week the USSR was founded, calling Stalin's 'autonomisation' plan 'administrative intoxication' and proposing a union limited to defence and foreign affairs. Two documents of the debate over how the federation was to be designed."
       },
       "kind": {
         "ko": "번역 전문",
         "en": "Full translation"
       },
-      "source": "Союзный рабоче-крестьянский договор между РСФСР и УССР, 28 декабря 1920 г.",
+      "source": "Союзный рабоче-крестьянский договор между РСФСР и УССР, 28 декабря 1920 г.; В. И. Ленин, К вопросу о национальностях или об «автономизации», 30–31 декабря 1922 г.",
       "people": [
         "lenin",
         "chicherin",
         "christian-rakovsky",
-        "stalin"
+        "stalin",
+        "dzerzhinsky",
+        "ordzhonikidze",
+        "zinoviev"
       ],
       "terms": [
         "autonomization",
@@ -468,17 +471,23 @@
       ],
       "events": [
         "ussr-formation",
-        "civil-war"
+        "civil-war",
+        "nationalities-crisis"
       ],
-      "addedAt": "2026-08-09",
+      "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
           "동맹 노농조약",
           "러시아·우크라이나 동맹 노농조약",
-          "1920년 동맹 조약"
+          "1920년 동맹 조약",
+          "「민족 문제 또는 자치화에 대하여」",
+          "자치화에 대하여",
+          "자치화 각서",
+          "연방 형성의 두 문서"
         ],
         "en": [
-          "the RSFSR-Ukrainian union treaty"
+          "the RSFSR-Ukrainian union treaty",
+          "On the Question of Nationalities or Autonomisation"
         ]
       }
     },
@@ -1013,45 +1022,58 @@
       }
     },
     {
-      "id": "yalta-1945-declaration-liberated-europe",
-      "file": "yalta-1945-declaration-liberated-europe.html",
+      "id": "allied-documents-1943-1945",
+      "file": "allied-documents-1943-1945.html",
       "docLang": "ko",
-      "date": "1945-02-11",
+      "date": "1943-12-01",
       "title": {
-        "ko": "「해방된 유럽에 관한 선언」",
-        "en": "Declaration on Liberated Europe (Yalta, 1945)"
+        "ko": "연합국 문서집 — 테헤란 군사 결론, 아이젠하워의 디데이 문서, 얄타 선언 (1943~1945)",
+        "en": "Allied Documents: the Tehran Military Conclusions, Eisenhower's D-Day Documents, the Yalta Declaration (1943–1945)"
       },
       "description": {
-        "ko": "1945년 2월 11일 크림(얄타) 회담 코뮈니케의 두 절이다. 앞의 선언은 해방된 유럽 각국이 자기가 살아갈 정부 형태를 선택할 권리를 가진다고 밝히고, 폭넓은 기반 위의 임시 정부와 가능한 한 이른 자유로운 선거를 약속한다. 뒤의 절은 전쟁에서 만들어진 세 나라의 단결을 평화기에도 이어 가겠다는 다짐이다. 얄타가 동유럽을 넘겼는가를 두고 오늘까지 이어지는 논쟁이 갈리는 바로 그 문장들이다.",
-        "en": "Two sections of the Crimean (Yalta) conference communiqué of 11 February 1945. The declaration states the right of liberated European peoples to choose the form of government under which they will live, and promises broadly based interim governments and free elections at the earliest possible date; the section after it pledges to carry the wartime unity of the three powers into peacetime. These are the sentences the long argument over whether Yalta handed away Eastern Europe turns on."
+        "ko": "제2전선에 날짜와 구조를 준 1943년 12월 테헤란 군사 결론, 상륙 당일의 양면인 아이젠하워의 일일명령과 실패 성명 초안(1944), 그리고 해방된 유럽의 정부 형태와 자유선거를 약속한 1945년 2월 얄타 「해방된 유럽에 관한 선언」. 제2전선을 둘러싼 연합국 문서 세 건이다.",
+        "en": "The Tehran military conclusions of December 1943 that gave the second front a date and a structure; Eisenhower's Order of the Day and his unsent 'in case of failure' note (1944); and the Yalta Declaration on Liberated Europe of February 1945 promising free elections in liberated Europe. Three Allied documents around the second front."
       },
       "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
+        "ko": "사료 번역",
+        "en": "Primary source"
       },
-      "source": "Коммюнике Крымской конференции, 11 февраля 1945 г.",
+      "source": "A Decade of American Foreign Policy: Basic Documents, 1941–49 (Washington, 1950). 예일대 로스쿨 애벌론 프로젝트 전자판; 일일명령: 미국 국립문서보관소(NARA) 마일스톤 문서 전사본. 실패 성명 초안: 아이젠하워 대통령도서관 전사본; Коммюнике Крымской конференции, 11 февраля 1945 г.",
       "people": [
-        "stalin",
         "franklin-d-roosevelt",
+        "stalin",
         "winston-churchill",
+        "dwight-d-eisenhower",
         "molotov"
       ],
       "terms": [
+        "mulberry-harbours",
         "yalta-system",
         "peoples-democracy"
       ],
       "events": [
+        "second-front-normandy",
+        "yugoslav-partisans",
         "yalta-potsdam",
         "marshall-plan"
       ],
-      "addedAt": "2026-08-09",
+      "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
+          "테헤란 회담 군사 결론",
+          "테헤란 군사 결론",
+          "일일명령",
+          "아이젠하워의 일일명령",
+          "실패 성명 초안",
           "「해방된 유럽에 관한 선언」",
           "해방된 유럽에 관한 선언",
-          "크림 회담 코뮈니케"
+          "크림 회담 코뮈니케",
+          "연합국 문서집"
         ],
         "en": [
+          "Tehran military conclusions",
+          "Order of the Day",
+          "In case of failure message",
           "Declaration on Liberated Europe"
         ]
       }
@@ -1209,47 +1231,57 @@
       }
     },
     {
-      "id": "amnesty-1953",
-      "file": "amnesty-1953.html",
+      "id": "beria-1953-documents",
+      "file": "beria-1953-documents.html",
       "docLang": "ko",
       "date": "1953-03-27",
       "title": {
-        "ko": "1953년 3월 27일 사면령",
-        "en": "The USSR amnesty decree of 27 March 1953"
+        "ko": "1953년의 베리야 — 3월 사면령과 12월 재판 문서",
+        "en": "Beria in 1953: the March amnesty decree and the December trial documents"
       },
       "description": {
-        "ko": "스탈린이 죽은 지 3주 만에 나온 첫 사면령이다. 5년 이하 형을 받은 사람과 직무·경제·군 관련 범죄로 복역 중인 사람, 어린 자녀를 둔 여성과 미성년자와 고령자를 형기와 무관하게 풀어 주고 5년을 넘는 형은 절반으로 줄여, 100만 명이 넘는 수감자가 수용소를 나왔다. 그러나 제7조는 반혁명 범죄로 5년을 넘는 형을 받은 사람을 명시적으로 제외한다. 정치범은 남고 형사범이 나갔다는 뜻이고, 그해 여름 노릴스크와 보르쿠타의 파업은 그렇게 바뀐 수용소에서 일어났다.",
-        "en": "The first amnesty after Stalin's death, three weeks later. It released prisoners serving up to five years, those convicted of official, economic and military offences regardless of term, women with small children, minors and the elderly, and halved sentences over five years; more than a million people left the camps. Article 7 explicitly excludes those serving more than five years for counter-revolutionary crimes: the criminal prisoners left and the political ones stayed, and the Norilsk and Vorkuta strikes that summer happened in the camps that remained."
+        "ko": "스탈린 사후 3주 만에 베리야가 주도해 100만 명 넘는 수감자를 풀되 정치범은 남긴 1953년 3월 27일 사면령과, 석 달 뒤 체포된 그 베리야를 「외국 첩자」로 단죄한 12월의 최고재판소 특별재판소 공보와 사형 집행 확인서. 사면의 주도자가 같은 해 처형되기까지의 아홉 달.",
+        "en": "The amnesty decree of 27 March 1953, three weeks after Stalin's death, which on Beria's initiative freed over a million prisoners while leaving political prisoners inside; and the December communiqué of the Special Judicial Presence and the execution act that condemned the same Beria, arrested three months later, as a 'foreign agent'. Nine months from the amnesty's author to his execution."
       },
       "kind": {
         "ko": "번역 전문",
         "en": "Full translation"
       },
-      "source": "Указ Президиума Верховного Совета СССР «Об амнистии», 27 марта 1953 г.",
+      "source": "Указ Президиума Верховного Совета СССР «Об амнистии», 27 марта 1953 г.; Сообщение «В Верховном Суде СССР», 24 декабря 1953 г.; Акт о приведении в исполнение приговора … в отношении Л. П. Берия, 23 декабря 1953 г.",
       "people": [
         "voroshilov",
         "beria",
         "khrushchev",
-        "stalin"
+        "stalin",
+        "ivan-konev",
+        "malenkov",
+        "molotov"
       ],
       "terms": [
         "gulag",
-        "the-thaw"
+        "the-thaw",
+        "great-purge"
       ],
       "events": [
         "twentieth-party-congress",
         "beria-purge"
       ],
-      "addedAt": "2026-08-09",
+      "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
           "1953년 사면령",
           "「사면에 관하여」",
-          "3월 사면"
+          "3월 사면",
+          "베리야 재판 공보",
+          "「소련 최고재판소에서」",
+          "베리야 사형 집행 확인서",
+          "베리야 1953 문서"
         ],
         "en": [
           "the 1953 amnesty decree",
-          "On Amnesty"
+          "On Amnesty",
+          "Beria trial communiqué",
+          "In the Supreme Court of the USSR (1953)"
         ]
       }
     },
@@ -1492,51 +1524,6 @@
         ],
         "en": [
           "Yezhov: A Biography"
-        ]
-      }
-    },
-    {
-      "id": "lenin-1922-autonomisation",
-      "file": "lenin-1922-autonomisation.html",
-      "docLang": "ko",
-      "date": "1922-12-30",
-      "title": {
-        "ko": "레닌, 「민족 문제 또는 자치화에 대하여」",
-        "en": "Lenin, 'On the Question of Nationalities or Autonomisation'"
-      },
-      "description": {
-        "ko": "소련이 결성되던 주에 레닌이 병상에서 구술한 각서다. 여러 소비에트 공화국을 러시아 공화국 안의 자치 단위로 넣으려던 「자치화」 안을 「행정가적 도취와 조급함」이라 부르고, 억압 민족에 속한 사람의 국제주의는 형식적 평등에 그쳐서는 안 된다고 논한다. 그루지야에서 오르조니키제가 폭력을 쓴 사건을 두고 본보기 처벌과 제르진스키 조사의 재검토를 요구하며, 연방은 유지하되 군사와 외교만 남기고 나머지 인민위원부는 각 공화국에 돌려주자고 제안한다.",
-        "en": "The note Lenin dictated from his sickbed in the week the USSR was founded. He calls the 'autonomisation' plan, which would have folded the Soviet republics into the Russian one as autonomous units, a case of administrative haste, and argues that internationalism from a member of an oppressor nation cannot stop at formal equality. He asks for Ordzhonikidze to be punished as an example over the violence in Georgia and for Dzerzhinsky's inquiry to be reopened, and proposes keeping the union for defence and foreign affairs while returning the other commissariats to the republics."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "В. И. Ленин, К вопросу о национальностях или об «автономизации», 30–31 декабря 1922 г.",
-      "people": [
-        "lenin",
-        "stalin",
-        "dzerzhinsky",
-        "ordzhonikidze",
-        "zinoviev"
-      ],
-      "terms": [
-        "autonomization",
-        "korenizatsiya"
-      ],
-      "events": [
-        "ussr-formation",
-        "nationalities-crisis"
-      ],
-      "addedAt": "2026-08-09",
-      "aliases": {
-        "ko": [
-          "「민족 문제 또는 자치화에 대하여」",
-          "자치화에 대하여",
-          "자치화 각서"
-        ],
-        "en": [
-          "On the Question of Nationalities or Autonomisation"
         ]
       }
     },
@@ -1912,83 +1899,54 @@
       }
     },
     {
-      "id": "vichy-constitutional-law-1940",
-      "file": "vichy-constitutional-law-1940.html",
+      "id": "vichy-documents-1940-1944",
+      "file": "vichy-documents-1940-1944.html",
       "docLang": "ko",
       "date": "1940-07-10",
       "title": {
-        "ko": "1940년 7월 10일 헌법법률",
-        "en": "Constitutional Law of 10 July 1940"
+        "ko": "비시 프랑스의 문서 세 건 — 헌법법률, 유대인 지위법, 공화국 합법성 회복 명령 (1940~1944)",
+        "en": "Three Vichy Documents: the Constitutional Law, the Statut des Juifs, the Ordinance Restoring Republican Legality (1940–1944)"
       },
       "description": {
-        "ko": "국민의회가 569 대 80으로 페탱에게 새 헌법 제정의 전권을 넘겨 제3공화국을 끝낸 단일 조항 법률의 전문. 1944년 8월 9일 명령이 처음부터 무효라고 선언한 바로 그 문서다.",
-        "en": "The single-article law by which the National Assembly, 569 to 80, handed Pétain full constituent powers and ended the Third Republic; declared void ab initio by the ordinance of 9 August 1944."
+        "ko": "페탱에게 전권을 넘긴 1940년 7월 10일 헌법법률, 비시 정부가 스스로 제정한 10월 3일 유대인 지위법, 그리고 「공화국은 법적으로 사라진 적이 없다」며 앞의 둘을 무효로 확인한 1944년 8월 9일 임시정부 명령. 제3공화국의 종말과 부활을 법률 세 건으로 좇는다.",
+        "en": "The constitutional law of 10 July 1940 that handed full powers to Pétain, the Statut des Juifs of 3 October that Vichy enacted on its own initiative, and the Provisional Government's ordinance of 9 August 1944 declaring that 'the Republic has never ceased to exist' and voiding both. The end and the rebirth of the Third Republic in three laws."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "Journal officiel de la République française, 1940-07-11. 프랑스 위키문헌 전사본",
+      "source": "Journal officiel de la République française, 1940-07-11. 프랑스 위키문헌 전사본; Journal officiel, Lois et décrets, 1940-10-18. 프랑스 위키문헌 전사본; Ordonnance du 9 août 1944, Journal officiel 1944-08-10. 레지프랑스(Légifrance) 전자 원문",
       "people": [
         "philippe-petain",
         "albert-lebrun",
-        "pierre-laval"
-      ],
-      "terms": [
-        "vichy-legal-continuity-debate"
-      ],
-      "events": [
-        "fall-of-france"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "1940년 7월 10일 헌법법률",
-          "비시 헌법법률"
-        ],
-        "en": [
-          "Constitutional Law of 10 July 1940"
-        ]
-      }
-    },
-    {
-      "id": "statut-des-juifs-1940",
-      "file": "statut-des-juifs-1940.html",
-      "docLang": "ko",
-      "date": "1940-10-03",
-      "title": {
-        "ko": "1940년 10월 3일 유대인 지위에 관한 법률",
-        "en": "Law of 3 October 1940 on the Status of Jews"
-      },
-      "description": {
-        "ko": "비시가 독일의 요구 없이 스스로 제정한 첫 반유대 법령의 전문. 「인종」과 조부모 수에 의한 유대인 정의, 공직·군·사법·언론·영화에서의 배제, 서명자 명단까지 옮겼다.",
-        "en": "Full text of Vichy's first antisemitic statute, enacted without German demand: the racial definition by grandparents, the exclusions from public office, the army, the judiciary, the press and cinema, and the list of signatories."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Journal officiel, Lois et décrets, 1940-10-18. 프랑스 위키문헌 전사본",
-      "people": [
-        "philippe-petain",
         "pierre-laval",
-        "charles-huntziger"
+        "charles-huntziger",
+        "charles-de-gaulle"
       ],
       "terms": [
+        "vichy-legal-continuity-debate",
         "statut-des-juifs"
       ],
       "events": [
-        "fall-of-france"
+        "fall-of-france",
+        "french-resistance"
       ],
-      "addedAt": "2026-08-17",
+      "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
+          "1940년 7월 10일 헌법법률",
+          "비시 헌법법률",
           "유대인 법령 원문",
-          "유대인 지위법"
+          "유대인 지위법",
+          "1944년 8월 9일 명령",
+          "공화국 합법성 회복에 관한 명령",
+          "비시 프랑스 문서"
         ],
         "en": [
+          "Constitutional Law of 10 July 1940",
           "Statut des Juifs",
-          "Jewish Statute of 1940"
+          "Jewish Statute of 1940",
+          "Ordinance of 9 August 1944"
         ]
       }
     },
@@ -2034,74 +1992,67 @@
       }
     },
     {
-      "id": "tripartite-pact-1940",
-      "file": "tripartite-pact-1940.html",
+      "id": "pacific-war-documents-1940-1945",
+      "file": "pacific-war-documents-1940-1945.html",
       "docLang": "ko",
       "date": "1940-09-27",
       "title": {
-        "ko": "삼국동맹 조약",
-        "en": "The Tripartite Pact"
+        "ko": "태평양 전쟁 문서집 — 삼국동맹부터 항복 문서까지 (1940~1945)",
+        "en": "Pacific War Documents: from the Tripartite Pact to the Instrument of Surrender (1940–1945)"
       },
       "description": {
-        "ko": "독일·이탈리아·일본이 유럽과 「대동아」의 신질서 지도권을 서로 승인하고 제3국의 공격 시 상호 원조를 약속한 1940년 9월 27일 베를린 조약의 전문.",
-        "en": "Full text of the Berlin pact of 27 September 1940 by which Germany, Italy and Japan recognized each other's 'new orders' and promised mutual assistance against attack by a power not yet in the war."
+        "ko": "삼국동맹 조약(1940), 소일 중립조약과 1945년 대일 선전 성명, 헐 노트(1941), 포츠담 선언, 중소우호동맹조약, 일본 항복 문서(1945). 태평양 전쟁의 시작과 끝을 가른 여섯 문서를 시간순으로 묶었다.",
+        "en": "The Tripartite Pact (1940), the Soviet–Japanese Neutrality Pact with the 1945 declaration of war, the Hull Note (1941), the Potsdam Declaration, the Sino-Soviet Treaty and the Japanese Instrument of Surrender (1945): six documents that opened and closed the Pacific War, in order."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "Three-Power Pact, 1940-09-27. 미 국무부 간행 영역본, 예일대 로스쿨 애벌론 프로젝트 전자판",
-      "people": [],
+      "source": "Three-Power Pact, 1940-09-27. 미 국무부 간행 영역본, 예일대 로스쿨 애벌론 프로젝트 전자판; 러시아어 위키문헌 전사본 2건; Outline of Proposed Basis for Agreement Between the United States and Japan, 1941-11-26. 영어 위키문헌 전사본; Proclamation Defining Terms for Japanese Surrender, 1945-07-26. 영어 위키문헌 전사본; 러시아어 위키문헌 전사본(러시아어 정본); Instrument of Surrender, 1945-09-02. 영어 위키문헌 전사본(미국 국립문서보관소 소장 원본)",
+      "people": [
+        "molotov",
+        "cordell-hull",
+        "winston-churchill",
+        "mamoru-shigemitsu",
+        "yoshijiro-umezu",
+        "douglas-macarthur",
+        "hirohito"
+      ],
       "terms": [],
       "events": [
-        "pacific-war"
+        "pacific-war",
+        "soviet-japanese-border-wars",
+        "yalta-potsdam",
+        "manchurian-operation"
       ],
-      "addedAt": "2026-08-17",
+      "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
           "삼국동맹 조약",
           "삼국 조약",
-          "베를린 조약(1940)"
+          "베를린 조약(1940)",
+          "소일 중립조약",
+          "소련-일본 중립조약",
+          "대일 선전포고문",
+          "헐 노트",
+          "미일 간 합의 기초안 개요",
+          "포츠담 선언",
+          "중소우호동맹조약",
+          "소중 우호동맹조약",
+          "일본 항복 문서",
+          "항복 문서(1945)",
+          "태평양 전쟁 문서집"
         ],
         "en": [
           "Tripartite Pact",
-          "Three-Power Pact"
-        ]
-      }
-    },
-    {
-      "id": "hull-note-1941",
-      "file": "hull-note-1941.html",
-      "docLang": "ko",
-      "date": "1941-11-26",
-      "title": {
-        "ko": "헐 노트",
-        "en": "The Hull Note"
-      },
-      "description": {
-        "ko": "진주만 열하루 전 미국이 일본에 건넨 「미일 간 합의 기초안 개요」의 전문. 구두 성명과, 중국·인도차이나 전면 철수를 요구한 열 개 항의 조치안을 함께 옮겼다.",
-        "en": "Full text of the 'Outline of Proposed Basis for Agreement' handed to Japan eleven days before Pearl Harbor: the oral statement and the ten-point plan demanding full withdrawal from China and Indochina."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Outline of Proposed Basis for Agreement Between the United States and Japan, 1941-11-26. 영어 위키문헌 전사본",
-      "people": [
-        "cordell-hull"
-      ],
-      "terms": [],
-      "events": [
-        "pacific-war"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "헐 노트",
-          "미일 간 합의 기초안 개요"
-        ],
-        "en": [
-          "Hull note"
+          "Three-Power Pact",
+          "Soviet-Japanese Neutrality Pact",
+          "Soviet declaration of war on Japan",
+          "Hull note",
+          "Potsdam Declaration",
+          "Sino-Soviet Treaty of Friendship and Alliance",
+          "Instrument of Surrender",
+          "Japanese Instrument of Surrender"
         ]
       }
     },
@@ -2140,45 +2091,6 @@
         ],
         "en": [
           "White House conference memoranda, May–June 1942"
-        ]
-      }
-    },
-    {
-      "id": "tehran-military-conclusions-1943",
-      "file": "tehran-military-conclusions-1943.html",
-      "docLang": "ko",
-      "date": "1943-12-01",
-      "title": {
-        "ko": "테헤란 회담 군사 결론",
-        "en": "Military Conclusions of the Tehran Conference"
-      },
-      "description": {
-        "ko": "루스벨트·스탈린·처칠이 서명한 다섯 항의 합의 전문. 1944년 5월의 오버로드와 남프랑스 상륙, 소련의 동시 공세, 공동 기만계획, 유고슬라비아 파르티잔 지원을 정했다.",
-        "en": "The five-point agreement signed by Roosevelt, Stalin and Churchill: Overlord in May 1944 with a southern France landing, a simultaneous Soviet offensive, a concerted deception plan, and support for the Yugoslav Partisans."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "A Decade of American Foreign Policy: Basic Documents, 1941–49 (Washington, 1950). 예일대 로스쿨 애벌론 프로젝트 전자판",
-      "people": [
-        "franklin-d-roosevelt",
-        "stalin",
-        "winston-churchill"
-      ],
-      "terms": [],
-      "events": [
-        "second-front-normandy",
-        "yugoslav-partisans"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "테헤란 회담 군사 결론",
-          "테헤란 군사 결론"
-        ],
-        "en": [
-          "Tehran military conclusions"
         ]
       }
     },
@@ -2227,161 +2139,6 @@
           "Les Jours Heureux",
           "CNR programme",
           "programme of the National Council of the Resistance"
-        ]
-      }
-    },
-    {
-      "id": "eisenhower-d-day-documents-1944",
-      "file": "eisenhower-d-day-documents-1944.html",
-      "docLang": "ko",
-      "date": "1944-06-06",
-      "title": {
-        "ko": "아이젠하워의 디데이 문서 두 건",
-        "en": "Eisenhower's Two D-Day Documents"
-      },
-      "description": {
-        "ko": "6월 6일 전 장병에게 배포된 일일명령과, 상륙 실패에 대비해 6월 5일 미리 적어 둔 예순여섯 단어의 성명 초안. 승리의 수사와 「잘못은 오로지 나 한 사람의 것」이라는 책임의 문장을 나란히 실었다.",
-        "en": "The Order of the Day distributed to the invasion force on 6 June, and the sixty-six-word in-case-of-failure note drafted on 5 June, placing the rhetoric of victory beside the sentence that takes sole blame."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "일일명령: 미국 국립문서보관소(NARA) 마일스톤 문서 전사본. 실패 성명 초안: 아이젠하워 대통령도서관 전사본",
-      "people": [
-        "dwight-d-eisenhower"
-      ],
-      "terms": [
-        "mulberry-harbours"
-      ],
-      "events": [
-        "second-front-normandy"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "일일명령",
-          "아이젠하워의 일일명령",
-          "실패 성명 초안"
-        ],
-        "en": [
-          "Order of the Day",
-          "In case of failure message"
-        ]
-      }
-    },
-    {
-      "id": "restoration-of-republican-legality-1944",
-      "file": "restoration-of-republican-legality-1944.html",
-      "docLang": "ko",
-      "date": "1944-08-09",
-      "title": {
-        "ko": "1944년 8월 9일 공화국 합법성 회복에 관한 명령",
-        "en": "Ordinance of 9 August 1944 on the Restoration of Republican Legality"
-      },
-      "description": {
-        "ko": "「공화국은 법적으로 존재하기를 그친 적이 없다」로 시작해 비시의 헌법적 행위 전부를 무효로 선언한 해방 프랑스의 기초 문서 전문. 무효의 원칙과 행정의 연속성을 가르는 열한 개 조항을 옮겼다.",
-        "en": "The founding text of liberated France: 'in law, the Republic has never ceased to exist.' All eleven articles, voiding Vichy's constitutional acts while managing administrative continuity."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Ordonnance du 9 août 1944, Journal officiel 1944-08-10. 레지프랑스(Légifrance) 전자 원문",
-      "people": [
-        "charles-de-gaulle"
-      ],
-      "terms": [
-        "vichy-legal-continuity-debate"
-      ],
-      "events": [
-        "fall-of-france",
-        "french-resistance"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "1944년 8월 9일 명령",
-          "공화국 합법성 회복에 관한 명령"
-        ],
-        "en": [
-          "Ordinance of 9 August 1944"
-        ]
-      }
-    },
-    {
-      "id": "potsdam-declaration-1945",
-      "file": "potsdam-declaration-1945.html",
-      "docLang": "ko",
-      "date": "1945-07-26",
-      "title": {
-        "ko": "포츠담 선언",
-        "en": "The Potsdam Declaration"
-      },
-      "description": {
-        "ko": "일본의 항복 조건을 정한 13개 항의 선언 전문. 군국주의 세력의 제거, 점령, 주권의 본토 제한, 전범 처벌, 민주주의의 부활, 그리고 무조건 항복 요구까지.",
-        "en": "The thirteen-paragraph proclamation defining the terms for Japan's surrender: removal of the militarists, occupation, limitation of sovereignty, punishment of war criminals, revival of democracy, and the demand for unconditional surrender."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Proclamation Defining Terms for Japanese Surrender, 1945-07-26. 영어 위키문헌 전사본",
-      "people": [
-        "winston-churchill"
-      ],
-      "terms": [],
-      "events": [
-        "pacific-war",
-        "manchurian-operation"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "포츠담 선언"
-        ],
-        "en": [
-          "Potsdam Declaration"
-        ]
-      }
-    },
-    {
-      "id": "japanese-instrument-of-surrender-1945",
-      "file": "japanese-instrument-of-surrender-1945.html",
-      "docLang": "ko",
-      "date": "1945-09-02",
-      "title": {
-        "ko": "일본 항복 문서",
-        "en": "The Japanese Instrument of Surrender"
-      },
-      "description": {
-        "ko": "1945년 9월 2일 도쿄만 미주리호 함상에서 서명된 항복 문서의 전문. 전 일본군의 무조건 항복과, 천황과 일본 정부의 통치 권한을 연합국 최고사령관에게 종속시킨 마지막 조항, 그리고 열두 서명자를 옮겼다.",
-        "en": "Full text of the instrument signed aboard the Missouri in Tokyo Bay on 2 September 1945: the unconditional surrender of all Japanese forces, the subordination of the Emperor's and the government's authority to the Supreme Commander, and the twelve signatories."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "Instrument of Surrender, 1945-09-02. 영어 위키문헌 전사본(미국 국립문서보관소 소장 원본)",
-      "people": [
-        "mamoru-shigemitsu",
-        "yoshijiro-umezu",
-        "douglas-macarthur",
-        "hirohito"
-      ],
-      "terms": [],
-      "events": [
-        "pacific-war"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "일본 항복 문서",
-          "항복 문서(1945)"
-        ],
-        "en": [
-          "Instrument of Surrender",
-          "Japanese Instrument of Surrender"
         ]
       }
     },
@@ -2653,47 +2410,6 @@
       }
     },
     {
-      "id": "soviet-japan-neutrality-1941",
-      "file": "soviet-japan-neutrality-1941.html",
-      "docLang": "ko",
-      "date": "1941-04-13",
-      "title": {
-        "ko": "소일 중립조약과 1945년 대일 선전 성명",
-        "en": "The Soviet-Japanese Neutrality Pact and the 1945 Declaration of War"
-      },
-      "description": {
-        "ko": "1941년 4월의 중립조약 전문과, 얄타의 약속대로 독일 항복 3개월 뒤 몰로토프가 일본 대사에게 건넨 1945년 8월 8일 선전 성명. 조약과 그 종말을 한 문서에 담았다.",
-        "en": "The neutrality pact of April 1941 in full, and the statement Molotov handed the Japanese ambassador on 8 August 1945 declaring war from the next day: the treaty and its end in one document."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "러시아어 위키문헌 전사본 2건",
-      "people": [
-        "molotov"
-      ],
-      "terms": [],
-      "events": [
-        "soviet-japanese-border-wars",
-        "yalta-potsdam",
-        "manchurian-operation",
-        "pacific-war"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "소일 중립조약",
-          "소련-일본 중립조약",
-          "대일 선전포고문"
-        ],
-        "en": [
-          "Soviet-Japanese Neutrality Pact",
-          "Soviet declaration of war on Japan"
-        ]
-      }
-    },
-    {
       "id": "warsaw-treaty-1955",
       "file": "warsaw-treaty-1955.html",
       "docLang": "ko",
@@ -2729,64 +2445,29 @@
       }
     },
     {
-      "id": "sino-soviet-treaty-1945",
-      "file": "sino-soviet-treaty-1945.html",
-      "docLang": "ko",
-      "date": "1945-08-14",
-      "title": {
-        "ko": "중소우호동맹조약",
-        "en": "The Sino-Soviet Treaty of Friendship and Alliance"
-      },
-      "description": {
-        "ko": "일본 항복 발표 전날 소련과 중화민국이 모스크바에서 서명한 우호·동맹 조약의 전문. 얄타의 극동 조건을 중국이 수용하는 틀이었고, 1950년 중화인민공화국과의 새 조약이 대체했다.",
-        "en": "The treaty of friendship and alliance signed in Moscow the day before Japan's surrender announcement, the frame in which China accepted the Yalta Far Eastern terms; superseded by the 1950 treaty with the People's Republic."
-      },
-      "kind": {
-        "ko": "사료 번역",
-        "en": "Primary source"
-      },
-      "source": "러시아어 위키문헌 전사본(러시아어 정본)",
-      "people": [
-        "molotov"
-      ],
-      "terms": [],
-      "events": [
-        "manchurian-operation",
-        "yalta-potsdam"
-      ],
-      "addedAt": "2026-08-17",
-      "aliases": {
-        "ko": [
-          "중소우호동맹조약",
-          "소중 우호동맹조약"
-        ],
-        "en": [
-          "Sino-Soviet Treaty of Friendship and Alliance"
-        ]
-      }
-    },
-    {
       "id": "cominform-resolution-1948",
       "file": "cominform-resolution-1948.html",
       "docLang": "ko",
       "date": "1948-06-28",
       "title": {
-        "ko": "코민포름 결의 「유고슬라비아 공산당의 상황에 관하여」",
-        "en": "The Cominform Resolution on the Situation in the CPY"
+        "ko": "코민포름 결의 「유고슬라비아 공산당의 상황에 관하여」와 스탈린의 고트발트 전보 (1948)",
+        "en": "The Cominform Resolution on the Situation in the CPY and Stalin's telegram to Gottwald (1948)"
       },
       "description": {
-        "ko": "티토-스탈린 결별을 공식화한 1948년 6월 28일 결의의 전문. 여덟 개 항의 고발과, 유고슬라비아 당내 「건전한 세력」에게 지도부 교체를 호소하는 맺음말까지.",
-        "en": "The full text of the resolution of 28 June 1948 that formalized the Tito-Stalin split: eight articles of indictment and a closing appeal to the 'healthy forces' of the Yugoslav party to replace their leaders."
+        "ko": "유고슬라비아공산당이 스스로를 「형제 당들의 가족 밖에」 세웠다고 선언한 1948년 6월 28일 부쿠레슈티 코민포름 결의와, 보름 뒤 스탈린이 고트발트에게 그 결의의 목적은 티토를 당장 무너뜨리는 것이 아니라 고립시키는 것이라고 설명한 전보(전집 수록 발췌). 티토-스탈린 결별의 공개된 규탄과 내부의 계산.",
+        "en": "The Cominform resolution adopted at Bucharest on 28 June 1948, declaring that the Communist Party of Yugoslavia had placed itself 'outside the family of fraternal parties', and Stalin's telegram to Gottwald a fortnight later explaining that its aim was not to topple Tito at once but to isolate him (excerpt from the Works). The public condemnation and the private calculation of the Tito–Stalin split."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "『프라브다』 1948년 6월 29일자 게재본의 전자판(스탈린 저작집 제18권 수록 전사본)",
+      "source": "『프라브다』 1948년 6월 29일자 게재본의 전자판(스탈린 저작집 제18권 수록 전사본); Сталин И. В. Из телеграммы К. Готвальду, 14 июля 1948 г. // Сочинения. Т. 18. Тверь, 2006. С. 506",
       "people": [
         "stalin"
       ],
-      "terms": [],
+      "terms": [
+        "cominform"
+      ],
       "events": [
         "tito-stalin-split",
         "yugoslav-partisans"
@@ -2796,11 +2477,14 @@
         "ko": [
           "코민포름 결의",
           "코민포름 결의문",
-          "유고슬라비아 공산당의 상황에 관하여"
+          "유고슬라비아 공산당의 상황에 관하여",
+          "고트발트에게 보낸 전보 (1948)",
+          "스탈린-고트발트 전보"
         ],
         "en": [
           "Cominform resolution",
-          "Resolution on the situation in the Communist Party of Yugoslavia"
+          "Resolution on the situation in the Communist Party of Yugoslavia",
+          "Stalin's telegram to Gottwald (1948)"
         ]
       }
     },
@@ -3035,121 +2719,50 @@
       "docLang": "ko",
       "date": "1942-07-28",
       "title": {
-        "ko": "국방인민위원 명령 제227호 「한 걸음도 물러서지 마라」(1942)",
-        "en": "People's Commissar of Defence Order No. 227, 'Not One Step Back' (1942)"
+        "ko": "「한 걸음도 물러서지 마라」와 최고사령부 문서 — 명령 제227호, 지령 제170703호, 명령 제20호 (1942~1945)",
+        "en": "'Not One Step Back' and the Soviet High Command: Order No. 227, Directive No. 170703, Order No. 20 (1942–1945)"
       },
       "description": {
-        "ko": "로스토프가 떨어지고 독일군이 스탈린그라드와 캅카스로 갈라져 들어가던 1942년 7월 28일 스탈린이 내린 명령이다. 더는 물러설 땅이 없다는 정세 설명에 이어 무단 후퇴를 허용한 지휘관의 해임과 군법회의 회부, 형벌대대·형벌중대 편성, 불안정한 사단 후방에 차단분견대를 두어 공황과 도주를 현장에서 막는 세 제도를 명한다. 독일군의 겨울 후퇴 뒤 조치를 본받자고 명시한 드문 문서로, 1988년까지 전문이 공개되지 않았다.",
-        "en": "Stalin's order of 28 July 1942, issued after the fall of Rostov as the German summer offensive split toward Stalingrad and the Caucasus. After a situation report arguing there was no more ground to give up, it orders three measures: removal and court-martial of commanders who allow unauthorised retreat, penal battalions and companies, and blocking detachments behind unstable divisions to stop panic and flight on the spot. It explicitly holds up the German army's post-winter measures as a model; the full text was not published until 1988."
+        "ko": "후퇴를 금지하고 형벌부대와 차단분견대를 제도화한 1942년 7월의 명령 제227호 「한 걸음도 물러서지 마라」, 레닌그라드 봉쇄를 돌파한 「이스크라」 작전의 12월 지령 제170703호, 그리고 베를린 시가전 한가운데서 승리를 예고하고 네 도시를 처음 「영웅도시」라 부른 1945년 5월 1일의 명령 제20호. 스탈린그라드 위기에서 베를린 함락까지 소련 최고사령부의 문서 세 건.",
+        "en": "Order No. 227 of July 1942, 'Not One Step Back', which forbade retreat and institutionalised penal units and blocking detachments; Stavka Directive No. 170703 of December 1942 ordering Operation Iskra to break the Leningrad blockade; and Order No. 20 of 1 May 1945, issued amid the Berlin street fighting, which foretold victory and first named four 'hero cities'. Three documents of the Soviet high command from the Stalingrad crisis to the fall of Berlin."
       },
       "kind": {
         "ko": "번역 전문",
         "en": "Full translation"
       },
-      "source": "Приказ НКО СССР № 227 «О мерах по укреплению дисциплины и порядка в Красной Армии и запрещении самовольного отхода с боевых позиций», 28 июля 1942 г.",
+      "source": "Приказ НКО СССР № 227 «О мерах по укреплению дисциплины и порядка в Красной Армии и запрещении самовольного отхода с боевых позиций», 28 июля 1942 г.; Директива Ставки ВГК № 170703 командующим войсками Волховского и Ленинградского фронтов, 8 декабря 1942 г.; Приказ Верховного Главнокомандующего № 20, 1 мая 1945 г.",
       "people": [
-        "stalin"
+        "stalin",
+        "zhukov"
       ],
       "terms": [
         "blocking-detachments",
-        "stavka"
+        "stavka",
+        "hero-city"
       ],
       "events": [
         "stalingrad",
-        "great-patriotic-war"
+        "great-patriotic-war",
+        "siege-of-leningrad"
       ],
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
           "명령 제227호",
           "「한 걸음도 물러서지 마라」",
-          "227호 명령"
-        ],
-        "en": [
-          "Order No. 227",
-          "Not One Step Back",
-          "Not a Step Back"
-        ]
-      }
-    },
-    {
-      "id": "stavka-directive-170703-1942",
-      "file": "stavka-directive-170703-1942.html",
-      "docLang": "ko",
-      "date": "1942-12-08",
-      "title": {
-        "ko": "최고사령부 지령 제170703호 — 레닌그라드 봉쇄 돌파 작전 (1942)",
-        "en": "Stavka Directive No. 170703 on breaking the Leningrad blockade (1942)"
-      },
-      "description": {
-        "ko": "1942년 12월 8일 최고사령부가 볼호프·레닌그라드 방면군에 함께 내린 「이스크라」 작전 명령서다. 두 방면군이 협력해 실리셀부르크 일대의 독일군을 격멸하고 1943년 1월 안에 봉쇄를 돌파한 뒤, 2월 상반기에 므가 작전으로 키로프 철도를 확보하라고 지시한다. 첫 단계는 1943년 1월 18일 봉쇄 돌파로 이루어졌고 두 번째 단계는 실패했다. 서명은 스탈린과 주코프.",
-        "en": "The Stavka order of 8 December 1942 to the Volkhov and Leningrad Fronts that launched Operation Iskra: destroy the German grouping around Shlisselburg by joint action and break the blockade by the end of January 1943, then clear the Kirov railway in the Mga operation in early February. The first stage succeeded on 18 January 1943; the second did not. Signed by Stalin and Zhukov."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Директива Ставки ВГК № 170703 командующим войсками Волховского и Ленинградского фронтов, 8 декабря 1942 г.",
-      "people": [
-        "stalin",
-        "zhukov"
-      ],
-      "terms": [
-        "stavka"
-      ],
-      "events": [
-        "siege-of-leningrad",
-        "great-patriotic-war"
-      ],
-      "addedAt": "2026-08-31",
-      "aliases": {
-        "ko": [
+          "227호 명령",
           "지령 제170703호",
-          "이스크라 작전 지령"
-        ],
-        "en": [
-          "Directive 170703",
-          "Operation Iskra directive"
-        ]
-      }
-    },
-    {
-      "id": "supreme-commander-order-20-1945",
-      "file": "supreme-commander-order-20-1945.html",
-      "docLang": "ko",
-      "date": "1945-05-01",
-      "title": {
-        "ko": "최고사령관 명령 제20호 (1945년 5월 1일)",
-        "en": "Order No. 20 of the Supreme Commander-in-Chief, 1 May 1945"
-      },
-      "description": {
-        "ko": "베를린 시가전 중에 스탈린이 군과 국민에게 낸 노동절 명령이다. 겨울 공세의 성과와 독일군 손실을 집계하고 「히틀러 독일의 날은 셀 수 있게 되었다」고 선언한 뒤, 5월 1일 축포를 연방 공화국 수도들과 「영웅도시 레닌그라드, 스탈린그라드, 세바스토폴, 오데사」에서 쏘라고 명한다. 네 도시가 공식 문서에서 처음 영웅도시로 불린 자리이며, 1965년에 제도화되는 칭호의 출발점이다.",
-        "en": "Stalin's May Day order to the armed forces and the home front, issued during the street fighting in Berlin. It tallies the winter offensive and German losses, declares that 'the days of Hitlerite Germany are numbered', and orders the 1 May salute to be fired in the union-republic capitals and in 'the hero cities Leningrad, Stalingrad, Sevastopol and Odessa' — the first official use of the term, which became a formal title in 1965."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Приказ Верховного Главнокомандующего № 20, 1 мая 1945 г.",
-      "people": [
-        "stalin"
-      ],
-      "terms": [
-        "hero-city"
-      ],
-      "events": [
-        "siege-of-leningrad",
-        "stalingrad",
-        "great-patriotic-war"
-      ],
-      "addedAt": "2026-08-31",
-      "aliases": {
-        "ko": [
+          "이스크라 작전 지령",
           "명령 제20호",
           "1945년 노동절 명령",
           "영웅도시 명령"
         ],
         "en": [
+          "Order No. 227",
+          "Not One Step Back",
+          "Not a Step Back",
+          "Directive 170703",
+          "Operation Iskra directive",
           "Order No. 20",
           "May Day order 1945"
         ]
@@ -3329,89 +2942,6 @@
         "en": [
           "Moscow Peace Treaty",
           "Treaty of Moscow (1940)"
-        ]
-      }
-    },
-    {
-      "id": "beria-trial-1953",
-      "file": "beria-trial-1953.html",
-      "docLang": "ko",
-      "date": "1953-12-24",
-      "title": {
-        "ko": "베리야 재판 — 특별재판소 공보와 사형 집행 확인서 (1953)",
-        "en": "The Beria trial: the Special Judicial Presence communiqué and the execution act (1953)"
-      },
-      "description": {
-        "ko": "1953년 12월 18~23일 코네프 원수가 재판장을 맡은 최고재판소 특별재판소가 베리야와 여섯 공동 피고인을 비공개로 재판한 뒤 『프라우다』에 실은 공보와, 같은 날 저녁 7시 50분 판결이 집행되었음을 바티츠키·루덴코·모스칼렌코가 서명해 확인한 한 장짜리 조서다. 1919년 무사바트 정보기관과의 연계부터 스탈린 사후 권력 탈취 음모까지 형법 제58조의 언어로 열거된 혐의는 1937년의 어법을 그대로 되풀이한다. 2000년 러시아 최고재판소는 복권을 거부했다.",
-        "en": "The communiqué printed in Pravda after the Special Judicial Presence under Marshal Konev tried Beria and six co-defendants in camera on 18–23 December 1953, and the one-page act signed by Batitsky, Rudenko and Moskalenko confirming that the sentence was carried out at 19:50 the same day. The charges, from links to Musavat intelligence in 1919 to a plot to seize power after Stalin's death, are set out in the language of Article 58 and repeat the idiom of 1937. In 2000 the Russian Supreme Court refused rehabilitation."
-      },
-      "kind": {
-        "ko": "번역 전문",
-        "en": "Full translation"
-      },
-      "source": "Сообщение «В Верховном Суде СССР», 24 декабря 1953 г.; Акт о приведении в исполнение приговора … в отношении Л. П. Берия, 23 декабря 1953 г.",
-      "people": [
-        "beria",
-        "ivan-konev",
-        "khrushchev",
-        "malenkov",
-        "molotov",
-        "stalin"
-      ],
-      "terms": [
-        "great-purge"
-      ],
-      "events": [
-        "beria-purge"
-      ],
-      "addedAt": "2026-08-31",
-      "aliases": {
-        "ko": [
-          "베리야 재판 공보",
-          "「소련 최고재판소에서」",
-          "베리야 사형 집행 확인서"
-        ],
-        "en": [
-          "Beria trial communiqué",
-          "In the Supreme Court of the USSR (1953)"
-        ]
-      }
-    },
-    {
-      "id": "stalin-gottwald-1948",
-      "file": "stalin-gottwald-1948.html",
-      "docLang": "ko",
-      "date": "1948-07-14",
-      "title": {
-        "ko": "스탈린이 고트발트에게 — 유고슬라비아 문제에 관한 전보 (1948, 발췌)",
-        "en": "Stalin to Gottwald on the Yugoslav question, 14 July 1948 (excerpt)"
-      },
-      "description": {
-        "ko": "코민포름 결의 보름 뒤 스탈린이 고트발트에게 보낸 전보의 전집 수록 발췌다. 티토 그룹이 당대회에서 패배하리라는 고트발트의 기대를 비현실적이라 하고, 결의의 목적은 티토를 당장 무너뜨리는 것이 아니라 고립시켜 마르크스주의 당원들이 차츰 떨어져 나가게 하는 것이라고 설명한다. 소련이 유고슬라비아와의 결별을 어떤 시간 척도로 보았는지 보여 준다.",
-        "en": "The excerpt, as printed in Stalin's Works vol. 18, of his telegram to Gottwald two weeks after the Cominform resolution. He calls Gottwald's hope that Tito's group would be defeated at the party congress unrealistic and explains that the aim of the resolution was not to topple Tito at once but to isolate him so that the Marxist part of the party would gradually fall away — a window on the time scale Moscow had in mind for the break with Yugoslavia."
-      },
-      "kind": {
-        "ko": "번역 (전집 수록 발췌)",
-        "en": "Translation (excerpt as published in the Works)"
-      },
-      "source": "Сталин И. В. Из телеграммы К. Готвальду, 14 июля 1948 г. // Сочинения. Т. 18. Тверь, 2006. С. 506",
-      "people": [
-        "stalin"
-      ],
-      "terms": [
-        "cominform"
-      ],
-      "events": [
-        "tito-stalin-split"
-      ],
-      "addedAt": "2026-08-31",
-      "aliases": {
-        "ko": [
-          "고트발트에게 보낸 전보 (1948)",
-          "스탈린-고트발트 전보"
-        ],
-        "en": [
-          "Stalin's telegram to Gottwald (1948)"
         ]
       }
     },
