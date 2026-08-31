@@ -3633,6 +3633,82 @@
           "Petrovsky letter of 10 June 1932"
         ]
       }
+    },
+    {
+      "id": "provisional-government-death-penalty-1917",
+      "file": "provisional-government-death-penalty-1917.html",
+      "docLang": "ko",
+      "date": "1917-07-25",
+      "title": {
+        "ko": "전선에서의 사형 도입과 군사혁명재판소 설치에 관한 임시정부 포고 (1917)",
+        "en": "Provisional Government decree restoring the death penalty at the front and creating military-revolutionary courts (1917)"
+      },
+      "description": {
+        "ko": "3월에 사형을 폐지한 임시정부가 7월 봉기와 갈리치아 공세 붕괴 직후인 7월 12일(구력) 전선에서 사형을 되살리고, 장교 셋과 병사 셋으로 이루어진 군사혁명재판소를 사단마다 두어 반역·탈영·항명을 즉결하게 한 포고다. 판결은 선고 즉시 확정되어 지체 없이 집행된다. 회의록 제129호 제2안건으로 실린 본문 15개 조를 옮겼다.",
+        "en": "Having abolished the death penalty in March, the Provisional Government restored it at the front on 12 (25) July 1917, days after the July Days and the collapse of the Galician offensive, and created military-revolutionary courts of three officers and three soldiers in every division to try treason, desertion and mutiny summarily, with sentences final on pronouncement and executed without delay. Translated from item 2 of journal No. 129 with the fifteen rules on the courts."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Постановление Временного правительства о введении смертной казни на театре военных действий и об учреждении военно-революционных судов, 12 июля 1917 г. (Журнал заседания № 129)",
+      "people": [
+        "kerensky",
+        "kornilov"
+      ],
+      "terms": [],
+      "events": [
+        "february-revolution"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "1917년 사형 부활 포고",
+          "군사혁명재판소 설치 포고"
+        ],
+        "en": [
+          "death penalty decree of 12 July 1917"
+        ]
+      }
+    },
+    {
+      "id": "sto-kronstadt-statement-1921",
+      "file": "sto-kronstadt-statement-1921.html",
+      "docLang": "ko",
+      "date": "1921-03-02",
+      "title": {
+        "ko": "새로운 백위군 음모 — 크론시타트 반란에 관한 노동국방회의 공보 (1921)",
+        "en": "'A new White Guard conspiracy': the Council of Labour and Defence statement on Kronstadt (1921)"
+      },
+      "description": {
+        "ko": "크론시타트 수병들의 요구가 나온 이튿날 레닌과 트로츠키의 서명으로 나온 정부 공보다. 봉기를 백위군과 프랑스 방첩기관의 음모로 규정하고 전 장군 코즐롭스키를 지도자로 지목해 법 밖에 두며 페트로그라드에 계엄을 선포한다. 1994년 옐친의 대통령령은 바로 이 공보의 제1항을 취소하는 형식으로 참가자들을 복권했다.",
+        "en": "The government statement signed by Lenin and Trotsky the day after the Kronstadt sailors' resolution. It casts the rising as a White Guard and French counter-intelligence plot, names the former general Kozlovsky as its leader, outlaws him and his 'accomplices' and puts Petrograd under a state of siege. Yeltsin's 1994 decree rehabilitated the participants precisely by annulling point 1 of this statement."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Обращение Совета Труда и Обороны «Новый белогвардейский заговор. Мятеж бывшего генерала Козловского и корабля „Петропавловск“», 2 марта 1921 г.",
+      "people": [
+        "lenin",
+        "trotsky",
+        "zinoviev",
+        "tukhachevsky"
+      ],
+      "terms": [],
+      "events": [
+        "kronstadt-1921"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "크론시타트 정부 공보 (1921)",
+          "코즐롭스키 반란 공보"
+        ],
+        "en": [
+          "Kronstadt government statement of 2 March 1921"
+        ]
+      }
     }
   ]
 }
