@@ -3324,6 +3324,50 @@
           "Bukharin's 1926 pamphlet on socialism in one country"
         ]
       }
+    },
+    {
+      "id": "stalin-1924-foundations-of-leninism",
+      "file": "stalin-1924-foundations-of-leninism.html",
+      "docLang": "ko",
+      "date": "1924-04",
+      "title": {
+        "ko": "스탈린, 「레닌주의의 기초」 (1924)",
+        "en": "Stalin, 'The Foundations of Leninism' (1924)"
+      },
+      "description": {
+        "ko": "레닌이 죽은 지 석 달 뒤 스탈린이 스베르들로프 대학에서 한 강의를 『프라우다』에 연재한 글. 레닌주의를 「제국주의와 프롤레타리아 혁명 시대의 마르크스주의」로 정의하고 역사적 뿌리·방법·이론·프롤레타리아트 독재·농민 문제·민족 문제·전략과 전술·당·사업 작풍의 아홉 장으로 체계화했다. 레닌의 저작을 하나의 「주의」로 정리한 첫 교과서이자, 후계 투쟁 한복판에서 레닌 해석의 권한을 쥐었음을 보인 문서다. 전집 판본(1924년 12월 이후 고친 텍스트)이며 편집자 주석을 붙였다.",
+        "en": "Stalin's lectures at Sverdlov University, serialised in Pravda three months after Lenin's death. Defining Leninism as 'Marxism of the era of imperialism and proletarian revolution', it systematises Lenin's thought in nine chapters — historical roots, method, theory, the dictatorship of the proletariat, the peasant question, the national question, strategy and tactics, the party, style of work. The first textbook that turned Lenin's writings into an '-ism', and the document by which Stalin, in the middle of the succession struggle, claimed the authority to interpret Lenin. The Works text (revised after December 1924), with the editors' notes."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "И. В. Сталин, Об основах ленинизма: Лекции, читанные в Свердловском университете // Сочинения. Т. 6. М., 1947. С. 69–188",
+      "people": [
+        "stalin",
+        "lenin",
+        "trotsky",
+        "plekhanov"
+      ],
+      "terms": [
+        "dictatorship-of-the-proletariat",
+        "permanent-revolution"
+      ],
+      "events": [
+        "succession-struggle"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「레닌주의의 기초」",
+          "『레닌주의의 기초』",
+          "레닌주의의 기초"
+        ],
+        "en": [
+          "The Foundations of Leninism",
+          "Foundations of Leninism"
+        ]
+      }
     }
   ]
 }
