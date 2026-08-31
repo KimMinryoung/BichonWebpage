@@ -2994,6 +2994,645 @@
           "Political Report of the Central Committee to the Fourteenth Congress"
         ]
       }
+    },
+    {
+      "id": "nko-order-227-1942",
+      "file": "nko-order-227-1942.html",
+      "docLang": "ko",
+      "date": "1942-07-28",
+      "title": {
+        "ko": "국방인민위원 명령 제227호 「한 걸음도 물러서지 마라」(1942)",
+        "en": "People's Commissar of Defence Order No. 227, 'Not One Step Back' (1942)"
+      },
+      "description": {
+        "ko": "로스토프가 떨어지고 독일군이 스탈린그라드와 캅카스로 갈라져 들어가던 1942년 7월 28일 스탈린이 내린 명령이다. 더는 물러설 땅이 없다는 정세 설명에 이어 무단 후퇴를 허용한 지휘관의 해임과 군법회의 회부, 형벌대대·형벌중대 편성, 불안정한 사단 후방에 차단분견대를 두어 공황과 도주를 현장에서 막는 세 제도를 명한다. 독일군의 겨울 후퇴 뒤 조치를 본받자고 명시한 드문 문서로, 1988년까지 전문이 공개되지 않았다.",
+        "en": "Stalin's order of 28 July 1942, issued after the fall of Rostov as the German summer offensive split toward Stalingrad and the Caucasus. After a situation report arguing there was no more ground to give up, it orders three measures: removal and court-martial of commanders who allow unauthorised retreat, penal battalions and companies, and blocking detachments behind unstable divisions to stop panic and flight on the spot. It explicitly holds up the German army's post-winter measures as a model; the full text was not published until 1988."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Приказ НКО СССР № 227 «О мерах по укреплению дисциплины и порядка в Красной Армии и запрещении самовольного отхода с боевых позиций», 28 июля 1942 г.",
+      "people": [
+        "stalin"
+      ],
+      "terms": [
+        "blocking-detachments",
+        "stavka"
+      ],
+      "events": [
+        "stalingrad",
+        "great-patriotic-war"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "명령 제227호",
+          "「한 걸음도 물러서지 마라」",
+          "227호 명령"
+        ],
+        "en": [
+          "Order No. 227",
+          "Not One Step Back",
+          "Not a Step Back"
+        ]
+      }
+    },
+    {
+      "id": "stavka-directive-170703-1942",
+      "file": "stavka-directive-170703-1942.html",
+      "docLang": "ko",
+      "date": "1942-12-08",
+      "title": {
+        "ko": "최고사령부 지령 제170703호 — 레닌그라드 봉쇄 돌파 작전 (1942)",
+        "en": "Stavka Directive No. 170703 on breaking the Leningrad blockade (1942)"
+      },
+      "description": {
+        "ko": "1942년 12월 8일 최고사령부가 볼호프·레닌그라드 방면군에 함께 내린 「이스크라」 작전 명령서다. 두 방면군이 협력해 실리셀부르크 일대의 독일군을 격멸하고 1943년 1월 안에 봉쇄를 돌파한 뒤, 2월 상반기에 므가 작전으로 키로프 철도를 확보하라고 지시한다. 첫 단계는 1943년 1월 18일 봉쇄 돌파로 이루어졌고 두 번째 단계는 실패했다. 서명은 스탈린과 주코프.",
+        "en": "The Stavka order of 8 December 1942 to the Volkhov and Leningrad Fronts that launched Operation Iskra: destroy the German grouping around Shlisselburg by joint action and break the blockade by the end of January 1943, then clear the Kirov railway in the Mga operation in early February. The first stage succeeded on 18 January 1943; the second did not. Signed by Stalin and Zhukov."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Директива Ставки ВГК № 170703 командующим войсками Волховского и Ленинградского фронтов, 8 декабря 1942 г.",
+      "people": [
+        "stalin",
+        "zhukov"
+      ],
+      "terms": [
+        "stavka"
+      ],
+      "events": [
+        "siege-of-leningrad",
+        "great-patriotic-war"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "지령 제170703호",
+          "이스크라 작전 지령"
+        ],
+        "en": [
+          "Directive 170703",
+          "Operation Iskra directive"
+        ]
+      }
+    },
+    {
+      "id": "supreme-commander-order-20-1945",
+      "file": "supreme-commander-order-20-1945.html",
+      "docLang": "ko",
+      "date": "1945-05-01",
+      "title": {
+        "ko": "최고사령관 명령 제20호 (1945년 5월 1일)",
+        "en": "Order No. 20 of the Supreme Commander-in-Chief, 1 May 1945"
+      },
+      "description": {
+        "ko": "베를린 시가전 중에 스탈린이 군과 국민에게 낸 노동절 명령이다. 겨울 공세의 성과와 독일군 손실을 집계하고 「히틀러 독일의 날은 셀 수 있게 되었다」고 선언한 뒤, 5월 1일 축포를 연방 공화국 수도들과 「영웅도시 레닌그라드, 스탈린그라드, 세바스토폴, 오데사」에서 쏘라고 명한다. 네 도시가 공식 문서에서 처음 영웅도시로 불린 자리이며, 1965년에 제도화되는 칭호의 출발점이다.",
+        "en": "Stalin's May Day order to the armed forces and the home front, issued during the street fighting in Berlin. It tallies the winter offensive and German losses, declares that 'the days of Hitlerite Germany are numbered', and orders the 1 May salute to be fired in the union-republic capitals and in 'the hero cities Leningrad, Stalingrad, Sevastopol and Odessa' — the first official use of the term, which became a formal title in 1965."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Приказ Верховного Главнокомандующего № 20, 1 мая 1945 г.",
+      "people": [
+        "stalin"
+      ],
+      "terms": [
+        "hero-city"
+      ],
+      "events": [
+        "siege-of-leningrad",
+        "stalingrad",
+        "great-patriotic-war"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "명령 제20호",
+          "1945년 노동절 명령",
+          "영웅도시 명령"
+        ],
+        "en": [
+          "Order No. 20",
+          "May Day order 1945"
+        ]
+      }
+    },
+    {
+      "id": "nko-order-0040-1938",
+      "file": "nko-order-0040-1938.html",
+      "docLang": "ko",
+      "date": "1938-09-04",
+      "title": {
+        "ko": "국방인민위원 명령 제0040호 — 하산 호수 사건 심의 결과 (1938)",
+        "en": "People's Commissar of Defence Order No. 0040 on the Lake Khasan events (1938)"
+      },
+      "description": {
+        "ko": "하산 호수 전투가 끝난 지 3주 뒤인 1938년 9월 4일 보로실로프가 내린 비밀 명령이다. 승리로 서술된 전투의 이면에서 극동 부대의 준비 부족을 낱낱이 열거하고, 책임을 블류헤르 원수에게 돌려 「패배주의」와 「사보타주」로 규정한 뒤, 극동방면군을 해체해 시테른과 코네프의 두 독립적기군으로 나눈다. 블류헤르는 이 명령 뒤 체포되어 심문 중에 죽었다.",
+        "en": "Voroshilov's secret order of 4 September 1938, three weeks after the fighting at Lake Khasan. Behind a battle recorded as a victory it itemises the unreadiness of the Far Eastern troops, lays the blame on Marshal Blyukher in the language of 'defeatism' and 'sabotage', and dissolves the Far Eastern Front into two Separate Red Banner Armies under Shtern and Konev. Blyukher was arrested soon after and died under interrogation."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Приказ НКО СССР № 0040 «О результатах рассмотрения Главным военным советом вопроса о событиях в районе озера Хасан…», 4 сентября 1938 г.",
+      "people": [
+        "voroshilov",
+        "boris-shaposhnikov",
+        "vasily-blyukher",
+        "grigory-shtern",
+        "ivan-konev",
+        "stalin"
+      ],
+      "terms": [
+        "battle-of-lake-khasan",
+        "great-purge"
+      ],
+      "events": [
+        "soviet-japanese-border-wars"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "명령 제0040호",
+          "0040호 명령",
+          "블류헤르 해임 명령"
+        ],
+        "en": [
+          "Order No. 0040"
+        ]
+      }
+    },
+    {
+      "id": "snd-resolution-pact-1989",
+      "file": "snd-resolution-pact-1989.html",
+      "docLang": "ko",
+      "date": "1989-12-24",
+      "title": {
+        "ko": "1939년 독소 불가침조약에 대한 정치적·법적 평가에 관하여 (1989)",
+        "en": "Resolution on the political and legal assessment of the 1939 Soviet–German non-aggression treaty (1989)"
+      },
+      "description": {
+        "ko": "1989년 12월 24일 제2차 소련 인민대표대회가 채택한 결의다. 야코블레프 위원회의 결론을 받아들여 비밀 추가 의정서의 존재를 소련 국가기관이 처음 공식 인정하고, 조약 본문은 당시 국제법에 어긋나지 않았으나 세력권을 나눈 의정서는 「서명한 순간부터 법적으로 무효」라고 선언했다. 발트 3국이 이듬해 독립을 선언할 때 병합의 불법성 근거로 인용한 문서다.",
+        "en": "Adopted by the Second Congress of People's Deputies on 24 December 1989. Accepting the findings of the Yakovlev commission, it was the first official Soviet acknowledgement that the secret additional protocol existed, and it declared that while the treaty itself did not depart from the international law of the day, the protocols dividing spheres of interest were 'legally void from the moment of signing' — the formula the Baltic republics invoked when declaring independence the following year."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Постановление Съезда народных депутатов СССР № 979-1 «О политической и правовой оценке советско-германского договора о ненападении от 1939 года», 24 декабря 1989 г.",
+      "people": [
+        "gorbachev",
+        "yakovlev",
+        "molotov",
+        "stalin"
+      ],
+      "terms": [
+        "molotov-ribbentrop-pact",
+        "secret-protocol-molotov-ribbentrop",
+        "congress-of-peoples-deputies"
+      ],
+      "events": [
+        "nazi-soviet-pact",
+        "perestroika"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "인민대표대회 결의 제979-1호",
+          "비밀의정서 무효 결의",
+          "독소조약 평가 결의"
+        ],
+        "en": [
+          "Resolution 979-1",
+          "Congress resolution on the Molotov–Ribbentrop Pact"
+        ]
+      }
+    },
+    {
+      "id": "ussr-president-decree-1329-1991",
+      "file": "ussr-president-decree-1329-1991.html",
+      "docLang": "ko",
+      "date": "1991-01-22",
+      "title": {
+        "ko": "50루블·100루블권 통용 정지에 관한 대통령령 (1991)",
+        "en": "Presidential decree withdrawing the 50- and 100-ruble notes (1991)"
+      },
+      "description": {
+        "ko": "1991년 1월 22일 저녁 텔레비전으로 발표된 고르바초프의 대통령령이다. 1961년 발행 50·100루블권을 이튿날 0시부터 받지 않고 사흘 안에 한도 안에서 교환하며 상반기 예금 인출을 월 500루블로 제한한다. 「파블로프 개혁」으로 불리는 이 조치는 그림자 경제 단속을 명분으로 내세웠으나 실제로는 통화 과잉의 강제 회수였고, 회수액은 목표에 크게 못 미친 채 국가 화폐에 대한 신뢰만 무너뜨렸다.",
+        "en": "Gorbachev's decree announced on television on the evening of 22 January 1991: the 1961-series 50- and 100-ruble notes cease to be accepted from midnight, may be exchanged within three days up to a limit, and savings withdrawals are capped at 500 rubles a month for the half-year. Known as the 'Pavlov reform', it was justified as a blow against the shadow economy but was in fact a forced withdrawal of excess currency; it recovered far less than planned and destroyed public trust in the state's money."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Указ Президента СССР № УП-1329 «О прекращении приёма к платежу денежных знаков Госбанка СССР достоинством 50 и 100 рублей образца 1961 года…», 22 января 1991 г.",
+      "people": [
+        "gorbachev",
+        "pavlov",
+        "gerashchenko"
+      ],
+      "terms": [
+        "pavlov-reform",
+        "perestroika"
+      ],
+      "events": [
+        "economic-reform-debate",
+        "perestroika"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "대통령령 제1329호",
+          "파블로프 화폐개혁령",
+          "1991년 화폐교환"
+        ],
+        "en": [
+          "Decree 1329",
+          "Pavlov currency reform decree"
+        ]
+      }
+    },
+    {
+      "id": "financial-manifesto-1905",
+      "file": "financial-manifesto-1905.html",
+      "docLang": "ko",
+      "date": "1905-12-15",
+      "title": {
+        "ko": "페테르부르크 소비에트 「재무 선언」(1905)",
+        "en": "The Financial Manifesto of the St Petersburg Soviet (1905)"
+      },
+      "description": {
+        "ko": "1905년 12월 2일(신력 15일) 페테르부르크 노동자대표소비에트가 농민동맹·사회민주노동당·사회주의자혁명가당·폴란드사회당과 함께 낸 선언이다. 정부가 파산 직전이라고 규탄하고 국민에게 납세 거부와 예금의 금화 인출을 요구하며, 전제정이 국민 동의 없이 진 채무를 자유로운 국민은 갚지 않겠다고 선언한다. 정부는 게재 신문을 정간하고 이튿날 소비에트를 체포했다. 1918년 국채 무효 선언의 예고편으로 읽힌다.",
+        "en": "Issued on 2 (15) December 1905 by the St Petersburg Soviet of Workers' Deputies together with the Peasant Union, the RSDLP, the Socialist-Revolutionaries and the Polish Socialist Party. It declares the government bankrupt, calls on the people to refuse taxes and withdraw their deposits in gold, and announces that a free people will not honour debts the autocracy contracted without its consent. The government suppressed the newspapers that printed it and arrested the Soviet the next day; in 1918 it read as a prelude to the repudiation of tsarist debts."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Финансовый манифест Совета Рабочих Депутатов, 2 декабря 1905 г.",
+      "people": [
+        "trotsky",
+        "alexander-parvus"
+      ],
+      "terms": [
+        "october-manifesto"
+      ],
+      "events": [
+        "revolution-1905"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "재무 선언",
+          "1905년 재정 선언",
+          "소비에트 재무선언"
+        ],
+        "en": [
+          "Financial Manifesto",
+          "the Financial Manifesto of 1905"
+        ]
+      }
+    },
+    {
+      "id": "moscow-peace-treaty-1940",
+      "file": "moscow-peace-treaty-1940.html",
+      "docLang": "ko",
+      "date": "1940-03-12",
+      "title": {
+        "ko": "소련·핀란드 평화조약 (모스크바, 1940)",
+        "en": "The Moscow Peace Treaty between the USSR and Finland (1940)"
+      },
+      "description": {
+        "ko": "105일의 겨울전쟁을 끝낸 1940년 3월 12일의 조약과 부속 의정서다. 핀란드는 비푸리를 포함한 카렐리야 지협과 라도가 카렐리야, 살라, 핀란드만의 섬들을 넘기고 항코 반도를 30년 임대하며, 소련은 페차모에서 철수한다. 국토의 10분의 1과 주민 40만 명의 이주를 뜻한 이 국경선은 이듬해 계속전쟁의 배경이 되었고 1944년 휴전과 1947년 파리 조약에서 그대로 확인되었다.",
+        "en": "The treaty of 12 March 1940 and its protocol that ended the 105-day Winter War. Finland cedes the Karelian Isthmus with Viipuri, Ladoga Karelia, Salla and the islands of the Gulf of Finland and leases the Hanko peninsula for thirty years; the USSR withdraws from Petsamo. The new border cost Finland a tenth of its territory and displaced 400,000 people; it lay behind the Continuation War the following year and was confirmed by the 1944 armistice and the 1947 Paris treaty."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Мирный договор между Финляндской Республикой и СССР с протоколом, Москва, 12 марта 1940 г.",
+      "people": [
+        "molotov",
+        "zhdanov",
+        "vasilevsky",
+        "juho-kusti-paasikivi",
+        "risto-ryti",
+        "carl-gustaf-emil-mannerheim",
+        "stalin"
+      ],
+      "terms": [
+        "hanko-peninsula"
+      ],
+      "events": [
+        "winter-war",
+        "siege-of-leningrad"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "모스크바 평화조약",
+          "1940년 소련·핀란드 평화조약",
+          "겨울전쟁 강화조약"
+        ],
+        "en": [
+          "Moscow Peace Treaty",
+          "Treaty of Moscow (1940)"
+        ]
+      }
+    },
+    {
+      "id": "beria-trial-1953",
+      "file": "beria-trial-1953.html",
+      "docLang": "ko",
+      "date": "1953-12-24",
+      "title": {
+        "ko": "베리야 재판 — 특별재판소 공보와 사형 집행 확인서 (1953)",
+        "en": "The Beria trial: the Special Judicial Presence communiqué and the execution act (1953)"
+      },
+      "description": {
+        "ko": "1953년 12월 18~23일 코네프 원수가 재판장을 맡은 최고재판소 특별재판소가 베리야와 여섯 공동 피고인을 비공개로 재판한 뒤 『프라우다』에 실은 공보와, 같은 날 저녁 7시 50분 판결이 집행되었음을 바티츠키·루덴코·모스칼렌코가 서명해 확인한 한 장짜리 조서다. 1919년 무사바트 정보기관과의 연계부터 스탈린 사후 권력 탈취 음모까지 형법 제58조의 언어로 열거된 혐의는 1937년의 어법을 그대로 되풀이한다. 2000년 러시아 최고재판소는 복권을 거부했다.",
+        "en": "The communiqué printed in Pravda after the Special Judicial Presence under Marshal Konev tried Beria and six co-defendants in camera on 18–23 December 1953, and the one-page act signed by Batitsky, Rudenko and Moskalenko confirming that the sentence was carried out at 19:50 the same day. The charges, from links to Musavat intelligence in 1919 to a plot to seize power after Stalin's death, are set out in the language of Article 58 and repeat the idiom of 1937. In 2000 the Russian Supreme Court refused rehabilitation."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Сообщение «В Верховном Суде СССР», 24 декабря 1953 г.; Акт о приведении в исполнение приговора … в отношении Л. П. Берия, 23 декабря 1953 г.",
+      "people": [
+        "beria",
+        "ivan-konev",
+        "khrushchev",
+        "malenkov",
+        "molotov",
+        "stalin"
+      ],
+      "terms": [
+        "great-purge"
+      ],
+      "events": [
+        "beria-purge"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "베리야 재판 공보",
+          "「소련 최고재판소에서」",
+          "베리야 사형 집행 확인서"
+        ],
+        "en": [
+          "Beria trial communiqué",
+          "In the Supreme Court of the USSR (1953)"
+        ]
+      }
+    },
+    {
+      "id": "politburo-afghanistan-decision-1979",
+      "file": "politburo-afghanistan-decision-1979.html",
+      "docLang": "ko",
+      "date": "1979-12-12",
+      "title": {
+        "ko": "정치국 결정 「A」 정세에 관하여 — 아프가니스탄 파병 결정 (1979)",
+        "en": "Politburo decision 'On the situation in \"A\"' — the Afghanistan intervention decision (1979)"
+      },
+      "description": {
+        "ko": "1979년 12월 12일 정치국이 아프가니스탄 파병을 결정한 문서다. 국가명을 「A」로 숨긴 제목, 안드로포프·우스티노프·그로미코의 「구상과 조치」를 승인한다는 두 조항, 그리고 회의 당일과 12월 25~26일에 나뉘어 적힌 표결 서명이 전부이며 무엇을 승인했는지는 적혀 있지 않다. 체르넨코가 손으로 써 특별 파일에 봉인했고 1990년대 초 문서고가 열릴 때까지 존재가 알려지지 않았다.",
+        "en": "The Politburo decision of 12 December 1979 that sent Soviet troops into Afghanistan: a title hiding the country behind the letter 'A', two clauses approving the 'considerations and measures' of Andropov, Ustinov and Gromyko without saying what they were, and a signature block split between the meeting day and 25–26 December. Written out by Chernenko and sealed in the Special File, its existence was unknown until the archives opened in the early 1990s."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Постановление ЦК КПСС № П176/125 «К положению в „А“», 12 декабря 1979 г.",
+      "people": [
+        "brezhnev",
+        "andropov",
+        "ustinov",
+        "gromyko",
+        "chernenko",
+        "suslov"
+      ],
+      "terms": [],
+      "events": [
+        "afghanistan-war"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「A」 정세에 관하여",
+          "아프가니스탄 파병 결정",
+          "П176/125"
+        ],
+        "en": [
+          "On the situation in A",
+          "Politburo Afghanistan decision"
+        ]
+      }
+    },
+    {
+      "id": "snd-resolution-afghanistan-1989",
+      "file": "snd-resolution-afghanistan-1989.html",
+      "docLang": "ko",
+      "date": "1989-12-24",
+      "title": {
+        "ko": "아프가니스탄 파병 결정에 대한 정치적 평가에 관하여 (1989)",
+        "en": "Resolution on the political assessment of the decision to send troops into Afghanistan (1989)"
+      },
+      "description": {
+        "ko": "1989년 12월 24일 제2차 인민대표대회가 채택한 결의로, 1979년 12월의 파병 결정이 「도덕적·정치적 규탄에 값한다」고 선언했다. 소련 국가기관이 아프가니스탄 전쟁을 공식 규탄한 유일한 문서이며, 새 헌법에 군사력 사용 결정의 원칙을 명시하라는 조항과 참전 군인 대책 조항이 뒤따른다. 같은 날 채택된 독소조약 비밀 의정서 무효 결의와 짝을 이룬다.",
+        "en": "Adopted by the Second Congress of People's Deputies on 24 December 1989, it declared that the December 1979 decision to send troops into Afghanistan 'deserves moral and political condemnation' — the only formal condemnation of the war by a Soviet state body — and went on to demand that the new constitution spell out who may decide on the use of force, and that veterans be provided for. Passed the same day as the resolution voiding the secret protocols of 1939."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Постановление Съезда народных депутатов СССР № 982-I «О политической оценке решения о вводе советских войск в Афганистан в декабре 1979 года», 24 декабря 1989 г.",
+      "people": [
+        "gorbachev",
+        "yakovlev",
+        "sakharov"
+      ],
+      "terms": [
+        "congress-of-peoples-deputies",
+        "perestroika"
+      ],
+      "events": [
+        "afghanistan-war",
+        "perestroika"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "인민대표대회 결의 제982-I호",
+          "아프간 파병 규탄 결의"
+        ],
+        "en": [
+          "Resolution 982-I",
+          "Congress resolution on Afghanistan"
+        ]
+      }
+    },
+    {
+      "id": "rf-decree-kronstadt-1994",
+      "file": "rf-decree-kronstadt-1994.html",
+      "docLang": "ko",
+      "date": "1994-01-10",
+      "title": {
+        "ko": "크론시타트 사건 참가자 복권 대통령령 (1994)",
+        "en": "Presidential decree rehabilitating the Kronstadt participants (1994)"
+      },
+      "description": {
+        "ko": "1921년 3월 크론시타트 봉기 진압 73년 뒤 옐친이 서명한 대통령령이다. 참가자들을 법 밖에 두었던 1921년 3월 2일 노동국방회의 결정 제1항을 취소하고, 수병·병사·노동자에 대한 탄압을 기본적 인권에 반하는 불법으로 규정하며, 희생자 기념비 건립을 명한다. 개별 재심이 아니라 1921년 결정 자체를 거두어들이는 형식이다.",
+        "en": "Yeltsin's decree of 10 January 1994, seventy-three years after the suppression of the Kronstadt rising. It annuls point 1 of the Council of Labour and Defence decision of 2 March 1921 that had outlawed the participants, declares the repression of the sailors, soldiers and workers unlawful and contrary to basic human rights, and orders a memorial to the victims — a rehabilitation by revoking the 1921 decision itself rather than by individual review."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Указ Президента Российской Федерации № 65 «О событиях в г. Кронштадте весной 1921 года», 10 января 1994 г.",
+      "people": [
+        "yeltsin",
+        "trotsky",
+        "lenin",
+        "tukhachevsky"
+      ],
+      "terms": [],
+      "events": [
+        "kronstadt-1921"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "대통령령 제65호",
+          "크론시타트 복권령"
+        ],
+        "en": [
+          "Decree No. 65 of 1994",
+          "Kronstadt rehabilitation decree"
+        ]
+      }
+    },
+    {
+      "id": "stalin-gottwald-1948",
+      "file": "stalin-gottwald-1948.html",
+      "docLang": "ko",
+      "date": "1948-07-14",
+      "title": {
+        "ko": "스탈린이 고트발트에게 — 유고슬라비아 문제에 관한 전보 (1948, 발췌)",
+        "en": "Stalin to Gottwald on the Yugoslav question, 14 July 1948 (excerpt)"
+      },
+      "description": {
+        "ko": "코민포름 결의 보름 뒤 스탈린이 고트발트에게 보낸 전보의 전집 수록 발췌다. 티토 그룹이 당대회에서 패배하리라는 고트발트의 기대를 비현실적이라 하고, 결의의 목적은 티토를 당장 무너뜨리는 것이 아니라 고립시켜 마르크스주의 당원들이 차츰 떨어져 나가게 하는 것이라고 설명한다. 소련이 유고슬라비아와의 결별을 어떤 시간 척도로 보았는지 보여 준다.",
+        "en": "The excerpt, as printed in Stalin's Works vol. 18, of his telegram to Gottwald two weeks after the Cominform resolution. He calls Gottwald's hope that Tito's group would be defeated at the party congress unrealistic and explains that the aim of the resolution was not to topple Tito at once but to isolate him so that the Marxist part of the party would gradually fall away — a window on the time scale Moscow had in mind for the break with Yugoslavia."
+      },
+      "kind": {
+        "ko": "번역 (전집 수록 발췌)",
+        "en": "Translation (excerpt as published in the Works)"
+      },
+      "source": "Сталин И. В. Из телеграммы К. Готвальду, 14 июля 1948 г. // Сочинения. Т. 18. Тверь, 2006. С. 506",
+      "people": [
+        "stalin"
+      ],
+      "terms": [
+        "cominform"
+      ],
+      "events": [
+        "tito-stalin-split"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "고트발트에게 보낸 전보 (1948)",
+          "스탈린-고트발트 전보"
+        ],
+        "en": [
+          "Stalin's telegram to Gottwald (1948)"
+        ]
+      }
+    },
+    {
+      "id": "politburo-hidden-grain-1933",
+      "file": "politburo-hidden-grain-1933.html",
+      "docLang": "ko",
+      "date": "1933-01-01",
+      "title": {
+        "ko": "숨긴 곡물과 훔친 곡물에 관한 정치국 결정 (1933년 1월 1일)",
+        "en": "The Politburo decision on hidden and stolen grain (1 January 1933)"
+      },
+      "description": {
+        "ko": "1933년 새해 첫날 스탈린이 우크라이나 당과 정부에 보낸 지시다. 훔치거나 숨긴 곡물을 자진해 내놓는 자는 탄압하지 않되, 계속 숨기는 자에게는 1932년 8월 7일 「이삭 다섯 개 법」의 가장 엄한 처벌을 적용하라고 마을마다 알리게 했다. 굶주림이 은닉 때문이라는 전제 위에서 1월 내내 집집마다 수색이 이어졌고, 홀로도모르를 심화시킨 결정의 계열에 놓이는 문서다.",
+        "en": "Stalin's instruction to the Ukrainian party and government on New Year's Day 1933: every village was to be told that those who voluntarily surrendered stolen or hidden grain would not be repressed, while those who kept hiding it would face the harshest penalties of the law of 7 August 1932. Built on the premise that hunger was caused by concealment, it set off a month of house-to-house searches and belongs to the series of decisions that deepened the Holodomor."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Постановление Политбюро ЦК ВКП(б) «О хлебозаготовках на Украине», 1 января 1933 г. (протокол № 128, п. 48/28)",
+      "people": [
+        "stalin",
+        "kaganovich",
+        "molotov",
+        "kosior",
+        "postyshev"
+      ],
+      "terms": [],
+      "events": [
+        "holodomor"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "1933년 1월 1일 전보",
+          "숨긴 곡물 전보"
+        ],
+        "en": [
+          "telegram of 1 January 1933",
+          "hidden grain decision"
+        ]
+      }
+    },
+    {
+      "id": "chubar-petrovsky-letters-1932",
+      "file": "chubar-petrovsky-letters-1932.html",
+      "docLang": "ko",
+      "date": "1932-06-10",
+      "title": {
+        "ko": "추바리와 페트롭스키가 스탈린·몰로토프에게 — 우크라이나 농촌의 기근에 관한 두 편지 (1932)",
+        "en": "Chubar and Petrovsky to Stalin and Molotov: two letters on famine in the Ukrainian countryside (1932)"
+      },
+      "description": {
+        "ko": "1932년 6월 10일 우크라이나 소비에트 정부의 두 수장이 각자 모스크바에 보낸 편지다. 추바리는 100개가 넘는 지구의 식량 부족과 씨앗까지 걷어간 조달의 결과를 숫자로 적고, 페트롭스키는 마을을 직접 돌아본 뒤 굶주린 농민의 이동과 파종용 메밀 요청을 쓴다. 스탈린은 두 편지를 「타락」과 「불쾌한 인상」으로 받아넘겼고 조달 계획은 그대로 확인되었다. 홀로도모르가 어떤 정보 위에서 진행되었는지 보여 준다.",
+        "en": "On 10 June 1932 the two heads of the Ukrainian Soviet government each wrote to Moscow. Chubar set out in figures the food shortage in over a hundred districts and the effect of procurements that had taken even the seed; Petrovsky, back from touring the villages, described peasants scattering in search of food and begged for buckwheat seed. Stalin dismissed the letters as 'rot' and 'an unpleasant impression', and the procurement plan stood — evidence of what Moscow knew as the Holodomor unfolded."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Письма В. Я. Чубаря и Г. И. Петровского И. В. Сталину и В. М. Молотову, 10 июня 1932 г.",
+      "people": [
+        "stalin",
+        "molotov",
+        "kaganovich",
+        "kosior"
+      ],
+      "terms": [],
+      "events": [
+        "holodomor"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "추바리 편지 (1932)",
+          "페트롭스키 편지 (1932)"
+        ],
+        "en": [
+          "Chubar letter of 10 June 1932",
+          "Petrovsky letter of 10 June 1932"
+        ]
+      }
     }
   ]
 }
