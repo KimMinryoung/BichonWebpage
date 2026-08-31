@@ -1027,24 +1027,25 @@
       "docLang": "ko",
       "date": "1943-12-01",
       "title": {
-        "ko": "연합국 문서집 — 테헤란 군사 결론, 아이젠하워의 디데이 문서, 얄타 선언 (1943~1945)",
-        "en": "Allied Documents: the Tehran Military Conclusions, Eisenhower's D-Day Documents, the Yalta Declaration (1943–1945)"
+        "ko": "연합국 문서집 — 테헤란 군사 결론, 아이젠하워의 디데이 문서, 얄타 선언, 포츠담 의정서 (1943~1945)",
+        "en": "Allied Documents: the Tehran Military Conclusions, Eisenhower's D-Day Documents, the Yalta Declaration, the Potsdam Protocol (1943–1945)"
       },
       "description": {
-        "ko": "제2전선에 날짜와 구조를 준 1943년 12월 테헤란 군사 결론, 상륙 당일의 양면인 아이젠하워의 일일명령과 실패 성명 초안(1944), 그리고 해방된 유럽의 정부 형태와 자유선거를 약속한 1945년 2월 얄타 「해방된 유럽에 관한 선언」. 제2전선을 둘러싼 연합국 문서 세 건이다.",
-        "en": "The Tehran military conclusions of December 1943 that gave the second front a date and a structure; Eisenhower's Order of the Day and his unsent 'in case of failure' note (1944); and the Yalta Declaration on Liberated Europe of February 1945 promising free elections in liberated Europe. Three Allied documents around the second front."
+        "ko": "제2전선에 날짜와 구조를 준 1943년 12월 테헤란 군사 결론, 상륙 당일의 양면인 아이젠하워의 일일명령과 실패 성명 초안(1944), 그리고 해방된 유럽의 정부 형태와 자유선거를 약속한 1945년 2월 얄타 「해방된 유럽에 관한 선언」. 그리고 독일 점령·배상·폴란드 국경·독일인 이송을 스물한 개 절로 정한 1945년 8월 포츠담 의정서. 제2전선에서 전후 처리까지 연합국 문서 네 건이다.",
+        "en": "The Tehran military conclusions of December 1943 that gave the second front a date and a structure; Eisenhower's Order of the Day and his unsent 'in case of failure' note (1944); and the Yalta Declaration on Liberated Europe of February 1945 promising free elections in liberated Europe. And the Potsdam Protocol of August 1945, which settled the occupation of Germany, reparations, Poland's frontier and the transfer of Germans in twenty-one sections. Four Allied documents, from the second front to the post-war settlement."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "A Decade of American Foreign Policy: Basic Documents, 1941–49 (Washington, 1950). 예일대 로스쿨 애벌론 프로젝트 전자판; 일일명령: 미국 국립문서보관소(NARA) 마일스톤 문서 전사본. 실패 성명 초안: 아이젠하워 대통령도서관 전사본; Коммюнике Крымской конференции, 11 февраля 1945 г.",
+      "source": "A Decade of American Foreign Policy: Basic Documents, 1941–49 (Washington, 1950). 예일대 로스쿨 애벌론 프로젝트 전자판; 일일명령: 미국 국립문서보관소(NARA) 마일스톤 문서 전사본. 실패 성명 초안: 아이젠하워 대통령도서관 전사본; Коммюнике Крымской конференции, 11 февраля 1945 г.; Протокол Берлинской конференции трёх великих держав, 1 августа 1945 г.",
       "people": [
         "franklin-d-roosevelt",
         "stalin",
         "winston-churchill",
         "dwight-d-eisenhower",
-        "molotov"
+        "molotov",
+        "clement-attlee"
       ],
       "terms": [
         "mulberry-harbours",
@@ -1068,13 +1069,18 @@
           "「해방된 유럽에 관한 선언」",
           "해방된 유럽에 관한 선언",
           "크림 회담 코뮈니케",
-          "연합국 문서집"
+          "연합국 문서집",
+          "포츠담 의정서",
+          "포츠담 협정",
+          "베를린 회담 의정서"
         ],
         "en": [
           "Tehran military conclusions",
           "Order of the Day",
           "In case of failure message",
-          "Declaration on Liberated Europe"
+          "Declaration on Liberated Europe",
+          "Potsdam Agreement",
+          "Potsdam Protocol"
         ]
       }
     },
@@ -1346,6 +1352,47 @@
           "Secret Speech",
           "Khrushchev's Secret Speech",
           "On the Cult of Personality and Its Consequences"
+        ]
+      }
+    },
+    {
+      "id": "cc-resolution-cult-1956",
+      "file": "cc-resolution-cult-1956.html",
+      "docLang": "ko",
+      "date": "1956-06-30",
+      "title": {
+        "ko": "「개인숭배와 그 결과의 극복에 관하여」 — 소련공산당 중앙위원회 결정 (1956)",
+        "en": "'On Overcoming the Cult of Personality and Its Consequences': the CPSU Central Committee resolution (1956)"
+      },
+      "description": {
+        "ko": "흐루쇼프 비밀보고 넉 달 뒤 당 중앙위원회가 공개적으로 낸 첫 공식 입장. 소련에서 비밀보고가 공표되지 않은 1989년까지 시민과 외국 공산당이 읽을 수 있었던 탈스탈린화의 공식 텍스트다. 개인숭배를 스탈린 개인의 특성과 객관적 조건의 산물로 설명하되 「사회 체제의 본질」은 바뀌지 않았다고 못박고, 톨리아티와 「부르주아 이데올로그」의 비판을 반박하며 스탈린 비판의 허용 경계를 그었다.",
+        "en": "The Central Committee's first public statement four months after Khrushchev's secret speech, and the official de-Stalinisation text that Soviet citizens and foreign communists could actually read until the speech was published in 1989. It explains the cult as a product of Stalin's personal traits and objective conditions while insisting that 'the nature of the social system' was untouched, rebuts Togliatti and the 'bourgeois ideologues', and draws the permitted limits of criticism of Stalin."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Постановление ЦК КПСС «О преодолении культа личности и его последствий», 30 июня 1956 г. // Правда. 1956. 2 июля; РГАНИ ф. 3, оп. 14, д. 39",
+      "people": [
+        "khrushchev",
+        "stalin"
+      ],
+      "terms": [],
+      "events": [
+        "twentieth-party-congress",
+        "poznan-1956"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "「개인숭배와 그 결과의 극복에 관하여」",
+          "1956년 6월 30일 결정",
+          "개인숭배 극복 결정",
+          "6월 30일 결정"
+        ],
+        "en": [
+          "On Overcoming the Cult of Personality and Its Consequences",
+          "resolution of 30 June 1956"
         ]
       }
     },
@@ -2361,18 +2408,18 @@
       "docLang": "ko",
       "date": "1932-06-10",
       "title": {
-        "ko": "홀로도모르 문서집 — 두 편지, 두 법령, 한 결정 (1932~1933)",
-        "en": "Holodomor Documents: two letters, two decrees, one decision (1932–1933)"
+        "ko": "홀로도모르 문서집 — 두 편지, 두 법령, 두 결정 (1932~1933)",
+        "en": "Holodomor Documents: two letters, two decrees, two decisions (1932–1933)"
       },
       "description": {
-        "ko": "1932년 6월 추바리와 페트롭스키가 스탈린·몰로토프에게 우크라이나 농촌의 굶주림을 알린 두 편지, 8월 7일 「이삭 세 줌의 법」과 12월 14일 곡물 공출 비밀 결정, 그리고 숨긴 곡물을 내놓지 않는 자에게 그 법을 적용하라고 한 1933년 1월 1일 정치국 결정. 경고에서 결정까지, 홀로도모르로 가는 다섯 문서를 시간순으로 묶었다.",
-        "en": "The two letters of June 1932 in which Chubar and Petrovsky told Stalin and Molotov of hunger in the Ukrainian countryside; the 'law of three ears of grain' of 7 August and the secret procurement decision of 14 December; and the Politburo decision of 1 January 1933 applying that law to anyone still hiding grain. Five documents, from warning to decision, on the road to the Holodomor, in chronological order."
+        "ko": "1932년 6월 추바리와 페트롭스키가 스탈린·몰로토프에게 우크라이나 농촌의 굶주림을 알린 두 편지, 8월 7일 「이삭 세 줌의 법」, 현물 벌금과 「흑판」 제도를 명문화한 11월 18일 우크라이나 정치국 결의, 12월 14일 곡물 공출 비밀 결정, 그리고 숨긴 곡물을 내놓지 않는 자에게 그 법을 적용하라고 한 1933년 1월 1일 정치국 결정. 경고에서 결정까지, 홀로도모르로 가는 여섯 문서를 시간순으로 묶었다.",
+        "en": "The two letters of June 1932 in which Chubar and Petrovsky told Stalin and Molotov of hunger in the Ukrainian countryside; the 'law of three ears of grain' of 7 August, the Ukrainian Politburo resolution of 18 November that codified fines in kind and the 'black board' system, and the secret procurement decision of 14 December; and the Politburo decision of 1 January 1933 applying that law to anyone still hiding grain. Six documents, from warning to decision, on the road to the Holodomor, in chronological order."
       },
       "kind": {
         "ko": "사료 번역",
         "en": "Primary source"
       },
-      "source": "Письма В. Я. Чубаря и Г. И. Петровского, 10 июня 1932 г. (РГАСПИ ф. 82, оп. 2, д. 139); 8월 7일 결정: 『이즈베스티야』 1932.8.8 공표본의 러시아어 위키문헌 전사본; 12월 14일 결정: РГАСПИ Ф.17, Оп.3, Д.2025 원본 계열의 러시아어 위키문헌 전사본; Постановление Политбюро ЦК ВКП(б) «О хлебозаготовках на Украине», 1 января 1933 г. (протокол № 128, п. 48/28)",
+      "source": "Письма В. Я. Чубаря и Г. И. Петровского, 10 июня 1932 г. (РГАСПИ ф. 82, оп. 2, д. 139); 8월 7일 결정: 『이즈베스티야』 1932.8.8 공표본의 러시아어 위키문헌 전사본; 12월 14일 결정: РГАСПИ Ф.17, Оп.3, Д.2025 원본 계열의 러시아어 위키문헌 전사본; Постановление Политбюро ЦК ВКП(б) «О хлебозаготовках на Украине», 1 января 1933 г. (протокол № 128, п. 48/28); Постановление Политбюро ЦК КП(б)У «О мерах по усилению хлебозаготовок», 18 ноября 1932 г. (РГАСПИ ф. 17, оп. 26, д. 54)",
       "people": [
         "stalin",
         "molotov",
@@ -2382,7 +2429,10 @@
         "yagoda",
         "gamarnik"
       ],
-      "terms": [],
+      "terms": [
+        "black-board-blacklist-system",
+        "kolkhoz"
+      ],
       "events": [
         "holodomor",
         "five-year-plans"
@@ -2397,7 +2447,10 @@
           "페트롭스키 편지 (1932)",
           "1933년 1월 1일 전보",
           "숨긴 곡물 전보",
-          "홀로도모르 문서집"
+          "홀로도모르 문서집",
+          "11월 18일 결의",
+          "흑판 결의",
+          "곡물 조달 강화 조치에 관하여"
         ],
         "en": [
           "Law of Spikelets",
@@ -2405,7 +2458,9 @@
           "Chubar letter of 10 June 1932",
           "Petrovsky letter of 10 June 1932",
           "telegram of 1 January 1933",
-          "hidden grain decision"
+          "hidden grain decision",
+          "resolution of 18 November 1932",
+          "black board resolution"
         ]
       }
     },
@@ -2719,21 +2774,24 @@
       "docLang": "ko",
       "date": "1942-07-28",
       "title": {
-        "ko": "「한 걸음도 물러서지 마라」와 최고사령부 문서 — 명령 제227호, 지령 제170703호, 명령 제20호 (1942~1945)",
-        "en": "'Not One Step Back' and the Soviet High Command: Order No. 227, Directive No. 170703, Order No. 20 (1942–1945)"
+        "ko": "「한 걸음도 물러서지 마라」와 최고사령부 문서 — 명령 제227호, 지령 제170703호, 항복 최후통첩, 명령 제20호 (1942~1945)",
+        "en": "'Not One Step Back' and the Soviet High Command: Order No. 227, Directive No. 170703, the Stalingrad ultimatum, Order No. 20 (1942–1945)"
       },
       "description": {
-        "ko": "후퇴를 금지하고 형벌부대와 차단분견대를 제도화한 1942년 7월의 명령 제227호 「한 걸음도 물러서지 마라」, 레닌그라드 봉쇄를 돌파한 「이스크라」 작전의 12월 지령 제170703호, 그리고 베를린 시가전 한가운데서 승리를 예고하고 네 도시를 처음 「영웅도시」라 부른 1945년 5월 1일의 명령 제20호. 스탈린그라드 위기에서 베를린 함락까지 소련 최고사령부의 문서 세 건.",
-        "en": "Order No. 227 of July 1942, 'Not One Step Back', which forbade retreat and institutionalised penal units and blocking detachments; Stavka Directive No. 170703 of December 1942 ordering Operation Iskra to break the Leningrad blockade; and Order No. 20 of 1 May 1945, issued amid the Berlin street fighting, which foretold victory and first named four 'hero cities'. Three documents of the Soviet high command from the Stalingrad crisis to the fall of Berlin."
+        "ko": "후퇴를 금지하고 형벌부대와 차단분견대를 제도화한 1942년 7월의 명령 제227호 「한 걸음도 물러서지 마라」, 레닌그라드 봉쇄를 돌파한 「이스크라」 작전의 12월 지령 제170703호, 포위된 파울루스의 제6군에 항복 조건을 제시한 1943년 1월 8일의 최후통첩, 그리고 베를린 시가전 한가운데서 승리를 예고하고 네 도시를 처음 「영웅도시」라 부른 1945년 5월 1일의 명령 제20호. 스탈린그라드 위기에서 베를린 함락까지 소련 최고사령부의 문서 네 건.",
+        "en": "Order No. 227 of July 1942, 'Not One Step Back', which forbade retreat and institutionalised penal units and blocking detachments; Stavka Directive No. 170703 of December 1942 ordering Operation Iskra to break the Leningrad blockade; the ultimatum of 8 January 1943 offering surrender terms to Paulus's encircled 6th Army; and Order No. 20 of 1 May 1945, issued amid the Berlin street fighting, which foretold victory and first named four 'hero cities'. Four documents of the Soviet high command from the Stalingrad crisis to the fall of Berlin."
       },
       "kind": {
         "ko": "번역 전문",
         "en": "Full translation"
       },
-      "source": "Приказ НКО СССР № 227 «О мерах по укреплению дисциплины и порядка в Красной Армии и запрещении самовольного отхода с боевых позиций», 28 июля 1942 г.; Директива Ставки ВГК № 170703 командующим войсками Волховского и Ленинградского фронтов, 8 декабря 1942 г.; Приказ Верховного Главнокомандующего № 20, 1 мая 1945 г.",
+      "source": "Приказ НКО СССР № 227 «О мерах по укреплению дисциплины и порядка в Красной Армии и запрещении самовольного отхода с боевых позиций», 28 июля 1942 г.; Директива Ставки ВГК № 170703 командующим войсками Волховского и Ленинградского фронтов, 8 декабря 1942 г.; Приказ Верховного Главнокомандующего № 20, 1 мая 1945 г.; Ультиматум командующему 6-й германской армией генерал-полковнику Паулюсу, 8 января 1943 г.",
       "people": [
         "stalin",
-        "zhukov"
+        "zhukov",
+        "nikolai-voronov",
+        "konstantin-rokossovsky",
+        "friedrich-paulus"
       ],
       "terms": [
         "blocking-detachments",
@@ -2755,7 +2813,10 @@
           "이스크라 작전 지령",
           "명령 제20호",
           "1945년 노동절 명령",
-          "영웅도시 명령"
+          "영웅도시 명령",
+          "파울루스 최후통첩",
+          "스탈린그라드 항복 최후통첩",
+          "1943년 1월 8일 최후통첩"
         ],
         "en": [
           "Order No. 227",
@@ -2764,7 +2825,9 @@
           "Directive 170703",
           "Operation Iskra directive",
           "Order No. 20",
-          "May Day order 1945"
+          "May Day order 1945",
+          "Stalingrad ultimatum",
+          "ultimatum to Paulus"
         ]
       }
     },
@@ -2951,18 +3014,18 @@
       "docLang": "ko",
       "date": "1979-12-12",
       "title": {
-        "ko": "아프가니스탄 파병 결정과 그 규탄 — 정치국 결정(1979)과 인민대표대회 결의(1989)",
-        "en": "The Afghanistan intervention and its condemnation: the Politburo decision (1979) and the Congress resolution (1989)"
+        "ko": "아프가니스탄 전쟁의 문서 세 건 — 파병 결정(1979), 제네바 협정(1988), 규탄 결의(1989)",
+        "en": "Three Documents of the Afghan War: the intervention decision (1979), the Geneva Accords (1988), the condemnation (1989)"
       },
       "description": {
-        "ko": "국가명을 「A」 한 글자로 숨긴 채 「안드로포프·우스티노프·그로미코의 조치를 승인한다」고만 적은 1979년 12월 12일 정치국 결정과, 철군 열 달 뒤 그 결정이 「도덕적·정치적 규탄에 값한다」고 선언한 1989년 12월 24일 인민대표대회 결의. 아프가니스탄 전쟁의 처음과 끝에 놓인 두 문서를 마주 놓았다.",
-        "en": "The Politburo decision of 12 December 1979 that hid the country's name behind the letter 'A' and merely 'approved the measures proposed by Andropov, Ustinov and Gromyko', set beside the Congress of People's Deputies resolution of 24 December 1989 declaring, ten months after the withdrawal, that the decision 'deserves moral and political condemnation'. The beginning and the end of the Afghan war in two documents."
+        "ko": "국가명을 「A」 한 글자로 숨긴 1979년 12월 12일 정치국 파병 결정, 소련군의 단계적 철수를 5월 15일부터 9개월 안에 끝낸다고 국제 문서로 못박은 1988년 4월 14일 제네바 협정(협정 넷과 두 보증국 성명), 그리고 철군 열 달 뒤 그 결정이 「도덕적·정치적 규탄에 값한다」고 선언한 1989년 12월 24일 인민대표대회 결의. 전쟁의 처음, 출구, 끝.",
+        "en": "The Politburo decision of 12 December 1979 that hid the country's name behind the letter 'A'; the Geneva Accords of 14 April 1988 (four instruments and the two guarantors' statements) that fixed the phased Soviet withdrawal from 15 May within nine months; and the Congress of People's Deputies resolution of 24 December 1989 declaring, ten months after the withdrawal, that the decision 'deserves moral and political condemnation'. The beginning, the exit and the end of the war."
       },
       "kind": {
         "ko": "번역 전문",
         "en": "Full translation"
       },
-      "source": "Постановление ЦК КПСС № П176/125 «К положению в „А“», 12 декабря 1979 г.; Постановление Съезда народных депутатов СССР № 982-I «О политической оценке решения о вводе советских войск в Афганистан в декабре 1979 года», 24 декабря 1989 г.",
+      "source": "Постановление ЦК КПСС № П176/125 «К положению в „А“», 12 декабря 1979 г.; Постановление Съезда народных депутатов СССР № 982-I «О политической оценке решения о вводе советских войск в Афганистан в декабре 1979 года», 24 декабря 1989 г.; Соглашения об урегулировании положения, относящегося к Афганистану, Женева, 14 апреля 1988 г. (UN doc. S/19835)",
       "people": [
         "brezhnev",
         "andropov",
@@ -2972,7 +3035,9 @@
         "suslov",
         "gorbachev",
         "yakovlev",
-        "sakharov"
+        "sakharov",
+        "shevardnadze",
+        "george-shultz"
       ],
       "terms": [
         "congress-of-peoples-deputies",
@@ -2980,7 +3045,8 @@
       ],
       "events": [
         "afghanistan-war",
-        "perestroika"
+        "perestroika",
+        "new-thinking-diplomacy"
       ],
       "addedAt": "2026-08-31",
       "aliases": {
@@ -2990,13 +3056,63 @@
           "П176/125",
           "인민대표대회 결의 제982-I호",
           "아프간 파병 규탄 결의",
-          "아프가니스탄 파병 문서"
+          "아프가니스탄 파병 문서",
+          "제네바 협정 (1988)",
+          "아프가니스탄 제네바 협정",
+          "제네바 협정"
         ],
         "en": [
           "On the situation in A",
           "Politburo Afghanistan decision",
           "Resolution 982-I",
-          "Congress resolution on Afghanistan"
+          "Congress resolution on Afghanistan",
+          "Geneva Accords (1988)",
+          "Geneva Accords on Afghanistan"
+        ]
+      }
+    },
+    {
+      "id": "ussr-secession-law-1990",
+      "file": "ussr-secession-law-1990.html",
+      "docLang": "ko",
+      "date": "1990-04-03",
+      "title": {
+        "ko": "연방공화국의 소련 탈퇴 절차에 관한 법률 (1990)",
+        "en": "The USSR law on the procedure for secession of a union republic (1990)"
+      },
+      "description": {
+        "ko": "리투아니아 독립 선언 3주 뒤 소련 최고소비에트가 채택한 법률 제1409-I호. 헌법 제72조의 탈퇴권에 처음으로 절차를 붙여 국민투표 3분의 2 찬성, 최장 5년의 이행기, 재투표, 연방과의 정산, 인민대표대회의 최종 확인을 요구했고, 자치공화국에는 잔류 여부를 따로 정할 권리를 주었다. 발트 3국이 「탈퇴 금지법」이라 부른 문서로, 어느 공화국도 이 절차를 밟지 않은 채 연방은 해체되었다.",
+        "en": "Law No. 1409-I, adopted by the USSR Supreme Soviet three weeks after Lithuania's declaration of independence. It gave the constitutional right of secession (Article 72) a procedure for the first time: a two-thirds referendum majority, a transition period of up to five years, a repeat referendum, a settlement of accounts with the Union, and final confirmation by the Congress of People's Deputies, with autonomous republics free to decide separately. The Baltic states called it the 'law on non-secession'; no republic ever used it before the Union dissolved."
+      },
+      "kind": {
+        "ko": "번역 전문",
+        "en": "Full translation"
+      },
+      "source": "Закон СССР от 3 апреля 1990 г. № 1409-I «О порядке решения вопросов, связанных с выходом союзной республики из СССР» // Ведомости СНД и ВС СССР. 1990. № 15. Ст. 252",
+      "people": [
+        "gorbachev"
+      ],
+      "terms": [
+        "right-of-secession",
+        "congress-of-peoples-deputies"
+      ],
+      "events": [
+        "baltic-independence",
+        "perestroika"
+      ],
+      "addedAt": "2026-08-31",
+      "aliases": {
+        "ko": [
+          "연방 탈퇴 절차법",
+          "탈퇴 절차법",
+          "「탈퇴 금지법」",
+          "법률 제1409-I호",
+          "1990년 탈퇴법"
+        ],
+        "en": [
+          "Law on Secession (1990)",
+          "Law No. 1409-I",
+          "law on the procedure for secession"
         ]
       }
     },
