@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <% var en = lang === 'en'; %>
+    <main class="container commulingo-shell commu-person-hub-page commu-people-list-page" data-lang="<%= lang %>">
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: en ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { label: group.title },
+            ],
+            dictJump: 'people' }) %>
+
+        <header class="commu-hub-head">
+            <div>
+                <span class="commu-people-range"><%= group.range %></span>
+                <h1><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= en ? '' : '명' %></span></h1>
+                <p><%= group.blurb %></p>
+            </div>
+        </header>
+
+        <section class="commu-hub-section" aria-label="<%= en ? 'People' : '인물 목록' %>">
+            <div class="commu-people-grid">
+                <%- cardsHtml %>
+            </div>
+            <%- pagerHtml %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+    <%- include('../partials/commulingo-person-card-click-script') %>
+</body>
+</html>

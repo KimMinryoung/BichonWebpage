@@ -112,8 +112,10 @@
         // Group shells only — the card grids (~8MB of markup) load per group
         // from /commulingo/people/cards?group=<id> when a group is opened or a
         // search begins. data-people carries the member ids so #p-<id> deep
-        // links know which group to fetch; the <noscript> list keeps every
-        // person page reachable for crawlers and script-less readers.
+        // links know which group to fetch; the 「목록으로 보기」 link on each
+        // header is the server-rendered page of the same cards
+        // (/people/list/<id>), which keeps every person reachable for
+        // crawlers and script-less readers.
         // The groups sit on two boxed shelves: the Soviet-era timeline, then
         // the standalone groups, which orderedPeopleGroupsMeta always puts
         // last — so the first shelf closes where the second opens.
@@ -133,18 +135,11 @@
         <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
             <summary class="commu-people-group-head">
                 <span class="commu-people-range"><%= group.range %></span>
+                <a class="commu-people-group-list-link" href="/commulingo/people/list/<%= group.id %>" onclick="event.stopPropagation()"><%= en ? 'View as a list →' : '목록으로 보기 →' %></a>
                 <h2><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= en ? '' : '명' %></span></h2>
                 <p><%= group.blurb %></p>
             </summary>
-            <div class="commu-people-grid">
-                <noscript>
-                    <ul class="commu-people-noscript-list">
-                        <% group.links.forEach(function(link) { %>
-                        <li><a href="/commulingo/people/<%= link.id %>"><%= link.name %></a></li>
-                        <% }) %>
-                    </ul>
-                </noscript>
-            </div>
+            <div class="commu-people-grid"></div>
         </details>
         <% }) %>
         <% if (sovietShelfOpened || standaloneShelfOpened) { %></section><% } %>

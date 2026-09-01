@@ -2656,6 +2656,14 @@ button.commu-dc-option:hover { border-color: var(--link); }
     }
 }
 
+/* 「목록으로 보기」 on a group header: the same cards as a plain paged page. */
+.commu-people-group-list-link {
+    position: absolute; right: 38px; top: 12px;
+    font-size: 0.8rem; color: var(--link); text-decoration: none; white-space: nowrap;
+}
+.commu-people-group-list-link:hover { text-decoration: underline; }
+.commu-people-list-page .commu-hub-head h1 .commu-people-group-count { font-size: 0.7em; font-weight: 400; color: var(--text-muted); margin-left: .3rem; }
+
 .commu-people-range {
     font-family: 'Courier New', monospace;
     font-size: 0.8rem;

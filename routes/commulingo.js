@@ -103,7 +103,9 @@ const personBodyMemo = new WeakMap(); // indexes -> Map(personId -> { epithetHtm
 // `page` cuts the group to one page of cards (list-pagination.js) and appends
 // the site's pager, which the people shell redraws the group from; without
 // it the whole group is returned, which is what the search corpus needs.
-async function peopleGroupCardsHtml(req, standardized, lang, group, page) {
+const PEOPLE_CARDS_BASE = group => `/commulingo/people/cards?group=${encodeURIComponent(group.id)}&page=`;
+
+async function peopleGroupCardsHtml(req, standardized, lang, group, page, baseUrl) {
     const indexes = await getLinkIndexes(lang);
     let memo = peopleGroupCardsMemo.get(standardized);
     if (!memo || memo.indexesRef !== indexes) {
@@ -111,10 +113,11 @@ async function peopleGroupCardsHtml(req, standardized, lang, group, page) {
         peopleGroupCardsMemo.set(standardized, memo);
     }
     const sorted = sortPeopleChronologically(group.people);
+    const pagerBase = baseUrl || PEOPLE_CARDS_BASE(group);
     const pagination = page
-        ? paginateList(sorted, sorted, { page }, `/commulingo/people/cards?group=${encodeURIComponent(group.id)}&page=`, { mark: false })
+        ? paginateList(sorted, sorted, { page }, pagerBase, { mark: false })
         : null;
-    const key = pagination ? `${group.id}\0${pagination.current}` : group.id;
+    const key = pagination ? `${group.id}\0${pagination.current}\0${pagerBase}` : group.id;
     let html = memo.byGroup.get(key);
     if (!html) {
         html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
@@ -343,6 +346,47 @@ router.get('/people/cards', async (req, res) => {
     } catch (err) {
         console.error('commulingo people cards:', err);
         res.status(500).send('');
+    }
+});
+
+// One group as a plain, server-rendered page of cards with the site's pager:
+// the script-less and crawler view of the people dictionary, linked from each
+// group's header (「목록으로 보기」). Registered before /people/:personId.
+router.get('/people/list/:groupId', async (req, res) => {
+    try {
+        const groupId = typeof req.params.groupId === 'string' ? req.params.groupId.trim() : '';
+        const { lang, standardized } = await loadStandardizedPeople(req, res);
+        const group = (standardized.groups || []).find(item => item.id === groupId);
+        const meta = peopleShellFor(standardized, lang).groupsMeta.find(item => item.id === groupId);
+        if (!group || !meta) return errorPage.notFound(res, {
+            message: lang === 'en' ? 'People group not found.' : '인물 그룹을 찾을 수 없습니다.',
+            backHref: '/commulingo/people',
+            backLabel: lang === 'en' ? 'People' : '인물 사전',
+        });
+        const page = Math.max(1, Number.parseInt(req.query.page, 10) || 1);
+        const html = await peopleGroupCardsHtml(req, standardized, lang, group, page,
+            `/commulingo/people/list/${encodeURIComponent(groupId)}?page=`);
+        const cut = html.indexOf('<div data-commu-list-pager');
+        const total = Math.ceil(group.people.length / PAGE_SIZE);
+        const current = Math.min(page, Math.max(1, total));
+        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        res.render('public/commulingo-people-list', {
+            group: meta,
+            cardsHtml: cut === -1 ? html : html.slice(0, cut),
+            pagerHtml: cut === -1 ? '' : html.slice(cut),
+            current,
+            total,
+            pageTitle: (lang === 'en' ? `${meta.title} — People` : `${meta.title} — 인물 사전`) + (current > 1 ? ` (${current}/${total})` : ''),
+            pageDescription: meta.blurb,
+            pagePath: `/commulingo/people/list/${groupId}`,
+            jsonLd: commuLingoBreadcrumb(lang, [
+                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { name: meta.title, href: `/commulingo/people/list/${groupId}` },
+            ]),
+        });
+    } catch (err) {
+        console.error('commulingo people list:', err);
+        res.status(500).send('Failed to load people group');
     }
 });
 
