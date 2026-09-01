@@ -12,6 +12,7 @@ const {
 const { loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
 const { relatedDocsFor } = require('../data/commulingo/docs-refs');
 const { renderAppView } = require('../utils/render-app-view');
+const { paginateList, PAGE_SIZE } = require('../data/commulingo/list-pagination');
 const {
     standardizedFor,
     getLinkIndexes,
@@ -99,17 +100,25 @@ const peopleGroupCardsMemo = new WeakMap(); // standardized -> { indexesRef, byG
 // new entry appears whenever any dictionary changes, dropping the old Map).
 const personBodyMemo = new WeakMap(); // indexes -> Map(personId -> { epithetHtml, momentHtml, bioHtml, sections })
 
-async function peopleGroupCardsHtml(req, standardized, lang, group) {
+// `page` cuts the group to one page of cards (list-pagination.js) and appends
+// the site's pager, which the people shell redraws the group from; without
+// it the whole group is returned, which is what the search corpus needs.
+async function peopleGroupCardsHtml(req, standardized, lang, group, page) {
     const indexes = await getLinkIndexes(lang);
     let memo = peopleGroupCardsMemo.get(standardized);
     if (!memo || memo.indexesRef !== indexes) {
         memo = { indexesRef: indexes, byGroup: new Map() };
         peopleGroupCardsMemo.set(standardized, memo);
     }
-    let html = memo.byGroup.get(group.id);
+    const sorted = sortPeopleChronologically(group.people);
+    const pagination = page
+        ? paginateList(sorted, sorted, { page }, `/commulingo/people/cards?group=${encodeURIComponent(group.id)}&page=`, { mark: false })
+        : null;
+    const key = pagination ? `${group.id}\0${pagination.current}` : group.id;
+    let html = memo.byGroup.get(key);
     if (!html) {
         html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
-            people: sortPeopleChronologically(group.people),
+            people: pagination ? pagination.pageItems : sorted,
             groupId: group.id,
             en: lang === 'en',
             roleIconSvg,
@@ -118,7 +127,14 @@ async function peopleGroupCardsHtml(req, standardized, lang, group) {
             nationalityHubHref,
             linkifyPersonText: createCardTextLinker(indexes),
         });
-        memo.byGroup.set(group.id, html);
+        if (pagination) {
+            html += await renderAppView(req, 'partials/commulingo-list-pager', {
+                pagination,
+                target: `.commu-people-group.is-${group.id} .commu-people-grid`,
+                en: lang === 'en',
+            });
+        }
+        memo.byGroup.set(key, html);
     }
     return html;
 }
@@ -148,7 +164,9 @@ function orderedPeopleGroupsMeta(standardized) {
         blurb: group.blurb,
         standalone: STANDALONE_GROUP_IDS.includes(group.id),
         count: group.people.length,
-        personIds: group.people.map(person => person.id).join(' '),
+        // In card order, so the shell can tell which page a #p-<id> deep link
+        // lands on.
+        personIds: sortPeopleChronologically(group.people).map(person => person.id).join(' '),
         links: sortPeopleChronologically(group.people)
             .map(person => ({ id: person.id, name: person.displayName || person.name })),
     }));
@@ -296,6 +314,7 @@ router.get('/people', async (req, res) => {
             roleCategories,
             groupsMeta,
             peopleCount: standardized.people.length,
+            pageSize: PAGE_SIZE,
             roleIconSvg,
             roleHubHref,
             pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
@@ -315,11 +334,12 @@ router.get('/people', async (req, res) => {
 router.get('/people/cards', async (req, res) => {
     try {
         const groupId = typeof req.query.group === 'string' ? req.query.group.trim() : '';
+        const page = req.query.page === undefined ? 0 : Math.max(1, Number.parseInt(req.query.page, 10) || 1);
         const { lang, standardized } = await loadStandardizedPeople(req, res);
         const group = (standardized.groups || []).find(item => item.id === groupId);
         if (!group) return res.status(404).send('');
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
-        res.type('html').send(await peopleGroupCardsHtml(req, standardized, lang, group));
+        res.type('html').send(await peopleGroupCardsHtml(req, standardized, lang, group, page));
     } catch (err) {
         console.error('commulingo people cards:', err);
         res.status(500).send('');

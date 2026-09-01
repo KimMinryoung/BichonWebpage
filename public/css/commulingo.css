@@ -2601,6 +2601,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--link);
 }
 
+/* A group's pager sits under its grid; a page switch scrolls the group head
+   back under the sticky bar. */
+.commu-people-group { scroll-margin-top: 4.5rem; }
+.commu-people-group > [data-commu-list-pager] .pagination { margin: 12px 0 4px; }
 .commu-people-group[open] .commu-people-group-head {
     margin-bottom: 14px;
 }

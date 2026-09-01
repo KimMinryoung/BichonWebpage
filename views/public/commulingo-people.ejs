@@ -283,12 +283,17 @@
         })();
     </script>
     <script>
-        // Lazy card loading: each group's grid is fetched once, when the group
-        // is first opened (or when a search needs every card). The markup is
-        // parsed into a detached template and the cards are then revealed in
-        // chunks — parsing is cheap, rendering is what costs.
+        // Lazy card loading, a page at a time. Opening a group fetches one page
+        // of its cards (/commulingo/people/cards?group=<id>&page=N, with the
+        // site's pager appended) instead of the whole group — the largest group
+        // is 900KB of markup — and the pager under the grid fetches the next.
+        // Search needs every card of every group, so it keeps a second,
+        // detached corpus per group (the same endpoint without `page`), which
+        // never touches the page view: clearing a search leaves each group on
+        // the page it was showing.
         (function() {
             var en = document.documentElement.lang === 'en';
+            var PAGE_SIZE = <%= pageSize %>;
             var pending = {};
             var groupEls = Array.prototype.slice.call(
                 document.querySelectorAll('details.commu-people-group[data-group-id]'));
@@ -314,49 +319,102 @@
                 return wrap;
             }
 
-            function loadGroup(group) {
-                if (!group || group.hasAttribute('data-loaded')) return Promise.resolve();
-                var id = group.getAttribute('data-group-id');
-                if (pending[id]) return pending[id];
-                var grid = group.querySelector('.commu-people-grid');
-                var skeleton = makeSkeleton();
-                var status = document.createElement('p');
-                status.className = 'commu-sr-only';
-                status.setAttribute('role', 'status');
-                status.textContent = en ? 'Loading…' : '불러오는 중…';
-                if (grid) {
-                    grid.appendChild(skeleton);
-                    grid.appendChild(status);
-                }
-                pending[id] = fetch('/commulingo/people/cards?group=' + encodeURIComponent(id), { credentials: 'same-origin' })
+            function failNotice(grid) {
+                var failed = document.createElement('p');
+                failed.className = 'commu-people-loading';
+                failed.setAttribute('role', 'status');
+                failed.textContent = en ? 'Failed to load — reopen to retry' : '불러오지 못했습니다 — 다시 열면 재시도합니다';
+                if (grid) grid.appendChild(failed);
+                setTimeout(function() { failed.remove(); }, 4000);
+            }
+
+            // Fetches one group's markup (a page, or everything) and splits it
+            // into its cards and, when paged, the pager block that follows them.
+            function fetchGroup(id, page) {
+                var key = id + (page ? ':' + page : '');
+                if (pending[key]) return pending[key];
+                var url = '/commulingo/people/cards?group=' + encodeURIComponent(id) + (page ? '&page=' + page : '');
+                pending[key] = fetch(url, { credentials: 'same-origin' })
                     .then(function(res) {
                         if (!res.ok) throw new Error('HTTP ' + res.status);
                         return res.text();
                     })
                     .then(function(html) {
-                        skeleton.remove();
-                        status.remove();
-                        if (grid && !group.hasAttribute('data-loaded')) {
-                            var holder = document.createElement('template');
-                            holder.innerHTML = html;
-                            var cards = Array.prototype.slice.call(holder.content.children);
-                            group.__chunk = window.__commuChunk.reveal(grid, cards);
-                            group.setAttribute('data-loaded', '');
-                        }
+                        var holder = document.createElement('template');
+                        holder.innerHTML = html;
+                        var nodes = Array.prototype.slice.call(holder.content.children);
+                        var pager = null;
+                        var cards = nodes.filter(function(node) {
+                            if (node.hasAttribute('data-commu-list-pager')) { pager = node; return false; }
+                            return true;
+                        });
+                        return { cards: cards, pager: pager };
                     })
-                    .catch(function(err) {
-                        skeleton.remove();
-                        status.remove();
-                        var failed = document.createElement('p');
-                        failed.className = 'commu-people-loading';
-                        failed.setAttribute('role', 'status');
-                        failed.textContent = en ? 'Failed to load — reopen to retry' : '불러오지 못했습니다 — 다시 열면 재시도합니다';
-                        if (grid) grid.appendChild(failed);
-                        setTimeout(function() { failed.remove(); }, 4000);
-                        delete pending[id];
-                        throw err;
-                    });
-                return pending[id];
+                    .catch(function(err) { delete pending[key]; throw err; });
+                return pending[key];
+            }
+
+            // Shows page `page` of a group: the grid is rebuilt from the page's
+            // cards and the pager is placed under it, wired to fetch the next.
+            function showPage(group, page) {
+                var id = group.getAttribute('data-group-id');
+                var grid = group.querySelector('.commu-people-grid');
+                if (!grid) return Promise.resolve();
+                if (group.__page === page) return Promise.resolve();
+                var skeleton = makeSkeleton();
+                var status = document.createElement('p');
+                status.className = 'commu-sr-only';
+                status.setAttribute('role', 'status');
+                status.textContent = en ? 'Loading…' : '불러오는 중…';
+                if (!group.__view) {
+                    grid.appendChild(skeleton);
+                    grid.appendChild(status);
+                }
+                return fetchGroup(id, page).then(function(result) {
+                    skeleton.remove();
+                    status.remove();
+                    if (group.__view) group.__view.clear();
+                    if (group.__pager) group.__pager.remove();
+                    group.__view = window.__commuChunk.reveal(grid, result.cards);
+                    group.__page = page;
+                    group.__pager = result.pager;
+                    if (result.pager) {
+                        group.appendChild(result.pager);
+                        result.pager.addEventListener('click', function(event) {
+                            var link = event.target.closest('a[href]');
+                            if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
+                            var match = /[?&]page=(\d+)/.exec(link.getAttribute('href') || '');
+                            if (!match) return;
+                            event.preventDefault();
+                            showPage(group, parseInt(match[1], 10)).then(function() {
+                                group.scrollIntoView({ block: 'start' });
+                            }).catch(function() {});
+                        });
+                    }
+                    group.setAttribute('data-loaded', '');
+                }, function(err) {
+                    skeleton.remove();
+                    status.remove();
+                    failNotice(grid);
+                    throw err;
+                });
+            }
+
+            function loadGroup(group) {
+                if (!group || group.hasAttribute('data-loaded')) return Promise.resolve();
+                return showPage(group, 1);
+            }
+
+            // The search corpus: every card of the group, detached. Loaded on
+            // the first search and kept; search reads attributes off these and
+            // moves matches into the result grids.
+            function loadCorpus(group) {
+                if (group.__corpus) return Promise.resolve(group.__corpus);
+                var id = group.getAttribute('data-group-id');
+                return fetchGroup(id, 0).then(function(result) {
+                    group.__corpus = result.cards;
+                    return group.__corpus;
+                });
             }
 
             groupEls.forEach(function(group) {
@@ -369,7 +427,7 @@
                 loadGroup: loadGroup,
                 skeleton: makeSkeleton,
                 loadAll: function() {
-                    return Promise.all(groupEls.map(function(group) { return loadGroup(group); }));
+                    return Promise.all(groupEls.map(function(group) { return loadCorpus(group); }));
                 },
                 groupFor: function(personId) {
                     for (var i = 0; i < groupEls.length; i++) {
@@ -378,36 +436,26 @@
                     }
                     return null;
                 },
-                // Every card of every loaded group, revealed or not. Search
-                // matches against these attributes without rendering anything.
+                // Every card of every group's search corpus, revealed or not.
+                // Search matches against these attributes without rendering.
                 allCards: function() {
                     var out = [];
                     groupEls.forEach(function(group) {
-                        if (group.__chunk) out.push.apply(out, group.__chunk.items);
+                        if (group.__corpus) out.push.apply(out, group.__corpus);
                     });
                     return out;
                 },
-                // Puts each group's grid back the way browsing left it, after a
-                // search has pulled matches out into the result grids.
-                restoreGroups: function() {
-                    groupEls.forEach(function(group) {
-                        if (!group.__chunk) return;
-                        var grid = group.querySelector('.commu-people-grid');
-                        var cards = group.__chunk.items;
-                        group.__chunk.clear();
-                        group.__chunk = window.__commuChunk.reveal(grid, cards);
-                    });
-                },
-                // Brings one person's card onto the page, for #p-<id> arrivals
-                // that point past the first chunk.
+                // The page views were never touched by a search (it draws from
+                // the corpus), so there is nothing to put back.
+                restoreGroups: function() {},
+                // Brings one person's card onto the page, for #p-<id> arrivals:
+                // data-people is in card order, so the position gives the page.
                 revealPerson: function(group, personId) {
-                    if (!group || !group.__chunk) return;
-                    for (var i = 0; i < group.__chunk.items.length; i++) {
-                        if (group.__chunk.items[i].id === 'p-' + personId) {
-                            group.__chunk.revealNode(group.__chunk.items[i]);
-                            return;
-                        }
-                    }
+                    if (!group) return Promise.resolve();
+                    var ids = (group.getAttribute('data-people') || '').split(' ');
+                    var index = ids.indexOf(personId);
+                    if (index < 0) return Promise.resolve();
+                    return showPage(group, Math.floor(index / PAGE_SIZE) + 1);
                 }
             };
         })();
@@ -447,17 +495,11 @@
                 if (hash.indexOf('#p-') !== 0) return;
                 var personId = hash.slice(3);
                 var group = window.__commuPeopleCards.groupFor(personId);
-                // The card may sit past the first revealed chunk, so ask for it
-                // by name rather than assuming a loaded group has it on screen.
-                var show = function() {
-                    window.__commuPeopleCards.revealPerson(group, personId);
-                    focusCard(personId);
-                };
-                if (group && !group.hasAttribute('data-loaded')) {
-                    window.__commuPeopleCards.loadGroup(group).then(show).catch(function() {});
-                } else {
-                    show();
-                }
+                // The card may sit on a later page of its group, so ask for it
+                // by name; the group fetches that page if it is not showing it.
+                window.__commuPeopleCards.revealPerson(group, personId)
+                    .then(function() { focusCard(personId); })
+                    .catch(function() {});
             }
             window.addEventListener('hashchange', focusHash);
             focusHash();
