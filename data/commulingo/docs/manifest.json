@@ -3998,6 +3998,94 @@
           "Badoglio proclamation"
         ]
       }
+    },
+    {
+      "id": "marshall-plan-memoranda-1947",
+      "file": "marshall-plan-memoranda-1947.html",
+      "docLang": "ko",
+      "date": "1947-05-23",
+      "title": {
+        "ko": "마셜 플랜의 두 각서 (1947)",
+        "en": "Two Marshall Plan Memoranda (1947)"
+      },
+      "description": {
+        "ko": "마셜의 하버드 연설 직전 국무부 안에서 나온 두 문서. 케넌이 이끈 정책기획실의 첫 권고(5월 23일)는 유럽인이 스스로 계획을 세우고 미국은 그것을 돕는다는 원칙과 「공산주의가 아니라 경제적 탈진과 싸운다」는 규정을 세웠고, 클레이턴 차관의 「유럽의 위기」(5월 27일)는 유럽 경제의 붕괴 속도를 수지 표로 보이며 연 60~70억 달러의 3년 무상 원조를 요구했다. 마셜 플랜의 골격이 된 원자료다.",
+        "en": "The two State Department papers that preceded Marshall's Harvard speech: the first recommendation of Kennan's Policy Planning Staff (23 May), which laid down that the initiative must come from Europe and that the target was not communism but economic exhaustion, and Under Secretary Clayton's 'The European Crisis' (27 May), which put Europe's collapse in balance-of-payments tables and asked for six to seven billion dollars a year in grants for three years. The raw material of the Marshall Plan."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Memorandum by the Under Secretary of State for Economic Affairs (Clayton), May 27, 1947; The Director of the Policy Planning Staff (Kennan) to the Under Secretary of State (Acheson), May 23, 1947, with enclosure PPS/1 // Foreign Relations of the United States, 1947, vol. III, docs. 135–136",
+      "people": [
+        "george-f-kennan",
+        "william-l-clayton",
+        "george-c-marshall",
+        "harry-s-truman"
+      ],
+      "terms": [
+        "moscow-conference-of-foreign-ministers-march-april-1947"
+      ],
+      "events": [
+        "marshall-plan"
+      ],
+      "addedAt": "2026-09-01",
+      "aliases": {
+        "ko": [
+          "케넌 각서 (1947)",
+          "클레이턴 각서",
+          "유럽의 위기 (클레이턴)",
+          "정책기획실 각서 PPS/1"
+        ],
+        "en": [
+          "Kennan PPS/1",
+          "Clayton memorandum",
+          "The European Crisis"
+        ]
+      }
+    },
+    {
+      "id": "german-constitutions-1949",
+      "file": "german-constitutions-1949.html",
+      "docLang": "ko",
+      "date": "1949-05-23",
+      "title": {
+        "ko": "독일의 두 헌법 (1949)",
+        "en": "Germany's Two Constitutions (1949)"
+      },
+      "description": {
+        "ko": "분단을 국법으로 굳힌 두 문서. 5월 23일 본에서 공포된 서독 기본법 146개조는 「통일이 이루어지는 날까지」의 잠정 질서를 자처하며 인간의 존엄에서 시작하고, 10월 7일 인민평의회가 채택한 독일민주공화국 헌법 144개조는 「독일은 불가분의 민주공화국」이라 선언하며 노동권과 국유화, 인민회의 우위를 적는다. 같은 해 같은 나라에서 나온 두 국가의 기초 문서를 나란히 옮겼다.",
+        "en": "The two documents that gave the division of Germany the force of law: the 146 articles of the Basic Law promulgated at Bonn on 23 May, which calls itself a provisional order 'until the day of unity' and begins with human dignity, and the 144 articles of the Constitution of the German Democratic Republic adopted by the People's Council on 7 October, which declares 'Germany an indivisible democratic republic' and writes in the right to work, nationalisation and the supremacy of the People's Chamber. The founding texts of two states, from one country in one year, side by side."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Grundgesetz für die Bundesrepublik Deutschland vom 23. Mai 1949 (BGBl. 1949 S. 1); Die Verfassung der Deutschen Demokratischen Republik vom 7. Oktober 1949 (GBl. DDR 1949 S. 5) // documentarchiv.de",
+      "people": [
+        "konrad-adenauer",
+        "wilhelm-pieck",
+        "otto-grotewohl"
+      ],
+      "terms": [],
+      "events": [
+        "berlin-blockade"
+      ],
+      "addedAt": "2026-09-01",
+      "aliases": {
+        "ko": [
+          "서독 기본법 (1949)",
+          "독일연방공화국 기본법",
+          "독일민주공화국 헌법 (1949)",
+          "동독 헌법 1949"
+        ],
+        "en": [
+          "Basic Law of 1949",
+          "Grundgesetz 1949",
+          "Constitution of the GDR 1949",
+          "DDR-Verfassung 1949"
+        ]
+      }
     }
   ]
 }
