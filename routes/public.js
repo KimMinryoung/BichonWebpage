@@ -335,7 +335,7 @@ async function cachedXml(key, build) {
 // sitemap.xml
 router.get('/sitemap.xml', async (req, res) => {
     try {
-        const xml = await cachedXml('xmlcache:sitemap:v3', () => buildSitemapXml());
+        const xml = await cachedXml('xmlcache:sitemap:v4', () => buildSitemapXml());
         res.type('application/xml').send(xml);
     } catch (error) {
         console.error('Sitemap error:', error);
@@ -365,6 +365,9 @@ async function buildSitemapXml() {
         const pagesList = pagesResult.status === 'fulfilled' ? pagesResult.value : [];
         const hubItems = hubResult.status === 'fulfilled' ? hubResult.value : [];
         const commuPeople = peopleResult.status === 'fulfilled' ? ((peopleResult.value.data || {}).people || []) : [];
+        // The people dictionary's group list pages (/people/list/<group>): the
+        // server-rendered, paged view of each group's cards.
+        const commuPeopleGroups = peopleResult.status === 'fulfilled' ? ((peopleResult.value.data || {}).groups || []) : [];
         const commuTerms = termsResult.status === 'fulfilled' ? termsResult.value : [];
         // The events loader already drops hand-seeded skeleton rows (no summary),
         // so every id here is a page the public routes actually serve.
@@ -442,6 +445,7 @@ async function buildSitemapXml() {
         xml += url('/commulingo/events', eventsLastmod, '0.7', 'weekly');
         xml += url('/commulingo/docs', docsLastmod, '0.7', 'weekly');
         xml += url('/commulingo/genealogy', chartsLastmod, '0.6', 'monthly');
+        for (const group of commuPeopleGroups) xml += url(`/commulingo/people/list/${encodeURIComponent(group.id)}`, peopleLastmod, '0.5', 'weekly');
         for (const person of commuPeople) xml += url(`/commulingo/people/${encodeURIComponent(person.id)}`, person.updatedAt, '0.6');
         for (const term of commuTerms) xml += url(`/commulingo/terms/${encodeURIComponent(term.id)}`, term.updatedAt, '0.6');
         for (const event of commuEvents) xml += url(`/commulingo/events/${encodeURIComponent(event.id)}`, event.updatedAt, '0.6');
