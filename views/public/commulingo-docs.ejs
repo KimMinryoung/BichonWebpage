@@ -25,7 +25,7 @@
         %>
         <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-doc-list"
             role="group" aria-label="<%= en ? 'Filter by kind' : '분류로 걸러보기' %>">
-            <a class="commu-dict-chip<%= kind ? '' : ' is-active' %>" href="<%= pagination.href(1).replace(/\?.*$/, '') %>"
+            <a class="commu-dict-chip<%= kind ? '' : ' is-active' %>" href="/commulingo/docs"
                 data-category="" aria-pressed="<%= kind ? 'false' : 'true' %>"><%= en ? 'All' : '전체' %> <span><%= docs.length %></span></a>
             <% facets.forEach(function(facet) { %>
             <a class="commu-dict-chip<%= facet.id === kind ? ' is-active' : '' %>" href="/commulingo/docs?kind=<%= encodeURIComponent(facet.id) %>"
@@ -46,24 +46,24 @@
             </a>
             <% }) %>
         </section>
-        <nav class="commu-list-pager" data-commu-list-pager data-target="#commu-doc-list"
+        <%
+        // The site's pagination partial (the one under /ai-diary), wrapped in
+        // a hook so commulingo-dict-search.js can redraw it over a filtered
+        // list. Labels are passed so the English page reads in English.
+        %>
+        <div data-commu-list-pager data-target="#commu-doc-list"
             data-label-prev="<%= en ? 'Previous' : '이전' %>" data-label-next="<%= en ? 'Next' : '다음' %>"
-            data-label-page="<%= en ? 'Page' : '쪽' %>"
-            aria-label="<%= en ? 'Pages' : '페이지 이동' %>"<% if (pagination.total < 2) { %> hidden<% } %>>
-            <% if (pagination.current > 1) { %>
-            <a class="commu-list-pager-prev" href="<%= pagination.href(pagination.current - 1) %>" data-page="<%= pagination.current - 1 %>" rel="prev">← <%= en ? 'Previous' : '이전' %></a>
-            <% } else { %><span class="commu-list-pager-prev is-disabled" aria-disabled="true">← <%= en ? 'Previous' : '이전' %></span><% } %>
-            <% for (var n = 1; n <= pagination.total; n++) { %>
-            <% if (n === pagination.current) { %>
-            <span class="is-current" aria-current="page"><%= n %></span>
-            <% } else { %>
-            <a href="<%= pagination.href(n) %>" data-page="<%= n %>" aria-label="<%= en ? 'Page ' + n : n + '쪽' %>"><%= n %></a>
+            data-label-page="<%= en ? 'Page' : '쪽' %>"<% if (pagination.total < 2) { %> hidden<% } %>>
+            <% if (pagination.total > 1) { %>
+            <%- include('../partials/pagination', {
+                currentPage: pagination.current,
+                totalPages: pagination.total,
+                baseUrl: pagination.baseUrl,
+                prevLabel: en ? 'Previous' : '이전',
+                nextLabel: en ? 'Next' : '다음'
+            }) %>
             <% } %>
-            <% } %>
-            <% if (pagination.current < pagination.total) { %>
-            <a class="commu-list-pager-next" href="<%= pagination.href(pagination.current + 1) %>" data-page="<%= pagination.current + 1 %>" rel="next"><%= en ? 'Next' : '다음' %> →</a>
-            <% } else { %><span class="commu-list-pager-next is-disabled" aria-disabled="true"><%= en ? 'Next' : '다음' %> →</span><% } %>
-        </nav>
+        </div>
     </main>
     <%- include('../partials/footer') %>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>

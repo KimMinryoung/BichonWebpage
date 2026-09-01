@@ -127,26 +127,40 @@
             return window.location.pathname + (params.length ? '?' + params.join('&') : '');
         }
 
+        // Same markup and windowing as views/partials/pagination.ejs (the
+        // site's pagination, as under /ai-diary), so the redrawn pager looks
+        // exactly like the one the server sent.
         function renderPager(total) {
             if (!pager) return;
-            var labelPrev = pager.getAttribute('data-label-prev') || '';
-            var labelNext = pager.getAttribute('data-label-next') || '';
-            var labelPage = pager.getAttribute('data-label-page') || '';
-            var ko = document.documentElement.lang.indexOf('ko') === 0;
-            var html = '';
-            html += page > 1
-                ? '<a class="commu-list-pager-prev" href="' + pageHref(page - 1) + '" data-page="' + (page - 1) + '" rel="prev">← ' + labelPrev + '</a>'
-                : '<span class="commu-list-pager-prev is-disabled" aria-disabled="true">← ' + labelPrev + '</span>';
-            for (var n = 1; n <= total; n++) {
-                html += n === page
-                    ? '<span class="is-current" aria-current="page">' + n + '</span>'
-                    : '<a href="' + pageHref(n) + '" data-page="' + n + '" aria-label="' +
-                        (ko ? n + labelPage : labelPage + ' ' + n) + '">' + n + '</a>';
+            var labelPrev = pager.getAttribute('data-label-prev') || '이전';
+            var labelNext = pager.getAttribute('data-label-next') || '다음';
+            var startPage, endPage;
+            if (total <= 7) {
+                startPage = 1; endPage = total;
+            } else {
+                startPage = Math.max(1, page - 2);
+                endPage = Math.min(total, page + 2);
+                if (endPage - startPage < 4) {
+                    if (startPage === 1) endPage = Math.min(total, startPage + 4);
+                    else if (endPage === total) startPage = Math.max(1, endPage - 4);
+                }
             }
-            html += page < total
-                ? '<a class="commu-list-pager-next" href="' + pageHref(page + 1) + '" data-page="' + (page + 1) + '" rel="next">' + labelNext + ' →</a>'
-                : '<span class="commu-list-pager-next is-disabled" aria-disabled="true">' + labelNext + ' →</span>';
-            pager.innerHTML = html;
+            function link(n, text, extra) {
+                return '<a href="' + pageHref(n) + '" data-page="' + n + '" class="btn btn-small' + (extra || '') + '">' + text + '</a>';
+            }
+            var html = '';
+            if (page > 1) html += link(page - 1, labelPrev);
+            if (startPage > 1) {
+                html += link(1, '1');
+                if (startPage > 2) html += '<span class="pagination-ellipsis">...</span>';
+            }
+            for (var n = startPage; n <= endPage; n++) html += link(n, String(n), n === page ? ' active' : '');
+            if (endPage < total) {
+                if (endPage < total - 1) html += '<span class="pagination-ellipsis">...</span>';
+                html += link(total, String(total));
+            }
+            if (page < total) html += link(page + 1, labelNext);
+            pager.innerHTML = '<div class="pagination">' + html + '</div>';
             pager.hidden = total < 2;
         }
 
@@ -179,10 +193,15 @@
 
         if (pager) {
             pager.addEventListener('click', function(event) {
-                var link = event.target.closest('a[data-page]');
+                // The server-rendered partial carries the page only in its
+                // href; links drawn here also stamp data-page.
+                var link = event.target.closest('a[href]');
                 if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
+                var match = /[?&]page=(\d+)/.exec(link.getAttribute('href') || '');
+                var next = parseInt(link.getAttribute('data-page') || (match && match[1]), 10);
+                if (!next) return;
                 event.preventDefault();
-                page = parseInt(link.getAttribute('data-page'), 10) || 1;
+                page = next;
                 highlighted.forEach(clearHighlights);
                 highlighted = [];
                 if (pagedAll) {

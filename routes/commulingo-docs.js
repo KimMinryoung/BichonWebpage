@@ -166,13 +166,6 @@ function kindFacets(docs, lang) {
     return [...facets.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 }
 
-function docsListHref(kind, page) {
-    const params = [];
-    if (kind) params.push(`kind=${encodeURIComponent(kind)}`);
-    if (page > 1) params.push(`page=${page}`);
-    return '/commulingo/docs' + (params.length ? `?${params.join('&')}` : '');
-}
-
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
@@ -201,7 +194,7 @@ router.get('/', async (req, res) => {
                 current: page,
                 total: totalPages,
                 matched: matched.length,
-                href: n => docsListHref(kind, n),
+                baseUrl: '/commulingo/docs?' + (kind ? `kind=${encodeURIComponent(kind)}&` : '') + 'page=',
             },
             pageTitle: lang === 'en' ? 'Reference Library — CommuLingo' : '참고 문헌 — CommuLingo',
             pageDescription: lang === 'en'

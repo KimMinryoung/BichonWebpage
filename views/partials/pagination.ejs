@@ -18,6 +18,8 @@ if (totalPages <= 7) {
 for (var i = startPage; i <= endPage; i++) {
     pages.push(i);
 }
+var labelPrev = typeof prevLabel !== 'undefined' && prevLabel ? prevLabel : '이전';
+var labelNext = typeof nextLabel !== 'undefined' && nextLabel ? nextLabel : '다음';
 var pagination = {
     pages: pages,
     showFirst: startPage > 1,
@@ -30,7 +32,7 @@ var pagination = {
 %>
 <div class="pagination">
     <% if (pagination.showPrev) { %>
-        <a href="<%= baseUrl %><%= currentPage - 1 %>" class="btn btn-small">이전</a>
+        <a href="<%= baseUrl %><%= currentPage - 1 %>" class="btn btn-small"><%= labelPrev %></a>
     <% } %>
 
     <% if (pagination.showFirst) { %>
@@ -52,6 +54,6 @@ var pagination = {
     <% } %>
 
     <% if (pagination.showNext) { %>
-        <a href="<%= baseUrl %><%= currentPage + 1 %>" class="btn btn-small">다음</a>
+        <a href="<%= baseUrl %><%= currentPage + 1 %>" class="btn btn-small"><%= labelNext %></a>
     <% } %>
 </div>
