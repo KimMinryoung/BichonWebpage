@@ -78,6 +78,28 @@ not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
 - `scripts/audit-person-native-names.js` — backstop for rows written before the
   guard or by hand-run SQL; exits 1 when mismatches remain.
 
+**Display-name order (`FAMILY_FIRST` in `native-script.js`, `_FAMILY_FIRST` in
+leninbot `commulingo_people.py` — keep the two in sync):** the public page never
+prints `name_ko`/`name_en`; `people-standard.js` recomposes the display name from
+`given_name_*`/`family_name_*` under the citizenship's rule, so the parts are the
+truth and the stored string only has to agree with them.
+
+| citizenship_code | Korean | English |
+| --- | --- | --- |
+| korea, north-korea, south-korea, china, vietnam | family first, fused (김무정, 펑더화이, 호찌민) | family first, spaced (Kim Mu-chong, Peng Dehuai, Le Duan) |
+| japan, hungary | family first, spaced (도쿠다 규이치, 카다르 야노시) | given first (Sen Katayama, János Kádár) |
+| everyone else | given first | given first |
+
+The rule keys on `citizenship_code` alone. An ethnic Hungarian with Romanian
+papers (Tőkés) or a Korean with Soviet ones (허가이) follows the citizenship's
+order; a mononym or a fused single token (히로히토, 허가이, 마오쩌둥) lives wholly
+in `family_name_*`, never in `given_name_*`. The native line keeps the nation's
+own order (`Kádár János`, `Hồ Chí Minh`) and CJK names are written solid
+(`近衞文麿`). `scripts/audit-person-name-order.js` checks every row against all
+of this and exits 1 on a mismatch; migration 156 (2026-09-01) is the case that
+motivated it — `hungary` was absent from the table, so all 28 Hungarians rendered
+given-first while their stored names disagreed with one another.
+
 Because the check keys off nationality fields, a wrong code produces a wrong
 name. **Citizenship is the state the person belonged to for the work they are
 known for; `nationalOrigin` is national/ethnic background. Neither field is a

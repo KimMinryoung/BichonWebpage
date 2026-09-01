@@ -441,6 +441,7 @@ function validateCommuLingoPeople(data) {
 }
 
 module.exports = {
+    composeFromParts,
     SCHEMA_VERSION,
     OFFICE_DISPLAY_ORDER,
     ROLE_OFFICE_TITLES,
