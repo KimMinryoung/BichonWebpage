@@ -32,7 +32,7 @@
                 data-category="<%= facet.id %>" aria-pressed="<%= facet.id === kind ? 'true' : 'false' %>"><%= facet.label %> <span><%= facet.count %></span></a>
             <% }) %>
         </div>
-        <section class="commu-event-grid" id="commu-doc-list" data-page-size="<%= pageSize %>" data-page="<%= pagination.current %>"
+        <section class="commu-event-grid" id="commu-doc-list" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
             aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
             <% docs.forEach(function(doc) { %>
             <a class="commu-event-card" href="/commulingo/docs/<%= doc.id %>"
@@ -46,24 +46,7 @@
             </a>
             <% }) %>
         </section>
-        <%
-        // The site's pagination partial (the one under /ai-diary), wrapped in
-        // a hook so commulingo-dict-search.js can redraw it over a filtered
-        // list. Labels are passed so the English page reads in English.
-        %>
-        <div data-commu-list-pager data-target="#commu-doc-list"
-            data-label-prev="<%= en ? 'Previous' : '이전' %>" data-label-next="<%= en ? 'Next' : '다음' %>"
-            data-label-page="<%= en ? 'Page' : '쪽' %>"<% if (pagination.total < 2) { %> hidden<% } %>>
-            <% if (pagination.total > 1) { %>
-            <%- include('../partials/pagination', {
-                currentPage: pagination.current,
-                totalPages: pagination.total,
-                baseUrl: pagination.baseUrl,
-                prevLabel: en ? 'Previous' : '이전',
-                nextLabel: en ? 'Next' : '다음'
-            }) %>
-            <% } %>
-        </div>
+        <%- include('../partials/commulingo-list-pager', { pagination: pagination, target: '#commu-doc-list', en: en }) %>
     </main>
     <%- include('../partials/footer') %>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>

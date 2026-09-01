@@ -9,9 +9,9 @@
             trail: [{ label: en ? 'Genealogy' : '계보도' }],
             dictJump: 'genealogy' }) %>
         <h1 class="commu-sr-only"><%= en ? 'Genealogy Charts' : '계보도' %></h1>
-        <section class="commu-event-grid" aria-label="<%= en ? 'Genealogy charts' : '계보도 목록' %>">
+        <section class="commu-event-grid" id="commu-genealogy-list" aria-label="<%= en ? 'Genealogy charts' : '계보도 목록' %>">
             <% charts.forEach(function(chart) { %>
-            <a class="commu-event-card" href="/commulingo/genealogy/<%= chart.id %>">
+            <a class="commu-event-card" href="/commulingo/genealogy/<%= chart.id %>"<% if (!chart.onPage) { %> hidden<% } %>>
                 <span class="commu-event-period"><%= chart.period %></span>
                 <h2><%= chart.title %></h2>
                 <p><%= chart.description %></p>
@@ -19,6 +19,7 @@
             </a>
             <% }) %>
         </section>
+        <%- include('../partials/commulingo-list-pager', { pagination: pagination, target: '#commu-genealogy-list', en: en }) %>
     </main>
     <%- include('../partials/footer') %>
 </body>

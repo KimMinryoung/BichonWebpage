@@ -4,6 +4,7 @@ const seo = require('../utils/seo');
 const { listGenealogyCharts, getGenealogyChart } = require('../data/commulingo/genealogy-store');
 const { renderGenealogySvg } = require('../data/commulingo/genealogy-svg');
 const { localize } = require('../data/commulingo/localize');
+const { paginateList } = require('../data/commulingo/list-pagination');
 
 const router = express.Router();
 
@@ -16,9 +17,11 @@ router.get('/', (req, res) => {
             description: localize(chart.description, lang),
             period: `${chart.timeStart}–${chart.timeEnd}`,
         }));
+        const pagination = paginateList(charts, charts, req.query, '/commulingo/genealogy?page=');
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-genealogies', {
             charts,
+            pagination,
             pageTitle: lang === 'en' ? 'Genealogy Charts — CommuLingo' : '계보도 — CommuLingo',
             pageDescription: lang === 'en'
                 ? 'Diagrams of how currents, doctrines and factions split and merged.'

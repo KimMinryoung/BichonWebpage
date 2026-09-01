@@ -3914,7 +3914,8 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 a.commu-dict-chip { display: inline-block; text-decoration: none; line-height: 1.3; }
 a.commu-dict-chip:hover { text-decoration: none; }
 
-.commu-docs-page .commu-event-grid { scroll-margin-top: 4.5rem; }
+.commu-docs-page .commu-event-grid,
+.commu-events-page .commu-event-grid { scroll-margin-top: 4.5rem; }
 
 /* Index bar: initial consonants / letters when sorted by name, decades when
    sorted chronologically. */

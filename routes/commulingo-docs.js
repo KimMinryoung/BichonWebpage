@@ -6,6 +6,7 @@ const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { localize } = require('../data/commulingo/localize');
+const { paginateList } = require('../data/commulingo/list-pagination');
 
 const router = express.Router();
 
@@ -143,13 +144,9 @@ function presentDoc(raw, lang, resolveDocRefs) {
     };
 }
 
-// The list page is filtered by the manifest's `kind` and cut into pages. The
-// chips and pager are real links (?kind=…&page=N) so the page works without
-// script and a filtered page can be shared; commulingo-dict-search.js then
-// takes the same controls over and switches without a reload. A kind's id is
-// its English label slugged, so adding a kind to the manifest needs no code.
-const DOCS_PAGE_SIZE = 24;
-
+// The list page is filtered by the manifest's `kind` (chips, real links so the
+// page works without script) and cut into pages (list-pagination.js). A kind's
+// id is its English label slugged, so adding a kind to the manifest needs no code.
 function kindId(raw) {
     const label = localize(raw.kind, 'en') || localize(raw.kind, 'ko') || '';
     return label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'other';
@@ -178,24 +175,14 @@ router.get('/', async (req, res) => {
         const requestedKind = typeof req.query.kind === 'string' ? req.query.kind.trim() : '';
         const kind = facets.some(facet => facet.id === requestedKind) ? requestedKind : '';
         const matched = kind ? docs.filter(doc => doc.kindId === kind) : docs;
-        const totalPages = Math.max(1, Math.ceil(matched.length / DOCS_PAGE_SIZE));
-        let page = Number.parseInt(req.query.page, 10);
-        if (!Number.isFinite(page) || page < 1) page = 1;
-        if (page > totalPages) page = totalPages;
-        const pageIds = new Set(matched.slice((page - 1) * DOCS_PAGE_SIZE, page * DOCS_PAGE_SIZE).map(doc => doc.id));
-        docs.forEach(doc => { doc.onPage = pageIds.has(doc.id); });
+        const pagination = paginateList(docs, matched, req.query,
+            '/commulingo/docs?' + (kind ? `kind=${encodeURIComponent(kind)}&` : '') + 'page=');
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-docs', {
             docs,
             facets,
             kind,
-            pageSize: DOCS_PAGE_SIZE,
-            pagination: {
-                current: page,
-                total: totalPages,
-                matched: matched.length,
-                baseUrl: '/commulingo/docs?' + (kind ? `kind=${encodeURIComponent(kind)}&` : '') + 'page=',
-            },
+            pagination,
             pageTitle: lang === 'en' ? 'Reference Library — CommuLingo' : '참고 문헌 — CommuLingo',
             pageDescription: lang === 'en'
                 ? 'Full-text reference documents behind the CommuLingo dictionaries.'

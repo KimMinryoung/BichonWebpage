@@ -1,4 +1,5 @@
 const express = require('express');
+const { paginateList } = require('../data/commulingo/list-pagination');
 const errorPage = require('../utils/error-page');
 const seo = require('../utils/seo');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
@@ -244,9 +245,11 @@ router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const events = (await loadCommuLingoHistoryEvents()).map(event => presentEvent(event, lang));
+        const pagination = paginateList(events, events, req.query, '/commulingo/events?page=');
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-events', {
             events,
+            pagination,
             pageTitle: lang === 'en' ? 'Historical Events — CommuLingo' : '역사 사건 — CommuLingo',
             pageDescription: lang === 'en' ? 'Events, institutions, and people in connected Soviet and revolutionary history.' : '혁명과 소련사의 사건·기관·인물을 연결해 읽는 페이지.',
             pagePath: '/commulingo/events',

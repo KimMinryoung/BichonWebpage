@@ -18,11 +18,12 @@
             resultMany: en ? 'events found' : '개의 사건',
             emptyLabel: en ? 'No historical events found' : '검색 결과가 없습니다'
         }) %>
-        <section class="commu-event-grid" id="commu-event-list" aria-label="<%= en ? 'Historical events' : '역사 사건 목록' %>">
+        <section class="commu-event-grid" id="commu-event-list" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
+            aria-label="<%= en ? 'Historical events' : '역사 사건 목록' %>">
             <% events.forEach(function(event) { %>
             <a class="commu-event-card" href="/commulingo/events/<%= event.id %>"
                 data-search="<%= [event.period, event.title, event.summary].filter(Boolean).join(' ') %>"
-                data-search-title="<%= event.title %>">
+                data-search-title="<%= event.title %>"<% if (!event.onPage) { %> hidden<% } %>>
                 <div class="commu-event-meta">
                     <span class="commu-event-period"><%= event.period %></span>
                 </div>
@@ -31,6 +32,7 @@
             </a>
             <% }) %>
         </section>
+        <%- include('../partials/commulingo-list-pager', { pagination: pagination, target: '#commu-event-list', en: en }) %>
     </main>
     <%- include('../partials/footer') %>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>

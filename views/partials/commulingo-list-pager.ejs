@@ -1,0 +1,18 @@
+<%
+// Page links under a CommuLingo list: the site's pagination partial (the one
+// under /ai-diary) inside a hook that commulingo-dict-search.js redraws over a
+// filtered list. Args: pagination (from data/commulingo/list-pagination.js),
+// target (the list's selector), en.
+%>
+<div data-commu-list-pager data-target="<%= target %>"
+    data-label-prev="<%= en ? 'Previous' : '이전' %>" data-label-next="<%= en ? 'Next' : '다음' %>"<% if (pagination.total < 2) { %> hidden<% } %>>
+    <% if (pagination.total > 1) { %>
+    <%- include('pagination', {
+        currentPage: pagination.current,
+        totalPages: pagination.total,
+        baseUrl: pagination.baseUrl,
+        prevLabel: en ? 'Previous' : '이전',
+        nextLabel: en ? 'Next' : '다음'
+    }) %>
+    <% } %>
+</div>
