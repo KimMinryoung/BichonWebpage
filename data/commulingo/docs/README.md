@@ -200,8 +200,17 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
      연도만 적힌 항목이 월일까지 적힌 항목보다 앞선다
    - `file` — fragment 파일명 (docs/ 안, 하위 경로 불가)
    - `docLang` — 본문 언어 (`ko`/`en`), `<html lang>`에 쓰임
-   - `title` / `description` / `kind` — `{ko, en}` 객체. `kind`는 목록 카드의
-     분류 라벨 (예: 번역 전문, 사료, 회고록)
+   - `title` / `description` / `kind` — `{ko, en}` 객체. `kind`는 목록의
+     분류 칩이자 카드 라벨이라 **아래 일곱 가지 중 하나를 그대로** 쓴다
+     (라벨이 조금만 달라도 칩이 하나 더 생긴다). 문서의 성격으로 가르지,
+     번역 여부로 가르지 않는다. 여러 문서를 묶은 문헌은 앞머리 문서를 따른다.
+     - `저작·연설` / `Writings & speeches` — 개인이 쓴 저작·논설·연설·보고, 개인들이 서명한 선언
+     - `헌법·법령·명령` / `Constitutions, laws & orders` — 헌법, 법령, 포고, 군령·지령, 규정
+     - `조약·협정` / `Treaties & agreements` — 조약, 협정, 휴전·항복 문서, 정상회담 의정서
+     - `정당·정부 문서` / `Party & government documents` — 당·정부 기관의 결정·결의·회의록·강령·각서
+     - `정보·수사 기록` / `Intelligence & investigation records` — 신문 조서·진술서, 정보 보고, 외교 전문
+     - `연구서` / `Scholarship` — 연구서·평전
+     - `소설` / `Fiction`
    - `source` — 원전 서지 정보 (문자열, 리더 콜로폰에 표시)
    - `people` / `terms` / `events` — 관련 인물·용어·역사 사건의 **id 배열**
      (`["yezhov"]`). id는 각각 `/commulingo/people/<id>`,

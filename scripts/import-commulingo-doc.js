@@ -13,7 +13,7 @@
  *   --id <slug>          URL slug / fragment filename (required)
  *   --title-ko / --title-en    Title (default: <title> tag or first <h1>)
  *   --desc-ko / --desc-en      Description shown on the index card
- *   --kind-ko / --kind-en      Category label (default: 전문 / Full text)
+ *   --kind-ko / --kind-en      Category label, one of docs/README.md's seven kinds (default: 저작·연설 / Writings & speeches)
  *   --source "<citation>"      Original-work citation for the colophon
  *   --lang <ko|en>             Body language (default: ko)
  *   --person <id=이름ko|NameEn>  Related person (repeatable)

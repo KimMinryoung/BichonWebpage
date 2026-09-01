@@ -119,7 +119,7 @@ function canonicalEntry(entry) {
         docLang: entry.docLang || 'ko',
         title: langPair(entry.title),
         description: langPair(entry.description),
-        kind: langPair(entry.kind, { ko: '전문', en: 'Full text' }),
+        kind: langPair(entry.kind, { ko: '저작·연설', en: 'Writings & speeches' }),
         source: typeof entry.source === 'string' ? entry.source : '',
     };
     if (Array.isArray(entry.tocExclude) && entry.tocExclude.length) out.tocExclude = entry.tocExclude.map(String);
