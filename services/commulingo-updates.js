@@ -40,9 +40,15 @@ function recentDocs(lang, limit) {
             summary: localize(doc.description, lang),
             href: TYPE_PATHS.doc + encodeURIComponent(doc.id),
             modified: Date.parse(`${doc.addedAt}T00:00:00Z`),
+            // 같은 날 여러 건이 들어오면 addedAt만으로는 동률이라 목록 순서
+            // (문헌 연대 오름차순)가 그대로 남아 가장 오래된 문헌이 계속
+            // 1등이 된다 — 2026-08-31에 21건이 들어왔을 때 1905년 재무 선언이
+            // 이틀째 메인에 붙어 있었다. 동률은 실제 발행 시각(파일 mtime 등
+            // modifiedAt)으로 가른다.
+            published: Date.parse(doc.modifiedAt || '') || 0,
         }))
         .filter(item => item.title && Number.isFinite(item.modified))
-        .sort((a, b) => b.modified - a.modified)
+        .sort((a, b) => (b.modified - a.modified) || (b.published - a.published))
         .slice(0, limit);
 }
 
