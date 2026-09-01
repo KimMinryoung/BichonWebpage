@@ -104,6 +104,7 @@ const NATION_SCRIPTS = {
     korea: ['hangul', 'han'],
     india: ['devanagari', 'bengali', 'latin'],
     israel: ['hebrew'],
+    afghanistan: ['arabic'],
     greece: ['greek'],
 };
 

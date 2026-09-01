@@ -93,6 +93,7 @@ const FLAG_NAMES = {
     korea: { ko: '조선', en: 'Korea' },
     martinique: { ko: '마르티니크', en: 'Martinique' },
     israel: { ko: '이스라엘', en: 'Israel' },
+    afghanistan: { ko: '아프가니스탄', en: 'Afghanistan' },
 };
 
 function hasFlag(code) {
