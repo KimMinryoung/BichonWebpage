@@ -96,7 +96,104 @@
         // fight over the same cards.
         var chipRoot = document.querySelector('[data-commu-dict-chips][data-target="' + target + '"]');
         var chips = chipRoot ? Array.prototype.slice.call(chipRoot.querySelectorAll('[data-category]')) : [];
+        // A chip the server rendered active (the reference library arrives
+        // pre-filtered from ?kind=…) is the starting state, not 'All'.
         var category = '';
+        chips.forEach(function(chip) {
+            if (chip.classList.contains('is-active')) category = chip.getAttribute('data-category') || '';
+        });
+
+        // ── Pages ─────────────────────────────────────────────────────────
+        // A list with data-page-size is cut into pages instead of streaming in
+        // chunks: the reference library reads as a catalogue, and a catalogue
+        // of ninety entries is shorter to browse as four pages than as one
+        // scroll. The server renders the first view (cards off the page carry
+        // `hidden`, the pager holds real links), and from here on the same
+        // pager is redrawn client-side over whatever the search and chips
+        // leave matched. The URL follows the kind and page so a reload or a
+        // shared link lands on the same view; a search query is not written
+        // into it.
+        var pageSize = parseInt(list.getAttribute('data-page-size'), 10) || 0;
+        var page = Math.max(1, parseInt(list.getAttribute('data-page'), 10) || 1);
+        var pager = pageSize
+            ? document.querySelector('[data-commu-list-pager][data-target="' + target + '"]')
+            : null;
+        var pagedAll = null, pagedItems = null, pagedRe = null;
+
+        function pageHref(n) {
+            var params = [];
+            if (category) params.push('kind=' + encodeURIComponent(category));
+            if (n > 1) params.push('page=' + n);
+            return window.location.pathname + (params.length ? '?' + params.join('&') : '');
+        }
+
+        function renderPager(total) {
+            if (!pager) return;
+            var labelPrev = pager.getAttribute('data-label-prev') || '';
+            var labelNext = pager.getAttribute('data-label-next') || '';
+            var labelPage = pager.getAttribute('data-label-page') || '';
+            var ko = document.documentElement.lang.indexOf('ko') === 0;
+            var html = '';
+            html += page > 1
+                ? '<a class="commu-list-pager-prev" href="' + pageHref(page - 1) + '" data-page="' + (page - 1) + '" rel="prev">← ' + labelPrev + '</a>'
+                : '<span class="commu-list-pager-prev is-disabled" aria-disabled="true">← ' + labelPrev + '</span>';
+            for (var n = 1; n <= total; n++) {
+                html += n === page
+                    ? '<span class="is-current" aria-current="page">' + n + '</span>'
+                    : '<a href="' + pageHref(n) + '" data-page="' + n + '" aria-label="' +
+                        (ko ? n + labelPage : labelPage + ' ' + n) + '">' + n + '</a>';
+            }
+            html += page < total
+                ? '<a class="commu-list-pager-next" href="' + pageHref(page + 1) + '" data-page="' + (page + 1) + '" rel="next">' + labelNext + ' →</a>'
+                : '<span class="commu-list-pager-next is-disabled" aria-disabled="true">' + labelNext + ' →</span>';
+            pager.innerHTML = html;
+            pager.hidden = total < 2;
+        }
+
+        function showPaged(all, items, re) {
+            pagedAll = all; pagedItems = items; pagedRe = re;
+            var total = Math.max(1, Math.ceil(items.length / pageSize));
+            if (page > total) page = total;
+            var start = (page - 1) * pageSize;
+            var slice = items.slice(start, start + pageSize);
+            slice.forEach(function(item) { item.__pageShow = true; });
+            all.forEach(function(item) {
+                var show = item.__pageShow === true;
+                if (item.hidden === show) item.hidden = !show;
+            });
+            slice.forEach(function(item) {
+                item.__pageShow = false;
+                if (re && item.hasAttribute('data-search')) {
+                    highlight(item, re);
+                    highlighted.push(item);
+                }
+            });
+            renderPager(total);
+            if (!input.value.trim() && window.history && window.history.replaceState) {
+                var href = pageHref(page);
+                if (href !== window.location.pathname + window.location.search) {
+                    window.history.replaceState(null, '', href);
+                }
+            }
+        }
+
+        if (pager) {
+            pager.addEventListener('click', function(event) {
+                var link = event.target.closest('a[data-page]');
+                if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
+                event.preventDefault();
+                page = parseInt(link.getAttribute('data-page'), 10) || 1;
+                highlighted.forEach(clearHighlights);
+                highlighted = [];
+                if (pagedAll) {
+                    showPaged(pagedAll, pagedItems, pagedRe);
+                } else {
+                    var all = browseItems();
+                    showPaged(all, all, null);
+                }
+                list.scrollIntoView({ block: 'start' });
+            });
+        }
 
         // ── Title-first ranking ───────────────────────────────────────────
         // A reader who types a document's title expects that document on top,
@@ -176,6 +273,7 @@
         // building back up cost more than the reveal saved on a category chip,
         // where most of the list was hidden already.
         function showChunked(all, items, re) {
+            if (pageSize) return showPaged(all, items, re);
             retire();
             activeRe = re;
             var first = items.slice(0, CHUNK);
@@ -214,6 +312,7 @@
         }
 
         function apply() {
+            page = 1;
             var terms = input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
             var searching = terms.length > 0;
             var categorized = category !== '';
@@ -330,7 +429,13 @@
             input.focus();
         });
         chips.forEach(function(chip) {
-            chip.addEventListener('click', function() {
+            chip.addEventListener('click', function(event) {
+                // Chips that are links (the reference library's script-less
+                // fallback) filter in place like the buttons do.
+                if (chip.tagName === 'A') {
+                    if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+                    event.preventDefault();
+                }
                 var next = chip.getAttribute('data-category') || '';
                 // Clicking the active chip clears the filter, same as 'All'.
                 category = category === next ? '' : next;
@@ -351,8 +456,10 @@
             // browsing view starts chunked here too. Below one chunk this
             // reveals everything at once and changes nothing, which is why it is
             // safe to leave on for the small lists as they are today.
+            // A paged list arrives already cut by the server; redrawing it
+            // here would only repeat what is on screen.
             var initial = browseItems();
-            if (initial.length > CHUNK) showChunked(initial, initial, null);
+            if (!pageSize && initial.length > CHUNK) showChunked(initial, initial, null);
         }
     }
 

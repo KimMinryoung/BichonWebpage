@@ -18,11 +18,27 @@
             resultMany: en ? 'documents found' : '개의 문헌',
             emptyLabel: en ? 'No reference documents found' : '검색 결과가 없습니다'
         }) %>
-        <section class="commu-event-grid" id="commu-doc-list" aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
+        <%
+        // Kind chips and the pager are links so the list works without script;
+        // commulingo-dict-search.js takes them over (data-page-size turns its
+        // chunked reveal into pages) and rewrites the URL as the reader moves.
+        %>
+        <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-doc-list"
+            role="group" aria-label="<%= en ? 'Filter by kind' : '분류로 걸러보기' %>">
+            <a class="commu-dict-chip<%= kind ? '' : ' is-active' %>" href="<%= pagination.href(1).replace(/\?.*$/, '') %>"
+                data-category="" aria-pressed="<%= kind ? 'false' : 'true' %>"><%= en ? 'All' : '전체' %> <span><%= docs.length %></span></a>
+            <% facets.forEach(function(facet) { %>
+            <a class="commu-dict-chip<%= facet.id === kind ? ' is-active' : '' %>" href="/commulingo/docs?kind=<%= encodeURIComponent(facet.id) %>"
+                data-category="<%= facet.id %>" aria-pressed="<%= facet.id === kind ? 'true' : 'false' %>"><%= facet.label %> <span><%= facet.count %></span></a>
+            <% }) %>
+        </div>
+        <section class="commu-event-grid" id="commu-doc-list" data-page-size="<%= pageSize %>" data-page="<%= pagination.current %>"
+            aria-label="<%= en ? 'Reference documents' : '참고 문헌 목록' %>">
             <% docs.forEach(function(doc) { %>
             <a class="commu-event-card" href="/commulingo/docs/<%= doc.id %>"
                 data-search="<%= doc.searchText %>"
-                data-search-title="<%= doc.searchTitleText %>">
+                data-search-title="<%= doc.searchTitleText %>"
+                data-category="<%= doc.kindId %>"<% if (!doc.onPage) { %> hidden<% } %>>
                 <span class="commu-event-period"><%= doc.kind %></span>
                 <h2><%= doc.title %></h2>
                 <p><%= doc.description %></p>
@@ -30,6 +46,24 @@
             </a>
             <% }) %>
         </section>
+        <nav class="commu-list-pager" data-commu-list-pager data-target="#commu-doc-list"
+            data-label-prev="<%= en ? 'Previous' : '이전' %>" data-label-next="<%= en ? 'Next' : '다음' %>"
+            data-label-page="<%= en ? 'Page' : '쪽' %>"
+            aria-label="<%= en ? 'Pages' : '페이지 이동' %>"<% if (pagination.total < 2) { %> hidden<% } %>>
+            <% if (pagination.current > 1) { %>
+            <a class="commu-list-pager-prev" href="<%= pagination.href(pagination.current - 1) %>" data-page="<%= pagination.current - 1 %>" rel="prev">← <%= en ? 'Previous' : '이전' %></a>
+            <% } else { %><span class="commu-list-pager-prev is-disabled" aria-disabled="true">← <%= en ? 'Previous' : '이전' %></span><% } %>
+            <% for (var n = 1; n <= pagination.total; n++) { %>
+            <% if (n === pagination.current) { %>
+            <span class="is-current" aria-current="page"><%= n %></span>
+            <% } else { %>
+            <a href="<%= pagination.href(n) %>" data-page="<%= n %>" aria-label="<%= en ? 'Page ' + n : n + '쪽' %>"><%= n %></a>
+            <% } %>
+            <% } %>
+            <% if (pagination.current < pagination.total) { %>
+            <a class="commu-list-pager-next" href="<%= pagination.href(pagination.current + 1) %>" data-page="<%= pagination.current + 1 %>" rel="next"><%= en ? 'Next' : '다음' %> →</a>
+            <% } else { %><span class="commu-list-pager-next is-disabled" aria-disabled="true"><%= en ? 'Next' : '다음' %> →</span><% } %>
+        </nav>
     </main>
     <%- include('../partials/footer') %>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
