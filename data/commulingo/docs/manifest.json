@@ -4086,6 +4086,56 @@
           "DDR-Verfassung 1949"
         ]
       }
+    },
+    {
+      "id": "italy-surrender-instruments-1943-1945",
+      "file": "italy-surrender-instruments-1943-1945.html",
+      "docLang": "ko",
+      "date": "1943-09-03",
+      "title": {
+        "ko": "이탈리아 항복 문서 세 건 (1943~1945)",
+        "en": "Three Italian Surrender Instruments (1943–1945)"
+      },
+      "description": {
+        "ko": "1943년 9월 3일 카시빌레에서 서명된 12개조의 「짧은 휴전」, 9월 29일 몰타 앞바다 넬슨함에서 바돌리오와 아이젠하워가 서명한 44개조의 항복 문서(「긴 휴전」), 그리고 1945년 4월 29일 카세르타에서 독일군 남서부 총사령관의 대리인이 서명한 지역 항복 문서와 육·해·공 부록. 이탈리아의 전쟁 이탈에서 이탈리아 전선의 종전까지를 잇는 세 문서의 영어 정본을 옮겼다.",
+        "en": "The twelve-article 'short armistice' signed at Cassibile on 3 September 1943, the forty-four-article Instrument of Surrender (the 'long armistice') signed by Badoglio and Eisenhower aboard HMS Nelson off Malta on 29 September, and the Instrument of Local Surrender signed at Caserta on 29 April 1945 by the plenipotentiaries of the German Commander-in-Chief Southwest, with its land, naval and air appendices. The authentic English texts of the three documents that run from Italy's exit from the war to the end of the Italian campaign."
+      },
+      "kind": {
+        "ko": "사료 번역",
+        "en": "Primary source"
+      },
+      "source": "Armistice with Italy, September 3, 1943 (61 Stat. 2740); Instrument of Surrender of Italy, September 29, 1943 (61 Stat. 2742; TIAS 1604); Instrument of Local Surrender of German and Other Forces under the Command or Control of the German Commander-in-Chief Southwest, Caserta, April 29, 1945 // Avalon Project, Yale Law School",
+      "people": [
+        "pietro-badoglio",
+        "dwight-d-eisenhower",
+        "giuseppe-castellano",
+        "karl-wolff",
+        "heinrich-von-vietinghoff",
+        "benito-mussolini"
+      ],
+      "terms": [
+        "italian-armistice"
+      ],
+      "events": [
+        "italian-campaign"
+      ],
+      "addedAt": "2026-09-01",
+      "aliases": {
+        "ko": [
+          "카시빌레 휴전협정",
+          "이탈리아 휴전 (1943)",
+          "긴 휴전",
+          "짧은 휴전",
+          "카세르타 항복문서"
+        ],
+        "en": [
+          "Armistice of Cassibile",
+          "Long Armistice",
+          "Short Armistice",
+          "Surrender of Caserta",
+          "Instrument of Surrender of Italy"
+        ]
+      }
     }
   ]
 }
