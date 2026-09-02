@@ -11,7 +11,11 @@ const DOCS_DIR = path.join(__dirname, 'docs');
 const MANIFEST_PATH = path.join(DOCS_DIR, 'manifest.json');
 
 let manifestCache = { mtimeMs: 0, docs: [] };
-const bodyCache = new Map(); // file -> { mtimeMs, html, toc }
+const bodyCache = new Map(); // file -> { mtimeMs, checkedAt, html, toc, paged }; insertion order = recency
+// The largest fragments run to 1.4 MB and the paged copy doubles that, so the
+// body cache keeps the most recently read documents rather than all of them.
+const BODY_CACHE_MAX = 40;
+const BODY_FRESHNESS_MS = 500;
 
 // Harvest h1/h2 headings for the reader's table of contents, assigning
 // sequential ids to headings that lack one (existing ids are kept). The first
@@ -215,12 +219,22 @@ function paginateBody(html) {
 }
 
 function getCommuLingoDocContent(doc) {
+    const cached = bodyCache.get(doc.file);
+    const now = Date.now();
+    if (cached && now - cached.checkedAt < BODY_FRESHNESS_MS) return cached;
     const filePath = path.join(DOCS_DIR, doc.file);
     const stat = fs.statSync(filePath);
-    const cached = bodyCache.get(doc.file);
-    if (cached && cached.mtimeMs === stat.mtimeMs) return cached;
+    if (cached && cached.mtimeMs === stat.mtimeMs) {
+        cached.checkedAt = now;
+        // Re-insert so the Map's order tracks recency for the eviction below.
+        bodyCache.delete(doc.file);
+        bodyCache.set(doc.file, cached);
+        return cached;
+    }
     const { html, toc } = annotateHeadings(fs.readFileSync(filePath, 'utf8'), doc.tocExclude);
-    const entry = { mtimeMs: stat.mtimeMs, html, toc, paged: paginateBody(html) };
+    const entry = { mtimeMs: stat.mtimeMs, checkedAt: now, html, toc, paged: paginateBody(html) };
+    bodyCache.delete(doc.file);
+    while (bodyCache.size >= BODY_CACHE_MAX) bodyCache.delete(bodyCache.keys().next().value);
     bodyCache.set(doc.file, entry);
     return entry;
 }

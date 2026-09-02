@@ -36,9 +36,14 @@ function relatedDocsFor(kind, id, lang) {
     }
 }
 
-// One resolver per request, shared by every document it presents: the label maps
-// are built once instead of per document, and the people map is the memoized one
-// the linker and the person pages already share.
+// One resolver per (standardized people, terms, events) generation, shared by
+// every document it presents. The label maps cover 2,000+ people and 1,000
+// terms, so they are built once per data refresh per language — not per
+// request, where the docs index and every document page used to rebuild
+// them to resolve a handful of refs. The resolver's identity doubles as the
+// memo key for the presented docs list in routes/commulingo-docs.js.
+const resolverMemo = new WeakMap(); // standardized -> { termsRef, eventsRef, resolver }
+
 async function createDocRefResolver(lang) {
     const catalog = loadCommuLingoCatalog();
     const [terms, events, loaded] = await Promise.all([
@@ -47,6 +52,8 @@ async function createDocRefResolver(lang) {
         loadCommuLingoPeople(),
     ]);
     const { standardized } = standardizedFor(loaded.data, catalog, lang);
+    const cached = resolverMemo.get(standardized);
+    if (cached && cached.termsRef === terms && cached.eventsRef === events) return cached.resolver;
 
     const labels = { people: new Map(), terms: new Map(), events: new Map() };
     (terms || []).forEach(term => labels.terms.set(term.id, localize(term.term, lang)));
@@ -59,7 +66,7 @@ async function createDocRefResolver(lang) {
         labels.people.set(person.id, names.short || person.displayName || localize(person.name, lang));
     });
 
-    return function resolveDocRefs(doc) {
+    const resolver = function resolveDocRefs(doc) {
         const out = {};
         KINDS.forEach(kind => {
             out[kind] = (doc[kind] || []).map(ref => {
@@ -80,6 +87,8 @@ async function createDocRefResolver(lang) {
         });
         return out;
     };
+    resolverMemo.set(standardized, { termsRef: terms, eventsRef: events, resolver });
+    return resolver;
 }
 
 module.exports = { createDocRefResolver, relatedDocsFor };

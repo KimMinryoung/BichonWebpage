@@ -163,15 +163,37 @@ function kindFacets(docs, lang) {
     return [...facets.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 }
 
+// The presented list and its facets are a pure function of the manifest, the
+// language, and the ref resolver (itself memoized per dictionary generation),
+// so they render once per data refresh per language. paginateList stamps
+// onPage on each item, so a request gets shallow copies of the shared records.
+const docListMemo = new WeakMap(); // manifest docs -> Map(lang -> { resolverRef, docs, facets })
+
+function presentedDocList(manifest, lang, resolveDocRefs) {
+    let byLang = docListMemo.get(manifest);
+    if (!byLang) {
+        byLang = new Map();
+        docListMemo.set(manifest, byLang);
+    }
+    let entry = byLang.get(lang);
+    if (!entry || entry.resolverRef !== resolveDocRefs) {
+        const docs = manifest.map(doc => ({
+            ...presentDoc(doc, lang, resolveDocRefs),
+            kindId: kindId(doc),
+        }));
+        entry = { resolverRef: resolveDocRefs, docs, facets: kindFacets(docs, lang) };
+        byLang.set(lang, entry);
+    }
+    return entry;
+}
+
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const resolveDocRefs = await createDocRefResolver(lang);
-        const docs = listCommuLingoDocs().map(doc => ({
-            ...presentDoc(doc, lang, resolveDocRefs),
-            kindId: kindId(doc),
-        }));
-        const facets = kindFacets(docs, lang);
+        const presented = presentedDocList(listCommuLingoDocs(), lang, resolveDocRefs);
+        const docs = presented.docs.map(doc => ({ ...doc }));
+        const facets = presented.facets;
         const requestedKind = typeof req.query.kind === 'string' ? req.query.kind.trim() : '';
         const kind = facets.some(facet => facet.id === requestedKind) ? requestedKind : '';
         const matched = kind ? docs.filter(doc => doc.kindId === kind) : docs;

@@ -10,9 +10,15 @@ const { localize } = require('./localize');
 const FILE = path.join(__dirname, 'politburo.json');
 
 let cache = null; // { mtimeMs, data }
+// Every person page calls this; re-stat at most twice a second (same
+// debounce as the docs manifest) while keeping the mtime live-reload.
+const FRESHNESS_MS = 500;
+let checkedAt = 0;
 
 function loadPolitburo() {
+    if (cache && Date.now() - checkedAt < FRESHNESS_MS) return cache.data;
     const stat = fs.statSync(FILE);
+    checkedAt = Date.now();
     if (!cache || cache.mtimeMs !== stat.mtimeMs) {
         cache = { mtimeMs: stat.mtimeMs, data: JSON.parse(fs.readFileSync(FILE, 'utf8')) };
     }

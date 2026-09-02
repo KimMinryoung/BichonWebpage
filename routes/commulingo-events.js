@@ -241,10 +241,29 @@ async function buildEventPanel(eventId, lang) {
     };
 }
 
+// The list page's presented events are a pure function of the snapshot and
+// the language (the detail page has eventPanelMemo for the same reason).
+// paginateList stamps onPage on each item, so a request gets shallow copies.
+const eventListMemo = new WeakMap(); // events snapshot -> Map(lang -> presented[])
+
+function presentedEventList(raw, lang) {
+    let byLang = eventListMemo.get(raw);
+    if (!byLang) {
+        byLang = new Map();
+        eventListMemo.set(raw, byLang);
+    }
+    let presented = byLang.get(lang);
+    if (!presented) {
+        presented = raw.map(event => presentEvent(event, lang));
+        byLang.set(lang, presented);
+    }
+    return presented;
+}
+
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
-        const events = (await loadCommuLingoHistoryEvents()).map(event => presentEvent(event, lang));
+        const events = presentedEventList(await loadCommuLingoHistoryEvents(), lang).map(event => ({ ...event }));
         const pagination = paginateList(events, events, req.query, '/commulingo/events?page=');
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-events', {

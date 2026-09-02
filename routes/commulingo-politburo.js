@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('../config/database');
 const { loadPolitburo, spanParts, endText } = require('../data/commulingo/politburo-store');
+const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
 const { localize } = require('../data/commulingo/localize');
 
 const router = express.Router();
@@ -61,67 +62,92 @@ function personCell(key, member, names, lang) {
     return { name: inline ? localize(inline, lang) : key, href: '' };
 }
 
+// The roster tables are a pure function of the dataset, the people names,
+// and the language; the names come from the people table and are re-read
+// only when the people snapshot changes. Both used to be rebuilt (one DB
+// query + a full transform of the 96 KB dataset) on every request.
+const rosterMemo = new WeakMap(); // politburo data -> { peopleRef, names, byLang: Map(lang -> { eras, congresses }) }
+
+async function rosterFor(data, lang) {
+    const loaded = await loadCommuLingoPeople();
+    let memo = rosterMemo.get(data);
+    if (!memo || memo.peopleRef !== loaded.data) {
+        memo = { peopleRef: loaded.data, names: await personNames(data), byLang: new Map() };
+        rosterMemo.set(data, memo);
+    }
+    let roster = memo.byLang.get(lang);
+    if (!roster) {
+        roster = buildRoster(data, memo.names, lang);
+        memo.byLang.set(lang, roster);
+    }
+    return roster;
+}
+
+function buildRoster(data, names, lang) {
+    const en = lang === 'en';
+    const eras = data.eras.map(era => ({
+        id: era.id,
+        title: localize(era.title, lang),
+        period: era.period,
+        intro: localize(era.intro, lang),
+        rows: era.list.map(key => {
+            const member = data.members[key];
+            const noteParts = [];
+            if (member.end) noteParts.push(endText(member.end, lang));
+            if (member.note) noteParts.push(localize(member.note, lang));
+            return {
+                ...personCell(key, member, names, lang),
+                tenureParts: spanParts(member.spans, lang),
+                note: noteParts.join(' · '),
+            };
+        }),
+    }));
+
+    // The header count is the roster as elected at the congress, not the
+    // table's row count: a by-elected or mid-term-promoted member joins
+    // the table but never sat in the elected composition, and someone
+    // demoted mid-term (dated) had left it. At-congress events (elected,
+    // re-elected, promoted or demoted at the congress itself) carry no
+    // date or are the default.
+    const electedAtCongress = m => !m.in
+        || ['new', 're', 'fromCand'].includes(m.in.t)
+        || (m.in.t === 'demoted' && !m.in.d);
+
+    const congresses = data.congresses.map(congress => {
+        const buckets = {};
+        const elected = {};
+        for (const bucket of ['full', 'candidates']) {
+            elected[bucket] = congress.members[bucket].filter(electedAtCongress).length;
+            buckets[bucket] = congress.members[bucket].map(m => {
+                const key = m.p || '';
+                const member = key && data.members[key];
+                return {
+                    ...personCell(key, member || m, names, lang),
+                    in: m.in ? dated(IN_KINDS, m.in, lang) : localize(IN_KINDS.re, lang),
+                    out: m.out ? dated(OUT_KINDS, m.out, lang) : '',
+                };
+            }).sort((a, b) => a.name.localeCompare(b.name, en ? 'en' : 'ko'));
+        }
+        return {
+            n: congress.n,
+            title: localize(congress.label, lang),
+            date: congress.date,
+            note: congress.note ? localize(congress.note, lang) : '',
+            full: buckets.full,
+            candidates: buckets.candidates,
+            electedFull: elected.full,
+            electedCandidates: elected.candidates,
+        };
+    });
+    return { eras, congresses };
+}
+
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const en = lang === 'en';
         const data = loadPolitburo();
-        const names = await personNames(data);
-
-        const eras = data.eras.map(era => ({
-            id: era.id,
-            title: localize(era.title, lang),
-            period: era.period,
-            intro: localize(era.intro, lang),
-            rows: era.list.map(key => {
-                const member = data.members[key];
-                const noteParts = [];
-                if (member.end) noteParts.push(endText(member.end, lang));
-                if (member.note) noteParts.push(localize(member.note, lang));
-                return {
-                    ...personCell(key, member, names, lang),
-                    tenureParts: spanParts(member.spans, lang),
-                    note: noteParts.join(' · '),
-                };
-            }),
-        }));
-
-        // The header count is the roster as elected at the congress, not the
-        // table's row count: a by-elected or mid-term-promoted member joins
-        // the table but never sat in the elected composition, and someone
-        // demoted mid-term (dated) had left it. At-congress events (elected,
-        // re-elected, promoted or demoted at the congress itself) carry no
-        // date or are the default.
-        const electedAtCongress = m => !m.in
-            || ['new', 're', 'fromCand'].includes(m.in.t)
-            || (m.in.t === 'demoted' && !m.in.d);
-
-        const congresses = data.congresses.map(congress => {
-            const buckets = {};
-            const elected = {};
-            for (const bucket of ['full', 'candidates']) {
-                elected[bucket] = congress.members[bucket].filter(electedAtCongress).length;
-                buckets[bucket] = congress.members[bucket].map(m => {
-                    const key = m.p || '';
-                    const member = key && data.members[key];
-                    return {
-                        ...personCell(key, member || m, names, lang),
-                        in: m.in ? dated(IN_KINDS, m.in, lang) : localize(IN_KINDS.re, lang),
-                        out: m.out ? dated(OUT_KINDS, m.out, lang) : '',
-                    };
-                }).sort((a, b) => a.name.localeCompare(b.name, en ? 'en' : 'ko'));
-            }
-            return {
-                n: congress.n,
-                title: localize(congress.label, lang),
-                date: congress.date,
-                note: congress.note ? localize(congress.note, lang) : '',
-                full: buckets.full,
-                candidates: buckets.candidates,
-                electedFull: elected.full,
-                electedCandidates: elected.candidates,
-            };
-        });
+        const { eras, congresses } = await rosterFor(data, lang);
 
         res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
         res.render('public/commulingo-politburo', {
