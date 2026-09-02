@@ -6,15 +6,19 @@ const {
     createPersonAdmin,
     updatePersonAdmin,
     deletePersonAdmin,
+} = require('../data/commulingo/people-admin-store');
+const {
     listOfficesAdmin,
     getOfficeAdmin,
     createOfficeRowAdmin,
     updateOfficeRowAdmin,
     deleteOfficeRowAdmin,
+} = require('../data/commulingo/people-offices-store');
+const {
     listPersonSectionsAdmin,
     upsertPersonSectionAdmin,
     deletePersonSectionAdmin,
-} = require('../data/commulingo/people-admin-store');
+} = require('../data/commulingo/people-sections-store');
 const { importDoc, updateDocMeta, removeDoc } = require('../data/commulingo/docs-import');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
