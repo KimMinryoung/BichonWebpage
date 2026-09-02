@@ -13,6 +13,10 @@ function langSuffix(lang) {
     return lang === 'en' ? ':en' : ':ko';
 }
 
+// Entity payloads carry a long TTL so Redis's volatile-lru can evict them
+// under memory pressure; edits still invalidate them explicitly.
+const ENTRY_TTL = 30 * 24 * 60 * 60;
+
 function createEntryCache({ prefix, indexTtl, label }) {
     function setJson(key, value, ttl, what) {
         return setJsonShared(key, value, ttl, `${label} ${what}`);
@@ -45,7 +49,7 @@ function createEntryCache({ prefix, indexTtl, label }) {
 
     return {
         getEntry: (id, lang = 'ko') => getJson(`${prefix}:${id}${langSuffix(lang)}`),
-        setEntry: (entry, lang = 'ko') => setJson(`${prefix}:${entry.id}${langSuffix(lang)}`, entry, null, 'entry'),
+        setEntry: (entry, lang = 'ko') => setJson(`${prefix}:${entry.id}${langSuffix(lang)}`, entry, ENTRY_TTL, 'entry'),
         deleteEntry,
         // Index pages are cached under separate keys so concurrent misses
         // on different pages can't overwrite each other's entries.

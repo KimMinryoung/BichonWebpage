@@ -13,6 +13,9 @@ const { getJson, setJson } = require('./redis-json');
 // cache only needs to absorb burst traffic — keep the TTL short so new
 // entries appear quickly.
 const LIST_TTL = 60;
+// Entity payloads used to live forever; a long TTL makes them evictable
+// under Redis's volatile-lru so the cache cannot outgrow maxmemory.
+const ENTRY_TTL = 30 * 24 * 60 * 60;
 
 function safeName(filename) {
     return String(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
@@ -25,12 +28,12 @@ function safeLang(lang) {
 module.exports = {
     // ── Report cache (permanent) ──
     getReport: id => getJson(`report:${id}`),
-    setReport: report => setJson(`report:${report.id}`, report, null, 'report-cache'),
+    setReport: report => setJson(`report:${report.id}`, report, ENTRY_TTL, 'report-cache'),
 
     // ── Research cache (permanent) ──
     getResearch: (filename, lang = 'ko') => getJson(`research:v4:${safeName(filename)}:${safeLang(lang)}`),
     setResearch: (filename, data, lang = 'ko') =>
-        setJson(`research:v4:${safeName(filename)}:${safeLang(lang)}`, data, null, 'report-cache research'),
+        setJson(`research:v4:${safeName(filename)}:${safeLang(lang)}`, data, ENTRY_TTL, 'report-cache research'),
 
     // ── List caches (TTL-based) ──
     getList: page => getJson(`report:list:${page}`),
