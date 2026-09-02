@@ -9,9 +9,11 @@
 // An empty fetch result throws (a truncated table must not blank the site).
 //
 // createRegistrySnapshotStore — term-categories / link-blocklist. Same
-// memory → disk snapshot → DB serving order, but the snapshot stores the raw
-// rows, and an empty result silently keeps the current copy instead of
-// throwing (an empty registry is a plausible-but-wrong state, not an outage).
+// memory → disk snapshot → DB serving order and the same sha1 reference
+// stability (the installed object is what linkify keys its memos on), but
+// the snapshot stores the raw rows, and an empty result silently keeps the
+// current copy instead of throwing (an empty registry is a
+// plausible-but-wrong state, not an outage).
 //
 // Before this factory the five stores carried five copies of this file's
 // logic, identical modulo log labels and fetch functions.
@@ -165,11 +167,19 @@ function createRegistrySnapshotStore({
     let memory = null;
     let pendingRefresh = null;
     let timerStarted = false;
+    let lastSnapshotHash = null; // sha1 of the last serialized rows
 
     function readSnapshotFile() {
         try {
-            const rows = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));
-            if (validateSnapshot(rows)) return rows;
+            const raw = fs.readFileSync(snapshotPath, 'utf8');
+            const rows = JSON.parse(raw);
+            if (validateSnapshot(rows)) {
+                // Seed the change detector (same reason as the dictionary
+                // variant): the first refresh after a cold start must not
+                // mint a new object for identical rows.
+                lastSnapshotHash = crypto.createHash('sha1').update(raw).digest('hex');
+                return rows;
+            }
         } catch (err) {
             if (err.code !== 'ENOENT') {
                 console.error(`[${label}] snapshot read failed:`, err.message);
@@ -186,7 +196,16 @@ function createRegistrySnapshotStore({
                 // protects (blank chips / re-enabled false links); keep the
                 // copy we have instead.
                 if (!rows.length) return memory || (memory = install([]));
-                writeSnapshotFile(snapshotPath, label, JSON.stringify(rows));
+                // Reference stability is load-bearing here too: linkify keys
+                // its index memos on the installed object (blocklistRef /
+                // termCategoriesRef), so installing a new object for identical
+                // rows would rebuild every link index and discard every render
+                // memo hanging off it — once a minute, forever.
+                const serialized = JSON.stringify(rows);
+                const hash = crypto.createHash('sha1').update(serialized).digest('hex');
+                if (memory && hash === lastSnapshotHash) return memory;
+                lastSnapshotHash = hash;
+                writeSnapshotFile(snapshotPath, label, serialized);
                 memory = install(rows);
                 return memory;
             })
@@ -224,7 +243,7 @@ function createRegistrySnapshotStore({
         load,
         refresh,
         getMemory: () => memory,
-        setMemory: value => { memory = value; return memory; },
+        setMemory: value => { memory = value; lastSnapshotHash = null; return memory; },
         snapshotPath,
     };
 }

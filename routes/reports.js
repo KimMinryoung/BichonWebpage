@@ -120,7 +120,12 @@ async function getPrivateReport(slug) {
 // request on a 30KB report and are a pure function of (document, link
 // indexes, known slugs), so the result is memoized until the document is
 // updated, the dictionaries refresh, or the published-slug set changes size.
-const researchRenderMemo = new Map(); // `${filename}:${lang}` -> { updatedAt, indexesRef, slugCount, body }
+// Keyed on the link-index object (like personBodyMemo) so a rotated index set
+// releases its whole generation of rendered bodies. A plain Map holding an
+// indexesRef per report pinned old generations — each with its standardized
+// people and every memo tree hung off it — until that report was next hit.
+const NO_INDEXES = {}; // WeakMap key for renders done without link indexes
+const researchRenderMemo = new WeakMap(); // indexes -> Map(`${filename}:${lang}` -> { updatedAt, slugCount, body })
 const RESEARCH_RENDER_MEMO_MAX = 500;
 
 async function renderResearch(res, { filename, slug, pagePath, data, seriesNav = null }) {
@@ -133,9 +138,13 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
     const memoKey = `${filename}:${lang}`;
     const updatedAt = String(data.updated_at || data.published_at || '');
     const slugCount = knownSlugs ? knownSlugs.size : -1;
-    let rendered = researchRenderMemo.get(memoKey);
-    if (!rendered || rendered.updatedAt !== updatedAt || rendered.indexesRef !== indexes
-        || rendered.slugCount !== slugCount) {
+    let generation = researchRenderMemo.get(indexes || NO_INDEXES);
+    if (!generation) {
+        generation = new Map();
+        researchRenderMemo.set(indexes || NO_INDEXES, generation);
+    }
+    let rendered = generation.get(memoKey);
+    if (!rendered || rendered.updatedAt !== updatedAt || rendered.slugCount !== slugCount) {
         const descriptionSource = markdown || data.summary || data.excerpt || data.html_body || data.htmlBody || '';
         // Cross-link CommuLingo entities: first occurrence of each known person /
         // history-event name becomes a dictionary link, and the found entities feed
@@ -152,7 +161,6 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
         }
         rendered = {
             updatedAt,
-            indexesRef: indexes,
             slugCount,
             body: {
                 htmlBody,
@@ -164,8 +172,8 @@ async function renderResearch(res, { filename, slug, pagePath, data, seriesNav =
                 relatedDocs: linked.docs,
             },
         };
-        if (researchRenderMemo.size >= RESEARCH_RENDER_MEMO_MAX) researchRenderMemo.clear();
-        researchRenderMemo.set(memoKey, rendered);
+        if (generation.size >= RESEARCH_RENDER_MEMO_MAX) generation.clear();
+        generation.set(memoKey, rendered);
     }
     const { htmlBody, pageDescription, relatedPeople, relatedEvents, relatedTopics, relatedTerms, relatedDocs } = rendered.body;
     const hasEnglishVersion = Boolean(data.has_translation || (data.available_languages || []).includes('en'));

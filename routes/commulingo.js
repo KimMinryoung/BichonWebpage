@@ -782,15 +782,22 @@ router.get('/catalog.json', (req, res) => {
 // Memoized per-book page data: the decision-history payload, the linked
 // chapter prose, and the dictionary chips. Keyed by the collection and
 // link-index references, which stay stable until the catalog or one of the
-// dictionaries actually changes.
-const bookPageMemo = new Map(); // `${collectionId}:${lang}` -> { collectionRef, indexesRef, ... }
+// dictionaries actually changes. The index object is the WeakMap key (as in
+// personBodyMemo) so a rotated index set drops its generation instead of the
+// entry pinning it until that book is next opened.
+const bookPageMemo = new WeakMap(); // indexes -> Map(`${collectionId}:${lang}` -> { collectionRef, ... })
 
 async function bookPageData(collection, langRaw) {
     const lang = langRaw === 'en' ? 'en' : 'ko';
     const indexes = await getLinkIndexes(lang);
     const key = `${collection.id}:${lang}`;
-    const cached = bookPageMemo.get(key);
-    if (cached && cached.collectionRef === collection && cached.indexesRef === indexes) return cached;
+    let generation = bookPageMemo.get(indexes);
+    if (!generation) {
+        generation = new Map();
+        bookPageMemo.set(indexes, generation);
+    }
+    const cached = generation.get(key);
+    if (cached && cached.collectionRef === collection) return cached;
 
     // The decision-history book renders its episodes in the browser, so the
     // person index goes with the payload instead of a linker: the aliases are
@@ -814,8 +821,8 @@ async function bookPageData(collection, langRaw) {
     };
     const dictionaryEntries = await bookDictionaryEntries(collection, lang);
 
-    const entry = { collectionRef: collection, indexesRef: indexes, linked, dictionaryEntries, decisionLinks };
-    bookPageMemo.set(key, entry);
+    const entry = { collectionRef: collection, linked, dictionaryEntries, decisionLinks };
+    generation.set(key, entry);
     return entry;
 }
 
@@ -948,22 +955,29 @@ async function linkifyLessonPayload(lesson) {
 // of every brief/map/explanation), memoized until the shards version or the
 // link indexes change. A linkify failure is served plain and left uncached so
 // the next request retries.
-const lessonPayloadMemo = new Map(); // lessonId -> { version, indexesRef, payload }
+// Keyed on the index object so a rotated index set releases the generation
+// (a plain Map with indexesRef pinned it until each lesson was next requested).
+const lessonPayloadMemo = new WeakMap(); // indexes -> Map(lessonId -> { version, payload })
 
 router.get('/lesson/:lessonId', async (req, res) => {
     const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
     const version = currentVersion();
     const indexes = await getLinkIndexes('ko'); // both langs invalidate together
-    const cached = lessonPayloadMemo.get(lessonId);
+    let generation = lessonPayloadMemo.get(indexes);
+    if (!generation) {
+        generation = new Map();
+        lessonPayloadMemo.set(indexes, generation);
+    }
+    const cached = generation.get(lessonId);
     let payload;
-    if (cached && cached.version === version && cached.indexesRef === indexes) {
+    if (cached && cached.version === version) {
         payload = cached.payload;
     } else {
         payload = loadCommuLingoLesson(lessonId);
         if (!payload) return res.status(404).json({ error: 'lesson not found' });
         try {
             await linkifyLessonPayload(payload.lesson);
-            lessonPayloadMemo.set(lessonId, { version, indexesRef: indexes, payload });
+            generation.set(lessonId, { version, payload });
         } catch (err) {
             // Losing the links costs a hyperlink; losing the payload costs the
             // quiz. Serve it plain.
