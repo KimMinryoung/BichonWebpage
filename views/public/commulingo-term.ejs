@@ -8,7 +8,7 @@
     <main class="container commulingo-shell commu-event-page commu-term-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: en ? 'Glossary' : '용어 사전', href: '/commulingo/terms', pair: paired },
+                { label: strings.commuLingoViews.term.glossary, href: '/commulingo/terms', pair: paired },
                 { label: term.term, pair: paired },
             ],
             attached: paired,
@@ -31,7 +31,7 @@
             <%- include('../partials/commulingo-event-panel', { en: en, p: eventPanel }) %>
         </div>
         <% } %>
-        <a class="commu-person-detail-back" data-pair-back href="/commulingo/terms">← <%= en ? 'Glossary' : '용어 사전' %></a>
+        <a class="commu-person-detail-back" data-pair-back href="/commulingo/terms">← <%= strings.commuLingoViews.term.glossary %></a>
     </main>
     <% if (paired) { %><script src="/js/commulingo-pair-tabs.js?v=<%= assetVersion %>" defer></script><% } %>
     <% if (paired && eventPanel.event.hasCampaign) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>

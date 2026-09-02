@@ -5,14 +5,14 @@
 // target (the list's selector), en.
 %>
 <div data-commu-list-pager data-target="<%= target %>"
-    data-label-prev="<%= en ? 'Previous' : '이전' %>" data-label-next="<%= en ? 'Next' : '다음' %>"<% if (pagination.total < 2) { %> hidden<% } %>>
+    data-label-prev="<%= strings.commuLingoViews.listPager.previous %>" data-label-next="<%= strings.commuLingoViews.listPager.next %>"<% if (pagination.total < 2) { %> hidden<% } %>>
     <% if (pagination.total > 1) { %>
     <%- include('pagination', {
         currentPage: pagination.current,
         totalPages: pagination.total,
         baseUrl: pagination.baseUrl,
-        prevLabel: en ? 'Previous' : '이전',
-        nextLabel: en ? 'Next' : '다음'
+        prevLabel: strings.commuLingoViews.listPager.previous,
+        nextLabel: strings.commuLingoViews.listPager.next
     }) %>
     <% } %>
 </div>

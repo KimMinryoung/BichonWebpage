@@ -6,35 +6,35 @@
     <% var en = lang === 'en'; %>
     <main class="container commulingo-shell commu-terms-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
-            trail: [{ label: en ? 'Glossary' : '용어 사전' }],
+            trail: [{ label: strings.commuLingoViews.terms.glossary }],
             dictJump: 'terms' }) %>
-        <h1 class="commu-sr-only"><%= en ? 'Glossary' : '용어 사전' %></h1>
+        <h1 class="commu-sr-only"><%= strings.commuLingoViews.terms.glossary %></h1>
         <div class="commu-dict-toolbar">
-            <nav class="commu-dict-sort" aria-label="<%= en ? 'Sort order' : '정렬 순서' %>">
+            <nav class="commu-dict-sort" aria-label="<%= strings.commuLingoViews.terms.sortOrder %>">
                 <a href="/commulingo/terms" class="<%= sort === 'name' ? 'is-active' : '' %>"
-                    <% if (sort === 'name') { %>aria-current="true"<% } %>><%= en ? 'A–Z' : '가나다순' %></a>
+                    <% if (sort === 'name') { %>aria-current="true"<% } %>><%= strings.commuLingoViews.terms.aZ %></a>
                 <a href="/commulingo/terms?sort=chrono" class="<%= sort === 'chrono' ? 'is-active' : '' %>"
-                    <% if (sort === 'chrono') { %>aria-current="true"<% } %>><%= en ? 'Chronological' : '연대순' %></a>
+                    <% if (sort === 'chrono') { %>aria-current="true"<% } %>><%= strings.commuLingoViews.terms.chronological %></a>
             </nav>
         </div>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-term-list',
-            placeholder: en ? 'Search by term, original, alias, or definition…' : '용어 · 원어 · 별칭 · 정의로 검색…',
-            ariaLabel: en ? 'Search glossary' : '용어 사전 검색',
-            clearLabel: en ? 'Clear search' : '검색 지우기',
-            resultOne: en ? 'term found' : '개의 용어',
-            resultMany: en ? 'terms found' : '개의 용어',
-            emptyLabel: en ? 'No glossary terms found' : '검색 결과가 없습니다'
+            placeholder: strings.commuLingoViews.terms.searchByTermOriginal,
+            ariaLabel: strings.commuLingoViews.terms.searchGlossary,
+            clearLabel: strings.commuLingoViews.terms.clearSearch,
+            resultOne: strings.commuLingoViews.terms.termFound,
+            resultMany: strings.commuLingoViews.terms.termsFound,
+            emptyLabel: strings.commuLingoViews.terms.noGlossaryTermsFound
         }) %>
         <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-term-list"
-            role="group" aria-label="<%= en ? 'Filter by category' : '분류로 걸러보기' %>">
-            <button type="button" class="commu-dict-chip is-active" data-category="" aria-pressed="true"><%= en ? 'All' : '전체' %></button>
+            role="group" aria-label="<%= strings.commuLingoViews.terms.filterByCategory %>">
+            <button type="button" class="commu-dict-chip is-active" data-category="" aria-pressed="true"><%= strings.commuLingoViews.terms.all %></button>
             <% categories.forEach(function(category) { %>
             <button type="button" class="commu-dict-chip" data-category="<%= category.id || '__none__' %>" aria-pressed="false"><%= category.label %> <span><%= category.count %></span></button>
             <% }) %>
         </div>
         <% if (groups.length > 1) { %>
-        <nav class="commu-dict-index" aria-label="<%= en ? 'Jump to group' : '그룹으로 이동' %>">
+        <nav class="commu-dict-index" aria-label="<%= strings.commuLingoViews.terms.jumpToGroup %>">
             <% groups.forEach(function(group) { %>
             <a href="#<%= group.id %>"><%= group.label %></a>
             <% }) %>
@@ -48,7 +48,7 @@
         // reachable for crawlers and script-less readers.
         %>
         <section class="commu-event-grid" id="commu-term-list" data-lazy data-sort="<%= sort %>"
-            aria-label="<%= en ? 'Glossary terms' : '용어 목록' %>">
+            aria-label="<%= strings.commuLingoViews.terms.glossaryTerms %>">
             <% groups.forEach(function(group) { %>
             <h2 class="commu-term-group-head" id="<%= group.id %>"
                 <% if (group.id !== firstGroupId) { %>data-pending<% } %>><%= group.label %></h2>

@@ -11,19 +11,19 @@
     <div class="container cdocs-page">
         <div class="admin-header">
             <h1><%= strings.admin.commulingoDocs %></h1>
-            <a href="/commulingo/docs" class="btn" target="_blank" rel="noopener"><%= en ? 'Public page' : '공개 페이지' %> ↗</a>
+            <a href="/commulingo/docs" class="btn" target="_blank" rel="noopener"><%= strings.commuLingoViews.adminDocs.publicPage %> ↗</a>
         </div>
 
         <div class="box cdocs-upload">
-            <h2><%= en ? 'Upload document' : '문서 업로드' %></h2>
+            <h2><%= strings.commuLingoViews.adminDocs.uploadDocument %></h2>
             <p class="cdocs-hint"><%= en
                 ? 'Any .html file works — head/style/script are stripped and the body becomes an <article> fragment. Preview first to check the table of contents and warnings.'
                 : '아무 .html 파일이나 올리면 head/style/script를 제거하고 본문을 <article> fragment로 변환합니다. 미리보기로 목차와 경고를 먼저 확인하세요.' %></p>
             <div class="cdocs-upload-row">
                 <input type="file" id="uploadFile" accept=".html,.htm,text/html">
-                <input type="text" id="uploadId" placeholder="<%= en ? 'slug (e.g. yezhov-pavlyukov)' : '슬러그 (예: yezhov-pavlyukov)' %>" autocomplete="off" spellcheck="false">
-                <button class="btn" id="previewBtn"><%= en ? 'Preview' : '미리보기' %></button>
-                <button class="btn btn-primary" id="uploadBtn"><%= en ? 'Upload' : '업로드' %></button>
+                <input type="text" id="uploadId" placeholder="<%= strings.commuLingoViews.adminDocs.slugEGYezhov %>" autocomplete="off" spellcheck="false">
+                <button class="btn" id="previewBtn"><%= strings.commuLingoViews.adminDocs.preview %></button>
+                <button class="btn btn-primary" id="uploadBtn"><%= strings.commuLingoViews.adminDocs.upload %></button>
             </div>
             <div id="uploadStatus" class="cdocs-status"></div>
             <div id="uploadResult" class="cdocs-preview" hidden>
@@ -33,41 +33,41 @@
         </div>
 
         <div class="box">
-            <h2><%= en ? 'Documents' : '문서 목록' %></h2>
+            <h2><%= strings.commuLingoViews.adminDocs.documents %></h2>
             <div id="docsStatus" class="cdocs-status"></div>
             <div id="docsList" class="cdocs-list"></div>
         </div>
 
         <div class="box cdocs-editor" id="editorBox" hidden>
-            <h2><%= en ? 'Edit' : '편집' %>: <span id="editorDocId"></span></h2>
+            <h2><%= strings.commuLingoViews.adminDocs.edit %>: <span id="editorDocId"></span></h2>
             <form id="editorForm">
                 <div class="cdocs-grid">
-                    <label><%= en ? 'Title (ko)' : '제목 (ko)' %><input type="text" name="titleKo"></label>
-                    <label><%= en ? 'Title (en)' : '제목 (en)' %><input type="text" name="titleEn"></label>
-                    <label><%= en ? 'Kind (ko)' : '분류 (ko)' %><input type="text" name="kindKo" placeholder="저작·연설"></label>
-                    <label><%= en ? 'Kind (en)' : '분류 (en)' %><input type="text" name="kindEn" placeholder="Writings &amp; speeches"></label>
-                    <label class="cdocs-wide"><%= en ? 'Description (ko)' : '설명 (ko)' %><textarea name="descKo" rows="3"></textarea></label>
-                    <label class="cdocs-wide"><%= en ? 'Description (en)' : '설명 (en)' %><textarea name="descEn" rows="3"></textarea></label>
-                    <label class="cdocs-wide"><%= en ? 'Source citation' : '원전 서지' %><input type="text" name="source"></label>
-                    <label><%= en ? 'Body language' : '본문 언어' %>
+                    <label><%= strings.commuLingoViews.adminDocs.titleKo %><input type="text" name="titleKo"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.titleEn %><input type="text" name="titleEn"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.kindKo %><input type="text" name="kindKo" placeholder="저작·연설"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.kindEn %><input type="text" name="kindEn" placeholder="Writings &amp; speeches"></label>
+                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionKo %><textarea name="descKo" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionEn %><textarea name="descEn" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.sourceCitation %><input type="text" name="source"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.bodyLanguage %>
                         <select name="docLang"><option value="ko">ko</option><option value="en">en</option></select>
                     </label>
-                    <label><%= en ? 'TOC exclude regexes (one per line)' : '목차 제외 정규식 (줄당 하나)' %><textarea name="tocExclude" rows="2" spellcheck="false"></textarea></label>
+                    <label><%= strings.commuLingoViews.adminDocs.tocExcludeRegexesOne %><textarea name="tocExclude" rows="2" spellcheck="false"></textarea></label>
                 </div>
 
                 <% ['people', 'terms', 'events'].forEach(function(kind) { %>
                 <fieldset class="cdocs-links" data-kind="<%= kind %>">
-                    <legend><%= kind === 'people' ? (en ? 'Linked people' : '연결된 인물') : kind === 'terms' ? (en ? 'Linked terms' : '연결된 용어') : (en ? 'Linked events' : '연결된 사건') %></legend>
+                    <legend><%= kind === 'people' ? (strings.commuLingoViews.adminDocs.linkedPeople) : kind === 'terms' ? (strings.commuLingoViews.adminDocs.linkedTerms) : (strings.commuLingoViews.adminDocs.linkedEvents) %></legend>
                     <div class="cdocs-chips" data-chips="<%= kind %>"></div>
                     <input type="text" list="options-<%= kind %>" data-picker="<%= kind %>"
-                        placeholder="<%= en ? 'Type to search, pick to add' : '검색해서 선택하면 추가됩니다' %>" autocomplete="off">
+                        placeholder="<%= strings.commuLingoViews.adminDocs.typeToSearchPick %>" autocomplete="off">
                     <datalist id="options-<%= kind %>"></datalist>
                 </fieldset>
                 <% }) %>
 
                 <div class="cdocs-editor-actions">
-                    <button type="submit" class="btn btn-primary" id="saveBtn"><%= en ? 'Save' : '저장' %></button>
-                    <button type="button" class="btn" id="closeEditorBtn"><%= en ? 'Close' : '닫기' %></button>
+                    <button type="submit" class="btn btn-primary" id="saveBtn"><%= strings.commuLingoViews.adminDocs.save %></button>
+                    <button type="button" class="btn" id="closeEditorBtn"><%= strings.commuLingoViews.adminDocs.close %></button>
                     <span id="editorStatus" class="cdocs-status"></span>
                 </div>
             </form>

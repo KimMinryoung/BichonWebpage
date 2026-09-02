@@ -86,13 +86,13 @@ var tocHref = function(id) {
 <div class="doc-toc">
 <%- include('../partials/commulingo-crumb', {
     trail: [
-        { label: en ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
+        { label: strings.commuLingoViews.doc.referenceLibrary, href: '/commulingo/docs' },
         { label: doc.title },
     ] }) %>
 <% if (toc.length) { %>
-<nav class="doc-toc-nav" aria-label="<%= en ? 'Table of contents' : '목차' %>">
+<nav class="doc-toc-nav" aria-label="<%= strings.commuLingoViews.doc.tableOfContents %>">
 <details>
-<summary><%= en ? 'Contents' : '목차' %><% if (pagination) { %> <span class="doc-toc-pos"><%= pagination.current %>/<%= pagination.total %></span><% } %></summary>
+<summary><%= strings.commuLingoViews.doc.contents %><% if (pagination) { %> <span class="doc-toc-pos"><%= pagination.current %>/<%= pagination.total %></span><% } %></summary>
 <ol class="doc-toc-parts">
     <% toc.forEach(function(part) { %>
     <li>
@@ -119,10 +119,10 @@ var tocHref = function(id) {
     이동이라 같은 탭을 유지한다. %>
 <%
 var refGroups = [
-    { label: en ? 'People' : '인물', path: 'people', items: doc.people || [] },
-    { label: en ? 'Terms' : '용어', path: 'terms', items: doc.terms || [] },
-    { label: en ? 'Events' : '사건', path: 'events', items: doc.events || [] },
-    { label: en ? 'Genealogy' : '계보도', path: 'genealogy',
+    { label: strings.commuLingoViews.doc.people, path: 'people', items: doc.people || [] },
+    { label: strings.commuLingoViews.doc.terms, path: 'terms', items: doc.terms || [] },
+    { label: strings.commuLingoViews.doc.events, path: 'events', items: doc.events || [] },
+    { label: strings.commuLingoViews.doc.genealogy, path: 'genealogy',
       items: (doc.genealogies || []).map(function(chart) { return { id: chart.id, name: chart.title }; }) },
 ].filter(function(group) { return group.items.length; });
 %>
@@ -135,7 +135,7 @@ var refGroups = [
 <% } %>
 <%- bodyRestHtml %>
 <% if (pagination) { %>
-<nav class="doc-pager" aria-label="<%= en ? 'Pages' : '페이지 이동' %>">
+<nav class="doc-pager" aria-label="<%= strings.commuLingoViews.doc.pages %>">
     <%
     /* The direction word is always printed, not only as a fallback. With a
        chapter heading available the link used to read as just that heading
@@ -143,22 +143,22 @@ var refGroups = [
     %>
     <% if (pagination.current > 1) { %>
     <a class="doc-pager-prev" href="?p=<%= pagination.current - 1 %>">
-        <span class="doc-pager-dir">← <%= en ? 'Previous' : '이전' %></span>
+        <span class="doc-pager-dir">← <%= strings.commuLingoViews.doc.previous %></span>
         <% if (pagination.prevHeading) { %><span class="doc-pager-heading"><%= pagination.prevHeading %></span><% } %>
     </a>
     <% } else { %><span class="doc-pager-gap"></span><% } %>
     <span class="doc-pager-pos"><%= pagination.current %> / <%= pagination.total %></span>
     <% if (pagination.current < pagination.total) { %>
     <a class="doc-pager-next" href="?p=<%= pagination.current + 1 %>">
-        <span class="doc-pager-dir"><%= en ? 'Next' : '다음' %> →</span>
+        <span class="doc-pager-dir"><%= strings.commuLingoViews.doc.next %> →</span>
         <% if (pagination.nextHeading) { %><span class="doc-pager-heading"><%= pagination.nextHeading %></span><% } %>
     </a>
     <% } else { %><span class="doc-pager-gap"></span><% } %>
 </nav>
 <% } %>
 <footer class="doc-colophon">
-    <% if (doc.source) { %><p><%= en ? 'Source' : '원전' %>: <%= doc.source %></p><% } %>
-    <p><a href="/commulingo/docs"><%= en ? 'CommuLingo Reference Library' : '공산링고 참고 문헌' %></a></p>
+    <% if (doc.source) { %><p><%= strings.commuLingoViews.doc.source %>: <%= doc.source %></p><% } %>
+    <p><a href="/commulingo/docs"><%= strings.commuLingoViews.doc.commulingoReferenceLibrary %></a></p>
 </footer>
 </main>
 <% if (toc.length) { %>
@@ -209,7 +209,7 @@ var refGroups = [
         pop.className = 'fic-name-pop';
         var label = document.createElement('span');
         label.className = 'fic-name-pop-label';
-        label.textContent = <%- JSON.stringify(en ? 'Historical figure' : '실존 인물') %>;
+        label.textContent = <%- JSON.stringify(strings.commuLingoViews.doc.historicalFigure) %>;
         pop.appendChild(label);
         var real = name.getAttribute('data-real') || '';
         var href = name.getAttribute('href');

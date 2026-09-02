@@ -8,7 +8,7 @@
     <main class="container commulingo-shell commu-event-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: en ? 'Historical events' : '역사 사건', href: '/commulingo/events', pair: paired },
+                { label: strings.commuLingoViews.event.historicalEvents, href: '/commulingo/events', pair: paired },
                 { label: event.title, pair: paired },
             ],
             attached: paired,
@@ -32,16 +32,16 @@
         </div>
         <% } %>
         <% if ((typeof prevEvent !== 'undefined' && prevEvent) || (typeof nextEvent !== 'undefined' && nextEvent)) { %>
-        <nav class="commu-event-nav" aria-label="<%= en ? 'Other events' : '다른 사건' %>">
+        <nav class="commu-event-nav" aria-label="<%= strings.commuLingoViews.event.otherEvents %>">
             <% if (typeof prevEvent !== 'undefined' && prevEvent) { %>
-            <a class="commu-event-nav-link is-prev" href="/commulingo/events/<%= prevEvent.id %>"><span class="commu-event-nav-dir">← <%= en ? 'Previous' : '이전' %></span><span class="commu-event-nav-period"><%= prevEvent.period %></span><strong><%= prevEvent.title %></strong></a>
+            <a class="commu-event-nav-link is-prev" href="/commulingo/events/<%= prevEvent.id %>"><span class="commu-event-nav-dir">← <%= strings.commuLingoViews.event.previous %></span><span class="commu-event-nav-period"><%= prevEvent.period %></span><strong><%= prevEvent.title %></strong></a>
             <% } else { %><span></span><% } %>
             <% if (typeof nextEvent !== 'undefined' && nextEvent) { %>
-            <a class="commu-event-nav-link is-next" href="/commulingo/events/<%= nextEvent.id %>"><span class="commu-event-nav-dir"><%= en ? 'Next' : '다음' %> →</span><span class="commu-event-nav-period"><%= nextEvent.period %></span><strong><%= nextEvent.title %></strong></a>
+            <a class="commu-event-nav-link is-next" href="/commulingo/events/<%= nextEvent.id %>"><span class="commu-event-nav-dir"><%= strings.commuLingoViews.event.next %> →</span><span class="commu-event-nav-period"><%= nextEvent.period %></span><strong><%= nextEvent.title %></strong></a>
             <% } %>
         </nav>
         <% } %>
-        <a class="commu-person-detail-back" data-pair-back href="/commulingo/events">← <%= en ? 'Historical events' : '역사 사건' %></a>
+        <a class="commu-person-detail-back" data-pair-back href="/commulingo/events">← <%= strings.commuLingoViews.event.historicalEvents %></a>
     </main>
     <% if (paired) { %><script src="/js/commulingo-pair-tabs.js?v=<%= assetVersion %>" defer></script><% } %>
     <% if (event.hasCampaign) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>

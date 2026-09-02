@@ -10,7 +10,7 @@
     <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: en ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { label: strings.commuLingoViews.nationality.people, href: '/commulingo/people' },
                 { label: filter.label },
             ],
             dictJump: 'people' }) %>
@@ -25,7 +25,7 @@
         </header>
 
         <section class="commu-hub-section" aria-labelledby="nationality-people">
-            <h2 id="nationality-people"><%= en ? 'People' : '해당 인물' %></h2>
+            <h2 id="nationality-people"><%= strings.commuLingoViews.nationality.people2 %></h2>
             <div class="commu-people-grid">
                 <% people.forEach(function(person) { %>
                 <%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %>

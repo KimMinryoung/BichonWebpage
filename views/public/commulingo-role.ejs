@@ -10,7 +10,7 @@
     <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: en ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { label: strings.commuLingoViews.role.people, href: '/commulingo/people' },
                 { label: category.label },
             ],
             dictJump: 'people' }) %>
@@ -24,7 +24,7 @@
         </header>
 
         <section class="commu-hub-section" aria-labelledby="role-people">
-            <h2 id="role-people"><%= en ? 'People' : '소속 인물' %></h2>
+            <h2 id="role-people"><%= strings.commuLingoViews.role.people2 %></h2>
             <div class="commu-people-grid">
                 <% people.forEach(function(person) { %>
                 <%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg }) %>
@@ -34,10 +34,10 @@
 
         <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
         <section class="commu-hub-section commu-related-reports" aria-labelledby="related-reports">
-            <h2 id="related-reports"><%= en ? 'Related reports' : '관련 보고서' %></h2>
+            <h2 id="related-reports"><%= strings.commuLingoViews.role.relatedReports %></h2>
             <ul class="commu-related-report-list">
                 <% relatedReports.forEach(function(report) { %>
-                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (en ? 'Report' : '보고서') %></span><strong><%= report.title %></strong></a></li>
+                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (strings.commuLingoViews.role.report) %></span><strong><%= report.title %></strong></a></li>
                 <% }) %>
             </ul>
         </section>

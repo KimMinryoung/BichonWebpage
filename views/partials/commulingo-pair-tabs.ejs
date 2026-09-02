@@ -10,17 +10,17 @@
    the page works without JavaScript and each half keeps its own address. */
 var pairTabs = [
     { key: 'term', href: '/commulingo/terms/' + encodeURIComponent(pairTermId),
-      label: en ? 'Glossary' : '용어 사전', sub: en ? 'Concept' : '개념',
-      backHref: '/commulingo/terms', crumb: en ? 'Glossary' : '용어 사전',
+      label: strings.commuLingoViews.pairTabs.glossary, sub: strings.commuLingoViews.pairTabs.concept,
+      backHref: '/commulingo/terms', crumb: strings.commuLingoViews.pairTabs.glossary,
       leaf: pairTermLabel },
     { key: 'event', href: '/commulingo/events/' + encodeURIComponent(pairEventId),
-      label: en ? 'Historical event' : '역사 사건', sub: en ? 'Narrative' : '사건 서사',
+      label: strings.commuLingoViews.pairTabs.historicalEvent, sub: strings.commuLingoViews.pairTabs.narrative,
       // The tab names one entry, the crumb names the shelf it came from.
-      backHref: '/commulingo/events', crumb: en ? 'Historical events' : '역사 사건',
+      backHref: '/commulingo/events', crumb: strings.commuLingoViews.pairTabs.historicalEvents,
       leaf: pairEventLabel },
 ];
 %>
-<nav class="commu-dict-nav commu-pair-tabs" aria-label="<%= en ? 'Two entries on this subject' : '같은 주제의 두 항목' %>" data-active="<%= activePanel %>">
+<nav class="commu-dict-nav commu-pair-tabs" aria-label="<%= strings.commuLingoViews.pairTabs.twoEntriesOnThis %>" data-active="<%= activePanel %>">
     <% pairTabs.forEach(function(tab) { %>
     <a class="commu-dict-tab commu-pair-tab<%= activePanel === tab.key ? ' is-active' : '' %>"
        href="<%= tab.href %>" data-panel="<%= tab.key %>"

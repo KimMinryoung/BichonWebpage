@@ -1,4 +1,5 @@
 const express = require('express');
+const allStrings = require('../config/strings');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
 const { localize } = require('../data/commulingo/localize');
@@ -70,7 +71,10 @@ async function peopleGroupCardsHtml(req, standardized, lang, group, page, baseUr
     const key = pagination ? `${group.id}\0${pagination.current}\0${pagerBase}` : group.id;
     let html = memo.byGroup.get(key);
     if (!html) {
+        // req.app.render knows app.locals only, so the per-language string
+        // table every view otherwise gets from res.locals is passed by hand.
         html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
+            strings: allStrings[lang],
             people: pagination ? pagination.pageItems : sorted,
             groupId: group.id,
             en: lang === 'en',
@@ -82,6 +86,7 @@ async function peopleGroupCardsHtml(req, standardized, lang, group, page, baseUr
         });
         if (pagination) {
             html += await renderAppView(req, 'partials/commulingo-list-pager', {
+                strings: allStrings[lang],
                 pagination,
                 target: `.commu-people-group.is-${group.id} .commu-people-grid`,
                 en: lang === 'en',

@@ -11,59 +11,59 @@
     %>
     <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>" data-page-size="<%= pageSize %>">
         <%- include('../partials/commulingo-crumb', {
-            trail: [{ label: en ? 'People' : '인물 사전' }],
+            trail: [{ label: strings.commuLingoViews.people.people }],
             dictJump: 'people' }) %>
 
-        <h1 class="commu-sr-only"><%= en ? 'People of the Revolution and the USSR' : '인물 사전: 혁명과 소련의 사람들' %></h1>
+        <h1 class="commu-sr-only"><%= strings.commuLingoViews.people.peopleOfTheRevolution %></h1>
 
         <div class="commu-people-search">
             <span class="commu-people-search-icon" aria-hidden="true"><%- roleIconSvg('search') %></span>
             <input type="search" id="commu-people-search-input" class="commu-people-search-input"
-                placeholder="<%= en ? 'Search by name, alias, role, or bio…' : '이름 · 별칭 · 역할 · 설명으로 검색…' %>"
+                placeholder="<%= strings.commuLingoViews.people.searchByNameAlias %>"
                 autocomplete="off" spellcheck="false"
-                aria-label="<%= en ? 'Search people' : '인물 검색' %>">
-            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= en ? 'Clear search' : '검색 지우기' %>" hidden><%- roleIconSvg('x') %></button>
+                aria-label="<%= strings.commuLingoViews.people.searchPeople %>">
+            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= strings.commuLingoViews.people.clearSearch %>" hidden><%- roleIconSvg('x') %></button>
         </div>
 
         <div class="commu-people-results" id="commu-people-results" hidden>
             <section class="commu-people-result-section" id="commu-people-result-name" hidden>
                 <div class="commu-people-result-head">
-                    <span class="commu-people-result-label"><%= en ? 'Name matches' : '이름 일치' %></span>
+                    <span class="commu-people-result-label"><%= strings.commuLingoViews.people.nameMatches %></span>
                     <span class="commu-people-result-count" id="commu-people-result-name-count"></span>
                 </div>
                 <div class="commu-people-grid" id="commu-people-result-name-grid"></div>
             </section>
             <section class="commu-people-result-section" id="commu-people-result-role" hidden>
                 <div class="commu-people-result-head">
-                    <span class="commu-people-result-label"><%= en ? 'Role matches' : '역할 일치' %></span>
+                    <span class="commu-people-result-label"><%= strings.commuLingoViews.people.roleMatches %></span>
                     <span class="commu-people-result-count" id="commu-people-result-role-count"></span>
                 </div>
                 <div class="commu-people-grid" id="commu-people-result-role-grid"></div>
             </section>
             <section class="commu-people-result-section" id="commu-people-result-desc" hidden>
                 <div class="commu-people-result-head">
-                    <span class="commu-people-result-label"><%= en ? 'Mentioned in description' : '설명에서 언급됨' %></span>
+                    <span class="commu-people-result-label"><%= strings.commuLingoViews.people.mentionedInDescription %></span>
                     <span class="commu-people-result-count" id="commu-people-result-desc-count"></span>
                 </div>
                 <div class="commu-people-grid" id="commu-people-result-desc-grid"></div>
             </section>
-            <p class="commu-people-result-empty" id="commu-people-result-empty" role="status" aria-live="polite" hidden><%= en ? 'No people found' : '검색 결과가 없습니다' %></p>
+            <p class="commu-people-result-empty" id="commu-people-result-empty" role="status" aria-live="polite" hidden><%= strings.commuLingoViews.people.noPeopleFound %></p>
         </div>
 
         <% var officesList = (typeof offices !== 'undefined' && offices) || []; %>
         <% var roleCategoriesList = (typeof roleCategories !== 'undefined' && roleCategories) || []; %>
         <% if (officesList.length || roleCategoriesList.length) { %>
-        <details class="commu-office-index" aria-label="<%= en ? 'People categories and Soviet institution leadership timelines' : '인물 분류와 소련 기관별 지도부 타임라인' %>">
+        <details class="commu-office-index" aria-label="<%= strings.commuLingoViews.people.peopleCategoriesAndSoviet %>">
             <summary class="commu-office-index-head">
                 <span class="commu-people-range">INDEX</span>
-                <h2><%= en ? 'People Categories and Soviet Institution Timelines' : '인물 분류와 소련 기관별 지도부' %></h2>
+                <h2><%= strings.commuLingoViews.people.peopleCategoriesAndSoviet2 %></h2>
             </summary>
             <div class="commu-office-grid">
                 <a class="commu-office-card commu-role-category-link" href="/commulingo/politburo">
                     <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
                     <span class="commu-role-category-copy">
-                        <h3><%= en ? 'The Soviet Politburo' : '소련 정치국' %></h3>
-                        <p><%= en ? 'Membership 1917–1991, by era and congress' : '1917–1991 구성원, 시기별·기수별' %></p>
+                        <h3><%= strings.commuLingoViews.people.theSovietPolitburo %></h3>
+                        <p><%= strings.commuLingoViews.people.membership19171991By %></p>
                     </span>
                     <span class="commu-role-category-arrow" aria-hidden="true">→</span>
                 </a>
@@ -101,7 +101,7 @@
                         </li>
                         <% }) %>
                     </ol>
-                    <a class="commu-office-page-link" href="/commulingo/offices/<%= office.id %>"><%= en ? 'Office page →' : '기관 페이지 →' %></a>
+                    <a class="commu-office-page-link" href="/commulingo/offices/<%= office.id %>"><%= strings.commuLingoViews.people.officePage %></a>
                 </details>
                 <% }) %>
             </div>
@@ -125,18 +125,18 @@
         <% groupsMeta.forEach(function(group) { %>
         <% if (!sovietShelfOpened && !group.standalone) { sovietShelfOpened = true; %>
         <section class="commu-people-shelf" aria-labelledby="commu-people-soviet-title">
-        <h2 class="commu-people-shelf-head" id="commu-people-soviet-title"><%= en ? 'People of the Soviet Union' : '소련 내 인물들' %></h2>
+        <h2 class="commu-people-shelf-head" id="commu-people-soviet-title"><%= strings.commuLingoViews.people.peopleOfTheSoviet %></h2>
         <% } %>
         <% if (!standaloneShelfOpened && group.standalone) { standaloneShelfOpened = true; %>
         <% if (sovietShelfOpened) { %></section><% } %>
         <section class="commu-people-shelf" aria-labelledby="commu-people-standalone-title">
-        <h2 class="commu-people-shelf-head" id="commu-people-standalone-title"><%= en ? 'People beyond the Soviet Union' : '소련 밖 인물들' %></h2>
+        <h2 class="commu-people-shelf-head" id="commu-people-standalone-title"><%= strings.commuLingoViews.people.peopleBeyondTheSoviet %></h2>
         <% } %>
         <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
             <summary class="commu-people-group-head">
                 <span class="commu-people-range"><%= group.range %></span>
-                <a class="commu-people-group-list-link" href="/commulingo/people/list/<%= group.id %>" onclick="event.stopPropagation()"><%= en ? 'View as a list →' : '목록으로 보기 →' %></a>
-                <h2><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= en ? '' : '명' %></span></h2>
+                <a class="commu-people-group-list-link" href="/commulingo/people/list/<%= group.id %>" onclick="event.stopPropagation()"><%= strings.commuLingoViews.people.viewAsAList %></a>
+                <h2><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= strings.commuLingoViews.people.text %></span></h2>
                 <p><%= group.blurb %></p>
             </summary>
             <div class="commu-people-grid"></div>

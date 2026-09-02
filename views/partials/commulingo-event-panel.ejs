@@ -16,36 +16,36 @@
 var sections = p.event.bodySections || [];
 %>
         <% if (sections.length >= 3) { %>
-        <nav class="commu-event-toc" aria-label="<%= en ? 'Contents' : '차례' %>">
-            <h2 class="commu-event-toc-head"><%= en ? 'Contents' : '차례' %></h2>
+        <nav class="commu-event-toc" aria-label="<%= strings.commuLingoViews.eventPanel.contents %>">
+            <h2 class="commu-event-toc-head"><%= strings.commuLingoViews.eventPanel.contents %></h2>
             <ol>
                 <% sections.forEach(function(section) { %>
                 <li><a href="#<%= section.id %>"><%= section.label %></a></li>
                 <% }) %>
-                <li><a href="#event-outcome"><%= en ? 'Consequences' : '결과' %></a></li>
-                <li><a href="#event-timeline"><%= p.event.mapSvg ? (en ? 'Timeline & Map' : '연표와 지도') : (en ? 'Timeline' : '연표') %></a></li>
-                <li><a href="#event-people"><%= en ? 'Related people' : '관련 인물' %></a></li>
+                <li><a href="#event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></a></li>
+                <li><a href="#event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></a></li>
+                <li><a href="#event-people"><%= strings.commuLingoViews.eventPanel.relatedPeople %></a></li>
             </ol>
         </nav>
         <% } %>
         <% if (p.event.bodyHtml) { %>
-        <section class="commu-person-detail-section commu-event-body" aria-label="<%= en ? 'In depth' : '상세' %>">
+        <section class="commu-person-detail-section commu-event-body" aria-label="<%= strings.commuLingoViews.eventPanel.inDepth %>">
             <div class="commu-person-markdown"><%- p.event.bodyHtml %></div>
         </section>
-        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
+        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>
         <% } %>
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
-            <h2 id="event-timeline"><%= p.event.mapSvg ? (en ? 'Timeline & Map' : '연표와 지도') : (en ? 'Timeline' : '연표') %></h2>
+            <h2 id="event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></h2>
             <% if (p.event.mapSvg) { %>
             <figure class="commu-event-map commu-event-timeline-map"><%- p.event.mapSvg %></figure>
             <% } %>
             <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li<% if (item.geoNum) { %> data-geo-num="<%= item.geoNum %>"<% } %>><span><% if (item.geoNum) { %><i class="commu-tl-geo-badge"><%= item.geoNum %></i><% } %><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
         <% if (!p.event.bodyHtml) { %>
-        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= en ? 'Consequences' : '결과' %></h2><p><%- p.event.outcomeHtml %></p></section>
+        <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>
         <% } %>
         <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
-            <h2 id="event-people"><%= en ? 'Related people' : '관련 인물' %> <span class="commu-event-people-count"><%= p.event.people.length %><%= en ? '' : '명' %></span></h2>
+            <h2 id="event-people"><%= strings.commuLingoViews.eventPanel.relatedPeople %> <span class="commu-event-people-count"><%= p.event.people.length %><%= strings.commuLingoViews.eventPanel.text %></span></h2>
             <% p.event.peopleGroups.forEach(function(group) { %>
             <div class="commu-event-people-group is-<%= group.kind %>">
                 <h3 class="commu-event-people-group-head"><%= group.label %><span class="commu-event-people-group-count"><%= group.people.length %></span></h3>
@@ -55,7 +55,7 @@ var sections = p.event.bodySections || [];
         </section>
         <% if (p.relatedTerms && p.relatedTerms.length) { %>
         <section class="commu-person-detail-section" aria-labelledby="event-terms">
-            <h2 id="event-terms"><%= en ? 'Related terms' : '관련 용어' %></h2>
+            <h2 id="event-terms"><%= strings.commuLingoViews.eventPanel.relatedTerms %></h2>
             <div class="commu-term-chips">
                 <% p.relatedTerms.forEach(function(entry) { %>
                 <a class="commu-term-chip" href="/commulingo/terms/<%= encodeURIComponent(entry.id) %>"><%= entry.term %></a>
@@ -69,7 +69,7 @@ var sections = p.event.bodySections || [];
         <%- include('commulingo-genealogy-links', { en: en, charts: p.genealogies, headword: p.event.title }) %>
         <% if (p.relatedDocs && p.relatedDocs.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
-            <h2 id="related-docs"><%= en ? 'Reference documents' : '참고 문헌' %></h2>
+            <h2 id="related-docs"><%= strings.commuLingoViews.eventPanel.referenceDocuments %></h2>
             <ul class="commu-related-report-list commu-related-doc-list">
                 <% p.relatedDocs.forEach(function(doc) { %>
                 <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
@@ -79,12 +79,12 @@ var sections = p.event.bodySections || [];
         <% } %>
         <% if (p.relatedReports && p.relatedReports.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
-            <h2 id="related-reports"><%= en ? 'Related reports' : '관련 보고서' %></h2>
+            <h2 id="related-reports"><%= strings.commuLingoViews.eventPanel.relatedReports %></h2>
             <ul class="commu-related-report-list">
                 <% p.relatedReports.forEach(function(report) { %>
-                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (en ? 'Report' : '보고서') %></span><strong><%= report.title %></strong></a></li>
+                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (strings.commuLingoViews.eventPanel.report) %></span><strong><%= report.title %></strong></a></li>
                 <% }) %>
             </ul>
         </section>
         <% } %>
-        <% if (p.event.sources.length) { %><p class="commu-event-sources"><%= en ? 'Sources:' : '출처:' %> <% p.event.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>
+        <% if (p.event.sources.length) { %><p class="commu-event-sources"><%= strings.commuLingoViews.eventPanel.sources %> <% p.event.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>

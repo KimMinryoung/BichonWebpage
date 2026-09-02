@@ -7,7 +7,7 @@
     <main class="container commulingo-shell commu-genealogy-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: en ? 'Genealogy' : '계보도', href: '/commulingo/genealogy' },
+                { label: strings.commuLingoViews.genealogy.genealogy, href: '/commulingo/genealogy' },
                 { label: chart.title },
             ],
             dictJump: 'genealogy' }) %>
@@ -19,11 +19,11 @@
                 <%- svg %>
             </div>
             <figcaption class="gen-legend">
-                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-flow" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'succession · split · merger' : '계승 · 분화 · 합류' %></span>
-                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-influence" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'influence' : '영향' %></span>
-                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-opposition" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'antagonism' : '대립' %></span>
-                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-end" x1="1" y1="5" x2="33" y2="5"/></svg><%= en ? 'suppression' : '소멸' %></span>
-<% if (chart.hasUnlinkedNodes) { %><span class="gen-legend-item"><svg viewBox="0 0 34 14" width="34" height="14"><rect class="gen-legend-swatch" x="1" y="1" width="32" height="12"/></svg><%= en ? 'no entry yet' : '아직 사전 항목 없음' %></span><% } %>
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-flow" x1="1" y1="5" x2="33" y2="5"/></svg><%= strings.commuLingoViews.genealogy.successionSplitMerger %></span>
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-influence" x1="1" y1="5" x2="33" y2="5"/></svg><%= strings.commuLingoViews.genealogy.influence %></span>
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-opposition" x1="1" y1="5" x2="33" y2="5"/></svg><%= strings.commuLingoViews.genealogy.antagonism %></span>
+                <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-end" x1="1" y1="5" x2="33" y2="5"/></svg><%= strings.commuLingoViews.genealogy.suppression %></span>
+<% if (chart.hasUnlinkedNodes) { %><span class="gen-legend-item"><svg viewBox="0 0 34 14" width="34" height="14"><rect class="gen-legend-swatch" x="1" y="1" width="32" height="12"/></svg><%= strings.commuLingoViews.genealogy.noEntryYet %></span><% } %>
             </figcaption>
         </figure>
     </main>

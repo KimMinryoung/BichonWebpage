@@ -6,7 +6,7 @@
 %>
 <% if (charts && charts.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="term-genealogies">
-            <h2 id="term-genealogies"><%= en ? 'Genealogy charts' : '계보도' %></h2>
+            <h2 id="term-genealogies"><%= strings.commuLingoViews.genealogyLinks.genealogyCharts %></h2>
             <ul class="commu-related-report-list commu-related-genealogy-list">
                 <% charts.forEach(function(chart) { %>
                 <li><a href="/commulingo/genealogy/<%= encodeURIComponent(chart.id) %>"><span><%= chart.period %></span><strong><%= chart.title %></strong><% if (chart.nodeLabel && chart.nodeLabel !== headword) { %><em><%= chart.nodeLabel %></em><% } %></a></li>

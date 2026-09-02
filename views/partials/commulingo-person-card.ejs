@@ -6,7 +6,7 @@ var fateIcons = {
 };
 var personHref = '/commulingo/people/' + person.id;
 var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
-var medalTitle = person.role && person.role.label ? person.role.label : (en ? 'Context marker' : '맥락 표식');
+var medalTitle = person.role && person.role.label ? person.role.label : (strings.commuLingoViews.personCard.contextMarker);
 // Three search haystacks, ranked most-identity-first: name (+aliases) → role
 // (category, career, institution posts) → description prose (epithet/bio).
 var nameSearch = [
@@ -52,8 +52,8 @@ var descSearch = [
         <% } %>
         <span class="commu-person-years">
             <% if (typeof flagImg === 'function') { %>
-            <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, en ? 'Citizenship' : '국적', nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>
-            <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, en ? 'National background' : '민족·국가적 배경', nationalityHubHref('nationalOrigin', person.origin.code)) %><% } %>
+            <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, strings.commuLingoViews.personCard.citizenship, nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>
+            <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, strings.commuLingoViews.personCard.nationalBackground, nationalityHubHref('nationalOrigin', person.origin.code)) %><% } %>
             <% } %>
             <%= person.years %>
         </span>
@@ -66,7 +66,7 @@ var descSearch = [
     <p class="commu-person-bio"><%- linkifyPersonText(person.bio, person.id) %></p>
     <% if (person.career.length) { %>
     <details class="commu-person-more">
-        <summary><%= en ? 'Career timeline' : '상세 이력 보기' %></summary>
+        <summary><%= strings.commuLingoViews.personCard.careerTimeline %></summary>
         <ul class="commu-person-career">
             <% person.career.forEach(function(item) { %>
             <li><span class="commu-career-year"><%= item.y %></span><span class="commu-career-role"><%= item.r %></span></li>
@@ -76,7 +76,7 @@ var descSearch = [
     <% } %>
     <% if (person.scenes.length) { %>
     <div class="commu-person-scenes">
-        <span class="commu-person-scenes-label"><%= en ? 'Scenes' : '등장 장면' %></span>
+        <span class="commu-person-scenes-label"><%= strings.commuLingoViews.personCard.scenes %></span>
         <% person.scenes.forEach(function(scene) { %>
         <a class="commu-scene-chip" href="/commulingo/book/<%= scene.bookId %>#<%= scene.episodeId %>" title="<%= scene.bookTitle %>"><%= scene.title %></a>
         <% }) %>

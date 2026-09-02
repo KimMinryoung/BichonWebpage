@@ -13,13 +13,13 @@
         deposed: '↓', exile: '→', natural: '○'
     };
     var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
-    var medalTitle = person.role && person.role.label ? person.role.label : (en ? 'Context marker' : '맥락 표식');
+    var medalTitle = person.role && person.role.label ? person.role.label : (strings.commuLingoViews.person.contextMarker);
     %>
 
     <main class="container commulingo-shell commu-person-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: en ? 'People' : '인물 사전', href: '/commulingo/people#p-' + person.id },
+                { label: strings.commuLingoViews.person.people, href: '/commulingo/people#p-' + person.id },
                 { label: person.name },
             ],
             dictJump: 'people' }) %>
@@ -38,8 +38,8 @@
                 <div class="commu-person-sidebox">
                     <span class="commu-person-years">
                         <% if (typeof flagImg === 'function') { %>
-                        <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, en ? 'Citizenship' : '국적', nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>
-                        <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, en ? 'National background' : '민족·국가적 배경', nationalityHubHref('nationalOrigin', person.origin.code)) %><% } %>
+                        <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, strings.commuLingoViews.person.citizenship, nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>
+                        <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, strings.commuLingoViews.person.nationalBackground, nationalityHubHref('nationalOrigin', person.origin.code)) %><% } %>
                         <% } %>
                         <%= person.years %>
                     </span>
@@ -58,7 +58,7 @@
 
         <% if (person.career.length) { %>
         <section class="commu-person-detail-section commu-person-detail-career" aria-labelledby="career">
-            <h2 id="career"><%= en ? 'Career Timeline' : '경력 연표' %></h2>
+            <h2 id="career"><%= strings.commuLingoViews.person.careerTimeline %></h2>
             <ul class="commu-person-career">
                 <% person.career.forEach(function(item) { %>
                 <li><span class="commu-career-year"><%= item.y %></span><span class="commu-career-role"><%= item.r %></span></li>
@@ -69,7 +69,7 @@
 
         <% if (typeof politburo !== 'undefined' && politburo) { %>
         <section class="commu-person-detail-section commu-person-politburo" aria-labelledby="politburo">
-            <h2 id="politburo"><a class="commu-topic-link" href="/commulingo/politburo"><%= en ? 'The Soviet Politburo' : '소련 정치국' %></a></h2>
+            <h2 id="politburo"><a class="commu-topic-link" href="/commulingo/politburo"><%= strings.commuLingoViews.person.theSovietPolitburo %></a></h2>
             <ul class="commu-person-politburo-stints">
                 <% politburo.parts.forEach(function(part) { %><li><%= part %></li><% }) %>
             </ul>
@@ -79,7 +79,7 @@
 
         <% if (historyEvents && historyEvents.length) { %>
         <section class="commu-person-detail-section commu-person-history-events" aria-labelledby="history-events">
-            <h2 id="history-events"><%= en ? "Related historical events" : "관련 역사 사건" %></h2>
+            <h2 id="history-events"><%= strings.commuLingoViews.person.relatedHistoricalEvents %></h2>
             <ul class="commu-person-event-links"><% historyEvents.forEach(function(event) { %><li class="is-<%= event.kind %>"><a href="/commulingo/events/<%= event.id %>"><span><%= event.period %></span><strong><%= event.title %></strong><em><%= event.relation %></em><small><%= event.note %></small></a></li><% }) %></ul>
         </section>
         <% } %>
@@ -95,7 +95,7 @@
 
         <% if (typeof relatedDocs !== 'undefined' && relatedDocs && relatedDocs.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
-            <h2 id="related-docs"><%= en ? 'Reference documents' : '참고 문헌' %></h2>
+            <h2 id="related-docs"><%= strings.commuLingoViews.person.referenceDocuments %></h2>
             <ul class="commu-related-report-list commu-related-doc-list">
                 <% relatedDocs.forEach(function(doc) { %>
                 <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
@@ -106,16 +106,16 @@
 
         <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
         <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
-            <h2 id="related-reports"><%= en ? 'Related reports' : '관련 보고서' %></h2>
+            <h2 id="related-reports"><%= strings.commuLingoViews.person.relatedReports %></h2>
             <ul class="commu-related-report-list">
                 <% relatedReports.forEach(function(report) { %>
-                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (en ? 'Report' : '보고서') %></span><strong><%= report.title %></strong></a></li>
+                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (strings.commuLingoViews.person.report) %></span><strong><%= report.title %></strong></a></li>
                 <% }) %>
             </ul>
         </section>
         <% } %>
 
-        <a class="commu-person-detail-back" href="/commulingo/people#p-<%= person.id %>">&larr; <%= en ? 'Back to card' : '카드로 돌아가기' %></a>
+        <a class="commu-person-detail-back" href="/commulingo/people#p-<%= person.id %>">&larr; <%= strings.commuLingoViews.person.backToCard %></a>
     </main>
 
     <%- include('../partials/footer') %>

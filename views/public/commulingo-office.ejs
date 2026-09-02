@@ -10,7 +10,7 @@
     <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: en ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { label: strings.commuLingoViews.office.people, href: '/commulingo/people' },
                 { label: office.title },
             ],
             dictJump: 'people' }) %>
@@ -26,7 +26,7 @@
 
         <% if (office.lineage && office.lineage.length) { %>
         <section class="commu-hub-section" aria-labelledby="office-lineage">
-            <h2 id="office-lineage"><%= en ? 'Organizational Lineage' : '조직 변천' %></h2>
+            <h2 id="office-lineage"><%= strings.commuLingoViews.office.organizationalLineage %></h2>
             <ol class="commu-office-lineage">
                 <% office.lineage.forEach(function(step) { %>
                 <li class="commu-lineage-step">
@@ -42,7 +42,7 @@
         <% } %>
 
         <section class="commu-hub-section" aria-labelledby="office-timeline">
-            <h2 id="office-timeline"><%= en ? 'Leadership Timeline' : '지도부 타임라인' %></h2>
+            <h2 id="office-timeline"><%= strings.commuLingoViews.office.leadershipTimeline %></h2>
             <ol class="commu-office-rows commu-hub-office-rows">
                 <% office.rows.forEach(function(row) { %>
                 <li>
@@ -62,7 +62,7 @@
         </section>
 
         <section class="commu-hub-section" aria-labelledby="office-people">
-            <h2 id="office-people"><%= en ? 'People' : '소속 인물' %></h2>
+            <h2 id="office-people"><%= strings.commuLingoViews.office.people2 %></h2>
             <div class="commu-people-grid">
                 <% people.forEach(function(person) { %>
                 <%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg }) %>
@@ -72,10 +72,10 @@
 
         <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
         <section class="commu-hub-section commu-related-reports" aria-labelledby="related-reports">
-            <h2 id="related-reports"><%= en ? 'Related reports' : '관련 보고서' %></h2>
+            <h2 id="related-reports"><%= strings.commuLingoViews.office.relatedReports %></h2>
             <ul class="commu-related-report-list">
                 <% relatedReports.forEach(function(report) { %>
-                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (en ? 'Report' : '보고서') %></span><strong><%= report.title %></strong></a></li>
+                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (strings.commuLingoViews.office.report) %></span><strong><%= report.title %></strong></a></li>
                 <% }) %>
             </ul>
         </section>
