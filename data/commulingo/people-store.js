@@ -322,6 +322,7 @@ const store = createDictionarySnapshotStore({
     snapshotPath: process.env.COMMULINGO_PEOPLE_SNAPSHOT
         || path.join(__dirname, 'people-snapshot.json'),
     fetchData: async () => rowsToPeopleData(await fetchRows()),
+    signatureTables: ['commulingo_id_redirects', 'commulingo_office_rows', 'commulingo_offices', 'commulingo_people', 'commulingo_people_groups', 'commulingo_person_aliases', 'commulingo_person_career_entries', 'commulingo_person_patronymics', 'commulingo_person_roles', 'commulingo_person_scenes', 'commulingo_person_sections', 'commulingo_role_categories'],
     isEmpty: data => !data.people.length,
     emptyErrorMessage: 'commulingo_people has no rows',
     emptyErrorCode: 'COMMULINGO_PEOPLE_EMPTY',

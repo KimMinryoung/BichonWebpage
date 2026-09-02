@@ -161,6 +161,7 @@ const store = createDictionarySnapshotStore({
     snapshotPath: process.env.COMMULINGO_TERMS_SNAPSHOT
         || path.join(__dirname, 'terms-snapshot.json'),
     fetchData: fetchTerms,
+    signatureTables: ['commulingo_history_events', 'commulingo_people', 'commulingo_term_aliases', 'commulingo_term_events', 'commulingo_term_people', 'commulingo_term_relations', 'commulingo_terms'],
     isEmpty: data => !data.length,
     emptyErrorMessage: 'commulingo_terms has no rows',
     emptyErrorCode: 'COMMULINGO_TERMS_EMPTY',

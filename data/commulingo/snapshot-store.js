@@ -19,6 +19,31 @@
 // logic, identical modulo log labels and fetch functions.
 const fs = require('fs');
 const crypto = require('crypto');
+const db = require('../../config/database');
+
+// Change-detection gate for the dictionary stores. Pulling and hashing the
+// 27 MB of people/terms/events every minute costs ~200 ms of event-loop
+// time and a dozen sequential scans per cycle just to learn nothing changed.
+// pg_stat_user_tables' n_tup_ins/upd/del are cumulative per table (they
+// count DELETE+INSERT edits too, which a max(updated_at) gate would miss),
+// so an unchanged sum over the store's tables means an unchanged snapshot.
+// The counters reset only when the server restarts, which merely forces a
+// full refresh. A full pull still happens every FULL_REFRESH_EVERY cycles so
+// a missed signal cannot go stale for more than ten minutes.
+// COMMULINGO_SNAPSHOT_SIGNATURE=0 turns the gate off.
+const SIGNATURE_ENABLED = process.env.COMMULINGO_SNAPSHOT_SIGNATURE !== '0';
+const FULL_REFRESH_EVERY = 10;
+
+async function readWriteSignature(tables) {
+    const { rows } = await db.query(
+        `SELECT COALESCE(SUM(n_tup_ins + n_tup_upd + n_tup_del), 0)::text AS writes,
+                COUNT(*)::int AS tables
+           FROM pg_stat_user_tables
+          WHERE relname = ANY($1)`,
+        [tables]
+    );
+    return { value: `${rows[0].writes}:${rows[0].tables}`, tables: rows[0].tables };
+}
 
 function writeSnapshotFile(snapshotPath, label, serialized) {
     try {
@@ -56,11 +81,29 @@ function createDictionarySnapshotStore({
     emptyErrorCode,
     validateSnapshot,  // parsed => bool (beyond JSON.parse succeeding)
     emptyFallback,     // returned when there is no snapshot and the DB is down
+    signatureTables,   // optional: table names whose write counters gate a refresh
 }) {
     let memory = null;          // { data, source, at }
     let pendingRefresh = null;  // coalesced in-flight DB refresh
     let timerStarted = false;
     let lastSnapshotHash = null; // sha1 of the last serialized snapshot
+    let lastSignature = null;    // write-counter signature at the last full pull
+    let cyclesSinceFull = 0;
+    let signatureWarned = false;
+
+    async function currentSignature() {
+        if (!SIGNATURE_ENABLED || !signatureTables || !signatureTables.length) return null;
+        try {
+            const sig = await readWriteSignature(signatureTables);
+            if (sig.tables !== signatureTables.length && !signatureWarned) {
+                signatureWarned = true;
+                console.warn(`[${label}] signature covers ${sig.tables}/${signatureTables.length} tables; check the table list`);
+            }
+            return sig.value;
+        } catch (err) {
+            return null; // a failed read just means a full pull this cycle
+        }
+    }
 
     function readSnapshotFile() {
         try {
@@ -83,27 +126,39 @@ function createDictionarySnapshotStore({
 
     function refresh() {
         if (pendingRefresh) return pendingRefresh;
-        pendingRefresh = fetchData()
-            .then(data => {
-                if (isEmpty(data)) {
-                    const err = new Error(emptyErrorMessage);
-                    err.code = emptyErrorCode;
-                    throw err;
-                }
-                const serialized = JSON.stringify(data);
-                const hash = crypto.createHash('sha1').update(serialized).digest('hex');
-                if (memory && hash === lastSnapshotHash) {
-                    memory = { data: memory.data, source: 'db', at: Date.now() };
-                    return memory.data;
-                }
-                memory = { data, source: 'db', at: Date.now() };
-                lastSnapshotHash = hash;
-                writeSnapshotFile(snapshotPath, label, serialized);
-                return data;
-            })
-            .finally(() => {
-                pendingRefresh = null;
-            });
+        pendingRefresh = (async () => {
+            // Cheap path: nothing written to the store's tables since the last
+            // full pull, and the periodic full pull is not due yet.
+            const signature = await currentSignature();
+            if (signature && lastSignature && signature === lastSignature
+                && memory && memory.source === 'db' && cyclesSinceFull < FULL_REFRESH_EVERY) {
+                cyclesSinceFull += 1;
+                memory = { data: memory.data, source: 'db', at: Date.now() };
+                return memory.data;
+            }
+            // Full pull. The signature was read before the fetch, so a write
+            // that lands during the fetch shows up as a change next cycle.
+            const data = await fetchData();
+            if (isEmpty(data)) {
+                const err = new Error(emptyErrorMessage);
+                err.code = emptyErrorCode;
+                throw err;
+            }
+            lastSignature = signature;
+            cyclesSinceFull = 0;
+            const serialized = JSON.stringify(data);
+            const hash = crypto.createHash('sha1').update(serialized).digest('hex');
+            if (memory && hash === lastSnapshotHash) {
+                memory = { data: memory.data, source: 'db', at: Date.now() };
+                return memory.data;
+            }
+            memory = { data, source: 'db', at: Date.now() };
+            lastSnapshotHash = hash;
+            writeSnapshotFile(snapshotPath, label, serialized);
+            return data;
+        })().finally(() => {
+            pendingRefresh = null;
+        });
         return pendingRefresh;
     }
 

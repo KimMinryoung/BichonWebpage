@@ -81,6 +81,7 @@ const store = createDictionarySnapshotStore({
     snapshotPath: process.env.COMMULINGO_HISTORY_EVENTS_SNAPSHOT
         || path.join(__dirname, 'history-events-snapshot.json'),
     fetchData: fetchEvents,
+    signatureTables: ['commulingo_history_event_people', 'commulingo_history_events', 'commulingo_people'],
     isEmpty: data => !data.length,
     emptyErrorMessage: 'commulingo_history_events has no rows',
     emptyErrorCode: 'COMMULINGO_EVENTS_EMPTY',
