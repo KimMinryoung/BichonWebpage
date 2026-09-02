@@ -17,6 +17,10 @@ BichonWebsite — Personal website (Node.js/Express + EJS + PostgreSQL) with:
 ### Workflow
 - Always commit AND push together unless explicitly told otherwise
 - Test before committing — run relevant tests or verify server starts
+- `npm test` (= `scripts/test`: every EJS view compiles, SEO head, error page, CommuLingo policy smoke tests; ~2 s, no DB) must pass before a commit; `scripts/deploy` refuses to build when it fails.
+- Behaviour-preserving refactors are verified by byte-diffing rendered pages between prod (:3000) and dev-preview (:3001) with `scripts/diff-preview` (default 24 paths × ko/en; pass paths as arguments, `COOKIE=` / `NO_EN=1` for header matrices). Run it with nothing else hitting dev-preview.
+- `scripts/deploy` gates: `npm test` → build → `/health` → 16-route 200 sweep → `check-commulingo-code-db-drift.js`; any failure exits non-zero (the new container stays up — inspect before moving on). `scripts/dev-preview` runs the container as the host user so bind-mounted files stay grass-owned.
+- Scripts that touch the DB start with `require('./lib/bootstrap')` (loads `.env` from the repo root); run-once migrations live in `scripts/one-off/` and are not re-runnable tools.
 - Korean is the primary language for creative/design feedback; English for technical instructions
 - When debugging visuals, ask for a screenshot path rather than guessing
 - User provides screenshots in temp_dev/ — always read them when referenced

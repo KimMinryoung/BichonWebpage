@@ -28,6 +28,12 @@ run test-error-page node scripts/test-error-page.js
 for f in scripts/smoke-commulingo-*.js; do
     run "$(basename "$f" .js)" node "$f"
 done
+
+# Lint runs here only when eslint is installed locally (the docker fallback in
+# scripts/lint is too slow for every test run); `npm run lint` always works.
+if [[ -x node_modules/.bin/eslint ]]; then
+    run lint node_modules/.bin/eslint .
+fi
 rm -f /tmp/test-$$.log
 
 if [[ $fail -ne 0 ]]; then

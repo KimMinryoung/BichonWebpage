@@ -9,7 +9,7 @@
 // aliases from titles would produce exactly the wrong links, so a document with
 // no aliases simply never auto-links.
 
-const { WORD_CHAR, escapeHtml, mapLinkableText, buildAliasPattern } = require('./people-linkify');
+const { buildAliasPattern } = require('./people-linkify');
 
 // Builds an alias→document index from the manifest entries
 // ({ id, title: {ko,en}, kind: {ko,en}, aliases: {ko:[],en:[]}, ... }).

@@ -24,7 +24,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const db = require('../config/database');
+const { db: db } = require('./lib/bootstrap');
 const { ROLE_OFFICE_TITLES, OFFICE_DISPLAY_ORDER, OFFICE_ICON } = require('../data/commulingo/people-standard');
 const { flagLabel } = require('../data/commulingo/flag-icons');
 

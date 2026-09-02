@@ -36,6 +36,7 @@ if (env.IS_PRODUCTION) {
     app.set('trust proxy', 1);
 }
 
+if (process.env.LOG_REQUESTS === '1') app.use(require('./middleware/request-log').requestLog);
 app.use(seo.canonicalHostRedirect);
 app.use(stripEnglishPrefix);
 

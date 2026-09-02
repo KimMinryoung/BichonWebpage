@@ -12,8 +12,8 @@
 // Usage (inside the frontend container, which can reach the DB):
 //   node /app/scripts/normalize-commulingo-fate-db.js            # dry run (ROLLBACK)
 //   node /app/scripts/normalize-commulingo-fate-db.js --apply    # write
-const db = require('../config/database');
-const { normalizeFateLabel } = require('../data/commulingo/people-standard');
+const { db: db } = require('../lib/bootstrap');
+const { normalizeFateLabel } = require('../../data/commulingo/people-standard');
 
 const APPLY = process.argv.includes('--apply');
 

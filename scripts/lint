@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# scripts/lint — ESLint (no-undef, no-unused-vars) over public/js and the
+# server code. Uses the local install when present; otherwise runs the pinned
+# version in a throwaway Node container so a host without node_modules can
+# still lint (needs network for the first pull).
+set -u
+cd "$(dirname "$0")/.."
+ESLINT_VERSION="9.39.0"
+if [[ -x node_modules/.bin/eslint ]]; then
+    exec node_modules/.bin/eslint "$@" .
+fi
+echo "[lint] no local eslint; running eslint@${ESLINT_VERSION} in docker" >&2
+exec docker run --rm -v "$PWD:/app:ro" -w /app -e HOME=/tmp node:20.20.2-alpine \
+    sh -c "npm exec -y --package=eslint@${ESLINT_VERSION} -- eslint $* ." 

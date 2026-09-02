@@ -2,7 +2,7 @@
 // shape ({ pattern, byAlias, en }) matches the other indexes so linkify.js can
 // run them all through one replacer.
 
-const { WORD_CHAR, escapeHtml, mapLinkableText, buildAliasPattern } = require('./people-linkify');
+const { buildAliasPattern } = require('./people-linkify');
 
 // Korean compounds that contain an event term but must never link. '대테러'
 // (the event title for the Great Terror) is also the ordinary word for

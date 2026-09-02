@@ -171,7 +171,7 @@ mini-sentences — put burial, prison names, etc. in bio or sections).
   Python port (same logic); `commulingo_edit` applies it on save and validates
   the 22/50 limits. Its tool description carries the vocabulary guide for the
   agent.
-- `scripts/normalize-commulingo-fate-db.js` was the one-off that normalized all
+- `scripts/one-off/normalize-commulingo-fate-db.js` was the one-off that normalized all
   535 existing DB rows to this standard (dry-run by default; `--apply` writes).
 
 ## Serving from a local snapshot — added 2026-07-14

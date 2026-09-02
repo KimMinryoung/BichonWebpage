@@ -1,6 +1,5 @@
 const express = require('express');
 const { setShortPublicCache } = require('../data/commulingo/page-helpers');
-const db = require('../config/database');
 const { redirectTarget } = require('../data/commulingo/people-store');
 const { loadStandardizedPeople, localizedPersonSections } = require('../data/commulingo/people-view');
 

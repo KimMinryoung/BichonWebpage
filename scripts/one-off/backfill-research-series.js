@@ -2,7 +2,7 @@
 // Backfill research_documents series metadata from an explicit, reviewed list.
 
 require('dotenv').config();
-const db = require('../config/database');
+const db = require('../../config/database');
 
 const SERIES = [
     {
