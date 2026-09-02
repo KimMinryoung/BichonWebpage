@@ -1,9 +1,5 @@
 const rateLimit = require('express-rate-limit');
-
-function intEnv(name, fallback) {
-    const value = parseInt(process.env[name], 10);
-    return Number.isFinite(value) && value > 0 ? value : fallback;
-}
+const { intFromEnv: intEnv } = require('../config/env');
 
 function buildLimiter({ windowMs, max, message, skipSuccessfulRequests = false }) {
     return rateLimit({

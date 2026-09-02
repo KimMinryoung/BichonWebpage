@@ -25,7 +25,17 @@ function clampInteger(value, { fallback, min, max }) {
     return Math.min(max, Math.max(min, parsed));
 }
 
+// Responses that must never be cached anywhere (redirect hops that set a
+// cookie, the nonogram page, the writer 404).
+function setNoStore(res) {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.setHeader('Surrogate-Control', 'no-store');
+}
+
 module.exports = {
     fetchWithTimeout,
     clampInteger,
+    setNoStore,
 };

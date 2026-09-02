@@ -12,6 +12,8 @@
 #   PAGES_FILE=my-list.txt scripts/diff-preview        # one path per line
 #   LANGS=ko scripts/diff-preview        # only one language
 #   KEEP=1 scripts/diff-preview          # keep the fetched bodies in $OUT
+#   COOKIE='lang=en' scripts/diff-preview /commulingo/people   # send a Cookie header
+#   NO_EN=1 scripts/diff-preview /en /nonogram?v=1   # paths as given, no /en/ rewriting
 #
 # Env: PROD (default http://127.0.0.1:3000), DEV (default http://<tailscale>:3001),
 #      OUT (default a mktemp dir). Exit 1 when any page or header set differs.
@@ -76,7 +78,7 @@ normalize() {
 
 fetch() { # url lang outprefix
     local url="$1" lang="$2" prefix="$3"
-    curl -s --max-time 60 -H "Accept-Language: $lang" -D "$prefix.headers" -o "$prefix.raw" "$url"
+    curl -s --max-time 60 -H "Accept-Language: $lang" ${COOKIE:+-H "Cookie: $COOKIE"} -D "$prefix.headers" -o "$prefix.raw" "$url"
     normalize < "$prefix.raw" > "$prefix.body"
     # Drop headers that legitimately vary between two processes. Content-Length
     # differs by the asset-version query length, so it is checked on the
@@ -91,7 +93,7 @@ for lang in $LANGS; do
     for page in "${PAGES[@]}"; do
         [[ -z "$page" ]] && continue
         path="$page"
-        if [[ "$lang" == "en" ]]; then
+        if [[ "$lang" == "en" && -z "${NO_EN:-}" ]]; then
             # English canonicals live under /en/... for public HTML/text pages;
             # data endpoints stay unprefixed and are language-neutral or cookie-driven.
             case "$path" in

@@ -1,9 +1,5 @@
 const { Pool } = require('pg');
-
-function intFromEnv(name, fallback) {
-    const value = Number.parseInt(process.env[name], 10);
-    return Number.isFinite(value) && value > 0 ? value : fallback;
-}
+const { intFromEnv } = require('./env');
 
 const pool = new Pool({
     host: process.env.DB_HOST || 'localhost',
