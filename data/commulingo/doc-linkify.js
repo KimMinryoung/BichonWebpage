@@ -9,12 +9,7 @@
 // aliases from titles would produce exactly the wrong links, so a document with
 // no aliases simply never auto-links.
 
-const {
-    WORD_CHAR,
-    escapeHtml,
-    escapeRegExp,
-    mapLinkableText,
-} = require('./people-linkify');
+const { WORD_CHAR, escapeHtml, mapLinkableText, buildAliasPattern } = require('./people-linkify');
 
 // Builds an alias→document index from the manifest entries
 // ({ id, title: {ko,en}, kind: {ko,en}, aliases: {ko:[],en:[]}, ... }).
@@ -43,11 +38,9 @@ function buildDocLinkIndex(docs, options = {}) {
         });
     });
     if (!tokens.length) return null;
-    const all = tokens.slice().sort((a, b) => b.length - a.length);
-    const alternation = all.map(escapeRegExp).join('|');
     // Korean aliases carry their own 『』 delimiters, so no word boundary is
     // available or wanted; English ones get \b like every other index.
-    const pattern = new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
+    const pattern = buildAliasPattern(tokens, [], en);
     return { pattern, byAlias, en };
 }
 

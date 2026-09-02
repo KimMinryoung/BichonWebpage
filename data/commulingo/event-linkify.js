@@ -2,12 +2,7 @@
 // shape ({ pattern, byAlias, en }) matches the other indexes so linkify.js can
 // run them all through one replacer.
 
-const {
-    WORD_CHAR,
-    escapeHtml,
-    escapeRegExp,
-    mapLinkableText,
-} = require('./people-linkify');
+const { WORD_CHAR, escapeHtml, mapLinkableText, buildAliasPattern } = require('./people-linkify');
 
 // Korean compounds that contain an event term but must never link. '대테러'
 // (the event title for the Great Terror) is also the ordinary word for
@@ -127,9 +122,7 @@ function buildEventLinkIndex(events, options = {}) {
         });
     });
     if (!tokens.length) return null;
-    const all = (en ? tokens : BLOCKED_EVENT_KO.concat(tokens)).slice().sort((a, b) => b.length - a.length);
-    const alternation = all.map(escapeRegExp).join('|');
-    const pattern = new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
+    const pattern = buildAliasPattern(tokens, en ? [] : BLOCKED_EVENT_KO, en);
     return { pattern, byAlias, en };
 }
 

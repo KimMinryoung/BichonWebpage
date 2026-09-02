@@ -131,6 +131,8 @@ function buildPersonLinkIndex(people, options = {}) {
 
     const byAlias = {};
     const tokens = [];
+    const neverKo = new Set(neverLinkAliases('ko'));
+    const neverEn = new Set(neverLinkAliases('en'));
     list.forEach(person => {
         if (!person || !person.id || person.id === excludeId) return;
         const canonicalWords = canonicalWordsById[person.id] || new Set();
@@ -153,8 +155,8 @@ function buildPersonLinkIndex(people, options = {}) {
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
-            if (!en && neverLinkAliases('ko').includes(alias)) return;
-            if (en && neverLinkAliases('en').includes(alias.toLowerCase())) return;
+            if (!en && neverKo.has(alias)) return;
+            if (en && neverEn.has(alias.toLowerCase())) return;
             const words = alias.toLowerCase().split(/\s+/).filter(Boolean);
             const trusted = trustedFormsFor(person.id, lang).includes(alias);
             // Only link aliases made of this person's own canonical-name words,
@@ -179,10 +181,18 @@ function buildPersonLinkIndex(people, options = {}) {
     // BLOCKED tokens join the alternation so they are consumed before the alias
     // inside them; longest-first keeps multi-word names and compounds ahead of
     // their short forms.
-    const all = blockedPhrases(en ? 'en' : 'ko').concat(tokens).slice().sort((a, b) => b.length - a.length);
-    const alternation = all.map(escapeRegExp).join('|');
-    const pattern = new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
+    const pattern = buildAliasPattern(tokens, blockedPhrases(en ? 'en' : 'ko'), en);
     return { pattern, byAlias, en };
+}
+
+// The regex every link index ends with. Blocked phrases go first so a blocked
+// compound (레닌그라드) is consumed before the name inside it can match; the
+// sort is stable, so among equal lengths that order survives. Longest
+// alternative first; word boundaries only for English, where they exist.
+function buildAliasPattern(tokens, blocked, en) {
+    const all = (blocked || []).concat(tokens).sort((a, b) => b.length - a.length);
+    const alternation = all.map(escapeRegExp).join('|');
+    return new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
 }
 
 // Tags whose text content must never be linkified: existing anchors (no nested
@@ -214,6 +224,7 @@ function mapLinkableText(html, mapText) {
 }
 
 module.exports = {
+    buildAliasPattern,
     WORD_CHAR,
     escapeHtml,
     escapeRegExp,

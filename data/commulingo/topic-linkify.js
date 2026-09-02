@@ -6,7 +6,7 @@
 // Index shape ({ pattern, byAlias, en }) matches people/event indexes so all
 // three share one replacer pipeline (see report-links.js).
 
-const { escapeRegExp } = require('./people-linkify');
+const { buildAliasPattern } = require('./people-linkify');
 
 // Terms a report would actually write, mapped to the classification page a
 // reader expects. Keys are role-category / office ids from people-standard.js.
@@ -52,9 +52,7 @@ function buildTopicLinkIndex(standardized, options = {}) {
         });
     });
     if (!tokens.length) return null;
-    const all = tokens.slice().sort((a, b) => b.length - a.length);
-    const alternation = all.map(escapeRegExp).join('|');
-    const pattern = new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
+    const pattern = buildAliasPattern(tokens, [], en);
     return { pattern, byAlias, en };
 }
 

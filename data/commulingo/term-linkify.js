@@ -17,7 +17,7 @@
 // A per-document escape hatch also exists for strings that are right almost
 // everywhere but wrong on one page: `noAutoLink` in docs/manifest.json.
 
-const { escapeRegExp } = require('./people-linkify');
+const { buildAliasPattern } = require('./people-linkify');
 const { termBlocklist } = require('./link-blocklist');
 
 // A word can name a thing that has its own main entry while a second entry
@@ -47,8 +47,8 @@ function buildTermLinkIndex(terms, options = {}) {
     const byId = {};
     const tokens = [];
     const blockedPhrases = termBlocklist('term-phrase', lang);
-    const neverAlias = termBlocklist('term-alias', lang);
-    const neverHeadword = termBlocklist('term-headword', lang);
+    const neverAlias = new Set(termBlocklist('term-alias', lang));
+    const neverHeadword = new Set(termBlocklist('term-headword', lang));
     (terms || []).forEach(term => {
         if (!term || !term.id) return;
         const label = (term.term && (term.term[lang] || term.term.ko || term.term.en)) || '';
@@ -64,8 +64,8 @@ function buildTermLinkIndex(terms, options = {}) {
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2 || byAlias[alias]) return;
-            if (neverHeadword.includes(alias)) return;
-            if (alias !== label && neverAlias.includes(alias)) return;
+            if (neverHeadword.has(alias)) return;
+            if (alias !== label && neverAlias.has(alias)) return;
             byAlias[alias] = entry;
             tokens.push(alias);
         });
@@ -74,9 +74,7 @@ function buildTermLinkIndex(terms, options = {}) {
         if (byAlias[alias] && byId[targetId]) byAlias[alias] = byId[targetId];
     });
     if (!tokens.length) return null;
-    const all = blockedPhrases.concat(tokens).slice().sort((a, b) => b.length - a.length);
-    const alternation = all.map(escapeRegExp).join('|');
-    const pattern = new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
+    const pattern = buildAliasPattern(tokens, blockedPhrases, en);
     return { pattern, byAlias, en };
 }
 
