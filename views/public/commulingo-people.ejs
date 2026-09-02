@@ -328,7 +328,11 @@
             function fetchGroup(id, page) {
                 var key = id + (page ? ':' + page : '');
                 if (pending[key]) return pending[key];
-                var url = '/commulingo/people/cards?group=' + encodeURIComponent(id) + (page ? '&page=' + page : '');
+                // Under /en/… the fragment must come from /en/… too, so its
+                // card links carry the English prefix instead of costing a
+                // redirect on every click.
+                var langPrefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
+                var url = langPrefix + '/commulingo/people/cards?group=' + encodeURIComponent(id) + (page ? '&page=' + page : '');
                 pending[key] = fetch(url, { credentials: 'same-origin' })
                     .then(function(res) {
                         if (!res.ok) throw new Error('HTTP ' + res.status);

@@ -139,6 +139,9 @@ app.use(seo.canonicalHostRedirect);
 // language-specific content so admin/auth/API routes can never be aliased.
 app.use((req, res, next) => {
     if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+    // Cheap string test first: the URL parse below ran for every asset and
+    // proxy request only to be discarded.
+    if (!req.url.startsWith('/en')) return next();
     const url = new URL(req.url, 'http://localhost');
     if (url.pathname === '/en') {
         return res.redirect(301, `/en/${url.search}`);
@@ -553,9 +556,14 @@ app.use((req, res, next) => {
     if (req.urlLanguage === 'en') {
         const send = res.send.bind(res);
         res.send = body => {
-            const looksLikeHtml = typeof body === 'string'
-                && /^(?:\s*<!doctype html>|\s*<html\b)/i.test(body);
-            return send(looksLikeHtml ? seo.localizeHtmlLinks(body, 'en') : body);
+            if (typeof body !== 'string') return send(body);
+            // Full pages and HTML fragments (the people/terms card fragments
+            // set text/html explicitly) get their links localized; routes
+            // that send XML, JSON, Markdown or plain text set their type
+            // before send and are left alone.
+            const type = res.get('Content-Type') || '';
+            const isHtml = type ? /text\/html/i.test(type) : /^\s*</.test(body);
+            return send(isHtml ? seo.localizeHtmlLinks(body, 'en') : body);
         };
     }
     next();

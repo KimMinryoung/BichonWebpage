@@ -84,7 +84,8 @@
                 if (!head || !head.hasAttribute('data-pending')) return Promise.resolve();
                 var id = head.id;
                 if (pending[id]) return pending[id];
-                pending[id] = fetch('/commulingo/terms/cards?sort=' + encodeURIComponent(sort)
+                var langPrefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
+                pending[id] = fetch(langPrefix + '/commulingo/terms/cards?sort=' + encodeURIComponent(sort)
                         + '&group=' + encodeURIComponent(id), { credentials: 'same-origin' })
                     .then(function(res) {
                         if (!res.ok) throw new Error('HTTP ' + res.status);
