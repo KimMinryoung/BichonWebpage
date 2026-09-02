@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+# diff-preview — byte-diff rendered pages between production and dev-preview.
+#
+# The house verification method for behaviour-preserving refactors: the same
+# page fetched from prod (127.0.0.1:3000) and dev-preview (<tailscale-ip>:3001)
+# must be byte-identical after normalising the asset version query. Response
+# headers are compared too (minus Date/ETag/Content-Length and cookie expiry stamps).
+#
+# Usage:
+#   scripts/diff-preview                 # default page list, both languages
+#   scripts/diff-preview /commulingo/people /reports   # explicit paths
+#   PAGES_FILE=my-list.txt scripts/diff-preview        # one path per line
+#   LANGS=ko scripts/diff-preview        # only one language
+#   KEEP=1 scripts/diff-preview          # keep the fetched bodies in $OUT
+#
+# Env: PROD (default http://127.0.0.1:3000), DEV (default http://<tailscale>:3001),
+#      OUT (default a mktemp dir). Exit 1 when any page or header set differs.
+set -u
+
+PROD="${PROD:-http://127.0.0.1:3000}"
+if [[ -z "${DEV:-}" ]]; then
+    TS_IP="${DEV_TAILSCALE_IP:-$(tailscale ip -4 2>/dev/null | head -1)}"
+    DEV="http://${TS_IP:-127.0.0.1}:3001"
+fi
+LANGS="${LANGS:-ko en}"
+OUT="${OUT:-$(mktemp -d "${TMPDIR:-/tmp}/diff-preview.XXXXXX")}"
+mkdir -p "$OUT"
+
+DEFAULT_PAGES=(
+    /
+    /posts
+    /reports
+    /hub
+    /ai-diary
+    /commulingo
+    /commulingo/people
+    /commulingo/people/stalin
+    '/commulingo/people/cards?group=GROUP'
+    /commulingo/terms
+    /commulingo/terms/nep
+    /commulingo/events
+    /commulingo/events/revolution-1905
+    /commulingo/docs
+    /commulingo/docs/marx-engels-communist-manifesto
+    /commulingo/politburo
+    /commulingo/book/capital-vol1
+    /commulingo/lesson/capital-v1-ch01-basic
+    /commulingo/catalog.json
+    /commulingo/api/people
+    /reports/research/korea-energy-transition-ownership
+    /sitemap.xml
+    /posts.md
+    /reports.md
+)
+
+if [[ $# -gt 0 ]]; then
+    PAGES=("$@")
+elif [[ -n "${PAGES_FILE:-}" ]]; then
+    mapfile -t PAGES < "$PAGES_FILE"
+else
+    PAGES=("${DEFAULT_PAGES[@]}")
+    # The people-cards fragment needs a real group id; take the first one prod links.
+    GROUP="$(curl -s "$PROD/commulingo/people" | grep -o 'people/list/[A-Za-z0-9_-]*' | head -1 | cut -d/ -f3)"
+    if [[ -n "$GROUP" ]]; then
+        PAGES=("${PAGES[@]/GROUP/$GROUP}")
+    else
+        PAGES=("${PAGES[@]/\/commulingo\/people\/cards?group=GROUP/}")
+    fi
+fi
+
+# Asset version differs by construction (?v=<git sha> vs ?v=dev); nothing else
+# in a rendered page depends on the container identity.
+normalize() {
+    sed -E 's/\?v=[A-Za-z0-9_.-]+//g'
+}
+
+fetch() { # url lang outprefix
+    local url="$1" lang="$2" prefix="$3"
+    curl -s --max-time 60 -H "Accept-Language: $lang" -D "$prefix.headers" -o "$prefix.raw" "$url"
+    normalize < "$prefix.raw" > "$prefix.body"
+    # Drop headers that legitimately vary between two processes. Content-Length
+    # differs by the asset-version query length, so it is checked on the
+    # normalised body instead; cookie Expires stamps differ by the second.
+    command grep -viE '^(date|etag|content-length|x-request-id|keep-alive|connection):' "$prefix.headers" \
+        | sed -E 's/\r$//; s/Expires=[^;]+/Expires=X/' | normalize > "$prefix.hdr"
+}
+
+fail=0
+total=0
+for lang in $LANGS; do
+    for page in "${PAGES[@]}"; do
+        [[ -z "$page" ]] && continue
+        path="$page"
+        if [[ "$lang" == "en" ]]; then
+            # English canonicals live under /en/... for public HTML/text pages;
+            # data endpoints stay unprefixed and are language-neutral or cookie-driven.
+            case "$path" in
+                /commulingo/lesson/*|/commulingo/catalog.json|/commulingo/api/*|/sitemap.xml|/commulingo/people/cards*) ;;
+                /) path="/en/" ;;
+                *) path="/en$path" ;;
+            esac
+        fi
+        total=$((total + 1))
+        slug="$(printf '%s' "$lang$path" | tr -c 'A-Za-z0-9' '_')"
+        fetch "$PROD$path" "$lang" "$OUT/$slug.prod"
+        fetch "$DEV$path" "$lang" "$OUT/$slug.dev"
+        status_prod="$(head -1 "$OUT/$slug.prod.hdr")"
+        status_dev="$(head -1 "$OUT/$slug.dev.hdr")"
+        if ! cmp -s "$OUT/$slug.prod.body" "$OUT/$slug.dev.body"; then
+            fail=$((fail + 1))
+            echo "DIFF body   [$lang] $path  ($(wc -c < "$OUT/$slug.prod.body") vs $(wc -c < "$OUT/$slug.dev.body") bytes)"
+            diff "$OUT/$slug.prod.body" "$OUT/$slug.dev.body" | head -8 | sed 's/^/    /'
+        elif ! cmp -s "$OUT/$slug.prod.hdr" "$OUT/$slug.dev.hdr"; then
+            fail=$((fail + 1))
+            echo "DIFF header [$lang] $path"
+            diff "$OUT/$slug.prod.hdr" "$OUT/$slug.dev.hdr" | sed 's/^/    /'
+        else
+            echo "same        [$lang] $path  ($status_prod, $(wc -c < "$OUT/$slug.prod.body") bytes)"
+        fi
+    done
+done
+
+echo
+echo "$((total - fail))/$total identical (prod=$PROD dev=$DEV)"
+if [[ "${KEEP:-0}" == "1" ]]; then
+    echo "bodies kept in $OUT"
+else
+    rm -rf "$OUT"
+fi
+[[ $fail -eq 0 ]]
