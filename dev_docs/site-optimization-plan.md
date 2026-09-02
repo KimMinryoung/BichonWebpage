@@ -24,7 +24,8 @@
 >
 > ## 2차 패스 (2026-09-02, 계획: ~/.claude/plans/rustling-exploring-peach.md)
 > - 2026-09-02: **배치 0 완료·배포** (커밋 f2d24f8 + f990f31). 원인: `createRegistrySnapshotStore`가 변경 감지 없이 매분 `install(rows)` → `blocklistRef`/`termCategoriesRef` 회전 → linkify `stdMemo`/`indexMemo` 매분 리셋(163ms 동기) → WeakMap(indexes) 메모 전부 폐기, plain Map 셋(`researchRenderMemo`·`bookPageMemo`·`lessonPayloadMemo`)이 `indexesRef`로 옛 세대를 고정 → 약 7.9h마다 2GB 힙 OOM(9-01 21:56, 9-02 05:40 재시작). 수정: 레지스트리 스토어 sha1 변경 감지(파일 원문 시드 포함), 세 메모 WeakMap(indexes)→Map. 검증: prod↔dev 48/48 바이트 동일, 배포 전후 prod 46/46 동일, 스모크 6종, 416요청 3회 크롤 뒤 dev RSS 183MiB 복귀, dev 인물 p90 48→17ms(매분 :40 절벽 소멸). 신규 `scripts/diff-preview`(집 검증법 스크립트화). 3시간 RSS 샘플 파일은 세션 scratchpad `prod-rss-3h.txt`.
-> - 배치 1~9는 계획 파일 참조. 다음: 배치 1(async-handler·프로세스 핸들러·fresh 제거·redis/pg 설정·npm test).
+> - 2026-09-02: **배치 1 완료·배포** (커밋 c48e09b, b255632, c9cab7d). utils/async-handler.js(.md 피드 4개·lesson 라우트), process unhandledRejection/uncaughtException 핸들러, keepAliveTimeout 65s, 종료 시 closeIdleConnections/closeAllConnections(SIGTERM clean exit 465ms, 이전엔 10초 강제 종료), 비인증 `?fresh=1` 제거(433~689ms→37ms)·사이트맵 `{fresh:true}` 제거, `/commulingo/api/people` 8.9MB JSON 메모, reports 캐시 쓰기 Promise.all, Redis 재접속 백오프+로그 스로틀, pg statement_timeout 60s·set_config 제거, manifest pospelov 사건 참조 great-terror, `npm test`(scripts/test). 검증: prod↔dev 48/48 동일, 배포 전후 동일, 고의 실패 주입으로 exit 1 확인. 다음: 배치 2(CSRF 지연 발급·의존성 패치·Dockerfile 고정·deploy 게이트·CDN 핀) — **사용자 패스키 실기기 테스트 게이트**.
+> - 배치 2~9는 계획 파일 참조.
 >
 > ## 최종 결과 (베이스라인 대비, 2026-08-04)
 > - 용어 페이지 warm 10~14ms → **4~8ms**, 인물 페이지 12~20ms → **5~13ms**, sitemap 17~30ms → **4ms**
