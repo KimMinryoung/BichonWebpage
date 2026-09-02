@@ -352,9 +352,7 @@ router.get('/', async (req, res) => {
                     const data = await response.json();
                     const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
 
-                    for (const r of data.reports || []) {
-                        await cache.setReport(r);
-                    }
+                    await Promise.all((data.reports || []).map(r => cache.setReport(r)));
 
                     taskData = {
                         reports: data.reports || [],

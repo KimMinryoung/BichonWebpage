@@ -21,6 +21,9 @@ const pool = new Pool({
     // The DB is the local leninbot-pg container on the same Docker network;
     // fail fast instead of letting requests hang when it is down.
     connectionTimeoutMillis: intFromEnv('DB_CONNECT_TIMEOUT_MS', 3000),
+    // A runaway query must not pin a pool connection for the whole nginx
+    // 600 s read timeout; nothing the site runs legitimately takes a minute.
+    statement_timeout: intFromEnv('DB_STATEMENT_TIMEOUT_MS', 60000),
     keepAlive: true,
     ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
@@ -31,13 +34,9 @@ pool.on('error', (err) => {
     console.error('[DB Connection Error] Error code:', err.code);
 });
 
-pool.on('connect', (client) => {
-    client.query(
-        'SELECT set_config($1, $2, false)',
-        ['application_name', process.env.DB_APPLICATION_NAME || 'leninbot-frontend']
-    ).catch((err) => {
-        console.error('[DB Connection Error] Failed to set application_name:', err.message);
-    });
+// application_name is sent as a startup parameter from the Pool config above,
+// so no per-connection set_config round-trip is needed.
+pool.on('connect', () => {
     if (process.env.DB_LOG_CONNECTIONS === 'true') {
         console.debug('[DB Connection] Opened a new pool connection');
     }

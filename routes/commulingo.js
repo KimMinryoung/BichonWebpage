@@ -1,4 +1,5 @@
 const express = require('express');
+const { asyncHandler } = require('../utils/async-handler');
 const db = require('../config/database');
 const errorPage = require('../utils/error-page');
 const seo = require('../utils/seo');
@@ -629,24 +630,40 @@ function setShortPeopleApiCache(res) {
     res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
 }
 
+// The full people payload is ~9 MB of JSON; serializing it took ~100 ms of
+// event-loop time per request. It is a pure function of the standardized
+// snapshot (and the source label, which flips snapshot→db once after a cold
+// start), so the string is memoized the way catalog.json is.
+const peopleApiMemo = new WeakMap(); // standardized -> Map(source -> JSON string)
+
 router.get('/api/people', async (req, res) => {
     try {
-        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        const { loaded, standardized } = await loadStandardizedPeople(req, res);
+        let bySource = peopleApiMemo.get(standardized);
+        if (!bySource) {
+            bySource = new Map();
+            peopleApiMemo.set(standardized, bySource);
+        }
+        let body = bySource.get(loaded.source);
+        if (!body) {
+            body = JSON.stringify({
+                schemaVersion: standardized.schemaVersion,
+                source: loaded.source,
+                lang: standardized.lang,
+                peopleCount: standardized.people.length,
+                people: standardized.people,
+                groups: standardized.groups.map(group => ({
+                    id: group.id,
+                    range: group.range,
+                    title: group.title,
+                    blurb: group.blurb,
+                    people: group.people.map(person => person.id),
+                })),
+            });
+            bySource.set(loaded.source, body);
+        }
         setShortPeopleApiCache(res);
-        res.json({
-            schemaVersion: standardized.schemaVersion,
-            source: loaded.source,
-            lang: standardized.lang,
-            peopleCount: standardized.people.length,
-            people: standardized.people,
-            groups: standardized.groups.map(group => ({
-                id: group.id,
-                range: group.range,
-                title: group.title,
-                blurb: group.blurb,
-                people: group.people.map(person => person.id),
-            })),
-        });
+        res.type('application/json').send(body);
     } catch (err) {
         console.error('commulingo people api:', err);
         res.status(500).json({ error: 'failed to load people data' });
@@ -656,7 +673,7 @@ router.get('/api/people', async (req, res) => {
 router.get('/api/people/:personId', async (req, res) => {
     try {
         const personId = typeof req.params.personId === 'string' ? req.params.personId.trim() : '';
-        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        const { loaded, standardized } = await loadStandardizedPeople(req, res);
         const person = standardized.peopleById[personId];
         if (!person) {
             const merged = redirectTarget(loaded.data, 'person', personId);
@@ -674,7 +691,7 @@ router.get('/api/people/:personId', async (req, res) => {
 
 router.get('/api/offices', async (req, res) => {
     try {
-        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        const { loaded, standardized } = await loadStandardizedPeople(req, res);
         setShortPeopleApiCache(res);
         res.json({
             schemaVersion: standardized.schemaVersion,
@@ -691,7 +708,7 @@ router.get('/api/offices', async (req, res) => {
 router.get('/api/offices/:officeId', async (req, res) => {
     try {
         const officeId = typeof req.params.officeId === 'string' ? req.params.officeId.trim() : '';
-        const { loaded, standardized } = await loadStandardizedPeople(req, res, { fresh: req.query.fresh === '1' });
+        const { loaded, standardized } = await loadStandardizedPeople(req, res);
         const office = standardized.offices.find(item => item.id === officeId);
         if (!office) return res.status(404).json({ error: 'office not found' });
         setShortPeopleApiCache(res);
@@ -959,7 +976,7 @@ async function linkifyLessonPayload(lesson) {
 // (a plain Map with indexesRef pinned it until each lesson was next requested).
 const lessonPayloadMemo = new WeakMap(); // indexes -> Map(lessonId -> { version, payload })
 
-router.get('/lesson/:lessonId', async (req, res) => {
+router.get('/lesson/:lessonId', asyncHandler(async (req, res) => {
     const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
     const version = currentVersion();
     const indexes = await getLinkIndexes('ko'); // both langs invalidate together
@@ -990,7 +1007,7 @@ router.get('/lesson/:lessonId', async (req, res) => {
     // is what the glossary and people pages already serve.
     res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
     res.json(payload);
-});
+}));
 
 router.get('/progress', async (req, res) => {
     if (!req.session.user || !req.session.user.id) {

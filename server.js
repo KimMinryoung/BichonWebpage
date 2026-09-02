@@ -726,6 +726,26 @@ const server = app.listen(PORT, () => {
     // person/event page after a restart doesn't pay the cold-start DB query.
     require('./services/report-mentions').warmReportMentions();
 });
+server.on('error', (err) => {
+    console.error('[server] listen failed:', err.code || '', err.message);
+    process.exit(1);
+});
+// nginx keeps upstream connections open longer than Node's 5 s default; a
+// socket Node closes while nginx is reusing it surfaces as a sporadic 502.
+server.keepAliveTimeout = 65 * 1000;
+server.headersTimeout = 66 * 1000;
+
+// Express 4 does not route async handler rejections anywhere; without these,
+// one rejected promise ends the process (Node ≥15 default) and a thrown
+// exception leaves it in an unknown state. Log the rejection and keep serving;
+// exit on an exception so Docker's restart policy brings up a clean process.
+process.on('unhandledRejection', (reason) => {
+    console.error('[process] unhandled rejection:', reason && reason.stack ? reason.stack : reason);
+});
+process.on('uncaughtException', (err) => {
+    console.error('[process] uncaught exception, exiting:', err && err.stack ? err.stack : err);
+    process.exit(1);
+});
 
 // Graceful shutdown: stop accepting connections, then close DB pool and Redis.
 let shuttingDown = false;
@@ -738,6 +758,12 @@ function shutdown(signal) {
         process.exit(1);
     }, 10000);
     forceExit.unref();
+    // server.close() only stops accepting; idle keep-alive sockets and the
+    // long-lived chat/SSE streams would otherwise hold it open until the
+    // force-exit above fired on every deploy.
+    server.closeIdleConnections();
+    const closeAll = setTimeout(() => server.closeAllConnections(), 2000);
+    closeAll.unref();
     server.close(async () => {
         try {
             const db = require('./config/database');

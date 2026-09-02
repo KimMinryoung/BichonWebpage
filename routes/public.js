@@ -1,4 +1,5 @@
 const express = require('express');
+const { asyncHandler } = require('../utils/async-handler');
 const path = require('path');
 const fs = require('fs');
 const router = express.Router();
@@ -355,9 +356,9 @@ async function buildSitemapXml() {
             getResearchFiles('ko'),
             getPagesList(),
             getHubItems(200, 'ko'),
-            loadCommuLingoPeople({ fresh: true }),
-            loadCommuLingoTerms({ fresh: true }),
-            loadCommuLingoHistoryEvents({ fresh: true }),
+            loadCommuLingoPeople(),
+            loadCommuLingoTerms(),
+            loadCommuLingoHistoryEvents(),
         ]);
         const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
         const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
@@ -480,7 +481,7 @@ router.get('/llms.txt', (req, res) => {
     );
 });
 
-router.get('/index.md', async (req, res) => {
+router.get('/index.md', asyncHandler(async (req, res) => {
     const items = [
         { title: '사이버-레닌과 대화', href: '/chat' },
         { title: '사이버-레닌 보고서', href: '/reports' },
@@ -490,9 +491,9 @@ router.get('/index.md', async (req, res) => {
     ];
     seo.setMarkdownSeoHeaders(res, '/', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('Cyber-Lenin', res.locals.strings.siteDescription, items));
-});
+}));
 
-router.get('/posts.md', async (req, res) => {
+router.get('/posts.md', asyncHandler(async (req, res) => {
     const { rows } = await db.query('SELECT id, title, created_at FROM posts ORDER BY created_at DESC LIMIT 200');
     const items = rows.map(post => ({
         title: post.title,
@@ -501,9 +502,9 @@ router.get('/posts.md', async (req, res) => {
     }));
     seo.setMarkdownSeoHeaders(res, '/posts', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('비숑글', '비숑이 작성한 블로그 글 목록입니다.', items));
-});
+}));
 
-router.get('/reports.md', async (req, res) => {
+router.get('/reports.md', asyncHandler(async (req, res) => {
     const lang = res.locals.lang === 'en' ? 'en' : 'ko';
     const files = await getResearchFiles(lang);
     const items = files.map(file => ({
@@ -513,9 +514,9 @@ router.get('/reports.md', async (req, res) => {
     }));
     seo.setMarkdownSeoHeaders(res, '/reports', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 보고서', '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.', items));
-});
+}));
 
-router.get('/ai-diary.md', async (req, res) => {
+router.get('/ai-diary.md', asyncHandler(async (req, res) => {
     const { rows } = await db.query('SELECT id, title, created_at FROM ai_diary ORDER BY created_at DESC LIMIT 200');
     const items = rows.map(diary => ({
         title: diary.title,
@@ -524,9 +525,9 @@ router.get('/ai-diary.md', async (req, res) => {
     }));
     seo.setMarkdownSeoHeaders(res, '/ai-diary', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('사이버-레닌 일기장', '사이버-레닌이 스스로 작성한 일기 목록입니다.', items));
-});
+}));
 
-router.get('/hub.md', async (req, res) => {
+router.get('/hub.md', asyncHandler(async (req, res) => {
     const hubItems = await getHubItems(200, 'ko');
     const items = hubItems.map(item => ({
         title: item.title,
@@ -535,7 +536,7 @@ router.get('/hub.md', async (req, res) => {
     }));
     seo.setMarkdownSeoHeaders(res, '/hub', { lang: res.locals.urlLanguage });
     res.type('text/markdown; charset=utf-8').send(markdownIndex('큐레이션', '사이버-레닌이 선별한 진보적인 글 목록입니다.', items));
-});
+}));
 
 router.get('/atom.xml', async (req, res) => {
     try {
