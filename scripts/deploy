@@ -96,14 +96,22 @@ else
     log "Revision $LOCAL is already deployed, but --restart requested."
 fi
 
-# 2. Build image
+# 2. Host-side tests: every EJS view compiles, SEO head, error page, policy
+#    smoke tests (~2 s, no DB). A failure here stops the deploy before build.
+log "Running npm test..."
+if ! npm test --silent; then
+    err "npm test failed; not deploying."
+    exit 1
+fi
+
+# 3. Build image
 log "Building Docker image..."
 docker build \
     --label "$REVISION_LABEL=$LOCAL" \
     --build-arg "GIT_SHA=${LOCAL:0:12}" \
     -t "$IMAGE_NAME" .
 
-# 3. Recreate container
+# 4. Recreate container
 log "Recreating container..."
 docker stop "$CONTAINER_NAME" 2>/dev/null || true
 docker rm "$CONTAINER_NAME" 2>/dev/null || true
@@ -123,24 +131,54 @@ docker run -d \
 # Connect to the leninbot network for Redis and Postgres (leninbot-pg) access.
 docker network connect "$NETWORK" "$CONTAINER_NAME" 2>/dev/null || true
 
-# 4. Cleanup
+# 5. Cleanup
 docker image prune -f > /dev/null
 
-# 5. Health check
+# 6. Health check, then a route sweep. The container stays up either way;
+#    a non-zero exit here is the operator's signal to look, not a rollback.
 log "Waiting for health check..."
 elapsed=0
-while (( elapsed < 15 )); do
-    if curl -sf --max-time 20 http://localhost:3000 > /dev/null 2>&1; then
+healthy=0
+while (( elapsed < 30 )); do
+    if curl -sf --max-time 20 http://localhost:3000/health > /dev/null 2>&1; then
         log "Frontend is healthy."
+        healthy=1
         break
     fi
     sleep 2
     elapsed=$((elapsed + 2))
 done
 
-if (( elapsed >= 15 )); then
-    warn "Health check timed out — check logs with: docker logs $CONTAINER_NAME"
+if (( healthy == 0 )); then
+    err "Health check timed out — check logs with: docker logs $CONTAINER_NAME"
+    exit 1
 fi
+
+SWEEP_PATHS=(
+    / /posts /reports /hub /ai-diary /chat
+    /commulingo /commulingo/people /commulingo/people/stalin /commulingo/terms
+    /commulingo/terms/nep /commulingo/events /commulingo/docs /commulingo/politburo
+    /commulingo/catalog.json /sitemap.xml
+)
+sweep_failed=0
+for path in "${SWEEP_PATHS[@]}"; do
+    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -H 'Accept-Language: ko' "http://localhost:3000${path}")"
+    if [[ "$code" != "200" ]]; then
+        err "Sweep: ${path} -> ${code}"
+        sweep_failed=1
+    fi
+done
+if (( sweep_failed )); then
+    err "Route sweep failed on the new container; inspect before moving on."
+    exit 1
+fi
+log "Route sweep: ${#SWEEP_PATHS[@]} paths returned 200."
+
+if ! docker exec "$CONTAINER_NAME" node /app/scripts/check-commulingo-code-db-drift.js > /dev/null 2>&1; then
+    err "check-commulingo-code-db-drift.js failed — a code fallback/seed no longer matches its table."
+    exit 1
+fi
+log "CommuLingo code/DB drift check passed."
 
 if [[ -n "$DEPLOYED" && "$LOCAL" != "$DEPLOYED" ]]; then
     CHANGED_COMMULINGO_LESSONS="$(node scripts/changed-commulingo-lessons.js "$DEPLOYED" "$LOCAL" 2>/dev/null || true)"

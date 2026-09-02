@@ -57,6 +57,7 @@ start_container() {
     log "Starting ${CONTAINER_NAME} at http://${TAILSCALE_IP}:${DEV_PORT}"
     docker run -d \
         --name "$CONTAINER_NAME" \
+        --user "$(id -u):$(id -g)" \
         --add-host=host.docker.internal:host-gateway \
         -p "${TAILSCALE_IP}:${DEV_PORT}:3000" \
         --restart unless-stopped \
