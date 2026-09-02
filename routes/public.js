@@ -1,4 +1,5 @@
 const express = require('express');
+const { cachedResearchList } = require('../services/research-series');
 const { asyncHandler } = require('../utils/async-handler');
 const path = require('path');
 const fs = require('fs');
@@ -229,12 +230,7 @@ router.get('/robots.txt', (req, res) => {
 });
 
 async function getResearchFiles(lang = 'ko') {
-    let researchFiles = await reportCache.getResearchList(lang);
-    if (!researchFiles) {
-        researchFiles = await researchStore.listResearch(lang);
-        await reportCache.setResearchList(researchFiles, lang);
-    }
-    return researchFiles || [];
+    return (await cachedResearchList(lang)) || [];
 }
 
 async function getPagesList(lang = 'ko') {
