@@ -122,111 +122,6 @@
     flex-direction: column;
     gap: 14px;
 }
-
-.commu-volume-section {
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-}
-
-.commu-volume-header {
-    border-left: 4px solid var(--accent);
-}
-
-.commu-volume-toggle {
-    align-items: center;
-    background: transparent;
-    border: 0;
-    color: var(--text-primary);
-    cursor: pointer;
-    display: flex;
-    font: inherit;
-    justify-content: space-between;
-    padding: 14px 16px;
-    text-align: left;
-    width: 100%;
-}
-
-.commu-volume-toggle:hover {
-    background: var(--bg-surface);
-}
-
-.commu-volume-toggle strong,
-.commu-volume-toggle small {
-    display: block;
-}
-
-.commu-volume-title {
-    display: grid;
-    gap: 4px;
-    min-width: 0;
-    width: min(640px, calc(100% - 52px));
-}
-
-.commu-volume-toggle strong {
-    font-size: 1.15rem;
-}
-
-.commu-volume-toggle small {
-    color: var(--text-muted);
-    font-size: 0.84rem;
-}
-
-.commu-volume-progress {
-    display: grid;
-    gap: 5px;
-    margin-top: 4px;
-    max-width: 360px;
-}
-
-.commu-volume-progress-label {
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    font-weight: 700;
-    line-height: 1.25;
-}
-
-.commu-volume-progress-percent {
-    color: var(--accent-red);
-}
-
-.commu-volume-progress-track {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    display: block;
-    height: 7px;
-    overflow: hidden;
-    width: 100%;
-}
-
-.commu-volume-progress-track > span {
-    background: var(--accent-red);
-    display: block;
-    height: 100%;
-    transition: width 0.2s ease;
-}
-
-.commu-volume-toggle-icon {
-    align-items: center;
-    border: 1px solid var(--border);
-    color: var(--link);
-    display: inline-flex;
-    flex: 0 0 auto;
-    font-size: 1.25rem;
-    font-weight: 800;
-    height: 34px;
-    justify-content: center;
-    width: 34px;
-}
-
-.commu-volume-section.is-expanded .commu-volume-header {
-    border-bottom: 1px solid var(--border);
-}
-
-.commu-volume-body {
-    display: flex;
-    flex-direction: column;
-}
-
 .commu-part-section + .commu-part-section {
     border-top: 1px solid var(--border);
 }
@@ -1093,15 +988,6 @@
         padding: 0;
         width: auto;
     }
-
-    .commu-volume-title {
-        width: min(100%, calc(100% - 48px));
-    }
-
-    .commu-volume-progress {
-        max-width: 100%;
-    }
-
     .commu-volume-grid,
     .commu-choices,
     .commulingo-books {

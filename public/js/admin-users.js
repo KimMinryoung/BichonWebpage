@@ -14,10 +14,14 @@
         return document.getElementById(id);
     }
 
+    // Attribute-safe (quotes escaped), the same body as every other page's copy.
     function escapeHtml(value) {
-        var div = document.createElement('div');
-        div.textContent = value == null ? '' : String(value);
-        return div.innerHTML;
+        return String(value == null ? '' : value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     }
 
     function escapeAttr(value) {

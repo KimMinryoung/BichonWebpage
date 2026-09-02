@@ -1,3 +1,6 @@
+// Nonogram page (views/public/nonogram.ejs). Extracted from an inline block;
+// the wrapper keeps its constants off the page's global scope.
+(function () {
     const DEFAULT_PUZZLE_ID = "minchong-15";
     const PUZZLE_INDEX_URL = "/puzzles/index.json";
 
@@ -597,3 +600,4 @@
     loadInitialPuzzle().then(renderPuzzle).catch(() => {
       els.status.textContent = "로딩 실패";
     });
+})();

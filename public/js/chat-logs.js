@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return document.getElementById('routeFilter').value;
     }
 
-    function escapeHtml(text) {
-        var div = document.createElement('div');
-        div.textContent = text || '';
-        return div.innerHTML;
+    // Attribute-safe (quotes escaped), the same body as every other page's copy.
+    function escapeHtml(value) {
+        return String(value == null ? '' : value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     }
 
     function formatDate(iso) {
