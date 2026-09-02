@@ -91,6 +91,7 @@ function hasLanguageCookie(req) {
 
 function isSessionFreeRequest(req) {
     if (req.method !== 'GET' && req.method !== 'HEAD') return false;
+    if (req.path === '/health') return true;
     if (isStaticAssetPath(req.path) || isCacheablePublicTextPath(req.path) || isPublicCommuLingoDataPath(req.path)) return true;
     return isPublicHtmlPath(req.path) && !hasSessionCookie(req);
 }
@@ -677,7 +678,11 @@ app.use(express.static(path.join(__dirname, 'public'), {
 // session-independent, and every write needs a non-simple content type or
 // method (text/html POST, JSON PATCH, DELETE), so a browser cross-site
 // request dies at CORS preflight rather than reaching the handler.
-const csrfMiddleware = csrfProtection(['/commulingo/admin/api/docs']);
+// tokenPaths: the anonymous forms that embed the token before any session
+// exists; every other page that renders it is behind a login (session cookie).
+const csrfMiddleware = csrfProtection(['/commulingo/admin/api/docs'], {
+    tokenPaths: ['/auth/login', '/auth/signup', '/admin/login'],
+});
 app.use((req, res, next) => {
     if (isSessionFreeRequest(req)) return next();
     return csrfMiddleware(req, res, next);
