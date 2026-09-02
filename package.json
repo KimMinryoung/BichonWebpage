@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A Node.js + Express blog website with PostgreSQL backend",
   "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "start": "node server.js",
     "test": "scripts/test",
@@ -21,20 +24,20 @@
     "commulingo:people:snapshot": "node scripts/snapshot-commulingo-people.js"
   },
   "dependencies": {
-    "@simplewebauthn/server": "^13.3.0",
+    "@simplewebauthn/server": "^13.3.3",
     "compression": "^1.8.1",
     "connect-redis": "^8.0.1",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
-    "express": "^4.21.0",
-    "express-rate-limit": "^8.3.0",
+    "express": "^4.22.2",
+    "express-rate-limit": "^8.7.0",
     "express-session": "^1.18.0",
-    "helmet": "^8.1.0",
-    "http-proxy-middleware": "^3.0.3",
-    "pg": "^8.13.0",
+    "helmet": "^8.3.0",
+    "http-proxy-middleware": "^3.0.7",
+    "pg": "^8.23.0",
     "redis": "^4.7.0",
-    "sanitize-html": "^2.17.1"
+    "sanitize-html": "^2.17.7"
   },
   "keywords": [
     "blog",
