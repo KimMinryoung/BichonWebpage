@@ -1,6 +1,6 @@
 const express = require('express');
+const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const seo = require('../utils/seo');
 const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
@@ -199,7 +199,7 @@ router.get('/', async (req, res) => {
         const matched = kind ? docs.filter(doc => doc.kindId === kind) : docs;
         const pagination = paginateList(docs, matched, req.query,
             '/commulingo/docs?' + (kind ? `kind=${encodeURIComponent(kind)}&` : '') + 'page=');
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-docs', {
             docs,
             facets,
@@ -213,7 +213,7 @@ router.get('/', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo docs index:', err);
-        res.status(500).send('Failed to load reference library');
+        commuLingoLoadError(res, { message: { ko: '참고 문헌 서고를 불러올 수 없습니다.', en: 'Failed to load reference library.' } });
     }
 });
 
@@ -233,9 +233,7 @@ router.get('/:docId', async (req, res) => {
         });
         const doc = presentDoc(raw, lang, await createDocRefResolver(lang));
         const pagePath = `/commulingo/docs/${docId}`;
-        const jsonLd = seo.breadcrumbJsonLd([
-            { name: lang === 'en' ? 'Home' : '홈', href: '/' },
-            { name: 'CommuLingo', href: '/commulingo' },
+        const jsonLd = commuLingoBreadcrumb(lang, [
             { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
             { name: doc.title, href: pagePath },
         ], res.locals.urlLanguage);
@@ -244,7 +242,7 @@ router.get('/:docId', async (req, res) => {
         // (a chart node pointing at a document) is a `doc` ref in the chart JSON.
         doc.genealogies = genealogyLinksFor('doc', docId, lang);
         const { html, toc, paged } = getCommuLingoDocContent(raw);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
 
         // Long documents read page by page along the TOC (docs-store decides);
         // short ones keep the single-scroll reader.

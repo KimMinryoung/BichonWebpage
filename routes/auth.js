@@ -3,6 +3,7 @@
 // Admin accounts are not usable here — they flow through /admin/login on the tailnet RP.
 
 const express = require('express');
+const { requireUser } = require('../middleware/auth');
 const router = express.Router();
 const {
     buildRegistrationOptions,
@@ -24,11 +25,6 @@ const {
     validatePassword,
     verifyPassword,
 } = require('../services/password-auth');
-
-function requireUser(req, res, next) {
-    if (req.session.user && req.session.user.id) return next();
-    return res.status(401).json({ error: 'login required' });
-}
 
 function normalizeUsername(raw) {
     if (typeof raw !== 'string') return '';

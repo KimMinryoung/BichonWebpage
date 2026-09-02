@@ -1,4 +1,5 @@
 const express = require('express');
+const { setShortPublicCache, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const db = require('../config/database');
 const { loadPolitburo, spanParts, endText } = require('../data/commulingo/politburo-store');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
@@ -149,7 +150,7 @@ router.get('/', async (req, res) => {
         const data = loadPolitburo();
         const { eras, congresses } = await rosterFor(data, lang);
 
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-politburo', {
             intro: localize(data.intro, lang),
             sources: localize(data.sources, lang),
@@ -163,7 +164,7 @@ router.get('/', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo politburo:', err);
-        res.status(500).send('Failed to load the Politburo page');
+        commuLingoLoadError(res, { message: { ko: '정치국 명부를 불러올 수 없습니다.', en: 'Failed to load the Politburo page.' } });
     }
 });
 

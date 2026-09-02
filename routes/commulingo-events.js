@@ -1,7 +1,7 @@
 const express = require('express');
+const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { paginateList } = require('../data/commulingo/list-pagination');
 const errorPage = require('../utils/error-page');
-const seo = require('../utils/seo');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { relatedDocsFor } = require('../data/commulingo/docs-refs');
@@ -265,7 +265,7 @@ router.get('/', async (req, res) => {
         const lang = res.locals.lang;
         const events = presentedEventList(await loadCommuLingoHistoryEvents(), lang).map(event => ({ ...event }));
         const pagination = paginateList(events, events, req.query, '/commulingo/events?page=');
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-events', {
             events,
             pagination,
@@ -275,7 +275,7 @@ router.get('/', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo events:', err);
-        res.status(500).send('Failed to load history events');
+        commuLingoLoadError(res, { message: { ko: '역사 사건 목록을 불러올 수 없습니다.', en: 'Failed to load history events.' } });
     }
 });
 
@@ -289,7 +289,7 @@ router.get('/:eventId', async (req, res) => {
             backHref: '/commulingo/events', backLabel: lang === 'en' ? 'Historical events' : '역사 사건',
         });
         const event = panel.event;
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         // The glossary half, when the two entries are the same subject. Required
         // here rather than at the top of the file: the two routes reach into
         // each other and a top-level require would be a cycle.
@@ -303,9 +303,7 @@ router.get('/:eventId', async (req, res) => {
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,
-            jsonLd: seo.breadcrumbJsonLd([
-                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
-                { name: 'CommuLingo', href: '/commulingo' },
+            jsonLd: commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'Historical Events' : '역사 사건', href: '/commulingo/events' },
                 { name: event.title, href: `/commulingo/events/${event.id}` },
             ], res.locals.urlLanguage),

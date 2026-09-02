@@ -1,21 +1,10 @@
 const express = require('express');
+const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const seo = require('../utils/seo');
 const { loadCommuLingoDrills } = require('../data/commulingo/drills');
 const { localize } = require('../data/commulingo/localize');
 
 const router = express.Router();
-
-// /commulingo/catalog.json과 같은 캐시 정책: ?v=<내용 해시>로 오면 불변,
-// 아니면 짧은 캐시. commulingo.js의 setPublicDataCache와 같은 6줄이지만 두
-// 라우터가 서로 require하는 순환을 만들지 않으려고 여기 다시 둔다.
-function setPublicDataCache(req, res, version) {
-    if (req.query && req.query.v === version) {
-        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-        return;
-    }
-    res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
-}
 
 function isSafeDeckId(deckId) {
     return typeof deckId === 'string' && /^[a-z0-9-]+$/.test(deckId);
@@ -39,7 +28,7 @@ router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const drills = await loadCommuLingoDrills();
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-drill-index', {
             groups: drills.groups.map(group => ({
                 id: group.id,
@@ -49,9 +38,7 @@ router.get('/', async (req, res) => {
             pageTitle: res.locals.strings.commuLingo.drill + ' — CommuLingo',
             pageDescription: res.locals.strings.commuLingo.drillDesc,
             pagePath: '/commulingo/drill',
-            jsonLd: seo.breadcrumbJsonLd([
-                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
-                { name: 'CommuLingo', href: '/commulingo' },
+            jsonLd: commuLingoBreadcrumb(lang, [
                 { name: res.locals.strings.commuLingo.drill, href: '/commulingo/drill' },
             ], res.locals.urlLanguage),
         });
@@ -104,7 +91,7 @@ router.get('/:deckId', async (req, res) => {
             backHref: '/commulingo/drill', backLabel: res.locals.strings.commuLingo.drill,
         });
         const title = localize(deck.title, lang);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-drill', {
             deckMeta: { id: deck.id, kind: deck.kind, mode: deck.mode || null, roundSize: deck.roundSize, version: drills.version },
             deckTitle: title,
@@ -112,9 +99,7 @@ router.get('/:deckId', async (req, res) => {
             pageTitle: title + ' — ' + res.locals.strings.commuLingo.drill,
             pageDescription: localize(deck.description, lang),
             pagePath: '/commulingo/drill/' + deck.id,
-            jsonLd: seo.breadcrumbJsonLd([
-                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
-                { name: 'CommuLingo', href: '/commulingo' },
+            jsonLd: commuLingoBreadcrumb(lang, [
                 { name: res.locals.strings.commuLingo.drill, href: '/commulingo/drill' },
                 { name: title, href: '/commulingo/drill/' + deck.id },
             ], res.locals.urlLanguage),

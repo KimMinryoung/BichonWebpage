@@ -1,6 +1,6 @@
 const express = require('express');
+const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const seo = require('../utils/seo');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { relatedDocsFor } = require('../data/commulingo/docs-refs');
@@ -267,7 +267,7 @@ router.get('/', async (req, res) => {
         const sort = req.query.sort === 'chrono' ? 'chrono' : 'name';
         const data = await termListData(lang, sort);
         const firstGroup = data.groups[0];
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-terms', {
             termCount: data.terms.length,
             groups: data.groups,
@@ -285,7 +285,7 @@ router.get('/', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo terms:', err);
-        res.status(500).send('Failed to load glossary');
+        commuLingoLoadError(res, { message: { ko: '용어 사전을 불러올 수 없습니다.', en: 'Failed to load glossary.' } });
     }
 });
 
@@ -297,7 +297,7 @@ router.get('/cards', async (req, res) => {
         const groupId = typeof req.query.group === 'string' ? req.query.group.trim() : '';
         const html = await termGroupCardsHtml(req, res.locals.lang, sort, groupId);
         if (html === null) return res.status(404).send('');
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.type('html').send(html);
     } catch (err) {
         console.error('commulingo term cards:', err);
@@ -385,7 +385,7 @@ router.get('/:termId', async (req, res) => {
         // The narrative half, when the two entries are the same subject. Lazy
         // require: the two routes reach into each other.
         const { buildEventPanel } = require('./commulingo-events');
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-term', {
             ...panel,
             term,
@@ -396,9 +396,7 @@ router.get('/:termId', async (req, res) => {
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,
             pagePath: `/commulingo/terms/${term.id}`,
-            jsonLd: seo.breadcrumbJsonLd([
-                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
-                { name: 'CommuLingo', href: '/commulingo' },
+            jsonLd: commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'Glossary' : '용어 사전', href: '/commulingo/terms' },
                 { name: term.term, href: `/commulingo/terms/${term.id}` },
             ], res.locals.urlLanguage),

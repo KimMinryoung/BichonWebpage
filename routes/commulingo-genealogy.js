@@ -1,6 +1,6 @@
 const express = require('express');
+const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const seo = require('../utils/seo');
 const { listGenealogyCharts, getGenealogyChart } = require('../data/commulingo/genealogy-store');
 const { renderGenealogySvg } = require('../data/commulingo/genealogy-svg');
 const { localize } = require('../data/commulingo/localize');
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
             period: `${chart.timeStart}–${chart.timeEnd}`,
         }));
         const pagination = paginateList(charts, charts, req.query, '/commulingo/genealogy?page=');
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-genealogies', {
             charts,
             pagination,
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
         });
     } catch (err) {
         console.error('commulingo genealogy index:', err);
-        res.status(500).send('Failed to load genealogy charts');
+        commuLingoLoadError(res, { message: { ko: '계보도를 불러올 수 없습니다.', en: 'Failed to load genealogy charts.' } });
     }
 });
 
@@ -43,7 +43,7 @@ router.get('/:chartId', (req, res) => {
             backHref: '/commulingo/genealogy', backLabel: lang === 'en' ? 'Genealogy Charts' : '계보도',
         });
         const rendered = renderGenealogySvg(chart, lang);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-genealogy', {
             chart: {
                 id: chart.id,
@@ -57,9 +57,7 @@ router.get('/:chartId', (req, res) => {
             pageTitle: `${localize(chart.title, lang)} — CommuLingo`,
             pageDescription: localize(chart.description, lang),
             pagePath: `/commulingo/genealogy/${chart.id}`,
-            jsonLd: seo.breadcrumbJsonLd([
-                { name: lang === 'en' ? 'Home' : '홈', href: '/' },
-                { name: 'CommuLingo', href: '/commulingo' },
+            jsonLd: commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'Genealogy Charts' : '계보도', href: '/commulingo/genealogy' },
                 { name: localize(chart.title, lang), href: `/commulingo/genealogy/${chart.id}` },
             ], res.locals.urlLanguage),

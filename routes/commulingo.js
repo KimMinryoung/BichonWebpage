@@ -1,11 +1,13 @@
 const express = require('express');
+const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { asyncHandler } = require('../utils/async-handler');
+const { requireUser } = require('../middleware/auth');
 const db = require('../config/database');
 const errorPage = require('../utils/error-page');
 const seo = require('../utils/seo');
 const { renderMarkdown } = require('../utils/markdown');
 const { loadCommuLingoCatalog, loadCommuLingoLesson, currentVersion } = require('../data/commulingo/shards');
-const { localize: localizeCommuLingoValue } = require('../data/commulingo/people-standard');
+const { localize } = require('../data/commulingo/localize');
 const {
     loadCommuLingoPeople: loadCommuLingoPeopleData,
     redirectTarget,
@@ -198,19 +200,6 @@ function peopleShellFor(standardized, lang) {
     return shell;
 }
 
-function setPublicDataCache(req, res, version) {
-    if (req.query && req.query.v === version) {
-        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-        return;
-    }
-    res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
-}
-
-function requireUser(req, res, next) {
-    if (req.session.user && req.session.user.id) return next();
-    return res.status(401).json({ error: 'login required' });
-}
-
 function normalizeProgress(raw) {
     const lessonId = typeof raw.lessonId === 'string' ? raw.lessonId.trim() : '';
     const score = Number.parseInt(raw.score, 10);
@@ -221,18 +210,6 @@ function normalizeProgress(raw) {
         score: Number.isFinite(score) && score >= 0 ? score : 0,
         totalQuestions: Number.isFinite(totalQuestions) && totalQuestions >= 0 ? totalQuestions : 0,
     };
-}
-
-function localize(value, lang) {
-    return localizeCommuLingoValue(value, lang);
-}
-
-function commuLingoBreadcrumb(lang, items) {
-    return seo.breadcrumbJsonLd([
-        { name: lang === 'en' ? 'Home' : '홈', href: '/' },
-        { name: 'CommuLingo', href: '/commulingo' },
-        ...items,
-    ], lang);
 }
 
 // Chronological order for a person list: by birth year, then death year, then
@@ -311,7 +288,7 @@ router.use('/drill', require('./commulingo-drills'));
 router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(req, res);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         const { roleCategories, groupsMeta } = peopleShellFor(standardized, lang);
         res.render('public/commulingo-people', {
             offices: standardized.offices,
@@ -329,7 +306,7 @@ router.get('/people', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo people:', err);
-        res.status(500).send('Failed to load people data');
+        commuLingoLoadError(res, { message: { ko: '인물 사전을 불러올 수 없습니다.', en: 'Failed to load people data.' } });
     }
 });
 
@@ -342,7 +319,7 @@ router.get('/people/cards', async (req, res) => {
         const { lang, standardized } = await loadStandardizedPeople(req, res);
         const group = (standardized.groups || []).find(item => item.id === groupId);
         if (!group) return res.status(404).send('');
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.type('html').send(await peopleGroupCardsHtml(req, standardized, lang, group, page));
     } catch (err) {
         console.error('commulingo people cards:', err);
@@ -370,7 +347,7 @@ router.get('/people/list/:groupId', async (req, res) => {
         const cut = html.indexOf('<div data-commu-list-pager');
         const total = Math.ceil(group.people.length / PAGE_SIZE);
         const current = Math.min(page, Math.max(1, total));
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-people-list', {
             group: meta,
             cardsHtml: cut === -1 ? html : html.slice(0, cut),
@@ -387,7 +364,7 @@ router.get('/people/list/:groupId', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo people list:', err);
-        res.status(500).send('Failed to load people group');
+        commuLingoLoadError(res, { message: { ko: '인물 그룹을 불러올 수 없습니다.', en: 'Failed to load people group.' }, backHref: '/commulingo/people', backLabel: { ko: '인물 사전', en: 'People' } });
     }
 });
 
@@ -407,7 +384,7 @@ router.get('/offices/:officeId', async (req, res) => {
         }
         const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.officeId === office.id));
         const relatedReports = await relatedReportsForTopic('office', office.id, lang);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-office', {
             office,
             people,
@@ -449,7 +426,7 @@ router.get('/roles/:categoryId', async (req, res) => {
         }
         const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.categoryId === category.id));
         const relatedReports = await relatedReportsForTopic('role', category.id, lang);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-role', {
             category,
             people,
@@ -490,7 +467,7 @@ async function renderNationalityPeople(req, res, kind) {
             });
         }
         filter.people = sortPeopleChronologically(filter.people);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         return res.render('public/commulingo-nationality', {
             filter,
             people: filter.people,
@@ -594,7 +571,7 @@ router.get('/people/:personId', async (req, res) => {
         // Reference documents (참고 문헌) linked to this person via the docs
         // manifest. Failure only costs the section, never the page.
         const relatedDocs = relatedDocsFor('people', personId, lang);
-        res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+        setShortPublicCache(res);
         res.render('public/commulingo-person', {
             person,
             epithetHtml,
@@ -625,10 +602,6 @@ router.get('/people/:personId', async (req, res) => {
         });
     }
 });
-
-function setShortPeopleApiCache(res) {
-    res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
-}
 
 // The full people payload is ~9 MB of JSON; serializing it took ~100 ms of
 // event-loop time per request. It is a pure function of the standardized
@@ -662,7 +635,7 @@ router.get('/api/people', async (req, res) => {
             });
             bySource.set(loaded.source, body);
         }
-        setShortPeopleApiCache(res);
+        setShortPublicCache(res);
         res.type('application/json').send(body);
     } catch (err) {
         console.error('commulingo people api:', err);
@@ -681,7 +654,7 @@ router.get('/api/people/:personId', async (req, res) => {
             return res.status(404).json({ error: 'person not found' });
         }
         const sections = localizedPersonSections((loaded.data.sections || {})[personId] || [], standardized.lang);
-        setShortPeopleApiCache(res);
+        setShortPublicCache(res);
         res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, person, sections });
     } catch (err) {
         console.error('commulingo person api:', err);
@@ -692,7 +665,7 @@ router.get('/api/people/:personId', async (req, res) => {
 router.get('/api/offices', async (req, res) => {
     try {
         const { loaded, standardized } = await loadStandardizedPeople(req, res);
-        setShortPeopleApiCache(res);
+        setShortPublicCache(res);
         res.json({
             schemaVersion: standardized.schemaVersion,
             source: loaded.source,
@@ -711,7 +684,7 @@ router.get('/api/offices/:officeId', async (req, res) => {
         const { loaded, standardized } = await loadStandardizedPeople(req, res);
         const office = standardized.offices.find(item => item.id === officeId);
         if (!office) return res.status(404).json({ error: 'office not found' });
-        setShortPeopleApiCache(res);
+        setShortPublicCache(res);
         res.json({ schemaVersion: standardized.schemaVersion, source: loaded.source, lang: standardized.lang, office });
     } catch (err) {
         console.error('commulingo office api:', err);
@@ -761,7 +734,7 @@ router.get('/book/:collectionId', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo book:', err);
-        res.status(500).send('Failed to load book data');
+        commuLingoLoadError(res, { message: { ko: '책 정보를 불러올 수 없습니다.', en: 'Failed to load book data.' } });
     }
 });
 
@@ -1005,7 +978,7 @@ router.get('/lesson/:lessonId', asyncHandler(async (req, res) => {
     // function of the course sources, so its year-long immutable branch would
     // freeze the links against dictionaries that keep changing. Thirty seconds
     // is what the glossary and people pages already serve.
-    res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
+    setShortPublicCache(res);
     res.json(payload);
 }));
 

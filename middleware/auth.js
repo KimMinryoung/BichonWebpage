@@ -72,9 +72,16 @@ function requireWriterAdminSession(req, res, next) {
     return res.status(403).json({ error: 'admin login required' });
 }
 
+// Site (non-admin) account required — JSON 401 for the account/progress APIs.
+function requireUser(req, res, next) {
+    if (req.session.user && req.session.user.id) return next();
+    return res.status(401).json({ error: 'login required' });
+}
+
 module.exports = {
     requireAuth,
     requireAdminIp,
     redirectIfAuthenticated,
     requireWriterAdminSession,
+    requireUser,
 };
