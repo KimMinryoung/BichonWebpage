@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "test": "scripts/test",
     "dev": "node --watch server.js",
     "dev:preview": "scripts/dev-preview",
     "test:seo": "node scripts/test-seo.js",

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# scripts/test — the host-side test set (no DB, no container, ~2 s).
+#
+#   check-ui.js         compiles every EJS view + asserts the base CSS links
+#   test-seo.js         head.ejs SEO output + language resolution
+#   test-error-page.js  error page renders without the locals middleware
+#   smoke-commulingo-*  pure-function policy tests (linkify, names, nationality…)
+#
+# Any non-zero exit fails the run. Wired to `npm test` and to scripts/deploy.
+set -u
+cd "$(dirname "$0")/.."
+
+fail=0
+run() {
+    local name="$1"; shift
+    if "$@" > /tmp/test-$$.log 2>&1; then
+        echo "ok   $name"
+    else
+        echo "FAIL $name"
+        sed 's/^/     /' /tmp/test-$$.log | tail -20
+        fail=1
+    fi
+}
+
+run check-ui        node scripts/check-ui.js
+run test-seo        node scripts/test-seo.js
+run test-error-page node scripts/test-error-page.js
+for f in scripts/smoke-commulingo-*.js; do
+    run "$(basename "$f" .js)" node "$f"
+done
+rm -f /tmp/test-$$.log
+
+if [[ $fail -ne 0 ]]; then
+    echo "tests failed"
+    exit 1
+fi
+echo "all tests passed"
