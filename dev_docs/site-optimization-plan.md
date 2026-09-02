@@ -22,6 +22,10 @@
 > - 2026-08-04: **보너스 버그 수정**: C3 byte-diff가 잡아낸 EJS 전역 누출 — 13개 뷰의 `<% pageTitle = ... %>` bare 대입이 with() 스코프를 새어 Node 전역이 되고 404 등 이후 요청에 누출 (프로드 404가 노노그램 설명을 표시). include 인자 전달로 수리, 프로드에서 누출 소멸 확인.
 > - 2026-08-04: **Phase 7 완결 — 전체 계획 완료.** C8(hub/reports 헬퍼, 8페이지 diff 동일), C7(config/services.js + proxyLeninbot 통합, admin 302/404 클로킹 정상), C1(snapshot-store.js 팩토리 — 레지스트리 2종 + 사전형 3종 이관, 12페이지 diff 동일 + 스냅숏 md5 불변 + drift-check 통과). A4는 탈락 확정(aliases/scenes/redirects에 updated_at 없음 + DELETE+INSERT 편집이라 count 시그니처가 실변경 놓침).
 >
+> ## 2차 패스 (2026-09-02, 계획: ~/.claude/plans/rustling-exploring-peach.md)
+> - 2026-09-02: **배치 0 완료·배포** (커밋 f2d24f8 + f990f31). 원인: `createRegistrySnapshotStore`가 변경 감지 없이 매분 `install(rows)` → `blocklistRef`/`termCategoriesRef` 회전 → linkify `stdMemo`/`indexMemo` 매분 리셋(163ms 동기) → WeakMap(indexes) 메모 전부 폐기, plain Map 셋(`researchRenderMemo`·`bookPageMemo`·`lessonPayloadMemo`)이 `indexesRef`로 옛 세대를 고정 → 약 7.9h마다 2GB 힙 OOM(9-01 21:56, 9-02 05:40 재시작). 수정: 레지스트리 스토어 sha1 변경 감지(파일 원문 시드 포함), 세 메모 WeakMap(indexes)→Map. 검증: prod↔dev 48/48 바이트 동일, 배포 전후 prod 46/46 동일, 스모크 6종, 416요청 3회 크롤 뒤 dev RSS 183MiB 복귀, dev 인물 p90 48→17ms(매분 :40 절벽 소멸). 신규 `scripts/diff-preview`(집 검증법 스크립트화). 3시간 RSS 샘플 파일은 세션 scratchpad `prod-rss-3h.txt`.
+> - 배치 1~9는 계획 파일 참조. 다음: 배치 1(async-handler·프로세스 핸들러·fresh 제거·redis/pg 설정·npm test).
+>
 > ## 최종 결과 (베이스라인 대비, 2026-08-04)
 > - 용어 페이지 warm 10~14ms → **4~8ms**, 인물 페이지 12~20ms → **5~13ms**, sitemap 17~30ms → **4ms**
 > - `commulingo_people` seq_scan 요청당 증가 → **정지** (분당 리프레시만), `people_revisions` 183k에서 **동결**
