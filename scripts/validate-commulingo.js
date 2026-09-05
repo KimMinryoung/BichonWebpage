@@ -1,8 +1,32 @@
 #!/usr/bin/env node
+// The blocking structural gate for CommuLingo course content. Runs in
+// `scripts/test` (so `npm test` and `scripts/deploy` fail on it), no DB.
+//
+//   node scripts/validate-commulingo.js                 # normal run
+//   node scripts/validate-commulingo.js --no-baseline   # true state, ignore tolerated entries
+//   node scripts/validate-commulingo.js --init-baseline # one-time: record today's failures of baseline-eligible rules
+//   node scripts/validate-commulingo.js --prune-baseline # drop baseline entries that now pass (never adds)
+//
+// Rules live in scripts/lib/commulingo-checks.js and are shared with the
+// Capital rewrite harness. Rules the corpus does not yet satisfy everywhere
+// (length ratio, concept-brief shape, template prompts, ...) are tolerated for
+// the (rule, label) pairs recorded in scripts/commulingo-quality-baseline.json;
+// an entry that starts passing is reported as stale so the baseline can only
+// shrink, and any new failure outside it blocks.
+const fs = require('fs');
 const path = require('path');
 const { loadCommuLingoBundle } = require('../data/commulingo');
+const checks = require('./lib/commulingo-checks');
 
-const root = path.join(__dirname, '..');
+const BASELINE_PATH = path.join(__dirname, 'commulingo-quality-baseline.json');
+const args = new Set(process.argv.slice(2));
+const noBaseline = args.has('--no-baseline');
+const initBaseline = args.has('--init-baseline');
+const pruneBaseline = args.has('--prune-baseline');
+
+// Per-collection counts guard against a chapter or lesson silently dropping
+// out of the file; the totals are their sum. Adding a chapter means editing
+// this map on purpose, together with PUBLIC_CHAPTER_LIMITS in shards.js.
 const expected = {
   'capital-vol1': { chapters: 33, questions: 330, lessons: 66 },
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },
@@ -18,285 +42,171 @@ const expectedSpecial = {
   'history-soviet-union': { format: 'decision-history', eras: 4, episodes: 15 },
 };
 const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'marx-wages-and-programme': 2 };
-const banned = [
-  '핵심은 무엇입니까',
-  '더 엄밀히 이해한 설명',
-  '가리는 사회관계',
-  '원문에서 찾고 맥락화',
-  '읽는 방식으로 가장 문제가 큰',
-  '다음 중 올바른 설명',
-  '잉여가치가 이윤·이자·지대·수입 형태',
-  '이윤의 이자와 기업가이득으로의 분할: 이자 낳는 자본',
-  '초과이윤의 지대로의 전환 안에서',
-  '수입과 그 원천 안에서',
-];
 
-const errors = [];
+const out = checks.createCollector();
 const data = loadCommuLingoBundle().bundle;
 const collections = new Map((data.collections || []).map(function(collection) { return [collection.id, collection]; }));
 
-function fail(message) { errors.push(message); }
-function localized(value, label) {
-  if (!value || typeof value !== 'object') { fail(label + ' must be localized'); return false; }
-  if (!String(value.ko || '').trim()) fail(label + '.ko is empty');
-  if (!String(value.en || '').trim()) fail(label + '.en is empty');
-  return true;
-}
-function checkText(value, label) {
-  const text = String(value || '');
-  banned.forEach(function(phrase) { if (text.includes(phrase)) fail(label + ' contains banned phrase: ' + phrase); });
-  if (/\.en(?:\.|$|\[)/.test(label) && /[가-힣]/.test(text)) fail(label + ' contains Korean text in English field');
-}
-function allLocalizedText(value, label) {
-  localized(value, label);
-  checkText(value && value.ko, label + '.ko');
-  checkText(value && value.en, label + '.en');
-}
-
-function checkLocalizedItems(items, label, fields) {
-  if (!Array.isArray(items) || !items.length) { fail(label + ' must be a non-empty array'); return; }
-  items.forEach(function(item, index) {
-    fields.forEach(function(field) { allLocalizedText(item && item[field], label + '[' + index + '].' + field); });
-  });
-}
-
 function checkSpecialCollection(collectionId, spec) {
   const collection = collections.get(collectionId);
-  if (!collection) { fail('missing collection ' + collectionId); return; }
-  if (collection.format !== spec.format) fail(collectionId + ' format ' + collection.format + ' != ' + spec.format);
-  if ((collection.chapters || []).length) fail(collectionId + ' special collection must not have quiz chapters');
-  allLocalizedText(collection.title, collectionId + '.title');
-  allLocalizedText(collection.description, collectionId + '.description');
+  if (!collection) { out.add('shape', collectionId, 'missing collection ' + collectionId); return; }
+  if (collection.format !== spec.format) out.add('shape', collectionId, collectionId + ' format ' + collection.format + ' != ' + spec.format);
+  if ((collection.chapters || []).length) out.add('shape', collectionId, collectionId + ' special collection must not have quiz chapters');
+  checks.allLocalizedText(out, collection.title, collectionId + '.title');
+  checks.allLocalizedText(out, collection.description, collectionId + '.description');
 
   if (spec.format === 'concept-graph') {
     const graph = collection.conceptGraph;
-    if (!graph || typeof graph !== 'object') { fail(collectionId + '.conceptGraph is missing'); return; }
-    allLocalizedText(graph.question, collectionId + '.conceptGraph.question');
-    allLocalizedText(graph.thesis, collectionId + '.conceptGraph.thesis');
+    if (!graph || typeof graph !== 'object') { out.add('shape', collectionId, collectionId + '.conceptGraph is missing'); return; }
+    checks.allLocalizedText(out, graph.question, collectionId + '.conceptGraph.question');
+    checks.allLocalizedText(out, graph.thesis, collectionId + '.conceptGraph.thesis');
     const nodes = graph.nodes || [];
-    if (nodes.length !== spec.nodes) fail(collectionId + ' node count ' + nodes.length + ' != ' + spec.nodes);
-    checkLocalizedItems(nodes, collectionId + '.conceptGraph.nodes', ['label', 'summary']);
+    if (nodes.length !== spec.nodes) out.add('shape', collectionId, collectionId + ' node count ' + nodes.length + ' != ' + spec.nodes);
+    checks.checkLocalizedItems(out, nodes, collectionId + '.conceptGraph.nodes', ['label', 'summary']);
     const seenNodeIds = new Set();
     let stageCount = 0;
     nodes.forEach(function(node, nodeIndex) {
-      if (!node || !String(node.id || '').trim()) fail(collectionId + '.conceptGraph.nodes[' + nodeIndex + '].id is empty');
-      else if (seenNodeIds.has(node.id)) fail(collectionId + ' duplicate concept node id ' + node.id);
+      if (!node || !String(node.id || '').trim()) out.add('shape', collectionId, collectionId + '.conceptGraph.nodes[' + nodeIndex + '].id is empty');
+      else if (seenNodeIds.has(node.id)) out.add('shape', collectionId, collectionId + ' duplicate concept node id ' + node.id);
       else seenNodeIds.add(node.id);
       const stages = (node && node.stages) || [];
       stageCount += stages.length;
-      checkLocalizedItems(stages, collectionId + '.conceptGraph.nodes[' + nodeIndex + '].stages', ['label', 'text']);
+      checks.checkLocalizedItems(out, stages, collectionId + '.conceptGraph.nodes[' + nodeIndex + '].stages', ['label', 'text']);
     });
-    if (stageCount !== spec.stages) fail(collectionId + ' stage count ' + stageCount + ' != ' + spec.stages);
+    if (stageCount !== spec.stages) out.add('shape', collectionId, collectionId + ' stage count ' + stageCount + ' != ' + spec.stages);
     return;
   }
 
   const timeline = collection.decisionTimeline;
-  if (!timeline || typeof timeline !== 'object') { fail(collectionId + '.decisionTimeline is missing'); return; }
-  allLocalizedText(timeline.question, collectionId + '.decisionTimeline.question');
-  allLocalizedText(timeline.thesis, collectionId + '.decisionTimeline.thesis');
-  checkLocalizedItems(timeline.stances, collectionId + '.decisionTimeline.stances', ['label', 'desc']);
+  if (!timeline || typeof timeline !== 'object') { out.add('shape', collectionId, collectionId + '.decisionTimeline is missing'); return; }
+  checks.allLocalizedText(out, timeline.question, collectionId + '.decisionTimeline.question');
+  checks.allLocalizedText(out, timeline.thesis, collectionId + '.decisionTimeline.thesis');
+  checks.checkLocalizedItems(out, timeline.stances, collectionId + '.decisionTimeline.stances', ['label', 'desc']);
   const eras = timeline.eras || [];
-  if (eras.length !== spec.eras) fail(collectionId + ' era count ' + eras.length + ' != ' + spec.eras);
-  checkLocalizedItems(eras, collectionId + '.decisionTimeline.eras', ['range', 'title', 'intro']);
+  if (eras.length !== spec.eras) out.add('shape', collectionId, collectionId + ' era count ' + eras.length + ' != ' + spec.eras);
+  checks.checkLocalizedItems(out, eras, collectionId + '.decisionTimeline.eras', ['range', 'title', 'intro']);
   const seenEpisodeIds = new Set();
   let episodeCount = 0;
   eras.forEach(function(era, eraIndex) {
     const episodes = (era && era.episodes) || [];
     episodeCount += episodes.length;
-    checkLocalizedItems(episodes, collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes', ['date', 'title', 'role', 'briefing', 'question', 'outcome', 'ripple', 'insight']);
+    checks.checkLocalizedItems(out, episodes, collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes', ['date', 'title', 'role', 'briefing', 'question', 'outcome', 'ripple', 'insight']);
     episodes.forEach(function(episode, episodeIndex) {
-      if (!episode || !String(episode.id || '').trim()) fail(collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes[' + episodeIndex + '].id is empty');
-      else if (seenEpisodeIds.has(episode.id)) fail(collectionId + ' duplicate episode id ' + episode.id);
+      const eLabel = collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes[' + episodeIndex + ']';
+      if (!episode || !String(episode.id || '').trim()) out.add('shape', collectionId, eLabel + '.id is empty');
+      else if (seenEpisodeIds.has(episode.id)) out.add('shape', collectionId, collectionId + ' duplicate episode id ' + episode.id);
       else seenEpisodeIds.add(episode.id);
-      checkLocalizedItems(episode && episode.options, collectionId + '.decisionTimeline.eras[' + eraIndex + '].episodes[' + episodeIndex + '].options', ['label', 'note']);
+      checks.checkLocalizedItems(out, episode && episode.options, eLabel + '.options', ['label', 'note']);
     });
   });
-  if (episodeCount !== spec.episodes) fail(collectionId + ' episode count ' + episodeCount + ' != ' + spec.episodes);
-}
-
-function checkChoiceFeedback(value, qLabel) {
-  if (typeof value === 'undefined') return;
-  if (!value || typeof value !== 'object') { fail(qLabel + '.choiceFeedback must be localized arrays'); return; }
-  ['ko', 'en'].forEach(function(locale) {
-    const items = value[locale];
-    if (!Array.isArray(items) || items.length !== 4) {
-      fail(qLabel + '.choiceFeedback.' + locale + ' length != 4');
-      return;
-    }
-    items.forEach(function(item, index) {
-      if (!String(item || '').trim()) fail(qLabel + '.choiceFeedback.' + locale + '[' + index + '] is empty');
-      checkText(item, qLabel + '.choiceFeedback.' + locale + '[' + index + ']');
-    });
-  });
-}
-
-// Most chapters carry three concept nodes; a chapter that has to introduce its
-// source document before its concepts may carry four. More than that stops
-// being a map, and the two languages must always describe the same nodes.
-function checkConceptMap(value, label) {
-  if (!value || typeof value !== 'object') { fail(label + ' must have conceptMap'); return; }
-  if (Array.isArray(value.ko) && Array.isArray(value.en) && value.ko.length !== value.en.length) {
-    fail(label + '.conceptMap node counts differ between ko and en');
-  }
-  ['ko', 'en'].forEach(function(locale) {
-    const nodes = value[locale];
-    if (!Array.isArray(nodes) || nodes.length < 3 || nodes.length > 4) {
-      fail(label + '.conceptMap.' + locale + ' must have 3 or 4 nodes');
-      return;
-    }
-    nodes.forEach(function(node, index) {
-      allLocalizedText({ ko: locale === 'ko' ? node.title : 'ok', en: locale === 'en' ? node.title : 'ok' }, label + '.conceptMap.' + locale + '[' + index + '].title');
-      allLocalizedText({ ko: locale === 'ko' ? node.text : 'ok', en: locale === 'en' ? node.text : 'ok' }, label + '.conceptMap.' + locale + '[' + index + '].text');
-      if (locale === 'ko' && /\d+장/.test(String(node.text || ''))) fail(label + '.conceptMap.ko[' + index + '] repeats chapter number in text');
-      if (locale === 'ko' && String(node.title || '').trim() === '핵심 개념') fail(label + '.conceptMap.ko[' + index + '] uses generic title 핵심 개념');
-      if (locale === 'en' && /Chapter\s+\d+/i.test(String(node.text || ''))) fail(label + '.conceptMap.en[' + index + '] repeats chapter number in text');
-    });
-  });
-}
-
-// Optional typed chapter diagram: a flow of 3-6 steps or a two-column
-// contrast of 2-5 rows. Both languages must carry the same shape so the two
-// renderings stay the same diagram.
-function checkDiagram(value, label) {
-  if (typeof value === 'undefined') return;
-  if (!value || typeof value !== 'object') { fail(label + '.diagram must be an object'); return; }
-  if (value.kind !== 'flow' && value.kind !== 'contrast') {
-    fail(label + '.diagram.kind must be flow or contrast');
-    return;
-  }
-  ['ko', 'en'].forEach(function(locale) {
-    const data = value[locale];
-    const dLabel = label + '.diagram.' + locale;
-    if (!data || typeof data !== 'object') { fail(dLabel + ' is missing'); return; }
-    if (!String(data.title || '').trim()) fail(dLabel + '.title is empty');
-    checkText(data.title, dLabel + '.title');
-    if (value.kind === 'flow') {
-      const steps = data.steps;
-      if (!Array.isArray(steps) || steps.length < 3 || steps.length > 6) {
-        fail(dLabel + '.steps must have 3-6 steps');
-        return;
-      }
-      steps.forEach(function(step, index) {
-        if (!step || !String(step.label || '').trim()) fail(dLabel + '.steps[' + index + '].label is empty');
-        checkText(step && step.label, dLabel + '.steps[' + index + '].label');
-        if (step && step.note) checkText(step.note, dLabel + '.steps[' + index + '].note');
-      });
-      return;
-    }
-    ['left', 'right'].forEach(function(sideName) {
-      const side = data[sideName];
-      const sLabel = dLabel + '.' + sideName;
-      if (!side || typeof side !== 'object') { fail(sLabel + ' is missing'); return; }
-      if (!String(side.heading || '').trim()) fail(sLabel + '.heading is empty');
-      checkText(side.heading, sLabel + '.heading');
-      if (!Array.isArray(side.rows) || side.rows.length < 2 || side.rows.length > 5) {
-        fail(sLabel + '.rows must have 2-5 rows');
-        return;
-      }
-      side.rows.forEach(function(row, index) {
-        if (!String(row || '').trim()) fail(sLabel + '.rows[' + index + '] is empty');
-        checkText(row, sLabel + '.rows[' + index + ']');
-      });
-    });
-  });
-  if (value.ko && value.en) {
-    if (value.kind === 'flow') {
-      const koSteps = Array.isArray(value.ko.steps) ? value.ko.steps.length : 0;
-      const enSteps = Array.isArray(value.en.steps) ? value.en.steps.length : 0;
-      if (koSteps !== enSteps) fail(label + '.diagram step counts differ between ko and en');
-    } else {
-      ['left', 'right'].forEach(function(sideName) {
-        const koRows = value.ko[sideName] && Array.isArray(value.ko[sideName].rows) ? value.ko[sideName].rows.length : 0;
-        const enRows = value.en[sideName] && Array.isArray(value.en[sideName].rows) ? value.en[sideName].rows.length : 0;
-        if (koRows !== enRows) fail(label + '.diagram ' + sideName + ' row counts differ between ko and en');
-      });
-      const koLeft = value.ko.left && Array.isArray(value.ko.left.rows) ? value.ko.left.rows.length : 0;
-      const koRight = value.ko.right && Array.isArray(value.ko.right.rows) ? value.ko.right.rows.length : 0;
-      if (koLeft !== koRight) fail(label + '.diagram left/right row counts differ');
-    }
-  }
+  if (episodeCount !== spec.episodes) out.add('shape', collectionId, collectionId + ' episode count ' + episodeCount + ' != ' + spec.episodes);
 }
 
 let totalQuestions = 0;
 let totalLessons = 0;
+const quizCollections = [];
 
 Object.keys(expected).forEach(function(collectionId) {
   const spec = expected[collectionId];
   const collection = collections.get(collectionId);
-  if (!collection) { fail('missing collection ' + collectionId); return; }
+  if (!collection) { out.add('shape', collectionId, 'missing collection ' + collectionId); return; }
+  quizCollections.push(collection);
   const chapters = collection.chapters || [];
-  if (chapters.length !== spec.chapters) fail(collectionId + ' chapter count ' + chapters.length + ' != ' + spec.chapters);
-  allLocalizedText(collection.title, collectionId + '.title');
-  allLocalizedText(collection.description, collectionId + '.description');
+  if (chapters.length !== spec.chapters) out.add('shape', collectionId, collectionId + ' chapter count ' + chapters.length + ' != ' + spec.chapters);
+  checks.allLocalizedText(out, collection.title, collectionId + '.title');
+  checks.allLocalizedText(out, collection.description, collectionId + '.description');
 
   const seenChapters = new Set();
   const partNumbers = new Set();
   let collectionQuestions = 0;
   let collectionLessons = 0;
-
   chapters.forEach(function(chapter) {
-    const chapterLabel = collectionId + '/' + chapter.id;
-    if (seenChapters.has(chapter.id)) fail('duplicate chapter id ' + chapter.id);
+    if (seenChapters.has(chapter.id)) out.add('shape', chapter.id, 'duplicate chapter id ' + chapter.id);
     seenChapters.add(chapter.id);
-    if (!Number.isInteger(chapter.chapterNumber)) fail(chapterLabel + ' chapterNumber must be integer');
     if (chapter.partNumber) partNumbers.add(chapter.partNumber);
-    allLocalizedText(chapter.title, chapterLabel + '.title');
-    allLocalizedText(chapter.summary, chapterLabel + '.summary');
-    if (chapter.learningFocus) allLocalizedText(chapter.learningFocus, chapterLabel + '.learningFocus');
-    checkConceptMap(chapter.conceptMap, chapterLabel);
-    checkDiagram(chapter.diagram, chapterLabel);
-
-    const lessons = chapter.lessons || [];
-    if (lessons.length !== 2) fail(chapterLabel + ' lesson count ' + lessons.length + ' != 2');
-    const levels = lessons.map(function(lesson) { return lesson.level; }).sort().join(',');
-    if (levels !== 'advanced,basic') fail(chapterLabel + ' levels must be basic and advanced, got ' + levels);
-
-    lessons.forEach(function(lesson) {
-      const lessonLabel = chapterLabel + '/' + lesson.id;
+    (chapter.lessons || []).forEach(function(lesson) {
       collectionLessons += 1;
-      totalLessons += 1;
-      allLocalizedText(lesson.title, lessonLabel + '.title');
-      const questions = lesson.questions || [];
-      if (questions.length !== 5) fail(lessonLabel + ' question count ' + questions.length + ' != 5');
-      questions.forEach(function(question, index) {
-        const expectedId = 'q' + (index + 1);
-        const qLabel = lessonLabel + '/' + (question.id || expectedId);
-        if (question.id !== expectedId) fail(qLabel + ' id should be ' + expectedId);
-        if (question.type !== 'multiple_choice') fail(qLabel + ' type must be multiple_choice');
-        if (question.points !== (lesson.level === 'advanced' ? 3 : 2)) fail(qLabel + ' points do not match lesson level');
-        allLocalizedText(question.prompt, qLabel + '.prompt');
-        allLocalizedText(question.explanation, qLabel + '.explanation');
-        checkChoiceFeedback(question.choiceFeedback, qLabel);
-        if (question.answer !== 0) fail(qLabel + ' answer must be 0 with the correct choice first');
-        if (!question.choices || !Array.isArray(question.choices.ko) || !Array.isArray(question.choices.en)) {
-          fail(qLabel + ' choices must have ko/en arrays');
-          return;
-        }
-        if (question.choices.ko.length !== 4) fail(qLabel + ' choices.ko length != 4');
-        if (question.choices.en.length !== 4) fail(qLabel + ' choices.en length != 4');
-        if (new Set(question.choices.ko).size !== question.choices.ko.length) fail(qLabel + ' duplicate Korean choices');
-        if (new Set(question.choices.en).size !== question.choices.en.length) fail(qLabel + ' duplicate English choices');
-        question.choices.ko.forEach(function(choice, i) { checkText(choice, qLabel + '.choices.ko[' + i + ']'); });
-        question.choices.en.forEach(function(choice, i) { checkText(choice, qLabel + '.choices.en[' + i + ']'); });
-      });
-
-      collectionQuestions += questions.length;
-      totalQuestions += questions.length;
+      collectionQuestions += (lesson.questions || []).length;
     });
   });
-
-  if (collectionQuestions !== spec.questions) fail(collectionId + ' question count ' + collectionQuestions + ' != ' + spec.questions);
-  if (collectionLessons !== spec.lessons) fail(collectionId + ' lesson count ' + collectionLessons + ' != ' + spec.lessons);
-  if (partNumbers.size && partNumbers.size !== requiredParts[collectionId]) fail(collectionId + ' part count ' + partNumbers.size + ' != ' + requiredParts[collectionId]);
+  totalLessons += collectionLessons;
+  totalQuestions += collectionQuestions;
+  if (collectionQuestions !== spec.questions) out.add('shape', collectionId, collectionId + ' question count ' + collectionQuestions + ' != ' + spec.questions);
+  if (collectionLessons !== spec.lessons) out.add('shape', collectionId, collectionId + ' lesson count ' + collectionLessons + ' != ' + spec.lessons);
+  if (partNumbers.size && partNumbers.size !== requiredParts[collectionId]) out.add('shape', collectionId, collectionId + ' part count ' + partNumbers.size + ' != ' + requiredParts[collectionId]);
 });
 
+checks.checkChapters(out, quizCollections);
 Object.keys(expectedSpecial).forEach(function(collectionId) { checkSpecialCollection(collectionId, expectedSpecial[collectionId]); });
-
 (data.collections || []).forEach(function(collection) {
-  if (!expected[collection.id] && !expectedSpecial[collection.id]) fail('unexpected collection ' + collection.id);
+  if (!expected[collection.id] && !expectedSpecial[collection.id]) out.add('shape', collection.id, 'unexpected collection ' + collection.id);
 });
-if (totalQuestions !== 1360) fail('total question count ' + totalQuestions + ' != 1360');
-if (totalLessons !== 272) fail('total lesson count ' + totalLessons + ' != 272');
+const expectedQuestions = Object.values(expected).reduce(function(sum, spec) { return sum + spec.questions; }, 0);
+const expectedLessons = Object.values(expected).reduce(function(sum, spec) { return sum + spec.lessons; }, 0);
+if (totalQuestions !== expectedQuestions) out.add('shape', 'bundle', 'total question count ' + totalQuestions + ' != ' + expectedQuestions);
+if (totalLessons !== expectedLessons) out.add('shape', 'bundle', 'total lesson count ' + totalLessons + ' != ' + expectedLessons);
+
+// --- baseline ---------------------------------------------------------------
+
+function readBaseline() {
+  if (!fs.existsSync(BASELINE_PATH)) return null;
+  return JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'));
+}
+function writeBaseline(baseline) {
+  const tolerated = {};
+  Object.keys(baseline.tolerated).sort().forEach(function(rule) {
+    tolerated[rule] = Array.from(new Set(baseline.tolerated[rule])).sort();
+  });
+  fs.writeFileSync(BASELINE_PATH, JSON.stringify({ createdAt: baseline.createdAt, updatedAt: new Date().toISOString().slice(0, 10), tolerated }, null, 2) + '\n');
+}
+function failingByRule(issues) {
+  const map = {};
+  issues.forEach(function(issue) {
+    if (!checks.BASELINE_RULES.has(issue.rule)) return;
+    (map[issue.rule] = map[issue.rule] || new Set()).add(issue.label);
+  });
+  return map;
+}
+
+if (initBaseline) {
+  if (fs.existsSync(BASELINE_PATH)) { console.error('baseline already exists: ' + BASELINE_PATH); process.exit(2); }
+  const failing = failingByRule(out.issues);
+  const tolerated = {};
+  Object.keys(failing).forEach(function(rule) { tolerated[rule] = Array.from(failing[rule]); });
+  writeBaseline({ createdAt: new Date().toISOString().slice(0, 10), tolerated });
+  console.log('baseline written: ' + JSON.stringify(Object.fromEntries(Object.keys(tolerated).map(function(rule) { return [rule, tolerated[rule].length]; }))));
+}
+
+const baseline = noBaseline ? null : readBaseline();
+const toleratedCounts = {};
+const errors = [];
+const stale = [];
+if (baseline) {
+  const failing = failingByRule(out.issues);
+  Object.keys(baseline.tolerated).forEach(function(rule) {
+    baseline.tolerated[rule].forEach(function(label) {
+      if (!failing[rule] || !failing[rule].has(label)) stale.push(rule + ' ' + label);
+    });
+  });
+  if (pruneBaseline && stale.length) {
+    Object.keys(baseline.tolerated).forEach(function(rule) {
+      baseline.tolerated[rule] = baseline.tolerated[rule].filter(function(label) { return failing[rule] && failing[rule].has(label); });
+      if (!baseline.tolerated[rule].length) delete baseline.tolerated[rule];
+    });
+    writeBaseline(baseline);
+    console.log('baseline pruned: ' + stale.length + ' entr' + (stale.length === 1 ? 'y' : 'ies') + ' removed');
+    stale.length = 0;
+  }
+}
+out.issues.forEach(function(issue) {
+  const list = baseline && baseline.tolerated[issue.rule];
+  if (list && list.indexOf(issue.label) !== -1) {
+    toleratedCounts[issue.rule] = (toleratedCounts[issue.rule] || 0) + 1;
+    return;
+  }
+  errors.push('[' + issue.rule + '] ' + issue.message);
+});
+stale.forEach(function(entry) { errors.push('[baseline] stale entry (now passes; run --prune-baseline): ' + entry); });
 
 if (errors.length) {
   console.error('Commulingo validation failed with ' + errors.length + ' issue(s):');
@@ -304,4 +214,10 @@ if (errors.length) {
   if (errors.length > 80) console.error('... ' + (errors.length - 80) + ' more');
   process.exit(1);
 }
-console.log(JSON.stringify({ ok: true, collections: Object.keys(expected).length + Object.keys(expectedSpecial).length, lessons: totalLessons, questions: totalQuestions }));
+console.log(JSON.stringify({
+  ok: true,
+  collections: Object.keys(expected).length + Object.keys(expectedSpecial).length,
+  lessons: totalLessons,
+  questions: totalQuestions,
+  tolerated: toleratedCounts,
+}));

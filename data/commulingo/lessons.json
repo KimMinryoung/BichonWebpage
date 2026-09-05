@@ -2557,7 +2557,7 @@
                   "choices": {
                     "ko": [
                       "6장은 노동력이 시장에서 구매되는 조건을 설명하고, 7장은 그 노동력이 생산과정에서 사용되어 잉여가치를 낳는 방식을 보여주기 때문이다.",
-                      "생산과정에 들어가면 상품과 가치의 분석이 충분하지 않가 되기 때문이다.",
+                      "생산과정에 들어가면 상품과 가치의 분석이 충분하지 않게 되기 때문이다.",
                       "6장에서 이미 잉여가치 생산이 완전히 설명되었으므로 7장은 단순한 반복이기 때문이다.",
                       "노동력은 시장에서만 사용되며 생산과정에 들어가지 않기 때문이다."
                     ],
@@ -4285,7 +4285,7 @@
                       "노동일 연장에 한계가 있으면 자본은 고용 규모, 노동강도, 필요노동 단축 같은 다른 경로로 잉여가치량을 늘리려 할 수 있다.",
                       "법적 제한은 가변자본과 잉여가치율의 관계를 완전히 폐지한다.",
                       "노동일이 제한되면 자본은 더 이상 잉여가치량에 관심을 갖지 않는다.",
-                      "노동일 제한 뒤에는 불변자본이 곧바로 임금을 대체해 노동자가 필요 없어 진다."
+                      "노동일 제한 뒤에는 불변자본이 곧바로 임금을 대체해 노동자가 필요 없어진다."
                     ],
                     "en": [
                       "If extending the working day is limited, capital may seek other paths to increase the mass of surplus-value: employment scale, labor intensity, or reducing necessary labor.",
@@ -7885,7 +7885,7 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "20장은 시간임금을 통해 임금형태가 숫자상으로 어떻게 작동하는지 보여준다. 이 분석은 성과임금이 어떻게 노동강도와 감독을 재편하는지 이해하는 발판이다.",
+                    "ko": "20장은 시간임금을 통해 임금형태가 숫자상으로 어떻게 작동하는지 보여준다. 하루임금, 시간당 임금, 노동일 길이의 관계를 정리해 두어야, 다음 장에서 성과임금이 노동강도와 감독을 어떻게 재편하는지 이해할 수 있다.",
                     "en": "Chapter 20 shows how the wage-form operates numerically through time-wages. This prepares the analysis of how piece-wages reorganize intensity and supervision."
                   }
                 }
@@ -16709,21 +16709,21 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "스미스식 고정자본 정의에서 피해야 할 오해는 무엇인가?",
-                    "en": "What misunderstanding should be avoided in Theories of Fixed and Circulating Capital: the Physiocrats and Adam Smith?"
+                    "ko": "스미스식 고정자본 정의에 대해 마르크스가 지적하는 문제는 무엇인가?",
+                    "en": "What problem does Marx point out in Smith's definition of fixed capital?"
                   },
                   "choices": {
                     "ko": [
-                      "고정자본을 내구재나 소유자에게 수입을 주는 물건으로만 정의하는 오해를 피해야 한다.",
-                      "고정자본은 물건의 내구성이나 공장 안에 남아 있는지로 분류된다.",
-                      "같은 기계는 제작자와 사용자에게 언제나 같은 자본형태를 갖는다.",
-                      "건물이나 도로처럼 오래 남는 물건은 누구에게나 언제나 고정자본이라고 일반화한다."
+                      "고정자본을 내구재나 소유자에게 수입을 주는 물건으로만 정의한다는 것이다.",
+                      "고정자본이라는 범주 자체가 불필요하며 불변자본으로 대체해야 한다는 것이다.",
+                      "고정자본을 공장 건물처럼 한 장소에 붙박인 물건으로만 한정했다는 것이다.",
+                      "고정자본에 들어간 가치가 생산물로 전혀 이전되지 않는다고 보았다는 것이다."
                     ],
                     "en": [
-                      "One must avoid defining fixed capital merely as durable goods or things yielding revenue to their owner.",
-                      "It classifies fixed capital only by an object's durability or by whether it stays inside the workshop.",
-                      "It misses that the same machine can be commodity-capital for its maker and fixed capital for its user.",
-                      "It generalizes that durable things such as buildings or roads are fixed capital for everyone and in every case."
+                      "That it defines fixed capital only as durable things or as property yielding revenue to its owner.",
+                      "That the category of fixed capital is itself superfluous and should be replaced by constant capital.",
+                      "That it confines fixed capital to things fixed in one place, like a factory building.",
+                      "That it treats the value embodied in fixed capital as never transferred to the product."
                     ]
                   },
                   "answer": 0,
@@ -16784,8 +16784,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 연결점은 기준 정리다. 고정·유동자본은 불변·가변자본의 다른 이름도 아니고, 내구재와 소모품의 목록도 아니다. 이 구분이 가치 이전과 회전기간의 문제로 정리되어야 다음 장에서 리카도가 왜 가격과 이윤율 문제에서 다시 혼동하는지 분석할 수 있다.",
-                    "en": "The chapter's connecting role is to fix the criterion. Fixed and circulating capital are neither other names for constant and variable capital nor a list of durable and consumable things. Once the distinction is set as a problem of value transfer and turnover time, the next chapter can show why Ricardo falls back into confusion in questions of price and profit rate."
+                    "ko": "이 장이 하는 일은 기준을 세우는 것이다. 고정·유동자본은 불변·가변자본의 다른 이름도 아니고, 내구재와 소모품의 목록도 아니다. 이 구분이 가치 이전과 회전기간의 문제로 정리되어야, 다음 장에서 리카도가 가격과 이윤율 문제에서 왜 다시 혼동에 빠지는지 분석할 수 있다.",
+                    "en": "What the chapter does is fix the criterion. Fixed and circulating capital are neither other names for constant and variable capital nor a list of durable and consumable things. Once the distinction is set as a problem of value transfer and turnover time, the next chapter can show why Ricardo falls back into confusion in questions of price and profit rate."
                   }
                 }
               ]
@@ -17169,8 +17169,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이 장의 연결점은 범주 정밀화다. 회전 차이는 가격과 이윤율이 나타나는 방식에 영향을 주지만, 가치창조의 원천을 바꾸지는 않는다. 이 정리가 있어야 다음 단계에서 자본이 생산과정 안에 얼마나 오래 묶이는지, 즉 노동기간과 생산시간을 따로 분석할 수 있다.",
-                    "en": "The chapter's connecting role is categorial sharpening. Turnover differences affect how price and profit rate appear, but they do not change the source of value creation. With that clarified, the next step can analyze how long capital is tied up inside production, namely the working period and production time."
+                    "ko": "리카도 비판이 하는 일은 범주를 정밀하게 다듬는 것이다. 회전 차이는 가격과 이윤율이 나타나는 방식에 영향을 주지만, 가치창조의 원천을 바꾸지는 않는다. 이 정리가 있어야 다음 단계에서 자본이 생산과정 안에 얼마나 오래 묶이는지, 곧 노동기간과 생산시간을 따로 분석할 수 있다.",
+                    "en": "The critique of Ricardo sharpens the categories. Turnover differences affect how price and profit rate appear, but they do not change the source of value creation. With that clarified, the next step can analyze how long capital is tied up inside production, namely the working period and production time."
                   }
                 }
               ]
@@ -17704,8 +17704,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 범주의 확장이다. 노동기간은 직접 노동이 이어져 완성품을 만드는 시간이지만, 생산시간은 그보다 넓다. 포도주 숙성, 목재 건조, 생물학적 배양처럼 노동이 직접 작용하지 않아도 생산물이 아직 완성되지 않아 자본이 묶이는 시간이 있기 때문에, 다음 장은 생산시간 전체를 분석한다.",
-                    "en": "The connection is an expansion of the category. The working period is the time in which direct labour continues toward the finished product, but production time is broader. Wine aging, timber drying, and biological cultivation can tie up capital even when direct labour is not acting, so the next chapter analyzes production time as a whole."
+                    "ko": "생산시간은 노동기간을 넓힌 범주다. 노동기간은 직접 노동이 이어져 완성품을 만드는 시간이지만, 생산시간은 그보다 넓다. 포도주 숙성, 목재 건조, 생물학적 배양처럼 노동이 직접 작용하지 않아도 생산물이 아직 완성되지 않아 자본이 묶이는 시간이 있기 때문에, 다음 장은 생산시간 전체를 분석한다.",
+                    "en": "Production time widens the category of the working period. The working period is the time in which direct labour continues toward the finished product, but production time is broader. Wine aging, timber drying, and biological cultivation can tie up capital even when direct labour is not acting, so the next chapter analyzes production time as a whole."
                   }
                 }
               ]
@@ -17955,8 +17955,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 회전 단축의 동기다. 기술은 노동생산성을 높일 뿐 아니라 숙성, 건조, 냉각, 운송 전 대기 같은 생산시간을 줄여 자본이 묶이는 기간을 단축할 수 있다. 생산 내부의 시간이 정리되면, 다음에는 완성된 상품이 팔려 화폐로 돌아오기까지의 유통시간을 보아야 한다.",
-                    "en": "The connection is the motive to shorten turnover. Technology can raise labour productivity, but it can also shorten production time such as aging, drying, cooling, or pre-shipment waiting, reducing the period in which capital is tied up. Once internal production time is clarified, the next issue is circulation time: the time until the finished commodity is sold and returns as money."
+                    "ko": "동기는 회전 단축이다. 기술은 노동생산성을 높일 뿐 아니라 숙성, 건조, 냉각, 운송 전 대기 같은 생산시간을 줄여 자본이 묶이는 기간을 단축할 수 있다. 생산 내부의 시간이 정리되면, 다음에는 완성된 상품이 팔려 화폐로 돌아오기까지의 유통시간을 보아야 한다.",
+                    "en": "The motive is to shorten turnover. Technology can raise labour productivity, but it can also shorten production time such as aging, drying, cooling, or pre-shipment waiting, reducing the period in which capital is tied up. Once internal production time is clarified, the next issue is circulation time: the time until the finished commodity is sold and returns as money."
                   }
                 }
               ]
@@ -18356,8 +18356,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 15장의 필요 선대자본량이다. 유통시간이 길면 판매대금이 돌아오기 전에도 생산을 계속하려면 다른 자본이 미리 준비되어 있어야 한다. 그래서 14장은 회전시간을 생산 내부의 문제가 아니라 판매·구매의 사회적 조건까지 포함하는 문제로 확장한다.",
-                    "en": "The connection is Chapter 15's problem of the required advance of capital. If circulation time is long, production can continue before sales money returns only if other capital is already available. Chapter 14 therefore expands turnover time beyond production itself to include the social conditions of selling and buying."
+                    "ko": "이 장이 준비하는 것은 15장의 필요 선대자본량 문제다. 유통시간이 길면 판매대금이 돌아오기 전에도 생산을 계속하기 위해 다른 자본이 미리 준비되어 있어야 한다. 그래서 14장은 회전시간을 생산 내부의 문제가 아니라 판매·구매의 사회적 조건까지 포함하는 문제로 확장한다.",
+                    "en": "What the chapter prepares is Chapter 15's problem of the required advance of capital. If circulation time is long, production can continue before sales money returns only if other capital is already available. Chapter 14 therefore expands turnover time beyond production itself to include the social conditions of selling and buying."
                   }
                 }
               ]
@@ -18757,8 +18757,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 16장의 가변자본 회전이다. 15장은 회전시간이 필요한 선대자본량을 바꾼다는 점을 정리한다. 그러면 다음 질문은 임금으로 선대된 가변자본이 1년에 몇 번 기능하며, 그 반복이 연간 잉여가치율을 어떻게 바꾸는가가 된다.",
-                    "en": "The connection is Chapter 16's turnover of variable capital. Chapter 15 establishes that turnover time changes the amount of capital that must be advanced. The next question is how many times variable capital advanced as wages functions in a year, and how that repetition changes the annual rate of surplus-value."
+                    "ko": "15장은 회전시간이 필요한 선대자본량을 바꾼다는 점을 정리한다. 그러면 다음 질문은 임금으로 선대된 가변자본이 1년에 몇 번 기능하며 그 반복이 연간 잉여가치율을 어떻게 바꾸는가가 되고, 16장의 가변자본 회전이 이를 다룬다.",
+                    "en": "Chapter 15 establishes that turnover time changes the amount of capital that must be advanced. The next question is how many times variable capital advanced as wages functions in a year, and how that repetition changes the annual rate of surplus-value; Chapter 16's turnover of variable capital takes it up."
                   }
                 }
               ]
@@ -19158,8 +19158,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 17장의 잉여가치 유통이다. 16장은 회전이 착취관계의 본질을 바꾸지는 않지만, 같은 선대 가변자본이 연간으로 생산하는 잉여가치의 표현을 바꾼다는 점을 보여준다. 그러면 다음 질문은 그렇게 생산·실현된 잉여가치가 자본가의 소비와 축적 속에서 어떻게 유통되는가다.",
-                    "en": "The connection is Chapter 17's circulation of surplus-value. Chapter 16 shows that turnover does not change the essence of exploitation, but it changes the annual expression of surplus-value produced by the same advanced variable capital. The next question is how that produced and realized surplus-value circulates through capitalist consumption and accumulation."
+                    "ko": "16장은 회전이 착취관계의 본질을 바꾸지는 않지만, 같은 선대 가변자본이 연간으로 생산하는 잉여가치의 표현을 바꾼다는 점을 보여준다. 그러면 다음 질문은 그렇게 생산·실현된 잉여가치가 자본가의 소비와 축적 속에서 어떻게 유통되는가이며, 17장이 이를 다룬다.",
+                    "en": "Chapter 16 shows that turnover does not change the essence of exploitation, but it changes the annual expression of surplus-value produced by the same advanced variable capital. The next question is how that produced and realized surplus-value circulates through capitalist consumption and accumulation, which Chapter 17 takes up."
                   }
                 }
               ]
@@ -19559,8 +19559,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 3편의 사회적 재생산 도식이다. 잉여가치가 소비될지 축적될지는 단순한 개인 선택이 아니라 추가 생산수단, 소비수단, 노동력의 사회적 공급과 맞물린다. 그래서 17장은 개별 자본의 회전 분석을 사회적 총자본의 재생산 조건으로 넘겨 주는 발판이다.",
-                    "en": "The connection is Part III's schemes of social reproduction. Whether surplus-value is consumed or accumulated is not merely an individual choice; it depends on the social supply of additional means of production, means of consumption, and labour-power. Chapter 17 therefore moves the analysis from individual turnover toward the reproduction conditions of total social capital."
+                    "ko": "잉여가치가 소비될지 축적될지는 단순한 개인 선택이 아니라 추가 생산수단, 소비수단, 노동력의 사회적 공급과 맞물린다. 그래서 17장은 개별 자본의 회전 분석을 사회적 총자본의 재생산 조건, 곧 3편의 재생산 도식으로 넘겨 준다.",
+                    "en": "Whether surplus-value is consumed or accumulated is not merely an individual choice; it depends on the social supply of additional means of production, means of consumption, and labour-power. Chapter 17 therefore hands the analysis of individual turnover over to the reproduction conditions of total social capital, the schemes of Part III."
                   }
                 }
               ]
@@ -19960,8 +19960,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 재생산 도식으로의 이동이다. 18장은 앞선 개별 순환·회전 분석을 버리는 것이 아니라, 그 분석 단위를 사회 전체로 확장한다. 이제 문제는 생산수단 부문과 소비수단 부문이 서로의 가치와 물질적 요소를 어떻게 보충하는가다.",
-                    "en": "The connection is the move to reproduction schemes. Chapter 18 does not abandon the earlier analysis of individual circuits and turnover; it expands the unit of analysis to society as a whole. The question now becomes how the departments of means of production and means of consumption replace one another's value and material elements."
+                    "ko": "18장은 앞선 개별 순환·회전 분석을 버리는 것이 아니라, 그 분석 단위를 사회 전체로 확장해 재생산 도식으로 옮겨 간다. 이제 문제는 생산수단 부문과 소비수단 부문이 서로의 가치와 물질적 요소를 어떻게 보충하는가다.",
+                    "en": "Chapter 18 does not abandon the earlier analysis of individual circuits and turnover; it expands the unit of analysis to society as a whole and moves to the reproduction schemes. The question now becomes how the departments of means of production and means of consumption replace one another's value and material elements."
                   }
                 }
               ]
@@ -20230,8 +20230,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 주제에 관한 이전의 설명들에서 마르크스가 분석 대상으로 삼는 문제는 무엇인가?",
-                    "en": "What problem does Marx take as his object in Former Presentations of the Subject?"
+                    "ko": "마르크스가 케네와 스미스의 재생산 설명을 다시 검토하면서 하려는 일은 무엇인가?",
+                    "en": "What is Marx doing when he re-examines Quesnay's and Smith's accounts of reproduction?"
                   },
                   "choices": {
                     "ko": [
@@ -20361,8 +20361,8 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "연결점은 20장의 단순재생산 도식이다. 19장은 케네와 스미스의 혼동을 통해 왜 총생산물을 수입으로만 풀 수 없고, 불변자본 보전과 자본/수입 구분이 필요한지 보여 준다. 이 범주 정리가 있어야 다음 장에서 같은 규모의 사회적 재생산 조건을 도식으로 제시할 수 있다.",
-                    "en": "The connection is Chapter 20's scheme of simple reproduction. Chapter 19 uses the confusions of Quesnay and Smith to show why the total product cannot be dissolved into revenue alone, and why preservation of constant capital and the distinction between capital and revenue are necessary. With these categories clarified, the next chapter can present the conditions of social reproduction on the same scale."
+                    "ko": "19장은 케네와 스미스의 혼동을 통해 왜 총생산물을 수입으로만 풀 수 없고, 불변자본 보전과 자본/수입 구분이 필요한지 보여 준다. 이 범주 정리가 있어야 20장에서 같은 규모의 사회적 재생산 조건을 단순재생산 도식으로 제시할 수 있다.",
+                    "en": "Chapter 19 uses the confusions of Quesnay and Smith to show why the total product cannot be dissolved into revenue alone, and why preservation of constant capital and the distinction between capital and revenue are necessary. With these categories clarified, Chapter 20 can present the conditions of social reproduction on the same scale as the scheme of simple reproduction."
                   }
                 }
               ]
@@ -20615,8 +20615,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산에서 마르크스가 분석 대상으로 삼는 문제는 무엇인가?",
-                    "en": "What problem does Marx take as his object in Simple Reproduction?"
+                    "ko": "마르크스는 단순재생산을 다루면서 잉여가치가 전부 소비된다고 가정한다. 이 가정 아래 그가 풀려는 문제는 무엇인가?",
+                    "en": "In treating simple reproduction, Marx assumes that all surplus-value is consumed. What problem is he trying to solve under that assumption?"
                   },
                   "choices": {
                     "ko": [
@@ -21016,8 +21016,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "축적과 확대재생산에서 마르크스가 분석 대상으로 삼는 문제는 무엇인가?",
-                    "en": "What problem does Marx take as his object in Accumulation and Reproduction on an Expanded Scale?"
+                    "ko": "축적과 확대재생산 장에서 잉여가치의 일부가 추가 자본으로 바뀐다고 할 때, 마르크스가 풀려는 문제는 무엇인가?",
+                    "en": "When part of surplus-value is turned into additional capital in Accumulation and Reproduction on an Expanded Scale, what problem is Marx trying to solve?"
                   },
                   "choices": {
                     "ko": [
