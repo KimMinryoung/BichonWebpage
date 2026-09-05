@@ -1763,7 +1763,10 @@
           "Dimitrov report"
         ]
       },
-      "addedAt": "2026-08-11"
+      "addedAt": "2026-08-11",
+      "noAutoLink": [
+        "국가사회주의"
+      ]
     },
     {
       "id": "naumov-zagovor-ezhova",
@@ -3736,7 +3739,10 @@
           "Pospelov report",
           "Pospelov commission"
         ]
-      }
+      },
+      "noAutoLink": [
+        "국가사회주의"
+      ]
     },
     {
       "id": "gorbachev-1987-january-plenum-report",
@@ -4215,7 +4221,8 @@
       },
       "noAutoLink": [
         "58조",
-        "제58조"
+        "제58조",
+        "국가사회주의"
       ]
     },
     {
