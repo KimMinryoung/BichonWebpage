@@ -4219,6 +4219,47 @@
             "en": "Distinguishes the labor-process from the valorization-process, showing how production makes use-values and surplus-value at once."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "노동과정과 가치증식과정",
+              "left": {
+                "heading": "노동과정",
+                "rows": [
+                  "목적을 가지고 자연물을 바꾸어 사용가치를 만든다",
+                  "질적 측면: 어떤 유용한 물건을 만드는가를 본다",
+                  "사회형태와 무관하게 모든 생산에 있다"
+                ]
+              },
+              "right": {
+                "heading": "가치증식과정",
+                "rows": [
+                  "구매한 노동력을 소비해 투하가치보다 큰 새 가치를 만든다",
+                  "양적 측면: 얼마만큼의 노동시간이 들었는가를 본다",
+                  "자본가가 노동력을 산 자본주의 생산에서만 있다"
+                ]
+              }
+            },
+            "en": {
+              "title": "Labor-process and Valorization-process",
+              "left": {
+                "heading": "Labor-process",
+                "rows": [
+                  "Purposefully transforms nature into use-values",
+                  "Qualitative side: what useful thing is being made",
+                  "Present in production in any society, regardless of social form"
+                ]
+              },
+              "right": {
+                "heading": "Valorization-process",
+                "rows": [
+                  "Consumes purchased labor-power to create new value beyond what was advanced",
+                  "Quantitative side: how much labor-time was expended",
+                  "Exists only where capital has bought labor-power, in capitalist production"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch07-basic",
@@ -4233,27 +4274,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "목수가 나무와 도구를 사용해 책상을 만든다. 마르크스가 먼저 말하는 일반적 노동과정의 세 요소는 무엇인가?",
-                    "en": "A carpenter uses wood and tools to make a table. What are the three elements of the labor-process Marx first identifies in general?"
+                    "ko": "목수가 통나무를 톱과 대패로 다듬어 책상을 만든다. 마르크스가 이 장면에서 노동과정을 이루는 요소로 꼽는 것은 어느 셋인가?",
+                    "en": "A carpenter works a log with a saw and a plane to make a table. Which three does Marx count as the elements of the labor-process in this scene?"
                   },
                   "choices": {
                     "ko": [
                       "노동 자체, 노동대상, 노동수단",
-                      "임금, 이윤, 지대",
-                      "판매가격, 할인율, 세금",
-                      "자본가의 의지, 상인의 말솜씨, 소비자의 취향"
+                      "임금과 이윤, 그리고 지대라는 분배의 세 몫",
+                      "판매가격과 할인율, 그리고 부과되는 세금",
+                      "자본가의 의지와 상인의 설득, 소비자의 취향"
                     ],
                     "en": [
                       "Labor itself, the object of labor, and the instruments of labor",
-                      "Wages, profit, and rent",
-                      "Sale price, discount rate, and tax",
+                      "Wages, profit, and rent as shares of distribution",
+                      "Sale price, discount rate, and imposed tax",
                       "The capitalist’s will, the merchant’s persuasion, and consumer taste"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동과정은 인간이 목적의식적 활동으로 자연물을 변형하는 과정이며, 노동대상과 노동수단이 함께 필요하다. 임금이나 이윤은 이 일반적 과정 자체가 아니라 자본주의적 형식이 붙은 뒤의 범주다.",
-                    "en": "The labor-process is the purposeful activity through which humans transform natural materials, using objects and instruments of labor. Wages and profit belong not to this general process as such, but to its specifically capitalist form."
+                    "ko": "목수가 책상을 만들 때 실제로 있는 것은 목수의 활동, 다듬어야 할 나무라는 노동대상, 톱과 대패라는 노동수단뿐이다. 마르크스는 임금이나 이윤 같은 분배 범주를 끌어들이기 전에 어떤 사회에서도 통하는 노동과정 자체의 요소부터 떼어낸다. 임금과 이윤을 먼저 떠올리면 노동과정의 일반적 성격과 자본주의적 형식을 뒤섞게 된다.",
+                    "en": "When a carpenter makes a table, what actually exists is the carpenter's own activity, the wood as the object of labor, and the saw and plane as instruments of labor. Marx separates these elements, common to any society, before introducing distributive categories like wages or profit. Thinking of wages and profit first confuses the general nature of the labor-process with its specifically capitalist form."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 세 요소는 원시 공동체의 사냥부터 오늘의 공장까지 어느 생산에나 그대로 있고, 사회마다 달라지는 것은 그 요소들이 누구의 것인가 하는 관계다.",
+                      "임금과 이윤은 분배 범주로, 노동과정 자체의 구성요소가 아니라 그 결과를 나누는 방식이다.",
+                      "판매가격이나 세금은 유통과 국가재정에 속하는 문제이지 노동과정의 요소가 아니다.",
+                      "자본가의 의지나 소비자 취향은 노동과정을 움직이는 동기일 수는 있어도 그 구성요소는 아니다."
+                    ],
+                    "en": [
+                      "These three are present in every production, from a hunt in early communal society to a modern factory; what changes between societies is whose they are.",
+                      "Wages and profit are distributive categories dividing the result, not elements of the labor-process itself.",
+                      "Sale price and tax belong to circulation and state finance, not to the labor-process.",
+                      "The capitalist’s will or consumer taste may motivate production but are not its constituent elements."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 1절 노동과정",
+                      "en": "Capital I, Ch. 7 §1 The Labour-Process"
+                    },
+                    "quote": {
+                      "ko": "노동과정의 요소적 계기는 첫째 인간의 인격적 활동, 즉 노동 자체이고, 둘째 그 노동의 대상이며, 셋째 그 도구다.",
+                      "en": "The elementary factors of the labour-process are 1, the personal activity of man, i.e., work itself, 2, the subject of that work, and 3, its instruments."
+                    }
                   }
                 },
                 {
@@ -4280,8 +4346,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본주의적 생산은 사용가치 생산인 동시에 가치증식과정이다. 같은 노동이 유용한 물건을 만들면서도, 자본가에게는 구매한 노동력의 사용을 통해 투하가치를 늘리는 과정으로 나타난다.",
-                    "en": "Capitalist production is both production of use-values and a process of valorization. The same labor makes useful things while, for the capitalist, it is the use of purchased labor-power to increase advanced value."
+                    "ko": "실을 천으로 바꾸는 손놀림 자체는 언제 어디서나 있을 수 있는 노동과정이다. 그런데 같은 작업이 자본가의 관점에서는 원료값과 임금으로 투하한 가치가 그대로 유지되는 데 그치지 않고 그 이상으로 불어나는지를 재는 가치증식과정이 된다. 두 과정은 별개의 장소나 시간이 아니라 같은 노동을 보는 두 가지 각도다.",
+                    "en": "Turning yarn into cloth by hand is a labor-process that could occur in any society. But viewed from the capitalist's standpoint, the same operation becomes a process measuring whether the value advanced in materials and wages is not merely maintained but expanded beyond itself. The two processes are not separate places or times but two angles on the same labor."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "두 관점을 겹쳐 놓고 보면, 천이 짜이는 바로 그 시간 안에서 노동력의 사용이 자기 가치를 넘어서는 순간이 곧 잉여가치가 생기는 순간이다.",
+                      "쉬는 시간과 노동시간을 나누는 것은 노동일 분석에서 다루는 문제이지 두 과정 구분의 핵심이 아니다.",
+                      "두 과정은 장소가 아니라 같은 노동을 보는 관점의 차이이므로 공간으로 나누면 틀린다.",
+                      "자본주의 생산은 사용가치 생산과 가치증식이 한 공정 안에서 동시에 일어난다는 점을 놓친 것이다."
+                    ],
+                    "en": [
+                      "Laying the two standpoints over each other, the moment within the weaving when the use of labor-power passes beyond its own value is the moment surplus-value appears.",
+                      "Splitting rest time from work time belongs to the analysis of the working day, not to this distinction.",
+                      "The two processes differ in standpoint on the same labor, not in physical location, so dividing by space is wrong.",
+                      "This misses that capitalist production unites use-value production and valorization within one process."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 2절 잉여가치의 생산",
+                      "en": "Capital I, Ch. 7 §2 The Production of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "상품이 동시에 사용가치이자 가치이듯이, 상품을 생산하는 과정도 노동과정이면서 동시에 가치를 만드는 과정이어야 한다.",
+                      "en": "Just as commodities are, at the same time, use-values and values, so the process of producing them must be a labour-process, and at the same time, a process of creating value."
+                    }
                   }
                 },
                 {
@@ -4308,8 +4399,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "착취는 반드시 임금 미지급이나 교환 사기를 뜻하지 않는다. 노동력은 가치대로 팔려도, 생산과정에서 그 사용가치가 임금보다 큰 새 가치를 만들 수 있다.",
-                    "en": "Exploitation does not necessarily mean unpaid wages or fraudulent exchange. Labor-power may be sold at its value, while its use-value in production creates more new value than the wage represents."
+                    "ko": "방적공은 하루치 임금 3실링에 해당하는 가치를 6시간이면 채운다. 그런데 자본가가 산 것은 그 하루 동안 노동력을 쓸 권리이므로, 나머지 시간에도 노동력은 계속 실을 만들며 새 가치를 더한다. 등가교환이 지켜져도 사용가치인 노동 자체가 자기 가치보다 더 많은 가치를 낳을 수 있다는 것이 착취의 자리다.",
+                    "en": "The spinner replaces the value of the daily wage, three shillings, in about six hours. But what the capitalist bought is the right to use that labor-power for the whole day, so labor keeps adding new value in the remaining hours too. Even with equivalent exchange respected, labor as a use-value can produce more value than its own, and that is where exploitation sits."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동력을 하루 유지하는 데 드는 비용과 그 노동력이 하루 동안 쏟아내는 노동은 서로 다른 크기이고, 자본가가 노린 것이 바로 이 두 크기의 차이다.",
+                      "임금을 받은 뒤에도 노동자는 정해진 시간 동안 계속 일하며 새 가치를 만든다는 점을 놓쳤다.",
+                      "마르크스의 비판은 사기나 절도가 아니라 등가교환 아래서도 잉여가치가 생긴다는 데 있다.",
+                      "생산수단은 스스로 가치를 만들지 못하고 노동이 지나간 가치를 옮길 뿐이라는 점을 혼동했다."
+                    ],
+                    "en": [
+                      "The daily cost of maintaining labor-power and the labor it can expend in a day are two different magnitudes, and that difference is exactly what the capitalist counted on.",
+                      "This misses that after being paid, the worker keeps working for the agreed hours and keeps adding new value.",
+                      "Marx’s point is not fraud or theft but that surplus-value arises even under equivalent exchange.",
+                      "This confuses means of production creating value by themselves with labor merely transferring their existing value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 2절 잉여가치의 생산",
+                      "en": "Capital I, Ch. 7 §2 The Production of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "따라서 노동력의 가치와 그 노동력이 노동과정에서 만들어내는 가치는 전혀 다른 크기다. 자본가가 노동력을 살 때 염두에 둔 것이 바로 이 두 가치의 차이였다.",
+                      "en": "Therefore, the value of labour-power, and the value which that labour-power creates in the labour-process, are two entirely different magnitudes; and this difference of the two values was what the capitalist had in view, when he was purchasing the labour-power."
+                    }
                   }
                 },
                 {
@@ -4336,8 +4452,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 노동력의 사용과정에서 필요노동을 넘어선 시간이 어떻게 잉여가치로 나타나는지 보여준다. 임금은 하루 전체 노동의 대가처럼 보이지만, 가치증식 분석은 노동일 내부의 분할을 드러낸다.",
-                    "en": "Marx shows how time beyond necessary labor in the use of labor-power appears as surplus-value. The wage makes the whole working day look paid, but the analysis of valorization reveals the division inside the working day."
+                    "ko": "노동일이 6시간에서 멈춘다면 임금과 정확히 같은 가치만 생기고 잉여가치는 없다. 실제로는 자본가가 노동력을 하루치로 샀으므로 노동은 그 지점을 넘어 계속되고, 이 넘친 시간이 잉여노동이 되어 잉여가치로 나타난다. 임금은 하루 전체를 산 대가처럼 보이지만 실제로 값이 치러진 것은 앞의 6시간뿐이고, 착취는 사기가 아니라 이 노동일의 분할 안에서 성립한다.",
+                    "en": "If the working day stopped at six hours, only value equal to the wage would be produced and no surplus-value would exist. But the capitalist has bought labor-power for the whole day, so labor continues past that point and the excess hours become surplus labor. The wage looks like payment for the whole day, though only the first six are actually paid for; exploitation is not fraud but this division inside the working day."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 경계선의 자리는 고정되어 있지 않아서, 노동일을 늘리거나 필요노동시간을 줄이면 잉여노동의 몫이 곧바로 달라진다.",
+                      "나머지 6시간에도 실제로 일이 이루어지며 그 안에서 잉여가치가 생긴다는 점을 놓쳤다.",
+                      "자본가의 잉여가치는 생산 이전이 아니라 노동일 안의 잉여노동에서 비로소 생긴다.",
+                      "생산수단은 스스로 가치를 늘리지 못하고 노동만이 새 가치를 더한다는 점을 혼동했다."
+                    ],
+                    "en": [
+                      "This boundary is not fixed: lengthening the working day or shortening necessary labor-time immediately changes how much of the day is surplus labor.",
+                      "This misses that real work continues in the remaining hours and surplus-value is created there.",
+                      "The capitalist’s surplus-value arises only from surplus labor within the working day, not before production.",
+                      "This confuses means of production increasing value on their own with labor being the sole source of new value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 2절 잉여가치의 생산",
+                      "en": "Capital I, Ch. 7 §2 The Production of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "자본가가 노동력에 지불한 가치가 정확한 등가물로 대체되는 지점을 넘지 않는다면 그것은 단지 가치를 생산하는 과정이다. 반대로 그 지점을 넘어 계속된다면 그것은 잉여가치를 만드는 과정이 된다.",
+                      "en": "If on the one hand the process be not carried beyond the point, where the value paid by the capitalist for the labour-power is replaced by an exact equivalent, it is simply a process of producing value; if, on the other hand, it be continued beyond that point, it becomes a process of creating surplus-value."
+                    }
                   }
                 },
                 {
@@ -4345,27 +4486,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "7장이 6장의 노동력 상품 분석 다음에 와야 하는 이유는 무엇인가?",
-                    "en": "Why must Chapter 7 follow Chapter 6’s analysis of labor-power as a commodity?"
+                    "ko": "자본가가 시장에서 하루치 노동력을 3실링에 사고 계약을 마쳤다. 마르크스가 여기서 멈추지 않고 작업장 안까지 따라 들어가는 까닭은 어디에 있는가?",
+                    "en": "A capitalist buys a day’s labor-power for three shillings and the bargain is closed. Why does Marx refuse to stop there and follow the parties into the workshop?"
                   },
                   "choices": {
                     "ko": [
-                      "6장은 노동력이 시장에서 구매되는 조건을 설명하고, 7장은 그 노동력이 생산과정에서 사용되어 잉여가치를 낳는 방식을 보여주기 때문이다.",
-                      "생산과정에 들어가면 상품과 가치의 분석이 충분하지 않게 되기 때문이다.",
-                      "6장에서 이미 잉여가치 생산이 완전히 설명되었으므로 7장은 단순한 반복이기 때문이다.",
-                      "노동력은 시장에서만 사용되며 생산과정에 들어가지 않기 때문이다."
+                      "노동력이라는 상품은 실제로 쓰일 때에야 자기 값보다 큰 가치를 낳으므로, 그 사용은 작업장 안에서만 볼 수 있다.",
+                      "시장의 계약은 작업장 문 앞에서 효력을 잃고, 그 안에서는 자본가가 새로 정한 규칙이 노동을 지배하기 때문이다.",
+                      "노동력의 값은 작업장 안에서 한 번 더 흥정되고, 그 두 번째 흥정에서 자본가의 몫이 정해지기 때문이다.",
+                      "생산에 들어간 원료와 기계가 노동과 별개로 자기 가치를 불리므로, 그 증식을 작업장에서 재야 하기 때문이다."
                     ],
                     "en": [
-                      "Because Chapter 6 explains the conditions under which labor-power is bought in the market, while Chapter 7 shows how that labor-power is used in production to create surplus-value.",
-                      "Because once production begins, the analysis of commodity and value becomes invalid.",
-                      "Because Chapter 6 has already fully explained surplus-value production, so Chapter 7 merely repeats it.",
-                      "Because labor-power is used only in the market and never enters production."
+                      "Because labor-power yields more value than it costs only when it is actually used, and that use can be seen only inside the workshop.",
+                      "Because the market contract loses its force at the workshop door, and inside it labor is governed by rules the capitalist lays down.",
+                      "Because the price of labor-power is bargained a second time inside the workshop, and that second bargain fixes the capitalist’s share.",
+                      "Because materials and machines increase their own value apart from labor, so that increase has to be measured in the workshop."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "6장의 해답은 노동력 상품의 발견이고, 7장의 해답은 그 상품의 소비과정이다. 자본주의적 생산의 비밀은 시장의 계약만이 아니라 생산 안에서 노동력이 어떻게 사용되는가에 있다.",
-                    "en": "Chapter 6 discovers the commodity labor-power; Chapter 7 examines the consumption of that commodity. The secret of capitalist production lies not only in the market contract but in how labor-power is used in production."
+                    "ko": "자본가가 치른 3실링은 노동력이라는 상품의 하루치 값이고, 계약서에 적힌 것은 거기까지다. 정작 자본가가 노린 것은 그 상품을 쓰면 자기 값보다 많은 가치가 나온다는 성질인데, 이 성질은 값이 아니라 사용에 속하므로 계약서에는 적히지 않는다. 그래서 착취를 보려면 흥정이 끝난 자리가 아니라 노동력이 실제로 소비되는 작업장을 들여다보아야 한다.",
+                    "en": "The three shillings pay the daily value of the commodity labor-power, and that is all the contract records. What the capitalist was after is that using this commodity yields more value than it costs, a property belonging to its use rather than to its price, and so written nowhere in the agreement. To see exploitation you therefore have to look past the bargain and into the workshop where labor-power is actually consumed."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 성질 덕분에 자본가는 어느 상품도 제값 아래로 사지 않으면서 잉여가치를 얻을 수 있고, 그래서 착취는 시장의 규칙을 어기지 않고도 성립한다.",
+                      "계약은 작업장 안에서도 그대로 살아 있고, 자본가가 하루치 사용권을 주장하는 근거가 바로 그 계약이다.",
+                      "노동력의 값은 시장에서 이미 정해졌고, 작업장 안에서 정해지는 것은 값이 아니라 그 노동력이 실제로 얼마나 오래 쓰이는가다.",
+                      "원료와 기계는 닳으면서 자기 가치를 생산물로 옮길 뿐이고, 그 위에 새 가치를 더하는 것은 살아 있는 노동이다."
+                    ],
+                    "en": [
+                      "Because of this property the capitalist can obtain surplus-value without buying anything below its value, so exploitation stands without breaking a single market rule.",
+                      "The contract stays alive inside the workshop; it is precisely what entitles the capitalist to a day’s use of the labor-power.",
+                      "The price of labor-power was settled in the market; what is settled inside the workshop is not the price but how long that labor-power is actually used.",
+                      "Materials and machines pass their own value into the product as they wear; the new value laid on top of it comes from living labor."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 2절 잉여가치의 생산",
+                      "en": "Capital I, Ch. 7 §2 The Production of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "자본가에게 정작 중요했던 것은 이 상품이 지닌 특수한 사용가치, 곧 그것이 가치의 원천일 뿐 아니라 자기 자신보다 더 많은 가치의 원천이 된다는 점이었다. … 노동력의 판매자는 다른 어떤 상품의 판매자와 마찬가지로 그 교환가치를 실현하고 그 사용가치는 넘겨준다. 둘 가운데 하나만 가져갈 수는 없다.",
+                      "en": "What really influenced him was the specific use-value which this commodity possesses of being a source not only of value, but of more value than it has itself. … The seller of labour-power, like the seller of any other commodity, realises its exchange-value, and parts with its use-value. He cannot take the one without giving the other."
+                    }
                   }
                 }
               ]
@@ -4383,27 +4549,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "7장에서 일반적 노동과정과 자본주의적 노동과정을 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must Chapter 7 distinguish the labor-process in general from the capitalist labor-process?"
+                    "ko": "마르크스는 노동과정을 먼저 어느 사회에나 있는 활동으로 서술한 뒤, 그다음에야 자본가의 작업장으로 자리를 옮긴다. 이 순서에는 어떤 분석상의 이유가 있는가?",
+                    "en": "Marx first describes the labor-process as an activity found in any society, and only then moves to the capitalist’s workshop. What analytical reason lies behind that order?"
                   },
                   "choices": {
                     "ko": [
-                      "모든 노동과정은 사용가치를 만들지만, 자본주의에서는 그 과정이 자본가의 통제 아래 가치증식의 수단으로 조직되기 때문이다.",
-                      "일반적 노동과정은 역사적으로 존재한 적이 없고 순수한 상상에 불과하기 때문이다.",
-                      "자본주의에서는 더 이상 사용가치가 생산되지 않고 가격표만 생산되기 때문이다.",
-                      "자본주의적 노동과정은 노동자가 아니라 자본가가 직접 모든 물건을 만드는 과정이기 때문이다."
+                      "노동과정의 일반적 성격은 자본의 통제 아래서도 바뀌지 않으므로, 그 위에 얹히는 사회적 형식을 따로 떼어 보아야 하기 때문이다.",
+                      "노동과정 일반은 자본주의 이전 사회를 다루는 역사학의 주제일 뿐이어서, 가치 분석에 들어가기 전에 미리 치워 두어야 하기 때문이다.",
+                      "자본주의에서는 생산의 목적이 사용가치가 아니므로, 노동과정의 물질적 규정은 분석에서 빼도 되기 때문이다.",
+                      "자본가의 감독과 지휘도 새 가치를 더하는 노동이므로, 노동과정의 요소 목록에 자본가의 활동을 넣어야 하기 때문이다."
                     ],
                     "en": [
-                      "Because every labor-process produces use-values, but under capitalism it is organized under capitalist control as a means of valorization.",
-                      "Because the labor-process in general has never existed historically and is pure imagination.",
-                      "Because under capitalism use-values are no longer produced and only price tags are produced.",
-                      "Because the capitalist labor-process is one in which the capitalist personally makes all things rather than workers."
+                      "Because the general character of the labor-process is unchanged by capitalist control, so the social form laid on top of it has to be examined separately.",
+                      "Because the labor-process in general belongs to the history of pre-capitalist societies and must be cleared away before the analysis of value can begin.",
+                      "Because production under capitalism does not aim at use-values, so the material determinations of the labor-process can be left out of the analysis.",
+                      "Because the capitalist’s supervision and direction is itself value-adding labor and has to be added to the list of elements of the labor-process."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 노동의 일반적 성격을 먼저 분리한 뒤, 그 과정이 자본의 소유와 통제 아래 놓일 때 어떤 사회적 형식을 갖는지 보여준다. 이를 구분해야 생산 일반과 자본주의적 생산을 혼동하지 않는다.",
-                    "en": "Marx first separates the general character of labor and then shows the social form it takes when placed under capitalist ownership and control. This prevents confusing production in general with capitalist production."
+                    "ko": "목수든 방적공이든 자연물을 목적에 맞게 바꾸는 활동은 어느 사회에나 있다. 마르크스는 이 사실이 자본가의 통제 아래서도 바뀌지 않는다고 못박은 뒤, 그 위에 자본의 사회적 형식이 어떻게 얹히는지 별도로 다룬다. 두 층위를 섞으면 자본주의를 생산 일반과 혼동하거나, 반대로 노동 자체를 자본주의의 발명품으로 오해하게 된다.",
+                    "en": "Whether carpenter or spinner, purposefully transforming nature exists in every society. Marx insists this fact does not change under capitalist control, and only afterward treats separately how capital's social form is layered on top. Blurring the two levels either confuses capitalism with production in general, or mistakes labor itself for a capitalist invention."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 순서 덕분에 뒤에서 잉여가치를 설명할 때, 그것이 노동 일반의 성질이 아니라 자본이라는 사회적 형식에서 나온 것임을 분명히 말할 수 있다.",
+                      "노동과정 일반은 지나간 시대의 이야기가 아니라 오늘의 공장 안에서도 그대로 진행되며, 자본은 그것을 없애지 않고 자기 목적에 종속시킬 뿐이다.",
+                      "자본가의 목적이 가치증식이라 해도 팔릴 물건은 여전히 쓸모가 있어야 하므로, 사용가치 생산은 분석에서 뺄 수 없는 전제로 남는다.",
+                      "자본가가 노동을 지휘하는 것은 산 노동력을 자기 목적대로 쓰기 위해서이지, 그 지휘 자체가 노동과정의 일반적 요소인 것은 아니다."
+                    ],
+                    "en": [
+                      "Because of that order, when surplus-value is explained later it can be traced to the social form of capital rather than to labor in general.",
+                      "The labor-process in general is not a story about past ages; it goes on inside today’s factory, and capital does not abolish it but subordinates it to its own aim.",
+                      "Even though the capitalist aims at valorization, the product must still be useful to sell, so the production of use-values remains a premise the analysis cannot drop.",
+                      "The capitalist directs labor in order to use purchased labor-power for his own end; that direction is not itself one of the general elements of the labor-process."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 1절 노동과정",
+                      "en": "Capital I, Ch. 7 §1 The Labour-Process"
+                    },
+                    "quote": {
+                      "ko": "사용가치, 즉 재화의 생산이 자본가의 통제 아래 그를 위해 이루어진다는 사실이 그 생산의 일반적 성격을 바꾸지는 않는다. 따라서 우리는 먼저 주어진 사회적 조건이 부여하는 특정한 형식과 무관하게 노동과정 자체를 고찰해야 한다.",
+                      "en": "The fact that the production of use-values, or goods, is carried on under the control of a capitalist and on his behalf, does not alter the general character of that production. We shall, therefore, in the first place, have to consider the labour-process independently of the particular form it assumes under given social conditions."
+                    }
                   }
                 },
                 {
@@ -4411,27 +4602,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "가치형성과 가치증식은 모두 노동시간과 관련되지만 같은 말이 아니다. 차이는 무엇인가?",
-                    "en": "Value-formation and valorization both involve labor-time, but they are not the same. What is the difference?"
+                    "ko": "방적공이 6시간을 일하면 그가 받는 하루 임금 3실링과 꼭 같은 새 가치가 실에 더해진다. 여기까지를 가치형성이라 부르고 그 너머를 가치증식이라 부르는 경계는 어디에 그어지는가?",
+                    "en": "After six hours of spinning, new value exactly equal to the worker’s daily wage of three shillings has been added to the yarn. Where is the line drawn between calling this value-formation and calling what comes after it valorization?"
                   },
                   "choices": {
                     "ko": [
-                      "가치형성은 새 가치가 생기는 과정이고, 가치증식은 그 새 가치가 노동력의 가치 보전을 넘어 잉여가치까지 포함할 때 성립한다.",
-                      "가치형성은 시장에서만 일어나고 가치증식은 소비자의 머릿속에서만 일어난다.",
-                      "가치형성은 생산수단이 혼자 하는 일이고 가치증식은 노동자와 무관하다.",
-                      "둘은 거의 같은 말이므로 잉여가치를 따로 설명할 필요가 없다."
+                      "노동이 노동력의 가치를 메우는 데까지는 가치형성이고, 그 지점을 넘어 계속되면 같은 과정이 가치증식이 된다.",
+                      "가치형성은 노동자가 만들어 낸 가치를 재는 말이고, 가치증식은 자본가가 시장에서 값을 올려 얻는 이득을 재는 말이다.",
+                      "가치형성은 노동이 하는 일이고, 가치증식은 원료와 기계가 낡아 가며 자기 가치를 옮겨 놓는 몫을 가리킨다.",
+                      "두 말은 사실상 같은 과정을 가리키므로, 잉여가치는 이 구분과 무관하게 유통에서 따로 설명해야 한다."
                     ],
                     "en": [
-                      "Value-formation is the creation of new value; valorization occurs when that new value exceeds the replacement of labor-power’s value and includes surplus-value.",
-                      "Value-formation occurs only in the market, while valorization occurs only in the consumer’s mind.",
-                      "Value-formation is done by means of production alone, and valorization has nothing to do with workers.",
-                      "They are exactly the same, so surplus-value needs no separate explanation."
+                      "Up to the point where labor replaces the value of labor-power it is value-formation; carried beyond that point, the very same process becomes valorization.",
+                      "Value-formation measures the value the worker has made, while valorization measures the gain the capitalist takes by raising prices in the market.",
+                      "Value-formation is what labor does, while valorization names the share that materials and machines transfer as they wear out.",
+                      "The two words name the same process, so surplus-value has to be explained separately, in circulation rather than through this distinction."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동은 새 가치를 만든다. 그러나 자본의 관점에서 결정적인 것은 노동자가 자기 노동력의 가치만 재생산하는 데 그치지 않고 그 이상을 만들어 잉여가치를 낳는 지점이다.",
-                    "en": "Labor creates new value. But from the standpoint of capital, the decisive point is where the worker produces more than the value of labor-power and therefore produces surplus-value."
+                    "ko": "10파운드 실을 만드는 방적공의 6시간 노동은 임금과 정확히 맞먹는 새 가치를 만든다. 여기까지는 가치형성이다. 그런데 실제 노동일이 12시간이라면 나머지 6시간도 같은 방식으로 새 가치를 더하고, 이 초과분이 잉여가치로 나타나면서 비로소 가치증식이라 부를 수 있다. 두 과정이 서로 다른 일이 아니라 한 노동이 어느 지점을 지났느냐의 문제라는 데 이 구분의 힘이 있다.",
+                    "en": "The spinner’s six hours making ten pounds of yarn create new value exactly equal to the wage; up to here it is value-formation. But if the actual working day is twelve hours, the remaining six hours add new value in the same way, and this excess appearing as surplus-value is what makes it valorization. The force of the distinction is that these are not two different activities but one labor considered before and after a definite point."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 경계는 노동일의 길이에 따라 움직이므로, 노동일을 한 시간 늘리는 것만으로 가치형성에 그치던 과정이 그대로 가치증식과정이 된다.",
+                      "값을 올려 얻는 이득은 산 사람의 손해와 상쇄되어 사회 전체의 가치를 늘리지 못하므로, 가치증식은 유통이 아니라 생산에서 설명된다.",
+                      "원료와 기계는 자기 가치를 생산물로 옮길 뿐이고, 그 위에 새 가치를 더하는 것은 살아 있는 노동뿐이다.",
+                      "두 말을 같다고 보면 6시간이 지난 뒤에도 노동이 계속된다는 사실이 아무 뜻을 갖지 못하게 되어, 잉여가치의 출처를 설명할 길이 없어진다."
+                    ],
+                    "en": [
+                      "The line moves with the length of the working day, so adding a single hour turns a merely value-forming process into a valorizing one.",
+                      "A gain from raising prices is cancelled by the buyer’s loss and adds nothing to the value in society, so valorization has to be explained in production, not in circulation.",
+                      "Materials and machines only carry their own value over into the product; the new value laid on top of it comes from living labor alone.",
+                      "If the two are treated as identical, the fact that labor continues past the sixth hour loses all significance and the source of surplus-value cannot be explained."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 2절 잉여가치의 생산",
+                      "en": "Capital I, Ch. 7 §2 The Production of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "우리는 이제 유용성을 만드는 것으로서의 노동과, 가치를 만드는 것으로서의 노동 사이의 차이가, 상품 분석에서 발견했던 그 차이가, 생산과정의 두 측면 사이의 구분으로 다시 나타남을 본다.",
+                      "en": "We now see, that the difference between labour, considered on the one hand as producing utilities, and on the other hand, as creating value, a difference which we discovered by our analysis of a commodity, resolves itself into a distinction between two aspects of the process of production."
+                    }
                   }
                 },
                 {
@@ -4439,27 +4655,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "“자본가는 생산수단과 노동력을 모두 제값에 샀으므로 생산된 상품 전체도 그의 정당한 결과일 뿐”이라는 설명이 놓치는 것은 무엇인가?",
-                    "en": "What is missed by the explanation, “The capitalist bought means of production and labor-power at their values, so the entire product is simply the capitalist’s rightful result”?"
+                    "ko": "실 20파운드에 든 면화와 방추 마모, 노동력 값을 다 더하면 27실링이다. 그런데 자본가는 그 실을 제값인 30실링에 팔아 3실링을 더 얻는다. 이 3실링은 어디서 나온 것인가?",
+                    "en": "The cotton, the worn spindle and the labor-power in twenty pounds of yarn come to twenty-seven shillings. The capitalist then sells that yarn at its exact value, thirty shillings, and is three shillings better off. Where do those three shillings come from?"
                   },
                   "choices": {
                     "ko": [
-                      "교환의 등가성은 노동력 사용과정에서 발생하는 잉여노동과 잉여가치를 설명하지 못한다는 점",
-                      "자본가가 생산수단을 사면 생산수단은 더 이상 상품이 아니라 자연물이 된다는 점",
-                      "노동자가 임금을 받으면 생산과정에서 아무 노동도 하지 않는다는 점",
-                      "상품 전체는 대체로 노동자가 법적으로 소유하므로 판매될 수 없다는 점"
+                      "자본가가 산 노동력의 사용이 그 값을 메우는 시간을 넘어 계속되었고, 그 초과 시간이 3실링으로 나타난 것이다.",
+                      "자본가가 얻은 3실링은 실을 산 사람이 그만큼 잃은 것이어서, 사회 전체로 보면 가치가 자리만 옮겨 앉은 셈이다.",
+                      "면화와 방추가 생산 도중에 스스로 값이 올라, 그 상승분이 실의 가치에 3실링만큼 더해진 것이다.",
+                      "자본가가 원료를 시세보다 싸게 사들인 덕분에, 그 흥정에서 아낀 몫이 3실링으로 되돌아온 것이다."
                     ],
                     "en": [
-                      "The equivalence of exchange does not explain surplus labor and surplus-value arising in the use of labor-power.",
-                      "Once the capitalist buys means of production, they cease to be commodities and become natural objects.",
-                      "Once workers receive wages, they perform no labor in production.",
-                      "The whole product always legally belongs to the worker and therefore cannot be sold."
+                      "The use of the labor-power he bought was carried on past the hours that replace its value, and those extra hours appear as the three shillings.",
+                      "The three shillings the capitalist gains are three shillings lost by the buyer of the yarn, so value has merely changed places within society.",
+                      "The cotton and the spindle rose in value on their own during production, adding three shillings to the value of the yarn.",
+                      "The capitalist bought his materials below the market price, and what he saved in that bargain comes back as three shillings."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 비판은 교환이 비등가였다는 단순한 고발이 아니다. 제값에 산 노동력의 사용이 생산과정에서 잉여노동을 포함할 수 있다는 점이 핵심이다.",
-                    "en": "Marx’s critique is not the simple accusation that exchange was unequal. The key point is that labor-power bought at its value can be used in production for surplus labor."
+                    "ko": "27실링을 들여 30실링짜리 실이 나왔으니 3실링이 남는다. 이 차액은 어느 거래를 속여서 생긴 것이 아니라, 하루치 값을 치른 노동력이 6시간이 아니라 12시간 동안 실을 자았기 때문에 생긴다. 값을 메우는 데 필요한 시간은 앞의 6시간뿐이고 나머지 6시간의 노동은 값이 치러지지 않은 채 실 속으로 들어간다. 등가교환이 완전히 지켜진 자리에서 잉여가치가 나온다는 것이 이 장의 결정적 논점이다.",
+                    "en": "Twenty-seven shillings went in and yarn worth thirty came out, leaving three. That gap comes from no cheating anywhere; it comes from labor-power, paid for by the day, spinning twelve hours rather than six. Only the first six replace what was paid, and the labor of the remaining six enters the yarn unpaid. Surplus-value arises precisely where equivalent exchange is fully observed."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 결론 덕분에 착취를 말하는 데 상거래의 부정을 끌어올 필요가 없어지고, 정상적인 계약과 정상적인 가격만으로도 착취가 설명된다.",
+                      "비싸게 팔아 얻은 이득은 산 사람의 손실과 상쇄되어 사회 전체의 가치를 늘리지 못하므로, 자본가계급 전체의 이윤을 설명하지 못한다.",
+                      "면화와 방추는 닳아 없어지며 자기 가치를 실로 옮길 뿐이고, 새 가치를 더하는 것은 그것들을 다루는 살아 있는 노동이다.",
+                      "싸게 사서 얻은 이득은 그 원료를 판 사람의 손해일 뿐이고, 게다가 여기서의 계산은 모든 상품이 제값에 거래된다는 가정 위에 서 있다."
+                    ],
+                    "en": [
+                      "This result means the charge of exploitation needs no commercial dishonesty; ordinary contracts at ordinary prices are enough to account for it.",
+                      "A gain from selling dear is cancelled by the buyer’s loss and adds nothing to the total value in society, so it cannot account for the profit of the capitalist class as a whole.",
+                      "Cotton and spindle merely pass their own value into the yarn as they are used up; the new value is added by the living labor that works them.",
+                      "A bargain purchase is only the seller’s loss, and in any case this calculation assumes every commodity trades at its value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 2절 잉여가치의 생산",
+                      "en": "Capital I, Ch. 7 §2 The Production of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "등가물이 등가물과 교환되었다. … 노동력의 소비, 그것은 동시에 상품을 생산하는 과정이었는데, 그 결과 30실링의 가치를 지닌 20파운드의 실이 생겼다.",
+                      "en": "Equivalent has been exchanged for equivalent. … The consumption of the labour-power, which was also the process of producing commodities, resulted in 20 lbs. of yarn, having a value of 30 shillings."
+                    }
                   }
                 },
                 {
@@ -4467,27 +4708,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "생산과정에서 자본가의 통제가 중요한 이유는 무엇인가?",
-                    "en": "Why is the capitalist’s control in the production process important?"
+                    "ko": "방적공장의 자본가는 면화가 바닥에 흩어지는지, 방추가 쓸데없이 닳는지 하루 종일 살핀다. 이 감시는 가치증식과 어떻게 이어지는가?",
+                    "en": "The capitalist in a spinning mill watches all day whether cotton is scattered on the floor and whether spindles wear out needlessly. How does this supervision connect to valorization?"
                   },
                   "choices": {
                     "ko": [
-                      "자본가는 구매한 노동력의 사용을 자기 가치증식 목적에 맞게 조직하고 감시해야 하기 때문이다.",
-                      "통제는 가치와 무관하고 공장 질서를 예쁘게 보이게 하는 장식이기 때문이다.",
-                      "자본가는 노동과정의 기술을 분리되어 있어야 이윤을 얻을 수 있기 때문이다.",
-                      "노동자는 생산수단을 소유하므로 자본가는 실제로 아무 통제도 하지 않기 때문이다."
+                      "산 노동력을 사회적으로 필요한 만큼만 쓰게 해야 투하한 가치가 온전히 옮겨지고 그 위에 잉여가치가 쌓이기 때문이다.",
+                      "감시는 생산의 기술적 조건에 관한 일일 뿐 가치와는 무관하고, 자본가의 이득은 판매 단계에서 비로소 정해지기 때문이다.",
+                      "낭비되지 않고 남은 원료와 도구가 그 자체로 가치를 늘려, 감시한 만큼 생산물의 가치가 커지기 때문이다.",
+                      "노동력을 값대로 사 두면 그 사용은 계약대로 이루어지므로, 감시는 사람을 다루는 관리 기술의 문제일 뿐이기 때문이다."
                     ],
                     "en": [
-                      "Because the capitalist must organize and supervise the use of purchased labor-power for the purpose of valorization.",
-                      "Because control has nothing to do with value and is merely decorative order in the factory.",
-                      "Because the capitalist can profit only by knowing nothing about the technical labor-process.",
-                      "Because workers own the means of production, so the capitalist exercises no real control."
+                      "Because purchased labor-power must be consumed only to the socially necessary extent if the value advanced is to carry over intact and surplus-value to accumulate on top of it.",
+                      "Because supervision concerns the technical conditions of production and has nothing to do with value; the capitalist’s gain is settled at the point of sale.",
+                      "Because material and tools saved from waste raise value by themselves, so the product is worth more in proportion to how closely it is watched.",
+                      "Because labor-power bought at its value is used according to the contract, so supervision is merely a management technique for handling people."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본가는 단순 구매자가 아니라 생산과정에서 노동력의 사용을 지휘하는 사람이다. 노동과정이 가치증식과정이 되려면 산 노동력이 자본의 목적에 맞게 소비되어야 한다.",
-                    "en": "The capitalist is not merely a buyer but the person who directs the use of labor-power in production. For the labor-process to become a valorization-process, purchased labor-power must be consumed according to capital’s aim."
+                    "ko": "자본가가 산 것은 하루치 노동력의 사용권이므로, 그 시간 동안 원료가 낭비되지 않고 도구가 필요 이상 닳지 않도록 감독할 이유가 생긴다. 바닥에 흩어진 면화의 가치는 실로 옮겨 가지 못하고 그대로 사라지며, 그만큼 투하가치가 회수되지 않는다. 그래서 감시는 공장 안의 규율 문제가 아니라, 산 노동력을 사회적으로 필요한 만큼만 소모시켜 투하가치를 잉여가치로 불리려는 데서 나온다.",
+                    "en": "What the capitalist bought is the right to use labor-power for a whole day, which gives a direct reason to see that raw material is not wasted and tools are not worn beyond need. The value of cotton scattered on the floor never passes into the yarn; it disappears, and that much of the advanced value is never recovered. Supervision is thus not factory discipline but a way of consuming purchased labor-power only to the socially necessary extent."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "감시가 겨냥하는 것은 게으름 자체가 아니라 원료 한 줌과 한 시간의 노동이 모두 제값을 하는 상태이며, 그 상태에서만 27실링이 30실링이 된다.",
+                      "판매는 이미 만들어진 가치를 실현할 뿐이고, 낭비된 면화의 값은 팔기도 전에 사라져 실현될 가치 자체를 줄여 놓는다.",
+                      "아껴 쓴 원료는 가치를 새로 낳는 것이 아니라 자기 가치를 남김없이 생산물로 옮길 뿐이고, 새 가치를 더하는 것은 노동이다.",
+                      "계약이 정하는 것은 노동력을 쓸 시간의 길이뿐이고, 그 시간을 얼마나 촘촘하게 채우는가는 정해져 있지 않아 자본가의 지휘 대상이 된다."
+                    ],
+                    "en": [
+                      "What supervision aims at is not idleness as such but a state in which every handful of material and every hour of labor tells; only then do twenty-seven shillings become thirty.",
+                      "Sale only realizes value that has already been made, and the value of wasted cotton disappears before the sale, reducing the very value there is to realize.",
+                      "Material used sparingly does not create value; it simply carries all of its own value into the product, and the new value is added by labor.",
+                      "The contract fixes only the length of time labor-power may be used; how densely that time is filled with work is left open, and that is what the capitalist directs."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 1절 노동과정",
+                      "en": "Capital I, Ch. 7 §1 The Labour-Process"
+                    },
+                    "quote": {
+                      "ko": "첫째, 노동자는 자기 노동이 속한 자본가의 통제 아래 일하며, 자본가는 작업이 올바르게 이루어지고 생산수단이 지혜롭게 사용되어 원료의 불필요한 낭비도, 도구의 필요 이상의 마모도 없도록 세심히 살핀다.",
+                      "en": "First, the labourer works under the control of the capitalist to whom his labour belongs; the capitalist taking good care that the work is done in a proper manner, and that the means of production are used with intelligence, so that there is no unnecessary waste of raw material, and no wear and tear of the implements beyond what is necessarily caused by the work."
+                    }
                   }
                 },
                 {
@@ -4495,27 +4761,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "노동력의 구매는 시장에서 이미 끝났는데, 왜 7장은 생산과정 안으로 들어가야 잉여가치가 설명된다고 보는가?",
-                    "en": "The purchase of labour-power has already happened in the market. Why does Chapter 7 have to enter production in order to explain surplus-value?"
+                    "ko": "자본의 일반정식은 자본이 유통 안에서 생길 수도 없고 유통 밖에서 생길 수도 없다는 모순을 남겨 두었다. 27실링이 30실링으로 바뀌는 과정을 본 지금, 그 모순은 어떻게 풀리는가?",
+                    "en": "The general formula for capital left a contradiction: capital can arise neither inside circulation nor outside it. Now that we have watched twenty-seven shillings turn into thirty, how is that contradiction resolved?"
                   },
                   "choices": {
                     "ko": [
-                      "노동력의 가치는 시장에서 지불되지만, 그 사용가치인 노동은 생산과정에서 자기 가치보다 더 큰 새 가치를 만들 수 있기 때문이다.",
-                      "시장가격의 우연한 상승이 잉여가치의 일반 원천이므로, 생산과정은 그 가격 차이를 기록하는 장부일 뿐이기 때문이다.",
-                      "노동과정에 들어가면 임금계약이 취소되어 노동자가 생산물 전체를 소유하게 되기 때문이다.",
-                      "생산과정에서는 원료와 기계가 노동 없이 스스로 잉여가치를 생산하기 때문이다."
+                      "화폐의 자본으로의 전화는 유통 안에서 동시에 유통 밖에서 일어난다. 노동력 구매는 시장에서 이루어지고, 잉여가치 생산은 생산영역에서만 이루어진다.",
+                      "모순은 사실 해소되지 않고 남으며, 자본은 상품유통이 아니라 국가의 보호와 특권 덕분에 생겨난 것으로 밝혀진다.",
+                      "유통이 생산을 포함하도록 그 범위를 넓혀 잡으면, 잉여가치는 결국 상품을 사고파는 행위에서 나온 것이 된다.",
+                      "생산이 유통보다 앞선다는 것이 밝혀졌으므로, 시장에서의 구매는 잉여가치 설명에서 빼도 되는 부수적 절차가 된다."
                     ],
                     "en": [
-                      "The value of labour-power is paid in the market, but its use-value, labour, can create more new value than its own value in production.",
-                      "Because accidental market price increases are the general source of surplus-value, so production merely records that price difference.",
-                      "Entering the labour process cancels the wage contract and gives the worker the whole product.",
-                      "In production, materials and machinery create surplus-value by themselves without labour."
+                      "The conversion of money into capital takes place inside circulation and outside it at once: labor-power is bought in the market, while surplus-value is produced only in the sphere of production.",
+                      "The contradiction in fact remains unresolved, and capital turns out to arise from state protection and privilege rather than from the circulation of commodities.",
+                      "If circulation is drawn widely enough to include production, surplus-value turns out to come from the acts of buying and selling after all.",
+                      "Since production is shown to precede circulation, the purchase in the market becomes an incidental step that can be left out of the explanation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "6장은 노동력이라는 특수한 상품을 찾고, 7장은 그 상품의 사용이 실제로 어떻게 잉여가치를 낳는지 보여준다. 착취는 시장교환의 형식만 보면 보이지 않고, 노동력의 사용과 필요노동/잉여노동의 분할 속에서 드러난다.",
-                    "en": "Chapter 6 finds the special commodity labour-power; Chapter 7 shows how its use produces surplus-value. Exploitation is not visible in the market form alone; it appears in the use of labour-power and the division between necessary and surplus labour."
+                    "ko": "자본가가 시장에 나가 노동력을 사지 않았다면 아무것도 시작될 수 없었으니, 이 전화는 유통을 조건으로 삼는다. 그러나 시장에서 일어난 일은 등가교환뿐이었고, 3실링은 작업장 안에서 하루치 값을 치른 노동력이 열두 시간 동안 일하는 사이에 생겼다. 유통과 생산 어느 한쪽만 보아서는 화폐가 자본이 되는 길을 설명할 수 없다는 것이 이 장이 남기는 결론이다.",
+                    "en": "Without the capitalist going to market to buy labor-power nothing could have begun, so the conversion is conditioned by circulation. Yet all that happened in the market was an exchange of equivalents; the three shillings arose inside the workshop, while labor-power paid for by the day worked twelve hours. The conclusion the chapter leaves is that neither circulation alone nor production alone can account for money becoming capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "앞선 모순은 폐기되지 않고 그대로 선 채로 풀린다. 유통의 법칙은 하나도 깨지지 않았고, 다만 노동력이라는 특수한 상품이 그 안으로 들어왔을 뿐이다.",
+                      "특권으로 생기는 부는 다른 이의 몫을 옮겨 온 것이어서, 모든 상품이 제값에 거래되는 조건에서도 자본이 생긴다는 사실을 설명하지 못한다.",
+                      "사고파는 행위 자체는 가치를 옮길 뿐 새로 만들지 못하므로, 유통을 아무리 넓게 잡아도 3실링의 출처는 생산 안에 남는다.",
+                      "노동력이 시장에서 팔리는 상품이 되어야만 자본가가 그 사용권을 손에 넣을 수 있으므로, 시장에서의 구매는 빼놓을 수 없는 조건이다."
+                    ],
+                    "en": [
+                      "The earlier contradiction is not discarded but resolved while it still stands: no law of circulation is broken, and one peculiar commodity has simply entered it.",
+                      "Wealth from privilege is transferred from someone else, so it cannot explain how capital arises even where every commodity trades at its value.",
+                      "Buying and selling shift value without making any, so however widely circulation is drawn, the source of the three shillings stays inside production.",
+                      "Only because labor-power becomes a commodity sold in the market can the capitalist acquire the right to use it, so that purchase is an indispensable condition."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch07.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 7장 2절 잉여가치의 생산",
+                      "en": "Capital I, Ch. 7 §2 The Production of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "이 변신, 곧 화폐가 자본으로 바뀌는 일은 유통영역 안에서 일어나는 동시에 그 밖에서도 일어난다. 유통 안에서인 것은 그것이 시장에서의 노동력 구매를 조건으로 삼기 때문이다 … 잉여가치 생산은 온전히 생산영역에 갇혀 있는 과정이다.",
+                      "en": "This metamorphosis, this conversion of money into capital, takes place both within the sphere of circulation and also outside it; within the circulation, because conditioned by the purchase of the labour-power in the market … a process which is entirely confined to the sphere of production."
+                    }
                   }
                 }
               ]
@@ -4558,7 +4849,7 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "노동과정",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "노동과정: 사람이 목적을 가지고 자연물을 바꾸어 사용가치를 만드는 과정이다.",
                   "가치증식과정: 자본가가 산 노동력이 자기 가치보다 더 큰 새 가치를 만들 때, 생산은 가치증식과정이 된다.",
@@ -4566,21 +4857,21 @@
                 ]
               },
               {
-                "title": "가치형성과 가치증식",
-                "items": [
-                  "노동과정은 인간이 목적을 가지고 자연물을 바꾸어 사용가치를 만드는 과정이다.",
-                  "가치형성과정은 노동이 상품 안에 가치를 형성하는 과정이다.",
-                  "가치증식과정은 노동자가 자기 노동력 가치보다 더 오래 일해 잉여가치를 만드는 과정이다."
-                ]
+                "title": "용어 풀이",
+                "text": "생산적 소비란 노동이 원료와 도구를 써서 없애는 대신 새로운 사용가치를 만들어내는 것을 뜻하며, 개인이 물건을 먹어 없애는 개인적 소비와 다르다. 사회적으로 필요한 노동시간이라는 잣대는 실제로 걸린 시간이 아니라 평균적 조건에서 걸리는 시간만을 가치로 인정한다."
               },
               {
-                "title": "필요노동과 잉여노동",
+                "title": "현대 적용",
+                "text": "물류창고에서 노동자가 상자를 포장하는 모습만 보면 그냥 일하는 것 같지만, 하루 임금에 해당하는 시간을 넘겨 계속 포장할수록 그 초과분은 회사 몫으로 쌓인다. 시급제나 근태관리 시스템은 결국 이 초과시간을 정확히 재고 통제하려는 장치다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "노동과정은 물건을 만드는 과정이고, 가치증식과정은 자본이 지불한 가치보다 더 큰 가치를 얻는 과정임을 구분한다."
               }
             ],
             "en": [
               {
-                "title": "Labour Process",
+                "title": "Core concepts first",
                 "items": [
                   "Labor-process: The purposeful process in which people transform natural materials and produce use-values.",
                   "Valorization-process: Production becomes valorization when purchased labor-power creates more new value than its own value.",
@@ -4588,16 +4879,16 @@
                 ]
               },
               {
-                "title": "Value-Formation and Valorization",
-                "items": [
-                  "The labour process is the purposeful transformation of nature into use-values.",
-                  "The value-forming process is labour forming value in the commodity.",
-                  "The valorization process begins when workers labour beyond the value of their labour-power and create surplus-value."
-                ]
+                "title": "Terms explained",
+                "text": "Productive consumption means labor uses up materials and tools not to destroy them but to make new use-values, unlike individual consumption where a person simply consumes goods. Socially necessary labor-time counts value not by the actual time spent but only by the time required under average conditions."
               },
               {
-                "title": "Necessary and Surplus Labour",
-                "text": "Separate making useful things from capital’s process of producing more value than it advanced."
+                "title": "Today's application",
+                "text": "A warehouse worker packing boxes looks like simple work, but once packing continues past the hours equal to the daily wage, that extra output piles up as the company's gain. Hourly wage systems and attendance tracking are ultimately devices for measuring and controlling exactly that excess time."
+              },
+              {
+                "title": "Chapter focus",
+                "text": "Separate making useful things from capital's process of producing more value than it advanced."
               }
             ]
           }
@@ -5021,6 +5312,47 @@
             "en": "Uses the rate of surplus-value to calculate how necessary and surplus labor divide the working day."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "노동일의 두 부분",
+              "left": {
+                "heading": "필요노동",
+                "rows": [
+                  "노동력 가치, 곧 임금을 재생산하는 시간",
+                  "가변자본 v와 대응한다",
+                  "예: 12시간 중 4시간"
+                ]
+              },
+              "right": {
+                "heading": "잉여노동",
+                "rows": [
+                  "자본가에게 잉여가치를 만들어 주는 시간",
+                  "잉여가치 s와 대응한다",
+                  "예: 12시간 중 8시간"
+                ]
+              }
+            },
+            "en": {
+              "title": "The Two Parts of the Working Day",
+              "left": {
+                "heading": "Necessary Labor",
+                "rows": [
+                  "The time reproducing the value of labor-power, i.e. wages",
+                  "Corresponds to variable capital v",
+                  "e.g. 4 of 12 hours"
+                ]
+              },
+              "right": {
+                "heading": "Surplus Labor",
+                "rows": [
+                  "The time creating surplus-value for the capitalist",
+                  "Corresponds to surplus-value s",
+                  "e.g. 8 of 12 hours"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch09-basic",
@@ -5054,8 +5386,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 s/v로, 시간으로 표현하면 잉여노동/필요노동이다. 총노동일이나 생산량 자체가 아니라 노동일이 어떻게 필요노동과 잉여노동으로 나뉘는지가 핵심이다.",
-                    "en": "The rate of surplus-value is s/v, expressed in time as surplus labor divided by necessary labor. The key is not the total working day or physical output alone, but how the working day is divided between necessary and surplus labor."
+                    "ko": "잉여가치율은 s/v이며 시간으로 옮기면 잉여노동을 필요노동으로 나눈 값이다. 여기서는 필요노동과 잉여노동이 각각 5시간씩이므로 5/5, 곧 100%가 된다. 착취의 정도를 정하는 것은 총노동일의 길이나 생산물의 개수가 아니라 노동일이 두 부분으로 나뉘는 방식이어서, 같은 10시간이라도 필요노동이 4시간으로 줄면 비율은 곧장 150%가 된다.",
+                    "en": "The rate of surplus-value is s/v, which in time is surplus labor divided by necessary labor. Here both are 5 hours, giving 5/5, or 100%. What decides the degree of exploitation is not the total length of the working day or the physical output but how the day splits into those two parts: hold the 10 hours fixed and cut necessary labor to 4, and the ratio climbs at once to 150%."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "필요노동과 잉여노동이 정확히 같은 시간일 때 착취율이 100%가 된다는 것은, 노동일을 늘리거나 필요노동을 줄이면 이 숫자가 곧바로 움직인다는 뜻이다.",
+                      "잉여가치율은 기계가치와는 무관하며, 노동력에 지출된 가변자본과 잉여가치의 관계만을 다룬다는 점을 놓치고 있다.",
+                      "잉여가치율은 시장에서 정해지는 판매가격이 아니라 생산과정 안에서 노동일이 어떻게 나뉘는지를 계산해 얻는 값이다.",
+                      "생산물 개수는 사용가치의 문제이고, 착취율은 그 뒤에 숨은 노동시간의 비율을 봐야 드러난다."
+                    ],
+                    "en": [
+                      "Notice that equal necessary and surplus labor giving exactly 100% means the ratio moves immediately whenever the working day lengthens or necessary labor shrinks.",
+                      "The rate of surplus-value has nothing to do with machine value; it only concerns variable capital spent on labor-power compared with surplus-value.",
+                      "The rate of surplus-value is calculated from how the working day splits during production, not from a market sale price that is set afterward.",
+                      "The number of items produced is a question of use-value; the rate of exploitation requires seeing the labor-time ratio hidden behind it."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "잉여가치율 s/v는 그것과 같은 값인 잉여노동/필요노동을 통해 노동일의 두 부분 사이의 관계를 정확히 드러낸다. 이 관계는 여기서 동등하며 비율은 100%다. 그러므로 노동자는 하루의 절반은 자신을 위해, 나머지 절반은 자본가를 위해 일한 셈이다.",
+                      "en": "the rate of surplus-value s/v accurately discloses to us, by means of its equivalent expression, surplus-labour/necessary labour the relation between the two parts of the working-day. This relation is here one of equality, the rate being 100%. Hence, it is plain, the labourer, in our example, works one half of the day for himself, the other half for the capitalist."
+                    }
                   }
                 },
                 {
@@ -5069,21 +5426,46 @@
                   "choices": {
                     "ko": [
                       "잉여가치는 가변자본, 곧 노동력에 지출된 자본과의 관계에서 착취 정도를 나타내기 때문이다.",
-                      "착취율은 대체로 잉여가치를 총투하자본 1000으로 나누어야 하기 때문이다.",
+                      "착취율은 잉여가치를 총투하자본 1000으로 나눈 값이기 때문이다.",
                       "불변자본 900은 실제로 존재하지 않는 회계 환상이기 때문이다.",
                       "기계가 노동자보다 더 많은 잉여가치를 만들기 때문이다."
                     ],
                     "en": [
                       "Because surplus-value expresses the degree of exploitation in relation to variable capital, the capital spent on labor-power.",
-                      "Because the rate of exploitation must always be surplus-value divided by the total advanced capital of 1000.",
+                      "Because the rate of exploitation is surplus-value divided by the total advanced capital of 1000.",
                       "Because the 900 in constant capital is an accounting illusion that does not really exist.",
                       "Because machinery creates more surplus-value than workers do."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 이윤율과 다르다. 총투하자본이 아니라 노동력 구매에 지출된 가변자본과 잉여가치를 비교해야 노동자가 수행한 잉여노동의 비율이 드러난다.",
-                    "en": "The rate of surplus-value is not the rate of profit. Comparing surplus-value with variable capital, not total advanced capital, reveals the proportion of surplus labor performed by workers."
+                    "ko": "잉여가치율은 이윤율과 다르다. 자본가 A가 쓴 900은 불변자본으로 생산수단의 가치를 그대로 생산물에 옮길 뿐 새 가치를 만들지 않는다. 새로 만들어진 가치는 가변자본 100과 잉여가치 100뿐이므로, 착취 정도는 총투하자본이 아니라 100/100으로 계산해야 노동자가 수행한 잉여노동의 비율이 드러난다.",
+                    "en": "The rate of surplus-value differs from the rate of profit. Capitalist A's 900 is constant capital that merely transfers the value of means of production without creating new value. Only the 100 in variable capital and the 100 in surplus-value are newly created, so exploitation must be read as 100/100, not against the total capital advanced, to reveal the proportion of surplus labor the worker performed."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가변자본과 잉여가치만 비교하면, 같은 이윤이라도 임금 규모에 따라 착취 정도가 전혀 다르게 나타난다는 점까지 이어서 생각해볼 수 있다.",
+                      "총투하자본 1000을 분모로 쓰면 불변자본의 크기에 따라 착취율이 희석되어 보이므로, 이는 이윤율의 계산법이지 잉여가치율의 계산법이 아니다.",
+                      "불변자본 900은 실제로 지출된 가치이지만, 생산과정에서 새로운 가치를 만들지 않고 그대로 생산물에 옮겨질 뿐이라서 s/v 계산에서는 제외된다.",
+                      "잉여가치는 노동력의 사용에서 생기며, 기계는 자신이 지닌 가치를 옮길 뿐 그 이상의 새로운 가치를 만들지 않는다."
+                    ],
+                    "en": [
+                      "Carry this further: with the same profit, differing wage size makes the degree of exploitation look completely different once you compare it to variable capital.",
+                      "Dividing by the total 1000 dilutes exploitation by the size of constant capital, which is how the rate of profit is calculated, not the rate of surplus-value.",
+                      "The 900 is real value actually spent, but it creates no new value in production, only reappearing in the product, so it drops out of the s/v calculation.",
+                      "Surplus-value arises from the use of labor-power; machinery only transfers the value it already has and creates nothing beyond that."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "잉여가치율은 s/C나 s/(c+v)와 같지 않고 s/v와 같다. 따라서 90/500이 아니라 90/90, 곧 100%이며 이는 겉보기 착취도의 다섯 배가 넘는다.",
+                      "en": "the rate of surplus-value is not equal to s/C or s/(c+v), but to s/v: thus it is not 90/500 but 90/90 or 100%, which is more than five times the apparent degree of exploitation."
+                    }
                   }
                 },
                 {
@@ -5110,8 +5492,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "필요노동은 노동력의 가치를 재생산하는 시간이고, 그 이후의 노동은 잉여노동이다. 12시간 중 4시간만 필요노동이면 나머지 8시간이 잉여노동이며 착취율은 200%다.",
-                    "en": "Necessary labor is the time that reproduces the value of labor-power; labor beyond that is surplus labor. If only 4 of 12 hours are necessary, the remaining 8 are surplus labor and the rate of exploitation is 200%."
+                    "ko": "필요노동은 노동자가 자기 노동력의 가치를 재생산하는 시간이고, 그 시간을 지나면 노동은 더는 자신을 위한 것이 아니라 자본가를 위한 잉여노동이 된다. 12시간 가운데 4시간만 필요노동이면 나머지 8시간이 잉여노동이 되고, 잉여가치율은 8/4로 200%에 이른다.",
+                    "en": "Necessary labor is the time in which the worker reproduces the value of their own labor-power; beyond that point, labor no longer belongs to the worker but becomes surplus labor for the capitalist. If only 4 of 12 hours are necessary, the remaining 8 hours are surplus labor, giving a rate of surplus-value of 8/4, or 200%."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "200%라는 숫자는 노동자가 하루 노동시간 가운데 훨씬 더 큰 몫을 자본가를 위해 일한다는 뜻이며, 노동일이 길어질수록 이 비율은 더 벌어진다.",
+                      "잉여노동이 없다는 것은 노동일 전체가 필요노동이라는 뜻인데, 이는 자본가가 잉여가치를 전혀 얻지 못한다고 가정하는 셈이라 문제 설정과 맞지 않는다.",
+                      "필요노동이 12시간이라면 노동일 전체가 임금 재생산에 쓰인다는 뜻이라 잉여노동이 존재할 자리가 사라지므로, 문제의 조건과 어긋난다.",
+                      "불변자본은 노동일의 길이와 상관없이 그 성격이 바뀌지 않으며, 생산수단의 가치를 옮길 뿐 노동력을 사고파는 가변자본으로 전환되지 않는다."
+                    ],
+                    "en": [
+                      "A 200% rate means the worker spends a far larger share of the day working for the capitalist than for themselves, and this gap widens as the working day lengthens.",
+                      "Having no surplus labor would mean the entire day is necessary labor, which implies the capitalist gets no surplus-value at all, contradicting the given numbers.",
+                      "If necessary labor were 12 hours, the whole day would go to reproducing the wage, leaving no room for surplus labor, which contradicts the problem's setup.",
+                      "Constant capital does not change its character depending on the length of the working day; it only transfers the value of means of production and never becomes variable capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "노동력 가치를 재생산하는 이 노동일의 부분을 나는 「필요」노동시간이라 부르고, 그 시간에 지출된 노동을 「필요」노동이라 부른다. … 노동일의 이 부분을 나는 잉여노동시간이라 이름 붙이고, 그 시간에 지출된 노동을 잉여노동이라 부른다.",
+                      "en": "That portion of the working-day, then, during which this reproduction takes place, I call “necessary” labour time, and the labour expended during that time I call “necessary” labour. … This portion of the working-day, I name surplus labour-time, and to the labour expended during that time, I give the name of surplus-labour."
+                    }
                   }
                 },
                 {
@@ -5119,27 +5526,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "두 공장이 같은 100원의 이윤을 얻었다. 하나는 임금 100에서, 다른 하나는 임금 500에서 그것을 얻었다면 왜 착취 정도는 같다고 볼 수 없는가?",
+                    "ko": "두 공장이 각각 100의 잉여가치를 얻었다. 하나는 임금 100에서, 다른 하나는 임금 500에서 그것을 얻었다면 왜 착취 정도는 같다고 볼 수 없는가?",
                     "en": "Two factories each obtain 100 in surplus-value. One obtains it from wages of 100, the other from wages of 500. Why are the degrees of exploitation not the same?"
                   },
                   "choices": {
                     "ko": [
                       "잉여가치의 양이 같아도 그것이 가변자본에 대해 차지하는 비율이 다르기 때문이다.",
-                      "이윤 액수가 같으면 착취 정도도 대체로 같기 때문이다.",
+                      "잉여가치의 양이 같으면 그것을 만들어낸 임금 규모와 상관없이 착취 정도도 같기 때문이다.",
                       "임금이 많을수록 노동자는 생산과정에 참여하지 않기 때문이다.",
                       "가변자본은 착취 분석과 무관하고 불변자본만 비교해야 하기 때문이다."
                     ],
                     "en": [
                       "Because even if the mass of surplus-value is the same, its ratio to variable capital differs.",
-                      "Because if the amount of profit is the same, the degree of exploitation is always the same.",
+                      "Because an equal mass of surplus-value means an equal degree of exploitation whatever the wage bill behind it.",
                       "Because the higher the wage bill, the less workers participate in production.",
                       "Because variable capital is irrelevant to exploitation and only constant capital should be compared."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치량과 잉여가치율은 구분해야 한다. 같은 100의 잉여가치라도 v가 100이면 100%, v가 500이면 20%이므로 노동력 착취의 정도가 다르다.",
-                    "en": "The mass of surplus-value and the rate of surplus-value must be distinguished. The same 100 in surplus-value is 100% if v is 100, but 20% if v is 500, so the degree of exploitation differs."
+                    "ko": "잉여가치의 양과 잉여가치율은 구분해야 한다. 두 공장 모두 잉여가치는 100으로 같지만, 그것을 만들어낸 가변자본이 다르다. 임금 100에서 얻은 100은 s/v가 100/100으로 100%이고, 임금 500에서 얻은 100은 100/500으로 20%에 그치므로 노동력을 쥐어짠 정도는 크게 다르다.",
+                    "en": "The mass of surplus-value and the rate of surplus-value must be distinguished. Both factories produce 100 in surplus-value, but from different variable capital. The 100 drawn from a wage bill of 100 gives s/v of 100/100, or 100%, while the 100 drawn from a wage bill of 500 gives only 100/500, or 20%, so the degree to which labor-power is squeezed differs greatly."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "같은 잉여가치량이라도 분모인 가변자본이 다르면 착취율이 달라진다는 것은, 이윤 액수만으로는 노동자가 얼마나 쥐어짜였는지 알 수 없다는 뜻이다.",
+                      "잉여가치의 양은 절대량이고 착취 정도는 그 양을 낳은 가변자본에 대한 비율이라, 임금 100에서 나온 100과 임금 500에서 나온 100은 같은 크기라도 전혀 다른 비율이다.",
+                      "임금이 많다는 것은 그만큼 가변자본이 크다는 뜻일 뿐, 노동자가 생산에 참여하는 정도와는 관계가 없다.",
+                      "가변자본은 오히려 착취 분석의 핵심 분모이며, 잉여가치를 가변자본과 비교해야 착취 정도가 드러난다."
+                    ],
+                    "en": [
+                      "Equal mass of surplus-value with different variable capital in the denominator means equal profit alone cannot tell you how hard labor-power was squeezed.",
+                      "The mass of surplus-value is an absolute quantity while exploitation is its ratio to the variable capital that produced it, so 100 out of a wage bill of 100 and 100 out of 500 are the same magnitude at very different rates.",
+                      "A larger wage bill just means larger variable capital; it says nothing about how much the workers participated in production.",
+                      "Variable capital is in fact the key denominator for measuring exploitation; comparing surplus-value against it is exactly what reveals the degree of exploitation."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "생산된 상대적 양, 곧 가변자본의 백분율 증가는 잉여가치와 가변자본의 비율로 정해지며, 이는 s/v로 표현된다.",
+                      "en": "The relative quantity produced, or the increase per cent of the variable capital, is determined, it is plain, by the ratio of the surplus-value to the variable capital, or is expressed by s/v."
+                    }
                   }
                 },
                 {
@@ -5147,8 +5579,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "9장이 잉여가치율을 계산하는 이유는 단순한 산수가 아니다. 이 계산이 보여주는 것은 무엇인가?",
-                    "en": "Chapter 9’s calculation of the rate of surplus-value is not mere arithmetic. What does it show?"
+                    "ko": "노동자는 임금을 받으므로 하루치 노동 전체의 대가를 받는 것처럼 보인다. 잉여가치율 계산이 이 겉모습에서 실제로 드러내는 것은 무엇인가?",
+                    "en": "Because workers receive a wage, it looks as if they are paid for the entire day's labor. What does calculating the rate of surplus-value actually reveal beneath this appearance?"
                   },
                   "choices": {
                     "ko": [
@@ -5166,8 +5598,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 착취를 도덕 감정이 아니라 노동시간의 사회적 분할로 측정한다. 임금은 하루 노동 전체가 지급된 것처럼 보이게 하지만, 계산은 필요노동과 잉여노동의 관계를 드러낸다.",
-                    "en": "The rate of surplus-value measures exploitation not as moral feeling but as a social division of labor-time. The wage makes the whole working day appear paid, but the calculation reveals the relation between necessary and surplus labor."
+                    "ko": "임금은 하루 노동 전체가 지급된 것처럼 보이게 만들지만, 실제로 노동자는 그 시간의 일부만으로 자기 노동력의 가치를 재생산한다. 잉여가치율은 이 겉모습을 걷어내고 노동일이 필요노동과 잉여노동으로 어떻게 나뉘는지를 숫자로 보여주며, 이는 착취를 도덕적 판단이 아니라 시간의 비율로 다루게 한다.",
+                    "en": "The wage makes it look as if the whole day's labor is paid, but in fact the worker reproduces the value of their labor-power in only part of that time. The rate of surplus-value strips away this appearance and shows, in numbers, how the working day splits into necessary and surplus labor, treating exploitation as a ratio of time rather than a moral judgment."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 분할이 보이면, 임금을 올리는 것과 노동일 자체의 구조를 바꾸는 것이 왜 다른 문제인지도 함께 이해할 수 있다.",
+                      "시장가격의 변동은 유통에서 일어나는 일이며, 잉여가치율이 다루는 생산과정 안의 노동시간 분할과는 다른 층위다.",
+                      "착취는 자본가 개인의 성격 문제가 아니라 노동력과 생산수단이 자본으로 결합되는 관계에서 구조적으로 생겨난다.",
+                      "기계가 옮기는 가치는 불변자본에 속하며, 무게 같은 물리적 속성이 아니라 화폐로 표현된 가치의 크기로 계산된다."
+                    ],
+                    "en": [
+                      "Once this split is visible, you can also see why raising the wage and changing the structure of the working day itself are different problems.",
+                      "Market price movements happen in circulation, a different level from the division of labor-time inside production that the rate of surplus-value addresses.",
+                      "Exploitation is not a matter of an individual capitalist's character; it arises structurally from the relation in which labor-power and means of production are combined as capital.",
+                      "What machinery transfers belongs to constant capital and is calculated as a magnitude of value expressed in money, not a physical property like weight."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "새로 만들어진 가치는 그저 투하된 가변자본을 대체할 뿐이다. 바로 이 때문에 3실링이라는 새 가치의 생산은 마치 단순한 재생산처럼 보이는 겉모습을 띤다.",
+                      "en": "the new value created only replaces the variable capital advanced. It is owing to this fact, that the production of the new value of three shillings takes the semblance of a mere reproduction."
+                    }
                   }
                 }
               ]
@@ -5193,19 +5650,44 @@
                       "s/v는 노동력 착취 정도를 직접 나타내지만, s/(c+v)는 불변자본까지 포함해 그 정도를 희석해 보이게 할 수 있기 때문이다.",
                       "s/v는 기계의 효율만 나타내고 s/(c+v)는 노동자의 생활수준만 나타내기 때문이다.",
                       "두 비율은 항상 같은 숫자이므로 구분은 순전히 용어상의 문제이기 때문이다.",
-                      "이윤율을 착취율과 구분하지 않고 같은 계산으로 처리하려 하기 때문이다."
+                      "이윤율은 자본가의 착각일 뿐이어서 계산할 가치가 없고 s/v만 참된 비율이기 때문이다."
                     ],
                     "en": [
                       "Because s/v directly expresses the degree of exploitation of labor-power, while s/(c+v) includes constant capital and can make that degree appear diluted.",
                       "Because s/v measures only machine efficiency and s/(c+v) measures only workers’ living standards.",
                       "Because the two ratios are always numerically identical, so the distinction is merely verbal.",
-                      "Because the rate of profit is a pure illusion never to be calculated in Volume I."
+                      "Because the rate of profit is only a capitalist illusion not worth calculating, so s/v is the real ratio."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 노동자가 자기 노동력 가치 이상으로 얼마나 잉여노동을 하는지를 보여준다. 이윤율은 중요한 후속 범주지만, 착취 정도를 직접 보려면 불변자본을 분모에 넣지 않아야 한다.",
-                    "en": "The rate of surplus-value shows how much surplus labor workers perform beyond the value of their labor-power. The rate of profit is an important later category, but to see exploitation directly, constant capital must not be placed in the denominator."
+                    "ko": "잉여가치율은 노동자가 자기 노동력의 가치를 넘어 얼마나 잉여노동을 하는지를 직접 보여준다. 이윤율은 3권에서 다룰 중요한 범주이지만, 분모에 불변자본까지 넣으면 같은 착취라도 자본 구성이 커질수록 숫자가 작아 보이게 되므로, 노동력 착취의 정도를 직접 읽으려면 s/v를 써야 한다.",
+                    "en": "The rate of surplus-value directly shows how much surplus labor workers perform beyond the value of their own labor-power. The rate of profit is an important category treated later in Volume III, but once constant capital enters the denominator, the same degree of exploitation looks smaller as capital composition grows, so reading exploitation directly requires s/v."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 구분을 알면, 유기적 구성이 커지는 산업에서 이윤율이 떨어져 보여도 착취율 자체는 그대로거나 오히려 오를 수 있다는 것도 이해할 수 있다.",
+                      "s/v와 s/(c+v)는 둘 다 노동자의 생활수준이 아니라 자본과 잉여가치의 비율을 다루는 계산이며, 기계 효율을 재는 지표가 아니다.",
+                      "두 비율은 c가 0보다 큰 한 항상 다른 값을 가지며, 자본 구성이 커질수록 그 격차는 더 벌어진다.",
+                      "이윤율은 착취율과 다른 계산이지만 마르크스는 이를 3권에서 상세히 다루겠다고 예고하므로, 계산 자체를 부정하지 않는다."
+                    ],
+                    "en": [
+                      "This distinction lets you see that in an industry where organic composition rises, the rate of profit can look lower even while the rate of exploitation itself stays the same or rises.",
+                      "Both s/v and s/(c+v) compare capital with surplus-value, not workers' living standards, so neither one is a gauge of machine efficiency.",
+                      "The two ratios differ numerically whenever c is greater than zero, and the gap widens as capital composition grows larger.",
+                      "The rate of profit is a distinct calculation from the rate of exploitation, but Marx explicitly promises to treat it in Volume III, so he does not deny the calculation itself."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "물론 잉여가치가 직접 생겨난 자본 부분, 곧 그 가치변화를 나타내는 부분뿐 아니라 투하된 자본 총액에 대한 비율도 경제적으로 매우 중요하다. 그러므로 우리는 3권에서 이 비율을 철저히 다룰 것이다.",
+                      "en": "Of course the ratio of surplus-value not only to that portion of the capital from which it immediately springs, and whose change of value it represents, but also to the sum total of the capital advanced is economically of very great importance. We shall, therefore, in the third book, treat of this ratio exhaustively."
+                    }
                   }
                 },
                 {
@@ -5218,22 +5700,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "노동일을 노동력 가치 재생산에 필요한 시간과 그 너머의 잉여노동시간으로 나누어 보여준다.",
-                      "임금이 실제로 한 푼도 지급되지 않았다고 가정한다.",
-                      "모든 노동시간이 동일하게 자본가에게 손실이라고 계산한다.",
-                      "노동시간 대신 소비자의 만족도를 분모로 넣는다."
+                      "노동일을 필요노동시간과 그 이후의 잉여노동시간으로 나누어 임금이 가리는 분할을 드러낸다.",
+                      "임금이 애초에 지급되지 않은 것으로 놓고 계산을 다시 시작한다.",
+                      "노동시간 대신 소비자의 만족도를 분모에 넣어 비율을 구한다.",
+                      "노동일 전체를 잉여노동으로 취급해 필요노동을 삭제한다."
                     ],
                     "en": [
-                      "It divides the working day into the time needed to reproduce the value of labor-power and the surplus labor-time beyond it.",
-                      "It assumes that no wage has actually been paid at all.",
-                      "It calculates all labor-time as an equal loss to the capitalist.",
-                      "It replaces labor-time with consumer satisfaction in the denominator."
+                      "It splits the working day into necessary labor-time and the surplus labor-time beyond it, revealing what the wage conceals.",
+                      "It treats the wage as though nothing were actually paid and restarts the calculation from there.",
+                      "It substitutes consumer satisfaction for labor-time in the denominator of the ratio.",
+                      "It treats the entire working day as surplus labor and erases necessary labor from the count."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "임금형태는 노동 전체가 지급된 것처럼 보이게 하지만, 가치분석은 임금이 노동력의 가치에 대한 지급임을 보여준다. 그래서 노동일 안의 필요노동과 잉여노동이 분리되어 보인다.",
-                    "en": "The wage-form makes all labor appear paid, but value analysis shows that the wage pays for the value of labor-power. This makes the division between necessary labor and surplus labor within the working day visible."
+                    "ko": "임금은 노동일 전체를 지급한 것처럼 보이지만, 마르크스는 노동력의 가치와 그것이 낳는 가치를 나눠 계산함으로써 이 겉모습을 깨뜨린다. 노동일을 필요노동시간과 잉여노동시간으로 쪼개면, 임금이 실제로는 노동력의 가치만을 지불하고 그 뒤의 잉여노동은 대가 없이 자본가에게 돌아간다는 사실이 드러난다.",
+                    "en": "The wage looks as though it pays for the whole working day, but Marx breaks this appearance by separating the value of labor-power from the value it produces. Splitting the day into necessary and surplus labor-time reveals that the wage actually pays only for the value of labor-power, while the surplus labor afterward goes to the capitalist unpaid."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 분할을 한번 보고 나면, 노동일이 길어질 때 왜 잉여노동만 늘어나고 임금은 그대로인지도 같은 논리로 설명할 수 있다.",
+                      "임금이 지급되지 않았다고 가정하면 애초에 v라는 항 자체가 사라져 s/v라는 비율 자체를 계산할 수 없게 된다.",
+                      "소비자의 만족도는 유통이나 소비의 문제이며, 생산과정 안에서 노동시간이 어떻게 나뉘는지와는 다른 차원이다.",
+                      "노동일 전체를 잉여노동으로 처리하면 필요노동이 0이 되어, 노동자가 자기 노동력의 가치를 재생산하는 시간 자체가 사라지는 셈이 된다."
+                    ],
+                    "en": [
+                      "Once you see this split, the same logic explains why a longer working day only adds surplus labor while the wage itself stays the same.",
+                      "Assuming nothing was paid removes the term v itself, making it impossible to even calculate the ratio s/v in the first place.",
+                      "Consumer satisfaction belongs to circulation or consumption, a different level from how labor-time divides inside the process of production.",
+                      "Treating the whole day as surplus labor sets necessary labor to zero, erasing the very time in which the worker reproduces the value of their own labor-power."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "노동과정의 둘째 시기, 곧 그의 노동이 더는 필요노동이 아닌 시기에도 노동자는 노동하고 노동력을 지출한다. 그러나 그 노동은 더는 필요노동이 아니므로 그는 자신을 위해서는 아무 가치도 만들지 않는다. 그는 잉여가치를 만들고, 자본가에게 그것은 무에서의 창조라는 온갖 매력을 지닌다.",
+                      "en": "During the second period of the labour-process, that in which his labour is no longer necessary labour, the workman, it is true, labours, expends labour-power; but his labour, being no longer necessary labour, he creates no value for himself. He creates surplus-value which, for the capitalist, has all the charms of a creation out of nothing."
+                    }
                   }
                 },
                 {
@@ -5247,21 +5754,46 @@
                   "choices": {
                     "ko": [
                       "c가 커져도 s/v는 직접 변하지 않으며, 착취율은 필요노동과 잉여노동의 비율로 봐야 한다.",
-                      "c가 커지면 s/v는 그 자체로 0이 된다.",
+                      "c가 커진 만큼 분모도 함께 커지므로 s/v는 그에 비례해 떨어진다.",
                       "기계가 늘면 모든 잉여가치는 불변자본에서 생기므로 v는 사라진다.",
-                      "자동화가 있으면 노동시간 분석은 어떤 경우에도 불가능하다."
+                      "자동화로 생산량이 늘어난 만큼, 노동일이 어떻게 나뉘든 상관없이 잉여가치율도 함께 올라간다."
                     ],
                     "en": [
                       "Even if c grows, s/v does not directly change; the rate of exploitation must be read from the ratio of necessary to surplus labor.",
-                      "If c grows, s/v automatically becomes zero.",
+                      "As c grows the denominator grows with it, so s/v falls in proportion.",
                       "When machinery increases, all surplus-value comes from constant capital and v disappears.",
-                      "Once automation exists, labor-time analysis is impossible in every case."
+                      "Since automation raises output, the rate of surplus-value rises along with it however the working day divides."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 불변자본 규모가 아니라 v와 s의 관계를 본다. 자동화는 생산성과 이윤율 문제에 큰 영향을 줄 수 있지만, 착취율 자체는 노동일의 분할에서 직접 읽어야 한다.",
-                    "en": "The rate of surplus-value concerns the relation between v and s, not the magnitude of constant capital. Automation can strongly affect productivity and the rate of profit, but exploitation itself must be read directly from the division of the working day."
+                    "ko": "잉여가치율은 불변자본의 크기가 아니라 v와 s 사이의 관계만을 본다. 마르크스는 계산을 정확히 하려면 불변자본을 0으로 놓아야 한다고 말하는데, 이는 기계값이 얼마든 노동일 안에서 필요노동과 잉여노동이 어떻게 나뉘는지가 착취율을 결정한다는 뜻이다. 자동화가 생산성과 이윤율에는 큰 영향을 주지만 착취율 자체를 바꾸지는 않는다.",
+                    "en": "The rate of surplus-value concerns only the relation between v and s, not the size of constant capital. Marx insists that to calculate accurately we must set constant capital to zero, meaning that however large the machinery's value, exploitation is decided by how the working day splits into necessary and surplus labor. Automation can strongly affect productivity and the rate of profit without changing the rate of exploitation itself."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "c를 0으로 놓는 방법을 알면, 왜 마르크스가 영국 면화산업의 이윤을 계산할 때도 원료값을 먼저 빼고 시작하는지 같은 논리로 이해할 수 있다.",
+                      "s/v의 분모에 서 있는 것은 가변자본 v뿐이라 불변자본이 아무리 커져도 분모는 커지지 않는다. c까지 분모에 넣은 계산은 이윤율이며, 착취 정도가 아니라 투하자본 전체의 수익성을 묻는 다른 물음이다.",
+                      "잉여가치는 노동력의 사용에서만 생기며, 불변자본은 자신이 지닌 가치를 옮길 뿐 새로운 가치나 잉여가치를 만들지 않는다.",
+                      "잉여가치율은 생산물의 개수가 아니라 노동일이 필요노동과 잉여노동으로 나뉘는 비율로 정해진다. 같은 시간에 더 많이 만들어도 그 분할이 그대로면 s/v도 그대로다."
+                    ],
+                    "en": [
+                      "Once you grasp setting c to zero, the same logic explains why Marx first deducts the cost of raw cotton when calculating England's profits from the cotton industry.",
+                      "Only variable capital stands in the denominator of s/v, so a larger c does not enlarge it. Putting c into the denominator gives the rate of profit, which asks about the return on the whole capital advanced rather than the degree of exploitation.",
+                      "Surplus-value arises only from the use of labor-power; constant capital merely transfers the value it already carries and creates neither new value nor surplus-value.",
+                      "The rate of surplus-value is set by how the working day divides between necessary and surplus labor, not by the number of items made. Producing more in the same hours leaves s/v where it was as long as that division holds."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "우리는 생산물 가치 가운데 불변자본만이 나타나는 부분을 도외시해야 하며, 따라서 불변자본을 0으로, 곧 c=0으로 놓아야 한다.",
+                      "en": "we must make abstraction from that portion of the value of the product, in which constant capital alone appears, and consequently must equate the constant capital to zero or make c = 0."
+                    }
                   }
                 },
                 {
@@ -5288,8 +5820,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동일이 그대로인데 필요노동이 줄면 그만큼 잉여노동이 늘어난다. 이는 뒤의 상대적 잉여가치 분석과 이어지는 핵심 직관이다.",
-                    "en": "If the working day stays the same while necessary labor falls, surplus labor increases by the same amount. This is the central intuition that later leads into the analysis of relative surplus-value."
+                    "ko": "노동일의 길이가 정해져 있을 때 필요노동시간이 줄어들면, 그만큼의 시간이 그대로 잉여노동으로 넘어간다. 잉여가치는 v의 변화가 낳는 결과이므로 v에 해당하는 필요노동이 줄면 s에 해당하는 잉여노동이 늘고 잉여가치율은 상승한다. 12시간 노동일에서 필요노동이 4시간에서 3시간으로 줄면 잉여노동은 8시간에서 9시간이 되고 비율은 200%에서 300%로 오른다.",
+                    "en": "When the length of the working day is fixed, any reduction in necessary labor-time passes straight into surplus labor. Since surplus-value results from a variation in v, a fall in the necessary labor corresponding to v raises the surplus labor corresponding to s, so the rate of surplus-value rises. In a 12-hour day, cutting necessary labor from 4 hours to 3 turns 8 hours of surplus labor into 9 and moves the ratio from 200% to 300%."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 관계를 알면, 다음 장들이 왜 노동일을 늘리는 방법과 필요노동을 줄이는 방법을 서로 다른 전략으로 구분해 다루는지도 이해할 수 있다.",
+                      "필요노동과 잉여노동은 정해진 노동일을 나눠 갖는 두 부분이라, 한쪽이 줄면 노동일 전체가 그대로일 때 다른 쪽이 늘어난다.",
+                      "노동일이 같아도 그 안에서 필요노동과 잉여노동이 나뉘는 방식이 달라지면 s/v 자체가 달라진다.",
+                      "필요노동은 노동력의 가치, 곧 임금에 해당하는 시간이므로 임금과 밀접히 연결되어 있고 계산에서 빼놓을 수 없다."
+                    ],
+                    "en": [
+                      "Grasping this relation also explains why later chapters treat lengthening the working day and shortening necessary labor as two distinct strategies.",
+                      "Necessary and surplus labor split a fixed working day between them, so when one falls while the total day stays the same, the other rises by the same amount.",
+                      "Even with the same working day, a change in how it divides between necessary and surplus labor changes s/v itself.",
+                      "Necessary labor is the time corresponding to the value of labor-power, that is, to wages, so it is tightly bound to wages and cannot be left out of the calculation."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 1절 노동력 착취도",
+                      "en": "Capital I, Ch. 9 §1 The Degree of Exploitation of Labour-Power"
+                    },
+                    "quote": {
+                      "ko": "우리는 잉여가치가 오로지 v의 가치 변화, 곧 노동력으로 전환되는 자본 부분의 변화에서 비롯됨을 안다. 따라서 v+s는 v+v', 곧 v에 증가분이 더해진 것이 된다.",
+                      "en": "we know that surplus-value is purely the result of a variation in the value of v, of that portion of the capital which is transformed into labour-power; consequently, v + s = v + v', or v plus an increment of v."
+                    }
                   }
                 },
                 {
@@ -5297,27 +5854,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "9장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best describes the systematic role of Chapter 9?"
+                    "ko": "잉여가치율이라는 척도가 확정되고 나면, 마르크스는 이어지는 장들에서 이 잣대로 무엇을 견주는가?",
+                    "en": "Once the rate of surplus-value is fixed as a measure, what does Marx go on to weigh with it in the chapters that follow?"
                   },
                   "choices": {
                     "ko": [
-                      "노동력 사용에서 생긴 잉여가치를 가변자본과 비교해 착취 정도를 정식화하고, 이후 노동일과 상대적 잉여가치 분석의 기준을 마련한다.",
-                      "자본주의 착취가 오직 상인의 속임수에서 나온다는 결론을 수식으로 확정한다.",
-                      "불변자본이 모든 새 가치를 창조한다는 점을 계산해 8장을 뒤집는다.",
-                      "임금이 하루 노동 전체를 완전히 지불하므로 잉여노동은 없다고 증명한다."
+                      "노동일을 늘리는 길과 필요노동을 줄이는 길, 두 방향의 잉여가치 생산을 견준다.",
+                      "상품의 시장가격이 오르내리는 속도와 그 진폭을 산업별로 견준다.",
+                      "불변자본이 새 가치를 창조하는지를 산업별 자료로 검증한다.",
+                      "자본가 개인의 도덕적 선악을 기업의 사회적 평판과 견주어 본다."
                     ],
                     "en": [
-                      "It formalizes the degree of exploitation by comparing surplus-value produced through the use of labor-power with variable capital, setting the standard for the later analyses of the working day and relative surplus-value.",
-                      "It mathematically confirms that capitalist exploitation comes only from merchant fraud.",
-                      "It reverses Chapter 8 by calculating that constant capital creates all new value.",
-                      "It proves that wages fully pay for the entire working day and that surplus labor does not exist."
+                      "It weighs two paths of surplus-value production: lengthening the working day and shortening necessary labor.",
+                      "It gauges how fast market prices for commodities rise and fall, and how wide those swings run.",
+                      "It tests against industry data whether constant capital creates new value of its own.",
+                      "It weighs the moral goodness of individual capitalists against the public reputation of their firms."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "9장은 잉여가치 생산을 측정 가능한 관계로 만든다. 이 기준이 있어야 다음 장의 노동일 투쟁과 이후 필요노동 단축을 통한 상대적 잉여가치 생산을 비교할 수 있다.",
-                    "en": "Chapter 9 turns the production of surplus-value into a measurable relation. This standard is needed to compare the struggle over the working day in the next chapter and the later production of relative surplus-value through the shortening of necessary labor."
+                    "ko": "잉여가치율을 계산하는 방법이 확정되면 『자본론』은 이 잣대를 두 방향으로 쓴다. 하나는 노동일의 길이 자체를 둘러싼 자본가와 노동자의 투쟁이고, 다른 하나는 필요노동시간을 줄여 잉여노동을 늘리는 상대적 잉여가치의 생산이다. 두 방향은 크기도 수단도 다르지만, 여기서 얻은 s/v라는 공통의 척도가 있어야 어느 쪽이 얼마나 착취를 키웠는지 견줄 수 있다.",
+                    "en": "Once the method for calculating the rate of surplus-value is fixed, Capital puts the measure to work in two directions: the struggle between capitalist and worker over the length of the working day itself, and the production of relative surplus-value by shortening necessary labor-time. The two differ in means and in scale, but only the common measure s/v established here lets you say which of them raised exploitation, and by how much."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 공통 잣대를 보면, 노동일을 늘리는 절대적 잉여가치 생산과 필요노동을 줄이는 상대적 잉여가치 생산이 왜 같은 s/v 언어로 비교될 수 있는지 알 수 있다.",
+                      "시장가격의 등락은 유통 영역에서 일어나는 일이며, 잉여가치율은 생산과정 안의 노동시간 분할을 재는 척도라 서로 다른 층위에 속한다.",
+                      "불변자본은 이 장에서 이미 새 가치를 창조하지 않는다고 전제되었으므로, 그것을 검증하는 잣대로 잉여가치율을 쓴다는 것은 앞선 논의와 어긋난다.",
+                      "착취는 노동력과 생산수단이 자본으로 결합되는 관계에서 구조적으로 생기는 것이지, 자본가 개인의 성향이나 평판으로 판정할 문제가 아니다."
+                    ],
+                    "en": [
+                      "Seeing this common measure shows why absolute surplus-value production, achieved by lengthening the day, and relative surplus-value production, achieved by shortening necessary labor, can both be compared in the same language of s/v.",
+                      "Fluctuating market prices belong to circulation, a different level from the division of labor-time inside production that the rate of surplus-value measures.",
+                      "This chapter already assumes constant capital creates no new value, so using the rate of surplus-value to test that claim contradicts the preceding argument.",
+                      "Exploitation arises structurally from the relation in which labor-power and means of production combine as capital, not from an individual capitalist’s character or a firm’s standing."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch09.htm#S4",
+                    "label": {
+                      "ko": "『자본론』 1권 9장 4절 잉여생산물",
+                      "en": "Capital I, Ch. 9 §4 Surplus-Produce"
+                    },
+                    "quote": {
+                      "ko": "잉여가치의 생산이 자본주의 생산의 주된 목적이므로, 한 개인이나 한 국민의 부의 크기는 절대적 생산량이 아니라 잉여생산물의 상대적 크기로 측정해야 함이 분명하다. … 필요노동과 잉여노동의 합, 곧 노동자가 자기 노동력의 가치를 대체하고 잉여가치를 생산하는 시간의 합이 그가 실제로 일하는 시간, 곧 노동일을 이룬다.",
+                      "en": "Since the production of surplus-value is the chief end and aim of capitalist production, it is clear, that the greatness of a man’s or a nation’s wealth should be measured, not by the absolute quantity produced, but by the relative magnitude of the surplus-produce. … The sum of the necessary labour and the surplus-labour, i.e., of the periods of time during which the workman replaces the value of his labour-power, and produces the surplus-value, this sum constitutes the actual time during which he works, i.e., the working-day."
+                    }
                   }
                 }
               ]
@@ -5360,7 +5942,7 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "필요노동과 잉여노동",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "필요노동: 노동자가 자기 노동력의 가치, 곧 임금에 해당하는 가치를 재생산하는 노동시간이다.",
                   "잉여노동: 필요노동을 넘어 자본가에게 잉여가치 s를 만들어 주는 노동시간이다.",
@@ -5368,21 +5950,21 @@
                 ]
               },
               {
-                "title": "s/v의 뜻",
-                "items": [
-                  "잉여가치율은 s/v다.",
-                  "v는 필요노동으로 보충되는 노동력 가치이고, s는 잉여노동이 만든 잉여가치다.",
-                  "s/v는 자본가의 수익률이 아니라 노동력 착취의 비율이다."
-                ]
+                "title": "용어 풀이",
+                "text": "s는 잉여가치, v는 노동력을 사는 데 지출된 가변자본, c는 생산수단에 지출된 불변자본을 뜻한다. 마르크스는 착취율을 잴 때 c를 계산에서 빼고 v와 s만 비교하라고 말하는데, 이는 불변자본이 새 가치를 만들지 않고 그저 옮겨질 뿐이기 때문이다."
               },
               {
-                "title": "착취율과 이윤율 구분",
+                "title": "현대 적용",
+                "text": "오늘날 임금노동자도 하루 노동시간 가운데 어느 지점까지가 자기 생활비를 버는 시간이고, 그 이후가 회사 이익으로 돌아가는 시간인지 나눠 생각해볼 수 있다. 시급이나 월급의 액수만 보아서는 이 비율이 얼마나 되는지 알 수 없다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "착취를 도덕적 비난이 아니라 노동시간의 비율로 파악하는 방법을 익힌다."
               }
             ],
             "en": [
               {
-                "title": "Necessary and Surplus Labour",
+                "title": "Core concepts first",
                 "items": [
                   "Necessary labor: The labor-time in which workers reproduce the value of their labor-power, that is, the value corresponding to wages.",
                   "Surplus labor: The labor-time beyond necessary labor, producing surplus-value s for capital.",
@@ -5390,15 +5972,15 @@
                 ]
               },
               {
-                "title": "Meaning of s/v",
-                "items": [
-                  "The rate of surplus-value is s/v.",
-                  "v is the value of labour-power replaced by necessary labour; s is surplus-value created by surplus labour.",
-                  "s/v measures exploitation of labour-power, not the capitalist’s profit rate."
-                ]
+                "title": "Terms explained",
+                "text": "s means surplus-value, v means the variable capital spent buying labor-power, and c means the constant capital spent on means of production. Marx says that to measure exploitation we must drop c from the calculation and compare only v and s, since constant capital creates no new value and merely reappears."
               },
               {
-                "title": "Rate of Exploitation vs Profit Rate",
+                "title": "Today's application",
+                "text": "A modern wage-worker can also ask at what point in the day they have earned back their own living costs, and from what point the rest of the day's output flows to company profit. The size of an hourly or monthly wage alone does not tell you this ratio."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "Read exploitation as a ratio of labor-time, not merely as a moral accusation."
               }
             ]
@@ -7780,6 +8362,47 @@
             "en": "Summarizes the different ways absolute and relative surplus-value expand surplus labor."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "절대적 잉여가치와 상대적 잉여가치",
+              "left": {
+                "heading": "절대적 잉여가치",
+                "rows": [
+                  "노동일을 늘려 잉여노동시간을 늘린다",
+                  "노동생산력의 변화 없이도 가능하다",
+                  "옛 노동방식을 그대로 둔 채 시간만 늘린다"
+                ]
+              },
+              "right": {
+                "heading": "상대적 잉여가치",
+                "rows": [
+                  "생산성을 높여 필요노동시간을 줄인다",
+                  "같은 노동일 안에서 잉여노동 비중이 커진다",
+                  "노동의 기술적 과정과 사회의 구성을 뒤바꾼다"
+                ]
+              }
+            },
+            "en": {
+              "title": "Absolute and Relative Surplus-Value",
+              "left": {
+                "heading": "Absolute surplus-value",
+                "rows": [
+                  "Lengthens the working day to expand surplus labor time",
+                  "Possible even without any change in productiveness",
+                  "Leaves the old way of working intact and only adds hours"
+                ]
+              },
+              "right": {
+                "heading": "Relative surplus-value",
+                "rows": [
+                  "Raises productivity to shorten necessary labor time",
+                  "Expands surplus labor’s share within the same working day",
+                  "Revolutionises the technical process of labour and the composition of society"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch16-basic",
@@ -7813,8 +8436,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "절대적 잉여가치는 노동일 연장, 상대적 잉여가치는 필요노동 단축을 강조하지만 실제 생산에서는 노동일, 강도, 생산성 변화가 함께 얽힌다. 16장은 그 결합을 종합한다.",
-                    "en": "Absolute surplus-value emphasizes lengthening the working day, and relative surplus-value emphasizes reducing necessary labor, but in real production working day, intensity, and productivity are intertwined. Chapter 16 synthesizes that combination."
+                    "ko": "노동자를 형식적으로 자본에 종속시키기만 해도 노동일을 늘려 절대적 잉여가치를 뽑아낼 수 있지만, 마르크스가 보여주듯 상대적 잉여가치를 만드는 방법들 자체가 동시에 노동일을 늘리는 결과를 낳는다. 그래서 실제 공장에서는 두 방식이 한데 얽혀 나타난다.",
+                    "en": "Even mere formal subjection of labour to capital suffices to extract absolute surplus-value by lengthening the working day, but Marx shows that the very methods used to produce relative surplus-value simultaneously lengthen the working day. That is why, in an actual factory, both forms appear intertwined rather than separated."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "형식적 종속만으로도 절대적 잉여가치가 나오지만, 상대적 잉여가치를 만드는 매뉴팩처와 기계제조차 노동일을 늘리는 경향을 낳는다는 데 주목하면 두 방식이 왜 겹치는지 더 또렷해진다.",
+                      "두 개념이 같은 말이라면 마르크스가 10장과 12장을 나눠 쓸 이유가 없다. 노동일 연장과 필요노동 단축은 서로 다른 기제이며 그 차이가 분석의 출발점이다.",
+                      "상대적 잉여가치는 매뉴팩처와 기계제 대공업이라는 구체적 역사적 형태로 원문 곳곳에서 다뤄지므로 실재하지 않는다는 말은 성립하지 않는다.",
+                      "노동일과 생산성은 각각 잉여노동과 필요노동의 크기를 정하는 핵심 변수이므로 가치와 무관하다는 진단은 원문의 논지와 반대다."
+                    ],
+                    "en": [
+                      "Formal subjection alone yields absolute surplus-value, but noting that manufacture and machinery, the very engines of relative surplus-value, also tend to lengthen the working day makes clear why the two overlap.",
+                      "If the two concepts meant the same thing, Marx would not have devoted separate chapters, ten and twelve, to them; lengthening the day and shortening necessary labor are distinct mechanisms.",
+                      "Relative surplus-value appears throughout the text in the concrete historical forms of manufacture and machinery, so calling it nonexistent misreads the argument.",
+                      "Working day and productivity are exactly the variables that fix the sizes of surplus and necessary labor, so claiming they are unrelated to value contradicts the text."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "우리는 상대적 잉여가치를 생산하는 방법들이 동시에 절대적 잉여가치를 생산하는 방법이기도 하다는 것을 보았다.",
+                      "en": "we have seen, how the methods of producing relative surplus-value, are, at the same time, methods of producing absolute surplus-value."
+                    }
                   }
                 },
                 {
@@ -7827,22 +8475,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "생산력 발전이 자동으로 자유시간으로 바뀌지 않고, 절대적·상대적 잉여가치 생산이 함께 강화될 수 있다.",
-                      "노동일이 길면 상대적 잉여가치는 원리상 불가능하다.",
-                      "생산성이 오르면 잉여가치는 곧장 사라진다.",
-                      "생산력 발전은 노동력 가치와 아무 관계가 없다."
+                      "생산성이 올라도 노동일이 그대로면 두 잉여가치 생산이 함께 강화될 수 있다.",
+                      "노동일이 길게 유지되면 상대적 잉여가치는 원리상 나타날 수 없다.",
+                      "생산성이 오르면 잉여가치라는 개념 자체가 곧바로 무너진다.",
+                      "생산력 발전은 노동력의 가치나 잉여노동의 크기와는 본래 아무 관계가 없는 현상이다."
                     ],
                     "en": [
-                      "Productive-force development does not automatically become free time; absolute and relative surplus-value production can be intensified together.",
-                      "If the working day is long, relative surplus-value is impossible in principle.",
-                      "When productivity rises, surplus-value must disappear.",
-                      "Productive-force development has no relation to the value of labor-power."
+                      "If the working day stays long as productivity rises, both forms of surplus-value can grow together.",
+                      "If the working day is long, relative surplus-value cannot arise in principle.",
+                      "When productivity rises, the very concept of surplus-value collapses at once.",
+                      "Productive-force development has no real relation to the value of labour-power or to the size of surplus labour."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 요점은 생산성 향상이 곧 노동자 해방이라는 단순 도식이 아니다. 자본주의적 형식에서는 필요노동이 줄어도 노동일이 유지되거나 강도가 올라 잉여노동이 확대될 수 있다.",
-                    "en": "Marx’s point is not the simple idea that productivity growth automatically liberates workers. In the capitalist form, even if necessary labor falls, the working day can remain long or intensity can rise, expanding surplus labor."
+                    "ko": "공장에서 기계가 도입돼 생산성이 오르면 필요노동시간이 줄 여지가 생기지만, 마르크스는 그 여지가 곧바로 노동자의 자유시간이 되지 않는다고 지적한다. 오히려 노동일은 그대로거나 더 길어지고 노동강도까지 세지면서 절대적 잉여가치와 상대적 잉여가치가 동시에 늘어난다.",
+                    "en": "When machinery raises productivity in a factory, necessary labor-time could shrink, but Marx insists this slack does not automatically become workers’ free time. Instead the working day can stay the same or even lengthen while intensity rises, so absolute and relative surplus-value grow together."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "필요노동이 줄어 생긴 여유를 노동자가 가져가려면 노동일도 함께 짧아져야 한다. 그러지 않으면 자본이 그 시간을 잉여노동으로 흡수하고, 노동강도까지 올려 같은 시간에서 더 많은 것을 뽑아낸다.",
+                      "노동일이 길어도 그 안에서 필요노동 비중이 줄면 상대적 잉여가치는 얼마든지 생길 수 있으므로 이 둘을 상호 배제로 보면 안 된다.",
+                      "잉여가치는 생산성이 오른다고 사라지는 것이 아니라 오히려 필요노동을 줄여 잉여노동의 몫을 키우는 계기가 된다.",
+                      "노동력의 가치는 그것을 재생산하는 데 드는 노동시간으로 정해지므로, 생산력이 오르면 그 가치도 잉여노동의 크기도 함께 달라진다."
+                    ],
+                    "en": [
+                      "For the freed-up time to reach workers, the working day would have to shrink along with necessary labour; otherwise capital absorbs that time as surplus labour and raises intensity to draw more out of the same hours.",
+                      "Even with a long working day, a shrinking share of necessary labor within it can still produce relative surplus-value, so the two are not mutually exclusive.",
+                      "Surplus-value does not vanish when productivity rises; rising productivity is precisely what shrinks necessary labor and expands the share of surplus labor.",
+                      "The value of labour-power is set by the labour-time needed to reproduce it, so a rise in productive force changes both that value and the size of surplus labour."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "게다가 노동일의 과도한 연장은 근대 산업의 독특한 산물로 드러났다.",
+                      "en": "Nay, more, the excessive prolongation of the working-day turned out to be the peculiar product of Modern Industry."
+                    }
                   }
                 },
                 {
@@ -7869,8 +8542,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "절대적·상대적 잉여가치는 분석상 구분되지만 현실에서는 결합된다. 자본은 노동일을 늘리는 방식과 필요노동을 줄이는 방식을 상황에 따라 함께 사용한다.",
-                    "en": "Absolute and relative surplus-value are analytically distinct, but in reality they combine. Capital uses both lengthening the working day and reducing necessary labor according to circumstances."
+                    "ko": "절대적 잉여가치가 논리적으로 먼저 다뤄진다고 해서 상대적 잉여가치가 뒤늦게 나타나는 부차적 현상인 것은 아니다. 마르크스는 노동일 연장이 자본주의 생산의 토대이자 상대적 잉여가치가 자라나는 출발점이라고 말하면서, 실제로는 노동일·노동강도·생산성이 다양한 비율로 뒤섞여 잉여노동을 늘린다고 설명한다.",
+                    "en": "That absolute surplus-value is treated first does not make relative surplus-value a secondary afterthought. Marx calls lengthening the working day the general groundwork of capitalist production and the starting point from which relative surplus-value grows, while in practice working day, intensity, and productivity combine in varying proportions to expand surplus labor."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동일 연장이 자본주의 생산의 토대이자 상대적 잉여가치가 자라나는 출발점이라는 원문의 표현 자체가 두 방식이 이어져 있음을 말해준다.",
+                      "잉여가치는 언제나 노동자의 노동에서 나오고 유통은 그 형태를 실현할 뿐이므로, 어느 한 쪽이 노동 없이 생긴다는 설명은 성립하지 않는다.",
+                      "매뉴팩처와 대공업의 역사를 보면 노동일 연장과 생산성 향상이 같은 공장 안에서 함께 나타나므로 두 방식이 배타적이라는 말은 원문과 어긋난다.",
+                      "상대적 잉여가치는 임금노동을 전제로 한 자본주의적 생산방식 자체의 산물이며 노예제와는 다른 역사적 조건에서 발전한다."
+                    ],
+                    "en": [
+                      "The text’s own phrase, calling the working day’s lengthening the groundwork and starting point for relative surplus-value, already links the two mechanisms together.",
+                      "Surplus-value always originates in labor itself, and circulation only realizes its form, so claiming either arises without labor misreads the argument.",
+                      "The history of manufacture and modern industry shows longer working days and rising productivity appearing together in the same factories, contradicting any claim that the two are mutually exclusive.",
+                      "Relative surplus-value is a product of the wage-labor relation specific to capitalist production and develops under historical conditions quite different from slavery."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "노동자가 자신의 노동력 가치에 해당하는 등가물을 생산했을 그 지점을 넘어 노동일을 연장하고 그 잉여노동을 자본이 취득하는 것, 이것이 절대적 잉여가치의 생산이다. 이것은 자본주의 체계의 일반적 토대이며 상대적 잉여가치 생산의 출발점을 이룬다.",
+                      "en": "The prolongation of the working-day beyond the point at which the labourer would have produced just an equivalent for the value of his labour-power, and the appropriation of that surplus-labour by capital, this is production of absolute surplus-value. It forms the general groundwork of the capitalist system, and the starting-point for the production of relative surplus-value."
+                    }
                   }
                 },
                 {
@@ -7897,8 +8595,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상대적 잉여가치의 핵심은 필요노동 감소가 노동자의 자유시간 증가가 아니라 자본의 잉여노동 증가로 전환되는 데 있다. 이것이 생산성 향상의 자본주의적 형태다.",
-                    "en": "The core of relative surplus-value is that a reduction in necessary labor becomes not workers’ free time but capital’s increased surplus labor. This is the capitalist form of productivity growth."
+                    "ko": "필요노동이 줄어도 노동자의 하루 노동시간이 그대로라면, 그 줄어든 몫은 고스란히 잉여노동 쪽으로 넘어간다. 마르크스는 임금에 해당하는 등가물을 더 짧은 시간에 만들어내는 방법으로 잉여노동을 늘리는 것이 상대적 잉여가치의 원리라고 설명하며, 이것이 생산성 향상이 자본에게 이익이 되는 이유다.",
+                    "en": "If necessary labor shrinks but the working day stays the same length, that shrunken portion passes straight into surplus labor. Marx explains that producing the equivalent of wages in less time, thereby extending surplus labor, is exactly the principle of relative surplus-value, which is why productivity gains benefit capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "임금에 해당하는 가치를 더 짧은 시간에 만들면 남는 시간은 저절로 잉여노동이 되므로 상대적 잉여가치가 늘어난다는 점을 놓치지 말아야 한다.",
+                      "필요노동이 줄어든 만큼 노동일 전체가 함께 줄지 않는 한 잉여노동은 오히려 늘어나므로 둘이 같은 비율로 줄어든다는 설명은 틀렸다.",
+                      "노동자가 실제로 일하는 시간이 그대로여도 필요노동과 잉여노동의 비율이 바뀌면 가치량 자체가 달라지므로 무관하다는 진단은 성립하지 않는다.",
+                      "자본가는 필요노동이 줄어든 만큼 잉여노동이 늘어나기 때문에 오히려 노동력을 구매할 유인이 커진다."
+                    ],
+                    "en": [
+                      "Producing the wage equivalent in less time leaves the remaining time to fall automatically into surplus labor, which is exactly how relative surplus-value grows.",
+                      "Unless the whole working day shrinks along with necessary labor, surplus labor actually grows, so claiming they fall by the same amount is wrong.",
+                      "Even if actual hours worked stay the same, a shift in the ratio of necessary to surplus labor changes the magnitudes involved, so calling it irrelevant misses the point.",
+                      "Because surplus labor grows exactly as necessary labor shrinks, the capitalist has an even stronger incentive to keep buying labor-power."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "잉여노동을 늘리기 위해 필요노동은 임금에 해당하는 등가물을 더 짧은 시간에 생산하는 방법들로 단축된다.",
+                      "en": "In order to prolong the surplus-labour, the necessary labour is shortened by methods whereby the equivalent for the wages is produced in less time."
+                    }
                   }
                 },
                 {
@@ -7906,27 +8629,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "16장이 상대적 잉여가치 장들의 뒤에 놓이는 이유는 무엇인가?",
-                    "en": "Why does Chapter 16 come after the chapters on relative surplus-value?"
+                    "ko": "전에는 자기 작업장에서 일하던 수공업자가 이제 자본가에게 고용되어 예전과 같은 도구로 같은 방식으로 일한다. 달라진 것은 하루 노동시간이 길어졌다는 점뿐이다. 마르크스는 이 상태를 어떻게 설명하는가?",
+                    "en": "A handicraftsman who used to work on his own account is now hired by a capitalist and works with the same tools in the same old way; the one change is that his day is longer. How does Marx describe this state of affairs?"
                   },
                   "choices": {
                     "ko": [
-                      "협업, 매뉴팩처, 기계제 대공업을 거친 뒤 절대적·상대적 잉여가치가 실제 자본주의 생산에서 결합되는 전체 그림을 정리하기 위해서이다.",
-                      "상대적 잉여가치가 절대적 잉여가치를 완전히 폐기한다는 점을 증명하기 위해서이다.",
-                      "기계 분석이 끝나면 노동력과 잉여가치 분석이 충분하지 않다는 점을 보이기 위해서이다.",
-                      "16장은 생산 분석 뒤에 순수 가격이론으로 돌아가기 위해서이다."
+                      "노동이 자본에 형식적으로만 종속된 상태이며, 이것만으로도 절대적 잉여가치는 생산된다.",
+                      "기계와 분업으로 노동방식 자체가 자본에 맞게 뒤바뀐 실질적 종속이며, 이때는 상대적 잉여가치만 생산된다.",
+                      "고리대업자나 상인이 자립적 생산자에게 기생하는 중간형태이며, 자본이 아직 노동과정을 쥐지 못한 경우다.",
+                      "노동력이 상품으로 팔리지 않는 단순상품생산이며, 잉여가치는 아직 생기지 않는다."
                     ],
                     "en": [
-                      "To summarize, after cooperation, manufacture, and modern industry, the overall picture of how absolute and relative surplus-value combine in actual capitalist production.",
-                      "To prove that relative surplus-value completely abolishes absolute surplus-value.",
-                      "To show that after machinery the analysis of labor-power and surplus-value was entirely wrong.",
-                      "Because Chapter 16 returns to pure price theory unrelated to production."
+                      "Labour is as yet only formally subjected to capital, and even that alone suffices for the production of absolute surplus-value.",
+                      "It is the real subjection of labour to capital, in which machinery and the division of labour have remade the process and only relative surplus-value is produced.",
+                      "It is an intermediate form in which a usurer or a merchant feeds on an independent producer and capital has not yet acquired direct control of the labour-process.",
+                      "It is simple commodity production, in which labour-power is not sold as a commodity and no surplus-value arises yet."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "16장은 앞선 생산조직 분석을 종합한다. 자본주의적 생산은 노동일, 노동강도, 생산성, 노동력 가치의 변화를 함께 조직해 잉여가치를 생산한다.",
-                    "en": "Chapter 16 synthesizes the preceding analysis of production organization. Capitalist production organizes the working day, labor intensity, productivity, and the value of labor-power together in producing surplus-value."
+                    "ko": "수공업자가 임금노동자가 되어도 도구와 작업순서가 그대로라면 자본은 아직 노동과정 자체를 자기 것으로 바꾸지 못한 상태다. 마르크스는 이런 형식적 종속만으로도 노동일을 늘려 절대적 잉여가치를 뽑아내기에 충분하다고 말한다. 생산방식을 통째로 뒤집어 필요노동을 줄이는 실질적 종속은 이 토대 위에서 자라나며, 그래서 두 잉여가치는 자본이 노동을 장악해 가는 단계와 나란히 놓인다.",
+                    "en": "Even after the handicraftsman becomes a wage labourer, capital has not yet remade the labour-process; the old craft goes on under new command. Marx says this mere formal subjection already suffices to yield absolute surplus-value by lengthening the day. Real subjection, which revolutionises technique to shorten necessary labour, grows out of that foundation, so the two forms of surplus-value track how far capital has taken hold of labour."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "형식적 종속에서는 도구도 작업순서도 옛날 그대로여서 자본이 늘릴 수 있는 것은 시간뿐이다. 생산방식 자체를 뒤집어 필요노동을 줄이는 길은 실질적 종속으로 넘어간 뒤에야 열린다.",
+                      "실질적 종속은 자본이 기계와 분업으로 노동방식 자체를 바꿔 놓은 뒤의 상태다. 작업방식이 그대로인데 시간만 길어졌다면 아직 그 단계에 이르지 않았다.",
+                      "중간형태에서는 고리대업자나 상인이 자립적 생산자에게 바깥에서 기생할 뿐 자본이 노동과정을 직접 쥐지 못한다. 이 수공업자는 이미 자본가의 직접적 지휘 아래 들어갔으므로 형식적 종속에 해당한다.",
+                      "단순상품생산에서는 노동력이 팔리지 않으므로 남을 위한 잉여노동이 성립하지 않는다. 여기서는 이미 임금을 받고 노동력을 판 상태이고, 길어진 노동시간이 곧 자본의 잉여가치가 된다."
+                    ],
+                    "en": [
+                      "Under formal subjection the tools and the order of work are the old ones, so the only thing capital can enlarge is time; shortening necessary labour by overturning the process itself becomes possible only with real subjection.",
+                      "Real subjection describes the state after capital has rebuilt the way of working with machinery and the division of labour; if the method is unchanged and only the hours are longer, that stage has not been reached.",
+                      "In the intermediate forms a usurer or merchant battens on an independent producer from outside and capital has not yet acquired direct control of the labour-process, whereas this man already works under a capitalist’s direct control, which is formal subjection.",
+                      "In simple commodity production labour-power is not sold, so there is no surplus labour for another; here it has already been sold for wages, and every added hour of the day becomes surplus-value for capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "한편으로 노동이 자본에 한낱 형식적으로 종속되기만 해도 절대적 잉여가치의 생산에는 충분하다. 예컨대 전에 자기 계산으로, 또는 장인의 도제로 일하던 수공업자들이 자본가의 직접적 지휘 아래 임금노동자가 되기만 하면 된다.",
+                      "en": "If, on the one hand, the mere formal subjection of labour to capital suffices for the production of absolute surplus-value, if, e.g., it is sufficient that handicraftsmen who previously worked on their own account, or as apprentices of a master, should become wage labourers under the direct control of a capitalist"
+                    }
                   }
                 }
               ]
@@ -7963,8 +8711,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 생산적 노동을 자본주의적 관계 안에서 규정한다. 유용성만이 아니라 자본의 가치증식에 복무하는가가 결정적이다.",
-                    "en": "Marx defines productive labor within the capitalist relation. The decisive issue is not usefulness alone, but whether labor serves the valorization of capital."
+                    "ko": "학교 선생이 학생을 가르치는 일 자체는 예나 지금이나 유용하지만, 마르크스는 그 교사가 학교 소유주를 위해 잉여가치를 만들어낼 때만 자본주의적 의미에서 생산적 노동자가 된다고 말한다. 유용성이 아니라 자본의 가치증식에 복무하는가가 생산적 노동을 가르는 기준이 되는 것이다.",
+                    "en": "Teaching a class is useful in itself, now as ever, but Marx says a schoolmaster only counts as a productive laborer in the capitalist sense when he also enriches the school’s owner by producing surplus-value. Usefulness is not the criterion; whether the labor serves capital’s valorization is what defines productive labor here."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 학교 소유주가 소시지 공장 대신 교육 공장에 자본을 넣었을 뿐 관계는 달라지지 않는다고 말한다. 가르치는 일이 아무리 유용해도 그 유용함이 아니라 소유주에게 돌아가는 잉여가치가 교사를 생산적 노동자로 만든다.",
+                      "임금노동이라도 그 노동이 자본을 위해 잉여가치를 낳으면 생산적 노동이 되므로 존재하지 않는다는 말은 원문과 반대다.",
+                      "물질적 상품 생산이라도 자본의 가치증식에 들어가지 않으면 생산적 노동으로 규정되지 않으므로 자본주의와 무관하게 같다는 설명은 부족하다.",
+                      "생산적 노동자는 협업 속의 집합적 노동자를 이루는 여러 사람을 가리킬 수 있으며 자본가 자신의 손노동만을 뜻하지 않는다."
+                    ],
+                    "en": [
+                      "Marx notes that the proprietor has merely laid out his capital in a teaching factory instead of a sausage factory, and the relation is unchanged; however useful the teaching, it is the surplus-value flowing to the owner that makes the schoolmaster a productive labourer.",
+                      "Wage labor becomes productive precisely when it yields surplus-value for capital, so saying productive labor does not exist contradicts the text.",
+                      "Even material commodity production is not automatically productive labor unless it enters capital’s valorization, so calling the meaning constant regardless of capitalism misses the point.",
+                      "A productive laborer can be any member of the collective worker formed through cooperation, not only the capitalist’s own manual labor."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "자본가를 위해 잉여가치를 생산하여 자본의 자기증식에 복무하는 노동자만이 생산적이다. … 학교 선생은 학생들의 머리를 두드리는 일 외에 학교 소유주를 살찌우기 위해 말처럼 일할 때 생산적 노동자다.",
+                      "en": "That labourer alone is productive, who produces surplus-value for the capitalist, and thus works for the self-expansion of capital. … a schoolmaster is a productive labourer when, in addition to belabouring the heads of his scholars, he works like a horse to enrich the school proprietor."
+                    }
                   }
                 },
                 {
@@ -7977,22 +8750,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "구분해야 각각의 메커니즘이 보이고, 함께 봐야 실제 자본이 노동시간·강도·생산성을 결합해 착취를 조직하는 방식이 보이기 때문이다.",
-                      "구분은 이름의 차이이며 실제 작동에서는 같은 비율로 나타나기 때문이다.",
-                      "함께 보면 둘이 서로 상쇄되어 잉여가치가 사라지기 때문이다.",
-                      "둘은 서로 다른 생산양식에만 속해 자본주의 안에서는 만날 수 없기 때문이다."
+                      "구분하면 각 기제가 보이고, 함께 보면 자본이 노동시간·강도·생산성을 결합해 착취를 조직하는 방식이 보인다.",
+                      "구분은 그저 이름을 다르게 붙인 것일 뿐 실제로는 차이가 없기 때문이다.",
+                      "함께 보면 두 방식이 서로 상쇄되어 잉여가치가 완전히 사라지기 때문이다.",
+                      "두 방식은 서로 다른 생산양식에만 속해 자본주의 안에서 공존할 수 없기 때문이다."
                     ],
                     "en": [
-                      "Because distinction reveals each mechanism, while seeing them together reveals how real capital organizes exploitation by combining labor-time, intensity, and productivity.",
-                      "Because the distinction is only a naming convenience and there is no real difference.",
-                      "Because when seen together they cancel each other out and surplus-value disappears.",
-                      "Because they belong only to different modes of production and cannot meet within capitalism."
+                      "Distinguishing them shows each mechanism, while seeing them together shows how capital combines labor-time, intensity, and productivity.",
+                      "Because the distinction is just a naming convenience with no real difference in practice.",
+                      "Because when combined, the two forms cancel each other and surplus-value disappears entirely.",
+                      "Because each form belongs to a separate mode of production and cannot coexist under capitalism."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "분석상 구분은 메커니즘을 선명하게 한다. 그러나 현실의 자본은 순수한 한 방식만 쓰지 않고 노동일 연장, 노동강도, 생산성 혁신을 결합한다.",
-                    "en": "The analytical distinction clarifies mechanisms. But real capital does not use only one pure method; it combines lengthening of the working day, intensification of labor, and productivity innovation."
+                    "ko": "노동일 연장과 필요노동 단축을 따로 떼어보면 각각의 작동 방식이 선명해지지만, 실제 공장에서는 이 둘이 뒤섞여 나타난다. 마르크스는 상대적 잉여가치도 결국 노동일을 절대적으로 늘리는 결과를 낳고, 절대적 잉여가치도 노동생산력의 일정한 발전을 전제한다고 말하며, 잉여가치율을 실제로 끌어올리는 국면에서는 두 방식의 차이가 다시 뚜렷해진다고 강조한다.",
+                    "en": "Separating the lengthening of the working day from the shortening of necessary labour makes each mechanism clear, but in an actual factory the two are intertwined. Marx notes that relative surplus-value also absolutely lengthens the working day, and that absolute surplus-value presupposes some development of labour’s productiveness, yet when it comes to raising the rate of surplus-value the difference between them reasserts itself."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "잉여가치율을 실제로 끌어올리려 할 때는 노동일을 늘릴지 노동강도나 생산성을 바꿀지가 서로 다른 선택지로 다시 갈라진다는 점이 이 결합과 구분의 요점이다.",
+                      "두 개념이 이름만 다르다면 잉여가치율을 올리는 서로 다른 두 경로를 마르크스가 굳이 구별해 서술할 이유가 없다.",
+                      "노동일 연장과 필요노동 단축은 서로 다른 방향에서 잉여노동을 늘리는 방법이지 서로를 상쇄하는 관계가 아니다.",
+                      "자본주의 생산 안에서도 노동일 연장과 생산성 향상은 함께 일어나므로 서로 다른 생산양식에만 속한다는 설명은 틀렸다."
+                    ],
+                    "en": [
+                      "When it actually comes to raising the rate of surplus-value, choosing to lengthen the day versus changing intensity or productivity splits back into distinct options, which is the whole point of distinguishing while combining.",
+                      "If the two concepts were merely different names, Marx would have no reason to carefully distinguish the two separate routes to raising the rate of surplus-value.",
+                      "Lengthening the working day and shortening necessary labor expand surplus labor from different directions; they do not cancel each other out.",
+                      "Lengthening the working day and raising productivity occur together within capitalist production itself, so claiming they belong only to separate modes of production is wrong."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "한 관점에서 보면 절대적 잉여가치와 상대적 잉여가치의 어떤 구분도 착각처럼 보인다. … 그러나 잉여가치의 실제 움직임을 염두에 두면 이 동일성처럼 보이는 겉모습은 사라진다.",
+                      "en": "From one standpoint, any distinction between absolute and relative surplus-value appears illusory. … But if we keep in mind the behaviour of surplus-value, this appearance of identity vanishes."
+                    }
                   }
                 },
                 {
@@ -8006,21 +8804,46 @@
                   "choices": {
                     "ko": [
                       "생산성 향상 이후에도 자본은 노동일 연장과 노동강도 강화를 통해 잉여노동을 늘리려 할 수 있기 때문이다.",
-                      "상대적 잉여가치가 생기면 노동일은 법적으로 낮아진시간이 되기 때문이다.",
-                      "절대적 잉여가치는 자본주의에서 한 번도 존재한 적이 없기 때문이다.",
+                      "상대적 잉여가치가 자리를 잡고 나면 노동일의 길이는 기술 수준이 정하는 상수가 되어 다툼의 대상에서 벗어나기 때문이다.",
+                      "절대적 잉여가치는 자본주의 이전의 생산양식에만 속한 착취 방식이기 때문이다.",
                       "생산성이 오르면 필요노동과 잉여노동의 구분이 사라지기 때문이다."
                     ],
                     "en": [
                       "Because even after productivity rises, capital can still seek more surplus labor through longer working days and intensified labor.",
-                      "Because when relative surplus-value arises, the working day is always legally reduced to zero.",
-                      "Because absolute surplus-value has never existed under capitalism.",
+                      "Because once relative surplus-value has taken hold, the length of the working day is fixed by the level of technique and ceases to be contested.",
+                      "Because absolute surplus-value belongs to pre-capitalist modes of production rather than to capitalism.",
                       "Because when productivity rises, the distinction between necessary and surplus labor disappears."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상대적 잉여가치는 절대적 잉여가치를 대체해 끝내는 것이 아니다. 노동일과 강도에 대한 투쟁은 생산성 혁신 이후에도 계속되며, 두 방식은 결합된다.",
-                    "en": "Relative surplus-value does not simply replace and end absolute surplus-value. Struggles over working day and intensity continue after productivity innovation, and the two forms combine."
+                    "ko": "생산성이 오른 뒤에도 자본은 손을 놓지 않는다. 마르크스는 노동생산력과 정상적 노동강도가 주어졌을 때 잉여가치율을 올리려면 노동일을 실제로 늘리는 수밖에 없고, 반대로 노동일 길이가 주어졌을 때는 노동강도나 생산성을 바꿔야 한다고 말한다. 그러므로 생산성 상승 이후에도 노동일과 강도를 둘러싼 다툼은 계속 벌어진다.",
+                    "en": "Capital does not stand still once productivity rises. Marx says that, given the productiveness of labor and its normal intensity, the rate of surplus-value can only be raised by actually lengthening the working day, while given the length of the day it must instead be raised through changes in intensity or productivity. So struggles over the working day and intensity continue even after productivity has risen."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동생산력과 노동강도가 그대로일 때 잉여가치율을 더 끌어올리려면 남는 길은 노동일을 실제로 늘리는 것뿐이다. 그래서 생산성이 아무리 높아져도 하루에 몇 시간을 일하느냐를 둘러싼 다툼은 사라지지 않는다.",
+                      "노동일의 길이는 기술이 정해 주는 값이 아니라 자본과 노동이 힘으로 다투어 정하는 값이다. 원문은 오히려 노동일의 지나친 연장이 근대 산업의 독특한 산물로 드러났다고 말한다.",
+                      "원문은 노동일 연장을 통한 절대적 잉여가치의 생산이 자본주의 체계의 일반적 토대이며 상대적 잉여가치가 자라나는 출발점이라고 말한다. 자본주의 이전으로 밀어낼 수 있는 방식이 아니다.",
+                      "생산성이 올라도 노동일은 여전히 필요노동과 잉여노동으로 나뉘며, 마르크스는 바로 그 두 부분의 상대적 크기가 바뀌는 것으로 잉여가치율의 상승을 설명한다."
+                    ],
+                    "en": [
+                      "With the productiveness of labour and its normal intensity given, the only route left for raising the rate of surplus-value is to lengthen the working day itself, so the fight over daily hours does not go away however far productivity rises.",
+                      "The length of the working day is settled by the struggle between capital and labour, not handed down by technique; the text calls the excessive prolongation of the day a peculiar product of Modern Industry.",
+                      "The text calls the production of absolute surplus-value the general groundwork of the capitalist system and the starting-point for relative surplus-value, so it cannot be pushed back into pre-capitalist history.",
+                      "Rising productivity does not dissolve the division of the working day into necessary and surplus labour; Marx explains a rising rate of surplus-value precisely as a change in the relative magnitudes of those two parts."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "노동생산력과 정상적 노동강도가 주어졌을 때, 잉여가치율은 노동일을 실제로 연장함으로써만 끌어올릴 수 있다. 반대로 노동일의 길이가 주어졌을 때 그 상승은 노동일의 구성부분인 필요노동과 잉여노동의 상대적 크기를 바꿈으로써만 이룰 수 있는데, 이 변화는 임금이 노동력 가치 아래로 떨어지지 않으려면 노동생산력이나 노동강도의 변화를 전제한다.",
+                      "en": "given the productiveness of labour and its normal intensity, the rate of surplus-value can be raised only by the actual prolongation of the working-day; on the other hand, given the length of the working-day, that rise can be effected only by a change in the relative magnitudes of the components of the working-day, viz., necessary labour and surplus-labour; a change which, if the wages are not to fall below the value of labour-power, presupposes a change either in the productiveness or in the intensity of the labour."
+                    }
                   }
                 },
                 {
@@ -8047,8 +8870,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "일상적 의미의 유용성과 자본주의적 의미의 생산성은 다를 수 있다. 마르크스는 자본의 관점에서 생산적 노동을 잉여가치를 생산하는 노동으로 규정한다.",
-                    "en": "Usefulness in an everyday sense and productiveness in the capitalist sense can differ. Marx defines productive labor, from the standpoint of capital, as labor that produces surplus-value."
+                    "ko": "학교 선생이 학생을 잘 가르치는 것과 학교 소유주에게 잉여가치를 안겨주는 것은 다른 문제다. 마르크스는 생산적 노동을 노동과 그 유용한 효과 사이의 관계로만 보지 않고, 노동자를 잉여가치를 낳는 직접적 수단으로 만드는 역사적으로 형성된 사회적 생산관계로 규정한다. 그래서 사회에 유용하다는 사실만으로는 자본주의적 의미의 생산성을 설명하지 못한다.",
+                    "en": "A schoolmaster teaching well and enriching the school’s owner are different matters. Marx defines productive labor not merely as a relation between work and its useful effect, but as a historically formed social relation of production that stamps the laborer as a direct means of creating surplus-value. So being socially useful alone cannot explain productiveness in the capitalist sense."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동과 유용한 효과 사이의 관계만이 아니라 노동자를 잉여가치 창출 수단으로 만드는 역사적 생산관계까지 봐야 한다는 것이 원문이 강조하는 지점이다.",
+                      "마르크스는 유용성 자체를 부정하지 않으며, 오히려 물질적 생산 일반에서 유용성 기준이 여전히 성립한다고 인정한다.",
+                      "사회에 유용한 노동이라도 상품생산 형태를 취할 수 있으며, 문제는 그것이 잉여가치를 낳는가이다.",
+                      "생산적 노동 개념은 직업이나 사회적 평판이 아니라 자본과의 사회적 관계에 따라 규정된다."
+                    ],
+                    "en": [
+                      "The text stresses looking beyond the relation between work and useful effect to the historically formed relation of production that turns the laborer into a means of creating surplus-value.",
+                      "Marx does not deny usefulness itself; he even grants that the usefulness criterion still holds for the collective laborer producing material objects in general.",
+                      "Socially useful labor can still take the form of commodity production; the real question is whether it produces surplus-value.",
+                      "Productive labor is defined by a laborer’s social relation to capital, not by occupation or social prestige."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "따라서 생산적 노동자라는 개념은 노동과 유용한 효과, 노동자와 노동생산물 사이의 관계만을 뜻하지 않고, 역사적으로 형성되어 노동자를 잉여가치를 창출하는 직접적 수단으로 낙인찍는 특정한 사회적 생산관계까지 함축한다.",
+                      "en": "Hence the notion of a productive labourer implies not merely a relation between work and useful effect, between labourer and product of labour, but also a specific, social relation of production, a relation that has sprung up historically and stamps the labourer as the direct means of creating surplus-value."
+                    }
                   }
                 },
                 {
@@ -8056,27 +8904,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "16장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best describes the systematic role of Chapter 16?"
+                    "ko": "기계제 생산이 한 산업부문 전체를 장악하고 나아가 중요한 부문들을 모두 장악하고 나면, 그것은 더 이상 몇몇 자본가가 남보다 앞서기 위해 쓰는 방법에 머물지 않는다. 마르크스는 이 변화를 어떻게 정리하는가?",
+                    "en": "Once machine production has conquered an entire branch of industry, and then the important branches as well, it is no longer just a device by which a few capitalists get ahead of the rest. How does Marx sum up that change?"
                   },
                   "choices": {
                     "ko": [
-                      "절대적·상대적 잉여가치의 구분을 유지하면서 실제 자본주의 생산에서 두 방식이 결합되는 전체 구조를 정리한다.",
-                      "상대적 잉여가치 분석을 취소하고 노동일 연장만 유일한 착취 방식이라고 결론낸다.",
-                      "생산적 노동 개념을 도덕적 칭찬으로 바꾸어 가치분석을 끝낸다.",
-                      "잉여가치 생산이 유통의 가격차이에서만 생긴다고 되돌아간다."
+                      "사회를 지배하는 일반적 생산형태가 되고, 아직 형식적으로만 종속된 산업으로 새로 퍼져 나갈 때에만 다시 특별한 방법으로 작동한다.",
+                      "자본주의적 생산방식이 사회 전체의 일반적 형태가 되면 그 부문에서 노동일을 둘러싼 다툼은 끝난다.",
+                      "남보다 앞선 자본가가 얻던 이득이 사라지므로 잉여가치의 생산도 그 부문에서 함께 멈춘다.",
+                      "한 부문을 장악하고 나면 그 뒤로는 생산방법이 더 바뀌지 않고 그대로 굳어진다."
                     ],
                     "en": [
-                      "It preserves the distinction between absolute and relative surplus-value while summarizing the overall structure in which the two combine in actual capitalist production.",
-                      "It cancels the analysis of relative surplus-value and concludes that lengthening the working day is the only form of exploitation.",
-                      "It turns productive labor into moral praise and ends value analysis.",
-                      "It returns to the view that surplus-value arises only from price differences in circulation."
+                      "It becomes the general, socially predominant form of production, and works as a special method only where it is still seizing industries that were merely formally subject to capital.",
+                      "Once the capitalist mode of production is the general form of society, the struggle over the working day in that branch is finished.",
+                      "The advantage the leading capitalist used to enjoy disappears, so the production of surplus-value stops in that branch as well.",
+                      "Once a branch has been conquered, its methods of production harden and are no longer revolutionised."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "16장은 앞선 절대적·상대적 잉여가치 분석의 종합 장이다. 이 장을 지나면 분석은 그 변동 조건을 더 정밀하게 비교하는 17장으로 넘어간다.",
-                    "en": "Chapter 16 synthesizes the preceding analyses of absolute and relative surplus-value. After this, Chapter 17 compares more precisely the conditions under which their magnitudes vary."
+                    "ko": "한 부문을 완전히 장악한 자본주의적 생산방식은 개별 자본가가 경쟁자를 앞지르려고 쓰는 특별한 수단이기를 그치고 사회를 지배하는 일반적 생산형태가 된다. 그 뒤에도 특별한 방법으로 남는 자리는 둘뿐이다. 아직 형식적으로만 자본에 종속된 산업을 새로 집어삼킬 때, 그리고 이미 장악한 산업의 생산방법을 계속 뒤바꿀 때다. 상대적 잉여가치의 생산은 끝나는 것이 아니라 자리를 옮겨 계속된다.",
+                    "en": "Once it has conquered a whole branch of production, the specifically capitalist mode stops being a means by which individual capitalists outrun their rivals and becomes the general, socially predominant form of production. Two openings remain for it as a special method: seizing industries still only formally subject to capital, and revolutionising the methods of those it already holds. Relative surplus-value production does not end; it moves."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "일반적 형태가 된 뒤에도 이 생산방식은 아직 형식적으로만 종속된 산업을 새로 삼킬 때와 이미 삼킨 산업의 생산방법을 계속 뒤바꿀 때 다시 특별한 방법으로 작동한다. 그래서 상대적 잉여가치의 생산에는 끝이 없다.",
+                      "생산방식이 일반화되어도 하루에 몇 시간을 일할지를 둘러싼 다툼은 끝나지 않는다. 원문은 노동일의 지나친 연장 자체가 근대 산업의 독특한 산물이라고 말한다.",
+                      "앞선 자본가가 홀로 누리던 이득이 사라지는 것과 잉여가치의 생산이 멈추는 것은 다른 이야기다. 생산방식이 퍼질수록 필요노동은 사회 전체에서 짧아지고 그만큼 잉여노동은 늘어난다.",
+                      "원문은 이미 장악된 산업들도 생산방법의 변화로 계속 혁명된다고 못 박는다. 한 부문을 손에 넣었다고 해서 기술이 그 자리에 멈춰 서는 것이 아니다."
+                    ],
+                    "en": [
+                      "Even after it becomes the general form, this mode works as a special method again whenever it takes over an industry that was only formally subject to capital and whenever it keeps overturning the methods of an industry it already holds, so the production of relative surplus-value has no end point.",
+                      "The generalisation of the mode of production does not settle how many hours the day will have; the text presents the excessive prolongation of the working day as the peculiar product of Modern Industry itself.",
+                      "The disappearance of the lead capitalist’s private advantage is a different matter from the production of surplus-value stopping; as the mode spreads, necessary labour falls across society and surplus labour grows accordingly.",
+                      "The text insists that the industries already taken over continue to be revolutionised by changes in the methods of production, so conquering a branch does not freeze its technique."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
+                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "일반적으로 말해 특유하게 자본주의적인 생산방식은 한 생산부문 전체를 정복하는 순간, 그리고 중요한 부문들을 모두 정복하고 나면 더욱더, 상대적 잉여가치를 생산하는 한낱 수단이기를 그친다. 그때 그것은 사회를 지배하는 일반적 생산형태가 된다.",
+                      "en": "Generally speaking, the specifically capitalist mode of production ceases to be a mere means of producing relative surplus-value, so soon as that mode has conquered an entire branch of production; and still more so, so soon as it has conquered all the important branches. It then becomes the general, socially predominant form of production."
+                    }
                   }
                 }
               ]
@@ -8119,7 +8992,7 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "노동일 연장",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "절대적 잉여가치: 노동일을 늘려 잉여노동시간을 키운다.",
                   "상대적 잉여가치: 생산성을 높여 필요노동시간을 줄이고 같은 노동일 안의 잉여노동을 늘린다.",
@@ -8127,21 +9000,21 @@
                 ]
               },
               {
-                "title": "필요노동 단축",
-                "items": [
-                  "절대적 잉여가치와 상대적 잉여가치는 서로 배타적인 두 시대 이름이 아니다.",
-                  "절대적 잉여가치는 노동일 연장에 초점을 둔다.",
-                  "상대적 잉여가치는 생산력 상승으로 필요노동을 줄이는 데 초점을 둔다."
-                ]
+                "title": "용어 풀이",
+                "text": "형식적 종속은 자본가가 기존 노동방식을 그대로 둔 채 노동자를 고용해 노동일만 늘리는 상태이고, 실질적 종속은 기계와 분업으로 노동방식 자체가 자본에 맞게 뒤바뀐 상태다. 생산적 노동은 그저 쓸모 있는 물건을 만드는 노동이 아니라 자본에게 잉여가치를 안겨주는 노동을 가리키는 자본주의 특유의 개념이다."
               },
               {
-                "title": "두 방식의 결합",
+                "title": "현대 적용",
+                "text": "오늘날 수당 없는 장시간 근무는 절대적 잉여가치에 가깝고, 자동화나 업무관리 앱으로 같은 시간에 더 많이 처리하게 만드는 것은 상대적 잉여가치에 가깝다. 두 압박은 흔히 한 일터 안에서 동시에 걸려 있다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "노동시간을 늘리는 방식과 필요노동을 줄이는 방식이 어떻게 함께 자본의 축적을 떠받치는지 비교한다."
               }
             ],
             "en": [
               {
-                "title": "Lengthening the Working Day",
+                "title": "Core concepts first",
                 "items": [
                   "Absolute surplus-value: Lengthens the working day to expand surplus labour.",
                   "Relative surplus-value: Raises productivity to reduce necessary labour within the same working day.",
@@ -8149,15 +9022,15 @@
                 ]
               },
               {
-                "title": "Shortening Necessary Labour",
-                "items": [
-                  "Absolute and relative surplus-value are not mutually exclusive historical labels.",
-                  "Absolute surplus-value focuses on lengthening the working day.",
-                  "Relative surplus-value focuses on reducing necessary labour through productivity increases."
-                ]
+                "title": "Terms explained",
+                "text": "Formal subjection means a capitalist hires workers into an old craft process left unchanged and simply lengthens the day, while real subjection means the process itself has been remade by machinery and the division of labour to suit capital. Productive labour, meanwhile, is a distinctly capitalist notion: not merely useful work, but labour that hands capital surplus-value."
               },
               {
-                "title": "Combination of Both Methods",
+                "title": "Today’s application",
+                "text": "Unpaid overtime today resembles absolute surplus-value, while automation or task-tracking apps that squeeze more output from the same hours resemble relative surplus-value; both pressures often hit the same workplace at once."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "Compare lengthening labor-time with reducing necessary labor, and see how both support accumulation."
               }
             ]

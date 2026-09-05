@@ -13,3 +13,6 @@
 | 2026-09-05 | capital-v1-ch04 | flagged | 4 | edited | 3 |
 | 2026-09-05 | capital-v1-ch05 | soft | 3 | edited | 2 |
 | 2026-09-05 | capital-v1-ch06 | flagged | 4 | edited | 0 |
+| 2026-09-05 | capital-v1-ch07 | flagged | 4 | edited | 0 |
+| 2026-09-05 | capital-v1-ch09 | flagged | 4 | edited | 0 |
+| 2026-09-05 | capital-v1-ch16 | flagged | 4 | edited | 0 |

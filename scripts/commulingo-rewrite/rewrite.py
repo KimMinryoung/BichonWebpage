@@ -33,7 +33,7 @@ USAGE = WORK / "usage.jsonl"
 # the key value is a placeholder the proxy replaces.
 PROXY_BASE = "http://127.0.0.1:8110/anthropic"
 API_KEY = "via-llm-proxy"
-MAX_ATTEMPTS = 4
+MAX_ATTEMPTS = 3
 # USD per million tokens: input, output, cache read, cache write.
 PRICES = {
     "claude-sonnet-5": (2.00, 10.00, 0.20, 2.50),
