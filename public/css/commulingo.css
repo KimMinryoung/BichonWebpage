@@ -4550,15 +4550,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-size: 1.5rem;
     letter-spacing: -0.03em;
 }
-.commulingo-home .commulingo-total {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-    width: auto;
-    height: auto;
-    border: 0;
-    background: transparent;
-}
 .commulingo-home-description {
     padding: 4px 18px 16px;
     margin: 0;
@@ -4656,9 +4647,46 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-size: 0.8rem;
     font-weight: 400;
 }
-.commu-updates-more > summary {
-    padding: 10px 0 14px;
-    cursor: pointer;
-    color: var(--link);
-    font-size: 0.8rem;
+
+
+/* One compact progress indicator, aligned with the page title. */
+.commulingo-home-progress {
+    flex: 0 0 116px;
+    display: grid;
+    gap: 7px;
+}
+.commulingo-home-progress-label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    white-space: nowrap;
+}
+.commulingo-home-progress-label label {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+}
+.commulingo-home-progress-label span {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+.commulingo-home-progress progress {
+    display: block;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    border: 0;
+    background: color-mix(in srgb, var(--text-muted) 24%, transparent);
+    color: var(--text-secondary);
+}
+.commulingo-home-progress progress::-webkit-progress-bar {
+    background: color-mix(in srgb, var(--text-muted) 24%, transparent);
+}
+.commulingo-home-progress progress::-webkit-progress-value {
+    background: var(--text-secondary);
+}
+.commulingo-home-progress progress::-moz-progress-bar {
+    background: var(--text-secondary);
 }

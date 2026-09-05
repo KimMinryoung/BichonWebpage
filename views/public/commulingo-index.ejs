@@ -13,9 +13,12 @@
         <header class="box commulingo-hero commulingo-hero--home">
             <div class="commulingo-hero-main">
                 <h1><%= strings.commuLingo.title %></h1>
-                <div class="commulingo-total">
-                    <span id="commuProgressText">0%</span>
-                    <small><%= strings.commuLingo.progress %></small>
+                <div class="commulingo-home-progress">
+                    <div class="commulingo-home-progress-label">
+                        <label for="commuProgressBar"><%= strings.commuLingo.homeProgress %></label>
+                        <span id="commuProgressText">0%</span>
+                    </div>
+                    <progress id="commuProgressBar" max="100" value="0">0%</progress>
                 </div>
             </div>
             <p class="commulingo-home-description"><%= strings.commuLingo.description %></p>

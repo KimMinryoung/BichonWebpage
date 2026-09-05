@@ -11,13 +11,7 @@
                     <% } %>
                 </summary>
                 <% if (group.items.length) { %>
-                    <%- include('commulingo-update-items', { items: group.items.slice(0, 3) }) %>
-                    <% if (group.items.length > 3) { %>
-                        <details class="commu-updates-more">
-                            <summary><%= strings.commuLingo.updatesMore %> (<%= group.items.length - 3 %>)</summary>
-                            <%- include('commulingo-update-items', { items: group.items.slice(3) }) %>
-                        </details>
-                    <% } %>
+                    <%- include('commulingo-update-items', { items: group.items }) %>
                 <% } else { %>
                     <p class="commu-updates-description"><%= group.unavailable ? strings.commuLingo.updatesUnavailable : strings.commuLingo.updatesEmpty %></p>
                 <% } %>

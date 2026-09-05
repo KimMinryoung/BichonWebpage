@@ -11,11 +11,7 @@
     var updateGroups = document.querySelectorAll('.commu-updates-group');
     updateGroups.forEach(function(group) {
         group.addEventListener('toggle', function() {
-            if (!group.open) {
-                var more = group.querySelector('.commu-updates-more');
-                if (more) more.open = false;
-                return;
-            }
+            if (!group.open) return;
             updateGroups.forEach(function(other) {
                 if (other !== group) other.open = false;
             });
@@ -39,6 +35,7 @@
     var els = {
         list: document.getElementById('commuBookList'),
         total: document.getElementById('commuProgressText'),
+        totalBar: document.getElementById('commuProgressBar'),
         resume: document.getElementById('commuResume')
     };
 
@@ -143,7 +140,9 @@
             (book.lessonIds || []).forEach(function(id) { allIds.push(id); });
         });
         var done = allIds.filter(function(id) { return progress[id] && progress[id].completed; }).length;
-        if (els.total) els.total.textContent = Math.round((done / (allIds.length || 1)) * 100) + '%';
+        var percent = Math.round((done / (allIds.length || 1)) * 100);
+        if (els.total) els.total.textContent = percent + '%';
+        if (els.totalBar) els.totalBar.value = percent;
 
         els.list.innerHTML = '';
         groupBooks().forEach(function(group) {
