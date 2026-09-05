@@ -60,6 +60,18 @@ function normalizeCandidate(raw, chapter) {
                 label: q.source.label,
                 quote: q.source.quote,
             } : undefined;
+            // Feedback lines are sentences; a model that drops the final stop
+            // gets it back here rather than failing the gate for punctuation.
+            const feedback = q.choiceFeedback && typeof q.choiceFeedback === 'object' ? {} : q.choiceFeedback;
+            if (feedback) {
+                ['ko', 'en'].forEach(function(locale) {
+                    const items = q.choiceFeedback[locale];
+                    feedback[locale] = Array.isArray(items) ? items.map(function(item) {
+                        const t = String(item == null ? '' : item).trim();
+                        return t && !/[.!?。」’”)]$/.test(t) ? t + '.' : t;
+                    }) : items;
+                });
+            }
             return orderKeys({
                 id: 'q' + (index + 1),
                 type: 'multiple_choice',
@@ -68,7 +80,7 @@ function normalizeCandidate(raw, chapter) {
                 choices: q.choices,
                 answer: 0,
                 explanation: q.explanation,
-                choiceFeedback: q.choiceFeedback,
+                choiceFeedback: feedback,
                 source,
             }, QUESTION_KEYS);
         });
