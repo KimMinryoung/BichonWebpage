@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# commulingo-people-upsert — register/update CommuLingo people through the Admin
+# store's validation (see scripts/commulingo-people-upsert.js for the spec).
+# Runs inside the production container so DB_HOST resolves; `-` reads stdin.
+#
+#   scripts/commulingo-people-upsert spec.json [--dry-run] [--changed-by who]
+#   cat spec.json | scripts/commulingo-people-upsert - --dry-run
+set -euo pipefail
+CONTAINER="${CONTAINER_NAME:-leninbot-frontend}"
+SPEC="${1:?usage: commulingo-people-upsert <spec.json|-> [--dry-run] [--changed-by who]}"; shift
+if [ "$SPEC" = "-" ]; then
+    exec docker exec -i "$CONTAINER" node /app/scripts/commulingo-people-upsert.js - "$@"
+fi
+exec docker exec -i "$CONTAINER" node /app/scripts/commulingo-people-upsert.js - "$@" < "$SPEC"

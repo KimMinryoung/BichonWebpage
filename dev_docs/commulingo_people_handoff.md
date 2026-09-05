@@ -75,6 +75,14 @@ not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
   `_check_native_script()` are the Python port, wired into `_validate` so
   `commulingo_edit` rejects the mismatch before staging or applying. Its tool
   description carries the rule for the agent.
+- `data/commulingo/person-card-validation.js` — card-label rules (fate label is a
+  short label, not a sentence; citizenship/origin labels are nations, not
+  birthplaces). `createPersonAdmin` additionally requires a `role`. Enforced on
+  write by the store and re-checked by `scripts/audit-person-card-fields.js`
+  (exit 1). New people go through `scripts/commulingo-people-upsert`, which
+  calls the store from inside the container; migration 167 (2026-09-05,
+  voldemar-ulmer: no role row, sentence fate label, birthplace origin) is the
+  hand-SQL failure that motivated both.
 - `scripts/audit-person-native-names.js` — backstop for rows written before the
   guard or by hand-run SQL; exits 1 when mismatches remain.
 

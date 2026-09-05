@@ -2,6 +2,7 @@ const db = require('../../config/database');
 const { OFFICE_ICON, normalizeFateLabel } = require('./people-standard');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumns, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
+const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate } = require('./people-admin-validation');
 
 // Person records for the CommuLingo admin API: list/get, create/update/
@@ -53,6 +54,21 @@ async function replaceRole(client, personId, role) {
             category ? '' : localized(label, 'en'),
         ]
     );
+}
+
+// Card labels are short and never a place: the same rule the audit script
+// checks after hand-run SQL (data/commulingo/person-card-validation.js).
+function assertCardLabels({ fateKo, fateEn, citizenship, origin }) {
+    const problems = [
+        ...fateLabelProblems({ ko: fateKo, en: fateEn }),
+        ...nationalityLabelProblems({
+            citizenshipKo: citizenship && citizenship.ko,
+            citizenshipEn: citizenship && citizenship.en,
+            originKo: origin && origin.ko,
+            originEn: origin && origin.en,
+        }),
+    ];
+    if (problems.length) throw badRequest(problems.join(' | '));
 }
 
 function rowToPerson(row) {
@@ -324,6 +340,14 @@ async function createPersonAdmin(rawPayload, options = {}) {
             'SELECT COALESCE(MAX(sort_order), -1) + 1 AS next_sort FROM commulingo_people'
         );
         const years = parseLifeYears(payload.years || '');
+        // Every card belongs to an office, a category or at least an icon;
+        // a person without a role row is invisible to the office/category pages.
+        if (!payload.role || typeof payload.role !== 'object') {
+            throw badRequest('role is required on create: { officeId } (e.g. state-security), { category } or { icon }');
+        }
+        const fateKo = payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), years.deathYear) : '';
+        const fateEn = payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), years.deathYear) : '';
+        assertCardLabels({ fateKo, fateEn, citizenship, origin });
         await client.query(
             `INSERT INTO commulingo_people
                 (id, group_id, sort_order, initial, cyrillic, years_label, birth_year, death_year,
@@ -360,8 +384,8 @@ async function createPersonAdmin(rawPayload, options = {}) {
                 contentLocalized(payload.bio, 'ko'),
                 localized(payload.bio, 'en'),
                 payload.fate ? payload.fate.kind || '' : '',
-                payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), years.deathYear) : '',
-                payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), years.deathYear) : '',
+                fateKo,
+                fateEn,
                 citizenship.code,
                 citizenship.ko,
                 citizenship.en,
@@ -487,28 +511,39 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             set('bio_ko', contentLocalized(payload.bio, 'ko'));
             set('bio_en', localized(payload.bio, 'en'));
         }
+        let citizenshipLabels = null;
+        let originLabels = null;
         if (payload.citizenship !== undefined) {
             const value = normalizeNationality(payload.citizenship, 'citizenship');
+            citizenshipLabels = value;
             set('citizenship_code', value.code);
             set('citizenship_label_ko', value.ko);
             set('citizenship_label_en', value.en);
         }
         if (originInput.touched) {
             const value = normalizeNationality(originInput.value, 'nationalOrigin');
+            originLabels = value;
             set('origin_code', value.code);
             set('origin_label_ko', value.ko);
             set('origin_label_en', value.en);
         }
+        let fateKo = null;
+        let fateEn = null;
         if (payload.fate !== undefined) {
             // Death year comes from an incoming years payload if present, else the
             // stored record — so the fate label is stripped against the right year.
             const deathYear = payload.years !== undefined
                 ? parseLifeYears(payload.years || '').deathYear
                 : before.deathYear;
+            fateKo = payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), deathYear) : '';
+            fateEn = payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), deathYear) : '';
             set('fate_kind', payload.fate ? payload.fate.kind || '' : '');
-            set('fate_label_ko', payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), deathYear) : '');
-            set('fate_label_en', payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), deathYear) : '');
+            set('fate_label_ko', fateKo);
+            set('fate_label_en', fateEn);
         }
+        // Only the fields this patch touches are checked (existing rows may
+        // carry tolerated legacy labels).
+        assertCardLabels({ fateKo, fateEn, citizenship: citizenshipLabels, origin: originLabels });
         if (sets.length) {
             set('updated_at', new Date());
             values.push(id);
