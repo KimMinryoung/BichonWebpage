@@ -61,3 +61,9 @@ docs/*.html
 # Bulk-translation glossary dump (regenerated from the DB by extract_glossary.py)
 scripts/bulk-translate/glossary-db.json
 __pycache__/
+
+# CommuLingo data-only SQL (content edits, no DDL) is kept in Cloudflare R2
+# next to the daily DB dumps (cyber-lenin-backups/commulingo-migrations/,
+# uploaded with scripts/archive-migrations-r2), not in git. Schema migrations
+# stay tracked in scripts/migrations/.
+scripts/migrations/data/

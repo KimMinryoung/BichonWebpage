@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# archive-migrations-r2 — copy scripts/migrations/*.sql to the existing R2 backup
+# bucket (cyber-lenin-backups) under commulingo-migrations/, so the reasoned
+# change log of CommuLingo data edits lives next to the daily DB dumps instead
+# of (or as well as) in git.
+#
+# Reuses the leninbot repo's R2 plumbing (_r2_backup.r2_put, the Cloudflare API
+# token from systemd credstore). The token is not in .env; it is mounted for the
+# running leninbot services, so this script points CREDENTIALS_DIRECTORY at one
+# of those mounts exactly the way a hand-run lane does. Objects under this prefix
+# are never pruned: r2_retention only deletes dated *.dump keys under the backup
+# prefixes.
+#
+# Usage:
+#   scripts/archive-migrations-r2            # upload every migration not yet in R2
+#   scripts/archive-migrations-r2 --all      # re-upload everything (overwrite)
+#   scripts/archive-migrations-r2 --list     # just list what the bucket holds
+set -euo pipefail
+FRONTEND_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+LENINBOT_DIR="${LENINBOT_DIR:-/home/grass/leninbot}"
+MOUNT=""
+for d in /run/credentials/*/; do
+    if [ -r "$d/r2_cf_api_token" ]; then MOUNT="$d"; break; fi
+done
+if [ -z "$MOUNT" ]; then
+    echo "no readable r2_cf_api_token mount under /run/credentials (is leninbot-api running?)" >&2
+    exit 1
+fi
+cd "$LENINBOT_DIR"
+set -a; . ./.env; set +a
+MODE="${1:-}" FRONTEND_DIR="$FRONTEND_DIR" CREDENTIALS_DIRECTORY="$MOUNT" ./venv/bin/python - <<'EOF'
+import glob, hashlib, os, sys
+sys.path.insert(0, 'scripts'); sys.path.insert(0, '.')
+from _r2_backup import promote_systemd_credentials, r2_put
+promote_systemd_credentials()
+from r2_retention import _list_keys
+
+BUCKET = 'cyber-lenin-backups'
+PREFIX = 'commulingo-migrations/'
+mode = os.environ.get('MODE', '')
+existing = set(_list_keys(BUCKET, PREFIX))
+if mode == '--list':
+    for k in sorted(existing): print(k)
+    print(f'{len(existing)} object(s) under {BUCKET}/{PREFIX}')
+    sys.exit(0)
+uploaded = 0
+root = os.environ['FRONTEND_DIR']
+paths = glob.glob(os.path.join(root, 'scripts/migrations/*.sql')) + glob.glob(os.path.join(root, 'scripts/migrations/data/*.sql'))
+for path in sorted(paths):
+    key = PREFIX + os.path.basename(path)
+    if key in existing and mode != '--all':
+        continue
+    r2_put(BUCKET, key, path, 'text/plain; charset=utf-8')
+    digest = hashlib.md5(open(path, 'rb').read()).hexdigest()[:8]
+    print(f'uploaded {key} ({os.path.getsize(path)} bytes, md5 {digest})')
+    uploaded += 1
+print(f'{uploaded} uploaded; {len(_list_keys(BUCKET, PREFIX))} object(s) now under {BUCKET}/{PREFIX}')
+EOF

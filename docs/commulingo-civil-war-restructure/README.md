@@ -63,4 +63,4 @@ SQL은 본문 해시로 동시 편집을 감지하며, 모든 변경을 한 트�
 
 ## 기록 방식 변경 (2026-09-05, 사용자 결정)
 
-본문 사본(`.ko.md`/`.en.md`)과 데이터 JSON은 SQL 안에 같은 내용이 있어 중복이므로 저장소에서 제외했다. 데이터 변경 이력은 `scripts/migrations/16x_*.sql`만으로 남긴다. 이 파일들의 보관 장소를 git 대신 Cloudflare R2로 옮기는 안이 논의 중이다.
+본문 사본(`.ko.md`/`.en.md`)과 데이터 JSON은 SQL 안에 같은 내용이 있어 중복이므로 저장소에서 제외했다. 데이터 변경 이력은 SQL만으로 남긴다. DDL이 없는 데이터 전용 SQL은 `scripts/migrations/data/`에 두고 git에서 제외하며(.gitignore), `scripts/archive-migrations-r2`로 일일 DB 백업과 같은 R2 버킷(`cyber-lenin-backups/commulingo-migrations/`)에 올린다. 스키마 변경이 든 SQL(164번의 relations 칼럼 등)은 저장소에 남는다. 165~167번은 2026-09-05 R2로 옮겼다.
