@@ -60,7 +60,7 @@ const META_PROMPT_KO = /(핵심은 무엇인가|분석하는 것은 무엇인가
 // An explanation that opens by narrating the question's role in the lesson
 // arc (개념의 출발점은 …, 심화의 핵심은 …, 사례 적용에서는 …) tells the
 // learner nothing about the concept; it is the harness labelling its own work.
-const FORMULAIC_OPENER_KO = /^(개념|기제|구분|상황|종합|긴장|매개|비판|체계|심화|기본|핵심|사례|인식)(의 (출발점|핵심|요점|초점)|에서)는?\s|^(다음 장과의 연결은|이 (문항|장)의 (연결점|핵심)은|연결점은|이 문항은)/;
+const FORMULAIC_OPENER_KO = /^(개념|기제|구분|상황|종합|긴장|매개|비판|체계|심화|기본|핵심|사례|인식)(의 (출발점|핵심|요점|초점)|에서)(은|는)?\s|^(다음 장과의 연결은|이 (문항|장)의 (연결점|핵심)은|연결점은|이 문항은)/;
 const SOURCE_HREF = /^(\/commulingo\/docs\/[^#\s]+(#[^\s]+)?|https:\/\/www\.marxists\.org\/[^\s]+)$/;
 
 function str(value) { return String(value == null ? '' : value); }
