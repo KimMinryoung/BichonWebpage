@@ -421,6 +421,16 @@ Rules the corpus does not yet satisfy everywhere are tolerated per (rule, label)
 
 `scripts/check-course-source-excerpts.js` verifies every `question.source` in the bundle: Korean quotes verbatim against the site's own documents, English quotes verbatim against cached marxists.org chapters (`--fetch` to fill the cache under `temp_dev/commulingo-rewrite/marxists/`). Capital questions cite marxists.org because the text is not on the site; the Korean quote is our own translation, never a published edition.
 
+## Learner Loop (September 5 2026)
+
+The lesson client (`public/js/commulingo.js`) records every answer per question in `localStorage` (`commulingo-answers-v1`, shared code in `public/js/commulingo-schedule.js`) and, for logged-in learners, mirrors it to `commulingo_question_progress` (migration 163) through `POST /commulingo/progress/answers`. On top of that history:
+
+- A lesson that ends below full marks offers 「틀린 문제 다시 풀기 · N」: only the missed questions come back, in order, until all are answered correctly; the lesson counts as completed only then, and the closing note says 「처음 3/5, 다시 풀어 5/5」.
+- A question answered wrong enters review: due at once, then 1, 3, 7, 14, 30 days after consecutive correct answers, graduating after three in a row. The book hero shows 「복습하기 · N」 for due questions of that book (up to 20 per session, shuffled across lessons) and the hub's resume card shows the count; `scripts/smoke-commulingo-schedule.js` pins the rules.
+- Keys 1-4 pick a choice and Enter advances; the hint shows only on pointer devices.
+
+Explanations and per-choice feedback are written for that moment: the prompt's situation, the mechanism behind the correct answer, and what the tempting wrong answer confuses. The `formulaic-opener` rule and the harness gate reject explanations that narrate the question's role instead.
+
 ## Capital Rewrite Harness (September 5 2026)
 
 `scripts/commulingo-rewrite/` rewrites Capital chapter by chapter with Claude through the local proxy, gates every candidate with the shared rules plus verbatim-quote, kept-question and terminology checks, and applies only reviewed chapters. See its README for the batch procedure; the applied-chapter ledger is `docs/commulingo-capital-rewrite-log.md`.

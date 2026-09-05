@@ -734,40 +734,40 @@
           "diagram": {
             "kind": "contrast",
             "ko": {
-              "title": "표면과 관계: 교환의 두 얼굴",
+              "title": "교환을 보는 두 시각",
               "left": {
-                "heading": "물건의 이동처럼 보이는 표면",
+                "heading": "표면적 현상",
                 "rows": [
-                  "물건들이 스스로 자리를 바꾸는 것처럼 보인다",
-                  "교환비율이 물건의 자연적 속성에서 나오는 듯하다",
-                  "화폐는 그저 편리한 약속처럼 보인다"
+                  "상품이 스스로 시장에 나가는 것처럼 보인다",
+                  "물건과 물건이 그저 자리를 바꾸는 과정처럼 보인다",
+                  "화폐는 사람들이 편의로 붙인 기호처럼 보인다"
                 ]
               },
               "right": {
-                "heading": "소유자들의 사회적 관계라는 실제",
+                "heading": "마르크스의 분석",
                 "rows": [
-                  "소유자들이 서로를 사적 소유자로 인정해야 양도가 성립한다",
-                  "보편적 교환가능성은 사회적 과정을 통해 특정 상품에 부여된다",
-                  "화폐는 상품교환의 모순이 낳은 사회적 형식이다"
+                  "소유자가 상품을 대신 시장에 낸다",
+                  "소유자들이 서로를 사적 소유자로 인정하는 관계가 그 밑에서 작동한다",
+                  "일반적 등가물이 사회적 배제 과정을 거쳐 화폐로 굳어진다"
                 ]
               }
             },
             "en": {
-              "title": "Surface and Relation: Two Faces of Exchange",
+              "title": "Two views of exchange",
               "left": {
-                "heading": "The surface: things changing places",
+                "heading": "Surface appearance",
                 "rows": [
-                  "Things appear to change places by themselves",
-                  "Exchange ratios seem to arise from the natural properties of things",
-                  "Money looks like a mere convenient agreement"
+                  "Commodities seem to go to market by themselves",
+                  "It looks like a mere process of things changing places",
+                  "Money looks like a sign people attached for convenience"
                 ]
               },
               "right": {
-                "heading": "The reality: a social relation among owners",
+                "heading": "Marx's analysis",
                 "rows": [
-                  "Owners must recognize one another as private proprietors for alienation to occur",
-                  "Universal exchangeability is conferred on a particular commodity through a social process",
-                  "Money is a social form born of the contradictions of commodity exchange"
+                  "Owners bring commodities to market on their behalf",
+                  "A relation of mutual recognition among private owners operates beneath it",
+                  "A general equivalent is fixed as money through a social process of exclusion"
                 ]
               }
             }
@@ -805,21 +805,21 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "2장은 상품관계가 물건들만의 관계가 아니라 상품 소유자들의 의지관계로 실행된다는 점에서 출발한다. 다만 그 의지는 개인 마음대로가 아니라 상품이라는 경제적 형식에 의해 매개된다. 이는 뒤에서 다룰 화폐 발생의 출발점이 된다.",
-                    "en": "Chapter 2 begins from the fact that commodity relations are carried out through the wills of commodity owners, not by things alone. But those wills are mediated by the economic form of the commodity, not by personal whim. This is the starting point for the genesis of money discussed later."
+                    "ko": "상품이 시장에 나가려면 누군가 그것을 들고 나가야 한다. 마르크스는 그 누군가, 즉 서로를 사적 소유자로 인정하는 사람들의 관계에서 논의를 시작한다. 행정기관이나 상인이 대신한다는 상은 이 상호 인정 자체를 다른 기관으로 옮겨버려 문제를 회피한다. 이 출발점이 뒤에 나올 화폐 발생 논의의 토대가 된다.",
+                    "en": "For a commodity to reach the market, someone must carry it there. Marx starts from that someone, from the relation among people who recognize one another as private owners. Imagining an administrative body or merchant class doing this instead just relocates the recognition elsewhere without explaining it. This starting point grounds the later account of money's genesis."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "소유자들의 상호 인정은 이후 논의 전체가 딛고 서는 전제다.",
-                      "교환비율은 사전에 행정적으로 정해지는 것이 아니라 교환과정에서 사회적으로 형성된다.",
-                      "물건에 본능을 부여하면 교환의 사회적 성격이 사라져 버린다.",
-                      "상인은 뒤에 등장하는 매개자일 뿐, 2장이 다루는 근본 관계는 소유자들 사이의 관계다."
+                      "소유자의 인정 행위가 개인 마음대로가 아니라 상품형태에 의해 매개된다는 점도 함께 기억하면 좋다.",
+                      "행정기관이 비율을 미리 정한다는 상상은 교환비율이 시장에서 사후적으로 정해진다는 점을 놓친 생각이다.",
+                      "물건 자체의 본능이라는 발상은 상품을 자연물로 착각해 소유자의 사회적 행위를 지워버린 것이다.",
+                      "상인이 대신 성사시킨다는 생각은 소유자들 사이의 상호 인정 관계를 상인이라는 제3자로 대체해버린 오해다."
                     ],
                     "en": [
-                      "Mutual recognition among owners is the premise the whole chapter rests on.",
-                      "Exchange ratios are not fixed administratively in advance but formed socially in the process of exchange.",
-                      "Giving things an instinct erases the social character of exchange.",
-                      "Merchants appear later as intermediaries; the basic relation Chapter 2 addresses is among the owners themselves."
+                      "It helps to remember that recognition itself is mediated by the commodity-form, not by personal whim alone.",
+                      "Imagining a body fixing ratios in advance forgets that exchange ratios are settled afterward, in the market itself.",
+                      "Treating exchange as a natural instinct mistakes commodities for natural things and erases owners' social action.",
+                      "Picturing merchants doing it for owners replaces the owners' mutual recognition with a third-party stand-in."
                     ]
                   },
                   "source": {
@@ -829,7 +829,7 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "상품이 스스로 시장에 나가 교환할 수 없다는 것은 분명하다. 그래서 우리는 상품의 보호자, 곧 그 소유자에게 의지해야 한다.",
+                      "ko": "상품은 스스로 시장에 나가 교환할 수 없다는 것은 명백하다. 그래서 우리는 상품의 보호자, 즉 상품의 소유자에게 의지할 수밖에 없다.",
                       "en": "It is plain that commodities cannot go to market and make exchanges of their own account. We must, therefore, have recourse to their guardians, who are also their owners."
                     }
                   }
@@ -858,21 +858,21 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "교환에서 상품은 소유자에게는 비사용가치이고 타인에게는 사용가치여야 한다. 이 조건을 단순한 선물이나 직접 소비와 혼동하면, 왜 상품이 교환을 통해서만 사회적으로 실현되는지 보이지 않는다. 이 이중성이 2장 전체가 다루는 소유자 간 관계의 출발점이다.",
-                    "en": "In exchange, the commodity is a non-use-value for its owner and a use-value for someone else. Confusing this with gift-giving or direct consumption obscures why the commodity is socially realized only through exchange. This duality is the starting point of the owner-to-owner relation Chapter 2 examines."
+                    "ko": "외투 소유자에게 외투는 남는 물건이지만 밀 소유자에게는 필요한 것이고, 반대도 마찬가지다. 이 어긋남이 있어야 두 사람이 서로 넘길 이유가 생긴다. 가치와 사용가치를 상품마다 하나씩 나눠 가진다는 오답은 모든 상품이 이 이중성을 함께 지닌다는 점을 놓친다. 이 이중성이 교환관계 전체의 출발 조건이다.",
+                    "en": "The coat is surplus to its owner but needed by the wheat owner, and the reverse holds too; this mismatch is exactly why the two have reason to hand goods over. The idea that one commodity holds only value and the other only use-value misses that every commodity carries both sides at once. This duality is the starting condition for the whole exchange relation."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "이 이중성이 있어야 소유자가 자기 상품을 넘길 동기를 갖는다.",
-                      "모든 상품은 가치와 사용가치를 함께 지니므로 이렇게 나누는 것은 틀렸다.",
-                      "절실한 생활수단이라면 소유자는 애초에 시장에 내놓지 않는다.",
-                      "선물은 등가교환의 사회적 인정 관계를 건너뛰므로 상품교환과 다르다."
+                      "이 이중성 때문에 상품은 먼저 가치로 실현되어야 사용가치로도 실현될 수 있다는 점을 눈여겨보면 좋다.",
+                      "가치와 사용가치를 상품마다 나눠 가진다는 상상은 모든 상품이 두 성격을 동시에 지닌다는 점을 놓친 것이다.",
+                      "두 상품 모두 절실한 생활수단이어야 한다는 생각은 애초에 그러면 소유자가 넘길 이유가 없다는 점을 놓친 것이다.",
+                      "선물처럼 값을 몰라도 된다는 생각은 교환이 가치관계를 통해 실현된다는 점 자체를 지워버린 것이다."
                     ],
                     "en": [
-                      "This duality is exactly what gives the owner a motive to part with the commodity.",
-                      "Every commodity carries both value and use-value together, so this split is mistaken.",
-                      "If it were truly urgent for daily life, the owner would not bring it to market at all.",
-                      "A gift skips the social recognition involved in equivalent exchange, unlike commodity exchange."
+                      "Notice that because of this duality a commodity must first be realized as value before it can be realized as use-value.",
+                      "Splitting value and use-value between the two commodities misses that every commodity carries both at once.",
+                      "If both were urgent necessities for their own owners there would be no reason to give them up at all.",
+                      "Treating it like a gift where value need not matter erases the very value-relation that exchange realizes."
                     ]
                   },
                   "source": {
@@ -882,8 +882,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "그의 상품은 그 자신에게는 직접적 사용가치를 지니지 않는다. 그렇지 않다면 그는 그것을 시장에 가져오지 않을 것이다. 그것은 타인에게는 사용가치를 지니지만, 그 자신에게는 오직 교환가치의 저장고, 곧 교환수단이라는 직접적 사용가치만을 지닌다.",
-                      "en": "His commodity possesses for himself no immediate use-value. Otherwise, he would not bring it to the market. It has use-value for others; but for himself its only direct use-value is that of being a depository of exchange-value, and, consequently, a means of exchange."
+                      "ko": "그의 상품은 그 자신에게는 직접적 사용가치를 갖지 않는다. … 모든 상품은 그 소유자에게는 비사용가치이며, 비소유자에게는 사용가치이다.",
+                      "en": "His commodity possesses for himself no immediate use-value. … All commodities are non-use-values for their owners, and use-values for their non-owners."
                     }
                   }
                 },
@@ -892,40 +892,40 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "2장의 교환은 단순히 “사람들이 필요한 물건을 서로 바꾼다”는 설명과 어떻게 다른가?",
-                    "en": "How is Chapter 2’s account of exchange different from simply saying, “People swap things they need”?"
+                    "ko": "두 사람이 물건을 넘길 때 상대의 물건을 마음대로 빼앗지 않고 반드시 합의를 거친다. 이런 합의가 성립하려면 두 사람은 서로를 무엇으로 인정해야 하는가?",
+                    "en": "When two people hand over goods, neither simply seizes the other's item; a mutual agreement is required instead. What must each recognize the other as, for such an agreement to hold?"
                   },
                   "choices": {
                     "ko": [
-                      "사적 소유자들이 서로의 권리를 인정하며 상품을 양도하고 취득하는 사회적 관계를 포함한다.",
-                      "국가가 승인한 비율에 따라 물건을 넘겨주는 행정 절차로 축소된다.",
-                      "생산과는 무관하게 우연히 일어나는 개인의 심리적 선호 문제로 그친다.",
-                      "상품들이 서로 자리를 옮기는 과정이며 소유자의 인정 행위는 부수적인 사정일 뿐이다."
+                      "그 물건에 대한 권리를 가진 사적 소유자",
+                      "물건을 다룰 자격만 있는 국가의 대리인",
+                      "서로의 필요를 대신 계산해 주는 행정관",
+                      "교환 없이도 서로의 재산을 공유하는 공동체 성원"
                     ],
                     "en": [
-                      "It includes the social relation in which private owners recognize one another's rights while alienating and acquiring commodities.",
-                      "It is reduced to an administrative procedure of handing over goods at a state-approved ratio.",
-                      "It becomes a matter of accidental individual psychological preference, unrelated to production.",
-                      "It is a process in which commodities merely change places, with owners’ recognition as a mere accessory."
+                      "A private proprietor holding rights over that item",
+                      "A mere state agent authorized to handle goods",
+                      "An administrator who calculates each other's needs",
+                      "A member of a community that already shares property without exchange"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 욕구를 부정하지 않지만, 상품교환을 사적 소유와 상호 인정이라는 사회적 관계로 본다. 물건의 이동만 보고 소유자들의 인정 행위를 부수적으로 취급하면, 왜 그것이 계약이라는 형태를 취하는지가 설명되지 않는다. 이 관계가 뒤이은 일반적 등가물 논의의 토대가 된다.",
-                    "en": "Marx does not deny needs, but treats commodity exchange as a social relation of private property and mutual recognition. Treating owners' recognition as incidental to the movement of things fails to explain why exchange takes the form of a contract. This relation grounds the later discussion of the general equivalent."
+                    "ko": "물건을 강제로 빼앗지 않고 합의로 넘기려면, 두 사람은 서로를 그 물건에 대한 권리를 가진 사적 소유자로 인정해야 한다. 이 인정은 계약이라는 형태로 나타나지만, 그 계약은 실은 두 사람 사이의 경제적 관계가 비추어진 것이다. 공동체가 재산을 공유한다는 오답은 애초에 사적 소유가 전제되지 않으면 교환이 시작되지 않는다는 점을 놓친다.",
+                    "en": "To hand goods over by agreement rather than seizure, the two must recognize each other as private proprietors with rights over the item. This recognition takes the form of a contract, but the contract is really a reflection of the economic relation between them. The idea of a community sharing property already misses that exchange cannot even begin without private ownership presupposed."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "의지들 사이의 관계가 실제 경제관계의 반영이라는 점이 핵심이다.",
-                      "교환비율을 행정이 미리 정한다고 보면 시장에서의 사회적 형성 과정을 놓친다.",
-                      "심리적 선호로 축소하면 상품이 왜 계약과 권리 인정을 요구하는지 설명할 수 없다.",
-                      "물건의 이동을 앞세우면 그 이동을 성립시키는 사람들 사이의 관계가 가려진다."
+                      "이 인정이 법적 자유처럼 보여도 실은 상품관계라는 경제적 관계의 반영이라는 점까지 이어서 생각해보면 좋다.",
+                      "국가 대리인이라는 상상은 인정 행위를 두 소유자 사이의 관계에서 국가라는 제3자로 옮겨버린 것이다.",
+                      "행정관이 필요를 계산해 준다는 생각은 교환이 두 의지 사이의 관계라는 점을 지워버린 것이다.",
+                      "공동체 성원이라는 답은 사적 소유가 없는 곳에서는 애초에 교환관계 자체가 성립하지 않는다는 점을 놓친 것이다."
                     ],
                     "en": [
-                      "What matters is that the relation between wills reflects the real economic relation.",
-                      "Treating the ratio as fixed by administration in advance misses its social formation in the market.",
-                      "Reducing it to psychological preference cannot explain why commodities require contract and recognized rights.",
-                      "Foregrounding the movement of things hides the relation among people that makes that movement possible."
+                      "It helps to go further and see that this recognition, though it looks like legal freedom, actually reflects the economic relation of commodity-owning.",
+                      "Imagining a state agent shifts the act of recognition from the two owners onto a third party, the state.",
+                      "An administrator calculating needs erases the fact that exchange is a relation between two wills.",
+                      "A community member misses that where there is no private property, the exchange relation cannot arise at all."
                     ]
                   },
                   "source": {
@@ -935,8 +935,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "이렇게 계약으로 표현되는 이 법적 관계는, 그 계약이 발전된 법체계의 일부이든 아니든, 두 의지 사이의 관계이며 두 사람 사이의 실제 경제관계의 반영일 뿐이다.",
-                      "en": "This juridical relation, which thus expresses itself in a contract, whether such contract be part of a developed legal system or not, is a relation between two wills, and is but the reflex of the real economic relation between the two."
+                      "ko": "그들은 그러므로 서로에게서 사적 소유자의 권리를 상호 인정해야 한다. 이렇게 계약으로 표현되는 이 법적 관계는, 그것이 발달된 법체계의 일부이든 아니든, 두 의지 사이의 관계이며 두 사람 사이의 실제 경제관계의 반영일 뿐이다.",
+                      "en": "They must therefore, mutually recognise in each other the rights of private proprietors. This juridical relation, which thus expresses itself in a contract, whether such contract be part of a developed legal system or not, is a relation between two wills, and is but the reflex of the real economic relation between the two."
                     }
                   }
                 },
@@ -964,21 +964,21 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "각 소유자는 자기 상품을 보편적으로 교환 가능하게 만들고 싶지만, 그 보편성은 사적 주장만으로 성립하지 않는다. 사회적 교환과정이 특정 상품을 일반적 등가물로 배제해 세우면서 화폐형태가 생긴다. 화폐의 기원에 대한 다음 설명은 바로 이 배제 위에 선다.",
-                    "en": "Each owner wants their commodity to be universally exchangeable, but universality cannot be created by private assertion. The social process of exchange singles out a particular commodity as the general equivalent, giving rise to the money-form, which grounds the account of money's origin that follows."
+                    "ko": "각자가 자기 상품을 보편적 등가물로 여기지만, 모두가 그렇게 여기는 순간 실제로 등가물 노릇을 하는 상품은 하나도 없어진다. 이 막다른 상황에서 상품들의 사회적 행위 전체가 특정 상품 하나를 배제해 등가물 자리에 세운다. 개인의 평가나 반복된 신뢰만으로는 이 사회적 배제 과정이 대신되지 않는다. 이것이 화폐 발생의 실마리다.",
+                    "en": "Each owner treats their own commodity as the universal equivalent, but once everyone does, no commodity actually functions as one. Out of this impasse, the collective social action of all commodities excludes one particular commodity and sets it up as the equivalent. Private esteem or accumulated trust cannot substitute for this social process of exclusion, which is the thread leading to money's genesis."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "이 배제 과정이 특정 상품에 화폐라는 사회적 기능을 부여한다.",
-                      "마음속 평가는 사적인 것에 그쳐 사회적 등가형태를 만들어내지 못한다.",
-                      "신뢰가 쌓여도 가치 비교의 공통 척도가 없으면 교환은 여전히 막힌다.",
-                      "사용가치의 크기와 보편적 교환가능성은 서로 다른 문제다."
+                      "이 배제 과정이 우연히 시작되지만 점점 한 상품에 고정되어 화폐형태로 굳어진다는 점도 이어서 기억하면 좋다.",
+                      "마음속 평가만으로는 다른 소유자들이 그것을 인정하게 만들 수 없다는 점을 놓친 생각이다.",
+                      "신뢰가 쌓여도 가치를 비교할 공통의 척도가 없으면 상품들은 서로 값을 잴 수 없다는 점을 놓친 것이다.",
+                      "사용가치의 크기는 그 물건이 필요한 사람에게만 의미가 있을 뿐, 보편적 교환가능성을 만들어내지 못한다."
                     ],
                     "en": [
-                      "This process of exclusion is what gives a particular commodity the social function of money.",
-                      "Private esteem remains private and cannot produce a social equivalent-form on its own.",
-                      "Even with trust, exchange still stalls without a common measure for comparing values.",
-                      "The magnitude of use-value and universal exchangeability are two different matters."
+                      "It helps to remember that this exclusion starts by accident but gradually fixes on one commodity into the money-form.",
+                      "Private esteem alone cannot make other owners recognize it, since recognition is a social, not personal, act.",
+                      "Even with accumulated trust, without a shared measure commodities still cannot compare their values against each other.",
+                      "The size of a use-value matters only to whoever needs that thing; it cannot by itself create universal exchangeability."
                     ]
                   },
                   "source": {
@@ -988,8 +988,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "그러나 이것은 모든 소유자에게 적용되므로, 실제로는 보편적 등가물로 기능하는 상품이 존재하지 않는다 … 그러므로 다른 모든 상품의 사회적 행위가 그 상품들이 자신의 가치를 표현하는 특정 상품 하나를 따로 세운다.",
-                      "en": "But since this applies to every owner, there is, in fact, no commodity acting as universal equivalent … The social action therefore of all other commodities, sets apart the particular commodity in which they all represent their values."
+                      "ko": "그러나 이것이 모든 소유자에게 적용되므로, 실제로는 보편적 등가물 노릇을 하는 상품은 하나도 없고, 상품들의 상대적 가치는 그것들을 가치로서 등치시키고 크기를 비교할 수 있는 일반적 형태를 갖지 못한다. … 그러므로 다른 모든 상품의 사회적 행위가 그들이 모두 자기 가치를 나타내는 그 특정 상품을 따로 떼어놓는다.",
+                      "en": "But since this applies to every owner, there is, in fact, no commodity acting as universal equivalent, and the relative value of commodities possesses no general form under which they can be equated as values and have the magnitude of their values compared. … The social action therefore of all other commodities, sets apart the particular commodity in which they all represent their values."
                     }
                   }
                 },
@@ -998,40 +998,40 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "2장이 1장의 가치형태 분석 다음에 오는 이유는 무엇인가?",
-                    "en": "Why does Chapter 2 follow Chapter 1’s analysis of the value-form?"
+                    "ko": "가치형태 분석이 일반적 등가물이라는 논리적 자리를 밝혔다면, 실제 시장에서 그 자리는 어떻게 특정 상품에 고정되어 화폐가 되는가?",
+                    "en": "If the analysis of the value-form revealed the logical place of the general equivalent, how does that place actually become fixed on a particular commodity as money?"
                   },
                   "choices": {
                     "ko": [
-                      "가치형태에서 드러난 일반적 등가물의 논리가 실제 상품 소유자들의 교환과정 속에서 화폐로 굳어지는 과정을 보여주기 위해서이다.",
-                      "상품 소유자들의 의지가 경제적 형식과 아무 관계 없이 완전히 자유롭다는 점을 보이기 위해서이다.",
-                      "1장의 가치 분석이 틀렸음을 보이고 사용가치만으로 시장을 설명하기 위해서이다.",
-                      "화폐는 상품교환과 무관하게 국가가 임의로 만든 표지임을 증명하기 위해서이다."
+                      "다른 모든 상품의 사회적 행위가 특정 상품 하나를 배제해 등가물 자리에 세우면서 화폐가 된다.",
+                      "금이 처음부터 자연적으로 화폐라는 표지를 달고 태어나기 때문에 화폐가 된다.",
+                      "국가가 법률로 지정한 상품이 곧바로 다른 모든 상품의 등가물이 되기 때문이다.",
+                      "상품 소유자들이 개별적으로 합의한 상징을 붙이면 곧바로 등가물이 되기 때문이다."
                     ],
                     "en": [
-                      "To show how the logic of the general equivalent revealed in the value-form becomes fixed as money through the actual exchange process of commodity owners.",
-                      "To show that the wills of commodity owners are completely free and unrelated to economic form.",
-                      "To show that Chapter 1’s value analysis was wrong and that use-value alone explains the market.",
-                      "To prove that money is an arbitrary sign created by the state, unrelated to commodity exchange."
+                      "The social action of all other commodities excludes one particular commodity and sets it up as the equivalent, which becomes money.",
+                      "Because gold is naturally born already marked with the sign of money.",
+                      "Because a commodity legally designated by the state instantly becomes the equivalent of all others.",
+                      "Because owners individually agree to attach a symbol, which instantly makes it the equivalent."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "1장은 가치가 표현형태를 필요로 함을 분석했고, 2장은 그 형식이 상품 소유자들의 실제 교환행위 속에서 화폐로 정착되는 과정을 보여준다. 그래서 화폐는 외부에서 덧붙은 편의수단이 아니라 상품교환의 모순에서 나온다. 이 순서는 3장의 화폐 기능 분석으로 이어진다.",
-                    "en": "Chapter 1 shows that value requires a form of expression; Chapter 2 shows how that form is fixed as money through the actual acts of exchange by commodity owners. Money is therefore not an external convenience but a result of the contradiction of commodity exchange, setting up Chapter 3's analysis of its functions."
+                    "ko": "1장은 가치가 다른 상품 속에서 표현되어야 함을 논리적으로 보였고, 2장은 그 표현 자리가 실제 교환 속에서 하나의 상품에 고정되는 과정을 보여준다. 특정 상품이 다른 모든 상품에 의해 배제되어 등가물 자리에 세워지는 사회적 과정이 화폐를 만든다. 국가 지정이나 개인 합의라는 오답은 이 배제가 상품교환 자체의 산물이라는 점을 놓친다.",
+                    "en": "Chapter 1 shows logically that value must be expressed in another commodity; Chapter 2 shows how that place of expression becomes fixed on one commodity through actual exchange. Money arises from the social process in which one commodity is excluded by all the rest and set up as the equivalent. State designation or private agreement misses that this exclusion is a product of commodity exchange itself."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "논리적 형식이 실제 사회적 과정을 거쳐 화폐로 굳어지는 것이 요점이다.",
-                      "의지는 자유롭게 보여도 상품이라는 경제형식에 의해 매개된다.",
-                      "1장의 가치 분석은 부정되지 않고 오히려 2장에서 실현된다.",
-                      "화폐의 기원을 국가 행위로 돌리면 상품교환에서 나오는 필연성이 사라진다."
+                      "이 배제가 처음에는 우연히 이 상품 저 상품을 오가다가 점점 한 상품에 고정된다는 점도 함께 새겨두면 좋다.",
+                      "금이 자연적으로 화폐라는 생각은 순서를 뒤집은 것으로, 실제로는 사회적 과정이 먼저이고 금의 속성은 그다음이다.",
+                      "국가 지정만으로 등가물이 된다는 생각은 상품교환 자체의 사회적 배제 과정을 국가라는 외부 힘으로 대체해버린 것이다.",
+                      "개인 합의로 상징을 붙인다는 생각은 등가물 자리가 개별 의지가 아니라 상품들 전체의 사회적 행위로 정해진다는 점을 놓친 것이다."
                     ],
                     "en": [
-                      "The point is that a logical form becomes fixed as money through a real social process.",
-                      "The will looks free, yet it is mediated by the economic form of the commodity.",
-                      "Chapter 1's value analysis is not refuted; it is realized in Chapter 2.",
-                      "Attributing money's origin to state action erases the necessity that arises from commodity exchange itself."
+                      "It helps to remember that this exclusion first shifts by chance among commodities before settling permanently on one.",
+                      "Thinking gold is naturally money reverses the order; the social process comes first, and gold's fitness follows.",
+                      "State designation alone replaces the social exclusion process inherent in commodity exchange with an external decree.",
+                      "Private agreement on a symbol misses that the equivalent's place is set by the collective action of all commodities, not individual will."
                     ]
                   },
                   "source": {
@@ -1041,8 +1041,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "보편적 등가형태가 특정 상품의 신체형태와 동일시되어 화폐형태로 결정화되는 순간 그 과정은 완결된다.",
-                      "en": "the universal equivalent form becomes identified with the bodily form of a particular commodity, and thus crystallised into the money-form."
+                      "ko": "보편적 등가물이 되는 것은, 이 사회적 과정에 의해, 나머지 상품들에 의해 이렇게 배제된 상품의 특유한 기능이 된다. 그리하여 그것은 화폐가 된다.",
+                      "en": "To be the universal equivalent, becomes, by this social process, the specific function of the commodity thus excluded by the rest. Thus it becomes – money."
                     }
                   }
                 }
@@ -1080,21 +1080,21 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 요점은 법적 자유를 부정하는 것이 아니라, 그 자유가 상품관계의 경제적 강제 속에서 작동한다는 데 있다. 개인 의지나 법 형식만 보면 교환이 요구하는 사회적 등가형태를 설명할 수 없다. 이 긴장이 뒤에 나오는 일반적 등가물의 필연성과 연결된다.",
-                    "en": "Marx’s point is not to deny juridical freedom, but to show that it operates within the economic compulsion of commodity relations. Individual will or legal form alone cannot explain the social equivalent-form required by exchange, which connects to the necessity of the general equivalent discussed next."
+                    "ko": "마르크스는 소유자들이 경제무대의 등장인물일 뿐이며, 그들의 인격은 상품관계가 몸에 붙인 것이라고 말한다. 계약이라는 법적 형식은 실재하지만, 그 내용은 개인이 마음대로 정하는 것이 아니라 경제관계가 반영된 것이다. 합의된 비율이 곧 가치라는 오답은 법 형식만 보고 그 밑의 경제적 강제를 지워버린다.",
+                    "en": "Marx says owners are merely characters on the economic stage, personifications the commodity relation attaches to them. The legal form of contract is real, but its content is not set by individual whim; it reflects the economic relation beneath it. Saying that whatever ratio is agreed becomes the value looks only at the legal form and erases the economic compulsion underneath it."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "경제관계의 반영이라는 표현이 이 긴장의 핵심을 정확히 짚는다.",
-                      "합의된 비율은 가치를 결정하지 않고, 가치는 노동시간에 의해 규정된다.",
-                      "법적 계약 형식은 남아 있으며, 국가가 조건을 일일이 지정하지는 않는다.",
-                      "경제적 성격을 의지의 산물로 보면 상품형식이 사람들에게 강제하는 측면이 사라진다."
+                      "이 제약이 뒤에서 다룰 일반적 등가물의 사회적 필연성과 이어진다는 점도 함께 새겨두면 좋다.",
+                      "합의된 비율이 곧 가치라는 생각은 가치가 사회적으로 필요한 노동시간에 근거한다는 점을 지워버린 것이다.",
+                      "국가가 일일이 지정한다는 생각은 상품관계 자체가 낳는 경제적 강제를 국가라는 외부 권력으로 잘못 옮긴 것이다.",
+                      "긴장이 없다는 생각은 개인 의지와 상품형태를 하나로 뭉뚱그려, 둘 사이의 실제 관계를 보지 못하게 한다."
                     ],
                     "en": [
-                      "The phrase 'reflex of the economic relation' captures this tension precisely.",
-                      "An agreed ratio does not fix value; value is determined by labour-time.",
-                      "The contractual, legal form remains, but it is not the state dictating every condition.",
-                      "Treating economic character as a product of will erases the way the commodity-form imposes itself on people."
+                      "Notice this constraint links to the social necessity of the general equivalent discussed shortly after in the chapter.",
+                      "Saying the agreed ratio is the value erases the fact that value rests on socially necessary labour-time, not agreement.",
+                      "Saying the state dictates everything wrongly relocates the economic compulsion inherent in commodity relations onto an external power.",
+                      "Denying any tension collapses individual will and commodity-form into one, hiding the actual relation between them."
                     ]
                   },
                   "source": {
@@ -1104,8 +1104,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "경제무대에 등장하는 인물들은 그들 사이에 존재하는 경제적 관계의 인격화일 뿐이다.",
-                      "en": "the characters who appear on the economic stage are but the personifications of the economic relations that exist between them."
+                      "ko": "이 인격들은 서로에게 오직 상품의 대표자로서, 그러므로 상품의 소유자로서만 존재한다. 우리는 연구가 진행되면서, 경제무대에 등장하는 인물들은 그들 사이에 존재하는 경제관계의 인격화일 뿐임을 대체로 알게 될 것이다.",
+                      "en": "The persons exist for one another merely as representatives of, and, therefore. as owners of, commodities. In the course of our investigation we shall find, in general, that the characters who appear on the economic stage are but the personifications of the economic relations that exist between them."
                     }
                   }
                 },
@@ -1133,21 +1133,21 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품은 물건이지만 교환은 소유자들의 행위 없이는 일어나지 않는다. 그 행위는 가치형태의 논리를 현실화하므로, 화폐는 논리적 형식과 실제 교환과정의 접점에서 생긴다. 이 매개를 놓치면 화폐가 마치 순수한 논리나 순전한 관습에서만 나오는 것처럼 보인다.",
-                    "en": "Commodities are things, but exchange does not occur without the actions of their owners. Those actions realize the logic of the value-form, so money emerges at the point where logical form and actual exchange process meet. Missing this mediation makes money look as if it came purely from logic or from custom alone."
+                    "ko": "마르크스는 상품이 등가물을 필요로 한다는 것을 대량 교환의 실제 조건에서 다시 확인한다. 서로 다른 소유자의 서로 다른 상품들이 동일한 하나의 물품과 등치되어야 대규모 교환이 성립하는데, 이 등치는 소유자들의 인정과 양도 행위를 통해서만 일어난다. 관습이나 국가 발행만으로 설명하면 이 등치 행위 자체가 사라진다.",
+                    "en": "Marx confirms in the real conditions of large-scale exchange that commodities require an equivalent. Different commodities belonging to different owners must be equated to one and the same article for large-scale exchange to work, and this equating happens only through owners' acts of recognition and alienation. Explaining it by custom or state issuance alone erases this very act of equating."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "다른 모든 상품의 사회적 행위가 특정 상품을 등가물로 세운다는 대목이 이 매개를 보여준다.",
-                      "관습은 화폐형태가 자리 잡는 과정에 관여하지만, 그것이 가치형태의 논리 자체를 대체하지는 않는다.",
-                      "2장은 오히려 그 논리가 실제 행위 속에서 실현되는 과정을 보여준다.",
-                      "화폐의 물질적 발생은 국가 발행보다 앞서는 교환과정에서 이미 시작된다."
+                      "이 등치 행위가 처음에는 좁은 범위에서 일어나다가 점차 하나의 상품에 고정된다는 점도 이어서 생각해보면 좋다.",
+                      "관습만으로 화폐가 생긴다는 생각은 관습 자체가 반복된 등치 행위의 결과라는 점을 거꾸로 돌린 것이다.",
+                      "평행선이라는 생각은 논리적 형식이 실제 교환행위를 통해서만 현실화된다는 점을 놓친 것이다.",
+                      "국가 발행이 유일한 매개라는 생각은 화폐가 상품교환 자체에서 발생한다는 점을 국가로 대체해버린 것이다."
                     ],
                     "en": [
-                      "The passage where the social action of all other commodities sets one apart as equivalent shows this mediation.",
-                      "Custom plays a role in how the money-form settles, but it does not replace the logic of the value-form itself.",
-                      "Chapter 2 in fact shows that very logic being realized through actual acts.",
-                      "The material genesis of money begins in the exchange process well before any state issuance."
+                      "It helps to notice this equating first happens narrowly before it settles permanently onto one commodity.",
+                      "Saying custom alone produces money reverses the order, since custom is itself the result of repeated acts of equating.",
+                      "Calling them parallel lines misses that the logical form is realized only through actual acts of exchange.",
+                      "Saying state issuance is the sole mediator replaces money's genesis in commodity exchange itself with a state decree."
                     ]
                   },
                   "source": {
@@ -1157,8 +1157,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "그러나 특정 상품은 사회적 행위를 통해서만 보편적 등가물이 될 수 있다 … 그러므로 다른 모든 상품의 사회적 행위가 그 상품들이 자신의 가치를 표현하는 특정 상품 하나를 따로 세운다.",
-                      "en": "But a particular commodity cannot become the universal equivalent except by a social act. … The social action therefore of all other commodities, sets apart the particular commodity in which they all represent their values."
+                      "ko": "상품 소유자들은 서로 다른 소유자에게 속한 서로 다른 종류의 상품들이 동일한 하나의 특정 물품과 교환 가능하고 가치로서 등치되지 않고서는, 자기 상품들을 다른 상품과 등치하고 대규모로 교환하는 일이 결코 없다.",
+                      "en": "Commodity-owners never equate their own commodities to those of others, and exchange them on a large scale, without different kinds of commodities belonging to different owners being exchangeable for, and equated as values to, one and the same special article."
                     }
                   }
                 },
@@ -1186,21 +1186,21 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 화폐의 관습적·법적 측면을 단순히 무시하지 않지만, 화폐의 필요를 편의적 약속으로만 설명하면 상품교환 자체가 일반적 등가물의 사회적 선출을 요구한다는 점이 사라진다. 이는 화폐를 사람들이 그 기원을 몰라 갖다 붙인 이야기로 착각하게 만든다.",
-                    "en": "Marx does not simply ignore the conventional or legal sides of money, but if its necessity is explained only as convenience, we lose the point that commodity exchange itself requires the social selection of a general equivalent. This lets money look like a story people invented because they could not explain its real origin."
+                    "ko": "마르크스는 18세기식 설명, 곧 사람들이 이상해 보이는 사회형태의 기원을 알 수 없어 그냥 관습적 약속이라고 둘러댔다고 비판한다. 이 설명은 상품들 사이의 배제 과정이 왜 하필 하나의 상품을 등가물로 세우는지 아무것도 밝히지 못한다. 편의적 약속이라는 말은 설명을 포기한 자리에 붙인 이름표에 가깝다.",
+                    "en": "Marx criticizes the 18th-century style of explanation, which, unable to grasp the origin of a strange social form, simply ascribed it to conventional agreement. This explanation says nothing about why the exclusion process among commodities settles on one particular commodity as equivalent. Calling it mere convenience is really just a label pasted over an abandoned explanation."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "일반적 등가물이 사회적 과정을 통해 세워진다는 논점이 이 설명에서 지워진다.",
-                      "이 설명은 반대로 화폐를 순전한 관습으로 축소하지, 자연물로 만들지는 않는다.",
-                      "금속의 물리적 속성은 이미 등가물로 세워진 뒤의 이야기이지, 등가물이 세워지는 이유가 아니다.",
-                      "3장의 화폐 기능 분석은 가치척도에서 출발하므로 그 기능을 건너뛸 수 없다."
+                      "이 지점에서 화폐형태가 사회적 관계의 물질적 표현이라는 점을 함께 생각해보면 좋다.",
+                      "자연에서 곧바로 나온다는 생각은 반대로 화폐가 상품교환의 역사적 발전 속에서 생겨난다는 점을 놓친 것이다.",
+                      "금이라는 재료의 기술적 적합성은 2장의 뒷부분에서 다뤄지지만, 그것이 등가물이 필요한 이유 자체는 아니다.",
+                      "유통수단만 본다는 생각은 2장이 밝히는 화폐의 첫 기능, 즉 가치척도 기능을 건너뛰어버린다."
                     ],
                     "en": [
-                      "This explanation erases the point that the general equivalent is established through a social process.",
-                      "This account instead reduces money to pure convention, not to a natural object.",
-                      "The physical properties of metal come into play only after the equivalent role is already established, not as its reason.",
-                      "Chapter 3’s analysis of money’s functions starts from measure of value, so that function cannot be skipped."
+                      "It helps to see that the money-form is the material expression of a social relation, not an arbitrary tag.",
+                      "Assuming it springs straight from nature misses that money instead arises through the historical development of exchange.",
+                      "Gold's technical fitness is discussed later in the chapter, but that is not the reason an equivalent is needed at all.",
+                      "Looking only at circulation skips over the first function of money the chapter establishes, its role as measure of value."
                     ]
                   },
                   "source": {
@@ -1210,8 +1210,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "사람과 사람 사이의 사회적 관계가 취하는 낯선 형태의 기원을 설명할 수 없었던 사람들은 그것에 관습적 기원을 부여함으로써 그 낯섦을 벗겨내려 했다 … 그러나 특정 상품은 사회적 행위를 통해서만 보편적 등가물이 될 수 있다.",
-                      "en": "Unable to account for the origin of the puzzling forms assumed by social relations between man and man, people sought to denude them of their strange appearance by ascribing to them a conventional origin. … But a particular commodity cannot become the universal equivalent except by a social act."
+                      "ko": "이는 18세기에 유행하던 설명 방식에 잘 맞았다. 사람들과 사람들 사이의 사회적 관계가 취하는 당혹스러운 형태들의 기원을 설명할 수 없었기에, 사람들은 거기에 관습적 기원을 붙임으로써 그 낯선 외양을 벗겨내려 했다.",
+                      "en": "This suited the mode of explanation in favour during the 18th century. Unable to account for the origin of the puzzling forms assumed by social relations between man and man, people sought to denude them of their strange appearance by ascribing to them a conventional origin."
                     }
                   }
                 },
@@ -1239,21 +1239,21 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "사적 상품은 자기 혼자 보편성을 선언할 수 없다. 이 사례는 각 상품의 사적 성격과 사회적 교환가능성 사이의 모순이 왜 화폐형태로 해결되는지를 보여준다. 모두가 등가물이길 원하는 상황 자체가 오히려 특정 상품 하나로의 배제를 요구한다.",
-                    "en": "A private commodity cannot declare its own universality by itself. The case shows why the contradiction between the private character of each commodity and social exchangeability is resolved in the money-form. The very fact that everyone wants to be the equivalent demands the exclusion of one particular commodity instead."
+                    "ko": "모두가 자기 상품을 보편적 등가물이라 주장하는 순간, 실제로는 아무 상품도 그 자리를 차지하지 못하는 막다른 상황이 된다. 이 상황을 풀려면 개인의 주장이 아니라 다른 모든 상품의 사회적 행위가 특정 상품 하나를 등가물 자리로 배제해야 한다. 품질 증명이나 사용가치 다양성으로 해결된다는 오답은 이 배제가 사회적 과정이라는 점을 놓친다.",
+                    "en": "The moment everyone claims their own commodity is the universal equivalent, in fact no commodity actually occupies that place, an impasse results. Resolving it requires not individual claims but the collective social action of all other commodities excluding one particular commodity into that role. Solutions like proving quality or having diverse use-values miss that this exclusion is inherently a social process."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "모두가 등가물이길 바라는 상황이야말로 사회적 배제 과정을 필요로 한다는 역설을 보여준다.",
-                      "품질 증명은 사용가치를 확인해 줄 뿐, 보편적 등가형태를 만들어내지는 못한다.",
-                      "모든 상품이 동시에 화폐라면 가치를 비교할 공통 척도 자체가 사라진다.",
-                      "다양성이 커질수록 오히려 공통 척도인 가치형태의 필요성이 더 커진다."
+                      "이 배제가 결국 하나의 상품에 고정되어 화폐형태로 굳어진다는 다음 단계까지 이어서 생각해보면 좋다.",
+                      "품질 증명만으로는 다른 소유자들이 그 상품을 등가물로 인정할 사회적 절차 자체가 생기지 않는다.",
+                      "모든 상품이 동시에 화폐가 된다는 생각은 등가물의 자리가 하나로 좁혀져야 한다는 점과 정반대다.",
+                      "사용가치가 다양해도 그것만으로는 가치를 서로 비교할 공통의 척도가 마련되지 않는다."
                     ],
                     "en": [
-                      "The paradox is that everyone wanting to be the equivalent is exactly what demands a social act of exclusion.",
-                      "Proving quality only confirms use-value; it cannot by itself create a universal equivalent-form.",
-                      "If every commodity were money at once, there would be no common measure left for comparing values.",
-                      "Greater diversity actually increases the need for a common measure, that is, the value-form."
+                      "It helps to follow this through to the next step, where the exclusion settles permanently on one commodity as money.",
+                      "Proving quality alone does not create the social process by which other owners come to recognize it as equivalent.",
+                      "Saying every commodity becomes money at once is the opposite of what's needed, since the equivalent's place must narrow to one.",
+                      "Diverse use-values alone do not provide the shared measure needed to compare values against one another."
                     ]
                   },
                   "source": {
@@ -1263,8 +1263,8 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "상품 소유자에게 다른 모든 상품은 자기 상품에 대한 특수한 등가물이며, 따라서 그 자신의 상품은 다른 모든 상품에 대한 보편적 등가물이 된다 … 그러나 이것은 모든 소유자에게 적용되므로, 실제로는 보편적 등가물로 기능하는 상품이 존재하지 않는다.",
-                      "en": "To the owner of a commodity, every other commodity is, in regard to his own, a particular equivalent, and consequently his own commodity is the universal equivalent for all the others. … there is, in fact, no commodity acting as universal equivalent"
+                      "ko": "그러나 특정 상품이 사회적 행위를 통하지 않고서는 결코 보편적 등가물이 될 수 없다. 그러므로 다른 모든 상품의 사회적 행위가 그들이 모두 자기 가치를 나타내는 그 특정 상품을 따로 떼어놓는다.",
+                      "en": "But a particular commodity cannot become the universal equivalent except by a social act. The social action therefore of all other commodities, sets apart the particular commodity in which they all represent their values."
                     }
                   }
                 },
@@ -1273,40 +1273,40 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "2장의 결론은 3장의 화폐 기능 분석에 어떤 토대를 제공하는가?",
-                    "en": "How does the conclusion of Chapter 2 prepare the ground for Chapter 3’s analysis of money’s functions?"
+                    "ko": "화폐가 상품의 가치척도로 기능하는 방식을 분석하려면, 그 전에 시장에서 무엇이 이미 사회적으로 확립되어 있어야 하는가?",
+                    "en": "Before we can analyze how money functions as the measure of value, what must already be socially established in the market?"
                   },
                   "choices": {
                     "ko": [
-                      "특정 상품이 일반적 등가물로 고정되면, 이제 그 상품이 가치척도와 유통수단 등으로 어떻게 기능하는지 분석할 수 있다.",
-                      "3장은 화폐라는 새 주제를 다루므로, 2장의 등가물 논의와는 별도의 출발점에서 시작한다.",
-                      "화폐가 단순한 이름표에 불과하므로 더 이상 상품가치를 다룰 필요가 없다.",
-                      "2장에서 화폐가 확립되었으므로, 3장부터는 가치 분석이 가격 분석으로 대체된다."
+                      "특정 상품이 일반적 등가물로 고정되어, 다른 모든 상품이 그 상품으로 자기 가치를 표현하는 상태가 확립되어 있어야 한다.",
+                      "각 상품의 생산비용을 국가가 정확히 계산해 공표해 두어야 한다.",
+                      "모든 상품 소유자가 노동시간을 직접 측정할 수 있는 도구를 갖추고 있어야 한다.",
+                      "상품들이 서로의 사용가치를 완전히 동일하게 여기고 있어야 한다."
                     ],
                     "en": [
-                      "Once a particular commodity is fixed as the general equivalent, we can analyze how it functions as measure of value, means of circulation, and so on.",
-                      "Chapter 3 takes up money as a new topic, starting from a point separate from Chapter 2's account of the equivalent.",
-                      "Since money is merely a label, there is no further need to discuss commodity value.",
-                      "Since money is established in Chapter 2, from Chapter 3 onward the analysis of value is replaced by the analysis of price."
+                      "A particular commodity must already be fixed as the general equivalent, so that all other commodities express their value in it.",
+                      "The state must have accurately calculated and published the production cost of every commodity.",
+                      "Every commodity owner must already have a tool to directly measure labour-time.",
+                      "Commodities must already regard one another's use-values as entirely identical."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "2장은 화폐의 발생을 설명하고, 3장은 발생한 화폐가 상품유통 안에서 수행하는 기능들을 분석한다. 이 연결을 끊으면 화폐가 상품관계에서 나온 사회적 형식이 아니라 외부 도구처럼 보인다. 2장 끝에서 밝힌 가치표현 기능이 3장의 첫 출발점이 된다.",
-                    "en": "Chapter 2 explains the genesis of money; Chapter 3 analyzes the functions money performs within commodity circulation. If this link is broken, money appears as an external tool rather than a social form arising from commodity relations. The value-expression function noted at the end of Chapter 2 becomes Chapter 3's starting point."
+                    "ko": "2장 끝에서 마르크스는 지금까지 밝힌 화폐의 기능이 오직 하나, 곧 상품가치의 표현형태 노릇이라고 말한다. 이 기능이 성립하려면 특정 상품이 이미 등가물로 고정되어 다른 모든 상품이 그것으로 자기 가치를 잰다는 상태가 먼저 있어야 한다. 국가의 계산이나 측정 도구를 내세우는 오답은 이 사회적 등치 상태 자체를 기술적 문제로 바꿔버린다.",
+                    "en": "At the end of Chapter 2 Marx says the only function of money established so far is to serve as the form in which commodity value is expressed. For this to hold, a particular commodity must already be fixed as the equivalent, with all other commodities measuring their value in it. Answers invoking state calculation or measuring tools turn this social state of equating into a merely technical problem."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "가치척도라는 기능이 바로 2장 끝에서 예고된 다음 단계다.",
-                      "2장의 등가물 논의가 없다면 3장이 화폐를 다룰 근거 자체가 없다.",
-                      "이름표로 보면 화폐가 상품가치의 표현형태라는 점이 사라진다.",
-                      "가격 분석은 가치 분석을 대체하지 않고 그 위에서 전개된다."
+                      "이 상태가 확립된 다음에야 3장에서 가치척도와 유통수단 같은 화폐의 구체적 기능이 분석된다는 점도 이어서 새겨두면 좋다.",
+                      "국가가 비용을 계산해 공표한다는 생각은 가치가 사회적으로 필요한 노동시간에 의해 정해진다는 점을 국가 행정으로 바꿔치기한 것이다.",
+                      "측정 도구가 있어야 한다는 생각은 가치척도가 물리적 도구가 아니라 사회적으로 인정된 등가물이라는 점을 놓친 것이다.",
+                      "사용가치를 동일하게 여겨야 한다는 생각은 애초에 사용가치가 서로 다르기 때문에 교환할 이유가 생긴다는 점을 거꾸로 돌린 것이다."
                     ],
                     "en": [
-                      "The function as measure of value is exactly the next step foreshadowed at the end of Chapter 2.",
-                      "Without Chapter 2's account of the equivalent, Chapter 3 would have no basis for treating money at all.",
-                      "Treating money as a label erases the fact that it is the form of expression of commodity value.",
-                      "Price analysis does not replace value analysis; it is built on top of it."
+                      "It helps to note that only once this state is established can Chapter 3 analyze money's concrete functions like measure of value and means of circulation.",
+                      "Saying the state calculates and publishes costs replaces the social determination of value by labour-time with state administration.",
+                      "Requiring a measuring tool misses that the measure of value is a socially recognized equivalent, not a physical instrument.",
+                      "Requiring identical use-values reverses the point, since it is precisely their difference in use-value that gives owners reason to exchange."
                     ]
                   },
                   "source": {
@@ -1316,7 +1316,7 @@
                       "en": "Capital I, Ch. 2 Exchange"
                     },
                     "quote": {
-                      "ko": "그러나 지금까지 우리는 화폐의 오직 한 가지 기능, 곧 상품가치의 현상형태로 기능한다는 것, 다시 말해 상품가치의 크기가 사회적으로 표현되는 재료로 기능한다는 것만을 알고 있을 뿐이다.",
+                      "ko": "그러나 지금까지 우리는 화폐의 한 가지 기능, 곧 상품가치의 현상형태로 봉사하는 것, 즉 그 가치 크기가 사회적으로 표현되는 재료로 봉사하는 기능만을 알고 있을 뿐이다.",
                       "en": "Up to this point, however, we are acquainted only with one function of money, namely, to serve as the form of manifestation of the value of commodities, or as the material in which the magnitudes of their values are socially expressed."
                     }
                   }
@@ -1370,11 +1370,11 @@
               },
               {
                 "title": "용어 풀이",
-                "text": "‘일반적 등가물’은 다른 모든 상품이 자기 가치를 비추어 보는 거울 구실을 하는 특정 상품을 말한다. 처음에는 이 자리가 우연히 이 상품 저 상품을 오가지만, 교환이 잦아지고 넓어지면서 결국 한 상품에 고정되어 화폐가 된다."
+                "text": "일반적 등가물은 다른 모든 상품이 자기 가치를 비추어 보는 거울 구실을 하는 특정 상품을 말한다. 처음에는 이 자리가 우연히 이 상품 저 상품을 오가지만, 교환이 잦아지고 넓어지면서 결국 한 상품에 고정되어 화폐가 된다."
               },
               {
                 "title": "현대 적용",
-                "text": "온라인 중고거래를 생각해 보자. 판매자와 구매자는 서로를 물건에 대한 권리를 가진 사람으로 인정해야만 거래가 성립하며, 그 인정을 매개하는 것이 계좌이체나 플랫폼 화폐 같은 공통의 등가물이다. 그 등가물이 없다면 아무리 물건이 많아도 교환은 막힌다."
+                "text": "온라인 중고거래를 생각해보자. 판매자와 구매자는 서로를 물건에 대한 권리를 가진 사람으로 인정해야만 거래가 성립하며, 그 인정을 매개하는 것이 계좌이체나 플랫폼 화폐 같은 공통의 등가물이다. 그 등가물이 없다면 아무리 물건이 많아도 교환은 막힌다."
               },
               {
                 "title": "이 장의 초점",
@@ -1392,7 +1392,7 @@
               },
               {
                 "title": "Terms explained",
-                "text": "The 'general equivalent' is the particular commodity in whose body all other commodities mirror their own value. At first this role shifts by chance from one commodity to another, but as exchange grows more frequent and widespread it settles permanently on one commodity, which becomes money."
+                "text": "The general equivalent is the particular commodity in whose body all other commodities mirror their own value. At first this role shifts by chance from one commodity to another, but as exchange grows more frequent and widespread it settles permanently on one commodity, which becomes money."
               },
               {
                 "title": "Today's application",
@@ -1434,36 +1434,44 @@
                 },
                 {
                   "label": "유통수단",
-                  "note": "화폐가 실제로 오가며 C-M-C의 판매와 구매를 매개한다."
+                  "note": "C-M-C 운동에서 상품의 손바뀜을 매개한다."
                 },
                 {
                   "label": "축장",
-                  "note": "판매 뒤 구매를 미루면 화폐가 정지해 축적된 보유물이 된다."
+                  "note": "판매 뒤 구매를 미루고 화폐를 그대로 쌓아둔다."
                 },
                 {
                   "label": "지급수단",
-                  "note": "외상과 만기가 얽히며 결제연쇄가 끊기면 화폐공황의 형식적 가능성이 열린다."
+                  "note": "외상판매처럼 시간차를 두고 채무를 결제한다."
+                },
+                {
+                  "label": "세계화폐",
+                  "note": "국내 형태를 벗고 국제결제와 부의 이전에 쓰인다."
                 }
               ]
             },
             "en": {
-              "title": "The Unfolding of Money's Functions",
+              "title": "The unfolding of money's functions",
               "steps": [
                 {
                   "label": "Measure of value",
-                  "note": "Commodity value is expressed ideally in the money-name, price."
+                  "note": "Expresses commodity value ideally in the money-name, price."
                 },
                 {
                   "label": "Means of circulation",
-                  "note": "Money actually changes hands, mediating sale and purchase in C-M-C."
+                  "note": "Mediates the change of hands of commodities in C-M-C."
                 },
                 {
-                  "label": "Hoard",
-                  "note": "Delaying purchase after a sale halts money, turning it into an accumulated holding."
+                  "label": "Hoarding",
+                  "note": "Defers purchase after sale, letting money pile up unspent."
                 },
                 {
                   "label": "Means of payment",
-                  "note": "When credit and due dates interlace, a break in the chain of settlement opens the formal possibility of monetary crisis."
+                  "note": "Settles debts after a time lag, as in credit sales."
+                },
+                {
+                  "label": "World money",
+                  "note": "Sheds its national forms for international settlement and transfer of wealth."
                 }
               ]
             }
@@ -1501,31 +1509,31 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "개념의 출발점은 가치척도다. 화폐는 서로 다른 상품들이 자기 가치를 가격이라는 같은 형식으로 표현하게 한다. 그래서 화폐는 단순한 구매 도구이기 이전에 가치표현의 사회적 형식으로 먼저 다뤄지며, 소비 계산이나 행정 배분으로 보는 오답은 이 형식을 놓친다.",
-                    "en": "The conceptual starting point is measure of value. Money lets different commodities express their value in the same form, price. It is therefore treated first as a social form of value-expression, before it is simply a tool for buying."
+                    "ko": "화폐를 가치척도로 먼저 다루는 이유는 상품들이 서로 다른 사용가치를 가지고도 같은 화폐명, 곧 가격으로 자기 가치를 표현할 수 있어야 하기 때문이다. 마르크스는 화폐가 상품을 같은 잣대로 잴 수 있게 만드는 것이 아니라, 상품이 이미 인간노동의 응결물로서 서로 비교 가능하기 때문에 하나의 상품, 금이 공통 척도가 될 수 있다고 본다. 소비계산이나 행정배분으로 보는 오답은 이 사회적 형식을 놓친다.",
+                    "en": "Treating money first as measure of value matters because commodities with different use-values must be able to express their worth in the same money-name, price. Marx insists money does not make commodities commensurable; rather, commodities are already commensurable as congealed human labour, which is why one commodity, gold, can become their common measure. Readings that reduce this to consumer calculation or state allocation miss this social form."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "일반적 등가물이라는 규정이 가격형태의 출발점이라는 점을 함께 새겨둔다.",
-                      "사용가치와 가치를 뒤섞어 화폐를 소비계산 도구로 좁혀버리는 오해다.",
-                      "가치척도 기능을 국가의 행정배분으로 바꿔치는 오해로, 사회적 노동관계를 지운다.",
-                      "가치척도를 정적인 장부로 보아 상품유통의 살아있는 관계를 놓친다."
+                      "가격이 관념적으로 붙어도 그 바탕에는 사회적으로 필요한 노동시간이라는 실질적 척도가 있다는 점을 기억하면 좋다.",
+                      "사용가치를 수량화하는 것과 가치를 화폐명으로 표현하는 것은 다른 일이며, 소비자 선호는 이 장의 논증에 등장하지 않는다.",
+                      "마르크스는 화폐의 기원을 국가의 행정행위가 아니라 상품교환 자체에서 찾으며, 표준표는 나중에야 법으로 정해지는 부차적 규정이다.",
+                      "화폐가 등장하기 전에 부의 목록이 완성된다고 보면 가치가 교환을 통해 사회적으로 표현된다는 점을 거꾸로 이해한 것이다."
                     ],
                     "en": [
-                      "Note also that this status as universal equivalent is the starting point for the price-form.",
-                      "This conflates use-value with value, narrowing money to a tool for consumer calculation.",
-                      "This swaps the measure-of-value function for state administration, erasing social labor relations.",
-                      "This treats money as a static ledger, missing the living relation of commodity circulation."
+                      "Keep in mind that even an ideal price rests on the real measure of socially necessary labour-time behind it.",
+                      "Quantifying use-value and expressing value in a money-name are different operations; consumer preference plays no role in this argument.",
+                      "Marx locates money's origin in commodity exchange itself, not in state administration; legal standards of price come only afterward as a secondary regulation.",
+                      "Assuming a completed inventory of wealth exists before exchange reverses the point that value only becomes socially expressed through exchange."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S1",
                     "label": {
                       "ko": "『자본론』 1권 3장 1절 가치척도",
-                      "en": "Capital I, Ch.3 §1 The Measure of Values"
+                      "en": "Capital I, Ch. 3 §1 The Measure of Values"
                     },
                     "quote": {
-                      "ko": "화폐의 첫째가는 주요 기능은 상품에 그 가치를 표현할 재료를 제공하는 것, 곧 상품가치를 질적으로 같고 양적으로 비교 가능한 같은 화폐명의 크기로 나타내는 것이다. 이로써 화폐는 보편적 가치척도로 기능한다.",
+                      "ko": "화폐의 첫째가는 주요 기능은 상품에 그 가치를 표현할 재료를 제공하는 것, 곧 상품의 가치를 같은 명칭의, 질적으로 같고 양적으로 비교 가능한 크기로 나타내는 것이다. 이렇게 화폐는 일반적 가치척도로 기능한다.",
                       "en": "The first chief function of money is to supply commodities with the material for the expression of their values, or to represent their values as magnitudes of the same denomination, qualitatively equal, and quantitatively comparable. It thus serves as a universal measure of value."
                     }
                   }
@@ -1554,32 +1562,32 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "가치척도 기능에서는 실제 금화나 지폐가 곁에 없어도 화폐가 관념적으로 작동한다. 이 관념적 가격표현은 가치와 단절된 임의표가 아니라, 상품가치가 화폐명으로 표현되는 형식이다. 그래서 가격은 실제 판매 이전에도 사회적으로 유효한 가치표현이 된다.",
-                    "en": "In the function of measure of value, money can operate ideally without a coin or note being physically present. This ideal price-expression is not an arbitrary label cut off from value; it is commodity value expressed in a money-name. Hence price is a socially valid expression of value even before an actual sale."
+                    "ko": "가격표에 적힌 숫자는 실제 금화가 옆에 없어도 상품가치를 화폐명으로 나타낸다. 마르크스는 이를 관념적 가격표현이라 부르는데, 여기서 관념적이라는 말은 임의라는 뜻이 아니라 아직 실제 화폐와 맞바꾸지 않았을 뿐이라는 뜻이다. 재고번호나 판매완료로 보는 오답은 가격이 사회적으로 유효한 가치표현이라는 점을 놓친다.",
+                    "en": "A price tag can state a value in money-name even without a coin present, because the function of measure of value operates ideally. Ideal here does not mean arbitrary; it means the commodity has not yet actually changed places with money. Readings that treat the tag as an inventory number or as proof of a completed sale miss that price is already a socially valid expression of value."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "관념적 가격표현이 실제 화폐 없이도 사회적으로 유효하다는 점이 핵심이다.",
-                      "가격표 부착과 실제 판매(가치의 도약)를 혼동해 유통과정을 지나치게 앞당긴다.",
-                      "가치는 생산과정에서 이미 성립하며 가격은 그것을 표현할 뿐이라는 점을 놓친다.",
-                      "가격을 자의적 재고표시로 보아 가치와 가격의 필연적 연관을 끊어버린다."
+                      "관념적 가격이라도 임의의 숫자가 아니라 상품에 응결된 노동량을 화폐명으로 표현한 것임을 놓치지 말아야 한다.",
+                      "가격표가 붙는 것과 상품이 실제로 팔리는 것은 서로 다른 계기이며, 판매는 화폐가 실제로 손바뀜해야 완성된다.",
+                      "가치는 생산과정에서 이미 응결되어 있고, 지불 시점과는 무관하게 존재한다.",
+                      "재고번호는 가치와 무관한 임의기호지만 가격은 그 상품에 담긴 노동량을 가리키는 사회적 표현이다."
                     ],
                     "en": [
-                      "The key is that this ideal price-expression is socially valid even without physical money present.",
-                      "This confuses attaching a price tag with the actual sale, prematurely closing the circulation process.",
-                      "This misses that value is already constituted in production; price merely expresses it.",
-                      "This treats price as an arbitrary inventory mark, severing the necessary link between price and value."
+                      "Even an ideal price is not an arbitrary figure; remember it expresses the quantity of labour congealed in the commodity via a money-name.",
+                      "Attaching a price tag and actually selling the commodity are different moments; a sale is only complete once money physically changes hands.",
+                      "Value is already congealed during production and exists independently of when payment happens to occur.",
+                      "An inventory number is an arbitrary mark unrelated to value, while a price is a social expression pointing to labour embodied in the good."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S1",
                     "label": {
                       "ko": "『자본론』 1권 3장 1절 가치척도",
-                      "en": "Capital I, Ch.3 §1 The Measure of Values"
+                      "en": "Capital I, Ch. 3 §1 The Measure of Values"
                     },
                     "quote": {
-                      "ko": "그러므로 화폐가 가치척도로 기능할 때 그것은 오직 관념적 화폐로서만 쓰인다. … 그러나 가치척도 기능을 수행하는 화폐가 관념적 화폐일 뿐이라 해도, 가격은 전적으로 화폐의 실제 재료에 달려 있다.",
-                      "en": "When, therefore, money serves as a measure of value, it is employed only as imaginary or ideal money. … But, although the money that performs the functions of a measure of value is only ideal money, price depends entirely upon the actual substance that is money."
+                      "ko": "상품의 가격 또는 화폐형태는 상품의 가치형태 일반이 그렇듯 그 만질 수 있는 물체형태와는 전혀 다른 형태이며, 따라서 순전히 관념적이거나 정신적인 형태다. … 그러므로 화폐가 가치척도로 기능할 때는 오직 상상된 화폐, 곧 관념적 화폐로만 쓰인다.",
+                      "en": "The price or money-form of commodities is, like their form of value generally, a form quite distinct from their palpable bodily form; it is, therefore, a purely ideal or mental form. … When, therefore, money serves as a measure of value, it is employed only as imaginary or ideal money."
                     }
                   }
                 },
@@ -1612,26 +1620,26 @@
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "사용가치 교체라는 목적이 유통과 자본의 운동을 가르는 기준이 된다.",
-                      "가치증식을 이 공식에 앞당겨 넣어 자본의 운동과 혼동하는 오해다.",
-                      "단순유통을 국가배분 체계로 바꿔치는 오해로, 상품교환의 사적 성격을 지운다.",
-                      "생산 없는 가격조작으로 가치가 늘어난다고 보는, 가치와 가격을 혼동한 오해다."
+                      "C-M-C의 목적은 화폐량 증식이 아니라 필요한 사용가치를 얻는 데 있다는 점을 기억해두면 4장의 자본운동과 대조하기 쉽다.",
+                      "더 많은 화폐를 회수하려는 목적은 M-C-M′로 표현되는 자본의 운동이며 단순유통과는 다른 논리다.",
+                      "국가가 생활수단을 배분하는 상황은 상품유통이 아니라 계획경제의 문제이며 이 장의 대상이 아니다.",
+                      "가격표를 바꾸는 것만으로는 실제 노동이 투입되지 않으므로 가치가 늘어나지 않는다."
                     ],
                     "en": [
-                      "The aim of exchanging use-values is exactly what separates circulation from the movement of capital.",
-                      "This smuggles valorization into the formula too early, confusing it with capital's movement.",
-                      "This replaces private commodity exchange with state distribution, erasing its private character.",
-                      "This confuses price and value, imagining value grows through price manipulation without production."
+                      "Remember the aim is acquiring a needed use-value, not growing a sum of money — this contrast sharpens the comparison with Chapter 4's capital.",
+                      "Recovering more money than was advanced describes the movement of capital, M-C-M′, a different logic from simple circulation.",
+                      "State distribution of subsistence goods belongs to planned allocation, not commodity circulation, so it lies outside this chapter's object.",
+                      "Merely changing a price tag adds no labour, so it cannot actually increase value."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S2",
                     "label": {
                       "ko": "『자본론』 1권 3장 2절 A 상품의 변태",
-                      "en": "Capital I, Ch.3 §2A The Metamorphosis of Commodities"
+                      "en": "Capital I, Ch. 3 §2A The Metamorphosis of Commodities"
                     },
                     "quote": {
-                      "ko": "대상 자체만 놓고 보면 전체 과정의 결과는 C-C, 곧 한 상품을 다른 상품으로 교환하는 것, 물질화된 사회적 노동의 순환이다.",
+                      "ko": "전체 과정의 결과는, 대상 그 자체만 놓고 보면 C-C, 곧 한 상품을 다른 상품과 교환하는 것이며 물질화된 사회적 노동의 순환이다.",
                       "en": "The result of the whole process is, so far as concerns the objects themselves, C — C, the exchange of one commodity for another, the circulation of materialised social labour."
                     }
                   }
@@ -1660,32 +1668,32 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "화폐를 단순한 교환 편의로 이해하면 핵심이 흐려진다. 마르크스가 강조하는 것은 화폐가 판매와 구매를 연결하면서도 분리한다는 점이다. 이 분리는 축장과 공황 가능성의 형식적 조건이 되며, 물물교환에는 없던 새로운 문제를 만든다.",
-                    "en": "A common misconception treats money as mere convenience. Marx's point is that money connects sale and purchase while also separating them. This separation becomes the formal condition for hoarding and the possibility of crisis, a problem absent in barter."
+                    "ko": "판매자가 돈을 쥐고 있어도 바로 사지 않는 상황은 물물교환에는 없던 문제다. 화폐는 판매와 구매를 이어주는 매개이면서 동시에 그 둘을 시간적으로 떼어놓는다. 그래서 한 상품의 판매가 곧바로 다른 구매로 이어진다는 보장이 사라지고, 이 분리가 축장과 공황 가능성의 형식적 조건이 된다.",
+                    "en": "A seller holding money without immediately buying is a situation barter never produces. Money mediates sale and purchase while simultaneously splitting them apart in time. This means one sale no longer guarantees another purchase will follow, and this very separation becomes the formal condition for hoarding and for the possibility of crisis."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "연결과 분리라는 이중성이 물물교환과 화폐경제를 가르는 핵심이다.",
-                      "보유된 화폐를 곧바로 자본으로 보아 4장의 논점을 3장에 앞당겨 넣는 오해다.",
-                      "소비까지 분석을 늘려 유통이라는 형식적 차원 자체를 흐리는 오해다.",
-                      "구조적 분리를 개인 습관으로 축소해 화폐형태의 사회적 성격을 지운다."
+                      "이 분리 때문에 판매가 쌓여도 구매가 뒤따르지 않을 수 있으며, 그 가능성이 나중에 공황론의 출발점이 된다.",
+                      "화폐가 그 자체로 저절로 늘어난다고 보면 화폐를 자본과 혼동한 것이며, 가치증식은 생산과정을 거쳐야 일어난다.",
+                      "상품이 소비되는 시점까지 따라갈 필요는 없으며, 마르크스는 유통을 상품이 화폐로, 화폐가 다시 상품으로 바뀌는 형식변화로 분석한다.",
+                      "구매 지연을 개인 습관으로 보면 화폐가 판매와 구매를 구조적으로 분리한다는 점, 곧 상품유통 자체의 형식을 놓친다."
                     ],
                     "en": [
-                      "The duality of connecting and separating is exactly what distinguishes money economy from barter.",
-                      "This treats held money as already capital, importing Chapter 4's point too early into Chapter 3.",
-                      "This extends the analysis to consumption, blurring the formal level of circulation itself.",
-                      "This reduces a structural separation to a personal habit, erasing the social character of the money-form."
+                      "Because of this separation, sales can pile up without corresponding purchases following, and that possibility later becomes the starting point of the theory of crisis.",
+                      "Treating money as growing on its own confuses money with capital; valorization only occurs through an actual production process.",
+                      "There is no need to follow the commodity to the moment of consumption; Marx analyzes circulation as the change of form between commodity and money.",
+                      "Reading delayed purchase as personal habit misses that money structurally separates sale from purchase, a feature built into commodity circulation itself."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S2",
                     "label": {
                       "ko": "『자본론』 1권 3장 2절 A 상품의 변태",
-                      "en": "Capital I, Ch.3 §2A The Metamorphosis of Commodities"
+                      "en": "Capital I, Ch. 3 §2A The Metamorphosis of Commodities"
                     },
                     "quote": {
-                      "ko": "판매와 구매는 하나의 동일한 행위, 곧 상품소유자와 화폐소유자 사이의 교환을 이루며, 이 둘은 자석의 두 극처럼 서로 대립한다. 그러나 한 사람이 수행할 때는 서로 극성이 반대되는 두 개의 구별된 행위가 된다.",
-                      "en": "The sale and the purchase constitute one identical act, an exchange between a commodity-owner and an owner of money, between two persons as opposed to each other as the two poles of a magnet. They form two distinct acts, of polar and opposite characters, when performed by one single person."
+                      "ko": "화폐는 자기 물건을 내놓는 일과 남의 물건을 얻는 일 사이에 물물교환에서는 있던 직접적 동일성을 판매와 구매라는 대립으로 쪼개어 이 일을 이룬다.",
+                      "en": "this it effects by splitting up, into the antithesis of a sale and a purchase, the direct identity that in barter does exist between the alienation of one’s own and the acquisition of some other man’s product."
                     }
                   }
                 },
@@ -1713,32 +1721,32 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "다음 장과의 연결은 여기 있다. 3장은 화폐가 상품유통 안에서 지급수단과 세계화폐에 이르기까지 독립적 가치형태로 자리잡는 과정을 보인다. 4장은 그 화폐가 단순 보유가 아니라 더 큰 가치로 돌아오려는 운동, 곧 자본의 일반공식으로 전환되는 지점을 묻는다.",
-                    "en": "This is the link to the next chapter. Chapter 3 shows money becoming an independent value-form within commodity circulation, up through means of payment and world money. Chapter 4 asks how that money becomes not mere holding but a movement returning as greater value, the general formula of capital."
+                    "ko": "3장은 화폐가 가치척도, 유통수단, 지급수단과 세계화폐로 기능하면서 상품세계에서 독립적 가치형태로 자리잡는 과정을 보여준다. 그러나 화폐가 왜 단순한 보유를 넘어 더 큰 가치로 돌아오려 하는지는 아직 설명되지 않았다. 4장은 바로 그 운동, 곧 M-C-M′라는 자본의 일반공식을 다루며 이 물음에 답한다.",
+                    "en": "Chapter 3 shows money becoming an independent value-form across its functions as measure of value, means of circulation, means of payment, and world money. But it has not yet explained why money would move beyond mere holding toward returning as greater value. Chapter 4 answers exactly that question through the general formula of capital, M-C-M′."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "독립성은 얻되 증식운동은 아직 설명되지 않았다는 미완의 지점이 다음 장의 문제다.",
-                      "두 공식을 같다고 보면 사용가치 교체와 가치증식이라는 목적의 차이를 지운다.",
-                      "보유만으로 잉여가치가 생긴다는 것은 마르크스가 명시적으로 비판하는 오해다.",
-                      "화폐기능을 법률로 환원해 상품유통의 사회적 관계 분석을 놓친다."
+                      "화폐가 독립적 형태를 얻는다는 것과 스스로 증식하는 운동을 시작한다는 것은 서로 다른 단계이며, 그 간극이 4장에서 메워진다.",
+                      "C-M-C와 M-C-M′를 같은 공식으로 보면 사용가치 교체와 가치증식이라는 서로 다른 목적을 혼동한 것이다.",
+                      "축장된 돈은 생산과정 없이는 잉여가치를 만들지 못하며, 이렇게 보면 가치증식의 원천을 잘못 짚게 된다.",
+                      "화폐의 기능은 국가법이 아니라 상품교환의 사회적 관계에서 나오며, 다음 장도 여전히 상품경제의 분석이다."
                     ],
                     "en": [
-                      "Independence is gained, but the movement of valorization remains unexplained, which is the next chapter's problem.",
-                      "Equating the two formulas erases the difference in aim between replacing use-values and valorization.",
-                      "The idea that mere holding generates surplus-value is a misconception Marx explicitly criticizes.",
-                      "Reducing money's functions to law misses the analysis of social relations in commodity circulation."
+                      "Money gaining an independent form and money beginning a self-expanding movement are different stages, and the gap between them is closed only in Chapter 4.",
+                      "Treating C-M-C and M-C-M′ as one formula confuses two different aims, replacing use-values versus valorizing value.",
+                      "Hoarded money produces no surplus-value without an actual production process, so this view misidentifies the source of valorization.",
+                      "Money's functions arise from the social relations of commodity exchange, not state law, and the next chapter still analyzes commodity economy, not legal institutions."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S3",
                     "label": {
-                      "ko": "『자본론』 1권 3장 3절 B 지급수단",
-                      "en": "Capital I, Ch.3 §3B Means of Payment"
+                      "ko": "『자본론』 1권 3장 3절 화폐",
+                      "en": "Capital I, Ch. 3 §3 Money"
                     },
                     "quote": {
-                      "ko": "실제 지불이 이루어져야 하는 한, 화폐는 생산물 교환의 일시적 매개자인 유통수단으로서가 아니라 사회적 노동의 개별화된 화신, 교환가치의 독립적 존재형태, 보편적 상품으로서 기능한다.",
-                      "en": "In so far as actual payments have to be made, money does not serve as a circulating medium, as a mere transient agent in the interchange of products, but as the individual incarnation of social labour, as the independent form of existence of exchange-value, as the universal commodity."
+                      "ko": "다른 한편 화폐는 그 기능이 직접 수행되든 대리물을 통해 수행되든, 다른 모든 상품이 대표하는 사용가치와 맞서 교환가치의 유일하게 적합한 존재형태인 가치의 단일형태로 응결될 때에도 화폐로서 기능한다.",
+                      "en": "On the other hand, it also functions as money, when by virtue of its function, whether that function be performed in person or by representative, it congeals into the sole form of value, the only adequate form of existence of exchange-value, in opposition to use-value, represented by all other commodities."
                     }
                   }
                 }
@@ -1776,31 +1784,31 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "심화의 핵심은 가치와 가격을 기계적으로 동일시하지 않는 것이다. 가격은 가치가 반드시 거치는 화폐표현이지만, 바로 그 표현형태 때문에 가치보다 크거나 작게 나타날 수 있다. 이 불일치 가능성은 결함이 아니라 무정부적 생산이 평균으로만 법칙을 관철하는 방식과 맞물린다.",
-                    "en": "The advanced point is not to mechanically identify value and price. Price is the money-expression through which value must pass, but precisely as an expression-form it can appear above or below value. This possibility of divergence is not a defect but fits how anarchic production enforces its laws only as an average."
+                    "ko": "가치와 가격을 그대로 겹쳐 놓으면 이 장의 논점을 놓친다. 가격은 가치가 반드시 거쳐야 하는 화폐표현 형식이지만, 바로 그 형식이기 때문에 실제 가치보다 크거나 작게 나타날 수 있다. 이 불일치 가능성은 결함이 아니라, 무정부적으로 이루어지는 사적 생산이 자신의 법칙을 오직 평균으로만, 겉보기에 무질서한 변동들이 서로 상쇄되는 방식으로 관철하는 것과 맞물린다.",
+                    "en": "Simply equating value and price misses the point here. Price is the money-expression through which value must necessarily pass, but precisely because it is a form of expression, it can appear larger or smaller than the underlying value. This possibility of divergence is not a flaw; it fits how anarchic private production enforces its own laws only as an average, through seemingly disorderly fluctuations that cancel one another out."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "표현형태이기에 불일치를 내포한다는 이중성이 가격형태 분석의 핵심이다.",
-                      "계산습관으로 축소하면 가치형태 자체에 내재한 구조적 문제를 지운다.",
-                      "수요가 가치를 만든다는 것은 가치의 노동기원을 지우는 오해다.",
-                      "가격을 자연적 성질로 보는 것은 상품물신성이 만드는 착시에 가깝다."
+                      "가격이 가치에서 벗어날 수 있다는 것은 무정부적 생산에서 법칙이 오직 평균으로 관철된다는 마르크스의 논점과 이어진다는 점을 함께 새겨두자.",
+                      "가격과 가치의 어긋남은 개인 습관이 아니라 가격이라는 형식 자체에 내재한 가능성이며 가치형태 분석의 핵심 대상이다.",
+                      "가격이 어긋난다고 해서 가치의 크기가 시장수요로 바뀌는 것은 아니며, 가치는 여전히 사회적으로 필요한 노동시간에 의해 규정된다.",
+                      "가격표는 자연적 성질이 아니라 사회적 노동관계를 화폐형태로 나타낸 것이며, 그래서 노동관계와 분리해 완성될 수 없다."
                     ],
                     "en": [
-                      "The duality that expression-form itself entails possible divergence is the core of price-form analysis.",
-                      "Reducing it to calculation habits erases the structural problem inherent in the value-form itself.",
-                      "Claiming demand creates value erases value's origin in labor.",
-                      "Treating price as a natural property is close to the illusion produced by commodity fetishism."
+                      "Keep in mind that price's possible divergence from value connects to Marx's broader point that anarchic production enforces its laws only as an average.",
+                      "The gap between price and value is not a personal habit but a possibility built into the price-form itself, which is exactly what value-form analysis examines.",
+                      "A divergence in price does not turn value's magnitude into market demand; value is still determined by socially necessary labour-time.",
+                      "A price tag expresses social labour relations in money-form, not a natural property, so it cannot be completed apart from those relations."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S1",
                     "label": {
                       "ko": "『자본론』 1권 3장 1절 가치척도",
-                      "en": "Capital I, Ch.3 §1 The Measure of Values"
+                      "en": "Capital I, Ch. 3 §1 The Measure of Values"
                     },
                     "quote": {
-                      "ko": "그러므로 가격과 가치크기 사이의 양적 불일치 가능성, 곧 전자가 후자에서 벗어날 가능성은 가격형태 자체에 내재한다. 이것은 결함이 아니라 오히려, 내재한 법칙이 서로 상쇄하는 겉보기 무법칙적 불규칙성의 평균으로만 관철되는 생산양식에 가격형태를 훌륭히 들어맞게 한다.",
+                      "ko": "그러므로 가격과 가치크기 사이의 양적 불일치 가능성, 곧 전자가 후자에서 벗어날 가능성은 가격형태 자체에 내재한다. 이것은 결함이 아니라 오히려 겉보기에 무질서한 변동들이 서로 상쇄되는 평균으로서만 자신의 내재적 법칙을 관철하는 생산양식에 가격형태를 훌륭하게 적응시킨다.",
                       "en": "The possibility, therefore, of quantitative incongruity between price and magnitude of value, or the deviation of the former from the latter, is inherent in the price-form itself. This is no defect, but, on the contrary, admirably adapts the price-form to a mode of production whose inherent laws impose themselves only as the mean of apparently lawless irregularities that compensate one another."
                     }
                   }
@@ -1834,26 +1842,26 @@
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "가격총액을 회전속도로 나누는 관계가 유통에 필요한 화폐량을 정확히 규정한다.",
-                      "화폐량이 가격 이전에 정해진다는 통화수량설식 오해다.",
-                      "회전속도가 상품가치를 만든다는 것은 유통과 가치생산을 혼동한 것이다.",
-                      "회전속도가 오르면 오히려 필요한 화폐량이 줄어든다는 점과 반대로 말하고 있다."
+                      "이 공식은 화폐량이 가격을 정하는 것이 아니라 가격총액과 회전속도가 거꾸로 필요한 화폐량을 정한다는 점을 함께 기억해두면 좋다.",
+                      "화폐 유통속도가 가격과 무관하다고 보면 유통수단량을 정하는 두 변수, 가격총액과 회전속도의 관계를 놓친다.",
+                      "손바뀜 횟수가 늘어난다고 상품의 총가치가 함께 늘어나는 것은 아니며, 가치는 생산에서 이미 정해져 있다.",
+                      "화폐의 손바뀜 횟수가 가격총액을 결정한다고 보면 인과관계를 거꾸로 이해한 것이다."
                     ],
                     "en": [
-                      "The relation of dividing the price sum by velocity precisely fixes the money needed.",
-                      "This assumes money quantity fixes prices beforehand, the quantity-theory mistake.",
-                      "Claiming velocity creates commodity value confuses circulation with value production.",
-                      "This states the opposite: higher velocity actually reduces the money required, not multiplies prices."
+                      "Also remember this formula shows the reverse causation from the quantity theory: the sum of prices and velocity together determine how much money is needed, not the other way around.",
+                      "Claiming velocity is unrelated to prices misses the relation between the two variables, sum of prices and velocity, that jointly set the required quantity of circulating medium.",
+                      "More frequent changes of hands do not by themselves increase total commodity value, since value is already fixed in production.",
+                      "Saying the number of coin-moves determines the sum of prices reverses the actual causal direction Marx describes."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S2",
                     "label": {
                       "ko": "『자본론』 1권 3장 2절 B 화폐의 유통",
-                      "en": "Capital I, Ch.3 §2B The Currency of Money"
+                      "en": "Capital I, Ch. 3 §2B The Currency of Money"
                     },
                     "quote": {
-                      "ko": "유통수단으로 기능하는 화폐량은 상품가격 총액을 같은 명칭 주화의 회전 횟수로 나눈 값과 같다.",
+                      "ko": "유통수단으로 기능하는 화폐량은 상품가격의 총액을 같은 액면의 주화가 이동한 횟수로 나눈 것과 같다.",
                       "en": "the quantity of money functioning as the circulating medium is equal to the sum of the prices of the commodities divided by the number of moves made by coins of the same denomination."
                     }
                   }
@@ -1887,27 +1895,27 @@
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "같은 화폐가 국면마다 다른 기능으로 매개된다는 점이 구분의 이유다.",
-                      "기능을 단계론으로 읽으면 오늘날에도 세 기능이 공존한다는 점을 놓친다.",
-                      "화폐 하나가 여러 기능을 수행한다는 점 자체가 3장의 핵심 논점이다.",
-                      "기능 구분을 소재의 차이로 바꿔치는 오해로, 사회적 관계 분석을 지운다."
+                      "같은 화폐라도 어느 계기에 서 있느냐에 따라 관념적으로만 작동하거나 실제 현금으로 요구되거나 하는 차이가 생긴다는 점을 함께 기억하자.",
+                      "세 기능을 역사적 단계로 나누면 오늘날에도 세 기능이 함께 작동한다는 점, 예컨대 가격표시와 실제 결제가 동시에 일어난다는 점을 놓친다.",
+                      "하나의 화폐가 한 기능만 수행한다고 보면 같은 금화가 가격을 표시하고 물건을 사고 빚을 갚는 데 모두 쓰일 수 있다는 점을 놓친다.",
+                      "가치척도와 지급수단을 금속과 종이의 물질적 차이로 나누면 마르크스가 강조하는 기능적 구분을 물질적 구분으로 잘못 바꾼 것이다."
                     ],
                     "en": [
-                      "The reason for distinction is that the same money is mediated by different functions in different moments.",
-                      "Reading the functions as historical stages misses that all three still coexist today.",
-                      "That a single money performs multiple functions is exactly Chapter 3's core point.",
-                      "This swaps functional distinction for material difference, erasing the analysis of social relations."
+                      "Remember that the same money can act purely ideally at one moment and be demanded as hard cash at another, depending on which function it is performing.",
+                      "Splitting the three functions into historical stages misses that all three still operate together today, as when a price tag and an actual settlement occur side by side.",
+                      "Assuming one money can perform only one function misses that the very same gold coin can express a price, buy a good, and settle a debt.",
+                      "Dividing measure of value and means of payment by metal versus paper substitutes a material distinction for the functional one Marx is actually making."
                     ]
                   },
                   "source": {
-                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S1",
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S3",
                     "label": {
-                      "ko": "『자본론』 1권 3장 1절·3절 가치척도와 지급수단",
-                      "en": "Capital I, Ch.3 §1 & §3B Measure of Value and Means of Payment"
+                      "ko": "『자본론』 1권 3장 3절 B 지급수단",
+                      "en": "Capital I, Ch. 3 §3B Means of Payment"
                     },
                     "quote": {
-                      "ko": "가치척도로서와 가격의 도량표준으로서 화폐는 전혀 다른 두 기능을 수행한다. … 지급수단으로서 화폐의 기능은 매개항 없는 모순을 함축한다.",
-                      "en": "As measure of Value, and as standard of price, money has two entirely distinct functions to perform. … The function of money as the means of payment implies a contradiction without a terminus medius."
+                      "ko": "지급수단으로서 화폐의 기능은 중간항 없는 모순을 함축한다. 지불들이 서로 상쇄되는 한, 화폐는 계산화폐로서, 곧 가치척도로서 오직 관념적으로만 기능한다.",
+                      "en": "The function of money as the means of payment implies a contradiction without a terminus medius. In so far as the payments balance one another, money functions only ideally as money of account, as a measure of value."
                     }
                   }
                 },
@@ -1935,32 +1943,32 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "사례 적용에서는 지급수단이 중요하다. 신용은 유통을 부드럽게 만드는 동시에 판매와 결제를 분리하며, 결제들이 사슬처럼 서로 얽힌다. 그래서 화폐가 결제수단으로 요구되는 순간, 사슬의 한 고장이 화폐공황이라 불리는 국면으로 드러날 수 있다.",
-                    "en": "In the applied case, means of payment is crucial. Credit smooths circulation while separating sale from payment, and payments link into a chain. When money is demanded as means of settlement, one break in the chain can surface as what is called a monetary crisis."
+                    "ko": "외상거래가 늘어날수록 신용은 유통을 부드럽게 하지만, 동시에 판매와 결제를 시간적으로 떼어놓는다. 결제일들이 서로 사슬처럼 얽혀 있어서, 한 채무자가 갚지 못하면 그에게 대금을 받아 다른 곳에 갚으려던 사람도 함께 지불불능에 빠질 수 있다. 그래서 화폐가 결제수단으로 요구되는 순간, 사슬의 한 고장이 화폐공황이라 불리는 국면으로 번질 수 있다.",
+                    "en": "As credit dealings grow, credit smooths circulation while also separating sale from settlement in time. Due dates link together in a chain, so when one debtor fails to pay, whoever expected to pass that payment along to a creditor can be dragged into insolvency too. The moment money is demanded purely as means of settlement, one break in this chain can spread into what is called a monetary crisis."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "결제사슬이 끊기면 형식적 가능성이던 위기가 실제 사건으로 나타난다는 점을 함께 새겨둔다.",
-                      "신용이 가치를 만든다는 것은 마르크스가 명시적으로 비판하는 오해다.",
-                      "만기가 있는 외상판매는 현금판매와 다른 시간구조를 지닌다는 점을 지운다.",
-                      "화폐가 필요없어진다는 것은 지급수단 위기에서 오히려 화폐가 절실히 요구된다는 논지와 반대다."
+                      "결제사슬이 촘촘할수록 한 곳의 지불불능이 퍼지는 범위도 커진다는 점을 함께 기억해두면 좋다.",
+                      "신용이 가치를 만들어낸다고 보면 신용을 가치증식의 원천과 혼동한 것이며, 신용은 지불을 미룰 뿐 새 가치를 낳지 않는다.",
+                      "만기일이 정해져도 지불이 실제로 이루어지기 전까지는 현금판매와 다른 위험이 남아 있으며, 그 위험이 바로 이 장의 논점이다.",
+                      "외상이 늘어나도 결제일에는 결국 현금이 요구되므로, 화폐가 필요없어진다는 것은 지급수단의 성격을 거꾸로 이해한 것이다."
                     ],
                     "en": [
-                      "Note also that once the chain breaks, what was a formal possibility of crisis becomes an actual event.",
-                      "That credit itself creates value is a misconception Marx explicitly criticizes.",
-                      "This erases the fact that credit sales with a due date have a different time structure than cash sales.",
-                      "Saying money is no longer needed contradicts the point that money is urgently demanded in a payment crisis."
+                      "The tighter the chain of settlements, the wider the insolvency from one broken link can spread — worth remembering here.",
+                      "Claiming credit itself creates value confuses credit with a source of valorization; credit only defers payment, it does not produce new value.",
+                      "Even with a fixed due date, a real risk distinct from cash sale remains until payment is actually made, and that risk is exactly this chapter's point.",
+                      "Even as credit spreads, hard cash is eventually demanded on settlement day, so saying money becomes unnecessary reverses what means of payment actually implies."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S3",
                     "label": {
                       "ko": "『자본론』 1권 3장 3절 B 지급수단",
-                      "en": "Capital I, Ch.3 §3B Means of Payment"
+                      "en": "Capital I, Ch. 3 §3B Means of Payment"
                     },
                     "quote": {
-                      "ko": "이 기제 전반에 걸쳐 일반적이고 광범위한 교란이 일어나면, 원인이 무엇이든 화폐는 관념적 계산화폐라는 형태에서 갑자기 곧바로 경화로 전환된다. … 이 모순은 화폐공황이라 불리는 산업·상업공황의 국면에서 정점에 이른다.",
-                      "en": "Whenever there is a general and extensive disturbance of this mechanism, no matter what its cause, money becomes suddenly and immediately transformed, from its merely ideal shape of money of account, into hard cash. … This contradiction comes to a head in those phases of industrial and commercial crises which are known as monetary crises."
+                      "ko": "이 모순은 화폐공황이라 불리는 산업 및 상업 공황의 국면에서 정점에 이른다.",
+                      "en": "This contradiction comes to a head in those phases of industrial and commercial crises which are known as monetary crises."
                     }
                   }
                 },
@@ -1988,31 +1996,31 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "판매와 구매의 분리, 지급수단의 결제연쇄는 공황이 일어날 수 있는 형식만을 마련할 뿐, 그것이 실제로 폭발하는 이유는 자본의 축적과 이윤율 운동 등 뒤에 오는 분석에서 밝혀진다. 이를 단순유통 안에서 이미 다 설명되었다고 보면, 마르크스가 굳이 “가능성”이라는 단어로 한계를 그은 이유를 놓친다. 3장은 이렇게 『자본론』 전체가 다룰 공황론의 출발점만을 마련한다.",
-                    "en": "The separation of sale and purchase and the chain of settlements in means of payment establish only the form in which crisis can occur; why it actually erupts is explained later, through the analysis of capital's accumulation and the movement of the rate of profit. Treating this as already fully explained within simple circulation misses why Marx deliberately limits himself to the word possibility. Chapter 3 thus only lays the starting point for the theory of crisis developed across Capital as a whole."
+                    "ko": "판매와 구매의 분리, 지급수단의 결제사슬은 공황이 일어날 수 있는 형식만을 마련할 뿐이다. 그 형식이 실제로 폭발하는 이유는 자본의 축적과 이윤율 운동처럼 단순유통을 넘어서는 분석에서 비로소 밝혀진다. 이를 단순유통 안에서 이미 다 설명되었다고 보면, 마르크스가 굳이 가능성이라는 낱말로 한계를 그은 이유를 놓치게 된다.",
+                    "en": "The separation of sale from purchase, and the chain of settlements in means of payment, establish only the form in which crisis can occur. Why it actually erupts is explained only later, through analysis of capital's accumulation and the movement of the rate of profit, which go beyond simple circulation. Treating this as already fully explained within simple circulation misses why Marx deliberately limits himself to the word possibility."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "형식적 가능성과 현실적 폭발을 구분하는 것이 이 장과 자본론 전체를 잇는 고리다.",
-                      "단순유통이 공황을 완결적으로 설명한다고 보면 뒤에 이어질 자본분석의 필요성을 지운다.",
-                      "판매와 구매가 항상 균형을 이룬다는 가정은 마르크스가 명시적으로 반박하는 도그마다.",
-                      "화폐형태의 모순을 무시하면 공황을 순전히 외적 우연으로 돌려 이 장의 논점을 지운다."
+                      "형식적 가능성과 현실화를 구분해두면, 뒤에 나올 축적과 이윤율 저하 경향의 분석이 왜 필요한지 미리 이해할 수 있다.",
+                      "단순유통에서 이미 원인과 규모까지 설명되었다고 보면 마르크스가 가능성이라는 말로 그은 한계선 자체를 지워버리는 셈이다.",
+                      "판매와 구매가 항상 균형을 이룬다고 보면 화폐형태의 모순 자체를 부정하는 것이며, 이는 마르크스가 비판한 균형론의 오류다.",
+                      "공황의 형식적 조건은 화폐형태의 모순에서 나오므로, 자연재해나 정치적 사건으로만 설명하는 것은 이 장의 논증과 어긋난다."
                     ],
                     "en": [
-                      "Distinguishing formal possibility from actual eruption is the link between this chapter and Capital as a whole.",
-                      "Treating simple circulation as fully explaining crisis erases the need for the capital analysis that follows.",
-                      "The assumption that sale and purchase always balance is a dogma Marx explicitly refutes.",
-                      "Ignoring the money-form's contradictions reduces crisis to pure external accident, erasing this chapter's point."
+                      "Distinguishing formal possibility from actualization lets you anticipate why the later analysis of accumulation and the falling rate of profit becomes necessary.",
+                      "Claiming simple circulation already explains the cause and scale of crisis erases the very limit Marx draws with the word possibility.",
+                      "Assuming sale and purchase always balance denies the contradiction of the money-form itself, repeating the equilibrium error Marx criticizes.",
+                      "Since the formal condition for crisis arises from the contradiction of the money-form, explaining it only by disasters or politics contradicts this chapter's argument."
                     ]
                   },
                   "source": {
                     "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch03.htm#S2",
                     "label": {
                       "ko": "『자본론』 1권 3장 2절 A 상품의 변태",
-                      "en": "Capital I, Ch.3 §2A The Metamorphosis of Commodities"
+                      "en": "Capital I, Ch. 3 §2A The Metamorphosis of Commodities"
                     },
                     "quote": {
-                      "ko": "이 국면들은 그러므로 공황의 가능성을, 오직 가능성만을 함축한다. 이 가능성이 현실이 되는 것은 단순유통이라는 지금의 관점에서는 아직 존재하지 않는 일련의 관계들의 결과다.",
+                      "ko": "그러므로 이 운동양식들은 공황의 가능성을, 그저 가능성만을 함축한다. 이 단순한 가능성이 현실로 전환되는 것은 긴 관계의 연쇄가 낳는 결과이며, 단순유통이라는 지금 우리의 관점에서는 아직 존재하지 않는 관계다.",
                       "en": "These modes therefore imply the possibility, and no more than the possibility, of crises. The conversion of this mere possibility into a reality is the result of a long series of relations, that, from our present standpoint of simple circulation, have as yet no existence."
                     }
                   }

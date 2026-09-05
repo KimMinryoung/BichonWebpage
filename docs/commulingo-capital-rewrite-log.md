@@ -8,3 +8,5 @@
 | 2026-09-05 | capital-v1-ch02 | soft | 1 | edited | 2 |
 | 2026-09-05 | capital-v1-ch03 | flagged | 4 | edited | 4 |
 | 2026-09-05 | capital-v1-ch01 | soft | 2 | accept | 3 |
+| 2026-09-05 | capital-v1-ch02 | soft | 2 | accept | 2 |
+| 2026-09-05 | capital-v1-ch03 | flagged | 4 | edited | 2 |
