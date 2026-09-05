@@ -50,10 +50,10 @@
         <!-- Recent CommuLingo updates -->
         <% if (recentCommuLingo && recentCommuLingo.length > 0) { %>
             <section class="home-section" aria-labelledby="recent-commulingo-title">
-                <div class="home-section-header">
+                <a class="home-section-header" href="/commulingo#updates">
                     <h2 id="recent-commulingo-title"><%= strings.home.recentCommuLingo %></h2>
-                    <a href="/commulingo#updates" class="btn btn-small"><%= strings.home.viewAll %></a>
-                </div>
+                    <span class="home-section-arrow" aria-hidden="true">→</span>
+                </a>
                 <ul class="post-list">
                     <% recentCommuLingo.forEach(item => { %>
                         <li class="post-item">
@@ -77,10 +77,10 @@
         <!-- Recent Research -->
         <% if (recentResearch && recentResearch.length > 0) { %>
             <section class="home-section">
-                <div class="home-section-header">
+                <a class="home-section-header" href="/reports">
                     <h2><%= strings.home.recentReports %></h2>
-                    <a href="/reports" class="btn btn-small"><%= strings.home.viewAll %></a>
-                </div>
+                    <span class="home-section-arrow" aria-hidden="true">→</span>
+                </a>
                 <ul class="post-list">
                     <% recentResearch.forEach(item => { %>
                         <li class="post-item">
@@ -102,10 +102,10 @@
         <!-- Recent Hub -->
         <% if (recentHub && recentHub.length > 0) { %>
             <section class="home-section">
-                <div class="home-section-header">
+                <a class="home-section-header" href="/hub">
                     <h2><%= strings.home.recentHub %></h2>
-                    <a href="/hub" class="btn btn-small"><%= strings.home.viewAll %></a>
-                </div>
+                    <span class="home-section-arrow" aria-hidden="true">→</span>
+                </a>
                 <ul class="post-list">
                     <% recentHub.forEach(it => { %>
                         <li class="post-item">
@@ -130,10 +130,10 @@
         <!-- Recent AI Diaries -->
         <% if (recentDiaries && recentDiaries.length > 0) { %>
             <section class="home-section">
-                <div class="home-section-header">
+                <a class="home-section-header" href="/ai-diary">
                     <h2><%= strings.home.recentDiaries %></h2>
-                    <a href="/ai-diary" class="btn btn-small"><%= strings.home.viewAll %></a>
-                </div>
+                    <span class="home-section-arrow" aria-hidden="true">→</span>
+                </a>
                 <ul class="post-list">
                     <% recentDiaries.forEach(diary => { %>
                         <li class="post-item">
@@ -151,10 +151,10 @@
         <!-- Recent Posts -->
         <% if (recentPosts && recentPosts.length > 0) { %>
             <section class="home-section">
-                <div class="home-section-header">
+                <a class="home-section-header" href="/posts">
                     <h2><%= strings.home.recentPosts %></h2>
-                    <a href="/posts" class="btn btn-small"><%= strings.home.viewAll %></a>
-                </div>
+                    <span class="home-section-arrow" aria-hidden="true">→</span>
+                </a>
                 <ul class="post-list">
                     <% recentPosts.forEach(post => { %>
                         <li class="post-item">

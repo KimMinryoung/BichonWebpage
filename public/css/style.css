@@ -909,6 +909,8 @@ a.home-card:hover::after {
 }
 
 .home-card-group h2 a {
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -923,7 +925,8 @@ a.home-card:hover::after {
 
 /* Hover feedback matches the plain anchor cards: the stretched title link is
    what receives :hover, so lift it back onto the card box with :has(). */
-.home-card-group h2 a:hover {
+.home-card-group h2 a:is(:hover, :active, :focus) {
+    background-color: transparent;
     text-decoration: none;
 }
 
@@ -1043,18 +1046,6 @@ a.home-card:hover::after {
 .home-section-header h2 {
     font-size: 1.1rem;
     font-weight: 600;
-}
-
-.home-section-header .btn {
-    background-color: var(--btn-primary);
-    border-color: var(--btn-primary);
-    color: var(--clr-cream-light);
-}
-
-.home-section-header .btn:hover {
-    background-color: var(--btn-primary-hover);
-    border-color: var(--btn-primary-hover);
-    color: var(--clr-cream-light);
 }
 
 @media (max-width: 640px) {
@@ -2458,9 +2449,14 @@ footer .footer-tagline {
 .home-page .home-section-header {
     background: transparent;
     border: 0;
-    padding: 0 0 12px;
+    padding: 10px 12px;
+    min-height: 52px;
+    box-sizing: border-box;
     gap: 12px;
-    align-items: baseline;
+    align-items: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 .home-page .home-section-header h2 {
     border-left: 3px solid var(--accent);
@@ -2468,9 +2464,6 @@ footer .footer-tagline {
     font-size: 1.18rem;
     font-weight: 700;
     line-height: 1.4;
-}
-.home-page .home-section-header .btn {
-    flex-shrink: 0;
 }
 .home-page .home-section .post-item {
     border-inline: 0;
@@ -2503,4 +2496,18 @@ footer .footer-tagline {
     .home-page .home-section .post-item {
         padding: 14px 12px;
     }
+}
+
+.home-page .home-section-header:is(:hover, :active) {
+    background-color: var(--bg-surface-hover);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.home-page .home-section-header:focus-visible {
+    outline-offset: -2px;
+}
+.home-section-arrow {
+    flex: 0 0 auto;
+    color: var(--text-muted);
+    font-size: 1.15rem;
 }
