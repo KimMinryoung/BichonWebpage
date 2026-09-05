@@ -9767,6 +9767,51 @@
             "en": "Traces how machinery and large-scale industry transform work, skill, family life, and labor intensity."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "노동과정의 전도",
+              "left": {
+                "heading": "수공업과 매뉴팩처",
+                "rows": [
+                  "노동자가 도구를 손으로 움직인다",
+                  "숙련과 신체기관이 생산 속도를 제한한다",
+                  "노동과정은 노동자에 맞춰진다",
+                  "도구는 노동자의 연장이다"
+                ]
+              },
+              "right": {
+                "heading": "기계제 대공업",
+                "rows": [
+                  "기계장치가 도구를 움직인다",
+                  "기계체계가 속도와 리듬을 지시한다",
+                  "노동자는 기계를 감시·보조한다",
+                  "기계는 자본의 통제 장치가 된다"
+                ]
+              }
+            },
+            "en": {
+              "title": "Inversion of the Labour-Process",
+              "left": {
+                "heading": "Handicraft and Manufacture",
+                "rows": [
+                  "The worker moves the tool by hand",
+                  "Skill and bodily organs limit the pace",
+                  "The labour-process is adapted to the worker",
+                  "The tool is an extension of the worker"
+                ]
+              },
+              "right": {
+                "heading": "Machinery and Modern Industry",
+                "rows": [
+                  "The machine system moves the tools",
+                  "The machine system dictates speed and rhythm",
+                  "The worker supervises and attends the machine",
+                  "The machine becomes an instrument of capital’s control"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch15-basic",
@@ -9781,27 +9826,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "기계제 대공업에서 도구를 직접 움직이는 중심은 더 이상 개별 노동자의 손이 아니다. 마르크스가 기계체계에서 주목하는 변화는 무엇인가?",
-                    "en": "In modern industry, the direct mover of tools is no longer the individual worker’s hand. What change does Marx focus on in the machine system?"
+                    "ko": "한 직조공이 손베틀을 짜다가 공장에서 동력직기 여러 대를 돌보는 일로 옮겼다. 마르크스가 보기에 이 노동자는 직조공에서 기계체계의 어떤 존재로 재배치되는가?",
+                    "en": "A weaver moves from working a hand-loom to tending several power-looms in a factory. In Marx’s view, what position does this worker now occupy in the machine system?"
                   },
                   "choices": {
                     "ko": [
-                      "도구가 기계장치에 편입되고 노동자는 기계체계의 감시자·보조자로 재배치된다.",
-                      "기계가 등장하면 노동자는 생산과정에서 완전히 사라져 아무 노동도 하지 않는다.",
-                      "기계는 단순한 도구와 같아 노동과정의 조직을 충분히 바꾸지 않는다.",
-                      "기계제 대공업에서는 상품생산이 사라지고 사용가치만 남는다."
+                      "도구가 기계장치에 편입되고, 노동자는 기계가 계속 움직이도록 감시하고 보조하는 존재로 재배치된다.",
+                      "기계도 손베틀처럼 노동자의 손이 도구를 직접 조종해야 하므로 작업 조직은 그대로 유지된다.",
+                      "동력직기가 숙련공의 노하우를 그대로 이어받기 때문에 숙련공 위계가 더 강해진다.",
+                      "기계가 모든 동작을 수행하므로 노동자는 공장 밖에서 상품 판매만 담당하게 된다."
                     ],
                     "en": [
-                      "Tools are incorporated into machinery, and workers are repositioned as supervisors and attendants of the machine system.",
-                      "When machinery appears, workers completely disappear from production and perform no labor.",
-                      "Machinery is the same as a simple tool and does not change the organization of the labor-process.",
-                      "In modern industry commodity production disappears and only use-value remains."
+                      "The tool is incorporated into the machine apparatus, and the worker is repositioned to watch and assist the machine so that it keeps moving.",
+                      "A machine, like a hand-loom, still requires the worker’s hand to guide the tool directly, so the work organisation remains unchanged.",
+                      "Because the power-loom carries over the artisan’s know-how, the hierarchy of skilled workers becomes stronger.",
+                      "Since the machine performs every motion, the worker leaves the factory and handles only the sale of commodities."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계제 대공업에서는 노동자가 도구를 사용하는 관계가 기계체계가 노동자를 사용하는 관계로 뒤집혀 보인다. 노동과정의 리듬과 구조가 기계에 의해 규정된다.",
-                    "en": "In modern industry, the relation appears inverted: rather than the worker using the tool, the machine system uses the worker. The rhythm and structure of the labor-process are determined by machinery."
+                    "ko": "손베틀에서는 노동자가 도구를 몸의 연장처럼 다루지만, 동력직기에서는 도구가 기계장치에 편입되고 노동자는 기계가 멈추지 않도록 감시하고 고장을 바로잡는 보조자로 남는다. 단지 힘을 덜 쓰는 문제가 아니라 노동과정의 리듬이 사람의 손이 아닌 기계체계에서 나오게 된다. 기계가 스스로 모든 것을 한다는 오해는 기계의 마모와 교정, 감시 노동을 빠뜨린다. 손베틀과 차이가 없다는 오해는 도구 자체가 기계장치에 편입되는 역사적 변화를 놓친다.",
+                    "en": "With a hand-loom the worker wields the tool as an extension of the body; with power-looms the tool sits inside a mechanism and the worker stays on to watch it and correct its mistakes. The rhythm of the labour-process now issues from the machine system, not from the hand. Thinking the machine does it all misses the wear and supervision it still demands; thinking it is only a bigger hand-loom misses the change that fits the tool into a mechanism."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "기계가 도구를 손에서 넘겨받는 순간부터 노동자는 능동적 조종자가 아니라 기계체계의 감시·보조자로 남는다. 이 전환이 공장 규율의 기술적 기초다.",
+                      "손베틀에서는 노동자가 도구를 움직이지만, 기계에서는 도구가 기계장치 안으로 들어간다. 기계를 확대된 손도구로 보면 산업혁명의 역사적 단절이 사라진다.",
+                      "숙련은 오히려 기계로 이전되어 낮아질 수 있다. 기계 이전의 숙련공 위계 자리에는 나이와 성별에 따른 단순 감시 노동이 들어선다.",
+                      "기계는 자동으로 움직여도 고장 수리와 재료 공급, 감시 같은 산 노동을 계속 요구한다. 판매만 남는다는 생각은 공장 안의 노동을 보지 못한다."
+                    ],
+                    "en": [
+                      "Once the machine takes over the tool, the worker remains not as the active controller but as the machine system’s attendant and supervisor. This inversion becomes the technical basis of factory discipline.",
+                      "With a hand-loom the worker moves the tool, but in machinery the tool is fitted into a mechanism. Treating the machine as merely a bigger hand tool erases the historical rupture of the industrial revolution.",
+                      "Skill can be transferred into the machine and reduced in the worker. In place of the old hierarchy of artisans comes simple attending labour differentiated mainly by age and sex.",
+                      "An automatic machine still requires living labour for repairs, supply of material, and supervision. The idea that only selling remains overlooks labour inside the factory."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 1절 기계의 발전",
+                      "en": "Capital I, Ch. 15 §1 The Development of Machinery"
+                    },
+                    "quote": {
+                      "ko": "고유한 도구가 사람의 손에서 떼어져 기계장치에 맞춰지는 순간, 단순한 연장 대신 기계가 자리 잡는다. … 기계 형태의 노동수단은 인간의 힘을 자연력으로 대체하고, 주먹구구 대신 과학의 의식적 적용을 강제한다.",
+                      "en": "From the moment that the tool proper is taken from man, and fitted into a mechanism, a machine takes the place of a mere implement. … The implements of labour, in the form of machinery, necessitate the substitution of natural forces for human force, and the conscious application of science, instead of rule of thumb."
+                    }
                   }
                 },
                 {
@@ -9809,27 +9879,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본가가 기계를 도입하는 직접 동기는 무엇인가?",
-                    "en": "What is the direct motive for the capitalist to introduce machinery?"
+                    "ko": "한 방적공장 주인이 물레로 실을 잣던 방적공들을 내보내고, 2.5명이 돌보는 뮬 방적기 450추를 들이려 한다. 이때 그가 자본가로서 실제로 견주는 것은 무엇인가?",
+                    "en": "A spinning-mill owner plans to dismiss the hand-spinners at their wheels and install 450 mule spindles tended by two and a half operatives. As a capitalist, what does he actually weigh against what?"
                   },
                   "choices": {
                     "ko": [
-                      "상품을 더 적은 사회적 필요노동시간으로 생산해 상대적 잉여가치 또는 특별잉여가치를 얻기 위해서이다.",
-                      "기계가 스스로 새 가치를 창조해 노동력이 필요 없어지기 때문이다.",
-                      "노동자를 힘들지 않게 만들기 위한 순수한 인도주의 때문이다.",
-                      "기계가 있으면 상품을 팔지 않아도 이윤이 생기기 때문이다."
+                      "기계 가격과 그 기계가 대체하는 노동력 가격의 차이, 즉 지불임금을 얼마나 줄이는가를 비교한다.",
+                      "기계가 1년 동안 만들어 내는 새 가치 총량과 노동자가 소비하는 생활수단의 무게를 비교한다.",
+                      "기계의 수명 동안 만들어지는 사용가치 총량과 노동자의 여가 선호를 비교한다.",
+                      "기계가 줄이는 필요노동과 늘리는 불변자본의 물리적 부피를 비교한다."
                     ],
                     "en": [
-                      "To produce commodities with less socially necessary labor-time and obtain relative or extra surplus-value.",
-                      "Because machines create new value by themselves and labor-power becomes unnecessary.",
-                      "Out of pure humanitarian concern to make workers’ lives easier.",
-                      "Because with machinery profit arises even without selling commodities."
+                      "The difference between the value of the machine and the value of the labour-power it replaces, that is, how much paid wages he can cut.",
+                      "The total new value the machine creates in a year against the weight of the workers’ means of subsistence.",
+                      "The total use-value produced over the machine’s life against the workers’ preference for leisure.",
+                      "The necessary labour reduced by the machine against the physical volume of constant capital added."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 기계의 기술적 가능성과 자본주의적 사용을 구분한다. 자본가에게 기계는 노동을 절약하기보다 지불노동을 줄이고 잉여노동을 늘리는 수단으로 도입된다.",
-                    "en": "Marx distinguishes the technical possibilities of machinery from its capitalist use. For the capitalist, machinery is introduced less to spare labor than to reduce paid labor and expand surplus labor."
+                    "ko": "기계는 새 가치를 만들어 내지 못하고 자기 가치를 생산물로 조금씩 이전할 뿐이다. 자본가는 생산에 필요한 전체 노동량이 아니라 자기가 실제로 지불하는 노동력의 가치만 보기 때문에, 기계 가격이 대체할 노동자의 임금총액보다 낮을 때만 도입을 택한다. 따라서 같은 기계라도 임금이 낮은 곳에서는 도입되지 않을 수 있다. 기계의 생산성을 물리적 사용가치나 새 가치 창조로 이해하는 오해는 자본의 계산이 지불노동에 달려 있다는 점을 놓친다.",
+                    "en": "A machine creates no new value; it only transfers its own value to the product bit by bit through wear and tear. The capitalist compares not the total labour spent making the machine with the labour it displaces, but the machine’s price with the price of the labour-power he need no longer pay. Where wages are low the same machine may not pay. Reading this as new value or as physical use-value misses that the calculation turns on paid labour."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "자본가는 노동 자체가 아니라 지불되는 노동력의 가치와 비교한다. 그래서 기계가 노동을 절약해도 임금이 낮으면 도입이 지연될 수 있다.",
+                      "기계는 불변자본이므로 새 가치를 창조하지 않는다. 가치 창조는 오직 지출된 노동력에서 나온다.",
+                      "자본가는 노동자의 여가 선호가 아니라 지불임금의 절약을 계산에 넣는다. 사용가치 총량은 이 비교에서 직접 기준이 되지 않는다.",
+                      "물리적 부피가 아니라 가치 크기가 문제다. 불변자본으로 전환된 자본이 커지면 같은 자본이 고용하는 노동자 수가 줄어든다."
+                    ],
+                    "en": [
+                      "The capitalist compares his machine investment with the price of the labour-power he will no longer have to pay, not with labour as such. Where wages are low, a labour-saving machine may not pay.",
+                      "As constant capital, a machine does not create new value. New value arises only from the labour-power actually set in motion.",
+                      "The capitalist’s test is saving paid wages, not satisfying a worker’s preference for leisure. Total use-value is not the direct measure.",
+                      "What matters is value, not physical volume. Capital converted into constant capital no longer exchanges against labour-power, so fewer workers can be employed."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 2절 기계가 생산물에 이전하는 가치",
+                      "en": "Capital I, Ch. 15 §2 The Value Transferred by Machinery to the Product"
+                    },
+                    "quote": {
+                      "ko": "상품을 싸게 만들려는 목적만을 위한 기계 사용은, 기계 생산에 들어간 노동이 그 기계의 채용으로 대체되는 노동보다 적어야 한다는 한계를 갖는다. … 자본가에게 이 사용은 더욱 제한된다. 그는 노동에 대해 지불하는 대신 고용된 노동력의 가치만 지불하므로, 기계 사용의 한계는 기계의 가치와 기계가 대체하는 노동력의 가치의 차이로 정해진다.",
+                      "en": "The use of machinery for the exclusive purpose of cheapening the product, is limited in this way, that less labour must be expended in producing the machinery than is displaced by the employment of that machinery. … For the capitalist, however, this use is still more limited. Instead of paying for the labour, he only pays the value of the labour-power employed; therefore, the limit to his using a machine is fixed by the difference between the value of the machine and the value of the labour-power replaced by it."
+                    }
                   }
                 },
                 {
@@ -9837,27 +9932,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "기계가 도입되면 노동일이 자동으로 짧아진다고 생각하기 쉽다. 마르크스가 보여주는 반대 경향은 무엇인가?",
-                    "en": "It is tempting to think machinery automatically shortens the working day. What opposite tendency does Marx show?"
+                    "ko": "같은 방적기를 하루 16시간씩 7년 반 돌려도, 하루 8시간씩 15년 돌려도 생산물에 넘어가는 가치 총액은 같다. 그런데도 공장주가 16시간 가동을 밀어붙이는 까닭을 마르크스는 어떻게 설명하는가?",
+                    "en": "Running the same spinning machine sixteen hours a day for seven and a half years transfers no more value to the product than running it eight hours a day for fifteen years. How does Marx explain the mill-owner’s push for the sixteen-hour day?"
                   },
                   "choices": {
                     "ko": [
-                      "기계의 값비싼 고정자본을 최대한 활용하려는 압력이 노동일 연장과 교대제 확대를 낳을 수 있다.",
-                      "기계가 있으면 자본가는 더 이상 잉여가치에 관심을 갖지 않는다.",
-                      "기계는 노동자의 필요노동시간을 늘릴 수 없으므로 착취와 무관하다.",
-                      "기계가 도입되면 많은 노동자는 곧바로 생산수단을 소유하게 된다."
+                      "기계 가치를 두 배 빨리 회수하면서 같은 햇수 동안 그만큼 더 많은 잉여가치를 흡수할 수 있기 때문이다.",
+                      "노동시간이 길어지는 만큼 기계가 상품 하나하나에 넘기는 가치도 커지므로, 공장주가 같은 상품을 더 비싼 값에 팔 수 있게 되기 때문이다.",
+                      "기계는 세워 두면 물질적 마멸이 오히려 커지므로, 쉬지 않고 돌리는 편이 기계의 수명을 늘리는 확실한 길이기 때문이다.",
+                      "긴 노동일은 기계가 스스로 만들어 내는 새 가치의 양을 늘려 주므로, 노동력을 더 쓰지 않고도 잉여가치를 키울 수 있기 때문이다."
                     ],
                     "en": [
-                      "The pressure to use expensive fixed capital as fully as possible can produce longer working days and expanded shift work.",
-                      "Once machinery exists, capitalists no longer care about surplus-value.",
-                      "Machinery cannot affect necessary labor-time, so it has nothing to do with exploitation.",
-                      "When machinery is introduced, all workers immediately own the means of production."
+                      "Because the value of the machine is reproduced twice as fast, and the same span of years absorbs that much more surplus-value.",
+                      "Because a longer working day increases the value the machine hands on to each single commodity, letting the owner sell the same goods at a higher price.",
+                      "Because a machine that stands idle suffers more material wear than one in use, so running it without pause is the surest way to lengthen its life.",
+                      "Because a longer day increases the new value the machine creates by itself, so surplus-value can grow without setting more labour-power in motion."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계는 노동시간 단축의 물질적 가능성을 만들 수 있지만, 자본주의적 사용에서는 기계가 놀지 않도록 노동일을 늘리는 압력이 생긴다. 기술 효과는 사회적 형식에 의해 결정된다.",
-                    "en": "Machinery can create the material possibility of shorter labor-time, but under capitalist use there is pressure to lengthen the working day so the machine does not stand idle. The effect of technology is determined by its social form."
+                    "ko": "16시간 가동과 8시간 가동은 기계가 생산물에 넘기는 가치 총액을 바꾸지 않는다. 달라지는 것은 회수 속도다. 16시간으로 돌리면 기계값이 7년 반 만에 재생산되고, 자본가는 15년 걸려야 얻을 잉여가치를 그 절반의 기간에 흡수한다. 더 싸거나 더 좋은 기계가 나오면 아직 성한 기계도 값이 깎이므로, 그 전에 뽑아내려는 조바심이 노동일을 밀어 올린다. 기계가 상품값을 올린다거나 새 가치를 만든다는 생각은 이 가속의 기제를 산 노동 바깥에서 찾는 오해다.",
+                    "en": "Both schedules transfer the same total value to the product; what changes is the speed of recovery. Worked sixteen hours, the machine reproduces its value in seven and a half years, absorbing in that span what the eight-hour day would yield only in fifteen. Moral depreciation sharpens the hurry: a cheaper or better machine devalues one still young. Reading it as higher prices, or as value made by the machine, looks outside living labour."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "여기에 도덕적 마멸이 겹친다. 더 싸거나 더 좋은 기계가 나오면 아직 성한 기계도 값이 깎이므로, 자본은 그 전에 본전을 뽑으려고 노동일을 밀어 올린다.",
+                      "기계는 자기 가치를 조금씩 넘길 뿐이고, 오래 돌릴수록 그 가치는 더 많은 상품에 얇게 퍼진다. 상품 하나에 붙는 이전 가치는 오히려 줄어든다.",
+                      "쓰지 않는 기계도 녹슬어 마멸되지만, 쉬지 않고 돌리는 쪽이 마멸은 더 크다. 자본이 노리는 것은 기계의 수명이 아니라 가치 회수의 속도다.",
+                      "기계는 불변자본이라 새 가치를 만들지 못한다. 노동일이 길어져서 늘어나는 것은 기계의 창조력이 아니라 노동자가 지출하는 잉여노동이다."
+                    ],
+                    "en": [
+                      "Moral depreciation compounds this. A cheaper or better machine devalues one still sound, so capital pushes the working day up to get its outlay back first.",
+                      "A machine only passes on its own value bit by bit, and the longer it runs the more products that value is spread over. The value added per item falls rather than rises.",
+                      "An idle machine does rust, but a machine run without pause wears faster. What capital is chasing is not a longer life for the machine but a faster return of its value.",
+                      "As constant capital a machine creates no new value. What a longer day increases is not the machine’s creativity but the surplus labour the worker expends."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 3절 B 노동일의 연장",
+                      "en": "Capital I, Ch. 15 §3 B Prolongation of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "기계의 활동적 수명은 노동일의 길이에, 곧 하루 노동과정의 지속시간에 그 과정이 이어지는 날수를 곱한 것에 분명히 달려 있다. … 그러나 앞의 경우에는 기계의 가치가 뒤의 경우보다 두 배 빨리 재생산되고, 자본가는 이런 기계 사용으로 뒤의 경우라면 15년이 걸려야 얻을 잉여가치를 7년 반 만에 흡수한다.",
+                      "en": "The active lifetime of a machine is, however, clearly dependent on the length of the working-day, or on the duration of the daily labour-process multiplied by the number of days for which the process is carried on. … But in the first case the value of the machine would be reproduced twice as quickly as in the latter, and the capitalist would, by this use of the machine, absorb in 7½ years as much surplus-value as in the second case he would in 15."
+                    }
                   }
                 },
                 {
@@ -9876,16 +9996,41 @@
                       "이 현상은 자연적 가족관계의 변화를 보여주기 때문이다."
                     ],
                     "en": [
-                      "Because machinery lowers the barrier of muscular strength, subsumes the labor-power of the whole family under capital, and changes the conditions of labor-power’s value and the struggle over the working day.",
-                      "Because women’s and children’s labor is pure household activity unrelated to value production.",
-                      "Because once machinery appears, labor by gender and age is legally prohibited.",
-                      "Because this phenomenon shows only natural family relations unrelated to capitalism."
+                      "Because machinery lowers the barrier of muscular strength, brings the whole family under capital, and alters both the value of labour-power and the struggle over the working day.",
+                      "Because the work women and children do in the factory is best read as an extension of the household activity they already carried on outside it.",
+                      "Because once machinery appears, labour divided by sex and age is placed under legal prohibition and vanishes from the factory floor.",
+                      "Because the change it brings in family relations belongs to the natural history of the family rather than to capitalist production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계는 누가 공장노동에 동원될 수 있는지를 바꾼다. 가족 전체가 임금노동에 끌려 들어가면서 노동력 재생산, 임금, 교육, 건강 문제가 모두 자본주의적 생산의 일부가 된다.",
-                    "en": "Machinery changes who can be mobilized for factory labor. As the whole family is drawn into wage labor, reproduction of labor-power, wages, education, and health become part of capitalist production."
+                    "ko": "기계가 근력을 대신하면서 성인 남성의 신체 조건이 고용의 장벽이 되지 않자, 자본은 아내와 아이까지 노동시장에 내놓게 한다. 이때 노동력의 가치는 성인 한 사람을 유지하는 비용이 아니라 가족 전체의 재생산 비용으로 흩어지므로, 온 식구가 일해도 자본이 치르는 값은 오히려 떨어진다. 여성·아동 노동을 가사의 연장이나 자연스러운 가족 변화로 보면 그것이 임금노동과 잉여가치 생산의 확대라는 점이 지워진다.",
+                    "en": "Once machinery takes over muscular power, the adult male body ceases to be the hiring standard and capital can send the whole family into the labour market. The value of labour-power, once measured by what it takes to keep the adult worker, is now spread over the family, so its price to capital can fall even as more members work. Read as housework extended, or as a natural change in the family, this misses the expansion of wage-labour."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "기계는 근력의 차이를 무력화해 고용 가능한 노동자의 범위를 넓힌다. 이는 아동과 여성을 노동시장에 편입시켜 가족 전체의 임금 관계를 바꾼다.",
+                      "가사활동은 사용가치를 위한 노동이지만, 공장에서 여성·아동이 하는 일은 자본을 위해 잉여가치를 낳는 임금노동이다.",
+                      "기계 등장이 곧 법적 금지로 이어지지 않는다. 오히려 공장법 이전에는 기계가 어린 노동자의 고용을 늘렸다.",
+                      "가족관계 변화는 자연적 현상이 아니라 기계 사용과 임금노동 확대가 낳은 사회적 결과다. 자본주의 관계를 빼면 설명이 남지 않는다."
+                    ],
+                    "en": [
+                      "Machinery neutralises differences in muscular strength and widens the range of workers capital can hire. It draws children and women into the labour market and changes the wage relation of the whole family.",
+                      "Household activity is oriented to use-value, but the work done by women and children in the factory is wage-labour that produces surplus-value for capital.",
+                      "The appearance of machinery does not itself create legal prohibitions. Before the Factory Acts, machinery increased the employment of young workers.",
+                      "Changes in family relations are not natural facts but social results of machinery and expanded wage-labour. Remove the capitalist relation and the explanation disappears."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 3절 기계가 노동자에게 미치는 직접적 결과",
+                      "en": "Capital I, Ch. 15 §3 The Proximate Effects of Machinery on the Workman"
+                    },
+                    "quote": {
+                      "ko": "기계는 근력을 덜 쓰게 하는 한, 근력이 약하고 신체 발달이 끝나지 않았지만 팔다리가 그만큼 유연한 노동자를 고용하는 수단이 된다. … 기계는 가족 구성원 전부를 노동시장으로 내몰아 남성 노동력의 가치를 가족 전체에 분산시키고, 그렇게 그의 노동력 값을 떨어뜨린다.",
+                      "en": "In so far as machinery dispenses with muscular power, it becomes a means of employing labourers of slight muscular strength, and those whose bodily development is incomplete, but whose limbs are all the more supple. … Machinery, by throwing every member of that family on to the labour-market, spreads the value of the man’s labour-power over his whole family. It thus depreciates his labour-power."
+                    }
                   }
                 },
                 {
@@ -9893,27 +10038,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "15장이 기계를 단순한 “진보의 도구”로만 보지 않는 이유는 무엇인가?",
-                    "en": "Why does Chapter 15 not treat machinery simply as a “tool of progress”?"
+                    "ko": "한 경제학자가 「방적기가 방적공을 밀어내지만 실이 싸져 직조와 재봉 일자리가 늘어나니 실업은 일시적이다」라고 말한다. 이런 보상 주장을 마르크스가 그대로 받아들이지 않는 이유는?",
+                    "en": "An economist says: ‘The spinning machine displaces spinners, but cheap yarn expands weaving and sewing employment, so the unemployment is temporary.’ Why doesn’t Marx accept this compensation claim?"
                   },
                   "choices": {
                     "ko": [
-                      "기계는 생산력을 높일 수 있지만, 자본 아래서는 노동자를 기계체계에 종속시키고 노동강도와 실업 압력을 키우는 수단이 될 수 있기 때문이다.",
-                      "기계는 노동을 절약하므로 자본주의에서도 절약된 시간이 곧바로 노동자의 자유시간으로 돌아간다고 보기 때문이다.",
-                      "기계제 대공업의 문제는 낡은 숙련이 사라지는 문화적 변화일 뿐, 잉여가치 생산과는 관련이 없기 때문이다.",
-                      "기계가 도입되면 모든 사회에서 노동시간이 곧바로 줄고 임금노동도 사라지기 때문이다."
+                      "해고된 노동자를 고용하던 자본이 기계라는 불변자본에 묶여, 같은 수를 다시 고용할 자금으로 남지 않기 때문이다.",
+                      "방적기가 만든 실은 소비자가 원하는 사용가치를 갖지 못해, 직조와 재봉 부문이 커질 여지 자체가 생기지 않기 때문이다.",
+                      "보상이론은 노동자가 기계를 공동으로 소유한다고 미리 가정하고 있기 때문이다.",
+                      "기계가 만든 상품은 가치가 지나치게 낮아 신규 산업의 자본이 생겨나지 않기 때문이다."
                     ],
                     "en": [
-                      "Machinery can raise productive power, but under capital it can subordinate workers to the machine system and intensify labour and unemployment pressure.",
-                      "Because machinery saves labour, under capitalism the saved time immediately returns to workers as free time.",
-                      "The problem of large-scale industry is only the cultural loss of old skills and has no relation to surplus-value production.",
-                      "Whenever machinery is introduced, working time immediately falls in every society and wage-labour disappears."
+                      "The capital that employed the dismissed workers is now locked up in machinery as constant capital, so it no longer stands ready to hire the same number of hands.",
+                      "The yarn made by machinery lacks the use-value that consumers actually want, so the weaving and sewing trades have no room in which to grow.",
+                      "The compensation theory assumes in advance that workers own the machinery in common.",
+                      "The commodities made by machinery have such low value that no capital for new industries can arise."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 기계 자체를 악마화하지 않고, 기계가 어떤 사회관계 안에서 쓰이는지를 묻는다. 자본주의적 사용에서는 생산력 발전이 상대적 잉여가치, 노동강도, 예비군 압력과 결합될 수 있다.",
-                    "en": "Marx does not demonize machinery itself; he asks within what social relation it is used. In capitalist use, productive development can combine with relative surplus-value, labour intensity, and reserve-army pressure."
+                    "ko": "보상이론은 기계가 노동자를 내보내면 그들의 임금이 그대로 새로운 산업에 투자된다고 가정한다. 그러나 카펫공장 사례처럼, 해고된 노동자에게 지급되던 1,500파운드는 기계 구입에 쓰여 가변자본에서 불변자본으로 바뀐다. 그 자본은 더 이상 노동력과 교환되지 않으므로 같은 노동자를 다시 고용할 수 없다. 다른 부문에서 일자리가 늘어나도 그것은 새로 추가된 자본의 몫이지, 그들을 내보낸 낡은 자본이 갚는 보상이 아니다.",
+                    "en": "The compensation theory assumes that the wages of displaced workers remain a fund for new investment. In the carpet factory the £1,500 once paid as wages is spent on machinery and turns from variable into constant capital. Locked up there, it no longer exchanges against labour-power and cannot re-employ the same hands. Jobs added elsewhere come from new additional capital, not from the old capital that was converted into machinery."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "같은 화폐액이 기계가 되면 그 자본은 노동력과의 교환에서 빠진다. 보상이 일어나려면 별도의 추가 자본이 새로 들어와야 한다.",
+                      "문제는 실의 사용가치가 아니라 가치 구성의 변화다. 싼 실은 오히려 직조 수요를 자극할 수 있다.",
+                      "보상이론은 노동자의 기계 소유를 가정하지 않는다. 오히려 자본가의 사적 소유 아래서 자본 재배치가 일어난다고 본다.",
+                      "가치가 낮아도 신규 산업이 생길 수는 있다. 다만 그 고용은 해고된 노동자를 밀어낸 동일 자본에서 나오는 보상이 아니다."
+                    ],
+                    "en": [
+                      "Once the same sum becomes machinery, that capital is withdrawn from exchange with labour-power. Compensation requires new additional capital to enter.",
+                      "The issue is not the use-value of the yarn but the change in the composition of capital. Cheap yarn can stimulate demand for weaving.",
+                      "The compensation theory does not assume worker ownership of machinery. It describes capital reallocation under the capitalist’s private ownership.",
+                      "New industries can arise even with low values, but their employment is not a compensation paid out of the same capital that displaced the workers."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S6",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 6절 기계로 대체된 노동자에 관한 보상이론",
+                      "en": "Capital I, Ch. 15 §6 The Theory of Compensation as Regards the Workpeople Displaced by Machinery"
+                    },
+                    "quote": {
+                      "ko": "가변자본은 총자본의 절반이 아니라 4분의 1에 불과해진다. 자본의 일부는 풀려나기는커녕 노동력과 교환되지 않도록 묶여, 가변자본이 불변자본으로 바뀐다. … 기계 제작은 기껏해야 그 사용이 대체하는 수보다 적은 사람을 고용한다.",
+                      "en": "The variable capital, instead of being one half, is only one quarter, of the total capital. Instead of being set free, a part of the capital is here locked up in such a way as to cease to be exchanged against labour-power: variable has been changed into constant capital. … At the best, its construction employs fewer men than its employment displaces."
+                    }
                   }
                 }
               ]
@@ -9931,27 +10101,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "기계제 대공업에서 노동자와 노동수단의 관계가 뒤집힌다는 말은 무엇을 뜻하는가?",
-                    "en": "What does it mean that the relation between worker and instrument of labor is inverted in modern industry?"
+                    "ko": "한 자본가가 기계를 도입할수록 같은 자본으로 고용할 수 있는 노동자 수는 줄어든다. 그런데도 잉여가치율이 높아졌다고 해서 자본가가 안심할 수 없는 까닭은?",
+                    "en": "The more machinery a capitalist introduces, the fewer workers the same capital can employ. Why can’t a higher rate of surplus-value alone reassure the capitalist?"
                   },
                   "choices": {
                     "ko": [
-                      "노동자가 도구를 주도적으로 다루기보다, 기계체계의 속도와 구조가 노동자의 동작을 종속시키는 관계가 된다는 뜻이다.",
-                      "기계가 모든 새 가치를 만들기 때문에 노동자가 더 이상 가치생산에 참여하지 않는다는 뜻이다.",
-                      "노동자가 기계를 소유하게 되어 자본가가 노동자에게 종속된다는 뜻이다.",
-                      "기계가 있으면 노동과정이 더 이상 물질적 생산을 하지 않는다는 뜻이다."
+                      "잉여가치는 가변자본이 움직이는 노동에서만 나오므로, 노동자 수 감소를 노동일 연장이나 노동강도 강화로 보상해야 하기 때문이다.",
+                      "기계가 도입되면 노동자가 생산수단을 장악하는 조건이 넓어져 임금이 오르기 때문이다.",
+                      "잉여가치율은 기계의 속도와 같은 물리적 지표여서 노동자 수가 줄어도 그대로 이윤으로 남기 때문이다.",
+                      "고용된 노동자 수가 줄면 공장법이 기계 운전 자체를 금지시키기 때문이다."
                     ],
                     "en": [
-                      "It means that instead of workers actively handling tools, the speed and structure of the machine system subordinate workers’ movements.",
-                      "It means machines create all new value and workers no longer participate in value production.",
-                      "It means workers come to own the machinery and the capitalist becomes subordinate to them.",
-                      "It means that with machinery the labor-process no longer produces material things."
+                      "Surplus-value arises only from labour set in motion by variable capital, so the loss in the number of workers must be offset by lengthening the working day or intensifying labour.",
+                      "When machinery arrives, workers gain a stronger position to take over the means of production and raise their wages.",
+                      "The rate of surplus-value is a physical index like machine speed, so a fall in the number of workers leaves profit unchanged.",
+                      "When the number employed falls, the Factory Acts prohibit the running of machinery entirely."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계제 대공업은 도구를 노동자의 손에서 떼어 기계체계 안에 편입한다. 노동자는 생산의 주체처럼 보이기보다 기계의 리듬에 맞춰 감시·보조하는 존재로 배치된다.",
-                    "en": "Modern industry removes the tool from the worker’s hand and incorporates it into the machine system. The worker is positioned less as the apparent subject of production and more as an attendant and monitor of the machine’s rhythm."
+                    "ko": "기계는 불변자본이므로 스스로 잉여가치를 만들지 못한다. 잉여가치는 가변자본에 의해 움직인 산 노동에서만 나오기 때문에, 같은 액수의 자본에서 잉여가치율이 오르는 조건은 노동자 수가 줄어드는 조건과 충돌한다. 자본가는 이 모순을 노동일을 늘리거나 노동강도를 높여 더 많은 노동을 짜내는 방식으로 해결하려 한다. 따라서 높은 잉여가치율 하나만으로는 총잉여가치량을 보장할 수 없다. 이 모순이 기계 도입 뒤 노동일 연장 압력이 오히려 거세지는 이유다.",
+                    "en": "Machinery is constant capital and cannot itself produce surplus-value. Since surplus-value comes only from living labour set in motion by variable capital, the same condition that raises the rate of surplus-value cuts the number of workers a given capital employs. Capital answers this contradiction by lengthening the working day or raising intensity, squeezing more from fewer hands. A high rate alone cannot guarantee the mass of surplus-value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "같은 자본에서 잉여가치율과 노동자 수는 서로 반대로 움직일 수 있다. 자본은 그 간극을 노동일 연장이나 노동강도로 메우려 한다.",
+                      "기계는 자본의 생산수단이므로 그 도입이 노동자의 소유권을 넓히지 않는다. 오히려 노동자를 더 쉽게 대체할 수 있게 만든다.",
+                      "잉여가치율은 물리적 속도가 아니라 필요노동에 대한 잉여노동의 비율이다. 노동자 수가 줄면 총잉여가치는 압박을 받는다.",
+                      "공장법이 기계 운전 자체를 금지하지는 않는다. 노동시간을 제한하면 자본은 기계 속도와 담당 기계 수로 강도를 높인다."
+                    ],
+                    "en": [
+                      "For a given capital, the rate of surplus-value and the number of workers can move in opposite directions. Capital tries to fill the gap by lengthening the working day or raising intensity.",
+                      "Machinery is a means of production owned by capital, so its introduction does not widen workers’ ownership. It can make workers easier to replace.",
+                      "The rate of surplus-value is not a physical speed but the ratio of surplus labour to necessary labour. A fall in the number of workers presses on the mass of surplus-value.",
+                      "The Factory Acts do not prohibit running machinery. When they limit hours, capital raises intensity through speed and the number of machines assigned to each worker."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 3절 기계가 노동자에게 미치는 직접적 결과",
+                      "en": "Capital I, Ch. 15 §3 The Proximate Effects of Machinery on the Workman"
+                    },
+                    "quote": {
+                      "ko": "따라서 잉여가치 생산에 기계를 사용하는 일은 그 자체로 모순을 품는다. 주어진 자본이 만드는 잉여가치의 두 요인 가운데 하나인 잉여가치율은, 다른 요인인 노동자 수를 줄이지 않고서는 높일 수 없기 때문이다.",
+                      "en": "Hence, the application of machinery to the production of surplus-value implies a contradiction which is immanent in it, since of the two factors of the surplus-value created by a given amount of capital, one, the rate of surplus-value, cannot be increased, except by diminishing the other, the number of workmen."
+                    }
                   }
                 },
                 {
@@ -9959,27 +10154,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "마르크스가 기계의 “자본주의적 사용”을 따로 말하는 이유는 무엇인가?",
-                    "en": "Why does Marx speak specifically of the “capitalist use” of machinery?"
+                    "ko": "공장법으로 노동일이 12시간에서 10시간으로 줄자, 한 면직공장 주인은 방적기 속도를 올리고 노동자 한 명이 지키는 기계 대수를 늘렸다. 마르크스가 이렇게 반응하는 자본의 유인을 설명하는 방식은?",
+                    "en": "After the Factory Acts cut the working day from twelve hours to ten, a cotton-mill owner raises spindle speed and increases the number of machines each worker tends. How does Marx explain the capitalist’s incentive here?"
                   },
                   "choices": {
                     "ko": [
-                      "같은 기술도 사회적 소유와 목적에 따라 노동시간 단축의 수단이 될 수도, 상대적 잉여가치와 노동강도 강화의 수단이 될 수도 있기 때문이다.",
-                      "기계는 자본주의에서만 물리적으로 존재할 수 있고 다른 사회에는 불가능하기 때문이다.",
-                      "기계는 대체로 노동자를 해방하므로 사회적 형식은 중요하지 않기 때문이다.",
-                      "기술은 경제 바깥의 순수 과학이므로 사용방식은 별도 분석 대상이 아니기 때문이다."
+                      "노동일 연장이 막히자 자본은 한 시간에 더 많은 노동을 압축해, 연장 없이도 잉여노동량을 회복하려 한다.",
+                      "노동시간이 줄면 기계 마모가 줄어들어 유지비가 낮아지고, 자본은 그 절약분을 임금으로 나누려 한다.",
+                      "공장법이 노동자에게 더 많은 휴식을 주도록 강제했기 때문에 자본은 휴식 시간을 기계 속도로 감시하려 한다.",
+                      "속도를 높이면 면사 한 묶음에 들어가는 면화의 양이 늘어 원료비를 낮출 수 있기 때문이다."
                     ],
                     "en": [
-                      "Because the same technology can become a means of shortening labor-time or a means of relative surplus-value and intensified labor depending on social ownership and purpose.",
-                      "Because machinery can physically exist only under capitalism and is impossible in any other society.",
-                      "Because machinery always liberates workers, so social form is unimportant.",
-                      "Because technology is pure science unrelated to the economy, so its use need not be analyzed."
+                      "Once the extension of the working day is blocked, capital seeks to recover surplus labour by compressing more labour into each hour, without extending hours.",
+                      "Shorter hours reduce machine wear and maintenance costs, and capital shares those savings with workers as higher wages.",
+                      "The Factory Acts compel rest periods, so capital uses machine speed mainly to monitor workers’ leisure time.",
+                      "Higher speed increases the amount of raw cotton in each bundle of yarn and thereby lowers material costs."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 분석은 기술결정론이 아니다. 기계의 효과는 그것이 어떤 생산관계 안에서, 누구의 목적을 위해 사용되는가에 따라 달라진다.",
-                    "en": "Marx’s analysis is not technological determinism. The effects of machinery depend on the relations of production in which it is used and on whose purpose it serves."
+                    "ko": "노동일의 길이가 법으로 막히자 자본은 상대적 잉여가치 생산의 방식을 바꾼다. 기계 속도를 올리거나 담당 기계 대수를 늘리면 같은 10시간 안에 더 많은 노동이 압축되고, 그 밀도 높은 시간은 12시간의 느슨한 시간보다 더 많은 노동력 지출로 계산된다. 이것이 노동강도라는 새로운 규정이다. 기계 마모 감소나 원료비 절감은 이차적 결과일 수 있지만, 자본의 직접 유인은 줄어든 연장분을 더 촘촘한 노동으로 되찾는 데 있다.",
+                    "en": "Once the length of the working day is legally blocked, capital changes its method of producing relative surplus-value. Raising machine speed, or the number of machines each worker tends, compresses more labour into the same ten hours, and the denser hour counts as more labour-power expended than the porous hour of the old twelve. Lower wear or material costs may follow, but the immediate incentive is to reclaim the lost extension."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "시간이 줄면 자본은 연장 대신 밀도를 높인다. 같은 시간 동안 더 많은 노동력이 지출되므로 잉여노동량을 되찾을 수 있다.",
+                      "기계 유지비 절감은 결과일 수 있지만 자본의 계산은 잉여가치 회복이다. 절약분이 자동으로 임금이 되지는 않는다.",
+                      "휴식 시간은 노동시간 밖에 있으므로 기계 속도의 직접 대상이 아니다. 속도는 노동시간 안의 노동 밀도를 높인다.",
+                      "속도를 올린다고 실 한 묶음에 들어가는 면화의 양이 달라지지는 않는다. 달라지는 것은 같은 시간에 지출되는 노동의 양이다."
+                    ],
+                    "en": [
+                      "When hours fall, capital raises density instead of extension. More labour-power is expended in the same time, so surplus labour can be recovered.",
+                      "Reduced machine maintenance may result, but capital’s calculation is the recovery of surplus-value. The saving does not automatically become wages.",
+                      "Rest periods fall outside labour-time and are not the direct object of machine speed. Speed increases the density of labour within working time.",
+                      "Raising speed does not change how much raw cotton goes into a bundle of yarn. What changes is the quantity of labour expended in the same time."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 3절 C 노동의 강화",
+                      "en": "Capital I, Ch. 15 §3 C Intensification of Labour"
+                    },
+                    "quote": {
+                      "ko": "더 많은 노동량을 주어진 시간에 압축하는 이 응축은 이제 실제 모습 그대로 더 큰 노동량으로 간주된다. 노동은 연장의 척도, 즉 지속시간 외에 강도, 즉 응축 또는 밀도의 척도를 얻는다. 10시간 노동일의 밀도 높은 한 시간은 12시간 노동일의 느슨한 한 시간보다 더 많은 노동, 즉 지출된 노동력을 담는다.",
+                      "en": "This condensation of a greater mass of labour into a given period thenceforward counts for what it really is, a greater quantity of labour. In addition to a measure of its extension, i.e., duration, labour now acquires a measure of its intensity or of the degree of its condensation or density. The denser hour of the ten hours’ working-day contains more labour, i.e., expended labour-power than the more porous hour of the twelve hours’ working-day."
+                    }
                   }
                 },
                 {
@@ -9987,27 +10207,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "“기계가 노동을 절약하므로 노동자는 당연히 더 편해진다”는 설명이 왜 불충분한가?",
-                    "en": "Why is the claim “machines save labor, so workers naturally have an easier life” inadequate?"
+                    "ko": "어떤 경제학자는 손베틀과 기계의 차이가 「동력이 사람이냐 증기냐」에 있다고 말한다. 마르크스가 이 설명으로는 18세기 산업혁명을 설명할 수 없다고 보는 이유는?",
+                    "en": "An economist says the difference between a hand-loom and a machine is whether the motive power is human or steam. Why does Marx think this cannot explain the eighteenth-century industrial revolution?"
                   },
                   "choices": {
                     "ko": [
-                      "자본주의에서 기계는 노동자를 위한 노동절약이 아니라 자본을 위한 지불노동 절약과 잉여노동 확대의 수단으로 작동할 수 있기 때문이다.",
-                      "기계의 효과는 기술적 효율 문제로 설명되기 때문이다.",
-                      "노동자가 편해지면 상품가치가 그 자체로 사라지기 때문이다.",
-                      "기계는 공장 안에 있지만 생산과정에는 들어가지 않기 때문이다."
+                      "산업혁명은 도구 자체가 사람의 손에서 떼어져 기계장치에 편입되는 데서 시작되며, 동력의 교체는 그 다음에 따라온 문제이기 때문이다.",
+                      "증기기관은 18세기 이전에는 존재하지 않았으므로 기계 자체를 역사적으로 비교할 수 없기 때문이다.",
+                      "증기기관이 먼저 발명되고 그 힘에 맞추어 작업기가 뒤따라 만들어졌으므로, 동력의 교체가 변화의 원인이기 때문이다.",
+                      "수공업 도구와 기계의 차이는 사용가치의 종류에만 있고 생산과정의 동력과는 무관하기 때문이다."
                     ],
                     "en": [
-                      "Because under capitalism machinery can function not as labor-saving for workers but as a means of saving paid labor for capital and expanding surplus labor.",
-                      "Because machinery never saves labor and is always slower.",
-                      "Because if workers become comfortable, commodity value automatically disappears.",
-                      "Because machinery is inside the factory but does not enter the production process."
+                      "The industrial revolution begins when the tool itself is taken out of the worker’s hand and fitted into a mechanism; the replacement of motive power follows afterward.",
+                      "The steam-engine did not exist before the eighteenth century, so machinery cannot be compared historically at all.",
+                      "Because the steam-engine was invented first and working machines were built afterwards to suit it, so the change of motive power is the cause.",
+                      "The difference between handicraft tools and machinery lies only in the kind of use-value, not in the motive power of the process."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계의 물질적 가능성과 자본주의적 결과는 구분해야 한다. 노동절약 기술이 노동자에게 자유시간을 주는 대신 노동강도, 감시, 실업을 낳을 수 있다.",
-                    "en": "The material possibility of machinery must be distinguished from its capitalist result. Labor-saving technology can produce intensity, surveillance, and unemployment instead of free time for workers."
+                    "ko": "수학자와 역학자, 그들을 따르는 몇몇 영국 경제학자는 도구를 단순한 기계, 기계를 복잡한 도구라 부른다. 마르크스는 이 설명에 역사적 요소가 빠져 있다고 잘라 말한다. 동력을 기준으로 삼아도 마찬가지다. 소가 끄는 쟁기는 기계가 되고, 한 노동자가 돌리는 클라우센의 원형 직기는 도구가 되며, 기계 생산이 수공업보다 먼저 있었다는 결론까지 나온다. 산업혁명의 출발점은 도구를 사람 손에서 떼어 기계장치에 끼워 넣은 작업기다.",
+                    "en": "Mathematicians and mechanicians, followed by a few English economists, call a tool a simple machine and a machine a complex tool; Marx answers that the historical element is missing. A motive-power criterion fares no better: it makes an ox-drawn plough a machine and Claussen’s circular loom, worked by a single labourer, a mere tool, and puts production by machinery before handicraft. The revolution starts with the working machine."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "결정적 변화는 도구가 기계의 기관이 되는 일이다. 동력은 이후에 증기기관으로 독립하지만, 그것은 혁명의 결과이지 정의의 출발점이 아니다.",
+                      "1735년 와이엇의 방적기가 18세기 산업혁명을 열었고, 증기기관이 일반 동력으로 자리 잡은 것은 그 뒤의 일이다. 발명 시점은 기계와 도구를 가르는 기준이 되지 못한다.",
+                      "순서가 거꾸로다. 작업기가 먼저 커지자 사람과 동물의 힘으로는 감당할 수 없어, 기계의 발명이 증기기관의 형태를 바꾸도록 강요했다.",
+                      "사용가치 종류가 아니라 도구가 사람 손에서 기계장치로 옮겨가는 노동과정의 변화가 본질이다."
+                    ],
+                    "en": [
+                      "The decisive change is that the tool becomes an organ of the machine. Motive power later becomes independent in the steam-engine, but that is a result of the revolution, not the starting point of its definition.",
+                      "Wyatt’s spinning machine of 1735 began the industrial revolution of the eighteenth century; the steam-engine became the general prime mover only afterwards. A date of invention cannot separate machine from tool.",
+                      "The order is reversed. As working machines grew, human and animal power could no longer drive them, and it was the invention of machines that made a revolution in the form of the steam-engine necessary.",
+                      "The essence is not the kind of use-value but the change in the labour-process by which the tool passes from the human hand into a mechanical apparatus."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 1절 기계의 발전",
+                      "en": "Capital I, Ch. 15 §1 The Development of Machinery"
+                    },
+                    "quote": {
+                      "ko": "도구와 기계의 차이에 대한 다른 설명은, 도구의 경우 사람이 동력이고 기계의 동력은 동물·물·바람처럼 사람과 다르다는 것이다. 이에 따르면 소가 끄는 쟁기는 기계가 되고, 한 노동자가 돌리는 클라우센의 원형 직기는 단지 도구가 된다. … 고유한 도구가 사람의 손에서 떼어져 기계장치에 맞춰지는 순간, 단순한 연장 대신 기계가 자리 잡는다.",
+                      "en": "Another explanation of the difference between tool and machine is that in the case of a tool, man is the motive power, while the motive power of a machine is something different from man, as, for instance, an animal, water, wind, and so on. … From the moment that the tool proper is taken from man, and fitted into a mechanism, a machine takes the place of a mere implement."
+                    }
                   }
                 },
                 {
@@ -10015,27 +10260,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "기계 도입이 산업예비군과 연결되는 이유는 무엇인가?",
-                    "en": "Why is the introduction of machinery connected to the industrial reserve army?"
+                    "ko": "1834~35년 인도 총독은 영국산 면직물이 들어오면서 인도의 수공 직조공들이 아사하고 있다고 보고했다. 이 사례에서 기계의 충격이 「일시적 불편」으로 끝나지 않는 이유는?",
+                    "en": "In 1834–35 the Governor General reported that hand-weavers in India were starving as British cotton goods arrived. Why does machinery’s shock here not end as a ‘temporary inconvenience’?"
                   },
                   "choices": {
                     "ko": [
-                      "기계가 노동자를 대체하거나 숙련을 낮추어 더 많은 노동력을 경쟁 속에 밀어 넣고, 고용된 노동자에 대한 자본의 압력을 키울 수 있기 때문이다.",
-                      "산업예비군은 전쟁 시기 군대만을 뜻하므로 생산과 무관하기 때문이다.",
-                      "기계가 도입되면 모든 실업자가 곧바로 자본가가 되기 때문이다.",
-                      "기계는 상품의 물리적 생산방식을 바꾸는 장치이며 노동력 배치 효과는 간접적이다."
+                      "기계가 계속 새로운 생산 분야를 장악하면서 수공업 노동자를 대체한 효과가 지속되어, 일시적이 아니라 구조적 몰락이 되기 때문이다.",
+                      "영국산 면직물이 인도에서 생산된 면화의 가격을 일시적으로 올렸을 뿐 노동에는 영향을 주지 않았기 때문이다.",
+                      "인도 수공 직조공들이 공장법의 보호를 받아 임금이 올랐기 때문이다.",
+                      "수공 직조공의 숙련이 기계보다 높아 공장으로 흡수되지 않고 독립 자영업으로 남았기 때문이다."
                     ],
                     "en": [
-                      "Because machinery can displace workers or reduce skill barriers, pushing more labor-power into competition and increasing capital’s pressure on those employed.",
-                      "Because the reserve army means only the military in wartime and has nothing to do with production.",
-                      "Because when machinery is introduced, all unemployed people immediately become capitalists.",
-                      "Because machinery has no effect on employment or unemployment and only changes the color of commodities."
+                      "Because machinery continually seizes upon new fields of production, its displacement of handicraft workers becomes permanent, not a temporary transition.",
+                      "Because British cotton goods only raised the price of Indian cotton temporarily and did not affect labour.",
+                      "Because the Indian hand-weavers were protected by the Factory Acts and their wages rose.",
+                      "Because the hand-weavers’ skill was superior to machinery, so they remained independent artisans instead of entering factories."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계는 생산성을 높이면서 동시에 노동자 일부를 밀어내거나 더 쉽게 대체 가능하게 만들 수 있다. 이 상대적 과잉인구는 임금과 노동조건을 압박하는 자본의 무기가 된다.",
-                    "en": "Machinery can raise productivity while displacing some workers or making them easier to replace. This relative surplus population becomes a weapon of capital against wages and working conditions."
+                    "ko": "영국 면직물의 기계 생산은 인도 수공 직조공을 값싼 상품과의 경쟁에 밀어 넣었다. 마르크스가 보기에 이 몰락은 한 번의 사건이 아니라, 기계가 새로운 생산 분야를 계속 점령하는 한 되풀이되어 영구화된다. 그래서 「고통은 일시적일 뿐」이라는 위로와 「기계는 한 부문을 서서히 장악할 뿐」이라는 위로는 서로를 상쇄한다. 서서히 오면 만성의 빈곤이 되고, 빠르게 오면 큰 무리가 한꺼번에 무너진다.",
+                    "en": "Machine-made English cloth pressed Indian hand-weavers into competition with cheaper commodities. For Marx this ruin is no single episode; as machinery keeps seizing new fields, the displacement is reproduced and made permanent. The consolation that the suffering is temporary cancels the claim that machinery spreads only by degrees: a slow advance breeds chronic misery, a fast one ruins whole masses at once."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "기계의 효과는 그 순간의 대체로 끝나지 않는다. 새로운 부문으로 계속 확장되면서 실직과 임금 압박이 재생산된다.",
+                      "영국 면직물의 충격은 가격 상승이 아니라 값싼 기계 생산품과의 경쟁과 수공업 시장의 붕괴로 나타났다.",
+                      "인도 수공 직조공은 영국 공장법의 보호를 받지 않았고, 보호가 있었다면 임금이 오르지도 시장이 유지되지도 않았을 것이다.",
+                      "숙련이 아무리 높아도 값싼 기계 면직물 앞에서는 시장 자체가 사라진다. 인도 직조공들은 공장에 흡수되지도, 자영으로 버티지도 못한 채 굶어 죽었다."
+                    ],
+                    "en": [
+                      "The effect of machinery is not exhausted in the first displacement. As it extends into new branches, unemployment and wage pressure are continuously reproduced.",
+                      "The shock of British cotton goods did not appear as a price rise but as competition with cheap machine-made products and the collapse of the handicraft market.",
+                      "Indian hand-weavers were not protected by English Factory Acts, and protection would not have raised their wages or preserved their market.",
+                      "However high the skill, cheap machine-made cloth destroyed the market itself. The Indian weavers were neither absorbed into factories nor able to hold on as independent artisans; they starved."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S5",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 5절 노동자와 기계의 투쟁",
+                      "en": "Capital I, Ch. 15 §5 The Strife Between Workman and Machine"
+                    },
+                    "quote": {
+                      "ko": "반면 영국의 면 기계는 인도에서 급성의 결과를 냈다. 총독은 1834~35년에 보고했다. 「그 비참은 상업사에서 비할 데가 없다. 면직공들의 뼈가 인도 평원을 희게 물들이고 있다.」 … 나아가 기계는 계속 새로운 생산 분야를 장악하므로, 그 일시적 효과는 실제로는 영구적이다.",
+                      "en": "On the other hand, the English cotton machinery produced an acute effect in India. The Governor General reported 1834-35: “The misery hardly finds a parallel in the history of commerce. The bones of the cotton-weavers are bleaching the plains of India.” … For the rest, since machinery is continually seizing upon new fields of production, its temporary effect is really permanent."
+                    }
                   }
                 },
                 {
@@ -10043,27 +10313,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "15장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best describes the systematic role of Chapter 15?"
+                    "ko": "한 카펫공장 주인이 100명 노동자 가운데 50명을 해고하고, 그 임금 1,500파운드를 기계 구입에 쓴다. 이 사례가 자본의 기계 도입에서 잉여가치와 고용의 관계를 드러내는 방식은?",
+                    "en": "A carpet manufacturer dismisses 50 of 100 workers and spends their £1,500 in wages on machinery. How does this case reveal the relation between surplus-value and employment in the introduction of machinery?"
                   },
                   "choices": {
                     "ko": [
-                      "상대적 잉여가치 생산이 기계체계와 대공업에서 어떻게 전면화되며, 생산력 발전이 자본주의적 지배와 모순적으로 결합되는지 보여준다.",
-                      "기계가 새 가치를 직접 창조하므로 노동가치 분석을 폐기해야 한다고 결론낸다.",
-                      "매뉴팩처 이후에는 노동자의 직접 기능이 사라져 계급투쟁도 약해진다.",
-                      "기계는 도구의 확대판이므로 생산조직은 그대로 유지된다."
+                      "가변자본이 불변자본으로 바뀌어 노동력과 교환되지 못하므로, 생산성과 잉여가치율이 올라도 같은 자본이 고용하는 노동자 수는 줄어든다.",
+                      "불변자본이 늘어나도 가변자본은 그대로 남아 노동자 수는 변하지 않는다.",
+                      "기계가 만든 잉여가치가 그 자리에서 노동자에게 임금으로 돌아가 고용이 줄지 않는다.",
+                      "기계의 가치는 생산물에 이전되지 않으므로 고용과는 관계가 없다."
                     ],
                     "en": [
-                      "It shows how relative surplus-value production becomes fully developed in the machine system and modern industry, and how productive-force development is contradictorily joined to capitalist domination.",
-                      "It concludes that machinery directly creates new value and that labor-value analysis must be abandoned.",
-                      "It says workers disappear completely after manufacture, so class struggle disappears too.",
-                      "It treats machinery as the same as simple tools and says production organization does not change."
+                      "Variable capital is converted into constant capital and ceases to exchange against labour-power, so even a higher rate of surplus-value goes with fewer workers employed by the same capital.",
+                      "When constant capital rises, the variable part of the capital remains intact beside it, so the number of workers the factory employs does not change.",
+                      "The surplus-value the machinery produces comes back to the workers as wages in the same factory, so employment does not fall.",
+                      "Machinery transfers no value to the product, so it has no relation to employment."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "15장은 상대적 잉여가치 분석의 가장 발전된 생산형태를 다룬다. 기계는 생산력 발전의 조건이지만, 자본주의적 형식에서는 노동자 종속과 예비군, 노동강도 강화와 함께 전개된다.",
-                    "en": "Chapter 15 treats the most developed production form in the analysis of relative surplus-value. Machinery is a condition of productive-force development, but in the capitalist form it develops together with worker subordination, the reserve army, and intensified labor."
+                    "ko": "100명의 임금 3,000파운드 가운데 1,500파운드가 기계로 바뀌면, 그 몫은 더 이상 노동력과 교환되지 않는 불변자본이 된다. 잉여가치는 가변자본이 움직이는 산 노동에서만 생기므로, 잉여가치율이 올라도 같은 자본이 부릴 수 있는 노동자 수는 줄어든다. 기계 도입이 상대적 잉여가치의 발전이면서 동시에 상대적 과잉인구를 낳는 계기인 까닭이 여기 있다. 축적은 고용을 늘리는 직선 운동이 아니라 고용과 배제를 함께 밀어내는 모순적 운동이다.",
+                    "en": "When half of the £3,000 wage fund is turned into machinery, that portion becomes constant capital and no longer exchanges against labour-power. Since surplus-value arises only from living labour set in motion by variable capital, the same capital employs fewer workers even as the rate of surplus-value rises. Machinery develops relative surplus-value and produces a relatively superfluous population at once."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "기계의 도입은 가변자본을 불변자본으로 전환시켜 노동자 수를 압박한다. 이것이 상대적 과잉인구의 자본주의적 토대다.",
+                      "원문의 카펫공장 사례에서는 가변자본이 총자본의 절반에서 4분의 1로 줄어든다. 가변자본은 그대로 남지 않는다.",
+                      "기계는 새 가치를 만들지 않으므로 잉여가치가 기계에서 나오지 않는다. 노동자 수가 줄면 총잉여가치를 늘리기 어렵다.",
+                      "기계는 자신의 가치를 생산물에 조금씩 이전한다. 오히려 그 가치가 불변자본으로 묶여 노동력과 교환되지 않는 점이 고용에 영향을 준다."
+                    ],
+                    "en": [
+                      "Introducing machinery converts variable into constant capital and presses on the number of workers. This is the capitalist basis of the relatively superfluous population.",
+                      "In the carpet-factory example, variable capital falls from one half of total capital to one quarter. It does not remain intact.",
+                      "Machinery does not create new value, so surplus-value does not arise from the machine. With fewer workers it is harder to increase the mass of surplus-value.",
+                      "Machinery transfers its own value to the product bit by bit. That value is locked up as constant capital and no longer exchanges against labour-power, which is precisely how it affects employment."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 15장 3절 기계가 노동자에게 미치는 직접적 결과",
+                      "en": "Capital I, Ch. 15 §3 The Proximate Effects of Machinery on the Workman"
+                    },
+                    "quote": {
+                      "ko": "기계의 사용은, 전에는 노동력에 투하된 가변자본이었던 것을, 불변자본이어서 잉여가치를 생산하지 않는 기계로 바꾼다. … 동시에 고용되는 노동자의 수는 가변자본과 불변자본의 비율에 달려 있다.",
+                      "en": "It converts what was formerly variable capital, invested in labour-power, into machinery which, being constant capital, does not produce surplus-value. … The number of the labourers simultaneously employed depends, on its side, on the ratio of the variable to the constant capital."
+                    }
                   }
                 }
               ]
@@ -10106,21 +10401,29 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "기계의 자본주의적 사용",
+                "title": "핵심 개념 먼저",
                 "items": [
-                  "기계제 대공업: 기계체계가 노동과정을 재편하고 노동자의 숙련, 속도, 감독 방식을 바꾼다.",
-                  "상대적 잉여가치 장치: 기계는 자본 아래에서 필요노동을 줄이고 노동강도를 높여 상대적 잉여가치를 확대하는 수단이 된다.",
+                  "기계제 대공업: 기계체계가 노동과정을 재편하고 숙련·속도·감독 방식까지 바꾼다.",
+                  "상대적 잉여가치 장치: 자본 아래 기계는 필요노동을 줄이고 노동강도를 높여 상대적 잉여가치를 확대하는 수단이 된다.",
                   "중립적 도구 아님: 문제는 기계 자체가 아니라 기계가 자본의 소유와 지휘 아래 노동자를 통제하는 사회적 형태다."
                 ]
               },
               {
-                "title": "상대적 잉여가치와 노동자 예속",
+                "title": "용어 풀이",
+                "text": "기계는 도구를 사람의 손에서 떼어 기계장치에 편입시키며, 공장의 감시·보조 노동과 세밀한 규율을 만든다. 노동강도는 같은 시간에 더 많은 노동을 압축하는 정도를 말하고, 산업예비군은 기계에 밀려난 노동자들이 고용 경쟁에 내몰리는 자본주의적 과잉인구다."
+              },
+              {
+                "title": "현대 적용",
+                "text": "오늘날 배달 플랫폼이 배차 알고리즘으로 라이더의 속도와 경로를 통제하거나, 물류센터의 자동화 설비가 작업자의 동선과 처리량을 실시간으로 재촉하는 일은 기계와 소프트웨어가 중립적 도구가 아닌 노동 통제 장치로 작동하는 자본의 사용 방식을 보여준다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "기계는 중립적 도구가 아니라 자본 아래에서 노동자를 통제하고 상대적 잉여가치를 늘리는 장치로 작동한다."
               }
             ],
             "en": [
               {
-                "title": "Capitalist Use of Machinery",
+                "title": "Core concepts first",
                 "items": [
                   "Modern industry: A machinery system reorganizes the labor-process and changes skill, pace, and supervision.",
                   "Device for relative surplus-value: Under capital, machinery reduces necessary labor and raises intensity, becoming a means of expanding relative surplus-value.",
@@ -10128,7 +10431,15 @@
                 ]
               },
               {
-                "title": "Relative Surplus-Value and Worker Subordination",
+                "title": "Terms explained",
+                "text": "Machinery takes the tool out of the worker’s hand and builds it into a mechanical apparatus, creating supervision, attendance, and factory discipline. Intensity of labour means compressing more labour into the same period, while the industrial reserve army is the surplus working population thrown into wage competition by displacement."
+              },
+              {
+                "title": "Today's application",
+                "text": "Delivery platforms using dispatch algorithms to control riders’ speed and routes, or warehouse automation pressing workers’ movements and throughput in real time, show machinery and software acting as instruments of labour control rather than neutral tools."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "See machinery under capital as a means of control and relative surplus-value, not as a neutral tool."
               }
             ]
@@ -10844,6 +11155,47 @@
             "en": "Synthesizes how labor-power value, surplus-value, and the working day vary in relation to one another."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "한 변수만 변할 때 vs 여러 변수가 함께 변할 때",
+              "left": {
+                "heading": "한 변수만 변할 때",
+                "rows": [
+                  "생산력만 오르면 필요노동이 줄어 잉여가치가 늘 수 있다",
+                  "강도만 오르면 같은 시간에 더 많은 가치가 만들어진다",
+                  "노동일만 늘면 잉여노동이 그만큼 그대로 늘어난다"
+                ]
+              },
+              "right": {
+                "heading": "여러 변수가 함께 변할 때",
+                "rows": [
+                  "생산력이 떨어지며 노동일도 늘면 절대량과 상대량이 다르게 움직인다",
+                  "강도와 생산력이 오르며 노동일이 줄면 잉여가치는 유지되거나 늘 수 있다",
+                  "어떤 조합인지에 따라 노동력 가격과 잉여가치의 관계가 달라진다"
+                ]
+              }
+            },
+            "en": {
+              "title": "One Variable Alone vs. Several Together",
+              "left": {
+                "heading": "When only one changes",
+                "rows": [
+                  "Rising productivity alone can shrink necessary labor and raise surplus-value",
+                  "Rising intensity alone creates more value in the same time",
+                  "A longer working day alone adds that much surplus labor directly"
+                ]
+              },
+              "right": {
+                "heading": "When several change together",
+                "rows": [
+                  "Falling productivity with a longer day makes absolute and relative magnitudes move differently",
+                  "Rising intensity and productivity with a shorter day can keep or raise surplus-value",
+                  "Which combination occurs changes the relation between the price of labor-power and surplus-value"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch17-basic",
@@ -10877,8 +11229,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생활수단 가치가 낮아지면 노동력 가치와 필요노동시간이 줄 수 있다. 노동일이 그대로라면 그만큼 잉여노동이 늘어나 상대적 잉여가치가 증가한다.",
-                    "en": "If the value of means of subsistence falls, the value of labor-power and necessary labor-time can fall. With the working day unchanged, surplus labor rises by that amount, increasing relative surplus-value."
+                    "ko": "생활수단 가치가 낮아지면 노동력 가치와 필요노동시간이 줄어든다. 노동일 길이가 그대로라면 줄어든 필요노동만큼 잉여노동이 늘어나 잉여가치가 커진다. 이것이 상대적 잉여가치가 생산력 상승을 통해 늘어나는 경로이며, 노동일 연장 없이도 착취율이 오를 수 있음을 보여준다.",
+                    "en": "If the value of means of subsistence falls, the value of labor-power and necessary labor-time can fall. With the working day unchanged, surplus labor rises by that amount, increasing relative surplus-value. This is the route by which relative surplus-value grows through rising productivity alone, without lengthening the day."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동력 가격이 가치보다 높거나 낮게 움직일 여지가 남아 있다는 점도 함께 기억해두면 좋다. 가치 하락과 가격 하락이 항상 같은 크기로 일어나지는 않는다.",
+                      "노동력 가치가 오히려 오르고 잉여가치가 사라진다는 이 답은 원인과 결과 방향을 거꾸로 본 것이다. 생산력 상승은 생활수단 가치를 낮추는 쪽으로 작용한다.",
+                      "생산력 변화가 아무 영향도 못 준다는 말은 상대적 잉여가치라는 개념 자체를 지워버리는 오해다. 생산력은 필요노동시간을 통해 잉여가치에 직접 작용한다.",
+                      "노동일이 같다고 해서 필요노동과 잉여노동의 비율까지 자동으로 고정되는 것은 아니다. 생산력이 변하면 같은 노동일 안에서도 비율이 달라진다."
+                    ],
+                    "en": [
+                      "It helps to remember that the actual price of labor-power can still sit above or below its new value; a fall in value and a fall in price are not automatically the same size.",
+                      "Saying the value of labor-power rises while surplus-value disappears reverses the causal direction Marx traces here, since rising productivity pushes the value of subsistence down, not up.",
+                      "Claiming productivity changes have no effect erases the whole idea of relative surplus-value, which works precisely through changes in necessary labor-time.",
+                      "An unchanged working day does not freeze the ratio of necessary to surplus labor automatically; productivity shifts that ratio even within the same twelve hours."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 1절",
+                      "en": "Capital I, Ch. 17 §1"
+                    },
+                    "quote": {
+                      "ko": "생산력이 오르면 노동력 가치는 낮아지고 그에 따라 잉여가치는 오르며, 반대로 생산력이 떨어지면 노동력 가치는 오르고 잉여가치는 낮아진다.",
+                      "en": "an increase in the productiveness of labour causes a fall in the value of labour-power and a consequent rise in surplus-value, while, on the other hand, a decrease in such productiveness causes a rise in the value of labour-power, and a fall in surplus-value."
+                    }
                   }
                 },
                 {
@@ -10905,8 +11282,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동일 연장은 생산력 변화 없이도 잉여노동을 직접 늘릴 수 있다. 이것은 상대적 잉여가치가 아니라 절대적 잉여가치의 경로다.",
-                    "en": "Lengthening the working day can directly increase surplus labor without a change in productivity. This is the path of absolute, not relative, surplus-value."
+                    "ko": "노동일 연장은 생산력 변화 없이도 잉여노동을 곧바로 늘릴 수 있다. 노동력 가치가 그대로여도 늘어난 두 시간이 통째로 잉여노동에 더해지기 때문이다. 이것은 상대적 잉여가치가 아니라 절대적 잉여가치가 늘어나는 경로이며, 생산력과 노동일을 구분해서 봐야 하는 이유이기도 하다.",
+                    "en": "Lengthening the working day can directly increase surplus labor without a change in productivity, because the added two hours are added whole to surplus labor even if the value of labor-power stays fixed. This is the path of absolute, not relative, surplus-value, and it is why productivity and working-day length must be treated as separate variables."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 경로는 생산력이 그대로여도 작동한다는 점이 핵심이다. 노동일 연장은 절대적 잉여가치를 늘리는 가장 단순한 방법임을 기억해두자.",
+                      "노동일 연장이 생산력 상승의 결과라는 설명은 두 변수를 뒤섞은 것이다. 노동일은 별도로 늘어날 수 있는 독립된 변수다.",
+                      "필요노동시간은 노동일 길이가 아니라 생활수단 가치로 정해진다. 노동일이 늘어도 생활수단 가치가 그대로면 필요노동시간은 늘지 않는다.",
+                      "노동일이 길어졌다고 노동력이 상품이 아니게 되는 것은 아니다. 노동력은 여전히 시장에서 사고파는 상품으로 남는다."
+                    ],
+                    "en": [
+                      "The key point is that this route works even with productivity unchanged; lengthening the day is the simplest way to raise absolute surplus-value.",
+                      "Saying the working day can only lengthen through productivity growth mixes up two independent variables that Marx treats separately in this chapter.",
+                      "Necessary labor-time is fixed by the value of subsistence goods, not by the length of the day; a longer day does not automatically enlarge necessary labor if subsistence value stays the same.",
+                      "A longer working day does not make labor-power stop being a commodity; it remains something bought and sold on the market throughout."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 3절",
+                      "en": "Capital I, Ch. 17 §3"
+                    },
+                    "quote": {
+                      "ko": "필요노동시간을 6시간, 노동력 가치를 3실링, 잉여노동을 6시간, 잉여가치를 3실링이라 하자. 노동일 전체는 12시간이고 6실링의 가치로 구현된다. 이제 노동일이 2시간 늘어나고 노동력 가격이 그대로면, 잉여가치는 절대적으로도 상대적으로도 증가한다.",
+                      "en": "Let the necessary labour time be 6 hours, or the value of labour-power 3 shillings; also let the surplus-labour be 6 hours or the surplus-value 3 shillings. The whole working-day then amounts to 12 hours and is embodied in a value of 6 shillings. If, now, the working-day be lengthened by 2 hours and the price of labour-power remain unaltered, the surplus-value increases both absolutely and relatively."
+                    }
                   }
                 },
                 {
@@ -10922,7 +11324,7 @@
                       "강도 증가는 같은 시간에 더 많은 노동지출을 압축하지만, 생산력 증가는 같은 노동으로 더 많은 사용가치를 만드는 것이다.",
                       "강도 증가와 생산력 증가는 거의 같은 말이며 어떤 구분도 필요 없다.",
                       "강도 증가는 노동자가 더 적게 일한다는 뜻이고 생산력 증가는 더 많이 쉰다는 뜻이다.",
-                      "생산력 증가는 가치와 관련되지만 노동강도는 노동시간과 분리되어 있하다."
+                      "생산력 증가는 가치와 관련되지만 노동강도는 노동시간과 분리되어 있다."
                     ],
                     "en": [
                       "Increased intensity compresses more labor expenditure into the same time, while increased productivity produces more use-values with the same labor.",
@@ -10933,8 +11335,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동강도와 생산력은 모두 결과를 바꿀 수 있지만 메커니즘이 다르다. 강도는 같은 시간 안에 더 많은 노동을 밀어 넣고, 생산력은 같은 노동시간의 산출량을 바꾼다.",
-                    "en": "Intensity and productivity can both change outcomes, but by different mechanisms. Intensity packs more labor into the same time; productivity changes the output of the same labor-time."
+                    "ko": "노동강도와 생산력은 모두 결과를 바꿀 수 있지만 메커니즘이 다르다. 강도는 같은 시간 안에 더 많은 노동을 밀어 넣고, 생산력은 같은 노동시간의 산출량을 바꾼다. 그래서 강도가 오르면 개별 상품 가치는 그대로지만, 생산력이 오르면 개별 상품 가치가 낮아진다.",
+                    "en": "Intensity and productivity can both change outcomes, but by different mechanisms. Intensity packs more labor into the same time, while productivity changes the output of the same labor-time; so higher intensity leaves individual commodity value unchanged, while higher productivity lowers it."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 구분이 중요한 이유는 강도와 생산력이 잉여가치를 늘리는 서로 다른 두 통로이기 때문이다. 강도는 노동력 소모도 함께 늘린다는 점을 놓치지 말아야 한다.",
+                      "강도와 생산력을 같은 말로 보면 마르크스가 왜 절을 나눠 따로 다루는지 이해할 수 없게 된다. 두 개념은 가치를 만드는 방식이 다르다.",
+                      "이 답은 강도 증가와 생산력 증가의 의미를 서로 바꿔놓은 것이다. 강도가 높아지면 노동자는 오히려 같은 시간에 더 많이 일한다.",
+                      "노동강도는 노동시간과 분리된 것이 아니라 바로 그 시간 안에 압축되는 노동량을 가리킨다. 그래서 강도 변화는 가치생산에 직접 영향을 준다."
+                    ],
+                    "en": [
+                      "This distinction matters because intensity and productivity are two separate channels for raising surplus-value; intensity also increases the wear on labor-power, which is easy to miss.",
+                      "Treating intensity and productivity as identical erases the reason Marx devotes separate sections to them; each alters value creation through a different mechanism.",
+                      "This answer swaps the meanings around: increased intensity actually means the worker expends more labor in the same time, not less.",
+                      "Labor intensity is not separate from labor-time; it names how much labor is packed into that very time, which is exactly why it affects value production directly."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 2절",
+                      "en": "Capital I, Ch. 17 §2"
+                    },
+                    "quote": {
+                      "ko": "노동강도의 증가는 같은 시간 안의 노동지출 증가를 뜻한다. 강도가 높은 노동일은 강도가 낮은 노동일보다 더 많은 생산물로 구현된다. … 생산력이 오른 경우 개별 상품의 가치는 낮아지는데 이전보다 노동이 덜 들기 때문이다. 강도가 높아진 경우 그 가치는 변하지 않는데 각 물품은 이전과 같은 노동이 들기 때문이다.",
+                      "en": "Increased intensity of labour means increased expenditure of labour in a given time. Hence a working-day of more intense labour is embodied in more products than is one of less intense labour, the length of each day being the same. … in this latter case, the value of each single product falls, for it costs less labour than before; in the former case, that value remains unchanged, for each article costs the same labour as before."
+                    }
                   }
                 },
                 {
@@ -10947,22 +11374,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "노동력 가격이 그 가치보다 높게 머물 수 있고, 그래도 잉여가치와의 분할관계는 변한다.",
-                      "노동력 가격과 가치는 항상 같은 숫자라서 어떤 차이도 불가능하다.",
-                      "임금이 그대로면 필요노동과 잉여노동도 곧장 그대로다.",
-                      "노동력 가치가 낮아지면 임금은 법적으로 곧바로 0이 된다."
+                      "노동력 가격이 새 가치보다 높은 자리에 놓이고, 노동자는 같은 임금으로 더 많은 생활수단을 얻는다.",
+                      "노동력 가치가 낮아졌으니 지불되는 임금도 곧 그 새 가치까지 내려가게 되어 있다.",
+                      "임금 액수가 그대로이고 생활수단의 값만 내렸으니 노동력의 가치 자체는 아직 그대로 남아 있는 것이다.",
+                      "노동력 가격이 가치보다 높으면 등가교환이 깨져 자본은 잉여가치를 얻지 못한다."
                     ],
                     "en": [
-                      "The price of labor-power can remain above its value, while the division with surplus-value still changes.",
-                      "The price and value of labor-power are always the same number, so no difference is possible.",
-                      "If wages remain unchanged, necessary and surplus labor must also remain unchanged.",
-                      "If the value of labor-power falls, wages legally become zero immediately."
+                      "The price of labor-power comes to stand above its new value, and the worker obtains more means of subsistence for the same wage.",
+                      "Since the value of labor-power has fallen, the wage actually paid is bound to sink to that new value shortly.",
+                      "Because the wage is unchanged and only subsistence goods got cheaper, the value of labor-power itself has not yet moved.",
+                      "If the price of labor-power stands above its value, the exchange is no longer an equivalent one and capital gets no surplus-value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "17장은 노동력의 가치, 가격, 잉여가치가 다양한 조건에서 어떻게 다르게 움직일 수 있는지를 비교한다. 가격과 가치는 일치할 수 있지만 언제나 기계적으로 같은 것은 아니다.",
-                    "en": "Chapter 17 compares how the value of labor-power, its price, and surplus-value can move differently under varying conditions. Price and value can coincide, but they are not mechanically identical at every moment."
+                    "ko": "생활수단이 싸져 노동력 가치가 3실링에서 1실링 6펜스로 떨어졌는데 지불되는 임금은 3실링 그대로라고 해 보자. 그러면 가격은 새 가치보다 높은 자리에 놓이고, 노동자는 같은 3실링으로 전보다 많은 생활수단을 손에 넣는다. 마르크스는 가격이 새 가치 쪽으로 얼마나 내려갈지는 자본의 압박과 노동자의 저항이 겨루어 정한다고 본다. 가치가 곧 가격이라고 보면 이 여지가 통째로 사라진다.",
+                    "en": "Suppose cheaper subsistence has cut the value of labor-power from three shillings to one and six while the wage paid stays at three shillings. The price then stands above the new value, and the worker gets more necessaries for the same money. How far the price sinks toward that value, Marx says, is settled by the pressure of capital against the resistance of the laborer."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가격이 가치 위에 놓인 이 상태는 오래 버티지 못한다. 마르크스는 가격이 새 가치 쪽으로 얼마나 내려가는지가 자본의 압박과 노동자의 저항이 겨루는 결과라고 본다.",
+                      "가치가 내려가면 가격도 그만큼 따라 내려간다고 본 것이다. 가치는 가격이 내려갈 수 있는 아래 한계를 옮길 뿐이고, 실제로 어디에 자리 잡는지는 두 계급의 힘이 정한다.",
+                      "노동력 가치는 생활수단의 양이 아니라 그 가치로 정해진다. 같은 양을 더 적은 노동으로 만들게 되었다면 양이 그대로여도 노동력 가치는 이미 내려간 것이다.",
+                      "가격이 가치보다 높다고 잉여가치가 없어지지는 않는다. 이 예에서 잉여가치는 3실링 그대로이고, 노동자와 자본가가 함께 더 많은 생활수단을 가질 수도 있다."
+                    ],
+                    "en": [
+                      "This position does not hold for long. How far the price sinks toward the new value, Marx says, is decided by the pressure of capital on one side and the worker’s resistance on the other.",
+                      "This treats price as following value down step for step. A falling value only moves the floor beneath the price; where the price settles is decided by the relative weight of the two classes.",
+                      "The value of labor-power is set by the value of the necessaries, not by their quantity. If the same quantity now costs less labor, that value has already fallen even though the basket is unchanged.",
+                      "A price above value does not wipe out surplus-value. In Marx’s own example surplus-value stays at three shillings, and worker and capitalist can both come away with more necessaries than before."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 1절",
+                      "en": "Capital I, Ch. 17 §1"
+                    },
+                    "quote": {
+                      "ko": "그 결과는 다만 둘 각각이 이전보다 두 배 많은 사용가치를 나타내게 된다는 것뿐이며, 그 사용가치들은 이전보다 두 배 싸다. 노동력은 가격이 변하지 않았어도 그 가치보다 높은 자리에 있게 된다.",
+                      "en": "The only result would be that each of them would represent twice as many use-values as before; these use-values being twice as cheap as before. Although labour-power would be unchanged in price, it would be above its value."
+                    }
                   }
                 },
                 {
@@ -10970,27 +11422,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "17장이 여러 경우를 나누어 비교하는 이유는 무엇인가?",
-                    "en": "Why does Chapter 17 divide and compare several cases?"
+                    "ko": "어느 공장에서 지난해보다 잉여가치가 늘었다는 보고가 왔다. 노동일, 노동강도, 생산력 가운데 무엇이 움직였는지는 적혀 있지 않다. 이 보고만 놓고 무엇을 말할 수 있는가?",
+                    "en": "A report says a factory’s surplus-value rose over last year, but it does not say which of the three moved: the length of the working day, the intensity of labor, or productivity. What can be said from the report alone?"
                   },
                   "choices": {
                     "ko": [
-                      "노동일, 노동강도, 생산력이 서로 다르게 변할 때 노동력 가격과 잉여가치가 어떻게 달라지는지 혼동하지 않기 위해서이다.",
-                      "생산력과 노동일이 실제 자본주의에서는 변하지 않는다는 점을 증명하기 위해서이다.",
-                      "모든 경우가 같은 결과를 낳으므로 분석을 단순 반복하기 위해서이다.",
-                      "가치분석을 버리고 임금을 심리학으로 설명하기 위해서이다."
+                      "잉여가치가 늘었다는 결과만으로는 노동일이 길어졌는지, 노동이 촘촘해졌는지, 생활수단이 싸졌는지 가릴 수 없다.",
+                      "잉여가치가 늘어난 만큼 노동자가 손에 쥐는 생활수단의 양은 줄어들었다고 보아야 한다.",
+                      "잉여가치를 늘리는 길은 노동일 연장뿐이므로 노동시간이 길어졌다고 보아야 한다.",
+                      "생산력이 올라 생산물이 늘었다면 상품 하나에 담긴 가치도 그만큼 함께 올랐다고 보아야 한다."
                     ],
                     "en": [
-                      "To avoid confusing how the price of labor-power and surplus-value change when working day, intensity, and productivity vary in different ways.",
-                      "To prove that productivity and the working day do not change in actual capitalism.",
-                      "Because all cases have the same result and the analysis merely repeats itself.",
-                      "To abandon value analysis and explain wages psychologically."
+                      "The result alone cannot tell us whether the day grew longer, the labor grew denser, or subsistence goods grew cheaper.",
+                      "Since surplus-value grew by that much, the mass of necessaries reaching the workers must have shrunk by as much.",
+                      "The only road to more surplus-value is a longer day, so the hours worked must have been extended.",
+                      "If productivity rose and output grew, the value contained in each single article must have risen along with it."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동력 가격과 잉여가치의 변동은 한 원인으로 환원되지 않는다. 마르크스는 변수를 분리해 어떤 변화가 절대적 잉여가치, 상대적 잉여가치, 강도 변화와 관련되는지 보여준다.",
-                    "en": "Changes in the price of labor-power and surplus-value cannot be reduced to one cause. Marx separates variables to show which changes belong to absolute surplus-value, relative surplus-value, or intensified labor."
+                    "ko": "잉여가치는 노동일이 길어져도 늘고, 같은 시간 안에 노동이 촘촘해져도 늘며, 생활수단이 싸져 필요노동이 줄어도 늘어난다. 세 갈래가 같은 결과에 이르므로 결과만 보고 원인을 되짚을 수는 없다. 노동자 몫이 그만큼 줄었으리라 넘겨짚기도 쉬운데, 생산력이 오르면 노동자와 자본가가 함께 더 많은 물건을 가지면서도 분할은 자본에 유리해질 수 있다. 마르크스가 세 변수를 하나씩 떼어 계산한 이유가 여기에 있다.",
+                    "en": "Surplus-value grows when the day is lengthened, when labor is packed more densely into the same hours, and when cheaper subsistence shrinks necessary labor. Three roads end at the same result, so the result alone cannot be traced back to its cause. It is tempting to assume the workers’ share shrank by as much, but with rising productivity both classes can end up with more goods while the division shifts toward capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "원인을 가리려면 세 변수 가운데 무엇이 움직였는지 따로 확인해야 한다. 현실에서는 셋이 한꺼번에 변하는 일이 흔하고, 그때는 효과가 겹쳐서 나타난다.",
+                      "화폐로 잰 몫과 실제로 받는 물건의 양을 같은 것으로 본 데서 온 답이다. 생활수단이 싸지면 노동자가 전보다 많이 가지면서도 자본 몫이 함께 커질 수 있다.",
+                      "노동일 연장은 잉여가치를 늘리는 세 길 가운데 하나일 뿐이다. 노동시간이 그대로여도 노동이 더 촘촘해지거나 생활수단이 싸지면 같은 결과가 나온다.",
+                      "생산력이 오르면 같은 물건에 드는 노동이 줄어 상품 하나의 가치는 오히려 내려간다. 늘어나는 것은 같은 시간에 만들어지는 물건의 수다."
+                    ],
+                    "en": [
+                      "To name the cause you have to check which of the three moved. In real cases all three often move at once, and then the effects pile on top of one another.",
+                      "This equates the money share with the mass of goods actually received. When subsistence gets cheaper the worker can take home more than before while capital’s share grows too.",
+                      "Lengthening the day is only one of three roads to more surplus-value. Denser labor or cheaper subsistence produces the same result with the hours untouched.",
+                      "When productivity rises each article costs less labor, so the value of a single article falls rather than rises. What grows is the number of articles made in the same time."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S4",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 4절",
+                      "en": "Capital I, Ch. 17 §4"
+                    },
+                    "quote": {
+                      "ko": "이 경우 다수의 조합이 가능하다는 것은 분명하다. 세 요인 가운데 어느 둘이 변하고 하나가 그대로일 수도 있고, 셋 모두가 동시에 변할 수도 있다.",
+                      "en": "It is obvious that a large number of combinations are here possible. Any two of the factors may vary and the third remain constant, or all three may vary at once."
+                    }
                   }
                 }
               ]
@@ -11022,13 +11499,38 @@
                       "Because the value and actual price of labor-power can diverge, and productivity growth can reproduce the same means of subsistence with less value.",
                       "Because value and means of subsistence have no relation and cannot be compared.",
                       "Because if the value of labor-power falls, workers absolutely cannot consume more means of subsistence.",
-                      "Because workers’ standard of life is always determined only by capitalist goodwill."
+                      "Because it narrows the historical and social element in the value of labor-power down to a question of the capitalist’s attitude."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동력 가치 하락은 필요한 생활수단의 가치가 낮아졌다는 뜻일 수 있다. 실제 임금과 생활수준은 계급투쟁, 가격과 가치의 차이, 생산성 변화에 따라 다르게 움직일 수 있다.",
-                    "en": "A fall in the value of labor-power can mean that the necessary means of subsistence have become cheaper. Actual wages and living standards can move differently depending on class struggle, the gap between price and value, and productivity changes."
+                    "ko": "노동력 가치 하락은 필요한 생활수단의 가치가 낮아졌다는 뜻일 수 있다. 실제 임금과 생활수준은 계급투쟁, 가격과 가치의 차이, 생산성 변화에 따라 다르게 움직일 수 있다. 마르크스는 심지어 노동자와 자본가가 함께 더 많은 생활수단을 나눠 가질 수 있는 경우도 든다.",
+                    "en": "A fall in the value of labor-power can mean that the necessary means of subsistence have become cheaper. Actual wages and living standards can move differently depending on class struggle, the gap between price and value, and productivity changes; Marx even gives a case where both worker and capitalist can obtain a greater mass of necessaries at once."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가치와 가격의 어긋남, 계급투쟁의 결과, 생산성 향상 세 가지가 겹쳐 실제 생활수준을 결정한다는 점을 기억해두면 다음 장의 임금 분석도 쉬워진다.",
+                      "가치와 생활수단이 무관하다는 말은 노동력 가치가 애초에 생활수단 가치로 정의된다는 사실과 모순된다.",
+                      "노동력 가치가 하락해도 노동자가 더 많은 생활수단을 얻을 수 있다는 것이 바로 이 장이 보여주는 역설이다.",
+                      "노동력 가치를 자본가의 태도 문제로 좁히면 가치법칙이 작동하는 객관적 조건을 놓치게 된다."
+                    ],
+                    "en": [
+                      "Remembering that price-value gaps, class struggle, and rising productivity all overlap in fixing real living standards makes the later wage-form analysis easier to follow.",
+                      "Saying value and means of subsistence are unrelated contradicts the very definition of labor-power's value as the value of subsistence goods.",
+                      "That workers can obtain more means of subsistence even as the value of labor-power falls is exactly the paradox this chapter lays out.",
+                      "Narrowing the historical and social element in labor-power’s value to the capitalist’s attitude ignores the objective conditions under which the law of value actually operates."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 1절",
+                      "en": "Capital I, Ch. 17 §1"
+                    },
+                    "quote": {
+                      "ko": "생산력 증가로 노동자와 자본가가 동시에 더 많은 생활수단을 얻을 수 있는데, 이때 노동력 가격이나 잉여가치에는 아무 변화가 없다.",
+                      "en": "It is, however, possible that, owing to an increase of productiveness, both the labourer and the capitalist may simultaneously be able to appropriate a greater quantity of these necessaries, without any change in the price of labour-power or in surplus-value."
+                    }
                   }
                 },
                 {
@@ -11044,19 +11546,44 @@
                       "강도가 높아지면 같은 시계시간 안에 더 많은 노동이 지출되어 가치생산과 노동력 소모가 달라질 수 있기 때문이다.",
                       "강도는 노동자가 느끼는 피로감의 정도이기 때문이다.",
                       "시계시간이 같으면 노동량은 어떤 경우에도 곧장 같다.",
-                      "강도가 높아지면 사용가치는 늘지만 가치생산은 법적으로 금지된다."
+                      "강도가 높아지면 한 상품에 드는 노동이 줄어 개별 상품의 가치도 함께 떨어지기 때문이다."
                     ],
                     "en": [
                       "Because higher intensity expends more labor within the same clock-time, changing value production and the exhaustion of labor-power.",
-                      "Because intensity is only a worker’s mood and has nothing to do with actual labor expenditure.",
+                      "Because intensity is just a matter of how tired the worker happens to feel.",
                       "If clock-time is the same, the quantity of labor is necessarily the same in every case.",
-                      "When intensity rises, use-values increase but value production is legally prohibited."
+                      "Because higher intensity lowers the labor contained in each article, so the value of each single product falls as well."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 노동시간을 단순한 시계시간으로만 보지 않는다. 노동강도 변화는 같은 시간 안에 응축되는 노동량과 노동력 소모를 바꾸므로 임금과 잉여가치 관계에 영향을 준다.",
-                    "en": "Marx does not treat labor-time as mere clock-time. Changes in intensity alter the amount of labor condensed in the same time and the exhaustion of labor-power, affecting the relation between wages and surplus-value."
+                    "ko": "마르크스는 노동시간을 단순한 시계시간으로만 보지 않는다. 노동강도 변화는 같은 시간 안에 응축되는 노동량과 노동력 소모를 바꾸므로 임금과 잉여가치 관계에 영향을 준다. 강도가 높아진 노동일은 더 많은 생산물로 구현되고, 개별 상품 가치는 그대로 유지된다.",
+                    "en": "Marx does not treat labor-time as mere clock-time. Changes in intensity alter the amount of labor condensed in the same time and the exhaustion of labor-power, affecting the relation between wages and surplus-value; a more intense day is embodied in more products while individual commodity value stays the same."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "강도가 노동력 소모까지 바꾼다는 점을 알면 시간임금이 왜 노동자에게 불리하게 작동할 수 있는지도 이해하기 쉬워진다.",
+                      "강도를 단순한 기분 문제로 보면 마르크스가 왜 강도를 노동시간과 나란히 놓고 계산하는지 설명할 수 없다.",
+                      "시계시간이 같아도 강도가 다르면 실제로 지출되는 노동량은 달라진다. 이것이 이 절 전체의 논점이다.",
+                      "개별 상품의 가치가 떨어지는 것은 생산력이 오를 때의 일이다. 강도가 높아지면 각 상품에 드는 노동은 이전과 같아 가치도 그대로이고, 생산물 수가 늘어난 만큼 가격의 합계가 커진다."
+                    ],
+                    "en": [
+                      "Seeing that intensity also changes the wear on labor-power makes it easier to understand why time-wages can work against workers later on.",
+                      "Treating intensity as mere tiredness cannot explain why Marx calculates it alongside labor-time as an equally objective factor.",
+                      "Even with identical clock-time, different intensity means a different actual quantity of labor expended, which is the whole point of this section.",
+                      "A fall in the value of each article belongs to rising productivity. With greater intensity each product costs the same labor as before, so its value stays put and the sum of prices grows as the number of products grows."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 2절",
+                      "en": "Capital I, Ch. 17 §2"
+                    },
+                    "quote": {
+                      "ko": "노동강도의 증가는 같은 시간 안의 노동지출 증가를 뜻한다. … 여기서는 개별 가격의 하락 없이 생산물 수가 늘어난다. 수가 늘어나는 만큼 가격의 합계도 늘어난다.",
+                      "en": "Increased intensity of labour means increased expenditure of labour in a given time. … Here we have an increase in the number of products, unaccompanied by a fall in their individual prices: as their number increases, so does the sum of their prices."
+                    }
                   }
                 },
                 {
@@ -11069,22 +11596,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "생산력 상승은 노동력 가치를 낮춰 잉여가치를 늘릴 수 있지만, 실제 노동력 가격은 투쟁과 조건에 따라 다르게 움직일 수 있기 때문이다.",
-                      "생산력은 가치와 무관하므로 임금과 잉여가치를 충분히 바꾸지 않기 때문이다.",
-                      "생산력 상승은 대체로 잉여가치를 없애고 임금만 올리기 때문이다.",
-                      "임금과 잉여가치는 같은 금액의 두 이름이므로 방향 차이가 불가능하기 때문이다."
+                      "생산력 상승은 노동력 가치를 낮춰 잉여가치를 늘리지만, 실제 가격은 투쟁과 조건에 따라 다르게 움직일 수 있어서다.",
+                      "생산력은 가치와 관계가 없어서 임금과 잉여가치를 어느 쪽도 바꾸지 못하기 때문이다.",
+                      "생산력 상승은 잉여가치를 없애고 임금만 끌어올리는 결과를 대체로 가져오기 때문이다.",
+                      "임금과 잉여가치는 하나의 금액을 가리키는 두 이름이라 방향이 달라질 수 없기 때문이다."
                     ],
                     "en": [
-                      "Because rising productivity can lower the value of labor-power and increase surplus-value, while the actual price of labor-power can move differently depending on struggle and conditions.",
-                      "Because productivity has nothing to do with value and changes neither wages nor surplus-value.",
-                      "Because rising productivity always abolishes surplus-value and only raises wages.",
-                      "Because wages and surplus-value are two names for the same amount, so different directions are impossible."
+                      "Rising productivity can lower the value of labor-power and raise surplus-value, but the actual price can move differently depending on struggle and conditions.",
+                      "Because productivity has no relation to value and therefore changes neither wages nor surplus-value.",
+                      "Because rising productivity generally abolishes surplus-value and merely raises wages instead.",
+                      "Because wages and surplus-value are simply two names for one and the same amount, so different directions are impossible."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "17장의 목적은 변수들을 분리해 보는 것이다. 생산력, 노동일, 강도, 노동력 가격은 서로 얽히지만 같은 방향으로 기계적으로 움직이지 않는다.",
-                    "en": "The aim of Chapter 17 is to separate the variables. Productivity, working day, intensity, and the price of labor-power are connected, but they do not move mechanically in the same direction."
+                    "ko": "생산력이 오르면 노동력 가치가 낮아져 잉여가치가 늘어날 자리가 생기지만, 실제로 지불되는 가격은 계급 사이의 힘과 시장 조건에 따라 따로 움직인다. 두 크기가 반대 방향으로 변한다고 해서 같은 비율로 변하는 것도 아니다. 리카도는 세 법칙을 정확히 세우고도 생산력 하나만 변수로 두어 이 어긋남을 보지 못했다.",
+                    "en": "Higher productivity lowers the value of labor-power and opens room for surplus-value to grow, but the price actually paid moves on its own, following the balance of forces between the classes and the conditions of the market. Even when the two magnitudes move in opposite directions, they need not move in the same proportion. Ricardo formulated the three laws correctly yet let productivity alone vary, and so missed this gap."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 장이 변수를 하나씩 분리해 보여주는 이유가 바로 여기에 있다. 방향이 겹칠 수도, 어긋날 수도 있다는 것 자체가 핵심이다.",
+                      "생산력이 가치와 무관하다는 말은 상대적 잉여가치라는 개념 전체를 지워버린다. 생산력은 필요노동시간을 통해 가치에 직접 작용한다.",
+                      "생산력 상승이 대체로 잉여가치를 없앤다는 설명은 마르크스가 든 리카도 비판의 사례와 정반대다. 오히려 잉여가치가 늘어날 수 있다.",
+                      "임금과 잉여가치가 같은 금액의 두 이름이라면 노동일을 두 부분으로 나누는 이 장의 전체 계산이 무의미해진다."
+                    ],
+                    "en": [
+                      "This is exactly why the chapter isolates each variable one at a time; the possibility that directions can align or diverge is the whole point.",
+                      "Claiming productivity has nothing to do with value erases the entire idea of relative surplus-value, since productivity acts on value through necessary labor-time.",
+                      "Saying rising productivity generally abolishes surplus-value is the opposite of the case Marx uses against Ricardo, where surplus-value actually grows.",
+                      "If wages and surplus-value were just two names for one amount, the chapter’s entire calculation of splitting the working day into two parts would be pointless."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 1절",
+                      "en": "Capital I, Ch. 17 §1"
+                    },
+                    "quote": {
+                      "ko": "이 법칙을 세우면서 리카도는 한 가지를 놓쳤다. 잉여가치나 잉여노동 크기의 변화가 노동력 가치나 필요노동량의 반대 방향 변화를 낳는다 해도, 그 둘이 같은 비율로 변한다는 것은 결코 아니다.",
+                      "en": "In formulating this law, Ricardo overlooked one circumstance; although a change in the magnitude of the surplus-value or surplus-labour causes a change in the opposite direction in the magnitude of the value of labour-power, or in the quantity of necessary labour, it by no means follows that they vary in the same proportion."
+                    }
                   }
                 },
                 {
@@ -11097,22 +11649,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "절대적 잉여가치 증가와 상대적 잉여가치 증가가 동시에 작동해 노동력 가격과 잉여가치의 변동을 분리해 봐야 하기 때문이다.",
-                      "노동일이 길어지면 생산성은 가치분석에서 사라지기 때문이다.",
-                      "두 변화가 항상 서로 완전히 상쇄되어 아무 효과도 없기 때문이다.",
-                      "생산성이 오르면 노동일 길이는 더 이상 측정할 수 없기 때문이다."
+                      "절대적 잉여가치와 상대적 잉여가치 증가가 동시에 작동해 두 원인이 겹쳐 나타나기 때문이다.",
+                      "노동일이 길어지면 생산성 개념은 가치분석에서 완전히 사라져 버리기 때문이다.",
+                      "생산력 상승이 필요노동을 줄이는 효과와 노동일 연장의 효과가 서로 상쇄되어 잉여가치가 그대로 남기 때문이다.",
+                      "생산성이 오르면 노동일 길이라는 것 자체를 더 이상 측정할 수 없게 되기 때문이다."
                     ],
                     "en": [
-                      "Because increases in absolute and relative surplus-value can operate at the same time, so changes in the price of labor-power and surplus-value must be separated analytically.",
-                      "Because if the working day lengthens, productivity disappears from value analysis.",
-                      "Because the two changes always completely cancel each other out and have no effect.",
-                      "Because if productivity rises, the length of the working day can no longer be measured."
+                      "Because increases in absolute and relative surplus-value can operate together, so two causes overlap in the same result.",
+                      "Because once the working day lengthens, the concept of productivity disappears entirely from value analysis.",
+                      "Because the effect of shorter necessary labor and the effect of a longer working day offset each other, leaving surplus-value where it was.",
+                      "Because once productivity rises, the very length of the working day can no longer be measured at all."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "현실에서는 여러 조건이 동시에 변한다. 마르크스는 각 조건을 분리해 본 뒤, 결합된 경우에 어떤 효과가 겹치는지 파악하게 한다.",
-                    "en": "In reality, several conditions change at once. Marx separates each condition first so that we can grasp how effects overlap in combined cases."
+                    "ko": "현실에서는 여러 조건이 동시에 변한다. 마르크스는 각 조건을 분리해 본 뒤, 결합된 경우에 어떤 효과가 겹치는지 파악하게 한다. 1799~1815년 영국처럼 생산력이 떨어지며 노동일이 늘어난 시기에도 노동강도 증가와 노동일 연장 덕분에 잉여가치는 절대적으로도 상대적으로도 늘었다.",
+                    "en": "In reality, several conditions change at once. Marx separates each condition first so that we can grasp how effects overlap in combined cases; even in England from 1799 to 1815, when productivity fell as the working day lengthened, surplus-value still increased both absolutely and relatively thanks to intensified labor and a longer day."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "두 경로가 겹친다는 것을 알면 뒤이은 절 B의 사례, 즉 노동일이 짧아지면서도 강도와 생산력이 오르는 반대 경우도 같은 방식으로 풀 수 있다.",
+                      "노동일이 길어진다고 생산성 개념이 사라지지는 않는다. 오히려 두 변수는 같은 노동일 안에서 함께 작동한다.",
+                      "두 효과는 서로 상쇄되지 않고 같은 방향으로 겹칠 수 있다. 1799년부터 1815년까지 영국에서는 생산력이 떨어지는데도 노동일 연장과 강도 증가가 겹쳐 잉여가치가 절대적으로도 상대적으로도 늘었다.",
+                      "생산성이 오른다고 노동일의 시계시간 측정이 불가능해지는 것은 아니다. 두 변수는 서로 다른 차원에서 독립적으로 측정된다."
+                    ],
+                    "en": [
+                      "Seeing how the two paths overlap here also prepares you for the opposite case in part B, where the day shortens while intensity and productivity rise.",
+                      "A longer working day does not make the concept of productivity vanish; the two variables keep operating together within the same day.",
+                      "The two effects do not cancel; they can pile up in the same direction. In England between 1799 and 1815 surplus-value grew both absolutely and relatively even as productivity fell, because the day lengthened and labor grew more intense.",
+                      "Rising productivity does not make the clock-time length of the working day unmeasurable; the two variables are measured independently."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S4",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 4절",
+                      "en": "Capital I, Ch. 17 §4"
+                    },
+                    "quote": {
+                      "ko": "이처럼 노동생산력이 떨어지면서 동시에 노동일이 늘어나면, 잉여가치의 절대량은 그대로일 수 있는데 그 상대량은 줄어들 수 있다. 상대량은 그대로일 수 있는데 절대량은 늘어날 수 있다. 그리고 노동일 연장이 충분하다면 둘 다 늘어날 수 있다.",
+                      "en": "Therefore, with diminishing productiveness of labour and a simultaneous lengthening of the working-day, the absolute magnitude of surplus-value may continue unaltered, at the same time that its relative magnitude diminishes; its relative magnitude may continue unchanged, at the same time that its absolute magnitude increases; and, provided the lengthening of the day be sufficient, both may increase."
+                    }
                   }
                 },
                 {
@@ -11120,27 +11697,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "17장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best describes the systematic role of Chapter 17?"
+                    "ko": "생산력과 노동강도가 함께 오르면 노동자가 자기 생활수단을 만드는 데 드는 부분은 줄어든다. 노동일을 그 부분만큼으로 줄이면 잉여노동은 사라질 텐데, 마르크스는 여기에 어떤 단서를 붙이는가?",
+                    "en": "When productivity and intensity both rise, the portion of the day in which the worker produces his own means of subsistence shrinks. Cutting the day down to that portion would make surplus labor vanish, so what qualification does Marx attach?"
                   },
                   "choices": {
                     "ko": [
-                      "절대적·상대적 잉여가치의 종합 뒤에, 노동일·강도·생산력 변화가 노동력 가격과 잉여가치 분할을 어떻게 바꾸는지 비교한다.",
-                      "임금형태의 전도를 완전히 설명해 시간임금과 성과임금 분석을 끝낸다.",
-                      "기계가 새 가치를 만든다는 결론으로 불변자본과 가변자본 구분을 폐기한다.",
-                      "공식의 차이는 모두 임금형태가 만드는 은폐 효과에 속한다."
+                      "자본의 생산형태를 없애야 가능한 일이고, 그때는 생활수단의 뜻이 넓어지고 적립을 위한 노동이 들어와 필요노동의 한계가 다시 늘어난다.",
+                      "생산력이 충분히 오르면 자본주의 안에서도 노동일이 그 부분까지 줄어들어 잉여노동은 사라지게 된다.",
+                      "노동일이 그 부분만큼으로 줄어든 사회에서는 적립과 축적을 위한 노동도 함께 사라져 아무도 그 몫을 맡지 않는다.",
+                      "필요노동의 길이는 생활수단의 양으로 고정되어 있어 사회의 형태가 바뀌어도 그 길이는 달라지지 않는다."
                     ],
                     "en": [
-                      "After synthesizing absolute and relative surplus-value, it compares how changes in working day, intensity, and productivity alter the division between the price of labor-power and surplus-value.",
-                      "It fully explains the inversion of the wage-form and completes the analysis of time-wages and piece-wages.",
-                      "It concludes that machinery creates new value and abandons the distinction between constant and variable capital.",
-                      "It treats all formulas for the rate of surplus-value as concealing exploitation, so no calculation can be used."
+                      "It could happen only by suppressing the capitalist form of production, and even then necessary labor would extend its limits as subsistence widens and reserve-fund labor enters it.",
+                      "Once productivity is high enough, the working day shrinks to that portion within capitalism itself and surplus labor disappears.",
+                      "In a society whose day is cut down to that portion, the labor of forming a reserve and accumulation fund disappears along with it.",
+                      "The length of necessary labor is fixed by the quantity of necessaries, so it stays the same however the form of society changes."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "17장은 앞선 잉여가치 생산 분석을 동태적으로 정리한다. 어떤 조건이 변할 때 노동자 몫과 자본가 몫이 어떻게 달라지는지 비교해야 다음 임금형태 분석으로 넘어갈 수 있다.",
-                    "en": "Chapter 17 gives a dynamic summary of the preceding analysis of surplus-value production. Comparing how workers’ and capitalists’ shares change under different conditions prepares the transition to the analysis of wage-forms."
+                    "ko": "노동일 전체가 필요노동 부분까지 줄어들면 잉여노동은 사라진다. 그러나 마르크스는 그 일이 자본의 지배 아래서는 이룰 수 없고 자본의 생산형태를 없애야 가능하다고 못박는다. 게다가 그 사회에서도 필요노동은 다시 넓어지는데, 「생활수단」이라는 말의 폭이 커지고 지금은 잉여노동으로 떨어져 나가 있는 적립과 축적을 위한 노동이 필요노동으로 들어오기 때문이다. 짧아진 시간이 누구 것이 되는지는 사회 형태에 달렸다.",
+                    "en": "If the whole day shrank to the necessary portion, surplus labor would vanish. Marx insists this is possible only by suppressing the capitalist form of production, and that even then necessary labor would widen again: the notion of means of subsistence expands, and the labor of building a reserve and accumulation fund, now split off as surplus labor, would count as necessary."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동일 단축이 기술의 문제가 아니라 사회 형태의 문제임을 드러내는 대목이다. 같은 생산력 상승이 자본 아래서는 잉여노동으로, 다른 형태에서는 자유 시간으로 나타난다.",
+                      "자본주의에서 필요노동이 줄어든 자리를 채우는 것은 여가가 아니라 잉여노동이다. 마르크스는 노동일이 필요노동까지 줄어드는 일을 자본의 체제 아래서는 이룰 수 없는 일이라고 말한다.",
+                      "적립과 축적을 위한 노동은 어느 사회에서나 누군가 해야 한다. 달라지는 것은 그 노동이 잉여노동으로 떨어져 나가느냐, 필요노동 안으로 들어오느냐다.",
+                      "필요노동의 길이는 고정된 자연량이 아니다. 「생활수단」에 무엇이 들어가는지가 사회에 따라 달라지고, 그만큼 필요노동의 한계도 옮겨간다."
+                    ],
+                    "en": [
+                      "Here shortening the day turns out to be a question of social form rather than technique: the same rise in productivity shows up as surplus labor under capital and as free time elsewhere.",
+                      "Inside capitalism the room freed by shrinking necessary labor is filled by surplus labor, not by leisure; Marx calls a day cut down to necessary labor a consummation utterly impossible under the regime of capital.",
+                      "Someone has to do the labor of building a reserve and accumulation fund in any society. What changes is whether that labor is split off as surplus labor or counted within necessary labor.",
+                      "The length of necessary labor is not a fixed natural quantity. What counts as a means of subsistence shifts with the society, and the limit of necessary labor shifts with it."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch17.htm#S4",
+                    "label": {
+                      "ko": "『자본론』 1권 17장 4절",
+                      "en": "Capital I, Ch. 17 §4"
+                    },
+                    "quote": {
+                      "ko": "자본의 생산형태를 없애야만 노동일의 길이를 필요노동시간까지 줄일 수 있다. 그러나 그 경우에도 필요노동시간 자체가 그 한계를 넓힌다. 한편으로는 「생활수단」이라는 말의 폭이 크게 넓어져 노동자가 아주 다른 생활수준을 요구하게 되기 때문이고, 다른 한편으로는 지금 잉여노동에 속한 일부, 곧 적립과 축적을 위한 기금을 만드는 노동이 그때는 필요노동으로 셈해지기 때문이다.",
+                      "en": "Only by suppressing the capitalist form of production could the length of the working-day be reduced to the necessary labour time. But, even in that case, the latter would extend its limits. On the one hand, because the notion of “means of subsistence” would considerably expand, and the labourer would lay claim to an altogether different standard of life. On the other hand, because a part of what is now surplus-labour, would then count as necessary labour; I mean the labour of forming a fund for reserve and accumulation."
+                    }
                   }
                 }
               ]
@@ -11183,7 +11785,7 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "생산성ㆍ임금ㆍ노동일",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "세 변수: 노동력 가치, 잉여가치, 노동일 길이는 서로 맞물려 변한다. 하나만 보면 착취율 변화를 오해한다.",
                   "생산성·강도·시간: 생산성 상승, 노동강도 변화, 노동일 연장은 서로 다른 방식으로 필요노동과 잉여노동을 바꾼다.",
@@ -11191,21 +11793,21 @@
                 ]
               },
               {
-                "title": "변수 조합 읽기",
-                "items": [
-                  "노동력 가격, 노동생산성, 노동강도, 노동일 길이가 함께 변하면 v와 s의 크기도 달라진다.",
-                  "노동생산성은 생활수단의 가치를 낮춰 필요노동을 줄일 수 있다.",
-                  "노동강도와 노동일은 같은 시간 안의 가치생산량 또는 총노동시간을 바꾼다."
-                ]
+                "title": "용어 풀이",
+                "text": "이 장에서 나오는 「가치」와 「가격」은 같은 말이 아니다. 노동력의 가치는 그 재생산에 필요한 생활수단의 가치로 정해지고, 가격은 시장에서 실제로 지불되는 액수로 계급투쟁이나 조건에 따라 가치 위아래로 움직일 수 있다."
               },
               {
-                "title": "몫의 변동",
+                "title": "현대 적용",
+                "text": "오늘날 물가가 내려 생활비가 싸지면 명목임금이 그대로여도 실질적으로 필요한 노동시간이 줄어드는 것과 비슷하다. 반대로 노동시간을 늘리거나 업무 강도를 높이는 정책은 생산성 향상 없이도 잉여노동을 늘리는 방식이다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "하나의 변수만 보지 말고 생산성, 임금, 노동시간이 함께 움직일 때 착취율이 어떻게 달라지는지 읽는다."
               }
             ],
             "en": [
               {
-                "title": "Productivity, Wages, Working Day",
+                "title": "Core concepts first",
                 "items": [
                   "Three variables: Value of labor-power, surplus-value, and length of the working day change in relation to one another. Looking at one alone misreads exploitation.",
                   "Productivity, intensity, time: Higher productivity, changed intensity, and a longer working day alter necessary and surplus labor in different ways.",
@@ -11213,15 +11815,15 @@
                 ]
               },
               {
-                "title": "Reading Variable Combinations",
-                "items": [
-                  "Changes in labour-power price, productivity, intensity, and working-day length alter v and s.",
-                  "Productivity can lower the value of means of subsistence and reduce necessary labour.",
-                  "Intensity and working-day length change value produced per time or total labour-time."
-                ]
+                "title": "Terms explained",
+                "text": "‘Value’ and ‘price’ are not the same in this chapter. The value of labor-power is set by the value of the subsistence goods needed to reproduce it, while price is the actual sum paid, which can sit above or below value depending on struggle and conditions."
               },
               {
-                "title": "Changing Shares",
+                "title": "Today's application",
+                "text": "When falling prices cheapen the cost of living today, a worker's needed labor-time can shrink even if the nominal wage stays flat, much like a productivity-driven fall in the value of labor-power. Conversely, policies that lengthen hours or intensify work raise surplus labor without any rise in productivity at all."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "Track productivity, wages, and labor-time together when judging changes in exploitation."
               }
             ]
@@ -11245,6 +11847,43 @@
             "en": "Reviews different formulas for the rate of surplus-value and how they present the same relation differently."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "공식이 드러내는 것과 가리는 것",
+              "left": {
+                "heading": "착취관계를 선명히 드러내는 공식",
+                "rows": [
+                  "s/v = 잉여가치/가변자본",
+                  "잉여노동/필요노동, 불불노동/지불노동"
+                ]
+              },
+              "right": {
+                "heading": "착취관계를 흐리는 공식",
+                "rows": [
+                  "잉여노동/노동일 전체",
+                  "잉여가치/총생산물"
+                ]
+              }
+            },
+            "en": {
+              "title": "What the Formula Reveals and What It Hides",
+              "left": {
+                "heading": "Formulas that reveal exploitation clearly",
+                "rows": [
+                  "s/v = surplus-value / variable capital",
+                  "Surplus labor / necessary labor, unpaid / paid labor"
+                ]
+              },
+              "right": {
+                "heading": "Formulas that blur exploitation",
+                "rows": [
+                  "Surplus labor / total working day",
+                  "Surplus-value / total product"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch18-basic",
@@ -11259,8 +11898,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치율을 가장 직접적으로 드러내는 공식은 무엇인가?",
-                    "en": "Which formula most directly expresses the rate of surplus-value?"
+                    "ko": "노동자가 하루 12시간 중 필요노동 6시간, 잉여노동 6시간을 한다고 하자. 잉여가치율을 가장 직접적으로 드러내는 공식은 무엇인가?",
+                    "en": "Suppose a worker performs 6 hours of necessary labor and 6 hours of surplus labor in a 12-hour day. Which formula most directly expresses the rate of surplus-value?"
                   },
                   "choices": {
                     "ko": [
@@ -11278,8 +11917,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 s/v이며 시간으로는 잉여노동/필요노동이다. 이 공식은 착취관계를 노동력 가치와 그 이상으로 수행된 노동의 관계로 드러낸다.",
-                    "en": "The rate of surplus-value is s/v, expressed in time as surplus labor / necessary labor. This formula reveals exploitation as the relation between the value of labor-power and labor performed beyond it."
+                    "ko": "잉여가치율은 s/v이며 시간으로는 잉여노동/필요노동이다. 이 예에서는 6/6=100%로, 노동자가 자기 노동력 가치를 재생산한 시간만큼 자본을 위해 더 일한다는 관계를 정확히 드러낸다. 불변자본이나 총생산물을 분모로 삼는 오답들은 이 직접 관계를 다른 요소로 대체해 버린다.",
+                    "en": "The rate of surplus-value is s/v, or in time surplus labor / necessary labor. Here 6/6=100%, precisely showing that the worker labors for capital exactly as long as he labors to reproduce his own labor-power's value. The wrong answers replace this direct relation with constant capital or total product instead."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "s/v가 100%라는 것은 노동자가 제 임금만큼 벌고 난 뒤 같은 시간을 무상으로 더 일했다는 뜻이다. 이 비율은 노동일이 길어지면 100%를 넘어설 수도 있다.",
+                      "불변자본은 새 가치를 만들지 않으므로 착취 비율의 분모가 될 수 없다는 점을 놓친 생각이다.",
+                      "임금이 총생산물의 일부처럼 보이면 잉여노동이 자취를 감춘 것처럼 착시가 생긴다.",
+                      "가격과 사용가치는 서로 통약 불가능한 범주라 비율 자체를 만들 수 없다."
+                    ],
+                    "en": [
+                      "A rate of 100% means the worker labors just as long again for nothing after earning his own wage, and unlike the derivative formulas this ratio can rise above 100%.",
+                      "Constant capital creates no new value, so it cannot serve as the denominator of the exploitation ratio.",
+                      "Treating wages as a share of the total product creates the illusion that surplus labor has disappeared.",
+                      "Price and use-value belong to incommensurable categories, so no such ratio can even be formed."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "잉여가치율은 다음 공식들로 표현된다는 것을 보았다 … 앞의 두 공식은 가치의 비율로, 세 번째는 그 가치가 생산되는 시간의 비율로 나타낸다.",
+                      "en": "We have seen that the rate of surplus-value is represented by the following formulae … The two first of these formulae represent, as a ratio of values, that which, in the third, is represented as a ratio of the times during which those values are produced."
+                    }
                   }
                 },
                 {
@@ -11292,22 +11956,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "착취 정도를 필요노동과의 직접 관계가 아니라 노동일 전체 중 한 부분처럼 보이게 해 비율을 약하게 표현할 수 있다.",
-                      "노동일 전체를 분모로 쓰면 대체로 s/v와 같은 숫자가 된다.",
-                      "잉여노동이 필요노동보다 더 크면 계산 자체가 불가능해진다.",
-                      "이 공식은 불변자본이 새 가치를 만든다는 점을 증명한다."
+                      "착취 정도가 필요노동과의 직접 비율이 아니라 노동일 가운데 한 몫으로 나타나 약하게 보인다.",
+                      "분모를 노동일 전체로 바꾸어도 s/v와 같은 숫자가 나오므로 두 공식은 사실상 하나다.",
+                      "잉여노동이 필요노동보다 길어지는 경우에는 이 공식으로 값을 낼 수 없게 된다.",
+                      "노동일 전체를 분모에 두면 불변자본도 새 가치를 만든다는 점이 드러난다."
                     ],
                     "en": [
-                      "It can express the degree of exploitation more weakly, as a part of the whole working day rather than as a direct relation to necessary labor.",
-                      "Using the total working day as denominator always gives the same number as s/v.",
-                      "If surplus labor is greater than necessary labor, calculation becomes impossible.",
-                      "This formula proves that constant capital creates new value."
+                      "It presents exploitation as a share of the whole working day rather than as a direct ratio to necessary labor.",
+                      "Using the whole working day as the denominator yields the same number as s/v, so nothing changes.",
+                      "When surplus labor grows longer than necessary labor, this formula can no longer be computed.",
+                      "Putting the working day in the denominator shows that constant capital also creates new value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여노동/노동일은 전체 중 잉여부분의 비중을 보여줄 수 있지만, 착취율 s/v와 같지 않다. 착취의 정도는 잉여노동이 필요노동에 대해 얼마나 큰가로 가장 정확히 드러난다.",
-                    "en": "Surplus labor / working day can show the share of surplus labor in the whole, but it is not the same as s/v. The degree of exploitation is most precisely shown by how large surplus labor is in relation to necessary labor."
+                    "ko": "잉여노동/노동일은 전체 중 잉여부분의 비중을 보여줄 수 있지만, 착취율 s/v와 같지 않다. 예를 들어 6/12=50%로 나오지만 실제 착취율은 6/6=100%다. 착취의 정도는 잉여노동이 필요노동에 대해 얼마나 큰가로 가장 정확히 드러난다.",
+                    "en": "Surplus labor / working day can show the share of surplus labor in the whole, but it is not the same as s/v. For example it gives 6/12=50% while the real rate of exploitation is 6/6=100%. The degree of exploitation is most precisely shown by how large surplus labor is in relation to necessary labor."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 표현에서는 잉여노동이 노동일의 한 조각일 수밖에 없어 비율이 100%에 결코 닿지 못한다. 마르크스는 그렇게 굳어진 결론을 잘못된 법칙이라 불렀다.",
+                      "12시간 노동일에 잉여노동이 6시간이면 s/v는 6/6=100%이지만 잉여노동/노동일은 6/12=50%다. 분모가 달라지면 값도 달라진다.",
+                      "잉여노동이 필요노동보다 길어도 노동일 전체를 분모로 둔 계산은 그대로 된다. 달라지는 것은 계산 가능 여부가 아니라 값의 크기다.",
+                      "이 공식이 다루는 것은 노동일의 분할뿐이다. 창출된 가치를 셀 때 불변자본에서 옮겨 온 몫은 애초에 빼고 세므로 가치창출과는 상관이 없다."
+                    ],
+                    "en": [
+                      "In this expression surplus labor can only be a fraction of the working day, so the ratio never reaches 100%; Marx calls the conclusion drawn from it an erroneous law.",
+                      "In a 12-hour day with 6 hours of surplus labor, s/v is 6/6 = 100% while surplus labor / working day is 6/12 = 50%: a different denominator gives a different number.",
+                      "Even when surplus labor exceeds necessary labor the calculation against the whole day still works; what changes is the size of the result, not whether it can be computed.",
+                      "The formula only divides up the working day, and the value transferred from constant capital is excluded from the value created in the first place."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "이 파생 공식들(II)에서는 노동 착취의 실제 정도, 곧 잉여가치율이 잘못 표현된다.",
+                      "en": "In all of these formulae (II.), the actual degree of exploitation of labour, or the rate of surplus-value, is falsely expressed."
+                    }
                   }
                 },
                 {
@@ -11334,8 +12023,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "같은 노동일도 공식에 따라 다르게 보인다. s/v는 착취 정도를 직접 드러내지만, 잉여노동/노동일은 잉여노동을 전체 중 일부로 나타내 착취의 강도를 덜 선명하게 보일 수 있다.",
-                    "en": "The same working day appears differently depending on the formula. s/v directly reveals the degree of exploitation, while surplus labor / working day presents surplus labor as a part of the whole and can make the intensity of exploitation less visible."
+                    "ko": "같은 노동일도 공식에 따라 다르게 보인다. s/v는 잉여노동을 필요노동과 직접 비교해 착취 정도를 그대로 드러내지만, 잉여노동/노동일은 잉여노동을 전체 중 일부로 나타내 200%라는 실제 착취율을 66.7%라는 온건한 숫자로 바꿔놓는다.",
+                    "en": "The same working day appears differently depending on the formula. s/v directly compares surplus labor to necessary labor and reveals the degree of exploitation as it is, while surplus labor / working day presents surplus labor as a share of the whole, turning the real 200% rate into a milder-looking 66.7%."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "라베르뉴의 추계처럼 잉여노동이 필요노동의 세 배인 경우 착취율은 300%가 된다. s/v에는 이런 상한이 없지만 잉여노동/노동일은 100%에 닿을 수 없다.",
+                      "분모를 다르게 잡으면 결과가 다르다는 사실을 계산으로 직접 확인하면 혼동이 풀린다.",
+                      "잉여노동이 필요노동보다 커도 전체 노동일을 분모로 쓰는 계산은 문제없이 가능하다.",
+                      "두 공식 모두 노동시간의 비율이며 가격표와는 관련이 없다."
+                    ],
+                    "en": [
+                      "In Lavergne’s estimate surplus labor stands to necessary labor as 3:1, a rate of 300%; s/v has no such ceiling, while surplus labor / working day can never reach 100%.",
+                      "Working out both ratios directly shows that different denominators give different results.",
+                      "Even when surplus labor exceeds necessary labor, computing against the total working day remains straightforward.",
+                      "Both formulas are ratios of labor-time and have nothing to do with price tags."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "6시간 잉여노동/6시간 필요노동 = 3실링 잉여가치/3실링 가변자본 = 100% … 공식 II에서는 매우 다르게, 6시간 잉여노동/12시간 노동일 = 3실링 잉여가치/6실링 창출된 가치 = 50%가 된다.",
+                      "en": "6 hours surplus-labour = Surplus-value of 3 sh. = 100% 6 hours necessary labour Variable Capital of 3 sh. … From formulae II. we get very differently, 6 hours surplus-labour = Surplus-value of 3 sh. = 50% Working-day of 12 hours Value created of 6 sh."
+                    }
                   }
                 },
                 {
@@ -11362,8 +12076,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율 공식은 임금이 노동력 가치의 표현이라는 전제를 필요로 한다. 임금이 노동 전체를 지불하는 것처럼 보이면 잉여노동이 사라진 것처럼 나타난다.",
-                    "en": "The formula for the rate of surplus-value requires seeing wages as the expression of the value of labor-power. If wages appear to pay for all labor, surplus labor appears to vanish."
+                    "ko": "잉여가치율 공식은 임금이 노동력 가치의 표현이라는 전제를 필요로 한다. 임금이 노동 전체를 지불하는 것처럼 보이면, 노동자와 자본가가 마치 각자 기여한 만큼 생산물을 나누는 것처럼 보이는 거짓 그림이 만들어져 잉여노동이 사라진 것처럼 나타난다.",
+                    "en": "The formula for the rate of surplus-value requires seeing wages as the expression of the value of labor-power. If wages appear to pay for all labor, a false picture emerges in which worker and capitalist seem to divide the product according to their respective contributions, so surplus labor appears to vanish."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 이 착시를 연합의 거짓된 외관이라 부른다. 노동자와 자본가가 각자 이바지한 몫만큼 생산물을 나누는 것처럼 보이지만, 실제로 일어난 일은 가변자본과 살아 있는 노동력의 교환이다.",
+                      "실제로는 반대다. 임금 전체 지불이라는 착시는 착취율을 더 흐리게 만들 뿐이다.",
+                      "임금형태는 착취관계를 감추는 대표적 계기이며 결코 무관하지 않다.",
+                      "임금이 노동 전체의 대가로 보인다고 해서 불변자본과 가변자본의 구별 자체가 바뀌지는 않는다."
+                    ],
+                    "en": [
+                      "Marx calls this illusion a false semblance of an association: worker and capitalist appear to divide the product by their contributions, while what actually took place was an exchange of variable capital for living labor-power.",
+                      "In fact the opposite happens: the illusion of full payment only blurs the rate of exploitation further.",
+                      "The wage-form is precisely one of the key sites where the relation of exploitation is hidden, not unrelated to it.",
+                      "Wages appearing as payment for all labor does not change the actual distinction between constant and variable capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "창출된 가치의 분수로 잉여가치와 노동력 가치를 나타내는 습관은 … 바로 자본을 특징짓는 거래, 곧 가변자본과 살아 있는 노동력의 교환, 그리고 그로 인한 노동자의 생산물로부터의 배제를 가려버린다.",
+                      "en": "The habit of representing surplus-value and value of labour-power as fractions of the value created … conceals the very transaction that characterizes capital, namely the exchange of variable capital for living labour-power, and the consequent exclusion of the labourer from the product."
+                    }
                   }
                 },
                 {
@@ -11371,8 +12110,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "18장이 여러 공식을 비교하는 이유는 무엇인가?",
-                    "en": "Why does Chapter 18 compare several formulas?"
+                    "ko": "잉여가치율을 s/v 하나로만 쓰지 않고 잉여노동/필요노동, 불불노동/지불노동 같은 여러 공식으로 함께 검토하는 이유는 무엇인가?",
+                    "en": "Why examine the rate of surplus-value not only as s/v but also alongside formulas like surplus labor / necessary labor and unpaid labor / paid labor?"
                   },
                   "choices": {
                     "ko": [
@@ -11390,8 +12129,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "18장은 단순 계산법 목록이 아니다. 어떤 표현은 착취관계를 노동시간의 분할로 드러내고, 어떤 표현은 그것을 전체 생산물의 분배처럼 보이게 해 흐릴 수 있다.",
-                    "en": "Chapter 18 is not a mere list of calculations. Some expressions reveal exploitation as a division of labor-time, while others can blur it by making it look like a distribution of the total product."
+                    "ko": "여러 공식을 나란히 놓는 것은 계산법 목록을 늘리려는 것이 아니다. 어떤 표현은 착취관계를 노동시간의 분할로 그대로 드러내고, 어떤 표현은 그것을 전체 생산물의 분배처럼 보이게 해 흐릴 수 있다는 사실을 보여주려는 것이다.",
+                    "en": "Placing several formulas side by side is not about multiplying calculation methods. It shows that some expressions reveal exploitation as a direct division of labor-time, while others can blur it by making it look like a distribution of the total product."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "두 계열의 공식은 언제든 서로 옮길 수 있다. 12시간 노동일에서 잉여노동 6시간을 빼면 필요노동 6시간이 남고, 그러면 6/6=100%라는 원래 비율로 되돌아온다.",
+                      "마르크스는 계산을 부정하지 않는다. 6시간과 6시간처럼 시간으로도, 3실링과 3실링처럼 화폐로도 착취의 크기는 정확히 셀 수 있다.",
+                      "s/v 공식은 폐기되지 않고 오히려 다른 공식들의 기준점으로 계속 쓰인다.",
+                      "같은 노동일을 두고도 공식에 따라 100%와 50%로 값이 갈린다. 그러니 어떤 공식을 고르는가는 중립적인 일이 아니다."
+                    ],
+                    "en": [
+                      "The two families of formulas convert into each other at any time: take 6 hours of surplus labor from a 12-hour day and 6 hours of necessary labor remain, giving 6/6 = 100% again.",
+                      "Marx does not deny calculation: exploitation is counted exactly, in hours (6 and 6) and in money (3 shillings and 3 shillings) alike.",
+                      "The s/v formula is not discarded; it remains the reference point against which the other formulas are checked.",
+                      "The same working day comes out as 100% under one formula and 50% under another, so choosing a formula is not a neutral act."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "앞의 연구를 거친 뒤라면 「불불노동/지불노동」이라는 공식 때문에 자본가가 노동력이 아니라 노동에 값을 치른다는 결론으로 잘못 이끌릴 일은 이제 없다. 이 공식은 「잉여노동/필요노동」의 대중적 표현일 뿐이다.",
+                      "en": "After the investigations we have given above, it is no longer possible to be misled, by the formula Unpaid labour, Paid labour into concluding, that the capitalist pays for labour and not for labour-power. This formula is only a popular expression for Surplus-labour, Necessary labour"
+                    }
                   }
                 }
               ]
@@ -11428,8 +12192,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "세 표현은 같은 관계를 다른 층위에서 말한다. 화폐로는 s/v, 시간으로는 잉여노동/필요노동, 임금형태를 벗기면 불불노동/지불노동이다.",
-                    "en": "The three expressions name the same relation at different levels. In money terms it is s/v; in time terms, surplus labor / necessary labor; once the wage-form is stripped away, unpaid labor / paid labor."
+                    "ko": "세 표현은 같은 관계를 다른 층위에서 말한다. 화폐로는 s/v, 시간으로는 잉여노동/필요노동, 임금형태를 벗기면 불불노동/지불노동이다. 자본가는 노동력 가치만큼 값을 치르고 그 이상의 노동은 대가 없이 취한다는 하나의 사실이 세 언어로 반복되는 것이다.",
+                    "en": "The three expressions name the same relation at different levels. In money terms it is s/v; in time terms, surplus labor / necessary labor; once the wage-form is stripped away, unpaid labor / paid labor. One fact is repeated in three languages: the capitalist pays only the value of labor-power and takes the rest for nothing."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "자본가가 산 것은 노동이 아니라 노동력이다. 노동력의 사용은 두 기간으로 갈려서, 앞 기간에는 제 값의 등가물을 만들고 뒤 기간에는 자본가에게 공짜로 가치를 만들어 준다.",
+                      "불불노동이 없다면 자본의 자기증식 자체가 설명되지 않는다는 점을 마르크스가 이 장에서 바로 반박한다.",
+                      "세 표현은 오히려 같은 자본주의적 생산관계를 서로 다른 각도에서 말하기 때문에 한 장에서 비교되는 것이다.",
+                      "기계는 잉여노동을 낳지 않으며, 잉여노동은 언제나 살아있는 노동자의 시간에서 나온다."
+                    ],
+                    "en": [
+                      "What the capitalist buys is not labor but labor-power, and its use falls into two periods: in the first the worker produces the equivalent of its value, in the second he creates value for the capitalist gratis.",
+                      "If unpaid labor did not exist, the self-expansion of capital itself would be inexplicable, which is exactly what Marx refutes here.",
+                      "The three expressions are compared in one chapter precisely because they name the same capitalist relation from different angles.",
+                      "Machinery does not produce surplus labor; surplus labor always comes from the living worker's time."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "한 기간에 노동자는 자기 노동력의 가치와 꼭 같은 가치를 생산한다. 곧 그 등가물을 생산한다. … 다른 기간, 곧 잉여노동의 기간에는 노동력의 사용이 자본가에게 아무런 등가물도 치르지 않는 가치를 만들어 준다.",
+                      "en": "During one the labourer produces a value that is only equal to the value of his labour-power; he produces its equivalent. … During the other period, the period of surplus-labour, the usufruct of the labour-power creates a value for the capitalist, that costs him no equivalent."
+                    }
                   }
                 },
                 {
@@ -11442,22 +12231,47 @@
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치를 노동력에 지출된 가변자본이 아니라 전체 생산물의 한 몫처럼 보이게 해 노동자와 자본의 직접 관계를 흐리기 때문이다.",
-                      "총생산물에는 어떤 가치도 들어 있지 않아 계산이 불가능하기 때문이다.",
-                      "이 공식은 항상 s/v보다 더 큰 숫자를 내므로 착취를 과장하기 때문이다.",
-                      "총생산물은 노동자의 개인 취향만 반영하므로 자본과 무관하기 때문이다."
+                      "잉여가치를 노동력에 지출된 가변자본이 아니라 전체 생산물의 한 몫처럼 보이게 하기 때문이다.",
+                      "총생산물의 가치에는 불변자본에서 옮겨 온 부분이 들어 있어 잉여가치와 견줄 수 없기 때문이다.",
+                      "분모가 커지는 만큼 비율도 함께 커져 실제보다 착취를 과장해서 보여주기 때문이다.",
+                      "총생산물의 크기는 시장의 수요가 정하므로 노동일의 분할과는 상관이 없기 때문이다."
                     ],
                     "en": [
-                      "Because it makes surplus-value appear as a share of the total product rather than as a relation to variable capital spent on labor-power, blurring the direct relation between worker and capital.",
-                      "Because the total product contains no value, so calculation is impossible.",
-                      "Because this formula always gives a larger number than s/v and therefore exaggerates exploitation.",
-                      "Because the total product reflects only workers’ personal tastes and has nothing to do with capital."
+                      "Because it makes surplus-value look like a share of the total product rather than a relation to the variable capital laid out on labor-power.",
+                      "Because the value of the total product includes value merely transferred from constant capital and so cannot be compared with surplus-value.",
+                      "Because a larger denominator raises the ratio as well, so the formula overstates the degree of exploitation.",
+                      "Because the size of the total product is set by market demand and has nothing to do with how the working day is divided."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "총생산물 대비 몫은 분배비율처럼 보일 수 있다. 하지만 착취관계의 핵심은 노동자가 자기 노동력 가치를 재생산한 뒤 얼마나 더 노동하는가, 즉 s/v에 있다.",
-                    "en": "A share of the total product can look like a distribution ratio. But the core relation of exploitation is how much more the worker labors beyond reproducing the value of labor-power: s/v."
+                    "ko": "총생산물 대비 몫은 노동자와 자본가가 각자 기여한 만큼 나눠 가지는 것처럼 보이는 분배비율로 읽히기 쉽다. 하지만 착취관계의 핵심은 노동자가 자기 노동력 가치를 재생산한 뒤 얼마나 더 노동하는가, 즉 s/v에 있으며, 총생산물 공식은 이 비교를 흐릿하게 만든다.",
+                    "en": "A share of the total product is easily read as a distribution ratio in which worker and capitalist each get what they contributed. But the core relation of exploitation is how much more the worker labors beyond reproducing the value of labor-power, that is s/v, and the total-product formula blurs this comparison."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 외관은 부르주아 경제학이 착취를 분배 문제로 고쳐 쓰는 통로가 된다. 노동일을 길이가 정해진 것으로 다루는 습관도 여기서 굳어진다.",
+                      "마르크스는 창출된 가치를 셀 때 불변자본에서 옮겨 온 몫을 빼고 센다고 못 박는다. 그러니 견줄 수 없는 것이 아니라 다른 비율이 나올 뿐이다.",
+                      "분모가 커지면 값은 오히려 작아진다. 6/6=100%가 6/12=50%로 줄어드는 데서 보듯 이 공식은 착취를 과장하는 것이 아니라 축소한다.",
+                      "총생산물은 노동일 안에서 지출된 노동의 산물이다. 문제는 그 노동일이 필요노동과 잉여노동으로 어떻게 갈리는가에 있다."
+                    ],
+                    "en": [
+                      "This appearance is the doorway through which bourgeois economics rewrites exploitation as a question of distribution, and it also fixes the habit of treating the working day as given in length.",
+                      "Marx states that in the value created the part merely transferred from constant capital is excluded, so the two are comparable; the formula simply yields a different ratio.",
+                      "A larger denominator gives a smaller figure: 6/6 = 100% shrinks to 6/12 = 50%, so this formula understates exploitation rather than exaggerating it.",
+                      "The total product is the outcome of labor spent within the working day, and the question is how that day divides into necessary and surplus labor."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "이 파생 공식들은 사실 노동일 또는 그것이 생산한 가치가 자본가와 노동자 사이에 나뉘는 비율만을 표현한다.",
+                      "en": "These derivative formulae express, in reality, only the proportion in which the working-day, or the value produced by it, is divided between capitalist and labourer."
+                    }
                   }
                 },
                 {
@@ -11484,8 +12298,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "임금형태는 착취를 사라지게 하지 않고 보이지 않게 만든다. 노동 전체가 지불된 것처럼 보이지만, 실제로 임금은 노동력 가치의 보상이고 나머지 노동은 잉여가치를 만든다.",
-                    "en": "The wage-form does not abolish exploitation; it makes it invisible. It appears that all labor is paid, but wages compensate the value of labor-power while the remaining labor produces surplus-value."
+                    "ko": "임금형태는 착취를 사라지게 하지 않고 보이지 않게 만든다. 노동 전체가 지불된 것처럼 보이지만, 실제로 임금은 노동력 가치의 보상이고 나머지 노동시간은 아무 대가 없이 자본가에게 잉여가치를 만들어 준다. 마르크스가 자본을 불불노동에 대한 지휘라고 부른 까닭이 여기 있다.",
+                    "en": "The wage-form does not abolish exploitation; it makes it invisible. It appears that all labor is paid, but wages compensate only the value of labor-power while the remaining labor-time produces surplus-value for the capitalist at no cost."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 전도를 알면 노동자가 왜 스스로 착취당한다고 느끼기 어려운지, 임금형태의 힘을 이해하게 된다.",
+                      "기계는 잉여가치를 스스로 만들지 않으며, 잉여가치의 원천은 언제나 지불되지 않은 살아있는 노동시간이다.",
+                      "필요노동과 잉여노동은 노동일 안에서 시간상 이어지는 두 구간이지 동시에 일어나는 것이 아니다.",
+                      "노예제와 달리 임금노동에서는 착취가 자유로운 계약이라는 외피 아래 숨어 있을 뿐, 사라지는 것은 아니다."
+                    ],
+                    "en": [
+                      "Seeing this inversion helps explain why workers rarely feel they are being exploited, revealing the power of the wage-form.",
+                      "Machinery does not generate surplus-value by itself; its source is always unpaid living labor-time.",
+                      "Necessary and surplus labor are two successive portions of the working day, not simultaneous activities.",
+                      "Unlike slavery, wage labor hides exploitation beneath the appearance of a free contract, but it does not abolish it."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "이런 의미에서 잉여노동은 불불노동이라 불릴 수 있다. 따라서 자본은 애덤 스미스가 말하듯 노동에 대한 지휘일 뿐 아니라, 본질적으로 불불노동에 대한 지휘이다.",
+                      "en": "In this sense it is that surplus-labour can be called unpaid labour. Capital, therefore, is not only, as Adam Smith says, the command over labour. It is essentially the command over unpaid labour."
+                    }
                   }
                 },
                 {
@@ -11499,21 +12338,46 @@
                   "choices": {
                     "ko": [
                       "숫자만 보지 말고 분모와 분자가 어떤 사회관계를 드러내거나 감추는지 확인해야 한다.",
-                      "가장 복잡한 공식일수록 곧장 가장 과학적이다.",
-                      "어떤 공식도 의미가 없으므로 계산을 모두 포기해야 한다.",
-                      "공식이 많다는 것은 잉여가치 이론이 서로 모순된다는 뜻이다."
+                      "공식이 복잡하고 항목이 많을수록 착취관계를 더 과학적으로 담아낸다고 보아야 한다.",
+                      "공식마다 값이 다르니 수치 비교는 접어 두고 질적인 서술만 믿어야 한다.",
+                      "공식이 여럿이라는 것은 잉여가치 이론이 아직 하나로 정리되지 않았다는 뜻이다."
                     ],
                     "en": [
                       "Do not look only at the number; check what social relation the numerator and denominator reveal or conceal.",
-                      "The most complicated formula is necessarily the most scientific.",
-                      "No formula has meaning, so all calculation should be abandoned.",
-                      "The existence of several formulas means the theory of surplus-value contradicts itself."
+                      "The more elaborate a formula and the more terms it carries, the more scientifically it captures exploitation.",
+                      "Since the formulas give different values, numerical comparison should be dropped in favor of qualitative description.",
+                      "Several competing formulas mean the theory of surplus-value has not yet been worked into a single account."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "공식은 중립적 표기가 아니다. 같은 현실도 어떤 관계로 표현하느냐에 따라 착취가 선명해지거나 단순한 분배 문제처럼 보일 수 있다.",
-                    "en": "A formula is not a neutral notation. The same reality can make exploitation clear or make it look like a mere distribution issue depending on how the relation is expressed."
+                    "ko": "공식은 중립적 표기가 아니다. 예컨대 200%라는 실제 착취율이 잉여노동/노동일로 옮겨지면 66.7%처럼 온건하게 보일 수 있다. 같은 현실도 어떤 관계로 표현하느냐에 따라 착취가 선명해지거나 단순한 분배 문제처럼 보일 수 있다는 점을 항상 확인해야 한다.",
+                    "en": "A formula is not a neutral notation. For instance, a real exploitation rate of 200% can look as mild as 66.7% once translated into surplus labor / working day. One must always check whether the same reality is being expressed in a way that makes exploitation clear or makes it look like a mere distribution issue."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 이 검사를 직접 해 보인다. 파생 공식으로는 잉여가치가 100%를 넘을 수 없다는 잘못된 법칙이 나오지만, 라베르뉴의 자료를 s/v로 다시 계산하면 착취율은 300%가 된다.",
+                      "마르크스가 가장 정확한 표현으로 삼은 것은 가장 단순한 s/v다. 항목이 늘어난 파생 공식일수록 오히려 노동일의 분할이 흐려진다.",
+                      "수치 비교를 버릴 일이 아니다. 6/6과 6/12를 끝까지 계산해 보아야 어느 공식이 무엇을 가리는지가 드러난다.",
+                      "공식이 여럿인 것은 이론이 갈라져서가 아니다. 같은 관계가 가치와 노동시간과 임금이라는 세 층위로 나타나기 때문이다."
+                    ],
+                    "en": [
+                      "Marx runs this test himself: the derivative formulas yield the erroneous law that surplus-value can never exceed 100%, yet recomputing Lavergne’s figures as s/v gives a rate of 300%.",
+                      "The expression Marx treats as most precise is the simplest one, s/v; the more terms a derivative formula carries, the more it blurs the division of the working day.",
+                      "Numerical comparison is worth keeping: only by working 6/6 and 6/12 through to the end does it become clear which formula hides what.",
+                      "Several formulas do not mean a divided theory; the same relation appears at three levels, in value, in labor-time and in wages."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "이 공식들이 자본의 자기증식 정도를 직접 표현하는 것으로 취급된다면, 잉여노동이나 잉여가치는 결코 100%에 이를 수 없다는 잘못된 법칙이 성립해 버릴 것이다.",
+                      "en": "If they are to be treated as direct expressions of the degree of self-expansion of capital, the following erroneous law would hold good: Surplus-labour or surplus-value can never reach 100%."
+                    }
                   }
                 },
                 {
@@ -11521,18 +12385,18 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "18장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best describes the systematic role of Chapter 18?"
+                    "ko": "임금이 노동 전체의 대가처럼 나타나는 다음 국면으로 넘어가기에 앞서, 여러 공식을 비교해 둔 작업은 무엇을 준비해 두는가?",
+                    "en": "Before moving into the stage where wages appear as payment for all labor, what does this comparison of formulas prepare for?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치 생산 분석을 마무리하며, 어떤 표현형태가 착취관계를 드러내고 어떤 표현형태가 임금형태로 가는 은폐를 준비하는지 보여준다.",
+                      "착취관계를 시간·화폐 비율로 정확히 표현하는 공식과, 그것을 흐리는 표현을 구별해 두어 이어지는 임금 분석의 토대를 놓는다.",
                       "잉여가치율 공식이 충분하지 않으므로 임금 분석에서는 가치법칙을 버려야 한다고 결론낸다.",
                       "불변자본이 새 가치를 만든다는 사실을 공식으로 증명한다.",
                       "노동일과 필요노동의 구분이 실제로 없다는 점을 보여준다."
                     ],
                     "en": [
-                      "It closes the analysis of surplus-value production by showing which forms of expression reveal exploitation and which prepare the concealment that leads into the wage-form.",
+                      "It distinguishes formulas that precisely express the relation of exploitation in time and money ratios from those that blur it, laying the groundwork for the coming analysis of wages.",
                       "It concludes that all formulas for the rate of surplus-value are wrong and that wage analysis must abandon the law of value.",
                       "It proves by formula that constant capital creates new value.",
                       "It shows that the distinction between working day and necessary labor does not really exist."
@@ -11540,8 +12404,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "18장은 잉여가치율 분석의 표현 문제를 정리하고, 다음 임금 장들로 넘어갈 다리를 놓는다. 임금형태에서는 바로 이 착취관계가 노동의 가격처럼 전도되어 나타난다.",
-                    "en": "Chapter 18 organizes the problem of expression in the analysis of the rate of surplus-value and builds the bridge to the chapters on wages. In the wage-form, this relation of exploitation appears inverted as the price of labor."
+                    "ko": "공식 비교는 잉여가치율 분석을 정리하면서, 어떤 표현이 착취를 그대로 드러내고 어떤 표현이 이를 분배문제처럼 보이게 흐리는지 구별해둔다. 임금형태에서는 바로 이 흐려진 표현이 노동의 가격이라는 모습으로 전도되어 나타나므로, 이 구별이 뒤이어 임금을 분석할 때 그대로 필요해진다.",
+                    "en": "Comparing the formulas organizes the analysis of the rate of surplus-value by distinguishing which expressions reveal exploitation as it is and which blur it into something like a distribution problem. In the wage-form, precisely this blurred expression reappears inverted as the price of labor, so this distinction remains essential for the coming analysis of wages."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 이 습관이 자본주의적 생산양식 그 자체에서 비롯된다고 못 박는다. 잘못 고른 표기가 아니라 현실이 스스로 만들어 내는 외관이라는 뜻이다.",
+                      "가치법칙은 버려지지 않으며, 오히려 임금형태 분석은 이 법칙 위에서 착취의 은폐를 설명한다.",
+                      "불변자본은 이 장에서도 여전히 가치를 이전할 뿐 새로 창출하지 않는다는 전제가 유지된다.",
+                      "노동일과 필요노동의 구분은 이 장 전체의 전제이며, 오히려 이 구분이 있어야 공식 비교 자체가 가능하다."
+                    ],
+                    "en": [
+                      "Marx insists that this habit originates in the capitalist mode of production itself: it is not a badly chosen notation but an appearance thrown up by the reality.",
+                      "The law of value is not abandoned; the analysis of the wage-form explains the concealment of exploitation precisely on its basis.",
+                      "Constant capital is still assumed here only to transfer value, not to create new value.",
+                      "The distinction between working day and necessary labor is the premise of this whole chapter; without it, comparing formulas would be impossible."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch18.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 18장 잉여가치율의 여러 공식",
+                      "en": "Capital I, Ch. 18 Various Formula for the Rate of Surplus-Value"
+                    },
+                    "quote": {
+                      "ko": "실제 사실 대신에 우리가 얻는 것은 노동자와 자본가가 생산에 이바지한 요소에 비례해 생산물을 나누어 가지는 연합이라는 거짓된 외관이다. … 모든 잉여가치는 그것이 나중에 이윤이나 이자나 지대 가운데 어떤 형태로 굳어지든 본질에서는 불불노동이 물질로 바뀐 것이다.",
+                      "en": "Instead of the real fact, we have false semblance of an association, in which labourer and capitalist divide the product in proportion to the different elements which they respectively contribute towards its formation. … All surplus-value, whatever particular form (profit, interest, or rent), it may subsequently crystallize into, is in substance the materialization of unpaid labour."
+                    }
                   }
                 }
               ]
@@ -11584,7 +12473,7 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "s/v",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "같은 관계: 잉여가치율 공식들은 모두 필요노동과 잉여노동의 비율을 다른 각도에서 표현한다.",
                   "다른 표정: 공식의 모양이 바뀌면 착취관계가 더 직접적으로 보이기도 하고, 임금관계처럼 흐려지기도 한다.",
@@ -11592,21 +12481,21 @@
                 ]
               },
               {
-                "title": "잉여노동/필요노동",
-                "items": [
-                  "s/v는 잉여가치율, 곧 착취율이다.",
-                  "잉여노동/필요노동은 같은 관계를 시간의 비율로 표현한다.",
-                  "부불노동/지불노동은 노동자의 노동 중 임금으로 보상되지 않는 부분과 보상되는 부분의 관계를 드러낸다."
-                ]
+                "title": "용어 풀이",
+                "text": "불불노동은 노동자가 자기 노동력 값어치만큼 일한 뒤에도 대가 없이 계속하는 노동시간을 가리키고, 지불노동은 임금으로 보상되는 부분을 가리킨다. 잉여노동/노동일처럼 분모가 바뀌면 같은 시간도 다른 인상을 준다는 점이 이 장의 핵심 함정이다."
               },
               {
-                "title": "공식이 드러내고 숨기는 것",
+                "title": "현대 적용",
+                "text": "오늘날 최저임금을 시급으로만 이야기하면 노동시간 전체가 지불되는 것처럼 보이지만, 실제로 하루 노동 중 얼마만큼이 임금으로 돌아오고 얼마만큼이 이윤으로 남는지는 전혀 다른 이야기다. 급여명세서의 숫자와 실제 착취율은 같은 숫자가 아니다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "공식의 모양이 달라져도 핵심은 노동일 안의 필요노동과 잉여노동의 관계라는 점을 놓치지 않는다."
               }
             ],
             "en": [
               {
-                "title": "s/v",
+                "title": "Core concepts first",
                 "items": [
                   "Same relation: The formulas for the rate of surplus-value all express the ratio of necessary labour to surplus labour from different angles.",
                   "Different appearance: When the formula changes form, the relation of exploitation may appear directly or be blurred by the wage relation.",
@@ -11614,15 +12503,15 @@
                 ]
               },
               {
-                "title": "Surplus Labour/Necessary Labour",
-                "items": [
-                  "s/v is the rate of surplus-value, the rate of exploitation.",
-                  "Surplus labour/necessary labour expresses the same relation as a ratio of time.",
-                  "Unpaid labour/paid labour shows the relation between uncompensated and compensated portions of the working day."
-                ]
+                "title": "Terms explained",
+                "text": "Unpaid labor refers to the labor-time a worker performs beyond reproducing the value of his own labor-power, for which he receives nothing; paid labor is the portion compensated by wages. The chapter's key trap is that changing the denominator, as in surplus labor / working day, makes the same time-span create a different impression."
               },
               {
-                "title": "What the Formulas Show and Hide",
+                "title": "Today's application",
+                "text": "Talking only about an hourly minimum wage today makes it look as if every hour worked is paid, but how much of a day's labor actually returns as wages versus remains as profit is a completely different question. The number on a pay stub is not the same number as the real rate of exploitation."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "Keep necessary and surplus labor within the working day at the center, even when the formulas change form."
               }
             ]

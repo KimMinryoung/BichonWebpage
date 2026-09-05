@@ -3,9 +3,6 @@
   "updatedAt": "2026-09-05",
   "tolerated": {
     "concept-brief": [
-      "capital-vol1/capital-v1-ch15",
-      "capital-vol1/capital-v1-ch17",
-      "capital-vol1/capital-v1-ch18",
       "capital-vol1/capital-v1-ch19",
       "capital-vol1/capital-v1-ch20",
       "capital-vol1/capital-v1-ch21",
@@ -142,18 +139,6 @@
       "state-revolution-ch04-advanced/q3"
     ],
     "length-ratio": [
-      "capital-v1-ch15-advanced/q3.en",
-      "capital-v1-ch15-advanced/q3.ko",
-      "capital-v1-ch15-advanced/q4.ko",
-      "capital-v1-ch15-advanced/q5.en",
-      "capital-v1-ch15-basic/q4.en",
-      "capital-v1-ch17-advanced/q2.ko",
-      "capital-v1-ch17-advanced/q3.en",
-      "capital-v1-ch17-advanced/q4.en",
-      "capital-v1-ch17-advanced/q4.ko",
-      "capital-v1-ch18-advanced/q2.en",
-      "capital-v1-ch18-basic/q2.en",
-      "capital-v1-ch18-basic/q2.ko",
       "capital-v1-ch19-advanced/q5.en",
       "capital-v1-ch20-advanced/q1.en",
       "capital-v1-ch20-advanced/q1.ko",
@@ -447,9 +432,6 @@
       "wages-programme-ch08-basic/q2.en"
     ],
     "template-prompt": [
-      "capital-v1-ch15-advanced/q5",
-      "capital-v1-ch17-advanced/q5",
-      "capital-v1-ch18-advanced/q5",
       "capital-v1-ch19-advanced/q5",
       "capital-v1-ch20-advanced/q5",
       "capital-v1-ch22-advanced/q5",

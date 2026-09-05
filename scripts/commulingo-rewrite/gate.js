@@ -15,7 +15,12 @@ const text = require('../lib/commulingo-source-text');
 const cand = require('./candidate');
 
 const TERMS = JSON.parse(fs.readFileSync(path.join(__dirname, 'terminology.json'), 'utf8'));
-const CJK = /[一-鿿]/;
+// Han ideographs, and kana too: a DeepSeek candidate once carried a Japanese
+// particle (どころか) that the ideograph check let through.
+const CJK = /[一-鿿぀-ヿ]/;
+// Korean renderings the terminology card rejects (the card maps the English
+// term to the site's spelling; these are the usual drifts).
+const BANNED_RENDERINGS = ['변동자본', '본원적 축적', '시초축적', '개수임금', '물신숭배', '의제자본', '이자부 자본', '기업이윤'];
 const MARKER = /(정답입니다|오답입니다|Correct\.|Incorrect\.)/;
 const EXTREME = /(언제나|아무 역할|전혀|완전히 무관|영구히|오직 .*만|반드시|자동으로|즉시|무한히|모두 .*사라|모두 .*없)/;
 const WEAK = /(장식품일 뿐|색깔만|게으른가 부지런한가|도덕성|자본가의 선의|몰래|법적으로 0|날씨만|오락이 되|물리적으로 두 배|전혀 사지 않고|아무도 .*원하지|환상이라|틀렸으므로)/;
@@ -84,7 +89,8 @@ function gate(candidatePathArg, chapterId) {
             for (const [field, value] of koFields) {
                 const v = str(value);
                 if (!v) continue;
-                if (CJK.test(v)) hard.push(where + '.' + field + '.ko contains CJK ideographs');
+                if (CJK.test(v)) hard.push(where + '.' + field + '.ko contains CJK ideographs or kana');
+                BANNED_RENDERINGS.forEach(function(term) { if (v.includes(term)) hard.push(where + '.' + field + '.ko uses "' + term + '" instead of the card rendering'); });
                 if (checks.HONORIFIC.test(v)) hard.push(where + '.' + field + '.ko uses an honorific ending');
                 if (MARKER.test(v)) hard.push(where + '.' + field + ' embeds a correct/incorrect marker');
             }
