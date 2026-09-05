@@ -22,6 +22,7 @@ import time
 from pathlib import Path
 
 import anthropic
+from openai import OpenAI
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -32,13 +33,22 @@ USAGE = WORK / "usage.jsonl"
 # All provider calls go through the local LLM proxy (sole holder of API keys);
 # the key value is a placeholder the proxy replaces.
 PROXY_BASE = "http://127.0.0.1:8110/anthropic"
+PROXY_BASE_DEEPSEEK = "http://127.0.0.1:8110/deepseek"
 API_KEY = "via-llm-proxy"
+# Default provider is DeepSeek (V4 Pro): Claude via the API is pay-per-token
+# and a chapter cost about $0.30 per attempt there; V4 Pro is ~$0.04.
+DEFAULT_MODEL = "deepseek-v4-pro"
 MAX_ATTEMPTS = 3
 # USD per million tokens: input, output, cache read, cache write.
 PRICES = {
     "claude-sonnet-5": (2.00, 10.00, 0.20, 2.50),
     "claude-opus-5": (5.00, 25.00, 0.50, 6.25),
+    "deepseek-v4-pro": (0.435, 0.87, 0.003625, 0.435),
+    "deepseek-v4-flash": (0.14, 0.28, 0.0028, 0.14),
 }
+
+def provider_of(model):
+    return "deepseek" if model.startswith("deepseek") else "anthropic"
 
 SYSTEM = (HERE / "prompt.system.md").read_text(encoding="utf-8")
 USER_TEMPLATE = (HERE / "prompt.user.md").read_text(encoding="utf-8")
@@ -191,6 +201,8 @@ def cost_of(model, usage):
 
 
 def call_model(client, model, user, max_tokens, effort):
+    if provider_of(model) == "deepseek":
+        return call_deepseek(client, model, user, max_tokens)
     system_blocks = [{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}]
     # Claude 5 models take adaptive thinking plus an effort level; the installed
     # SDK predates both, so they go through extra_body (the proxy is a byte
@@ -211,6 +223,22 @@ def call_model(client, model, user, max_tokens, effort):
     return text, usage, final.stop_reason
 
 
+def call_deepseek(client, model, user, max_tokens):
+    """OpenAI-compatible route of the proxy (the contract of
+    scripts/bulk-translate/translate_bulk.py); thinking on for V4 Pro."""
+    resp = client.chat.completions.create(
+        model=model, temperature=1.0, max_tokens=max_tokens,
+        extra_body={"thinking": {"type": "enabled"}},
+        messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
+    )
+    choice = resp.choices[0]
+    text = (choice.message.content or "").strip()
+    u = resp.usage
+    cache_read = getattr(u, "prompt_cache_hit_tokens", 0) or 0
+    usage = {"input": u.prompt_tokens - cache_read, "output": u.completion_tokens, "cache_read": cache_read, "cache_write": 0}
+    return text, usage, choice.finish_reason
+
+
 def reinforcement_text(verdict):
     hard = verdict["hard"]
     lines = ["# 앞 시도의 위반 (전부 고칠 것; 나머지는 그대로 유지)"]
@@ -228,7 +256,7 @@ def main():
     ap.add_argument("--volume", type=int)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--dry-run", action="store_true", help="프롬프트만 만들고 호출하지 않음")
-    ap.add_argument("--model", default="claude-sonnet-5")
+    ap.add_argument("--model", default=DEFAULT_MODEL, help="deepseek-v4-pro(기본, 종량 저가) | deepseek-v4-flash | claude-sonnet-5(Anthropic API 종량, 비쌈)")
     ap.add_argument("--budget-usd", type=float, default=5.0, help="이 실행의 누적 비용 상한")
     ap.add_argument("--max-tokens", type=int, default=48000, help="사고 토큰을 포함한 출력 상한")
     ap.add_argument("--effort", default="medium", choices=["low", "medium", "high", "max"], help="adaptive thinking 의 effort (high 는 사고에 3만 토큰 넘게 쓴다)")
@@ -251,7 +279,12 @@ def main():
                 if isinstance(pair, dict) and pair.get("en") and pair.get("ko"):
                     extra_terms.setdefault(pair["en"], pair["ko"])
 
-    client = None if args.dry_run else anthropic.Anthropic(api_key=API_KEY, base_url=PROXY_BASE, timeout=900, max_retries=2)
+    if args.dry_run:
+        client = None
+    elif provider_of(args.model) == "deepseek":
+        client = OpenAI(api_key=API_KEY, base_url=PROXY_BASE_DEEPSEEK, timeout=900, max_retries=2)
+    else:
+        client = anthropic.Anthropic(api_key=API_KEY, base_url=PROXY_BASE, timeout=900, max_retries=2)
     spent = 0.0
     for row in rows:
         cid = row["id"]
