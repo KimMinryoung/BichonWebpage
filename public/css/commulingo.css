@@ -4400,6 +4400,65 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     color: var(--link);
 }
 
-.commu-event-relations ul { list-style: none; padding: 0; margin: 0; }
-.commu-event-relations li { display: flex; flex-wrap: wrap; gap: .35rem .75rem; margin: .55rem 0; align-items: baseline; }
-.commu-event-relations li > span, .commu-event-relations small { font-size: .8em; opacity: .7; }
+/* Documents from this period: the cluster an event belongs to. The overview
+   is one accent bar with cream type; the detail documents are full-width rows
+   below it, the current page marked in its own slot. Titles take the text
+   colour rather than --link: the row is the control, and the olive link mix
+   sinks into the dark canvas at list size. */
+.commu-event-relations { margin: 1.4rem 0 0; }
+.commu-event-relations-head {
+    font-size: .82rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 .5rem;
+}
+.commu-event-relations-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border, #555);
+    border-radius: 0;
+}
+.commu-event-relations-parent,
+.commu-event-relations-list a,
+.commu-event-relations-list .is-current {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .15rem .75rem;
+    padding: .62rem .9rem;
+    line-height: 1.45;
+    text-decoration: none;
+}
+.commu-event-relations-title { flex: 1 1 14rem; min-width: 0; }
+.commu-event-relations-tag {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.commu-event-relations-period {
+    margin-left: auto;
+    font-size: .85rem;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+}
+.commu-event-relations-parent { background: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); }
+.commu-event-relations-parent .commu-event-relations-tag { flex: 0 0 auto; order: -1; color: color-mix(in srgb, var(--clr-cream, #f8edca) 78%, transparent); }
+.commu-event-relations-parent .commu-event-relations-title { font-weight: 700; }
+.commu-event-relations-parent .commu-event-relations-period { color: color-mix(in srgb, var(--clr-cream, #f8edca) 78%, transparent); }
+.commu-event-relations-parent:hover { color: var(--clr-white, #fff); text-decoration: none; }
+.commu-event-relations-parent:hover .commu-event-relations-title { text-decoration: underline; }
+.commu-event-relations-list { list-style: none; margin: 0; padding: 0; }
+.commu-event-relations-list li + li { border-top: 1px solid color-mix(in srgb, var(--border, #555) 35%, transparent); }
+.commu-event-relations-list a { color: var(--text-primary); }
+.commu-event-relations-list a:hover { color: var(--text-primary); background: var(--bg-surface-hover); text-decoration: none; }
+.commu-event-relations-list a:hover .commu-event-relations-title { text-decoration: underline; }
+.commu-event-relations-list .commu-event-relations-tag { color: var(--text-muted); }
+.commu-event-relations-list .is-current {
+    color: var(--text-primary);
+    font-weight: 700;
+    box-shadow: inset 4px 0 0 var(--accent, #214d2e);
+}
+.commu-event-relations-list .is-current .commu-event-relations-period { font-weight: 400; }

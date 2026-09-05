@@ -15,14 +15,29 @@
    one, the timeline IS the page and has to stay at the top. */
 var sections = p.event.bodySections || [];
 %>
-        <% if (p.event.relatedEvents && p.event.relatedEvents.length) { %>
-        <nav class="commu-person-detail-section commu-event-relations" aria-label="<%= en ? 'Documents from this period' : '이 시기의 문서' %>">
-            <h2><%= en ? 'Documents from this period' : '이 시기의 문서' %></h2>
-            <ul>
-                <% p.event.relatedEvents.forEach(function(entry) { %>
-                <li><span><%= entry.kind === 'parent' ? (en ? 'Overview' : '상위 문서') : entry.kind === 'child' ? (en ? 'In detail' : '상세 문서') : (en ? 'Related' : '관련 문서') %></span> <a href="/commulingo/events/<%= encodeURIComponent(entry.id) %>"><%= entry.title %></a> <small><%= entry.period %></small></li>
-                <% }) %>
-            </ul>
+        <% if (p.event.relatedEvents && p.event.relatedEvents.length) {
+            var relParent = p.event.relatedEvents.filter(function(e) { return e.kind === 'parent'; })[0];
+            var relRows = p.event.relatedEvents.filter(function(e) { return e.kind !== 'parent'; });
+            var relLabel = en ? 'Documents from this period' : '이 시기의 문서';
+        %>
+        <nav class="commu-event-relations" aria-label="<%= relLabel %>">
+            <h2 class="commu-event-relations-head"><%= relLabel %></h2>
+            <div class="commu-event-relations-box">
+                <% if (relParent) { %>
+                <a class="commu-event-relations-parent" href="/commulingo/events/<%= encodeURIComponent(relParent.id) %>"><span class="commu-event-relations-tag"><%= en ? 'Overview' : '상위 문서' %></span><strong class="commu-event-relations-title"><%= relParent.title %></strong><span class="commu-event-relations-period"><%= relParent.period %></span></a>
+                <% } %>
+                <% if (relRows.length) { %>
+                <ol class="commu-event-relations-list">
+                    <% relRows.forEach(function(entry) { %>
+                    <% if (entry.kind === 'self') { %>
+                    <li class="is-current" aria-current="page"><span class="commu-event-relations-title"><%= entry.title %></span><span class="commu-event-relations-tag"><%= en ? 'This page' : '현재 문서' %></span><span class="commu-event-relations-period"><%= entry.period %></span></li>
+                    <% } else { %>
+                    <li><a href="/commulingo/events/<%= encodeURIComponent(entry.id) %>"><span class="commu-event-relations-title"><%= entry.title %></span><% if (entry.kind === 'related') { %><span class="commu-event-relations-tag"><%= en ? 'Related' : '관련 문서' %></span><% } %><span class="commu-event-relations-period"><%= entry.period %></span></a></li>
+                    <% } %>
+                    <% }) %>
+                </ol>
+                <% } %>
+            </div>
         </nav>
         <% } %>
         <% if (sections.length >= 3) { %>

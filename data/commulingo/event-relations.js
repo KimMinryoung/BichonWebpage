@@ -17,7 +17,14 @@ function eventRelationsFor(events, eventId, lang) {
     };
     add(parent, 'parent');
     events.filter(item => item.relations?.parent === eventId).forEach(item => add(item, 'child'));
-    if (parent) events.filter(item => item.relations?.parent === parent.id).forEach(item => add(item, 'sibling'));
+    if (parent && parent.id !== eventId) {
+        // The page itself stays in the sibling run (kind 'self') so the panel can
+        // mark where the reader is inside the cluster instead of hiding the slot.
+        events.filter(item => item.relations?.parent === parent.id).forEach(item => {
+            if (item.id === eventId) result.push({ id: item.id, title: localize(item.title, lang), period: item.period, kind: 'self' });
+            else add(item, 'sibling');
+        });
+    }
     (Array.isArray(relations.related) ? relations.related : []).forEach(id => add(byId.get(id), 'related'));
     return result;
 }
