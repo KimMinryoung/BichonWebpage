@@ -60,3 +60,4 @@ docs/*.html
 
 # Bulk-translation glossary dump (regenerated from the DB by extract_glossary.py)
 scripts/bulk-translate/glossary-db.json
+__pycache__/

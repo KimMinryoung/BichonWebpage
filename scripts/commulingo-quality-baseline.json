@@ -3,7 +3,6 @@
   "updatedAt": "2026-09-05",
   "tolerated": {
     "concept-brief": [
-      "capital-vol1/capital-v1-ch06",
       "capital-vol1/capital-v1-ch07",
       "capital-vol1/capital-v1-ch08",
       "capital-vol1/capital-v1-ch09",
@@ -153,9 +152,6 @@
       "state-revolution-ch04-advanced/q3"
     ],
     "length-ratio": [
-      "capital-v1-ch06-basic/q2.ko",
-      "capital-v1-ch06-basic/q3.en",
-      "capital-v1-ch06-basic/q3.ko",
       "capital-v1-ch08-advanced/q1.en",
       "capital-v1-ch08-advanced/q1.ko",
       "capital-v1-ch09-advanced/q2.en",
@@ -490,7 +486,6 @@
       "wages-programme-ch08-basic/q2.en"
     ],
     "template-prompt": [
-      "capital-v1-ch06-advanced/q5",
       "capital-v1-ch08-advanced/q5",
       "capital-v1-ch09-advanced/q5",
       "capital-v1-ch10-advanced/q5",
