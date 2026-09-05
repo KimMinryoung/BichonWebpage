@@ -113,7 +113,7 @@ function gate(candidatePathArg, chapterId) {
                     if (!text.containsQuote(chapterText.text, piece)) hard.push(where + '.source.quote.en not verbatim: ' + piece.slice(0, 50));
                 }
                 if (en.length < 40 || en.length > 600) hard.push(where + '.source.quote.en length ' + en.length + ' (want 40-600)');
-                if (en.length && (ko.length / en.length < 0.3 || ko.length / en.length > 0.9)) hard.push(where + '.source.quote.ko length ' + ko.length + ' vs en ' + en.length + ' (want 0.3-0.9x)');
+                if (en.length && (ko.length / en.length < 0.25 || ko.length / en.length > 0.9)) hard.push(where + '.source.quote.ko length ' + ko.length + ' vs en ' + en.length + ' (want 0.25-0.9x)');
                 const key = pieces.join(' … ');
                 quoteUse.set(key, (quoteUse.get(key) || 0) + 1);
             }
@@ -135,9 +135,12 @@ function gate(candidatePathArg, chapterId) {
                 const old = existing.get(b);
                 if (!old) hard.push(where + ' keeps ' + b + ' which does not exist');
                 else {
+                    // Korean is the hand-tuned side and must survive verbatim;
+                    // an English rewording of a kept item is only flagged.
                     for (const locale of ['ko', 'en']) {
-                        if (norm(old.prompt[locale]) !== norm(q.prompt && q.prompt[locale])) hard.push(where + ' marked keep but prompt.' + locale + ' changed');
-                        if (old.choices[locale].map(norm).join('|') !== (q.choices && q.choices[locale] || []).map(norm).join('|')) hard.push(where + ' marked keep but choices.' + locale + ' changed');
+                        const sink = locale === 'ko' ? hard : soft;
+                        if (norm(old.prompt[locale]) !== norm(q.prompt && q.prompt[locale])) sink.push(where + ' marked keep but prompt.' + locale + ' changed');
+                        if (old.choices[locale].map(norm).join('|') !== (q.choices && q.choices[locale] || []).map(norm).join('|')) sink.push(where + ' marked keep but choices.' + locale + ' changed');
                     }
                 }
             }

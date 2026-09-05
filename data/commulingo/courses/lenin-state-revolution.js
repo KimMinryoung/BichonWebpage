@@ -989,7 +989,7 @@ module.exports = {
                         'There is no continuity; Engels revised Marx.',
                         'They share the editorial continuity of the same publisher.',
                     ],
-                    '레닌이 보충 설명들을 모으는 이유가 이것이다. 시기와 쟁점이 달라도 판별 기준은 하나, 곧 낡은 기구를 부술 것인가 거기 적응할 것인가다. 이 기준의 복원이 6장 기회주의 비판의 발판이 된다.',
+                    '레닌이 보충 설명들을 모으는 이유가 이것이다. 시기와 쟁점이 달라도 판별 기준은 하나, 곧 낡은 기구를 부술 것인가 거기 적응할 것인가다. 6장의 기회주의 비판은 이 기준을 되살린 위에서 이루어진다.',
                     'This is why Lenin collects the supplements. Across different periods and disputes the criterion is one: smash the old machine or adapt to it. Restoring this criterion grounds the critique of opportunism in Chapter 6.'),
                 q(0,
                     '1875년 독일 노동자 정당들이 통합하며 채택한 고타 강령은 «자유국가»를 요구했다. 이 요구에 대한 비판의 논리는 무엇인가?',

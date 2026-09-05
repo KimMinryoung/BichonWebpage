@@ -37,6 +37,7 @@ const BANNED = [
   '분석 대상으로 삼는',
   '분석 대상과 핵심 구분',
   '발판이다',
+  '발판이 된다',
   '피해야 할 오해',
   'Misconception to avoid',
   'stepping-stone',

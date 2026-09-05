@@ -59,7 +59,10 @@ function normalizeMarxists(html) {
         .replace(/<a\s+name="[^"]*"\s+href="#[^"]*"[^>]*>[\s\S]*?<\/a>/gi, '')
         .replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '');
     text = stripTags(text);
-    return collapse(foldQuotes(decodeEntities(text)));
+    // Curly quotes are kept as they are: this text is also what the rewrite
+    // harness shows the model to copy from, and straight quotes copied into a
+    // JSON string break the output. containsQuote() ignores quote marks.
+    return collapse(decodeEntities(text));
 }
 
 // The anchors a quote may point at: every id= and name= attribute value.
