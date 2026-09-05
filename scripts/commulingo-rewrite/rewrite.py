@@ -175,9 +175,13 @@ def fmt_terms_extra(extra):
 
 
 def extract_json(text):
-    m = re.search(r"```json\s*(\{.*\})\s*```", text, re.S)
-    raw = m.group(1) if m else text[text.find("{"): text.rfind("}") + 1]
-    return json.loads(raw)
+    """First complete JSON object in the reply: inside the ```json fence when
+    there is one, otherwise from the first brace. raw_decode stops at the end
+    of that object, so trailing commentary or a second block is ignored."""
+    m = re.search(r"```json\s*(\{.*)", text, re.S)
+    raw = m.group(1) if m else text[text.find("{"):]
+    obj, _ = json.JSONDecoder().raw_decode(raw)
+    return obj
 
 
 def cost_of(model, usage):

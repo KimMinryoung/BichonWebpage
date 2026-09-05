@@ -2823,6 +2823,59 @@
             "en": "Examines the difficulty that surplus-value cannot arise from equal exchange alone, yet capital cannot be explained outside circulation either."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+          "diagram": {
+            "kind": "flow",
+            "ko": {
+              "title": "잉여가치를 둘러싼 막다른 골목과 탈출구",
+              "steps": [
+                {
+                  "label": "등가교환 확인",
+                  "note": "모든 상품이 가치대로 교환된다면 유통은 가치를 늘리지 않는다"
+                },
+                {
+                  "label": "비싸게 팔기 시도",
+                  "note": "한 사람의 초과이득은 다른 사람의 손실일 뿐, 총량은 그대로다"
+                },
+                {
+                  "label": "유통 바깥 시도",
+                  "note": "고립된 노동은 가치를 더할 순 있어도 스스로 증식시키지 못한다"
+                },
+                {
+                  "label": "이중조건의 발견",
+                  "note": "자본은 유통 속에서 생기면서도 유통만으로는 설명되지 않아야 한다"
+                },
+                {
+                  "label": "특수한 상품의 요구",
+                  "note": "가치대로 사고팔리면서도 사용되면 새 가치를 낳는 상품이 필요하다"
+                }
+              ]
+            },
+            "en": {
+              "title": "The dead end and the way out of surplus-value",
+              "steps": [
+                {
+                  "label": "Confirm equivalent exchange",
+                  "note": "If all commodities exchange at value, circulation adds no value"
+                },
+                {
+                  "label": "Try selling dear",
+                  "note": "One person's extra gain is another's loss; the total stays the same"
+                },
+                {
+                  "label": "Try outside circulation",
+                  "note": "Isolated labor can add value but cannot make it self-expand"
+                },
+                {
+                  "label": "Find the double condition",
+                  "note": "Capital must arise both in circulation and yet not through circulation alone"
+                },
+                {
+                  "label": "Require a special commodity",
+                  "note": "A commodity bought and sold at value whose use creates new value is needed"
+                }
+              ]
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch05-basic",
@@ -2837,27 +2890,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본가는 100원으로 상품을 사서 110원을 얻으려 한다. 그런데 모든 상품이 제 가치대로 교환된다면, 5장에서 제기되는 문제는 무엇인가?",
-                    "en": "A capitalist advances 100 to obtain 110. But if all commodities exchange at their values, what problem does Chapter 5 pose?"
+                    "ko": "자본가가 100원으로 상품을 사서 나중에 110원을 손에 쥐려 한다. 모든 상품이 제 가치대로 교환된다고 할 때, 이 10원의 차액은 등가교환 자체에서 비롯될 수 있는가?",
+                    "en": "A capitalist advances 100 to end up with 110. If every commodity exchanges at its value, can this extra 10 arise from equivalent exchange itself?"
                   },
                   "choices": {
                     "ko": [
-                      "등가교환만으로는 추가 가치가 어디서 생기는지 설명할 수 없다는 문제",
-                      "등가교환에서는 아무도 이득을 보지 못하므로, 자본가는 거래를 그만둘 수밖에 없다는 문제",
-                      "상품이 가치대로 팔린다면, 자본가의 110원은 누군가를 속인 결과일 수밖에 없다는 문제",
-                      "잉여가치는 유통 밖의 생산에서만 나오므로, 시장 분석은 더 이상 필요 없다는 문제"
+                      "등가교환만으로는 그 차액의 원천을 설명할 수 없어 다른 설명이 필요하다",
+                      "등가교환에서는 아무도 이득을 볼 수 없으므로 자본가는 거래를 그만둘 수밖에 없다",
+                      "가치대로 팔린다면 그 110원은 누군가를 속인 결과일 수밖에 없다",
+                      "잉여가치는 생산에서만 나오므로 유통에 관한 분석은 필요 없다"
                     ],
                     "en": [
-                      "The problem that equivalent exchange alone cannot explain where the additional value comes from",
-                      "The problem that no one gains in equivalent exchange, so the capitalist has no choice but to stop trading",
-                      "The problem that if commodities sell at their value, the capitalist's 110 won must be the result of cheating someone",
-                      "The problem that surplus-value arises only in production outside circulation, so market analysis is no longer needed"
+                      "Equivalent exchange alone cannot explain the extra 10, so another explanation is needed",
+                      "Since no one gains in equivalent exchange, the capitalist has no choice but to stop trading",
+                      "If it sells at value, the 110 must be the result of cheating someone",
+                      "Surplus-value comes only from production, so no analysis of circulation is needed"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "5장의 핵심은 잉여가치가 등가교환을 전제하면서도 단순한 등가교환에서는 나오지 않는다는 모순이다. 이 모순은 사기나 가격표 조작이 아니라 자본주의적 생산관계의 더 깊은 조건을 찾게 만든다.",
-                    "en": "The core of Chapter 5 is that surplus-value presupposes equivalent exchange and yet cannot arise from equivalent exchange alone. This contradiction pushes the analysis beyond fraud or price-tag manipulation toward a deeper condition of capitalist production."
+                    "ko": "사용가치 면에서는 양쪽 다 이득을 볼 수 있지만, 교환가치 면에서는 같은 것이 같은 것과 바뀔 뿐이라 차액이 생기지 않는다. 자본가가 사기를 쳤다고 단정하는 오답은 정상적 등가교환 아래서도 잉여가치를 설명해야 한다는 5장의 요구를 건너뛴다. 그래서 마르크스는 답을 유통 밖의 어떤 지점에서 찾아야 한다고 본다.",
+                    "en": "In terms of use-value both sides may gain, but in terms of exchange-value equals are only traded for equals, so no difference appears. The cheating answer skips the demand that surplus-value be explained even under normal equivalent exchange, which is what pushes the analysis toward a point outside mere circulation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가치가 같은 것끼리 자리를 바꾸는 것만으로는 총량이 늘지 않는다는 점이 이 장 전체의 출발점이다.",
+                      "등가교환에서도 사용가치의 차이 때문에 양쪽 모두 만족을 얻을 수 있어, 거래 자체가 무의미하지 않다.",
+                      "마르크스는 사기를 가정하지 않고도 이 문제를 풀려 하므로 사기로 단정하면 논증의 방향을 놓친다.",
+                      "5장은 유통만으로는 잉여가치가 안 나온다는 것을 보이지만 그렇다고 유통 분석이 불필요해지지는 않는다."
+                    ],
+                    "en": [
+                      "That equal values merely change hands without increasing the total is the starting point of the whole chapter.",
+                      "Even under equivalent exchange both sides can gain in use-value, so the trade itself is not pointless.",
+                      "Marx tries to solve this without assuming fraud, so assuming cheating misses the direction of the argument.",
+                      "Chapter shows circulation alone cannot yield surplus-value, but that does not make analyzing circulation unnecessary."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "사용가치의 측면에서는 구매자와 판매자 둘 다 무언가를 얻을 수도 있지만, 교환가치의 측면에서는 그렇지 않다. 오히려 '동등함이 있는 곳에는 이득이 있을 수 없다'고 말해야 한다.",
+                      "en": "If therefore, as regards the use-values exchanged, both buyer and seller may possibly gain something, this is not the case as regards the exchange-values. Here we must rather say, “Where equality exists there can be no gain.”"
+                    }
                   }
                 },
                 {
@@ -2884,8 +2962,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "가격을 올려 파는 일은 개별 부의 이전을 설명할 수 있지만, 사회 전체의 가치증가를 설명하지 못한다. 마르크스는 잉여가치를 단순한 재분배가 아니라 새 가치의 발생 문제로 제기한다.",
-                    "en": "Selling above value can explain a transfer of wealth for an individual, but not an increase in value for society as a whole. Marx poses surplus-value as a problem of newly produced value, not mere redistribution."
+                    "ko": "가격을 올려 파는 일은 개별 부의 이전을 설명할 수 있지만, 사회 전체의 가치증가를 설명하지 못한다. 어떤 이의 잉여는 다른 이의 손실로 상쇄될 뿐, 유통에 던져진 총가치 자체는 늘지 않는다. 화폐부족이나 가격환원 같은 오답은 문제의 초점을 개인 간 거래 기술로 돌려버려, 총량의 문제를 놓친다.",
+                    "en": "Selling above value can explain a transfer of wealth for an individual, but not an increase in value for society as a whole. One person's surplus is offset by another's loss, so the total value thrown into circulation does not grow. Answers about money shortage or price correction shift the focus to trading technique and miss the problem of the aggregate."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 논리를 끝까지 밀면 한 나라의 자본가계급 전체가 서로를 속여 부유해질 수 없다는 결론에 이른다.",
+                      "화폐량 부족은 이 장의 논점이 아니며, 마르크스는 가치총액 자체가 늘지 않는다는 점을 문제 삼는다.",
+                      "마르크스는 가격이 저절로 되돌아온다고 주장하지 않으며, 오히려 편차 자체가 문제라고 본다.",
+                      "이 오답은 개인 차원의 이야기이고, 마르크스의 논점은 사회 전체 총가치의 증가 여부다."
+                    ],
+                    "en": [
+                      "Pushed to its conclusion, this shows the capitalist class as a whole cannot enrich itself by mutual cheating.",
+                      "Money shortage is not the point here; Marx questions whether the total mass of value itself grows.",
+                      "Marx does not claim prices automatically revert; the deviation itself is what needs explaining.",
+                      "This answer stays at the individual level, but Marx's point concerns the total value for society as a whole."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "B에게 가치의 손실인 것이 A에게는 잉여가치이며, 한쪽에게 '마이너스'인 것이 다른 쪽에게는 '플러스'이다. … 한 나라의 자본가계급 전체는 결코 자기 자신을 속여 이득을 볼 수 없다.",
+                      "en": "What is a loss of value to B is surplus-value to A; what is “minus” to one is “plus” to the other. … The capitalist class, as a whole, in any country, cannot over-reach themselves."
+                    }
                   }
                 },
                 {
@@ -2912,8 +3015,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 부정행위가 없다고 가정해서 현실의 사기를 미화하는 것이 아니다. 그는 사기를 일반화해도 총가치의 증가는 설명되지 않으므로, 자본의 정상적 형태 안에서 잉여가치의 원천을 찾아야 한다고 본다.",
-                    "en": "Marx is not idealizing reality by assuming away fraud. His point is that even generalized fraud cannot explain an increase in total value, so the source of surplus-value must be found within the normal form of capital."
+                    "ko": "마르크스는 부정행위가 없다고 가정해서 현실의 사기를 미화하는 것이 아니다. 모두가 판매자이자 구매자이므로, 값을 다 함께 10퍼센트 올려 팔아도 결국 서로에게 되갚는 것과 같아 실질 가치관계는 그대로다. 법적 처벌이나 가격 환원 같은 오답은 이 순환 구조 자체를 못 보고 곁가지만 건드린다.",
+                    "en": "Marx is not idealizing reality by assuming away fraud. Since everyone is both seller and buyer, a uniform 10 percent markup by all ends up cancelling out, leaving real value relations unchanged. Answers about legal punishment or price correction miss this circular structure and touch only side issues."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 결론이 바로 화폐 총량이 재분배로는 늘지 않는다는 원리와 맞닿아 있다는 점을 눈여겨보라.",
+                      "마르크스가 문제 삼는 것은 처벌 여부가 아니라 총가치가 늘어나는가라는 논리적 질문이다.",
+                      "정당성 여부가 아니라 가치총액의 증감 자체가 마르크스의 질문이라는 점을 놓치고 있다.",
+                      "명목가격이 함께 오르는 것은 은 대신 금으로 표시하는 것과 같아 실질관계는 그대로다."
+                    ],
+                    "en": [
+                      "Notice this conclusion is exactly the principle that the total sum of value cannot grow through redistribution alone.",
+                      "Marx's question is not about punishment but the logical question of whether total value increases.",
+                      "This misses that Marx's question concerns the change in total value, not the legitimacy of the gain.",
+                      "A uniform nominal rise is like expressing values in silver instead of gold; the real relation stays the same."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "유통 중인 가치의 총합은 그 분배방식이 바뀐다고 늘어날 수 없다. 마치 어떤 유대인이 앤 여왕 시대의 파딩화를 기니 금화 값에 팔았다고 해서 한 나라의 귀금속 총량이 늘어나지 않는 것과 같다.",
+                      "en": "The sum of the values in circulation can clearly not be augmented by any change in their distribution, any more than the quantity of the precious metals in a country by a Jew selling a Queen Anne’s farthing for a guinea."
+                    }
                   }
                 },
                 {
@@ -2940,8 +3068,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치는 유통 바깥에서 자의적으로 생기는 것도, 유통의 가격차이에서 자동으로 생기는 것도 아니다. 이 모순은 시장에서 구매되지만 그 사용이 생산과정에서 새 가치를 낳는 특수한 상품을 찾게 한다.",
-                    "en": "Surplus-value arises neither arbitrarily outside circulation nor automatically from price differences within circulation. The contradiction points toward a special commodity bought in the market whose use in production creates new value."
+                    "ko": "고립된 생산자는 자기 노동으로 가치를 만들 수는 있지만 스스로 증식하는 가치는 만들 수 없어, 유통과 무관하게는 자본이 생기지 않는다. 그런데 앞선 문항들이 보였듯 유통 안에서도 새 가치는 생기지 않는다. 그래서 마르크스는 자본이 유통 속에서 생겨나면서도 동시에 유통만으로는 설명되지 않아야 한다는 이중조건을 세운다.",
+                    "en": "An isolated producer can create value through labor but not self-expanding value, so capital cannot arise apart from circulation. Yet as earlier questions showed, no new value arises within circulation either. Marx therefore sets the double condition that capital must originate both in circulation and yet not simply through circulation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 이중조건이 바로 다음 장에서 노동력이라는 특수한 상품을 찾게 만드는 출발점이다.",
+                      "이 모순은 산술적 절반나누기가 아니라 두 계기가 함께 필요하다는 논리적 요구다.",
+                      "말장난이 아니라 실제 논증의 핵심 난점이므로 가볍게 넘길 수 없다.",
+                      "모순은 교환의 불가능성이 아니라 설명이 더 정교해져야 한다는 요구로 읽어야 한다."
+                    ],
+                    "en": [
+                      "This double condition is exactly what leads the next chapter to seek the special commodity labor-power.",
+                      "The contradiction is not an arithmetic half-and-half split but a logical requirement that both moments hold together.",
+                      "This is not wordplay but the real crux of the argument, so it cannot be waved aside.",
+                      "The contradiction demands a more precise explanation, not the impossibility of capitalist exchange."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "따라서 자본이 유통에 의해 생겨나는 것도 불가능하고 유통과 무관하게 생겨나는 것도 불가능하다. 자본은 유통 속에서 생겨나면서 동시에 유통 속에서 생겨나지 않아야 한다.",
+                      "en": "It is therefore impossible for capital to be produced by circulation, and it is equally impossible for it to originate apart from circulation. It must have its origin both in circulation and yet not in circulation."
+                    }
                   }
                 },
                 {
@@ -2949,27 +3102,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "5장의 모순이 6장의 노동력 상품 분석으로 이어지는 이유는 무엇인가?",
-                    "en": "Why does the contradiction of Chapter 5 lead to Chapter 6’s analysis of labor-power as a commodity?"
+                    "ko": "화폐소유자가 등가교환의 규칙을 어기지 않으면서도, 유통 밖 자기 노동만으로는 자본이 될 수 없다는 것을 마르크스가 보였다. 그렇다면 해답은 어떤 상품을 필요로 하는가?",
+                    "en": "Marx has shown the money-owner cannot become a capitalist by his own isolated labor outside circulation, without breaking the rule of equivalent exchange. So what kind of commodity does the answer require?"
                   },
                   "choices": {
                     "ko": [
-                      "등가로 구매되지만 사용될 때 자기 가치보다 더 큰 가치를 만들 수 있는 상품이 필요하기 때문이다.",
-                      "화폐 소유자는 시장에서 생산수단만 사들이면 잉여가치를 얻을 수 있기 때문이다.",
-                      "상품 일반은 구매되는 순간 그 자체로 자기 가치보다 더 큰 가치를 만들기 때문이다.",
-                      "등가교환의 가정을 버리면 모순이 풀리므로, 6장은 부등가교환의 사례를 모으기 때문이다."
+                      "등가로 구매되면서도 그 사용이 자기 가치보다 더 큰 가치를 낳는 상품이 필요하다",
+                      "화폐소유자가 생산수단만 사들이면 그것만으로 충분하다",
+                      "유통을 완전히 벗어나 홀로 노동하는 생산자가 필요할 뿐이다",
+                      "등가교환의 가정을 버리고 부등가교환을 허용하는 상품이 필요하다"
                     ],
                     "en": [
-                      "Because the analysis needs a commodity that is bought at its value but can create more value than its own value when used.",
-                      "Because the money-owner can obtain surplus-value just by buying means of production in the market.",
-                      "Because every commodity automatically creates more value than its own value the moment it is bought.",
-                      "Because dropping the assumption of equivalent exchange dissolves the contradiction, Chapter 6 collects cases of non-equivalent exchange."
+                      "A commodity that is bought at its value yet whose use creates more value than its own value is needed",
+                      "It is enough for the money-owner simply to buy means of production",
+                      "Only a producer working alone entirely outside circulation is needed",
+                      "A commodity is needed that requires abandoning equivalent exchange for unequal exchange"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "5장은 해답을 직접 주지 않고 조건을 좁힌다. 잉여가치를 설명하려면 등가교환을 깨지 않으면서도 사용과정에서 새 가치를 창조하는 상품, 곧 노동력을 찾아야 한다.",
-                    "en": "Chapter 5 does not yet give the answer; it narrows the conditions. To explain surplus-value without violating equivalent exchange, the analysis must find a commodity whose use creates new value: labor-power."
+                    "ko": "돈주머니 씨는 상품을 가치대로 사고 가치대로 팔아야 하면서도, 과정이 끝나면 처음보다 더 큰 가치를 손에 쥐어야 한다. 생산수단을 사들이는 것만으로는 이 조건을 만족하지 못하는데, 생산수단 자체는 그 안에 담긴 가치만큼만 옮겨질 뿐이기 때문이다. 이 이중조건이 사용될 때 새 가치를 낳는 특수한 상품을 찾도록 이끈다.",
+                    "en": "Moneybags must buy commodities at their value and sell them at their value, yet must withdraw more value at the end than he put in at the start. Merely buying means of production does not satisfy this, since means of production only transfer the value already embodied in them. This double condition points toward a special commodity whose use creates new value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 조건을 만족하는 상품이 바로 다음 장에서 노동력으로 밝혀지는 상품이다.",
+                      "생산수단은 자기 가치를 넘는 새 가치를 스스로 만들지 못하므로 조건을 충족하지 못한다.",
+                      "고립된 생산은 가치를 만들 수 있어도 스스로 증식하는 가치는 만들지 못한다.",
+                      "부등가교환을 허용하면 등가교환이라는 출발 조건 자체를 버리게 되어 문제의 답이 아니다."
+                    ],
+                    "en": [
+                      "The commodity satisfying this condition is exactly what the next chapter reveals to be labor-power.",
+                      "Means of production cannot by themselves create new value beyond their own, so this fails the condition.",
+                      "Isolated production can create value but not self-expanding value.",
+                      "Allowing unequal exchange abandons the very starting condition of equivalent exchange, so it is not the answer."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "아직 애벌레 상태의 자본가일 뿐인 우리의 친구 돈주머니 씨는 자기 상품을 가치대로 사야 하고 가치대로 팔아야 하며, 그럼에도 과정이 끝날 때는 처음 투입한 것보다 더 큰 가치를 유통에서 끌어내야 한다.",
+                      "en": "Our friend, Moneybags, who as yet is only an embryo capitalist, must buy his commodities at their value, must sell them at their value, and yet at the end of the process must withdraw more value from circulation than he threw into it at starting."
+                    }
                   }
                 }
               ]
@@ -2987,27 +3165,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "5장에서 마르크스가 일부러 “등가교환”을 강하게 전제하는 이유는 무엇인가?",
-                    "en": "Why does Marx deliberately make the strong assumption of equivalent exchange in Chapter 5?"
+                    "ko": "마르크스가 돈주머니 씨를 등가교환의 규칙 안에 계속 묶어두고 잉여가치 문제를 풀려는 까닭은 어디에 있는가?",
+                    "en": "Why does Marx keep Moneybags bound by the rule of equivalent exchange while working out the problem of surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치를 사기나 불공정 가격이 아니라 자본주의적 정상 교환의 조건 속에서 설명하기 위해서이다.",
-                      "가격과 가치는 아무 차이가 없다는 산술 명제를 증명하기 위해서이다.",
-                      "현실의 교환 일반이 대체로 공정한 거래로 보인다고 주장하기 위해서이다.",
-                      "노동자가 임금을 받으면 착취가 불가능하다는 결론을 내리기 위해서이다."
+                      "잉여가치를 사기나 불공정 가격이 아니라 자본주의적 정상 교환의 조건 속에서 설명하기 위해서이다",
+                      "가격과 가치는 아무 차이가 없다는 산술 명제를 증명하기 위해서이다",
+                      "현실의 교환 일반이 대체로 공정한 거래로 보인다고 주장하기 위해서이다",
+                      "노동자가 임금을 받으면 착취가 불가능하다는 결론을 내리기 위해서이다"
                     ],
                     "en": [
-                      "To explain surplus-value within the conditions of normal capitalist exchange, not as fraud or unfair pricing.",
-                      "To prove the arithmetic thesis that price and value never differ.",
-                      "To claim that every real exchange is always perfectly fair.",
-                      "To conclude that exploitation is impossible once workers receive wages."
+                      "To explain surplus-value within the conditions of normal capitalist exchange, not as fraud or unfair pricing",
+                      "To prove the arithmetic thesis that price and value never differ",
+                      "To claim that every real exchange is always perfectly fair",
+                      "To conclude that exploitation is impossible once workers receive wages"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "등가교환 전제는 현실의 모든 가격이 공정하다는 도덕 명제가 아니다. 오히려 가장 정상적인 교환을 가정해도 잉여가치가 설명되어야 하므로, 분석은 노동력이라는 특수한 상품으로 나아간다.",
-                    "en": "The premise of equivalent exchange is not a moral claim that every real price is fair. It forces the analysis to explain surplus-value even under normal exchange, which leads toward the special commodity labor-power."
+                    "ko": "등가교환이라는 조건은 현실의 모든 가격이 공정하다는 도덕적 주장이 아니라, 분석을 가장 엄격한 조건 아래 두려는 방법이다. 사기나 가격조작을 허용하면 개별 사례는 설명되어도 자본주의 전체의 이윤은 설명되지 않는다. 그래서 마르크스는 가장 정상적인 교환을 가정한 채로도 잉여가치가 나와야 한다는 조건을 세우고, 이는 노동력이라는 특수한 상품으로 이어진다.",
+                    "en": "The equivalent-exchange condition is not a moral claim that every real price is fair; it is a method of holding the analysis to its strictest terms. Allowing fraud or price manipulation might explain individual cases but not profit for capitalism as a whole. Marx therefore requires that surplus-value arise even under the most normal exchange, which leads toward the special commodity labor-power."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 조건이 바로 다음 장에서 노동력이라는 상품을 찾도록 만드는 방법론적 압박이다.",
+                      "가격과 가치의 일치를 산술로 증명하려는 것이 아니라 조건을 엄격히 세우려는 것이다.",
+                      "현실의 가격편차를 부정하지 않으며, 다만 정상적 경우에도 설명이 되어야 한다는 것이다.",
+                      "임금 지급 여부와 무관하게 착취를 설명하는 것이 5장 이후 논증의 목표다."
+                    ],
+                    "en": [
+                      "This condition is exactly the methodological pressure that leads to finding labor-power in the next chapter.",
+                      "It is not proving price equals value arithmetically but setting the strictest possible condition.",
+                      "It does not deny real price deviations; it insists the normal case must also be explained.",
+                      "Explaining exploitation regardless of whether wages are paid is the goal of the argument beyond this chapter."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "화폐의 자본으로의 전환은 상품교환을 규제하는 법칙에 근거하여 설명되어야 하며, 그 출발점은 등가물의 교환이어야 한다.",
+                      "en": "The conversion of money into capital has to be explained on the basis of the laws that regulate the exchange of commodities, in such a way that the starting-point is the exchange of equivalents."
+                    }
                   }
                 },
                 {
@@ -3034,8 +3237,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "유통 바깥의 생산은 상품가치를 만들 수 있지만, 자본의 M-C-M′처럼 투하가치가 더 큰 가치로 돌아오는 관계를 설명하지 못한다. 그래서 잉여가치는 유통과 생산의 특정한 결합을 요구한다.",
-                    "en": "Production outside circulation can create commodity value, but it does not explain the relation in which advanced value returns as greater value in M-C-M′. Surplus-value therefore requires a specific connection between circulation and production."
+                    "ko": "가죽으로 구두를 만들면 새 노동이 더해져 구두의 가치는 가죽보다 커지지만, 가죽 자체의 가치는 그대로다. 즉 노동은 가치를 더할 수는 있어도 이미 있는 가치를 스스로 불어나게 하지는 못한다. 유통 바깥에서는 다른 소유자와의 관계가 없으니 이런 자기증식이 일어날 길이 아예 없고, 그래서 자본은 유통과 무관하게는 생겨날 수 없다.",
+                    "en": "Turning leather into boots adds new labor so the boots are worth more than the leather, but the value of the leather itself stays the same: labor can add value but cannot make existing value expand on its own. Outside circulation there is no relation to another owner, so no such self-expansion can occur, which is why capital cannot arise apart from circulation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 한계가 바로 자본이 유통 없이는 생겨날 수 없다는 절반의 결론을 만든다.",
+                      "마르크스는 노동이 가치를 만든다는 점 자체는 인정하며, 문제는 자기증식이 안 된다는 데 있다.",
+                      "가치 크기를 아는 문제가 아니라 그 가치가 스스로 불어날 수 있는가의 문제다.",
+                      "잉여노동 자체는 가능해도 그것이 곧바로 자본의 가치증식으로 이어지지는 않는다."
+                    ],
+                    "en": [
+                      "This limit is exactly half of the conclusion that capital cannot arise without circulation.",
+                      "Marx grants that labor creates value; the issue is that it cannot make value self-expand.",
+                      "The issue is not knowing the magnitude of value but whether that value can expand on its own.",
+                      "Surplus labor itself may be possible, but it does not by itself amount to capital's valorization."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "상품소유자는 자신의 노동으로 가치를 만들 수는 있지만, 스스로 증식하는 가치를 만들 수는 없다. … 그러므로 유통 영역 바깥에서 다른 상품소유자와 접촉하지 않고서는, 상품생산자가 가치를 증식시켜 화폐나 상품을 자본으로 전환할 수 없다.",
+                      "en": "The commodity owner can, by his labour, create value, but not self-expanding value. … It is therefore impossible that outside the sphere of circulation, a producer of commodities can, without coming into contact with other commodity-owners, expand value, and consequently convert money or commodities into capital."
+                    }
                   }
                 },
                 {
@@ -3062,8 +3290,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 상업 이득을 부정하지 않는다. 다만 사회 전체의 잉여가치를 설명하려면 유통상의 이전이 아니라 새 가치가 생산되는 지점을 분석해야 한다고 본다.",
-                    "en": "Marx does not deny commercial gains. He argues that explaining surplus-value for society as a whole requires analyzing where new value is produced, not merely transfers within circulation."
+                    "ko": "등가물이 교환되는 한 상업자본은 성립할 수 없는 것처럼 보이며, 그렇다면 상업자본은 판매자와 구매자 양쪽 모두에게서 이중의 이득을 취하는 상인의 기생적 개입에서만 생겨날 수 있는 것처럼 보인다. 마르크스는 이 대목에서 상업이득 자체를 부정하는 것이 아니라, 그것이 사회 전체 잉여가치의 원천이 되지는 못한다는 점을 겨냥한다.",
+                    "en": "So long as equivalents are exchanged, merchants’ capital seems impossible, and would seem to arise only from the merchant’s parasitic double advantage over both seller and buyer. Marx’s point here is not to deny commercial gain itself, but to target the claim that it is the source of total surplus-value for society."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 구분 덕분에 다음 분석은 유통상의 이전이 아니라 새 가치가 생산되는 지점으로 향할 수 있다.",
+                      "상업이윤이 착시라는 결론이 아니라 그것만으로 총가치증가를 설명 못한다는 것이 요점이다.",
+                      "가격편차 자체를 부정하지 않으며, 다만 편차가 잉여가치의 근원은 아니라는 것이다.",
+                      "운송 등 생산적 노동에 대한 보수라는 설명은 이 장의 논점을 다른 문제로 바꿔치기한다."
+                    ],
+                    "en": [
+                      "This distinction is what lets the next analysis turn to where new value is produced, not mere transfers.",
+                      "The point is not that commercial profit is illusory but that it alone cannot explain total value increase.",
+                      "It does not deny price deviations; it denies that deviations are the source of surplus-value.",
+                      "Explaining it as payment for productive labor like transport substitutes a different question for this one."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "등가물이 교환되는 한 상업자본은 불가능한 것처럼 보이며, 따라서 상업자본은 판매자와 구매자 양쪽 모두에게서 이중의 이득을 취하며 기생적으로 그 사이에 끼어드는 상인에게서만 생겨날 수 있는 것처럼 보인다.",
+                      "en": "it would appear, that merchants’ capital is an impossibility, so long as equivalents are exchanged; that, therefore, it can only have its origin in the two-fold advantage gained, over both the selling and the buying producers, by the merchant who parasitically shoves himself in between them."
+                    }
                   }
                 },
                 {
@@ -3071,27 +3324,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "5장의 모순에서 “특수한 상품”이라는 해답의 조건은 무엇인가?",
-                    "en": "In the contradiction of Chapter 5, what condition must the “special commodity” satisfy?"
+                    "ko": "잉여가치의 원천이 되려면, 화폐소유자가 시장에서 사는 그 상품은 어떤 조건을 만족해야 하는가?",
+                    "en": "To be the source of surplus-value, what condition must the commodity the money-owner buys in the market satisfy?"
                   },
                   "choices": {
                     "ko": [
-                      "그 상품은 시장에서 가치대로 팔리지만, 그 사용가치가 가치의 원천이어야 한다.",
-                      "그 상품은 가치보다 싸게 살 수 있어야 한다.",
-                      "그 상품은 아무 사용가치도 없어야 순수한 가치가 된다.",
-                      "그 상품은 생산비가 들지 않아 공짜로 얻을 수 있어야 한다."
+                      "그 상품은 가치대로 팔리면서도, 그 사용가치 자체가 새로운 가치의 원천이어야 한다",
+                      "그 상품은 가치보다 싸게 살 수 있어야 한다",
+                      "그 상품은 아무 사용가치도 없어야 순수한 가치가 된다",
+                      "그 상품은 생산비가 들지 않아 공짜로 얻을 수 있어야 한다"
                     ],
                     "en": [
-                      "It must be sold at its value in the market, while its use-value is a source of value.",
-                      "That commodity must be purchasable below its value.",
-                      "It must have no use-value in order to become pure value.",
-                      "That commodity must cost nothing to produce and be obtainable for free."
+                      "It must be sold at its value in the market, while its use-value is itself a source of new value",
+                      "That commodity must be purchasable below its value",
+                      "It must have no use-value in order to become pure value",
+                      "That commodity must cost nothing to produce and be obtainable for free"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치를 설명하려면 등가교환을 깨지 않아야 하면서도 구매한 상품의 사용이 더 큰 가치를 낳아야 한다. 이 조건이 노동력 상품의 발견으로 이어진다.",
-                    "en": "To explain surplus-value, equivalent exchange must remain intact while the use of the purchased commodity produces greater value. This condition leads to the discovery of labor-power as a commodity."
+                    "ko": "돈주머니 씨가 완전한 자본가로 성장하는 일은 유통 영역 안에서도, 또한 그 바깥에서도 동시에 이루어져야 한다. 즉 시장에서 가치대로 사고팔아야 하지만, 그 상품이 실제로 소비될 때는 유통 논리와 무관하게 새 가치를 낳아야 한다. 값을 깎아 사는 것이나 공짜로 얻는 것은 등가교환의 전제를 깨거나 그 상품에 이미 반영된 노동을 무시하는 것이라 조건을 만족하지 못한다.",
+                    "en": "Moneybags's development into a full-grown capitalist must take place both within the sphere of circulation and outside it: he must buy and sell at value in the market, yet the commodity's actual consumption must create new value independent of circulation's logic. Buying below value or getting it for free either breaks the premise of equivalent exchange or ignores the labor already embodied in the commodity, so neither satisfies the condition."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 조건을 만족하는 상품이 다음 장에서 노동력으로 밝혀진다는 점을 기억해두면 좋다.",
+                      "싸게 사는 것은 등가교환이라는 출발 전제 자체를 어겨 문제의 조건을 만족하지 못한다.",
+                      "사용가치가 없으면 애초에 아무도 그 상품을 사려 하지 않아 시장에서 성립하지 않는다.",
+                      "공짜로 얻는 상품은 그 안에 노동이 응결되어 있지 않아 가치척도의 기준을 벗어난다."
+                    ],
+                    "en": [
+                      "It helps to remember that the commodity satisfying this condition turns out to be labor-power in the next chapter.",
+                      "Buying below value breaks the very premise of equivalent exchange, so it fails the condition.",
+                      "Without use-value no one would want to buy the commodity at all, so it could not exist in the market.",
+                      "A free commodity contains no congealed labor, so it falls outside the standard of the measure of value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "그가 온전한 자본가로 성장하는 과정은 유통 영역 안에서도, 또한 그 바깥에서도 동시에 이루어져야 한다.",
+                      "en": "His development into a full-grown capitalist must take place, both within the sphere of circulation and without it."
+                    }
                   }
                 },
                 {
@@ -3099,27 +3377,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "5장이 자본주의 착취 분석에서 중요한 이유는 무엇인가?",
-                    "en": "Why is Chapter 5 important for the analysis of capitalist exploitation?"
+                    "ko": "착취를 사기나 부등가교환의 결과로 보지 않으면서도 설명하려면, 이 모순에서 어떤 실마리를 얻어야 하는가?",
+                    "en": "To explain exploitation without reducing it to fraud or unequal exchange, what clue must be drawn from this contradiction?"
                   },
                   "choices": {
                     "ko": [
-                      "착취를 단순한 사기나 불공정교환이 아니라 자유롭고 등가적인 교환을 통과해 성립하는 관계로 분석할 길을 열기 때문이다.",
-                      "착취는 임금 미지급 같은 예외적 부정행위에서 생기기 때문이다.",
-                      "착취가 도덕적 부정의임을 보이면 충분하므로, 정상적 교환의 분석은 필요 없기 때문이다.",
-                      "등가교환이 성립하는 한 착취는 있을 수 없다는 결론을 확정해 주기 때문이다."
+                      "등가교환을 지키면서도 사용될 때 더 큰 가치를 낳는 상품이 있어야 착취를 정상적 교환 안에서 설명할 수 있다는 실마리",
+                      "착취는 임금 미지급 같은 예외적 부정행위에서만 생긴다는 실마리",
+                      "착취가 도덕적 부정의임을 보이면 충분하니 정상적 교환의 분석은 필요 없다는 실마리",
+                      "등가교환이 성립하는 한 착취는 원천적으로 있을 수 없다는 실마리"
                     ],
                     "en": [
-                      "Because it opens the way to analyze exploitation not as mere fraud or unequal exchange, but as a relation that passes through free and equivalent exchange.",
-                      "Because it concludes that exploitation exists only when workers receive no wage at all.",
-                      "Because showing exploitation to be a moral injustice is enough, so no analysis of normal exchange is needed.",
-                      "Because it settles the conclusion that as long as exchange is equivalent, there can be no exploitation."
+                      "The clue that a commodity is needed whose use creates more value while equivalent exchange holds, explaining exploitation within normal exchange",
+                      "The clue that exploitation arises only from exceptional wrongdoing such as non-payment of wages",
+                      "The clue that showing exploitation to be morally unjust is enough, so no analysis of normal exchange is needed",
+                      "The clue that as long as exchange is equivalent, exploitation cannot exist at all"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "5장의 힘은 착취를 시장의 비정상적 일탈로 설명하지 않는 데 있다. 노동력 상품이 가치대로 사고팔려도 그 사용이 잉여가치를 낳을 수 있다는 분석으로 넘어가기 때문이다.",
-                    "en": "The force of Chapter 5 is that it does not explain exploitation as an abnormal market deviation. It prepares the analysis in which labor-power can be bought and sold at its value while its use produces surplus-value."
+                    "ko": "아무리 돌려 생각해도 사실은 달라지지 않는다. 등가물이 교환되면 잉여가치는 생기지 않고, 부등가물이 교환되어도 마찬가지로 잉여가치는 생기지 않는다. 유통, 곧 상품의 교환은 어떤 가치도 낳지 않는다. 그렇다면 착취는 시장에서의 속임수가 아니라, 등가교환이 유지된 채로 사용될 때 새 가치를 낳는 상품이 존재한다는 사실에서 찾아야 한다. 이 실마리가 뒷장에서 노동력 분석으로 이어진다.",
+                    "en": "Turn and twist as we may, the fact remains unaltered: if equivalents are exchanged no surplus-value results, and if non-equivalents are exchanged, still none results. Circulation begets no value. Exploitation, then, must be found not in market trickery but in the existence of a commodity whose use creates new value while equivalent exchange is preserved, a clue that leads to the analysis of labor-power in the chapters ahead."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 실마리가 바로 자본론 1권 전체에서 착취가 어떻게 정상적 교환 안에서 이루어지는지를 여는 문이다.",
+                      "예외적 부정행위로 설명하면 자본주의 전체의 정상적 이윤 구조를 놓치게 된다.",
+                      "도덕적 부정의만으로는 잉여가치가 어디서 생기는지에 대한 경제적 설명이 되지 못한다.",
+                      "등가교환이 성립해도 착취가 가능하다는 것이 바로 이 논증 전체가 향하는 결론이다."
+                    ],
+                    "en": [
+                      "This clue is exactly the door that opens onto how exploitation occurs within normal exchange across Capital I.",
+                      "Explaining it as exceptional wrongdoing misses the normal profit structure of capitalism as a whole.",
+                      "Moral injustice alone gives no economic explanation of where surplus-value actually comes from.",
+                      "That exploitation is possible even when exchange is equivalent is exactly where this whole argument is heading."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch05.htm",
+                    "label": {
+                      "ko": "『자본론』1권 5장 자본의 일반 공식의 모순",
+                      "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
+                    },
+                    "quote": {
+                      "ko": "아무리 돌려 생각해도 사실은 달라지지 않는다. 등가물이 교환되면 잉여가치는 생기지 않고, 부등가물이 교환되어도 마찬가지로 잉여가치는 생기지 않는다. 유통, 곧 상품의 교환은 어떤 가치도 낳지 않는다.",
+                      "en": "Turn and twist then as we may, the fact remains unaltered. If equivalents are exchanged, no surplus-value results, and if non-equivalents are exchanged, still no surplus-value. Circulation, or the exchange of commodities, begets no value."
+                    }
                   }
                 }
               ]
@@ -3162,7 +3465,7 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "등가교환의 난점",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "등가교환의 난점: 상품이 가치대로 교환된다면 단순한 교환만으로는 잉여가치가 생기지 않는다.",
                   "비싸게 팔기의 한계: 한 사람이 비싸게 팔아 얻는 이득은 다른 사람의 손실일 뿐이다. 사회 전체의 자본 이윤을 설명하지 못한다.",
@@ -3170,37 +3473,37 @@
                 ]
               },
               {
-                "title": "유통 안과 바깥",
-                "items": [
-                  "등가교환만 보면 유통은 같은 가치들의 자리바꿈일 뿐이어서 새 가치가 생기지 않는다.",
-                  "비싸게 팔고 싸게 사는 설명은 한 사람의 이득을 다른 사람의 손실로 옮길 뿐, 사회 전체의 잉여가치를 설명하지 못한다.",
-                  "따라서 해답은 유통 안에 있으면서도 유통 바깥, 곧 특수한 상품의 소비에서 찾아야 한다."
-                ]
+                "title": "용어 풀이",
+                "text": "돈주머니 씨(Moneybags)는 마르크스가 화폐소유자에게 붙인 별명으로, 아직 자본가가 되지 못한 화폐 뭉치를 가리킨다. 등가교환은 상품이 정확히 그 가치만큼의 다른 상품이나 화폐와 바뀌는 거래를 뜻하고, 유통은 상품과 화폐가 시장에서 손을 바꾸는 과정 전체를 말한다."
               },
               {
-                "title": "특수한 상품을 찾는 이유",
+                "title": "현대 적용",
+                "text": "오늘날 어느 온라인 판매자가 정가로만 사고팔아도 전체 매출과 이윤이 늘었다면, 그 늘어난 몫이 어디서 왔는지 묻는 것이 이 장의 물음과 같다. 답은 값을 속인 데 있지 않고, 그가 산 무언가가 쓰일 때 스스로 더 큰 가치를 만들어냈다는 데 있다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "사기나 비싸게 팔기만으로는 전체 자본주의의 이윤을 설명할 수 없다는 점을 확인한다."
               }
             ],
             "en": [
               {
-                "title": "Problem of Equivalent Exchange",
+                "title": "Core concepts first",
                 "items": [
                   "Problem of equivalent exchange: If commodities exchange at their values, surplus-value cannot arise from exchange alone.",
-                  "Limit of selling dear: One person’s gain from selling dear is another person’s loss. It cannot explain profit for capitalist society as a whole.",
+                  "Limit of selling dear: One person's gain from selling dear is another person's loss. It cannot explain profit for capitalist society as a whole.",
                   "Condition of the answer: Surplus-value requires a commodity whose use creates new value while equivalent exchange remains intact: labor-power."
                 ]
               },
               {
-                "title": "Inside and Outside Circulation",
-                "items": [
-                  "With equivalent exchange, circulation only changes places of equal values and creates no new value.",
-                  "Selling dear or buying cheap shifts gain and loss between people; it does not explain surplus-value for society as a whole.",
-                  "The answer must be found inside circulation and outside it: in the consumption of a special commodity."
-                ]
+                "title": "Terms explained",
+                "text": "Moneybags is Marx's nickname for the money-owner, a pile of money that has not yet become a capitalist. Equivalent exchange means a commodity is traded for exactly its own value in money or another commodity, and circulation is the whole process by which commodities and money change hands in the market."
               },
               {
-                "title": "Why a Special Commodity Is Needed",
+                "title": "Today's application",
+                "text": "If an online seller trades strictly at listed prices yet total revenue and profit for the whole economy still rise, asking where that increase comes from is this chapter's question. The answer lies not in mislabeled prices but in something purchased whose use itself generates more value than it cost."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "See why fraud or selling dear cannot explain profit for capitalist society as a whole."
               }
             ]
