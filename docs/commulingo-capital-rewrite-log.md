@@ -36,3 +36,7 @@
 | 2026-09-05 | capital-v1-ch28 | flagged | 2 | edited | 1 |
 | 2026-09-05 | capital-v1-ch29 | flagged | 2 | edited | 1 |
 | 2026-09-05 | capital-v1-ch32 | flagged | 2 | edited | 1 |
+| 2026-09-05 | capital-v1-ch25 | flagged | 2 | edited | 1 |
+| 2026-09-05 | capital-v1-ch26 | flagged | 2 | edited | 0 |
+| 2026-09-05 | capital-v1-ch30 | soft | 1 | edited | 1 |
+| 2026-09-05 | capital-v1-ch33 | flagged | 2 | edited | 1 |
