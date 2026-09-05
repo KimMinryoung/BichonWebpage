@@ -2,6 +2,7 @@ const db = require('../config/database');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
 const { localize } = require('../data/commulingo/localize');
+const { pickAcrossKinds } = require('../data/commulingo/recent-updates-pick');
 
 const TYPE_LABELS = {
     ko: { person: '인물', event: '사건', term: '용어', doc: '참고 문헌', course: '학습 콘텐츠' },
@@ -99,7 +100,8 @@ async function recentDictionaryItems(lang, limit) {
         [Math.max(limit * 3, limit)]
     );
 
-    return rows.map(row => dictionaryItem(row, lang)).slice(0, limit);
+    // One slot per kind before recency fill; see recent-updates-pick.js.
+    return pickAcrossKinds(rows, limit).map(row => dictionaryItem(row, lang));
 }
 
 // The UNION ALL scan below reads every dictionary row; without this memo it ran

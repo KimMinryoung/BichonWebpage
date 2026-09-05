@@ -31,3 +31,14 @@ SQL은 본문 해시로 동시 편집을 감지하며, 모든 변경을 한 트�
 운영 DB 적용은 사용자 배포 지시 뒤 완료했다. 화면 배포는 `scripts/deploy --restart`로 진행한다.
 초기 원문 백업은 Git에서 제외되는 `temp_dev/civil-war-restructure-backup/`에 보관했다.
 독립 검증 DB는 `commulingo_restructure_review_20260905`, `commulingo_restructure_final_20260905`이다.
+
+## 2026-09-05 증보 (Claude)
+
+첫 판의 신설 문서 셋은 국문 본문 2,800~3,700자로 기존 문서(9,000~20,000자)의 4분의 1이었고, 연표 설명은 한 문장, 신규 인물 약력은 90자 안팎이었다.
+같은 날 다음을 적용했다(`scripts/migrations/165_commulingo_borderland_expansion.sql`, 본문 md5 가드, 단일 트랜잭션).
+
+- 본문: brest-litovsk 9,672자 / ukraine-1917-1921 8,011자 / baltic-wars-of-independence 9,326자(국문). 영문 동시. 검토 사본은 이 디렉터리의 `.ko.md`/`.en.md`.
+- 요약·결과 재작성, 연표 15~16단계(2~3문장, 지점 geo), 위치 8~10곳, 출처에 연구서 추가. 원본 데이터는 `expansion-2026-09-05.json`.
+- 신규 인물 20명 약력 평균 392자(기존 중앙값 270자)와 별칭 재작성. 사건별 인물 메모 52건을 「~로 이 사건에 관여했다」 틀에서 실제 문장으로 교체했고, 남은 틀 문장 3건의 조사(로/으로) 오류를 고쳤다. 원본은 `people-expansion-2026-09-05.json`.
+- 검증: audit-event-locations 71건 통과, audit-script-leakage 통과, audit-link-fires 국·영문에서 새 본문의 발화 전수 검토 후 brest에 Fischer·Jäger·partisan warfare, ukraine에 Sokolovsky를 no_auto_link로 차단(각각 루트 피셔·하랄트 예거·바실리 소콜롭스키·2차 대전 파르티잔 운동으로 오연결).
+- 같은 커밋에서 홈 「최근 업데이트」가 종류별 최신 1건을 먼저 뽑도록 고쳤다(`data/commulingo/recent-updates-pick.js`). 큐레이터 레인이 하루 십수 명을 갱신해 사건·용어가 사전 슬롯 2개에 들지 못하던 문제.

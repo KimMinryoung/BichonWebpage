@@ -3,7 +3,7 @@
 대상: `/commulingo/events/civil-war`, `/commulingo/events/soviet-polish-war` 및 1918~1922년 묶음.
 사건 문서 원본은 leninbot-pg `commulingo_history_events` (body_ko/body_en, timeline, locations, sources),
 인물 연결은 `commulingo_history_event_people`, 용어 연결은 `commulingo_term_events`.
-상태: 2026-09-05 구현·독립 검증 완료. 사용자의 배포 지시 후 운영 DB 반영 완료, 정식 화면 배포 진행.
+상태: 2026-09-05 구현·독립 검증 완료, 운영 반영. 같은 날 신설 문서 셋을 기존 문서 분량으로 증보(작업 기록 참조).
 사용자 수정: 상위 문서의 기존 인물 연결은 모두 유지하며, 하위 문서에 추가 연결한다.
 결과와 검증 기록: [작업 기록](commulingo-civil-war-restructure/README.md).
 
