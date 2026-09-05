@@ -12,7 +12,7 @@ Claude에 초안을 받고, validator 규칙과 하네스 전용 규칙으로 �
   (`127.0.0.1:8110/anthropic`, 키는 프록시가 넣는다) 호출 → 후보 저장 → `gate.js` →
   hard 위반이면 위반 목록을 강화 지시로 붙여 재시도(최대 3회; 나머지는 검수 서브에이전트가 고친다) → 최선 시도 기록.
   `--chapters a,b,c..d` / `--part v1-p3` / `--volume 1`, `--limit`, `--dry-run`(프롬프트만
-  `temp_dev/commulingo-rewrite/dry-run.<id>.md`에), `--model`(기본 deepseek-v4-pro; claude-sonnet-5는 Anthropic API 종량이라 장당 약 $0.9가 든다),
+  `temp_dev/commulingo-rewrite/dry-run.<id>.md`에), `--model`(기본 deepseek-v4-pro; claude-sonnet-5는 Anthropic API 종량이라 장당 약 $0.9가 든다), `--thinking`+`--reasoning-budget`(추론을 켤 때는 예산을 max_tokens에 더해 잡고 usage.jsonl의 reasoning_chars로 비율을 확인),
   `--effort`(기본 high), `--budget-usd`(기본 5), `--max-chapter-chars`(기본 150,000; 긴 장은
   앞부분만), `--force`.
 - `prompt.system.md` / `prompt.user.md` — 루브릭(`docs/commulingo-question-handoff.md`

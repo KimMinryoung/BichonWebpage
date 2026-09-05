@@ -51,6 +51,8 @@ def provider_of(model):
     return "deepseek" if model.startswith("deepseek") else "anthropic"
 
 SYSTEM = (HERE / "prompt.system.md").read_text(encoding="utf-8")
+# Set from --thinking / --reasoning-budget in main(); read by call_deepseek.
+THINKING = {"on": False, "budget": 16000}
 USER_TEMPLATE = (HERE / "prompt.user.md").read_text(encoding="utf-8")
 TERMS = json.loads((HERE / "terminology.json").read_text(encoding="utf-8"))
 
@@ -214,7 +216,7 @@ def cost_of(model, usage):
 
 def call_model(client, model, user, max_tokens, effort):
     if provider_of(model) == "deepseek":
-        return call_deepseek(client, model, user, max_tokens)
+        return call_deepseek(client, model, user, max_tokens, THINKING["on"], THINKING["budget"])
     system_blocks = [{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}]
     # Claude 5 models take adaptive thinking plus an effort level; the installed
     # SDK predates both, so they go through extra_body (the proxy is a byte
@@ -235,24 +237,27 @@ def call_model(client, model, user, max_tokens, effort):
     return text, usage, final.stop_reason
 
 
-def call_deepseek(client, model, user, max_tokens):
-    """OpenAI-compatible route of the proxy, the contract of
-    scripts/bulk-translate/translate_bulk.py verbatim: thinking DISABLED.
-    DeepSeek's reasoning shares max_tokens with the reply; with it on, the 26
-    V4 Pro calls of 2026-09-05 averaged 35k output tokens and ten minutes
-    each, and long outputs are where the dropped-brace JSON came from. The
-    proxy only defaults this key when it is absent, so never send "enabled"
-    here."""
+def call_deepseek(client, model, user, max_tokens, thinking, reasoning_budget):
+    """OpenAI-compatible route of the proxy (contract of
+    scripts/bulk-translate/translate_bulk.py). Thinking is off unless asked
+    for; when on, the reasoning shares max_tokens with the reply, so the
+    budget is added on top of the answer cap and the split is logged so a
+    run that is all reasoning and no answer shows up in usage.jsonl."""
+    budget = max_tokens + (reasoning_budget if thinking else 0)
     resp = client.chat.completions.create(
-        model=model, temperature=1.0, max_tokens=max_tokens,
-        extra_body={"thinking": {"type": "disabled"}},
+        model=model, temperature=1.0, max_tokens=budget,
+        extra_body={"thinking": {"type": "enabled" if thinking else "disabled"}},
         messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
     )
     choice = resp.choices[0]
     text = (choice.message.content or "").strip()
+    reasoning = (getattr(choice.message, "reasoning_content", None) or "").strip()
     u = resp.usage
     cache_read = getattr(u, "prompt_cache_hit_tokens", 0) or 0
-    usage = {"input": u.prompt_tokens - cache_read, "output": u.completion_tokens, "cache_read": cache_read, "cache_write": 0}
+    usage = {"input": u.prompt_tokens - cache_read, "output": u.completion_tokens, "cache_read": cache_read, "cache_write": 0,
+             "answer_chars": len(text), "reasoning_chars": len(reasoning)}
+    if thinking and reasoning and len(reasoning) > 2 * max(len(text), 1):
+        print(f"  reasoning {len(reasoning):,} chars vs answer {len(text):,}: raise --reasoning-budget or drop --thinking", flush=True)
     return text, usage, choice.finish_reason
 
 
@@ -275,12 +280,20 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="프롬프트만 만들고 호출하지 않음")
     ap.add_argument("--model", default=DEFAULT_MODEL, help="deepseek-v4-pro(기본, 종량 저가) | deepseek-v4-flash | claude-sonnet-5(Anthropic API 종량, 비쌈)")
     ap.add_argument("--budget-usd", type=float, default=5.0, help="이 실행의 누적 비용 상한")
-    ap.add_argument("--max-tokens", type=int, default=48000, help="사고 토큰을 포함한 출력 상한")
+    ap.add_argument("--max-tokens", type=int, default=32000, help="답(JSON)에 허용하는 출력 토큰; 사고 예산은 따로")
+    ap.add_argument("--thinking", action="store_true", help="DeepSeek 추론을 켠다. 켜면 --reasoning-budget이 max_tokens에 더해지고 usage.jsonl에 추론/답 길이가 남는다(회당 시간·비용이 그만큼 는다)")
+    ap.add_argument("--reasoning-budget", type=int, default=16000, help="--thinking일 때 추론에 더 주는 토큰")
     ap.add_argument("--effort", default="medium", choices=["low", "medium", "high", "max"], help="adaptive thinking 의 effort (high 는 사고에 3만 토큰 넘게 쓴다)")
     ap.add_argument("--max-chapter-chars", type=int, default=150000)
     ap.add_argument("--force", action="store_true", help="이미 기록된 장도 다시")
     args = ap.parse_args()
 
+    THINKING["on"] = args.thinking
+    THINKING["budget"] = args.reasoning_budget
+    if args.thinking and provider_of(args.model) == "deepseek":
+        p_out = PRICES.get(args.model, PRICES["deepseek-v4-pro"])[1]
+        print(f"thinking ON: max_tokens {args.max_tokens:,} + reasoning {args.reasoning_budget:,}; "
+              f"worst case +${args.reasoning_budget * p_out / 1_000_000:.3f} and several minutes per call", flush=True)
     rows = select_chapters(args, list_chapters())
     if not rows:
         raise SystemExit("no chapters selected")
