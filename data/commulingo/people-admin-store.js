@@ -1,3 +1,4 @@
+const { assertAliases, assertPersonHeadwords } = require('./headword-validation');
 const db = require('../../config/database');
 const { OFFICE_ICON, normalizeFateLabel } = require('./people-standard');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumns, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
@@ -244,7 +245,7 @@ async function getPersonAdmin(personId, options = {}) {
 }
 
 async function replaceAliases(client, personId, aliases) {
-    if (!aliases) return;
+    assertAliases(aliases);
     await client.query('DELETE FROM commulingo_person_aliases WHERE person_id = $1', [personId]);
     for (const lang of ['ko', 'en']) {
         const values = Array.isArray(aliases[lang]) ? aliases[lang] : [];
@@ -319,6 +320,7 @@ async function replaceCareer(client, personId, career) {
 
 async function createPersonAdmin(rawPayload, options = {}) {
     const payload = withNativeNameAliases(rawPayload || {});
+    assertPersonHeadwords(payload);
     return withTransaction(options, async client => {
         const id = requireId(payload.id, 'person id');
         const citizenship = normalizeNationality(payload.citizenship || null, 'citizenship');
@@ -407,6 +409,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
 
 async function updatePersonAdmin(personId, rawPayload, options = {}) {
     const payload = withNativeNameAliases(rawPayload || {});
+    assertPersonHeadwords(payload);
     return withTransaction(options, async client => {
         const id = requireId(personId, 'person id');
         const before = await getPersonAdmin(id, { client });

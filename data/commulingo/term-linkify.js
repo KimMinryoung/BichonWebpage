@@ -1,3 +1,4 @@
+const { registerAlias } = require('./alias-registry');
 // The glossary alias index: which strings belong to which term. Index shape
 // ({ pattern, byAlias, en }) matches the other indexes so linkify.js can run
 // them all through one replacer.
@@ -43,7 +44,7 @@ const LINK_OVERRIDES = {
 function buildTermLinkIndex(terms, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
-    const byAlias = {};
+    const byAlias = Object.create(null);
     const byId = {};
     const tokens = [];
     const blockedPhrases = termBlocklist('term-phrase', lang);
@@ -63,15 +64,14 @@ function buildTermLinkIndex(terms, options = {}) {
         const candidates = [label].concat((term.aliases && term.aliases[lang]) || []);
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
-            if (alias.length < 2 || byAlias[alias]) return;
+            if (alias.length < 2) return;
             if (neverHeadword.has(alias)) return;
             if (alias !== label && neverAlias.has(alias)) return;
-            byAlias[alias] = entry;
-            tokens.push(alias);
+            registerAlias(byAlias, tokens, alias, entry);
         });
     });
     Object.entries(LINK_OVERRIDES).forEach(([alias, targetId]) => {
-        if (byAlias[alias] && byId[targetId]) byAlias[alias] = byId[targetId];
+        if (Object.hasOwn(byAlias, alias) && byId[targetId]) byAlias[alias] = byId[targetId];
     });
     if (!tokens.length) return null;
     const pattern = buildAliasPattern(tokens, blockedPhrases, en);

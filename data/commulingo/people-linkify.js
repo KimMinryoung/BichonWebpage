@@ -1,3 +1,4 @@
+const { registerAlias } = require('./alias-registry');
 // The person alias index, plus the HTML-walking and escaping helpers every
 // index shares. Who links where, in what order, and how one link is written is
 // linkify.js; this file only answers which strings belong to which person.
@@ -129,7 +130,7 @@ function buildPersonLinkIndex(people, options = {}) {
         words.forEach(word => { (wordOwners[word] || (wordOwners[word] = new Set())).add(person.id); });
     });
 
-    const byAlias = {};
+    const byAlias = Object.create(null);
     const tokens = [];
     const neverKo = new Set(neverLinkAliases('ko'));
     const neverEn = new Set(neverLinkAliases('en'));
@@ -172,9 +173,7 @@ function buildPersonLinkIndex(people, options = {}) {
                     if (owners && (owners.size > 1 || !owners.has(person.id))) return;
                 } else if (!owners || owners.size > 1) return;
             }
-            if (byAlias[alias]) return;
-            byAlias[alias] = person;
-            tokens.push(alias);
+            registerAlias(byAlias, tokens, alias, person);
         });
     });
     if (!tokens.length) return null;

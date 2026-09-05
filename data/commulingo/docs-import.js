@@ -1,3 +1,4 @@
+const { assertHeadword, assertAliases, assertStringList } = require('./headword-validation');
 const fs = require('fs');
 const path = require('path');
 
@@ -122,6 +123,18 @@ function canonicalEntry(entry) {
         kind: langPair(entry.kind, { ko: '저작·연설', en: 'Writings & speeches' }),
         source: typeof entry.source === 'string' ? entry.source : '',
     };
+    for (const lang of ['ko', 'en']) assertHeadword(out.title[lang], `title.${lang}`, { allowEmpty: lang === 'en' });
+    if (entry.aliases !== undefined) {
+        assertAliases(entry.aliases);
+        out.aliases = entry.aliases;
+    }
+    if (entry.noAutoLink !== undefined) {
+        assertStringList(entry.noAutoLink, 'noAutoLink');
+        out.noAutoLink = entry.noAutoLink;
+    }
+    for (const field of ['date', 'updatedAt']) {
+        if (entry[field] !== undefined) out[field] = entry[field];
+    }
     if (Array.isArray(entry.tocExclude) && entry.tocExclude.length) out.tocExclude = entry.tocExclude.map(String);
     out.people = normalizeRefs(entry.people, 'people');
     const terms = normalizeRefs(entry.terms, 'terms');
@@ -185,6 +198,10 @@ function updateDocMeta(id, patch = {}) {
     const current = manifest.docs[index];
     const merged = canonicalEntry({
         ...current,
+        aliases: patch.aliases !== undefined ? patch.aliases : current.aliases,
+        noAutoLink: patch.noAutoLink !== undefined ? patch.noAutoLink : current.noAutoLink,
+        date: patch.date !== undefined ? patch.date : current.date,
+        updatedAt: patch.updatedAt !== undefined ? patch.updatedAt : current.updatedAt,
         docLang: patch.docLang !== undefined ? patch.docLang : current.docLang,
         title: langPair(patch.title, current.title),
         description: langPair(patch.description, current.description),
@@ -216,4 +233,4 @@ function removeDoc(id) {
     return entry;
 }
 
-module.exports = { extractFragment, harvestTocPreview, importDoc, updateDocMeta, removeDoc };
+module.exports = { canonicalEntry, extractFragment, harvestTocPreview, importDoc, updateDocMeta, removeDoc };

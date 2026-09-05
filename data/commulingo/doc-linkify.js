@@ -1,3 +1,4 @@
+const { registerAlias } = require('./alias-registry');
 // The reference-library alias index: which strings belong to which document.
 // Index shape ({ pattern, byAlias, en }) matches the other indexes so linkify.js
 // can run them all through one replacer.
@@ -16,7 +17,7 @@ const { buildAliasPattern } = require('./people-linkify');
 function buildDocLinkIndex(docs, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
-    const byAlias = {};
+    const byAlias = Object.create(null);
     const tokens = [];
     (docs || []).forEach(doc => {
         if (!doc || !doc.id) return;
@@ -32,9 +33,8 @@ function buildDocLinkIndex(docs, options = {}) {
         const candidates = (doc.aliases && doc.aliases[lang]) || [];
         candidates.forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
-            if (alias.length < 2 || byAlias[alias]) return;
-            byAlias[alias] = entry;
-            tokens.push(alias);
+            if (alias.length < 2) return;
+            registerAlias(byAlias, tokens, alias, entry);
         });
     });
     if (!tokens.length) return null;

@@ -1,3 +1,4 @@
+const { registerAlias } = require('./alias-registry');
 // The history-event alias index: which strings belong to which event. Index
 // shape ({ pattern, byAlias, en }) matches the other indexes so linkify.js can
 // run them all through one replacer.
@@ -26,7 +27,7 @@ const EXTRA_TERMS = {
     'civil-war': { ko: ['러시아 내전'], en: ['Russian Civil War'] },
     // Korean prose writes the Latin abbreviation too; the hangul short form
     // 네프 is refused above (NEVER_LINK_EVENT_KO), so NEP carries instead.
-    'new-economic-policy': { ko: ['NEP'] },
+    'new-economic-policy': { ko: ['NEP'], en: ['NEP'] },
     'ussr-formation': { ko: ['소련 결성'], en: ['Formation of the Soviet Union'] },
     'five-year-plans': { ko: ['5개년 계획', '5개년계획'], en: ['Five-Year Plan', 'Five-Year Plans'] },
     // Title is now 대숙청 / The Great Purge, matching the glossary entry.
@@ -50,7 +51,6 @@ const EXTRA_TERMS = {
     'beria-purge': { ko: ['베리야 숙청'], en: ['Fall of Beria'] },
     'hungarian-revolution': { ko: ['헝가리 봉기'] },
     'anti-party-group': { ko: ['반당그룹', '반당 그룹 사건'] },
-    'soviet-space-program': { ko: ['스푸트니크'], en: ['Sputnik'] },
     'kosygin-reform': { en: ['Kosygin reform'] },
     // 원자탄/수소폭탄 like 겨울전쟁's 계속전쟁 is deliberately absent: the bare
     // words are ordinary nouns that appear in prose about other countries too.
@@ -70,7 +70,7 @@ const EXTRA_TERMS = {
         en: ['Sino-Soviet split', 'Sino-Soviet dispute', 'Sino-Soviet rift'],
     },
     'afghanistan-war': { ko: ['아프가니스탄 전쟁', '아프간 전쟁'], en: ['Soviet-Afghan War', 'Afghan War'] },
-    'perestroika': { ko: ['페레스트로이카', '글라스노스트'], en: ['Perestroika', 'Glasnost'] },
+    'perestroika': { ko: ['페레스트로이카'], en: ['Perestroika'] },
     'chernobyl': { ko: ['체르노빌'], en: ['Chernobyl'] },
     'revolutions-1989': { ko: ['동유럽 혁명'] },
     'soviet-collapse': {
@@ -79,7 +79,7 @@ const EXTRA_TERMS = {
     },
 };
 
-// '신경제정책(네프)' → ['신경제정책(네프)', '신경제정책', '네프'];
+// '신경제정책(네프)' → ['신경제정책(네프)', '신경제정책'];
 // 'The New Economic Policy (NEP)' additionally drops the leading article.
 function titleVariants(title, en) {
     const variants = new Set();
@@ -89,7 +89,8 @@ function titleVariants(title, en) {
     const paren = raw.match(/^(.+?)\s*[(（]([^)）]+)[)）]$/);
     if (paren) {
         variants.add(paren[1].trim());
-        variants.add(paren[2].trim());
+        // Parentheses may contain dates or explanations, not another name.
+        // Abbreviations that really identify this event belong in EXTRA_TERMS.
     }
     if (en) {
         Array.from(variants).forEach(value => {
@@ -104,7 +105,7 @@ function titleVariants(title, en) {
 function buildEventLinkIndex(events, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
-    const byAlias = {};
+    const byAlias = Object.create(null);
     const tokens = [];
     (events || []).forEach(event => {
         if (!event || !event.id) return;
@@ -116,9 +117,7 @@ function buildEventLinkIndex(events, options = {}) {
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
             if (!en && NEVER_LINK_EVENT_KO.includes(alias)) return;
-            if (byAlias[alias]) return;
-            byAlias[alias] = entry;
-            tokens.push(alias);
+            registerAlias(byAlias, tokens, alias, entry);
         });
     });
     if (!tokens.length) return null;

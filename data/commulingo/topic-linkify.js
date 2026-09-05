@@ -1,3 +1,4 @@
+const { registerAlias } = require('./alias-registry');
 // Auto-links people-dictionary classification pages — role categories
 // (/commulingo/roles/:id) and offices (/commulingo/offices/:id) — inside
 // report prose. Unlike people/events, most classification labels are composite
@@ -25,14 +26,13 @@ const OFFICE_TERMS = {
 function buildTopicLinkIndex(standardized, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
-    const byAlias = {};
+    const byAlias = Object.create(null);
     const tokens = [];
     const addTerms = (terms, entry) => {
         ((terms && terms[lang]) || []).forEach(raw => {
             const alias = typeof raw === 'string' ? raw.trim() : '';
-            if (alias.length < 2 || byAlias[alias]) return;
-            byAlias[alias] = entry;
-            tokens.push(alias);
+            if (alias.length < 2) return;
+            registerAlias(byAlias, tokens, alias, entry);
         });
     };
     const roleCategories = (standardized && standardized.roleCategories) || {};

@@ -341,6 +341,7 @@ function clientPersonLinkPayload(indexes) {
     const byId = new Map();
     Object.keys(index.byAlias).forEach(alias => {
         const entry = index.byAlias[alias];
+        if (!entry) return;
         let person = byId.get(entry.id);
         if (!person) {
             person = {
