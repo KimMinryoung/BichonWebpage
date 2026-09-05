@@ -35,6 +35,47 @@
             "en": "Looks at the commodity not as a mere thing, but as a social form joining use-value and value."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "사용가치와 가치의 대조",
+              "left": {
+                "heading": "사용가치",
+                "rows": [
+                  "몸에 속한 유용성이다: 외투는 몸을 따뜻하게 한다",
+                  "질적으로 다른 구체적 노동들이 만든다",
+                  "사용이나 소비를 통해서만 현실이 된다"
+                ]
+              },
+              "right": {
+                "heading": "가치",
+                "rows": [
+                  "교환 속에서만 나타나는 사회적 성격이다",
+                  "질적 차이를 걷어낸 추상적 인간노동으로 환원된다",
+                  "사회적으로 필요한 노동시간으로 크기가 정해진다"
+                ]
+              }
+            },
+            "en": {
+              "title": "Use-Value versus Value",
+              "left": {
+                "heading": "Use-Value",
+                "rows": [
+                  "The usefulness attached to the body: a coat keeps someone warm",
+                  "Made by qualitatively different concrete labors",
+                  "Becomes real only through use or consumption"
+                ]
+              },
+              "right": {
+                "heading": "Value",
+                "rows": [
+                  "A social character that appears only within exchange",
+                  "Reduced to abstract human labor once qualitative differences are stripped away",
+                  "Its magnitude is set by socially necessary labor-time"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch01-basic",
@@ -68,8 +109,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 상품을 사용가치와 가치의 통일로 분석한다. 가격이나 이윤폭은 이 분석의 뒤쪽에서 다루어질 형태이며, 여기서는 유용한 물건이 동시에 사회적 노동의 응결물로 교환된다는 점이 출발점이다.",
-                    "en": "Marx analyzes the commodity as a unity of use-value and value. Price and profit margins belong to later forms; the starting point is that a useful thing is also exchanged as a congealed form of social labor."
+                    "ko": "마르크스는 상품을 사용가치와 가치의 통일로 분석하며, 이 두 면의 구분이 상품 분석 전체의 출발점이 된다. 가격이나 이윤폭에 주목하는 오답들은 뒤에서 다룰 파생 형태를 상품 자체의 성질로 앞당겨 놓은 것이다. 여기서는 유용한 물건이 동시에 사회적 노동의 응결물로 교환된다는 점만 확인하면 된다.",
+                    "en": "Marx analyzes the commodity as a unity of use-value and value, and this distinction is the starting point of the whole analysis. Answers focused on price or profit margin mistake later, derived forms for the commodity's basic character. The key here is simply that a useful thing is also exchanged as a congealed form of social labor."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "사용가치와 가치라는 두 면의 구분이 상품 분석의 출발점임을 짚어 준다.",
+                      "가격 차이는 유통에서 나타나는 현상이지 상품 자체의 이중성은 아니다.",
+                      "자연적 성질과 개인 재능은 사용가치를 만들지만 가치의 사회적 성격을 설명하지 못한다.",
+                      "화폐 단위와 이윤폭은 뒤에서 다룰 파생 형태이지 상품 분석의 출발점이 아니다."
+                    ],
+                    "en": [
+                      "Affirms that use-value and value are the two sides where the analysis begins.",
+                      "Price differences are phenomena of circulation, not the commodity's own double character.",
+                      "Physical properties and personal skill explain use-value but not the social side of value.",
+                      "Monetary units and profit margins are derived forms discussed later, not the starting point."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 1절 상품의 두 요소",
+                      "en": "Capital I, Ch. 1 §1 The Two Factors of a Commodity"
+                    },
+                    "quote": {
+                      "ko": "물건의 유용성이 그것을 사용가치로 만든다. … 그러므로 상품들이 교환될 때마다 그 교환가치 속에서 나타나는 공통의 실체가 바로 가치다.",
+                      "en": "The utility of a thing makes it a use value. … Therefore, the common substance that manifests itself in the exchange value of commodities, whenever they are exchanged, is their value."
+                    }
                   }
                 },
                 {
@@ -96,8 +162,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "가치는 개인이 실제로 얼마나 오래 일했는가가 아니라 해당 상품을 정상 조건에서 생산하는 데 필요한 사회적 노동시간으로 규정된다. 쓸모나 개인적 수고와 가치를 곧바로 동일시하면 마르크스가 말하는 사회적 평균의 매개를 놓친다.",
-                    "en": "Value is determined by the social labor-time required under normal conditions, not by how long one individual happened to work. Equating value directly with usefulness or private effort misses this social mediation."
+                    "ko": "가치는 개인이 실제로 얼마나 오래 일했는가가 아니라 그 상품을 정상적인 조건에서 생산하는 데 사회적으로 필요한 노동시간으로 정해진다. 개별 작업장의 시간이나 쓸모의 크기를 곧바로 가치와 동일시하는 오답들은 마르크스가 강조하는 사회적 평균이라는 매개를 놓친다. 방직기가 들어오자 수직기 직조공의 생산물이 절반의 사회적 가치만 인정받게 된 사례가 이를 보여준다.",
+                    "en": "Value is determined not by how long an individual actually worked but by the socially necessary labor-time to produce the article under normal conditions. Answers that equate value directly with individual duration or usefulness miss the social averaging Marx stresses. The power-loom example shows how individual labor-time can be revalued downward by this social standard."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "사회적 평균 노동시간이 가치를 정한다는 핵심을 정확히 짚는다.",
+                      "개별 작업장이 오래 걸린다고 사회적 가치가 그만큼 커지지는 않는다.",
+                      "쓸모가 커진다고 가치가 자동으로 커진다고 보면 두 개념을 혼동하게 된다.",
+                      "생산력이 높아지면 오히려 개별 상품의 가치는 줄어드는 경향이 있다."
+                    ],
+                    "en": [
+                      "Correctly identifies that socially average labor-time regulates value.",
+                      "Longer individual labor-time does not by itself raise the commodity's social value.",
+                      "Assuming greater usefulness automatically raises value confuses use-value with value.",
+                      "Rising productivity tends to lower, not raise, the value of each individual article."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 1절 상품의 두 요소",
+                      "en": "Capital I, Ch. 1 §1 The Two Factors of a Commodity"
+                    },
+                    "quote": {
+                      "ko": "사회적으로 필요한 노동시간이란 그 시대에 통상적인 평균 숙련도와 강도로 정상적인 생산조건 아래 물품을 생산하는 데 필요한 시간이다. … 영국에 방직기가 도입되면서 일정량의 실을 천으로 짜는 데 필요한 노동은 아마 절반으로 줄었을 것이다.",
+                      "en": "The labour time socially necessary is that required to produce an article under the normal conditions of production, and with the average degree of skill and intensity prevalent at the time. … The introduction of power-looms into England probably reduced by one-half the labour required to weave a given quantity of yarn into cloth."
+                    }
                   }
                 },
                 {
@@ -124,8 +215,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "구체적 노동은 특정한 쓸모를 가진 물건을 만들고, 추상적 노동은 상품들이 가치로 비교될 수 있게 하는 공통의 사회적 성격을 가리킨다. 이를 숙련도나 장부상의 허구로 이해하면 사용가치와 가치의 이중성을 놓친다.",
-                    "en": "Concrete labor produces particular useful things, while abstract labor names the common social character through which commodities are compared as values. Treating this as a skill ranking or a bookkeeping fiction misses the commodity's double character."
+                    "ko": "구체적 노동은 재봉이나 제빵처럼 특정한 쓸모를 만드는 노동이고, 추상적 노동은 그 차이를 걷어내고 남는 인간노동 일반으로서 가치의 실체를 이룬다. 숙련과 미숙련의 등급으로 보거나 장부상의 허구로 여기는 오답들은 이 이중성을 놓치고 노동의 사회적 성격을 개인의 능력 문제로 바꾸어 버린다.",
+                    "en": "Concrete labor, like tailoring or baking, creates particular use-values, while abstract labor is what remains once those differences are stripped away, forming the substance of value. Treating this as a skill ranking or a bookkeeping fiction misses this double character and reduces a social relation to a matter of individual ability."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "구체적 노동과 추상적 노동의 이중성이 가치 비교를 가능하게 한다는 점을 짚는다.",
+                      "숙련과 미숙련의 차이는 노동강도의 문제이지 구체·추상의 구분이 아니다.",
+                      "추상적 노동은 회계상의 허구가 아니라 실제 교환에서 작동하는 사회적 관계다.",
+                      "시장가격만으로는 노동의 이중적 성격이 설명되지 않는다."
+                    ],
+                    "en": [
+                      "Points to the double character of labor that makes value comparison possible.",
+                      "Skilled versus unskilled is a matter of intensity, not the concrete/abstract distinction.",
+                      "Abstract labor is not a bookkeeping fiction but a social relation operating in real exchange.",
+                      "Market price alone cannot explain the labor's double character."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S2",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 2절 상품에 담긴 노동의 이중성",
+                      "en": "Capital I, Ch. 1 §2 The Two-fold Character of Labour"
+                    },
+                    "quote": {
+                      "ko": "그 유용성이 생산물의 사용가치로 나타나는 노동, 즉 생산물을 사용가치로 만듦으로써 스스로를 드러내는 노동을 우리는 유용노동이라고 부른다. … 그 모두에 공통된 것 말고는 아무것도 남지 않으며, 모두가 동일한 하나의 노동, 즉 추상적 인간노동으로 환원된다.",
+                      "en": "The labour, whose utility is thus represented by the value in use of its product, or which manifests itself by making its product a use value, we call useful labour. … there is nothing left but what is common to them all; all are reduced to one and the same sort of labour, human labour in the abstract."
+                    }
                   }
                 },
                 {
@@ -152,8 +268,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스에게 사적 노동은 교환 속에서 사회적으로 필요한 노동으로 인정될 때 가치로 나타난다. 오래 걸렸다는 사실만으로 가치가 커진다고 보면 상품생산의 사회적 기준을 개인적 고생으로 바꾸어 버린다.",
-                    "en": "For Marx, private labor appears as value only insofar as it is validated in exchange as socially necessary labor. If mere duration created value, the social standard of commodity production would be replaced by individual hardship."
+                    "ko": "상품의 가치는 개별 생산자가 실제로 들인 노동시간이 아니라, 그 상품을 정상 조건에서 만드는 데 사회적으로 필요한 노동시간을 통해서만 인정된다. 낡은 도구 때문에 오래 걸렸다는 사실이나 사용가치의 품질 차이, 노동강도 차이를 곧바로 가치로 연결하는 오답들은 사적 노동이 교환을 거쳐야 사회적으로 인정된다는 논점을 놓친다.",
+                    "en": "Commodity value is validated not by how long an individual producer actually worked but by the socially necessary labor-time under normal conditions. Answers linking outdated tools, quality differences, or labor intensity directly to value miss the point that private labor is validated only through exchange as social labor."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "사회적으로 필요한 노동시간만이 가치를 규정한다는 원칙을 확인해 준다.",
+                      "품질 차이는 사용가치의 문제이며 가치의 크기를 직접 정하지 않는다.",
+                      "노동강도 차이는 별도의 요인이며 여기서 다루는 사적 노동시간의 문제가 아니다.",
+                      "판매자가 부르는 가격은 가치 자체가 아니라 가치가 나타나는 형태 중 하나일 뿐이다."
+                    ],
+                    "en": [
+                      "Confirms the principle that only socially necessary labor-time regulates value.",
+                      "Quality differences belong to use-value and do not directly set the magnitude of value.",
+                      "Labor intensity is a separate factor, not the private labor-time issue at stake here.",
+                      "The asking price is a form in which value appears, not value itself."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 1절 상품의 두 요소",
+                      "en": "Capital I, Ch. 1 §1 The Two Factors of a Commodity"
+                    },
+                    "quote": {
+                      "ko": "어떤 사람은 상품의 가치가 거기 들어간 노동량으로 정해진다면, 노동자가 게으르고 서툴수록 생산에 더 많은 시간이 걸리므로 그 상품이 더 가치있게 되리라고 생각할지도 모른다. … 즉 어떤 상품을 생산하는 데 평균적으로 필요한 시간, 다시 말해 사회적으로 필요한 만큼의 시간 이상은 요구하지 않는 한에서 그러하다.",
+                      "en": "Some people might think that if the value of a commodity is determined by the quantity of labour spent on it, the more idle and unskilful the labourer, the more valuable would his commodity be, because more time would be required in its production. … that is, so far as it requires for producing a commodity, no more time than is needed on an average, no more than is socially necessary."
+                    }
                   }
                 },
                 {
@@ -180,8 +321,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품은 자본주의 사회의 부가 나타나는 가장 단순한 형태이지만, 그 안에는 사적 노동이 사회적 노동으로 인정되어야 하는 긴장이 들어 있다. 그래서 1장은 단순한 정의가 아니라 가치형태, 화폐, 자본 분석의 출발점이다.",
-                    "en": "The commodity is the simplest form in which capitalist wealth appears, but it already contains the tension that private labor must be validated as social labor. Chapter 1 is therefore not a mere definition but the starting point for value-form, money, and capital."
+                    "ko": "자본주의 사회의 부는 먼저 상품들의 거대한 집합으로 나타나며, 그 최소 단위인 상품 하나를 분석하는 것이 『자본』전체의 출발점이 된다. 상품을 단순한 첫 예시나 소비자 취향의 결과로 보는 오답들은 상품의 이중성 속에 이미 가치형태와 화폐, 자본으로 나아갈 모순이 들어 있다는 점을 놓친다.",
+                    "en": "Capitalist wealth first presents itself as a vast accumulation of commodities, so analyzing the single commodity is the starting point of the whole of Capital. Answers treating the commodity as a mere first example or as a matter of consumer taste miss that its double character already contains the contradiction leading toward value-form, money, and capital."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "상품 하나의 분석이 화폐와 자본 분석 전체의 토대라는 점을 짚는다.",
+                      "임금노동을 배제하자는 것이 아니라 상품에서 출발해 그것에 이르는 것이 논증 순서다.",
+                      "상품은 예시가 아니라 뒤이은 모든 분석이 딛고 서는 개념적 출발점이다.",
+                      "마르크스에게 가치의 근원은 소비자 취향이 아니라 사회적 노동이다."
+                    ],
+                    "en": [
+                      "Points out that analyzing the single commodity grounds the whole analysis of money and capital.",
+                      "Wage labor is not excluded; the argument moves from the commodity toward it, not around it.",
+                      "The commodity is not a mere example but the conceptual starting point for everything that follows.",
+                      "For Marx the source of value is social labor, not consumer taste."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 1절 상품의 두 요소",
+                      "en": "Capital I, Ch. 1 §1 The Two Factors of a Commodity"
+                    },
+                    "quote": {
+                      "ko": "자본주의적 생산양식이 지배하는 사회의 부는 「거대한 상품더미」로 나타나며, 그 단위는 하나의 상품이다. 그러므로 우리의 연구는 상품 분석에서 시작해야 한다.",
+                      "en": "The wealth of those societies in which the capitalist mode of production prevails, presents itself as \"an immense accumulation of commodities,\" its unit being a single commodity. Our investigation must therefore begin with the analysis of a commodity."
+                    }
                   }
                 }
               ]
@@ -218,8 +384,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "1장의 긴장은 사적으로 수행된 노동이 어떻게 사회적 노동으로 인정되는가에 있다. 이를 국가 가격통제나 개인의 애착으로 설명하면 상품교환이 만들어 내는 사회적 형식을 놓친다.",
-                    "en": "The tension in Chapter 1 is how privately performed labor is recognized as social labor. Explaining this through state price control or personal attachment misses the social form created through commodity exchange."
+                    "ko": "1장의 긴장은 독립적으로 수행된 사적 노동이 어떻게 교환을 통해서만 사회적 노동으로 인정되는가에 있다. 국가의 가격통제나 수요공급의 단순한 변동으로 설명하는 오답들은 상품교환이라는 특정한 사회적 형식이 노동을 매개한다는 점을 보지 못하고, 표면의 현상을 그 뒤의 관계로 착각한다.",
+                    "en": "The tension of Chapter 1 is how privately performed labor comes to be recognized as social labor only through exchange. Answers appealing to state price control or simple shifts of supply and demand fail to see that the specific social form of commodity exchange mediates labor, mistaking a surface phenomenon for the underlying relation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "사적 노동이 교환을 통해서만 사회적으로 인정된다는 매개를 정확히 짚는다.",
+                      "수요와 공급의 변동은 가격의 문제이며 가치관계 자체를 설명하지 않는다.",
+                      "국가의 법률이 상품 일반의 가격을 고정한다는 설명은 이 장의 논점과 무관하다.",
+                      "유용성이 늘어난다고 사회 전체의 가치총량이 그만큼 늘어나지는 않는다."
+                    ],
+                    "en": [
+                      "Correctly names the mediation whereby private labor is validated socially only through exchange.",
+                      "Supply and demand shifts are a matter of price, not the value relation itself.",
+                      "State price-fixing by law is irrelevant to the point Chapter 1 is making.",
+                      "Producing more useful things does not proportionally raise society's total value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S4",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 4절 상품물신성과 그 비밀",
+                      "en": "Capital I, Ch. 1 §4 The Fetishism of Commodities"
+                    },
+                    "quote": {
+                      "ko": "생산자들은 자신의 생산물을 교환할 때에야 비로소 서로 사회적으로 접촉하므로, 각 생산자의 노동이 지닌 특유한 사회적 성격은 교환행위 속에서만 드러난다. … 개별 노동이 사회적 노동의 일부로 관철되는 것은 오직 교환행위가 생산물들 사이에 직접 맺어 주는 관계를 통해서일 뿐이다.",
+                      "en": "Since the producers do not come into social contact with each other until they exchange their products, the specific social character of each producer's labour does not show itself except in the act of exchange. … the labour of the individual asserts itself as a part of the labour of society, only by means of the relations which the act of exchange establishes directly between the products"
+                    }
                   }
                 },
                 {
@@ -246,8 +437,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "가치는 상품의 몸에 자연물처럼 붙어 있는 성질이 아니라 다른 상품을 등가물로 세우는 관계 속에서 표현된다. 이 매개를 따라가야 단순한 교환비율에서 일반적 등가물과 화폐로 가는 운동이 보인다.",
-                    "en": "Value is not a natural property attached to the commodity's body; it is expressed by placing another commodity in the equivalent position. Following this mediation shows the movement from simple exchange ratios toward the general equivalent and money."
+                    "ko": "가치는 상품의 몸에 자연물처럼 붙어 있는 성질이 아니라, 다른 상품을 등가형태로 세우는 관계 속에서만 표현된다. 물리적 성분이나 명칭상의 우연으로 보는 오답들은 이 매개관계를 놓치며, 이 매개를 따라가야 단순한 교환비율에서 일반적 등가물과 화폐로 나아가는 운동이 드러난다.",
+                    "en": "Value is not a natural property attached to the commodity's body; it is expressed only by placing another commodity in the equivalent form. Answers treating it as a physical ingredient or a verbal accident miss this mediation, and following that mediation is what reveals the movement from a simple exchange ratio toward the general equivalent and money."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가치가 사회적 관계 속에서만 표현된다는 점이 가치형태론의 핵심임을 짚는다.",
+                      "가치는 화학적으로 검출되는 물리적 성분이 아니라 사회적 관계의 표현이다.",
+                      "가치표현은 우연한 명칭이 아니라 화폐 발생으로 이어지는 필연적 전개다.",
+                      "교환관계가 생겨도 사용가치는 사라지지 않고 가치의 담지자로 남는다."
+                    ],
+                    "en": [
+                      "Names the core of value-form theory: value appears only within a social relation.",
+                      "Value is not a physical ingredient detectable by chemistry but an expression of a social relation.",
+                      "Value-expression is not a verbal accident but a necessary development leading toward money.",
+                      "Even within an exchange relation, use-value does not vanish; it remains the bearer of value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 3절 가치형태 또는 교환가치",
+                      "en": "Capital I, Ch. 1 §3 The Form of Value or Exchange-Value"
+                    },
+                    "quote": {
+                      "ko": "따라서 가치는 상품과 상품 사이의 사회적 관계 속에서만 나타날 수 있다는 것이 당연한 귀결이다.",
+                      "en": "it follows as a matter of course, that value can only manifest itself in the social relation of commodity to commodity."
+                    }
                   }
                 },
                 {
@@ -274,8 +490,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "욕구가 없으면 물건은 사용가치가 될 수 없지만, 그것만으로 상품들이 일정한 비율로 교환되는 가치관계가 설명되지는 않는다. 마르크스의 비판은 사용가치를 지우는 것이 아니라, 사용가치와 가치를 혼동하는 설명을 넘어서려는 것이다.",
-                    "en": "Without a want, a thing is not a use-value, but that does not explain the value relation in which commodities exchange in definite proportions. Marx is not erasing use-value; he is rejecting explanations that confuse use-value with value."
+                    "ko": "욕구가 없으면 물건은 애초에 사용가치가 될 수 없지만, 그것만으로 상품들이 일정한 비율로 교환되는 가치관계까지 설명되지는 않는다. 노동시간이 욕구에 따라 늘어난다거나 개인의 욕구를 평균 내면 가치가 된다고 보는 오답들은 사용가치와 가치를 뒤섞는 오류를 반복한다.",
+                    "en": "Without a want, a thing cannot be a use-value at all, but that alone does not explain the value relation in which commodities exchange in fixed proportions. Answers claiming labor-time grows with desire or that averaging individual wants yields value repeat the confusion of use-value with value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "욕구는 사용가치를 설명하지만 가치는 사회적으로 필요한 추상적 노동으로 정해진다.",
+                      "욕구가 강해진다고 그 물건에 필요한 노동시간 자체가 늘어나는 것은 아니다.",
+                      "개인 욕구를 평균 내는 것과 사회적으로 필요한 노동시간을 재는 것은 다른 일이다.",
+                      "욕구가 전혀 없다면 사용가치 자체가 성립하지 않지만, 그 논리를 상품 여부 전체로 확대하는 것은 과도하다."
+                    ],
+                    "en": [
+                      "Want explains use-value, while value is set by socially necessary abstract labor.",
+                      "Stronger desire does not by itself increase the labor-time an article requires.",
+                      "Averaging individual wants is not the same operation as measuring socially necessary labor-time.",
+                      "Without any want use-value fails, but extending that logic to decide commodity status outright overreaches."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 1절 상품의 두 요소",
+                      "en": "Capital I, Ch. 1 §1 The Two Factors of a Commodity"
+                    },
+                    "quote": {
+                      "ko": "어떤 물건은 인간에 대한 유용성이 노동에서 비롯된 것이 아닐 때에도 사용가치일 수 있다. … 그리고 마지막으로, 유용한 대상이 아니고서는 어떤 것도 가치를 가질 수 없다. 물건이 쓸모없다면 거기 담긴 노동도 쓸모없으며, 그 노동은 노동으로 계산되지 않고 따라서 아무 가치도 만들지 못한다.",
+                      "en": "A thing can be a use value, without having value. This is the case whenever its utility to man is not due to labour. … Lastly nothing can have value, without being an object of utility. If the thing is useless, so is the labour contained in it; the labour does not count as labour, and therefore creates no value."
+                    }
                   }
                 },
                 {
@@ -302,8 +543,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품물신성은 단순한 사기나 착각이 아니라 상품교환의 실제 형태에서 생기는 외양이다. 사람들의 노동이 직접 사회적으로 조직되지 않고 물건들의 가치관계로 매개되기 때문에 사회관계가 물건의 성질처럼 보인다.",
-                    "en": "Commodity fetishism is not merely fraud or illusion; it is an appearance generated by the real form of commodity exchange. Because people's labor is socially connected through the value relations of things, social relations appear as properties of things."
+                    "ko": "상품물신성은 사기나 단순한 착각이 아니라 상품교환이라는 실제 형태에서 생겨나는 필연적 외양이다. 사람들의 노동이 직접 사회적으로 조직되지 않고 물건들의 가치관계를 통해서만 매개되기 때문에, 사람들 사이의 사회관계가 물건 자체의 성질처럼 나타난다. 광고나 판매자의 의도로 설명하는 오답들은 이 형태적 필연성을 놓친다.",
+                    "en": "Commodity fetishism is not fraud or a mere illusion but a necessary appearance generated by the actual form of commodity exchange. Because people's labor is not directly organized socially but is mediated only through the value relations of things, social relations among people appear as properties of the things themselves. Answers blaming advertising or sellers' intent miss this formal necessity."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "사회적 노동관계가 물건들의 성질처럼 보이는 형태적 필연성을 짚는다.",
+                      "광고가 만든 가짜 욕구라는 설명은 사용가치 차원의 문제이지 물신성의 원인이 아니다.",
+                      "정보가 투명해진다고 사라질 착시가 아니라 교환 형태 자체에서 나오는 외양이다.",
+                      "화폐가 등장해도 생산과 노동은 여전히 가치의 실체로 남는다."
+                    ],
+                    "en": [
+                      "Names the formal necessity by which social labor relations appear as properties of things.",
+                      "Advertising-manufactured false wants concern use-value, not the cause of fetishism.",
+                      "This is not an illusion transparency would dispel but an appearance from the exchange form itself.",
+                      "Even once money appears, production and labor remain the substance of value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S4",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 4절 상품물신성과 그 비밀",
+                      "en": "Capital I, Ch. 1 §4 The Fetishism of Commodities"
+                    },
+                    "quote": {
+                      "ko": "거기서는 사람들 사이의 일정한 사회적 관계가, 그들 눈에는 물건들 사이의 관계라는 환상적 형태를 띤다.",
+                      "en": "There it is a definite social relation between men, that assumes, in their eyes, the fantastic form of a relation between things."
+                    }
                   }
                 },
                 {
@@ -330,8 +596,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품의 가치는 홀로 나타날 수 없고 다른 상품을 통해 표현되어야 하므로 가치형태의 전개가 화폐의 필요성을 낳는다. 이 출발점을 놓치면 자본을 단순한 돈의 양이나 상인의 욕망으로 오해하게 된다.",
-                    "en": "A commodity's value cannot appear by itself; it must be expressed through another commodity, so the development of the value-form generates the need for money. Missing this starting point makes capital look like a mere quantity of money or a merchant's desire."
+                    "ko": "상품의 가치는 홀로 나타날 수 없고 다른 상품과의 관계 속에서 표현되어야 하므로, 가치형태의 전개가 일반적 등가물과 화폐의 필요성을 낳고 이후 자본의 운동을 분석할 토대가 된다. 화폐를 불필요하다고 보거나 사용가치를 가치보다 앞세우는 오답들은 이 형태 전개의 필연성을 놓치고 자본을 단순한 돈의 양이나 욕망으로 오해하게 만든다.",
+                    "en": "A commodity's value cannot appear alone; it must be expressed through relation to another commodity, so the unfolding of the value-form generates the need for a general equivalent and money, laying the ground for analyzing capital's movement. Answers claiming money is unnecessary or placing use-value above value miss this necessity and reduce capital to a mere quantity of money or a matter of desire."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "가치형태의 전개가 화폐와 자본 분석으로 이어지는 다리라는 점을 짚는다.",
+                      "화폐가 불필요하다는 결론은 가치형태의 전개 자체를 부정하는 오독이다.",
+                      "사용가치를 앞세우는 설명은 이윤 동기를 가치관계 없이 설명하려는 오류다.",
+                      "개별 판매자의 욕망만으로는 교환에서 나타나는 사회적 형식이 설명되지 않는다."
+                    ],
+                    "en": [
+                      "Identifies the value-form's unfolding as the bridge toward money and capital analysis.",
+                      "Concluding money is unnecessary misreads the necessity of the value-form's own development.",
+                      "Prioritizing use-value tries to explain profit motive without any value relation.",
+                      "Individual sellers' desires alone cannot explain the social form that emerges in exchange."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch01.htm#S3",
+                    "label": {
+                      "ko": "『자본론』 1권 1장 3절 가치형태 또는 교환가치",
+                      "en": "Capital I, Ch. 1 §3 The Form of Value or Exchange-Value"
+                    },
+                    "quote": {
+                      "ko": "그러므로 단순한 상품형태가 바로 화폐형태의 맹아다.",
+                      "en": "The simple commodity form is therefore the germ of the money form."
+                    }
                   }
                 }
               ]
@@ -374,46 +665,46 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "사용가치와 가치",
+                "title": "핵심 개념 먼저",
                 "items": [
-                  "사용가치: 사람에게 쓸모가 있는 면. 외투는 몸을 따뜻하게 해 준다.",
-                  "가치: 시장에서 다른 상품과 비교되는 사회적 노동의 면. 개인의 고생이 아니라 사회적으로 필요한 노동시간이 기준이다.",
+                  "사용가치: 사람에게 쓸모가 있는 면이다. 외투는 몸을 따뜻하게 해 준다.",
+                  "가치: 시장에서 다른 상품과 비교되는 사회적 노동의 면이다. 개인의 고생이 아니라 사회적으로 필요한 노동시간이 기준이다.",
                   "헷갈리지 말 것: 쓸모가 크다고 곧 가치가 큰 것은 아니다. 두 면을 구분해야 상품 분석이 시작된다."
                 ]
               },
               {
-                "title": "사회적으로 필요한 노동시간",
-                "items": [
-                  "사용가치: 물건이 어떤 필요를 충족하는 유용성이다.",
-                  "가치: 상품을 생산하는 데 사회적으로 필요한 노동시간으로 규정되는 크기다.",
-                  "교환가치: 가치가 다른 상품과의 교환비율로 나타나는 형태다."
-                ]
+                "title": "용어 풀이",
+                "text": "구체적 노동은 재봉이나 제빵처럼 특정한 쓸모를 만드는 노동이고, 추상적 노동은 그 차이를 걷어내고 남는 인간노동 일반을 가리킨다. 가치형태란 가치가 다른 상품과의 관계 속에서 드러나는 형식으로, 상대적 형태와 등가형태라는 두 극이 짝을 이루며 나중에는 화폐형태로까지 발전한다."
               },
               {
-                "title": "물신성으로 가는 출발점",
-                "text": "가치는 사람들 사이의 노동관계인데도 물건 자체의 성질처럼 보인다. 사적 노동이 교환을 통해서만 사회적으로 인정되기 때문에 생기는 이 외양이 상품물신성이다."
+                "title": "현대 적용",
+                "text": "온라인 중고거래에서 손으로 오래 만든 수공예품이 공장에서 짧은 시간에 만든 제품보다 언제나 비싸게 팔리지는 않는다. 구매자가 실제로 인정하는 가격은 만든 사람의 개인적 수고가 아니라 그 물건을 만드는 데 사회적으로 통상 드는 노동시간에 더 가깝게 움직인다."
+              },
+              {
+                "title": "이 장의 초점",
+                "text": "쓸모와 교환가치를 구분하고, 가치가 개인의 수고가 아니라 사회적으로 필요한 노동시간과 연결된다는 점을 잡는다."
               }
             ],
             "en": [
               {
-                "title": "Use-Value and Value",
+                "title": "Core concepts first",
                 "items": [
                   "Use-value: The useful side of a thing: a coat keeps someone warm.",
-                  "Value: The social labour side that makes commodities comparable in exchange.",
+                  "Value: The social labour side that makes commodities comparable in exchange, set by socially necessary labor-time rather than private effort.",
                   "Do not confuse them: Greater usefulness does not automatically mean greater value."
                 ]
               },
               {
-                "title": "Socially Necessary Labour-Time",
-                "items": [
-                  "Use-value: the usefulness by which a thing satisfies a need.",
-                  "Value: the magnitude regulated by socially necessary labour-time.",
-                  "Exchange-value: the form in which value appears as a ratio of exchange with another commodity."
-                ]
+                "title": "Terms explained",
+                "text": "Concrete labor, like tailoring or baking, produces a particular use-value, while abstract labor is what remains once those differences are stripped away. The value-form is the way value is expressed through relation to another commodity, with relative form and equivalent form as its two poles, later developing into the money-form."
               },
               {
-                "title": "Starting Point for Fetishism",
-                "text": "Value is a relation among people's labors, yet it appears as a property of things themselves. This appearance, which arises because private labor is socially validated only through exchange, is commodity fetishism."
+                "title": "Today's application",
+                "text": "On an online resale site, a handmade item that took hours to craft does not always sell for more than a factory item made quickly. The price buyers actually accept tracks not the maker's private effort but the labor-time it socially normally takes to produce that kind of article."
+              },
+              {
+                "title": "Chapter focus",
+                "text": "Distinguish usefulness from exchange-value, and see why value depends on socially necessary labor-time rather than private effort."
               }
             ]
           }

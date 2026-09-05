@@ -9,9 +9,9 @@ This document records the concept-summary cleanup for CommuLingo Capital chapter
   - `8742d1d Improve CommuLingo concept summaries`
   - `90dc277 Continue CommuLingo concept summary cleanup`
   - `3018f54 Finish CommuLingo concept card cleanup`
-- Push status: not pushed. `git push` failed because GitHub SSH auth returned `Permission denied (publickey)`.
+- Pushed since (the three commits are on master).
 - Validation command passes: `node scripts/validate-commulingo.js`.
-- Generic/banned concept-card patterns remaining: 0.
+- Generic/banned concept-card patterns remaining: 0 as of 2026-09-05. The 2026-06 claim of 0 was wrong: 25 leftovers survived (`연결점은` ×10 in Capital II ch10-19 q5 explanations, `분석 대상으로 삼는` ×3 prompts, `발판이다` ×4, `피해야 할 오해` ×2) because nothing checked for them. They were rewritten on 2026-09-05 and the patterns below are now enforced by `scripts/lib/commulingo-checks.js` (`banned` for substrings, `BANNED_TITLES` for card titles), which `npm test` runs.
 
 ## Completed scope
 
@@ -47,8 +47,8 @@ This document records the concept-summary cleanup for CommuLingo Capital chapter
 
 Use this if future edits touch `data/commulingo/lessons.json`:
 
-1. Run `node scripts/validate-commulingo.js`.
-2. Check for banned/generic patterns:
+1. Run `node scripts/validate-commulingo.js` (also part of `npm test`). It fails on any of the patterns below; `분석 대상`, `구분할 점`, `다음 연결` and their English forms are banned as card titles only, since they are ordinary Korean in prose.
+2. Patterns covered:
    - `피해야 할 오해`
    - `Misconception to avoid`
    - `발판이다`

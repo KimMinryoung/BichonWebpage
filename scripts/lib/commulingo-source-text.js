@@ -74,7 +74,18 @@ function quotePieces(quote) {
     return String(quote || '').split(' … ').map(function(piece) { return collapse(foldQuotes(piece)); }).filter(Boolean);
 }
 
-module.exports = { decodeEntities, foldQuotes, normalizeSiteDoc, normalizeMarxists, anchorsOf, quotePieces };
+// Verbatim, allowing for quotation marks: an author who copies a passage and
+// drops the inner quotes around “an immense accumulation of commodities” has
+// still quoted it, so both sides are compared with every quote character
+// removed. Words, punctuation and order must still match exactly.
+function loose(text) {
+    return collapse(String(text || '').replace(/["'“”‘’„‟«»]/g, ''));
+}
+function containsQuote(text, piece) {
+    return text.includes(piece) || loose(text).includes(loose(piece));
+}
+
+module.exports = { decodeEntities, foldQuotes, normalizeSiteDoc, normalizeMarxists, anchorsOf, quotePieces, loose, containsQuote };
 
 // --- marxists.org fetch cache ---------------------------------------------
 // Chapter pages are cached under temp_dev (gitignored): the text is public

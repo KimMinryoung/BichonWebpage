@@ -2,7 +2,7 @@
 
 ## Purpose
 
-CommuLingo is a chapter-by-chapter learning path for visitors who are not already comfortable with Marxist theory. The current public scope is Marx's Capital, volumes 1-3, plus Lenin's Imperialism and Lenin's The State and Revolution.
+CommuLingo is a chapter-by-chapter learning path for visitors who are not already comfortable with Marxist theory. The current public scope is Marx's Capital, volumes 1-3, Lenin's Imperialism and The State and Revolution, Marx's Wage Labour and Capital and Value, Price and Profit / Critique of the Gotha Programme (quiz courses), plus Engels's Origin of the Family (concept graph) and two decision-history courses.
 
 The service should feel like guided study, not an exam ambush. The learner should be able to read a short chapter card, get a concept brief before the quiz, answer five questions, and understand why the distinction matters.
 
@@ -13,13 +13,15 @@ The service should feel like guided study, not an exam ambush. The learner shoul
 - Capital Volume III: 52 chapters
 - Lenin, Imperialism: 10 chapters
 - Lenin, The State and Revolution: 6 chapters
+- Marx, Wage Labour and Capital: 6 chapters
+- Marx, Value, Price and Profit + Critique of the Gotha Programme: 8 chapters
 - Two lessons per chapter:
   - Basic: 5 multiple-choice questions
   - Advanced: 5 multiple-choice questions
-- Current totals:
-  - 122 chapters
-  - 244 lessons
-  - 1,220 questions
+- Current totals (2026-09-05):
+  - 136 chapters
+  - 272 lessons
+  - 1,360 questions
 
 ## Current Files
 
@@ -47,7 +49,7 @@ New course: Lenin, The State and Revolution (`data/commulingo/courses/lenin-stat
 
 - 6 chapters, 12 lessons, 60 bilingual questions following the Basic/Advanced lesson arcs of this document.
 - Per-chapter concept briefs with core concepts, term guide, modern application, and chapter focus; conceptMap nodes for the pre-quiz diagram.
-- Registered in `PUBLIC_CHAPTER_LIMITS` (data/commulingo/shards.js) and in the validator's expected counts (totals now 1,220 questions / 244 lessons).
+- Registered in `PUBLIC_CHAPTER_LIMITS` (data/commulingo/shards.js) and in the validator's expected counts (totals at the time 1,220 questions / 244 lessons).
 - `scripts/audit-commulingo-quality.js` reports zero advisory hits for the new course.
 
 ## Completed Work, May 31 2026
@@ -406,12 +408,31 @@ Then produce only the replacement questions needed:
 Only after the questions pass this rubric, update the relevant source file: `data/commulingo/lessons.json` for Capital, or a module under `data/commulingo/courses/` for newer courses.
 ```
 
+## Quality Gates (September 5 2026)
+
+Every content rule now lives in `scripts/lib/commulingo-checks.js`, shared by the validator and the Capital rewrite harness, and `npm test` runs `validate-commulingo.js` and `audit-commulingo-quality.js` (about 0.5 s together, no DB). New rules beyond the structural checks:
+
+- `length-ratio`: the correct choice may be at most 1.75x the longest distractor, ko and en separately. The quality-bar courses top out at 1.69; Capital had questions at 3.33.
+- `banned`: the legacy generic stems plus the concept-card filler (`연결점은`, `발판이다`, `피해야 할 오해`, `분석 대상으로 삼는`, `Misconception to avoid`, `stepping-stone`); `BANNED_TITLES` blocks `분석 대상 / 구분할 점 / 다음 연결 / 핵심 개념` and their English forms as card titles.
+- `concept-brief`: 2-5 sections per language, same count, each a title with text or items; a section other than 「이 장의 초점」 that repeats the summary or learning focus verbatim is filler.
+- `duplicate-prompt` (bundle-wide), `template-prompt` (`N장의 체계적 역할/의미`, meta-reading stems), `explanation-length` (ko < 60 or en < 80), `ko-em-dash`, `typo` (an exact-string list), `source-shape`, `choice-feedback-quality`.
+
+Rules the corpus does not yet satisfy everywhere are tolerated per (rule, label) in `scripts/commulingo-quality-baseline.json`. An entry that starts passing is reported as stale, so the file can only shrink: after fixing content run `node scripts/validate-commulingo.js --prune-baseline`; `--no-baseline` prints the true remaining failures. As of 2026-09-05 the baseline tolerates length-ratio 338, explanation-length 97, template-prompt 39, concept-brief 60 (30 chapters), duplicate-prompt 3, all in Capital, Imperialism and State and Revolution.
+
+`scripts/check-course-source-excerpts.js` verifies every `question.source` in the bundle: Korean quotes verbatim against the site's own documents, English quotes verbatim against cached marxists.org chapters (`--fetch` to fill the cache under `temp_dev/commulingo-rewrite/marxists/`). Capital questions cite marxists.org because the text is not on the site; the Korean quote is our own translation, never a published edition.
+
+## Capital Rewrite Harness (September 5 2026)
+
+`scripts/commulingo-rewrite/` rewrites Capital chapter by chapter with Claude through the local proxy, gates every candidate with the shared rules plus verbatim-quote, kept-question and terminology checks, and applies only reviewed chapters. See its README for the batch procedure; the applied-chapter ledger is `docs/commulingo-capital-rewrite-log.md`.
+
 ## Validation Commands
 
 Run these after content or UI changes:
 
 ```bash
-node scripts/validate-commulingo.js
+npm test                              # includes validate-commulingo.js and audit-commulingo-quality.js
+node scripts/validate-commulingo.js --no-baseline
+node scripts/check-course-source-excerpts.js
 node --check public/js/commulingo.js
 node --check routes/commulingo.js
 node --check data/commulingo/index.js

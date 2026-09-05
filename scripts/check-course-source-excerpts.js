@@ -93,7 +93,7 @@ async function main() {
                     if (!quote) { console.log(`MISSING ${where}: no ${locale} quote`); failures += 1; continue; }
                     for (const piece of text.quotePieces(quote)) {
                         checked += 1;
-                        if (!page.text.includes(piece)) {
+                        if (!text.containsQuote(page.text, piece)) {
                             console.log(`NOT VERBATIM ${where} (${href.replace(/#.*$/, '')}): ${piece.slice(0, 40)}…`);
                             failures += 1;
                         }
