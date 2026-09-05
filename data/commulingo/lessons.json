@@ -15303,6 +15303,47 @@
             "en": "Shows through simple reproduction how capitalist production repeatedly recreates the same class relation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "고립된 생산과정과 연속적 재생산",
+              "left": {
+                "heading": "고립된 한 번의 생산",
+                "rows": [
+                  "자본가가 자기 돈으로 생산수단과 노동력을 사는 것처럼 보인다.",
+                  "임금은 자본가의 선지급이고 노동자는 계약이 끝나면 자유로워 보인다.",
+                  "생산수단과 노동력의 분리는 자본주의의 우연한 출발점처럼 보인다."
+                ]
+              },
+              "right": {
+                "heading": "연속적 재생산",
+                "rows": [
+                  "임금은 노동자가 이미 생산한 가치의 일부가 화폐로 돌아온 것이다.",
+                  "노동자는 생활수단을 소비해도 다시 노동력을 팔아야 하는 조건이 재생산된다.",
+                  "생산수단과 노동력의 분리는 생산과정이 되풀이되어 만든 결과로 고정된다."
+                ]
+              }
+            },
+            "en": {
+              "title": "Isolated Production Process and Continuous Reproduction",
+              "left": {
+                "heading": "Isolated single production",
+                "rows": [
+                  "The capitalist seems to buy means of production and labour-power with his own money.",
+                  "Wages look like the capitalist’s advance, and the worker seems free once the contract ends.",
+                  "The separation of labour-power from means of production looks like an accidental starting point."
+                ]
+              },
+              "right": {
+                "heading": "Continuous reproduction",
+                "rows": [
+                  "Wages are part of the value workers have already produced returning in money form.",
+                  "Even after consuming means of subsistence, workers have the condition of selling labour-power reproduced.",
+                  "The separation of labour-power from means of production becomes a fixed result of repeated production."
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch23-basic",
@@ -15317,27 +15358,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "마르크스가 단순재생산을 분석할 때, “같은 규모의 생산이 반복된다”는 사실만으로는 충분하지 않다. 그가 더 중요하게 보려는 것은 무엇인가?",
-                    "en": "When Marx analyzes simple reproduction, it is not enough to say that production repeats on the same scale. What is he more concerned to show?"
+                    "ko": "한 공장이 같은 기계와 같은 수의 노동자로 같은 양의 실을 해마다 다시 생산한다. 생산 규모는 그대로인데, 마르크스는 이 반복에서 어떤 관계가 새로 나타난다고 보는가?",
+                    "en": "A factory produces the same quantity of yarn each year with the same machines and the same number of workers. Although the scale of production stays the same, what relation does Marx see newly emerging in this repetition?"
                   },
                   "choices": {
                     "ko": [
-                      "매 주기의 반복이 자본가와 임금노동자의 관계 자체를 다시 만들어 낸다는 점이다.",
-                      "생산 규모가 같으면 착취도 사라지고 교환만 남는다는 점이다.",
-                      "단순재생산에서는 상품이 더 이상 가치 형태를 취하지 않는다는 점이다.",
-                      "자본가는 생산을 반복하려면 대체로 축적을 포기해야 한다는 점이다."
+                      "생산수단을 가진 자본가와 노동력만 가진 임금노동자가 다시 마주 보는 관계가 만들어진다.",
+                      "임금이 자본가의 저축에서 계속 나오므로 자본가와 노동자의 관계는 그대로 고정된다.",
+                      "같은 규모로 되풀이되는 동안 자본가와 노동자는 시장에서 우연히 다시 만나 계약을 맺을 뿐이다.",
+                      "반복되는 것은 같은 양의 실과 같은 설비뿐이고, 두 계급의 관계는 생산 밖의 법과 관습이 정한다."
                     ],
                     "en": [
-                      "That each repeated cycle reproduces the relation between capitalist and wage-labourer itself.",
-                      "That if the scale of production is unchanged, exploitation disappears and only exchange remains.",
-                      "That in simple reproduction commodities no longer take the value-form.",
-                      "That a capitalist must always renounce accumulation in order to repeat production."
+                      "The relation in which the owner of means of production confronts wage-labourers who own only labour-power is created anew each year.",
+                      "Because wages continue to come from the capitalist’s savings, the relation between capitalist and worker stays fixed as it was.",
+                      "While production repeats on the same scale, capitalist and worker merely meet again in the market by accident and sign a contract.",
+                      "What repeats is only the same quantity of yarn and the same equipment, while the relation between the two classes is fixed by law and custom outside production."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "단순재생산은 단지 같은 양의 물건을 다시 만드는 과정이 아니다. 그 반복은 노동력 판매자와 생산수단 소유자의 분리를 계속 재생산한다.",
-                    "en": "Simple reproduction is not merely the remaking of the same quantity of things. Its repetition also reproduces the separation between sellers of labour-power and owners of means of production."
+                    "ko": "같은 양의 실이 다시 나오는 데서 그치지 않고, 생산이 반복될 때마다 생산수단을 독점한 쪽과 노동력만 가진 쪽의 분리가 새로 만들어진다. 처음에는 우연한 출발점처럼 보이던 이 분리가 연속적 생산의 결과로 굳어진다. 임금이 자본가의 저축에서 계속 나온다는 인상은 화폐 지급의 개입이 만든 것이며, 실제로는 노동자의 생산물이 자본의 형태로 되돌아온다. 그래서 같은 규모의 반복도 관계의 재생산을 멈추지 않는다.",
+                    "en": "The same quantity of yarn is not the whole story: each cycle remakes the split between those who own means of production and those who own only labour-power. What first looks like an accidental starting point becomes a result of continuous production. The impression that wages come out of the capitalist’s savings is created by money; the worker’s product returns as capital. Repetition on the same scale keeps reproducing the relation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 분리는 시장에서 만나는 우연이 아니라 생산 과정이 계속 만들어 내는 결과다.",
+                      "임금은 자본가의 저축이 아니라 노동자가 이미 생산한 가치의 일부가 화폐로 되돌아오는 것이다.",
+                      "두 사람이 시장에서 다시 만나는 것은 우연이 아니다. 생산과정이 한쪽에는 생산수단을, 다른 쪽에는 빈손의 노동력을 해마다 다시 만들어 놓기 때문에 그 만남이 되풀이된다.",
+                      "법과 관습은 이 관계에 형식을 줄 뿐이다. 노동자를 해마다 다시 노동시장으로 내모는 것은 자기 생산물이 자본의 형태로 손을 떠나는 생산 자체다."
+                    ],
+                    "en": [
+                      "This split is not a market accident but a result that the production process itself keeps creating.",
+                      "Wages are not a permanent transfer from the capitalist’s savings; they are part of the worker’s own product returning in money form.",
+                      "The meeting in the market is no accident: production keeps putting means of production on one side and empty-handed labour-power on the other, so the encounter recurs.",
+                      "Law and custom only give the relation its form. What drives the worker back to the labour-market each year is production itself, in which his own product leaves him as capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "하나로 연결된 전체로, 끊임없는 갱신으로 흘러가는 것으로 보면 모든 사회적 생산과정은 동시에 재생산과정이다. … 자본주의적 생산은 연속적이고 연결된 과정, 재생산과정으로 보면 상품과 잉여가치만 생산할 뿐 아니라 자본관계도 생산하고 재생산한다. 한쪽에는 자본가, 다른 한쪽에는 임금노동자를.",
+                      "en": "When viewed, therefore, as a connected whole, and as flowing on with incessant renewal, every social process of production is, at the same time, a process of reproduction. … Capitalist production, therefore, under its aspect of a continuous connected process, of a process of reproduction, produces not only commodities, not only surplus-value, but it also produces and reproduces the capitalist relation; on the one side the capitalist, on the other the wage labourer."
+                    }
                   }
                 },
                 {
@@ -15345,27 +15411,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동자가 받은 임금을 생활수단 구매에 쓰고 다시 일터로 돌아온다. 이 소비가 자본주의적 재생산에서 갖는 의미는 무엇인가?",
-                    "en": "A worker spends wages on means of subsistence and returns to work. What role does this consumption play in capitalist reproduction?"
+                    "ko": "한 노동자가 주급을 받아 식료품과 집세를 치르고 월요일에 같은 공장으로 돌아온다. 이 소비가 다음 주의 생산과 맺는 고리는 어떻게 되는가?",
+                    "en": "A worker receives weekly wages, pays for food and rent, and returns to the same factory on Monday. How does this consumption connect with the next week’s production?"
                   },
                   "choices": {
                     "ko": [
-                      "노동자의 소비는 노동력을 다시 생산하여 다음 생산주기에 팔 수 있게 만든다.",
-                      "노동자의 소비는 사적 생활 영역이므로 분석에서 제외된다.",
-                      "노동자의 소비는 잉여가치를 그 자체로 없애서 자본가의 이윤을 상쇄한다.",
-                      "노동자의 소비는 생산수단을 직접 늘리므로 이미 축적이다."
+                      "소비가 노동자의 체력과 숙련을 회복시켜 다시 팔릴 수 있는 노동력으로 되돌려 놓는다.",
+                      "소비는 공장 문을 나선 뒤의 사적 생활이므로 자본의 재생산을 다루는 분석에서는 빼 놓아도 된다.",
+                      "소비가 생활수단의 가치를 없애므로 다음 주에는 가치법칙이 적용되지 않는다.",
+                      "소비는 생산수단을 직접 보충하므로 그 자체로 축적이다."
                     ],
                     "en": [
-                      "The worker’s consumption reproduces labour-power so it can be sold again in the next cycle.",
-                      "The worker’s consumption is merely a private act unrelated to capital, so it drops out of the analysis.",
-                      "The worker’s consumption automatically abolishes surplus-value and offsets capitalist profit.",
-                      "The worker’s consumption directly increases means of production, so it is already accumulation."
+                      "Consumption restores the worker’s strength and skill, turning him back into labour-power that can be sold again.",
+                      "Consumption is private life once the worker walks out of the factory gate, so it can be left out of an analysis of capital’s reproduction.",
+                      "Because consumption destroys the value of means of subsistence, the law of value no longer applies in the next week.",
+                      "Consumption directly replaces means of production, so it is itself accumulation."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동자의 생활수단 소비는 공장 밖에서 일어나지만 자본의 재생산에 필수적이다. 그것은 노동력을 유지하고, 노동자가 다시 임금노동자로 시장에 나오게 만든다.",
-                    "en": "The worker’s consumption occurs outside the workshop, but it is essential to capital’s reproduction. It maintains labour-power and brings the worker back to the market as a wage-labourer."
+                    "ko": "임금을 생활수단으로 바꾸는 일은 노동자가 쉬는 동안 일어나지만, 자본이 다음 주에 사용할 노동력을 다시 만들어 낸다. 노동자의 근육과 신경이 회복되지 않으면 노동력 판매도, 잉여가치 생산도 중단된다. 그래서 이 소비는 순수한 사생활이 아니라 자본의 생산과 재생산에 필요한 요소다. 소비가 일어나는 장소와 그 소비가 수행하는 기능을 혼동하면 안 된다.",
+                    "en": "Spending wages on food and rent happens during rest, but it repairs the labour-power that capital will buy next week. If the worker’s muscles and nerves are not restored, the sale of labour-power and the extraction of surplus-value stop. Where consumption happens does not make it a purely private act; it is a factor in capital’s reproduction. The tempting wrong answer confuses the place of consumption with the function it performs."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "하나 더 보면, 이 소비는 기존 노동자뿐 아니라 다음 세대의 노동자 공급과도 연결된다.",
+                      "공장 밖에서 일어나도 자본이 쓸 노동력을 회복시키는 기능을 하므로 분석에서 빠지지 않는다.",
+                      "생활수단이 소비되어도 그 가치는 노동력의 가치로 보존되고 재생산되는 것이지 가치법칙이 중단되지 않는다.",
+                      "소비는 노동력이라는 상품을 재생산할 뿐 생산수단을 직접 늘리는 지출은 아니다."
+                    ],
+                    "en": [
+                      "One step further: this consumption also connects with the supply of the next generation of workers, not only with existing workers.",
+                      "Even outside the factory, it restores the labour-power that capital uses, so it does not drop out of the analysis.",
+                      "Although means of subsistence are consumed, their value is preserved and reproduced in labour-power; the law of value does not stop.",
+                      "Consumption reproduces the commodity labour-power but does not directly increase means of production."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "엄밀히 필요한 한도 안에서 노동계급의 개인적 소비는 자본이 노동력과 교환하여 준 생활수단을, 자본이 착취할 수 있는 새로운 노동력으로 되돌리는 일이다.",
+                      "en": "Within the limits of what is strictly necessary, the individual consumption of the working class is, therefore, the reconversion of the means of subsistence given by capital in exchange for labour-power, into fresh labour-power at the disposal of capital for exploitation."
+                    }
                   }
                 },
                 {
@@ -15373,27 +15464,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본가는 “내가 내 돈으로 임금을 선지급했다”고 말한다. 단순재생산을 연속 과정으로 보면 이 설명에서 무엇이 가려지는가?",
-                    "en": "The capitalist says, “I advanced wages out of my own money.” When simple reproduction is viewed as a continuous process, what does this account conceal?"
+                    "ko": "한 사업주가 「나는 내 통장에서 먼저 임금을 꺼내 지급한다」고 말한다. 같은 규모의 생산이 몇 주째 이어지고 있다면, 이 선지급처럼 보이는 돈의 실제 출처는 어디에서 찾아야 하는가?",
+                    "en": "An employer says, “I pay wages first out of my own bank account.” If production on the same scale has continued for several weeks, where should the actual source of this money that looks like an advance be sought?"
                   },
                   "choices": {
                     "ko": [
-                      "반복되는 생산 속에서 가변자본은 노동자가 이전에 생산한 가치의 일부로 계속 대체된다는 점이다.",
-                      "임금은 노동자의 필요와 아무 관계 없이 국가가 정하는 정치적 보조금이라는 점이다.",
-                      "임금은 상품교환보다 직접 강제에 가까운 지급 방식이라는 점이다.",
-                      "자본가는 임금을 지급하는 순간 더 이상 노동과정에 개입하지 않는다는 점이다."
+                      "노동자가 이미 생산한 생산물의 일부가 화폐 모습으로 바뀌어 임금으로 되돌아온 것이다.",
+                      "국가가 고용 유지를 위해 자본가에게 지급한 보조금이다.",
+                      "생산과 무관하게 자본가가 과거에 모은 지대에서 나온 것이다.",
+                      "상품 교환이 아니라 노동자를 직접 강제로 묶어 두기 위한 비용이다."
                     ],
                     "en": [
-                      "That in repeated production, variable capital is continually replaced by part of the value workers have previously produced.",
-                      "That wages are a political subsidy fixed by the state with no relation to workers’ needs.",
-                      "That wages are paid only by direct robbery, not through commodity exchange.",
-                      "That once wages are paid, the capitalist no longer intervenes in the labour-process."
+                      "Part of the product the worker has already produced is converted into money and returns as wages.",
+                      "It is a state subsidy paid to the capitalist to maintain employment.",
+                      "It comes from rent the capitalist saved in the past, independent of production.",
+                      "It is not commodity exchange but a cost for directly coercing workers into staying."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "처음에는 자본가의 선대처럼 보이는 임금도 반복 과정에서는 노동자가 생산한 가치에서 대체된다. 이 점이 보이지 않으면 임금관계가 자본가의 관대한 지출처럼 오해된다.",
-                    "en": "What first appears as the capitalist’s advance is, in the repeated process, replaced out of value produced by workers. Missing this point makes the wage relation look like the capitalist’s generous outlay."
+                    "ko": "몇 주의 흐름을 놓고 보면, 이번 주 임금은 지난주 노동자가 만들어 판매된 상품 가치의 일부다. 자본가는 화폐를 먼저 내놓는 것처럼 보이지만, 그 화폐는 노동자 자신의 생산물이 전환된 형태에 지나지 않는다. 선지급이라는 인상은 한 번의 거래만 볼 때 생긴다. 연속 과정으로 보면 가변자본은 노동자가 생산한 기금의 역사적 형태다.",
+                    "en": "Across the flow of several weeks, this week’s wages are part of the value of commodities that workers made and sold in previous weeks. The capitalist seems to put money forward first, but that money is merely the transmuted form of the worker’s own product. The impression of an advance arises only from viewing a single transaction. Seen as a continuous process, variable capital is a historical form of the fund produced by the worker."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "한 걸음 더 나아가면, 자본가의 선지급은 노동자가 만들어 낸 노동기금이 자본의 형태를 취한 것이다.",
+                      "임금은 국가 보조금이 아니라 노동자가 생산한 가치의 일부가 회수되는 방식으로 지급된다.",
+                      "임금의 원천은 과거 지대가 아니라 노동자가 이번 주에 생산한 생산물이다.",
+                      "임금은 교환의 형식을 띠며, 그 형식이 노동자의 생산물이 자본으로 되돌아오는 것을 가린다."
+                    ],
+                    "en": [
+                      "One step further: the capitalist’s advance is the worker-made labour-fund taking the form of capital.",
+                      "Wages are not a state subsidy; they are part of the value produced by the worker returning to the worker.",
+                      "The source of wages is not past rent but the product the worker produced this week.",
+                      "Wages take the form of exchange, and that form conceals the worker’s product returning as capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "임금의 모습으로 노동자에게 되돌아오는 것은 그가 계속 재생산하는 생산물의 일부다. 자본가는 물론 그에게 화폐로 지불하지만, 이 화폐는 노동자의 노동 생산물이 바뀐 형태일 뿐이다.",
+                      "en": "What flows back to the labourer in the shape of wages is a portion of the product that is continuously reproduced by him. The capitalist, it is true, pays him in money, but this money is merely the transmuted form of the product of his labour."
+                    }
                   }
                 },
                 {
@@ -15401,27 +15517,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "어떤 자본가가 한 해의 잉여가치를 모두 사치품 소비에 쓰고, 다음 해에는 같은 규모로 생산을 반복한다. 마르크스의 개념으로 보면 이 상황에서 무엇이 계속 재생산되는가?",
-                    "en": "A capitalist spends the year’s surplus-value entirely on luxury consumption and repeats production on the same scale next year. In Marx’s terms, what is still reproduced?"
+                    "ko": "한 자본가가 그해의 잉여가치 200파운드를 모두 외식과 여행에 써 버리고, 다음 해에도 같은 설비와 같은 노동자 수로 생산을 반복한다. 이때 계속 재생산되는 것은 무엇인가?",
+                    "en": "A capitalist spends the year’s surplus-value of £200 entirely on dining and travel, and next year repeats production with the same equipment and the same number of workers. What continues to be reproduced here?"
                   },
                   "choices": {
                     "ko": [
-                      "자본의 규모가 늘지 않더라도 자본가의 지휘권과 노동자의 임금의존은 다시 만들어진다.",
-                      "축적이 없으면 노동자는 그 자체로 생산수단의 공동소유자가 된다.",
-                      "잉여가치를 소비했으므로 자본주의적 관계는 다음 주기에 사라진다.",
-                      "단순재생산에서는 노동자가 생산한 총가치가 모두 임금으로 돌아간다."
+                      "잉여가치가 추가 자본이 되지 않아도 자본가의 지휘와 노동자의 임금의존은 다시 만들어진다.",
+                      "축적이 없으므로 노동자는 생산수단을 공동으로 소유할 수 있게 된다.",
+                      "축적이 이루어지지 않으므로 다음 해의 생산은 자본의 생산이 아니라 단순한 상품생산으로 바뀐다.",
+                      "노동자가 만든 총가치가 임금과 자본가의 소비로 남김없이 나뉘므로 해마다 등가교환만 되풀이된다."
                     ],
                     "en": [
-                      "Even without an increase in capital, the capitalist’s command and the worker’s wage-dependence are reproduced.",
-                      "If there is no accumulation, workers automatically become common owners of the means of production.",
-                      "Because surplus-value is consumed, capitalist relations disappear in the next cycle.",
-                      "In simple reproduction, the total value produced by workers returns to them as wages."
+                      "Even though surplus-value does not become additional capital, the capitalist’s command and the worker’s wage-dependence are recreated.",
+                      "Since there is no accumulation, workers become able to own the means of production in common.",
+                      "Since no accumulation takes place, next year’s production turns into simple commodity production instead of capitalist production.",
+                      "Because the total value workers create is divided entirely between wages and the capitalist’s consumption, only an exchange of equivalents repeats each year."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "단순재생산에서는 잉여가치가 추가 자본이 되지 않을 수 있다. 그래도 생산수단은 자본가 쪽에, 노동력 판매의 필요는 노동자 쪽에 남기 때문에 관계 자체는 반복된다.",
-                    "en": "In simple reproduction, surplus-value need not become additional capital. Yet the means of production remain on the capitalist side and the need to sell labour-power remains on the worker’s side, so the relation itself recurs."
+                    "ko": "잉여가치가 사치로 사라져도 생산수단은 자본가 편에 남고, 노동자는 여전히 노동력 판매로만 살아갈 수 있다. 따라서 생산 규모가 늘지 않아도 계급관계는 반복된다. 축적이 멈추면 자본의 생산도 아니게 된다고 보는 답은 자본을 불어나는 액수로만 여기고, 자본이 생산수단과 노동력 사이의 관계라는 점을 놓친다. 축적이 이 관계를 확대하기 전에 먼저 확인해야 할 토대가 여기 있다.",
+                    "en": "Even if surplus-value vanishes into luxury, the means of production stay on the capitalist’s side and workers can live only by selling labour-power. The class relation repeats though the scale of production does not grow. Treating a halt in accumulation as the end of capitalist production measures capital by a growing sum rather than by the relation between means of production and labour-power."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산수단의 독점과 노동력의 분리는 규모가 아니라 반복 자체에서 재생산된다.",
+                      "축적이 없다고 소유가 노동자에게 옮아가지 않는다. 생산수단은 계속 자본가 쪽에 남는다.",
+                      "잉여가치를 사치에 쓰든 자본으로 되돌리든, 임금노동자를 고용해 이루어지는 생산은 여전히 자본의 생산이다.",
+                      "교환의 겉모습은 등가로 보이지만, 자본가가 소비한 200파운드는 노동자가 대가 없이 넘긴 노동의 결과다."
+                    ],
+                    "en": [
+                      "The monopoly of means of production and the separation of labour-power are reproduced by repetition itself, not by scale.",
+                      "Without accumulation, ownership does not pass to workers; means of production remain on the capitalist side.",
+                      "Whether surplus-value is spent on luxuries or turned back into capital, production carried on by hiring wage-labourers remains capitalist production.",
+                      "The exchange looks like one of equivalents, but the £200 the capitalist consumes is labour the worker handed over without payment."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "이 수입이 자본가의 소비에 충당하는 기금으로만 쓰이고 벌어들인 만큼 주기적으로 지출된다면, 다른 조건이 같다면 단순재생산이 일어난다. … 이 재생산은 이전 규모의 생산과정을 단순 반복하는 것일 뿐이지만, 그 단순한 반복, 곧 연속성은 과정에 새로운 성격을 부여한다. 아니, 고립된 단절적 과정으로서 지니던 일부 겉보기 성격을 사라지게 한다.",
+                      "en": "If this revenue serve the capitalist only as a fund to provide for his consumption, and be spent as periodically as it is gained, then, caeteris paribus, simple reproduction will take place. … And although this reproduction is a mere repetition of the process of production on the old scale, yet this mere repetition, or continuity, gives a new character to the process, or, rather, causes the disappearance of some apparent characteristics which it possessed as an isolated discontinuous process."
+                    }
                   }
                 },
                 {
@@ -15429,27 +15570,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산 장이 축적 분석으로 넘어가기 전에 하는 역할은 무엇인가?",
-                    "en": "What role does the chapter on simple reproduction play before Marx turns to accumulation?"
+                    "ko": "1,000파운드의 자본이 매년 200파운드의 잉여가치를 낳고, 자본가가 그 200파운드를 해마다 전부 소비한다. 5년 뒤에 그가 보유한 자본의 가치는 무엇으로 이루어졌다고 말할 수 있는가?",
+                    "en": "A capital of £1,000 begets a surplus-value of £200 every year, and the capitalist consumes the entire £200 each year. After five years, what is the value of the capital he still holds made up of?"
                   },
                   "choices": {
                     "ko": [
-                      "자본관계가 한 번의 계약이 아니라 생산과 소비의 반복 속에서 재생산된다는 토대를 보여준다.",
-                      "자본주의가 반복되려면 착취가 불필요해진다는 결론을 먼저 세운다.",
-                      "축적은 오직 개인의 절약 습관에서 나온다는 전제를 확정한다.",
-                      "가격 변동만으로 계급관계 전체를 설명할 수 있음을 증명한다."
+                      "그가 5년 동안 무상으로 취한 잉여가치의 총합과 같고, 원래 투입한 가치는 소비로 사라졌다.",
+                      "원래 투입한 1,000파운드가 그대로 남아 있고 잉여가치는 이윤으로 별도 보존된다.",
+                      "설비와 기계의 물질적 내용이 그대로이므로 원래 자본 가치도 전부 보존된다.",
+                      "매년 소비한 잉여가치와 같은 금액을 은행이 보충해 주었으므로 자본은 불변한다."
                     ],
                     "en": [
-                      "It shows the basis on which the capital relation is reproduced through repeated production and consumption, not through a single contract.",
-                      "It first establishes that exploitation becomes unnecessary once capitalism repeats itself.",
-                      "It fixes the premise that accumulation comes only from individual habits of saving.",
-                      "It proves that price fluctuations alone can explain the whole class relation."
+                      "It equals the total surplus-value he has appropriated without payment over five years, and the originally advanced value has disappeared through consumption.",
+                      "The original £1,000 remains intact, and surplus-value is separately preserved as profit.",
+                      "Because the material content of equipment and machinery is unchanged, the original capital-value is wholly preserved.",
+                      "The bank replaces the same amount as the surplus-value consumed each year, so the capital remains unchanged."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 축적을 말하기 전에 단순한 반복만으로도 자본관계가 재생산됨을 보인다. 이 토대 위에서 잉여가치가 추가 자본으로 바뀔 때 관계가 확대되는 방식을 설명할 수 있다.",
-                    "en": "Before discussing accumulation, Marx shows that even mere repetition reproduces the capital relation. On that basis he can explain how the relation expands when surplus-value becomes additional capital."
+                    "ko": "자본가는 원래 자본과 잉여가치를 구분해 쓰는 듯 보여도, 5년치 소비가 처음 투입한 1,000파운드와 같아진다. 그가 아직 쥐고 있는 자본가치는 그동안 무상으로 취한 잉여가치의 합일 뿐이다. 중요한 것은 물질적 기계가 아니라 가치의 출처다. 축적이 없어도 단순재생산은 시간이 지나면 모든 자본을 무상으로 취한 잉여가치로 바꾸어 놓는다.",
+                    "en": "The capitalist seems to keep original capital and surplus-value apart, but five years of consumption equal the first £1,000 advanced. The capital-value he still holds is only the sum of the surplus-value he has taken without payment. What matters is not the physical machinery but the source of the value. Even without accumulation, simple reproduction sooner or later turns every capital into capitalised surplus-value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "잉여가치의 절반만 소비해도 같은 일이 10년 만에 일어난다. 아껴 쓴다고 원래 자본이 남는 것이 아니라 그 시점이 뒤로 밀릴 뿐이다.",
+                      "소비된 가치와 남은 가치를 나누는 경계는 외관일 뿐이며, 가치 차원에서는 원래 자본이 이미 소비되었다.",
+                      "기계의 물질적 내용은 남아도 가치의 원천은 과거 투입분이 아니라 무상으로 취한 잉여가치다.",
+                      "은행이 보충하는 것이 아니라, 노동자가 매년 생산한 잉여가치가 소비된 자본가치를 대체한다."
+                    ],
+                    "en": [
+                      "If only half the surplus-value were consumed, the same result would arrive after ten years. Thrift does not preserve the original capital; it only pushes the date back.",
+                      "The line between consumed value and remaining value is appearance only; in value terms the original capital has already been consumed.",
+                      "Even if the material machinery remains, its value source is not the past advance but surplus-value taken without payment.",
+                      "It is not the bank but the worker’s annually produced surplus-value that replaces the consumed capital-value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "1,000파운드의 자본이 매년 200파운드의 잉여가치를 낳고, 이 잉여가치를 매년 소비한다면, 5년 말에 소비된 잉여가치는 5 × 200파운드, 곧 처음 투입한 1,000파운드와 같아진다. … 이전 자본의 가치는 한 톨도 계속 존재하지 않는다.",
+                      "en": "If a capital of £1,000 beget yearly a surplus-value of £200, and if this surplus-value be consumed every year, it is clear that at the end of 5 years the surplus-value consumed will amount to 5 × £200 or the £1,000 originally advanced. … Not a single atom of the value of his old capital continues to exist."
+                    }
                   }
                 }
               ]
@@ -15467,27 +15633,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "임금계약만 보면 노동자는 자신의 노동력 값을 받고 자본가는 그 값을 지불한 것처럼 보인다. 단순재생산을 반복 과정으로 보면 이 외관에 어떤 긴장이 생기는가?",
-                    "en": "Viewed only as a wage contract, the worker seems to receive the value of labour-power and the capitalist seems to pay it. What tension appears when simple reproduction is viewed as a repeated process?"
+                    "ko": "한 노동자가 금요일에 주급을 받으며 한 주의 거래가 끝났다고 느낀다. 그런데 그 주급이 지난주에 그가 만든 물건의 판매대금에서 나온다면, 계약의 평등한 외관에 어떤 균열이 생기는가?",
+                    "en": "A worker receives weekly wages on Friday and feels that the week’s transaction is closed. But if that pay comes from the sale of goods the worker made the previous week, what crack appears in the appearance of an equal contract?"
                   },
                   "choices": {
                     "ko": [
-                      "평등한 교환의 외관 뒤에서, 노동자가 만든 가치가 다음 주기에도 노동자를 고용하고 지휘하는 힘으로 돌아온다.",
-                      "반복이 계속될수록 노동력의 가치는 곧장 0으로 떨어진다.",
-                      "계약이 반복되면 자본가는 더 이상 잉여가치를 얻지 못한다.",
-                      "임금계약은 생산과 무관하므로 반복 과정은 아무것도 바꾸지 않는다."
+                      "노동자가 생산한 가치가 자본가의 손에서 임금으로 되돌아오고, 이번 주에도 그를 고용하는 권력으로 쓰인다.",
+                      "임금이 지난주 생산물의 판매대금에서 나온다면 자본가는 아무것도 선지급하지 않은 셈이므로 교환 자체가 성립하지 않는다.",
+                      "노동자가 만든 상품이 팔리지 않으면 임금계약은 처음부터 성립하지 않는다.",
+                      "임금은 노동력이라는 상품의 값이므로 그 화폐가 어디에서 왔는지는 계약의 성격을 바꾸지 않는다."
                     ],
                     "en": [
-                      "Behind the appearance of equal exchange, value produced by workers returns as the power to hire and command them in the next cycle.",
-                      "As repetition continues, the value of labour-power must fall to zero.",
-                      "Once the contract is repeated, the capitalist can no longer obtain surplus-value.",
-                      "The wage contract is unrelated to production, so repetition changes nothing."
+                      "Value produced by the worker returns through the capitalist’s hands as wages, and this week it is again used as the power to hire the worker.",
+                      "If wages come out of the sale of last week’s product, the capitalist advanced nothing, so no exchange took place at all.",
+                      "If the commodities made by the worker are not sold, the wage contract was never valid from the start.",
+                      "Wages are the price of the commodity labour-power, so where the money came from does not change the character of the contract."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 전환점은 단일 거래가 아니라 사회적 반복을 보는 데 있다. 반복 속에서 노동자의 산물이 노동자를 다시 종속시키는 자본의 형태로 맞선다.",
-                    "en": "Marx’s shift is to look not at a single transaction but at social repetition. In that repetition, the worker’s product confronts the worker again in the form of capital."
+                    "ko": "주급은 한 번의 교환이 끝났다는 인상을 주지만, 그 화폐는 노동자가 이미 만들어 판매된 상품의 가치가 변형된 것이다. 따라서 노동자는 자기 생산물의 일부를 돌려받는 동시에, 그 생산물이 다시 자본으로 기능하여 자신을 고용하는 권력이 된다. 평등한 계약의 외관은 단일 거래만 볼 때 생기며, 반복된 흐름에서는 노동자의 산물이 그를 다시 지배하는 관계가 드러난다.",
+                    "en": "Weekly pay gives the impression that one exchange is closed, but that money is the transmuted value of commodities the worker has already produced and sold. The worker receives back part of his own product while the same product functions as capital that hires him again. The appearance of an equal contract comes from looking at a single transaction; in the repeated flow, the worker’s product confronts him as a ruling power."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "한 걸음 더 보면, 노동자가 받는 것은 자기 생산물의 일부이지만 그 형태는 자본의 화폐 명령서와 같다.",
+                      "자본가는 실제로 화폐를 먼저 내놓는다. 다만 그 화폐가 노동자 자신이 만든 가치의 변형이라는 점이 한 번의 거래만 보아서는 드러나지 않을 뿐이다.",
+                      "임금 지급은 상품 판매와 분리되지 않으며, 판매대금이 노동자의 생산물에서 나온다.",
+                      "화폐의 출처가 밝혀지면 계약의 내용도 달라 보인다. 노동자는 자기 생산물의 일부로 값을 받으면서 나머지로 이루어진 자본에 다시 고용된다."
+                    ],
+                    "en": [
+                      "One step further: what the worker receives is part of his own product, but its form is like a money order drawn by capital.",
+                      "The capitalist really does hand over money first; what a single transaction hides is that the money is the transmuted value the worker himself created.",
+                      "Wage payment is not separate from the sale of products; the sale money comes from the worker’s product.",
+                      "Once the source of the money is clear, the contract reads differently: the worker is paid out of part of his own product and hired again by the capital formed from the rest."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "노동자는 노동력을 지출하여 상품에서 노동력의 가치뿐 아니라 잉여가치도 실현한 뒤에야 비로소 임금을 받는다. … 이번 주나 올해 그의 노동력에 지불하는 것은 지난주나 지난해의 그의 노동이다.",
+                      "en": "But the labourer is not paid until after he has expended his labour-power, and realised in commodities not only its value, but surplus-value. … It is his labour of last week, or of last year, that pays for his labour-power this week or this year."
+                    }
                   }
                 },
                 {
@@ -15495,27 +15686,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "노동자의 개인적 소비는 임금을 받은 뒤의 사생활처럼 보인다. 마르크스가 그것을 자본의 재생산과 연결하는 매개는 무엇인가?",
-                    "en": "The worker’s individual consumption looks like private life after wages are paid. What mediation connects it to the reproduction of capital?"
+                    "ko": "한 노동자가 퇴근 후 저녁을 먹고 잠을 자며 가족과 주말을 보낸다. 공장 밖의 이 생활이 자본의 재생산과 이어지는 고리는 무엇인가?",
+                    "en": "After work a worker eats dinner, sleeps, and spends the weekend with family. What is the link between this life outside the factory and the reproduction of capital?"
                   },
                   "choices": {
                     "ko": [
-                      "소비가 노동력을 보존하고 가족과 세대를 통해 노동력의 공급 조건을 재생산하기 때문이다.",
-                      "소비가 노동자를 자본가로 전환시키기 때문이다.",
-                      "소비가 상품의 가치를 없애므로 다음 생산에는 가치법칙이 적용되지 않기 때문이다.",
-                      "소비가 늘면 자본가는 더 이상 생산수단을 소유할 필요가 없기 때문이다."
+                      "이 소비가 기존 노동자의 체력을 회복하고 가족을 통해 다음 세대 노동자를 길러, 자본이 쓸 노동력을 계속 공급한다.",
+                      "이 생활은 오로지 노동자 자신의 만족을 위한 것이므로 자본의 재생산에서 제외된다.",
+                      "이 소비가 생산수단의 가치를 창조하여 다음 생산에 필요한 기계를 직접 보충한다.",
+                      "노동력의 공급은 인구의 자연적 증가가 정하므로 노동자의 소비는 자본의 재생산과 별개의 사실이다."
                     ],
                     "en": [
-                      "Because consumption preserves labour-power and reproduces the conditions of its supply through households and generations.",
-                      "Because consumption turns workers into capitalists.",
-                      "Because consumption abolishes the value of commodities, so the law of value no longer applies to the next production cycle.",
-                      "Because if consumption rises, capitalists no longer need to own means of production."
+                      "This consumption restores existing workers’ strength and raises the next generation through families, so it keeps supplying the labour-power capital uses.",
+                      "This life serves only the worker’s own satisfaction, so it is excluded from the reproduction of capital.",
+                      "This consumption creates the value of means of production and directly replaces the machines needed for the next production cycle.",
+                      "The supply of labour-power is settled by natural population growth, so the worker’s consumption is a fact separate from the reproduction of capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동자의 소비는 노동력을 다시 사용할 수 있게 만들고 장기적으로는 노동계급의 재생산과 이어진다. 그래서 그것은 자본 바깥의 순수한 사적 영역이 아니다.",
-                    "en": "The worker’s consumption makes labour-power usable again and, over time, connects to the reproduction of the working class. It is therefore not a purely private sphere outside capital."
+                    "ko": "저녁을 먹고 쉬는 일은 노동자 개인의 삶처럼 보이지만, 그 소비는 노동자의 근육과 신경을 회복시켜 다음 날 팔릴 노동력을 다시 만든다. 가족 단위의 생활은 장기적으로 새로운 세대의 노동자까지 공급한다. 자본가는 이 과정을 노동자의 자기보존 본능에 맡길 수 있을 뿐, 그 결과는 자본의 재생산에 필수적인 조건이다. 소비의 장소와 재생산 기능을 분리해 순수한 사적 영역으로 오해해서는 안 된다.",
+                    "en": "Eating and resting look like the worker’s private life, but that consumption restores his muscles and nerves and remakes labour-power that can be sold the next day. Household life supplies new generations of workers over the longer term. The capitalist can leave this to the worker’s instincts of self-preservation and propagation, yet its result is a necessary condition of capital’s reproduction. The place of consumption does not make it private."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 매개는 자본이 노동력이라는 특수한 상품을 시장에서 계속 발견할 수 있게 하는 사회적 조건이다.",
+                      "노동자의 만족이 목적이어도, 그 소비의 결과는 자본이 다시 쓸 노동력의 회복과 공급이다.",
+                      "소비는 노동력을 회복시키는 것이지, 기계와 같은 생산수단을 직접 만들어 내지는 않는다.",
+                      "인구가 늘어도 생산수단을 갖지 못한 사람이 노동력을 팔러 나와야 자본이 쓸 노동력이 된다. 그 조건을 날마다 회복시키는 것이 이 소비다."
+                    ],
+                    "en": [
+                      "This mediation is the social condition that lets capital keep finding the peculiar commodity labour-power in the market.",
+                      "Even if the worker’s satisfaction is the aim, the result is the recovery and supply of labour-power for capital to use again.",
+                      "Consumption restores labour-power; it does not directly create means of production such as machines.",
+                      "A growing population becomes labour-power for capital only when people without means of production come to sell it, and this consumption is what restores that condition day by day."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "노동계급의 유지와 재생산은 자본의 재생산에 필요한 조건이며 언제나 그래야 한다. 그러나 자본가는 그 완수를 노동자의 자기보존과 출산 본능에 안전하게 맡겨 둘 수 있다.",
+                      "en": "The maintenance and reproduction of the working class is, and must ever be, a necessary condition to the reproduction of capital. But the capitalist may safely leave its fulfilment to the labourer’s instincts of self-preservation and of propagation."
+                    }
                   }
                 },
                 {
@@ -15523,27 +15739,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "“자본가가 절약해서 모은 기금이 노동자를 먹여 살린다”는 설명이 단순재생산 분석에서 부족한 이유는 무엇인가?",
-                    "en": "Why is the claim “the capitalist’s saved fund maintains the workers” inadequate in Marx’s analysis of simple reproduction?"
+                    "ko": "어떤 경제학자는 공장주가 미리 저축해 둔 노동기금이 노동자를 부양한다고 말한다. 마르크스가 이 설명을 부족하다고 보는 이유는 어디에 있는가?",
+                    "en": "An economist says the factory owner’s previously saved labour-fund maintains the workers. Where does Marx locate the weakness of this account?"
                   },
                   "choices": {
                     "ko": [
-                      "그 설명은 반복되는 생산에서 임금기금 자체가 노동자가 생산한 가치로 계속 재구성된다는 점을 지운다.",
-                      "그 설명은 절약이 대체로 임금을 낮춘다는 심리 법칙을 증명하지 못하기 때문이다.",
-                      "그 설명은 모든 자본가가 사치품을 소비한다는 사실만 강조하기 때문이다.",
-                      "그 설명은 국가 예산이 자본가의 임금 지급을 대신한다는 점을 빠뜨리기 때문이다."
+                      "노동기금은 자본가의 저축과 무관하게 노동자의 생산물에서 계속 회복되며, 임금은 그 기금의 역사적 형태일 뿐이다.",
+                      "노동기금은 국가가 세금으로 조성해 자본가에게 빌려준 것이며, 공장주는 그 이자를 받지 않는다.",
+                      "노동기금은 노동자의 소비가 아니면 존재할 수 없으므로 모든 저축은 사라진다.",
+                      "노동기금은 고정자본의 감가상각을 임금으로 전환한 것이며, 잉여가치와 무관하다."
                     ],
                     "en": [
-                      "Because it erases that, in repeated production, the wage fund itself is continually reconstituted by value produced by workers.",
-                      "Because it fails to prove a psychological law that saving always lowers wages.",
-                      "Because it merely emphasizes that all capitalists consume luxuries.",
-                      "Because it omits the fact that the state budget pays wages in place of capitalists."
+                      "The labour-fund is continually restored from the worker’s product regardless of the capitalist’s savings, and wages are only a historical form of that fund.",
+                      "The labour-fund is raised by the state through taxes and lent to the capitalist, who receives no interest on it.",
+                      "Without the worker’s consumption the labour-fund cannot exist, so all saving disappears.",
+                      "The labour-fund is the depreciation of fixed capital converted into wages, and it has nothing to do with surplus-value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 임금 지급의 외관을 연속 과정 속에서 뒤집어 본다. 자본가의 기금처럼 보이는 것은 노동자가 생산한 가치의 일부가 자본의 형태로 되돌아온 것이다.",
-                    "en": "Marx reverses the appearance of wage payment by placing it in the continuous process. What looks like the capitalist’s fund is part of the value produced by workers returning in the form of capital."
+                    "ko": "마르크스는 공장주의 저축이 노동자를 부양한다는 주장을 연속 생산 속에 놓고 뒤집는다. 노동자는 자신이 생산한 생산물의 일부를 임금으로 돌려받을 뿐이며, 그 기금은 어떤 사회에서도 노동자 스스로 만들어야 하는 노동기금이다. 자본주의에서는 이 기금이 단지 자본가가 선지급하는 자본의 형태로 나타난다. 저축처럼 보이는 외관은 화폐 지급의 개입 때문에 생긴다.",
+                    "en": "Marx reverses the claim that the factory owner’s saving maintains workers by placing it inside continuous production. Workers merely receive back part of their own product as wages, and that fund is a labour-fund they must produce themselves under any system of social production. Under capitalism this fund appears only in the form of capital advanced by the capitalist. The appearance of saving arises because money intervenes in the payment."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "핵심은 노동기금이 자본가의 과거 지출이 아니라 노동자의 현재 생산물에서 계속 재구성된다는 점이다.",
+                      "노동기금은 국가 대출이 아니라 노동자가 생산한 가치의 일부가 임금 형태로 되돌아온 것이다.",
+                      "노동자의 소비가 노동기금을 없애는 것이 아니라 노동력을 재생산하여 기금을 다시 만들 조건을 준다.",
+                      "감가상각과 노동기금은 다른 범주이며, 전자는 불변자본의 이전이고 후자는 노동자 생산물의 일부다."
+                    ],
+                    "en": [
+                      "The point is that the labour-fund is not the capitalist’s past outlay but is continually reconstituted from the worker’s present product.",
+                      "The labour-fund is not a state loan; part of the value produced by workers returns in the form of wages.",
+                      "Workers’ consumption does not destroy the labour-fund; it reproduces labour-power and prepares the conditions for remaking the fund.",
+                      "Depreciation and labour-fund are different categories: the former is a transfer of constant capital, the latter part of the worker’s product."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "가변자본은 따라서 노동자가 자신과 가족의 유지에 필요로 하는 생활수단 기금, 곧 노동기금의 특수한 역사적 현상형태일 뿐이다. 이 기금은 사회적 생산의 체계가 무엇이든 노동자가 스스로 생산하고 재생산해야 한다.",
+                      "en": "Variable capital is therefore only a particular historical form of appearance of the fund for providing the necessaries of life, or the labour-fund which the labourer requires for the maintenance of himself and family, and which, whatever be the system of social production, he must himself produce and reproduce."
+                    }
                   }
                 },
                 {
@@ -15551,27 +15792,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "한 산업에서 임금이 상대적으로 높고 고용도 안정적이지만, 노동자는 생산수단을 소유하지 못해 계속 노동력을 팔아야 한다. 단순재생산의 관점에서 이 사례가 보여주는 것은 무엇인가?",
-                    "en": "In one industry wages are relatively high and employment is stable, but workers own no means of production and must keep selling labour-power. What does this show from the standpoint of simple reproduction?"
+                    "ko": "한 IT 회사가 높은 연봉과 안정된 고용을 제공하지만, 노동자는 서버와 사무실을 소유하지 못하고 계약 갱신으로만 일한다. 이 사례가 보여 주는 것은 무엇인가?",
+                    "en": "An IT company offers high salaries and stable employment, but workers own no servers or offices and work only through renewed contracts. What does this case show?"
                   },
                   "choices": {
                     "ko": [
-                      "더 나은 임금조건도 생산수단으로부터의 분리와 임금의존을 자동으로 폐지하지는 않는다.",
-                      "임금이 높으면 노동력 판매는 더 이상 강제가 아니라 완전히 사라진다.",
-                      "안정적 고용은 자본가와 노동자가 같은 계급이 되었음을 뜻한다.",
-                      "착취는 저임금에서만 존재하므로 이 산업에는 자본관계가 없다."
+                      "높은 임금도 생산수단에서 분리된 조건을 없애지 않으며, 노동자는 노동력을 팔아야 하는 종속을 반복한다.",
+                      "임금이 높으면 노동력 판매는 더 이상 강제가 아니고 노동자는 자본가와 같은 소유자가 된다.",
+                      "고용이 안정되면 노동자와 자본가는 같은 계급이 되어 생산수단을 나누어 가진다.",
+                      "이 산업에서는 잉여가치가 발생하지 않으므로 자본관계가 성립하지 않는다."
                     ],
                     "en": [
-                      "Better wage conditions do not automatically abolish separation from the means of production and wage-dependence.",
-                      "If wages are high, the sale of labour-power is no longer compelled and disappears entirely.",
-                      "Stable employment means capitalist and worker have become the same class.",
-                      "Exploitation exists only with low wages, so there is no capital relation in this industry."
+                      "High wages do not abolish the separation from the means of production, and workers repeat their dependence on selling labour-power.",
+                      "If wages are high, selling labour-power is no longer compelled, and workers become owners equal to capitalists.",
+                      "Stable employment makes workers and capitalists the same class, sharing the means of production.",
+                      "In this industry no surplus-value arises, so the capital relation does not exist."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "단순재생산의 핵심은 빈곤의 정도만이 아니라 관계의 반복이다. 임금이 높아도 생산수단이 자본의 편에 독점되어 있으면 노동자는 다시 노동력을 팔아야 한다.",
-                    "en": "The core of simple reproduction is not only the degree of poverty but the repetition of a relation. Even with higher wages, if the means of production are monopolized by capital, workers must sell labour-power again."
+                    "ko": "연봉 수준이 아니라 생산수단의 소유 관계가 문제다. 노동자가 서버와 사무실을 소유하지 못하면 아무리 조건이 좋아도 계약이 끝날 때 다시 노동력을 팔아야 한다. 높은 임금은 노동력의 가격 수준에 관한 것이지, 생산수단에서 분리된 노동자의 위치를 바꾸지 않는다. 단순재생산은 임금이 오르내려도 이 분리와 그에 따른 종속이 계속 만들어지는 과정을 보여 준다.",
+                    "en": "The issue is not the salary level but the ownership of the means of production. If workers own no servers or offices, they must sell labour-power again when the contract ends, however good the conditions are. High wages concern the price of labour-power; they leave the worker separated from the means of production. Simple reproduction keeps producing that separation whether wages rise or fall."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "임금 조건이 좋아도 노동자는 여전히 생산수단을 가지지 못하므로 계약 갱신을 통해 다시 자본에 묶인다.",
+                      "임금이 높으면 구매력이 늘어날 뿐, 생산수단 소유권이 노동자에게 넘어가지는 않는다.",
+                      "고용 안정은 계급 이동이 아니라 노동력 수요의 안정일 뿐이다.",
+                      "잉여가치는 저임금에서만 생기는 것이 아니라 노동자가 자신의 노동력 가치 이상을 생산하는 모든 자본관계에서 생긴다."
+                    ],
+                    "en": [
+                      "Even with good wage conditions, workers still own no means of production and remain tied to capital through contract renewal.",
+                      "Higher wages increase purchasing power, but they do not transfer ownership of means of production to workers.",
+                      "Employment stability is stability of demand for labour-power, not class mobility.",
+                      "Surplus-value is not limited to low wages; it arises wherever workers produce more than the value of their labour-power."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "실제로 노동자는 자본에 자신을 팔기 전에 이미 자본에 속해 있다. 그의 경제적 예속은 자신을 주기적으로 파는 일, 고용주를 바꾸는 일, 노동력의 시장가격 변동에 의해 생겨나고 동시에 가려진다.",
+                      "en": "In reality, the labourer belongs to capital before he has sold himself to capital. His economic bondage is both brought about and concealed by the periodic sale of himself, by his change of masters, and by the oscillations in the market-price of labour-power."
+                    }
                   }
                 },
                 {
@@ -15579,27 +15845,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "단순재생산 분석은 다음 장의 축적 분석과 어떻게 이어지는가?",
-                    "en": "How does the analysis of simple reproduction lead into the following analysis of accumulation?"
+                    "ko": "잉여가치 200파운드를 자본가가 사치에 쓰지 않고 새 기계와 노동자를 더 사는 데 돌린다면, 단순재생산이 해마다 되풀이하던 노동자와 생산수단의 분리는 어떻게 되는가?",
+                    "en": "If a capitalist spends the £200 of surplus-value not on luxuries but on new machines and additional workers, what happens to the separation between workers and the means of production that simple reproduction repeated each year?"
                   },
                   "choices": {
                     "ko": [
-                      "단순재생산이 자본관계의 반복을 보인 뒤, 축적은 잉여가치가 추가 자본이 되어 그 관계를 확대하는 과정을 보여준다.",
-                      "축적은 노동력 구매보다 가격 상승을 통해 진행된다.",
-                      "단순재생산은 축적이 불가능함을 증명하므로 다음 장은 앞 장을 철회한다.",
-                      "단순재생산과 축적은 서로 무관하며 하나는 소비론, 다른 하나는 화폐론이다."
+                      "더 큰 규모의 생산수단과 더 많은 노동력 구매로 이어져 분리와 종속이 확대된 형태로 재생산된다.",
+                      "추가 자본이 노동자에게 분배되어 분리가 점차 해소된다.",
+                      "추가 자본은 생산수단을 늘리는 데만 쓰이므로 임금노동자의 수는 그대로이고 분리도 더 넓어지지 않는다.",
+                      "분리는 이미 완성되어 있으므로 축적은 생산 규모만 키우고 관계에는 아무 변화도 남기지 않는다."
                     ],
                     "en": [
-                      "After simple reproduction shows the repetition of the capital relation, accumulation shows surplus-value becoming additional capital and expanding that relation.",
-                      "Unlike simple reproduction, accumulation proceeds purely through price increases without buying labour-power.",
-                      "Simple reproduction proves accumulation impossible, so the next chapter withdraws the previous argument.",
-                      "Simple reproduction and accumulation are unrelated: one is a theory of consumption, the other a theory of money."
+                      "It leads to the purchase of more means of production and more labour-power, so the separation and dependence are reproduced on an expanded scale.",
+                      "Additional capital is distributed to workers, so the separation gradually dissolves.",
+                      "Additional capital is laid out only on more means of production, so the number of wage-labourers stays the same and the separation does not widen.",
+                      "The separation is already complete, so accumulation only enlarges the scale of production and leaves the relation as it was."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "두 장은 단절되어 있지 않다. 먼저 관계가 반복되는 방식을 보인 다음, 잉여가치가 다시 자본으로 전환될 때 그 반복이 확대재생산으로 바뀌는 과정을 분석한다.",
-                    "en": "The two chapters are not separate. Marx first shows how the relation repeats, then analyzes how that repetition becomes expanded reproduction when surplus-value is converted back into capital."
+                    "ko": "단순재생산이 분리를 되풀이한다면, 축적은 그 되풀이를 더 큰 규모로 수행한다. 200파운드는 추가 생산수단과 추가 노동력을 사는 데 나뉘어 쓰이므로 한쪽에는 더 많은 자본이, 다른 쪽에는 더 많은 임금노동자가 생긴다. 추가 자본이 기계에만 들어간다고 보는 답은 그 기계를 움직일 노동력도 함께 사야 한다는 점을 잊는다. 축적은 이 분리를 메우는 운동이 아니라 해마다 더 넓게 새로 만드는 운동이다.",
+                    "en": "If simple reproduction repeats the separation, accumulation carries out that repetition on a larger scale. The £200 is split between additional means of production and additional labour-power, so more capital appears on one side and more wage-labourers on the other. Thinking that the addition goes into machines alone forgets that someone must be hired to work them. Accumulation widens this separation rather than closing it."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "축적은 분리를 완화하는 것이 아니라, 자본관계를 더 넓은 규모로 다시 만드는 운동이다.",
+                      "추가 자본은 노동자에게 분배되지 않고 생산수단과 노동력의 구매에 투입된다.",
+                      "생산수단만 늘려서는 그것을 움직일 사람이 없다. 추가 자본의 일부는 노동력을 사는 데 쓰이고, 그만큼 임금노동자가 더 만들어진다.",
+                      "규모가 커지면 관계도 함께 커진다. 한쪽에 생산수단이 더 쌓일수록 다른 쪽에서 노동력을 팔아야 하는 사람의 수도 늘어난다."
+                    ],
+                    "en": [
+                      "Accumulation does not ease the separation; it is the movement that remakes the capital relation on a wider scale.",
+                      "Additional capital is not distributed to workers; it is laid out on means of production and labour-power.",
+                      "More means of production would stand idle without people to work them; part of the additional capital buys labour-power, and that makes more wage-labourers.",
+                      "Scale and relation grow together: the more means of production pile up on one side, the more people on the other side must sell labour-power."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch23.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 23장 단순재생산",
+                      "en": "Capital I, Ch. 23 Simple Reproduction"
+                    },
+                    "quote": {
+                      "ko": "노동과 그 생산물의 분리, 주관적 노동력과 객관적 노동조건의 분리는 따라서 자본주의적 생산의 실제 토대이자 출발점이었다. 그러나 처음에는 다만 출발점이었던 것이 생산과정의 단순한 연속, 단순재생산에 의해 끊임없이 새로워지고 영속화되는 독특한 결과가 된다.",
+                      "en": "The separation of labour from its product, of subjective labour-power from the objective conditions of labour, was therefore the real foundation in fact, and the starting-point of capitalist production. But that which at first was but a starting-point, becomes, by the mere continuity of the process, by simple reproduction, the peculiar result, constantly renewed and perpetuated, of capitalist production."
+                    }
                   }
                 }
               ]
@@ -15642,7 +15933,7 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "같은 규모의 반복",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "단순재생산: 축적 없이 같은 규모의 생산이 반복되는 경우다. 하지만 단순 반복만으로도 계급관계는 다시 만들어진다.",
                   "노동자 재생산: 노동자는 임금을 받아 생활하지만, 그 과정은 다시 노동력을 팔아야 하는 조건을 재생산한다.",
@@ -15650,37 +15941,37 @@
                 ]
               },
               {
-                "title": "노동자의 소비",
-                "items": [
-                  "재생산은 생산이 한 번 끝나는 것이 아니라 같은 사회관계가 반복되는 과정이다.",
-                  "단순재생산은 잉여가치가 축적되지 않고 소비되어 같은 규모로 반복되는 경우다.",
-                  "노동자는 임금을 받아 생활하지만, 그 과정은 다시 노동력을 팔 수밖에 없는 조건도 재생산한다."
-                ]
+                "title": "용어 풀이",
+                "text": "노동기금은 노동자가 자신과 가족을 유지하는 데 필요한 생활수단의 기금이다. 자본주의에서는 이 기금이 자본가가 임금으로 선지급한 가변자본처럼 보이지만, 실제로는 노동자가 생산한 생산물의 일부가 화폐 형태로 되돌아온 것이다. 개인적 소비는 공장 밖의 사생활처럼 보여도 노동력을 회복시키고 다음 세대의 노동자까지 공급하는 기능을 한다."
               },
               {
-                "title": "계급관계의 재생산",
+                "title": "현대 적용",
+                "text": "월급을 받아 식비와 주거비를 낸 뒤 다시 일자리를 찾는 흐름은 노동력 판매의 조건을 되풀이한다. 정규직과 높은 연봉도 생산수단 소유에서 배제된 노동자가 계약 갱신으로 일하는 한 자본관계의 재생산을 멈추지 않는다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "재생산은 물건을 다시 만드는 일만이 아니라 자본가와 임금노동자의 관계를 반복해서 유지하는 과정이다."
               }
             ],
             "en": [
               {
-                "title": "Repeated Same Scale",
+                "title": "Core concepts first",
                 "items": [
                   "Simple reproduction: Production repeats on the same scale without accumulation. Yet even simple repetition reproduces class relations.",
-                  "Reproduction of workers: Workers live from wages, but this process reproduces the condition that they must sell labor-power again.",
-                  "Reproduction of capital relation: Capitalists continue to own means of production and workers continue to sell labor-power. Reproduction repeats relations, not only things."
+                  "Reproduction of workers: Workers live from wages, but this process reproduces the condition that they must sell labour-power again.",
+                  "Reproduction of capital relation: Capitalists continue to own means of production and workers continue to sell labour-power. Reproduction repeats relations, not only things."
                 ]
               },
               {
-                "title": "Workers Consumption",
-                "items": [
-                  "Reproduction means production repeating the same social relations, not just producing once.",
-                  "Simple reproduction repeats on the same scale because surplus-value is consumed rather than accumulated.",
-                  "Workers reproduce themselves through wages, but also reproduce the condition of having to sell labour-power again."
-                ]
+                "title": "Terms explained",
+                "text": "The labour-fund is the fund of means of subsistence workers need to maintain themselves and their families. Under capitalism it seems to be variable capital advanced by the capitalist as wages, but it is actually part of the worker’s product returning in money form. Individual consumption looks like private life outside the factory, yet it restores labour-power and supplies the next generation of workers."
               },
               {
-                "title": "Reproduction of Class Relations",
+                "title": "Today's application",
+                "text": "Receiving a monthly salary, paying for food and housing, and then seeking work again repeats the condition of selling labour-power. Even regular employment and a high salary do not stop the reproduction of the capital relation as long as workers excluded from owning means of production work through renewed contracts."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "See reproduction as maintaining the capital-wage labor relation, not only as replacing things."
               }
             ]
@@ -16891,6 +17182,59 @@
             "en": "Treats the English history in which peasants were driven from the land and forced toward wage labor."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+          "diagram": {
+            "kind": "flow",
+            "ko": {
+              "title": "토지 수탈에서 노동시장으로",
+              "steps": [
+                {
+                  "label": "공유지와 자영지에 기반한 생계",
+                  "note": "농민이 가축, 땔감, 작물을 직접 얻는다"
+                },
+                {
+                  "label": "양모 가격 상승과 수탈",
+                  "note": "인클로저와 교회·국가 토지 약탈이 겹친다"
+                },
+                {
+                  "label": "생계수단에서 분리",
+                  "note": "토지와 공동 이용권을 잃는다"
+                },
+                {
+                  "label": "노동력 판매의 압박",
+                  "note": "생활수단을 시장에서 사야 한다"
+                },
+                {
+                  "label": "도시 산업의 노동력 공급",
+                  "note": "쫓겨난 사람들이 잠재적 임금노동자가 된다"
+                }
+              ]
+            },
+            "en": {
+              "title": "From Land Expropriation to the Labour Market",
+              "steps": [
+                {
+                  "label": "Subsistence on commons and freeholds",
+                  "note": "Peasants directly obtain animals, wood, and crops"
+                },
+                {
+                  "label": "Wool boom and expropriation",
+                  "note": "Enclosures combine with robbery of church and state land"
+                },
+                {
+                  "label": "Separation from means of subsistence",
+                  "note": "Land and common rights are lost"
+                },
+                {
+                  "label": "Pressure to sell labour-power",
+                  "note": "Means of life must be bought on the market"
+                },
+                {
+                  "label": "Labour supply for urban industry",
+                  "note": "The displaced become potential wage-labourers"
+                }
+              ]
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch27-basic",
@@ -16905,27 +17249,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "27장에서 농촌 인구의 토지로부터의 수탈은 왜 중심 사례가 되는가?",
-                    "en": "Why does the expropriation of the agricultural population from the land become the central case in Chapter 27?"
+                    "ko": "15세기 말 영국의 한 농민이 자기 경작지와 마을 공유지 이용권을 함께 잃었다. 마르크스가 「자유로운 노동자」라고 부를 때 생기는 두 가지 자유는 어떤 짝인가?",
+                    "en": "In late fifteenth-century England, a peasant loses both his plot and his right to use the village commons. When Marx calls such a person a ‘free worker,’ what pair of freedoms arises?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 토지와 공유지에서 분리될 때, 임금노동자가 될 수밖에 없는 대중과 자본주의적 토지소유의 조건이 함께 만들어지기 때문이다.",
-                      "농민이 토지를 더 많이 소유할수록 임금노동자가 더 빨리 형성되기 때문이다.",
-                      "농촌 수탈은 도시 공업과 아무 관계가 없는 지방 행정 문제이기 때문이다.",
-                      "마르크스는 농업에서는 계급관계가 존재하지 않는다고 보기 때문이다."
+                      "인격적 예속에서 벗어난 자유와 생계수단을 잃은 자유가 함께 나타난다.",
+                      "토지를 사고팔 수 있는 계약의 자유와 선거에 참여할 정치적 자유만 나타난다.",
+                      "길드에 가입할 수 있는 자유와 도시 시민권을 상속할 자유가 동시에 강해진다.",
+                      "농노보다 높은 봉건적 신분과 영주에 대한 군역 면제만이 새로 생긴다."
                     ],
                     "en": [
-                      "Because when peasants are separated from land and commons, a mass compelled toward wage-labour and the conditions of capitalist landed property are produced together.",
-                      "Because the more land peasants own, the faster wage-labourers are formed.",
-                      "Because rural expropriation is a local administrative issue unrelated to urban industry.",
-                      "Because Marx thinks class relations do not exist in agriculture."
+                      "Freedom from personal bondage and freedom from means of subsistence appear together.",
+                      "Only the contractual freedom to buy and sell land and the political freedom to vote appear.",
+                      "The freedom to enter a guild and to inherit urban citizenship are strengthened together.",
+                      "Only a feudal rank above serfdom and exemption from military service to the lord appear."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "토지 수탈은 단지 농촌 내부의 사건이 아니다. 그것은 노동력 시장을 만들고 토지를 자본주의적 수익의 대상으로 재편하는 과정이다.",
-                    "en": "Land expropriation is not merely a rural event. It creates a labour market and reshapes land as an object of capitalist revenue."
+                    "ko": "마르크스가 말하는 자유로운 노동자는 예속에서 풀려나는 자유만으로 성립하지 않는다. 그 사람이 자급하던 토지와 공유지에서 분리될 때, 생활수단을 스스로 마련할 길이 사라지고 노동력을 시장에 내놓아야 하는 또 하나의 자유가 생긴다. 두 계기를 따로 떼어 놓으면 인격적 해방만 눈에 들어오지만, 도시 산업에 노동력 공급을 만들어 준 것은 두 번째 자유다.",
+                    "en": "Marx’s free worker does not emerge from emancipation alone. When the peasant is severed from the land and commons through which he supplied himself, the means of self-provision disappear and another freedom appears: he must bring his labour-power to market. Separate the two moments and only personal liberation is visible, yet it was the second freedom that supplied town industry with labour-power."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 두 자유는 동시에 나타나지만, 두 번째 자유가 없다면 임금노동자는 생기지 않는다는 점을 놓치기 쉽다.",
+                      "토지 거래와 선거권을 자유로운 노동자의 조건과 섞었다. 마르크스는 생계수단과의 분리를 문제 삼는다.",
+                      "길드 가입이나 시민권 상속은 도시 특권의 문제지, 쫓겨난 농민이 겪는 조건이 아니다.",
+                      "신분 상승이나 군역 면제를 봉건적 보상으로 상상했지만, 실제로는 봉건적 예속이 해체되는 동시에 생계 기반도 사라진다."
+                    ],
+                    "en": [
+                      "The two freedoms appear together, but it is easy to miss that wage-labourers cannot emerge without the second freedom.",
+                      "This mixes land trade and voting rights with the condition of the free worker. Marx focuses on separation from means of subsistence.",
+                      "Guild entry and inherited citizenship are urban privileges, not the condition of expelled peasants.",
+                      "This imagines rank and exemption as feudal compensation, but in reality feudal bondage dissolves at the same time as the basis of subsistence vanishes."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "영국에서 농노제는 14세기 후반에 사실상 사라졌다. … 그들은 나머지 농민들과 더불어 공유지의 용익권을 누렸고, 그 땅은 가축에게 목초를 주고 목재와 땔나무와 뗏장을 대 주었다.",
+                      "en": "In England, serfdom had practically disappeared in the last part of the 14th century. … Besides they, with the rest of the peasants, enjoyed the usufruct of the common land, which gave pasture to their cattle, furnished them with timber, fire-wood, turf, &c."
+                    }
                   }
                 },
                 {
@@ -16933,27 +17302,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "공유지와 관습적 이용권이 폐지될 때, 농민에게 생기는 변화는 무엇인가?",
-                    "en": "What changes for peasants when commons and customary rights of use are abolished?"
+                    "ko": "양모 가격이 오르자 영주가 경작지를 목양지로 돌리고 주민을 내보낸다. 쫓겨난 사람들이 도시의 임금노동 후보가 되는 경로는 무엇인가?",
+                    "en": "As wool prices rise, a lord turns arable fields into sheep pasture and drives the residents out. What path turns the displaced people into candidates for urban wage-labour?"
                   },
                   "choices": {
                     "ko": [
-                      "법적 소유권 문서는 그대로여도 생계 보충 수단이 사라져 임금노동 의존이 커질 수 있다.",
-                      "관습적 권리가 사라지면 토지는 더 이상 상품이 될 수 없다.",
-                      "공유지가 없어지면 농민은 그 자체로 더 높은 임금을 받는 도시 노동자가 된다.",
-                      "공유지 폐지는 봉건적 예속을 강화하지만 자본주의와는 연결되지 않는다."
+                      "농민이 소출과 공동 이용권이라는 생계 보충 수단을 잃어 생활을 위해 노동력을 팔 수밖에 없게 된다.",
+                      "경작지가 목양지로 바뀌면서 집단적 관습권이 곧바로 도시 공장에서 통용되는 새 노동계약으로 바뀐다.",
+                      "양 사육에는 사람 손이 거의 들지 않아 농촌 일자리가 줄고, 그 때문에 도시 공장도 일손을 구하지 못한다.",
+                      "밭을 잃은 농민이 한꺼번에 독립 목축업자가 되어 도시 고용 없이 소와 양으로 자급하게 된다."
                     ],
                     "en": [
-                      "Even if formal title is unchanged, means of supplementing subsistence can disappear, increasing dependence on wage-labour.",
-                      "Once customary rights disappear, land can no longer become a commodity.",
-                      "When commons disappear, peasants automatically become urban workers with higher wages.",
-                      "Abolishing commons strengthens feudal bondage but has no connection to capitalism."
+                      "Peasants lose supplementary means of subsistence such as crops and common rights, so they must sell labour-power to live.",
+                      "When arable fields become pasture, collective customary rights turn directly into a new labour contract used in urban factories.",
+                      "Sheep farming needs almost no hands, so rural jobs vanish and urban factories cannot find workers either.",
+                      "Peasants who lose their fields all become independent pastoralists and supply themselves with cattle and sheep without urban employment."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "공유지는 생계의 일부였다. 그것이 사라지면 농민은 시장에서 생활수단을 사야 하고, 그만큼 노동력 판매의 압박이 커진다.",
-                    "en": "The commons were part of subsistence. When they disappear, peasants must buy means of subsistence on the market, increasing pressure to sell labour-power."
+                    "ko": "생계 보충 수단이 사라지는 것이 핵심이다. 농민은 임금 외 소출과 공유지에서 가축·땔감을 얻어 시장에 덜 의존하다가, 목양지 전환으로 그 조건을 잃으면 생활수단을 사기 위해 노동력 판매에 나서야 한다. 여기서 노동시장은 자발적 계약의 합이 아니라 생계수단의 분리가 먼저 만든 강제된 공급이다.",
+                    "en": "The loss of supplementary subsistence is the point. Peasants depended less on the market because wages, crops, and commons provided cattle, firewood, and food. When pasture conversion strips those conditions away, they must sell labour-power to buy means of subsistence. The labour market thus arises not from voluntary contracts alone but from a compelled supply created by separation from the means of subsistence."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생계 보충 수단의 상실이 노동력 판매 압박으로 바뀐다는 점, 즉 인격적 해방이 아니라 재생산 조건의 변화를 봐야 한다.",
+                      "관습권은 새 임금계약으로 자연스럽게 전환되지 않는다. 관습권이 소멸한 뒤 남는 것은 노동력 판매의 필요다.",
+                      "양 방목이 사람을 적게 쓴 것은 맞다. 다만 일자리를 잃은 사람들은 도시로 밀려나 공장이 쓸 수 있는 값싼 노동력 공급이 되었다.",
+                      "밭을 잃은 농민이 목축업자가 된다는 상상은 목양지의 소유권과 가축이 누구 손에 있는지를 무시한 것이다."
+                    ],
+                    "en": [
+                      "The loss of supplementary subsistence becomes pressure to sell labour-power. What matters is a change in conditions of reproduction, not mere personal liberation.",
+                      "Customary rights do not naturally convert into a new wage contract. What remains after their destruction is the necessity of selling labour-power.",
+                      "Pasture did need few hands, but those who lost rural work were pushed into the towns and became the cheap supply of labour-power that factories could draw on.",
+                      "Imagining that landless peasants become pastoralists ignores who owns the pasture and the livestock."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "플랑드르 양모 제조업의 급격한 성장과 그에 따른 영국 양모 가격의 상승은 이러한 축출에 직접적인 자극을 주었다. 옛 귀족은 대규모 봉건 전쟁에 먹혔다. 새 귀족은 화폐가 모든 힘의 힘인 시대의 아이였고, 따라서 경작지를 양 방목지로 바꾸는 것이 그들의 구호였다.",
+                      "en": "The rapid rise of the Flemish wool manufactures, and the corresponding rise in the price of wool in England, gave the direct impulse to these evictions. The old nobility had been devoured by the great feudal wars. The new nobility was the child of its time, for which money was the power of all powers. Transformation of arable land into sheep-walks was, therefore, its cry."
+                    }
                   }
                 },
                 {
@@ -16980,8 +17374,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 생산성 논의만으로 수탈을 중립화하지 않는다. 토지 이용의 변화는 동시에 농민을 생계수단에서 떼어 내고 새로운 소유권을 강화했다.",
-                    "en": "Marx does not let productivity talk neutralize expropriation. Changes in land use also detached peasants from means of subsistence and strengthened new property rights."
+                    "ko": "생산성이라는 기준은 기술적 결과만 남기고 재산 관계의 변화를 지운다. 같은 땅이 더 높은 수익을 낳더라도, 그 수익은 농민을 몰아내고 토지를 사유재산으로 넘긴 자에게 돌아간다. 마르크스는 인클로저를 의회가 지주 자신에게 인민의 땅을 부여한 수탈 법률로 읽기 때문에, 중립적 개혁이라는 말은 계급적 결과를 가린다.",
+                    "en": "The language of productivity isolates a technical result and hides the change in property relations. Even if the same land yields more revenue, that revenue goes to those who expelled the peasants and converted the land into private property. Marx reads enclosure as legislation by which landlords gave themselves the people’s land, so calling it a neutral reform conceals the class result."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산성 수치가 좋아져도 그 이득이 누구에게 돌아가고 누가 땅에서 밀려났는지를 함께 물어야 수탈이 보인다.",
+                      "생산성은 자연법칙의 문제가 아니다. 마르크스도 목양 전환이 수익을 늘렸다는 사실을 부정하지 않고, 그 수익이 누구 손에 남았는지를 묻는다.",
+                      "마르크스는 토지 소유 자체를 부정하지 않는다. 인클로저에서 문제 삼은 것은 공동 이용권이 소수의 사적 소유로 바뀐 방식이다.",
+                      "인클로저 뒤 공유지 이용은 이어지지 않았다. 18세기 마지막 10년에 농업노동자의 공유지는 마지막 흔적까지 사라졌다."
+                    ],
+                    "en": [
+                      "Even when productivity improves, expropriation becomes visible only if we ask who received the gain and who was pushed off the land.",
+                      "Productivity is not a matter of natural law. Marx does not deny that pasture raised revenue; he asks in whose hands that revenue stayed.",
+                      "Marx does not reject landed property as such. What enclosure raises is the way common rights were converted into the private property of a few.",
+                      "Use of the commons did not continue after enclosure. In the last decade of the 18th century the last trace of the labourer’s common land was gone."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "이 약탈의 의회적 형태는 공유지 인클로저 법이다. 다시 말해 지주들이 인민의 토지를 사적 소유로 스스로에게 부여하는 칙령, 인민에 대한 수탈의 칙령이다.",
+                      "en": "The parliamentary form of the robbery is that of Acts for enclosures of Commons, in other words, decrees by which the landlords grant themselves the people’s land as private property, decrees of expropriation of the people."
+                    }
                   }
                 },
                 {
@@ -16989,27 +17408,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "귀족이 경작지를 목양지로 바꾸고 주민을 내쫓는다. 이 장의 관점에서 이 변화는 무엇을 만든다고 볼 수 있는가?",
-                    "en": "A landlord turns arable land into sheep pasture and drives residents out. From the standpoint of this chapter, what does this transformation create?"
+                    "ko": "한 귀족이 수백 명이 살던 마을을 비우고, 그 땅을 몇 명이 관리하는 양 방목장으로 합친다. 마르크스의 분석에서 이 사건은 주민들의 재생산 조건을 어떻게 바꾸는가?",
+                    "en": "A lord empties a village of several hundred people and merges the land into a sheep pasture worked by a few hands. In Marx’s analysis, how does this change the residents’ conditions of reproduction?"
                   },
                   "choices": {
                     "ko": [
-                      "토지에서 분리된 사람들의 대중과, 토지를 수익성 있는 자본주의적 이용 대상으로 만드는 조건이다.",
-                      "농민이 더 많은 자급수단을 갖게 되는 평등한 농촌 공동체다.",
-                      "상품시장과 임금노동이 필요 없는 봉건적 안정이다.",
-                      "토지소유자가 생산물에 대한 권리를 완전히 잃는 상황이다."
+                      "주민들은 공동 생계 기반을 잃고 시장에서 생활수단을 사야 하는 임금노동 후보가 된다.",
+                      "주민들의 토지 소유 문서가 모두 같은 내용으로 갱신되어 자급 능력은 그대로 유지된다.",
+                      "방목 수익이 늘어난 지주가 남은 주민의 임금과 고용을 늘려 마을 소득이 회복된다.",
+                      "마을 공동체의 관습적 분배는 유지되고 생산력만 올라가 주민 소득이 늘어난다."
                     ],
                     "en": [
-                      "A mass of people separated from land and the conditions for making land an object of profitable capitalist use.",
-                      "An egalitarian rural community in which peasants gain more means of subsistence.",
-                      "A feudal stability with no need for commodity markets or wage-labour.",
-                      "A situation in which landowners lose all rights to the product."
+                      "Residents lose their common basis of subsistence and become potential wage-labourers who must buy means of subsistence on the market.",
+                      "Residents’ land title documents are renewed with the same content, so their capacity for self-sufficiency remains intact.",
+                      "Rising pasture revenue leads the landlord to raise wages and hire more of the remaining residents, restoring village income.",
+                      "The village community’s customary distribution continues, while rising productivity increases residents’ income."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이런 전환은 사람과 토지의 관계를 끊는다. 동시에 토지는 공동 생계의 기반이 아니라 수익을 낳는 사적 자산으로 재편된다.",
-                    "en": "Such a transformation breaks the relation between people and land. At the same time, land is reshaped from a basis of common subsistence into a private asset yielding revenue."
+                    "ko": "수백 명이 쓰던 땅이 몇 명의 방목장으로 합쳐지면 남는 것은 생산성만이 아니다. 주민들은 음식·땔감·가축을 얻던 공동 자원에 접근할 수 없게 되고, 생활수단을 시장에서 사기 위해 현금 소득이 필요해진다. 이렇게 재생산 조건이 바뀌어야 임금노동의 공급이 만들어지므로, 사건의 핵심은 땅이 아니라 사람이 생계를 이어 가는 조건의 파괴다.",
+                    "en": "When land used by hundreds becomes a pasture run by a few, productivity is not the only result. Residents lose access to the common resources that gave them food, wood, and animals, and they need cash income to buy means of subsistence on the market. Only when reproduction changes in this way does the supply of wage-labour appear. The core is not land itself but the destruction of the conditions by which people had reproduced themselves."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "수익성 있는 방목장과 쫓겨난 주민은 서로 반대편이 아니라 같은 변환의 두 결과다.",
+                      "소유 문서 갱신을 자급 능력 유지로 착각했다. 수탈은 문서가 아니라 공동 접근권의 상실로 일어난다.",
+                      "목양 수익이 노동자에게 흘러간다는 그림이지만, 방목장은 목동 몇 명으로 굴러갔고 늘어난 수익은 지주에게 남았다.",
+                      "공동체 분배가 유지된다는 전제는 방목장 합병이 관습적 분배를 깨고 사적 소유로 넘어가는 강제성을 놓친다."
+                    ],
+                    "en": [
+                      "Profitable pasture and expelled residents are not opposites; they are two results of the same transformation.",
+                      "This mistakes document renewal for continued self-sufficiency. Expropriation occurs through loss of access, not only through written title.",
+                      "This pictures pasture revenue flowing to workers, but a sheep-walk was run by a few herdsmen and the added revenue stayed with the landlord.",
+                      "The idea that communal distribution survives misses how pasture consolidation breaks customary distribution and enforces private ownership."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "「지주와 농장주는 여기서 서로 손을 맞잡고 일한다. 소작농 주거지에 몇 에이커의 땅이 붙어 있으면 노동자들이 너무 독립적이 될 것이다.」",
+                      "en": "“Landlords and farmers,” says Dr. Hunter, “work here hand in hand. A few acres to the cottage would make the labourers too independent.”"
+                    }
                   }
                 },
                 {
@@ -17017,27 +17461,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "27장을 이해할 때 “봉건적 예속에서의 해방”과 “생산수단에서의 분리”를 구분해야 하는 이유는 무엇인가?",
-                    "en": "Why must “liberation from feudal bondage” be distinguished from “separation from the means of production” in Chapter 27?"
+                    "ko": "15세기 영국에는 작은 자영지와 공유지가 넓게 남아 민중의 부를 이루었다. 자본주의적 부가 들어서려면 무엇이 먼저 분리되어야 하는가?",
+                    "en": "In fifteenth-century England, small freeholds and commons remained widespread and formed the wealth of the people. What must be separated before capitalist wealth can emerge?"
                   },
                   "choices": {
                     "ko": [
-                      "농민이 인격적 예속에서 벗어나는 일이 곧바로 생계수단의 보장을 뜻하지 않으며, 그 분리가 임금노동 강제를 낳을 수 있기 때문이다.",
-                      "두 표현은 거의 같은 뜻이므로 구분하면 안 되기 때문이다.",
-                      "봉건적 예속에서 벗어난 사람은 대체로 충분한 토지를 받기 때문이다.",
-                      "생산수단에서의 분리는 도시 상인에게 주로 일어나기 때문이다."
+                      "생산자와 생산수단이 분리되어, 노동력을 팔 수밖에 없는 사람들과 자본으로 쓰일 재산이 만들어져야 한다.",
+                      "도시와 농촌의 지리적 분리가 먼저 일어나 모든 상품을 값싸게 운송할 수 있어야 한다.",
+                      "화폐가 충분히 쌓이기만 하면 그 자체로 자본이 되므로 상업의 발달이 먼저 있어야 한다.",
+                      "왕권과 의회가 분리되어 서로 견제하는 정치체제가 먼저 세워져야 한다."
                     ],
                     "en": [
-                      "Because release from personal bondage does not automatically mean secure means of subsistence; separation can produce compulsion toward wage-labour.",
-                      "Because the two expressions mean exactly the same thing and should not be distinguished.",
-                      "Because everyone freed from feudal bondage always receives enough land.",
-                      "Because separation from means of production happens only to urban merchants."
+                      "Producers must be separated from means of production, creating people forced to sell labour-power and property usable as capital.",
+                      "A geographical division between town and country must occur first so that all commodities can be shipped cheaply.",
+                      "Money becomes capital simply by piling up, so commerce must develop first.",
+                      "A political system separating royal power from parliament must be built first for mutual checks."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 “자유로운 노동자”에는 이중성이 있다. 예속에서 풀려나는 동시에 생계수단에서 분리되면, 자유는 임금노동 의존의 형태를 띤다.",
-                    "en": "Marx’s “free worker” is double. If people are freed from bondage while separated from means of subsistence, freedom takes the form of dependence on wage-labour."
+                    "ko": "15세기 번영은 소농과 공유지가 생계 기반으로 남아 있는 조건에서 나왔다. 마르크스는 이 조건이 오히려 자본주의적 부를 배제했다고 본다. 자본주의적 부가 쌓이려면 생산자가 생산수단에서 떨어져 나와 노동력을 팔고, 그 생산수단은 소수의 사적 자본으로 모여야 한다. 이 분리가 먼저 일어나지 않으면 화폐와 지리, 정치 형태가 어떻든 임금노동의 공급이 생기지 않는다.",
+                    "en": "Fifteenth-century prosperity rested on small peasants and commons as the basis of subsistence, and Marx argues that these very conditions excluded capitalist wealth. For capitalist wealth to accumulate, producers must be separated from means of production and sell labour-power, while those means are concentrated as private capital. Without that separation no supply of wage-labour appears."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "소농의 번영은 생산자가 아직 생산수단과 붙어 있었기에 가능했다. 그 붙어 있음을 떼어 내는 일이 곧 자본주의적 부의 전제였다.",
+                      "도시와 농촌의 거리보다 생산자가 자기 생계 수단을 갖고 있는지가 노동시장 형성에 더 근본적이다.",
+                      "화폐 축적은 자본의 전제이지 자본 자체가 아니다. 화폐가 자본이 되려면 노동력을 팔 수밖에 없는 사람들이 시장에 먼저 있어야 한다.",
+                      "정치체제의 분립은 부차적 결과일 수 있지만, 자본주의적 부의 토대는 생산수단에서 분리된 노동자와 자본이다."
+                    ],
+                    "en": [
+                      "Peasant prosperity was possible because producers were still joined to their means of production. Severing that bond was the very precondition of capitalist wealth.",
+                      "Distance between town and country matters less than whether producers hold their own means of subsistence.",
+                      "Hoarded money is a precondition, not yet capital. It becomes capital only when people who must sell labour-power are already on the market.",
+                      "A divided political system may be a secondary result, but the foundation of capitalist wealth is workers separated from means of production and capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "이런 조건은 15세기를 특징짓는 도시의 번영과 더불어, 포테스큐 대법관이 『영국 법률 찬가』에서 그토록 유창하게 그린 민중의 부를 가능하게 했다. 그러나 그것은 자본주의적 부의 가능성은 배제했다.",
+                      "en": "Such conditions, together with the prosperity of the towns so characteristic of the 15th century, allowed of that wealth of the people which Chancellor Fortescue so eloquently paints in his “Laudes legum Angliae;” but it excluded the possibility of capitalistic wealth."
+                    }
                   }
                 }
               ]
@@ -17055,27 +17524,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "27장의 수탈 과정에서 법은 단순히 이미 일어난 변화를 기록하는 역할만 하지 않는다. 어떤 긴장이 여기에 있는가?",
-                    "en": "In the expropriation described in Chapter 27, law does not merely record changes that have already happened. What tension is involved?"
+                    "ko": "18세기 의회가 공유지 인클로저 법을 통과시켜 지주들에게 토지를 넘긴다. 법이 「수탈의 도구」가 되는 긴장은 어디에서 오는가?",
+                    "en": "In the eighteenth century, Parliament passes enclosure acts that hand common land to landlords. Where does the tension arise when law becomes an instrument of expropriation?"
                   },
                   "choices": {
                     "ko": [
-                      "법은 폭력적 수탈을 승인하고 안정화하면서, 그것을 정상적인 재산권의 형태로 보이게 만든다.",
-                      "법은 경제와 무관하므로 토지관계에 아무런 효과가 없다.",
-                      "법은 대체로 농민의 관습적 권리를 그대로 보존하여 수탈을 막는다.",
-                      "법은 도시 임금계약에 주로 적용되고 농촌에는 적용되지 않는다."
+                      "법이 폭력적인 사람 몰아내기를 집행하면서도 그것을 정당한 사유재산권처럼 보이게 만든다.",
+                      "법은 경제적 이해관계와 무관하게 오래된 관습을 그대로 확인하는 절차에 지나지 않는다.",
+                      "의회 법안은 쫓겨난 농민에게 먼저 보상금을 나눠 준 뒤에만 토지 소유권을 이전할 수 있다.",
+                      "법은 토지 이용의 효율을 정하는 기술 규정일 뿐이고 소유관계는 시장이 알아서 정한다."
                     ],
                     "en": [
-                      "Law authorizes and stabilizes violent expropriation while making it appear as normal property right.",
-                      "Law is unrelated to the economy and has no effect on land relations.",
-                      "Law always preserves peasants’ customary rights unchanged and prevents expropriation.",
-                      "Law applies only to urban wage contracts and never to the countryside."
+                      "Law executes violent expulsion while making it appear as legitimate private property right.",
+                      "Law is no more than a procedure that confirms old customs unchanged regardless of economic interests.",
+                      "Parliament can transfer land only after first distributing compensation to the expelled peasants.",
+                      "Law is only a technical rule about efficient land use, while property relations are settled by the market."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스에게 법은 시장 바깥의 장식이 아니다. 수탈은 폭력으로 일어나고 법을 통해 정당한 소유권처럼 굳어진다.",
-                    "en": "For Marx, law is not decoration outside the market. Expropriation occurs through violence and is then fixed through law as if it were legitimate property."
+                    "ko": "인클로저 법은 중립적 조정이 아니라 지주들이 인민의 토지를 자기 사유재산으로 부여하는 약탈의 형식이다. 법은 이미 끝난 폭력을 사후에 기록만 하는 것이 아니라, 그 수탈을 계속되는 권리로 고정하고 위반 가능한 행위를 정상적 재산질서로 보이게 한다. 따라서 이 긴장은 법이 폭력과 무관한 영역이라는 상식과, 법 자체가 자본 이전 단계의 강제를 조직한다는 사실 사이에서 생긴다.",
+                    "en": "Enclosure acts were not neutral settlements but a parliamentary form of robbery in which landlords gave themselves the people’s land as private property. Law does not merely record violence after the event; it fixes the expropriation as a continuing right and makes a forcible act appear as normal property order. The tension lies between the common idea that law stands apart from force and the fact that law itself organizes that force."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "법이 폭력을 끝내는 것이 아니라 계속되는 사유재산권으로 전환한다는 점을 보면 수탈의 완성 조건이 보인다.",
+                      "관습 확인은 인클로저 법의 실제와 반대다. 의회법은 관습적 공동권을 깨고 지주에게 토지를 넘겼다.",
+                      "보상은 원칙이 아니라 수사였다. 법안은 인민에게 보상하기보다 지주끼리 인민의 땅을 나누는 형식이었다.",
+                      "법을 기술 규정으로만 보면 인클로저 법이 한 일이 보이지 않는다. 공동 이용권을 사유재산으로 바꾼 것은 시장이 아니라 의회였다."
+                    ],
+                    "en": [
+                      "Law does not end violence but converts it into a continuing property right. That shows the completion of expropriation.",
+                      "Confirmation of custom is the opposite of what enclosure acts did. They broke customary common rights and transferred land to landlords.",
+                      "Compensation was rhetoric rather than principle. The acts divided the people’s land among landlords rather than compensating the people.",
+                      "Treating law as a technical rule hides what the enclosure acts did. It was Parliament, not the market, that turned common rights into private property."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "18세기가 이룬 진전은 이렇게 드러난다. 대농장주들이 각자 소규모의 독자적 수법도 계속 썼지만, 이제 법 자체가 인민의 토지를 훔치는 도구가 된다.",
+                      "en": "The advance made by the 18th century shows itself in this, that the law itself becomes now the instrument of the theft of the people’s land, although the large farmers make use of their little independent methods as well."
+                    }
                   }
                 },
                 {
@@ -17083,27 +17577,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "농촌 수탈이 도시 산업자본의 형성과 연결되는 매개는 무엇인가?",
-                    "en": "What mediates the connection between rural expropriation and the formation of urban industrial capital?"
+                    "ko": "스코틀랜드 고지에서 15,000명이 마을에서 쫓겨나 해안으로 밀려난다. 토지에서의 축출이 도시 산업자본의 노동력 공급으로 이어지는 매개 조건은 어디에서 만들어지는가?",
+                    "en": "In the Scottish Highlands, 15,000 people are driven from their villages toward the coast. Where is the mediating condition made that links expulsion from the land to the supply of labour-power for urban industrial capital?"
                   },
                   "choices": {
                     "ko": [
-                      "토지에서 쫓겨난 사람들은 생계수단을 잃고 노동력 시장으로 밀려나며, 도시 산업은 이 노동력 공급을 이용할 수 있다.",
-                      "농촌 수탈은 도시 인구를 줄여 산업자본의 노동력 수요를 없앤다.",
-                      "농촌 수탈은 모든 농민을 곧바로 독립 장인으로 만들어 도시 공업과 경쟁시킨다.",
-                      "도시 산업자본은 노동자 없이도 기계만으로 잉여가치를 생산한다."
+                      "쫓겨난 사람들이 생계수단을 잃고 노동력 판매 외에는 살아갈 길이 없는 상태가 노동시장의 공급을 만든다.",
+                      "그들이 씨족 토지에 대한 봉건적 권리를 계속 보유한 채 매일 도시 공장으로 출퇴근하게 된다.",
+                      "축출된 사람들이 도시로 몰려 인구가 늘면 임금이 올라 산업자본은 노동력을 구하기 어려워진다.",
+                      "제조업 자본은 기계만으로 잉여가치를 생산하므로 살아 있는 노동력 공급은 불필요해진다."
                     ],
                     "en": [
-                      "People driven from the land lose means of subsistence and are pushed into the labour market, which urban industry can draw upon.",
-                      "Rural expropriation reduces the urban population and removes industrial capital’s demand for labour-power.",
-                      "Rural expropriation immediately turns all peasants into independent artisans competing with urban industry.",
-                      "Urban industrial capital produces surplus-value with machines alone and without workers."
+                      "Driven people lose means of subsistence and have no way to live except selling labour-power, and this condition creates the labour supply.",
+                      "They keep their feudal rights to clan land while commuting daily to urban factories.",
+                      "As the expelled crowd into the towns, population and wages rise, so industrial capital finds labour-power harder to get.",
+                      "Manufacturing capital produces surplus-value with machines alone, so a supply of living labour-power is unnecessary."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "토지 수탈은 노동력 공급의 역사적 조건을 만든다. 산업자본은 이미 준비된 자연적 노동시장을 발견한 것이 아니라, 이런 분리 과정의 결과를 활용한다.",
-                    "en": "Land expropriation creates the historical condition for the supply of labour-power. Industrial capital does not find a ready-made natural labour market; it uses the result of this separation."
+                    "ko": "축출 자체가 바로 공장 고용을 낳지는 않는다. 그 사이에는 생계수단의 상실이 있다. 쫓겨난 사람들은 더 이상 토지와 공유 자원으로 살 수 없으므로, 노동력을 팔지 않으면 생활수단을 얻기 어려운 상태로 도시에 나타난다. 이 매개 조건을 보아야 토지 수탈과 산업자본 사이의 연결이 단순한 이주가 아니라 강제된 노동력 공급임을 알 수 있다.",
+                    "en": "Expulsion by itself does not immediately create factory employment. Between the two lies the loss of means of subsistence. Those expelled can no longer live from land and common resources, so they reach the cities unable to obtain means of life without selling labour-power. Seeing this mediation shows that the link between land expropriation and industrial capital is not migration but a compelled supply of labour-power."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동력 판매 외에 살길이 없는 상태가 노동시장 공급으로 전화되는 것, 그것이 원시적 축적이 만드는 독특한 강제다.",
+                      "봉건적 권리를 계속 보유했다면 쫓겨난 것이 아니다. 그 권리는 씨족장과 의회 법제에 의해 근대적 사유재산으로 전환되었다.",
+                      "인구가 늘면 임금이 오른다고 본 것인데, 생계수단을 잃은 사람은 값을 따질 처지가 아니다. 몰려든 사람들은 임금을 끌어올리기보다 값싼 공급이 되었다.",
+                      "잉여가치는 기계가 아니라 노동력의 사용에서 나온다. 기계는 그 노동을 더 오래 또는 더 강하게 쓰는 수단이다."
+                    ],
+                    "en": [
+                      "The condition of having no way to live except selling labour-power becomes a labour supply. That is the specific compulsion made by primitive accumulation.",
+                      "Holding feudal rights would mean no expulsion. Such rights were converted into modern private property by clan chiefs and parliamentary legislation.",
+                      "This assumes more people means higher wages, but those who have lost means of subsistence are in no position to haggle. The crowd became a cheap supply rather than a lever on wages.",
+                      "Surplus-value arises from the use of labour-power, not from machines. Machinery is a means for using that labour longer or more intensely."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "18세기에 쫓겨난 게일 사람들은 나라 밖으로 이주하는 것이 금지되었다. 그들을 글래스고를 비롯한 제조업 도시로 강제로 몰아넣기 위해서였다.",
+                      "en": "In the 18th century the hunted-out Gaels were forbidden to emigrate from the country, with a view to driving them by force to Glasgow and other manufacturing towns."
+                    }
                   }
                 },
                 {
@@ -17111,27 +17630,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "수탈을 “봉건 질서의 낡은 제약을 제거한 진보”로만 설명하면 무엇이 빠지는가?",
-                    "en": "What is omitted if expropriation is explained only as “progress” that removed old feudal constraints?"
+                    "ko": "어떤 경제사가는 인클로저를 「구시대의 집단적 소유가 시장 효율에 자리를 내준 진보」라고 설명한다. 이 서사가 빠뜨리는 새로운 강제는 어디에 있는가?",
+                    "en": "An economic historian calls enclosure ‘progress in which old collective ownership gave way to market efficiency.’ Where is the new compulsion that this story omits?"
                   },
                   "choices": {
                     "ko": [
-                      "낡은 예속의 해체가 동시에 대중을 생계수단에서 떼어 내어 자본에 종속시키는 새로운 강제를 만들었다는 점이다.",
-                      "봉건 질서가 완전히 평등하고 폭력이 없었다는 점이다.",
-                      "자본주의적 토지소유는 어떤 생산관계도 만들지 않는다는 점이다.",
-                      "농민은 수탈 뒤에도 같은 관습권을 유지했다는 점이다."
+                      "집단적 소유가 무너진 자리에, 대중이 생계수단에서 분리되어 자본에 종속되는 임금노동이 들어선다.",
+                      "봉건적 공동체가 모든 구성원에게 동등한 몫을 보장했다는 사실이다.",
+                      "시장 효율이 높아져 지대가 내려가면서 소농이 다시 토지를 사들일 수 있게 되었다는 사실이다.",
+                      "의회가 150년 동안 수탈을 막는 법을 냈으므로 농민의 권리는 지켜졌다는 기록이다."
                     ],
                     "en": [
-                      "That the dissolution of old bondage simultaneously created a new compulsion by separating masses from means of subsistence and subordinating them to capital.",
-                      "That feudal order was completely equal and free of violence.",
-                      "That capitalist landed property produces no production relations.",
-                      "That peasants retained the same customary rights after expropriation."
+                      "Where collective ownership collapsed, wage-labour entered by separating the masses from means of subsistence and subordinating them to capital.",
+                      "The fact that feudal communities guaranteed an equal share to every member.",
+                      "The fact that market efficiency lowered rents so that smallholders could buy land back.",
+                      "The record that Parliament legislated against expropriation for 150 years and so protected peasant rights."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 봉건 질서를 미화하지 않는다. 다만 낡은 예속의 해체가 곧바로 실질적 자유가 아니라 임금노동의 강제로 이어질 수 있음을 보여준다.",
-                    "en": "Marx does not idealize feudal order. He shows that the dissolution of old bondage can lead not to substantive freedom but to the compulsion of wage-labour."
+                    "ko": "인클로저를 진보로만 읽는 서사는 낡은 속박이 사라진 자리를 비워 둔 채 상상한다. 그러나 마르크스는 그 자리에 대중을 생계수단에서 떼어 내고 그들의 노동수단을 자본으로 바꾸는 새로운 예속이 들어선다고 본다. 현실의 선택지는 봉건적 안정이 아니라 임금노동의 강제였으며, 이 점을 빼면 시장 효율이라는 말이 폭력을 중립적인 발전으로 포장한다.",
+                    "en": "A narrative that reads enclosure only as progress imagines the space left by old bondage as empty. Marx argues that a new subordination enters that space: the masses are separated from means of subsistence and their instruments of labour are transformed into capital. The real alternative was not feudal stability but the compulsion of wage-labour. Without this point, the language of market efficiency dresses violence as neutral development."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "진보와 강제는 동시에 일어난다. 옛 공동권의 해체가 곧바로 자유가 아니라 자본에의 종속을 낳을 수 있다.",
+                      "봉건 공동체를 평등한 분배로 미화하면 수탈의 폭력이 상대적으로 작아 보이게 된다.",
+                      "지대는 내려가지 않았다. 농장과 가축이 소수의 손에 모이면서 지대는 크게 올랐고, 땅을 잃은 사람에게는 되살 돈도 없었다.",
+                      "그런 법이 있었던 것은 맞지만 헛일로 끝났다. 자본주의 체계가 요구한 것은 소농의 유지가 아니라 대중을 고용병으로 만들고 그들의 노동수단을 자본으로 바꾸는 일이었다."
+                    ],
+                    "en": [
+                      "Progress and compulsion occur together. The dissolution of old common rights can produce subordination to capital rather than immediate freedom.",
+                      "Idealizing feudal community as equal distribution makes the violence of expropriation appear smaller.",
+                      "Rents did not fall. As farms and flocks were concentrated in few hands the rent of land rose sharply, and those driven off had no money to buy anything back.",
+                      "Such laws existed but were fruitless, because what the capitalist system demanded was not the survival of smallholders but the turning of the mass into hirelings and of their means of labour into capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "반면 자본주의 체계가 요구한 것은 인민 대중의 타락하고 거의 예속에 가까운 상태였다. 그들을 고용병으로 만들고 그들의 노동수단을 자본으로 바꾸는 것이었다.",
+                      "en": "What the capitalist system demanded was, on the other hand, a degraded and almost servile condition of the mass of the people, the transformation of them into mercenaries, and of their means of labour into capital."
+                    }
                   }
                 },
                 {
@@ -17139,27 +17683,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "토지개혁이라는 이름으로 공동 이용지가 사라지고, 주민은 현금 소득 없이는 생활할 수 없게 된다. 27장의 분석을 적용하면 무엇을 물어야 하는가?",
-                    "en": "Under the name of land reform, common-use land disappears and residents cannot live without cash income. Applying Chapter 27, what should be asked?"
+                    "ko": "토지개혁이라는 이름으로 마을의 공동 이용지가 사라지고, 주민은 현금 소득 없이는 생활할 수 없게 되었다. 이 변화를 수탈로 읽으려면 무엇을 물어야 하는가?",
+                    "en": "Under the name of land reform, a village’s common-use land disappears and residents can no longer live without cash income. To read this change as expropriation, what should be asked?"
                   },
                   "choices": {
                     "ko": [
                       "소유권의 근대화라는 말 뒤에서 누가 생계수단을 잃고 누가 토지수익을 독점하게 되었는가를 물어야 한다.",
-                      "현금 소득이 필요해졌다면 모두가 자본가가 된 것이므로 수탈은 없다.",
-                      "법적 문서가 새로 작성되었는지만 보면 충분하다.",
-                      "공유지가 사라진 뒤에도 주민의 재생산 조건은 유지된다."
+                      "현금 소득이 생겼으니 주민들이 시장의 대등한 참가자가 되었는지를 물으면 된다.",
+                      "새 소유권 문서가 절차에 맞게 작성되었으니 합법이었는지를 물으면 된다.",
+                      "공동 이용지가 사라진 뒤 마을의 곡물 생산량이 늘었는지를 물으면 된다."
                     ],
                     "en": [
                       "One should ask who lost means of subsistence and who came to monopolize land revenue behind the language of modernizing property.",
-                      "If cash income becomes necessary, everyone has become a capitalist, so there is no expropriation.",
-                      "It is enough to ask whether new legal documents were written.",
-                      "After commons disappear, residents’ conditions of reproduction should be assumed to remain automatically intact."
+                      "It is enough to ask whether cash income made the residents equal participants in the market.",
+                      "It is enough to ask whether the new title deeds were drawn up by the proper procedure.",
+                      "It is enough to ask whether the village’s grain output rose after the common land disappeared."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "27장의 관점은 형식적 근대화가 아니라 재생산 조건의 변화를 본다. 공동 이용권 상실은 사람들을 시장과 임금노동에 더 깊이 묶을 수 있다.",
-                    "en": "Chapter 27 looks not at formal modernization but at changes in conditions of reproduction. Losing common rights can bind people more deeply to the market and wage-labour."
+                    "ko": "토지개혁이라는 형식적 근대화보다 재생산 조건의 변화를 본다. 공동 이용지는 시장 밖에서 주민의 생계를 보충했고, 그것이 사라지면 같은 생활을 위해 현금 소득이 필요해진다. 이 지점에서 토지수익 독점과 생계수단 상실이 동시에 일어나므로, 법안 문구나 문서 작성 여부만이 아니라 그 재편의 계급적 결과를 물어야 한다.",
+                    "en": "This analysis looks at changes in conditions of reproduction rather than formal modernization. Common-use land had supplemented residents’ subsistence outside the market. When it disappears, cash income becomes necessary for the same life. At that point, the monopolization of land revenue and the loss of means of subsistence occur together, so one must ask about the class result of the reorganization, not only about legal wording or documents."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "소유권의 형식적 변화보다 생계 접근권 상실과 수익 집중이 같은 변환인지부터 보는 것이 수탈 분석의 출발이다.",
+                      "현금 소득이 생겼다고 대등한 참가자가 되지는 않는다. 팔 것이 노동력밖에 없는 사람은 값을 정하는 쪽이 아니라 받는 쪽에 선다.",
+                      "절차의 합법성은 수탈을 가리는 형식이었다. 인클로저 법 자체가 지주들이 인민의 땅을 사유재산으로 자기에게 넘긴 절차였다.",
+                      "생산량은 늘 수 있다. 그러나 늘어난 생산물이 누구 것이 되고 주민은 무엇으로 먹고사는지를 묻지 않으면 수탈은 보이지 않는다."
+                    ],
+                    "en": [
+                      "The starting point is not formal property change but whether loss of subsistence access and concentration of revenue occur in the same transformation.",
+                      "Cash income does not make anyone an equal participant. Those with nothing to sell but labour-power take the price rather than set it.",
+                      "Legal procedure was the form that concealed the robbery. The enclosure acts were themselves the procedure by which landlords granted the people’s land to themselves.",
+                      "Output may well rise. But unless we ask whose the larger product becomes and what the residents now live on, the expropriation stays invisible."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "전체로 보아 하층 사람들의 처지는 거의 모든 점에서 나빠졌다. 그들은 토지의 작은 점유자에서 날품팔이와 고용살이의 처지로 떨어졌고, 그 처지에서 생계를 잇는 일은 더 어려워졌다.",
+                      "en": "“Upon the whole, the circumstances of the lower ranks of men are altered in almost every respect for the worse. From little occupiers of land, they are reduced to the state of day-labourers and hirelings; and, at the same time, their subsistence in that state has become more difficult.”"
+                    }
                   }
                 },
                 {
@@ -17167,27 +17736,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "27장이 뒤의 유혈입법 장으로 이어지는 이유는 무엇인가?",
-                    "en": "Why does Chapter 27 lead into the following chapter on bloody legislation?"
+                    "ko": "토지 수탈로 쫓겨난 사람들이 곧바로 공장 규율에 맞는 노동자가 되었을까? 마르크스가 이들을 「자유롭고 무법적인 프롤레타리아트」라고 부른 까닭은 어디에 있는가?",
+                    "en": "Did people expelled from the land immediately become workers fitted to factory discipline? Why does Marx call them a ‘free’ and outlawed proletariat?"
                   },
                   "choices": {
                     "ko": [
-                      "토지에서 쫓겨난 사람들이 자동으로 규율 잡힌 임금노동자가 되는 것이 아니어서, 국가는 그들을 노동시장에 강제로 맞추는 법을 동원했기 때문이다.",
-                      "토지 수탈이 끝나면 국가는 더 이상 계급관계에 개입하지 않기 때문이다.",
-                      "농민이 토지를 잃으면 곧바로 충분한 임금을 받는 정규직이 되기 때문이다.",
-                      "유혈입법은 토지수탈 이전에만 존재했고 이후에는 사라졌기 때문이다."
+                      "그들은 생계수단을 잃었지만 자본의 규율에 바로 순응하지는 않아, 국가가 강제로 노동시장에 묶는 법제가 뒤따라야 했다.",
+                      "그들은 이미 공장 노동에 필요한 숙련과 복종 규율을 모두 갖춘 상태로 도시에 도착했다.",
+                      "토지 수탈이 완료되자 더 이상 계급관계에 대한 국가 개입이 필요 없어졌다.",
+                      "농민은 쫓겨난 직후 대부분 충분한 임금을 받는 상시 고용 계약을 맺었다."
                     ],
                     "en": [
-                      "Because those driven from the land do not automatically become disciplined wage-labourers, so the state used laws to force them into the labour market.",
-                      "Because once land expropriation is over, the state no longer intervenes in class relations.",
-                      "Because once peasants lose land, they immediately become regularly employed workers with sufficient wages.",
-                      "Because bloody legislation existed only before land expropriation and disappeared afterward."
+                      "They had lost means of subsistence but did not immediately submit to capital’s discipline, so state legislation had to force them into the labour market.",
+                      "They arrived in the cities already equipped with the skill and obedience required for factory labour.",
+                      "Once land expropriation was complete, no further state intervention in class relations was needed.",
+                      "Peasants mostly signed permanent employment contracts with sufficient wages immediately after being expelled."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "토지 수탈은 노동력 판매자를 만들지만, 그들이 곧바로 자본의 규율에 맞춰지는 것은 아니다. 그래서 다음 장은 방랑자 처벌과 임금 억압 법제를 다룬다.",
-                    "en": "Land expropriation creates sellers of labour-power, but they are not immediately disciplined for capital. The next chapter therefore treats laws punishing vagabonds and forcing down wages."
+                    "ko": "「자유롭다」는 말은 생계수단에서 풀려났다는 뜻이고, 「무법적」이라는 말은 자본이 요구하는 규율과 재산 질서 안에 아직 흡수되지 않았다는 뜻이다. 토지에서 쫓겨난 사람들이 출근 시간과 임금 수준에 곧바로 순응하는 노동자가 되지는 않았으므로, 자본은 국가의 법을 동원해 이들을 처벌하고 노동시장에 묶어야 했다. 부랑을 처벌하는 유혈입법이 그렇게 뒤따랐다.",
+                    "en": "‘Free’ here means freed from means of subsistence; ‘outlawed’ means not yet absorbed into the discipline and property order capital requires. People driven off the land did not become workers who accept factory time and wage levels, so capital turned to state law to punish them and bind them to the labour market. Bloody legislation against vagabondage followed."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생계수단에서 분리된 자유는 노동 규율과 다르다. 이 격차를 메우는 국가 강제가 뒤따를 수밖에 없다.",
+                      "공장 규율은 처음부터 노동자에게 주어지지 않는다. 농민은 방랑과 처벌을 거치며 노동시장에 맞춰진다.",
+                      "수탈이 끝났다고 국가 개입이 사라지는 것이 아니라, 이제 그 개입은 쫓겨난 사람을 노동시장에 고정하는 쪽으로 옮겨 간다.",
+                      "충분한 임금과 상시 고용은 수탈 직후의 일반적 결과가 아니었다. 오히려 다수는 일시 고용과 빈민 구제에 의존했다."
+                    ],
+                    "en": [
+                      "Freedom from means of subsistence is not the same as labour discipline. State coercion follows in order to close that gap.",
+                      "Factory discipline is not given to workers from the start. Peasants were fitted to the labour market through vagabondage and punishment.",
+                      "State intervention does not disappear after expropriation. It shifts toward fixing the expelled in the labour market.",
+                      "Enough wages and permanent employment were not the general result immediately after expropriation. Many depended on casual work and poor relief."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch27.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 27장 이른바 원시적 축적",
+                      "en": "Capital I, Ch. 27 So-Called Primitive Accumulation"
+                    },
+                    "quote": {
+                      "ko": "그것들은 자본주의적 농업을 위한 영역을 정복했고, 토지를 자본의 일부로 만들었으며, 도시 산업을 위해 「자유롭고」 무법적인 프롤레타리아트의 필수 공급을 만들어 냈다.",
+                      "en": "They conquered the field for capitalistic agriculture, made the soil part and parcel of capital, and created for the town industries the necessary supply of a “free” and outlawed proletariat."
+                    }
                   }
                 }
               ]
@@ -17230,30 +17824,46 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "토지로부터의 수탈",
+                "title": "핵심 개념 먼저",
                 "items": [
-                  "토지로부터 분리: 농민이 토지와 공동권에서 쫓겨나면서 독립 생산자로 살 수 있는 조건을 잃는다.",
+                  "토지로부터 분리: 농민이 토지와 공동 이용권에서 쫓겨나 독립 생산자로 살 수 있는 조건을 잃는다.",
                   "자유로운 노동자: 봉건적 예속에서 풀려나는 자유와 생계수단을 잃는 자유가 동시에 생긴다. 이 이중성이 임금노동의 조건이다.",
                   "노동시장 형성: 노동시장은 자연스럽게 생기지 않았다. 토지를 잃은 사람들이 노동력을 팔 수밖에 없게 되면서 형성되었다."
                 ]
               },
               {
-                "title": "자유와 분리의 이중성",
+                "title": "용어 풀이",
+                "text": "인클로저는 공동 방목지나 경작지를 나누어 사유재산으로 삼는 일이다. 요먼리는 영국의 자영·독립 소농층으로, 몰락 전에는 공유지와 더불어 자급에 가깝게 살았다. 영지 청소는 씨족이나 마을 주민을 토지에서 떼어 내어 목양지나 사냥터로 전환하기 위해 몰아내는 수탈 방식이다."
+              },
+              {
+                "title": "현대 적용",
+                "text": "오늘날 공동 자원이 생산성이나 근대화라는 명분으로 사유화될 때, 같은 문장이 누구에게는 생계 상실이고 누구에게는 수익 독점인지를 확인해야 한다. 이주 노동이 자발적 선택처럼 보여도, 그 선택을 강제한 토지와 생계 접근권의 상실을 함께 보지 않으면 노동시장 형성의 조건을 놓친다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "노동시장은 자유계약만으로 생긴 것이 아니라 생계 기반을 잃은 사람들이 만들어 낸 역사적 결과임을 본다."
               }
             ],
             "en": [
               {
-                "title": "Expropriation from Land",
+                "title": "Core concepts first",
                 "items": [
                   "Separation from land: Peasants lose the conditions for living as independent producers when expelled from land and common rights.",
-                  "Free worker: Freedom from feudal bondage and freedom from means of subsistence arise together. This double freedom is the condition of wage-labor.",
-                  "Formation of labor market: The labor market did not arise naturally. It formed as dispossessed people were forced to sell labor-power."
+                  "Free worker: Freedom from feudal bondage and freedom from means of subsistence arise together. This double freedom is the condition of wage-labour.",
+                  "Formation of labour market: The labour market did not arise naturally. It formed as dispossessed people were forced to sell labour-power."
                 ]
               },
               {
-                "title": "Double Meaning of Freedom and Separation",
-                "text": "See the labor market as a historical result of lost means of subsistence, not simply free contract."
+                "title": "Terms explained",
+                "text": "Enclosure means dividing common pasture or fields into private property. The yeomanry were independent English smallholders who, before their decline, could live near self-sufficiency with the commons. Clearing of estates means sweeping clan members or villagers off the land to turn it into sheep-walk or deer forest."
+              },
+              {
+                "title": "Today's application",
+                "text": "When common resources are privatized in the name of productivity or modernization, ask who loses means of subsistence and who monopolizes the revenue. Even when migrant labour looks like a voluntary choice, if we overlook the loss of land and subsistence access that forced the choice, we miss how labour markets are formed."
+              },
+              {
+                "title": "Chapter focus",
+                "text": "See the labour market as a historical result of lost means of subsistence, not simply free contract."
               }
             ]
           }
@@ -18431,6 +19041,51 @@
             "en": "Summarizes how public debt, taxes, protectionism, and colonial plunder propelled accumulation."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "산업자본가 발생의 실제 경로와 신화",
+              "left": {
+                "heading": "마르크스가 보여주는 경로",
+                "rows": [
+                  "식민지 약탈, 노예무역, 상업전쟁이 부를 집중시켰다.",
+                  "국가부채와 조세가 사회적 부를 자본가에게 이전했다.",
+                  "보호무역은 국내 제조업자를 온실처럼 길렀다.",
+                  "집중된 화폐가 노동력을 사들이는 산업자본으로 전환되었다."
+                ]
+              },
+              "right": {
+                "heading": "평화적 시장 서사",
+                "rows": [
+                  "검약한 개인이 저축과 절약으로 자본을 모았다.",
+                  "국가는 시장의 중립적 심판에 머물렀다.",
+                  "자유 경쟁이 제조업을 점진적으로 키웠다.",
+                  "상업자본이 자연스럽게 공장 제도로 진화했다."
+                ]
+              }
+            },
+            "en": {
+              "title": "Real Genesis and Market Myth of the Industrial Capitalist",
+              "left": {
+                "heading": "Marx’s actual path",
+                "rows": [
+                  "Colonial plunder, the slave trade, and commercial wars concentrated wealth.",
+                  "Public debt and taxation transferred social wealth to capitalists.",
+                  "Protectionism raised domestic manufacturers like a hothouse.",
+                  "Concentrated money became industrial capital buying labour-power."
+                ]
+              },
+              "right": {
+                "heading": "Peaceful market narrative",
+                "rows": [
+                  "Thrifty individuals accumulated capital by saving.",
+                  "The state remained a neutral referee of the market.",
+                  "Free competition gradually expanded manufactures.",
+                  "Commercial capital naturally evolved into the factory system."
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch31-basic",
@@ -18445,27 +19100,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "31장에서 산업자본가의 발생은 왜 단순한 사업가 정신의 결과로 설명되지 않는가?",
-                    "en": "Why is the genesis of the industrial capitalist in Chapter 31 not explained simply as the result of entrepreneurial spirit?"
+                    "ko": "15세기 말 대항해 이후 세계시장이 갑자기 요구한 상품 물량 앞에서 장인이나 임금노동자가 조금씩 고용을 늘려 소자본가가 되는 길은 너무 느렸다. 이 느린 길을 대신해 산업자본가를 낳은 주된 동력은 무엇이었는가?",
+                    "en": "After the great voyages at the end of the 15th century, the new world market demanded goods on a scale that the slow path of artisans and wage-labourers gradually becoming small capitalists could not meet. What main force produced industrial capitalists instead?"
                   },
                   "choices": {
                     "ko": [
-                      "산업자본은 식민지 약탈, 노예무역, 국채, 조세, 보호무역, 국가폭력 같은 역사적 장치 속에서 집중된 부를 바탕으로 성장했기 때문이다.",
-                      "산업자본가는 대체로 노동자 투표로 선출되었기 때문이다.",
-                      "산업자본은 생산수단 없이 순수한 상상력만으로 생겨났기 때문이다.",
-                      "사업가 정신은 자본주의에서 아무 사람에게도 존재할 수 없기 때문이다."
+                      "식민지 약탈, 노예무역, 국가부채, 조세, 보호무역이 집중시킨 부와 국가권력이 산업자본을 앞당겨 낳았다.",
+                      "장인들이 생산수단을 들이지 않고 순수한 신용만으로 수천 명을 고용하는 대공장을 일으켰다.",
+                      "세계시장은 길드 규약을 강화해 소규모 장인의 완만한 성장을 안전하게 지켰다.",
+                      "국가부채와 식민지는 상업자본을 고리대 자본에 묶어 산업자본으로의 전환을 가로막았다."
                     ],
                     "en": [
-                      "Because industrial capital grew on the basis of wealth concentrated through historical mechanisms such as colonial plunder, the slave trade, public debt, taxation, protection, and state violence.",
-                      "Because industrial capitalists were always elected by workers’ vote.",
-                      "Because industrial capital arose from pure imagination without means of production.",
-                      "Because entrepreneurial spirit cannot exist in anyone under capitalism."
+                      "Colonial plunder, the slave trade, public debt, taxation, and protection concentrated wealth and state power in ways that accelerated the birth of industrial capital.",
+                      "Artisans built large factories and hired thousands of workers through pure credit without laying out any means of production.",
+                      "The world market strengthened guild rules and safely protected the slow growth of small masters into capitalists.",
+                      "Public debt and colonies bound commercial capital to usury and blocked its transformation into industrial capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 산업자본가의 형성을 개인 덕목으로 환원하지 않는다. 세계시장과 국가권력, 식민 폭력, 금융 제도가 자본 집중의 수단으로 작동했다.",
-                    "en": "Marx does not reduce the formation of industrial capitalists to individual virtue. The world market, state power, colonial violence, and finance operated as means of concentrating capital."
+                    "ko": "대항해 이후 세계시장이 요구한 무역 물량은 장인이나 노동자가 조금씩 자본을 모으는 완만한 길로 감당하기 어려웠다. 식민지 금은, 노예무역, 국가부채, 조세, 보호무역은 부를 소수의 손으로 빠르게 옮기고, 그것을 공장과 임금노동에 쏟아 넣을 산업자본의 출발 조건을 만들었다. 평화로운 사업가 정신의 서사는 이 폭력적 이전을 개인의 근면으로 덮어 버린다. 이 구분은 산업자본가의 탄생을 개인 덕목이 아니라 세계시장과 국가권력의 산물로 보게 한다.",
+                    "en": "The new world market called for quantities that artisans slowly turning into small capitalists could never supply. Colonial treasure, the slave trade, public debt, taxation, and protection swept wealth into a few hands, and that money bought buildings, machines, and wage-labour. The story of entrepreneurial spirit covers the transfer with personal thrift, which is why Marx makes the industrial capitalist a product of state power."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "대항해 이후 세계시장이 요구한 속도는 완만한 장인 성장과 맞지 않았다. 국가와 식민 폭력이 그 속도 차이를 메웠다.",
+                      "신용만으로 공장을 세웠다는 것은 생산수단과 노동력의 실제 공급을 외면한다. 대공장은 그 이전에 집중된 부를 필요로 했다.",
+                      "세계시장은 길드를 강화하지 않고 오히려 길드 통제 밖 항구와 내륙에 새 제조업을 세웠다.",
+                      "국가부채와 식민지는 산업 전환을 가로막은 것이 아니라 상업·금융 부를 산업자본으로 옮기는 지렛대였다."
+                    ],
+                    "en": [
+                      "The speed demanded by the new world market did not match the slow ascent of small masters. State and colonial violence filled that gap.",
+                      "Building factories on pure credit ignores the prior concentration of means of production and labour-power that made large factories possible.",
+                      "The world market did not strengthen guilds. New manufactures appeared at ports and inland points beyond the guilds’ control.",
+                      "Public debt and colonies did not block the transition. They were levers moving commercial and financial wealth into industrial capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "이 목가적 행위들이 원시적 축적의 주요 계기들이다.",
+                      "en": "These idyllic proceedings are the chief momenta of primitive accumulation."
+                    }
                   }
                 },
                 {
@@ -18473,27 +19153,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "식민지 약탈과 노예무역은 산업자본 형성에서 어떤 역할을 했는가?",
-                    "en": "What role did colonial plunder and the slave trade play in the formation of industrial capital?"
+                    "ko": "17세기 말 영국 정부는 임시 지출을 국채로 조달하고, 채권자에게는 쉽게 사고팔리는 공채를 주었다. 이때 국가부채가 호주머니의 돈을 산업과 고리대의 위험 없이 증식하게 만드는 기제를 고르라.",
+                    "en": "In late 17th-century England the state met its extraordinary expenses through national debt and gave its creditors easily negotiable public bonds. Identify the mechanism by which public debt made money breed without the risks of industry or usury."
                   },
                   "choices": {
                     "ko": [
-                      "그것들은 막대한 부와 원료, 시장, 금융 능력을 집중시켜 산업자본의 출발 조건을 강화했다.",
-                      "그것들은 자본주의를 막기 위해 봉건제를 복원하는 수단이었다.",
-                      "그것들은 유럽 산업 바깥의 주변 사건이었다.",
-                      "그것들은 노동력이 상품이 되는 과정을 완전히 폐지했다."
+                      "국가부채는 불모의 화폐에 증식 능력을 부여해, 납세자가 장래에 갚을 조세를 담보로 화폐를 자본으로 돌게 한다.",
+                      "정부는 채권자에게 상품을 나눠주고 받은 금액을 국고에 그대로 묶어 두어 화폐를 소멸시킨다.",
+                      "공채를 받은 채권자는 그 종이를 현금처럼 팔 수 있다고 해도 생산에 투입할 수는 없다.",
+                      "세금이 사라지고 정부는 이자 지급 재원 없이도 국가부채를 계속 늘릴 수 있게 된다."
                     ],
                     "en": [
-                      "They concentrated immense wealth, raw materials, markets, and financial capacity, strengthening the starting conditions of industrial capital.",
-                      "They were means of restoring feudalism in order to block capitalism.",
-                      "They were peripheral events unrelated to European industry.",
-                      "They completely abolished the process by which labour-power became a commodity."
+                      "Public debt gives barren money the power of breeding and turns it into capital against the future taxes that debtors will pay.",
+                      "The state gives commodities to its creditors and locks the borrowed sum in the treasury, extinguishing the money.",
+                      "Even if bondholders can sell public paper like cash, they cannot put that paper into production.",
+                      "Taxes disappear, so the state can keep increasing public debt without any revenue to pay interest."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스에게 세계시장 폭력은 산업자본의 외부 장식이 아니다. 식민지와 노예무역은 축적된 화폐와 원료, 시장을 제공하며 산업자본의 성장을 가속했다.",
-                    "en": "For Marx, world-market violence is not external decoration. Colonies and the slave trade provided accumulated money, raw materials, and markets, accelerating the growth of industrial capital."
+                    "ko": "정부는 빌린 돈을 지출에 쓰고, 채권자는 쉽게 사고팔리는 공채를 손에 쥔다. 이 공채는 현금처럼 돌면서 납세자가 장래에 낼 조세를 담보로 이자와 매매 차익을 낳는다. 마르크스가 마법사의 지팡이에 빗댄 것이 이 대목이며, 국가부채는 불모의 화폐에 증식 능력을 준다. 공채를 중립적 회계나 국민 공동 자산으로 읽으면 납세자의 부담이 금융·상업 자본의 축적으로 바뀌는 통로가 보이지 않는다.",
+                    "en": "The state spends what it borrows, and the creditor is left holding public bonds that pass from hand to hand like hard cash. The interest on them is secured by taxes not yet collected. That is why Marx says public debt, as with the stroke of an enchanter’s wand, endows barren money with the power of breeding. Read as neutral bookkeeping, the debt hides the channel turning taxpayers’ burdens into accumulation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "공채의 유동성이 핵심이다. 약탈이나 생산 투자 없이도 증권만으로 화폐가 자본처럼 증식할 수 있었다.",
+                      "국가부채는 화폐를 소멸시키지 않는다. 빌린 금액은 정부 지출로 돌고, 채권자에게는 유통 가능한 공채가 남는다.",
+                      "공채는 생산에 직접 투입되지 않아도 자본으로 기능한다는 점이 「불모의 화폐」 비유의 의미다.",
+                      "조세는 사라지지 않는다. 오히려 이자 지급을 위해 조세가 뒤따르는 것이 국가부채 체제의 보완 장치다."
+                    ],
+                    "en": [
+                      "Liquidity of the public bond is the key. Without plunder or productive investment, the paper itself could make money breed like capital.",
+                      "Public debt does not extinguish money. The borrowed sum circulates through state spending while the creditor holds a negotiable bond.",
+                      "The point of the barren-money image is that public debt functions as capital even without being directly invested in production.",
+                      "Taxes do not disappear. They follow as the complement needed to pay the interest on the accumulated debt."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "마법 지팡이를 두르듯, 국가부채는 불모의 화폐에 증식 능력을 부여하고, 그리하여 산업은 물론 고리대에 투입될 때 따르는 수고와 위험에 노출되지 않고도 화폐를 자본으로 바꾼다.",
+                      "en": "As with the stroke of an enchanter’s wand, it endows barren money with the power of breeding and thus turns it into capital, without the necessity of its exposing itself to the troubles and risks inseparable from its employment in industry or even in usury."
+                    }
                   }
                 },
                 {
@@ -18501,27 +19206,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "국채와 조세 제도는 산업자본가의 발생에서 왜 중요하게 다뤄지는가?",
-                    "en": "Why are public debt and taxation important in the genesis of the industrial capitalist?"
+                    "ko": "근대 부르주아 경제학은 「한 나라는 빚이 깊을수록 부자가 된다」고 선전한다. 이 표현이 실제로 가리키는 것을 고르라.",
+                    "en": "Modern bourgeois economy proclaims that the deeper a nation’s debt, the richer it becomes. Identify what this slogan actually refers to."
                   },
                   "choices": {
                     "ko": [
-                      "그 제도들은 국가 재정을 매개로 대중에게서 자원을 끌어내고 금융·상업 자본에 수익과 축적 기회를 제공했기 때문이다.",
-                      "국채는 모든 채권자를 곧바로 노동자로 만들기 때문이다.",
-                      "조세는 상품생산을 폐지하고 직접 공납으로 돌아가게 하기 때문이다.",
-                      "국채는 해외무역을 금지하는 순수한 도덕 제도였기 때문이다."
+                      "국가부채는 납세자 전체에 귀속되는 공동 부가 아니라 국가 채권자와 금융업자에게 부를 몰아주는 축적 지렛대다.",
+                      "채무가 늘수록 모든 납세자가 이자 수입과 채권 이익을 균등하게 나눠 갖는다.",
+                      "국가부채는 상품생산의 확대를 멈추고 직접 공납과 부역으로 되돌아가게 만드는 재정 제도다.",
+                      "국가부채는 정부가 언젠가 갚아야 할 장부상의 채무일 뿐이어서, 상환이 끝나기 전까지는 누구의 자본으로도 기능하지 않는 항목이다."
                     ],
                     "en": [
-                      "Because these institutions drew resources from the population through state finance and provided profit and accumulation opportunities to financial and commercial capital.",
-                      "Because public debt immediately turns all creditors into workers.",
-                      "Because taxation abolishes commodity production and returns society to direct tribute.",
-                      "Because public debt was a purely moral institution that prohibited foreign trade."
+                      "Public debt is not collective wealth belonging to all taxpayers. It is a lever of accumulation that channels wealth to state creditors and financiers.",
+                      "As debt grows, every taxpayer shares equally in interest income and bond profits.",
+                      "Public debt halts commodity production and returns society to direct tribute and forced labour.",
+                      "Public debt is only a bookkeeping liability the state must repay one day, so until repayment it functions as nobody’s capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "국가 재정은 중립적 회계가 아니다. 국채와 조세는 사회적 부를 특정 자본 집단에 집중시키며 축적의 지렛대가 된다.",
-                    "en": "State finance is not neutral accounting. Public debt and taxation concentrate social wealth in particular capitalist groups and become levers of accumulation."
+                    "ko": "빚이 깊을수록 나라가 부자가 된다는 근대 교리는 국민 전체와 국가 채권자를 같은 주어로 묶는다. 실제로 국채는 납세자가 세금으로 갚을 이자를 담보로 삼아, 채권자와 금융 중개인의 부를 늘리는 장치다. 이때 대중은 공동의 부를 나눠 갖는 주인이 아니라 이자 재원을 공급하는 쪽으로 들어온다. 따라서 「국가부채」라는 표현은 중립적이지 않다. 그것은 국가의 재정을 통한 부의 사적 집중을 가리킨다. 이 구분은 국가 재정을 모두의 이익으로 보는 상식을 거꾸로 세운다.",
+                    "en": "The doctrine that deeper debt makes a nation richer quietly puts the whole population and the state’s creditors into one subject. In practice the interest is secured by taxes not yet paid, so the mass of people enters on the paying side while bondholders and middlemen collect. ‘National debt’ therefore names no common fund but a private concentration of wealth carried through state finance."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "국가부채의 이득은 전 국민에게 고르게 가지 않는다. 국채 투자자와 금융 중개인이 납세자 부담을 수익으로 바꾼다.",
+                      "빚이 깊어질수록 모든 납세자가 이자를 받는 것은 아니다. 대중은 주로 세금을 내는 쪽으로 들어온다.",
+                      "국가부채는 상품생산을 폐지하지 않는다. 오히려 조세와 국채가 상품경제와 금융시장을 확장시킨다.",
+                      "공채는 상환을 기다리는 장부 항목에 머물지 않는다. 채권자는 그 종이를 사고팔고 담보로 잡히며 이자를 받는다. 그 순간부터 공채는 이미 자본으로 기능한다."
+                    ],
+                    "en": [
+                      "The gains of public debt do not go equally to the people. Bondholders and financial intermediaries convert taxpayers’ burdens into profit.",
+                      "Deeper debt does not make all taxpayers receive interest. The mass enters mainly on the side that pays taxes.",
+                      "Public debt does not abolish commodity production. Taxation and national debt actually expand commodity and financial markets.",
+                      "The bond does not sit still waiting for repayment. Creditors sell it, pledge it, and draw interest on it, so it already functions as capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "이른바 국민 부 가운데 현대 민족들이 집단적으로 실제 소유하는 유일한 부분은 그들의 국가부채다. 그리하여 한 나라는 빚을 깊이 질수록 더 부유해진다는 근대 교리가 필연적 귀결로 나온다. 국가신용은 자본의 신조가 된다.",
+                      "en": "The only part of the so-called national wealth that actually enters into the collective possessions of modern peoples is their national debt. Hence, as a necessary consequence, the modern doctrine that a nation becomes the richer the more deeply it is in debt. Public credit becomes the credo of capital."
+                    }
                   }
                 },
                 {
@@ -18529,27 +19259,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "보호무역과 상업전쟁을 마르크스의 관점에서 보면 무엇이 드러나는가?",
-                    "en": "What is revealed when protectionism and commercial wars are viewed from Marx’s standpoint?"
+                    "ko": "한 정부가 특정 산업에 보조금을 주고 공공조달 물량을 보장해주자 그 기업은 급성장했지만 비용은 납세자가 떠안았다. 이 사례에서 국가권력이 수행한 역할로 가장 타당한 설명을 고르라.",
+                    "en": "A state gave subsidies and guaranteed public procurement to a particular industry. The firm grew rapidly, while taxpayers bore the cost. Choose the most adequate account of the role state power played in this case."
                   },
                   "choices": {
                     "ko": [
-                      "국가는 특정 산업자본을 키우기 위해 시장을 만들고 경쟁자를 밀어내며 폭력적 세계경쟁에 개입했다.",
-                      "산업자본은 평화로운 자유경쟁 속에서 태어났다.",
-                      "보호관세는 많은 노동자에게 생산수단을 무상으로 나누어 주었다.",
-                      "상업전쟁은 상품교환이 없다는 증거다."
+                      "납세자 전체의 부담을 특정 자본의 수익으로 바꾸고 그 자본이 홀로 커 가는 축적 조건을 조성했다.",
+                      "정부가 개입한 산업은 시장 가격을 벗어나므로 더 이상 자본 축적의 대상이 될 수 없다.",
+                      "보조금을 받은 기업은 납세자 소유가 되어 사적 이윤을 분배할 수 없게 된다.",
+                      "국가의 지출은 노동자에게만 돌아가므로 산업자본의 생산수단 집중과는 무관하다."
                     ],
                     "en": [
-                      "The state intervened in violent world competition by creating markets and excluding rivals in order to build particular industrial capitals.",
-                      "Industrial capital was always born through peaceful free competition unrelated to the state.",
-                      "Protective tariffs distributed means of production to all workers for free.",
-                      "Commercial wars prove that commodity exchange does not exist."
+                      "It converted the burdens of all taxpayers into revenue for particular capital and created conditions in which that capital could grow alone.",
+                      "An industry touched by state intervention leaves market prices and can no longer be an object of capital accumulation.",
+                      "A subsidized firm becomes the property of taxpayers and can no longer distribute private profit.",
+                      "State spending goes only to workers and has no relation to the concentration of means of production by industrial capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 자유시장 신화를 뒤집는다. 산업자본의 초기 형성에는 보호, 독점, 전쟁, 국가권력이 깊게 결합되어 있었다.",
-                    "en": "Marx overturns the free-market myth. Protection, monopoly, war, and state power were deeply involved in the early formation of industrial capital."
+                    "ko": "정부가 보조금과 조달을 주자 기업은 성장했지만 비용은 납세자가 떠안았다. 이 장면에서 국가는 시장의 중립적 심판이 아니다. 세금으로 분산된 사회적 부담을 특정 기업의 안정적 수요와 수익으로 바꾸고, 그 자본만 홀로 성장할 수 있는 조건을 온실처럼 조성한다. 이는 17세기 말 영국에서 식민지, 국가부채, 조세, 보호무역이 결합하여 산업자본을 앞당겼던 방식의 현대적 변형이다. 국가 개입을 자본주의와 대립시키지 않고 축적의 능동적 장치로 보아야 한다.",
+                    "en": "The firm grew while taxpayers paid, so the state was no neutral referee here. Taxes spread the burden across society and returned it to one capital as guaranteed demand and revenue, hothousing its growth. That is the modern shape of what Marx traces in late-17th-century England, where colonies, public debt, taxation, and protection shortened the road to industrial capital. Intervention is a mechanism of accumulation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "국가 지원이 기업을 비자본주의적으로 만드는 것이 아니라, 특정 자본의 축적 조건을 온실처럼 만들어 준다.",
+                      "시장 가격을 벗어난 지원도 축적의 대상이다. 조달과 보조금이 그 자본에 안정적 수요와 수익을 돌려준다.",
+                      "보조금이 납세자 소유권을 자동으로 만들지는 않는다. 기업은 사적 지분과 이윤 구조를 유지한 채 공적 자원을 받는다.",
+                      "국가 지출은 노동자에게만 머물지 않고, 구매·특허·보조를 통해 특정 기업의 생산수단과 시장 지배력을 키운다."
+                    ],
+                    "en": [
+                      "State support does not make a firm non-capitalist. It gives particular capital hothouse conditions of accumulation.",
+                      "Support outside market prices can still be an object of accumulation. Procurement and subsidies return stable demand and revenue to that capital.",
+                      "Subsidies do not create automatic taxpayer ownership. The firm keeps private equity and profit while receiving public resources.",
+                      "State spending does not stop at workers. Purchases, patents, and subsidies enlarge a firm’s means of production and market power."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "이 방법들은 부분적으로, 예컨대 식민 체제에서처럼 노골적인 힘에 의존한다. 그러나 그것들은 모두 사회의 집중되고 조직된 힘인 국가권력을 사용하여 봉건적 생산양식이 자본주의적 생산양식으로 전환하는 과정을 온실처럼 재촉하고 이행을 단축한다.",
+                      "en": "These methods depend in part on brute force, e.g., the colonial system. But, they all employ the power of the State, the concentrated and organised force of society, to hasten, hot-house fashion, the process of transformation of the feudal mode of production into the capitalist mode, and to shorten the transition."
+                    }
                   }
                 },
                 {
@@ -18557,27 +19312,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "원시적 축적은 노동자를 만들 뿐 아니라 산업자본가도 만든다. 31장은 이 두 번째 측면을 어떻게 보여주는가?",
-                    "en": "Primitive accumulation creates not only workers but also industrial capitalists. How does Chapter 31 show this second side?"
+                    "ko": "식민지에서 약탈한 금은이 유럽 공장의 출발 자금이 되고, 같은 공장이 영국 아동을 밤새 노동시켰다. 이 얽힘은 원시적 축적의 두 측면을 어떻게 잇는가?",
+                    "en": "Gold and silver looted from the colonies became the starting funds of European factories, and those same factories worked English children through the night. How does this entanglement connect the two sides of primitive accumulation?"
                   },
                   "choices": {
                     "ko": [
-                      "임금노동자만이 아니라 산업자본가 쪽의 부와 권력도 폭력적·국가적·세계시장적 과정 속에서 만들어졌음을 보여준다.",
-                      "국가가 개입하면 자본 집중은 대체로 불가능해진다는 결론을 낸다.",
-                      "산업자본가는 임금노동자와 아무 관계 없이 순수한 상업 차익만으로 남는다는 점을 보여준다.",
-                      "원시적 축적은 농촌에서만 일어나고 세계시장은 관련이 없다는 점을 증명한다."
+                      "한쪽에서는 사회적 생산수단과 생활수단을 자본으로 집중시키고, 반대쪽에서는 인구를 임금노동자로 만드는 양극화를 보여준다.",
+                      "식민지 약탈과 아동 노동은 서로 다른 시대의 우연한 사건일 뿐 한 과정으로 묶이지 않는다.",
+                      "공장 자본은 기계 발명이 낳은 이윤을 다시 투자하며 자라났고, 식민지 무역은 그 성장에 뒤따라온 부수적 결과에 지나지 않았다.",
+                      "원시적 축적은 자본가에게 부를 주고도 노동자는 그대로 소농으로 남기는 일방적 과정이다."
                     ],
                     "en": [
-                      "It shows that not only wage-labourers but also the wealth and power on the industrial capitalist side were made through violent, state-backed, and world-market processes.",
-                      "It concludes that whenever the state intervenes, concentration of capital becomes impossible.",
-                      "It shows that industrial capitalists remain pure merchants unrelated to wage-labourers.",
-                      "It proves that primitive accumulation occurs only in the countryside and has no relation to the world market."
+                      "It shows a polarization that concentrates social means of production and subsistence into capital at one pole, while turning the population into wage-labourers at the other.",
+                      "Colonial plunder and child labour are merely accidental events of different epochs, not one connected process.",
+                      "Factory capital grew by reinvesting the profits that machine invention created, and colonial trade was merely a side effect that followed.",
+                      "Primitive accumulation gives wealth to capitalists while leaving labourers intact as small peasants."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "원시적 축적은 한쪽에서 노동자를 만들고 다른 쪽에서 자본을 집중시킨다. 31장은 특히 후자의 역사적 폭력과 제도적 장치를 전면에 놓는다.",
-                    "en": "Primitive accumulation creates workers on one side and concentrates capital on the other. Chapter 31 foregrounds the historical violence and institutional mechanisms of the latter."
+                    "ko": "식민지의 금은이 공장 자본으로 바뀌고, 그 공장이 아동을 밤새 노동시키는 연쇄는 한 극에서 사회적 생산수단과 생활수단을 자본으로 집중시키고, 반대 극에서 인구를 임금노동자로 만드는 과정이다. 두 장면이 이어져 있기 때문에 자본은 처음부터 피와 오물을 뚝뚝 흘리며 들어온 존재가 된다. 이 종합은 원시적 축적을 어느 한 지역의 농민 수탈로만 보지 않고 세계시장 전체의 폭력적 연결로 읽게 만든다.",
+                    "en": "Colonial gold becoming factory capital, and those same factories working children through the night, are the two poles of one movement: social means of production and subsistence gather as capital at one end while the population is turned into wage-labourers at the other. Because the poles are joined, capital comes into the world dripping with blood and dirt, and primitive accumulation has to be read across the world market."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "자본은 극마다 다른 방식으로 인구와 부를 재배치한다. 한쪽의 자본 집중과 반대쪽의 임금노동자 형성이 한 과정이다.",
+                      "식민지 금은과 아동 노동은 우연한 병렬이 아니라, 원료·자금·노동력을 조달하는 단일한 세계시장 고리였다.",
+                      "발명과 재투자만으로는 수천 명을 한꺼번에 고용할 초기 자금이 설명되지 않는다. 식민지 약탈과 노예무역이 그 자금과 원료, 판로를 먼저 대 주었다.",
+                      "노동자는 소농으로 남지 않는다. 토지와 생산수단에서 떨어져 임금노동자로 만들어지는 것이 반대 극이다."
+                    ],
+                    "en": [
+                      "Capital redistributes people and wealth at opposite poles. The concentration of capital on one side and the making of wage-labourers on the other are one process.",
+                      "Colonial gold and child labour were not parallel accidents. They formed a single world-market circuit supplying raw materials, funds, and labour-power.",
+                      "Invention and reinvestment do not explain the funds for hiring thousands at once. Colonial plunder and the slave trade supplied those funds, raw materials, and markets first.",
+                      "Labourers do not remain peasants. Being separated from land and means of production is what turns them into wage-labourers at the opposite pole."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "오지에에 따르면 화폐가 「한쪽 뺨에 태어날 때부터 피묻은 자국을 지니고 이 세상에 온다」면, 자본은 머리부터 발끝까지 모든 구멍에서 피와 오물을 뚝뚝 흘리며 온다.",
+                      "en": "If money, according to Augier, “comes into the world with a congenital blood-stain on one cheek,” capital comes dripping from head to foot, from every pore, with blood and dirt."
+                    }
                   }
                 }
               ]
@@ -18595,27 +19375,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "산업자본의 발생을 “상업자본이 자연스럽게 공장으로 발전한 것”으로 보면 무엇이 빠지는가?",
-                    "en": "What is omitted if the rise of industrial capital is seen as merchant capital naturally developing into factories?"
+                    "ko": "베네치아와 제노바의 상인·고리대업자가 막대한 화폐를 쌓았지만, 이 부가 대공장을 세우는 산업자본으로 곧바로 바뀌지는 못했다. 이 전환을 가로막은 것은 무엇이었는가?",
+                    "en": "Venetian and Genoese merchants and usurers piled up enormous money, yet that wealth did not immediately turn into industrial capital building large factories. What blocked the transition?"
                   },
                   "choices": {
                     "ko": [
-                      "상업·금융의 부가 국가폭력, 식민지 약탈, 국채, 보호제도를 거쳐 생산을 지휘하는 산업자본으로 전환되는 매개가 사라진다.",
-                      "상업자본은 이미 상품을 사고팔기 때문에, 생산수단과 임금노동을 조직하는 산업자본과 따로 구분할 필요가 없다는 결론이 된다.",
-                      "공장제가 나타나면 국가재정과 식민지 약탈은 모두 과거의 봉건적 잔재로 밀려나 산업자본과 무관해진다.",
-                      "상업자본은 자본주의 이전에는 존재할 수 없고, 산업자본은 상품 판매와 아무 관계가 없다는 결론이 된다."
+                      "봉건제와 길드 조직이 상업·고리대 화폐자본을 산업자본으로 전환시키는 것을 막았고, 그 족쇄가 해체되어야 했다.",
+                      "상업자본은 이미 임금노동을 조직하는 산업자본과 같아서 달리 전환될 필요가 없었다.",
+                      "국가권력이 길드 규약을 강화하면서 상업자본을 자발적으로 공장주로 승격시켰다.",
+                      "화폐자본은 생산수단과 노동력을 사들이는 기능이 없어서 산업자본으로 전환될 수 없었다."
                     ],
                     "en": [
-                      "It erases the mediations through which commercial and financial wealth became industrial capital commanding production: state violence, colonial plunder, public debt, and protection.",
-                      "Because commercial capital already buys and sells commodities, there is no need to distinguish it from industrial capital organizing means of production and wage-labour.",
-                      "Once the factory system appears, state finance and colonial plunder become feudal leftovers unrelated to industrial capital.",
-                      "It implies that commercial capital could not exist before capitalism and that industrial capital has no relation to selling commodities."
+                      "Feudalism and guild organization blocked the conversion of commercial and usurious money-capital into industrial capital, and those fetters had to be dissolved.",
+                      "Commercial capital was already identical with industrial capital organizing wage-labour, so no further conversion was needed.",
+                      "State power strengthened guild rules and voluntarily promoted commercial capital into factory ownership.",
+                      "Money-capital lacked the capacity to buy means of production and labour-power, so it could never become industrial capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "31장의 쟁점은 자연스러운 진화가 아니라 역사적 매개다. 상업·금융의 부가 산업자본으로 전환되려면 세계시장 폭력, 국가재정, 보호제도, 노동자 형성이 함께 작동해야 했다.",
-                    "en": "Chapter 31 is about historical mediation, not natural evolution. For commercial and financial wealth to become industrial capital, world-market violence, state finance, protection, and the formation of workers had to work together."
+                    "ko": "상업도시의 화폐자본은 그냥 두면 공장으로 자라지 않았다. 시골에서는 봉건 질서가, 도시에서는 길드 조직이 돈을 생산의 지휘권으로 바꾸는 것을 막았다. 족쇄는 봉건 사회가 해체되고 농촌 인구가 토지에서 떨어져 나가면서 풀렸고, 길드 밖 항구와 내륙에 새 제조업이 들어서며 통로가 열렸다. 자연스러운 진화 서사는 이 정치적 강제를 지운다.",
+                    "en": "Money piled up by usury and commerce did not grow into factories by itself. The feudal constitution in the country and the guild organisation in the towns kept it from becoming command over production, and those fetters vanished only with the dissolution of feudal society and the eviction of the country population. New manufactures then rose beyond guild control, so the conversion turned on a forced reordering of social relations."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "상업·고리대 부가 산업자본으로 넘어가려면 봉건제와 길드라는 두 족쇄가 풀리는 정치적 과정이 필요했다.",
+                      "상업자본과 산업자본은 다르다. 상업자본은 판매 이윤을 좇고, 산업자본은 생산수단을 사서 노동력을 조직해 잉여가치를 뽑는다.",
+                      "국가권력이 길드를 강화한 것이 아니라, 봉건 사회의 해체와 도시의 길드 통제에서 벗어난 새 제조업이 전환을 열었다.",
+                      "화폐자본은 생산수단과 노동력을 사들일 잠재력이 있지만, 그 전환은 사회관계와 국가권력의 조건에 달려 있다."
+                    ],
+                    "en": [
+                      "Commercial and usurious wealth became industrial capital only after the twin fetters of feudalism and guild organization were broken politically.",
+                      "Commercial and industrial capital differ. The former seeks profit in selling, while the latter buys means of production and organizes labour-power to extract surplus-value.",
+                      "State power did not strengthen guilds. New manufactures beyond corporate town control opened the transition after feudal dissolution.",
+                      "Money-capital has the potential to buy means of production and labour-power, but its conversion depends on social relations and state power."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "고리대와 상업으로 형성된 화폐자본은 시골에서는 봉건적 체제에 의해, 도시에서는 길드 조직에 의해 산업자본으로 전환되는 것이 막혀 있었다. 이 족쇄들은 봉건 사회의 해체, 농촌 인구의 수탈과 부분적 축출과 함께 사라졌다.",
+                      "en": "The money capital formed by means of usury and commerce was prevented from turning into industrial capital, in the country by the feudal constitution, in the towns by the guild organisation. These fetters vanished with the dissolution of feudal society, with the expropriation and partial eviction of the country population."
+                    }
                   }
                 },
                 {
@@ -18623,27 +19428,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "31장에서 국가는 시장의 외부자가 아니라 축적의 행위자로 등장한다. 그 매개는 무엇인가?",
-                    "en": "In Chapter 31, the state appears not as an outsider to the market but as an agent of accumulation. What mediates this role?"
+                    "ko": "암스테르담 상인은 동인도 회사 주식을 사고, 정부는 해군으로 무역로를 열며, 공장주는 이 돈으로 면방직 기계를 들인다. 이 흐름을 이어주는 매개를 고르라.",
+                    "en": "An Amsterdam merchant buys East India Company shares, the state opens trade routes with its navy, and a manufacturer uses the money to buy cotton-spinning machinery. Identify the mediation that links this flow."
                   },
                   "choices": {
                     "ko": [
-                      "국가는 국채, 조세, 독점권, 보호관세, 군사력으로 사회적 부를 집중시키고 특정 자본의 성장을 촉진한다.",
-                      "국가는 상품 일반교환을 금지하여 자본주의를 멈춘다.",
-                      "국가는 생산수단을 노동자에게 모두 돌려주어 임금노동을 폐지한다.",
-                      "국가의 역할은 노동규정 같은 제한적 법률 기능에 머물기 때문이다."
+                      "식민지 무역의 독점 이윤과 국가의 군사·재정 보호가 상업 부를 생산 부문의 산업자본으로 옮겨 붙게 한다.",
+                      "주식회사는 흩어진 개인 저축을 모으는 순수한 민간 금융 장치여서, 국가의 특허장이나 무역 독점과는 별개로 성장했다.",
+                      "해군은 세계시장에서 유럽 상인을 배제하고 각국을 자급자족의 폐쇄 경제로 되돌린다.",
+                      "식민지 이윤은 전부 원주민 사회에 재분배되어 유럽 공장의 기계 구입과 이어지지 않는다."
                     ],
                     "en": [
-                      "Through public debt, taxation, monopolies, protective tariffs, and military force, the state concentrates social wealth and promotes the growth of particular capitals.",
-                      "The state stops capitalism by prohibiting all commodity exchange.",
-                      "The state abolishes wage-labour by returning all means of production to workers.",
-                      "The state relates to the economy only by setting public holidays."
+                      "Monopoly profits from colonial trade and the state’s military and fiscal protection transfer commercial wealth into industrial capital in production.",
+                      "The joint-stock company was a purely private financial device pooling scattered savings, growing apart from state charters and trade monopolies.",
+                      "The navy excludes European merchants from the world market and returns each country to a closed self-sufficient economy.",
+                      "Colonial profits are all redistributed to indigenous societies and do not connect with European factory machinery purchases."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "국가는 시장을 단순히 감시하는 심판이 아니다. 초기 산업자본 형성에서 국가는 부의 이전, 독점, 강제력을 통해 축적을 조직했다.",
-                    "en": "The state is not merely a referee watching the market. In the formation of early industrial capital, it organized accumulation through transfers of wealth, monopoly, and coercive power."
+                    "ko": "암스테르담의 주식, 해군, 면방직 기계는 따로 놓인 사건이 아니라 자본의 순환이라는 하나의 고리를 이룬다. 식민지가 자라나는 제조업에 독점 시장을 보장해 주고, 약탈과 노예화로 얻은 보물이 본국으로 흘러들어 자본으로 전환되었다. 국가의 군사력과 재정은 이 흐름을 열고 지켜 준 매개였다. 이 매개를 보지 않으면 무역이 저절로 공장을 낳았다는 신화에 갇힌다.",
+                    "en": "Shares, navy, and spinning machinery are not three separate events but one circuit of capital. The colonies secured a market for the budding manufactures and, through monopoly of that market, an increased accumulation, while treasure taken by looting and enslavement floated back and was turned into capital at home. Without that mediation one is left with the myth that trade grew into factories by itself."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "식민지 독점이윤과 국가 보호는 화폐를 생산 현장의 기계와 임금노동으로 바꾸는 매개 고리였다.",
+                      "주식회사는 민간 저축만 모은 것이 아니다. 국가가 준 특허장과 무역 독점이 그 회사에 배당의 원천을 만들어 주었다.",
+                      "해군은 유럽 상인을 배제하지 않고 오히려 식민지 무역로와 상업전쟁을 열어 주었다.",
+                      "식민지 이윤은 원주민 사회에 재분배되지 않았다. 본국으로 흘러와 자본으로 전환되었다."
+                    ],
+                    "en": [
+                      "Colonial monopoly profit and state protection were the mediation turning money into machinery and wage-labour.",
+                      "Joint-stock companies did not merely pool private savings. State charters and trade monopolies created the source of their dividends.",
+                      "The navy did not exclude European merchants. It opened colonial routes and fought commercial wars for them.",
+                      "Colonial profits were not redistributed to indigenous society. They flowed back to the mother-country and became capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "식민지는 자라나는 제조업에 시장을 보장하고, 시장의 독점을 통해 더 커진 축적을 보장했다. 유럽 밖에서 노골적인 약탈, 노예화, 살인으로 노획된 보물은 본국으로 흘러들어 와 그곳에서 자본으로 전환되었다.",
+                      "en": "The colonies secured a market for the budding manufactures, and, through the monopoly of the market, an increased accumulation. The treasures captured outside Europe by undisguised looting, enslavement, and murder, floated back to the mother-country and were there turned into capital."
+                    }
                   }
                 },
                 {
@@ -18651,27 +19481,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "식민지 폭력을 자본주의의 “예외적 범죄”로만 보면 31장의 논지가 왜 약해지는가?",
-                    "en": "Why is Chapter 31 weakened if colonial violence is treated only as an “exceptional crime” of capitalism?"
+                    "ko": "한 역사서는 18세기 영국의 공장주를 「검약하고 근면한 개인들이 시장에서 정당하게 교환해 부를 이룬 사례」로만 서술한다. 이 서술이 원시적 축적을 놓치는 이유를 고르라.",
+                    "en": "A history book describes 18th-century English manufacturers only as thrifty, industrious individuals who acquired wealth through fair market exchange. Identify why this account misses primitive accumulation."
                   },
                   "choices": {
                     "ko": [
-                      "식민지 폭력을 주변 예외로 밀어내면, 세계시장에서의 약탈과 노예화가 자본 집중과 산업 성장의 조건으로 작동했다는 분석이 사라진다.",
-                      "식민지 폭력은 실제로 존재하지 않았다는 결론이 나오기 때문이다.",
-                      "식민지 폭력은 도덕적으로 나쁘지만 자본 축적과는 아무 관련이 없다는 점이 확정되기 때문이다.",
-                      "식민지 폭력은 오직 봉건제 복원을 위한 운동이었기 때문이다."
+                      "실제 부의 집중은 노예무역, 식민지 약탈, 국가부채, 조세, 보호무역, 국가폭력이 만들어낸 조건에 의존했다.",
+                      "공장주의 부는 새 기계와 경영 능력에 대한 시장의 보상이므로 그 부의 출처를 따로 물을 필요가 없기 때문이다.",
+                      "노예무역과 식민지 약탈은 유럽 밖에서 벌어진 도덕적 범죄일 뿐, 영국 공장이 자금과 원료를 조달한 방식과는 별개의 일이었기 때문이다.",
+                      "국가부채와 보호무역은 시장을 왜곡하는 낭비였으므로 산업자본의 형성을 오히려 늦추었기 때문이다."
                     ],
                     "en": [
-                      "If colonial violence is pushed to the margins as an exception, the analysis disappears of how plunder and enslavement in the world market functioned as conditions for capital concentration and industrial growth.",
-                      "Because it would imply that colonial violence never existed.",
-                      "Because it establishes that colonial violence was morally bad but unrelated to capital accumulation.",
-                      "Because colonial violence was only a movement to restore feudalism."
+                      "The actual concentration of wealth depended on conditions made by the slave trade, colonial plunder, public debt, taxation, protection, and state violence.",
+                      "Because a manufacturer’s wealth was the market’s reward for new machinery and managerial skill, so its origin needs no separate account.",
+                      "Because the slave trade and colonial plunder were moral crimes outside Europe, separate from how English factories obtained their funds and raw materials.",
+                      "Because public debt and protection were market-distorting waste and therefore delayed the formation of industrial capital."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 식민지 폭력을 부차적 일탈로 처리하지 않는다. 그것은 세계시장 형성과 자본 집중의 중요한 수단이었다.",
-                    "en": "Marx does not treat colonial violence as a secondary deviation. It was a major means of forming the world market and concentrating capital."
+                    "ko": "18세기 영국 공장주에 대한 근면·검약 서사는 이미 형성된 부의 출처를 묻지 않는다. 마르크스의 자료는 노예무역, 식민지 약탈, 국가부채, 조세, 보호무역이 부를 특정 자본에게 집중시켰음을 보여준다. 평화로운 교환만으로 설명하면, 이 거대한 이전과 국가폭력이 시야에서 사라진다. 그래서 「정당한 시장 교환」 서사는 산업자본가의 발생을 설명하는 경쟁 이론이 되지 못한다. 개인의 태도와 사회적 강제를 구분하는 것이 이 장의 비판적 논점이다.",
+                    "en": "A story of thrift never asks where the wealth being thriftily managed came from. The sources Marx assembles show the slave trade, colonial plunder, public debt, taxation, and protection concentrating it in particular hands, and protection was itself an artificial means of manufacturing manufacturers. Told through fair exchange alone, that transfer and the force behind it drop out of view."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "근면과 검약의 서사는 개인의 태도만 보여줄 뿐, 부가 특정 계급에 집중된 제도적 폭력을 지운다.",
+                      "기계와 경영은 이미 모인 자본이 있어야 움직인다. 마르크스가 묻는 것은 그 자본이 어디서 왔는가다.",
+                      "약탈은 유럽 밖에서 끝나지 않았다. 노획된 보물은 본국으로 흘러들어 자본으로 전환되었고, 식민지는 자라나는 제조업에 독점 시장을 열어 주었다.",
+                      "보호무역은 낭비가 아니라 제조업자를 만들어 내는 인위적 수단이었다. 관세와 수출 장려금이 국내 자본에 시장과 수익을 붙여 주었다."
+                    ],
+                    "en": [
+                      "The thrift story shows only personal attitudes and erases the institutional violence that concentrated wealth in particular classes.",
+                      "Machinery and management only work where capital has already been gathered. Marx is asking where that capital came from.",
+                      "The plunder did not stay outside Europe. Captured treasure floated back and was turned into capital, while the colonies opened a monopoly market for the budding manufactures.",
+                      "Protection was not waste but an artificial means of manufacturing manufacturers. Tariffs and export premiums attached markets and revenue to domestic capital."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "원시적 축적의 여러 계기들은 이제 어느 정도 연대순으로 스페인, 포르투갈, 네덜란드, 프랑스, 그리고 영국에 배분된다. 17세기 말 영국에서 그것들은 식민지, 국가부채, 근대적 조세 방식, 보호무역 체제를 포괄하는 체계적 결합에 도달한다.",
+                      "en": "The different momenta of primitive accumulation distribute themselves now, more or less in chronological order, particularly over Spain, Portugal, Holland, France, and England. In England at the end of the 17th century, they arrive at a systematical combination, embracing the colonies, the national debt, the modern mode of taxation, and the protectionist system."
+                    }
                   }
                 },
                 {
@@ -18679,27 +19534,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "현대 국가가 특정 산업에 막대한 보조금, 특허 보호, 군사계약, 조달시장을 제공해 거대 기업을 키운다. 31장의 관점에서 핵심 질문은 무엇인가?",
-                    "en": "A modern state builds giant firms through large subsidies, patent protection, military contracts, and procurement markets. From Chapter 31’s standpoint, what is the key question?"
+                    "ko": "영국 동인도 회사가 아편 독점 계약을 떠나는 간부에게 주자, 그는 즉시 £40,000에 팔고 산 사람은 같은 날 £60,000에 되판다. 아무도 생산에 한 푼도 넣지 않은 이 장면은 원시적 축적의 어떤 성격을 보여주는가?",
+                    "en": "The English East India Company gives an opium monopoly contract to an officer as he departs; he immediately sells it for £40,000, and the buyer resells it the same day for £60,000. What feature of primitive accumulation does this scene, with no money advanced in production, reveal?"
                   },
                   "choices": {
                     "ko": [
-                      "국가의 제도와 재정이 어떻게 특정 자본의 축적 조건을 만들고 사회적 비용을 사적으로 집중된 이윤으로 전환하는가를 물어야 한다.",
-                      "보조금이 있으면 노동자는 생산수단을 그 자체로 소유한다고 전제해야 한다.",
-                      "국가가 개입하면 그 기업은 자본주의 기업과 다른 성격을 갖는다.",
-                      "특허와 조달은 생산과 무관하므로 축적 분석에서 제외해야 한다."
+                      "독점 계약 자체가 즉시 전매되는 재산이 되어, 투하 없이도 화폐 부를 한쪽으로 몰아주는 수단이 된다.",
+                      "독점 계약은 시장 가격을 반영하지 않으므로 축적의 속도와 무관한 사건이다.",
+                      "모든 계약 당사자가 같은 몫을 나누어 가져 부의 집중이 일어나지 않는다.",
+                      "동인도 회사는 사적 상인의 독점을 금지하고 국가 재정을 지켜내는 데만 힘썼다."
                     ],
                     "en": [
-                      "One should ask how state institutions and finance create conditions of accumulation for particular capitals and turn social costs into privately concentrated profit.",
-                      "If subsidies exist, workers should be assumed automatically to own the means of production.",
-                      "If the state intervenes, the firm should no longer be considered capitalist.",
-                      "Patents and procurement are unrelated to production and should be excluded from the analysis of accumulation."
+                      "The monopoly contract itself became immediately resellable property, concentrating money wealth on one side without any advance.",
+                      "Because the monopoly contract does not reflect market prices, it is unrelated to the pace of accumulation.",
+                      "All parties to the contract shared equal portions, so no concentration of wealth occurred.",
+                      "The East India Company forbade private monopoly and worked only to protect public finance."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "31장은 국가개입과 자본주의를 대립시키지 않는다. 오히려 국가는 특정 자본의 축적 조건을 만드는 능동적 장치가 될 수 있다.",
-                    "en": "Chapter 31 does not oppose state intervention to capitalism. The state can be an active mechanism for creating the conditions of accumulation for particular capitals."
+                    "ko": "아편 독점 계약은 생산에 한 푼도 들어가지 않았는데도 하루 사이 두 번 전매되며 막대한 차익을 남겼다. 팔린 것은 상품이 아니라 독점권 자체이고, 그런 특권은 시장에서 값을 갖는 재산이 된다. 동인도 회사의 관리들은 아편과 소금의 독점을 좌우하며 이 특권을 사적 축적으로 바꾸었다. 생산 투하로만 축적을 보면 국가가 만들어 준 특권에서 나온 부를 통째로 놓친다.",
+                    "en": "Not a shilling was advanced in production, yet the contract changed hands twice in a day and left an enormous gain. What was sold was the monopoly right itself, a piece of state-made privilege that trades like a commodity. Company officials fixed prices and held the monopolies of salt, opium, and betel, and great fortunes sprang up like mushrooms out of them. Reading accumulation only through productive advances leaves this source invisible."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "설리번은 아편을 한 상자도 사지 않았고 빈은 계약서를 하루 쥐고 있었을 뿐이다. 팔린 것은 상품이 아니라 국가가 만든 독점권이며, 그런 특권이 값을 갖는 한 부는 생산 밖에서도 집중된다.",
+                      "시장 가격을 반영하지 않는 독점권일수록 오히려 부의 집중 속도는 빠를 수 있다.",
+                      "계약 전매는 각자 같은 몫이 아니라, 정보와 지위에 따라 차등적인 화폐 증식을 낳았다.",
+                      "동인도 회사는 사적 상인의 독점을 금지하지 않고, 오히려 아편·소금 독점을 통해 관리들이 사적 축적을 했다."
+                    ],
+                    "en": [
+                      "Sullivan bought no opium and Binn held the paper for a single day. What sold was not a commodity but a state-made monopoly right, and while such privileges carry a price, wealth concentrates outside production too.",
+                      "A monopoly right that does not reflect market prices can accelerate the concentration of wealth, not slow it.",
+                      "Reselling the contract did not produce equal shares. Information and position produced unequal money gains.",
+                      "The East India Company did not forbid private monopoly. Its opium and salt monopolies let officials enrich themselves privately."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "어떤 설리번이라는 자는 아편 지대에서 멀리 떨어진 인도 지역으로 공무 여행을 떠나는 순간 아편 계약 하나를 받았다. 설리번은 이 계약을 어느 빈이라는 자에게 £40,000에 팔았고, 빈은 같은 날 그것을 £60,000에 팔았으며, 계약을 이행한 최종 매수인은 결국 막대한 이득을 실현했다고 말했다.",
+                      "en": "A contract for opium was given to a certain Sullivan at the moment of his departure on an official mission to a part of India far removed from the opium district. Sullivan sold his contract to one Binn for £40,000; Binn sold it the same day for £60,000, and the ultimate purchaser who carried out the contract declared that after all he realised an enormous gain."
+                    }
                   }
                 },
                 {
@@ -18707,27 +19587,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "31장의 체계적 의미는 무엇인가?",
-                    "en": "What is the systematic significance of Chapter 31?"
+                    "ko": "영국 면방직 산업은 아이를 밤새 일하게 하면서, 신대륙에서는 면화 재배를 위해 상업적 노예제를 확대했다. 이 두 현상을 하나의 과정으로 보면 자본주의 생산양식의 전제에 대해 무엇을 알 수 있는가?",
+                    "en": "The English cotton industry worked children through the night while, in the New World, commercial slavery expanded to grow cotton. What does treating these two facts as one process reveal about the premise of the capitalist mode of production?"
                   },
                   "choices": {
                     "ko": [
-                      "원시적 축적이 국내 농촌 수탈만이 아니라 세계시장, 금융, 국가폭력을 통해 산업자본의 출발 자금을 집중시킨 과정임을 보여준다.",
-                      "원시적 축적의 폭력은 노동자 쪽에만 있고 자본가 쪽에는 아무 역사도 없다는 점을 보인다.",
-                      "산업자본가는 기술 발명만으로 생겨나므로 계급관계와 무관하다는 결론을 낸다.",
-                      "식민지와 국채는 자본주의 이전의 제도이며 산업자본과 연결되지 않는다."
+                      "유럽 임금노동자의 숨은 노예 상태는 신대륙의 노골적 노예제를 받침대로 삼았고, 노동자와 노동조건의 분리가 폭력으로 완성되었다.",
+                      "신대륙의 노예제가 먼저 사라진 뒤에야 유럽에서 자유로운 임금노동 계약이 자리 잡을 수 있었으므로, 두 제도는 시간 순서로만 이어진 별개의 단계다.",
+                      "아동 노동과 신대륙 노예제는 산업자본의 형성과 무관한 봉건적 관행으로 남았다.",
+                      "자본주의는 평화로운 계약만으로 노예제를 대체하고 임금노동을 만들었다."
                     ],
                     "en": [
-                      "It shows that primitive accumulation was not only domestic rural expropriation but also a process concentrating the starting funds of industrial capital through the world market, finance, and state violence.",
-                      "It shows that the violence of primitive accumulation exists only on the worker’s side and that the capitalist side has no history.",
-                      "It concludes that industrial capitalists arise from technical invention alone and are unrelated to class relations.",
-                      "It treats colonies and public debt as existing only before capitalism and therefore unrelated to industrial capital."
+                      "The veiled slavery of European wage workers rested on the open slavery of the New World, and the separation of labourers from their conditions of labour was completed by force.",
+                      "Only after New World slavery disappeared could free wage contracts take hold in Europe, so the two institutions are separate stages linked only in time.",
+                      "Child labour and New World slavery remained feudal leftovers unrelated to the formation of industrial capital.",
+                      "Capitalism replaced slavery and created wage-labour through peaceful contracts alone."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "31장은 원시적 축적의 세계사적 폭을 보여준다. 노동자 형성, 국내시장 형성, 자본 집중이 모두 폭력적 세계시장과 국가제도 속에서 결합된다.",
-                    "en": "Chapter 31 shows the world-historical breadth of primitive accumulation. The formation of workers, the home market, and the concentration of capital are joined through the violent world market and state institutions."
+                    "ko": "면방직 공장의 아동 노동과 신대륙의 상업적 노예제는 별개의 지리적 사건이 아니라 같은 자본 축적의 두 순간이다. 유럽의 임금노동자는 표면상 자유 계약을 맺었지만 실질적으로 숨은 노예 상태에 있었고, 그 받침대는 신대륙의 노골적 노예제였다. 면화 노예제는 영국 공장에 원료를 대고, 공장의 면직물은 세계시장으로 나갔다. 이 연쇄는 자본주의 생산양식의 「자연법칙」이 평화로운 진화가 아니라 노동자와 노동조건의 폭력적 분리로 세워졌음을 말해 준다.",
+                    "en": "Children working nights in Lancashire and commercial slavery spreading through the cotton states are two moments of one accumulation. European workers signed free contracts, yet their veiled slavery needed, for its pedestal, slavery pure and simple in the new world, which supplied the raw cotton those mills spun. The eternal laws of Nature of the capitalist mode were established by force separating labourers from the conditions of labour."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "유럽의 「자유 노동」은 신대륙 노예제와 대비되는 별개 체제가 아니라, 그 노예제를 전제로 한 쌍을 이룬다.",
+                      "임금노동은 노예제가 사라진 뒤에 온 것이 아니다. 영국 면공장이 커지던 바로 그 시기에 미국의 노예제는 상업적 착취 체제로 확대되었다.",
+                      "아동 노동과 신대륙 노예제는 봉건적 관행이 아니라 산업자본의 노동력과 원료 조달 방식이었다.",
+                      "자본주의는 평화로운 계약만으로 임금노동을 만들지 않았다. 노동자와 노동조건의 분리에 폭력이 동원되었다."
+                    ],
+                    "en": [
+                      "European free labour was not a separate system opposed to New World slavery. It formed a pair premised on that slavery.",
+                      "Wage-labour did not arrive after abolition. In the very years the English cotton mills grew, slavery in the United States expanded into a system of commercial exploitation.",
+                      "Child labour and New World slavery were not feudal leftovers. They were ways industrial capital secured labour-power and raw materials.",
+                      "Capitalism did not create wage-labour through peaceful contracts alone. Force completed the separation of labourers from their conditions of labour."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch31.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 31장 산업자본가의 발생",
+                      "en": "Capital I, Ch. 31 Genesis of the Industrial Capitalist"
+                    },
+                    "quote": {
+                      "ko": "면화 산업은 영국에 아동 노예제를 도입하면서, 미국에서는 그 이전의 어느 정도 가부장적인 노예제가 상업적 착취 체제로 변형되도록 자극했다. 사실 유럽 임금노동자들의 숨은 노예제는 신세계의 순수하고 단순한 노예제를 받침대로 필요로 했다.",
+                      "en": "Whilst the cotton industry introduced child-slavery in England, it gave in the United States a stimulus to the transformation of the earlier, more or less patriarchal slavery, into a system of commercial exploitation. In fact, the veiled slavery of the wage workers in Europe needed, for its pedestal, slavery pure and simple in the new world."
+                    }
                   }
                 }
               ]
@@ -18770,21 +19675,29 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "세계시장 폭력",
+                "title": "핵심 개념 먼저",
                 "items": [
-                  "산업자본가의 발생: 상업, 국가부채, 세금, 보호무역, 식민지 약탈은 산업자본 형성을 가속했다.",
-                  "국가와 폭력: 자본주의 성장은 평화로운 시장 확대만이 아니라 국가권력과 강제의 도움을 받았다.",
-                  "축적의 집중: 원시축적은 한쪽에서 노동자를 만들고 다른 쪽에서 돈과 생산수단을 자본가 손에 집중시켰다."
+                  "산업자본가의 발생: 상업, 국가부채, 조세, 보호무역, 식민지 약탈이 산업자본 형성을 앞당겼다.",
+                  "국가와 폭력: 자본주의 성장은 평화로운 시장 확대가 아니라 국가권력과 강제에 의존했다.",
+                  "축적의 집중: 원시적 축적은 한쪽에서 임금노동자를 만들고 다른 쪽에서 화폐와 생산수단을 자본가 손에 집중시켰다."
                 ]
               },
               {
-                "title": "국가재정과 산업자본",
+                "title": "용어 풀이",
+                "text": "원시적 축적은 노동자와 생산수단을 강제로 떼어놓고 그 생산수단을 자본가에게 몰아주는 출발 과정이다. 국가부채는 정부가 이자와 함께 갚기로 하고 빌린 돈이며, 조세는 그 이자 재원을 납세자에게서 거둔다. 보호무역은 관세와 금지로 국내 특정 산업을 외국 경쟁에서 인위적으로 지켜 주는 장치다."
+              },
+              {
+                "title": "현대 적용",
+                "text": "오늘날에도 정부의 조달, 보조금, 특허, 군사계약은 특정 대기업에 수요와 수익을 몰아주는 국가권력의 통로다. 납세자 전체가 부담한 비용이 소수 주주와 금융업자의 이윤으로 바뀌는 흐름에서 이 장의 축적 논리가 되살아난다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "자본주의의 성장을 시장의 평화로운 확대만이 아니라 국가권력과 폭력의 결합으로 읽는다."
               }
             ],
             "en": [
               {
-                "title": "Violence of the World Market",
+                "title": "Core concepts first",
                 "items": [
                   "Genesis of industrial capitalist: Commerce, public debt, taxation, protectionism, and colonial plunder accelerated the formation of industrial capital.",
                   "State and violence: Capitalist growth was not merely peaceful market expansion; it relied on state power and coercion.",
@@ -18792,7 +19705,15 @@
                 ]
               },
               {
-                "title": "State Finance and Industrial Capital",
+                "title": "Terms explained",
+                "text": "Primitive accumulation is the forcible starting process that separates labourers from means of production and concentrates those means in capitalist hands. Public debt is money borrowed by the state with interest, and taxation draws the revenue to service it from taxpayers. Protectionism uses tariffs and prohibitions to shield particular domestic industries from foreign rivals artificially."
+              },
+              {
+                "title": "Today's application",
+                "text": "Today procurement, subsidies, patents, and military contracts still direct public demand and revenue to particular large firms. Costs borne by taxpayers become profit for concentrated shareholders and financial intermediaries, reviving the accumulation logic of this chapter."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "Read capitalist growth as tied to state power and violence, not merely peaceful market expansion."
               }
             ]

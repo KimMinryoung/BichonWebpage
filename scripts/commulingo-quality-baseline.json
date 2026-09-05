@@ -3,21 +3,17 @@
   "updatedAt": "2026-09-05",
   "tolerated": {
     "concept-brief": [
-      "capital-vol1/capital-v1-ch23",
       "capital-vol1/capital-v1-ch24",
       "capital-vol1/capital-v1-ch25",
       "capital-vol1/capital-v1-ch26",
-      "capital-vol1/capital-v1-ch27",
       "capital-vol1/capital-v1-ch28",
       "capital-vol1/capital-v1-ch29",
       "capital-vol1/capital-v1-ch30",
-      "capital-vol1/capital-v1-ch31",
       "capital-vol1/capital-v1-ch32",
       "capital-vol1/capital-v1-ch33"
     ],
     "duplicate-prompt": [
-      "capital-v2-ch14-basic/q3",
-      "capital-v3-ch31-advanced/q5"
+      "capital-v2-ch14-basic/q3"
     ],
     "explanation-length": [
       "capital-v2-ch02-advanced/q3",
@@ -143,11 +139,6 @@
       "capital-v1-ch26-advanced/q5.en",
       "capital-v1-ch26-basic/q5.en",
       "capital-v1-ch26-basic/q5.ko",
-      "capital-v1-ch27-advanced/q3.en",
-      "capital-v1-ch27-advanced/q3.ko",
-      "capital-v1-ch27-advanced/q5.ko",
-      "capital-v1-ch27-basic/q1.en",
-      "capital-v1-ch27-basic/q5.ko",
       "capital-v1-ch28-advanced/q3.en",
       "capital-v1-ch28-basic/q1.en",
       "capital-v1-ch28-basic/q2.ko",
@@ -162,13 +153,6 @@
       "capital-v1-ch29-basic/q2.en",
       "capital-v1-ch30-advanced/q3.en",
       "capital-v1-ch30-advanced/q5.ko",
-      "capital-v1-ch31-advanced/q2.en",
-      "capital-v1-ch31-advanced/q3.en",
-      "capital-v1-ch31-basic/q1.en",
-      "capital-v1-ch31-basic/q1.ko",
-      "capital-v1-ch31-basic/q2.en",
-      "capital-v1-ch31-basic/q3.en",
-      "capital-v1-ch31-basic/q3.ko",
       "capital-v1-ch32-advanced/q1.en",
       "capital-v1-ch32-advanced/q1.ko",
       "capital-v1-ch32-advanced/q2.en",
@@ -408,7 +392,6 @@
     ],
     "template-prompt": [
       "capital-v1-ch26-advanced/q5",
-      "capital-v1-ch31-advanced/q5",
       "capital-v3-ch13-advanced/q5",
       "capital-v3-ch14-advanced/q5",
       "capital-v3-ch15-advanced/q5",
