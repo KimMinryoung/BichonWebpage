@@ -23,7 +23,7 @@
     : (/^\/(reports|hub|ai-diary|posts|post|novels|p)(\/|\?|$)/.test(_path) ? 'library'
     : (_path.indexOf('/auth') === 0 ? 'account'
     : (_path.indexOf('/admin') === 0 ? 'admin'
-    : (_path.indexOf('/nonogram') === 0 ? 'game' : 'general')))))); %>
+    : ((_path.indexOf('/nonogram') === 0 || _path.indexOf('/games') === 0) ? 'game' : 'general')))))); %>
 <title><%= _title %></title>
 <meta name="description" content="<%= _desc %>">
 <link rel="canonical" href="<%= _url %>">

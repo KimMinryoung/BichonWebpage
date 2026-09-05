@@ -25,6 +25,7 @@ function isStaticAssetPath(reqPath) {
 
 function isPublicHtmlPath(reqPath) {
     return reqPath === '/'
+        || /^\/games(?:\/strike)?\/?$/.test(reqPath)
         || reqPath === '/posts'
         || /^\/post\/\d+$/.test(reqPath)
         || reqPath === '/reports'

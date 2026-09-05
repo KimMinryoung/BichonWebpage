@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <%- include('../partials/head', { pageTitle: '게임', pageDescription: 'Cyber-Lenin의 노동쟁의 전략 게임과 노노그램', pagePath: '/games/', hasEnglishVersion: false }) %>
+  <link rel="stylesheet" href="/css/games.css?v=<%= assetVersion %>">
+</head>
+<body>
+  <%- include('../partials/nav') %>
+  <main class="games-shell">
+    <header class="games-hero"><p class="games-kicker">CYBER-LENIN / GAMES</p><h1>배운 것을, 플레이하다.</h1><p>노동과 자본의 갈등을 선택으로 만나고,<br>숫자 속에 숨은 그림을 발견하세요.</p></header>
+    <div class="games-catalog">
+      <a class="game-card" href="/games/strike/">
+        <div class="game-poster strike-poster" aria-hidden="true"><span class="poster-label">노동쟁의 전략 게임</span><strong>혼자서는 임금,<br>함께라면 교섭력.</strong><span class="poster-bottom">노동시간 ↓ &nbsp; 생활임금 ↑</span></div>
+        <div class="game-card-copy"><p class="games-kicker">NEW · 전략 · 5–10분</p><h2>파업기금이 바닥나기 전에</h2><p>현장을 조직하고, 연대를 모으고, 교섭할 순간을 잡으세요. 더 높은 임금 뒤에 붙은 조건까지 살펴야 합니다.</p><span class="game-cta">파업위원회에 합류하기 →</span></div>
+      </a>
+      <a class="game-card" href="/nonogram/">
+        <div class="game-poster puzzle-poster" aria-hidden="true"><span class="poster-label">논리 퍼즐</span><strong>▦<br>한 칸씩, 발견.</strong><span class="poster-bottom">숫자 → 그림 → 맥락</span></div>
+        <div class="game-card-copy"><p class="games-kicker">퍼즐 · 나만의 속도로</p><h2>노노그램</h2><p>숫자 힌트로 숨은 그림을 완성하고, 그림에 담긴 맥락 질문을 풀어 보세요.</p><span class="game-cta">퍼즐 풀기 →</span></div>
+      </a>
+    </div>
+    <p class="games-note">로그인 없이 플레이할 수 있습니다. <a href="/commulingo">커뮤링고에서 이론 더 읽기 →</a></p>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+</html>

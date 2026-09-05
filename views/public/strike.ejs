@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <%- include('../partials/head', { pageTitle: '파업기금이 바닥나기 전에', pageDescription: '현장을 조직하고 연대를 모으며 임금과 노동시간을 교섭하는 노동쟁의 전략 미니게임', pagePath: '/games/strike/', hasEnglishVersion: false }) %>
+  <link rel="stylesheet" href="/css/games.css?v=<%= assetVersion %>">
+</head>
+<body>
+  <%- include('../partials/nav') %>
+  <main class="games-shell strike-shell">
+    <a class="game-back" href="/games/">← 게임 선택</a>
+    <header class="games-hero strike-hero"><p class="games-kicker">노동쟁의 전략 게임 / 10번의 결정</p><h1>파업기금이<br>바닥나기 전에</h1><p>기금은 유한하다. 함께할 힘은 만들어야 한다.</p></header>
+    <noscript><p>플레이하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
+    <section class="strike-panel" id="strikeSetup">
+      <p class="games-kicker">가상의 한 공장, 당신은 파업위원회</p><h2>우리가 요구하는 것은</h2>
+      <div class="strike-demands"><strong>임금 +8%</strong><strong>주 노동시간 −2시간</strong><strong>작업 강도 인상 없음</strong></div>
+      <p>초기 주 노동시간은 40시간입니다. 10턴 안에 요구를 담은 합의를 만들어 보세요. 매 턴 한 번 행동할 수 있습니다. 교섭에서는 합의안을 수락하거나 거절하고 다음 턴을 준비합니다.</p>
+      <p>참여율과 생산 중단 압박은 교섭력을 높이고, 피로는 낮춥니다. 기금이 0이 되거나 참여율이 25% 미만이면 중단됩니다. 행동 후 피로가 70 이상이면 참여율이 추가로 8%p 떨어집니다.</p>
+      <label for="strikeMode">시작 조건</label> <select id="strikeMode"><option value="normal">기본 · 기금 85</option><option value="hard">어려움 · 기금 65, 교섭력 −8</option></select>
+      <button class="strike-primary" id="strikeStart" type="button">첫 회의 시작하기 →</button><p class="games-note" id="strikeBest"></p>
+    </section>
+    <div id="strikePlay" hidden>
+      <div class="strike-stats" id="strikeStats" aria-label="현재 파업 상황"></div>
+      <div class="strike-layout">
+        <div>
+          <section class="strike-panel strike-event"><p class="games-kicker" id="strikeTurn"></p><h2 id="strikeEvent" tabindex="-1"></h2><p id="strikeEventText"></p><p class="games-note">요구: 임금 +8% · 주 2시간 단축 · 작업 강도 유지</p></section>
+          <section id="strikeActionsPanel" class="strike-panel"><h2>이번 턴, 무엇을 할까요?</h2><p class="games-note">수치는 이 행동으로 바뀌는 양입니다. 기금이 부족한 행동은 선택할 수 없습니다.</p><div id="strikeActions" class="strike-actions"></div></section>
+          <section class="strike-panel" id="strikeOffers" hidden><p class="games-kicker">교섭 테이블</p><h2 tabindex="-1" id="strikeOfferTitle">조건을 읽고 결정하세요</h2><p>임금 인상률만으로는 합의의 내용을 알 수 없습니다. 노동시간과 작업 강도도 비교하세요.</p><div id="strikeOfferCards" class="strike-offers"></div><button type="button" id="strikeReject" class="strike-secondary">두 안 모두 거절하고 계속하기</button><p class="games-note" id="strikeRejectNote"></p></section>
+        </div>
+        <aside class="strike-panel strike-log-panel"><h2>파업위원회 기록</h2><p id="strikeAnnouncement" role="status"></p><ol id="strikeLog" class="strike-log"></ol></aside>
+      </div>
+    </div>
+    <section id="strikeResult" class="strike-panel" hidden><p class="games-kicker">파업위원회 결산</p><h2 id="strikeResultTitle" tabindex="-1"></h2><p id="strikeResultText"></p><div id="strikeDeal" class="strike-demands"></div><p id="strikeScore"></p><p id="strikeReflection"></p><button type="button" class="strike-primary" id="strikeRestart">다른 전략으로 다시 시작</button> <a href="/games/">게임 선택으로 →</a></section>
+    <section class="strike-reading"><h2>플레이에서 학습으로</h2><p>임금 투쟁의 성과와 한계, 노동시간과 노동 강도의 관계를 커뮤링고에서 이어 읽어 보세요.</p><div class="strike-reading-links"><a href="/commulingo/book/marx-wages-and-programme">임금, 가격, 이윤 · 고타강령 비판 ↗</a><a href="/commulingo/book/marx-wage-labour-capital">임금노동과 자본 ↗</a><a href="/commulingo/book/capital-vol1">자본론 1권 ↗</a></div></section>
+    <details class="strike-rules"><summary>게임 규칙과 점수 기준</summary><p>참여율·피로·압박은 0–100 범위입니다. 교섭력 = 압박 × 0.8 + 참여율 × 0.35 − 피로 × 0.25 (어려움은 추가 −8, 반올림 후 최저 0). 조직과 연대만으로 시간이 지나면 압박은 줄어듭니다.</p><p>교섭 행동의 비용과 피로를 적용한 뒤 제안이 결정됩니다. 기본 인상률은 교섭력 ÷ 5의 정수 부분(최대 16%), 노동시간 단축은 교섭력 ÷ 22의 정수 부분(최대 4시간)입니다. 임금 중심의 안은 기본보다 4%p 더 올리는 대신 노동시간 단축 없이 작업 강도가 15% 늘어납니다.</p><p>합의 점수 = 임금 인상률 × 20 + 단축 시간 × 70 − 강도 인상률 × 8 + 참여율 + (100 − 피로) + 남은 기금(최대 100). 요구를 모두 달성했는지는 점수와 별도로 평가합니다. 합의 없이 끝나면 점수는 0입니다.</p><p>게임용 수치와 가상 사건이며 실제 노동쟁의의 결과를 예측하는 모형이 아닙니다. 파업기금은 생활 지원 자금으로, 임금 총액이 고정되어 있다는 ‘임금기금설’과 다릅니다. 임금 인상을 얻어도 임금노동 관계 자체가 사라지는 것은 아닙니다.</p><p>같은 난이도에서는 사건 순서가 같습니다. 최고 합의 점수만 이 브라우저에 저장됩니다. 새로고침하면 진행 중인 게임은 초기화됩니다.</p></details>
+  </main>
+  <%- include('../partials/footer') %>
+  <script src="/js/strike-engine.js?v=<%= assetVersion %>"></script>
+  <script src="/js/strike.js?v=<%= assetVersion %>"></script>
+</body>
+</html>

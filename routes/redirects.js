@@ -38,6 +38,21 @@ router.get('/nonogram/index.html', (req, res) => {
     res.redirect(301, nonogramCanonical(req));
 });
 
+// Public games do not need database queries.
+for (const [path, view] of [['/games/', 'games'], ['/games/strike/', 'strike']]) {
+    router.get(path, (req, res) => {
+        setNoStore(res);
+        if (!req.path.endsWith('/')) {
+            return res.redirect(301, (req.urlLanguage === 'en' ? '/en' : '') + path + new URL(req.originalUrl, 'http://localhost').search);
+        }
+        if (res.locals.isAuthenticated) {
+            req.session.csrfToken = req.session.csrfToken || crypto.randomBytes(32).toString('hex');
+            res.locals.csrfToken = req.session.csrfToken;
+        }
+        res.render('public/' + view, { pagePath: path, hasEnglishVersion: false, canonicalUrl: res.locals.siteOrigin + path });
+    });
+}
+
 router.get('/favicon.ico', (req, res) => {
     res.redirect(301, 'https://assets.cyber-lenin.com/favicon.ico');
 });
