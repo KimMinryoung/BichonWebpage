@@ -9,6 +9,7 @@ const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { getReportsForEvent } = require('../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { renderEventMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
+const { eventRelationsFor } = require('../data/commulingo/event-relations');
 const { localize } = require('../data/commulingo/localize');
 const { renderMarkdown } = require('../utils/markdown');
 
@@ -221,6 +222,7 @@ async function buildEventPanel(eventId, lang) {
             const item = events[index + offset];
             return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
         };
+        event.relatedEvents = eventRelationsFor(events, eventId, lang);
         pure = { event, prevEvent: neighbor(-1), nextEvent: neighbor(1) };
         memo.byId.set(eventId, pure);
     }

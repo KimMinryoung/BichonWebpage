@@ -1,0 +1,13 @@
+const assert = require('node:assert/strict');
+const { eventRelationsFor } = require('../data/commulingo/event-relations');
+const event = (id, relations = {}) => ({ id, title: { ko: `한글 ${id}`, en: `English ${id}` }, period: '1918–1922', relations });
+const events = [event('overview'), event('first', { parent: 'overview', related: ['second', 'missing', 'first', 'other'] }), event('second', { parent: 'overview' }), event('other')];
+assert.deepEqual(eventRelationsFor(events, 'overview', 'ko').map(e => [e.id, e.kind]), [['first', 'child'], ['second', 'child']]);
+assert.deepEqual(eventRelationsFor(events, 'first', 'en').map(e => [e.id, e.kind]), [['overview', 'parent'], ['second', 'sibling'], ['other', 'related']]);
+assert.equal(eventRelationsFor(events, 'first', 'en')[0].title, 'English overview');
+assert.equal(eventRelationsFor(events, 'first', 'ko')[0].title, '한글 overview');
+assert.deepEqual(eventRelationsFor(events, 'missing', 'ko'), []);
+assert.deepEqual(eventRelationsFor([event('orphan', { parent: 'draft', related: null })], 'orphan', 'ko'), []);
+assert.deepEqual(eventRelationsFor([{ id: 'old-snapshot', title: {} }], 'old-snapshot', 'en'), []);
+assert.deepEqual(eventRelationsFor([event('self', { parent: 'self', related: ['self'] })], 'self', 'en'), []);
+console.log('event relations: parent, children, siblings, localization, missing/draft ids and old snapshots OK');

@@ -3,7 +3,9 @@
 대상: `/commulingo/events/civil-war`, `/commulingo/events/soviet-polish-war` 및 1918~1922년 묶음.
 사건 문서 원본은 leninbot-pg `commulingo_history_events` (body_ko/body_en, timeline, locations, sources),
 인물 연결은 `commulingo_history_event_people`, 용어 연결은 `commulingo_term_events`.
-상태: 설계만 확정 대기. 아직 어떤 문서도 고치지 않았다.
+상태: 2026-09-05 구현·독립 검증 완료. 사용자의 배포 지시 후 운영 DB 반영 완료, 정식 화면 배포 진행.
+사용자 수정: 상위 문서의 기존 인물 연결은 모두 유지하며, 하위 문서에 추가 연결한다.
+결과와 검증 기록: [작업 기록](commulingo-civil-war-restructure/README.md).
 
 ## 1. 진단 (2026-09-05 DB 기준)
 
@@ -74,7 +76,7 @@ civil-war 주소는 유지하고 상위문서로 재편. 신설 3, 기존 하위
 - **인물 등재**. 이미 있음: stucka, vatsetis, smilga, yudenich, mannerheim, kuusinen, carl-manner, skoropadskyi, petliura, makhno, max-hoffmann, yevgeny-miller, pilsudski, tukhachevsky, budyonny, adolph-joffe, chicherin, krasin, litvinov, radek, marchlewski, rakovsky, masaryk.
   없음(약 17명): 페츠, 라이도네르, 퇴니손, 울마니스, 니에드라, 메이에로비츠, 폰 데어 골츠, 베르몬트-아발로프, 스메토나, 볼데마라스, 카프수카스, 안가리에티스, 젤리고프스키, 부와크-바와호비치, 스빈후부드, 빈니첸코, 흐루셰프스키, 흐리호리우, 킹기세프, 안벨트.
   신규 인물 필수 세트(제 문자 이름 cyrillic 칼럼, origin/citizenship 코드+플래그 SVG 확인, 사건 relation_kind) 함께 채울 것.
-- **사건·인물 연결 정리**. civil-war 에 361명 연결(상당수는 시기만 겹치는 인물). 발트·폴란드·우크라이나 인물을 새 문서로 옮기고 상위 연결을 줄이는 작업을 같은 패스에서.
+- **사건·인물 연결 보강** (사용자 수정). civil-war의 기존 연결은 모두 유지한다. 발트·폴란드·우크라이나 문서에 인물 연결을 추가하고 신규 관련 인물도 상위 문서에 함께 연결한다. 기존 연결의 설명도 두 건의 사실관계 정정 외에는 보존한다.
 - **되돌아오는 링크**: winter-war 서두(핀란드 내전·타르투), baltic-independence(1918 독립선언·1920 제헌의회), ussr-formation(1920 쌍무 조약 절).
 - **국·영문 동시 작성**. body_ko/body_en, timeline·locations 라벨 양쪽.
 - **진행 순서**: brest-litovsk → baltic-wars → (ukraine) → soviet-polish-war 정리 → civil-war 재편. 상위에서 먼저 빼면 사이트에 공백 생김.

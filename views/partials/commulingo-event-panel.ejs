@@ -15,6 +15,16 @@
    one, the timeline IS the page and has to stay at the top. */
 var sections = p.event.bodySections || [];
 %>
+        <% if (p.event.relatedEvents && p.event.relatedEvents.length) { %>
+        <nav class="commu-person-detail-section commu-event-relations" aria-label="<%= en ? 'Documents from this period' : '이 시기의 문서' %>">
+            <h2><%= en ? 'Documents from this period' : '이 시기의 문서' %></h2>
+            <ul>
+                <% p.event.relatedEvents.forEach(function(entry) { %>
+                <li><span><%= entry.kind === 'parent' ? (en ? 'Overview' : '상위 문서') : entry.kind === 'child' ? (en ? 'In detail' : '상세 문서') : (en ? 'Related' : '관련 문서') %></span> <a href="/commulingo/events/<%= encodeURIComponent(entry.id) %>"><%= entry.title %></a> <small><%= entry.period %></small></li>
+                <% }) %>
+            </ul>
+        </nav>
+        <% } %>
         <% if (sections.length >= 3) { %>
         <nav class="commu-event-toc" aria-label="<%= strings.commuLingoViews.eventPanel.contents %>">
             <h2 class="commu-event-toc-head"><%= strings.commuLingoViews.eventPanel.contents %></h2>

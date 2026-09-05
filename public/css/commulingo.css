@@ -4399,3 +4399,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-size: 0.85rem;
     color: var(--link);
 }
+
+.commu-event-relations ul { list-style: none; padding: 0; margin: 0; }
+.commu-event-relations li { display: flex; flex-wrap: wrap; gap: .35rem .75rem; margin: .55rem 0; align-items: baseline; }
+.commu-event-relations li > span, .commu-event-relations small { font-size: .8em; opacity: .7; }
