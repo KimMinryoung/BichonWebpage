@@ -190,8 +190,20 @@ def extract_json(text):
     of that object, so trailing commentary or a second block is ignored."""
     m = re.search(r"```json\s*(\{.*)", text, re.S)
     raw = m.group(1) if m else text[text.find("{"):]
-    obj, _ = json.JSONDecoder().raw_decode(raw)
-    return obj
+    decoder = json.JSONDecoder()
+    # DeepSeek sometimes drops one closing brace before a `]` or `,`
+    # ("…"}}],"advanced":[ where a question object never closed). Insert a
+    # brace at the error position and retry a few times before giving up.
+    for _ in range(6):
+        try:
+            obj, _ = decoder.raw_decode(raw)
+            return obj
+        except json.JSONDecodeError as err:
+            if "delimiter" in err.msg and err.pos < len(raw) and raw[err.pos] in "],":
+                raw = raw[:err.pos] + "}" + raw[err.pos:]
+                continue
+            raise
+    raise json.JSONDecodeError("unrepairable", raw, 0)
 
 
 def cost_of(model, usage):

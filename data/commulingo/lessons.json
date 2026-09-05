@@ -4911,6 +4911,51 @@
             "en": "Divides constant and variable capital to locate the source of new value and surplus-value."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "불변자본과 가변자본",
+              "left": {
+                "heading": "불변자본 c",
+                "rows": [
+                  "원료·기계·건물에 지출된 자본이다",
+                  "생산과정에서 자기 가치를 생산물에 이전한다",
+                  "새 가치나 잉여가치를 창조하지 않는다",
+                  "가격이 변해도 이전되는 양만 달라질 뿐 기능은 같다"
+                ]
+              },
+              "right": {
+                "heading": "가변자본 v",
+                "rows": [
+                  "노동력을 사는 데 지출된 자본이다",
+                  "생산과정에서 자기 가치의 등가물을 재생산한다",
+                  "자기 가치를 넘는 잉여가치를 새로 창조한다",
+                  "노동일이 길어지면 새로 창조되는 가치도 커진다"
+                ]
+              }
+            },
+            "en": {
+              "title": "Constant Capital vs. Variable Capital",
+              "left": {
+                "heading": "Constant capital c",
+                "rows": [
+                  "Capital spent on raw materials, machinery, buildings",
+                  "Transfers its own value to the product in production",
+                  "Creates no new value or surplus-value",
+                  "Price changes only alter how much value is transferred"
+                ]
+              },
+              "right": {
+                "heading": "Variable capital v",
+                "rows": [
+                  "Capital spent on purchasing labor-power",
+                  "Reproduces the equivalent of its own value in production",
+                  "Creates surplus-value beyond its own value",
+                  "A longer working day means more new value created"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch08-basic",
@@ -4931,21 +4976,46 @@
                   "choices": {
                     "ko": [
                       "생산과정에서 기존 가치를 이전할 뿐인가, 아니면 새 가치와 잉여가치를 창조하는가",
-                      "생산수단은 물리적 성질에 따라 나뉜다.",
+                      "생산수단은 물리적 성질에 따라 나뉜다",
                       "자본가가 현금으로 샀는가 외상으로 샀는가",
                       "생산에 오래 쓰이는가 하루 만에 닳는가만을 기준으로 한다"
                     ],
                     "en": [
                       "Whether it merely transfers existing value, or creates new value and surplus-value",
-                      "Whether the thing is hard or soft",
+                      "Whether means of production are sorted by their physical properties",
                       "Whether the capitalist bought it with cash or on credit",
                       "Only whether it lasts a long time in production or is used up in a day"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "불변자본과 가변자본의 기준은 물리적 성질이나 결제방식이 아니라 가치증식에서의 역할이다. 생산수단은 자기 가치를 이전하고, 노동력은 새 가치를 만들어 자기 가치 이상으로 변할 수 있다.",
-                    "en": "The criterion is not physical property or payment method, but the role in valorization. Means of production transfer their value, while labor-power creates new value and can vary beyond its own value."
+                    "ko": "기준은 물리적 성질이나 결제방식이 아니라 가치증식에서의 역할이다. 면화와 기계는 자기 가치를 생산물에 이전할 뿐이지만, 노동력은 살아 있는 노동으로 작용해 자기 가치 이상의 새 가치를 만들어낸다. 이 구분이 있어야 잉여가치가 어디서 오는지 물을 수 있다.",
+                    "en": "The criterion is not physical property or payment method, but the role each element plays in valorization. Cotton and machinery merely transfer their existing value, while labor-power, as living labor, creates new value beyond its own value. Only with this distinction can we ask where surplus-value comes from."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "같은 강철이라도 제철소에서 나올 때는 생산물이고 기계 공장에 들어갈 때는 원료다. 무엇으로 만들어졌는가가 아니라 어느 자리에 서는가를 보라는 기준이다.",
+                      "단단한 강철도 무른 면화도 원료로 쓰이는 한 자기 가치를 넘겨줄 뿐이다. 물리적 성질은 가치증식과정에서 맡는 역할을 정하지 못한다.",
+                      "지불방식은 자본의 소유관계일 뿐 가치를 창조하는지 이전하는지와는 무관하다.",
+                      "내구성은 고정자본과 유동자본을 가르는 다른 기준이며 이 장의 구분과는 다른 문제다."
+                    ],
+                    "en": [
+                      "The same steel is a product leaving the steelworks and a raw material entering the machine shop. The criterion asks what position a thing occupies, not what it is made of.",
+                      "Hard steel and soft cotton alike merely hand over their own value as long as they serve as materials; physical properties do not fix a thing’s role in valorization.",
+                      "Payment method concerns ownership relations, not whether value is created or merely transferred.",
+                      "Durability separates fixed from circulating capital, a different question from this chapter’s distinction."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "생산수단으로 표상되는 자본 부분, 곧 원료와 보조재료와 노동수단은 생산과정에서 그 가치의 양적 변화를 겪지 않는다. 그래서 나는 이것을 자본의 불변 부분, 짧게 불변자본이라 부른다.",
+                      "en": "That part of capital then, which is represented by the means of production, by the raw material, auxiliary material and the instruments of labour does not, in the process of production, undergo any quantitative alteration of value. I therefore call it the constant part of capital, or, more shortly, constant capital."
+                    }
                   }
                 },
                 {
@@ -4953,27 +5023,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "면화 100원의 가치가 실 생산물에 옮겨 갔다. 이때 면화가 불변자본이라고 불리는 이유는 무엇인가?",
-                    "en": "The value of 100 in cotton is transferred to the finished product. Why is the cotton called constant capital?"
+                    "ko": "면화 100원의 가치가 실 생산물에 옮겨 갔다. 이때 면화를 불변자본이라 부르는 까닭은 어디에 있는가?",
+                    "en": "The value of 100 in cotton is transferred to the finished yarn. What makes the cotton constant capital?"
                   },
                   "choices": {
                     "ko": [
-                      "생산과정에서 자기 기존 가치를 보존·이전하지만 새 가치나 잉여가치를 만들지는 않기 때문이다.",
-                      "면화 가격은 역사적으로 한 번도 변한 적이 없기 때문이다.",
-                      "면화는 물리적으로 그대로 남는 것으로 보이고 그대로 남아 있기 때문이다.",
-                      "면화는 노동자가 아니라 자본가가 직접 생산하기 때문이다."
+                      "생산과정에서 자기 기존 가치를 보존하고 이전할 뿐 새 가치를 더하지는 않기 때문이다",
+                      "불변이라는 이름 그대로 면화 값 자체가 생산 중에 변하지 않기 때문이다",
+                      "면화가 형태를 바꾸지 않고 실 속에 물질 그대로 남아 있기 때문이다",
+                      "면화는 한 번에 다 소비되어 그 값이 통째로 실에 넘어가기 때문이다"
                     ],
                     "en": [
-                      "Because in production it preserves and transfers its existing value, but does not create new value or surplus-value.",
-                      "Because the price of cotton has never changed historically.",
-                      "Because cotton physically remains completely unchanged.",
-                      "Because cotton is produced directly by the capitalist rather than by workers."
+                      "Because in production it preserves and transfers its existing value without adding any new value",
+                      "Because, as the name constant suggests, the price of the cotton itself does not move",
+                      "Because cotton keeps its form and survives inside the yarn as the very same material",
+                      "Because cotton is used up at one stroke, so its whole price passes into the yarn"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "불변자본이라는 말은 가격이 변하지 않는다는 뜻이 아니다. 그것은 생산수단이 가치증식과정에서 자기 가치를 새 생산물에 이전할 뿐, 살아 있는 노동처럼 새 가치를 창조하지 않는다는 뜻이다.",
-                    "en": "Constant capital does not mean that its price never changes. It means that, in the valorization-process, means of production transfer their value to the new product but do not create new value like living labor does."
+                    "ko": "면화 값은 흉작이면 오르고 풍작이면 내리지만, 그것이 면화를 불변자본이라 부르는 까닭은 아니다. 방적공이 면화를 실로 만드는 구체적 노동을 거치면서 면화의 옛 가치는 사라지지 않고 실의 가치로 다시 나타나되, 그 과정에서 크기가 불어나지는 않는다. 값이 오른 면화는 그만큼 더 큰 옛 가치를 넘겨줄 뿐이다.",
+                    "en": "The price of cotton rises after a bad harvest and falls after a good one, but that is not what makes it constant capital. Through the spinner’s concrete labor of turning cotton into yarn, the old value of the cotton is not lost but reappears in the value of the yarn, without growing in the process. Dearer cotton simply hands over a correspondingly larger old value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "값이 오른 면화를 가공하면 실에 넘어가는 가치도 그만큼 커진다. 커진 것은 이전된 옛 가치이지 방적이 새로 만든 가치가 아니다.",
+                      "원문은 면화가 어느 날 파운드당 6펜스였다가 다음 날 흉작으로 1실링이 될 수 있다고 직접 말한다. 값이 움직여도 불변자본이라는 규정은 그대로 남는다.",
+                      "면화는 실이 되면서 옛 사용가치를 잃는다. 남는 것은 물질의 모습이 아니라 옛 가치이며, 그 가치가 새 사용가치 속에 다시 나타난다.",
+                      "한 번에 다 소비되는가 여러 해에 걸쳐 닳는가는 유동자본과 고정자본을 가르는 다른 기준이다. 어느 쪽이든 새 가치를 만들지 않는 점은 같다."
+                    ],
+                    "en": [
+                      "Work up dearer cotton and a larger value passes into the yarn, but what grew is the transferred old value, not anything spinning created.",
+                      "The text itself has cotton at sixpence a pound one day and a shilling the next after a failed crop; the price moves and the designation stands.",
+                      "Cotton loses its old use-value in becoming yarn. What survives is not the material shape but the old value, reappearing inside a new use-value.",
+                      "Whether a thing is consumed at one stroke or wears out over years separates circulating from fixed capital, and neither of them creates new value."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "그러므로 생산수단의 가치는 생산물로 이전됨으로써 보존된다. 이 이전은 그 수단들이 생산물로 전화되는 동안에, 다시 말해 노동과정 동안에 일어난다.",
+                      "en": "The value of the means of production is therefore preserved, by being transferred to the product. This transfer takes place during the conversion of those means into a product, or in other words, during the labour-process."
+                    }
                   }
                 },
                 {
@@ -4981,27 +5076,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "자본가가 노동력에 50원을 지불했는데 노동자가 하루에 100원의 새 가치를 만들었다. 이때 노동력에 지출된 자본이 “가변”인 이유는 무엇인가?",
-                    "en": "A capitalist pays 50 for labor-power, but the worker creates 100 of new value in a day. Why is the capital spent on labor-power called “variable”?"
+                    "ko": "자본가가 노동력에 50원을 지불했는데 노동자가 하루에 100원의 새 가치를 만들었다. 이때 노동력에 지출된 자본이 「가변」인 이유는 무엇인가?",
+                    "en": "A capitalist pays 50 for labor-power, but the worker creates 100 of new value in a day. Why is the capital spent on labor-power called variable?"
                   },
                   "choices": {
                     "ko": [
-                      "노동력은 자기 가치만 이전하는 것이 아니라 생산과정에서 더 큰 새 가치로 변할 수 있기 때문이다.",
-                      "임금은 매일 기분에 따라 아무 법칙 없이 바뀌기 때문이다.",
-                      "노동력은 생산수단처럼 자기 가치를 상품에 이전하기 때문이다.",
-                      "노동자의 몸이 물리적으로 움직이므로 모든 움직임이 곧 가치 변동이기 때문이다."
+                      "노동력은 자기 가치만 이전하는 것이 아니라 생산과정에서 더 큰 새 가치로 변할 수 있기 때문이다",
+                      "노동력의 값인 임금이 시장 사정에 따라 오르내리며 자주 바뀌기 때문이다",
+                      "노동력도 생산수단처럼 자기 가치를 그대로 상품에 이전하기 때문이다",
+                      "노동력은 하루하루 소모되어 자본가가 날마다 새로 사들여야 하기 때문이다"
                     ],
                     "en": [
-                      "Because labor-power does not merely transfer its own value; in production it can turn into a greater amount of new value.",
-                      "Because wages change every day according to mood without any law.",
-                      "Because labor-power, like means of production, only passes on its own value unchanged.",
-                      "Because the worker’s body physically moves, and every movement is therefore a value variation."
+                      "Because labor-power does not merely transfer its own value; in production it can turn into a greater amount of new value",
+                      "Because wages, the price of labor-power, rise and fall with conditions in the market",
+                      "Because labor-power, like the means of production, passes its own value on to the commodity unchanged",
+                      "Because labor-power is used up day by day and the capitalist must buy it fresh each morning"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "가변자본은 임금이 우연히 변한다는 말이 아니다. 노동력 구매에 지출된 가치는 생산과정에서 살아 있는 노동을 통해 자기보다 큰 새 가치로 증식될 수 있기 때문에 가변적이다.",
-                    "en": "Variable capital does not mean wages randomly fluctuate. The value spent on labor-power is variable because, through living labor in production, it can expand into a greater new value."
+                    "ko": "가변자본이라는 이름은 임금이 우연히 오르내린다는 뜻이 아니다. 노동력 구매에 지출된 50원은 노동과정에서 살아 있는 노동으로 작용해 100원의 새 가치로 커지며, 그 차액이 잉여가치의 원천이 된다. 자본가가 산 것은 하루치 노동이 아니라 하루 동안 노동할 능력이고, 그 능력이 만드는 가치가 그 값보다 크다는 데 이 이름의 뜻이 있다.",
+                    "en": "The name variable capital does not mean wages happen to fluctuate. The 50 spent on labor-power acts in the process as living labor and grows into 100 of new value, and that difference is the source of surplus-value. What the capitalist bought was not a day’s labor but the capacity to labor for a day, and the value that capacity creates exceeds its own price."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동력의 가치와 노동력이 만드는 가치는 서로 다른 크기다. 이 두 크기의 벌어짐이 100원 가운데 50원이 어디서 왔는지에 대한 답이다.",
+                      "임금이 오르내리는 것은 노동력이라는 상품의 값이 움직이는 일이다. 가변이라는 말은 그 값이 생산 안에서 더 큰 가치로 불어난다는 뜻이다.",
+                      "노동력을 생산수단과 같은 자리에 두면 100원 가운데 50원이 어디서 나왔는지 설명할 길이 없어진다.",
+                      "날마다 새로 사들이는가는 자본이 도는 방식의 문제다. 가변이라는 이름은 그 자본이 생산 안에서 더 큰 크기가 되는 데서 온다."
+                    ],
+                    "en": [
+                      "The value of labor-power and the value labor-power creates are two different magnitudes, and the gap between them answers where the other 50 came from.",
+                      "A moving wage is the price of a commodity moving. Variable names something else: that this outlay swells into a larger value inside production.",
+                      "Placing labor-power beside the means of production leaves no way to say where the second 50 in the day’s 100 came from.",
+                      "Buying it afresh each day concerns how capital circulates. The name variable comes from this outlay becoming a larger magnitude in production."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "그것은 자기 가치의 등가물을 재생산할 뿐 아니라 그 이상의 것, 곧 사정에 따라 크거나 작을 수 있는 잉여가치를 생산한다. 자본의 이 부분은 끊임없이 불변의 크기에서 가변의 크기로 전환된다.",
+                      "en": "It both reproduces the equivalent of its own value, and also produces an excess, a surplus-value, which may itself vary, may be more or less according to circumstances. This part of capital is continually being transformed from a constant into a variable magnitude."
+                    }
                   }
                 },
                 {
@@ -5009,27 +5129,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "기계가 더 빨라져 하루 생산량이 늘었다. 왜 이것만으로 “기계가 잉여가치를 창조했다”고 말할 수 없는가?",
-                    "en": "A machine becomes faster and daily output rises. Why can we not infer from this alone that the machine created surplus-value?"
+                    "ko": "발명 덕분에 방적공이 예전에 36시간 걸리던 36파운드를 이제 6시간에 뽑는다. 이 6시간의 노동은 실 한 파운드에 담기는 새 가치와 생산물 전체로 넘어간 면화 가치에 각각 어떤 결과를 남기는가?",
+                    "en": "An invention lets a spinner turn out in 6 hours the 36 pounds that once took 36 hours. What does this 6 hours of labor do to the new value held in each pound of yarn, and to the cotton value carried into the whole product?"
                   },
                   "choices": {
                     "ko": [
-                      "기계는 자기 가치를 생산물에 이전하고 노동생산성을 바꿀 수 있지만, 새 가치는 살아 있는 노동이 창조하기 때문이다.",
-                      "기계는 생산과정에 들어가면 아무 사용가치도 없기 때문이다.",
-                      "기계가 빠를수록 노동자는 노동을 덜 하는 것으로 보이기 때문이다.",
-                      "생산량이 늘면 상품 일반의 가치도 같은 비율로 자동 증가하기 때문이다."
+                      "파운드당 새로 더해진 가치는 6분의 1로 줄고, 생산물로 넘어간 면화 가치는 여섯 배가 된다",
+                      "파운드당 새로 더해진 가치와 생산물로 넘어간 면화 가치가 나란히 여섯 배로 늘어난다",
+                      "파운드당 새로 더해진 가치는 그대로이고, 생산물로 넘어간 면화 가치만 여섯 배가 된다",
+                      "파운드당 새로 더해진 가치와 생산물로 넘어간 면화 가치가 나란히 6분의 1로 줄어든다"
                     ],
                     "en": [
-                      "Because machinery transfers its own value and can alter labor productivity, but new value is created by living labor.",
-                      "Because once machinery enters production, it has no use-value at all.",
-                      "Because the faster the machine is, the less workers work at all.",
-                      "Because when output rises, the value of every commodity automatically rises in the same proportion."
+                      "The new value added per pound falls to one-sixth, while the cotton value carried into the product is six times as great",
+                      "The new value added per pound and the cotton value carried into the product both rise sixfold together",
+                      "The new value added per pound stays the same, and only the cotton value carried into the product is six times as great",
+                      "The new value added per pound and the cotton value carried into the product both fall to one-sixth together"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계는 노동생산성을 크게 바꾸고 단위상품의 가치에 영향을 줄 수 있다. 그러나 가치증식의 원천은 기계 자체가 아니라 기계를 사용해 노동하는 살아 있는 노동이다.",
-                    "en": "Machinery can greatly change labor productivity and affect the value of each unit. But the source of valorization is not the machine itself; it is living labor using the machine."
+                    "ko": "6시간 동안 방적공이 지출한 노동은 예전과 똑같으므로 그 노동이 만든 새 가치의 총액도 예전과 같다. 그런데 이제 그 가치가 6파운드가 아니라 36파운드에 나뉘어 붙으니 파운드당 새 가치는 6분의 1이 된다. 반면 6시간 안에 실로 바뀐 면화는 여섯 배이므로 생산물로 넘어간 옛 가치는 여섯 배다. 가치를 보존하는 힘과 창조하는 힘이 서로 다른 원리로 움직인다는 뜻이다.",
+                    "en": "The labor the spinner expends in 6 hours is exactly what it was before, so the total new value that labor creates is unchanged. But it now spreads over 36 pounds instead of 6, and the new value per pound falls to one-sixth. Meanwhile six times as much cotton has been turned into yarn, so six times as much old value has passed into the product. Preserving value and creating value plainly run on different principles."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "생산성이 오르면 상품 하나에 담기는 새 가치는 오히려 줄어든다. 실이 싸지는 까닭이 여기 있고, 이 계산만으로는 자본가의 이득이 어디서 오는지 아직 답이 나오지 않는다.",
+                      "여섯 배가 된 것은 가공된 면화의 양이지 지출된 노동이 아니다. 6시간의 노동은 발명 전에도 뒤에도 6시간어치의 새 가치만 만든다.",
+                      "같은 6시간에 여섯 배의 면화를 뽑으면 파운드마다 흡수하는 새 노동은 6분의 1로 줄어든다. 새 가치의 총액이 그대로이기 때문이다.",
+                      "이전되는 옛 가치는 가공된 면화의 양을 따라간다. 여섯 배의 면화가 실이 되었으니 넘어간 면화 가치도 여섯 배로 커진다."
+                    ],
+                    "en": [
+                      "Rising productivity puts less new value into each article, which is why yarn gets cheaper, and this calculation alone still does not say where the capitalist’s gain comes from.",
+                      "What grew sixfold is the weight of cotton worked up, not the labor expended; 6 hours of spinning creates 6 hours’ worth of new value before and after the invention.",
+                      "Spin six times the cotton in the same 6 hours and each pound absorbs one-sixth as much fresh labor, because the total of new value has not changed.",
+                      "Transferred old value follows the weight of material worked up: six times the cotton became yarn, so six times its value moved into the product."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "어떤 발명 덕분에 방적공이 예전에 36시간 걸려 뽑던 만큼의 면화를 6시간에 뽑게 되었다고 하자. 유용한 생산이라는 목적에서 보면 그의 노동은 이제 여섯 배로 효과가 크다. 6시간 노동의 생산물은 6파운드에서 36파운드로 여섯 배가 되었다.",
+                      "en": "Let us assume, that some invention enables the spinner to spin as much cotton in 6 hours as he was able to spin before in 36 hours. His labour is now six times as effective as it was, for the purposes of useful production. The product of 6 hours’ work has increased six-fold, from 6 lbs. to 36 lbs."
+                    }
                   }
                 },
                 {
@@ -5037,27 +5182,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "8장의 불변자본/가변자본 구분은 왜 9장의 잉여가치율 분석을 준비하는가?",
-                    "en": "Why does Chapter 8’s distinction between constant and variable capital prepare Chapter 9’s analysis of the rate of surplus-value?"
+                    "ko": "방적노동이 6시간 만에 노동력 자신의 가치인 3실링을 재생산했는데도 작업이 멈추지 않고 12시간까지 이어졌다. 뒤의 6시간이 생산물 가치에 남긴 몫을 어떻게 보아야 하는가?",
+                    "en": "Spinning reproduces in 6 hours the 3 shillings that is the value of labor-power itself, yet work does not stop and runs on to 12 hours. How should we read what the second 6 hours leaves in the value of the product?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치는 전체 선대자본이 아니라 가변자본, 곧 노동력에 지출된 자본과의 관계에서 착취 정도를 드러내기 때문이다.",
-                      "9장은 가치가 아니라 물리적 생산량만 비교하기 때문이다.",
-                      "잉여가치는 기계와 원료가 만든 것이므로 노동력 비용은 계산에서 제외되어야 하기 때문이다.",
-                      "불변자본과 가변자본을 구분하면 노동시간 분석이 불필요해지기 때문이다."
+                      "노동력 가치를 재생산하고도 남은 초과분, 곧 자본가에게 돌아가는 잉여가치다",
+                      "앞의 6시간과 마찬가지로 노동력 자신의 가치를 한 번 더 재생산해 임금으로 되돌아가는 몫이다",
+                      "자본가가 기계와 원료를 미리 사 두었기 때문에 생기는 몫으로, 선대한 자본에 대한 보수다",
+                      "생산물의 양이 두 배가 된 만큼 상품 하나의 가치도 함께 커진 몫이다"
                     ],
                     "en": [
-                      "Because surplus-value reveals the degree of exploitation in relation not to total advanced capital but to variable capital, the capital spent on labor-power.",
-                      "Because Chapter 9 compares only physical output, not value.",
-                      "Because surplus-value is made by machinery and raw materials, so labor-power cost must be excluded from calculation.",
-                      "Because once constant and variable capital are distinguished, labor-time analysis becomes unnecessary."
+                      "An excess beyond the reproduced value of labor-power: the surplus-value that falls to the capitalist",
+                      "Like the first 6 hours, it reproduces the value of labor-power once more and returns to the worker as wages",
+                      "A share arising because the capitalist bought machinery and materials in advance, and thus a reward for the capital advanced",
+                      "A share by which the value of each single commodity grew, since the quantity of product doubled"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "잉여가치율은 s/v, 즉 잉여가치를 가변자본과 비교한다. 불변자본은 생산물 가치에 이전되지만 착취 정도를 직접 나타내지 않으므로, 8장의 구분이 9장의 계산을 가능하게 한다.",
-                    "en": "The rate of surplus-value is s/v: surplus-value compared with variable capital. Constant capital is transferred to the product but does not directly express the degree of exploitation, so Chapter 8’s distinction makes Chapter 9’s calculation possible."
+                    "ko": "앞의 6시간에 만들어진 3실링은 노동력 자신의 값을 메우고 노동자의 생활수단으로 돌아간다. 뒤의 6시간에도 방적공은 똑같이 노동하지만 이번에 더해진 가치에는 메울 것이 남아 있지 않고, 생산물 가치가 소비된 요소들의 가치를 넘어서는 차액으로 남는다. 면화와 방추가 넘겨준 옛 가치는 자리를 옮겼을 뿐이므로 이 차액을 낳은 것은 노동력의 작용뿐이다. 잉여가치의 크기를 재려면 이것을 노동력에 지출된 자본과 견주게 된다.",
+                    "en": "The 3 shillings made in the first 6 hours replaces the value of labor-power itself and returns to the worker as means of subsistence. In the second 6 hours the spinner works exactly as before, but the value now added has nothing left to replace: it stands as the excess of the product’s value over the value of the elements consumed. Cotton and spindle only handed old value across, so this excess came from the action of labor-power alone."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "그래서 잉여가치의 크기는 총투하자본이 아니라 노동력에 지출된 자본과 견주어야 뜻이 생긴다. 착취의 정도를 재는 비율은 여기서 나온다.",
+                      "노동력의 가치는 하루에 3실링으로 한 번 메워지면 그만이다. 그 뒤의 노동은 메울 것 없이 새 가치를 더할 뿐이며, 그 몫은 임금으로 돌아가지 않는다.",
+                      "선대는 가치를 옮겨 놓는 일이지 가치를 낳는 일이 아니다. 미리 사 둔 기계와 원료는 자기가 잃은 만큼만 실에 넘겨준다.",
+                      "생산량이 늘면 상품 하나에 담기는 가치는 오히려 줄어든다. 노동일이 길어져서 커지는 것은 그날 지출된 노동의 총량이다."
+                    ],
+                    "en": [
+                      "This is why the size of surplus-value only means something when set against the capital laid out on labor-power rather than the whole sum advanced.",
+                      "The value of labor-power is replaced once a day by those 3 shillings; the labor that follows has nothing to replace and its product never returns as wages.",
+                      "Advancing capital moves value about; it does not beget value. Machinery and materials bought beforehand hand on exactly what they lose, and no more.",
+                      "When output rises, each article holds less value, not more. What a longer working day enlarges is the total labor expended on that day."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "그러나 우리는 앞에서 본 바로부터, 노동과정이 노동력의 가치에 대한 단순한 등가물을 재생산해 생산물에 넣는 데 필요한 시간을 넘어 계속될 수 있음을 안다. 뒤의 목적에 충분한 6시간 대신에 그 과정은 12시간까지 이어질 수 있다.",
+                      "en": "We know, however, from what has gone before, that the labour-process may continue beyond the time necessary to reproduce and incorporate in the product a mere equivalent for the value of the labour-power. Instead of the six hours that are sufficient for the latter purpose, the process may continue for twelve hours."
+                    }
                   }
                 }
               ]
@@ -5075,27 +5245,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "불변자본은 “가치가 변하지 않는다”는 말처럼 들린다. 이 표현을 정확히 이해하려면 무엇을 보아야 하는가?",
-                    "en": "Constant capital sounds as if its value never changes. What must we look at to understand the term precisely?"
+                    "ko": "면화 흉작으로 가격이 하루 만에 두 배로 뛰었다. 불변자본은 「가치가 변하지 않는다」는 말처럼 들린다. 이 표현을 정확히 이해하려면 무엇을 보아야 하는가?",
+                    "en": "After a bad harvest, the price of cotton doubles overnight. Constant capital sounds as if its value never changes. What must we look at to understand the term precisely?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 생산수단의 시장가격 변동이 아니라, 생산과정에서 그 가치가 새 가치로 증식되지 않고 이전되는 역할",
-                      "기계가 물리적으로 마모되지 않고 영원히 같은 상태라는 점",
-                      "원료와 기계의 가격이 역사적으로 절대 변하지 않는다는 사실",
-                      "불변자본이 노동자보다 도덕적으로 안정적이라는 뜻"
+                      "시장가격의 오르내림이 아니라, 생산과정에서 새 가치를 만들지 않고 이전만 하는 기능이다",
+                      "값이 오른 면화를 가공하면 방적노동이 그 인상분만큼 새 가치를 창조한다는 점이다",
+                      "값이 오르내리는 순간 그 면화는 더 이상 불변자본이 아니게 된다는 점이다",
+                      "면화 값이 오르면 그것이 낳는 잉여가치도 같은 비율로 늘어난다는 점이다"
                     ],
                     "en": [
-                      "Not changes in the market price of individual means of production, but their role in production: their value is transferred, not expanded into new value.",
-                      "The fact that machines do not physically wear out and remain forever the same",
-                      "The fact that the prices of raw materials and machines never change historically",
-                      "The idea that constant capital is morally more stable than workers"
+                      "Not the swings of market price, but the function of transferring value in production without creating any new value",
+                      "That when dearer cotton is worked up, the labor of spinning creates that increase as new value",
+                      "That cotton stops being constant capital the moment its price rises or falls",
+                      "That a rise in the price of cotton raises the surplus-value it yields in the same proportion"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "불변성은 가치증식과정 안에서의 기능을 말한다. 원료와 기계의 가격은 오르내릴 수 있지만, 그것들은 살아 있는 노동처럼 자기 가치보다 큰 새 가치를 만들지 않는다.",
-                    "en": "Constancy refers to function within the valorization-process. The prices of raw materials and machines can rise or fall, but they do not create more new value than their own value as living labor does."
+                    "ko": "면화 값이 하루 만에 두 배로 뛰어도 불변자본이라는 규정은 흔들리지 않는다. 오른 값의 면화를 가공하면 그만큼 더 많은 옛 가치가 실로 넘어갈 뿐, 방적이라는 노동이 그 인상분을 창조한 것은 아니기 때문이다. 값의 변화는 면화가 생산수단으로 쓰이는 과정이 아니라 면화 자신이 생산되는 과정에서 일어난다. 불변성은 값의 항구성이 아니라 새 가치를 만들지 않는 기능을 가리킨다.",
+                    "en": "Even when the price of cotton doubles overnight, its standing as constant capital is untouched. Working up dearer cotton simply carries a larger old value into the yarn; the labor of spinning did not create that increase. The change of value arose not in the process where cotton serves as a means of production but in the process where cotton itself is produced. Constancy names the function of adding no new value, not the permanence of a price."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "그래서 원료 값이 시장에서 요동쳐도 불변자본과 가변자본의 경계는 움직이지 않는다. 값의 변화는 면화가 생산된 쪽에서 일어난 일이다.",
+                      "실 값이 오른 것은 맞지만 그 인상분은 방적에 앞서 이미 면화 안에 들어 있었다. 방적이 더한 가치는 지출된 노동시간만큼이다.",
+                      "규정은 그 자본 부분이 생산 안에서 맡는 기능에서 나오므로 값이 움직인다고 바뀌지 않는다. 원문도 이 정의가 가치 변화 가능성을 배제하지 않는다고 못 박는다.",
+                      "잉여가치는 살아 있는 노동이 노동력 가치를 넘어 지출된 데서 나온다. 면화 값이 오르면 이전되는 옛 가치가 커질 뿐 그 초과분은 달라지지 않는다."
+                    ],
+                    "en": [
+                      "This is why a storm in raw-material prices never moves the line between constant and variable capital; the change happened where the cotton was produced.",
+                      "The yarn is indeed dearer, but the increase was inside the cotton before spinning began; what spinning added is the labor-time it expended.",
+                      "The designation follows the function this part of capital performs in production, and the text expressly says the definition does not exclude a change of value.",
+                      "Surplus-value comes from living labor expended beyond the value of labor-power; dearer cotton enlarges the old value transferred, leaving that excess as it was."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "불변자본에 대한 위의 정의는 그 구성요소의 가치 변화 가능성을 결코 배제하지 않는다. 면화 가격이 어느 날은 파운드당 6펜스였다가, 다음 날 흉작으로 1실링이 되었다고 하자.",
+                      "en": "The definition of constant capital given above by no means excludes the possibility of a change of value in its elements. Suppose the price of cotton to be one day sixpence a pound, and the next day, in consequence of a failure of the cotton crop, a shilling a pound."
+                    }
                   }
                 },
                 {
@@ -5103,27 +5298,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "생산수단의 가치는 노동 없이 어떻게 보존되는가? 라고 묻는 설명이 있다. 마르크스의 답에 가까운 것은 무엇인가?",
-                    "en": "Someone asks how the value of means of production is preserved “without labor.” Which answer is closest to Marx’s?"
+                    "ko": "방적공이 하루를 일하면 실에는 새 가치가 더해지고, 면화와 방추의 옛 가치도 실 안에 그대로 남는다. 한 사람의 같은 노동이 어떻게 두 가지 일을 한꺼번에 해내는가?",
+                    "en": "In a day of spinning, new value is added to the yarn while the old value of the cotton and the spindle survives inside it as well. How does one and the same labor accomplish both at once?"
                   },
                   "choices": {
                     "ko": [
-                      "살아 있는 구체적 노동이 원료와 도구를 실제 생산물로 사용하면서 그 기존 가치를 새 생산물에 이전한다.",
-                      "원료와 도구는 자연적으로 가치 보존 본능을 갖고 있어 혼자서 가치를 옮긴다.",
-                      "자본가가 회계장부에 적기만 하면 노동과 무관하게 가치가 보존된다.",
-                      "생산수단의 가치는 보존되지 않고 매번 완전히 사라진 뒤 국가가 다시 부여한다."
+                      "방적이라는 유용한 노동이 면화와 방추를 새 사용가치의 요소로 만들면서 옛 가치를 함께 넘긴다",
+                      "노동자가 새 가치를 더하는 일을 먼저 하고 옛 가치를 보존하는 일을 잇달아 따로 수행한다",
+                      "옛 가치는 보존되는 것이 아니라 노동과정에서 새로 재생산되어 생산물 안에 다시 나타난다",
+                      "추상적 노동이 지출된 시간만큼 가치를 더할 때 그 힘으로 옛 가치도 함께 보존된다"
                     ],
                     "en": [
-                      "Living concrete labor uses raw materials and instruments in an actual product and thereby transfers their existing value to the new product.",
-                      "Raw materials and tools naturally possess an instinct to preserve value and transfer it by themselves.",
-                      "Value is preserved independently of labor whenever the capitalist writes it in an account book.",
-                      "The value of means of production is never preserved; it disappears completely and is then reassigned by the state."
+                      "The useful labor of spinning makes cotton and spindle into elements of a new use-value and carries their old value over with them",
+                      "The worker performs two separate acts in turn, first adding new value and then saving the old value",
+                      "The old value is not preserved but reproduced afresh in the labor process, which is why it reappears in the product",
+                      "Abstract labor adds value in proportion to the time expended, and by that same power the old value is preserved as well"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산수단은 스스로 새 가치를 만들지 않지만, 살아 있는 노동이 그것들을 목적에 맞게 사용하면서 그 가치를 생산물에 보존·이전한다. 따라서 가치 보존도 노동과정과 분리되어 일어나지 않는다.",
-                    "en": "Means of production do not create new value by themselves, but living labor uses them purposefully and thereby preserves and transfers their value to the product. Value preservation is therefore not separate from the labor-process."
+                    "ko": "방적공은 면화에 새 가치를 더하는 일과 면화의 옛 가치를 보존하는 일을 따로 하지 않는다. 방적이라는 구체적이고 유용한 노동의 특수한 형태 그 자체가 면화와 방추를 실이라는 새 사용가치의 구성요소로 만들면서 동시에 그 옛 가치를 이전한다. 같은 노동자가 소목일로 직종을 바꾸어도 하루에 더하는 새 가치는 같지만, 면화를 실로 만드는 것은 방적뿐이다. 두 결과는 한 번의 노동이 지닌 이중성에서 함께 나온다.",
+                    "en": "The spinner does not perform two operations at once, one adding new value to the cotton and another saving its old value. The specific useful form of the labor, spinning itself, makes cotton and spindle into components of a new use-value, yarn, and in that very act carries their old value across. Were the same worker to turn joiner he would add as much new value in a day, yet only spinning turns cotton into yarn. Both results flow from the two-fold character of one labor."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동의 이중성이 여기서 두 갈래 결과로 갈린다. 추상적 노동으로서 새 가치를 더하고, 구체적 노동으로서 옛 가치를 옮긴다.",
+                      "원문은 노동자가 두 가지 조작을 한꺼번에 하지 않는다고 못 박는다. 새 가치를 더하는 바로 그 행위가 동시에 옛 가치를 보존한다.",
+                      "재생산은 없던 것을 새로 만드는 일이다. 면화의 가치는 새로 만들어지지 않고 사라진 사용가치에서 새 사용가치로 자리를 옮길 뿐이다.",
+                      "시간의 지출만 놓고 보면 방적이든 소목일이든 같은 크기의 새 가치를 더한다. 그러나 면화를 실로 만드는 것은 방적이라는 특수한 형태뿐이다."
+                    ],
+                    "en": [
+                      "The two-fold character of labor forks here: as abstract labor it adds new value, as concrete labor it carries the old value across.",
+                      "The text is explicit that the laborer does not perform two operations at once; the very act of adding new value preserves the old.",
+                      "To reproduce is to make anew. The cotton’s value is not made again; it merely moves from a vanished use-value into a new one.",
+                      "Measured as expenditure of time, spinning and joinering add the same new value. Only the particular form, spinning, turns cotton into yarn."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "그러므로 노동자는 소비된 생산수단의 가치를 추상적으로 고찰된 자신의 부가노동 덕분이 아니라, 그 노동의 특수한 유용한 성격 덕분에, 곧 그 특별한 생산적 형태 덕분에 보존하거나 생산물에 가치의 일부로 이전한다.",
+                      "en": "Hence, the labourer preserves the values of the consumed means of production, or transfers them as portions of its value to the product, not by virtue of his additional labour, abstractedly considered, but by virtue of the particular useful character of that labour, by virtue of its special productive form."
+                    }
                   }
                 },
                 {
@@ -5131,27 +5351,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "“기계가 생산성을 높였으므로 이윤의 원천은 기계다”라는 설명이 왜 불충분한가?",
-                    "en": "Why is the explanation “machines raise productivity, so machines are the source of profit” inadequate?"
+                    "ko": "물레방아를 돌리는 강물처럼 값을 치르지 않은 자연력이 생산을 크게 돕는다. 여기서 자연도 노동과 나란히 가치를 만든다고 보는 설명은 어디서 어긋나는가?",
+                    "en": "Free natural forces, like the river that drives a mill wheel, assist production enormously. Where does the view that nature creates value alongside labor go wrong?"
                   },
                   "choices": {
                     "ko": [
-                      "기계는 단위상품 가치와 생산량에 영향을 주지만, 자기 가치 이상을 새로 창조하는 가변적 요소는 노동력이기 때문이다.",
-                      "마르크스는 기계가 생산성에 영향을 준다는 사실 자체를 부정하기 때문이다.",
-                      "기계는 아무 상품도 만들 수 없으므로 생산과정에서 제거되어야 하기 때문이다.",
-                      "이윤은 생산성이 아니라 오직 소비자의 선호에서 생기기 때문이다."
+                      "강물은 사람의 노동이 만든 것이 아니어서 잃을 가치가 없는데도 가치를 내놓는다고 보는 데서 어긋난다",
+                      "사용가치를 만드는 데 이바지하는 것과 교환가치를 형성하는 것을 같은 일로 보는 데서 어긋난다",
+                      "강물이 덜어 준 노동시간만큼의 가치가 생산물에 더해진다고 보는 데서 어긋난다",
+                      "값을 치르지 않은 요소가 주는 이득을 새로 창조된 잉여가치와 같은 것으로 보는 데서 어긋난다"
                     ],
                     "en": [
-                      "Because machines affect unit values and output, but labor-power is the variable element that creates new value beyond its own value.",
-                      "Because Marx denies that machines affect productivity at all.",
-                      "Because machines cannot make any commodities and should be removed from production.",
-                      "Because profit arises not from productivity but only from consumer preference."
+                      "It treats the river, which is no product of human labor and so has no value to lose, as yielding value all the same",
+                      "It takes helping to create use-value and contributing to the formation of exchange-value to be one and the same act",
+                      "It supposes that the labor-time the river saves is added to the product as so much value",
+                      "It mistakes the advantage of a factor obtained without payment for newly created surplus-value"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "기계의 역할을 부정하면 안 되지만, 그것을 새 가치의 원천으로 만들면 불변자본과 가변자본의 구분이 사라진다. 기계는 노동생산성을 매개하지만 잉여가치의 직접 원천은 살아 있는 노동이다.",
-                    "en": "The role of machinery should not be denied, but making it the source of new value erases the distinction between constant and variable capital. Machinery mediates labor productivity; living labor is the direct source of surplus-value."
+                    "ko": "생산수단은 노동과정에서 자기 사용가치가 파괴되며 잃는 만큼만 생산물에 가치를 넘긴다. 강물은 사람의 노동이 든 것이 아니어서 애초에 잃을 가치를 갖고 있지 않으므로, 물레방아를 돌려 사용가치를 만드는 데 크게 이바지하면서도 교환가치의 형성에는 한 푼도 보태지 않는다. 자연력이 자본가에게 유리하다는 것과 자연력이 가치를 만든다는 것은 서로 다른 이야기이며, 이 둘을 겹쳐 놓으면 새 가치의 유일한 원천을 놓친다.",
+                    "en": "Means of production give up to the product only as much value as they lose when their own use-value is destroyed in the labor process. The river is not a product of human labor, so it has no value to lose in the first place; it helps enormously to create use-value while contributing nothing to the formation of exchange-value. That a free natural force is advantageous to the capitalist is one claim, that it creates value is quite another, and running them together loses sight of the sole source of new value."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "같은 이유로 처녀림의 목재나 땅속의 광석도 그 자체로는 생산물에 가치를 더하지 않는다. 가치를 지니는 것은 사람의 노동이 든 것뿐이다.",
+                      "사용가치를 만드는 일과 교환가치를 형성하는 일은 여기서 갈라진다. 강물은 앞의 일에 큰 몫을 하면서 뒤의 일에는 몫이 없다.",
+                      "덜어 준 노동은 지출되지 않은 노동이다. 지출되지 않은 노동은 생산물에 가치로 담기지 않으므로 절약 자체는 가치의 원천이 될 수 없다.",
+                      "공짜 자연력은 자본가의 비용을 줄여 준다. 그러나 잉여가치는 노동력이 자기 가치를 넘어 지출된 데서 나오지, 아낀 비용에서 나오지 않는다."
+                    ],
+                    "en": [
+                      "For the same reason timber in a virgin forest and metal still in the ground add no value of their own; only what human labor has entered carries value.",
+                      "Creating use-value and forming exchange-value part company here: the river does a great deal of the first and none of the second.",
+                      "Labor spared is labor never expended, and labor never expended is never embodied in the product, so saving by itself is no source of value.",
+                      "A free natural force lowers the capitalist’s costs, but surplus-value arises from labor-power expended beyond its own value, not from costs avoided."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "생산수단이 노동과정에서 자기 사용가치의 파괴로 스스로 잃는 것보다 더 많은 가치를 생산물에 이전하는 일은 결코 없다는 것이 이로써 뚜렷해진다. 그런 수단이 잃을 가치를 갖고 있지 않다면, 다시 말해 그것이 사람 노동의 생산물이 아니라면, 그것은 생산물에 아무 가치도 이전하지 않는다. 그것은 교환가치의 형성에 이바지하지 않으면서 사용가치를 만드는 데 도움을 준다.",
+                      "en": "It is thus strikingly clear, that means of production never transfer more value to the product than they themselves lose during the labour-process by the destruction of their own use-value. If such an instrument has no value to lose, if, in other words, it is not the product of human labour, it transfers no value to the product. It helps to create use-value without contributing to the formation of exchange-value."
+                    }
                   }
                 },
                 {
@@ -5159,27 +5404,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "한 상품의 가치가 원료 80, 기계 마모 20, 새 노동 50으로 이루어졌고, 그중 임금에 해당하는 부분은 30이라고 하자. 여기서 잉여가치는 어디에 있는가?",
-                    "en": "A commodity’s value consists of 80 in raw materials, 20 in machine wear, and 50 in new labor. Of the new labor, 30 corresponds to wages. Where is the surplus-value?"
+                    "ko": "한 상품의 가치가 원료 80, 기계 마모 20, 새 노동 50으로 이루어졌고, 그중 노동력 가치를 재생산하는 부분은 30이라고 하자. 여기서 잉여가치는 어디에 있는가?",
+                    "en": "A commodity’s value consists of 80 in raw materials, 20 in machine wear, and 50 in new labor. Of the new labor, 30 reproduces the value of labor-power. Where is the surplus-value?"
                   },
                   "choices": {
                     "ko": [
-                      "새 노동 50 중 임금 30을 넘는 20",
-                      "기계 마모 20 전체",
-                      "원료 80 전체",
-                      "원료와 기계의 합계 100"
+                      "새 노동 50 가운데 노동력 가치 30을 넘는 나머지 20이 잉여가치다",
+                      "새 노동 50 전체가 노동자가 새로 만든 것이므로 그것이 곧 잉여가치다",
+                      "원료 80과 기계 마모 20이 생산물 값에 얹히며 생긴 100이 잉여가치다",
+                      "생산물 값 150에서 임금 30을 뺀 120이 자본가에게 남는 잉여가치다"
                     ],
                     "en": [
-                      "The 20 by which new labor of 50 exceeds wages of 30",
-                      "The entire 20 in machine wear",
-                      "The entire 80 in raw materials",
-                      "The 100 made up by raw materials and machinery together"
+                      "The 20 by which the new labor of 50 exceeds the 30 that reproduces labor-power",
+                      "The whole 50 of new labor, since the worker created all of it in this process",
+                      "The 100 that raw materials and machine wear add on to the price of the product",
+                      "The 120 left to the capitalist once wages of 30 are taken from the product’s 150"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "원료와 기계 마모는 기존 가치의 이전이다. 새 가치 50 중 노동력 가치 30을 보충한 뒤 남는 20이 잉여가치이며, 이것이 가변자본 분석의 핵심이다.",
-                    "en": "Raw materials and machine wear are transferred existing value. Of the 50 in new value, after replacing the 30 value of labor-power, the remaining 20 is surplus-value; this is the core of the analysis of variable capital."
+                    "ko": "원료 80과 기계 마모 20은 노동이 새로 만든 것이 아니라 옛 가치가 생산물 안에 다시 나타난 것일 뿐이다. 이 과정이 새로 형성한 가치는 50이고, 그 가운데 30은 노동력 자신의 가치를 메우는 데 들어가며, 그것을 넘는 20이 잉여가치다. 새 노동 전체를 잉여가치로 세면 노동자가 자기 노동력의 값을 어디서 되찾았는지가 사라지고, 150에서 임금만 빼면 옛 가치 100까지 자본가가 만든 것으로 세게 된다.",
+                    "en": "The 80 in raw materials and the 20 in machine wear were not newly made by labor; they are old value reappearing in the product. The value this process newly formed is the 50, of which 30 replaces the value of labor-power itself, leaving 20 as surplus-value. Count the whole 50 as surplus and the worker never recovers the price of his labor-power; subtract only wages from 150 and the 100 of transferred old value is credited to the capitalist as well."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "이 20을 30과 견주면 착취의 정도가 드러난다. 같은 20을 총자본 150과 견주는 계산은 다른 것을 재는 다른 비율이다.",
+                      "새 노동 50 가운데 30은 노동자가 자기 노동력의 값을 되찾는 데 쓰인다. 잉여가치는 그 선을 넘어선 뒤부터 쌓인다.",
+                      "원료와 기계에서 온 100은 이 공장에 들어오기 전에 이미 만들어져 있던 가치다. 여기서는 자리를 옮겼을 뿐 늘어나지 않았다.",
+                      "생산물 값에서 임금만 빼면 이전된 옛 가치 100까지 자본가의 몫으로 세게 된다. 그 100은 이 과정이 만든 것이 아니다."
+                    ],
+                    "en": [
+                      "Set this 20 against the 30 and the degree of exploitation appears; setting the same 20 against the whole 150 measures something else entirely.",
+                      "Thirty of the fifty added by new labor goes to buy back the worker’s own means of life; surplus-value begins only past that line.",
+                      "The 100 coming from materials and machinery already existed before it entered this workshop. Here it changed places without growing.",
+                      "Deduct only wages from the price and the 100 of transferred old value is counted as the capitalist’s too, though this process did not make it."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "그러므로 노동력의 작용은 자기 가치를 재생산할 뿐 아니라 그것을 넘는 가치를 생산한다. 이 잉여가치는 생산물의 가치와 그 생산물을 형성하는 데 소비된 요소들, 곧 생산수단과 노동력의 가치 사이의 차액이다.",
+                      "en": "The action of labour-power, therefore, not only reproduces its own value, but produces value over and above it. This surplus-value is the difference between the value of the product and the value of the elements consumed in the formation of that product, in other words, of the means of production and the labour-power."
+                    }
                   }
                 },
                 {
@@ -5187,27 +5457,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "8장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best describes the systematic role of Chapter 8?"
+                    "ko": "한 공장에서 노동자 10명이 저가 도구로 일하던 방식이, 노동자 1명이 고가 기계 하나로 100배의 원료를 가공하는 방식으로 바뀌었다. 이 기술혁신은 불변자본과 가변자본의 구분에 어떤 영향을 주는가?",
+                    "en": "A workshop where ten workers used cheap tools is replaced by one worker with a single expensive machine processing a hundred times as much material. What effect does this technical change have on the distinction between constant and variable capital?"
                   },
                   "choices": {
                     "ko": [
-                      "생산물 가치 안에서 기존 가치의 이전과 새 가치 창조를 분리해, 잉여가치가 가변자본과 어떤 관계를 갖는지 계산할 수 있게 한다.",
-                      "생산수단이 모든 잉여가치를 만든다는 결론을 내려 노동력 분석을 폐기한다.",
-                      "임금과 원료비는 같은 비용항목이며 가치 이전과 새 가치 생산의 차이는 비용 계산 안에 들어간다.",
-                      "가치분석을 포기하고 회계상 비용가격만으로 착취를 설명한다."
+                      "두 자본 사이의 비율만 크게 바뀔 뿐, 둘 사이의 본질적 차이는 그대로 남는다",
+                      "생산수단이 잉여가치를 만든다는 뜻이 되어 가변자본이라는 범주 자체가 필요 없어진다",
+                      "임금과 원료비가 같은 비용항목이 되어 가치이전과 가치창조의 구분이 사라진다",
+                      "남은 한 명이 열 명 몫의 잉여가치를 만들므로 잉여가치율은 예전 그대로 유지된다"
                     ],
                     "en": [
-                      "It separates transferred existing value from newly created value in the product, making it possible to calculate how surplus-value relates to variable capital.",
-                      "It concludes that means of production create all surplus-value and abandons the analysis of labor-power.",
-                      "It eliminates the distinction by treating wages and raw-material costs as creating new value in the same way.",
-                      "It gives up value analysis and explains exploitation only through accounting cost-price."
+                      "Only the proportion between the two changes drastically; the essential difference between them remains",
+                      "It means the means of production make the surplus-value, so the category of variable capital is no longer needed",
+                      "Wages and material costs become the same cost item, erasing the difference between transferring and creating value",
+                      "The one remaining worker makes ten workers’ surplus-value, so the rate of surplus-value stays exactly as before"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "8장은 생산물 가치의 구성요소를 분석해 착취율 계산의 기초를 놓는다. 잉여가치는 총투하자본 전체가 아니라 노동력에 지출된 가변자본과 직접 비교되어야 한다.",
-                    "en": "Chapter 8 analyzes the components of the product’s value and lays the basis for calculating the rate of exploitation. Surplus-value must be compared directly with variable capital, not with the whole advanced capital."
+                    "ko": "열 명이 값싼 도구로 하던 일을 한 명이 비싼 기계로 백 배의 원료를 다루는 방식이 대신해도, 달라지는 것은 총자본이 불변 부분과 가변 부분으로 나뉘는 비율뿐이다. 기계가 아무리 커져도 그것은 자기가 잃는 가치만큼만 생산물에 넘기고, 생산물 가치에서 그 이전분과 노동력 가치를 넘는 초과분은 여전히 남은 한 사람의 살아 있는 노동에서만 나온다. 비율의 혁명이 두 자본의 기능 차이를 지우지는 못한다.",
+                    "en": "When one worker with an expensive machine and a hundred times the material replaces ten workers with cheap tools, what changes is only the proportion in which total capital splits into its constant and variable parts. However vast the machine, it hands on no more than it loses, and the excess of the product’s value over that transfer and over the value of labor-power still comes from the living labor of the one worker who remains. A revolution in proportions cannot erase the difference in function."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "원문은 이런 혁명이 양적 관계만 바꿀 뿐 본질적 차이에는 조금도 영향을 주지 않는다고 못 박는다.",
+                      "기계가 백 배의 원료를 다루어도 그 기계가 넘기는 것은 자기가 잃은 가치뿐이다. 초과분을 만드는 것은 남은 한 사람의 노동이다.",
+                      "임금은 생산 안에서 더 큰 크기가 되는 자본이고 원료비는 크기가 변하지 않는 자본이다. 장부에 나란히 적힌다고 기능까지 같아지지는 않는다.",
+                      "한 사람이 백 배의 원료를 다룬다고 그 사람의 하루가 열 배로 늘어나지는 않는다. 잉여가치율은 그 하루가 어떻게 나뉘는가에 달려 있다."
+                    ],
+                    "en": [
+                      "The text states outright that such a revolution alters the quantitative relation alone and does not in the least affect the essential difference.",
+                      "Handle a hundred times the material and the machine still hands on only what it loses; the excess is made by the labor of the one worker left.",
+                      "Wages are the outlay that becomes a larger magnitude in production, material costs the outlay that does not. Sitting side by side in a ledger changes neither.",
+                      "Working up a hundred times the material does not stretch one worker’s day tenfold; the rate of surplus-value turns on how that day is divided."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch08.htm",
+                    "label": {
+                      "ko": "『자본론』 1권 8장 불변자본과 가변자본",
+                      "en": "Capital I, Ch. 8 Constant Capital and Variable Capital"
+                    },
+                    "quote": {
+                      "ko": "그러한 혁명은 불변자본과 가변자본 사이의 양적 관계만을, 곧 총자본이 그 불변 부분과 가변 부분으로 나뉘는 비율만을 바꿀 뿐이며, 이 둘 사이의 본질적 차이에는 조금도 영향을 주지 않는다.",
+                      "en": "Such a revolution, however, alters only the quantitative relation between the constant and the variable capital, or the proportions in which the total capital is split up into its constant and variable constituents; it has not in the least degree affected the essential difference between the two."
+                    }
                   }
                 }
               ]
@@ -5250,29 +5545,29 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "불변자본 c",
+                "title": "핵심 개념 먼저",
                 "items": [
                   "불변자본 c: 기계, 원료, 건물처럼 생산수단에 들어간 자본이다. 생산과정에서 새 가치를 만들지는 않고, 자기의 기존 가치를 생산물로 이전한다.",
-                  "가변자본 v: 노동력을 사는 데 쓰인 자본이다. 노동력은 자기 가치보다 더 큰 새 가치를 만들 수 있기 때문에 “가변”이라고 부른다.",
+                  "가변자본 v: 노동력을 사는 데 쓰인 자본이다. 노동력은 자기 가치보다 더 큰 새 가치를 만들 수 있기 때문에 가변이라 부른다.",
                   "왜 나누나: 잉여가치 s의 원천을 찾기 위해서다. c와 v를 구분해야 다음 장의 잉여가치율 s/v가 무엇을 재는지 이해할 수 있다."
                 ]
               },
               {
-                "title": "가변자본 v",
-                "items": [
-                  "c는 불변자본이다. 생산수단의 가치를 새 상품으로 이전하지만 새 가치를 만들지는 않는다.",
-                  "v는 가변자본이다. 노동력 구매에 쓰이며, 사용될 때 새 가치와 잉여가치를 만든다.",
-                  "s는 잉여가치다. 노동자가 자기 노동력 가치 이상으로 일해 만든 초과 가치다."
-                ]
+                "title": "용어 풀이",
+                "text": "이 장에서 자주 나오는 가치증식이라는 말은 자본이 투입한 가치가 생산과정을 거쳐 더 큰 가치로 불어나는 과정을 가리킨다. 불변과 가변이라는 형용사는 가격의 안정성이 아니라, 생산과정에서 그 자본 부분이 겪는 가치 크기의 변화 여부를 뜻한다."
               },
               {
-                "title": "새 가치의 원천",
+                "title": "현대 적용",
+                "text": "공장 자동화 논쟁에서 로봇이 이윤을 만든다는 식의 말을 자주 듣는다. 이 장의 논리로 보면 로봇은 자기가 닳아 없어지는 만큼의 옛 가치를 생산물에 넘기고 노동생산성을 바꿀 뿐이다. 로봇이 늘어날수록 생산물 값에서 이전된 옛 가치의 몫은 커지고, 새 가치를 낳는 산 노동의 몫은 오히려 줄어든다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "기계와 원료는 기존 가치를 이전하지만, 노동력만이 새 가치를 만든다는 구분을 익힌다."
               }
             ],
             "en": [
               {
-                "title": "Constant Capital c",
+                "title": "Core concepts first",
                 "items": [
                   "Constant capital c: Capital advanced for means of production, such as machinery, materials, and buildings. It does not create new value; it transfers its existing value to the product.",
                   "Variable capital v: Capital advanced to buy labor-power. It is called variable because labor-power can create more new value than its own value.",
@@ -5280,15 +5575,15 @@
                 ]
               },
               {
-                "title": "Variable Capital v",
-                "items": [
-                  "c is constant capital: value of means of production transferred to the new commodity without creating new value.",
-                  "v is variable capital: outlay on labour-power, which creates new value and surplus-value when used.",
-                  "s is surplus-value: the excess value created beyond the value of labour-power."
-                ]
+                "title": "Terms explained",
+                "text": "The word valorization, common in this chapter, names the process by which value advanced by capital grows into a larger value through production. Constant and variable do not describe price stability; they describe whether that portion of capital undergoes a change in value magnitude during production."
               },
               {
-                "title": "Source of New Value",
+                "title": "Today's application",
+                "text": "In debates over factory automation people often say that robots make the profit. By this chapter’s logic a robot hands on only the old value it wears away and changes labor productivity. The more robots there are, the larger the share of transferred old value in the price of the product, and the smaller the share of living labor that begets new value."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "Learn why machinery and materials transfer existing value, while labor-power alone creates new value."
               }
             ]
@@ -6004,6 +6299,47 @@
             "en": "Shows the conflict between capital’s demand for labor-time and workers’ conditions of life in the struggle over the working day."
           },
           "sourceUrl": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm",
+          "diagram": {
+            "kind": "contrast",
+            "ko": {
+              "title": "권리 대 권리: 노동일을 둘러싼 두 논리",
+              "left": {
+                "heading": "자본의 논리",
+                "rows": [
+                  "구매한 노동력의 사용가치를 최대한 소비하려 한다",
+                  "노동일 연장으로 잉여노동을 직접 늘린다",
+                  "교대조 같은 편법으로 법의 허점을 파고든다"
+                ]
+              },
+              "right": {
+                "heading": "노동자의 논리",
+                "rows": [
+                  "판 것은 하루치 노동력이지 생명 전체가 아니다",
+                  "정상적 재생산을 위해 노동일의 한계를 요구한다",
+                  "집단적 투쟁과 법으로 표준노동일을 관철하려 한다"
+                ]
+              }
+            },
+            "en": {
+              "title": "Right Against Right: Two Logics of the Working Day",
+              "left": {
+                "heading": "Capital’s Logic",
+                "rows": [
+                  "Tries to consume the use-value of purchased labor-power to the maximum",
+                  "Directly increases surplus labor by lengthening the working day",
+                  "Exploits legal loopholes through tricks like the relay system"
+                ]
+              },
+              "right": {
+                "heading": "Worker’s Logic",
+                "rows": [
+                  "What was sold is a day’s labor-power, not an entire life",
+                  "Demands limits on the working day for normal reproduction",
+                  "Pushes for a normal working day through collective struggle and law"
+                ]
+              }
+            }
+          },
           "lessons": [
             {
               "id": "capital-v1-ch10-basic",
@@ -6018,27 +6354,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "노동자는 하루 노동력을 팔았고, 자본가는 그 노동력을 최대한 오래 쓰고 싶어 한다. 10장에서 노동일 문제가 생기는 직접 이유는 무엇인가?",
-                    "en": "The worker has sold labor-power for a day, and the capitalist wants to use it as long as possible. What directly gives rise to the problem of the working day in Chapter 10?"
+                    "ko": "노동자는 하루치 노동력을 팔았고, 자본가는 그 노동력을 최대한 오래 쓰고 싶어 한다. 이 거래에서 노동일을 둘러싼 다툼이 곧바로 생기는 이유는 무엇인가?",
+                    "en": "The worker has sold a day’s labor-power, and the capitalist wants to use it as long as possible. Why does a dispute over the working day arise directly out of this transaction?"
                   },
                   "choices": {
                     "ko": [
-                      "노동력의 하루 사용시간이 계약만으로 자연스럽게 정해지지 않고, 필요노동을 넘는 잉여노동의 길이를 둘러싸고 충돌하기 때문이다.",
-                      "노동력은 한 번 팔리면 물리적 한계 없이 영원히 사용할 수 있기 때문이다.",
-                      "노동일은 임금계약 뒤에 정해지는 근무 조건이기 때문이다.",
-                      "상품교환에서는 시간이라는 요소가 존재하지 않기 때문이다."
+                      "노동력의 하루 사용시간이 계약만으로 정해지지 않아, 필요노동을 넘는 잉여노동의 길이를 두고 양쪽이 맞서기 때문이다.",
+                      "상품교환의 법칙이 노동일의 길이를 이미 정해 두었는데 자본가가 그 법칙을 어기고 시간을 더 빼앗기 때문이다.",
+                      "노동력의 값이 시장에서 오르내리므로, 임금을 둘러싼 흥정이 그대로 노동시간 다툼으로 옮겨 가기 때문이다.",
+                      "노동일의 길이는 그때그때의 기술 수준이 정하므로, 기계가 바뀔 때마다 시간을 새로 합의해야 하기 때문이다."
                     ],
                     "en": [
-                      "Because the daily use-time of labor-power is not naturally fixed by the contract, and conflict arises over the length of surplus labor beyond necessary labor.",
-                      "Because once labor-power is sold, it can be used forever without physical limits.",
-                      "Because the working day has nothing to do with wages, so neither capitalist nor worker cares about it.",
-                      "Because time does not exist as a factor in commodity exchange."
+                      "Because the daily use-time of labor-power is not fixed by the contract itself, so the two sides clash over the length of surplus labor beyond necessary labor.",
+                      "Because the law of commodity exchange already fixes the length of the day, and the capitalist breaks that law to seize extra hours.",
+                      "Because the price of labor-power rises and falls in the market, so bargaining over wages carries straight over into a quarrel about hours.",
+                      "Because the length of the day is set by the level of technique, so hours must be renegotiated each time the machinery changes."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동력의 가치는 하루 생활수단으로 정해질 수 있지만, 그 노동력을 하루 몇 시간 사용할지는 별개의 문제다. 자본은 잉여노동을 늘리려 하고 노동자는 노동력의 소모 한계를 지키려 하므로 노동일은 투쟁의 대상이 된다.",
-                    "en": "The value of labor-power may be determined by daily means of subsistence, but how many hours it may be used is a separate question. Capital seeks to expand surplus labor, while the worker seeks to protect the limits of labor-power, so the working day becomes an object of struggle."
+                    "ko": "노동력의 가치는 하루 생활수단으로 정해질 수 있지만, 그 노동력을 하루 몇 시간 사용할지는 별개의 문제다. 마르크스는 이 여백을 필요노동과 잉여노동의 비율 문제로 제시한다. 자본가가 하루를 늘려도 교환법칙을 어기는 것은 아니어서, 노동일은 계약 문구가 아니라 그 뒤에 벌어지는 힘의 문제가 된다.",
+                    "en": "The value of labor-power may be fixed by daily means of subsistence, but how many hours it may be used is a separate question that Marx frames as the ratio of necessary to surplus labor. Lengthening the day breaks no rule of exchange, so the working day turns out to be settled not by the wording of the contract but by the force each side can bring to bear."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 마르크스가 필요노동 구간에 잉여노동 구간을 덧붙이는 방식으로 노동일을 그린 것도 이 가변성을 드러내기 위해서다.",
+                      "자본가는 값을 치르고 산 상품을 쓰는 것이므로 교환법칙을 어기지 않으며, 착취를 사기로 보면 이 장의 이율배반 자체가 사라진다.",
+                      "임금 흥정은 노동력의 값을 다투지만, 노동일 다툼은 같은 값을 치른 뒤 그 상품을 몇 시간 쓸지를 다투는 별개의 전선이다.",
+                      "기술은 노동일의 상한을 정해 주지 못하며, 같은 시기에 8시간부터 18시간까지의 노동일이 나란히 존재했다."
+                    ],
+                    "en": [
+                      "Right—Marx draws the working day as necessary labor plus an added stretch of surplus labor precisely to make this variability visible.",
+                      "The capitalist is only using a commodity he paid for, so no law of exchange is broken; treating exploitation as cheating dissolves the antinomy this chapter is built on.",
+                      "Bargaining over wages disputes the price of labor-power, while the working day is a separate front: how many hours that same purchase may be used.",
+                      "Technique does not set the ceiling; Marx notes working-days of 8, 10, 12, 14, 16 and 18 hours side by side in the same period."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 1절 노동일의 한계",
+                      "en": "Capital I, Ch. 10 §1 The Limits of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "노동일은 그러므로 정해질 수는 있지만, 그 자체로는 정해져 있지 않다. … 자본가는 노동력을 하루치 값으로 샀다. 그에게 그 사용가치는 하루의 노동일 동안 속한다.",
+                      "en": "The working-day is, therefore, determinable, but is, per se, indeterminate. … The capitalist has bought the labour-power at its day-rate. To him its use-value belongs during one working-day."
+                    }
                   }
                 },
                 {
@@ -6060,13 +6421,38 @@
                       "Labor-power is a special commodity, but it is the capacity of a living human being and has physical and social limits of reproduction.",
                       "Labor-power is like a machine, so its value is preserved even without rest.",
                       "Because the worker receives a wage, they can claim no right concerning the exhaustion of their body.",
-                      "Recovery time is merely a private preference depending only on capitalist goodwill."
+                      "Recovery time is a matter of the worker’s private life and falls outside the transaction."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동력은 상품으로 팔리지만 살아 있는 인간의 힘이다. 자본이 그 사용을 무한히 늘리려 할 때 노동력 자체가 파괴될 수 있으므로, 노동자는 상품교환의 권리 언어 안에서도 노동일 제한을 주장한다.",
-                    "en": "Labor-power is sold as a commodity, but it is the power of a living human being. If capital extends its use without limit, labor-power itself can be destroyed, so the worker can claim limits to the working day even within the language of commodity rights."
+                    "ko": "마르크스는 노동력을 상품이라 부르면서도 그것이 살아 있는 인간의 힘이라는 점을 계속 강조한다. 잠, 식사, 사회적 욕구를 위한 시간이 있어야 다음날도 같은 정상적 힘으로 일할 수 있으며, 그렇지 않으면 자본은 하루에서 두 노동일을 뽑아내는 셈이 된다. 그래서 회복 시간 요구는 감상이 아니라 상품교환 논리 안의 정당한 주장이다.",
+                    "en": "Marx repeatedly stresses that even though labor-power is sold as a commodity, it remains the power of a living human being. Sleep, meals, and time for social needs are needed so the worker can return with the same normal force the next day; otherwise capital is making two working-days out of one. The demand for recovery time is therefore a legitimate claim within the very logic of commodity exchange, not mere sentiment."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 이 한계 때문에 노동일에는 물리적 최대치와 사회적 최대치가 동시에 존재한다.",
+                      "기계는 소모를 무시할 수 있다는 상상인데, 노동력은 소진되면 다음날 정상적으로 일할 수 없다는 점에서 결정적으로 다르다.",
+                      "임금은 노동력의 하루치 가치일 뿐 노동자의 신체와 생명 자체를 자본가에게 넘긴다는 뜻이 아니다.",
+                      "회복 시간은 노동력이라는 상품 자체의 재생산 조건이므로, 거래 바깥에 놓인 사적 취향으로 밀어 둘 수 없다."
+                    ],
+                    "en": [
+                      "Right—this is exactly why the working day has both a physical maximum and a social maximum.",
+                      "This imagines labor-power can ignore wear like a machine, but once exhausted it cannot return to normal strength the next day, which is the crucial difference.",
+                      "The wage only pays for a day’s value of labor-power; it does not transfer the worker’s body and life itself to the capitalist.",
+                      "Recovery time is a condition of reproducing the commodity labor-power itself, so it cannot be set aside as a private matter outside the transaction."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 1절 노동일의 한계",
+                      "en": "Capital I, Ch. 10 §1 The Limits of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "24시간이라는 자연일 안에서 사람은 자기 생명력의 일정한 양만을 쓸 수 있다. … 이러한 순수하게 물리적인 한계 외에도, 노동일의 연장은 도덕적 한계에 부딪힌다.",
+                      "en": "Within the 24 hours of the natural day a man can expend only a definite quantity of his vital force. … Besides these purely physical limitations, the extension of the working-day encounters moral ones."
+                    }
                   }
                 },
                 {
@@ -6088,13 +6474,38 @@
                       "Because both sides invoke rights of commodity exchange, but their class interests clash over how long the use-value of labor-power may be consumed.",
                       "Because the length of the working day is already exactly fixed by natural law, leaving no room for conflict.",
                       "Because once workers receive wages, they are no longer in a class relation.",
-                      "Because capitalists have no interest in surplus labor and only want workers to rest."
+                      "Because the capitalist’s concern is managing output, and the expansion of surplus labor merely follows from it."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 이 충돌을 개인 성격의 문제가 아니라 권리 대 권리의 충돌로 제시한다. 결정은 결국 힘, 즉 계급투쟁을 통해 내려지며, 이것이 공장법과 노동일 제한의 역사적 의미다.",
-                    "en": "Marx presents this conflict not as a matter of personality but as right against right. The decision is ultimately made by force, that is, by class struggle, which gives factory legislation and limits on the working day their historical significance."
+                    "ko": "마르크스는 이 충돌을 개인 성격의 문제가 아니라 구조적인 권리 대 권리의 충돌로 제시한다. 자본가는 구매자로서 사용가치를 최대한 뽑으려 하고 노동자는 판매자로서 정상적 소비의 한계를 요구하는데, 둘 다 상품교환의 법칙 안에서 정당하다. 그래서 결정은 결국 계급적 힘, 즉 투쟁으로 내려지며, 이것이 공장법의 역사적 의미다.",
+                    "en": "Marx presents this conflict not as a matter of personality but as a structural clash of right against right. As buyer, the capitalist seeks to extract the maximum use-value, while as seller the worker demands limits on normal consumption, and both claims are equally valid within the law of commodity exchange. The decision is therefore made by class force, that is, by struggle, which gives factory legislation its historical significance."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 힘이 결정한다는 마르크스의 표현은 이 구조적 충돌을 압축한 것이다.",
+                      "현실에서는 노동일이 8시간, 10시간, 12시간 등으로 다양하게 나타나는데, 이는 자연법이 아니라 투쟁의 결과다.",
+                      "임금관계는 계급관계를 없애는 것이 아니라 오히려 그 형태이며, 노동일은 그 관계 안에서 계속 다투어진다.",
+                      "자본은 생산량 자체보다 잉여노동시간의 확대를 직접 목표로 삼으며, 이는 노동일 연장 요구로 나타난다."
+                    ],
+                    "en": [
+                      "Right—Marx's line that force decides between equal rights condenses exactly this structural clash.",
+                      "The fact that working days actually range across 8, 10, 12 hours and more shows this is settled by struggle, not fixed by natural law.",
+                      "The wage relation does not dissolve the class relation; it is precisely its form, and the working day continues to be contested within it.",
+                      "Capital's direct aim is the extension of surplus labor-time itself, not output management, which is why it presses to lengthen the working day."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 1절 노동일의 한계",
+                      "en": "Capital I, Ch. 10 §1 The Limits of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "그러므로 여기에는 하나의 이율배반이 있다, 권리 대 권리, 둘 다 똑같이 교환법칙의 인장을 지니고 있다. 동등한 권리 사이에서는 힘이 결정한다.",
+                      "en": "There is here, therefore, an antinomy, right against right, both equally bearing the seal of the law of exchanges. Between equal rights force decides."
+                    }
                   }
                 },
                 {
@@ -6121,8 +6532,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동일 연장은 필요노동을 넘어서는 시간을 직접 늘리므로 절대적 잉여가치 생산의 전형이다. 상대적 잉여가치는 노동일이 그대로일 때 필요노동을 줄여 잉여노동을 늘리는 방식이다.",
-                    "en": "Lengthening the working day directly increases time beyond necessary labor, so it is the classic form of absolute surplus-value. Relative surplus-value instead increases surplus labor by reducing necessary labor while the working day remains unchanged."
+                    "ko": "필요노동이 그대로인 채 노동일만 14시간으로 늘면 늘어난 4시간은 통째로 잉여노동시간이 된다. 노동일을 늘리는 것은 잉여노동을 직접 키우는 가장 단순한 방법이며, 이것이 절대적 잉여가치 생산이다. 상대적 잉여가치는 반대로 노동일은 그대로 두고 필요노동을 줄여야 나오므로, 두 방식은 같은 하루를 놓고 정반대 지점을 건드린다.",
+                    "en": "If necessary labor stays fixed while the working day stretches to 14 hours, the added 4 hours become surplus labor-time outright. Lengthening the day is the simplest way to enlarge surplus labor directly, and that is the production of absolute surplus-value. Relative surplus-value works the other way, leaving the day untouched and cutting necessary labor-time, so the two methods act on opposite points of the same day."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 늘어난 4시간에는 새로 지불되는 임금이 없으므로 잉여가치율은 그만큼 곧바로 뛴다.",
+                      "상대적 잉여가치는 필요노동을 줄이는 방식인데, 이 사례는 오히려 노동일 자체를 늘린 경우라 정반대다.",
+                      "불변자본은 사용된 만큼 가치를 이전할 뿐 스스로 새 가치를 만들지 않으며, 이 사례와는 무관하다.",
+                      "가격 조작은 유통 영역의 일이며, 노동일 연장이라는 생산과정의 변화와는 다른 문제다."
+                    ],
+                    "en": [
+                      "Right—no extra wage is paid for the added 4 hours, so the rate of surplus-value jumps by exactly that much.",
+                      "Relative surplus-value works by cutting necessary labor, which is the opposite of what happens when the working day itself is extended.",
+                      "Constant capital only transfers value in proportion to its use and does not generate new value on its own, so this is unrelated here.",
+                      "Manipulating prices belongs to circulation, which differs from the change in the production process caused by lengthening the working day."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 1절 노동일의 한계",
+                      "en": "Capital I, Ch. 10 §1 The Limits of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "노동일은 그러므로 불변량이 아니라 가변량이다. … 그러나 그 총량은 잉여노동의 길이에 따라 달라진다.",
+                      "en": "The working-day is thus not a constant, but a variable quantity. … But its total amount varies with the duration of the surplus-labour."
+                    }
                   }
                 },
                 {
@@ -6130,27 +6566,52 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "10장이 노동일의 역사적 사례와 공장법을 길게 다루는 이유는 무엇인가?",
-                    "en": "Why does Chapter 10 spend so much time on historical cases and factory legislation concerning the working day?"
+                    "ko": "1833년부터 1864년까지 영국 의회는 아동과 여성, 성인 남성의 노동시간을 두고 법을 거듭 고쳤고, 공장주들은 그때마다 교대조 같은 편법으로 빠져나갔다. 마르크스가 이 긴 줄다리기를 절 하나를 통째로 써서 기록한 것은 무엇을 입증하기 위해서인가?",
+                    "en": "From 1833 to 1864 the English Parliament kept revising the hours of children, women and adult men, and manufacturers slipped through each time with devices like the relay system. What is Marx out to establish by recording this long tug-of-war at such length?"
                   },
                   "choices": {
                     "ko": [
-                      "노동일의 한계가 경제법칙만으로 자동 결정되지 않고, 자본의 잉여노동 욕구와 노동자의 재생산 요구 사이의 계급투쟁으로 정해진다는 점을 보여주기 위해서이다.",
-                      "기계가 등장하면 노동시간이 대체로 자연스럽게 줄어든다는 점을 보이기 위해서이다.",
-                      "법률이 가치와 잉여가치를 직접 창조하므로 생산과정 분석이 필요 없다는 점을 보이기 위해서이다.",
-                      "노동일 문제는 자본주의 분석 바깥의 도덕 설교라는 점을 증명하기 위해서이다."
+                      "노동일의 한계가 경제법칙만으로 정해지지 않고, 자본의 잉여노동 욕구와 노동자의 재생산 요구가 부딪히는 계급투쟁으로 정해진다는 사실이다.",
+                      "산업이 발전하면 노동시간은 줄어들기 마련이므로, 공장법은 이미 진행되던 흐름을 뒤늦게 문서로 옮긴 것에 지나지 않는다는 사실이다.",
+                      "노동일의 길이를 정하는 것은 결국 법률이므로, 잉여가치의 크기도 생산과정이 아니라 입법의 산물로 보아야 한다는 사실이다.",
+                      "노동일 문제는 경제학의 대상이 아니라, 자본가 개개인의 잔인함을 고발하는 도덕적 논쟁거리라는 사실이다."
                     ],
                     "en": [
-                      "To show that the limits of the working day are not automatically fixed by economic law alone, but by class struggle between capital’s drive for surplus labor and workers’ need for reproduction.",
-                      "To show that once machinery appears, labor-time always naturally falls.",
-                      "To show that law directly creates value and surplus-value, making analysis of production unnecessary.",
-                      "To prove that the working-day issue is a moral sermon unrelated to capitalism."
+                      "That the limits of the working day are fixed not by economic law alone but by a class struggle between capital’s drive for surplus labor and the worker’s need for reproduction.",
+                      "That hours tend to fall as industry develops, so the Factory Acts merely wrote down after the fact a movement that was already under way.",
+                      "That legislation is what settles the length of the day, so the size of surplus-value should be read as a product of lawmaking rather than of production.",
+                      "That the working day belongs not to economics but to a moral argument indicting the cruelty of individual capitalists."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동일은 자연적으로 주어진 길이가 아니다. 마르크스는 역사적 사례를 통해 자본이 노동력을 소모하는 경향과 노동계급의 집단적 저항이 어떻게 법적 제한을 만들어 내는지 보여준다.",
-                    "en": "The working day does not have a naturally given length. Through historical cases, Marx shows how capital tends to consume labor-power and how collective working-class resistance produces legal limits."
+                    "ko": "1833년 법이 곧바로 무력해지고 1844년, 1847년, 1850년에 다시 법이 고쳐진 것은, 그 사이에 공장주들이 교대조로 감독을 피하고 노동자들은 10시간법 운동으로 맞섰기 때문이다. 법이 이미 진행되던 흐름을 뒤늦게 적은 문서였다면 이런 반복은 필요 없었다. 노동일의 실제 길이는 그때그때 계급 사이의 힘겨루기가 정한 값이다.",
+                    "en": "The Act of 1833 was hollowed out at once, and the law had to be rewritten in 1844, 1847 and 1850, because in between the manufacturers dodged inspection with relays while the workers pressed the Ten Hours’ agitation. Had the law merely written down a movement already under way, none of that repetition would have been needed. The length of the working day is a figure set each time by the contest of class forces."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 그래서 마르크스는 이 대목을 정의가 아니라 감독관 보고서와 판결, 시위의 기록으로 채운다.",
+                      "산업이 크게 발전한 바로 그 시기에 노동일이 18시간까지 늘어난 부문들이 있었고, 공장법은 그 흐름을 뒤따른 것이 아니라 거슬렀다.",
+                      "법은 이미 벌어진 힘겨루기의 결과를 문서로 확정할 뿐이며, 잉여가치는 그 이전에 생산과정에서 노동을 통해 만들어진다.",
+                      "마르크스는 자본가 개인의 인격을 탓하지 않고, 경쟁이 개별 자본가에게 외적 강제 법칙으로 작용한다는 점을 거듭 말한다."
+                    ],
+                    "en": [
+                      "Right—this is why the passage is filled with inspectors’ reports, court cases and demonstrations rather than definitions.",
+                      "In those same decades of industrial advance some trades pushed the day to eighteen hours; the Factory Acts cut against that movement rather than following it.",
+                      "Law only fixes in writing the outcome of a contest already fought; surplus-value is produced beforehand, by labor in the process of production.",
+                      "Marx declines to blame the character of individual capitalists, insisting that competition acts on each of them as an external coercive law."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S5",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 5절 표준노동일을 위한 투쟁",
+                      "en": "Capital I, Ch. 10 §5 The Struggle for a Normal Working-Day"
+                    },
+                    "quote": {
+                      "ko": "표준노동일의 확립은 자본가와 노동자 사이에 벌어진 수백 년에 걸친 투쟁의 결과이다.",
+                      "en": "The establishment of a normal working-day is the result of centuries of struggle between capitalist and labourer."
+                    }
                   }
                 }
               ]
@@ -6168,8 +6629,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "10장의 핵심 긴장은 “권리 대 권리”라는 말로 요약된다. 여기서 서로 충돌하는 권리는 무엇인가?",
-                    "en": "The central tension of Chapter 10 is summed up as “right against right.” Which rights collide here?"
+                    "ko": "자본가는 하루치 값을 치렀으니 노동력을 될 수 있는 한 오래 쓰겠다고 하고, 노동자는 같은 계약을 들어 정해진 시간까지만 쓰라고 맞선다. 마르크스가 이 맞섬을 「권리 대 권리」의 이율배반이라 부를 때, 부딪히는 두 권리는 무엇인가?",
+                    "en": "The capitalist, having paid a day’s price, says he may use labor-power as long as possible; the worker, invoking the same contract, insists it be used only up to a definite span. When Marx calls this an antinomy of right against right, which two rights collide?"
                   },
                   "choices": {
                     "ko": [
@@ -6187,8 +6648,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "양쪽 주장은 모두 상품교환의 형식 안에서 제기된다. 그래서 노동일의 한계는 순수한 계약논리로 해결되지 않고, 계급적 힘의 관계와 법적 제한을 통해 결정된다.",
-                    "en": "Both claims are made within the form of commodity exchange. The limit of the working day is therefore not settled by contract logic alone, but by class forces and legal limits."
+                    "ko": "자본가는 노동력을 산 구매자로서 그 사용가치를 최대한 뽑아내려 하고, 노동자는 판매자로서 자기 노동력이 소진되지 않도록 정상적 소비를 요구한다. 두 주장 모두 상품교환의 법칙을 근거로 삼기 때문에 순수한 계약논리로는 어느 쪽도 이기지 못하며, 결국 계급적 힘과 법적 제한이 그 한계를 정하게 된다.",
+                    "en": "As buyer of labor-power, the capitalist tries to extract its use-value to the maximum, while as seller, the worker demands normal, non-destructive consumption of that same labor-power. Since both claims rest on the law of commodity exchange, contract logic alone cannot settle the matter, so class force and legal limits end up fixing the boundary."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 이 대립이 바로 노동일 연장에 물리적 한계는 있어도 자동적 제한은 없는 이유다.",
+                      "이는 국가와 상인을 임의로 대립시킨 허구이며, 원문의 핵심 대립과는 무관하다.",
+                      "임금노동은 애초에 임금 지불을 전제하며, 노동자가 생산수단을 소유한다는 것은 이 장의 전제 자체와 모순된다.",
+                      "소비자와 기계는 이 장에서 다루는 계급적 주체가 아니며, 이런 표현은 논점을 흐리는 희화화다."
+                    ],
+                    "en": [
+                      "Right—this is exactly why extending the working day faces physical limits but no automatic boundary.",
+                      "This fabricates a conflict between the state and merchants and has nothing to do with the chapter's actual argument.",
+                      "Wage-labor already presupposes payment of wages, and the worker owning the means of production contradicts the chapter's own premise.",
+                      "Consumers and machines are not the class subjects this chapter is concerned with, and this framing only obscures the point."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 1절 노동일의 한계",
+                      "en": "Capital I, Ch. 10 §1 The Limits of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "자본가는 노동일을 되도록 길게 만들고, 가능하다면 하나의 노동일에서 두 노동일을 뽑아내려 함으로써 구매자로서 자기 권리를 지킨다. … 노동자는 노동일을 일정한 표준 길이로 줄이려 함으로써 판매자로서 자기 권리를 지킨다.",
+                      "en": "The capitalist maintains his rights as a purchaser when he tries to make the working-day as long as possible, and to make, whenever possible, two working-days out of one. … the labourer maintains his right as seller when he wishes to reduce the working-day to one of definite normal duration."
+                    }
                   }
                 },
                 {
@@ -6215,8 +6701,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "자본의 관점에서는 노동력의 당일 사용가치가 최대한 길어지는 것이 유리하다. 그러나 노동력은 살아 있는 인간의 힘이므로 장기적 재생산의 조건을 파괴할 수 있고, 이 점이 노동일 투쟁의 물질적 근거다.",
-                    "en": "From capital’s standpoint, it is advantageous to extend the daily use-value of labor-power as much as possible. But labor-power is the power of a living human being, so this can destroy the conditions of long-term reproduction; that is the material basis of the struggle over the working day."
+                    "ko": "마르크스는 노동일 연장이 성장·발달·건강 유지를 위한 시간, 신선한 공기와 햇빛을 누릴 시간까지 빼앗는다고 말한다. 자본의 관점에서는 노동력의 수명이야 어찌 되든 하루 동안 최대한 짜내는 것이 이득이지만, 이는 노동력이라는 상품 자체의 장기적 재생산 조건을 무너뜨리는 결과를 낳으며, 이것이 노동일 투쟁의 물질적 근거다.",
+                    "en": "Marx says the extension of the working day steals the time needed for growth, development, and healthy maintenance of the body, even the time for fresh air and sunlight. From capital's standpoint it is advantageous to squeeze the maximum out of a single day regardless of labor-power's lifespan, but this undermines the long-term conditions of reproducing that very commodity, which is the material basis of the struggle over the working day."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 그래서 이 장은 노동일 연장을 단순한 계약 문제가 아니라 신체적 파괴의 문제로 다룬다.",
+                      "마르크스는 정반대로 과도한 사용이 조기 노쇠와 사망률 상승으로 이어진다는 통계와 사례를 계속 제시한다.",
+                      "임금 지불이 신체 소모를 정당화한다는 생각은 노동력이 살아 있는 인간의 능력이라는 전제를 지운다.",
+                      "잉여가치는 노동과정에서 노동력이 만들어내는 가치이지, 소비자의 심리에서 나오는 것이 아니다."
+                    ],
+                    "en": [
+                      "Right—this is why the chapter treats extending the working day not as a mere contractual issue but as bodily destruction.",
+                      "Marx does the opposite, repeatedly citing statistics and cases showing that excessive use leads to premature aging and higher mortality.",
+                      "Assuming that wage payment justifies bodily exhaustion erases the premise that labor-power is the capacity of a living human being.",
+                      "Surplus-value is value created by labor-power in the labor process, not something arising from consumer psychology."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S5",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 5절 표준노동일을 위한 투쟁",
+                      "en": "Capital I, Ch. 10 §5 The Struggle for a Normal Working-Day"
+                    },
+                    "quote": {
+                      "ko": "그것은 신체의 성장과 발달, 건강한 유지를 위한 시간을 강탈한다. … 그것은 또한 이 노동력 자체의 조기 소진과 죽음을 낳는다.",
+                      "en": "It usurps the time for growth, development, and healthy maintenance of the body. … It produces also the premature exhaustion and death of this labour-power itself."
+                    }
                   }
                 },
                 {
@@ -6224,27 +6735,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "“자유로운 계약이니 노동일이 아무리 길어도 문제없다”는 설명이 놓치는 것은 무엇인가?",
-                    "en": "What is missed by the claim, “Since the contract is free, there is no problem no matter how long the working day is”?"
+                    "ko": "“계약이 자유로우니 노동일이 아무리 길어도 문제없다”는 주장을 마르크스라면 어떻게 반박하는가?",
+                    "en": "How would Marx respond to the claim, “Since the contract is free, there is no problem no matter how long the working day is”?"
                   },
                   "choices": {
                     "ko": [
-                      "계약의 자유는 노동력이라는 살아 있는 상품의 재생산 한계와 자본의 잉여노동 욕구 사이의 충돌을 해결하지 못한다.",
-                      "자본주의에서는 계약이 아예 존재하지 않으므로 자유라는 말도 불가능하다.",
-                      "노동일은 임금계약과 아무 관련이 없고 오직 날씨가 결정한다.",
-                      "노동자가 동의하면 노동력은 물리적 한계를 잃고 기계처럼 영원히 작동한다."
+                      "상품교환의 법칙 자체는 노동일에 한계를 두지 않으며, 노동력이라는 상품의 특수한 성격만이 그 소비에 한계를 요구한다는 점을 지적한다.",
+                      "자유로운 계약이란 겉모습일 뿐 실제로는 임금이 노동력의 가치보다 낮게 지불되므로, 등가교환이 이미 깨져 있다는 점을 폭로하는 방식으로 답한다.",
+                      "노동시간의 길이는 노동시장의 수요와 공급이 알아서 맞추므로, 계약이 자유롭다면 노동일도 적정한 길이로 수렴한다고 답한다.",
+                      "계약에 동의한 이상 남는 문제는 개별 고용주의 관행뿐이므로, 노동자를 아끼는 고용주가 늘면 긴 노동일도 줄어든다고 답한다."
                     ],
                     "en": [
-                      "Contractual freedom does not resolve the conflict between the reproduction limits of the living commodity labor-power and capital’s drive for surplus labor.",
-                      "Contracts do not exist at all under capitalism, so freedom is impossible even as a form.",
-                      "The working day has nothing to do with the wage contract and is determined only by weather.",
-                      "If workers consent, labor-power loses its physical limits and works forever like a machine."
+                      "He points out that the law of commodity exchange sets no limit to the working day, and that only the peculiar nature of the commodity labor-power demands a limit on its consumption.",
+                      "He replies that free contract is mere appearance, since wages are in fact paid below the value of labor-power, so the exchange of equivalents has already been broken.",
+                      "He replies that supply and demand in the labor market adjust the hours by themselves, so a free contract will converge on a reasonable length of day.",
+                      "He replies that once the contract is agreed the only issue left is the practice of individual employers, so long days recede as considerate employers multiply."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스는 자유계약의 표면을 인정하면서도 그 안의 계급적 비대칭을 분석한다. 노동자는 생산수단에서 분리되어 노동력을 팔아야 하며, 계약 후에는 자본의 가치증식 명령 아래 놓인다.",
-                    "en": "Marx recognizes the surface of free contract while analyzing the class asymmetry within it. Workers, separated from the means of production, must sell labor-power, and after the contract they are placed under capital’s command to valorize value."
+                    "ko": "마르크스는 순수한 상품교환 법칙만 보면 노동일에 아무 한계가 없다고 순순히 인정한다. 문제는 임금이 깎였다는 데 있지 않고, 노동력이 살아 있는 인간의 능력이어서 그 소비에는 구매자의 뜻이 아니라 재생산 조건이 한계를 정해야 한다는 데 있다. 그래서 노동자는 사기를 고발하는 대신, 다른 판매자와 똑같이 제 상품의 가치를 요구하는 자격으로 표준노동일을 요구한다.",
+                    "en": "Marx readily concedes that the pure law of commodity exchange sets no limit to the working day. The trouble is not that wages are shaved below value; it is that labor-power is the capacity of a living person, so its consumption must be bounded by the conditions of its reproduction rather than by the buyer’s will. The worker therefore demands a normal working day not as the victim of fraud but as a seller demanding the value of his own commodity."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 그래서 표준노동일 요구는 교환법칙을 거스르는 예외 요구가 아니라 판매자로서의 정당한 권리 주장이 된다.",
+                      "가치대로 임금을 다 치른 경우에도 노동일 다툼은 그대로 남으며, 마르크스의 논증은 등가교환을 전제한 위에서 시작한다.",
+                      "수요와 공급은 노동력의 값을 오르내리게 할 뿐, 이미 산 상품을 하루 몇 시간 쓸지에 대해서는 아무 답도 주지 못한다.",
+                      "경쟁이 개별 자본가에게 외적 강제 법칙으로 작용하므로, 혼자 노동일을 줄인 고용주는 오히려 시장에서 밀려난다."
+                    ],
+                    "en": [
+                      "Right—the demand for a normal working day is then not an exception to the law of exchange but a seller’s claim made under it.",
+                      "Even where labor-power is paid at its full value the dispute over hours remains; Marx builds the argument on the assumption that equivalents are exchanged.",
+                      "Supply and demand move the price of labor-power up and down, but say nothing about how many hours the purchased commodity may be used.",
+                      "Competition acts on each capitalist as an external coercive law, so an employer who shortens the day on his own is driven out of the market."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 1절 노동일의 한계",
+                      "en": "Capital I, Ch. 10 §1 The Limits of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "나는 다른 모든 판매자와 마찬가지로 내 상품의 가치를 요구하기 때문에 표준노동일을 요구한다. … 그러므로 매우 탄력적인 한계를 빼면 상품교환의 본성 자체는 노동일에도 잉여노동에도 아무 한계를 두지 않는다.",
+                      "en": "I demand the normal working-day because I, like every other seller, demand the value of my commodity. … We see then, that, apart from extremely elastic bounds, the nature of the exchange of commodities itself imposes no limit to the working-day, no limit to surplus-labour."
+                    }
                   }
                 },
                 {
@@ -6271,8 +6807,33 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "마르크스의 공장법 논의는 국가를 초계급적 해결자로 미화하지 않는다. 법적 제한은 자본의 경향을 사회적으로 제약한 계급투쟁의 응축된 결과로 제시된다.",
-                    "en": "Marx’s discussion of factory legislation does not idealize the state as an above-class solution. Legal limits are presented as condensed results of class struggle that socially restrict capital’s tendency."
+                    "ko": "1850년 공장법은 사용자와 노동자 사이의 오랜 충돌 끝에 의회가 봉인한 타협이었지, 국가가 미리 계획해서 내려준 선물이 아니었다. 마르크스는 1833년부터 이어진 위반, 소송, 노동자 시위, 자본가의 교대조 편법을 상세히 기록해, 법적 한계가 매번 계급 사이의 힘겨루기를 거쳐서만 확정되었음을 보여준다.",
+                    "en": "The Factory Act of 1850 was a compromise sealed by Parliament only after a long conflict between employers and workers, not a gift planned in advance by the state. Marx meticulously records the violations, lawsuits, worker demonstrations, and manufacturers’ relay-system dodges from 1833 onward to show that each legal limit was fixed only through a contest of class forces."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 그래서 마르크스는 이 장에서 국가를 중립적 심판이 아니라 계급투쟁의 무대로 그린다.",
+                      "도덕적 권고만으로는 자본가들의 반복된 교대조 편법을 설명할 수 없으며, 실제로는 강제적 법 집행과 소송이 뒤따랐다.",
+                      "공장 감독관 보고서에는 국가기구 안에서도 자본가 편에 선 치안판사들의 사례가 반복해서 등장한다.",
+                      "10시간법 운동에서 보듯 노동자들은 노동일 자체를 핵심 요구로 내세웠다."
+                    ],
+                    "en": [
+                      "Right—this is why Marx portrays the state in this chapter not as a neutral referee but as a stage for class struggle.",
+                      "Moral advice alone cannot explain manufacturers’ repeated relay-system evasions, which were in fact followed by enforced litigation.",
+                      "The factory inspectors’ reports repeatedly show magistrates within the state apparatus siding with the manufacturers.",
+                      "As the Ten Hours’ movement shows, workers made the length of the working day itself their central demand."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S6",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 6절 영국 공장법 1833~1864년",
+                      "en": "Capital I, Ch. 10 §6 The English Factory Acts, 1833 to 1864"
+                    },
+                    "quote": {
+                      "ko": "주인과 노동자 사이의 타협이 이루어졌고, 이는 1850년 8월 5일의 추가 공장법으로 의회의 인장을 받았다.",
+                      "en": "a compromise between masters and men was effected that received the seal of Parliament in the additional Factory Act of August 5th, 1850."
+                    }
                   }
                 },
                 {
@@ -6280,27 +6841,52 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "10장의 체계적 역할을 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best describes the systematic role of Chapter 10?"
+                    "ko": "1850년 공장법으로 노동일이 10시간대에 묶이자, 자본이 하루를 더 늘려 잉여가치를 키우는 길은 막혔다. 이 막다른 길에서 잉여가치를 늘리려는 압력은 어디로 향하는가?",
+                    "en": "Once the Factory Act of 1850 pinned the working day at around ten hours, capital’s road to more surplus-value through a longer day was closed. Where does the pressure to increase surplus-value turn at this dead end?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치율의 시간적 기초를 노동일 투쟁으로 구체화하고, 절대적 잉여가치 생산의 한계가 상대적 잉여가치 분석으로 넘어가게 한다.",
-                      "노동일이 자연적으로 고정되어 있으므로 자본주의 착취율은 역사적으로 변하지 않는다고 증명한다.",
-                      "노동시간 분석을 폐기하고 이윤을 오직 시장가격 변동으로 설명한다.",
-                      "노동일 제한이 생기면 잉여가치 생산이 곧바로 사라진다고 결론낸다."
+                      "노동일의 길이는 그대로 둔 채 필요노동시간을 줄여 잉여노동을 늘리는 상대적 잉여가치 생산으로 옮겨 간다.",
+                      "하루의 길이가 법으로 굳었으므로 착취율도 더는 오를 수 없고, 잉여가치의 크기는 그 시점에 역사적으로 고정된다.",
+                      "노동시간을 따지는 분석을 접고, 이윤의 크기를 시장가격의 오르내림으로 설명하는 쪽으로 방향을 바꾼다.",
+                      "노동일이 법으로 묶인 부문에서는 잉여가치 생산 자체가 성립하지 않으므로, 자본은 규제 밖 부문으로 옮겨 간다."
                     ],
                     "en": [
-                      "It concretizes the temporal basis of the rate of surplus-value as a struggle over the working day, and the limits of absolute surplus-value lead toward the analysis of relative surplus-value.",
-                      "It proves that the working day is naturally fixed, so the rate of capitalist exploitation never changes historically.",
-                      "It abandons labor-time analysis and explains profit only through market price movements.",
-                      "It concludes that once the working day is legally limited, the production of surplus-value disappears at once."
+                      "It turns to the production of relative surplus-value, which raises surplus labor by cutting necessary labor-time while the length of the day stays fixed.",
+                      "It concludes that with the day fixed by law the rate of exploitation can rise no further, so the magnitude of surplus-value is historically settled.",
+                      "It sets aside the analysis of labor-time and turns to explaining the size of profit through movements of market prices.",
+                      "It holds that surplus-value cannot be produced at all where the day is capped, so capital simply migrates to unregulated trades."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "10장은 잉여가치 생산을 노동일의 길이라는 직접적인 계급투쟁으로 보여준다. 노동일 연장에는 물리적·사회적 한계가 있으므로, 이후 분석은 필요노동시간을 줄이는 상대적 잉여가치로 이동한다.",
-                    "en": "Chapter 10 shows surplus-value production as a direct class struggle over the length of the working day. Since extending the working day has physical and social limits, the analysis then moves toward relative surplus-value, which reduces necessary labor-time."
+                    "ko": "1850년 법이 하루의 상한을 묶은 뒤에도 자본이 잉여가치를 포기하지는 않는다. 노동일 전체를 더 늘릴 수 없다면 남은 길은 하나, 필요노동시간 자체를 줄여 같은 하루 안에서 잉여노동의 몫을 키우는 것이다. 절대적 잉여가치 생산의 한계가 상대적 잉여가치 생산을 불러내며, 뒤이은 협업과 매뉴팩처, 기계제 대공업 분석은 바로 이 길을 따라간다.",
+                    "en": "The Act of 1850 caps the day, but capital does not therefore give up surplus-value. If the whole day cannot be stretched, one road is left: cut necessary labor-time itself and enlarge the share of surplus labor within the same day. The limits of absolute surplus-value call up relative surplus-value, and the later analyses of co-operation, manufacture and modern industry follow that road."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "맞다. 그래서 뒤따르는 부는 노동생산성을 끌어올려 생활수단을 싸게 만드는 방법들을 차례로 다룬다.",
+                      "노동일이 묶여도 같은 하루 안에서 필요노동을 줄이면 잉여가치율은 계속 오를 수 있다.",
+                      "시장가격의 등락은 이미 만들어진 잉여가치를 나누는 문제일 뿐, 그것이 어디서 생기는지는 설명하지 못한다.",
+                      "공장법 아래에서도 이윤은 사라지지 않았고, 기계 도입과 노동강도 강화로 잉여가치 생산이 재편되었다."
+                    ],
+                    "en": [
+                      "Right—the following part takes up, one by one, the methods that raise productivity and cheapen the worker’s means of subsistence.",
+                      "Even with the day fixed, cutting necessary labor within that same day lets the rate of surplus-value keep rising.",
+                      "Movements of market price redistribute a surplus-value already produced; they cannot account for where it comes from.",
+                      "Profits did not disappear under the Factory Acts; the production of surplus-value was reorganized around machinery and greater intensity of labor."
+                    ]
+                  },
+                  "source": {
+                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch10.htm#S1",
+                    "label": {
+                      "ko": "『자본론』 1권 10장 1절 노동일의 한계",
+                      "en": "Capital I, Ch. 10 §1 The Limits of the Working-Day"
+                    },
+                    "quote": {
+                      "ko": "노동일은 최대 한계를 갖는다. 그것은 어떤 지점을 넘어 연장될 수 없다.",
+                      "en": "the working-day has a maximum limit. It cannot be prolonged beyond a certain point."
+                    }
                   }
                 }
               ]
@@ -6343,29 +6929,29 @@
           "conceptBrief": {
             "ko": [
               {
-                "title": "권리 대 권리",
+                "title": "핵심 개념 먼저",
                 "items": [
-                  "필요노동: 노동자가 자기 노동력의 가치를 재생산하는 시간.",
-                  "잉여노동: 그 뒤에도 계속 일해 자본가에게 잉여가치를 만드는 시간.",
+                  "필요노동: 노동자가 자기 노동력의 가치를 재생산하는 시간이다.",
+                  "잉여노동: 그 뒤에도 계속 일해 자본가에게 잉여가치를 만드는 시간이다.",
                   "노동일 투쟁: 노동일의 길이는 자연적으로 정해지지 않고 계급투쟁과 법적 제한 속에서 정해진다."
                 ]
               },
               {
-                "title": "노동력의 소모",
-                "items": [
-                  "노동일은 필요노동시간과 잉여노동시간으로 나뉜다.",
-                  "필요노동은 노동력 가치, 곧 임금에 해당하는 가치를 보충하는 시간이다.",
-                  "잉여노동은 그 이상으로 일해 잉여가치를 만드는 시간이다."
-                ]
+                "title": "용어 풀이",
+                "text": "‘노동일’은 하루 중 노동력이 실제로 소비되는 시간의 길이를 뜻한다. 임금계약서에는 ‘하루’라고만 적혀 있을 뿐 몇 시간인지는 정해져 있지 않기 때문에, 그 빈칸을 채우는 일은 결국 자본과 노동 사이의 힘과 법의 몫이 된다."
               },
               {
-                "title": "공장법과 계급투쟁",
+                "title": "현대 적용",
+                "text": "오늘날의 무제한 야근, ‘상시 대기’ 요구, 배달 플랫폼의 알고리즘도 같은 문제를 반복한다. 계약은 자유롭다고 말하지만 실제 노동시간의 한계는 지금도 단체행동이나 근로기준법 같은 사회적 힘을 통해서만 지켜진다."
+              },
+              {
+                "title": "이 장의 초점",
                 "text": "노동일의 길이는 자연스럽게 정해지는 것이 아니라 계급투쟁과 법적 제한 속에서 결정된다는 점을 본다."
               }
             ],
             "en": [
               {
-                "title": "Right Against Right",
+                "title": "Core concepts first",
                 "items": [
                   "Necessary labour: Time in which workers reproduce the value of their labour-power.",
                   "Surplus labour: Additional time that creates surplus-value for capital.",
@@ -6373,15 +6959,15 @@
                 ]
               },
               {
-                "title": "Consumption of Labour-Power",
-                "items": [
-                  "The working day divides into necessary labour-time and surplus labour-time.",
-                  "Necessary labour replaces the value of labour-power, corresponding to wages.",
-                  "Surplus labour creates surplus-value beyond that."
-                ]
+                "title": "Terms explained",
+                "text": "The ‘working day’ means how long labor-power is actually consumed within a day. Since a wage contract only says ‘a day’ without specifying how many hours, filling in that blank ends up being a matter of force and law between capital and labor."
               },
               {
-                "title": "Factory Acts and Class Struggle",
+                "title": "Today’s application",
+                "text": "Unlimited overtime, demands to be ‘always on call,’ and delivery-platform algorithms repeat the same problem today. Contracts are said to be free, but real limits on working time are still secured only through social forces like collective action or labor-standards law."
+              },
+              {
+                "title": "Chapter focus",
                 "text": "See the length of the working day as a result of class struggle and legal limits, not a natural fact."
               }
             ]
