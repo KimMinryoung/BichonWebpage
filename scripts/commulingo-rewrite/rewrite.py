@@ -236,11 +236,16 @@ def call_model(client, model, user, max_tokens, effort):
 
 
 def call_deepseek(client, model, user, max_tokens):
-    """OpenAI-compatible route of the proxy (the contract of
-    scripts/bulk-translate/translate_bulk.py); thinking on for V4 Pro."""
+    """OpenAI-compatible route of the proxy, the contract of
+    scripts/bulk-translate/translate_bulk.py verbatim: thinking DISABLED.
+    DeepSeek's reasoning shares max_tokens with the reply; with it on, the 26
+    V4 Pro calls of 2026-09-05 averaged 35k output tokens and ten minutes
+    each, and long outputs are where the dropped-brace JSON came from. The
+    proxy only defaults this key when it is absent, so never send "enabled"
+    here."""
     resp = client.chat.completions.create(
         model=model, temperature=1.0, max_tokens=max_tokens,
-        extra_body={"thinking": {"type": "enabled"}},
+        extra_body={"thinking": {"type": "disabled"}},
         messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
     )
     choice = resp.choices[0]
