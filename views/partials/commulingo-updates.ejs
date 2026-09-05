@@ -1,0 +1,27 @@
+<details class="box commu-updates" id="updates">
+    <summary class="commu-updates-toggle"><%= strings.commuLingo.updatesTitle %></summary>
+    <div class="commu-updates-body">
+        <p class="commu-updates-description"><%= strings.commuLingo.updatesDescription %></p>
+        <% updateGroups.forEach(group => { %>
+            <details class="commu-updates-group" name="commulingo-update-kind">
+                <summary>
+                    <span class="commu-updates-group-label"><%= group.label %></span>
+                    <% if (group.items.length) { %>
+                        <span class="commu-updates-latest"><%= group.items[0].title %></span>
+                    <% } %>
+                </summary>
+                <% if (group.items.length) { %>
+                    <%- include('commulingo-update-items', { items: group.items.slice(0, 3) }) %>
+                    <% if (group.items.length > 3) { %>
+                        <details class="commu-updates-more">
+                            <summary><%= strings.commuLingo.updatesMore %> (<%= group.items.length - 3 %>)</summary>
+                            <%- include('commulingo-update-items', { items: group.items.slice(3) }) %>
+                        </details>
+                    <% } %>
+                <% } else { %>
+                    <p class="commu-updates-description"><%= group.unavailable ? strings.commuLingo.updatesUnavailable : strings.commuLingo.updatesEmpty %></p>
+                <% } %>
+            </details>
+        <% }) %>
+    </div>
+</details>

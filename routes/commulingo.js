@@ -1,4 +1,6 @@
 const express = require('express');
+const { asyncHandler } = require('../utils/async-handler');
+const { loadCommuLingoUpdateGroups } = require('../services/commulingo-updates');
 const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { roleIconSvg } = require('../data/commulingo/role-icons');
 const { dictTabs } = require('../data/commulingo/dict-tabs');
@@ -58,15 +60,16 @@ function summarizeBooks(catalog) {
     });
 }
 
-router.get('/', (req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
     const catalog = loadCommuLingoCatalog();
     res.render('public/commulingo-index', {
+        updateGroups: await loadCommuLingoUpdateGroups(res.locals.lang),
         books: { version: catalog.version, collections: summarizeBooks(catalog) },
         pageTitle: res.locals.strings.commuLingo.title,
         pageDescription: res.locals.strings.commuLingo.description,
         pagePath: '/commulingo',
     });
-});
+}));
 
 router.use('/events', require('./commulingo-events'));
 router.use('/terms', require('./commulingo-terms'));

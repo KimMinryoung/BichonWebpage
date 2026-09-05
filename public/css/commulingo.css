@@ -4462,3 +4462,203 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     box-shadow: inset 4px 0 0 var(--accent, #214d2e);
 }
 .commu-event-relations-list .is-current .commu-event-relations-period { font-weight: 400; }
+
+/* A quiet disclosure between the dictionary masthead and learning menu. */
+.commu-updates {
+    padding: 0;
+    scroll-margin-top: 80px;
+}
+.commu-updates-toggle,
+.commu-updates-group > summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+.commu-updates summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -3px;
+}
+.commu-updates[open] > summary {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+}
+.commu-updates-body {
+    padding: 0 16px 12px;
+}
+.commu-updates-description {
+    margin: 12px 0;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+.commu-updates-group {
+    border-top: 1px solid var(--border);
+}
+.commu-updates-group > summary {
+    padding-inline: 0;
+}
+.commu-updates time {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+.commu-updates-group > summary time {
+    margin-inline-start: 12px;
+}
+.commu-updates-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.commu-updates-list li {
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    overflow-wrap: anywhere;
+}
+.commu-updates-list li > time {
+    display: block;
+    margin-bottom: 4px;
+}
+.commu-updates-list a {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.commu-updates-excerpt {
+    margin-top: 6px;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+
+/* Landing page: align the menu to the frame, leaving reading space for copy. */
+.commulingo-home {
+    gap: 12px;
+}
+.commulingo-home .commulingo-hero--home {
+    padding: 0;
+    gap: 0;
+}
+.commulingo-home .commulingo-hero-main {
+    padding: 18px 18px 0;
+    gap: 12px;
+}
+.commulingo-home .commulingo-hero h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+}
+.commulingo-home .commulingo-total {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    width: auto;
+    height: auto;
+    border: 0;
+    background: transparent;
+}
+.commulingo-home-description {
+    padding: 4px 18px 16px;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+.commulingo-home .commulingo-hero-dict {
+    padding-top: 12px;
+    gap: 10px;
+}
+.commulingo-home .commulingo-hero-dict-label {
+    padding-inline: 18px;
+}
+.commulingo-home .commu-dict-nav {
+    border-inline: 0;
+    border-bottom: 0;
+}
+.commulingo-home .commu-dict-tab {
+    min-height: 54px;
+}
+.commulingo-home .commu-updates {
+    border-top: 1px solid var(--border);
+}
+.commulingo-home .commu-drill-promo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px 18px;
+    padding: 18px;
+    margin: 0;
+}
+.commulingo-home .commu-drill-promo p {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+.commulingo-home .commulingo-book-groups {
+    gap: 12px;
+}
+.commulingo-home .commu-book-group {
+    padding: 16px;
+}
+@media (max-width: 560px) {
+    .commulingo-page .commulingo-home {
+        padding-inline: 12px;
+    }
+    .commulingo-home .commulingo-hero-main {
+        padding: 14px 12px 0;
+    }
+    .commulingo-home-description {
+        padding: 4px 12px 14px;
+        font-size: 0.82rem;
+    }
+    .commulingo-home .commulingo-hero-dict-label {
+        padding-inline: 12px;
+    }
+    .commulingo-home .commu-dict-tab {
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 2px;
+        min-height: 64px;
+    }
+    .commulingo-home .commu-dict-tab .commu-role-icon {
+        width: 18px;
+        height: 18px;
+    }
+    .commulingo-home .commu-drill-promo {
+        padding: 14px 12px;
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .commulingo-home .commu-drill-promo .btn {
+        text-align: center;
+        min-height: 44px;
+    }
+    .commulingo-home .commu-book-group {
+        padding: 12px;
+    }
+    .commulingo-home .commu-book-card {
+        padding: 14px;
+    }
+}
+
+.commu-updates-group-label {
+    display: inline-block;
+    min-width: 5.5em;
+}
+.commu-updates-latest {
+    display: block;
+    margin: 5px 0 0 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.commu-updates-more > summary {
+    padding: 10px 0 14px;
+    cursor: pointer;
+    color: var(--link);
+    font-size: 0.8rem;
+}

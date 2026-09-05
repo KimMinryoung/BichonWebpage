@@ -71,7 +71,7 @@ router.get('/', async (req, res) => {
             (async () => {
                 return loadRecentReportItems(lang);
             })(),
-            loadRecentCommuLingoItems(lang, RECENT_LIMIT),
+            loadRecentCommuLingoItems(lang),
         ]);
 
         const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(row => localizedRecord(row, lang)) : [];

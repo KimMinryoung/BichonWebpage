@@ -7,25 +7,25 @@
 <body class="commulingo-page">
     <%- include('../partials/nav') %>
 
-    <main class="container commulingo-shell" data-lang="<%= lang %>">
+    <main class="container commulingo-shell commulingo-home" data-lang="<%= lang %>">
         <script id="commulingo-books" type="application/json"><%- JSON.stringify(books).replace(/</g, '\\u003c') %></script>
 
         <header class="box commulingo-hero commulingo-hero--home">
             <div class="commulingo-hero-main">
-                <div>
-                    <h1><%= strings.commuLingo.title %></h1>
-                    <p><%= strings.commuLingo.description %></p>
-                </div>
+                <h1><%= strings.commuLingo.title %></h1>
                 <div class="commulingo-total">
                     <span id="commuProgressText">0%</span>
                     <small><%= strings.commuLingo.progress %></small>
                 </div>
             </div>
+            <p class="commulingo-home-description"><%= strings.commuLingo.description %></p>
             <div class="commulingo-hero-dict">
                 <span class="commulingo-hero-dict-label"><%= strings.commuLingo.dictSectionTitle %></span>
                 <%- include('../partials/commulingo-dict-nav', { active: null }) %>
             </div>
         </header>
+
+        <%- include('../partials/commulingo-updates', { updateGroups }) %>
 
         <a class="commulingo-resume is-hidden" id="commuResume" href="#"></a>
 

@@ -1,4 +1,27 @@
 (function() {
+    function revealUpdates() {
+        if (window.location.hash !== '#updates') return;
+        var updates = document.getElementById('updates');
+        if (updates) updates.open = true;
+    }
+    revealUpdates();
+    window.addEventListener('hashchange', revealUpdates);
+
+    // Also enforce one open category in browsers without details[name] support.
+    var updateGroups = document.querySelectorAll('.commu-updates-group');
+    updateGroups.forEach(function(group) {
+        group.addEventListener('toggle', function() {
+            if (!group.open) {
+                var more = group.querySelector('.commu-updates-more');
+                if (more) more.open = false;
+                return;
+            }
+            updateGroups.forEach(function(other) {
+                if (other !== group) other.open = false;
+            });
+        });
+    });
+
     var strings = window.COMMULINGO_STRINGS || {};
     var shell = document.querySelector('.commulingo-shell');
     var lang = shell ? shell.getAttribute('data-lang') : 'ko';

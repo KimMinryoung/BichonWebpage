@@ -2,7 +2,6 @@ const db = require('../config/database');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
 const { localize } = require('../data/commulingo/localize');
-const { pickAcrossKinds } = require('../data/commulingo/recent-updates-pick');
 
 const TYPE_LABELS = {
     ko: { person: '인물', event: '사건', term: '용어', doc: '참고 문헌', course: '학습 콘텐츠' },
@@ -68,11 +67,15 @@ function recentCourse(lang) {
     }];
 }
 
-async function recentDictionaryItems(lang, limit) {
+const UPDATES_PER_KIND = 10;
+
+async function recentDictionaryItems(lang) {
     const { rows } = await db.query(
-        `SELECT kind, id, title_ko, title_en, summary_ko, summary_en,
-                moment_ko, moment_en, bio_ko, bio_en, updated_at
-           FROM (
+        `SELECT * FROM (
+            SELECT updates.*, ROW_NUMBER() OVER (
+                PARTITION BY kind ORDER BY updated_at DESC NULLS LAST, id
+            ) AS update_rank
+            FROM (
                 SELECT 'person' AS kind, id,
                        name_ko AS title_ko, name_en AS title_en,
                        epithet_ko AS summary_ko, epithet_en AS summary_en,
@@ -94,14 +97,15 @@ async function recentDictionaryItems(lang, limit) {
                        NULL::text AS bio_ko, NULL::text AS bio_en,
                        updated_at
                   FROM commulingo_terms
-           ) AS updates
-          ORDER BY updated_at DESC
-          LIMIT $1`,
-        [Math.max(limit * 3, limit)]
+            ) AS updates
+           ) AS ranked
+          WHERE update_rank <= $1
+          ORDER BY kind, update_rank`,
+        [UPDATES_PER_KIND]
     );
 
-    // One slot per kind before recency fill; see recent-updates-pick.js.
-    return pickAcrossKinds(rows, limit).map(row => dictionaryItem(row, lang));
+    // Select each kind in SQL so frequent person edits cannot hide events or terms.
+    return rows.map(row => dictionaryItem(row, lang));
 }
 
 // The UNION ALL scan below reads every dictionary row; without this memo it ran
@@ -109,11 +113,11 @@ async function recentDictionaryItems(lang, limit) {
 const DICTIONARY_MEMO_MS = Number(process.env.COMMULINGO_UPDATES_CACHE_MS || 60 * 1000);
 const dictionaryMemo = new Map();
 
-function recentDictionaryItemsCached(lang, limit) {
-    const key = `${lang}:${limit}`;
+function recentDictionaryItemsCached(lang) {
+    const key = lang;
     const cached = dictionaryMemo.get(key);
     if (cached && Date.now() - cached.at < DICTIONARY_MEMO_MS) return cached.promise;
-    const promise = recentDictionaryItems(lang, limit);
+    const promise = recentDictionaryItems(lang);
     dictionaryMemo.set(key, { at: Date.now(), promise });
     promise.catch(() => {
         const current = dictionaryMemo.get(key);
@@ -122,14 +126,11 @@ function recentDictionaryItemsCached(lang, limit) {
     return promise;
 }
 
-async function loadRecentCommuLingoItems(lang = 'ko', limit = 5) {
+async function loadCommuLingoUpdateGroups(lang = 'ko') {
     const safeLang = lang === 'en' ? 'en' : 'ko';
-    const courseLimit = Math.min(1, limit);
-    const dictionaryLimit = Math.min(2, Math.max(0, limit - courseLimit));
-    const docsLimit = Math.max(0, limit - courseLimit - dictionaryLimit);
     const [dictionaryResult, docsResult, courseResult] = await Promise.allSettled([
-        recentDictionaryItemsCached(safeLang, dictionaryLimit),
-        Promise.resolve().then(() => recentDocs(safeLang, docsLimit)),
+        recentDictionaryItemsCached(safeLang),
+        Promise.resolve().then(() => recentDocs(safeLang, UPDATES_PER_KIND)),
         Promise.resolve().then(() => recentCourse(safeLang)),
     ]);
 
@@ -143,12 +144,25 @@ async function loadRecentCommuLingoItems(lang = 'ko', limit = 5) {
         console.warn('[CommuLingo updates] Learning preview unavailable:', courseResult.reason.message);
     }
 
-    const dictionaryItems = dictionaryResult.status === 'fulfilled' ? dictionaryResult.value : [];
-    const docItems = docsResult.status === 'fulfilled' ? docsResult.value : [];
-    const courseItems = courseResult.status === 'fulfilled' ? courseResult.value : [];
-    const datedItems = [...dictionaryItems, ...docItems]
-        .sort((a, b) => b.modified - a.modified);
-    return [...courseItems, ...datedItems].slice(0, limit);
+    const results = { person: dictionaryResult, event: dictionaryResult, term: dictionaryResult,
+        doc: docsResult, course: courseResult };
+    return ['person', 'event', 'term', 'doc', 'course'].map(type => ({
+        type,
+        label: TYPE_LABELS[safeLang][type],
+        unavailable: results[type].status === 'rejected',
+        items: results[type].status === 'fulfilled'
+            ? results[type].value.filter(item => item.type === type).slice(0, UPDATES_PER_KIND)
+            : [],
+    }));
 }
 
-module.exports = { loadRecentCommuLingoItems };
+async function loadRecentCommuLingoItems(lang = 'ko') {
+    const groups = await loadCommuLingoUpdateGroups(lang);
+    const items = groups.flatMap(group => group.items.slice(0, 1));
+    const courseItems = items.filter(item => item.type === 'course');
+    const datedItems = items.filter(item => item.type !== 'course')
+        .sort((a, b) => b.modified - a.modified);
+    return [...courseItems, ...datedItems];
+}
+
+module.exports = { loadRecentCommuLingoItems, loadCommuLingoUpdateGroups };
