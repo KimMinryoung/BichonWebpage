@@ -30,15 +30,49 @@ Supabase→leninbot-pg 이전 때 `commulingo_progress` 표가 옮겨지지 않�
 
 ## 1권 장별 상태
 
-`docs/commulingo-capital-rewrite-log.md`와 `temp_dev/commulingo-rewrite/progress.jsonl`·`review.jsonl`이 원본이다. (표는 마지막에 갱신)
+`docs/commulingo-capital-rewrite-log.md`와 `temp_dev/commulingo-rewrite/progress.jsonl`·`review.jsonl`이 원본이다. 2026-09-05 밤 기준 1권 33장 전부 적용·라이브. 1~3장은 학습자 설명형 프롬프트로 두 번 돌렸고(첫 판은 Sonnet, 형식 서술 해설 탓에 재생성), 22장부터는 DeepSeek V4 Pro. 생성비 합계: Sonnet 5 90회 $26.81, DeepSeek 26회 $0.87.
 
-{{STATUS_TABLE}}
+| 장 | 생성 모델 | 시도 | 생성비 | 검수 | 상태 |
+|---|---|---|---|---|---|
+| 1 | Sonnet 5 | 2 | $0.62 | claude-session / accept | 적용 |
+| 2 | Sonnet 5 | 2 | $0.51 | claude-session / accept | 적용 |
+| 3 | Sonnet 5 | 4 | $1.52 | claude-session / edited | 적용 |
+| 4 | Sonnet 5 | 4 | $1.17 | claude-session / edited | 적용 |
+| 5 | Sonnet 5 | 3 | $0.93 | claude-session / edited | 적용 |
+| 6 | Sonnet 5 | 4 | $1.35 | agent:opus / edited | 적용 |
+| 7 | Sonnet 5 | 4 | $1.33 | agent:opus / edited | 적용 |
+| 8 | Sonnet 5 | 3 | $0.76 | agent:opus / edited | 적용 |
+| 9 | Sonnet 5 | 4 | $1.30 | agent:opus / edited | 적용 |
+| 10 | Sonnet 5 | 4 | $1.33 | agent:opus / edited | 적용 |
+| 11 | Sonnet 5 | 4 | $1.04 | agent:opus / edited | 적용 |
+| 12 | Sonnet 5 | 4 | $1.15 | agent:opus / edited | 적용 |
+| 13 | Sonnet 5 | 4 | $0.97 | agent:opus / edited | 적용 |
+| 14 | Sonnet 5 | 4 | $1.18 | agent:opus / edited | 적용 |
+| 15 | DeepSeek V4 Pro | 1 | $0.05 | agent:opus / edited | 적용 |
+| 16 | Sonnet 5 | 4 | $1.43 | agent:opus / edited | 적용 |
+| 17 | Sonnet 5 | 4 | $1.04 | agent:opus / edited | 적용 |
+| 18 | Sonnet 5 | 4 | $0.96 | agent:opus / edited | 적용 |
+| 19 | Sonnet 5 | 4 | $1.07 | agent:opus / edited | 적용 |
+| 20 | Sonnet 5 | 4 | $1.09 | agent:opus / edited | 적용 |
+| 21 | Sonnet 5 | 4 | $1.20 | agent:opus / edited | 적용 |
+| 22 | DeepSeek V4 Pro | 3 | $0.10 | agent:opus / edited | 적용 |
+| 23 | DeepSeek V4 Pro | 2 | $0.07 | agent:opus / edited | 적용 |
+| 24 | DeepSeek V4 Pro | 2 | $0.07 | agent:opus / edited | 적용 |
+| 25 | DeepSeek V4 Pro | 2 | $0.08 | agent:opus / edited | 적용 |
+| 26 | DeepSeek V4 Pro | 2 | $0.06 | agent:opus / edited | 적용 |
+| 27 | DeepSeek V4 Pro | 1 | $0.04 | agent:opus / edited | 적용 |
+| 28 | DeepSeek V4 Pro | 2 | $0.06 | agent:opus / edited | 적용 |
+| 29 | DeepSeek V4 Pro | 2 | $0.06 | agent:opus / edited | 적용 |
+| 30 | DeepSeek V4 Pro | 1 | $0.03 | agent:opus / edited | 적용 |
+| 31 | DeepSeek V4 Pro | 2 | $0.06 | agent:opus / edited | 적용 |
+| 32 | DeepSeek V4 Pro | 2 | $0.06 | agent:opus / edited | 적용 |
+| 33 | DeepSeek V4 Pro | 2 | $0.05 | agent:opus / edited | 적용 |
 
 ## 이어 갈 일
 
 1. **2권(21장)·3권(52장) 재작업.** 같은 절차. 순서: `--part v2-p1` 식으로 편 단위, 한 번에 3~4장 병렬(`--chapters a..b` 프로세스 여러 개, 범위는 겹치지 않게; 하네스는 시작할 때만 progress를 읽으므로 겹치면 검수된 후보를 덮어쓴다). DeepSeek 기본, 검수는 Opus 서브에이전트(동시 3개 상한). 편 단위로 apply·커밋·퍼지.
 2. 2권 9~19장은 금지 문구가 몰려 있던 곳이라 우선. 3권 42~52장은 극단어 오답 84건이 몰려 있다(`audit-commulingo-quality.js`).
-3. baseline 잔여(2026-09-05 저녁 기준 `--no-baseline`으로 확인): length-ratio·explanation-length·template-prompt·concept-brief·formulaic-opener 대부분이 2·3권과 레닌 두 코스. 레닌 코스(제국주의론·국가와 혁명)는 하네스 대상이 아니므로 별도 손질이 필요하다.
+3. baseline 잔여(1권 완료 시점): length-ratio 224, explanation-length 97, template-prompt 21, formulaic-opener 16, duplicate-prompt 1. 1권 항목은 0. 전부 2·3권과 레닌 두 코스. 레닌 코스(제국주의론·국가와 혁명)는 하네스 대상이 아니므로 별도 손질이 필요하다.
 4. 학습 기능 배포 후: 허브 이어하기 카드의 복습 수 표시, 복습 세션 결과가 기록되는지 라이브 확인.
 5. 용어 body 402건·인물 섹션 57% 공백은 leninbot 큐레이터 레인 몫. 백로그 JSON을 인입시키는 방법은 미정.
 6. 하네스 잔손질: 재시도 상한(`MAX_ATTEMPTS`)을 CLI 옵션으로, 병렬 실행 시 progress 재읽기, DeepSeek 출력의 ASCII 큰따옴표 깨짐(재시도로만 해결 중).
