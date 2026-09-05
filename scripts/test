@@ -5,6 +5,8 @@
 #   test-seo.js         head.ejs SEO output + language resolution
 #   test-error-page.js  error page renders without the locals middleware
 #   smoke-commulingo-*  pure-function policy tests (linkify, names, nationality…)
+#   validate-commulingo.js  course content gate (shape + quality rules, baseline-tolerated)
+#   audit-commulingo-quality.js  heuristic content audit (fails only on fatal kinds)
 #
 # Any non-zero exit fails the run. Wired to `npm test` and to scripts/deploy.
 set -u
@@ -28,6 +30,8 @@ run test-error-page node scripts/test-error-page.js
 for f in scripts/smoke-commulingo-*.js; do
     run "$(basename "$f" .js)" node "$f"
 done
+run validate-commulingo       node scripts/validate-commulingo.js
+run audit-commulingo-quality  node scripts/audit-commulingo-quality.js
 
 # Lint runs here only when eslint is installed locally (the docker fallback in
 # scripts/lint is too slow for every test run); `npm run lint` always works.

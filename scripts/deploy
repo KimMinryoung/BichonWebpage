@@ -158,7 +158,8 @@ SWEEP_PATHS=(
     / /posts /reports /hub /ai-diary /chat
     /commulingo /commulingo/people /commulingo/people/stalin /commulingo/terms
     /commulingo/terms/nep /commulingo/events /commulingo/docs /commulingo/politburo
-    /commulingo/catalog.json /sitemap.xml
+    /commulingo/catalog.json /commulingo/book/capital-vol1 /commulingo/lesson/capital-v1-ch01-basic
+    /commulingo/drill /commulingo/drill/event-scenes /sitemap.xml
 )
 sweep_failed=0
 for path in "${SWEEP_PATHS[@]}"; do
