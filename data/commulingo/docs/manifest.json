@@ -377,7 +377,9 @@
       "terms": [
         "soviet-constitution"
       ],
-      "events": [],
+      "events": [
+        "october-revolution"
+      ],
       "addedAt": "2026-08-02",
       "aliases": {
         "ko": [
@@ -392,7 +394,11 @@
           "1918 Constitution",
           "1918 RSFSR Constitution"
         ]
-      }
+      },
+      "noAutoLink": [
+        "58조",
+        "제58조"
+      ]
     },
     {
       "id": "comintern-21-conditions",
@@ -577,7 +583,9 @@
         "price-scissors",
         "chervonets"
       ],
-      "events": [],
+      "events": [
+        "new-economic-policy"
+      ],
       "addedAt": "2026-07-30",
       "aliases": {
         "ko": [
@@ -619,7 +627,9 @@
         "self-determination-of-nations",
         "national-delimitation"
       ],
-      "events": [],
+      "events": [
+        "ussr-formation"
+      ],
       "addedAt": "2026-08-06",
       "aliases": {
         "ko": [
@@ -805,7 +815,9 @@
       "terms": [
         "soviet-constitution"
       ],
-      "events": [],
+      "events": [
+        "great-terror"
+      ],
       "addedAt": "2026-07-29",
       "aliases": {
         "ko": [
@@ -825,7 +837,11 @@
           "USSR Constitution of 1936",
           "Constitution of Victorious Socialism"
         ]
-      }
+      },
+      "noAutoLink": [
+        "58조",
+        "제58조"
+      ]
     },
     {
       "id": "nkvd-1937-documents",
@@ -1114,7 +1130,9 @@
         "socialist-realism",
         "zhdanovshchina"
       ],
-      "events": [],
+      "events": [
+        "five-year-plans"
+      ],
       "addedAt": "2026-08-26",
       "aliases": {
         "ko": [
@@ -1163,7 +1181,10 @@
         "anti-formalism-campaign",
         "socialist-realism"
       ],
-      "events": [],
+      "events": [
+        "five-year-plans",
+        "october-revolution"
+      ],
       "addedAt": "2026-08-26",
       "noAutoLink": [
         "티호노프",
@@ -1377,7 +1398,16 @@
         "khrushchev",
         "stalin"
       ],
-      "terms": [],
+      "terms": [
+        "cult-of-personality",
+        "soviet-people",
+        "socialist-legality",
+        "peoples-democracy",
+        "state-protection-authority-avh",
+        "pravda",
+        "bolshevik",
+        "bourgeois-nationalism"
+      ],
       "events": [
         "twentieth-party-congress",
         "poznan-1956"
@@ -1468,7 +1498,12 @@
         "gromyko",
         "jimmy-carter"
       ],
-      "terms": [],
+      "terms": [
+        "ballistic-missile",
+        "united-nations",
+        "abm-treaty",
+        "salt-i-interim-agreement"
+      ],
       "events": [
         "detente-salt"
       ],
@@ -1533,7 +1568,11 @@
           "1977 Soviet Constitution",
           "Brezhnev Constitution"
         ]
-      }
+      },
+      "noAutoLink": [
+        "58조",
+        "제58조"
+      ]
     },
     {
       "id": "gorbachev-un-speech-1988",
@@ -1774,7 +1813,9 @@
         "great-terror"
       ],
       "addedAt": "2026-08-12",
-      "noAutoLink": ["파우커"],
+      "noAutoLink": [
+        "파우커"
+      ],
       "aliases": {
         "ko": [
           "『예조프의 음모』"
@@ -2112,7 +2153,13 @@
         "douglas-macarthur",
         "hirohito"
       ],
-      "terms": [],
+      "terms": [
+        "unconditional-surrender",
+        "soviet-japanese-neutrality-pact",
+        "united-nations",
+        "most-favoured-nation-mfn-status",
+        "sovnarkom"
+      ],
       "events": [
         "pacific-war",
         "soviet-japanese-border-wars",
@@ -2173,7 +2220,9 @@
         "franklin-d-roosevelt",
         "george-c-marshall"
       ],
-      "terms": [],
+      "terms": [
+        "second-front-historiographical-debate"
+      ],
       "events": [
         "second-front-normandy"
       ],
@@ -2393,7 +2442,13 @@
       "people": [
         "lenin"
       ],
-      "terms": [],
+      "terms": [
+        "sovnarkom",
+        "kulak",
+        "samogon",
+        "food-dictatorship",
+        "volga-famine"
+      ],
       "events": [
         "volga-famine",
         "civil-war"
@@ -2432,7 +2487,11 @@
         "trotsky",
         "molotov"
       ],
-      "terms": [],
+      "terms": [
+        "1922-confiscation-of-church-valuables",
+        "socialist-revolutionary-party-srs",
+        "volga-famine"
+      ],
       "events": [
         "volga-famine"
       ],
@@ -2530,7 +2589,12 @@
       },
       "source": "러시아어 위키문헌 전사본(러시아어 정본)",
       "people": [],
-      "terms": [],
+      "terms": [
+        "united-nations",
+        "collective-security",
+        "north-atlantic-treaty-organization-nato",
+        "paris-agreements-1954"
+      ],
       "events": [
         "warsaw-pact"
       ],
@@ -2611,7 +2675,16 @@
       "people": [
         "stalin"
       ],
-      "terms": [],
+      "terms": [
+        "collectivization",
+        "kolkhoz",
+        "bolshevik",
+        "kulak",
+        "five-year-plan",
+        "dekulakization",
+        "dizzy-with-success",
+        "holodomor"
+      ],
       "events": [
         "five-year-plans",
         "holodomor"
@@ -2651,7 +2724,16 @@
         "yezhov",
         "vyshinsky"
       ],
-      "terms": [],
+      "terms": [
+        "bolshevik",
+        "sovnarkom",
+        "great-purge",
+        "troika",
+        "bourgeois-nationalism",
+        "cheka",
+        "kulak",
+        "menshevik"
+      ],
       "events": [
         "great-terror"
       ],
@@ -2685,7 +2767,10 @@
       },
       "source": "『르 포퓔레르』 1936년 1월 11일자 게재본의 전자 전사본(갈리카 원지면 대조)",
       "people": [],
-      "terms": [],
+      "terms": [
+        "collective-security",
+        "popular-front"
+      ],
       "events": [
         "french-popular-front",
         "february-1934-crisis"
@@ -3194,7 +3279,10 @@
         "kerensky",
         "kornilov"
       ],
-      "terms": [],
+      "terms": [
+        "russian-provisional-government",
+        "july-days"
+      ],
       "events": [
         "february-revolution"
       ],
@@ -3276,7 +3364,11 @@
         "chicherin",
         "christian-rakovsky"
       ],
-      "terms": [],
+      "terms": [
+        "most-favoured-nation-mfn-status",
+        "riga-agreement-1921",
+        "self-determination-of-nations"
+      ],
       "events": [
         "soviet-polish-war"
       ],
@@ -3469,7 +3561,13 @@
         "janos-kadar",
         "matyas-rakosi"
       ],
-      "terms": [],
+      "terms": [
+        "peoples-democracy",
+        "socialist-camp",
+        "united-nations",
+        "north-atlantic-treaty-organization-nato",
+        "plenum-of-the-central-committee"
+      ],
       "events": [
         "hungarian-revolution",
         "twentieth-party-congress"
@@ -3516,7 +3614,11 @@
         "yakovlev",
         "ryzhkov"
       ],
-      "terms": [],
+      "terms": [
+        "perestroika",
+        "plenum-of-the-central-committee",
+        "kolkhoz"
+      ],
       "events": [
         "nationalities-crisis",
         "perestroika"
@@ -3556,7 +3658,16 @@
         "ryzhkov",
         "pavlov"
       ],
-      "terms": [],
+      "terms": [
+        "perestroika",
+        "presidency-ussr",
+        "freedom-of-choice",
+        "kolkhoz",
+        "500-day-program",
+        "soviet",
+        "comecon-cmea",
+        "five-year-plan"
+      ],
       "events": [
         "economic-reform-debate",
         "perestroika"
@@ -3777,7 +3888,11 @@
         "brezhnev",
         "kosygin"
       ],
-      "terms": [],
+      "terms": [
+        "plenum-of-the-central-committee",
+        "anti-party-group",
+        "de-stalinization"
+      ],
       "events": [
         "anti-party-group"
       ],
@@ -3815,7 +3930,9 @@
         "georgios-siantos",
         "ronald-scobie"
       ],
-      "terms": [],
+      "terms": [
+        "communist-party-of-greece-kke"
+      ],
       "events": [
         "greek-resistance"
       ],
@@ -3829,7 +3946,11 @@
           "Varkiza Agreement",
           "Treaty of Varkiza"
         ]
-      }
+      },
+      "noAutoLink": [
+        "제헌의회",
+        "최고사령부"
+      ]
     },
     {
       "id": "fuehrer-directives-16-17-1940",
@@ -3869,7 +3990,10 @@
           "Directive No. 17",
           "Weisung Nr. 16"
         ]
-      }
+      },
+      "noAutoLink": [
+        "최고사령부"
+      ]
     },
     {
       "id": "fuehrer-directive-41-1942",
@@ -4068,7 +4192,9 @@
         "wilhelm-pieck",
         "otto-grotewohl"
       ],
-      "terms": [],
+      "terms": [
+        "state-socialism"
+      ],
       "events": [
         "berlin-blockade"
       ],
@@ -4086,7 +4212,11 @@
           "Constitution of the GDR 1949",
           "DDR-Verfassung 1949"
         ]
-      }
+      },
+      "noAutoLink": [
+        "58조",
+        "제58조"
+      ]
     },
     {
       "id": "italy-surrender-instruments-1943-1945",
@@ -4162,7 +4292,11 @@
         "annamarie-doherr",
         "gherman-titov"
       ],
-      "terms": [],
+      "terms": [
+        "warsaw-pact",
+        "free-city",
+        "united-nations"
+      ],
       "events": [
         "berlin-wall"
       ],
@@ -4206,7 +4340,10 @@
         "khrushchev",
         "john-f-kennedy"
       ],
-      "terms": [],
+      "terms": [
+        "free-city",
+        "warsaw-pact"
+      ],
       "events": [
         "berlin-wall"
       ],
