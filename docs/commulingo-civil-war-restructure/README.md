@@ -42,3 +42,5 @@ SQL은 본문 해시로 동시 편집을 감지하며, 모든 변경을 한 트�
 - 신규 인물 20명 약력 평균 392자(기존 중앙값 270자)와 별칭 재작성. 사건별 인물 메모 52건을 「~로 이 사건에 관여했다」 틀에서 실제 문장으로 교체했고, 남은 틀 문장 3건의 조사(로/으로) 오류를 고쳤다. 원본은 `people-expansion-2026-09-05.json`.
 - 검증: audit-event-locations 71건 통과, audit-script-leakage 통과, audit-link-fires 국·영문에서 새 본문의 발화 전수 검토 후 brest에 Fischer·Jäger·partisan warfare, ukraine에 Sokolovsky를 no_auto_link로 차단(각각 루트 피셔·하랄트 예거·바실리 소콜롭스키·2차 대전 파르티잔 운동으로 오연결).
 - 같은 커밋에서 홈 「최근 업데이트」가 종류별 최신 1건을 먼저 뽑도록 고쳤다(`data/commulingo/recent-updates-pick.js`). 큐레이터 레인이 하루 십수 명을 갱신해 사건·용어가 사전 슬롯 2개에 들지 못하던 문제.
+- 렌더된 페이지의 링크를 국·영문 전수 대조해 추가로 고쳤다. 페이지 단위(no_auto_link): brest에 피셔·예거·정전협정·군법회의·armistice·Andreyev, ukraine에 소콜롭스키·니콜라예프·프로스쿠로프·군법회의·구 제국군 장교·8시간 노동제, baltic에 정전협정·제헌의회·armistice·Rodzianko·로잔코·Constituent Assembly. 전역(별칭 행 삭제): 한국전쟁 정전협정의 영문 「armistice」, 야전군법회의의 「군법회의」, 보옌스페츠의 「구 제국군 장교」, 정치위원의 「commissar」, 소비에트 근위의 「Guards」, 가폰 노동자회의 「the Assembly」, 우주비행사 니콜라예프의 「니콜라예프」·「그리고리예프」·「Grigoryev」. 모두 보통명사나 도시 이름과 겹치는 별칭이었다.
+- 영문 페이지는 `/en/` 접두 경로로 확인해야 한다. Accept-Language 헤더만으로는 국문 정본이 돌아온다.
