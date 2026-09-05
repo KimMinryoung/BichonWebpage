@@ -25,3 +25,7 @@
 | 2026-09-05 | capital-v1-ch15 | flagged | 1 | edited | 2 |
 | 2026-09-05 | capital-v1-ch17 | flagged | 4 | edited | 1 |
 | 2026-09-05 | capital-v1-ch18 | flagged | 4 | edited | 0 |
+| 2026-09-05 | capital-v1-ch19 | soft | 4 | edited | 0 |
+| 2026-09-05 | capital-v1-ch20 | flagged | 4 | edited | 0 |
+| 2026-09-05 | capital-v1-ch21 | flagged | 4 | edited | 0 |
+| 2026-09-05 | capital-v1-ch22 | flagged | 3 | edited | 1 |

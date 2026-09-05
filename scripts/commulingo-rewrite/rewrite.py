@@ -38,7 +38,7 @@ API_KEY = "via-llm-proxy"
 # Default provider is DeepSeek (V4 Pro): Claude via the API is pay-per-token
 # and a chapter cost about $0.30 per attempt there; V4 Pro is ~$0.04.
 DEFAULT_MODEL = "deepseek-v4-pro"
-MAX_ATTEMPTS = 3
+MAX_ATTEMPTS = 2
 # USD per million tokens: input, output, cache read, cache write.
 PRICES = {
     "claude-sonnet-5": (2.00, 10.00, 0.20, 2.50),
