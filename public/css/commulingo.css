@@ -4366,3 +4366,36 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin: 8px 0 0;
 }
 
+
+/* Review queue (missed questions due again) on the book hero, and the
+   keyboard hint under the quiz actions; both stay out of the way when
+   nothing applies. */
+.commulingo-review {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 12px;
+}
+
+.commulingo-review small {
+    color: var(--text-muted);
+}
+
+.commu-level-badge.is-review {
+    border-color: var(--link);
+    color: var(--link);
+}
+
+.commu-key-hint {
+    margin: 8px 0 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.commu-resume-review {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--link);
+}

@@ -214,9 +214,14 @@
         var hash = last.lessonId ? '#lesson=' + encodeURIComponent(last.lessonId) : '';
         els.resume.setAttribute('href', '/commulingo/book/' + encodeURIComponent(last.collectionId) + hash);
         var chapter = last.chapterTitle ? text(book.title) + ' · ' + last.chapterTitle : text(book.title);
+        // Missed questions of that book that are due again, from the shared
+        // schedule store; the book page carries the review itself.
+        var Schedule = window.CommuLingoSchedule;
+        var due = Schedule && Array.isArray(book.lessonIds) ? Schedule.dueList(Schedule.load(), book.lessonIds, Date.now()).length : 0;
         els.resume.innerHTML = [
             '<span class="commu-resume-label">' + escapeHtml(strings.continueLearning || '이어서 학습하기') + '</span>',
-            '<span class="commu-resume-target">' + escapeHtml(chapter) + '</span>'
+            '<span class="commu-resume-target">' + escapeHtml(chapter) + '</span>',
+            due ? '<span class="commu-resume-review">' + escapeHtml(String(strings.reviewDueCount || '{count} due').replace('{count}', String(due))) + '</span>' : ''
         ].join('');
         els.resume.classList.remove('is-hidden');
     }

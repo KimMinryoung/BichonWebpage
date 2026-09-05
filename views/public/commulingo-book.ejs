@@ -46,6 +46,15 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
+                <% if (!isDecision && !isGraph) { %>
+                <%# Due questions of this book (missed before, scheduled by
+                    public/js/commulingo-schedule.js); the script fills the count
+                    and hides the button when nothing is due. %>
+                <div class="commulingo-review" id="commuReview">
+                    <button type="button" class="btn btn-primary is-hidden" id="commuReviewBtn"><%= strings.commuLingo.reviewButton %></button>
+                    <small id="commuReviewNote"></small>
+                </div>
+                <% } %>
             </div>
             <div class="commulingo-total">
                 <span id="commuProgressText">0%</span>
@@ -107,6 +116,7 @@
                     <button type="button" class="btn btn-primary" id="commuNextBtn" disabled><%= strings.commuLingo.next %></button>
                     <button type="button" class="btn btn-secondary is-hidden" id="commuNextLessonBtn"></button>
                 </div>
+                <p class="commu-key-hint is-hidden" id="commuKeyHint"></p>
             </article>
         </section>
         <% } %>
@@ -121,6 +131,7 @@
     <% } else if (isGraph) { %>
     <script src="/js/commulingo-graph.js?v=<%= assetVersion %>"></script>
     <% } else { %>
+    <script src="/js/commulingo-schedule.js?v=<%= assetVersion %>"></script>
     <script src="/js/commulingo.js?v=<%= assetVersion %>"></script>
     <% } %>
 </body>

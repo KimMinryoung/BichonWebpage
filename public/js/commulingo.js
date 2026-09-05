@@ -14,6 +14,12 @@
     var active = null;
     var answered = false;
     var returnScrollLesson = null;
+    // Per-question history and the review schedule built on it, shared with
+    // the hub through public/js/commulingo-schedule.js.
+    var Schedule = window.CommuLingoSchedule || null;
+    var answers = Schedule ? Schedule.load() : {};
+    var dirtyAnswers = {};
+    var answerSyncTimer = null;
 
     var els = {
         list: document.getElementById('commuLessonList'),
@@ -34,7 +40,10 @@
         introFocus: document.getElementById('commuIntroFocus'),
         diagram: document.getElementById('commuDiagram'),
         next: document.getElementById('commuNextBtn'),
-        nextLesson: document.getElementById('commuNextLessonBtn')
+        nextLesson: document.getElementById('commuNextLessonBtn'),
+        review: document.getElementById('commuReviewBtn'),
+        reviewNote: document.getElementById('commuReviewNote'),
+        keyHint: document.getElementById('commuKeyHint')
     };
 
     els.back.addEventListener('click', function() {
@@ -63,24 +72,125 @@
         }
         if (!answered) return;
         if (finishedAction === 'retry') {
-            var retryLesson = active.lesson;
             els.next.removeAttribute('data-finished');
-            startLesson(retryLesson);
+            startRetry(active.lesson, active.missed, active.firstScore);
             return;
         }
-        if (active.index >= lessonQuestionCount(active.lesson) - 1) {
+        if (active.pos >= roundLength() - 1) {
             finishLesson();
             return;
         }
-        active.index += 1;
+        active.pos += 1;
         answered = false;
         renderQuestion();
+    });
+    if (els.review) {
+        els.review.addEventListener('click', function() { startReview(); });
+    }
+
+    // Keys 1-4 pick a choice, Enter (or Space away from a button) advances.
+    // Ignored while typing anywhere else on the page.
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey || event.metaKey || event.altKey) return;
+        var target = event.target;
+        var tag = target && target.tagName ? target.tagName.toLowerCase() : '';
+        if (tag === 'input' || tag === 'textarea' || tag === 'select' || (target && target.isContentEditable)) return;
+        if (!active || els.quiz.classList.contains('is-hidden')) return;
+        if (/^[1-4]$/.test(event.key) && !answered && !active.intro && !els.choices.classList.contains('is-hidden')) {
+            var button = els.choices.children[Number(event.key) - 1];
+            if (button && !button.disabled) {
+                event.preventDefault();
+                button.click();
+            }
+            return;
+        }
+        if ((event.key === 'Enter' || event.key === ' ') && !els.next.disabled) {
+            if (tag === 'button' || tag === 'a') return;
+            event.preventDefault();
+            els.next.click();
+        }
     });
 
     function text(value) {
         if (!value) return '';
         if (typeof value === 'string') return value;
         return value[lang] || value.ko || value.en || '';
+    }
+
+    function fill(template, values) {
+        return String(template || '').replace(/\{(\w+)\}/g, function(_, key) {
+            return typeof values[key] === 'undefined' ? '' : String(values[key]);
+        });
+    }
+
+    // A round is either a lesson (all questions, or the missed ones on a
+    // retry) or a review of due questions drawn from several lessons.
+    function roundLength() {
+        if (!active) return 0;
+        return active.mode === 'review' ? active.items.length : active.order.length;
+    }
+
+    function currentQuestion() {
+        if (active.mode === 'review') return active.items[active.pos].question;
+        return active.lesson.questions[active.order[active.pos]];
+    }
+
+    function currentLesson() {
+        return active.mode === 'review' ? active.items[active.pos].lesson : active.lesson;
+    }
+
+    function lessonById(lessonId) {
+        return lessons.filter(function(item) { return item.id === lessonId; })[0] || null;
+    }
+
+    function bookLessonIds() {
+        return lessons.filter(function(item) { return !item.locked && lessonQuestionCount(item); }).map(function(item) { return item.id; });
+    }
+
+    function recordAnswer(lesson, question, correct) {
+        if (!Schedule || !lesson || !question || !question.id) return;
+        var key = Schedule.key(lesson.id, question.id);
+        answers[key] = Schedule.record(answers[key], correct, Date.now());
+        Schedule.save(answers);
+        queueAnswerSync([key]);
+    }
+
+    function queueAnswerSync(keys) {
+        keys.forEach(function(key) { dirtyAnswers[key] = true; });
+        if (answerSyncTimer) clearTimeout(answerSyncTimer);
+        answerSyncTimer = setTimeout(flushAnswerSync, 1500);
+    }
+
+    function flushAnswerSync() {
+        answerSyncTimer = null;
+        var tokenMeta = document.querySelector('meta[name="csrf-token"]');
+        var token = tokenMeta ? tokenMeta.getAttribute('content') : '';
+        var keys = Object.keys(dirtyAnswers);
+        if (!token || !keys.length || !Schedule) return;
+        var batch = keys.slice(0, 200).map(function(key) {
+            var ref = Schedule.splitKey(key);
+            var entry = answers[key] || {};
+            return {
+                lessonId: ref.lessonId,
+                questionId: ref.questionId,
+                right: entry.right,
+                wrong: entry.wrong,
+                streak: entry.streak,
+                lastCorrect: entry.lastCorrect,
+                lastAt: entry.lastAt,
+                due: entry.due
+            };
+        });
+        fetch('/commulingo/progress/answers', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json', 'x-csrf-token': token },
+            body: JSON.stringify({ answers: batch })
+        }).then(function(res) {
+            if (!res.ok) return;
+            batch.forEach(function(item) { delete dirtyAnswers[Schedule.key(item.lessonId, item.questionId)]; });
+            if (Object.keys(dirtyAnswers).length) queueAnswerSync([]);
+        }).catch(function() {});
     }
 
     var capitalParts = {
@@ -251,6 +361,18 @@
                 Object.keys(progress).forEach(function(lessonId) {
                     postProgress(lessonId, progress[lessonId], true);
                 });
+                if (Schedule) {
+                    var remote = payload.answers || {};
+                    var merged = Schedule.merge(answers, remote);
+                    // Whatever this browser knows and the account does not
+                    // (or knows more recently) goes up in one batch.
+                    var push = Object.keys(answers).filter(function(key) {
+                        return !remote[key] || Date.parse(answers[key].lastAt || 0) > Date.parse(remote[key].lastAt || 0);
+                    });
+                    answers = merged.map;
+                    if (merged.changed) { Schedule.save(answers); changed = true; }
+                    if (push.length) queueAnswerSync(push);
+                }
                 return changed;
             })
             .catch(function() { return false; });
@@ -285,6 +407,7 @@
         }).length;
         els.total.textContent = Math.round((completeCount / (playable.length || 1)) * 100) + '%';
         els.list.innerHTML = '';
+        renderReviewButton();
 
         groupLessons().forEach(function(group) {
             groupPartLessons(group.lessons).forEach(function(part) {
@@ -305,6 +428,28 @@
                 els.list.appendChild(partNode);
             });
         });
+    }
+
+    function renderReviewButton() {
+        if (!els.review || !Schedule) return;
+        var ids = bookLessonIds();
+        var due = Schedule.dueList(answers, ids, Date.now());
+        if (due.length) {
+            els.review.textContent = (strings.reviewButton || 'Review') + ' · ' + due.length;
+            els.review.classList.remove('is-hidden');
+            if (els.reviewNote) els.reviewNote.textContent = fill(strings.reviewDueCount || '{count} due', { count: due.length });
+            return;
+        }
+        els.review.classList.add('is-hidden');
+        if (!els.reviewNote) return;
+        var next = Schedule.nextDue(answers, ids);
+        if (next) {
+            var date = new Date(next);
+            var label = lang === 'en' ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : (date.getMonth() + 1) + '월 ' + date.getDate() + '일';
+            els.reviewNote.textContent = fill(strings.reviewNextDue || 'Next review: {date}', { date: label });
+        } else {
+            els.reviewNote.textContent = '';
+        }
     }
 
     function chapterCountLabel(count) {
@@ -623,7 +768,17 @@
         renderLoadingLesson(lesson);
         loadLessonDetail(lesson)
             .then(function(loadedLesson) {
-                active = { lesson: loadedLesson, index: 0, score: 0, streak: 0, intro: true };
+                active = {
+                    mode: 'lesson',
+                    lesson: loadedLesson,
+                    order: loadedLesson.questions.map(function(_, index) { return index; }),
+                    pos: 0,
+                    score: 0,
+                    streak: 0,
+                    intro: true,
+                    missed: [],
+                    firstScore: null
+                };
                 renderIntro();
             })
             .catch(function() {
@@ -742,21 +897,26 @@
         if (els.intro) els.intro.classList.add('is-hidden');
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.remove('is-hidden');
-        var question = active.lesson.questions[active.index];
-        var count = active.index + 1;
-        els.count.textContent = count + ' / ' + lessonQuestionCount(active.lesson);
-        els.meter.style.width = Math.round((active.index / lessonQuestionCount(active.lesson)) * 100) + '%';
-        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
+        var question = currentQuestion();
+        var lesson = currentLesson();
+        var total = roundLength();
+        els.count.textContent = (active.pos + 1) + ' / ' + total;
+        els.meter.style.width = Math.round((active.pos / total) * 100) + '%';
+        var badge = active.mode === 'review'
+            ? '<span class="commu-level-badge is-review">' + escapeHtml(strings.reviewTitle || 'Review') + '</span>'
+            : '<span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + (active.mode === 'retry' ? ' · ' + escapeHtml(strings.tryAgain || 'Retry') : '') + '</span>';
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span>' + badge;
         if (els.focus) {
-            els.focus.textContent = active.lesson.focus || '';
-            els.focus.classList.toggle('is-hidden', !active.lesson.focus);
+            var showFocus = active.mode === 'lesson' && lesson.focus;
+            els.focus.textContent = showFocus ? lesson.focus : '';
+            els.focus.classList.toggle('is-hidden', !showFocus);
         }
         els.prompt.textContent = text(question.prompt);
         els.feedback.className = 'commu-feedback is-hidden';
         els.feedback.textContent = '';
         els.quiz.classList.remove('has-answer-reward', 'has-perfect-reward');
         els.next.disabled = true;
-        els.next.textContent = active.index >= lessonQuestionCount(active.lesson) - 1 ? (strings.finish || 'Finish') : (strings.next || 'Next');
+        els.next.textContent = active.pos >= total - 1 ? (strings.finish || 'Finish') : (strings.next || 'Next');
         renderChoices(question);
     }
 
@@ -799,7 +959,10 @@
             active.streak += 1;
         } else {
             active.streak = 0;
+            if (active.mode === 'review') active.missed.push(active.pos);
+            else active.missed.push(active.order[active.pos]);
         }
+        recordAnswer(currentLesson(), question, correct);
 
         Array.prototype.forEach.call(els.choices.children, function(button) {
             var originalIndex = Number(button.getAttribute('data-original-index'));
@@ -812,7 +975,7 @@
         els.feedback.innerHTML = feedbackHtml(question, index, correct);
         if (correct) showAnswerReward();
         els.next.disabled = false;
-        els.meter.style.width = Math.round(((active.index + 1) / lessonQuestionCount(active.lesson)) * 100) + '%';
+        els.meter.style.width = Math.round(((active.pos + 1) / roundLength()) * 100) + '%';
     }
 
     function feedbackHtml(question, index, correct) {
@@ -875,10 +1038,15 @@
     }
 
     function finishLesson() {
+        if (active.mode === 'review') { finishReview(); return; }
+        if (active.mode === 'lesson') active.firstScore = active.score;
+        var total = lessonQuestionCount(active.lesson);
+        var perfect = active.mode === 'retry' ? active.missed.length === 0 : active.score === total;
+        var firstScore = active.mode === 'retry' ? active.firstScore : active.score;
         var item = {
-            completed: active.score === lessonQuestionCount(active.lesson),
-            score: active.score,
-            totalQuestions: lessonQuestionCount(active.lesson),
+            completed: perfect,
+            score: perfect ? total : (active.mode === 'retry' ? active.firstScore : active.score),
+            totalQuestions: total,
             updatedAt: new Date().toISOString()
         };
         progress[active.lesson.id] = mergeOne(progress[active.lesson.id], item);
@@ -893,13 +1061,13 @@
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.remove('is-hidden');
         els.choices.innerHTML = '';
-        var perfect = active.score === lessonQuestionCount(active.lesson);
         els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : '');
-        els.feedback.innerHTML = finishFeedbackHtml(perfect);
+        els.feedback.innerHTML = finishFeedbackHtml(perfect, firstScore, total);
         els.quiz.classList.toggle('has-perfect-reward', perfect);
         els.next.disabled = false;
         if (!perfect) {
-            els.next.textContent = strings.tryAgain || 'Try again';
+            // Only the missed questions come back, not the whole lesson.
+            els.next.textContent = (strings.retryMissed || strings.tryAgain || 'Retry') + ' · ' + active.missed.length;
             els.next.setAttribute('data-finished', 'retry');
         } else {
             els.next.textContent = strings.backToLessons || 'Lessons';
@@ -911,11 +1079,94 @@
         answered = true;
     }
 
-    function finishFeedbackHtml(perfect) {
-        var score = (strings.score || 'Score') + ': ' + active.score + ' / ' + lessonQuestionCount(active.lesson);
-        if (!perfect) return '<strong class="commu-feedback-marker">' + escapeHtml(score) + '</strong>';
+    // The missed questions again, in their original order, until every one of
+    // them has been answered correctly; only then does the lesson count as
+    // completed. The first-pass score is kept for the closing note.
+    function startRetry(lesson, missed, firstScore) {
+        active = {
+            mode: 'retry',
+            lesson: lesson,
+            order: missed.slice(),
+            pos: 0,
+            score: 0,
+            streak: 0,
+            intro: false,
+            missed: [],
+            firstScore: typeof firstScore === 'number' ? firstScore : 0
+        };
+        answered = false;
+        hideNextLesson();
+        els.quiz.classList.remove('has-perfect-reward');
+        renderQuestion();
+    }
+
+    // Due questions of this book, drawn from several lessons, shuffled.
+    function startReview() {
+        if (!Schedule) return;
+        var due = Schedule.dueList(answers, bookLessonIds(), Date.now()).slice(0, 20);
+        if (!due.length) { renderReviewButton(); return; }
+        var byLesson = {};
+        due.forEach(function(ref) { (byLesson[ref.lessonId] = byLesson[ref.lessonId] || []).push(ref.questionId); });
+        var lessonIds = Object.keys(byLesson);
+        returnScrollLesson = lessonById(lessonIds[0]);
+        hideNextLesson();
+        els.list.classList.add('is-hidden');
+        els.quiz.classList.remove('is-hidden');
+        els.next.removeAttribute('data-finished');
+        renderLoadingLesson(lessonById(lessonIds[0]) || lessons[0]);
+        Promise.all(lessonIds.map(function(id) {
+            var lesson = lessonById(id);
+            return lesson ? loadLessonDetail(lesson).catch(function() { return null; }) : Promise.resolve(null);
+        })).then(function(loaded) {
+            var items = [];
+            loaded.forEach(function(lesson, i) {
+                if (!lesson || !Array.isArray(lesson.questions)) return;
+                byLesson[lessonIds[i]].forEach(function(qid) {
+                    var question = lesson.questions.filter(function(q) { return q.id === qid; })[0];
+                    if (question) items.push({ lesson: lesson, question: question });
+                });
+            });
+            items = shuffleChoices(items);
+            if (!items.length) { showLessons(); return; }
+            active = { mode: 'review', items: items, pos: 0, score: 0, streak: 0, intro: false, missed: [], firstScore: null, lesson: items[0].lesson };
+            answered = false;
+            renderQuestion();
+        });
+    }
+
+    function finishReview() {
+        var total = roundLength();
+        var perfect = active.score === total;
+        els.prompt.textContent = strings.reviewDone || 'Review complete';
+        if (els.focus) els.focus.classList.add('is-hidden');
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(strings.reviewTitle || 'Review') + '</span>';
+        els.choices.innerHTML = '';
+        els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : '');
+        els.feedback.innerHTML = [
+            '<strong class="commu-feedback-marker">' + escapeHtml((strings.score || 'Score') + ': ' + active.score + ' / ' + total) + '</strong>',
+            '<span>' + escapeHtml(fill(perfect ? (strings.reviewResultPerfect || '') : (strings.reviewResult || ''), { score: active.score, total: total })) + '</span>'
+        ].join('');
+        els.quiz.classList.toggle('has-perfect-reward', perfect);
+        els.next.disabled = false;
+        els.next.textContent = strings.backToLessons || 'Lessons';
+        els.next.setAttribute('data-finished', '1');
+        hideNextLesson();
+        answered = true;
+    }
+
+    function finishFeedbackHtml(perfect, firstScore, total) {
+        var retried = active.mode === 'retry';
+        var score = (strings.score || 'Score') + ': ' + (retried ? firstScore : active.score) + ' / ' + total;
+        if (!perfect) {
+            var left = active.missed.length;
+            var again = retried ? fill(strings.retryAgainNote || '', { left: left }) : '';
+            return '<strong class="commu-feedback-marker">' + escapeHtml(score) + '</strong>'
+                + (again ? '<span class="commu-choice-feedback">' + escapeHtml(again) + '</span>' : '');
+        }
         var label = lang === 'en' ? 'Perfect lesson' : '만점 완료';
-        var note = lang === 'en' ? 'The full concept path is clear enough to move on.' : '이 장의 기본 개념 흐름을 안정적으로 잡았습니다.';
+        var note = retried
+            ? fill(strings.retryNote || '', { first: firstScore, now: total, total: total })
+            : (lang === 'en' ? 'The full concept path is clear enough to move on.' : '이 장의 기본 개념 흐름을 안정적으로 잡았습니다.');
         return [
             '<strong class="commu-feedback-marker">' + escapeHtml(label) + '</strong>',
             '<span>' + escapeHtml(score) + '</span>',
@@ -946,6 +1197,10 @@
     // the server progress sync only triggers a repaint when it changes something.
     renderLessons();
     handleDeepLink();
+    if (els.keyHint && strings.keyHint && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        els.keyHint.textContent = strings.keyHint;
+        els.keyHint.classList.remove('is-hidden');
+    }
     syncServerProgress().then(function(changed) {
         if (changed) renderLessons();
     });
