@@ -4588,10 +4588,29 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     overflow-wrap: anywhere;
 }
 .commulingo-home .commulingo-book-groups {
-    gap: 12px;
+    gap: 28px;
+    margin-top: 12px;
 }
 .commulingo-home .commu-book-group {
-    padding: 16px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+}
+.commulingo-home .commu-book-group-title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+.commulingo-home .commu-book-card {
+    border-color: color-mix(in srgb, var(--border) 45%, transparent);
+    border-left-color: var(--accent);
+}
+.commulingo-home .commu-book-card:hover {
+    border-color: var(--accent);
+}
+.commulingo-home .commu-book-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.45;
 }
 @media (max-width: 560px) {
     .commulingo-page .commulingo-home {
@@ -4624,9 +4643,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     .commulingo-home .commu-drill-promo .btn {
         text-align: center;
         min-height: 44px;
-    }
-    .commulingo-home .commu-book-group {
-        padding: 12px;
     }
     .commulingo-home .commu-book-card {
         padding: 14px;

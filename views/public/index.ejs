@@ -57,7 +57,7 @@
                 <ul class="post-list">
                     <% recentCommuLingo.forEach(item => { %>
                         <li class="post-item">
-                            <h2><a href="<%= item.href %>"><%= item.title %></a></h2>
+                            <h3><a href="<%= item.href %>"><%= item.title %></a></h3>
                             <div class="post-meta">
                                 <span class="commu-update-kind"><%= item.typeLabel %></span>
                                 <span aria-hidden="true"> · </span>
@@ -66,12 +66,6 @@
                             <div class="commu-update-preview">
                                 <% if (item.summary) { %>
                                     <p class="post-excerpt"><%- truncateHtml(sanitize(item.summary), 200) %></p>
-                                <% } %>
-                                <% if (item.type === 'person' && item.moment) { %>
-                                    <p class="post-excerpt commu-update-moment"><%- truncateHtml(sanitize(item.moment), 200) %></p>
-                                <% } %>
-                                <% if (item.type === 'person' && item.bio) { %>
-                                    <p class="post-excerpt"><%- truncateHtml(sanitize(item.bio), 300) %></p>
                                 <% } %>
                             </div>
                         </li>
@@ -90,7 +84,7 @@
                 <ul class="post-list">
                     <% recentResearch.forEach(item => { %>
                         <li class="post-item">
-                            <h2><a href="<%= item.href %>"><%= item.title %></a></h2>
+                            <h3><a href="<%= item.href %>"><%= item.title %></a></h3>
                             <% if (item.modified) { %>
                                 <div class="post-meta">
                                     <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
@@ -115,7 +109,7 @@
                 <ul class="post-list">
                     <% recentHub.forEach(it => { %>
                         <li class="post-item">
-                            <h2><a href="/hub/<%= it.slug %>"><%= it.title %></a></h2>
+                            <h3><a href="/hub/<%= it.slug %>"><%= it.title %></a></h3>
                             <div class="post-meta">
                                 <% if (it.source_publication) { %>
                                     <span class="hub-source"><%= it.source_publication %></span>
@@ -143,7 +137,7 @@
                 <ul class="post-list">
                     <% recentDiaries.forEach(diary => { %>
                         <li class="post-item">
-                            <h2><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h2>
+                            <h3><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h3>
                             <div class="post-meta">
                                 <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                             </div>
@@ -164,7 +158,7 @@
                 <ul class="post-list">
                     <% recentPosts.forEach(post => { %>
                         <li class="post-item">
-                            <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+                            <h3><a href="/post/<%= post.id %>"><%= post.title %></a></h3>
                             <div class="post-meta">
                                 <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                             </div>

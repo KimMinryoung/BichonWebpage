@@ -1114,7 +1114,7 @@ a.home-card:hover::after {
 
 /* Whole-item click target: the title link stretches over the item rectangle.
    Links inside the excerpt sit a layer above so they stay clickable. */
-.post-item h2 a::after {
+.post-item :is(h2, h3) a::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -1163,7 +1163,7 @@ a.home-card:hover::after {
     border-bottom: 1px solid var(--border);
 }
 
-.post-item h2 {
+.post-item :is(h2, h3) {
     margin-bottom: 8px;
     font-size: 1rem;
     font-weight: 600;
@@ -1174,13 +1174,13 @@ a.home-card:hover::after {
    react on its own: no mobile tap highlight over the title text, and the text
    color fades on the same clock as the item background so the title and the
    item read as one surface. */
-.post-item h2 a {
+.post-item :is(h2, h3) a {
     color: var(--text-primary);
     -webkit-tap-highlight-color: transparent;
     transition: color 0.15s;
 }
 
-.post-item:hover h2 a {
+.post-item:hover :is(h2, h3) a {
     color: var(--clr-cream);
     text-decoration: none;
 }
@@ -2180,7 +2180,7 @@ footer .footer-tagline {
         padding: 16px;
     }
 
-    .post-item h2 {
+    .post-item :is(h2, h3) {
         font-size: 0.95rem;
     }
 
@@ -2449,4 +2449,58 @@ footer .footer-tagline {
 .post-body .commu-event-link {
     color: var(--accent-red, #b84f4f);
     border-bottom-color: color-mix(in srgb, currentColor 80%, transparent);
+}
+
+/* Homepage previews: section headings frame compact, readable list entries. */
+.home-page .home-section {
+    margin-top: 32px;
+}
+.home-page .home-section-header {
+    background: transparent;
+    border: 0;
+    padding: 0 0 12px;
+    gap: 12px;
+    align-items: baseline;
+}
+.home-page .home-section-header h2 {
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+    font-size: 1.18rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.home-page .home-section-header .btn {
+    flex-shrink: 0;
+}
+.home-page .home-section .post-item {
+    border-inline: 0;
+    border-top: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
+    border-bottom: 0;
+    padding: 16px;
+}
+.home-page .home-section .post-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+}
+.home-page .home-section .post-meta {
+    margin-bottom: 6px;
+}
+.home-page .home-section .post-excerpt {
+    -webkit-line-clamp: 2;
+    margin: 0;
+    color: var(--text-secondary);
+}
+.home-page .home-section .post-item:hover .post-excerpt {
+    color: var(--clr-cream);
+}
+@media (max-width: 560px) {
+    .home-page .home-section-header h2 {
+        font-size: 1.08rem;
+    }
+    .home-page .home-section .post-item {
+        padding: 14px 12px;
+    }
 }
