@@ -95,6 +95,10 @@ function gate(candidatePathArg, chapterId) {
                 if (correct && e && norm(e).startsWith(norm(correct).slice(0, 20))) hard.push(where + '.explanation.' + locale + ' opens by restating the correct choice');
                 if (!q.choiceFeedback || !Array.isArray(q.choiceFeedback[locale]) || q.choiceFeedback[locale].length !== 4) hard.push(where + '.choiceFeedback.' + locale + ' missing or not 4 entries');
             }
+            // Feedback that only says what it is doing (…를 짚는다) teaches nothing.
+            (q.choiceFeedback && q.choiceFeedback.ko || []).forEach(function(f, i) {
+                if (/(짚는다|짚어 준다|짚어준다|새겨둔다|새겨 둔다|확인해 준다|확인시켜 준다|보여 준다|보여준다|정확히 짚|핵심임을|점을 함께|점이 핵심이다)\.?$/.test(str(f).trim())) hard.push(where + '.choiceFeedback.ko[' + i + '] narrates itself instead of explaining: ' + str(f).slice(0, 40));
+            });
             (q.choices && q.choices.ko || []).forEach(function(c, i) {
                 if (str(c).trim().length < CHOICE_MIN_KO) hard.push(where + '.choices.ko[' + i + '] is shorter than ' + CHOICE_MIN_KO + ' chars');
                 if (i > 0 && EXTREME.test(str(c))) soft.push(where + '.choices.ko[' + i + '] uses an extreme word: ' + str(c).slice(0, 40));

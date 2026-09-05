@@ -15,6 +15,7 @@ const BASELINE_RULES = new Set([
   'duplicate-prompt',
   'template-prompt',
   'explanation-length',
+  'formulaic-opener',
 ]);
 
 // Legacy generic stems and the concept-card filler the 2026-06 cleanup was
@@ -56,6 +57,10 @@ const HONORIFIC = /(습니다|습니까|십시오|세요|합니다|됩니다|입
 const TEMPLATE_PROMPT_KO = /\d+\s*장의\s*(체계적\s*)?(역할|의미|위치)(은|는)?\s*무엇/;
 const TEMPLATE_PROMPT_EN = /systematic (role|meaning|place) of chapter \d+/i;
 const META_PROMPT_KO = /(핵심은 무엇인가|분석하는 것은 무엇인가|가장 정확한 요약|한 문장으로 압축|다음 중 올바른 설명|읽는 방식|원문에서|맥락화)/;
+// An explanation that opens by narrating the question's role in the lesson
+// arc (개념의 출발점은 …, 심화의 핵심은 …, 사례 적용에서는 …) tells the
+// learner nothing about the concept; it is the harness labelling its own work.
+const FORMULAIC_OPENER_KO = /^(개념|기제|구분|상황|종합|긴장|매개|비판|체계|심화|기본|핵심|사례|인식)(의 (출발점|핵심|요점|초점)|에서)는?\s|^(다음 장과의 연결은|이 (문항|장)의 (연결점|핵심)은|연결점은|이 문항은)/;
 const SOURCE_HREF = /^(\/commulingo\/docs\/[^#\s]+(#[^\s]+)?|https:\/\/www\.marxists\.org\/[^\s]+)$/;
 
 function str(value) { return String(value == null ? '' : value); }
@@ -311,6 +316,7 @@ function checkQuestion(out, question, lesson, index, ctx) {
       out.add('explanation-length', qLabel, qLabel + '.explanation.' + locale + ' is ' + text.length + ' chars (< ' + EXPLANATION_MIN[locale] + ')');
     }
   });
+  if (FORMULAIC_OPENER_KO.test(str(explanation.ko).trim())) out.add('formulaic-opener', qLabel, qLabel + '.explanation.ko opens by narrating the question instead of teaching');
 
   if (!question.choices || !Array.isArray(question.choices.ko) || !Array.isArray(question.choices.en)) {
     out.add('shape', qLabel, qLabel + ' choices must have ko/en arrays');
@@ -396,6 +402,7 @@ module.exports = {
   LENGTH_RATIO_MAX,
   EXPLANATION_MIN,
   HONORIFIC,
+  FORMULAIC_OPENER_KO,
   createCollector,
   checkText,
   localized,

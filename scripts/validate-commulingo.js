@@ -6,6 +6,7 @@
 //   node scripts/validate-commulingo.js --no-baseline   # true state, ignore tolerated entries
 //   node scripts/validate-commulingo.js --init-baseline # one-time: record today's failures of baseline-eligible rules
 //   node scripts/validate-commulingo.js --prune-baseline # drop baseline entries that now pass (never adds)
+//   node scripts/validate-commulingo.js --extend-baseline <rule> # record today's failures of ONE newly added rule
 //
 // Rules live in scripts/lib/commulingo-checks.js and are shared with the
 // Capital rewrite harness. Rules the corpus does not yet satisfy everywhere
@@ -23,6 +24,8 @@ const args = new Set(process.argv.slice(2));
 const noBaseline = args.has('--no-baseline');
 const initBaseline = args.has('--init-baseline');
 const pruneBaseline = args.has('--prune-baseline');
+const extendIndex = process.argv.indexOf('--extend-baseline');
+const extendRule = extendIndex === -1 ? null : process.argv[extendIndex + 1];
 
 // Per-collection counts guard against a chapter or lesson silently dropping
 // out of the file; the totals are their sum. Adding a chapter means editing
@@ -175,6 +178,17 @@ if (initBaseline) {
   Object.keys(failing).forEach(function(rule) { tolerated[rule] = Array.from(failing[rule]); });
   writeBaseline({ createdAt: new Date().toISOString().slice(0, 10), tolerated });
   console.log('baseline written: ' + JSON.stringify(Object.fromEntries(Object.keys(tolerated).map(function(rule) { return [rule, tolerated[rule].length]; }))));
+}
+
+if (extendRule) {
+  const current = readBaseline();
+  if (!current) { console.error('no baseline to extend'); process.exit(2); }
+  if (!checks.BASELINE_RULES.has(extendRule)) { console.error(extendRule + ' is not a baseline-eligible rule'); process.exit(2); }
+  if (current.tolerated[extendRule]) { console.error(extendRule + ' is already in the baseline; it can only shrink'); process.exit(2); }
+  const failing = failingByRule(out.issues)[extendRule];
+  current.tolerated[extendRule] = failing ? Array.from(failing) : [];
+  writeBaseline(current);
+  console.log('baseline extended: ' + extendRule + ' ' + current.tolerated[extendRule].length);
 }
 
 const baseline = noBaseline ? null : readBaseline();
