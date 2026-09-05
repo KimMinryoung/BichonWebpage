@@ -152,8 +152,9 @@ function gate(candidatePathArg, chapterId) {
             const enText = [q.prompt && q.prompt.en, q.explanation && q.explanation.en].concat(q.choices && q.choices.en || []).map(str).join(' ');
             const koText = [q.prompt && q.prompt.ko, q.explanation && q.explanation.ko].concat(q.choices && q.choices.ko || []).map(str).join(' ');
             for (const [en, ko] of Object.entries(TERMS.strict)) {
-                if (new RegExp('\\b' + en.replace(/[-\s]/g, '[-\\s]') + '\\b', 'i').test(enText) && !koText.includes(ko)) {
-                    hard.push(where + ' uses "' + en + '" in en but not "' + ko + '" in ko');
+                const renderings = Array.isArray(ko) ? ko : [ko];
+                if (new RegExp('\\b' + en.replace(/[-\s]/g, '[-\\s]') + '\\b', 'i').test(enText) && !renderings.some(function(r) { return koText.includes(r); })) {
+                    hard.push(where + ' uses "' + en + '" in en but not "' + renderings.join('/') + '" in ko');
                 }
             }
         });

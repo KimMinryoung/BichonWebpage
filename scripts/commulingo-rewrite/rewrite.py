@@ -123,7 +123,7 @@ def fmt_questions(chapter):
 
 
 def fmt_terms(extra):
-    lines = [f"- {en} → {ko}" for en, ko in TERMS["strict"].items()]
+    lines = [f"- {en} → {' / '.join(ko) if isinstance(ko, list) else ko}" for en, ko in TERMS["strict"].items()]
     lines.append("(선호 표기)")
     lines += [f"- {en} → {ko}" for en, ko in TERMS["preferred"].items()]
     if extra:

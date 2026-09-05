@@ -1,5 +1,5 @@
 {
-  "_note": "strict: the ko rendering must appear in the same question whenever the en term does (gate.js); preferred: shown to the model, not enforced. Built from the renderings the corpus already uses most.",
+  "_note": "strict: the ko rendering must appear in the same question whenever the en term does (gate.js); preferred: shown to the model, not enforced. Built from the renderings the corpus already uses most. A ko value may be an array when Marx uses one English term for forms the site renders differently (merchant capital: 상인자본 before capitalism, 상업자본 inside it).",
   "strict": {
     "surplus-value": "잉여가치",
     "use-value": "사용가치",
@@ -28,7 +28,10 @@
     "rate of profit": "이윤율",
     "average profit": "평균이윤",
     "price of production": "생산가격",
-    "merchant capital": "상업자본",
+    "merchant capital": [
+      "상인자본",
+      "상업자본"
+    ],
     "commercial capital": "상업자본",
     "money-dealing capital": "화폐거래자본",
     "interest-bearing capital": "이자 낳는 자본",

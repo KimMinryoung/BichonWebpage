@@ -5,8 +5,22 @@
 // Both fold whitespace and entities so a quote copied from the rendered page
 // matches the markup on disk.
 
+// Named entities marxists.org actually uses beyond the XML five: currency,
+// primes on M′, section and paragraph signs, fractions, accented letters.
+const NAMED_ENTITIES = {
+    nbsp: ' ', pound: '£', euro: '€', yen: '¥', cent: '¢', prime: '′', Prime: '″', sect: '§', para: '¶',
+    deg: '°', frac12: '½', frac14: '¼', frac34: '¾', times: '×', divide: '÷', minus: '−', plusmn: '±',
+    middot: '·', bull: '•', laquo: '«', raquo: '»', copy: '©', reg: '®', trade: '™', dagger: '†', Dagger: '‡',
+    eacute: 'é', egrave: 'è', ecirc: 'ê', agrave: 'à', aacute: 'á', acirc: 'â', ccedil: 'ç', ouml: 'ö', uuml: 'ü',
+    auml: 'ä', Ouml: 'Ö', Uuml: 'Ü', Auml: 'Ä', szlig: 'ß', ntilde: 'ñ', iacute: 'í', oacute: 'ó', uacute: 'ú',
+    ocirc: 'ô', icirc: 'î', ucirc: 'û', oslash: 'ø', aring: 'å', aelig: 'æ', oelig: 'œ', thinsp: ' ', ensp: ' ', emsp: ' ',
+};
+
 function decodeEntities(text) {
     return String(text || '')
+        .replace(/&([A-Za-z][A-Za-z0-9]{1,8});/g, function(whole, name) {
+            return Object.prototype.hasOwnProperty.call(NAMED_ENTITIES, name) ? NAMED_ENTITIES[name] : whole;
+        })
         .replace(/&nbsp;/g, ' ')
         .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
         .replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&apos;/g, "'")
