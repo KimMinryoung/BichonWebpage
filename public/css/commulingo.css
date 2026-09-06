@@ -3596,12 +3596,32 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     letter-spacing: .04em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin: 0 0 .5rem;
+    margin: 0 0 .65rem;
 }
-.commu-event-toc ol { margin: 0; padding-left: 1.3rem; }
-.commu-event-toc li { margin: .3rem 0; line-height: 1.5; }
-.commu-event-toc a { color: var(--link); text-decoration: none; }
-.commu-event-toc a:hover { text-decoration: underline; }
+.commu-event-toc ol { margin: 0; padding-left: 2rem; }
+.commu-event-toc li { padding-left: .35rem; line-height: 1.5; }
+.commu-event-toc li::marker {
+    color: var(--text-muted);
+    font-size: .8rem;
+    font-variant-numeric: tabular-nums;
+}
+.commu-event-toc li + li { border-top: 1px solid color-mix(in srgb, var(--border) 35%, transparent); }
+.commu-event-toc a {
+    display: block;
+    padding: .6rem .4rem;
+    color: var(--text-primary);
+    font-size: .94rem;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+.commu-event-toc a:hover,
+.commu-event-toc a:focus-visible {
+    color: var(--text-primary);
+    background: var(--bg-surface-hover);
+    text-decoration: underline;
+    text-underline-offset: .2em;
+}
+.commu-event-toc a:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
 
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
@@ -4405,17 +4425,20 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
    below it, the current page marked in its own slot. Titles take the text
    colour rather than --link: the row is the control, and the olive link mix
    sinks into the dark canvas at list size. */
-.commu-event-relations { margin: 1.4rem 0 0; }
+.commu-event-relations { margin: 1.4rem 0 0; background: var(--bg-surface); }
 .commu-event-relations-head {
     font-size: .82rem;
     letter-spacing: .04em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin: 0 0 .5rem;
+    margin: 0;
+    padding: .7rem .9rem;
+    line-height: 1.5;
 }
 .commu-event-relations-box {
     background: var(--bg-surface);
-    border: 1px solid var(--border, #555);
+    border: 0;
+    border-top: 1px solid var(--border, #555);
     border-radius: 0;
 }
 .commu-event-relations-parent,
@@ -4423,7 +4446,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-event-relations-list .is-current {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     gap: .15rem .75rem;
     padding: .62rem .9rem;
     line-height: 1.45;

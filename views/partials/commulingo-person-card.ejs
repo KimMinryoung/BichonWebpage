@@ -59,7 +59,9 @@ var descSearch = [
             <% } %>
             <%= person.years %>
         </span>
+        <% if (person.fateLabel && !/^\d{3,4}[–-]\s*$/.test(person.years)) { %>
         <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
+        <% } %>
     </div>
     <p class="commu-person-epithet"><%- linkifyPersonText(person.epithet, person.id) %></p>
     <% if (person.moment) { %>

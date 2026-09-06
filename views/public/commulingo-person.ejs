@@ -43,7 +43,9 @@
                         <% } %>
                         <%= person.years %>
                     </span>
+                    <% if (person.fateLabel && !/^\d{3,4}[–-]\s*$/.test(person.years)) { %>
                     <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
+                    <% } %>
                 </div>
             </div>
             <%# The three header fields carry dictionary links like the card does,
