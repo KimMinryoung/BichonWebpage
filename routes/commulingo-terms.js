@@ -1,3 +1,4 @@
+const { searchableAliases } = require('../data/commulingo/link-expressions');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
@@ -70,7 +71,7 @@ function presentTerm(raw, lang) {
 // up by the spelling they already know ('쿨락', 'prodrazverstka', 'kolkhozy'),
 // which is exactly what the alias lists hold.
 function aliasSearchText(raw) {
-    const aliases = raw.aliases || {};
+    const aliases = searchableAliases(raw, raw.aliases);
     return [...(aliases.ko || []), ...(aliases.en || [])].join(' ');
 }
 

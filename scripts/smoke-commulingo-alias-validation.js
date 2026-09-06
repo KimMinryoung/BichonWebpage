@@ -60,7 +60,7 @@ assert.match(html, /terms\/glasnost/);
 // Existing manifest and PATCH: metadata edits must preserve linking controls.
 const docs = require('../data/commulingo/docs/manifest.json').docs;
 for (const doc of docs) canonicalEntry(doc);
-const original = { ...docs[0], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
+const original = { ...docs[0], linkExpressions: [{ text: '등록 표현', lang: 'ko', role: 'related', policy: 'context' }], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
 const read = fs.readFileSync;
 const write = fs.writeFileSync;
 let saved;
@@ -69,12 +69,16 @@ try {
     fs.writeFileSync = (_path, content) => { saved = JSON.parse(content).docs[0]; };
     updateDocMeta(original.id, { description: { ko: '수정' } });
     assert.deepStrictEqual(saved.aliases, original.aliases);
+    assert.deepStrictEqual(saved.linkExpressions, original.linkExpressions);
     assert.deepStrictEqual(saved.noAutoLink, original.noAutoLink);
     assert.strictEqual(saved.date, '1921');
     updateDocMeta(original.id, { aliases: { ko: ['『새 문헌』'] }, noAutoLink: [] });
     assert.deepStrictEqual(saved.aliases, { ko: ['『새 문헌』'] });
     assert.deepStrictEqual(saved.noAutoLink, []);
+    updateDocMeta(original.id, { linkExpressions: [] });
+    assert.deepStrictEqual(saved.linkExpressions, []);
     saved = null;
+    assert.throws(() => updateDocMeta(original.id, { linkExpressions: [{ text: 'bad' }] }), { status: 400 });
     assert.throws(() => updateDocMeta(original.id, { aliases: { ko: '오류' } }), { status: 400 });
     assert.strictEqual(saved, null);
 } finally {

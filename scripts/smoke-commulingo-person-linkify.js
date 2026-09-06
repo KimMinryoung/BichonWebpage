@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 const assert = require('assert');
 const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
-const { createLinker, findEntityMentions } = require('../data/commulingo/linkify');
+const { createLinker } = require('../data/commulingo/linkify');
+function linkedPeople(text, indexes) {
+    const linker = createLinker(indexes, { surface: 'report' });
+    linker.plain(text);
+    return new Set(linker.found.people.map(entry => entry.id));
+}
 const { installLinkBlocklist } = require('../data/commulingo/link-blocklist');
 
 // '레비' is a never-link alias (commulingo_link_blocklist, kind='alias'), which
@@ -31,7 +36,7 @@ assert.strictEqual(koIndex.byAlias['파울 레비'].id, 'paul-levi');
 assert.doesNotMatch(linkPlain('비센테 데 라 오 레비 장관', koIndex), /paul-levi/);
 assert.match(linkPlain('파울 레비는 독일 공산주의자였다.', koIndex), /paul-levi/);
 assert.strictEqual(
-    findEntityMentions('비센테 데 라 오 레비 장관', { person: koIndex }).personIds.has('paul-levi'),
+    linkedPeople('비센테 데 라 오 레비 장관', { person: koIndex }).has('paul-levi'),
     false
 );
 
@@ -44,11 +49,11 @@ const enIndex = buildPersonLinkIndex([enPerson], { lang: 'en' });
 assert.strictEqual(enIndex.byAlias.Levi, undefined);
 assert.strictEqual(enIndex.byAlias['Paul Levi'].id, 'paul-levi');
 assert.strictEqual(
-    findEntityMentions('Isaac Levi authored the report.', { person: enIndex }).personIds.has('paul-levi'),
+    linkedPeople('Isaac Levi authored the report.', { person: enIndex }).has('paul-levi'),
     false
 );
 assert.strictEqual(
-    findEntityMentions('Paul Levi opposed the March Action.', { person: enIndex }).personIds.has('paul-levi'),
+    linkedPeople('Paul Levi opposed the March Action.', { person: enIndex }).has('paul-levi'),
     true
 );
 

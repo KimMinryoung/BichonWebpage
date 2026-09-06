@@ -1,3 +1,4 @@
+const { expressionCandidates } = require('./link-expressions');
 const { registerAlias } = require('./alias-registry');
 // The history-event alias index: which strings belong to which event. Index
 // shape ({ pattern, byAlias, en }) matches the other indexes so linkify.js can
@@ -107,22 +108,30 @@ function buildEventLinkIndex(events, options = {}) {
     const en = lang === 'en';
     const byAlias = Object.create(null);
     const tokens = [];
+    const expressions = Object.create(null);
+    const identityAliases = Object.create(null);
+    const entries = Object.create(null);
     (events || []).forEach(event => {
         if (!event || !event.id) return;
         const title = event.title && (event.title[lang] || event.title.ko || event.title.en) || '';
         const extra = (EXTRA_TERMS[event.id] && EXTRA_TERMS[event.id][lang]) || [];
-        const candidates = titleVariants(title, en).concat(extra);
+        const candidates = expressionCandidates(event, lang, titleVariants(title, en).concat(extra));
         const entry = { id: event.id, period: event.period || '', title };
-        candidates.forEach(raw => {
+        entries[event.id] = entry;
+        candidates.forEach(expression => {
+            const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
             if (!en && NEVER_LINK_EVENT_KO.includes(alias)) return;
+            expressions[event.id + ':' + alias] = expression;
+            if (expression.policy === 'search') return;
+            if (expression.role === 'identity' || (expression.role === 'legacy' && alias === title)) identityAliases[alias] = event.id;
             registerAlias(byAlias, tokens, alias, entry);
         });
     });
-    if (!tokens.length) return null;
+
     const pattern = buildAliasPattern(tokens, en ? [] : BLOCKED_EVENT_KO, en);
-    return { pattern, byAlias, en };
+    return { pattern, byAlias, byId: entries, expressions, identityAliases, en };
 }
 
 module.exports = {

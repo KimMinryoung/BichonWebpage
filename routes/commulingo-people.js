@@ -350,9 +350,10 @@ router.get('/people/:personId', async (req, res) => {
             // scene with other people in it — 예조프가 류시코프의 전보를 스탈린에게 —
             // and it printed as plain text here while the same sentence linked on the
             // person's card in the list.
-            const epithetHtml = link.plain(person.epithet);
-            const momentHtml = link.plain(person.moment);
-            const bioHtml = link.plain(person.bio);
+            const introContext = { contextText: [person.epithet, person.moment, person.bio].filter(Boolean).join(' ') };
+            const epithetHtml = link.plain(person.epithet, introContext);
+            const momentHtml = link.plain(person.moment, introContext);
+            const bioHtml = link.plain(person.bio, introContext);
             sections.forEach(section => {
                 section.bodyHtml = link.html(section.bodyHtml);
             });

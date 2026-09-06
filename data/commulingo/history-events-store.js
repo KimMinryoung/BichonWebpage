@@ -28,7 +28,8 @@ async function fetchEvents() {
             `SELECT id, period_label, title_ko, title_en, question_ko, question_en,
                     summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
                     timeline, sources, locations, no_auto_link, updated_at,
-                    to_jsonb(commulingo_history_events)->'relations' AS relations
+                    to_jsonb(commulingo_history_events)->'relations' AS relations,
+                    to_jsonb(commulingo_history_events)->'link_expressions' AS link_expressions
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY sort_order, id`
@@ -56,6 +57,7 @@ async function fetchEvents() {
     });
     return events.rows.map(row => ({
         id: row.id,
+        linkExpressions: row.link_expressions || [],
         period: row.period_label || '',
         title: t(row.title_ko, row.title_en),
         question: t(row.question_ko, row.question_en),

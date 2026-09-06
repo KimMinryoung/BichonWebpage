@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const { renderLinkedContent } = require('../data/commulingo/render-links');
 // Proposes commulingo_term_people / commulingo_term_events rows for glossary
 // entries that have none, using the evidence already in the text: a term is
 // linked to a person or event only when its own definition or body names them,
@@ -13,7 +14,7 @@
 
 require('dotenv').config();
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
-const { getReportLinkContext, findEntityMentions } = require('../data/commulingo/report-links');
+const { getReportLinkContext } = require('../data/commulingo/report-links');
 
 function sqlQuote(value) {
     return "'" + String(value).replace(/'/g, "''") + "'";
@@ -47,9 +48,9 @@ async function main() {
                 (term.body && term.body[lang]) || '',
             ].join('\n').replace(SELF_NAME, '');
             if (!text.trim()) return;
-            const mentions = findEntityMentions(text, contexts[lang]);
-            mentions.personIds.forEach(id => foundPeople.add(id));
-            mentions.eventIds.forEach(id => foundEvents.add(id));
+            const mentions = renderLinkedContent(text, contexts[lang], { surface: 'term', exclude: { term: term.id, event: term.sameSubjectEvent?.id } });
+            mentions.people.forEach(entry => foundPeople.add(entry.id));
+            mentions.events.forEach(entry => foundEvents.add(entry.id));
         });
 
         const newPeople = [...foundPeople].filter(id => !havePeople.has(id)).sort();

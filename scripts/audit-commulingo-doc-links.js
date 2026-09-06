@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const { renderLinkedContent } = require('../data/commulingo/render-links');
 // Proposes `terms` / `events` for reference documents in
 // data/commulingo/docs/manifest.json that have none, using the evidence in
 // the document itself: a glossary term or history event is proposed only when
@@ -17,8 +18,7 @@
 require('./lib/bootstrap');
 const fs = require('fs');
 const path = require('path');
-const { getReportLinkContext, findEntityMentions } = require('../data/commulingo/report-links');
-const { normalizeSiteDoc } = require('./lib/commulingo-source-text');
+const { getReportLinkContext } = require('../data/commulingo/report-links');
 
 const MANIFEST = path.join(__dirname, '..', 'data', 'commulingo', 'docs', 'manifest.json');
 const DOCS_DIR = path.dirname(MANIFEST);
@@ -27,18 +27,12 @@ const MAX_TERMS = 8;
 const MAX_EVENTS = 6;
 // The site's own name ends in a person's name; harmless here but kept in step
 // with audit-commulingo-term-links.js.
-const SELF_NAME = /Cyber-Lenin|사이버 레닌|사이버레닌/g;
 
-function countMentions(text, ids, context) {
-    // The scanner reports each id once; rank by how many of the document's
-    // paragraphs mention it so a passing reference sorts below a subject.
-    const counts = new Map(ids.map(id => [id, 0]));
-    if (!ids.length) return counts;
-    for (const para of text.split(/(?<=[.!?。])\s+/)) {
-        const found = findEntityMentions(para, context);
-        for (const id of [...found.termIds, ...found.eventIds]) {
-            if (counts.has(id)) counts.set(id, counts.get(id) + 1);
-        }
+function countLinks(links) {
+    const counts = new Map();
+    for (const link of links) {
+        const key = link.kind + ':' + link.id;
+        counts.set(key, (counts.get(key) || 0) + 1);
     }
     return counts;
 }
@@ -77,25 +71,24 @@ async function main() {
         if (!args.has('--all') && !needTerms && !needEvents) continue;
         const file = path.join(DOCS_DIR, doc.file);
         if (!fs.existsSync(file)) { console.error(`missing file for ${doc.id}: ${doc.file}`); continue; }
-        const text = normalizeSiteDoc(fs.readFileSync(file, 'utf8')).replace(SELF_NAME, '');
-        const found = findEntityMentions(text, contexts[lang]);
-        const skip = new Set(doc.noAutoLink || []);
+        const text = fs.readFileSync(file, 'utf8');
+        const found = renderLinkedContent(text, contexts[lang], { html: true, surface: 'doc', exclude: { doc: doc.id }, blockStrings: doc.noAutoLink });
         const haveTerms = new Set(doc.terms || []);
         const haveEvents = new Set(doc.events || []);
-        const termIds = [...found.termIds].filter(id => !haveTerms.has(id) && !skip.has(id));
-        const eventIds = [...found.eventIds].filter(id => !haveEvents.has(id) && !skip.has(id));
-        const counts = countMentions(text, [...termIds, ...eventIds], contexts[lang]);
-        const rank = ids => ids.sort((a, b) => (counts.get(b) - counts.get(a)) || a.localeCompare(b));
-        const terms = (needTerms || args.has('--all')) ? rank(termIds).slice(0, MAX_TERMS) : [];
-        const events = (needEvents || args.has('--all')) ? rank(eventIds).slice(0, MAX_EVENTS) : [];
+        const termIds = found.terms.map(entry => entry.id).filter(id => !haveTerms.has(id));
+        const eventIds = found.events.map(entry => entry.id).filter(id => !haveEvents.has(id));
+        const counts = countLinks(found.links);
+        const rank = (ids, kind) => ids.sort((a, b) => (counts.get(kind + ':' + b) - counts.get(kind + ':' + a)) || a.localeCompare(b));
+        const terms = (needTerms || args.has('--all')) ? rank(termIds, 'term').slice(0, MAX_TERMS) : [];
+        const events = (needEvents || args.has('--all')) ? rank(eventIds, 'event').slice(0, MAX_EVENTS) : [];
         if (!terms.length && !events.length) continue;
         patch[doc.id] = { terms, events };
         report.push({
             doc: doc.id,
             hasTerms: haveTerms.size,
             hasEvents: haveEvents.size,
-            addTerms: terms.map(id => `${id}(${counts.get(id)})`).join(', '),
-            addEvents: events.map(id => `${id}(${counts.get(id)})`).join(', '),
+            addTerms: terms.map(id => `${id}(${counts.get('term:' + id)})`).join(', '),
+            addEvents: events.map(id => `${id}(${counts.get('event:' + id)})`).join(', '),
         });
     }
     console.table(report);

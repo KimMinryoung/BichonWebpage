@@ -60,7 +60,8 @@ async function fetchRows() {
                     epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                     fate_kind, fate_label_ko, fate_label_en,
                     citizenship_code, citizenship_label_ko, citizenship_label_en,
-                    origin_code, origin_label_ko, origin_label_en, updated_at
+                    origin_code, origin_label_ko, origin_label_en, updated_at,
+                    to_jsonb(commulingo_people)->'link_expressions' AS link_expressions
              FROM commulingo_people
              ORDER BY sort_order, id`
         ),
@@ -301,6 +302,7 @@ function rowsToPeopleData(rows) {
                 code: row.origin_code || '',
                 label: t(row.origin_label_ko, row.origin_label_en),
             },
+            linkExpressions: row.link_expressions || [],
             aliases: aliasesByPerson[row.id] || { ko: [], en: [] },
             scenes: scenesByPerson[row.id] || [],
             updatedAt: personUpdatedAt[row.id] || latestTimestamp(row.updated_at),

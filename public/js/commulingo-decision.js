@@ -61,10 +61,14 @@
     // 레닌그라드); they join the alternation so the regex consumes them first and
     // the replacer passes them through untouched. Nothing below is a rule of its
     // own — the rules live server-side and this only applies them.
+    var namePolicy = window.CommuLingoNameContext;
+    var nameContextData = namePolicy && namePolicy.compile(data.contextData);
     var BLOCKED = data.blocked || [];
     var personByAlias = {};
     var aliasTokens = [];
+    var personById = {};
     (data.people || []).forEach(function(person) {
+        personById[person.id] = person;
         (person.aliases || []).forEach(function(alias) {
             if (!alias || personByAlias[alias]) return;
             personByAlias[alias] = person;
@@ -73,7 +77,7 @@
     });
     var linkPattern = null;
     if (aliasTokens.length) {
-        var tokens = BLOCKED.concat(aliasTokens).sort(function(a, b) { return b.length - a.length; });
+        var tokens = BLOCKED.concat(aliasTokens, Object.keys(data.contextData && data.contextData.shorts || {})).sort(function(a, b) { return b.length - a.length; });
         var alternation = tokens.map(function(token) {
             return token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }).join('|');
@@ -89,12 +93,20 @@
         var escaped = escapeHtml(text(value));
         if (!linkPattern) return escaped;
         var seen = {};
+        var context = nameContextData && namePolicy.analyze(escaped, nameContextData);
         return escaped.replace(linkPattern, function(match, _token, offset, source) {
             if (!en) {
                 var prev = offset > 0 ? source.charAt(offset - 1) : '';
                 if (/[0-9A-Za-z가-힣]/.test(prev)) return match;
             }
             var person = personByAlias[match];
+            var expression = person && data.expressions && data.expressions[person.id + ':' + match];
+            if (context) {
+                var id = namePolicy.resolve(match, person && person.id, offset, source, nameContextData, context, expression && expression.policy);
+                person = id && personById[id];
+                expression = person && data.expressions && data.expressions[person.id + ':' + match];
+            }
+            if (expression && expression.policy === 'search') return match;
             if (!person || seen[person.id]) return match;
             seen[person.id] = true;
             return '<a class="commu-person-link" target="_blank" rel="noopener"'

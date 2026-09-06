@@ -1,3 +1,4 @@
+const { expressionCandidates } = require('./link-expressions');
 const { registerAlias } = require('./alias-registry');
 // The glossary alias index: which strings belong to which term. Index shape
 // ({ pattern, byAlias, en }) matches the other indexes so linkify.js can run
@@ -47,6 +48,9 @@ function buildTermLinkIndex(terms, options = {}) {
     const byAlias = Object.create(null);
     const byId = {};
     const tokens = [];
+    const expressions = Object.create(null);
+    const identityAliases = Object.create(null);
+    const entries = Object.create(null);
     const blockedPhrases = termBlocklist('term-phrase', lang);
     const neverAlias = new Set(termBlocklist('term-alias', lang));
     const neverHeadword = new Set(termBlocklist('term-headword', lang));
@@ -61,21 +65,26 @@ function buildTermLinkIndex(terms, options = {}) {
             href: '/commulingo/terms/' + encodeURIComponent(term.id),
         };
         byId[term.id] = entry;
-        const candidates = [label].concat((term.aliases && term.aliases[lang]) || []);
-        candidates.forEach(raw => {
+        const candidates = expressionCandidates(term, lang, [label].concat((term.aliases && term.aliases[lang]) || []));
+        entries[term.id] = entry;
+        candidates.forEach(expression => {
+            const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
             if (neverHeadword.has(alias)) return;
             if (alias !== label && neverAlias.has(alias)) return;
+            expressions[term.id + ':' + alias] = expression;
+            if (expression.policy === 'search') return;
+            if (expression.role === 'identity' || (expression.role === 'legacy' && alias === label)) identityAliases[alias] = term.id;
             registerAlias(byAlias, tokens, alias, entry);
         });
     });
     Object.entries(LINK_OVERRIDES).forEach(([alias, targetId]) => {
         if (Object.hasOwn(byAlias, alias) && byId[targetId]) byAlias[alias] = byId[targetId];
     });
-    if (!tokens.length) return null;
+
     const pattern = buildAliasPattern(tokens, blockedPhrases, en);
-    return { pattern, byAlias, en };
+    return { pattern, byAlias, byId: entries, expressions, identityAliases, en };
 }
 
 module.exports = {

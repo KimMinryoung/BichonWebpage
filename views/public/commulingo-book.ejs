@@ -127,6 +127,7 @@
         window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
     </script>
     <% if (isDecision) { %>
+    <script src="/js/commulingo-name-context.js?v=<%= assetVersion %>"></script>
     <script src="/js/commulingo-decision.js?v=<%= assetVersion %>"></script>
     <% } else if (isGraph) { %>
     <script src="/js/commulingo-graph.js?v=<%= assetVersion %>"></script>

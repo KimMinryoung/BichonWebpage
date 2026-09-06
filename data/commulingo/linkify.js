@@ -1,3 +1,4 @@
+const nameContext = require('../../public/js/commulingo-name-context');
 // The one linking policy for every CommuLingo surface: the person, glossary,
 // and history dictionaries, learning content, person cards, and research
 // reports.
@@ -11,11 +12,9 @@
 // them.
 //
 // What now holds everywhere:
-//   * Passes run in KIND_ORDER, most specific match first. A document alias is a
-//     whole work title, an event title a named episode, a term a concept, a
-//     topic an institution, a person a name — the shorter string usually sits
-//     inside the longer one, and whichever pass runs first keeps the match
-//     because every later pass skips anchor contents.
+//   * Passes retain KIND_ORDER for compatibility. This is not a semantic or
+//     string-length ranking: expression policy and person context gate matches.
+//     Later passes skip anchor contents, preserving explicit links.
 //   * The first mention of an entry links and later ones stay plain, per linker.
 //     One linker covers one reading unit: a person page's bio and all its
 //     sections, a term's definition and body, an event's summary and timeline,
@@ -50,9 +49,7 @@ const { loadCommuLingoCatalog } = require('./shards');
 const { normalizeCommuLingoPeople } = require('./people-standard');
 const { loadLinkBlocklist, blocklistRef, blockedPhrases } = require('./link-blocklist');
 
-// Most specific first. The two headwords both dictionaries carry (대숙청,
-// 신경제정책) are same-subject pairs whose pages each show the other half, so
-// events winning them over terms costs the reader nothing.
+// Historical pass order; cross-dictionary collisions still require review.
 const KIND_ORDER = ['doc', 'event', 'term', 'topic', 'person'];
 
 // How each kind renders one link, and the plural bucket its entries collect
@@ -241,11 +238,31 @@ function createLinker(indexes, options = {}) {
     const blockStrings = new Set(options.blockStrings || []);
     const seen = new Set();
     const found = { docs: [], events: [], terms: [], topics: [], people: [] };
+    const foundKeys = new Set();
+    const links = [];
+    let lastPersonText, lastPersonContext;
     const passes = surface.kinds
         .map(kind => ({ kind, spec: KIND_SPECS[kind], index: indexes && indexes[kind] }))
         .filter(pass => pass.index);
 
-    function replacerFor({ kind, spec, index }) {
+    function replacerFor({ kind, spec, index }, context, extraContext) {
+        const contextText = extraContext || context.text;
+        const localOffset = extraContext ? extraContext.indexOf(context.text) : 0;
+        if (kind === 'person' && index.context && contextText !== lastPersonText) {
+            lastPersonText = contextText;
+            lastPersonContext = nameContext.analyze(contextText, index.context);
+        }
+        const personContext = kind === 'person' && index.context
+            ? lastPersonContext : null;
+        const identities = new Set();
+        if (index.identityAliases) {
+            contextText.replace(index.pattern, (match, _token, offset) => {
+                const id = index.identityAliases[match];
+                const expression = id && index.expressions?.[id + ':' + match];
+                if (id && index.byAlias[match]?.id === id && expression?.policy !== 'context' && nameContext.boundary(contextText, offset, offset + match.length, index.en)) identities.add(id);
+                return match;
+            });
+        }
         return function replacer(match, _token, offset, source) {
             // No \b in Korean: refuse a match glued to a preceding word char, so
             // 블라디미르 does not link its trailing …미르.
@@ -253,43 +270,56 @@ function createLinker(indexes, options = {}) {
                 const prev = offset > 0 ? source.charAt(offset - 1) : '';
                 if (WORD_CHAR.test(prev)) return match;
             }
-            const entry = index.byAlias[match];
-            if (!entry) return match;
+            let entry = index.byAlias[match];
+            let expression = entry && index.expressions?.[entry.id + ':' + match];
+            if (personContext) {
+                const start = Math.max(0, localOffset) + context.offset + offset;
+                const id = nameContext.resolve(match, entry && entry.id, start, contextText,
+                    index.context, personContext, expression?.policy);
+                entry = id && index.byId[id];
+                expression = entry && index.expressions?.[entry.id + ':' + match];
+            } else if (expression?.policy === 'context' && !identities.has(entry.id)) return match;
+            if (!entry || expression?.policy === 'search') return match;
             if (blockStrings.has(match)) return match;
             if (exclude[kind] && exclude[kind] === entry.id) return match;
             const key = kind + ':' + (kind === 'topic' ? entry.kind + ':' : '') + entry.id;
             if (seen.has(key)) return match;
             seen.add(key);
-            found[spec.collect].push(entry);
-            const anchorId = surface.anchors
-                ? ' id="' + mentionAnchor(spec.anchorKind(entry), entry.id) + '"'
-                : '';
-            return '<a class="' + spec.className + '"' + anchorId
+            return '<a class="' + spec.className + '"'
                 + ' href="' + spec.href(entry)
                 + '" title="' + escapeHtml(spec.title(entry)) + '">' + match + '</a>';
         };
     }
 
-    function run(html) {
+    function run(html, textOptions = {}) {
         let out = html;
         passes.forEach(pass => {
-            const replacer = replacerFor(pass);
-            out = mapLinkableText(out, text => text.replace(pass.index.pattern, replacer));
+            out = mapLinkableText(out, (text, context) => text.replace(pass.index.pattern,
+                replacerFor(pass, context, textOptions.contextText && escapeHtml(textOptions.contextText))));
         });
-        return surface.newTab ? openEntityLinksInNewTab(out) : out;
+        const collected = require('./linked-entities').collectLinkedEntities(out, indexes, { anchors: surface.anchors });
+        for (const bucket of Object.keys(found)) {
+            for (const entry of collected[bucket]) {
+                const key = bucket + ':' + (bucket === 'topics' ? entry.kind + ':' : '') + entry.id;
+                if (!foundKeys.has(key)) { foundKeys.add(key); found[bucket].push(entry); }
+            }
+        }
+        links.push(...collected.links);
+        return surface.newTab ? openEntityLinksInNewTab(collected.html) : collected.html;
     }
 
     return {
         // Raw prose in, linked HTML out: escapes first, so the passes never see
         // markup they did not create.
-        plain(text) {
-            return run(escapeHtml(text || ''));
+        plain(text, textOptions) {
+            return run(escapeHtml(text || ''), textOptions);
         },
         // Already-rendered HTML in (a markdown body, a report), linked HTML out.
         html(value) {
             return value ? run(String(value)) : '';
         },
         found,
+        links,
     };
 }
 
@@ -310,7 +340,7 @@ function createCardTextLinker(indexes) {
     }
     const byPerson = new Map();
     return function linkCardText(text, personId) {
-        const key = personId + ' ' + (text || '');
+        const key = personId + '\0' + (text || '');
         let html = rendered.get(key);
         if (html === undefined) {
             let linker = byPerson.get(personId);
@@ -318,7 +348,9 @@ function createCardTextLinker(indexes) {
                 linker = createLinker(indexes, { surface: 'card', exclude: { person: personId } });
                 byPerson.set(personId, linker);
             }
-            html = linker.plain(text);
+            const person = indexes.person?.byId?.[personId];
+            const contextText = person && [person.epithet, person.moment, person.bio].filter(Boolean).join(' ');
+            html = linker.plain(text, { contextText });
             rendered.set(key, html);
         }
         return html;
@@ -354,35 +386,16 @@ function clientPersonLinkPayload(indexes) {
         }
         person.aliases.push(alias);
     });
-    const payload = { blocked: index.en ? [] : blockedPhrases('ko'), people: [...byId.values()] };
+    Object.values(index.contextData?.shorts || {}).flat().forEach(id => {
+        if (byId.has(id) || !index.byId[id]) return;
+        const entry = index.byId[id];
+        byId.set(id, { id, name: entry.displayName || entry.name || '', epithet: entry.epithet || '', aliases: [] });
+    });
+    const payload = { blocked: index.en ? [] : blockedPhrases('ko'), people: [...byId.values()], contextData: index.contextData, expressions: index.expressions };
     clientPayloadMemo.set(indexes, payload);
     return payload;
 }
 
-// Scans plain text (raw markdown) and returns the ids of every mentioned entity,
-// the reverse of the linking pass: no HTML, no first-mention restraint, every
-// match counts. Feeds the report-mentions index (person page → the reports that
-// name them).
-function findEntityMentions(text, indexes) {
-    const ids = { docIds: new Set(), eventIds: new Set(), termIds: new Set(), topicIds: new Set(), personIds: new Set() };
-    const bucket = { doc: ids.docIds, event: ids.eventIds, term: ids.termIds, topic: ids.topicIds, person: ids.personIds };
-    const source = String(text || '');
-    if (!source || !indexes) return ids;
-    KIND_ORDER.forEach(kind => {
-        const index = indexes[kind];
-        if (!index) return;
-        source.replace(index.pattern, (match, _token, offset) => {
-            if (!index.en) {
-                const prev = offset > 0 ? source.charAt(offset - 1) : '';
-                if (WORD_CHAR.test(prev)) return match;
-            }
-            const entry = index.byAlias[match];
-            if (entry) bucket[kind].add(kind === 'topic' ? entry.kind + ':' + entry.id : entry.id);
-            return match;
-        });
-    });
-    return ids;
-}
 
 module.exports = {
     KIND_ORDER,
@@ -395,5 +408,4 @@ module.exports = {
     createLinker,
     createCardTextLinker,
     clientPersonLinkPayload,
-    findEntityMentions,
 };

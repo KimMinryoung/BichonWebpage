@@ -1,3 +1,5 @@
+const { expressionCandidates } = require('./link-expressions');
+const nameContext = require('../../public/js/commulingo-name-context');
 const { registerAlias } = require('./alias-registry');
 // The person alias index, plus the HTML-walking and escaping helpers every
 // index shares. Who links where, in what order, and how one link is written is
@@ -131,6 +133,46 @@ function buildPersonLinkIndex(people, options = {}) {
     });
 
     const byAlias = Object.create(null);
+    const byId = Object.fromEntries(list.filter(p => p && p.id).map(p => [p.id, p]));
+    const expressions = Object.create(null);
+    const contextData = { en, names: {}, shorts: {}, byPerson: {}, own: {}, initials: {}, given: [] };
+    const given = new Set();
+    // Existing bilingual structured names supply attested transliterations.
+    // Never use edit distance to equate two different given names.
+    const givenVariants = new Map();
+    for (const person of list) {
+        const key = person.names?.givenEnglish?.trim().toLowerCase();
+        const value = person.names?.given;
+        if (!key || !value) continue;
+        if (!givenVariants.has(key)) givenVariants.set(key, new Set());
+        for (const token of value.split(/\s+/)) givenVariants.get(key).add(nameContext.normalize(token));
+    }
+    list.forEach(person => {
+        if (!person || !person.id) return;
+        const forms = [person.names && person.names.short, person.names && person.names.display, person.displayName];
+        const candidates = expressionCandidates(person, lang, forms.concat((person.aliases && person.aliases[lang]) || []));
+        const own = new Set();
+        const family = familyNameOf(person);
+        const full = forms.filter(Boolean).find(value => value.includes(' ')) || '';
+        const givenName = (person.names && person.names.given) || full.split(/\s+/).find(value => value !== family) || '';
+        contextData.initials[person.id] = [givenName, person.names?.patronymic || ''].join(' ').split(/\s+/).map(value => nameContext.normalize(value).charAt(0)).filter(Boolean);
+        givenName.split(/\s+/).forEach(value => {
+            const clean = nameContext.normalize(value);
+            if (clean.length >= 2) given.add(clean);
+        });
+        candidates.forEach(expression => {
+            if (expression.role === 'related' || expression.role === 'short') return;
+            const text = expression.text;
+            text.split(/\s+/).forEach(value => own.add(nameContext.normalize(value)));
+            if (!text.includes(' ')) return;
+            const ids = contextData.names[text] || (contextData.names[text] = []);
+            if (!ids.includes(person.id)) ids.push(person.id);
+        });
+        for (const variant of givenVariants.get(person.names?.givenEnglish?.trim().toLowerCase()) || []) own.add(variant);
+        contextData.own[person.id] = [...own];
+        contextData.byPerson[person.id] = [];
+    });
+    contextData.given = [...given];
     const tokens = [];
     const neverKo = new Set(neverLinkAliases('ko'));
     const neverEn = new Set(neverLinkAliases('en'));
@@ -153,13 +195,27 @@ function buildPersonLinkIndex(people, options = {}) {
         // (레닌그라드) is consumed by the blocklist first. Single-word names — 박헌영,
         // 마오쩌둥 — are their own family name field, so nothing changes for them.
         candidates.push(familyNameOf(person));
-        candidates.forEach(raw => {
+        expressionCandidates(person, lang, candidates).forEach(expression => {
+            const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
             if (!en && neverKo.has(alias)) return;
             if (en && neverEn.has(alias.toLowerCase())) return;
             const words = alias.toLowerCase().split(/\s+/).filter(Boolean);
             const trusted = trustedFormsFor(person.id, lang).includes(alias);
+            expressions[person.id + ':' + alias] = expression;
+            const short = expression.role === 'short' || (expression.role === 'legacy'
+                && alias === familyNameOf(person) && /\s/.test(person.displayName || person.names?.display || ''));
+            if (short) {
+                const ids = contextData.shorts[alias] || (contextData.shorts[alias] = []);
+                if (!ids.includes(person.id)) ids.push(person.id);
+                contextData.byPerson[person.id].push(alias);
+            }
+            if (expression.policy === 'search') return;
+            if (expression.role !== 'legacy') {
+                registerAlias(byAlias, tokens, alias, person);
+                return;
+            }
             // Only link aliases made of this person's own canonical-name words,
             // unless the alias is a declared real-name form (see
             // TRUSTED_NAME_FORMS) that the display name no longer carries.
@@ -176,12 +232,12 @@ function buildPersonLinkIndex(people, options = {}) {
             registerAlias(byAlias, tokens, alias, person);
         });
     });
-    if (!tokens.length) return null;
+
     // BLOCKED tokens join the alternation so they are consumed before the alias
     // inside them; longest-first keeps multi-word names and compounds ahead of
     // their short forms.
-    const pattern = buildAliasPattern(tokens, blockedPhrases(en ? 'en' : 'ko'), en);
-    return { pattern, byAlias, en };
+    const pattern = buildAliasPattern([...new Set(tokens.concat(Object.keys(contextData.shorts)))], blockedPhrases(en ? 'en' : 'ko'), en);
+    return { pattern, byAlias, byId, expressions, contextData, context: nameContext.compile(contextData), en };
 }
 
 // The regex every link index ends with. Blocked phrases go first so a blocked
@@ -189,6 +245,7 @@ function buildPersonLinkIndex(people, options = {}) {
 // sort is stable, so among equal lengths that order survives. Longest
 // alternative first; word boundaries only for English, where they exist.
 function buildAliasPattern(tokens, blocked, en) {
+    if (!tokens.length && !(blocked || []).length) return /(?!)/g;
     const all = (blocked || []).concat(tokens).sort((a, b) => b.length - a.length);
     const alternation = all.map(escapeRegExp).join('|');
     return new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
@@ -196,30 +253,8 @@ function buildAliasPattern(tokens, blocked, en) {
 
 // Tags whose text content must never be linkified: existing anchors (no nested
 // links) and literal/code contexts.
-const SKIP_TAGS = ['a', 'code', 'pre', 'script', 'style'];
-
-// Walks already-rendered HTML and applies mapText to every text chunk that is
-// not inside a skip tag. Tag internals pass through untouched.
 function mapLinkableText(html, mapText) {
-    const depth = {};
-    SKIP_TAGS.forEach(name => { depth[name] = 0; });
-    let skipping = 0;
-    return String(html).replace(/(<[^>]+>)|([^<]+)/g, function (_m, tag, textChunk) {
-        if (tag) {
-            const match = tag.match(/^<\s*(\/?)\s*([a-zA-Z0-9]+)/);
-            if (match && SKIP_TAGS.includes(match[2].toLowerCase())) {
-                const name = match[2].toLowerCase();
-                if (match[1]) {
-                    if (depth[name] > 0) { depth[name]--; skipping--; }
-                } else if (!/\/\s*>$/.test(tag)) {
-                    depth[name]++; skipping++;
-                }
-            }
-            return tag;
-        }
-        if (skipping > 0) return textChunk;
-        return mapText(textChunk);
-    });
+    return require('./html-fragments').walk(html, mapText);
 }
 
 module.exports = {

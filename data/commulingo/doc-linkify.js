@@ -1,3 +1,4 @@
+const { expressionCandidates } = require('./link-expressions');
 const { registerAlias } = require('./alias-registry');
 // The reference-library alias index: which strings belong to which document.
 // Index shape ({ pattern, byAlias, en }) matches the other indexes so linkify.js
@@ -19,6 +20,9 @@ function buildDocLinkIndex(docs, options = {}) {
     const en = lang === 'en';
     const byAlias = Object.create(null);
     const tokens = [];
+    const expressions = Object.create(null);
+    const identityAliases = Object.create(null);
+    const entries = Object.create(null);
     (docs || []).forEach(doc => {
         if (!doc || !doc.id) return;
         const label = (doc.title && (doc.title[lang] || doc.title.ko || doc.title.en)) || '';
@@ -30,18 +34,23 @@ function buildDocLinkIndex(docs, options = {}) {
             note: kind,
             href: '/commulingo/docs/' + encodeURIComponent(doc.id),
         };
-        const candidates = (doc.aliases && doc.aliases[lang]) || [];
-        candidates.forEach(raw => {
+        const candidates = expressionCandidates(doc, lang, (doc.aliases && doc.aliases[lang]) || []);
+        entries[doc.id] = entry;
+        candidates.forEach(expression => {
+            const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
+            expressions[doc.id + ':' + alias] = expression;
+            if (expression.policy === 'search') return;
+            if (expression.role === 'identity' || (expression.role === 'legacy' && alias === label)) identityAliases[alias] = doc.id;
             registerAlias(byAlias, tokens, alias, entry);
         });
     });
-    if (!tokens.length) return null;
+
     // Korean aliases carry their own 『』 delimiters, so no word boundary is
     // available or wanted; English ones get \b like every other index.
     const pattern = buildAliasPattern(tokens, [], en);
-    return { pattern, byAlias, en };
+    return { pattern, byAlias, byId: entries, expressions, identityAliases, en };
 }
 
 module.exports = {

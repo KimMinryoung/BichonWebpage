@@ -1,3 +1,4 @@
+const { assertLinkExpressions } = require('./link-expressions');
 const { assertAliases, assertPersonHeadwords } = require('./headword-validation');
 const db = require('../../config/database');
 const { OFFICE_ICON, normalizeFateLabel } = require('./people-standard');
@@ -111,7 +112,8 @@ async function listPeopleAdmin(options = {}) {
                 epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
-                origin_code, origin_label_ko, origin_label_en
+                origin_code, origin_label_ko, origin_label_en,
+                to_jsonb(commulingo_people)->'link_expressions' AS link_expressions
          FROM commulingo_people
          WHERE ($1 = ''
                 OR id ILIKE '%' || $1 || '%'
@@ -135,7 +137,8 @@ async function getPersonAdmin(personId, options = {}) {
                 epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
-                origin_code, origin_label_ko, origin_label_en
+                origin_code, origin_label_ko, origin_label_en,
+                to_jsonb(commulingo_people)->'link_expressions' AS link_expressions
          FROM commulingo_people
          WHERE id = $1`,
         [id]
@@ -202,6 +205,7 @@ async function getPersonAdmin(personId, options = {}) {
     const patronymic = patronymicResult.rows[0] || {};
     person.patronymic = t(patronymic.patronymic_ko, patronymic.patronymic_en);
     person.cyrillicPatronymic = patronymic.cyrillic_patronymic || '';
+    person.linkExpressions = personResult.rows[0].link_expressions || [];
     person.aliases = { ko: [], en: [] };
     aliasResult.rows.forEach(row => {
         person.aliases[row.lang].push(row.alias);
@@ -321,6 +325,7 @@ async function replaceCareer(client, personId, career) {
 async function createPersonAdmin(rawPayload, options = {}) {
     const payload = withNativeNameAliases(rawPayload || {});
     assertPersonHeadwords(payload);
+    if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
     return withTransaction(options, async client => {
         const id = requireId(payload.id, 'person id');
         const citizenship = normalizeNationality(payload.citizenship || null, 'citizenship');
@@ -396,6 +401,9 @@ async function createPersonAdmin(rawPayload, options = {}) {
                 origin.en,
             ]
         );
+        if (payload.linkExpressions !== undefined) {
+            await client.query('UPDATE commulingo_people SET link_expressions = $1::jsonb WHERE id = $2', [JSON.stringify(payload.linkExpressions), id]);
+        }
         await replacePatronymic(client, id, patronymicState);
         await replaceAliases(client, id, payload.aliases || { ko: [nameKo], en: [nameEn] });
         await replaceScenes(client, id, payload.scenes || []);
@@ -410,6 +418,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
 async function updatePersonAdmin(personId, rawPayload, options = {}) {
     const payload = withNativeNameAliases(rawPayload || {});
     assertPersonHeadwords(payload);
+    if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
     return withTransaction(options, async client => {
         const id = requireId(personId, 'person id');
         const before = await getPersonAdmin(id, { client });
@@ -502,6 +511,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             assertPatronymicSeparate(newPartsKo || storedParts('ko'), patronymicState.ko, 'ko');
             assertPatronymicSeparate(newPartsEn || storedParts('en'), patronymicState.en, 'en');
         }
+        if (payload.linkExpressions !== undefined) set('link_expressions', JSON.stringify(payload.linkExpressions));
         if (payload.epithet !== undefined) {
             set('epithet_ko', contentLocalized(payload.epithet, 'ko'));
             set('epithet_en', localized(payload.epithet, 'en'));

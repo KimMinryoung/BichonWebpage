@@ -1,3 +1,4 @@
+const { searchableAliases } = require('../data/commulingo/link-expressions');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
@@ -115,7 +116,7 @@ function nestToc(flat) {
 // haystack ships separately (data-search-title) so the shared search can rank
 // a title hit above a card that only mentions the words in its description.
 function docTitleText(raw) {
-    const aliases = raw.aliases || {};
+    const aliases = searchableAliases(raw, raw.aliases);
     return [
         localize(raw.title, 'ko'),
         localize(raw.title, 'en'),

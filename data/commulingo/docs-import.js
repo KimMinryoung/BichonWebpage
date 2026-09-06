@@ -1,3 +1,4 @@
+const { assertLinkExpressions } = require('./link-expressions');
 const { assertHeadword, assertAliases, assertStringList } = require('./headword-validation');
 const fs = require('fs');
 const path = require('path');
@@ -124,6 +125,10 @@ function canonicalEntry(entry) {
         source: typeof entry.source === 'string' ? entry.source : '',
     };
     for (const lang of ['ko', 'en']) assertHeadword(out.title[lang], `title.${lang}`, { allowEmpty: lang === 'en' });
+    if (entry.linkExpressions !== undefined) {
+        assertLinkExpressions(entry.linkExpressions);
+        out.linkExpressions = entry.linkExpressions;
+    }
     if (entry.aliases !== undefined) {
         assertAliases(entry.aliases);
         out.aliases = entry.aliases;
@@ -198,6 +203,7 @@ function updateDocMeta(id, patch = {}) {
     const current = manifest.docs[index];
     const merged = canonicalEntry({
         ...current,
+        linkExpressions: patch.linkExpressions !== undefined ? patch.linkExpressions : current.linkExpressions,
         aliases: patch.aliases !== undefined ? patch.aliases : current.aliases,
         noAutoLink: patch.noAutoLink !== undefined ? patch.noAutoLink : current.noAutoLink,
         date: patch.date !== undefined ? patch.date : current.date,

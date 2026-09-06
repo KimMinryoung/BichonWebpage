@@ -24,7 +24,7 @@ async function fetchTerms() {
             `SELECT id, term_ko, term_en, original, period_label,
                     period_ko, period_en, start_year, end_year, category,
                     definition_ko, definition_en, body_ko, body_en, sources,
-                    parent_id, updated_at
+                    parent_id, updated_at, to_jsonb(commulingo_terms)->'link_expressions' AS link_expressions
              FROM commulingo_terms
              ORDER BY sort_order, id`
         ),
@@ -142,6 +142,7 @@ async function fetchTerms() {
         definition: t(row.definition_ko, row.definition_en),
         body: t(row.body_ko, row.body_en),
         sources: Array.isArray(row.sources) ? row.sources : [],
+        linkExpressions: row.link_expressions || [],
         aliases: aliasesByTerm[row.id] || { ko: [], en: [] },
         people: peopleByTerm[row.id] || [],
         events: eventsByTerm[row.id] || [],

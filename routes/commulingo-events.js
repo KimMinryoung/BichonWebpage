@@ -122,6 +122,7 @@ function presentEvent(raw, lang) {
     return {
         ...raw,
         title: localize(raw.title, lang),
+        searchExpressions: (raw.linkExpressions || []).map(item => item.text).join(' '),
         question: localize(raw.question, lang),
         summary: localize(raw.summary, lang),
         body: localize(raw.body, lang),

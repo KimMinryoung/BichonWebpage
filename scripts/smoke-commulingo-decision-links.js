@@ -46,6 +46,17 @@ const payload = {
     },
 };
 
+const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
+const { clientPersonLinkPayload } = require('../data/commulingo/linkify');
+const people = payload.people.map(p => ({ ...p, displayName: p.name, names: { display: p.name, family: p.name.split(' ').at(-1) }, aliases: { ko: p.aliases } }));
+people.push(...[
+    { id: 'ford', displayName: '제럴드 포드', names: { display: '제럴드 포드', given: '제럴드', family: '포드' } },
+    { id: 'henry', displayName: '헨리 블랙', names: { display: '헨리 블랙', given: '헨리', family: '블랙' } },
+]);
+Object.assign(payload, clientPersonLinkPayload({ person: buildPersonLinkIndex(people) }));
+payload.timeline.eras[0].episodes[0].briefing.ko += ' 헨리 포드는 말했다.';
+payload.timeline.eras[0].episodes.push({ ...payload.timeline.eras[0].episodes[0], id: 'ep-2', briefing: { ko: '포드는 말했다.' } });
+
 // A DOM stub the script can run against: elements it creates keep a class list
 // and children so its own querySelector('.commu-dc-head') finds them, and every
 // node's innerHTML is kept so the assertions can read the rendered markup back.
@@ -125,6 +136,8 @@ sandbox.globalThis = sandbox;
 
 const source = fs.readFileSync(path.join(__dirname, '..', 'public', 'js', 'commulingo-decision.js'), 'utf8');
 vm.createContext(sandbox);
+vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'public/js/commulingo-name-context.js'), 'utf8'), sandbox);
+sandbox.window.CommuLingoNameContext = sandbox.CommuLingoNameContext;
 vm.runInContext(source, sandbox, { filename: 'commulingo-decision.js' });
 
 // Everything the script wrote, wherever it wrote it.
@@ -143,5 +156,8 @@ const leninLinks = links.filter(a => a.includes('/people/lenin')).length;
 assert.strictEqual(leninLinks, 1, `레닌 should link once per passage, got ${leninLinks}`);
 // The blocked compound is not a link, and did not swallow the name inside it.
 assert.doesNotMatch(html, /<a[^>]*>레닌<\/a>그라드/, '레닌그라드 must pass through untouched');
+
+assert.doesNotMatch(html, /헨리 <a[^>]*>포드<\/a>/);
+assert.match(html, /people\/ford/);
 
 console.log('OK — CommuLingo decision-history link smoke passed.');

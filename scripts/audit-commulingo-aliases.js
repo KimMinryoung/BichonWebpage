@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { assertHeadword, assertAliases } = require('../data/commulingo/headword-validation');
+const { assertLinkExpressions, searchableAliases } = require('../data/commulingo/link-expressions');
 const root = path.join(__dirname, '../data/commulingo');
 const load = name => JSON.parse(fs.readFileSync(path.join(root, name), 'utf8'));
 const sources = {
@@ -16,6 +17,9 @@ const owners = new Map();
 for (const [kind, entries] of Object.entries(sources)) {
     for (const entry of entries) {
         const ref = `${kind}:${entry.id}`;
+        if (entry.linkExpressions !== undefined) {
+            try { assertLinkExpressions(entry.linkExpressions); } catch (error) { problems.push({ ref, problem: error.message }); }
+        }
         if (entry.aliases !== undefined) {
             try { assertAliases(entry.aliases); } catch (error) { problems.push({ ref, problem: error.message }); }
         }
@@ -24,7 +28,7 @@ for (const [kind, entries] of Object.entries(sources)) {
             if (headword) {
                 try { assertHeadword(headword, lang); } catch (error) { problems.push({ ref, problem: error.message }); }
             }
-            const aliases = entry.aliases && entry.aliases[lang];
+            const aliases = searchableAliases(entry, entry.aliases)[lang];
             const values = [...(Array.isArray(aliases) ? aliases : []), ...(kind !== 'doc' && headword ? [headword] : [])];
             for (const value of new Set(values)) {
                 if (typeof value !== 'string') continue;

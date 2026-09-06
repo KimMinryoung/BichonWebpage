@@ -125,6 +125,7 @@ async function listResearchTexts() {
 }
 
 module.exports = {
+    localizeResearch: localize,
     listResearch,
     getResearch,
     listResearchTexts,

@@ -269,6 +269,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
             // calls people by it (류시코프), and the last word of a display name
             // is not always it: 쿤 벨러 keeps the Hungarian order, and
             // 프라무디아 아난타 투르 has a two-word family name.
+            given: (raw.givenName && raw.givenName[lang]) || '',
+            givenEnglish: raw.givenName?.en || '',
             family: (raw.familyName && raw.familyName[lang]) || '',
             cyrillic: composePersonName(raw.cyrillic, cyrillicPatronymic),
             patronymic,
@@ -291,6 +293,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         fateLabel: raw.fate ? localize(raw.fate.label, lang) : '',
         citizenship: normalizeFlag(raw.citizenship, lang),
         origin: normalizeFlag(raw.origin, lang),
+        linkExpressions: raw.linkExpressions || [],
         aliases: {
             ko: raw.aliases && Array.isArray(raw.aliases.ko) ? raw.aliases.ko : [],
             en: raw.aliases && Array.isArray(raw.aliases.en) ? raw.aliases.en : [],

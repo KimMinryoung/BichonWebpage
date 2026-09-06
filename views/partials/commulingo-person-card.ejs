@@ -16,7 +16,8 @@ var nameSearch = [
     person.cyrillic
 ].concat(
     (person.aliases && person.aliases.ko) || [],
-    (person.aliases && person.aliases.en) || []
+    (person.aliases && person.aliases.en) || [],
+    (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; })
 ).filter(Boolean).join(' ').toLowerCase();
 var roleSearch = [
     person.role && person.role.label
@@ -27,7 +28,8 @@ var roleSearch = [
 var descSearch = [
     person.epithet,
     person.moment,
-    person.bio
+    person.bio,
+    (person.linkExpressions || []).filter(function(item) { return item.role === 'related'; }).map(function(item) { return item.text; }).join(' ')
 ].filter(Boolean).join(' ').toLowerCase();
 %>
 <article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>" data-name="<%= nameSearch %>" data-role="<%= roleSearch %>" data-desc="<%= descSearch %>">

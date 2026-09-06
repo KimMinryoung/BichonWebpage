@@ -5,14 +5,12 @@
 // The policy — pass order, first-mention restraint, the Korean guard, mention
 // anchors — lives in linkify.js and is the same one the dictionary and learning
 // pages run. What is particular to reports is here: the { html, people, events,
-// topics, terms, docs } shape routes/reports.js renders from, and the plain-text
-// mention scan services/report-mentions.js uses for the reverse direction
-// (person/event page → the reports that name them).
+// topics, terms, docs, links } result. services/report-mentions.js consumes the
+// same rendered links for the reverse direction (entity → related reports).
 
 const {
     getLinkIndexes,
     createLinker,
-    findEntityMentions: findMentions,
     mentionAnchor,
 } = require('./linkify');
 
@@ -24,21 +22,15 @@ async function getReportLinkContext(lang) {
 // returns it alongside the entries found, in order of first appearance.
 function linkifyReportHtml(html, context) {
     if (!html || !context) {
-        return { html: html || '', people: [], events: [], topics: [], terms: [], docs: [] };
+        return { html: html || '', people: [], events: [], topics: [], terms: [], docs: [], links: [] };
     }
     const linker = createLinker(context, { surface: 'report' });
     const linkedHtml = linker.html(html);
-    return { html: linkedHtml, ...linker.found };
-}
-
-// Ids of every entity a raw markdown body mentions.
-function findEntityMentions(text, context) {
-    return findMentions(text, context);
+    return { html: linkedHtml, ...linker.found, links: linker.links };
 }
 
 module.exports = {
     getReportLinkContext,
     linkifyReportHtml,
-    findEntityMentions,
     mentionAnchor,
 };
