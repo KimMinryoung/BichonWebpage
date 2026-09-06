@@ -171,3 +171,22 @@
 @media (prefers-reduced-motion: reduce) {
   .nono-grid .cell, .nono-grid .hint, .nono-progress-track i { transition: none; }
 }
+
+.nono-picker-items { display: grid; width: 100%; gap: 8px; }
+.nono-level { border: 1px solid var(--border); padding: 0 12px; }
+.nono-level summary { min-height: 44px; line-height: 44px; cursor: pointer; font-weight: 700; font-size: .85rem; }
+.nono-level-items { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 12px; }
+.nono-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.games-shell .nono-tools button { padding: 8px 10px; font-size: .8rem; }
+.nono-feedback { font-size: .85rem; line-height: 1.7; color: var(--text-secondary); }
+.nono-feedback:empty { display: none; }
+.nono-question .nono-feedback { margin-top: 12px; font-weight: 400; }
+.nono-question > a { font-size: .8rem; }
+.nono-board-scroll { overflow: auto; max-height: 75dvh; overscroll-behavior: contain; }
+.nono-grid .row-hint { position: sticky; left: 0; z-index: 2; }
+.nono-grid .col-hint { position: sticky; top: 0; z-index: 2; }
+.nono-grid .corner { position: sticky; left: 0; top: 0; z-index: 3; }
+.games-shell .nono-mode-btn, .games-shell .nono-reset, .games-shell .nono-answer { min-height: 44px; }
+@media (prefers-reduced-motion: reduce) {
+  .is-solved .nono-grid .cell, .is-solved .nono-grid .cell.marked::before, .is-solved .nono-grid .cell.marked::after { transition: none; }
+}

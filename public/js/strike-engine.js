@@ -11,9 +11,16 @@
     const clamp = n => Math.max(0, Math.min(100, n));
     const copy = s => JSON.parse(JSON.stringify(s));
     const fatigue = s => Math.round(s.crews.reduce((n, c) => n + c.fatigue, 0) / 6);
-    function start(mode = 'normal', seed = 42) {
-        return { version: 3, mode: mode === 'hard' ? 'hard' : 'normal', seed: seed >>> 0, day: 1, phase: 'planning',
-            fund: mode === 'hard' ? 66 : 90, unity: 58, backlog: 0, production: 42, shortage: 0,
+    const scenarios = {
+        standard: { title: '함께 시작하는 파업', description: '기본 조건에서 임금·시간·강도를 함께 지켜 보세요.', fund: [90, 66], unity: 58 },
+        tight: { title: '빠듯한 생활 기금', description: '적은 기금으로 시작합니다. 생활 지원을 하루도 빠뜨리지 않고 세 요구에 합의하세요.', fund: [50, 40], unity: 58 },
+        rebuild: { title: '다시 모이는 동료들', description: '참여율 40%에서 시작합니다. 참여율 70% 이상을 회복하고 세 요구에 합의하세요.', fund: [90, 66], unity: 40 }
+    };
+    function start(mode = 'normal', seed = 42, scenario = 'standard') {
+        if (!Object.hasOwn(scenarios, scenario)) throw new Error('알 수 없는 시나리오');
+        const config = scenarios[scenario];
+        return { version: 4, scenario, mode: mode === 'hard' ? 'hard' : 'normal', seed: seed >>> 0, day: 1, phase: 'planning',
+            fund: config.fund[mode === 'hard' ? 1 : 0], unity: config.unity, backlog: 0, production: 100 - config.unity, shortage: 0,
             crews: names.map((name, id) => ({ id, name, fatigue: 10, job: ['picket', 'picket', 'organize', 'solidarity', 'rest', 'rest'][id] })),
             history: [], offers: null, deal: null, outcome: null };
     }
@@ -31,7 +38,7 @@
         ][kind];
     }
     function assign(s, id, job) {
-        if (s.phase !== 'planning' || !Number.isInteger(id) || !s.crews[id] || !jobs[job]) throw new Error('지금 배치할 수 없습니다');
+        if (s.phase !== 'planning' || !Number.isInteger(id) || !s.crews[id] || !Object.hasOwn(jobs, job)) throw new Error('지금 배치할 수 없습니다');
         const n = copy(s); n.crews[id].job = job; return n;
     }
     function crewCondition(c) {
@@ -73,7 +80,7 @@
         ];
         if (n.unity < 20 && s.unity >= 20) messages.push('참여가 20% 아래로 떨어졌습니다. 내일도 회복하지 못하면 파업이 종료됩니다.');
         if (exhausted) messages.push('활동조의 과로로 현장 조직이 약해져 일부 노동자가 파업에서 이탈했습니다. 휴식과 교대가 필요합니다.');
-        const record = { day: s.day, event: e.title, income, cost, production: n.production, backlog: n.backlog, fund: n.fund, unity: n.unity, jobs: s.crews.map(c => c.job), messages };
+        const record = { day: s.day, event: e.title, income, cost, production: n.production, backlog: n.backlog, fund: n.fund, unity: n.unity, jobs: s.crews.map(c => c.job), missing, exhausted, messages };
         n.history.push(record);
         n.phase = 'review';
         n.offers = offers(n);
@@ -91,13 +98,25 @@
         else { n.day++; n.phase = 'planning'; }
         return n;
     }
-    function won(s) { return Boolean(s.deal && s.deal.wage >= 8 && s.deal.hours >= 2 && !s.deal.intensity); }
+    function objectives(s) {
+        const d = s.deal;
+        const list = [
+            { text: '임금 +8% 합의', met: Boolean(d && d.wage >= 8) },
+            { text: '주 2시간 이상 단축 합의', met: Boolean(d && d.hours >= 2) },
+            { text: '작업 강도 유지 합의', met: Boolean(d && !d.intensity) }
+        ];
+        if (s.scenario === 'tight') list.push({ text: '생활 지원 부족 없이 버티기', met: s.history.every(r => !r.missing) });
+        if (s.scenario === 'rebuild') list.push({ text: '참여율 70% 이상', met: s.unity >= 70 });
+        return list;
+    }
+    function won(s) { return objectives(s).every(o => o.met); }
     function restore(raw) {
         try {
             const s = JSON.parse(raw);
-            if (!s || s.version !== 3 || !['normal', 'hard'].includes(s.mode) || !Number.isInteger(s.seed) || s.seed < 0 || s.seed > 4294967295 || !Number.isInteger(s.day) || s.day < 1 || s.day > 12) return null;
+            if (!s || ![3, 4].includes(s.version) || !['normal', 'hard'].includes(s.mode) || !Number.isInteger(s.seed) || s.seed < 0 || s.seed > 4294967295 || !Number.isInteger(s.day) || s.day < 1 || s.day > 12) return null;
             // Rebuild from valid decisions rather than trusting stored resource values.
-            let n = start(s.mode, s.seed);
+            let n = start(s.mode, s.seed, s.version === 3 ? 'standard' : s.scenario);
+            if (s.version === 4 && !Object.hasOwn(scenarios, s.scenario)) return null;
             if (!Array.isArray(s.history) || s.history.length > 12) return null;
             for (const record of s.history) {
                 if (n.phase === 'review') n = next(n);
@@ -116,5 +135,5 @@
             return n;
         } catch (_) { return null; }
     }
-    window.StrikeGame = { jobs, start, event, assign, advance, next, accept, fatigue, crewCondition, production, power, won, restore };
+    window.StrikeGame = { jobs, scenarios, objectives, start, event, assign, advance, next, accept, fatigue, crewCondition, production, power, won, restore };
 })();

@@ -1,39 +1,16 @@
 // Browser smoke test against the real game routes/templates, without DB/Redis.
 const assert = require('node:assert/strict');
-const path = require('node:path');
-const express = require('express');
 const { chromium } = require('playwright');
+const { createGameTestServer } = require('./lib/game-test-server');
 /* global window, document, localStorage */
-const strings = require('../config/strings');
-const seo = require('../utils/seo');
-const { iconPaths } = require('../data/icons');
-const { stripEnglishPrefix } = require('../middleware/language');
 
 async function main() {
-    const app = express();
-    app.set('view engine', 'ejs');
-    app.set('views', path.join(__dirname, '../views'));
-    app.use(stripEnglishPrefix);
-    app.use((req, res, next) => { req.cookies = {}; req.session = {}; next(); });
-    app.use((req, res, next) => {
-        const lang = req.urlLanguage === 'en' ? 'en' : 'ko';
-        Object.assign(res.locals, { lang, strings: strings[lang], siteOrigin: 'https://cyber-lenin.com',
-            languageUrl: seo.languagePath, languageSwitchUrl: seo.languageSwitchPath,
-            jsonLdScript: seo.jsonLdScript, iconPaths, assetVersion: 'test', currentUser: null,
-            isAuthenticated: false, urlLanguage: lang, pagePath: req.path });
-        const send = res.send.bind(res);
-        res.send = body => send(lang === 'en' && typeof body === 'string' ? seo.localizeHtmlLinks(body, 'en') : body);
-        next();
-    });
-    app.use(require('../routes/redirects'));
-    app.use(express.static(path.join(__dirname, '../public')));
-    const server = app.listen(0, '127.0.0.1');
-    await new Promise((resolve, reject) => { server.once('listening', resolve); server.once('error', reject); });
-    const origin = 'http://127.0.0.1:' + server.address().port;
+    const { server, origin } = await createGameTestServer();
     let browser;
     try {
         browser = await chromium.launch({ headless: true });
         const page = await browser.newPage();
+        page.on('dialog', dialog => dialog.accept());
         const errors = [];
         page.on('pageerror', e => errors.push(e.message));
         await page.route('**/*', route => route.request().url().startsWith(origin) ? route.continue() : route.abort());
@@ -48,7 +25,7 @@ async function main() {
         }
         await page.goto(origin + '/games/');
         assert.equal(await page.locator('.game-card').count(), 2);
-        await page.locator('.game-card').first().click();
+        await page.locator('.game-card h2 a').first().click();
         assert.ok(page.url().endsWith('/games/strike/'));
         await page.emulateMedia({ reducedMotion: 'reduce' });
         // Every generated location asset is served and decodes successfully.
@@ -135,7 +112,7 @@ async function main() {
             const g = window.StrikeGame;
             for (let seed = 0; seed < 100; seed++) {
                 const s = g.next(g.advance(g.start('normal', seed)).state);
-                if (g.event(s).kind === 'support') { localStorage.setItem('strike-game-v3-save', JSON.stringify(s)); return; }
+                if (g.event(s).kind === 'support') { localStorage.setItem('strike-game-v4-save', JSON.stringify(s)); return; }
             }
             throw new Error('No support seed found');
         });
@@ -154,7 +131,7 @@ async function main() {
                 for (let id = 0; id < 6; id++) s = g.assign(s, id, 'picket');
                 s = g.next(g.advance(s).state);
             }
-            localStorage.setItem('strike-game-v3-save', JSON.stringify(s));
+            localStorage.setItem('strike-game-v4-save', JSON.stringify(s));
         });
         await touch.reload(); await touch.click('#strikeContinue');
         assert.equal(await touch.locator('#strikeEventPhase').textContent(), '오늘의 사건');
@@ -171,7 +148,7 @@ async function main() {
         assert.equal(await touch.locator('[data-crew-sprite="0"].is-tired').count(), 0);
         assert.ok(await touch.locator('.workforce-worker.is-on-strike').count() < crowdBefore);
         assert.equal(await touch.locator('[data-crew-sprite].is-exhausted').count(), 5);
-        const snapshot = await touch.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v3-save')));
+        const snapshot = await touch.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v4-save')));
         const belt = await touch.locator('#strikeScene svg').evaluate(n => n.style.getPropertyValue('--belt-speed'));
         assert.equal(belt, (100 / Math.max(1, snapshot.production)).toFixed(2) + 's');
         await touch.click('#strikeNext');
@@ -184,7 +161,7 @@ async function main() {
             await page.selectOption('#strikeMode', mode);
             await page.click('#strikeStart');
             for (let day = 1; day <= 12; day++) {
-                const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v3-save')).crews);
+                const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v4-save')).crews);
                 crews.sort((a, b) => a.fatigue - b.fatigue);
                 const jobs = ['picket', 'picket', 'picket', 'organize', 'solidarity', 'rest'];
                 for (let i = 0; i < 6; i++) {
@@ -203,13 +180,13 @@ async function main() {
             }
             assert.equal(await page.locator('#strikeOffers').isVisible(), true);
             await page.locator('#strikeOfferCards button').first().click();
-            assert.match(await page.locator('#strikeResultTitle').textContent(), /세 가지 요구/);
+            assert.match(await page.locator('#strikeResultTitle').textContent(), /시나리오 목표/);
             await page.click('#strikeRestart');
         }
         // A complete campaign without accepting an offer reaches the final deadline.
         await page.click('#strikeStart');
         for (let day = 1; day <= 12; day++) {
-            const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v3-save')).crews);
+            const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v4-save')).crews);
             crews.sort((a, b) => a.fatigue - b.fatigue);
             for (let i = 0; i < 6; i++) {
                 await page.click('[data-crew="' + crews[i].id + '"]');
@@ -256,7 +233,7 @@ async function main() {
         await page.setViewportSize({ width: 1280, height: 1000 });
         await page.screenshot({ path: '/tmp/strike-desktop.png', fullPage: true });
         // Corrupted and disabled storage cannot prevent play.
-        await page.evaluate(() => localStorage.setItem('strike-game-v3-save', '{bad'));
+        await page.evaluate(() => localStorage.setItem('strike-game-v4-save', '{bad'));
         await page.evaluate(() => localStorage.setItem('strike-game-v2-save', JSON.stringify({ version: 2 })));
         await page.reload();
         assert.equal(await page.locator('#strikeContinue').isVisible(), false);

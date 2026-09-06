@@ -84,7 +84,7 @@ assert.equal(g.crewCondition({ fatigue: 56, job: 'picket' }).unityPenalty, 0);
 assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).nextFatigue, 33);
 assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).unityPenalty, 0);
 
-console.log('Strike v3: 448 campaigns, three winning strategies, repetitive strategies, deterministic restore, resource bounds and final bargaining passed.');
+console.log('Strike standard: 448 campaigns, three winning strategies, repetitive strategies, deterministic restore, resource bounds and final bargaining passed.');
 
 assert.equal(g.restore(JSON.stringify({ ...g.start(), version: 2 })), null);
 const idle = { ...g.start(), crews: g.start().crews.map(c => ({ ...c, job: 'rest' })) };
@@ -94,3 +94,38 @@ assert.equal(g.production({ ...idle, unity: 100 }), 0);
 assert.ok(g.production(g.start()) < g.production(idle));
 assert.ok(g.production({ ...g.start(), unity: 80 }) < g.production(g.start()));
 assert.ok(g.production({ ...g.start(), crews: g.start().crews.map(c => ({ ...c, fatigue: 100 })) }) > g.production(g.start()));
+
+// All challenge modes remain achievable across the same representative seeds.
+for (const scenario of Object.keys(g.scenarios)) for (const mode of ['normal', 'hard']) {
+    for (let seed = 0; seed < 32; seed++) {
+        let state = g.start(mode, seed, scenario), achieved = false;
+        while (state.phase !== 'done') {
+            state = g.advance(deploy(state, 'support')).state;
+            assert.equal(JSON.stringify(g.restore(JSON.stringify(state))), JSON.stringify(state));
+            if (state.phase === 'review') {
+                achieved ||= g.won(g.accept(state, 0));
+                state = g.next(state);
+            }
+        }
+        assert.ok(achieved, `${scenario}/${mode}/${seed} must have an achievable victory`);
+    }
+}
+assert.equal(g.start('normal', 1, 'tight').fund, 50);
+assert.equal(g.start('hard', 1, 'tight').fund, 40);
+assert.equal(g.start('normal', 1, 'rebuild').production, 60);
+assert.throws(() => g.start('normal', 1, 'unknown'));
+assert.equal(g.restore(JSON.stringify({ ...g.start(), scenario: 'unknown' })), null);
+const tightDeal = { ...deal, scenario: 'tight', history: [{ missing: 1 }] };
+assert.equal(g.won(tightDeal), false, 'one missed support day fails the extra objective');
+assert.equal(g.won({ ...deal, scenario: 'rebuild', unity: 69 }), false);
+assert.equal(g.won({ ...deal, scenario: 'rebuild', unity: 70 }), true);
+// Freeze a real v3 replay fixture, rather than labeling v4 output as legacy.
+const v3 = require('./fixtures/strike-v3-save.json');
+const migrated = g.restore(JSON.stringify(v3));
+assert.equal(migrated.version, 4);
+assert.equal(migrated.scenario, 'standard');
+for (const key of ['day', 'phase', 'mode', 'seed', 'fund', 'unity', 'production', 'backlog', 'shortage', 'crews', 'offers', 'deal', 'outcome']) {
+    assert.equal(JSON.stringify(migrated[key]), JSON.stringify(v3[key]), 'v3 migration preserves ' + key);
+}
+assert.equal(JSON.stringify(g.restore(JSON.stringify(migrated))), JSON.stringify(migrated));
+console.log('Strike: 192 scenario campaigns, objective failures, planning saves, and real v3 migration passed.');

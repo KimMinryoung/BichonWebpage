@@ -243,22 +243,26 @@
   },
   "questions": [
     {
-      "q": "붉은 깃발은 노동운동과 혁명사에서 주로 무엇을 나타내나?",
+      "q": "이 깃발에 어울리는 『공산당 선언』의 마지막 호소는?",
       "a": [
-        "집단적 저항과 연대",
-        "항복 신호",
-        "시장 가격표"
+        "각국 노동자의 단결",
+        "왕조에 대한 충성",
+        "노동자 사이의 경쟁"
       ],
-      "correct": 0
+      "correct": 0,
+      "explanation": "선언은 각국의 프롤레타리아트에게 단결을 호소하며 끝납니다.",
+      "source_url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch04.htm"
     },
     {
-      "q": "노노그램에서 X 표시는 어떤 용도로 쓰나?",
+      "q": "그 호소에서 연대의 범위는?",
       "a": [
-        "비워둘 칸을 표시한다",
-        "정답 칸을 두 번 칠한다",
-        "힌트 숫자를 지운다"
+        "한 공장 안으로만",
+        "한 나라 안으로만",
+        "국경을 넘어"
       ],
-      "correct": 0
+      "correct": 2,
+      "explanation": "각국 노동자에게 보내는 호소는 국제적인 연대를 가리킵니다.",
+      "source_url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch04.htm"
     }
   ]
 }

@@ -1,40 +1,120 @@
 {
   "default_series": "open-nonograms",
-  "default": "minchong-15",
+  "default": "workers-hammer",
   "series": [
     {
       "id": "open-nonograms",
-      "title": "공개 노노그램",
+      "title": "노동과 사상의 그림",
       "puzzles": [
+        {
+          "id": "workers-hammer",
+          "hint_title": "작은 도구, 큰 힘",
+          "size": [
+            5,
+            5
+          ],
+          "difficulty": "beginner",
+          "path": "/puzzles/workers-hammer/puzzle.json"
+        },
+        {
+          "id": "workers-banner",
+          "hint_title": "함께 드는 표식",
+          "size": [
+            5,
+            5
+          ],
+          "difficulty": "beginner",
+          "path": "/puzzles/workers-banner/puzzle.json"
+        },
+        {
+          "id": "workers-factory",
+          "hint_title": "생산이 이루어지는 곳",
+          "size": [
+            10,
+            10
+          ],
+          "difficulty": "intermediate",
+          "path": "/puzzles/workers-factory/puzzle.json"
+        },
+        {
+          "id": "workers-megaphone",
+          "hint_title": "함께 외치는 도구",
+          "size": [
+            10,
+            10
+          ],
+          "difficulty": "intermediate",
+          "path": "/puzzles/workers-megaphone/puzzle.json"
+        },
         {
           "id": "freenono-letter-l",
           "hint_title": "레닌의 첫 글자",
-          "size": [14, 8],
-          "path": "/puzzles/freenono-letter-l/puzzle.json"
+          "size": [
+            14,
+            8
+          ],
+          "path": "/puzzles/freenono-letter-l/puzzle.json",
+          "difficulty": "intermediate"
         },
         {
           "id": "cyber-red-star",
           "hint_title": "다섯 갈래의 표식",
-          "size": [11, 11],
-          "path": "/puzzles/cyber-red-star/puzzle.json"
+          "size": [
+            11,
+            11
+          ],
+          "path": "/puzzles/cyber-red-star/puzzle.json",
+          "difficulty": "intermediate"
         },
         {
           "id": "cyber-red-flag",
           "hint_title": "바람에 드는 신호",
-          "size": [11, 12],
-          "path": "/puzzles/cyber-red-flag/puzzle.json"
+          "size": [
+            11,
+            12
+          ],
+          "path": "/puzzles/cyber-red-flag/puzzle.json",
+          "difficulty": "intermediate"
         },
         {
           "id": "cyber-hammer",
           "hint_title": "일하는 손의 도구",
-          "size": [10, 12],
-          "path": "/puzzles/cyber-hammer/puzzle.json"
+          "size": [
+            10,
+            12
+          ],
+          "path": "/puzzles/cyber-hammer/puzzle.json",
+          "difficulty": "intermediate"
+        },
+        {
+          "id": "workers-globe",
+          "hint_title": "세계의 동료들에게",
+          "size": [
+            15,
+            15
+          ],
+          "difficulty": "challenge",
+          "path": "/puzzles/workers-globe/puzzle.json"
+        },
+        {
+          "id": "workers-school",
+          "hint_title": "별 아래 펼친 책",
+          "size": [
+            15,
+            15
+          ],
+          "difficulty": "challenge",
+          "path": "/puzzles/workers-school/puzzle.json"
         },
         {
           "id": "minchong-15",
           "hint_title": "귀염둥이 마스코트",
-          "size": [15, 15],
-          "path": "/puzzles/minchong-15/puzzle.json"
+          "size": [
+            15,
+            15
+          ],
+          "path": "/puzzles/minchong-15/puzzle.json",
+          "difficulty": "challenge"
         }
       ]
     }

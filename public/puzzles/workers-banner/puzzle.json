@@ -1,0 +1,111 @@
+{
+  "id": "workers-banner",
+  "title": "노동자의 붉은 깃발",
+  "hint_title": "함께 드는 표식",
+  "difficulty": "beginner",
+  "size": [
+    5,
+    5
+  ],
+  "row_hints": [
+    [
+      5
+    ],
+    [
+      5
+    ],
+    [
+      4
+    ],
+    [
+      1
+    ],
+    [
+      1
+    ]
+  ],
+  "col_hints": [
+    [
+      5
+    ],
+    [
+      3
+    ],
+    [
+      3
+    ],
+    [
+      3
+    ],
+    [
+      2
+    ]
+  ],
+  "solution": [
+    [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "questions": [
+    {
+      "q": "이 깃발에 어울리는 『공산당 선언』의 마지막 호소는?",
+      "a": [
+        "각국 노동자의 단결",
+        "왕조에 대한 충성",
+        "노동자 사이의 경쟁"
+      ],
+      "correct": 0,
+      "explanation": "선언은 각국의 프롤레타리아트에게 단결을 호소하며 끝납니다.",
+      "source_url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch04.htm"
+    },
+    {
+      "q": "그 호소에서 연대의 범위는?",
+      "a": [
+        "한 공장 안으로만",
+        "한 나라 안으로만",
+        "국경을 넘어"
+      ],
+      "correct": 2,
+      "explanation": "각국 노동자에게 보내는 호소는 국제적인 연대를 가리킵니다.",
+      "source_url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch04.htm"
+    }
+  ],
+  "source": {
+    "name": "Cyber-Lenin original pixel puzzle",
+    "author": "Cyber-Lenin",
+    "license": "CC0-1.0"
+  },
+  "context": "공산링고의 노동·조직·국제주의·정치학교 주제를 바탕으로 새로 그린 픽셀 그림입니다."
+}

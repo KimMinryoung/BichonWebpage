@@ -1,0 +1,151 @@
+{
+  "version": 3,
+  "mode": "hard",
+  "seed": 73,
+  "day": 5,
+  "phase": "planning",
+  "fund": 46,
+  "unity": 82,
+  "backlog": 167,
+  "production": 18,
+  "shortage": 0,
+  "crews": [
+    {
+      "id": 0,
+      "name": "민서",
+      "fatigue": 34,
+      "job": "organize"
+    },
+    {
+      "id": 1,
+      "name": "준호",
+      "fatigue": 46,
+      "job": "organize"
+    },
+    {
+      "id": 2,
+      "name": "수진",
+      "fatigue": 34,
+      "job": "organize"
+    },
+    {
+      "id": 3,
+      "name": "태호",
+      "fatigue": 40,
+      "job": "organize"
+    },
+    {
+      "id": 4,
+      "name": "은별",
+      "fatigue": 0,
+      "job": "rest"
+    },
+    {
+      "id": 5,
+      "name": "도윤",
+      "fatigue": 0,
+      "job": "solidarity"
+    }
+  ],
+  "history": [
+    {
+      "day": 1,
+      "event": "우리의 첫 아침",
+      "income": 20,
+      "cost": 20,
+      "production": 34,
+      "backlog": 24,
+      "fund": 66,
+      "unity": 64,
+      "jobs": [
+        "organize",
+        "picket",
+        "organize",
+        "solidarity",
+        "rest",
+        "rest"
+      ],
+      "messages": [
+        "작업을 멈춘 노동자들로 생산라인이 느려졌습니다.",
+        "오늘 생산 34% · 미납 1대분. ",
+        "연대 기금 +20 · 생활 지원 −20.",
+        "오늘의 생활 지원을 전달했습니다."
+      ]
+    },
+    {
+      "day": 2,
+      "event": "연대의 방문",
+      "income": 26,
+      "cost": 20,
+      "production": 30,
+      "backlog": 52,
+      "fund": 72,
+      "unity": 70,
+      "jobs": [
+        "organize",
+        "organize",
+        "organize",
+        "solidarity",
+        "rest",
+        "rest"
+      ],
+      "messages": [
+        "파업으로 생산라인 대부분이 멈췄습니다.",
+        "오늘 생산 30% · 미납 2대분. ",
+        "연대 기금 +26 · 생활 지원 −20.",
+        "오늘의 생활 지원을 전달했습니다."
+      ]
+    },
+    {
+      "day": 3,
+      "event": "밀려오는 생활비",
+      "income": 20,
+      "cost": 26,
+      "production": 24,
+      "backlog": 86,
+      "fund": 66,
+      "unity": 76,
+      "jobs": [
+        "organize",
+        "organize",
+        "organize",
+        "solidarity",
+        "rest",
+        "rest"
+      ],
+      "messages": [
+        "파업으로 생산라인 대부분이 멈췄습니다.",
+        "오늘 생산 24% · 미납 3대분. ",
+        "연대 기금 +20 · 생활 지원 −26.",
+        "오늘의 생활 지원을 전달했습니다."
+      ]
+    },
+    {
+      "day": 4,
+      "event": "납품 마감일",
+      "income": 0,
+      "cost": 20,
+      "production": 18,
+      "backlog": 167,
+      "fund": 46,
+      "unity": 82,
+      "jobs": [
+        "organize",
+        "organize",
+        "organize",
+        "organize",
+        "rest",
+        "rest"
+      ],
+      "messages": [
+        "파업으로 생산라인 대부분이 멈췄습니다.",
+        "오늘 생산 18% · 미납 5대분. 납품 마감으로 압박이 커졌습니다.",
+        "연대 기금 +0 · 생활 지원 −20.",
+        "오늘의 생활 지원을 전달했습니다."
+      ]
+    }
+  ],
+  "offers": null,
+  "deal": null,
+  "outcome": null
+}

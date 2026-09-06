@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     const g = window.StrikeGame, el = id => document.getElementById(id);
-    const saveKey = 'strike-game-v3-save';
+    const saveKey = 'strike-game-v4-save';
     let state, saved, selected = 0, moving = false, timer, bargaining = false;
     function node(tag, text, className) {
         const n = document.createElement(tag); if (text) n.textContent = text; if (className) n.className = className; return n;
@@ -15,9 +15,13 @@
         catch (_) { announce('이 브라우저에서는 저장할 수 없습니다. 현재 게임은 계속할 수 있습니다.'); }
     }
     function load() {
-        el('strikeSaveNote').textContent = '한 판 10–15분 · 로그인 없이 · 하루마다 자동 저장';
+        el('strikeSaveNote').textContent = '한 판 10–15분 · 로그인 없이 · 배치와 하루 결과 자동 저장 · 이 브라우저에 저장';
         try {
             saved = g.restore(localStorage.getItem(saveKey));
+            if (!saved) {
+                saved = g.restore(localStorage.getItem('strike-game-v3-save'));
+                if (saved) localStorage.setItem(saveKey, JSON.stringify(saved));
+            }
             if (!saved && localStorage.getItem('strike-game-v2-save')) el('strikeSaveNote').textContent = '생산·참여 규칙이 개편되었습니다. 새 게임으로 시작해 주세요.';
         }
         catch (_) { el('strikeSaveNote').textContent = '저장을 사용할 수 없습니다. 이 화면에서 끝까지 플레이할 수 있습니다.'; }
@@ -39,7 +43,7 @@
         }));
     }
     function assign(job) {
-        state = g.assign(state, selected, job);
+        state = g.assign(state, selected, job); save();
         announce(`${state.crews[selected].name} 조를 ${g.jobs[job].title}에 배치했습니다.`); render();
     }
     function crews() {
@@ -81,6 +85,8 @@
     function render() {
         const done = state.phase === 'done', review = state.phase === 'review';
         const cue = window.StrikeScene.eventCue(state);
+        el('strikeObjectives').replaceChildren(node('strong', g.scenarios[state.scenario].title), ...g.objectives(state).map(o => node('span', (o.met ? '✓ ' : '○ ') + o.text)));
+        el('strikeGuide').hidden = state.day !== 1 || state.phase !== 'planning';
         el('strikeDay').textContent = `${state.mode === 'hard' ? '어려움' : '기본'} / DAY ${String(state.day).padStart(2, '0')} OF 12`;
         el('strikeEvent').textContent = done ? '파업을 돌아보며' : cue.title;
         el('strikeFieldEvent').dataset.tone = cue.tone;
@@ -102,7 +108,7 @@
         el('strikeOffers').hidden = !bargaining;
         if (review) {
             const record = state.history[state.history.length - 1];
-            const previous = state.history[state.history.length - 2] || g.start(state.mode, state.seed);
+            const previous = state.history[state.history.length - 2] || g.start(state.mode, state.seed, state.scenario);
             el('strikeDayMetrics').replaceChildren(...dayMetrics(record, previous).children);
             el('strikeDayReport').replaceChildren(...narrative(record).map(t => node('li', readable(t))));
             el('strikeNext').textContent = state.day === 12 ? '합의 없이 파업 마무리하기' : '제안을 보류하고 다음 날로 →';
@@ -115,14 +121,16 @@
             }));
         }
         if (done) {
-            el('strikeResultTitle').textContent = g.won(state) ? '함께, 세 가지 요구를 지켰습니다' : state.deal ? '합의를 만들었습니다. 남은 요구도 있습니다' : '합의는 없었지만, 우리의 선택은 남았습니다';
+            el('strikeResultTitle').textContent = g.won(state) ? '함께, 시나리오 목표를 달성했습니다' : state.deal ? '합의를 만들었습니다. 남은 요구도 있습니다' : '합의는 없었지만, 우리의 선택은 남았습니다';
             el('strikeResultText').textContent = state.deal ? dealText(state.deal) : state.outcome === 'unity' ? '이틀 연속 참여가 20% 아래로 떨어져 현장을 유지하기 어려워졌습니다.' : '12일의 마지막 교섭을 합의 없이 마무리했습니다.';
             el('strikeDeal').replaceChildren(node('strong', '파업 참여율 ' + state.unity + '%'), node('strong', '생활 기금 ' + state.fund), node('strong', '평균 피로 ' + g.fatigue(state)));
+            const shortageDays = state.history.filter(r => r.missing).length;
+            const exhaustedDays = state.history.filter(r => r.exhausted).length;
             const best = state.history.reduce((a, b) => b.production < a.production ? b : a, state.history[0]);
-            el('strikeReflection').textContent = `${best ? best.day + '일차에 생산을 ' + best.production + '%까지 낮췄습니다. ' : ''}${state.deal && state.deal.intensity ? '임금과 함께 작업 부담도 늘었습니다. 다음에는 시간과 강도를 함께 지킬 힘을 모아 보세요.' : '생산을 멈추는 힘과 동료의 생활을 지키는 힘이 함께 필요했습니다. 다른 교대와 연대의 순서로 다시 도전해 보세요.'}`;
+            el('strikeReflection').textContent = `생활 지원 부족 ${shortageDays}일 · 과로 발생 ${exhaustedDays}일. ${best ? best.day + '일차에 생산을 ' + best.production + '%까지 낮췄습니다. ' : ''}${state.deal && state.deal.intensity ? '임금과 함께 작업 부담도 늘었습니다. 다음에는 시간과 강도를 함께 지킬 힘을 모아 보세요.' : '생산을 멈추는 힘과 동료의 생활을 지키는 힘이 함께 필요했습니다. 다른 교대와 연대의 순서로 다시 도전해 보세요.'}`;
         }
         el('strikeLog').replaceChildren(...state.history.slice().reverse().map((r, i) => {
-            const previous = state.history[state.history.length - i - 2] || g.start(state.mode, state.seed);
+            const previous = state.history[state.history.length - i - 2] || g.start(state.mode, state.seed, state.scenario);
             const row = node('tr'); const day = node('th', r.day + '일'); day.scope = 'row';
             row.append(day, node('td', r.event));
             for (const [value, unit] of [[r.production - previous.production, '%p'], [Math.ceil(r.backlog / 40) - Math.ceil(previous.backlog / 40), '대분'], [r.fund - previous.fund, ''], [r.unity - previous.unity, '%p']]) {
@@ -138,7 +146,19 @@
         (state.phase === 'done' ? el('strikeResultTitle') : el('strikeReviewTitle')).focus();
     }
     function enter(s) { state = s; selected = 0; bargaining = state.day === 12 && state.phase === 'review'; el('strikeSetup').hidden = true; el('strikePlay').hidden = false; render(); el('strikeEvent').focus(); }
-    el('strikeStart').addEventListener('click', () => { enter(g.start(el('strikeMode').value, Math.floor(Math.random() * 4294967296))); save(); });
+    function setupScenario() {
+        const config = g.scenarios[el('strikeScenario').value];
+        el('strikeScenarioDescription').textContent = config.description + ` 시작 기금 ${config.fund[el('strikeMode').value === 'hard' ? 1 : 0]} · 참여율 ${config.unity}%.`;
+    }
+    el('strikeScenario').addEventListener('change', setupScenario);
+    el('strikeMode').addEventListener('change', setupScenario);
+    el('strikeGuideDismiss').addEventListener('click', () => { el('strikeGuide').open = false; });
+    el('strikeReplay').addEventListener('click', () => { enter(g.start(state.mode, state.seed, state.scenario)); save(); });
+    el('strikeStart').addEventListener('click', () => {
+        if (saved && saved.phase !== 'done' && !window.confirm('진행 중인 파업을 새 게임으로 바꿀까요?')) return;
+        enter(g.start(el('strikeMode').value, Math.floor(Math.random() * 4294967296), el('strikeScenario').value)); save();
+    });
+    setupScenario();
     el('strikeContinue').addEventListener('click', () => { if (saved) enter(saved); });
     el('strikeAdvance').addEventListener('click', () => {
         if (moving || state.phase !== 'planning') return;
@@ -151,4 +171,5 @@
     el('strikeNext').addEventListener('click', () => { state = g.next(state); bargaining = false; save(); render(); (state.phase === 'done' ? el('strikeResultTitle') : el('strikeEvent')).focus(); });
     el('strikeRestart').addEventListener('click', () => { el('strikePlay').hidden = true; el('strikeSetup').hidden = false; load(); el('strikeStart').focus(); });
     load();
+    if (new URLSearchParams(location.search).get('resume') === '1' && saved && saved.phase !== 'done') enter(saved);
 })();

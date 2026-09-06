@@ -16,6 +16,8 @@
     </header>
     <noscript><p>플레이하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
 
+    <details class="game-guide" id="nonoGuide"><summary>처음이라면 · 숫자 읽는 법</summary><p>숫자 3은 연속한 세 칸을 칠하라는 뜻입니다. 2, 1은 두 칸과 한 칸 사이에 빈칸이 적어도 하나 있어야 합니다. 숫자 0인 줄은 모두 비웁니다.</p><p>칠하기와 X 표시 중 모드를 고르세요. 같은 표시를 다시 누르면 지워집니다. 5칸짜리 줄에 숫자 5가 있으면 모두 칠할 수 있습니다. 막히면 ‘한 칸 힌트’의 설명을 읽어 보세요.</p><p>방향키로 칸을 옮기고 Enter 또는 Space로 표시할 수 있습니다. 큰 퍼즐은 ‘크게 보기’로 확대하고 판 안을 스크롤하세요.</p></details>
+    <p id="nonoSaveNotice" class="games-note" role="status">진행과 질문 답변은 이 브라우저에 자동 저장됩니다.</p>
     <div class="nono-picker" id="puzzleStrip" role="group" aria-label="문제 선택" hidden>
       <span class="games-kicker">문제</span>
       <div class="nono-picker-items" id="puzzleStripItems"></div>
@@ -33,7 +35,10 @@
             <button type="button" id="resetButton" class="nono-reset">초기화</button>
           </div>
         </div>
-        <div class="nono-board-scroll">
+        <div class="nono-tools" aria-label="풀이 도구"><button type="button" id="nonoUndo" disabled>되돌리기</button><button type="button" id="nonoRedo" disabled>다시 하기</button><button type="button" id="nonoHint" disabled>한 칸 힌트</button><button type="button" id="nonoZoom" aria-pressed="false">크게 보기</button></div>
+        <p id="nonoZoomNote" class="nono-guide" hidden>판을 좌우로 스크롤하세요. 숫자 힌트는 가장자리에 고정됩니다.</p>
+        <p id="nonoHintMessage" class="nono-feedback" role="status"></p>
+        <div class="nono-board-scroll" tabindex="0" role="region" aria-label="퍼즐판 스크롤">
           <div class="nono-grid" id="grid" aria-label="노노그램 퍼즐판"></div>
         </div>
         <p class="nono-guide mouse-guide" id="mouseGuide">드래그하면 여러 칸을 한 번에 칠하고, 우클릭은 X 표시입니다.</p>
@@ -42,7 +47,7 @@
 
       <aside class="nono-side" id="sidePanel">
         <section class="nono-status" aria-live="polite">
-          <p class="games-kicker" id="status">퍼즐 로딩 중</p>
+          <p class="games-kicker" id="status">퍼즐 로딩 중</p><button id="nonoRetry" type="button" hidden>다시 불러오기</button>
           <div class="nono-progress">
             <div class="nono-progress-row"><span>행</span><strong id="progressRows">0 / 0</strong></div>
             <div class="nono-progress-track"><i id="progressRowsBar"></i></div>
@@ -74,6 +79,7 @@
   </main>
 
   <%- include('../partials/footer') %>
+  <script src="/js/nonogram-logic.js?v=<%= assetVersion %>"></script>
   <script src="/js/nonogram.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

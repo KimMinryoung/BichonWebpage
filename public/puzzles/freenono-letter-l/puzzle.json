@@ -221,31 +221,26 @@
   },
   "questions": [
     {
-      "q": "이 퍼즐 데이터가 온 공개 프로젝트는?",
+      "q": "이 L은 Lenin을 떠올리게 합니다. 『국가와 혁명』의 저자는?",
       "a": [
-        "FreeNono",
-        "webpbn",
-        "Conceptis"
+        "엥겔스",
+        "레닌",
+        "룩셈부르크"
       ],
-      "correct": 0
+      "correct": 1,
+      "explanation": "『국가와 혁명』은 레닌의 저작입니다.",
+      "source_url": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch01.htm"
     },
     {
-      "q": "노노그램에서 숫자 힌트가 가리키는 것은?",
+      "q": "『국가와 혁명』에서 레닌이 국가를 설명하는 핵심 출발점은?",
       "a": [
-        "연속해서 칠할 칸 묶음",
-        "아무 위치에 칠할 총합만",
-        "정답 이미지의 색상 수"
+        "영원히 중립적인 조정자",
+        "어떤 사회에나 같은 형태로 존재하는 장치",
+        "화해할 수 없는 계급 대립의 산물"
       ],
-      "correct": 0
-    },
-    {
-      "q": "이 글자를 첫 퍼즐로 고른 이유에 가장 가까운 것은?",
-      "a": [
-        "Lenin 이름의 첫 글자를 떠올리게 해서",
-        "정답을 성별로 설명하기 위해서",
-        "큰 화면에서만 풀 수 있어서"
-      ],
-      "correct": 0
+      "correct": 2,
+      "explanation": "레닌은 엥겔스를 인용하며 국가의 성립을 계급 대립과 연결합니다.",
+      "source_url": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch01.htm"
     }
   ]
 }

@@ -86,3 +86,39 @@
   .strike-stat strong { font-size: 1.3rem; }
   .strike-hero h1 { font-size: 2.6rem; }
 }
+
+/* Catalog: two clear choices before the first mobile scroll. */
+.games-home .games-hero { padding: 12px 0 22px; margin-bottom: 20px; }
+.games-home .games-hero h1 { margin: 10px 0 14px; }
+.games-local-note { color: var(--text-muted); font-size: .8rem; }
+.games-home .game-card { overflow: hidden; }
+.games-home .game-card-copy h2 a { color: inherit; text-decoration: none; }
+.game-preview { height: 172px; display: flex; align-items: center; justify-content: center; gap: 24px; padding: 16px; color: #faf2da; font-weight: 700; }
+.strike-preview { background: #791c27; }
+.strike-preview img { height: 150px; width: 168px; object-fit: contain; }
+.puzzle-preview { background: #214d2e; }
+.mini-puzzle { display: grid; grid-template-columns: repeat(5, 22px); gap: 2px; padding: 5px; border: 1px solid #faf2da; }
+.mini-puzzle i { width: 22px; height: 22px; background: #faf2da; }
+.mini-puzzle .ink { background: #111c16; }
+.game-card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin-top: 18px; }
+.games-home .game-card-actions a { display: inline-flex; align-items: center; min-height: 44px; margin: 0; font-weight: 700; }
+.game-progress { font-size: .8rem; color: var(--text-secondary); margin: 6px 0 0; }
+.game-guide { border: 1px solid var(--border); background: var(--bg-surface); padding: 12px 16px; margin: 12px 0 18px; line-height: 1.8; }
+.game-guide summary { cursor: pointer; font-weight: 700; }
+.strike-objectives { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .85rem; padding: 12px 0; }
+.strike-objectives strong { flex-basis: 100%; }
+@media (max-width: 560px) {
+  .games-home .games-hero { padding: 0 0 16px; margin-bottom: 16px; }
+  .games-home .games-hero h1 { font-size: 1.9rem; }
+  .games-home .games-hero p { margin: 8px 0; }
+  .games-home .games-catalog { gap: 14px; }
+  .games-home .game-preview { height: 64px; padding: 8px 14px; justify-content: flex-start; gap: 14px; font-size: .8rem; }
+  .games-home .strike-preview img { height: 62px; width: 70px; }
+  .games-home .mini-puzzle { grid-template-columns: repeat(5, 9px); gap: 1px; padding: 3px; }
+  .games-home .mini-puzzle i { width: 9px; height: 9px; }
+  .games-home .game-card-copy { padding: 14px 18px; }
+  .games-home .game-card-copy h2 { font-size: 1.2rem; margin: 6px 0; }
+  .games-home .game-card-copy p { font-size: .82rem; margin: 4px 0; line-height: 1.65; }
+  .games-home .game-card-copy .games-kicker { font-size: .65rem; letter-spacing: .02em; }
+  .games-home .game-card-actions { margin-top: 4px; font-size: .85rem; }
+}
