@@ -1,0 +1,20 @@
+<%
+/* The context bar that opens each game page, the games' cousin of
+   commulingo-crumb.ejs: the same bordered row below the site menu, with the
+   way back to the catalogue on the left and a one-click jump to the other
+   game on the right. It replaces the bare "← 게임 선택" text link that used to
+   sit alone above the heading on a line it did not fill.
+
+   Params:
+     current — label of this game; closes the trail as text, not a link.
+     sibling — { label, href } of the other game, or omit for no jump. */
+var crumbCurrent = typeof current !== 'undefined' ? current : '';
+var crumbSibling = typeof sibling !== 'undefined' && sibling ? sibling : null;
+%>
+<nav class="games-crumb" aria-label="현재 위치">
+  <ol class="games-crumb-trail">
+    <li class="games-crumb-item"><a class="games-crumb-link games-crumb-home" href="/games/"><%- include('menu-icon', { icon: 'game', iconClass: 'games-crumb-icon' }) %><span>게임</span></a></li>
+    <li class="games-crumb-item"><span class="games-crumb-sep" aria-hidden="true">›</span><span class="games-crumb-current" aria-current="page"><%= crumbCurrent %></span></li>
+  </ol>
+  <% if (crumbSibling) { %><a class="games-crumb-jump" href="<%= crumbSibling.href %>"><%= crumbSibling.label %> <span aria-hidden="true">→</span></a><% } %>
+</nav>

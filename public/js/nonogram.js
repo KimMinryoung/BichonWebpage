@@ -1,8 +1,16 @@
-// Nonogram page (views/public/nonogram.ejs). Extracted from an inline block;
-// the wrapper keeps its constants off the page's global scope.
+// Nonogram page (views/public/nonogram.ejs). The wrapper keeps its constants
+// off the page's global scope.
+//
+// Input model: a fill/mark mode toggle decides what a press does (mouse users
+// also get the right button for X marks), and a press that moves across cells
+// paints every cell it crosses with the same value as the first one, so a run
+// of five is one stroke rather than five clicks. Progress is saved per puzzle
+// in localStorage so a half-solved board survives a reload.
 (function () {
     const DEFAULT_PUZZLE_ID = "minchong-15";
     const PUZZLE_INDEX_URL = "/puzzles/index.json";
+    const STORAGE_KEY = "nonogram-progress-v1";
+    const SOLVED_KEY = "nonogram-solved-v1";
 
     const FALLBACK_PUZZLE = {
       "id": "freenono-letter-l",
@@ -52,8 +60,11 @@
       puzzleIndex: [],
       currentPuzzleId: DEFAULT_PUZZLE_ID,
       cells: [],
+      cellNodes: [],
       solved: false,
-      answers: new Map()
+      mode: "fill",
+      answers: new Map(),
+      solvedIds: new Set()
     };
 
     const els = {
@@ -63,25 +74,85 @@
       hintTitle: document.getElementById("puzzleHintTitle"),
       size: document.getElementById("puzzleSize"),
       image: document.getElementById("solutionImage"),
+      solutionPanel: document.getElementById("solutionPanel"),
       solutionTitle: document.getElementById("solutionTitle"),
       questions: document.getElementById("questions"),
       questionList: document.getElementById("questionList"),
       complete: document.getElementById("complete"),
       side: document.getElementById("sidePanel"),
+      sideNote: document.getElementById("sideNote"),
       reset: document.getElementById("resetButton"),
       puzzleStrip: document.getElementById("puzzleStrip"),
       puzzleStripItems: document.getElementById("puzzleStripItems"),
-      picker: document.getElementById("puzzlePicker"),
-      select: document.getElementById("puzzleSelect"),
       share: document.getElementById("shareButton"),
-      touchGuide: document.getElementById("touchGuide"),
+      next: document.getElementById("nextButton"),
       sourceNote: document.getElementById("sourceNote"),
-      shareText: document.getElementById("shareText")
+      shareText: document.getElementById("shareText"),
+      modeFill: document.getElementById("modeFill"),
+      modeMark: document.getElementById("modeMark"),
+      progressRows: document.getElementById("progressRows"),
+      progressCols: document.getElementById("progressCols"),
+      progressRowsBar: document.getElementById("progressRowsBar"),
+      progressColsBar: document.getElementById("progressColsBar")
     };
 
-    let touchInteractionCount = 0;
-    let lastPointerType = "";
     let resizeObserver = null;
+    // Row/column highlighting follows the mouse only: after a touch the compat
+    // mouseenter would otherwise leave the last tapped line lit up.
+    let lastPointerType = "mouse";
+    // The stroke in progress: the value every crossed cell receives, and the
+    // last cell painted so a slow pointer does not repaint the same one.
+    let stroke = null;
+
+    function readStorage(key) {
+      try {
+        const raw = window.localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function writeStorage(key, value) {
+      try {
+        window.localStorage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        /* private mode or quota: progress simply is not kept */
+      }
+    }
+
+    function loadSolvedIds() {
+      const saved = readStorage(SOLVED_KEY);
+      state.solvedIds = new Set(Array.isArray(saved) ? saved : []);
+    }
+
+    function markSolvedId(id) {
+      if (state.solvedIds.has(id)) return;
+      state.solvedIds.add(id);
+      writeStorage(SOLVED_KEY, Array.from(state.solvedIds));
+      refreshPuzzleSelection();
+    }
+
+    function saveProgress() {
+      if (!state.puzzle) return;
+      const all = readStorage(STORAGE_KEY) || {};
+      const hasInput = state.cells.some((row) => row.some((value) => value !== 0));
+      if (hasInput && !state.solved) {
+        all[state.currentPuzzleId] = state.cells;
+      } else {
+        delete all[state.currentPuzzleId];
+      }
+      writeStorage(STORAGE_KEY, all);
+    }
+
+    function loadProgress(puzzle) {
+      const all = readStorage(STORAGE_KEY) || {};
+      const saved = all[puzzle.id];
+      const [rows, cols] = puzzle.size;
+      if (!Array.isArray(saved) || saved.length !== rows) return null;
+      if (!saved.every((row) => Array.isArray(row) && row.length === cols)) return null;
+      return saved.map((row) => row.map((value) => (value === 1 || value === -1 ? value : 0)));
+    }
 
     function maxHintParts(hints) {
       if (!Array.isArray(hints) || hints.length === 0) return 1;
@@ -139,6 +210,12 @@
       return state.puzzleIndex.find((entry) => entry.id === id) || null;
     }
 
+    function getNextPuzzleEntry() {
+      const position = state.puzzleIndex.findIndex((entry) => entry.id === state.currentPuzzleId);
+      if (position < 0 || position + 1 >= state.puzzleIndex.length) return null;
+      return state.puzzleIndex[position + 1];
+    }
+
     async function loadPuzzleById(id) {
       const entry = getPuzzleEntry(id);
       if (!entry) throw new Error("unknown puzzle");
@@ -166,55 +243,46 @@
     }
 
     function renderPuzzlePicker() {
-      els.select.innerHTML = "";
       els.puzzleStripItems.innerHTML = "";
-      const hasSeries = state.puzzleIndex.some((entry) => entry.series_title);
-
-      function appendOption(parent, entry) {
-        const option = document.createElement("option");
-        option.value = entry.id;
-        option.textContent = entry.hint_title || entry.id;
-        parent.appendChild(option);
-      }
-
-      function appendTab(entry) {
+      state.puzzleIndex.forEach((entry) => {
         const button = document.createElement("button");
         button.type = "button";
-        button.className = "puzzle-tab";
+        button.className = "nono-tab";
         button.dataset.puzzleId = entry.id;
-        button.textContent = entry.hint_title || entry.id;
+        const title = document.createElement("span");
+        title.className = "nono-tab-title";
+        title.textContent = entry.hint_title || entry.id;
+        button.appendChild(title);
+        if (Array.isArray(entry.size)) {
+          const size = document.createElement("small");
+          size.textContent = entry.size[0] + " × " + entry.size[1];
+          button.appendChild(size);
+        }
         button.addEventListener("click", () => switchPuzzle(entry.id));
         els.puzzleStripItems.appendChild(button);
-      }
-
-      state.puzzleIndex.forEach(appendTab);
-
-      if (hasSeries) {
-        const groups = new Map();
-        state.puzzleIndex.forEach((entry) => {
-          const key = entry.series_id || entry.series_title || "default";
-          if (!groups.has(key)) {
-            const group = document.createElement("optgroup");
-            group.label = entry.series_title || "기본";
-            groups.set(key, group);
-            els.select.appendChild(group);
-          }
-          appendOption(groups.get(key), entry);
-        });
-      } else {
-        state.puzzleIndex.forEach((entry) => appendOption(els.select, entry));
-      }
-
-      els.picker.hidden = state.puzzleIndex.length <= 1;
+      });
       els.puzzleStrip.hidden = state.puzzleIndex.length === 0;
+      refreshPuzzleSelection();
     }
 
     function refreshPuzzleSelection() {
-      document.querySelectorAll(".puzzle-tab").forEach((button) => {
-        const active = button.dataset.puzzleId === state.currentPuzzleId;
-        button.classList.toggle("active", active);
+      els.puzzleStripItems.querySelectorAll(".nono-tab").forEach((button) => {
+        const id = button.dataset.puzzleId;
+        const active = id === state.currentPuzzleId;
+        button.classList.toggle("is-active", active);
         button.setAttribute("aria-current", active ? "true" : "false");
+        const title = button.querySelector(".nono-tab-title");
+        if (title) title.classList.toggle("nono-tab-done", state.solvedIds.has(id));
       });
+    }
+
+    function setMode(mode) {
+      state.mode = mode === "mark" ? "mark" : "fill";
+      const fill = state.mode === "fill";
+      els.modeFill.classList.toggle("is-active", fill);
+      els.modeMark.classList.toggle("is-active", !fill);
+      els.modeFill.setAttribute("aria-pressed", fill ? "true" : "false");
+      els.modeMark.setAttribute("aria-pressed", fill ? "false" : "true");
     }
 
     function renderPuzzle(puzzle) {
@@ -222,13 +290,15 @@
       state.currentPuzzleId = puzzle.id || DEFAULT_PUZZLE_ID;
       state.solved = false;
       state.answers.clear();
-      state.cells = Array.from({ length: puzzle.size[0] }, () => Array(puzzle.size[1]).fill(0));
-
+      stroke = null;
       const [rows, cols] = puzzle.size;
-      els.select.value = state.currentPuzzleId;
+      const saved = loadProgress(puzzle);
+      state.cells = saved || Array.from({ length: rows }, () => Array(cols).fill(0));
+      state.cellNodes = Array.from({ length: rows }, () => Array(cols).fill(null));
+
       refreshPuzzleSelection();
       els.hintTitle.textContent = puzzle.hint_title || "우리의 귀요미 마스코트";
-      els.size.textContent = rows + " x " + cols;
+      els.size.textContent = rows + " × " + cols;
       els.image.removeAttribute("src");
       els.solutionTitle.textContent = "이미지 해제";
       els.grid.innerHTML = "";
@@ -236,13 +306,14 @@
       els.grid.style.gridTemplateColumns = "var(--grid-hint-w) repeat(" + cols + ", var(--grid-cell))";
       els.grid.style.gridTemplateRows = "var(--grid-hint-h) repeat(" + rows + ", var(--grid-cell))";
       els.playArea.classList.remove("is-solved");
-      els.side.hidden = true;
+      els.solutionPanel.hidden = true;
       els.sourceNote.hidden = true;
       els.sourceNote.textContent = "";
-      els.questions.classList.remove("unlocked");
+      els.questions.hidden = true;
       els.questionList.innerHTML = "";
-      els.complete.classList.remove("show");
-      els.shareText.textContent = "공유 링크 자리: /nonogram/?p=" + state.currentPuzzleId;
+      els.complete.hidden = true;
+      els.shareText.textContent = "";
+      els.sideNote.textContent = saved ? "이어서 풉니다. 저장된 진행을 불러왔습니다." : "힌트를 모두 만족하면 그림이 열립니다.";
       els.status.textContent = "풀이 중";
 
       const corner = document.createElement("div");
@@ -252,7 +323,7 @@
 
       for (let c = 0; c < cols; c += 1) {
         const hint = document.createElement("div");
-        hint.className = "hint col-hint";
+        hint.className = "hint col-hint" + (c > 0 && c % 5 === 0 ? " c5" : "");
         hint.dataset.colHint = c;
         hint.innerHTML = formatHint(puzzle.col_hints[c]);
         els.grid.appendChild(hint);
@@ -260,7 +331,7 @@
 
       for (let r = 0; r < rows; r += 1) {
         const rowHint = document.createElement("div");
-        rowHint.className = "hint row-hint";
+        rowHint.className = "hint row-hint" + (r > 0 && r % 5 === 0 ? " r5" : "");
         rowHint.dataset.rowHint = r;
         rowHint.innerHTML = formatHint(puzzle.row_hints[r]);
         els.grid.appendChild(rowHint);
@@ -268,24 +339,27 @@
         for (let c = 0; c < cols; c += 1) {
           const cell = document.createElement("button");
           cell.type = "button";
-          cell.className = "cell";
+          cell.className = "cell" + (c > 0 && c % 5 === 0 ? " c5" : "") + (r > 0 && r % 5 === 0 ? " r5" : "");
           cell.dataset.row = r;
           cell.dataset.col = c;
           cell.setAttribute("aria-label", (r + 1) + "행 " + (c + 1) + "열");
-          cell.addEventListener("pointerdown", noteTouchInteraction);
-          cell.addEventListener("click", (event) => applyPrimaryAction(event, r, c, cell));
-          cell.addEventListener("contextmenu", (event) => {
-            event.preventDefault();
-            if (lastPointerType === "touch") return;
-            cycleMark(r, c, cell);
+          cell.addEventListener("click", (event) => {
+            // Pointer input is handled by the stroke; only a keyboard activation
+            // (Enter/Space, detail 0) reaches the board through click.
+            if (event.detail !== 0) return;
+            applyValue(r, c, nextValueFor(r, c, state.mode));
+            finishChange();
           });
-          cell.addEventListener("mouseenter", () => setHover(r, c));
+          cell.addEventListener("mouseenter", () => { if (lastPointerType === "mouse") setHover(r, c); });
           cell.addEventListener("mouseleave", clearHover);
+          state.cellNodes[r][c] = cell;
+          paintCell(cell, state.cells[r][c]);
           els.grid.appendChild(cell);
         }
       }
 
       updateSatisfiedHints();
+      if (saved) checkSolved();
     }
 
     function renderSourceNote(source) {
@@ -314,9 +388,12 @@
         els.sourceNote.appendChild(name);
       }
 
-      const detail = document.createElement("span");
-      detail.textContent = " / " + [source.author, source.license].filter(Boolean).join(" / ");
-      els.sourceNote.appendChild(detail);
+      const detail = [source.author, source.license].filter(Boolean).join(" / ");
+      if (detail) {
+        const tail = document.createElement("span");
+        tail.textContent = " / " + detail;
+        els.sourceNote.appendChild(tail);
+      }
     }
 
     function buildSolutionImage(puzzle) {
@@ -328,11 +405,11 @@
       for (let r = 0; r < rows; r += 1) {
         for (let c = 0; c < cols; c += 1) {
           if (puzzle.solution?.[r]?.[c] !== 1) continue;
-          rects.push('<rect x="' + (c * cell + 2) + '" y="' + (r * cell + 2) + '" width="' + (cell - 4) + '" height="' + (cell - 4) + '" fill="#d03b40"/>');
+          rects.push('<rect x="' + (c * cell + 2) + '" y="' + (r * cell + 2) + '" width="' + (cell - 4) + '" height="' + (cell - 4) + '" fill="#214d2e"/>');
         }
       }
       const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + width + ' ' + height + '">' +
-        '<rect width="100%" height="100%" fill="#10151b"/>' +
+        '<rect width="100%" height="100%" fill="#faf2da"/>' +
         rects.join("") +
         '</svg>';
       return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
@@ -343,12 +420,12 @@
     }
 
     function updateGridMetrics(rows, cols) {
-      const styles = getComputedStyle(document.documentElement);
+      const styles = getComputedStyle(els.grid);
       const playStyles = getComputedStyle(els.playArea);
       const baseHint = Number.parseFloat(styles.getPropertyValue("--hint-w")) || 72;
-      const maxCell = Number.parseFloat(styles.getPropertyValue("--cell")) || 48;
+      const maxCell = Number.parseFloat(styles.getPropertyValue("--cell")) || 44;
       const paddingX = (Number.parseFloat(playStyles.paddingLeft) || 0) + (Number.parseFloat(playStyles.paddingRight) || 0);
-      const available = Math.max(180, els.playArea.clientWidth - paddingX - 2);
+      const available = Math.max(180, els.playArea.clientWidth - paddingX - 4);
       const compact = available < 520;
       const rowFont = compact ? 13 : 15;
       const colFont = compact ? 12 : 14;
@@ -367,7 +444,7 @@
       els.grid.style.setProperty("--grid-hint-w", compactHint + "px");
       els.grid.style.setProperty("--grid-cell", cell + "px");
       els.grid.style.setProperty("--grid-hint-h", hintH + "px");
-      els.grid.style.width = (compactHint + (cell * cols)) + "px";
+      els.grid.style.width = (compactHint + (cell * cols) + 4) + "px";
       els.grid.style.maxWidth = "100%";
     }
 
@@ -375,12 +452,6 @@
       if (!state.puzzle) return;
       const [rows, cols] = state.puzzle.size;
       updateGridMetrics(rows, cols);
-    }
-
-    function noteTouchInteraction(event) {
-      lastPointerType = event.pointerType || "";
-      if (event.pointerType !== "touch") return;
-      touchInteractionCount += 1;
     }
 
     function formatHint(values) {
@@ -414,76 +485,124 @@
     function updateSatisfiedHints() {
       if (!state.puzzle) return;
       const [rows, cols] = state.puzzle.size;
+      let rowsDone = 0;
+      let colsDone = 0;
 
       for (let r = 0; r < rows; r += 1) {
-        const hint = document.querySelector('.row-hint[data-row-hint="' + r + '"]');
+        const hint = els.grid.querySelector('.row-hint[data-row-hint="' + r + '"]');
         if (!hint) continue;
-        hint.classList.toggle("satisfied", sameHints(lineHints(state.cells[r]), state.puzzle.row_hints[r]));
+        const done = sameHints(lineHints(state.cells[r]), state.puzzle.row_hints[r]);
+        hint.classList.toggle("satisfied", done);
+        if (done) rowsDone += 1;
       }
 
       for (let c = 0; c < cols; c += 1) {
-        const hint = document.querySelector('.col-hint[data-col-hint="' + c + '"]');
+        const hint = els.grid.querySelector('.col-hint[data-col-hint="' + c + '"]');
         if (!hint) continue;
         const values = state.cells.map((row) => row[c]);
-        hint.classList.toggle("satisfied", sameHints(lineHints(values), state.puzzle.col_hints[c]));
+        const done = sameHints(lineHints(values), state.puzzle.col_hints[c]);
+        hint.classList.toggle("satisfied", done);
+        if (done) colsDone += 1;
       }
+
+      els.progressRows.textContent = rowsDone + " / " + rows;
+      els.progressCols.textContent = colsDone + " / " + cols;
+      els.progressRowsBar.style.width = Math.round((rowsDone / rows) * 100) + "%";
+      els.progressColsBar.style.width = Math.round((colsDone / cols) * 100) + "%";
     }
 
-    function applyPrimaryAction(event, row, col, cell) {
-      if (event.detail === 0 || lastPointerType === "touch") {
-        cycleTouch(row, col, cell);
-        return;
-      }
-      cycleFill(row, col, cell);
+    // The value a press in `mode` gives a cell: toggling off when it already
+    // holds that value, otherwise setting it.
+    function nextValueFor(row, col, mode) {
+      const target = mode === "mark" ? -1 : 1;
+      return state.cells[row][col] === target ? 0 : target;
     }
 
-    function cycleFill(row, col, cell) {
-      if (state.solved) return;
-      state.cells[row][col] = state.cells[row][col] === 1 ? 0 : 1;
-      paintCell(cell, state.cells[row][col]);
+    function applyValue(row, col, value) {
+      if (state.solved) return false;
+      if (state.cells[row][col] === value) return false;
+      state.cells[row][col] = value;
+      paintCell(state.cellNodes[row][col], value);
+      return true;
+    }
+
+    function finishChange() {
       updateSatisfiedHints();
-      checkSolved();
-    }
-
-    function cycleMark(row, col, cell) {
-      if (state.solved) return;
-      state.cells[row][col] = state.cells[row][col] === -1 ? 0 : -1;
-      paintCell(cell, state.cells[row][col]);
-      updateSatisfiedHints();
-      checkSolved();
-    }
-
-    function cycleTouch(row, col, cell) {
-      if (state.solved) return;
-      const current = state.cells[row][col];
-      const next = current === 0 ? 1 : current === 1 ? -1 : 0;
-      state.cells[row][col] = next;
-      paintCell(cell, next);
-      updateSatisfiedHints();
+      saveProgress();
       checkSolved();
     }
 
     function paintCell(cell, value) {
+      if (!cell) return;
       cell.classList.toggle("filled", value === 1);
       cell.classList.toggle("marked", value === -1);
       cell.setAttribute("aria-pressed", value !== 0 ? "true" : "false");
     }
 
+    function cellFromPoint(x, y) {
+      const node = document.elementFromPoint(x, y);
+      const cell = node && node.closest ? node.closest(".nono-grid .cell") : null;
+      if (!cell || !els.grid.contains(cell)) return null;
+      return { row: Number(cell.dataset.row), col: Number(cell.dataset.col) };
+    }
+
+    function beginStroke(event) {
+      lastPointerType = event.pointerType || "mouse";
+      if (lastPointerType !== "mouse") clearHover();
+      if (state.solved) return;
+      if (event.pointerType === "mouse" && event.button !== 0 && event.button !== 2) return;
+      const cell = event.target.closest ? event.target.closest(".cell") : null;
+      if (!cell || !els.grid.contains(cell)) return;
+      event.preventDefault();
+      const row = Number(cell.dataset.row);
+      const col = Number(cell.dataset.col);
+      const mode = event.pointerType === "mouse" && event.button === 2 ? "mark" : state.mode;
+      stroke = { pointerId: event.pointerId, value: nextValueFor(row, col, mode), last: row + ":" + col, changed: false };
+      try { els.grid.setPointerCapture(event.pointerId); } catch (error) { /* capture is a nicety */ }
+      if (applyValue(row, col, stroke.value)) stroke.changed = true;
+      updateSatisfiedHints();
+    }
+
+    function moveStroke(event) {
+      if (!stroke || event.pointerId !== stroke.pointerId) return;
+      const hit = cellFromPoint(event.clientX, event.clientY);
+      if (!hit) return;
+      const key = hit.row + ":" + hit.col;
+      if (key === stroke.last) return;
+      stroke.last = key;
+      if (applyValue(hit.row, hit.col, stroke.value)) {
+        stroke.changed = true;
+        updateSatisfiedHints();
+      }
+      if (event.pointerType === "mouse") setHover(hit.row, hit.col);
+    }
+
+    function endStroke(event) {
+      if (!stroke || event.pointerId !== stroke.pointerId) return;
+      const changed = stroke.changed;
+      stroke = null;
+      try { els.grid.releasePointerCapture(event.pointerId); } catch (error) { /* already released */ }
+      if (changed) {
+        saveProgress();
+        checkSolved();
+      }
+    }
+
     function setHover(row, col) {
-      document.querySelectorAll(".cell").forEach((cell) => {
+      els.grid.querySelectorAll(".cell").forEach((cell) => {
         cell.classList.toggle("row-hover", Number(cell.dataset.row) === row);
         cell.classList.toggle("col-hover", Number(cell.dataset.col) === col);
       });
-      document.querySelectorAll(".row-hint").forEach((hint) => {
+      els.grid.querySelectorAll(".row-hint").forEach((hint) => {
         hint.classList.toggle("active", Number(hint.dataset.rowHint) === row);
       });
-      document.querySelectorAll(".col-hint").forEach((hint) => {
+      els.grid.querySelectorAll(".col-hint").forEach((hint) => {
         hint.classList.toggle("active", Number(hint.dataset.colHint) === col);
       });
     }
 
     function clearHover() {
-      document.querySelectorAll(".row-hover, .col-hover, .hint.active").forEach((node) => {
+      els.grid.querySelectorAll(".row-hover, .col-hover, .hint.active").forEach((node) => {
         node.classList.remove("row-hover", "col-hover", "active");
       });
     }
@@ -503,32 +622,40 @@
     function revealSolution() {
       if (state.solved) return;
       state.solved = true;
+      stroke = null;
+      clearHover();
       els.playArea.classList.add("is-solved");
       els.image.src = getSolutionImageSrc(state.puzzle);
       els.solutionTitle.textContent = state.puzzle.title || "이미지 해제";
-      els.side.hidden = false;
+      els.solutionPanel.hidden = false;
       renderSourceNote(state.puzzle.source);
       renderQuestions(state.puzzle.questions || []);
-      els.questions.classList.add("unlocked");
+      els.questions.hidden = false;
       els.status.textContent = "이미지 해제";
+      els.sideNote.textContent = "그림이 열렸습니다. 아래 맥락 질문에 답해 보세요.";
+      saveProgress();
+      markSolvedId(state.currentPuzzleId);
+      if (window.matchMedia("(max-width: 920px)").matches) {
+        els.solutionPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
 
     function renderQuestions(questions) {
       els.questionList.innerHTML = "";
       questions.forEach((question, index) => {
         const wrap = document.createElement("article");
-        wrap.className = "question";
+        wrap.className = "nono-question";
 
         const prompt = document.createElement("p");
         prompt.textContent = (index + 1) + ". " + question.q;
         wrap.appendChild(prompt);
 
         const answers = document.createElement("div");
-        answers.className = "answers";
+        answers.className = "nono-answers";
         question.a.forEach((answer, answerIndex) => {
           const button = document.createElement("button");
           button.type = "button";
-          button.className = "answer";
+          button.className = "nono-answer";
           button.textContent = answer;
           button.addEventListener("click", () => chooseAnswer(index, answerIndex, button));
           answers.appendChild(button);
@@ -541,7 +668,7 @@
     function chooseAnswer(questionIndex, answerIndex, button) {
       const question = state.puzzle.questions[questionIndex];
       const group = button.parentElement;
-      group.querySelectorAll(".answer").forEach((node) => {
+      group.querySelectorAll(".nono-answer").forEach((node) => {
         node.classList.remove("correct", "wrong");
       });
 
@@ -557,22 +684,27 @@
 
     function checkComplete() {
       if (state.answers.size !== state.puzzle.questions.length) return;
-      els.complete.classList.add("show");
+      els.complete.hidden = false;
+      els.next.hidden = !getNextPuzzleEntry();
       els.status.textContent = "완료";
+      els.sideNote.textContent = "퍼즐과 질문을 모두 통과했습니다.";
     }
 
     function resetPuzzle() {
       if (!state.puzzle) return;
       if (!window.confirm("퍼즐을 초기화할까요?")) return;
+      const all = readStorage(STORAGE_KEY) || {};
+      delete all[state.currentPuzzleId];
+      writeStorage(STORAGE_KEY, all);
       renderPuzzle(state.puzzle);
     }
 
     function copyShareLink() {
       const link = window.location.origin + "/nonogram/?p=" + encodeURIComponent(state.currentPuzzleId);
       navigator.clipboard?.writeText(link).then(() => {
-        els.shareText.textContent = "공유 링크 복사됨: " + link;
+        els.shareText.textContent = "복사됨: " + link;
       }).catch(() => {
-        els.shareText.textContent = "공유 링크: " + link;
+        els.shareText.textContent = link;
       });
     }
 
@@ -587,16 +719,31 @@
         window.history.replaceState(null, "", url.pathname + url.search + url.hash);
       } catch (error) {
         els.status.textContent = "로딩 실패";
-        els.select.value = state.currentPuzzleId;
+        refreshPuzzleSelection();
       }
     }
 
     els.reset.addEventListener("click", resetPuzzle);
-    els.select.addEventListener("change", () => switchPuzzle(els.select.value));
     els.share.addEventListener("click", copyShareLink);
+    els.next.addEventListener("click", () => {
+      const next = getNextPuzzleEntry();
+      if (next) {
+        switchPuzzle(next.id);
+        els.playArea.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+    els.modeFill.addEventListener("click", () => setMode("fill"));
+    els.modeMark.addEventListener("click", () => setMode("mark"));
+    els.grid.addEventListener("pointerdown", beginStroke);
+    els.grid.addEventListener("pointermove", moveStroke);
+    els.grid.addEventListener("pointerup", endStroke);
+    els.grid.addEventListener("pointercancel", endStroke);
+    els.grid.addEventListener("contextmenu", (event) => event.preventDefault());
+    els.grid.addEventListener("mouseleave", clearHover);
     resizeObserver = new ResizeObserver(refreshGridMetrics);
     resizeObserver.observe(els.playArea);
 
+    loadSolvedIds();
     loadInitialPuzzle().then(renderPuzzle).catch(() => {
       els.status.textContent = "로딩 실패";
     });

@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-  <%- include('../partials/head', { pageTitle: strings.nav.game + ' - 노노그램', pageDescription: '모바일에서도 풀 수 있는 Cyber-Lenin 노노그램 미니게임', pagePath: '/nonogram/' }) %>
+  <%- include('../partials/head', { pageTitle: '노노그램', pageDescription: '숫자 힌트로 숨은 그림을 완성하고 맥락 질문을 푸는 Cyber-Lenin 논리 퍼즐', pagePath: '/nonogram/', hasEnglishVersion: false }) %>
+  <link rel="stylesheet" href="/css/games.css?v=<%= assetVersion %>">
   <link rel="stylesheet" href="/css/nonogram.css?v=<%= assetVersion %>">
 </head>
 <body class="nonogram-page">
   <%- include('../partials/nav') %>
 
-  <main>
-    <p><a href="/games/">← 게임 선택</a></p>
-    <header class="topbar">
-      <div>
-        <h1>노노그램</h1>
-        <p class="subtitle">퍼즐을 풀고 이미지를 해제한 뒤 질문까지 통과해야 완료된다.</p>
-      </div>
-      <div class="topbar-controls">
-        <nav class="puzzle-strip" id="puzzleStrip" aria-label="문제 선택" hidden>
-          <span class="puzzle-strip-label">문제</span>
-          <div class="puzzle-strip-items" id="puzzleStripItems"></div>
-        </nav>
-        <div class="status" id="status">퍼즐 로딩 중</div>
-      </div>
+  <main class="games-shell nono-shell">
+    <%- include('../partials/games-crumb', { current: '노노그램', sibling: { label: '파업 게임', href: '/games/strike/' } }) %>
+    <header class="nono-heading">
+      <div><p class="games-kicker">논리 퍼즐 / 나만의 속도로</p><h1>노노그램</h1></div>
+      <p class="nono-heading-note">숫자 힌트로 숨은 그림을 완성하고,<br>그림에 담긴 맥락 질문을 풀면 완료됩니다.</p>
     </header>
+    <noscript><p>플레이하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
 
-    <section class="layout">
-      <div class="play-area" id="playArea">
-        <div class="toolbar">
-          <div class="toolbar-title"><strong id="puzzleHintTitle">우리의 귀요미 마스코트</strong> <span id="puzzleSize">10 x 10</span></div>
-          <div class="toolbar-actions">
-            <label class="puzzle-picker" id="puzzlePicker" hidden>
-              <span>퍼즐</span>
-              <select id="puzzleSelect" aria-label="퍼즐 선택"></select>
-            </label>
-            <button class="reset-btn" id="resetButton" type="button">초기화</button>
-          </div>
-        </div>
-        <p class="input-guide mouse-guide" id="mouseGuide">좌클릭으로 칠하고 우클릭으로 X 표시한다.</p>
-        <p class="input-guide touch-guide" id="touchGuide">터치할 때마다 칸이 채우기, X 표시, 비우기 순서로 바뀐다.</p>
-        <div class="puzzle-wrap">
-          <div class="nonogram-grid" id="grid" aria-label="노노그램 퍼즐판"></div>
-          <div class="solution-panel" id="solutionPanel" aria-live="polite">
-            <div class="solution-card">
-              <img id="solutionImage" alt="해제된 해답 이미지">
-              <h2 id="solutionTitle">이미지 해제</h2>
-              <p>이제 맥락 질문을 통과하면 완료된다.</p>
+    <nav class="nono-picker" id="puzzleStrip" aria-label="문제 선택" hidden>
+      <span class="games-kicker">문제</span>
+      <div class="nono-picker-items" id="puzzleStripItems"></div>
+    </nav>
+
+    <div class="nono-layout">
+      <section class="nono-board-panel" id="playArea" aria-label="퍼즐판">
+        <div class="nono-toolbar">
+          <div class="nono-toolbar-title"><strong id="puzzleHintTitle"></strong><span id="puzzleSize"></span></div>
+          <div class="nono-toolbar-actions">
+            <div class="nono-mode" role="group" aria-label="입력 모드">
+              <button type="button" id="modeFill" class="nono-mode-btn is-active" aria-pressed="true"><i class="nono-swatch nono-swatch-fill" aria-hidden="true"></i>칠하기</button>
+              <button type="button" id="modeMark" class="nono-mode-btn" aria-pressed="false"><i class="nono-swatch nono-swatch-mark" aria-hidden="true"></i>X 표시</button>
             </div>
+            <button type="button" id="resetButton" class="nono-reset">초기화</button>
           </div>
         </div>
-      </div>
+        <div class="nono-board-scroll">
+          <div class="nono-grid" id="grid" aria-label="노노그램 퍼즐판"></div>
+        </div>
+        <p class="nono-guide mouse-guide" id="mouseGuide">드래그하면 여러 칸을 한 번에 칠하고, 우클릭은 X 표시입니다.</p>
+        <p class="nono-guide touch-guide" id="touchGuide">모드를 고른 뒤 칸을 누르거나 밀어서 칠합니다.</p>
+      </section>
 
-      <aside class="side" id="sidePanel" hidden>
-        <div class="source-note" id="sourceNote" hidden></div>
-        <section class="questions" id="questions">
-          <h2>질문</h2>
-          <p>퍼즐을 정확히 풀면 답변이 열린다.</p>
+      <aside class="nono-side" id="sidePanel">
+        <section class="nono-status" aria-live="polite">
+          <p class="games-kicker" id="status">퍼즐 로딩 중</p>
+          <div class="nono-progress">
+            <div class="nono-progress-row"><span>행</span><strong id="progressRows">0 / 0</strong></div>
+            <div class="nono-progress-track"><i id="progressRowsBar"></i></div>
+            <div class="nono-progress-row"><span>열</span><strong id="progressCols">0 / 0</strong></div>
+            <div class="nono-progress-track"><i id="progressColsBar"></i></div>
+          </div>
+          <p class="nono-side-note" id="sideNote">힌트를 모두 만족하면 그림이 열립니다.</p>
+        </section>
+        <section class="nono-solution" id="solutionPanel" hidden>
+          <img id="solutionImage" alt="해제된 해답 이미지">
+          <h2 id="solutionTitle">이미지 해제</h2>
+          <p class="nono-source" id="sourceNote" hidden></p>
+        </section>
+        <section class="nono-questions" id="questions" hidden>
+          <p class="games-kicker">맥락 질문</p>
           <div id="questionList"></div>
         </section>
-        <section class="complete" id="complete">
-          <h2>완료</h2>
-          <p>퍼즐과 질문을 모두 통과했다.</p>
-          <button class="share-btn" id="shareButton" type="button">공유 링크 복사</button>
-          <p id="shareText">공유 링크 자리: /nonogram/?p=minchong-01</p>
+        <section class="nono-complete" id="complete" hidden>
+          <p class="games-kicker">완료</p>
+          <h2>퍼즐과 질문을 모두 통과했습니다.</h2>
+          <div class="nono-complete-actions">
+            <button type="button" id="nextButton" class="nono-primary" hidden>다음 문제 →</button>
+            <button type="button" id="shareButton">공유 링크 복사</button>
+          </div>
+          <p id="shareText" class="nono-share-text"></p>
         </section>
       </aside>
-    </section>
+    </div>
   </main>
 
   <%- include('../partials/footer') %>

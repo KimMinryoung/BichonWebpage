@@ -5,6 +5,7 @@
 | 작업 | 문서 |
 | --- | --- |
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
+| 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
 | CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
 | SEO 인덱싱 | [기존 계획](seo-indexing-plan.md) |

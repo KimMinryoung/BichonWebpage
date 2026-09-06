@@ -8,7 +8,7 @@
 <body>
   <%- include('../partials/nav') %>
   <main class="games-shell strike-shell">
-    <a class="game-back" href="/games/">← 게임 선택</a>
+    <%- include('../partials/games-crumb', { current: '파업기금이 바닥나기 전에', sibling: { label: '노노그램', href: '/nonogram/' } }) %>
     <header class="strike-heading"><div><p class="games-kicker">현장 전략 / 12일의 연대</p><h1>파업기금이 바닥나기 전에</h1></div><span class="strike-edition">함께 멈추고, 함께 버티다.</span></header>
     <noscript><p>플레이하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
     <section id="strikeSetup" class="strike-intro">
