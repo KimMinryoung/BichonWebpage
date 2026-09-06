@@ -27,7 +27,7 @@
     function meters() {
         el('strikeStats').replaceChildren(...[
             ['생활 기금', state.fund, Math.min(100, state.fund), state.fund < 20 ? '생활 지원이 빠듯합니다' : '함께 버틸 생활비'],
-            ['함께하는 노동자', state.unity + '%', state.unity, state.unity < 30 ? '조직 활동이 필요합니다' : '조직하면 더 모입니다'],
+            ['함께하는 노동자', state.unity + '%', state.unity, state.unity < 20 ? '이틀 연속 낮으면 파업이 끝납니다' : '줄면 생산 중단·교섭력이 약해집니다'],
             ['현장 생산', state.production + '%', state.production, state.production <= 30 ? '라인이 거의 멈췄습니다' : '낮을수록 파업의 힘'],
             ['밀린 출하', Math.ceil(state.backlog / 40) + '대분', state.backlog / 4, '쌓일수록 교섭 압박']
         ].map(([title, value, width, caption]) => {
@@ -42,7 +42,7 @@
     function crews() {
         el('strikeCrews').replaceChildren(...state.crews.map(c => {
             const b = button('', () => { selected = c.id; render(); el('strikeCrews').querySelector('[data-crew="' + c.id + '"]').focus({ preventScroll: true }); }, 'strike-crew'); b.disabled = moving || state.phase !== 'planning'; b.dataset.crew = c.id; b.setAttribute('aria-pressed', String(selected === c.id));
-            const face = node('span', c.fatigue >= 75 ? '◡̈' : '•ᴗ•', 'strike-avatar'); face.dataset.color = c.id;
+            const face = node('span', c.fatigue >= 75 ? '•︵•' : c.fatigue >= 45 ? '•_•' : '•ᴗ•', 'strike-avatar'); face.dataset.color = c.id; face.dataset.fatigue = c.fatigue >= 75 ? 'exhausted' : c.fatigue >= 45 ? 'tired' : 'fresh';
             const copy = node('span', '', 'strike-crew-copy'); copy.append(node('strong', c.name + ' 조'), node('small', g.jobs[c.job].title));
             const energy = node('span', '피로 ' + c.fatigue, 'strike-energy');
             b.append(face, copy, energy); b.setAttribute('aria-label', `${c.name} 조, ${g.jobs[c.job].title}, 피로 ${c.fatigue}`); return b;
@@ -81,7 +81,7 @@
         el('strikeDay').textContent = `${state.mode === 'hard' ? '어려움' : '기본'} / DAY ${String(state.day).padStart(2, '0')} OF 12`;
         el('strikeEvent').textContent = done ? '파업을 돌아보며' : cue.title;
         el('strikeFieldEvent').dataset.tone = cue.tone;
-        el('strikeEventPhase').textContent = done ? '파업 종료' : review ? '오늘 적용된 사건' : '오늘의 사건 · 배치 전에 확인';
+        el('strikeEventPhase').textContent = done ? '파업 종료' : review ? '오늘 적용된 사건' : '오늘의 사건';
         el('strikeEventBadge').textContent = done ? '결산' : cue.badge;
         el('strikeEventText').textContent = done ? '아래 결산에서 합의와 남은 조직을 확인하세요.' : cue.text;
         el('strikeCalendar').replaceChildren(...Array.from({ length: 12 }, (_, i) => {

@@ -40,8 +40,8 @@
 .strike-person.is-selected > ellipse { fill: #a5393d; stroke: #fff3d4; stroke-width: 2; }
 .strike-person.is-tired > rect:not(.strike-person-hit) { opacity: .65; }
 .strike-person.is-tired > .crew-mood { font-weight: bold; }
-.scene-moving #strikeConveyor { animation: strike-belt var(--belt-speed, 1s) linear infinite; }
-.scene-moving.scene-stopped #strikeConveyor { animation: none; }
+.scene-operating #strikeConveyor { animation: strike-belt var(--belt-speed, 1s) linear infinite; }
+.scene-stopped #strikeConveyor { animation: none; }
 .scene-moving #strikeSupplies { animation: strike-arrive .9s ease both; }
 .scene-moving #strikeTrucks { animation: strike-arrive 1.4s ease both; }
 @keyframes strike-belt { to { transform: translateX(45px); } }
@@ -66,7 +66,7 @@
 @media (max-width: 1000px) { .strike-daybar { align-items: flex-start; flex-direction: column; gap: 14px; }.strike-board-layout { grid-template-columns: minmax(0, 1fr) 250px; }.strike-edition { display: none; }.strike-intro-copy { padding: 26px; } }
 @media (max-width: 760px) { .strike-board-layout { grid-template-columns: 1fr; }.strike-intro { grid-template-columns: 1fr; }.strike-intro-art { min-height: 330px; }.intro-factory { margin-top: 85px; }.strike-roster { padding: 14px; }#strikeCrews { grid-template-columns: repeat(2, 1fr); }.strike-command { flex-direction: column; gap: 0; align-items: stretch; }.strike-deal-grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .strike-meters { grid-template-columns: repeat(2, 1fr); gap: 8px; }.strike-meter { padding: 12px; }.strike-meter strong { font-size: 1.3rem; }.strike-calendar { gap: 3px; width: 100%; }.strike-calendar span { text-align: center; padding: 7px 0; }.strike-field-heading { padding: 12px 8px; font-size: .65rem; }.games-shell .strike-crew { padding: 8px 6px; gap: 6px; }.strike-avatar { width: 26px; font-size: .75rem; }.strike-energy { font-size: .65rem; }.strike-intro-copy { padding: 22px; }.strike-demands strong { padding: 8px; font-size: .8rem; } }
-@media (prefers-reduced-motion: reduce) { .strike-person, .strike-meter-track i { transition: none; }.scene-moving #strikeConveyor, .scene-moving #strikeTrucks, .scene-moving #strikeSupplies { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .strike-person, .strike-meter-track i { transition: none; }.scene-operating #strikeConveyor, .scene-moving #strikeTrucks, .scene-moving #strikeSupplies { animation: none; } }
 #strikeScene { position: relative; }
 
 .strike-person[aria-disabled="false"] { cursor: grab; touch-action: none; }
@@ -126,3 +126,24 @@
 .strike-log-table tbody tr:nth-child(even) { background: var(--bg-surface); }
 @media (max-width: 760px) { .strike-field-event { margin: 10px; padding: 12px; }.strike-field-event h2 { font-size: 1.1rem; }.strike-field-event p { font-size: .85rem; } }
 #strikeEventPhase { color: #54645b; }
+
+.crew-body, .crew-sign { transition: transform .5s ease; }
+.crew-sign { visibility: hidden; transform-origin: 17px 14px; }
+.is-picketing .crew-sign { visibility: visible; }
+.is-tired .crew-body { transform: translateY(4px) rotate(12deg); transform-origin: 0 24px; }
+.is-tired .crew-sign { transform: rotate(40deg); }
+.is-exhausted .crew-body { transform: translateY(7px) rotate(24deg); }
+.is-exhausted .crew-sign { transform: rotate(70deg); }
+.is-exhausted .crew-torso { filter: saturate(.45); }
+.is-resting .crew-body { transform: translateY(6px) rotate(-8deg); }
+.crew-sweat, .crew-recovery { opacity: 0; }
+.is-tired:not(.is-resting) .crew-sweat, .is-recovering .crew-recovery { opacity: 1; }
+.scene-moving .is-recovering .crew-recovery { animation: strike-recover 1.1s ease-out infinite; }
+.scene-moving .is-picketing:not(.is-tired) .crew-sign { animation: strike-wave .9s ease-in-out infinite alternate; }
+.strike-supporter { opacity: 0; transform: translate(calc(var(--crowd-x) + 22px), var(--crowd-y)); transition: opacity .9s ease, transform .9s ease; }
+.strike-supporter.is-present { opacity: 1; transform: translate(var(--crowd-x), var(--crowd-y)); }
+.strike-avatar[data-fatigue="tired"] { filter: saturate(.65); }
+.strike-avatar[data-fatigue="exhausted"] { filter: saturate(.25); }
+@keyframes strike-recover { to { transform: translateY(-15px); opacity: 0; } }
+@keyframes strike-wave { to { transform: rotate(-12deg); } }
+@media (prefers-reduced-motion: reduce) { .crew-body, .crew-sign, .strike-supporter { transition: none; }.scene-moving .crew-recovery, .scene-moving .crew-sign { animation: none; } }

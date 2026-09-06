@@ -75,4 +75,11 @@ const legacy = JSON.parse(JSON.stringify(final));
 legacy.history.forEach(r => { delete r.income; delete r.cost; });
 assert.equal(JSON.stringify(g.restore(JSON.stringify(legacy))), JSON.stringify(final), 'existing v2 saves regain structured funding data');
 
+assert.equal(g.crewCondition({ fatigue: 55, job: 'picket' }).strength, .5);
+assert.equal(g.crewCondition({ fatigue: 100, job: 'picket' }).strength, .25);
+assert.equal(g.crewCondition({ fatigue: 57, job: 'picket' }).unityPenalty, 3);
+assert.equal(g.crewCondition({ fatigue: 56, job: 'picket' }).unityPenalty, 0);
+assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).nextFatigue, 33);
+assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).unityPenalty, 0);
+
 console.log('Strike v2: 448 campaigns, three winning strategies, repetitive strategies, deterministic restore, resource bounds and final bargaining passed.');

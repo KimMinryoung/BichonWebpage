@@ -108,11 +108,30 @@
             const marker = svg('g', { class: 'strike-event-marker', visibility: 'hidden' });
             marker.append(svg('rect', { x: a.x + 206, y: a.y + 51, width: 151, height: 31, rx: 6, fill: '#fff3ce', stroke: '#855d22', 'stroke-width': 2 }), svg('text', { x: a.x + 281, y: a.y + 73, 'text-anchor': 'middle', fill: '#5c421a', 'font-size': 21, 'font-weight': 'bold' }));
             zone.append(marker);
+            if (job === 'picket') {
+                const crowd = svg('g', { id: 'strikeSupporters', 'aria-hidden': 'true', 'pointer-events': 'none' });
+                for (let i = 0; i < 12; i++) {
+                    const member = svg('g', { class: 'strike-supporter', 'data-supporter': i });
+                    member.style.setProperty('--crowd-x', (a.x + 42 + (i % 6) * 56) + 'px');
+                    member.style.setProperty('--crowd-y', (a.y + 113 + Math.floor(i / 6) * 40) + 'px');
+                    member.append(svg('path', { d: 'M-4 17L-6 25M4 17L6 25', stroke: '#384f52', 'stroke-width': 5 }), svg('rect', { x: -9, y: -1, width: 18, height: 21, rx: 5, fill: i % 2 ? '#687f77' : '#99695a' }), svg('circle', { cx: 0, cy: -8, r: 9, fill: '#d7b18e' }));
+                    if (i % 3 === 0) member.append(svg('path', { d: 'M11 16V-26', stroke: '#705844', 'stroke-width': 3 }), svg('rect', { x: 11, y: -27, width: 23, height: 15, fill: '#b3453c' }));
+                    crowd.append(member);
+                }
+                zone.append(crowd);
+            }
             root.querySelector('#strikePlaces').append(zone);
         });
         state.crews.forEach(c => {
             const person = svg('g', { 'data-crew-sprite': c.id, class: 'strike-person', 'aria-hidden': 'true' });
             person.append(svg('rect', { x: -54, y: -37, width: 108, height: 100, rx: 10, fill: 'transparent', class: 'strike-person-hit' }), svg('ellipse', { cx: 0, cy: 30, rx: 22, ry: 6, fill: '#283e4425' }), svg('path', { d: 'M-8 16L-12 28M8 16L12 28', stroke: '#33474d', 'stroke-width': 7, 'stroke-linecap': 'round' }), svg('rect', { x: -14, y: -8, width: 28, height: 28, rx: 7, fill: ['#bd493e', '#547f87', '#cd9142', '#647c50', '#836486', '#497a68'][c.id] }), svg('circle', { cx: 0, cy: -19, r: 14, fill: '#e2b38b' }), svg('path', { d: 'M-14 -20Q-14 -40 9 -32L15 -20Z', fill: '#384b4e' }), svg('path', { d: 'M-5 -19h1M5 -19h1', stroke: '#35454b', 'stroke-width': 2 }), svg('text', { x: 0, y: 49, 'text-anchor': 'middle', 'font-size': 22, fill: '#253d42', 'font-weight': 'bold' }, c.name), svg('text', { x: 24, y: -20, class: 'crew-mood', 'font-size': 22, fill: '#8d3432' }));
+            const parts = Array.from(person.children).slice(2, 7);
+            parts[0].classList.add('crew-legs'); parts[1].classList.add('crew-torso');
+            const body = svg('g', { class: 'crew-body' }); body.append(...parts);
+            const sign = svg('g', { class: 'crew-sign' });
+            sign.append(svg('path', { d: 'M17 14V-39', stroke: '#725539', 'stroke-width': 4 }), svg('rect', { x: 17, y: -40, width: 28, height: 20, rx: 2, fill: '#b23832', stroke: '#ffebce', 'stroke-width': 2 }));
+            body.append(sign); person.insertBefore(body, person.children[2]);
+            person.append(svg('path', { class: 'crew-sweat', d: 'M27 -15Q16 0 27 0Q38 0 27 -15Z', fill: '#458fa5', stroke: '#d8f3f5', 'stroke-width': 2 }), svg('text', { class: 'crew-recovery', x: -31, y: -15, fill: '#38815a', 'font-size': 25, 'font-weight': 'bold' }, '+'));
             root.querySelector('#strikePeople').append(person);
             const handle = document.createElement('button'); handle.type = 'button';
             handle.className = 'strike-crew-handle'; handle.dataset.crewHandle = c.id;
@@ -125,8 +144,11 @@
         Object.assign(stage, { state, selected, moving, onAssign, onSelect });
         const { root } = stage, enabled = state.phase === 'planning' && !moving;
         root.classList.toggle('scene-moving', moving);
-        root.classList.toggle('scene-stopped', state.production < 25);
-        root.style.setProperty('--belt-speed', (state.production < 50 ? 2.5 : 1) + 's');
+        root.classList.toggle('scene-stopped', state.production === 0);
+        root.classList.toggle('scene-operating', state.phase !== 'done' && state.production > 0);
+        root.style.setProperty('--belt-speed', (100 / Math.max(1, state.production)).toFixed(2) + 's');
+        const crowdSize = Math.ceil(state.unity * 12 / 100);
+        root.querySelectorAll('[data-supporter]').forEach((member, i) => member.classList.toggle('is-present', i < crowdSize));
         const cue = eventCue(state);
         root.querySelectorAll('[data-map-job]').forEach(zone => {
             const job = zone.dataset.mapJob;
@@ -146,7 +168,12 @@
             person.dataset.x = x + (slot % 3) * 112; person.dataset.y = y + Math.floor(slot / 3) * 100;
             person.style.transform = `translate(${person.dataset.x}px, ${person.dataset.y}px)`;
             person.classList.toggle('is-selected', selected === c.id && enabled);
-            person.classList.toggle('is-tired', c.fatigue >= 75);
+            person.classList.toggle('is-tired', c.fatigue >= 45);
+            person.classList.toggle('is-exhausted', c.fatigue >= 75);
+            person.classList.toggle('is-resting', c.job === 'rest');
+            person.classList.toggle('is-picketing', c.job === 'picket');
+            person.classList.toggle('is-recovering', c.job === 'rest' && c.fatigue > 0);
+            person.querySelector('.crew-legs').setAttribute('d', c.job === 'rest' || c.fatigue >= 75 ? 'M-8 16L-18 18V28M8 16L18 18V28' : 'M-8 16L-12 28M8 16L12 28');
             person.setAttribute('aria-disabled', String(!enabled));
             person.setAttribute('aria-pressed', String(selected === c.id));
             person.setAttribute('aria-label', `${c.name} 조. ${window.StrikeGame.jobs[c.job].title}. 피로 ${c.fatigue}. 선택하거나 끌어서 배치`);
@@ -155,7 +182,7 @@
             handle.setAttribute('aria-pressed', String(selected === c.id));
             handle.style.left = (Number(person.dataset.x) - 54) / 8 + '%';
             handle.style.top = (Number(person.dataset.y) - 37) / 8.6 + '%';
-            person.querySelector('.crew-mood').textContent = c.fatigue >= 75 ? '…' : c.job === 'rest' ? 'z' : c.job === 'picket' ? '⚑' : '';
+            person.querySelector('.crew-mood').textContent = c.job === 'rest' ? 'z' : c.fatigue >= 75 ? '…' : '';
         });
         const trucks = root.querySelector('#strikeTrucks'); trucks.replaceChildren();
         for (let i = 0; i < Math.min(4, Math.ceil(state.backlog / 40)); i++) {

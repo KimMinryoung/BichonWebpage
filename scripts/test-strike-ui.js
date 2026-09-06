@@ -148,6 +148,35 @@ async function main() {
         assert.equal(await touch.locator('[data-map-job="solidarity"] .strike-event-marker').getAttribute('visibility'), 'visible');
         assert.equal(await touch.locator('#strikeForecast, #strikeSelection, #strikeHint').count(), 0);
         await touch.screenshot({ path: '/tmp/strike-support-event.png', fullPage: true });
+        await touch.evaluate(() => {
+            const g = window.StrikeGame; let s = g.start();
+            for (let day = 0; day < 3; day++) {
+                for (let id = 0; id < 6; id++) s = g.assign(s, id, 'picket');
+                s = g.next(g.advance(s).state);
+            }
+            localStorage.setItem('strike-game-v2-save', JSON.stringify(s));
+        });
+        await touch.reload(); await touch.click('#strikeContinue');
+        assert.equal(await touch.locator('#strikeEventPhase').textContent(), '오늘의 사건');
+        assert.equal(await touch.locator('[data-crew-sprite="0"].is-tired').count(), 1);
+        assert.equal(await touch.locator('[data-crew-sprite="0"].is-picketing').count(), 1);
+        assert.equal(await touch.locator('.strike-crew-facts').count(), 0);
+        const crowdBefore = await touch.locator('.strike-supporter.is-present').count();
+        assert.equal(crowdBefore, 7);
+        await touch.screenshot({ path: '/tmp/strike-fatigue-before.png', fullPage: true });
+        await touch.locator('[data-map-job="rest"]').tap({ position: { x: 16, y: 12 } });
+        assert.equal(await touch.locator('[data-crew-sprite="0"].is-resting.is-recovering').count(), 1);
+        await touch.click('#strikeAdvance');
+        assert.equal(await touch.locator('[data-crew-sprite="0"].is-tired').count(), 0);
+        assert.ok(await touch.locator('.strike-supporter.is-present').count() < crowdBefore);
+        assert.equal(await touch.locator('[data-crew-sprite].is-exhausted').count(), 5);
+        const snapshot = await touch.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v2-save')));
+        const belt = await touch.locator('#strikeScene svg').evaluate(n => n.style.getPropertyValue('--belt-speed'));
+        assert.equal(belt, (100 / Math.max(1, snapshot.production)).toFixed(2) + 's');
+        await touch.click('#strikeNext');
+        await touch.locator('[data-map-job="picket"]').tap({ position: { x: 16, y: 12 } });
+        assert.equal(await touch.locator('[data-crew-sprite="0"].is-picketing:not(.is-tired)').count(), 1);
+        await touch.screenshot({ path: '/tmp/strike-fatigue-after.png', fullPage: true });
         await touchContext.close();
         await page.goto(origin + '/games/strike/');
         for (const mode of ['normal', 'hard']) {

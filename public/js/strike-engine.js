@@ -5,7 +5,7 @@
         picket: { title: '정문 피켓', icon: '⚑', desc: '생산과 출하를 늦춥니다. 피로가 크게 쌓입니다.' },
         organize: { title: '조직 천막', icon: '✊', desc: '참여를 넓히고 이탈한 동료를 다시 모읍니다.' },
         solidarity: { title: '연대 부스', icon: '▣', desc: '생활 지원금을 모읍니다. 여러 조를 보내면 효율이 줄어듭니다.' },
-        rest: { title: '휴식처', icon: '☕', desc: '피로를 회복합니다. 지친 조부터 교대하세요.' }
+        rest: { title: '휴식처', icon: '☕', desc: '지친 동료를 쉬게 해 파업의 힘을 회복하고, 과로로 인한 참여 이탈을 막습니다.' }
     };
     const names = ['민서', '준호', '수진', '태호', '은별', '도윤'];
     const clamp = n => Math.max(0, Math.min(100, n));
@@ -34,6 +34,10 @@
         if (s.phase !== 'planning' || !Number.isInteger(id) || !s.crews[id] || !jobs[job]) throw new Error('지금 배치할 수 없습니다');
         const n = copy(s); n.crews[id].job = job; return n;
     }
+    function crewCondition(c) {
+        const nextFatigue = clamp(c.fatigue + { picket: 18, organize: 6, solidarity: 8, rest: -42 }[c.job]);
+        return { strength: Math.max(.25, 1 - c.fatigue / 110), nextFatigue, unityPenalty: nextFatigue >= 75 ? 3 : 0 };
+    }
     function power(s) { return Math.max(0, Math.round(s.backlog * .18 + s.unity * .34 - fatigue(s) * .35 - (s.mode === 'hard' ? 7 : 0))); }
     function offers(s) {
         const p = power(s);
@@ -44,7 +48,7 @@
         if (s.phase !== 'planning') throw new Error('하루가 이미 진행되었습니다');
         const n = copy(s), e = event(s);
         const count = job => s.crews.filter(c => c.job === job).length;
-        const strength = s.crews.filter(c => c.job === 'picket').reduce((a, c) => a + Math.max(.25, 1 - c.fatigue / 110), 0);
+        const strength = s.crews.filter(c => c.job === 'picket').reduce((a, c) => a + crewCondition(c).strength, 0);
         const stopped = clamp(Math.round(strength * 20 * (.55 + s.unity / 140) * (e.kind === 'management' ? .82 : 1)));
         n.production = 100 - stopped;
         n.backlog = Math.max(0, Math.min(400, s.backlog + stopped * (e.kind === 'deadline' ? 1.5 : 1) - 26));
@@ -54,7 +58,7 @@
         const missing = Math.max(0, cost - s.fund - income);
         n.fund = Math.max(0, s.fund + income - cost);
         n.shortage = missing ? s.shortage + 1 : 0;
-        n.crews.forEach(c => { c.fatigue = clamp(c.fatigue + { picket: 18, organize: 6, solidarity: 8, rest: -42 }[c.job]); });
+        n.crews.forEach(c => { c.fatigue = crewCondition(c).nextFatigue; });
         const exhausted = n.crews.filter(c => c.fatigue >= 75).length;
         n.unity = clamp(s.unity + Math.min(10, count('organize') * 6) - 2 - exhausted * 3 - (missing ? 9 : 0));
         const messages = [
@@ -64,7 +68,7 @@
             missing ? '생활 지원이 부족해 동료들이 흔들립니다. 연대와 조직으로 회복할 시간이 있습니다.' : '오늘의 생활 지원을 전달했습니다.'
         ];
         if (n.unity < 20 && s.unity >= 20) messages.push('참여가 20% 아래로 떨어졌습니다. 내일도 회복하지 못하면 파업이 종료됩니다.');
-        if (exhausted) messages.push(`${exhausted}개 조가 지쳤습니다. 교대하지 않으면 참여가 줄어듭니다.`);
+        if (exhausted) messages.push('지친 동료들이 파업에서 이탈해 참여율이 떨어졌습니다. 휴식과 교대가 필요합니다.');
         const record = { day: s.day, event: e.title, income, cost, production: n.production, backlog: n.backlog, fund: n.fund, unity: n.unity, jobs: s.crews.map(c => c.job), messages };
         n.history.push(record);
         n.phase = 'review';
@@ -108,5 +112,5 @@
             return n;
         } catch (_) { return null; }
     }
-    window.StrikeGame = { jobs, start, event, assign, advance, next, accept, fatigue, power, won, restore };
+    window.StrikeGame = { jobs, start, event, assign, advance, next, accept, fatigue, crewCondition, power, won, restore };
 })();
