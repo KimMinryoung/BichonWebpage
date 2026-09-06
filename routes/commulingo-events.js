@@ -10,6 +10,7 @@ const { getReportsForEvent } = require('../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { renderEventMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
 const { eventRelationsFor } = require('../data/commulingo/event-relations');
+const { decode: decodeEntities } = require('../data/commulingo/html-fragments');
 const { localize } = require('../data/commulingo/localize');
 const { renderMarkdown } = require('../utils/markdown');
 
@@ -205,8 +206,10 @@ async function buildEventPanel(eventId, lang) {
                 const id = `body-${event.bodySections.length + 1}`;
                 // The heading may already hold dictionary links from linkify;
                 // the contents entry takes the text and leaves the markup behind,
-                // because a link inside a link does not nest.
-                event.bodySections.push({ id, label: inner.replace(/<[^>]+>/g, '').trim() });
+                // because a link inside a link does not nest. The text is still
+                // HTML-escaped from the markdown pass, and the template escapes
+                // again, so decode it here or a quoted heading reads &quot;.
+                event.bodySections.push({ id, label: decodeEntities(inner.replace(/<[^>]+>/g, '')).trim() });
                 return `<h2 id="${id}">${inner}</h2>`;
             });
         }
