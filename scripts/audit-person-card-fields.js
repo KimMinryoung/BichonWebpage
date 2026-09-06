@@ -9,19 +9,22 @@
 //   - every person has a commulingo_person_roles row (office, category or icon);
 //   - fate labels are short card labels, not sentences;
 //   - citizenship / national-origin labels are not birthplaces.
+//   - life dates use year ranges, with matching numeric columns;
+//   - living people have no fate metadata or activity-status labels.
 // --verbose also lists fate labels longer than the soft limit as warnings.
 //
 // Usage: node scripts/audit-person-card-fields.js [--verbose]
 // (host or `docker exec leninbot-frontend node /app/scripts/...`)
 
 const { db } = require('./lib/bootstrap');
+const { personLifeProblems, parseLifeYears } = require('../data/commulingo/person-life-years');
 const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SOFT } = require('../data/commulingo/person-card-validation');
 
 (async () => {
     const verbose = process.argv.includes('--verbose');
     try {
         const { rows } = await db.query(
-            `SELECT p.id, p.fate_label_ko, p.fate_label_en,
+            `SELECT p.id, p.years_label, p.birth_year, p.death_year, p.fate_kind, p.fate_label_ko, p.fate_label_en,
                     p.citizenship_label_ko, p.citizenship_label_en,
                     p.origin_label_ko, p.origin_label_en,
                     r.person_id AS role_person_id
@@ -32,6 +35,9 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
         const problems = [];
         const warnings = [];
         for (const row of rows) {
+            for (const p of personLifeProblems(row.years_label, { kind: row.fate_kind, label: { ko: row.fate_label_ko, en: row.fate_label_en } })) problems.push(`${row.id}: ${p}`);
+            const years = parseLifeYears(row.years_label);
+            if (years.birthYear !== row.birth_year || years.deathYear !== row.death_year) problems.push(`${row.id}: birth_year/death_year disagree with years_label`);
             if (!row.role_person_id) problems.push(`${row.id}: no commulingo_person_roles row (set officeId, category or icon)`);
             for (const p of fateLabelProblems({ ko: row.fate_label_ko, en: row.fate_label_en })) problems.push(`${row.id}: ${p}`);
             for (const p of nationalityLabelProblems({
@@ -49,7 +55,7 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             for (const p of problems) console.log(`  ${p}`);
             process.exitCode = 1;
         } else {
-            console.log(`OK — ${rows.length} people checked: every card has a role row, a short fate label and nation (not birthplace) origin labels.`);
+            console.log(`OK — ${rows.length} people checked: valid life dates and fate metadata, role rows, short fate labels and nation origin labels.`);
         }
     } catch (err) {
         console.error(err);

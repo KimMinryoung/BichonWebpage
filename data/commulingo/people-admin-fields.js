@@ -1,5 +1,6 @@
 const { parsePeriod } = require('./people-standard');
 const { normalizeSovietKoreanText } = require('./korean-terminology');
+const { parseLifeYears: parsePersonLifeYears } = require('./person-life-years');
 
 // Small field helpers shared by the CommuLingo admin stores: bilingual
 // values, validation errors, and parsing of the free-text period labels.
@@ -26,12 +27,8 @@ function badRequest(message) {
 }
 
 function parseLifeYears(label) {
-    const match = /^(\d{3,4})[–-](\d{3,4})$/.exec(label || '');
-    if (!match) return { birthYear: null, deathYear: null };
-    return {
-        birthYear: Number.parseInt(match[1], 10),
-        deathYear: Number.parseInt(match[2], 10),
-    };
+    const { birthYear, deathYear } = parsePersonLifeYears(label);
+    return { birthYear, deathYear };
 }
 
 function periodColumns(label) {

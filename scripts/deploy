@@ -181,6 +181,11 @@ if ! docker exec "$CONTAINER_NAME" node /app/scripts/check-commulingo-code-db-dr
 fi
 log "CommuLingo code/DB drift check passed."
 
+if ! docker exec "$CONTAINER_NAME" node /app/scripts/audit-person-card-fields.js; then
+    err "Person card data audit failed — inspect life dates, fate and card metadata."
+    exit 1
+fi
+
 if [[ -n "$DEPLOYED" && "$LOCAL" != "$DEPLOYED" ]]; then
     CHANGED_COMMULINGO_LESSONS="$(node scripts/changed-commulingo-lessons.js "$DEPLOYED" "$LOCAL" 2>/dev/null || true)"
     if [[ -n "$CHANGED_COMMULINGO_LESSONS" ]]; then

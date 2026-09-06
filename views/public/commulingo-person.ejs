@@ -43,7 +43,7 @@
                         <% } %>
                         <%= person.years %>
                     </span>
-                    <% if (person.fateLabel && !/^\d{3,4}[–-]\s*$/.test(person.years)) { %>
+                    <% if (person.fateLabel) { %>
                     <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
                     <% } %>
                 </div>

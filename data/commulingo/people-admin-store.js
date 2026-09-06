@@ -5,6 +5,7 @@ const { OFFICE_ICON, normalizeFateLabel } = require('./people-standard');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumns, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
+const { personLifeProblems } = require('./person-life-years');
 const { nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate } = require('./people-admin-validation');
 
 // Person records for the CommuLingo admin API: list/get, create/update/
@@ -324,6 +325,8 @@ async function replaceCareer(client, personId, career) {
 
 async function createPersonAdmin(rawPayload, options = {}) {
     const payload = withNativeNameAliases(rawPayload || {});
+    const lifeProblems = personLifeProblems(payload.years ?? '', payload.fate);
+    if (lifeProblems.length) throw badRequest(lifeProblems.join(' | '));
     assertPersonHeadwords(payload);
     if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
     return withTransaction(options, async client => {
@@ -426,6 +429,13 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             const err = new Error('person not found');
             err.status = 404;
             throw err;
+        }
+        if (payload.years !== undefined || payload.fate !== undefined) {
+            const lifeProblems = personLifeProblems(
+                payload.years !== undefined ? payload.years : before.years,
+                payload.fate !== undefined ? payload.fate : before.fate
+            );
+            if (lifeProblems.length) throw badRequest(lifeProblems.join(' | '));
         }
         // The script check runs against the nationality the record will HAVE
         // after this patch, so fixing a wrong citizenship and the native name in

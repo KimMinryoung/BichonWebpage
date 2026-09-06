@@ -1,6 +1,7 @@
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
+const { parseLifeYears } = require('./person-life-years');
 
 const SCHEMA_VERSION = 'commulingo.people.v1';
 
@@ -109,16 +110,6 @@ function composeFromParts(given, patronymic, family, lang, citizenshipCode) {
     const joiner = familyFirstJoiner(citizenshipCode, lang);
     if (joiner !== null && given && family && !patronymic) return `${family}${joiner}${given}`;
     return [given, patronymic, family].filter(Boolean).join(' ');
-}
-
-function parseLifeYears(label) {
-    const match = /^(\d{3,4})[–-](\d{3,4})$/.exec(label || '');
-    if (!match) return { label: label || '', birthYear: null, deathYear: null };
-    return {
-        label,
-        birthYear: Number.parseInt(match[1], 10),
-        deathYear: Number.parseInt(match[2], 10),
-    };
 }
 
 // Fate labels carry the cause of death only — the death year already lives in
@@ -285,12 +276,12 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         epithet: localize(raw.epithet, lang),
         moment: localize(raw.moment, lang),
         bio: localize(raw.bio, lang),
-        fate: raw.fate ? {
+        fate: !years.isLiving && raw.fate ? {
             kind: raw.fate.kind || '',
             label: localize(raw.fate.label, lang),
         } : { kind: '', label: '' },
-        fateKind: raw.fate ? raw.fate.kind || '' : '',
-        fateLabel: raw.fate ? localize(raw.fate.label, lang) : '',
+        fateKind: !years.isLiving && raw.fate ? raw.fate.kind || '' : '',
+        fateLabel: !years.isLiving && raw.fate ? localize(raw.fate.label, lang) : '',
         citizenship: normalizeFlag(raw.citizenship, lang),
         origin: normalizeFlag(raw.origin, lang),
         linkExpressions: raw.linkExpressions || [],
