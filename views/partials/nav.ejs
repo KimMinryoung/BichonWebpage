@@ -59,7 +59,7 @@ const _navCur = (prefixes) => {
     return hit ? ' aria-current="page"' : '';
 };
 const _libraryPaths = ['/reports', '/hub', '/ai-diary', '/posts', '/post', '/novels', '/p'];
-// The game stays out of the primary nav on purpose — it lives as a footer icon.
+// The game stays out of the primary nav on purpose — it lives as a footer icon and as the last home card.
 const _navItems = [
     { key: 'chat', href: '/chat', label: strings.nav.chat, cur: _navCur(['/chat']) },
     { key: 'commulingo', href: '/commulingo', label: strings.nav.commuLingo, cur: _navCur(['/commulingo']) },
