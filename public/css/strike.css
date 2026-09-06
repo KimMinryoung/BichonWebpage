@@ -38,7 +38,7 @@
 #strikeScene svg { display: block; width: 100%; height: auto; }
 .strike-person { transition: transform .65s ease; }
 .strike-person.is-selected > ellipse { fill: #a5393d; stroke: #fff3d4; stroke-width: 2; }
-.strike-person.is-tired > rect { opacity: .65; }
+.strike-person.is-tired > rect:not(.strike-person-hit) { opacity: .65; }
 .strike-person.is-tired > .crew-mood { font-weight: bold; }
 .scene-moving #strikeConveyor { animation: strike-belt var(--belt-speed, 1s) linear infinite; }
 .scene-moving.scene-stopped #strikeConveyor { animation: none; }
@@ -46,12 +46,6 @@
 .scene-moving #strikeTrucks { animation: strike-arrive 1.4s ease both; }
 @keyframes strike-belt { to { transform: translateX(45px); } }
 @keyframes strike-arrive { from { transform: translateX(18px); opacity: .15; } to { transform: translateX(0); opacity: 1; } }
-.strike-site-buttons { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 12px; gap: 7px; }
-.games-shell .strike-site { color: #324b4b; background: #f5ecd9; border: 1px solid #b4ad98; padding: 12px 7px; text-align: left; border-radius: 5px; }
-.games-shell .strike-site[aria-pressed=true] { box-shadow: inset 0 0 0 2px #ab403b; border-color: #ab403b; }
-.strike-site strong, .strike-site span, .strike-site small { display: block; }
-.strike-site strong { font-size: .85rem; }.strike-site span { font-size: .8rem; margin: 7px 0; }.strike-site small { font-size: .7rem; line-height: 1.6; }
-.games-shell .strike-site:disabled { opacity: 1; }
 .strike-scene-summary { font-size: .75rem; padding: 0 15px; line-height: 1.6; }
 .strike-roster { background: var(--bg-surface); border: 1px solid var(--border); padding: 16px; }
 .strike-roster h2 { font-size: 1.1rem; margin: 8px 0; }
@@ -72,17 +66,48 @@
 .strike-history { border-block: 1px solid var(--border); padding: 16px 0; }.strike-history summary { cursor: pointer; }.strike-history ol { max-height: 260px; overflow: auto; font-size: .85rem; line-height: 1.8; }.strike-history li { margin-bottom: 16px; }
 #strikeAnnouncement { color: var(--text-secondary); line-height: 1.7; }
 @media (max-width: 1000px) { .strike-daybar { align-items: flex-start; flex-direction: column; gap: 14px; }.strike-board-layout { grid-template-columns: minmax(0, 1fr) 250px; }.strike-edition { display: none; }.strike-intro-copy { padding: 26px; } }
-@media (max-width: 760px) { .strike-board-layout { grid-template-columns: 1fr; }.strike-intro { grid-template-columns: 1fr; }.strike-intro-art { min-height: 330px; }.intro-factory { margin-top: 85px; }.strike-roster { padding: 14px; }#strikeCrews { grid-template-columns: repeat(2, 1fr); }.strike-command { flex-direction: column; gap: 0; align-items: stretch; }.strike-command p { margin-bottom: 0; }.strike-site small { display: none; }.strike-deal-grid { grid-template-columns: 1fr; } }
-@media (max-width: 480px) { .strike-meters { grid-template-columns: repeat(2, 1fr); gap: 8px; }.strike-meter { padding: 12px; }.strike-meter strong { font-size: 1.3rem; }.strike-calendar { gap: 3px; width: 100%; }.strike-calendar span { text-align: center; padding: 7px 0; }.strike-field-heading { padding: 12px 8px; font-size: .65rem; }.strike-site-buttons { padding: 0 6px; gap: 4px; }.strike-site strong { font-size: .7rem; }.strike-site span { font-size: .7rem; }.games-shell .strike-crew { padding: 8px 6px; gap: 6px; }.strike-avatar { width: 26px; font-size: .75rem; }.strike-energy { font-size: .65rem; }.strike-intro-copy { padding: 22px; }.strike-demands strong { padding: 8px; font-size: .8rem; } }
+@media (max-width: 760px) { .strike-board-layout { grid-template-columns: 1fr; }.strike-intro { grid-template-columns: 1fr; }.strike-intro-art { min-height: 330px; }.intro-factory { margin-top: 85px; }.strike-roster { padding: 14px; }#strikeCrews { grid-template-columns: repeat(2, 1fr); }.strike-command { flex-direction: column; gap: 0; align-items: stretch; }.strike-command p { margin-bottom: 0; }.strike-deal-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .strike-meters { grid-template-columns: repeat(2, 1fr); gap: 8px; }.strike-meter { padding: 12px; }.strike-meter strong { font-size: 1.3rem; }.strike-calendar { gap: 3px; width: 100%; }.strike-calendar span { text-align: center; padding: 7px 0; }.strike-field-heading { padding: 12px 8px; font-size: .65rem; }.games-shell .strike-crew { padding: 8px 6px; gap: 6px; }.strike-avatar { width: 26px; font-size: .75rem; }.strike-energy { font-size: .65rem; }.strike-intro-copy { padding: 22px; }.strike-demands strong { padding: 8px; font-size: .8rem; } }
 @media (prefers-reduced-motion: reduce) { .strike-person, .strike-meter-track i { transition: none; }.scene-moving #strikeConveyor, .scene-moving #strikeTrucks, .scene-moving #strikeSupplies { animation: none; } }
 #strikeScene { position: relative; }
-.games-shell .strike-map-place { position: absolute; padding: 5px 9px; min-height: 32px; color: #fff4df; border: 1px solid #fff4df80; background: #344d50; font-size: clamp(.6rem, 1.2vw, .8rem); border-radius: 3px; transform: translateX(-50%); white-space: nowrap; box-shadow: 0 2px 6px #233c4030; }
-.games-shell .strike-map-place:enabled:hover { background: #ad403b; }
-.games-shell .strike-map-place:disabled { opacity: 1; }
-.map-picket { left: 70%; top: 33%; }.map-organize { left: 16%; top: 94%; }.map-solidarity { left: 47%; top: 94%; }.map-rest { left: 80%; top: 94%; }
-@media (max-width: 480px) { .games-shell .strike-map-place { min-height: 28px; padding: 4px 6px; }.map-organize, .map-solidarity, .map-rest { top: 90%; } }
-@media (max-width: 760px) {
-  .games-shell .strike-map-place { display: none; }
-  .strike-roster .strike-site-buttons { margin-top: 14px; padding: 0; }
-  .strike-roster .strike-site { min-height: 62px; }
-}
+
+.strike-person[aria-disabled="false"] { cursor: grab; touch-action: none; }
+.strike-person.is-dragging { transition: none; cursor: grabbing; }
+.strike-person-hit { stroke: transparent; stroke-width: 3; }
+.strike-person.is-selected .strike-person-hit { fill: #ad403b12; stroke: #ad403b; }
+.strike-person:focus-visible { outline: none; }
+.strike-person:focus-visible .strike-person-hit { stroke: #253d42; stroke-width: 5; }
+.strike-place { touch-action: pan-y; }
+.strike-place[aria-disabled="false"] { cursor: pointer; }
+.strike-place-ground { stroke: #c8bda2; stroke-width: 2; }
+.strike-place[aria-disabled="false"]:hover .strike-place-ground,
+.strike-place.is-drop-target .strike-place-ground { fill: #e8d3aa; stroke: #ad403b; stroke-width: 5; }
+.strike-place:focus-visible { outline: none; }
+.strike-place:focus-visible .strike-place-ground { stroke: #253d42; stroke-width: 5; }
+#strikeScene { user-select: none; -webkit-user-select: none; }
+#strikeSceneSummary, #strikeSelection, #strikeHint, #strikeForecast,
+#strikeEventText, #strikeAnnouncement, #strikeResultText, #strikeReflection,
+.strike-offer p, #strikeDayReport li, #strikeLog p { white-space: pre-line; overflow-wrap: anywhere; }
+.strike-scene-summary { margin: 14px 0; font-size: .85rem; line-height: 1.9; }
+#strikeDayReport li { padding: 8px 0; }
+#strikeLog > li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+#strikeLog p { margin: 8px 0; line-height: 1.8; }
+#strikeAnnouncement { margin-block: 20px; }
+.strike-rules p { line-height: 2; }
+
+.strike-day-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 22px 0; }
+.strike-day-metric { padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-canvas); min-width: 0; }
+.strike-metric-title { display: block; color: var(--text-secondary); font-size: .8rem; }
+.strike-day-metric strong { display: block; margin: 12px 0 8px; font-size: 1.65rem; font-variant-numeric: tabular-nums; }
+.strike-metric-change { display: inline-block; border: 1px solid var(--border); border-radius: 4px; padding: 4px 8px; font-size: .8rem; font-weight: 700; }
+.strike-metric-change[data-trend="improved"] { color: #286449; background: #dcecdf; border-color: #a9c5b2; }
+.strike-metric-change[data-trend="declined"] { color: #8d3733; background: #f7e2dd; border-color: #d4b5ad; }
+.strike-day-metric small { display: block; margin-top: 12px; font-size: .75rem; line-height: 1.8; color: var(--text-secondary); white-space: pre-line; }
+@media (max-width: 760px) { .strike-day-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }.strike-day-metric { padding: 14px; }.strike-day-metric strong { font-size: 1.4rem; } }
+
+.strike-person[aria-disabled="false"] * { touch-action: none; }
+
+.games-shell .strike-crew-handle { position: absolute; width: 13.5%; height: 14.493%; min-height: 0; min-width: 0; padding: 0; border: 0; background: transparent; border-radius: 6px; touch-action: none; cursor: grab; }
+.games-shell .strike-crew-handle:disabled { cursor: default; }
+.games-shell .strike-crew-handle:focus-visible { outline: 3px solid #253d42; outline-offset: 0; }
+.games-shell .strike-crew-handle:active { cursor: grabbing; }

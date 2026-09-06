@@ -65,7 +65,7 @@
         ];
         if (n.unity < 20 && s.unity >= 20) messages.push('참여가 20% 아래로 떨어졌습니다. 내일도 회복하지 못하면 파업이 종료됩니다.');
         if (exhausted) messages.push(`${exhausted}개 조가 지쳤습니다. 교대하지 않으면 참여가 줄어듭니다.`);
-        const record = { day: s.day, event: e.title, production: n.production, backlog: n.backlog, fund: n.fund, unity: n.unity, jobs: s.crews.map(c => c.job), messages };
+        const record = { day: s.day, event: e.title, income, cost, production: n.production, backlog: n.backlog, fund: n.fund, unity: n.unity, jobs: s.crews.map(c => c.job), messages };
         n.history.push(record);
         n.phase = 'review';
         n.offers = offers(n);

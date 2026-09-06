@@ -70,4 +70,9 @@ for (const saved of [final, deal, g.next(final), g.start(), g.next(g.advance(g.s
 for (const raw of ['null', '{}', 'broken', JSON.stringify({ ...g.start(), day: 50 }), JSON.stringify({ ...g.start(), crews: [] })]) assert.equal(g.restore(raw), null);
 const tampered = { ...final, fund: 999999, unity: 999 };
 assert.equal(g.restore(JSON.stringify(tampered)).fund, final.fund, 'stored resources are not trusted');
+
+const legacy = JSON.parse(JSON.stringify(final));
+legacy.history.forEach(r => { delete r.income; delete r.cost; });
+assert.equal(JSON.stringify(g.restore(JSON.stringify(legacy))), JSON.stringify(final), 'existing v2 saves regain structured funding data');
+
 console.log('Strike v2: 448 campaigns, three winning strategies, repetitive strategies, deterministic restore, resource bounds and final bargaining passed.');
