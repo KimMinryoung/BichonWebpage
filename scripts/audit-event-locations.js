@@ -15,9 +15,10 @@
 //      belongs to, fed to the map legend — needs ko+en and is arrow-only) —
 //      a geo field that fails these is silently unnumbered on the page, so it
 //      must not pass review silently
-//   6. timeline country tags (event-countries.js) that name no flag in
-//      flag-icons.js — the page drops them silently, so a typo would leave a
-//      row untagged with no sign of it
+//   6. timeline country tags and section heading markers (`## … {code}`,
+//      event-countries.js) that name no flag in flag-icons.js — the page
+//      drops them silently, so a typo would leave a row or heading untagged
+//      with no sign of it
 //
 // Exits 1 when anything is flagged, 0 when clean.
 //
@@ -25,11 +26,12 @@
 require('dotenv').config();
 const db = require('../config/database');
 const { hasFlag } = require('../data/commulingo/flag-icons');
+const { sectionMarkerCodes } = require('../data/commulingo/event-countries');
 
 (async () => {
     try {
         const { rows } = await db.query(
-            `SELECT id, COALESCE(summary_ko, '') <> '' AS published, locations, timeline
+            `SELECT id, COALESCE(summary_ko, '') <> '' AS published, locations, timeline, body_ko, body_en
                FROM commulingo_history_events
               ORDER BY sort_order, id`
         );
@@ -37,6 +39,11 @@ const { hasFlag } = require('../data/commulingo/flag-icons');
             && Math.abs(lat) <= 85 && Math.abs(lng) <= 180;
         const problems = [];
         for (const row of rows) {
+            ['body_ko', 'body_en'].forEach(column => {
+                sectionMarkerCodes(row[column]).forEach(code => {
+                    if (!hasFlag(code)) problems.push(`${row.id} ${column} section marker: no flag for ${JSON.stringify(code)}`);
+                });
+            });
             (Array.isArray(row.timeline) ? row.timeline : []).forEach((item, i) => {
                 if (item && item.country !== undefined) {
                     const codes = Array.isArray(item.country) ? item.country : [item.country];

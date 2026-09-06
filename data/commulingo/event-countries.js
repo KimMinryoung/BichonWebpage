@@ -35,4 +35,33 @@ function flagsHtml(codes, lang) {
     return (codes || []).map(code => flagImg(code, flagLabel(code, lang))).join('');
 }
 
-module.exports = { timelineCountries, countryFilter, flagsHtml };
+// Section tags. A `## ` heading in the body markdown may end in `{code}` or
+// `{code code}`; the marker names the countries the section is about and the
+// panel prints their flags in the heading and the contents list. The marker is
+// stripped here, before markdown rendering, so it never reaches the reader or
+// the auto-linker. `sections[i]` holds the codes of the i-th `## ` heading
+// (an empty list when it carries none), aligned with the h2 pass in the route.
+const SECTION_MARKER = /^(## .*?)\s*\{([a-z][a-z -]*)\}\s*$/;
+function splitSectionCountries(markdown) {
+    const sections = [];
+    const lines = String(markdown || '').split('\n').map(line => {
+        if (!line.startsWith('## ')) return line;
+        const m = line.match(SECTION_MARKER);
+        sections.push(m ? timelineCountries(m[2].trim().split(/\s+/)) : []);
+        return m ? m[1] : line;
+    });
+    return { markdown: lines.join('\n'), sections };
+}
+
+// The raw marker codes of every heading, for the audit script (unknown codes
+// are dropped by splitSectionCountries, so it cannot report them).
+function sectionMarkerCodes(markdown) {
+    const out = [];
+    String(markdown || '').split('\n').forEach(line => {
+        const m = line.startsWith('## ') && line.match(SECTION_MARKER);
+        if (m) out.push(...m[2].trim().split(/\s+/));
+    });
+    return out;
+}
+
+module.exports = { timelineCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes };

@@ -45,7 +45,7 @@ var sections = p.event.bodySections || [];
             <h2 class="commu-event-toc-head"><%= strings.commuLingoViews.eventPanel.contents %></h2>
             <ol>
                 <% sections.forEach(function(section) { %>
-                <li><a href="#<%= section.id %>"><%= section.label %></a></li>
+                <li><a href="#<%= section.id %>"><%- section.flagsHtml || '' %><%= section.label %></a></li>
                 <% }) %>
                 <li><a href="#event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></a></li>
                 <li><a href="#event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></a></li>

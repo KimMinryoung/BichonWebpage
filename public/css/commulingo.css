@@ -3640,6 +3640,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-tl-chip:hover { border-color: var(--accent); }
 .commu-tl-chip.is-active { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); }
 .emap-badge.is-filtered-out { opacity: .25; }
+/* Section country markers (`## … {estonia}`): flags lead the heading and its
+   contents entry. */
+.commu-section-flags { display: inline-flex; gap: .3rem; margin-right: .55rem; vertical-align: -2px; }
+h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px solid color-mix(in srgb, var(--border) 60%, transparent); }
+.commu-event-toc .commu-section-flags { margin-right: .45rem; vertical-align: -1px; }
+.commu-event-toc .commu-section-flags .commu-flag { width: 17px; height: 12px; }
 .commu-event-timeline-list p { margin: .25rem 0 0; line-height: 1.6; }
 
 /* 결과 and the timeline entries are read as continuous prose in the same column

@@ -11,7 +11,7 @@ const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { renderEventMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
 const { eventRelationsFor } = require('../data/commulingo/event-relations');
 const { decode: decodeEntities } = require('../data/commulingo/html-fragments');
-const { timelineCountries, countryFilter, flagsHtml } = require('../data/commulingo/event-countries');
+const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = require('../data/commulingo/event-countries');
 const { localize } = require('../data/commulingo/localize');
 const { renderMarkdown } = require('../utils/markdown');
 
@@ -206,20 +206,25 @@ async function buildEventPanel(eventId, lang) {
         // Markdown in, linked HTML out — the glossary body path (commulingo-terms.js).
         // Events written before the curator lane have none, and then the panel
         // skips the section entirely.
-        event.bodyHtml = event.body ? linker.html(renderMarkdown(event.body)) : '';
+        // Section country markers come off the headings before rendering
+        // (event-countries.js) and rejoin them as flags in the h2 pass below.
+        const split = splitSectionCountries(event.body);
+        event.bodyHtml = event.body ? linker.html(renderMarkdown(split.markdown)) : '';
         // Anchor every `## ` part of the body and collect the contents list from
         // the same pass, so the two can never disagree about what is on the page.
         event.bodySections = [];
         if (event.bodyHtml) {
             event.bodyHtml = event.bodyHtml.replace(/<h2>([\s\S]*?)<\/h2>/g, (match, inner) => {
                 const id = `body-${event.bodySections.length + 1}`;
+                const flags = flagsHtml(split.sections[event.bodySections.length], lang);
+                const flagsSpan = flags ? `<span class="commu-section-flags">${flags}</span>` : '';
                 // The heading may already hold dictionary links from linkify;
                 // the contents entry takes the text and leaves the markup behind,
                 // because a link inside a link does not nest. The text is still
                 // HTML-escaped from the markdown pass, and the template escapes
                 // again, so decode it here or a quoted heading reads &quot;.
-                event.bodySections.push({ id, label: decodeEntities(inner.replace(/<[^>]+>/g, '')).trim() });
-                return `<h2 id="${id}">${inner}</h2>`;
+                event.bodySections.push({ id, label: decodeEntities(inner.replace(/<[^>]+>/g, '')).trim(), flagsHtml: flagsSpan });
+                return `<h2 id="${id}">${flagsSpan}${inner}</h2>`;
             });
         }
         event.outcomeHtml = link(event.outcome);
