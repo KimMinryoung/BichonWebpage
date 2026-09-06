@@ -51,6 +51,12 @@ async function main() {
         await page.locator('.game-card').first().click();
         assert.ok(page.url().endsWith('/games/strike/'));
         await page.emulateMedia({ reducedMotion: 'reduce' });
+        // Every generated location asset is served and decodes successfully.
+        for (const job of ['organize', 'solidarity', 'picket', 'rest']) {
+            const asset = await page.request.get(origin + '/images/strike/' + job + '-v1.webp');
+            assert.equal(asset.status(), 200);
+            assert.match(asset.headers()['content-type'], /image\/webp/);
+        }
         // Direct map input: real mouse dragging, touch dragging, tap/tap and cancellation.
         async function mapPoint(target, x, y) {
             return target.locator('#strikeScene svg').evaluate((root, coords) => {
@@ -62,7 +68,10 @@ async function main() {
             const person = target.locator('[data-crew-sprite="' + id + '"]');
             return mapPoint(target, Number(await person.getAttribute('data-x')), Number(await person.getAttribute('data-y')));
         }
+        assert.equal(await page.locator('#strikeStart').textContent(), '새 게임 시작');
         await page.click('#strikeStart');
+        assert.equal(await page.locator('#strikeScene image.strike-location-art').count(), 4);
+        assert.equal(await page.locator('.strike-field #strikeFieldEvent').count(), 1);
         assert.equal(await page.locator('#strikeSites, .strike-site, .strike-map-place').count(), 0);
         await page.locator('#strikeScene').scrollIntoViewIfNeeded();
         let source = await personPoint(page, 0), dest = await mapPoint(page, 200, 185);
@@ -74,7 +83,7 @@ async function main() {
         source = await personPoint(page, 0); dest = await mapPoint(page, 5, 145);
         await page.mouse.move(source.x, source.y); await page.mouse.down(); await page.mouse.move(dest.x, dest.y, { steps: 8 }); await page.mouse.up();
         assert.match(await page.locator('[data-crew="0"]').textContent(), /조직 천막/, 'outside drop keeps original assignment');
-        source = await personPoint(page, 0); dest = await mapPoint(page, 580, 445);
+        source = await personPoint(page, 0); dest = await mapPoint(page, 580, 535);
         await page.mouse.move(source.x, source.y); await page.mouse.down(); await page.mouse.move(dest.x, dest.y, { steps: 8 });
         await page.keyboard.press('Escape'); await page.mouse.up();
         assert.match(await page.locator('[data-crew="0"]').textContent(), /조직 천막/, 'escape cancels drag');
@@ -88,7 +97,7 @@ async function main() {
         await touch.touchscreen.tap(source.x, source.y); await touch.touchscreen.tap(dest.x, dest.y);
         assert.match(await touch.locator('[data-crew="0"]').textContent(), /조직 천막/, 'tap crew then tap location');
         const cdp = await touchContext.newCDPSession(touch);
-        source = await personPoint(touch, 0); dest = await mapPoint(touch, 580, 445);
+        source = await personPoint(touch, 0); dest = await mapPoint(touch, 580, 535);
         const scrollBefore = await touch.evaluate(() => window.scrollY);
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...source, id: 1 }] });
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ ...dest, id: 1 }] });
@@ -102,7 +111,7 @@ async function main() {
         assert.match(await touch.locator('[data-crew="0"]').textContent(), /휴식처/, 'cancelled touch restores position');
         // All six crews remain individually touchable even in the same location.
         for (let id = 0; id < 6; id++) {
-            source = await personPoint(touch, id); dest = await mapPoint(touch, 580, 445);
+            source = await personPoint(touch, id); dest = await mapPoint(touch, 580, 535);
             await touch.touchscreen.tap(source.x, source.y); await touch.touchscreen.tap(dest.x, dest.y);
         }
         for (let id = 0; id < 6; id++) {
@@ -114,12 +123,31 @@ async function main() {
         assert.ok(await touch.locator('#strikeDayReport li').count() >= 2);
         assert.equal(await touch.locator('#strikeDayMetrics > [data-metric]').count(), 4);
         assert.match(await touch.locator('#strikeDayMetrics [data-metric="fund"] small').innerText(), /연대 모금 \+0\n생활 지원/);
-        assert.ok(await touch.locator('#strikeLog > li > p').count() >= 2);
+        assert.equal(await touch.locator('#strikeLog > tr').count(), 1);
+        assert.equal(await touch.locator('#strikeLog .strike-day-metric, #strikeLog p').count(), 0);
+        assert.equal(await touch.locator('#strikeRosterTitle, #strikeSelection, #strikeHint').count(), 0);
         assert.equal(await touch.locator('#strikeDayReport li').first().evaluate(n => window.getComputedStyle(n).whiteSpace), 'pre-line');
         await touch.locator('.strike-history summary').click();
-        const paragraphs = await touch.locator('#strikeLog > li > p').evaluateAll(nodes => nodes.map(n => ({ top: n.getBoundingClientRect().top, bottom: n.getBoundingClientRect().bottom })));
-        for (let i = 1; i < paragraphs.length; i++) assert.ok(paragraphs[i].top > paragraphs[i - 1].bottom, 'history explanations occupy separate lines with spacing');
+        assert.equal(await touch.locator('#strikeLog > tr > td').count(), 5);
         await touch.screenshot({ path: '/tmp/strike-touch-review.png', fullPage: true });
+        // A support event sits inside the play field and highlights the affected location.
+        await touch.evaluate(() => {
+            const g = window.StrikeGame;
+            for (let seed = 0; seed < 100; seed++) {
+                const s = g.next(g.advance(g.start('normal', seed)).state);
+                if (g.event(s).kind === 'support') { localStorage.setItem('strike-game-v2-save', JSON.stringify(s)); return; }
+            }
+            throw new Error('No support seed found');
+        });
+        await touch.reload();
+        assert.match(await touch.locator('#strikeContinue').textContent(), /2일차 이어하기/);
+        await touch.click('#strikeContinue');
+        assert.match(await touch.locator('#strikeFieldEvent').innerText(), /연대의 방문/);
+        assert.match(await touch.locator('#strikeEventBadge').innerText(), /모금 \+6/);
+        assert.equal(await touch.locator('[data-map-job="solidarity"].is-event-target').count(), 1);
+        assert.equal(await touch.locator('[data-map-job="solidarity"] .strike-event-marker').getAttribute('visibility'), 'visible');
+        assert.equal(await touch.locator('#strikeForecast, #strikeSelection, #strikeHint').count(), 0);
+        await touch.screenshot({ path: '/tmp/strike-support-event.png', fullPage: true });
         await touchContext.close();
         await page.goto(origin + '/games/strike/');
         for (const mode of ['normal', 'hard']) {

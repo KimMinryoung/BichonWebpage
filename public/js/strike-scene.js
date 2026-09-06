@@ -3,10 +3,10 @@
     'use strict';
     const ns = 'http://www.w3.org/2000/svg';
     const areas = {
-        organize: { x: 20, y: 165, color: '#b44943', crew: [82, 245] },
-        picket: { x: 410, y: 165, color: '#a84340', crew: [472, 245] },
-        solidarity: { x: 20, y: 425, color: '#517f72', crew: [82, 505] },
-        rest: { x: 410, y: 425, color: '#607d8d', crew: [472, 505] }
+        organize: { x: 20, y: 165, color: '#b44943', crew: [82, 345] },
+        picket: { x: 410, y: 165, color: '#a84340', crew: [472, 345] },
+        solidarity: { x: 20, y: 515, color: '#517f72', crew: [82, 695] },
+        rest: { x: 410, y: 515, color: '#607d8d', crew: [472, 695] }
     };
     const stages = new WeakMap();
     function svg(tag, attrs = {}, text) {
@@ -21,7 +21,7 @@
     }
     function destination(p) {
         return Object.keys(areas).find(job => {
-            const a = areas[job]; return p.x >= a.x && p.x <= a.x + 370 && p.y >= a.y && p.y <= a.y + 250;
+            const a = areas[job]; return p.x >= a.x && p.x <= a.x + 370 && p.y >= a.y && p.y <= a.y + 330;
         });
     }
     function bind(stage) {
@@ -89,8 +89,8 @@
         window.addEventListener('blur', cancel);
     }
     function create(host, state) {
-        host.innerHTML = `<svg viewBox="0 0 800 690" role="group" aria-label="현장 지도. 동료를 끌어 옮기거나 선택 후 장소를 누르세요.">
-          <rect width="800" height="690" fill="#e8dec5"/>
+        host.innerHTML = `<svg viewBox="0 0 800 860" role="group" aria-label="현장 지도. 동료를 끌어 옮기거나 선택 후 장소를 누르세요.">
+          <rect width="800" height="860" fill="#e8dec5"/>
           <circle cx="741" cy="46" r="25" fill="#d99a58"/>
           <path d="M24 68L90 35 155 68V35L220 68V35L285 68V35L350 68V133H24Z" fill="#a86a50"/>
           <rect x="44" y="79" width="112" height="36" fill="#f2e7c9"/><text x="100" y="103" text-anchor="middle" fill="#35484b" font-size="21" font-weight="bold">한빛공장</text>
@@ -103,13 +103,11 @@
         const root = host.firstChild;
         Object.entries(areas).forEach(([job, a]) => {
             const zone = svg('g', { 'data-map-job': job, role: 'button', tabindex: 0, class: 'strike-place' });
-            zone.append(svg('rect', { x: a.x, y: a.y, width: 370, height: 250, rx: 12, fill: '#f5ebd3', class: 'strike-place-ground' }), svg('path', { d: `M${a.x} ${a.y + 42}V${a.y + 12}Q${a.x} ${a.y} ${a.x + 12} ${a.y}H${a.x + 358}Q${a.x + 370} ${a.y} ${a.x + 370} ${a.y + 12}V${a.y + 42}Z`, fill: a.color }), svg('text', { x: a.x + 18, y: a.y + 29, fill: '#fff7e5', 'font-size': 24, 'font-weight': 'bold' }, window.StrikeGame.jobs[job].title), svg('text', { x: a.x + 348, y: a.y + 29, 'text-anchor': 'end', fill: '#fff7e5', 'font-size': 22, class: 'strike-place-count' }));
-            if (job === 'picket') zone.append(svg('path', { d: 'M429 398H760M444 381V410M471 381V410M498 381V410M525 381V410M552 381V410M579 381V410M606 381V410M633 381V410M660 381V410M687 381V410M714 381V410M741 381V410', stroke: '#9baba1', 'stroke-width': 4 }));
-            if (job === 'rest') zone.append(svg('path', { d: 'M429 660H760M444 654V671M742 654V671', stroke: '#b49878', 'stroke-width': 6 }));
-            if (job === 'solidarity') {
-                const supplies = svg('g', { id: 'strikeSupplies', fill: '#c18b5060' });
-                supplies.append(svg('rect', { x: 40, y: 642, width: 45, height: 28 }), svg('rect', { x: 90, y: 642, width: 45, height: 28 })); zone.append(supplies);
-            }
+            zone.append(svg('rect', { x: a.x, y: a.y, width: 370, height: 330, rx: 12, fill: '#e7d2ad', class: 'strike-place-ground' }), svg('path', { d: `M${a.x} ${a.y + 42}V${a.y + 12}Q${a.x} ${a.y} ${a.x + 12} ${a.y}H${a.x + 358}Q${a.x + 370} ${a.y} ${a.x + 370} ${a.y + 12}V${a.y + 42}Z`, fill: a.color }), svg('text', { x: a.x + 18, y: a.y + 29, fill: '#fff7e5', 'font-size': 24, 'font-weight': 'bold' }, window.StrikeGame.jobs[job].title), svg('text', { x: a.x + 348, y: a.y + 29, 'text-anchor': 'end', fill: '#fff7e5', 'font-size': 22, class: 'strike-place-count' }));
+            zone.insertBefore(svg('image', { href: '/images/strike/' + job + '-v1.webp', x: a.x + 2, y: a.y + 42, width: 366, height: 246, preserveAspectRatio: 'xMidYMin slice', class: 'strike-location-art', 'aria-hidden': 'true' }), zone.children[1]);
+            const marker = svg('g', { class: 'strike-event-marker', visibility: 'hidden' });
+            marker.append(svg('rect', { x: a.x + 206, y: a.y + 51, width: 151, height: 31, rx: 6, fill: '#fff3ce', stroke: '#855d22', 'stroke-width': 2 }), svg('text', { x: a.x + 281, y: a.y + 73, 'text-anchor': 'middle', fill: '#5c421a', 'font-size': 21, 'font-weight': 'bold' }));
+            zone.append(marker);
             root.querySelector('#strikePlaces').append(zone);
         });
         state.crews.forEach(c => {
@@ -129,8 +127,13 @@
         root.classList.toggle('scene-moving', moving);
         root.classList.toggle('scene-stopped', state.production < 25);
         root.style.setProperty('--belt-speed', (state.production < 50 ? 2.5 : 1) + 's');
+        const cue = eventCue(state);
         root.querySelectorAll('[data-map-job]').forEach(zone => {
             const job = zone.dataset.mapJob;
+            const relevant = state.phase !== 'done' && job === cue.job;
+            zone.classList.toggle('is-event-target', relevant);
+            zone.querySelector('.strike-event-marker').setAttribute('visibility', relevant ? 'visible' : 'hidden');
+            zone.querySelector('.strike-event-marker text').textContent = cue.badge;
             zone.setAttribute('aria-label', `${window.StrikeGame.jobs[job].title}. ${window.StrikeGame.jobs[job].desc} ${state.crews[selected].name} 조 배치`);
             zone.setAttribute('aria-disabled', String(!enabled)); zone.setAttribute('tabindex', enabled ? '0' : '-1');
             zone.querySelector('.strike-place-count').textContent = state.crews.filter(c => c.job === job).length + '조';
@@ -151,7 +154,7 @@
             handle.disabled = !enabled; handle.setAttribute('aria-label', person.getAttribute('aria-label'));
             handle.setAttribute('aria-pressed', String(selected === c.id));
             handle.style.left = (Number(person.dataset.x) - 54) / 8 + '%';
-            handle.style.top = (Number(person.dataset.y) - 37) / 6.9 + '%';
+            handle.style.top = (Number(person.dataset.y) - 37) / 8.6 + '%';
             person.querySelector('.crew-mood').textContent = c.fatigue >= 75 ? '…' : c.job === 'rest' ? 'z' : c.job === 'picket' ? '⚑' : '';
         });
         const trucks = root.querySelector('#strikeTrucks'); trucks.replaceChildren();
@@ -159,8 +162,19 @@
             const truck = svg('g', { transform: `translate(${390 + i * 95} 88)` });
             truck.append(svg('rect', { width: 49, height: 25, rx: 2, fill: '#d5a86b' }), svg('path', { d: 'M49 8H64L73 19V29H49Z', fill: '#627e84' }), svg('circle', { cx: 14, cy: 29, r: 6, fill: '#34494d' }), svg('circle', { cx: 59, cy: 29, r: 6, fill: '#34494d' })); trucks.append(truck);
         }
-        root.querySelector('#strikeSupplies').style.opacity = state.fund ? '1' : '.2';
         root.querySelector('#strikeFactoryStatus').textContent = state.phase === 'done' ? (window.StrikeGame.won(state) ? '함께 지킨 일터 · 요구 달성' : '파업 종료 · 우리의 일터') : `생산 ${state.production}% · 미납 ${Math.ceil(state.backlog / 40)}대분`;
     }
-    window.StrikeScene = { render };
+    function eventCue(state) {
+        const e = window.StrikeGame.event(state);
+        const cues = {
+            support: { job: 'solidarity', badge: '오늘 모금 +6', text: '연대 부스에 1조 이상 배치하면 오늘 모금에 기금 6이 추가됩니다.', tone: 'support' },
+            deadline: { job: 'picket', badge: '납품 마감', text: '오늘은 납품 마감입니다. 피켓으로 멈춘 생산이 더 큰 교섭 압박으로 이어집니다.', tone: 'deadline' },
+            management: { job: 'picket', badge: '사측 대응', text: '사측이 생산을 독려합니다. 오늘 피켓의 생산 중단 효과가 줄어듭니다.', tone: 'warning' },
+            food: { job: null, badge: '생활비 −6', text: '도시락 지원으로 오늘 필요한 생활비가 6 줄어듭니다.', tone: 'support' },
+            bills: { job: null, badge: '생활비 +6', text: '오늘 생활 지원에 기금 6이 더 필요합니다. 연대 모금으로 대비하세요.', tone: 'warning' },
+            calm: { job: null, badge: '첫 배치', text: '지도에서 동료를 끌어 옮기세요. 동료를 터치한 뒤 장소를 터치해도 됩니다.', tone: 'calm' }
+        };
+        return { ...cues[e.kind], title: e.title };
+    }
+    window.StrikeScene = { render, eventCue };
 })();
