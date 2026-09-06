@@ -14,6 +14,13 @@ function normalizeTags(value) {
     return [];
 }
 
+// pg returns DATE columns as a JS Date; the view prints the value verbatim.
+function isoDate(value) {
+    if (!value) return value;
+    if (value instanceof Date) return Number.isNaN(value.getTime()) ? null : value.toISOString().slice(0, 10);
+    return String(value).slice(0, 10);
+}
+
 function normalize(row, lang = 'ko') {
     if (!row) return null;
     const useEnglish = lang === 'en' && Boolean(row.title_en || row.selection_rationale_en || row.context_en);
@@ -23,6 +30,7 @@ function normalize(row, lang = 'ko') {
         source_title: (useEnglish ? row.source_title_en : row.source_title) || row.source_title,
         selection_rationale: (useEnglish ? row.selection_rationale_en : row.selection_rationale) || row.selection_rationale,
         context: (useEnglish ? row.context_en : row.context) || row.context,
+        source_published_at: isoDate(row.source_published_at),
         language: useEnglish ? 'en' : 'ko',
         has_translation: Boolean(row.title_en || row.selection_rationale_en || row.context_en),
         tags: normalizeTags(row.tags),

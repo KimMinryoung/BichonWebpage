@@ -29,11 +29,10 @@
 
             <section class="hub-section">
                 <h2><%= lang === 'ko' ? '원문 링크' : 'Source' %></h2>
-                <p>
-                    <a class="hub-source-link" href="<%= item.source_url %>" target="_blank" rel="noopener noreferrer nofollow">
-                        <%= item.source_title || item.source_url %>
-                    </a>
-                </p>
+                <a class="btn btn-primary hub-source-btn" href="<%= item.source_url %>" target="_blank" rel="noopener noreferrer nofollow">
+                    <span class="hub-source-btn-title"><%= item.source_title || item.source_url %></span>
+                    <span class="hub-source-btn-arrow" aria-hidden="true">↗</span>
+                </a>
             </section>
 
             <section class="hub-section">

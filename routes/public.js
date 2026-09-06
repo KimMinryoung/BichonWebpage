@@ -65,27 +65,27 @@ router.get('/', async (req, res) => {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         // Fetch writing and CommuLingo previews in parallel. Each source can
         // fail independently without blanking the rest of the homepage.
-        const [postsResult, diariesResult, researchResult, commuLingoResult] = await Promise.allSettled([
+        const [postsResult, diariesResult, researchResult, hubResult, commuLingoResult] = await Promise.allSettled([
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             db.query('SELECT id, title, content, title_en, content_en, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
             (async () => {
                 return loadRecentReportItems(lang);
             })(),
+            hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0, lang }),
             loadRecentCommuLingoItems(lang),
         ]);
 
         const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(row => localizedRecord(row, lang)) : [];
         const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows.map(row => localizedRecord(row, lang)) : [];
         const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
-        // Curations stay linked from the home menu, but their stale preview is
-        // temporarily omitted until regular updates resume.
-        const recentHub = [];
+        const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
         const recentCommuLingo = commuLingoResult.status === 'fulfilled' ? commuLingoResult.value : [];
 
         const indexItems = [
             ...recentPosts.map(post => ({ title: post.title, href: `/post/${post.id}` })),
             ...recentResearch.map(item => ({ title: item.title, href: item.href })),
             ...recentDiaries.map(diary => ({ title: diary.title, href: `/ai-diary/${diary.id}` })),
+            ...recentHub.map(item => ({ title: item.title, href: `/hub/${item.slug}` })),
             ...recentCommuLingo.map(item => ({ title: item.title, href: item.href })),
         ];
         res.render('public/index', {
