@@ -11,6 +11,7 @@ const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { renderEventMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
 const { eventRelationsFor } = require('../data/commulingo/event-relations');
 const { decode: decodeEntities } = require('../data/commulingo/html-fragments');
+const { timelineCountries, countryFilter, flagsHtml } = require('../data/commulingo/event-countries');
 const { localize } = require('../data/commulingo/localize');
 const { renderMarkdown } = require('../utils/markdown');
 
@@ -130,7 +131,11 @@ function presentEvent(raw, lang) {
         outcome: localize(raw.outcome, lang),
         timeline: (raw.timeline || []).map(item => ({
             date: item.date || '', title: localize(item.title, lang), body: localize(item.body, lang),
+            // Country tags (event-countries.js): flags beside the date, and
+            // the chip row when the timeline spans more than one country.
+            countries: timelineCountries(item.country),
         })),
+        countryFilter: countryFilter(raw.timeline, lang),
         people,
         peopleGroups: groupEventPeople(people, lang),
     };
@@ -179,8 +184,12 @@ async function buildEventPanel(eventId, lang) {
         // Campaign-map numbering: the row keeps the same ①②… number its
         // geometry wears on the map (timelineGeos is the one numbering pass).
         const geoNums = new Map(timelineGeos(events[index].timeline).map(g => [g.index, g.num]));
-        event.timeline = event.timeline.map((item, i) =>
-            geoNums.has(i) ? { ...item, geoNum: geoNums.get(i) } : item);
+        event.timeline = event.timeline.map((item, i) => ({
+            ...item,
+            ...(geoNums.has(i) ? { geoNum: geoNums.get(i) } : {}),
+            flagsHtml: flagsHtml(item.countries, lang),
+        }));
+        event.hasCountryFilter = event.countryFilter.length > 0;
         // Reading order, so the first mention that links is the first one a
         // reader reaches. The panel lays the page out two ways, and this must
         // follow it: with a body, article then consequences then timeline;

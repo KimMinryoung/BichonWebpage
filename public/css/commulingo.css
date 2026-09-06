@@ -3626,6 +3626,20 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
 .commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; }
+/* Country tags: flags under the date, and the chip row above the list that
+   filters it (commulingo-event-timeline.js). */
+.commu-tl-flags { display: inline-flex; flex-wrap: wrap; gap: .25rem; margin-left: .45rem; vertical-align: -1px; }
+.commu-tl-flags .commu-flag { width: 18px; height: 13px; border: 1px solid color-mix(in srgb, var(--border) 60%, transparent); }
+.commu-tl-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .8rem; }
+.commu-tl-chip {
+    display: inline-flex; align-items: center; gap: .35rem;
+    padding: .25rem .7rem; border: 1px solid var(--border, #555); border-radius: 999px;
+    background: transparent; color: var(--text-primary); font: inherit; font-size: .84rem; cursor: pointer;
+}
+.commu-tl-chip .commu-flag { width: 18px; height: 13px; }
+.commu-tl-chip:hover { border-color: var(--accent); }
+.commu-tl-chip.is-active { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); }
+.emap-badge.is-filtered-out { opacity: .25; }
 .commu-event-timeline-list p { margin: .25rem 0 0; line-height: 1.6; }
 
 /* 결과 and the timeline entries are read as continuous prose in the same column

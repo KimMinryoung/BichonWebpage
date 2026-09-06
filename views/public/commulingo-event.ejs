@@ -45,6 +45,7 @@
     </main>
     <% if (paired) { %><script src="/js/commulingo-pair-tabs.js?v=<%= assetVersion %>" defer></script><% } %>
     <% if (event.hasCampaign) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>
+    <% if (event.hasCountryFilter) { %><script src="/js/commulingo-event-timeline.js?v=<%= assetVersion %>" defer></script><% } %>
     <%- include('../partials/footer') %>
 </body>
 </html>

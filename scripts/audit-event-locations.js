@@ -15,12 +15,16 @@
 //      belongs to, fed to the map legend — needs ko+en and is arrow-only) —
 //      a geo field that fails these is silently unnumbered on the page, so it
 //      must not pass review silently
+//   6. timeline country tags (event-countries.js) that name no flag in
+//      flag-icons.js — the page drops them silently, so a typo would leave a
+//      row untagged with no sign of it
 //
 // Exits 1 when anything is flagged, 0 when clean.
 //
 //   docker exec leninbot-frontend node /app/scripts/audit-event-locations.js
 require('dotenv').config();
 const db = require('../config/database');
+const { hasFlag } = require('../data/commulingo/flag-icons');
 
 (async () => {
     try {
@@ -34,6 +38,12 @@ const db = require('../config/database');
         const problems = [];
         for (const row of rows) {
             (Array.isArray(row.timeline) ? row.timeline : []).forEach((item, i) => {
+                if (item && item.country !== undefined) {
+                    const codes = Array.isArray(item.country) ? item.country : [item.country];
+                    codes.forEach(code => {
+                        if (!hasFlag(code)) problems.push(`${row.id} timeline[${i}].country: no flag for ${JSON.stringify(code)}`);
+                    });
+                }
                 const geo = item && item.geo;
                 if (geo === undefined) return;
                 const at = `${row.id} timeline[${i}].geo`;

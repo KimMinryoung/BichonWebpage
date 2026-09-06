@@ -64,7 +64,13 @@ var sections = p.event.bodySections || [];
             <% if (p.event.mapSvg) { %>
             <figure class="commu-event-map commu-event-timeline-map"><%- p.event.mapSvg %></figure>
             <% } %>
-            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li<% if (item.geoNum) { %> data-geo-num="<%= item.geoNum %>"<% } %>><span><% if (item.geoNum) { %><i class="commu-tl-geo-badge"><%= item.geoNum %></i><% } %><%= item.date %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
+            <% if (p.event.hasCountryFilter) { %>
+            <div class="commu-tl-filter" role="group" aria-label="<%= strings.commuLingoViews.eventPanel.byCountry %>" data-tl-filter>
+                <button type="button" class="commu-tl-chip is-active" data-country="" aria-pressed="true"><%= strings.commuLingoViews.eventPanel.allCountries %></button>
+                <% p.event.countryFilter.forEach(function(c) { %><button type="button" class="commu-tl-chip" data-country="<%= c.code %>" aria-pressed="false"><%- c.flagHtml %><%= c.label %></button><% }) %>
+            </div>
+            <% } %>
+            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li<% if (item.geoNum) { %> data-geo-num="<%= item.geoNum %>"<% } %><% if (item.countries && item.countries.length) { %> data-countries="<%= item.countries.join(' ') %>"<% } %>><span><% if (item.geoNum) { %><i class="commu-tl-geo-badge"><%= item.geoNum %></i><% } %><%= item.date %><% if (item.flagsHtml) { %><span class="commu-tl-flags"><%- item.flagsHtml %></span><% } %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
         <% if (!p.event.bodyHtml) { %>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>
