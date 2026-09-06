@@ -1,83 +1,112 @@
-/* Pure, deterministic rules. Exposed separately so the browser and tests agree. */
+/* Deterministic rules shared by the browser and simulation tests. */
 (function () {
     'use strict';
-    const actions = {
-        organize: { title: '현장 조직하기', desc: '작은 모임으로 참여를 넓힙니다.', cost: 9, unity: 15, fatigue: 4, pressure: -3 },
-        solidarity: { title: '연대 모금', desc: '다른 노동자들의 지원을 모읍니다.', cost: -20, unity: 3, fatigue: 7, pressure: -7 },
-        strike: { title: '하루 파업', desc: '참여율이 높을수록 생산 중단의 힘이 커집니다.', cost: 18, unity: -3, fatigue: 14, pressure: 0 },
-        rest: { title: '교대하며 쉬기', desc: '생활을 지원하고 지친 동료를 돌봅니다.', cost: 7, unity: 5, fatigue: -24, pressure: -9 },
-        bargain: { title: '교섭 테이블로', desc: '쌓은 교섭력으로 두 가지 제안을 받습니다.', cost: 5, unity: 0, fatigue: 3, pressure: -2 }
+    const jobs = {
+        picket: { title: '정문 피켓', icon: '⚑', desc: '생산과 출하를 늦춥니다. 피로가 크게 쌓입니다.' },
+        organize: { title: '조직 천막', icon: '✊', desc: '참여를 넓히고 이탈한 동료를 다시 모읍니다.' },
+        solidarity: { title: '연대 부스', icon: '▣', desc: '생활 지원금을 모읍니다. 여러 조를 보내면 효율이 줄어듭니다.' },
+        rest: { title: '휴식처', icon: '☕', desc: '피로를 회복합니다. 지친 조부터 교대하세요.' }
     };
-    const events = [
-        { title: '첫 파업 찬반 모임', text: '교섭을 준비할 시간입니다. 참여율을 높일지, 바로 압박할지 결정하세요.', effect: {} },
-        { title: '연대의 도시락', text: '이웃 노동자들이 식사를 보내왔습니다. 기금 +8.', effect: { fund: 8 } },
-        { title: '생활비가 밀려옵니다', text: '긴 싸움에는 생활 지원이 필요합니다. 기금 −10.', effect: { fund: -10 } },
-        { title: '납품 마감이 다가옵니다', text: '이번 턴 파업의 압박 효과가 10 늘어납니다.', effect: {}, strikeBonus: 10 },
-        { title: '동료들의 공개 지지', text: '다른 작업장의 지지가 도착했습니다. 참여율 +6.', effect: { unity: 6 } },
-        { title: '길어진 대기', text: '소식 없는 기다림에 피로가 쌓입니다. 피로 +8.', effect: { fatigue: 8 } },
-        { title: '현장 소식지', text: '함께 써 낸 소식지가 현장에 돌았습니다. 참여율 +5.', effect: { unity: 5 } },
-        { title: '두 번째 납품 마감', text: '이번 턴 파업의 압박 효과가 10 늘어납니다.', effect: {}, strikeBonus: 10 },
-        { title: '지원금 도착', text: '연대 기금이 도착했습니다. 기금 +10.', effect: { fund: 10 } },
-        { title: '마지막 교섭 기회', text: '이번 턴이 끝나면 결산합니다. 합의하려면 지금 교섭을 선택하세요.', effect: {} }
-    ];
+    const names = ['민서', '준호', '수진', '태호', '은별', '도윤'];
     const clamp = n => Math.max(0, Math.min(100, n));
-    function start(mode) {
-        return { mode: mode === 'hard' ? 'hard' : 'normal', turn: 0, fund: mode === 'hard' ? 65 : 85, unity: 55, fatigue: 10, pressure: 0, offers: null, done: false, outcome: null, deal: null, history: [] };
+    const copy = s => JSON.parse(JSON.stringify(s));
+    const fatigue = s => Math.round(s.crews.reduce((n, c) => n + c.fatigue, 0) / 6);
+    function start(mode = 'normal', seed = 42) {
+        return { version: 2, mode: mode === 'hard' ? 'hard' : 'normal', seed: seed >>> 0, day: 1, phase: 'planning',
+            fund: mode === 'hard' ? 66 : 90, unity: 58, backlog: 0, production: 100, shortage: 0,
+            crews: names.map((name, id) => ({ id, name, fatigue: 10, job: ['picket', 'picket', 'organize', 'solidarity', 'rest', 'rest'][id] })),
+            history: [], offers: null, deal: null, outcome: null };
     }
-    function power(s) { return Math.max(0, Math.round(s.pressure * .8 + s.unity * .35 - s.fatigue * .25 - (s.mode === 'hard' ? 8 : 0))); }
-    function impact(s, id) {
-        const a = actions[id];
-        if (!a) throw new Error('알 수 없는 행동');
-        const pressure = id === 'strike' ? Math.max(5, Math.round(s.unity * .35 - s.fatigue * .12)) + (events[s.turn].strikeBonus || 0) : a.pressure;
-        return { fund: -a.cost, unity: a.unity, fatigue: a.fatigue, pressure };
+    function event(s) {
+        if ([4, 8, 12].includes(s.day)) return { title: '납품 마감일', text: '오늘 멈춘 생산은 더 큰 납품 압박으로 이어집니다.', kind: 'deadline' };
+        if (s.day === 1) return { title: '우리의 첫 아침', text: '동료를 선택하고 일할 장소를 눌러 보세요. 배치를 마치면 하루를 진행합니다.', kind: 'calm' };
+        let roll = Math.imul(s.seed ^ Math.imul(s.day, 374761393), 668265263);
+        roll = Math.imul(roll ^ (roll >>> 13), 1274126177);
+        const kind = ((roll ^ (roll >>> 16)) >>> 0) % 4;
+        return [
+            { title: '이웃의 도시락', text: '생활 지원 비용이 오늘은 6만큼 줄어듭니다.', kind: 'food' },
+            { title: '밀려오는 생활비', text: '오늘은 생활 지원에 기금 6이 더 필요합니다.', kind: 'bills' },
+            { title: '사측의 생산 독려', text: '오늘은 생산 중단 효과가 조금 줄어듭니다.', kind: 'management' },
+            { title: '연대의 방문', text: '오늘 연대 모금에 기금 6이 추가됩니다.', kind: 'support' }
+        ][kind];
     }
-    function available(s, id) { return !s.done && !s.offers && Boolean(actions[id]) && s.fund >= actions[id].cost; }
-    function finish(s, outcome, deal = null) { return { ...s, done: true, outcome, deal, offers: null }; }
-    function next(s) {
-        if (s.fund <= 0) return finish(s, 'fund');
-        if (s.unity < 25) return finish(s, 'unity');
-        if (s.turn >= 9) return finish(s, 'deadline');
-        const n = { ...s, turn: s.turn + 1 };
-        const event = events[n.turn];
-        for (const [key, value] of Object.entries(event.effect)) n[key] = key === 'fund' ? Math.max(0, n[key] + value) : clamp(n[key] + value);
-        if (n.fund <= 0) return finish(n, 'fund');
-        return n;
+    function assign(s, id, job) {
+        if (s.phase !== 'planning' || !Number.isInteger(id) || !s.crews[id] || !jobs[job]) throw new Error('지금 배치할 수 없습니다');
+        const n = copy(s); n.crews[id].job = job; return n;
     }
-    function act(s, id) {
-        if (!available(s, id)) throw new Error('지금 실행할 수 없는 행동');
-        const effect = impact(s, id);
-        const n = { ...s, offers: null, history: s.history.slice() };
-        for (const [key, value] of Object.entries(effect)) n[key] = key === 'fund' ? Math.max(0, n[key] + value) : clamp(n[key] + value);
-        const exhaustion = n.fatigue >= 70 ? 8 : 0;
-        n.unity = clamp(n.unity - exhaustion);
-        const record = { turn: s.turn + 1, action: id, effect, exhaustion };
+    function power(s) { return Math.max(0, Math.round(s.backlog * .18 + s.unity * .34 - fatigue(s) * .35 - (s.mode === 'hard' ? 7 : 0))); }
+    function offers(s) {
+        const p = power(s);
+        return [{ title: '시간도 지키는 안', wage: Math.min(14, Math.floor(p / 6)), hours: Math.min(4, Math.floor(p / 23)), intensity: 0 },
+            { title: '임금 중심의 안', wage: Math.min(18, Math.floor(p / 6) + 4), hours: 0, intensity: 15 }];
+    }
+    function advance(s) {
+        if (s.phase !== 'planning') throw new Error('하루가 이미 진행되었습니다');
+        const n = copy(s), e = event(s);
+        const count = job => s.crews.filter(c => c.job === job).length;
+        const strength = s.crews.filter(c => c.job === 'picket').reduce((a, c) => a + Math.max(.25, 1 - c.fatigue / 110), 0);
+        const stopped = clamp(Math.round(strength * 20 * (.55 + s.unity / 140) * (e.kind === 'management' ? .82 : 1)));
+        n.production = 100 - stopped;
+        n.backlog = Math.max(0, Math.min(400, s.backlog + stopped * (e.kind === 'deadline' ? 1.5 : 1) - 26));
+        const donors = count('solidarity');
+        const income = Math.round(20 * Math.min(donors, 1) + 12 * Math.min(Math.max(donors - 1, 0), 1) + 4 * Math.max(donors - 2, 0)) + (donors && e.kind === 'support' ? 6 : 0);
+        const cost = 17 + (s.mode === 'hard' ? 3 : 0) + (e.kind === 'bills' ? 6 : e.kind === 'food' ? -6 : 0);
+        const missing = Math.max(0, cost - s.fund - income);
+        n.fund = Math.max(0, s.fund + income - cost);
+        n.shortage = missing ? s.shortage + 1 : 0;
+        n.crews.forEach(c => { c.fatigue = clamp(c.fatigue + { picket: 18, organize: 6, solidarity: 8, rest: -42 }[c.job]); });
+        const exhausted = n.crews.filter(c => c.fatigue >= 75).length;
+        n.unity = clamp(s.unity + Math.min(10, count('organize') * 6) - 2 - exhausted * 3 - (missing ? 9 : 0));
+        const messages = [
+            stopped >= 70 ? '정문 피켓으로 생산라인 대부분이 멈췄습니다.' : stopped >= 30 ? '피켓에 힘이 모여 생산라인이 느려졌습니다.' : '공장이 대부분의 물량을 생산했습니다.',
+            `오늘 생산 ${n.production}% · 미납 ${Math.ceil(n.backlog / 40)}대분. ${e.kind === 'deadline' ? '납품 마감으로 압박이 커졌습니다.' : ''}`,
+            `연대 기금 +${income} · 생활 지원 −${cost}.`,
+            missing ? '생활 지원이 부족해 동료들이 흔들립니다. 연대와 조직으로 회복할 시간이 있습니다.' : '오늘의 생활 지원을 전달했습니다.'
+        ];
+        if (n.unity < 20 && s.unity >= 20) messages.push('참여가 20% 아래로 떨어졌습니다. 내일도 회복하지 못하면 파업이 종료됩니다.');
+        if (exhausted) messages.push(`${exhausted}개 조가 지쳤습니다. 교대하지 않으면 참여가 줄어듭니다.`);
+        const record = { day: s.day, event: e.title, production: n.production, backlog: n.backlog, fund: n.fund, unity: n.unity, jobs: s.crews.map(c => c.job), messages };
         n.history.push(record);
-        if (n.fund <= 0) return finish(n, 'fund');
-        if (n.unity < 25) return finish(n, 'unity');
-        if (id === 'bargain') {
-            const strength = power(n);
-            const wage = Math.min(16, Math.floor(strength / 5));
-            const hours = Math.min(4, Math.floor(strength / 22));
-            n.offers = [
-                { title: '노동시간도 지키는 안', wage, hours, intensity: 0 },
-                { title: '임금 중심의 안', wage: wage + 4, hours: 0, intensity: 15 }
-            ];
-            return n;
-        }
-        return next(n);
+        n.phase = 'review';
+        n.offers = offers(n);
+        if (n.unity < 20 && s.unity < 20) { n.phase = 'done'; n.outcome = 'unity'; n.offers = null; }
+        return { state: n, events: messages };
     }
     function accept(s, index) {
-        if (s.done || !s.offers || !Number.isInteger(index) || !s.offers[index]) throw new Error('선택할 수 없는 제안');
-        return finish(s, 'agreement', { ...s.offers[index] });
+        if (s.phase !== 'review' || !Number.isInteger(index) || !s.offers[index]) throw new Error('선택할 수 없는 제안');
+        const n = copy(s); n.deal = n.offers[index]; n.offers = null; n.phase = 'done'; n.outcome = 'agreement'; return n;
     }
-    function reject(s) {
-        if (s.done || !s.offers) throw new Error('교섭 중이 아닙니다');
-        return next({ ...s, offers: null });
+    function next(s) {
+        if (s.phase !== 'review') throw new Error('하루 결과를 먼저 확인하세요');
+        const n = copy(s); n.offers = null;
+        if (s.day === 12) { n.phase = 'done'; n.outcome = 'deadline'; }
+        else { n.day++; n.phase = 'planning'; }
+        return n;
     }
-    function score(s) {
-        if (!s.done || !s.deal) return 0;
-        const d = s.deal;
-        return Math.max(0, Math.round(d.wage * 20 + d.hours * 70 - d.intensity * 8 + s.unity + (100 - s.fatigue) + Math.min(100, s.fund)));
+    function won(s) { return Boolean(s.deal && s.deal.wage >= 8 && s.deal.hours >= 2 && !s.deal.intensity); }
+    function restore(raw) {
+        try {
+            const s = JSON.parse(raw);
+            if (!s || s.version !== 2 || !['normal', 'hard'].includes(s.mode) || !Number.isInteger(s.seed) || s.seed < 0 || s.seed > 4294967295 || !Number.isInteger(s.day) || s.day < 1 || s.day > 12) return null;
+            // Rebuild from valid decisions rather than trusting stored resource values.
+            let n = start(s.mode, s.seed);
+            if (!Array.isArray(s.history) || s.history.length > 12) return null;
+            for (const record of s.history) {
+                if (n.phase === 'review') n = next(n);
+                if (!Array.isArray(record.jobs) || record.jobs.length !== 6) return null;
+                record.jobs.forEach((job, id) => { n = assign(n, id, job); });
+                n = advance(n).state;
+            }
+            if (s.phase === 'done' && n.phase === 'review') {
+                if (s.deal) {
+                    const index = n.offers.findIndex(d => d.wage === s.deal.wage && d.hours === s.deal.hours && d.intensity === s.deal.intensity);
+                    n = accept(n, index);
+                } else n = next(n);
+            } else if (s.phase === 'planning' && n.phase === 'review') n = next(n);
+            if (n.phase !== s.phase || n.day !== s.day || !Array.isArray(s.crews) || s.crews.length !== 6) return null;
+            if (n.phase === 'planning') s.crews.forEach((c, id) => { n = assign(n, id, c.job); });
+            return n;
+        } catch (_) { return null; }
     }
-    window.StrikeGame = { actions, events, start, power, impact, available, act, accept, reject, score };
+    window.StrikeGame = { jobs, start, event, assign, advance, next, accept, fatigue, power, won, restore };
 })();

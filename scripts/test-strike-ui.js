@@ -50,39 +50,75 @@ async function main() {
         assert.equal(await page.locator('.game-card').count(), 2);
         await page.locator('.game-card').first().click();
         assert.ok(page.url().endsWith('/games/strike/'));
-        const strategy = ['organize', 'solidarity', 'organize', 'strike', 'rest', 'strike', 'solidarity', 'strike', 'bargain'];
+        await page.emulateMedia({ reducedMotion: 'reduce' });
         for (const mode of ['normal', 'hard']) {
             await page.selectOption('#strikeMode', mode);
             await page.click('#strikeStart');
-            for (const action of strategy) await page.click('[data-action="' + action + '"]');
+            for (let day = 1; day <= 12; day++) {
+                const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v2-save')).crews);
+                crews.sort((a, b) => a.fatigue - b.fatigue);
+                const jobs = ['picket', 'picket', 'picket', 'organize', 'solidarity', 'rest'];
+                for (let i = 0; i < 6; i++) {
+                    await page.click('[data-crew="' + crews[i].id + '"]');
+                    await page.click('[data-job="' + jobs[i] + '"]');
+                }
+                assert.equal(await page.locator('[data-crew-sprite]').count(), 6);
+                await page.click('#strikeAdvance');
+                assert.equal(await page.locator('#strikeReview').isVisible(), true);
+                if (day === 3) {
+                    await page.reload();
+                    await page.click('#strikeContinue');
+                    assert.equal(await page.locator('#strikeReview').isVisible(), true);
+                }
+                if (day < 12) await page.click('#strikeNext');
+            }
             assert.equal(await page.locator('#strikeOffers').isVisible(), true);
-            await page.getByRole('button', { name: '노동시간도 지키는 안 수락' }).click();
+            await page.locator('#strikeOfferCards button').first().click();
             assert.match(await page.locator('#strikeResultTitle').textContent(), /세 가지 요구/);
-            assert.match(await page.locator('#strikeScore').textContent(), /새 최고 기록/);
             await page.click('#strikeRestart');
-            assert.match(await page.locator('#strikeBest').textContent(), /최고 합의 점수/);
         }
+        // A complete campaign without accepting an offer reaches the final deadline.
         await page.click('#strikeStart');
-        for (let i = 0; i < 10; i++) {
-            await page.click('[data-action="bargain"]');
-            await page.click('#strikeReject');
+        for (let day = 1; day <= 12; day++) {
+            const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v2-save')).crews);
+            crews.sort((a, b) => a.fatigue - b.fatigue);
+            for (let i = 0; i < 6; i++) {
+                await page.click('[data-crew="' + crews[i].id + '"]');
+                await page.click('[data-job="' + ['picket', 'picket', 'picket', 'organize', 'solidarity', 'rest'][i] + '"]');
+            }
+            await page.click('#strikeAdvance');
+            await page.click('#strikeNext');
         }
-        assert.match(await page.locator('#strikeResultText').textContent(), /10턴/);
+        assert.match(await page.locator('#strikeResultText').textContent(), /12일/);
         await page.click('#strikeRestart');
-        await page.selectOption('#strikeMode', 'normal');
+        // Animated progression is locked, skippable, and stored before playback finishes.
+        await page.emulateMedia({ reducedMotion: 'no-preference' });
         await page.click('#strikeStart');
-        for (let i = 0; i < 4; i++) await page.click('[data-action="strike"]');
-        assert.equal(await page.locator('[data-action="strike"]').isDisabled(), true);
-        await page.click('[data-action="solidarity"]');
-        assert.equal(await page.locator('[data-action="strike"]').isEnabled(), true);
+        await page.click('#strikeAdvance');
+        assert.equal(await page.locator('#strikeSkip').isVisible(), true);
+        assert.equal(await page.locator('[data-crew="0"]').isDisabled(), true);
+        await page.click('#strikeSkip');
+        assert.equal(await page.locator('#strikeReview').isVisible(), true);
+        await page.click('#strikeNext');
+        await page.locator('[data-map-job="organize"]').click();
+        assert.match(await page.locator('[data-crew="0"]').textContent(), /조직 천막/);
+        // Keyboard selection and reassignment work without dragging.
+        await page.locator('[data-crew="0"]').focus();
+        await page.keyboard.press('Enter');
+        await page.locator('[data-job="rest"]').focus();
+        await page.keyboard.press('Enter');
+        assert.match(await page.locator('[data-crew="0"]').textContent(), /휴식처/);
         for (const theme of ['dark', 'light']) {
             await page.evaluate(value => localStorage.setItem('theme', value), theme);
             for (const width of [360, 390, 1280]) {
                 await page.setViewportSize({ width, height: 900 });
                 for (const url of ['/games/', '/games/strike/']) {
                     await page.goto(origin + url);
-                    if (url.includes('strike')) await page.click('#strikeStart');
-                    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), theme + ' ' + width + ' ' + url);
+                    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'setup ' + theme + ' ' + width);
+                    if (url.includes('strike')) {
+                        await page.click('#strikeStart');
+                        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'play ' + theme + ' ' + width);
+                    }
                 }
             }
         }
@@ -90,16 +126,21 @@ async function main() {
         await page.screenshot({ path: '/tmp/strike-mobile.png', fullPage: true });
         await page.setViewportSize({ width: 1280, height: 1000 });
         await page.screenshot({ path: '/tmp/strike-desktop.png', fullPage: true });
-        // Disabled storage must not prevent a complete game.
+        // Corrupted and disabled storage cannot prevent play.
+        await page.evaluate(() => localStorage.setItem('strike-game-v2-save', '{bad'));
+        await page.reload();
+        assert.equal(await page.locator('#strikeContinue').isVisible(), false);
         await page.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('disabled'); } }); });
+        await page.emulateMedia({ reducedMotion: 'reduce' });
         await page.goto(origin + '/games/strike/');
         await page.click('#strikeStart');
-        await page.click('[data-action="bargain"]');
-        await page.getByRole('button', { name: '임금 중심의 안 수락' }).click();
+        await page.click('#strikeAdvance');
+        await page.click('#strikeBargain');
+        await page.locator('#strikeOfferCards button').last().click();
         assert.equal(await page.locator('#strikeResult').isVisible(), true);
-        assert.match(await page.locator('#strikeScore').textContent(), /저장/);
+        assert.match(await page.locator('#strikeAnnouncement').textContent(), /저장/);
         assert.deepEqual(errors, []);
-        console.log('Game routes, English entry links, both wins, deadline, affordability, replay, blocked storage and mobile/light/dark layouts passed.');
+        console.log('Strike v2 routes, both wins, deadline, restore, animation, keyboard, blocked storage and mobile/light/dark layouts passed.');
     } finally {
         if (browser) await browser.close();
         await new Promise(resolve => server.close(resolve));
