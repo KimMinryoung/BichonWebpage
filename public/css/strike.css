@@ -86,7 +86,7 @@
 .strike-place:focus-visible .strike-place-ground { stroke: #253d42; stroke-width: 5; }
 #strikeScene { user-select: none; -webkit-user-select: none; }
 #strikeSceneSummary, #strikeSelection, #strikeHint, #strikeForecast,
-#strikeEventText, #strikeAnnouncement, #strikeResultText, #strikeReflection,
+#strikeSaveNote, #strikeEventText, #strikeAnnouncement, #strikeResultText, #strikeReflection,
 .strike-offer p, #strikeDayReport li, #strikeLog p { white-space: pre-line; overflow-wrap: anywhere; }
 .strike-scene-summary { margin: 14px 0; font-size: .85rem; line-height: 1.9; }
 #strikeDayReport li { padding: 8px 0; }

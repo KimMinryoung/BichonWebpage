@@ -15,10 +15,14 @@
         catch (_) { announce('이 브라우저에서는 저장할 수 없습니다. 현재 게임은 계속할 수 있습니다.'); }
     }
     function load() {
+        el('strikeSaveNote').textContent = '한 판 10–15분 · 로그인 없이 · 하루마다 자동 저장';
         try { saved = g.restore(localStorage.getItem(saveKey)); }
         catch (_) { el('strikeSaveNote').textContent = '저장을 사용할 수 없습니다. 이 화면에서 끝까지 플레이할 수 있습니다.'; }
         el('strikeContinue').hidden = !saved || saved.phase === 'done';
-        if (saved && saved.phase !== 'done') el('strikeSaveNote').textContent = `${saved.day}일차 기록이 있습니다. 새로 시작하면 기존 진행을 대신 저장합니다.`;
+        if (saved && saved.phase !== 'done') {
+            el('strikeContinue').textContent = `${saved.day}일차 이어하기`;
+            el('strikeSaveNote').textContent = '이어하기는 저장된 게임을 계속합니다.\n새 게임 시작은 기존 진행을 지우고 1일차부터 시작합니다.';
+        }
     }
     function meters() {
         el('strikeStats').replaceChildren(...[
