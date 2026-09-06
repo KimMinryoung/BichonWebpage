@@ -93,12 +93,12 @@
           <rect width="800" height="860" fill="#e8dec5"/>
           <circle cx="741" cy="46" r="25" fill="#d99a58"/>
           <path d="M24 68L90 35 155 68V35L220 68V35L285 68V35L350 68V133H24Z" fill="#a86a50"/>
-          <rect x="44" y="79" width="112" height="36" fill="#f2e7c9"/><text x="100" y="103" text-anchor="middle" fill="#35484b" font-size="21" font-weight="bold">한빛공장</text>
+          <text x="95" y="60" text-anchor="middle" fill="#fff7e5" font-size="18" font-weight="bold">작업 중</text>
           <rect x="172" y="80" width="160" height="44" fill="#344548"/><path d="M178 119H327" stroke="#b6b8a5" stroke-width="5"/>
           <g id="strikeConveyor" fill="#d5a86b"><rect x="182" y="92" width="20" height="20"/><rect x="224" y="92" width="20" height="20"/><rect x="266" y="92" width="20" height="20"/></g>
           <path d="M374 119H783" stroke="#aaa991" stroke-width="35"/><path d="M374 119H783" stroke="#e8dec5" stroke-width="2" stroke-dasharray="18 14"/>
           <g id="strikeTrucks"></g><text id="strikeFactoryStatus" x="385" y="64" fill="#35484b" font-size="20" font-weight="bold"></text>
-          <g id="strikePlaces"></g><g id="strikePeople"></g>
+          <g id="strikePlaces"></g><g id="strikeWorkforce" role="img"></g><g id="strikePeople"></g>
         </svg>`;
         const root = host.firstChild;
         Object.entries(areas).forEach(([job, a]) => {
@@ -108,20 +108,14 @@
             const marker = svg('g', { class: 'strike-event-marker', visibility: 'hidden' });
             marker.append(svg('rect', { x: a.x + 206, y: a.y + 51, width: 151, height: 31, rx: 6, fill: '#fff3ce', stroke: '#855d22', 'stroke-width': 2 }), svg('text', { x: a.x + 281, y: a.y + 73, 'text-anchor': 'middle', fill: '#5c421a', 'font-size': 21, 'font-weight': 'bold' }));
             zone.append(marker);
-            if (job === 'picket') {
-                const crowd = svg('g', { id: 'strikeSupporters', 'aria-hidden': 'true', 'pointer-events': 'none' });
-                for (let i = 0; i < 12; i++) {
-                    const member = svg('g', { class: 'strike-supporter', 'data-supporter': i });
-                    member.style.setProperty('--crowd-x', (a.x + 42 + (i % 6) * 56) + 'px');
-                    member.style.setProperty('--crowd-y', (a.y + 113 + Math.floor(i / 6) * 40) + 'px');
-                    member.append(svg('path', { d: 'M-4 17L-6 25M4 17L6 25', stroke: '#384f52', 'stroke-width': 5 }), svg('rect', { x: -9, y: -1, width: 18, height: 21, rx: 5, fill: i % 2 ? '#687f77' : '#99695a' }), svg('circle', { cx: 0, cy: -8, r: 9, fill: '#d7b18e' }));
-                    if (i % 3 === 0) member.append(svg('path', { d: 'M11 16V-26', stroke: '#705844', 'stroke-width': 3 }), svg('rect', { x: 11, y: -27, width: 23, height: 15, fill: '#b3453c' }));
-                    crowd.append(member);
-                }
-                zone.append(crowd);
-            }
             root.querySelector('#strikePlaces').append(zone);
         });
+        for (let i = 0; i < 20; i++) {
+            const worker = svg('g', { class: 'workforce-worker', 'aria-hidden': 'true' });
+            worker.append(svg('path', { d: 'M-4 9L-5 18M4 9L5 18', stroke: '#34494d', 'stroke-width': 4 }), svg('rect', { x: -7, y: -4, width: 14, height: 17, rx: 3, class: 'worker-shirt' }), svg('circle', { cx: 0, cy: -10, r: 7, fill: '#e2b38b' }), svg('path', { d: 'M-7 -12Q-6 -23 5 -17L7 -12Z', fill: '#34494d' }));
+            root.querySelector('#strikeWorkforce').append(worker);
+        }
+        root.querySelector('#strikeWorkforce').append(svg('text', { x: 595, y: 250, 'text-anchor': 'middle', fill: '#253d42', stroke: '#fff2d7', 'stroke-width': 4, 'paint-order': 'stroke', 'font-size': 20, 'font-weight': 'bold' }, '파업 중'));
         state.crews.forEach(c => {
             const person = svg('g', { 'data-crew-sprite': c.id, class: 'strike-person', 'aria-hidden': 'true' });
             person.append(svg('rect', { x: -54, y: -37, width: 108, height: 100, rx: 10, fill: 'transparent', class: 'strike-person-hit' }), svg('ellipse', { cx: 0, cy: 30, rx: 22, ry: 6, fill: '#283e4425' }), svg('path', { d: 'M-8 16L-12 28M8 16L12 28', stroke: '#33474d', 'stroke-width': 7, 'stroke-linecap': 'round' }), svg('rect', { x: -14, y: -8, width: 28, height: 28, rx: 7, fill: ['#bd493e', '#547f87', '#cd9142', '#647c50', '#836486', '#497a68'][c.id] }), svg('circle', { cx: 0, cy: -19, r: 14, fill: '#e2b38b' }), svg('path', { d: 'M-14 -20Q-14 -40 9 -32L15 -20Z', fill: '#384b4e' }), svg('path', { d: 'M-5 -19h1M5 -19h1', stroke: '#35454b', 'stroke-width': 2 }), svg('text', { x: 0, y: 49, 'text-anchor': 'middle', 'font-size': 22, fill: '#253d42', 'font-weight': 'bold' }, c.name), svg('text', { x: 24, y: -20, class: 'crew-mood', 'font-size': 22, fill: '#8d3432' }));
@@ -147,8 +141,13 @@
         root.classList.toggle('scene-stopped', state.production === 0);
         root.classList.toggle('scene-operating', state.phase !== 'done' && state.production > 0);
         root.style.setProperty('--belt-speed', (100 / Math.max(1, state.production)).toFixed(2) + 's');
-        const crowdSize = Math.ceil(state.unity * 12 / 100);
-        root.querySelectorAll('[data-supporter]').forEach((member, i) => member.classList.toggle('is-present', i < crowdSize));
+        const stoppedWorkers = Math.round(state.unity / 5);
+        root.querySelector('#strikeWorkforce').setAttribute('aria-label', '전체 노동자 중 ' + state.unity + '%가 작업을 멈추고 파업 중');
+        root.querySelectorAll('.workforce-worker').forEach((worker, i) => {
+            const stopped = i < stoppedWorkers, slot = stopped ? i : i - stoppedWorkers;
+            worker.classList.toggle('is-on-strike', stopped);
+            worker.style.transform = stopped ? `translate(${440 + slot % 10 * 33}px, ${276 + Math.floor(slot / 10) * 31}px)` : `translate(${39 + slot % 5 * 26}px, ${86 + Math.floor(slot / 5) * 16}px) scale(.65)`;
+        });
         const cue = eventCue(state);
         root.querySelectorAll('[data-map-job]').forEach(zone => {
             const job = zone.dataset.mapJob;
@@ -195,7 +194,7 @@
         const e = window.StrikeGame.event(state);
         const cues = {
             support: { job: 'solidarity', badge: '오늘 모금 +6', text: '연대 부스에 1조 이상 배치하면 오늘 모금에 기금 6이 추가됩니다.', tone: 'support' },
-            deadline: { job: 'picket', badge: '납품 마감', text: '오늘은 납품 마감입니다. 피켓으로 멈춘 생산이 더 큰 교섭 압박으로 이어집니다.', tone: 'deadline' },
+            deadline: { job: 'picket', badge: '납품 마감', text: '오늘은 납품 마감입니다. 파업으로 멈춘 생산이 더 큰 교섭 압박으로 이어집니다.', tone: 'deadline' },
             management: { job: 'picket', badge: '사측 대응', text: '사측이 생산을 독려합니다. 오늘 피켓의 생산 중단 효과가 줄어듭니다.', tone: 'warning' },
             food: { job: null, badge: '생활비 −6', text: '도시락 지원으로 오늘 필요한 생활비가 6 줄어듭니다.', tone: 'support' },
             bills: { job: null, badge: '생활비 +6', text: '오늘 생활 지원에 기금 6이 더 필요합니다. 연대 모금으로 대비하세요.', tone: 'warning' },

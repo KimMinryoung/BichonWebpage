@@ -140,10 +140,12 @@
 .is-tired:not(.is-resting) .crew-sweat, .is-recovering .crew-recovery { opacity: 1; }
 .scene-moving .is-recovering .crew-recovery { animation: strike-recover 1.1s ease-out infinite; }
 .scene-moving .is-picketing:not(.is-tired) .crew-sign { animation: strike-wave .9s ease-in-out infinite alternate; }
-.strike-supporter { opacity: 0; transform: translate(calc(var(--crowd-x) + 22px), var(--crowd-y)); transition: opacity .9s ease, transform .9s ease; }
-.strike-supporter.is-present { opacity: 1; transform: translate(var(--crowd-x), var(--crowd-y)); }
+.workforce-worker { pointer-events: none; transition: transform 1s ease; }
+#strikeWorkforce { pointer-events: none; }
+.worker-shirt { fill: #547f87; transition: fill 1s ease; }
+.is-on-strike .worker-shirt { fill: #ba4438; }
 .strike-avatar[data-fatigue="tired"] { filter: saturate(.65); }
 .strike-avatar[data-fatigue="exhausted"] { filter: saturate(.25); }
 @keyframes strike-recover { to { transform: translateY(-15px); opacity: 0; } }
 @keyframes strike-wave { to { transform: rotate(-12deg); } }
-@media (prefers-reduced-motion: reduce) { .crew-body, .crew-sign, .strike-supporter { transition: none; }.scene-moving .crew-recovery, .scene-moving .crew-sign { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .crew-body, .crew-sign, .workforce-worker, .worker-shirt { transition: none; }.scene-moving .crew-recovery, .scene-moving .crew-sign { animation: none; } }

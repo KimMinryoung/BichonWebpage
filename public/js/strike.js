@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     const g = window.StrikeGame, el = id => document.getElementById(id);
-    const saveKey = 'strike-game-v2-save';
+    const saveKey = 'strike-game-v3-save';
     let state, saved, selected = 0, moving = false, timer, bargaining = false;
     function node(tag, text, className) {
         const n = document.createElement(tag); if (text) n.textContent = text; if (className) n.className = className; return n;
@@ -16,7 +16,10 @@
     }
     function load() {
         el('strikeSaveNote').textContent = '한 판 10–15분 · 로그인 없이 · 하루마다 자동 저장';
-        try { saved = g.restore(localStorage.getItem(saveKey)); }
+        try {
+            saved = g.restore(localStorage.getItem(saveKey));
+            if (!saved && localStorage.getItem('strike-game-v2-save')) el('strikeSaveNote').textContent = '생산·참여 규칙이 개편되었습니다. 새 게임으로 시작해 주세요.';
+        }
         catch (_) { el('strikeSaveNote').textContent = '저장을 사용할 수 없습니다. 이 화면에서 끝까지 플레이할 수 있습니다.'; }
         el('strikeContinue').hidden = !saved || saved.phase === 'done';
         if (saved && saved.phase !== 'done') {
@@ -27,7 +30,7 @@
     function meters() {
         el('strikeStats').replaceChildren(...[
             ['생활 기금', state.fund, Math.min(100, state.fund), state.fund < 20 ? '생활 지원이 빠듯합니다' : '함께 버틸 생활비'],
-            ['함께하는 노동자', state.unity + '%', state.unity, state.unity < 20 ? '이틀 연속 낮으면 파업이 끝납니다' : '줄면 생산 중단·교섭력이 약해집니다'],
+            ['파업 참여율', state.unity + '%', state.unity, state.unity < 20 ? '이틀 연속 낮으면 파업이 끝납니다' : '전체 노동자 중 작업을 멈춘 비율'],
             ['현장 생산', state.production + '%', state.production, state.production <= 30 ? '라인이 거의 멈췄습니다' : '낮을수록 파업의 힘'],
             ['밀린 출하', Math.ceil(state.backlog / 40) + '대분', state.backlog / 4, '쌓일수록 교섭 압박']
         ].map(([title, value, width, caption]) => {
@@ -58,7 +61,7 @@
             ['production', '공장 생산', record.production + '%', record.production - previous.production, '%p', '낮을수록 생산 중단의 힘', 'lower'],
             ['backlog', '밀린 출하', Math.ceil(record.backlog / 40) + '대분', Math.ceil(record.backlog / 40) - Math.ceil(previous.backlog / 40), '대분', '쌓인 미납 물량이 교섭 압박으로', 'higher'],
             ['fund', '생활 기금', String(record.fund), record.fund - previous.fund, '', funding, 'higher'],
-            ['unity', '함께하는 노동자', record.unity + '%', record.unity - previous.unity, '%p', '함께 버틸 조직의 기반', 'higher']
+            ['unity', '파업 참여율', record.unity + '%', record.unity - previous.unity, '%p', '전체 노동자 중 작업을 멈춘 비율', 'higher']
         ];
         for (const [id, title, value, change, unit, detail, direction] of metrics) {
             const card = node('div', '', 'strike-day-metric'); card.dataset.metric = id;
@@ -114,7 +117,7 @@
         if (done) {
             el('strikeResultTitle').textContent = g.won(state) ? '함께, 세 가지 요구를 지켰습니다' : state.deal ? '합의를 만들었습니다. 남은 요구도 있습니다' : '합의는 없었지만, 우리의 선택은 남았습니다';
             el('strikeResultText').textContent = state.deal ? dealText(state.deal) : state.outcome === 'unity' ? '이틀 연속 참여가 20% 아래로 떨어져 현장을 유지하기 어려워졌습니다.' : '12일의 마지막 교섭을 합의 없이 마무리했습니다.';
-            el('strikeDeal').replaceChildren(node('strong', '참여 ' + state.unity + '%'), node('strong', '생활 기금 ' + state.fund), node('strong', '평균 피로 ' + g.fatigue(state)));
+            el('strikeDeal').replaceChildren(node('strong', '파업 참여율 ' + state.unity + '%'), node('strong', '생활 기금 ' + state.fund), node('strong', '평균 피로 ' + g.fatigue(state)));
             const best = state.history.reduce((a, b) => b.production < a.production ? b : a, state.history[0]);
             el('strikeReflection').textContent = `${best ? best.day + '일차에 생산을 ' + best.production + '%까지 낮췄습니다. ' : ''}${state.deal && state.deal.intensity ? '임금과 함께 작업 부담도 늘었습니다. 다음에는 시간과 강도를 함께 지킬 힘을 모아 보세요.' : '생산을 멈추는 힘과 동료의 생활을 지키는 힘이 함께 필요했습니다. 다른 교대와 연대의 순서로 다시 도전해 보세요.'}`;
         }

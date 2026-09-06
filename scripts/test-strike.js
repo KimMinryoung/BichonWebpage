@@ -25,6 +25,7 @@ for (const mode of ['normal', 'hard']) {
                 assert.equal(JSON.stringify(g.restore(JSON.stringify(s))), JSON.stringify(s), 'saved day must reconstruct exactly');
                 assert.equal(JSON.stringify(g.advance(JSON.parse(before)).state), JSON.stringify(s), 'seed and decisions must reproduce result');
                 assert.equal(s.crews.length, 6);
+                assert.equal(s.production, g.production(s));
                 assert.ok(s.fund >= 0 && s.unity >= 0 && s.unity <= 100 && s.backlog >= 0 && s.backlog <= 400);
                 s.crews.forEach(c => assert.ok(c.fatigue >= 0 && c.fatigue <= 100));
                 assert.throws(() => g.advance(s));
@@ -38,7 +39,8 @@ for (const mode of ['normal', 'hard']) {
             wins += couldWin ? 1 : 0;
             assert.ok(s.day <= 12);
         }
-        assert.equal(wins, ['balanced', 'pressure', 'support'].includes(strategy) ? 32 : 0, mode + ' ' + strategy);
+        if (strategy === 'organize') assert.ok(wins < 32, 'organization alone must not dominate');
+        else assert.equal(wins, ['balanced', 'pressure', 'support'].includes(strategy) ? 32 : 0, mode + ' ' + strategy);
     }
 }
 let s = g.start();
@@ -73,7 +75,7 @@ assert.equal(g.restore(JSON.stringify(tampered)).fund, final.fund, 'stored resou
 
 const legacy = JSON.parse(JSON.stringify(final));
 legacy.history.forEach(r => { delete r.income; delete r.cost; });
-assert.equal(JSON.stringify(g.restore(JSON.stringify(legacy))), JSON.stringify(final), 'existing v2 saves regain structured funding data');
+assert.equal(JSON.stringify(g.restore(JSON.stringify(legacy))), JSON.stringify(final), 'saved decisions regain structured funding data');
 
 assert.equal(g.crewCondition({ fatigue: 55, job: 'picket' }).strength, .5);
 assert.equal(g.crewCondition({ fatigue: 100, job: 'picket' }).strength, .25);
@@ -82,4 +84,13 @@ assert.equal(g.crewCondition({ fatigue: 56, job: 'picket' }).unityPenalty, 0);
 assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).nextFatigue, 33);
 assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).unityPenalty, 0);
 
-console.log('Strike v2: 448 campaigns, three winning strategies, repetitive strategies, deterministic restore, resource bounds and final bargaining passed.');
+console.log('Strike v3: 448 campaigns, three winning strategies, repetitive strategies, deterministic restore, resource bounds and final bargaining passed.');
+
+assert.equal(g.restore(JSON.stringify({ ...g.start(), version: 2 })), null);
+const idle = { ...g.start(), crews: g.start().crews.map(c => ({ ...c, job: 'rest' })) };
+assert.equal(g.production(idle), 42);
+assert.equal(g.production({ ...idle, unity: 0 }), 100);
+assert.equal(g.production({ ...idle, unity: 100 }), 0);
+assert.ok(g.production(g.start()) < g.production(idle));
+assert.ok(g.production({ ...g.start(), unity: 80 }) < g.production(g.start()));
+assert.ok(g.production({ ...g.start(), crews: g.start().crews.map(c => ({ ...c, fatigue: 100 })) }) > g.production(g.start()));

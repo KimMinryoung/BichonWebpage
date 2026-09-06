@@ -12,8 +12,8 @@
     const copy = s => JSON.parse(JSON.stringify(s));
     const fatigue = s => Math.round(s.crews.reduce((n, c) => n + c.fatigue, 0) / 6);
     function start(mode = 'normal', seed = 42) {
-        return { version: 2, mode: mode === 'hard' ? 'hard' : 'normal', seed: seed >>> 0, day: 1, phase: 'planning',
-            fund: mode === 'hard' ? 66 : 90, unity: 58, backlog: 0, production: 100, shortage: 0,
+        return { version: 3, mode: mode === 'hard' ? 'hard' : 'normal', seed: seed >>> 0, day: 1, phase: 'planning',
+            fund: mode === 'hard' ? 66 : 90, unity: 58, backlog: 0, production: 42, shortage: 0,
             crews: names.map((name, id) => ({ id, name, fatigue: 10, job: ['picket', 'picket', 'organize', 'solidarity', 'rest', 'rest'][id] })),
             history: [], offers: null, deal: null, outcome: null };
     }
@@ -38,7 +38,12 @@
         const nextFatigue = clamp(c.fatigue + { picket: 18, organize: 6, solidarity: 8, rest: -42 }[c.job]);
         return { strength: Math.max(.25, 1 - c.fatigue / 110), nextFatigue, unityPenalty: nextFatigue >= 75 ? 3 : 0 };
     }
-    function power(s) { return Math.max(0, Math.round(s.backlog * .18 + s.unity * .34 - fatigue(s) * .35 - (s.mode === 'hard' ? 7 : 0))); }
+    function production(s) {
+        const strength = s.crews.filter(c => c.job === 'picket').reduce((a, c) => a + crewCondition(c).strength, 0);
+        const slowdown = Math.min(.6, strength * .08 * (event(s).kind === 'management' ? .82 : 1));
+        return Math.round((100 - s.unity) * (1 - slowdown));
+    }
+    function power(s) { return Math.max(0, Math.round(s.backlog * .13 + s.unity * .34 - fatigue(s) * .35 - (s.mode === 'hard' ? 7 : 0))); }
     function offers(s) {
         const p = power(s);
         return [{ title: '시간도 지키는 안', wage: Math.min(14, Math.floor(p / 6)), hours: Math.min(4, Math.floor(p / 23)), intensity: 0 },
@@ -48,10 +53,6 @@
         if (s.phase !== 'planning') throw new Error('하루가 이미 진행되었습니다');
         const n = copy(s), e = event(s);
         const count = job => s.crews.filter(c => c.job === job).length;
-        const strength = s.crews.filter(c => c.job === 'picket').reduce((a, c) => a + crewCondition(c).strength, 0);
-        const stopped = clamp(Math.round(strength * 20 * (.55 + s.unity / 140) * (e.kind === 'management' ? .82 : 1)));
-        n.production = 100 - stopped;
-        n.backlog = Math.max(0, Math.min(400, s.backlog + stopped * (e.kind === 'deadline' ? 1.5 : 1) - 26));
         const donors = count('solidarity');
         const income = Math.round(20 * Math.min(donors, 1) + 12 * Math.min(Math.max(donors - 1, 0), 1) + 4 * Math.max(donors - 2, 0)) + (donors && e.kind === 'support' ? 6 : 0);
         const cost = 17 + (s.mode === 'hard' ? 3 : 0) + (e.kind === 'bills' ? 6 : e.kind === 'food' ? -6 : 0);
@@ -60,15 +61,18 @@
         n.shortage = missing ? s.shortage + 1 : 0;
         n.crews.forEach(c => { c.fatigue = crewCondition(c).nextFatigue; });
         const exhausted = n.crews.filter(c => c.fatigue >= 75).length;
-        n.unity = clamp(s.unity + Math.min(10, count('organize') * 6) - 2 - exhausted * 3 - (missing ? 9 : 0));
+        n.unity = clamp(s.unity + Math.min(8, count('organize') * 6) - 2 - exhausted * 3 - (missing ? 9 : 0));
+        n.production = production(n);
+        const stopped = 100 - n.production;
+        n.backlog = Math.max(0, Math.min(400, s.backlog + stopped * (e.kind === 'deadline' ? 1.5 : 1) - 42));
         const messages = [
-            stopped >= 70 ? '정문 피켓으로 생산라인 대부분이 멈췄습니다.' : stopped >= 30 ? '피켓에 힘이 모여 생산라인이 느려졌습니다.' : '공장이 대부분의 물량을 생산했습니다.',
+            stopped >= 70 ? '파업으로 생산라인 대부분이 멈췄습니다.' : stopped >= 30 ? '작업을 멈춘 노동자들로 생산라인이 느려졌습니다.' : '공장이 대부분의 물량을 생산했습니다.',
             `오늘 생산 ${n.production}% · 미납 ${Math.ceil(n.backlog / 40)}대분. ${e.kind === 'deadline' ? '납품 마감으로 압박이 커졌습니다.' : ''}`,
             `연대 기금 +${income} · 생활 지원 −${cost}.`,
             missing ? '생활 지원이 부족해 동료들이 흔들립니다. 연대와 조직으로 회복할 시간이 있습니다.' : '오늘의 생활 지원을 전달했습니다.'
         ];
         if (n.unity < 20 && s.unity >= 20) messages.push('참여가 20% 아래로 떨어졌습니다. 내일도 회복하지 못하면 파업이 종료됩니다.');
-        if (exhausted) messages.push('지친 동료들이 파업에서 이탈해 참여율이 떨어졌습니다. 휴식과 교대가 필요합니다.');
+        if (exhausted) messages.push('활동조의 과로로 현장 조직이 약해져 일부 노동자가 파업에서 이탈했습니다. 휴식과 교대가 필요합니다.');
         const record = { day: s.day, event: e.title, income, cost, production: n.production, backlog: n.backlog, fund: n.fund, unity: n.unity, jobs: s.crews.map(c => c.job), messages };
         n.history.push(record);
         n.phase = 'review';
@@ -91,7 +95,7 @@
     function restore(raw) {
         try {
             const s = JSON.parse(raw);
-            if (!s || s.version !== 2 || !['normal', 'hard'].includes(s.mode) || !Number.isInteger(s.seed) || s.seed < 0 || s.seed > 4294967295 || !Number.isInteger(s.day) || s.day < 1 || s.day > 12) return null;
+            if (!s || s.version !== 3 || !['normal', 'hard'].includes(s.mode) || !Number.isInteger(s.seed) || s.seed < 0 || s.seed > 4294967295 || !Number.isInteger(s.day) || s.day < 1 || s.day > 12) return null;
             // Rebuild from valid decisions rather than trusting stored resource values.
             let n = start(s.mode, s.seed);
             if (!Array.isArray(s.history) || s.history.length > 12) return null;
@@ -112,5 +116,5 @@
             return n;
         } catch (_) { return null; }
     }
-    window.StrikeGame = { jobs, start, event, assign, advance, next, accept, fatigue, crewCondition, power, won, restore };
+    window.StrikeGame = { jobs, start, event, assign, advance, next, accept, fatigue, crewCondition, production, power, won, restore };
 })();

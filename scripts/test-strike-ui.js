@@ -135,7 +135,7 @@ async function main() {
             const g = window.StrikeGame;
             for (let seed = 0; seed < 100; seed++) {
                 const s = g.next(g.advance(g.start('normal', seed)).state);
-                if (g.event(s).kind === 'support') { localStorage.setItem('strike-game-v2-save', JSON.stringify(s)); return; }
+                if (g.event(s).kind === 'support') { localStorage.setItem('strike-game-v3-save', JSON.stringify(s)); return; }
             }
             throw new Error('No support seed found');
         });
@@ -154,23 +154,24 @@ async function main() {
                 for (let id = 0; id < 6; id++) s = g.assign(s, id, 'picket');
                 s = g.next(g.advance(s).state);
             }
-            localStorage.setItem('strike-game-v2-save', JSON.stringify(s));
+            localStorage.setItem('strike-game-v3-save', JSON.stringify(s));
         });
         await touch.reload(); await touch.click('#strikeContinue');
         assert.equal(await touch.locator('#strikeEventPhase').textContent(), '오늘의 사건');
         assert.equal(await touch.locator('[data-crew-sprite="0"].is-tired').count(), 1);
         assert.equal(await touch.locator('[data-crew-sprite="0"].is-picketing').count(), 1);
         assert.equal(await touch.locator('.strike-crew-facts').count(), 0);
-        const crowdBefore = await touch.locator('.strike-supporter.is-present').count();
-        assert.equal(crowdBefore, 7);
+        const crowdBefore = await touch.locator('.workforce-worker.is-on-strike').count();
+        assert.equal(crowdBefore, 10);
+        assert.equal(await touch.locator('.workforce-worker').count(), 20);
         await touch.screenshot({ path: '/tmp/strike-fatigue-before.png', fullPage: true });
         await touch.locator('[data-map-job="rest"]').tap({ position: { x: 16, y: 12 } });
         assert.equal(await touch.locator('[data-crew-sprite="0"].is-resting.is-recovering').count(), 1);
         await touch.click('#strikeAdvance');
         assert.equal(await touch.locator('[data-crew-sprite="0"].is-tired').count(), 0);
-        assert.ok(await touch.locator('.strike-supporter.is-present').count() < crowdBefore);
+        assert.ok(await touch.locator('.workforce-worker.is-on-strike').count() < crowdBefore);
         assert.equal(await touch.locator('[data-crew-sprite].is-exhausted').count(), 5);
-        const snapshot = await touch.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v2-save')));
+        const snapshot = await touch.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v3-save')));
         const belt = await touch.locator('#strikeScene svg').evaluate(n => n.style.getPropertyValue('--belt-speed'));
         assert.equal(belt, (100 / Math.max(1, snapshot.production)).toFixed(2) + 's');
         await touch.click('#strikeNext');
@@ -183,7 +184,7 @@ async function main() {
             await page.selectOption('#strikeMode', mode);
             await page.click('#strikeStart');
             for (let day = 1; day <= 12; day++) {
-                const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v2-save')).crews);
+                const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v3-save')).crews);
                 crews.sort((a, b) => a.fatigue - b.fatigue);
                 const jobs = ['picket', 'picket', 'picket', 'organize', 'solidarity', 'rest'];
                 for (let i = 0; i < 6; i++) {
@@ -208,7 +209,7 @@ async function main() {
         // A complete campaign without accepting an offer reaches the final deadline.
         await page.click('#strikeStart');
         for (let day = 1; day <= 12; day++) {
-            const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v2-save')).crews);
+            const crews = await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v3-save')).crews);
             crews.sort((a, b) => a.fatigue - b.fatigue);
             for (let i = 0; i < 6; i++) {
                 await page.click('[data-crew="' + crews[i].id + '"]');
@@ -255,9 +256,12 @@ async function main() {
         await page.setViewportSize({ width: 1280, height: 1000 });
         await page.screenshot({ path: '/tmp/strike-desktop.png', fullPage: true });
         // Corrupted and disabled storage cannot prevent play.
-        await page.evaluate(() => localStorage.setItem('strike-game-v2-save', '{bad'));
+        await page.evaluate(() => localStorage.setItem('strike-game-v3-save', '{bad'));
+        await page.evaluate(() => localStorage.setItem('strike-game-v2-save', JSON.stringify({ version: 2 })));
         await page.reload();
         assert.equal(await page.locator('#strikeContinue').isVisible(), false);
+        assert.match(await page.locator('#strikeSaveNote').textContent(), /규칙이 개편/);
+        assert.ok(await page.evaluate(() => localStorage.getItem('strike-game-v2-save')), 'old save remains intact');
         await page.addInitScript(() => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('disabled'); } }); });
         await page.emulateMedia({ reducedMotion: 'reduce' });
         await page.goto(origin + '/games/strike/');
