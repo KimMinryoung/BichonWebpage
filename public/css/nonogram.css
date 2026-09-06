@@ -34,10 +34,12 @@
 .nono-heading h1 { font-size: clamp(1.6rem, 3.3vw, 2.3rem); letter-spacing: -.045em; margin: 8px 0 0; }
 .nono-heading-note { margin: 0; color: var(--text-secondary); font-size: .9rem; line-height: 1.7; text-align: right; }
 
-/* ── Puzzle picker: one row of bordered tabs, size under each title ───────── */
-.nono-picker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+/* ── Puzzle picker: bordered tabs, size under each title. The tabs wrap rather
+   than scroll: a clipped row with no scrollbar read as cut off on phones. ── */
+.nono-picker { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.nono-picker > .games-kicker { padding-top: 17px; }
 .nono-picker > .games-kicker { flex: 0 0 auto; white-space: nowrap; }
-.nono-picker-items { display: flex; gap: 8px; min-width: 0; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.nono-picker-items { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
 .games-shell .nono-tab { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-height: 0; padding: 9px 13px; background: var(--bg-surface); color: var(--text-secondary); font-size: .85rem; font-weight: 700; line-height: 1.2; white-space: nowrap; }
 .games-shell .nono-tab small { font-size: .7rem; font-weight: 600; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .games-shell .nono-tab:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
@@ -150,6 +152,7 @@
 
 @media (max-width: 560px) {
   .nonogram-page { --cell: min(8vw, 34px); --hint-w: 52px; --hint-h: 72px; }
+  .nono-picker { flex-direction: column; align-items: stretch; gap: 8px; }
   .nono-board-panel { padding: 10px; }
   .nono-toolbar { gap: 10px; }
   .nono-toolbar-actions { width: 100%; }
