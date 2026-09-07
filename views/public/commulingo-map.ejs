@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; var copy = strings.commuLingoViews.worldMap; %>
+    <main class="container commulingo-shell commu-world-map-page" data-lang="<%= lang %>">
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: copy.title }], dictJump: 'map' }) %>
+
+        <header class="commu-hub-head commu-world-map-head">
+            <span class="commu-world-map-head-icon" aria-hidden="true"><%- roleIconSvg('map') %></span>
+            <div><h1><%= copy.title %></h1><p><%= copy.description %></p></div>
+        </header>
+
+        <section class="commu-world-map-panel" aria-labelledby="world-map-heading">
+            <h2 class="commu-sr-only" id="world-map-heading"><%= copy.mapLabel %></h2>
+            <div class="commu-world-map" data-world-map><%- mapSvg %></div>
+            <div class="commu-world-map-legend" aria-label="<%= copy.legend %>">
+                <span><i class="is-modern"></i><%= copy.modern %></span>
+                <span><i class="is-historical"></i><%= copy.historical %></span>
+                <span><i class="is-region"></i><%= copy.region %></span>
+            </div>
+            <p class="commu-world-map-note"><%= copy.boundaryNote %></p>
+        </section>
+
+        <%- include('../partials/commulingo-dict-search', {
+            target: '#commu-country-list', placeholder: copy.searchPlaceholder,
+            ariaLabel: copy.searchLabel, clearLabel: copy.clearSearch,
+            resultOne: copy.oneFound, resultMany: copy.manyFound, emptyLabel: copy.noneFound
+        }) %>
+        <div id="commu-country-list" class="commu-country-groups">
+            <% groups.forEach(function(group) { %>
+            <section class="commu-country-group">
+                <h2><%= group.label %></h2>
+                <div class="commu-country-grid">
+                    <% group.countries.forEach(function(country) { %>
+                    <a class="commu-country-card is-<%= country.kind %>" href="<%= country.href %>"
+                        data-country-code="<%= country.code %>" data-search="<%= country.search %>" data-search-title="<%= country.search %>">
+                        <%- flagImg(country.code, country.label) %>
+                        <span><strong><%= country.label %></strong><small><%= copy.citizenship %> <%= country.citizenshipCount %> · <%= copy.background %> <%= country.originCount %> · <%= copy.events %> <%= country.eventCount %></small></span>
+                    </a>
+                    <% }) %>
+                </div>
+            </section>
+            <% }) %>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/js/commulingo-world-map.js?v=<%= assetVersion %>" defer></script>
+    <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>" defer></script>
+</body>
+</html>

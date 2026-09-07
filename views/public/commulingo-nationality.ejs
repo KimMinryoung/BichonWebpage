@@ -24,6 +24,12 @@
             </div>
         </header>
 
+        <section class="commu-world-map-panel is-country" aria-label="<%= filter.label %>">
+            <div class="commu-world-map" data-world-map><%- mapSvg %></div>
+            <div class="commu-nationality-map-link"><a href="<%= countryPageHref %>"><%= strings.commuLingoViews.worldMap.openCountryHub %></a></div>
+            <p class="commu-world-map-note"><%= mapKind === 'modern' ? strings.commuLingoViews.worldMap.boundaryNote : strings.commuLingoViews.worldMap.historicalNote %></p>
+        </section>
+
         <section class="commu-hub-section" aria-labelledby="nationality-people">
             <h2 id="nationality-people"><%= strings.commuLingoViews.nationality.people2 %></h2>
             <div class="commu-people-grid">
@@ -36,5 +42,6 @@
 
     <%- include('../partials/footer') %>
     <%- include('../partials/commulingo-person-card-click-script') %>
+    <script src="/js/commulingo-world-map.js?v=<%= assetVersion %>" defer></script>
 </body>
 </html>

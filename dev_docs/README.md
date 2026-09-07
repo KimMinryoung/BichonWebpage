@@ -9,6 +9,7 @@
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
 | CommuLingo DB·캐시·동시성·복구 | [저장 구조와 검증](commulingo-database.md) |
 | CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
+| CommuLingo 세계지도·국가 허브 | [지도·국가·사건 연결](commulingo-world-map.md) |
 | SEO 인덱싱 | [기존 계획](seo-indexing-plan.md) |
 | 사이트 최적화 | [기존 계획](site-optimization-plan.md) |
 

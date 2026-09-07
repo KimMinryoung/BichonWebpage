@@ -19,6 +19,14 @@ function timelineCountries(value) {
     return out;
 }
 
+// Event-level countries use the same constrained code list, but describe the
+// direct state/polity parties to the event as a whole. They are intentionally
+// independent of map coordinates: a place where something happened is not by
+// itself a participant, and a participant need not be one of the mapped sites.
+function eventCountries(value) {
+    return timelineCountries(value);
+}
+
 // The chip row: every country that appears in the timeline, in order of first
 // appearance, with its localized label and flag markup. Fewer than two
 // countries is not a filter, so the caller gets an empty list and shows none.
@@ -64,4 +72,4 @@ function sectionMarkerCodes(markdown) {
     return out;
 }
 
-module.exports = { timelineCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes };
+module.exports = { timelineCountries, eventCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes };

@@ -1,9 +1,10 @@
 const assert = require('node:assert/strict');
-const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes } = require('../data/commulingo/event-countries');
+const { timelineCountries, eventCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes } = require('../data/commulingo/event-countries');
 assert.deepEqual(timelineCountries('poland'), ['poland']);
 assert.deepEqual(timelineCountries(['poland', 'soviet', 'poland', 'atlantis', 7, null]), ['poland', 'soviet']);
 assert.deepEqual(timelineCountries(undefined), []);
 assert.deepEqual(timelineCountries(''), []);
+assert.deepEqual(eventCountries(['soviet', 'poland', 'soviet', 'atlantis']), ['soviet', 'poland']);
 const timeline = [{ country: 'estonia' }, { country: ['latvia', 'poland'] }, {}, { country: 'estonia' }, { country: 'nowhere' }];
 assert.deepEqual(countryFilter(timeline, 'ko').map(c => [c.code, c.label]), [['estonia', '에스토니아'], ['latvia', '라트비아'], ['poland', '폴란드']]);
 assert.equal(countryFilter(timeline, 'en')[0].label, 'Estonia');

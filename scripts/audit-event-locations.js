@@ -15,10 +15,11 @@
 //      belongs to, fed to the map legend — needs ko+en and is arrow-only) —
 //      a geo field that fails these is silently unnumbered on the page, so it
 //      must not pass review silently
-//   6. timeline country tags and section heading markers (`## … {code}`,
+//   6. event-level direct countries, timeline country tags and section heading markers (`## … {code}`,
 //      event-countries.js) that name no flag in flag-icons.js — the page
-//      drops them silently, so a typo would leave a row or heading untagged
-//      with no sign of it
+//      drops them silently, so a typo would leave a row or heading untagged;
+//      every published event needs a direct country and timeline/section tags
+//      must be a subset of that event-level list
 //
 // Exits 1 when anything is flagged, 0 when clean.
 //
@@ -31,7 +32,7 @@ const { sectionMarkerCodes } = require('../data/commulingo/event-countries');
 (async () => {
     try {
         const { rows } = await db.query(
-            `SELECT id, COALESCE(summary_ko, '') <> '' AS published, locations, timeline, body_ko, body_en
+            `SELECT id, COALESCE(summary_ko, '') <> '' AS published, locations, timeline, body_ko, body_en, countries
                FROM commulingo_history_events
               ORDER BY sort_order, id`
         );
@@ -39,9 +40,16 @@ const { sectionMarkerCodes } = require('../data/commulingo/event-countries');
             && Math.abs(lat) <= 85 && Math.abs(lng) <= 180;
         const problems = [];
         for (const row of rows) {
+            const direct = Array.isArray(row.countries) ? row.countries : [];
+            if (row.published && !direct.length) problems.push(`${row.id}: published event has no direct countries`);
+            if (new Set(direct).size !== direct.length) problems.push(`${row.id}.countries: duplicate code`);
+            direct.forEach(code => {
+                if (!hasFlag(code)) problems.push(`${row.id}.countries: no flag for ${JSON.stringify(code)}`);
+            });
             ['body_ko', 'body_en'].forEach(column => {
                 sectionMarkerCodes(row[column]).forEach(code => {
                     if (!hasFlag(code)) problems.push(`${row.id} ${column} section marker: no flag for ${JSON.stringify(code)}`);
+                    else if (!direct.includes(code)) problems.push(`${row.id} ${column} section marker: ${code} is absent from event countries`);
                 });
             });
             (Array.isArray(row.timeline) ? row.timeline : []).forEach((item, i) => {
@@ -49,6 +57,7 @@ const { sectionMarkerCodes } = require('../data/commulingo/event-countries');
                     const codes = Array.isArray(item.country) ? item.country : [item.country];
                     codes.forEach(code => {
                         if (!hasFlag(code)) problems.push(`${row.id} timeline[${i}].country: no flag for ${JSON.stringify(code)}`);
+                        else if (!direct.includes(code)) problems.push(`${row.id} timeline[${i}].country: ${code} is absent from event countries`);
                     });
                 }
                 const geo = item && item.geo;

@@ -1,4 +1,4 @@
-// The five CommuLingo dictionaries in the order they appear on screen. Two
+// The CommuLingo reference sections in the order they appear on screen. Two
 // components render this list — the switcher tabs across the top of every
 // dictionary index, and the icon-only jumps in the crumb bar's right-hand slot
 // on the detail pages — so it lives in one place rather than in both.
@@ -8,6 +8,8 @@ function dictTabs(en) {
           label: en ? 'People' : '인물 사전', short: en ? 'People' : '인물' },
         { key: 'events', href: '/commulingo/events', icon: 'flag',
           label: en ? 'Historical events' : '역사 사건', short: en ? 'Events' : '사건' },
+        { key: 'map', href: '/commulingo/map', icon: 'map',
+          label: en ? 'World map' : '세계 지도', short: en ? 'Map' : '지도' },
         { key: 'terms', href: '/commulingo/terms', icon: 'book-open',
           label: en ? 'Glossary' : '용어 사전', short: en ? 'Terms' : '용어' },
         { key: 'genealogy', href: '/commulingo/genealogy', icon: 'git-branch',

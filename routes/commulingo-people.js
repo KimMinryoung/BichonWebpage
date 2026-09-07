@@ -14,6 +14,8 @@ const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { politburoCareerFor } = require('../data/commulingo/politburo-store');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
+const { countryHref, countryInfo } = require('../data/commulingo/country-geography');
+const { renderWorldMapSvg } = require('../data/commulingo/world-map-svg');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
 const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically, localizedPersonSections } = require('../data/commulingo/people-view');
 
@@ -283,6 +285,9 @@ async function renderNationalityPeople(req, res, kind) {
         return res.render('public/commulingo-nationality', {
             filter,
             people: filter.people,
+            countryPageHref: countryHref(code),
+            mapKind: countryInfo(code, lang).kind,
+            mapSvg: renderWorldMapSvg({ codes: [code], selectedCode: code, lang }),
             roleIconSvg,
             roleHubHref,
             linkifyPersonText: await cardTextLinker(res),

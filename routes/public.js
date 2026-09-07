@@ -18,6 +18,7 @@ const { loadRecentCommuLingoItems } = require('../services/commulingo-updates');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
+const { countryCodes: commuLingoCountryCodes } = require('../data/commulingo/country-geography');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { listGenealogyCharts } = require('../data/commulingo/genealogy-store');
 const { loadCommuLingoCatalog, commuLingoBookModifiedTimes } = require('../data/commulingo/shards');
@@ -330,7 +331,7 @@ async function cachedXml(key, build) {
 // sitemap.xml
 router.get('/sitemap.xml', async (req, res) => {
     try {
-        const xml = await cachedXml('xmlcache:sitemap:v4', () => buildSitemapXml());
+        const xml = await cachedXml('xmlcache:sitemap:v5', () => buildSitemapXml());
         res.type('application/xml').send(xml);
     } catch (error) {
         console.error('Sitemap error:', error);
@@ -438,12 +439,14 @@ async function buildSitemapXml() {
         xml += url('/commulingo/people', peopleLastmod, '0.7', 'daily');
         xml += url('/commulingo/terms', termsLastmod, '0.7', 'daily');
         xml += url('/commulingo/events', eventsLastmod, '0.7', 'weekly');
+        xml += url('/commulingo/map', latestDate(peopleLastmod, eventsLastmod), '0.7', 'weekly');
         xml += url('/commulingo/docs', docsLastmod, '0.7', 'weekly');
         xml += url('/commulingo/genealogy', chartsLastmod, '0.6', 'monthly');
         for (const group of commuPeopleGroups) xml += url(`/commulingo/people/list/${encodeURIComponent(group.id)}`, peopleLastmod, '0.5', 'weekly');
         for (const person of commuPeople) xml += url(`/commulingo/people/${encodeURIComponent(person.id)}`, person.updatedAt, '0.6');
         for (const term of commuTerms) xml += url(`/commulingo/terms/${encodeURIComponent(term.id)}`, term.updatedAt, '0.6');
         for (const event of commuEvents) xml += url(`/commulingo/events/${encodeURIComponent(event.id)}`, event.updatedAt, '0.6');
+        for (const code of commuLingoCountryCodes()) xml += url(`/commulingo/countries/${encodeURIComponent(code)}`, latestDate(peopleLastmod, eventsLastmod), '0.5', 'weekly');
         for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.modifiedAt || doc.addedAt, '0.6');
         for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, chart.modifiedAt, '0.5');
         for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, book.modifiedAt, '0.6');
@@ -465,6 +468,7 @@ router.get('/llms.txt', (req, res) => {
         '- People: https://cyber-lenin.com/commulingo/people\n' +
         '- Glossary: https://cyber-lenin.com/commulingo/terms\n' +
         '- Historical events: https://cyber-lenin.com/commulingo/events\n' +
+        '- World map: https://cyber-lenin.com/commulingo/map\n' +
         '- Reference documents: https://cyber-lenin.com/commulingo/docs\n' +
         '- Genealogy charts: https://cyber-lenin.com/commulingo/genealogy\n\n' +
         'Feeds:\n' +

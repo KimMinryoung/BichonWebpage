@@ -71,6 +71,7 @@ router.get('/', asyncHandler(async (req, res) => {
     });
 }));
 
+router.use(require('./commulingo-map'));
 router.use('/events', require('./commulingo-events'));
 router.use('/terms', require('./commulingo-terms'));
 router.use('/docs', require('./commulingo-docs'));
