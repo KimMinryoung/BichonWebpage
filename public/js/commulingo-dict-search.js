@@ -122,6 +122,8 @@
 
         function pageHref(n) {
             var params = [];
+            var country = list.getAttribute('data-country');
+            if (country) params.push('country=' + encodeURIComponent(country));
             if (category) params.push('kind=' + encodeURIComponent(category));
             if (n > 1) params.push('page=' + n);
             return window.location.pathname + (params.length ? '?' + params.join('&') : '');

@@ -9,6 +9,15 @@
             trail: [{ label: strings.commuLingoViews.events.historicalEvents }],
             dictJump: 'events' }) %>
         <h1 class="commu-sr-only"><%= strings.commuLingoViews.events.historicalEvents2 %></h1>
+        <% if (selectedCountry) { %>
+        <div class="commu-country-event-filter">
+            <div class="commu-country-event-actions">
+                <a class="btn btn-small" href="<%= selectedCountry.href %>"><span aria-hidden="true">←</span> <%= selectedCountry.label %></a>
+                <a class="btn btn-small" href="/commulingo/events"><%= en ? 'All countries' : '모든 국가 사건' %> <span aria-hidden="true">→</span></a>
+            </div>
+            <h2><%= selectedCountry.label %> · <%= en ? 'Events' : '사건' %> <small><%= events.length %></small></h2>
+        </div>
+        <% } %>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-event-list',
             placeholder: strings.commuLingoViews.events.searchByPeriodEvent,
@@ -18,7 +27,7 @@
             resultMany: strings.commuLingoViews.events.eventsFound,
             emptyLabel: strings.commuLingoViews.events.noHistoricalEventsFound
         }) %>
-        <section class="commu-event-grid" id="commu-event-list" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
+        <section class="commu-event-grid" id="commu-event-list" data-country="<%= selectedCountry ? selectedCountry.code : '' %>" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
             aria-label="<%= strings.commuLingoViews.events.historicalEvents3 %>">
             <% events.forEach(function(event) { %>
             <a class="commu-event-card" href="/commulingo/events/<%= event.id %>"

@@ -65,7 +65,7 @@ function centerFor(info) {
     return meta && meta.label ? meta.label : [0, 0];
 }
 
-function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko' } = {}) {
+function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLinks = false } = {}) {
     const valid = [...new Set((codes || []).filter(hasCountry))];
     const infos = valid.map(code => countryInfo(code, lang)).filter(Boolean);
     const markers = markerPositions(infos.map(info => ({ ...info, center: centerFor(info) })));
@@ -89,7 +89,28 @@ function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko' } = {}) {
     for (let lat = -30; lat <= 60; lat += 30) { const [, y] = project(0, lat); parts.push(`<line x1="0" y1="${y.toFixed(1)}" x2="${WIDTH}" y2="${y.toFixed(1)}"/>`); }
     parts.push('</g><g class="wmap-base">');
     Object.keys(MAP.units).forEach(code => parts.push(`<use href="#${featureId(code)}"/>`));
-    parts.push('</g><g class="wmap-highlights">');
+    parts.push('</g>');
+    if (territoryLinks) {
+        // One destination per present-day map unit. Modern countries take
+        // precedence over overlapping historical unions and cultural regions.
+        const owners = new Map();
+        const priority = { modern: 0, region: 1, historical: 2 };
+        infos.slice().sort((a, b) => priority[a.kind] - priority[b.kind]).forEach(info => {
+            (info.geography.members || []).forEach(code => {
+                if (!owners.has(code)) owners.set(code, info.code);
+            });
+        });
+        parts.push('<g class="wmap-territories">');
+        infos.forEach(info => {
+            const units = (info.geography.members || []).filter(code => owners.get(code) === info.code);
+            if (!units.length) return;
+            parts.push(`<a class="wmap-territory" data-country-code="${esc(info.code)}" href="${esc(info.href)}" aria-label="${esc(info.label)}"${info.code === selected ? ' aria-current="page"' : ''}><title>${esc(info.label)}</title>`);
+            units.forEach(code => parts.push(`<use href="#${featureId(code)}"/>`));
+            parts.push('</a>');
+        });
+        parts.push('</g>');
+    }
+    parts.push('<g class="wmap-highlights">');
     infos.forEach(info => {
         const classes = ['wmap-highlight', `is-${info.kind}`];
         if (info.code === selected) classes.push('is-selected');
@@ -98,7 +119,7 @@ function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko' } = {}) {
         parts.push('</g>');
     });
     parts.push('</g><g class="wmap-markers">');
-    markers.forEach(marker => {
+    (territoryLinks ? [] : markers).forEach(marker => {
         const [x, y] = marker.point;
         const moved = Math.hypot(marker.desired[0] - x, marker.desired[1] - y) > 4;
         if (moved) parts.push(`<line class="wmap-marker-leader" data-country-code="${esc(marker.code)}" x1="${marker.desired[0].toFixed(1)}" y1="${marker.desired[1].toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`);

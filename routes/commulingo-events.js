@@ -11,9 +11,11 @@ const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { renderEventMapSvg, timelineGeos } = require('../data/commulingo/event-map-svg');
 const { eventRelationsFor } = require('../data/commulingo/event-relations');
 const { decode: decodeEntities } = require('../data/commulingo/html-fragments');
-const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = require('../data/commulingo/event-countries');
+const { eventCountries, timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = require('../data/commulingo/event-countries');
 const { localize } = require('../data/commulingo/localize');
 const { renderMarkdown } = require('../utils/markdown');
+
+const { countryInfo } = require('../data/commulingo/country-geography');
 
 const router = express.Router();
 
@@ -283,11 +285,19 @@ function presentedEventList(raw, lang) {
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
-        const events = presentedEventList(await loadCommuLingoHistoryEvents(), lang).map(event => ({ ...event }));
-        const pagination = paginateList(events, events, req.query, '/commulingo/events?page=');
+        const selectedCountry = typeof req.query.country === 'string' ? countryInfo(req.query.country, lang) : null;
+        const rawEvents = await loadCommuLingoHistoryEvents();
+        const matchingIds = selectedCountry
+            ? new Set(rawEvents.filter(event => eventCountries(event.countries).includes(selectedCountry.code)).map(event => event.id))
+            : null;
+        const events = presentedEventList(rawEvents, lang)
+            .filter(event => !matchingIds || matchingIds.has(event.id)).map(event => ({ ...event }));
+        const pagination = paginateList(events, events, req.query, selectedCountry
+            ? `/commulingo/events?country=${encodeURIComponent(selectedCountry.code)}&page=` : '/commulingo/events?page=');
         setShortPublicCache(res);
         res.render('public/commulingo-events', {
             events,
+            selectedCountry,
             pagination,
             pageTitle: lang === 'en' ? 'Historical Events — CommuLingo' : '역사 사건 — CommuLingo',
             pageDescription: lang === 'en' ? 'Events, institutions, and people in connected Soviet and revolutionary history.' : '혁명과 소련사의 사건·기관·인물을 연결해 읽는 페이지.',

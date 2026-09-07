@@ -109,7 +109,7 @@ router.get('/countries/:code', async (req, res) => {
         setShortPublicCache(res);
         return res.render('public/commulingo-country', {
             country,
-            mapSvg: renderWorldMapSvg({ codes: [code], selectedCode: code, lang }),
+            mapSvg: renderWorldMapSvg({ codes: countryCodes(), selectedCode: code, lang, territoryLinks: true }),
             previewLimit: PREVIEW_LIMIT,
             roleIconSvg,
             roleHubHref,

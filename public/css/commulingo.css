@@ -2923,7 +2923,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-world-map-controls button {
     align-items: center; background: var(--btn-bg); border: 1px solid var(--border);
     color: var(--text-primary); cursor: pointer; display: flex; font: inherit; font-size: 1.15rem;
-    font-weight: 700; height: 44px; justify-content: center; line-height: 1; padding: 0; width: 44px;
+    font-weight: 700; height: 34px; min-height: 34px; justify-content: center; line-height: 1; padding: 0; width: 34px; min-width: 34px; flex: 0 0 34px;
 }
 .commu-world-map-controls button:hover,
 .commu-world-map-controls button:focus-visible { background: var(--btn-hover); }
@@ -2970,8 +2970,28 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 .commu-country-sections a:hover strong,
 .commu-country-sections a:focus-visible strong { background: color-mix(in srgb, var(--clr-cream) 18%, transparent); }
-.commu-country-section-head { align-items: baseline; display: flex; gap: 10px; justify-content: space-between; }
-.commu-country-section-head h2 span { color: var(--text-muted); font-size: .75em; font-weight: 500; }
+.commu-country-page .commu-country-section-head { margin: 0 0 12px; scroll-margin-top: 82px; }
+.wmap-territory { cursor: pointer; }
+.wmap-territory use { fill: transparent; stroke: none; pointer-events: fill; }
+.wmap-territory:hover use, .wmap-territory:focus-visible use {
+    fill: color-mix(in srgb, var(--accent) 45%, transparent); stroke: var(--accent); stroke-width: 1;
+}
+.wmap-highlights, .wmap-border { pointer-events: none; }
+.commu-country-section-head > a {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 12px; min-height: 52px; border: 1px solid var(--border);
+    background: var(--bg-surface); color: var(--text-primary); text-decoration: none;
+}
+.commu-country-section-head > a:hover, .commu-country-section-head > a:focus-visible { background: var(--btn-hover); text-decoration: none; }
+.commu-country-section-head small { color: var(--text-muted); font-size: .75em; font-weight: 500; }
+.commu-country-section-action { flex-shrink: 0; font-size: .8rem; font-weight: 500; }
+.commu-country-event-filter { margin-bottom: 18px; }
+.commu-country-event-filter h2 { margin: 12px 0; }
+.commu-country-event-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.commu-country-event-actions .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; }
+@media (pointer: coarse) {
+    .commu-world-map-controls button { width: 40px; height: 40px; min-width: 40px; min-height: 40px; flex-basis: 40px; }
+}
 .commu-country-view-all {
     align-items: center; background: var(--btn-bg); border: 1px solid var(--border);
     color: var(--text-primary); display: flex; font-size: .9rem; font-weight: 700;
@@ -2988,7 +3008,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
     .commu-world-map-controls { right: 14px; top: 14px; }
     .commu-world-map .wmap-svg { min-width: 680px; }
     .commu-country-grid { grid-template-columns: 1fr; }
-    .commu-country-section-head { align-items: flex-start; flex-direction: column; gap: 0; }
     .commu-country-sections a { flex-direction: column; gap: 2px; padding-inline: 4px; }
 }
 

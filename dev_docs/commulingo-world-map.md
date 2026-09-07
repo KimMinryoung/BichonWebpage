@@ -3,7 +3,7 @@
 ## 공개 화면
 
 - `/commulingo/map`: 인물·사건 데이터가 있는 국가와 역사 지역을 현재 세계 경계 위에서 탐색한다.
-- `/commulingo/countries/:code`: 시민권 인물 6명, 민족·국가적 배경 인물 6명, 직접 연루 사건 전체를 묶는다. 전체 인물은 기존 facet URL로 이동한다.
+- `/commulingo/countries/:code`: 시민권 인물 4명, 민족·국가적 배경 인물 4명, 직접 연루 사건 전체를 묶는다. 각 항목 제목 행 전체가 전체보기 링크다. 인물은 기존 facet URL, 사건은 `/commulingo/events?country=:code`로 이동하며 페이지 이동에도 국가 필터를 유지한다. 세계 지도 복귀는 breadcrumb 링크를 사용하며 별도 복귀 버튼은 두지 않는다. 국가 지도에서는 국기 목록 대신 영역 링크로 다른 국가에 이동한다. 현재 경계에서 겹치는 역사 국가보다 현대 국가 링크가 우선하며 역사 국가 선택은 세계 지도에서 가능하다.
 - 기존 `/commulingo/people/citizenship/:code`와 `/commulingo/people/national-origin/:code`에도 선택 국가 지도를 표시한다.
 
 지도는 `data/commulingo/world-map-svg.js`가 서버에서 SVG로 렌더링한다. 도형은 Natural Earth의 공개 데이터를 `scripts/bake-world-map.js`로 압축한 `world-map.json`이며 런타임 외부 지도 요청은 없다. 현대 국가는 현재 경계, 소련·유고슬라비아·체코슬로바키아는 후계국 합집합, 동독은 현대 동부 주와 베를린, 조선은 남북 영역 합집합으로 표시한다. 역사 영역은 근사치임을 항상 화면에 밝히며, 사건 상세의 무국경 지도는 별도이므로 변경하지 않는다.

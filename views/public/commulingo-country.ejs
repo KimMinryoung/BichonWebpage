@@ -30,21 +30,21 @@
         </nav>
 
         <section class="commu-hub-section" aria-labelledby="country-citizenship">
-            <div class="commu-country-section-head"><h2 id="country-citizenship"><%= copy.citizenshipPeople %> <span><%= country.citizenshipCount %></span></h2></div>
+            <h2 id="country-citizenship" class="commu-country-section-head"><a href="/commulingo/people/citizenship/<%= encodeURIComponent(country.code) %>"><span><%= copy.citizenshipPeople %> <small><%= country.citizenshipCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
             <% if (country.citizenshipPreview.length) { %><div class="commu-people-grid">
                 <% country.citizenshipPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %><% }) %>
-            </div><% if (country.citizenshipCount > previewLimit) { %><a class="commu-country-view-all" href="/commulingo/people/citizenship/<%= encodeURIComponent(country.code) %>"><span><%= copy.viewAll %></span><span aria-hidden="true">→</span></a><% } %><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
+            </div><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
         </section>
 
         <section class="commu-hub-section" aria-labelledby="country-origin">
-            <div class="commu-country-section-head"><h2 id="country-origin"><%= copy.backgroundPeople %> <span><%= country.originCount %></span></h2></div>
+            <h2 id="country-origin" class="commu-country-section-head"><a href="/commulingo/people/national-origin/<%= encodeURIComponent(country.code) %>"><span><%= copy.backgroundPeople %> <small><%= country.originCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
             <% if (country.originPreview.length) { %><div class="commu-people-grid">
                 <% country.originPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %><% }) %>
-            </div><% if (country.originCount > previewLimit) { %><a class="commu-country-view-all" href="/commulingo/people/national-origin/<%= encodeURIComponent(country.code) %>"><span><%= copy.viewAll %></span><span aria-hidden="true">→</span></a><% } %><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
+            </div><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
         </section>
 
         <section class="commu-hub-section" aria-labelledby="country-events">
-            <div class="commu-country-section-head"><h2 id="country-events"><%= copy.relatedEvents %> <span><%= country.eventCount %></span></h2></div>
+            <h2 id="country-events" class="commu-country-section-head"><a href="/commulingo/events?country=<%= encodeURIComponent(country.code) %>"><span><%= copy.relatedEvents %> <small><%= country.eventCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
             <% if (country.events.length) { %><div class="commu-event-grid">
                 <% country.events.forEach(function(event) { %><a class="commu-event-card" href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><div class="commu-event-meta"><span class="commu-event-period"><%= event.period %></span></div><h3><%= event.title %></h3><p><%= event.summary %></p></a><% }) %>
             </div><% } else { %><p class="commu-country-empty"><%= copy.noEvents %></p><% } %>
