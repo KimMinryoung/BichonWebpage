@@ -18,8 +18,8 @@ function rowToPersonSection(row) {
     };
 }
 
-async function ensurePersonExists(client, personId) {
-    const result = await client.query('SELECT 1 FROM commulingo_people WHERE id = $1', [personId]);
+async function ensurePersonExists(client, personId, lock = false) {
+    const result = await client.query('SELECT 1 FROM commulingo_people WHERE id = $1' + (lock ? ' FOR UPDATE' : ''), [personId]);
     if (!result.rows.length) {
         const err = new Error('person not found');
         err.status = 404;
@@ -45,7 +45,7 @@ async function upsertPersonSectionAdmin(personId, slug, payload, options = {}) {
     return withTransaction(options, async client => {
         const id = requireId(personId, 'person id');
         const sectionSlug = requireSlug(slug);
-        await ensurePersonExists(client, id);
+        await ensurePersonExists(client, id, true);
         const before = await getPersonAdmin(id, { client });
         const sortOrder = Number.parseInt(payload.sortOrder, 10);
         const heading = payload.heading || {};
@@ -85,7 +85,7 @@ async function deletePersonSectionAdmin(personId, slug, options = {}) {
     return withTransaction(options, async client => {
         const id = requireId(personId, 'person id');
         const sectionSlug = requireSlug(slug);
-        await ensurePersonExists(client, id);
+        await ensurePersonExists(client, id, true);
         const before = await getPersonAdmin(id, { client });
         const result = await client.query(
             'DELETE FROM commulingo_person_sections WHERE person_id = $1 AND slug = $2',

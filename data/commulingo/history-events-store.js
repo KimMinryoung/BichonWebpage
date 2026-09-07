@@ -1,5 +1,5 @@
-const db = require('../../config/database');
 const path = require('path');
+const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 
 // History events are served from an in-memory copy, mirroring people-store:
@@ -23,8 +23,8 @@ function t(ko, en) {
 }
 
 async function fetchEvents() {
-    const [events, people] = await Promise.all([
-        db.query(
+    const [events, people] = await readSnapshot(client => Promise.all([
+        client.query(
             `SELECT id, period_label, title_ko, title_en, question_ko, question_en,
                     summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
                     timeline, sources, locations, no_auto_link, updated_at,
@@ -34,14 +34,14 @@ async function fetchEvents() {
              WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT ep.event_id, ep.person_id, ep.relation_kind, ep.relation_ko, ep.relation_en, ep.note_ko, ep.note_en,
                     p.name_ko, p.name_en, p.cyrillic, p.years_label
              FROM commulingo_history_event_people ep
              JOIN commulingo_people p ON p.id = ep.person_id
              ORDER BY ep.event_id, ep.sort_order, ep.person_id`
         ),
-    ]);
+    ]));
     const peopleByEvent = {};
     people.rows.forEach(row => {
         if (!peopleByEvent[row.event_id]) peopleByEvent[row.event_id] = [];

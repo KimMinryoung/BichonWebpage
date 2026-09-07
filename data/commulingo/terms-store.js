@@ -1,5 +1,5 @@
-const db = require('../../config/database');
 const path = require('path');
+const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 
 // Glossary terms served from an in-memory copy, mirroring people-store: the
@@ -19,8 +19,8 @@ function normalizeHeadword(value) {
 }
 
 async function fetchTerms() {
-    const [terms, aliases, people, events, relations] = await Promise.all([
-        db.query(
+    const [terms, aliases, people, events, relations] = await readSnapshot(client => Promise.all([
+        client.query(
             `SELECT id, term_ko, term_en, original, period_label,
                     period_ko, period_en, start_year, end_year, category,
                     definition_ko, definition_en, body_ko, body_en, sources,
@@ -28,30 +28,30 @@ async function fetchTerms() {
              FROM commulingo_terms
              ORDER BY sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT term_id, lang, alias
              FROM commulingo_term_aliases
              ORDER BY term_id, lang, sort_order, alias`
         ),
-        db.query(
+        client.query(
             `SELECT tp.term_id, tp.person_id, p.name_ko, p.name_en
              FROM commulingo_term_people tp
              JOIN commulingo_people p ON p.id = tp.person_id
              ORDER BY tp.term_id, tp.sort_order, tp.person_id`
         ),
-        db.query(
+        client.query(
             `SELECT te.term_id, te.event_id, te.same_subject,
                     e.period_label, e.title_ko, e.title_en
              FROM commulingo_term_events te
              JOIN commulingo_history_events e ON e.id = te.event_id
              ORDER BY te.term_id, te.sort_order, te.event_id`
         ),
-        db.query(
+        client.query(
             `SELECT term_id, related_id
              FROM commulingo_term_relations
              ORDER BY term_id, sort_order, related_id`
         ),
-    ]);
+    ]));
     const aliasesByTerm = {};
     aliases.rows.forEach(row => {
         const entry = aliasesByTerm[row.term_id] || (aliasesByTerm[row.term_id] = { ko: [], en: [] });

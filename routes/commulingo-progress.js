@@ -138,9 +138,12 @@ router.post('/progress/answers', requireUser, async (req, res) => {
         .filter(item => item.lessonId && item.lessonId.length <= 120 && /^q\d{1,3}$/.test(item.questionId) && item.lastAt);
     if (!items.length) return res.status(400).json({ error: 'no answers' });
 
+    let client;
     try {
+        client = await db.connect();
+        await client.query('BEGIN');
         for (const item of items) {
-            await db.query(
+            await client.query(
                 `INSERT INTO commulingo_question_progress
                     (user_id, lesson_id, question_id, right_count, wrong_count, streak, last_correct, last_at, due_at)
                  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
@@ -156,10 +159,14 @@ router.post('/progress/answers', requireUser, async (req, res) => {
                 [req.session.user.id, item.lessonId, item.questionId, item.right, item.wrong, item.streak, item.lastCorrect, item.lastAt, item.due]
             );
         }
+        await client.query('COMMIT');
         res.json({ saved: items.length });
     } catch (err) {
+        if (client) await client.query('ROLLBACK').catch(() => {});
         console.error('commulingo save answers:', err);
         res.status(500).json({ error: 'failed to save answers' });
+    } finally {
+        if (client) client.release();
     }
 });
 

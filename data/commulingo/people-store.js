@@ -1,5 +1,6 @@
 const db = require('../../config/database');
 const path = require('path');
+const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 
 // The people dictionary is served from a pre-normalized in-memory copy (no
@@ -48,13 +49,13 @@ async function fetchRows() {
         roleCategories,
         sections,
         redirects,
-    ] = await Promise.all([
-        db.query(
+    ] = await readSnapshot(client => Promise.all([
+        client.query(
             `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, updated_at
              FROM commulingo_people_groups
              ORDER BY sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT id, group_id, initial, cyrillic, years_label,
                     name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
                     epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
@@ -65,57 +66,57 @@ async function fetchRows() {
              FROM commulingo_people
              ORDER BY sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT person_id, patronymic_ko, patronymic_en, cyrillic_patronymic, updated_at
              FROM commulingo_person_patronymics`
         ),
-        db.query(
+        client.query(
             `SELECT person_id, lang, alias
              FROM commulingo_person_aliases
              ORDER BY person_id, lang, sort_order, alias`
         ),
-        db.query(
+        client.query(
             `SELECT person_id, collection_id, episode_id
              FROM commulingo_person_scenes
              ORDER BY person_id, sort_order, collection_id, episode_id`
         ),
-        db.query(
+        client.query(
             `SELECT person_id, period_label, role_ko, role_en, updated_at
              FROM commulingo_person_career_entries
              ORDER BY person_id, sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, updated_at
              FROM commulingo_offices
              ORDER BY sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT office_id, period_label, body_ko, body_en, person_id,
                     name_ko, name_en, note_ko, note_en, updated_at
              FROM commulingo_office_rows
              ORDER BY office_id, sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT person_id, icon, office_id, category_id, label_ko, label_en, updated_at
              FROM commulingo_person_roles
              ORDER BY person_id`
         ),
-        db.query(
+        client.query(
             `SELECT id, icon, label_ko, label_en, updated_at
              FROM commulingo_role_categories
              ORDER BY sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at
              FROM commulingo_person_sections
              ORDER BY person_id, sort_order, id`
         ),
-        db.query(
+        client.query(
             `SELECT entity_type, from_id, to_id
              FROM commulingo_id_redirects
              ORDER BY entity_type, from_id`
         ),
-    ]);
+    ]));
 
     return {
         groups: groups.rows,

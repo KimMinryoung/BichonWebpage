@@ -124,48 +124,69 @@ function createDictionarySnapshotStore({
         return null;
     }
 
-    function refresh() {
+    let forceRequested = false;
+
+    function refresh({ force = true } = {}) {
+        if (force) forceRequested = true;
         if (pendingRefresh) return pendingRefresh;
         pendingRefresh = (async () => {
-            // Cheap path: nothing written to the store's tables since the last
-            // full pull, and the periodic full pull is not due yet.
-            const signature = await currentSignature();
-            if (signature && lastSignature && signature === lastSignature
-                && memory && memory.source === 'db' && cyclesSinceFull < FULL_REFRESH_EVERY) {
-                cyclesSinceFull += 1;
-                memory = { data: memory.data, source: 'db', at: Date.now() };
-                return memory.data;
+            try {
+                let result;
+                do {
+                    const forced = forceRequested;
+                    forceRequested = false;
+                    try {
+                        result = await refreshOnce(forced);
+                    } catch (err) {
+                        // A committed edit queued during a failed pull still gets a retry.
+                        if (!forceRequested) throw err;
+                    }
+                } while (forceRequested);
+                return result;
+            } finally {
+                // Clear in the same continuation as the final queue check.
+                pendingRefresh = null;
             }
-            // Full pull. The signature was read before the fetch, so a write
-            // that lands during the fetch shows up as a change next cycle.
-            const data = await fetchData();
-            if (isEmpty(data)) {
-                const err = new Error(emptyErrorMessage);
-                err.code = emptyErrorCode;
-                throw err;
-            }
-            lastSignature = signature;
-            cyclesSinceFull = 0;
-            const serialized = JSON.stringify(data);
-            const hash = crypto.createHash('sha1').update(serialized).digest('hex');
-            if (memory && hash === lastSnapshotHash) {
-                memory = { data: memory.data, source: 'db', at: Date.now() };
-                return memory.data;
-            }
-            memory = { data, source: 'db', at: Date.now() };
-            lastSnapshotHash = hash;
-            writeSnapshotFile(snapshotPath, label, serialized);
-            return data;
-        })().finally(() => {
-            pendingRefresh = null;
-        });
+        })();
         return pendingRefresh;
+    }
+
+    async function refreshOnce(forced) {
+        // Cheap path: nothing written to the store's tables since the last
+        // full pull, and the periodic full pull is not due yet.
+        const signature = await currentSignature();
+        if (!forced && signature && lastSignature && signature === lastSignature
+            && memory && memory.source === 'db' && cyclesSinceFull < FULL_REFRESH_EVERY) {
+            cyclesSinceFull += 1;
+            memory = { data: memory.data, source: 'db', at: Date.now() };
+            return memory.data;
+        }
+        // Full pull. The signature was read before the fetch, so a write
+        // that lands during the fetch shows up as a change next cycle.
+        const data = await fetchData();
+        if (isEmpty(data)) {
+            const err = new Error(emptyErrorMessage);
+            err.code = emptyErrorCode;
+            throw err;
+        }
+        lastSignature = signature;
+        cyclesSinceFull = 0;
+        const serialized = JSON.stringify(data);
+        const hash = crypto.createHash('sha1').update(serialized).digest('hex');
+        if (memory && hash === lastSnapshotHash) {
+            memory = { data: memory.data, source: 'db', at: Date.now() };
+            return memory.data;
+        }
+        memory = { data, source: 'db', at: Date.now() };
+        lastSnapshotHash = hash;
+        writeSnapshotFile(snapshotPath, label, serialized);
+        return data;
     }
 
     function ensureRefreshTimer() {
         if (timerStarted) return;
         timerStarted = true;
-        startTimer(label, refreshMs, refresh);
+        startTimer(label, refreshMs, () => refresh({ force: false }));
     }
 
     // Serves memory → disk snapshot → DB; returns { data, source }.
@@ -186,7 +207,7 @@ function createDictionarySnapshotStore({
         // Hot path: serve the in-memory copy. If it is older than refreshMs,
         // kick a background refresh but still return the current data.
         if (memory) {
-            if (Date.now() - memory.at >= refreshMs) refresh().catch(() => {});
+            if (Date.now() - memory.at >= refreshMs) refresh({ force: false }).catch(() => {});
             return { data: memory.data, source: memory.source };
         }
 
@@ -195,7 +216,7 @@ function createDictionarySnapshotStore({
         const snap = readSnapshotFile();
         if (snap) {
             memory = { data: snap, source: 'snapshot', at: 0 };
-            refresh().catch(() => {});
+            refresh({ force: false }).catch(() => {});
             return { data: snap, source: 'snapshot' };
         }
 

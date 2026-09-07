@@ -424,6 +424,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
     if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
     return withTransaction(options, async client => {
         const id = requireId(personId, 'person id');
+        await client.query('SELECT id FROM commulingo_people WHERE id = $1 FOR UPDATE', [id]);
         const before = await getPersonAdmin(id, { client });
         if (!before) {
             const err = new Error('person not found');
@@ -589,6 +590,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
 async function deletePersonAdmin(personId, options = {}) {
     return withTransaction(options, async client => {
         const id = requireId(personId, 'person id');
+        await client.query('SELECT id FROM commulingo_people WHERE id = $1 FOR UPDATE', [id]);
         const before = await getPersonAdmin(id, { client });
         if (!before) {
             const err = new Error('person not found');
