@@ -25,8 +25,9 @@
         </header>
 
         <section class="commu-world-map-panel is-country" aria-label="<%= filter.label %>">
+            <%- include('../partials/commulingo-world-map-controls', { copy: strings.commuLingoViews.worldMap }) %>
             <div class="commu-world-map" data-world-map><%- mapSvg %></div>
-            <div class="commu-nationality-map-link"><a href="<%= countryPageHref %>"><%= strings.commuLingoViews.worldMap.openCountryHub %></a></div>
+            <a class="commu-country-view-all" href="<%= countryPageHref %>"><span><%= strings.commuLingoViews.worldMap.openCountryHub %></span><span aria-hidden="true">→</span></a>
             <p class="commu-world-map-note"><%= mapKind === 'modern' ? strings.commuLingoViews.worldMap.boundaryNote : strings.commuLingoViews.worldMap.historicalNote %></p>
         </section>
 

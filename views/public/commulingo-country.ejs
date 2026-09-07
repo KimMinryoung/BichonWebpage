@@ -18,24 +18,29 @@
         </header>
 
         <section class="commu-world-map-panel is-country" aria-label="<%= country.label %>">
+            <%- include('../partials/commulingo-world-map-controls', { copy: copy }) %>
             <div class="commu-world-map" data-world-map><%- mapSvg %></div>
             <p class="commu-world-map-note"><%= country.kind === 'modern' ? copy.boundaryNote : copy.historicalNote %></p>
         </section>
 
+        <nav class="commu-country-sections" aria-label="<%= copy.sectionNav %>">
+            <a href="#country-citizenship"><span><%= copy.citizenship %></span><strong><%= country.citizenshipCount %></strong></a>
+            <a href="#country-origin"><span><%= copy.background %></span><strong><%= country.originCount %></strong></a>
+            <a href="#country-events"><span><%= copy.events %></span><strong><%= country.eventCount %></strong></a>
+        </nav>
+
         <section class="commu-hub-section" aria-labelledby="country-citizenship">
-            <div class="commu-country-section-head"><h2 id="country-citizenship"><%= copy.citizenshipPeople %> <span><%= country.citizenshipCount %></span></h2>
-            <% if (country.citizenshipCount) { %><a href="/commulingo/people/citizenship/<%= encodeURIComponent(country.code) %>"><%= copy.viewAll %></a><% } %></div>
+            <div class="commu-country-section-head"><h2 id="country-citizenship"><%= copy.citizenshipPeople %> <span><%= country.citizenshipCount %></span></h2></div>
             <% if (country.citizenshipPreview.length) { %><div class="commu-people-grid">
                 <% country.citizenshipPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %><% }) %>
-            </div><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
+            </div><% if (country.citizenshipCount > previewLimit) { %><a class="commu-country-view-all" href="/commulingo/people/citizenship/<%= encodeURIComponent(country.code) %>"><span><%= copy.viewAll %></span><span aria-hidden="true">→</span></a><% } %><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
         </section>
 
         <section class="commu-hub-section" aria-labelledby="country-origin">
-            <div class="commu-country-section-head"><h2 id="country-origin"><%= copy.backgroundPeople %> <span><%= country.originCount %></span></h2>
-            <% if (country.originCount) { %><a href="/commulingo/people/national-origin/<%= encodeURIComponent(country.code) %>"><%= copy.viewAll %></a><% } %></div>
+            <div class="commu-country-section-head"><h2 id="country-origin"><%= copy.backgroundPeople %> <span><%= country.originCount %></span></h2></div>
             <% if (country.originPreview.length) { %><div class="commu-people-grid">
                 <% country.originPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %><% }) %>
-            </div><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
+            </div><% if (country.originCount > previewLimit) { %><a class="commu-country-view-all" href="/commulingo/people/national-origin/<%= encodeURIComponent(country.code) %>"><span><%= copy.viewAll %></span><span aria-hidden="true">→</span></a><% } %><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
         </section>
 
         <section class="commu-hub-section" aria-labelledby="country-events">

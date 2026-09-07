@@ -15,6 +15,7 @@
 
         <section class="commu-world-map-panel" aria-labelledby="world-map-heading">
             <h2 class="commu-sr-only" id="world-map-heading"><%= copy.mapLabel %></h2>
+            <%- include('../partials/commulingo-world-map-controls', { copy: copy }) %>
             <div class="commu-world-map" data-world-map><%- mapSvg %></div>
             <div class="commu-world-map-legend" aria-label="<%= copy.legend %>">
                 <span><i class="is-modern"></i><%= copy.modern %></span>

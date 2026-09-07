@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
 const MAP = require('../data/commulingo/world-map.json');
 const { FLAG_NAMES } = require('../data/commulingo/flag-icons');
 const { COUNTRY_GEOGRAPHY, countryCodes, countryHref, countryInfo } = require('../data/commulingo/country-geography');
@@ -24,4 +25,17 @@ assert.match(svg, /href="\/commulingo\/countries\/poland"/);
 assert.match(svg, /data-country-code="east-germany"/);
 assert.match(svg, /wmap-highlight is-historical is-selected/);
 assert.ok(svg.length < 250000, `world map SVG is unexpectedly heavy: ${svg.length} bytes`);
+const countryRoute = fs.readFileSync(require.resolve('../routes/commulingo-map.js'), 'utf8');
+const countryTemplate = fs.readFileSync(require.resolve('../views/public/commulingo-country.ejs'), 'utf8');
+const nationalityTemplate = fs.readFileSync(require.resolve('../views/public/commulingo-nationality.ejs'), 'utf8');
+const mapControls = fs.readFileSync(require.resolve('../views/partials/commulingo-world-map-controls.ejs'), 'utf8');
+const mapScript = fs.readFileSync(require.resolve('../public/js/commulingo-world-map.js'), 'utf8');
+assert.match(countryRoute, /const PREVIEW_LIMIT = 4;/, 'country hubs should show at most four people per group');
+assert.match(countryTemplate, /class="commu-country-sections"/, 'country hubs need compact section navigation');
+assert.match(countryTemplate, /class="commu-country-view-all"/, 'view-all links must use a button-like CTA');
+assert.doesNotMatch(countryTemplate, /commu-country-section-head[^\n]*<a /, 'view-all must not be a plain heading link');
+assert.match(nationalityTemplate, /class="commu-country-view-all"/, 'country-hub links must use a button-like CTA');
+assert.match(mapControls, /data-map-action="zoom-in"/, 'world maps need zoom controls');
+assert.match(mapControls, /data-map-action="reset"/, 'world maps need a scale reset control');
+assert.match(mapScript, /selected\.getBBox\(\)/, 'country maps need geometry-aware automatic fitting');
 console.log(`world map: ${codes.length} country/region codes, geometry coverage and SVG links OK`);

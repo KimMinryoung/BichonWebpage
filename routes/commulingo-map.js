@@ -12,7 +12,7 @@ const { countryCodes, countryInfo } = require('../data/commulingo/country-geogra
 const { renderWorldMapSvg } = require('../data/commulingo/world-map-svg');
 
 const router = express.Router();
-const PREVIEW_LIMIT = 6;
+const PREVIEW_LIMIT = 4;
 const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas'];
 
 function directEventsFor(events, code, lang) {
