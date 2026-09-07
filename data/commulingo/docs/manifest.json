@@ -2139,14 +2139,14 @@
         "en": "Pacific War Documents: from the Tripartite Pact to the Instrument of Surrender (1940–1945)"
       },
       "description": {
-        "ko": "삼국동맹 조약(1940), 소일 중립조약과 1945년 대일 선전 성명, 헐 노트(1941), 포츠담 선언, 중소우호동맹조약, 일본 항복 문서(1945). 태평양 전쟁의 시작과 끝을 가른 여섯 문서를 시간순으로 묶었다.",
-        "en": "The Tripartite Pact (1940), the Soviet–Japanese Neutrality Pact with the 1945 declaration of war, the Hull Note (1941), the Potsdam Declaration, the Sino-Soviet Treaty and the Japanese Instrument of Surrender (1945): six documents that opened and closed the Pacific War, in order."
+        "ko": "삼국동맹 조약(1940), 소일 중립조약과 1945년 대일 선전 성명, 1941년 7월 2일 어전회의의 「정세의 추이에 따른 제국 국책요강」, 헐 노트(1941), 포츠담 선언, 중소우호동맹조약, 일본 항복 문서(1945). 태평양 전쟁의 시작과 끝을 가른 일곱 문서를 시간순으로 묶었다.",
+        "en": "The Tripartite Pact (1940), the Soviet–Japanese Neutrality Pact with the 1945 declaration of war, the Imperial Conference's 'Outline of National Policy in View of the Changing Situation' of 2 July 1941, the Hull Note (1941), the Potsdam Declaration, the Sino-Soviet Treaty and the Japanese Instrument of Surrender (1945): seven documents that opened and closed the Pacific War, in order."
       },
       "kind": {
         "ko": "조약·협정",
         "en": "Treaties & agreements"
       },
-      "source": "Three-Power Pact, 1940-09-27. 미 국무부 간행 영역본, 예일대 로스쿨 애벌론 프로젝트 전자판; 러시아어 위키문헌 전사본 2건; Outline of Proposed Basis for Agreement Between the United States and Japan, 1941-11-26. 영어 위키문헌 전사본; Proclamation Defining Terms for Japanese Surrender, 1945-07-26. 영어 위키문헌 전사본; 러시아어 위키문헌 전사본(러시아어 정본); Instrument of Surrender, 1945-09-02. 영어 위키문헌 전사본(미국 국립문서보관소 소장 원본)",
+      "source": "Three-Power Pact, 1940-09-27. 미 국무부 간행 영역본, 예일대 로스쿨 애벌론 프로젝트 전자판; 러시아어 위키문헌 전사본 2건; Outline of Proposed Basis for Agreement Between the United States and Japan, 1941-11-26. 영어 위키문헌 전사본; Proclamation Defining Terms for Japanese Surrender, 1945-07-26. 영어 위키문헌 전사본; 러시아어 위키문헌 전사본(러시아어 정본); Instrument of Surrender, 1945-09-02. 영어 위키문헌 전사본(미국 국립문서보관소 소장 원본); 情勢ノ推移ニ伴フ帝國國策要綱, 1941-07-02. 미국 정부 영역본(극동국제군사재판 증거), ibiblio HyperWar 전사본",
       "people": [
         "molotov",
         "cordell-hull",
@@ -2154,14 +2154,18 @@
         "mamoru-shigemitsu",
         "yoshijiro-umezu",
         "douglas-macarthur",
-        "hirohito"
+        "hirohito",
+        "konoe-fumimaro",
+        "yosuke-matsuoka",
+        "hideki-tojo"
       ],
       "terms": [
         "unconditional-surrender",
         "soviet-japanese-neutrality-pact",
         "united-nations",
         "most-favoured-nation-mfn-status",
-        "sovnarkom"
+        "sovnarkom",
+        "nanshin-ron-southern-expansion-doctrine"
       ],
       "events": [
         "pacific-war",
@@ -2185,7 +2189,10 @@
           "소중 우호동맹조약",
           "일본 항복 문서",
           "항복 문서(1945)",
-          "태평양 전쟁 문서집"
+          "태평양 전쟁 문서집",
+          "정세의 추이에 따른 제국 국책요강",
+          "제국 국책요강 (1941)",
+          "1941년 7월 2일 어전회의 결정"
         ],
         "en": [
           "Tripartite Pact",
@@ -2196,9 +2203,12 @@
           "Potsdam Declaration",
           "Sino-Soviet Treaty of Friendship and Alliance",
           "Instrument of Surrender",
-          "Japanese Instrument of Surrender"
+          "Japanese Instrument of Surrender",
+          "Outline of National Policy in View of the Changing Situation",
+          "Imperial Conference decision of 2 July 1941"
         ]
-      }
+      },
+      "modifiedAt": "2026-09-07"
     },
     {
       "id": "molotov-washington-1942",
@@ -4552,6 +4562,131 @@
           "Molotov's refusal of landing rights, 16 August 1944",
           "Stalin–Churchill Warsaw messages",
           "Soviet reply to the War Cabinet, 9 September 1944"
+        ]
+      }
+    },
+    {
+      "id": "helsinki-final-act-1975",
+      "file": "helsinki-final-act-1975.html",
+      "docLang": "ko",
+      "date": "1975-08-01",
+      "title": {
+        "ko": "헬싱키 최종의정서 (발췌) — 10원칙 선언과 신뢰구축 조치 문서 (1975)",
+        "en": "The Helsinki Final Act (Excerpt): the Declaration of Principles and the Confidence-Building Measures Document (1975)"
+      },
+      "description": {
+        "ko": "1975년 8월 1일 35개국 정상이 서명한 유럽안보협력회의 최종의정서의 안보 부문. 주권 평등, 무력 불사용, 국경의 불가침, 영토 보전, 분쟁의 평화적 해결, 내정 불간섭, 인권과 기본적 자유의 존중, 민족 자결, 국가 간 협력, 국제법상 의무의 성실한 이행이라는 열 가지 원칙을 정한 「참가국 관계를 이끄는 원칙 선언」과, 대규모 군사 기동훈련의 사전 통보를 정한 신뢰구축 조치 문서를 옮겼다. 경제·인도 협력 부문(제2·3바스켓)은 제외했다.",
+        "en": "The security section of the CSCE Final Act signed by thirty-five heads of state on 1 August 1975: the Declaration on Principles Guiding Relations between Participating States, with its ten principles from sovereign equality and the inviolability of frontiers to respect for human rights and the self-determination of peoples, and the Document on confidence-building measures providing for prior notification of major military manoeuvres. The economic and humanitarian baskets are omitted."
+      },
+      "kind": {
+        "ko": "조약·협정",
+        "en": "Treaties & agreements"
+      },
+      "source": "Conference on Security and Co-operation in Europe, Final Act, Helsinki, 1 August 1975 — Questions relating to Security in Europe (1(a) Declaration on Principles Guiding Relations between Participating States; 1(b); Document on confidence-building measures) // en.wikisource (US Government publication); OSCE official texts",
+      "people": [
+        "brezhnev",
+        "gerald-ford",
+        "gromyko",
+        "henry-kissinger"
+      ],
+      "terms": [
+        "helsinki-final-act",
+        "baskets-the-three-csce-baskets",
+        "united-nations"
+      ],
+      "events": [
+        "helsinki-accords"
+      ],
+      "addedAt": "2026-09-07",
+      "aliases": {
+        "ko": [
+          "헬싱키 협정",
+          "헬싱키 최종의정서",
+          "헬싱키 10원칙",
+          "참가국 관계를 이끄는 원칙 선언",
+          "CSCE 최종의정서"
+        ],
+        "en": [
+          "Helsinki Accords",
+          "Helsinki Final Act",
+          "Helsinki Decalogue",
+          "CSCE Final Act",
+          "Declaration on Principles Guiding Relations between Participating States"
+        ]
+      }
+    },
+    {
+      "id": "inf-treaty-1987",
+      "file": "inf-treaty-1987.html",
+      "docLang": "ko",
+      "date": "1987-12-08",
+      "title": {
+        "ko": "중거리핵전력 조약 — 소련과 미국의 중거리·단거리 미사일 폐기 조약 (1987년 12월 8일)",
+        "en": "The Intermediate-Range Nuclear Forces Treaty (1987)"
+      },
+      "description": {
+        "ko": "1987년 12월 8일 워싱턴에서 고르바초프와 레이건이 서명한 중거리핵전력(INF) 조약 본문이다. 사거리 500~5,500km의 지상발사 탄도·순항미사일과 발사대를 3년 안에 모두 폐기하고 그 뒤 보유를 금지하며(제4~6조), 폐기와 배치 지역·생산 시설에 대한 현장 사찰(제11조)을 처음으로 조약에 넣었다. 조약의 불가분한 부분인 양해각서와 폐기·사찰 의정서 두 건은 본문의 네 배 분량이라 옮기지 않았다.",
+        "en": "The treaty signed in Washington on 8 December 1987 on the elimination of Soviet and US intermediate-range and shorter-range missiles. Korean translation of the Russian treaty text; the memorandum of understanding and the elimination and inspection protocols are not included."
+      },
+      "kind": {
+        "ko": "조약·협정",
+        "en": "Treaties & agreements"
+      },
+      "source": "원제: Договор между Союзом Советских Социалистических Республик и Соединенными Штатами Америки о ликвидации их ракет средней дальности и меньшей дальности (Вашингтон, 8 декабря 1987 г.); 원본: Ведомости Верховного Совета СССР, 1988, № 26, ст. 425; 영어·러시아어 정본 동등; 번역 저본: ru.wikisource 전자판. 국가 간 공식 문서로 저작권 보호 대상이 아니다",
+      "people": [
+        "gorbachev",
+        "ronald-reagan"
+      ],
+      "terms": [],
+      "events": [],
+      "addedAt": "2026-09-07",
+      "aliases": {
+        "ko": [
+          "중거리핵전력 조약",
+          "INF 조약"
+        ],
+        "en": [
+          "INF Treaty",
+          "Intermediate-Range Nuclear Forces Treaty"
+        ]
+      }
+    },
+    {
+      "id": "salt-ii-treaty-1979",
+      "file": "salt-ii-treaty-1979.html",
+      "docLang": "ko",
+      "date": "1979-06-18",
+      "title": {
+        "ko": "전략무기제한협정 II — 미국과 소련의 전략공격무기 제한 조약, 의정서, 후속 협상 원칙 공동성명, 백파이어 성명 (1979년 6월 18일, 빈)",
+        "en": "SALT II: Treaty, Protocol, Joint Statement and Backfire Statements (1979)"
+      },
+      "description": {
+        "ko": "1979년 6월 18일 빈에서 서명된 SALT II 협정 문서 네 건이다. 열아홉 개 조의 조약은 전략공격무기 발사대의 총량 상한(2,400기, 1981년부터 2,250기)과 MIRV 탑재 미사일의 소상한, 신형 ICBM 한 종류 제한, 국가 기술적 검증수단의 불간섭을 정했고, 조문마다 두 나라가 함께 서명한 합의성명과 공통이해가 뒤따른다. 여기에 1981년 말까지 이동식 ICBM 발사대와 장거리 순항미사일 배치를 유예한 의정서, 다음 협상의 원칙을 적은 공동성명, 그리고 Tu-22M 「백파이어」의 생산과 개조를 제한한다는 브레즈네프의 서면 성명과 카터의 답변을 더했다. 미국 상원은 이 조약을 비준하지 않았으나 두 나라는 1986년까지 그 한도를 지켰다. 합의성명과 공통이해는 저본대로 해당 조항 바로 아래에 두었고, 데이터 각서의 수량 표는 옮기지 않았다.",
+        "en": "The 18 June 1979 treaty limiting US and Soviet strategic offensive arms, with agreed statements and common understandings, the protocol, guidelines for subsequent negotiations, and the Backfire statements. Korean translation of the US government text reproduced by FAS; the memorandum data tables are omitted."
+      },
+      "kind": {
+        "ko": "조약·협정",
+        "en": "Treaties & agreements"
+      },
+      "source": "원제: Treaty Between the United States of America and the Union of Soviet Socialist Republics on the Limitation of Strategic Offensive Arms, Together with Agreed Statements and Common Understandings Regarding the Treaty; Protocol to the Treaty; Joint Statement of Principles and Basic Guidelines for Subsequent Negotiations on the Limitation of Strategic Arms; Soviet Backfire Statement — Vienna, June 18, 1979 (U.S. Department of State); 번역 저본: 미국과학자연맹(FAS) 전자판(nuke.fas.org/control/salt2/text). 미국 정부의 조약 공식 텍스트로 저작권 보호 대상이 아니다",
+      "people": [
+        "jimmy-carter",
+        "brezhnev"
+      ],
+      "terms": [
+        "salt-ii-compliance-dispute"
+      ],
+      "events": [],
+      "addedAt": "2026-09-07",
+      "aliases": {
+        "ko": [
+          "전략무기제한협정 II",
+          "SALT II 협정",
+          "SALT II 조약"
+        ],
+        "en": [
+          "SALT II Treaty",
+          "SALT II agreement"
         ]
       }
     }
