@@ -245,12 +245,19 @@ function buildPersonLinkIndex(people, options = {}) {
 // sort is stable, so among equal lengths that order survives. Longest
 // alternative first; word boundaries only for English, where they exist.
 function buildAliasPattern(tokens, blocked, en) {
-    if (!tokens.length && !(blocked || []).length) return /(?!)/g;
+    if (!tokens.length && !(blocked || []).length) {
+        const empty = /(?!)/g;
+        empty.linkTokens = [];
+        return empty;
+    }
     const all = (blocked || []).concat(tokens).sort((a, b) => b.length - a.length);
     const alternation = all.map(escapeRegExp).join('|');
     // Qualified names may end in ')' or punctuation; a trailing \b would
     // reject them at the end of a sentence. Check neighbouring letters instead.
-    return new RegExp(en ? '(?<![\\p{L}\\p{N}_])(' + alternation + ')(?![\\p{L}\\p{N}_])' : '(' + alternation + ')', en ? 'gu' : 'g');
+    const pattern = new RegExp(en ? '(?<![\\p{L}\\p{N}_])(' + alternation + ')(?![\\p{L}\\p{N}_])' : '(' + alternation + ')', en ? 'gu' : 'g');
+    // Literal alternatives, including blocked compounds, for incremental report invalidation.
+    pattern.linkTokens = [...new Set(all)];
+    return pattern;
 }
 
 // Tags whose text content must never be linkified: existing anchors (no nested

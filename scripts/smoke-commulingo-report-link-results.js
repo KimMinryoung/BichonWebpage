@@ -39,6 +39,8 @@ series.publishedReportSlugs = async () => new Set(['test']);
     assert.deepStrictEqual(rendered.relatedPeople.map(p => p.id), ['lenin']);
     const mentions = require('../services/report-mentions');
     assert.deepStrictEqual(await mentions.getReportsForPerson('ford', 'ko'), []);
+    // Background builds yield between report languages.
+    for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve));
     const related = await mentions.getReportsForPerson('lenin', 'ko');
     assert.strictEqual(related.length, 1);
     const anchor = decodeURIComponent(related[0].href.split('#')[1]);

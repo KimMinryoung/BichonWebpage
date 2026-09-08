@@ -1,4 +1,5 @@
 const { createHash } = require('crypto');
+const { ResearchLinkCache } = require('./research-link-cache');
 const { collectLinkedEntities } = require('../data/commulingo/linked-entities');
 const { downgradeUnknownReportLinks, renderMarkdown, stripFirstHeading } = require('../utils/markdown');
 const { sanitizeRich } = require('../utils/sanitize');
@@ -21,19 +22,16 @@ function researchHtmlBody(data, markdown, knownSlugs) {
     return sanitizeRich(html);
 }
 
-const NO_INDEXES = {};
-const memo = new WeakMap();
+const cache = new ResearchLinkCache();
 function compileResearchBody(data, indexes, knownSlugs) {
-    const generationKey = indexes || NO_INDEXES;
-    let generation = memo.get(generationKey);
-    if (!generation) { generation = new Map(); memo.set(generationKey, generation); }
+    const generation = cache.forIndexes(indexes);
     // Actual content and exact published slugs, not just their count or a
     // timestamp: edits and same-size slug replacements invalidate the render.
     const key = createHash('sha256').update(JSON.stringify([
         researchMarkdown(data), data?.html_body || data?.htmlBody || '',
         knownSlugs ? [...knownSlugs].sort() : null,
     ])).digest('hex');
-    if (generation.has(key)) return generation.get(key);
+    if (generation.has(key)) return generation.get(key).result;
     const html = researchHtmlBody(data, researchMarkdown(data), knownSlugs);
     let result;
     try { result = linkifyReportHtml(html, indexes); }
@@ -41,8 +39,7 @@ function compileResearchBody(data, indexes, knownSlugs) {
         console.error('Error linking commulingo entities:', error.message);
         return collectLinkedEntities(html, indexes, { anchors: true });
     }
-    if (generation.size >= 500) generation.clear();
-    generation.set(key, result);
+    cache.put(generation, key, html, result);
     return result;
 }
 

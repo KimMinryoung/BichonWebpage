@@ -5,7 +5,7 @@ const { getReportLinkContext } = require('../data/commulingo/report-links');
 const { publishedReportSlugs } = require('./research-series');
 
 // Rendering a research report: markdown → sanitized HTML → CommuLingo
-// links, memoized per link-index generation, then res.render with the
+// links, cached per report with dictionary dependency invalidation, then res.render with the
 // related-entries panel data.
 
 async function renderResearch(res, { filename, slug, pagePath, data, seriesNav = null }) {

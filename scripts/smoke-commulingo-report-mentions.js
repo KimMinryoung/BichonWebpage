@@ -27,7 +27,7 @@ const sandbox = {
         return dependencies[name];
     },
     process: { env: {} }, Date: class extends Date { static now() { return now; } },
-    console: { error: (...args) => errors.push(args) }, setImmediate,
+    console: { log: () => {}, error: (...args) => errors.push(args) }, setImmediate,
 };
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../services/report-mentions.js'), 'utf8'), sandbox);
 const { getReportsForTerm, getReportsForPerson, getReportsForEvent, getReportsForTopic } = sandbox.module.exports;
@@ -48,27 +48,33 @@ const watchdog = setTimeout(() => {
     assert.equal(builds, 1, 'concurrent readers share a background build');
     resolveRows(rows);
     await flush();
+    await flush();
+    await flush();
     assert.equal((await getReportsForTerm('nep', 'ko'))[0].href, '/reports/research/report#term-nep');
     assert.equal((await getReportsForTerm('nep', 'en'))[0].title, 'Report');
 
     contexts = { ko: {}, en: {} };
     assert.equal((await getReportsForTerm('nep', 'ko')).length, 0, 'invalid anchors are hidden without awaiting rebuild');
-    assert.equal(builds, 2);
+    assert.equal(builds, 1, 'dictionary edits reuse already loaded report texts');
     await getReportsForTerm('nep', 'en');
-    assert.equal(builds, 2);
-    resolveRows(rows);
+    await flush();
+    await flush();
+    await flush();
+    await flush();
     await flush();
     assert.equal((await getReportsForTerm('nep', 'ko')).length, 1);
 
     now = 600001;
     assert.equal((await getReportsForTerm('nep', 'ko')).length, 1, 'TTL refresh retains matching anchors');
-    assert.equal(builds, 3);
+    assert.equal(builds, 2);
     rejectRows(new Error('database unavailable'));
     await flush();
     assert.ok(errors.length > 0);
     assert.equal((await getReportsForTerm('nep', 'ko')).length, 1, 'background failures retain usable results');
-    assert.equal(builds, 4, 'failed refresh can retry');
+    assert.equal(builds, 3, 'failed refresh can retry');
     resolveRows(rows);
+    await flush();
+    await flush();
     await flush();
     assert.equal((await getReportsForTerm('nep', 'ko')).length, 1);
     console.log('OK — report mentions never block article reads during cold start, edits, or failed refreshes');
