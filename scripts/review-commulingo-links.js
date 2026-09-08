@@ -8,7 +8,7 @@ const { key } = require('../data/commulingo/link-review-policy');
 const { assertLinkExpressions } = require('../data/commulingo/link-expressions');
 const actor = 'owner-requested-link-review-20260908';
 const manifest = JSON.parse(fs.readFileSync(0, 'utf8'));
-const decisions = manifest.decisions;
+const decisions = manifest.decisions.map(decision => ({ ...decision, note: decision.note.trim() }));
 const apply = process.argv.includes('--apply');
 const recordKey = r => r.kind + ':' + r.id;
 const rowKey = r => key(r.kind, r.id, r.lang, r.text);
