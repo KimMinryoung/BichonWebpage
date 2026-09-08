@@ -8,6 +8,7 @@
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
 | CommuLingo DB·캐시·동시성·복구 | [저장 구조와 검증](commulingo-database.md) |
+| CommuLingo 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
 | CommuLingo DB 후속 개선 후보 | [미구현 검토 목록](commulingo-database-followups.md) |
 | CommuLingo 인물 편집 개선 | [현행 규칙·구현 체크리스트](commulingo-people-editing-plan.md) |
 | CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
