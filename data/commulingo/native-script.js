@@ -64,6 +64,12 @@ const NATION_SCRIPTS = {
     albania: LATIN,
     // Both alphabets were official in Yugoslavia; Croats and Slovenes wrote Latin.
     yugoslavia: ['latin', 'cyrillic'],
+    serbia: ['latin', 'cyrillic'],
+    croatia: LATIN,
+    slovenia: LATIN,
+    montenegro: ['latin', 'cyrillic'],
+    'bosnia-herzegovina': ['latin', 'cyrillic'],
+    switzerland: LATIN,
     france: LATIN,
     italy: LATIN,
     spain: LATIN,

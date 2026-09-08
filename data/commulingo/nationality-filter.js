@@ -4,12 +4,12 @@ const FILTER_KINDS = {
     citizenship: {
         personField: 'citizenship',
         pathSegment: 'citizenship',
-        label: { ko: '국적', en: 'Citizenship' },
+        label: { ko: '소속 국가', en: 'Citizenship' },
     },
     nationalOrigin: {
         personField: 'origin',
         pathSegment: 'national-origin',
-        label: { ko: '민족·국가적 배경', en: 'National background' },
+        label: { ko: '출신 배경', en: 'National background' },
     },
 };
 

@@ -25,6 +25,7 @@
 // code -> default localized label, used as the tooltip when the row carries no
 // explicit label text of its own.
 const FLAG_NAMES = {
+    ...Object.fromEntries(require('./additional-countries.json').map(({ code, ko, en }) => [code, { ko, en }])),
     soviet: { ko: '소련', en: 'Soviet Union' },
     russia: { ko: '러시아', en: 'Russia' },
     ukraine: { ko: '우크라이나', en: 'Ukraine' },
@@ -53,6 +54,12 @@ const FLAG_NAMES = {
     spain: { ko: '스페인', en: 'Spain' },
     romania: { ko: '루마니아', en: 'Romania' },
     yugoslavia: { ko: '유고슬라비아', en: 'Yugoslavia' },
+    'serbia': { ko: '세르비아', en: 'Serbia' },
+    'croatia': { ko: '크로아티아', en: 'Croatia' },
+    'slovenia': { ko: '슬로베니아', en: 'Slovenia' },
+    'montenegro': { ko: '몬테네그로', en: 'Montenegro' },
+    'bosnia-herzegovina': { ko: '보스니아 헤르체고비나', en: 'Bosnia and Herzegovina' },
+    'switzerland': { ko: '스위스', en: 'Switzerland' },
     czechia: { ko: '체코', en: 'Czechia' },
     'east-germany': { ko: '동독', en: 'East Germany' },
     uzbekistan: { ko: '우즈베키스탄', en: 'Uzbekistan' },

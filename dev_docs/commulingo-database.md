@@ -23,6 +23,8 @@ Migration 175는 역방향으로 겹치는 용어 관계만 정리한다. 두 �
 
 Admin 인물 수정·삭제, 절 저장·삭제는 기존 상태를 읽기 전에 인물 행을 `FOR UPDATE`로 잠근다. 검증·변경·이력은 같은 트랜잭션이다. 외부 `options.client` 호출자는 트랜잭션 경계와 커밋 후 캐시 갱신을 책임진다. 일반 인물 upsert 스크립트도 이 계약을 따른다.
 
+인물 Admin 부분 수정은 생략한 언어를 보존하고 상세 절 이력은 sectionBefore/sectionAfter 원문·출처를 보관한다. 상세 계약과 복원 절차는 [인물 인수인계](commulingo_people_handoff.md), 구현 순서와 미완료 범위는 [인물 편집 체크리스트](commulingo-people-editing-plan.md)를 따른다.
+
 `POST /commulingo/progress/answers`는 기존 정규화·최대 200개 제한을 거친 유효 항목 전체를 한 연결의 트랜잭션으로 저장한다. 하나라도 실패하면 전부 롤백한다. 더 큰 lastAt만 덮어쓰며 응답 `{saved: 유효 항목 수}`는 실제 변경 행 수와 다를 수 있다.
 
 ## 검증과 적용
@@ -47,3 +49,47 @@ npm test
 DB 장애라면 먼저 frontend/PG 로그와 leninbot_default 네트워크를 확인한다. 캐시 JSON은 파생 데이터이므로 정상 DB를 확인하기 전에 지우지 않는다. 정상화 후 인물 snapshotCommuLingoPeople, 사건 snapshotCommuLingoHistoryEvents, 용어 loadCommuLingoTerms({fresh:true})를 호출한다.
 
 코드 회귀는 검증된 이전 코드로 복구하고 배포 스크립트로 재시작한다. 175 스키마는 기존 읽기 코드와 호환된다. DB 복구가 필요하면 쓰기를 멈추고 백업을 먼저 별도 DB에 복원해 비교한다. 운영 전체를 과거 백업으로 덮어쓰면 이후 편집을 잃으므로, 새 FK/인덱스를 제거할 필요와 복원할 관계 행을 개별 검토한다. 중복 제거는 관계 자체를 없애지 않아 보통 복원할 필요가 없다.
+
+## 인물 편집 보존·복원 회귀 테스트
+
+`node scripts/test-commulingo-person-edit-db.js`는 `COMMULINGO_ISOLATED_TEST=1`,
+`DB_NAME=commulingo_integrity_test`가 아니면 실행을 거부한다. `.env`를 로드하지
+않는다. 운영 인물 관련 테이블의 스키마와 CommuLingo 검증 함수만 독립 PostgreSQL에
+복원하고 DB_HOST/DB_USER를 명시한다. 운영 인물 데이터 복사는 필요 없다.
+테스트 인물은 Admin store로 만들고 모든 변경을 마지막에 롤백하며, snapshot
+갱신을 호출하지 않는다. 한영 보존·명시적 삭제·이름 순서·절 수정 취소와 삭제 복원·
+묶음 작업 및 이력 롤백을 확인한다. 일반 `npm test`에는 언어 병합 회귀가 포함된다.
+
+`node scripts/test-commulingo-person-conflict-db.js`는 같은 독립 DB 가드를 사용한다.
+두 연결의 실제 인물 행 잠금 대기를 관측하고, 인물/절 수정·삭제의 오래된
+expectedRevision이 409로 거부되는지 검사한다. 부모 타임스탬프를 바꾸지 않은
+외부 경력 수정도 버전을 무효화하는지 확인한다. 테스트 전용 인물을 Admin으로
+생성·삭제하며 종료 시 해당 테스트 이력·그룹도 정리한다. 운영 DB에서 실행하지 않는다.
+
+개별 목록·필수 버전·공통 저장 계약은 [인물 인수인계](commulingo_people_handoff.md)를 따른다.
+Python 인물/절 쓰기와 제안 승인은 JS 서비스를 사용한다. 나머지 Python 쓰기는 같은 트랜잭션 advisory lock을 사용한다.
+
+## 인물 편집 스키마 176 운영
+
+`176_commulingo_person_editorial.sql`은 `commulingo_person_evidence`와
+`commulingo_person_enrichment`를 추가한다. 기존 인물 행을 수정하지 않는다.
+운영 반영 순서: 진행 중인 보강 작업 확인·배치 타이머 일시 중지 → 인물/자식/이력/제안 백업 →
+마이그레이션 적용 → 검증된 호스트 data 코드 원자적 교체 → frontend 배포 →
+Python 코드 반영 및 이를 import하는 API/Telegram 재시작 → 타이머 복귀·조회 검증.
+기존 인물 테이블 소유자와 같은 역할로 생성한다. 운영 권한은 실제 런타임 사용자로 조회해서 확인한다.
+
+편집 회귀/동시성 테스트와 `test-commulingo-editorial-db.js`에는 기존 인물 스키마,
+제안 테이블과 176 스키마가 필요하다. `COMMULINGO_ISOLATED_TEST=1`,
+`DB_NAME=commulingo_integrity_test` 및 명시적인 테스트 DB 연결에서만 실행한다.
+통합 무결성 테스트의 175 적용 전 사본도 176을 별도 적용해야 한다.
+Python RPC 테스트는 `commulingo-python-rpc` 테스트 컨테이너만 허용한다.
+
+회귀 시 이전 JS 호스트 파일·frontend 이미지·Python 코드를 함께 복구한다.
+추가된 176 테이블은 이전 코드와 공존하므로 삭제하지 않는다. 신규 근거·상태·제안 데이터를
+보존하고 코드만 되돌리는 것이 기본이다. DB 전체 과거 복원은 후속 편집 손실 위험 때문에 사용하지 않는다.
+
+## 검토 큐 177
+
+`177_commulingo_person_review_jobs.sql`은 제안별 자동 검토 lease, 상태, 근거, 판단, 알림 시점을 저장한다.
+인물/절 쓰기 계약은 176 공통 서비스를 그대로 쓴다. 177 적용 후 Python 검토 서비스와 타이머를 설치한다.
+복구 시 타이머를 중지하고 실행 중인 검토가 끝났는지 확인한다. 큐 테이블과 판단 자료는 삭제하지 않는다.

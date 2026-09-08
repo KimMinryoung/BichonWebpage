@@ -1,11 +1,8 @@
+const { readPersonEditorial, submitPersonEdit, reviewPersonSuggestion, saveEnrichment } = require('../data/commulingo/person-editorial-service');
 const express = require('express');
 const { requireAdminIp } = require('../middleware/auth');
 const {
     listPeopleAdmin,
-    getPersonAdmin,
-    createPersonAdmin,
-    updatePersonAdmin,
-    deletePersonAdmin,
 } = require('../data/commulingo/people-admin-store');
 const {
     listOfficesAdmin,
@@ -16,8 +13,6 @@ const {
 } = require('../data/commulingo/people-offices-store');
 const {
     listPersonSectionsAdmin,
-    upsertPersonSectionAdmin,
-    deletePersonSectionAdmin,
 } = require('../data/commulingo/people-sections-store');
 const { importDoc, updateDocMeta, removeDoc } = require('../data/commulingo/docs-import');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
@@ -36,7 +31,8 @@ function changedBy(req) {
 function sendError(res, err) {
     const status = err.status || 500;
     if (status >= 500) console.error('commulingo admin api:', err);
-    res.status(status).json({ error: err.message || 'internal error' });
+    res.status(status).json({ error: err.message || 'internal error',
+        ...(err.code === 'revision_conflict' ? { code: err.code, currentRevision: err.currentRevision } : {}) });
 }
 
 // Every handler funnels failures into sendError with the same shape; wrap the
@@ -62,26 +58,27 @@ router.get('/people', h(async (req, res) => {
     res.json({ people });
 }));
 
-router.post('/people', h(async (req, res) => {
-    const person = await createPersonAdmin(req.body || {}, { changedBy: changedBy(req) });
-    res.status(201).json({ person });
-}));
+function personWrite(target, action) {
+    return h(async (req, res) => {
+        const fields = { ...(req.body || {}), ...(target === 'person_section' ? { slug: req.params.slug } : {}) };
+        const result = await submitPersonEdit({ target, action, id: req.params.personId || fields.id,
+            fields, sources: fields.sources }, { changedBy: changedBy(req) });
+        if (result.status === 'pending') return res.status(202).json(result);
+        res.status(action === 'create' ? 201 : 200).json(target === 'person' && action !== 'delete'
+            ? { person: result.value } : target === 'person_section' && action !== 'delete'
+                ? { section: result.value } : result.value);
+    });
+}
+router.post('/people', personWrite('person', 'create'));
 
 router.get('/people/:personId', h(async (req, res) => {
-    const person = await getPersonAdmin(req.params.personId);
+    const person = await readPersonEditorial(req.params.personId);
     if (!person) return res.status(404).json({ error: 'person not found' });
     res.json({ person });
 }));
 
-router.patch('/people/:personId', h(async (req, res) => {
-    const person = await updatePersonAdmin(req.params.personId, req.body || {}, { changedBy: changedBy(req) });
-    res.json({ person });
-}));
-
-router.delete('/people/:personId', h(async (req, res) => {
-    const result = await deletePersonAdmin(req.params.personId, { changedBy: changedBy(req) });
-    res.json(result);
-}));
+router.patch('/people/:personId', personWrite('person', 'update'));
+router.delete('/people/:personId', personWrite('person', 'delete'));
 
 router.get('/people/:personId/sections', h(async (req, res) => {
     const sections = await listPersonSectionsAdmin(req.params.personId);
@@ -96,22 +93,16 @@ router.get('/people/:personId/sections/:slug', h(async (req, res) => {
 }));
 
 router.put('/people/:personId/sections/:slug', h(async (req, res) => {
-    const section = await upsertPersonSectionAdmin(
-        req.params.personId,
-        req.params.slug,
-        req.body || {},
-        { changedBy: changedBy(req) }
-    );
-    res.json({ section });
+    const exists = (await listPersonSectionsAdmin(req.params.personId)).some(s => s.slug === req.params.slug);
+    return personWrite('person_section', exists ? 'update' : 'create')(req, res);
 }));
-
-router.delete('/people/:personId/sections/:slug', h(async (req, res) => {
-    const result = await deletePersonSectionAdmin(
-        req.params.personId,
-        req.params.slug,
-        { changedBy: changedBy(req) }
-    );
-    res.json(result);
+router.delete('/people/:personId/sections/:slug', personWrite('person_section', 'delete'));
+router.post('/people-suggestions/:id/review', h(async (req, res) => {
+    if (typeof req.body?.approve !== 'boolean') return res.status(400).json({ error: 'approve must be boolean' });
+    res.json(await reviewPersonSuggestion(req.params.id, req.body.approve, req.body.note, { changedBy: changedBy(req) }));
+}));
+router.put('/people/:personId/enrichment/:topic', h(async (req, res) => {
+    res.json(await saveEnrichment({ ...req.body, id: req.params.personId, topic: req.params.topic }, { changedBy: changedBy(req) }));
 }));
 
 router.get('/offices', h(async (req, res) => {

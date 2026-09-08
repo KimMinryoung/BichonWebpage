@@ -2898,17 +2898,17 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .wmap-highlight.is-region use { fill: color-mix(in srgb, var(--link) 35%, transparent); stroke: var(--link); stroke-dasharray: 2 3; }
 .wmap-highlight.is-selected,
 .wmap-highlight.is-map-active { opacity: .9; }
-.commu-country-page .wmap-highlight.is-selected use { stroke-width: 2.4; }
-.commu-country-page .wmap-highlight.is-selected.is-modern use {
+.commu-world-map-panel.is-country .wmap-highlight.is-selected use { stroke-width: 2.4; }
+.commu-world-map-panel.is-country .wmap-highlight.is-selected.is-modern use {
     fill: color-mix(in srgb, var(--accent) 72%, var(--clr-cream));
     stroke: var(--accent);
 }
 /* The flag is useful as a target on the overview. On a country hub it covers
    the very small territory the visitor came to study, while the same flag is
    already present in the page heading. */
-.commu-country-page .wmap-marker.is-selected { visibility: hidden; }
+.commu-world-map-panel.is-country .wmap-marker.is-selected { visibility: hidden; }
 .wmap-history-line { stroke: var(--clr-red); stroke-width: 3; opacity: .65; }
-.wmap-marker { cursor: pointer; outline: none; }
+.wmap-marker { cursor: pointer; outline: none; -webkit-tap-highlight-color: transparent; }
 .wmap-marker rect { fill: var(--bg-canvas); stroke: color-mix(in srgb, var(--border) 75%, transparent); stroke-width: 1.4; }
 .wmap-marker image { pointer-events: none; }
 .wmap-marker:hover rect,
@@ -2971,7 +2971,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-country-sections a:hover strong,
 .commu-country-sections a:focus-visible strong { background: color-mix(in srgb, var(--clr-cream) 18%, transparent); }
 .commu-country-page .commu-country-section-head { margin: 0 0 12px; scroll-margin-top: 82px; }
-.wmap-territory { cursor: pointer; }
+/* Use the country shape for focus feedback, not the SVG link bounding box. */
+.wmap-svg a:focus { outline: none; }
+.wmap-territory { cursor: pointer; outline: none; -webkit-tap-highlight-color: transparent; }
 .wmap-territory use { fill: transparent; stroke: none; pointer-events: fill; }
 .wmap-territory:hover use, .wmap-territory:focus-visible use {
     fill: color-mix(in srgb, var(--accent) 45%, transparent); stroke: var(--accent); stroke-width: 1;

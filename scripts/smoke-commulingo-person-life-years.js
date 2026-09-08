@@ -7,7 +7,11 @@ const adminFields = require('../data/commulingo/people-admin-fields');
 // No live database is needed for the rejection tests below.
 const databasePath = require.resolve('../config/database');
 require.cache[databasePath] = { id: databasePath, filename: databasePath, loaded: true, exports: {} };
-const { createPersonAdmin, updatePersonAdmin } = require('../data/commulingo/people-admin-store');
+const admin = require('../data/commulingo/people-admin-store');
+const sourced = payload => ({ ...payload, sources: ['Life record'],
+    evidence: Object.hasOwn(payload, 'years') ? [{ field: 'years', claim: 'Life dates', source: 'Life record', locator: 'Entry' }] : [] });
+const createPersonAdmin = payload => admin.createPersonAdmin(sourced(payload));
+const updatePersonAdmin = (id, payload, options) => admin.updatePersonAdmin(id, sourced(payload), options);
 
 const fate = { kind: 'natural', label: { ko: '생존', en: 'Living' } };
 for (const years of ['1987–', '1987-', '?–', '1979?–']) {
@@ -54,12 +58,12 @@ async function main() {
         assert(/^\s*SELECT/.test(sql), 'invalid input must not write');
         return { rows: /FROM commulingo_people\s+WHERE/.test(sql) ? [stored] : [] };
     } };
-    await assert.rejects(updatePersonAdmin('test-person', { fate }, { client }), { status: 400 });
-    await assert.rejects(updatePersonAdmin('test-person', { years: '1987–현재' }, { client }), { status: 400 });
+    await assert.rejects(updatePersonAdmin('test-person', { fate }, { client, requireRevision: false }), { status: 400 });
+    await assert.rejects(updatePersonAdmin('test-person', { years: '1987–현재' }, { client, requireRevision: false }), { status: 400 });
     stored.years_label = '1889–1958';
     stored.fate_kind = 'natural';
     stored.fate_label_ko = '사망';
-    await assert.rejects(updatePersonAdmin('test-person', { years: '1889–' }, { client }), { status: 400 });
+    await assert.rejects(updatePersonAdmin('test-person', { years: '1889–' }, { client, requireRevision: false }), { status: 400 });
     console.log('person life years: parser, living/unknown distinction, legacy rendering, create and merged PATCH validation OK');
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });

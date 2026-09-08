@@ -1,0 +1,1286 @@
+[
+  {
+    "code": "algeria",
+    "iso": "DZ",
+    "ko": "알제리",
+    "en": "Algeria",
+    "members": [
+      "DZA"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "andorra",
+    "iso": "AD",
+    "ko": "안도라",
+    "en": "Andorra",
+    "members": [
+      "AND"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "antigua-and-barbuda",
+    "iso": "AG",
+    "ko": "앤티가 바부다",
+    "en": "Antigua & Barbuda",
+    "members": [
+      "ACA",
+      "ACB"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "australia",
+    "iso": "AU",
+    "ko": "오스트레일리아",
+    "en": "Australia",
+    "members": [
+      "AUS"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "bahamas",
+    "iso": "BS",
+    "ko": "바하마",
+    "en": "Bahamas",
+    "members": [
+      "BHS"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "bahrain",
+    "iso": "BH",
+    "ko": "바레인",
+    "en": "Bahrain",
+    "members": [
+      "BHR"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "bangladesh",
+    "iso": "BD",
+    "ko": "방글라데시",
+    "en": "Bangladesh",
+    "members": [
+      "BGD"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "barbados",
+    "iso": "BB",
+    "ko": "바베이도스",
+    "en": "Barbados",
+    "members": [
+      "BRB"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "belize",
+    "iso": "BZ",
+    "ko": "벨리즈",
+    "en": "Belize",
+    "members": [
+      "BLZ"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "benin",
+    "iso": "BJ",
+    "ko": "베냉",
+    "en": "Benin",
+    "members": [
+      "BEN"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "bhutan",
+    "iso": "BT",
+    "ko": "부탄",
+    "en": "Bhutan",
+    "members": [
+      "BTN"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "bolivia",
+    "iso": "BO",
+    "ko": "볼리비아",
+    "en": "Bolivia",
+    "members": [
+      "BOL"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "botswana",
+    "iso": "BW",
+    "ko": "보츠와나",
+    "en": "Botswana",
+    "members": [
+      "BWA"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "brunei",
+    "iso": "BN",
+    "ko": "브루나이",
+    "en": "Brunei",
+    "members": [
+      "BRN"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "burundi",
+    "iso": "BI",
+    "ko": "부룬디",
+    "en": "Burundi",
+    "members": [
+      "BDI"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "cambodia",
+    "iso": "KH",
+    "ko": "캄보디아",
+    "en": "Cambodia",
+    "members": [
+      "KHM"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "cameroon",
+    "iso": "CM",
+    "ko": "카메룬",
+    "en": "Cameroon",
+    "members": [
+      "CMR"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "canada",
+    "iso": "CA",
+    "ko": "캐나다",
+    "en": "Canada",
+    "members": [
+      "CAN"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "cape-verde",
+    "iso": "CV",
+    "ko": "카보베르데",
+    "en": "Cape Verde",
+    "members": [
+      "CPV"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "central-african-republic",
+    "iso": "CF",
+    "ko": "중앙 아프리카 공화국",
+    "en": "Central African Republic",
+    "members": [
+      "CAF"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "chad",
+    "iso": "TD",
+    "ko": "차드",
+    "en": "Chad",
+    "members": [
+      "TCD"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "colombia",
+    "iso": "CO",
+    "ko": "콜롬비아",
+    "en": "Colombia",
+    "members": [
+      "COL"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "comoros",
+    "iso": "KM",
+    "ko": "코모로",
+    "en": "Comoros",
+    "members": [
+      "COM"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "costa-rica",
+    "iso": "CR",
+    "ko": "코스타리카",
+    "en": "Costa Rica",
+    "members": [
+      "CRI"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "cyprus",
+    "iso": "CY",
+    "ko": "키프로스",
+    "en": "Cyprus",
+    "members": [
+      "CYP"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "denmark",
+    "iso": "DK",
+    "ko": "덴마크",
+    "en": "Denmark",
+    "members": [
+      "DNK"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "djibouti",
+    "iso": "DJ",
+    "ko": "지부티",
+    "en": "Djibouti",
+    "members": [
+      "DJI"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "dominica",
+    "iso": "DM",
+    "ko": "도미니카",
+    "en": "Dominica",
+    "members": [
+      "DMA"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "dominican-republic",
+    "iso": "DO",
+    "ko": "도미니카 공화국",
+    "en": "Dominican Republic",
+    "members": [
+      "DOM"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "ecuador",
+    "iso": "EC",
+    "ko": "에콰도르",
+    "en": "Ecuador",
+    "members": [
+      "ECU"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "egypt",
+    "iso": "EG",
+    "ko": "이집트",
+    "en": "Egypt",
+    "members": [
+      "EGY"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "equatorial-guinea",
+    "iso": "GQ",
+    "ko": "적도 기니",
+    "en": "Equatorial Guinea",
+    "members": [
+      "GNQ"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "eritrea",
+    "iso": "ER",
+    "ko": "에리트리아",
+    "en": "Eritrea",
+    "members": [
+      "ERI"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "eswatini",
+    "iso": "SZ",
+    "ko": "에스와티니",
+    "en": "Eswatini",
+    "members": [
+      "SWZ"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "ethiopia",
+    "iso": "ET",
+    "ko": "에티오피아",
+    "en": "Ethiopia",
+    "members": [
+      "ETH"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "fiji",
+    "iso": "FJ",
+    "ko": "피지",
+    "en": "Fiji",
+    "members": [
+      "FJI"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "gabon",
+    "iso": "GA",
+    "ko": "가봉",
+    "en": "Gabon",
+    "members": [
+      "GAB"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "gambia",
+    "iso": "GM",
+    "ko": "감비아",
+    "en": "Gambia",
+    "members": [
+      "GMB"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "guatemala",
+    "iso": "GT",
+    "ko": "과테말라",
+    "en": "Guatemala",
+    "members": [
+      "GTM"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "guinea",
+    "iso": "GN",
+    "ko": "기니",
+    "en": "Guinea",
+    "members": [
+      "GIN"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "haiti",
+    "iso": "HT",
+    "ko": "아이티",
+    "en": "Haiti",
+    "members": [
+      "HTI"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "honduras",
+    "iso": "HN",
+    "ko": "온두라스",
+    "en": "Honduras",
+    "members": [
+      "HND"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "iceland",
+    "iso": "IS",
+    "ko": "아이슬란드",
+    "en": "Iceland",
+    "members": [
+      "ISL"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "iran",
+    "iso": "IR",
+    "ko": "이란",
+    "en": "Iran",
+    "members": [
+      "IRN"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "iraq",
+    "iso": "IQ",
+    "ko": "이라크",
+    "en": "Iraq",
+    "members": [
+      "IRQ"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "ivory-coast",
+    "iso": "CI",
+    "ko": "코트디부아르",
+    "en": "Côte d’Ivoire",
+    "members": [
+      "CIV"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "jamaica",
+    "iso": "JM",
+    "ko": "자메이카",
+    "en": "Jamaica",
+    "members": [
+      "JAM"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "jordan",
+    "iso": "JO",
+    "ko": "요르단",
+    "en": "Jordan",
+    "members": [
+      "JOR"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "kenya",
+    "iso": "KE",
+    "ko": "케냐",
+    "en": "Kenya",
+    "members": [
+      "KEN"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "kiribati",
+    "iso": "KI",
+    "ko": "키리바시",
+    "en": "Kiribati",
+    "members": [
+      "KIR"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "kosovo",
+    "iso": "XK",
+    "ko": "코소보",
+    "en": "Kosovo",
+    "members": [
+      "KOS"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "kuwait",
+    "iso": "KW",
+    "ko": "쿠웨이트",
+    "en": "Kuwait",
+    "members": [
+      "KWT"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "laos",
+    "iso": "LA",
+    "ko": "라오스",
+    "en": "Laos",
+    "members": [
+      "LAO"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "lebanon",
+    "iso": "LB",
+    "ko": "레바논",
+    "en": "Lebanon",
+    "members": [
+      "LBN"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "lesotho",
+    "iso": "LS",
+    "ko": "레소토",
+    "en": "Lesotho",
+    "members": [
+      "LSO"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "liberia",
+    "iso": "LR",
+    "ko": "라이베리아",
+    "en": "Liberia",
+    "members": [
+      "LBR"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "libya",
+    "iso": "LY",
+    "ko": "리비아",
+    "en": "Libya",
+    "members": [
+      "LBY"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "liechtenstein",
+    "iso": "LI",
+    "ko": "리히텐슈타인",
+    "en": "Liechtenstein",
+    "members": [
+      "LIE"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "luxembourg",
+    "iso": "LU",
+    "ko": "룩셈부르크",
+    "en": "Luxembourg",
+    "members": [
+      "LUX"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "madagascar",
+    "iso": "MG",
+    "ko": "마다가스카르",
+    "en": "Madagascar",
+    "members": [
+      "MDG"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "malawi",
+    "iso": "MW",
+    "ko": "말라위",
+    "en": "Malawi",
+    "members": [
+      "MWI"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "malaysia",
+    "iso": "MY",
+    "ko": "말레이시아",
+    "en": "Malaysia",
+    "members": [
+      "MYS"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "maldives",
+    "iso": "MV",
+    "ko": "몰디브",
+    "en": "Maldives",
+    "members": [
+      "MDV"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "mali",
+    "iso": "ML",
+    "ko": "말리",
+    "en": "Mali",
+    "members": [
+      "MLI"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "malta",
+    "iso": "MT",
+    "ko": "몰타",
+    "en": "Malta",
+    "members": [
+      "MLT"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "marshall-islands",
+    "iso": "MH",
+    "ko": "마셜 제도",
+    "en": "Marshall Islands",
+    "members": [
+      "MHL"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "mauritania",
+    "iso": "MR",
+    "ko": "모리타니",
+    "en": "Mauritania",
+    "members": [
+      "MRT"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "mauritius",
+    "iso": "MU",
+    "ko": "모리셔스",
+    "en": "Mauritius",
+    "members": [
+      "MUS"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "mexico",
+    "iso": "MX",
+    "ko": "멕시코",
+    "en": "Mexico",
+    "members": [
+      "MEX"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "micronesia",
+    "iso": "FM",
+    "ko": "미크로네시아",
+    "en": "Micronesia",
+    "members": [
+      "FSM"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "monaco",
+    "iso": "MC",
+    "ko": "모나코",
+    "en": "Monaco",
+    "members": [
+      "MCO"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "mongolia",
+    "iso": "MN",
+    "ko": "몽골",
+    "en": "Mongolia",
+    "members": [
+      "MNG"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "morocco",
+    "iso": "MA",
+    "ko": "모로코",
+    "en": "Morocco",
+    "members": [
+      "MAR"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "myanmar",
+    "iso": "MM",
+    "ko": "미얀마",
+    "en": "Myanmar",
+    "members": [
+      "MMR"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "namibia",
+    "iso": "NA",
+    "ko": "나미비아",
+    "en": "Namibia",
+    "members": [
+      "NAM"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "nauru",
+    "iso": "NR",
+    "ko": "나우루",
+    "en": "Nauru",
+    "members": [
+      "NRU"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "nepal",
+    "iso": "NP",
+    "ko": "네팔",
+    "en": "Nepal",
+    "members": [
+      "NPL"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "new-zealand",
+    "iso": "NZ",
+    "ko": "뉴질랜드",
+    "en": "New Zealand",
+    "members": [
+      "NZL"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "niger",
+    "iso": "NE",
+    "ko": "니제르",
+    "en": "Niger",
+    "members": [
+      "NER"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "nigeria",
+    "iso": "NG",
+    "ko": "나이지리아",
+    "en": "Nigeria",
+    "members": [
+      "NGA"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "north-macedonia",
+    "iso": "MK",
+    "ko": "북마케도니아",
+    "en": "North Macedonia",
+    "members": [
+      "MKD"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "norway",
+    "iso": "NO",
+    "ko": "노르웨이",
+    "en": "Norway",
+    "members": [
+      "NOR",
+      "NSV"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "oman",
+    "iso": "OM",
+    "ko": "오만",
+    "en": "Oman",
+    "members": [
+      "OMN"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "pakistan",
+    "iso": "PK",
+    "ko": "파키스탄",
+    "en": "Pakistan",
+    "members": [
+      "PAK"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "palau",
+    "iso": "PW",
+    "ko": "팔라우",
+    "en": "Palau",
+    "members": [
+      "PLW"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "palestine",
+    "iso": "PS",
+    "ko": "팔레스타인",
+    "en": "Palestine",
+    "members": [
+      "GAZ",
+      "WEB"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "panama",
+    "iso": "PA",
+    "ko": "파나마",
+    "en": "Panama",
+    "members": [
+      "PAN"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "papua-new-guinea",
+    "iso": "PG",
+    "ko": "파푸아뉴기니",
+    "en": "Papua New Guinea",
+    "members": [
+      "PNX",
+      "PNB"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "paraguay",
+    "iso": "PY",
+    "ko": "파라과이",
+    "en": "Paraguay",
+    "members": [
+      "PRY"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "philippines",
+    "iso": "PH",
+    "ko": "필리핀",
+    "en": "Philippines",
+    "members": [
+      "PHL"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "qatar",
+    "iso": "QA",
+    "ko": "카타르",
+    "en": "Qatar",
+    "members": [
+      "QAT"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "republic-of-congo",
+    "iso": "CG",
+    "ko": "콩고-브라자빌",
+    "en": "Congo - Brazzaville",
+    "members": [
+      "COG"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "rwanda",
+    "iso": "RW",
+    "ko": "르완다",
+    "en": "Rwanda",
+    "members": [
+      "RWA"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "saint-kitts-and-nevis",
+    "iso": "KN",
+    "ko": "세인트키츠 네비스",
+    "en": "St. Kitts & Nevis",
+    "members": [
+      "KNA"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "saint-lucia",
+    "iso": "LC",
+    "ko": "세인트루시아",
+    "en": "St. Lucia",
+    "members": [
+      "LCA"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "saint-vincent-and-the-grenadines",
+    "iso": "VC",
+    "ko": "세인트빈센트그레나딘",
+    "en": "St. Vincent & Grenadines",
+    "members": [
+      "VCT"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "samoa",
+    "iso": "WS",
+    "ko": "사모아",
+    "en": "Samoa",
+    "members": [
+      "WSM"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "san-marino",
+    "iso": "SM",
+    "ko": "산마리노",
+    "en": "San Marino",
+    "members": [
+      "SMR"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "sao-tome-and-principe",
+    "iso": "ST",
+    "ko": "상투메 프린시페",
+    "en": "São Tomé & Príncipe",
+    "members": [
+      "STP"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "saudi-arabia",
+    "iso": "SA",
+    "ko": "사우디아라비아",
+    "en": "Saudi Arabia",
+    "members": [
+      "SAU"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "senegal",
+    "iso": "SN",
+    "ko": "세네갈",
+    "en": "Senegal",
+    "members": [
+      "SEN"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "seychelles",
+    "iso": "SC",
+    "ko": "세이셸",
+    "en": "Seychelles",
+    "members": [
+      "SYC"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "sierra-leone",
+    "iso": "SL",
+    "ko": "시에라리온",
+    "en": "Sierra Leone",
+    "members": [
+      "SLE"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "singapore",
+    "iso": "SG",
+    "ko": "싱가포르",
+    "en": "Singapore",
+    "members": [
+      "SGP"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "solomon-islands",
+    "iso": "SB",
+    "ko": "솔로몬 제도",
+    "en": "Solomon Islands",
+    "members": [
+      "SLB"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "somalia",
+    "iso": "SO",
+    "ko": "소말리아",
+    "en": "Somalia",
+    "members": [
+      "SOM"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "south-sudan",
+    "iso": "SS",
+    "ko": "남수단",
+    "en": "South Sudan",
+    "members": [
+      "SDS"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "sri-lanka",
+    "iso": "LK",
+    "ko": "스리랑카",
+    "en": "Sri Lanka",
+    "members": [
+      "LKA"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "sudan",
+    "iso": "SD",
+    "ko": "수단",
+    "en": "Sudan",
+    "members": [
+      "SDN"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "suriname",
+    "iso": "SR",
+    "ko": "수리남",
+    "en": "Suriname",
+    "members": [
+      "SUR"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "sweden",
+    "iso": "SE",
+    "ko": "스웨덴",
+    "en": "Sweden",
+    "members": [
+      "SWE"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "syria",
+    "iso": "SY",
+    "ko": "시리아",
+    "en": "Syria",
+    "members": [
+      "SYR"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "taiwan",
+    "iso": "TW",
+    "ko": "대만",
+    "en": "Taiwan",
+    "members": [
+      "TWN"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "thailand",
+    "iso": "TH",
+    "ko": "태국",
+    "en": "Thailand",
+    "members": [
+      "THA"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "timor-leste",
+    "iso": "TL",
+    "ko": "동티모르",
+    "en": "Timor-Leste",
+    "members": [
+      "TLS"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "togo",
+    "iso": "TG",
+    "ko": "토고",
+    "en": "Togo",
+    "members": [
+      "TGO"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "tonga",
+    "iso": "TO",
+    "ko": "통가",
+    "en": "Tonga",
+    "members": [
+      "TON"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "tunisia",
+    "iso": "TN",
+    "ko": "튀니지",
+    "en": "Tunisia",
+    "members": [
+      "TUN"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "tuvalu",
+    "iso": "TV",
+    "ko": "투발루",
+    "en": "Tuvalu",
+    "members": [
+      "TUV"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "uganda",
+    "iso": "UG",
+    "ko": "우간다",
+    "en": "Uganda",
+    "members": [
+      "UGA"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "united-arab-emirates",
+    "iso": "AE",
+    "ko": "아랍에미리트",
+    "en": "United Arab Emirates",
+    "members": [
+      "ARE"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "uruguay",
+    "iso": "UY",
+    "ko": "우루과이",
+    "en": "Uruguay",
+    "members": [
+      "URY"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "vanuatu",
+    "iso": "VU",
+    "ko": "바누아투",
+    "en": "Vanuatu",
+    "members": [
+      "VUT"
+    ],
+    "continent": "oceania"
+  },
+  {
+    "code": "vatican-city",
+    "iso": "VA",
+    "ko": "바티칸 시국",
+    "en": "Vatican City",
+    "members": [
+      "VAT"
+    ],
+    "continent": "europe"
+  },
+  {
+    "code": "venezuela",
+    "iso": "VE",
+    "ko": "베네수엘라",
+    "en": "Venezuela",
+    "members": [
+      "VEN"
+    ],
+    "continent": "americas"
+  },
+  {
+    "code": "yemen",
+    "iso": "YE",
+    "ko": "예멘",
+    "en": "Yemen",
+    "members": [
+      "YEM"
+    ],
+    "continent": "asia"
+  },
+  {
+    "code": "zambia",
+    "iso": "ZM",
+    "ko": "잠비아",
+    "en": "Zambia",
+    "members": [
+      "ZMB"
+    ],
+    "continent": "africa"
+  },
+  {
+    "code": "zimbabwe",
+    "iso": "ZW",
+    "ko": "짐바브웨",
+    "en": "Zimbabwe",
+    "members": [
+      "ZWE"
+    ],
+    "continent": "africa"
+  }
+]

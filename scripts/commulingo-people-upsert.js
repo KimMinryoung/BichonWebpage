@@ -32,8 +32,9 @@
 
 const fs = require('fs');
 const { db } = require('./lib/bootstrap');
-const { getPersonAdmin, createPersonAdmin, updatePersonAdmin } = require('../data/commulingo/people-admin-store');
-const { upsertPersonSectionAdmin } = require('../data/commulingo/people-sections-store');
+const { getPersonAdmin } = require('../data/commulingo/people-admin-store');
+const { submitPersonEdit } = require('../data/commulingo/person-editorial-service');
+const { listPersonSectionsAdmin } = require('../data/commulingo/people-sections-store');
 const { clearCommuLingoPeopleCache } = require('../data/commulingo/people-store');
 
 function readSpec(arg) {
@@ -64,16 +65,17 @@ function readSpec(arg) {
             const { sections, ...payload } = entry;
             if (!payload.id) throw new Error('every person needs an id');
             const existing = await getPersonAdmin(payload.id, { client });
-            if (existing) {
-                await updatePersonAdmin(payload.id, payload, { client, changedBy });
-                console.log(`updated ${payload.id}`);
-            } else {
-                await createPersonAdmin(payload, { client, changedBy });
-                console.log(`created ${payload.id}`);
-            }
+            const result = await submitPersonEdit({ target: 'person', action: existing ? 'update' : 'create',
+                id: payload.id, fields: payload, sources: payload.sources }, { client, changedBy });
+            console.log(`${result.status} ${payload.id} (edit ${result.suggestionId})`);
+            if (result.status === 'pending' && sections?.length) throw new Error('review the person edit before adding its sections');
             for (const section of sections || []) {
-                await upsertPersonSectionAdmin(payload.id, section.slug, section, { client, changedBy });
-                console.log(`  section ${section.slug} (sort ${section.sortOrder})`);
+                const current = await getPersonAdmin(payload.id, { client });
+                const exists = (await listPersonSectionsAdmin(payload.id, { client })).some(s => s.slug === section.slug);
+                const saved = await submitPersonEdit({ target: 'person_section', action: exists ? 'update' : 'create',
+                    id: payload.id, fields: { ...section, expectedRevision: section.expectedRevision ?? current.revision },
+                    sources: section.sources || payload.sources }, { client, changedBy });
+                console.log(`  ${saved.status} section ${section.slug}`);
             }
         }
         if (dryRun) {

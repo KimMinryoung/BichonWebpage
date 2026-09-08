@@ -1,5 +1,6 @@
 const { checkNativeScript, familyFirstJoiner } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
+const { citizenshipOnlyCodes } = require('./nationality-policy.json');
 const { canonicalNationalityLabel } = require('./nationality-filter');
 const { mergePatronymicPatch, patronymicProblem, nationalOriginInput } = require('./person-name-validation');
 const { t, localized, badRequest } = require('./people-admin-fields');
@@ -26,6 +27,9 @@ function normalizeNationality(node, field) {
             `${field}.code '${code}' is not a known nationality code (no flag icon). `
             + 'See FLAG_NAMES in data/commulingo/flag-icons.js.'
         );
+    }
+    if (['nationalOrigin', 'origin'].includes(field) && citizenshipOnlyCodes.includes(code)) {
+        throw badRequest(`${field}.code '${code}' is citizenship-only. Use a sourced national/ethnic background; do not infer it from birthplace or citizenship.`);
     }
     return {
         code,

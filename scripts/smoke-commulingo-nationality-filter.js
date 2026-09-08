@@ -36,7 +36,7 @@ assert.match(
 );
 
 const citizenship = buildNationalityFilter(people, 'citizenship', 'north-korea', 'ko');
-assert.strictEqual(citizenship.kindLabel, '국적');
+assert.strictEqual(citizenship.kindLabel, '소속 국가');
 assert.deepStrictEqual(citizenship.people.map(person => person.id), ['kim-jong-il']);
 
 const origin = buildNationalityFilter(people, 'nationalOrigin', 'poland', 'en');

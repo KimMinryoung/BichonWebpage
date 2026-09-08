@@ -72,16 +72,20 @@ function main() {
         }
     }
 
-    // The 110m source omits these tiny but represented places completely.
+    // The 110m source omits small registered countries and islands.
     // Pull only their rings from 50m; every other country keeps the compact
     // world-scale geometry.
-    const detailCodes = new Set(['GRD', 'MTQ']);
+    const { COUNTRY_GEOGRAPHY } = require('../data/commulingo/country-geography');
+    const detailCodes = new Set(Object.values(COUNTRY_GEOGRAPHY)
+        .flatMap(geo => geo.members || []).filter(code => !units[code]));
     const detailSource = JSON.parse(fs.readFileSync(detailUnitsPath, 'utf8'));
     for (const feature of detailSource.features || []) {
         const props = feature.properties || {};
         const code = props.GU_A3 || props.ADM0_A3;
         if (!detailCodes.has(code)) continue;
-        const rings = roundedRings(feature.geometry, 0.02, 0.01);
+        let rings = roundedRings(feature.geometry, 0.02, 0.01);
+        // Microstates such as Vatican City must survive coordinate rounding.
+        if (!rings.length) rings = roundedRings(feature.geometry, 0.001, 0);
         if (!rings.length) continue;
         units[code] = rings;
         meta[code] = {
@@ -106,4 +110,5 @@ function main() {
     console.log(`Wrote ${output}: ${Object.keys(units).length} map units, ${eastGermany.length} East Germany rings, ${Math.round(payload.length / 1024)} KB`);
 }
 
-main();
+if (require.main === module) main();
+module.exports = { roundedRings };

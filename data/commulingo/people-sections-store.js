@@ -1,3 +1,6 @@
+const { validateEditorial, reviewReasons, recordEvidence } = require('./person-editorial-policy');
+const { assertExpectedRevision } = require('./people-edit-version');
+const { mergeLocalizedPatch } = require('./people-patch');
 const db = require('../../config/database');
 const { t, localized, contentLocalized, requireId, requireSlug, normalizeSources } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
@@ -47,9 +50,18 @@ async function upsertPersonSectionAdmin(personId, slug, payload, options = {}) {
         const sectionSlug = requireSlug(slug);
         await ensurePersonExists(client, id, true);
         const before = await getPersonAdmin(id, { client });
-        const sortOrder = Number.parseInt(payload.sortOrder, 10);
-        const heading = payload.heading || {};
-        const body = payload.body || {};
+        assertExpectedRevision(payload.expectedRevision, before.revision, options.requireRevision !== false);
+        validateEditorial(payload, options, true);
+        const sectionBefore = (await listPersonSectionsAdmin(id, { client }))
+            .find(section => section.slug === sectionSlug) || null;
+        if (!options.reviewed && reviewReasons('person_section', 'update', payload, sectionBefore).length) {
+            const error = new Error('edit requires review; submit through shared editorial service'); error.status = 422; throw error;
+        }
+        const sortOrder = payload.sortOrder === undefined
+            ? (sectionBefore?.sortOrder || 0) : Number.parseInt(payload.sortOrder, 10);
+        const heading = mergeLocalizedPatch(sectionBefore?.heading, payload.heading, 'heading');
+        const body = mergeLocalizedPatch(sectionBefore?.body, payload.body, 'body');
+        const sources = payload.sources === undefined ? (sectionBefore?.sources || []) : normalizeSources(payload.sources);
         await client.query(
             `INSERT INTO commulingo_person_sections
                 (person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at)
@@ -71,13 +83,16 @@ async function upsertPersonSectionAdmin(personId, slug, payload, options = {}) {
                 localized(heading, 'en'),
                 contentLocalized(body, 'ko'),
                 localized(body, 'en'),
-                JSON.stringify(normalizeSources(payload.sources)),
+                JSON.stringify(sources),
             ]
         );
         const sections = await listPersonSectionsAdmin(id, { client });
         const after = await getPersonAdmin(id, { client });
-        await writeRevision(client, 'person', id, `upsert section ${sectionSlug}`, { before, after, sections }, options.changedBy);
-        return sections.find(section => section.slug === sectionSlug);
+        const sectionAfter = sections.find(section => section.slug === sectionSlug);
+        await recordEvidence(client, id, sectionSlug, payload, options, after.revision);
+        await writeRevision(client, 'person', id, `upsert section ${sectionSlug}`,
+            { before, after, sections, sectionBefore, sectionAfter }, options.changedBy);
+        return { ...sectionAfter, revision: after.revision };
     });
 }
 
@@ -87,6 +102,10 @@ async function deletePersonSectionAdmin(personId, slug, options = {}) {
         const sectionSlug = requireSlug(slug);
         await ensurePersonExists(client, id, true);
         const before = await getPersonAdmin(id, { client });
+        assertExpectedRevision(options.expectedRevision, before.revision, options.requireRevision !== false);
+        if (!options.reviewed) { const error = new Error('deletion requires reviewed approval'); error.status = 422; throw error; }
+        const sectionBefore = (await listPersonSectionsAdmin(id, { client }))
+            .find(section => section.slug === sectionSlug) || null;
         const result = await client.query(
             'DELETE FROM commulingo_person_sections WHERE person_id = $1 AND slug = $2',
             [id, sectionSlug]
@@ -97,8 +116,8 @@ async function deletePersonSectionAdmin(personId, slug, options = {}) {
             throw err;
         }
         const after = await getPersonAdmin(id, { client });
-        await writeRevision(client, 'person', id, `delete section ${sectionSlug}`, { before, after }, options.changedBy);
-        return { deleted: true, personId: id, slug: sectionSlug };
+        await writeRevision(client, 'person', id, `delete section ${sectionSlug}`, { before, after, sectionBefore, sectionAfter: null }, options.changedBy);
+        return { deleted: true, personId: id, slug: sectionSlug, revision: after.revision };
     });
 }
 

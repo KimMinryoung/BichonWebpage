@@ -1,3 +1,8 @@
+const { validateEditorial, reviewReasons, recordEvidence } = require('./person-editorial-policy');
+const { planCollectionEdits, applyCareerEdits } = require('./people-collection-edits');
+const { personRevision, assertExpectedRevision } = require('./people-edit-version');
+const { readSnapshot } = require('./read-snapshot');
+const { mergePersonPatch } = require('./people-patch');
 const { assertLinkExpressions } = require('./link-expressions');
 const { assertAliases, assertPersonHeadwords } = require('./headword-validation');
 const db = require('../../config/database');
@@ -130,6 +135,7 @@ async function listPeopleAdmin(options = {}) {
 }
 
 async function getPersonAdmin(personId, options = {}) {
+    if (!options.client) return readSnapshot(client => getPersonAdmin(personId, { ...options, client }));
     const id = requireId(personId, 'person id');
     const client = options.client || db;
     const personResult = await client.query(
@@ -246,6 +252,7 @@ async function getPersonAdmin(personId, options = {}) {
     } else {
         person.role = null;
     }
+    person.revision = await personRevision(client, id);
     return person;
 }
 
@@ -325,12 +332,17 @@ async function replaceCareer(client, personId, career) {
 
 async function createPersonAdmin(rawPayload, options = {}) {
     const payload = withNativeNameAliases(rawPayload || {});
+    if (['aliasEdits', 'careerEdits', 'sceneEdits', 'expectedRevision'].some(key => payload[key] !== undefined)) {
+        throw badRequest('collection edits and expectedRevision are update-only fields');
+    }
+    validateEditorial(payload, options);
     const lifeProblems = personLifeProblems(payload.years ?? '', payload.fate);
     if (lifeProblems.length) throw badRequest(lifeProblems.join(' | '));
     assertPersonHeadwords(payload);
     if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
     return withTransaction(options, async client => {
         const id = requireId(payload.id, 'person id');
+        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-person-create'))");
         const citizenship = normalizeNationality(payload.citizenship || null, 'citizenship');
         const originInput = requireNationalOrigin(payload);
         const origin = normalizeNationality(originInput.touched ? originInput.value : null, 'nationalOrigin');
@@ -346,6 +358,16 @@ async function createPersonAdmin(rawPayload, options = {}) {
         assertPatronymicSeparate(partsEn, patronymicState.en, 'en');
         const nameKo = partsKo.full;
         const nameEn = partsEn.full;
+        const fold = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+        const { rows: candidates } = await client.query(`SELECT id, name_ko, name_en FROM commulingo_people
+            UNION ALL SELECT person_id AS id, CASE WHEN lang='ko' THEN alias ELSE '' END,
+                CASE WHEN lang='en' THEN alias ELSE '' END FROM commulingo_person_aliases`);
+        const duplicate = candidates.find(row => (row.name_ko && fold(row.name_ko) === fold(nameKo))
+            || (row.name_en && fold(row.name_en) === fold(nameEn)));
+        if (duplicate && !(options.reviewed && payload.reviewFlags?.includes('identity_uncertain'))) {
+            throw badRequest(`possible duplicate person ${duplicate.id}; compare identities before registering`);
+        }
+
         const sortResult = await client.query(
             'SELECT COALESCE(MAX(sort_order), -1) + 1 AS next_sort FROM commulingo_people'
         );
@@ -413,13 +435,14 @@ async function createPersonAdmin(rawPayload, options = {}) {
         await replaceCareer(client, id, payload.career || []);
         if (payload.role !== undefined) await replaceRole(client, id, payload.role);
         const person = await getPersonAdmin(id, { client });
+        await recordEvidence(client, id, '', payload, options, person.revision);
         await writeRevision(client, 'person', id, 'create person', person, options.changedBy);
         return person;
     });
 }
 
 async function updatePersonAdmin(personId, rawPayload, options = {}) {
-    const payload = withNativeNameAliases(rawPayload || {});
+    let payload = withNativeNameAliases(rawPayload || {});
     assertPersonHeadwords(payload);
     if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
     return withTransaction(options, async client => {
@@ -431,6 +454,13 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             err.status = 404;
             throw err;
         }
+        assertExpectedRevision(payload.expectedRevision, before.revision, options.requireRevision !== false);
+        validateEditorial(payload, options);
+        if (!options.reviewed && reviewReasons('person', 'update', payload, before).length) {
+            const error = badRequest('edit requires review; submit through the shared editorial service'); error.status = 422; throw error;
+        }
+        const collections = planCollectionEdits(before, payload);
+        payload = mergePersonPatch(before, payload);
         if (payload.years !== undefined || payload.fate !== undefined) {
             const lifeProblems = personLifeProblems(
                 payload.years !== undefined ? payload.years : before.years,
@@ -472,6 +502,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             sets.push(`${column} = $${values.length}`);
         }
         if (payload.group !== undefined || payload.groupId !== undefined) set('group_id', requireId(payload.groupId || payload.group, 'group id'));
+        if (payload.sortOrder !== undefined) set('sort_order', payload.sortOrder);
         if (payload.initial !== undefined) set('initial', payload.initial || '');
         if (payload.cyrillic !== undefined) set('cyrillic', payload.cyrillic || '');
         if (payload.years !== undefined) {
@@ -484,7 +515,8 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         // name columns so parts and the derived full name never diverge.
         const nameChanged = payload.name !== undefined
             || payload.givenName !== undefined
-            || payload.familyName !== undefined;
+            || payload.familyName !== undefined
+            || (payload.citizenship !== undefined && citizenship.code !== (before.citizenship?.code || ''));
         const storedParts = lang => ({
             given: collapseSpaces(localized(before.givenName, lang)),
             family: collapseSpaces(localized(before.familyName, lang)),
@@ -497,6 +529,12 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
                 const family = payload.familyName !== undefined
                     ? collapseSpaces(localized(payload.familyName, lang)) : stored.family;
                 return { given, family, full: composeFullName(given, family, lang, citizenship.code) };
+            }
+            const hasNameLanguage = typeof payload.name === 'string'
+                ? lang === 'ko' : payload.name?.[lang] !== undefined;
+            if (!hasNameLanguage) {
+                const stored = storedParts(lang);
+                return { ...stored, full: composeFullName(stored.given, stored.family, lang, citizenship.code) };
             }
             const full = collapseSpaces(localized(payload.name, lang));
             return { ...splitFullName(full, lang, citizenship.code), full };
@@ -581,7 +619,11 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         if (payload.scenes !== undefined) await replaceScenes(client, id, payload.scenes);
         if (payload.career !== undefined) await replaceCareer(client, id, payload.career);
         if (payload.role !== undefined) await replaceRole(client, id, payload.role);
+        if (collections.aliases !== undefined) await replaceAliases(client, id, collections.aliases);
+        if (collections.scenes !== undefined) await replaceScenes(client, id, collections.scenes);
+        await applyCareerEdits(client, id, collections.career);
         const after = await getPersonAdmin(id, { client });
+        await recordEvidence(client, id, '', payload, options, after.revision);
         await writeRevision(client, 'person', id, 'update person', { before, after }, options.changedBy);
         return after;
     });
@@ -597,6 +639,9 @@ async function deletePersonAdmin(personId, options = {}) {
             err.status = 404;
             throw err;
         }
+        assertExpectedRevision(options.expectedRevision, before.revision, options.requireRevision !== false);
+        if (!options.reviewed) { const error = badRequest('deletion requires reviewed approval'); error.status = 422; throw error; }
+        before.sections = (await client.query('SELECT * FROM commulingo_person_sections WHERE person_id=$1 ORDER BY sort_order,id', [id])).rows;
         await client.query('DELETE FROM commulingo_people WHERE id = $1', [id]);
         await writeRevision(client, 'person', id, 'delete person', before, options.changedBy);
         return { deleted: true, person: before };

@@ -9,11 +9,11 @@ const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { flagLabel } = require('../data/commulingo/flag-icons');
 const { eventCountries } = require('../data/commulingo/event-countries');
 const { countryCodes, countryInfo } = require('../data/commulingo/country-geography');
-const { renderWorldMapSvg } = require('../data/commulingo/world-map-svg');
+const { renderWorldMapSvg, renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
 
 const router = express.Router();
 const PREVIEW_LIMIT = 4;
-const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas'];
+const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas', 'oceania'];
 
 function directEventsFor(events, code, lang) {
     return (events || []).filter(event => eventCountries(event.countries).includes(code)).map(event => ({
@@ -59,7 +59,7 @@ router.get('/map', async (req, res) => {
         const lang = res.locals.lang;
         const { standardized, events } = await loadMapData(lang);
         const countries = countryCodes().map(code => summaryFor(standardized.people, events, code, lang))
-            .filter(country => country && country.totalCount > 0);
+            .filter(Boolean);
         const groups = CONTINENT_ORDER.map(id => ({
             id,
             label: countries.find(country => country.continent === id)?.continentLabel || '',
@@ -70,7 +70,7 @@ router.get('/map', async (req, res) => {
         res.render('public/commulingo-map', {
             countries,
             groups,
-            mapSvg: renderWorldMapSvg({ codes: countries.map(country => country.code), lang }),
+            mapSvg: renderWorldMapSvg({ codes: countries.filter(country => country.totalCount > 0).map(country => country.code), lang }),
             pageTitle: lang === 'en' ? 'World Map — CommuLingo' : '세계 지도 — CommuLingo',
             pageDescription: lang === 'en'
                 ? 'Locate the countries and historical regions represented by CommuLingo people and events.'
@@ -109,7 +109,7 @@ router.get('/countries/:code', async (req, res) => {
         setShortPublicCache(res);
         return res.render('public/commulingo-country', {
             country,
-            mapSvg: renderWorldMapSvg({ codes: countryCodes(), selectedCode: code, lang, territoryLinks: true }),
+            mapSvg: renderCountryMapSvg({ selectedCode: code, lang }),
             previewLimit: PREVIEW_LIMIT,
             roleIconSvg,
             roleHubHref,
@@ -117,7 +117,7 @@ router.get('/countries/:code', async (req, res) => {
             pageTitle: `${country.label} — ${lang === 'en' ? 'World Map' : '세계 지도'}`,
             pageDescription: lang === 'en'
                 ? `People and historical events directly connected with ${country.label}.`
-                : `${country.label}의 시민권·민족적 배경 인물과 직접 관련된 역사 사건.`,
+                : `${country.label}에 속했거나 이 나라를 출신 배경으로 둔 인물과 직접 관련된 역사 사건.`,
             pagePath: country.href,
             jsonLd: commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'World Map' : '세계 지도', href: '/commulingo/map' },

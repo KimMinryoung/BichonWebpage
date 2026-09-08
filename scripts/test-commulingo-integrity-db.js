@@ -7,8 +7,7 @@ if (process.env.COMMULINGO_ISOLATED_TEST !== '1' || process.env.DB_NAME !== 'com
     throw new Error('Requires COMMULINGO_ISOLATED_TEST=1 and DB_NAME=commulingo_integrity_test');
 }
 const db = require('../config/database');
-const admin = require('../data/commulingo/people-admin-store');
-const sections = require('../data/commulingo/people-sections-store');
+const { admin, sections } = require('./lib/person-editorial-fixture');
 const people = require('../data/commulingo/people-store');
 const terms = require('../data/commulingo/terms-store');
 const events = require('../data/commulingo/history-events-store');

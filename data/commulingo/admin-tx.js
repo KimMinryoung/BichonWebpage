@@ -6,10 +6,14 @@ const { clearCommuLingoPeopleCache } = require('./people-store');
 // picks the change up; every write records a revision row.
 
 async function withTransaction(options, callback) {
-    if (options && options.client) return callback(options.client);
+    if (options && options.client) {
+        await options.client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
+        return callback(options.client);
+    }
     const client = await db.connect();
     try {
         await client.query('BEGIN');
+        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
         const result = await callback(client);
         await client.query('COMMIT');
         clearCommuLingoPeopleCache();

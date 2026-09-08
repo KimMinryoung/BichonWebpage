@@ -5,6 +5,7 @@ const { FLAG_NAMES, hasFlag, flagLabel } = require('./flag-icons');
 // UI always labels them as such. This is geography for orientation, not a
 // claim that present borders existed throughout CommuLingo's period.
 const COUNTRY_GEOGRAPHY = {
+    ...Object.fromEntries(require('./additional-countries.json').map(({ code, members, continent }) => [code, { members, continent }])),
     soviet: { kind: 'historical', members: ['RUS','UKR','BLR','MDA','EST','LVA','LTU','GEO','ARM','AZE','KAZ','UZB','TKM','TJK','KGZ'], center: [48, 55], continent: 'eurasia' },
     russia: { members: ['RUS'], continent: 'europe' },
     ukraine: { members: ['UKR'], continent: 'europe' },
@@ -33,6 +34,12 @@ const COUNTRY_GEOGRAPHY = {
     spain: { members: ['ESP'], continent: 'europe' },
     romania: { members: ['ROU'], continent: 'europe' },
     yugoslavia: { kind: 'historical', members: ['SRS','HRV','BIH','SVN','MNE','MKD','KOS'], center: [20, 44], continent: 'europe' },
+    'serbia': { members: ['SRS'], continent: 'europe' },
+    'croatia': { members: ['HRV'], continent: 'europe' },
+    'slovenia': { members: ['SVN'], continent: 'europe' },
+    'montenegro': { members: ['MNE'], continent: 'europe' },
+    'bosnia-herzegovina': { members: ['BIH'], continent: 'europe' },
+    'switzerland': { members: ['CHE'], continent: 'europe' },
     czechia: { members: ['CZE'], continent: 'europe' },
     'east-germany': { kind: 'historical', special: 'eastGermany', center: [12.2, 52], continent: 'europe' },
     uzbekistan: { members: ['UZB'], continent: 'asia' },
@@ -77,6 +84,7 @@ const COUNTRY_GEOGRAPHY = {
 };
 
 const CONTINENT_LABELS = {
+    oceania: { ko: '오세아니아', en: 'Oceania' },
     europe: { ko: '유럽', en: 'Europe' },
     asia: { ko: '아시아', en: 'Asia' },
     eurasia: { ko: '유럽·아시아', en: 'Europe & Asia' },

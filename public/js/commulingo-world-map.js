@@ -47,7 +47,7 @@
     }
 
     function selectedView() {
-        if (!root.closest('.commu-country-page')) return WORLD;
+        if (!root.closest('.commu-world-map-panel.is-country')) return WORLD;
         var selected = svg.querySelector('.wmap-highlight.is-selected');
         if (!selected || typeof selected.getBBox !== 'function') return WORLD;
         var bounds = selected.getBBox();

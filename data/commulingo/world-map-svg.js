@@ -1,5 +1,5 @@
 const MAP = require('./world-map.json');
-const { countryInfo, hasCountry } = require('./country-geography');
+const { countryInfo, hasCountry, countryCodes } = require('./country-geography');
 
 const WIDTH = 1000;
 const HEIGHT = 480;
@@ -17,10 +17,16 @@ function project(lng, lat) {
 }
 
 function ringPath(ring) {
+    // Keep microstates visible: world-scale rounding can collapse their entire
+    // outline to a point before the browser has a chance to zoom in.
+    const longitudes = ring.filter((_, index) => index % 2 === 0);
+    const latitudes = ring.filter((_, index) => index % 2 === 1);
+    const precision = Math.max(Math.max(...longitudes) - Math.min(...longitudes),
+        Math.max(...latitudes) - Math.min(...latitudes)) < 0.1 ? 3 : 1;
     let d = '';
     for (let i = 0; i < ring.length; i += 2) {
         const [x, y] = project(ring[i], ring[i + 1]);
-        d += `${i ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`;
+        d += `${i ? 'L' : 'M'}${x.toFixed(precision)} ${y.toFixed(precision)}`;
     }
     return d + 'Z';
 }
@@ -65,9 +71,10 @@ function centerFor(info) {
     return meta && meta.label ? meta.label : [0, 0];
 }
 
-function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLinks = false } = {}) {
+function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLinks = false, countryLink } = {}) {
     const valid = [...new Set((codes || []).filter(hasCountry))];
-    const infos = valid.map(code => countryInfo(code, lang)).filter(Boolean);
+    const infos = valid.map(code => countryInfo(code, lang)).filter(Boolean)
+        .map(info => countryLink ? { ...info, href: countryLink(info.code) } : info);
     const markers = markerPositions(infos.map(info => ({ ...info, center: centerFor(info) })));
     const selected = hasCountry(selectedCode) ? selectedCode : '';
     const label = lang === 'en' ? 'Interactive map of countries represented in CommuLingo' : 'CommuLingo에 등장하는 국가와 지역의 세계지도';
@@ -133,4 +140,8 @@ function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLin
     return parts.join('');
 }
 
-module.exports = { renderWorldMapSvg };
+function renderCountryMapSvg({ selectedCode, lang = 'ko', countryLink } = {}) {
+    return renderWorldMapSvg({ codes: countryCodes(), selectedCode, lang, territoryLinks: true, countryLink });
+}
+
+module.exports = { renderWorldMapSvg, renderCountryMapSvg };

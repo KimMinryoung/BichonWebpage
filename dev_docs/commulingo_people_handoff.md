@@ -1,6 +1,9 @@
 # CommuLingo People Dictionary Handoff
 
-Last updated: 2026-07-23
+Last updated: 2026-09-07
+
+Current editing work: [implementation checklist](commulingo-people-editing-plan.md).
+Storage and recovery: [operations reference](commulingo-database.md).
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
 
@@ -9,14 +12,15 @@ This note is for the next person or AI agent continuing work on `/commulingo/peo
 `commulingo_people` now stores names as parts: `given_name_ko/en`,
 `family_name_ko/en`, with the patronymic staying in
 `commulingo_person_patronymics`. `name_ko/en` remain as the DERIVED full name
-(given + family, patronymic never embedded) and are recomputed by the admin
-store whenever any name field changes — do not write them independently.
+(using citizenship-based order, patronymic never embedded) and are recomputed
+when names or citizenship change — do not write them independently.
 
 Admin API (`POST/PATCH /commulingo/admin/api/people`):
 - Preferred payload: `givenName: {ko,en}`, `familyName: {ko,en}`,
   `patronymic: {ko,en}`. Non-Russian-style names simply omit `patronymic`.
-- Legacy `name: {ko,en}` is still accepted and split (family = last token,
-  given = the rest); single-token names (김일성, 카모) go wholly to familyName.
+- Legacy `name: {ko,en}` is still accepted and split using the citizenship-based
+  order; single-token names (김일성, 카모) go wholly to familyName. Prefer explicit
+  parts for compound surnames.
 - A name that embeds the patronymic as one of its tokens is rejected with 400
   — that duplication (오토 율리예비치 율리예비치 시미트) is the bug the split
   exists to prevent. Middle names (Gurley, Auguste) belong in givenName, NOT
@@ -61,7 +65,7 @@ rule: a Western middle name in Latin (`Earl` + `Russell` + `Browder`), a
 Russian-style patronymic only for people who actually used one. It is dropped,
 not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
 
-**Where it is enforced (keep all four in sync):**
+**Enforcement:**
 
 - `data/commulingo/native-script.js` — `NATION_SCRIPTS` (nationality code →
   allowed scripts) plus `checkNativeScript()`. Single source of the rule.
@@ -72,9 +76,8 @@ not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
   store now also reads and writes `citizenship` / `nationalOrigin`
   (`{code, label}`); legacy `origin` remains a compatible alias.
 - leninbot `runtime_tools/commulingo_people.py` — `_NATION_SCRIPTS` and
-  `_check_native_script()` are the Python port, wired into `_validate` so
-  `commulingo_edit` rejects the mismatch before staging or applying. Its tool
-  description carries the rule for the agent.
+  `_check_native_script()` support legacy normalization; active person writes
+  use the JS validator through the shared service. Tool descriptions carry the rule.
 - `data/commulingo/person-card-validation.js` — card-label rules (fate label is a
   short label, not a sentence; citizenship/origin labels are nations, not
   birthplaces). `createPersonAdmin` additionally requires a `role`. Enforced on
@@ -164,7 +167,7 @@ already renders from `years` / `deathYear`, so repeating it is noise.
 | Place of death (symbolic) | Append with ` · `: `암살 · 멕시코` / `Assassinated · Mexico` |
 | Political fate (deposed / exile) | Keep the EVENT year (differs from the death year): `실각 1964`, `퇴임 1985`, `체포 1991`. Canonical EN: 실각=Removed, 해임=Dismissed, 퇴임=Left office, 전보=Transferred, 은퇴=Retired, 체포=Arrested, 추방=Deported, 유형=Internal exile, 당 해체=Party dissolved |
 | Political + cause | `실각 1964 · 자연사` / `Removed 1964 · natural causes` |
-| Still living | `생존` / `Living` |
+| Still living | Empty fate kind/labels; use an open life-year range such as `1987–` |
 
 Char limits: **22 KO / 50 EN** (fits compound political+cause labels; rejects
 mini-sentences — put burial, prison names, etc. in bio or sections).
@@ -176,33 +179,25 @@ mini-sentences — put burial, prison names, etc. in bio or sections).
   preserving political-event years. The frontend admin store
   (`people-admin-store.js`) runs create/update fate labels through it.
 - leninbot `runtime_tools/commulingo_people.py` → `_normalize_fate_label` is the
-  Python port (same logic); `commulingo_edit` applies it on save and validates
-  the 22/50 limits. Its tool description carries the vocabulary guide for the
-  agent.
+  compatibility helper; active writes use JS normalization and the shared
+  22/50 write limits. Tool descriptions carry the vocabulary guide.
 - `scripts/one-off/normalize-commulingo-fate-db.js` was the one-off that normalized all
   535 existing DB rows to this standard (dry-run by default; `--apply` writes).
 
 ## Serving from a local snapshot — added 2026-07-14
 
-The people dictionary lives in the DB (`commulingo_people` + related tables), but
-the site no longer queries Supabase per request — that cross-region round-trip
-made `/commulingo/people` slow. Instead:
+The people dictionary lives in local PostgreSQL. The site serves the in-memory
+copy of an atomically written JSON snapshot at `data/commulingo/people-snapshot.json`.
+The DB is the source of truth; the snapshot is a derived cache retained across restarts.
 
-- `data/commulingo/people-store.js` → `loadCommuLingoPeople` serves a local JSON
-  snapshot (`data/commulingo/people-snapshot.json`, bind-mounted so it persists
-  across restarts and doubles as an on-disk backup). Hot path is in-memory; no
-  DB.
-- The DB is touched only to **rebuild** the snapshot: on a background timer
-  (`COMMULINGO_PEOPLE_REFRESH_MS`, default 10 min), synchronously the first time
-  when no snapshot exists, and immediately when the frontend admin store edits a
-  person (`clearCommuLingoPeopleCache` → `refreshFromDb`).
-- Agent/DB edits therefore surface within the refresh interval (~10 min), which
-  is acceptable. Pre-warm or force a rebuild with
-  `npm run commulingo:people:snapshot` (`scripts/snapshot-commulingo-people.js`,
-  run where the DB is reachable — inside the frontend container).
-- There is no longer a `people.js` seed file; the DB is the single source of
-  truth and the snapshot is its cache. The old seed→DB migrate/validate scripts
-  were removed with it.
+- `people-store.js` refreshes on a background timer (`COMMULINGO_PEOPLE_REFRESH_MS`,
+  default 60000 ms), or on demand when no snapshot exists.
+- Frontend Admin commits request a refresh. External writers are picked up by
+  periodic refresh; client/CDN caches can add their own delay.
+- Force a rebuild using `npm run commulingo:people:snapshot` inside the frontend
+  container. Keep the last valid snapshot during DB outages.
+- See [storage and recovery](commulingo-database.md) for signature checks,
+  consistent snapshots, and transaction/cache ownership.
 
 ## Card ordering, category tags, event pages — added 2026-07-13
 
@@ -293,42 +288,26 @@ different rule per page and a new entry had to be wired into four places.
   `scripts/smoke-commulingo-decision-links.js` (runs the client script against a
   stub DOM).
 
-## AI Agent Editing (leninbot) — added 2026-07-11
+## AI Agent Editing
 
-The leninbot agent (Cyber-Lenin) can now continue the people-dictionary work
-itself. Implementation lives in the leninbot repo:
+Python `runtime_tools/commulingo_people.py` exposes target-specific person create/update
+and section save tools. Person reads and writes call the frontend's private
+`scripts/commulingo-person-service.js` through `docker exec` with JSON stdin.
+Admin HTTP, upsert CLI, automatic edits and suggestion approvals all use
+`data/commulingo/person-editorial-service.js` and the Admin stores. There is no
+Python SQL fallback for people or their sections. Office/event/term tools retain
+their own stores and acquire the same transaction advisory lock before validation.
 
-- `leninbot/runtime_tools/commulingo_people.py`
-  - `commulingo_people` — read tool: list_groups / search_people / get_person /
-    list_offices / get_office / list_suggestions
-  - `commulingo_edit` — write tool: create/update/delete for `person` and
-    `office_row`, patch shape identical to the admin API payloads, source
-    citations required
-- Exposed to the Telegram orchestrator and the analyst agent; blocked for
-  public web chat and inbound MCP.
+`config/commulingo_people.json` controls direct_apply. True applies ordinary
+validated changes; false stages them. Deletions, large text cuts, source conflicts
+and uncertain identity always stage for review. Confidence is recorded, never used
+as an approval threshold. Pending is a successful maintainer terminal with no
+content change. Approve/reject through `scripts/commulingo_suggestions.py`; approval
+requires a note and the original revision must still match.
 
-`commulingo_edit` has two modes, switched by
-`leninbot/config/commulingo_people.json` → `"direct_apply"` (mtime-cached,
-no restart needed):
-
-- `true` (current): edits apply immediately in one transaction, write a
-  snapshot to `commulingo_people_revisions` (same semantics as
-  `people-admin-store.js`), and log an auto-approved row in
-  `commulingo_agent_suggestions` so sources/confidence are always on record.
-- `false`: edits are staged as `pending` rows in `commulingo_agent_suggestions`;
-  review them with `leninbot/scripts/commulingo_suggestions.py`
-  (`list` / `show <id>` / `approve <id>` / `reject <id> --note`), which reuses
-  the same Python apply path.
-
-Freshness: agent writes bypass this app's process, so changes appear after the
-30s people-store cache + ~30s CDN max-age expire (≈1 minute). No restart or
-purge needed.
-
-Footgun mitigation: `npm run commulingo:people:migrate -- --replace` now
-refuses to run when `commulingo_people_revisions` has rows (i.e. the DB was
-edited after seeding) unless `--force` is also passed. `people.js` is a
-bootstrap seed only — the DB is the source of truth once agent/admin edits
-exist.
+The tool boundary remains restricted to authorized internal agents. The bridge
+adds no public HTTP or MCP write endpoint. KG reference facts on Python reads
+remain best effort. Snapshot refresh is normally 60 seconds, plus client/CDN delay.
 
 ## Current State
 
@@ -351,20 +330,19 @@ The people dictionary is now DB-backed at runtime.
   - protected by `requireAdminIp`
   - state-changing requests also pass the existing CSRF middleware
 
-Current DB-shaped data count:
+Counts and coverage change with curator edits; inspect the current snapshot or DB
+when they matter. Person detail sections are stored in `commulingo_person_sections`.
+Event relationships live in `commulingo_history_event_people` and use leader,
+participant, executor, target, opponent, or witness as relation kinds. Check existing
+section slugs and topics before adding another section to avoid duplicate coverage.
+Maintainer selection and schedules are defined in the leninbot repository; see the
+[editing plan](commulingo-people-editing-plan.md) for the inspected rules.
 
-- groups: `6`
-- people: `129`
-- career entries: `574`
-- offices: `16`
-- office timeline rows: `141`
+Event grouping and country tags:
+
 - event clusters and country tags (2026-09-06): an overview event may carry `relations.parent` on its detail documents (civil war → six borderland/aftermath documents, migration 164; the people's democracies of 1944–1949 → Poland, Romania, Bulgaria, Hungary, migrations 168–173). Children and siblings are derived from the snapshot in `event-relations.js`, so the panel lists the cluster without reciprocal rows. A timeline entry may carry `country` (one flag code from `flag-icons.js` or a list); `event-countries.js` normalises it, the panel prints the flags beside the date and, when two or more countries appear, a chip row that filters the list and dims the map badges (`public/js/commulingo-event-timeline.js`). Unknown codes are dropped on the page and reported by `audit-event-locations.js`. Multi-country prose stays by phase; the section headings name the country (`발트 독립전쟁` pattern) so one country reads as a contiguous run, and a heading may end in `{estonia}` / `{uk finland}` to print those flags in the heading and the contents list (stripped before rendering; unknown codes audited). The first date in every section carries its year, since a reader may land on the section from the contents list.
-- role categories: seeded in DB (`imperial-white`, `writer-artist`, `theorist`, `non-soviet-revolutionary`, `socialist-bloc-reform-leader`, `russian-republic-leader`, `left-opposition`, `socialist-bloc-leader`)
-- person detail sections: DB-only content in `commulingo_person_sections`
-- historical events: DB-backed `commulingo_history_events` with one relation row per linked person in `commulingo_history_event_people`; each relationship has a stable `relation_kind` for event-specific color coding. Supported kinds and colors (`public/css/commulingo.css`): `leader` (crimson), `participant` (blue), `executor` (ochre), `target` (red), `opponent` (gray), `witness` (violet). As of 2026-07-12 there are ten events in chronological `sort_order`: `revolution-1905` (10), `february-revolution` (20), `october-revolution` (30), `civil-war` (40), `ussr-formation` (45), `new-economic-policy` (50), `five-year-plans` (60), `great-terror` (70), `great-patriotic-war` (80), `soviet-space-program` (90); content migrations live in `scripts/migrations/020`–`028`. Event `sources` entries may be plain book citations as well as URLs; the event view renders non-URL sources as text.
-- bulk person sections: migrations `029`–`033` (2026-07-12) added two narrative sections for each of the 50 people that previously had none, so every person now has detail sections. The 5-minute `leninbot-commulingo-maintainer` systemd timer (DeepSeek curator in the leninbot repo) keeps enriching sparse cards and registering new people in parallel; when hand-writing sections, check `commulingo_person_sections` for maintainer-created slugs first to avoid duplicating a topic (see `vasily-grossman`/`manuscript-arrest`)
-- validator issues: none
-- unmapped role icons: none
+
+Event sources may be book citations as well as URLs; non-URL references render as text.
 
 Current people groups:
 
@@ -377,37 +355,15 @@ Current people groups:
 
 `international-revolutionary` holds non-Soviet revolutionaries (Luxemburg, Liebknecht, Gramsci, Mao, Guevara, ...). It renders LAST, under its own '소련 밖의 혁명가들' section heading, independent of the Soviet-era sequence (sort_order 99; standalone list in commulingo-people.ejs). Convention: their `cyrillic` column carries the NATIVE-script name instead (毛泽东, Hồ Chí Minh, Amílcar Cabral, ...).
 
-## Important Source-of-Truth Warning
-
-Runtime reads from Postgres through `data/commulingo/people-store.js`.
-
-However, `data/commulingo/people.js` still exists as the bootstrap/seed source used by:
-
-```bash
-npm run commulingo:people:migrate
-npm run commulingo:people:migrate -- --replace
-```
-
-Be careful: `--replace` truncates and reloads the people DB tables from `data/commulingo/people.js`. Admin API and AI-agent edits live only in the DB, so `--replace` would overwrite them — since 2026-07-11 the script refuses to run when `commulingo_people_revisions` has rows unless you also pass `--force`. Treat the DB as the source of truth and `people.js` as a bootstrap seed.
-
-Still open if you want repo-tracked data again:
-
-- DB export script that writes the current DB state back to a canonical source file
-- migration away from `people.js` as seed source
-
 ## Key Files
 
 Data and normalization:
 
-- `data/commulingo/people.js`
-  - bootstrap source data
-  - groups, people, offices, careers, patronymics
 - `data/commulingo/people-standard.js`
   - normalization layer used by SSR and APIs
-  - `ROLE_RULES` seeds and file-fallback maps people to role icon ids and office links
   - validator lives here
 - `data/commulingo/people-store.js`
-  - reads normalized DB tables and reconstructs the old `people.js` shape
+  - reads normalized DB tables into the public dictionary shape
   - loads `commulingo_person_roles`, `commulingo_role_categories`, and per-person section counts
   - exports `loadCommuLingoPersonSections(personId)` for detail/API body loads
   - used by runtime public page/API
@@ -421,7 +377,7 @@ Routes and views:
 - `routes/commulingo.js`
   - mounts `routes/commulingo-events.js` at `/commulingo/events`; person detail pages query and render their linked events
   - public page and read APIs
-  - DB-first load with file fallback
+  - shared snapshot-backed reads
 - `routes/commulingo-admin-api.js`
   - admin CRUD API
 - `views/public/commulingo-people.ejs`
@@ -449,13 +405,12 @@ DB:
   - normalized tables
   - revisions table
   - agent suggestions table scaffold
-- `scripts/migrate-commulingo-people-db.js`
-  - creates schema and loads `people.js`
-  - use `--replace` only when intentionally overwriting DB data from repo data
+Validation and writes:
 
-Validation:
-
-- `scripts/validate_commulingo_people.js`
+- `scripts/commulingo-people-upsert` — validated create/update and optional sections;
+  use `--dry-run` to validate and roll back.
+- `scripts/audit-person-card-fields.js`, `scripts/audit-person-native-names.js`,
+  `scripts/audit-person-patronymics.js`, `scripts/audit-person-name-order.js` — audits.
 
 ## DB Schema Shape
 
@@ -480,15 +435,16 @@ Governance/scaffold tables:
 - `commulingo_people_revisions`
 - `commulingo_agent_suggestions`
 
-`commulingo_agent_suggestions` exists for future AI-agent suggested edits, but there is not yet a complete approval UI/workflow around it.
+`commulingo_agent_suggestions` records AI edits and pending suggestions. The
+leninbot CLI provides approval/rejection; the direct_apply setting controls
+immediate application for the generic AI write tools.
 
 ## Role Categories and Icons
 
 The people page no longer uses emoji role icons. It uses Lucide-style inline SVG paths in `views/public/commulingo-people.ejs`.
 
-Person→role mappings live ONLY in `commulingo_person_roles` (no file copy —
-`ROLE_RULES` was removed 2026-07-11; on DB outage the file-fallback path
-renders default icons). Offices carry their icon in `commulingo_offices.icon`,
+Person→role mappings live in `commulingo_person_roles`. During DB outages the
+last valid snapshot preserves the loaded roles. Offices carry their icon in `commulingo_offices.icon`,
 seeded from the `OFFICE_ICON` map in `data/commulingo/people-standard.js`.
 
 Office-less roles now use `commulingo_role_categories`; clients and agents
@@ -505,9 +461,7 @@ resolution concern, not an API-client concern. Runtime role resolution order:
 only for backward compatibility with currently deployed code and older clients.
 Do not blank them during category backfill. A later manual cleanup can drop or
 clear those legacy columns after all deployed readers resolve categories first.
-After a `--replace --force`, person roles and detail sections must be restored
-from a DB backup; the seed only refills office icons and canonical role
-categories. Icon ids, not raw SVG:
+Use icon ids, not raw SVG:
 
 - state-security: `eye`
 - defence: `star`
@@ -612,59 +566,118 @@ Notes:
   - `GET /commulingo/admin/api/people/:personId/sections/:slug`
   - `PUT /commulingo/admin/api/people/:personId/sections/:slug`
   - `DELETE /commulingo/admin/api/people/:personId/sections/:slug`
-  - section payload: `{ heading: {ko,en}, body: {ko,en}, sortOrder, sources: [] }`
+  - section payload: `{ expectedRevision, heading: {ko,en}, body: {ko,en}, sortOrder, sources, evidence }`
   - writes are transactional and snapshot `entity_type='person'` revisions with
     notes such as `upsert section <slug>` / `delete section <slug>`
-- For AI agents, prefer suggestion/approval workflow before allowing direct writes.
+- AI direct/staged behavior follows the leninbot configuration described above.
+
+## Partial edits and section recovery (2026-09-07)
+
+The frontend Admin store and its upsert CLI preserve omitted languages in
+name parts, legacy full names, bio, epithet, moment, fate labels and nationality
+labels. A legacy plain string patches Korean only. Empty strings explicitly
+clear a language; nullable text fields accept null to clear both languages.
+Names must still resolve to nonempty KO and EN values. A changed citizenship
+recomposes full names and resets nationality labels to the new code's defaults.
+
+`aliases: {ko: [...]}` replaces only the Korean list and preserves English;
+use an empty array to clear that language. Career/scenes and role objects retain
+their existing whole-field semantics; use the individual collection operations
+below to edit one alias, career or scene. Python uses this same merge contract.
+
+Section upsert (the existing PUT endpoint and CLI) now preserves omitted
+heading/body languages and sortOrder. Every edit requires nonempty source references;
+empty sources are rejected. Existing section revisions retain their person before/after
+shape and add `sectionBefore` / `sectionAfter`, including slug, heading, body,
+sources, ordering and timestamps. A new section has sectionBefore=null; a
+deleted section has sectionAfter=null.
+
+To undo a section edit or deletion, read that revision's sectionBefore and pass
+it, with supporting evidence and nonempty sources, to the same section upsert endpoint, or as an entry in the upsert CLI's
+`sections` array for that person. This restores content, sources and ordering;
+normal createdAt/updatedAt timestamps are assigned by the store. Read the current person revision before restoring and submit it as
+expectedRevision to reject intervening edits.
+Older revisions without sectionBefore cannot recover content they never stored.
+New whole-person deletion revisions also retain raw sections in before.sections.
+Restoration must reconstruct a valid create payload and use the Admin service;
+there is no blind restore endpoint and historical missing data is not reconstructed.
+
+## Individual collection edits and edit versions (2026-09-07)
+
+Read `GET /commulingo/admin/api/people/:personId` for the current person,
+career row IDs and `person.revision`. Submit the returned token unchanged:
+
+```json
+{
+  "expectedRevision": "<person.revision from GET>",
+  "sources": ["Archive reference, section 2"],
+  "aliasEdits": [{"op": "add", "lang": "ko", "value": "새 별칭"}],
+  "careerEdits": [{"op": "update", "id": "123", "entry": {"r": {"ko": "수정 직책"}}}],
+  "sceneEdits": [{"op": "remove", "scene": ["collection-id", "episode-id"]}]
+}
+```
+
+Send to the person PATCH endpoint, or use the same fields in an existing-person
+entry of the upsert CLI. `123` is an example; use an actual row ID from GET.
+
+| Field | add | update | remove |
+| --- | --- | --- | --- |
+| aliasEdits | lang + value | lang + value + replacement string | lang + value |
+| careerEdits | entry: {y?, r:{ko,en}} | id + entry containing y and/or r | id |
+| sceneEdits | scene: [collectionId, episodeId] | scene + replacement pair | scene |
+
+Each operation requires op. Operations run in array order, at most 100 per
+field per request. New careers append at the end; existing career IDs and
+ordering survive individual updates. KO/EN role patches preserve the other
+language; the resulting edited career role must have both languages. IDs must
+belong to the person. Duplicate aliases/scenes, missing targets, unknown keys,
+and mixing aliases/aliasEdits (or career/careerEdits, scenes/sceneEdits) are 400
+errors, detected before modifying the person. Creates use the existing full
+fields and reject the new update-only operation fields.
+
+The revision token covers persisted person and owned child rows, including
+sections and office rows, and is read in the same repeatable-read transaction
+as the person. It does not cover shared category/office definitions or event
+relationships. Do not parse or construct a token. A fresh person read returns
+the current token; section writes return the next token as section.revision.
+The section read endpoints retain their old shapes: read the person first when
+preparing a section edit.
+
+Person PATCH and section PUT accept expectedRevision in their body. Person
+and section DELETE also accept it in the JSON body (store callers put it in
+options). The check runs after acquiring the existing person row lock. A
+mismatch returns HTTP 409 with code=revision_conflict and currentRevision;
+reload, reconcile the content and retry intentionally. Do not blindly resubmit
+the old payload with the new token. No data or revision row is written on conflict.
+
+The token is mandatory for all existing-person and section writes, including
+section creation. Missing tokens return 428; stale tokens return 409. New-person
+creation is the only exception. Admin and Python writes acquire the transaction
+advisory lock `commulingo-editorial-write`, then person/suggestion row locks.
+Direct SQL is outside this supported contract. Old pending suggestions without
+versions must be rejected and researched/resubmitted against a fresh read.
+
+For a CLI transaction updating a person and several sections, place the original
+expectedRevision on the person entry, and omit it on its sections: the person
+check and lock cover that transaction. Reusing the original token on every
+section would conflict with earlier changes in the same batch.
 
 ## Common Workflows
 
-Validate source data:
+Register or update through the Admin store, including optional detail sections:
 
 ```bash
-node scripts/validate_commulingo_people.js
+scripts/commulingo-people-upsert /tmp/people-spec.json --dry-run
+scripts/commulingo-people-upsert /tmp/people-spec.json --changed-by maintainer
 ```
 
-Reload DB from `people.js`:
+Validate code with `npm test`. Database write tests must use an isolated copy;
+see [storage and validation](commulingo-database.md).
+
+Refresh the public snapshot where the DB is reachable (inside the frontend container):
 
 ```bash
-npm run commulingo:people:migrate -- --replace
-```
-
-Use this only if `people.js` is the intended source of truth for the change.
-
-Seed role rows from `ROLE_RULES` without replacing runtime edits:
-
-```bash
-node scripts/seed-commulingo-person-roles.js
-```
-
-The role seed applies migration 008, fills blank `commulingo_offices.icon`
-values from `ROLE_RULES`, inserts only missing `commulingo_person_roles` rows,
-skips missing people, and never overwrites existing runtime role edits.
-
-Check runtime DB reconstruction:
-
-```bash
-node - <<'EOF'
-require('dotenv').config();
-const { loadCommuLingoPeopleFromDb } = require('./data/commulingo/people-store');
-const { normalizeCommuLingoPeople, validateCommuLingoPeople } = require('./data/commulingo/people-standard');
-(async () => {
-  const data = await loadCommuLingoPeopleFromDb({ fresh: true });
-  const normalized = normalizeCommuLingoPeople(data, { lang: 'ko' });
-  console.log(JSON.stringify({
-    issues: validateCommuLingoPeople(data),
-    people: normalized.people.length,
-    offices: normalized.offices.length,
-    officeRows: normalized.offices.reduce((sum, office) => sum + office.rows.length, 0),
-    careerEntries: normalized.people.reduce((sum, person) => sum + person.career.length, 0),
-    unmapped: normalized.people.filter(p => p.role.icon === 'circle-help').map(p => p.id),
-  }, null, 2));
-  const db = require('./config/database');
-  await db.end();
-})();
-EOF
+npm run commulingo:people:snapshot
 ```
 
 Start preview:
@@ -708,10 +721,9 @@ Check container networks:
 docker inspect leninbot-frontend --format '{{range $name,$net := .NetworkSettings.Networks}}{{println $name $net.IPAddress $net.GlobalIPv6Address}}{{end}}'
 ```
 
-Expected networks include:
+The frontend and local `leninbot-pg` must share:
 
 - `leninbot_default`
-- `leninbot_ipv6`
 
 Check logs:
 
@@ -729,17 +741,12 @@ docker logs --tail 80 leninbot-frontend
 - Institution timeline and people groups are collapsed by default to reduce page bulk.
 - People cards are limited to two columns to avoid narrow cards breaking Korean names into awkward fragments.
 
-## Known Gaps / Recommended Next Work
+## Current Improvement Work
 
-1. Build an admin UI around the CRUD API.
-2. ~~Add an AI suggestion flow using `commulingo_agent_suggestions`.~~ Done 2026-07-11 (leninbot `commulingo_edit`, staging mode).
-3. ~~Add a review/approval workflow.~~ Done 2026-07-11 (`leninbot/scripts/commulingo_suggestions.py`; direct mode currently active by owner choice).
-4. Decide source-of-truth strategy: currently DB primary (guarded `--replace`); a DB→`people.js` export script would restore repo tracking.
-5. Move role icon SVG path map out of the EJS template if it grows further.
-6. ~~Move `ROLE_RULES` into DB if non-developer admins need to edit role mappings.~~ Done 2026-07-11 (`commulingo_person_roles`; `ROLE_RULES` remains seed/fallback only).
-7. Source citations: `commulingo_edit` requires per-edit source refs (stored in `commulingo_agent_suggestions.source_refs`); per-career-row citations in the schema remain open.
-8. Add focused tests around DB reconstruction and admin CRUD rollback.
-9. New people added by the agent/admin API can now be mapped through `payload.role` / `commulingo_person_roles`; unmapped people still fall back to `circle-help`.
+See the [editing implementation checklist](commulingo-people-editing-plan.md)
+for partial-update safety, revision recovery, shared validation, enrichment
+completion states and claim-level sources. Checkboxes distinguish proposals
+from implemented and verified work.
 
 ## Useful Commit Trail
 
@@ -752,3 +759,44 @@ Recent commits in this line of work:
 - `19a0bd8` Collapse CommuLingo people groups by default
 - `155719b` Clarify clickable CommuLingo people groups
 - `38cc6ba` Tighten CommuLingo people page accordions
+
+## Editorial provenance, review and enrichment
+
+The shared contract is `data/commulingo/person-editorial-contract.json`; Python
+loads the same JSON for tool length hints. Writes require nonempty sources.
+Changes to bio, moment, years, citizenship, nationalOrigin/origin or section body
+also require evidence per field: `{field, claim, source, locator, excerpt?, stance?}`.
+The source must occur in sources and locator identifies a page or section.
+Stance is supports/disputes. This validates provenance structure, not the historical
+truth of the quotation or claim. Existing claims are not automatically backfilled.
+
+`reviewFlags` accepts source_conflict/identity_uncertain. A disputes claim, any
+deletion, or a bio/body cut below 60% of a previous text of at least 120 characters
+creates a pending suggestion (HTTP 202) without changing content or evidence.
+Approval revalidates and atomically writes content, evidence, revision and suggestion.
+`POST /commulingo/admin/api/people-suggestions/:id/review` takes `{approve, note}`.
+Identity collisions by normalized name/alias are rejected unless an explicit
+identity_uncertain review is staged and subsequently approved.
+
+`PUT /commulingo/admin/api/people/:personId/enrichment/:topic` takes
+`{expectedRevision, status, reason, sources}`. Topics are basics, nationality, bio,
+moment, events, sections. States: open, complete, not_applicable, sources_unavailable.
+Complete/not_applicable revisit after 180 days; sources_unavailable after 90 days.
+New content or claim evidence reopens related topics. Pending suggestions exclude
+the person from automatic enrichment. Selection prioritizes basic gaps, missing
+claim evidence and untranslated text before nationality, moment and missing topics.
+Graph relation counts do not set prominence; 12 sections is a ceiling, not a goal.
+
+Migration 176 creates append-only evidence history and per-topic enrichment state.
+See [database operations](commulingo-database.md) for rollout and rollback.
+
+## Automatic review operations
+
+The Python timer-owned `commulingo_reviewer` researches pending proposals independently.
+It can recommend approve/reject/escalate but has no dictionary write tool. The runner verifies
+retrieved quotations and risk coverage, then calls the same shared approval service.
+Unresolved cases reach the single Telegram owner; `/commulingo_review list`, `show ID`,
+`approve ID REASON`, `reject ID REASON`, and `retry ID` provide the complete handoff path.
+The review runs every 15 minutes, one proposal per invocation, under the shared daily budget.
+Migration 177 persists leases, decisions, retries and notification delivery state.
+See leninbot `dev_docs/commulingo_editorial.md` for current scheduling, limits and recovery.
