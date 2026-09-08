@@ -8,7 +8,8 @@ const { publishedReportSlugs } = require('./research-series');
 // The scan costs one research_documents full-text query plus regex passes, so
 // it runs at most once per REFRESH_MS: the built index is served from memory
 // and refreshed in the background, mirroring the commulingo snapshot stores.
-// Only the very first request after a process start awaits the build.
+// Requests never await a full build, including after startup or dictionary edits.
+// Until a matching index is ready, only the optional related reports are omitted.
 
 const researchStore = require('../config/research-store');
 const { getReportLinkContext } = require('../data/commulingo/report-links');
@@ -93,14 +94,23 @@ function refresh() {
     return pending;
 }
 
+// An old index can contain anchors invalidated by an editorial link change.
+// Omit that optional section until the replacement is ready, without making
+// the main article wait for every report in both languages to be compiled.
+const emptyIndex = {
+    byPerson: { ko: new Map(), en: new Map() },
+    byEvent: { ko: new Map(), en: new Map() },
+    byTopic: { ko: new Map(), en: new Map() },
+    byTerm: { ko: new Map(), en: new Map() },
+};
+
 async function getMentionsIndex() {
     const contexts = await Promise.all([getReportLinkContext('ko'), getReportLinkContext('en')]);
-    if (memory && contexts.some((context, i) => context !== memory.contexts[i])) return refresh();
-    if (memory) {
-        if (Date.now() - memory.at >= REFRESH_MS) refresh().catch(() => {});
-        return memory;
+    const matching = memory && contexts.every((context, i) => context === memory.contexts[i]);
+    if (!matching || Date.now() - memory.at >= REFRESH_MS) {
+        refresh().catch(err => console.error('report mentions refresh failed:', err.message));
     }
-    return refresh();
+    return matching ? memory : emptyIndex;
 }
 
 // anchor deep-links each report to the entity's first mention (the id that
