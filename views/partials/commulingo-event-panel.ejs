@@ -60,12 +60,16 @@ var sections = p.event.bodySections || [];
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>
         <% } %>
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
-            <h2 id="event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></h2>
-            <% if (p.event.mapSvg) { %>
-            <figure class="commu-event-map commu-event-timeline-map">
+            <div class="commu-event-timeline-header">
+                <h2 id="event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></h2>
+                <% if (p.event.mapSvg) { %>
                 <div class="commu-event-map-tools" hidden>
                     <%- include('commulingo-world-map-controls', { copy: strings.commuLingoViews.worldMap }) %>
                 </div>
+                <% } %>
+            </div>
+            <% if (p.event.mapSvg) { %>
+            <figure class="commu-event-map commu-event-timeline-map">
                 <div class="commu-event-map-viewport"><%- p.event.mapSvg %></div>
                 <figcaption class="commu-event-map-help" hidden><%= en ? 'Zoom in, then scroll within the map to explore.' : '확대한 뒤 지도 안에서 스크롤해 다른 위치를 볼 수 있습니다.' %></figcaption>
             </figure>

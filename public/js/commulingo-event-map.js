@@ -15,7 +15,8 @@
     document.querySelectorAll('.commu-event-map').forEach(function (figure) {
         var viewport = figure.querySelector('.commu-event-map-viewport');
         var svg = figure.querySelector('.emap-svg');
-        var tools = figure.querySelector('.commu-event-map-tools');
+        var section = figure.closest('.commu-event-timeline');
+        var tools = section && section.querySelector('.commu-event-map-tools');
         if (!viewport || !svg || !tools) return;
         var box = svg.viewBox.baseVal;
         if (!box.width || !box.height) return;

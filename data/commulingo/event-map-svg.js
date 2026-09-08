@@ -311,13 +311,31 @@ function timelineGeos(timeline) {
 
 const ARROW_VARIANTS = { red: 'red', axis: 'axis' };
 
-// Both maps of a page may draw arrows; the ids collide harmlessly because the
-// definitions are identical (url(#…) resolves to the document's first).
+// Size heads in map units, not stroke widths: the mobile stroke must not
+// inflate a head into a triangle larger than its entire route. Including
+// the size in the id keeps identical definitions safe across multiple maps.
+function arrowHead(variant, size, id = `emap-head-${variant}`) {
+    return `<marker id="${id}" class="emap-head-${variant}" markerUnits="userSpaceOnUse"`
+        + ` markerWidth="${size}" markerHeight="${(size * 0.6).toFixed(2)}" viewBox="0 0 10 6"`
+        + ' refX="10" refY="3" orient="auto-start-reverse"><path d="M0 0 L10 3 L0 6 L2.5 3 Z"/></marker>';
+}
 const ARROWHEAD_DEFS = '<defs>'
-    + '<marker id="emap-head-red" class="emap-head-red" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
-    + '<marker id="emap-head-axis" class="emap-head-axis" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
-    + '<marker id="emap-head-neutral" class="emap-head-neutral" markerWidth="7" markerHeight="7" refX="5.4" refY="3.5" orient="auto-start-reverse"><path d="M0.7 0.7 L6 3.5 L0.7 6.3 Z"/></marker>'
+    + ['red', 'axis', 'neutral'].map(variant => arrowHead(variant, 7)).join('')
     + '</defs>';
+
+function movementArrow(pts, variant) {
+    const length = pts.slice(1).reduce((sum, p, i) => sum + Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]), 0);
+    if (length < 0.01) return '';
+    const size = Math.min(8, length * 0.25).toFixed(3);
+    const id = `emap-head-${variant}-${size.replace('.', '-')}`;
+    const stroke = Math.min(2.6, Number(size) / 3).toFixed(3);
+    // Short dashed routes otherwise turn into a single dot; scale the dash
+    // pattern along with the shaft and keep the endpoint inside the head.
+    const dash = variant === 'axis' ? `stroke-dasharray:${(stroke * 2.7).toFixed(3)} ${(stroke * 1.5).toFixed(3)};` : '';
+    return `<defs>${arrowHead(variant, size, id)}</defs>`
+        + `<path class="emap-arrow is-${variant}" d="${arrowPath(pts)}"`
+        + ` style="stroke-width:${stroke};stroke-linecap:butt;${dash}" marker-end="url(#${id})"/>`;
+}
 
 // Gentle bow for a two-point arrow so it reads as movement, not a border.
 function arrowPath(pts) {
@@ -363,7 +381,7 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
             const pts = geo.points.map(projectPt);
             const variant = ARROW_VARIANTS[geo.variant] || 'neutral';
             parts.push(`<g class="emap-geo" data-geo-num="${num}">`
-                + `<path class="emap-arrow is-${variant}" d="${arrowPath(pts)}" marker-end="url(#emap-head-${variant})"/>`
+                + movementArrow(pts, variant)
                 + '</g>');
             const mid = pts.length === 2
                 ? [(pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2]
