@@ -62,7 +62,13 @@ var sections = p.event.bodySections || [];
         <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
             <h2 id="event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></h2>
             <% if (p.event.mapSvg) { %>
-            <figure class="commu-event-map commu-event-timeline-map"><%- p.event.mapSvg %></figure>
+            <figure class="commu-event-map commu-event-timeline-map">
+                <div class="commu-event-map-tools" hidden>
+                    <%- include('commulingo-world-map-controls', { copy: strings.commuLingoViews.worldMap }) %>
+                </div>
+                <div class="commu-event-map-viewport"><%- p.event.mapSvg %></div>
+                <figcaption class="commu-event-map-help" hidden><%= en ? 'Zoom in, then scroll within the map to explore.' : '확대한 뒤 지도 안에서 스크롤해 다른 위치를 볼 수 있습니다.' %></figcaption>
+            </figure>
             <% } %>
             <% if (p.event.hasCountryFilter) { %>
             <div class="commu-tl-filter" role="group" aria-label="<%= strings.commuLingoViews.eventPanel.byCountry %>" data-tl-filter>

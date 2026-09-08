@@ -44,7 +44,7 @@
         <a class="commu-person-detail-back" data-pair-back href="/commulingo/events">← <%= strings.commuLingoViews.event.historicalEvents %></a>
     </main>
     <% if (paired) { %><script src="/js/commulingo-pair-tabs.js?v=<%= assetVersion %>" defer></script><% } %>
-    <% if (event.hasCampaign) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>
+    <% if (event.mapSvg) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>
     <% if (event.hasCountryFilter) { %><script src="/js/commulingo-event-timeline.js?v=<%= assetVersion %>" defer></script><% } %>
     <%- include('../partials/footer') %>
 </body>

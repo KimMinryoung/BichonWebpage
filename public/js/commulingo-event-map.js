@@ -9,6 +9,53 @@
 // row, or empty map unpins. Tapping a map badge pins and scrolls to its row.
 (function () {
     'use strict';
+    // Keep the full SVG (including its legend) reachable at every scale.
+    // A fixed viewport uses native scrolling on both axes, including touch
+    // and keyboard navigation, while the controls stay outside the scroller.
+    document.querySelectorAll('.commu-event-map').forEach(function (figure) {
+        var viewport = figure.querySelector('.commu-event-map-viewport');
+        var svg = figure.querySelector('.emap-svg');
+        var tools = figure.querySelector('.commu-event-map-tools');
+        if (!viewport || !svg || !tools) return;
+        var box = svg.viewBox.baseVal;
+        if (!box.width || !box.height) return;
+        var scale = 1;
+        var maxZoom = 12;
+        var zoomIn = tools.querySelector('[data-map-action="zoom-in"]');
+        var zoomOut = tools.querySelector('[data-map-action="zoom-out"]');
+        viewport.style.aspectRatio = box.width + ' / ' + box.height;
+        viewport.tabIndex = 0;
+        viewport.setAttribute('role', 'region');
+        viewport.setAttribute('aria-label', svg.getAttribute('aria-label') || document.title);
+        tools.hidden = false;
+        var help = figure.querySelector('.commu-event-map-help');
+        if (help) help.hidden = false;
+
+        function setScale(next) {
+            next = Math.max(1, Math.min(maxZoom, next));
+            var ratio = next / scale;
+            var x = (viewport.scrollLeft + viewport.clientWidth / 2) * ratio - viewport.clientWidth / 2;
+            var y = (viewport.scrollTop + viewport.clientHeight / 2) * ratio - viewport.clientHeight / 2;
+            scale = next;
+            svg.style.width = (scale * 100) + '%';
+            svg.style.maxWidth = 'none';
+            viewport.scrollLeft = x;
+            viewport.scrollTop = y;
+            zoomIn.disabled = scale >= maxZoom;
+            zoomOut.disabled = scale <= 1;
+        }
+
+        tools.addEventListener('click', function (event) {
+            var button = event.target.closest('[data-map-action]');
+            if (!button || button.disabled) return;
+            var action = button.getAttribute('data-map-action');
+            if (action === 'zoom-in') setScale(scale / 0.72);
+            else if (action === 'zoom-out') setScale(scale * 0.72);
+            else if (action === 'reset') setScale(1);
+        });
+        setScale(1);
+    });
+
     // Both maps of the page carry the numbered geometry — the orientation map
     // at the top and the campaign map in the timeline section — and they
     // highlight together.

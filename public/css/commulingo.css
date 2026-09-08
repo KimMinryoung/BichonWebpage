@@ -3575,8 +3575,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    lighter than sea on the dark theme and darker on the light one, so a single
    rule reads correctly in both. Markers are the poster red; labels get a
    surface-colored halo so they stay legible over coastline detail. */
-.commu-event-map { margin: 1.1rem 0 0; }
+.commu-event-map { margin: 1.1rem 0 0; position: relative; }
 .commu-event-map .emap-svg { display: block; width: 100%; height: auto; font-family: inherit; }
+.commu-event-map-viewport { overflow: auto; }
+.commu-event-map-viewport:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.commu-event-map .commu-world-map-controls { top: 8px; left: 8px; right: auto; }
+.commu-event-map-help { margin-top: .5rem; color: var(--text-secondary); font-size: .8rem; }
 .emap-sea { fill: var(--bg-surface); }
 .emap-land { fill: color-mix(in srgb, var(--border) 13%, var(--bg-surface)); stroke: color-mix(in srgb, var(--border) 40%, transparent); stroke-width: .6; }
 .emap-grid { stroke: color-mix(in srgb, var(--border) 8%, transparent); stroke-width: 1; }
