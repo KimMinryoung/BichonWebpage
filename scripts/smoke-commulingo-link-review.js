@@ -53,6 +53,23 @@ const duplicates = catalogue({ term: [{ id: 'a', term: { en: 'Shared Name' } }],
 assert(duplicates.every(row => row.collisions.length === 1));
 assert.throws(() => validateDecision(duplicates[0], decision, duplicates), { status: 400 });
 assert.doesNotThrow(() => validateDecision(duplicates[0], { ...decision, policy: 'search' }, duplicates));
+// A reviewed search-only competitor no longer competes for the link. Unreviewed
+// search defaults must not silently authorize an arbitrary winner.
+const resolved = { ...duplicates[0], collisions: duplicates[0].collisions.map(x => ({ ...x, reviewed: true, policy: 'search' })) };
+assert.doesNotThrow(() => validateDecision(resolved, decision, duplicates));
+for (const policy of ['auto', 'context']) assert.throws(() => validateDecision({ ...resolved, collisions: [{ ...resolved.collisions[0], policy }] }, decision, duplicates), { status: 400 });
 assert.strictEqual(normalize('가  나', 'ko'), '가 나');
 assert.throws(() => validateDecision(july, { ...decision, note: '' }, rows), { status: 400 });
+const seedReviews = reviewMap(approvals.map(r => ({ ...r, reviewed_by: 'migration-178' })));
+assert(catalogue(records, seedReviews).find(r => r.text === '7월 위기').needsReview);
+const semanticReviews = reviewMap(approvals.map(r => ({ ...r, reviewed_by: 'owner-reviewed' })));
+assert(!catalogue(records, semanticReviews).find(r => r.text === '7월 위기').needsReview);
+const editedRecords = JSON.parse(JSON.stringify(records)); editedRecords.term[0].term.ko = '새 표제어';
+assert(catalogue(editedRecords, semanticReviews).find(r => r.text === '7월 위기').needsReview);
+const crossRecords = { term: [{ id: 'a', term: { en: 'Shared Name' } }], doc: [{ id: 'b', title: { en: 'Book' }, aliases: { en: ['Shared Name'] } }], event: [] };
+const crossRows = catalogue(crossRecords);
+const crossReviews = reviewMap(crossRows.map(r => ({ kind: r.kind, entity_id: r.id, lang: r.lang, expression: r.text, source_signature: r.sourceSignature, role: 'identity', policy: r.id === 'a' ? 'auto' : 'search', note: '대표 연결 대상을 검토함', reviewed_by: 'owner-reviewed' })));
+assert(catalogue(crossRecords, crossReviews).every(r => !r.needsReview));
+crossRecords.event.push({ id: 'new-competitor', title: { en: 'Shared Name' } });
+assert(catalogue(crossRecords, crossReviews).find(r => r.id === 'a').needsReview);
 console.log('link review defaults, stale approvals, cross-dictionary collisions and historical regression cases passed');

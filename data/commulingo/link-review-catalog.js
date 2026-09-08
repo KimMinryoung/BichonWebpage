@@ -13,7 +13,7 @@ function catalogue(records, reviews = new Map()) {
                 label: (record.term || record.title || {})[lang] || record.id,
                 sourceSignature, sourceRole: expression.role, sourcePolicy: expression.policy,
                 role: current?.role || expression.role, policy: current?.policy || 'search',
-                reviewed: !!current, note: current?.note || '', risks: risks(expression.text, lang) });
+                reviewed: !!current, semanticReviewed: !!current?.reviewed_by && current.reviewed_by !== 'migration-178', note: current?.note || '', risks: risks(expression.text, lang) });
         }
     }
     const groups = new Map();
@@ -24,7 +24,11 @@ function catalogue(records, reviews = new Map()) {
     }
     for (const row of rows) row.collisions = groups.get(row.lang + ':' + normalize(row.text, row.lang))
         .filter(other => other.kind !== row.kind || other.id !== row.id)
-        .map(other => ({ kind: other.kind, id: other.id, text: other.text, label: other.label, policy: other.policy }));
+        .map(other => ({ kind: other.kind, id: other.id, text: other.text, label: other.label, policy: other.policy, reviewed: other.reviewed }));
+    for (const row of rows) {
+        const competing = row.policy !== 'search' && row.collisions.some(other => !other.reviewed || other.policy !== 'search');
+        row.needsReview = !row.reviewed || ((row.risks.length > 0 || row.collisions.length > 0) && (!row.semanticReviewed || competing));
+    }
     return rows;
 }
 function validateDecision(row, decision, rows) {
@@ -34,7 +38,7 @@ function validateDecision(row, decision, rows) {
     if (typeof decision.note !== 'string' || decision.note.trim().length < 12 || decision.note.length > 2000) fail('검토 근거를 12~2000자로 작성하세요.');
     if (decision.policy === 'search') return;
     if ([...row.text].length < 2) fail('한 글자 표현은 검색 전용입니다.');
-    if (row.collisions.length) fail('다른 항목과 겹치는 표현입니다. 검색 전용으로 유지하거나 이름을 구체화하세요.');
+    if (row.collisions.some(other => !other.reviewed || other.policy !== 'search')) fail('다른 항목의 미검토 또는 자동 연결 표현과 겹칩니다. 경쟁 표현을 검색 전용으로 검토하거나 이름을 구체화하세요.');
     if (row.risks.some(reason => reason.startsWith('여러 시대')) && decision.policy === 'auto') fail('일반 표현은 자동 연결할 수 없습니다. 구체적인 이름 또는 문맥 확인을 선택하세요.');
     if (decision.policy === 'context') {
         if (decision.role === 'identity') fail('문맥 확인 표현 자체를 고유 이름으로 사용할 수 없습니다.');

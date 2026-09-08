@@ -118,12 +118,7 @@ async function saveReview(token, actor) {
         validateDecision(row, preview.input, state.rows);
         const value = reviewValue(row, preview.input, actor);
         const old = state.reviews.get(key(row.kind, row.id, row.lang, row.text)) || null;
-        await client.query(`INSERT INTO commulingo_link_reviews (kind,entity_id,lang,expression,source_signature,role,policy,note,reviewed_by)
-            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) ON CONFLICT (kind,entity_id,lang,expression) DO UPDATE
-            SET source_signature=EXCLUDED.source_signature,role=EXCLUDED.role,policy=EXCLUDED.policy,note=EXCLUDED.note,reviewed_by=EXCLUDED.reviewed_by,updated_at=NOW()`,
-        [value.kind, value.entity_id, value.lang, value.expression, value.source_signature, value.role, value.policy, value.note, value.reviewed_by]);
-        await client.query('INSERT INTO commulingo_link_review_history (kind,entity_id,lang,expression,before_value,after_value) VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb)',
-            [row.kind, row.id, row.lang, row.text, JSON.stringify(old), JSON.stringify(value)]);
+        await persistReview(client, row, old, value);
         await client.query('COMMIT');
         previews.delete(token);
         await refreshLinkReviews();
@@ -131,4 +126,99 @@ async function saveReview(token, actor) {
     } catch (error) { await client.query('ROLLBACK'); throw error; }
     finally { client.release(); }
 }
-module.exports = { loadState, listReviews, previewLinks, saveReview, buildIndexes };
+async function persistReview(client, row, old, value) {
+        await client.query(`INSERT INTO commulingo_link_reviews (kind,entity_id,lang,expression,source_signature,role,policy,note,reviewed_by)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) ON CONFLICT (kind,entity_id,lang,expression) DO UPDATE
+            SET source_signature=EXCLUDED.source_signature,role=EXCLUDED.role,policy=EXCLUDED.policy,note=EXCLUDED.note,reviewed_by=EXCLUDED.reviewed_by,updated_at=NOW()`,
+        [value.kind, value.entity_id, value.lang, value.expression, value.source_signature, value.role, value.policy, value.note, value.reviewed_by]);
+        await client.query('INSERT INTO commulingo_link_review_history (kind,entity_id,lang,expression,before_value,after_value) VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb)',
+            [row.kind, row.id, row.lang, row.text, JSON.stringify(old), JSON.stringify(value)]);
+}
+// A batch previews one final policy set and commits against the same corpus revision.
+// Each expression retains the existing twelve-passage coverage; shared passages are
+// rendered only once per language instead of once per overlapping expression.
+async function previewReviews(inputs) {
+    if (!Array.isArray(inputs) || !inputs.length || inputs.length > 1000) fail('검토 항목은 1~1000개여야 합니다.');
+    const state = await loadState();
+    const selected = inputs.map(input => ({ row: selectRow(state, input), input }));
+    if (new Set(selected.map(({ row }) => key(row.kind, row.id, row.lang, row.text))).size !== selected.length) fail('검토 표현이 중복됐습니다.');
+    const afterReviews = new Map(state.reviews);
+    for (const { row, input } of selected) afterReviews.set(key(row.kind, row.id, row.lang, row.text), reviewValue(row, input, 'preview'));
+    const finalRows = catalogue(state.records, afterReviews);
+    for (const { row, input } of selected) validateDecision(finalRows.find(r => key(r.kind, r.id, r.lang, r.text) === key(row.kind, row.id, row.lang, row.text)), input, finalRows);
+    const results = selected.map(({ row }) => ({ row, samples: [], matchedPassages: 0, sampledPassages: 0 }));
+    for (const lang of ['ko', 'en']) {
+        const candidates = results.filter(result => result.row.lang === lang).map(result => ({ result, needle: normalize(result.row.text, lang) }));
+        if (!candidates.length) continue;
+        const passages = [];
+        function add(where, text, options, url) {
+            if (!text) return;
+            const normalized = normalize(text, lang);
+            const matches = candidates.filter(c => normalized.includes(c.needle));
+            if (matches.length) passages.push({ where, text, options, url, matches });
+        }
+        for (const kind of ['term', 'event']) for (const record of state.records[kind]) {
+            const options = { surface: kind, exclude: { [kind]: record.id, ...(kind === 'term' && record.sameSubjectEvent ? { event: record.sameSubjectEvent.id } : {}) }, blockStrings: record.noAutoLink };
+            const url = '/commulingo/' + (kind === 'term' ? 'terms/' : 'events/') + record.id;
+            for (const field of ['definition', 'summary', 'question', 'outcome', 'body']) add(kind + ':' + record.id + '/' + field, record[field]?.[lang], options, url);
+            for (const [i, item] of (record.timeline || []).entries()) add(kind + ':' + record.id + '/timeline/' + i, item.body?.[lang], options, url);
+        }
+        for (const person of state.people.people || []) for (const field of ['epithet', 'moment', 'bio']) add('person:' + person.id + '/' + field, person[field]?.[lang], { surface: 'person', exclude: { person: person.id } }, '/commulingo/people/' + person.id);
+        for (const [id, sections] of Object.entries(state.people.sections || {})) for (const section of sections) add('person:' + id + '/' + section.slug, section.body?.[lang], { surface: 'person', exclude: { person: id } }, '/commulingo/people/' + id);
+        for (const doc of state.records.doc) if ((doc.docLang || 'ko') === lang) add('doc:' + doc.id, getCommuLingoDocContent(doc)?.html, { surface: 'doc', html: true, exclude: { doc: doc.id }, blockStrings: doc.noAutoLink }, '/commulingo/docs/' + doc.id);
+        for (const report of state.reports) add('report:' + report.slug, report.markdown, { surface: 'report' }, '/reports/' + report.slug);
+        const base = await getLinkIndexes(lang);
+        const before = buildIndexes(base, state.records, state.reviews, lang);
+        const after = buildIndexes(base, state.records, afterReviews, lang);
+        for (const passage of passages) {
+            for (const { result } of passage.matches) result.matchedPassages++;
+            const sampled = passage.matches.filter(({ result }) => result.samples.length < 12);
+            if (!sampled.length) continue;
+            const oldLinks = renderLinkedContent(passage.text, before, passage.options).links;
+            const newLinks = renderLinkedContent(passage.text, after, passage.options).links;
+            const plain = passage.text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+            for (const { result } of sampled) {
+                const at = Math.max(0, plain.toLowerCase().indexOf(result.row.text.toLowerCase()));
+                result.samples.push({ where: passage.where, url: passage.url, excerpt: plain.slice(Math.max(0, at - 120), at + result.row.text.length + 180), before: oldLinks, after: newLinks, changed: JSON.stringify(oldLinks) !== JSON.stringify(newLinks) });
+                result.sampledPassages++;
+            }
+        }
+    }
+    for (const [token, item] of previews) if (item.expires < Date.now()) previews.delete(token);
+    if (previews.size >= 100) previews.delete(previews.keys().next().value);
+    const token = randomUUID();
+    const cleanInputs = selected.map(({ row, input }) => ({ kind: row.kind, id: row.id, lang: row.lang, text: row.text, role: input.role, policy: input.policy, note: input.note }));
+    previews.set(token, { inputs: cleanInputs, revision: state.revision, expires: Date.now() + 15 * 60000 });
+    return { token, results, coverage: '용어·사건·인물·참고 문헌·공개 보고서. 표현별 최대 12개 본문 표본, 학습 콘텐츠 제외.' };
+}
+async function saveReviews(token, actor) {
+    const preview = previews.get(token);
+    if (!preview?.inputs || preview.expires < Date.now()) fail('일괄 미리보기가 만료됐습니다. 다시 확인하세요.', 409);
+    const client = await db.connect();
+    try {
+        await client.query('BEGIN');
+        await client.query("SET LOCAL lock_timeout = '3s'");
+        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-link-review'))");
+        const state = await loadState(client);
+        if (state.revision !== preview.revision) fail('미리보기 이후 데이터나 연결 정책이 변경됐습니다. 다시 확인하세요.', 409);
+        const selected = preview.inputs.map(input => ({ row: selectRow(state, input), input }));
+        const afterReviews = new Map(state.reviews);
+        for (const { row, input } of selected) afterReviews.set(key(row.kind, row.id, row.lang, row.text), reviewValue(row, input, actor));
+        const finalRows = catalogue(state.records, afterReviews);
+        for (const { row, input } of selected) validateDecision(finalRows.find(r => key(r.kind, r.id, r.lang, r.text) === key(row.kind, row.id, row.lang, row.text)), input, finalRows);
+        const values = [];
+        for (const { row, input } of selected) {
+            const value = reviewValue(row, input, actor);
+            const old = state.reviews.get(key(row.kind, row.id, row.lang, row.text)) || null;
+            await persistReview(client, row, old, value);
+            values.push(value);
+        }
+        await client.query('COMMIT');
+        previews.delete(token);
+        await refreshLinkReviews();
+        return values;
+    } catch (error) { await client.query('ROLLBACK'); throw error; }
+    finally { client.release(); }
+}
+
+module.exports = { loadState, listReviews, previewLinks, saveReview, previewReviews, saveReviews, buildIndexes };

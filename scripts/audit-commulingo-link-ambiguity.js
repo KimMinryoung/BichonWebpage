@@ -4,7 +4,7 @@ if (process.argv.includes('--json')) { console.info = () => {}; console.debug = 
 const { db } = require('./lib/bootstrap');
 const { loadState } = require('../data/commulingo/link-review-service');
 loadState().then(state => {
-    const findings = state.rows.filter(row => !row.reviewed || row.risks.length || row.collisions.length);
+    const findings = state.rows.filter(row => row.needsReview);
     if (process.argv.includes('--json')) console.log(JSON.stringify(findings, null, 2));
     else {
         console.log(`expressions=${state.rows.length} pending=${state.rows.filter(row => !row.reviewed).length} reviewCandidates=${findings.length}`);
