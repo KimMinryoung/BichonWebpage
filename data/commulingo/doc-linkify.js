@@ -1,3 +1,4 @@
+const { applyReviews } = require('./link-review-policy');
 const { expressionCandidates } = require('./link-expressions');
 const { registerAlias } = require('./alias-registry');
 // The reference-library alias index: which strings belong to which document.
@@ -15,6 +16,8 @@ const { buildAliasPattern } = require('./people-linkify');
 
 // Builds an alias→document index from the manifest entries
 // ({ id, title: {ko,en}, kind: {ko,en}, aliases: {ko:[],en:[]}, ... }).
+function sourceExpressions(doc, lang) { return expressionCandidates(doc, lang, (doc.aliases && doc.aliases[lang]) || []); }
+
 function buildDocLinkIndex(docs, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
@@ -34,9 +37,9 @@ function buildDocLinkIndex(docs, options = {}) {
             note: kind,
             href: '/commulingo/docs/' + encodeURIComponent(doc.id),
         };
-        const candidates = expressionCandidates(doc, lang, (doc.aliases && doc.aliases[lang]) || []);
+        const candidates = sourceExpressions(doc, lang);
         entries[doc.id] = entry;
-        candidates.forEach(expression => {
+        applyReviews('doc', doc, candidates, options).forEach(expression => {
             const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
@@ -54,5 +57,6 @@ function buildDocLinkIndex(docs, options = {}) {
 }
 
 module.exports = {
+    sourceExpressions,
     buildDocLinkIndex,
 };

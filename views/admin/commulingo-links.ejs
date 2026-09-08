@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head', { pageTitle: '자동 링크 검토' }) %>
+    <meta name="csrf-token" content="<%= typeof csrfToken !== 'undefined' ? csrfToken : '' %>">
+    <link rel="stylesheet" href="/css/admin-commulingo-links.css?v=<%= assetVersion %>">
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <main class="container link-review-page">
+        <h1>자동 링크 검토</h1>
+        <p>새 표제어·별칭은 검색 전용입니다. 연결할 문장과 대상을 확인한 뒤 정책을 승인하세요. 기존 연결의 이관은 의미 검토 완료를 뜻하지 않습니다.</p>
+        <form id="review-filter" class="review-filters">
+            <label>이름·별칭 검색<input name="q" type="search" maxlength="200"></label>
+            <label>사전<select name="kind"><option value="">전체</option><option value="term">용어</option><option value="event">사건</option><option value="doc">문서</option></select></label>
+            <label><input name="pending" type="checkbox"> 미검토만</label>
+            <label><input name="risk" type="checkbox" checked> 중복·일반 이름만</label>
+            <button class="btn" type="submit">조회</button>
+        </form>
+        <p id="review-status" role="status" aria-live="polite"></p>
+        <div id="review-list" class="review-list"></div>
+        <nav aria-label="검토 목록 페이지"><button class="btn" id="review-prev">이전</button> <button class="btn" id="review-next">다음</button></nav>
+        <section id="review-editor" class="box" hidden aria-labelledby="review-heading">
+            <h2 id="review-heading"></h2>
+            <p id="review-target"></p>
+            <ul id="review-warnings"></ul>
+            <form id="review-decision">
+                <label>연결 정책<select name="policy"><option value="search">검색 전용</option><option value="context">구체적인 이름이 같은 문맥에 있을 때 연결</option><option value="auto">자동 연결</option></select></label>
+                <label>표현의 역할<select name="role"><option value="short">줄임말·별칭</option><option value="identity">항목을 식별하는 구체적인 이름</option><option value="related">관련 표현</option></select></label>
+                <label>검토 근거<textarea name="note" rows="3" minlength="12" maxlength="2000" required placeholder="어느 국가·시대·주체를 가리키며, 다른 뜻과 어떻게 구분되는지 적어주세요."></textarea></label>
+                <button class="btn" type="submit">저장 전 연결 미리보기</button>
+                <button class="btn btn-primary" id="review-save" type="button" disabled>확인한 정책 저장</button>
+            </form>
+            <p id="review-preview-status" role="status" aria-live="polite"></p>
+            <div id="review-samples"></div>
+        </section>
+    </main>
+    <script src="/js/admin-commulingo-links.js?v=<%= assetVersion %>"></script>
+    <%- include('../partials/footer') %>
+</body>
+</html>

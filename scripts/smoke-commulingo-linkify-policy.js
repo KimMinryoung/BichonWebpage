@@ -7,9 +7,12 @@
 
 const assert = require('assert');
 const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
-const { buildTermLinkIndex } = require('../data/commulingo/term-linkify');
-const { buildEventLinkIndex } = require('../data/commulingo/event-linkify');
-const { buildDocLinkIndex } = require('../data/commulingo/doc-linkify');
+const { buildTermLinkIndex: rawbuildTermLinkIndex } = require('../data/commulingo/term-linkify');
+const buildTermLinkIndex = (records, options) => rawbuildTermLinkIndex(records, { ...options, legacyReview: true });
+const { buildEventLinkIndex: rawbuildEventLinkIndex } = require('../data/commulingo/event-linkify');
+const buildEventLinkIndex = (records, options) => rawbuildEventLinkIndex(records, { ...options, legacyReview: true });
+const { buildDocLinkIndex: rawbuildDocLinkIndex } = require('../data/commulingo/doc-linkify');
+const buildDocLinkIndex = (records, options) => rawbuildDocLinkIndex(records, { ...options, legacyReview: true });
 const { buildTopicLinkIndex } = require('../data/commulingo/topic-linkify');
 const { KIND_ORDER, SURFACES, createLinker, createCardTextLinker } = require('../data/commulingo/linkify');
 const { installLinkBlocklist } = require('../data/commulingo/link-blocklist');

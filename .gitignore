@@ -67,3 +67,7 @@ __pycache__/
 # uploaded with scripts/archive-migrations-r2), not in git. Schema migrations
 # stay tracked in scripts/migrations/.
 scripts/migrations/data/
+
+# Automatic-link review cache (PostgreSQL is authoritative)
+data/commulingo/link-reviews-snapshot.json
+data/commulingo/link-reviews-snapshot.json.tmp

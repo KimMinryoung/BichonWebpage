@@ -248,7 +248,9 @@ function buildAliasPattern(tokens, blocked, en) {
     if (!tokens.length && !(blocked || []).length) return /(?!)/g;
     const all = (blocked || []).concat(tokens).sort((a, b) => b.length - a.length);
     const alternation = all.map(escapeRegExp).join('|');
-    return new RegExp(en ? '\\b(' + alternation + ')\\b' : '(' + alternation + ')', 'g');
+    // Qualified names may end in ')' or punctuation; a trailing \b would
+    // reject them at the end of a sentence. Check neighbouring letters instead.
+    return new RegExp(en ? '(?<![\\p{L}\\p{N}_])(' + alternation + ')(?![\\p{L}\\p{N}_])' : '(' + alternation + ')', en ? 'gu' : 'g');
 }
 
 // Tags whose text content must never be linkified: existing anchors (no nested

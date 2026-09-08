@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 const assert = require('assert');
 const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
-const { buildTermLinkIndex } = require('../data/commulingo/term-linkify');
-const { buildDocLinkIndex } = require('../data/commulingo/doc-linkify');
+const { buildTermLinkIndex: rawbuildTermLinkIndex } = require('../data/commulingo/term-linkify');
+const buildTermLinkIndex = (records, options) => rawbuildTermLinkIndex(records, { ...options, legacyReview: true });
+const { buildDocLinkIndex: rawbuildDocLinkIndex } = require('../data/commulingo/doc-linkify');
+const buildDocLinkIndex = (records, options) => rawbuildDocLinkIndex(records, { ...options, legacyReview: true });
 const { createLinker, clientPersonLinkPayload } = require('../data/commulingo/linkify');
 const { collectLinkedEntities } = require('../data/commulingo/linked-entities');
 const { assertLinkExpressions, searchableAliases } = require('../data/commulingo/link-expressions');

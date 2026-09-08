@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+mkdir -p temp_dev
+report_tmp=$(mktemp temp_dev/commulingo-link-audit.XXXXXX)
+trap 'rm -f "$report_tmp"' EXIT
+docker exec --user "$(id -u):$(id -g)" leninbot-frontend node /app/scripts/audit-commulingo-link-ambiguity.js --json > "$report_tmp"
+node -e 'const rows=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")); if(!Array.isArray(rows))process.exit(1);console.log("Link ambiguity audit: "+rows.length+" review candidates")' "$report_tmp"
+mv "$report_tmp" temp_dev/commulingo-link-audit.json

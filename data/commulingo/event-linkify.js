@@ -1,3 +1,4 @@
+const { applyReviews } = require('./link-review-policy');
 const { expressionCandidates } = require('./link-expressions');
 const { registerAlias } = require('./alias-registry');
 // The history-event alias index: which strings belong to which event. Index
@@ -103,6 +104,12 @@ function titleVariants(title, en) {
 
 // Builds an alias→event index and a matching regex from the raw history-events
 // list ({ id, period, title: {ko,en}, ... }).
+function sourceExpressions(event, lang) {
+    const title = event.title && (event.title[lang] || event.title.ko || event.title.en) || '';
+    const extra = (EXTRA_TERMS[event.id] && EXTRA_TERMS[event.id][lang]) || [];
+    return expressionCandidates(event, lang, titleVariants(title, lang === 'en').concat(extra));
+}
+
 function buildEventLinkIndex(events, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
@@ -114,11 +121,10 @@ function buildEventLinkIndex(events, options = {}) {
     (events || []).forEach(event => {
         if (!event || !event.id) return;
         const title = event.title && (event.title[lang] || event.title.ko || event.title.en) || '';
-        const extra = (EXTRA_TERMS[event.id] && EXTRA_TERMS[event.id][lang]) || [];
-        const candidates = expressionCandidates(event, lang, titleVariants(title, en).concat(extra));
+        const candidates = sourceExpressions(event, lang);
         const entry = { id: event.id, period: event.period || '', title };
         entries[event.id] = entry;
-        candidates.forEach(expression => {
+        applyReviews('event', event, candidates, options).forEach(expression => {
             const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
@@ -135,6 +141,7 @@ function buildEventLinkIndex(events, options = {}) {
 }
 
 module.exports = {
+    sourceExpressions,
     BLOCKED_EVENT_KO,
     buildEventLinkIndex,
 };

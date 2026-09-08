@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 const assert = require('assert');
 const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
-const { buildDocLinkIndex } = require('../data/commulingo/doc-linkify');
+const { buildDocLinkIndex: rawbuildDocLinkIndex } = require('../data/commulingo/doc-linkify');
+const buildDocLinkIndex = (records, options) => rawbuildDocLinkIndex(records, { ...options, legacyReview: true });
 const { compileResearchBody } = require('../services/research-body');
 const researchStore = require('../config/research-store');
 const reportLinks = require('../data/commulingo/report-links');

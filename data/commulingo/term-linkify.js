@@ -1,3 +1,4 @@
+const { applyReviews } = require('./link-review-policy');
 const { expressionCandidates } = require('./link-expressions');
 const { registerAlias } = require('./alias-registry');
 // The glossary alias index: which strings belong to which term. Index shape
@@ -42,6 +43,11 @@ const LINK_OVERRIDES = {
 
 // Builds an alias→term index from the terms snapshot
 // ({ id, term: {ko,en}, aliases: {ko:[],en:[]}, ... }).
+function sourceExpressions(term, lang) {
+    const label = term.term && (term.term[lang] || term.term.ko || term.term.en) || '';
+    return expressionCandidates(term, lang, [label].concat((term.aliases && term.aliases[lang]) || []));
+}
+
 function buildTermLinkIndex(terms, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
@@ -65,9 +71,9 @@ function buildTermLinkIndex(terms, options = {}) {
             href: '/commulingo/terms/' + encodeURIComponent(term.id),
         };
         byId[term.id] = entry;
-        const candidates = expressionCandidates(term, lang, [label].concat((term.aliases && term.aliases[lang]) || []));
+        const candidates = sourceExpressions(term, lang);
         entries[term.id] = entry;
-        candidates.forEach(expression => {
+        applyReviews('term', term, candidates, options).forEach(expression => {
             const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
             if (alias.length < 2) return;
@@ -88,5 +94,6 @@ function buildTermLinkIndex(terms, options = {}) {
 }
 
 module.exports = {
+    sourceExpressions,
     buildTermLinkIndex,
 };

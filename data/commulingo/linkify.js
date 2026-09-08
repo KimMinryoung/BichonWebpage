@@ -1,3 +1,4 @@
+const { loadLinkReviews } = require('./link-reviews-store');
 const nameContext = require('../../public/js/commulingo-name-context');
 // The one linking policy for every CommuLingo surface: the person, glossary,
 // and history dictionaries, learning content, person cards, and research
@@ -188,18 +189,19 @@ async function getLinkIndexes(lang) {
     const safeLang = lang === 'en' ? 'en' : 'ko';
     const catalog = loadCommuLingoCatalog();
     const docs = listCommuLingoDocs();
-    const [loaded, terms, events, blocklist] = await Promise.all([
+    const [loaded, terms, events, blocklist, reviews] = await Promise.all([
         loadCommuLingoPeople(),
         loadCommuLingoTerms(),
         loadCommuLingoHistoryEvents(),
         loadLinkBlocklist(),
+        loadLinkReviews(),
     ]);
     if (indexMemo.peopleRef !== loaded.data || indexMemo.catalogRef !== catalog
         || indexMemo.termsRef !== terms || indexMemo.eventsRef !== events
-        || indexMemo.docsRef !== docs || indexMemo.blocklistRef !== blocklist) {
+        || indexMemo.docsRef !== docs || indexMemo.blocklistRef !== blocklist || indexMemo.reviewsRef !== reviews) {
         indexMemo = {
             peopleRef: loaded.data, catalogRef: catalog, termsRef: terms,
-            eventsRef: events, docsRef: docs, blocklistRef: blocklist, byLang: {},
+            eventsRef: events, docsRef: docs, blocklistRef: blocklist, reviewsRef: reviews, byLang: {},
         };
     }
     let entry = indexMemo.byLang[safeLang];
@@ -208,9 +210,9 @@ async function getLinkIndexes(lang) {
         entry = indexMemo.byLang[safeLang] = {
             lang: safeLang,
             standardized,
-            doc: buildDocLinkIndex(docs, { lang: safeLang }),
-            event: buildEventLinkIndex(events, { lang: safeLang }),
-            term: buildTermLinkIndex(terms, { lang: safeLang }),
+            doc: buildDocLinkIndex(docs, { lang: safeLang, reviews }),
+            event: buildEventLinkIndex(events, { lang: safeLang, reviews }),
+            term: buildTermLinkIndex(terms, { lang: safeLang, reviews }),
             topic: buildTopicLinkIndex(standardized, { lang: safeLang }),
             person: personIndex,
         };

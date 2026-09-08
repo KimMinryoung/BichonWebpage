@@ -48,6 +48,21 @@ function h(fn) {
     };
 }
 
+const linkReviewService = require('../data/commulingo/link-review-service');
+const { requireAuth } = require('../middleware/auth');
+router.get('/link-reviews', requireAuth, h(async (req, res) => {
+    res.setHeader('Cache-Control', 'no-store');
+    res.json(await linkReviewService.listReviews({ q: String(req.query.q || '').slice(0, 200),
+        kind: req.query.kind, pending: req.query.pending === '1', risk: req.query.risk === '1',
+        offset: Math.max(0, Math.min(100000, parseInt(req.query.offset, 10) || 0)) }));
+}));
+router.post('/link-reviews/preview', requireAuth, h(async (req, res) => {
+    res.json(await linkReviewService.previewLinks(req.body || {}));
+}));
+router.post('/link-reviews/save', requireAuth, h(async (req, res) => {
+    res.json({ review: await linkReviewService.saveReview(req.body?.token, changedBy(req)) });
+}));
+
 router.get('/people', h(async (req, res) => {
     const people = await listPeopleAdmin({
         q: req.query.q,

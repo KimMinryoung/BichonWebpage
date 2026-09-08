@@ -1,0 +1,8 @@
+[Unit]
+Description=Read-only CommuLingo automatic link ambiguity audit
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/grass/frontend
+ExecStart=/home/grass/frontend/scripts/audit-commulingo-links-daily
+TimeoutStartSec=10min
