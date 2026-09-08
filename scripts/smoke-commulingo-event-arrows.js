@@ -1,32 +1,36 @@
 const assert = require('node:assert/strict');
 const { renderEventMapSvg } = require('../data/commulingo/event-map-svg');
-
-const label = { ko: '검증', en: 'Check' };
-const locations = [
-    { lat: 40, lng: 0, kind: 'main', label },
-    { lat: 50, lng: 20, label },
-];
-const timeline = [0.01, 0.5, 8].map(distance => ({
-    geo: { kind: 'arrow', points: [[45, 5], [45, 5 + distance]], variant: 'axis', actor: label },
-}));
-const { svg } = renderEventMapSvg(locations, 'en', 'Check', timeline);
-const paths = [...svg.matchAll(/<path class="emap-arrow is-axis" d="([^"]+)" style="([^"]+)" marker-end="url\(#([^)]*)\)"/g)];
-assert.equal(paths.length, 3);
-const sizes = paths.map(([, path, style, id]) => {
-    const marker = svg.match(new RegExp(`<marker id="${id}"[^>]+>`))[0];
-    assert.match(marker, /markerUnits="userSpaceOnUse"/, 'stroke changes must not inflate heads');
-    const size = Number(marker.match(/markerWidth="([^"]+)"/)[1]);
-    const coords = path.match(/-?\d+(?:\.\d+)?/g).map(Number);
-    const distance = Math.hypot(coords.at(-2) - coords[0], coords.at(-1) - coords[1]);
-    assert(size <= distance * 0.25 + 0.04, 'head must leave most of a short route visible');
-    assert(size <= 8, 'long routes must not grow oversized heads');
-    assert(Number(style.match(/stroke-width:([^;]+)/)[1]) <= size / 3 + 0.001);
-    return size;
+const head = require('../data/commulingo/vendor/leaflet-polyline-decorator/arrow-head');
+const { projectPatternOnPointPath, parseRelativeOrAbsoluteValue } = require('../data/commulingo/vendor/leaflet-polyline-decorator/pattern-utils');
+const pattern = { offset: parseRelativeOrAbsoluteValue('100%'), endOffset: parseRelativeOrAbsoluteValue(0), repeat: parseRelativeOrAbsoluteValue(0) };
+// Upstream must use the last nonzero segment, including paths with a repeated endpoint.
+const [end] = projectPatternOnPointPath([{x:0,y:0},{x:10,y:0},{x:10,y:10},{x:10,y:10}],pattern);
+assert.deepEqual(end.pt,{x:10,y:10});
+assert.equal(end.heading,180);
+const wings=head(end,10,60);
+assert.deepEqual(wings[1],end.pt);
+assert(wings[0].y<10&&wings[2].y<10);
+assert(Math.abs(Math.hypot(wings[0].x-wings[2].x,wings[0].y-wings[2].y)-10)<.001);
+const label={ko:'검증',en:'Check'};
+const locations=[{lat:40,lng:0,kind:'main',label},{lat:50,lng:20,label}];
+const timeline=[.05,.5,8].map(d=>({geo:{kind:'arrow',points:[[45,5],[45,5+d]],variant:'axis'}}));
+const {svg}=renderEventMapSvg(locations,'en','Check',timeline);
+const shafts=[...svg.matchAll(/<path class="emap-arrow is-axis" d="([^"]+)" style="([^"]+)"/g)];
+const tips=[...svg.matchAll(/<path class="emap-arrow-tip is-axis" d="([^"]+)" style="stroke-width:([^"]+)"/g)];
+assert.equal(shafts.length,3);assert.equal(tips.length,3);
+const spans=tips.map(([,path,stroke],i)=>{
+ const c=path.match(/-?\d+(?:\.\d+)?/g).map(Number);
+ const [lx,ly,tx,ty,rx,ry]=c;
+ const span=Math.hypot(lx-rx,ly-ry);
+ assert(span>Number(stroke)*3.8,'open wings must stand out from the shaft');
+ assert(span<=12.01,'long routes have bounded heads');
+ assert(tx>lx&&tx>rx,'eastward heads point east');
+ const shaft=shafts[i][1].match(/-?\d+(?:\.\d+)?/g).map(Number);
+ assert.deepEqual([tx,ty],shaft.slice(-2),'head must meet route endpoint');
+ assert.match(shafts[i][2],/stroke-dasharray:none/);
+ return span;
 });
-assert(sizes[0] < sizes[1] && sizes[1] < sizes[2]);
-const degenerate = renderEventMapSvg(locations, 'en', 'Check', [{ geo: {
-    kind: 'arrow', points: [[45, 5], [45, 5]],
-} }]).svg;
-assert(!degenerate.includes('NaN'));
-assert(!degenerate.includes('<path class="emap-arrow'), 'zero-length route has no misleading head');
-console.log('event arrows: short/long proportions, mobile-independent heads and zero-length routes OK');
+assert(spans[0]<spans[1]&&spans[1]<spans[2]);
+const zero=renderEventMapSvg(locations,'en','Check',[{geo:{kind:'arrow',points:[[45,5],[45,5]]}}]).svg;
+assert(!zero.includes('NaN'));assert(!zero.includes('class="emap-arrow-tip'));
+console.log('event arrows: upstream heading, visible open heads, connected shafts, sizing and degenerate routes OK');

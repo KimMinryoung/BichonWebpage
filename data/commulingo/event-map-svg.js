@@ -8,6 +8,8 @@
 // locates the frame on the globe. All colors come from CSS classes
 // (commulingo.css) so the map follows the site theme.
 const { localize } = require('./localize');
+const { pointsToSegments, projectPatternOnPointPath, parseRelativeOrAbsoluteValue } = require('./vendor/leaflet-polyline-decorator/pattern-utils');
+const buildArrowHead = require('./vendor/leaflet-polyline-decorator/arrow-head');
 
 const BASEMAP = require('./event-basemap.json');
 
@@ -311,52 +313,28 @@ function timelineGeos(timeline) {
 
 const ARROW_VARIANTS = { red: 'red', axis: 'axis' };
 
-// Size heads in map units, not stroke widths: the mobile stroke must not
-// inflate a head into a triangle larger than its entire route. Including
-// the size in the id keeps identical definitions safe across multiple maps.
-function arrowHead(variant, size, id = `emap-head-${variant}`) {
-    return `<marker id="${id}" class="emap-head-${variant}" markerUnits="userSpaceOnUse"`
-        + ` markerWidth="${size}" markerHeight="${(size * 0.6).toFixed(2)}" viewBox="0 0 10 6"`
-        + ' refX="10" refY="3" orient="auto-start-reverse"><path d="M0 0 L10 3 L0 6 L2.5 3 Z"/></marker>';
-}
-const ARROWHEAD_DEFS = '<defs>'
-    + ['red', 'axis', 'neutral'].map(variant => arrowHead(variant, 7)).join('')
-    + '</defs>';
-
+// Upstream Leaflet.PolylineDecorator supplies path length, direction,
+// endpoint placement and arrowhead geometry. Keep every curated waypoint.
+// See vendor/leaflet-polyline-decorator/README.md for pinned source/license.
 function movementArrow(pts, variant) {
-    const length = pts.slice(1).reduce((sum, p, i) => sum + Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]), 0);
+    const points = pts.map(([x, y]) => ({ x, y }));
+    const segments = pointsToSegments(points);
+    if (!segments.length) return '';
+    const length = segments[segments.length - 1].distB;
     if (length < 0.01) return '';
-    const size = Math.min(8, length * 0.25).toFixed(3);
-    const id = `emap-head-${variant}-${size.replace('.', '-')}`;
-    const stroke = Math.min(2.6, Number(size) / 3).toFixed(3);
-    // Short dashed routes otherwise turn into a single dot; scale the dash
-    // pattern along with the shaft and keep the endpoint inside the head.
-    const dash = variant === 'axis' ? `stroke-dasharray:${(stroke * 2.7).toFixed(3)} ${(stroke * 1.5).toFixed(3)};` : '';
-    return `<defs>${arrowHead(variant, size, id)}</defs>`
-        + `<path class="emap-arrow is-${variant}" d="${arrowPath(pts)}"`
-        + ` style="stroke-width:${stroke};stroke-linecap:butt;${dash}" marker-end="url(#${id})"/>`;
-}
-
-// Gentle bow for a two-point arrow so it reads as movement, not a border.
-function arrowPath(pts) {
-    if (pts.length === 2) {
-        const [a, b] = pts;
-        const dx = b[0] - a[0];
-        const dy = b[1] - a[1];
-        const cx = a[0] + dx / 2 - dy * 0.14;
-        const cy = a[1] + dy / 2 + dx * 0.14;
-        return `M${a[0].toFixed(1)} ${a[1].toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${b[0].toFixed(1)} ${b[1].toFixed(1)}`;
-    }
-    // Waypoint chains: quadratic through midpoints, standard smoothing.
-    let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
-    for (let i = 1; i < pts.length - 1; i++) {
-        const mx = (pts[i][0] + pts[i + 1][0]) / 2;
-        const my = (pts[i][1] + pts[i + 1][1]) / 2;
-        d += ` Q${pts[i][0].toFixed(1)} ${pts[i][1].toFixed(1)} ${mx.toFixed(1)} ${my.toFixed(1)}`;
-    }
-    const last = pts[pts.length - 1];
-    d += ` L${last[0].toFixed(1)} ${last[1].toFixed(1)}`;
-    return d;
+    const [end] = projectPatternOnPointPath(points, {
+        offset: parseRelativeOrAbsoluteValue('100%'),
+        endOffset: parseRelativeOrAbsoluteValue(0),
+        repeat: parseRelativeOrAbsoluteValue(0),
+    });
+    const size = Math.min(12, length * 0.4);
+    const head = buildArrowHead(end, size, 60);
+    const path = points => 'M' + points.map(p => `${p.x.toFixed(3)} ${p.y.toFixed(3)}`).join('L');
+    const stroke = Math.min(2.6, size / 4).toFixed(3);
+    // Solid shafts keep short routes legible; the open upstream symbol is
+    // drawn as a separate polyline, so it cannot disappear inside a marker.
+    return `<path class="emap-arrow is-${variant}" d="${path(points)}" style="stroke-width:${stroke};stroke-dasharray:none"/>`
+        + `<path class="emap-arrow-tip is-${variant}" d="${path(head)}" style="stroke-width:${stroke}"/>`;
 }
 
 // The numbered geometry itself — arrows, point markers, ①②… badges and the
@@ -478,7 +456,7 @@ function renderLegend(rows, frame) {
     rows.forEach((row, i) => {
         const cy = by + PAD + ROW_H * i + 5;
         const tx = bx + PAD + SAMPLE_W + 8;
-        parts.push(`<line class="emap-arrow is-${row.variant}" x1="${bx + PAD}" y1="${cy}" x2="${bx + PAD + SAMPLE_W}" y2="${cy}" marker-end="url(#emap-head-${row.variant})"/>`);
+        parts.push(movementArrow([[bx + PAD, cy], [bx + PAD + SAMPLE_W, cy]], row.variant));
         parts.push(`<text x="${tx}" y="${cy + 4}">${esc(row.actor)}</text>`);
         // Numbers right-aligned as a column: every row's last badge hugs the
         // box's right padding, so the ragged name lengths stay on the left.
@@ -524,7 +502,7 @@ function renderEventMapSvg(locations, lang, title, timeline) {
     const parts = [];
     const label = lang === 'en' ? `Map: ${title || 'event locations'}` : `지도: ${title || '사건 위치'}`;
     parts.push(`<svg xmlns="http://www.w3.org/2000/svg" class="emap-svg" viewBox="0 0 ${frame.width} ${frame.height}" role="img" aria-label="${esc(label)}">`);
-    if (geos.length) parts.push(ARROWHEAD_DEFS);
+
     parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"/>`);
 
     const level = frame.lonSpan > LOW_RES_LON_SPAN ? 'low' : 'high';
