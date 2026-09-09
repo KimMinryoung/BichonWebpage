@@ -16,6 +16,8 @@ intro=article.find_all('h1',recursive=False)[1]
 for el in parts['필자 소개']:intro.insert_before(el.extract())
 for el in parts['찾아보기']:article.append(el.extract())
 index=article.find('h1',string='찾아보기');note=soup.new_tag('p');note.string='아래 쪽 번호는 영어 원전의 인쇄 쪽수다. 항목 배열은 원전의 영문 알파벳 순서를 따른다.';index.insert_after(note)
+from deduplicate import apply as deduplicate
+dedup_checks=deduplicate(article,D)
 # Notes are numbered anew in every chapter; namespace each chapter and repeated reference.
 chapter=None;counts=collections.Counter();added=set()
 for top in list(article.children):
@@ -50,7 +52,7 @@ for p in list(article.find_all('p')):
  caption=soup.new_tag('figcaption');caption.extend(list(p.contents));figure.append(caption);p.replace_with(figure);added.add(num)
 assert added==set(figures),('unmatched figures',set(figures)-added)
 aside=article.find('aside',class_='doc-editorial');paras=aside.find_all('p',recursive=False)
-paras[-1].string='영어 공개판의 서론과 14개 장, 각 장의 주석·참고문헌, 필자 소개와 찾아보기를 옮긴 한국어 기계 번역이다. 참고문헌과 주석의 서지 정보는 원어로 보존했다. 원서의 사진·도판 12점과 설명도 함께 실었다. 인쇄본의 광고와 중복 목차는 생략했으며, 원전 대조와 후속 교열이 필요하다.'
+paras[-1].string='영어 공개판의 서론과 14개 장, 각 장의 주석·참고문헌, 필자 소개와 찾아보기를 옮긴 한국어 기계 번역이다. 참고문헌과 주석의 서지 정보는 원어로 보존했다. 원서가 원어 인용과 영어 번역을 병기한 대목은 한국어 번역을 한 번만 실었다. 원서의 사진·도판 12점과 설명도 함께 실었다. 인쇄본의 광고와 중복 목차는 생략했으며, 원전 대조와 후속 교열이 필요하다.'
 links=soup.new_tag('p')
 for title,url in [('출판사 원문','https://doi.org/10.4324/9781003414353'),('원문 PDF 내려받기','https://oer.unair.ac.id/files/original/9ee04c08c3b2cd1e8cc74a935ae82b4b.pdf'),('CC BY-NC-SA 4.0','https://creativecommons.org/licenses/by-nc-sa/4.0/')]:
  if links.contents:links.append(' · ')
@@ -62,5 +64,5 @@ broken=[a['href'] for a in article.find_all('a',href=True) if a['href'].startswi
 notes=article.select('.notes-list > li');assert len(notes)==771,len(notes)
 assert len(article.find_all('h1'))==18,len(article.find_all('h1'))
 text=str(article)+'\n';(D/'publication.html').write_text(text)
-(D/'publication-checks.json').write_text(json.dumps({'chapters':15,'supplements':2,'notes':len(notes),'figures':len(added),'uniqueIds':len(ids),'brokenAnchors':0,'sha256':hashlib.sha256(text.encode()).hexdigest()},indent=2))
+(D/'publication-checks.json').write_text(json.dumps({'chapters':15,'supplements':2,'notes':len(notes),'figures':len(added),'uniqueIds':len(ids),'brokenAnchors':0,**dedup_checks,'sha256':hashlib.sha256(text.encode()).hexdigest()},indent=2))
 print('Publication ready:',len(text),'characters,',len(notes),'notes,',len(added),'figures')

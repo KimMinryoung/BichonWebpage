@@ -13,3 +13,5 @@ Raanan Rein and Susanne Zepp (eds.). Routledge, 2024. DOI: 10.4324/9781003414353
 - translation.json is frozen because the final publication merges multiple translation jobs and editorial corrections. The assembly scripts document this merge; their working caches remain under temp_dev/untold-stories-spanish-civil-war and are not included here.
 
 - Follow-up sample copyedit: eight body blocks and two notes corrected; see quality-review.md. This is a targeted review, not full human proofreading.
+
+- Bilingual quotation correction: consolidated twelve Spanish/English parallel passages into one Korean rendering, removed eight redundant paragraphs and rejoined two quotations split across PDF pages. Preserved all notes and links. Document-specific noAutoLink blocks 제2공화국 / 제2 공화국 to prevent links to the Polish republic.
