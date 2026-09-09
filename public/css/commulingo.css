@@ -1,3 +1,4 @@
+/* Shared page width; horizontal gutters come from style.css .container. */
 .commulingo-page .container {
     max-width: 980px;
 }
@@ -2868,8 +2869,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
    Unlike the event map, this learning map intentionally shows present-day
    political borders. Historical states are overlays composed from present
    successor territories and always carry an approximation note. */
-.commu-world-map-page,
-.commu-country-page { max-width: 1120px; }
 .commu-world-map-head { display: flex; align-items: center; gap: 14px; }
 .commu-world-map-head-icon {
     align-items: center; background: var(--bg-surface); border: 1px solid var(--border);
@@ -3201,11 +3200,8 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     border-color: var(--link);
 }
 
-.commu-person-page {
-    max-width: 920px;
-}
-
-.commu-person-detail-head {
+.commu-person-detail-head,
+.commu-hub-head {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-left: 4px solid var(--border);
@@ -3250,14 +3246,16 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     margin-top: 4px;
 }
 
-.commu-person-detail-section {
+.commu-person-detail-section,
+.commu-hub-section {
     border-top: 1px solid var(--border);
     margin-top: 12px;
     padding-top: 20px;
     scroll-margin-top: 82px;
 }
 
-.commu-person-detail-section h2 {
+.commu-person-detail-section h2,
+.commu-hub-section h2 {
     color: var(--text-primary);
     font-size: 1.24rem;
     line-height: 1.25;
@@ -3385,17 +3383,8 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     margin-top: 8px;
 }
 
-.commu-person-hub-page {
-    max-width: 1040px;
-}
-
 .commu-hub-head {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--link);
-    border-radius: 0;
-    margin-top: 18px;
-    padding: 18px;
+    border-left-color: var(--link);
 }
 
 .commu-hub-head h1 {
@@ -3426,16 +3415,11 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 
 .commu-hub-section {
-    border-top: 1px solid var(--border);
     margin-top: 26px;
-    padding-top: 20px;
 }
 
 .commu-hub-section h2 {
-    color: var(--text-primary);
-    font-size: 1.24rem;
-    line-height: 1.25;
-    margin: 0 0 14px;
+    margin-bottom: 14px;
 }
 
 .commu-hub-office-rows {
@@ -3725,7 +3709,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    rule, which is sized for the occasional heading inside a person section. */
 /* Long-form scale mirrors the reference reader (.book: 1.88 leading), one step
    under the UI text around it. */
-.commu-event-body .commu-person-markdown { font-size: .96rem; line-height: 1.88; }
+.commu-event-body .commu-person-markdown { line-height: 1.88; }
 .commu-event-body .commu-person-markdown h2 {
     font-size: 1.22rem;
     margin: 2em 0 .7em;
@@ -3831,15 +3815,6 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-person-event-links strong { font-size: 1.05rem; }
 .commu-person-event-links em, .commu-person-event-links small { grid-column: 2; }
 @media (max-width: 560px) { .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
-
-/* Below 768px the shared .container drops its gutters (style.css). The event,
-   term and person detail pages are continuous prose, so they keep the
-   reference reader's gutters (.book's clamp) instead of running edge to edge.
-   (.commu-term-page rides on .commu-event-page.) */
-@media (max-width: 768px) {
-    .commu-event-page,
-    .commu-person-page { padding-inline: clamp(12px, 2.5vw, 20px); }
-}
 
 .commu-event-people-grid > a.is-executor, .commu-person-event-links li.is-executor a { border-color: #8c7734; background: color-mix(in srgb, #8c7734 14%, transparent); }
 .commu-event-people-grid > a.is-executor .commu-event-person-relation, .commu-person-event-links li.is-executor span, .commu-person-event-links li.is-executor em { color: #d4bb61; }

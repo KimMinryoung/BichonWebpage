@@ -95,27 +95,10 @@
 
         <%- include('../partials/commulingo-genealogy-links', { en: en, charts: typeof genealogies !== 'undefined' ? genealogies : [], headword: person.displayName || person.name }) %>
 
-        <% if (typeof relatedDocs !== 'undefined' && relatedDocs && relatedDocs.length) { %>
-        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
-            <h2 id="related-docs"><%= strings.commuLingoViews.person.referenceDocuments %></h2>
-            <ul class="commu-related-report-list commu-related-doc-list">
-                <% relatedDocs.forEach(function(doc) { %>
-                <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
-                <% }) %>
-            </ul>
-        </section>
-        <% } %>
-
-        <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
-        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
-            <h2 id="related-reports"><%= strings.commuLingoViews.person.relatedReports %></h2>
-            <ul class="commu-related-report-list">
-                <% relatedReports.forEach(function(report) { %>
-                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (strings.commuLingoViews.person.report) %></span><strong><%= report.title %></strong></a></li>
-                <% }) %>
-            </ul>
-        </section>
-        <% } %>
+        <%- include('../partials/commulingo-related-resources', {
+            relatedDocs: typeof relatedDocs !== 'undefined' ? relatedDocs : [],
+            relatedReports: typeof relatedReports !== 'undefined' ? relatedReports : [],
+            copy: strings.commuLingoViews.person }) %>
 
         <a class="commu-person-detail-back" href="/commulingo/people#p-<%= person.id %>">&larr; <%= strings.commuLingoViews.person.backToCard %></a>
     </main>

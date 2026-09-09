@@ -108,24 +108,7 @@ var sections = p.event.bodySections || [];
         </section>
         <% } %>
         <%- include('commulingo-genealogy-links', { en: en, charts: p.genealogies, headword: p.event.title }) %>
-        <% if (p.relatedDocs && p.relatedDocs.length) { %>
-        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
-            <h2 id="related-docs"><%= strings.commuLingoViews.eventPanel.referenceDocuments %></h2>
-            <ul class="commu-related-report-list commu-related-doc-list">
-                <% p.relatedDocs.forEach(function(doc) { %>
-                <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
-                <% }) %>
-            </ul>
-        </section>
-        <% } %>
-        <% if (p.relatedReports && p.relatedReports.length) { %>
-        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
-            <h2 id="related-reports"><%= strings.commuLingoViews.eventPanel.relatedReports %></h2>
-            <ul class="commu-related-report-list">
-                <% p.relatedReports.forEach(function(report) { %>
-                <li><a href="<%= report.href %>"><span><%= report.dateLabel || (strings.commuLingoViews.eventPanel.report) %></span><strong><%= report.title %></strong></a></li>
-                <% }) %>
-            </ul>
-        </section>
-        <% } %>
+        <%- include('commulingo-related-resources', {
+            relatedDocs: p.relatedDocs, relatedReports: p.relatedReports,
+            copy: strings.commuLingoViews.eventPanel }) %>
         <% if (p.event.sources.length) { %><p class="commu-event-sources"><%= strings.commuLingoViews.eventPanel.sources %> <% p.event.sources.forEach(function(source, index) { %><% if (/^https?:\/\//.test(source)) { %><a href="<%= source %>" target="_blank" rel="noopener noreferrer"><%= en ? 'reference ' + (index + 1) : '자료 ' + (index + 1) %></a><% } else { %><span class="commu-event-source-text"><%= source %></span><% } %><% }) %></p><% } %>
