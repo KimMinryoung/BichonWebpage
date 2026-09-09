@@ -4813,9 +4813,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     line-height: 1.45;
 }
 @media (max-width: 560px) {
-    .commulingo-page .commulingo-home {
-        padding-inline: 12px;
-    }
     .commulingo-home .commulingo-hero-main {
         padding: 14px 12px 0;
     }
