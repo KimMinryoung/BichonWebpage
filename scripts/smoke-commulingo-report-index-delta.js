@@ -12,7 +12,7 @@ let context = {};
 let fetches = 0;
 const logs = [];
 const deps = {
-    './research-body': { compileResearchBody: data => ({ links: links[data.markdown] }) },
+    './research-body': { restoreResearchCache: async () => {}, saveResearchCache: async () => {}, compileResearchBody: data => ({ links: links[data.markdown] }) },
     './research-series': { publishedReportSlugs: async () => new Set() },
     '../config/research-store': { listResearchTexts: async () => { fetches++; return rows; }, localizeResearch: row => row },
     '../data/commulingo/report-links': { getReportLinkContext: async () => context },

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const assert = require('assert');
+process.env.REPORT_RENDER_CACHE_PATH = '0';
 const { buildPersonLinkIndex } = require('../data/commulingo/people-linkify');
 const { buildDocLinkIndex: rawbuildDocLinkIndex } = require('../data/commulingo/doc-linkify');
 const buildDocLinkIndex = (records, options) => rawbuildDocLinkIndex(records, { ...options, legacyReview: true });
@@ -28,7 +29,7 @@ series.publishedReportSlugs = async () => new Set(['test']);
     assert.doesNotMatch(compiled.html, /people\/ford/);
     assert.strictEqual(compiled, compileResearchBody(data, indexes, new Set(['test'])));
     assert.notStrictEqual(compiled, compileResearchBody({ ...data, content: data.content + '\n\n추가' }, indexes, new Set(['test'])));
-    assert.notStrictEqual(compiled, compileResearchBody(data, indexes, new Set(['other'])));
+    assert.strictEqual(compiled, compileResearchBody(data, indexes, new Set(['other'])));
 
     const { renderResearch } = require('../services/research-render');
     let rendered;

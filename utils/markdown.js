@@ -224,6 +224,14 @@ function renderSourceCard(kind, lines) {
 // rather than threaded through every flush* helper.
 const REPORT_ANCHOR_RE = /<a href="(\/reports\/[^"]*)"[^>]*>((?:(?!<\/a>)[\s\S])*)<\/a>/g;
 
+// Share the exact URL/slug rules with report-cache dependency tracking.
+function reportLinkSlugs(html) {
+    return [...new Set([...String(html).matchAll(REPORT_ANCHOR_RE)].map(match => {
+        const last = match[1].split(/[?#]/)[0].split('/').filter(Boolean).pop();
+        return (last || '').replace(/\.md$/, '');
+    }))];
+}
+
 function downgradeUnknownReportLinks(html, isKnownReport) {
     if (typeof isKnownReport !== 'function') return html;
     return String(html).replace(REPORT_ANCHOR_RE, (match, href, label) => {
@@ -380,6 +388,7 @@ function titleFromMarkdown(markdown = '', fallback = '') {
 
 module.exports = {
     downgradeUnknownReportLinks,
+    reportLinkSlugs,
     escapeHtml,
     renderMarkdown,
     stripFirstHeading,

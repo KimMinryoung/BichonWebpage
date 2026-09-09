@@ -10,7 +10,7 @@ let builds = 0;
 let now = 0;
 const errors = [];
 const dependencies = {
-    './research-body': { compileResearchBody: () => ({ links: [{ kind: 'term', id: 'nep', anchorId: 'term-nep' }] }) },
+    './research-body': { restoreResearchCache: async () => {}, saveResearchCache: async () => {}, compileResearchBody: () => ({ links: [{ kind: 'term', id: 'nep', anchorId: 'term-nep' }] }) },
     './research-series': { publishedReportSlugs: async () => [] },
     '../config/research-store': {
         listResearchTexts: () => {

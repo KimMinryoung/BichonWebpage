@@ -1,7 +1,8 @@
 const { createHash } = require('crypto');
 const { ResearchLinkCache } = require('./research-link-cache');
+const { ResearchCacheDisk } = require('./research-cache-disk');
 const { collectLinkedEntities } = require('../data/commulingo/linked-entities');
-const { downgradeUnknownReportLinks, renderMarkdown, stripFirstHeading } = require('../utils/markdown');
+const { downgradeUnknownReportLinks, renderMarkdown, stripFirstHeading, reportLinkSlugs } = require('../utils/markdown');
 const { sanitizeRich } = require('../utils/sanitize');
 const { linkifyReportHtml } = require('../data/commulingo/report-links');
 
@@ -9,38 +10,47 @@ function researchMarkdown(data) {
     return data && (data.content || data.markdown || data.body || data.text || '');
 }
 
+function reportState(slug, knownSlugs) {
+    return knownSlugs ? Boolean(slug && knownSlugs.has(slug)) : true;
+}
+
 function researchHtmlBody(data, markdown, knownSlugs) {
-    // A report links its predecessors by slug, and slugs get renamed or never
-    // published, so an unresolvable one renders as plain text instead of a link
-    // that 404s. knownSlugs is undefined when the lookup failed, and then the
-    // links are left exactly as written.
-    const isKnownReport = knownSlugs ? slug => knownSlugs.has(slug) : undefined;
+    // Inspect the undowngraded HTML so missing reports remain dependencies:
+    // publishing one later must restore its link even though it is plain now.
     const prerendered = data && (data.html_body || data.htmlBody);
-    const html = prerendered
-        ? downgradeUnknownReportLinks(prerendered, isKnownReport)
-        : renderMarkdown(stripFirstHeading(markdown), { isKnownReport });
-    return sanitizeRich(html);
+    const base = prerendered || renderMarkdown(stripFirstHeading(markdown));
+    const reportStates = reportLinkSlugs(base).map(slug => [slug, reportState(slug, knownSlugs)]);
+    const html = downgradeUnknownReportLinks(base, knownSlugs ? slug => knownSlugs.has(slug) : undefined);
+    return { html: sanitizeRich(html), reportStates };
 }
 
 const cache = new ResearchLinkCache();
+const disk = new ResearchCacheDisk(cache);
+const stats = { hits: 0, compiled: 0 };
 function compileResearchBody(data, indexes, knownSlugs) {
     const generation = cache.forIndexes(indexes);
-    // Actual content and exact published slugs, not just their count or a
-    // timestamp: edits and same-size slug replacements invalidate the render.
+    // Only content belongs in the key; publication state is checked for the
+    // report links this body actually contains, including currently missing ones.
     const key = createHash('sha256').update(JSON.stringify([
         researchMarkdown(data), data?.html_body || data?.htmlBody || '',
-        knownSlugs ? [...knownSlugs].sort() : null,
     ])).digest('hex');
-    if (generation.has(key)) return generation.get(key).result;
-    const html = researchHtmlBody(data, researchMarkdown(data), knownSlugs);
+    const cached = generation.get(key);
+    if (cached && cached.reportStates.every(([slug, state]) => state === reportState(slug, knownSlugs))) {
+        stats.hits++;
+        return cached.result;
+    }
+    stats.compiled++;
+    const { html, reportStates } = researchHtmlBody(data, researchMarkdown(data), knownSlugs);
     let result;
     try { result = linkifyReportHtml(html, indexes); }
     catch (error) {
         console.error('Error linking commulingo entities:', error.message);
         return collectLinkedEntities(html, indexes, { anchors: true });
     }
-    cache.put(generation, key, html, result);
+    cache.put(generation, key, html, result, reportStates, !data?.private);
     return result;
 }
 
-module.exports = { compileResearchBody, researchMarkdown };
+module.exports = { compileResearchBody, researchMarkdown,
+    restoreResearchCache: () => disk.restore(), saveResearchCache: () => disk.save(),
+    researchCacheStats: () => ({ ...stats }) };

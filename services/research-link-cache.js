@@ -3,6 +3,7 @@
 // False positives cost one render; a newly added expression must never be
 // missed just because it did not produce a link in the previous generation.
 const { createHash } = require('crypto');
+const { registryFor } = require('../data/commulingo/linked-entities');
 const { walk, decode, attributes } = require('../data/commulingo/html-fragments');
 const KINDS = ['doc', 'event', 'term', 'topic', 'person'];
 const ROUTES = { doc: 'docs', event: 'events', term: 'terms', person: 'people', role: 'roles', office: 'offices' };
@@ -21,9 +22,10 @@ function snapshot(indexes) {
         const entries = new Map();
         for (const entry of [...Object.values(index.byId || {}), ...Object.values(index.byAlias || {})]) {
             if (!entry) continue;
-            // The report result includes the entry object, so even metadata-only
-            // edits refresh affected reports, without invalidating other names.
-            if (!entries.has(entry)) entries.set(entry, signature(entry));
+            // Person prose is not used to render a link. Keep only its visible
+            // label/tooltip in the dependency; refresh full entries separately.
+            if (!entries.has(entry)) entries.set(entry, signature(kind === 'person'
+                ? [entry.id, entry.displayName, entry.name, entry.epithet] : entry));
             const route = ROUTES[kind === 'topic' ? entry.kind : kind];
             entities.set('/commulingo/' + route + '/' + encodeURIComponent(entry.id), entries.get(entry));
         }
@@ -94,7 +96,7 @@ class ResearchLinkCache {
     forIndexes(indexes) {
         const lang = indexes?.lang || (indexes?.person?.en ? 'en' : 'ko');
         let generation = this.generations.get(lang);
-        if (generation && generation.indexes === indexes) return generation.entries;
+        if (generation && Object.hasOwn(generation, 'indexes') && generation.indexes === indexes) return generation.entries;
         const next = snapshot(indexes);
         if (!generation) generation = { entries: new Map() };
         const needles = changedNeedles(generation.snapshot, next);
@@ -104,14 +106,60 @@ class ResearchLinkCache {
                 if (needles.some(needle => cached.text.includes(needle))) generation.entries.delete(key);
             }
         }
+        if (indexes) {
+            const registry = registryFor(indexes);
+            for (const cached of generation.entries.values()) {
+                for (const [bucket, kind] of Object.entries({ people: 'person', terms: 'term', events: 'event', docs: 'doc', topics: 'topic' })) {
+                    cached.result[bucket] = cached.result[bucket].map(entry =>
+                        registry.get((kind === 'topic' ? entry.kind : kind) + ':' + entry.id)).filter(Boolean);
+                }
+            }
+        }
         generation.indexes = indexes;
         generation.snapshot = next;
         this.generations.set(lang, generation);
         return generation.entries;
     }
-    put(entries, key, html, result) {
+    export() {
+        return [...this.generations].filter(([, generation]) => generation.snapshot).map(([lang, generation]) => ({
+            lang,
+            snapshot: { ...generation.snapshot, tokens: [...generation.snapshot.tokens], entities: [...generation.snapshot.entities] },
+            entries: [...generation.entries].filter(([, item]) => item.persistable).map(([key, item]) => [key, {
+                text: item.text, reportStates: item.reportStates, persistable: true,
+                result: Object.fromEntries(Object.entries(item.result).map(([name, value]) => [name,
+                    ['people', 'terms', 'events', 'docs', 'topics'].includes(name)
+                        ? value.map(entry => ({ id: entry.id, kind: entry.kind })) : value])),
+            }]),
+        }));
+    }
+    import(data) {
+        // Validate all generations before installing any; a damaged cache is a miss.
+        const restored = new Map();
+        for (const generation of data) {
+            const { lang, snapshot: saved, entries } = generation;
+            if (!['ko', 'en'].includes(lang) || !saved || typeof saved.globals !== 'string'
+                || !Array.isArray(saved.tokens) || !Array.isArray(saved.entities) || !Array.isArray(entries)) throw new Error('Invalid report cache generation');
+            const snapshot = { ...saved, tokens: new Map(saved.tokens), entities: new Map(saved.entities) };
+            for (const [key, token] of snapshot.tokens) if (typeof key !== 'string' || typeof token?.text !== 'string' || typeof token?.value !== 'string') throw new Error('Invalid report cache token');
+            for (const [key, value] of snapshot.entities) if (typeof key !== 'string' || typeof value !== 'string') throw new Error('Invalid report cache entity');
+            for (const [key, item] of entries) {
+                if (typeof key !== 'string' || typeof item?.text !== 'string' || typeof item?.result?.html !== 'string'
+                    || !Array.isArray(item.reportStates) || !Array.isArray(item.result.links)) throw new Error('Invalid report cache entry');
+                for (const state of item.reportStates) if (!Array.isArray(state) || typeof state[0] !== 'string' || typeof state[1] !== 'boolean') throw new Error('Invalid report dependency');
+                for (const bucket of ['people', 'terms', 'events', 'docs', 'topics']) {
+                    if (!Array.isArray(item.result[bucket]) || item.result[bucket].some(entry => typeof entry?.id !== 'string')) throw new Error('Invalid report cache references');
+                }
+                for (const link of item.result.links) if (typeof link?.kind !== 'string' || typeof link?.id !== 'string' || typeof link?.href !== 'string' || typeof link?.anchorId !== 'string') throw new Error('Invalid cached link');
+            }
+            restored.set(lang, { snapshot, entries: new Map(entries.slice(-this.limit)) });
+        }
+        // A real request may have populated a generation while disk I/O ran.
+        for (const [lang, generation] of restored) if (!this.generations.has(lang)) this.generations.set(lang, generation);
+    }
+
+    put(entries, key, html, result, reportStates = [], persistable = true) {
         if (entries.size >= this.limit) entries.delete(entries.keys().next().value);
-        entries.set(key, { text: searchableHtml(html), result });
+        entries.set(key, { text: searchableHtml(html), result, reportStates, persistable });
     }
 }
 

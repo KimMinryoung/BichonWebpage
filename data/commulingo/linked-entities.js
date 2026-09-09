@@ -66,4 +66,4 @@ function collectLinkedEntities(html, indexes, { anchors = false } = {}) {
     return { html: out, ...found, links };
 }
 
-module.exports = { collectLinkedEntities };
+module.exports = { collectLinkedEntities, registryFor };

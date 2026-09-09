@@ -1,4 +1,4 @@
-const { compileResearchBody } = require('./research-body');
+const { compileResearchBody, restoreResearchCache, saveResearchCache } = require('./research-body');
 const { publishedReportSlugs } = require('./research-series');
 // Reverse index from CommuLingo entities to the public research reports that
 // link to them, powering the "related reports" sections on person and event
@@ -38,6 +38,7 @@ function docEntry(row) {
 }
 
 async function buildIndex() {
+    await restoreResearchCache();
     const previous = memory;
     const fetchRows = !previous || Date.now() - previous.rowsAt >= REFRESH_MS;
     const [rows, ctxKo, ctxEn, slugsKo, slugsEn] = await Promise.all([
@@ -117,6 +118,7 @@ async function buildIndex() {
         const map = maps[mapName][lang], id = parts.join(':');
         if (map.has(id)) map.set(id, [...map.get(id)].sort((a, b) => rank.get(a.slug) - rank.get(b.slug)));
     }
+    await saveResearchCache();
     console.log(`[report mentions] updated ${changedReports}/${rows.length * 2} report-language contributions`);
     return { ...maps, byReport, rows, rowsAt: fetchRows ? Date.now() : previous.rowsAt,
         contexts: [ctxKo, ctxEn], at: Date.now() };
