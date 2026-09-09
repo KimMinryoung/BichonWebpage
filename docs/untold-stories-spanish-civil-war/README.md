@@ -11,3 +11,5 @@ Raanan Rein and Susanne Zepp (eds.). Routledge, 2024. DOI: 10.4324/9781003414353
 - Preserved 607 bibliography blocks and original citation details in notes. Translated explanatory notes. Included contributors, index (original printed page numbers) and 12 original illustrations. Omitted advertising and duplicate printed contents.
 - Validation: 2188 main blocks and 355 supplementary blocks; source hash matching, body footnote reference multisets, 771 note entries, 12 illustrations, unique IDs and no broken internal links. Selected paragraphs corrected; full human proofreading is pending.
 - translation.json is frozen because the final publication merges multiple translation jobs and editorial corrections. The assembly scripts document this merge; their working caches remain under temp_dev/untold-stories-spanish-civil-war and are not included here.
+
+- Follow-up sample copyedit: eight body blocks and two notes corrected; see quality-review.md. This is a targeted review, not full human proofreading.
