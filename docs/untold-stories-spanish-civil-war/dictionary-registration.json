@@ -1,0 +1,733 @@
+{
+  "people": [
+    {
+      "id": "federica-montseny",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "페데리카",
+        "en": "Federica"
+      },
+      "familyName": {
+        "ko": "몬세니",
+        "en": "Montseny"
+      },
+      "nativeName": "Federica Montseny",
+      "years": "1905–1994",
+      "nationalOrigin": {
+        "code": "spain"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "공화국 정부에 참여한 스페인 아나키스트",
+        "en": "Spanish anarchist who served in the Republican government"
+      },
+      "bio": {
+        "ko": "스페인의 아나키스트이자 작가. CNT 계열 활동가로서 1936년 11월부터 1937년 5월까지 공화국 정부의 보건·공공부조 장관을 지냈다. 전쟁 중 의료와 구호 정책을 추진했지만, 국가권력을 거부하는 아나키즘의 원칙과 장관직 수행 사이의 긴장은 운동 내부의 논쟁을 낳았다. 에마 골드만과의 서신은 반파시즘 전쟁과 사회혁명의 관계를 둘러싼 이견을 보여준다.",
+        "en": "Spanish anarchist and writer associated with the CNT. She served as minister of Health and Public Assistance from November 1936 to May 1937. Her participation in the Republican government raised a difficult question for an anti-statist movement: could taking state office defend the revolution without compromising its principles? Her exchanges with Emma Goldman reveal disagreements over the relationship between anti-fascist war and social revolution."
+      },
+      "moment": {
+        "ko": "1936년 11월 장관직을 수락했다. 정부 참여를 둘러싼 에마 골드만과의 논쟁은 같은 혁명을 지지하는 아나키스트들 사이에도 전략적 차이가 있었음을 보여준다.",
+        "en": "In November 1936 she accepted a cabinet post. Her dispute with Emma Goldman over government participation exposed strategic differences among anarchists supporting the same revolution."
+      },
+      "aliases": {
+        "ko": [
+          "페데리카 몬트세니"
+        ],
+        "en": []
+      },
+      "sources": [
+        "https://www.cultura.gob.es/cultura/areas/archivos/mc/centros/cida/4-difusion-cooperacion/4-1-guias-de-lectura/escritoras/montseny-federica.html",
+        "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1905–1994",
+          "source": "https://www.cultura.gob.es/cultura/areas/archivos/mc/centros/cida/4-difusion-cooperacion/4-1-guias-de-lectura/escritoras/montseny-federica.html",
+          "locator": "Biographical entry: life dates"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Documented national background; no citizenship inferred from birthplace.",
+          "source": "https://www.cultura.gob.es/cultura/areas/archivos/mc/centros/cida/4-difusion-cooperacion/4-1-guias-de-lectura/escritoras/montseny-federica.html",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "bio",
+          "claim": "Spanish anarchist and writer associated with the CNT. She served as minister of Health and Public Assistance from November 1936 to May 1937. Her participation in the Republican government raised a difficult question for an anti-statist movement: could taking state office defend the revolution without compromising its principles? Her exchanges with Emma Goldman reveal disagreements over the relationship between anti-fascist war and social revolution.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 11"
+        },
+        {
+          "field": "bio",
+          "claim": "Biographical identity and life trajectory",
+          "source": "https://www.cultura.gob.es/cultura/areas/archivos/mc/centros/cida/4-difusion-cooperacion/4-1-guias-de-lectura/escritoras/montseny-federica.html",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "moment",
+          "claim": "In November 1936 she accepted a cabinet post. Her dispute with Emma Goldman over government participation exposed strategic differences among anarchists supporting the same revolution.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 11"
+        }
+      ],
+      "sections": [
+        {
+          "slug": "spanish-civil-war",
+          "heading": {
+            "ko": "정부 참여와 혁명의 딜레마",
+            "en": "Government participation and revolution"
+          },
+          "body": {
+            "ko": "몬세니와 골드만은 스페인 내전이 사회혁명의 기회를 열었다는 점에서는 뜻을 같이했다. 그러나 공화국 정부에 참여하는 것이 그 혁명을 지키는 방법인지에 대해서는 의견이 갈렸다. 골드만은 몬세니의 장관직 수행을 비판했고, 몬세니는 그러한 비판이 전쟁 현장의 제약을 충분히 고려하지 못한다고 보았다. 이 논쟁은 아나키스트 운동을 하나의 일관된 정치 노선으로만 설명하기 어렵게 만든다.\n\n몬세니의 보건·구호 정책과 국가권력에 대한 비판은 별도로 살필 필요가 있다. 장관으로서 추진한 사회정책이 있었다는 사실만으로 정부 참여의 정치적 문제가 해소되는 것은 아니며, 정부 참여를 비판했다고 해서 반파시즘 투쟁 자체에 반대했던 것도 아니다. 『스페인 내전의 알려지지 않은 이야기들』 11장은 두 사람의 글과 교류를 비교해 이러한 긴장을 분석한다.",
+            "en": "Montseny and Goldman both saw the Spanish Civil War as an opening for social revolution. They disagreed over whether joining the Republican government could protect that revolution. Goldman criticized Montseny’s ministerial role; Montseny considered such criticism insufficiently attentive to conditions in wartime Spain. Their exchange shows why anarchism cannot be treated as a single, uniform political position.\n\nHer work in health and public assistance and the political consequences of accepting state office are related but distinct questions. Social reforms did not settle the argument over governmental participation, while criticism of participation did not mean opposition to anti-fascist resistance. Chapter 11 of Untold Stories of the Spanish Civil War examines this tension through the two women’s writings and exchanges."
+          },
+          "sortOrder": 193600,
+          "sources": [
+            "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+            "https://www.cultura.gob.es/cultura/areas/archivos/mc/centros/cida/4-difusion-cooperacion/4-1-guias-de-lectura/escritoras/montseny-federica.html"
+          ],
+          "evidence": [
+            {
+              "field": "body",
+              "claim": "Montseny and Goldman both saw the Spanish Civil War as an opening for social revolution. They disagreed over whether joining the Republican government could protect that revolution. Goldman criticized Montseny’s ministerial role; Montseny considered such criticism insufficiently attentive to conditions in wartime Spain. Their exchange shows why anarchism cannot be treated as a single, uniform political position.\n\nHer work in health and public assistance and the political consequences of accepting state office are related but distinct questions. Social reforms did not settle the argument over governmental participation, while criticism of participation did not mean opposition to anti-fascist resistance. Chapter 11 of Untold Stories of the Spanish Civil War examines this tension through the two women’s writings and exchanges.",
+              "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+              "locator": "Chapter 11"
+            },
+            {
+              "field": "body",
+              "claim": "Life dates and biographical context",
+              "source": "https://www.cultura.gob.es/cultura/areas/archivos/mc/centros/cida/4-difusion-cooperacion/4-1-guias-de-lectura/escritoras/montseny-federica.html",
+              "locator": "Biographical entry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "najati-sidqi",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "나자티",
+        "en": "Najati"
+      },
+      "familyName": {
+        "ko": "시드키",
+        "en": "Sidqi"
+      },
+      "nativeName": "نجاتي صدقي",
+      "years": "1905–1979",
+      "nationalOrigin": {
+        "code": "palestine"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "팔레스타인과 스페인의 반파시즘을 연결한 활동가",
+        "en": "Palestinian activist linking anti-colonialism and anti-fascism"
+      },
+      "bio": {
+        "ko": "팔레스타인의 공산주의 활동가이자 작가·번역가. 예루살렘에서 성장하고 모스크바에서 공부했으며, 1936년 스페인으로 가 공화파를 지원했다. 프랑코군에 속한 모로코 병사들을 상대로 선전 활동을 벌이며 스페인의 반파시즘과 아랍인의 해방 문제를 연결했다. 이후 언론과 문학 번역에 종사했다. 그의 회고록은 아랍인 참가자의 시각에서 스페인 내전을 읽을 수 있는 자료다.",
+        "en": "Palestinian communist activist, writer, and translator. Raised in Jerusalem and educated in Moscow, he went to Spain in 1936 to support the Republic. His propaganda work among Moroccan soldiers serving Franco linked anti-fascism in Spain with Arab liberation. He later worked in journalism and literary translation. His memoirs provide an Arab participant’s perspective on the Spanish Civil War."
+      },
+      "moment": {
+        "ko": "1936년 스페인에서 프랑코군의 모로코 병사들에게 접근했다. 반파시즘 연대가 북아프리카 식민지 문제와 충돌하는 지점을 직접 경험했다.",
+        "en": "In Spain in 1936 he addressed Moroccan soldiers serving Franco, confronting the tension between anti-fascist solidarity and colonial rule in North Africa."
+      },
+      "aliases": {
+        "ko": [
+          "무함마드 나자티 시드키",
+          "나자티 시드치"
+        ],
+        "en": [
+          "Muhammad Najati Sidqi",
+          "Najati Sidki"
+        ]
+      },
+      "sources": [
+        "https://www.palquest.org/en/biography/14271/najati-sidqi",
+        "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1905–1979",
+          "source": "https://www.palquest.org/en/biography/14271/najati-sidqi",
+          "locator": "Biographical entry: life dates"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Documented national background; no citizenship inferred from birthplace.",
+          "source": "https://www.palquest.org/en/biography/14271/najati-sidqi",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "bio",
+          "claim": "Palestinian communist activist, writer, and translator. Raised in Jerusalem and educated in Moscow, he went to Spain in 1936 to support the Republic. His propaganda work among Moroccan soldiers serving Franco linked anti-fascism in Spain with Arab liberation. He later worked in journalism and literary translation. His memoirs provide an Arab participant’s perspective on the Spanish Civil War.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 4"
+        },
+        {
+          "field": "bio",
+          "claim": "Biographical identity and life trajectory",
+          "source": "https://www.palquest.org/en/biography/14271/najati-sidqi",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "moment",
+          "claim": "In Spain in 1936 he addressed Moroccan soldiers serving Franco, confronting the tension between anti-fascist solidarity and colonial rule in North Africa.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 4"
+        }
+      ],
+      "sections": [
+        {
+          "slug": "spanish-civil-war",
+          "heading": {
+            "ko": "반파시즘 연대와 식민지 문제",
+            "en": "Anti-fascist solidarity and colonialism"
+          },
+          "body": {
+            "ko": "시드키는 스페인의 공화파를 지원하면서도 전쟁을 유럽만의 문제로 보지 않았다. 프랑코군에 동원된 모로코 병사들에게 말을 건네는 활동은 파시즘에 반대하는 투쟁과 식민지 지배에서 벗어나려는 요구를 연결했다. 공화파의 지지가 아랍인과 북아프리카인의 독립 요구에 대한 지지로 곧바로 이어지는 것은 아니었다.\n\n그의 경험은 국제 의용병의 동기를 하나의 이념이나 국적으로 설명하기 어렵다는 점을 보여준다. 팔레스타인 출신 참가자에는 유대인과 아랍인이 모두 있었지만, 이들의 규모와 경험에 관한 기록은 고르지 않다. 『스페인 내전의 알려지지 않은 이야기들』 4장은 시드키를 비롯한 아랍계 팔레스타인 참가자들을 통해 국제 연대의 가능성과 한계를 함께 살핀다.",
+            "en": "Sidqi supported the Spanish Republic without treating the war as an exclusively European conflict. Addressing Moroccan soldiers mobilized for Franco connected opposition to fascism with demands for liberation from colonial rule. Yet support for the Republic did not automatically entail support for Arab or North African independence.\n\nHis experience complicates explanations of foreign volunteers based on a single ideology or nationality. Volunteers from Palestine included both Jews and Arabs, but surviving documentation and historical recognition are uneven. Chapter 4 of Untold Stories of the Spanish Civil War uses Sidqi and other Arab Palestinian participants to explore both the possibilities and the limits of international solidarity."
+          },
+          "sortOrder": 193600,
+          "sources": [
+            "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+            "https://www.palquest.org/en/biography/14271/najati-sidqi"
+          ],
+          "evidence": [
+            {
+              "field": "body",
+              "claim": "Sidqi supported the Spanish Republic without treating the war as an exclusively European conflict. Addressing Moroccan soldiers mobilized for Franco connected opposition to fascism with demands for liberation from colonial rule. Yet support for the Republic did not automatically entail support for Arab or North African independence.\n\nHis experience complicates explanations of foreign volunteers based on a single ideology or nationality. Volunteers from Palestine included both Jews and Arabs, but surviving documentation and historical recognition are uneven. Chapter 4 of Untold Stories of the Spanish Civil War uses Sidqi and other Arab Palestinian participants to explore both the possibilities and the limits of international solidarity.",
+              "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+              "locator": "Chapter 4"
+            },
+            {
+              "field": "body",
+              "claim": "Life dates and biographical context",
+              "source": "https://www.palquest.org/en/biography/14271/najati-sidqi",
+              "locator": "Biographical entry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ruth-rewald",
+      "groupId": "scholar",
+      "givenName": {
+        "ko": "루트",
+        "en": "Ruth"
+      },
+      "familyName": {
+        "ko": "레발트",
+        "en": "Rewald"
+      },
+      "nativeName": "Ruth Rewald",
+      "years": "1906–1942",
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "writer-artist"
+      },
+      "epithet": {
+        "ko": "스페인 내전 속 아이들의 경험을 기록한 망명 작가",
+        "en": "Exiled writer who recorded children’s experiences of the Spanish war"
+      },
+      "bio": {
+        "ko": "독일계 유대인 아동·청소년 문학 작가. 나치 집권 뒤 프랑스로 망명했고, 스페인 내전 중 국제여단이 세운 에른스트 텔만 아동시설에서 활동했다. 아이들의 경험을 바탕으로 소설 『네 명의 스페인 소년』을 집필했다. 1942년 아우슈비츠로 강제 이송된 뒤 살해된 것으로 알려져 있으나 정확한 사망일은 확인되지 않는다.",
+        "en": "German Jewish writer for children and young readers. After fleeing Nazi Germany for France, she worked at the Ernst Thälmann children’s home established by the International Brigades in Spain. Children’s experiences informed her novel Vier spanische Jungen. Deported to Auschwitz in 1942, she is believed to have been murdered there; the exact date of her death is unknown."
+      },
+      "moment": {
+        "ko": "국제여단의 아동시설에서 만난 아이들의 경험을 소설로 옮겼다. 전쟁을 겪는 어린이를 선전의 대상만이 아니라 고유한 기억과 감정을 지닌 존재로 다루려 했다.",
+        "en": "She drew on children she met at an International Brigades home, seeking to represent their memories and emotions rather than treating them only as an audience for propaganda."
+      },
+      "aliases": {
+        "ko": [
+          "루트 샤울"
+        ],
+        "en": [
+          "Ruth Schaul"
+        ]
+      },
+      "sources": [
+        "https://www.deutsche-biographie.de/gnd118928678.html",
+        "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1906–1942",
+          "source": "https://www.deutsche-biographie.de/gnd118928678.html",
+          "locator": "Biographical entry: life dates"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Documented national background; no citizenship inferred from birthplace.",
+          "source": "https://www.deutsche-biographie.de/gnd118928678.html",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "bio",
+          "claim": "German Jewish writer for children and young readers. After fleeing Nazi Germany for France, she worked at the Ernst Thälmann children’s home established by the International Brigades in Spain. Children’s experiences informed her novel Vier spanische Jungen. Deported to Auschwitz in 1942, she is believed to have been murdered there; the exact date of her death is unknown.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 6"
+        },
+        {
+          "field": "bio",
+          "claim": "Biographical identity and life trajectory",
+          "source": "https://www.deutsche-biographie.de/gnd118928678.html",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "moment",
+          "claim": "She drew on children she met at an International Brigades home, seeking to represent their memories and emotions rather than treating them only as an audience for propaganda.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 6"
+        }
+      ],
+      "sections": [
+        {
+          "slug": "spanish-civil-war",
+          "heading": {
+            "ko": "아동 구호와 전쟁 문학",
+            "en": "Child relief and war literature"
+          },
+          "body": {
+            "ko": "레발트가 스페인에서 접한 아동 구호는 국제 의용병의 활동이 전선의 전투에만 한정되지 않았음을 보여준다. 에른스트 텔만 아동시설에서 만난 아이들의 이야기는 『네 명의 스페인 소년』의 소재가 되었다. 이 작품에서는 전쟁의 정치적 성격과 아이들의 일상, 두려움, 감정을 함께 전달하는 일이 중요한 과제였다.\n\n레나 하인은 『스페인 내전의 알려지지 않은 이야기들』 6장에서 레발트의 원고와 개인 자료를 읽으며 어린이의 경험이 문학으로 재구성되는 방식을 분석한다. 소설은 증언을 그대로 옮긴 기록과 같지는 않지만, 어른 중심의 전쟁사에서 놓치기 쉬운 경험에 접근하는 통로가 된다. 레발트의 정치적 입장과 어린 독자의 이해 수준을 고려한 서술 방식을 함께 살펴야 하는 이유다.",
+            "en": "Rewald’s work in child relief shows that the international volunteers’ activities extended beyond combat. Stories from children at the Ernst Thälmann home became material for Vier spanische Jungen. Writing about the conflict meant bringing its political character together with children’s everyday lives, fears, and feelings.\n\nIn chapter 6 of Untold Stories of the Spanish Civil War, Lena Hein examines Rewald’s manuscripts and personal papers to consider how childhood experiences were reconstructed as literature. A novel is not an unmediated transcript of testimony, but it can open a route into experiences often excluded from adult-centered military histories. Rewald’s political commitments therefore need to be read alongside her attention to young readers’ understanding."
+          },
+          "sortOrder": 193600,
+          "sources": [
+            "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+            "https://www.deutsche-biographie.de/gnd118928678.html"
+          ],
+          "evidence": [
+            {
+              "field": "body",
+              "claim": "Rewald’s work in child relief shows that the international volunteers’ activities extended beyond combat. Stories from children at the Ernst Thälmann home became material for Vier spanische Jungen. Writing about the conflict meant bringing its political character together with children’s everyday lives, fears, and feelings.\n\nIn chapter 6 of Untold Stories of the Spanish Civil War, Lena Hein examines Rewald’s manuscripts and personal papers to consider how childhood experiences were reconstructed as literature. A novel is not an unmediated transcript of testimony, but it can open a route into experiences often excluded from adult-centered military histories. Rewald’s political commitments therefore need to be read alongside her attention to young readers’ understanding.",
+              "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+              "locator": "Chapter 6"
+            },
+            {
+              "field": "body",
+              "claim": "Life dates and biographical context",
+              "source": "https://www.deutsche-biographie.de/gnd118928678.html",
+              "locator": "Biographical entry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cipriano-de-rivas-cherif",
+      "groupId": "scholar",
+      "givenName": {
+        "ko": "시프리아노 데",
+        "en": "Cipriano de"
+      },
+      "familyName": {
+        "ko": "리바스 체리프",
+        "en": "Rivas Cherif"
+      },
+      "nativeName": "Cipriano de Rivas Cherif",
+      "years": "1891–1967",
+      "nationalOrigin": {
+        "code": "spain"
+      },
+      "role": {
+        "category": "writer-artist"
+      },
+      "epithet": {
+        "ko": "공화국 외교와 실험 연극을 오간 연출가",
+        "en": "Theatre director active in Republican diplomacy"
+      },
+      "bio": {
+        "ko": "스페인의 연극 연출가·극작가이자 공화국 외교관. 마누엘 아사냐의 처남으로, 현대적 연극 교육과 무대 실험을 추진했으며 내전 중 제네바 총영사로 활동했다. 외교 활동에서는 대통령과 정부 사이의 갈등에 얽혔다. 프랑스 망명 중 체포되어 스페인에서 수감 생활을 했고, 이후 멕시코에서 연극 활동을 이어갔다.",
+        "en": "Spanish theatre director, playwright, and Republican diplomat. A brother-in-law of Manuel Azaña, he promoted theatre training and stage experimentation and served as consul-general in Geneva during the civil war. His diplomacy became entangled in tensions between the president and the government. Arrested while exiled in France and imprisoned in Spain, he later resumed theatrical work in Mexico."
+      },
+      "moment": {
+        "ko": "1941년 희곡 『이레네가 무슨 뜻일까?』에서 평화의 이름을 내세우며 싸움을 벌이는 인물들을 그렸다. 외교 경험은 전쟁과 방관을 다루는 연극의 소재가 되었다.",
+        "en": "His 1941 play ¿Qué quiere decir Irene? depicts figures fighting in the name of peace. Diplomatic experience became material for drama about war and non-intervention."
+      },
+      "aliases": {
+        "ko": [
+          "리바스 체리프"
+        ],
+        "en": [
+          "Cipriano Rivas Cherif"
+        ]
+      },
+      "sources": [
+        "https://www.mcu.es/ccbae/es/consulta_aut/registro.do?id=340924",
+        "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1891–1967",
+          "source": "https://www.mcu.es/ccbae/es/consulta_aut/registro.do?id=340924",
+          "locator": "Biographical entry: life dates"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Documented national background; no citizenship inferred from birthplace.",
+          "source": "https://www.mcu.es/ccbae/es/consulta_aut/registro.do?id=340924",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "bio",
+          "claim": "Spanish theatre director, playwright, and Republican diplomat. A brother-in-law of Manuel Azaña, he promoted theatre training and stage experimentation and served as consul-general in Geneva during the civil war. His diplomacy became entangled in tensions between the president and the government. Arrested while exiled in France and imprisoned in Spain, he later resumed theatrical work in Mexico.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 9"
+        },
+        {
+          "field": "bio",
+          "claim": "Biographical identity and life trajectory",
+          "source": "https://www.mcu.es/ccbae/es/consulta_aut/registro.do?id=340924",
+          "locator": "Biographical entry"
+        },
+        {
+          "field": "moment",
+          "claim": "His 1941 play ¿Qué quiere decir Irene? depicts figures fighting in the name of peace. Diplomatic experience became material for drama about war and non-intervention.",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 9"
+        }
+      ],
+      "sections": [
+        {
+          "slug": "spanish-civil-war",
+          "heading": {
+            "ko": "제네바 외교와 평화의 연극",
+            "en": "Geneva diplomacy and the theatre of peace"
+          },
+          "body": {
+            "ko": "리바스 체리프의 제네바 활동은 공화국 외교가 단일한 목소리로 움직이지 않았음을 드러낸다. 아사냐와의 가족적·정치적 친밀성, 정부의 지시, 국제 중재에 대한 개인적 판단이 서로 충돌했다. 『스페인 내전의 알려지지 않은 이야기들』 9장은 그의 독자적 행동이 대외정책의 일관성을 해쳤다는 비판적 평가를 제시한다.\n\n같은 장은 그의 연극을 외교 활동과 함께 읽는다. 『이레네가 무슨 뜻일까?』에서 평화를 상징하는 인물의 호소는 주변 사람들에게 제대로 전달되지 않는다. 인물들은 평화를 내세우면서 싸우거나 자신의 이해관계에 몰두한다. 이러한 장치는 전쟁을 수행하는 자뿐 아니라 방관하는 자에게도 책임을 묻는다. 외교에서 겪은 좌절이 무대 위의 풍자와 연결되는 지점이다.",
+            "en": "Rivas Cherif’s Geneva activities reveal that Republican diplomacy did not speak with one voice. His familial and political closeness to Azaña, government instructions, and personal judgments about international mediation could conflict. Chapter 9 of Untold Stories of the Spanish Civil War critically assesses how his independent initiatives weakened foreign-policy coherence.\n\nThe chapter also reads his theatre alongside that diplomatic experience. In ¿Qué quiere decir Irene?, the appeals of a figure associated with peace are not properly heard. Other characters invoke peace while fighting or pursuing their own interests. The device implicates bystanders as well as those who wage war, connecting diplomatic frustration with theatrical satire."
+          },
+          "sortOrder": 193600,
+          "sources": [
+            "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+            "https://www.mcu.es/ccbae/es/consulta_aut/registro.do?id=340924"
+          ],
+          "evidence": [
+            {
+              "field": "body",
+              "claim": "Rivas Cherif’s Geneva activities reveal that Republican diplomacy did not speak with one voice. His familial and political closeness to Azaña, government instructions, and personal judgments about international mediation could conflict. Chapter 9 of Untold Stories of the Spanish Civil War critically assesses how his independent initiatives weakened foreign-policy coherence.\n\nThe chapter also reads his theatre alongside that diplomatic experience. In ¿Qué quiere decir Irene?, the appeals of a figure associated with peace are not properly heard. Other characters invoke peace while fighting or pursuing their own interests. The device implicates bystanders as well as those who wage war, connecting diplomatic frustration with theatrical satire.",
+              "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+              "locator": "Chapter 9"
+            },
+            {
+              "field": "body",
+              "claim": "Life dates and biographical context",
+              "source": "https://www.mcu.es/ccbae/es/consulta_aut/registro.do?id=340924",
+              "locator": "Biographical entry"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "id": "second-spanish-republic",
+      "term": {
+        "ko": "스페인 제2공화국",
+        "en": "Second Spanish Republic"
+      },
+      "original": "Segunda República Española",
+      "definition": {
+        "ko": "1931년 왕정 붕괴 뒤 수립되어 1939년 내전 패배까지 스페인을 통치한 공화정. 1931년 헌법은 의회정치, 여성의 동등한 참정권, 종교의 자유와 국가의 비종교성을 규정했다. 공화국에는 서로 다른 정치 세력이 경쟁했고, 1936년 군사반란과 내전 이후에도 공화파 내부의 전쟁·혁명 전략은 일치하지 않았다. 폴란드 제2공화국이나 스페인 제1공화국과 구별된다.",
+        "en": "Republican regime governing Spain from the fall of the monarchy in 1931 until defeat in the civil war in 1939. Its constitution established parliamentary institutions, equal voting rights for women, religious freedom, and a state without an official religion. Rival political forces contested its direction, and Republican supporters remained divided over war and revolution after the military rebellion of 1936. It is distinct from the Second Polish Republic and Spain’s First Republic."
+      },
+      "body": {
+        "ko": "1931년 공화국 수립은 군주정에서 공화정으로의 제도적 전환이었다. 같은 해 12월 제정된 헌법은 단원제 의회와 대통령을 두고 시민적 권리와 사회적 권리를 규정했다. 지역 자치와 정교 관계도 중요한 쟁점이었다. 따라서 공화국을 하나의 정당이나 특정 이념과 동일시하면 서로 경쟁한 정치 세력과 제도 변화가 가려진다.\n\n1936년 군사반란은 내전으로 이어졌다. 공화국을 지지한 세력에는 공화주의자, 사회주의자, 공산주의자, 아나키스트 등이 있었지만 전쟁 수행과 사회혁명의 관계를 둘러싼 입장은 달랐다. 정부에 참여한 페데리카 몬세니와 이를 비판한 에마 골드만의 논쟁은 이러한 차이를 보여준다. 공화국 정부와 공화파 전체, 개별 정당·노조를 구분해 읽어야 한다.\n\n『스페인 내전의 알려지지 않은 이야기들』은 이 정치적 배경 위에서 국제 의용병과 여성, 어린이, 문화인들의 경험을 살핀다. 국가를 생략한 ‘제2공화국’이라는 표현은 다른 나라의 동명 체제와 혼동될 수 있으므로 정식 명칭을 사용한다.",
+        "en": "The establishment of the Republic in 1931 changed Spain’s constitutional regime. The December constitution provided for a unicameral parliament, a president, and civil and social rights. Regional autonomy and relations between church and state were central issues. Identifying the Republic with a single party or ideology obscures both political competition and institutional change.\n\nThe military rebellion of 1936 developed into civil war. Republicans, socialists, communists, and anarchists opposed the rebellion, but disagreed over the relationship between fighting the war and pursuing social revolution. The dispute between Federica Montseny, who joined the government, and Emma Goldman illustrates those differences. The Republican government, the broader Republican camp, and individual parties or unions should be distinguished.\n\nUntold Stories of the Spanish Civil War places volunteers, women, children, and cultural figures within this setting. The qualified name distinguishes the regime from similarly named republics in other countries."
+      },
+      "period": {
+        "ko": "1931–1939",
+        "en": "1931–1939"
+      },
+      "startYear": 1931,
+      "category": "party-state",
+      "sources": [
+        "https://www.congreso.es/es/cem/iirepesp",
+        "https://www.congreso.es/es/cem/const1931",
+        "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+      ],
+      "people": [
+        "manuel-azana",
+        "largo-caballero",
+        "federica-montseny"
+      ],
+      "events": [
+        "spanish-civil-war"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "endYear": 1939,
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "Republican regime governing Spain from the fall of the monarchy in 1931 until defeat in the civil war in 1939. Its constitution established parliamentary institutions, equal voting rights for women, religious freedom, and a state without an official religion. Rival political forces contested its direction, and Republican supporters remained divided over war and revolution after the military rebellion of 1936. It is distinct from the Second Polish Republic and Spain’s First Republic.",
+          "source": "https://www.congreso.es/es/cem/iirepesp",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "body",
+          "claim": "The establishment of the Republic in 1931 changed Spain’s constitutional regime. The December constitution provided for a unicameral parliament, a president, and civil and social rights. Regional autonomy and relations between church and state were central issues. Identifying the Republic with a single party or ideology obscures both political competition and institutional change.\n\nThe military rebellion of 1936 developed into civil war. Republicans, socialists, communists, and anarchists opposed the rebellion, but disagreed over the relationship between fighting the war and pursuing social revolution. The dispute between Federica Montseny, who joined the government, and Emma Goldman illustrates those differences. The Republican government, the broader Republican camp, and individual parties or unions should be distinguished.\n\nUntold Stories of the Spanish Civil War places volunteers, women, children, and cultural figures within this setting. The qualified name distinguishes the regime from similarly named republics in other countries.",
+          "source": "https://www.congreso.es/es/cem/iirepesp",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "period",
+          "claim": "1931–1939",
+          "source": "https://www.congreso.es/es/cem/iirepesp",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "startYear",
+          "claim": "1931",
+          "source": "https://www.congreso.es/es/cem/iirepesp",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "endYear",
+          "claim": "1939",
+          "source": "https://www.congreso.es/es/cem/iirepesp",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "definition",
+          "claim": "Constitutional rights and institutions",
+          "source": "https://www.congreso.es/es/cem/const1931",
+          "locator": "Constitución de 1931"
+        },
+        {
+          "field": "body",
+          "claim": "Constitutional institutions",
+          "source": "https://www.congreso.es/es/cem/const1931",
+          "locator": "Constitución de 1931"
+        },
+        {
+          "field": "body",
+          "claim": "Internal Republican disagreements and Montseny–Goldman debate",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 11"
+        }
+      ]
+    },
+    {
+      "id": "spanish-cnt",
+      "term": {
+        "ko": "스페인 전국노동총연맹(CNT)",
+        "en": "Spanish National Confederation of Labour (CNT)"
+      },
+      "original": "Confederación Nacional del Trabajo",
+      "definition": {
+        "ko": "1910년 바르셀로나에서 창립된 스페인의 아나르코생디칼리슴 노동조합 연맹. 노동자 자주조직, 직접행동, 연방주의를 중시했다. 스페인 내전 중 공화파의 저항과 생산·생활의 집단화에 참여했으며, 일부 활동가의 정부 참여는 운동 내부의 논쟁을 낳았다. 정당인 스페인 공산당이나 또 다른 노조 연맹인 UGT와는 별개의 조직이다.",
+        "en": "Spanish anarcho-syndicalist trade-union confederation founded in Barcelona in 1910. It emphasized worker self-organization, direct action, and federalism. During the Spanish Civil War it participated in resistance on the Republican side and in collectivization. Government participation by some activists provoked controversy within the movement. It is distinct from the Communist Party of Spain and the UGT union federation."
+      },
+      "body": {
+        "ko": "CNT는 노동조합 조직을 노동조건 개선의 수단이자 사회를 바꾸는 기반으로 보았다. 조합원의 참여와 연합체의 자율성을 중시하는 조직 원리는 의회 정당을 통한 권력 획득과 다른 정치적 경로를 제시했다. 스페인의 아나키즘을 이해할 때 사상, 노조 조직, 개별 활동가의 선택을 구분할 필요가 있다.\n\n1936년 내전과 혁명은 이 원칙을 새로운 조건에 놓았다. 반란군에 맞선 전투와 집단화에 참여하는 한편, 정부와 협력할지 여부가 첨예한 문제가 되었다. CNT 계열의 페데리카 몬세니가 공화국 정부에서 장관을 맡은 일은 이러한 긴장을 드러낸다. 모든 아나키스트가 정부 참여에 동의했던 것은 아니며, 에마 골드만과의 논쟁은 그 차이를 보여준다.\n\n이 문헌에서 CNT는 정치조직의 이름으로만 등장하지 않는다. 공화파를 지원한 문화인과 활동가들의 경력에도 연결된다. 약칭만으로 다른 나라의 조직과 혼동하지 않도록 국가와 정식 명칭을 함께 적는다.",
+        "en": "The CNT treated union organization both as a means of improving working conditions and as a basis for social transformation. Member participation and federated autonomy offered a different political route from seeking power through a parliamentary party. Anarchist ideas, union institutions, and individual activists’ decisions should nevertheless be distinguished.\n\nWar and revolution in 1936 placed these principles under new pressures. Participation in resistance and collectivization coexisted with disputes over cooperation with the government. Federica Montseny’s acceptance of a cabinet post exposed that tension. Government participation was not accepted by all anarchists, as her disagreement with Emma Goldman demonstrates.\n\nIn this volume the CNT also appears in the lives of cultural figures and activists who supported the Republic. Its country and full name are specified to avoid confusion with organizations elsewhere that use similar names or initials."
+      },
+      "period": {
+        "ko": "1910년 창립",
+        "en": "Founded in 1910"
+      },
+      "startYear": 1910,
+      "category": "international",
+      "sources": [
+        "https://www.cnt.es/whats-cnt/",
+        "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+      ],
+      "people": [
+        "federica-montseny",
+        "emma-goldman"
+      ],
+      "events": [
+        "spanish-civil-war"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "Spanish anarcho-syndicalist trade-union confederation founded in Barcelona in 1910. It emphasized worker self-organization, direct action, and federalism. During the Spanish Civil War it participated in resistance on the Republican side and in collectivization. Government participation by some activists provoked controversy within the movement. It is distinct from the Communist Party of Spain and the UGT union federation.",
+          "source": "https://www.cnt.es/whats-cnt/",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "body",
+          "claim": "The CNT treated union organization both as a means of improving working conditions and as a basis for social transformation. Member participation and federated autonomy offered a different political route from seeking power through a parliamentary party. Anarchist ideas, union institutions, and individual activists’ decisions should nevertheless be distinguished.\n\nWar and revolution in 1936 placed these principles under new pressures. Participation in resistance and collectivization coexisted with disputes over cooperation with the government. Federica Montseny’s acceptance of a cabinet post exposed that tension. Government participation was not accepted by all anarchists, as her disagreement with Emma Goldman demonstrates.\n\nIn this volume the CNT also appears in the lives of cultural figures and activists who supported the Republic. Its country and full name are specified to avoid confusion with organizations elsewhere that use similar names or initials.",
+          "source": "https://www.cnt.es/whats-cnt/",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "period",
+          "claim": "Founded in 1910",
+          "source": "https://www.cnt.es/whats-cnt/",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "startYear",
+          "claim": "1910",
+          "source": "https://www.cnt.es/whats-cnt/",
+          "locator": "Historical overview"
+        },
+        {
+          "field": "body",
+          "claim": "Government participation and anarchist disagreement",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapter 11"
+        },
+        {
+          "field": "definition",
+          "claim": "CNT and Republican participation",
+          "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353",
+          "locator": "Chapters 10–11"
+        }
+      ]
+    }
+  ],
+  "registration": {
+    "peopleEdits": [
+      9628,
+      9630,
+      9632,
+      9634
+    ],
+    "sectionEdits": [
+      9629,
+      9631,
+      9633,
+      9635
+    ],
+    "termReceipts": [
+      {
+        "id": "second-spanish-republic",
+        "submit": {
+          "status": "pending",
+          "suggestionId": "9636"
+        },
+        "review": {
+          "status": "approved",
+          "suggestionId": "9636",
+          "value": {
+            "id": "second-spanish-republic",
+            "sources": [
+              "https://www.congreso.es/es/cem/iirepesp",
+              "https://www.congreso.es/es/cem/const1931",
+              "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+            ],
+            "original": "Segunda República Española",
+            "startYear": 1931,
+            "endYear": 1939,
+            "category": "party-state",
+            "parentId": null,
+            "sortOrder": 19567415,
+            "term": {
+              "ko": "스페인 제2공화국",
+              "en": "Second Spanish Republic"
+            },
+            "definition": {
+              "ko": "1931년 왕정 붕괴 뒤 수립되어 1939년 내전 패배까지 스페인을 통치한 공화정. 1931년 헌법은 의회정치, 여성의 동등한 참정권, 종교의 자유와 국가의 비종교성을 규정했다. 공화국에는 서로 다른 정치 세력이 경쟁했고, 1936년 군사반란과 내전 이후에도 공화파 내부의 전쟁·혁명 전략은 일치하지 않았다. 폴란드 제2공화국이나 스페인 제1공화국과 구별된다.",
+              "en": "Republican regime governing Spain from the fall of the monarchy in 1931 until defeat in the civil war in 1939. Its constitution established parliamentary institutions, equal voting rights for women, religious freedom, and a state without an official religion. Rival political forces contested its direction, and Republican supporters remained divided over war and revolution after the military rebellion of 1936. It is distinct from the Second Polish Republic and Spain’s First Republic."
+            },
+            "body": {
+              "ko": "1931년 공화국 수립은 군주정에서 공화정으로의 제도적 전환이었다. 같은 해 12월 제정된 헌법은 단원제 의회와 대통령을 두고 시민적 권리와 사회적 권리를 규정했다. 지역 자치와 정교 관계도 중요한 쟁점이었다. 따라서 공화국을 하나의 정당이나 특정 이념과 동일시하면 서로 경쟁한 정치 세력과 제도 변화가 가려진다.\n\n1936년 군사반란은 내전으로 이어졌다. 공화국을 지지한 세력에는 공화주의자, 사회주의자, 공산주의자, 아나키스트 등이 있었지만 전쟁 수행과 사회혁명의 관계를 둘러싼 입장은 달랐다. 정부에 참여한 페데리카 몬세니와 이를 비판한 에마 골드만의 논쟁은 이러한 차이를 보여준다. 공화국 정부와 공화파 전체, 개별 정당·노조를 구분해 읽어야 한다.\n\n『스페인 내전의 알려지지 않은 이야기들』은 이 정치적 배경 위에서 국제 의용병과 여성, 어린이, 문화인들의 경험을 살핀다. 국가를 생략한 ‘제2공화국’이라는 표현은 다른 나라의 동명 체제와 혼동될 수 있으므로 정식 명칭을 사용한다.",
+              "en": "The establishment of the Republic in 1931 changed Spain’s constitutional regime. The December constitution provided for a unicameral parliament, a president, and civil and social rights. Regional autonomy and relations between church and state were central issues. Identifying the Republic with a single party or ideology obscures both political competition and institutional change.\n\nThe military rebellion of 1936 developed into civil war. Republicans, socialists, communists, and anarchists opposed the rebellion, but disagreed over the relationship between fighting the war and pursuing social revolution. The dispute between Federica Montseny, who joined the government, and Emma Goldman illustrates those differences. The Republican government, the broader Republican camp, and individual parties or unions should be distinguished.\n\nUntold Stories of the Spanish Civil War places volunteers, women, children, and cultural figures within this setting. The qualified name distinguishes the regime from similarly named republics in other countries."
+            },
+            "period": {
+              "ko": "1931–1939",
+              "en": "1931–1939"
+            },
+            "aliases": {
+              "ko": [],
+              "en": []
+            },
+            "people": [
+              "federica-montseny",
+              "largo-caballero",
+              "manuel-azana"
+            ],
+            "events": [
+              "spanish-civil-war"
+            ],
+            "revision": "v1-c211b4cf8349ce6e88b685d76dda18b30b3438e85d0b652bc20b88aa8768b211",
+            "evidence": [],
+            "enrichment": []
+          }
+        }
+      },
+      {
+        "id": "spanish-cnt",
+        "submit": {
+          "status": "pending",
+          "suggestionId": "9637"
+        },
+        "review": {
+          "status": "approved",
+          "suggestionId": "9637",
+          "value": {
+            "id": "spanish-cnt",
+            "sources": [
+              "https://www.cnt.es/whats-cnt/",
+              "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. https://doi.org/10.4324/9781003414353"
+            ],
+            "original": "Confederación Nacional del Trabajo",
+            "startYear": 1910,
+            "endYear": null,
+            "category": "international",
+            "parentId": null,
+            "sortOrder": 19567425,
+            "term": {
+              "ko": "스페인 전국노동총연맹(CNT)",
+              "en": "Spanish National Confederation of Labour (CNT)"
+            },
+            "definition": {
+              "ko": "1910년 바르셀로나에서 창립된 스페인의 아나르코생디칼리슴 노동조합 연맹. 노동자 자주조직, 직접행동, 연방주의를 중시했다. 스페인 내전 중 공화파의 저항과 생산·생활의 집단화에 참여했으며, 일부 활동가의 정부 참여는 운동 내부의 논쟁을 낳았다. 정당인 스페인 공산당이나 또 다른 노조 연맹인 UGT와는 별개의 조직이다.",
+              "en": "Spanish anarcho-syndicalist trade-union confederation founded in Barcelona in 1910. It emphasized worker self-organization, direct action, and federalism. During the Spanish Civil War it participated in resistance on the Republican side and in collectivization. Government participation by some activists provoked controversy within the movement. It is distinct from the Communist Party of Spain and the UGT union federation."
+            },
+            "body": {
+              "ko": "CNT는 노동조합 조직을 노동조건 개선의 수단이자 사회를 바꾸는 기반으로 보았다. 조합원의 참여와 연합체의 자율성을 중시하는 조직 원리는 의회 정당을 통한 권력 획득과 다른 정치적 경로를 제시했다. 스페인의 아나키즘을 이해할 때 사상, 노조 조직, 개별 활동가의 선택을 구분할 필요가 있다.\n\n1936년 내전과 혁명은 이 원칙을 새로운 조건에 놓았다. 반란군에 맞선 전투와 집단화에 참여하는 한편, 정부와 협력할지 여부가 첨예한 문제가 되었다. CNT 계열의 페데리카 몬세니가 공화국 정부에서 장관을 맡은 일은 이러한 긴장을 드러낸다. 모든 아나키스트가 정부 참여에 동의했던 것은 아니며, 에마 골드만과의 논쟁은 그 차이를 보여준다.\n\n이 문헌에서 CNT는 정치조직의 이름으로만 등장하지 않는다. 공화파를 지원한 문화인과 활동가들의 경력에도 연결된다. 약칭만으로 다른 나라의 조직과 혼동하지 않도록 국가와 정식 명칭을 함께 적는다.",
+              "en": "The CNT treated union organization both as a means of improving working conditions and as a basis for social transformation. Member participation and federated autonomy offered a different political route from seeking power through a parliamentary party. Anarchist ideas, union institutions, and individual activists’ decisions should nevertheless be distinguished.\n\nWar and revolution in 1936 placed these principles under new pressures. Participation in resistance and collectivization coexisted with disputes over cooperation with the government. Federica Montseny’s acceptance of a cabinet post exposed that tension. Government participation was not accepted by all anarchists, as her disagreement with Emma Goldman demonstrates.\n\nIn this volume the CNT also appears in the lives of cultural figures and activists who supported the Republic. Its country and full name are specified to avoid confusion with organizations elsewhere that use similar names or initials."
+            },
+            "period": {
+              "ko": "1910년 창립",
+              "en": "Founded in 1910"
+            },
+            "aliases": {
+              "ko": [],
+              "en": []
+            },
+            "people": [
+              "emma-goldman",
+              "federica-montseny"
+            ],
+            "events": [
+              "spanish-civil-war"
+            ],
+            "revision": "v1-8bd6ce200ae831742b69e8e4395c2f58cb2678001fe1ec2c0dd769b636b614b9",
+            "evidence": [],
+            "enrichment": []
+          }
+        }
+      }
+    ],
+    "excludedByUser": [
+      "스페인 내전의 여성 민병대원"
+    ],
+    "note": "Created through shared Admin person service and term pipeline submit/review. National citizenship not inferred; original national background sourced. No bare ambiguous aliases registered."
+  }
+}
