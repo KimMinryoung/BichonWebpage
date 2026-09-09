@@ -1,0 +1,6 @@
+{
+  "localized": ["term", "definition", "body", "period"],
+  "factFields": ["definition", "body", "period", "startYear", "endYear"],
+  "limits": {"definition": [400, 900]},
+  "topics": ["definition", "history", "distinctions", "examples", "relations"]
+}

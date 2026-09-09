@@ -11,6 +11,7 @@
 | CommuLingo 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
 | CommuLingo DB 후속 개선 후보 | [미구현 검토 목록](commulingo-database-followups.md) |
 | CommuLingo 인물 편집 개선 | [현행 규칙·구현 체크리스트](commulingo-people-editing-plan.md) |
+| CommuLingo 용어 편집·파이프라인 | [근거·revision·검토와 private RPC](commulingo-term-editorial.md) |
 | CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
 | CommuLingo 세계지도·국가 허브 | [지도·국가·사건 연결](commulingo-world-map.md) |
 | SEO 인덱싱 | [기존 계획](seo-indexing-plan.md) |
