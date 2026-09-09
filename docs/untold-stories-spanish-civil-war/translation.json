@@ -1,0 +1,1003 @@
+{
+  "id": "untold-stories-spanish-civil-war",
+  "title": "스페인 내전의 알려지지 않은 이야기들",
+  "byline": "라아난 레인·주자네 체프 엮음",
+  "bylineNote": "Untold Stories of the Spanish Civil War",
+  "sourceLang": "en",
+  "headnote": [
+    "스페인 내전에 참여한 여성·어린이·국제 의용병의 경험을 다룬 공동 연구서다. 유대인과 팔레스타인·튀르키예 출신 참가자 등 기존 서술에서 상대적으로 적게 다루어진 목소리를 문서고 사료와 문학·영화 자료를 통해 살핀다.",
+    "서론과 14개 장, 주석·참고문헌, 필자 소개·찾아보기와 도판 12점을 수록한 한국어 기계 번역이다. 참고문헌과 주석의 서지 정보는 원어로 보존했다."
+  ],
+  "bibliography": [
+    "원전: Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War, Routledge, 2024. 전자판 공개: 2023년 11월. DOI: 10.4324/9781003414353.",
+    "번역 저본: Airlangga University 공개 저장소의 285쪽 PDF. https://oer.unair.ac.id/items/show/2510",
+    "원문 및 번역 이용허락: CC BY-NC-SA 4.0. https://creativecommons.org/licenses/by-nc-sa/4.0/ — 저자 표시·비영리·동일조건변경허락. 권리 정보: https://www.loc.gov/item/2023035910/",
+    "번역: CommuLingo 기존 영어→한국어 사료 번역 파이프라인, 2026년 9월."
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/untold-stories-spanish-civil-war.html",
+  "glossary": {
+    "people": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/people.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Raanan Rein": "라아난 레인",
+      "Susanne Zepp": "주자네 체프",
+      "International Brigades": "국제여단",
+      "Spanish Civil War": "스페인 내전",
+      "Franco": "프랑코",
+      "Ruth Rewald": "루트 레발트",
+      "Emma Goldman": "에마 골드만",
+      "Federica Montseny": "페데리카 몬세니"
+    }
+  },
+  "documents": [
+    {
+      "id": "chapter-0-body",
+      "titleKo": "서론",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-0",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        36
+      ],
+      "startsWith": "Raanan Rein and Susanne Zepp",
+      "endsWith": "Rein and Susanne Zepp Tel Aviv, Berlin, and Essen, June 2023",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-0-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-0",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        36,
+        40
+      ],
+      "startsWith": "1. Sam Jones, “Spain Passes Law to Bring ‘Justice’ to Franco",
+      "endsWith": "no distingue entre víctimas,” elDiario.es, February 5, 2023.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-1-body",
+      "titleKo": "1. 외국인 의용병: 역사서술의 새로운 동향",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-1",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        40
+      ],
+      "startsWith": "Nir Arielli",
+      "endsWith": "ssibly, new insights that will help us to reassess the past.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-1-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-1",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        40,
+        83
+      ],
+      "startsWith": "1. Cfr Richard Baxell, “Myths of the International Brigades,",
+      "endsWith": " newlinesmag.com/argument/the-kurds-who-died-for-palestine/.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-1-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-1",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        83,
+        130
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "rigades and the Spanish Civil War. London: Bloomsbury, 2018.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-2-body",
+      "titleKo": "2. 마드리드는 베를린 가까이에 있다: 독일 연방문서보관소에 남은 스페인 내전의 알려지지 않은 이야기",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-2",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        42
+      ],
+      "startsWith": "Susanne Zepp",
+      "endsWith": "hem in research on the Spanish Civil War and German history.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-2-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-2",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        42,
+        53
+      ],
+      "startsWith": "1. Emily Ross, “The Problem of Anonymity in Archives: A Lite",
+      "endsWith": "ts us to the creation of the People’s Front also in Germany.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-2-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-2",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        53,
+        61
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "rgrundsender, n.p. Göttingen: Kurzwellen-Pressedienst, 1991.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-3-body",
+      "titleKo": "3. 지중해 양안에서 사회정의를 위해 싸운 유대인 여성들",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-3",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        72
+      ],
+      "startsWith": "Raanan Rein",
+      "endsWith": "tesy of her son and daughter in-law, Pierre and Jean Laroche",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-3-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-3",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        72,
+        130
+      ],
+      "startsWith": "1. “Yael Gerson,” Kol Ha’am, February 1941, 1 [in Hebrew].",
+      "endsWith": "58. Diamant, Combattants juifs, 168.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-3-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-3",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        130,
+        168
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "n Documents (1919–1943) [in Hebrew]. Jerusalem: Keter, 2005.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-4-body",
+      "titleKo": "4. 다른 사람들의 전쟁을 치르다: 스페인 내전의 아랍계 팔레스타인 의용병",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-4",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        80
+      ],
+      "startsWith": "Omri Elmaleh",
+      "endsWith": "ing place, April 4, 1938. Source: Courtesy of Hussein Yassin",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-4-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-4",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        80,
+        193
+      ],
+      "startsWith": "1. Najati Sidqi, Mudhakkirat Najati Sidqi (Beirut: Institute",
+      "endsWith": "ati Sidqi wafada’ aldhaakira,” Al-Ayyam, September 29, 2005.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-4-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-4",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        193,
+        266
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "gades and the Spanish Civil War. New York: Bloomsbury, 2017.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-5-body",
+      "titleKo": "5. 내전 전야의 진보적 교육과 프랑코 체제에 의한 파괴 문제",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-5",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        40
+      ],
+      "startsWith": "Jorge Cáceres-Muñoz, Tamar Groves, and",
+      "endsWith": " illuminate more signs of continuity than one might imagine.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-5-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-5",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        40,
+        107
+      ],
+      "startsWith": "1. Manuel De Puelles Benítez, “La educación en el constituci",
+      "endsWith": "za: Fundación Sindicalismo y Cultura de CCOO, 2008), 227–42.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-5-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-5",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        107,
+        174
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "as en Gipuzkoa.” Historia de la Educación 34 (2015): 305–36.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-6-body",
+      "titleKo": "6. 사회적·문학적 참여: 루트 레발트와 스페인 내전의 어린이들",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-6",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        76
+      ],
+      "startsWith": "Lena Hein",
+      "endsWith": " Ruth Rewald in exile in Paris. Source: Private: Dirk Krüger",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-6-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-6",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        76,
+        107
+      ],
+      "startsWith": "1. The designation “SAPMO” in German stands for “Stiftung Ar",
+      "endsWith": "ales.org/ wp-content/uploads/Los-ninos-de-Penarroya-web.pdf.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-6-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-6",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        107,
+        116
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "it einem Nachwort von Dirk Krüger. Cologne: Röderberg, 1987.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-7-body",
+      "titleKo": "7. 아동기의 정치화와 탈정치화: 노스스톤엄 바스크 아동 수용소",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-7",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        95
+      ],
+      "startsWith": "Dror Sharon",
+      "endsWith": "r-Hart, courtesy of © archiv.fotohof.at and Peter Suschitzky",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-7-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-7",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        95,
+        157
+      ],
+      "startsWith": "1. No author, “Refugees from Bilbao,” The Times, May 23, 193",
+      "endsWith": "62. Cloud, The Basque Children, 62–63.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-7-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-7",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        157,
+        216
+      ],
+      "startsWith": "Primary Sources",
+      "endsWith": "uérfanas: los niños y la Guerra Civil. Madrid: Taurus, 2009.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-8-body",
+      "titleKo": "8. 『스페인의 아이들』과 「스페인 민중에게 바치는 경의」 사이: 주변부에서 바라본 사무엘 글루스베르크의 연대",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-8",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        31
+      ],
+      "startsWith": "Rosalie Sitman",
+      "endsWith": "f this text and must necessarily be left for future studies.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-8-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-8",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        31,
+        101
+      ],
+      "startsWith": "1. Cynthia Gabbay, “Identity, Gender and Anarchist Practices",
+      "endsWith": "70. Maíz, “Las redes.”",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-8-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-8",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        101,
+        185
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "etworks in Latin America.” Catedral Tomada 6, no. 11 (2018).",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-9-body",
+      "titleKo": "9. 외교의 무대: 시프리아노 데 리바스 체리프(1891~1967)와 스페인 내전",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-9",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        46
+      ],
+      "startsWith": "Michael Hahn",
+      "endsWith": "“Irene, quiere decir la Paz.” (Irene means peace.)",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-9-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-9",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        46,
+        138
+      ],
+      "startsWith": "1. The experience is refected in Cipriano de Rivas Cherif, “",
+      "endsWith": "as de la guerra de España (Barcelona: Crítica, 2002), 33–34.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-9-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-9",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        138,
+        203
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "y objetivos sobre la guerra civil. Barcelona: Crítica, 1977.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-10-body",
+      "titleKo": "10. 훌륭한 공화주의자답게: 1930년대의 플라멩코와 정치적 저항",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-10",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        62
+      ],
+      "startsWith": "Shai Efrat",
+      "endsWith": "hen famenco was already considered a famous national symbol.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-10-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-10",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        62,
+        90
+      ],
+      "startsWith": "1. Alfredo Grimaldos, Historia social del famenco (Barcelona",
+      "endsWith": "e tratamiento,” Antropología Experimental 15 (2015): 465–82.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-10-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-10",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        90,
+        112
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "cas/Manuel-Vallejo-60-aniversario-muerte_0_ 1481252090.html.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-11-body",
+      "titleKo": "11. 혁명을 이야기하다: 스페인 내전기의 페데리카 몬세니와 에마 골드만",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-11",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        51
+      ],
+      "startsWith": "Catarina von Wedemeyer",
+      "endsWith": "d to “do away with the misery and sufering of the poor.”[72]",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-11-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-11",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        51,
+        123
+      ],
+      "startsWith": "1. Susana Sueiro Seoane, “Federica Montseny y Emma Goldman: ",
+      "endsWith": "72. Goldman, “Durruti Is Dead, Yet Living.”",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-11-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-11",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        123,
+        183
+      ],
+      "startsWith": "Archives",
+      "endsWith": "lution to the Spanish Civil War. Boston: Beacon Press, 1989.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-12-body",
+      "titleKo": "12. 여성 민병대원들: 스크린 속 여성 전투원, 망각과 기억의 회복",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-12",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        27
+      ],
+      "startsWith": "Gabriela Jonas Aharoni",
+      "endsWith": "n the (re)construction of memory and historical “truth.”[35]",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-12-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-12",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        27,
+        62
+      ],
+      "startsWith": "1. Bill Nichols, La representación de la realidad. Cuestione",
+      "endsWith": "nd Janett Reinstädler (Berlin and Boston: De Gruyter, 2020).",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-12-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-12",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        62,
+        102
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "o Virtual de la Mujer Combatiente. www.mujeresenguerra.com/.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-13-body",
+      "titleKo": "13. 스페인 내전기의 텍스트 개입: 튀르키예에서 전해진 연대의 목소리",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-13",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        39
+      ],
+      "startsWith": "Esra Akkaya",
+      "endsWith": " pasts, presents, and futures through the prism of the poem.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-13-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-13",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        39,
+        47
+      ],
+      "startsWith": "1. Yücel Güçlü, “The Nyon Arrangement of 1937 and Turkey,” M",
+      "endsWith": "ttin Bozok, “İspanyol kadını,” Yeni Adam, April 8, 1937, 12.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-13-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-13",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        47,
+        51
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "r yağıyor.” In Bütün Şiirler 4, 772–74. Istanbul: YKY, 2019.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-14-body",
+      "titleKo": "14. 스페인의 메아리: 제2차 세계대전 중 유고슬라비아계 캐나다인 스페인 내전 참전용사와 동지들의 특수작전집행부 모집",
+      "heading": true,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-14",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        0,
+        73
+      ],
+      "startsWith": "Michael Petrou [1]",
+      "endsWith": "nd who have now found their way back to build something new.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-14-notes",
+      "titleKo": "주석",
+      "heading": true,
+      "notes": true,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-14",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        73,
+        150
+      ],
+      "startsWith": "1. This chapter is based on the following article: Michael P",
+      "endsWith": "er the war. See MacLaren, Canadians Behind Enemy Lines, 151.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    },
+    {
+      "id": "chapter-14-bibliography",
+      "titleKo": "주석",
+      "heading": false,
+      "notes": false,
+      "source": {
+        "format": "html",
+        "selector": "#chapter-14",
+        "path": "/home/grass/frontend/docs/untold-stories-spanish-civil-war/prepared.html",
+        "sha256": "0f948b71b109cf45d38fbd5e2ef2d14dc0fcd6b08bb6477b16711cfb110e8302"
+      },
+      "blocks": [
+        150,
+        181
+      ],
+      "startsWith": "Bibliography",
+      "endsWith": "tions Executive and Yugoslavia. London: C. Hurst & Co, 2003.",
+      "register": "학술서의 한다체로 빠짐없이 번역한다. 직접 인용은 원문의 어조를 유지한다. 영어 PDF에서 fi/fl/ff 합자가 f로 추출된 단어는 문맥에 맞게 읽는다. 주석의 서지 정보와 문서고 청구기호를 생략하지 않는다. [숫자]는 각주 참조이므로 그대로 유지한다.",
+      "tagMap": {
+        "h3": "h2"
+      }
+    }
+  ],
+  "frozen": "공개본은 별도 번역한 필자 소개·찾아보기, 원어 참고문헌, 교열 수정, 도판과 장별 각주 링크를 병합했다. 단일 스펙 재실행은 이 내용을 지우므로 금지한다."
+}

@@ -4688,6 +4688,42 @@
           "SALT II agreement"
         ]
       }
+    },
+    {
+      "id": "untold-stories-spanish-civil-war",
+      "file": "untold-stories-spanish-civil-war.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "스페인 내전의 알려지지 않은 이야기들",
+        "en": "Untold Stories of the Spanish Civil War"
+      },
+      "description": {
+        "ko": "여성·어린이·국제 의용병 등 스페인 내전의 덜 알려진 경험을 다룬 공동 연구서. 서론과 14개 장, 주석 771개, 도판 12점, 필자 소개·찾아보기를 수록한 한국어 기계 번역. 참고문헌과 서지 정보는 원어로 보존했다.",
+        "en": "Korean machine translation of the introduction, fourteen chapters, 771 notes, twelve illustrations, contributors and index. Bibliographies and citation details retain their original languages."
+      },
+      "kind": {
+        "ko": "연구서",
+        "en": "Scholarship"
+      },
+      "source": "Raanan Rein and Susanne Zepp (eds.), Untold Stories of the Spanish Civil War. Routledge, 2024. DOI: 10.4324/9781003414353. CC BY-NC-SA 4.0.",
+      "aliases": {
+        "ko": [
+          "『스페인 내전의 알려지지 않은 이야기들』"
+        ],
+        "en": [
+          "Untold Stories of the Spanish Civil War"
+        ]
+      },
+      "date": "2024",
+      "people": [
+        "emma-goldman",
+        "francisco-franco",
+        "dolores-ibarruri"
+      ],
+      "events": [
+        "spanish-civil-war"
+      ],
+      "addedAt": "2026-09-09"
     }
   ]
 }
