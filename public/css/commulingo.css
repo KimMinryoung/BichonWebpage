@@ -3251,7 +3251,23 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     border-top: 1px solid var(--border);
     margin-top: 12px;
     padding-top: 20px;
+    padding-inline: var(--content-inset);
     scroll-margin-top: 82px;
+}
+
+/* Maps and self-padded cards use the section width; prose keeps its inset. */
+.commu-person-detail-section.commu-section-wide {
+    padding-inline: 0;
+}
+
+.commu-section-wide > h2,
+.commu-section-wide > .commu-event-timeline-header {
+    padding-inline: var(--content-inset);
+}
+
+.commu-section-wide > .commu-event-timeline-list,
+.commu-section-wide > .commu-tl-filter {
+    margin-inline: var(--content-inset);
 }
 
 .commu-person-detail-section h2,
@@ -3515,7 +3531,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-card:hover .commu-event-original { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 .commu-event-card:hover .commu-event-category { color: var(--clr-cream, #f8edca); background: transparent; border-color: color-mix(in srgb, var(--clr-cream, #f8edca) 45%, var(--accent, #214d2e)); }
 .commu-event-card h2, .commu-event-card h3 { margin: .1rem 0 .15rem; font-size: 1.05rem; }
-.commu-event-card p, .commu-event-head > p, .commu-event-people-grid p { line-height: 1.65; }
+.commu-event-card p, .commu-event-head > p { line-height: 1.65; }
 /* Type scale taken from the person card: name 1.05rem, prose .88rem, meta
    .78rem, so the card has a hierarchy to scan rather than one flat block. */
 .commu-event-card p { margin: .45rem 0 0; font-size: .88rem; line-height: 1.6; }
@@ -3544,7 +3560,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    --accent: the accent green fails contrast as text on the dark canvas. */
 .commu-event-period { display: block; color: var(--text-muted); font-weight: 700; letter-spacing: .04em; }
 .commu-event-card-link { font-weight: 700; }
-.commu-event-head { border-left: 4px solid var(--accent, #b84f4f); padding: .5rem 0 0 1.1rem; margin: 1.1rem 0 0; }
+.commu-event-head { border-left: 4px solid var(--accent, #b84f4f); padding: .5rem var(--content-inset) 0; margin: 1.1rem 0 0; }
 .commu-event-head > p:last-child { margin-bottom: 0; }
 .commu-event-head h1 { margin: .25rem 0; }
 .commu-event-question { font-weight: 700; font-size: 1.08rem; }
@@ -3567,7 +3583,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-timeline-header h2 { margin: 0; min-width: 0; }
 .commu-event-map-tools { flex-shrink: 0; }
 .commu-event-map-tools .commu-world-map-controls { position: static; }
-.commu-event-map-help { margin-top: .5rem; color: var(--text-secondary); font-size: .8rem; }
 .emap-sea { fill: var(--bg-surface); }
 .emap-land { fill: color-mix(in srgb, var(--border) 13%, var(--bg-surface)); stroke: color-mix(in srgb, var(--border) 40%, transparent); stroke-width: .6; }
 .emap-grid { stroke: color-mix(in srgb, var(--border) 8%, transparent); stroke-width: 1; }
@@ -3725,11 +3740,12 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 /* Contents, rendered from three body sections up — the point where a reader
    starts wanting to skip rather than scroll. */
+/* The whole numbered row is a link, using the same flat hover as site menus. */
 .commu-event-toc {
     background: var(--bg-surface);
-    border: 1px solid var(--border, #555);
+    border: 1px solid var(--border);
     border-radius: 0;
-    padding: .9rem 1.1rem;
+    padding: 0;
     margin: 1.4rem 0 0;
 }
 .commu-event-toc-head {
@@ -3737,32 +3753,40 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     letter-spacing: .04em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin: 0 0 .65rem;
+    margin: 0;
+    padding: var(--space-3) var(--content-inset);
+    border-bottom: 1px solid var(--border);
 }
-.commu-event-toc ol { margin: 0; padding-left: 2rem; }
-.commu-event-toc li { padding-left: .35rem; line-height: 1.5; }
-.commu-event-toc li::marker {
-    color: var(--text-muted);
-    font-size: .8rem;
-    font-variant-numeric: tabular-nums;
-}
-.commu-event-toc li + li { border-top: 1px solid color-mix(in srgb, var(--border) 35%, transparent); }
+.commu-event-toc ol { margin: 0; padding: 0; list-style: none; counter-reset: event-toc; }
+.commu-event-toc li { padding: 0; line-height: 1.5; counter-increment: event-toc; }
+.commu-event-toc li + li { border-top: 1px solid var(--border); }
 .commu-event-toc a {
-    display: block;
-    padding: .6rem .4rem;
+    display: grid;
+    grid-template-columns: 3ch minmax(0, 1fr);
+    align-items: baseline;
+    gap: var(--space-2);
+    min-height: var(--control-height);
+    padding: var(--space-3) var(--content-inset);
     color: var(--text-primary);
     font-size: .94rem;
     text-decoration: none;
     overflow-wrap: anywhere;
+    transition: background-color var(--duration-fast) var(--ease-standard);
+}
+.commu-event-toc a::before {
+    content: counter(event-toc) ".";
+    white-space: nowrap;
+    color: var(--text-muted);
+    font-size: .8rem;
+    font-variant-numeric: tabular-nums;
 }
 .commu-event-toc a:hover,
 .commu-event-toc a:focus-visible {
     color: var(--text-primary);
     background: var(--bg-surface-hover);
-    text-decoration: underline;
-    text-underline-offset: .2em;
+    text-decoration: none;
 }
-.commu-event-toc a:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
+.commu-event-toc a:focus-visible { outline: 2px solid var(--text-primary); outline-offset: -2px; }
 
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
@@ -3800,7 +3824,15 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-event-people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .8rem; }
 .commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--accent, #b84f4f); font-style: normal; font-weight: 700; font-size: .9rem; }
 .commu-event-people-grid strong, .commu-event-people-grid small { display: block; margin-top: .2rem; }
-.commu-event-sources { font-size: .88rem; opacity: .8; }
+/* Participation notes are supporting card copy, below the name and role. */
+.commu-event-people-grid > a > p {
+    margin: var(--space-2) 0 0;
+    font-size: var(--text-sm);
+    font-weight: 400;
+    line-height: var(--leading-normal);
+    color: var(--text-secondary);
+}
+.commu-event-sources { padding-inline: var(--content-inset); font-size: .88rem; opacity: .8; }
 .commu-event-sources a { margin-left: .45rem; }
 .commu-person-event-links { list-style: none; padding: 0; margin: 0; }
 .commu-person-event-links li + li { margin-top: .6rem; }

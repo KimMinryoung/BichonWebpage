@@ -1,6 +1,6 @@
 <%# Shared reference documents and reports for dictionary detail pages. %>
         <% if (relatedDocs && relatedDocs.length) { %>
-        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-docs">
+        <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="related-docs">
             <h2 id="related-docs"><%= copy.referenceDocuments %></h2>
             <ul class="commu-related-report-list commu-related-doc-list">
                 <% relatedDocs.forEach(function(doc) { %>
@@ -11,7 +11,7 @@
         <% } %>
 
         <% if (relatedReports && relatedReports.length) { %>
-        <section class="commu-person-detail-section commu-related-reports" aria-labelledby="related-reports">
+        <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="related-reports">
             <h2 id="related-reports"><%= copy.relatedReports %></h2>
             <ul class="commu-related-report-list">
                 <% relatedReports.forEach(function(report) { %>

@@ -71,6 +71,7 @@
   --content-wide: 61.25rem;
   --content-home: 60rem;
   --gutter: clamp(0.75rem, 3vw, 1.25rem);
+  --content-inset: clamp(var(--space-4), 3vw, var(--space-6));
 
   --duration-fast: 120ms;
   --duration-normal: 200ms;

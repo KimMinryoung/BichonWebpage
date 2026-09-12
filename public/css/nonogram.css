@@ -37,7 +37,7 @@
 /* ── Puzzle picker: bordered tabs, size under each title. The tabs wrap rather
    than scroll: a clipped row with no scrollbar read as cut off on phones. ── */
 .nono-picker { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
-.nono-picker > .games-kicker { padding-top: 17px; }
+.nono-picker > .games-kicker { padding: 17px var(--content-inset) 0; }
 .nono-picker > .games-kicker { flex: 0 0 auto; white-space: nowrap; }
 .nono-picker-items { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
 .games-shell .nono-tab { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-height: 0; padding: 9px 13px; background: var(--bg-surface); color: var(--text-secondary); font-size: .85rem; font-weight: 700; line-height: 1.2; white-space: nowrap; }

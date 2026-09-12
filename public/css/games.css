@@ -130,6 +130,11 @@
 }
 
 /* Keep text readable inside full-width sections without insetting their borders. */
-.games-shell > :is(.games-hero, .strike-heading, .nono-heading, .games-note, .strike-rules, .strike-reading) {
-  padding-inline: var(--gutter);
+.games-shell > :is(.games-hero, .strike-heading, .nono-heading, .games-note, .strike-rules, .strike-reading, #strikeAnnouncement),
+.games-shell > noscript > p,
+.strike-daybar,
+.strike-objectives,
+.strike-command,
+.games-shell .strike-history {
+  padding-inline: var(--content-inset);
 }

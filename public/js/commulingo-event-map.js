@@ -29,8 +29,6 @@
         viewport.setAttribute('role', 'region');
         viewport.setAttribute('aria-label', svg.getAttribute('aria-label') || document.title);
         tools.hidden = false;
-        var help = figure.querySelector('.commu-event-map-help');
-        if (help) help.hidden = false;
 
         function setScale(next) {
             next = Math.max(1, Math.min(maxZoom, next));

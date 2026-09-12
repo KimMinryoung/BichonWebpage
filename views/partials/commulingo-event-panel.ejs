@@ -43,13 +43,13 @@ var sections = p.event.bodySections || [];
         <% if (sections.length >= 3) { %>
         <nav class="commu-event-toc" aria-label="<%= strings.commuLingoViews.eventPanel.contents %>">
             <h2 class="commu-event-toc-head"><%= strings.commuLingoViews.eventPanel.contents %></h2>
-            <ol>
+            <ol role="list">
                 <% sections.forEach(function(section) { %>
-                <li><a href="#<%= section.id %>"><%- section.flagsHtml || '' %><%= section.label %></a></li>
+                <li><a href="#<%= section.id %>"><span class="commu-event-toc-label"><%- section.flagsHtml || '' %><%= section.label %></span></a></li>
                 <% }) %>
-                <li><a href="#event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></a></li>
-                <li><a href="#event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></a></li>
-                <li><a href="#event-people"><%= strings.commuLingoViews.eventPanel.relatedPeople %></a></li>
+                <li><a href="#event-outcome"><span class="commu-event-toc-label"><%= strings.commuLingoViews.eventPanel.consequences %></span></a></li>
+                <li><a href="#event-timeline"><span class="commu-event-toc-label"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></span></a></li>
+                <li><a href="#event-people"><span class="commu-event-toc-label"><%= strings.commuLingoViews.eventPanel.relatedPeople %></span></a></li>
             </ol>
         </nav>
         <% } %>
@@ -59,7 +59,7 @@ var sections = p.event.bodySections || [];
         </section>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>
         <% } %>
-        <section class="commu-person-detail-section commu-event-timeline" aria-labelledby="event-timeline">
+        <section class="commu-person-detail-section commu-section-wide commu-event-timeline" aria-labelledby="event-timeline">
             <div class="commu-event-timeline-header">
                 <h2 id="event-timeline"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></h2>
                 <% if (p.event.mapSvg) { %>
@@ -71,7 +71,6 @@ var sections = p.event.bodySections || [];
             <% if (p.event.mapSvg) { %>
             <figure class="commu-event-map commu-event-timeline-map">
                 <div class="commu-event-map-viewport"><%- p.event.mapSvg %></div>
-                <figcaption class="commu-event-map-help" hidden><%= en ? 'Zoom in, then scroll within the map to explore.' : '확대한 뒤 지도 안에서 스크롤해 다른 위치를 볼 수 있습니다.' %></figcaption>
             </figure>
             <% } %>
             <% if (p.event.hasCountryFilter) { %>
@@ -85,7 +84,7 @@ var sections = p.event.bodySections || [];
         <% if (!p.event.bodyHtml) { %>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>
         <% } %>
-        <section class="commu-person-detail-section commu-event-people" aria-labelledby="event-people">
+        <section class="commu-person-detail-section commu-section-wide commu-event-people" aria-labelledby="event-people">
             <h2 id="event-people"><%= strings.commuLingoViews.eventPanel.relatedPeople %> <span class="commu-event-people-count"><%= p.event.people.length %><%= strings.commuLingoViews.eventPanel.text %></span></h2>
             <% p.event.peopleGroups.forEach(function(group) { %>
             <div class="commu-event-people-group is-<%= group.kind %>">
