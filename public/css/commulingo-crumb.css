@@ -46,12 +46,12 @@ body.commulingo-page > .admin-bar {
     flex-wrap: nowrap;
     gap: 0 12px;
     justify-content: space-between;
-    margin-top: 14px;
+    margin-top: var(--crumb-offset);
     /* The bar follows the reader down the whole page, so its height is a
        standing cost on every screen. 34px is as low as it goes while the
        segments stay a comfortable tap: they fill the bar's full height, so the
        target is the row, not the glyph. */
-    min-height: 34px;
+    min-height: var(--crumb-height);
     padding: 0 10px;
     position: sticky;
     top: 0;
@@ -127,7 +127,7 @@ body.commulingo-page > .admin-bar {
     color: var(--text-primary);
     font-size: 0.86rem;
     font-weight: 700;
-    line-height: 32px;
+    line-height: calc(var(--crumb-height) - 2 * var(--border-width));
     min-width: 0;
     overflow: hidden;
     padding: 0 6px;

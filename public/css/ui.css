@@ -66,6 +66,16 @@ svg {
 }
 
 /* ===== Layout primitives ===== */
+/* Full-width application shell: align outer panels with the site menu.
+   Put reading/control gutters inside panels, never on this shell. */
+.ui-page-shell {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin-inline: 0;
+    padding-inline: 0;
+}
+
 .container {
     max-width: var(--content-default);
     padding-inline: var(--gutter);

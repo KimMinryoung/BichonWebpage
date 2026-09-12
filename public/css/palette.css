@@ -63,6 +63,10 @@
      lower 34px, since it follows the reader down the whole page. */
   --bar-height: 36px;
 
+  /* Shared spacing and height for section breadcrumbs below the site menu. */
+  --crumb-offset: 14px;
+  --crumb-height: 34px;
+
   --content-default: 50rem;
   --content-wide: 61.25rem;
   --content-home: 60rem;

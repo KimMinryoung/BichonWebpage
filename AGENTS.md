@@ -28,5 +28,6 @@ Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content agai
 - Strike game: [design and implementation](dev_docs/strike-game-handoff.md).
 - Deploy, preview, data/cache, auth: [operations reference](dev_docs/frontend-operations.md).
 - CommuLingo people must go through the Admin store/upsert tool; do not bypass validation with direct INSERTs. Host-mounted data changes affect production immediately.
+- UI changes must follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.
 - Verify visual changes with the browser. Read user-referenced screenshots before diagnosing them.
 - Keep this file limited to enduring constraints and routing links. Put formulas, procedures and completed-work history in topic documents. Current user instructions take precedence over past preferences.
