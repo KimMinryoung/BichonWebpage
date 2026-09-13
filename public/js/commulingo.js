@@ -42,7 +42,9 @@
         next: document.getElementById('commuNextBtn'),
         nextLesson: document.getElementById('commuNextLessonBtn'),
         review: document.getElementById('commuReviewBtn'),
-        reviewNote: document.getElementById('commuReviewNote')
+        reviewNote: document.getElementById('commuReviewNote'),
+        guide: document.getElementById('faction-guide'),
+        dictionary: document.getElementById('commuBookDictionary')
     };
 
     els.back.addEventListener('click', function() {
@@ -568,6 +570,18 @@
         return chapterScrollKey(next);
     }
 
+    function setBookContextHidden(hidden) {
+        [els.guide, els.dictionary].forEach(function(node) {
+            if (node) node.classList.toggle('is-hidden', hidden);
+        });
+    }
+
+    function scrollToQuiz() {
+        window.requestAnimationFrame(function() {
+            els.quiz.scrollIntoView({ behavior: 'auto', block: 'start' });
+        });
+    }
+
     function scrollToChapter(scrollKey) {
         if (!scrollKey) return;
         window.requestAnimationFrame(function() {
@@ -773,10 +787,12 @@
         saveLast(lesson);
         answered = false;
         hideNextLesson();
+        setBookContextHidden(true);
         els.list.classList.add('is-hidden');
         els.quiz.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
         renderLoadingLesson(lesson);
+        scrollToQuiz();
         loadLessonDetail(lesson)
             .then(function(loadedLesson) {
                 active = {
@@ -849,6 +865,7 @@
         answered = false;
         hideNextLesson();
         els.quiz.classList.add('is-hidden');
+        setBookContextHidden(false);
         els.list.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
         renderLessons();
@@ -1135,10 +1152,12 @@
         var lessonIds = Object.keys(byLesson);
         returnScrollLesson = lessonById(lessonIds[0]);
         hideNextLesson();
+        setBookContextHidden(true);
         els.list.classList.add('is-hidden');
         els.quiz.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
         renderLoadingLesson(lessonById(lessonIds[0]) || lessons[0]);
+        scrollToQuiz();
         Promise.all(lessonIds.map(function(id) {
             var lesson = lessonById(id);
             return lesson ? loadLessonDetail(lesson).catch(function() { return null; }) : Promise.resolve(null);

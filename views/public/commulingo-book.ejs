@@ -82,7 +82,7 @@
                         <div>
                             <p class="commu-faction-period"><%= layer.period %></p>
                             <h3 id="faction-layer-<%= layer.id %>"><%= factionText(layer.kind) %></h3>
-                            <p><%= factionText(layer.summary) %></p>
+                            <% if (layer.summary) { %><p class="commu-faction-summary"><%= factionText(layer.summary) %></p><% } %>
                         </div>
                     </header>
                     <% if (layer.axis) { %>
@@ -157,7 +157,7 @@
                { items: dict.docs || [], base: '/commulingo/docs/', label: lang === 'en' ? 'Reference texts' : '참고 문헌' }
            ].filter(function(group) { return group.items.length; }); %>
         <% if (dictGroups.length) { %>
-        <section class="box commu-book-dictionary" aria-labelledby="book-dictionary">
+        <section class="box commu-book-dictionary" id="commuBookDictionary" aria-labelledby="book-dictionary">
             <h2 id="book-dictionary"><%= lang === 'en' ? 'Dictionary entries in this book' : '이 책이 다루는 사전 항목' %></h2>
             <% dictGroups.forEach(function(group) { %>
             <h3><%= group.label %></h3>

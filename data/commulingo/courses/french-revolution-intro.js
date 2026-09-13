@@ -22,7 +22,7 @@ module.exports = {
   },
   "editorial": {
     "authoredAt": "2026-09-13",
-    "revision": 6,
+    "revision": 9,
     "interpretation": "Hobsbawm with separately identified primary evidence",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
     "sourceNotesFile": "data/commulingo/docs/french-revolution-intro.html"
@@ -41,8 +41,8 @@ module.exports = {
     "en": "The full picture includes constitutional monarchists and counter-revolution outside the legislature as well as parliamentary alignments, clubs, and popular politics. Four layers arrange them along axes appropriate to their moment and character."
   },
   "caveat": {
-    "ko": "주의 · 오늘날의 당원명부와 강령을 갖춘 정당 지도가 아닙니다. 푀양파는 혁명 자체를 모두 부정한 왕당파가 아니라 1791년 헌정에서 혁명을 멈추려 한 혁명 우파였고, 망명귀족·선서거부 성직자·지역 반란도 하나의 지휘계통이 아니었습니다.",
-    "en": "Caution · This is not a map of modern parties with fixed membership and platforms. The Feuillants were the Revolution’s constitutional-monarchist right, not simple rejectionists, while émigrés, refractory clergy, and regional insurgents did not form one chain of command."
+    "ko": "주의 · 오늘날의 당원명부와 강령을 갖춘 정당 지도가 아닙니다. 푀양파는 1789년의 변화 일부를 인정하면서 1791년 입헌군주제를 유지하려 했습니다. 망명귀족·선서거부 성직자·지역 반란도 하나의 지휘계통이 아니었습니다.",
+    "en": "Caution · This is not a map of modern parties with fixed membership and platforms. The Feuillants accepted parts of the changes since 1789 while seeking to preserve the constitutional monarchy of 1791. Émigrés, refractory clergy, and regional insurgents did not form one chain of command."
   },
   "layers": [
     {
@@ -51,21 +51,17 @@ module.exports = {
       "period": "1791–1794",
       "axis": {
         "left": {
-          "ko": "혁명 내부의 우측 경계",
-          "en": "Right edge within the Revolution"
+          "ko": "1791년 입헌군주제 유지",
+          "en": "Preserve the 1791 constitutional monarchy"
         },
         "right": {
-          "ko": "혁명 밖의 무장 반혁명",
-          "en": "Armed counter-revolution outside it"
+          "ko": "왕정복고·무장 저항",
+          "en": "Restore monarchy or resist by force"
         }
       },
       "kind": {
-        "ko": "혁명 우파와 반혁명 세력",
-        "en": "The revolutionary right and counter-revolution"
-      },
-      "summary": {
-        "ko": "이 행 전체가 혁명파 지도의 오른쪽 영역입니다. 입헌군주제를 지키려 한 푀양파부터 왕정복고 세력, 종교 갈등과 지역 반란까지 서로 다른 반대 흐름을 한 당으로 합치지 않고 구분합니다.",
-        "en": "This whole row belongs on the right side of the revolutionary map. It distinguishes Feuillant constitutional monarchists from restorationist, religious, and regional opposition rather than merging them into one party."
+        "ko": "입헌군주파와 반혁명 세력",
+        "en": "Constitutional monarchists and counter-revolution"
       },
       "groups": [
         {
@@ -76,8 +72,8 @@ module.exports = {
             "en": "Feuillants"
           },
           "alias": {
-            "ko": "입헌군주제파 · 혁명 우파",
-            "en": "constitutional monarchists · revolutionary right"
+            "ko": "입헌군주제파 · 1791년 의회 우파",
+            "en": "constitutional monarchists · right of the 1791 legislature"
           },
           "description": {
             "ko": "바렌 도주와 샹드마르스 사건을 거치며 자코뱅에서 갈라진 온건파였습니다. 1791년 헌법과 왕의 지위를 지키고 혁명의 추가 급진화를 끝내려 했습니다.",
@@ -219,10 +215,6 @@ module.exports = {
         "ko": "국민공회 의석 집단",
         "en": "National Convention alignments"
       },
-      "summary": {
-        "ko": "높은 좌석의 산악파, 낮은 좌석의 평원파, 의장 오른쪽의 지롱드파. 이름은 자리에서 왔지만 실제 갈등은 전쟁, 파리의 압력, 혁명정부의 집중 문제를 둘러쌌습니다.",
-        "en": "The Mountain sat high, the Plain below, and the Girondins to the president’s right. Their conflicts concerned war, pressure from Paris, and concentrated revolutionary government."
-      },
       "groups": [
         {
           "id": "gironde",
@@ -352,10 +344,6 @@ module.exports = {
       "kind": {
         "ko": "클럽과 파리의 대중정치",
         "en": "Clubs and popular politics in Paris"
-      },
-      "summary": {
-        "ko": "의원은 클럽에도 가입했고 신문·코뮌·구역 총회·민중운동이 의회를 압박했습니다. 따라서 ‘자코뱅=산악파=상퀼로트’처럼 등호로 묶을 수 없습니다.",
-        "en": "Deputies also belonged to clubs, while newspapers, the Commune, sections, and popular movements pressured the legislature. Jacobins, the Mountain, and sans-culottes were not synonyms."
       },
       "groups": [
         {
@@ -508,10 +496,6 @@ module.exports = {
       "kind": {
         "ko": "산악파 집권기 주변의 세 경쟁 경향",
         "en": "Three rival currents around Mountain rule"
-      },
-      "summary": {
-        "ko": "지롱드파가 밀려난 뒤에도 산악파는 하나로 움직이지 않았습니다. 의원·클럽·신문·위원회 인맥이 겹친 경향들이었지 경계가 고정된 정당은 아니었습니다.",
-        "en": "The Mountain did not act as one body after the Girondins fell. These were overlapping tendencies of deputies, clubs, newspapers, and committee networks, not parties with fixed boundaries."
       },
       "groups": [
         {

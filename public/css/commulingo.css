@@ -4175,7 +4175,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     font-weight: 700;
 }
 .commu-faction-layer-head h3 { margin: 0; font-family: var(--font-display); font-size: var(--text-xl); line-height: var(--leading-tight); }
-.commu-faction-layer-head > div > p:last-child { max-width: 54rem; margin: var(--space-2) 0 0; color: var(--text-muted); font-size: var(--text-sm); line-height: var(--leading-normal); }
+.commu-faction-summary { max-width: 54rem; margin: var(--space-2) 0 0; color: var(--text-muted); font-size: var(--text-sm); line-height: var(--leading-normal); }
 .commu-faction-axis {
     position: relative;
     display: flex;
@@ -4204,7 +4204,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-faction-card > header { padding: var(--space-4); border-bottom: 1px solid color-mix(in srgb, var(--border) 40%, transparent); }
 .commu-faction-card h4 { margin: 0; font-family: var(--font-display); font-size: var(--text-lg); }
 .commu-faction-card > header p { margin: var(--space-1) 0 0; color: var(--text-muted); font-size: var(--text-xs); }
-.commu-faction-description { margin: 0; padding: var(--space-4); color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal); }
+.commu-faction-description { margin: 0; padding: var(--space-2) var(--space-4) var(--space-4); color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal); }
 .commu-faction-turn { display: grid; gap: var(--space-1); margin: 0; padding: var(--space-3) var(--space-4); border-top: 1px solid color-mix(in srgb, var(--border) 28%, transparent); background: var(--bg-inset); font-size: var(--text-xs); line-height: var(--leading-normal); }
 .commu-faction-turn strong { color: var(--text-secondary); font-family: var(--font-mono); text-transform: uppercase; }
 .commu-faction-people { padding: var(--space-3) var(--space-4) var(--space-4); border-top: 1px solid color-mix(in srgb, var(--border) 28%, transparent); }
