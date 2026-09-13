@@ -1,0 +1,407 @@
+{
+  "id": "socialist-economies-and-decolonization",
+  "title": {
+    "ko": "사회주의 경제제도: 탈식민화와 국가개발",
+    "en": "Socialist economies: decolonization and state-led development"
+  },
+  "description": {
+    "ko": "혁명·독립 뒤 경제를 재편한 다양한 경로다. 국유화·토지개혁·석유재정은 서로 다른 제도이며, 연결선은 해당 국가의 전환을 나타낸다. 나란히 놓인 국가 사이의 직접 전파를 뜻하지 않는다.",
+    "en": "Different paths of economic reorganization after revolution or independence. Nationalization, land reform and oil finance are distinct institutions. Lines trace a country’s changes, not direct transmission between neighboring columns."
+  },
+  "timeStart": 1959,
+  "timeEnd": 1992,
+  "pxPerYear": 14,
+  "columns": [
+    {
+      "id": "cuba",
+      "label": {
+        "ko": "쿠바",
+        "en": "Cuba"
+      }
+    },
+    {
+      "id": "lusophone",
+      "label": {
+        "ko": "앙골라·모잠비크",
+        "en": "Angola/Mozambique"
+      }
+    },
+    {
+      "id": "horn",
+      "label": {
+        "ko": "에티오피아·소말리아",
+        "en": "Ethiopia/Somalia"
+      }
+    },
+    {
+      "id": "central",
+      "label": {
+        "ko": "베냉·콩고",
+        "en": "Benin/Congo"
+      }
+    },
+    {
+      "id": "madagascar",
+      "label": {
+        "ko": "마다가스카르",
+        "en": "Madagascar"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "cuban-revolution-1959-1961",
+      "column": "cuba",
+      "year": 1959,
+      "period": "1959",
+      "label": {
+        "ko": "쿠바 혁명과 사회주의 전환",
+        "en": "Cuban Revolution and socialist turn"
+      },
+      "ref": {
+        "type": "event",
+        "id": "cuban-revolution-1959-1961"
+      }
+    },
+    {
+      "id": "cuba-great-debate",
+      "column": "cuba",
+      "year": 1963,
+      "period": "1963",
+      "label": {
+        "ko": "쿠바 대논쟁",
+        "en": "Cuban Great Debate"
+      },
+      "ref": {
+        "type": "term",
+        "id": "cuba-great-debate"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "angolan-independence-1975-1977",
+      "column": "lusophone",
+      "year": 1975,
+      "period": "1975",
+      "label": {
+        "ko": "앙골라 독립과 MPLA 정권 형성",
+        "en": "Angolan independence and formation of MPLA rule"
+      },
+      "ref": {
+        "type": "event",
+        "id": "angolan-independence-1975-1977"
+      }
+    },
+    {
+      "id": "angolan-socialist-mixed-economy",
+      "column": "lusophone",
+      "year": 1979,
+      "period": "1979",
+      "label": {
+        "ko": "앙골라의 국유 부문과 석유경제",
+        "en": "Angolan state sector and oil economy"
+      },
+      "ref": {
+        "type": "term",
+        "id": "angolan-socialist-mixed-economy"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "mozambican-independence-1975-1977",
+      "column": "lusophone",
+      "year": 1975,
+      "period": "1975",
+      "label": {
+        "ko": "모잠비크 독립과 사회주의 노선",
+        "en": "Mozambican independence and socialist orientation"
+      },
+      "ref": {
+        "type": "event",
+        "id": "mozambican-independence-1975-1977"
+      }
+    },
+    {
+      "id": "mozambican-economic-rehabilitation",
+      "column": "lusophone",
+      "year": 1987,
+      "period": "1987",
+      "label": {
+        "ko": "모잠비크의 계획경제와 경제재건계획",
+        "en": "Mozambican planning and economic rehabilitation"
+      },
+      "ref": {
+        "type": "term",
+        "id": "mozambican-economic-rehabilitation"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "ethiopian-revolution-1974-1977",
+      "column": "horn",
+      "year": 1974,
+      "period": "1974",
+      "label": {
+        "ko": "에티오피아 혁명과 데르그의 권력투쟁",
+        "en": "Ethiopian revolution and the Derg power struggle"
+      },
+      "ref": {
+        "type": "event",
+        "id": "ethiopian-revolution-1974-1977"
+      }
+    },
+    {
+      "id": "ethiopian-land-nationalization",
+      "column": "horn",
+      "year": 1975,
+      "period": "1975",
+      "label": {
+        "ko": "에티오피아의 1975년 토지 국유화",
+        "en": "Ethiopian land nationalization of 1975"
+      },
+      "ref": {
+        "type": "term",
+        "id": "ethiopian-land-nationalization"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "somali-socialist-transition-1969-1976",
+      "column": "horn",
+      "year": 1969,
+      "period": "1969",
+      "label": {
+        "ko": "소말리아 군사정권과 사회주의 선언",
+        "en": "Somali military rule and the socialist declaration"
+      },
+      "ref": {
+        "type": "event",
+        "id": "somali-socialist-transition-1969-1976"
+      }
+    },
+    {
+      "id": "somali-scientific-socialism-economy",
+      "column": "horn",
+      "year": 1970,
+      "period": "1970",
+      "label": {
+        "ko": "소말리아의 과학적 사회주의 경제정책",
+        "en": "Somali scientific-socialist economic policy"
+      },
+      "ref": {
+        "type": "term",
+        "id": "somali-scientific-socialism-economy"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "beninese-socialist-transition-1974-1990",
+      "column": "central",
+      "year": 1974,
+      "period": "1974",
+      "label": {
+        "ko": "베냉 인민공화국과 국민회의 전환",
+        "en": "People’s Republic of Benin and the National Conference"
+      },
+      "ref": {
+        "type": "event",
+        "id": "beninese-socialist-transition-1974-1990"
+      }
+    },
+    {
+      "id": "beninese-state-sector",
+      "column": "central",
+      "year": 1989,
+      "period": "1989",
+      "label": {
+        "ko": "베냉의 국유화와 경제위기",
+        "en": "Beninese nationalization and economic crisis"
+      },
+      "ref": {
+        "type": "term",
+        "id": "beninese-state-sector"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "congo-peoples-republic-1969-1991",
+      "column": "central",
+      "year": 1969,
+      "period": "1969",
+      "label": {
+        "ko": "콩고인민공화국과 일당체제의 전환",
+        "en": "People’s Republic of the Congo and the one-party transition"
+      },
+      "ref": {
+        "type": "event",
+        "id": "congo-peoples-republic-1969-1991"
+      }
+    },
+    {
+      "id": "congo-brazzaville-oil-planning",
+      "column": "central",
+      "year": 1982,
+      "period": "1982",
+      "label": {
+        "ko": "콩고인민공화국의 석유와 국가계획",
+        "en": "Oil and planning in the People’s Republic of the Congo"
+      },
+      "ref": {
+        "type": "term",
+        "id": "congo-brazzaville-oil-planning"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "malagasy-socialist-transition-1972-1975",
+      "column": "madagascar",
+      "year": 1972,
+      "period": "1972",
+      "label": {
+        "ko": "마다가스카르의 군정과 사회주의 제2공화국",
+        "en": "Madagascar’s military transition and socialist Second Republic"
+      },
+      "ref": {
+        "type": "event",
+        "id": "malagasy-socialist-transition-1972-1975"
+      }
+    },
+    {
+      "id": "malagasy-socialist-planning",
+      "column": "madagascar",
+      "year": 1975,
+      "period": "1975",
+      "label": {
+        "ko": "마다가스카르의 사회주의 계획과 국유화",
+        "en": "Malagasy socialist planning and nationalization"
+      },
+      "ref": {
+        "type": "term",
+        "id": "malagasy-socialist-planning"
+      },
+      "note": {
+        "ko": "제도 설명은 항목의 전체 기간을 다룬다.",
+        "en": "The entry covers the institution’s full period."
+      }
+    },
+    {
+      "id": "cuba-special",
+      "column": "cuba",
+      "year": 1990,
+      "period": "1990",
+      "label": {
+        "ko": "특별시기",
+        "en": "Special Period"
+      },
+      "ref": {
+        "type": "term",
+        "id": "periodo-especial"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "to": "cuba-great-debate",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "cuban-revolution-1959-1961"
+    },
+    {
+      "to": "angolan-socialist-mixed-economy",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "angolan-independence-1975-1977"
+    },
+    {
+      "to": "mozambican-economic-rehabilitation",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "mozambican-independence-1975-1977"
+    },
+    {
+      "to": "ethiopian-land-nationalization",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "ethiopian-revolution-1974-1977"
+    },
+    {
+      "to": "somali-scientific-socialism-economy",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "somali-socialist-transition-1969-1976"
+    },
+    {
+      "to": "beninese-state-sector",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "beninese-socialist-transition-1974-1990"
+    },
+    {
+      "to": "congo-brazzaville-oil-planning",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "congo-peoples-republic-1969-1991"
+    },
+    {
+      "to": "malagasy-socialist-planning",
+      "type": "succession",
+      "label": {
+        "ko": "경제 재편",
+        "en": "Economic reorganization"
+      },
+      "from": "malagasy-socialist-transition-1972-1975"
+    },
+    {
+      "to": "cuba-special",
+      "type": "succession",
+      "label": {
+        "ko": "시기별 경제 과제",
+        "en": "Changing challenges"
+      },
+      "from": "cuba-great-debate",
+      "labelT": 0.15
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "id": "socialist-economies-state-building",
+  "title": {
+    "ko": "사회주의 경제제도: 국가건설·고립·전쟁",
+    "en": "Socialist economies: state-building, isolation and war"
+  },
+  "description": {
+    "ko": "협동목축·전후계획·토지개혁·국유경제를 국가별 역사와 연결한다. 화살표는 각 국가 내부의 변천과 배경 관계이며 같은 열에 놓였다는 이유로 제도가 계승된 것은 아니다. 캄보디아의 1975~1979년 체제와 이후 재건 체제를 구분한다.",
+    "en": "Connect cooperative herding, postwar planning, land reform and state enterprise to national histories. Arrows trace changes and context within each country, not inheritance merely from sharing a column. Cambodia’s 1975–1979 regime is distinguished from later reconstruction."
+  },
+  "timeStart": 1924,
+  "timeEnd": 1991,
+  "pxPerYear": 14,
+  "columns": [
+    {
+      "id": "mongolia",
+      "label": {
+        "ko": "몽골",
+        "en": "Mongolia"
+      }
+    },
+    {
+      "id": "korea",
+      "label": {
+        "ko": "북한",
+        "en": "North Korea"
+      }
+    },
+    {
+      "id": "cambodia",
+      "label": {
+        "ko": "캄보디아",
+        "en": "Cambodia"
+      }
+    },
+    {
+      "id": "yemen",
+      "label": {
+        "ko": "남예멘·아프가니스탄",
+        "en": "South Yemen/Afghanistan"
+      }
+    },
+    {
+      "id": "balkans",
+      "label": {
+        "ko": "알바니아·불가리아",
+        "en": "Albania/Bulgaria"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "mongolian-republic-1921-1924",
+      "column": "mongolia",
+      "year": 1924,
+      "period": "1924",
+      "label": {
+        "ko": "몽골 혁명과 인민공화국 수립",
+        "en": "Mongolian revolution and establishment of the republic"
+      },
+      "ref": {
+        "type": "event",
+        "id": "mongolian-republic-1921-1924"
+      }
+    },
+    {
+      "id": "mongolian-socialist-planning",
+      "column": "mongolia",
+      "year": 1948,
+      "period": "1948",
+      "label": {
+        "ko": "몽골의 협동목축과 계획경제",
+        "en": "Mongolian cooperative herding and planning"
+      },
+      "ref": {
+        "type": "term",
+        "id": "mongolian-socialist-planning"
+      }
+    },
+    {
+      "id": "korean-war",
+      "column": "korea",
+      "year": 1948,
+      "period": "1948",
+      "label": {
+        "ko": "조선민주주의인민공화국 수립",
+        "en": "DPRK established"
+      },
+      "ref": {
+        "type": "event",
+        "id": "dprk-foundation-1946-1948"
+      }
+    },
+    {
+      "id": "north-korean-planning",
+      "column": "korea",
+      "year": 1953,
+      "period": "1953",
+      "label": {
+        "ko": "북한의 전후 계획경제",
+        "en": "North Korean postwar planning"
+      },
+      "ref": {
+        "type": "term",
+        "id": "north-korean-planning"
+      }
+    },
+    {
+      "id": "cambodian-regime-change-1975-1979",
+      "column": "cambodia",
+      "year": 1975,
+      "period": "1975",
+      "label": {
+        "ko": "민주캄푸치아와 1979년 정권 교체",
+        "en": "Democratic Kampuchea and the 1979 regime change"
+      },
+      "ref": {
+        "type": "event",
+        "id": "cambodian-regime-change-1975-1979"
+      }
+    },
+    {
+      "id": "cambodian-economic-reconstruction",
+      "column": "cambodia",
+      "year": 1979,
+      "period": "1979",
+      "label": {
+        "ko": "캄보디아의 강제집단화와 전후 재건",
+        "en": "Cambodian forced collectivization and reconstruction"
+      },
+      "ref": {
+        "type": "term",
+        "id": "cambodian-economic-reconstruction"
+      }
+    },
+    {
+      "id": "south-yemen-socialist-state-1967-1990",
+      "column": "yemen",
+      "year": 1967,
+      "period": "1967",
+      "label": {
+        "ko": "남예멘 독립과 사회주의 국가의 변천",
+        "en": "South Yemeni independence and socialist statehood"
+      },
+      "ref": {
+        "type": "event",
+        "id": "south-yemen-socialist-state-1967-1990"
+      }
+    },
+    {
+      "id": "south-yemeni-state-economy",
+      "column": "yemen",
+      "year": 1969,
+      "period": "1969",
+      "label": {
+        "ko": "남예멘의 국유경제",
+        "en": "South Yemeni state economy"
+      },
+      "ref": {
+        "type": "term",
+        "id": "south-yemeni-state-economy"
+      }
+    },
+    {
+      "id": "albanian-socialist-transition-1944-1946",
+      "column": "balkans",
+      "year": 1946,
+      "period": "1946",
+      "label": {
+        "ko": "알바니아 해방과 인민공화국 수립",
+        "en": "Albanian liberation and establishment of the republic"
+      },
+      "ref": {
+        "type": "event",
+        "id": "albanian-socialist-transition-1944-1946"
+      }
+    },
+    {
+      "id": "albanian-autarkic-planning",
+      "column": "balkans",
+      "year": 1978,
+      "period": "1978",
+      "label": {
+        "ko": "알바니아의 자력갱생과 계획경제",
+        "en": "Albanian autarky and planning"
+      },
+      "ref": {
+        "type": "term",
+        "id": "albanian-autarkic-planning"
+      }
+    },
+    {
+      "id": "bulgaria-1944-1949",
+      "column": "balkans",
+      "year": 1944,
+      "period": "1944",
+      "label": {
+        "ko": "불가리아: 조국전선에서 코스토프 재판까지",
+        "en": "Bulgaria: From the Fatherland Front to the Kostov Trial"
+      },
+      "ref": {
+        "type": "event",
+        "id": "bulgaria-1944-1949"
+      }
+    },
+    {
+      "id": "bulgarian-socialist-industrialization",
+      "column": "balkans",
+      "year": 1949,
+      "period": "1949",
+      "label": {
+        "ko": "불가리아의 사회주의 산업화",
+        "en": "Bulgarian socialist industrialization"
+      },
+      "ref": {
+        "type": "term",
+        "id": "bulgarian-socialist-industrialization"
+      }
+    },
+    {
+      "id": "afghan-reform",
+      "column": "yemen",
+      "year": 1978,
+      "period": "1978",
+      "label": {
+        "ko": "아프가니스탄 인민민주당의 토지개혁",
+        "en": "Afghan PDPA land reform"
+      },
+      "ref": {
+        "type": "term",
+        "id": "afghan-pdpa-land-reform"
+      }
+    },
+    {
+      "id": "afghan-war",
+      "column": "yemen",
+      "year": 1979,
+      "period": "1979",
+      "label": {
+        "ko": "소련-아프가니스탄 전쟁",
+        "en": "The Soviet-Afghan War"
+      },
+      "ref": {
+        "type": "event",
+        "id": "afghanistan-war"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "to": "mongolian-socialist-planning",
+      "type": "succession",
+      "from": "mongolian-republic-1921-1924"
+    },
+    {
+      "to": "north-korean-planning",
+      "type": "succession",
+      "from": "korean-war"
+    },
+    {
+      "to": "cambodian-economic-reconstruction",
+      "type": "succession",
+      "from": "cambodian-regime-change-1975-1979"
+    },
+    {
+      "to": "south-yemeni-state-economy",
+      "type": "succession",
+      "from": "south-yemen-socialist-state-1967-1990"
+    },
+    {
+      "to": "albanian-autarkic-planning",
+      "type": "succession",
+      "from": "albanian-socialist-transition-1944-1946"
+    },
+    {
+      "to": "bulgarian-socialist-industrialization",
+      "type": "succession",
+      "from": "bulgaria-1944-1949"
+    },
+    {
+      "to": "afghan-war",
+      "type": "succession",
+      "label": {
+        "ko": "전쟁 속의 개혁",
+        "en": "Reform amid war"
+      },
+      "from": "afghan-reform"
+    }
+  ]
+}
