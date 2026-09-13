@@ -105,6 +105,7 @@ function lessonQuestionCount(lesson) {
 
 function publicCollections(bundle) {
     return (bundle.collections || [])
+        .filter(collection => collection.visibility !== 'private')
         .map(collection => {
             const chapterLimit = PUBLIC_CHAPTER_LIMITS[collection.id] || 0;
             return {

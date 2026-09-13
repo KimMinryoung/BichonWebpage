@@ -3,6 +3,7 @@ module.exports = {
   "id": "socialist-divergences-intro",
   "volumeNumber": 12,
   "format": "short-learning",
+  "visibility": "private",
   "title": {
     "ko": "사회주의의 분기",
     "en": "Socialist Debates: A Short Course"
