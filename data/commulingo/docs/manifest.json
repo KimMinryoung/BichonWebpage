@@ -214,7 +214,14 @@
           "The National Question and Autonomy",
           "The Problem of Nationality and Autonomy"
         ]
-      }
+      },
+      "noAutoLink": [
+        "피셔",
+        "비소츠키",
+        "제헌의회",
+        "집단화",
+        "언어법"
+      ]
     },
     {
       "id": "stalin-marxism-national-question",
@@ -536,7 +543,10 @@
         "en": [
           "The Tax in Kind"
         ]
-      }
+      },
+      "noAutoLink": [
+        "동반자"
+      ]
     },
     {
       "id": "declaration-of-46",
@@ -646,7 +656,10 @@
           "1924 Soviet Constitution",
           "Treaty on the Creation of the USSR"
         ]
-      }
+      },
+      "noAutoLink": [
+        "두 진영"
+      ]
     },
     {
       "id": "stalin-1928-grain-siberia",
@@ -739,7 +752,10 @@
         "en": [
           "Notes of an Economist"
         ]
-      }
+      },
+      "noAutoLink": [
+        "동반자"
+      ]
     },
     {
       "id": "spain-1936-two-lines",
@@ -942,7 +958,10 @@
           "NKVD Directive No. 50215"
         ]
       },
-      "addedAt": "2026-07-31"
+      "addedAt": "2026-07-31",
+      "noAutoLink": [
+        "제1총국"
+      ]
     },
     {
       "id": "stalin-dialectical-historical-materialism",
@@ -1473,7 +1492,10 @@
           "the Nine Commentaries"
         ]
       },
-      "addedAt": "2026-08-08"
+      "addedAt": "2026-08-08",
+      "noAutoLink": [
+        "대논쟁"
+      ]
     },
     {
       "id": "detente-agreements-1972-1973",
@@ -1657,7 +1679,11 @@
         "en": [
           "Yezhov: A Biography"
         ]
-      }
+      },
+      "noAutoLink": [
+        "동반자",
+        "소유즈"
+      ]
     },
     {
       "id": "stalin-1929-great-break",
@@ -1817,7 +1843,9 @@
       ],
       "addedAt": "2026-08-12",
       "noAutoLink": [
-        "파우커"
+        "파우커",
+        "강건",
+        "근위"
       ],
       "aliases": {
         "ko": [
@@ -1886,7 +1914,11 @@
         "en": [
           "Stalin and the NKVD"
         ]
-      }
+      },
+      "noAutoLink": [
+        "근위",
+        "제1총국"
+      ]
     },
     {
       "id": "ezhov-interrogations-1939",
@@ -2340,7 +2372,10 @@
           "Statute on Workers' Control",
           "founding of the Cheka"
         ]
-      }
+      },
+      "noAutoLink": [
+        "6조"
+      ]
     },
     {
       "id": "constituent-assembly-1918",
@@ -2911,7 +2946,11 @@
         "en": [
           "Political Report of the Central Committee to the Fourteenth Congress"
         ]
-      }
+      },
+      "noAutoLink": [
+        "포드",
+        "두 진영"
+      ]
     },
     {
       "id": "nko-order-227-1942",
@@ -3267,7 +3306,10 @@
           "Novo-Ogaryovo treaty",
           "new Union Treaty (1991)"
         ]
-      }
+      },
+      "noAutoLink": [
+        "소유즈"
+      ]
     },
     {
       "id": "provisional-government-death-penalty-1917",
@@ -3396,7 +3438,10 @@
           "Treaty of Riga",
           "Riga Peace Treaty"
         ]
-      }
+      },
+      "noAutoLink": [
+        "오볼렌스키"
+      ]
     },
     {
       "id": "bukharin-1926-character-of-our-revolution",
@@ -3486,7 +3531,11 @@
           "The Foundations of Leninism",
           "Foundations of Leninism"
         ]
-      }
+      },
+      "noAutoLink": [
+        "현기증",
+        "두 진영"
+      ]
     },
     {
       "id": "united-opposition-documents-1926-1927",
@@ -3540,7 +3589,12 @@
           "Platform of the Bolshevik-Leninists",
           "1927 Platform"
         ]
-      }
+      },
+      "noAutoLink": [
+        "카츠",
+        "근위",
+        "동반자"
+      ]
     },
     {
       "id": "hungary-1956-presidium-documents",
@@ -3796,7 +3850,10 @@
           "On Perestroika and the Party's Cadre Policy",
           "January 1987 plenum report"
         ]
-      }
+      },
+      "noAutoLink": [
+        "동반자"
+      ]
     },
     {
       "id": "cia-poznan-bulletins-1956",
@@ -4562,7 +4619,10 @@
           "Stalin–Churchill Warsaw messages",
           "Soviet reply to the War Cabinet, 9 September 1944"
         ]
-      }
+      },
+      "noAutoLink": [
+        "클라크"
+      ]
     },
     {
       "id": "helsinki-final-act-1975",
@@ -4648,7 +4708,10 @@
           "INF Treaty",
           "Intermediate-Range Nuclear Forces Treaty"
         ]
-      }
+      },
+      "noAutoLink": [
+        "6조"
+      ]
     },
     {
       "id": "salt-ii-treaty-1979",
@@ -4716,7 +4779,12 @@
       },
       "noAutoLink": [
         "제2공화국",
-        "제2 공화국"
+        "제2 공화국",
+        "아민",
+        "동반자",
+        "두 진영",
+        "코메디",
+        "집단화"
       ],
       "date": "2024",
       "people": [
@@ -4810,7 +4878,18 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "제헌의회",
+        "집단적 지도",
+        "유기적 구성",
+        "무라비요프",
+        "류민",
+        "근위",
+        "사회혁명당",
+        "제3기",
+        "제1범주",
+        "블류헤르",
+        "차다예프"
       ]
     },
     {
@@ -4850,7 +4929,11 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "인민전쟁",
+        "제헌의회",
+        "국제연합",
+        "무라비요프"
       ]
     },
     {
@@ -4888,7 +4971,14 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "코츠",
+        "램지",
+        "강건",
+        "침체기",
+        "집단화",
+        "행동강령",
+        "동반자"
       ]
     },
     {
@@ -4927,7 +5017,9 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "우스펜스키",
+        "로도스"
       ]
     },
     {
@@ -4965,7 +5057,8 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "로이터"
       ]
     },
     {
@@ -4988,7 +5081,8 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "집단화"
       ],
       "title": {
         "ko": "로버트 오언, 사회에 관한 새로운 견해",
@@ -5045,7 +5139,9 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "근위",
+        "제58조"
       ],
       "members": [
         "france-constitution-1791",
@@ -5093,7 +5189,8 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "동반자"
       ],
       "members": [
         "france-rights-declaration-1789",
@@ -5142,7 +5239,8 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "제헌의회"
       ],
       "members": [
         "robespierre-subsistence-1792",
@@ -5190,7 +5288,11 @@
       "noAutoLink": [
         "임시정부",
         "국민의회",
-        "중앙위원회"
+        "중앙위원회",
+        "바르비",
+        "군사위원",
+        "르브룅",
+        "물랭"
       ],
       "members": [
         "france-law-of-suspects-1793",
