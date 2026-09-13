@@ -22,9 +22,9 @@ module.exports = {
   "editorial": {
     "authoredAt": "2026-09-13",
     "revision": 1,
-    "sourceGuide": "/commulingo/docs/socialist-divergences-intro",
     "interpretation": "Comparisons of the specified writings, not whole-career classifications",
-    "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios."
+    "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
+    "sourceNotesFile": "data/commulingo/docs/socialist-divergences-intro.html"
   },
   "chapters": [
     {
@@ -35,7 +35,7 @@ module.exports = {
         "ko": "좋은 사회는 누가 만드는가?",
         "en": "Who makes a better society?"
       },
-      "sourceUrl": "/commulingo/docs/socialist-divergences-intro#lesson-1",
+      "sourceUrl": "https://www.marxists.org/reference/subject/economics/owen/society/intro.htm",
       "summary": {
         "ko": "약 5분 · 개혁안의 내용과 변화를 이끄는 주체를 구별할 수 있어요.",
         "en": "About 5 minutes · Distinguish the content of a reform from who controls the change."
@@ -263,7 +263,7 @@ module.exports = {
         "ko": "노동자의 국가도 새로운 지배가 될까?",
         "en": "Can a workers' state become a new domination?"
       },
-      "sourceUrl": "/commulingo/docs/socialist-divergences-intro#lesson-2",
+      "sourceUrl": "https://www.marxists.org/reference/archive/bakunin/works/1873/statism-anarchy.htm",
       "summary": {
         "ko": "약 5분 · 마르크스와 바쿠닌이 과도기 국가를 둘러싸고 다툰 이유를 설명할 수 있어요.",
         "en": "About 5 minutes · Compare Marx and Bakunin on transitional coercion and representation."
@@ -491,7 +491,7 @@ module.exports = {
         "ko": "개혁을 지지하면 혁명을 반대하는 걸까?",
         "en": "Does supporting reform mean opposing revolution?"
       },
-      "sourceUrl": "/commulingo/docs/socialist-divergences-intro#lesson-3",
+      "sourceUrl": "https://www.marxists.org/reference/archive/bernstein/works/1899/evsoc/ch03-2.htm",
       "summary": {
         "ko": "약 5분 · 개혁의 필요성에 대한 동의와 개혁의 역할에 대한 이견을 구별할 수 있어요.",
         "en": "About 5 minutes · Distinguish common immediate action from agreement on long-term strategy."
@@ -719,7 +719,7 @@ module.exports = {
         "ko": "혁명에 찬성해도 볼셰비키와 다를까?",
         "en": "Can a revolutionary disagree with the Bolsheviks?"
       },
-      "sourceUrl": "/commulingo/docs/socialist-divergences-intro#lesson-4",
+      "sourceUrl": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch05.htm",
       "summary": {
         "ko": "약 5분 · 혁명적 마르크스주의 내부에서도 정치적 자유와 계급 권력의 관계를 다르게 보았음을 설명할 수 있어요.",
         "en": "About 5 minutes · Distinguish revolutionary goals from the exercise of power and its results."

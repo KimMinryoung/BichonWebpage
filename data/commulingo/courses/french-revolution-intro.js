@@ -23,9 +23,9 @@ module.exports = {
   "editorial": {
     "authoredAt": "2026-09-13",
     "revision": 1,
-    "sourceGuide": "/commulingo/docs/french-revolution-intro",
     "interpretation": "Hobsbawm with separately identified primary evidence",
-    "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios."
+    "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
+    "sourceNotesFile": "data/commulingo/docs/french-revolution-intro.html"
   },
   "chapters": [
     {
@@ -36,7 +36,7 @@ module.exports = {
         "ko": "왕을 반대하면 모두 같은 편일까?",
         "en": "Does opposing a king make everyone an ally?"
       },
-      "sourceUrl": "/commulingo/docs/french-revolution-intro#lesson-1",
+      "sourceUrl": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
       "summary": {
         "ko": "약 5분 · 왕의 권력을 제한하는 것과 왕정을 없애는 것을 구별할 수 있어요.",
         "en": "About 5 minutes · Distinguish limits on royal power, abolition of monarchy, and wider participation."
@@ -264,7 +264,7 @@ module.exports = {
         "ko": "평등한 시민은 누구인가?",
         "en": "Who counts as an equal citizen?"
       },
-      "sourceUrl": "/commulingo/docs/french-revolution-intro#lesson-2",
+      "sourceUrl": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
       "summary": {
         "ko": "약 5분 · 권리의 선언과 실제로 권리를 행사할 수 있는 범위를 구별할 수 있어요.",
         "en": "About 5 minutes · Distinguish universal declarations from eligibility and enforcement."
@@ -492,7 +492,7 @@ module.exports = {
         "ko": "빵값도 자유에 맡겨야 할까?",
         "en": "Should bread prices be left to free trade?"
       },
-      "sourceUrl": "/commulingo/docs/french-revolution-intro#lesson-3",
+      "sourceUrl": "https://www.marxists.org/history/france/revolution/robespierre/1792/subsistence-goods.htm",
       "summary": {
         "ko": "약 5분 · 거래의 자유와 생존 보장의 논리를 비교하고, 정책의 목적과 결과를 구별할 수 있어요.",
         "en": "About 5 minutes · Distinguish rules for exchange, ownership, and the effects of a policy."
@@ -720,7 +720,7 @@ module.exports = {
         "ko": "혁명을 지키기 위해 자유를 제한해도 될까?",
         "en": "Can defending a revolution justify restricting liberty?"
       },
-      "sourceUrl": "/commulingo/docs/french-revolution-intro#lesson-4",
+      "sourceUrl": "https://revolution.chnm.org/d/417/",
       "summary": {
         "ko": "약 5분 · 비상권력의 정당화 논리와 실제 권리 제한을 구별할 수 있어요.",
         "en": "About 5 minutes · Separate explanations of emergency power from judgments about its exercise."
@@ -948,7 +948,7 @@ module.exports = {
         "ko": "법 앞의 평등이면 충분할까?",
         "en": "Is equality before the law enough?"
       },
-      "sourceUrl": "/commulingo/docs/french-revolution-intro#lesson-5",
+      "sourceUrl": "https://www.marxists.org/history/france/revolution/conspiracy-equals/1796/manifesto.htm",
       "summary": {
         "ko": "약 5분 · 생계 보장, 재산의 재분배, 공동소유가 서로 다른 요구임을 설명할 수 있어요.",
         "en": "About 5 minutes · Distinguish redistribution from common ownership and reception from identical ideas."
