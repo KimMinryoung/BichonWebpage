@@ -28,14 +28,6 @@
         return navigator.webdriver || navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true
             || cookie('commulingo_test') || cookie('commulingo_measurement_off');
     }
-    var optout = document.getElementById('commuMeasurementOff');
-    if (optout) {
-        optout.checked = cookie('commulingo_measurement_off');
-        optout.addEventListener('change', function() {
-            setCookie('commulingo_measurement_off', optout.checked);
-            if (optout.checked) pending = [];
-        });
-    }
     ['click', 'keydown', 'pointerdown'].forEach(function(name) {
         document.addEventListener(name, function(event) { if (event.isTrusted) touched = true; }, true);
     });

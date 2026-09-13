@@ -31,8 +31,10 @@ const assert = require('node:assert/strict');
         assert.equal(new Set(events.map(e => e.runId)).size, 1);
         assert(events.every(e => /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(e.runId)));
         assert(events.every(e => /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(e.eventId)));
+        assert.equal(await page.locator('#commuMeasurementOff').count(), 0);
+        assert.equal(await page.getByText('익명 학습 활동을 30일간 집계합니다.').count(), 0);
         const before = events.length;
-        await page.locator('#commuMeasurementOff').check();
+        await page.evaluate(() => { document.cookie = 'commulingo_measurement_off=1; Path=/; SameSite=Lax'; });
         await page.evaluate(() => window.CommuLingoMeasurement.answer(true));
         await page.waitForTimeout(100);
         assert.equal(events.length, before);
@@ -40,12 +42,10 @@ const assert = require('node:assert/strict');
             await page.setViewportSize({ width, height: 844 });
             for (const theme of ['dark', 'light']) {
                 await page.evaluate(t => document.documentElement.setAttribute('data-theme', t), theme);
-                await page.locator('#commuMeasurementOff').scrollIntoViewIfNeeded();
                 assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-                await page.screenshot({ path: `/tmp/learning-measurement-${width}-${theme}.png` });
             }
         }
-        await page.locator('#commuMeasurementOff').uncheck();
+        await page.evaluate(() => { document.cookie = 'commulingo_measurement_off=; Path=/; SameSite=Lax; Max-Age=0'; });
         events.length = 0;
         await page.goto(base + '/commulingo/drill/terms-theory', { waitUntil: 'networkidle' });
         assert.equal(events.length, 0, 'automatic deck fetch is not learning');
@@ -79,7 +79,7 @@ const assert = require('node:assert/strict');
         await automated.waitForTimeout(100);
         assert.equal(automatedEvents, 0, 'webdriver is excluded');
         assert.deepEqual(errors, []);
-        console.log('Browser: lesson, quiz, timeline, opt-out, test cookie, webdriver and responsive themes passed.');
+        console.log('Browser: lesson, quiz, timeline, hidden measurement UI, opt-out cookie, test cookie, webdriver and responsive themes passed.');
     } finally {
         await browser.close();
     }

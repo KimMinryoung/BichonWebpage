@@ -25,9 +25,7 @@
 - 켜기: `https://cyber-lenin.com/commulingo/book/capital-vol1?learning_test=1`
 - 끄기: 같은 주소에서 `learning_test=0`
 
-설정은 해당 브라우저의 사이트 쿠키에 1년간 유지한다. 쿠키 삭제·다른 브라우저 사용 시 다시 설정해야 한다. 자동화는 기본 `webdriver`를 유지하고, 이를 숨기는 도구라면 위 테스트 URL 또는 테스트 헤더를 사용한다. 일반 방문자는 학습 화면 아래 **앞으로 내 학습 활동 집계하지 않기**로 거부할 수 있다.
-
-거부 설정은 그 브라우저에서 이후 이벤트 전송을 멈춘다. 이미 수신된 이벤트에는 방문자를 다시 식별할 값이 없으므로, 체크 시 과거 이벤트를 찾아 삭제하는 기능은 제공하지 않는다. 화면 문구도 이 범위를 “앞으로”로 명시한다.
+설정은 해당 브라우저의 사이트 쿠키에 1년간 유지한다. 쿠키 삭제·다른 브라우저 사용 시 다시 설정해야 한다. 자동화는 기본 `webdriver`를 유지하고, 이를 숨기는 도구라면 위 테스트 URL 또는 테스트 헤더를 사용한다. DNT·Global Privacy Control·기존 집계 거부 쿠키도 계속 존중하지만, 일반 학습 화면에는 계측 안내나 집계 거부 컨트롤을 렌더링하지 않는다.
 
 표식 없는 수동 테스트, 자동화 탐지를 우회한 클라이언트, 위조 이벤트까지 완전히 식별할 수는 없다. 따라서 결과 이름은 ‘관측된 학습 활동’이며 ‘검증된 실제 이용자 수’가 아니다.
 
@@ -45,6 +43,6 @@ docker exec leninbot-frontend node scripts/commulingo-learning-report.js 7
 
 - `scripts/smoke-commulingo-measurement.js`: 제외 조건, Origin·JSON 보호, 입력 검증. `npm test`에 포함.
 - `scripts/test-commulingo-measurement-db.js`: 실제 DB와 HTTP 라우트를 이용한 제외·중복·콘텐츠 검증. 테스트 기록은 트랜잭션 롤백한다.
-- `scripts/test-commulingo-measurement-browser.js`: 미리보기 브라우저에서 시작 1회·답변·완료, 자동 로딩 무집계, 집계 거부, 테스트 모드, 모바일·데스크톱 표시를 확인한다. 자동화 계측을 시험할 때는 전송을 가로채고 운영 DB에 테스트 기록을 남기지 않는다.
+- `scripts/test-commulingo-measurement-browser.js`: 미리보기 브라우저에서 시작 1회·답변·완료, 자동 로딩 무집계, 거부 쿠키, 테스트 모드, 계측 UI 비노출, 모바일·데스크톱 표시를 확인한다. 자동화 계측을 시험할 때는 전송을 가로채고 운영 DB에 테스트 기록을 남기지 않는다.
 
 API는 `POST /commulingo/measurement`. 익명 캐시 페이지에 CSRF 세션을 강제로 만들지 않으며, 대신 정확한 HTTPS Origin·JSON·사용자 정의 헤더를 요구한다. 기존 진도 저장 API의 CSRF 정책은 그대로 유지한다. 요청 제한은 IP당 분당 120회이며 IP는 이벤트 데이터에 보관하지 않는다.
