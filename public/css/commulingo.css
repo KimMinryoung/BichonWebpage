@@ -4117,6 +4117,120 @@ a.commu-dict-chip:hover { text-decoration: none; }
 }
 .commu-book-dictionary h3:first-of-type { margin-top: .75rem; }
 
+/* A three-layer map for a book whose political labels otherwise look like one
+   flat party list. Structure, line style and explicit headings carry meaning;
+   colour is only a secondary cue. */
+.commu-faction-guide {
+    margin-bottom: var(--space-6);
+    padding: 0;
+    overflow: hidden;
+}
+.commu-faction-head { padding: var(--content-inset); border-bottom: 1px solid var(--border); }
+.commu-faction-eyebrow,
+.commu-faction-period {
+    margin: 0 0 var(--space-2);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+.commu-faction-head h2 { margin: 0; font-family: var(--font-display); font-size: var(--text-2xl); line-height: var(--leading-tight); }
+.commu-faction-intro { max-width: 54rem; margin: var(--space-3) 0 0; color: var(--text-secondary); line-height: var(--leading-normal); }
+.commu-faction-caveat {
+    margin: 0;
+    padding: var(--space-3) var(--content-inset);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-inset);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+.commu-faction-layer { position: relative; padding: var(--space-8) var(--content-inset); border-bottom: 1px solid var(--border); }
+.commu-faction-layer:not(:last-child)::after {
+    content: '↓';
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: -1.05rem;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    line-height: 1.8rem;
+    text-align: center;
+    transform: translateX(-50%);
+}
+.commu-faction-layer-head { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--space-4); margin-bottom: var(--space-5); }
+.commu-faction-step {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    border: 1px solid var(--border);
+    background: var(--bg-inset);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+.commu-faction-layer-head h3 { margin: 0; font-family: var(--font-display); font-size: var(--text-xl); line-height: var(--leading-tight); }
+.commu-faction-layer-head > div > p:last-child { max-width: 54rem; margin: var(--space-2) 0 0; color: var(--text-muted); font-size: var(--text-sm); line-height: var(--leading-normal); }
+.commu-faction-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--space-3); align-items: stretch; }
+.commu-faction-layer--networks .commu-faction-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.commu-faction-card {
+    --faction-tone: var(--text-muted);
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--faction-tone);
+    background: var(--bg-surface);
+}
+.commu-faction-card--red { --faction-tone: var(--accent-red); }
+.commu-faction-card--green { --faction-tone: var(--link); }
+.commu-faction-card--ochre { --faction-tone: var(--text-secondary); border-top-style: double; }
+.commu-faction-card--neutral { --faction-tone: var(--text-muted); border-top-style: dashed; }
+.commu-faction-card > header { padding: var(--space-4); border-bottom: 1px solid color-mix(in srgb, var(--border) 40%, transparent); }
+.commu-faction-card h4 { margin: 0; font-family: var(--font-display); font-size: var(--text-lg); }
+.commu-faction-card > header p { margin: var(--space-1) 0 0; color: var(--text-muted); font-size: var(--text-xs); }
+.commu-faction-description { margin: 0; padding: var(--space-4); color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal); }
+.commu-faction-turn { display: grid; gap: var(--space-1); margin: auto 0 0; padding: var(--space-3) var(--space-4); border-top: 1px solid color-mix(in srgb, var(--border) 28%, transparent); background: var(--bg-inset); font-size: var(--text-xs); line-height: var(--leading-normal); }
+.commu-faction-turn strong { color: var(--faction-tone); font-family: var(--font-mono); text-transform: uppercase; }
+.commu-faction-people { padding: var(--space-3) var(--space-4) var(--space-4); border-top: 1px solid color-mix(in srgb, var(--border) 28%, transparent); }
+.commu-faction-people > span { color: var(--text-muted); font-family: var(--font-mono); font-size: var(--text-xs); }
+.commu-faction-people ul { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); margin: var(--space-2) 0 0; padding: 0; list-style: none; }
+.commu-faction-people li { color: var(--text-secondary); font-size: var(--text-xs); }
+.commu-faction-people li:not(:last-child)::after { content: '·'; margin-left: var(--space-2); color: var(--text-muted); }
+.commu-faction-people a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--link); }
+.commu-faction-people a:hover { border-bottom-style: solid; }
+.commu-faction-timeline { padding: var(--space-8) var(--content-inset); border-bottom: 1px solid var(--border); }
+.commu-faction-timeline h3 { margin: 0 0 var(--space-4); font-family: var(--font-display); font-size: var(--text-xl); }
+.commu-faction-timeline ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.commu-faction-timeline li { position: relative; display: grid; align-content: start; gap: var(--space-2); padding: var(--space-4); border-top: 2px solid var(--accent-red); border-right: 1px solid color-mix(in srgb, var(--border) 35%, transparent); }
+.commu-faction-timeline li:last-child { border-right: 0; }
+.commu-faction-timeline li::before { content: ''; position: absolute; top: -.38rem; left: var(--space-4); width: .65rem; height: .65rem; border: 2px solid var(--accent-red); background: var(--bg-surface); }
+.commu-faction-timeline time { margin-top: var(--space-1); color: var(--accent-red); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 700; }
+.commu-faction-timeline strong { font-size: var(--text-sm); }
+.commu-faction-timeline span { color: var(--text-muted); font-size: var(--text-xs); line-height: var(--leading-normal); }
+.commu-faction-sources { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-3) var(--space-6); padding: var(--space-4) var(--content-inset); font-size: var(--text-xs); }
+.commu-faction-sources strong { font-family: var(--font-mono); }
+.commu-faction-sources ul { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin: 0; padding: 0; list-style: none; }
+.commu-faction-sources a { color: var(--link); }
+@media (max-width: 820px) {
+    .commu-faction-layer--networks .commu-faction-grid { grid-template-columns: 1fr; }
+    .commu-faction-timeline ol { grid-template-columns: 1fr; padding-left: var(--space-4); border-left: 2px solid var(--accent-red); }
+    .commu-faction-timeline li { border-top: 0; border-right: 0; }
+    .commu-faction-timeline li::before { top: 1.2rem; left: calc(-1 * var(--space-4) - .4rem); }
+    .commu-faction-sources { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+    .commu-faction-layer { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+    .commu-faction-layer-head { grid-template-columns: 2.5rem minmax(0, 1fr); gap: var(--space-3); }
+    .commu-faction-step { width: 2.5rem; height: 2.5rem; }
+    .commu-faction-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Genealogy charts (/commulingo/genealogy) ─────────────────────────────
    The SVG is drawn server-side (data/commulingo/genealogy-svg.js) with class
    hooks only, so every color resolves here and follows the theme. The chart

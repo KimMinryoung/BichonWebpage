@@ -40,7 +40,8 @@
 
         <section class="commu-graph" id="commuGraph" aria-label="<%= bookTitle %>"></section>
         <% } else { %>
-        <script id="commulingo-data" type="application/json"><%- JSON.stringify(lessons).replace(/</g, '\\u003c') %></script>
+        <% var commulingoClientBook = Object.assign({}, lessons.collections[0]); delete commulingoClientBook.factionGuide; %>
+        <script id="commulingo-data" type="application/json"><%- JSON.stringify({ version: lessons.version, collections: [commulingoClientBook] }).replace(/</g, '\\u003c') %></script>
 
         <header class="box commulingo-hero">
             <div>
@@ -62,6 +63,80 @@
             </div>
         </header>
 
+        <% var factionGuide = lessons.collections[0].factionGuide; %>
+        <% var factionText = function(value) { return value && (value[lang] || value.ko || value.en) || ''; }; %>
+        <% if (factionGuide) { %>
+        <section class="box commu-faction-guide" id="faction-guide" aria-labelledby="faction-guide-title">
+            <header class="commu-faction-head">
+                <p class="commu-faction-eyebrow"><%= factionText(factionGuide.eyebrow) %></p>
+                <h2 id="faction-guide-title"><%= factionText(factionGuide.title) %></h2>
+                <p class="commu-faction-intro"><%= factionText(factionGuide.intro) %></p>
+            </header>
+            <p class="commu-faction-caveat"><%= factionText(factionGuide.caveat) %></p>
+
+            <div class="commu-faction-layers">
+                <% factionGuide.layers.forEach(function(layer) { %>
+                <section class="commu-faction-layer commu-faction-layer--<%= layer.id %>" aria-labelledby="faction-layer-<%= layer.id %>">
+                    <header class="commu-faction-layer-head">
+                        <span class="commu-faction-step" aria-hidden="true"><%= layer.number %></span>
+                        <div>
+                            <p class="commu-faction-period"><%= layer.period %></p>
+                            <h3 id="faction-layer-<%= layer.id %>"><%= factionText(layer.kind) %></h3>
+                            <p><%= factionText(layer.summary) %></p>
+                        </div>
+                    </header>
+                    <div class="commu-faction-grid">
+                        <% layer.groups.forEach(function(group) { %>
+                        <article class="commu-faction-card commu-faction-card--<%= group.tone %>">
+                            <header>
+                                <h4><%= factionText(group.name) %></h4>
+                                <p><%= factionText(group.alias) %></p>
+                            </header>
+                            <p class="commu-faction-description"><%= factionText(group.description) %></p>
+                            <p class="commu-faction-turn"><strong><%= lang === 'en' ? 'Turning point' : '전환점' %></strong><span><%= factionText(group.turn) %></span></p>
+                            <% if (group.people && group.people.length) { %>
+                            <div class="commu-faction-people">
+                                <span><%= lang === 'en' ? 'People' : '주요 인물' %></span>
+                                <ul>
+                                    <% group.people.forEach(function(entry) { %>
+                                    <li>
+                                        <% if (entry.personId) { %><a target="_blank" rel="noopener" href="/commulingo/people/<%= encodeURIComponent(entry.personId) %>"><%= factionText(entry.label) %></a><% } else { %><%= factionText(entry.label) %><% } %>
+                                    </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                            <% } %>
+                        </article>
+                        <% }) %>
+                    </div>
+                </section>
+                <% }) %>
+            </div>
+
+            <section class="commu-faction-timeline" aria-labelledby="faction-timeline-title">
+                <h3 id="faction-timeline-title"><%= factionText(factionGuide.timelineTitle) %></h3>
+                <ol>
+                    <% factionGuide.timeline.forEach(function(item) { %>
+                    <li>
+                        <time><%= item.date %></time>
+                        <strong><%= factionText(item.title) %></strong>
+                        <span><%= factionText(item.text) %></span>
+                    </li>
+                    <% }) %>
+                </ol>
+            </section>
+
+            <footer class="commu-faction-sources">
+                <strong><%= lang === 'en' ? 'Sources for this map' : '관계도 근거' %></strong>
+                <ul>
+                    <% factionGuide.sources.forEach(function(source) { %>
+                    <li><a href="<%= source.href %>" target="_blank" rel="noopener"><%= factionText(source.label) %></a></li>
+                    <% }) %>
+                </ul>
+            </footer>
+        </section>
+        <% } %>
+
         <%# Dictionary entries this book's prose actually names, read off the links
             the linkifier found in its lessons. The chapter list is titles and
             one-line summaries, so without this the page gives no sign that the
@@ -82,7 +157,7 @@
             <h3><%= group.label %></h3>
             <div class="commu-term-chips">
                 <% group.items.forEach(function(entry) { %>
-                <a class="commu-term-chip" target="_blank" rel="noopener" href="<%= group.base %><%= encodeURIComponent(entry.id) %>"><%= entry.label %></a>
+                <a class="commu-term-chip" target="_blank" rel="noopener" href="<%= group.base %><%= encodeURIComponent(entry.id) %>"><%= factionText(entry.label) %></a>
                 <% }) %>
             </div>
             <% }) %>

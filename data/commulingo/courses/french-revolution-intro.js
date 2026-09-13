@@ -22,11 +22,510 @@ module.exports = {
   },
   "editorial": {
     "authoredAt": "2026-09-13",
-    "revision": 4,
+    "revision": 5,
     "interpretation": "Hobsbawm with separately identified primary evidence",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
     "sourceNotesFile": "data/commulingo/docs/french-revolution-intro.html"
   },
+  "factionGuide": {
+  "eyebrow": {
+    "ko": "1791–1794 · 세력 관계도",
+    "en": "1791–1794 · faction map"
+  },
+  "title": {
+    "ko": "같은 혁명파 안에서도 무엇이 달랐을까?",
+    "en": "What divided the revolutionaries?"
+  },
+  "intro": {
+    "ko": "의회 의석, 정치클럽, 파리의 대중운동은 서로 겹쳤지만 같은 조직은 아니었습니다. 세 층을 나누어 보면 지롱드파와 산악파의 대립, 산악파 집권기 주변의 에베르파·로베스피에르파·당통파 경쟁을 한 흐름으로 읽을 수 있습니다.",
+    "en": "Parliamentary alignments, political clubs, and popular politics in Paris overlapped, but they were not the same organisations. Reading three layers separately connects the Girondin–Mountain conflict with the later rivalry among Hébertists, Robespierrists, and Dantonists."
+  },
+  "caveat": {
+    "ko": "주의 · 오늘날의 당원명부와 강령을 갖춘 정당 지도가 아닙니다. 명칭과 동맹은 쟁점과 시기에 따라 움직였고, ‘에베르파’와 ‘로베스피에르파’도 당대의 단일 공식 당명이 아닙니다.",
+    "en": "Caution · This is not a map of modern parties with fixed membership and platforms. Labels and alliances shifted by issue and moment; “Hébertists” and “Robespierrists” were not single official party names."
+  },
+  "layers": [
+    {
+      "id": "convention",
+      "number": "01",
+      "period": "1792–1795",
+      "kind": {
+        "ko": "국민공회 의석 집단",
+        "en": "National Convention alignments"
+      },
+      "summary": {
+        "ko": "높은 좌석의 산악파, 낮은 좌석의 평원파, 의장 오른쪽의 지롱드파. 이름은 자리에서 왔지만 실제 갈등은 전쟁, 파리의 압력, 혁명정부의 집중 문제를 둘러쌌습니다.",
+        "en": "The Mountain sat high, the Plain below, and the Girondins to the president’s right. Their conflicts concerned war, pressure from Paris, and concentrated revolutionary government."
+      },
+      "groups": [
+        {
+          "id": "gironde",
+          "tone": "ochre",
+          "name": {
+            "ko": "지롱드파",
+            "en": "Girondins"
+          },
+          "alias": {
+            "ko": "브리소파라고도 부름",
+            "en": "also called Brissotins"
+          },
+          "description": {
+            "ko": "왕정 폐지에 참여한 공화파였지만 파리 코뮌과 무장 민중의 압력, 중앙집권적 비상정부를 경계했습니다. 1792년 대오스트리아 전쟁을 주도했습니다.",
+            "en": "Republicans who helped abolish monarchy but resisted pressure from the Paris Commune and armed crowds, as well as concentrated emergency rule. They led the drive for war with Austria in 1792."
+          },
+          "turn": {
+            "ko": "1793년 6월 봉기 뒤 지도부가 체포되어 의회 세력으로 붕괴",
+            "en": "Leadership arrested after the June 1793 rising; collapsed as a parliamentary force"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "자크 피에르 브리소",
+                "en": "Jacques Pierre Brissot"
+              }
+            },
+            {
+              "label": {
+                "ko": "피에르 베르니오",
+                "en": "Pierre Vergniaud"
+              }
+            }
+          ]
+        },
+        {
+          "id": "plain",
+          "tone": "neutral",
+          "name": {
+            "ko": "평원파",
+            "en": "The Plain"
+          },
+          "alias": {
+            "ko": "마레(늪)라고도 부름",
+            "en": "also called the Marsh"
+          },
+          "description": {
+            "ko": "국민공회의 가장 큰 중간 지대였습니다. 하나의 강령이나 지도부를 가진 정파라기보다 사안과 정세에 따라 표가 움직인 느슨한 다수였습니다.",
+            "en": "The Convention’s largest middle ground: less a faction with one programme and leadership than a loose majority whose votes shifted with issues and circumstances."
+          },
+          "turn": {
+            "ko": "초기에는 지롱드파, 1793년에는 산악파, 테르미도르에는 반로베스피에르 연합의 열쇠",
+            "en": "Key to Girondin influence early, Mountain rule in 1793, and the anti-Robespierre coalition at Thermidor"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "에마뉘엘 시에예스",
+                "en": "Emmanuel Sieyès"
+              }
+            },
+            {
+              "label": {
+                "ko": "베르트랑 바레르",
+                "en": "Bertrand Barère"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mountain",
+          "tone": "red",
+          "name": {
+            "ko": "산악파",
+            "en": "The Mountain"
+          },
+          "alias": {
+            "ko": "몽타뉴파",
+            "en": "the Montagnards"
+          },
+          "description": {
+            "ko": "자코뱅·코르들리에 클럽 출신이 많이 앉은 공회의 좌파였습니다. 강한 공화국과 중앙집권을 지지하고 파리 상퀼로트와 동맹해 지롱드파를 밀어냈습니다.",
+            "en": "The Convention’s left, with many deputies from Jacobin and Cordelier circles. It backed a strong, centralised republic and allied with Parisian sans-culottes against the Girondins."
+          },
+          "turn": {
+            "ko": "1793년 6월 이후 주도권 장악, 곧 혁명정부의 방향을 둘러싼 경쟁 격화",
+            "en": "Took the initiative after June 1793, then fractured over the direction of revolutionary government"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "막시밀리앵 로베스피에르",
+                "en": "Maximilien Robespierre"
+              },
+              "personId": "maximilien-robespierre"
+            },
+            {
+              "label": {
+                "ko": "조르주 당통",
+                "en": "Georges Danton"
+              }
+            },
+            {
+              "label": {
+                "ko": "장폴 마라",
+                "en": "Jean-Paul Marat"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networks",
+      "number": "02",
+      "period": "1789–1794",
+      "kind": {
+        "ko": "클럽과 파리의 대중정치",
+        "en": "Clubs and popular politics in Paris"
+      },
+      "summary": {
+        "ko": "의원은 클럽에도 가입했고 신문·코뮌·구역 총회·민중운동이 의회를 압박했습니다. 따라서 ‘자코뱅=산악파=상퀼로트’처럼 등호로 묶을 수 없습니다.",
+        "en": "Deputies also belonged to clubs, while newspapers, the Commune, sections, and popular movements pressured the legislature. Jacobins, the Mountain, and sans-culottes were not synonyms."
+      },
+      "groups": [
+        {
+          "id": "jacobins",
+          "tone": "green",
+          "name": {
+            "ko": "자코뱅 클럽",
+            "en": "Jacobin Club"
+          },
+          "alias": {
+            "ko": "전국 지부망을 가진 정치클럽",
+            "en": "a political club with a national network"
+          },
+          "description": {
+            "ko": "초기에는 입헌군주파부터 브리소·로베스피에르까지 폭넓게 거쳤습니다. 분열을 거친 1793년에는 산악파와 로베스피에르의 핵심 정치 기반이 됐습니다.",
+            "en": "Its earlier membership ranged from constitutional monarchists to Brissot and Robespierre. After successive splits, it became a central base for the Mountain and Robespierre in 1793."
+          },
+          "turn": {
+            "ko": "한 시점의 자코뱅파를 혁명 10년 전체의 고정 정당으로 보면 안 됨",
+            "en": "The Jacobins at one moment were not one fixed party across the decade"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "막시밀리앵 로베스피에르",
+                "en": "Maximilien Robespierre"
+              },
+              "personId": "maximilien-robespierre"
+            },
+            {
+              "label": {
+                "ko": "루이 앙투안 생쥐스트",
+                "en": "Louis Antoine de Saint-Just"
+              }
+            }
+          ]
+        },
+        {
+          "id": "cordeliers",
+          "tone": "red",
+          "name": {
+            "ko": "코르들리에 클럽",
+            "en": "Cordeliers Club"
+          },
+          "alias": {
+            "ko": "더 급진적인 파리 정치클럽",
+            "en": "a more radical Paris club"
+          },
+          "description": {
+            "ko": "청원·감시·봉기 정치와 가까웠습니다. 당통·데물랭과 에베르는 서로 다른 시기에 이 클럽을 기반으로 삼았으므로 코르들리에를 하나의 ‘에베르당’으로 볼 수 없습니다.",
+            "en": "It stood close to petitioning, vigilance, and insurrectionary politics. Danton, Desmoulins, and Hébert drew on it at different times, so it was never simply one “Hébert party”."
+          },
+          "turn": {
+            "ko": "1794년 에베르파 체포에 반발하지 못했고 이후 영향력 상실",
+            "en": "Failed to resist the Hébertist arrests in 1794 and then lost influence"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "자크 르네 에베르",
+                "en": "Jacques René Hébert"
+              },
+              "personId": "jacques-rene-hebert"
+            },
+            {
+              "label": {
+                "ko": "조르주 당통",
+                "en": "Georges Danton"
+              }
+            },
+            {
+              "label": {
+                "ko": "카미유 데물랭",
+                "en": "Camille Desmoulins"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sans-culottes",
+          "tone": "ochre",
+          "name": {
+            "ko": "상퀼로트와 파리 구역",
+            "en": "Sans-culottes and Paris sections"
+          },
+          "alias": {
+            "ko": "정당이 아닌 대중 기반",
+            "en": "a popular constituency, not a party"
+          },
+          "description": {
+            "ko": "수공업자·상점주·임금노동자와 구역 활동가들이 가격 통제, 생존권, 직접 참여를 요구했습니다. 여러 세력이 지지를 놓고 경쟁했지만 이들 전체가 한 파벌의 지휘를 받은 것은 아닙니다.",
+            "en": "Artisans, shopkeepers, wage workers, and sectional militants demanded price controls, subsistence, and direct participation. Leaders competed for their support, but they were not commanded by one faction."
+          },
+          "turn": {
+            "ko": "1793년 지롱드파 축출을 압박했고 1794년 대중조직 억제로 약화",
+            "en": "Pressed against the Girondins in 1793; weakened by restraints on popular organisation in 1794"
+          },
+          "people": []
+        },
+        {
+          "id": "enrages",
+          "tone": "neutral",
+          "name": {
+            "ko": "앙라제",
+            "en": "Enragés"
+          },
+          "alias": {
+            "ko": "‘격앙된 자들’이라 불린 급진 선동가들",
+            "en": "radical agitators called the “Enraged”"
+          },
+          "description": {
+            "ko": "자크 루·장 바를레·테오필 르클레르 등이 부와 투기, 식량 문제를 공격했습니다. 산악파 내부의 정식 분파라기보다 산악파와 에베르파 모두를 압박한 별도 흐름이었습니다.",
+            "en": "Jacques Roux, Jean Varlet, and Théophile Leclerc attacked wealth, speculation, and food scarcity. They were a distinct current, not a formal inner wing of the Mountain."
+          },
+          "turn": {
+            "ko": "1793년 가을 산악파와 에베르 계열 양쪽의 견제로 지도자들이 체포되거나 고립",
+            "en": "Leaders arrested or isolated in autumn 1793 under pressure from both Mountain and Hébertist circles"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "자크 루",
+                "en": "Jacques Roux"
+              }
+            },
+            {
+              "label": {
+                "ko": "장 바를레",
+                "en": "Jean Varlet"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mountain-rivals",
+      "number": "03",
+      "period": "1793–1794",
+      "kind": {
+        "ko": "산악파 집권기 주변의 세 경쟁 경향",
+        "en": "Three rival currents around Mountain rule"
+      },
+      "summary": {
+        "ko": "지롱드파가 밀려난 뒤에도 산악파는 하나로 움직이지 않았습니다. 의원·클럽·신문·위원회 인맥이 겹친 경향들이었지 경계가 고정된 정당은 아니었습니다.",
+        "en": "The Mountain did not act as one body after the Girondins fell. These were overlapping tendencies of deputies, clubs, newspapers, and committee networks, not parties with fixed boundaries."
+      },
+      "groups": [
+        {
+          "id": "hebertists",
+          "tone": "red",
+          "name": {
+            "ko": "에베르파",
+            "en": "Hébertists"
+          },
+          "alias": {
+            "ko": "과격파·과장파(Exagérés)",
+            "en": "also labelled Exagérés or ultras"
+          },
+          "description": {
+            "ko": "에베르의 신문 『페르 뒤셴』, 코르들리에 일부, 파리 코뮌 인맥이 느슨하게 연결됐습니다. 더 강한 경제 통제와 대중 압력, 비기독교화를 밀었고 봉기 호소가 실패한 뒤 숙청됐습니다.",
+            "en": "Hébert’s Le Père Duchesne, part of the Cordeliers, and Paris Commune networks were loosely connected. They pressed stronger controls, popular pressure, and dechristianisation, then were purged after a failed call for insurrection."
+          },
+          "turn": {
+            "ko": "1794년 3월 24일 에베르와 주요 동료 처형",
+            "en": "Hébert and leading associates executed on 24 March 1794"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "자크 르네 에베르",
+                "en": "Jacques René Hébert"
+              },
+              "personId": "jacques-rene-hebert"
+            },
+            {
+              "label": {
+                "ko": "피에르 가스파르 쇼메트",
+                "en": "Pierre-Gaspard Chaumette"
+              }
+            }
+          ]
+        },
+        {
+          "id": "robespierrists",
+          "tone": "green",
+          "name": {
+            "ko": "로베스피에르파와 위원회 정부",
+            "en": "Robespierrists and committee government"
+          },
+          "alias": {
+            "ko": "공안위원회 전체와 동일하지 않음",
+            "en": "not identical with the whole Committee of Public Safety"
+          },
+          "description": {
+            "ko": "로베스피에르·생쥐스트·쿠통의 인맥은 중앙집중적 혁명정부와 ‘덕과 공포’를 정당화했습니다. 공안위원회는 로베스피에르 개인의 당이 아니었지만 이들은 양쪽 경쟁 세력 제거에 책임이 있었습니다.",
+            "en": "Networks around Robespierre, Saint-Just, and Couthon defended centralised revolutionary government and “virtue and terror”. The Committee was not Robespierre’s personal party, but they bore responsibility for eliminating both rival currents."
+          },
+          "turn": {
+            "ko": "양쪽 경쟁자 제거 뒤 고립, 1794년 7월 27일 테르미도르 9일에 몰락",
+            "en": "Isolated after eliminating both rivals; overthrown on 9 Thermidor, 27 July 1794"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "막시밀리앵 로베스피에르",
+                "en": "Maximilien Robespierre"
+              },
+              "personId": "maximilien-robespierre"
+            },
+            {
+              "label": {
+                "ko": "루이 앙투안 생쥐스트",
+                "en": "Louis Antoine de Saint-Just"
+              }
+            },
+            {
+              "label": {
+                "ko": "조르주 쿠통",
+                "en": "Georges Couthon"
+              }
+            }
+          ]
+        },
+        {
+          "id": "indulgents",
+          "tone": "ochre",
+          "name": {
+            "ko": "당통파·관용파",
+            "en": "Dantonists or Indulgents"
+          },
+          "alias": {
+            "ko": "데물랭의 『비외 코르들리에』",
+            "en": "associated with Desmoulins’s Le Vieux Cordelier"
+          },
+          "description": {
+            "ko": "당통·데물랭 주변은 1793년 말부터 공포 완화와 수감자 심사, 부패 공격을 요구했습니다. 처음부터 일관된 온건파였던 것도, 단일한 전복 계획이 입증된 것도 아닙니다.",
+            "en": "The circle around Danton and Desmoulins called for easing the Terror, reviewing prisoners, and attacking corruption. They had not always been moderates, nor was a single plot to overthrow the government established."
+          },
+          "turn": {
+            "ko": "1794년 4월 5일 당통·데물랭 등 처형",
+            "en": "Danton, Desmoulins, and associates executed on 5 April 1794"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "조르주 당통",
+                "en": "Georges Danton"
+              }
+            },
+            {
+              "label": {
+                "ko": "카미유 데물랭",
+                "en": "Camille Desmoulins"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "timelineTitle": {
+    "ko": "동맹이 바뀌는 다섯 장면",
+    "en": "Five moments that changed the alliances"
+  },
+  "timeline": [
+    {
+      "date": "1791.07",
+      "title": {
+        "ko": "푀양파 분리",
+        "en": "The Feuillants split"
+      },
+      "text": {
+        "ko": "바렌 도주와 샹드마르스 사건 뒤 입헌군주제를 지키려는 푀양파가 자코뱅에서 갈라졌습니다.",
+        "en": "After Varennes and the Champ de Mars crisis, constitutional monarchists split from the Jacobins as Feuillants."
+      }
+    },
+    {
+      "date": "1792.09",
+      "title": {
+        "ko": "국민공회 개회",
+        "en": "The Convention opens"
+      },
+      "text": {
+        "ko": "지롱드파·평원파·산악파의 의석 구도가 공화정의 첫 권력 경쟁을 만들었습니다.",
+        "en": "Girondins, the Plain, and the Mountain formed the first power struggle of the republic."
+      }
+    },
+    {
+      "date": "1793.06",
+      "title": {
+        "ko": "지롱드파 축출",
+        "en": "The Girondins fall"
+      },
+      "text": {
+        "ko": "파리 구역과 국민방위대의 압력 아래 평원파가 산악파 쪽으로 이동해 지롱드 지도부 체포를 받아들였습니다.",
+        "en": "Under pressure from Paris sections and the National Guard, the Plain moved toward the Mountain and accepted the arrest of Girondin leaders."
+      }
+    },
+    {
+      "date": "1794.03–04",
+      "title": {
+        "ko": "양쪽 날개 숙청",
+        "en": "Both flanks are purged"
+      },
+      "text": {
+        "ko": "혁명정부는 먼저 에베르파, 이어 당통파를 혁명재판소로 보내 경쟁 세력을 제거했습니다.",
+        "en": "Revolutionary government sent first the Hébertists and then the Dantonists to the Revolutionary Tribunal."
+      }
+    },
+    {
+      "date": "1794.07",
+      "title": {
+        "ko": "테르미도르 9일",
+        "en": "9 Thermidor"
+      },
+      "text": {
+        "ko": "평원파와 로베스피에르에 반대한 산악파 의원들이 결합해 로베스피에르파를 무너뜨렸습니다.",
+        "en": "The Plain joined Montagnard opponents of Robespierre to overthrow the Robespierrist current."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "label": {
+        "ko": "프랑스 국민의회 · 국민공회의 구성",
+        "en": "French National Assembly · composition of the National Convention"
+      },
+      "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute"
+    },
+    {
+      "label": {
+        "ko": "프랑스 국민의회 · 공포정치 1793–1794",
+        "en": "French National Assembly · the Terror, 1793–1794"
+      },
+      "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-terreur"
+    },
+    {
+      "label": {
+        "ko": "프랑스 국립도서관 · 자크 르네 에베르 전거",
+        "en": "Bibliothèque nationale de France · Jacques René Hébert authority record"
+      },
+      "href": "https://catalogue.bnf.fr/ark:/12148/cb12520097x"
+    }
+  ]
+},
   "chapters": [
     {
       "id": "french-revolution-intro-ch06",

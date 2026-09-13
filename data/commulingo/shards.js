@@ -152,6 +152,7 @@ function buildPayloads(bundle, version) {
             noAutoLink: collection.noAutoLink,
             conceptGraph: collection.conceptGraph,
             decisionTimeline: collection.decisionTimeline,
+            factionGuide: collection.factionGuide,
             chapters: (collection.chapters || []).map(chapter => ({
                 id: chapter.id,
                 volumeNumber: chapter.volumeNumber,
