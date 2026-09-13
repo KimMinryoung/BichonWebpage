@@ -12,8 +12,8 @@ const COURSES = [
             en: 'History of the French Revolution',
         },
         badge: {
-            ko: '짧은 학습 · 8편',
-            en: '8 short lessons',
+            ko: '짧은 학습 · 10편',
+            en: '10 short lessons',
         },
         description: {
             ko: '미국 독립전쟁의 파급부터 1799년 브뤼메르까지, 대외전쟁·공포정치·자유와 평등의 쟁점을 혁명의 흐름 속에서 배웁니다.',

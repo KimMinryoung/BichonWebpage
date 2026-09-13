@@ -13,8 +13,8 @@ module.exports = {
     "en": "History of the French Revolution"
   },
   "badge": {
-    "ko": "짧은 학습 · 8편",
-    "en": "8 short lessons"
+    "ko": "짧은 학습 · 10편",
+    "en": "10 short lessons"
   },
   "description": {
     "ko": "미국 독립전쟁의 파급부터 1799년 브뤼메르까지, 대외전쟁·공포정치·자유와 평등의 쟁점을 혁명의 흐름 속에서 배웁니다.",
@@ -22,7 +22,7 @@ module.exports = {
   },
   "editorial": {
     "authoredAt": "2026-09-13",
-    "revision": 3,
+    "revision": 4,
     "interpretation": "Hobsbawm with separately identified primary evidence",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
     "sourceNotesFile": "data/commulingo/docs/french-revolution-intro.html"
@@ -114,14 +114,32 @@ module.exports = {
       },
       "conceptMap": {
         "ko": [
-          { "title": "제국 경쟁과 재정", "text": "해외전쟁 비용과 조세 구조가 삼부회 소집의 배경이 됐습니다." },
-          { "title": "대표권 혁명", "text": "제3신분 대표들이 국민의회를 선언했습니다." },
-          { "title": "민중 행동", "text": "도시와 농촌의 행동이 의회의 결정을 밀어붙였습니다." }
+          {
+            "title": "제국 경쟁과 재정",
+            "text": "해외전쟁 비용과 조세 구조가 삼부회 소집의 배경이 됐습니다."
+          },
+          {
+            "title": "대표권 혁명",
+            "text": "제3신분 대표들이 국민의회를 선언했습니다."
+          },
+          {
+            "title": "민중 행동",
+            "text": "도시와 농촌의 행동이 의회의 결정을 밀어붙였습니다."
+          }
         ],
         "en": [
-          { "title": "Imperial rivalry and finance", "text": "The cost of overseas wars and the tax structure brought the Estates-General together." },
-          { "title": "Representative revolution", "text": "Third Estate deputies declared a National Assembly." },
-          { "title": "Popular action", "text": "Action in town and country pushed the Assembly forward." }
+          {
+            "title": "Imperial rivalry and finance",
+            "text": "The cost of overseas wars and the tax structure brought the Estates-General together."
+          },
+          {
+            "title": "Representative revolution",
+            "text": "Third Estate deputies declared a National Assembly."
+          },
+          {
+            "title": "Popular action",
+            "text": "Action in town and country pushed the Assembly forward."
+          }
         ]
       },
       "lessons": [
@@ -173,7 +191,10 @@ module.exports = {
               "source": {
                 "kind": "reference",
                 "href": "https://heritage.bnf.fr/france-ameriques/france-dans-guerre-dindependance-americaine",
-                "label": { "ko": "프랑스 국립도서관, 미국 독립전쟁에 참전한 프랑스", "en": "Bibliothèque nationale de France, France in the American War of Independence" }
+                "label": {
+                  "ko": "프랑스 국립도서관, 미국 독립전쟁에 참전한 프랑스",
+                  "en": "Bibliothèque nationale de France, France in the American War of Independence"
+                }
               }
             },
             {
@@ -216,7 +237,10 @@ module.exports = {
               "source": {
                 "kind": "reference",
                 "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
-                "label": { "ko": "프랑스 국민의회 혁명사, 국민의회와 바스티유", "en": "French National Assembly history, National Assembly and Bastille" }
+                "label": {
+                  "ko": "프랑스 국민의회 혁명사, 국민의회와 바스티유",
+                  "en": "French National Assembly history, National Assembly and Bastille"
+                }
               }
             },
             {
@@ -259,7 +283,10 @@ module.exports = {
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/france-rights-and-emancipation-1789-1794",
-                "label": { "ko": "프랑스 혁명 문헌집, 1789년 인권선언", "en": "French Revolution collection, Declaration of Rights of 1789" }
+                "label": {
+                  "ko": "프랑스 혁명 문헌집, 1789년 인권선언",
+                  "en": "French Revolution collection, Declaration of Rights of 1789"
+                }
               }
             }
           ]
@@ -270,19 +297,43 @@ module.exports = {
         "ko": {
           "title": "1789년의 연쇄: 국가 위기가 혁명이 되기까지",
           "steps": [
-            { "label": "해외전쟁과 재정", "note": "전쟁 채무와 막힌 조세 개혁이 삼부회 소집의 배경이 됐습니다." },
-            { "label": "국민의회", "note": "대표권 다툼이 국민주권 문제로 바뀌었습니다." },
-            { "label": "민중 행동", "note": "바스티유와 대공포가 권력관계를 흔들었습니다." },
-            { "label": "8월의 결정", "note": "특권 폐지와 권리 선언이 새 질서의 원칙을 세웠습니다." }
+            {
+              "label": "해외전쟁과 재정",
+              "note": "전쟁 채무와 막힌 조세 개혁이 삼부회 소집의 배경이 됐습니다."
+            },
+            {
+              "label": "국민의회",
+              "note": "대표권 다툼이 국민주권 문제로 바뀌었습니다."
+            },
+            {
+              "label": "민중 행동",
+              "note": "바스티유와 대공포가 권력관계를 흔들었습니다."
+            },
+            {
+              "label": "8월의 결정",
+              "note": "특권 폐지와 권리 선언이 새 질서의 원칙을 세웠습니다."
+            }
           ]
         },
         "en": {
           "title": "The chain of 1789: how a state crisis became a revolution",
           "steps": [
-            { "label": "War and finance", "note": "War debt and blocked tax reform formed the background to summoning the Estates-General." },
-            { "label": "National Assembly", "note": "A voting dispute became a claim to national sovereignty." },
-            { "label": "Popular action", "note": "The Bastille and Great Fear altered the balance of power." },
-            { "label": "August settlements", "note": "Privilege was attacked and universal rights proclaimed." }
+            {
+              "label": "War and finance",
+              "note": "War debt and blocked tax reform formed the background to summoning the Estates-General."
+            },
+            {
+              "label": "National Assembly",
+              "note": "A voting dispute became a claim to national sovereignty."
+            },
+            {
+              "label": "Popular action",
+              "note": "The Bastille and Great Fear altered the balance of power."
+            },
+            {
+              "label": "August settlements",
+              "note": "Privilege was attacked and universal rights proclaimed."
+            }
           ]
         }
       }
@@ -955,14 +1006,32 @@ module.exports = {
       },
       "conceptMap": {
         "ko": [
-          { "title": "국경 밖 반혁명", "text": "망명귀족과 외국 군주의 압력이 왕실 불신과 결합했습니다." },
-          { "title": "전쟁과 침공", "text": "프랑스의 선전포고, 초기 패전과 브룬스윅의 위협이 국내 대립을 격화했습니다." },
-          { "title": "발미와 공화정", "text": "침공을 막은 이튿날 국민공회가 왕정을 폐지했습니다." }
+          {
+            "title": "국경 밖 반혁명",
+            "text": "망명귀족과 외국 군주의 압력이 왕실 불신과 결합했습니다."
+          },
+          {
+            "title": "전쟁과 침공",
+            "text": "프랑스의 선전포고, 초기 패전과 브룬스윅의 위협이 국내 대립을 격화했습니다."
+          },
+          {
+            "title": "발미와 공화정",
+            "text": "침공을 막은 이튿날 국민공회가 왕정을 폐지했습니다."
+          }
         ],
         "en": [
-          { "title": "Counter-revolution abroad", "text": "Émigrés and foreign monarchs became entangled with distrust of the court." },
-          { "title": "War and invasion", "text": "France's declaration, early defeats, and Brunswick's threat intensified conflict at home." },
-          { "title": "Valmy and republic", "text": "The Convention abolished monarchy the day after the invasion was checked." }
+          {
+            "title": "Counter-revolution abroad",
+            "text": "Émigrés and foreign monarchs became entangled with distrust of the court."
+          },
+          {
+            "title": "War and invasion",
+            "text": "France's declaration, early defeats, and Brunswick's threat intensified conflict at home."
+          },
+          {
+            "title": "Valmy and republic",
+            "text": "The Convention abolished monarchy the day after the invasion was checked."
+          }
         ]
       },
       "lessons": [
@@ -1014,7 +1083,10 @@ module.exports = {
               "source": {
                 "kind": "reference",
                 "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
-                "label": { "ko": "프랑스 국민의회 혁명사, 바렌 도주", "en": "French National Assembly history, flight to Varennes" }
+                "label": {
+                  "ko": "프랑스 국민의회 혁명사, 바렌 도주",
+                  "en": "French National Assembly history, flight to Varennes"
+                }
               }
             },
             {
@@ -1057,7 +1129,10 @@ module.exports = {
               "source": {
                 "kind": "reference",
                 "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-de-guerre-manifestation-populaire-des-girondins",
-                "label": { "ko": "프랑스 국민의회, 1792년 선전포고·초기 패전·왕의 거부권", "en": "French National Assembly, declaration of war, early defeats, and royal vetoes in 1792" }
+                "label": {
+                  "ko": "프랑스 국민의회, 1792년 선전포고·초기 패전·왕의 거부권",
+                  "en": "French National Assembly, declaration of war, early defeats, and royal vetoes in 1792"
+                }
               }
             },
             {
@@ -1100,7 +1175,10 @@ module.exports = {
               "source": {
                 "kind": "reference",
                 "href": "https://www2.assemblee-nationale.fr/decouvrir-l-assemblee/histoire/grands-discours-parlementaires/danton-2-septembre-1792",
-                "label": { "ko": "프랑스 국민의회, 브룬스윅 선언·침공·발미와 공화정", "en": "French National Assembly, Brunswick Manifesto, invasion, Valmy, and the republic" }
+                "label": {
+                  "ko": "프랑스 국민의회, 브룬스윅 선언·침공·발미와 공화정",
+                  "en": "French National Assembly, Brunswick Manifesto, invasion, Valmy, and the republic"
+                }
               }
             }
           ]
@@ -1111,19 +1189,369 @@ module.exports = {
         "ko": {
           "title": "국제전쟁 속에서 입헌군주제가 무너지다",
           "steps": [
-            { "label": "1791 · 바렌과 필니츠", "note": "왕실 도주와 외국 군주의 압력이 입헌군주제의 신뢰를 흔들었습니다." },
-            { "label": "1792 · 선전포고와 패전", "note": "프랑스의 전쟁 선택과 초기 패전이 왕실 의혹을 키웠습니다." },
-            { "label": "브룬스윅과 8월 10일", "note": "침공 위협 속 봉기 뒤 왕의 직무가 정지됐습니다." },
-            { "label": "발미와 9월 21일", "note": "침공군의 진격을 막은 이튿날 국민공회가 왕정을 폐지했습니다." }
+            {
+              "label": "1791 · 바렌과 필니츠",
+              "note": "왕실 도주와 외국 군주의 압력이 입헌군주제의 신뢰를 흔들었습니다."
+            },
+            {
+              "label": "1792 · 선전포고와 패전",
+              "note": "프랑스의 전쟁 선택과 초기 패전이 왕실 의혹을 키웠습니다."
+            },
+            {
+              "label": "브룬스윅과 8월 10일",
+              "note": "침공 위협 속 봉기 뒤 왕의 직무가 정지됐습니다."
+            },
+            {
+              "label": "발미와 9월 21일",
+              "note": "침공군의 진격을 막은 이튿날 국민공회가 왕정을 폐지했습니다."
+            }
           ]
         },
         "en": {
           "title": "Constitutional monarchy collapses amid international war",
           "steps": [
-            { "label": "1791 · Varennes and Pillnitz", "note": "Royal flight and foreign pressure damaged confidence in constitutional monarchy." },
-            { "label": "1792 · Declaration and defeat", "note": "France's choice of war and early defeats intensified suspicion of the court." },
-            { "label": "Brunswick and 10 August", "note": "Amid invasion threats, insurrection was followed by suspension of the king." },
-            { "label": "Valmy and 21 September", "note": "The Convention abolished monarchy the day after the invasion was checked." }
+            {
+              "label": "1791 · Varennes and Pillnitz",
+              "note": "Royal flight and foreign pressure damaged confidence in constitutional monarchy."
+            },
+            {
+              "label": "1792 · Declaration and defeat",
+              "note": "France's choice of war and early defeats intensified suspicion of the court."
+            },
+            {
+              "label": "Brunswick and 10 August",
+              "note": "Amid invasion threats, insurrection was followed by suspension of the king."
+            },
+            {
+              "label": "Valmy and 21 September",
+              "note": "The Convention abolished monarchy the day after the invasion was checked."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "french-revolution-intro-ch09",
+      "volumeNumber": 11,
+      "chapterNumber": 5,
+      "partNumber": 2,
+      "partTitle": {
+        "ko": "제2부 · 공화정과 혁명정부",
+        "en": "Part II · Republic and revolutionary government"
+      },
+      "title": {
+        "ko": "전쟁은 어떻게 혁명을 총동원 체제로 바꾸었을까?",
+        "en": "How did war turn the Revolution into a system of mass mobilisation?"
+      },
+      "sourceUrl": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-terreur",
+      "summary": {
+        "ko": "약 7분 · 제1차 대프랑스 동맹과 방데전쟁, 국민총동원령이 혁명정부와 사회를 어떻게 바꿨는지 따로 배웁니다.",
+        "en": "About 7 minutes · Examine how the First Coalition, the Vendée war, and the levée en masse changed revolutionary government and society."
+      },
+      "learningFocus": {
+        "ko": "국제전쟁과 내전을 단순한 배경으로 넘기지 말고, 군사 위기가 병력·생산·행정의 전국적 동원으로 이어진 과정을 살펴보세요. 위기의 존재와 모든 억압의 정당성은 구별해야 합니다.",
+        "en": "Treat international and civil war as more than background: trace how military crisis produced nationwide mobilisation of people, production, and administration. Distinguish the existence of crisis from a justification of every act of repression."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "공화국은 여러 전선에서 포위됐다",
+            "items": [
+              "1793년 루이 16세 처형과 프랑스의 전쟁 확대 뒤 영국·네덜란드·에스파냐 등이 오스트리아·프로이센과 함께 공화국에 맞섰습니다.",
+              "프랑스군의 패전과 장군 뒤무리에의 망명은 군사 지휘부와 국내 반혁명에 대한 불신을 키웠습니다.",
+              "서부의 방데전쟁과 여러 지방의 반란까지 겹치면서 국민공회는 국경전쟁과 내전을 동시에 맞았습니다."
+            ]
+          },
+          {
+            "title": "국민총동원은 징병만이 아니었다",
+            "items": [
+              "1793년 8월 23일 국민총동원령은 젊은 남성의 전투 복무뿐 아니라 기혼자의 무기·수송, 여성의 천막·의복·병원, 노인의 선전까지 역할을 나눴습니다.",
+              "무기와 군수품 생산, 말과 물자의 징발, 지방 행정의 보고 체계도 전쟁 수행에 결합했습니다.",
+              "전쟁은 직업군인만의 일이 아니라 인구와 생산을 국가가 조직하는 공화국 전체의 과제가 됐습니다."
+            ]
+          },
+          {
+            "title": "동원과 비상통치는 함께 확대됐다",
+            "items": [
+              "국민공회는 공안위원회와 파견의원을 통해 군대·군수·지방 행정을 감독했고, 치안위원회와 혁명재판소는 용의자 색출과 재판을 맡았습니다.",
+              "전쟁 성과와 정치적 충성의 경계가 흐려지면서 군사적 실패나 물자 부족도 반역 혐의와 연결될 수 있었습니다.",
+              "전쟁과 내전은 비상권력 확대의 실제 원인이었지만, 광범한 구금과 약식 재판이 모두 불가피했다는 결론을 자동으로 주지는 않습니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "프랑스 국민의회, 「공포정치 1793~1794」: 대외전쟁·방데전쟁과 혁명정부 기구.",
+              "1793년 8월 23일 국민총동원령: 연령·성별·직업에 따라 배정한 전쟁 동원 역할.",
+              "홉스봄, 『혁명의 시대』: 전쟁이 만든 중앙집중, 대중 동원, 혁명군의 성격."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "The republic faced war on several fronts",
+            "items": [
+              "After the execution of Louis XVI and the widening of French war in 1793, Britain, the Dutch Republic, and Spain joined Austria and Prussia against the republic.",
+              "French defeats and General Dumouriez’s defection deepened suspicion of military command and domestic counter-revolution.",
+              "The Vendée war in the west and revolts in several departments meant that the Convention faced foreign and civil war at once."
+            ]
+          },
+          {
+            "title": "The levée en masse was more than conscription",
+            "items": [
+              "The decree of 23 August 1793 assigned young men to combat, married men to weapons and transport, women to tents, clothing, and hospitals, and older men to public encouragement.",
+              "Weapons production, requisition of horses and supplies, and reporting through local administration were also tied to the war effort.",
+              "War ceased to belong to professional soldiers alone and became a republican project organising population and production."
+            ]
+          },
+          {
+            "title": "Mobilisation and emergency rule expanded together",
+            "items": [
+              "The Convention used the Committee of Public Safety and representatives on mission to supervise armies, supply, and local administration; the Committee of General Security and Revolutionary Tribunal pursued and tried suspects.",
+              "As the boundary between military performance and political loyalty blurred, defeat or shortage could become linked to accusations of treason.",
+              "War and civil war were real causes of emergency power, but they do not automatically prove that broad detention and summary justice were unavoidable."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "French National Assembly, “The Terror, 1793–1794”: foreign war, the Vendée, and institutions of revolutionary government.",
+              "Levée en masse decree, 23 August 1793: wartime roles assigned by age, gender, and occupation.",
+              "Hobsbawm, The Age of Revolution: centralisation, mass mobilisation, and the character of revolutionary war."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "연합국 전쟁",
+            "text": "공화국은 유럽 군주국들과 여러 전선에서 싸웠습니다."
+          },
+          {
+            "title": "내전",
+            "text": "방데와 지방 반란이 국내의 군사·정치 위기를 겹쳤습니다."
+          },
+          {
+            "title": "국민총동원",
+            "text": "병력뿐 아니라 생산·수송·의료·선전까지 동원했습니다."
+          },
+          {
+            "title": "비상통치",
+            "text": "전쟁 행정과 반혁명 억압을 맡은 위원회·파견의원의 권한이 커졌습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Coalition war",
+            "text": "The republic fought European monarchies on several fronts."
+          },
+          {
+            "title": "Civil war",
+            "text": "The Vendée and departmental revolts compounded military and political crisis."
+          },
+          {
+            "title": "Mass mobilisation",
+            "text": "The state mobilised production, transport, medicine, and propaganda as well as soldiers."
+          },
+          {
+            "title": "Emergency rule",
+            "text": "Committees and representatives gained power over war administration and repression."
+          }
+        ]
+      },
+      "lessons": [
+        {
+          "id": "french-revolution-intro-ch09-basic",
+          "level": "basic",
+          "title": {
+            "ko": "전쟁은 어떻게 혁명을 총동원 체제로 바꾸었을까?",
+            "en": "How did war turn the Revolution into a system of mass mobilisation?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1793년 봄 혁명정부가 마주한 군사 위기를 가장 정확하게 설명한 것은 무엇일까요?",
+                "en": "Which account best describes the military crisis facing revolutionary government in spring 1793?"
+              },
+              "choices": {
+                "ko": [
+                  "유럽 연합국과의 여러 전선에서 패전이 이어지는 가운데 방데전쟁과 지방 반란도 겹쳤습니다.",
+                  "발미 뒤 모든 외국이 프랑스와 강화했고 국내에서도 무장 충돌이 완전히 사라졌습니다.",
+                  "프랑스군은 국외 원정에만 집중했고 국민공회는 국내 반란이나 군수 문제를 다루지 않았습니다."
+                ],
+                "en": [
+                  "Defeats on several fronts against a European coalition coincided with the Vendée war and revolts in the departments.",
+                  "After Valmy every foreign power made peace with France and armed conflict disappeared at home.",
+                  "French armies concentrated only on conquest abroad, while the Convention faced no domestic revolt or supply problem."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "대외전쟁과 내전이 동시에 벌어졌다는 점이 혁명정부의 비상조치 확대를 이해하는 핵심입니다.",
+                  "발미는 침공군의 진격을 막았지만 전쟁을 끝내지 않았고 1793년에는 대프랑스 동맹과 내전이 확대됐습니다.",
+                  "국민공회는 전선·군수·지방 반란을 함께 다뤄야 했고 이를 위해 위원회와 파견의원의 권한을 키웠습니다."
+                ],
+                "en": [
+                  "The conjunction of foreign and civil war is central to understanding the expansion of emergency measures.",
+                  "Valmy checked an advance but did not end war; coalition war and civil conflict expanded in 1793.",
+                  "The Convention had to address fronts, supply, and domestic revolt together, increasing the powers of committees and representatives."
+                ]
+              },
+              "explanation": {
+                "ko": "1793년 공화국은 오스트리아·프로이센뿐 아니라 영국·네덜란드·에스파냐 등이 참여한 연합국과 싸웠고, 방데전쟁과 지방 반란도 맞았습니다. 이 복합 위기는 공안위원회 설치와 전국적 전쟁 동원의 배경이 됐습니다. 다만 위기가 있었다는 사실만으로 뒤이은 모든 체포와 처형이 정당화되지는 않습니다.",
+                "en": "In 1793 the republic fought a coalition that included Britain, the Dutch Republic, and Spain as well as Austria and Prussia, while confronting the Vendée and departmental revolts. This compound crisis formed the setting for the Committee of Public Safety and nationwide mobilisation. Its existence did not by itself justify every later arrest or execution."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-terreur",
+                "label": {
+                  "ko": "프랑스 국민의회, 대외전쟁·방데전쟁과 혁명정부",
+                  "en": "French National Assembly, foreign war, the Vendée, and revolutionary government"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1793년 8월 23일 국민총동원령이 뜻한 동원의 범위는 무엇이었을까요?",
+                "en": "What was the scope of mobilisation under the levée en masse of 23 August 1793?"
+              },
+              "choices": {
+                "ko": [
+                  "젊은 남성의 전투 복무와 함께 무기·수송·의복·병원·선전 등 사회 전체의 역할을 전쟁에 배정했습니다.",
+                  "파리의 직업군인에게만 자원입대를 권하고 지방의 생산과 행정은 전쟁에서 분리했습니다.",
+                  "모든 공장을 폐쇄하고 농업 생산을 중단해 전 국민을 같은 보병부대로 편성했습니다."
+                ],
+                "en": [
+                  "It assigned wartime roles across society, combining young men’s combat service with weapons, transport, clothing, hospitals, and public encouragement.",
+                  "It invited only professional soldiers in Paris to volunteer and kept provincial production and administration separate from war.",
+                  "It closed every workshop and stopped farming in order to place the whole population in identical infantry units."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "국민총동원은 병력 징집을 넘어 연령·성별·역할에 따라 생산과 지원 활동까지 전쟁에 조직했습니다.",
+                  "법령은 전국의 사람과 물자를 대상으로 했으며 직업군인의 자원입대만을 말하지 않았습니다.",
+                  "사회 구성원에게 서로 다른 역할을 배정했지 모든 사람을 보병으로 만들거나 생산 자체를 없애지 않았습니다."
+                ],
+                "en": [
+                  "The levée reached beyond enlistment, organising production and support through different social roles.",
+                  "The decree addressed people and resources across France, not just voluntary service by professional soldiers in Paris.",
+                  "It allocated different roles rather than turning everyone into infantry or abolishing production."
+                ]
+              },
+              "explanation": {
+                "ko": "국민총동원령은 젊은 남성을 전장에 보내는 동시에 기혼 남성에게 무기와 수송, 여성에게 천막·의복·병원, 어린이와 노인에게 보조·선전 역할을 배정했습니다. 국가가 인구와 생산을 전쟁 수행에 조직했다는 점에서 근대적 대중전쟁의 중요한 전환이었습니다.",
+                "en": "The levée sent young men to the front while assigning married men to weapons and transport, women to tents, clothing, and hospitals, and children and older people to support and public encouragement. It marked a major turn toward mass war by organising population and production for the war effort."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://revolution.chnm.org/d/429/",
+                "label": {
+                  "ko": "1793년 8월 23일 국민총동원령",
+                  "en": "Levée en masse decree, 23 August 1793"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "전쟁과 공포정치의 관계를 설명할 때 가장 주의해야 할 점은 무엇일까요?",
+                "en": "What distinction matters most when explaining the relation between war and the Terror?"
+              },
+              "choices": {
+                "ko": [
+                  "전쟁과 내전은 비상권력 확대의 실제 배경이지만, 모든 구금과 약식 재판의 필요성을 자동으로 입증하지는 않습니다.",
+                  "전쟁이 있었으므로 혁명재판소의 모든 판결은 별도의 검토 없이 군사적으로 필수였다고 보아야 합니다.",
+                  "공포정치는 전쟁이 끝난 뒤 처음 생겼으므로 군사 위기와는 아무 관련이 없었습니다."
+                ],
+                "en": [
+                  "War and civil war were real conditions behind emergency power, but they do not automatically prove every detention and summary trial necessary.",
+                  "Because war existed, every verdict of the Revolutionary Tribunal must be treated as militarily necessary without further examination.",
+                  "The Terror began only after war had ended and therefore had no relation to military crisis."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "원인과 정당화를 구별하면 전쟁의 실제 압력도, 국가폭력에 대한 정치적 책임도 함께 볼 수 있습니다.",
+                  "군사 위기는 구체적인 체포·기소·재판의 증거를 대신하지 못합니다.",
+                  "전쟁은 공포정치 이전과 진행 중에 계속됐으며 혁명정부의 비상권력 확대와 밀접히 연결됐습니다."
+                ],
+                "en": [
+                  "Separating cause from justification keeps both the real pressure of war and political responsibility for state violence in view.",
+                  "Military crisis cannot substitute for evidence concerning a particular arrest, charge, or trial.",
+                  "War continued before and during the Terror and was closely linked to the expansion of emergency government."
+                ]
+              },
+              "explanation": {
+                "ko": "대외전쟁과 내전은 혁명정부가 중앙집중적 동원과 감시·재판 기구를 확대한 핵심 조건이었습니다. 그러나 배경을 설명하는 일과 각 억압 조치가 정당하거나 불가피했다고 판단하는 일은 다릅니다. 이 둘을 구별해야 전쟁도 단순한 핑계로 지우지 않고 공포정치의 책임도 전쟁 탓으로 없애지 않을 수 있습니다.",
+                "en": "Foreign and civil war were central conditions under which revolutionary government expanded central mobilisation, surveillance, and judicial machinery. Explaining that setting is different from judging each coercive measure justified or unavoidable. The distinction prevents war from being dismissed as a mere pretext without dissolving responsibility for the Terror into war alone."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-terreur",
+                "label": {
+                  "ko": "프랑스 국민의회, 전쟁 위기와 공포정치",
+                  "en": "French National Assembly, wartime crisis and the Terror"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "flow",
+        "ko": {
+          "title": "1793년: 전선의 위기에서 총동원과 비상통치로",
+          "steps": [
+            {
+              "label": "대프랑스 동맹",
+              "note": "유럽 여러 국가와의 전쟁이 확대되고 프랑스군은 패전을 겪었습니다."
+            },
+            {
+              "label": "방데와 지방 반란",
+              "note": "국내 무장 충돌이 국경전쟁과 겹쳤습니다."
+            },
+            {
+              "label": "국민총동원",
+              "note": "병력·생산·수송·의료를 전국적으로 조직했습니다."
+            },
+            {
+              "label": "비상권력 확대",
+              "note": "위원회와 파견의원이 전쟁·행정·억압을 연결했습니다."
+            }
+          ]
+        },
+        "en": {
+          "title": "1793: from crisis at the fronts to mass mobilisation and emergency rule",
+          "steps": [
+            {
+              "label": "Coalition war",
+              "note": "War widened across Europe and French armies suffered defeats."
+            },
+            {
+              "label": "Vendée and revolts",
+              "note": "Domestic armed conflict overlapped with war at the frontier."
+            },
+            {
+              "label": "Levée en masse",
+              "note": "Soldiers, production, transport, and medicine were organised nationwide."
+            },
+            {
+              "label": "Emergency power",
+              "note": "Committees and representatives linked war, administration, and repression."
+            }
           ]
         }
       }
@@ -1131,7 +1559,7 @@ module.exports = {
     {
       "id": "french-revolution-intro-ch03",
       "volumeNumber": 11,
-      "chapterNumber": 5,
+      "chapterNumber": 6,
       "partNumber": 2,
       "partTitle": {
         "ko": "제2부 · 공화정과 혁명정부",
@@ -1425,7 +1853,7 @@ module.exports = {
     {
       "id": "french-revolution-intro-ch04",
       "volumeNumber": 11,
-      "chapterNumber": 6,
+      "chapterNumber": 7,
       "partNumber": 2,
       "partTitle": {
         "ko": "제2부 · 공화정과 혁명정부",
@@ -1767,9 +2195,351 @@ module.exports = {
       }
     },
     {
+      "id": "french-revolution-intro-ch10",
+      "volumeNumber": 11,
+      "chapterNumber": 8,
+      "partNumber": 2,
+      "partTitle": {
+        "ko": "제2부 · 공화정과 혁명정부",
+        "en": "Part II · Republic and revolutionary government"
+      },
+      "title": {
+        "ko": "로베스피에르는 왜 혁명파를 숙청하고 몰락했을까?",
+        "en": "Why did Robespierre purge fellow revolutionaries and then fall?"
+      },
+      "sourceUrl": "/commulingo/docs/france-revolutionary-government-and-justice-1793-1794#robespierre-political-morality-1794",
+      "summary": {
+        "ko": "약 8분 · 에베르파와 당통파 숙청, 프레리알법, 테르미도르 9일을 따라 로베스피에르의 선택과 책임을 구체적으로 봅니다.",
+        "en": "About 8 minutes · Follow the Hébertist and Dantonist purges, the Law of 22 Prairial, and 9 Thermidor to examine Robespierre’s choices and responsibility."
+      },
+      "learningFocus": {
+        "ko": "로베스피에르를 공포정치의 유일한 지배자로 만들지도, 여러 기구 중 한 사람이라며 책임을 흐리지도 마세요. 그가 공개적으로 제시한 논리, 동료 제거, 재판 절차 축소 지지, 몰락의 정치 과정을 시간순으로 확인하세요.",
+        "en": "Do not turn Robespierre into the Terror’s sole ruler or dissolve his responsibility into institutions. Trace his public argument, removal of fellow revolutionaries, support for reduced trial safeguards, and political fall in sequence."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "덕과 공포를 하나의 통치 논리로 묶다",
+            "items": [
+              "1794년 2월 5일 로베스피에르는 국민공회에서 공화국의 원동력을 덕이라고 하고, 혁명기에는 덕에 공포가 결합해야 한다고 주장했습니다.",
+              "그는 공포를 신속하고 엄격한 정의로 정의해 혁명의 적을 억압하는 국가폭력을 공화주의적 도덕과 연결했습니다.",
+              "이는 공포정치를 수동적으로 용인한 것이 아니라 공개적으로 이론화한 행위였습니다."
+            ]
+          },
+          {
+            "title": "급진파와 관용파를 차례로 제거하다",
+            "items": [
+              "1794년 3월 에베르와 그 동료들은 더 급진적인 대중정치와 봉기 선동의 혐의 속에 체포돼 처형됐습니다.",
+              "4월에는 공포 완화와 부패 청산을 둘러싸고 대립한 당통·데물랭 등 이른바 관용파가 처형됐습니다.",
+              "로베스피에르와 공안위원회 지도부는 혁명 진영의 한쪽만이 아니라 좌우의 경쟁 세력을 차례로 제거하는 데 책임이 있었습니다."
+            ]
+          },
+          {
+            "title": "프레리알법이 재판의 방어 장치를 줄이다",
+            "items": [
+              "1794년 6월 10일 쿠통이 제출하고 로베스피에르가 지지한 프레리알 22일 법은 피고인의 변호인을 없애고 증인 심문을 생략할 수 있게 했습니다.",
+              "혁명재판소의 판결은 무죄 또는 사형으로 좁아졌고, 뒤이은 47일 동안 파리에서 1,376명이 처형됐습니다.",
+              "법은 국민공회가 통과시켰으므로 로베스피에르의 단독 명령은 아니지만, 그의 지지와 정치적 책임은 분명합니다."
+            ]
+          },
+          {
+            "title": "공포의 연합이 테르미도르의 반대 연합으로 바뀌다",
+            "items": [
+              "외국군 위협이 줄어든 뒤에도 처형이 급증했고, 공안위원회·치안위원회·국민공회 의원들 사이의 갈등도 커졌습니다.",
+              "테르미도르 8일 로베스피에르는 구체적 이름을 밝히지 않은 채 공모자들을 비난해 여러 의원이 자신이 다음 표적이라고 두려워하게 만들었습니다.",
+              "이튿날 국민공회가 로베스피에르 일파를 체포했고, 파리 코뮌의 구출 시도가 실패한 뒤 그들은 별도의 본격 재판 없이 처형됐습니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "로베스피에르, 1794년 2월 5일 「정치적 도덕의 원칙」 보고: 덕과 공포의 결합.",
+              "프레리알 22일 법: 변호·증인·판결 규정의 축소.",
+              "프랑스 국민의회, 「공포정치 1793~1794」: 에베르파·당통파 처형, 대공포정치, 테르미도르."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Joining virtue and terror in one theory of rule",
+            "items": [
+              "On 5 February 1794 Robespierre told the Convention that virtue moved a republic and that revolutionary government had to join virtue to terror.",
+              "By defining terror as prompt and severe justice, he linked state violence against enemies of the Revolution to republican morality.",
+              "This was a public theory and justification of the Terror, not passive acquiescence."
+            ]
+          },
+          {
+            "title": "Removing radicals and Indulgents in succession",
+            "items": [
+              "In March 1794 Hébert and his allies were arrested and executed amid charges concerning more radical popular politics and insurrection.",
+              "In April, Danton, Desmoulins, and other so-called Indulgents were executed after conflict over easing the Terror and corruption.",
+              "Robespierre and the Committee leadership bore responsibility for eliminating competing forces on both flanks of the revolutionary camp."
+            ]
+          },
+          {
+            "title": "Prairial reduced safeguards at trial",
+            "items": [
+              "The Law of 22 Prairial, introduced by Couthon and supported by Robespierre on 10 June 1794, removed defence counsel and allowed witness hearings to be omitted.",
+              "The Revolutionary Tribunal’s verdicts were narrowed to acquittal or death. In the following forty-seven days, 1,376 people were executed in Paris.",
+              "The Convention enacted the law, so it was not Robespierre’s private order, but his support and political responsibility are clear."
+            ]
+          },
+          {
+            "title": "A coalition of terror became an opposing coalition at Thermidor",
+            "items": [
+              "Executions accelerated even as foreign military danger receded, while conflict grew within the two committees and the Convention.",
+              "On 8 Thermidor Robespierre denounced conspirators without naming them, leaving many deputies afraid that they would be the next targets.",
+              "The Convention arrested Robespierre and his allies the next day. After an attempted rescue by the Paris Commune failed, they were executed without a full new trial."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Robespierre, Report on the Principles of Political Morality, 5 February 1794: virtue joined to terror.",
+              "Law of 22 Prairial: reduced rules for defence, witnesses, and verdicts.",
+              "French National Assembly, “The Terror, 1793–1794”: Hébertist and Dantonist executions, the Great Terror, and Thermidor."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "1794년 2월",
+            "text": "로베스피에르가 덕과 공포의 결합을 혁명정부의 원리로 정당화했습니다."
+          },
+          {
+            "title": "3~4월",
+            "text": "에베르파와 당통파가 차례로 혁명재판소에서 처형됐습니다."
+          },
+          {
+            "title": "6월",
+            "text": "프레리알법이 방어 절차를 줄이며 대공포정치가 시작됐습니다."
+          },
+          {
+            "title": "7월",
+            "text": "두려움을 느낀 여러 세력이 국민공회에서 로베스피에르를 무너뜨렸습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "February 1794",
+            "text": "Robespierre justified joining virtue and terror as a principle of revolutionary government."
+          },
+          {
+            "title": "March–April",
+            "text": "Hébertists and Dantonists were executed in succession through the Revolutionary Tribunal."
+          },
+          {
+            "title": "June",
+            "text": "Prairial reduced defence safeguards and opened the Great Terror."
+          },
+          {
+            "title": "July",
+            "text": "Forces that feared Robespierre combined against him in the Convention."
+          }
+        ]
+      },
+      "lessons": [
+        {
+          "id": "french-revolution-intro-ch10-basic",
+          "level": "basic",
+          "title": {
+            "ko": "로베스피에르는 왜 혁명파를 숙청하고 몰락했을까?",
+            "en": "Why did Robespierre purge fellow revolutionaries and then fall?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1794년 에베르파와 당통파의 잇따른 처형은 로베스피에르와 공안위원회의 정치적 방향을 어떻게 보여줄까요?",
+                "en": "What do the successive executions of the Hébertists and Dantonists in 1794 show about Robespierre and the Committee’s political course?"
+              },
+              "choices": {
+                "ko": [
+                  "왕당파뿐 아니라 혁명 진영의 더 급진적인 경쟁자와 공포 완화를 요구한 경쟁자를 차례로 제거했습니다.",
+                  "에베르파와 당통파가 연합해 왕정을 복구했고 로베스피에르는 그 정부에서 물러났습니다.",
+                  "두 집단 모두 전쟁터에서 외국군에 포로가 됐으므로 혁명재판소와는 관계가 없었습니다."
+                ],
+                "en": [
+                  "They removed competing revolutionaries on both sides: more radical opponents and rivals associated with easing the Terror, not royalists alone.",
+                  "The Hébertists and Dantonists restored monarchy together, and Robespierre resigned from their government.",
+                  "Both groups were captured by foreign armies, so their fate had no relation to the Revolutionary Tribunal."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "두 숙청을 함께 보면 공포정치가 왕당파 처벌을 넘어 혁명 진영 내부의 권력투쟁에도 쓰였음을 알 수 있습니다.",
+                  "에베르파와 당통파는 서로 다른 방향에서 혁명정부와 대립했고 왕정 복구 정부를 함께 만들지 않았습니다.",
+                  "두 집단의 지도자들은 파리에서 체포되어 혁명재판소를 거쳐 처형됐습니다."
+                ],
+                "en": [
+                  "Read together, the purges show the Terror being used in struggles within the revolutionary camp as well as against royalists.",
+                  "The two groups opposed revolutionary government from different directions; they did not form a restoration government.",
+                  "Their leaders were arrested in Paris, brought before the Revolutionary Tribunal, and executed."
+                ]
+              },
+              "explanation": {
+                "ko": "에베르파는 더 급진적인 대중 동원과 반종교 운동에 연결됐고, 당통과 데물랭의 관용파는 공포 완화와 정치적 부패 문제를 제기했습니다. 1794년 3월과 4월 두 집단이 차례로 처형되면서 공안위원회 중심의 권력은 강화됐지만, 잠재적 동맹까지 없앤 일이 뒤의 정치적 고립에도 영향을 줬습니다.",
+                "en": "The Hébertists were associated with more radical popular mobilisation and dechristianisation, while Danton and Desmoulins’s Indulgents called for easing the Terror and raised corruption issues. Their executions in March and April strengthened Committee-centred power but also removed possible allies, contributing to later political isolation."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-terreur",
+                "label": {
+                  "ko": "프랑스 국민의회, 에베르파·당통파 숙청",
+                  "en": "French National Assembly, the Hébertist and Dantonist purges"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "프레리알 22일 법에 대한 로베스피에르의 책임을 가장 정확하게 표현한 것은 무엇일까요?",
+                "en": "Which statement most accurately describes Robespierre’s responsibility for the Law of 22 Prairial?"
+              },
+              "choices": {
+                "ko": [
+                  "쿠통이 제출하고 국민공회가 통과시킨 법이지만 로베스피에르는 이를 지지했으므로 절차 축소와 대공포정치에 대한 정치적 책임이 있습니다.",
+                  "로베스피에르가 국민공회를 해산한 뒤 혼자 법을 제정했으므로 다른 의원과 국가기구는 아무 책임이 없습니다.",
+                  "로베스피에르는 법에 반대해 피고인의 변호권을 확대했고 그 결과 사형 판결이 사라졌습니다."
+                ],
+                "en": [
+                  "Couthon introduced and the Convention enacted the law, but Robespierre supported it and therefore bears political responsibility for reduced safeguards and the Great Terror.",
+                  "Robespierre dissolved the Convention and enacted the law alone, leaving every other deputy and institution without responsibility.",
+                  "Robespierre opposed the law and expanded defence rights, causing death sentences to disappear."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "개인의 역할과 제도적 결정 절차를 함께 적어야 로베스피에르의 책임을 과장하지도 지우지도 않습니다.",
+                  "법은 공안위원회 위원 쿠통이 제출하고 국민공회가 가결했습니다. 여러 행위자의 책임을 로베스피에르 한 사람으로 바꾸면 구조가 사라집니다.",
+                  "로베스피에르는 법을 지지했고, 법은 변호인과 증인 심문 등 방어 절차를 줄였습니다."
+                ],
+                "en": [
+                  "Combining individual action with institutional enactment neither exaggerates nor erases Robespierre’s responsibility.",
+                  "Committee member Couthon introduced the measure and the Convention passed it. Making Robespierre the only actor erases the institutional process.",
+                  "Robespierre supported the law, which reduced defence counsel and witness procedures."
+                ]
+              },
+              "explanation": {
+                "ko": "프레리알법은 로베스피에르의 개인 명령이 아니라 공안위원회 위원 쿠통이 제출해 국민공회가 통과시킨 법이었습니다. 동시에 로베스피에르는 법을 지지했고 공포를 혁명적 정의로 정당화해 왔습니다. 제도적 공동 책임과 그의 지도적 정치 책임을 함께 보는 것이 정확합니다.",
+                "en": "Prairial was not Robespierre’s private order: Committee member Couthon introduced it and the Convention enacted it. At the same time, Robespierre supported the measure and had publicly justified terror as revolutionary justice. The accurate account keeps institutional collective responsibility and his leading political responsibility together."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "/commulingo/docs/france-revolutionary-government-and-justice-1793-1794#law-22-prairial-1794",
+                "label": {
+                  "ko": "프레리알 22일 법, 1794년 6월 10일",
+                  "en": "Law of 22 Prairial, 10 June 1794"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "테르미도르 9일에 서로 다른 의원들이 로베스피에르 체포에 합류한 직접적인 정치적 조건은 무엇이었을까요?",
+                "en": "What immediate political condition brought different deputies together to arrest Robespierre on 9 Thermidor?"
+              },
+              "choices": {
+                "ko": [
+                  "계속된 숙청과 이름을 밝히지 않은 공모자 비난 때문에 여러 세력이 자신이 다음 표적이 될 수 있다고 두려워했습니다.",
+                  "로베스피에르가 세습왕위를 받아들이자 왕당파가 그를 새 국왕으로 선출하려고 체포했습니다.",
+                  "외국 연합군이 파리를 점령하고 국민공회에 로베스피에르의 체포 명단을 전달했습니다."
+                ],
+                "en": [
+                  "Successive purges and accusations against unnamed conspirators left different groups fearing that they might be the next targets.",
+                  "After Robespierre accepted a hereditary crown, royalists arrested him in order to elect him king.",
+                  "Coalition armies occupied Paris and handed the Convention a list ordering Robespierre’s arrest."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "숙청으로 동맹이 줄고 모호한 비난이 공포를 넓히자 서로 다른 이해관계의 의원들이 선제적으로 결합했습니다.",
+                  "테르미도르는 왕위 계승 문제가 아니라 혁명정부 내부의 권력투쟁과 공포정치에 대한 두려움에서 일어났습니다.",
+                  "테르미도르 9일의 체포는 외국군의 파리 점령 명령이 아니라 국민공회 내부의 정치적 행동이었습니다."
+                ],
+                "en": [
+                  "Purges narrowed his alliances, while vague accusations spread fear and encouraged deputies with different interests to combine first.",
+                  "Thermidor concerned conflict within revolutionary government and fear of the Terror, not hereditary succession.",
+                  "The arrest was a political act inside the Convention, not an order issued by foreign occupiers in Paris."
+                ]
+              },
+              "explanation": {
+                "ko": "로베스피에르는 에베르파와 당통파를 제거한 뒤 위원회 동료와 국민공회 의원들 사이에서도 고립됐습니다. 테르미도르 8일 연설에서 이름을 밝히지 않은 공모자들을 비난하자 여러 의원이 다음 숙청을 두려워했고, 이튿날 발언을 막고 체포안을 통과시켰습니다. 이는 공포정치의 제도 안에서 권력을 행사한 지도자가 같은 제도와 정치연합에 의해 무너진 과정이었습니다.",
+                "en": "After the Hébertist and Dantonist purges, Robespierre became isolated from colleagues on the committees and in the Convention. His speech on 8 Thermidor accused unnamed conspirators, leaving many deputies fearing another purge. The next day they blocked him from speaking and passed motions of arrest. A leader who had exercised power through the institutions of the Terror was brought down by those institutions and a new political coalition."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-terreur",
+                "label": {
+                  "ko": "프랑스 국민의회, 테르미도르 9일과 로베스피에르의 몰락",
+                  "en": "French National Assembly, 9 Thermidor and the fall of Robespierre"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "flow",
+        "ko": {
+          "title": "로베스피에르의 정당화·숙청·고립·몰락",
+          "steps": [
+            {
+              "label": "2월 · 덕과 공포",
+              "note": "혁명적 공포를 공화국을 지키는 정의로 이론화했습니다."
+            },
+            {
+              "label": "3~4월 · 양쪽 숙청",
+              "note": "에베르파와 당통파가 차례로 처형됐습니다."
+            },
+            {
+              "label": "6월 · 프레리알법",
+              "note": "재판 절차가 축소되고 파리의 처형이 급증했습니다."
+            },
+            {
+              "label": "7월 · 테르미도르",
+              "note": "두려움을 느낀 의원들이 결합해 로베스피에르 일파를 체포했습니다."
+            }
+          ]
+        },
+        "en": {
+          "title": "Robespierre: justification, purges, isolation, and fall",
+          "steps": [
+            {
+              "label": "February · virtue and terror",
+              "note": "He theorised revolutionary terror as justice defending the republic."
+            },
+            {
+              "label": "March–April · purges on both flanks",
+              "note": "Hébertists and Dantonists were executed in succession."
+            },
+            {
+              "label": "June · Prairial",
+              "note": "Trial safeguards were reduced and executions in Paris accelerated."
+            },
+            {
+              "label": "July · Thermidor",
+              "note": "Deputies who feared another purge combined to arrest Robespierre and his allies."
+            }
+          ]
+        }
+      }
+    },
+    {
       "id": "french-revolution-intro-ch05",
       "volumeNumber": 11,
-      "chapterNumber": 7,
+      "chapterNumber": 9,
       "partNumber": 3,
       "partTitle": {
         "ko": "제3부 · 테르미도르 이후와 혁명의 유산",
@@ -2061,7 +2831,7 @@ module.exports = {
     {
       "id": "french-revolution-intro-ch08",
       "volumeNumber": 11,
-      "chapterNumber": 8,
+      "chapterNumber": 10,
       "partNumber": 3,
       "partTitle": {
         "ko": "제3부 · 테르미도르 이후와 혁명의 유산",
