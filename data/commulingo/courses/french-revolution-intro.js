@@ -22,7 +22,7 @@ module.exports = {
   },
   "editorial": {
     "authoredAt": "2026-09-13",
-    "revision": 9,
+    "revision": 10,
     "interpretation": "Hobsbawm with separately identified primary evidence",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
     "sourceNotesFile": "data/commulingo/docs/french-revolution-intro.html"
@@ -85,18 +85,21 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "antoine-barnave",
               "label": {
                 "ko": "앙투안 바르나브",
                 "en": "Antoine Barnave"
               }
             },
             {
+              "personId": "adrien-duport",
               "label": {
                 "ko": "아드리앵 뒤포르",
                 "en": "Adrien Duport"
               }
             },
             {
+              "personId": "alexandre-de-lameth",
               "label": {
                 "ko": "알렉상드르 드 라메트",
                 "en": "Alexandre de Lameth"
@@ -125,18 +128,21 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "louis-xvi",
               "label": {
                 "ko": "루이 16세",
                 "en": "Louis XVI"
               }
             },
             {
+              "personId": "charles-x-of-france",
               "label": {
                 "ko": "아르투아 백작",
                 "en": "Comte d’Artois"
               }
             },
             {
+              "personId": "louis-joseph-prince-of-conde",
               "label": {
                 "ko": "콩데 공",
                 "en": "Prince of Condé"
@@ -186,18 +192,21 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "jacques-cathelineau",
               "label": {
                 "ko": "자크 카틀리노",
                 "en": "Jacques Cathelineau"
               }
             },
             {
+              "personId": "henri-de-la-rochejaquelein",
               "label": {
                 "ko": "앙리 드 라 로슈자클랭",
                 "en": "Henri de La Rochejaquelein"
               }
             },
             {
+              "personId": "francois-de-charette",
               "label": {
                 "ko": "프랑수아 드 샤레트",
                 "en": "François de Charette"
@@ -236,12 +245,14 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "jacques-pierre-brissot",
               "label": {
                 "ko": "자크 피에르 브리소",
                 "en": "Jacques Pierre Brissot"
               }
             },
             {
+              "personId": "pierre-vergniaud",
               "label": {
                 "ko": "피에르 베르니오",
                 "en": "Pierre Vergniaud"
@@ -270,12 +281,14 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "emmanuel-sieyes",
               "label": {
                 "ko": "에마뉘엘 시에예스",
                 "en": "Emmanuel Sieyès"
               }
             },
             {
+              "personId": "bertrand-barere",
               "label": {
                 "ko": "베르트랑 바레르",
                 "en": "Bertrand Barère"
@@ -304,6 +317,7 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "maximilien-robespierre",
               "label": {
                 "ko": "막시밀리앵 로베스피에르",
                 "en": "Maximilien Robespierre"
@@ -311,12 +325,14 @@ module.exports = {
               "personId": "maximilien-robespierre"
             },
             {
+              "personId": "georges-danton",
               "label": {
                 "ko": "조르주 당통",
                 "en": "Georges Danton"
               }
             },
             {
+              "personId": "jean-paul-marat",
               "label": {
                 "ko": "장폴 마라",
                 "en": "Jean-Paul Marat"
@@ -366,6 +382,7 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "maximilien-robespierre",
               "label": {
                 "ko": "막시밀리앵 로베스피에르",
                 "en": "Maximilien Robespierre"
@@ -373,6 +390,7 @@ module.exports = {
               "personId": "maximilien-robespierre"
             },
             {
+              "personId": "louis-antoine-de-saint-just",
               "label": {
                 "ko": "루이 앙투안 생쥐스트",
                 "en": "Louis Antoine de Saint-Just"
@@ -401,6 +419,7 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "jacques-rene-hebert",
               "label": {
                 "ko": "자크 르네 에베르",
                 "en": "Jacques René Hébert"
@@ -408,12 +427,14 @@ module.exports = {
               "personId": "jacques-rene-hebert"
             },
             {
+              "personId": "georges-danton",
               "label": {
                 "ko": "조르주 당통",
                 "en": "Georges Danton"
               }
             },
             {
+              "personId": "camille-desmoulins",
               "label": {
                 "ko": "카미유 데물랭",
                 "en": "Camille Desmoulins"
@@ -463,12 +484,14 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "jacques-roux",
               "label": {
                 "ko": "자크 루",
                 "en": "Jacques Roux"
               }
             },
             {
+              "personId": "jean-francois-varlet",
               "label": {
                 "ko": "장 바를레",
                 "en": "Jean Varlet"
@@ -518,6 +541,7 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "jacques-rene-hebert",
               "label": {
                 "ko": "자크 르네 에베르",
                 "en": "Jacques René Hébert"
@@ -525,6 +549,7 @@ module.exports = {
               "personId": "jacques-rene-hebert"
             },
             {
+              "personId": "pierre-gaspard-chaumette",
               "label": {
                 "ko": "피에르 가스파르 쇼메트",
                 "en": "Pierre-Gaspard Chaumette"
@@ -553,6 +578,7 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "maximilien-robespierre",
               "label": {
                 "ko": "막시밀리앵 로베스피에르",
                 "en": "Maximilien Robespierre"
@@ -560,12 +586,14 @@ module.exports = {
               "personId": "maximilien-robespierre"
             },
             {
+              "personId": "louis-antoine-de-saint-just",
               "label": {
                 "ko": "루이 앙투안 생쥐스트",
                 "en": "Louis Antoine de Saint-Just"
               }
             },
             {
+              "personId": "georges-couthon",
               "label": {
                 "ko": "조르주 쿠통",
                 "en": "Georges Couthon"
@@ -594,12 +622,14 @@ module.exports = {
           },
           "people": [
             {
+              "personId": "georges-danton",
               "label": {
                 "ko": "조르주 당통",
                 "en": "Georges Danton"
               }
             },
             {
+              "personId": "camille-desmoulins",
               "label": {
                 "ko": "카미유 데물랭",
                 "en": "Camille Desmoulins"

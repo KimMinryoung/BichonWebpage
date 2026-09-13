@@ -17,6 +17,10 @@ assert.equal(courses[1].visibility, 'private');
 assert.equal(courses[0].factionGuide.layers.length, 4);
 assert.deepEqual(courses[0].factionGuide.layers.map(layer => layer.groups.length), [4, 3, 4, 3]);
 assert.equal(courses[0].factionGuide.timeline.length, 5);
+const factionPersonIds = courses[0].factionGuide.layers.flatMap(layer => layer.groups).flatMap(group => group.people).map(person => person.personId);
+assert.equal(factionPersonIds.length, 30);
+assert.equal(new Set(factionPersonIds).size, 23);
+assert(factionPersonIds.every(Boolean), "Every named faction-guide figure must link to a person entry");
 for (const layer of courses[0].factionGuide.layers) {
   assert(layer.axis && layer.axis.left && layer.axis.right, `faction layer ${layer.id} needs an explicit arrangement axis`);
   assert.deepEqual(layer.groups.map(group => group.order).slice().sort((a, b) => a - b), layer.groups.map((_, index) => index + 1));
