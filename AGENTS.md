@@ -21,6 +21,14 @@ docker network connect leninbot_default leninbot-frontend  # if missing
 
 Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content again.
 
+## Verification scope
+
+- Keep verification proportional and do not repeat checks that the deployment script already performs.
+- Before deployment, run the smallest targeted check for the changed area. Do not run `npm test` separately when the same revision will immediately be deployed; `scripts/deploy` runs it.
+- A successful `scripts/deploy` run counts as the full release check: tests, health, route sweep, and built-in consistency audits. Rerun any of those manually only when the deploy reports a failure.
+- After deployment, verify one representative affected production route or response. Use a browser only for CSS, layout, rendered markup, or client-side interaction changes; do not perform both local and production browser passes by default.
+- Add broader route, database, cache, or infrastructure checks only when the change touches those systems or an observed failure points there.
+
 ## Context and task references
 
 - Stack: Node.js/Express, EJS, PostgreSQL. Public site: cyber-lenin.com.
@@ -29,5 +37,5 @@ Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content agai
 - Deploy, preview, data/cache, auth: [operations reference](dev_docs/frontend-operations.md).
 - CommuLingo people must go through the Admin store/upsert tool; do not bypass validation with direct INSERTs. Host-mounted data changes affect production immediately.
 - UI changes must follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.
-- Verify visual changes with the browser. Read user-referenced screenshots before diagnosing them.
+- For CSS, layout, or client-side interaction changes, perform one browser check, preferably against production after deployment. Do not require browser checks for metadata, visibility, server-only, or documentation changes. Read user-referenced screenshots before diagnosing them.
 - Keep this file limited to enduring constraints and routing links. Put formulas, procedures and completed-work history in topic documents. Current user instructions take precedence over past preferences.
