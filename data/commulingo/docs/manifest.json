@@ -5349,6 +5349,50 @@
         "robespierre-political-morality-1794",
         "france-law-22-prairial-1794"
       ]
+    },
+    {
+      "id": "robespierre-republican-morality-supreme-being-thermidor-1794",
+      "file": "robespierre-republican-morality-supreme-being-thermidor-1794.html",
+      "docLang": "ko",
+      "date": "1794-05-07",
+      "title": {
+        "ko": "로베스피에르 문헌집: 공화국의 도덕, 최고존재, 테르미도르",
+        "en": "Robespierre: Republican Morality, the Supreme Being, and Thermidor"
+      },
+      "description": {
+        "ko": "1794년 5월 7일 최고존재·국민 축제에 관한 보고, 6월 8일 최고존재 축제의 두 연설, 7월 26일 테르미도르 8일 국민공회 연설을 시간순으로 묶은 한국어 전문 번역.",
+        "en": "Complete Korean translations of Robespierre’s 7 May report on religious and moral ideas, the two 8 June Festival of the Supreme Being speeches, and his 26 July (8 Thermidor) address to the National Convention."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "Maximilien Robespierre, 1794년 5월 7일·6월 8일·7월 26일 연설·보고. 프랑스어 원문: Wikisource의 Œuvres de Robespierre 및 Discours du 8 thermidor an II 전사본.",
+      "people": [
+        "maximilien-robespierre",
+        "georges-couthon",
+        "louis-antoine-de-saint-just",
+        "georges-danton",
+        "camille-desmoulins"
+      ],
+      "terms": [
+        "committee-of-public-safety",
+        "law-of-22-prairial"
+      ],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "로베스피에르 문헌집",
+          "『로베스피에르 문헌집: 공화국의 도덕, 최고존재, 테르미도르』",
+          "테르미도르 8일 국민공회 연설",
+          "최고존재 축제에서 시민에게 한 두 연설"
+        ],
+        "en": [
+          "Robespierre: Republican Morality, the Supreme Being, and Thermidor",
+          "Robespierre’s 8 Thermidor speech"
+        ]
+      }
     }
   ],
   "redirects": {
