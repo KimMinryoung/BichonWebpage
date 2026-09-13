@@ -270,8 +270,9 @@ function checkChoiceFeedback(out, value, qLabel, choiceCount = 4) {
   });
 }
 
-// `source` is the passage the question was drawn from: a site document
-// (`/commulingo/docs/<id>#anchor`) or a public-domain chapter on marxists.org.
+// `source` is the passage the question was drawn from. References may use a
+// site document or one of the explicitly reviewed institutional and primary-source
+// hosts. Quoted passages retain the narrower local-doc or marxists.org policy.
 // The English quote is verbatim from the edition linked; the Korean quote is
 // the site's own translation, so it must read as prose, not as speech.
 function checkSource(out, value, qLabel) {
@@ -279,7 +280,7 @@ function checkSource(out, value, qLabel) {
   const sLabel = qLabel + '.source';
   if (!value || typeof value !== 'object') { out.add('source-shape', qLabel, sLabel + ' must be an object'); return; }
   if (value.kind === 'reference') {
-    const allowed = /^(\/commulingo\/docs\/[^\s]+|https:\/\/(www\.marxists\.org|www\.elysee\.fr|www2?\.assemblee-nationale\.fr|(?:www\.)?revolution\.chnm\.org|files\.libcom\.org)\/[^\s]+)$/;
+    const allowed = /^(\/commulingo\/docs\/[^\s]+|https:\/\/(www\.marxists\.org|www\.elysee\.fr|www2?\.assemblee-nationale\.fr|(?:www\.)?revolution\.chnm\.org|files\.libcom\.org|heritage\.bnf\.fr|www\.napoleon\.org)\/[^\s]+)$/;
     if (!allowed.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href is not an approved source URL');
     allLocalizedText(out, value.label, sLabel + '.label');
     if (typeof value.quote !== 'undefined') out.add('source-shape', qLabel, sLabel + ' reference must not present a paraphrase as a quotation');

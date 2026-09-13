@@ -6,6 +6,7 @@ const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata'
 
 assert.equal(getLatestCourseMetadata().id, 'french-revolution-intro');
 assert.equal(getLatestCourseMetadata().releasedAt, '2026-09-13');
+assert.equal(getLatestCourseMetadata().title.ko, '프랑스 혁명사');
 
 function loadService(rows) {
     const dependencies = {

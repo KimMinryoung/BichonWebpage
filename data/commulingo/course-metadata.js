@@ -4,20 +4,20 @@ const COURSES = [
         releasedAt: '2026-09-13',
         volumeNumber: 11,
         title: {
-            ko: '프랑스 혁명 입문',
-            en: 'French Revolution: A Short Course',
+            ko: '프랑스 혁명사',
+            en: 'History of the French Revolution',
         },
         bookTitle: {
-            ko: '프랑스 혁명 입문',
-            en: 'French Revolution',
+            ko: '프랑스 혁명사',
+            en: 'History of the French Revolution',
         },
         badge: {
             ko: '짧은 학습 · 8편',
             en: '8 short lessons',
         },
         description: {
-            ko: '1789년 구체제의 위기부터 1799년 브뤼메르까지, 혁명의 전개와 자유·평등·혁명 권력의 쟁점을 함께 배웁니다.',
-            en: 'Follow the Revolution from the crisis of the Old Regime in 1789 to Brumaire in 1799 while examining liberty, equality, and revolutionary power.',
+            ko: '미국 독립전쟁의 파급부터 1799년 브뤼메르까지, 대외전쟁·공포정치·자유와 평등의 쟁점을 혁명의 흐름 속에서 배웁니다.',
+            en: 'Trace the Revolution from the impact of the American War to Brumaire in 1799, connecting foreign war, the Terror, liberty, and equality.',
         },
     },
     {
