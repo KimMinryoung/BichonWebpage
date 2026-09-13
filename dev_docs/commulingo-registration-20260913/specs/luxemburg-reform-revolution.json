@@ -1,0 +1,232 @@
+{
+  "id": "luxemburg-reform-revolution",
+  "title": "룩셈부르크, 사회개혁이냐 혁명이냐",
+  "byline": "로자 룩셈부르크",
+  "bylineNote": "Luxemburg, Social Reform or Revolution",
+  "sourceLang": "de",
+  "headnote": [
+    "1899년의 논쟁서로, 이 번역은 MIA가 1982년 독일어 저작집을 바탕으로 1908년판의 수정을 반영했다고 밝힌 전사본에 따른다. 초판 그대로의 전사는 아니다. 서문과 두 부의 열 절, 저자 각주를 옮기고 후대 편집자의 Anmerkungen은 제외했다."
+  ],
+  "bibliography": [
+    "번역 저본: https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/",
+    "원문 언어: 독일어. 한국어 번역: CommuLingo.",
+    "별표가 붙은 저자 주석은 원래 번호를 유지하고 본문과 왕복 연결했다. 수록하지 않은 후대 편집주로 향하는 번호 표지는 본문에서 제거했다.",
+    "저본: Rosa Luxemburg, Gesammelte Werke, 제1권 제1분책, Dietz Verlag, Berlin 1982, 369~445쪽. MIA는 1908년 제2판에 따른 전사라고 명시한다. 저자 각주 속 대괄호의 현대 저작집 서지는 후대 편집자가 덧붙인 것이다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "luxreform-vorwort",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-vorwort.html",
+        "format": "marxists",
+        "sha256": "b127547e33d9b1572cdf1eb5627eae789e5e293bba03b92da8c60c664c77c8ac",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/vorwort.htm"
+      },
+      "blocks": [
+        3,
+        8
+      ],
+      "startsWith": "Vorwort [1]",
+      "endsWith": " Seite die Frage vom kleinbürgerlichen oder proletarischen Charakter der Arbeiterbewegung.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-1-1",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-1-1.html",
+        "format": "marxists",
+        "sha256": "0c932bbebac06e9bd6b34c156fda7d7b959b168c9cabcd2f025fda029278393f",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap1-1.htm"
+      },
+      "blocks": [
+        3,
+        25
+      ],
+      "startsWith": "Erster Teil [1*]",
+      "endsWith": "Bernsteinschen Aufsatzreihe: Probleme des Sozialismus, in: Neue Zeit 1896/97 (Anm. – R.L.)",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-1-2",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-1-2.html",
+        "format": "marxists",
+        "sha256": "e0dca21a2a980de0240e45fc1ac0e79256795281b164b1e650c4dfd035e6bef9",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap1-2.htm"
+      },
+      "blocks": [
+        3,
+        27
+      ],
+      "startsWith": "Erster Teil",
+      "endsWith": ", I, S. 241. [Karl Marx: Das Kapital, Dritter Band, in Marx/Engels: Werke, Bd. 25, S. 269]",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-1-3",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-1-3.html",
+        "format": "marxists",
+        "sha256": "988681d1babc45f36dfdfb2eb0174d1897e24a59f59da8447ef0b5b5b75b9d50",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap1-3.htm"
+      },
+      "blocks": [
+        3,
+        24
+      ],
+      "startsWith": "Erster Teil",
+      "endsWith": " I, S. 216. [Karl Marx: Das Kapital, Dritter Band, in Marx/Engels: Werke, Bd. 25, S. 245.]",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-1-4",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-1-4.html",
+        "format": "marxists",
+        "sha256": "17305eced631d32d4b9de520bc82cac8458f38c31d4c20e819ef01988b921430",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap1-4.htm"
+      },
+      "blocks": [
+        3,
+        16
+      ],
+      "startsWith": "Erster Teil",
+      "endsWith": "merschlag der Revolution, d. h. die Eroberung der politischen Macht durch das Proletariat.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-1-5",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-1-5.html",
+        "format": "marxists",
+        "sha256": "46bc89e3a670bc1e75ccb8ec535f900abe83c18e12dfb1f4272f6a1411a47680",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap1-5.htm"
+      },
+      "blocks": [
+        3,
+        22
+      ],
+      "startsWith": "Erster Teil",
+      "endsWith": "men aufgegeben und befaßt sich, mit dem Thema der Krisen, Kartelle u. dergl. (Anm. – R.L.)",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-2-1",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-2-1.html",
+        "format": "marxists",
+        "sha256": "8b53ae07fea02f95107c551a977e8df5fc74747cbd942ab89d550c91aa6d1656",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap2-1.htm"
+      },
+      "blocks": [
+        3,
+        33
+      ],
+      "startsWith": "Zweiter Teil [1*]",
+      "endsWith": " denn zum Nennwert werden sie von dem kleinsten Teil der Aktionäre erworben. (Anm. – R.L.)",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-2-2",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-2-2.html",
+        "format": "marxists",
+        "sha256": "ff9654fb2bc6581a036e768d30ae509fbb8441cd07ee8eba69504a2afdafcd47",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap2-2.htm"
+      },
+      "blocks": [
+        3,
+        35
+      ],
+      "startsWith": "Zweiter Teil",
+      "endsWith": "arl Marx: Das Kapital, Dritter Band, in Marx/Engels: Werke, Bd. 25, S. 456.] (Anm. – R.L.)",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-2-3",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-2-3.html",
+        "format": "marxists",
+        "sha256": "c321e1a329a1c560a25d365068b856a241b133e69cf74536e68a12fa39260b72",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap2-3.htm"
+      },
+      "blocks": [
+        3,
+        39
+      ],
+      "startsWith": "Zweiter Teil",
+      "endsWith": " zu lassen, auf die andere hinauskommt, auch die ganze sozialistische Bewegung aufzugeben.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-2-4",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-2-4.html",
+        "format": "marxists",
+        "sha256": "a01d430ec18a5957e627535742c86befe944f8abc3b92edc8b9dfbc39d4e8eed",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap2-4.htm"
+      },
+      "blocks": [
+        3,
+        21
+      ],
+      "startsWith": "Zweiter Teil",
+      "endsWith": "hthin zum Bourgeois, die menschliche Gesellschaft mit der bürgerlichen identisch geworden.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxreform-2-5",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxreform-2-5.html",
+        "format": "marxists",
+        "sha256": "3d7a32f55aa4b81dd4b948f3b76489ff1924b017d3702c5135148ae6b6b0baf6",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/kap2-5.htm"
+      },
+      "blocks": [
+        3,
+        21
+      ],
+      "startsWith": "Zweiter Teil",
+      "endsWith": "hat, um ihn, bei Lichte besehen, hohnlachend und lockenschüttelnd weit von sich zu werfen.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/luxemburg-reform-revolution.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

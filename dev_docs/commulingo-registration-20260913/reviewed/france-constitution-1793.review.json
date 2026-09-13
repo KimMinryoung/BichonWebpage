@@ -1,0 +1,15 @@
+{
+  "id": "france-constitution-1793",
+  "checked": "source scope, key clauses, article structure, corrections below",
+  "corrections": [
+    {
+      "before": "자연적이고 소멸하지 않는 권리의 힘을 보장",
+      "after": "자연적이고 소멸하지 않는 권리의 향유를 보장"
+    },
+    {
+      "before": "오직 돌봄과 보수의 계약만이 존재할 수 있다.",
+      "after": "오직 노무 제공과 보상에 관한 약정만이 존재할 수 있다."
+    }
+  ],
+  "paragraphs": 163
+}

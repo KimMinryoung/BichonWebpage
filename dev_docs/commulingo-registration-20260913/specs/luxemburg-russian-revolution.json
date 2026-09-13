@@ -1,0 +1,124 @@
+{
+  "id": "luxemburg-russian-revolution",
+  "title": "룩셈부르크, 러시아 혁명",
+  "byline": "로자 룩셈부르크",
+  "bylineNote": "Luxemburg, The Russian Revolution",
+  "sourceLang": "de",
+  "headnote": [
+    "1918년 옥중에서 쓴 미완성 원고로, 1922년 사후 처음 출판된 글이다. 채택한 독일어 전사본의 네 절과 저자의 난외 메모를 옮겼다. 영어 번역본의 여덟 장 구분과 다르다. 후대 편집자의 Anmerkungen은 제외했다."
+  ],
+  "bibliography": [
+    "번역 저본: https://www.marxists.org/deutsch/archiv/luxemburg/1918/russrev/index.htm",
+    "원문 언어: 독일어. 한국어 번역: CommuLingo.",
+    "별표가 붙은 저자 주석은 원래 번호를 유지하고 본문과 왕복 연결했다. 수록하지 않은 후대 편집주로 향하는 번호 표지는 본문에서 제거했다.",
+    "저본: Rosa Luxemburg, Gesammelte Werke, 제4권 제6개정판, Berlin 2000, 332~362쪽. 1918년의 미완성 원고를 1922년 파울 레비가 사후 출판했다. 네 절 뒤의 난외 메모도 원고에 속한다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "luxrussian1",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxrussian1.html",
+        "format": "marxists",
+        "sha256": "1493b7af1b1f29374ec7fe0ba41f65c1458a0789d47e067942e77d2f703ab810",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1918/russrev/teil1.htm"
+      },
+      "blocks": [
+        3,
+        12
+      ],
+      "startsWith": "I",
+      "endsWith": "nationalen Arbeiter für die Aufgaben, die ihnen aus der gegenwärtigen Situation erwachsen.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxrussian2",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxrussian2.html",
+        "format": "marxists",
+        "sha256": "114bdd3161e9a64be04dfcce56de8b520a323fef0aca5414a6d752fc76fc19a7",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1918/russrev/teil2.htm"
+      },
+      "blocks": [
+        3,
+        27
+      ],
+      "startsWith": "II",
+      "endsWith": "Anfang der Seite",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxrussian3",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxrussian3.html",
+        "format": "marxists",
+        "sha256": "229f99f3f3559911629fc60191c03e8300dbab9e69c88355a11c9966ab0259e0",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1918/russrev/teil3.htm"
+      },
+      "blocks": [
+        3,
+        28
+      ],
+      "startsWith": "III",
+      "endsWith": "er in Moskau. [9] Aus dieser Lage ergab sich der Terror und die Erdrückung der Demokratie.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxrussian3-author-notes",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxrussian3.html",
+        "format": "marxists",
+        "sha256": "229f99f3f3559911629fc60191c03e8300dbab9e69c88355a11c9966ab0259e0",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1918/russrev/teil3.htm"
+      },
+      "blocks": [
+        29,
+        32
+      ],
+      "startsWith": "Randnotizen von Rosa Luxemburg",
+      "endsWith": "Jetzt post festum wollen sie den Klassenkampf ins Dorf hineintragen!“",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "luxrussian4",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/luxrussian4.html",
+        "format": "marxists",
+        "sha256": "b4c31997649f1057857bb47418968af2d5b0d0de31855d57d7ecb1a528781c4e",
+        "url": "https://www.marxists.org/deutsch/archiv/luxemburg/1918/russrev/teil4.htm"
+      },
+      "blocks": [
+        3,
+        53
+      ],
+      "startsWith": "IV",
+      "endsWith": "Anfang der Seite",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/luxemburg-russian-revolution.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

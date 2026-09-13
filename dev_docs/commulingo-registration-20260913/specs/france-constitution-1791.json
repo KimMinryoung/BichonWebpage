@@ -1,0 +1,212 @@
+{
+  "id": "france-constitution-1791",
+  "title": "프랑스 헌법 (1791)",
+  "sourceLang": "fr",
+  "byline": "제헌국민의회",
+  "bylineNote": "French Constitution (1791)",
+  "headnote": [
+    "1791년 9월 3일 헌법의 프랑스어 본문의 한국어 번역이다. 국민의 주권과 대표제를 선언하면서도 왕에게 행정권을 위임한 체제를 규정한다. 서두에서 별도 문서로 연결하는 1789년 권리 선언은 별도의 번역 문헌으로 제공한다."
+  ],
+  "bibliography": [
+    "번역 저본: https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+    "번역: CommuLingo, 원문 언어 fr. 문단·조항 대조를 거친 한국어 번역."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "output": "/home/grass/frontend/data/commulingo/docs/france-constitution-1791.html",
+  "documents": [
+    {
+      "id": "france-constitution-1791-0",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 0
+      },
+      "blocks": [
+        0,
+        6
+      ],
+      "startsWith": "Déclaration des droits de l'homme et du Citoyen du 26 août 1789 (placée ensuite en tête de",
+      "endsWith": ", ni aucun autre engagement qui serait contraire aux droits naturels ou à la Constitution.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-1",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 1
+      },
+      "blocks": [
+        0,
+        7
+      ],
+      "startsWith": "TITRE PREMIER - Dispositions fondamentales garanties par la Constitution",
+      "endsWith": " à la Patrie et aux lois. Il sera fait un Code de lois civiles communes à tout le Royaume.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-2",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 2
+      },
+      "blocks": [
+        0,
+        2
+      ],
+      "startsWith": "TITRE II - De la division du royaume, et de l'état des citoyens",
+      "endsWith": "e celles qui leur auront été déléguées pour l'intérêt général, seront fixées par les lois.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-3",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 3
+      },
+      "blocks": [
+        0,
+        2
+      ],
+      "startsWith": "TITRE III - Des pouvoirs publics",
+      "endsWith": "-après. ART. 5. - Le Pouvoir Judiciaire est délégué à des juges élus à temps par le peuple",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-4",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 4
+      },
+      "blocks": [
+        0,
+        12
+      ],
+      "startsWith": "CHAPITRE PREMIER - DE L'ASSEMBLÉE NATIONALE LÉGISLATIVE",
+      "endsWith": "a être continuée qu'après que le Corps législatif aura décidé qu'il y a lieu à accusation.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-5",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 5
+      },
+      "blocks": [
+        0,
+        9
+      ],
+      "startsWith": "CHAPITRE II DE LA ROYAUTÉ, DE LA RÉGENCE ET DES MINISTRES",
+      "endsWith": "i en matière criminelle pour fait de son administration, sans un décret du Corps législati",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-6",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 6
+      },
+      "blocks": [
+        0,
+        9
+      ],
+      "startsWith": "CHAPITRE III - DE L'EXERCICE DU POUVOIR LÉGISLATIF",
+      "endsWith": "ets étrangers à leur administration, quand l'Assemblée nationale leur accordera la parole.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-7",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 7
+      },
+      "blocks": [
+        0,
+        8
+      ],
+      "startsWith": "CHAPITRE IV - DE L'EXERCICE DU POUVOIR EXÉCUTIF",
+      "endsWith": "ntions qu'il jugera nécessaire au bien de l'Etat, sauf la ratification du Corps législatif",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    },
+    {
+      "id": "france-constitution-1791-8",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1791.html",
+        "sha256": "e7755653b5b3a34bfc06e4687cf50d86d99b271ecb10c7200779082c68ba4304",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "selector": ".ck-styled",
+        "nth": 8
+      },
+      "blocks": [
+        0,
+        10
+      ],
+      "startsWith": "CHAPITRE V - DU POUVOIR JUDICIAIRE",
+      "endsWith": "e députation de soixante membres pour offrir, dans le jour, l'Acte constitutionnel au roi.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    }
+  ],
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

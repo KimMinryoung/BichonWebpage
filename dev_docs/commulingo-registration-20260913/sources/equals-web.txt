@@ -1,0 +1,144 @@
+Le Manifeste des Égaux - Wikisource (https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux)
+citeturn29view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux","lineno":100}); Total lines: 196
+L0: cite0†Aller au contenu L1: 
+L2: [Input] Menu principal
+L3: 
+L4: Menu principal
+L5: 
+L6: [Button: déplacer vers la barre latérale] [Button: masquer]
+L7: 
+L8: Lire
+L9: 
+L10:   * cite1†Accueil L11:   * cite2†Index des auteurs L12:   * cite3†Portails thématiques L13:   * cite4†Aide au lecteur L14:   * cite5†Contacter Wikisource L15:   * cite6†Texte au hasard L16:   * cite7†Auteur au hasard L17: 
+L18: Contribuer
+L19: 
+L20:   * cite8†Scriptorium L21:   * cite9†Forum des nouveaux L22:   * cite10†Aide L23:   * cite11†Communauté L24:   * cite12†Livre au hasard L25:   * cite13†Modifications récentes L26:   * cite14†Pages spéciales L27: 
+L28: Imprimer / exporter
+L29:   * cite15†Télécharger en EPUB†ws-export.wmcloud.org L30:   * cite16†Télécharger en MOBI†ws-export.wmcloud.org L31:   * cite17†Télécharger en PDF†ws-export.wmcloud.org L32:   * cite18†Autres formats†ws-export.wmcloud.org L33: 
+L34: cite19†Rechercher L35: 
+L36: [Input: Rechercher sur Wikisource]
+L37: 
+L38: [Input]
+L39: 
+L40: [Button: Rechercher]
+L41: 
+L42: [Input] Apparence
+L43: 
+L44:   * cite20†Faire un don†donate.wikimedia.org L45:   * cite21†Créer un compte L46:   * cite22†Se connecter L47: 
+L48: [Input] Outils personnels
+L49: 
+L50:   * cite20†Faire un don†donate.wikimedia.org L51:   * cite21†Créer un compte L52:   * cite22†Se connecter L53: # Le Manifeste des Égaux
+L54: 
+L55: [Input] Ajouter des langues
+L56: 
+L57: cite23†Ajouter des liens†www.wikidata.org L58: 
+L59:   * cite24†Texte L60:   * cite25†Source L61:   * cite26†Discussion L62: 
+L63: [Input] français
+L64: 
+L65:   * cite24†Lire L66:   * cite27†Modifier L67:   * cite28†Voir l’historique L68: 
+L69: [Input] Outils
+L70: 
+L71: Outils
+L72: 
+L73: [Button: déplacer vers la barre latérale] [Button: masquer]
+L74: 
+L75: Actions
+L76: 
+L77:   * cite24†Lire L78:   * cite27†Modifier L79:   * cite28†Voir l’historique L80: 
+L81: Général
+L82:   * cite29†Pages liées L83:   * cite30†Suivi des pages liées L84:   * cite31†Lien permanent L85:   * cite32†Informations sur la page L86:   * cite33†Citer cet article L87:   * cite34†Obtenir l’URL raccourcie L88: 
+L89: Imprimer / exporter
+L90: 
+L91:   * cite35†Télécharger en PDF L92:   * Version imprimable
+L93: 
+L94: Dans d’autres projets
+L95: 
+L96: Apparence
+L97: 
+L98: [Button: déplacer vers la barre latérale] [Button: masquer]
+L99: 
+L100: cite15†Télécharger†ws-export.wmcloud.org L101: 
+L102:  |  |  |  |  |
+L103: 
+L104: cite36†Sylvain Maréchal L105: 
+L106: Le Manifeste des Égaux
+L107: 
+L108: impr. de J. Claye, 1873 (p. (pages) 79-84).
+L109: book Le Manifeste des Égauxcite36†Sylvain Maréchal impr. de J. Claye 1873 Paris C Questions sociales, étude historique et critique du communisme, 1873.djvu Questions sociales, étude historique et critique du communisme, 1873.djvu/4 79-84
+L110: ## CONJURATION DE BABEUF,
+L111: 
+L112: manifeste des égaux. rédigé par sylvain maréchal
+L113: 
+L114: Égalité de fait, dernier but de l’art social. CONDORCET.
+L115: 
+L116: PEUPLE DE FRANCE !
+L117: 
+L118: Pendant quinze siècle tu as vécu esclave, et par conséquent malheureux. Depuis six années tu respires à peine, dans l'attente de l'indépendance, du bonheur et de l'égalité.
+L119: L'Egalité ! premier vœu de la nature, premier besoin de l'homme, et principal nœud de toute association légitime ! Peuple de France ! tu n'as pas été plus favorisé que les autres nations qui végètent sur ce globe infortuné !... Toujours et partout la pauvre espèce humaine livrée à des anthropophages plus ou moins adroits, servit de jouet à toutes les ambitions, de pâture à toutes les tyrannies.
+L120: Toujours et partout, on berça les hommes de belles paroles : jamais et nulle part ils n'ont obtenu la chose avec le mot. De temps immémorial on nous répète avec hypocrisie, les hommes sont égaux, et de temps immémorial la plus avilissante comme la plus monstrueuse inégalité pèse insolemment sur le genre humain.
+L121: Depuis qu'il y a des sociétés civiles, le plus bel apanage de l'homme est sans contradiction reconnu, mais n'a pu encore se réaliser une seule fois : l'égalité ne fut autre chose qu'une belle et stérile fiction de la loi. Aujourd'hui qu'elle est réclamée d'une voix plus forte, on nous répond : Taisez-vous misérables ! l'égalité de fait n'est qu'une chimère ; contentez-vous de l'égalité conditionnelle ; vous êtes tous égaux devant la loi.
+L122: Canaille que te faut-il de plus ? Ce qu'il nous faut de plus? Législateurs, gouvernants, riches propriétaires, écoutez à votre tour.
+L123: Nous sommes tous égaux, n'est-ce pas ? Ce principe demeure incontesté, parce qu'à moins d'être atteint de folie on ne saurait dire sérieusement qu'il fait nuit quand il fait jour.
+L124: 
+L125: Eh bien ! nous prétendons désormais vivre et mourir égaux comme nous sommes nés ; nous voulons l'égalité réelle ou la mort ; voilà ce qu'il nous faut.
+L126: 
+L127: Et nous l'aurons cette égalité réelle, à n'importe quel prix. Malheur à qui ferait résistance à un vœu aussi prononcé !
+L128: La révolution française n'est que l'avant-courrière d'une autre révolution bien plus grande, bien plus solennelle, et qui sera la dernière.
+L129: 
+L130: Le peuple a marché sur le corps aux rois et aux prêtres coalisés contre lui : il en fera de même aux nouveaux tyrans, aux nouveaux tartuffes politiques assis à la place des anciens.
+L131: 
+L132: Ce qu'il nous faut de plus que l'égalité des droits ?
+L133: Il nous faut non pas seulement cette égalité transcrite dans la Déclaration des droits de l'homme et du citoyen, nous la voulons au milieu de nous, sous le toit de nos maisons. Nous consentons à tout pour elle, à faire table rase pour nous en tenir à elle seule. Périssent, s'il le faut, tous les arts pourvu qu'il nous reste l'égalité réelle !
+L134: Législateurs et gouvernants qui n'avez pas plus de génie que de bonne foi, propriétaires riches et sans entrailles, en vain essayez-vous de neutraliser notre sainte entreprise en disant : Ils ne font que reproduire cette loi agraire demandée plus d'une fois déjà avant eux.
+L135: 
+L136: Calomniateurs, taisez-vous à votre tour, et, dans le silence de la confusion, écoutez nos prétentions dictées par la nature et basées sur la justice.
+L137: La loi agraire ou le partage des campagnes fut le vœu instantané de quelques soldats sans principes, de quelques peuplades mues par leur instinct plutôt que par la raison. Nous tendons à quelque chose de plus sublime et de plus équitable, le bien commun ou la communauté des biens ! Plus de propriété individuelle des terres, la terre n'est à personne. Nous réclamons, nous voulons la jouissance communale des fruits de la terre : les fruits sont à tout le monde.
+L138: Nous déclarons ne pouvoir souffrir davantage que la très grande majorité des hommes travaille et sue au service et pour le bon plaisir de l'extrême minorité.
+L139: 
+L140: Assez et trop longtemps moins d'un million d'individus dispose de ce qui appartient à plus de vingt millions de leurs semblables, de leur égaux.
+L141: Qu'il cesse enfin, ce grand scandale que nos neveux ne voudront pas croire ! Disparaissez enfin, révoltantes distinctions de riches et de pauvre, de grands et de petits, de maîtres et de valets, de gouvernants et de gouvernés.
+L142: Qu'il ne soit plus d'autre différence parmi les hommes que celles de l'âge et du sexe. Puisque tous ont les mêmes besoins et les mêmes facultés, qu'il n'y ait donc plus pour eux qu'une seule éducation, une seule nourriture. Ils se contentent d'un seul soleil et d'un même air pour tous : pourquoi la même portion et le même qualité d'aliments ne suffiraient-elles pas à chacun d'eux ?
+L143: 
+L144: Mais déjà les ennemis d'un ordre des choses le plus naturel qu'on puisse imaginer, déclament contre nous.
+L145: Désorganisateurs et factieux, nous disent-ils, vous ne voulez que des massacres et du butin.
+L146: 
+L147: PEUPLE DE FRANCE !
+L148: 
+L149: Nous ne perdrons pas notre temps à leur répondre, mais nous te dirons : la sainte entreprise que nous organisons n'a d'autre but que de mettre un terme aux dissensions civiles et à la misère publique.
+L150: Jamais plus vaste dessein n'a été conçu et mis à exécution. De loin en loin quelques hommes de génie, quelques sages, en ont parlé d'une voix basse et tremblante. Aucun d'eux n'a eu le courage de dire la vérité tout entière.
+L151: 
+L152: Le moment des grandes mesures est arrivé. Le mal est à son comble ; il couvre la face de la terre. Le chaos, sous le nom de politique, y règne depuis trop de siècles. Que tout rentre dans l'ordre et reprenne sa place.
+L153: A la voix de l'égalité, que les éléments de la justice et du bonheur s'organisent.
+L154: 
+L155: L'instant est venu de fonder la République des Égaux, ce grand hospice ouvert à tous les hommes. Les jours de la restitution générale sont arrivés. Familles gémissantes, venez vous asseoir à la table commune dressée par la nature pour tous ses enfants.
+L156: 
+L157: PEUPLE DE FRANCE !
+L158: 
+L159: La plus pure de toutes les gloires t'était donc réservée ! Oui, c'est toi qui le premier dois offrir au monde ce touchant spectacle.
+L160: D'anciennes habitudes, d'antiques préventions voudront de nouveau faire obstacle à l'établissement de la République des Égaux. L'organisation de l'égalité réelle, la seule qui réponde à tous les besoins, sans faire de victimes, sans coûter de sacrifices, ne plaira peut-être point d'abord à tout le monde.
+L161: L'égoïste, l'ambitieux frémira de rage. Ceux qui possèdent injustement crieront à l'injustice. Les jouissances exclusives, les plaisirs solitaires, les aisances personnelles causeront de vifs regrets à quelques individus blasés sur les peines d'autrui. Les amants du pouvoir absolu, les vils suppôts de l'autorité arbitraire ploieront avec peine leurs chefs superbes sous le niveau de l'égalité réelle.
+L162: Leur vue courte pénétrera difficilement dans le prochain avenir du bonheur commun ; mais que peuvent quelques milliers de mécontents contre une masse d'hommes tous heureux et surpris d'avoir cherché si longtemps une félicité qu'ils avaient sous la main ?
+L163: Dès le lendemain de cette véritable révolution, ils se diront tout étonnés : En quoi ! le bonheur commun tenait à si peu ? Nous n'avions qu'à le vouloir. Ah ! pourquoi ne l'avons-nous pas voulu plus tôt. Oui sans doute, un seul homme sur la terre plus riche, plus puissant que ses semblables, que ses égaux, l'équilibre est rompu ; le crime et le malheur sont sur la terre.
+L164: 
+L165: PEUPLE DE FRANCE !
+L166: A quel signe dois-tu donc reconnaître désormais l'excellence d'une constitution ? ...Celle qui tout entière repose sur l'égalité de fait est la seule qui puisse te convenir et satisfaire à tous tes voeux.
+L167: Les chartes aristocratiques de 1791 et de 1795 rivaient tes fers au lieu de les briser. Celle de 1793 était un grand pas de fait vers l'égalité réelle ; on n'en avait pas encore approché de si près ; mais elle ne touchaient pas encore le but et n'abordait point le bonheur commun, dont pourtant elle consacrait solennellement le grand principe.
+L168: 
+L169: PEUPLE DE FRANCE !
+L170: 
+L171: Ouvre les yeux et le coeur à la plénitude de la félicité : reconnais et proclame avec nous la République des Égaux.
+L172: 
+L173: cite37†Image L174: Récupérée de "cite31†https://fr.wikisource.org/w/index.php?title=Le_Manifeste_des_Égaux&oldid=13908389 "
+L175: 
+L176:   * La dernière modification de cette page a été faite le 10 janvier 2024 à 12:31.
+L177:   * Les textes sont disponibles sous cite38†licence Creative Commons Attribution-partage dans les mêmes conditions†creativecommons.org ; d’autres conditions peuvent s’appliquer. Voyez les cite39†Conditions d’utilisation†foundation.wikimedia.org pour plus de détails.
+L178:   * cite40†Politique de confidentialité†foundation.wikimedia.org L179:   * cite41†À propos de Wikisource L180:   * cite42†Avertissements L181:   * cite43†Contacts juridiques & sécurité†foundation.wikimedia.org L182:   * cite44†Code de conduite†foundation.wikimedia.org L183:   * cite45†Développement†developer.wikimedia.org L184:   * cite46†Statistiques†stats.wikimedia.org L185:   * cite47†Déclaration sur les témoins (cookies)†foundation.wikimedia.org L186:   * Rechercher
+L187: 
+L188: [Input: Rechercher sur Wikisource]
+L189: 
+L190: [Input]
+L191: 
+L192: [Button: Rechercher]
+L193: 
+L194: Le Manifeste des Égaux
+L195: Ajouter des langues cite48†Ajouter un sujet 

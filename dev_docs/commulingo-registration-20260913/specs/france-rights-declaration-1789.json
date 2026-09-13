@@ -1,0 +1,52 @@
+{
+  "id": "france-rights-declaration-1789",
+  "title": "인간과 시민의 권리 선언 (1789)",
+  "sourceLang": "fr",
+  "byline": "제헌국민의회",
+  "bylineNote": "Declaration of the Rights of Man and of the Citizen (1789)",
+  "headnote": [
+    "1789년 인간과 시민의 권리 선언의 서문과 17개 조항이다. 엘리제궁의 프랑스어 전사본에서 현대의 역사 소개를 제외하고 선언 본문을 옮겼다."
+  ],
+  "bibliography": [
+    "번역 저본: https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen",
+    "번역: CommuLingo, 원문 언어 fr. 문단·조항 대조를 거친 한국어 번역."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "output": "/home/grass/frontend/data/commulingo/docs/france-rights-declaration-1789.html",
+  "documents": [
+    {
+      "id": "france-rights-declaration-1789-1",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/rights1789.html",
+        "sha256": "253d8b7e4e707ad532af50fdeb7ad1f01df8ce2801ae1b05170476ce0c18170e",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen",
+        "selector": ".ck-styled",
+        "nth": 1
+      },
+      "blocks": [
+        1,
+        37
+      ],
+      "startsWith": "Les représentants du peuple français, constitués en Assemblée nationale, considérant que l",
+      "endsWith": "nt constatée, l'exige évidemment, et sous la condition d'une juste et préalable indemnité.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    }
+  ],
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

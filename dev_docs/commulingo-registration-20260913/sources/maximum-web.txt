@@ -1,0 +1,52 @@
+Décret fixant le maximum du prix des denrées et marchandises de première nécessité | ARCPA (https://archives-parlementaires.persee.fr/prt/81184d22-e397-493e-82ba-ec8ac68484ee)
+citeturn42view0 [wordlim: 200] Crawled: 2 weeks ago; Content type: text/html; Source: open({"ref_id":"https://archives-parlementaires.persee.fr/prt/81184d22-e397-493e-82ba-ec8ac68484ee","lineno":100}); Total lines: 58
+L0: cite0†ARCHIVESPARLEMENTAIRES L1: 
+L2: [Input]
+L3: 
+L4: [Input] [Input] [Input]
+L5: 
+L6: [Input]
+L7: 
+L8: [Input] [Input] [Input]
+L9: # Décret fixant le maximum du prix des denrées et marchandises de première nécessité
+L10: 
+L11: cite1†Archives parlementaires de la Révolution Française L12: 
+L13: cite2†Première série (1787-1799) L14: 
+L15: cite3†Tome LXXV - Du 23 septembre 1793 au 3 octobre 1793 L16: 
+L17: cite4†République française - Convention nationale L18: 
+L19: cite5†Séance du dimanche 29 septembre 1793 L20: 
+L21: Table des matières
+L22: 
+L23: Infos
+L24: 
+L25: Référence bibliographique
+L26: Décret fixant le maximum du prix des denrées et marchandises de première nécessité. Dans : Archives parlementaires de la Révolution Française — Première série (1787-1799) — Tome LXXV - Du 23 septembre 1793 au 3 octobre 1793. 1909. pp. 321-323.
+L27: 
+L28: Langue principale
+L29: 
+L30: Français
+L31: 
+L32: Nombre de pages
+L33: 
+L34: 3
+L35: 
+L36: Première page
+L37: 
+L38: 321
+L39: 
+L40: Dernière page
+L41: 
+L42: 323
+L43: 
+L44: URI du manifest IIIF du volume contenant le document
+L45: 
+L46: Modifié le
+L47: 
+L48: 21 octobre 2024 à 04:26
+L49: 
+L50: cite6†Image L51: 
+L52: Les perséides
+L53: Un dispositif pensé par Persée pour la valorisation de corpus textuels et iconographiques numérisés construits en partenariat avec des équipes de recherche et des institutions documentaires.
+L54: 
+L55: cite7†En savoir plus†info.persee.fr L56: 
+L57: cite0†ARCHIVESPARLEMENTAIRES 

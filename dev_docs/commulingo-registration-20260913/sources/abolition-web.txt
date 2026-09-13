@@ -1,0 +1,62 @@
+1794 : la première abolition - Assemblée nationale (https://www2.assemblee-nationale.fr/15/evenements/2021/abolition-de-l-esclavage-1794-et-1848/1794-la-premiere-abolition)
+citeturn43view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www2.assemblee-nationale.fr/15/evenements/2021/abolition-de-l-esclavage-1794-et-1848/1794-la-premiere-abolition","lineno":100}); Total lines: 103
+L0: Assemblée nationale
+L1: 
+L2:   *   *   *   *   *   * Accueil cite0†Accèder à la page d'accueil†www.assemblee-nationale.fr L3:   * Vos députés
+L4:   * Travaux parlementaires
+L5:   * cite1†Image: Recherche L6:   * Connaître l'Assemblée
+L7:   * Découvrir les lieux
+L8:   * Mon compte
+L9: 
+L10: cite0†Accèder à la page d'accueil†www.assemblee-nationale.fr L11: 
+L12: Vos députés
+L13: 
+L14: cite2†Image L15: cite3†Présidence†presidence.assemblee-nationale.fr cite4†577 députés†www.assemblee-nationale.fr cite5†Groupes politiques†www.assemblee-nationale.fr cite6†Élections législatives†www.elections-legislatives.fr L16: 
+L17: Travaux parlementaires
+L18: 
+L19: cite7†Image L20: cite8†Séance publique†www.assemblee-nationale.fr cite9†Commissions et autres organes†www.assemblee-nationale.fr cite10†Europe et International†www.assemblee-nationale.fr cite11†Contrôle et évaluation†www.assemblee-nationale.fr cite12†Congrès†www.assemblee-nationale.fr cite13†Pétitions†www.assemblee-nationale.fr L21: 
+L22: cite14†Documents parlementaires†www.assemblee-nationale.fr L23: 
+L24:   * cite15†Projets de loi L25:   * cite16†Propositions de loi L26:   * cite17†Amendements†www.assemblee-nationale.fr L27:   * cite18†Textes adoptés L28:   * cite19†Rapports d'information L29:   * cite20†Rapports d'enquête†www.assemblee-nationale.fr L30:   * cite21†Rapports législatifs L31:   * cite22†Rapports sur l'application des lois L32:   * cite23†Baromètre de l’application des lois†www.assemblee-nationale.fr L33: 
+L34:   * cite24†Dossiers législatifs†www.assemblee-nationale.fr L35:   * cite25†Budget et sécurité sociale L36:   * cite26†Questions écrites et orales†www.assemblee-nationale.fr L37:   * cite27†Comptes rendus des débats†www.assemblee-nationale.fr L38: 
+L39: [Input: Recherche général]
+L40: 
+L41: Connaître l'Assemblée
+L42: cite28†Image L43: 
+L44: cite29†Rôle et pouvoirs de l'Assemblée†www.assemblee-nationale.fr L45: 
+L46:   * cite30†Fiches « Connaissance de l’Assemblée »†www.assemblee-nationale.fr L47: 
+L48: cite31†Organisation de l'Assemblée†www.assemblee-nationale.fr L49: 
+L50:   * cite3†Présidence†presidence.assemblee-nationale.fr L51:   * cite32†Conférence des Présidents L52:   * cite33†Bureau L53:   * cite34†Collège des Questeurs L54:   * cite35†Services†www.assemblee-nationale.fr L55: cite36†Statistiques et chiffres clés cite37†Transparence et déontologie†www.assemblee-nationale.fr cite38†Documents de référence( Constitution | Règlement de l'Assemblée ... )†www.assemblee-nationale.fr L56: 
+L57: cite39†Histoire†www.assemblee-nationale.fr cite40†Juniors cite41†Anciennes législatures†archives.assemblee-nationale.fr cite42†Liens vers les sites publics L58: 
+L59: Découvrir les lieux
+L60: 
+L61: cite28†Image L62: cite43†Visiter l'Assemblée†www.assemblee-nationale.fr cite44†Visite virtuelle du palais Bourbon†www.assemblee-nationale.fr cite45†Assister à une séance†www.assemblee-nationale.fr cite46†Accès des chercheurs à l’Assemblée†www.assemblee-nationale.fr cite47†Les évènements L63: 
+L64: cite39†Patrimoine†www.assemblee-nationale.fr cite48†La Bibliothèque†www.assemblee-nationale.fr cite49†Les archives†www.assemblee-nationale.fr cite50†Contacts et plan d'accès†www.assemblee-nationale.fr cite51†Photos libres de droit†www.assemblee-nationale.fr L65: Connexion & inscription
+L66: 
+L67: cite52†Image L68: 
+L69: S'identifier cite53†S'identifier†www.assemblee-nationale.fr L70: 
+L71: cite54†Mot de passe oublié†www.assemblee-nationale.fr L72: 
+L73: Vous n'avez pas encore de compte ?
+L74: Enregistrez-vous cite55†S'inscrire†www.assemblee-nationale.fr L75: # 1794 : la première abolition
+L76: 
+L77: Partager
+L78: 
+L79:   * cite56†Image: Esclave enchaîné L80: 
+L81: Esclave enchaîné
+L82: 
+L83: © Thinkstock
+L84: 
+L85: ## Navigation de la page : charge du contenu dynamiquement
+L86: 
+L87: cite57†‹ cite58†› L88: 
+L89:   *     * cite59†Le débat à la Convention L90:     * cite60†Discours de Louis-Pierre Dufay (16 pluviose an II) L91:     * cite61†Séance du 16 pluviôse an II (4 février 1794) L92: ### Onglet actif : Le débat à la Convention
+L93: En octobre 1790, une rébellion éclate dans la partie française de Saint-Domingue, aujourd'hui Haïti, regroupant la majorité des esclaves français. L'Assemblée nationale constituante avait, en août 1789, aboli les privilèges et proclamé l'égalité. Or les colons refusent d'appliquer aux métis le droit de vote que le décret de l'Assemblée nationale du 28 mars 1790 accordait aux hommes libres âgés de vingt cinq ans. Vincent Ogé et Jean-Baptiste Chavannes prennent les armes contre les Blancs.
+L94: Ils sont capturés, torturés par le supplice de la roue et exécutés le 25 février 1791.
+L95: Le 22 août 1791 éclate une grande insurrection de près de 50 000 esclaves qui, en dépit de l'adoption par l'Assemblée nationale de la Déclaration des droits de l'homme et du citoyen selon laquelle « les hommes naissent et demeurent libres et égaux en droits », n'ont pas été libérés.
+L96: Les esclaves, tenus d'obéissance absolue à leur maître jusqu'à leur mort ou, du moins, leur affranchissement, se révoltent contre les planteurs, sous la direction d'un des leurs, Dutty Boukman, esclave le jour, prêtre vaudou la nuit, puis de Jean-François et Biassou, afin d'obtenir leur libération. Bientôt Toussaint Louverture, esclave affranchi, prend la direction de l'armée noire. Les colons en appellent à l'Angleterre alors que les Espagnols aident les esclaves.
+L97: La loi du 4 avril 1792 reconnaît l'égalité politique des mulâtres mais les propriétaires répugnent toujours à appliquer la loi. Après la proclamation de la République, en septembre 1792, une commission, composée des commissaires de la République Léger-Félicité Sonthonax, Etienne Polverel et Ailhaux, est envoyée sur place afin de faire appliquer la loi. La tension est vive entre les colons blancs, les métis, les noirs affranchis et les esclaves.
+L98: Les troupes de la République appuyées par les esclaves insurgés sont victorieuses. Sonthonax proclame le 29 août 1793 de sa propre initiative l'émancipation des esclaves - suivi de Polverel dans deux autres provinces de la colonie- et organise l'élection de députés.
+L99: L'île de Saint-Domingue envoie à Paris, à la Convention, un député blanc, cite62†Louis-Pierre Dufay, un mulâtre libre, cite63†Jean-Baptiste Mills et un ancien esclave noir, cite64†Jean-Baptiste Belley . Les trois députés se présentent à la Convention le 15 pluviôse an II (3 février 1794) au terme d'un long parcours semé d'embûches : embarqués pour Philadelphie, ils sont pris à bord à New York à bord d'un navire qui les amène à Lorient.
+L100: Mais ils sont écroués sous l'instigation de colons et inculpés d'intelligence avec les Girondins. Libérés, ils sont admis à siéger à la Convention le 3 février 1794. Représentant aux yeux de l'assemblée l'association de trois couleurs, le blanc, le rouge et le noir, ils reçoivent l'accolade du Président, cite65†Vadier†webdim .
+L101: Le lendemain, les conventionnels entendent l'un d'entre eux, le colon cite66†Louis-Pierre Dufay.†webdim Au discours de Dufay, relatant l'oppression et l'humiliation des esclaves et les affres de leur condition, succède celui de cite67†Danton†webdim défendant, sous les applaudissements, l'extension au nouveau monde de « la liberté universelle ».
+L102: Puis la Convention décrète l'abolition de l'esclavage, votant par acclamation le texte rédigé par cite68†Lacroix et donnant satisfaction à Toussaint Louverture, le chef des esclaves insurgés.
+

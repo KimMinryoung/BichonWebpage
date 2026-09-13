@@ -1,0 +1,2 @@
+# Preserve downloaded source bytes: specs pin SHA-256 checksums.
+sources/** -whitespace

@@ -1,0 +1,53 @@
+{
+  "id": "gouges-rights-of-woman-1791",
+  "title": "여성과 여성 시민의 권리 선언 (1791)",
+  "byline": "올랭프 드 구주",
+  "bylineNote": "Declaration of the Rights of Woman and of the Female Citizen (1791)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1791년 「여성과 여성 시민의 권리 선언」 가운데 프랑스 국민의회 전사본이 제공하는 도입문·서문·17개 조항이다. 의회가 제정한 법률이 아니라 여성의 권리를 요구한 저술이다. 이 전사본에 없는 후기와 여왕에게 바치는 글은 수록하지 않았다."
+  ],
+  "bibliography": [
+    "발표: 1791년.",
+    "번역 범위: 국민의회 전사본의 도입문·서문·17개 조항. 후기 미수록.",
+    "번역 저본: https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges"
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "gouges",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/gouges-selected.html",
+        "sha256": "2c9f3cc5dd4685cb31b8c1ba72797879eac0638e2856431e397843dc8c5b4f05",
+        "selector": "article",
+        "url": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges",
+        "extraction": "Web text line transcription; selected source lines [151, 219]"
+      },
+      "blocks": [
+        0,
+        43
+      ],
+      "startsWith": "À décréter par l’Assemblée nationale dans ses dernières séances ou dans celle de la procha",
+      "endsWith": "nt constatée, l’exige évidemment, et sous la condition d’une juste et préalable indemnité.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/gouges-rights-of-woman-1791.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

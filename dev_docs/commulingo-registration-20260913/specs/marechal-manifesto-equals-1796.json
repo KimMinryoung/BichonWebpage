@@ -1,0 +1,54 @@
+{
+  "id": "marechal-manifesto-equals-1796",
+  "title": "실뱅 마레샬, 평등파 선언 (1796)",
+  "byline": "실뱅 마레샬",
+  "bylineNote": "Sylvain Maréchal, Manifesto of the Equals (1796)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1796년에 집필된 평등파 선언이다. 이 번역은 1873년 재수록본의 프랑스어 전사에 따른다. 집필자는 마레샬이며, 선언 전체가 평등파 지도부의 합의나 실제 시행된 정책이었다는 뜻은 아니다."
+  ],
+  "bibliography": [
+    "집필: 1796년.",
+    "번역 저본: Wikisource, Questions sociales, étude historique et critique du communisme, Paris, imprimerie de J. Claye, 1873, 79~84쪽.",
+    "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+    "저본 표제·제사·본문을 옮겼다. 원문 페이지 전사와 선택 범위를 별도 보존했다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "equals",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/equals-selected.html",
+        "sha256": "ec809df513dad57a3899f32c389bc4837b6a64e8b6e345ea88b4950514b05f9d",
+        "selector": "article",
+        "url": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+        "extraction": "Web text line transcription; selected source lines [110, 171]"
+      },
+      "blocks": [
+        0,
+        42
+      ],
+      "startsWith": "CONJURATION DE BABEUF,",
+      "endsWith": "r à la plénitude de la félicité : reconnais et proclame avec nous la République des Égaux.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/marechal-manifesto-equals-1796.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

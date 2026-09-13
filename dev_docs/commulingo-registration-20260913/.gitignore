@@ -1,0 +1,3 @@
+# Translation service caches and incomplete outputs stay private on this host.
+translations/
+reviewed/*.html

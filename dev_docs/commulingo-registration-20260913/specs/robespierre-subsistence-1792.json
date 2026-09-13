@@ -1,0 +1,54 @@
+{
+  "id": "robespierre-subsistence-1792",
+  "title": "로베스피에르, 생필품에 관한 연설 (1792) (발췌)",
+  "byline": "막시밀리앵 로베스피에르",
+  "bylineNote": "Robespierre, Speech on Subsistence (1792)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1792년 12월 2일 생필품에 관한 연설에서 생존권·재산권·유통 규제를 논한 중후반부와 결론을 연속 발췌했다. 첫 문장은 「예컨대 상식은 이러한 진리를 가리킨다」에 해당하며 연설 앞부분은 생략했다. 원문 전사의 앞부분에 원사료 여부가 확인되지 않은 괄호 삽입이 있어, 그 문장을 포함하지 않는 범위를 채택했다."
+  ],
+  "bibliography": [
+    "연설: 1792년 12월 2일.",
+    "번역 저본: Wikisource 「Opinion sur les subsistances」 프랑스어 전사. 저본 주는 Les Lettres à ses commettans 제9호, 391~409쪽을 재현했다고 밝힌다.",
+    "https://fr.wikisource.org/wiki/Opinion_sur_les_subsistances",
+    "범위: «Le bon sens, par exemple…»부터 연설 결론까지. 앞부분 및 후대 편집주는 제외. 발췌본."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "subsistence",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/subsistence-selected.html",
+        "sha256": "32edc451a5abafe45eaf7cd2b34c58d30146a598a58492ba20c7ad9c6825f54f",
+        "selector": "article",
+        "url": "https://fr.wikisource.org/wiki/Opinion_sur_les_subsistances",
+        "extraction": "Web text line transcription; selected source lines [131, 164]"
+      },
+      "blocks": [
+        0,
+        34
+      ],
+      "startsWith": "Le bon sens, par exemple, indique cette vérité, que les denrées qui ne tiennent pas aux be",
+      "endsWith": "et des passions des hommes puissants, contre les droits et contre les besoins des faibles.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/robespierre-subsistence-1792.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

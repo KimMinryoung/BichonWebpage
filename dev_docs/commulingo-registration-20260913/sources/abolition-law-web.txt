@@ -1,0 +1,4 @@
+Internal Error ()
+citeturn50view0 [wordlim: 200] Source: open({"ref_id":"https://mjp.univ-perp.fr/france/1794esclavage.htm","lineno":null}); Total lines: 1
+L0: Failed to fetch https://mjp.univ-perp.fr/france/1794esclavage.htm: (400) Timeout fetching
+

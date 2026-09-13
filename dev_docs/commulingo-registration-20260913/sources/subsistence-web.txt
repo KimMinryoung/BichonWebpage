@@ -1,0 +1,156 @@
+Opinion sur les subsistances - Wikisource (https://fr.wikisource.org/wiki/Opinion_sur_les_subsistances)
+citeturn31view0 [wordlim: 200] Crawled: 2 weeks ago; Content type: text/html; Source: open({"ref_id":"https://fr.wikisource.org/wiki/Opinion_sur_les_subsistances","lineno":110}); Total lines: 210
+L0: cite0†Aller au contenu L1: 
+L2: [Input] Menu principal
+L3: 
+L4: Menu principal
+L5: 
+L6: [Button: déplacer vers la barre latérale] [Button: masquer]
+L7: 
+L8: Lire
+L9: 
+L10:   * cite1†Accueil L11:   * cite2†Index des auteurs L12:   * cite3†Portails thématiques L13:   * cite4†Aide au lecteur L14:   * cite5†Contacter Wikisource L15:   * cite6†Texte au hasard L16:   * cite7†Auteur au hasard L17: 
+L18: Contribuer
+L19: 
+L20:   * cite8†Scriptorium L21:   * cite9†Forum des nouveaux L22:   * cite10†Aide L23:   * cite11†Communauté L24:   * cite12†Livre au hasard L25:   * cite13†Modifications récentes L26:   * cite14†Pages spéciales L27: 
+L28: Imprimer / exporter
+L29:   * cite15†Télécharger en EPUB†ws-export.wmcloud.org L30:   * cite16†Télécharger en MOBI†ws-export.wmcloud.org L31:   * cite17†Télécharger en PDF†ws-export.wmcloud.org L32:   * cite18†Autres formats†ws-export.wmcloud.org L33: 
+L34: cite19†Rechercher L35: 
+L36: [Input: Rechercher sur Wikisource]
+L37: 
+L38: [Input]
+L39: 
+L40: [Button: Rechercher]
+L41: 
+L42: [Input] Apparence
+L43: 
+L44:   * cite20†Faire un don†donate.wikimedia.org L45:   * cite21†Créer un compte L46:   * cite22†Se connecter L47: 
+L48: [Input] Outils personnels
+L49: 
+L50:   * cite20†Faire un don†donate.wikimedia.org L51:   * cite21†Créer un compte L52:   * cite22†Se connecter L53: # Opinion sur les subsistances
+L54: 
+L55: [Input] Ajouter des langues
+L56: 
+L57: cite23†Ajouter des liens†www.wikidata.org L58: 
+L59:   * cite24†Texte L60:   * cite25†Source L61:   * cite26†Discussion L62: 
+L63: [Input] français
+L64: 
+L65:   * cite24†Lire L66:   * cite27†Modifier L67:   * cite28†Voir l’historique L68: 
+L69: [Input] Outils
+L70: 
+L71: Outils
+L72: 
+L73: [Button: déplacer vers la barre latérale] [Button: masquer]
+L74: 
+L75: Actions
+L76: 
+L77:   * cite24†Lire L78:   * cite27†Modifier L79:   * cite28†Voir l’historique L80: 
+L81: Général
+L82:   * cite29†Pages liées L83:   * cite30†Suivi des pages liées L84:   * cite31†Lien permanent L85:   * cite32†Informations sur la page L86:   * cite33†Citer cet article L87:   * cite34†Obtenir l’URL raccourcie L88: 
+L89: Imprimer / exporter
+L90: 
+L91:   * cite35†Télécharger en PDF L92:   * Version imprimable
+L93: 
+L94: Dans d’autres projets
+L95: 
+L96:   * cite36†Élément Wikidata†www.wikidata.org L97: 
+L98: Apparence
+L99: 
+L100: [Button: déplacer vers la barre latérale] [Button: masquer]
+L101: 
+L102: cite15†Télécharger†ws-export.wmcloud.org L103: 
+L104:  |  |  |  |  |
+L105: 
+L106: cite37†Robespierre L107: 
+L108: Opinion sur les subsistances
+L109: Discours prononcé à la Convention le 2 décembre 1792
+L110: ## OPINION
+L111: De Maximilien Robespierre
+L112: sur les subsistances^{cite38†[1] }
+L113: 
+L114: Parler aux représentants du peuple des moyens de pourvoir à sa subsistance, ce n’est pas seulement leur parler du plus sacré de leurs devoirs, mais du plus précieux de leurs intérêts. Car, sans doute, ils se confondent avec lui.
+L115: 
+L116: Ce n’est pas la cause des citoyens indigents que je veux plaider, mais celle des propriétaires et commerçants eux-mêmes.
+L117: Je me bornerai à rappeler des principes évidents, mais qui semblent oubliés. Je n’indiquerai que des mesures simples qui ont déjà été proposées, car il s’agit moins de créer de brillantes théories, que de revenir aux premières notions du bon sens.
+L118: Dans tout pays où la nature fournit avec prodigalité aux besoins des hommes, la disette ne peut être imputée qu’aux vices de l’administration ou des lois elles-mêmes ; les mauvaises lois et la mauvaise administration ont leur source dans les faux principes et dans les mauvaises mœurs.
+L119: C’est un fait généralement reconnu que le sol de la France produit beaucoup au-delà de ce qui est nécessaire pour nourrir ses habitants, et que la disette actuelle est une disette factice^{cite39†[2] }. La conséquence de ce fait et du principe que j’ai posé peut être fâcheuse, mais ce n’est pas le moment de nous flatter.
+L120: Citoyens, c’est à vous qu’est réservée la gloire de faire triompher les vrais principes, et de donner au monde des lois justes. Vous n’êtes point faits pour vous traîner servilement dans l’ornière des préjugés tyranniques, tracée par vos devanciers, ou plutôt vous commencez une nouvelle carrière où personne ne vous a devancés.
+L121: Vous devez soumettre du moins à un examen sévère toutes les lois faites sous le despotisme royal, et sous les auspices de l’aristocratie nobiliaire, ecclésiastique ou bourgeoise ; et jusques ici, vous n’en avez point d’autres. L’autorité la plus impo sante qu’on nous cite, est celle d’un ministre de Louis XVI, combattue par un autre ministre du même tyran^{cite40†[3] }.
+L122: J’ai vu naître la législation de l’assemblée constituante sur le commerce des grains^{cite41†[4] } ; elle n’étoit que celle du tems qui l’avoit précédée ; elle n’a pas changé jusqu’à ce moment, parce que les intérêts et les préjugés qui en étoient la base, n’ont point changé^{cite42†[5] }.
+L123: J’ai vu, au tems de la même assemblée, les mêmes événemens qui se renouvellent à cette époque ; j’ai vu l’aristocratie accuser le peuple ; j’ai vu les intrigants hypocrites imputer leurs propres crimes aux défenseurs de la liberté qu’ils nommaient agitateurs et anarchistes ; j’ai vu un ministre impudent dont il n’était pas permis de soupçonner la vertu, exiger les adorations de la France en la ruinant^{cite43†[6] }, et du sein de ces criminelles intrigues, la tyrannie sortir armée de la loi martiale, pour se baigner légalement dans le sang des citoyens affamés^{cite44†[7] }.
+L124: Des millions au ministre, dont il était défendu de lui demander compte, des primes qui tournaient au profit de sang-sues du peuple, la liberté indéfinie du commerce ; et des baïonnettes pour calmer les alarmes ou pour opprimer la faim, telle fut la politique vantée des nos premiers législateurs.
+L125: Les primes peuvent être discutées ; la liberté du commerce est nécessaire jusqu’au point où la cupidité homicide commence à en abuser ; l’usage des baïonnettes est une atrocité ; ce système est essentiellement incomplet parce qu’il ne porte point sur le véritable principe.
+L126: 
+L127: Les erreurs où on est tombé à cet égard me paraissent venir de deux causes principales :
+L128: 1° Les auteurs de la théorie ( du libre marché)n’ont considéré les denrées les plus nécessaires à la vie que comme une marchandise ordinaire, et n’ont mis aucune différence entre le commerce du blé, par exemple, et celui de l’indigo ; ils ont plus disserté sur le commerce des grains, que sur la subsistance du peuple ; et faute d’avoir fait entrer cette donnée dans leurs calculs, ils ont fait une fausse application des principes évidents en général ; c’est ce mélange de vrai et de faux qui a donné quelque chose de spécieux à un système erroné.
+L129: 2° Il l’ont bien moins encore adapté aux circonstances orageuses que les révolutions amènent ; et leur vague théorie fût-elle bonne dans les temps ordinaires, ne trouverait aucune application aux mesures instantanées, que les moments de crise peuvent exiger de nous. Ils ont compté pour beaucoup les profits des négociants ou des propriétaires, et la vie des hommes à-peu-près pour rien.
+L130: Eh pourquoi ! c’étaient des grands, les ministres, les riches qui écrivaient, qui gouvernaient ; si ç’eût été le peuple, il est probable que ce système aurait reçu quelques modifications !
+L131: Le bon sens, par exemple, indique cette vérité, que les denrées qui ne tiennent pas aux besoins de la vie, peuvent être abandonnées aux spéculations les plus illimitées du commerçant mais la vie des hommes ne peut être soumise aux mêmes chances. Il n’est pas nécessaire que je puisse acheter de brillantes étoffes ; mais il faut que je sois assez riche pour acheter du pain, pour moi et pour mes enfants.
+L132: Le négociant peut bien garder, dans ses magasins, les marchandises que le luxe et la vanité convoitent jusqu’à ce qu’il trouve le moment de les vendre au plus haut prix possible ; mais nul homme n’a le droit d’entasser des monceaux de blé, à côté de son semblable qui meurt de faim^{cite45†[8] }.
+L133: Quel est le premier objet de la société ? C’est de maintenir les droits imprescriptibles de l’homme. Quel est le premier de ces droits ? celui d’exister.
+L134: La première loi sociale est donc celle qui garantit à tous les membres de la société les moyens d’exister ; toutes les autres sont subordonnées à celle-là ; la propriété n’a été instituée ou garantie que pour la cimenter ; c’est pour vivre d’abord que l’on a des propriétés. Il n’est pas vrai que la propriété puisse jamais être en opposition avec la subsistance des hommes.
+L135: Les aliments nécessaires à l’homme sont aussi sacrés que la vie elle-même. Tout ce qui est indispensable pour la conserver est une propriété commune à la société entière. Il n’y a que l’excédent qui soit une propriété individuelle, et qui soit abandonné à l’industrie des commerçants. Toute spéculation mercantile que je fais aux dépens de la vie de mon semblable n’est point un trafic, c’est un brigandage et un fratricide.
+L136: D’après ce principe, quel est le problème à résoudre en matière de législation sur les subsistances ? le voici : assurer à tous les membres de la société la jouissance de la portion des fruits de la terre qui est nécessaire à leur existence ; aux propriétaires ou aux cultivateurs le prix de leur industrie, et livrer le superflu à la liberté du commerce.^{cite46†[9] }
+L137: Je défie le plus scrupuleux défenseur de la propriété de contester ces principes, à moins de déclarer ouvertement qu’il entend par ce mot le droit de dépouiller et d’assassiner ses semblables.
+L138: Comment donc a-t-on pu prétendre que toute espèce de gêne, ou plutôt que toute règle sur la vente du blé était une atteinte à la propriété, et déguiser ce système barbare sous le nom spécieux de la liberté du commerce ? Les auteurs de ce système ne s’aperçoivent-ils pas qu’ils sont nécessairement en contradiction avec eux-mêmes ? ^{cite47†[10] }
+L139: Pourquoi êtes-vous forcés d’approuver la prohibition de l’exportation des grains à l’étranger toutes les fois que l’abondance n’est point assurée dans l’intérieur ? Vous fixez vous-même le prix du pain, fixez— vous celui des épices, ou des brillantes productions de l’Inde ? Quelle est la cause de toutes ces exceptions, si ce n’est l’évidence même des principes que je viens de développer ? Que dis-je ? Le gouvernement assujettit quelquefois le commerce même des objets de luxe à des modifications que la saine politique avoue^{cite48†[11] } ; pourquoi celui qui intéresse la subsistance du peuple en seroit-il nécessairement affranchi ?
+L140: Sans doute si tous les hommes étaient justes et vertueux ; si jamais la cupidité n’était tentée de dévorer la substance du peuple ; si dociles à la voix de la raison et de la nature, tous les riches se regardaient comme les économes de la société, ou comme les frères du pauvre, on pourrait ne reconnaître d’autre loi que la liberté la plus illimitée ; mais s’il est vrai que l’avarice peut spéculer sur la misère, et la tyrannie elle-même sur le désespoir du peuple ; s’il est vrai que toutes les passions déclarent la guerre à l’humanité souffrante, pourquoi les lois ne réprimeraient-elle pas ces abus ? Pourquoi n’arrêteraient-elles pas la main homicide du monopoleur, comme celle de l’assassin ordinaire ? pourquoi ne s’occuperaient-elles pas de l’existence du peuple, après s’être si long-tems occupées des jouissances des grands, et de la puissance des despotes ?
+L141: Or, quels sont les moyens de réprimer ces abus ? On prétend qu’ils sont impraticables ; je soutiens qu’ils sont aussi simples qu’infaillibles ; on prétend qu’ils offrent un problême insoluble, même au génie ; je soutiens qu’ils ne présentent au moins aucune difficulté au bon sens et à la bonne foi ; je soutiens qu’ils ne blessent ni l’intérêt du commerce, ni les droits de la propriété.
+L142: Que la circulation dans toute l’étendue de la république soit protégée ; mais que l’on prenne les précautions nécessaires pour que la circulation ait lieu. C’est précisément du défaut de circulation que je me plains. Car le fléau du peuple, la source de la disette, ce sont les obstacles mis à la circulation, sous le prétexte de la rendre illimitée.
+L143: La subsistance publique circule-t-elle, lorsque des spéculateurs avides la retiennent entassée dans leurs greniers ? Circule-t-elle, lorsqu’elle est accumulée dans les mains d’un petit nombre de millionnaires qui l’enlèvent au commerce, pour la rendre plus précieuse et plus rare ; qui calculent froidement combien de familles doivent périr avant que la denrée ait atteint le temps fixé par leur atroce avarice ? Circule-t-elle, lorsqu’elle ne fait que traverser les contrées qui l’ont produite, aux yeux des citoyens indigents qui éprouvent le supplice de Tantale, pour aller s’engloutir dans le gouffre inconnu de quelque entrepreneur de la disette publique ? Circule-t-elle, lorsqu’à côté des plus abondantes récoltes le citoyen nécessiteux languit, faute de pouvoir donner une pièce d’or, ou un morceau de papier assez précieux pour en obtenir une parcelle ?
+L144: La circulation est celle qui met la denrée de première nécessité à la portée de tous les hommes, et qui porte dans les chaumières l’abondance et la vie^{cite49†[12] }. Le sang circule-t-il, lorsqu’il est engorgé dans le cerveau ou dans la poitrine ? Il circule, lorsqu’il coule librement dans tous le corps ; les subsistances sont le sang du peuple, et leur libre circulation n’est pas moins nécessaire à la santé du corps social, que celle du sang à la vie du corps humain.
+L145: Favorisez donc la libre circulation des grains, en empêchant tous les engorgements funestes. Trois causes les favorisent, le secret, la liberté sans frein, et la certitude de l’impunité.
+L146: Le secret, lorsque chacun peut cacher la quantité de subsistances publiques dont il prive la société entière ; lorsqu’il peut frauduleusement les faire disparaître et les transporter, soit dans les pays étrangers, soit dans les magasins de l’intérieur… Or, deux moyens simples sont proposés : le premier est de prendre les précautions nécessaires pour constater la quantité de grains qu’a produite chaque contrée, et celle que chaque propriétaire ou cultivateur a récoltée^{cite50†[13] }.
+L147: Le second consiste à forcer les marchands de grains à les vendre au marché, et à défendre tout transport des achats durant la nuit. Ce n’est ni la possibilité, ni l’utilité de ces précautions qu’il faut prouver ; car, ni l’une, ni l’autre n’est contestée. Est-ce la légitimité ? Mais comment pourroit-on regarder comme une atteinte à la propriété des règles de police générale, commandées par l’intérêt de la société ?
+L148: Eh ! quel est le bon citoyen qui peut se plaindre d’être obligé d’agir avec loyauté et au grand jour ? A qui les ténèbres sont-elles nécessaires si ce n’est aux conspirateurs et aux frippons ? D’ailleurs, ne vous ai-je pas prouvé que la société avoit le droit de réclamer la portion qui est nécessaire à la subsistance des citoyens ? Que dis^je ? c’est le plus sacré de ses devoirs. Comment donc les lois nécessaires pour en assurer l’exercice seroient-elles injustes ?
+L149: J’ai dit que les autres causes des opérations désastreuses du monopole, étaient la liberté indéfinie et l’impunité.
+L150: Quel moyen plus sûr d’encourager la cupidité et de la dégager de toute espèce de frein, que de poser en principe que la loi n’a pas même le droit de la surveiller, de lui imposer les plus légères entraves ? Que la seule règle qui lui soit prescrite c’est le pouvoir de tout oser impunément ? Que dis-je ? Tel est le degré de perfection auquel cette théorie a été portée, qu’il est presqu’établi que les accapareurs sont impeccables ; que les monopoleurs sont les bienfaits de l’humanité ; que, dans les querelles qui s’élèvent entr’eux et le peuple, c’est le peuple qui a toujours tort.
+L151: Ou bien le crime du monopole est impossible, ou il est réel ; si c’est une chimère, comment est-il arrivé que de tout tems on ait cru à cette chimère ? Pourquoi avons-nous éprouvé ses ravages dès les premiers tems de notre révolution ? Pourquoi des rapports non-suspects, et des faits incontestables, nous dénoncent-ils ses coupables manœuvres ? S’il est réel, par quel étrange privilège obtient-il seul le droit d’être protégé ? Quelles bornes les vampires impitoyables qui spéculeraient sur la misère publique, mettraient-ils à leurs attentats, si, à toute espèce de réclamation, on opposait sans cesse des baïonnettes et l’ordre absolu de croire à la pureté et à la bienfaisance de tous les accapareurs ? La liberté indéfinie n’est autre chose que l’excuse, la sauvegarde et la cause de cet abus.
+L152: Comment pourrait-elle en être le remède ? De quoi se plaint-on ? précisément des maux qu’a produits le système actuel, ou du moins des maux qu’il n’a pas pu prévenir ? et quel remède nous propose-t-on ? Le système actuel. Je vous dénonce les assassins du peuple, et vous répondez : laissez les faire. Dans ce système, tout est contre la société ; tout est en faveur des marchands de grains.^{cite51†[14] }
+L153: C’est ici, législateurs, que toute votre sagesse et toute votre circonspection son nécessaires. Un tel sujet est toujours délicat à traiter ; il est dangereux de redoubler les alarmes du peuple, et de paraître même autoriser son mécontentement. Il est plus dangereux encore de taire la vérité, et de se dissimuler les principes. Mais, si vous voulez les suivre, tous les inconvéniens disparaissent : les principes seuls peuvent tarir la source du mal.
+L154: Je sais bien que quand on examine les circonstances de telle émeute particulière, excitée par la disette réelle ou factice des blés, on reconnaît quelquefois l’influence d’une cause étrangère. L’ambition et l’intrigue ont besoin de susciter des troubles : quelquefois, ce sont ces mêmes hommes qui excitent le peuple, pour trouver le prétexte de l’égorger, et pour rendre la liberté même terrible, aux yeux des hommes faibles et égoïstes.
+L155: Mais il n’en est pas moins vrai que le peuple est naturellement droit et paisible ; il est toujours guidé par une intention pure ; les malveillants ne peuvent le remuer, s’ils ne lui présentent un motif puissant et légitime à ses yeux. Ils profitent de son mécontentement plus qu’ils ne le font naître ; et quand ils le portent à des démarches inconsidérées, par le prétexte des subsistances, ce n’est que parce qu’il est disposé à recevoir ses impressions, par l’oppression et par la misère.
+L156: Jamais un peuple heureux ne fut un peuple turbulent. Quiconque connaît les hommes, quiconque connaît surtout le peuple français, sait qu’il n’est pas au pouvoir d’un insensé ou d’un mauvais citoyen, de le soulever sans aucune raison, contre les lois qu’il aime, encore moins contre les mandataires qu’il a choisis, et contre la liberté qu’il a conquise.
+L157: C’est à ses représentants à lui témoigner la confiance qu’il leur donne lui-même, et de déconcerter la malveillance aristocratique, en soulageant ses besoins, et en calmant ses alarmes.
+L158: Les alarmes même des citoyens doivent être respectées. Comment les calmer, si vous restez dans l’inaction ? Les mesures même qu’on propose, ne fussent-elles pas aussi nécessaires que nous le pensons, il suffit qu’il les désire, il suffit qu’elles prouvent à ses yeux votre attachement à ses intérêts, pour vous déterminer à les adopter.
+L159: J’ai déjà indiqué quelle était la nature et l’esprit de ces lois, je me contenterai ici de demander la priorité pour les projets de décrets qui proposent des précautions contre le monopole, en me réservant de pro poser des modifications, si elle est adoptée. J’ai déjà prouvé que ces mesures et les principes sur lesquels elles sont fondées, étaient nécessaires au peuple. Je vais prouver qu’elles sont utiles aux riches et à tous les propriétaires.
+L160: Je ne leur ôte aucun profit honnête, aucune propriété légitime ; je ne leur ôte que le droit d’attenter à celle d’autrui ; je ne détruis point le commerce, mais le brigandage du monopoleur ; je ne les condamner qu’à la peine de laisser vivre leur semblables. Or, rien, sans doute, ne peut leur être plus avantageux ; le plus grand service que le législateur puisse rendre aux hommes, c’est de les forcer à être honnêtes gens.
+L161: Le plus grand intérêt de l’homme n’est pas d’amasser des trésors, et la pus douce propriété n’est point de dévorer la subsistance de cent familles infortunées. Le plaisir de soulager ses semblables, et la gloire de servir sa patrie, valent bien ce déplorable avantage. A quoi peut servir aux spéculateurs les plus avides, la liberté indéfinie de leur odieux trafic ? à être, ou opprimés, ou oppresseurs. Cette dernière destinée, sur-tout, est affreuse.
+L162: Riches, égoïstes, sachez prévoir et prévenir d’avance les résultats terribles de la lutte de l’orgueil et des passions lâches contre la justice et contre l’humanité. Que l’exemple des nobles et des rois vous instruise. Apprenez à goûter les charmes de l’égalité et les délices de la vertu ; ou du moins contentez-vous des avantages que la fortune vous donne, et laissez au peuple, du pain, du travail et des mœurs.
+L163: C’est en vain que les ennemis de la liberté s’agitent pour déchirer le sein de leur patrie ; ils n’arrêteront pas plus le cours de la raison humaine, que celui du soleil ; la lâcheté ne triomphera point du courage ; c’est au génie de l’intrigue à fuir devant le génie de la liberté.
+L164: Et vous, législateurs, souvenez-vous, que vous n’êtes point les représentans d’une caste privilégiées, mais ceux du peuple français, n’oubliez pas que la source de l’ordre, c’est la justice ; que le plus sûr garant de la tranquillité publique, c’est le bonheur des citoyens, et que les longues convulsions qui déchirent les Etats ne sont que le combat des préjugés contre les principes, de l’égoïsme contre l’intérêt général ; de l’orgueil et des passions des hommes puissants, contre les droits et contre les besoins des faibles.^{cite52†[15] }
+L165:   1. cite53†↑ Brochure in-8° 15 p., Imp. nat., 1792 (B.N. Le^{38} 2258, Bibl. Sorbonne, H Fr 140, Arch. nat., AD xviii a 60, Bibl. Ch. des Députés, Coll. Portiez, de l’Oise, t. 493, n° 7, et t. 112, n° 3). Robespierre a publié ce discours dans « les Lettres à ses commettans » (n° 9, p. 391-409). C’est ce texte que nous reproduisons ; il est identique à celui du discours imprimé par la Convention. Laponneraye l’a publié (II, 459-473) ainsi que Buchez et Roux (XXII, 175). E.
+L166: Hamel l’analyse et le commente (II, 349-351) ; G. Walter le signale, p. 730.
+L167:   2. cite54†↑ Voir la pétition du département du Var citée ci-dessus, n. 1 : « On avait voulu nous affamer en 89, on essaie encore ce ressort use… » Bien entendu, par disette factice, on entendait l’accaparement et la spéculation à la hausse.
+L168:   3. cite55†↑ Allusion à Turgot et à l’édit du 18 sept. 1774 sur la libre circulaftion des grains. Il fut obligé, on le sait, de démissionner en mai 1776 et fut remplacé par Necker.
+L169:   4. cite56†↑ Voir P. Caron, Recueil des principaux textes législatifs et administratifs de 1788 à l’an V ; Ch. Lorrain, Les subsistances en céréales dans le district de Chaumont de 1786 à l’an V ; G. Lefebvre, Documents relatifs à l’histoire des subsistances dans le district de Bergues pendant la Révolution ; F. Mourlot, Recueil des documents d’ordre économique contenus dans les registres des délibérations des municipalités du district d’Alençon (1788-an V) ; A. Defresne et F.
+L170: Evrard, Les subsistances dans le district de Versailles (1788-an V) ; Afanassiev, Le commerce des céréales au XVIII^{e} siècle.
+L171:   5. cite57†↑ Voir les décrets des 31 déc. 1791 et 6 janv. 1792 sur la libre circulation des grains.
+L172:   6. cite58†↑ Allusion à Necker.
+L173:   7. cite59†↑ Cf. Discours… l^{re} partie, séances des 21 oct. 1789, p. 121 ; et 22 fév. 1790, p. 237 et s.
+L174:   8. cite60†↑ Voir la pétition du curé Dolivier, publiée par Robespierre dans son « Défenseur de la Constitution », n" 4 (Ed. G. Laurent ; p. 130 et s.) ; et les proclamations de Dufour et Momoro en sept. 1792,
+L175:   9. cite61†↑ Cf. ci-après, séance du 24 avril 1793, 1^{re} intervention : Sur le droit de propriété.
+L176:   10. cite62†↑ A la séance du 29 nov., Faye (de la Haute-Vienne) et Dufriche-Vialazé avaient demandé, comme Saint-Just, la libre circulation des grains, que combattit Lequinio.
+L177:   11. cite63†↑ Le café, par exemple, était frappé, à la fin de l’Ancien régime, de droits élevés à son entrée en France.
+L178:   12. cite64†↑ Saint-Just avait, le 29 novembre, insisté sur ce point, et demandé en particulier de faciliter les transports fluviaux.
+L179:   13. cite65†↑ Voir le discours de Faye, du 29 nov.
+L180:   14. cite66†↑ Là, le Moniteur ajoute : « La propriété sacrée, celle du peuple, est immolée aux intérêts d’un commerce criminel, et la vie des hommes au luxe des riches et à la cupidité des sangsues publique. »
+L181:   15. cite67†↑ Texte reproduit dans les Arch. parl., (LIV, 45-47, qui y ajoutent les interventions de da fin, d’après le Mercure universel.
+L182: cite68†Image L183: 
+L184: Récupérée de "cite31†https://fr.wikisource.org/w/index.php?title=Opinion_sur_les_subsistances&oldid=10861556 "
+L185: 
+L186: cite69†Catégorie :
+L187: 
+L188:   * cite70†Discours L189: 
+L190:   * La dernière modification de cette page a été faite le 11 novembre 2020 à 18:58.
+L191:   * Les textes sont disponibles sous cite71†licence Creative Commons Attribution-partage dans les mêmes conditions†creativecommons.org ; d’autres conditions peuvent s’appliquer. Voyez les cite72†Conditions d’utilisation†foundation.wikimedia.org pour plus de détails.
+L192:   * cite73†Politique de confidentialité†foundation.wikimedia.org L193:   * cite74†À propos de Wikisource L194:   * cite75†Avertissements L195:   * cite76†Contacts juridiques & sécurité†foundation.wikimedia.org L196:   * cite77†Code de conduite†foundation.wikimedia.org L197:   * cite78†Développeurs†developer.wikimedia.org L198:   * cite79†Statistiques†stats.wikimedia.org L199:   * cite80†Déclaration sur les témoins (cookies)†foundation.wikimedia.org L200:   * Rechercher
+L201: 
+L202: [Input: Rechercher sur Wikisource]
+L203: 
+L204: [Input]
+L205: 
+L206: [Button: Rechercher]
+L207: 
+L208: Opinion sur les subsistances
+L209: Ajouter des langues cite81†Ajouter un sujet 

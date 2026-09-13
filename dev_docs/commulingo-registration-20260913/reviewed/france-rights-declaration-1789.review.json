@@ -1,0 +1,11 @@
+{
+  "id": "france-rights-declaration-1789",
+  "checked": "source scope, key clauses, article structure, corrections below",
+  "corrections": [
+    {
+      "before": "인간의 자연스럽고",
+      "after": "인간의 자연적이고"
+    }
+  ],
+  "paragraphs": 22
+}

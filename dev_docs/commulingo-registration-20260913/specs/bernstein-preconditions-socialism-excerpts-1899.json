@@ -1,0 +1,52 @@
+{
+  "id": "bernstein-preconditions-socialism-excerpts-1899",
+  "title": "베른슈타인, 사회주의의 전제와 사회민주주의의 과제 (1899, 발췌)",
+  "byline": "에두아르트 베른슈타인",
+  "bylineNote": "Bernstein, The Preconditions of Socialism and the Tasks of Social Democracy (1899, excerpts)",
+  "sourceLang": "de",
+  "headnote": [
+    "『사회주의의 전제와 사회민주주의의 과제』 제4장 c절 「민주주의와 사회주의」를 발췌했다. 영어판의 장 구분과 혼동하지 않도록 독일어 저본의 절을 명시한다."
+  ],
+  "bibliography": [
+    "발표: 1899년.",
+    "번역 저본: https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/kap4.html",
+    "원문 언어: 독일어. 제4장 c절 본문 전체. 별도 말미에 모인 주석은 이 발췌에 포함하지 않았다.",
+    "발췌하지 않은 말미 각주로 향하는 번호 표지는 본문에서 제거했다. 민주주의를 사회주의의 수단이자 실현 형태로 보는 논증은 저자의 주장이다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "bernstein-4c",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "marxists",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/bernstein.html",
+        "sha256": "5429825178a77837d17f1182991983986b9e4ad09735cc4b29f087657d97100a",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/kap4.html"
+      },
+      "blocks": [
+        96,
+        144
+      ],
+      "startsWith": "c) Demokratie und Sozialismus",
+      "endsWith": " Bevor der Sozialismus möglich sein kann, müssen wir eine Nation von Demokraten aufbauen.“",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

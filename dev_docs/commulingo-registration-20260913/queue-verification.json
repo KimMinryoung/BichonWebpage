@@ -1,0 +1,296 @@
+[
+  {
+    "id": 1943,
+    "kind": "person",
+    "status": "done",
+    "resolved_id": "maximilien-robespierre",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1944,
+    "kind": "person",
+    "status": "done",
+    "resolved_id": "gracchus-babeuf",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1945,
+    "kind": "person",
+    "status": "done",
+    "resolved_id": "sylvain-marechal",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1946,
+    "kind": "person",
+    "status": "done",
+    "resolved_id": "olympe-de-gouges",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1947,
+    "kind": "person",
+    "status": "done",
+    "resolved_id": "eric-hobsbawm",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1948,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "constitutional-monarchy",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1949,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "republic",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1950,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "national-sovereignty",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1951,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "active-citizen-1791",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1952,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "sans-culottes",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1953,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "jacobins",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1954,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "girondins",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1955,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "committee-of-public-safety",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1956,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "national-convention",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1957,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "general-maximum-1793",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1958,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "law-of-suspects-1793",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1959,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "law-of-22-prairial",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1960,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "conspiracy-of-equals",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1961,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-rights-declaration-1789",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1962,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-constitution-1791",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1963,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "gouges-rights-of-woman-1791",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1964,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-abolition-monarchy-1792",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1965,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-constitution-1793",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1966,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "robespierre-subsistence-1792",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1967,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-general-maximum-law-1793",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1968,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-law-of-suspects-1793",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1969,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-law-22-prairial-1794",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1970,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "robespierre-political-morality-1794",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1971,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "france-slavery-abolition-decree-1794",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1972,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "marechal-manifesto-equals-1796",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1973,
+    "kind": "person",
+    "status": "done",
+    "resolved_id": "robert-owen",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1974,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "liberalism",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1975,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "anarchism",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1976,
+    "kind": "term",
+    "status": "done",
+    "resolved_id": "social-democracy",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1977,
+    "kind": "doc",
+    "status": "pending",
+    "resolved_id": "",
+    "resolution": "translation_provider_daily_quota: Owen 1816 edition, 39/67 chunks cached; 28 remaining. Private output contains missing-block placeholders and MUST NOT be published. Resume using retained spec/cache after provider quota resets; doc worker does not auto-publish."
+  },
+  {
+    "id": 1978,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "iwma-general-rules-1871",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1979,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "bakunin-statism-anarchy-excerpts-1873",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1980,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "marx-bakunin-notes-1874-1875",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1981,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "bernstein-preconditions-socialism-excerpts-1899",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1982,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "luxemburg-reform-revolution",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1983,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "lenin-state-revolution-chapter-5",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  },
+  {
+    "id": 1984,
+    "kind": "doc",
+    "status": "done",
+    "resolved_id": "luxemburg-russian-revolution",
+    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+  }
+]

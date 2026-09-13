@@ -1,0 +1,55 @@
+{
+  "id": "france-general-maximum-law-1793",
+  "title": "일반최고가격법 (1793년 9월 29일)",
+  "byline": "국민공회",
+  "bylineNote": "Law of the General Maximum (29 September 1793)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1793년 9월 29일 생필품과 상품의 최고가격을 정한 법령의 20개 조항이다. 상품 가격뿐 아니라 제8조의 임금 상한과 제9조의 노동 징발 규정도 함께 수록했다. 일부 조항만 보고 가격 통제의 대상을 단정하지 않도록 전문을 옮겼다."
+  ],
+  "bibliography": [
+    "채택: 1793년 9월 29일.",
+    "번역 저본: Archives parlementaires, 제75권(1909), 321~323쪽. 프랑스어.",
+    "https://www.persee.fr/doc/arcpa_0000-0000_1909_num_75_1_45160_t1_0321_0000_7",
+    "전문 20개 조항. 원문 페이지 이미지와 OCR을 대조하여 줄바꿈·오자를 정리했다. 인쇄본의 조항 참조 번호는 보존했다. 편집자 각주와 다른 안건은 제외했다.",
+    "제14·18조의 fers는 쇠사슬을 채우는 노역형으로 옮겼다. procureur와 syndic은 당시 지방행정의 공익 대표 직책이며, 오늘날의 검찰 조직과 동일한 제도를 뜻하지 않는다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "maximum",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "selector": "article",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/maximum-selected.html",
+        "sha256": "69339d115d151f51a1dbd6db55dc2737a6c605297007035070aa2f63e9ff3184",
+        "url": "https://www.persee.fr/doc/arcpa_0000-0000_1909_num_75_1_45160_t1_0321_0000_7",
+        "extraction": "Pages 321–323 articleBody OCR; line hyphens joined, page headers and editorial notes excluded; OCR corrections checked against rendered print images."
+      },
+      "blocks": [
+        0,
+        43
+      ],
+      "startsWith": "« La Convention nationale, après avoir entendu le rapport de sa Commission pour la rédacti",
+      "endsWith": "« Le présent décret sera envoyé par des courriers extraordinaires. »",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/france-general-maximum-law-1793.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

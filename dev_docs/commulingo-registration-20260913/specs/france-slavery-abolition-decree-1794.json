@@ -1,0 +1,54 @@
+{
+  "id": "france-slavery-abolition-decree-1794",
+  "title": "노예제 폐지 법령 (1794년 2월 4일)",
+  "byline": "국민공회",
+  "bylineNote": "Decree abolishing slavery (4 February 1794)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1794년 2월 4일 국민공회가 채택한 노예제 폐지 결의의 두 문단이다. 『의회기록』에 수록된 결의문을 옮겼다. 법령의 선언은 모든 식민지에서 실제로 같은 시기에 집행되었다는 뜻이 아니다."
+  ],
+  "bibliography": [
+    "채택: 1794년 2월 4일(공화력 2년 플뤼비오즈 16일).",
+    "번역 저본: Archives parlementaires, 제84권(1962), 284쪽. 프랑스어 결의문 두 문단.",
+    "https://www.persee.fr/doc/arcpa_0000-0000_1962_num_84_1_34717_t1_0284_0000_5",
+    "한국어 번역: CommuLingo. 의회기록의 편집주 번호는 제외했다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "abolition-persee",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/abolition-persee-selected.html",
+        "sha256": "49798a235106807ccde8310eb0cdeb900582d11487a34e462ba820520bc27373",
+        "selector": "article",
+        "url": "https://www.persee.fr/doc/arcpa_0000-0000_1962_num_84_1_34717_t1_0284_0000_5",
+        "extraction": "Web text line transcription; selected source lines [36, 38]"
+      },
+      "blocks": [
+        0,
+        2
+      ],
+      "startsWith": "« La Convention nationale déclare aboli l’es¬ clavage des nègres dans toutes les colonies ",
+      "endsWith": "essamment un rapport sur les mesures à prendre pour l’exécution du présent dé¬ cret » (2).",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/france-slavery-abolition-decree-1794.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

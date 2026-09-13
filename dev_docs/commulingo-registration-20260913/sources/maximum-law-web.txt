@@ -1,0 +1,56 @@
+Décret, présenté par Coupé (de l'Oise) au nom de la Commission chargée de la rédaction d'une loi sur la fixation du maximum, établissant le maximum du prix des denrées et marchandises de première nécessité, lors de la séance du 29 septembre 1793 - Persée (https://www.persee.fr/doc/arcpa_0000-0000_1909_num_75_1_45160_t1_0321_0000_7)
+citeturn62view0 [wordlim: 200] Crawled: 4 weeks ago; Content type: text/html; Source: open({"ref_id":"https://www.persee.fr/doc/arcpa_0000-0000_1909_num_75_1_45160_t1_0321_0000_7","lineno":null}); Total lines: 71
+L0: frcite0†en L1: 
+L2: cite1†Persée†info.persee.fr cite2†Portail Persée cite3†Perséides†info.persee.fr cite4†Data Persée†data.persee.fr L3: 
+L4: [Input: Chercher dans le texte]cite5†Image: prev cite6†Image: next L5: 
+L6: ## Décret, présenté par Coupé (de l'Oise) au nom de la Commission chargée de la rédaction d'une loi sur la fixation du maximum, établissant le maximum du prix des denrées et marchandises de première nécessité, lors de la séance du 29 septembre 1793
+L7: 
+L8: #### [décrets, lois et arrêtés]
+L9: ### Tome LXXV - Du 23 Septembre 1793 au 3 Octobre 1793
+L10: 
+L11: cite7†Jacques Michel Coupé L12: 
+L13: cite8†Archives Parlementaires de la Révolution Française Année 1909 cite9†75 pp. 321-323
+L14: 
+L15: Fait partie d’un numéro thématique : cite9†Archives Parlementaires de 1787 à 1860 - Première série (1787-1799) L16: 
+L17:   * Référence bibliographique
+L18: Coupé Jacques Michel. Décret, présenté par Coupé (de l'Oise) au nom de la Commission chargée de la rédaction d'une loi sur la fixation du maximum, établissant le maximum du prix des denrées et marchandises de première nécessité, lors de la séance du 29 septembre 1793. In: Archives Parlementaires de 1787 à 1860 - Première série (1787-1799) Tome LXXV - Du 23 Septembre 1793 au 3 Octobre 1793. Paris : Librairie Administrative P. Dupont, 1909. pp. 321-323. (Archives parlementaires, 75)
+L19: cite10†www.persee.fr/doc/arcpa_0000-0000_1909_num_75_1_45160_t1_0321_0000_7 L20: 
+L21:   * cite11†BibTex L22:   * cite12†RefWorks L23:   * cite13†RIS (ProCite, Endnote, …) L24: 
+L25: cite14†Image: doc-ctrl/global/pdf cite15†Image: doc-ctrl/global/pdf L26: cite16†Image: doc-ctrl/global/text cite17†Image: doc-ctrl/global/text cite18†Image: doc-ctrl/global/image cite19†Image: doc-ctrl/global/image cite20†Image: doc-ctrl/global/zoom-in cite21†Image: doc-ctrl/global/zoom-in cite22†Image: doc-ctrl/global/zoom-out cite23†Image: doc-ctrl/global/zoom-out cite24†Image: doc-ctrl/global/bookmark cite25†Image: doc-ctrl/global/bookmark cite26†Image: doc-ctrl/global/reset cite27†Image: doc-ctrl/global/reset L27: cite28†Image: doc-ctrl/page/rotate-ccw cite29†Image: doc-ctrl/page/rotate-ccw cite30†Image: doc-ctrl/page/rotate-cw cite31†Image: doc-ctrl/page/rotate-cw L28: 
+L29: cite32†Image: Page 321 L30: 
+L31: « La Convention nationale, après avoir en¬ tendu le rapport de sa Commission [Coupé (de l’Oise), rapporteur (3)] pour la rédaction d’une loi sur la fixation du maximum, du prix des den¬ rées et marchandises de première nécessité, dé¬ crète ce qui suit :
+L32: 
+L33: Art. 1er.
+L34: « Les objets que la Convention nationale a jugés de première nécessité, et dont elle a cru devoir fixer le maximum ou le plus haut prix, sont : la viande fraîche, la viande salée et le lard, le beurre, l’huile douce, le bétail, le poisson salé, le vin, l’eau-de-vie, le vinaigre, le cidre, la bière, le bois à brûler, le charbon de bois, le charbon de terre, la chandelle, l’huile à brûler, le sel, la soude, le savon, -la potasse, le sucre, le miel, le papier blanc, les cuirs, les fers, la fonte, le plomb, l’acier, le cuivre, le chanvre, le lin, les laines, les étoffes, les toiles, les matières premières qui servent aux fabriques, les sabots, les souüers, les colza et rabette, le tabac.
+L35: * Art. 2.
+L36: 
+L37: « Parmi les objets énoncés dans la liste ci-dessus, le maximum du prix du bois à brûler de première qualité, celui du charbon de bois et du charbon de terre, est le même qu’en 1790, plus le vingtième de ce prix. La loi du 19 août, sur la fixation par les départements des prix du bois de chauffage, charbon, tourbe, est rapportée.
+L38: « Le maximum ou le plus haut prix du tabac en carotte est de 20 sols la livre, poids de marc ; celui du tabac à fumer est de 10 sols ; celui de la livre de sel est de 2 sols ; celui du savon, de 25 sols.
+L39: 
+L40: Art. 3.
+L41: « Le maximum du prix de toutes les autres denrées et marchandises énoncées dans l’ar¬ ticle 1er, sera, pour toute l’étendue de la Répu¬ blique, jusqu’au mois de septembre prochain, le prix que chacune d’elles avait en 1790, tel qu’il est constaté par les mercuriales ou le prix cou¬ rant de chaque département, et le tiers en sus de ce même prix, déduction faite des droits fiscaux et autres auxquels elles étaient alors soumises, sous quelques dénominations qu’ils aient existé.
+L42: 
+L43: Art. 4.
+L44: « Les tableaux du maximum ou plus haut prix de chacune des denrées énoncées dans l’ar-
+L45: 
+L46: (1) L’article 12 a remplacé l’article 10 du premier projet.
+L47: 
+L48: (2) Procès-verbaux de la Convention, t. 21, p. 309 à
+L49: 
+L50: 311.
+L51: 
+L52: (3) D’après la minute du décret qui se trouve aux Archives nationales, carton C 269, dossier 649.
+L53: 
+L54: cite28†Image: doc-ctrl/page/rotate-ccw cite29†Image: doc-ctrl/page/rotate-ccw cite30†Image: doc-ctrl/page/rotate-cw cite31†Image: doc-ctrl/page/rotate-cw L55: cite28†Image: doc-ctrl/page/rotate-ccw cite29†Image: doc-ctrl/page/rotate-ccw cite30†Image: doc-ctrl/page/rotate-cw cite31†Image: doc-ctrl/page/rotate-cw L56: ### Informations
+L57: 
+L58: cite33†Au sujet de persee.fr cite34†Votre collection sur persee.fr cite35†Nous contacter L59: 
+L60: ### Ressources
+L61: 
+L62: cite36†Interopérabilité cite37†Modèles documentaires cite38†Statistiques de consultation cite39†Kit logos L63: 
+L64: ### Suivez-nous
+L65: 
+L66: ### Légal
+L67: 
+L68: cite40†CGU cite41†Mentions légales cite42†Crédits cite43†Politique d'archivage pérenne L69: 
+L70: cite44†Persée†info.persee.fr © 2005-2026
+

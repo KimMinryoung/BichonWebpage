@@ -1,0 +1,15 @@
+{
+  "id": "france-constitution-1791",
+  "checked": "source scope, key clauses, article structure, corrections below",
+  "corrections": [
+    {
+      "before": "<p>1789년 8월 26일 인간과 시민의 권리 선언</p><p>(이후 1791년 헌법 서두에 배치됨)</p>",
+      "after": ""
+    },
+    {
+      "before": "원시의회",
+      "after": "1차 집회"
+    }
+  ],
+  "paragraphs": 233
+}

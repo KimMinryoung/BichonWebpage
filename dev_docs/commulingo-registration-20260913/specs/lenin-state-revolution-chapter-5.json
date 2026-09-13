@@ -1,0 +1,54 @@
+{
+  "id": "lenin-state-revolution-chapter-5",
+  "title": "레닌, 국가와 혁명 제5장 전문",
+  "byline": "블라디미르 레닌",
+  "bylineNote": "Lenin, The State and Revolution, Chapter V (excerpt)",
+  "sourceLang": "ru",
+  "headnote": [
+    "『국가와 혁명』 제5장 「국가 사멸의 경제적 기초」 전문이다. 1917년에 집필한 글을 러시아어 저작집 전사에 따라 옮겼다. 자본주의에서 공산주의로의 이행기, 공산주의의 첫 단계와 높은 단계를 구분하는 논증을 읽을 수 있다."
+  ],
+  "bibliography": [
+    "집필: 1917년 8~9월.",
+    "번역 저본: В. И. Ленин, Полное собрание сочинений, 제5판, 모스크바, 1969, 제33권, 83~102쪽의 Wikisource 전사. 저작집은 원고를 1919년 책과 대조했다고 밝힌다.",
+    "원문 언어: 러시아어. 제5장 전체. 웹 전사본 상단의 초판 발행일 표기는 채택하지 않았다.",
+    "https://ru.wikisource.org/wiki/Государство_и_революция_(Ленин)/Глава_V"
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "lenin-ch5",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "selector": "article",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/lenin-ch5-selected.html",
+        "sha256": "095dde228ffbc6eb2810c614f9813664faf9bcaf7cbea12b6f1f872777685489",
+        "url": "https://ru.wikisource.org/wiki/Государство_и_революция_(Ленин)/Глава_V",
+        "extraction": "Source lines 108–250; Wikisource edit controls removed."
+      },
+      "blocks": [
+        0,
+        118
+      ],
+      "startsWith": "Глава V",
+      "endsWith": "мунистического общества к высшей его фазе, а вместе с тем к полному отмиранию государства.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/lenin-state-revolution-chapter-5.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

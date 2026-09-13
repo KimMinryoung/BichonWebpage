@@ -1,0 +1,47 @@
+{
+  "id": "france-law-of-suspects-1793",
+  "checked": "source scope, key clauses, article structure, corrections below",
+  "corrections": [
+    {
+      "before": "제1조 (premier).",
+      "after": "제1조."
+    },
+    {
+      "before": "시민권 증명서",
+      "after": "공화국에 대한 충성 증명서"
+    },
+    {
+      "before": "1 (primo)",
+      "after": "1."
+    },
+    {
+      "before": "2 (secundo)",
+      "after": "2."
+    },
+    {
+      "before": "3 (tertio)",
+      "after": "3."
+    },
+    {
+      "before": "4 (quarto)",
+      "after": "4."
+    },
+    {
+      "before": "5 (quinto)",
+      "after": "5."
+    },
+    {
+      "before": "6 (sexto)",
+      "after": "6."
+    },
+    {
+      "before": "<p>IX.",
+      "after": "<p>제9조."
+    },
+    {
+      "before": "<p>X.",
+      "after": "<p>제10조."
+    }
+  ],
+  "paragraphs": 16
+}

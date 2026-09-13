@@ -1,0 +1,38 @@
+[
+  {
+    "id": 9677,
+    "target_type": "person",
+    "target_id": "maximilien-robespierre",
+    "status": "approved"
+  },
+  {
+    "id": 9678,
+    "target_type": "person",
+    "target_id": "gracchus-babeuf",
+    "status": "approved"
+  },
+  {
+    "id": 9679,
+    "target_type": "person",
+    "target_id": "sylvain-marechal",
+    "status": "approved"
+  },
+  {
+    "id": 9680,
+    "target_type": "person",
+    "target_id": "olympe-de-gouges",
+    "status": "approved"
+  },
+  {
+    "id": 9681,
+    "target_type": "person",
+    "target_id": "eric-hobsbawm",
+    "status": "approved"
+  },
+  {
+    "id": 9682,
+    "target_type": "person",
+    "target_id": "robert-owen",
+    "status": "approved"
+  }
+]

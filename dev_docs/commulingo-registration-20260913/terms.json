@@ -1,0 +1,1048 @@
+{
+  "terms": [
+    {
+      "id": "constitutional-monarchy",
+      "term": {
+        "ko": "입헌군주제",
+        "en": "Constitutional monarchy"
+      },
+      "category": "party-state",
+      "period": {
+        "ko": "근대 이후",
+        "en": "Modern era onward"
+      },
+      "definition": {
+        "ko": "헌법과 법률이 군주의 권한을 제한하는 군주제다. 군주가 실제로 행사하는 권한의 크기는 시대와 헌법에 따라 다르다.",
+        "en": "A monarchy in which constitutional law limits the monarch’s powers. The extent of the monarch’s governing authority varies across constitutions and periods."
+      },
+      "body": {
+        "ko": "1791년 프랑스 헌법은 국민에게 주권이 있다고 선언하면서 입법부와 왕을 대표자로 두었다. 왕은 행정권을 맡았으나 입법부를 해산할 수 없었다. 국민주권이라는 표현만으로 공화정이나 보통선거를 추론해서는 안 된다.",
+        "en": "The French Constitution of 1791 vested sovereignty in the nation while naming the legislature and king as its representatives. The king held executive authority but could not dissolve the legislature. National sovereignty alone did not establish a republic or universal suffrage."
+      },
+      "sources": [
+        "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "헌법과 법률이 군주의 권한을 제한하는 군주제다. 군주가 실제로 행사하는 권한의 크기는 시대와 헌법에 따라 다르다. 1791년 프랑스 헌법은 국민에게 주권이 있다고 선언하면서 입법부와 왕을 대표자로 두었다. 왕은 행정권을 맡았으나 입법부를 해산할 수 없었다. 국민주권이라는 표현만으로 공화정이나 보통선거를 추론해서는 안 된다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "body",
+          "claim": "헌법과 법률이 군주의 권한을 제한하는 군주제다. 군주가 실제로 행사하는 권한의 크기는 시대와 헌법에 따라 다르다. 1791년 프랑스 헌법은 국민에게 주권이 있다고 선언하면서 입법부와 왕을 대표자로 두었다. 왕은 행정권을 맡았으나 입법부를 해산할 수 없었다. 국민주권이라는 표현만으로 공화정이나 보통선거를 추론해서는 안 된다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "period",
+          "claim": "근대 이후",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        }
+      ]
+    },
+    {
+      "id": "republic",
+      "term": {
+        "ko": "공화정",
+        "en": "Republic"
+      },
+      "category": "party-state",
+      "period": {
+        "ko": "고대부터 현대까지",
+        "en": "Antiquity to the present"
+      },
+      "definition": {
+        "ko": "세습 군주를 국가의 통치자로 두지 않는 정치체제다. 공화정이라는 명칭만으로 누가 권력에 참여하는지까지 알 수는 없다.",
+        "en": "A political order without a hereditary monarch as ruler. The designation alone does not determine who can exercise political power."
+      },
+      "body": {
+        "ko": "프랑스 국민공회는 1792년 9월 왕정을 폐지했다. 그러나 군주의 유무, 입법·행정 권한의 배분, 선거권의 범위는 서로 다른 질문이다. 공화정이라는 체제와 공화주의라는 사상 전통도 구별해 읽는다.",
+        "en": "The French National Convention abolished monarchy in September 1792. The existence of a monarch, the division of legislative and executive powers, and voting qualifications are distinct questions. A republican form of government should also be distinguished from republicanism as a tradition of thought."
+      },
+      "sources": [
+        "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+        "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "세습 군주를 국가의 통치자로 두지 않는 정치체제다. 공화정이라는 명칭만으로 누가 권력에 참여하는지까지 알 수는 없다. 프랑스 국민공회는 1792년 9월 왕정을 폐지했다. 그러나 군주의 유무, 입법·행정 권한의 배분, 선거권의 범위는 서로 다른 질문이다. 공화정이라는 체제와 공화주의라는 사상 전통도 구별해 읽는다.",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "definition",
+          "claim": "세습 군주를 국가의 통치자로 두지 않는 정치체제다. 공화정이라는 명칭만으로 누가 권력에 참여하는지까지 알 수는 없다. 프랑스 국민공회는 1792년 9월 왕정을 폐지했다. 그러나 군주의 유무, 입법·행정 권한의 배분, 선거권의 범위는 서로 다른 질문이다. 공화정이라는 체제와 공화주의라는 사상 전통도 구별해 읽는다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+          "locator": "1793 Declaration of Rights and Constitution"
+        },
+        {
+          "field": "body",
+          "claim": "세습 군주를 국가의 통치자로 두지 않는 정치체제다. 공화정이라는 명칭만으로 누가 권력에 참여하는지까지 알 수는 없다. 프랑스 국민공회는 1792년 9월 왕정을 폐지했다. 그러나 군주의 유무, 입법·행정 권한의 배분, 선거권의 범위는 서로 다른 질문이다. 공화정이라는 체제와 공화주의라는 사상 전통도 구별해 읽는다.",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "세습 군주를 국가의 통치자로 두지 않는 정치체제다. 공화정이라는 명칭만으로 누가 권력에 참여하는지까지 알 수는 없다. 프랑스 국민공회는 1792년 9월 왕정을 폐지했다. 그러나 군주의 유무, 입법·행정 권한의 배분, 선거권의 범위는 서로 다른 질문이다. 공화정이라는 체제와 공화주의라는 사상 전통도 구별해 읽는다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+          "locator": "1793 Declaration of Rights and Constitution"
+        },
+        {
+          "field": "period",
+          "claim": "고대부터 현대까지",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "고대부터 현대까지",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+          "locator": "1793 Declaration of Rights and Constitution"
+        }
+      ]
+    },
+    {
+      "id": "national-sovereignty",
+      "term": {
+        "ko": "국민주권",
+        "en": "National sovereignty"
+      },
+      "category": "theory",
+      "period": {
+        "ko": "근대 헌정의 원리",
+        "en": "A principle of modern constitutionalism"
+      },
+      "definition": {
+        "ko": "국가 권력의 정당한 근원을 국민에게 두는 원리다. 주권의 귀속과 그 주권을 행사하는 제도는 구별해야 한다.",
+        "en": "The principle that the nation is the legitimate source of state authority. The location of sovereignty must be distinguished from the institutions exercising it."
+      },
+      "body": {
+        "ko": "1791년 프랑스 헌법의 Nation은 입법부와 왕을 통해 대표되었다. 프랑스 정치사에서 국민주권과 인민주권의 구별은 대표와 직접 참여의 문제와 연결되지만, 한국어 번역어만으로 이를 단정할 수는 없다. 해당 헌법의 원어와 조항을 함께 확인해야 한다.",
+        "en": "In the French Constitution of 1791, the Nation was represented by the legislature and the king. The historical distinction between national and popular sovereignty concerns representation and participation, but Korean translations do not always preserve that distinction. The original wording and institutional provisions must be read together."
+      },
+      "sources": [
+        "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "국가 권력의 정당한 근원을 국민에게 두는 원리다. 주권의 귀속과 그 주권을 행사하는 제도는 구별해야 한다. 1791년 프랑스 헌법의 Nation은 입법부와 왕을 통해 대표되었다. 프랑스 정치사에서 국민주권과 인민주권의 구별은 대표와 직접 참여의 문제와 연결되지만, 한국어 번역어만으로 이를 단정할 수는 없다. 해당 헌법의 원어와 조항을 함께 확인해야 한다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "definition",
+          "claim": "국가 권력의 정당한 근원을 국민에게 두는 원리다. 주권의 귀속과 그 주권을 행사하는 제도는 구별해야 한다. 1791년 프랑스 헌법의 Nation은 입법부와 왕을 통해 대표되었다. 프랑스 정치사에서 국민주권과 인민주권의 구별은 대표와 직접 참여의 문제와 연결되지만, 한국어 번역어만으로 이를 단정할 수는 없다. 해당 헌법의 원어와 조항을 함께 확인해야 한다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+          "locator": "1793 Declaration of Rights and Constitution"
+        },
+        {
+          "field": "body",
+          "claim": "국가 권력의 정당한 근원을 국민에게 두는 원리다. 주권의 귀속과 그 주권을 행사하는 제도는 구별해야 한다. 1791년 프랑스 헌법의 Nation은 입법부와 왕을 통해 대표되었다. 프랑스 정치사에서 국민주권과 인민주권의 구별은 대표와 직접 참여의 문제와 연결되지만, 한국어 번역어만으로 이를 단정할 수는 없다. 해당 헌법의 원어와 조항을 함께 확인해야 한다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "body",
+          "claim": "국가 권력의 정당한 근원을 국민에게 두는 원리다. 주권의 귀속과 그 주권을 행사하는 제도는 구별해야 한다. 1791년 프랑스 헌법의 Nation은 입법부와 왕을 통해 대표되었다. 프랑스 정치사에서 국민주권과 인민주권의 구별은 대표와 직접 참여의 문제와 연결되지만, 한국어 번역어만으로 이를 단정할 수는 없다. 해당 헌법의 원어와 조항을 함께 확인해야 한다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+          "locator": "1793 Declaration of Rights and Constitution"
+        },
+        {
+          "field": "period",
+          "claim": "근대 헌정의 원리",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "period",
+          "claim": "근대 헌정의 원리",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+          "locator": "1793 Declaration of Rights and Constitution"
+        }
+      ]
+    },
+    {
+      "id": "active-citizen-1791",
+      "term": {
+        "ko": "능동시민",
+        "en": "Active citizen (French Constitution of 1791)"
+      },
+      "category": "party-state",
+      "period": {
+        "ko": "1791년 프랑스 헌법",
+        "en": "French Constitution of 1791"
+      },
+      "definition": {
+        "ko": "1791년 프랑스 헌법에서 일정한 자격을 충족해 1차 선거집회에 참여할 수 있던 시민이다. 모든 주민에게 동등한 선거권을 부여한 범주가 아니었다.",
+        "en": "A citizen qualified to participate in primary electoral assemblies under the French Constitution of 1791. This status did not grant equal voting rights to every resident."
+      },
+      "body": {
+        "ko": "25세, 거주, 일정액의 직접세, 유급 하인이 아닐 것 등의 조건이 있었다. 이들이 뽑는 선거인에게는 더 높은 재산 조건이 적용됐다. 능동시민 자격과 선거인 자격, 여성의 정치적 배제를 구별해 살펴야 한다.",
+        "en": "Qualifications included age 25, residence, a specified direct-tax payment and exclusion of paid domestic servants. The electors chosen by these citizens faced additional property requirements. Active citizenship, elector status and women’s political exclusion must be examined separately."
+      },
+      "sources": [
+        "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+        "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges"
+      ],
+      "aliases": {
+        "ko": [
+          "적극시민"
+        ],
+        "en": [
+          "citoyen actif",
+          "active citizen"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "1791년 프랑스 헌법에서 일정한 자격을 충족해 1차 선거집회에 참여할 수 있던 시민이다. 모든 주민에게 동등한 선거권을 부여한 범주가 아니었다. 25세, 거주, 일정액의 직접세, 유급 하인이 아닐 것 등의 조건이 있었다. 이들이 뽑는 선거인에게는 더 높은 재산 조건이 적용됐다. 능동시민 자격과 선거인 자격, 여성의 정치적 배제를 구별해 살펴야 한다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "definition",
+          "claim": "1791년 프랑스 헌법에서 일정한 자격을 충족해 1차 선거집회에 참여할 수 있던 시민이다. 모든 주민에게 동등한 선거권을 부여한 범주가 아니었다. 25세, 거주, 일정액의 직접세, 유급 하인이 아닐 것 등의 조건이 있었다. 이들이 뽑는 선거인에게는 더 높은 재산 조건이 적용됐다. 능동시민 자격과 선거인 자격, 여성의 정치적 배제를 구별해 살펴야 한다.",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "1791년 프랑스 헌법에서 일정한 자격을 충족해 1차 선거집회에 참여할 수 있던 시민이다. 모든 주민에게 동등한 선거권을 부여한 범주가 아니었다. 25세, 거주, 일정액의 직접세, 유급 하인이 아닐 것 등의 조건이 있었다. 이들이 뽑는 선거인에게는 더 높은 재산 조건이 적용됐다. 능동시민 자격과 선거인 자격, 여성의 정치적 배제를 구별해 살펴야 한다.",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "body",
+          "claim": "1791년 프랑스 헌법에서 일정한 자격을 충족해 1차 선거집회에 참여할 수 있던 시민이다. 모든 주민에게 동등한 선거권을 부여한 범주가 아니었다. 25세, 거주, 일정액의 직접세, 유급 하인이 아닐 것 등의 조건이 있었다. 이들이 뽑는 선거인에게는 더 높은 재산 조건이 적용됐다. 능동시민 자격과 선거인 자격, 여성의 정치적 배제를 구별해 살펴야 한다.",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1791년 프랑스 헌법",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "period",
+          "claim": "1791년 프랑스 헌법",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1791년 프랑스 헌법",
+          "source": "https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791",
+          "locator": "1791 Constitution, Title III, arts 1–4; ch I art 5 and section II arts 2, 6–7"
+        },
+        {
+          "field": "startYear",
+          "claim": "1791년 프랑스 헌법",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1791
+    },
+    {
+      "id": "sans-culottes",
+      "term": {
+        "ko": "상퀼로트",
+        "en": "Sans-culottes"
+      },
+      "category": "factions",
+      "period": {
+        "ko": "프랑스 혁명기",
+        "en": "French Revolutionary period"
+      },
+      "definition": {
+        "ko": "프랑스 혁명기에 정치적으로 활동한 도시 민중을 가리키는 명칭이다. 장인·소상인·임금노동자 등 구성이 다양했다.",
+        "en": "A name for politically active urban popular groups during the French Revolution, including artisans, small traders and wage workers."
+      },
+      "body": {
+        "ko": "생필품 가격과 생활의 보장, 민중의 정치 참여를 요구했다. 자코뱅 지도부와 협력하기도 했지만 이해관계와 조직 형태가 같지는 않았다. 상퀼로트를 하나의 현대적 노동자 정당으로 읽으면 이러한 차이가 사라진다.",
+        "en": "They demanded affordable necessities, secure livelihoods and popular political participation. They could cooperate with Jacobin leaders without sharing identical interests or forms of organization. Treating them as a modern workers’ party obscures those differences."
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sans-culottes",
+        "https://revolution.chnm.org/d/415/"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "프랑스 혁명기에 정치적으로 활동한 도시 민중을 가리키는 명칭이다. 장인·소상인·임금노동자 등 구성이 다양했다. 생필품 가격과 생활의 보장, 민중의 정치 참여를 요구했다. 자코뱅 지도부와 협력하기도 했지만 이해관계와 조직 형태가 같지는 않았다. 상퀼로트를 하나의 현대적 노동자 정당으로 읽으면 이러한 차이가 사라진다.",
+          "source": "https://en.wikipedia.org/wiki/Sans-culottes",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "definition",
+          "claim": "프랑스 혁명기에 정치적으로 활동한 도시 민중을 가리키는 명칭이다. 장인·소상인·임금노동자 등 구성이 다양했다. 생필품 가격과 생활의 보장, 민중의 정치 참여를 요구했다. 자코뱅 지도부와 협력하기도 했지만 이해관계와 조직 형태가 같지는 않았다. 상퀼로트를 하나의 현대적 노동자 정당으로 읽으면 이러한 차이가 사라진다.",
+          "source": "https://revolution.chnm.org/d/415/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "프랑스 혁명기에 정치적으로 활동한 도시 민중을 가리키는 명칭이다. 장인·소상인·임금노동자 등 구성이 다양했다. 생필품 가격과 생활의 보장, 민중의 정치 참여를 요구했다. 자코뱅 지도부와 협력하기도 했지만 이해관계와 조직 형태가 같지는 않았다. 상퀼로트를 하나의 현대적 노동자 정당으로 읽으면 이러한 차이가 사라진다.",
+          "source": "https://en.wikipedia.org/wiki/Sans-culottes",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "프랑스 혁명기에 정치적으로 활동한 도시 민중을 가리키는 명칭이다. 장인·소상인·임금노동자 등 구성이 다양했다. 생필품 가격과 생활의 보장, 민중의 정치 참여를 요구했다. 자코뱅 지도부와 협력하기도 했지만 이해관계와 조직 형태가 같지는 않았다. 상퀼로트를 하나의 현대적 노동자 정당으로 읽으면 이러한 차이가 사라진다.",
+          "source": "https://revolution.chnm.org/d/415/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "프랑스 혁명기",
+          "source": "https://en.wikipedia.org/wiki/Sans-culottes",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "프랑스 혁명기",
+          "source": "https://revolution.chnm.org/d/415/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ]
+    },
+    {
+      "id": "jacobins",
+      "term": {
+        "ko": "자코뱅파",
+        "en": "Jacobins"
+      },
+      "category": "factions",
+      "period": {
+        "ko": "1789~1794년의 클럽과 그 후대 수용",
+        "en": "The club of 1789–1794 and its later reception"
+      },
+      "definition": {
+        "ko": "프랑스 혁명기의 자코뱅 클럽을 중심으로 형성된 정치 세력이다. 클럽의 구성과 노선은 혁명의 전개에 따라 달라졌다.",
+        "en": "Political forces associated with the Jacobin Club during the French Revolution. Its membership and positions changed as the revolution developed."
+      },
+      "body": {
+        "ko": "클럽에는 한때 지롱드파와 산악파 인물이 함께 속했다. 이후의 분열과 1793~1794년 산악파의 우세를 구별해 읽어야 한다. 클럽, 국민공회 안의 산악파, 상퀼로트 운동은 겹치는 지점이 있지만 같은 조직은 아니다.",
+        "en": "The club once included figures associated with both the Girondins and the Mountain. Its later splits and Montagnard ascendancy in 1793–1794 must be distinguished. The club, the parliamentary Mountain and the sans-culotte movement overlapped without constituting a single organization."
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jacobins"
+      ],
+      "aliases": {
+        "ko": [
+          "자코뱅 클럽"
+        ],
+        "en": [
+          "Jacobin Club"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "프랑스 혁명기의 자코뱅 클럽을 중심으로 형성된 정치 세력이다. 클럽의 구성과 노선은 혁명의 전개에 따라 달라졌다. 클럽에는 한때 지롱드파와 산악파 인물이 함께 속했다. 이후의 분열과 1793~1794년 산악파의 우세를 구별해 읽어야 한다. 클럽, 국민공회 안의 산악파, 상퀼로트 운동은 겹치는 지점이 있지만 같은 조직은 아니다.",
+          "source": "https://en.wikipedia.org/wiki/Jacobins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "프랑스 혁명기의 자코뱅 클럽을 중심으로 형성된 정치 세력이다. 클럽의 구성과 노선은 혁명의 전개에 따라 달라졌다. 클럽에는 한때 지롱드파와 산악파 인물이 함께 속했다. 이후의 분열과 1793~1794년 산악파의 우세를 구별해 읽어야 한다. 클럽, 국민공회 안의 산악파, 상퀼로트 운동은 겹치는 지점이 있지만 같은 조직은 아니다.",
+          "source": "https://en.wikipedia.org/wiki/Jacobins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1789~1794년의 클럽과 그 후대 수용",
+          "source": "https://en.wikipedia.org/wiki/Jacobins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1789~1794년의 클럽과 그 후대 수용",
+          "source": "https://en.wikipedia.org/wiki/Jacobins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "endYear",
+          "claim": "1789~1794년의 클럽과 그 후대 수용",
+          "source": "https://en.wikipedia.org/wiki/Jacobins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1789,
+      "endYear": 1794
+    },
+    {
+      "id": "girondins",
+      "term": {
+        "ko": "지롱드파",
+        "en": "Girondins"
+      },
+      "category": "factions",
+      "period": {
+        "ko": "프랑스 혁명기",
+        "en": "French Revolutionary period"
+      },
+      "definition": {
+        "ko": "프랑스 혁명기에 브리소와 베르니오 등과 연결된 정치적 집단을 가리킨다. 엄격한 당원 조직을 갖춘 현대 정당과는 달랐다.",
+        "en": "A grouping associated with Brissot, Vergniaud and others during the French Revolution, rather than a modern party with a rigid membership organization."
+      },
+      "body": {
+        "ko": "전쟁과 공화정의 수립에 관여했으며, 산악파와 파리 민중 정치의 영향력을 놓고 대립했다. 처음부터 일관된 입헌군주파였다고 보거나 현대 자유주의 정당과 그대로 대응시키면 안 된다.",
+        "en": "They participated in debates over war and the establishment of the republic, and clashed with the Mountain over the influence of Parisian popular politics. They should not be treated as consistently constitutional monarchists or simply equated with a modern liberal party."
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Girondins"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "프랑스 혁명기에 브리소와 베르니오 등과 연결된 정치적 집단을 가리킨다. 엄격한 당원 조직을 갖춘 현대 정당과는 달랐다. 전쟁과 공화정의 수립에 관여했으며, 산악파와 파리 민중 정치의 영향력을 놓고 대립했다. 처음부터 일관된 입헌군주파였다고 보거나 현대 자유주의 정당과 그대로 대응시키면 안 된다.",
+          "source": "https://en.wikipedia.org/wiki/Girondins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "프랑스 혁명기에 브리소와 베르니오 등과 연결된 정치적 집단을 가리킨다. 엄격한 당원 조직을 갖춘 현대 정당과는 달랐다. 전쟁과 공화정의 수립에 관여했으며, 산악파와 파리 민중 정치의 영향력을 놓고 대립했다. 처음부터 일관된 입헌군주파였다고 보거나 현대 자유주의 정당과 그대로 대응시키면 안 된다.",
+          "source": "https://en.wikipedia.org/wiki/Girondins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "프랑스 혁명기",
+          "source": "https://en.wikipedia.org/wiki/Girondins",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ]
+    },
+    {
+      "id": "committee-of-public-safety",
+      "term": {
+        "ko": "공안위원회",
+        "en": "Committee of Public Safety"
+      },
+      "category": "party-state",
+      "period": {
+        "ko": "1793~1795년",
+        "en": "1793–1795"
+      },
+      "definition": {
+        "ko": "국민공회가 설치한 위원회로, 전쟁과 국내 위기 속에서 혁명 정부의 주요 집행·조정 업무를 맡았다.",
+        "en": "A committee established by the National Convention that assumed major executive and coordinating functions during war and internal crisis."
+      },
+      "body": {
+        "ko": "로베스피에르가 참여했지만 개인의 사적 기관은 아니었다. 국민공회와의 관계, 공안위원회의 집행 업무, 보안위원회의 치안 업무, 혁명재판소의 재판 기능을 구별해야 책임과 권한이 드러난다.",
+        "en": "Robespierre served on it, but it was not his private institution. Its relationship to the Convention, its executive work, the policing functions of the Committee of General Security and the judicial functions of the Revolutionary Tribunal must be distinguished."
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Committee_of_Public_Safety"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Comité de salut public"
+        ]
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "국민공회가 설치한 위원회로, 전쟁과 국내 위기 속에서 혁명 정부의 주요 집행·조정 업무를 맡았다. 로베스피에르가 참여했지만 개인의 사적 기관은 아니었다. 국민공회와의 관계, 공안위원회의 집행 업무, 보안위원회의 치안 업무, 혁명재판소의 재판 기능을 구별해야 책임과 권한이 드러난다.",
+          "source": "https://en.wikipedia.org/wiki/Committee_of_Public_Safety",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "국민공회가 설치한 위원회로, 전쟁과 국내 위기 속에서 혁명 정부의 주요 집행·조정 업무를 맡았다. 로베스피에르가 참여했지만 개인의 사적 기관은 아니었다. 국민공회와의 관계, 공안위원회의 집행 업무, 보안위원회의 치안 업무, 혁명재판소의 재판 기능을 구별해야 책임과 권한이 드러난다.",
+          "source": "https://en.wikipedia.org/wiki/Committee_of_Public_Safety",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1793~1795년",
+          "source": "https://en.wikipedia.org/wiki/Committee_of_Public_Safety",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1793~1795년",
+          "source": "https://en.wikipedia.org/wiki/Committee_of_Public_Safety",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "endYear",
+          "claim": "1793~1795년",
+          "source": "https://en.wikipedia.org/wiki/Committee_of_Public_Safety",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1793,
+      "endYear": 1795
+    },
+    {
+      "id": "national-convention",
+      "term": {
+        "ko": "국민공회",
+        "en": "National Convention"
+      },
+      "category": "party-state",
+      "period": {
+        "ko": "1792~1795년",
+        "en": "1792–1795"
+      },
+      "definition": {
+        "ko": "프랑스 혁명기에 입법의회를 이어 구성된 의회로, 왕정을 폐지하고 공화정의 제도와 전시 통치를 다뤘다.",
+        "en": "The assembly that succeeded the Legislative Assembly during the French Revolution, abolished monarchy and shaped republican institutions and wartime government."
+      },
+      "body": {
+        "ko": "제헌국민의회·입법의회·국민공회는 서로 다른 시기의 의회다. 국민공회 내부에서도 지롱드파·산악파 등의 대립과 권력 관계의 변화가 있었다. 따라서 모든 결의를 하나의 변함없는 정파의 정책으로 읽을 수는 없다.",
+        "en": "The National Constituent Assembly, Legislative Assembly and National Convention belonged to different phases. The Convention itself experienced factional conflict and changing power relations. Its decisions cannot all be read as the programme of one unchanging faction."
+      },
+      "sources": [
+        "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "프랑스 혁명기에 입법의회를 이어 구성된 의회로, 왕정을 폐지하고 공화정의 제도와 전시 통치를 다뤘다. 제헌국민의회·입법의회·국민공회는 서로 다른 시기의 의회다. 국민공회 내부에서도 지롱드파·산악파 등의 대립과 권력 관계의 변화가 있었다. 따라서 모든 결의를 하나의 변함없는 정파의 정책으로 읽을 수는 없다.",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "프랑스 혁명기에 입법의회를 이어 구성된 의회로, 왕정을 폐지하고 공화정의 제도와 전시 통치를 다뤘다. 제헌국민의회·입법의회·국민공회는 서로 다른 시기의 의회다. 국민공회 내부에서도 지롱드파·산악파 등의 대립과 권력 관계의 변화가 있었다. 따라서 모든 결의를 하나의 변함없는 정파의 정책으로 읽을 수는 없다.",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1792~1795년",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1792~1795년",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "endYear",
+          "claim": "1792~1795년",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1792,
+      "endYear": 1795
+    },
+    {
+      "id": "general-maximum-1793",
+      "term": {
+        "ko": "일반최고가격법",
+        "en": "Law of the General Maximum (1793)"
+      },
+      "category": "economy",
+      "period": {
+        "ko": "1793년 9월 29일 법령",
+        "en": "Decree of 29 September 1793"
+      },
+      "definition": {
+        "ko": "프랑스 국민공회가 생필품 등의 가격과 임금에 상한을 정한 법령이다. 가격 규제만이 아니라 임금 규제와 처벌도 포함했다.",
+        "en": "A decree of the French National Convention imposing ceilings on prices of necessities and on wages, with enforcement provisions and penalties."
+      },
+      "body": {
+        "ko": "전쟁·물가 상승·공급 위기 속에서 제정됐다. 노동자의 생활을 지키려는 가격 요구와 임금 상한 사이에는 긴장이 있었다. 법에 정한 기준과 각 지역에서 실제 집행된 결과는 별도로 확인해야 한다.",
+        "en": "It was enacted amid war, rising prices and supply difficulties. Demands for affordable goods could conflict with limits on workers’ wages. Statutory rules and actual local implementation must be examined separately."
+      },
+      "sources": [
+        "https://revolution.chnm.org/d/415/"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "프랑스 국민공회가 생필품 등의 가격과 임금에 상한을 정한 법령이다. 가격 규제만이 아니라 임금 규제와 처벌도 포함했다. 전쟁·물가 상승·공급 위기 속에서 제정됐다. 노동자의 생활을 지키려는 가격 요구와 임금 상한 사이에는 긴장이 있었다. 법에 정한 기준과 각 지역에서 실제 집행된 결과는 별도로 확인해야 한다.",
+          "source": "https://revolution.chnm.org/d/415/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "프랑스 국민공회가 생필품 등의 가격과 임금에 상한을 정한 법령이다. 가격 규제만이 아니라 임금 규제와 처벌도 포함했다. 전쟁·물가 상승·공급 위기 속에서 제정됐다. 노동자의 생활을 지키려는 가격 요구와 임금 상한 사이에는 긴장이 있었다. 법에 정한 기준과 각 지역에서 실제 집행된 결과는 별도로 확인해야 한다.",
+          "source": "https://revolution.chnm.org/d/415/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1793년 9월 29일 법령",
+          "source": "https://revolution.chnm.org/d/415/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1793년 9월 29일 법령",
+          "source": "https://revolution.chnm.org/d/415/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1793
+    },
+    {
+      "id": "law-of-suspects-1793",
+      "term": {
+        "ko": "혐의자법",
+        "en": "Law of Suspects (1793)"
+      },
+      "category": "repression",
+      "period": {
+        "ko": "1793년 9월 17일 법령",
+        "en": "Decree of 17 September 1793"
+      },
+      "definition": {
+        "ko": "혁명 정부가 혐의자로 간주하는 사람들의 범주와 구금 절차를 규정한 프랑스 국민공회의 법령이다.",
+        "en": "A decree of the French National Convention defining categories of persons deemed suspect and procedures for their detention."
+      },
+      "body": {
+        "ko": "행동·인적 관계·발언·저술 등을 혐의 판단의 근거로 삼았다. 제정 전에 이미 존재하던 혁명재판소를 창설한 법은 아니다. 1794년의 프레리알 22일법이 바꾼 재판 절차와 구분해 읽어야 한다.",
+        "en": "Conduct, associations, speech and writings could ground suspicion. The decree did not create the Revolutionary Tribunal, which already existed. It must be distinguished from the procedural changes introduced by the Law of 22 Prairial in 1794."
+      },
+      "sources": [
+        "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+        "https://revolution.chnm.org/d/417/"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "혁명 정부가 혐의자로 간주하는 사람들의 범주와 구금 절차를 규정한 프랑스 국민공회의 법령이다. 행동·인적 관계·발언·저술 등을 혐의 판단의 근거로 삼았다. 제정 전에 이미 존재하던 혁명재판소를 창설한 법은 아니다. 1794년의 프레리알 22일법이 바꾼 재판 절차와 구분해 읽어야 한다.",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "definition",
+          "claim": "혁명 정부가 혐의자로 간주하는 사람들의 범주와 구금 절차를 규정한 프랑스 국민공회의 법령이다. 행동·인적 관계·발언·저술 등을 혐의 판단의 근거로 삼았다. 제정 전에 이미 존재하던 혁명재판소를 창설한 법은 아니다. 1794년의 프레리알 22일법이 바꾼 재판 절차와 구분해 읽어야 한다.",
+          "source": "https://revolution.chnm.org/d/417/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "혁명 정부가 혐의자로 간주하는 사람들의 범주와 구금 절차를 규정한 프랑스 국민공회의 법령이다. 행동·인적 관계·발언·저술 등을 혐의 판단의 근거로 삼았다. 제정 전에 이미 존재하던 혁명재판소를 창설한 법은 아니다. 1794년의 프레리알 22일법이 바꾼 재판 절차와 구분해 읽어야 한다.",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "혁명 정부가 혐의자로 간주하는 사람들의 범주와 구금 절차를 규정한 프랑스 국민공회의 법령이다. 행동·인적 관계·발언·저술 등을 혐의 판단의 근거로 삼았다. 제정 전에 이미 존재하던 혁명재판소를 창설한 법은 아니다. 1794년의 프레리알 22일법이 바꾼 재판 절차와 구분해 읽어야 한다.",
+          "source": "https://revolution.chnm.org/d/417/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1793년 9월 17일 법령",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1793년 9월 17일 법령",
+          "source": "https://revolution.chnm.org/d/417/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1793년 9월 17일 법령",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1793년 9월 17일 법령",
+          "source": "https://revolution.chnm.org/d/417/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1793
+    },
+    {
+      "id": "law-of-22-prairial",
+      "term": {
+        "ko": "프레리알 22일법",
+        "en": "Law of 22 Prairial"
+      },
+      "category": "repression",
+      "period": {
+        "ko": "1794년 6월 10일",
+        "en": "10 June 1794"
+      },
+      "definition": {
+        "ko": "공화력 2년 프레리알 22일에 제정되어 혁명재판소의 절차와 처벌을 바꾼 법령이다.",
+        "en": "A law enacted on 22 Prairial Year II that altered the Revolutionary Tribunal’s procedures and penalties."
+      },
+      "body": {
+        "ko": "증인 심문과 변호의 기회를 제한하고 재판을 신속하게 진행하도록 했다. 혐의자 범주와 구금을 정한 1793년 혐의자법과는 별개다. 전시 위기라는 설명과 피고인의 방어권 축소라는 법적 효과를 함께 살펴야 한다.",
+        "en": "It restricted opportunities for witness examination and defence and accelerated proceedings. It was distinct from the 1793 Law of Suspects governing categories of suspicion and detention. Wartime explanations must be considered alongside the reduction of defendants’ procedural protections."
+      },
+      "sources": [
+        "https://revolution.chnm.org/d/439/"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "공화력 2년 프레리알 22일에 제정되어 혁명재판소의 절차와 처벌을 바꾼 법령이다. 증인 심문과 변호의 기회를 제한하고 재판을 신속하게 진행하도록 했다. 혐의자 범주와 구금을 정한 1793년 혐의자법과는 별개다. 전시 위기라는 설명과 피고인의 방어권 축소라는 법적 효과를 함께 살펴야 한다.",
+          "source": "https://revolution.chnm.org/d/439/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "공화력 2년 프레리알 22일에 제정되어 혁명재판소의 절차와 처벌을 바꾼 법령이다. 증인 심문과 변호의 기회를 제한하고 재판을 신속하게 진행하도록 했다. 혐의자 범주와 구금을 정한 1793년 혐의자법과는 별개다. 전시 위기라는 설명과 피고인의 방어권 축소라는 법적 효과를 함께 살펴야 한다.",
+          "source": "https://revolution.chnm.org/d/439/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1794년 6월 10일",
+          "source": "https://revolution.chnm.org/d/439/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1794년 6월 10일",
+          "source": "https://revolution.chnm.org/d/439/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1794
+    },
+    {
+      "id": "conspiracy-of-equals",
+      "term": {
+        "ko": "평등파의 음모",
+        "en": "Conspiracy of the Equals"
+      },
+      "category": "factions",
+      "period": {
+        "ko": "1796년 운동과 1797년 재판",
+        "en": "The movement of 1796 and trial of 1797"
+      },
+      "definition": {
+        "ko": "바뵈프 등과 연결된 총재정부 반대 운동으로, 법적 평등을 넘어 생활과 재산 관계의 실질적 평등을 요구했다.",
+        "en": "A movement associated with Babeuf against the Directory that demanded substantive equality in livelihoods and property relations beyond legal equality."
+      },
+      "body": {
+        "ko": "마레샬이 쓴 「평등파 선언」은 운동을 이해하는 사료지만 지도부 전체가 모든 문구에 동의한 것은 아니다. 운동의 구상, 실패와 재판, 부오나로티 등을 통한 후대 수용을 구별하면 마르크스주의와의 차이도 보인다.",
+        "en": "Maréchal’s Manifesto of the Equals is a source for understanding the movement, but its wording did not command unanimous leadership support. Distinguishing the project, its defeat and trial, and later reception through figures such as Buonarroti clarifies its differences from Marxism."
+      },
+      "sources": [
+        "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+        "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "바뵈프 등과 연결된 총재정부 반대 운동으로, 법적 평등을 넘어 생활과 재산 관계의 실질적 평등을 요구했다. 마레샬이 쓴 「평등파 선언」은 운동을 이해하는 사료지만 지도부 전체가 모든 문구에 동의한 것은 아니다. 운동의 구상, 실패와 재판, 부오나로티 등을 통한 후대 수용을 구별하면 마르크스주의와의 차이도 보인다.",
+          "source": "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "definition",
+          "claim": "바뵈프 등과 연결된 총재정부 반대 운동으로, 법적 평등을 넘어 생활과 재산 관계의 실질적 평등을 요구했다. 마레샬이 쓴 「평등파 선언」은 운동을 이해하는 사료지만 지도부 전체가 모든 문구에 동의한 것은 아니다. 운동의 구상, 실패와 재판, 부오나로티 등을 통한 후대 수용을 구별하면 마르크스주의와의 차이도 보인다.",
+          "source": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "바뵈프 등과 연결된 총재정부 반대 운동으로, 법적 평등을 넘어 생활과 재산 관계의 실질적 평등을 요구했다. 마레샬이 쓴 「평등파 선언」은 운동을 이해하는 사료지만 지도부 전체가 모든 문구에 동의한 것은 아니다. 운동의 구상, 실패와 재판, 부오나로티 등을 통한 후대 수용을 구별하면 마르크스주의와의 차이도 보인다.",
+          "source": "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "바뵈프 등과 연결된 총재정부 반대 운동으로, 법적 평등을 넘어 생활과 재산 관계의 실질적 평등을 요구했다. 마레샬이 쓴 「평등파 선언」은 운동을 이해하는 사료지만 지도부 전체가 모든 문구에 동의한 것은 아니다. 운동의 구상, 실패와 재판, 부오나로티 등을 통한 후대 수용을 구별하면 마르크스주의와의 차이도 보인다.",
+          "source": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1796년 운동과 1797년 재판",
+          "source": "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "1796년 운동과 1797년 재판",
+          "source": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1796년 운동과 1797년 재판",
+          "source": "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "startYear",
+          "claim": "1796년 운동과 1797년 재판",
+          "source": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "endYear",
+          "claim": "1796년 운동과 1797년 재판",
+          "source": "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "endYear",
+          "claim": "1796년 운동과 1797년 재판",
+          "source": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ],
+      "startYear": 1796,
+      "endYear": 1797
+    },
+    {
+      "id": "liberalism",
+      "term": {
+        "ko": "자유주의",
+        "en": "Liberalism"
+      },
+      "category": "theory",
+      "period": {
+        "ko": "근대 이후의 여러 전통",
+        "en": "A family of traditions in the modern era"
+      },
+      "definition": {
+        "ko": "개인의 자유를 중시하며 권력과 자유 제한의 정당화를 요구하는 사상 전통이다. 자유의 의미와 국가·시장·재산에 관한 입장은 내부에서도 갈린다.",
+        "en": "A tradition that gives priority to individual liberty and demands justification for authority and restrictions on freedom. Its accounts of freedom, the state, markets and property differ internally."
+      },
+      "body": {
+        "ko": "프랑스 혁명기의 권리 선언은 자유·법 앞의 평등·재산권을 함께 내세웠다. 그러나 그때의 참여 자격과 배제를 현대 자유주의의 모든 계열과 동일시할 수는 없다. 자유주의와 신자유주의도 같은 범위의 말이 아니다.",
+        "en": "French Revolutionary rights declarations combined liberty, legal equality and property rights. Their exclusions and rules of political participation should not be equated with every later liberal tradition. Liberalism and neoliberalism are also not interchangeable terms."
+      },
+      "sources": [
+        "https://plato.stanford.edu/entries/liberalism/",
+        "https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "개인의 자유를 중시하며 권력과 자유 제한의 정당화를 요구하는 사상 전통이다. 자유의 의미와 국가·시장·재산에 관한 입장은 내부에서도 갈린다. 프랑스 혁명기의 권리 선언은 자유·법 앞의 평등·재산권을 함께 내세웠다. 그러나 그때의 참여 자격과 배제를 현대 자유주의의 모든 계열과 동일시할 수는 없다. 자유주의와 신자유주의도 같은 범위의 말이 아니다.",
+          "source": "https://plato.stanford.edu/entries/liberalism/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "definition",
+          "claim": "개인의 자유를 중시하며 권력과 자유 제한의 정당화를 요구하는 사상 전통이다. 자유의 의미와 국가·시장·재산에 관한 입장은 내부에서도 갈린다. 프랑스 혁명기의 권리 선언은 자유·법 앞의 평등·재산권을 함께 내세웠다. 그러나 그때의 참여 자격과 배제를 현대 자유주의의 모든 계열과 동일시할 수는 없다. 자유주의와 신자유주의도 같은 범위의 말이 아니다.",
+          "source": "https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "개인의 자유를 중시하며 권력과 자유 제한의 정당화를 요구하는 사상 전통이다. 자유의 의미와 국가·시장·재산에 관한 입장은 내부에서도 갈린다. 프랑스 혁명기의 권리 선언은 자유·법 앞의 평등·재산권을 함께 내세웠다. 그러나 그때의 참여 자격과 배제를 현대 자유주의의 모든 계열과 동일시할 수는 없다. 자유주의와 신자유주의도 같은 범위의 말이 아니다.",
+          "source": "https://plato.stanford.edu/entries/liberalism/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "개인의 자유를 중시하며 권력과 자유 제한의 정당화를 요구하는 사상 전통이다. 자유의 의미와 국가·시장·재산에 관한 입장은 내부에서도 갈린다. 프랑스 혁명기의 권리 선언은 자유·법 앞의 평등·재산권을 함께 내세웠다. 그러나 그때의 참여 자격과 배제를 현대 자유주의의 모든 계열과 동일시할 수는 없다. 자유주의와 신자유주의도 같은 범위의 말이 아니다.",
+          "source": "https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "근대 이후의 여러 전통",
+          "source": "https://plato.stanford.edu/entries/liberalism/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "근대 이후의 여러 전통",
+          "source": "https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ]
+    },
+    {
+      "id": "anarchism",
+      "term": {
+        "ko": "아나키즘",
+        "en": "Anarchism"
+      },
+      "category": "theory",
+      "period": {
+        "ko": "근대 이후의 여러 전통",
+        "en": "A family of traditions in the modern era"
+      },
+      "definition": {
+        "ko": "국가와 위계적 지배의 정당성을 비판하고 자유로운 결사와 협력을 모색하는 사상 전통이다. 단순히 무질서를 선호한다는 뜻은 아니다.",
+        "en": "A tradition critical of the legitimacy of the state and hierarchical domination that explores free association and cooperation. It does not simply mean a preference for disorder."
+      },
+      "body": {
+        "ko": "바쿠닌은 노동자 국가도 지배하는 소수와 지배받는 다수의 관계를 재생산할 수 있다고 비판했다. 마르크스와의 대립은 해방의 목표뿐 아니라 국가·계급·이행 수단의 문제를 둘러쌌다. 아나키즘 내부의 여러 계열도 구별해야 한다.",
+        "en": "Bakunin argued that a workers’ state could reproduce domination by a minority over a majority. His disagreement with Marx concerned the state, class and transitional means as well as emancipation. The different currents within anarchism must also be distinguished."
+      },
+      "sources": [
+        "https://plato.stanford.edu/entries/anarchism/",
+        "https://www.marxists.org/reference/archive/bakunin/works/1873/statism-anarchy.htm"
+      ],
+      "aliases": {
+        "ko": [
+          "무정부주의"
+        ],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "국가와 위계적 지배의 정당성을 비판하고 자유로운 결사와 협력을 모색하는 사상 전통이다. 단순히 무질서를 선호한다는 뜻은 아니다. 바쿠닌은 노동자 국가도 지배하는 소수와 지배받는 다수의 관계를 재생산할 수 있다고 비판했다. 마르크스와의 대립은 해방의 목표뿐 아니라 국가·계급·이행 수단의 문제를 둘러쌌다. 아나키즘 내부의 여러 계열도 구별해야 한다.",
+          "source": "https://plato.stanford.edu/entries/anarchism/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "definition",
+          "claim": "국가와 위계적 지배의 정당성을 비판하고 자유로운 결사와 협력을 모색하는 사상 전통이다. 단순히 무질서를 선호한다는 뜻은 아니다. 바쿠닌은 노동자 국가도 지배하는 소수와 지배받는 다수의 관계를 재생산할 수 있다고 비판했다. 마르크스와의 대립은 해방의 목표뿐 아니라 국가·계급·이행 수단의 문제를 둘러쌌다. 아나키즘 내부의 여러 계열도 구별해야 한다.",
+          "source": "https://www.marxists.org/reference/archive/bakunin/works/1873/statism-anarchy.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "국가와 위계적 지배의 정당성을 비판하고 자유로운 결사와 협력을 모색하는 사상 전통이다. 단순히 무질서를 선호한다는 뜻은 아니다. 바쿠닌은 노동자 국가도 지배하는 소수와 지배받는 다수의 관계를 재생산할 수 있다고 비판했다. 마르크스와의 대립은 해방의 목표뿐 아니라 국가·계급·이행 수단의 문제를 둘러쌌다. 아나키즘 내부의 여러 계열도 구별해야 한다.",
+          "source": "https://plato.stanford.edu/entries/anarchism/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "국가와 위계적 지배의 정당성을 비판하고 자유로운 결사와 협력을 모색하는 사상 전통이다. 단순히 무질서를 선호한다는 뜻은 아니다. 바쿠닌은 노동자 국가도 지배하는 소수와 지배받는 다수의 관계를 재생산할 수 있다고 비판했다. 마르크스와의 대립은 해방의 목표뿐 아니라 국가·계급·이행 수단의 문제를 둘러쌌다. 아나키즘 내부의 여러 계열도 구별해야 한다.",
+          "source": "https://www.marxists.org/reference/archive/bakunin/works/1873/statism-anarchy.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "근대 이후의 여러 전통",
+          "source": "https://plato.stanford.edu/entries/anarchism/",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "근대 이후의 여러 전통",
+          "source": "https://www.marxists.org/reference/archive/bakunin/works/1873/statism-anarchy.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ]
+    },
+    {
+      "id": "social-democracy",
+      "term": {
+        "ko": "사회민주주의",
+        "en": "Social democracy"
+      },
+      "category": "theory",
+      "period": {
+        "ko": "근대 노동운동 이후",
+        "en": "From the modern labour movement onward"
+      },
+      "definition": {
+        "ko": "역사적으로 여러 사회주의 노동운동이 사용한 명칭이다. 오늘날의 의회·복지국가 중심 용례를 과거 전체에 그대로 적용할 수는 없다.",
+        "en": "A name historically used by diverse socialist labour movements. Its contemporary association with parliamentary politics and welfare states should not be projected onto the entire past."
+      },
+      "body": {
+        "ko": "베른슈타인과 룩셈부르크는 모두 사회민주주의 운동 안에서 개혁과 사회주의의 관계를 논쟁했다. 레닌의 당도 한때 사회민주주의라는 명칭을 사용했다. 개혁을 수행하느냐만으로 개량주의와 혁명적 입장이 구별되는 것은 아니다.",
+        "en": "Bernstein and Luxemburg debated the relationship between reform and socialism within social democracy. Lenin’s party also once used the name. Whether a movement undertakes reforms is insufficient by itself to distinguish reformist from revolutionary positions."
+      },
+      "sources": [
+        "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/vorwort.htm",
+        "https://www.marxists.org/archive/lenin/works/1917/apr/04.htm"
+      ],
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "역사적으로 여러 사회주의 노동운동이 사용한 명칭이다. 오늘날의 의회·복지국가 중심 용례를 과거 전체에 그대로 적용할 수는 없다. 베른슈타인과 룩셈부르크는 모두 사회민주주의 운동 안에서 개혁과 사회주의의 관계를 논쟁했다. 레닌의 당도 한때 사회민주주의라는 명칭을 사용했다. 개혁을 수행하느냐만으로 개량주의와 혁명적 입장이 구별되는 것은 아니다.",
+          "source": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/vorwort.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "definition",
+          "claim": "역사적으로 여러 사회주의 노동운동이 사용한 명칭이다. 오늘날의 의회·복지국가 중심 용례를 과거 전체에 그대로 적용할 수는 없다. 베른슈타인과 룩셈부르크는 모두 사회민주주의 운동 안에서 개혁과 사회주의의 관계를 논쟁했다. 레닌의 당도 한때 사회민주주의라는 명칭을 사용했다. 개혁을 수행하느냐만으로 개량주의와 혁명적 입장이 구별되는 것은 아니다.",
+          "source": "https://www.marxists.org/archive/lenin/works/1917/apr/04.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "역사적으로 여러 사회주의 노동운동이 사용한 명칭이다. 오늘날의 의회·복지국가 중심 용례를 과거 전체에 그대로 적용할 수는 없다. 베른슈타인과 룩셈부르크는 모두 사회민주주의 운동 안에서 개혁과 사회주의의 관계를 논쟁했다. 레닌의 당도 한때 사회민주주의라는 명칭을 사용했다. 개혁을 수행하느냐만으로 개량주의와 혁명적 입장이 구별되는 것은 아니다.",
+          "source": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/vorwort.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "body",
+          "claim": "역사적으로 여러 사회주의 노동운동이 사용한 명칭이다. 오늘날의 의회·복지국가 중심 용례를 과거 전체에 그대로 적용할 수는 없다. 베른슈타인과 룩셈부르크는 모두 사회민주주의 운동 안에서 개혁과 사회주의의 관계를 논쟁했다. 레닌의 당도 한때 사회민주주의라는 명칭을 사용했다. 개혁을 수행하느냐만으로 개량주의와 혁명적 입장이 구별되는 것은 아니다.",
+          "source": "https://www.marxists.org/archive/lenin/works/1917/apr/04.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "근대 노동운동 이후",
+          "source": "https://www.marxists.org/deutsch/archiv/luxemburg/1899/sozrefrev/vorwort.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        },
+        {
+          "field": "period",
+          "claim": "근대 노동운동 이후",
+          "source": "https://www.marxists.org/archive/lenin/works/1917/apr/04.htm",
+          "locator": "Document text and historical introduction; sections matching the named concept"
+        }
+      ]
+    }
+  ]
+}

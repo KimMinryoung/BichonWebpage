@@ -1,0 +1,82 @@
+[
+  {
+    "id": "constitutional-monarchy",
+    "suggestionId": "9684",
+    "status": "approved"
+  },
+  {
+    "id": "republic",
+    "suggestionId": "9685",
+    "status": "approved"
+  },
+  {
+    "id": "national-sovereignty",
+    "suggestionId": "9686",
+    "status": "approved"
+  },
+  {
+    "id": "active-citizen-1791",
+    "suggestionId": "9687",
+    "status": "approved"
+  },
+  {
+    "id": "sans-culottes",
+    "suggestionId": "9688",
+    "status": "approved"
+  },
+  {
+    "id": "jacobins",
+    "suggestionId": "9689",
+    "status": "approved"
+  },
+  {
+    "id": "girondins",
+    "suggestionId": "9690",
+    "status": "approved"
+  },
+  {
+    "id": "committee-of-public-safety",
+    "suggestionId": "9691",
+    "status": "approved"
+  },
+  {
+    "id": "national-convention",
+    "suggestionId": "9692",
+    "status": "approved"
+  },
+  {
+    "id": "general-maximum-1793",
+    "suggestionId": "9693",
+    "status": "approved"
+  },
+  {
+    "id": "law-of-suspects-1793",
+    "suggestionId": "9694",
+    "status": "approved"
+  },
+  {
+    "id": "law-of-22-prairial",
+    "suggestionId": "9695",
+    "status": "approved"
+  },
+  {
+    "id": "conspiracy-of-equals",
+    "suggestionId": "9696",
+    "status": "approved"
+  },
+  {
+    "id": "liberalism",
+    "suggestionId": "9697",
+    "status": "approved"
+  },
+  {
+    "id": "anarchism",
+    "suggestionId": "9698",
+    "status": "approved"
+  },
+  {
+    "id": "social-democracy",
+    "suggestionId": "9699",
+    "status": "approved"
+  }
+]

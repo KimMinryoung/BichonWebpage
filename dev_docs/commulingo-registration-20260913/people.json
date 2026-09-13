@@ -1,0 +1,430 @@
+{
+  "people": [
+    {
+      "id": "maximilien-robespierre",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "막시밀리앵",
+        "en": "Maximilien"
+      },
+      "familyName": {
+        "ko": "로베스피에르",
+        "en": "Robespierre"
+      },
+      "cyrillic": "Maximilien Robespierre",
+      "years": "1758–1794",
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "citizenship": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "생존권과 혁명 정부를 논한 자코뱅 정치가",
+        "en": "Jacobin politician who argued for subsistence rights and revolutionary government"
+      },
+      "bio": {
+        "ko": "프랑스 혁명기의 변호사이자 국민공회 의원으로, 공안위원회에서 활동했다. 1792년 생필품 연설에서는 생존에 필요한 물자의 확보를 강조하면서 재산과 상업의 정당한 영역도 인정했다. 1794년 정치도덕 보고에서는 덕과 공포를 혁명 정부의 원리로 제시했다. 이 주장은 공포정을 정당화한 당사자의 논리이며, 여러 위원회와 국민공회가 내린 결정을 모두 그의 개인 명령으로 볼 수는 없다. 테르미도르의 정치적 패배 뒤 처형됐다.",
+        "en": "A lawyer and National Convention deputy during the French Revolution, Robespierre served on the Committee of Public Safety. His 1792 speech on subsistence placed access to necessities first while recognizing legitimate property and trade. His February 1794 report defended virtue and terror as principles of revolutionary government. This was a participant’s justification of repression; decisions made by the Convention and its committees cannot all be treated as his personal orders. He was executed after his defeat at Thermidor."
+      },
+      "sources": [
+        "https://catalogue.bnf.fr/ark:/12148/cb11922216p",
+        "https://www.marxists.org/history/france/revolution/robespierre/1792/subsistence-goods.htm",
+        "https://www.marxists.org/history/france/revolution/robespierre/1794/political-morality.htm"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://catalogue.bnf.fr/ark:/12148/cb11922216p",
+          "locator": "Notice de personne: Pays, Naissance, Mort, Avocat/Homme politique/Révolutionnaire",
+          "claim": "프랑스 혁명 정치가 로베스피에르의 인적 사항과 생몰년 1758~1794."
+        },
+        {
+          "field": "bio",
+          "source": "https://catalogue.bnf.fr/ark:/12148/cb11922216p",
+          "locator": "Notice de personne: Pays, Naissance, Mort, Avocat/Homme politique/Révolutionnaire",
+          "claim": "프랑스 혁명 정치가 로베스피에르의 인적 사항과 생몰년 1758~1794."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.marxists.org/history/france/revolution/robespierre/1792/subsistence-goods.htm",
+          "locator": "Speech on subsistence, passages on property, necessities and commerce",
+          "claim": "1792년 생필품 연설에서 생존의 보장과 재산·상업의 한계를 논했다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.marxists.org/history/france/revolution/robespierre/1794/political-morality.htm",
+          "locator": "Report, 5 February 1794: virtue and terror",
+          "claim": "1794년 정치도덕 보고는 덕과 공포를 혁명 정부의 원리로 정당화한다."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://catalogue.bnf.fr/ark:/12148/cb11922216p",
+          "locator": "Notice de personne: Pays, Naissance, Mort, Avocat/Homme politique/Révolutionnaire",
+          "claim": "프랑스 혁명 정치가 로베스피에르의 인적 사항과 생몰년 1758~1794."
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "로베스피에르"
+        ],
+        "en": [
+          "Robespierre",
+          "Maximilien de Robespierre"
+        ]
+      }
+    },
+    {
+      "id": "gracchus-babeuf",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "그라쿠스",
+        "en": "Gracchus"
+      },
+      "familyName": {
+        "ko": "바뵈프",
+        "en": "Babeuf"
+      },
+      "cyrillic": "Gracchus Babeuf",
+      "years": "1760–1797",
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "citizenship": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "실질적 평등을 요구한 평등파 운동가",
+        "en": "Advocate of substantive equality in the Conspiracy of the Equals"
+      },
+      "bio": {
+        "ko": "본명은 프랑수아노엘 바뵈프다. 프랑스 혁명기의 언론인이자 평등파 운동가로, 법 앞의 평등을 넘어 재산과 생활 조건의 불평등을 문제 삼았다. 1796년 총재정부에 맞선 평등파의 운동에 참여했다가 체포되어 이듬해 처형됐다. 「평등파 선언」의 집필자는 실뱅 마레샬이며, 그 글을 바뵈프 자신의 저작이나 이미 시행된 정책으로 읽어서는 안 된다. 평등파의 구상과 후대 마르크스주의 사이에는 수용과 변화의 역사가 있다.",
+        "en": "Born François-Noël Babeuf, he was a journalist and activist during the French Revolution who challenged inequalities of property and living conditions beyond legal equality. He participated in the 1796 Conspiracy of the Equals against the Directory, was arrested and was executed in 1797. Sylvain Maréchal wrote the Manifesto of the Equals; it is neither a text authored by Babeuf nor a record of enacted policy. Later socialists received and transformed this legacy rather than simply inheriting an unchanged doctrine."
+      },
+      "sources": [
+        "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Fran%C3%A7ois_Noel_Babeuf",
+        "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+        "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Fran%C3%A7ois_Noel_Babeuf",
+          "locator": "Biographical entry: opening, 1796 conspiracy and 1797 trial",
+          "claim": "프랑수아노엘/그라쿠스 바뵈프(1760~1797)는 프랑스의 언론인·정치 운동가였다."
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Fran%C3%A7ois_Noel_Babeuf",
+          "locator": "Biographical entry: opening, 1796 conspiracy and 1797 trial",
+          "claim": "프랑수아노엘/그라쿠스 바뵈프(1760~1797)는 프랑스의 언론인·정치 운동가였다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.marxists.org/history/france/revolution/conspiracy-equals/index.htm",
+          "locator": "Conspiracy of Equals introduction",
+          "claim": "1796년 운동과 체포, 1797년 처형, 후대 사회주의에 대한 영향."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+          "locator": "Author attribution and manifesto text",
+          "claim": "평등파 선언은 마레샬의 글이며 실제 평등과 공동의 향유를 요구한다."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Fran%C3%A7ois_Noel_Babeuf",
+          "locator": "Biographical entry: opening, 1796 conspiracy and 1797 trial",
+          "claim": "프랑수아노엘/그라쿠스 바뵈프(1760~1797)는 프랑스의 언론인·정치 운동가였다."
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "바뵈프",
+          "프랑수아노엘 바뵈프"
+        ],
+        "en": [
+          "Babeuf",
+          "François-Noël Babeuf",
+          "Francois-Noel Babeuf"
+        ]
+      }
+    },
+    {
+      "id": "sylvain-marechal",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "실뱅",
+        "en": "Sylvain"
+      },
+      "familyName": {
+        "ko": "마레샬",
+        "en": "Maréchal"
+      },
+      "cyrillic": "Sylvain Maréchal",
+      "years": "1750–1803",
+      "role": {
+        "category": "writer-artist"
+      },
+      "citizenship": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "평등파 선언을 쓴 프랑스의 저술가",
+        "en": "French writer and author of the Manifesto of the Equals"
+      },
+      "bio": {
+        "ko": "프랑스의 저술가로, 법률가·사서로도 일했다. 1796년 「평등파 선언」에서 법문에 적힌 평등을 넘어 실제 생활에서의 평등과 재산의 공동 향유를 요구했다. 바뵈프의 운동과 관련된 글이지만 저자는 마레샬이다. 선언의 모든 표현이 운동 지도부의 합의나 실현된 정책을 뜻하지는 않는다. 이 글을 통해 혁명기의 평등 요구와 후대 사회주의 사이의 연결, 그 사이에 놓인 차이를 함께 살필 수 있다.",
+        "en": "A French writer who also worked as a lawyer and librarian, Maréchal wrote the 1796 Manifesto of the Equals. It demanded equality in everyday life and common enjoyment of property, beyond equality written into law. Although associated with Babeuf’s movement, the text is Maréchal’s work. Its formulations should not all be treated as the leadership’s agreed programme or as enacted policy. It helps trace connections, as well as differences, between revolutionary egalitarianism and later socialism."
+      },
+      "sources": [
+        "https://catalogue.bnf.fr/ark:/12148/cb11914490x",
+        "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://catalogue.bnf.fr/ark:/12148/cb11914490x",
+          "locator": "Notice de personne: country, birth, death and occupations",
+          "claim": "실뱅 마레샬(1750~1803)은 프랑스의 법률가·저술가·사서였다."
+        },
+        {
+          "field": "bio",
+          "source": "https://catalogue.bnf.fr/ark:/12148/cb11914490x",
+          "locator": "Notice de personne: country, birth, death and occupations",
+          "claim": "실뱅 마레샬(1750~1803)은 프랑스의 법률가·저술가·사서였다."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux",
+          "locator": "Title attribution and passages on égalité réelle and communauté des biens",
+          "claim": "실뱅 마레샬이 집필한 평등파 선언은 실제 평등과 재산의 공동 향유를 요구한다."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://catalogue.bnf.fr/ark:/12148/cb11914490x",
+          "locator": "Notice de personne: country, birth, death and occupations",
+          "claim": "실뱅 마레샬(1750~1803)은 프랑스의 법률가·저술가·사서였다."
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "마레샬"
+        ],
+        "en": [
+          "Sylvain Marechal",
+          "Pierre Sylvain Maréchal"
+        ]
+      }
+    },
+    {
+      "id": "olympe-de-gouges",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "올랭프",
+        "en": "Olympe"
+      },
+      "familyName": {
+        "ko": "드 구주",
+        "en": "de Gouges"
+      },
+      "cyrillic": "Olympe de Gouges",
+      "years": "1748–1793",
+      "role": {
+        "category": "writer-artist"
+      },
+      "citizenship": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "여성의 시민적·정치적 권리를 요구한 저술가",
+        "en": "Writer who demanded women’s civil and political rights"
+      },
+      "bio": {
+        "ko": "마리 구즈라는 이름으로 태어난 프랑스의 극작가이자 정치 저술가다. 노예제를 비판하고, 1791년 「여성과 여성 시민의 권리 선언」에서 여성의 법적 평등과 공적 발언·정치 참여를 요구했다. 이 선언은 의회가 제정한 법률이 아니라 기존 권리 선언의 배제를 비판하는 글이었다. 혁명기의 폭력과 산악파의 권력에 반대하는 글을 썼으며, 1793년 혁명재판소에서 사형을 선고받고 처형됐다.",
+        "en": "Born Marie Gouze, she was a French playwright and political writer. She criticized slavery and in her 1791 Declaration of the Rights of Woman and of the Female Citizen demanded legal equality, public speech and political participation for women. The declaration challenged exclusions in existing declarations; it was not enacted legislation. She opposed revolutionary violence and the power of the Montagnards, and was sentenced to death by the Revolutionary Tribunal and executed in 1793."
+      },
+      "sources": [
+        "https://www2.assemblee-nationale.fr/14/evenements/2015/anniversaire-d-olympe-de-gouges-7-mai-2015/elements-biographiques",
+        "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://www2.assemblee-nationale.fr/14/evenements/2015/anniversaire-d-olympe-de-gouges-7-mai-2015/elements-biographiques",
+          "locator": "Biographical chronology, 1748–1793",
+          "claim": "마리 구즈/올랭프 드 구주는 1748년 태어나 1793년 처형된 프랑스 저술가다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www2.assemblee-nationale.fr/14/evenements/2015/anniversaire-d-olympe-de-gouges-7-mai-2015/elements-biographiques",
+          "locator": "Biographical chronology, 1748–1793",
+          "claim": "마리 구즈/올랭프 드 구주는 1748년 태어나 1793년 처형된 프랑스 저술가다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges",
+          "locator": "Introduction and 1791 declaration, especially articles VI and X",
+          "claim": "노예제 비판, 여성의 권리 선언과 정치 참여 요구, 혁명 폭력에 대한 반대."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://www2.assemblee-nationale.fr/14/evenements/2015/anniversaire-d-olympe-de-gouges-7-mai-2015/elements-biographiques",
+          "locator": "Biographical chronology, 1748–1793",
+          "claim": "마리 구즈/올랭프 드 구주는 1748년 태어나 1793년 처형된 프랑스 저술가다."
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "올랭프 드 구즈",
+          "드 구주",
+          "마리 구즈"
+        ],
+        "en": [
+          "Marie Gouze"
+        ]
+      }
+    },
+    {
+      "id": "eric-hobsbawm",
+      "groupId": "scholar",
+      "givenName": {
+        "ko": "에릭",
+        "en": "Eric"
+      },
+      "familyName": {
+        "ko": "홉스봄",
+        "en": "Hobsbawm"
+      },
+      "cyrillic": "Eric Hobsbawm",
+      "years": "1917–2012",
+      "role": {
+        "category": "scholar"
+      },
+      "citizenship": {
+        "code": "uk"
+      },
+      "epithet": {
+        "ko": "혁명의 사회적 기반과 후대 기억을 연구한 역사가",
+        "en": "Historian of revolution’s social foundations and later memory"
+      },
+      "bio": {
+        "ko": "영국의 마르크스주의 역사가로 버크벡에서 오랫동안 가르쳤다. 『혁명의 시대』에서 프랑스 혁명과 산업혁명을 함께 다루었고, 『마르세유의 메아리』에서는 프랑스 혁명이 후대 정치와 역사 서술에서 어떻게 받아들여졌는지 살폈다. 이 강좌에서는 계급과 사회구조, 혁명의 계승과 변형을 읽는 해석 기준으로 참고한다. 그의 분석은 당대 사료 자체와 구별해야 하며 혁명사 해석의 유일한 정답을 뜻하지 않는다.",
+        "en": "A British Marxist historian who taught at Birkbeck for many years, Hobsbawm treated the French and Industrial Revolutions together in The Age of Revolution. Echoes of the Marseillaise examined the French Revolution’s reception in later politics and historical writing. The course uses his work to consider class, social structures and changing revolutionary legacies. His interpretations must be distinguished from contemporary primary sources and from other historians’ readings."
+      },
+      "sources": [
+        "https://www.bbk.ac.uk/about-us/obituaries/eric-hobsbawm-magnificent-historian-and-colleague",
+        "https://www.versobooks.com/en-gb/products/1293-echoes-of-the-marseillaise"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://www.bbk.ac.uk/about-us/obituaries/eric-hobsbawm-magnificent-historian-and-colleague",
+          "locator": "Institutional obituary: 1917–2012, biography and publications",
+          "claim": "에릭 홉스봄은 1917~2012년의 영국 역사가이며 버크벡에서 활동했다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.bbk.ac.uk/about-us/obituaries/eric-hobsbawm-magnificent-historian-and-colleague",
+          "locator": "Institutional obituary: 1917–2012, biography and publications",
+          "claim": "에릭 홉스봄은 1917~2012년의 영국 역사가이며 버크벡에서 활동했다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.versobooks.com/en-gb/products/1293-echoes-of-the-marseillaise",
+          "locator": "Publisher description, Echoes of the Marseillaise",
+          "claim": "프랑스 혁명의 후대 수용과 해석을 다룬 역사 연구서의 저자."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://www.bbk.ac.uk/about-us/obituaries/eric-hobsbawm-magnificent-historian-and-colleague",
+          "locator": "Institutional obituary: 1917–2012, biography and publications",
+          "claim": "에릭 홉스봄은 1917~2012년의 영국 역사가이며 버크벡에서 활동했다."
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "홉스봄"
+        ],
+        "en": [
+          "Eric J. Hobsbawm",
+          "Eric John Hobsbawm"
+        ]
+      }
+    },
+    {
+      "id": "robert-owen",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "로버트",
+        "en": "Robert"
+      },
+      "familyName": {
+        "ko": "오언",
+        "en": "Owen"
+      },
+      "cyrillic": "Robert Owen",
+      "years": "1771–1858",
+      "role": {
+        "category": "theorist"
+      },
+      "citizenship": {
+        "code": "uk"
+      },
+      "epithet": {
+        "ko": "교육과 협동을 통한 사회 개혁을 주장한 사상가",
+        "en": "Social reformer who emphasized education and cooperation"
+      },
+      "bio": {
+        "ko": "웨일스에서 태어난 영국의 제조업자이자 사회 개혁가다. 뉴래너크에서 노동과 생활·교육 환경을 개선하려 했으며, 『사회에 관한 새로운 견해』에서 인간의 성격이 환경과 교육에 의해 형성된다고 주장했다. 이후 협동과 공동체 실험에 참여했다. 마르크스와 엥겔스가 오언을 공상적 사회주의로 분류한 것은 후대의 논쟁적 평가다. 초기 오언의 개혁 구상과 노동자 자신의 해방을 강조한 국제노동자협회의 입장을 구별해 읽어야 한다.",
+        "en": "A Welsh-born British manufacturer and social reformer, Owen sought to improve working, living and educational conditions at New Lanark. In A New View of Society he argued that environment and education form human character. He later pursued cooperative and communal experiments. Marx and Engels’ classification of Owen as a utopian socialist is a later, polemical interpretation. His early reform proposals should be distinguished from the International Working Men’s Association’s emphasis on workers’ self-emancipation."
+      },
+      "sources": [
+        "https://www.robertowenmuseum.co.uk/wp-content/uploads/2019/11/Overview-of-the-life-of-Robert-Owen.pdf",
+        "https://www.marxists.org/reference/subject/economics/owen/society/index.htm",
+        "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch03.htm"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://www.robertowenmuseum.co.uk/wp-content/uploads/2019/11/Overview-of-the-life-of-Robert-Owen.pdf",
+          "locator": "Museum biography: birth, New Lanark, cooperative experiments, death",
+          "claim": "로버트 오언(1771~1858)은 웨일스 출신 영국 제조업자·사회 개혁가로 뉴래너크와 협동 운동에서 활동했다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.robertowenmuseum.co.uk/wp-content/uploads/2019/11/Overview-of-the-life-of-Robert-Owen.pdf",
+          "locator": "Museum biography: birth, New Lanark, cooperative experiments, death",
+          "claim": "로버트 오언(1771~1858)은 웨일스 출신 영국 제조업자·사회 개혁가로 뉴래너크와 협동 운동에서 활동했다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.marxists.org/reference/subject/economics/owen/society/index.htm",
+          "locator": "A New View of Society, four essays and introductory addresses, 1816 edition",
+          "claim": "인간 성격의 환경적 형성과 교육·개혁을 주장한다."
+        },
+        {
+          "field": "bio",
+          "source": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch03.htm",
+          "locator": "Section 3, Critical-Utopian Socialism and Communism",
+          "claim": "마르크스·엥겔스가 오언의 사상을 공상적 사회주의로 분류했다."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://www.robertowenmuseum.co.uk/wp-content/uploads/2019/11/Overview-of-the-life-of-Robert-Owen.pdf",
+          "locator": "Museum biography: birth, New Lanark, cooperative experiments, death",
+          "claim": "로버트 오언(1771~1858)은 웨일스 출신 영국 제조업자·사회 개혁가로 뉴래너크와 협동 운동에서 활동했다."
+        }
+      ],
+      "aliases": {
+        "ko": [
+          "오언",
+          "로버트 오웬"
+        ],
+        "en": [
+          "Robert Owen"
+        ]
+      }
+    }
+  ]
+}

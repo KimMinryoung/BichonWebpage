@@ -1,0 +1,187 @@
+5 septembre 1791 - Déclaration des droits de la femme et de la citoyenne - Olympe de Gouges - Assemblée nationale (https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges)
+citeturn32view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges","lineno":0}); Total lines: 253
+L0:   * cite0†Aller au contenu L1:   * cite1†Aller en bas de la page L2: 
+L3: Assemblée nationale
+L4: 
+L5:   *   * cite2†Basculer vers le site en anglais L6: 
+L7: cite3†Basculer vers le site en allemand L8: 
+L9:   *   *   *   *   * cite4†Accèder à la page d'accueil L10: 
+L11:   * Accueil cite4†Accèder à la page d'accueil L12:   * Vos députés
+L13:   * Travaux parlementaires
+L14:   * cite5†Image: Recherche L15:   * Connaître l'Assemblée
+L16:   * Découvrir les lieux
+L17:   * Mon compte
+L18: 
+L19: cite4†Accèder à la page d'accueil L20: 
+L21: Vos députés
+L22: 
+L23: cite6†Image L24: cite7†Présidence†presidence.assemblee-nationale.fr cite8†577 députés cite9†Groupes politiques cite10†Élections législatives†www.elections-legislatives.fr L25: 
+L26: Travaux parlementaires
+L27: 
+L28: cite11†Image L29: 
+L30: cite12†Séance publique cite13†Commissions et autres organes cite14†Europe et International cite15†Contrôle et évaluation cite16†Congrès cite17†Pétitions L31: 
+L32: cite18†Documents parlementaires L33:   * cite19†Projets de loi†www2.assemblee-nationale.fr L34:   * cite20†Propositions de loi†www2.assemblee-nationale.fr L35:   * cite21†Amendements L36:   * cite22†Textes adoptés†www2.assemblee-nationale.fr L37: 
+L38:   * cite23†Rapports d'information†www2.assemblee-nationale.fr L39:   * cite24†Rapports d'enquête L40:   * cite25†Rapports législatifs†www2.assemblee-nationale.fr L41:   * cite26†Rapports sur l'application des lois†www2.assemblee-nationale.fr L42:   * cite27†Baromètre de l’application des lois L43:   * cite28†Dossiers législatifs L44:   * cite29†Budget et sécurité sociale†www2.assemblee-nationale.fr L45:   * cite30†Questions écrites et orales L46:   * cite31†Comptes rendus des débats L47: 
+L48: [Input: Recherche général]
+L49: 
+L50: Connaître l'Assemblée
+L51: 
+L52: cite32†Image L53: 
+L54: cite33†Rôle et pouvoirs de l'Assemblée L55: 
+L56:   * cite34†Fiches « Connaissance de l’Assemblée » L57: 
+L58: cite35†Organisation de l'Assemblée L59:   * cite7†Présidence†presidence.assemblee-nationale.fr L60:   * cite36†Conférence des Présidents†www2.assemblee-nationale.fr L61:   * cite37†Bureau†www2.assemblee-nationale.fr L62:   * cite38†Collège des Questeurs†www2.assemblee-nationale.fr L63:   * cite39†Services L64: 
+L65: cite40†Statistiques et chiffres clés†www2.assemblee-nationale.fr cite41†Transparence et déontologie cite42†Documents de référence( Constitution | Règlement de l'Assemblée ... ) L66: cite43†Histoire cite44†Juniors†www2.assemblee-nationale.fr cite45†Anciennes législatures†archives.assemblee-nationale.fr cite46†Liens vers les sites publics L67: 
+L68: Découvrir les lieux
+L69: 
+L70: cite32†Image L71: 
+L72: cite47†Visiter l'Assemblée cite48†Visite virtuelle du palais Bourbon cite49†Assister à une séance cite50†Accès des chercheurs à l’Assemblée cite51†Les évènements†www2.assemblee-nationale.fr L73: 
+L74: cite43†Patrimoine cite52†La Bibliothèque cite53†Les archives cite54†Contacts et plan d'accès cite55†Photos libres de droit L75: 
+L76: Connexion & inscription
+L77: cite56†Image L78: 
+L79: S'identifier cite57†S'identifier L80: 
+L81: cite58†Mot de passe oublié L82: 
+L83: Vous n'avez pas encore de compte ?
+L84: Enregistrez-vous cite59†S'inscrire L85: 
+L86: cite4†Accèder à la page d'accueil L87: 
+L88: Assemblée nationale
+L89: ## Histoire et Patrimoine
+L90: 
+L91: * * *
+L92: 
+L93: Histoire patrimoniale Histoire de France Histoire parlementaire
+L94: ## Frise chronologique
+L95: 
+L96: cite60†1673-1743 cite61†1722 cite62†1743-1768 cite63†1769 L97: 
+L98: cite64†Ancien régime L99: 
+L100: cite65†1789 cite66†septembre 1791 cite67†Janvier 1798 L101: 
+L102: cite68†Révolution française L103: 
+L104: cite69†13 décembre 1799 cite70†1804-1810 cite71†1802 -1804 cite72†1806 - 1810 L105: 
+L106: cite73†Consulat et Premier Empire L107: 
+L108: cite74†4 juin 1814 cite75†1814 cite76†1827 - 1832 L109: 
+L110: cite77†Restauration L111: 
+L112: cite78†27-29 juillet 1830 cite79†1832 cite80†1832-1835 cite81†1833 L113: 
+L114: cite82†Monarchie de Juillet L115: 
+L116: cite83†février 1848 cite84†1848-1851 cite85†15 Mars 1850 cite86†14 Janvier 1852 L117: cite87†Deuxième République L118: 
+L119: cite88†1860 cite89†1867-1870 cite90†septembre 1870 L120: 
+L121: cite91†Second Empire L122: 
+L123: cite92†1875 cite93†25 février 1875 cite94†Janvier 1910 cite95†4 août 1914 cite96†1914-1918 L124: 
+L125: cite97†Troisième République L126: 
+L127: cite98†Septembre 1939 cite99†1938 - juillet 1940 cite100†1940 - 1944 cite101†27 mai 1943 et 15 mars 1944 cite102†21 avril 1944 L128: 
+L129: cite103†Deuxième guerre mondiale L130: 
+L131: cite104†27 octobre 1946 cite105†1946 - 1958 cite105†1946 - 1958 L132: 
+L133: cite106†Quatrième République L134: 
+L135: cite107†4 octobre 1958 cite108†1992 cite109†2000 cite110†2009 L136: cite111†Cinquième République L137: ## Révolution française
+L138: 
+L139: 5 septembre 1791
+L140: ### Déclaration des droits de la femme et de la citoyenne - Olympe de Gouges
+L141: 
+L142: En 1791, Olympe de Gouges publie une Déclaration des droits de la femme et de la citoyenne, composée de trois parties : le préambule, 17 articles et le postambule. Le texte s’ouvre par une adresse à Marie-Antoinette qu’elle appelle à rejoindre le combat des femmes pour l’égalité.
+L143: Les  articles sont rédigés sur le modèle de la Déclaration des droits de l’homme et du citoyen adoptée en 1789. Olympe de Gouges revendique pour les femmes le droit de vote, l’égalité aux emplois, le droit à la propriété privée. Elle ambitionne également l’égalité en droit de la femme et de l’homme, la liberté d’opinion, l’union libre, la création de maternités. L’article 10 prophétise : « La femme a le droit de monter sur l’échafaud, elle doit avoir également celui de monter à la tribune ».
+L144: À partir de l’été 1792, Olympe de Gouges prend position contre l’excès de violence de la Révolution. Elle devient l’une des victimes de la Terreur et est guillotinée le 6 novembre 1793.
+L145: 
+L146: Longtemps oubliée, Olympe de Gouges est mise à l’honneur en 1986 par la journaliste féministe Benoîte Groult et devient alors une icône du combat féministe.
+L147: 
+L148: Un buste en marbre à son effigie, réalisé par Jeanne Spehar et Fabrice Gloux, a été dressé en 2016 dans la salle des Quatre-Colonnes de l’Assemblée nationale.
+L149: Déclaration des droits de la femme et de la citoyenne (1791)
+L150: 
+L151: À décréter par l’Assemblée nationale dans ses dernières séances ou dans celle de la prochaine législature.
+L152: 
+L153: 
+L154: 
+L155: Préambule
+L156: 
+L157: Homme, es-tu capable d’être juste ? C’est une femme qui t’en fait la question ; tu ne lui ôteras pas du moins ce droit.
+L158: Dis moi ? Qui t’a donné le souverain empire d’opprimer mon sexe ? ta force ? tes talents ? Observe le Créateur dans sa sagesse ; parcours la nature dans toute sa grandeur, dont tu sembles vouloir te rapprocher, et donne moi, si tu l’oses, l’exemple de cet empire tyrannique.
+L159: Remonte aux animaux, consulte les éléments, étudie les végétaux, jette enfin un coup d’œil sur toutes les modifications de la matière organisée ; et rends toi à l’évidence quand je t’en offre les moyens ; cherche, fouille et distingue, si tu le peux, les sexes dans l’administration de la nature. Partout tu les trouveras confondus, partout ils coopèrent avec un ensemble harmonieux à ce chef d’œuvre immortel.
+L160: L’homme seul s’est fagoté un principe de cette exception. Bizarre, aveugle, boursouflé de sciences et dégénéré, dans ce siècle de lumières et de sagacité, dans l’ignorance la plus crasse, il veut commander en despote sur un sexe qui a reçu toutes les facultés intellectuelles ; qui prétend jouir de la révolution, et réclamer ses droits à l’égalité, pour ne rien dire de plus.
+L161: Les mères, les filles, les sœurs, représentantes de la nation, demandent d’être constituées en assemblée nationale.
+L162: Considérant que l’ignorance, l’oubli ou le mépris des droits de la femme, sont les seules causes des malheurs publics et de la corruption des gouvernements, ont résolu d’exposer dans une déclaration solennelle, les droits naturels, inaliénables et sacrés de la femme, afin que cette déclaration, constamment présente à tous les membres du corps social, leur rappelle sans cesse leurs droits et leurs devoirs, afin que les actes du pouvoir des femmes, et ceux du pouvoir des hommes, pouvant être à chaque instant comparés avec le but de toute institution politique, en soient plus respectés, afin que les réclamations des citoyennes, fondées désormais sur des principes simples et incontestables, tournent toujours au maintien de la constitution, des bonnes mœurs, et au bonheur de tous.
+L163: En conséquence, le sexe supérieur en beauté, comme en courage dans les souffrances maternelles, reconnaît et déclare, en présence et sous les auspices de l’Être suprême, les Droits suivants de la femme et de la citoyenne.
+L164: 
+L165: ARTICLE PREMIER
+L166: 
+L167: La femme naît libre et demeure égale à l’homme en droits. Les distinctions sociales ne peuvent être fondées que sur l’utilité commune.
+L168: 
+L169: II
+L170: Le but de toute association politique est la conservation des droits naturels et imprescriptibles de la femme et de l’homme : ces droits sont la liberté, la propriété, la sûreté, et surtout la résistance à l’oppression.
+L171: 
+L172: III
+L173: 
+L174: Le principe de toute souveraineté réside essentiellement dans la nation, qui n’est que la réunion de la femme et de l’homme : nul corps, nul individu, ne peut exercer d’autorité qui n’en émane expressément.
+L175: 
+L176: IV
+L177: La liberté et la justice consistent à rendre tout ce qui appartient à autrui ; ainsi l’exercice des droits naturels de la femme n’a de bornes que la tyrannie perpétuelle que l’homme lui oppose ; ces bornes doivent être réformées par les lois de la nature et de la raison.
+L178: 
+L179: V
+L180: Les lois de la nature et de la raison défendent toutes actions nuisibles à la société : tout ce qui n’est pas défendu par ces lois, sages et divines, ne peut être empêché, et nul ne peut être contraint à faire ce qu’elles n’ordonnent pas.
+L181: 
+L182: VI
+L183: La loi doit être l’expression de la volonté générale ; toutes les citoyennes et citoyens doivent concourir personnellement, ou par leurs représentants, à sa formation ; elle doit être la même pour tous : toutes les citoyennes et tous les citoyens, étant égaux à ses yeux, doivent être également admissibles à toutes dignités, places et emplois publics, selon leurs capacités, et sans autres distinctions que celles de leurs vertus et de leurs talents.
+L184: 
+L185: VII
+L186: Nulle femme n’est exceptée ; elle est accusée, arrêtée, et détenue dans les cas déterminés par la loi. Les femmes obéissent comme les hommes à cette loi rigoureuse.
+L187: 
+L188: VIII
+L189: 
+L190: La loi ne doit établir que des peines strictement et évidemment nécessaires, et nul ne peut être puni qu’en vertu d’une loi établie et promulguée antérieurement au délit et légalement appliquée aux femmes.
+L191: 
+L192: IX
+L193: 
+L194: Toute femme étant déclarée coupable, toute rigueur est exercée par la loi.
+L195: 
+L196: X
+L197: Nul ne doit être inquiété pour ses opinions même fondamentales ; la femme a le droit de monter sur l’échafaud ; elle doit avoir également celui de monter à la tribune, pourvu que ses manifestations ne troublent pas l’ordre public établi par la loi.
+L198: 
+L199: XI
+L200: La libre communication des pensées et des opinions est un des droits les plus précieux de la femme, puisque cette liberté assure la légitimité des pères envers les enfants. Toute citoyenne peut donc dire librement je suis mère d’un enfant qui vous appartient, sans qu’un préjugé barbare la force à dissimuler la vérité ; sauf à répondre de l’abus de cette liberté dans les cas déterminés par la loi.
+L201: 
+L202: XII
+L203: La garantie des droits de la femme et de la citoyenne nécessite une utilité majeure ; cette garantie doit être instituée pour l’avantage de tous, et non pour l’utilité particulière de celles à qui elle est confiée.
+L204: 
+L205: XIII
+L206: Pour l’entretien de la force publique, et pour les dépenses d’administration, les contributions de la femme et de l’homme sont égales ; elle a part à toutes les corvées, à toutes les tâches pénibles ; elle doit donc avoir de même part à la distribution des places, des emplois, des charges, des dignités et de l’industrie.
+L207: 
+L208: XIV
+L209: Les citoyennes et citoyens ont le droit de constater par eux mêmes, ou par leurs représentants, la nécessité de la contribution publique. Les citoyennes ne peuvent y adhérer que par l’admission d’un partage égal, non seulement dans la fortune, mais encore dans l’administration publique, et le droit de déterminer la quotité, l’assiette, le recouvrement et la durée de l’impôt.
+L210: 
+L211: XV
+L212: La masse des femmes, coalisée pour la contribution à celle des hommes, a le droit de demander compte, à tout agent public, de son administration.
+L213: 
+L214: XVI
+L215: 
+L216: Toute société, dans laquelle la garantie des droits n’est pas assurée, ni la séparation des pouvoirs déterminée, n’a point de constitution ; la constitution est nulle, si la majorité des individus qui composent la nation n’a pas coopéré à sa rédaction.
+L217: 
+L218: XVII
+L219: Les propriétés sont à tous les sexes réunis ou séparés ; elles sont pour chacun un droit inviolable et sacré ; nul ne peut en être privé comme vrai patrimoine de la nature, si ce n’est lorsque la nécessité publique, légalement constatée, l’exige évidemment, et sous la condition d’une juste et préalable indemnité.
+L220: cite112†A la Reine Marie-Antoinette, les droits de la femme - Olympe de Gouges, 1791 - © BNF Gallica cite113†Déclaration des droits de la femme, 1791 - © BNF Gallica cite114†Déclaration des droits de la femme, 1791 - © BNF Gallica L221: 
+L222: cite115†Retrouver toutes les découvertes thématiques L223: ## Visite virtuelle de l'Assemblée nationale
+L224: 
+L225: * * *
+L226: 
+L227: Visitez l'Assemblée nationale depuis chez vous !
+L228: 
+L229: Avec votre ordinateur ou votre casque de réalité virtuelle, déplacez-vous librement dans les lieux emblématiques de l’Assemblée nationale tels que l’hémicycle, la bibliothèque ou encore les grands salons.
+L230: 
+L231: Lancez vous!
+L232: 
+L233: Base de données des députés français depuis 1789
+L234: 
+L235: Les présidents de l'Assemblée nationale depuis 1789
+L236: 
+L237: Les députés morts pour la patrie 1914 - 1918
+L238: Les députés morts pour la patrie 1939 - 1945
+L239: 
+L240: Les présidents de l'Assemblée nationale sous la Ve République
+L241: 
+L242: Les députés de la Ve République
+L243: 
+L244: Les grands discours parlementaires
+L245: 
+L246: Accès au Journal officiel - Débats parlementaires
+L247: 
+L248: Recueil des programmes électoraux - Le "Barodet"
+L249: 
+L250: La Constitution de 1958
+L251: 
+L252: Les révisions constitutionnelles sous la Ve République
+

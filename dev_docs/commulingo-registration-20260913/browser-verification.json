@@ -1,0 +1,181 @@
+{
+  "checkedAt": "2026-09-13T03:42:24.552Z",
+  "originDocuments": [
+    {
+      "id": "france-abolition-monarchy-1792",
+      "status": 200,
+      "title": "국민공회의 왕정 폐지 결의 (1792년 9월 21일) | Cyber-Lenin",
+      "chars": 659,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "france-constitution-1791",
+      "status": 200,
+      "title": "프랑스 헌법 (1791) | Cyber-Lenin",
+      "chars": 29257,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "france-constitution-1793",
+      "status": 200,
+      "title": "프랑스 헌법과 권리 선언 (1793) | Cyber-Lenin",
+      "chars": 11122,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "france-law-of-suspects-1793",
+      "status": 200,
+      "title": "혐의자법 (1793년 9월 17일) | Cyber-Lenin",
+      "chars": 2046,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-declaration-1789",
+      "status": 200,
+      "title": "인간과 시민의 권리 선언 (1789) | Cyber-Lenin",
+      "chars": 2670,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "gouges-rights-of-woman-1791",
+      "status": 200,
+      "title": "여성과 여성 시민의 권리 선언 (1791), 도입문·서문·17개 조항 발췌 | Cyber-Lenin",
+      "chars": 3958,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "iwma-general-rules-1871",
+      "status": 200,
+      "title": "국제노동자협회 일반규약 (1871년 판) | Cyber-Lenin",
+      "chars": 3127,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "france-slavery-abolition-decree-1794",
+      "status": 200,
+      "title": "노예제 폐지 법령 (1794년 2월 4일) | Cyber-Lenin",
+      "chars": 890,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "bakunin-statism-anarchy-excerpts-1873",
+      "status": 200,
+      "title": "바쿠닌, 국가성과 아나키 (1873, 발췌) | Cyber-Lenin",
+      "chars": 3324,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "france-law-22-prairial-1794",
+      "status": 200,
+      "title": "프레리알 22일법 (1794년 6월 10일) — 발췌 | Cyber-Lenin",
+      "chars": 4018,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "marechal-manifesto-equals-1796",
+      "status": 200,
+      "title": "실뱅 마레샬, 평등파 선언 (1796) | Cyber-Lenin",
+      "chars": 4777,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "marx-bakunin-notes-1874-1875",
+      "status": 200,
+      "title": "마르크스, 바쿠닌의 국가성과 아나키에 대한 발췌 노트 (1874~1875) | Cyber-Lenin",
+      "chars": 7180,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "france-general-maximum-law-1793",
+      "status": 200,
+      "title": "일반최고가격법 (1793년 9월 29일) | Cyber-Lenin",
+      "chars": 4157,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "lenin-state-revolution-chapter-5",
+      "status": 200,
+      "title": "레닌, 국가와 혁명 제5장 전문 | Cyber-Lenin",
+      "chars": 18847,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "robespierre-political-morality-1794",
+      "status": 200,
+      "title": "로베스피에르, 정치도덕의 원리에 관한 보고 (1794) — 발췌 | Cyber-Lenin",
+      "chars": 12259,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "robespierre-subsistence-1792",
+      "status": 200,
+      "title": "로베스피에르, 생필품에 관한 연설 (1792) (발췌) | Cyber-Lenin",
+      "chars": 7400,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "bernstein-preconditions-socialism-excerpts-1899",
+      "status": 200,
+      "title": "베른슈타인, 사회주의의 전제와 사회민주주의의 과제 (1899, 발췌) | Cyber-Lenin",
+      "chars": 25361,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 0
+    },
+    {
+      "id": "luxemburg-reform-revolution",
+      "status": 200,
+      "title": "룩셈부르크, 사회개혁이냐 혁명이냐 | Cyber-Lenin",
+      "chars": 71801,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 13
+    },
+    {
+      "id": "luxemburg-russian-revolution",
+      "status": 200,
+      "title": "룩셈부르크, 러시아 혁명 | Cyber-Lenin",
+      "chars": 36770,
+      "overflow": false,
+      "brokenNotes": 0,
+      "notes": 7
+    }
+  ],
+  "publicDomainChecks": [
+    "luxemburg-russian-revolution author notes and return links",
+    "france-general-maximum-law-1793 all twenty articles"
+  ],
+  "privateGuides404": true
+}

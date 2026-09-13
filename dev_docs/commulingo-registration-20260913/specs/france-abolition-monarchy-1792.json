@@ -1,0 +1,52 @@
+{
+  "id": "france-abolition-monarchy-1792",
+  "title": "국민공회의 왕정 폐지 결의 (1792년 9월 21일)",
+  "sourceLang": "fr",
+  "byline": "국민공회",
+  "bylineNote": "National Convention decree abolishing monarchy (21 September 1792)",
+  "headnote": [
+    "국민공회의 왕정 폐지 결의 전문이다. 왕정 폐지는 1792년 9월 21일 의결되었으며, 채택한 엘리제궁 전사본은 표제를 9월 21~22일 법령으로 적고 있다. 두 날짜 표기를 구별해 보존한다."
+  ],
+  "bibliography": [
+    "번역 저본: https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+    "번역: CommuLingo, 원문 언어 fr. 문단·조항 대조를 거친 한국어 번역."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "output": "/home/grass/frontend/data/commulingo/docs/france-abolition-monarchy-1792.html",
+  "documents": [
+    {
+      "id": "france-abolition-monarchy-1792-0",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/constitution1793.html",
+        "sha256": "226fefdff6c4e1493406294291ce0ebbff900d78e2a05a1866141b889ae0c63e",
+        "format": "html",
+        "url": "https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793",
+        "selector": ".ck-styled",
+        "nth": 0
+      },
+      "blocks": [
+        2,
+        4
+      ],
+      "startsWith": "Décret des 21-22 septembre 1792",
+      "endsWith": "La Convention nationale décrète à l'unanimité que la royauté est abolie en France.",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    }
+  ],
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "france-law-22-prairial-1794",
+  "checked": "source boundaries, historical actors, article numbering and core claims",
+  "corrections": [
+    {
+      "before": "<p>### 2년 프레리알 22일 법령 - 1794년 6월 10일</p>",
+      "after": "<h2>혁명재판소에 관한 법령</h2>"
+    },
+    {
+      "before": "<p>혁명재판소에 관하여 (1)</p>",
+      "after": ""
+    },
+    {
+      "before": "<p>15. 증언 증거와 별개로",
+      "after": "<p>13. 증언 증거와 별개로"
+    },
+    {
+      "before": "유죄 증인과 무죄 증인의 구별 없이",
+      "after": "피고인에게 불리한 증인과 유리한 증인의 구별 없이"
+    }
+  ],
+  "notes": [
+    "조항 번호 대조: https://www.cercle-du-barreau.org/media/02/00/309329450.pdf, 3쪽. 전사본에서 15로 잘못 적은 증인 심문 조항은 제13조로 바로잡았다. 대조본의 제21조(보고서 첨부)는 채택 저본에 없어 이 발췌에 수록하지 않았다."
+  ]
+}

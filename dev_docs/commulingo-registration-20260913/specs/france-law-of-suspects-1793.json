@@ -1,0 +1,53 @@
+{
+  "id": "france-law-of-suspects-1793",
+  "title": "혐의자법 (1793년 9월 17일)",
+  "byline": "국민공회",
+  "bylineNote": "Law of Suspects (17 September 1793)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1793년 9월 17일 국민공회의 혐의자 구금 법령 전문이다. 혁명재판소 창설법이 아니라 혐의자의 범주와 구금·보고 절차를 규정한 문서다."
+  ],
+  "bibliography": [
+    "채택: 1793년 9월 17일.",
+    "번역 저본: Rondonneau, Code militaire, 1793, 권4, 336~338쪽의 Wikisource 전사.",
+    "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects"
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "suspects",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/suspects-selected.html",
+        "sha256": "7c0da18c00cba33b25fee72b53d1829f31e9887cf5772973e895f048e8d7ceb6",
+        "selector": "article",
+        "url": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+        "extraction": "Web text line transcription; selected source lines [109, 126]"
+      },
+      "blocks": [
+        0,
+        14
+      ],
+      "startsWith": "Décret qui ordonne l’arrestation, des Gens suspects du 17 Septembre 1793.",
+      "endsWith": "avoir pas lieu à accusation, ou qui seraient acquittés des accusations portées contre eux.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/france-law-of-suspects-1793.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

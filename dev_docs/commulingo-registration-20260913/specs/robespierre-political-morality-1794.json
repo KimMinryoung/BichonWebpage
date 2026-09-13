@@ -1,0 +1,54 @@
+{
+  "id": "robespierre-political-morality-1794",
+  "title": "로베스피에르, 정치도덕의 원리에 관한 보고 (1794) — 발췌",
+  "byline": "막시밀리앵 로베스피에르",
+  "bylineNote": "Robespierre, Report on the Principles of Political Morality (1794)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1794년 2월 5일 정치적 도덕의 원칙에 관한 보고를 베르모렐의 1866년 선집 수록 범위대로 옮겼다. 편집자는 여러 부분을 줄였다고 밝혔으므로 연설 전문이 아니라 발췌본이다. 뒤에 붙인 1793년 12월 25일의 다른 연설 인용은 수록하지 않았다."
+  ],
+  "bibliography": [
+    "보고: 1794년 2월 5일(공화력 2년 플뤼비오즈 17일).",
+    "번역 저본: Auguste Vermorel 편, Œuvres de Robespierre, Paris: F. Cournol, 1866, 294~308쪽의 Wikisource 전사.",
+    "https://fr.wikisource.org/wiki/%C5%92uvres_de_Robespierre/Sur_les_principes_de_morale_politique",
+    "범위: 선집의 보고 본문. 선집 편집주와 그 안에 인용된 다른 보고는 제외."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "political-morality",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/political-morality-selected.html",
+        "sha256": "0f91e2aaa45db77666fe75fb28035f250f8220d1c0662bfbba44e48b325d9256",
+        "selector": "article",
+        "url": "https://fr.wikisource.org/wiki/%C5%92uvres_de_Robespierre/Sur_les_principes_de_morale_politique",
+        "extraction": "Web text line transcription; selected source lines [116, 199]"
+      },
+      "blocks": [
+        0,
+        76
+      ],
+      "startsWith": "### SUR LES PRINCIPES DE MORALE POLITIQUE QUI DOIVENT GUIDER LA CONVENTION NATIONALE DANS ",
+      "endsWith": "e développer soient proclamés en votre nom au dedans et au dehors de la république^{[1] }.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/robespierre-political-morality-1794.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

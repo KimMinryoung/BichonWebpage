@@ -1,0 +1,54 @@
+{
+  "id": "marx-bakunin-notes-1874-1875",
+  "title": "마르크스, 바쿠닌의 국가주의와 아나키에 대한 발췌 노트 (1874~1875)",
+  "byline": "카를 마르크스",
+  "bylineNote": "Marx, Notes on Bakunin’s Statism and Anarchy (1874–1875)",
+  "sourceLang": "de",
+  "headnote": [
+    "바쿠닌의 『국가성과 아나키』를 읽으며 남긴 발췌와 논평 가운데 인민국가·노동자 지배계급·선거·이행기를 다루는 대목이다. 독립된 발표 논문이나 가상 토론이 아니라 실제 독서 노트의 발췌다. 인용된 바쿠닌의 문구와 마르크스의 응답을 구분해 읽어야 한다."
+  ],
+  "bibliography": [
+    "집필: 1874년~1875년 초. 사후 발표.",
+    "번역 저본: Marx-Engels-Werke, 제18권 「Konspekt von Bakunins Buch Staatlichkeit und Anarchie」 독일어 전사의 MLClassic 재현본.",
+    "https://mlclassic.netlify.app/mew/18/me18-597",
+    "범위: «Wir haben bereits unsren tiefen Widerwillen…»부터 «…den Tag der allgemeinen Liquidation – des jüngsten Gerichts – abwarten soll»까지. 앞뒤 생략. 후대 각주 표지는 제외했다. 저본의 꺾쇠는 러시아어 인용의 독일어 편집 번역 부분을 뜻한다.",
+    "들여쓴 인용문은 마르크스가 발췌한 바쿠닌의 문구이고, 그 사이의 본문은 마르크스의 논평이다. 인용문 안에도 마르크스가 덧붙인 괄호 메모가 있다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "marxnotes-selected",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "selector": "article",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/marxnotes-selected.html",
+        "sha256": "70468f2265d0a55a1446d2c31731ec199d4e89b87edb6653d34230c04af5034c",
+        "url": "https://mlclassic.netlify.app/mew/18/me18-597"
+      },
+      "blocks": [
+        0,
+        38
+      ],
+      "startsWith": "„Wir haben bereits unsren tiefen Widerwillen gegen die Theorie von Lassalle und Marx ausge",
+      "endsWith": "s tun soll... den Tag der allgemeinen Liquidation – des jüngsten Gerichts – abwarten soll.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/marx-bakunin-notes-1874-1875.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

@@ -1,0 +1,102 @@
+Décret du 17 septembre 1793 relatif aux gens suspects - Wikisource (https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects)
+citeturn30view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects","lineno":100}); Total lines: 155
+L0: cite0†Aller au contenu L1: 
+L2: [Input] Menu principal
+L3: 
+L4: Menu principal
+L5: 
+L6: [Button: déplacer vers la barre latérale] [Button: masquer]
+L7: 
+L8: Lire
+L9: 
+L10:   * cite1†Accueil L11:   * cite2†Index des auteurs L12:   * cite3†Portails thématiques L13:   * cite4†Aide au lecteur L14:   * cite5†Contacter Wikisource L15:   * cite6†Texte au hasard L16:   * cite7†Auteur au hasard L17: 
+L18: Contribuer
+L19: 
+L20:   * cite8†Scriptorium L21:   * cite9†Forum des nouveaux L22:   * cite10†Aide L23:   * cite11†Communauté L24:   * cite12†Livre au hasard L25:   * cite13†Modifications récentes L26:   * cite14†Pages spéciales L27: 
+L28: Imprimer / exporter
+L29:   * cite15†Télécharger en EPUB†ws-export.wmcloud.org L30:   * cite16†Télécharger en MOBI†ws-export.wmcloud.org L31:   * cite17†Télécharger en PDF†ws-export.wmcloud.org L32:   * cite18†Autres formats†ws-export.wmcloud.org L33: 
+L34: cite19†Rechercher L35: 
+L36: [Input: Rechercher sur Wikisource]
+L37: 
+L38: [Input]
+L39: 
+L40: [Button: Rechercher]
+L41: 
+L42: [Input] Apparence
+L43: 
+L44:   * cite20†Faire un don†donate.wikimedia.org L45:   * cite21†Créer un compte L46:   * cite22†Se connecter L47: 
+L48: [Input] Outils personnels
+L49: 
+L50:   * cite20†Faire un don†donate.wikimedia.org L51:   * cite21†Créer un compte L52:   * cite22†Se connecter L53: # Décret du 17 septembre 1793 relatif aux gens suspects
+L54: 
+L55: [Input] Ajouter des langues
+L56: 
+L57: cite23†Ajouter des liens†www.wikidata.org L58: 
+L59:   * cite24†Texte L60:   * cite25†Source L61:   * cite26†Discussion L62: 
+L63: [Input] français
+L64: 
+L65:   * cite24†Lire L66:   * cite27†Modifier L67:   * cite28†Voir l’historique L68: 
+L69: [Input] Outils
+L70: 
+L71: Outils
+L72: 
+L73: [Button: déplacer vers la barre latérale] [Button: masquer]
+L74: 
+L75: Actions
+L76: 
+L77:   * cite24†Lire L78:   * cite27†Modifier L79:   * cite28†Voir l’historique L80: 
+L81: Général
+L82:   * cite29†Pages liées L83:   * cite30†Suivi des pages liées L84:   * cite31†Lien permanent L85:   * cite32†Informations sur la page L86:   * cite33†Citer cet article L87:   * cite34†Obtenir l’URL raccourcie L88: 
+L89: Imprimer / exporter
+L90: 
+L91:   * cite35†Télécharger en PDF L92:   * Version imprimable
+L93: 
+L94: Dans d’autres projets
+L95: 
+L96:   * cite36†Élément Wikidata†www.wikidata.org L97: 
+L98: Apparence
+L99: 
+L100: [Button: déplacer vers la barre latérale] [Button: masquer]
+L101: 
+L102: cite15†Télécharger†ws-export.wmcloud.org L103: 
+L104:  |  |  |  |  |
+L105: 
+L106: Décret du 17 septembre 1793 relatif aux gens suspects
+L107: de l'imprimerie de Prault, au Palais, 1793 (4, p. (pages) 336-338).
+L108: book Décret du 17 septembre 1793 relatif aux gens suspects de l'imprimerie de Prault, au Palais 1793 Paris C 4 Décret du 17 septembre 1793 relatif aux gens suspects Rondonneau - Code militaire, ou Recueil méthodique des décrets relatifs aux troupes de ligne et à la gendarmerie nationale. Tome 4, 1793.djvu Rondonneau - Code militaire, ou Recueil méthodique des décrets relatifs aux troupes de ligne et à la gendarmerie nationale. Tome 4, 1793.djvu/9 336-338
+L109: ## Décret qui ordonne l’arrestation, des Gens suspects du 17 Septembre 1793.
+L110: 
+L111: La Convention nationale, après avoir entendu le rapport de son comité de législation sur le mode d’exécution de son décret du 12 août dernier, décrète ce qui suit :
+L112: 
+L113: Art. I^{er} (premier). Immédiatement après la publication du présent décret, tous les gens suspects qui se trouvent dans le territoire de la République, et qui sont encore en liberté, seront mis en état d'arrestation.
+L114: II.
+L115: Sont réputés gens suspects : 1^{o} (primo) ceux qui, soit par leur conduite, soit par leur relations, soit par leur propos ou leurs écrits, se sont montrés partisans de la tyrannie ou du fédéralisme, et ennemis de la liberté ; 2^{o} (secundo) ceux qui ne pourront pas justifier, de la manière prescrite par le décret du 21 Mars dernier, de leurs moyens d’exister et de l'acquit de leurs devoirs civiques ; 3^{o} (tertio) ceux à qui il a été refusé des certificats de civisme ; 4^{o} (quarto) les fonctionnaires publics suspendus ou destitués de leurs fonctions par la Convention nationale ou ses commissaires, et non réintégrés, notamment ceux qui ont été ou doivent être destitués en vertu du décret du 14 août dernier ; 5^{o} (quinto) ceux des ci-devants nobles, ensemble les maris, femmes, pères, mères, fils ou filles, frères ou sœurs, et agens d'émigrés, qui n'ont pas constamment manifesté leur attachement à la révolution ; 6^{o} (sexto) ceux qui ont émigré dans l'intervalle du premier juillet 1789 à la publication de la loi du 8 avril 1792, quoiqu'ils soient rentrés en France dans le délai fixé par ce décret, ou précédemment.
+L116: III. Les comités de surveillance établis d'après la loi du 21 mars dernier, ou ceux qui leur ont été substitués, soit par les arrêtés des représentants du peuple envoyés par les armées et dans les départemens, soit en vertu des décrets particuliers de la Convention nationale, sont chargés de dresser, chacun dans son arrondissement, la liste des gens suspects, de décerner contre eux les mandats d'arrêt, et de faire apposer les scellés sur leurs papiers.
+L117: Les commandans de la force publique à qui seront remis ces mandats seront tenus de les mettre à exécution sur-le-champ, sous peine de destitution.
+L118: IV. Les membres du comité ne pourront ordonner l'arrestation d'aucun individu sans être au nombre de sept, et qu'à la majorité absolue des voix.
+L119: 
+L120: V. Les individus arrêtés comme suspects seront d'abord conduits dans les maisons d’arrêts du lieu de leur détention ; à défaut de maisons d'arrêt, ils seront gardés à vue dans leurs demeures respectives.
+L121: VI. Dans la huitaine suivante, ils seront transférés dans les bâtimens nationaux que les administrations de département seront tenues, aussitôt après la réception du présent décret, de désigner et faire préparer à cet effet.
+L122: 
+L123: VII. Les détenus pourront faire transporter dans ces bâtimens les meubles qui leur seront d'une absolue nécessité ; ils y resteront gardés jusqu'à la paix.
+L124: VIII. Les frais de garde seront à la charge des détenus, et seront répartis entre eux également : cette garde sera confiée de préférence aux pères de famille et aux parens des citoyens qui sont ou marcheront aux frontières. Le salaire en est fixé, par chaque homme de garde, à la valeur d'une journée et demie de travail.
+L125: IX. Les comités de surveillance enverront sans délai au comité de sûreté générale de la Convention nationale l'état des personnes qu’ils auront fait arrêter, avec les motifs de leur arrestation et les papiers qu'ils auront saisis sur elles comme gens suspects.
+L126: X. Les tribunaux civils et criminels pourront, s'il y a lieu, faire retenir en état d'arrestation et envoyer dans les maisons de détention ci-dessus énoncées, les prévenus de délits à l'égard desquels il sera déclaré n'y avoir pas lieu à accusation, ou qui seraient acquittés des accusations portées contre eux.
+L127: 
+L128: cite37†Image L129: 
+L130: Récupérée de "cite31†https://fr.wikisource.org/w/index.php?title=Décret_du_17_septembre_1793_relatif_aux_gens_suspects&oldid=12602773 "
+L131: 
+L132: cite38†Catégorie :
+L133: 
+L134:   * cite39†Lois France L135:   * La dernière modification de cette page a été faite le 27 juillet 2022 à 11:49.
+L136:   * Les textes sont disponibles sous cite40†licence Creative Commons Attribution-partage dans les mêmes conditions†creativecommons.org ; d’autres conditions peuvent s’appliquer. Voyez les cite41†Conditions d’utilisation†foundation.wikimedia.org pour plus de détails.
+L137:   * cite42†Politique de confidentialité†foundation.wikimedia.org L138:   * cite43†À propos de Wikisource L139:   * cite44†Avertissements L140:   * cite45†Contacts juridiques & sécurité†foundation.wikimedia.org L141:   * cite46†Code de conduite†foundation.wikimedia.org L142:   * cite47†Développement†developer.wikimedia.org L143:   * cite48†Statistiques†stats.wikimedia.org L144:   * cite49†Déclaration sur les témoins (cookies)†foundation.wikimedia.org L145:   * Rechercher
+L146: 
+L147: [Input: Rechercher sur Wikisource]
+L148: 
+L149: [Input]
+L150: 
+L151: [Button: Rechercher]
+L152: Décret du 17 septembre 1793 relatif aux gens suspects
+L153: 
+L154: Ajouter des langues cite50†Ajouter un sujet 

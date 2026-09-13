@@ -1,0 +1,55 @@
+{
+  "id": "france-law-22-prairial-1794",
+  "title": "프레리알 22일법 (1794년 6월 10일) — 발췌",
+  "byline": "국민공회",
+  "bylineNote": "Law of 22 Prairial (10 June 1794)",
+  "sourceLang": "fr",
+  "headnote": [
+    "공화력 2년 프레리알 22일(1794년 6월 10일) 혁명재판소 법령의 조항을 옮겼다. 이 재록본은 제3조에서 예고한 임명자 명단을 싣지 않으므로 명단이 생략된 판본임을 밝힌다. 후대 법령집의 평가와 해설은 제외했다."
+  ],
+  "bibliography": [
+    "채택: 1794년 6월 10일.",
+    "번역 저본: Le droit criminel, Quelques lois marquantes du droit de la Révolution française, deuxième partie. Recueil Sirey chronologique 재록.",
+    "https://ledroitcriminel.fr/la_legislation_criminelle/anciens_textes/lois_penales_revolution_francaise/lois_penales_revolution_francaise_2.htm",
+    "범위: 제1~20조. 제3조 임명자 명단 미수록. 후대 편집주 미수록.",
+    "조항 번호 대조: https://www.cercle-du-barreau.org/media/02/00/309329450.pdf, 3쪽. 전사본에서 15로 잘못 적은 증인 심문 조항은 제13조로 바로잡았다. 대조본의 제21조(보고서 첨부)는 채택 저본에 없어 이 발췌에 수록하지 않았다."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "prairial",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "format": "html",
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/prairial-selected.html",
+        "sha256": "abb1f74f0067150e0534469d1d752c89bc51a0af3ba95b8a6f7db21220af1b58",
+        "selector": "article",
+        "url": "https://ledroitcriminel.fr/la_legislation_criminelle/anciens_textes/lois_penales_revolution_francaise/lois_penales_revolution_francaise_2.htm",
+        "extraction": "Web text line transcription; selected source lines [6, 57]"
+      },
+      "blocks": [
+        0,
+        36
+      ],
+      "startsWith": "### Décret du 22 Prairial an 2 - 10 Juin 1794",
+      "endsWith": "es s'appliquent aux crimes de contre-révolution et à l'action du tribunal révolutionnaire.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/data/commulingo/docs/france-law-22-prairial-1794.html",
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

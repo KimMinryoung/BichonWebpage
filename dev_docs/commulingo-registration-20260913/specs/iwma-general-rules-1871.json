@@ -1,0 +1,51 @@
+{
+  "id": "iwma-general-rules-1871",
+  "title": "국제노동자협회 일반규약 (1871년 판)",
+  "sourceLang": "en",
+  "byline": "국제노동자협회",
+  "bylineNote": "General Rules of the International Working Men’s Association (1871 edition)",
+  "headnote": [
+    "국제노동자협회 일반규약의 1871년 10월 24일 판본 전문이다. 주소에 1864가 포함되어 있지만 이 전사본의 서지는 1871년 작성·발행으로 명시한다. 노동자 계급 자신의 해방을 선언한 전문과 13개 조항, 발행 표기를 옮겼다."
+  ],
+  "bibliography": [
+    "번역 저본: https://www.marxists.org/archive/marx/works/1864/10/27b.htm",
+    "번역: CommuLingo, 원문 언어 en. 문단·조항 대조를 거친 한국어 번역."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "output": "/home/grass/frontend/data/commulingo/docs/iwma-general-rules-1871.html",
+  "documents": [
+    {
+      "id": "iwma-general-rules-1871-0",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/iwma.html",
+        "sha256": "8ccd6f09a26a7490015257a74faea7254e48db4c48b0ae96ea918408d515ca31",
+        "format": "marxists",
+        "url": "https://www.marxists.org/archive/marx/works/1864/10/27b.htm",
+        "nth": 0
+      },
+      "blocks": [
+        3,
+        31
+      ],
+      "startsWith": "Considering,",
+      "endsWith": "256, High Holborn, W. C., London, 24th October, 1871",
+      "register": "한다체. 18~19세기 원사료다. 조항 번호와 장·절 계층을 보존한다. 군주와 국민, 입법부의 주어·권한 및 부정·예외 조건을 정확히 옮긴다. 해설을 추가하지 않는다."
+    }
+  ],
+  "sourceContextChars": 600,
+  "frozen": "2026-09-13 공개본은 reviewed/의 원문 대조 수정과 조항 서식 정리를 포함한다. 자동 재실행으로 공개본을 덮어쓰지 않는다."
+}

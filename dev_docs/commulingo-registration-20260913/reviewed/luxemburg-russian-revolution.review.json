@@ -1,0 +1,36 @@
+{
+  "id": "luxemburg-russian-revolution",
+  "checked": "translation pipeline no failed blocks; all selected chapter boundaries; core claims on democracy, reforms/revolution and dictatorship; author notes vs later editorial apparatus",
+  "removedEditorialReferences": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11"
+  ],
+  "notes": [
+    "별표가 붙은 저자 주석은 원래 번호를 유지하고 본문과 왕복 연결했다. 수록하지 않은 후대 편집주로 향하는 번호 표지는 본문에서 제거했다.",
+    "저본: Rosa Luxemburg, Gesammelte Werke, 제4권 제6개정판, Berlin 2000, 332~362쪽. 1918년의 미완성 원고를 1922년 파울 레비가 사후 출판했다. 네 절 뒤의 난외 메모도 원고에 속한다."
+  ],
+  "noteSections": 2
+}
