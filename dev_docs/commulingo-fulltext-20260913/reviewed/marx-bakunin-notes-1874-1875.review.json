@@ -1,0 +1,34 @@
+{
+  "id": "marx-bakunin-notes-1874-1875",
+  "model": "deepseek-flash",
+  "counts": {
+    "sourceBlocks": 209,
+    "translatedBlocks": 209,
+    "tables": 0,
+    "notes": 0,
+    "quotes": 144
+  },
+  "corrections": [
+    {
+      "block": 105,
+      "before": "étrange Pologne",
+      "after": "기이한 폴란드"
+    },
+    {
+      "block": 137,
+      "before": "представлено(전달될)",
+      "after": "전달될"
+    },
+    {
+      "block": 200,
+      "before": "energische한 표명",
+      "after": "적극적인 표명"
+    },
+    {
+      "block": 208,
+      "before": "коренная(원래의, 뿌리에 속하는) 불의",
+      "after": "뿌리 깊은 불의"
+    }
+  ],
+  "scope": "All source blocks present; table vocabulary and cells checked; notes and quotation boundaries restored; flagged terms and key passages checked against the source. Not a professional line-by-line copyedit."
+}

@@ -1,0 +1,54 @@
+{
+  "id": "robespierre-political-morality-1794",
+  "title": "로베스피에르, 정치적 도덕의 원칙에 관한 보고",
+  "byline": "막시밀리앵 로베스피에르",
+  "bylineNote": "Robespierre, Report on the Principles of Political Morality",
+  "sourceLang": "fr",
+  "headnote": [
+    "1794년 2월 5일 국민공회에서 발표한 보고 전문이다. 샤를 벨레가 정리한 프랑스어 전사를 저본으로 삼았다. 원문 속 덕과 공포의 정당화 논리는 로베스피에르의 주장이다."
+  ],
+  "bibliography": [
+    "Maximilien Robespierre, Rapport sur les principes de morale politique, 5 février 1794. Charles Vellay 편 프랑스어 전사, Project Gutenberg #29887.",
+    "https://www.gutenberg.org/ebooks/29887.html.images#id_17940205",
+    "저본 표제의 18 pluviôse는 날짜 오기다. 실제 발표일은 공화력 2년 플뤼비오즈 17일(1794년 2월 5일)이며 BnF 서지와 대조했다.",
+    "https://catalogue.bnf.fr/ark:/12148/cb312272831",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "robespierre-morality-full",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/robespierre-morality-full-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "2ebc6f35352c4b6c79a37eb7a848a0aad8da680eb5f9259bb532fe73a0e88741",
+        "url": "https://www.gutenberg.org/ebooks/29887.html.images#id_17940205"
+      },
+      "blocks": [
+        0,
+        91
+      ],
+      "startsWith": "Rapport sur les principes de morale politique qui doivent guider la Convention nationale d",
+      "endsWith": "ons de développer seront proclamés, en votre nom, au dedans et au dehors de la République.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/robespierre-political-morality-1794.html",
+  "sourceContextChars": 600,
+  "postEdits": {}
+}

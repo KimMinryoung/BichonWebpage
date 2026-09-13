@@ -1,0 +1,24 @@
+{
+  "id": "gouges-rights-of-woman-1791",
+  "model": "deepseek-flash",
+  "counts": {
+    "sourceBlocks": 116,
+    "translatedBlocks": 116,
+    "tables": 0,
+    "notes": 4,
+    "quotes": 0
+  },
+  "corrections": [
+    {
+      "block": 8,
+      "before": "여성의 권리라는 대의의 비상을 무겁게 하고",
+      "after": "여성의 권리 신장에 힘을 실어 주고"
+    },
+    {
+      "block": 103,
+      "before": "도청 재판소",
+      "after": "데파르트망 재판소"
+    }
+  ],
+  "scope": "All source blocks present; table vocabulary and cells checked; notes and quotation boundaries restored; flagged terms and key passages checked against the source. Not a professional line-by-line copyedit."
+}

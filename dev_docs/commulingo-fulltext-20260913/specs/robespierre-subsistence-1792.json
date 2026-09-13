@@ -1,0 +1,54 @@
+{
+  "id": "robespierre-subsistence-1792",
+  "title": "로베스피에르, 생필품에 관한 의견",
+  "byline": "막시밀리앵 로베스피에르",
+  "bylineNote": "Robespierre, Opinion on Subsistence",
+  "sourceLang": "fr",
+  "headnote": [
+    "1792년 12월 2일 국민공회에서 한 연설의 본문 전체다. 재산과 상업을 폐지한다는 주장과 생존권을 보장하기 위해 상업을 규제한다는 주장을 구별해 읽어야 한다."
+  ],
+  "bibliography": [
+    "Maximilien Robespierre, Opinion sur les subsistances, 2 décembre 1792. 프랑스어 원문 전문.",
+    "https://fr.wikisource.org/wiki/Opinion_sur_les_subsistances",
+    "Wikisource 본문의 현대 괄호 삽입 «du libre marché»는 별도 재록본과 대조해 제외했고 명백한 전사 오자를 바로잡았다. 후대 편집 주석은 저자 본문에서 제외했다.",
+    "대조: https://www.xn--lecanardrpublicain-jwb.net/spip.php?article646",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "subsistence-full",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/subsistence-full-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "e0766b76ad3b818a3b598c165cf1e549b0e9f55ca2e2fbd5e535974316bad41c",
+        "url": "https://fr.wikisource.org/wiki/Opinion_sur_les_subsistances"
+      },
+      "blocks": [
+        0,
+        49
+      ],
+      "startsWith": "Parler aux représentants du peuple des moyens de pourvoir à sa subsistance, ce n’est pas s",
+      "endsWith": "et des passions des hommes puissants, contre les droits et contre les besoins des faibles.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/robespierre-subsistence-1792.html",
+  "sourceContextChars": 600,
+  "postEdits": {}
+}

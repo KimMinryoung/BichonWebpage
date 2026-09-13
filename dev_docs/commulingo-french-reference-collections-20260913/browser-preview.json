@@ -1,0 +1,263 @@
+{
+  "base": "http://127.0.0.1:3002",
+  "checks": [
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "",
+      "width": 390,
+      "theme": "dark",
+      "text": 42769,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "",
+      "width": 390,
+      "theme": "dark",
+      "text": 18257,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "",
+      "width": 390,
+      "theme": "dark",
+      "text": 18258,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "",
+      "width": 390,
+      "theme": "dark",
+      "text": 28602,
+      "notes": 0
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "",
+      "width": 390,
+      "theme": "light",
+      "text": 42769,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "",
+      "width": 390,
+      "theme": "light",
+      "text": 18257,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "",
+      "width": 390,
+      "theme": "light",
+      "text": 18258,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "",
+      "width": 390,
+      "theme": "light",
+      "text": 28602,
+      "notes": 0
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "",
+      "width": 1280,
+      "theme": "dark",
+      "text": 42769,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "",
+      "width": 1280,
+      "theme": "dark",
+      "text": 18257,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "",
+      "width": 1280,
+      "theme": "dark",
+      "text": 18258,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "",
+      "width": 1280,
+      "theme": "dark",
+      "text": 28602,
+      "notes": 0
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "",
+      "width": 1280,
+      "theme": "light",
+      "text": 42769,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "",
+      "width": 1280,
+      "theme": "light",
+      "text": 18257,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "",
+      "width": 1280,
+      "theme": "light",
+      "text": 18258,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "",
+      "width": 1280,
+      "theme": "light",
+      "text": 28602,
+      "notes": 0
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "/en",
+      "width": 390,
+      "theme": "dark",
+      "text": 42942,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "/en",
+      "width": 390,
+      "theme": "dark",
+      "text": 18399,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "/en",
+      "width": 390,
+      "theme": "dark",
+      "text": 18420,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "/en",
+      "width": 390,
+      "theme": "dark",
+      "text": 28763,
+      "notes": 0
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "/en",
+      "width": 390,
+      "theme": "light",
+      "text": 42942,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "/en",
+      "width": 390,
+      "theme": "light",
+      "text": 18399,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "/en",
+      "width": 390,
+      "theme": "light",
+      "text": 18420,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "/en",
+      "width": 390,
+      "theme": "light",
+      "text": 28763,
+      "notes": 0
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "dark",
+      "text": 42942,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "dark",
+      "text": 18399,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "dark",
+      "text": 18420,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "dark",
+      "text": 28763,
+      "notes": 0
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "light",
+      "text": 42942,
+      "notes": 0
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "light",
+      "text": 18399,
+      "notes": 4
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "light",
+      "text": 18420,
+      "notes": 0
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "lang": "/en",
+      "width": 1280,
+      "theme": "light",
+      "text": 28763,
+      "notes": 0
+    }
+  ],
+  "redirects": 24,
+  "errors": []
+}

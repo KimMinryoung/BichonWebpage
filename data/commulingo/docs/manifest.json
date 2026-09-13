@@ -4738,233 +4738,6 @@
       "addedAt": "2026-09-09"
     },
     {
-      "id": "france-abolition-monarchy-1792",
-      "file": "france-abolition-monarchy-1792.html",
-      "docLang": "ko",
-      "date": "1792-09-21",
-      "title": {
-        "ko": "국민공회의 왕정 폐지 결의 (1792년 9월 21일)",
-        "en": "National Convention decree abolishing monarchy (21 September 1792)"
-      },
-      "description": {
-        "ko": "국민공회의 왕정 폐지 결의 전문이다. 왕정 폐지는 1792년 9월 21일 의결되었으며, 채택한 엘리제궁 전사본은 표제를 9월 21~22일 법령으로 적고 있다. 두 날짜 표기를 구별해 보존한다.",
-        "en": "The complete resolution abolishing monarchy, adopted on 21 September 1792. The selected French transcription labels it a decree of 21–22 September."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "번역 저본: https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793 번역: CommuLingo, 원문 언어 fr. 문단·조항 대조를 거친 한국어 번역. 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "constitutional-monarchy",
-        "republic",
-        "national-convention"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『국민공회의 왕정 폐지 결의 (1792년 9월 21일)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "france-constitution-1791",
-      "file": "france-constitution-1791.html",
-      "docLang": "ko",
-      "date": "1791-09-03",
-      "title": {
-        "ko": "프랑스 헌법 (1791)",
-        "en": "French Constitution (1791)"
-      },
-      "description": {
-        "ko": "1791년 9월 3일 헌법의 프랑스어 본문의 한국어 번역이다. 국민의 주권과 대표제를 선언하면서도 왕에게 행정권을 위임한 체제를 규정한다. 서두에서 별도 문서로 연결하는 1789년 권리 선언은 별도의 번역 문헌으로 제공한다.",
-        "en": "Korean translation of the Constitution of 3 September 1791, including its provisions on national sovereignty, the king and active citizenship. The Declaration of 1789 is available separately."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "번역 저본: https://www.elysee.fr/la-presidence/la-constitution-du-3-septembre-1791 번역: CommuLingo, 원문 언어 fr. 문단·조항 대조를 거친 한국어 번역. 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "constitutional-monarchy",
-        "national-sovereignty",
-        "active-citizen-1791"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『프랑스 헌법 (1791)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "france-constitution-1793",
-      "file": "france-constitution-1793.html",
-      "docLang": "ko",
-      "date": "1793-06-24",
-      "title": {
-        "ko": "프랑스 헌법과 권리 선언 (1793)",
-        "en": "French Constitution and Declaration of Rights (1793)"
-      },
-      "description": {
-        "ko": "1793년 6월 24일의 권리 선언과 헌법이다. 이 헌법은 승인되었지만 시행되지 않았다. 아래 권리와 제도 규정은 그 법문이며 실제 시행 실적을 뜻하지 않는다.",
-        "en": "Korean translation of the 35-article Declaration of Rights and 124-article Constitution of 24 June 1793. The constitution was approved but did not enter into operation."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "번역 저본: https://www.elysee.fr/la-presidence/la-constitution-du-24-juin-1793 번역: CommuLingo, 원문 언어 fr. 문단·조항 대조를 거친 한국어 번역. 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "republic",
-        "national-sovereignty",
-        "national-convention"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『프랑스 헌법과 권리 선언 (1793)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "france-law-of-suspects-1793",
-      "file": "france-law-of-suspects-1793.html",
-      "docLang": "ko",
-      "date": "1793-09-17",
-      "title": {
-        "ko": "혐의자법 (1793년 9월 17일)",
-        "en": "Law of Suspects (17 September 1793)"
-      },
-      "description": {
-        "ko": "1793년 9월 17일 국민공회의 혐의자 구금 법령 전문이다. 혁명재판소 창설법이 아니라 혐의자의 범주와 구금·보고 절차를 규정한 문서다.",
-        "en": "Korean translation of all ten articles of the decree of 17 September 1793, defining suspects and procedures for their detention."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "채택: 1793년 9월 17일. 번역 저본: Rondonneau, Code militaire, 1793, 권4, 336~338쪽의 Wikisource 전사. https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "law-of-suspects-1793",
-        "national-convention"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『혐의자법 (1793년 9월 17일)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "france-rights-declaration-1789",
-      "file": "france-rights-declaration-1789.html",
-      "docLang": "ko",
-      "date": "1789-08-26",
-      "title": {
-        "ko": "인간과 시민의 권리 선언 (1789)",
-        "en": "Declaration of the Rights of Man and of the Citizen (1789)"
-      },
-      "description": {
-        "ko": "1789년 인간과 시민의 권리 선언의 서문과 17개 조항이다. 엘리제궁의 프랑스어 전사본에서 현대의 역사 소개를 제외하고 선언 본문을 옮겼다.",
-        "en": "Korean translation of the preamble and all 17 articles of the Declaration of 1789, from the French text published by the Élysée."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "번역 저본: https://www.elysee.fr/la-presidence/la-declaration-des-droits-de-l-homme-et-du-citoyen 번역: CommuLingo, 원문 언어 fr. 문단·조항 대조를 거친 한국어 번역. 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "national-sovereignty",
-        "liberalism"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『인간과 시민의 권리 선언 (1789)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "gouges-rights-of-woman-1791",
-      "file": "gouges-rights-of-woman-1791.html",
-      "docLang": "ko",
-      "date": "1791",
-      "title": {
-        "ko": "여성과 여성 시민의 권리 선언 (1791), 도입문·서문·17개 조항 발췌",
-        "en": "Declaration of the Rights of Woman and of the Female Citizen (1791) (selected text)"
-      },
-      "description": {
-        "ko": "1791년 「여성과 여성 시민의 권리 선언」 가운데 프랑스 국민의회 전사본이 제공하는 도입문·서문·17개 조항이다. 의회가 제정한 법률이 아니라 여성의 권리를 요구한 저술이다. 이 전사본에 없는 후기와 여왕에게 바치는 글은 수록하지 않았다.",
-        "en": "Korean translation of Gouges’s introduction, preamble and 17 articles as reproduced by the French National Assembly. The postamble and dedication are not included."
-      },
-      "kind": {
-        "ko": "저작·연설",
-        "en": "Writings & speeches"
-      },
-      "source": "발표: 1791년. 번역 범위: 국민의회 전사본의 도입문·서문·17개 조항. 후기 미수록. 번역 저본: https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-des-droits-de-la-femme-et-de-la-citoyenne-olympe-de-gouges 한국어 번역: CommuLingo (2026).",
-      "people": [
-        "olympe-de-gouges"
-      ],
-      "terms": [
-        "national-sovereignty",
-        "liberalism"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『여성과 여성 시민의 권리 선언 (1791), 도입문·서문·17개 조항 발췌』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
       "id": "iwma-general-rules-1871",
       "file": "iwma-general-rules-1871.html",
       "docLang": "ko",
@@ -5003,60 +4776,23 @@
       ]
     },
     {
-      "id": "france-slavery-abolition-decree-1794",
-      "file": "france-slavery-abolition-decree-1794.html",
-      "docLang": "ko",
-      "date": "1794-02-04",
-      "title": {
-        "ko": "노예제 폐지 법령 (1794년 2월 4일)",
-        "en": "Decree abolishing slavery (4 February 1794)"
-      },
-      "description": {
-        "ko": "1794년 2월 4일 국민공회가 채택한 노예제 폐지 결의의 두 문단이다. 『의회기록』에 수록된 결의문을 옮겼다. 법령의 선언은 모든 식민지에서 실제로 같은 시기에 집행되었다는 뜻이 아니다.",
-        "en": "Korean translation of the two-paragraph resolution abolishing slavery in the colonies, adopted on 4 February 1794, from Archives parlementaires, volume 84, p. 284."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "채택: 1794년 2월 4일(공화력 2년 플뤼비오즈 16일). 번역 저본: Archives parlementaires, 제84권(1962), 284쪽. 프랑스어 결의문 두 문단. https://www.persee.fr/doc/arcpa_0000-0000_1962_num_84_1_34717_t1_0284_0000_5 한국어 번역: CommuLingo. 의회기록의 편집주 번호는 제외했다. 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "national-convention",
-        "committee-of-public-safety"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『노예제 폐지 법령 (1794년 2월 4일)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
       "id": "bakunin-statism-anarchy-excerpts-1873",
       "file": "bakunin-statism-anarchy-excerpts-1873.html",
       "docLang": "ko",
       "date": "1873",
       "title": {
-        "ko": "바쿠닌, 국가성과 아나키 (1873, 발췌)",
-        "en": "Bakunin, Statism and Anarchy (1873, excerpts)"
+        "ko": "바쿠닌, 국가성과 아나키",
+        "en": "Bakunin, Statism and Anarchy"
       },
       "description": {
-        "ko": "『국가성과 아나키』에서 인민국가와 노동자 지배계급론을 비판하는 연속 대목을 발췌했다. 아래에서 마르크스주의자들의 견해로 제시하는 문장은 바쿠닌의 서술이며, 마르크스의 저작에서 직접 가져온 인용문으로 간주해서는 안 된다.",
-        "en": "A continuous Korean-translated extract from the Russian text of Statism and Anarchy (1873), on the people’s state, representation and proletarian rule. Claims attributed to Marxists are Bakunin’s presentation."
+        "ko": "1873년 저작의 본문과 부록 A·B, 채택 전사본의 저자 주석을 모두 옮겼다. 마르크스주의자들의 견해로 소개하는 주장은 바쿠닌의 서술이다.",
+        "en": "Complete Korean translation of the main text, Appendices A and B, and ten source notes, translated from Russian with DeepSeek Flash."
       },
       "kind": {
         "ko": "저작·연설",
         "en": "Writings & speeches"
       },
-      "source": "집필·발표: 1873년. 번역 저본: https://ru.wikisource.org/wiki/Государственность_и_анархия_(Бакунин) 범위: «Мы уже несколько раз высказывали…»로 시작하는 대목부터 «…организациею рабочих масс снизу вверх»까지. 앞뒤 본문은 생략. 러시아어 전사본 선택 범위를 보존했다. 앞 대목의 라살 관련 문단은 발췌에서 제외했다. 선집 범위는 인민국가 비판에서 시작한다. 한국어 번역: CommuLingo (2026).",
+      "source": "Михаил Бакунин, Государственность и анархия. Борьба двух партий в Интернациональном обществе рабочих (1873). 원문 언어: 러시아어. https://ru.anarchistlibraries.net/library/mihail-bakunin-gosudarstvennost-i-anarhiya 본문과 부록 A, 부록 B 「취리히 슬라브인 지부의 강령」 및 원문에 수록된 주석 10개. Wikisource의 1919년판 본문과 시작·끝 및 인민국가 비판 대목을 대조했다. 한국어 전문 번역: CommuLingo, DeepSeek Flash (2026).",
       "people": [
         "mikhail-bakunin"
       ],
@@ -5067,83 +4803,7 @@
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
-          "『바쿠닌, 국가성과 아나키 (1873, 발췌)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "france-law-22-prairial-1794",
-      "file": "france-law-22-prairial-1794.html",
-      "docLang": "ko",
-      "date": "1794-06-10",
-      "title": {
-        "ko": "프레리알 22일법 (1794년 6월 10일) — 발췌",
-        "en": "Law of 22 Prairial (10 June 1794) (selected text)"
-      },
-      "description": {
-        "ko": "공화력 2년 프레리알 22일(1794년 6월 10일) 혁명재판소 법령의 조항을 옮겼다. 이 재록본은 제3조에서 예고한 임명자 명단을 싣지 않으므로 명단이 생략된 판본임을 밝힌다. 후대 법령집의 평가와 해설은 제외했다.",
-        "en": "Korean translation of Articles 1–20 in the selected French reproduction. The appointment list in Article 3 and the report-attachment clause found as Article 21 in another reproduction are omitted."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "채택: 1794년 6월 10일. 번역 저본: Le droit criminel, Quelques lois marquantes du droit de la Révolution française, deuxième partie. Recueil Sirey chronologique 재록. https://ledroitcriminel.fr/la_legislation_criminelle/anciens_textes/lois_penales_revolution_francaise/lois_penales_revolution_francaise_2.htm 범위: 제1~20조. 제3조 임명자 명단 미수록. 후대 편집주 미수록. 조항 번호 대조: https://www.cercle-du-barreau.org/media/02/00/309329450.pdf, 3쪽. 전사본에서 15로 잘못 적은 증인 심문 조항은 제13조로 바로잡았다. 대조본의 제21조(보고서 첨부)는 채택 저본에 없어 이 발췌에 수록하지 않았다. 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "law-of-22-prairial",
-        "national-convention"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『프레리알 22일법 (1794년 6월 10일) — 발췌』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "marechal-manifesto-equals-1796",
-      "file": "marechal-manifesto-equals-1796.html",
-      "docLang": "ko",
-      "date": "1796",
-      "title": {
-        "ko": "실뱅 마레샬, 평등파 선언 (1796)",
-        "en": "Sylvain Maréchal, Manifesto of the Equals (1796)"
-      },
-      "description": {
-        "ko": "1796년에 집필된 평등파 선언이다. 이 번역은 1873년 재수록본의 프랑스어 전사에 따른다. 집필자는 마레샬이며, 선언 전체가 평등파 지도부의 합의나 실제 시행된 정책이었다는 뜻은 아니다.",
-        "en": "Korean translation of Maréchal’s Manifesto of the Equals, written in 1796, from a French reproduction published in 1873. Its authorship and status are distinguished from an adopted governmental programme."
-      },
-      "kind": {
-        "ko": "저작·연설",
-        "en": "Writings & speeches"
-      },
-      "source": "집필: 1796년. 번역 저본: Wikisource, Questions sociales, étude historique et critique du communisme, Paris, imprimerie de J. Claye, 1873, 79~84쪽. https://fr.wikisource.org/wiki/Le_Manifeste_des_%C3%89gaux 저본 표제·제사·본문을 옮겼다. 원문 페이지 전사와 선택 범위를 별도 보존했다. 한국어 번역: CommuLingo (2026).",
-      "people": [
-        "sylvain-marechal",
-        "gracchus-babeuf"
-      ],
-      "terms": [
-        "conspiracy-of-equals"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『실뱅 마레샬, 평등파 선언 (1796)』"
+          "『바쿠닌, 국가성과 아나키』"
         ],
         "en": []
       },
@@ -5159,18 +4819,18 @@
       "docLang": "ko",
       "date": "1874",
       "title": {
-        "ko": "마르크스, 바쿠닌의 국가성과 아나키에 대한 발췌 노트 (1874~1875)",
-        "en": "Marx, Notes on Bakunin’s Statism and Anarchy (1874–1875) (selected text)"
+        "ko": "마르크스, 바쿠닌의 국가성과 아나키 독서 노트",
+        "en": "Marx, Notes on Bakunin’s Statism and Anarchy"
       },
       "description": {
-        "ko": "바쿠닌의 『국가성과 아나키』를 읽으며 남긴 발췌와 논평 가운데 인민국가·노동자 지배계급·선거·이행기를 다루는 대목이다. 독립된 발표 논문이나 가상 토론이 아니라 실제 독서 노트의 발췌다. 인용된 바쿠닌의 문구와 마르크스의 응답을 구분해 읽어야 한다.",
-        "en": "An extract from Marx’s actual reading notes on Bakunin, written in 1874–early 1875. Quoted passages from Bakunin and Marx’s comments are visually distinguished."
+        "ko": "1874~1875년에 남긴 독서 노트 전체다. 제목의 발췌는 마르크스가 바쿠닌을 발췌하며 썼다는 뜻이며, 이 번역에서 일부만 골랐다는 뜻이 아니다. 들여쓴 바쿠닌 인용과 마르크스의 논평을 구별한다.",
+        "en": "Korean translation of Marx’s complete reading notes in the cited German transcription. Bakunin quotations are distinguished from Marx’s comments. Translated with DeepSeek Flash."
       },
       "kind": {
         "ko": "저작·연설",
         "en": "Writings & speeches"
       },
-      "source": "집필: 1874년~1875년 초. 사후 발표. 번역 저본: Marx-Engels-Werke, 제18권 「Konspekt von Bakunins Buch Staatlichkeit und Anarchie」 독일어 전사의 MLClassic 재현본. https://mlclassic.netlify.app/mew/18/me18-597 범위: «Wir haben bereits unsren tiefen Widerwillen…»부터 «…den Tag der allgemeinen Liquidation – des jüngsten Gerichts – abwarten soll»까지. 앞뒤 생략. 후대 각주 표지는 제외했다. 저본의 꺾쇠는 러시아어 인용의 독일어 편집 번역 부분을 뜻한다. 들여쓴 인용문은 마르크스가 발췌한 바쿠닌의 문구이고, 그 사이의 본문은 마르크스의 논평이다. 인용문 안에도 마르크스가 덧붙인 괄호 메모가 있다. 한국어 번역: CommuLingo (2026).",
+      "source": "Karl Marx, Konspekt von Bakunins Buch Staatlichkeit und Anarchie. Marx/Engels: Werke, Bd. 18, Berlin: Dietz Verlag 1962, S. 597–642. https://mlclassic.netlify.app/mew/18/me18-597 독일어 저작집 전사의 노트 본문 전체. 꺾쇠는 원문의 러시아어 인용을 저작집 편집자가 독일어로 옮긴 부분이다. 후대 Textvarianten과 편집 서문은 본문과 구별하여 제외했다. 한국어 전문 번역: CommuLingo, DeepSeek Flash (2026).",
       "people": [
         "karl-marx",
         "mikhail-bakunin"
@@ -5183,159 +4843,7 @@
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
-          "『마르크스, 바쿠닌의 국가성과 아나키에 대한 발췌 노트 (1874~1875)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "france-general-maximum-law-1793",
-      "file": "france-general-maximum-law-1793.html",
-      "docLang": "ko",
-      "date": "1793-09-29",
-      "title": {
-        "ko": "일반최고가격법 (1793년 9월 29일)",
-        "en": "Law of the General Maximum (29 September 1793)"
-      },
-      "description": {
-        "ko": "1793년 9월 29일 생필품과 상품의 최고가격을 정한 법령의 20개 조항이다. 상품 가격뿐 아니라 제8조의 임금 상한과 제9조의 노동 징발 규정도 함께 수록했다. 일부 조항만 보고 가격 통제의 대상을 단정하지 않도록 전문을 옮겼다.",
-        "en": "Korean translation of all twenty articles of the General Maximum law of 29 September 1793, including price ceilings, wage ceilings, requisition and enforcement provisions."
-      },
-      "kind": {
-        "ko": "헌법·법령·명령",
-        "en": "Constitutions, laws & orders"
-      },
-      "source": "채택: 1793년 9월 29일. 번역 저본: Archives parlementaires, 제75권(1909), 321~323쪽. 프랑스어. https://www.persee.fr/doc/arcpa_0000-0000_1909_num_75_1_45160_t1_0321_0000_7 전문 20개 조항. 원문 페이지 이미지와 OCR을 대조하여 줄바꿈·오자를 정리했다. 인쇄본의 조항 참조 번호는 보존했다. 편집자 각주와 다른 안건은 제외했다. 제14·18조의 fers는 쇠사슬을 채우는 노역형으로 옮겼다. procureur와 syndic은 당시 지방행정의 공익 대표 직책이며, 오늘날의 검찰 조직과 동일한 제도를 뜻하지 않는다. 한국어 번역: CommuLingo (2026).",
-      "people": [],
-      "terms": [
-        "general-maximum-1793",
-        "national-convention"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『일반최고가격법 (1793년 9월 29일)』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "lenin-state-revolution-chapter-5",
-      "file": "lenin-state-revolution-chapter-5.html",
-      "docLang": "ko",
-      "date": "1917",
-      "title": {
-        "ko": "레닌, 국가와 혁명 제5장 전문",
-        "en": "Lenin, The State and Revolution, Chapter V (complete chapter)"
-      },
-      "description": {
-        "ko": "『국가와 혁명』 제5장 「국가 사멸의 경제적 기초」 전문이다. 1917년에 집필한 글을 러시아어 저작집 전사에 따라 옮겼다. 자본주의에서 공산주의로의 이행기, 공산주의의 첫 단계와 높은 단계를 구분하는 논증을 읽을 수 있다.",
-        "en": "Korean translation of the complete fifth chapter of The State and Revolution, written in 1917, from the Russian collected-works transcription. Distinguishes the transition period and the lower and higher phases of communism."
-      },
-      "kind": {
-        "ko": "저작·연설",
-        "en": "Writings & speeches"
-      },
-      "source": "집필: 1917년 8~9월. 번역 저본: В. И. Ленин, Полное собрание сочинений, 제5판, 모스크바, 1969, 제33권, 83~102쪽의 Wikisource 전사. 저작집은 원고를 1919년 책과 대조했다고 밝힌다. 원문 언어: 러시아어. 제5장 전체. 웹 전사본 상단의 초판 발행일 표기는 채택하지 않았다. https://ru.wikisource.org/wiki/Государство_и_революция_(Ленин)/Глава_V 한국어 번역: CommuLingo (2026).",
-      "people": [
-        "lenin"
-      ],
-      "terms": [
-        "dictatorship-of-the-proletariat"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『레닌, 국가와 혁명 제5장 전문』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "robespierre-political-morality-1794",
-      "file": "robespierre-political-morality-1794.html",
-      "docLang": "ko",
-      "date": "1794-02-05",
-      "title": {
-        "ko": "로베스피에르, 정치도덕의 원리에 관한 보고 (1794) — 발췌",
-        "en": "Robespierre, Report on the Principles of Political Morality (1794) (selected text)"
-      },
-      "description": {
-        "ko": "1794년 2월 5일 정치적 도덕의 원칙에 관한 보고를 베르모렐의 1866년 선집 수록 범위대로 옮겼다. 편집자는 여러 부분을 줄였다고 밝혔으므로 연설 전문이 아니라 발췌본이다. 뒤에 붙인 1793년 12월 25일의 다른 연설 인용은 수록하지 않았다.",
-        "en": "Korean translation of the report of 5 February 1794 as abridged in Vermorel’s 1866 anthology. The editor’s quotation of a separate report of 25 December 1793 is excluded."
-      },
-      "kind": {
-        "ko": "저작·연설",
-        "en": "Writings & speeches"
-      },
-      "source": "보고: 1794년 2월 5일(공화력 2년 플뤼비오즈 17일). 번역 저본: Auguste Vermorel 편, Œuvres de Robespierre, Paris: F. Cournol, 1866, 294~308쪽의 Wikisource 전사. https://fr.wikisource.org/wiki/%C5%92uvres_de_Robespierre/Sur_les_principes_de_morale_politique 범위: 선집의 보고 본문. 선집 편집주와 그 안에 인용된 다른 보고는 제외. 한국어 번역: CommuLingo (2026).",
-      "people": [
-        "maximilien-robespierre"
-      ],
-      "terms": [
-        "committee-of-public-safety",
-        "national-convention"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『로베스피에르, 정치도덕의 원리에 관한 보고 (1794) — 발췌』"
-        ],
-        "en": []
-      },
-      "noAutoLink": [
-        "임시정부",
-        "국민의회",
-        "중앙위원회"
-      ]
-    },
-    {
-      "id": "robespierre-subsistence-1792",
-      "file": "robespierre-subsistence-1792.html",
-      "docLang": "ko",
-      "date": "1792-12-02",
-      "title": {
-        "ko": "로베스피에르, 생필품에 관한 연설 (1792) (발췌)",
-        "en": "Robespierre, Speech on Subsistence (1792) (selected text)"
-      },
-      "description": {
-        "ko": "1792년 12월 2일 생필품에 관한 연설에서 생존권·재산권·유통 규제를 논한 중후반부와 결론을 연속 발췌했다. 첫 문장은 「예컨대 상식은 이러한 진리를 가리킨다」에 해당하며 연설 앞부분은 생략했다. 원문 전사의 앞부분에 원사료 여부가 확인되지 않은 괄호 삽입이 있어, 그 문장을 포함하지 않는 범위를 채택했다.",
-        "en": "A continuous extract from the middle of Robespierre’s speech of 2 December 1792 through its conclusion, discussing subsistence, property and circulation. The opening and later editorial notes are omitted."
-      },
-      "kind": {
-        "ko": "저작·연설",
-        "en": "Writings & speeches"
-      },
-      "source": "연설: 1792년 12월 2일. 번역 저본: Wikisource 「Opinion sur les subsistances」 프랑스어 전사. 저본 주는 Les Lettres à ses commettans 제9호, 391~409쪽을 재현했다고 밝힌다. https://fr.wikisource.org/wiki/Opinion_sur_les_subsistances 범위: «Le bon sens, par exemple…»부터 연설 결론까지. 앞부분 및 후대 편집주는 제외. 발췌본. 한국어 번역: CommuLingo (2026).",
-      "people": [
-        "maximilien-robespierre"
-      ],
-      "terms": [
-        "general-maximum-1793"
-      ],
-      "events": [],
-      "addedAt": "2026-09-13",
-      "aliases": {
-        "ko": [
-          "『로베스피에르, 생필품에 관한 연설 (1792) (발췌)』"
+          "『마르크스, 바쿠닌의 국가성과 아나키 독서 노트』"
         ],
         "en": []
       },
@@ -5351,18 +4859,18 @@
       "docLang": "ko",
       "date": "1899",
       "title": {
-        "ko": "베른슈타인, 사회주의의 전제와 사회민주주의의 과제 (1899, 발췌)",
-        "en": "Bernstein, The Preconditions of Socialism and the Tasks of Social Democracy (1899, excerpts)"
+        "ko": "베른슈타인, 사회주의의 전제와 사회민주주의의 과제",
+        "en": "Bernstein, The Preconditions of Socialism and the Tasks of Social Democracy"
       },
       "description": {
-        "ko": "『사회주의의 전제와 사회민주주의의 과제』 제4장 c절 「민주주의와 사회주의」를 발췌했다. 영어판의 장 구분과 혼동하지 않도록 독일어 저본의 절을 명시한다.",
-        "en": "Korean translation of Chapter IV(c), “Democracy and Socialism”, of Bernstein’s 1899 work, using the original German division into chapters. The separate endnotes are not included."
+        "ko": "두 서문, 네 장, 결론과 저자 각주를 포함한 독일어 저본 전체를 옮겼다. 초출은 1899년이며, 채택 전사본에는 후속 인쇄본의 서문도 들어 있다.",
+        "en": "Complete Korean translation of both prefaces, four chapters, conclusion and author’s notes in the German transcription, including the tables. Translated with DeepSeek Flash."
       },
       "kind": {
         "ko": "저작·연설",
         "en": "Writings & speeches"
       },
-      "source": "발표: 1899년. 번역 저본: https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/kap4.html 원문 언어: 독일어. 제4장 c절 본문 전체. 별도 말미에 모인 주석은 이 발췌에 포함하지 않았다. 발췌하지 않은 말미 각주로 향하는 번호 표지는 본문에서 제거했다. 민주주의를 사회주의의 수단이자 실현 형태로 보는 논증은 저자의 주장이다. 한국어 번역: CommuLingo (2026).",
+      "source": "Eduard Bernstein, Die Voraussetzungen des Sozialismus und die Aufgaben der Sozialdemokratie. MIA 독일어 전사본. 원문 언어: 독일어. https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/index.html 원문의 통계표와 저자 주석을 포함한다. MIA가 추가한 웹 링크 안내는 제외했다. 한국어 전문 번역: CommuLingo, DeepSeek Flash (2026).",
       "people": [
         "eduard-bernstein"
       ],
@@ -5373,7 +4881,7 @@
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
-          "『베른슈타인, 사회주의의 전제와 사회민주주의의 과제 (1899, 발췌)』"
+          "『베른슈타인, 사회주의의 전제와 사회민주주의의 과제』"
         ],
         "en": []
       },
@@ -5459,6 +4967,286 @@
         "국민의회",
         "중앙위원회"
       ]
+    },
+    {
+      "id": "owen-new-view-society",
+      "file": "owen-new-view-society.html",
+      "docLang": "ko",
+      "date": "1813",
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "people": [
+        "robert-owen"
+      ],
+      "terms": [
+        "utopian-socialism"
+      ],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회"
+      ],
+      "title": {
+        "ko": "로버트 오언, 사회에 관한 새로운 견해",
+        "en": "Robert Owen, A New View of Society"
+      },
+      "description": {
+        "ko": "1816년 판본으로 전하는 헌정·서문과 네 에세이를 옮겼다. 에세이들의 초출 시기와 모아 낸 판본의 연도는 구별해야 한다.",
+        "en": "Complete Korean translation of the dedications, introductory material and four essays of the 1816 edition, translated with DeepSeek Flash."
+      },
+      "source": "번역 저본: 아래 원어 전사본. 원문 HTML·SHA-256·절별 시작과 끝을 번역 스펙에 고정했다. https://www.marxists.org/reference/subject/economics/owen/society/intro.htm https://www.marxists.org/reference/subject/economics/owen/society/ch01.htm https://www.marxists.org/reference/subject/economics/owen/society/ch02.htm https://www.marxists.org/reference/subject/economics/owen/society/ch03.htm https://www.marxists.org/reference/subject/economics/owen/society/ch04.htm 한국어 전문 번역: CommuLingo, DeepSeek Flash (2026).",
+      "aliases": {
+        "ko": [
+          "『로버트 오언, 사회에 관한 새로운 견해』"
+        ],
+        "en": []
+      }
+    },
+    {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "file": "france-constitutions-and-republic-1791-1793.html",
+      "docLang": "ko",
+      "date": "1791-09-03",
+      "title": {
+        "ko": "프랑스 혁명 문헌집: 헌법과 공화국",
+        "en": "French Revolution: Constitutions and the Republic"
+      },
+      "description": {
+        "ko": "1791년 헌법, 1792년 왕정 폐지 결의, 1793년 헌법과 권리 선언을 연대순으로 묶었다. 각 문헌의 전문과 개별 서지를 수록한다.",
+        "en": "The Constitution of 1791, the abolition of monarchy in 1792, and the Constitution and Declaration of Rights of 1793, with complete texts and individual sources."
+      },
+      "kind": {
+        "ko": "헌법·법령·명령",
+        "en": "Constitutions, laws & orders"
+      },
+      "source": "문헌 3편의 전문 번역을 주제별로 묶었다. 각 문헌의 번역 저본·발표 시기·번역 표시는 본문 앞의 개별 서지에 수록했다.",
+      "people": [],
+      "terms": [
+        "constitutional-monarchy",
+        "national-sovereignty",
+        "active-citizen-1791",
+        "republic",
+        "national-convention"
+      ],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "『프랑스 헌법 (1791)』",
+          "『국민공회의 왕정 폐지 결의 (1792년 9월 21일)』",
+          "『프랑스 헌법과 권리 선언 (1793)』"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회"
+      ],
+      "members": [
+        "france-constitution-1791",
+        "france-abolition-monarchy-1792",
+        "france-constitution-1793"
+      ]
+    },
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "file": "france-rights-and-emancipation-1789-1794.html",
+      "docLang": "ko",
+      "date": "1789-08-26",
+      "title": {
+        "ko": "프랑스 혁명 문헌집: 시민권과 해방",
+        "en": "French Revolution: Rights and Emancipation"
+      },
+      "description": {
+        "ko": "1789년 권리 선언, 구주의 1791년 여성 권리 선언 소책자, 1794년 노예제 폐지 법령의 전문을 묶었다. 제정된 선언·법령과 구주의 저술을 구별해 수록한다.",
+        "en": "The Declaration of Rights of 1789, Gouges’s complete 1791 pamphlet, and the decree abolishing slavery in 1794. Enacted texts are distinguished from Gouges’s writing."
+      },
+      "kind": {
+        "ko": "헌법·법령·명령",
+        "en": "Constitutions, laws & orders"
+      },
+      "source": "문헌 3편의 전문 번역을 주제별로 묶었다. 각 문헌의 번역 저본·발표 시기·번역 표시는 본문 앞의 개별 서지에 수록했다.",
+      "people": [
+        "olympe-de-gouges"
+      ],
+      "terms": [
+        "national-sovereignty",
+        "liberalism",
+        "national-convention",
+        "committee-of-public-safety"
+      ],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "『인간과 시민의 권리 선언 (1789)』",
+          "『구주, 여성과 여성 시민의 권리 선언』",
+          "『노예제 폐지 법령 (1794년 2월 4일)』"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회"
+      ],
+      "members": [
+        "france-rights-declaration-1789",
+        "gouges-rights-of-woman-1791",
+        "france-slavery-abolition-decree-1794"
+      ]
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "file": "france-subsistence-and-equality-1792-1796.html",
+      "docLang": "ko",
+      "date": "1792-12-02",
+      "title": {
+        "ko": "프랑스 혁명 문헌집: 생존권과 평등",
+        "en": "French Revolution: Subsistence and Equality"
+      },
+      "description": {
+        "ko": "로베스피에르의 생필품 연설, 일반최고가격법, 마레샬의 평등파 선언을 전문으로 묶었다. 연설·제정 법령·정치적 선언의 성격과 각 저본을 문헌마다 명시한다.",
+        "en": "Complete texts of Robespierre’s speech on subsistence, the General Maximum law, and Maréchal’s Manifesto of the Equals, preserving each text’s distinct status and source."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "문헌 3편의 전문 번역을 주제별로 묶었다. 각 문헌의 번역 저본·발표 시기·번역 표시는 본문 앞의 개별 서지에 수록했다.",
+      "people": [
+        "maximilien-robespierre",
+        "sylvain-marechal",
+        "gracchus-babeuf"
+      ],
+      "terms": [
+        "general-maximum-1793",
+        "national-convention",
+        "conspiracy-of-equals"
+      ],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "『로베스피에르, 생필품에 관한 의견』",
+          "『일반최고가격법 (1793년 9월 29일)』",
+          "『실뱅 마레샬, 평등파 선언 (1796)』"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회"
+      ],
+      "members": [
+        "robespierre-subsistence-1792",
+        "france-general-maximum-law-1793",
+        "marechal-manifesto-equals-1796"
+      ]
+    },
+    {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "file": "france-revolutionary-government-and-justice-1793-1794.html",
+      "docLang": "ko",
+      "date": "1793-09-17",
+      "title": {
+        "ko": "프랑스 혁명 문헌집: 혁명정부와 재판",
+        "en": "French Revolution: Revolutionary Government and Justice"
+      },
+      "description": {
+        "ko": "혐의자법, 로베스피에르의 정치적 도덕 보고, 프레리알 22일 법령을 전문으로 묶었다. 법령의 규정과 로베스피에르의 정당화 논리를 각 문헌의 제목·해제·출처로 구분한다.",
+        "en": "Complete texts of the Law of Suspects, Robespierre’s report on political morality, and the decree of 22 Prairial, distinguishing legislation from the report’s arguments."
+      },
+      "kind": {
+        "ko": "헌법·법령·명령",
+        "en": "Constitutions, laws & orders"
+      },
+      "source": "문헌 3편의 전문 번역을 주제별로 묶었다. 각 문헌의 번역 저본·발표 시기·번역 표시는 본문 앞의 개별 서지에 수록했다.",
+      "people": [
+        "maximilien-robespierre"
+      ],
+      "terms": [
+        "law-of-suspects-1793",
+        "national-convention",
+        "committee-of-public-safety",
+        "law-of-22-prairial"
+      ],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "『혐의자법 (1793년 9월 17일)』",
+          "『로베스피에르, 정치적 도덕의 원칙에 관한 보고』",
+          "『프레리알 22일 법령』"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회"
+      ],
+      "members": [
+        "france-law-of-suspects-1793",
+        "robespierre-political-morality-1794",
+        "france-law-22-prairial-1794"
+      ]
     }
-  ]
+  ],
+  "redirects": {
+    "france-abolition-monarchy-1792": {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "anchor": "france-abolition-monarchy-1792"
+    },
+    "france-slavery-abolition-decree-1794": {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "anchor": "france-slavery-abolition-decree-1794"
+    },
+    "france-constitution-1793": {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "anchor": "france-constitution-1793"
+    },
+    "robespierre-subsistence-1792": {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "anchor": "robespierre-subsistence-1792"
+    },
+    "france-constitution-1791": {
+      "id": "france-constitutions-and-republic-1791-1793",
+      "anchor": "france-constitution-1791"
+    },
+    "france-general-maximum-law-1793": {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "anchor": "france-general-maximum-law-1793"
+    },
+    "france-law-22-prairial-1794": {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "anchor": "france-law-22-prairial-1794"
+    },
+    "marechal-manifesto-equals-1796": {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "anchor": "marechal-manifesto-equals-1796"
+    },
+    "france-rights-declaration-1789": {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "anchor": "france-rights-declaration-1789"
+    },
+    "france-law-of-suspects-1793": {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "anchor": "france-law-of-suspects-1793"
+    },
+    "gouges-rights-of-woman-1791": {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "anchor": "gouges-rights-of-woman-1791"
+    },
+    "robespierre-political-morality-1794": {
+      "id": "france-revolutionary-government-and-justice-1793-1794",
+      "anchor": "robespierre-political-morality-1794"
+    }
+  }
 }

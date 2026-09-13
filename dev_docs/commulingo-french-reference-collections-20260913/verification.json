@@ -1,0 +1,86 @@
+[
+  {
+    "id": "france-constitution-1791",
+    "collection": "france-constitutions-and-republic-1791-1793",
+    "anchor": "france-constitution-1791",
+    "originalSha256": "858204990870d371a9339a808881cceb55372b5c66e0813cc10e7b5e5eb03063",
+    "textPreserved": true
+  },
+  {
+    "id": "france-abolition-monarchy-1792",
+    "collection": "france-constitutions-and-republic-1791-1793",
+    "anchor": "france-abolition-monarchy-1792",
+    "originalSha256": "926eeadf07daff6925af717d60c9cda9b9a82716f6c5896ba4f523cc7fe5d761",
+    "textPreserved": true
+  },
+  {
+    "id": "france-constitution-1793",
+    "collection": "france-constitutions-and-republic-1791-1793",
+    "anchor": "france-constitution-1793",
+    "originalSha256": "2f15aa2c769c5a4389842fa2e70c59bb98766913576dbeb3a4b01c4399a11073",
+    "textPreserved": true
+  },
+  {
+    "id": "france-rights-declaration-1789",
+    "collection": "france-rights-and-emancipation-1789-1794",
+    "anchor": "france-rights-declaration-1789",
+    "originalSha256": "c6bc4d679274c8fc705155b82058d2d5763cfa85c59727383d3efcac79e80244",
+    "textPreserved": true
+  },
+  {
+    "id": "gouges-rights-of-woman-1791",
+    "collection": "france-rights-and-emancipation-1789-1794",
+    "anchor": "gouges-rights-of-woman-1791",
+    "originalSha256": "d8226a460a5d8ccb4ac79d15cd2933883f5e2066384b3be17743b428cbea1202",
+    "textPreserved": true
+  },
+  {
+    "id": "france-slavery-abolition-decree-1794",
+    "collection": "france-rights-and-emancipation-1789-1794",
+    "anchor": "france-slavery-abolition-decree-1794",
+    "originalSha256": "18572ba4eae511ec45de28146e9a59f0d4b7847b462165b29e008e54db49c3d1",
+    "textPreserved": true
+  },
+  {
+    "id": "robespierre-subsistence-1792",
+    "collection": "france-subsistence-and-equality-1792-1796",
+    "anchor": "robespierre-subsistence-1792",
+    "originalSha256": "49ec1304e230c64bc53ec61ca3a773bf03cea783909d3d774d790e167c769b82",
+    "textPreserved": true
+  },
+  {
+    "id": "france-general-maximum-law-1793",
+    "collection": "france-subsistence-and-equality-1792-1796",
+    "anchor": "france-general-maximum-law-1793",
+    "originalSha256": "fb11d5e3c743ab90ebe86d6cef4d0a7092b40ec0102f8bfff42289f79df10ad2",
+    "textPreserved": true
+  },
+  {
+    "id": "marechal-manifesto-equals-1796",
+    "collection": "france-subsistence-and-equality-1792-1796",
+    "anchor": "marechal-manifesto-equals-1796",
+    "originalSha256": "238b0c7dfa186ac283ab2e7452182e382d574c6e21afbc05202815063fa8a1ab",
+    "textPreserved": true
+  },
+  {
+    "id": "france-law-of-suspects-1793",
+    "collection": "france-revolutionary-government-and-justice-1793-1794",
+    "anchor": "france-law-of-suspects-1793",
+    "originalSha256": "84e14e3c6359a8fe27ac536b8d132f15efe54f4b439821d4ec258278d8fabad5",
+    "textPreserved": true
+  },
+  {
+    "id": "robespierre-political-morality-1794",
+    "collection": "france-revolutionary-government-and-justice-1793-1794",
+    "anchor": "robespierre-political-morality-1794",
+    "originalSha256": "f71a02001738795c19baf8b1158dc87471e41638dada61cd4a3ae4a420003e15",
+    "textPreserved": true
+  },
+  {
+    "id": "france-law-22-prairial-1794",
+    "collection": "france-revolutionary-government-and-justice-1793-1794",
+    "anchor": "france-law-22-prairial-1794",
+    "originalSha256": "c6b68fa1e39eae3822c4f6eebfe11660b4b11201bd713fbeb85019ea665bc30a",
+    "textPreserved": true
+  }
+]

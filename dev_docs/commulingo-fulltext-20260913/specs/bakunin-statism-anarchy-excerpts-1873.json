@@ -1,0 +1,61 @@
+{
+  "id": "bakunin-statism-anarchy-excerpts-1873",
+  "title": "바쿠닌, 국가성과 아나키",
+  "byline": "미하일 바쿠닌",
+  "bylineNote": "Bakunin, Statism and Anarchy",
+  "sourceLang": "ru",
+  "headnote": [
+    "1873년 저작의 본문과 부록 A·B, 채택 전사본의 저자 주석을 모두 옮겼다. 마르크스주의자들의 견해로 소개하는 주장은 바쿠닌의 서술이다."
+  ],
+  "bibliography": [
+    "Михаил Бакунин, Государственность и анархия. Борьба двух партий в Интернациональном обществе рабочих (1873). 원문 언어: 러시아어.",
+    "https://ru.anarchistlibraries.net/library/mihail-bakunin-gosudarstvennost-i-anarhiya",
+    "본문과 부록 A, 부록 B 「취리히 슬라브인 지부의 강령」 및 원문에 수록된 주석 10개. Wikisource의 1919년판 본문과 시작·끝 및 인민국가 비판 대목을 대조했다.",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "bakunin-full",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bakunin-full-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "0d9c6085becbac0f81f9e667bdfff146f6b9cd233e7d290e8ceda45023a6bfac",
+        "url": "https://ru.anarchistlibraries.net/library/mihail-bakunin-gosudarstvennost-i-anarhiya"
+      },
+      "blocks": [
+        0,
+        893
+      ],
+      "startsWith": "Интернациональное общество рабочих, едва зародившееся тому назад девять лет, уже успело до",
+      "endsWith": " спустя Тьер, президент французской республики, бомбардировал Париж для усмирения Коммуны.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/bakunin-statism-anarchy-excerpts-1873.html",
+  "sourceContextChars": 600,
+  "postEdits": {
+    "소슈лях타": "하급 슐라흐타",
+    "슈лях타": "슐라흐타",
+    "아이лер트": "아일레르트",
+    "들이 либо 너무 약해서": "들이 너무 약해서",
+    "이 involuntary 동맹": "이 내키지 않는 동맹",
+    "Wo ist das deutsche Vaterland": "독일인의 조국은 어디인가",
+    "《Volksstaat》": "《인민국가》"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "marx-bakunin-notes-1874-1875",
+  "title": "마르크스, 바쿠닌의 국가성과 아나키 독서 노트",
+  "byline": "카를 마르크스",
+  "bylineNote": "Marx, Notes on Bakunin’s Statism and Anarchy",
+  "sourceLang": "de",
+  "headnote": [
+    "1874~1875년에 남긴 독서 노트 전체다. 제목의 발췌는 마르크스가 바쿠닌을 발췌하며 썼다는 뜻이며, 이 번역에서 일부만 골랐다는 뜻이 아니다. 들여쓴 바쿠닌 인용과 마르크스의 논평을 구별한다."
+  ],
+  "bibliography": [
+    "Karl Marx, Konspekt von Bakunins Buch Staatlichkeit und Anarchie. Marx/Engels: Werke, Bd. 18, Berlin: Dietz Verlag 1962, S. 597–642.",
+    "https://mlclassic.netlify.app/mew/18/me18-597",
+    "독일어 저작집 전사의 노트 본문 전체. 꺾쇠는 원문의 러시아어 인용을 저작집 편집자가 독일어로 옮긴 부분이다. 후대 Textvarianten과 편집 서문은 본문과 구별하여 제외했다.",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "나치온(민족)",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회",
+      "Narod": "나로드(인민)",
+      "Volk": "폴크(인민)",
+      "ὕστερον πρότερον": "히스테론 프로테론(선후 전도)"
+    }
+  },
+  "documents": [
+    {
+      "id": "marxnotes-full",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/marxnotes-full-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "262f152ff20d76f6bdcbf14b663e6267e0827061ace44c36a887adf4137898d8",
+        "url": "https://mlclassic.netlify.app/mew/18/me18-597"
+      },
+      "blocks": [
+        0,
+        209
+      ],
+      "startsWith": "Bakunin: <Staatlichkeit und Anarchie>. <Einführung, Teil I, 1873>",
+      "endsWith": "reint vermittelt <Väterchen Zar>, nur in seiner obersten, väterlichen Gewalt“ (S. 15, 16).",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/marx-bakunin-notes-1874-1875.html",
+  "sourceContextChars": 600,
+  "postEdits": {
+    "étrange Pologne": "기이한 폴란드",
+    "energische한 표명": "적극적인 표명",
+    "представлено(전달될)": "전달될",
+    "коренная(원래의, 뿌리에 속하는) 불의": "뿌리 깊은 불의"
+  }
+}

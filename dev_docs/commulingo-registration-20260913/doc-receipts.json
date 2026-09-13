@@ -27,7 +27,8 @@
   {
     "id": "gouges-rights-of-woman-1791",
     "queue_id": 1963,
-    "path": "/home/grass/frontend/data/commulingo/docs/gouges-rights-of-woman-1791.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/gouges-rights-of-woman-1791.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": "iwma-general-rules-1871",
@@ -42,12 +43,14 @@
   {
     "id": "bakunin-statism-anarchy-excerpts-1873",
     "queue_id": 1979,
-    "path": "/home/grass/frontend/data/commulingo/docs/bakunin-statism-anarchy-excerpts-1873.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/bakunin-statism-anarchy-excerpts-1873.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": "france-law-22-prairial-1794",
     "queue_id": 1969,
-    "path": "/home/grass/frontend/data/commulingo/docs/france-law-22-prairial-1794.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/france-law-22-prairial-1794.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": "marechal-manifesto-equals-1796",
@@ -57,7 +60,8 @@
   {
     "id": "marx-bakunin-notes-1874-1875",
     "queue_id": 1980,
-    "path": "/home/grass/frontend/data/commulingo/docs/marx-bakunin-notes-1874-1875.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/marx-bakunin-notes-1874-1875.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": "france-general-maximum-law-1793",
@@ -67,22 +71,27 @@
   {
     "id": "lenin-state-revolution-chapter-5",
     "queue_id": 1983,
-    "path": "/home/grass/frontend/data/commulingo/docs/lenin-state-revolution-chapter-5.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/lenin-state-revolution-chapter-5.html",
+    "publication_status": "unpublished_by_user",
+    "reason": "국내 출판 도서이므로 참고문헌에서 제외하라는 사용자 요청"
   },
   {
     "id": "robespierre-political-morality-1794",
     "queue_id": 1970,
-    "path": "/home/grass/frontend/data/commulingo/docs/robespierre-political-morality-1794.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/robespierre-political-morality-1794.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": "robespierre-subsistence-1792",
     "queue_id": 1966,
-    "path": "/home/grass/frontend/data/commulingo/docs/robespierre-subsistence-1792.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/robespierre-subsistence-1792.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": "bernstein-preconditions-socialism-excerpts-1899",
     "queue_id": 1981,
-    "path": "/home/grass/frontend/data/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899.html"
+    "path": "/home/grass/frontend/data/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": "luxemburg-reform-revolution",
@@ -93,5 +102,11 @@
     "id": "luxemburg-russian-revolution",
     "queue_id": 1984,
     "path": "/home/grass/frontend/data/commulingo/docs/luxemburg-russian-revolution.html"
+  },
+  {
+    "id": "owen-new-view-society",
+    "queue_id": 1977,
+    "path": "/home/grass/frontend/data/commulingo/docs/owen-new-view-society.html",
+    "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
   }
 ]

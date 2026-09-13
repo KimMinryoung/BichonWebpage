@@ -1,0 +1,84 @@
+{
+  "id": "bernstein-preconditions-socialism-excerpts-1899",
+  "model": "deepseek-flash",
+  "counts": {
+    "sourceBlocks": 644,
+    "translatedBlocks": 644,
+    "tables": 26,
+    "notes": 88,
+    "quotes": 0
+  },
+  "corrections": [
+    {
+      "block": 1000016,
+      "before": "Spiers & Pond",
+      "after": "스피어스 앤드 폰드"
+    },
+    {
+      "block": 2000065,
+      "before": ".]",
+      "after": "7.",
+      "reason": "source anchor f7"
+    },
+    {
+      "block": 2000066,
+      "excluded": "heading for omitted modern editorial notes"
+    },
+    {
+      "block": 3000028,
+      "before": "\"physical force men\"",
+      "after": "\"물리력 투쟁파\""
+    },
+    {
+      "block": 4000030,
+      "before": "namely 5,454명",
+      "after": "즉 5,454명"
+    },
+    {
+      "block": 4000032,
+      "before": "P. u. T. Coats",
+      "after": "P. 및 T. 코츠"
+    },
+    {
+      "block": 4000032,
+      "before": "T. Lipton",
+      "after": "T. 립턴"
+    },
+    {
+      "block": 4000032,
+      "before": "Spiers & Pond",
+      "after": "스피어스 앤드 폰드"
+    },
+    {
+      "block": 4000035,
+      "before": "British Review",
+      "after": "《브리티시 리뷰》"
+    },
+    {
+      "block": 4000035,
+      "before": "2331/3퍼센트",
+      "after": "233과 3분의 1퍼센트"
+    },
+    {
+      "block": 4000055,
+      "before": "미국의 Statistical Abstract",
+      "after": "미국의 《통계초록》"
+    },
+    {
+      "block": 5000086,
+      "before": "노동 참여체 – labour partnership –",
+      "after": "노동 참여체(labour partnership)"
+    },
+    {
+      "block": 5000205,
+      "before": "\"producere\"(산출)",
+      "after": "\"산출\"(producere)"
+    },
+    {
+      "block": 5000222,
+      "before": "《Labour Co-partnership》",
+      "after": "《노동 공동경영》"
+    }
+  ],
+  "scope": "All source blocks present; table vocabulary and cells checked; notes and quotation boundaries restored; flagged terms and key passages checked against the source. Not a professional line-by-line copyedit."
+}

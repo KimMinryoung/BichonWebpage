@@ -1,0 +1,55 @@
+{
+  "id": "france-law-22-prairial-1794",
+  "title": "프레리알 22일 법령",
+  "byline": "국민공회",
+  "bylineNote": "Decree of 22 Prairial, Year II",
+  "sourceLang": "fr",
+  "headnote": [
+    "공화력 2년 프레리알 22일(1794년 6월 10일) 혁명재판소에 관한 법령 전문이다. 법령집 스캔의 제1~21조와 제3조 임명자 명단을 포함한다."
+  ],
+  "bibliography": [
+    "Décret concernant le tribunal révolutionnaire, 22 prairial an II. Collection complète des lois, décrets, ordonnances, règlemens et avis du Conseil d’État, tome 7, pp. 232–234.",
+    "https://www.cercle-du-barreau.org/media/00/01/591063394.pdf",
+    "제1~21조 및 임명자 명단을 스캔과 직접 대조해 전사했다. 후대 법령집의 교차참조 주석은 제외했다. 제21조에서 별첨하도록 정한 위원회 보고는 법령 자체와 별도 문서다. 원문 언어: 프랑스어.",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "prairial-full",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/prairial-full-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "0ee0a90a52af50954518e57f8ed381fe5427b88972f9859b74087f0db0cbab5b",
+        "url": "https://www.cercle-du-barreau.org/media/00/01/591063394.pdf"
+      },
+      "blocks": [
+        0,
+        59
+      ],
+      "startsWith": "Article 1",
+      "endsWith": "Le rapport du comité sera joint au présent décret comme instruction.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/france-law-22-prairial-1794.html",
+  "sourceContextChars": 600,
+  "postEdits": {
+    "손-쉬르-손(Châlons-sur-Saône)": "샬롱쉬르손(Châlons-sur-Saône)"
+  }
+}

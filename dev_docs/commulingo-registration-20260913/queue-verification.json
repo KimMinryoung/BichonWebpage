@@ -240,9 +240,9 @@
   {
     "id": 1977,
     "kind": "doc",
-    "status": "pending",
-    "resolved_id": "",
-    "resolution": "translation_provider_daily_quota: Owen 1816 edition, 39/67 chunks cached; 28 remaining. Private output contains missing-block placeholders and MUST NOT be published. Resume using retained spec/cache after provider quota resets; doc worker does not auto-publish."
+    "status": "done",
+    "resolved_id": "owen-new-view-society",
+    "resolution": "DeepSeek Flash full translation published: dedication/introduction and all four essays; 67 chunks, no failures. Audit: dev_docs/commulingo-fulltext-20260913"
   },
   {
     "id": 1978,
@@ -283,8 +283,8 @@
     "id": 1983,
     "kind": "doc",
     "status": "done",
-    "resolved_id": "lenin-state-revolution-chapter-5",
-    "resolution": "Registered through validated Admin service; original-source docs published after source/scope and clause checks. Audit: dev_docs/commulingo-registration-20260913"
+    "resolved_id": "",
+    "resolution": "Excluded from references at user request on 2026-09-13: State and Revolution is already published in Korea. Do not republish."
   },
   {
     "id": 1984,

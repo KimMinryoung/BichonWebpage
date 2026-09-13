@@ -80,6 +80,45 @@
         "입헌민주당",
         "자유주의"
       ]
+    },
+    {
+      "id": "lenin-state-revolution-chapter-5",
+      "file": "lenin-state-revolution-chapter-5.html",
+      "docLang": "ko",
+      "date": "1917",
+      "title": {
+        "ko": "레닌, 국가와 혁명 제5장 전문",
+        "en": "Lenin, The State and Revolution, Chapter V (complete chapter)"
+      },
+      "description": {
+        "ko": "『국가와 혁명』 제5장 「국가 사멸의 경제적 기초」 전문이다. 1917년에 집필한 글을 러시아어 저작집 전사에 따라 옮겼다. 자본주의에서 공산주의로의 이행기, 공산주의의 첫 단계와 높은 단계를 구분하는 논증을 읽을 수 있다.",
+        "en": "Korean translation of the complete fifth chapter of The State and Revolution, written in 1917, from the Russian collected-works transcription. Distinguishes the transition period and the lower and higher phases of communism."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "집필: 1917년 8~9월. 번역 저본: В. И. Ленин, Полное собрание сочинений, 제5판, 모스크바, 1969, 제33권, 83~102쪽의 Wikisource 전사. 저작집은 원고를 1919년 책과 대조했다고 밝힌다. 원문 언어: 러시아어. 제5장 전체. 웹 전사본 상단의 초판 발행일 표기는 채택하지 않았다. https://ru.wikisource.org/wiki/Государство_и_революция_(Ленин)/Глава_V 한국어 번역: CommuLingo (2026).",
+      "people": [
+        "lenin"
+      ],
+      "terms": [
+        "dictatorship-of-the-proletariat"
+      ],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "『레닌, 국가와 혁명 제5장 전문』"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회"
+      ],
+      "unpublishedReason": "2026-09-13 사용자 요청: 국내 출판된 국가와 혁명은 참고문헌에서 제외."
     }
   ]
 }

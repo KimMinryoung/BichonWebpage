@@ -1,0 +1,132 @@
+{
+  "id": "owen-new-view-society",
+  "title": "로버트 오언, 사회에 관한 새로운 견해",
+  "byline": "로버트 오언",
+  "bylineNote": "Robert Owen, A New View of Society",
+  "sourceLang": "en",
+  "headnote": [
+    "1816년 판본으로 전하는 헌정·서문과 네 에세이를 옮겼다. 에세이들의 초출 시기와 모아 낸 판본의 연도는 구별해야 한다."
+  ],
+  "bibliography": [
+    "번역 저본: 아래 원어 전사본. 원문 HTML·SHA-256·절별 시작과 끝을 번역 스펙에 고정했다.",
+    "https://www.marxists.org/reference/subject/economics/owen/society/intro.htm",
+    "https://www.marxists.org/reference/subject/economics/owen/society/ch01.htm",
+    "https://www.marxists.org/reference/subject/economics/owen/society/ch02.htm",
+    "https://www.marxists.org/reference/subject/economics/owen/society/ch03.htm",
+    "https://www.marxists.org/reference/subject/economics/owen/society/ch04.htm",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "owenintro",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/owenintro.html",
+        "format": "marxists",
+        "sha256": "6d5d55d8ac6deecea16b29a70f0ff88d12cabdc6478de815f2b3e71704dbc295",
+        "url": "https://www.marxists.org/reference/subject/economics/owen/society/intro.htm"
+      },
+      "blocks": [
+        1,
+        61
+      ],
+      "startsWith": "Or, Essays on the Principle of the Formation of the Human Character, and the Application o",
+      "endsWith": "THE AUTHOR",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "owen1",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/owen1.html",
+        "format": "marxists",
+        "sha256": "d02b6e7d9a7c0030789bf40d911c393453127634f08ca604fa70c3706bd94d90",
+        "url": "https://www.marxists.org/reference/subject/economics/owen/society/ch01.htm"
+      },
+      "blocks": [
+        1,
+        48
+      ],
+      "startsWith": "FIRST ESSAY",
+      "endsWith": "These important considerations shall form the subject of the next Essay.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "owen2",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/owen2.html",
+        "format": "marxists",
+        "sha256": "98a0d27a57291ec652b616eb918142d261ec33a413ea1e177b3723112d0d707f",
+        "url": "https://www.marxists.org/reference/subject/economics/owen/society/ch02.htm"
+      },
+      "blocks": [
+        1,
+        62
+      ],
+      "startsWith": "SECOND ESSAY The Principles of the Former Essay continued, and applied in part to Practice",
+      "endsWith": " be gradually introduced among the poor and working classes throughout the United Kingdom.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "owen3",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/owen3.html",
+        "format": "marxists",
+        "sha256": "5a254827e92dfd021289207dfefd98f7d5f6d6911148fe263248c0021a9097ee",
+        "url": "https://www.marxists.org/reference/subject/economics/owen/society/ch03.htm"
+      },
+      "blocks": [
+        1,
+        131
+      ],
+      "startsWith": "THIRD ESSAY",
+      "endsWith": " what improvements the present state of the British population is susceptible in practice.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    },
+    {
+      "id": "owen4",
+      "titleKo": "",
+      "heading": false,
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-registration-20260913/sources/owen4.html",
+        "format": "marxists",
+        "sha256": "82b8c497ab7d2c3282646f9cdb7df8252b51a090c83e6fadf0ca0a6b4166f35b",
+        "url": "https://www.marxists.org/reference/subject/economics/owen/society/ch04.htm"
+      },
+      "blocks": [
+        1,
+        177
+      ],
+      "startsWith": "FOURTH ESSAY",
+      "endsWith": "be increased, until sound health to the public mind be firmly and permanently established.",
+      "register": "한다체. 원사료의 주체·주장·부정·조건 및 논적을 인용하는 대목을 정확히 보존한다. 현대 용례로 바꾸거나 해설을 추가하지 않는다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/owen-new-view-society.html",
+  "sourceContextChars": 600,
+  "postEdits": {
+    "무지의 가장 wild한 상상": "무지에서 나온 가장 터무니없는 상상",
+    "그 오류들을 드러낼 감히 하지 못했다": "그 오류들을 감히 드러내지 못했다",
+    "그 모든 실질적 이점이 인류 대중에게서 더 오래 withheld되어야 하는가?": "인류 대중이 그 모든 실질적 이점을 누리지 못하는 상태가 왜 더 오래 지속되어야 하는가?",
+    "것이 surely 그만큼 더 바람직하다": "것이 분명 그만큼 더 바람직하다"
+  }
+}

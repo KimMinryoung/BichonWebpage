@@ -1,0 +1,64 @@
+{
+  "id": "bakunin-statism-anarchy-excerpts-1873",
+  "model": "deepseek-flash",
+  "counts": {
+    "sourceBlocks": 893,
+    "translatedBlocks": 893,
+    "tables": 0,
+    "notes": 10,
+    "quotes": 0
+  },
+  "corrections": [
+    {
+      "block": 262,
+      "before": "소슈лях타",
+      "after": "하급 슐라흐타"
+    },
+    {
+      "block": 262,
+      "before": "슈лях타",
+      "after": "슐라흐타"
+    },
+    {
+      "block": 263,
+      "before": "슈лях타",
+      "after": "슐라흐타"
+    },
+    {
+      "block": 333,
+      "before": "슈лях타",
+      "after": "슐라흐타"
+    },
+    {
+      "block": 371,
+      "before": "이 involuntary 동맹",
+      "after": "이 내키지 않는 동맹"
+    },
+    {
+      "block": 451,
+      "before": "아이лер트",
+      "after": "아일레르트"
+    },
+    {
+      "block": 467,
+      "before": "Wo ist das deutsche Vaterland",
+      "after": "독일인의 조국은 어디인가"
+    },
+    {
+      "block": 759,
+      "before": "《Volksstaat》",
+      "after": "《인민국가》"
+    },
+    {
+      "block": 760,
+      "before": "《Volksstaat》",
+      "after": "《인민국가》"
+    },
+    {
+      "block": 785,
+      "before": "들이 либо 너무 약해서",
+      "after": "들이 너무 약해서"
+    }
+  ],
+  "scope": "All source blocks present; table vocabulary and cells checked; notes and quotation boundaries restored; flagged terms and key passages checked against the source. Not a professional line-by-line copyedit."
+}

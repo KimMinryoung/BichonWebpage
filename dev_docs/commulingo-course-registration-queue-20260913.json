@@ -621,7 +621,7 @@
       "kind": "doc",
       "suggested_id": "gouges-rights-of-woman-1791",
       "label": {
-        "ko": "여성과 여성 시민의 권리 선언 (1791)",
+        "ko": "구주, 여성과 여성 시민의 권리 선언",
         "en": "Declaration of the Rights of Woman and of the Female Citizen (1791)"
       },
       "event_id": "french-revolution-intro",
@@ -638,9 +638,10 @@
       },
       "decision": "enqueue",
       "queue_id": 1963,
-      "queue_status_at_verification": "pending",
+      "queue_status_at_verification": "done",
       "registration_status": "done",
-      "registered_id": "gouges-rights-of-woman-1791"
+      "registered_id": "gouges-rights-of-woman-1791",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
@@ -696,7 +697,7 @@
       "kind": "doc",
       "suggested_id": "robespierre-subsistence-1792",
       "label": {
-        "ko": "로베스피에르, 생필품에 관한 연설 (1792)",
+        "ko": "로베스피에르, 생필품에 관한 의견",
         "en": "Robespierre, Speech on Subsistence (1792)"
       },
       "event_id": "french-revolution-intro",
@@ -713,9 +714,10 @@
       },
       "decision": "enqueue",
       "queue_id": 1966,
-      "queue_status_at_verification": "pending",
+      "queue_status_at_verification": "done",
       "registration_status": "done",
-      "registered_id": "robespierre-subsistence-1792"
+      "registered_id": "robespierre-subsistence-1792",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
@@ -771,7 +773,7 @@
       "kind": "doc",
       "suggested_id": "france-law-22-prairial-1794",
       "label": {
-        "ko": "프레리알 22일법 (1794년 6월 10일)",
+        "ko": "프레리알 22일 법령",
         "en": "Law of 22 Prairial (10 June 1794)"
       },
       "event_id": "french-revolution-intro",
@@ -788,15 +790,16 @@
       },
       "decision": "enqueue",
       "queue_id": 1969,
-      "queue_status_at_verification": "pending",
+      "queue_status_at_verification": "done",
       "registration_status": "done",
-      "registered_id": "france-law-22-prairial-1794"
+      "registered_id": "france-law-22-prairial-1794",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
       "suggested_id": "robespierre-political-morality-1794",
       "label": {
-        "ko": "로베스피에르, 정치도덕의 원리에 관한 보고 (1794)",
+        "ko": "로베스피에르, 정치적 도덕의 원칙에 관한 보고",
         "en": "Robespierre, Report on the Principles of Political Morality (1794)"
       },
       "event_id": "french-revolution-intro",
@@ -813,9 +816,10 @@
       },
       "decision": "enqueue",
       "queue_id": 1970,
-      "queue_status_at_verification": "pending",
+      "queue_status_at_verification": "done",
       "registration_status": "done",
-      "registered_id": "robespierre-political-morality-1794"
+      "registered_id": "robespierre-political-morality-1794",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
@@ -888,9 +892,11 @@
       },
       "decision": "enqueue",
       "queue_id": 1977,
-      "queue_status_at_verification": "pending",
-      "registration_status": "pending",
-      "registration_note": "translation_provider_daily_quota: Owen 1816 edition, 39/67 chunks cached; 28 remaining. Private output contains missing-block placeholders and MUST NOT be published. Resume using retained spec/cache after provider quota resets; doc worker does not auto-publish."
+      "queue_status_at_verification": "done",
+      "registration_status": "done",
+      "registration_note": "translation_provider_daily_quota: Owen 1816 edition, 39/67 chunks cached; 28 remaining. Private output contains missing-block placeholders and MUST NOT be published. Resume using retained spec/cache after provider quota resets; doc worker does not auto-publish.",
+      "registered_id": "owen-new-view-society",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
@@ -921,7 +927,7 @@
       "kind": "doc",
       "suggested_id": "bakunin-statism-anarchy-excerpts-1873",
       "label": {
-        "ko": "바쿠닌, 국가주의와 아나키 (1873, 발췌)",
+        "ko": "바쿠닌, 국가성과 아나키",
         "en": "Bakunin, Statism and Anarchy (1873, excerpts)"
       },
       "event_id": "socialist-divergences-intro",
@@ -938,15 +944,16 @@
       },
       "decision": "enqueue",
       "queue_id": 1979,
-      "queue_status_at_verification": "pending",
+      "queue_status_at_verification": "done",
       "registration_status": "done",
-      "registered_id": "bakunin-statism-anarchy-excerpts-1873"
+      "registered_id": "bakunin-statism-anarchy-excerpts-1873",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
       "suggested_id": "marx-bakunin-notes-1874-1875",
       "label": {
-        "ko": "마르크스, 바쿠닌의 국가주의와 아나키에 대한 발췌 노트 (1874~1875)",
+        "ko": "마르크스, 바쿠닌의 국가성과 아나키 독서 노트",
         "en": "Marx, Notes on Bakunin’s Statism and Anarchy (1874–1875)"
       },
       "event_id": "socialist-divergences-intro",
@@ -963,15 +970,16 @@
       },
       "decision": "enqueue",
       "queue_id": 1980,
-      "queue_status_at_verification": "pending",
+      "queue_status_at_verification": "done",
       "registration_status": "done",
-      "registered_id": "marx-bakunin-notes-1874-1875"
+      "registered_id": "marx-bakunin-notes-1874-1875",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
       "suggested_id": "bernstein-preconditions-socialism-excerpts-1899",
       "label": {
-        "ko": "베른슈타인, 사회주의의 전제와 사회민주주의의 과제 (1899, 발췌)",
+        "ko": "베른슈타인, 사회주의의 전제와 사회민주주의의 과제",
         "en": "Bernstein, The Preconditions of Socialism and the Tasks of Social Democracy (1899, excerpts)"
       },
       "event_id": "socialist-divergences-intro",
@@ -988,9 +996,10 @@
       },
       "decision": "enqueue",
       "queue_id": 1981,
-      "queue_status_at_verification": "pending",
+      "queue_status_at_verification": "done",
       "registration_status": "done",
-      "registered_id": "bernstein-preconditions-socialism-excerpts-1899"
+      "registered_id": "bernstein-preconditions-socialism-excerpts-1899",
+      "fulltext_revision": "dev_docs/commulingo-fulltext-20260913"
     },
     {
       "kind": "doc",
@@ -1038,9 +1047,10 @@
       },
       "decision": "enqueue",
       "queue_id": 1983,
-      "queue_status_at_verification": "pending",
-      "registration_status": "done",
-      "registered_id": "lenin-state-revolution-chapter-5"
+      "queue_status_at_verification": "done",
+      "registration_status": "excluded_by_user",
+      "registered_id": "",
+      "exclusion_reason": "한국에 출판된 『국가와 혁명』은 참고문헌에서 제외하라는 사용자 요청(2026-09-13). 재등록하지 않는다."
     },
     {
       "kind": "doc",

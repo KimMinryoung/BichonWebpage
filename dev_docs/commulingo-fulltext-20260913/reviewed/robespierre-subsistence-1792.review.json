@@ -1,0 +1,13 @@
+{
+  "id": "robespierre-subsistence-1792",
+  "model": "deepseek-flash",
+  "counts": {
+    "sourceBlocks": 49,
+    "translatedBlocks": 49,
+    "tables": 0,
+    "notes": 0,
+    "quotes": 0
+  },
+  "corrections": [],
+  "scope": "All source blocks present; table vocabulary and cells checked; notes and quotation boundaries restored; flagged terms and key passages checked against the source. Not a professional line-by-line copyedit."
+}

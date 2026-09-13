@@ -1,0 +1,192 @@
+{
+  "id": "bernstein-preconditions-socialism-excerpts-1899",
+  "title": "베른슈타인, 사회주의의 전제와 사회민주주의의 과제",
+  "byline": "에두아르트 베른슈타인",
+  "bylineNote": "Bernstein, The Preconditions of Socialism and the Tasks of Social Democracy",
+  "sourceLang": "de",
+  "headnote": [
+    "두 서문, 네 장, 결론과 저자 각주를 포함한 독일어 저본 전체를 옮겼다. 초출은 1899년이며, 채택 전사본에는 후속 인쇄본의 서문도 들어 있다."
+  ],
+  "bibliography": [
+    "Eduard Bernstein, Die Voraussetzungen des Sozialismus und die Aufgaben der Sozialdemokratie. MIA 독일어 전사본. 원문 언어: 독일어.",
+    "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/index.html",
+    "원문의 통계표와 저자 주석을 포함한다. MIA가 추가한 웹 링크 안내는 제외했다.",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회",
+      "Soz. Akademiker": "사회주의 학술인",
+      "Neue Zeit": "노이에 차이트",
+      "J.": "J.",
+      "Voraussetzungen": "전제"
+    }
+  },
+  "documents": [
+    {
+      "id": "bernstein-vorwort",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bernstein-vorwort-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "b5e0ef8ea38d0cc8117583b03fc68c3bd1dc15423b5c43a384cb0d84df2a5923",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/vorwort.html"
+      },
+      "blocks": [
+        0,
+        35
+      ],
+      "startsWith": "Vorwort",
+      "endsWith": "Ed. Bernstein",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    },
+    {
+      "id": "bernstein-vorwort2",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bernstein-vorwort2-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "d5f2d6795ab3e834af5cca9d1e5a5dae34844d427b092336e6a2bb5cbfa6dc1b",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/vorwort2.html"
+      },
+      "blocks": [
+        0,
+        31
+      ],
+      "startsWith": "Vorwort zum zehnten Tausend",
+      "endsWith": "1. Berlin 1901, Karl Heymanns Verlag.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    },
+    {
+      "id": "bernstein-1-grundlegend",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bernstein-1-grundlegend-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "4497c8d56ec3b8e9e6a90760e0a4fdadb2690d219d10672296c6284350d20dcf",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/1-grundlegend.htm"
+      },
+      "blocks": [
+        0,
+        67
+      ],
+      "startsWith": "Erstes Kapitel Die grundlegenden Sätze des marxistischen Sozialismus",
+      "endsWith": "Anmerkungen der Herausgeber",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    },
+    {
+      "id": "bernstein-kap2",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bernstein-kap2-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "b6f17dbec22f1220a895367f1d8083f6b71e2b7359ae28299cafb8e4f985fee2",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/kap2.html"
+      },
+      "blocks": [
+        0,
+        48
+      ],
+      "startsWith": "Zweites Kapitel Der Marxismus und Hegelsche Dialektik",
+      "endsWith": "eifelhaft. Aber die Genugthuung über den glücklich erzielten Bruch ist echt blanquistisch.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    },
+    {
+      "id": "bernstein-kap3",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bernstein-kap3-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "c63fd984efa4a923f9ebe006c516577984d146b88746b6a24412aef62d69937a",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/kap3.html"
+      },
+      "blocks": [
+        0,
+        156
+      ],
+      "startsWith": "Drittes Kapitel Die wirthschaftliche Entwicklung der modernen Gesellschaft",
+      "endsWith": "ein, wie ihre Begründung durch Aenderungen im Produktionsprozess, bezw. in den Werkzeugen.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    },
+    {
+      "id": "bernstein-kap4",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bernstein-kap4-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "33243de30ef097364a05010db7b106d5c571e255714983bcb5782ce195b5346e",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/kap4.html"
+      },
+      "blocks": [
+        0,
+        247
+      ],
+      "startsWith": "Viertes Kapitel Die Aufgaben und Möglichkeiten der Sozialdemokratie",
+      "endsWith": "Kampf der Sozialdemokratie und die Revolution der Gesellschaft, Neue Zeit, XVI, 1, S. 451.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    },
+    {
+      "id": "bernstein-schluss",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/bernstein-schluss-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "6083a3b97eb552e02edd8dc22e79dd4de29f5e8dde516371a2ae467d76e27074",
+        "url": "https://www.marxists.org/deutsch/referenz/bernstein/1899/voraus/schluss.html"
+      },
+      "blocks": [
+        0,
+        60
+      ],
+      "startsWith": "Schlußkapitel Endziel und Bewegung",
+      "endsWith": "Sektionen warm ans Herz gelegt, in ihren Klublokalen keine spirituösen Getränke zu führen.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다.",
+      "titleKo": ""
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/bernstein-preconditions-socialism-excerpts-1899.html",
+  "sourceContextChars": 600,
+  "translationRepairs": {
+    "2000019": "목표 언어는 한국어(조선어, Korean)이다. 인용된 마르크스 문장까지 모두 한글 한국어로 번역한다. 중국어(Chinese, 中文) 번역은 금지한다. 원문 뒤의 논평도 빠짐없이 한국어로 옮긴다."
+  },
+  "tableCellMarkers": [
+    4000029,
+    4000031,
+    4000068,
+    4000086
+  ],
+  "postEdits": {
+    "\"physical force men\"": "\"물리력 투쟁파\"",
+    "P. u. T. Coats": "P. 및 T. 코츠",
+    "미국의 Statistical Abstract": "미국의 《통계초록》",
+    "노동 참여체 – labour partnership –": "노동 참여체(labour partnership)",
+    "\"producere\"(산출)": "\"산출\"(producere)",
+    "《Labour Co-partnership》": "《노동 공동경영》",
+    "namely 5,454명": "즉 5,454명",
+    "T. Lipton": "T. 립턴",
+    "Spiers & Pond": "스피어스 앤드 폰드",
+    "British Review": "《브리티시 리뷰》",
+    "2331/3퍼센트": "233과 3분의 1퍼센트"
+  }
+}

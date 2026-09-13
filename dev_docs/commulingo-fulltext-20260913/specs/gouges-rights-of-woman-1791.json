@@ -1,0 +1,56 @@
+{
+  "id": "gouges-rights-of-woman-1791",
+  "title": "구주, 여성과 여성 시민의 권리 선언",
+  "byline": "올랭프 드 구주",
+  "bylineNote": "Olympe de Gouges, The Rights of Woman (1791)",
+  "sourceLang": "fr",
+  "headnote": [
+    "1791년 소책자 『여성의 권리. 여왕에게』 전체를 옮겼다. 여왕에게 바치는 글, 선언의 서문과 17개 조항, 후기, 남녀의 사회계약 형식, 후속 글과 추신을 포함한다. 제정 법률이 아니라 구주의 저술이다."
+  ],
+  "bibliography": [
+    "Olympe de Gouges, Les Droits de la femme. À la reine (Paris, 1791), Wikisource의 BnF 소장본 전사.",
+    "https://fr.wikisource.org/wiki/Les_Droits_de_la_femme._À_la_reine",
+    "프랑스어 원문 전 범위와 원주 4개를 수록한다. 장식과 페이지 이동 표지는 제외했다.",
+    "한국어 전문 번역: CommuLingo, DeepSeek Flash (2026)."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Nation": "국민",
+      "citoyen actif": "능동시민",
+      "Corps législatif": "입법부",
+      "Convention nationale": "국민공회",
+      "la royauté": "왕정",
+      "les secours publics": "공적 구제",
+      "International Working Men’s Association": "국제노동자협회"
+    }
+  },
+  "documents": [
+    {
+      "id": "gouges-full",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/sources/gouges-full-body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "bf98e41c0b2b0c4e14bd2f59031b32e69cb35c93e043ed66aad0d3f8ae0a7023",
+        "url": "https://fr.wikisource.org/wiki/Les_Droits_de_la_femme._À_la_reine"
+      },
+      "blocks": [
+        0,
+        116
+      ],
+      "startsWith": "LES DROITS DE LA FEMME.",
+      "endsWith": "d, c’est la Nation, cette maitresse corrompra le gouvernement si elle prend trop d’empire.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 원문의 문단과 숫자·주석 표지를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-fulltext-20260913/translations/gouges-rights-of-woman-1791.html",
+  "sourceContextChars": 600,
+  "postEdits": {
+    "여성의 권리라는 대의의 비상을 무겁게 하고": "여성의 권리 신장에 힘을 실어 주고",
+    "도청 재판소": "데파르트망 재판소"
+  }
+}

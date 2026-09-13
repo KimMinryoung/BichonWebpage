@@ -1,0 +1,19 @@
+{
+  "id": "france-law-22-prairial-1794",
+  "model": "deepseek-flash",
+  "counts": {
+    "sourceBlocks": 59,
+    "translatedBlocks": 59,
+    "tables": 0,
+    "notes": 0,
+    "quotes": 0
+  },
+  "corrections": [
+    {
+      "block": 9,
+      "before": "손-쉬르-손(Châlons-sur-Saône)",
+      "after": "샬롱쉬르손(Châlons-sur-Saône)"
+    }
+  ],
+  "scope": "All source blocks present; table vocabulary and cells checked; notes and quotation boundaries restored; flagged terms and key passages checked against the source. Not a professional line-by-line copyedit."
+}
