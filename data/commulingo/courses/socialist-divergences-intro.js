@@ -716,7 +716,7 @@ module.exports = {
       "volumeNumber": 12,
       "chapterNumber": 4,
       "title": {
-        "ko": "혁명에 찬성해도 볼셰비키와 다를까?",
+        "ko": "혁명을 지지하면서도 볼셰비키와 다를 수 있을까?",
         "en": "Can a revolutionary disagree with the Bolsheviks?"
       },
       "sourceUrl": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch05.htm",
@@ -793,7 +793,7 @@ module.exports = {
           "id": "socialist-divergences-intro-ch04-basic",
           "level": "basic",
           "title": {
-            "ko": "혁명에 찬성해도 볼셰비키와 다를까?",
+            "ko": "혁명을 지지하면서도 볼셰비키와 다를 수 있을까?",
             "en": "Can a revolutionary disagree with the Bolsheviks?"
           },
           "questions": [
