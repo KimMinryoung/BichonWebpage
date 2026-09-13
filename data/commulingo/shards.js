@@ -148,6 +148,7 @@ function buildPayloads(bundle, version) {
             description: collection.description,
             bookTitle: collection.bookTitle,
             format: collection.format,
+            category: collection.category,
             noAutoLink: collection.noAutoLink,
             conceptGraph: collection.conceptGraph,
             decisionTimeline: collection.decisionTimeline,

@@ -3,6 +3,7 @@ module.exports = {
   "id": "french-revolution-intro",
   "volumeNumber": 11,
   "format": "short-learning",
+  "category": "history",
   "title": {
     "ko": "프랑스 혁명 입문",
     "en": "French Revolution: A Short Course"

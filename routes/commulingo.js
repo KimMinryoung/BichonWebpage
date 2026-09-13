@@ -52,6 +52,7 @@ function summarizeBooks(catalog) {
             title: collection.title,
             description: collection.description,
             format: collection.format,
+            category: collection.category,
             chapterCount: chapters.length,
             nodeCount: graph && Array.isArray(graph.nodes) ? graph.nodes.length : 0,
             episodeCount,
