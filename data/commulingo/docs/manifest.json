@@ -4736,6 +4736,45 @@
         "spanish-civil-war"
       ],
       "addedAt": "2026-09-09"
+    },
+    {
+      "id": "french-revolution-intro",
+      "file": "french-revolution-intro.html",
+      "docLang": "ko",
+      "date": "2026-09-13",
+      "title": {
+        "ko": "프랑스 혁명 입문: 자유와 평등은 왜 갈라졌을까?",
+        "en": "French Revolution: Why Did Liberty and Equality Divide? (Korean guide)"
+      },
+      "description": {
+        "ko": "홉스봄을 기본 해석틀로 왕권과 공화정, 시민의 범위, 빵값과 생존을 배우는 짧은 읽기 학습 3편. 가상 사례 9문항과 펼쳐 읽는 해설, 사료와 해석의 구별을 담았습니다.",
+        "en": "Three short Korean reading lessons on monarchy and republicanism, citizenship, and subsistence, using Hobsbawm as the main interpretive framework. Includes nine hypothetical exercises, expandable explanations, and a distinction between evidence and interpretation."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "CommuLingo 작성 학습 해설(2026-09-13). 기본 해석틀: Eric Hobsbawm, The Age of Revolution, 1789–1848 (1962), Vintage 1996, 서문·서론·제3장. 번역 또는 홉스봄의 저작 전문이 아님. 개별 사료 출처는 본문 참조.",
+      "people": [],
+      "terms": [],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "프랑스 혁명 입문"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "공화정",
+        "국민의회",
+        "최고가격제",
+        "시민",
+        "임시정부",
+        "국가",
+        "입헌민주당",
+        "자유주의"
+      ]
     }
   ]
 }
