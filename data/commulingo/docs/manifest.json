@@ -5126,7 +5126,9 @@
         "republic",
         "national-convention"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5176,7 +5178,9 @@
         "national-convention",
         "committee-of-public-safety"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5226,7 +5230,10 @@
         "national-convention",
         "conspiracy-of-equals"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799",
+        "french-revolutionary-wars-1792-1802"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5286,7 +5293,9 @@
         "committee-of-public-safety",
         "law-of-22-prairial"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5325,7 +5334,10 @@
         "committee-of-public-safety",
         "law-of-22-prairial"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799",
+        "french-revolutionary-wars-1792-1802"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5379,7 +5391,9 @@
         "committee-of-public-safety",
         "law-of-22-prairial"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5414,7 +5428,10 @@
       "source": "프랑스 대통령실 Élysée 공식 프랑스어 원문: https://www.elysee.fr/la-presidence/la-constitution-du-5-fructidor-an-iii-22-aout-1795 ; https://www.elysee.fr/la-presidence/la-constitution-du-22-frimaire-an-viii-13-decembre-1799",
       "people": [],
       "terms": [],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799",
+        "french-revolutionary-wars-1792-1802"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [

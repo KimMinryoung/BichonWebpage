@@ -11,6 +11,7 @@
 | CommuLingo 학습 활동 계측·테스트 제외·집계 | [운영 계측 참고](commulingo-learning-measurement.md) |
 | CommuLingo 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
 | CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌 12편·36문항과 출처 기준](commulingo-ideology-learning.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
+| CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
 | CommuLingo 현실 사회주의 국가·사건 보강 | [25개 체제 자료와 3개 계보도](commulingo-socialist-states-20260908.md), [16개 사건 본문 심화](commulingo-event-depth-20260908.md) |
 | CommuLingo 참고문헌 전문 번역·저본·검수 | [DeepSeek Flash 전문 번역 8편과 제외 기록](commulingo-fulltext-20260913/README.md) |
 | CommuLingo 프랑스 혁명 문헌집·기존 주소 이동 | [12편을 주제별 4편으로 통합](commulingo-french-reference-collections-20260913/README.md) |

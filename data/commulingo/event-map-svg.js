@@ -386,28 +386,27 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
     // the box joins the badge avoid-list so numbers never land under it.
     const legend = renderLegend(legendRows, frame);
     if (legend) avoid.push(legend.rect);
-    // Each badge slides down until it clears both the city labels and every
-    // badge already placed — iterated, because a push out of one collision can
-    // land in another.
+    // Place each number in the nearest free slot. Clamping a downward stack
+    // collapsed dense city timelines onto the bottom edge; search in both
+    // dimensions and reserve the mobile badge diameter plus a small gap.
     badges.sort((a, b) => a.y - b.y || a.x - b.x);
-    for (let i = 0; i < badges.length; i++) {
-        for (let pass = 0; pass < 8; pass++) {
-            let moved = false;
-            for (const rect of avoid) {
-                if (badges[i].x > rect.x0 - 10 && badges[i].x < rect.x1 + 10
-                    && badges[i].y > rect.y0 - 12 && badges[i].y < rect.y1 + 10) {
-                    badges[i].y = rect.y1 + 11;
-                    moved = true;
-                }
-            }
-            for (let j = 0; j < i; j++) {
-                if (Math.abs(badges[i].x - badges[j].x) < 22 && Math.abs(badges[i].y - badges[j].y) < 22) {
-                    badges[i].y = badges[j].y + 22;
-                    moved = true;
-                }
-            }
-            if (!moved) break;
+    const placed = [];
+    for (const badge of badges) {
+        const anchor = { x: badge.x, y: badge.y };
+        const candidates = [anchor];
+        for (let y = 16; y <= frame.height - 32; y += 28) {
+            for (let x = 16; x <= frame.width - 16; x += 28) candidates.push({ x, y });
         }
+        const free = p => p.x >= 14 && p.x <= frame.width - 14
+            && p.y >= 14 && p.y <= frame.height - 32
+            && !avoid.some(r => p.x > r.x0 - 14 && p.x < r.x1 + 14
+                && p.y > r.y0 - 14 && p.y < r.y1 + 14)
+            && !placed.some(p2 => Math.hypot(p.x - p2.x, p.y - p2.y) < 27);
+        candidates.sort((a, b) => Math.hypot(a.x - anchor.x, a.y - anchor.y)
+            - Math.hypot(b.x - anchor.x, b.y - anchor.y));
+        const slot = candidates.find(free);
+        if (slot) Object.assign(badge, slot);
+        placed.push(badge);
     }
     for (const badge of badges) {
         const x = Math.min(frame.width - 12, Math.max(12, badge.x));
@@ -420,7 +419,9 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
         // number is highlighted — everything else is dimmed then, so the name
         // can sit large under the badge without ever colliding when at rest.
         if (badge.name) {
-            const nx = Math.min(frame.width - 8, Math.max(8, x));
+            const labelWidth = Math.min(frame.width - 16, Array.from(badge.name)
+                .reduce((w, ch) => w + (ch.charCodeAt(0) > 0x2e80 ? 17 : 9), 0));
+            const nx = Math.min(frame.width - 8 - labelWidth / 2, Math.max(8 + labelWidth / 2, x));
             parts.push(`<text class="emap-geo-label" data-geo-num="${badge.num}" x="${nx.toFixed(1)}" y="${(y + 24).toFixed(1)}" text-anchor="middle">${esc(badge.name)}</text>`);
         }
     }
