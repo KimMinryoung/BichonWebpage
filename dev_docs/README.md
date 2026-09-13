@@ -8,7 +8,7 @@
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
-| CommuLingo 혁명사·사회주의 비교 학습 | [공개 9편·27문항과 출처 기준](commulingo-ideology-learning.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
+| CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌 9편·27문항과 출처 기준](commulingo-ideology-learning.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
 | CommuLingo DB·캐시·동시성·복구 | [저장 구조와 검증](commulingo-database.md) |
 | CommuLingo 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
 | CommuLingo DB 후속 개선 후보 | [미구현 검토 목록](commulingo-database-followups.md) |

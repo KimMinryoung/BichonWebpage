@@ -114,6 +114,7 @@
     }
 
     var bookGroups = [
+        { label: function() { return lang === 'en' ? 'Short history and ideas courses' : '역사와 사상 짧은 학습'; }, match: function(b) { return b.format === 'short-learning'; } },
         { label: function() { return strings.categoryHistory || (lang === 'en' ? 'History' : '역사'); }, match: function(b) { return /^history-/.test(b.id); } },
         { label: function() { return strings.authorMarx || '카를 마르크스'; }, match: function(b) { return /^capital/.test(b.id) || /^marx-/.test(b.id); } },
         { label: function() { return strings.authorEngels || '프리드리히 엥겔스'; }, match: function(b) { return /^engels/.test(b.id); } },

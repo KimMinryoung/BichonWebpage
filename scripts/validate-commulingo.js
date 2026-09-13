@@ -31,6 +31,8 @@ const extendRule = extendIndex === -1 ? null : process.argv[extendIndex + 1];
 // out of the file; the totals are their sum. Adding a chapter means editing
 // this map on purpose, together with PUBLIC_CHAPTER_LIMITS in shards.js.
 const expected = {
+  'french-revolution-intro': { chapters: 5, questions: 15, lessons: 5, format: 'short-learning' },
+  'socialist-divergences-intro': { chapters: 4, questions: 12, lessons: 4, format: 'short-learning' },
   'capital-vol1': { chapters: 33, questions: 330, lessons: 66 },
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },
   'capital-vol3': { chapters: 52, questions: 520, lessons: 104 },
@@ -113,6 +115,7 @@ Object.keys(expected).forEach(function(collectionId) {
   const spec = expected[collectionId];
   const collection = collections.get(collectionId);
   if (!collection) { out.add('shape', collectionId, 'missing collection ' + collectionId); return; }
+  if ((collection.format || '') !== (spec.format || '')) out.add('shape', collectionId, collectionId + ' unexpected learning format');
   quizCollections.push(collection);
   const chapters = collection.chapters || [];
   if (chapters.length !== spec.chapters) out.add('shape', collectionId, collectionId + ' chapter count ' + chapters.length + ' != ' + spec.chapters);

@@ -251,14 +251,14 @@ function checkDiagram(out, value, label) {
 
 // --- question-level rules --------------------------------------------------
 
-function checkChoiceFeedback(out, value, qLabel) {
+function checkChoiceFeedback(out, value, qLabel, choiceCount = 4) {
   if (typeof value === 'undefined') return;
   if (!value || typeof value !== 'object') { out.add('shape', qLabel, qLabel + '.choiceFeedback must be localized arrays'); return; }
   ['ko', 'en'].forEach(function(locale) {
     const items = value[locale];
     const fLabel = qLabel + '.choiceFeedback.' + locale;
-    if (!Array.isArray(items) || items.length !== 4) {
-      out.add('shape', qLabel, fLabel + ' length != 4');
+    if (!Array.isArray(items) || items.length !== choiceCount) {
+      out.add('shape', qLabel, fLabel + ' length != ' + choiceCount);
       return;
     }
     items.forEach(function(item, index) {
@@ -278,6 +278,13 @@ function checkSource(out, value, qLabel) {
   if (typeof value === 'undefined') return;
   const sLabel = qLabel + '.source';
   if (!value || typeof value !== 'object') { out.add('source-shape', qLabel, sLabel + ' must be an object'); return; }
+  if (value.kind === 'reference') {
+    const allowed = /^(\/commulingo\/docs\/[^\s]+|https:\/\/(www\.marxists\.org|www\.elysee\.fr|www2?\.assemblee-nationale\.fr|(?:www\.)?revolution\.chnm\.org|files\.libcom\.org)\/[^\s]+)$/;
+    if (!allowed.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href is not an approved source URL');
+    allLocalizedText(out, value.label, sLabel + '.label');
+    if (typeof value.quote !== 'undefined') out.add('source-shape', qLabel, sLabel + ' reference must not present a paraphrase as a quotation');
+    return;
+  }
   if (!SOURCE_HREF.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href must point at /commulingo/docs/ or https://www.marxists.org/');
   allLocalizedText(out, value.label, sLabel + '.label');
   allLocalizedText(out, value.quote, sLabel + '.quote');
@@ -292,7 +299,8 @@ function checkQuestion(out, question, lesson, index, ctx) {
   if (question.points !== (lesson.level === 'advanced' ? 3 : 2)) out.add('shape', qLabel, qLabel + ' points do not match lesson level');
   allLocalizedText(out, question.prompt, qLabel + '.prompt');
   allLocalizedText(out, question.explanation, qLabel + '.explanation');
-  checkChoiceFeedback(out, question.choiceFeedback, qLabel);
+  const choiceCount = ctx && ctx.shortLearning ? 3 : 4;
+  checkChoiceFeedback(out, question.choiceFeedback, qLabel, choiceCount);
   checkSource(out, question.source, qLabel);
   if (question.answer !== 0) out.add('shape', qLabel, qLabel + ' answer must be 0 with the correct choice first');
 
@@ -324,12 +332,12 @@ function checkQuestion(out, question, lesson, index, ctx) {
   }
   ['ko', 'en'].forEach(function(locale) {
     const choices = question.choices[locale];
-    if (choices.length !== 4) out.add('shape', qLabel, qLabel + ' choices.' + locale + ' length != 4');
+    if (choices.length !== choiceCount) out.add('shape', qLabel, qLabel + ' choices.' + locale + ' length != ' + choiceCount);
     if (new Set(choices).size !== choices.length) out.add('shape', qLabel, qLabel + ' duplicate ' + (locale === 'ko' ? 'Korean' : 'English') + ' choices');
     choices.forEach(function(choice, i) { checkText(out, choice, qLabel + '.choices.' + locale + '[' + i + ']', locale); });
-    if (choices.length === 4) {
+    if (choices.length === choiceCount) {
       const lengths = choices.map(function(choice) { return str(choice).trim().length; });
-      const longestOther = Math.max(lengths[1], lengths[2], lengths[3]);
+      const longestOther = Math.max(...lengths.slice(1));
       if (longestOther > 0 && lengths[0] / longestOther > LENGTH_RATIO_MAX) {
         out.add('length-ratio', qLabel + '.' + locale, qLabel + '.choices.' + locale + ' correct choice is ' + (lengths[0] / longestOther).toFixed(2) + 'x the longest distractor (max ' + LENGTH_RATIO_MAX + ')');
       }
@@ -374,15 +382,19 @@ function checkChapter(out, chapter, collectionId, ctx) {
   checkKoEmDash(out, chapter, chapterLabel);
 
   const lessons = chapter.lessons || [];
-  if (lessons.length !== 2) out.add('shape', label, chapterLabel + ' lesson count ' + lessons.length + ' != 2');
+  const shortLearning = Boolean(ctx && ctx.shortLearning);
+  const lessonCount = shortLearning ? 1 : 2;
+  const questionCount = shortLearning ? 3 : 5;
+  if (lessons.length !== lessonCount) out.add('shape', label, chapterLabel + ' lesson count ' + lessons.length + ' != ' + lessonCount);
   const levels = lessons.map(function(lesson) { return lesson.level; }).sort().join(',');
-  if (levels !== 'advanced,basic') out.add('shape', label, chapterLabel + ' levels must be basic and advanced, got ' + levels);
+  const expectedLevels = shortLearning ? 'basic' : 'advanced,basic';
+  if (levels !== expectedLevels) out.add('shape', label, chapterLabel + ' levels must be ' + expectedLevels + ', got ' + levels);
 
   lessons.forEach(function(lesson) {
     const lessonLabel = chapterLabel + '/' + lesson.id;
     allLocalizedText(out, lesson.title, lessonLabel + '.title');
     const questions = lesson.questions || [];
-    if (questions.length !== 5) out.add('shape', lesson.id, lessonLabel + ' question count ' + questions.length + ' != 5');
+    if (questions.length !== questionCount) out.add('shape', lesson.id, lessonLabel + ' question count ' + questions.length + ' != ' + questionCount);
     questions.forEach(function(question, index) { checkQuestion(out, question, lesson, index, ctx); });
   });
 }
@@ -390,7 +402,7 @@ function checkChapter(out, chapter, collectionId, ctx) {
 function checkChapters(out, collections) {
   const ctx = { prompts: new Map() };
   collections.forEach(function(collection) {
-    (collection.chapters || []).forEach(function(chapter) { checkChapter(out, chapter, collection.id, ctx); });
+    (collection.chapters || []).forEach(function(chapter) { checkChapter(out, chapter, collection.id, { ...ctx, shortLearning: collection.format === 'short-learning' }); });
   });
 }
 

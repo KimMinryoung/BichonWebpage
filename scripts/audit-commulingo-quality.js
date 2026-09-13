@@ -45,7 +45,7 @@ for (const collection of data.collections || []) {
           choiceFeedbackQuestions += 1;
           ['ko', 'en'].forEach(locale => {
             const items = question.choiceFeedback && question.choiceFeedback[locale];
-            if (!Array.isArray(items) || items.length !== 4) add('choice-feedback-shape', qLabel, locale);
+            if (!Array.isArray(items) || items.length !== (collection.format === 'short-learning' ? 3 : 4)) add('choice-feedback-shape', qLabel, locale);
             (items || []).forEach((item, feedbackIndex) => checkText('choiceFeedback' + feedbackIndex, qLabel, item));
           });
         }

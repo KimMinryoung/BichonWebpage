@@ -11,6 +11,8 @@ const CATALOG_PATH = path.join(GENERATED_DIR, 'catalog.json');
 const MANIFEST_PATH = path.join(GENERATED_DIR, 'manifest.json');
 
 const PUBLIC_CHAPTER_LIMITS = {
+    'french-revolution-intro': 5,
+    'socialist-divergences-intro': 4,
     'capital-vol1': 33,
     'capital-vol2': 21,
     'capital-vol3': 52,
@@ -120,6 +122,7 @@ function publicLessonPayload(collection, chapter, lesson) {
         id: lesson.id,
         collectionId: collection.id,
         collectionTitle: collection.title,
+        noAutoLink: collection.noAutoLink,
         chapterNumber: chapter.chapterNumber,
         chapterTitle: chapter.title,
         title: lesson.title,
@@ -145,6 +148,7 @@ function buildPayloads(bundle, version) {
             description: collection.description,
             bookTitle: collection.bookTitle,
             format: collection.format,
+            noAutoLink: collection.noAutoLink,
             conceptGraph: collection.conceptGraph,
             decisionTimeline: collection.decisionTimeline,
             chapters: (collection.chapters || []).map(chapter => ({

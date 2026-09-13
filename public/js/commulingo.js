@@ -1004,7 +1004,16 @@
     // the argument. Only courses whose text is on the site carry `source`.
     function sourceHtml(question) {
         var source = question && question.source;
-        if (!source || !source.quote) return '';
+        if (!source) return '';
+        if (source.kind === 'reference') {
+            var referenceLabel = text(source.label);
+            if (!referenceLabel || !/^(https:\/\/|\/commulingo\/docs\/)/.test(source.href || '')) return '';
+            return '<div class="commu-source"><span class="commu-source-label">'
+                + escapeHtml(lang === 'en' ? 'Evidence and sources' : '근거 자료') + '</span>'
+                + '<a class="commu-source-link" href="' + escapeHtml(source.href) + '" target="_blank" rel="noopener">'
+                + escapeHtml(referenceLabel) + ' →</a></div>';
+        }
+        if (!source.quote) return '';
         var quote = text(source.quote);
         if (!quote) return '';
         var pieces = quote.split(' … ').map(escapeHtml).join(' <span class="commu-source-gap">…</span> ');

@@ -54,7 +54,7 @@ async function bookPageData(collection, langRaw) {
     // Chapter summaries and learning focuses are the prose the book's own
     // page shows before a lesson is ever opened, so they carry the same
     // dictionary links the concept briefs do.
-    const linkers = await commuLingoLinkers();
+    const linkers = await commuLingoLinkers(collection.noAutoLink);
     const linked = {
         ...collection,
         chapters: (collection.chapters || []).map(chapter => ({
@@ -70,12 +70,12 @@ async function bookPageData(collection, langRaw) {
     return entry;
 }
 
-async function commuLingoLinkers() {
+async function commuLingoLinkers(noAutoLink = []) {
     const byLang = {};
     for (const lang of ['ko', 'en']) {
         const indexes = await getLinkIndexes(lang);
         byLang[lang] = () => {
-            const link = createLinker(indexes, { surface: 'learning' });
+            const link = createLinker(indexes, { surface: 'learning', blockStrings: noAutoLink });
             return value => (typeof value === 'string' && value ? link.plain(value) : '');
         };
     }
@@ -115,7 +115,7 @@ async function bookDictionaryEntries(collection, lang) {
         if (!value) return;
         // A fresh linker per passage, the same restraint the reader sees: an
         // entry linked once in a passage, and the book's chip list is the union.
-        const link = createLinker(indexes, { surface: 'learning' });
+        const link = createLinker(indexes, { surface: 'learning', blockStrings: collection.noAutoLink || [] });
         link.plain(value);
         Object.keys(found).forEach(kind => {
             link.found[kind].forEach(entry => {
@@ -157,7 +157,7 @@ async function bookDictionaryEntries(collection, lang) {
 }
 
 async function linkifyLessonPayload(lesson) {
-    const linkers = await commuLingoLinkers();
+    const linkers = await commuLingoLinkers(lesson.noAutoLink);
     // The chapter summary and focus shown above the brief, linked the same way
     // the book page links them so the two screens do not disagree.
     lesson.summaryHtml = linkLocalized(linkers, lesson.summary);
