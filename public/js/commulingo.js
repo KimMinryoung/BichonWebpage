@@ -790,6 +790,7 @@
                     missed: [],
                     firstScore: null
                 };
+                if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.begin('lesson', lesson.id, data.version, 'lesson');
                 renderIntro();
             })
             .catch(function() {
@@ -974,6 +975,7 @@
             else active.missed.push(active.order[active.pos]);
         }
         recordAnswer(currentLesson(), question, correct);
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.answer(correct);
 
         Array.prototype.forEach.call(els.choices.children, function(button) {
             var originalIndex = Number(button.getAttribute('data-original-index'));
@@ -1059,6 +1061,7 @@
 
     function finishLesson() {
         if (active.mode === 'review') { finishReview(); return; }
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.complete();
         if (active.mode === 'lesson') active.firstScore = active.score;
         var total = lessonQuestionCount(active.lesson);
         var perfect = active.mode === 'retry' ? active.missed.length === 0 : active.score === total;
@@ -1103,6 +1106,7 @@
     // them has been answered correctly; only then does the lesson count as
     // completed. The first-pass score is kept for the closing note.
     function startRetry(lesson, missed, firstScore) {
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.begin('lesson', lesson.id, data.version, 'retry');
         active = {
             mode: 'retry',
             lesson: lesson,
@@ -1122,6 +1126,7 @@
 
     // Due questions of this book, drawn from several lessons, shuffled.
     function startReview() {
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.stop();
         if (!Schedule) return;
         var due = Schedule.dueList(answers, bookLessonIds(), Date.now()).slice(0, 20);
         if (!due.length) { renderReviewButton(); return; }

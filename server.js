@@ -88,6 +88,9 @@ app.use(cachePolicy);
 app.use(require('./routes/redirects'));
 app.use(staticAssets);
 
+// Anonymous learning writes use their own strict Origin/JSON guard.
+app.use('/commulingo/measurement', require('./routes/commulingo-measurement'));
+
 // CSRF protection (exclude API-key-authenticated routes and cacheable public reads)
 // /commulingo/admin/api/docs is excluded for curl use: it is IP-allowlisted,
 // session-independent, and every write needs a non-simple content type or

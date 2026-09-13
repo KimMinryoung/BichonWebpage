@@ -113,6 +113,7 @@
     // ------------------------------------------------------- 퀴즈 라운드
 
     function startQuizRound() {
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.begin('drill', meta.id, meta.version, 'quiz');
         var size = Math.min(deck.roundSize || 10, deck.questions.length);
         round = { questions: shuffle(deck.questions).slice(0, size), index: 0, score: 0, answered: false, finished: false };
         els.next.textContent = strings.next || 'Next';
@@ -156,6 +157,7 @@
         round.answered = true;
         var correct = index === Number(question.answer);
         if (correct) round.score += 1;
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.answer(correct);
 
         Array.prototype.forEach.call(els.choices.children, function(button) {
             var originalIndex = Number(button.getAttribute('data-original-index'));
@@ -179,6 +181,7 @@
     }
 
     function finishQuizRound() {
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.complete();
         round.finished = true;
         saveRecord(deck.id, round.score, round.questions.length);
         els.prompt.textContent = strings.drillRoundDone || 'Round complete';
@@ -230,6 +233,7 @@
     }
 
     function startTimelineRound() {
+        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.begin('drill', meta.id, meta.version, 'timeline');
         var sample = meta.mode === 'episodes' ? sampleEpisodesRound() : sampleEventsRound();
         var display = shuffle(sample.items);
         var guard = 0;
@@ -312,6 +316,10 @@
             if (correct) score += 1;
         });
         saveRecord(deck.id, score, round.items.length);
+        if (window.CommuLingoMeasurement) {
+            window.CommuLingoMeasurement.answer(score === round.items.length);
+            window.CommuLingoMeasurement.complete();
+        }
         setMeter(score, round.items.length);
         var perfect = score === round.items.length;
         els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : (score ? '' : ' is-wrong'));

@@ -119,6 +119,7 @@
             </article>
         </section>
         <% } %>
+        <% if (!isGraph && !isDecision) { %><%- include('../partials/commulingo-measurement') %><% } %>
     </main>
 
     <%- include('../partials/footer') %>
