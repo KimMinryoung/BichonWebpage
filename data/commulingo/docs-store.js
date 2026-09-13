@@ -10,7 +10,7 @@ const path = require('path');
 const DOCS_DIR = path.join(__dirname, 'docs');
 const MANIFEST_PATH = path.join(DOCS_DIR, 'manifest.json');
 
-let manifestCache = { mtimeMs: 0, docs: [] };
+let manifestCache = { mtimeMs: 0, docs: [], redirects: {} };
 const bodyCache = new Map(); // file -> { mtimeMs, checkedAt, html, toc, paged }; insertion order = recency
 // The largest fragments run to 1.4 MB and the paged copy doubles that, so the
 // body cache keeps the most recently read documents rather than all of them.
@@ -115,6 +115,7 @@ function loadManifest() {
         });
         manifestCache = {
             mtimeMs: stat.mtimeMs,
+            redirects: parsed.redirects || {},
             docs: sortByOriginalDate(docs.map(doc => ({
                 ...doc,
                 modifiedAt: documentModifiedAt(doc),
@@ -130,6 +131,19 @@ function listCommuLingoDocs() {
 
 function getCommuLingoDoc(docId) {
     return loadManifest().find(doc => doc.id === docId) || null;
+}
+
+// Merged documents leave the library index, but their old URLs still lead to
+// the individual text inside the collection. Only live, local targets qualify.
+function getCommuLingoDocRedirect(docId) {
+    const docs = loadManifest();
+    if (docs.some(doc => doc.id === docId)) return null;
+    const target = Object.hasOwn(manifestCache.redirects, docId)
+        ? manifestCache.redirects[docId] : null;
+    if (!target || !/^[a-z0-9-]+$/.test(target.id)
+        || !/^[a-z0-9-]+$/.test(target.anchor)) return null;
+    const doc = docs.find(item => item.id === target.id);
+    return doc ? { doc, anchor: target.anchor } : null;
 }
 
 // A manifest entry's people/terms/events arrays hold dictionary ids and nothing
@@ -240,5 +254,6 @@ function getCommuLingoDocContent(doc) {
 }
 
 module.exports = {
-    listCommuLingoDocs, getCommuLingoDoc, listCommuLingoDocsFor, getCommuLingoDocContent, docRefId,
+    listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
+    listCommuLingoDocsFor, getCommuLingoDocContent, docRefId,
 };

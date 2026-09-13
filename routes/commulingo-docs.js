@@ -2,7 +2,7 @@ const { searchableAliases } = require('../data/commulingo/link-expressions');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const { getLinkIndexes, createLinker } = require('../data/commulingo/linkify');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
@@ -225,7 +225,16 @@ router.get('/:docId', async (req, res) => {
         // Legacy static-file URLs (…/docs/<id>.html) are baked into person
         // section bodies in the DB — keep them working permanently.
         if (docId.endsWith('.html')) {
-            return res.redirect(301, `/commulingo/docs/${docId.slice(0, -'.html'.length)}`);
+            const prefix = req.urlLanguage === 'en' ? '/en' : '';
+            return res.redirect(301, `${prefix}/commulingo/docs/${docId.slice(0, -'.html'.length)}`);
+        }
+        const merged = getCommuLingoDocRedirect(docId);
+        if (merged) {
+            const { paged } = getCommuLingoDocContent(merged.doc);
+            const page = paged?.idToPage[merged.anchor];
+            const prefix = req.urlLanguage === 'en' ? '/en' : '';
+            return res.redirect(301, `${prefix}/commulingo/docs/${merged.doc.id}`
+                + (page ? `?p=${page}` : '') + `#${merged.anchor}`);
         }
         const raw = getCommuLingoDoc(docId);
         if (!raw) return errorPage.notFound(res, {
