@@ -4747,14 +4747,14 @@
         "en": "French Revolution: Why Did Liberty and Equality Divide? (Korean guide)"
       },
       "description": {
-        "ko": "홉스봄을 기본 해석틀로 왕권과 공화정, 시민의 범위, 빵값과 생존을 배우는 짧은 읽기 학습 3편. 가상 사례 9문항과 펼쳐 읽는 해설, 사료와 해석의 구별을 담았습니다.",
-        "en": "Three short Korean reading lessons on monarchy and republicanism, citizenship, and subsistence, using Hobsbawm as the main interpretive framework. Includes nine hypothetical exercises, expandable explanations, and a distinction between evidence and interpretation."
+        "ko": "홉스봄을 기본 해석틀로 왕권과 공화정, 시민권, 생존권, 혁명정부의 권력, 바뵈프의 평등 구상을 배우는 짧은 읽기 학습 5편. 가상 사례 15문항과 해설, 사료와 해석의 구별을 담았습니다.",
+        "en": "Five short Korean reading lessons on the French Revolution, using Hobsbawm as the main interpretive framework. Includes fifteen exercises on government, citizenship, subsistence, emergency power, and economic equality."
       },
       "kind": {
         "ko": "저작·연설",
         "en": "Writings & speeches"
       },
-      "source": "CommuLingo 작성 학습 해설(2026-09-13). 기본 해석틀: Eric Hobsbawm, The Age of Revolution, 1789–1848 (1962), Vintage 1996, 서문·서론·제3장. 번역 또는 홉스봄의 저작 전문이 아님. 개별 사료 출처는 본문 참조.",
+      "source": "CommuLingo 작성 학습 해설(2026-09-13). 기본 해석틀: Eric Hobsbawm, The Age of Revolution, 1789–1848 (1962), Vintage 1996, 서문·서론·제3·6장. 번역 또는 홉스봄의 저작 전문이 아님. 개별 사료 출처는 본문 참조.",
       "people": [],
       "terms": [],
       "events": [],
@@ -4772,6 +4772,42 @@
         "시민",
         "임시정부",
         "국가",
+        "입헌민주당",
+        "자유주의"
+      ]
+    },
+    {
+      "id": "socialist-divergences-intro",
+      "file": "socialist-divergences-intro.html",
+      "docLang": "ko",
+      "date": "2026-09-13",
+      "title": {
+        "ko": "사회주의는 왜 여러 갈래로 나뉘었을까?",
+        "en": "Why Did Socialism Divide into Different Currents? (Korean guide)"
+      },
+      "description": {
+        "ko": "오언·마르크스, 마르크스·바쿠닌, 베른슈타인·룩셈부르크, 레닌·룩셈부르크를 당사자의 글로 비교하는 짧은 학습 4편. 변화의 주체·국가·개혁·민주주의를 12문항과 해설로 구별합니다.",
+        "en": "Four short Korean reading lessons comparing Owen and Marx, Marx and Bakunin, Bernstein and Luxemburg, and Lenin and Luxemburg. Twelve exercises explore agency, the state, reform, and democracy."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "CommuLingo 작성 학습 해설(2026-09-13). 오언·마르크스·바쿠닌·베른슈타인·룩셈부르크·레닌의 해당 저작과 시점을 구별한 한국어 요약. 개별 판본·사료 출처는 본문 참조. 번역 전문이 아님.",
+      "people": [],
+      "terms": [],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "사회주의의 분기"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "국가",
+        "시민",
+        "임시정부",
         "입헌민주당",
         "자유주의"
       ]
