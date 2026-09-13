@@ -22,7 +22,7 @@ module.exports = {
   },
   "editorial": {
     "authoredAt": "2026-09-13",
-    "revision": 5,
+    "revision": 6,
     "interpretation": "Hobsbawm with separately identified primary evidence",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
     "sourceNotesFile": "data/commulingo/docs/french-revolution-intro.html"
@@ -33,21 +33,187 @@ module.exports = {
     "en": "1791–1794 · faction map"
   },
   "title": {
-    "ko": "같은 혁명파 안에서도 무엇이 달랐을까?",
-    "en": "What divided the revolutionaries?"
+    "ko": "혁명기의 세력들은 어디에 서 있었을까?",
+    "en": "Where did the forces of the Revolution stand?"
   },
   "intro": {
-    "ko": "의회 의석, 정치클럽, 파리의 대중운동은 서로 겹쳤지만 같은 조직은 아니었습니다. 세 층을 나누어 보면 지롱드파와 산악파의 대립, 산악파 집권기 주변의 에베르파·로베스피에르파·당통파 경쟁을 한 흐름으로 읽을 수 있습니다.",
-    "en": "Parliamentary alignments, political clubs, and popular politics in Paris overlapped, but they were not the same organisations. Reading three layers separately connects the Girondin–Mountain conflict with the later rivalry among Hébertists, Robespierrists, and Dantonists."
+    "ko": "혁명 내부의 의회 좌석·정치클럽·파리 대중운동뿐 아니라 입헌군주파와 의회 밖 반혁명도 함께 봐야 전체 구도가 보입니다. 네 층을 시기와 성격에 맞는 축으로 나누어 배치했습니다.",
+    "en": "The full picture includes constitutional monarchists and counter-revolution outside the legislature as well as parliamentary alignments, clubs, and popular politics. Four layers arrange them along axes appropriate to their moment and character."
   },
   "caveat": {
-    "ko": "주의 · 오늘날의 당원명부와 강령을 갖춘 정당 지도가 아닙니다. 명칭과 동맹은 쟁점과 시기에 따라 움직였고, ‘에베르파’와 ‘로베스피에르파’도 당대의 단일 공식 당명이 아닙니다.",
-    "en": "Caution · This is not a map of modern parties with fixed membership and platforms. Labels and alliances shifted by issue and moment; “Hébertists” and “Robespierrists” were not single official party names."
+    "ko": "주의 · 오늘날의 당원명부와 강령을 갖춘 정당 지도가 아닙니다. 푀양파는 혁명 자체를 모두 부정한 왕당파가 아니라 1791년 헌정에서 혁명을 멈추려 한 혁명 우파였고, 망명귀족·선서거부 성직자·지역 반란도 하나의 지휘계통이 아니었습니다.",
+    "en": "Caution · This is not a map of modern parties with fixed membership and platforms. The Feuillants were the Revolution’s constitutional-monarchist right, not simple rejectionists, while émigrés, refractory clergy, and regional insurgents did not form one chain of command."
   },
   "layers": [
     {
-      "id": "convention",
+      "id": "counterrevolution",
       "number": "01",
+      "period": "1791–1794",
+      "axis": {
+        "left": {
+          "ko": "혁명 내부의 우측 경계",
+          "en": "Right edge within the Revolution"
+        },
+        "right": {
+          "ko": "혁명 밖의 무장 반혁명",
+          "en": "Armed counter-revolution outside it"
+        }
+      },
+      "kind": {
+        "ko": "혁명 우파와 반혁명 세력",
+        "en": "The revolutionary right and counter-revolution"
+      },
+      "summary": {
+        "ko": "이 행 전체가 혁명파 지도의 오른쪽 영역입니다. 입헌군주제를 지키려 한 푀양파부터 왕정복고 세력, 종교 갈등과 지역 반란까지 서로 다른 반대 흐름을 한 당으로 합치지 않고 구분합니다.",
+        "en": "This whole row belongs on the right side of the revolutionary map. It distinguishes Feuillant constitutional monarchists from restorationist, religious, and regional opposition rather than merging them into one party."
+      },
+      "groups": [
+        {
+          "id": "feuillants",
+          "order": 1,
+          "name": {
+            "ko": "푀양파",
+            "en": "Feuillants"
+          },
+          "alias": {
+            "ko": "입헌군주제파 · 혁명 우파",
+            "en": "constitutional monarchists · revolutionary right"
+          },
+          "description": {
+            "ko": "바렌 도주와 샹드마르스 사건을 거치며 자코뱅에서 갈라진 온건파였습니다. 1791년 헌법과 왕의 지위를 지키고 혁명의 추가 급진화를 끝내려 했습니다.",
+            "en": "Moderates who split from the Jacobins amid the Varennes and Champ de Mars crises. They defended the Constitution of 1791 and the king’s place within it, seeking to halt further radicalisation."
+          },
+          "turn": {
+            "ko": "1792년 8월 10일 왕권 정지와 푀양파 내각 해임 뒤 정치적 기반 붕괴",
+            "en": "Political base collapsed after 10 August 1792 suspended the king and dismissed Feuillant ministers"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "앙투안 바르나브",
+                "en": "Antoine Barnave"
+              }
+            },
+            {
+              "label": {
+                "ko": "아드리앵 뒤포르",
+                "en": "Adrien Duport"
+              }
+            },
+            {
+              "label": {
+                "ko": "알렉상드르 드 라메트",
+                "en": "Alexandre de Lameth"
+              }
+            }
+          ]
+        },
+        {
+          "id": "royalists-emigres",
+          "order": 2,
+          "name": {
+            "ko": "왕정복고파와 망명귀족",
+            "en": "Restorationist royalists and émigrés"
+          },
+          "alias": {
+            "ko": "왕실 인맥 · 망명자 군대",
+            "en": "court networks · émigré armies"
+          },
+          "description": {
+            "ko": "왕권 회복이나 구체제 복원을 바란 여러 흐름입니다. 망명귀족 일부는 국외에서 군대를 조직하고 유럽 군주국의 개입과 결합했지만, 모든 망명자가 같은 이유나 노선을 가졌던 것은 아닙니다.",
+            "en": "Several currents sought renewed royal authority or restoration of the old order. Some aristocratic émigrés organised armies abroad and aligned with monarchical intervention, although not every émigré shared one motive or programme."
+          },
+          "turn": {
+            "ko": "1792년 전쟁과 왕정 붕괴 뒤 국내 왕당파와 국외 망명 세력이 반혁명의 표적이자 기반으로 부각",
+            "en": "War and the fall of the monarchy in 1792 made domestic royalists and émigré networks central to counter-revolution"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "루이 16세",
+                "en": "Louis XVI"
+              }
+            },
+            {
+              "label": {
+                "ko": "아르투아 백작",
+                "en": "Comte d’Artois"
+              }
+            },
+            {
+              "label": {
+                "ko": "콩데 공",
+                "en": "Prince of Condé"
+              }
+            }
+          ]
+        },
+        {
+          "id": "refractory-clergy",
+          "order": 3,
+          "name": {
+            "ko": "선서거부 성직자와 가톨릭 저항",
+            "en": "Refractory clergy and Catholic resistance"
+          },
+          "alias": {
+            "ko": "성직자 시민헌법 선서 거부",
+            "en": "refusal of the Civil Constitution oath"
+          },
+          "description": {
+            "ko": "성직자 시민헌법에 대한 선서 거부가 교회와 지역사회를 갈라놓았습니다. 선서거부 성직자는 하나의 왕당파 정당은 아니었지만, 박해와 종교정책 속에서 여러 지역의 반혁명 동원망과 겹쳤습니다.",
+            "en": "Refusal of the oath to the Civil Constitution divided the Church and local communities. Refractory clergy were not one royalist party, but persecution and religious policy tied some networks to regional counter-revolution."
+          },
+          "turn": {
+            "ko": "1792년 추방 논쟁과 왕의 거부권이 입헌군주제 위기를 심화",
+            "en": "The 1792 deportation dispute and royal veto deepened the constitutional crisis"
+          },
+          "people": []
+        },
+        {
+          "id": "vendee-chouannerie",
+          "order": 4,
+          "name": {
+            "ko": "방데·슈앙 반란 세력",
+            "en": "Vendée and Chouan insurgencies"
+          },
+          "alias": {
+            "ko": "지역적·가톨릭적·왕당파적 무장 저항",
+            "en": "regional, Catholic, and royalist armed resistance"
+          },
+          "description": {
+            "ko": "징병, 종교 갈등, 지방의 불만이 결합한 서로 다른 서부 농촌 반란입니다. 가톨릭 왕당군의 이름을 채택했지만 파리의 단일 정파나 하나의 전국 조직으로 보면 안 됩니다.",
+            "en": "Distinct western rural insurgencies combining conscription, religious conflict, and local grievances. They adopted Catholic and royalist banners but were neither a Paris faction nor one nationwide organisation."
+          },
+          "turn": {
+            "ko": "1793년 내전의 핵심 전선이 되었고 정규군 패배 뒤에도 슈앙 반란 등 무장 저항 지속",
+            "en": "Became a main civil-war front in 1793; armed resistance including the Chouannerie continued after major battlefield defeats"
+          },
+          "people": [
+            {
+              "label": {
+                "ko": "자크 카틀리노",
+                "en": "Jacques Cathelineau"
+              }
+            },
+            {
+              "label": {
+                "ko": "앙리 드 라 로슈자클랭",
+                "en": "Henri de La Rochejaquelein"
+              }
+            },
+            {
+              "label": {
+                "ko": "프랑수아 드 샤레트",
+                "en": "François de Charette"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "convention",
+      "number": "02",
       "period": "1792–1795",
       "kind": {
         "ko": "국민공회 의석 집단",
@@ -60,7 +226,6 @@ module.exports = {
       "groups": [
         {
           "id": "gironde",
-          "tone": "ochre",
           "name": {
             "ko": "지롱드파",
             "en": "Girondins"
@@ -90,11 +255,11 @@ module.exports = {
                 "en": "Pierre Vergniaud"
               }
             }
-          ]
+          ],
+          "order": 3
         },
         {
           "id": "plain",
-          "tone": "neutral",
           "name": {
             "ko": "평원파",
             "en": "The Plain"
@@ -124,11 +289,11 @@ module.exports = {
                 "en": "Bertrand Barère"
               }
             }
-          ]
+          ],
+          "order": 2
         },
         {
           "id": "mountain",
-          "tone": "red",
           "name": {
             "ko": "산악파",
             "en": "The Mountain"
@@ -165,13 +330,24 @@ module.exports = {
                 "en": "Jean-Paul Marat"
               }
             }
-          ]
+          ],
+          "order": 1
         }
-      ]
+      ],
+      "axis": {
+        "left": {
+          "ko": "당시 의회의 좌측",
+          "en": "Convention left"
+        },
+        "right": {
+          "ko": "당시 의회의 우측",
+          "en": "Convention right"
+        }
+      }
     },
     {
       "id": "networks",
-      "number": "02",
+      "number": "03",
       "period": "1789–1794",
       "kind": {
         "ko": "클럽과 파리의 대중정치",
@@ -184,7 +360,6 @@ module.exports = {
       "groups": [
         {
           "id": "jacobins",
-          "tone": "green",
           "name": {
             "ko": "자코뱅 클럽",
             "en": "Jacobin Club"
@@ -215,11 +390,11 @@ module.exports = {
                 "en": "Louis Antoine de Saint-Just"
               }
             }
-          ]
+          ],
+          "order": 4
         },
         {
           "id": "cordeliers",
-          "tone": "red",
           "name": {
             "ko": "코르들리에 클럽",
             "en": "Cordeliers Club"
@@ -256,11 +431,11 @@ module.exports = {
                 "en": "Camille Desmoulins"
               }
             }
-          ]
+          ],
+          "order": 3
         },
         {
           "id": "sans-culottes",
-          "tone": "ochre",
           "name": {
             "ko": "상퀼로트와 파리 구역",
             "en": "Sans-culottes and Paris sections"
@@ -277,11 +452,11 @@ module.exports = {
             "ko": "1793년 지롱드파 축출을 압박했고 1794년 대중조직 억제로 약화",
             "en": "Pressed against the Girondins in 1793; weakened by restraints on popular organisation in 1794"
           },
-          "people": []
+          "people": [],
+          "order": 2
         },
         {
           "id": "enrages",
-          "tone": "neutral",
           "name": {
             "ko": "앙라제",
             "en": "Enragés"
@@ -311,13 +486,24 @@ module.exports = {
                 "en": "Jean Varlet"
               }
             }
-          ]
+          ],
+          "order": 1
         }
-      ]
+      ],
+      "axis": {
+        "left": {
+          "ko": "급진적 민중 압력",
+          "en": "Radical popular pressure"
+        },
+        "right": {
+          "ko": "제도화된 클럽 정치",
+          "en": "Institutional club politics"
+        }
+      }
     },
     {
       "id": "mountain-rivals",
-      "number": "03",
+      "number": "04",
       "period": "1793–1794",
       "kind": {
         "ko": "산악파 집권기 주변의 세 경쟁 경향",
@@ -330,7 +516,6 @@ module.exports = {
       "groups": [
         {
           "id": "hebertists",
-          "tone": "red",
           "name": {
             "ko": "에베르파",
             "en": "Hébertists"
@@ -361,11 +546,11 @@ module.exports = {
                 "en": "Pierre-Gaspard Chaumette"
               }
             }
-          ]
+          ],
+          "order": 1
         },
         {
           "id": "robespierrists",
-          "tone": "green",
           "name": {
             "ko": "로베스피에르파와 위원회 정부",
             "en": "Robespierrists and committee government"
@@ -402,11 +587,11 @@ module.exports = {
                 "en": "Georges Couthon"
               }
             }
-          ]
+          ],
+          "order": 2
         },
         {
           "id": "indulgents",
-          "tone": "ochre",
           "name": {
             "ko": "당통파·관용파",
             "en": "Dantonists or Indulgents"
@@ -436,9 +621,20 @@ module.exports = {
                 "en": "Camille Desmoulins"
               }
             }
-          ]
+          ],
+          "order": 3
         }
-      ]
+      ],
+      "axis": {
+        "left": {
+          "ko": "급진화·민중 압력",
+          "en": "Pressure for further radicalisation"
+        },
+        "right": {
+          "ko": "공포정치 완화 요구",
+          "en": "Pressure to ease the Terror"
+        }
+      }
     }
   ],
   "timelineTitle": {
@@ -523,6 +719,27 @@ module.exports = {
         "en": "Bibliothèque nationale de France · Jacques René Hébert authority record"
       },
       "href": "https://catalogue.bnf.fr/ark:/12148/cb12520097x"
+    },
+    {
+      "label": {
+        "ko": "프랑스 국민의회 · 바르나브와 푀양파 분리",
+        "en": "French National Assembly · Barnave and the Feuillant split"
+      },
+      "href": "https://www.assemblee-nationale.fr/histoire/7ea.asp"
+    },
+    {
+      "label": {
+        "ko": "프랑스 국민의회 · 1792년 6월과 선서거부 성직자",
+        "en": "French National Assembly · June 1792 and refractory clergy"
+      },
+      "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/declaration-de-guerre-manifestation-populaire-des-girondins"
+    },
+    {
+      "label": {
+        "ko": "프랑스 국민의회 · 1792년 8월 10일과 왕정 폐지",
+        "en": "French National Assembly · 10 August 1792 and the fall of monarchy"
+      },
+      "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/journee-insurrectionnelle-parisienne-abolition-de-la-royaute"
     }
   ]
 },

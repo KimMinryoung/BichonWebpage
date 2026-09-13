@@ -64,7 +64,7 @@
         </header>
 
         <% var factionGuide = lessons.collections[0].factionGuide; %>
-        <% var factionText = function(value) { return value && (value[lang] || value.ko || value.en) || ''; }; %>
+        <% var factionText = function(value) { if (typeof value === 'string') return value; return value && (value[lang] || value.ko || value.en) || ''; }; %>
         <% if (factionGuide) { %>
         <section class="box commu-faction-guide" id="faction-guide" aria-labelledby="faction-guide-title">
             <header class="commu-faction-head">
@@ -85,9 +85,15 @@
                             <p><%= factionText(layer.summary) %></p>
                         </div>
                     </header>
+                    <% if (layer.axis) { %>
+                    <div class="commu-faction-axis" aria-label="<%= lang === 'en' ? 'Left-to-right arrangement' : '왼쪽에서 오른쪽 배치 기준' %>">
+                        <span><%= factionText(layer.axis.left) %></span>
+                        <span><%= factionText(layer.axis.right) %></span>
+                    </div>
+                    <% } %>
                     <div class="commu-faction-grid">
-                        <% layer.groups.forEach(function(group) { %>
-                        <article class="commu-faction-card commu-faction-card--<%= group.tone %>">
+                        <% layer.groups.slice().sort(function(a, b) { return (a.order || 0) - (b.order || 0); }).forEach(function(group) { %>
+                        <article class="commu-faction-card">
                             <header>
                                 <h4><%= factionText(group.name) %></h4>
                                 <p><%= factionText(group.alias) %></p>

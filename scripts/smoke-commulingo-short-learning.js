@@ -13,13 +13,18 @@ assert.equal(courses[0].chapters.length, 10);
 assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.questions).length, 30);
 assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 assert.equal(courses[0].title.ko, '프랑스 혁명사');
-assert.equal(courses[0].factionGuide.layers.length, 3);
-assert.deepEqual(courses[0].factionGuide.layers.map(layer => layer.groups.length), [3, 4, 3]);
+assert.equal(courses[0].factionGuide.layers.length, 4);
+assert.deepEqual(courses[0].factionGuide.layers.map(layer => layer.groups.length), [4, 3, 4, 3]);
 assert.equal(courses[0].factionGuide.timeline.length, 5);
+for (const layer of courses[0].factionGuide.layers) {
+  assert(layer.axis && layer.axis.left && layer.axis.right, `faction layer ${layer.id} needs an explicit arrangement axis`);
+  assert.deepEqual(layer.groups.map(group => group.order).slice().sort((a, b) => a - b), layer.groups.map((_, index) => index + 1));
+  assert(layer.groups.every(group => !Object.hasOwn(group, 'tone')), `faction layer ${layer.id} must not use unexplained colour or line-style codes`);
+}
 const publishedFrench = require('../data/commulingo/shards').loadCommuLingoCatalog().collections.find(collection => collection.id === 'french-revolution-intro');
-assert.equal(publishedFrench.factionGuide.layers.length, 3);
+assert.equal(publishedFrench.factionGuide.layers.length, 4);
 const factionGuide = JSON.stringify(courses[0].factionGuide);
-for (const required of ['지롱드파', '평원파', '산악파', '자코뱅 클럽', '코르들리에 클럽', '상퀼로트', '앙라제', '에베르파', '로베스피에르파', '당통파', 'jacques-rene-hebert']) {
+for (const required of ['푀양파', '왕정복고파와 망명귀족', '선서거부 성직자와 가톨릭 저항', '방데·슈앙 반란 세력', '지롱드파', '평원파', '산악파', '자코뱅 클럽', '코르들리에 클럽', '상퀼로트', '앙라제', '에베르파', '로베스피에르파', '당통파', 'jacques-rene-hebert']) {
   assert(factionGuide.includes(required), 'French Revolution faction guide is missing ' + required);
 }
 const frenchHistory = JSON.stringify(courses[0]);
