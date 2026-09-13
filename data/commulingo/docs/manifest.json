@@ -5393,6 +5393,41 @@
           "Robespierre’s 8 Thermidor speech"
         ]
       }
+    },
+    {
+      "id": "france-directoire-consulat-1795-1799",
+      "file": "france-directoire-consulat-1795-1799.html",
+      "docLang": "ko",
+      "date": "1795-08-22",
+      "title": {
+        "ko": "프랑스 혁명 문헌집: 총재정부와 통령정부 헌법 (1795–1799)",
+        "en": "French Revolution: Constitutions of the Directory and Consulate (1795–1799)"
+      },
+      "description": {
+        "ko": "1795년 혁명력 3년 헌법과 인간과 시민의 권리·의무 선언, 1799년 혁명력 8년 헌법의 한국어 전문 번역.",
+        "en": "Complete Korean translations of the 1795 Constitution and Declaration of Rights and Duties, and the 1799 Constitution."
+      },
+      "kind": {
+        "ko": "헌법·법령·명령",
+        "en": "Constitutions, laws & orders"
+      },
+      "source": "프랑스 대통령실 Élysée 공식 프랑스어 원문: https://www.elysee.fr/la-presidence/la-constitution-du-5-fructidor-an-iii-22-aout-1795 ; https://www.elysee.fr/la-presidence/la-constitution-du-22-frimaire-an-viii-13-decembre-1799",
+      "people": [],
+      "terms": [],
+      "events": [],
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "1795년 프랑스 헌법",
+          "1799년 프랑스 헌법",
+          "혁명력 3년 헌법",
+          "혁명력 8년 헌법"
+        ],
+        "en": [
+          "Constitution of the Year III",
+          "Constitution of the Year VIII"
+        ]
+      }
     }
   ],
   "redirects": {
