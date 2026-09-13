@@ -4591,12 +4591,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     color: var(--link);
 }
 
-.commu-key-hint {
-    margin: 8px 0 0;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
 .commu-resume-review {
     display: block;
     margin-top: 4px;

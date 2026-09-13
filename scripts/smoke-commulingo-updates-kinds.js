@@ -2,6 +2,10 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
+
+assert.equal(getLatestCourseMetadata().id, 'french-revolution-intro');
+assert.equal(getLatestCourseMetadata().releasedAt, '2026-09-13');
 
 function loadService(rows) {
     const dependencies = {

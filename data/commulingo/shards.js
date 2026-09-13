@@ -11,7 +11,7 @@ const CATALOG_PATH = path.join(GENERATED_DIR, 'catalog.json');
 const MANIFEST_PATH = path.join(GENERATED_DIR, 'manifest.json');
 
 const PUBLIC_CHAPTER_LIMITS = {
-    'french-revolution-intro': 5,
+    'french-revolution-intro': 8,
     'socialist-divergences-intro': 4,
     'capital-vol1': 33,
     'capital-vol2': 21,

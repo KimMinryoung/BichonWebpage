@@ -13,25 +13,285 @@ module.exports = {
     "en": "French Revolution"
   },
   "badge": {
-    "ko": "짧은 학습 · 5편",
-    "en": "5 short lessons"
+    "ko": "짧은 학습 · 8편",
+    "en": "8 short lessons"
   },
   "description": {
-    "ko": "홉스봄을 기본 해석틀로 자유·평등·혁명 권력의 차이를 배웁니다. 각 편은 개념 설명과 3문항, 오답 해설로 구성됩니다.",
-    "en": "Explore liberty, equality, and revolutionary power using Hobsbawm as the main interpretive framework. Each lesson includes a concept brief, three questions, and feedback."
+    "ko": "1789년 구체제의 위기부터 1799년 브뤼메르까지 혁명의 흐름을 따라가며 자유·평등·혁명 권력의 쟁점을 배웁니다.",
+    "en": "Follow the Revolution from the crisis of the Old Regime in 1789 to Brumaire in 1799 while examining liberty, equality, and revolutionary power."
   },
   "editorial": {
     "authoredAt": "2026-09-13",
-    "revision": 1,
+    "revision": 2,
     "interpretation": "Hobsbawm with separately identified primary evidence",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
     "sourceNotesFile": "data/commulingo/docs/french-revolution-intro.html"
   },
   "chapters": [
     {
-      "id": "french-revolution-intro-ch01",
+      "id": "french-revolution-intro-ch06",
       "volumeNumber": 11,
       "chapterNumber": 1,
+      "partNumber": 1,
+      "partTitle": {
+        "ko": "제1부 · 구체제의 붕괴와 새 헌정",
+        "en": "Part I · The Old Regime collapses"
+      },
+      "title": {
+        "ko": "1789년, 무엇이 구체제를 무너뜨렸을까?",
+        "en": "What brought down the Old Regime in 1789?"
+      },
+      "sourceUrl": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+      "summary": {
+        "ko": "약 5분 · 재정 위기, 대표권 투쟁, 도시와 농촌의 행동이 어떻게 하나의 혁명 과정으로 이어졌는지 배웁니다.",
+        "en": "About 5 minutes · Connect the fiscal crisis, the struggle over representation, and popular action in town and country."
+      },
+      "learningFocus": {
+        "ko": "1789년의 사건을 원인 하나로 줄이지 말고, 국가 위기와 정치적 선언, 민중 행동이 서로 어떤 영향을 주었는지 살펴보세요.",
+        "en": "Do not reduce 1789 to one cause. Trace how state crisis, political claims, and popular action affected one another."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "국가의 위기가 대표권 문제를 열다",
+            "items": [
+              "왕실 재정은 전쟁 비용과 불공평한 조세 구조 속에서 위기에 빠졌고, 새로운 과세를 승인받기 위해 1789년 삼부회가 소집됐습니다.",
+              "제3신분 대표들은 신분별 표결을 거부하고 자신들이 국민을 대표하는 국민의회라고 선언했습니다."
+            ]
+          },
+          {
+            "title": "의회의 선언만으로 끝나지 않았다",
+            "items": [
+              "7월 14일 바스티유 습격은 파리의 무장한 군중이 정치의 방향을 바꿀 수 있음을 보여주었습니다.",
+              "농촌의 대공포와 영주권 문서 공격은 국민의회가 8월 4일 봉건적 특권의 폐지를 선언하는 배경이 됐습니다."
+            ]
+          },
+          {
+            "title": "권리의 원칙과 새 제도의 과제",
+            "text": "8월 인권선언은 자유와 법적 평등, 국민주권을 보편적 원칙으로 제시했습니다. 그러나 선언만으로 토지 관계, 선거 자격, 여성과 식민지 노예의 지위가 모두 해결된 것은 아니었습니다."
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "프랑스 국민의회 혁명사: 삼부회, 국민의회, 바스티유, 8월 4일의 사건 순서.",
+              "1789년 인간과 시민의 권리 선언: 자유·평등·주권·법에 관한 원칙.",
+              "홉스봄, 『혁명의 시대』: 국가 위기와 부르주아 지도부, 민중 동원의 결합."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "State crisis opened a struggle over representation",
+            "items": [
+              "War debts and an unequal tax structure left royal finances in crisis. The Estates-General was summoned in 1789 to authorize new taxation.",
+              "Representatives of the Third Estate rejected voting by order and declared that they represented the nation as the National Assembly."
+            ]
+          },
+          {
+            "title": "Declarations did not act alone",
+            "items": [
+              "The storming of the Bastille on 14 July showed that an armed Parisian crowd could alter the direction of politics.",
+              "The Great Fear and rural attacks on seigneurial records formed the setting for the Assembly's decrees of 4 August against privilege."
+            ]
+          },
+          {
+            "title": "Principles of rights and unfinished institutions",
+            "text": "The August declaration set out liberty, legal equality, and national sovereignty as universal principles. It did not by itself settle land relations, voting qualifications, or the status of women and enslaved colonial subjects."
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "French National Assembly history: the sequence from the Estates-General to the decrees of 4 August.",
+              "Declaration of the Rights of Man and of the Citizen (1789): liberty, equality, sovereignty, and law.",
+              "Hobsbawm, The Age of Revolution: state crisis, bourgeois leadership, and popular mobilization."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          { "title": "국가 위기", "text": "재정 파탄이 삼부회 소집을 불렀습니다." },
+          { "title": "대표권 혁명", "text": "제3신분 대표들이 국민의회를 선언했습니다." },
+          { "title": "민중 행동", "text": "도시와 농촌의 행동이 의회의 결정을 밀어붙였습니다." }
+        ],
+        "en": [
+          { "title": "State crisis", "text": "Fiscal breakdown brought the Estates-General together." },
+          { "title": "Representative revolution", "text": "Third Estate deputies declared a National Assembly." },
+          { "title": "Popular action", "text": "Action in town and country pushed the Assembly forward." }
+        ]
+      },
+      "lessons": [
+        {
+          "id": "french-revolution-intro-ch06-basic",
+          "level": "basic",
+          "title": {
+            "ko": "1789년, 무엇이 구체제를 무너뜨렸을까?",
+            "en": "What brought down the Old Regime in 1789?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "루이 16세가 1789년 삼부회를 소집한 직접적인 국가 운영상의 위기는 무엇이었을까요?",
+                "en": "What immediate crisis of government led Louis XVI to summon the Estates-General in 1789?"
+              },
+              "choices": {
+                "ko": [
+                  "왕실 재정 위기 속에서 새로운 과세를 승인받아야 했습니다.",
+                  "이미 공화정이 수립되어 새 대통령을 선출해야 했습니다.",
+                  "국민의회가 왕에게 식민지 전쟁을 시작하라고 명령했습니다."
+                ],
+                "en": [
+                  "A royal fiscal crisis made authorization of new taxation necessary.",
+                  "A republic had already been founded and needed to elect a president.",
+                  "The National Assembly ordered the king to begin a colonial war."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "전쟁 채무와 불공평한 조세 구조 속에서 재정 위기가 심해졌고, 왕은 과세 승인 문제를 피할 수 없었습니다.",
+                  "1789년 소집 당시에는 아직 왕정이었으며 공화정은 1792년에 선포됐습니다.",
+                  "삼부회 소집은 뒤에 등장할 국민의회의 명령 때문이 아니라 왕실 재정 위기에서 출발했습니다."
+                ],
+                "en": [
+                  "War debts and the unequal tax structure deepened the crisis until authorization of taxation could no longer be avoided.",
+                  "France was still a monarchy in 1789; the republic was proclaimed in 1792.",
+                  "The fiscal crisis preceded the National Assembly and did not begin with an order for colonial war."
+                ]
+              },
+              "explanation": {
+                "ko": "삼부회는 혁명을 시작하려고 설계된 기관이 아니었습니다. 왕실은 재정 위기와 과세 승인의 난관을 풀기 위해 이를 소집했지만, 대표 수와 표결 방식을 둘러싼 충돌이 누가 국민을 대표하는가라는 주권 문제로 번졌습니다.",
+                "en": "The Estates-General was not designed to launch a revolution. It was summoned to address fiscal breakdown and authorization of taxation, but conflict over representation and voting turned the meeting into a struggle over who represented the nation."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+                "label": { "ko": "프랑스 국민의회 혁명사, 1789년 삼부회", "en": "French National Assembly history, Estates-General of 1789" }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "국민의회 선언과 바스티유 습격을 한 과정으로 볼 때 가장 정확한 설명은 무엇일까요?",
+                "en": "When the declaration of the National Assembly and the storming of the Bastille are read as one process, which account is most accurate?"
+              },
+              "choices": {
+                "ko": [
+                  "대표들의 주권 주장과 파리 민중의 행동이 서로 영향을 주며 왕권을 압박했습니다.",
+                  "국민의회가 먼저 해산된 뒤 왕의 명령에 따라 바스티유를 공격했습니다.",
+                  "바스티유 습격은 조세와 대표권 문제에서 떨어진 단순한 감옥 탈출이었습니다."
+                ],
+                "en": [
+                  "A claim to sovereignty by deputies and popular action in Paris reinforced one another against royal power.",
+                  "After the Assembly dissolved, the Bastille was attacked on the king's orders.",
+                  "The Bastille was only a prison break unrelated to taxation or representation."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "의회 안의 대표권 투쟁과 의회 밖의 무장한 행동을 함께 보아야 1789년 권력관계의 변화를 설명할 수 있습니다.",
+                  "국민의회는 해산 명령에 맞섰고 바스티유 공격은 왕의 지시가 아니라 파리 민중의 행동이었습니다.",
+                  "감옥의 수감자 수만으로 사건의 의미를 판단하면 무기·권력·왕실 군대에 대한 당시의 갈등을 놓칩니다."
+                ],
+                "en": [
+                  "The change in power becomes clear only when the representative struggle inside the Assembly is read with armed action outside it.",
+                  "The Assembly resisted royal pressure, and the attack was popular action rather than a royal command.",
+                  "Treating it only as a prison break misses the contemporary struggle over arms, authority, and royal troops."
+                ]
+              },
+              "explanation": {
+                "ko": "국민의회는 대표들이 국민을 대신한다고 주장해 법적·정치적 권위의 근거를 바꾸려 했습니다. 바스티유 습격은 파리 민중이 무장과 거리 행동으로 그 갈등에 개입한 사건이었습니다. 혁명의 시작은 의회와 거리 중 하나만으로 설명되지 않습니다.",
+                "en": "The National Assembly changed the claimed basis of political authority by presenting its deputies as representatives of the nation. The Bastille brought armed popular intervention into that conflict. The opening of the Revolution cannot be explained by parliament or street action alone."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+                "label": { "ko": "프랑스 국민의회 혁명사, 국민의회와 바스티유", "en": "French National Assembly history, National Assembly and Bastille" }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1789년 인권선언이 자유와 권리의 평등을 선언했다는 사실만으로 확인할 수 없는 것은 무엇일까요?",
+                "en": "What cannot be established merely from the Declaration of Rights proclaiming liberty and equality of rights in 1789?"
+              },
+              "choices": {
+                "ko": [
+                  "모든 주민이 즉시 같은 선거권과 사회적 조건을 실제로 누렸다는 것.",
+                  "법의 근거를 국민의 일반 의사와 연결하는 원칙을 제시했다는 것.",
+                  "자유와 권리의 평등을 새 정치 질서의 기준으로 선언했다는 것."
+                ],
+                "en": [
+                  "That every inhabitant immediately enjoyed the same vote and social conditions in practice.",
+                  "That law was linked in principle to the general will of the nation.",
+                  "That liberty and equality of rights were declared standards of the new order."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "보편적 문구와 실제 제도·집행의 범위는 구별해야 하며 뒤이은 선거제와 배제의 역사를 따로 확인해야 합니다.",
+                  "법을 일반 의사의 표현으로 설명한 것은 선언문에서 직접 확인할 수 있는 원칙입니다.",
+                  "자유와 권리의 평등은 선언문 첫 조항들에 제시된 핵심 규범입니다."
+                ],
+                "en": [
+                  "Universal language must be distinguished from institutions and enforcement; later voting rules and exclusions require separate evidence.",
+                  "The text itself presents law as an expression of the general will.",
+                  "Liberty and equality of rights are central norms stated in the opening articles."
+                ]
+              },
+              "explanation": {
+                "ko": "인권선언은 새 질서를 평가할 강력한 보편 원칙을 만들었지만 그 자체가 완성된 헌법이나 집행 결과는 아니었습니다. 이후의 선거 자격, 여성의 정치 참여, 식민지 노예제와 재산 관계를 확인해야 선언의 적용 범위를 알 수 있습니다.",
+                "en": "The declaration established powerful universal standards for judging the new order, but it was neither a complete constitution nor evidence of implementation. Voting qualifications, women's political participation, colonial slavery, and property relations must be examined separately."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "/commulingo/docs/france-rights-and-emancipation-1789-1794",
+                "label": { "ko": "프랑스 혁명 문헌집, 1789년 인권선언", "en": "French Revolution collection, Declaration of Rights of 1789" }
+              }
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "flow",
+        "ko": {
+          "title": "1789년의 연쇄: 국가 위기가 혁명이 되기까지",
+          "steps": [
+            { "label": "재정 위기", "note": "새 과세를 승인받기 위해 삼부회를 소집했습니다." },
+            { "label": "국민의회", "note": "대표권 다툼이 국민주권 문제로 바뀌었습니다." },
+            { "label": "민중 행동", "note": "바스티유와 대공포가 권력관계를 흔들었습니다." },
+            { "label": "8월의 결정", "note": "특권 폐지와 권리 선언이 새 질서의 원칙을 세웠습니다." }
+          ]
+        },
+        "en": {
+          "title": "The chain of 1789: how a state crisis became a revolution",
+          "steps": [
+            { "label": "Fiscal crisis", "note": "The Estates-General was summoned to authorize taxation." },
+            { "label": "National Assembly", "note": "A voting dispute became a claim to national sovereignty." },
+            { "label": "Popular action", "note": "The Bastille and Great Fear altered the balance of power." },
+            { "label": "August settlements", "note": "Privilege was attacked and universal rights proclaimed." }
+          ]
+        }
+      }
+    },
+    {
+      "id": "french-revolution-intro-ch01",
+      "volumeNumber": 11,
+      "chapterNumber": 2,
+      "partNumber": 1,
+      "partTitle": {
+        "ko": "제1부 · 구체제의 붕괴와 새 헌정",
+        "en": "Part I · The Old Regime collapses"
+      },
       "title": {
         "ko": "왕을 반대하면 모두 같은 편일까?",
         "en": "Does opposing a king make everyone an ally?"
@@ -310,7 +570,12 @@ module.exports = {
     {
       "id": "french-revolution-intro-ch02",
       "volumeNumber": 11,
-      "chapterNumber": 2,
+      "chapterNumber": 3,
+      "partNumber": 1,
+      "partTitle": {
+        "ko": "제1부 · 구체제의 붕괴와 새 헌정",
+        "en": "Part I · The Old Regime collapses"
+      },
       "title": {
         "ko": "평등한 시민은 누구인가?",
         "en": "Who counts as an equal citizen?"
@@ -597,9 +862,269 @@ module.exports = {
       }
     },
     {
+      "id": "french-revolution-intro-ch07",
+      "volumeNumber": 11,
+      "chapterNumber": 4,
+      "partNumber": 2,
+      "partTitle": {
+        "ko": "제2부 · 공화정과 혁명정부",
+        "en": "Part II · Republic and revolutionary government"
+      },
+      "title": {
+        "ko": "왕정은 왜 공화정으로 바뀌었을까?",
+        "en": "Why did monarchy give way to a republic?"
+      },
+      "sourceUrl": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+      "summary": {
+        "ko": "약 5분 · 바렌 도주, 혁명전쟁, 8월 10일 봉기와 국민공회가 왕정 붕괴로 이어진 과정을 배웁니다.",
+        "en": "About 5 minutes · Trace the flight to Varennes, revolutionary war, the insurrection of 10 August, and the Convention's abolition of monarchy."
+      },
+      "learningFocus": {
+        "ko": "왕정 폐지를 한 사상의 자동적인 승리로 보지 말고, 왕에 대한 불신과 전쟁, 민중 행동, 새 의회의 결정이 연결된 과정을 살펴보세요.",
+        "en": "Do not treat abolition as the automatic victory of one idea. Connect distrust of the king, war, popular action, and decisions by a new assembly."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "입헌군주제의 신뢰가 무너지다",
+            "items": [
+              "1791년 6월 왕실의 바렌 도주는 왕이 새 헌정 질서를 받아들였는지에 대한 불신을 키웠습니다.",
+              "도주가 곧바로 왕정 폐지를 결정한 것은 아니지만, 왕과 혁명이 공존할 수 있다는 기대를 약화시켰습니다."
+            ]
+          },
+          {
+            "title": "전쟁이 국내 권력투쟁을 격화하다",
+            "items": [
+              "프랑스는 1792년 4월 오스트리아에 전쟁을 선포했습니다. 초기 패전과 외국 군주의 위협은 반혁명과 왕실에 대한 의심을 키웠습니다.",
+              "8월 10일 파리의 봉기 세력은 튈르리궁을 공격했고 입법의회는 왕의 직무를 정지시켰습니다."
+            ]
+          },
+          {
+            "title": "새 의회가 공화정을 세우다",
+            "text": "보통선거로 뽑힌 국민공회는 1792년 9월 21일 왕정을 폐지했습니다. 루이 16세의 재판과 1793년 1월 처형은 그 뒤의 별도 결정이었습니다."
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "프랑스 국민의회 혁명사: 바렌 도주, 전쟁, 8월 10일, 국민공회와 왕정 폐지.",
+              "1792년 왕정 폐지 결의: 공화정으로의 제도 변화.",
+              "홉스봄, 『혁명의 시대』: 전쟁과 대중 동원, 혁명의 급진화."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Confidence in constitutional monarchy collapsed",
+            "items": [
+              "The royal family's flight to Varennes in June 1791 deepened suspicion that the king had not accepted the new constitutional order.",
+              "The flight did not itself abolish monarchy, but it weakened expectations that king and Revolution could coexist."
+            ]
+          },
+          {
+            "title": "War intensified the domestic struggle",
+            "items": [
+              "France declared war on Austria in April 1792. Early defeats and threats from foreign monarchs intensified suspicions of counter-revolution and the court.",
+              "On 10 August, insurgents in Paris attacked the Tuileries and the Legislative Assembly suspended the king."
+            ]
+          },
+          {
+            "title": "A new assembly established the republic",
+            "text": "The National Convention, elected by universal male suffrage, abolished monarchy on 21 September 1792. The trial and execution of Louis XVI in January 1793 were later and separate decisions."
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "French National Assembly history: Varennes, war, 10 August, the Convention, and abolition of monarchy.",
+              "Decree abolishing monarchy (1792): the institutional change to a republic.",
+              "Hobsbawm, The Age of Revolution: war, mass mobilization, and radicalization."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          { "title": "불신", "text": "바렌 도주가 입헌군주제의 신뢰를 흔들었습니다." },
+          { "title": "전쟁", "text": "패전과 외부 위협이 국내 대립을 격화했습니다." },
+          { "title": "공화정", "text": "봉기와 새 의회의 결정으로 왕정이 폐지됐습니다." }
+        ],
+        "en": [
+          { "title": "Distrust", "text": "Varennes damaged confidence in constitutional monarchy." },
+          { "title": "War", "text": "Defeat and foreign threats intensified conflict at home." },
+          { "title": "Republic", "text": "Insurrection and a new assembly ended monarchy." }
+        ]
+      },
+      "lessons": [
+        {
+          "id": "french-revolution-intro-ch07-basic",
+          "level": "basic",
+          "title": {
+            "ko": "왕정은 왜 공화정으로 바뀌었을까?",
+            "en": "Why did monarchy give way to a republic?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1791년 6월 왕실의 바렌 도주가 입헌군주제에 준 가장 직접적인 정치적 충격은 무엇이었을까요?",
+                "en": "What was the most direct political shock that the royal flight to Varennes dealt to constitutional monarchy in June 1791?"
+              },
+              "choices": {
+                "ko": [
+                  "왕이 새 헌정 질서를 받아들였는지에 대한 불신을 크게 키웠습니다.",
+                  "국민공회가 이미 왕정을 폐지했다는 사실을 전국에 알렸습니다.",
+                  "오스트리아와의 전쟁을 끝내고 왕의 군사지휘권을 회복했습니다."
+                ],
+                "en": [
+                  "It greatly deepened distrust of the king's acceptance of the constitutional order.",
+                  "It announced that the Convention had already abolished monarchy.",
+                  "It ended the war with Austria and restored the king's military command."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "왕실의 국외 탈출 시도는 왕과 새 헌정이 공존할 수 있다는 기대를 약화시켰습니다.",
+                  "왕정 폐지는 바렌 도주보다 뒤인 1792년 9월 국민공회가 결정했습니다.",
+                  "오스트리아와의 전쟁은 바렌 도주 뒤인 1792년에 시작됐으며 도주가 전쟁을 끝낸 것이 아닙니다."
+                ],
+                "en": [
+                  "The attempted escape weakened expectations that the king could coexist with the new constitutional order.",
+                  "The Convention abolished monarchy later, in September 1792.",
+                  "War with Austria began after Varennes, in 1792; the flight did not end it."
+                ]
+              },
+              "explanation": {
+                "ko": "바렌 도주는 그날 즉시 공화정을 세운 사건이 아니었습니다. 그러나 왕실이 국외로 빠져나가려 한 행동은 왕이 헌법에 충실한 국가기관으로 남을 수 있는지에 대한 의심을 강화했고, 이후 전쟁과 정치 위기 속에서 왕정 폐지 요구가 커질 토대를 만들었습니다.",
+                "en": "Varennes did not create a republic that day. The royal attempt to escape nevertheless cast doubt on whether the king could remain a loyal constitutional authority and prepared the ground for demands to abolish monarchy as war and political crisis deepened."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+                "label": { "ko": "프랑스 국민의회 혁명사, 바렌 도주", "en": "French National Assembly history, flight to Varennes" }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1792년 혁명전쟁과 8월 10일 왕권 정지의 관계를 가장 정확하게 설명한 것은 무엇일까요?",
+                "en": "Which account most accurately connects the revolutionary war of 1792 with the suspension of royal power on 10 August?"
+              },
+              "choices": {
+                "ko": [
+                  "초기 패전과 외국 군주의 위협이 왕실의 반혁명 연루 의혹을 키우며 국내 위기를 격화했습니다.",
+                  "전쟁의 즉각적인 승리로 왕에 대한 신뢰가 회복되어 파리의 봉기가 끝났습니다.",
+                  "전쟁은 국경에서만 일어나 국내 정치와 왕의 지위에는 아무 영향도 주지 않았습니다."
+                ],
+                "en": [
+                  "Early defeats and threats from foreign monarchs intensified domestic crisis and suspicions of royal counter-revolution.",
+                  "Immediate victory restored trust in the king and ended insurrection in Paris.",
+                  "The war remained at the frontier and had no effect on domestic politics or the king."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "전쟁의 군사적 위기와 왕실에 대한 불신이 결합하면서 파리의 봉기와 왕권 정지로 이어졌습니다.",
+                  "프랑스군은 전쟁 초기에 어려움을 겪었고 그 위기는 왕에 대한 신뢰를 회복시키지 않았습니다.",
+                  "외국 군주의 개입 위협과 패전은 반혁명 문제를 국내 권력투쟁의 중심으로 끌어들였습니다."
+                ],
+                "en": [
+                  "Military crisis and distrust of the court combined in the insurrection and suspension of royal authority.",
+                  "French forces struggled early in the war, and crisis did not restore confidence in the king.",
+                  "Defeat and foreign monarchical threats made counter-revolution central to the domestic struggle."
+                ]
+              },
+              "explanation": {
+                "ko": "혁명전쟁은 국내 정치와 분리된 전선의 사건이 아니었습니다. 초기 패전, 망명귀족과 외국 군주의 위협, 왕실이 혁명의 패배를 바란다는 의혹이 겹치면서 파리 민중과 급진파는 왕을 공화국 방어의 장애물로 보기 시작했습니다.",
+                "en": "The revolutionary war was not a frontier event detached from domestic politics. Early defeat, émigré nobles, threats from foreign monarchs, and suspicion that the court desired revolutionary failure encouraged popular and radical forces to see the king as an obstacle to defending the Revolution."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+                "label": { "ko": "프랑스 국민의회 혁명사, 1792년 전쟁과 8월 10일", "en": "French National Assembly history, war and 10 August 1792" }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1792년 9월 왕정 폐지와 1793년 1월 루이 16세 처형의 관계를 올바르게 구별한 것은 무엇일까요?",
+                "en": "Which statement correctly distinguishes the abolition of monarchy in September 1792 from the execution of Louis XVI in January 1793?"
+              },
+              "choices": {
+                "ko": [
+                  "국민공회가 먼저 왕정을 폐지했고, 국왕의 재판과 처형은 그 뒤 별도로 결정했습니다.",
+                  "왕을 처형한 뒤 입헌군주제를 세우기 위해 국민공회를 처음 소집했습니다.",
+                  "두 사건은 같은 날 하나의 표결로 이루어져 구별할 필요가 없습니다."
+                ],
+                "en": [
+                  "The Convention first abolished monarchy; the king's trial and execution were decided later and separately.",
+                  "After executing the king, the Convention first met to establish constitutional monarchy.",
+                  "Both events occurred on the same day through one vote and need not be distinguished."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "왕정이라는 제도를 없앤 결정과 전직 국왕 개인의 유죄·형벌 결정은 시점과 쟁점이 달랐습니다.",
+                  "국민공회는 공화정의 의회였으며 루이 16세 처형보다 먼저 왕정을 폐지했습니다.",
+                  "왕정 폐지는 1792년 9월, 처형은 1793년 1월로 날짜와 결정 절차가 다릅니다."
+                ],
+                "en": [
+                  "Ending monarchy as an institution and deciding the guilt and punishment of the former king were distinct issues at different times.",
+                  "The Convention was a republican assembly and abolished monarchy before the execution.",
+                  "Abolition came in September 1792 and execution in January 1793 through separate decisions."
+                ]
+              },
+              "explanation": {
+                "ko": "국민공회는 첫 회의에서 왕정을 폐지해 국가의 형태를 공화정으로 바꿨습니다. 그 뒤 루이 16세를 시민 루이 카페로 재판하고 유죄와 형벌을 놓고 별도로 표결했습니다. 제도 변화와 개인에 대한 재판을 구별해야 급진화의 단계를 볼 수 있습니다.",
+                "en": "At its first meeting, the Convention abolished monarchy and changed the form of the state. It later tried Louis XVI as citizen Louis Capet and voted separately on guilt and punishment. Distinguishing institutional change from an individual's trial reveals the stages of radicalization."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "/commulingo/docs/france-constitutions-and-republic-1791-1793",
+                "label": { "ko": "프랑스 혁명 문헌집, 1792년 왕정 폐지 결의", "en": "French Revolution collection, decree abolishing monarchy in 1792" }
+              }
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "flow",
+        "ko": {
+          "title": "입헌군주제에서 공화정으로",
+          "steps": [
+            { "label": "1791 · 바렌", "note": "왕이 헌정을 받아들였는지에 대한 불신이 커졌습니다." },
+            { "label": "1792 · 전쟁", "note": "패전과 외부 위협이 국내 대립을 격화했습니다." },
+            { "label": "8월 10일", "note": "봉기 뒤 입법의회가 왕의 직무를 정지했습니다." },
+            { "label": "9월 21일", "note": "국민공회가 왕정을 폐지하고 공화정을 세웠습니다." }
+          ]
+        },
+        "en": {
+          "title": "From constitutional monarchy to republic",
+          "steps": [
+            { "label": "1791 · Varennes", "note": "Distrust of the king's acceptance of the constitution deepened." },
+            { "label": "1792 · War", "note": "Defeat and foreign threats intensified conflict at home." },
+            { "label": "10 August", "note": "After the insurrection, the Assembly suspended the king." },
+            { "label": "21 September", "note": "The Convention abolished monarchy and established a republic." }
+          ]
+        }
+      }
+    },
+    {
       "id": "french-revolution-intro-ch03",
       "volumeNumber": 11,
-      "chapterNumber": 3,
+      "chapterNumber": 5,
+      "partNumber": 2,
+      "partTitle": {
+        "ko": "제2부 · 공화정과 혁명정부",
+        "en": "Part II · Republic and revolutionary government"
+      },
       "title": {
         "ko": "빵값도 자유에 맡겨야 할까?",
         "en": "Should bread prices be left to free trade?"
@@ -888,7 +1413,12 @@ module.exports = {
     {
       "id": "french-revolution-intro-ch04",
       "volumeNumber": 11,
-      "chapterNumber": 4,
+      "chapterNumber": 6,
+      "partNumber": 2,
+      "partTitle": {
+        "ko": "제2부 · 공화정과 혁명정부",
+        "en": "Part II · Republic and revolutionary government"
+      },
       "title": {
         "ko": "혁명을 지키기 위해 자유를 제한해도 될까?",
         "en": "Can defending a revolution justify restricting liberty?"
@@ -1171,7 +1701,12 @@ module.exports = {
     {
       "id": "french-revolution-intro-ch05",
       "volumeNumber": 11,
-      "chapterNumber": 5,
+      "chapterNumber": 7,
+      "partNumber": 3,
+      "partTitle": {
+        "ko": "제3부 · 테르미도르 이후와 혁명의 유산",
+        "en": "Part III · After Thermidor and the Revolution's legacy"
+      },
       "title": {
         "ko": "법 앞의 평등이면 충분할까?",
         "en": "Is equality before the law enough?"
@@ -1192,10 +1727,10 @@ module.exports = {
             "text": "바뵈프와 동료들은 법적 평등만으로 가난과 지배가 사라지지 않는다고 비판했습니다. 「평등파 선언」은 생활 속의 실질적 평등과 공동의 경제 질서를 요구했습니다."
           },
           {
-            "title": "누가 쓴 문서인가?",
+            "title": "총재정부 아래의 평등파 운동",
             "items": [
-              "선언의 작성자는 실뱅 마레샬입니다. 바뵈프 개인의 글로 소개하면 안 됩니다.",
-              "지도부의 만장일치 지지를 받지 못했으며, 당시 시행된 법률도 아닙니다."
+              "1795년 헌법은 재산에 따른 선거의 문턱을 되살렸고 총재정부는 민중 운동과 급진파를 억제했습니다.",
+              "바뵈프와 동료들은 비밀 조직을 통해 총재정부를 무너뜨리고 공동의 경제 질서를 세우려 했지만 1796년 체포됐습니다."
             ]
           },
           {
@@ -1217,10 +1752,10 @@ module.exports = {
             "text": "Babeuf and his associates challenged the sufficiency of legal equality in a society marked by poverty and domination. The Manifesto of the Equals demanded material equality and a common economic order."
           },
           {
-            "title": "Who wrote the document?",
+            "title": "The Equals under the Directory",
             "items": [
-              "Sylvain Maréchal wrote the manifesto; it should not be attributed personally to Babeuf.",
-              "It lacked unanimous support among the directors and was not enacted law."
+              "The constitution of 1795 restored property qualifications for elections, while the Directory repressed popular and radical movements.",
+              "Babeuf and his associates organized clandestinely to overthrow the Directory and establish a common economic order, but they were arrested in 1796."
             ]
           },
           {
@@ -1248,8 +1783,8 @@ module.exports = {
             "text": "선언은 토지 분할보다 재산 공동체를 추구했습니다."
           },
           {
-            "title": "저자와 대표성",
-            "text": "마레샬이 썼고 지도부 내부에 이견이 있었습니다."
+            "title": "정치적 도전",
+            "text": "평등파는 총재정부를 무너뜨릴 비밀 조직을 만들었습니다."
           }
         ],
         "en": [
@@ -1262,8 +1797,8 @@ module.exports = {
             "text": "The manifesto sought a community of property beyond partition."
           },
           {
-            "title": "Authorship and scope",
-            "text": "Maréchal wrote it, and the directors disagreed about it."
+            "title": "Political challenge",
+            "text": "The Equals built a clandestine organization against the Directory."
           }
         ]
       },
@@ -1373,44 +1908,44 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "이 「평등파 선언」을 바뵈프와 평등파 전체의 입장으로 소개할 때 어떤 점을 밝혀야 할까요?",
-                "en": "What qualification is needed when using this Manifesto to describe Babeuf and the Equals as a whole?"
+                "ko": "1796년 평등파 운동이 총재정부에 도전한 이유를 프랑스 혁명의 흐름 속에서 가장 잘 설명한 것은 무엇일까요?",
+                "en": "Which statement best explains the challenge of the Equals to the Directory in the course of the French Revolution?"
               },
               "choices": {
                 "ko": [
-                  "마레샬이 썼고 지도부의 만장일치 지지를 받은 문서는 아니다.",
-                  "바뵈프가 직접 썼으며 국민공회가 법률로 시행한 문서다.",
-                  "마르크스가 평등파 지도부를 위해 작성한 공동 강령이다."
+                  "법적 평등 뒤에도 재산과 생계의 불평등이 남았다고 보고 총재정부를 넘어선 공동의 경제 질서를 요구했습니다.",
+                  "총재정부가 봉건적 신분 특권을 충분히 복원하지 않았다고 보고 귀족 중심의 왕정으로 돌아가려 했습니다.",
+                  "1793년 헌법의 생존권 조항이 완전히 시행됐다고 보고 더 이상의 정치·경제 변화가 필요 없다고 주장했습니다."
                 ],
                 "en": [
-                  "Maréchal wrote it, and the leadership did not unanimously support it.",
-                  "Babeuf wrote it personally and the Convention enacted it as law.",
-                  "Marx wrote it as a joint programme for the leadership of the Equals."
+                  "It argued that legal equality had left inequalities of property and subsistence intact and demanded a common economic order beyond the Directory.",
+                  "It sought an aristocratic monarchy because the Directory had not restored enough feudal privilege.",
+                  "It held that the subsistence guarantees of 1793 were fully implemented and no further change was needed."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "판본의 편집 안내는 실뱅 마레샬의 작성과 지도부 내부의 이견을 명시합니다.",
-                  "운동의 문서와 시행 법률은 다릅니다. 작성자도 바뵈프로 바꿔 소개하면 안 됩니다.",
-                  "마르크스의 저작이 아닙니다. 후대 공산주의와의 관계가 저자나 시점을 바꾸지는 않습니다."
+                  "평등파는 혁명이 세운 법적 평등만으로 생활 속 지배와 빈곤이 사라지지 않았다고 보며 총재정부에 도전했습니다.",
+                  "평등파는 구체제의 특권을 복구하려 한 왕당파가 아니라 물질적 평등을 더 밀고 가려 한 급진 세력이었습니다.",
+                  "1793년 헌법은 시행되지 않았고 테르미도르 뒤에는 대중 정치와 경제적 권리에 대한 반동이 진행됐습니다."
                 ],
                 "en": [
-                  "The edition’s introduction identifies Sylvain Maréchal as author and notes disagreements among the directors.",
-                  "A movement’s manifesto is not enacted law, and its authorship must not be reassigned to Babeuf.",
-                  "It is not a work by Marx; later communist reception does not change its author or date."
+                  "The Equals challenged the Directory because legal equality had not removed poverty and domination from material life.",
+                  "They were not royalists seeking restored privilege but radicals pressing the demand for equality further.",
+                  "The constitution of 1793 was never implemented, and Thermidor was followed by reaction against popular politics and economic rights."
                 ]
               },
               "explanation": {
-                "ko": "판본의 편집 안내는 실뱅 마레샬의 작성과 지도부 내부의 이견을 명시합니다. 운동의 문서와 시행 법률은 다릅니다. 작성자도 바뵈프로 바꿔 소개하면 안 됩니다. 마르크스의 저작이 아닙니다. 후대 공산주의와의 관계가 저자나 시점을 바꾸지는 않습니다.",
-                "en": "The edition’s introduction identifies Sylvain Maréchal as author and notes disagreements among the directors. A movement’s manifesto is not enacted law, and its authorship must not be reassigned to Babeuf. It is not a work by Marx; later communist reception does not change its author or date."
+                "ko": "평등파 운동은 프랑스 혁명이 남긴 법적 평등을 부정한 것이 아니라 그것만으로는 빈곤과 재산의 지배를 없앨 수 없다고 비판했습니다. 재산 자격 선거와 대중 운동 억제 위에 선 총재정부에 맞서 비밀 조직과 봉기를 준비하며 공동소유에 기초한 질서를 요구했습니다.",
+                "en": "The Equals did not reject the legal equality created by the Revolution; they argued that it could not by itself abolish poverty and domination by property. Against a Directory founded on property-qualified elections and repression of popular politics, they prepared clandestine insurrection and demanded an order based on common property."
               },
               "source": {
                 "kind": "reference",
                 "href": "https://www.marxists.org/history/france/revolution/conspiracy-equals/1796/manifesto.htm",
                 "label": {
-                  "ko": "「평등파 선언」 판본의 작성자·채택 안내",
-                  "en": "Manifesto of the Equals, editorial note on authorship and reception"
+                  "ko": "평등파 운동과 「평등파 선언」, 1796년",
+                  "en": "The Equals and the Manifesto of the Equals, 1796"
                 }
               }
             }
@@ -1454,13 +1989,270 @@ module.exports = {
           }
         }
       }
+    },
+    {
+      "id": "french-revolution-intro-ch08",
+      "volumeNumber": 11,
+      "chapterNumber": 8,
+      "partNumber": 3,
+      "partTitle": {
+        "ko": "제3부 · 테르미도르 이후와 혁명의 유산",
+        "en": "Part III · After Thermidor and the Revolution's legacy"
+      },
+      "title": {
+        "ko": "혁명은 언제, 어떻게 끝났을까?",
+        "en": "When and how did the Revolution end?"
+      },
+      "sourceUrl": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+      "summary": {
+        "ko": "약 5분 · 테르미도르 반동, 총재정부와 브뤼메르 쿠데타를 따라가며 혁명의 종결과 유산을 구별합니다.",
+        "en": "About 5 minutes · Follow Thermidor, the Directory, and Brumaire while distinguishing the Revolution's ending from its legacies."
+      },
+      "learningFocus": {
+        "ko": "로베스피에르의 몰락, 혁명정부의 해체, 총재정부의 종식은 같은 사건이 아닙니다. 무엇이 끝났고 무엇이 남았는지 단계별로 살펴보세요.",
+        "en": "Robespierre's fall, the dismantling of revolutionary government, and the end of the Directory were not one event. Identify what ended and what endured at each stage."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "테르미도르는 하나의 종결점이자 새 국면",
+            "items": [
+              "1794년 7월 27일의 테르미도르 9일에 로베스피에르와 동료들이 체포됐고 이튿날 처형됐습니다.",
+              "이후 공포정치의 제도와 산악파의 권력이 해체됐지만 전쟁과 공화정 자체가 그날 끝난 것은 아니었습니다."
+            ]
+          },
+          {
+            "title": "총재정부는 안정된 결착이 아니었다",
+            "items": [
+              "1795년 헌법은 양원제 입법부와 5인 총재정부를 두고 재산에 따른 선거의 문턱을 되살렸습니다.",
+              "왕당파와 급진파 사이에서 군대와 반복되는 비상조치에 의존했고, 물가와 전쟁 문제도 계속됐습니다."
+            ]
+          },
+          {
+            "title": "브뤼메르는 혁명을 이전으로 되돌리지 않았다",
+            "text": "1799년 11월 브뤼메르 쿠데타는 총재정부를 무너뜨리고 나폴레옹 보나파르트가 중심인 통령정부를 세웠습니다. 정치적 실험의 한 국면은 끝났지만 법적 평등, 봉건적 특권의 폐지, 중앙집권적 국가 같은 변화는 남았습니다."
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "프랑스 국민의회 혁명사: 테르미도르, 1795년 헌법, 총재정부와 브뤼메르.",
+              "홉스봄, 『혁명의 시대』: 프랑스 혁명의 종결과 유럽적 유산.",
+              "앞선 일곱 편의 법령·선언·정치적 주장: 제도 변화와 지속성의 비교."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Thermidor ended one phase and opened another",
+            "items": [
+              "Robespierre and his associates were arrested on 9 Thermidor, 27 July 1794, and executed the following day.",
+              "Institutions of the Terror and Montagnard power were dismantled, but neither war nor the republic ended that day."
+            ]
+          },
+          {
+            "title": "The Directory was not a stable settlement",
+            "items": [
+              "The constitution of 1795 created a bicameral legislature and five-man Directory while restoring property qualifications in elections.",
+              "Caught between royalism and radical opposition, the regime relied on the army and repeated exceptional measures while war and inflation continued."
+            ]
+          },
+          {
+            "title": "Brumaire did not restore the Old Regime",
+            "text": "The coup of Brumaire in November 1799 overthrew the Directory and created a Consulate dominated by Napoleon Bonaparte. One phase of political experimentation ended, while legal equality, the destruction of seigneurial privilege, and a centralized state endured."
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "French National Assembly history: Thermidor, the constitution of 1795, the Directory, and Brumaire.",
+              "Hobsbawm, The Age of Revolution: the Revolution's ending and European legacies.",
+              "Documents and arguments from the preceding seven lessons: comparing institutional change and persistence."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          { "title": "1794 · 테르미도르", "text": "공포정치와 산악파 권력의 해체가 시작됐습니다." },
+          { "title": "1795 · 총재정부", "text": "제한된 선거와 분할된 권력으로 안정을 꾀했습니다." },
+          { "title": "1799 · 브뤼메르", "text": "쿠데타가 총재정부를 끝내고 통령정부를 세웠습니다." }
+        ],
+        "en": [
+          { "title": "1794 · Thermidor", "text": "The Terror and Montagnard power began to be dismantled." },
+          { "title": "1795 · Directory", "text": "Restricted elections and divided powers were meant to secure stability." },
+          { "title": "1799 · Brumaire", "text": "A coup ended the Directory and established the Consulate." }
+        ]
+      },
+      "lessons": [
+        {
+          "id": "french-revolution-intro-ch08-basic",
+          "level": "basic",
+          "title": {
+            "ko": "혁명은 언제, 어떻게 끝났을까?",
+            "en": "When and how did the Revolution end?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1794년 테르미도르 9일의 정변이 직접 끝낸 정치적 국면은 무엇이었을까요?",
+                "en": "Which political phase was directly ended by the overthrow of 9 Thermidor in 1794?"
+              },
+              "choices": {
+                "ko": [
+                  "로베스피에르와 산악파가 주도한 혁명정부의 지배 국면이 끝났습니다.",
+                  "부르봉 왕정이 즉시 복원되고 공화정의 모든 법률이 폐지됐습니다.",
+                  "유럽 전쟁이 즉시 끝나 프랑스군이 모두 귀환하게 됐습니다."
+                ],
+                "en": [
+                  "It ended the phase of revolutionary government led by Robespierre and the Mountain.",
+                  "It immediately restored the Bourbon monarchy and repealed every republican law.",
+                  "It ended the European war at once and brought every French army home."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "로베스피에르의 체포와 처형 뒤 혁명정부의 기구와 정치적 동맹이 빠르게 해체되기 시작했습니다.",
+                  "공화정은 계속됐고 부르봉 왕정의 복원은 나폴레옹 몰락 뒤인 1814년에 이루어졌습니다.",
+                  "대외전쟁은 테르미도르 이후에도 이어졌으며 총재정부와 나폴레옹의 부상에도 큰 영향을 주었습니다."
+                ],
+                "en": [
+                  "After Robespierre's arrest and execution, the institutions and political coalition of revolutionary government were rapidly dismantled.",
+                  "The republic continued; Bourbon restoration came only after Napoleon's fall in 1814.",
+                  "Foreign war continued after Thermidor and remained central to the Directory and Napoleon's rise."
+                ]
+              },
+              "explanation": {
+                "ko": "테르미도르는 공포정치와 로베스피에르의 지배가 끝나는 결정적 전환이었지만 프랑스 혁명 전체가 하루 만에 종료된 사건은 아니었습니다. 이후에도 공화정, 전쟁, 경제 위기와 권력 재편이 총재정부를 거쳐 1799년까지 이어졌습니다.",
+                "en": "Thermidor decisively ended the Terror and Robespierre's dominance, but it did not terminate the whole Revolution in a day. Republic, war, economic crisis, and struggles over power continued through the Directory until 1799."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+                "label": { "ko": "프랑스 국민의회 혁명사, 테르미도르 9일", "en": "French National Assembly history, 9 Thermidor" }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1795년 헌법이 혁명정부 뒤에 마련한 권력 구조를 가장 정확하게 설명한 것은 무엇일까요?",
+                "en": "Which description most accurately identifies the structure established by the constitution of 1795 after revolutionary government?"
+              },
+              "choices": {
+                "ko": [
+                  "양원제 입법부와 5인 총재정부를 두고 선거 참여에는 재산의 문턱을 뒀습니다.",
+                  "단원제 국민공회에 모든 권력을 모으고 성인 모두에게 직접선거를 보장했습니다.",
+                  "세습 왕에게 입법·행정·사법권을 돌려주어 절대왕정을 완전히 복원했습니다."
+                ],
+                "en": [
+                  "It created a bicameral legislature and five-man Directory with property qualifications for electoral participation.",
+                  "It concentrated all power in a single Convention elected directly by every adult.",
+                  "It restored legislative, executive, and judicial power to a hereditary absolute monarch."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "권력을 여러 기관에 나누고 대중 정치의 범위를 제한해 공포정치와 왕정 양쪽의 복귀를 막으려 했습니다.",
+                  "1795년 헌법은 국민공회 단일 지배를 계속하지 않았고 보통선거의 범위도 축소했습니다.",
+                  "총재정부는 공화정 체제였으며 세습 왕을 국가원수로 되돌리지 않았습니다."
+                ],
+                "en": [
+                  "Power was divided and mass politics restricted in an effort to prevent both a renewed Terror and royal restoration.",
+                  "The constitution did not preserve a single sovereign Convention and narrowed electoral participation.",
+                  "The Directory remained republican and did not return a hereditary king to the head of state."
+                ]
+              },
+              "explanation": {
+                "ko": "1795년 헌법은 한 기관이나 한 사람에게 권력이 집중되는 것을 막으려 양원과 다섯 명의 총재를 두었습니다. 동시에 재산에 따른 선거 자격을 되살려 1793년 헌법이 내세운 넓은 남성 참정권에서 물러났습니다. 권력 분립과 참여 제한이 함께 있었습니다.",
+                "en": "The constitution of 1795 divided authority between two councils and five directors to prevent concentration in one body or person. At the same time it restored property qualifications, retreating from the broad male suffrage promised in 1793. Division of power and restricted participation went together."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+                "label": { "ko": "프랑스 국민의회 혁명사, 1795년 헌법과 총재정부", "en": "French National Assembly history, constitution of 1795 and Directory" }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1799년 브뤼메르 쿠데타가 끝낸 것과 남긴 것을 함께 설명한 문장은 무엇일까요?",
+                "en": "Which statement identifies both what the coup of Brumaire ended in 1799 and what remained afterward?"
+              },
+              "choices": {
+                "ko": [
+                  "총재정부는 끝났지만 법적 평등과 봉건적 특권 폐지 같은 혁명의 변화는 남았습니다.",
+                  "혁명기의 모든 법과 재산 변동이 취소되어 1788년의 사회가 그대로 복원됐습니다.",
+                  "쿠데타로 중앙정부가 사라지고 각 지방이 독립된 공화국으로 분리됐습니다."
+                ],
+                "en": [
+                  "The Directory ended, while changes such as legal equality and the abolition of seigneurial privilege endured.",
+                  "Every revolutionary law and property change was annulled, restoring the society of 1788 unchanged.",
+                  "Central government disappeared and each province became an independent republic."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "브뤼메르는 정치체제를 통령정부로 바꿨지만 혁명 이전의 신분제와 영주권을 그대로 되살리지는 않았습니다.",
+                  "쿠데타는 구체제의 완전한 복원이 아니며 혁명기의 법·토지·행정 변화 가운데 많은 부분이 지속됐습니다.",
+                  "통령정부는 지방 분권이 아니라 보나파르트 중심의 더 강한 중앙집권으로 나아갔습니다."
+                ],
+                "en": [
+                  "Brumaire replaced the Directory with the Consulate without restoring pre-revolutionary orders and seigneurial rights intact.",
+                  "The coup was not a complete restoration; many legal, property, and administrative changes survived.",
+                  "The Consulate strengthened centralized authority around Bonaparte rather than dissolving France into provinces."
+                ]
+              },
+              "explanation": {
+                "ko": "브뤼메르는 혁명기의 공화정 실험 가운데 총재정부를 끝내고 보나파르트가 중심인 통령정부를 세웠습니다. 그러나 정치체제의 종결과 사회 변화의 소멸은 같은 말이 아닙니다. 법적 평등, 봉건적 특권의 폐지와 국가의 중앙집권화는 이후에도 지속됐습니다.",
+                "en": "Brumaire ended the Directory, one form of republican experimentation, and established a Consulate dominated by Bonaparte. Ending a regime did not erase social transformation. Legal equality, the destruction of seigneurial privilege, and state centralization endured."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise",
+                "label": { "ko": "프랑스 국민의회 혁명사, 브뤼메르 쿠데타", "en": "French National Assembly history, coup of Brumaire" }
+              }
+            }
+          ]
+        }
+      ],
+      "diagram": {
+        "kind": "flow",
+        "ko": {
+          "title": "공포정치의 종결에서 총재정부의 종결까지",
+          "steps": [
+            { "label": "1794 · 테르미도르", "note": "로베스피에르가 몰락하고 혁명정부가 해체되기 시작했습니다." },
+            { "label": "1795 · 새 헌법", "note": "양원제와 5인 총재정부, 제한선거를 채택했습니다." },
+            { "label": "1796 · 평등파", "note": "법적 평등을 넘어선 요구가 총재정부에 도전했습니다." },
+            { "label": "1799 · 브뤼메르", "note": "쿠데타가 총재정부를 끝내고 통령정부를 세웠습니다." }
+          ]
+        },
+        "en": {
+          "title": "From the end of the Terror to the end of the Directory",
+          "steps": [
+            { "label": "1794 · Thermidor", "note": "Robespierre fell and revolutionary government began to be dismantled." },
+            { "label": "1795 · Constitution", "note": "Two councils, five directors, and restricted elections were adopted." },
+            { "label": "1796 · Equals", "note": "Demands beyond legal equality challenged the Directory." },
+            { "label": "1799 · Brumaire", "note": "A coup ended the Directory and established the Consulate." }
+          ]
+        }
+      }
     }
   ],
   "noAutoLink": [
     "6조",
     "헌법 6조",
     "헌법 제6조",
+    "테르미도르",
     "Article 6",
-    "Article Six"
+    "Article Six",
+    "Thermidor"
   ]
 };

@@ -42,8 +42,7 @@
         next: document.getElementById('commuNextBtn'),
         nextLesson: document.getElementById('commuNextLessonBtn'),
         review: document.getElementById('commuReviewBtn'),
-        reviewNote: document.getElementById('commuReviewNote'),
-        keyHint: document.getElementById('commuKeyHint')
+        reviewNote: document.getElementById('commuReviewNote')
     };
 
     els.back.addEventListener('click', function() {
@@ -88,7 +87,8 @@
         els.review.addEventListener('click', function() { startReview(); });
     }
 
-    // Keys 1-4 pick a choice, Enter (or Space away from a button) advances.
+    // Keys 1-4 pick a choice immediately. Enter (or Space away from a button)
+    // advances only after that choice has been answered.
     // Ignored while typing anywhere else on the page.
     document.addEventListener('keydown', function(event) {
         if (event.ctrlKey || event.metaKey || event.altKey) return;
@@ -231,6 +231,8 @@
                         collectionTitle: text(collection.title),
                         chapterNumber: chapter.chapterNumber,
                         chapterTitle: text(chapter.title),
+                        partNumber: chapter.partNumber,
+                        partTitle: text(chapter.partTitle),
                         title: text(lesson.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
@@ -249,6 +251,8 @@
                         collectionTitle: text(collection.title),
                         chapterNumber: chapter.chapterNumber,
                         chapterTitle: text(chapter.title),
+                        partNumber: chapter.partNumber,
+                        partTitle: text(chapter.partTitle),
                         title: text(chapter.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
@@ -514,6 +518,12 @@
     }
 
     function findPart(lesson) {
+        if (lesson.partNumber && lesson.partTitle) {
+            return {
+                key: lesson.collectionId + '-p' + lesson.partNumber,
+                title: lesson.partTitle
+            };
+        }
         var definitions = capitalParts[lesson.collectionId] || [];
         var chapter = Number(lesson.chapterNumber) || 0;
         for (var i = 0; i < definitions.length; i += 1) {
@@ -524,6 +534,7 @@
     }
 
     function partTitle(part) {
+        if (part.title) return part.title;
         return lang === 'en' ? part.en : part.ko;
     }
 
@@ -1206,10 +1217,6 @@
     // the server progress sync only triggers a repaint when it changes something.
     renderLessons();
     handleDeepLink();
-    if (els.keyHint && strings.keyHint && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        els.keyHint.textContent = strings.keyHint;
-        els.keyHint.classList.remove('is-hidden');
-    }
     syncServerProgress().then(function(changed) {
         if (changed) renderLessons();
     });
